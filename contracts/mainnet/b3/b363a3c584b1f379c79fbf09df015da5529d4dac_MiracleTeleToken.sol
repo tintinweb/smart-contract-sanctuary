@@ -181,10 +181,10 @@ contract ERC20Token {
     	returns (bool success)
     {
 		// Do not allow transfer to 0x0 or the token contract itself or from address to itself
-		require((_to != address(0)) &amp;&amp; (_to != address(this)) &amp;&amp; (_to != _from));
+		require((_to != address(0)) && (_to != address(this)) && (_to != _from));
 
         // Check if the sender has enough
-        require((_value > 0) &amp;&amp; (balances[_from] >= _value));
+        require((_value > 0) && (balances[_from] >= _value));
 
         // Check for overflows
         require(balances[_to] + _value > balances[_to]);
@@ -365,7 +365,7 @@ contract MiracleTeleToken is ERC20Token, Owned {
     	require(delegations[_from]==1);
 
         // Check if the sender has enough
-        require((_value > 0) &amp;&amp; (balances[_from] >= _value));
+        require((_value > 0) && (balances[_from] >= _value));
 
         // Subtract from the sender
         balances[_from] = balances[_from].sub(_value);

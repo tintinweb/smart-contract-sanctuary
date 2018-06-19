@@ -17,21 +17,21 @@ library BWUtility {
     // All x (_x2, _xy2) are adjacent to o (_x1, _y1) in this ascii image. 
     // Adjacency does not wrapp around map edges so if y2 = 255 and y1 = 0 then they are not ajacent
     function isAdjacent(uint8 _x1, uint8 _y1, uint8 _x2, uint8 _y2) pure public returns (bool) {
-        return ((_x1 == _x2 &amp;&amp;      (_y2 - _y1 == 1 || _y1 - _y2 == 1))) ||      // Same column
-               ((_y1 == _y2 &amp;&amp;      (_x2 - _x1 == 1 || _x1 - _x2 == 1))) ||      // Same row
-               ((_x2 - _x1 == 1 &amp;&amp;  (_y2 - _y1 == 1 || _y1 - _y2 == 1))) ||      // Right upper or lower diagonal
-               ((_x1 - _x2 == 1 &amp;&amp;  (_y2 - _y1 == 1 || _y1 - _y2 == 1)));        // Left upper or lower diagonal
+        return ((_x1 == _x2 &&      (_y2 - _y1 == 1 || _y1 - _y2 == 1))) ||      // Same column
+               ((_y1 == _y2 &&      (_x2 - _x1 == 1 || _x1 - _x2 == 1))) ||      // Same row
+               ((_x2 - _x1 == 1 &&  (_y2 - _y1 == 1 || _y1 - _y2 == 1))) ||      // Right upper or lower diagonal
+               ((_x1 - _x2 == 1 &&  (_y2 - _y1 == 1 || _y1 - _y2 == 1)));        // Left upper or lower diagonal
     }
 
     // Converts (x, y) to tileId xy
     function toTileId(uint8 _x, uint8 _y) pure public returns (uint16) {
-        return uint16(_x) &lt;&lt; 8 | uint16(_y);
+        return uint16(_x) << 8 | uint16(_y);
     }
 
     // Converts _tileId to (x, y)
     function fromTileId(uint16 _tileId) pure public returns (uint8, uint8) {
         uint8 y = uint8(_tileId);
-        uint8 x = uint8(_tileId &gt;&gt; 8);
+        uint8 x = uint8(_tileId >> 8);
         return (x, y);
     }
     
@@ -54,8 +54,8 @@ contract BWData {
     uint private feeBalance = 0;
     uint private BASE_TILE_PRICE_WEI = 1 finney; // 1 milli-ETH.
     
-    mapping (address =&gt; User) private users; // user address -&gt; user information
-    mapping (uint16 =&gt; Tile) private tiles; // tileId -&gt; list of TileClaims for that particular tile
+    mapping (address => User) private users; // user address -> user information
+    mapping (uint16 => Tile) private tiles; // tileId -> list of TileClaims for that particular tile
     
     // Info about the users = those who have purchased tiles.
     struct User {
@@ -69,7 +69,7 @@ contract BWData {
         address claimer;
         uint blockValue;
         uint creationTime;
-        uint sellPrice;    // If 0 -&gt; not on marketplace. If &gt; 0 -&gt; on marketplace.
+        uint sellPrice;    // If 0 -> not on marketplace. If > 0 -> on marketplace.
     }
 
     struct Boost {
@@ -93,7 +93,7 @@ contract BWData {
     }
 
     modifier isValidCaller {
-        if (msg.sender != bwService &amp;&amp; msg.sender != bw &amp;&amp; msg.sender != bwMarket) {
+        if (msg.sender != bwService && msg.sender != bw && msg.sender != bwMarket) {
             revert();
         }
         _;
@@ -216,7 +216,7 @@ contract BWData {
 
         if (_useBattleValue) {
             require(_msgValue == 0);
-            require(user.battleValue &gt;= _amount);
+            require(user.battleValue >= _amount);
         } else {
             require(_amount == _msgValue);
         }
@@ -224,11 +224,11 @@ contract BWData {
     
     function addBoostFromTile(Tile _tile, address _attacker, address _defender, Boost memory _boost) pure private {
         if (_tile.claimer == _attacker) {
-            require(_boost.attackBoost + _tile.blockValue &gt;= _tile.blockValue); // prevent overflow
+            require(_boost.attackBoost + _tile.blockValue >= _tile.blockValue); // prevent overflow
             _boost.attackBoost += _tile.blockValue;
             _boost.numAttackBoosts += 1;
         } else if (_tile.claimer == _defender) {
-            require(_boost.defendBoost + _tile.blockValue &gt;= _tile.blockValue); // prevent overflow
+            require(_boost.defendBoost + _tile.blockValue >= _tile.blockValue); // prevent overflow
             _boost.defendBoost += _tile.blockValue;
             _boost.numDefendBoosts += 1;
         }
@@ -279,13 +279,13 @@ contract BWData {
         // - More boost tiles give a higher multiple of that total blockValue that can be used (10% per adjacent tie)
         // Example:
         //   A) I boost attack with 1 single tile worth 10 finney
-        //      -&gt; Total boost is 10 * 1 / 10 = 1 finney
+        //      -> Total boost is 10 * 1 / 10 = 1 finney
         //   B) I boost attack with 3 tiles worth 1 finney each
-        //      -&gt; Total boost is (1+1+1) * 3 / 10 = 0.9 finney
+        //      -> Total boost is (1+1+1) * 3 / 10 = 0.9 finney
         //   C) I boost attack with 8 tiles worth 2 finney each
-        //      -&gt; Total boost is (2+2+2+2+2+2+2+2) * 8 / 10 = 14.4 finney
+        //      -> Total boost is (2+2+2+2+2+2+2+2) * 8 / 10 = 14.4 finney
         //   D) I boost attack with 3 tiles of 1, 5 and 10 finney respectively
-        //      -&gt; Total boost is (ss1+5+10) * 3 / 10 = 4.8 finney
+        //      -> Total boost is (ss1+5+10) * 3 / 10 = 4.8 finney
         // This division by 10 can&#39;t create fractions since our uint is wei, and we can&#39;t have overflow from the multiplication
         // We do allow fractions of finney here since the boosted values aren&#39;t stored anywhere, only used for attack rolls and sent in events
         boost.attackBoost = (boost.attackBoost / 10 * boost.numAttackBoosts);

@@ -176,7 +176,7 @@ contract DSTToken is ERC20, Ownable, SafeMath {
 
     function assignToken(address _investor,uint256 _tokens) external {
         // Check investor address and tokens.Not allow 0 value
-        require(_investor != address(0) &amp;&amp; _tokens > 0);
+        require(_investor != address(0) && _tokens > 0);
         // Check wallet have enough token balance to assign
         require(_tokens <= balances[msg.sender]);
         
@@ -212,7 +212,7 @@ contract DSTToken is ERC20, Ownable, SafeMath {
     function assignTokenIJK(address _userAddress,uint256 _tokens) external {
         require(msg.sender == walletAddresses[8] || msg.sender == walletAddresses[9] || msg.sender == walletAddresses[10]);
         // Check investor address and tokens.Not allow 0 value
-        require(_userAddress != address(0) &amp;&amp; _tokens > 0);
+        require(_userAddress != address(0) && _tokens > 0);
         // Assign tokens to the investor
         assignTokensWallet(msg.sender,_userAddress, _tokens);
     }
@@ -349,7 +349,7 @@ contract DSTToken is ERC20, Ownable, SafeMath {
     function cashInvestment(address cashInvestor, uint256 assignedTokens) onlyOwner external {
         // Check if cashInvestor address is set or not
         // By mistake tokens mentioned as 0, save the cost of assigning tokens.
-        require(cashInvestor != address(0) &amp;&amp; assignedTokens > 0);
+        require(cashInvestor != address(0) && assignedTokens > 0);
 
         // Call to Internal function to assign tokens
         assignTokensWallet(walletAddresses[4],cashInvestor, assignedTokens);
@@ -412,7 +412,7 @@ contract DSTToken is ERC20, Ownable, SafeMath {
     // @return Whether the transfer was successful or not
     function transfer(address _to, uint _value) public returns (bool ok) {
         //validate receiver address and value.Not allow 0 value
-        require(_to != 0 &amp;&amp; _value > 0);
+        require(_to != 0 && _value > 0);
         uint256 senderBalance = balances[msg.sender];
         //Check sender have enough balance
         require(senderBalance >= _value);
@@ -431,9 +431,9 @@ contract DSTToken is ERC20, Ownable, SafeMath {
     // @return Whether the transfer was successful or not
     function transferFrom(address _from, address _to, uint _value) public returns (bool ok) {
         //validate _from,_to address and _value(Now allow with 0)
-        require(_from != 0 &amp;&amp; _to != 0 &amp;&amp; _value > 0);
+        require(_from != 0 && _to != 0 && _value > 0);
         //Check amount is approved by the owner for spender to spent and owner have enough balances
-        require(allowed[_from][msg.sender] >= _value &amp;&amp; balances[_from] >= _value);
+        require(allowed[_from][msg.sender] >= _value && balances[_from] >= _value);
         balances[_from] = safeSub(balances[_from],_value);
         balances[_to] = safeAdd(balances[_to],_value);
         allowed[_from][msg.sender] = safeSub(allowed[_from][msg.sender],_value);
@@ -462,7 +462,7 @@ contract DSTToken is ERC20, Ownable, SafeMath {
         // Check if DST wallet LMNO is set or not
         require(dstWalletLMNO != address(0));
         // Check wallet have enough token and token is valid
-        require(balances[_walletAddress] >= token &amp;&amp; token > 0);
+        require(balances[_walletAddress] >= token && token > 0);
         // Increasing the totalSupply
         totalSupply = safeAdd(totalSupply, token);
         // Debit tokens from wallet balance
@@ -479,7 +479,7 @@ contract DSTToken is ERC20, Ownable, SafeMath {
         // Check if DST wallet LMNO is set or not
         require(dstWalletLMNO != address(0));
         // Check claiment address and token is valid or not
-        require(claimAddress != address(0) &amp;&amp; token > 0);
+        require(claimAddress != address(0) && token > 0);
         // Assign tokens to user
         balances[claimAddress] = safeAdd(balances[claimAddress], token);
         // balances[_walletAddress] = safeSub(balances[_walletAddress],token);

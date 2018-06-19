@@ -71,7 +71,7 @@ contract META {
     }
 
     function changePayRate(uint256 _newRate) public {
-        require((msg.sender == _owner) &amp;&amp; (_newRate >= 0));
+        require((msg.sender == _owner) && (_newRate >= 0));
         _tokePerEth = _newRate;
     }
 

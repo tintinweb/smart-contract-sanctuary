@@ -22,7 +22,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         // uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return a / b;
@@ -32,7 +32,7 @@ library SafeMath {
     * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -41,7 +41,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
         c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -55,7 +55,7 @@ library SafeMath {
  */
 library Roles {
     struct Role {
-        mapping (address =&gt; bool) bearer;
+        mapping (address => bool) bearer;
     }
 
     /**
@@ -116,7 +116,7 @@ library Roles {
 contract RBAC {
     using Roles for Roles.Role;
 
-    mapping (string =&gt; Roles.Role) private roles;
+    mapping (string => Roles.Role) private roles;
 
     event RoleAdded(address addr, string roleName);
     event RoleRemoved(address addr, string roleName);
@@ -193,7 +193,7 @@ contract RBAC {
      */
     // modifier onlyRoles(string[] roleNames) {
     //     bool hasAnyRole = false;
-    //     for (uint8 i = 0; i &lt; roleNames.length; i++) {
+    //     for (uint8 i = 0; i < roleNames.length; i++) {
     //         if (hasRole(msg.sender, roleNames[i])) {
     //             hasAnyRole = true;
     //             break;
@@ -415,7 +415,7 @@ contract Crowdsale {
      * @param _token Address of the token being sold
      */
     function Crowdsale(uint256 _rate, address _wallet, ERC20 _token) public {
-        require(_rate &gt; 0);
+        require(_rate > 0);
         require(_wallet != address(0));
         require(_token != address(0));
 
@@ -573,10 +573,10 @@ contract NbtCrowdsale is Crowdsale, Pausable, RBACWithAdmin {
 
     /*** MODIFIERS ***/
 
-    modifier afterDeadline() { if (now &gt; deadline) _; }
-    modifier beforeDeadline() { if (now &lt;= deadline) _; }
-    modifier afterStart() { if (now &gt;= start) _; }
-    modifier beforeStart() { if (now &lt; start) _; }
+    modifier afterDeadline() { if (now > deadline) _; }
+    modifier beforeDeadline() { if (now <= deadline) _; }
+    modifier afterStart() { if (now >= start) _; }
+    modifier beforeStart() { if (now < start) _; }
 
     /*** CONSTRUCTOR ***/
 
@@ -588,10 +588,10 @@ contract NbtCrowdsale is Crowdsale, Pausable, RBACWithAdmin {
       * @param _deadline Deadline of the crowdsale
       */
     function NbtCrowdsale(uint256 _rate, address _wallet, NbtToken _token, uint256 _start, uint256 _deadline) Crowdsale(_rate, _wallet, ERC20(_token)) public {
-        require(_rate &gt; 0);
+        require(_rate > 0);
         require(_wallet != address(0));
         require(_token != address(0));
-        require(_start &lt; _deadline);
+        require(_start < _deadline);
 
         start = _start;
         deadline = _deadline;
@@ -608,7 +608,7 @@ contract NbtCrowdsale is Crowdsale, Pausable, RBACWithAdmin {
      * @param _start The new start timestamp
      */
     function setStart(uint256 _start) onlyAdmin whenPaused public returns (bool) {
-        require(_start &lt; deadline);
+        require(_start < deadline);
         start = _start;
         emit NewStart(start);
         return true;
@@ -619,7 +619,7 @@ contract NbtCrowdsale is Crowdsale, Pausable, RBACWithAdmin {
      * @param _deadline The new deadline timestamp
      */
     function setDeadline(uint256 _deadline) onlyAdmin whenPaused public returns (bool) {
-        require(start &lt; _deadline);
+        require(start < _deadline);
         deadline = _deadline;
         emit NewDeadline(_deadline);
         return true;
@@ -630,7 +630,7 @@ contract NbtCrowdsale is Crowdsale, Pausable, RBACWithAdmin {
      * @param _addr The new wallet address
      */
     function setWallet(address _addr) onlyAdmin public returns (bool) {
-        require(_addr != address(0) &amp;&amp; _addr != address(this));
+        require(_addr != address(0) && _addr != address(this));
         wallet = _addr;
         emit NewWallet(wallet);
         return true;
@@ -641,7 +641,7 @@ contract NbtCrowdsale is Crowdsale, Pausable, RBACWithAdmin {
      * @param _rate Number of token units a buyer gets per wei
      */
     function setRate(uint256 _rate) onlyAdmin public returns (bool) {
-        require(_rate &gt; 0);
+        require(_rate > 0);
         rate = _rate;
         emit NewRate(rate);
         return true;
@@ -664,9 +664,9 @@ contract NbtCrowdsale is Crowdsale, Pausable, RBACWithAdmin {
     }
 
     function getCurrentBonus() public view returns (uint256) {
-        if (token.MAX_SALE_VOLUME().sub(token.saleableTokens()) &lt; BONUS1_LIMIT) {
+        if (token.MAX_SALE_VOLUME().sub(token.saleableTokens()) < BONUS1_LIMIT) {
             return BONUS1;
-        } else if (token.MAX_SALE_VOLUME().sub(token.saleableTokens()) &lt; BONUS2_LIMIT) {
+        } else if (token.MAX_SALE_VOLUME().sub(token.saleableTokens()) < BONUS2_LIMIT) {
             return BONUS2;
         } else {
             return 0;
@@ -693,9 +693,9 @@ contract NbtCrowdsale is Crowdsale, Pausable, RBACWithAdmin {
        */
     function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) whenNotPaused afterStart beforeDeadline internal {
         require(!crowdsaleClosed);
-        require(_weiAmount &gt;= 1000000000000);
-        require(_getTokenAmount(_weiAmount) &lt;= token.balanceOf(this));
-        require(_getTokenAmount(_weiAmount) &gt;= MIN_TOKENS);
+        require(_weiAmount >= 1000000000000);
+        require(_getTokenAmount(_weiAmount) <= token.balanceOf(this));
+        require(_getTokenAmount(_weiAmount) >= MIN_TOKENS);
         super._preValidatePurchase(_beneficiary, _weiAmount);
     }
 

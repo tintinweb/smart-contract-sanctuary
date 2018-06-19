@@ -197,7 +197,7 @@ contract ACAToken is ERC20 {
         require(_to != address(0x0));
         require(_to != address(this));
 
-        if ( _from != owner &amp;&amp; _from != admin ) {
+        if ( _from != owner && _from != admin ) {
             require(transferable);
             require (!transferLocked[_from]);
         }
@@ -269,7 +269,7 @@ contract ACAToken is ERC20 {
     }
 
     function transferAllowed(address _target) public view returns (bool) {
-        return (transferable &amp;&amp; transferLocked[_target] == false);
+        return (transferable && transferLocked[_target] == false);
     }
 
     // token related
@@ -443,7 +443,7 @@ contract ACATokenSale {
 
     modifier onlyWhileOpen {
         require(tokenSaleEnabled == true);
-        require(now >= stages[currentStage].opening &amp;&amp; now <= stages[currentStage].closing);
+        require(now >= stages[currentStage].opening && now <= stages[currentStage].closing);
         _;
     }
 
@@ -644,8 +644,8 @@ contract ACATokenSale {
         
         require(_referralAmount > 0);
 
-        require(_referralRateInviter > 0 &amp;&amp; _referralRateInviter < 100);
-        require(_referralRateInvitee > 0 &amp;&amp; _referralRateInvitee < 100);
+        require(_referralRateInviter > 0 && _referralRateInviter < 100);
+        require(_referralRateInvitee > 0 && _referralRateInvitee < 100);
 
         require(_whitelistBonusClosingTime > now);
         require(_whitelistBonusRate > 0);
@@ -716,7 +716,7 @@ contract ACATokenSale {
         uint256 remains = stages[currentStage].capacity.sub(stages[currentStage].sold);
         if ( now > stages[currentStage].closing ) {
             uint256 nextStage = currentStage.add(1);
-            if ( remains > 0 &amp;&amp; nextStage < stages.length ) {
+            if ( remains > 0 && nextStage < stages.length ) {
                 stages[nextStage].capacity = stages[nextStage].capacity.add(remains);
                 remains = stages[nextStage].capacity;
             }
@@ -791,7 +791,7 @@ contract ACATokenSale {
         uint256 remains = updateStage();
 
         require(currentStage < stages.length);
-        require(now >= stages[currentStage].opening &amp;&amp; now <= stages[currentStage].closing);
+        require(now >= stages[currentStage].opening && now <= stages[currentStage].closing);
 
         require(_weiAmount >= stages[currentStage].minimumWei);
         require(_weiAmount <= stages[currentStage].maximumWei);
@@ -824,7 +824,7 @@ contract ACATokenSale {
 
         uint256 weiAmount = msg.value;
         address inviter = referrals[_beneficiary];
-        if ( inviter != address(0x0) &amp;&amp; referralDone == false ) {
+        if ( inviter != address(0x0) && referralDone == false ) {
             uint256 baseRate = _getTokenAmountWithoutBonus(weiAmount);
             uint256 referralAmountInviter = baseRate.div(100).mul(referralRateInviter);
             uint256 referralAmountInvitee = baseRate.div(100).mul(referralRateInvitee);
@@ -839,7 +839,7 @@ contract ACATokenSale {
                     emit ReferralCapReached();
                     referralDone = true;
                 }
-                if ( referralDone == false &amp;&amp; referralAmountInviter >= referralRemains ) {
+                if ( referralDone == false && referralAmountInviter >= referralRemains ) {
                     referralAmountInvitee = referralRemains.sub(referralAmountInviter);
                     emit ReferralCapReached();
                     referralDone = true;
@@ -952,7 +952,7 @@ contract ACATokenSale {
     function addToWhitelist(address _beneficiary) external onlyAdmin {
         whitelist[_beneficiary] = true;
 
-        if ( whitelistBonus[_beneficiary] == false &amp;&amp; now < whitelistBonusClosingTime ) {
+        if ( whitelistBonus[_beneficiary] == false && now < whitelistBonusClosingTime ) {
             _deliverWhitelistBonus(_beneficiary);
         }
 

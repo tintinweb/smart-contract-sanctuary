@@ -220,7 +220,7 @@ contract VitaToken is ERC20Interface, SafeMath {
     // - 0 value transfers are allowed
     // ------------------------------------------------------------------------
     function transferFrom(address from, address to, uint tokens) public returns (bool success) {
-        require(balances[from] >= tokens &amp;&amp; allowed[from][msg.sender] >= tokens);
+        require(balances[from] >= tokens && allowed[from][msg.sender] >= tokens);
         allowed[from][msg.sender] = safeSub(allowed[from][msg.sender], tokens);
         balances[from] = safeSub(balances[from], tokens);
         balances[to] = safeAdd(balances[to], tokens);
@@ -237,7 +237,7 @@ contract VitaToken is ERC20Interface, SafeMath {
     }
 
     function () public payable {
-        require(now >= crowd_start_date &amp;&amp; now <= crowd_end_date);
+        require(now >= crowd_start_date && now <= crowd_end_date);
         require(collected_crowd_vitas < max_crowd_vitas);
         uint tokens;
         if(now <= crowd_start_date + extra_bonus_duration){

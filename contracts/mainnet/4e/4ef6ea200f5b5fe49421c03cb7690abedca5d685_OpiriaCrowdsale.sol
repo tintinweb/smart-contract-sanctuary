@@ -540,7 +540,7 @@ contract TimedCrowdsale is Crowdsale {
    */
   modifier onlyWhileOpen {
     // solium-disable-next-line security/no-block-members
-    require(block.timestamp >= openingTime &amp;&amp; block.timestamp <= closingTime);
+    require(block.timestamp >= openingTime && block.timestamp <= closingTime);
     _;
   }
 
@@ -734,11 +734,11 @@ contract TimedPresaleCrowdsale is FinalizableCrowdsale {
     }
 
     function isPresale() public view returns (bool) {
-        return now >= presaleOpeningTime &amp;&amp; now <= presaleClosingTime;
+        return now >= presaleOpeningTime && now <= presaleClosingTime;
     }
 
     function isSale() public view returns (bool) {
-        return now >= openingTime &amp;&amp; now <= closingTime;
+        return now >= openingTime && now <= closingTime;
     }
 }
 
@@ -907,7 +907,7 @@ contract OpiriaCrowdsale is TimedPresaleCrowdsale, MintedCrowdsale, TokenCappedC
                 bonusOf[addresses[i]] = 0;
             }
         }
-        if(totalBonus == 0 &amp;&amp; reservedTokensClaimStage == 3) {
+        if(totalBonus == 0 && reservedTokensClaimStage == 3) {
             MintableToken(token).finishMinting();
         }
     }
@@ -920,7 +920,7 @@ contract OpiriaCrowdsale is TimedPresaleCrowdsale, MintedCrowdsale, TokenCappedC
         totalBonus = totalBonus.sub(bonusOf[msg.sender]);
         bonusOf[msg.sender] = 0;
 
-        if(totalBonus == 0 &amp;&amp; reservedTokensClaimStage == 3) {
+        if(totalBonus == 0 && reservedTokensClaimStage == 3) {
             MintableToken(token).finishMinting();
         }
     }

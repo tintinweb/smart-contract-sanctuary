@@ -41,7 +41,7 @@ contract SafeMath {
 
   function safeAdd(uint a, uint b) internal returns (uint) {
     uint c = a + b;
-    assert(c>=a &amp;&amp; c>=b);
+    assert(c>=a && c>=b);
     return c;
   }
 
@@ -191,7 +191,7 @@ contract Haltable is Ownable {
   }
 
   modifier stopNonOwnersInEmergency {
-    if (halted &amp;&amp; msg.sender != owner) throw;
+    if (halted && msg.sender != owner) throw;
     _;
   }
 
@@ -541,7 +541,7 @@ contract CrowdsaleExt is Haltable {
     }
 
     if(isWhiteListed) {
-      if(tokenAmount < earlyParticipantWhitelist[receiver].minCap &amp;&amp; tokenAmountOf[receiver] == 0) {
+      if(tokenAmount < earlyParticipantWhitelist[receiver].minCap && tokenAmountOf[receiver] == 0) {
         // tokenAmount < minCap for investor
         throw;
       }
@@ -553,7 +553,7 @@ contract CrowdsaleExt is Haltable {
 
       updateInheritedEarlyParticipantWhitelist(receiver, tokenAmount);
     } else {
-      if(tokenAmount < token.minCap() &amp;&amp; tokenAmountOf[receiver] == 0) {
+      if(tokenAmount < token.minCap() && tokenAmountOf[receiver] == 0) {
         throw;
       }
     }
@@ -619,7 +619,7 @@ contract CrowdsaleExt is Haltable {
 
   function canDistributeReservedTokens() public constant returns(bool) {
     CrowdsaleExt lastTierCntrct = CrowdsaleExt(getLastTier());
-    if ((lastTierCntrct.getState() == State.Success) &amp;&amp; !lastTierCntrct.halted() &amp;&amp; !lastTierCntrct.finalized() &amp;&amp; !lastTierCntrct.areReservedTokensDistributed()) return true;
+    if ((lastTierCntrct.getState() == State.Success) && !lastTierCntrct.halted() && !lastTierCntrct.finalized() && !lastTierCntrct.areReservedTokensDistributed()) return true;
     return false;
   }
 
@@ -692,7 +692,7 @@ contract CrowdsaleExt is Haltable {
 
   function updateInheritedEarlyParticipantWhitelist(address reciever, uint tokensBought) private {
     if (!isWhiteListed) throw;
-    if (tokensBought < earlyParticipantWhitelist[reciever].minCap &amp;&amp; tokenAmountOf[reciever] == 0) throw;
+    if (tokensBought < earlyParticipantWhitelist[reciever].minCap && tokenAmountOf[reciever] == 0) throw;
 
     uint8 tierPosition = getTierPosition(this);
 
@@ -707,8 +707,8 @@ contract CrowdsaleExt is Haltable {
     assert(addr != address(0));
     assert(now <= endsAt);
     assert(isTierJoined(msg.sender));
-    if (tokensBought < earlyParticipantWhitelist[addr].minCap &amp;&amp; tokenAmountOf[addr] == 0) throw;
-    //if (addr != msg.sender &amp;&amp; contractAddr != msg.sender) throw;
+    if (tokensBought < earlyParticipantWhitelist[addr].minCap && tokenAmountOf[addr] == 0) throw;
+    //if (addr != msg.sender && contractAddr != msg.sender) throw;
     uint newMaxCap = earlyParticipantWhitelist[addr].maxCap;
     newMaxCap = newMaxCap.minus(tokensBought);
     earlyParticipantWhitelist[addr] = WhiteListData({status:earlyParticipantWhitelist[addr].status, minCap:0, maxCap:newMaxCap});
@@ -884,7 +884,7 @@ contract CrowdsaleExt is Haltable {
     else if (!finalizeAgent.isSane()) return State.Preparing;
     else if (!pricingStrategy.isSane(address(this))) return State.Preparing;
     else if (block.timestamp < startsAt) return State.PreFunding;
-    else if (block.timestamp <= endsAt &amp;&amp; !isCrowdsaleFull()) return State.Funding;
+    else if (block.timestamp <= endsAt && !isCrowdsaleFull()) return State.Funding;
     else if (isMinimumGoalReached()) return State.Success;
     else return State.Failure;
   }
@@ -1009,7 +1009,7 @@ contract StandardToken is ERC20, SafeMath {
     //  allowance to zero by calling `approve(_spender, 0)` if it is not
     //  already 0 to mitigate the race condition described here:
     //  https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-    if ((_value != 0) &amp;&amp; (allowed[msg.sender][_spender] != 0)) throw;
+    if ((_value != 0) && (allowed[msg.sender][_spender] != 0)) throw;
 
     allowed[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);
@@ -1510,7 +1510,7 @@ contract CrowdsaleTokenExt is ReleasableToken, MintableTokenExt, UpgradeableToke
    * Allow upgrade agent functionality kick in only if the crowdsale was success.
    */
   function canUpgrade() public constant returns(bool) {
-    return released &amp;&amp; super.canUpgrade();
+    return released && super.canUpgrade();
   }
 
   /**

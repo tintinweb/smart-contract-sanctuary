@@ -264,7 +264,7 @@ contract Lotery is Ownable {
 
   function Lotery(uint _maxPeriodDuration, uint _ticketPrice, uint _benefitPercents, uint _maxTicketAmount, address _hashAddr, uint _jackPotPercents) public {
 
-    require(_maxPeriodDuration > 0 &amp;&amp; _ticketPrice > 0 &amp;&amp; _benefitPercents > 0 &amp;&amp; _benefitPercents < 50 &amp;&amp; _maxTicketAmount > 0 &amp;&amp; _jackPotPercents > 0 &amp;&amp; _jackPotPercents < 50);
+    require(_maxPeriodDuration > 0 && _ticketPrice > 0 && _benefitPercents > 0 && _benefitPercents < 50 && _maxTicketAmount > 0 && _jackPotPercents > 0 && _jackPotPercents < 50);
     //set data in constructor
     maxPeriodDuration = _maxPeriodDuration;
     ticketPrice = _ticketPrice;

@@ -346,7 +346,7 @@ contract MiniMeToken is Controlled {
            require(parentSnapShotBlock < block.number);
 
            // Do not allow transfer to 0x0 or the token contract itself
-           require((_to != 0) &amp;&amp; (_to != address(this)));
+           require((_to != 0) && (_to != address(this)));
 
            // If the amount being transfered is more than the balance of the
            //  account the transfer throws
@@ -1047,7 +1047,7 @@ contract ReserveTokensHolder is Owned {
 
         uint256 finalizedTime = crowdsale.finalizedTime();
 
-        require(finalizedTime > 0 &amp;&amp; getTime() > finalizedTime.add(months(18)));
+        require(finalizedTime > 0 && getTime() > finalizedTime.add(months(18)));
 
         uint256 canExtract = 0;
         if (getTime() <= finalizedTime.add(months(36))) {

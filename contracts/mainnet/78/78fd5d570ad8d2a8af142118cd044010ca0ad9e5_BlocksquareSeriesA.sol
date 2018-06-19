@@ -229,7 +229,7 @@ contract BlocksquareSeriesA is owned {
     }
 
     function isCrowdsaleOpen() constant public returns (bool _isOpened) {
-        return (!icoHasClosed &amp;&amp; icoHasStarted);
+        return (!icoHasClosed && icoHasStarted);
     }
 
     function amountContributed(address _contributor) constant public returns(uint256 _contributedUntilNow){

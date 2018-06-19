@@ -30,12 +30,12 @@ library ECRecovery {
     }
 
     // Version of signature should be 27 or 28, but 0 and 1 are also possible versions
-    if (v &lt; 27) {
+    if (v < 27) {
       v += 27;
     }
 
     // If the version is correct return the signer address
-    if (v != 27 &amp;&amp; v != 28) {
+    if (v != 27 && v != 28) {
       return (address(0));
     } else {
       return ecrecover(hash, v, r, s);

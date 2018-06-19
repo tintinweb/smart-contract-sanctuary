@@ -25,12 +25,12 @@ library SafeMath {
     return c;
   }
   function sub(uint256 a, uint256 b) internal pure returns(uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
   function add(uint256 a, uint256 b) internal pure returns(uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -58,7 +58,7 @@ contract ERC20 is ERC01Basic {
 contract ICWToken is ERC01Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
   address public contractModifierAddress;
   uint256 _totalSupply;
   uint256 _totalICOSupply;
@@ -118,7 +118,7 @@ contract ICWToken is ERC01Basic {
     require(_released == false);
     uint256 realeaseAmount = _maxICOSupply.sub(_totalICOSupply);
     uint256 totalReleased = _totalICOSupply.add(realeaseAmount);
-    require(_maxICOSupply &gt;= totalReleased);
+    require(_maxICOSupply >= totalReleased);
     _totalSupply = _totalSupply.add(realeaseAmount);
     balances[contractModifierAddress] = balances[contractModifierAddress].add(realeaseAmount);
     emit Transfer(contractModifierAddress, contractModifierAddress, realeaseAmount);
@@ -126,7 +126,7 @@ contract ICWToken is ERC01Basic {
   }
 
   function changeRate(uint256 _value) public onlyByOwned returns(bool) {
-    require(_value &gt; 0);
+    require(_value > 0);
     RATE = _value;
     return true;
   }
@@ -137,10 +137,10 @@ contract ICWToken is ERC01Basic {
   }
 
   function transferTokens() public payable {
-    require(_status == true &amp;&amp; msg.value &gt; 0);
+    require(_status == true && msg.value > 0);
     uint tokens = msg.value.mul(RATE);
     uint totalToken = _totalICOSupply.add(tokens);
-    require(_maxICOSupply &gt;= totalToken);
+    require(_maxICOSupply >= totalToken);
     balances[msg.sender] = balances[msg.sender].add(tokens);
     _totalICOSupply = _totalICOSupply.add(tokens);
     contractModifierAddress.transfer(msg.value);
@@ -148,7 +148,7 @@ contract ICWToken is ERC01Basic {
   
   function transferICOTokens(address _to, uint256 _value) public onlyByOwned returns(bool) {
     uint totalToken = _totalICOSupply.add(_value);
-    require(_maxICOSupply &gt;= totalToken);
+    require(_maxICOSupply >= totalToken);
     balances[_to] = balances[_to].add(_value);
     _totalICOSupply = _totalICOSupply.add(_value);
     return true;
@@ -156,7 +156,7 @@ contract ICWToken is ERC01Basic {
 
   function transfer(address _to, uint256 _value) public returns(bool) {
     require(_to != msg.sender);
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
     emit Transfer(msg.sender, _to, _value);
@@ -170,12 +170,12 @@ contract ICWToken is ERC01Basic {
 
 contract iCashwebToken is ERC20, ICWToken {
 
-  mapping(address =&gt; mapping(address =&gt; uint256)) internal allowed;
+  mapping(address => mapping(address => uint256)) internal allowed;
 
   function transferFrom(address _from, address _to, uint256 _value) public returns(bool) {
     require(_to != msg.sender);
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
@@ -201,7 +201,7 @@ contract iCashwebToken is ERC20, ICWToken {
 
   function decreaseApproval(address _spender, uint _subtractedValue) public returns(bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);

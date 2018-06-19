@@ -318,7 +318,7 @@ contract Vault is Ownable {
 
     /// @dev Called by anyone if the sale was successful and the project delivered.
     function close() external atState(State.Success) {
-        require(closingDeadline != 0 &amp;&amp; closingDeadline <= now);
+        require(closingDeadline != 0 && closingDeadline <= now);
         state = State.Closed;
         LogClosed();
     }
@@ -413,7 +413,7 @@ contract Whitelistable is Ownable {
         bytes32 s
     ) public view returns(bool) {
         bytes32 prefixed = keccak256(PREFIX, keccak256(contributor, contributionLimit, currentSaleCap));
-        return !(blacklist[contributor]) &amp;&amp; (whitelistAdmin == ecrecover(prefixed, v, r, s));
+        return !(blacklist[contributor]) && (whitelistAdmin == ecrecover(prefixed, v, r, s));
     }
 }
 
@@ -939,7 +939,7 @@ contract Sale is Ownable, Whitelistable, TimedStateMachine, TokenControllerI {
 
         trustedVault.deposit.value(contribution)(msg.sender);
 
-        if (weiContributed >= minThreshold &amp;&amp; trustedVault.state() != Vault.State.Success) trustedVault.saleSuccessful();
+        if (weiContributed >= minThreshold && trustedVault.state() != Vault.State.Success) trustedVault.saleSuccessful();
 
         // If there is an excess, return it to the user
         uint256 excess = msg.value.sub(contribution);

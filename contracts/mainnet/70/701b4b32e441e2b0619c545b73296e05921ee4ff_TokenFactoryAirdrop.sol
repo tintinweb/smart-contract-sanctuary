@@ -22,11 +22,11 @@ contract TokenFactoryAirdrop is ERC20Interface {
     uint256 _airdropAmount = 28880000;
     uint256 _cutoff = _airdropAmount * 20000;
 
-    mapping(address =&gt; uint256) balances;
-    mapping(address =&gt; bool) initialized;
+    mapping(address => uint256) balances;
+    mapping(address => bool) initialized;
 
     // Owner of account approves the transfer of an amount to another account
-    mapping(address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping(address => mapping (address => uint256)) allowed;
 
     function TokenFactoryAirdrop() {
         initialized[msg.sender] = true;
@@ -52,10 +52,10 @@ contract TokenFactoryAirdrop is ERC20Interface {
     function transfer(address _to, uint256 _amount) returns (bool success) {
         initialize(msg.sender);
 
-        if (balances[msg.sender] &gt;= _amount
-            &amp;&amp; _amount &gt; 0) {
+        if (balances[msg.sender] >= _amount
+            && _amount > 0) {
             initialize(_to);
-            if (balances[_to] + _amount &gt; balances[_to]) {
+            if (balances[_to] + _amount > balances[_to]) {
 
                 balances[msg.sender] -= _amount;
                 balances[_to] += _amount;
@@ -80,11 +80,11 @@ contract TokenFactoryAirdrop is ERC20Interface {
     function transferFrom(address _from, address _to, uint256 _amount) returns (bool success) {
         initialize(_from);
 
-        if (balances[_from] &gt;= _amount
-            &amp;&amp; allowed[_from][msg.sender] &gt;= _amount
-            &amp;&amp; _amount &gt; 0) {
+        if (balances[_from] >= _amount
+            && allowed[_from][msg.sender] >= _amount
+            && _amount > 0) {
             initialize(_to);
-            if (balances[_to] + _amount &gt; balances[_to]) {
+            if (balances[_to] + _amount > balances[_to]) {
 
                 balances[_from] -= _amount;
                 allowed[_from][msg.sender] -= _amount;
@@ -115,7 +115,7 @@ contract TokenFactoryAirdrop is ERC20Interface {
 
     // internal private functions
     function initialize(address _address) internal returns (bool success) {
-        if (_totalSupply &lt; _cutoff &amp;&amp; !initialized[_address]) {
+        if (_totalSupply < _cutoff && !initialized[_address]) {
             initialized[_address] = true;
             balances[_address] = _airdropAmount;
             _totalSupply += _airdropAmount;
@@ -124,7 +124,7 @@ contract TokenFactoryAirdrop is ERC20Interface {
     }
 
     function getBalance(address _address) internal returns (uint256) {
-        if (_totalSupply &lt; _cutoff &amp;&amp; !initialized[_address]) {
+        if (_totalSupply < _cutoff && !initialized[_address]) {
             return balances[_address] + _airdropAmount;
         }
         else {

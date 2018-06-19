@@ -6,7 +6,7 @@ contract TronToken {
     string   public symbol ;          //  token symbol
     uint256  public decimals ;        //  token digit
 
-    mapping (address =&gt; uint256) public balanceOf;
+    mapping (address => uint256) public balanceOf;
 
     uint256 public totalSupply = 0;
     bool public stopped = false;      //  stopflag: true is stoped,false is not stoped
@@ -44,8 +44,8 @@ contract TronToken {
     }
 
     function transfer(address _to, uint256 _value) public isRunning validAddress returns (bool success) {
-        require(balanceOf[msg.sender] &gt;= _value);
-        require(balanceOf[_to] + _value &gt;= balanceOf[_to]);
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[_to] + _value >= balanceOf[_to]);
         balanceOf[msg.sender] -= _value;
         balanceOf[_to] += _value;
         Transfer(msg.sender, _to, _value);
@@ -69,7 +69,7 @@ contract TronToken {
     }
 
     function burn(uint256 _value) public {
-        require(balanceOf[msg.sender] &gt;= _value);
+        require(balanceOf[msg.sender] >= _value);
         balanceOf[msg.sender] -= _value;
         balanceOf[0x0] += _value;
         Transfer(msg.sender, 0x0, _value);

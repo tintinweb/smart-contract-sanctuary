@@ -353,7 +353,7 @@ contract NooCrowdsale is Ownable {
     }
 
     function finishMinting() public onlyOwner saleFinished overSoftcap {
-        require(status == 1 || (status != 2 &amp;&amp; now < start + period * 1 days &amp;&amp; balanceTotal < hardcap));
+        require(status == 1 || (status != 2 && now < start + period * 1 days && balanceTotal < hardcap));
         uint issuedTokenSupply = token.totalSupply();
         uint restrictedTokens = issuedTokenSupply.mul(restricted).div(100 - restricted);
         mintAndTransfer(owner, restrictedTokens);
@@ -377,7 +377,7 @@ contract NooCrowdsale is Ownable {
     }
 
     function refund() public {
-        require(status == 2 || (status != 1 &amp;&amp; now > start + period * 1 days &amp;&amp; balanceTotal < softcap));
+        require(status == 2 || (status != 1 && now > start + period * 1 days && balanceTotal < softcap));
         require(balances[msg.sender] > 0);
         uint value = balances[msg.sender];
         balances[msg.sender] = 0;
@@ -417,7 +417,7 @@ contract NooCrowdsale is Ownable {
     }
 
     modifier saleIsOn() {
-        require(now > start &amp;&amp; now < start + period * 1 days);
+        require(now > start && now < start + period * 1 days);
         _;
     }
 

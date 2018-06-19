@@ -18,7 +18,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -28,7 +28,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -37,7 +37,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -94,7 +94,7 @@ contract ERC20 is ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -112,7 +112,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -133,7 +133,7 @@ contract BasicToken is ERC20Basic {
 
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -144,8 +144,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -208,7 +208,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -285,7 +285,7 @@ contract Crowdsale {
    * @param _token Address of the token being sold
    */
   function Crowdsale(uint256 _rate, address _wallet, ERC20 _token) public {
-    require(_rate &gt; 0);
+    require(_rate > 0);
     require(_wallet != address(0));
     require(_token != address(0));
 
@@ -325,7 +325,7 @@ contract Crowdsale {
 
     _forwardFunds(weiAmount);
     _postValidatePurchase(_beneficiary, weiAmount);
-    if (changeEthBack &gt; 0) {
+    if (changeEthBack > 0) {
         msg.sender.transfer(changeEthBack);
     }
   }
@@ -417,7 +417,7 @@ contract CappedCrowdsale is Crowdsale {
    * @param _cap Max amount of wei to be contributed
    */
   function CappedCrowdsale(uint256 _cap) public {
-    require(_cap &gt; 0);
+    require(_cap > 0);
     cap = _cap;
   }
 
@@ -426,7 +426,7 @@ contract CappedCrowdsale is Crowdsale {
    * @return Whether the cap was reached
    */
   function capReached() public view returns (bool) {
-    return weiRaised &gt;= cap;
+    return weiRaised >= cap;
   }
 
   /**
@@ -436,7 +436,7 @@ contract CappedCrowdsale is Crowdsale {
    */
   function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) internal {
     super._preValidatePurchase(_beneficiary, _weiAmount);
-    require(weiRaised.add(_weiAmount) &lt;= cap);
+    require(weiRaised.add(_weiAmount) <= cap);
   }
 }
 
@@ -444,7 +444,7 @@ contract WhitelistedCrowdsale is Crowdsale, Ownable {
   event LogAddedToWhiteList(address indexed _address);
   event LogRemovedFromWhiteList(address indexed _address);
 
-  mapping(address =&gt; bool) public whitelist;
+  mapping(address => bool) public whitelist;
 
   /**
    * @dev Reverts if beneficiary is not whitelisted. Can be used when extending this contract.
@@ -468,7 +468,7 @@ contract WhitelistedCrowdsale is Crowdsale, Ownable {
    * @param _beneficiaries Addresses to be added to the whitelist
    */
   function addManyToWhitelist(address[] _beneficiaries) external onlyOwner {
-    for (uint256 i = 0; i &lt; _beneficiaries.length; i++) {
+    for (uint256 i = 0; i < _beneficiaries.length; i++) {
       whitelist[_beneficiaries[i]] = true;
       emit LogAddedToWhiteList(_beneficiaries[i]);
     }
@@ -503,7 +503,7 @@ contract TimedCrowdsale is Crowdsale {
    * @dev Reverts if not in crowdsale time range.
    */
   modifier onlyWhileOpen {
-    require(now &gt;= openingTime &amp;&amp; now &lt;= closingTime);
+    require(now >= openingTime && now <= closingTime);
     _;
   }
 
@@ -513,8 +513,8 @@ contract TimedCrowdsale is Crowdsale {
    * @param _closingTime Crowdsale closing time
    */
   function TimedCrowdsale(uint256 _openingTime, uint256 _closingTime) public {
-    require(_openingTime &gt;= now);
-    require(_closingTime &gt;= _openingTime);
+    require(_openingTime >= now);
+    require(_closingTime >= _openingTime);
 
     openingTime = _openingTime;
     closingTime = _closingTime;
@@ -525,7 +525,7 @@ contract TimedCrowdsale is Crowdsale {
    * @return Whether crowdsale period has elapsed
    */
   function hasClosed() public view returns (bool) {
-    return now &gt; closingTime;
+    return now > closingTime;
   }
 
   /**
@@ -607,9 +607,9 @@ contract BuyLimits {
     */
     function withinLimits(uint _value) public view returns(bool) {
         if (maxBuy != 0) {
-            return (_value &gt;= minBuy &amp;&amp; _value &lt;= maxBuy);
+            return (_value >= minBuy && _value <= maxBuy);
         }
-        return (_value &gt;= minBuy);
+        return (_value >= minBuy);
     }
 
     /*
@@ -619,7 +619,7 @@ contract BuyLimits {
     */
     function _setLimits(uint _min, uint _max) internal {
         if (_max != 0) {
-            require (_min &lt;= _max); // Sanity Check
+            require (_min <= _max); // Sanity Check
         }
         minBuy = _min;
         maxBuy = _max;
@@ -721,10 +721,10 @@ contract DAOstackSale is MintedCrowdsale, CappedCrowdsale, FinalizableCrowdsale,
     **
     */
     function _prePurchaseAmount(uint _weiAmount) internal returns(uint weiAmount, uint changeEthBack) {
-        if (weiRaised.add(_weiAmount) &gt; cap) {
+        if (weiRaised.add(_weiAmount) > cap) {
             changeEthBack = weiRaised.add(_weiAmount) - cap;
             weiAmount = _weiAmount.sub(changeEthBack);
-            if (weiAmount &lt; minBuy) {
+            if (weiAmount < minBuy) {
                 _setLimits(weiAmount,maxBuy);
             }
         } else {
@@ -739,7 +739,7 @@ contract DAOstackSale is MintedCrowdsale, CappedCrowdsale, FinalizableCrowdsale,
      * @param _weiAmount Value in wei involved in the purchase
      */
     function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) internal {
-      require(tx.gasprice &lt;= maxGasPrice);
+      require(tx.gasprice <= maxGasPrice);
       super._preValidatePurchase(_beneficiary, _weiAmount);
     }
 }

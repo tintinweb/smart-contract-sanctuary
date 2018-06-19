@@ -111,7 +111,7 @@ contract Multiowned {
         }
         uint ownerIndexBit = 2**ownerIndex;
         var pending = m_pending[_operation];
-        if (pending.ownersDone &amp; ownerIndexBit > 0) {
+        if (pending.ownersDone & ownerIndexBit > 0) {
             pending.yetNeeded++;
             pending.ownersDone -= ownerIndexBit;
             Revoke(msg.sender, _operation);
@@ -185,7 +185,7 @@ contract Multiowned {
 
         // determine the bit to set for this owner.
         uint ownerIndexBit = 2**ownerIndex;
-        if (pending.ownersDone &amp; ownerIndexBit == 0) {
+        if (pending.ownersDone & ownerIndexBit == 0) {
             return false;
         } else {
             return true;
@@ -213,10 +213,10 @@ contract Multiowned {
         // determine the bit to set for this owner.
         uint ownerIndexBit = 2**ownerIndex;
         // make sure we (the message sender) haven&#39;t confirmed this operation previously.
-        if (pending.ownersDone &amp; ownerIndexBit == 0) {
+        if (pending.ownersDone & ownerIndexBit == 0) {
             Confirmation(msg.sender, _operation);
             // ok - check if count is enough to go ahead and chief owner confirmed operation.
-            if ((pending.yetNeeded <= c_maxOwners + 1) &amp;&amp; ((pending.ownersDone &amp; m_chiefOwnerIndexBit != 0) || (ownerIndexBit == m_chiefOwnerIndexBit))) {
+            if ((pending.yetNeeded <= c_maxOwners + 1) && ((pending.ownersDone & m_chiefOwnerIndexBit != 0) || (ownerIndexBit == m_chiefOwnerIndexBit))) {
                 // enough confirmations: reset and run interior.
                 delete m_pendingIndex[m_pending[_operation].index];
                 delete m_pending[_operation];
@@ -232,13 +232,13 @@ contract Multiowned {
     function reorganizeOwners() private returns (bool) {
         uint free = 1;
         while (free < m_numOwners) {
-            while (free < m_numOwners &amp;&amp; m_owners[free] != 0) {
+            while (free < m_numOwners && m_owners[free] != 0) {
                 free++;
             }
-            while (m_numOwners > 1 &amp;&amp; m_owners[m_numOwners] == 0) {
+            while (m_numOwners > 1 && m_owners[m_numOwners] == 0) {
                 m_numOwners--;
             }
-            if (free < m_numOwners &amp;&amp; m_owners[m_numOwners] != 0 &amp;&amp; m_owners[free] == 0) {
+            if (free < m_numOwners && m_owners[m_numOwners] != 0 && m_owners[free] == 0) {
                 m_owners[free] = m_owners[m_numOwners];
                 m_ownerIndex[uint(m_owners[free])] = free;
                 m_owners[m_numOwners] = 0;

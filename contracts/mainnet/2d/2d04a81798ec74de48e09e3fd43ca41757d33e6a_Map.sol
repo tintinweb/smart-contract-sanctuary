@@ -454,31 +454,31 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
 
     function payJackpot(uint _type) public checkIsClosed() {
         Round storage finishedRound = rounds[currentRound];
-        if (_type == 1 &amp;&amp; finishedRound.jackpot1.winner != address(0) &amp;&amp; finishedRound.jackpot1.balance > 0) {
+        if (_type == 1 && finishedRound.jackpot1.winner != address(0) && finishedRound.jackpot1.balance > 0) {
             require(this.balance >= finishedRound.jackpot1.balance);
             uint jackpot1TeamComission = (finishedRound.jackpot1.balance.mul(TEAM_COMMISSION_RATIO)).div(100);
             asyncSend(bookerAddress, jackpot1TeamComission);
             asyncSend(finishedRound.jackpot1.winner, finishedRound.jackpot1.balance.sub(jackpot1TeamComission));
             finishedRound.jackpot1.balance = 0;
-        } else if (_type == 2 &amp;&amp; finishedRound.jackpot2.winner != address(0) &amp;&amp; finishedRound.jackpot2.balance > 0) {
+        } else if (_type == 2 && finishedRound.jackpot2.winner != address(0) && finishedRound.jackpot2.balance > 0) {
             require(this.balance >= finishedRound.jackpot2.balance);
             uint jackpot2TeamComission = (finishedRound.jackpot2.balance.mul(TEAM_COMMISSION_RATIO)).div(100);
             asyncSend(bookerAddress, jackpot2TeamComission);
             asyncSend(finishedRound.jackpot2.winner, finishedRound.jackpot2.balance.sub(jackpot2TeamComission));
             finishedRound.jackpot2.balance = 0;
-        } else if (_type == 3 &amp;&amp; finishedRound.jackpot3.winner != address(0) &amp;&amp; finishedRound.jackpot3.balance > 0) {
+        } else if (_type == 3 && finishedRound.jackpot3.winner != address(0) && finishedRound.jackpot3.balance > 0) {
             require(this.balance >= finishedRound.jackpot3.balance);
             uint jackpot3TeamComission = (finishedRound.jackpot3.balance.mul(TEAM_COMMISSION_RATIO)).div(100);
             asyncSend(bookerAddress, jackpot3TeamComission);
             asyncSend(finishedRound.jackpot3.winner, finishedRound.jackpot3.balance.sub(jackpot3TeamComission));
             finishedRound.jackpot3.balance = 0;
-        } else if (_type == 4 &amp;&amp; finishedRound.jackpot4.winner != address(0) &amp;&amp; finishedRound.jackpot4.balance > 0) {
+        } else if (_type == 4 && finishedRound.jackpot4.winner != address(0) && finishedRound.jackpot4.balance > 0) {
             require(this.balance >= finishedRound.jackpot4.balance);
             uint jackpot4TeamComission = (finishedRound.jackpot4.balance.mul(TEAM_COMMISSION_RATIO)).div(100);
             asyncSend(bookerAddress, jackpot4TeamComission);
             asyncSend(finishedRound.jackpot4.winner, finishedRound.jackpot4.balance.sub(jackpot4TeamComission));
             finishedRound.jackpot4.balance = 0;
-        } else if (_type == 5 &amp;&amp; finishedRound.jackpot5.winner != address(0) &amp;&amp; finishedRound.jackpot5.balance > 0) {
+        } else if (_type == 5 && finishedRound.jackpot5.winner != address(0) && finishedRound.jackpot5.balance > 0) {
             require(this.balance >= finishedRound.jackpot5.balance);
             uint jackpot5TeamComission = (finishedRound.jackpot5.balance.mul(TEAM_COMMISSION_RATIO)).div(100);
             asyncSend(bookerAddress, jackpot5TeamComission);
@@ -486,7 +486,7 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
             finishedRound.jackpot5.balance = 0;
         }
 
-        if (finishedRound.globalJackpot.winner != address(0) &amp;&amp; finishedRound.globalJackpot.balance > 0) {
+        if (finishedRound.globalJackpot.winner != address(0) && finishedRound.globalJackpot.balance > 0) {
             require(this.balance >= finishedRound.globalJackpot.balance);
             uint globalTeamComission = (finishedRound.globalJackpot.balance.mul(TEAM_COMMISSION_RATIO)).div(100);
             asyncSend(bookerAddress, globalTeamComission);

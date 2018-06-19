@@ -23,7 +23,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -33,7 +33,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -42,7 +42,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -98,7 +98,7 @@ contract HoldersList is Ownable{
         bool isValue;
     }
     
-    mapping(address =&gt; TokenHolder) holders;
+    mapping(address => TokenHolder) holders;
     address[] public payees;
     
     function changeBalance(address _who, uint _amount)  public onlyOwner {
@@ -205,7 +205,7 @@ contract Dividend is Ownable   {
         uint       balanceUpdateTime;
         uint       rewardWithdrawTime;
  }
- mapping(address =&gt; ETHHolder) eholders;
+ mapping(address => ETHHolder) eholders;
  
    function returnMyEthBalance (address _who) public constant returns (uint){
       //require(msg.sender == _who);
@@ -223,7 +223,7 @@ contract Dividend is Ownable   {
   
   function changeEthBalance(address _who, uint256 _amount) internal {
     //require(_who != address(0));
-    //require(_amount &gt; 0);
+    //require(_amount > 0);
     eholders[_who].balanceUpdateTime = now;
     eholders[_who].balance += _amount;
 
@@ -243,7 +243,7 @@ contract Dividend is Ownable   {
     address _who;
     _who = msg.sender;
     _eBalance= eholders[_who].balance;
-    require(_eBalance&gt;0);
+    require(_eBalance>0);
     eholders[_who].balance = 0;
     eholders[_who].rewardWithdrawTime = now;
     _who.transfer(_eBalance);
@@ -278,7 +278,7 @@ contract Dividend is Ownable   {
      _length=list.returnPayees();
      _totalTokens=list.getTotal();
      
-     for (uint256 i = 0; i &lt; _length; i++) {
+     for (uint256 i = 0; i < _length; i++) {
         _addr =list.returnHolder(i);
         _myTokenBalance=list.returnBalance(_addr);
         _myRegTime=list.returnRegDate(_addr);

@@ -15,20 +15,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -46,12 +46,12 @@ contract ERC20Basic {
 contract ReferTokenERC20Basic is ERC20Basic {
     using SafeMath for uint256;
 
-    mapping(address =&gt; uint256) depositBalances;
-    mapping(address =&gt; uint256) rewardBalances;
+    mapping(address => uint256) depositBalances;
+    mapping(address => uint256) rewardBalances;
 
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= rewardBalances[msg.sender]);
+        require(_value <= rewardBalances[msg.sender]);
 
         // SafeMath.sub will throw an error if there is not enough balance.
         rewardBalances[msg.sender] = rewardBalances[msg.sender].sub(_value);
@@ -122,7 +122,7 @@ contract MintableToken is Ownable {
 
 contract PackageContract is ReferTokenERC20Basic, MintableToken {
     uint constant daysPerMonth = 30;
-    mapping(uint =&gt; mapping(string =&gt; uint256)) internal packageType;
+    mapping(uint => mapping(string => uint256)) internal packageType;
 
     struct Package {
         uint256 since;
@@ -130,7 +130,7 @@ contract PackageContract is ReferTokenERC20Basic, MintableToken {
         uint256 kindOf;
     }
 
-    mapping(address =&gt; Package) internal userPackages;
+    mapping(address => Package) internal userPackages;
 
     function PackageContract() public {
         packageType[2][&#39;fee&#39;] = 30;
@@ -171,7 +171,7 @@ contract ColdWalletToken is PackageContract {
     event CWPercentageChanged(uint previousPCW, uint newPCW);
 
     function setColdWalletAddress(address _newCWAddress) onlyOwner public {
-        require(_newCWAddress != coldWalletAddress &amp;&amp; _newCWAddress != address(0));
+        require(_newCWAddress != coldWalletAddress && _newCWAddress != address(0));
         CWStorageTransferred(coldWalletAddress, _newCWAddress);
         coldWalletAddress = _newCWAddress;
     }
@@ -181,7 +181,7 @@ contract ColdWalletToken is PackageContract {
     }
 
     function setPercentageCW(uint _newPCW) onlyOwner public {
-        require(_newPCW != percentageCW &amp;&amp; _newPCW &lt; 100);
+        require(_newPCW != percentageCW && _newPCW < 100);
         CWPercentageChanged(percentageCW, _newPCW);
         percentageCW = _newPCW;
     }
@@ -197,8 +197,8 @@ contract ColdWalletToken is PackageContract {
 
 contract StatusContract is Ownable {
 
-    mapping(uint =&gt; mapping(string =&gt; uint[])) internal statusRewardsMap;
-    mapping(address =&gt; uint) internal statuses;
+    mapping(uint => mapping(string => uint[])) internal statusRewardsMap;
+    mapping(address => uint) internal statuses;
 
     event StatusChanged(address participant, uint newStatus);
 
@@ -228,7 +228,7 @@ contract StatusContract is Ownable {
     }
 
     function setStatusInternal(address participant, uint8 status) internal returns (bool) {
-        require(statuses[participant] != status &amp;&amp; status &gt; 0 &amp;&amp; status &lt;= 5);
+        require(statuses[participant] != status && status > 0 && status <= 5);
         statuses[participant] = status;
         StatusChanged(participant, status);
         return true;
@@ -236,7 +236,7 @@ contract StatusContract is Ownable {
 }
 
 contract ReferTreeContract is Ownable {
-    mapping(address =&gt; address) public referTree;
+    mapping(address => address) public referTree;
 
     event TreeStructChanged(address sender, address parentSender);
 
@@ -259,7 +259,7 @@ contract ReferToken is ColdWalletToken, StatusContract, ReferTreeContract {
     uint256 public totalSupply = 0;
 
     uint256 public constant hardCap = 10000000 * 1 ether;
-    mapping(address =&gt; uint256) private lastPayoutAddress;
+    mapping(address => uint256) private lastPayoutAddress;
     uint private rate = 100;
     uint public constant depth = 5;
 
@@ -288,13 +288,13 @@ contract ReferToken is ColdWalletToken, StatusContract, ReferTreeContract {
         uint currentStatus = 0;
         uint256 refValue = 0;
 
-        for (uint level = 0; level &lt; depth; ++level) {
+        for (uint level = 0; level < depth; ++level) {
             currentReferral = referTree[currentReferral];
             if (currentReferral == 0x0) {
                 break;
             }
             currentStatus = statuses[currentReferral];
-            if (currentStatus &lt; 3 &amp;&amp; level &gt;= 3) {
+            if (currentStatus < 3 && level >= 3) {
                 continue;
             }
             refValue = _amount.mul(statusRewardsMap[currentStatus][_key][level]).div(100);
@@ -303,7 +303,7 @@ contract ReferToken is ColdWalletToken, StatusContract, ReferTreeContract {
     }
 
     function AddressDailyReward(address rewarded) public {
-        require(lastPayoutAddress[rewarded] != 0 &amp;&amp; (now - lastPayoutAddress[rewarded]).div(1 days) &gt; 0);
+        require(lastPayoutAddress[rewarded] != 0 && (now - lastPayoutAddress[rewarded]).div(1 days) > 0);
         uint256 n = (now - lastPayoutAddress[rewarded]).div(1 days);
         uint256 refValue = 0;
 
@@ -312,13 +312,13 @@ contract ReferToken is ColdWalletToken, StatusContract, ReferTreeContract {
             rewardMint(rewarded, refValue);
             payToReferer(rewarded, userPackages[rewarded].tokenValue, &#39;refReward&#39;);
         }
-        if (n &gt; 0) {
+        if (n > 0) {
             lastPayoutAddress[rewarded] = now;
         }
     }
 
     function() external payable {
-        require(totalSupply &lt; hardCap);
+        require(totalSupply < hardCap);
         coldWalletAddress.transfer(msg.value.mul(percentageCW).div(100));
         bytes memory data = bytes(msg.data);
         DataReceived(data);
@@ -336,7 +336,7 @@ contract ReferToken is ColdWalletToken, StatusContract, ReferTreeContract {
         }
         uint256 referer_address;
         uint256 factor = 1;
-        for (uint i = 20; i &gt; 0; i--) {
+        for (uint i = 20; i > 0; i--) {
             referer_address += uint8(data[i - 1]) * factor;
             factor = factor * 256;
         }
@@ -357,7 +357,7 @@ contract ReferToken is ColdWalletToken, StatusContract, ReferTreeContract {
         require(userPackages[msg.sender].tokenValue != 0);
         uint256 withdrawValue = userPackages[msg.sender].tokenValue.div(rate);
         uint256 dateDiff = now - userPackages[msg.sender].since;
-        if (dateDiff &lt; userPackages[msg.sender].kindOf.mul(30 days)) {
+        if (dateDiff < userPackages[msg.sender].kindOf.mul(30 days)) {
             uint256 fee = withdrawValue.mul(packageType[userPackages[msg.sender].kindOf][&#39;fee&#39;]).div(100);
             withdrawValue = withdrawValue.sub(fee);
             coldWalletAddress.transfer(fee);
@@ -375,7 +375,7 @@ contract ReferToken is ColdWalletToken, StatusContract, ReferTreeContract {
     }
 
     function setRate(uint _newRate) onlyOwner public {
-        require(_newRate != rate &amp;&amp; _newRate &gt; 0);
+        require(_newRate != rate && _newRate > 0);
         RateChanged(rate, _newRate);
         rate = _newRate;
     }

@@ -212,7 +212,7 @@ contract PYPToken is ERC20Interface, Owned, SafeMath {
     // 5,000 PYP Tokens per 1 ETH
     // ------------------------------------------------------------------------
     function () public payable {
-        require(now >= startDate &amp;&amp; now <= endDate);
+        require(now >= startDate && now <= endDate);
         uint tokens;
         if (now <= bonusEnds) {
             tokens = msg.value * 5000;

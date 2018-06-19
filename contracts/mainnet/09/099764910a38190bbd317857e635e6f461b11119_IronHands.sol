@@ -180,7 +180,7 @@ contract IronHands is Owned {
      */ 
     function deposit() payable public {
         //You have to send more than 1000000 wei and <= 0.005 ETH
-        require(msg.value > 1000000 &amp;&amp; msg.value <= 5000000000000000);
+        require(msg.value > 1000000 && msg.value <= 5000000000000000);
         //Compute how much to pay them
         uint256 amountCredited = (msg.value * multiplier) / 100;
         //Get in line to be paid back.

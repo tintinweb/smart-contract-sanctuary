@@ -249,7 +249,7 @@ contract Pausable is Ownable {
    * pausedPublic can&#39;t be false while pausedOwnerAdmin is true
    */
   function pause(bool newPausedPublic, bool newPausedOwnerAdmin) onlyOwner public {
-    require(!(newPausedPublic == false &amp;&amp; newPausedOwnerAdmin == true));
+    require(!(newPausedPublic == false && newPausedOwnerAdmin == true));
 
     pausedPublic = newPausedPublic;
     pausedOwnerAdmin = newPausedOwnerAdmin;

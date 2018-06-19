@@ -9,37 +9,37 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 
     function max64(uint64 a, uint64 b) internal pure returns (uint64) {
-        return a &gt;= b ? a : b;
+        return a >= b ? a : b;
     }
 
     function min64(uint64 a, uint64 b) internal pure returns (uint64) {
-        return a &lt; b ? a : b;
+        return a < b ? a : b;
     }
 
     function max256(uint256 a, uint256 b) internal pure returns (uint256) {
-        return a &gt;= b ? a : b;
+        return a >= b ? a : b;
     }
 
     function min256(uint256 a, uint256 b) internal pure returns (uint256) {
-        return a &lt; b ? a : b;
+        return a < b ? a : b;
     }
 }
 
@@ -81,7 +81,7 @@ contract ERC20 {
 contract BasicToken is ERC20Basic {
     using SafeMath for uint256;
 
-    mapping (address =&gt; uint256) balances;
+    mapping (address => uint256) balances;
 
     /**
     * Protection against short address attack
@@ -98,7 +98,7 @@ contract BasicToken is ERC20Basic {
     */
     function transfer(address _to, uint256 _value) public onlyPayloadSize(2) returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
         require(transfersEnabled);
 
         // SafeMath.sub will throw if there is not enough balance.
@@ -122,7 +122,7 @@ contract BasicToken is ERC20Basic {
 
 contract StandardToken is ERC20, BasicToken {
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping (address => mapping (address => uint256)) internal allowed;
 
     /**
      * @dev Transfer tokens from one address to another
@@ -132,8 +132,8 @@ contract StandardToken is ERC20, BasicToken {
      */
     function transferFrom(address _from, address _to, uint256 _value) public onlyPayloadSize(3) returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
         require(transfersEnabled);
 
         balances[_from] = balances[_from].sub(_value);
@@ -183,7 +183,7 @@ contract StandardToken is ERC20, BasicToken {
 
     function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool success) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         }
         else {
@@ -334,13 +334,13 @@ contract XCCCrowdsale is Ownable, Crowdsale, MintableToken {
     State public state;
 
     // https://www.coingecko.com/en/coins/ethereum
-    //$0.002 = 1 token =&gt; $ 1,000 = 1.6730521490354853 ETH =&gt;
-    // 500,000 token = 1.6730521490354853 ETH =&gt; 1 ETH = 500,000/1.6730521490354853 = 298,855
+    //$0.002 = 1 token => $ 1,000 = 1.6730521490354853 ETH =>
+    // 500,000 token = 1.6730521490354853 ETH => 1 ETH = 500,000/1.6730521490354853 = 298,855
     uint256 public rate  = 298855;
     //uint256 public rate  = 300000; //for test&#39;s
 
-    mapping (address =&gt; uint256) public deposited;
-    mapping(address =&gt; bool) public whitelist;
+    mapping (address => uint256) public deposited;
+    mapping(address => bool) public whitelist;
 
     uint256 public constant INITIAL_SUPPLY = 5 * (10 ** 12) * (10 ** uint256(decimals));
     uint256 public fundForSale = 5 * (10 ** 12) * (10 ** uint256(decimals));
@@ -402,27 +402,27 @@ contract XCCCrowdsale is Ownable, Crowdsale, MintableToken {
         //currentDate = 1526860799; //for test&#39;s
         uint256 currentPeriod = getPeriod(currentDate);
         uint256 amountOfTokens = 0;
-        if(currentPeriod &lt; 2){
+        if(currentPeriod < 2){
             amountOfTokens = _weiAmount.mul(rate);
-            if (10**3*(10 ** uint256(decimals)) &lt;= amountOfTokens &amp;&amp; amountOfTokens &lt; 10**5*(10 ** uint256(decimals))) {
+            if (10**3*(10 ** uint256(decimals)) <= amountOfTokens && amountOfTokens < 10**5*(10 ** uint256(decimals))) {
                 amountOfTokens = amountOfTokens.mul(101).div(100);
             }
-            if (10**5*(10 ** uint256(decimals)) &lt;= amountOfTokens &amp;&amp; amountOfTokens &lt; 10**6*(10 ** uint256(decimals))) {
+            if (10**5*(10 ** uint256(decimals)) <= amountOfTokens && amountOfTokens < 10**6*(10 ** uint256(decimals))) {
                 amountOfTokens = amountOfTokens.mul(1015).div(1000);
             }
-            if (10**6*(10 ** uint256(decimals)) &lt;= amountOfTokens &amp;&amp; amountOfTokens &lt; 5*10**6*(10 ** uint256(decimals))) {
+            if (10**6*(10 ** uint256(decimals)) <= amountOfTokens && amountOfTokens < 5*10**6*(10 ** uint256(decimals))) {
                 amountOfTokens = amountOfTokens.mul(1025).div(1000);
             }
-            if (5*10**6*(10 ** uint256(decimals)) &lt;= amountOfTokens &amp;&amp; amountOfTokens &lt; 9*10**6*(10 ** uint256(decimals))) {
+            if (5*10**6*(10 ** uint256(decimals)) <= amountOfTokens && amountOfTokens < 9*10**6*(10 ** uint256(decimals))) {
                 amountOfTokens = amountOfTokens.mul(105).div(100);
             }
-            if (9*10**6*(10 ** uint256(decimals)) &lt;= amountOfTokens) {
+            if (9*10**6*(10 ** uint256(decimals)) <= amountOfTokens) {
                 amountOfTokens = amountOfTokens.mul(110).div(100);
             }
 
             if(currentPeriod == 0){
                 amountOfTokens = amountOfTokens.mul(1075).div(1000);
-                if (tokenAllocated.add(amountOfTokens) &gt; fundPreSale) {
+                if (tokenAllocated.add(amountOfTokens) > fundPreSale) {
                     TokenLimitReached(tokenAllocated, amountOfTokens);
                     return 0;
                 }
@@ -433,13 +433,13 @@ contract XCCCrowdsale is Ownable, Crowdsale, MintableToken {
     }
 
     function getPeriod(uint256 _currentDate) public pure returns (uint) {
-        //1525651200 - May, 07, 2018 00:00:00 &amp;&amp; 1528156799 - Jun, 04, 2018 23:59:59
-        //1540080000 - Oct, 21, 2018 00:00:00 &amp;&amp; 1542758399 - Nov, 20, 2018 23:59:59
+        //1525651200 - May, 07, 2018 00:00:00 && 1528156799 - Jun, 04, 2018 23:59:59
+        //1540080000 - Oct, 21, 2018 00:00:00 && 1542758399 - Nov, 20, 2018 23:59:59
 
-        if( 1525651200 &lt;= _currentDate &amp;&amp; _currentDate &lt;= 1528156799){
+        if( 1525651200 <= _currentDate && _currentDate <= 1528156799){
             return 0;
         }
-        if( 1540080000 &lt;= _currentDate &amp;&amp; _currentDate &lt;= 1542758399){
+        if( 1540080000 <= _currentDate && _currentDate <= 1542758399){
             return 1;
         }
         return 10;
@@ -463,10 +463,10 @@ contract XCCCrowdsale is Ownable, Crowdsale, MintableToken {
 
     function validPurchaseTokens(uint256 _weiAmount) public inState(State.Active) returns (uint256) {
         uint256 addTokens = getTotalAmountOfTokens(_weiAmount);
-        if (10**3*(10 ** uint256(decimals)) &gt; addTokens || addTokens &gt; 9999*10**3*(10 ** uint256(decimals))) {
+        if (10**3*(10 ** uint256(decimals)) > addTokens || addTokens > 9999*10**3*(10 ** uint256(decimals))) {
             return 0;
         }
-        if (tokenAllocated.add(addTokens) &gt; fundForSale) {
+        if (tokenAllocated.add(addTokens) > fundForSale) {
             TokenLimitReached(tokenAllocated, addTokens);
             return 0;
         }
@@ -483,7 +483,7 @@ contract XCCCrowdsale is Ownable, Crowdsale, MintableToken {
     }
 
     function setRate(uint256 _newRate) external onlyOwner returns (bool){
-        require(_newRate &gt; 0);
+        require(_newRate > 0);
         rate = _newRate;
         return true;
     }

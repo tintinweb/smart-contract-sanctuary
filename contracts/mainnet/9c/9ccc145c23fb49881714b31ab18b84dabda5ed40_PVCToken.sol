@@ -127,8 +127,8 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _amount) public returns (bool success) {
     require(_to != address(0));
-    require(balances[msg.sender] >= _amount &amp;&amp; _amount > 0
-        &amp;&amp; balances[_to].add(_amount) > balances[_to]);
+    require(balances[msg.sender] >= _amount && _amount > 0
+        && balances[_to].add(_amount) > balances[_to]);
 
      if (lockupParticipants[msg.sender].lockupAmount>0)
     {
@@ -143,7 +143,7 @@ contract BasicToken is ERC20Basic {
             require(balanceOfParticipant.sub(_amount)>=lockedAmount.sub(allowedAmount));
         }
         //3 months have passed
-        else if (timePassed >= 92 days &amp;&amp; timePassed < 183 days)
+        else if (timePassed >= 92 days && timePassed < 183 days)
         {
             //upto 30% amount is unlocked
             balanceOfParticipant = balances[msg.sender];
@@ -153,7 +153,7 @@ contract BasicToken is ERC20Basic {
         
         }
          //6 months have passed
-        else if (timePassed >= 183 days &amp;&amp; timePassed < 365 days)
+        else if (timePassed >= 183 days && timePassed < 365 days)
         {
             //upto 55% amount is unlocked
             balanceOfParticipant = balances[msg.sender];
@@ -206,7 +206,7 @@ contract StandardToken is ERC20, BasicToken {
     require(_to != address(0));
     require(balances[_from] >= _amount);
     require(allowed[_from][msg.sender] >= _amount);
-    require(_amount > 0 &amp;&amp; balances[_to].add(_amount) > balances[_to]);
+    require(_amount > 0 && balances[_to].add(_amount) > balances[_to]);
     if (lockupParticipants[_from].lockupAmount>0)
     {
         uint timePassed = now - lockupParticipants[_from].lockupTime;
@@ -220,7 +220,7 @@ contract StandardToken is ERC20, BasicToken {
             require(balanceOfParticipant.sub(_amount)>=lockedAmount.sub(allowedAmount));
         }
         //3 months have passed
-        else if (timePassed >= 92 days &amp;&amp; timePassed < 183 days)
+        else if (timePassed >= 92 days && timePassed < 183 days)
         {
             //upto 30% amount is unlocked
             balanceOfParticipant = balances[_from];
@@ -230,7 +230,7 @@ contract StandardToken is ERC20, BasicToken {
         
         }
          //6 months have passed
-        else if (timePassed >= 183 days &amp;&amp; timePassed < 365 days)
+        else if (timePassed >= 183 days && timePassed < 365 days)
         {
             //upto 55% amount is unlocked
             balanceOfParticipant = balances[_from];
@@ -344,8 +344,8 @@ contract BurnableToken is StandardToken, Ownable {
          {
              tokens[i] = tokens[i].mul(10**18);
               require(teamMembers[i] != address(0));
-              require(balances[owner] >= tokens[i] &amp;&amp; tokens[i] > 0
-            &amp;&amp; balances[teamMembers[i]].add(tokens[i]) > balances[teamMembers[i]]);
+              require(balances[owner] >= tokens[i] && tokens[i] > 0
+            && balances[teamMembers[i]].add(tokens[i]) > balances[teamMembers[i]]);
 
             // SafeMath.sub will throw if there is not enough balance.
             balances[owner] = balances[owner].sub(tokens[i]);
@@ -363,8 +363,8 @@ contract BurnableToken is StandardToken, Ownable {
          {
              tokens[i] = tokens[i].mul(10**18);
               require(advisors[i] != address(0));
-              require(balances[owner] >= tokens[i] &amp;&amp; tokens[i] > 0
-            &amp;&amp; balances[advisors[i]].add(tokens[i]) > balances[advisors[i]]);
+              require(balances[owner] >= tokens[i] && tokens[i] > 0
+            && balances[advisors[i]].add(tokens[i]) > balances[advisors[i]]);
 
             // SafeMath.sub will throw if there is not enough balance.
             balances[owner] = balances[owner].sub(tokens[i]);

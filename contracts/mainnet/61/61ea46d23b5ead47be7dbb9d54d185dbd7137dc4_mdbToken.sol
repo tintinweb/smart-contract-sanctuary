@@ -420,14 +420,14 @@ contract mdbToken is
     function fundFailed() public constant returns (bool)
     {
         return !__abortFuse
-            || (now > END_DATE &amp;&amp; etherRaised < MIN_ETH_FUND);
+            || (now > END_DATE && etherRaised < MIN_ETH_FUND);
     }
     
     // Funding succeeds if not aborted, minimum funds are raised before end date
     function fundSucceeded() public constant returns (bool)
     {
         return !fundFailed()
-            &amp;&amp; etherRaised >= MIN_ETH_FUND;
+            && etherRaised >= MIN_ETH_FUND;
     }
 
     // Returns the USD value of ether at the set USD/ETH rate

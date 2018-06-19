@@ -45,14 +45,14 @@ contract ActivityStorage is StorageBase {
         uint64 startDate;
         // endDate (in seconds)
         uint64 endDate;
-        // packId =&gt; address of bid winner
-        mapping(uint16 =&gt; address) soldPackToAddress;
-        // address =&gt; number of success bid
-        mapping(address =&gt; uint16) addressBoughtCount;
+        // packId => address of bid winner
+        mapping(uint16 => address) soldPackToAddress;
+        // address => number of success bid
+        mapping(address => uint16) addressBoughtCount;
     }
 
     // limit max activityId to 65536, big enough
-    mapping(uint16 =&gt; Activity) public activities;
+    mapping(uint16 => Activity) public activities;
 
     function createActivity(
         uint16 _activityId,
@@ -326,15 +326,15 @@ contract ActivityCore is LogicBase {
         // not allow to bid when activity is paused
         require(!isPause);
         // not allow to bid when activity is not initialized (buyLimit == 0)
-        require(buyLimit &gt; 0);
+        require(buyLimit > 0);
         // should send enough ether
-        require(msg.value &gt;= packPrice);
-        // verify startDate &amp; endDate
-        require(now &gt;= startDate &amp;&amp; now &lt;= endDate);
+        require(msg.value >= packPrice);
+        // verify startDate & endDate
+        require(now >= startDate && now <= endDate);
         // this pack is not sold out
         require(activityStorage.getBuyerAddress(_activityId, _packId) == address(0));
         // buyer not exceed buyLimit
-        require(activityStorage.getAddressBoughtCount(_activityId, msg.sender) &lt; buyLimit);
+        require(activityStorage.getAddressBoughtCount(_activityId, msg.sender) < buyLimit);
         // record in blockchain
         activityStorage.sellPackToAddress(_activityId, _packId, msg.sender);
         // emit the success event

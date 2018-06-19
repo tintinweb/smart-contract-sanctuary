@@ -98,26 +98,26 @@ contract DSStop is DSNote, DSAuth {
 
 contract DSMath {
     function add(uint x, uint y) internal pure returns (uint z) {
-        require((z = x + y) &gt;= x);
+        require((z = x + y) >= x);
     }
     function sub(uint x, uint y) internal pure returns (uint z) {
-        require((z = x - y) &lt;= x);
+        require((z = x - y) <= x);
     }
     function mul(uint x, uint y) internal pure returns (uint z) {
         require(y == 0 || (z = x * y) / y == x);
     }
 
     function min(uint x, uint y) internal pure returns (uint z) {
-        return x &lt;= y ? x : y;
+        return x <= y ? x : y;
     }
     function max(uint x, uint y) internal pure returns (uint z) {
-        return x &gt;= y ? x : y;
+        return x >= y ? x : y;
     }
     function imin(int x, int y) internal pure returns (int z) {
-        return x &lt;= y ? x : y;
+        return x <= y ? x : y;
     }
     function imax(int x, int y) internal pure returns (int z) {
-        return x &gt;= y ? x : y;
+        return x >= y ? x : y;
     }
 
     uint constant WAD = 10 ** 18;
@@ -183,13 +183,13 @@ contract ERC20 is ERC20Events {
 
 contract IOVTokenBase is ERC20, DSMath {
     uint256                                            _supply;
-    mapping (address =&gt; uint256)                       _balances;
-    mapping (address =&gt; mapping (address =&gt; uint256))  _approvals;
+    mapping (address => uint256)                       _balances;
+    mapping (address => mapping (address => uint256))  _approvals;
 
     uint256  public  airdropBSupply = 5*10**6*10**8; // airdrop total supply = 500W
     uint256  public  currentAirdropAmount = 0;
     uint256  airdropNum  =  10*10**8;                // 10IOV each time for airdrop
-    mapping (address =&gt; bool) touched;               //records whether an address has received an airdrop;
+    mapping (address => bool) touched;               //records whether an address has received an airdrop;
 
     constructor(uint supply) public {
         _balances[msg.sender] = sub(supply, airdropBSupply);
@@ -215,10 +215,10 @@ contract IOVTokenBase is ERC20, DSMath {
         public
         returns (bool)
     {
-        require(_balances[src] &gt;= wad);
+        require(_balances[src] >= wad);
 
         if (src != msg.sender) {
-            require(_approvals[src][msg.sender] &gt;= wad);
+            require(_approvals[src][msg.sender] >= wad);
             _approvals[src][msg.sender] = sub(_approvals[src][msg.sender], wad);
         }
 
@@ -240,7 +240,7 @@ contract IOVTokenBase is ERC20, DSMath {
 
     //
     function getBalance(address src) internal constant returns(uint) {
-        if( currentAirdropAmount &lt; airdropBSupply &amp;&amp; !touched[src]) {
+        if( currentAirdropAmount < airdropBSupply && !touched[src]) {
             return add(_balances[src], airdropNum);
         } else {
             return _balances[src];
@@ -251,7 +251,7 @@ contract IOVTokenBase is ERC20, DSMath {
 contract ContractLock is DSStop {
 
     uint  public  unlockTime;         // Start time for token transferring
-    mapping (address =&gt; bool) public isAdmin;  // Admin accounts
+    mapping (address => bool) public isAdmin;  // Admin accounts
 
     event LogAddAdmin(address whoAdded, address newAdmin);
     event LogRemoveAdmin(address whoRemoved, address admin);
@@ -297,7 +297,7 @@ contract ContractLock is DSStop {
 
 
     modifier isUnlocked {
-        require( now &gt; unlockTime || isAdmin[msg.sender]);
+        require( now > unlockTime || isAdmin[msg.sender]);
         _;
     }
 
@@ -326,16 +326,16 @@ contract IOVToken is IOVTokenBase(10*10**9*10**8), ContractLock(1527782400) {
 
     function transferFrom(address src, address dst, uint wad) public stoppable isUnlocked returns (bool)
     {   
-        require(_balances[src] &gt;= wad);
+        require(_balances[src] >= wad);
 
-        if(!touched[src] &amp;&amp; currentAirdropAmount &lt; airdropBSupply) {
+        if(!touched[src] && currentAirdropAmount < airdropBSupply) {
             _balances[src] = add( _balances[src], airdropNum );
             touched[src] = true;
             currentAirdropAmount = add(currentAirdropAmount, airdropNum);
         }
 
-        if (src != msg.sender &amp;&amp; _approvals[src][msg.sender] != uint(-1)) {
-            require(_approvals[src][msg.sender] &gt;= wad);
+        if (src != msg.sender && _approvals[src][msg.sender] != uint(-1)) {
+            require(_approvals[src][msg.sender] >= wad);
             _approvals[src][msg.sender] = sub(_approvals[src][msg.sender], wad);
         }
 

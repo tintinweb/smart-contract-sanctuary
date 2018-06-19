@@ -17,21 +17,21 @@ library BWUtility {
     // All x (_x2, _xy2) are adjacent to o (_x1, _y1) in this ascii image. 
     // Adjacency does not wrapp around map edges so if y2 = 255 and y1 = 0 then they are not ajacent
     function isAdjacent(uint8 _x1, uint8 _y1, uint8 _x2, uint8 _y2) pure public returns (bool) {
-        return ((_x1 == _x2 &amp;&amp;      (_y2 - _y1 == 1 || _y1 - _y2 == 1))) ||      // Same column
-               ((_y1 == _y2 &amp;&amp;      (_x2 - _x1 == 1 || _x1 - _x2 == 1))) ||      // Same row
-               ((_x2 - _x1 == 1 &amp;&amp;  (_y2 - _y1 == 1 || _y1 - _y2 == 1))) ||      // Right upper or lower diagonal
-               ((_x1 - _x2 == 1 &amp;&amp;  (_y2 - _y1 == 1 || _y1 - _y2 == 1)));        // Left upper or lower diagonal
+        return ((_x1 == _x2 &&      (_y2 - _y1 == 1 || _y1 - _y2 == 1))) ||      // Same column
+               ((_y1 == _y2 &&      (_x2 - _x1 == 1 || _x1 - _x2 == 1))) ||      // Same row
+               ((_x2 - _x1 == 1 &&  (_y2 - _y1 == 1 || _y1 - _y2 == 1))) ||      // Right upper or lower diagonal
+               ((_x1 - _x2 == 1 &&  (_y2 - _y1 == 1 || _y1 - _y2 == 1)));        // Left upper or lower diagonal
     }
 
     // Converts (x, y) to tileId xy
     function toTileId(uint8 _x, uint8 _y) pure public returns (uint16) {
-        return uint16(_x) &lt;&lt; 8 | uint16(_y);
+        return uint16(_x) << 8 | uint16(_y);
     }
 
     // Converts _tileId to (x, y)
     function fromTileId(uint16 _tileId) pure public returns (uint8, uint8) {
         uint8 y = uint8(_tileId);
-        uint8 x = uint8(_tileId &gt;&gt; 8);
+        uint8 x = uint8(_tileId >> 8);
         return (x, y);
     }
     

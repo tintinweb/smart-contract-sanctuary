@@ -161,7 +161,7 @@ library Array256Lib {
           swap = root;
           if(self[swap] < self[lChild])
             swap = lChild;
-          if((rChild <= end) &amp;&amp; (self[swap]<self[rChild]))
+          if((rChild <= end) && (self[swap]<self[rChild]))
             swap = rChild;
           if(swap == root)
             lChild = end+1;
@@ -190,7 +190,7 @@ library Array256Lib {
           swap = root;
           if(self[swap] < self[lChild])
             swap = lChild;
-          if((rChild <= end) &amp;&amp; (self[swap]<self[rChild]))
+          if((rChild <= end) && (self[swap]<self[rChild]))
             swap = rChild;
           if(swap == root)
             lChild = end + 1;

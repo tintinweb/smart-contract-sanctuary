@@ -287,7 +287,7 @@ contract PresalePool {
   // it is VERY IMPORTANT not to get the amount wrong.
   function submitPool (uint amountInWei) public onlyOwner noReentrancy {
     require (contractStage < 3);
-    require (contributionMin <= amountInWei &amp;&amp; amountInWei <= this.balance);
+    require (contributionMin <= amountInWei && amountInWei <= this.balance);
     finalBalance = this.balance;
     require (receiverAddress.call.value(amountInWei).gas(msg.gas.sub(5000))());
     if (this.balance > 0) ethRefundAmount.push(this.balance);

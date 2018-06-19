@@ -268,8 +268,8 @@ contract Cryptonationz is DetailedERC20, StandardToken, BurnableToken {
     DetailedERC20(_name, _symbol, _decimals)
     public
     {
-        require(_pubAddress != address(0) &amp;&amp; _compAddress != address(0) &amp;&amp; _devAddress != address(0));
-        require(_advAddress != address(0) &amp;&amp; _reserveAddress != address(0));
+        require(_pubAddress != address(0) && _compAddress != address(0) && _devAddress != address(0));
+        require(_advAddress != address(0) && _reserveAddress != address(0));
 
         totalSupply_ = 400000000 * (10 ** uint256(_decimals));
 

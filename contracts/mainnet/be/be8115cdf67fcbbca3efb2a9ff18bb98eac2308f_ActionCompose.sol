@@ -113,10 +113,10 @@ contract AccessService is AccessAdmin {
         external 
     {
         require(msg.sender == addrFinance || msg.sender == addrAdmin);
-        require(_amount &gt; 0);
+        require(_amount > 0);
         address receiver = _target == address(0) ? addrFinance : _target;
         uint256 balance = this.balance;
-        if (_amount &lt; balance) {
+        if (_amount < balance) {
             receiver.transfer(_amount);
         } else {
             receiver.transfer(this.balance);
@@ -148,22 +148,22 @@ contract WarToken is ERC721, AccessAdmin {
     uint256 destroyFashionCount;
 
     /// @dev Equipment token ID vs owner address
-    mapping (uint256 =&gt; address) fashionIdToOwner;
+    mapping (uint256 => address) fashionIdToOwner;
 
     /// @dev Equipments owner by the owner (array)
-    mapping (address =&gt; uint256[]) ownerToFashionArray;
+    mapping (address => uint256[]) ownerToFashionArray;
 
     /// @dev Equipment token ID search in owner array
-    mapping (uint256 =&gt; uint256) fashionIdToOwnerIndex;
+    mapping (uint256 => uint256) fashionIdToOwnerIndex;
 
     /// @dev The authorized address for each WAR
-    mapping (uint256 =&gt; address) fashionIdToApprovals;
+    mapping (uint256 => address) fashionIdToApprovals;
 
     /// @dev The authorized operators for each address
-    mapping (address =&gt; mapping (address =&gt; bool)) operatorToApprovals;
+    mapping (address => mapping (address => bool)) operatorToApprovals;
 
     /// @dev Trust contract
-    mapping (address =&gt; bool) actionContracts;
+    mapping (address => bool) actionContracts;
 
     function setActionContract(address _actionAddr, bool _useful) external onlyAdmin {
         actionContracts[_actionAddr] = _useful;
@@ -199,7 +199,7 @@ contract WarToken is ERC721, AccessAdmin {
     // modifier
     /// @dev Check if token ID is valid
     modifier isValidToken(uint256 _tokenId) {
-        require(_tokenId &gt;= 1 &amp;&amp; _tokenId &lt;= fashionArray.length);
+        require(_tokenId >= 1 && _tokenId <= fashionArray.length);
         require(fashionIdToOwner[_tokenId] != address(0)); 
         _;
     }
@@ -213,7 +213,7 @@ contract WarToken is ERC721, AccessAdmin {
     // ERC721
     function supportsInterface(bytes4 _interfaceId) external view returns(bool) {
         // ERC165 || ERC721 || ERC165^ERC721
-        return (_interfaceId == 0x01ffc9a7 || _interfaceId == 0x80ac58cd || _interfaceId == 0x8153916a) &amp;&amp; (_interfaceId != 0xffffffff);
+        return (_interfaceId == 0x01ffc9a7 || _interfaceId == 0x80ac58cd || _interfaceId == 0x8153916a) && (_interfaceId != 0xffffffff);
     }
         
     function name() public pure returns(string) {
@@ -398,7 +398,7 @@ contract WarToken is ERC721, AccessAdmin {
         require(_owner != address(0));
 
         uint256 newFashionId = fashionArray.length;
-        require(newFashionId &lt; 4294967296);
+        require(newFashionId < 4294967296);
 
         fashionArray.length += 1;
         Fashion storage fs = fashionArray[newFashionId];
@@ -465,19 +465,19 @@ contract WarToken is ERC721, AccessAdmin {
         require(actionContracts[msg.sender]);
 
         Fashion storage fs = fashionArray[_tokenId];
-        if (_idxArray[0] &gt; 0) {
+        if (_idxArray[0] > 0) {
             _changeAttrByIndex(fs, _idxArray[0], _params[0]);
         }
 
-        if (_idxArray[1] &gt; 0) {
+        if (_idxArray[1] > 0) {
             _changeAttrByIndex(fs, _idxArray[1], _params[1]);
         }
 
-        if (_idxArray[2] &gt; 0) {
+        if (_idxArray[2] > 0) {
             _changeAttrByIndex(fs, _idxArray[2], _params[2]);
         }
 
-        if (_idxArray[3] &gt; 0) {
+        if (_idxArray[3] > 0) {
             _changeAttrByIndex(fs, _idxArray[3], _params[3]);
         }
 
@@ -522,7 +522,7 @@ contract WarToken is ERC721, AccessAdmin {
     {
         require(actionContracts[msg.sender]);
 
-        require(_tokenId &gt;= 1 &amp;&amp; _tokenId &lt;= fashionArray.length);
+        require(_tokenId >= 1 && _tokenId <= fashionArray.length);
         address owner = fashionIdToOwner[_tokenId];
         require(owner != address(0));
         require(_to != address(0));
@@ -557,7 +557,7 @@ contract WarToken is ERC721, AccessAdmin {
         uint256 length = fsArray.length;
         tokens = new uint256[](length);
         flags = new uint32[](length);
-        for (uint256 i = 0; i &lt; length; ++i) {
+        for (uint256 i = 0; i < length; ++i) {
             tokens[i] = fsArray[i];
             Fashion storage fs = fashionArray[fsArray[i]];
             flags[i] = uint32(uint32(fs.protoId) * 100 + uint32(fs.quality) * 10 + fs.pos);
@@ -567,11 +567,11 @@ contract WarToken is ERC721, AccessAdmin {
     /// @dev WAR token info returned based on Token ID transfered (64 at most)
     function getFashionsAttrs(uint256[] _tokens) external view returns(uint16[] attrs) {
         uint256 length = _tokens.length;
-        require(length &lt;= 64);
+        require(length <= 64);
         attrs = new uint16[](length * 11);
         uint256 tokenId;
         uint256 index;
-        for (uint256 i = 0; i &lt; length; ++i) {
+        for (uint256 i = 0; i < length; ++i) {
             tokenId = _tokens[i];
             if (fashionIdToOwner[tokenId] != address(0)) {
                 index = i * 11;
@@ -605,7 +605,7 @@ contract Random {
 
     /*
     function _randByRange(uint256 _min, uint256 _max) internal returns (uint256) {
-        if (_min &gt;= _max) {
+        if (_min >= _max) {
             return _min;
         }
         return (_rand() % (_max - _min)) + _min;
@@ -654,7 +654,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -664,7 +664,7 @@ library SafeMath {
     * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -673,7 +673,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -726,7 +726,7 @@ contract ActionCompose is Random, AccessService {
         attrs[2] = _pos;
 
         uint16 qtyParam = 0;
-        if (_quality &lt;= 3) {
+        if (_quality <= 3) {
             qtyParam = _quality - 1;
         } else if (_quality == 4) {
             qtyParam = 4;

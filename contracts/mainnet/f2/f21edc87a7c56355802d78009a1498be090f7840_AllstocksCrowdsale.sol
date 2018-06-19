@@ -14,20 +14,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -123,7 +123,7 @@ contract AllstocksCrowdsale is Owned {
   bool public isFinalized = false; 
   
   //refund list - will hold a list of all contributers 
-  mapping(address =&gt; uint256) public refunds;
+  mapping(address => uint256) public refunds;
 
   /**
    * Event for token Allocate logging
@@ -143,8 +143,8 @@ contract AllstocksCrowdsale is Owned {
     require (isActive == false); 
     require (isFinalized == false); 			        	   
     require (msg.sender == owner);                // locks finalize to the ultimate ETH owner
-    require(_fundingStartTime &gt; 0);
-    require(_fundingEndTime &gt; 0 &amp;&amp; _fundingEndTime &gt; _fundingStartTime);
+    require(_fundingStartTime > 0);
+    require(_fundingEndTime > 0 && _fundingEndTime > _fundingStartTime);
     require(_token != address(0));
 
     isFinalized = false;                          // controls pre through crowdsale state
@@ -159,7 +159,7 @@ contract AllstocksCrowdsale is Owned {
   /// @dev send funding to safe wallet if minimum is reached 
   function vaultFunds() public onlyOwner {
     require(msg.sender == owner);                    // Allstocks double chack
-    require(_raised &gt;= tokenCreationMin);            // have to sell minimum to move to operational 
+    require(_raised >= tokenCreationMin);            // have to sell minimum to move to operational 
     ethFundDeposit.transfer(address(this).balance);  // send the eth to Allstocks
   }  
 
@@ -185,7 +185,7 @@ contract AllstocksCrowdsale is Owned {
     // update state
     uint256 checkedSupply = _raised.add(tokens);
     //check that we are not over cap
-    require(checkedSupply &lt;= tokenCreationCap);
+    require(checkedSupply <= tokenCreationCap);
     _raised = checkedSupply;
     bool mined = ERC20Interface(token).mint(_beneficiary, tokens);
     require(mined);
@@ -193,7 +193,7 @@ contract AllstocksCrowdsale is Owned {
     refunds[_beneficiary] = _value.add(refunds[_beneficiary]);  // safeAdd 
     emit TokenAllocated(this, _beneficiary, tokens); // log it
     //forward funds to deposite only in minimum was reached
-    if(_raised &gt;= tokenCreationMin) {
+    if(_raised >= tokenCreationMin) {
       _forwardFunds();
     }
   }
@@ -204,18 +204,18 @@ contract AllstocksCrowdsale is Owned {
     require(msg.sender == owner); // Allstocks double check owner   
     // Range is set between 500 to 625, based on the bonus program stated in whitepaper.
     // Upper range is set to 1500 (x3 times margin based on ETH price) .
-    require (_value &gt;= 500 &amp;&amp; _value &lt;= 1500); 
+    require (_value >= 500 && _value <= 1500); 
     tokenExchangeRate = _value;
   }
 
   // @dev method for allocate tokens to beneficiary account 
   function allocate(address _beneficiary, uint256 _value) public onlyOwner returns (bool success) {
     require (isActive == true);          // sale have to be active
-    require (_value &gt; 0);                // value must be greater then 0 
+    require (_value > 0);                // value must be greater then 0 
     require (msg.sender == owner);       // Allstocks double chack 
     require(_beneficiary != address(0)); // none empty address
     uint256 checkedSupply = _raised.add(_value); 
-    require(checkedSupply &lt;= tokenCreationCap); //check that we dont over cap
+    require(checkedSupply <= tokenCreationCap); //check that we dont over cap
     _raised = checkedSupply;
     bool sent = ERC20Interface(token).mint(_beneficiary, _value); // mint using ERC20 interface
     require(sent); 
@@ -234,13 +234,13 @@ contract AllstocksCrowdsale is Owned {
   function refund() external {
     require (isFinalized == false);  // prevents refund if operational
     require (isActive == true);      // only if sale is active
-    require (now &gt; fundingEndTime);  // prevents refund until sale period is over
-    require(_raised &lt; tokenCreationMin);  // no refunds if we sold enough
+    require (now > fundingEndTime);  // prevents refund until sale period is over
+    require(_raised < tokenCreationMin);  // no refunds if we sold enough
     require(msg.sender != owner);         // Allstocks not entitled to a refund
     //get contribution amount in eth
     uint256 ethValRefund = refunds[msg.sender];
     //refund should be greater then zero
-    require(ethValRefund &gt; 0);
+    require(ethValRefund > 0);
     //zero sender refund balance
     refunds[msg.sender] = 0;
     //check user balance
@@ -256,14 +256,14 @@ contract AllstocksCrowdsale is Owned {
   function finalize() external onlyOwner {
     require (isFinalized == false);
     require(msg.sender == owner); // Allstocks double chack  
-    require(_raised &gt;= tokenCreationMin);  // have to sell minimum to move to operational
-    require(_raised &gt; 0);
+    require(_raised >= tokenCreationMin);  // have to sell minimum to move to operational
+    require(_raised > 0);
 
-    if (now &lt; fundingEndTime) {    //if try to close before end time, check that we reach max cap
-      require(_raised &gt;= tokenCreationCap);
+    if (now < fundingEndTime) {    //if try to close before end time, check that we reach max cap
+      require(_raised >= tokenCreationCap);
     }
     else 
-      require(now &gt;= fundingEndTime); //allow finilize only after time ends
+      require(now >= fundingEndTime); //allow finilize only after time ends
     
     //transfer token ownership back to original owner
     transferTokenOwnership(owner);
@@ -282,8 +282,8 @@ contract AllstocksCrowdsale is Owned {
    * @param _weiAmount Value in wei involved in the purchase
    */
   function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) view internal {
-    require(now &gt;= fundingStartTime);
-    require(now &lt; fundingEndTime); 
+    require(now >= fundingStartTime);
+    require(now < fundingEndTime); 
     require(_beneficiary != address(0));
     require(_weiAmount != 0);
   }

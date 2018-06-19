@@ -14,8 +14,8 @@ contract ERC20Interface {
 contract ERC20 is ERC20Interface {
 
     uint256 constant private MAX_UINT256 = 2**256 - 1;
-    mapping (address =&gt; uint256) public balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowed;
+    mapping (address => uint256) public balances;
+    mapping (address => mapping (address => uint256)) public allowed;
 
     string public name;                   //fancy name: eg Simon Bucks
     uint8 public decimals;                //How many decimals to show.
@@ -35,7 +35,7 @@ contract ERC20 is ERC20Interface {
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
-        require(balances[msg.sender] &gt;= _value);
+        require(balances[msg.sender] >= _value);
         balances[msg.sender] -= _value;
         balances[_to] += _value;
         emit Transfer(msg.sender, _to, _value);
@@ -44,10 +44,10 @@ contract ERC20 is ERC20Interface {
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         uint256 allowance = allowed[_from][msg.sender];
-        require(balances[_from] &gt;= _value &amp;&amp; allowance &gt;= _value);
+        require(balances[_from] >= _value && allowance >= _value);
         balances[_to] += _value;
         balances[_from] -= _value;
-        if (allowance &lt; MAX_UINT256) {
+        if (allowance < MAX_UINT256) {
             allowed[_from][msg.sender] -= _value;
         }
         emit Transfer(_from, _to, _value);

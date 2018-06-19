@@ -121,10 +121,10 @@ contract RacingClubPresale is AccessControl {
   uint256 public unicornsGifted;
 
   // A mapping from addresses to the carIds
-  mapping (address =&gt; uint256[]) private ownerToCars;
+  mapping (address => uint256[]) private ownerToCars;
 
   // A mapping from addresses to the upgrade packages
-  mapping (address =&gt; uint256) private ownerToUpgradePackages;
+  mapping (address => uint256) private ownerToUpgradePackages;
 
   // Events
   event CarsPurchased(address indexed _owner, uint256[] _carIds, bool _upgradePackage, uint256 _pricePayed);
@@ -141,16 +141,16 @@ contract RacingClubPresale is AccessControl {
   // Buy a car. The cars are unique within the order.
   // If order count is 5 then one car can be preselected.
   function purchaseCars(uint256 _carsToBuy, uint256 _pickedId, bool _upgradePackage) public payable whenNotPaused {
-    require(now &lt; PRESALE_END_TIMESTAMP);
-    require(_carsToBuy &gt; 0 &amp;&amp; _carsToBuy &lt;= MAX_ORDER);
-    require(carsCount + _carsToBuy &lt;= MAX_CARS);
+    require(now < PRESALE_END_TIMESTAMP);
+    require(_carsToBuy > 0 && _carsToBuy <= MAX_ORDER);
+    require(carsCount + _carsToBuy <= MAX_CARS);
 
     uint256 priceToPay = calculatePrice(_carsToBuy, _upgradePackage);
-    require(msg.value &gt;= priceToPay);
+    require(msg.value >= priceToPay);
 
     // return excess ether
     uint256 excess = msg.value.sub(priceToPay);
-    if (excess &gt; 0) {
+    if (excess > 0) {
       msg.sender.transfer(excess);
     }
 
@@ -161,7 +161,7 @@ contract RacingClubPresale is AccessControl {
 
     // for MAX_ORDERs the first item is user picked
     if (_carsToBuy == MAX_ORDER) {
-      require(_pickedId &lt; CAR_MODELS);
+      require(_pickedId < CAR_MODELS);
       require(_pickedId != UNICORN_ID);
 
       randomCars[0] = _pickedId;
@@ -170,7 +170,7 @@ contract RacingClubPresale is AccessControl {
     fillRandomCars(randomCars, startFrom);
 
     // add new cars to the owner&#39;s list
-    for (uint256 i = 0; i &lt; randomCars.length; i++) {
+    for (uint256 i = 0; i < randomCars.length; i++) {
       ownerToCars[msg.sender].push(randomCars[i]);
     }
 
@@ -195,14 +195,14 @@ contract RacingClubPresale is AccessControl {
     // Some promo results will be calculated after the presale,
     // so there is no need to check for the PRESALE_END_TIMESTAMP.
 
-    require(_carId &lt; CAR_MODELS);
+    require(_carId < CAR_MODELS);
     require(_receiver != address(0));
 
     // check limits
-    require(carsCount &lt; MAX_CARS);
-    require(carsGifted &lt; MAX_CARS_TO_GIFT);
+    require(carsCount < MAX_CARS);
+    require(carsGifted < MAX_CARS_TO_GIFT);
     if (_carId == UNICORN_ID) {
-      require(unicornsGifted &lt; MAX_UNICORNS_TO_GIFT);
+      require(unicornsGifted < MAX_UNICORNS_TO_GIFT);
     }
 
     ownerToCars[_receiver].push(_carId);
@@ -233,9 +233,9 @@ contract RacingClubPresale is AccessControl {
 
     // add an extra amount for the upgrade package
     if (_upgradePackage) {
-      if (_carsToBuy &lt; 3) {
+      if (_carsToBuy < 3) {
         priceToPay = priceToPay * 120 / 100; // 20% extra
-      } else if (_carsToBuy &lt; 5) {
+      } else if (_carsToBuy < 5) {
         priceToPay = priceToPay * 115 / 100; // 15% extra
       } else {
         priceToPay = priceToPay * 110 / 100; // 10% extra
@@ -258,11 +258,11 @@ contract RacingClubPresale is AccessControl {
     uint256 randIndex = 0;
     uint256 carId;
 
-    for (uint256 i = _startFrom; i &lt; _randomCars.length; i++) {
+    for (uint256 i = _startFrom; i < _randomCars.length; i++) {
       do {
         // the max number for one purchase is limited to 5
         // 32 tries are more than enough to generate 5 unique numbers
-        require(randIndex &lt; 32);
+        require(randIndex < 32);
         carId = generateCarId(uint8(rand32[randIndex]));
         randIndex++;
       } while(alreadyContains(_randomCars, carId, i));
@@ -272,8 +272,8 @@ contract RacingClubPresale is AccessControl {
 
   // Generate a car ID from the given serial number (0 - 255)
   function generateCarId(uint256 _serialNumber) private view returns (uint256) {
-    for (uint256 i = 0; i &lt; PROBABILITY_MAP.length; i++) {
-      if (_serialNumber &lt; PROBABILITY_MAP[i]) {
+    for (uint256 i = 0; i < PROBABILITY_MAP.length; i++) {
+      if (_serialNumber < PROBABILITY_MAP[i]) {
         return i;
       }
     }
@@ -284,7 +284,7 @@ contract RacingClubPresale is AccessControl {
   // Check if the given value is already in the list.
   // By default all items are 0 so _to is used explicitly to validate 0 values.
   function alreadyContains(uint256[] _list, uint256 _value, uint256 _to) private pure returns (bool) {
-    for (uint256 i = 0; i &lt; _to; i++) {
+    for (uint256 i = 0; i < _to; i++) {
       if (_list[i] == _value) {
         return true;
       }
@@ -295,7 +295,7 @@ contract RacingClubPresale is AccessControl {
   function updateAppreciationStep() private {
     // this method is called once per purcahse
     // so use &#39;greater than&#39; not to miss the limit
-    if (currentPrice &gt; PRICE_LIMIT_1) {
+    if (currentPrice > PRICE_LIMIT_1) {
       // don&#39;t update if there is no change
       if (appreciationStep != APPRECIATION_STEP_2) {
         appreciationStep = APPRECIATION_STEP_2;
@@ -352,7 +352,7 @@ contract RacingClubPresale is AccessControl {
   event Raffle3Registered(address _user);
 
   function isInRaffle(address _address) public view returns (bool) {
-    for (uint256 i = 0; i &lt; raffleList.length; i++) {
+    for (uint256 i = 0; i < raffleList.length; i++) {
       if (raffleList[i] == _address) {
         return true;
       }
@@ -381,7 +381,7 @@ contract RacingClubPresale is AccessControl {
 
   // Raffle v1
   function registerForRaffle() public {
-    require(raffleList.length &lt; raffleLimit);
+    require(raffleList.length < raffleLimit);
     require(!isInRaffle(msg.sender));
     raffleList.push(msg.sender);
   }
@@ -416,7 +416,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -426,7 +426,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -435,7 +435,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }

@@ -49,14 +49,14 @@ contract Crowdsale is Ownable {
 
   modifier onlyWhileOpen {
       require(
-        (now >= preICOStartDate &amp;&amp; now < preICOEndDate) || 
-        (now >= ICOStartDate &amp;&amp; now < ICOEndDate)
+        (now >= preICOStartDate && now < preICOEndDate) || 
+        (now >= ICOStartDate && now < ICOEndDate)
       );
       _;
   }
 
   modifier onlyWhileICOOpen {
-      require(now >= ICOStartDate &amp;&amp; now < ICOEndDate);
+      require(now >= ICOStartDate && now < ICOEndDate);
       _;
   }
 
@@ -281,19 +281,19 @@ contract Crowdsale is Ownable {
 
    // Проверка актуальности PreICO
    function _isPreICO() internal view returns(bool) {
-       return now >= preICOStartDate &amp;&amp; now < preICOEndDate;
+       return now >= preICOStartDate && now < preICOEndDate;
    }
    
    // Проверка актуальности ICO
    function _isICO() internal view returns(bool) {
-       return now >= ICOStartDate &amp;&amp; now < ICOEndDate;
+       return now >= ICOStartDate && now < ICOEndDate;
    }
 
    // Валидация перед покупкой токенов
   function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) internal view onlyWhileOpen {
     require(_weiAmount != 0);
     require((preICOWeiRaised.add(ICOWeiRaised).add(_weiAmount)).mul(ETHUSD).div(10**18) <= hardcap);
-    require((_isPreICO() &amp;&amp; whitelist[_beneficiary]) || _isICO());
+    require((_isPreICO() && whitelist[_beneficiary]) || _isICO());
   }
 
   // Подсчет бонусов с учетом бонусов за этап ICO и объем инвестиций

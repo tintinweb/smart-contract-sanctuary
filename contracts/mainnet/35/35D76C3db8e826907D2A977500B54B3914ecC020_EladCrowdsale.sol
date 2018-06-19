@@ -131,7 +131,7 @@ contract TimedCrowdsale is Crowdsale {
   uint256 public closingTime;
 
   modifier onlyWhileOpen {
-    require(now >= openingTime &amp;&amp; now <= closingTime);
+    require(now >= openingTime && now <= closingTime);
     _;
   }
 
@@ -286,7 +286,7 @@ contract EladCrowdsale is RefundableCrowdsale, CappedCrowdsale {
   }
 
   function isOpen() public view returns (bool) {
-    return now >= openingTime &amp;&amp; now <= closingTime;
+    return now >= openingTime && now <= closingTime;
   }
 
   function allocateRemainingTokens() onlyOwner public {

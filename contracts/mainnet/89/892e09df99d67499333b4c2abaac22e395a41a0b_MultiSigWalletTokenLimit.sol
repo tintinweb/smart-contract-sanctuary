@@ -160,7 +160,7 @@ contract MultiSigWalletTokenLimit
   {
     for (uint i = 0; i < _owners.length; i++)
     {
-      require(!is_owner[_owners[i]] &amp;&amp; _owners[i] != 0);
+      require(!is_owner[_owners[i]] && _owners[i] != 0);
       is_owner[_owners[i]] = true;
     }
     owners = _owners;
@@ -308,8 +308,8 @@ contract MultiSigWalletTokenLimit
     returns (uint count)
   {
     for (uint i = 0; i < transaction_count; i++)
-      if (pending &amp;&amp; !transactions[i].executed
-        || executed &amp;&amp; transactions[i].executed)
+      if (pending && !transactions[i].executed
+        || executed && transactions[i].executed)
         ++count;
   }
 
@@ -360,8 +360,8 @@ contract MultiSigWalletTokenLimit
     uint count = 0;
     uint i;
     for (i = 0; i < transaction_count; i++)
-      if (pending &amp;&amp; !transactions[i].executed
-        || executed &amp;&amp; transactions[i].executed)
+      if (pending && !transactions[i].executed
+        || executed && transactions[i].executed)
       {
         transaction_ids_temp[count] = i;
         ++count;
@@ -397,7 +397,7 @@ contract MultiSigWalletTokenLimit
   {
     uint new_period = 0;
     for (uint i = 1; i < period_count; i++)
-      if (periods[i].timestamp > now &amp;&amp; periods[i].timestamp < periods[new_period].timestamp)
+      if (periods[i].timestamp > now && periods[i].timestamp < periods[new_period].timestamp)
         new_period = i;
     if (new_period != current_period)
     {
@@ -414,7 +414,7 @@ contract MultiSigWalletTokenLimit
     returns (bool)
   {
     updateCurrentPeriod();
-    require(value <= getWalletBalance() &amp;&amp; current_transferred.add(value) <= periods[current_period].limit);
+    require(value <= getWalletBalance() && current_transferred.add(value) <= periods[current_period].limit);
 
     if (erc20_contract.transfer(to, value)) 
     {

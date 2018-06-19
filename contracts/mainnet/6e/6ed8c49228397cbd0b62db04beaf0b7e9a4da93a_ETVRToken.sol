@@ -15,13 +15,13 @@ library SafeMath {
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
         c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -62,8 +62,8 @@ contract ERC20Interface {
 contract StandardToken is ERC20Interface {
     using SafeMath for uint256;
 
-    mapping(address =&gt; uint256) balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping(address => uint256) balances;
+    mapping (address => mapping (address => uint256)) internal allowed;
 
     uint256 totalSupply_;
 
@@ -77,7 +77,7 @@ contract StandardToken is ERC20Interface {
 
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &gt; 0 &amp;&amp; _value &lt;= balances[msg.sender]);
+        require(_value > 0 && _value <= balances[msg.sender]);
 
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -87,7 +87,7 @@ contract StandardToken is ERC20Interface {
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &gt; 0 &amp;&amp; _value &lt;= balances[_from] &amp;&amp; _value &lt;= allowed[_from][msg.sender]);
+        require(_value > 0 && _value <= balances[_from] && _value <= allowed[_from][msg.sender]);
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -114,7 +114,7 @@ contract StandardToken is ERC20Interface {
 
     function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -181,7 +181,7 @@ contract BurnableToken is StandardToken {
     }
 
     function _burn(address _who, uint256 _value) internal {
-        require(_value &lt;= balances[_who]);
+        require(_value <= balances[_who]);
 
         balances[_who] = balances[_who].sub(_value);
         totalSupply_ = totalSupply_.sub(_value);
@@ -190,7 +190,7 @@ contract BurnableToken is StandardToken {
     }
 
     function burnFrom(address _from, uint256 _value) public {
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= allowed[_from][msg.sender]);
 
         allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
         _burn(_from, _value);
@@ -252,12 +252,12 @@ contract TokenVesting is Ownable {
 
     bool public revocable;
 
-    mapping (address =&gt; uint256) public released;
-    mapping (address =&gt; bool) public revoked;
+    mapping (address => uint256) public released;
+    mapping (address => bool) public revoked;
 
     function TokenVesting(address _beneficiary, uint256 _start, uint256 _cliff, uint256 _duration, bool _revocable) public {
         require(_beneficiary != address(0));
-        require(_cliff &lt;= _duration);
+        require(_cliff <= _duration);
 
         beneficiary = _beneficiary;
         revocable = _revocable;
@@ -269,7 +269,7 @@ contract TokenVesting is Ownable {
     function release(ERC20Interface token) public {
         uint256 unreleased = releasableAmount(token);
 
-        require(unreleased &gt; 0);
+        require(unreleased > 0);
 
         released[token] = released[token].add(unreleased);
 
@@ -302,9 +302,9 @@ contract TokenVesting is Ownable {
         uint256 currentBalance = token.balanceOf(this);
         uint256 totalBalance = currentBalance.add(released[token]);
 
-        if (block.timestamp &lt; cliff) {
+        if (block.timestamp < cliff) {
             return 0;
-        } else if (block.timestamp &gt;= start.add(duration) || revoked[token]) {
+        } else if (block.timestamp >= start.add(duration) || revoked[token]) {
             return totalBalance;
         } else {
             return totalBalance.mul(block.timestamp.sub(start)).div(duration);

@@ -48,7 +48,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -58,7 +58,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -67,7 +67,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -147,7 +147,7 @@ contract TokenVestingContract is Owned {
     function getReleasableFunds() public view returns(uint256){
         uint256 balance = ERC20TokenInterface(tokenAddress).balanceOf(address(this));
         // check if there is balance and if it is active yet
-        if (balance == 0 || (startTime &gt;= now)){
+        if (balance == 0 || (startTime >= now)){
             return 0;
         }
         // all funds that may be released according to vesting schedule 
@@ -155,7 +155,7 @@ contract TokenVestingContract is Owned {
         // deduct already released funds 
         uint256 releasableFunds = vestingScheduleAmount.sub(alreadyReleasedAmount);
         // make sure to release remainder of funds for last payout
-        if(releasableFunds &gt; balance){
+        if(releasableFunds > balance){
             releasableFunds = balance;
         }
         return releasableFunds;
@@ -171,7 +171,7 @@ contract TokenVestingContract is Owned {
         checkForReceivedTokens();
         require(msg.sender == beneficiary);//, &quot;Funds may be released only to beneficiary&quot;);
         uint256 amountToTransfer = getReleasableFunds();
-        require(amountToTransfer &gt; 0);//, &quot;Out of funds&quot;);
+        require(amountToTransfer > 0);//, &quot;Out of funds&quot;);
         // internal accounting
         alreadyReleasedAmount = alreadyReleasedAmount.add(amountToTransfer);
         internalBalance = internalBalance.sub(amountToTransfer);
@@ -235,7 +235,7 @@ contract VestingMasterContract is Owned {
         
     }
     address[] public vestingAddresses;
-    mapping (address =&gt; VestingStruct) public addressToVesting;
+    mapping (address => VestingStruct) public addressToVesting;
     
     event VestingContractFunded(address beneficiary, address tokenAddress, uint256 amount);
     event LockedAmountDecreased(uint256 amount);
@@ -297,7 +297,7 @@ contract VestingMasterContract is Owned {
         // convenience, so you don&#39;t have to call it manualy if you just uploaded funds
         checkForReceivedTokens();
         // check if there is actually enough funds
-        require((internalBalance &gt;= _amount) &amp;&amp; (getTokenBalance() &gt;= _amount));
+        require((internalBalance >= _amount) && (getTokenBalance() >= _amount));
         // make sure that fundee is vesting contract on the list
         require(vestingExists(_vestingContract)); 
         internalBalance = internalBalance.sub(_amount);

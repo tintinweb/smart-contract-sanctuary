@@ -3,11 +3,11 @@ pragma solidity ^0.4.18;
 library SafeMath {
     function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256 c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
 
@@ -34,17 +34,17 @@ contract ETHButton {
     uint256 private devFund;
     
     // statistics
-    mapping(address=&gt;uint256) private playerClickCount;
-    mapping(address=&gt;uint256) private playerSecToTimeout;
+    mapping(address=>uint256) private playerClickCount;
+    mapping(address=>uint256) private playerSecToTimeout;
     uint256 private totalClicks;
     
     // index to address mapping
-    mapping(uint256=&gt;address) private playerIndexes;
+    mapping(uint256=>address) private playerIndexes;
     uint256 private totalPlayers;
     
     // referal system
-    mapping(address=&gt;uint256) private playerReferedByCount;
-    mapping(address=&gt;uint256) private playerReferedMoneyGain;
+    mapping(address=>uint256) private playerReferedByCount;
+    mapping(address=>uint256) private playerReferedMoneyGain;
     
     // ------------------------------------------------------------------------
     // Constructor
@@ -92,7 +92,7 @@ contract ETHButton {
     
     function GetPlayerAt(uint256 idx) external view returns (address)
     {
-        require(idx &lt; totalPlayers);
+        require(idx < totalPlayers);
         
         return playerIndexes[idx];
     }
@@ -108,9 +108,9 @@ contract ETHButton {
     
     function GetWinnerAt(uint256 idx) external view returns (address _addr)
     {
-        require(idx &lt; CLICKERS_SIZE);
+        require(idx < CLICKERS_SIZE);
         
-        if(idx &lt; clikerIndex)
+        if(idx < clikerIndex)
             _addr = clickers[clikerIndex-(idx+1)];
         else
             _addr = clickers[(clikerIndex + CLICKERS_SIZE) - (idx+1)];
@@ -118,9 +118,9 @@ contract ETHButton {
     
     function GetWinners() external view returns (address[CLICKERS_SIZE] _addr)
     {
-        for(uint256 idx = 0; idx &lt; CLICKERS_SIZE; ++idx)
+        for(uint256 idx = 0; idx < CLICKERS_SIZE; ++idx)
         {
-            if(idx &lt; clikerIndex)
+            if(idx < clikerIndex)
                 _addr[idx] = clickers[clikerIndex-(idx+1)];
             else
                 _addr[idx] = clickers[(clikerIndex + CLICKERS_SIZE) - (idx+1)];
@@ -132,8 +132,8 @@ contract ETHButton {
     //--------------------------------------------------------------------------
     function ButtonClicked(address referee) external payable
     {
-        require(msg.value &gt;= clickPrice);
-        require(expireTime &gt;= block.timestamp);
+        require(msg.value >= clickPrice);
+        require(expireTime >= block.timestamp);
         require(referee != msg.sender);
         
         if(playerClickCount[msg.sender] == 0)
@@ -144,7 +144,7 @@ contract ETHButton {
         
         totalClicks += 1;
         playerClickCount[msg.sender] += 1;
-        if(playerSecToTimeout[msg.sender] == 0 || playerSecToTimeout[msg.sender] &gt; (expireTime - block.timestamp))
+        if(playerSecToTimeout[msg.sender] == 0 || playerSecToTimeout[msg.sender] > (expireTime - block.timestamp))
             playerSecToTimeout[msg.sender] = expireTime - block.timestamp;
         
         expireTime = block.timestamp + EXPIRE_DELAY;
@@ -155,7 +155,7 @@ contract ETHButton {
         if(refAddr == 0 || playerClickCount[referee] == 0)
             refAddr = owner;
             
-        if(totalClicks &gt; CLICKERS_SIZE)
+        if(totalClicks > CLICKERS_SIZE)
         {
             totalPot = totalPot.add(((msg.value.mul(8)) / 10));
             
@@ -183,7 +183,7 @@ contract ETHButton {
         clickers[clikerIndex] = msg.sender;
         clikerIndex += 1;
        
-        if(clikerIndex &gt;= CLICKERS_SIZE)
+        if(clikerIndex >= CLICKERS_SIZE)
         {
             clickPrice += 0.01 ether;
             clikerIndex = 0;
@@ -192,12 +192,12 @@ contract ETHButton {
     
     function DistributeButtonIncome() external
     {
-        require(expireTime &lt; block.timestamp);
-        require(totalPot &gt; 0);
+        require(expireTime < block.timestamp);
+        require(totalPot > 0);
         
         uint256 reward = totalPot / CLICKERS_SIZE;
         
-        for(uint256 i = 0; i &lt; CLICKERS_SIZE; ++i)
+        for(uint256 i = 0; i < CLICKERS_SIZE; ++i)
         {
             if(!clickers[i].send(reward))
             {

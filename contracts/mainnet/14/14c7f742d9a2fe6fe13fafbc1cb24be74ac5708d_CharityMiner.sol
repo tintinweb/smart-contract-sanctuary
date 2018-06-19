@@ -57,9 +57,9 @@ contract CharityMiner {
     uint public totalDividends;
     
     // Public Mappings
-    mapping( address =&gt; bool ) public donor;
-    mapping( address =&gt; uint256 ) public userTokens;
-    mapping( address =&gt; uint256 ) public userDonations;
+    mapping( address => bool ) public donor;
+    mapping( address => uint256 ) public userTokens;
+    mapping( address => uint256 ) public userDonations;
     
     // PoWH Contract
     POWH p3d;
@@ -75,7 +75,7 @@ contract CharityMiner {
 	// - In case charity address is no longer active or deposits have to be paused for unexpected reason
 	// - Cannot be paused while anyone owns tokens
 	function pause() public {
-	    require(msg.sender == owner &amp;&amp; myTokens() == 0);
+	    require(msg.sender == owner && myTokens() == 0);
 	    paused = !paused;
 	    
 	    emit Paused(paused);
@@ -94,12 +94,12 @@ contract CharityMiner {
     // - Divide deposit by feeDivisor then add divs and send as donation
 	// - Use the rest to buy P3D tokens under sender&#39;s masternode
 	function deposit(uint8 feeDivisor) payable public {
-	    require(msg.value &gt; 100000 &amp;&amp; !paused);
-	    require(feeDivisor &gt;= 2 &amp;&amp; feeDivisor &lt;= 10); // 50% to 10% donation range
+	    require(msg.value > 100000 && !paused);
+	    require(feeDivisor >= 2 && feeDivisor <= 10); // 50% to 10% donation range
 	    
 	    // If we have divs, withdraw them
 	    uint divs = myDividends();
-	    if(divs &gt; 0){
+	    if(divs > 0){
 	        p3d.withdraw();
 	    }
 	    
@@ -125,7 +125,7 @@ contract CharityMiner {
 	    
 	    // If largest donor, update stats
 	    // Don&#39;t include dividends or token value in user donations
-	    if(fee &gt; largestDonation){ 
+	    if(fee > largestDonation){ 
 	        largestDonation = fee;
 	        largestDonor = msg.sender;
 	    }
@@ -147,7 +147,7 @@ contract CharityMiner {
 	// - User doesn&#39;t get any of the excess divs
 	function withdraw() public {
 	    uint tokens = userTokens[msg.sender];
-	    require(tokens &gt; 0);
+	    require(tokens > 0);
 	    
 	    // Save divs and balance
 	    uint divs = myDividends();
@@ -182,7 +182,7 @@ contract CharityMiner {
 	function sendDividends() public {
 	    uint divs = myDividends();
 	    // Don&#39;t want to spam them with tiny donations
-	    require(divs &gt; 100000);
+	    require(divs > 100000);
 	    p3d.withdraw();
 	    
 	    // Send donation
@@ -240,7 +240,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -250,7 +250,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -259,7 +259,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }

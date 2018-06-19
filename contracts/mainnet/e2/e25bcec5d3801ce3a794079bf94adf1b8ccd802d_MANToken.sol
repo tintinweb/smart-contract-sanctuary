@@ -44,8 +44,8 @@ contract MANToken {
     bool public isInLockStage = true;
     bool public finalised = false;
 
-    mapping (address =&gt; uint256) public balanceOf;
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => uint256) public balanceOf;
+    mapping (address => mapping (address => uint256)) public allowance;
 
     // This generates a public event on the blockchain that will notify clients
     event Transfer(address indexed from, address indexed to, uint256 value);
@@ -103,30 +103,30 @@ contract MANToken {
     function () payable public {
         require(!finalised);
 
-        require(block.timestamp &gt;= startTime);
-        require(block.timestamp &lt;= endTime);
+        require(block.timestamp >= startTime);
+        require(block.timestamp <= endTime);
 
-        require(availableSupply &gt; 0);
+        require(availableSupply > 0);
 
         mintMAN(); 
     }
 
     function mintMAN() payable public {
-        require(msg.value &gt;= minimumDonation); 
+        require(msg.value >= minimumDonation); 
 
         uint256 preLockedTime = startTime + lockedDuration;
         
-        if (block.timestamp &lt;= preLockedTime) { 
+        if (block.timestamp <= preLockedTime) { 
             currentStage = 0;
             isInLockStage = true;
-        }else if (block.timestamp &gt; preLockedTime &amp;&amp; tokenDistributed &lt;= softCap) { 
+        }else if (block.timestamp > preLockedTime && tokenDistributed <= softCap) { 
             currentStage = 1;
             isInLockStage = true;
-        }else if (block.timestamp &gt; preLockedTime &amp;&amp; tokenDistributed &lt;= 35 * (10**6) * DECIMALSFACTOR) { 
+        }else if (block.timestamp > preLockedTime && tokenDistributed <= 35 * (10**6) * DECIMALSFACTOR) { 
             currentTokenPerETH = 3430;
             currentStage = 2;
             isInLockStage = false;
-        }else if (block.timestamp &gt; preLockedTime &amp;&amp; tokenDistributed &gt;= 35 * (10**6) * DECIMALSFACTOR) { 
+        }else if (block.timestamp > preLockedTime && tokenDistributed >= 35 * (10**6) * DECIMALSFACTOR) { 
             currentTokenPerETH = 3150;
             currentStage = 3;
             isInLockStage = false;
@@ -135,7 +135,7 @@ contract MANToken {
         uint256 tokenValue = currentTokenPerETH * msg.value / 10 ** (weiDECIMALS - decimals);
         uint256 etherValue = msg.value;
 
-        if (tokenValue &gt; availableSupply) {
+        if (tokenValue > availableSupply) {
             tokenValue = availableSupply;
             
             etherValue = weiFACTOR * availableSupply / currentTokenPerETH / DECIMALSFACTOR;
@@ -160,9 +160,9 @@ contract MANToken {
         // Prevent transfer to 0x0 address. Use burn() instead
         require(_to != 0x0);
         // Check if the sender has enough
-        require(balanceOf[_from] &gt;= _value);
+        require(balanceOf[_from] >= _value);
         // Check for overflows
-        require(balanceOf[_to] + _value &gt; balanceOf[_to]);
+        require(balanceOf[_to] + _value > balanceOf[_to]);
         // Save this for an assertion in the future
         uint previousBalances = balanceOf[_from] + balanceOf[_to];
         // Subtract from the sender
@@ -180,7 +180,7 @@ contract MANToken {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(_value &lt;= allowance[_from][msg.sender]);     // Check allowance
+        require(_value <= allowance[_from][msg.sender]);     // Check allowance
         allowance[_from][msg.sender] -= _value;
         _transfer(_from, _to, _value);
         return true;
@@ -203,7 +203,7 @@ contract MANToken {
     }
 
     function burn(uint256 _value) public returns (bool success) {
-        require(balanceOf[msg.sender] &gt;= _value);   // Check if the sender has enough
+        require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
         totalSupply -= _value;                      // Updates totalSupply
         Burn(msg.sender, _value);
@@ -211,8 +211,8 @@ contract MANToken {
     }
 
     function burnFrom(address _from, uint256 _value) public returns (bool success) {
-        require(balanceOf[_from] &gt;= _value);                // Check if the targeted balance is enough
-        require(_value &lt;= allowance[_from][msg.sender]);    // Check allowance
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
         balanceOf[_from] -= _value;                         // Subtract from the targeted balance
         allowance[_from][msg.sender] -= _value;             // Subtract from the sender&#39;s allowance
         totalSupply -= _value;                              // Update totalSupply

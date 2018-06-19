@@ -67,7 +67,7 @@ contract ERC20 is Owned {
     event Transfer(address indexed _from, address indexed _to, uint _value);
     event Approval(address indexed _owner, address indexed _spender, uint _value);
     function transfer(address _to, uint _value) isStartedOnly returns (bool success) {
-        if (balances[msg.sender] >= _value &amp;&amp; balances[_to] + _value > balances[_to]) {
+        if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
             balances[msg.sender] -= _value;
             balances[_to] += _value;
             Transfer(msg.sender, _to, _value);
@@ -75,7 +75,7 @@ contract ERC20 is Owned {
         } else { return false; }
     }
     function transferFrom(address _from, address _to, uint _value) isStartedOnly returns (bool success) {
-        if (balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value &amp;&amp; balances[_to] + _value > balances[_to]) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
             balances[_to] += _value;
             balances[_from] -= _value;
             allowed[_from][msg.sender] -= _value;

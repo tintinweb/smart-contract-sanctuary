@@ -21,7 +21,7 @@ library SafeMathLib {
 
   function plus(uint a, uint b) returns (uint) {
     uint c = a + b;
-    assert(c>=a &amp;&amp; c>=b);
+    assert(c>=a && c>=b);
     return c;
   }
 

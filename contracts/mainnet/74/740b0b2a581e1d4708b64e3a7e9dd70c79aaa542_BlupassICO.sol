@@ -152,7 +152,7 @@ contract BlupassICO is Owned {
         // Bonus for  5+ ETH investment
         
         // 20 % bonus for 5 to 9 ETH investment
-        if (msg.value >= 5 ether &amp;&amp; msg.value <= 9 ether) {
+        if (msg.value >= 5 ether && msg.value <= 9 ether) {
             bonus = (tokenBought.mul(20)).div(100); // 20 % bonus
             tokenBought = tokenBought.add(bonus);
         } 

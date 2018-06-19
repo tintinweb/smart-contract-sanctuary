@@ -18,7 +18,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -28,7 +28,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -37,7 +37,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -52,7 +52,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -70,7 +70,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -147,7 +147,7 @@ contract Ownable {
 }
 
 contract Whitelist is Ownable {
-  mapping(address =&gt; bool) public whitelist;
+  mapping(address => bool) public whitelist;
   address public whitelistManager;
   function AddToWhiteList(address _addr) public {
       require(msg.sender == whitelistManager || msg.sender == owner);
@@ -187,8 +187,8 @@ contract WithBonusPeriods is Ownable {
 
   //find out bonus for specific timestamp
   function BonusPeriodFor(uint256 timestamp) public view returns (bool ongoing, uint256 from, uint256 to, uint256 num, uint256 den) {
-    for(uint i = 0; i &lt; bonusPeriods.length; i++)
-      if (bonusPeriods[i].fromTimestamp &lt;= timestamp &amp;&amp; bonusPeriods[i].toTimestamp &gt;= timestamp)
+    for(uint i = 0; i < bonusPeriods.length; i++)
+      if (bonusPeriods[i].fromTimestamp <= timestamp && bonusPeriods[i].toTimestamp >= timestamp)
         return (true, bonusPeriods[i].fromTimestamp, bonusPeriods[i].toTimestamp, bonusPeriods[i].bonusNumerator,
           bonusPeriods[i].bonusDenominator);
     return (false, 0, 0, 0, 0);
@@ -210,14 +210,14 @@ contract WithBonusPeriods is Ownable {
   }
 
   function updateCurrentBonusPeriod() internal  {
-    if (currentBonusPeriod.fromTimestamp &lt;= block.timestamp
-      &amp;&amp; currentBonusPeriod.toTimestamp &gt;= block.timestamp)
+    if (currentBonusPeriod.fromTimestamp <= block.timestamp
+      && currentBonusPeriod.toTimestamp >= block.timestamp)
       return;
 
     currentBonusPeriod.fromTimestamp = INVALID_FROM_TIMESTAMP;
 
-    for(uint i = 0; i &lt; bonusPeriods.length; i++)
-      if (bonusPeriods[i].fromTimestamp &lt;= block.timestamp &amp;&amp; bonusPeriods[i].toTimestamp &gt;= block.timestamp) {
+    for(uint i = 0; i < bonusPeriods.length; i++)
+      if (bonusPeriods[i].fromTimestamp <= block.timestamp && bonusPeriods[i].toTimestamp >= block.timestamp) {
         currentBonusPeriod = bonusPeriods[i];
         return;
       }
@@ -332,7 +332,7 @@ contract ICrowdsaleProcessor is Ownable, HasManager {
 
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -343,8 +343,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -407,7 +407,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -493,7 +493,7 @@ contract LetItPlayToken is Crowdsaled, StandardToken {
         }
 
         function transferByOwner(address from, address to, uint256 value) public onlyOwner {
-          require(balances[from] &gt;= value);
+          require(balances[from] >= value);
           balances[from] = balances[from].sub(value);
           balances[to] = balances[to].add(value);
           emit Transfer(from, to, value);
@@ -501,7 +501,7 @@ contract LetItPlayToken is Crowdsaled, StandardToken {
 
         //can be called by crowdsale before token release, control over forSale portion of token supply
         function transferByCrowdsale(address to, uint256 value) public onlyCrowdsale {
-          require(balances[forSale] &gt;= value);
+          require(balances[forSale] >= value);
           balances[forSale] = balances[forSale].sub(value);
           balances[to] = balances[to].add(value);
           emit Transfer(forSale, to, value);
@@ -531,7 +531,7 @@ contract LetItPlayToken is Crowdsaled, StandardToken {
         }
 
         function burn(uint256 value) public  onlyOwner {
-            require(value &lt;= balances[msg.sender]);
+            require(value <= balances[msg.sender]);
             balances[msg.sender] = balances[msg.sender].sub(value);
             balances[address(0)] = balances[address(0)].add(value);
             emit Transfer(msg.sender, address(0), value);
@@ -594,14 +594,14 @@ contract BasicCrowdsale is ICrowdsaleProcessor {
     require(_fundingAddress != address(0));
 
     // start time must not be earlier than current time
-    require(_startTimestamp &gt;= block.timestamp);
+    require(_startTimestamp >= block.timestamp);
 
     // range must be sane
-    require(_endTimestamp &gt; _startTimestamp);
+    require(_endTimestamp > _startTimestamp);
     duration = _endTimestamp - _startTimestamp;
 
     // duration must fit constraints
-    require(duration &gt;= MIN_CROWDSALE_TIME &amp;&amp; duration &lt;= MAX_CROWDSALE_TIME);
+    require(duration >= MIN_CROWDSALE_TIME && duration <= MAX_CROWDSALE_TIME);
 
     startTimestamp = _startTimestamp;
     endTimestamp = _endTimestamp;
@@ -621,13 +621,13 @@ contract BasicCrowdsale is ICrowdsaleProcessor {
   {
     return (
       // it was started
-      started &amp;&amp;
+      started &&
 
       // crowdsale period has finished
-      block.timestamp &gt;= endTimestamp &amp;&amp;
+      block.timestamp >= endTimestamp &&
 
       // but collected ETH is below the required minimum
-      totalCollected &lt; minimalGoal
+      totalCollected < minimalGoal
     );
   }
 
@@ -639,14 +639,14 @@ contract BasicCrowdsale is ICrowdsaleProcessor {
   {
     return (
       // it was started
-      started &amp;&amp;
+      started &&
 
       // hard cap wasn&#39;t reached yet
-      totalCollected &lt; hardCap &amp;&amp;
+      totalCollected < hardCap &&
 
       // and current time is within the crowdfunding period
-      block.timestamp &gt;= startTimestamp &amp;&amp;
-      block.timestamp &lt; endTimestamp
+      block.timestamp >= startTimestamp &&
+      block.timestamp < endTimestamp
     );
   }
 
@@ -658,10 +658,10 @@ contract BasicCrowdsale is ICrowdsaleProcessor {
   {
     return (
       // either the hard cap is collected
-      totalCollected &gt;= hardCap ||
+      totalCollected >= hardCap ||
 
       // ...or the crowdfunding period is over, but the minimum has been reached
-      (block.timestamp &gt;= endTimestamp &amp;&amp; totalCollected &gt;= minimalGoal)
+      (block.timestamp >= endTimestamp && totalCollected >= minimalGoal)
     );
   }
 }
@@ -673,7 +673,7 @@ contract Crowdsale is BasicCrowdsale, Whitelist, WithBonusPeriods {
     uint256 tokensGiven;
   }
 
-  mapping(address =&gt; Investor) participants;
+  mapping(address => Investor) participants;
 
   uint256 public tokenRateWei;
   LetItPlayToken public token;
@@ -733,7 +733,7 @@ contract Crowdsale is BasicCrowdsale, Whitelist, WithBonusPeriods {
   }
 
   function () payable public {
-    require(msg.value &gt; 0);
+    require(msg.value > 0);
     sellTokens(msg.sender, msg.value);
   }
 
@@ -746,7 +746,7 @@ contract Crowdsale is BasicCrowdsale, Whitelist, WithBonusPeriods {
   {
     uint256 newTotalCollected = totalCollected + _value;
 
-    if (hardCap &lt; newTotalCollected) {
+    if (hardCap < newTotalCollected) {
       uint256 refund = newTotalCollected - hardCap;
       uint256 diff = _value - refund;
       _recepient.transfer(refund);
@@ -773,7 +773,7 @@ contract Crowdsale is BasicCrowdsale, Whitelist, WithBonusPeriods {
     hasntStopped()  // crowdsale wasn&#39;t cancelled
     whenCrowdsaleSuccessful() // crowdsale completed successfully
   {
-    require(_amount &lt;= address(this).balance);
+    require(_amount <= address(this).balance);
     fundingAddress.transfer(_amount);
   }
 
@@ -787,7 +787,7 @@ contract Crowdsale is BasicCrowdsale, Whitelist, WithBonusPeriods {
     uint256 tokens = participants[msg.sender].tokensGiven;
 
     // prevent from doing it twice
-    require(weiDonated &gt; 0);
+    require(weiDonated > 0);
     participants[msg.sender].weiDonated = 0;
     participants[msg.sender].tokensGiven = 0;
 

@@ -44,7 +44,7 @@ contract DragonLock {
     //allows token holders to withdar their dragons after timelock expires
     function withdrawDragons(){
         
-        require ( now &gt; TimeLock );
+        require ( now > TimeLock );
         require ( receiver == msg.sender );
       
        

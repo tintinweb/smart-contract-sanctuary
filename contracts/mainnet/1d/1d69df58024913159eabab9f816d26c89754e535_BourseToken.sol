@@ -11,7 +11,7 @@ pragma solidity ^0.4.18;
 //
 // Enjoy.
 //
-// (c) by Moritz Neto &amp; Daniel Bar with BokkyPooBah / Bok Consulting Pty Ltd Au 2017. The MIT Licence.
+// (c) by Moritz Neto & Daniel Bar with BokkyPooBah / Bok Consulting Pty Ltd Au 2017. The MIT Licence.
 // ----------------------------------------------------------------------------
 
 
@@ -212,7 +212,7 @@ contract BourseToken is ERC20Interface, Owned, SafeMath {
     // 10,000 BST Tokens per 1 ETH
     // ------------------------------------------------------------------------
     function () public payable {
-        require(now >= startDate &amp;&amp; now <= endDate);
+        require(now >= startDate && now <= endDate);
         uint tokens;
         if (now <= bonusEnds) {
             tokens = msg.value * 12000;

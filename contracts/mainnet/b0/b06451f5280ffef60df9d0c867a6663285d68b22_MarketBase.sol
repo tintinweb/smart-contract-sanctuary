@@ -338,7 +338,7 @@ contract CompanyMain is CompanyBase, ApprovalContract, TradingVolume {
             return;
         } 
         
-        if (_to != address(this) &amp;&amp; _company.shareHolders.ownerAddressToShares[_to] >= sharesRequiredToBecomeCEO) {
+        if (_to != address(this) && _company.shareHolders.ownerAddressToShares[_to] >= sharesRequiredToBecomeCEO) {
             _company.ceoOfCompany = _to;
             emit CEOChanged(_companyId, currentCEO, _to);
             return;
@@ -395,7 +395,7 @@ contract CompanyMain is CompanyBase, ApprovalContract, TradingVolume {
         require(_precentageSharesToRelease <= MAX_PERCENTAGE_SHARE_RELEASE);
         
         // The min release cycle should be at least 10 days
-        require(_coolDownTime >= MIN_COOLDOWN_TIME &amp;&amp; _coolDownTime <= MAX_COOLDOWN_TIME);
+        require(_coolDownTime >= MIN_COOLDOWN_TIME && _coolDownTime <= MAX_COOLDOWN_TIME);
 
         uint _companyId = companies.length;
         uint _nextSharesReleaseTime = now + _coolDownTime * 1 days;
@@ -444,9 +444,9 @@ contract CompanyMain is CompanyBase, ApprovalContract, TradingVolume {
         require(_precentageSharesToRelease <= MAX_PERCENTAGE_SHARE_RELEASE);
         
         // The min release cycle should be at least 10 days
-        require(_coolDownTime >= MIN_COOLDOWN_TIME &amp;&amp; _coolDownTime <= MAX_COOLDOWN_TIME);
+        require(_coolDownTime >= MIN_COOLDOWN_TIME && _coolDownTime <= MAX_COOLDOWN_TIME);
         
-        require(_sharesInCirculation >= INIT_MIN_SHARES_IN_CIRCULATION &amp;&amp;
+        require(_sharesInCirculation >= INIT_MIN_SHARES_IN_CIRCULATION &&
         _sharesInCirculation <= INIT_MAX_SHARES_IN_CIRCULATION);
 
         uint _companyId = companies.length;
@@ -485,7 +485,7 @@ contract CompanyMain is CompanyBase, ApprovalContract, TradingVolume {
     payable {
         Company storage company = companies[_companyId];
         
-        require (_numberOfShares > 0 &amp;&amp;
+        require (_numberOfShares > 0 &&
             _numberOfShares <= (company.sharesInCirculation * MAX_CLAIM_SHARES_PERCENTAGE)/100);
 
         require(company.unclaimedShares >= _numberOfShares);

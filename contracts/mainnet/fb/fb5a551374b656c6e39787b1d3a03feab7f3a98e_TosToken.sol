@@ -29,8 +29,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 contract TokenERC20 {
     uint256 public totalSupply;
     // This creates an array with all balances.
-    mapping (address =&gt; uint256) public balanceOf;
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => uint256) public balanceOf;
+    mapping (address => mapping (address => uint256)) public allowance;
 
     // This generates a public event on the blockchain that will notify clients.
     event Transfer(address indexed from, address indexed to, uint256 value);
@@ -45,9 +45,9 @@ contract TokenERC20 {
         // Prevent transfer to 0x0 address. Use burn() instead.
         require(_to != 0x0);
         // Check if the sender has enough.
-        require(balanceOf[_from] &gt;= _value);
+        require(balanceOf[_from] >= _value);
         // Check for overflows.
-        require(balanceOf[_to] + _value &gt; balanceOf[_to]);
+        require(balanceOf[_to] + _value > balanceOf[_to]);
         // Save this for an assertion in the future.
         uint previousBalances = balanceOf[_from] + balanceOf[_to];
         // Subtract from the sender.
@@ -82,7 +82,7 @@ contract TokenERC20 {
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         // Check allowance
-        require(_value &lt;= allowance[_from][msg.sender]);
+        require(_value <= allowance[_from][msg.sender]);
         allowance[_from][msg.sender] -= _value;
         _transfer(_from, _to, _value);
         return true;
@@ -130,7 +130,7 @@ contract TokenERC20 {
      */
     function burn(uint256 _value) public returns (bool success) {
         // Check if the sender has enough
-        require(balanceOf[msg.sender] &gt;= _value);
+        require(balanceOf[msg.sender] >= _value);
         // Subtract from the sender
         balanceOf[msg.sender] -= _value;
         // Updates totalSupply
@@ -149,9 +149,9 @@ contract TokenERC20 {
      */
     function burnFrom(address _from, uint256 _value) public returns (bool success) {
         // Check if the targeted balance is enough.
-        require(balanceOf[_from] &gt;= _value);
+        require(balanceOf[_from] >= _value);
         // Check allowance
-        require(_value &lt;= allowance[_from][msg.sender]);
+        require(_value <= allowance[_from][msg.sender]);
         // Subtract from the targeted balance.
         balanceOf[_from] -= _value;
         // Subtract from the sender&#39;s allowance.
@@ -208,13 +208,13 @@ contract TosToken is owned, TokenERC20 {
     ];
 
     /// Locked account details
-    mapping (address =&gt; uint256) public lockBalanceOf;
+    mapping (address => uint256) public lockBalanceOf;
 
     /**
      *  Freeze the account system
      */
     /* This generates a public event on the blockchain that will notify clients. */
-    mapping (address =&gt; bool) public frozenAccount;
+    mapping (address => bool) public frozenAccount;
     event FrozenFunds(address target, bool frozen);
 
     /* Initializes contract with initial supply tokens to the creator of the contract. */
@@ -231,15 +231,15 @@ contract TosToken is owned, TokenERC20 {
      */
     function transfer(address _to, uint256 _value) public {
         /// Locked account can not complete the transfer.
-        require(!(lockJackpots != 0x0 &amp;&amp; msg.sender == lockJackpots));
+        require(!(lockJackpots != 0x0 && msg.sender == lockJackpots));
 
         /// Transponding the TOS token to a locked tokens account will be deemed a lock-up activity.
-        if (lockJackpots != 0x0 &amp;&amp; _to == lockJackpots) {
+        if (lockJackpots != 0x0 && _to == lockJackpots) {
             _lockToken(_value);
         }
         else {
             /// To unlock the time, automatically unlock tokens.
-            if (unLockTime &lt;= now &amp;&amp; lockBalanceOf[msg.sender] &gt; 0) {
+            if (unLockTime <= now && lockBalanceOf[msg.sender] > 0) {
                 lockBalanceOf[msg.sender] = 0;
             }
 
@@ -258,11 +258,11 @@ contract TosToken is owned, TokenERC20 {
         // Prevent transfer to 0x0 address. Use burn() instead.
         require(_to != 0x0);
         //Check for overflows.
-        require(lockBalanceOf[_from] + _value &gt; lockBalanceOf[_from]);
+        require(lockBalanceOf[_from] + _value > lockBalanceOf[_from]);
         // Check if the sender has enough.
-        require(balanceOf[_from] &gt;= lockBalanceOf[_from] + _value);
+        require(balanceOf[_from] >= lockBalanceOf[_from] + _value);
         // Check for overflows.
-        require(balanceOf[_to] + _value &gt; balanceOf[_to]);
+        require(balanceOf[_to] + _value > balanceOf[_to]);
         // Check if sender is frozen.
         require(!frozenAccount[_from]);
         // Check if recipient is frozen.
@@ -275,7 +275,7 @@ contract TosToken is owned, TokenERC20 {
     }
 
     /**
-     * `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens.
+     * `freeze? Prevent | Allow` `target` from sending & receiving tokens.
      *
      * @param target Address to be frozen.
      * @param freeze either to freeze it or not.
@@ -291,7 +291,7 @@ contract TosToken is owned, TokenERC20 {
      * @param _value Increase the amount of tokens awarded.
      */
     function increaseLockReward(uint256 _value) public{
-        require(_value &gt; 0);
+        require(_value > 0);
         _transfer(msg.sender, lockJackpots, _value * 10 ** uint256(decimals));
         _calcRemainReward();
     }
@@ -304,11 +304,11 @@ contract TosToken is owned, TokenERC20 {
     function _lockToken(uint256 _lockValue) internal {
         /// Lock the tokens necessary safety checks.
         require(lockJackpots != 0x0);
-        require(now &gt;= lockStartTime);
-        require(now &lt;= lockDeadline);
-        require(lockBalanceOf[msg.sender] + _lockValue &gt; lockBalanceOf[msg.sender]);
+        require(now >= lockStartTime);
+        require(now <= lockDeadline);
+        require(lockBalanceOf[msg.sender] + _lockValue > lockBalanceOf[msg.sender]);
         /// Check account tokens must be sufficient.
-        require(balanceOf[msg.sender] &gt;= lockBalanceOf[msg.sender] + _lockValue);
+        require(balanceOf[msg.sender] >= lockBalanceOf[msg.sender] + _lockValue);
 
         uint256 _reward =  _lockValue * _calcLockRewardPercentage() / 1000;
         /// Distribute bonus tokens.
@@ -324,7 +324,7 @@ contract TosToken is owned, TokenERC20 {
     function _calcLockRewardPercentage() internal returns (uint factor){
 
         uint phase = NUM_OF_PHASE * (now - lockStartTime)/( lockDeadline - lockStartTime);
-        if (phase  &gt;= NUM_OF_PHASE) {
+        if (phase  >= NUM_OF_PHASE) {
             phase = NUM_OF_PHASE - 1;
         }
     
@@ -335,7 +335,7 @@ contract TosToken is owned, TokenERC20 {
     /** The activity is over and the token in the prize pool is sent to the manager for fund development. */
     function rewardActivityEnd() onlyOwner public {
         /// The activity is over.
-        require(unLockTime &lt; now);
+        require(unLockTime < now);
         /// Send the token from the prize pool to the manager.
         _transfer(lockJackpots, owner, balanceOf[lockJackpots]);
         _calcRemainReward();
@@ -349,7 +349,7 @@ contract TosToken is owned, TokenERC20 {
      * @param newLockJackpots The lock token address.
      */
     function setLockJackpots(address newLockJackpots) onlyOwner public {
-        require(lockJackpots == 0x0 &amp;&amp; newLockJackpots != 0x0 &amp;&amp; newLockJackpots != owner);
+        require(lockJackpots == 0x0 && newLockJackpots != 0x0 && newLockJackpots != owner);
         lockJackpots = newLockJackpots;
         _calcRemainReward();
     }

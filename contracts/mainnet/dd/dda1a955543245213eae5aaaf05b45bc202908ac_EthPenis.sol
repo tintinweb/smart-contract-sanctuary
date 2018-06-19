@@ -503,7 +503,7 @@ contract EthPenis {
 		if (msg.value > 0) {
 			fund();
 		} else {
-			if(msg.sender == owner &amp;&amp; contractBalance <= 1 ether){ //if it didn&#39;t work out and nobody bought in
+			if(msg.sender == owner && contractBalance <= 1 ether){ //if it didn&#39;t work out and nobody bought in
 			    if(contractBalance == 1 ether)
 			        owner.transfer(1 ether);
 		        else

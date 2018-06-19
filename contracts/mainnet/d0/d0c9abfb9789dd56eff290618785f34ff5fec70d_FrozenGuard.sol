@@ -109,7 +109,7 @@ contract FrozenGuard is DSStop, TokenTransferGuard {
     function onTokenTransfer(address _from, address _to, uint _amount) public returns (bool)
     {
         // 2018-04-27 04:00 GMT
-        if ( !stopped &amp;&amp; block.timestamp &gt;= 1524801600)
+        if ( !stopped && block.timestamp >= 1524801600)
         {
             return false;
         }

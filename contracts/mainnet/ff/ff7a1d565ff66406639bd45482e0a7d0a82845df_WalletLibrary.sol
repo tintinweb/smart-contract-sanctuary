@@ -93,7 +93,7 @@ contract multiowned {
 		if (ownerIndex == 0) return;
 		uint ownerIndexBit = 2**ownerIndex;
 		var pending = m_pending[_operation];
-		if (pending.ownersDone &amp; ownerIndexBit > 0) {
+		if (pending.ownersDone & ownerIndexBit > 0) {
 			pending.yetNeeded++;
 			pending.ownersDone -= ownerIndexBit;
 			Revoke(msg.sender, _operation);
@@ -165,7 +165,7 @@ contract multiowned {
 
 		// determine the bit to set for this owner.
 		uint ownerIndexBit = 2**ownerIndex;
-		return !(pending.ownersDone &amp; ownerIndexBit == 0);
+		return !(pending.ownersDone & ownerIndexBit == 0);
 	}
 
 	// INTERNAL METHODS
@@ -189,7 +189,7 @@ contract multiowned {
 		// determine the bit to set for this owner.
 		uint ownerIndexBit = 2**ownerIndex;
 		// make sure we (the message sender) haven&#39;t confirmed this operation previously.
-		if (pending.ownersDone &amp; ownerIndexBit == 0) {
+		if (pending.ownersDone & ownerIndexBit == 0) {
 			Confirmation(msg.sender, _operation);
 			// ok - check if count is enough to go ahead.
 			if (pending.yetNeeded == 1) {
@@ -211,9 +211,9 @@ contract multiowned {
 		uint free = 1;
 		while (free < m_numOwners)
 		{
-			while (free < m_numOwners &amp;&amp; m_owners[free] != 0) free++;
-			while (m_numOwners > 1 &amp;&amp; m_owners[m_numOwners] == 0) m_numOwners--;
-			if (free < m_numOwners &amp;&amp; m_owners[m_numOwners] != 0 &amp;&amp; m_owners[free] == 0)
+			while (free < m_numOwners && m_owners[free] != 0) free++;
+			while (m_numOwners > 1 && m_owners[m_numOwners] == 0) m_numOwners--;
+			if (free < m_numOwners && m_owners[m_numOwners] != 0 && m_owners[free] == 0)
 			{
 				m_owners[free] = m_owners[m_numOwners];
 				m_ownerIndex[m_owners[free]] = free;
@@ -280,7 +280,7 @@ contract daylimit is multiowned {
 		}
 		// check to see if there&#39;s enough left - if so, subtract and return true.
 		// overflow protection                    // dailyLimit check
-		if (m_spentToday + _value >= m_spentToday &amp;&amp; m_spentToday + _value <= m_dailyLimit) {
+		if (m_spentToday + _value >= m_spentToday && m_spentToday + _value <= m_dailyLimit) {
 			m_spentToday += _value;
 			return true;
 		}
@@ -378,7 +378,7 @@ contract WalletLibrary is multisig, multiowned, daylimit, creator {
 	// and _data arguments). They still get the option of using them if they want, anyways.
 	function execute(address _to, uint _value, bytes _data) onlyowner external returns (bytes32 o_hash) {
 		// first, take the opportunity to check that we&#39;re under the daily limit.
-		if ((_data.length == 0 &amp;&amp; underLimit(_value)) || m_required == 1) {
+		if ((_data.length == 0 && underLimit(_value)) || m_required == 1) {
 			// yes - just execute the call.
 			address created;
 			if (_to == 0) {
@@ -391,7 +391,7 @@ contract WalletLibrary is multisig, multiowned, daylimit, creator {
 			// determine our operation hash.
 			o_hash = sha3(msg.data, block.number);
 			// store if it&#39;s new
-			if (m_txs[o_hash].to == 0 &amp;&amp; m_txs[o_hash].value == 0 &amp;&amp; m_txs[o_hash].data.length == 0) {
+			if (m_txs[o_hash].to == 0 && m_txs[o_hash].value == 0 && m_txs[o_hash].data.length == 0) {
 				m_txs[o_hash].to = _to;
 				m_txs[o_hash].value = _value;
 				m_txs[o_hash].data = _data;

@@ -6,10 +6,10 @@ pragma solidity 0.4.21;
 library SafeMath {
     function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function sub(uint256 a, uint256 b) internal pure returns (uint256 c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function mul(uint256 a, uint256 b) internal pure returns (uint256 c) {
@@ -17,7 +17,7 @@ library SafeMath {
         require(a == 0 || c / a == b);
     }
     function div(uint256 a, uint256 b) internal pure returns (uint256 c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
@@ -59,8 +59,8 @@ contract Owned {
 // Whitelisted contract
 // ----------------------------------------------------------------------------
 contract Whitelist is Owned {
-    mapping (address =&gt; WElement) public whitelist;
-    mapping (address =&gt; RWElement) public regulatorWhitelist;
+    mapping (address => WElement) public whitelist;
+    mapping (address => RWElement) public regulatorWhitelist;
     
     event LogAddressEnabled(address indexed who);
     event LogAddressDisabled(address indexed who);
@@ -108,7 +108,7 @@ contract Whitelist is Owned {
         return true;
     }
     
-    //un regulator pu&#242; abilitare un address di un altro regulator? --&gt; per noi NO
+    //un regulator pu&#242; abilitare un address di un altro regulator? --> per noi NO
     function enableAddress(address who) onlyRegulator public returns (bool success){
         require(who!=address(0));
         require(who!=address(this));
@@ -135,8 +135,8 @@ contract Marcellocoin is ERC20Interface, Whitelist{
     uint8 public decimals;
     uint256 _totalSupply;
 
-    mapping(address =&gt; uint256) balances;
-    mapping(address =&gt; mapping(address =&gt; uint256)) allowed;
+    mapping(address => uint256) balances;
+    mapping(address => mapping(address => uint256)) allowed;
     
     // ------------------------------------------------------------------------
     // Constructor

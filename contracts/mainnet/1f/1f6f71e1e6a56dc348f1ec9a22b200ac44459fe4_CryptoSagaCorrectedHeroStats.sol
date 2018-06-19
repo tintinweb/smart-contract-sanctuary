@@ -1009,7 +1009,7 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
     require(_classRank < 5);
     require(_classType < 3);
     require(_aura < 5);
-    require(_minIVForStats[0] <= _maxIVForStats[0] &amp;&amp; _minIVForStats[1] <= _maxIVForStats[1] &amp;&amp; _minIVForStats[2] <= _maxIVForStats[2] &amp;&amp; _minIVForStats[3] <= _maxIVForStats[3] &amp;&amp; _minIVForStats[4] <= _maxIVForStats[4]);
+    require(_minIVForStats[0] <= _maxIVForStats[0] && _minIVForStats[1] <= _maxIVForStats[1] && _minIVForStats[2] <= _maxIVForStats[2] && _minIVForStats[3] <= _maxIVForStats[3] && _minIVForStats[4] <= _maxIVForStats[4]);
 
     HeroClass memory _heroType = HeroClass({
       className: _className,

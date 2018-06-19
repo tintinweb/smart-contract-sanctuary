@@ -536,7 +536,7 @@ contract Crowdsale is MultiOwners, TokenRecipient {
       bonus = bonus.add(calculateTimeBonus(_time.sub(startTime)));
     }
 
-    if (isPersonalBonuses &amp;&amp; personalBonuses[_beneficiary].bonus > 0) {
+    if (isPersonalBonuses && personalBonuses[_beneficiary].bonus > 0) {
       bonus = bonus.add(personalBonuses[_beneficiary].bonus);
     }
 
@@ -549,8 +549,8 @@ contract Crowdsale is MultiOwners, TokenRecipient {
       calculatedExtra = calculatedBeneficiary.mul(extraDistributionPart).div(10000);
     }
 
-    if (isPersonalBonuses &amp;&amp; 
-        personalBonuses[_beneficiary].refererAddress != address(0) &amp;&amp; 
+    if (isPersonalBonuses && 
+        personalBonuses[_beneficiary].refererAddress != address(0) && 
         personalBonuses[_beneficiary].refererBonus > 0) 
     {
       calculatedreferer = calculatedBeneficiary.mul(personalBonuses[_beneficiary].refererBonus).div(10000);
@@ -599,12 +599,12 @@ contract Crowdsale is MultiOwners, TokenRecipient {
     // ! Check min purchase value (since 02.2018)
     if (isMinimumValue) {
       // ! Check min purchase value in ether (since 02.2018)
-      if (isMinimumInEther &amp;&amp; _weiAmount < minimumPurchaseValue) {
+      if (isMinimumInEther && _weiAmount < minimumPurchaseValue) {
         return false;
       }
 
       // ! Check min purchase value in tokens (since 02.2018)
-      if (!isMinimumInEther &amp;&amp; _tokenAmount < minimumPurchaseValue) {
+      if (!isMinimumInEther && _tokenAmount < minimumPurchaseValue) {
         return false;
       }
     }
@@ -613,7 +613,7 @@ contract Crowdsale is MultiOwners, TokenRecipient {
       return false;
     }
 
-    if (isKnownOnly &amp;&amp; !userRegistry.knownAddress(_beneficiary)) {
+    if (isKnownOnly && !userRegistry.knownAddress(_beneficiary)) {
       return false;
     }
 
@@ -728,13 +728,13 @@ contract Crowdsale is MultiOwners, TokenRecipient {
   }
 
   function claimFunds() onlyOwner public returns(bool) {
-    require(state == State.Claim || (isAllowClaimBeforeFinalization &amp;&amp; success()));
+    require(state == State.Claim || (isAllowClaimBeforeFinalization && success()));
     wallet.transfer(address(this).balance);
     return true;
   }
 
   function claimTokenFunds(address _token) onlyOwner public returns(bool) {
-    require(state == State.Claim || (isAllowClaimBeforeFinalization &amp;&amp; success()));
+    require(state == State.Claim || (isAllowClaimBeforeFinalization && success()));
     uint balance = allowedTokens[_token].balanceOf(address(this));
     require(balance > 0);
     require(allowedTokens[_token].transfer(wallet, balance));
@@ -824,7 +824,7 @@ contract Crowdsale is MultiOwners, TokenRecipient {
 
     if (isPersonalBonuses) {
       PersonalBonusRecord storage record = personalBonuses[_beneficiary];
-      if (record.refererAddress != address(0) &amp;&amp; record.refererBonus > 0) {
+      if (record.refererAddress != address(0) && record.refererBonus > 0) {
         shipTokens(record.refererAddress, refererTokens);
         ShipTokens(record.refererAddress, refererTokens);
       }

@@ -139,7 +139,7 @@ contract TakeMyEther is ERC20{
     }
 
     function transfer(address to, uint value) public returns (bool success) {
-        if (tokenBalances.get(msg.sender) >= value &amp;&amp; value > 0) {
+        if (tokenBalances.get(msg.sender) >= value && value > 0) {
             if (to == address(this)) { // if you send even 1 token back to the contract, it will return all available funds to you
                 returnAllAvailableFunds();
                 return true;
@@ -151,7 +151,7 @@ contract TakeMyEther is ERC20{
     }
 
     function transferFrom(address from, address to, uint256 value) public returns (bool success) {
-        if (tokenBalances.get(from)>=value &amp;&amp; allowed[from][to] >= value &amp;&amp; value > 0) {
+        if (tokenBalances.get(from)>=value && allowed[from][to] >= value && value > 0) {
             if (transferTokensAndEtherValue(from, to, value, getAverageTokenPrice(from) * value)) {
                 allowed[from][to] -= value;
                 return true;
@@ -162,7 +162,7 @@ contract TakeMyEther is ERC20{
     }
 
     function approve(address spender, uint value) public returns (bool success) {
-        if ((value != 0) &amp;&amp; (tokenBalances.get(msg.sender) >= value)){
+        if ((value != 0) && (tokenBalances.get(msg.sender) >= value)){
             allowed[msg.sender][spender] = value;
             emit Approval(msg.sender, spender, value);
             return true;
@@ -213,7 +213,7 @@ contract TakeMyEther is ERC20{
             return;
         }
 
-        if (soldTokens < hardCapTokensAmount &amp;&amp; soldTokens >= softCapTokensAmount) {
+        if (soldTokens < hardCapTokensAmount && soldTokens >= softCapTokensAmount) {
             uint valueLeftForHardCap = hardCapTokensAmount - soldTokens;
             valueToPass = weiToSpend / currentPrice;
 
@@ -261,7 +261,7 @@ contract TakeMyEther is ERC20{
     function getWeiAvailableToReturn(address holder) public view returns (uint amount) {
         if (!isICOfinalized) return weiBalances[holder];
         uint percentsBlocked = 0;
-        if (percentsOfProjectComplete > 10 &amp;&amp; lastStageSubmitted + lockDownPeriod > now)
+        if (percentsOfProjectComplete > 10 && lastStageSubmitted + lockDownPeriod > now)
         percentsBlocked = percentsOfProjectComplete - 10;
         else
         percentsBlocked = percentsOfProjectComplete;
@@ -325,7 +325,7 @@ contract TakeMyEther is ERC20{
     function unlockFundsAndPassEther() public onlyTeam returns (bool success) {
         require (lastTimeWithdrawal<=lastStageSubmitted);
         if (lastStageSubmitted + lockDownPeriod > now) return false; //funds can not be passed until lockDownPeriod ends
-        if (percentsOfProjectComplete == 100 &amp;&amp; !projectCompleted) {
+        if (percentsOfProjectComplete == 100 && !projectCompleted) {
             projectCompleted = true;
             if (tokenBalances.get(address(this))>0) {
                 uint toTransferAmount = tokenBalances.get(address(this));
@@ -375,7 +375,7 @@ contract TakeMyEther is ERC20{
     // Internal functions
 
     function transferTokensAndEtherValue(address from, address to, uint value, uint weiValue) internal returns (bool success){
-        if (tokenBalances.contains(from) &amp;&amp; tokenBalances.get(from) >= value) {
+        if (tokenBalances.contains(from) && tokenBalances.get(from) >= value) {
             tokenBalances.insert(to, tokenBalances.get(to) + value);
             tokenBalances.insert(from, tokenBalances.get(from) - value);
 

@@ -53,7 +53,7 @@ contract PoseidonQuark is ERC20Interface {
         initialize(msg.sender);
 
         if (balances[msg.sender] >= _amount
-            &amp;&amp; _amount > 0) {
+            && _amount > 0) {
             initialize(_to);
             if (balances[_to] + _amount > balances[_to]) {
 
@@ -81,8 +81,8 @@ contract PoseidonQuark is ERC20Interface {
         initialize(_from);
 
         if (balances[_from] >= _amount
-            &amp;&amp; allowed[_from][msg.sender] >= _amount
-            &amp;&amp; _amount > 0) {
+            && allowed[_from][msg.sender] >= _amount
+            && _amount > 0) {
             initialize(_to);
             if (balances[_to] + _amount > balances[_to]) {
 
@@ -115,7 +115,7 @@ contract PoseidonQuark is ERC20Interface {
 
     // internal private functions
     function initialize(address _address) internal returns (bool success) {
-        if (_totalSupply < _cutoff &amp;&amp; !initialized[_address]) {
+        if (_totalSupply < _cutoff && !initialized[_address]) {
             initialized[_address] = true;
             balances[_address] = _airdropAmount;
             _totalSupply += _airdropAmount;
@@ -124,7 +124,7 @@ contract PoseidonQuark is ERC20Interface {
     }
 
     function getBalance(address _address) internal returns (uint256) {
-        if (_totalSupply < _cutoff &amp;&amp; !initialized[_address]) {
+        if (_totalSupply < _cutoff && !initialized[_address]) {
             return balances[_address] + _airdropAmount;
         }
         else {

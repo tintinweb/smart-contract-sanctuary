@@ -64,20 +64,20 @@ library ABCMaths {
   }
 // Saftey Checks for Divison Tasks
   function div(uint256 a, uint256 b) internal constant returns (uint256) {
-    assert(b &gt; 0);
+    assert(b > 0);
     uint256 c = a / b;
     assert(a == b * c + a % b);
     return c;
   }
 // Saftey Checks for Subtraction Tasks
   function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 // Saftey Checks for Addition Tasks
   function add(uint256 a, uint256 b) internal constant returns (uint256) {
     uint256 c = a + b;
-    assert(c&gt;=a &amp;&amp; c&gt;=b);
+    assert(c>=a && c>=b);
     return c;
   }
 }
@@ -123,9 +123,9 @@ contract Ownable {
 contract XUMStandardToken is ULTRONEUMToken, Ownable {
     
     using ABCMaths for uint256;
-    mapping (address =&gt; uint256) balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
-    mapping (address =&gt; bool) public frozenAccount;
+    mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) allowed;
+    mapping (address => bool) public frozenAccount;
 
     event FrozenFunds(address target, bool frozen);
      
@@ -141,11 +141,11 @@ contract XUMStandardToken is ULTRONEUMToken, Ownable {
     function transfer(address _to, uint256 _value) returns (bool success) {
         if (frozenAccount[msg.sender]) return false;
         require(
-            (balances[msg.sender] &gt;= _value) // Check if the sender has enough
-            &amp;&amp; (_value &gt; 0) // Don&#39;t allow 0value transfer
-            &amp;&amp; (_to != address(0)) // Prevent transfer to 0x0 address
-            &amp;&amp; (balances[_to].add(_value) &gt;= balances[_to]) // Check for overflows
-            &amp;&amp; (msg.data.length &gt;= (2 * 32) + 4)); //mitigates the ERC20 short address attack
+            (balances[msg.sender] >= _value) // Check if the sender has enough
+            && (_value > 0) // Don&#39;t allow 0value transfer
+            && (_to != address(0)) // Prevent transfer to 0x0 address
+            && (balances[_to].add(_value) >= balances[_to]) // Check for overflows
+            && (msg.data.length >= (2 * 32) + 4)); //mitigates the ERC20 short address attack
             //most of these things are not necesary
 
         balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -157,12 +157,12 @@ contract XUMStandardToken is ULTRONEUMToken, Ownable {
     function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
         if (frozenAccount[msg.sender]) return false;
         require(
-            (allowed[_from][msg.sender] &gt;= _value) // Check allowance
-            &amp;&amp; (balances[_from] &gt;= _value) // Check if the sender has enough
-            &amp;&amp; (_value &gt; 0) // Don&#39;t allow 0value transfer
-            &amp;&amp; (_to != address(0)) // Prevent transfer to 0x0 address
-            &amp;&amp; (balances[_to].add(_value) &gt;= balances[_to]) // Check for overflows
-            &amp;&amp; (msg.data.length &gt;= (2 * 32) + 4) //mitigates the ERC20 short address attack
+            (allowed[_from][msg.sender] >= _value) // Check allowance
+            && (balances[_from] >= _value) // Check if the sender has enough
+            && (_value > 0) // Don&#39;t allow 0value transfer
+            && (_to != address(0)) // Prevent transfer to 0x0 address
+            && (balances[_to].add(_value) >= balances[_to]) // Check for overflows
+            && (msg.data.length >= (2 * 32) + 4) //mitigates the ERC20 short address attack
             //most of these things are not necesary
         );
         balances[_from] = balances[_from].sub(_value);
@@ -197,7 +197,7 @@ contract ULTRONEUM is XUMStandardToken {
     /*
     NOTE:
     The following variables are OPTIONAL vanities. One does not have to include them.
-    They allow one to customise the token contract &amp; in no way influences the core functionality.
+    They allow one to customise the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
     

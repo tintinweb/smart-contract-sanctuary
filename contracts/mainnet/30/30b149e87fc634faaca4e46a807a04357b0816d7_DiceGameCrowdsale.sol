@@ -64,7 +64,7 @@ contract TokenTimelock {
   uint256 public releaseTime;
 
   function TokenTimelock(ERC20Basic _token, address _beneficiary, uint256 _releaseTime) public {
-    require(_releaseTime &gt; now);
+    require(_releaseTime > now);
     token = _token;
     beneficiary = _beneficiary;
     releaseTime = _releaseTime;
@@ -74,10 +74,10 @@ contract TokenTimelock {
    * @notice Transfers tokens held by timelock to beneficiary.
    */
   function release() public {
-    require(now &gt;= releaseTime);
+    require(now >= releaseTime);
 
     uint256 amount = token.balanceOf(this);
-    require(amount &gt; 0);
+    require(amount > 0);
 
     token.safeTransfer(beneficiary, amount);
   }
@@ -106,7 +106,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -116,7 +116,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -125,7 +125,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -179,8 +179,8 @@ contract DiceGameToken is ERC20, Ownable {
     string public constant symbol = &quot;DICE&quot;;
     uint8 public constant decimals = 18;
 
-    mapping (address =&gt; uint256) private balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping (address => uint256) private balances;
+    mapping (address => mapping (address => uint256)) internal allowed;
 
     event Mint(address indexed to, uint256 amount);
     event MintFinished();
@@ -208,7 +208,7 @@ contract DiceGameToken is ERC20, Ownable {
     */
     function transfer(address _to, uint256 _value) public canTransfer returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
 
         // SafeMath.sub will throw if there is not enough balance.
         balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -234,8 +234,8 @@ contract DiceGameToken is ERC20, Ownable {
     */
     function transferFrom(address _from, address _to, uint256 _value) public canTransfer returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -298,7 +298,7 @@ contract DiceGameToken is ERC20, Ownable {
     */
     function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -378,7 +378,7 @@ contract EscrowVault is Ownable {
 
   enum State { Active, Refunding, GoalReached, Closed }
 
-  mapping (address =&gt; uint256) public deposited;
+  mapping (address => uint256) public deposited;
   address public beneficiary;
   address public superOwner;
   State public state;
@@ -411,7 +411,7 @@ contract EscrowVault is Ownable {
   function withdraw(uint256 _amount) public {
     require(msg.sender == superOwner);
     require(state == State.GoalReached);
-    require (_amount &lt;= this.balance &amp;&amp;  _amount &gt; 0);
+    require (_amount <= this.balance &&  _amount > 0);
     beneficiary.transfer(_amount);
     Withdrawal(_amount);
   }
@@ -545,7 +545,7 @@ contract DiceGameCrowdsale is TokenDeskProxyAware {
         uint256 weiAmount = msg.value;
         uint256 nowTime = getNow();
         // this loop moves stages and ensures correct stage according to date
-        while (currentStage &lt; stages.length &amp;&amp; stages[currentStage].till &lt; nowTime) {
+        while (currentStage < stages.length && stages[currentStage].till < nowTime) {
             // move all unsold tokens to next stage
             uint256 nextStage = currentStage.add(1);
             stages[nextStage].cap = stages[nextStage].cap.add(stages[currentStage].cap);
@@ -557,17 +557,17 @@ contract DiceGameCrowdsale is TokenDeskProxyAware {
         uint256 tokens = calculateTokens(weiAmount, tokenDeskBonus);
 
         uint256 excess = appendContribution(beneficiary, tokens);
-        uint256 refund = (excess &gt; 0 ? excess.mul(weiAmount).div(tokens) : 0);
+        uint256 refund = (excess > 0 ? excess.mul(weiAmount).div(tokens) : 0);
         weiAmount = weiAmount.sub(refund);
         weiRaised = weiRaised.add(weiAmount);
 
-        if (refund &gt; 0) { // hard cap reached, no more tokens to mint
+        if (refund > 0) { // hard cap reached, no more tokens to mint
             sender.transfer(refund);
         }
 
         TokenPurchase(sender, beneficiary, weiAmount, tokens.sub(excess));
 
-        if (goalReached() &amp;&amp; vault.state() == EscrowVault.State.Active) {
+        if (goalReached() && vault.state() == EscrowVault.State.Active) {
             vault.setGoalReached();
         }
         vault.deposit.value(weiAmount)(sender);
@@ -576,14 +576,14 @@ contract DiceGameCrowdsale is TokenDeskProxyAware {
     function calculateTokens(uint256 _weiAmount, uint256 _tokenDeskBonus) internal view returns (uint256) {
         uint256 tokens = _weiAmount.mul(RATE);
 
-        if (stages[currentStage].bonus &gt; 0) {
+        if (stages[currentStage].bonus > 0) {
             uint256 stageBonus = tokens.mul(stages[currentStage].bonus).div(100);
             tokens = tokens.add(stageBonus);
         }
 
-        if (currentStage &lt; 1) return tokens;
+        if (currentStage < 1) return tokens;
 
-        uint256 bonus = _tokenDeskBonus.add(tokens &gt;= LARGE_PURCHASE ? LARGE_PURCHASE_BONUS : 0);
+        uint256 bonus = _tokenDeskBonus.add(tokens >= LARGE_PURCHASE ? LARGE_PURCHASE_BONUS : 0);
         return tokens.add(tokens.mul(bonus).div(100));
     }
 
@@ -591,9 +591,9 @@ contract DiceGameCrowdsale is TokenDeskProxyAware {
         uint256 excess = _tokens;
         uint256 tokensToMint = 0;
 
-        while (excess &gt; 0 &amp;&amp; currentStage &lt; stages.length) {
+        while (excess > 0 && currentStage < stages.length) {
             Stage storage stage = stages[currentStage];
-            if (excess &gt;= stage.cap) {
+            if (excess >= stage.cap) {
                 excess = excess.sub(stage.cap);
                 tokensToMint = tokensToMint.add(stage.cap);
                 stage.cap = 0;
@@ -604,7 +604,7 @@ contract DiceGameCrowdsale is TokenDeskProxyAware {
                 excess = 0;
             }
         }
-        if (tokensToMint &gt; 0) {
+        if (tokensToMint > 0) {
             token.mint(_beneficiary, tokensToMint);
         }
         return excess;
@@ -612,11 +612,11 @@ contract DiceGameCrowdsale is TokenDeskProxyAware {
 
     // @return true if the transaction can buy tokens
     function validPurchase() internal view returns (bool) {
-        bool withinPeriod = getNow() &gt;= START_TIME &amp;&amp; getNow() &lt;= icoEndTime;
+        bool withinPeriod = getNow() >= START_TIME && getNow() <= icoEndTime;
         bool nonZeroPurchase = msg.value != 0;
-        bool canMint = token.totalSupply() &lt; ICO_TOKENS;
-        bool validStage = (currentStage &lt; stages.length);
-        return withinPeriod &amp;&amp; nonZeroPurchase &amp;&amp; canMint &amp;&amp; validStage;
+        bool canMint = token.totalSupply() < ICO_TOKENS;
+        bool validStage = (currentStage < stages.length);
+        return withinPeriod && nonZeroPurchase && canMint && validStage;
     }
 
     // if crowdsale is unsuccessful, investors can claim refunds here
@@ -633,7 +633,7 @@ contract DiceGameCrowdsale is TokenDeskProxyAware {
     */
     function finalize() public onlyOwner {
         require(!isFinalized);
-        require(getNow() &gt; icoEndTime || token.totalSupply() == ICO_TOKENS);
+        require(getNow() > icoEndTime || token.totalSupply() == ICO_TOKENS);
 
         if (goalReached()) {
             // Close escrowVault and transfer all collected ethers into WALLET address
@@ -665,7 +665,7 @@ contract DiceGameCrowdsale is TokenDeskProxyAware {
     }
 
     function goalReached() public view returns (bool) {
-        return token.totalSupply() &gt;= SOFT_CAP;
+        return token.totalSupply() >= SOFT_CAP;
     }
 
     // fallback function can be used to buy tokens or claim refund
@@ -678,26 +678,26 @@ contract DiceGameCrowdsale is TokenDeskProxyAware {
     }
 
     function mintTokens(address[] _receivers, uint256[] _amounts) external onlyTokenMinterOrOwner {
-        require(_receivers.length &gt; 0 &amp;&amp; _receivers.length &lt;= 100);
+        require(_receivers.length > 0 && _receivers.length <= 100);
         require(_receivers.length == _amounts.length);
         require(!isFinalized);
-        for (uint256 i = 0; i &lt; _receivers.length; i++) {
+        for (uint256 i = 0; i < _receivers.length; i++) {
             address receiver = _receivers[i];
             uint256 amount = _amounts[i];
 
             require(receiver != address(0));
-            require(amount &gt; 0);
+            require(amount > 0);
 
             uint256 excess = appendContribution(receiver, amount);
 
-            if (excess &gt; 0) {
+            if (excess > 0) {
                 ManualTokenMintRequiresRefund(receiver, excess);
             }
         }
     }
 
     function setIcoEndTime(uint256 _endTime) public onlyOwner {
-        require(_endTime &gt; START_TIME &amp;&amp; _endTime &gt; getNow());
+        require(_endTime > START_TIME && _endTime > getNow());
         icoEndTime = _endTime;
     }
 

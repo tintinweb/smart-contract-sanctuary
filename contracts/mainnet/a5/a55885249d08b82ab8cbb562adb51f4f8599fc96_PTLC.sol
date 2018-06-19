@@ -7,37 +7,37 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 
     function max64(uint64 a, uint64 b) internal pure returns (uint64) {
-        return a &gt;= b ? a : b;
+        return a >= b ? a : b;
     }
 
     function min64(uint64 a, uint64 b) internal pure returns (uint64) {
-        return a &lt; b ? a : b;
+        return a < b ? a : b;
     }
 
     function max256(uint256 a, uint256 b) internal pure returns (uint256) {
-        return a &gt;= b ? a : b;
+        return a >= b ? a : b;
     }
 
     function min256(uint256 a, uint256 b) internal pure returns (uint256) {
-        return a &lt; b ? a : b;
+        return a < b ? a : b;
     }
 
 }
@@ -78,11 +78,11 @@ contract ERC20 is ERC20Basic {
 contract BasicToken is ERC20Basic {
     using SafeMath for uint256;
 
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
     uint256 public totalSupply;
 
     modifier onlyPayloadSize(uint256 size) {
-        if(msg.data.length &lt; size + 4) {
+        if(msg.data.length < size + 4) {
             revert();
         }
         _;
@@ -101,7 +101,7 @@ contract BasicToken is ERC20Basic {
 }
 contract StandardToken is BasicToken, ERC20 {
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => mapping (address => uint256)) allowed;
 
     function transferFrom(address _from, address _to, uint256 _value) public onlyPayloadSize(3 * 32) {
         var _allowance = allowed[_from][msg.sender];
@@ -112,7 +112,7 @@ contract StandardToken is BasicToken, ERC20 {
     }
 
     function approve(address _spender, uint256 _value) public {
-        if ((_value != 0) &amp;&amp; (allowed[msg.sender][_spender] != 0)) revert();
+        if ((_value != 0) && (allowed[msg.sender][_spender] != 0)) revert();
 
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);

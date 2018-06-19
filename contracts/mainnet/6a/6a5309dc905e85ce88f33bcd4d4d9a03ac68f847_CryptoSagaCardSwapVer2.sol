@@ -1110,7 +1110,7 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
     require(_classRank < 5);
     require(_classType < 3);
     require(_aura < 5);
-    require(_minIVForStats[0] <= _maxIVForStats[0] &amp;&amp; _minIVForStats[1] <= _maxIVForStats[1] &amp;&amp; _minIVForStats[2] <= _maxIVForStats[2] &amp;&amp; _minIVForStats[3] <= _maxIVForStats[3] &amp;&amp; _minIVForStats[4] <= _maxIVForStats[4]);
+    require(_minIVForStats[0] <= _maxIVForStats[0] && _minIVForStats[1] <= _maxIVForStats[1] && _minIVForStats[2] <= _maxIVForStats[2] && _minIVForStats[3] <= _maxIVForStats[3] && _minIVForStats[4] <= _maxIVForStats[4]);
 
     HeroClass memory _heroType = HeroClass({
       className: _className,
@@ -1454,7 +1454,7 @@ contract CryptoSagaCardSwapVer2 is CryptoSagaCardSwap, Pausable{
     // This is becaue we need to use tx.origin here.
     // _by should be the beneficiary, but due to the bug that is already exist with CryptoSagaCard.sol,
     // tx.origin is used instead of _by.
-    require(tx.origin != _by &amp;&amp; tx.origin != msg.sender);
+    require(tx.origin != _by && tx.origin != msg.sender);
 
     // Get value 0 ~ 9999.
     var _randomValue = random(10000, 0);
@@ -1497,7 +1497,7 @@ contract CryptoSagaCardSwapVer2 is CryptoSagaCardSwap, Pausable{
     // Referral address shouldn&#39;t be the same address.
     require(msg.sender != _referralAddress);
     // Up to 5 purchases at once.
-    require(_amount >= 1 &amp;&amp; _amount <= 5);
+    require(_amount >= 1 && _amount <= 5);
 
     var _priceOfBundle = ethPrice * _amount;
 
@@ -1542,7 +1542,7 @@ contract CryptoSagaCardSwapVer2 is CryptoSagaCardSwap, Pausable{
   {
     require(msg.sender != address(0));
     // Up to 5 purchases at once.
-    require(_amount >= 1 &amp;&amp; _amount <= 5);
+    require(_amount >= 1 && _amount <= 5);
 
     var _priceOfBundle = goldPrice * _amount;
 
@@ -1581,7 +1581,7 @@ contract CryptoSagaCardSwapVer2 is CryptoSagaCardSwap, Pausable{
   {
     require(msg.sender != address(0));
     // Up to 5 purchases at once.
-    require(_amount >= 1 &amp;&amp; _amount <= 5);
+    require(_amount >= 1 && _amount <= 5);
 
     var _priceOfBundle = mileagePointPrice * _amount;
 
@@ -1653,7 +1653,7 @@ contract CryptoSagaCardSwapVer2 is CryptoSagaCardSwap, Pausable{
     uint32[] memory _candidates = new uint32[](_numberOfClasses);
     uint32 _count = 0;
     for (uint32 i = 0; i < _numberOfClasses; i ++) {
-      if (heroContract.getClassRank(i) == _heroRankToMint &amp;&amp; blackList[i] != true) {
+      if (heroContract.getClassRank(i) == _heroRankToMint && blackList[i] != true) {
         _candidates[_count] = i;
         _count++;
       }

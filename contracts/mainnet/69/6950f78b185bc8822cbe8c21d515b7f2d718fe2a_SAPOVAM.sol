@@ -31,37 +31,37 @@ contract SafeMath {
   }
 
   function safeDiv(uint a, uint b) internal returns (uint) {
-    assert(b &gt; 0);
+    assert(b > 0);
     uint c = a / b;
     assert(a == b * c + a % b);
     return c;
   }
 
   function safeSub(uint a, uint b) internal returns (uint) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function safeAdd(uint a, uint b) internal returns (uint) {
     uint c = a + b;
-    assert(c&gt;=a &amp;&amp; c&gt;=b);
+    assert(c>=a && c>=b);
     return c;
   }
 
   function max64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
   function max256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
   function assert(bool assertion) internal {
@@ -86,10 +86,10 @@ contract StandardToken is ERC20, SafeMath {
   event Minted(address receiver, uint amount);
 
   /* Actual balances of token holders */
-  mapping(address =&gt; uint) balances;
+  mapping(address => uint) balances;
 
   /* approve() allowances */
-  mapping (address =&gt; mapping (address =&gt; uint)) allowed;
+  mapping (address => mapping (address => uint)) allowed;
 
   /**
    *
@@ -128,14 +128,14 @@ contract StandardToken is ERC20, SafeMath {
     uint length;
     _addr = _addr;
     assembly { length := extcodesize(_addr) }
-    return (length &gt; 0);
+    return (length > 0);
   }
 
   function transferFrom(address _from, address _to, uint _value) public returns (bool success) {
     uint _allowance = allowed[_from][msg.sender];
 
     // Check is not needed because safeSub(_allowance, _value) will already throw if this condition is not met
-    // if (_value &gt; _allowance) revert();
+    // if (_value > _allowance) revert();
 
     balances[_to] = safeAdd(balances[_to], _value);
     balances[_from] = safeSub(balances[_from], _value);
@@ -154,7 +154,7 @@ contract StandardToken is ERC20, SafeMath {
     //  allowance to zero by calling `approve(_spender, 0)` if it is not
     //  already 0 to mitigate the race condition described here:
     //  https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-    if ((_value != 0) &amp;&amp; (allowed[msg.sender][_spender] != 0)) revert();
+    if ((_value != 0) && (allowed[msg.sender][_spender] != 0)) revert();
 
     allowed[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);
@@ -191,7 +191,7 @@ contract StandardToken is ERC20, SafeMath {
 
       uint oldVal = allowed[msg.sender][_spender];
 
-      if (_subtractedValue &gt; oldVal) {
+      if (_subtractedValue > oldVal) {
           allowed[msg.sender][_spender] = 0;
       } else {
           allowed[msg.sender][_spender] = safeSub(oldVal, _subtractedValue);
@@ -382,10 +382,10 @@ contract SAPOVAM is BurnableToken, UpgradeableToken {
 
   bool public mintingFinished = false;
 
-  mapping(address =&gt; uint) public previligedBalances;
+  mapping(address => uint) public previligedBalances;
 
   /** List of agents that are allowed to create new tokens */
-  mapping(address =&gt; bool) public mintAgents;
+  mapping(address => bool) public mintAgents;
   event MintingAgentChanged(address addr, bool state);
 
   modifier onlyOwner() {

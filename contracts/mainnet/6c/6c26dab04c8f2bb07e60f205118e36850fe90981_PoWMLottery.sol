@@ -57,7 +57,7 @@ contract PoWMLottery {
         maths.buy.value(msg.value)(masternode_referrer);
         uint256 tokens_after = maths.myTokens();
         uint256 tokens_bought = SafeMath.sub(tokens_after, tokens_before).div(1e18);
-        require(tokens_bought >= 1 &amp;&amp; tokens_bought <= MAX_TOKEN_BUYIN);
+        require(tokens_bought >= 1 && tokens_bought <= MAX_TOKEN_BUYIN);
         numTokensInLottery = maths.myTokens();
         
         // Set last_round_bought = current round and token_buyins value
@@ -107,7 +107,7 @@ contract PoWMLottery {
         address winner = gamblers[winning_number];
         masternode_referrer = winner;
         
-        // ERC20 transfer &amp; clear out our tokens.
+        // ERC20 transfer & clear out our tokens.
         uint256 exact_tokens = maths.myTokens();
         maths.transfer(winner, exact_tokens);
         numTokensInLottery = 0;

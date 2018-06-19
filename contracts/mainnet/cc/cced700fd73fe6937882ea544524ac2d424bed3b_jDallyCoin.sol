@@ -2,8 +2,8 @@ pragma solidity ^0.4.23;
 
 contract Token {
 
-	mapping(address =&gt; uint) balances;
-	mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+	mapping(address => uint) balances;
+	mapping (address => mapping (address => uint256)) allowed;
 	uint public totalSupply;
 	
 	event Transfer(address indexed _from, address indexed _to, uint256 _value);
@@ -28,9 +28,9 @@ contract Token {
     }
 	
 	function transfer(address _to, uint _value) public returns (bool success) {
-		if (balances[msg.sender] &gt;= _value
-		&amp;&amp; _value &gt; 0
-		&amp;&amp; balances[_to] + _value &gt; balances[_to]) {
+		if (balances[msg.sender] >= _value
+		&& _value > 0
+		&& balances[_to] + _value > balances[_to]) {
 			balances[msg.sender] -= _value;
 			balances[_to] += _value;					// add value to receiver&#39;s balance
 			Transfer(msg.sender, _to, _value);
@@ -41,9 +41,9 @@ contract Token {
 	}
 	
 	function transferFrom(address _to, address _from, uint _value) returns (bool success) {
-		if (balances[_from] &gt;= _value
-		&amp;&amp; _value &gt; 0
-		&amp;&amp; allowed[_from][msg.sender] &gt;= _value) {
+		if (balances[_from] >= _value
+		&& _value > 0
+		&& allowed[_from][msg.sender] >= _value) {
 			balances[_to] += _value;
 			balances[_from] -= _value;
 			allowed[_from][msg.sender] -= _value;

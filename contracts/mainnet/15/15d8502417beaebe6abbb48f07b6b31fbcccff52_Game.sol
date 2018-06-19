@@ -80,7 +80,7 @@ contract Game is ownerOnly {
             
             cow_code++;
             cows_count++;
-            user[keccak256(msg.sender) &amp; keccak256(i)]=cows(cow_code,true,time,true,0,time);
+            user[keccak256(msg.sender) & keccak256(i)]=cows(cow_code,true,time,true,0,time);
         }
         users_cows[msg.sender] = cows_count;
         rico.transfer(0.01 ether);
@@ -95,33 +95,33 @@ contract Game is ownerOnly {
         for (uint i=1; i<=users_cows[gamer]; i++) {
             
             //если корова пока жива тогда доим
-            if (user[keccak256(gamer) &amp; keccak256(i)].cow_live==true &amp;&amp; user[keccak256(gamer) &amp; keccak256(i)].place) {
+            if (user[keccak256(gamer) & keccak256(i)].cow_live==true && user[keccak256(gamer) & keccak256(i)].place) {
                 
                 //получаем время смерти коровы
-                uint datedeadcow=user[keccak256(gamer) &amp; keccak256(i)].date_buy+time_to_live;
+                uint datedeadcow=user[keccak256(gamer) & keccak256(i)].date_buy+time_to_live;
                
                 //если время смерти коровы уже наступило
                 if (time>=datedeadcow) {
                     
                     //получаем сколько доек мы пропустили
-                    time_milk=(time-user[keccak256(gamer) &amp; keccak256(i)].date_milk)/time_to_milk;
+                    time_milk=(time-user[keccak256(gamer) & keccak256(i)].date_milk)/time_to_milk;
                     
                     if (time_milk>=1) {
                         //кидаем на склад молоко которое мы надоили за пропущенные дойки
-                        user[keccak256(gamer) &amp; keccak256(i)].milk+=(volume_milk*time_milk);
+                        user[keccak256(gamer) & keccak256(i)].milk+=(volume_milk*time_milk);
                         //убиваем корову
-                        user[keccak256(gamer) &amp; keccak256(i)].cow_live=false;
+                        user[keccak256(gamer) & keccak256(i)].cow_live=false;
                         //устанавливаем последнее время доения
-                        user[keccak256(gamer) &amp; keccak256(i)].date_milk+=(time_milk*time_to_milk);
+                        user[keccak256(gamer) & keccak256(i)].date_milk+=(time_milk*time_to_milk);
                     }
                     
                 } else {
                     
-                    time_milk=(time-user[keccak256(gamer) &amp; keccak256(i)].date_milk)/time_to_milk;
+                    time_milk=(time-user[keccak256(gamer) & keccak256(i)].date_milk)/time_to_milk;
                     
                     if (time_milk>=1) {
-                        user[keccak256(gamer) &amp; keccak256(i)].milk+=(volume_milk*time_milk);
-                        user[keccak256(gamer) &amp; keccak256(i)].date_milk+=(time_milk*time_to_milk);
+                        user[keccak256(gamer) & keccak256(i)].milk+=(volume_milk*time_milk);
+                        user[keccak256(gamer) & keccak256(i)].date_milk+=(time_milk*time_to_milk);
                     }
                 }
             }
@@ -147,9 +147,9 @@ contract Game is ownerOnly {
 
             for (uint i=1; i<=cows_count; i++) {
 
-                milk_to_sale += user[keccak256(msg.sender) &amp; keccak256(i)].milk;
+                milk_to_sale += user[keccak256(msg.sender) & keccak256(i)].milk;
                 //удаляем из анкеты все молоко
-                user[keccak256(msg.sender) &amp; keccak256(i)].milk = 0;
+                user[keccak256(msg.sender) & keccak256(i)].milk = 0;
             }
             //отсылаем эфир за купленное молоко
             msg.sender.transfer(milkcost*milk_to_sale);
@@ -160,18 +160,18 @@ contract Game is ownerOnly {
     function TransferCow(address gamer, uint num_cow) public {
         
         //продавать разрешается только живую корову
-        if (user[keccak256(msg.sender) &amp; keccak256(num_cow)].cow_live == true &amp;&amp; user[keccak256(msg.sender) &amp; keccak256(num_cow)].place==true) {
+        if (user[keccak256(msg.sender) & keccak256(num_cow)].cow_live == true && user[keccak256(msg.sender) & keccak256(num_cow)].place==true) {
             
             //получаем количество коров у покупателя
             uint cows_count = users_cows[gamer];
             
             //создаем и заполняем анкету коровы для нового фермера, при этом молоко не передается
-            user[keccak256(gamer) &amp; keccak256(cows_count)]=cows(user[keccak256(msg.sender) &amp; keccak256(num_cow)].cow,
-            true,user[keccak256(msg.sender) &amp; keccak256(num_cow)].date_buy,
-            user[keccak256(msg.sender) &amp; keccak256(num_cow)].cow_live,0,now);
+            user[keccak256(gamer) & keccak256(cows_count)]=cows(user[keccak256(msg.sender) & keccak256(num_cow)].cow,
+            true,user[keccak256(msg.sender) & keccak256(num_cow)].date_buy,
+            user[keccak256(msg.sender) & keccak256(num_cow)].cow_live,0,now);
             
             //убиваем корову и прошлого фермера
-            user[keccak256(msg.sender) &amp; keccak256(num_cow)].cow_live= false;
+            user[keccak256(msg.sender) & keccak256(num_cow)].cow_live= false;
             
             users_cows[gamer] ++;
         }
@@ -181,7 +181,7 @@ contract Game is ownerOnly {
     function DeadCow(address gamer, uint num_cow) public onlyOwner {
        
         //обновляем анкету коровы
-        user[keccak256(gamer) &amp; keccak256(num_cow)].cow_live = false;
+        user[keccak256(gamer) & keccak256(num_cow)].cow_live = false;
     }  
     
     //Послать телегу фермеру
@@ -212,12 +212,12 @@ contract Game is ownerOnly {
 
     //Вывести сколько коров у фермера
     function StatusCow(address gamer, uint num_cow) public view returns (uint,bool,uint,bool,uint,uint) {
-        return (user[keccak256(gamer) &amp; keccak256(num_cow)].cow,
-        user[keccak256(gamer) &amp; keccak256(num_cow)].place,
-        user[keccak256(gamer) &amp; keccak256(num_cow)].date_buy,
-        user[keccak256(gamer) &amp; keccak256(num_cow)].cow_live,
-        user[keccak256(gamer) &amp; keccak256(num_cow)].milk,
-        user[keccak256(gamer) &amp; keccak256(num_cow)].date_milk);   
+        return (user[keccak256(gamer) & keccak256(num_cow)].cow,
+        user[keccak256(gamer) & keccak256(num_cow)].place,
+        user[keccak256(gamer) & keccak256(num_cow)].date_buy,
+        user[keccak256(gamer) & keccak256(num_cow)].cow_live,
+        user[keccak256(gamer) & keccak256(num_cow)].milk,
+        user[keccak256(gamer) & keccak256(num_cow)].date_milk);   
     }
     
     //Вывести наличие телеги у фермера

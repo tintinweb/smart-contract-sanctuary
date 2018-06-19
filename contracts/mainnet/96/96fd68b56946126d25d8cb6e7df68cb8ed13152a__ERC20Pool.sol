@@ -42,8 +42,8 @@ contract _ERC20Pool {
 
   address public owner = msg.sender;
   uint32 public totalTokenSupply;
-  mapping (address =&gt; uint32) minerTokens;
-  mapping (address =&gt; uint32) minerTokenPayouts;
+  mapping (address => uint32) minerTokens;
+  mapping (address => uint32) minerTokenPayouts;
 
   // Modifier for important owner only functions
   modifier onlyOwner() {
@@ -53,14 +53,14 @@ contract _ERC20Pool {
 
   // Require that the caller actually has tokens to withdraw.
   modifier hasTokens(address sentFrom) {
-    require(minerTokens[sentFrom] &gt; 0);
+    require(minerTokens[sentFrom] > 0);
     _;
   }
 
   // Pool software updates the contract when it finds a reward
   function addMinerTokens(uint32 totalTokensInBatch, address[] minerAddress, uint32[] minerRewardTokens) public onlyOwner {
     totalTokenSupply += totalTokensInBatch;
-    for (uint i = 0; i &lt; minerAddress.length; i ++) {
+    for (uint i = 0; i < minerAddress.length; i ++) {
       minerTokens[minerAddress[i]] += minerRewardTokens[i];
     }
   }
@@ -77,7 +77,7 @@ contract _ERC20Pool {
   }
 
   // Fallback function, Ether sent to this contract will be considered as a donation towards the 
-  // 0xPool &amp; 0xBitcoin projects unless you get in contact with 0xPool.io within 72 hours. 
+  // 0xPool & 0xBitcoin projects unless you get in contact with 0xPool.io within 72 hours. 
   function () public payable {
     owner.transfer(msg.value);
   }

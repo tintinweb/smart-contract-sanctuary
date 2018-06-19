@@ -15,20 +15,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns(uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns(uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns(uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -72,12 +72,12 @@ contract IDMONEY is ERC20
     address founderThree = 0xd2fdE07Ee7cB86AfBE59F4efb9fFC1528418CC0E;
     address storage1 = 0x5E948d1C6f7C76853E43DbF1F01dcea5263011C5;
     
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; bool) public refund;              //checks the refund status
-    mapping(address =&gt; bool) public whitelisted;         //checks the whitelist status of the address
-    mapping(address =&gt; uint256) public deposited;        //checks the actual ether given by investor
-    mapping(address =&gt; uint256) public tokensinvestor;   //checks number of tokens for investor
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => uint) balances;
+    mapping(address => bool) public refund;              //checks the refund status
+    mapping(address => bool) public whitelisted;         //checks the whitelist status of the address
+    mapping(address => uint256) public deposited;        //checks the actual ether given by investor
+    mapping(address => uint256) public tokensinvestor;   //checks number of tokens for investor
+    mapping(address => mapping(address => uint)) allowed;
 
     uint constant public minimumInvestment = .1 ether; // .1 ether is minimum minimumInvestment
     uint bonus;
@@ -130,8 +130,8 @@ contract IDMONEY is ERC20
 
     function () public payable atStage(Stages.ICO)
     {
-        require(msg.value &gt;= minimumInvestment);
-        require(!stopped &amp;&amp; msg.sender != owner);
+        require(msg.value >= minimumInvestment);
+        require(!stopped && msg.sender != owner);
 
         no_of_tokens = ((msg.value).div(_price_tokn)).mul(10 ** 18);
         tokensold = (tokensold).add(no_of_tokens);
@@ -210,7 +210,7 @@ contract IDMONEY is ERC20
         //   if (receiver == 0)
         //   receiver = msg.sender;
         require(whitelisted[receiver]);
-        require(tokensinvestor[receiver] &gt; 0);
+        require(tokensinvestor[receiver] > 0);
         uint256 tokensclaim = tokensinvestor[receiver];
         balances[address(this)] = (balances[address(this)]).sub(tokensclaim);
         balances[receiver] = (balances[receiver]).add(tokensclaim);
@@ -246,7 +246,7 @@ contract IDMONEY is ERC20
     // these standardized APIs for approval:
     function transferFrom(address _from, address _to, uint256 _amount)public returns(bool success) {
         require(_to != 0x0);
-        require(_amount &gt;= 0);
+        require(_amount >= 0);
         balances[_from] = (balances[_from]).sub(_amount);
         allowed[_from][msg.sender] = (allowed[_from][msg.sender]).sub(_amount);
         balances[_to] = (balances[_to]).add(_amount);
@@ -264,14 +264,14 @@ contract IDMONEY is ERC20
     }
 
     function allowance(address _owner, address _spender)public view returns(uint256 remaining) {
-        require(_owner != 0x0 &amp;&amp; _spender != 0x0);
+        require(_owner != 0x0 && _spender != 0x0);
         return allowed[_owner][_spender];
     }
 
     // Transfer the balance from owner&#39;s account to another account
     function transfer(address _to, uint256 _amount)public returns(bool success) {
         require(_to != 0x0);
-        require(balances[msg.sender] &gt;= _amount &amp;&amp; _amount &gt;= 0);
+        require(balances[msg.sender] >= _amount && _amount >= 0);
         balances[msg.sender] = (balances[msg.sender]).sub(_amount);
         balances[_to] = (balances[_to]).add(_amount);
       emit Transfer(msg.sender, _to, _amount);

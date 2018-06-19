@@ -503,7 +503,7 @@ contract FTV is StandardToken {
         //    requireState(States.Ico)
     {
         require(_parent != _child);
-        require(whitelist[_parent] == true &amp;&amp; whitelist[_child] == true);
+        require(whitelist[_parent] == true && whitelist[_child] == true);
         require(referral[_child] == 0x0);
         referral[_child] = _parent;
         Referred(_parent, _child);

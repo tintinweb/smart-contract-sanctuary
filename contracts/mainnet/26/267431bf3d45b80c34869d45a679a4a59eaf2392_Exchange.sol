@@ -103,7 +103,7 @@ contract Ownable {
 
 
 /// @title TokenTransferProxy - Transfers tokens on behalf of contracts that have been approved via decentralized governance.
-/// @author Amir Bandeali - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95f4f8fce7d5a5edc5e7fafff0f6e1bbf6faf8">[email&#160;protected]</a>&gt;, Will Warren - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d0a1411113d4d052d0f1217181e09531e1210">[email&#160;protected]</a>&gt;
+/// @author Amir Bandeali - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95f4f8fce7d5a5edc5e7fafff0f6e1bbf6faf8">[email&#160;protected]</a>>, Will Warren - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7d0a1411113d4d052d0f1217181e09531e1210">[email&#160;protected]</a>>
 contract TokenTransferProxy is Ownable {
 
     /// @dev Only authorized addresses can invoke functions with this modifier.
@@ -122,7 +122,7 @@ contract TokenTransferProxy is Ownable {
         _;
     }
 
-    mapping (address =&gt; bool) public authorized;
+    mapping (address => bool) public authorized;
     address[] public authorities;
 
     event LogAuthorizedAddressAdded(address indexed target, address indexed caller);
@@ -156,7 +156,7 @@ contract TokenTransferProxy is Ownable {
         targetAuthorized(target)
     {
         delete authorized[target];
-        for (uint i = 0; i &lt; authorities.length; i++) {
+        for (uint i = 0; i < authorities.length; i++) {
             if (authorities[i] == target) {
                 authorities[i] = authorities[authorities.length - 1];
                 authorities.length -= 1;
@@ -214,30 +214,30 @@ contract SafeMath {
     }
 
     function safeSub(uint a, uint b) internal constant returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function safeAdd(uint a, uint b) internal constant returns (uint256) {
         uint c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 
     function max64(uint64 a, uint64 b) internal constant returns (uint64) {
-        return a &gt;= b ? a : b;
+        return a >= b ? a : b;
     }
 
     function min64(uint64 a, uint64 b) internal constant returns (uint64) {
-        return a &lt; b ? a : b;
+        return a < b ? a : b;
     }
 
     function max256(uint256 a, uint256 b) internal constant returns (uint256) {
-        return a &gt;= b ? a : b;
+        return a >= b ? a : b;
     }
 
     function min256(uint256 a, uint256 b) internal constant returns (uint256) {
-        return a &lt; b ? a : b;
+        return a < b ? a : b;
     }
 }
 
@@ -246,7 +246,7 @@ contract SafeMath {
 
 
 contract Whitelist is Ownable {
-    mapping (address =&gt; uint128) whitelist;
+    mapping (address => uint128) whitelist;
 
     event Whitelisted(address who, uint128 nonce);
 
@@ -273,12 +273,12 @@ contract Whitelist is Ownable {
     }
 
     function isWhitelisted(address who) external view returns(bool) {
-        return whitelist[who] &gt; 0;
+        return whitelist[who] > 0;
     }
 }
 
 /// @title Exchange - Facilitates exchange of ERC20 tokens.
-/// @author Amir Bandeali - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="56373b3f2416662e0624393c3335227835393b">[email&#160;protected]</a>&gt;, Will Warren - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6b1c0207072b5b133b1904010e081f45080406">[email&#160;protected]</a>&gt;
+/// @author Amir Bandeali - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="56373b3f2416662e0624393c3335227835393b">[email&#160;protected]</a>>, Will Warren - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6b1c0207072b5b133b1904010e081f45080406">[email&#160;protected]</a>>
 contract Exchange is SafeMath, Ownable {
 
     // Error Codes
@@ -297,9 +297,9 @@ contract Exchange is SafeMath, Ownable {
 
     Whitelist public whitelist; // Maybe we need to make this mutable?
 
-    // Mappings of orderHash =&gt; amounts of takerTokenAmount filled or cancelled.
-    mapping (bytes32 =&gt; uint) public filled;
-    mapping (bytes32 =&gt; uint) public cancelled;
+    // Mappings of orderHash => amounts of takerTokenAmount filled or cancelled.
+    mapping (bytes32 => uint) public filled;
+    mapping (bytes32 => uint) public cancelled;
 
     event LogFill(
         address indexed maker,
@@ -395,7 +395,7 @@ contract Exchange is SafeMath, Ownable {
 
         require(order.taker == address(0) || order.taker == msg.sender);
 
-        require(order.makerTokenAmount &gt; 0 &amp;&amp; order.takerTokenAmount &gt; 0 &amp;&amp; fillTakerTokenAmount &gt; 0);
+        require(order.makerTokenAmount > 0 && order.takerTokenAmount > 0 && fillTakerTokenAmount > 0);
 
         require(isValidSignature(
             order.maker,
@@ -405,7 +405,7 @@ contract Exchange is SafeMath, Ownable {
             s
         ));
 
-        if (block.timestamp &gt;= order.expirationTimestampInSec) {
+        if (block.timestamp >= order.expirationTimestampInSec) {
             LogError(uint8(Errors.ORDER_EXPIRED), order.orderHash);
             return 0;
         }
@@ -422,7 +422,7 @@ contract Exchange is SafeMath, Ownable {
             return 0;
         }
 
-        if (!shouldThrowOnInsufficientBalanceOrAllowance &amp;&amp; !isTransferable(order, filledTakerTokenAmount)) {
+        if (!shouldThrowOnInsufficientBalanceOrAllowance && !isTransferable(order, filledTakerTokenAmount)) {
             LogError(uint8(Errors.INSUFFICIENT_BALANCE_OR_ALLOWANCE), order.orderHash);
             return 0;
         }
@@ -447,7 +447,7 @@ contract Exchange is SafeMath, Ownable {
         ));
 
         if (order.feeRecipient != address(0)) {
-            if (order.makerFee &gt; 0) {
+            if (order.makerFee > 0) {
                 paidMakerFee = getPartialAmount(filledTakerTokenAmount, order.takerTokenAmount, order.makerFee);
                 require(transferViaTokenTransferProxy(
                     ZRX_TOKEN_CONTRACT,
@@ -456,7 +456,7 @@ contract Exchange is SafeMath, Ownable {
                     paidMakerFee
                 ));
             }
-            if (order.takerFee &gt; 0) {
+            if (order.takerFee > 0) {
                 paidTakerFee = getPartialAmount(filledTakerTokenAmount, order.takerTokenAmount, order.takerFee);
                 require(transferViaTokenTransferProxy(
                     ZRX_TOKEN_CONTRACT,
@@ -511,9 +511,9 @@ contract Exchange is SafeMath, Ownable {
         });
 
         require(order.maker == msg.sender);
-        require(order.makerTokenAmount &gt; 0 &amp;&amp; order.takerTokenAmount &gt; 0 &amp;&amp; cancelTakerTokenAmount &gt; 0);
+        require(order.makerTokenAmount > 0 && order.takerTokenAmount > 0 && cancelTakerTokenAmount > 0);
 
-        if (block.timestamp &gt;= order.expirationTimestampInSec) {
+        if (block.timestamp >= order.expirationTimestampInSec) {
             LogError(uint8(Errors.ORDER_EXPIRED), order.orderHash);
             return 0;
         }
@@ -589,7 +589,7 @@ contract Exchange is SafeMath, Ownable {
         bytes32[] s)
         public
     {
-        for (uint i = 0; i &lt; orderAddresses.length; i++) {
+        for (uint i = 0; i < orderAddresses.length; i++) {
             fillOrder(
                 orderAddresses[i],
                 orderValues[i],
@@ -618,7 +618,7 @@ contract Exchange is SafeMath, Ownable {
         bytes32[] s)
         public
     {
-        for (uint i = 0; i &lt; orderAddresses.length; i++) {
+        for (uint i = 0; i < orderAddresses.length; i++) {
             fillOrKillOrder(
                 orderAddresses[i],
                 orderValues[i],
@@ -651,7 +651,7 @@ contract Exchange is SafeMath, Ownable {
         returns (uint)
     {
         uint filledTakerTokenAmount = 0;
-        for (uint i = 0; i &lt; orderAddresses.length; i++) {
+        for (uint i = 0; i < orderAddresses.length; i++) {
             require(orderAddresses[i][3] == orderAddresses[0][3]); // takerToken must be the same for each order
             filledTakerTokenAmount = safeAdd(filledTakerTokenAmount, fillOrder(
                 orderAddresses[i],
@@ -677,7 +677,7 @@ contract Exchange is SafeMath, Ownable {
         uint[] cancelTakerTokenAmounts)
         public
     {
-        for (uint i = 0; i &lt; orderAddresses.length; i++) {
+        for (uint i = 0; i < orderAddresses.length; i++) {
             cancelOrder(
                 orderAddresses[i],
                 orderValues[i],
@@ -790,7 +790,7 @@ contract Exchange is SafeMath, Ownable {
         );
     }
 
-    /// @dev Checks if rounding error &gt; 0.1%.
+    /// @dev Checks if rounding error > 0.1%.
     /// @param numerator Numerator.
     /// @param denominator Denominator.
     /// @param target Value to multiply with numerator/denominator.
@@ -807,7 +807,7 @@ contract Exchange is SafeMath, Ownable {
             safeMul(remainder, 1000000),
             safeMul(numerator, target)
         );
-        return errPercentageTimes1000000 &gt; 1000;
+        return errPercentageTimes1000000 > 1000;
     }
 
     /// @dev Calculates partial value given a numerator and denominator.
@@ -876,22 +876,22 @@ contract Exchange is SafeMath, Ownable {
             uint requiredMakerZRX = isMakerTokenZRX ? safeAdd(fillMakerTokenAmount, paidMakerFee) : paidMakerFee;
             uint requiredTakerZRX = isTakerTokenZRX ? safeAdd(fillTakerTokenAmount, paidTakerFee) : paidTakerFee;
 
-            if (   getBalance(ZRX_TOKEN_CONTRACT, order.maker) &lt; requiredMakerZRX
-                || getAllowance(ZRX_TOKEN_CONTRACT, order.maker) &lt; requiredMakerZRX
-                || getBalance(ZRX_TOKEN_CONTRACT, taker) &lt; requiredTakerZRX
-                || getAllowance(ZRX_TOKEN_CONTRACT, taker) &lt; requiredTakerZRX
+            if (   getBalance(ZRX_TOKEN_CONTRACT, order.maker) < requiredMakerZRX
+                || getAllowance(ZRX_TOKEN_CONTRACT, order.maker) < requiredMakerZRX
+                || getBalance(ZRX_TOKEN_CONTRACT, taker) < requiredTakerZRX
+                || getAllowance(ZRX_TOKEN_CONTRACT, taker) < requiredTakerZRX
             ) return false;
 
-            if (!isMakerTokenZRX &amp;&amp; (   getBalance(order.makerToken, order.maker) &lt; fillMakerTokenAmount // Don&#39;t double check makerToken if ZRX
-                                     || getAllowance(order.makerToken, order.maker) &lt; fillMakerTokenAmount)
+            if (!isMakerTokenZRX && (   getBalance(order.makerToken, order.maker) < fillMakerTokenAmount // Don&#39;t double check makerToken if ZRX
+                                     || getAllowance(order.makerToken, order.maker) < fillMakerTokenAmount)
             ) return false;
-            if (!isTakerTokenZRX &amp;&amp; (   getBalance(order.takerToken, taker) &lt; fillTakerTokenAmount // Don&#39;t double check takerToken if ZRX
-                                     || getAllowance(order.takerToken, taker) &lt; fillTakerTokenAmount)
+            if (!isTakerTokenZRX && (   getBalance(order.takerToken, taker) < fillTakerTokenAmount // Don&#39;t double check takerToken if ZRX
+                                     || getAllowance(order.takerToken, taker) < fillTakerTokenAmount)
             ) return false;
-        } else if (   getBalance(order.makerToken, order.maker) &lt; fillMakerTokenAmount
-                   || getAllowance(order.makerToken, order.maker) &lt; fillMakerTokenAmount
-                   || getBalance(order.takerToken, taker) &lt; fillTakerTokenAmount
-                   || getAllowance(order.takerToken, taker) &lt; fillTakerTokenAmount
+        } else if (   getBalance(order.makerToken, order.maker) < fillMakerTokenAmount
+                   || getAllowance(order.makerToken, order.maker) < fillMakerTokenAmount
+                   || getBalance(order.takerToken, taker) < fillTakerTokenAmount
+                   || getAllowance(order.takerToken, taker) < fillTakerTokenAmount
         ) return false;
 
         return true;

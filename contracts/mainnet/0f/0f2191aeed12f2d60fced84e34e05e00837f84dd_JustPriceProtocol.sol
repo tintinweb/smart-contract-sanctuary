@@ -445,7 +445,7 @@ contract JustPriceProtocol is SafeMath {
       }
     }
 
-    if (stage == Stage.BEFORE_GROWTH &amp;&amp;
+    if (stage == Stage.BEFORE_GROWTH &&
       safeMul (reserveTokensDelivered, GROWTH_MIN_DELIVERED_DENOMINATIOR) >=
         safeMul (reserveTokensSold, GROWTH_MIN_DELIVERED_NUMERATOR)) {
       stage = Stage.GROWTH;

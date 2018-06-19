@@ -434,7 +434,7 @@ contract NameRegistry {
         external
         returns (uint)
     {
-        require(feeRecipient != 0x0 &amp;&amp; singer != 0x0);
+        require(feeRecipient != 0x0 && singer != 0x0);
         NameInfo storage nameInfo = nameInfoMap[msg.sender];
         bytes12 name = nameInfo.name;
         require(name.length > 0);
@@ -529,7 +529,7 @@ contract NameRegistry {
         returns (bool)
     {
         bytes memory temp = bytes(name);
-        return temp.length >= 6 &amp;&amp; temp.length <= 12;
+        return temp.length >= 6 && temp.length <= 12;
     }
     function stringToBytes12(string str)
         internal
@@ -619,7 +619,7 @@ contract Claimable is Ownable {
     /// @dev Allows the current owner to set the pendingOwner address.
     /// @param newOwner The address to transfer ownership to.
     function transferOwnership(address newOwner) onlyOwner public {
-        require(newOwner != 0x0 &amp;&amp; newOwner != owner);
+        require(newOwner != 0x0 && newOwner != owner);
         pendingOwner = newOwner;
     }
     /// @dev Allows the pendingOwner address to finalize the transfer.
@@ -877,7 +877,7 @@ contract TokenTransferDelegate is Claimable {
         address addr = latestAddress;
         AddressInfo memory addrInfo;
         uint count = 0;
-        while (addr != 0x0 &amp;&amp; count < max) {
+        while (addr != 0x0 && count < max) {
             addrInfo = addressInfos[addr];
             if (addrInfo.index == 0) {
                 break;
@@ -899,7 +899,7 @@ contract TokenTransferDelegate is Claimable {
         onlyAuthorized
         external
     {
-        if (value > 0 &amp;&amp; from != to &amp;&amp; to != 0x0) {
+        if (value > 0 && from != to && to != 0x0) {
             require(
                 ERC20(token).transferFrom(from, to, value)
             );
@@ -915,7 +915,7 @@ contract TokenTransferDelegate is Claimable {
     {
         uint len = batch.length;
         require(len % 7 == 0);
-        require(walletSplitPercentage > 0 &amp;&amp; walletSplitPercentage < 100);
+        require(walletSplitPercentage > 0 && walletSplitPercentage < 100);
         ERC20 lrc = ERC20(lrcTokenAddress);
         for (uint i = 0; i < len; i += 7) {
             address owner = address(batch[i]);
@@ -935,7 +935,7 @@ contract TokenTransferDelegate is Claimable {
             }
             // Miner pays LRx fee to order owner
             uint lrcReward = uint(batch[i + 4]);
-            if (lrcReward != 0 &amp;&amp; minerFeeRecipient != owner) {
+            if (lrcReward != 0 && minerFeeRecipient != owner) {
                 require(
                     lrc.transferFrom(
                         minerFeeRecipient,
@@ -986,7 +986,7 @@ contract TokenTransferDelegate is Claimable {
         }
         uint walletFee = (walletFeeRecipient == 0x0) ? 0 : fee.mul(walletSplitPercentage) / 100;
         uint minerFee = fee - walletFee;
-        if (walletFee > 0 &amp;&amp; walletFeeRecipient != owner) {
+        if (walletFee > 0 && walletFeeRecipient != owner) {
             require(
                 token.transferFrom(
                     owner,
@@ -995,7 +995,7 @@ contract TokenTransferDelegate is Claimable {
                 )
             );
         }
-        if (minerFee > 0 &amp;&amp; minerFeeRecipient != 0x0 &amp;&amp; minerFeeRecipient != owner) {
+        if (minerFee > 0 && minerFeeRecipient != 0x0 && minerFeeRecipient != owner) {
             require(
                 token.transferFrom(
                     owner,
@@ -1226,7 +1226,7 @@ contract LoopringProtocolImpl is LoopringProtocol {
         public
     {
         // Check if the highest bit of ringIndex is &#39;1&#39;.
-        require(ringIndex &amp; ENTERED_MASK != ENTERED_MASK); // &quot;attempted to re-ent submitRing function&quot;);
+        require(ringIndex & ENTERED_MASK != ENTERED_MASK); // &quot;attempted to re-ent submitRing function&quot;);
         // Set the highest bit of ringIndex to &#39;1&#39;.
         ringIndex |= ENTERED_MASK;
         RingParams memory params = RingParams(
@@ -1256,7 +1256,7 @@ contract LoopringProtocolImpl is LoopringProtocol {
         ringIndex = (ringIndex ^ ENTERED_MASK) + 1;
     }
     ////////////////////////////////////////////////////////////////////////////
-    /// Internal &amp; Private Functions                                         ///
+    /// Internal & Private Functions                                         ///
     ////////////////////////////////////////////////////////////////////////////
     /// @dev Validate a ring.
     function verifyRingHasNoSubRing(
@@ -1530,7 +1530,7 @@ contract LoopringProtocolImpl is LoopringProtocol {
                 }
             } else {
                 // Only check the available miner balance when absolutely needed
-                if (!checkedMinerLrcSpendable &amp;&amp; minerLrcSpendable < state.lrcFee) {
+                if (!checkedMinerLrcSpendable && minerLrcSpendable < state.lrcFee) {
                     checkedMinerLrcSpendable = true;
                     minerLrcSpendable = getSpendable(delegate, _lrcTokenAddress, feeRecipient);
                 }
@@ -1715,7 +1715,7 @@ contract LoopringProtocolImpl is LoopringProtocol {
             require(params.uintArgsList[i][5] > 0); // &quot;order rateAmountS is zero&quot;);
         }
         //Check ring size
-        require(params.ringSize > 1 &amp;&amp; params.ringSize <= MAX_RING_SIZE); // &quot;invalid ring size&quot;);
+        require(params.ringSize > 1 && params.ringSize <= MAX_RING_SIZE); // &quot;invalid ring size&quot;);
     }
     /// @dev        assmble order parameters into Order struct.
     /// @return     A list of orders.
@@ -1749,7 +1749,7 @@ contract LoopringProtocolImpl is LoopringProtocol {
                 params.rList[i],
                 params.sList[i]
             );
-            bool marginSplitAsFee = (params.feeSelections &amp; (uint16(1) << i)) > 0;
+            bool marginSplitAsFee = (params.feeSelections & (uint16(1) << i)) > 0;
             orders[i] = OrderState(
                 order,
                 orderHash,

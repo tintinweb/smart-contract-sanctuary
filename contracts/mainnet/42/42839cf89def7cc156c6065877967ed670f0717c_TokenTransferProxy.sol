@@ -84,7 +84,7 @@ contract Ownable {
 
 
 /// @title TokenTransferProxy - Transfers tokens on behalf of contracts that have been approved via decentralized governance.
-/// @author Amir Bandeali - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1d7c70746f5d2d654d6f7277787e69337e7270">[email&#160;protected]</a>&gt;, Will Warren - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ec9b858080acdc94bc9e8386898f98c28f8381">[email&#160;protected]</a>&gt;
+/// @author Amir Bandeali - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1d7c70746f5d2d654d6f7277787e69337e7270">[email&#160;protected]</a>>, Will Warren - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ec9b858080acdc94bc9e8386898f98c28f8381">[email&#160;protected]</a>>
 contract TokenTransferProxy is Ownable {
 
     /// @dev Only authorized addresses can invoke functions with this modifier.
@@ -103,7 +103,7 @@ contract TokenTransferProxy is Ownable {
         _;
     }
 
-    mapping (address =&gt; bool) public authorized;
+    mapping (address => bool) public authorized;
     address[] public authorities;
 
     event LogAuthorizedAddressAdded(address indexed target, address indexed caller);
@@ -137,7 +137,7 @@ contract TokenTransferProxy is Ownable {
         targetAuthorized(target)
     {
         delete authorized[target];
-        for (uint i = 0; i &lt; authorities.length; i++) {
+        for (uint i = 0; i < authorities.length; i++) {
             if (authorities[i] == target) {
                 authorities[i] = authorities[authorities.length - 1];
                 authorities.length -= 1;

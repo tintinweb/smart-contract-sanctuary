@@ -149,7 +149,7 @@ contract Oracle is Ownable {
         bool supported;
     }
 
-    mapping(bytes32 =&gt; Symbol) public currencies;
+    mapping(bytes32 => Symbol) public currencies;
 
     /**
         @dev Returns the url where the oracle exposes a valid &quot;oracleData&quot; if needed
@@ -189,12 +189,12 @@ contract Oracle is Ownable {
 contract RpSafeMath {
     function safeAdd(uint256 x, uint256 y) internal pure returns(uint256) {
       uint256 z = x + y;
-      require((z &gt;= x) &amp;&amp; (z &gt;= y));
+      require((z >= x) && (z >= y));
       return z;
     }
 
     function safeSubtract(uint256 x, uint256 y) internal pure returns(uint256) {
-      require(x &gt;= y);
+      require(x >= y);
       uint256 z = x - y;
       return z;
     }
@@ -206,7 +206,7 @@ contract RpSafeMath {
     }
 
     function min(uint256 a, uint256 b) internal pure returns(uint256) {
-        if (a &lt; b) { 
+        if (a < b) { 
           return a;
         } else { 
           return b; 
@@ -214,7 +214,7 @@ contract RpSafeMath {
     }
     
     function max(uint256 a, uint256 b) internal pure returns(uint256) {
-        if (a &gt; b) { 
+        if (a > b) { 
           return a;
         } else { 
           return b; 
@@ -223,7 +223,7 @@ contract RpSafeMath {
 }
 
 contract TokenLockable is RpSafeMath, Ownable {
-    mapping(address =&gt; uint256) public lockedTokens;
+    mapping(address => uint256) public lockedTokens;
 
     /**
         @dev Locked tokens cannot be withdrawn using the withdrawTokens function.
@@ -247,7 +247,7 @@ contract TokenLockable is RpSafeMath, Ownable {
         @param amount Amount to withdraw 
     */
     function withdrawTokens(Token token, address to, uint256 amount) public onlyOwner returns (bool) {
-        require(safeSubtract(token.balanceOf(this), lockedTokens[token]) &gt;= amount);
+        require(safeSubtract(token.balanceOf(this), lockedTokens[token]) >= amount);
         require(to != address(0));
         return token.transfer(to, amount);
     }
@@ -261,7 +261,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
     string public constant VERSION_NAME = &quot;Basalt&quot;;
 
     uint256 private activeLoans = 0;
-    mapping(address =&gt; uint256) private lendersBalance;
+    mapping(address => uint256) private lendersBalance;
 
     function name() public view returns (string _name) {
         _name = &quot;RCN - Nano loan engine - Basalt 232&quot;;
@@ -315,8 +315,8 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
 
             uint256 loanId;
 
-            for (loanId = 0; loanId &lt;= totalLoans; loanId++) {
-                if (loans[loanId].lender == _owner &amp;&amp; loans[loanId].status == Status.lent) {
+            for (loanId = 0; loanId <= totalLoans; loanId++) {
+                if (loans[loanId].lender == _owner && loans[loanId].status == Status.lent) {
                     result[resultIndex] = loanId;
                     resultIndex++;
                 }
@@ -402,12 +402,12 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
         uint256 expirationRequest;
 
         string metadata;
-        mapping(address =&gt; bool) approbations;
+        mapping(address => bool) approbations;
     }
 
-    mapping(address =&gt; mapping(address =&gt; bool)) private operators;
+    mapping(address => mapping(address => bool)) private operators;
 
-    mapping(bytes32 =&gt; uint256) public identifierToIndex;
+    mapping(bytes32 => uint256) public identifierToIndex;
     Loan[] private loans;
 
     /**
@@ -437,13 +437,13 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
         uint256 _interestRatePunitory, uint256 _duesIn, uint256 _cancelableAt, uint256 _expirationRequest, string _metadata) public returns (uint256) {
 
         require(!deprecated);
-        require(_cancelableAt &lt;= _duesIn);
+        require(_cancelableAt <= _duesIn);
         require(_oracleContract != address(0) || _currency == 0x0);
         require(_borrower != address(0));
         require(_amount != 0);
         require(_interestRatePunitory != 0);
         require(_interestRate != 0);
-        require(_expirationRequest &gt; block.timestamp);
+        require(_expirationRequest > block.timestamp);
 
         var loan = Loan(Status.initial, _oracleContract, _borrower, 0x0, msg.sender, 0x0, _amount, 0, 0, 0, 0, _interestRate,
             _interestRatePunitory, 0, _duesIn, _currency, _cancelableAt, 0, 0x0, _expirationRequest, _metadata);
@@ -586,7 +586,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
 
         require(loan.status == Status.initial);
         require(isApproved(index));
-        require(block.timestamp &lt;= loan.expirationRequest);
+        require(block.timestamp <= loan.expirationRequest);
 
         loan.lender = msg.sender;
         loan.dueTime = safeAdd(block.timestamp, loan.duesIn);
@@ -598,7 +598,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
         activeLoans += 1;
         lendersBalance[loan.lender] += 1;
         
-        if (loan.cancelableAt &gt; 0)
+        if (loan.cancelableAt > 0)
             internalAddInterest(loan, safeAdd(block.timestamp, loan.cancelableAt));
 
         // Transfer the money to the borrower before handling the cosigner
@@ -632,7 +632,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
     */
     function cosign(uint index, uint256 cost) external returns (bool) {
         Loan storage loan = loans[index];
-        require(loan.status == Status.lent &amp;&amp; (loan.dueTime - loan.duesIn) == block.timestamp);
+        require(loan.status == Status.lent && (loan.dueTime - loan.duesIn) == block.timestamp);
         require(loan.cosigner != address(0));
         require(loan.cosigner == address(uint256(msg.sender) + 2));
         loan.cosigner = msg.sender;
@@ -654,7 +654,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
     function destroy(uint index) public returns (bool) {
         Loan storage loan = loans[index];
         require(loan.status != Status.destroyed);
-        require(msg.sender == loan.lender || (msg.sender == loan.borrower &amp;&amp; loan.status == Status.initial));
+        require(msg.sender == loan.lender || (msg.sender == loan.borrower && loan.status == Status.initial));
         DestroyedBy(index, msg.sender);
 
         // ERC721, remove loan from circulation
@@ -828,7 +828,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
         @param timestamp Target absolute unix time to calculate interest.
     */
     function internalAddInterest(Loan storage loan, uint256 timestamp) internal {
-        if (timestamp &gt; loan.interestTimestamp) {
+        if (timestamp > loan.interestTimestamp) {
             uint256 newInterest = loan.interest;
             uint256 newPunitoryInterest = loan.punitoryInterest;
 
@@ -840,10 +840,10 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
             uint256 pending;
 
             uint256 endNonPunitory = min(timestamp, loan.dueTime);
-            if (endNonPunitory &gt; loan.interestTimestamp) {
+            if (endNonPunitory > loan.interestTimestamp) {
                 deltaTime = endNonPunitory - loan.interestTimestamp;
 
-                if (loan.paid &lt; loan.amount) {
+                if (loan.paid < loan.amount) {
                     pending = loan.amount - loan.paid;
                 } else {
                     pending = 0;
@@ -854,7 +854,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
                 newTimestamp = loan.interestTimestamp + realDelta;
             }
 
-            if (timestamp &gt; loan.dueTime) {
+            if (timestamp > loan.dueTime) {
                 uint256 startPunitory = max(loan.dueTime, loan.interestTimestamp);
                 deltaTime = timestamp - startPunitory;
 
@@ -934,7 +934,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
         }
 
         uint256 transferValue = convertRate(loan.oracle, loan.currency, oracleData, toPay);
-        require(transferValue &gt; 0 || toPay &lt; _amount);
+        require(transferValue > 0 || toPay < _amount);
 
         lockTokens(rcn, transferValue);
         require(rcn.transferFrom(msg.sender, this, transferValue));
@@ -959,7 +959,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
             
             (rate, decimals) = oracle.getRate(currency, data);
 
-            require(decimals &lt;= RCN_DECIMALS);
+            require(decimals <= RCN_DECIMALS);
             return (safeMult(safeMult(amount, rate), (10**(RCN_DECIMALS-decimals)))) / PRECISION;
         }
     }
@@ -1005,7 +1005,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
         uint256 inputId;
         uint256 totalWithdraw = 0;
 
-        for (inputId = 0; inputId &lt; loanIds.length; inputId++) {
+        for (inputId = 0; inputId < loanIds.length; inputId++) {
             Loan storage loan = loans[loanIds[inputId]];
             if (loan.lender == msg.sender) {
                 totalWithdraw += loan.lenderBalance;

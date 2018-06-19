@@ -4,17 +4,17 @@ contract OneInFive{
     
     event SpiceUpPot();
     
-    mapping(address =&gt; uint256) balance;
+    mapping(address => uint256) balance;
     
     address owner;
     
     constructor() public payable{
-        require(msg.value &gt;= .06 ether);
+        require(msg.value >= .06 ether);
         owner = msg.sender;
     }
     
     function gamble() public payable{
-        require(msg.value &gt;= .01 ether);
+        require(msg.value >= .01 ether);
         if(msg.sender!=owner || rollIt()){
             withdrawPlayer();
         }

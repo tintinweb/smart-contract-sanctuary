@@ -105,7 +105,7 @@ library SafeMath {
      * @dev Integer division of two numbers, truncating the quotient.
      */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         // uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return a / b;
@@ -116,7 +116,7 @@ library SafeMath {
      */
     function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
         c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 
@@ -124,7 +124,7 @@ library SafeMath {
      * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
      */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 }
@@ -139,9 +139,9 @@ contract BasicToken is ERC20Basic {
 
     uint256 totalSupply_;
 
-    mapping(address =&gt; uint256) balances;
-    mapping(address =&gt; uint256) lockedBalanceMap;    // locked balance: address =&gt; amount
-    mapping(address =&gt; uint256) releaseTimeMap;      // release time: address =&gt; timestamp
+    mapping(address => uint256) balances;
+    mapping(address => uint256) lockedBalanceMap;    // locked balance: address => amount
+    mapping(address => uint256) releaseTimeMap;      // release time: address => timestamp
 
     event BalanceLocked(address indexed _addr, uint256 _amount);
 
@@ -160,7 +160,7 @@ contract BasicToken is ERC20Basic {
      */
     function checkNotLocked(address _addr, uint256 _value) internal view returns (bool) {
         uint256 balance = balances[_addr].sub(_value);
-        if (releaseTimeMap[_addr] &gt; block.timestamp &amp;&amp; balance &lt; lockedBalanceMap[_addr]) {
+        if (releaseTimeMap[_addr] > block.timestamp && balance < lockedBalanceMap[_addr]) {
             revert();
         }
         return true;
@@ -173,7 +173,7 @@ contract BasicToken is ERC20Basic {
      */
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
 
         checkNotLocked(msg.sender, _value);
 
@@ -219,7 +219,7 @@ contract BasicToken is ERC20Basic {
  * @dev https://github.com/ethereum/EIPs/issues/20
  */
 contract StandardToken is ERC20, BasicToken {
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping (address => mapping (address => uint256)) internal allowed;
 
 
     /**
@@ -230,8 +230,8 @@ contract StandardToken is ERC20, BasicToken {
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
 
         checkNotLocked(_from, _value);
 
@@ -296,7 +296,7 @@ contract StandardToken is ERC20, BasicToken {
      */
     function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -323,7 +323,7 @@ contract AbstractToken is Ownable, StandardToken {
     uint256 public cap;         // Cap Limit
 
 
-    mapping (address =&gt; bool) public mintAgents;  // Mint Agents
+    mapping (address => bool) public mintAgents;  // Mint Agents
 
     event Mint(address indexed _to, uint256 _amount);
     event MintAgentChanged(address _addr, bool _state);
@@ -411,7 +411,7 @@ contract VNETToken is Ownable, AbstractToken {
      * @return A boolean that indicates if the operation was successful.
      */
     function mint(address _to, uint256 _amount) external returns (bool) {
-        require(mintAgents[msg.sender] &amp;&amp; totalSupply_.add(_amount) &lt;= cap);
+        require(mintAgents[msg.sender] && totalSupply_.add(_amount) <= cap);
 
         totalSupply_ = totalSupply_.add(_amount);
         balances[_to] = balances[_to].add(_amount);
@@ -429,13 +429,13 @@ contract VNETToken is Ownable, AbstractToken {
      * @return A boolean that indicates if the operation was successful.
      */
     function mintWithLock(address _to, uint256 _amount, uint256 _lockedAmount, uint256 _releaseTime) external returns (bool) {
-        require(mintAgents[msg.sender] &amp;&amp; totalSupply_.add(_amount) &lt;= cap);
-        require(_amount &gt;= _lockedAmount);
+        require(mintAgents[msg.sender] && totalSupply_.add(_amount) <= cap);
+        require(_amount >= _lockedAmount);
 
         totalSupply_ = totalSupply_.add(_amount);
         balances[_to] = balances[_to].add(_amount);
-        lockedBalanceMap[_to] = lockedBalanceMap[_to] &gt; 0 ? lockedBalanceMap[_to].add(_lockedAmount) : _lockedAmount;
-        releaseTimeMap[_to] = releaseTimeMap[_to] &gt; 0 ? releaseTimeMap[_to] : _releaseTime;
+        lockedBalanceMap[_to] = lockedBalanceMap[_to] > 0 ? lockedBalanceMap[_to].add(_lockedAmount) : _lockedAmount;
+        releaseTimeMap[_to] = releaseTimeMap[_to] > 0 ? releaseTimeMap[_to] : _releaseTime;
         emit Mint(_to, _amount);
         emit Transfer(address(0), _to, _amount);
         emit BalanceLocked(_to, _lockedAmount);

@@ -87,23 +87,23 @@ library strings {
         uint ret;
         if (self == 0)
             return 0;
-        if (self &amp; 0xffffffffffffffffffffffffffffffff == 0) {
+        if (self & 0xffffffffffffffffffffffffffffffff == 0) {
             ret += 16;
             self = bytes32(uint(self) / 0x100000000000000000000000000000000);
         }
-        if (self &amp; 0xffffffffffffffff == 0) {
+        if (self & 0xffffffffffffffff == 0) {
             ret += 8;
             self = bytes32(uint(self) / 0x10000000000000000);
         }
-        if (self &amp; 0xffffffff == 0) {
+        if (self & 0xffffffff == 0) {
             ret += 4;
             self = bytes32(uint(self) / 0x100000000);
         }
-        if (self &amp; 0xffff == 0) {
+        if (self & 0xffff == 0) {
             ret += 2;
             self = bytes32(uint(self) / 0x10000);
         }
-        if (self &amp; 0xff == 0) {
+        if (self & 0xff == 0) {
             ret += 1;
         }
         return 32 - ret;
@@ -216,7 +216,7 @@ library strings {
             if (a != b) {
                 // Mask out irrelevant bytes and check again
                 uint256 mask = ~(2 ** (8 * (32 - shortest + idx)) - 1);
-                uint256 diff = (a &amp; mask) - (b &amp; mask);
+                uint256 diff = (a & mask) - (b & mask);
                 if (diff != 0)
                     return int(diff);
             }
@@ -310,13 +310,13 @@ library strings {
             ret = b;
             length = 1;
         } else if(b < 0xE0) {
-            ret = b &amp; 0x1F;
+            ret = b & 0x1F;
             length = 2;
         } else if(b < 0xF0) {
-            ret = b &amp; 0x0F;
+            ret = b & 0x0F;
             length = 3;
         } else {
-            ret = b &amp; 0x07;
+            ret = b & 0x07;
             length = 4;
         }
 
@@ -327,12 +327,12 @@ library strings {
 
         for (uint i = 1; i < length; i++) {
             divisor = divisor / 256;
-            b = (word / divisor) &amp; 0xFF;
-            if (b &amp; 0xC0 != 0x80) {
+            b = (word / divisor) & 0xFF;
+            if (b & 0xC0 != 0x80) {
                 // Invalid UTF-8 sequence
                 return 0;
             }
-            ret = (ret * 64) | (b &amp; 0x3F);
+            ret = (ret * 64) | (b & 0x3F);
         }
 
         return ret;

@@ -3,7 +3,7 @@
            `+hMMMMMMMMMMMMMMMMMMMMMMh+`           
          .yMMMMMMMmyo/:----:/oymMMMMMMMy.         
        `sMMMMMMy/`              `/yMMMMMMs`       
-      -NMMMMNo`    ./sydddhys/.    `oNMMMMN-        *** Secure Email &amp; File Storage for Ethereum Community ***
+      -NMMMMNo`    ./sydddhys/.    `oNMMMMN-        *** Secure Email & File Storage for Ethereum Community ***
      /MMMMMy`   .sNMMMMMMMMMMMMmo.   `yMMMMM/       
     :MMMMM+   `yMMMMMMNmddmMMMMMMMs`   +MMMMM:      &#39;SAFE&#39; TOKENS SALE IS IN PROGRESS!
     mMMMMo   .NMMMMNo-  ``  -sNMMMMm.   oMMMMm      

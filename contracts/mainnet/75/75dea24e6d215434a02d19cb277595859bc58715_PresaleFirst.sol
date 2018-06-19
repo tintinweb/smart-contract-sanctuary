@@ -593,9 +593,9 @@ contract PresaleFirst is Whitelist, Pausable {
         bool a = msg.value >= minimum;
 
         // sale duration
-        bool b = block.number >= startNumber &amp;&amp; block.number <= endNumber;
+        bool b = block.number >= startNumber && block.number <= endNumber;
 
-        return a &amp;&amp; b;
+        return a && b;
     }
 
     function getPurchaseAmount(address _buyer) private constant returns (uint256) {

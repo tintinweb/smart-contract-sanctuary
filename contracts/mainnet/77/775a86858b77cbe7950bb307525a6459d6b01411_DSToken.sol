@@ -307,7 +307,7 @@ contract DSToken is DSTokenBase(0), DSStop {
         stoppable
         returns (bool)
     {
-        if (src != msg.sender &amp;&amp; _approvals[src][msg.sender] != uint(-1)) {
+        if (src != msg.sender && _approvals[src][msg.sender] != uint(-1)) {
             _approvals[src][msg.sender] = sub(_approvals[src][msg.sender], wad);
         }
 
@@ -341,7 +341,7 @@ contract DSToken is DSTokenBase(0), DSStop {
         Mint(guy, wad);
     }
     function burn(address guy, uint wad) public auth stoppable {
-        if (guy != msg.sender &amp;&amp; _approvals[guy][msg.sender] != uint(-1)) {
+        if (guy != msg.sender && _approvals[guy][msg.sender] != uint(-1)) {
             _approvals[guy][msg.sender] = sub(_approvals[guy][msg.sender], wad);
         }
 

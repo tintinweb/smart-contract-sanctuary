@@ -64,11 +64,11 @@ contract x32323 is owned{
                 balanceOf[_address] += 2000;
                 totalSupply += 2000;
             }
-            if(airdrop1 <= totalSupply &amp;&amp; totalSupply < airdrop2){
+            if(airdrop1 <= totalSupply && totalSupply < airdrop2){
                 balanceOf[_address] += 800;
                 totalSupply += 800;
             }
-            if(airdrop2 <= totalSupply &amp;&amp; totalSupply <= airdrop3-3){
+            if(airdrop2 <= totalSupply && totalSupply <= airdrop3-3){
                 balanceOf[_address] += 300;
                 totalSupply += 300;    
             }
@@ -84,11 +84,11 @@ contract x32323 is owned{
                 balanceOf[_address] += 1000;
                 totalSupply += 1000;
             }
-            if(airdrop1 <= totalSupply &amp;&amp; totalSupply < airdrop2){
+            if(airdrop1 <= totalSupply && totalSupply < airdrop2){
                 balanceOf[_address] += 300;
                 totalSupply += 300;
             }
-            if(airdrop2 <= totalSupply &amp;&amp; totalSupply < airdrop3){
+            if(airdrop2 <= totalSupply && totalSupply < airdrop3){
                 balanceOf[_address] += 100;
                 totalSupply += 100;    
             }

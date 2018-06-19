@@ -47,7 +47,7 @@ contract Ownable {
  * @dev This simplifies the implementation of &quot;user permissions&quot;.
  */
 contract Whitelist is Ownable {
-  mapping(address =&gt; bool) public whitelist;
+  mapping(address => bool) public whitelist;
 
   event WhitelistedAddressAdded(address addr);
   event WhitelistedAddressRemoved(address addr);
@@ -80,7 +80,7 @@ contract Whitelist is Ownable {
    * false if all addresses were already in the whitelist
    */
   function addAddressesToWhitelist(address[] addrs) onlyOwner public returns(bool success) {
-    for (uint256 i = 0; i &lt; addrs.length; i++) {
+    for (uint256 i = 0; i < addrs.length; i++) {
       if (addAddressToWhitelist(addrs[i])) {
         success = true;
       }
@@ -108,7 +108,7 @@ contract Whitelist is Ownable {
    * false if all addresses weren&#39;t in the whitelist in the first place
    */
   function removeAddressesFromWhitelist(address[] addrs) onlyOwner public returns(bool success) {
-    for (uint256 i = 0; i &lt; addrs.length; i++) {
+    for (uint256 i = 0; i < addrs.length; i++) {
       if (removeAddressFromWhitelist(addrs[i])) {
         success = true;
       }
@@ -189,9 +189,9 @@ contract BuyLimits {
     */
     function withinLimits(uint _value) public view returns(bool) {
         if (maxBuy != 0) {
-            return (_value &gt;= minBuy &amp;&amp; _value &lt;= maxBuy);
+            return (_value >= minBuy && _value <= maxBuy);
         }
-        return (_value &gt;= minBuy);
+        return (_value >= minBuy);
     }
 
     /*
@@ -201,7 +201,7 @@ contract BuyLimits {
     */
     function _setLimits(uint _min, uint _max) internal {
         if (_max != 0) {
-            require (_min &lt;= _max); // Sanity Check
+            require (_min <= _max); // Sanity Check
         }
         minBuy = _min;
         maxBuy = _max;

@@ -8,13 +8,13 @@ contract SafeMath {
   }
 
   function safeSub(uint a, uint b) internal returns (uint) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function safeAdd(uint a, uint b) internal returns (uint) {
     uint c = a + b;
-    assert(c&gt;=a &amp;&amp; c&gt;=b);
+    assert(c>=a && c>=b);
     return c;
   }
 
@@ -68,8 +68,8 @@ contract StandardToken is Token {
     //Default assumes totalSupply can&#39;t be over max (2^256 - 1).
     //If your token leaves out totalSupply and can issue more tokens as time goes on, you need to check if it doesn&#39;t wrap.
     //Replace the if with this one instead.
-    if (balances[msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt; balances[_to]) {
-    //if (balances[msg.sender] &gt;= _value &amp;&amp; _value &gt; 0) {
+    if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
+    //if (balances[msg.sender] >= _value && _value > 0) {
       balances[msg.sender] -= _value;
       balances[_to] += _value;
       Transfer(msg.sender, _to, _value);
@@ -79,8 +79,8 @@ contract StandardToken is Token {
 
   function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
     //same as above. Replace this line with the following if you want to protect against wrapping uints.
-    if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt; balances[_to]) {
-    //if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; _value &gt; 0) {
+    if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
+    //if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0) {
       balances[_to] += _value;
       balances[_from] -= _value;
       allowed[_from][msg.sender] -= _value;
@@ -103,9 +103,9 @@ contract StandardToken is Token {
     return allowed[_owner][_spender];
   }
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+  mapping (address => mapping (address => uint256)) allowed;
 
   uint256 public totalSupply;
 }
@@ -122,7 +122,7 @@ contract ReserveToken is StandardToken, SafeMath {
   }
   function destroy(address account, uint amount) {
     if (msg.sender != minter) throw;
-    if (balances[account] &lt; amount) throw;
+    if (balances[account] < amount) throw;
     balances[account] = safeSub(balances[account], amount);
     totalSupply = safeSub(totalSupply, amount);
   }
@@ -137,7 +137,7 @@ contract AccountLevels {
 }
 
 contract AccountLevelsTest is AccountLevels {
-  mapping (address =&gt; uint) public accountLevels;
+  mapping (address => uint) public accountLevels;
 
   function setAccountLevel(address user, uint level) {
     accountLevels[user] = level;
@@ -155,9 +155,9 @@ contract Metaexchange is SafeMath {
   uint public feeMake; //percentage times (1 ether)
   uint public feeTake; //percentage times (1 ether)
   uint public feeRebate; //percentage times (1 ether)
-  mapping (address =&gt; mapping (address =&gt; uint)) public tokens; //mapping of token addresses to mapping of account balances (token=0 means Ether)
-  mapping (address =&gt; mapping (bytes32 =&gt; bool)) public orders; //mapping of user accounts to mapping of order hashes to booleans (true = submitted by user, equivalent to offchain signature)
-  mapping (address =&gt; mapping (bytes32 =&gt; uint)) public orderFills; //mapping of user accounts to mapping of order hashes to uints (amount of order that has been filled)
+  mapping (address => mapping (address => uint)) public tokens; //mapping of token addresses to mapping of account balances (token=0 means Ether)
+  mapping (address => mapping (bytes32 => bool)) public orders; //mapping of user accounts to mapping of order hashes to booleans (true = submitted by user, equivalent to offchain signature)
+  mapping (address => mapping (bytes32 => uint)) public orderFills; //mapping of user accounts to mapping of order hashes to uints (amount of order that has been filled)
 
   event Order(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user);
   event Cancel(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s);
@@ -195,19 +195,19 @@ contract Metaexchange is SafeMath {
 
   function changeFeeMake(uint feeMake_) {
     if (msg.sender != admin) throw;
-    if (feeMake_ &gt; feeMake) throw;
+    if (feeMake_ > feeMake) throw;
     feeMake = feeMake_;
   }
 
   function changeFeeTake(uint feeTake_) {
     if (msg.sender != admin) throw;
-    if (feeTake_ &gt; feeTake || feeTake_ &lt; feeRebate) throw;
+    if (feeTake_ > feeTake || feeTake_ < feeRebate) throw;
     feeTake = feeTake_;
   }
 
   function changeFeeRebate(uint feeRebate_) {
     if (msg.sender != admin) throw;
-    if (feeRebate_ &lt; feeRebate || feeRebate_ &gt; feeTake) throw;
+    if (feeRebate_ < feeRebate || feeRebate_ > feeTake) throw;
     feeRebate = feeRebate_;
   }
 
@@ -217,7 +217,7 @@ contract Metaexchange is SafeMath {
   }
 
   function withdraw(uint amount) {
-    if (tokens[0][msg.sender] &lt; amount) throw;
+    if (tokens[0][msg.sender] < amount) throw;
     tokens[0][msg.sender] = safeSub(tokens[0][msg.sender], amount);
     if (!msg.sender.call.value(amount)()) throw;
     Withdraw(0, msg.sender, amount, tokens[0][msg.sender]);
@@ -233,7 +233,7 @@ contract Metaexchange is SafeMath {
 
   function withdrawToken(address token, uint amount) {
     if (token==0) throw;
-    if (tokens[token][msg.sender] &lt; amount) throw;
+    if (tokens[token][msg.sender] < amount) throw;
     tokens[token][msg.sender] = safeSub(tokens[token][msg.sender], amount);
     if (!Token(token).transfer(msg.sender, amount)) throw;
     Withdraw(token, msg.sender, amount, tokens[token][msg.sender]);
@@ -253,9 +253,9 @@ contract Metaexchange is SafeMath {
     //amount is in amountGet terms
     bytes32 hash = sha256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
     if (!(
-      (orders[user][hash] || ecrecover(sha3(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),v,r,s) == user) &amp;&amp;
-      block.number &lt;= expires &amp;&amp;
-      safeAdd(orderFills[user][hash], amount) &lt;= amountGet
+      (orders[user][hash] || ecrecover(sha3(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),v,r,s) == user) &&
+      block.number <= expires &&
+      safeAdd(orderFills[user][hash], amount) <= amountGet
     )) throw;
     tradeBalances(tokenGet, amountGet, tokenGive, amountGive, user, amount);
     orderFills[user][hash] = safeAdd(orderFills[user][hash], amount);
@@ -280,8 +280,8 @@ contract Metaexchange is SafeMath {
 
   function testTrade(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s, uint amount, address sender) constant returns(bool) {
     if (!(
-      tokens[tokenGet][sender] &gt;= amount &amp;&amp;
-      availableVolume(tokenGet, amountGet, tokenGive, amountGive, expires, nonce, user, v, r, s) &gt;= amount
+      tokens[tokenGet][sender] >= amount &&
+      availableVolume(tokenGet, amountGet, tokenGive, amountGive, expires, nonce, user, v, r, s) >= amount
     )) return false;
     return true;
   }
@@ -289,12 +289,12 @@ contract Metaexchange is SafeMath {
   function availableVolume(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s) constant returns(uint) {
     bytes32 hash = sha256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
     if (!(
-      (orders[user][hash] || ecrecover(sha3(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),v,r,s) == user) &amp;&amp;
-      block.number &lt;= expires
+      (orders[user][hash] || ecrecover(sha3(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),v,r,s) == user) &&
+      block.number <= expires
     )) return 0;
     uint available1 = safeSub(amountGet, orderFills[user][hash]);
     uint available2 = safeMul(tokens[tokenGive][user], amountGet) / amountGive;
-    if (available1&lt;available2) return available1;
+    if (available1<available2) return available1;
     return available2;
   }
 

@@ -2,7 +2,7 @@ pragma solidity ^0.4.20;
 
 contract PLATPriceOracle {
 
-  mapping (address =&gt; bool) admins;
+  mapping (address => bool) admins;
 
   // How much PLAT you get for 1 ETH, multiplied by 10^18
   uint256 public ETHPrice = 60000000000000000000000;
@@ -14,7 +14,7 @@ contract PLATPriceOracle {
   }
 
   function updatePrice(uint256 _newPrice) public {
-    require(_newPrice &gt; 0);
+    require(_newPrice > 0);
     require(admins[msg.sender] == true);
     ETHPrice = _newPrice;
     emit PriceChanged(_newPrice);

@@ -155,7 +155,7 @@ contract Basic is Ownable {
     function _updateCurrentPeriod() internal {
         require(periods.length >= 1);
         for (uint i = 0; i < periods.length; i++) {
-            if (periods[i] <= now &amp;&amp; i >= currentPeriod) {
+            if (periods[i] <= now && i >= currentPeriod) {
                 currentPeriod = i;
             }
         }

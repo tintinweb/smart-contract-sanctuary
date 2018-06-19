@@ -206,7 +206,7 @@ contract VanityLib {
 
     function countBtcAddressLeadingOnes(bytes prefix, uint length) public pure returns(uint) {
         uint leadingOnes = 1;
-        for (uint j = 0; j < length &amp;&amp; prefix[j] == 49; j++) {
+        for (uint j = 0; j < length && prefix[j] == 49; j++) {
             leadingOnes = j + 1;
         }
         return leadingOnes;
@@ -216,7 +216,7 @@ contract VanityLib {
         if (prefixArg.length < 5) {
             return false;
         }
-        if (prefixArg[0] != &quot;1&quot; &amp;&amp; prefixArg[0] != &quot;3&quot;) {
+        if (prefixArg[0] != &quot;1&quot; && prefixArg[0] != &quot;3&quot;) {
             return false;
         }
         
@@ -225,7 +225,7 @@ contract VanityLib {
             if (ch == &quot;0&quot; || ch == &quot;O&quot; || ch == &quot;I&quot; || ch == &quot;l&quot;) {
                 return false;
             }
-            if (!((ch >= &quot;1&quot; &amp;&amp; ch <= &quot;9&quot;) || (ch >= &quot;a&quot; &amp;&amp; ch <= &quot;z&quot;) || (ch >= &quot;A&quot; &amp;&amp; ch <= &quot;Z&quot;))) {
+            if (!((ch >= &quot;1&quot; && ch <= &quot;9&quot;) || (ch >= &quot;a&quot; && ch <= &quot;z&quot;) || (ch >= &quot;A&quot; && ch <= &quot;Z&quot;))) {
                 return false;
             }
         }
@@ -381,11 +381,11 @@ contract TaskRegister is Upgradable, VanityLib {
 
         // Migrate tasks
 
-        for (uint i = index; i < index + size &amp;&amp; i < tasksCount; i++) {
+        for (uint i = index; i < index + size && i < tasksCount; i++) {
             tasks.push(Task(TaskType.BITCOIN_ADDRESS_PREFIX,0,0,0,bytes32(0),0,0,0,0));
         }
 
-        for (uint j = index; j < index + size &amp;&amp; j < tasksCount; j++) {
+        for (uint j = index; j < index + size && j < tasksCount; j++) {
             (
                 tasks[j].taskType,
                 tasks[j].taskId,
@@ -400,7 +400,7 @@ contract TaskRegister is Upgradable, VanityLib {
             indexOfTaskId[tasks[j].taskId] = j + 1;
         }
 
-        for (uint k = index; k < index + size &amp;&amp; k < tasksCount; k++) {
+        for (uint k = index; k < index + size && k < tasksCount; k++) {
             (
                 ,//tasks[k].taskType,
                 ,//tasks[k].taskId,

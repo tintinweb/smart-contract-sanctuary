@@ -70,7 +70,7 @@ contract FNKOSToken {
 		_;
 	}
 	modifier isBuyable(){
-		require(buyable &amp;&amp; now >= sellStartTime &amp;&amp; now <= sellDeadline2);
+		require(buyable && now >= sellStartTime && now <= sellDeadline2);
 		_;
 	}
 	modifier isNotBuyable(){
@@ -245,7 +245,7 @@ contract FNKOSToken {
 	function buyTokens() payable isRunning isBuyable onlyWhitelist	public {
         uint256 weiVal = msg.value;
 		address	investor	= msg.sender;
-        require(investor != address(0) &amp;&amp; weiVal >= minInvEth &amp;&amp; weiVal <= maxInvEth);
+        require(investor != address(0) && weiVal >= minInvEth && weiVal <= maxInvEth);
 		require(safeAdd(weiVal,whitelistLimit[investor]) <= maxInvEth);
 		
 		uint256	amount = 0;
@@ -309,7 +309,7 @@ contract FNKOSToken {
 	}
 	
 	function approve(address _spender, uint256 _value) isRunning public returns (bool	success) {
-		if (_value != 0	&amp;&amp; allowed[msg.sender][_spender] !=	0) { 
+		if (_value != 0	&& allowed[msg.sender][_spender] !=	0) { 
 			return	false; 
 		}
 		allowed[msg.sender][_spender] =	_value;

@@ -76,8 +76,8 @@ contract FOMOCoin is ERC20Interface {
     // Transfer the balance from owner&#39;s account to another account
     function transfer(address _to, uint256 _amount) returns (bool success) {
         if (balances[msg.sender] >= _amount
-            &amp;&amp; _amount > 0
-            &amp;&amp; balances[_to] + _amount > balances[_to]) {
+            && _amount > 0
+            && balances[_to] + _amount > balances[_to]) {
             balances[msg.sender] -= _amount;
             balances[_to] += _amount;
             Transfer(msg.sender, _to, _amount);
@@ -99,9 +99,9 @@ contract FOMOCoin is ERC20Interface {
         uint256 _amount
     ) returns (bool success) {
         if (balances[_from] >= _amount
-            &amp;&amp; allowed[_from][msg.sender] >= _amount
-            &amp;&amp; _amount > 0
-            &amp;&amp; balances[_to] + _amount > balances[_to]) {
+            && allowed[_from][msg.sender] >= _amount
+            && _amount > 0
+            && balances[_to] + _amount > balances[_to]) {
             balances[_from] -= _amount;
             allowed[_from][msg.sender] -= _amount;
             balances[_to] += _amount;
@@ -131,7 +131,7 @@ contract FOMOCoin is ERC20Interface {
 		// Purchase tokens
 		function () payable {
 				var purchaseCount = msg.value / tokenCost;
-				require(saleInProgress() &amp;&amp; purchaseCount <= remainingSupply);
+				require(saleInProgress() && purchaseCount <= remainingSupply);
 				balances[msg.sender] += purchaseCount;
 				remainingSupply -= purchaseCount;
 				owner.transfer(msg.value);

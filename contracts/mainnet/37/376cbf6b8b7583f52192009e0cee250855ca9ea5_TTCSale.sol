@@ -556,8 +556,8 @@ contract TTCSale is Pausable {
         uint rateTtcToEther,
         address addressOfTokenUsedAsReward
     ) public {
-        require(ifSuccessfulSendTo != address(0) &amp;&amp; ifSuccessfulSendTo != address(this));
-        require(addressOfTokenUsedAsReward != address(0) &amp;&amp; addressOfTokenUsedAsReward != address(this));
+        require(ifSuccessfulSendTo != address(0) && ifSuccessfulSendTo != address(this));
+        require(addressOfTokenUsedAsReward != address(0) && addressOfTokenUsedAsReward != address(this));
         require(fundingGoalInEthers <= fundingCapInEthers);
         require(end > 0);
         beneficiary = ifSuccessfulSendTo;
@@ -623,7 +623,7 @@ contract TTCSale is Pausable {
      * @param _rate  the new rate for converting TTC to ETH
      */
     function setRate(uint _rate) public onlyOwner {
-        require(_rate >= LOW_RANGE_RATE &amp;&amp; _rate <= HIGH_RANGE_RATE);
+        require(_rate >= LOW_RANGE_RATE && _rate <= HIGH_RANGE_RATE);
         rate = _rate;
     }
 

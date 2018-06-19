@@ -207,7 +207,7 @@ contract ETHERCExchange is Ownable {
     }
 
     ////////////////////////////////////////////////////////////////////////////////
-    // Trading &amp; Order
+    // Trading & Order
     ////////////////////////////////////////////////////////////////////////////////
 
     function trade(address _tokenGet, uint256 _amountGet, address _tokenGive, uint256 _amountGive, uint256 _expires, uint256 _nonce, address _maker, uint8 _v, bytes32 _r, bytes32 _s, uint256 _amountTrade) public {
@@ -237,9 +237,9 @@ contract ETHERCExchange is Ownable {
         if (feeModifiers != address(0)) {
             uint256 feeMakeDiscount; uint256 feeTakeDiscount; uint256 feeRebate;
             (feeMakeDiscount, feeTakeDiscount, feeRebate) = FeeModifiersInterface(feeModifiers).tradingFeeModifiers(_maker, msg.sender);
-            if (feeMakeValue > 0 &amp;&amp; feeMakeDiscount > 0 &amp;&amp; feeMakeDiscount <= 100 ) feeMakeValue = feeMakeValue.mul(100 - feeMakeDiscount) / 100;
-            if (feeTakeValue > 0 &amp;&amp; feeTakeDiscount > 0 &amp;&amp; feeTakeDiscount <= 100 ) feeTakeValue = feeTakeValue.mul(100 - feeTakeDiscount) / 100;
-            if (feeTakeValue > 0 &amp;&amp; feeRebate > 0 &amp;&amp; feeRebate <= 100) feeRebateValue = feeTakeValue.mul(feeRebate) / 100;
+            if (feeMakeValue > 0 && feeMakeDiscount > 0 && feeMakeDiscount <= 100 ) feeMakeValue = feeMakeValue.mul(100 - feeMakeDiscount) / 100;
+            if (feeTakeValue > 0 && feeTakeDiscount > 0 && feeTakeDiscount <= 100 ) feeTakeValue = feeTakeValue.mul(100 - feeTakeDiscount) / 100;
+            if (feeTakeValue > 0 && feeRebate > 0 && feeRebate <= 100) feeRebateValue = feeTakeValue.mul(feeRebate) / 100;
         }
 
         tokens[_tokenGet][msg.sender] = tokens[_tokenGet][msg.sender].sub(_amountTrade.add(feeTakeValue));
@@ -262,7 +262,7 @@ contract ETHERCExchange is Ownable {
 
         uint256 feeDiscount; uint256 feeRebate;
         (feeDiscount, feeRebate) = getAccountFeeModifiers(_taker);
-        if (feeTakeValue > 0 &amp;&amp; feeDiscount > 0 &amp;&amp; feeDiscount <= 100 ) feeTakeValue = feeTakeValue.mul(100 - feeDiscount) / 100;
+        if (feeTakeValue > 0 && feeDiscount > 0 && feeDiscount <= 100 ) feeTakeValue = feeTakeValue.mul(100 - feeDiscount) / 100;
 
         return feeTakeValue;
     }

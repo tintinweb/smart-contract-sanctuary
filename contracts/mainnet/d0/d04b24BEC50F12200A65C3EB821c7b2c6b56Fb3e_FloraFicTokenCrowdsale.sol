@@ -289,7 +289,7 @@ contract TimedCrowdsale is Crowdsale {
    * @dev Reverts if not in crowdsale time range. 
    */
   modifier onlyWhileOpen {
-    require(now >= openingTime &amp;&amp; now <= closingTime);
+    require(now >= openingTime && now <= closingTime);
     _;
   }
 
@@ -403,13 +403,13 @@ contract FloraFicTokenCrowdsale is FinalizableCrowdsale {
     uint256 bonus = 0;
     uint256 currentRate = getCurrentRate();
     uint256 currentWeiAmount = currentRate.mul(_weiAmount);
-    if( sendWeiAmount >= 1000000000000000000 &amp;&amp; sendWeiAmount < 5000000000000000000){
+    if( sendWeiAmount >= 1000000000000000000 && sendWeiAmount < 5000000000000000000){
         bonus = currentWeiAmount.mul(10).div(100);
-    } else if (sendWeiAmount >= 5000000000000000000 &amp;&amp; sendWeiAmount < 10000000000000000000){
+    } else if (sendWeiAmount >= 5000000000000000000 && sendWeiAmount < 10000000000000000000){
         bonus = currentWeiAmount.mul(20).div(100);
-    } else if (sendWeiAmount >= 10000000000000000000 &amp;&amp; sendWeiAmount < 20000000000000000000){
+    } else if (sendWeiAmount >= 10000000000000000000 && sendWeiAmount < 20000000000000000000){
         bonus = currentWeiAmount.mul(50).div(100);
-    } else if (sendWeiAmount >= 20000000000000000000 &amp;&amp; sendWeiAmount < 50000000000000000000){
+    } else if (sendWeiAmount >= 20000000000000000000 && sendWeiAmount < 50000000000000000000){
         bonus = currentWeiAmount.mul(75).div(100);
     } else if (sendWeiAmount >= 50000000000000000000){
         bonus = currentWeiAmount.mul(100).div(100);

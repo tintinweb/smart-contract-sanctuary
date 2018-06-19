@@ -100,7 +100,7 @@ contract Ownable {
      * @dev Throws if called by any account other than the systemAcc.
      */
     modifier onlySys() {
-        require(systemAcc !=address(0) &amp;&amp; msg.sender == systemAcc);
+        require(systemAcc !=address(0) && msg.sender == systemAcc);
         _;
     }
 

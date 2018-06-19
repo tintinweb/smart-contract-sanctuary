@@ -23,7 +23,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -34,7 +34,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
   
@@ -44,7 +44,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -133,7 +133,7 @@ contract BasicToken is ERC20Basic {
     
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
   
@@ -153,7 +153,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -184,7 +184,7 @@ contract BasicToken is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -195,8 +195,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -263,7 +263,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -436,7 +436,7 @@ contract ICO is Ownable {
     
     LMDA public lmda;
 
-    mapping (address =&gt; uint256) public investmentOf;
+    mapping (address => uint256) public investmentOf;
     
     
     /**
@@ -487,9 +487,9 @@ contract ICO is Ownable {
      * @param _values The number of tokens each address will receive 
      * */
     function airdrop(address[] _addrs, uint256[] _values) public onlyOwner {
-        require(lmda.balanceOf(address(this)) &gt;= getSumOfValues(_values));
-        require(_addrs.length &lt;= 100 &amp;&amp; _addrs.length == _values.length);
-        for(uint i = 0; i &lt; _addrs.length; i++) {
+        require(lmda.balanceOf(address(this)) >= getSumOfValues(_values));
+        require(_addrs.length <= 100 && _addrs.length == _values.length);
+        for(uint i = 0; i < _addrs.length; i++) {
             lmda.transfer(_addrs[i], _values[i]);
         }
         AidropInvoked();
@@ -505,7 +505,7 @@ contract ICO is Ownable {
      * */
     function getSumOfValues(uint256[] _values) internal pure returns(uint256 sum) {
         sum = 0;
-        for(uint i = 0; i &lt; _values.length; i++) {
+        for(uint i = 0; i < _values.length; i++) {
             sum = sum.add(_values[i]);
         }
     }
@@ -515,7 +515,7 @@ contract ICO is Ownable {
      * Function allows the owner to activate the main sale.
      * */
     function activateMainSale() public onlyOwner whenNotPaused {
-        require(now &gt;= endTime || tokensSold &gt;= tokenCapForPreICO);
+        require(now >= endTime || tokensSold >= tokenCapForPreICO);
         stateOfICO = StateOfICO.MAIN;
         endTime = now.add(49 days);
         MainSaleActivated();
@@ -538,11 +538,11 @@ contract ICO is Ownable {
      * @param _addr The address of the recipient
      * */
     function buyTokens(address _addr) public payable whenNotPaused {
-        require(now &lt;= endTime &amp;&amp; _addr != 0x0);
-        require(lmda.balanceOf(address(this)) &gt; 0);
-        if(stateOfICO == StateOfICO.PRE &amp;&amp; tokensSold &gt;= tokenCapForPreICO) {
+        require(now <= endTime && _addr != 0x0);
+        require(lmda.balanceOf(address(this)) > 0);
+        if(stateOfICO == StateOfICO.PRE && tokensSold >= tokenCapForPreICO) {
             revert();
-        } else if(stateOfICO == StateOfICO.MAIN &amp;&amp; tokensSold &gt;= tokenCapForMainICO) {
+        } else if(stateOfICO == StateOfICO.MAIN && tokensSold >= tokenCapForMainICO) {
             revert();
         }
         uint256 toTransfer = msg.value.mul(getRate().mul(getBonus())).div(100).add(getRate());
@@ -561,8 +561,8 @@ contract ICO is Ownable {
      * @param _value The total amount of tokens to be sent
      * */
     function processOffChainPurchase(address _recipient, uint256 _value) public onlyOwner {
-        require(lmda.balanceOf(address(this)) &gt;= _value);
-        require(_value &gt; 0 &amp;&amp; _recipient != 0x0);
+        require(lmda.balanceOf(address(this)) >= _value);
+        require(_value > 0 && _recipient != 0x0);
         lmda.transfer(_recipient, _value);
         tokensSold = tokensSold.add(_value);
         OffChainPurchaseMade(_recipient, _value);
@@ -600,7 +600,7 @@ contract ICO is Ownable {
      * @param _daysToShortenBy The number of days to shorten the deadline by.
      * */
     function shortenDeadline(uint256 _daysToShortenBy) public onlyOwner {
-        if(now.sub(_daysToShortenBy.mul(1 days)) &lt; endTime) {
+        if(now.sub(_daysToShortenBy.mul(1 days)) < endTime) {
             endTime = now;
         }
         endTime = endTime.sub(_daysToShortenBy.mul(1 days));
@@ -615,7 +615,7 @@ contract ICO is Ownable {
      * @param _newTokenPrice The new price of the token.
      * */
     function changeTokenPrice(uint256 _newTokenPrice) public onlyOwner {
-        require(_newTokenPrice &gt; 0);
+        require(_newTokenPrice > 0);
         if(stateOfICO == StateOfICO.PRE) {
             if(tokenPriceForPreICO == _newTokenPrice) { revert(); } 
             tokenPriceForPreICO = _newTokenPrice;
@@ -637,7 +637,7 @@ contract ICO is Ownable {
      * @param _newRate The new exchange rate.
      * */
     function changeRateOfToken(uint256 _newRate) public onlyOwner {
-        require(_newRate &gt; 0);
+        require(_newRate > 0);
         if(stateOfICO == StateOfICO.PRE) {
             if(rateForPreICO == _newRate) { revert(); }
             rateForPreICO = _newRate;
@@ -700,7 +700,7 @@ contract ICO is Ownable {
      * Allows the owner to pause the ICO.
      * */
     function pauseICO() public onlyOwner whenNotPaused {
-        require(now &lt; endTime);
+        require(now < endTime);
         timePaused = now;
         icoPaused = true;
         ICOPaused(now);

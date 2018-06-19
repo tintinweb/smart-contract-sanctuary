@@ -14,7 +14,7 @@ contract Ownable {
     }
 
     function transferOwnership(address newOwner) public onlyOwner {
-        require(newOwner != address(0) &amp;&amp; newOwner != owner);
+        require(newOwner != address(0) && newOwner != owner);
         emit OwnershipTransferred(owner, newOwner);
         owner = newOwner;
     }
@@ -28,19 +28,19 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -70,7 +70,7 @@ contract BasicToken is ERC20, ERC223, UserTokensControl {
     uint256 public totalSupply;
     using SafeMath for uint256;
 
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
 
     function transferToAddress(address _to, uint256 _value, bytes _data) internal returns (bool) {
         balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -92,15 +92,15 @@ contract BasicToken is ERC20, ERC223, UserTokensControl {
 
     function transfer(address _to, uint256 _value, bytes _data) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
-        require(_value &gt; 0);
+        require(_value <= balances[msg.sender]);
+        require(_value > 0);
 
         uint256 codeLength;
         assembly {
             codeLength := extcodesize(_to)
         }
     
-        if(codeLength &gt; 0) {
+        if(codeLength > 0) {
             return transferToContract(_to, _value, _data);
         } else {
             return transferToAddress(_to, _value, _data);
@@ -109,8 +109,8 @@ contract BasicToken is ERC20, ERC223, UserTokensControl {
 
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
-        require(_value &gt; 0);
+        require(_value <= balances[msg.sender]);
+        require(_value > 0);
 
         uint256 codeLength;
         bytes memory empty;
@@ -118,7 +118,7 @@ contract BasicToken is ERC20, ERC223, UserTokensControl {
             codeLength := extcodesize(_to)
         }
 
-        if(codeLength &gt; 0) {
+        if(codeLength > 0) {
             return transferToContract(_to, _value, empty);
         } else {
             return transferToAddress(_to, _value, empty);
@@ -132,7 +132,7 @@ contract BasicToken is ERC20, ERC223, UserTokensControl {
 
 contract StandardToken is BasicToken {
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping (address => mapping (address => uint256)) internal allowed;
 }
 
 contract Deedcoin is StandardToken {

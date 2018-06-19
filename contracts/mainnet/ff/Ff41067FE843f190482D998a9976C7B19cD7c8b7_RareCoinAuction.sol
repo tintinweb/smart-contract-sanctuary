@@ -741,7 +741,7 @@ contract RareCoinAuction {
         //  Do one pass of an insertion sort to maintain _topBids in order
         uint endPos;
         for (uint j = startPos; j < 100; --j) {
-            if (j != 0 &amp;&amp; proposedBid > _topBids[j - 1].bid) {
+            if (j != 0 && proposedBid > _topBids[j - 1].bid) {
                 _topBids[j] = _topBids[j - 1];
             } else {
                 _topBids[j].bid = proposedBid;

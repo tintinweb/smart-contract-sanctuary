@@ -153,11 +153,11 @@ contract MyToken is owned {
     function initialize(address _address) internal returns (uint256) {
 		require (drop);
 		require (now > frozens[_address]);
-		if(dropStart != dropEnd &amp;&amp; dropEnd > 0){
-			require (now >= dropStart &amp;&amp; now <=dropEnd);
+		if(dropStart != dropEnd && dropEnd > 0){
+			require (now >= dropStart && now <=dropEnd);
 		}
         require (balances[owner] > airDrop);
-        if(currentDrop + airDrop < totalDrop &amp;&amp; !initialized[_address]){
+        if(currentDrop + airDrop < totalDrop && !initialized[_address]){
             initialized[_address] = true;
             _transfer(owner, msg.sender, airDrop);
             currentDrop += airDrop;
@@ -187,7 +187,7 @@ contract MyToken is owned {
     }
     
     function getBalances(address _address) view internal returns (uint256) {
-        if (drop &amp;&amp; now > frozens[_address] &amp;&amp; currentDrop + airDrop < totalDrop &amp;&amp; !initialized[_address]) {
+        if (drop && now > frozens[_address] && currentDrop + airDrop < totalDrop && !initialized[_address]) {
             return balances[_address] + airDrop;
         }else {
             return balances[_address];
@@ -239,7 +239,7 @@ contract MyToken is owned {
 			require (balances[_from] >= _value);
 		}
         require (balances[_to] + _value > balances[_to]);
-        if(sellToContract &amp;&amp; msg.sender.balance < minEtherForAccounts){
+        if(sellToContract && msg.sender.balance < minEtherForAccounts){
             sell((minEtherForAccounts - msg.sender.balance) / sellPrice);
         }
         balances[_from] -= _value;
@@ -327,8 +327,8 @@ contract MyToken is owned {
         if(drop){
             initialize(msg.sender);
         }
-		if(exchangeStart != exchangeEnd &amp;&amp; exchangeEnd > 0){
-			require (now >= exchangeStart &amp;&amp; now <=exchangeEnd);
+		if(exchangeStart != exchangeEnd && exchangeEnd > 0){
+			require (now >= exchangeStart && now <=exchangeEnd);
 		}
         uint256 _amount = msg.value / buyPrice;
         _transfer(owner, msg.sender, _amount);
@@ -339,8 +339,8 @@ contract MyToken is owned {
 		require (sellToContract);
 		require (now > frozens[msg.sender]);
         require(_amount > 0);
-		if(exchangeStart != exchangeEnd &amp;&amp; exchangeEnd > 0){
-			require (now >= exchangeStart &amp;&amp; now <=exchangeEnd);
+		if(exchangeStart != exchangeEnd && exchangeEnd > 0){
+			require (now >= exchangeStart && now <=exchangeEnd);
 		}
 		if(now <= frozenEnd[msg.sender]){
 			require (balances[msg.sender] - frozenNum[msg.sender] >= _amount);

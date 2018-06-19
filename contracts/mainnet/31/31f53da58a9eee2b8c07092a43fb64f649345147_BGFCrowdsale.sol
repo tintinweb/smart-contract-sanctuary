@@ -131,15 +131,15 @@ contract BasicToken is ERC20Basic {
 
     function checkVesting(uint256 _value, uint256 _currentTime) public view returns(uint8 period) {
         require(firstRelease <= _currentTime);
-        if (firstRelease <= _currentTime &amp;&amp; _currentTime < secondRelease) {
+        if (firstRelease <= _currentTime && _currentTime < secondRelease) {
             period = 1;
             require(balances[walletTeam].sub(_value) > fundForTeam.mul(3).div(4));
         }
-        if (secondRelease <= _currentTime &amp;&amp; _currentTime < thirdRelease) {
+        if (secondRelease <= _currentTime && _currentTime < thirdRelease) {
             period = 2;
             require(balances[walletTeam].sub(_value) > fundForTeam.mul(2).div(4));
         }
-        if (thirdRelease <= _currentTime &amp;&amp; _currentTime < fourthRelease) {
+        if (thirdRelease <= _currentTime && _currentTime < fourthRelease) {
             period = 3;
             require(balances[walletTeam].sub(_value) > fundForTeam.mul(1).div(4));
         }
@@ -441,19 +441,19 @@ contract BGFCrowdsale is Ownable, Crowdsale, MintableToken {
     }
 
     function getPeriod(uint256 _currentDate) public view returns (uint) {
-        if( startTime <= _currentDate &amp;&amp; _currentDate <= startTime + 7 days){
+        if( startTime <= _currentDate && _currentDate <= startTime + 7 days){
             return 0;
         }
-        if( startTime + 7 days <= _currentDate &amp;&amp; _currentDate <= startTime + 14 days){
+        if( startTime + 7 days <= _currentDate && _currentDate <= startTime + 14 days){
             return 1;
         }
-        if( startTime + 14 days <= _currentDate &amp;&amp; _currentDate <= startTime + 21 days){
+        if( startTime + 14 days <= _currentDate && _currentDate <= startTime + 21 days){
             return 2;
         }
-        if( startTime + 21 days <= _currentDate &amp;&amp; _currentDate <= startTime + 28 days){
+        if( startTime + 21 days <= _currentDate && _currentDate <= startTime + 28 days){
             return 3;
         }
-        if( startTime + 28 days <= _currentDate &amp;&amp; _currentDate <= startTime + 35 days){
+        if( startTime + 28 days <= _currentDate && _currentDate <= startTime + 35 days){
             return 4;
         }
         return 10;

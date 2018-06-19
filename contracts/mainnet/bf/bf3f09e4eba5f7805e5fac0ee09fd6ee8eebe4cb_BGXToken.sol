@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 
 contract BGXToken {
-    // 以下参数测试时会临时修改，在正式发布时需要修正为正式参数 ======&gt;
+    // 以下参数测试时会临时修改，在正式发布时需要修正为正式参数 ======>
     string public name = &quot;BIT GAME EXCHANGE&quot;;
     string public symbol = &quot;BGX&quot;;
 
@@ -32,7 +32,7 @@ contract BGXToken {
     uint256 startTime = 1525708800; // 开始时间戳，2018/5/8 0:0:0 UTC-0
     uint256 endTime = 1528473600; // 结束时间戳，2018/6/9 0:0:0 UTC-0
     uint256 lockEndTime = 1528473600; // 锁定结束时间戳，2018/6/9 0:0:0 UTC-0
-    // &lt;====== 正式发布需要修正的参数
+    // <====== 正式发布需要修正的参数
 
     uint256 public decimals = 18;
     uint256 DECIMALSFACTOR = 10 ** decimals;
@@ -71,8 +71,8 @@ contract BGXToken {
     bool public finalised = false;
 
     // 存储所有用户的代币余额值
-    mapping (address =&gt; uint256) public balanceOf;
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => uint256) public balanceOf;
+    mapping (address => mapping (address => uint256)) public allowance;
 
     // This generates a public event on the blockchain that will notify clients
     event Transfer(address indexed from, address indexed to, uint256 value);
@@ -85,32 +85,32 @@ contract BGXToken {
 
         // 采用累加方式，防止有地址重复
         uint i = 0;
-        for (i = 0; i &lt; foundationAddresses.length; i++){
+        for (i = 0; i < foundationAddresses.length; i++){
             balanceOf[foundationAddresses[i]] += foundationAmounts[i];
             availableSupply -= foundationAmounts[i];
             emit Transfer(address(0), foundationAddresses[i], foundationAmounts[i]);
         }
-        for (i = 0; i &lt; teamAddresses.length; i++){
+        for (i = 0; i < teamAddresses.length; i++){
             balanceOf[teamAddresses[i]] += teamAmounts[i];
             availableSupply -= teamAmounts[i];
             emit Transfer(address(0), teamAddresses[i], teamAmounts[i]);
         }
-        for (i = 0; i &lt; miningAddresses.length; i++){
+        for (i = 0; i < miningAddresses.length; i++){
             balanceOf[miningAddresses[i]] += miningAmounts[i];
             availableSupply -= miningAmounts[i];
             emit Transfer(address(0), miningAddresses[i], miningAmounts[i]);
         }
-        for (i = 0; i &lt; angelAddresses.length; i++){
+        for (i = 0; i < angelAddresses.length; i++){
             balanceOf[angelAddresses[i]] += angelAmounts[i];
             availableSupply -= angelAmounts[i];
             emit Transfer(address(0), angelAddresses[i], angelAmounts[i]);
         }
-        for (i = 0; i &lt; cornerstoneAddresses.length; i++){
+        for (i = 0; i < cornerstoneAddresses.length; i++){
             balanceOf[cornerstoneAddresses[i]] += cornerstoneAmounts[i];
             availableSupply -= cornerstoneAmounts[i];
             emit Transfer(address(0), cornerstoneAddresses[i], cornerstoneAmounts[i]);
         }
-        for (i = 0; i &lt; preIcoAddresses.length; i++){
+        for (i = 0; i < preIcoAddresses.length; i++){
             balanceOf[preIcoAddresses[i]] += preIcoAmounts[i];
             availableSupply -= preIcoAmounts[i];
             emit Transfer(address(0), preIcoAddresses[i], preIcoAmounts[i]);
@@ -126,22 +126,22 @@ contract BGXToken {
         require(!finalised);
 
         // 判断是否在项目规定的时间范围内
-        require(block.timestamp &gt;= startTime);
-        require(block.timestamp &lt;= endTime);
+        require(block.timestamp >= startTime);
+        require(block.timestamp <= endTime);
 
         // 判断硬顶
-        require(ethRaised &lt; hardCap);
+        require(ethRaised < hardCap);
 
         // 达到最低捐赠额度才能继续，否则失败
-        require(msg.value &gt;= minimumDonation);
+        require(msg.value >= minimumDonation);
 
         uint256 etherValue = msg.value;
 
         // 边界条件，未超过部分的ETH正常收纳，超过的部分退回给用户
-        if (ethRaised + etherValue &gt; hardCap){
+        if (ethRaised + etherValue > hardCap){
             etherValue = hardCap - ethRaised;
             // 超过的部分退回给用户
-            assert(msg.value &gt; etherValue);
+            assert(msg.value > etherValue);
             msg.sender.transfer(msg.value - etherValue);
         }
 
@@ -159,9 +159,9 @@ contract BGXToken {
         // Prevent transfer to 0x0 address. Use burn() instead
         require(_to != 0x0);
         // Check if the sender has enough
-        require(balanceOf[_from] &gt;= _value);
+        require(balanceOf[_from] >= _value);
         // Check for overflows
-        require(balanceOf[_to] + _value &gt; balanceOf[_to]);
+        require(balanceOf[_to] + _value > balanceOf[_to]);
         // Save this for an assertion in the future
         uint previousBalances = balanceOf[_from] + balanceOf[_to];
         // Subtract from the sender
@@ -178,32 +178,32 @@ contract BGXToken {
             return true;
         }
         uint i = 0;
-        for (i = 0; i &lt; foundationAddresses.length; i++){
+        for (i = 0; i < foundationAddresses.length; i++){
             if (foundationAddresses[i] == _from){
                 return true;
             }
         }
-        for (i = 0; i &lt; teamAddresses.length; i++){
+        for (i = 0; i < teamAddresses.length; i++){
             if (teamAddresses[i] == _from){
                 return true;
             }
         }
-        for (i = 0; i &lt; miningAddresses.length; i++){
+        for (i = 0; i < miningAddresses.length; i++){
             if (miningAddresses[i] == _from){
                 return true;
             }
         }
-        for (i = 0; i &lt; angelAddresses.length; i++){
+        for (i = 0; i < angelAddresses.length; i++){
             if (angelAddresses[i] == _from){
                 return true;
             }
         }
-        for (i = 0; i &lt; cornerstoneAddresses.length; i++){
+        for (i = 0; i < cornerstoneAddresses.length; i++){
             if (cornerstoneAddresses[i] == _from){
                 return true;
             }
         }
-        for (i = 0; i &lt; preIcoAddresses.length; i++){
+        for (i = 0; i < preIcoAddresses.length; i++){
             if (preIcoAddresses[i] == _from){
                 return true;
             }
@@ -212,13 +212,13 @@ contract BGXToken {
     }
 
     function transfer(address _to, uint256 _value) public {
-        require(block.timestamp &gt; lockEndTime || _isInWhiteAddresses(msg.sender));
+        require(block.timestamp > lockEndTime || _isInWhiteAddresses(msg.sender));
         _transfer(msg.sender, _to, _value);
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(block.timestamp &gt; lockEndTime || _isInWhiteAddresses(_from));
-        require(_value &lt;= allowance[_from][msg.sender]);     // Check allowance
+        require(block.timestamp > lockEndTime || _isInWhiteAddresses(_from));
+        require(_value <= allowance[_from][msg.sender]);     // Check allowance
         allowance[_from][msg.sender] -= _value;
         _transfer(_from, _to, _value);
         return true;
@@ -238,8 +238,8 @@ contract BGXToken {
     }
 
     function burn(uint256 _value) public returns (bool success) {
-        require(block.timestamp &gt; lockEndTime);
-        require(balanceOf[msg.sender] &gt;= _value);   // Check if the sender has enough
+        require(block.timestamp > lockEndTime);
+        require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
         totalSupply -= _value;                      // Update totalSupply
         emit Burn(msg.sender, _value);
@@ -247,9 +247,9 @@ contract BGXToken {
     }
 
     function burnFrom(address _from, uint256 _value) public returns (bool success) {
-        require(block.timestamp &gt; lockEndTime);
-        require(balanceOf[_from] &gt;= _value);                // Check if the targeted balance is enough
-        require(_value &lt;= allowance[_from][msg.sender]);    // Check allowance
+        require(block.timestamp > lockEndTime);
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
         balanceOf[_from] -= _value;                         // Subtract from the targeted balance
         allowance[_from][msg.sender] -= _value;             // Subtract from the sender&#39;s allowance
         totalSupply -= _value;                              // Update totalSupply

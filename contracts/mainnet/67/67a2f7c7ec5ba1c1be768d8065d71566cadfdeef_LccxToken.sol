@@ -13,20 +13,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b &lt;= a);
+        require(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
         return c;
     }
 }
@@ -50,7 +50,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
     using SafeMath for uint256;
 
-    mapping(address =&gt; uint256) public balances;
+    mapping(address => uint256) public balances;
 
     /**
     * @dev transfer token for a specified address
@@ -59,7 +59,7 @@ contract BasicToken is ERC20Basic {
     */
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
 
         // SafeMath.sub will throw if there is not enough balance.
         balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -99,7 +99,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping (address => mapping (address => uint256)) internal allowed;
 
 
     /**
@@ -110,8 +110,8 @@ contract StandardToken is ERC20, BasicToken {
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -160,7 +160,7 @@ contract StandardToken is ERC20, BasicToken {
 
     function decreaseApproval (address _spender, uint _subtractedValue) public returns (bool success) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -183,9 +183,9 @@ contract BurnableToken is StandardToken {
      * @param _value The amount of token to be burned.
      */
     function burn(uint256 _value) public {
-        require(_value &gt; 0);
-        require(_value &lt;= balances[msg.sender]);
-        // no need to require value &lt;= totalSupply, since that would imply the
+        require(_value > 0);
+        require(_value <= balances[msg.sender]);
+        // no need to require value <= totalSupply, since that would imply the
         // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
         address burner = msg.sender;
@@ -263,8 +263,8 @@ contract TokenVesting is Ownable {
 
     bool public revocable;
 
-    mapping (address =&gt; uint256) public released;
-    mapping (address =&gt; bool) public revoked;
+    mapping (address => uint256) public released;
+    mapping (address => bool) public revoked;
 
     /**
      * @dev Creates a vesting contract that vests its balance of any ERC20 token to the
@@ -277,7 +277,7 @@ contract TokenVesting is Ownable {
      */
     constructor(address _beneficiary, uint256 _start, uint256 _cliff, uint256 _duration, bool _revocable) public {
         require(_beneficiary != address(0));
-        require(_cliff &lt;= _duration);
+        require(_cliff <= _duration);
 
         beneficiary = _beneficiary;
         revocable = _revocable;
@@ -293,7 +293,7 @@ contract TokenVesting is Ownable {
     function release(ERC20Basic token) public {
         uint256 unreleased = releasableAmount(token);
 
-        require(unreleased &gt; 0);
+        require(unreleased > 0);
 
         released[token] = released[token].add(unreleased);
 
@@ -339,9 +339,9 @@ contract TokenVesting is Ownable {
         uint256 currentBalance = token.balanceOf(this);
         uint256 totalBalance = currentBalance.add(released[token]);
 
-        if (now &lt; cliff) {
+        if (now < cliff) {
             return 0;
-        } else if (now &gt;= start.add(duration) || revoked[token]) {
+        } else if (now >= start.add(duration) || revoked[token]) {
             return totalBalance;
         } else {
             return totalBalance.mul(now.sub(start)).div(duration);
@@ -419,14 +419,14 @@ contract LccxToken is BurnableToken, Ownable {
         balances[lccxTeamTokensVesting] = teamTokens;
         emit Transfer(0x0, lccxTeamTokensVesting, teamTokens);
         
-        require(totalSupply &lt;= HARD_CAP);
+        require(totalSupply <= HARD_CAP);
     }
 
     /// @dev Close the token sale
     function closeSale() external onlyOwner beforeSaleClosed {
         uint256 unsoldTokens = balances[saleTokensAddress];
 
-        if(unsoldTokens &gt; 0) {
+        if(unsoldTokens > 0) {
             balances[saleTokensAddress] = 0;
             totalSupply = totalSupply.sub(unsoldTokens);
             emit Burn(saleTokensAddress, unsoldTokens);

@@ -78,7 +78,7 @@ contract MultiSigWallet is Ownable {
     EthTransactionRequest public latestEthTxRequest;
     Erc20TransactionRequest public latestErc20TxRequest;
 
-    mapping (address =&gt; bool) public isAuthorised;
+    mapping (address => bool) public isAuthorised;
 
 
     /**
@@ -118,7 +118,7 @@ contract MultiSigWallet is Ownable {
     * ERC20 tokens.
     **/
     function authoriseAddress(address _addr) public onlyOwner {
-        require(_addr != 0x0 &amp;&amp; !isAuthorised[_addr]);
+        require(_addr != 0x0 && !isAuthorised[_addr]);
         isAuthorised[_addr] = true;
         AddressAuthorised(_addr);
     }
@@ -128,7 +128,7 @@ contract MultiSigWallet is Ownable {
     * and ERC20 tokens.
     **/
     function unauthoriseAddress(address _addr) public onlyOwner {
-        require(isAuthorised[_addr] &amp;&amp; _addr != owner);
+        require(isAuthorised[_addr] && _addr != owner);
         isAuthorised[_addr] = false;
         AddressUnauthorised(_addr);
     }
@@ -143,7 +143,7 @@ contract MultiSigWallet is Ownable {
     * @param _valueInWei The amount of ETH to send specified in units of wei
     **/
     function requestTransferOfETH(address _to, uint256 _valueInWei) public onlyAuthorisedAddresses {
-        require(_to != 0x0 &amp;&amp; _valueInWei &gt; 0);
+        require(_to != 0x0 && _valueInWei > 0);
         latestEthTxRequest = EthTransactionRequest(msg.sender, _to, _valueInWei);
         TransferOfEtherRequested(msg.sender, _to, _valueInWei);
     }
@@ -160,7 +160,7 @@ contract MultiSigWallet is Ownable {
     **/
     function requestErc20Transfer(address _token, address _to, uint256 _value) public onlyAuthorisedAddresses {
         ERC20TransferInterface token = ERC20TransferInterface(_token);
-        require(_to != 0x0 &amp;&amp; _value &gt; 0 &amp;&amp; token.balanceOf(address(this)) &gt;= _value);
+        require(_to != 0x0 && _value > 0 && token.balanceOf(address(this)) >= _value);
         latestErc20TxRequest = Erc20TransactionRequest(msg.sender, _to, _token, _value);
         TransferOfErc20Requested(msg.sender, _to, _token, _value);
     }
@@ -170,7 +170,7 @@ contract MultiSigWallet is Ownable {
     * excluding the address which initially made the request. 
     **/
     function confirmEthTransactionRequest() public onlyAuthorisedAddresses validEthConfirmation  {
-        require(isAuthorised[latestEthTxRequest._from] &amp;&amp; latestEthTxRequest._to != 0x0 &amp;&amp; latestEthTxRequest._valueInWei &gt; 0);
+        require(isAuthorised[latestEthTxRequest._from] && latestEthTxRequest._to != 0x0 && latestEthTxRequest._valueInWei > 0);
         latestEthTxRequest._to.transfer(latestEthTxRequest._valueInWei);
         latestEthTxRequest = EthTransactionRequest(0x0, 0x0, 0);
         EthTransactionConfirmed(msg.sender);
@@ -181,7 +181,7 @@ contract MultiSigWallet is Ownable {
     * excluding the address which initially made the request. 
     **/
     function confirmErc20TransactionRequest() public onlyAuthorisedAddresses validErc20Confirmation {
-        require(isAuthorised[latestErc20TxRequest._from] &amp;&amp; latestErc20TxRequest._to != 0x0 &amp;&amp; latestErc20TxRequest._value != 0 &amp;&amp; latestErc20TxRequest._token != 0x0);
+        require(isAuthorised[latestErc20TxRequest._from] && latestErc20TxRequest._to != 0x0 && latestErc20TxRequest._value != 0 && latestErc20TxRequest._token != 0x0);
         ERC20TransferInterface token = ERC20TransferInterface(latestErc20TxRequest._token);
         token.transfer(latestErc20TxRequest._to,latestErc20TxRequest._value);
         latestErc20TxRequest = Erc20TransactionRequest(0x0, 0x0, 0x0, 0);

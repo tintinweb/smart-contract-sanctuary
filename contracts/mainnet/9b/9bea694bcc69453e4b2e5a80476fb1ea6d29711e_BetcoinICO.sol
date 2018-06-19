@@ -16,10 +16,10 @@ pragma solidity ^0.4.19;
 library SafeMath {
     function add(uint a, uint b) internal pure returns (uint c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function sub(uint a, uint b) internal pure returns (uint c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function mul(uint a, uint b) internal pure returns (uint c) {
@@ -27,7 +27,7 @@ library SafeMath {
         require(a == 0 || c / a == b);
     }
     function div(uint a, uint b) internal pure returns (uint c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
@@ -91,8 +91,8 @@ contract BetcoinICO is ERC20Interface, Owned {
     uint public RATE;
     bool public isStopped = false;
 
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => uint) balances;
+    mapping(address => mapping(address => uint)) allowed;
     
     event LogRateChanged(uint256 rate);
     
@@ -129,12 +129,12 @@ contract BetcoinICO is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
     function buyTokens() onlyWhenRunning public payable {
         // investment should be greater than 0
-        require(msg.value &gt; 0);
+        require(msg.value > 0);
         
         uint tokens = msg.value.mul(RATE);
         
         // owner should have enough tokens
-        require(balances[owner] &gt;= tokens);
+        require(balances[owner] >= tokens);
         
         // send tokens to buyer
         balances[msg.sender] = balances[msg.sender].add(tokens);
@@ -168,7 +168,7 @@ contract BetcoinICO is ERC20Interface, Owned {
     // - 0 value transfers are allowed
     // ------------------------------------------------------------------------
     function transfer(address to, uint tokens) public returns (bool success) {
-        if(balances[msg.sender] &gt;= tokens &amp;&amp; tokens &gt; 0 &amp;&amp; to!=address(0)) {
+        if(balances[msg.sender] >= tokens && tokens > 0 && to!=address(0)) {
             balances[msg.sender] = balances[msg.sender].sub(tokens);
             balances[to] = balances[to].add(tokens);
             emit Transfer(msg.sender, to, tokens);
@@ -185,7 +185,7 @@ contract BetcoinICO is ERC20Interface, Owned {
     // as this should be implemented in user interfaces 
     // ------------------------------------------------------------------------
     function approve(address spender, uint tokens) public returns (bool success) {
-        if(tokens &gt; 0 &amp;&amp; spender != address(0)) {
+        if(tokens > 0 && spender != address(0)) {
             allowed[msg.sender][spender] = tokens;
             emit Approval(msg.sender, spender, tokens);
             return true;
@@ -203,7 +203,7 @@ contract BetcoinICO is ERC20Interface, Owned {
     // - 0 value transfers are allowed
     // ------------------------------------------------------------------------
     function transferFrom(address from, address to, uint tokens) public returns (bool success) {
-        if (balances[from] &gt;= tokens &amp;&amp; allowed[from][msg.sender] &gt;= tokens &amp;&amp; tokens &gt; 0) {
+        if (balances[from] >= tokens && allowed[from][msg.sender] >= tokens && tokens > 0) {
             balances[from] = balances[from].sub(tokens);
             allowed[from][msg.sender] = allowed[from][msg.sender].sub(tokens);
             balances[to] = balances[to].add(tokens);
@@ -251,7 +251,7 @@ contract BetcoinICO is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
     function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -281,7 +281,7 @@ contract BetcoinICO is ERC20Interface, Owned {
     // To change RATE
     // ------------------------------------------------------------------------
     function changeRate(uint256 rate) onlyOwner public {
-        require(rate &gt; 0);
+        require(rate > 0);
         
         RATE = rate;
         emit LogRateChanged(rate);

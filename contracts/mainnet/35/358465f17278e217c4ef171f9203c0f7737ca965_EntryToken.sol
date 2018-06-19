@@ -12,13 +12,13 @@ library SafeMath {
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b &lt;= a);
+        require(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
         return c;
     }
 }
@@ -42,7 +42,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
     using SafeMath for uint256;
 
-    mapping(address =&gt; uint256) public balances;
+    mapping(address => uint256) public balances;
 
     /**
     * @dev transfer token for a specified address
@@ -51,7 +51,7 @@ contract BasicToken is ERC20Basic {
     */
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
 
         // SafeMath.sub will throw if there is not enough balance.
         balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -120,7 +120,7 @@ contract TokenTimelock {
 
   function TokenTimelock(ERC20Basic _token, address _beneficiary, uint256 _releaseTime) public {
     // solium-disable-next-line security/no-block-members
-    require(_releaseTime &gt; block.timestamp);
+    require(_releaseTime > block.timestamp);
     token = _token;
     beneficiary = _beneficiary;
     releaseTime = _releaseTime;
@@ -131,10 +131,10 @@ contract TokenTimelock {
    */
   function release() public {
     // solium-disable-next-line security/no-block-members
-    require(block.timestamp &gt;= releaseTime);
+    require(block.timestamp >= releaseTime);
 
     uint256 amount = token.balanceOf(this);
-    require(amount &gt; 0);
+    require(amount > 0);
 
     token.safeTransfer(beneficiary, amount);
   }
@@ -149,7 +149,7 @@ contract TokenTimelock {
  */
 contract StandardToken is ERC20, BasicToken {
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping (address => mapping (address => uint256)) internal allowed;
 
     /**
      * @dev Transfer tokens from one address to another
@@ -159,8 +159,8 @@ contract StandardToken is ERC20, BasicToken {
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -209,7 +209,7 @@ contract StandardToken is ERC20, BasicToken {
 
     function decreaseApproval (address _spender, uint _subtractedValue) public returns (bool success) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -328,24 +328,24 @@ contract EntryToken is StandardToken, Ownable {
 
 
     function isPreSalePeriod() public constant returns (bool) {
-        if(totalSupply &gt; preSaleCap || now &gt;= datePreSaleEnd) {
+        if(totalSupply > preSaleCap || now >= datePreSaleEnd) {
             return false;
         } else {
-            return now &gt; datePreSaleStart;
+            return now > datePreSaleStart;
         }
     }
 
 
     function isICOPeriod() public constant returns (bool) {
-        if (totalSupply &gt; TOKENS_SALE_HARD_CAP || now &gt;= dateSaleEnd){
+        if (totalSupply > TOKENS_SALE_HARD_CAP || now >= dateSaleEnd){
             return false;
         } else {
-            return now &gt; dateSaleStart;
+            return now > dateSaleStart;
         }
     }
 
     modifier inProgress {
-        require(totalSupply &lt; TOKENS_SALE_HARD_CAP &amp;&amp; !tokenSaleClosed &amp;&amp; now &gt;= datePreSaleStart);
+        require(totalSupply < TOKENS_SALE_HARD_CAP && !tokenSaleClosed && now >= datePreSaleStart);
         _;
     }
 
@@ -378,18 +378,18 @@ contract EntryToken is StandardToken, Ownable {
     
 
     function buyPreSaleTokens(address _beneficiary) internal {
-        require(msg.value &gt;= 0.01 ether);
+        require(msg.value >= 0.01 ether);
         uint256 tokens = getPreSaleTokenAmount(msg.value);
-        require(totalSupply.add(tokens) &lt;= preSaleCap);
+        require(totalSupply.add(tokens) <= preSaleCap);
         generateTokens(_beneficiary, tokens);
         owner.transfer(address(this).balance);
     }
     
     
     function buyTokens(address _beneficiary) internal {
-        require(msg.value &gt;= 0.01 ether);
+        require(msg.value >= 0.01 ether);
         uint256 tokens = getTokenAmount(msg.value);
-        require(totalSupply.add(tokens) &lt;= TOKENS_SALE_HARD_CAP);
+        require(totalSupply.add(tokens) <= TOKENS_SALE_HARD_CAP);
         generateTokens(_beneficiary, tokens);
         owner.transfer(address(this).balance);
     }
@@ -404,7 +404,7 @@ contract EntryToken is StandardToken, Ownable {
         uint256 tokenBase = weiAmount.mul(BASE_RATE);
         uint8 stageNumber = currentStageIndex();
         tokens = getStageTokenAmount(tokenBase, stageNumber);
-        while(tokens.add(totalSupply) &gt; stageCaps[stageNumber] &amp;&amp; stageNumber &lt; 24){
+        while(tokens.add(totalSupply) > stageCaps[stageNumber] && stageNumber < 24){
            stageNumber++;
            tokens = getStageTokenAmount(tokenBase, stageNumber);
         }
@@ -420,7 +420,7 @@ contract EntryToken is StandardToken, Ownable {
     
     function currentStageIndex() internal view returns (uint8 stageNumber) {
         stageNumber = 0;
-        while(stageNumber &lt; 24 &amp;&amp; totalSupply &gt; stageCaps[stageNumber]) {
+        while(stageNumber < 24 && totalSupply > stageCaps[stageNumber]) {
             stageNumber++;
         }
     }
@@ -433,9 +433,9 @@ contract EntryToken is StandardToken, Ownable {
     
     function buyTokensOnInvestorBehalfBatch(address[] _addresses, uint256[] _tokens) public onlyOwner beforeEnd {
         require(_addresses.length == _tokens.length);
-        require(_addresses.length &lt;= 100);
+        require(_addresses.length <= 100);
 
-        for (uint256 i = 0; i &lt; _tokens.length; i = i.add(1)) {
+        for (uint256 i = 0; i < _tokens.length; i = i.add(1)) {
             generateTokens(_addresses[i], _tokens[i]);
         }
     }

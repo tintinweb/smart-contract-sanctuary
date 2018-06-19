@@ -16,13 +16,13 @@ library SafeMath {
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -38,13 +38,13 @@ contract TrueTogetherToken {
     uint256 airdropNum = 1 ether;
     uint256 public distributed = 0;
 
-    mapping (address =&gt; bool) touched;
-    mapping (address =&gt; uint256) public balances;
-    mapping (address =&gt; uint256) public frozen;
-    mapping (address =&gt; uint256) public totalVotes;
+    mapping (address => bool) touched;
+    mapping (address => uint256) public balances;
+    mapping (address => uint256) public frozen;
+    mapping (address => uint256) public totalVotes;
 	
-    mapping (address =&gt; mapping (address =&gt; uint256)) public votingInfo;
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => mapping (address => uint256)) public votingInfo;
+    mapping (address => mapping (address => uint256)) allowed;
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Vote(address indexed _from, address indexed _to, uint256 _value);
@@ -60,7 +60,7 @@ contract TrueTogetherToken {
     }
 
     function balanceOf(address _owner) public returns (uint256 balance) {
-        if (!touched[_owner] &amp;&amp; SafeMath.add(distributed, airdropNum) &lt; _totalSupply &amp;&amp; now &lt; voteEndTime) {
+        if (!touched[_owner] && SafeMath.add(distributed, airdropNum) < _totalSupply && now < voteEndTime) {
             touched[_owner] = true;
             distributed = SafeMath.add(distributed, airdropNum);
             balances[_owner] = SafeMath.add(balances[_owner], airdropNum);
@@ -72,14 +72,14 @@ contract TrueTogetherToken {
     function transfer(address _to, uint256 _value) public returns (bool success) {
         require (_to != 0x0);
 
-        if (now &gt; voteEndTime) {
-            require((balances[msg.sender] &gt;= _value));
+        if (now > voteEndTime) {
+            require((balances[msg.sender] >= _value));
             balances[msg.sender] = SafeMath.sub(balances[msg.sender], _value);
             balances[_to] = SafeMath.add(balances[_to], _value);
             emit Transfer(msg.sender, _to, _value);
             return true;	 
         } else {
-            require(balances[msg.sender] &gt;= SafeMath.add(frozen[msg.sender], _value));
+            require(balances[msg.sender] >= SafeMath.add(frozen[msg.sender], _value));
             balances[msg.sender] = SafeMath.sub(balances[msg.sender], _value);
             balances[_to] = SafeMath.add(balances[_to], _value);
             emit Transfer(msg.sender, _to, _value);
@@ -90,14 +90,14 @@ contract TrueTogetherToken {
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         require (_to != 0x0);
 
-        if (now &gt; voteEndTime) {
-            require(balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value);
+        if (now > voteEndTime) {
+            require(balances[_from] >= _value && allowed[_from][msg.sender] >= _value);
             balances[_from] = SafeMath.sub(balances[_from], _value);
             balances[_to] = SafeMath.add(balances[_to], _value);
             emit Transfer(_from, _to, _value);
             return true;	 
         } else {
-            require(balances[_from] &gt;= SafeMath.add(frozen[_from], _value) &amp;&amp; allowed[_from][msg.sender] &gt;= _value);
+            require(balances[_from] >= SafeMath.add(frozen[_from], _value) && allowed[_from][msg.sender] >= _value);
             balances[_from] = SafeMath.sub(balances[_from], _value);
             balances[_to] = SafeMath.add(balances[_to], _value);
             emit Transfer(_from, _to, _value);
@@ -117,7 +117,7 @@ contract TrueTogetherToken {
 
     function distribute(address _to, uint256 _amount) public returns (bool success) {
         require(msg.sender == founder);
-        require(SafeMath.add(distributed, _amount) &lt;= _totalSupply);
+        require(SafeMath.add(distributed, _amount) <= _totalSupply);
 
         distributed = SafeMath.add(distributed, _amount);
         balances[_to] = SafeMath.add(balances[_to], _amount);
@@ -131,13 +131,13 @@ contract TrueTogetherToken {
 		
         uint256 total = 0;
         uint256 i = 0; 
-        for (i = 0; i &lt; _tos.length; i++) {
+        for (i = 0; i < _tos.length; i++) {
             total = SafeMath.add(total, _values[i]);
         }
 
-        require(SafeMath.add(distributed, total) &lt; _totalSupply);
+        require(SafeMath.add(distributed, total) < _totalSupply);
 
-        for (i = 0; i &lt; _tos.length; i++) {
+        for (i = 0; i < _tos.length; i++) {
             distributed = SafeMath.add(distributed, _values[i]);
             balances[_tos[i]] = SafeMath.add(balances[_tos[i]], _values[i]);
             touched[_tos[i]] = true;
@@ -148,8 +148,8 @@ contract TrueTogetherToken {
     }
 
     function vote(address _to, uint256 _value) public returns (bool success) {
-        require(_to != 0x0 &amp;&amp; now &lt; voteEndTime);
-        require(balances[msg.sender] &gt;= SafeMath.add(frozen[msg.sender], _value));
+        require(_to != 0x0 && now < voteEndTime);
+        require(balances[msg.sender] >= SafeMath.add(frozen[msg.sender], _value));
 
         frozen[msg.sender] = SafeMath.add(frozen[msg.sender], _value);
         totalVotes[_to] = SafeMath.add(totalVotes[_to], _value);
@@ -159,8 +159,8 @@ contract TrueTogetherToken {
     }
 
     function voteAll(address _to) public returns (bool success) {
-        require(_to != 0x0 &amp;&amp; now &lt; voteEndTime);
-        require(balances[msg.sender] &gt; frozen[msg.sender]);
+        require(_to != 0x0 && now < voteEndTime);
+        require(balances[msg.sender] > frozen[msg.sender]);
         
         uint256 votesNum = SafeMath.sub(balances[msg.sender], frozen[msg.sender]);
         frozen[msg.sender] = balances[msg.sender];

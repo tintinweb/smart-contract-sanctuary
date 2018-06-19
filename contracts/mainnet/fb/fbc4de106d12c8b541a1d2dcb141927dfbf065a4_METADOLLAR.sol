@@ -76,7 +76,7 @@ library Buffer {
     }
 
     function max(uint a, uint b) private pure returns(uint) {
-        if(a &gt; b) {
+        if(a > b) {
             return a;
         }
         return b;
@@ -90,7 +90,7 @@ library Buffer {
      * @return The original buffer.
      */
     function append(buffer memory buf, bytes data) internal pure returns(buffer memory) {
-        if(data.length + buf.buf.length &gt; buf.capacity) {
+        if(data.length + buf.buf.length > buf.capacity) {
             resize(buf, max(buf.capacity, data.length) * 2);
         }
 
@@ -110,7 +110,7 @@ library Buffer {
         }
 
         // Copy word-length chunks while possible
-        for(; len &gt;= 32; len -= 32) {
+        for(; len >= 32; len -= 32) {
             assembly {
                 mstore(dest, mload(src))
             }
@@ -137,7 +137,7 @@ library Buffer {
      * @return The original buffer.
      */
     function append(buffer memory buf, uint8 data) internal pure {
-        if(buf.buf.length + 1 &gt; buf.capacity) {
+        if(buf.buf.length + 1 > buf.capacity) {
             resize(buf, buf.capacity * 2);
         }
 
@@ -162,7 +162,7 @@ library Buffer {
      * @return The original buffer.
      */
     function appendInt(buffer memory buf, uint data, uint len) internal pure returns(buffer memory) {
-        if(len + buf.buf.length &gt; buf.capacity) {
+        if(len + buf.buf.length > buf.capacity) {
             resize(buf, max(buf.capacity, len) * 2);
         }
 
@@ -194,25 +194,25 @@ library CBOR {
     uint8 private constant MAJOR_TYPE_CONTENT_FREE = 7;
 
     function encodeType(Buffer.buffer memory buf, uint8 major, uint value) private pure {
-        if(value &lt;= 23) {
-            buf.append(uint8((major &lt;&lt; 5) | value));
-        } else if(value &lt;= 0xFF) {
-            buf.append(uint8((major &lt;&lt; 5) | 24));
+        if(value <= 23) {
+            buf.append(uint8((major << 5) | value));
+        } else if(value <= 0xFF) {
+            buf.append(uint8((major << 5) | 24));
             buf.appendInt(value, 1);
-        } else if(value &lt;= 0xFFFF) {
-            buf.append(uint8((major &lt;&lt; 5) | 25));
+        } else if(value <= 0xFFFF) {
+            buf.append(uint8((major << 5) | 25));
             buf.appendInt(value, 2);
-        } else if(value &lt;= 0xFFFFFFFF) {
-            buf.append(uint8((major &lt;&lt; 5) | 26));
+        } else if(value <= 0xFFFFFFFF) {
+            buf.append(uint8((major << 5) | 26));
             buf.appendInt(value, 4);
-        } else if(value &lt;= 0xFFFFFFFFFFFFFFFF) {
-            buf.append(uint8((major &lt;&lt; 5) | 27));
+        } else if(value <= 0xFFFFFFFFFFFFFFFF) {
+            buf.append(uint8((major << 5) | 27));
             buf.appendInt(value, 8);
         }
     }
 
     function encodeIndefiniteLengthType(Buffer.buffer memory buf, uint8 major) private pure {
-        buf.append(uint8((major &lt;&lt; 5) | 31));
+        buf.append(uint8((major << 5) | 31));
     }
 
     function encodeUInt(Buffer.buffer memory buf, uint value) internal pure {
@@ -220,7 +220,7 @@ library CBOR {
     }
 
     function encodeInt(Buffer.buffer memory buf, int value) internal pure {
-        if(value &gt;= 0) {
+        if(value >= 0) {
             encodeType(buf, MAJOR_TYPE_INT, uint(value));
         } else {
             encodeType(buf, MAJOR_TYPE_NEGATIVE_INT, uint(-1 - value));
@@ -292,35 +292,35 @@ contract usingOraclize {
       networkID; // silence the warning and remain backwards compatible
     }
     function oraclize_setNetwork() internal returns(bool){
-        if (getCodeSize(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed)&gt;0){ //mainnet
+        if (getCodeSize(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed)>0){ //mainnet
             OAR = OraclizeAddrResolverI(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed);
             oraclize_setNetworkName(&quot;eth_mainnet&quot;);
             return true;
         }
-        if (getCodeSize(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1)&gt;0){ //ropsten testnet
+        if (getCodeSize(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1)>0){ //ropsten testnet
             OAR = OraclizeAddrResolverI(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1);
             oraclize_setNetworkName(&quot;eth_ropsten3&quot;);
             return true;
         }
-        if (getCodeSize(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e)&gt;0){ //kovan testnet
+        if (getCodeSize(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e)>0){ //kovan testnet
             OAR = OraclizeAddrResolverI(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e);
             oraclize_setNetworkName(&quot;eth_kovan&quot;);
             return true;
         }
-        if (getCodeSize(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48)&gt;0){ //rinkeby testnet
+        if (getCodeSize(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48)>0){ //rinkeby testnet
             OAR = OraclizeAddrResolverI(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48);
             oraclize_setNetworkName(&quot;eth_rinkeby&quot;);
             return true;
         }
-        if (getCodeSize(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475)&gt;0){ //ethereum-bridge
+        if (getCodeSize(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475)>0){ //ethereum-bridge
             OAR = OraclizeAddrResolverI(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475);
             return true;
         }
-        if (getCodeSize(0x20e12A1F859B3FeaE5Fb2A0A32C18F5a65555bBF)&gt;0){ //ether.camp ide
+        if (getCodeSize(0x20e12A1F859B3FeaE5Fb2A0A32C18F5a65555bBF)>0){ //ether.camp ide
             OAR = OraclizeAddrResolverI(0x20e12A1F859B3FeaE5Fb2A0A32C18F5a65555bBF);
             return true;
         }
-        if (getCodeSize(0x51efaF4c8B3C9AfBD5aB9F4bbC82784Ab6ef8fAA)&gt;0){ //browser-solidity
+        if (getCodeSize(0x51efaF4c8B3C9AfBD5aB9F4bbC82784Ab6ef8fAA)>0){ //browser-solidity
             OAR = OraclizeAddrResolverI(0x51efaF4c8B3C9AfBD5aB9F4bbC82784Ab6ef8fAA);
             return true;
         }
@@ -345,65 +345,65 @@ contract usingOraclize {
 
     function oraclize_query(string datasource, string arg) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         return oraclize.query.value(price)(0, datasource, arg);
     }
     function oraclize_query(uint timestamp, string datasource, string arg) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         return oraclize.query.value(price)(timestamp, datasource, arg);
     }
     function oraclize_query(uint timestamp, string datasource, string arg, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         return oraclize.query_withGasLimit.value(price)(timestamp, datasource, arg, gaslimit);
     }
     function oraclize_query(string datasource, string arg, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         return oraclize.query_withGasLimit.value(price)(0, datasource, arg, gaslimit);
     }
     function oraclize_query(string datasource, string arg1, string arg2) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         return oraclize.query2.value(price)(0, datasource, arg1, arg2);
     }
     function oraclize_query(uint timestamp, string datasource, string arg1, string arg2) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         return oraclize.query2.value(price)(timestamp, datasource, arg1, arg2);
     }
     function oraclize_query(uint timestamp, string datasource, string arg1, string arg2, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         return oraclize.query2_withGasLimit.value(price)(timestamp, datasource, arg1, arg2, gaslimit);
     }
     function oraclize_query(string datasource, string arg1, string arg2, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         return oraclize.query2_withGasLimit.value(price)(0, datasource, arg1, arg2, gaslimit);
     }
     function oraclize_query(string datasource, string[] argN) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         bytes memory args = stra2cbor(argN);
         return oraclize.queryN.value(price)(0, datasource, args);
     }
     function oraclize_query(uint timestamp, string datasource, string[] argN) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         bytes memory args = stra2cbor(argN);
         return oraclize.queryN.value(price)(timestamp, datasource, args);
     }
     function oraclize_query(uint timestamp, string datasource, string[] argN, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         bytes memory args = stra2cbor(argN);
         return oraclize.queryN_withGasLimit.value(price)(timestamp, datasource, args, gaslimit);
     }
     function oraclize_query(string datasource, string[] argN, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         bytes memory args = stra2cbor(argN);
         return oraclize.queryN_withGasLimit.value(price)(0, datasource, args, gaslimit);
     }
@@ -551,25 +551,25 @@ contract usingOraclize {
     }
     function oraclize_query(string datasource, bytes[] argN) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         bytes memory args = ba2cbor(argN);
         return oraclize.queryN.value(price)(0, datasource, args);
     }
     function oraclize_query(uint timestamp, string datasource, bytes[] argN) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         bytes memory args = ba2cbor(argN);
         return oraclize.queryN.value(price)(timestamp, datasource, args);
     }
     function oraclize_query(uint timestamp, string datasource, bytes[] argN, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         bytes memory args = ba2cbor(argN);
         return oraclize.queryN_withGasLimit.value(price)(timestamp, datasource, args, gaslimit);
     }
     function oraclize_query(string datasource, bytes[] argN, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         bytes memory args = ba2cbor(argN);
         return oraclize.queryN_withGasLimit.value(price)(0, datasource, args, gaslimit);
     }
@@ -741,16 +741,16 @@ contract usingOraclize {
         uint160 iaddr = 0;
         uint160 b1;
         uint160 b2;
-        for (uint i=2; i&lt;2+2*20; i+=2){
+        for (uint i=2; i<2+2*20; i+=2){
             iaddr *= 256;
             b1 = uint160(tmp[i]);
             b2 = uint160(tmp[i+1]);
-            if ((b1 &gt;= 97)&amp;&amp;(b1 &lt;= 102)) b1 -= 87;
-            else if ((b1 &gt;= 65)&amp;&amp;(b1 &lt;= 70)) b1 -= 55;
-            else if ((b1 &gt;= 48)&amp;&amp;(b1 &lt;= 57)) b1 -= 48;
-            if ((b2 &gt;= 97)&amp;&amp;(b2 &lt;= 102)) b2 -= 87;
-            else if ((b2 &gt;= 65)&amp;&amp;(b2 &lt;= 70)) b2 -= 55;
-            else if ((b2 &gt;= 48)&amp;&amp;(b2 &lt;= 57)) b2 -= 48;
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 65)&&(b1 <= 70)) b1 -= 55;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 65)&&(b2 <= 70)) b2 -= 55;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
             iaddr += (b1*16+b2);
         }
         return address(iaddr);
@@ -760,15 +760,15 @@ contract usingOraclize {
         bytes memory a = bytes(_a);
         bytes memory b = bytes(_b);
         uint minLength = a.length;
-        if (b.length &lt; minLength) minLength = b.length;
-        for (uint i = 0; i &lt; minLength; i ++)
-            if (a[i] &lt; b[i])
+        if (b.length < minLength) minLength = b.length;
+        for (uint i = 0; i < minLength; i ++)
+            if (a[i] < b[i])
                 return -1;
-            else if (a[i] &gt; b[i])
+            else if (a[i] > b[i])
                 return 1;
-        if (a.length &lt; b.length)
+        if (a.length < b.length)
             return -1;
-        else if (a.length &gt; b.length)
+        else if (a.length > b.length)
             return 1;
         else
             return 0;
@@ -777,19 +777,19 @@ contract usingOraclize {
     function indexOf(string _haystack, string _needle) internal pure returns (int) {
         bytes memory h = bytes(_haystack);
         bytes memory n = bytes(_needle);
-        if(h.length &lt; 1 || n.length &lt; 1 || (n.length &gt; h.length))
+        if(h.length < 1 || n.length < 1 || (n.length > h.length))
             return -1;
-        else if(h.length &gt; (2**128 -1))
+        else if(h.length > (2**128 -1))
             return -1;
         else
         {
             uint subindex = 0;
-            for (uint i = 0; i &lt; h.length; i ++)
+            for (uint i = 0; i < h.length; i ++)
             {
                 if (h[i] == n[0])
                 {
                     subindex = 1;
-                    while(subindex &lt; n.length &amp;&amp; (i + subindex) &lt; h.length &amp;&amp; h[i + subindex] == n[subindex])
+                    while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
                     {
                         subindex++;
                     }
@@ -810,11 +810,11 @@ contract usingOraclize {
         string memory abcde = new string(_ba.length + _bb.length + _bc.length + _bd.length + _be.length);
         bytes memory babcde = bytes(abcde);
         uint k = 0;
-        for (uint i = 0; i &lt; _ba.length; i++) babcde[k++] = _ba[i];
-        for (i = 0; i &lt; _bb.length; i++) babcde[k++] = _bb[i];
-        for (i = 0; i &lt; _bc.length; i++) babcde[k++] = _bc[i];
-        for (i = 0; i &lt; _bd.length; i++) babcde[k++] = _bd[i];
-        for (i = 0; i &lt; _be.length; i++) babcde[k++] = _be[i];
+        for (uint i = 0; i < _ba.length; i++) babcde[k++] = _ba[i];
+        for (i = 0; i < _bb.length; i++) babcde[k++] = _bb[i];
+        for (i = 0; i < _bc.length; i++) babcde[k++] = _bc[i];
+        for (i = 0; i < _bd.length; i++) babcde[k++] = _bd[i];
+        for (i = 0; i < _be.length; i++) babcde[k++] = _be[i];
         return string(babcde);
     }
 
@@ -840,8 +840,8 @@ contract usingOraclize {
         bytes memory bresult = bytes(_a);
         uint mint = 0;
         bool decimals = false;
-        for (uint i=0; i&lt;bresult.length; i++){
-            if ((bresult[i] &gt;= 48)&amp;&amp;(bresult[i] &lt;= 57)){
+        for (uint i=0; i<bresult.length; i++){
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
                 if (decimals){
                    if (_b == 0) break;
                     else _b--;
@@ -850,7 +850,7 @@ contract usingOraclize {
                 mint += uint(bresult[i]) - 48;
             } else if (bresult[i] == 46) decimals = true;
         }
-        if (_b &gt; 0) mint *= 10**_b;
+        if (_b > 0) mint *= 10**_b;
         return mint;
     }
 
@@ -876,7 +876,7 @@ contract usingOraclize {
         Buffer.buffer memory buf;
         Buffer.init(buf, 1024);
         buf.startArray();
-        for (uint i = 0; i &lt; arr.length; i++) {
+        for (uint i = 0; i < arr.length; i++) {
             buf.encodeString(arr[i]);
         }
         buf.endSequence();
@@ -887,7 +887,7 @@ contract usingOraclize {
         Buffer.buffer memory buf;
         Buffer.init(buf, 1024);
         buf.startArray();
-        for (uint i = 0; i &lt; arr.length; i++) {
+        for (uint i = 0; i < arr.length; i++) {
             buf.encodeBytes(arr[i]);
         }
         buf.endSequence();
@@ -904,7 +904,7 @@ contract usingOraclize {
     }
 
     function oraclize_newRandomDSQuery(uint _delay, uint _nbytes, uint _customGasLimit) internal returns (bytes32){
-        require((_nbytes &gt; 0) &amp;&amp; (_nbytes &lt;= 32));
+        require((_nbytes > 0) && (_nbytes <= 32));
         // Convert from seconds to ledger timer ticks
         _delay *= 10;
         bytes memory nbytes = new bytes(1);
@@ -952,8 +952,8 @@ contract usingOraclize {
         oraclize_randomDS_args[queryId] = commitment;
     }
 
-    mapping(bytes32=&gt;bytes32) oraclize_randomDS_args;
-    mapping(bytes32=&gt;bool) oraclize_randomDS_sessionKeysHashVerified;
+    mapping(bytes32=>bytes32) oraclize_randomDS_args;
+    mapping(bytes32=>bool) oraclize_randomDS_sessionKeysHashVerified;
 
     function verifySig(bytes32 tosignh, bytes dersig, bytes pubkey) internal returns (bool){
         bool sigok;
@@ -1020,7 +1020,7 @@ contract usingOraclize {
 
     modifier oraclize_randomDS_proofVerify(bytes32 _queryId, string _result, bytes _proof) {
         // Step 1: the prefix has to match &#39;LP\x01&#39; (Ledger Proof version 1)
-        require((_proof[0] == &quot;L&quot;) &amp;&amp; (_proof[1] == &quot;P&quot;) &amp;&amp; (_proof[2] == 1));
+        require((_proof[0] == &quot;L&quot;) && (_proof[1] == &quot;P&quot;) && (_proof[2] == 1));
 
         bool proofVerified = oraclize_randomDS_proofVerify__main(_proof, _queryId, bytes(_result), oraclize_getNetworkName());
         require(proofVerified);
@@ -1043,7 +1043,7 @@ contract usingOraclize {
 
         require(prefix.length == n_random_bytes);
 
-        for (uint256 i=0; i&lt; n_random_bytes; i++) {
+        for (uint256 i=0; i< n_random_bytes; i++) {
             if (content[i] != prefix[i]) match_ = false;
         }
 
@@ -1097,13 +1097,13 @@ contract usingOraclize {
         uint minLength = length + toOffset;
 
         // Buffer too small
-        require(to.length &gt;= minLength); // Should be a better way?
+        require(to.length >= minLength); // Should be a better way?
 
         // NOTE: the offset 32 is added to skip the `size` field of both bytes variables
         uint i = 32 + fromOffset;
         uint j = 32 + toOffset;
 
-        while (i &lt; (32 + fromOffset + length)) {
+        while (i < (32 + fromOffset + length)) {
             assembly {
                 let tmp := mload(add(from, i))
                 mstore(add(to, j), tmp)
@@ -1176,10 +1176,10 @@ contract usingOraclize {
         //
         // geth uses [0, 1] and some clients have followed. This might change, see:
         //  https://github.com/ethereum/go-ethereum/issues/2053
-        if (v &lt; 27)
+        if (v < 27)
           v += 27;
 
-        if (v != 27 &amp;&amp; v != 28)
+        if (v != 27 && v != 28)
             return (false, 0);
 
         return safer_ecrecover(hash, v, r, s);
@@ -1196,13 +1196,13 @@ contract SafeMath {
   }
 
   function safeSub(uint a, uint b) internal returns (uint) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function safeAdd(uint a, uint b) internal returns (uint) {
     uint c = a + b;
-    assert(c&gt;=a &amp;&amp; c&gt;=b);
+    assert(c>=a && c>=b);
     return c;
   }
 
@@ -1280,13 +1280,13 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 	
 
 	//Balances for each account
-	mapping (address =&gt; uint256) public tokenBalanceOf;
+	mapping (address => uint256) public tokenBalanceOf;
 
 	// Owner of account approves the transfer of an amount to another account
-	mapping(address =&gt; mapping (address =&gt; uint256)) allowed;
+	mapping(address => mapping (address => uint256)) allowed;
 	
 	//list with information about frozen accounts
-	mapping(address =&gt; bool) frozenAccount;
+	mapping(address => bool) frozenAccount;
 	
 	//this generate a public event on a blockchain that will notify clients
 	event FrozenFunds(address initiator, address account, string status);
@@ -1340,7 +1340,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 
 	function () payable {
 		require(!frozenAccount[msg.sender]);
-		if(msg.value &gt; 0 &amp;&amp; !frozenAccount[msg.sender]) {
+		if(msg.value > 0 && !frozenAccount[msg.sender]) {
 			buyToken();
 		}
 	}
@@ -1363,7 +1363,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 	/// @notice Calculates amount of ETH needed to buy DOL
 	/// @param howManyTokenToBuy - Amount of tokens to calculate
 	function calculateTheEndPrice(uint256 howManyTokenToBuy) constant returns (uint256 summarizedPriceInWeis) {
-		if(howManyTokenToBuy &gt; 0) {
+		if(howManyTokenToBuy > 0) {
 			summarizedPriceInWeis = howManyTokenToBuy * currentTokenPrice;
 		}else {
 			summarizedPriceInWeis = 0;
@@ -1379,20 +1379,20 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 	/// @notice Buy DOL from VAULT by sending ETH
 	function buy() payable public {
 		require(!frozenAccount[msg.sender]);
-		require(msg.value &gt; 0);
+		require(msg.value > 0);
 		buyToken();
 	}
 
 	/// @notice Sell DOL and receive ETH from VAULT
 	function sell(uint256 amount) {
 		require(!frozenAccount[msg.sender]);
-		require(tokenBalanceOf[msg.sender] &gt;= amount);         	// checks if the sender has enough to sell
-		require(amount &gt; 0);
-		require(currentTokenPrice &gt; 0);
+		require(tokenBalanceOf[msg.sender] >= amount);         	// checks if the sender has enough to sell
+		require(amount > 0);
+		require(currentTokenPrice > 0);
 		_transfer(msg.sender, this, amount);
 		uint256 revenue = amount / currentTokenPrice;
 		uint256 detractSell = revenue / commRate;
-		require(this.balance &gt;= revenue);
+		require(this.balance >= revenue);
 		msg.sender.transfer(revenue - detractSell);  // sends ether to the seller: it&#39;s important to do this last to prevent recursion attacks
 	}
 	
@@ -1403,10 +1403,10 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 		assert(_to != address(0));
 		require(!frozenAccount[msg.sender]);
 		require(!frozenAccount[_to]);
-		require(tokenBalanceOf[msg.sender] &gt;= _value);
-		require(tokenBalanceOf[msg.sender] - _value &lt; tokenBalanceOf[msg.sender]);
-		require(tokenBalanceOf[_to] + _value &gt; tokenBalanceOf[_to]);
-		require(_value &gt; 0);
+		require(tokenBalanceOf[msg.sender] >= _value);
+		require(tokenBalanceOf[msg.sender] - _value < tokenBalanceOf[msg.sender]);
+		require(tokenBalanceOf[_to] + _value > tokenBalanceOf[_to]);
+		require(_value > 0);
 		_transfer(msg.sender, _to, _value);
 		return true;
 	}
@@ -1419,11 +1419,11 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 		require(!frozenAccount[msg.sender]);
 		require(!frozenAccount[_from]);
 		require(!frozenAccount[_to]);
-		require(tokenBalanceOf[_from] &gt;= _value);
-		require(allowed[_from][msg.sender] &gt;= _value);
-		require(tokenBalanceOf[_from] - _value &lt; tokenBalanceOf[_from]);
-		require(tokenBalanceOf[_to] + _value &gt; tokenBalanceOf[_to]);
-		require(_value &gt; 0);
+		require(tokenBalanceOf[_from] >= _value);
+		require(allowed[_from][msg.sender] >= _value);
+		require(tokenBalanceOf[_from] - _value < tokenBalanceOf[_from]);
+		require(tokenBalanceOf[_to] + _value > tokenBalanceOf[_to]);
+		require(_value > 0);
 		orderToTransfer(msg.sender, _from, _to, _value, &quot;Order to transfer tokens from allowed account&quot;);
 		_transfer(_from, _to, _value);
 		allowed[_from][msg.sender] -= _value;
@@ -1435,14 +1435,14 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 	function approve(address _spender, uint256 _value) returns (bool success) {
 		require(!frozenAccount[msg.sender]);
 		assert(_spender != address(0));
-		require(_value &gt;= 0);
+		require(_value >= 0);
 		allowed[msg.sender][_spender] = _value;
 		return true;
 	}
 
 	/// @notice Check if minimal goal is reached
 	function checkMinimalGoal() internal {
-		if(tokenBalanceOf[this] &lt;= _totalSupply - icoMin) {
+		if(tokenBalanceOf[this] <= _totalSupply - icoMin) {
 			minimalGoalReached = true;
 			minGoalReached(icoMin, &quot;Minimal goal of ICO is reached!&quot;);
 		}
@@ -1450,7 +1450,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 
 	/// @notice Check if service is ended
 	function checkPreIcoStatus() internal {
-		if(tokenBalanceOf[this] &lt;= _totalSupply - preIcoLimit) {
+		if(tokenBalanceOf[this] <= _totalSupply - preIcoLimit) {
 			preIcoIsRunning = false;
 			preIcoEnded(preIcoLimit, &quot;Token amount for preICO sold!&quot;);
 		}
@@ -1463,17 +1463,17 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 		address bank = 0xC51B05696Db965cE6C8efD69Aa1c6BA5540a92d7; // DEPOSIT
 		require(!icoIsClosed);
 		require(!frozenAccount[sender]);
-		require(value &gt; 0);
-		require(currentTokenPrice &gt; 0);
+		require(value > 0);
+		require(currentTokenPrice > 0);
 		uint256 amount = value * currentTokenPrice;	// calculates amount of tokens
 		uint256 detract = amount / commRate;
 		uint256 detract2 = value / commRate;
 		uint256 finalvalue = value - detract2;
-		require(tokenBalanceOf[this] &gt;= amount);              		// checks if contract has enough to sell
+		require(tokenBalanceOf[this] >= amount);              		// checks if contract has enough to sell
 		amountOfInvestments = amountOfInvestments + (value);
 		updatePrices();
 		_transfer(this, sender, amount - detract);
-		require(this.balance &gt;= finalvalue);
+		require(this.balance >= finalvalue);
 		bank.transfer(finalvalue);
 		if(!minimalGoalReached) {
 			checkMinimalGoal();
@@ -1485,9 +1485,9 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 	function _transfer(address _from, address _to, uint256 _value) internal {
 		assert(_from != address(0));
 		assert(_to != address(0));
-		require(_value &gt; 0);
-		require(tokenBalanceOf[_from] &gt;= _value);
-		require(tokenBalanceOf[_to] + _value &gt; tokenBalanceOf[_to]);
+		require(_value > 0);
+		require(tokenBalanceOf[_from] >= _value);
+		require(tokenBalanceOf[_to] + _value > tokenBalanceOf[_to]);
 		require(!frozenAccount[_from]);
 		require(!frozenAccount[_to]);
 		if(tokenBalanceOf[_to] == 0){
@@ -1523,7 +1523,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
     /// @notice Set current  price rate A
 	/// @param priceForPreIcoInWei - is the amount in wei for one token
 	function setPreICOPrice(uint256 priceForPreIcoInWei) isOwner {
-		require(priceForPreIcoInWei &gt; 0);
+		require(priceForPreIcoInWei > 0);
 		require(preICOprice != priceForPreIcoInWei);
 		preICOprice = priceForPreIcoInWei;
 		updatePrices();
@@ -1532,7 +1532,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 	/// @notice Set current price rate B
 	/// @param priceForIcoInWei - is the amount in wei for one token
 	function setICOPrice(uint256 priceForIcoInWei) isOwner {
-		require(priceForIcoInWei &gt; 0);
+		require(priceForIcoInWei > 0);
 		require(ICOprice != priceForIcoInWei);
 		ICOprice = priceForIcoInWei;
 		updatePrices();
@@ -1542,8 +1542,8 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 	/// @param priceForPreIcoInWei - Price of the token in pre ICO
 	/// @param priceForIcoInWei - Price of the token in ICO
 	function setPrices(uint256 priceForPreIcoInWei, uint256 priceForIcoInWei) isOwner {
-		require(priceForPreIcoInWei &gt; 0);
-		require(priceForIcoInWei &gt; 0);
+		require(priceForPreIcoInWei > 0);
+		require(priceForIcoInWei > 0);
 		preICOprice = priceForPreIcoInWei;
 		ICOprice = priceForIcoInWei;
 		updatePrices();
@@ -1552,7 +1552,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 	/// @notice Set current Commission Rate
 	/// @param newCommRate - is the amount in wei for one token
 	function commRate(uint256 newCommRate) isOwner {
-		require(newCommRate &gt; 0);
+		require(newCommRate > 0);
 		require(commRate != newCommRate);
 		commRate = newCommRate;
 		updatePrices();
@@ -1585,10 +1585,10 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 	/// @notice Create an amount of DOL
 	/// @param amount - DOL to create
 	function mintToken(uint256 amount) isOwner {
-		require(amount &gt; 0);
-		require(tokenBalanceOf[this] &lt;= icoMin);	// owner can create token only if the initial amount is strongly not enough to supply and demand ICO
-		require(_totalSupply + amount &gt; _totalSupply);
-		require(tokenBalanceOf[this] + amount &gt; tokenBalanceOf[this]);
+		require(amount > 0);
+		require(tokenBalanceOf[this] <= icoMin);	// owner can create token only if the initial amount is strongly not enough to supply and demand ICO
+		require(_totalSupply + amount > _totalSupply);
+		require(tokenBalanceOf[this] + amount > tokenBalanceOf[this]);
 		_totalSupply += amount;
 		tokenBalanceOf[this] += amount;
 		allowed[this][owner] = tokenBalanceOf[this];
@@ -1599,11 +1599,11 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 	/// @notice Destroy an amount of DOL
 	/// @param amount - DOL to destroy
 	function destroyToken(uint256 amount) isOwner {
-		require(amount &gt; 0);
-		require(tokenBalanceOf[this] &gt;= amount);
-		require(_totalSupply &gt;= amount);
-		require(tokenBalanceOf[this] - amount &gt;= 0);
-		require(_totalSupply - amount &gt;= 0);
+		require(amount > 0);
+		require(tokenBalanceOf[this] >= amount);
+		require(_totalSupply >= amount);
+		require(tokenBalanceOf[this] - amount >= 0);
+		require(_totalSupply - amount >= 0);
 		tokenBalanceOf[this] -= amount;
 		_totalSupply -= amount;
 		allowed[this][owner] = tokenBalanceOf[this];
@@ -1624,7 +1624,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 
 	/// @notice Transfer ether from smartcontract to admin
 	function collect() isOwner {
-        require(this.balance &gt; 0);
+        require(this.balance > 0);
 		withdraw(this.balance);
     }
 
@@ -1633,15 +1633,15 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
 	function withdraw(uint256 summeInWei) isOwner {
 		uint256 contractbalance = this.balance;
 		address sender = msg.sender;
-		require(contractbalance &gt;= summeInWei);
+		require(contractbalance >= summeInWei);
 		withdrawed(sender, summeInWei, &quot;wei withdrawed&quot;);
         sender.transfer(summeInWei);
 	}
 
 	/// @notice Deposit an amount of ETH in the VAULT
 	function deposit() payable isOwner {
-		require(msg.value &gt; 0);
-		require(msg.sender.balance &gt;= msg.value);
+		require(msg.value > 0);
+		require(msg.sender.balance >= msg.value);
 		deposited(msg.sender, msg.value, &quot;wei deposited&quot;);
 	}
 
@@ -1675,6 +1675,6 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath, usingOraclize {
     
     function updateICOPrice() payable {
         Log(&quot;Oraclize query was sent, waiting for the answer..&quot;);
-        oraclize_query(&quot;URL&quot;,&quot;json(https://min-api.cryptocompare.com/data/price?fsym=ETH&amp;tsyms=USD).USD&quot;);
+        oraclize_query(&quot;URL&quot;,&quot;json(https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD).USD&quot;);
     }
 }

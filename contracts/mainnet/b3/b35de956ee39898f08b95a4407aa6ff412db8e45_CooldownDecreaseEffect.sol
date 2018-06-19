@@ -245,7 +245,7 @@ contract CutiePluginBase is PluginInterface, Pausable
     /// @param _fee - percent cut the owner takes on each auction, must be
     ///  between 0-10,000.
     function setup(address _coreAddress, uint16 _fee) public {
-        require(_fee &lt;= 10000);
+        require(_fee <= 10000);
         require(msg.sender == owner);
         ownerFee = _fee;
         
@@ -258,7 +258,7 @@ contract CutiePluginBase is PluginInterface, Pausable
     //  @param fee should be between 0-10,000.
     function setFee(uint16 _fee) public
     {
-        require(_fee &lt;= 10000);
+        require(_fee <= 10000);
         require(msg.sender == owner);
 
         ownerFee = _fee;
@@ -294,9 +294,9 @@ contract CutiePluginBase is PluginInterface, Pausable
     function _computeFee(uint128 _price) internal view returns (uint128) {
         // NOTE: We don&#39;t use SafeMath (or similar) in this function because
         //  all of our entry functions carefully cap the maximum values for
-        //  currency (at 128-bits), and ownerFee &lt;= 10000 (see the require()
+        //  currency (at 128-bits), and ownerFee <= 10000 (see the require()
         //  statement in the ClockAuction constructor). The result of this
-        //  function is always guaranteed to be &lt;= _price.
+        //  function is always guaranteed to be <= _price.
         return _price * ownerFee / 10000;
     }
 
@@ -306,7 +306,7 @@ contract CutiePluginBase is PluginInterface, Pausable
             msg.sender == owner ||
             msg.sender == address(coreContract)
         );
-        if (address(this).balance &gt; 0)
+        if (address(this).balance > 0)
         {
             address(coreContract).transfer(address(this).balance);
         }
@@ -346,8 +346,8 @@ contract CooldownDecreaseEffect is CutiePluginBase
         payable
     {
         uint16 cooldownIndex = coreContract.getCooldownIndex(_cutieId);
-        require(cooldownIndex &gt; 0);
-        if (cooldownIndex &gt; _parameter)
+        require(cooldownIndex > 0);
+        if (cooldownIndex > _parameter)
         {
             cooldownIndex -= uint16(_parameter);
         }

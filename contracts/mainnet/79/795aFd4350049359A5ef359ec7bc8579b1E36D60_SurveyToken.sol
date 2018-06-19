@@ -210,9 +210,9 @@ contract SurveyToken is TokenERC20, owned
 
     function placeNewSurvey(bytes32 key, uint256 toPay, uint32 tickets, uint256 reward) public returns(bool success) {
         require(surveys[key].initiator == 0x0);
-        require(tickets > 0 &amp;&amp; reward >= 0);
+        require(tickets > 0 && reward >= 0);
         uint256 rewardBalance = tickets * reward;
-        require(rewardBalance < toPay &amp;&amp; toPay > 0);
+        require(rewardBalance < toPay && toPay > 0);
         require(balanceOf[msg.sender] >= toPay);
         
         uint256 fee = toPay - rewardBalance;
@@ -229,8 +229,8 @@ contract SurveyToken is TokenERC20, owned
         require(respondent != 0x0);
         Survey storage surv = surveys[surveyKey];
         require(surv.respondents[respondent] == false);
-        require(surv.tickets > 0 &amp;&amp; surv.reward > 0 &amp;&amp; surv.balance >= surv.reward);
-        require(karma >= 0 &amp;&amp; karma <= 10);
+        require(surv.tickets > 0 && surv.reward > 0 && surv.balance >= surv.reward);
+        require(karma >= 0 && karma <= 10);
         
         if (karma < 10) {
             uint256 fhalf = surv.reward / 2;
@@ -260,7 +260,7 @@ contract SurveyToken is TokenERC20, owned
     
     function removeSurvey(bytes32 surveyKey) public onlyRobot returns(bool success) {
         Survey storage surv = surveys[surveyKey];
-        require(surv.initiator != 0x0 &amp;&amp; surv.balance > 0);
+        require(surv.initiator != 0x0 && surv.balance > 0);
         require(balanceOf[surv.initiator] + surv.balance > balanceOf[surv.initiator]);
         
         balanceOf[surv.initiator] += surv.balance;

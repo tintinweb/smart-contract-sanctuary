@@ -349,7 +349,7 @@ contract NTVUToken is BasicToken, Ownable, Auction {
         require(now < bidEndTime); // 竞拍截止时间到后不能再竞拍
         require(msg.value >= bidStartValue); // 拍卖金额需要大于起拍价
         require(msg.value >= maxBidValue + 0.05 ether); // 最低0.05ETH加价
-        require(!isPrivate || (isPrivate &amp;&amp; maxBidAccount == address(0))); // 竞拍或者私募第一次出价
+        require(!isPrivate || (isPrivate && maxBidAccount == address(0))); // 竞拍或者私募第一次出价
 
         // 如果上次有人出价，将上次出价的ETH退还给他
         if (maxBidAccount != address(0)) {
@@ -378,7 +378,7 @@ contract NTVUToken is BasicToken, Ownable, Auction {
      */
     function end() public returns (bool) {
         require(!auctionEnded); // 已经结束竞拍了不能再结束
-        require((now >= bidEndTime) || (isPrivate &amp;&amp; maxBidAccount != address(0))); // 普通竞拍拍卖结束后才可以结束竞拍，私募只要出过价就可以结束竞拍
+        require((now >= bidEndTime) || (isPrivate && maxBidAccount != address(0))); // 普通竞拍拍卖结束后才可以结束竞拍，私募只要出过价就可以结束竞拍
    
         // 如果有人出价，将时段代币转给出价最高的人
         if (maxBidAccount != address(0)) {
@@ -407,7 +407,7 @@ contract NTVUToken is BasicToken, Ownable, Auction {
      */
     function setText(string _text) public {
         require(INITIAL_SUPPLY == balances[msg.sender]); // 拥有时段币的人可以设置文本
-        require(bytes(_text).length > 0 &amp;&amp; bytes(_text).length <= 90); // 汉字使用UTF8编码，1个汉字最多占用3个字节，所以最多写90个字节的字
+        require(bytes(_text).length > 0 && bytes(_text).length <= 90); // 汉字使用UTF8编码，1个汉字最多占用3个字节，所以最多写90个字节的字
         require(now < tvUseStartTime - 30 minutes); // 开播前30分钟不能再设置文本
 
         text = _text;
@@ -421,7 +421,7 @@ contract NTVUToken is BasicToken, Ownable, Auction {
      * 审核文本
      */
     function auditText(uint8 _status, string _text) external onlyOwner {
-        require((now >= tvUseStartTime - 30 minutes) &amp;&amp; (now < tvUseEndTime)); // 时段播出前30分钟为审核时间，截止到时段播出结束时间
+        require((now >= tvUseStartTime - 30 minutes) && (now < tvUseEndTime)); // 时段播出前30分钟为审核时间，截止到时段播出结束时间
         auditStatus = _status;
 
         if (_status == 2) { // 审核失败，更新审核文本
@@ -518,7 +518,7 @@ contract NTVUToken is BasicToken, Ownable, Auction {
      * 提取以太坊到ethSaver
      */
     function reclaimEther() external onlyOwner {
-        require((now > bidEndTime) || (isPrivate &amp;&amp; maxBidAccount != address(0))); // 普通竞拍拍卖结束后或者私募完成后，可以提币到ethSaver。
+        require((now > bidEndTime) || (isPrivate && maxBidAccount != address(0))); // 普通竞拍拍卖结束后或者私募完成后，可以提币到ethSaver。
         ethSaver.transfer(this.balance);
     }
 
@@ -638,7 +638,7 @@ contract NTVToken is Ownable {
             uint current = timestamp.sub(onlineTime) % 1 days;
 
             for(uint8 i=0; i<6; i++) {
-                if (dayConfigs[i].tvUseStartTime<=current &amp;&amp; current<dayConfigs[i].tvUseEndTime) {
+                if (dayConfigs[i].tvUseStartTime<=current && current<dayConfigs[i].tvUseEndTime) {
                     return (i + 1);
                 }
             }
@@ -699,7 +699,7 @@ contract NTVToken is Ownable {
         uint day = dayFor(time());
         uint8 num = numberFor(time());
 
-        if (day>0 &amp;&amp; (num>0 &amp;&amp; num<=6)) {
+        if (day>0 && (num>0 && num<=6)) {
             day = day - 1;
             num = num - 1;
 
@@ -714,8 +714,8 @@ contract NTVToken is Ownable {
      */
     function auditNTVUText(uint8 index, uint8 status, string _text) public onlyOwner {
         require(isRunning); // 合约启动后才能审核
-        require(index >= 0 &amp;&amp; index < totalTimeRange); //只能审核已经上线的时段
-        require(status==1 || (status==2 &amp;&amp; bytes(_text).length>0 &amp;&amp; bytes(_text).length <= 90)); // 审核不通，需要配置文本
+        require(index >= 0 && index < totalTimeRange); //只能审核已经上线的时段
+        require(status==1 || (status==2 && bytes(_text).length>0 && bytes(_text).length <= 90)); // 审核不通，需要配置文本
 
         address ntvu = timeRanges[index];
         assert(ntvu != address(0));
@@ -835,7 +835,7 @@ contract NTVToken is Ownable {
      */
     function reclaimNtvuEther(uint8 index) public onlyOwner {
         require(isRunning);
-        require(index >= 0 &amp;&amp; index < totalTimeRange); //只能审核已经上线的时段
+        require(index >= 0 && index < totalTimeRange); //只能审核已经上线的时段
 
         NTVUToken(timeRanges[index]).reclaimEther();
     }

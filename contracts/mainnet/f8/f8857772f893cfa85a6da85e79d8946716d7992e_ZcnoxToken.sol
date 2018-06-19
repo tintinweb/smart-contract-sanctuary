@@ -153,13 +153,13 @@ contract ZcnoxToken is ERC20Interface, Owned, SafeMath {
     function checkPermissions(address _from) internal constant returns (bool) {
         
         //Lock Team Token untill Product Launch
-        if (_from == team &amp;&amp; now < PLTime) {
+        if (_from == team && now < PLTime) {
             return false; 
         }
         
         
         //Lock Company Token untill Product Launch
-         if (_from == company &amp;&amp; now < PLTime) {
+         if (_from == company && now < PLTime) {
             return false;
         }
 

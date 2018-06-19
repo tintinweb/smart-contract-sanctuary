@@ -130,7 +130,7 @@ contract BubbleToneToken is ERC20 {
     */
     function transfer(address _to, uint _amount) public returns (bool) {
         require(!tokensAreFrozen);
-        require(_to != address(0) &amp;&amp; _to != address(this));
+        require(_to != address(0) && _to != address(this));
         balances[msg.sender] = balances[msg.sender].sub(_amount);
         balances[_to] = balances[_to].add(_amount);
         Transfer(msg.sender, _to, _amount);
@@ -283,7 +283,7 @@ contract BubbleToneToken is ERC20 {
     */
     function _mint(address _holder, uint _value) private returns (bool) {
         require(_value > 0);
-        require(_holder != address(0) &amp;&amp; _holder != address(this));
+        require(_holder != address(0) && _holder != address(this));
         balances[_holder] = balances[_holder].add(_value);
         totalSupply = totalSupply.add(_value);
         Transfer(address(0), _holder, _value);

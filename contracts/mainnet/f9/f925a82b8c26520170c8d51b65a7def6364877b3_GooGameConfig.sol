@@ -54,7 +54,7 @@ contract Goo is ERC20 {
     mapping(uint256 => address) private rareItemOwner;
     mapping(uint256 => uint256) private rareItemPrice;
     
-    // Rares &amp; Upgrades (Increase unit&#39;s production / attack etc.)
+    // Rares & Upgrades (Increase unit&#39;s production / attack etc.)
     mapping(address => mapping(uint256 => uint256)) private unitGooProductionIncreases; // Adds to the goo per second
     mapping(address => mapping(uint256 => uint256)) private unitGooProductionMultiplier; // Multiplies the goo per second
     mapping(address => mapping(uint256 => uint256)) private unitAttackIncreases;
@@ -141,8 +141,8 @@ contract Goo is ERC20 {
     // Incase community prefers goo deposit payments over production %, can be tweaked for balance
     function tweakDailyDividends(uint256 newResearchPercent, uint256 newGooDepositPercent) external {
         require(msg.sender == owner);
-        require(newResearchPercent > 0 &amp;&amp; newResearchPercent <= 10);
-        require(newGooDepositPercent > 0 &amp;&amp; newGooDepositPercent <= 10);
+        require(newResearchPercent > 0 && newResearchPercent <= 10);
+        require(newGooDepositPercent > 0 && newGooDepositPercent <= 10);
         
         researchDivPercent = newResearchPercent;
         gooDepositDivPercent = newGooDepositPercent;
@@ -158,7 +158,7 @@ contract Goo is ERC20 {
     
     function balanceOfUnclaimedGoo(address player) internal constant returns (uint256) {
         uint256 lastSave = lastGooSaveTime[player];
-        if (lastSave > 0 &amp;&amp; lastSave < block.timestamp) {
+        if (lastSave > 0 && lastSave < block.timestamp) {
             return (getGooProduction(player) * (block.timestamp - lastSave)) / 100;
         }
         return 0;
@@ -181,7 +181,7 @@ contract Goo is ERC20 {
     
     function transferFrom(address player, address recipient, uint256 amount) public returns (bool) {
         updatePlayersGoo(player);
-        require(amount <= allowed[player][msg.sender] &amp;&amp; amount <= gooBalance[player]);
+        require(amount <= allowed[player][msg.sender] && amount <= gooBalance[player]);
         
         gooBalance[player] -= amount;
         gooBalance[recipient] += amount;
@@ -296,7 +296,7 @@ contract Goo is ERC20 {
             ethBalance[msg.sender] -= (ethCost - msg.value);
         }
         
-        uint256 devFund = ethCost / 50; // 2% fee on purchases (marketing, gameplay &amp; maintenance)
+        uint256 devFund = ethCost / 50; // 2% fee on purchases (marketing, gameplay & maintenance)
         uint256 dividends = (ethCost - devFund) / 4; // 25% goes to pool (75% retained for sale value)
         totalEtherGooResearchPool += dividends;
         ethBalance[owner] += devFund;
@@ -321,7 +321,7 @@ contract Goo is ERC20 {
     
     function sellUnit(uint256 unitId, uint256 amount) external {
         uint256 existing = unitsOwned[msg.sender][unitId];
-        require(existing >= amount &amp;&amp; amount > 0);
+        require(existing >= amount && amount > 0);
         existing -= amount;
         unitsOwned[msg.sender][unitId] = existing;
         
@@ -372,7 +372,7 @@ contract Goo is ERC20 {
                 ethBalance[msg.sender] -= (ethCost - msg.value);
             }
         
-            uint256 devFund = ethCost / 50; // 2% fee on purchases (marketing, gameplay &amp; maintenance)
+            uint256 devFund = ethCost / 50; // 2% fee on purchases (marketing, gameplay & maintenance)
             totalEtherGooResearchPool += (ethCost - devFund); // Rest goes to div pool (Can&#39;t sell upgrades)
             ethBalance[owner] += devFund;
         }
@@ -467,7 +467,7 @@ contract Goo is ERC20 {
         }
         
         // Distribute ethCost
-        uint256 devFund = ethCost / 50; // 2% fee on purchases (marketing, gameplay &amp; maintenance)
+        uint256 devFund = ethCost / 50; // 2% fee on purchases (marketing, gameplay & maintenance)
         uint256 dividends = ethCost / 20; // 5% goes to pool (~93% goes to player)
         totalEtherGooResearchPool += dividends;
         ethBalance[owner] += devFund;
@@ -502,7 +502,7 @@ contract Goo is ERC20 {
             // Slightly complex things by accounting for days/snapshots when user made no tx&#39;s
             uint256 productionDuringSnapshot = gooProductionSnapshots[msg.sender][i];
             bool soldAllProduction = gooProductionZeroedSnapshots[msg.sender][i];
-            if (productionDuringSnapshot == 0 &amp;&amp; !soldAllProduction) {
+            if (productionDuringSnapshot == 0 && !soldAllProduction) {
                 productionDuringSnapshot = previousProduction;
             } else {
                previousProduction = productionDuringSnapshot;
@@ -512,14 +512,14 @@ contract Goo is ERC20 {
         }
         
         
-        if (gooProductionSnapshots[msg.sender][endSnapShot] == 0 &amp;&amp; !gooProductionZeroedSnapshots[msg.sender][endSnapShot] &amp;&amp; previousProduction > 0) {
+        if (gooProductionSnapshots[msg.sender][endSnapShot] == 0 && !gooProductionZeroedSnapshots[msg.sender][endSnapShot] && previousProduction > 0) {
             gooProductionSnapshots[msg.sender][endSnapShot] = previousProduction; // Checkpoint for next claim
         }
         
         lastGooResearchFundClaim[msg.sender] = endSnapShot + 1;
         
         uint256 referalDivs;
-        if (referer != address(0) &amp;&amp; referer != msg.sender) {
+        if (referer != address(0) && referer != msg.sender) {
             referalDivs = researchShare / 100; // 1%
             ethBalance[referer] += referalDivs;
             emit ReferalGain(referer, msg.sender, referalDivs);
@@ -542,7 +542,7 @@ contract Goo is ERC20 {
         lastGooDepositFundClaim[msg.sender] = endSnapShot + 1;
         
         uint256 referalDivs;
-        if (referer != address(0) &amp;&amp; referer != msg.sender) {
+        if (referer != address(0) && referer != msg.sender) {
             referalDivs = depositShare / 100; // 1%
             ethBalance[referer] += referalDivs;
             emit ReferalGain(referer, msg.sender, referalDivs);
@@ -690,9 +690,9 @@ contract Goo is ERC20 {
         // Reduce gas by (optionally) offering an address to _check_ for winner
         if (checkWinner != 0) {
             TicketPurchases storage tickets = rareItemTicketsBoughtByPlayer[checkWinner];
-            if (tickets.numPurchases > 0 &amp;&amp; checkIndex < tickets.numPurchases &amp;&amp; tickets.raffleId == itemRaffleRareId) {
+            if (tickets.numPurchases > 0 && checkIndex < tickets.numPurchases && tickets.raffleId == itemRaffleRareId) {
                 TicketPurchase storage checkTicket = tickets.ticketsBought[checkIndex];
-                if (itemRaffleTicketThatWon >= checkTicket.startId &amp;&amp; itemRaffleTicketThatWon <= checkTicket.endId) {
+                if (itemRaffleTicketThatWon >= checkTicket.startId && itemRaffleTicketThatWon <= checkTicket.endId) {
                     assignItemRafflePrize(checkWinner); // WINNER!
                     return;
                 }
@@ -706,10 +706,10 @@ contract Goo is ERC20 {
             
             uint256 endIndex = playersTickets.numPurchases - 1;
             // Minor optimization to avoid checking every single player
-            if (itemRaffleTicketThatWon >= playersTickets.ticketsBought[0].startId &amp;&amp; itemRaffleTicketThatWon <= playersTickets.ticketsBought[endIndex].endId) {
+            if (itemRaffleTicketThatWon >= playersTickets.ticketsBought[0].startId && itemRaffleTicketThatWon <= playersTickets.ticketsBought[endIndex].endId) {
                 for (uint256 j = 0; j < playersTickets.numPurchases; j++) {
                     TicketPurchase storage playerTicket = playersTickets.ticketsBought[j];
-                    if (itemRaffleTicketThatWon >= playerTicket.startId &amp;&amp; itemRaffleTicketThatWon <= playerTicket.endId) {
+                    if (itemRaffleTicketThatWon >= playerTicket.startId && itemRaffleTicketThatWon <= playerTicket.endId) {
                         assignItemRafflePrize(player); // WINNER!
                         return;
                     }
@@ -729,9 +729,9 @@ contract Goo is ERC20 {
         // Reduce gas by (optionally) offering an address to _check_ for winner
         if (checkWinner != 0) {
             TicketPurchases storage tickets = rareUnitTicketsBoughtByPlayer[checkWinner];
-            if (tickets.numPurchases > 0 &amp;&amp; checkIndex < tickets.numPurchases &amp;&amp; tickets.raffleId == unitRaffleId) {
+            if (tickets.numPurchases > 0 && checkIndex < tickets.numPurchases && tickets.raffleId == unitRaffleId) {
                 TicketPurchase storage checkTicket = tickets.ticketsBought[checkIndex];
-                if (unitRaffleTicketThatWon >= checkTicket.startId &amp;&amp; unitRaffleTicketThatWon <= checkTicket.endId) {
+                if (unitRaffleTicketThatWon >= checkTicket.startId && unitRaffleTicketThatWon <= checkTicket.endId) {
                     assignUnitRafflePrize(checkWinner); // WINNER!
                     return;
                 }
@@ -745,10 +745,10 @@ contract Goo is ERC20 {
             
             uint256 endIndex = playersTickets.numPurchases - 1;
             // Minor optimization to avoid checking every single player
-            if (unitRaffleTicketThatWon >= playersTickets.ticketsBought[0].startId &amp;&amp; unitRaffleTicketThatWon <= playersTickets.ticketsBought[endIndex].endId) {
+            if (unitRaffleTicketThatWon >= playersTickets.ticketsBought[0].startId && unitRaffleTicketThatWon <= playersTickets.ticketsBought[endIndex].endId) {
                 for (uint256 j = 0; j < playersTickets.numPurchases; j++) {
                     TicketPurchase storage playerTicket = playersTickets.ticketsBought[j];
-                    if (unitRaffleTicketThatWon >= playerTicket.startId &amp;&amp; unitRaffleTicketThatWon <= playerTicket.endId) {
+                    if (unitRaffleTicketThatWon >= playerTicket.startId && unitRaffleTicketThatWon <= playerTicket.endId) {
                         assignUnitRafflePrize(player); // WINNER!
                         return;
                     }
@@ -777,7 +777,7 @@ contract Goo is ERC20 {
         unitsOwned[winner][unitRaffleRareId] += 1;
     }
     
-    // Random enough for small contests (Owner only to prevent trial &amp; error execution)
+    // Random enough for small contests (Owner only to prevent trial & error execution)
     function drawRandomItemWinner() public {
         require(msg.sender == owner);
         require(itemRaffleEndTime < block.timestamp);
@@ -809,7 +809,7 @@ contract Goo is ERC20 {
             uint256 upgradeId = upgradeIds[i];
             
             uint256 unitId = schema.upgradeUnitId(upgradeId);
-            if (unitId > 0 &amp;&amp; !upgradesOwned[player][upgradeId]) { // Upgrade valid (and haven&#39;t already migrated)
+            if (unitId > 0 && !upgradesOwned[player][upgradeId]) { // Upgrade valid (and haven&#39;t already migrated)
                 uint256 upgradeClass = schema.upgradeClass(upgradeId);
                 uint256 upgradeValue = schema.upgradeValue(upgradeId);
         
@@ -1003,7 +1003,7 @@ contract Goo is ERC20 {
             // Slightly complex things by accounting for days/snapshots when user made no tx&#39;s
             uint256 productionDuringSnapshot = gooProductionSnapshots[msg.sender][i];
             bool soldAllProduction = gooProductionZeroedSnapshots[msg.sender][i];
-            if (productionDuringSnapshot == 0 &amp;&amp; !soldAllProduction) {
+            if (productionDuringSnapshot == 0 && !soldAllProduction) {
                 productionDuringSnapshot = previousProduction;
             } else {
                previousProduction = productionDuringSnapshot;
@@ -1256,7 +1256,7 @@ contract GooGameConfig {
     }
     
     function validRareId(uint256 rareId) external constant returns (bool) {
-        return (rareId > 0 &amp;&amp; rareId < 3);
+        return (rareId > 0 && rareId < 3);
     }
     
     function unitSellable(uint256 unitId) external constant returns (bool) {

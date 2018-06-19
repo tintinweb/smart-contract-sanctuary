@@ -142,8 +142,8 @@ contract DeBiToken is BasicToken,owned {
      * @dev unlock , only can be called by owner.
      */
     function unlock(uint256 _index) onlyOwner public {
-        require(_index>=0 &amp;&amp; _index<unlockTimeMap.length);
-        require(now >= unlockTimeMap[_index].unlockTime &amp;&amp; unlockTimeMap[_index].locked);
+        require(_index>=0 && _index<unlockTimeMap.length);
+        require(now >= unlockTimeMap[_index].unlockTime && unlockTimeMap[_index].locked);
         require(_balances[0x01] >= eachUnlockCounts);
 
         _balances[0x01] =_balances[0x01].sub(eachUnlockCounts);

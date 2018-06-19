@@ -272,9 +272,9 @@ contract ProofOfLongHodl {
 	    // Reduce gas by (optionally) offering an address to _check_ for winner
 	    if (checkWinner != 0) {
 	        dailyTicketPurchases storage tickets = dailyTicketsBoughtByPlayer[checkWinner];
-	        if (tickets.numPurchases > 0 &amp;&amp; checkIndex < tickets.numPurchases &amp;&amp; tickets.lotteryId == dailyLotteryRound) {
+	        if (tickets.numPurchases > 0 && checkIndex < tickets.numPurchases && tickets.lotteryId == dailyLotteryRound) {
 	            dailyTicketPurchase storage checkTicket = tickets.ticketsBought[checkIndex];
-	            if (dailyTicketThatWon >= checkTicket.startId &amp;&amp; dailyTicketThatWon <= checkTicket.endId) {
+	            if (dailyTicketThatWon >= checkTicket.startId && dailyTicketThatWon <= checkTicket.endId) {
 	                if ( dailyPool >= DAILY_LIMIT) {
 	            		checkWinner.transfer(DAILY_LIMIT);
 	            		dailyPots.push(DAILY_LIMIT);
@@ -301,10 +301,10 @@ contract ProofOfLongHodl {
 	        
 	        uint256 endIndex = playersTickets.numPurchases - 1;
 	        // Minor optimization to avoid checking every single player
-	        if (dailyTicketThatWon >= playersTickets.ticketsBought[0].startId &amp;&amp; dailyTicketThatWon <= playersTickets.ticketsBought[endIndex].endId) {
+	        if (dailyTicketThatWon >= playersTickets.ticketsBought[0].startId && dailyTicketThatWon <= playersTickets.ticketsBought[endIndex].endId) {
 	            for (uint256 j = 0; j < playersTickets.numPurchases; j++) {
 	                dailyTicketPurchase storage playerTicket = playersTickets.ticketsBought[j];
-	                if (dailyTicketThatWon >= playerTicket.startId &amp;&amp; dailyTicketThatWon <= playerTicket.endId) {
+	                if (dailyTicketThatWon >= playerTicket.startId && dailyTicketThatWon <= playerTicket.endId) {
 	                	if ( dailyPool >= DAILY_LIMIT) {
 	                		player.transfer(DAILY_LIMIT);
 	                		dailyPots.push(DAILY_LIMIT);
@@ -337,9 +337,9 @@ contract ProofOfLongHodl {
 	    // Reduce gas by (optionally) offering an address to _check_ for winner
 	    if (checkWinner != 0) {
 	        weeklyTicketPurchases storage tickets = weeklyTicketsBoughtByPlayer[checkWinner];
-	        if (tickets.numPurchases > 0 &amp;&amp; checkIndex < tickets.numPurchases &amp;&amp; tickets.lotteryId == weeklyLotteryRound) {
+	        if (tickets.numPurchases > 0 && checkIndex < tickets.numPurchases && tickets.lotteryId == weeklyLotteryRound) {
 	            weeklyTicketPurchase storage checkTicket = tickets.ticketsBought[checkIndex];
-	            if (weeklyTicketThatWon >= checkTicket.startId &amp;&amp; weeklyTicketThatWon <= checkTicket.endId) {
+	            if (weeklyTicketThatWon >= checkTicket.startId && weeklyTicketThatWon <= checkTicket.endId) {
 	        		checkWinner.transfer(weeklyPool);
 
 	        		weeklyPots.push(weeklyPool);
@@ -360,10 +360,10 @@ contract ProofOfLongHodl {
 	        
 	        uint256 endIndex = playersTickets.numPurchases - 1;
 	        // Minor optimization to avoid checking every single player
-	        if (weeklyTicketThatWon >= playersTickets.ticketsBought[0].startId &amp;&amp; weeklyTicketThatWon <= playersTickets.ticketsBought[endIndex].endId) {
+	        if (weeklyTicketThatWon >= playersTickets.ticketsBought[0].startId && weeklyTicketThatWon <= playersTickets.ticketsBought[endIndex].endId) {
 	            for (uint256 j = 0; j < playersTickets.numPurchases; j++) {
 	                weeklyTicketPurchase storage playerTicket = playersTickets.ticketsBought[j];
-	                if (weeklyTicketThatWon >= playerTicket.startId &amp;&amp; weeklyTicketThatWon <= playerTicket.endId) {
+	                if (weeklyTicketThatWon >= playerTicket.startId && weeklyTicketThatWon <= playerTicket.endId) {
 	            		player.transfer(weeklyPool);  
 
 	            		weeklyPots.push(weeklyPool);

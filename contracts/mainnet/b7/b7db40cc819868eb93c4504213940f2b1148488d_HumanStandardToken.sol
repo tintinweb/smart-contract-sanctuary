@@ -41,9 +41,9 @@ contract StandardToken is Token {
 
     function transferFrom(address _from, address _to, uint256 _value) returns 
     (bool success) {
-        //require(balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= 
-        // _value &amp;&amp; balances[_to] + _value > balances[_to]);
-        require(balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value);
+        //require(balances[_from] >= _value && allowed[_from][msg.sender] >= 
+        // _value && balances[_to] + _value > balances[_to]);
+        require(balances[_from] >= _value && allowed[_from][msg.sender] >= _value);
         balances[_to] += _value;
         balances[_from] -= _value; 
         allowed[_from][msg.sender] -= _value;

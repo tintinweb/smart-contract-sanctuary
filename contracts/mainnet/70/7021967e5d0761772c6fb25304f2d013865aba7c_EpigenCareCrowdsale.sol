@@ -347,9 +347,9 @@ contract EpigenCareCrowdsale is Ownable {
   }
 
   function validPurchase() internal constant returns (bool) {
-    bool withinPeriod = (now >= startTime &amp;&amp; now <= endTime);
+    bool withinPeriod = (now >= startTime && now <= endTime);
     bool nonZeroPurchase = msg.value != 0;
-    return (withinPeriod &amp;&amp; nonZeroPurchase);
+    return (withinPeriod && nonZeroPurchase);
   }
 
   function hasEnded() public constant returns (bool) {

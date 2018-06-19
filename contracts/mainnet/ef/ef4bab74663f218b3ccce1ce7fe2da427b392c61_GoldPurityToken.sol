@@ -22,13 +22,13 @@ library SafeMath {
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -37,12 +37,12 @@ library SafeMath {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   function transfer(address _to, uint256 _value) public returns (bool) {
-    require(_value &gt; 0);
+    require(_value > 0);
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -67,14 +67,14 @@ contract ERC20 is ERC20Basic {
 
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
-    require(_value &gt; 0);
+    require(_value > 0);
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -84,7 +84,7 @@ contract StandardToken is ERC20, BasicToken {
   }
 
   function approve(address _spender, uint256 _value) public returns (bool) {
-    require(_value &gt; 0);
+    require(_value > 0);
     allowed[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);
     return true;
@@ -95,16 +95,16 @@ contract StandardToken is ERC20, BasicToken {
   }
 
   function increaseApproval(address _spender, uint _addedValue) public returns (bool) {
-    require(_addedValue &gt; 0);
+    require(_addedValue > 0);
     allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
     Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
     return true;
   }
 
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
-    require(_subtractedValue &gt; 0);
+    require(_subtractedValue > 0);
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -120,8 +120,8 @@ contract BurnableToken is BasicToken {
   event Burn(address indexed burner, uint256 value);
 
   function burn(uint256 _value) public {
-    require(_value &gt; 0);
-    require(_value &lt;= balances[msg.sender]);
+    require(_value > 0);
+    require(_value <= balances[msg.sender]);
 
     address burner = msg.sender;
     balances[burner] = balances[burner].sub(_value);

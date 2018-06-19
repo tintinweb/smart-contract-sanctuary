@@ -244,7 +244,7 @@ contract	DTCC_ILOW_7		{
 // Forme juridique					&#171;&#160;Organisation autonome et d&#233;centralis&#233;e&#160;&#187;					
 // D&#233;nomination					&#171;&#160;TYUMEN-LUZERN CONNECT&#160;&#187;					
 // Statut					&#171;&#160;D.A.O.&#160;&#187;					
-// Propri&#233;taires &amp; responsables implicites					Le pool d’utilisateurs					
+// Propri&#233;taires & responsables implicites					Le pool d’utilisateurs					
 // Juridiction (i)					Oblast de Tyumen, F&#233;d&#233;ration de Russie					
 // Juridiction (ii)					Ville et canton de Luzern, Conf&#233;d&#233;ration H&#233;lv&#233;tique					
 // instrument mon&#233;taire de r&#233;f&#233;rence (i)					&#171;&#160;ethrub&#160;&#187;					

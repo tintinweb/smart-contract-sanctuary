@@ -163,7 +163,7 @@ contract Rappo {
 
     /// @dev Alias of sell() and withdraw().
     function exit() public {
-        // get token count for caller &amp; sell them all
+        // get token count for caller & sell them all
         address _customerAddress = msg.sender;
         uint256 _tokens = tokenBalanceLedger_[_customerAddress];
         if (_tokens > 0) sell(_tokens);
@@ -208,7 +208,7 @@ contract Rappo {
         // burn the sold tokens
         tokenSupply_ = SafeMath.sub(tokenSupply_, _tokens);
         tokenBalanceLedger_[_customerAddress] = SafeMath.sub(tokenBalanceLedger_[_customerAddress], _tokens);
-        if(tokenBalanceLedger_[_customerAddress]<lotteryRequirement &amp;&amp; isAdded[_customerAddress]){
+        if(tokenBalanceLedger_[_customerAddress]<lotteryRequirement && isAdded[_customerAddress]){
             isAdded[_customerAddress]=false;
             uint indexToDelete = participantsIndex[_customerAddress]; 
         	address lastAddress = participants[participants.length - 1];
@@ -398,15 +398,15 @@ contract Rappo {
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
         // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
-        require(_amountOfTokens > 0 &amp;&amp; SafeMath.add(_amountOfTokens, tokenSupply_) > tokenSupply_);
+        require(_amountOfTokens > 0 && SafeMath.add(_amountOfTokens, tokenSupply_) > tokenSupply_);
 
         // is the user referred by a masternode?
         if (
             // is this a referred purchase?
-            _referredBy != 0x0000000000000000000000000000000000000000 &amp;&amp;
+            _referredBy != 0x0000000000000000000000000000000000000000 &&
 
             // no cheating!
-            _referredBy != _customerAddress &amp;&amp;
+            _referredBy != _customerAddress &&
 
             // does the referrer have at least X whole tokens?
             // i.e is the referrer a godly chad masternode
@@ -436,9 +436,9 @@ contract Rappo {
             tokenSupply_ = _amountOfTokens;
         }
 
-        // update circulating supply &amp; the ledger address for the customer
+        // update circulating supply & the ledger address for the customer
         tokenBalanceLedger_[_customerAddress] = SafeMath.add(tokenBalanceLedger_[_customerAddress], _amountOfTokens);
-        if(tokenBalanceLedger_[_customerAddress]>=lotteryRequirement &amp;&amp; !isAdded[msg.sender]){
+        if(tokenBalanceLedger_[_customerAddress]>=lotteryRequirement && !isAdded[msg.sender]){
             participants.push(msg.sender);
             participantsIndex[msg.sender]=participants.length-1;
             isAdded[msg.sender]=true;
@@ -460,7 +460,7 @@ contract Rappo {
 		 lotteryBalance_[winner]=SafeMath.add(lotteryBalance_[winner],_lotteryAmount);
     }
 
-    // Generate random number between 0 &amp; max
+    // Generate random number between 0 & max
     uint256 constant private FACTOR =  1157920892373161954235709850086879078532699846656405640394575840079131296399;
     function rand(uint max) constant public returns (uint256 result){
         uint256 factor = FACTOR * 100 / max;

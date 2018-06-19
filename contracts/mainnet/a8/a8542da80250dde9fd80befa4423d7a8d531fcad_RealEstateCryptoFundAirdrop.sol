@@ -50,7 +50,7 @@ contract Airdrop is Ownable {
 
   RealEstateCryptoFund public token;
 
-  mapping(address=&gt;bool) public participated;
+  mapping(address=>bool) public participated;
 
   event TokenAirdrop(address indexed beneficiary, uint256 amount);
 
@@ -65,7 +65,7 @@ contract Airdrop is Ownable {
   }
 
   function setAirdropAmount(uint256 _airdropAmount) public onlyOwner {
-    require(_airdropAmount &gt; 0);
+    require(_airdropAmount > 0);
     airdropAmount = _airdropAmount;
     emit AirdropAmountUpdate(airdropAmount);
   }

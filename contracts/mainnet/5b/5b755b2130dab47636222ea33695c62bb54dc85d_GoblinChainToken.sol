@@ -30,10 +30,10 @@ contract ApproveAndCallFallBack {
 library SafeMath {
     function add(uint a, uint b) internal pure returns (uint c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function sub(uint a, uint b) internal pure returns (uint c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function mul(uint a, uint b) internal pure returns (uint c) {
@@ -41,7 +41,7 @@ library SafeMath {
         require(a == 0 || c / a == b);
     }
     function div(uint a, uint b) internal pure returns (uint c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
@@ -58,8 +58,8 @@ contract GoblinChainToken is ERC20Interface{
     uint8 public decimals;
     uint _totalSupply;
 
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => uint) balances;
+    mapping(address => mapping(address => uint)) allowed;
     // ------------------------------------------------------------------------
     // Constructor
     // ------------------------------------------------------------------------
@@ -153,7 +153,7 @@ contract GoblinChainToken is ERC20Interface{
     // send ERC20 Token to multi address
     // ------------------------------------------------------------------------
     function multiTransfer(address[] _addresses, uint256[] amounts) public returns (bool success){
-        for (uint256 i = 0; i &lt; _addresses.length; i++) {
+        for (uint256 i = 0; i < _addresses.length; i++) {
             transfer(_addresses[i], amounts[i]);
         }
         return true;
@@ -163,7 +163,7 @@ contract GoblinChainToken is ERC20Interface{
     // send ERC20 Token to multi address with decimals
     // ------------------------------------------------------------------------
     function multiTransferDecimals(address[] _addresses, uint256[] amounts) public returns (bool success){
-        for (uint256 i = 0; i &lt; _addresses.length; i++) {
+        for (uint256 i = 0; i < _addresses.length; i++) {
             transfer(_addresses[i], amounts[i] * 10**uint(decimals));
         }
         return true;

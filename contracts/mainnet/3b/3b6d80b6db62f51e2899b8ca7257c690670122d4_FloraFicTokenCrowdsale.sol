@@ -289,7 +289,7 @@ contract TimedCrowdsale is Crowdsale {
    * @dev Reverts if not in crowdsale time range. 
    */
   modifier onlyWhileOpen {
-    require(now >= openingTime &amp;&amp; now <= closingTime);
+    require(now >= openingTime && now <= closingTime);
     _;
   }
 
@@ -405,15 +405,15 @@ contract FloraFicTokenCrowdsale is FinalizableCrowdsale {
     uint256 currentWeiAmount = currentRate.mul(_weiAmount);
     if( sendWeiAmount < 0.5 ether){
         bonus = currentWeiAmount.mul(5).div(100);
-    } else if (sendWeiAmount >= 0.5 ether &amp;&amp; sendWeiAmount < 1 ether){
+    } else if (sendWeiAmount >= 0.5 ether && sendWeiAmount < 1 ether){
         bonus = currentWeiAmount.mul(7).div(100);
-    } else if (sendWeiAmount >= 1 ether &amp;&amp; sendWeiAmount < 5 ether){
+    } else if (sendWeiAmount >= 1 ether && sendWeiAmount < 5 ether){
         bonus = currentWeiAmount.mul(10).div(100);
-    } else if (sendWeiAmount >= 5 ether &amp;&amp; sendWeiAmount < 10 ether){
+    } else if (sendWeiAmount >= 5 ether && sendWeiAmount < 10 ether){
         bonus = currentWeiAmount.mul(15).div(100);
-    } else if (sendWeiAmount >= 10 ether &amp;&amp; sendWeiAmount < 20 ether){
+    } else if (sendWeiAmount >= 10 ether && sendWeiAmount < 20 ether){
         bonus = currentWeiAmount.mul(20).div(100);
-    } else if (sendWeiAmount >= 20 ether &amp;&amp; sendWeiAmount < 50 ether){
+    } else if (sendWeiAmount >= 20 ether && sendWeiAmount < 50 ether){
         bonus = currentWeiAmount.mul(25).div(100);
     } else if (sendWeiAmount >= 50 ether){
         bonus = currentWeiAmount.mul(30).div(100);

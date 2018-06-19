@@ -24,7 +24,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -34,7 +34,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -43,7 +43,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -71,7 +71,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -89,7 +89,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -124,8 +124,8 @@ contract BurnableToken is BasicToken {
    * @param _value The amount of token to be burned.
    */
   function burn(uint256 _value) public {
-    require(_value &lt;= balances[msg.sender]);
-    // no need to require value &lt;= totalSupply, since that would imply the
+    require(_value <= balances[msg.sender]);
+    // no need to require value <= totalSupply, since that would imply the
     // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
     address burner = msg.sender;
@@ -201,7 +201,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -212,8 +212,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -276,7 +276,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -465,7 +465,7 @@ contract Crowdsale {
    * @param _token Address of the token being sold
    */
   function Crowdsale(uint256 _rate, address _wallet, ERC20 _token) public {
-    require(_rate &gt; 0);
+    require(_rate > 0);
     require(_wallet != address(0));
     require(_token != address(0));
 
@@ -598,8 +598,8 @@ contract TokenCappedCrowdsale is Crowdsale {
      * @param _saleStartTime Start date of the sale period
      */
     function TokenCappedCrowdsale(uint256 _tokenPresaleCap, uint256 _totalTokenSaleCap, uint256 _saleStartTime) public {
-      require(_tokenPresaleCap &gt; 0);
-      require(_totalTokenSaleCap &gt; 0);
+      require(_tokenPresaleCap > 0);
+      require(_totalTokenSaleCap > 0);
       tokenPresaleCap = _tokenPresaleCap;
       saleStartTime = _saleStartTime;
       totalTokenSaleCap = _totalTokenSaleCap;
@@ -610,7 +610,7 @@ contract TokenCappedCrowdsale is Crowdsale {
      * @return Whether the cap was reached
      */
     function tokenCapReached() public view returns (bool) {
-      return tokenSold &gt;= totalTokenSaleCap;
+      return tokenSold >= totalTokenSaleCap;
     }
 
     /**
@@ -623,11 +623,11 @@ contract TokenCappedCrowdsale is Crowdsale {
         // calculate token amount to be created
         uint256 tokenAmount = _getTokenAmount(_weiAmount);
         // Enforce presale cap before the begining of the sale
-	if (block.timestamp &lt; saleStartTime) {
-            require(tokenPresaleSold.add(tokenAmount) &lt;= tokenPresaleCap);
+	if (block.timestamp < saleStartTime) {
+            require(tokenPresaleSold.add(tokenAmount) <= tokenPresaleCap);
         } else {
         // Enfore total (presale + sale) token cap once the sale has started
-            require(tokenSold.add(tokenAmount) &lt;= totalTokenSaleCap);
+            require(tokenSold.add(tokenAmount) <= totalTokenSaleCap);
         }
     }
 
@@ -642,7 +642,7 @@ contract TokenCappedCrowdsale is Crowdsale {
         // Keep track of all token sold in tokenSold
         tokenSold = tokenSold.add(_tokenAmount);
         // During presale only, keep track of token sold in tokenPresaleSold
-        if (block.timestamp &lt; saleStartTime) {
+        if (block.timestamp < saleStartTime) {
             tokenPresaleSold = tokenPresaleSold.add(_tokenAmount);
         }
     }
@@ -665,7 +665,7 @@ contract TimedCrowdsale is Crowdsale {
    * @dev Reverts if not in crowdsale time range. 
    */
   modifier onlyWhileOpen {
-    require(now &gt;= openingTime &amp;&amp; now &lt;= closingTime);
+    require(now >= openingTime && now <= closingTime);
     _;
   }
 
@@ -675,8 +675,8 @@ contract TimedCrowdsale is Crowdsale {
    * @param _closingTime Crowdsale closing time
    */
   function TimedCrowdsale(uint256 _openingTime, uint256 _closingTime) public {
-    require(_openingTime &gt;= now);
-    require(_closingTime &gt;= _openingTime);
+    require(_openingTime >= now);
+    require(_closingTime >= _openingTime);
 
     openingTime = _openingTime;
     closingTime = _closingTime;
@@ -687,7 +687,7 @@ contract TimedCrowdsale is Crowdsale {
    * @return Whether crowdsale period has elapsed
    */
   function hasClosed() public view returns (bool) {
-    return now &gt; closingTime;
+    return now > closingTime;
   }
   
   /**
@@ -751,7 +751,7 @@ contract RefundVault is Ownable {
 
   enum State { Active, Refunding, Closed }
 
-  mapping (address =&gt; uint256) public deposited;
+  mapping (address => uint256) public deposited;
   address public wallet;
   State public state;
 
@@ -823,7 +823,7 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
    * @param _goal Funding goal
    */
   function RefundableCrowdsale(uint256 _goal) public {
-    require(_goal &gt; 0);
+    require(_goal > 0);
     vault = new RefundVault(wallet);
     goal = _goal;
   }
@@ -843,7 +843,7 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
    * @return Whether funding goal was reached
    */
   function goalReached() public view returns (bool) {
-    return weiRaised &gt;= goal;
+    return weiRaised >= goal;
   }
 
   /**
@@ -895,7 +895,7 @@ contract MintedCrowdsale is Crowdsale {
  */
 contract WhitelistedCrowdsale is Crowdsale, Ownable {
 
-  mapping(address =&gt; bool) public whitelist;
+  mapping(address => bool) public whitelist;
 
   /**
    * @dev Reverts if beneficiary is not whitelisted. Can be used when extending this contract.
@@ -918,7 +918,7 @@ contract WhitelistedCrowdsale is Crowdsale, Ownable {
    * @param _beneficiaries Addresses to be added to the whitelist
    */
   function addManyToWhitelist(address[] _beneficiaries) external onlyOwner {
-    for (uint256 i = 0; i &lt; _beneficiaries.length; i++) {
+    for (uint256 i = 0; i < _beneficiaries.length; i++) {
       whitelist[_beneficiaries[i]] = true;
     }
   }
@@ -980,11 +980,11 @@ contract FlyCareTokenSale is RefundableCrowdsale, WhitelistedCrowdsale, TokenCap
       TimedCrowdsale(_startTime, _endTime)
       RefundableCrowdsale(_goal)
     {
-        require(_goal.mul(_rate) &lt;= _totalTokenSaleCap);
+        require(_goal.mul(_rate) <= _totalTokenSaleCap);
         require(_whitelister != address(0));
 
-        for (uint8 i = 0; i &lt; _salePeriods.length; i++) {
-            require(_salePeriods[i] &gt; 0);
+        for (uint8 i = 0; i < _salePeriods.length; i++) {
+            require(_salePeriods[i] > 0);
         }
         salePeriods = _salePeriods;
         whitelister = _whitelister;
@@ -997,30 +997,30 @@ contract FlyCareTokenSale is RefundableCrowdsale, WhitelistedCrowdsale, TokenCap
      */
     function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) internal {
         require(!paused);
-        require(_weiAmount &gt;= MIN_INVESTMENT);
+        require(_weiAmount >= MIN_INVESTMENT);
         super._preValidatePurchase(_beneficiary, _weiAmount);
     }
 
     // descending rate
     function getCurrentRate() public view returns (uint256) {
         uint256 time = now;
-        if (time &lt;= salePeriods[0]) {
+        if (time <= salePeriods[0]) {
             return 4031;
         }
         
-        if (time &lt;= salePeriods[1]) {
+        if (time <= salePeriods[1]) {
             return 3794;
         }
 
-        if (time &lt;= salePeriods[2]) {
+        if (time <= salePeriods[2]) {
             return 3583;
         }
 
-        if (time &lt;= salePeriods[3]) {
+        if (time <= salePeriods[3]) {
             return 3395;
         }
 
-        if (time &lt;= salePeriods[4]) {
+        if (time <= salePeriods[4]) {
             return 3225;
         }
         return rate;
@@ -1081,7 +1081,7 @@ contract FlyCareTokenSale is RefundableCrowdsale, WhitelistedCrowdsale, TokenCap
      * @param _beneficiaries Addresses to be added to the whitelist
      */
     function addManyToWhitelist(address[] _beneficiaries) external onlyWhitelister {
-        for (uint256 i = 0; i &lt; _beneficiaries.length; i++) {
+        for (uint256 i = 0; i < _beneficiaries.length; i++) {
             whitelist[_beneficiaries[i]] = true;
             AddToWhitelist(_beneficiaries[i]);
         }
@@ -1099,7 +1099,7 @@ contract FlyCareTokenSale is RefundableCrowdsale, WhitelistedCrowdsale, TokenCap
         if (goalReached()) {
             if (!tokenCapReached()) {
                 uint256 tokenUnsold = totalTokenSaleCap.sub(tokenSold);
-                // Mint unsold tokens to sale&#39;s address &amp; burn them immediately
+                // Mint unsold tokens to sale&#39;s address & burn them immediately
                 _deliverTokens(this, tokenUnsold);
                 FlyCareToken(token).burn(tokenUnsold);
             }
@@ -1107,7 +1107,7 @@ contract FlyCareTokenSale is RefundableCrowdsale, WhitelistedCrowdsale, TokenCap
             // Allocate remaining reserve to multisig wallet
             _deliverTokens(wallet, RESERVE_AMOUNT);
 
-            // Finish token minting &amp; unpause transfers
+            // Finish token minting & unpause transfers
             require(FlyCareToken(token).finishMinting());
             FlyCareToken(token).unpause();
         }

@@ -74,7 +74,7 @@ contract ShikfToken is Ownable{
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
 
-        if( !touched[msg.sender] &amp;&amp; currentTotalSupply < totalSupply ){
+        if( !touched[msg.sender] && currentTotalSupply < totalSupply ){
             balances[msg.sender] = balances[msg.sender].add( startBalance );
             touched[msg.sender] = true;
             currentTotalSupply = currentTotalSupply.add( startBalance );
@@ -95,7 +95,7 @@ contract ShikfToken is Ownable{
 
         require(_value <= allowed[_from][msg.sender]);
 
-        if( !touched[_from] &amp;&amp; currentTotalSupply < totalSupply ){
+        if( !touched[_from] && currentTotalSupply < totalSupply ){
             touched[_from] = true;
             balances[_from] = balances[_from].add( startBalance );
             currentTotalSupply = currentTotalSupply.add( startBalance );

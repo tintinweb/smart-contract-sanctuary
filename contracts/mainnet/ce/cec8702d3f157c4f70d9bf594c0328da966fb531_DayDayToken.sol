@@ -14,20 +14,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -108,7 +108,7 @@ contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
   //balance in each address account
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
   address ownerWallet;
   struct Lockup
   {
@@ -116,7 +116,7 @@ contract BasicToken is ERC20Basic {
       uint256 lockupAmount;
   }
   Lockup lockup;
-  mapping(address=&gt;Lockup) lockupParticipants;  
+  mapping(address=>Lockup) lockupParticipants;  
   
   
   uint256 startTime;
@@ -127,15 +127,15 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _amount) public returns (bool success) {
     require(_to != address(0));
-    require(balances[msg.sender] &gt;= _amount &amp;&amp; _amount &gt; 0
-        &amp;&amp; balances[_to].add(_amount) &gt; balances[_to]);
+    require(balances[msg.sender] >= _amount && _amount > 0
+        && balances[_to].add(_amount) > balances[_to]);
 
-    if (lockupParticipants[msg.sender].lockupAmount&gt;0)
+    if (lockupParticipants[msg.sender].lockupAmount>0)
     {
         uint timePassed = now - startTime;
-        if (timePassed &lt; lockupParticipants[msg.sender].lockupTime)
+        if (timePassed < lockupParticipants[msg.sender].lockupTime)
         {
-            require(balances[msg.sender].sub(_amount) &gt;= lockupParticipants[msg.sender].lockupAmount);
+            require(balances[msg.sender].sub(_amount) >= lockupParticipants[msg.sender].lockupAmount);
         }
     }
     // SafeMath.sub will throw if there is not enough balance.
@@ -165,7 +165,7 @@ contract BasicToken is ERC20Basic {
 contract StandardToken is ERC20, BasicToken {
   
   
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -176,16 +176,16 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _amount) public returns (bool success) {
     require(_to != address(0));
-    require(balances[_from] &gt;= _amount);
-    require(allowed[_from][msg.sender] &gt;= _amount);
-    require(_amount &gt; 0 &amp;&amp; balances[_to].add(_amount) &gt; balances[_to]);
+    require(balances[_from] >= _amount);
+    require(allowed[_from][msg.sender] >= _amount);
+    require(_amount > 0 && balances[_to].add(_amount) > balances[_to]);
     
-    if (lockupParticipants[_from].lockupAmount&gt;0)
+    if (lockupParticipants[_from].lockupAmount>0)
     {
         uint timePassed = now - startTime;
-        if (timePassed &lt; lockupParticipants[_from].lockupTime)
+        if (timePassed < lockupParticipants[_from].lockupTime)
         {
-            require(balances[msg.sender].sub(_amount) &gt;= lockupParticipants[_from].lockupAmount);
+            require(balances[msg.sender].sub(_amount) >= lockupParticipants[_from].lockupAmount);
         }
     }
     balances[_from] = balances[_from].sub(_amount);
@@ -236,8 +236,8 @@ contract BurnableToken is StandardToken, Ownable {
      * @param _value The amount of token to be burned.
      */
     function burn(uint256 _value) public onlyOwner{
-        require(_value &lt;= balances[ownerWallet]);
-        // no need to require value &lt;= totalSupply, since that would imply the
+        require(_value <= balances[ownerWallet]);
+        // no need to require value <= totalSupply, since that would imply the
         // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
         balances[ownerWallet] = balances[ownerWallet].sub(_value);
@@ -290,7 +290,7 @@ contract BurnableToken is StandardToken, Ownable {
     function lockTokensForAddress (address lockedAddress, uint lockupAmount, uint lockDays) public onlyOwner
     {
         lockupAmount = lockupAmount * 10 ** uint(decimals);
-        require(balances[msg.sender]&gt;=lockupAmount);
+        require(balances[msg.sender]>=lockupAmount);
         balances[msg.sender] = balances[msg.sender].sub(lockupAmount);
         balances[lockedAddress] = balances[lockedAddress].add(lockupAmount);
         lockDays = lockDays * 1 days;

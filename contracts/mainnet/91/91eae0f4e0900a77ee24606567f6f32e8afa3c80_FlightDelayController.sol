@@ -17,7 +17,7 @@ contract FlightDelayConstants {
     * General events
     */
 
-// --&gt; test-mode
+// --> test-mode
 //        event LogUint(string _message, uint _uint);
 //        event LogUintEth(string _message, uint ethUint);
 //        event LogUintTime(string _message, uint timeUint);
@@ -29,7 +29,7 @@ contract FlightDelayConstants {
 //        event LogString(string _message, string _string);
 //        event LogBool(string _message, bool _bool);
 //        event Log(address);
-// &lt;-- test-mode
+// <-- test-mode
 
     event LogPolicyApplied(
         uint _policyId,
@@ -146,21 +146,21 @@ contract FlightDelayConstants {
         50
     ];
 
-// --&gt; prod-mode
+// --> prod-mode
     // DEFINITIONS FOR ROPSTEN AND MAINNET
     // minimum time before departure for applying
     uint constant MIN_TIME_BEFORE_DEPARTURE	= 24 hours; // for production
     // check for delay after .. minutes after scheduled arrival
     uint constant CHECK_PAYOUT_OFFSET = 15 minutes; // for production
-// &lt;-- prod-mode
+// <-- prod-mode
 
-// --&gt; test-mode
+// --> test-mode
 //        // DEFINITIONS FOR LOCAL TESTNET
 //        // minimum time before departure for applying
 //        uint constant MIN_TIME_BEFORE_DEPARTURE = 1 seconds; // for testing
 //        // check for delay after .. minutes after scheduled arrival
 //        uint constant CHECK_PAYOUT_OFFSET = 1 seconds; // for testing
-// &lt;-- test-mode
+// <-- test-mode
 
     // maximum duration of flight
     uint constant MAX_FLIGHT_DURATION = 2 days;
@@ -176,7 +176,7 @@ contract FlightDelayConstants {
     * URLs and query strings for oraclize
     */
 
-// --&gt; prod-mode
+// --> prod-mode
     // DEFINITIONS FOR ROPSTEN AND MAINNET
     string constant ORACLIZE_RATINGS_BASE_URL =
         // ratings api is v1, see https://developer.flightstats.com/api-docs/ratings/v1
@@ -188,10 +188,10 @@ contract FlightDelayConstants {
         &quot;[URL] json(https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/&quot;;
     string constant ORACLIZE_STATUS_QUERY =
         // pattern:
-        &quot;?${[decrypt] BA3YyqF4iMQszBawvgG82bqX3fw7JoWA1thFsboUECR/L8JkBCgvaThg1LcUWbIntosEKs/kvqyzOtvdQfMgjYPV0c6hsq/gKQkmJYILZmLY4SgBebH8g0qbfrrjxF5gEbfCi2qoR6PSxcQzKIjgd4HvAaumlQd4CkJLmY463ymqNN9B8/PL}&amp;utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
-// &lt;-- prod-mode
+        &quot;?${[decrypt] BA3YyqF4iMQszBawvgG82bqX3fw7JoWA1thFsboUECR/L8JkBCgvaThg1LcUWbIntosEKs/kvqyzOtvdQfMgjYPV0c6hsq/gKQkmJYILZmLY4SgBebH8g0qbfrrjxF5gEbfCi2qoR6PSxcQzKIjgd4HvAaumlQd4CkJLmY463ymqNN9B8/PL}&utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
+// <-- prod-mode
 
-// --&gt; test-mode
+// --> test-mode
 //        // DEFINITIONS FOR LOCAL TESTNET
 //        string constant ORACLIZE_RATINGS_BASE_URL =
 //            // ratings api is v1, see https://developer.flightstats.com/api-docs/ratings/v1
@@ -205,7 +205,7 @@ contract FlightDelayConstants {
 //        string constant ORACLIZE_STATUS_QUERY =
 //            // for testrpc:
 //            &quot;?utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
-// &lt;-- test-mode
+// <-- test-mode
 }
 
 // File: contracts/FlightDelayControllerInterface.sol
@@ -267,7 +267,7 @@ contract FlightDelayDatabaseModel {
     //					        customer by the oracle.
     // 03 = PaidOut:	  The flight has ended with delay.
     //					        The oracle has checked and payed out.
-    // 04 = Expired:	  The flight has endet with &lt;15min. delay.
+    // 04 = Expired:	  The flight has endet with <15min. delay.
     //					        No payout.
     // 05 = Declined:	  The application was invalid.
     //					        The premium minus cancellation fee is payed back to the
@@ -465,7 +465,7 @@ contract FlightDelayController is Owned, FlightDelayConstants {
         bool isInitialized;
     }
 
-    mapping (bytes32 =&gt; Controller) public contracts;
+    mapping (bytes32 => Controller) public contracts;
     bytes32[] public contractIds;
 
     /**
@@ -542,7 +542,7 @@ contract FlightDelayController is Owned, FlightDelayConstants {
         FlightDelayControlledContract controlledContract;
         // TODO: Check for upper bound for i
         // i = 0 is FD.Owner, we skip this. // check!
-        for (uint i = 0; i &lt; contractIds.length; i++) {
+        for (uint i = 0; i < contractIds.length; i++) {
             if (contracts[contractIds[i]].isControlled == true) {
                 controlledContract = FlightDelayControlledContract(contracts[contractIds[i]].addr);
                 controlledContract.setContracts();
@@ -575,7 +575,7 @@ contract FlightDelayController is Owned, FlightDelayConstants {
     */
     function destructAll() public onlyOwner {
         // TODO: Check for upper bound for i
-        for (uint i = 0; i &lt; contractIds.length; i++) {
+        for (uint i = 0; i < contractIds.length; i++) {
             if (contracts[contractIds[i]].isControlled == true) {
                 destructOne(contractIds[i]);
             }

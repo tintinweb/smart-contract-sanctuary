@@ -41,7 +41,7 @@ pragma solidity ^0.4.18;
 
 	  function safeAdd(uint a, uint b) internal returns (uint) {
 	    uint c = a + b;
-	    assert(c>=a &amp;&amp; c>=b);
+	    assert(c>=a && c>=b);
 	    return c;
 	  }
 	
@@ -340,7 +340,7 @@ pragma solidity ^0.4.18;
 	
 
 	    modifier isAvailable() {
-	        require(!halted &amp;&amp; !freeze);
+	        require(!halted && !freeze);
 	        _;
 	    }
 	

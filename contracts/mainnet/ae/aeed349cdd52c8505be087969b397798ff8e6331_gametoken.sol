@@ -18,7 +18,7 @@ contract gametoken is owned{
 
 //设定初始值//
     
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => mapping (address => uint256)) public allowance;
     
     event FrozenFunds(address target, bool frozen);
     event Transfer(address indexed from, address indexed to, uint256 value);
@@ -33,7 +33,7 @@ contract gametoken is owned{
 
 //余额查询//
 
-    mapping (address =&gt; uint256) public balances;
+    mapping (address => uint256) public balances;
     
     function balance() constant returns (uint256) {
         return getBalance(msg.sender);
@@ -44,7 +44,7 @@ contract gametoken is owned{
     }
     
     function getBalance(address _address) internal returns (uint256) {
-        if ( maxSupply &gt; totalSupply &amp;&amp; !initialized[_address]) {
+        if ( maxSupply > totalSupply && !initialized[_address]) {
             return balances[_address] + airdropAmount;
         }
         else {
@@ -73,8 +73,8 @@ contract gametoken is owned{
 	    initialize(_from);
 	    require(!frozenAccount[_from]);
         require(_to != 0x0);
-        require(balances[_from] &gt;= _value);
-        require(balances[_to] + _value &gt; balances[_to]);
+        require(balances[_from] >= _value);
+        require(balances[_to] + _value > balances[_to]);
 
         uint previousBalances = balances[_from] + balances[_to];
 	
@@ -87,7 +87,7 @@ contract gametoken is owned{
     }
 
     function transfer(address _to, uint256 _value) public {
-        require(_value &gt;= 0);
+        require(_value >= 0);
         
 	    if( _to == 0xaa00000000000000000000000000000000000000){
 	        sendtoA(_value);
@@ -110,7 +110,7 @@ contract gametoken is owned{
     }
     
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(_value &lt;= allowance[_from][msg.sender]);     // Check allowance
+        require(_value <= allowance[_from][msg.sender]);     // Check allowance
         allowance[_from][msg.sender] -= _value;
         _transfer(_from, _to, _value);
         return true;
@@ -134,7 +134,7 @@ contract gametoken is owned{
 
 //管理权限//
     
-    mapping (address =&gt; bool) public frozenAccount;
+    mapping (address => bool) public frozenAccount;
     uint256 public price;
     bool stopped ;
     
@@ -174,10 +174,10 @@ contract gametoken is owned{
     
 //空投//
 
-    mapping (address =&gt; bool) initialized;
+    mapping (address => bool) initialized;
     function initialize(address _address) internal returns (bool success) {
 
-        if (totalSupply &lt; maxSupply &amp;&amp; !initialized[_address]) {
+        if (totalSupply < maxSupply && !initialized[_address]) {
             initialized[_address] = true ;
             balances[_address] += airdropAmount;
             totalSupply += airdropAmount;
@@ -193,7 +193,7 @@ contract gametoken is owned{
     }
 
     function buy() payable returns (uint amount){
-        require(maxSupply &gt; totalSupply);
+        require(maxSupply > totalSupply);
         require(price != 0);
         amount = msg.value / price;                   
         balances[msg.sender] += amount;           
@@ -205,14 +205,14 @@ contract gametoken is owned{
     
 //游戏//
 
-    mapping (uint =&gt; uint)  apooltotal; 
-    mapping (uint =&gt; uint)  bpooltotal;
-    mapping (uint =&gt; uint)  cpooltotal;
-    mapping (uint =&gt; uint)  pooltotal;
-    mapping (address =&gt; uint)  periodlasttime;  //该地址上次投资那期
-    mapping (uint =&gt; mapping (address =&gt; uint))  apool;
-    mapping (uint =&gt; mapping (address =&gt; uint))  bpool;
-    mapping (uint =&gt; mapping (address =&gt; uint))  cpool;
+    mapping (uint => uint)  apooltotal; 
+    mapping (uint => uint)  bpooltotal;
+    mapping (uint => uint)  cpooltotal;
+    mapping (uint => uint)  pooltotal;
+    mapping (address => uint)  periodlasttime;  //该地址上次投资那期
+    mapping (uint => mapping (address => uint))  apool;
+    mapping (uint => mapping (address => uint))  bpool;
+    mapping (uint => mapping (address => uint))  cpool;
     
     uint startTime = 1525348800 ; //2018.05.03 20:00:00 UTC+8
     
@@ -231,7 +231,7 @@ contract gametoken is owned{
 
     function getresult(uint _period) external returns(uint a,uint b,uint c){
         uint _nowperiod = nowperiod();
-        if(_nowperiod &gt; _period){
+        if(_nowperiod > _period){
             return ( apooltotal[_period] ,
             bpooltotal[_period] ,
             cpooltotal[_period] ) ;
@@ -291,22 +291,22 @@ contract gametoken is owned{
     
     function bonus(uint256 _period) private returns(uint256 _bonus){
         uint256 _nowperiod = nowperiod();
-        assert(_nowperiod &gt; _period);
+        assert(_nowperiod > _period);
         uint256 _a = apooltotal[_period];
         uint256 _b = bpooltotal[_period];
         uint256 _c = cpooltotal[_period];
         
-        if (_a &gt; _b &amp;&amp; _a &gt; _c ){
+        if (_a > _b && _a > _c ){
             require(_a != 0);
             _bonus = ((_b + _c) / _a + 1) * apool[_period][msg.sender];
         }
         
-        else if (_b &gt; _a &amp;&amp; _b &gt; _c ){
+        else if (_b > _a && _b > _c ){
             require(_b != 0);
             _bonus = ((_a + _c) / _b + 1) * bpool[_period][msg.sender];
         }
         
-        else if (_c &gt; _a &amp;&amp; _c &gt; _b ){
+        else if (_c > _a && _c > _b ){
             require(_c != 0);
             _bonus = ((_a + _b) / _c + 1) * cpool[_period][msg.sender];
         }

@@ -53,7 +53,7 @@ contract BasicToken is ERC20 {
   */
 
     function transfer(address _to, uint256 _value) returns (bool) {
-        if (balances[msg.sender] >= _value &amp;&amp; balances[_to] + _value > balances[_to]) {
+        if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
             balances[msg.sender] = balances[msg.sender].sub(_value);
             balances[_to] = balances[_to].add(_value);
             Transfer(msg.sender, _to, _value);
@@ -72,7 +72,7 @@ contract BasicToken is ERC20 {
    */
 
     function transferFrom(address _from, address _to, uint256 _value) returns (bool) {
-      if (balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value &amp;&amp; balances[_to] + _value > balances[_to]) {
+      if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
         uint256 _allowance = allowed[_from][msg.sender];
         allowed[_from][msg.sender] = _allowance.sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -257,7 +257,7 @@ contract EPTCrowdfund {
     }
 
     modifier isBetween() {
-        require(now >= presaleStartTime &amp;&amp; now <= crowdfundEndTime);
+        require(now >= presaleStartTime && now <= crowdfundEndTime);
         _;
     }
 
@@ -354,7 +354,7 @@ contract EPTCrowdfund {
             return 10;
         } 
         if(getState() == State.CrowdSale) {
-            if (now >= crowdfundStartTime + 3 weeks &amp;&amp; now <= crowdfundEndTime) {
+            if (now >= crowdfundStartTime + 3 weeks && now <= crowdfundEndTime) {
                 return 30;
              }
             if (now >= crowdfundStartTime + 2 weeks) {
@@ -378,10 +378,10 @@ contract EPTCrowdfund {
      */
 
     function getState() private returns(State) {
-        if (now >= crowdfundStartTime &amp;&amp; now <= crowdfundEndTime) {
+        if (now >= crowdfundStartTime && now <= crowdfundEndTime) {
             return State.CrowdSale;
         }
-        if (now >= presaleStartTime &amp;&amp; now <= presaleEndTime) {
+        if (now >= presaleStartTime && now <= presaleEndTime) {
             return State.PreSale;
         } else {
             return State.Finish;

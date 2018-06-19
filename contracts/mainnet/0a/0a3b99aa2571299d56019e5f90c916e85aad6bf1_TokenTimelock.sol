@@ -22,7 +22,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -32,7 +32,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -41,7 +41,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -179,18 +179,18 @@ contract TokenTimelock is Claimable {
   // tokens deposited.
   uint256 public tokenBalance;
   // beneficiary of tokens after they are released
-  mapping (address =&gt; uint256) public beneficiaryMap;
+  mapping (address => uint256) public beneficiaryMap;
   // timestamp when token release is enabled
   uint256 public releaseTime;
 
   function TokenTimelock(ERC20Basic _token, uint256 _releaseTime) public {
-    require(_releaseTime &gt; now);
+    require(_releaseTime > now);
     token = _token;
     releaseTime = _releaseTime;
   }
 
   function isAvailable() public view returns (bool){
-    if(now &gt;= releaseTime){
+    if(now >= releaseTime){
       return true;
     } else { 
       return false; 
@@ -217,14 +217,14 @@ contract TokenTimelock is Claimable {
    * @notice Transfers tokens held by timelock to beneficiary.
    */
   function release() public {
-    require(now &gt;= releaseTime);
+    require(now >= releaseTime);
 
     // Get tokens owed, then set to 0 before proceeding.
     uint256 amount = beneficiaryMap[msg.sender];
     beneficiaryMap[msg.sender] = 0;
 
     // Proceed only of there are tokens to send.
-    require(amount &gt; 0 &amp;&amp; token.balanceOf(this) &gt; 0);
+    require(amount > 0 && token.balanceOf(this) > 0);
 
     token.safeTransfer(msg.sender, amount);
   }

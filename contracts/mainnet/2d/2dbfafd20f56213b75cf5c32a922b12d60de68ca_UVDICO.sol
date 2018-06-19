@@ -13,7 +13,7 @@ library SafeMath {
 
   function add(uint256 a, uint256 b) internal constant returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -77,7 +77,7 @@ contract UVDICO is Ownable {
   bool public initialized = false;
   uint256 public raisedAmount = 0;
   
-  mapping (address =&gt; uint256) buyers;
+  mapping (address => uint256) buyers;
 
   event BoughtTokens(address indexed to, uint256 value);
 
@@ -102,15 +102,15 @@ contract UVDICO is Ownable {
 
   function isActive() constant returns (bool) {
     return (
-        initialized == true &amp;&amp;
-        now &gt;= START &amp;&amp; // Must be after the START date
-        now &lt;= START.add(DAYS * 1 days) &amp;&amp; // Must be before the end date
+        initialized == true &&
+        now >= START && // Must be after the START date
+        now <= START.add(DAYS * 1 days) && // Must be before the end date
         goalReached() == false // Goal must not already be reached
     );
   }
 
   function goalReached() constant returns (bool) {
-    return (raisedAmount &gt;= CAP * 1 ether);
+    return (raisedAmount >= CAP * 1 ether);
   }
 
   function () payable {
@@ -150,7 +150,7 @@ contract UVDICO is Ownable {
   function destroy() onlyOwner {
     // Transfer tokens back to owner
     uint256 balance = token.balanceOf(this);
-    assert(balance &gt; 0);
+    assert(balance > 0);
     token.transfer(owner, balance);
 
     // There should be no ether in the contract but just in case

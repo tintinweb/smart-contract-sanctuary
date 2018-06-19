@@ -31,8 +31,8 @@ contract WXC is ERC223, ERC20 {
 	string public constant name = &quot;WIIX Coin&quot;;
 	uint8 public constant decimals = 18;
 
-	mapping(address =&gt; uint256) balances;
-	mapping(address =&gt; mapping(address =&gt; uint256)) allowed;
+	mapping(address => uint256) balances;
+	mapping(address => mapping(address => uint256)) allowed;
 
 	constructor() public{
 		balances[msg.sender] = _totalSupply;
@@ -73,14 +73,14 @@ contract WXC is ERC223, ERC20 {
 		assembly {
 			codeSize := extcodesize(_from)
 		}
-		return codeSize &gt; 0;
+		return codeSize > 0;
 	}
     
     
 	function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
 		require(
-			balances[_from] &gt;= _value
-			&amp;&amp; _value &gt; 0
+			balances[_from] >= _value
+			&& _value > 0
 		);
 		balances[_from] = balances[_from].sub(_value);
 		balances[_to] = balances[_to].add(_value);
@@ -127,20 +127,20 @@ library SafeMath {
 	}
 
 	function div(uint256 a, uint256 b) internal pure returns (uint256) {
-		// assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+		// assert(b > 0); // Solidity automatically throws when dividing by 0
 		uint256 c = a / b;
 		// assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
 		return c;
 	}
 
 	function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-		assert(b &lt;= a);
+		assert(b <= a);
 		return a - b;
 	}
 
 	function add(uint256 a, uint256 b) internal pure returns (uint256) {
 		uint256 c = a + b;
-		assert(c &gt;= a);
+		assert(c >= a);
 		return c;
 	}
 }

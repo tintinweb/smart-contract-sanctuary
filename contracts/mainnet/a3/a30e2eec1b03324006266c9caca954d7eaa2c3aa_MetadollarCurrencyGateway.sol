@@ -15,20 +15,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -119,9 +119,9 @@ contract MetadollarCurrencyGateway is Ownable{
       address currency;
     }
     
-    mapping(address =&gt; mapping(uint =&gt; BuyInfo)) public payment;
+    mapping(address => mapping(uint => BuyInfo)) public payment;
    
-    mapping(address =&gt; uint) public balances;
+    mapping(address => uint) public balances;
     uint balanceFee;
     uint public feePercent;
     uint public maxFee;
@@ -154,23 +154,23 @@ contract MetadollarCurrencyGateway is Ownable{
       feeAccount2 = _feeAccount2;  
     }
     function setFeePercent(uint _feePercent) onlyOwner public{
-      require(_feePercent &lt;= maxFee);
+      require(_feePercent <= maxFee);
       feePercent = _feePercent;  
     }    
     function payToken(address _tokenAddress, address _sellerAddress, uint _orderId,  uint _value) public returns (bool success){
       require(_tokenAddress != address(0));
       require(_sellerAddress != address(0)); 
-      require(_value &gt; 0);
+      require(_value > 0);
       Token token = Token(_tokenAddress);
-      require(token.allowance(msg.sender, this) &gt;= _value);
+      require(token.allowance(msg.sender, this) >= _value);
       token.transferFrom(msg.sender, _sellerAddress, _value);
       payment[_sellerAddress][_orderId] = BuyInfo(msg.sender, _sellerAddress, _value, _tokenAddress);
       success = true;
     }
     function payEth(address _sellerAddress, uint _orderId, uint _value) public returns  (bool success){
       require(_sellerAddress != address(0)); 
-      require(_value &gt; 0);
-      require(balances[msg.sender] &gt;= _value);
+      require(_value > 0);
+      require(balances[msg.sender] >= _value);
       uint fee = _value.mul(feePercent).div(100000000);
       balances[msg.sender] = balances[msg.sender].sub(_value);
       _sellerAddress.transfer(_value.sub(fee));
@@ -193,7 +193,7 @@ contract MetadollarCurrencyGateway is Ownable{
       return balanceFee;
     }
     function refund() public{
-      require(balances[msg.sender] &gt; 0);
+      require(balances[msg.sender] > 0);
       uint value = balances[msg.sender];
       balances[msg.sender] = 0;
       msg.sender.transfer(value);

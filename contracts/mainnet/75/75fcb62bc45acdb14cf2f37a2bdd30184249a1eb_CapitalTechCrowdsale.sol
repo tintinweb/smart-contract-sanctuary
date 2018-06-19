@@ -1,5 +1,5 @@
 /*
-Capital Technologies &amp; Research - Capital (CALL) &amp; CapitalGAS (CALLG) - Crowdsale Smart Contract
+Capital Technologies & Research - Capital (CALL) & CapitalGAS (CALLG) - Crowdsale Smart Contract
 https://www.mycapitalco.in
 */
 pragma solidity ^0.4.18;

@@ -61,20 +61,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -102,7 +102,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -111,7 +111,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -155,7 +155,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -166,8 +166,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -230,7 +230,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -264,7 +264,7 @@ contract MintableToken is StandardToken, Ownable {
   }
 
   function mint(address _to, uint256 _amount) public returns (bool) {
-    require(msg.sender == saleAgent &amp;&amp; !mintingFinished);
+    require(msg.sender == saleAgent && !mintingFinished);
     totalSupply = totalSupply.add(_amount);
     balances[_to] = balances[_to].add(_amount);
     Mint(_to, _amount);
@@ -276,7 +276,7 @@ contract MintableToken is StandardToken, Ownable {
    * @return True if the operation was successful.
    */
   function finishMinting() public returns (bool) {
-    require((msg.sender == saleAgent || msg.sender == owner) &amp;&amp; !mintingFinished);
+    require((msg.sender == saleAgent || msg.sender == owner) && !mintingFinished);
     mintingFinished = true;
     MintFinished();
     return true;
@@ -339,7 +339,7 @@ contract CommonSale is PercentRateProvider {
   uint public invested;
 
   modifier isUnderHardcap() {
-    require(invested &lt; hardcap);
+    require(invested < hardcap);
     _;
   }
 
@@ -353,7 +353,7 @@ contract CommonSale is PercentRateProvider {
   }
 
   modifier minInvestLimited(uint value) {
-    require(value &gt;= minInvestedLimit);
+    require(value >= minInvestedLimit);
     _;
   }
 
@@ -406,7 +406,7 @@ contract CommonSale is PercentRateProvider {
   }
 
   function fallback() internal minInvestLimited(msg.value) returns(uint) {
-    require(now &gt;= start &amp;&amp; now &lt; endSaleDate());
+    require(now >= start && now < endSaleDate());
     wallet.transfer(msg.value);
     return mintTokensByETH(msg.sender, msg.value);
   }
@@ -424,7 +424,7 @@ contract InputAddressFeature {
   function bytesToAddress(bytes source) internal pure returns(address) {
     uint result;
     uint mul = 1;
-    for(uint i = 20; i &gt; 0; i--) {
+    for(uint i = 20; i > 0; i--) {
       result += uint8(source[i-1])*mul;
       mul = mul*256;
     }
@@ -458,10 +458,10 @@ contract ReferersRewardFeature is InputAddressFeature, CommonSale {
 
   function fallback() internal returns(uint) {
     uint tokens = super.fallback();
-    if(msg.value &gt;= referalsMinInvestLimit) {
+    if(msg.value >= referalsMinInvestLimit) {
       address referer = getInputAddress();
       if(referer != address(0)) {
-        require(referer != address(token) &amp;&amp; referer != msg.sender &amp;&amp; referer != address(this));
+        require(referer != address(token) && referer != msg.sender && referer != address(this));
         mintTokens(referer, tokens.mul(refererPercent).div(percentRate));
       }
     }
@@ -508,8 +508,8 @@ contract ValueBonusFeature is PercentRateProvider {
 
   function getValueBonus(uint value) public view returns(uint) {
     uint bonus = 0;
-    for(uint i = 0; i &lt; valueBonuses.length; i++) {
-      if(value &gt;= valueBonuses[i].from) {
+    for(uint i = 0; i < valueBonuses.length; i++) {
+      if(value >= valueBonuses[i].from) {
         bonus = valueBonuses[i].bonus;
       } else {
         return bonus;
@@ -547,19 +547,19 @@ contract StagedCrowdsale is Ownable {
   }
 
   function addMilestone(uint period, uint bonus) public onlyOwner {
-    require(period &gt; 0);
+    require(period > 0);
     milestones.push(Milestone(period, bonus));
     totalPeriod = totalPeriod.add(period);
   }
 
   function removeMilestone(uint8 number) public onlyOwner {
-    require(number &lt; milestones.length);
+    require(number < milestones.length);
     Milestone storage milestone = milestones[number];
     totalPeriod = totalPeriod.sub(milestone.period);
 
     delete milestones[number];
 
-    for (uint i = number; i &lt; milestones.length - 1; i++) {
+    for (uint i = number; i < milestones.length - 1; i++) {
       milestones[i] = milestones[i+1];
     }
 
@@ -567,7 +567,7 @@ contract StagedCrowdsale is Ownable {
   }
 
   function changeMilestone(uint8 number, uint period, uint bonus) public onlyOwner {
-    require(number &lt; milestones.length);
+    require(number < milestones.length);
     Milestone storage milestone = milestones[number];
 
     totalPeriod = totalPeriod.sub(milestone.period);
@@ -579,13 +579,13 @@ contract StagedCrowdsale is Ownable {
   }
 
   function insertMilestone(uint8 numberAfter, uint period, uint bonus) public onlyOwner {
-    require(numberAfter &lt; milestones.length);
+    require(numberAfter < milestones.length);
 
     totalPeriod = totalPeriod.add(period);
 
     milestones.length++;
 
-    for (uint i = milestones.length - 2; i &gt; numberAfter; i--) {
+    for (uint i = milestones.length - 2; i > numberAfter; i--) {
       milestones[i + 1] = milestones[i];
     }
 
@@ -593,8 +593,8 @@ contract StagedCrowdsale is Ownable {
   }
 
   function clearMilestones() public onlyOwner {
-    require(milestones.length &gt; 0);
-    for (uint i = 0; i &lt; milestones.length; i++) {
+    require(milestones.length > 0);
+    for (uint i = 0; i < milestones.length; i++) {
       delete milestones[i];
     }
     milestones.length -= milestones.length;
@@ -607,8 +607,8 @@ contract StagedCrowdsale is Ownable {
 
   function currentMilestone(uint start) public view returns(uint) {
     uint previousDate = start;
-    for(uint i=0; i &lt; milestones.length; i++) {
-      if(now &gt;= previousDate &amp;&amp; now &lt; previousDate + milestones[i].period * 1 days) {
+    for(uint i=0; i < milestones.length; i++) {
+      if(now >= previousDate && now < previousDate + milestones[i].period * 1 days) {
         return i;
       }
       previousDate = previousDate.add(milestones[i].period * 1 days);
@@ -663,7 +663,7 @@ contract Mainsale is StagedCrowdsale, VezetCommonSale {
     Milestone storage milestone = milestones[milestoneIndex];
     uint tokens = _invested.mul(price).div(1 ether);
     uint valueBonusTokens = getValueBonusTokens(tokens, _invested);
-    if(milestone.bonus &gt; 0) {
+    if(milestone.bonus > 0) {
       tokens = tokens.add(tokens.mul(milestone.bonus).div(percentRate));
     }
     return tokens.add(valueBonusTokens);

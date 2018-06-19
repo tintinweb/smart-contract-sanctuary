@@ -2,7 +2,7 @@ pragma solidity ^0.4.19;
 
 /* Adapted from strings.sol created by Nick Johnson <<span class="__cf_email__" data-cfemail="bedfccdfddd6d0d7dafed0d1cadad1ca90">[email&#160;protected]</span>net>
  * Ref: https://github.com/Arachnid/solidity-stringutils/blob/2f6ca9accb48ae14c66f1437ec50ed19a0616f78/strings.sol
- * @title String &amp; slice utility library for Solidity contracts.
+ * @title String & slice utility library for Solidity contracts.
  * @author Nick Johnson <<span class="__cf_email__" data-cfemail="f190839092999f9895b19f9e85959e85df9f9485">[email&#160;protected]</span>>
  */
 library strings {
@@ -162,7 +162,7 @@ library strings {
 
 /* Helper String Functions for Game Manager Contract
  * @title String Healpers
- * @author Fazri Zubair &amp; Farhan Khwaja (Lucid Sight, Inc.)
+ * @author Fazri Zubair & Farhan Khwaja (Lucid Sight, Inc.)
  */
 contract StringHelpers {
     using strings for *;
@@ -224,12 +224,12 @@ contract ERC721 {
 
 /* Controls game play state and access rights for game functions
  * @title Operational Control
- * @author Fazri Zubair &amp; Farhan Khwaja (Lucid Sight, Inc.)
+ * @author Fazri Zubair & Farhan Khwaja (Lucid Sight, Inc.)
  * Inspired and adapted from contract created by OpenZeppelin
  * Ref: https://github.com/OpenZeppelin/zeppelin-solidity/
  */
 contract OperationalControl {
-    // Facilitates access &amp; control for the game.
+    // Facilitates access & control for the game.
     // Roles:
     //  -The Game Managers (Primary/Secondary): Has universal control of all game elements (No ability to withdraw)
     //  -The Banker: The Bank can withdraw funds and adjust fees / prices.
@@ -245,7 +245,7 @@ contract OperationalControl {
     // @dev Keeps track whether the contract is paused. When that is true, most actions are blocked
     bool public paused = false;
 
-    // @dev Keeps track whether the contract erroredOut. When that is true, most actions are blocked &amp; refund can be claimed
+    // @dev Keeps track whether the contract erroredOut. When that is true, most actions are blocked & refund can be claimed
     bool public error = false;
 
     /// @dev Operation modifiers for limiting access
@@ -392,7 +392,7 @@ contract CSCCollectibleBase is ERC721, OperationalControl, StringHelpers {
   // @dev array of CSCPreSaleItem type holding information on the Ships
   CSCPreSaleItem[] allPreSaleItems;
 
-  // Max Count for Voucher(s), Prometheus, Crosair &amp; Intrepid Ships
+  // Max Count for Voucher(s), Prometheus, Crosair & Intrepid Ships
   uint256 public constant PROMETHEUS_SHIP_LIMIT = 300;
   uint256 public constant INTREPID_SHIP_LIMIT = 1500;
   uint256 public constant CROSAIR_SHIP_LIMIT = 600;
@@ -443,7 +443,7 @@ contract CSCCollectibleBase is ERC721, OperationalControl, StringHelpers {
   function supportsInterface(bytes4 _interfaceID) external view returns (bool)
   {
       // DEBUG ONLY
-      //require((InterfaceSignature_ERC165 == 0x01ffc9a7) &amp;&amp; (InterfaceSignature_ERC721 == 0x9a20483d));
+      //require((InterfaceSignature_ERC165 == 0x01ffc9a7) && (InterfaceSignature_ERC721 == 0x9a20483d));
       return ((_interfaceID == InterfaceSignature_ERC165) || (_interfaceID == InterfaceSignature_ERC721));
   }
 
@@ -711,14 +711,14 @@ contract CSCCollectibleBase is ERC721, OperationalControl, StringHelpers {
 
 /* Lucid Sight, Inc. ERC-721 CSC Collectilbe Sale Contract. 
  * @title CSCCollectibleSale
- * @author Fazri Zubair &amp; Farhan Khwaja (Lucid Sight, Inc.)
+ * @author Fazri Zubair & Farhan Khwaja (Lucid Sight, Inc.)
  */
 contract CSCCollectibleSale is CSCCollectibleBase {
   event CollectibleBought (uint256 _assetId, address owner);
   event PriceUpdated (uint256 collectibleClass, uint256 newPrice, uint256 oldPrice);
 
-  //  SHIP DATATYPES &amp; CONSTANTS
-  // @dev ship Prices &amp; price cap
+  //  SHIP DATATYPES & CONSTANTS
+  // @dev ship Prices & price cap
   uint256 public PROMETHEUS_SHIP_PRICE = 0.25 ether;
   uint256 public INTREPID_SHIP_PRICE = 0.005 ether;
   uint256 public CROSAIR_SHIP_PRICE = 0.1 ether;
@@ -739,7 +739,7 @@ contract CSCCollectibleSale is CSCCollectibleBase {
   uint256 public intrepidSoldCount;
   uint256 public crosairSoldCount;
 
-  //  VOUCHER DATATYPES &amp; CONSTANTS
+  //  VOUCHER DATATYPES & CONSTANTS
   uint256 public PROMETHEUS_VOUCHER_PRICE = 0.75 ether;
   uint256 public INTREPID_VOUCHER_PRICE = 0.2 ether;
   uint256 public CROSAIR_VOUCHER_PRICE = 0.35 ether;
@@ -757,7 +757,7 @@ contract CSCCollectibleSale is CSCCollectibleBase {
   function _bid(uint256 _assetId, uint256 _price,uint256 _collectibleType,uint256 _collectibleClass, address _buyer) internal {
     CSCPreSaleItem memory _Obj = allPreSaleItems[_assetId];
 
-    if(_collectibleType == 1 &amp;&amp; _collectibleClass == 1) {
+    if(_collectibleType == 1 && _collectibleClass == 1) {
       require(_price == PROMETHEUS_SHIP_PRICE);
       _Obj.owner = _buyer;
       _Obj.boughtTimestamp = now;
@@ -772,7 +772,7 @@ contract CSCCollectibleSale is CSCCollectibleBase {
       }
     }
 
-    if(_collectibleType == 1 &amp;&amp; _collectibleClass == 2) {
+    if(_collectibleType == 1 && _collectibleClass == 2) {
       require(_price == CROSAIR_SHIP_PRICE);
       _Obj.owner = _buyer;
       _Obj.boughtTimestamp = now;
@@ -787,7 +787,7 @@ contract CSCCollectibleSale is CSCCollectibleBase {
       }
     }
 
-    if(_collectibleType == 1 &amp;&amp; _collectibleClass == 3) {
+    if(_collectibleType == 1 && _collectibleClass == 3) {
       require(_price == INTREPID_SHIP_PRICE);
       _Obj.owner = _buyer;
       _Obj.boughtTimestamp = now;
@@ -802,7 +802,7 @@ contract CSCCollectibleSale is CSCCollectibleBase {
       }
     }
 
-    if(_collectibleType == 0 &amp;&amp;_collectibleClass == 1) {
+    if(_collectibleType == 0 &&_collectibleClass == 1) {
         require(_price == PROMETHEUS_VOUCHER_PRICE);
         _Obj.owner = _buyer;
         _Obj.boughtTimestamp = now;
@@ -812,7 +812,7 @@ contract CSCCollectibleSale is CSCCollectibleBase {
         prometheusVoucherSoldCount++;
       }
 
-      if(_collectibleType == 0 &amp;&amp; _collectibleClass == 2) {
+      if(_collectibleType == 0 && _collectibleClass == 2) {
         require(_price == CROSAIR_VOUCHER_PRICE);
         _Obj.owner = _buyer;
         _Obj.boughtTimestamp = now;
@@ -822,7 +822,7 @@ contract CSCCollectibleSale is CSCCollectibleBase {
         crosairVoucherSoldCount++;
       }
       
-      if(_collectibleType == 0 &amp;&amp; _collectibleClass == 3) {
+      if(_collectibleType == 0 && _collectibleClass == 3) {
         require(_price == INTREPID_VOUCHER_PRICE);
         _Obj.owner = _buyer;
         _Obj.boughtTimestamp = now;
@@ -845,28 +845,28 @@ contract CSCCollectibleSale is CSCCollectibleBase {
   function getCollectiblePrice(uint256 _collectibleType, uint256 _collectibleClass) external view returns(uint256 _price){
 
     // For Ships
-    if(_collectibleType == 1 &amp;&amp; _collectibleClass == 1) {
+    if(_collectibleType == 1 && _collectibleClass == 1) {
       return PROMETHEUS_SHIP_PRICE;
     }
 
-    if(_collectibleType == 1 &amp;&amp; _collectibleClass == 2) {
+    if(_collectibleType == 1 && _collectibleClass == 2) {
       return CROSAIR_SHIP_PRICE;
     }
 
-    if(_collectibleType == 1 &amp;&amp; _collectibleClass == 3) {
+    if(_collectibleType == 1 && _collectibleClass == 3) {
       return INTREPID_SHIP_PRICE;
     }
 
     // For Vouchers
-    if(_collectibleType == 0 &amp;&amp; _collectibleClass == 1) {
+    if(_collectibleType == 0 && _collectibleClass == 1) {
       return PROMETHEUS_VOUCHER_PRICE;
     }
 
-    if(_collectibleType == 0 &amp;&amp; _collectibleClass == 2) {
+    if(_collectibleType == 0 && _collectibleClass == 2) {
       return CROSAIR_VOUCHER_PRICE;
     }
 
-    if(_collectibleType == 0 &amp;&amp; _collectibleClass == 3) {
+    if(_collectibleType == 0 && _collectibleClass == 3) {
       return INTREPID_VOUCHER_PRICE;
     }
   }
@@ -874,7 +874,7 @@ contract CSCCollectibleSale is CSCCollectibleBase {
 
 /* Lucid Sight, Inc. ERC-721 Collectibles. 
  * @title LSNFT - Lucid Sight, Inc. Non-Fungible Token
- * @author Fazri Zubair &amp; Farhan Khwaja (Lucid Sight, Inc.)
+ * @author Fazri Zubair & Farhan Khwaja (Lucid Sight, Inc.)
  */
 contract CSCPreSaleManager is CSCCollectibleSale {
   event RefundClaimed(address owner, uint256 refundValue);
@@ -915,7 +915,7 @@ contract CSCPreSaleManager is CSCCollectibleSale {
     require(msg.sender != address(0));
     require(msg.sender != address(this));
 
-    require(_collectibleType >= 0 &amp;&amp; _collectibleType <= 1);
+    require(_collectibleType >= 0 && _collectibleType <= 1);
 
     require(_isActive(_assetId));
 
@@ -975,7 +975,7 @@ contract CSCPreSaleManager is CSCCollectibleSale {
     require(msg.sender != address(0));
     require(msg.sender != address(this));
 
-    require(_collectibleType >= 0 &amp;&amp; _collectibleType <= 1);
+    require(_collectibleType >= 0 && _collectibleType <= 1);
 
     bytes32 collectibleName;
 

@@ -63,7 +63,7 @@ contract SmartCityToken {
         require(_to != address(0));
         require(_value <= balances[msg.sender]);
 
-        if (msg.sender == owner &amp;&amp; now < unlockOwnerDate)
+        if (msg.sender == owner && now < unlockOwnerDate)
             require(balances[msg.sender].sub(_value) >= amountLocked);
 
         balances[msg.sender] = balances[msg.sender].sub(_value); // subtract requested amount from the sender address
@@ -87,7 +87,7 @@ contract SmartCityToken {
         if (now < startTime)
             require(_from == owner);
 
-        if (_from == owner &amp;&amp; now < unlockOwnerDate)
+        if (_from == owner && now < unlockOwnerDate)
             require(balances[_from].sub(_value) >= amountLocked);
 
         uint256 _allowance = allowances[_from][msg.sender];
@@ -133,7 +133,7 @@ contract SmartCityToken {
      *  @dev Burns all the tokens which has not been sold during ICO
      */
     function burn() public {
-        if (!burned &amp;&amp; now > startTime) {
+        if (!burned && now > startTime) {
             uint256 diff = balances[owner].sub(amountReserved); // Get the amount of unsold tokens
 
             balances[owner] = amountReserved;
@@ -145,7 +145,7 @@ contract SmartCityToken {
     }
 
     /**
-     *  @dev Sets Corwdsale contract address &amp; allowance
+     *  @dev Sets Corwdsale contract address & allowance
      *  @param _crowdsaleAddress address The address of the Crowdsale contract
      */
     function setCrowdsale(address _crowdsaleAddress) public {
@@ -161,7 +161,7 @@ contract SmartCityToken {
      *  @param _newStartTime uint256 New Start Date
      */
     function setTokenStart(uint256 _newStartTime) public {
-        require(msg.sender == crowdsale &amp;&amp; _newStartTime < startTime);
+        require(msg.sender == crowdsale && _newStartTime < startTime);
         startTime = _newStartTime;
     }
 }

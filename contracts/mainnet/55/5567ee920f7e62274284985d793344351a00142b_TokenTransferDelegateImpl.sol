@@ -180,7 +180,7 @@ contract Claimable is Ownable {
         onlyOwner
         public
     {
-        require(newOwner != 0x0 &amp;&amp; newOwner != owner);
+        require(newOwner != 0x0 && newOwner != owner);
         pendingOwner = newOwner;
     }
     /// @dev Allows the pendingOwner address to finalize the transfer.
@@ -397,7 +397,7 @@ contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
         address addr = latestAddress;
         AddressInfo memory addrInfo;
         uint count = 0;
-        while (addr != 0x0 &amp;&amp; count < max) {
+        while (addr != 0x0 && count < max) {
             addrInfo = addressInfos[addr];
             if (addrInfo.index == 0) {
                 break;
@@ -415,7 +415,7 @@ contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
         onlyAuthorized
         external
     {
-        if (value > 0 &amp;&amp; from != to &amp;&amp; to != 0x0) {
+        if (value > 0 && from != to && to != 0x0) {
             require(
                 ERC20(token).transferFrom(from, to, value)
             );
@@ -432,7 +432,7 @@ contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
     {
         uint len = batch.length;
         require(len % 7 == 0);
-        require(walletSplitPercentage > 0 &amp;&amp; walletSplitPercentage < 100);
+        require(walletSplitPercentage > 0 && walletSplitPercentage < 100);
         ERC20 lrc = ERC20(lrcTokenAddress);
         for (uint i = 0; i < len; i += 7) {
             address owner = address(batch[i]);
@@ -452,7 +452,7 @@ contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
             }
             // Miner pays LRx fee to order owner
             uint lrcReward = uint(batch[i + 4]);
-            if (lrcReward != 0 &amp;&amp; minerFeeRecipient != owner) {
+            if (lrcReward != 0 && minerFeeRecipient != owner) {
                 require(
                     lrc.transferFrom(
                         minerFeeRecipient,
@@ -505,7 +505,7 @@ contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
         }
         uint walletFee = (walletFeeRecipient == 0x0) ? 0 : fee.mul(walletSplitPercentage) / 100;
         uint minerFee = fee - walletFee;
-        if (walletFee > 0 &amp;&amp; walletFeeRecipient != owner) {
+        if (walletFee > 0 && walletFeeRecipient != owner) {
             require(
                 token.transferFrom(
                     owner,
@@ -514,7 +514,7 @@ contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
                 )
             );
         }
-        if (minerFee > 0 &amp;&amp; minerFeeRecipient != 0x0 &amp;&amp; minerFeeRecipient != owner) {
+        if (minerFee > 0 && minerFeeRecipient != 0x0 && minerFeeRecipient != owner) {
             require(
                 token.transferFrom(
                     owner,

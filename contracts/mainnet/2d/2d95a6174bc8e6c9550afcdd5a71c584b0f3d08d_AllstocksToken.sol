@@ -15,20 +15,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -131,8 +131,8 @@ contract StandardToken is ERC20Interface, Pausable {
     uint256 public constant decimals = 18;
     uint256 public _totalSupply = 0;
 
-    mapping(address =&gt; uint256) public balances;
-    mapping(address =&gt; mapping(address =&gt; uint256)) public allowed;
+    mapping(address => uint256) public balances;
+    mapping(address => mapping(address => uint256)) public allowed;
 
     // ------------------------------------------------------------------------
     // Constructor
@@ -168,8 +168,8 @@ contract StandardToken is ERC20Interface, Pausable {
         if (msg.sender != owner)
             require(!paused);
         require(to != address(0));
-        require(tokens &gt; 0);
-        require(tokens &lt;= balances[msg.sender]);
+        require(tokens > 0);
+        require(tokens <= balances[msg.sender]);
         balances[msg.sender] = balances[msg.sender].sub(tokens);
         balances[to] = balances[to].add(tokens);
         emit Transfer(msg.sender, to, tokens);
@@ -205,11 +205,11 @@ contract StandardToken is ERC20Interface, Pausable {
         //allow trading in token only if sale fhined 
        if (msg.sender != owner)
             require(!paused);
-        require(tokens &gt; 0);
+        require(tokens > 0);
         require(to != address(0));
         require(from != address(0));
-        require(tokens &lt;= balances[from]);
-        require(tokens &lt;= allowed[from][msg.sender]);
+        require(tokens <= balances[from]);
+        require(tokens <= allowed[from][msg.sender]);
 
         balances[from] = balances[from].sub(tokens);
         allowed[from][msg.sender] = allowed[from][msg.sender].sub(tokens);
@@ -253,7 +253,7 @@ contract MintableToken is StandardToken {
    */
   function mint(address _to, uint256 _amount) onlyOwner canMint public returns (bool) {
     require(_to != address(0));
-    require(_amount &gt; 0);
+    require(_amount > 0);
     _totalSupply = _totalSupply.add(_amount);
     balances[_to] = balances[_to].add(_amount);
     emit Mint(_to, _amount);

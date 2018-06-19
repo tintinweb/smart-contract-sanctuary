@@ -45,14 +45,14 @@ contract ActivityStorage is StorageBase {
         uint64 startDate;
         // endDate (in seconds)
         uint64 endDate;
-        // packId =&gt; address of bid winner
-        mapping(uint16 =&gt; address) soldPackToAddress;
-        // address =&gt; number of success bid
-        mapping(address =&gt; uint16) addressBoughtCount;
+        // packId => address of bid winner
+        mapping(uint16 => address) soldPackToAddress;
+        // address => number of success bid
+        mapping(address => uint16) addressBoughtCount;
     }
 
     // limit max activityId to 65536, big enough
-    mapping(uint16 =&gt; Activity) public activities;
+    mapping(uint16 => Activity) public activities;
 
     function createActivity(
         uint16 _activityId,

@@ -31,7 +31,7 @@ contract TokenAirDrop is Ownable {
                     address[] airDropDesinationAddress,
                     uint[] amounts) public onlyOwner{
 
-    for( uint i = 0 ; i &lt; airDropDesinationAddress.length ; i++ ) {
+    for( uint i = 0 ; i < airDropDesinationAddress.length ; i++ ) {
 
         ERC20Interface(contractObj).transferFrom( tokenRepo, airDropDesinationAddress[i],amounts[i]);
     }

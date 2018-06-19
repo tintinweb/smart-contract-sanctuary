@@ -587,7 +587,7 @@ contract HardcapCrowdsale is Ownable {
     bool _phaseChanged = false;
     Phase memory _phase = phases[phase];
 
-    while (_tokenAmount > 0 &amp;&amp; _currentSupply < ICO_TOKENS_CAP) {
+    while (_tokenAmount > 0 && _currentSupply < ICO_TOKENS_CAP) {
       _leftowers = _phase.capTo.sub(_currentSupply);
       // check if it is possible to assign more than there is available in this phase
       if (_leftowers < _tokenAmount) {
@@ -627,7 +627,7 @@ contract HardcapCrowdsale is Ownable {
     bool _phaseChanged = false;
     Phase memory _phase = phases[phase];
 
-    while (_weiAmount > 0 &amp;&amp; _currentSupply < ICO_TOKENS_CAP) {
+    while (_weiAmount > 0 && _currentSupply < ICO_TOKENS_CAP) {
       _leftowers = _phase.capTo.sub(_currentSupply);
       _weiReq = _leftowers.div(_phase.rate);
       // check if it is possible to purchase more than there is available in this phase
@@ -675,13 +675,13 @@ contract HardcapCrowdsale is Ownable {
 
   function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) internal {
     // if the phase time ended calculate next phase end time and set new phase
-    if (closingTime < _getTime() &amp;&amp; closingTime < FINAL_CLOSING_TIME &amp;&amp; phase < 8) {
+    if (closingTime < _getTime() && closingTime < FINAL_CLOSING_TIME && phase < 8) {
       phase = phase.add(_calcPhasesPassed());
       _changeClosingTime();
 
     }
     require(_getTime() > INITIAL_START_DATE);
-    require(_getTime() >= openingTime &amp;&amp; _getTime() <= closingTime);
+    require(_getTime() >= openingTime && _getTime() <= closingTime);
     require(_beneficiary != address(0));
     require(_weiAmount != 0);
     require(phase <= 8);
@@ -692,7 +692,7 @@ contract HardcapCrowdsale is Ownable {
 
   function _preValidateAssign(address _beneficiary, uint256 _tokenAmount) internal {
     // if the phase time ended calculate next phase end time and set new phase
-    if (closingTime < _getTime() &amp;&amp; closingTime < FINAL_CLOSING_TIME &amp;&amp; phase < 8) {
+    if (closingTime < _getTime() && closingTime < FINAL_CLOSING_TIME && phase < 8) {
       phase = phase.add(_calcPhasesPassed());
       _changeClosingTime();
 
@@ -703,7 +703,7 @@ contract HardcapCrowdsale is Ownable {
     require(_beneficiary != wallet);
     require(_beneficiary != teamTokenHolder);
 
-    require(_getTime() >= openingTime &amp;&amp; _getTime() <= closingTime);
+    require(_getTime() >= openingTime && _getTime() <= closingTime);
     require(_beneficiary != address(0));
     require(_tokenAmount > 0);
     require(phase <= 8);
@@ -753,7 +753,7 @@ contract TeamTokenHolder is Ownable {
 
     uint256 finalizedTime = crowdsale.finalizedTime();
 
-    require(finalizedTime > 0 &amp;&amp; getTime() >= finalizedTime.add(months(3)));
+    require(finalizedTime > 0 && getTime() >= finalizedTime.add(months(3)));
 
     uint256 canExtract = total.mul(getTime().sub(finalizedTime)).div(months(LOCKUP_TIME));
 

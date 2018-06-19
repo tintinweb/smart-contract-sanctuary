@@ -168,7 +168,7 @@ contract SketchMarket is Ownable {
       uint256 sketchIndex;
 
       for (sketchIndex = 0; sketchIndex <= totalCount; sketchIndex++) {
-        if ((sketchIndexToHolder[sketchIndex] == _holder) &amp;&amp; sketchIndexToHighestBid[sketchIndex].hasBid) {
+        if ((sketchIndexToHolder[sketchIndex] == _holder) && sketchIndexToHighestBid[sketchIndex].hasBid) {
           result++;
         }
       }
@@ -217,7 +217,7 @@ contract SketchMarket is Ownable {
     uint256 sketchIndex;
 
     for (sketchIndex = 0; sketchIndex <= totalCount; sketchIndex++) {
-      if (sketchIndexToOffer[sketchIndex].isForSale &amp;&amp; (sketchIndexToHolder[sketchIndex] == _holder)) {
+      if (sketchIndexToOffer[sketchIndex].isForSale && (sketchIndexToHolder[sketchIndex] == _holder)) {
         count++;
       }
     }
@@ -230,7 +230,7 @@ contract SketchMarket is Ownable {
     uint256 resultIndex = 0;
 
     for (sketchIndex = 0; sketchIndex <= totalCount; sketchIndex++) {
-      if (sketchIndexToOffer[sketchIndex].isForSale &amp;&amp; (sketchIndexToHolder[sketchIndex] == _holder)) {
+      if (sketchIndexToOffer[sketchIndex].isForSale && (sketchIndexToHolder[sketchIndex] == _holder)) {
         result[resultIndex] = sketchIndex;
         resultIndex++;
       }

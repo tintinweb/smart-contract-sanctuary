@@ -23,9 +23,9 @@ contract Token {
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 	event Burn(address indexed _owner, uint256 _value);
  
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
  
-    mapping(address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping(address => mapping (address => uint256)) allowed;
  
     function Token(address adr) public {
         owner = adr;        
@@ -33,11 +33,11 @@ contract Token {
 	
 	function() public payable
 	{
-		if ((isICOrunning &amp;&amp; _blockICOdatetime == 0) || (isICOrunning &amp;&amp; _blockICOdatetime &gt; 0 &amp;&amp; now &lt;= _blockICOdatetime))
+		if ((isICOrunning && _blockICOdatetime == 0) || (isICOrunning && _blockICOdatetime > 0 && now <= _blockICOdatetime))
 		{
 			uint256 _amount = ((msg.value * _oneEtherEqualsInWei) / 1000000000000000000);
 			
-			if (((_currentICOpublicSupply + _amount) &gt; _maxICOpublicSupply) &amp;&amp; _maxICOpublicSupply &gt; 0) revert();
+			if (((_currentICOpublicSupply + _amount) > _maxICOpublicSupply) && _maxICOpublicSupply > 0) revert();
 			
 			if(!_ICOfundsReceiverAddress.send(msg.value)) revert();					
 			
@@ -57,13 +57,13 @@ contract Token {
    
     function SetupToken(string tokenName, string tokenSymbol, uint256 oneEtherEqualsInWei, uint256 maxICOpublicSupply, uint256 ownerICOsupply, address remainingTokensReceiverAddress, address ICOfundsReceiverAddress, uint256 blockICOdatetime) public
     {
-        if (msg.sender == owner &amp;&amp; !setupDone)
+        if (msg.sender == owner && !setupDone)
         {
             symbol = tokenSymbol;
             name = tokenName;
 			_oneEtherEqualsInWei = oneEtherEqualsInWei;
 			_maxICOpublicSupply = maxICOpublicSupply * 1000000000000000000;									
-			if (ownerICOsupply &gt; 0)
+			if (ownerICOsupply > 0)
 			{
 				_ownerICOsupply = ownerICOsupply * 1000000000000000000;
 				_totalSupply = _ownerICOsupply;
@@ -80,7 +80,7 @@ contract Token {
 	
 	function StartICO() public returns (bool success)
     {
-        if (msg.sender == owner &amp;&amp; !ICOstarted &amp;&amp; setupDone)
+        if (msg.sender == owner && !ICOstarted && setupDone)
         {
             ICOstarted = true;			
 			isICOrunning = true;			
@@ -94,12 +94,12 @@ contract Token {
 	
 	function StopICO() public returns (bool success)
     {
-        if (msg.sender == owner &amp;&amp; isICOrunning)
+        if (msg.sender == owner && isICOrunning)
         {            
-			if (_remainingTokensReceiverAddress != 0 &amp;&amp; _maxICOpublicSupply &gt; 0)
+			if (_remainingTokensReceiverAddress != 0 && _maxICOpublicSupply > 0)
 			{
 				uint256 _remainingAmount = _maxICOpublicSupply - _currentICOpublicSupply;
-				if (_remainingAmount &gt; 0)
+				if (_remainingAmount > 0)
 				{
 					balances[_remainingTokensReceiverAddress] += _remainingAmount;
 					_totalSupply += _remainingAmount;
@@ -118,7 +118,7 @@ contract Token {
 	
 	function BurnTokens(uint256 amountInWei) public returns (bool success)
     {
-		if (balances[msg.sender] &gt;= amountInWei)
+		if (balances[msg.sender] >= amountInWei)
 		{
 			balances[msg.sender] -= amountInWei;
 			_totalSupply -= amountInWei;
@@ -193,9 +193,9 @@ contract Token {
     }
  
     function transfer(address _to, uint256 _amount) public returns (bool success) {
-        if (balances[msg.sender] &gt;= _amount
-            &amp;&amp; _amount &gt; 0
-            &amp;&amp; balances[_to] + _amount &gt; balances[_to]) {
+        if (balances[msg.sender] >= _amount
+            && _amount > 0
+            && balances[_to] + _amount > balances[_to]) {
             balances[msg.sender] -= _amount;
             balances[_to] += _amount;
             Transfer(msg.sender, _to, _amount);
@@ -210,10 +210,10 @@ contract Token {
         address _to,
         uint256 _amount
     ) public returns (bool success) {
-        if (balances[_from] &gt;= _amount
-            &amp;&amp; allowed[_from][msg.sender] &gt;= _amount
-            &amp;&amp; _amount &gt; 0
-            &amp;&amp; balances[_to] + _amount &gt; balances[_to]) {
+        if (balances[_from] >= _amount
+            && allowed[_from][msg.sender] >= _amount
+            && _amount > 0
+            && balances[_to] + _amount > balances[_to]) {
             balances[_from] -= _amount;
             allowed[_from][msg.sender] -= _amount;
             balances[_to] += _amount;

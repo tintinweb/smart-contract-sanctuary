@@ -176,7 +176,7 @@ contract WarToken is ERC721, AccessAdmin {
     // modifier
     /// @dev Check if token ID is valid
     modifier isValidToken(uint256 _tokenId) {
-        require(_tokenId >= 1 &amp;&amp; _tokenId <= fashionArray.length);
+        require(_tokenId >= 1 && _tokenId <= fashionArray.length);
         require(fashionIdToOwner[_tokenId] != address(0)); 
         _;
     }
@@ -190,7 +190,7 @@ contract WarToken is ERC721, AccessAdmin {
     // ERC721
     function supportsInterface(bytes4 _interfaceId) external view returns(bool) {
         // ERC165 || ERC721 || ERC165^ERC721
-        return (_interfaceId == 0x01ffc9a7 || _interfaceId == 0x80ac58cd || _interfaceId == 0x8153916a) &amp;&amp; (_interfaceId != 0xffffffff);
+        return (_interfaceId == 0x01ffc9a7 || _interfaceId == 0x80ac58cd || _interfaceId == 0x8153916a) && (_interfaceId != 0xffffffff);
     }
         
     function name() public pure returns(string) {
@@ -499,7 +499,7 @@ contract WarToken is ERC721, AccessAdmin {
     {
         require(actionContracts[msg.sender]);
 
-        require(_tokenId >= 1 &amp;&amp; _tokenId <= fashionArray.length);
+        require(_tokenId >= 1 && _tokenId <= fashionArray.length);
         address owner = fashionIdToOwner[_tokenId];
         require(owner != address(0));
         require(_to != address(0));

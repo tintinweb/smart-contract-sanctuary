@@ -66,7 +66,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -76,7 +76,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -85,7 +85,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -113,7 +113,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -131,7 +131,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -175,7 +175,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -250,7 +250,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -499,7 +499,7 @@ contract GimmerTokenSale is Pausable {
     }
 
     // Variables
-    mapping(address =&gt; Supporter) public supportersMap; // Mapping with all the campaign supporters
+    mapping(address => Supporter) public supportersMap; // Mapping with all the campaign supporters
     GimmerToken public token; // ERC20 GMR Token contract address
     address public fundWallet; // Wallet address to forward all Ether to
     address public kycManagerWallet; // Wallet address that manages the approval of KYC
@@ -526,9 +526,9 @@ contract GimmerTokenSale is Pausable {
     uint256 public constant TOKEN_RATE_10_PERCENT_BONUS = 2750; // 10% Bonus Tokens During Crowd Sale&#39;s Week 3
     uint256 public constant TOKEN_RATE_15_PERCENT_BONUS = 2875; // 15% Bonus Tokens During Crowd Sale&#39;sWeek 2
     uint256 public constant TOKEN_RATE_20_PERCENT_BONUS = 3000; // 20% Bonus Tokens During Crowd Sale&#39;sWeek 1
-    uint256 public constant TOKEN_RATE_25_PERCENT_BONUS = 3125; // 25% Bonus Tokens, During PreSale when &gt;= 30 ETH &amp; &lt; 300 ETH
-    uint256 public constant TOKEN_RATE_30_PERCENT_BONUS = 3250; // 30% Bonus Tokens, During PreSale when &gt;= 300 ETH &amp; &lt; 3000 ETH
-    uint256 public constant TOKEN_RATE_40_PERCENT_BONUS = 3500; // 40% Bonus Tokens, During PreSale when &gt;= 3000 ETH
+    uint256 public constant TOKEN_RATE_25_PERCENT_BONUS = 3125; // 25% Bonus Tokens, During PreSale when >= 30 ETH & < 300 ETH
+    uint256 public constant TOKEN_RATE_30_PERCENT_BONUS = 3250; // 30% Bonus Tokens, During PreSale when >= 300 ETH & < 3000 ETH
+    uint256 public constant TOKEN_RATE_40_PERCENT_BONUS = 3500; // 40% Bonus Tokens, During PreSale when >= 3000 ETH
 
     /* Timestamps where investments are allowed */
     uint256 public constant PRE_SALE_START_TIME = 1525176000; // PreSale Start Time : UTC: Wednesday, 17 January 2018 12:00:00
@@ -580,8 +580,8 @@ contract GimmerTokenSale is Pausable {
     {
         require(_fundWallet != address(0));
         require(_kycManagerWallet != address(0));
-        require(_saleWeiLimitWithoutKYC &gt; 0);
-        require(_maxTxGas &gt; 0);
+        require(_saleWeiLimitWithoutKYC > 0);
+        require(_maxTxGas > 0);
 
         currentAddress = this;
 
@@ -603,7 +603,7 @@ contract GimmerTokenSale is Pausable {
         // Do not allow if gasprice is bigger than the maximum
         // This is for fair-chance for all contributors, so no one can
         // set a too-high transaction price and be able to buy earlier
-        require(tx.gasprice &lt;= maxTxGas);
+        require(tx.gasprice <= maxTxGas);
         // valid purchase identifies which stage the contract is at (PreState/Token Sale)
         // making sure were inside the contribution period and the user
         // is sending enough Wei for the stage&#39;s rules
@@ -619,9 +619,9 @@ contract GimmerTokenSale is Pausable {
         // look if we have not yet reached the cap
         uint256 totalTokensSold = tokensSold.add(newTokens);
         if (isCrowdSaleRunning()) {
-            require(totalTokensSold &lt;= GMR_TOKEN_SALE_CAP);
+            require(totalTokensSold <= GMR_TOKEN_SALE_CAP);
         } else if (isPreSaleRunning()) {
-            require(totalTokensSold &lt;= PRE_SALE_GMR_TOKEN_CAP);
+            require(totalTokensSold <= PRE_SALE_GMR_TOKEN_CAP);
         }
 
         // update supporter state
@@ -646,7 +646,7 @@ contract GimmerTokenSale is Pausable {
     */
     function finishContract() public onlyOwner {
         // make sure the contribution period has ended
-        require(now &gt; SALE_END_TIME);
+        require(now > SALE_END_TIME);
         require(!finished);
 
         finished = true;
@@ -664,7 +664,7 @@ contract GimmerTokenSale is Pausable {
     }
 
     function setSaleWeiLimitWithoutKYC(uint256 _newSaleWeiLimitWithoutKYC) public onlyKycManager {
-        require(_newSaleWeiLimitWithoutKYC &gt; 0);
+        require(_newSaleWeiLimitWithoutKYC > 0);
         saleWeiLimitWithoutKYC = _newSaleWeiLimitWithoutKYC;
     }
 
@@ -674,7 +674,7 @@ contract GimmerTokenSale is Pausable {
     * @param _newMaxTxGas The new maximum transaction cost
     */
     function updateMaxTxGas(uint256 _newMaxTxGas) public onlyKycManager {
-        require(_newMaxTxGas &gt; 0);
+        require(_newMaxTxGas > 0);
         maxTxGas = _newMaxTxGas;
     }
 
@@ -724,7 +724,7 @@ contract GimmerTokenSale is Pausable {
     * @return A boolean representing the state of the presale
     */
     function isPreSaleRunning() public constant returns (bool) {
-        return (now &gt;= PRE_SALE_START_TIME &amp;&amp; now &lt; PRE_SALE_END_TIME);
+        return (now >= PRE_SALE_START_TIME && now < PRE_SALE_END_TIME);
     }
 
     /**
@@ -732,7 +732,7 @@ contract GimmerTokenSale is Pausable {
     * @return A boolean representing the state of the crowd sale
     */
     function isCrowdSaleRunning() public constant returns (bool) {
-        return (now &gt;= START_WEEK_1 &amp;&amp; now &lt;= SALE_END_TIME);
+        return (now >= START_WEEK_1 && now <= SALE_END_TIME);
     }
 
     /**
@@ -740,7 +740,7 @@ contract GimmerTokenSale is Pausable {
     * @return A boolean representing if we are past the contribution date for this contract
     */
     function hasEnded() public constant returns (bool) {
-        return now &gt; SALE_END_TIME;
+        return now > SALE_END_TIME;
     }
 
     /**
@@ -748,7 +748,7 @@ contract GimmerTokenSale is Pausable {
     * @return A boolean representing if we are past the pre sale contribution dates
     */
     function hasPreSaleEnded() public constant returns (bool) {
-        return now &gt; PRE_SALE_END_TIME;
+        return now > PRE_SALE_END_TIME;
     }
 
     /**
@@ -773,15 +773,15 @@ contract GimmerTokenSale is Pausable {
      */
     function getRate(uint256 _weiAmount) internal constant returns (uint256) {
         if (isCrowdSaleRunning()) {
-            if (now &gt;= START_WEEK_4) { return TOKEN_RATE_05_PERCENT_BONUS; }
-            else if (now &gt;= START_WEEK_3) { return TOKEN_RATE_10_PERCENT_BONUS; }
-            else if (now &gt;= START_WEEK_2) { return TOKEN_RATE_15_PERCENT_BONUS; }
-            else if (now &gt;= START_WEEK_1) { return TOKEN_RATE_20_PERCENT_BONUS; }
+            if (now >= START_WEEK_4) { return TOKEN_RATE_05_PERCENT_BONUS; }
+            else if (now >= START_WEEK_3) { return TOKEN_RATE_10_PERCENT_BONUS; }
+            else if (now >= START_WEEK_2) { return TOKEN_RATE_15_PERCENT_BONUS; }
+            else if (now >= START_WEEK_1) { return TOKEN_RATE_20_PERCENT_BONUS; }
         }
         else if (isPreSaleRunning()) {
-            if (_weiAmount &gt;= PRE_SALE_1000_ETH) { return TOKEN_RATE_40_PERCENT_BONUS; }
-            else if (_weiAmount &gt;= PRE_SALE_300_ETH) { return TOKEN_RATE_30_PERCENT_BONUS; }
-            else if (_weiAmount &gt;= PRE_SALE_30_ETH) { return TOKEN_RATE_25_PERCENT_BONUS; }
+            if (_weiAmount >= PRE_SALE_1000_ETH) { return TOKEN_RATE_40_PERCENT_BONUS; }
+            else if (_weiAmount >= PRE_SALE_300_ETH) { return TOKEN_RATE_30_PERCENT_BONUS; }
+            else if (_weiAmount >= PRE_SALE_30_ETH) { return TOKEN_RATE_25_PERCENT_BONUS; }
         }
     }
 
@@ -794,15 +794,15 @@ contract GimmerTokenSale is Pausable {
             if(!userHasKyc) {
                 Supporter storage sup = supportersMap[msg.sender];
                 uint256 ethContribution = sup.weiSpent.add(msg.value);
-                if (ethContribution &gt; saleWeiLimitWithoutKYC) {
+                if (ethContribution > saleWeiLimitWithoutKYC) {
                     return false;
                 }
             }
-            return msg.value &gt;= MIN_ETHER;
+            return msg.value >= MIN_ETHER;
         }
         else if (isPreSaleRunning()) {
             // presale restrictions (at least 30 eth, always KYC)
-            return userHasKyc &amp;&amp; msg.value &gt;= PRE_SALE_30_ETH;
+            return userHasKyc && msg.value >= PRE_SALE_30_ETH;
         } else {
             return false;
         }

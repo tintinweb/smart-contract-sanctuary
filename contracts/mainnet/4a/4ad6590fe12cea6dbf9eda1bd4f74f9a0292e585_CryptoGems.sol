@@ -27,7 +27,7 @@ contract CryptoGems {
 
 	function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
 		uint256 allowance = allowed[_from][msg.sender];
-		require(balances[_from] >= _value &amp;&amp; allowance >= _value);
+		require(balances[_from] >= _value && allowance >= _value);
 		balances[_to] += _value;
 		balances[_from] -= _value;
 		if (allowance < MAX_UINT256) {
@@ -266,19 +266,19 @@ contract CryptoGems {
 		// require(msg.sender == miners[id].owner);
 
 		//working
-		if(miners[id].workBlock !=0 &amp;&amp; block.number - miners[id].workBlock <= miners[id].workDuration) {
+		if(miners[id].workBlock !=0 && block.number - miners[id].workBlock <= miners[id].workDuration) {
 			return 0;
 		}
 		//sleeping
-		if(miners[id].sleepBlock !=0 &amp;&amp; block.number - miners[id].sleepBlock <= miners[id].sleepDuration) {
+		if(miners[id].sleepBlock !=0 && block.number - miners[id].sleepBlock <= miners[id].sleepDuration) {
 			return 2;
 		}
 		//tired
-		if(miners[id].workBlock !=0 &amp;&amp; block.number - miners[id].workBlock > miners[id].workDuration &amp;&amp; miners[id].workBlock > miners[id].sleepBlock) {
+		if(miners[id].workBlock !=0 && block.number - miners[id].workBlock > miners[id].workDuration && miners[id].workBlock > miners[id].sleepBlock) {
 			return 1;
 		}
 		//ready
-		if(miners[id].sleepBlock !=0 &amp;&amp; block.number - miners[id].sleepBlock > miners[id].sleepDuration &amp;&amp; miners[id].sleepBlock > miners[id].workBlock) {
+		if(miners[id].sleepBlock !=0 && block.number - miners[id].sleepBlock > miners[id].sleepDuration && miners[id].sleepBlock > miners[id].workBlock) {
 			return 3;
 		}
 		return 3;

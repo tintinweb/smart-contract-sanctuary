@@ -2,7 +2,7 @@ pragma solidity ^0.4.19;
 
 /* Adapted from strings.sol created by Nick Johnson <<span class="__cf_email__" data-cfemail="93f2e1f2f0fbfdfaf7d3fdfce7f7fce7bdfdf6e7">[email&#160;protected]</span>>
  * Ref: https://github.com/Arachnid/solidity-stringutils/blob/2f6ca9accb48ae14c66f1437ec50ed19a0616f78/strings.sol
- * @title String &amp; slice utility library for Solidity contracts.
+ * @title String & slice utility library for Solidity contracts.
  * @author Nick Johnson <<span class="__cf_email__" data-cfemail="b2d3c0d3d1dadcdbd6f2dcddc6d6ddc69cdcd7c6">[email&#160;protected]</span>>
  */
 library strings {
@@ -162,7 +162,7 @@ library strings {
 
 /* Helper String Functions for Game Manager Contract
  * @title String Healpers
- * @author Fazri Zubair &amp; Farhan Khwaja (Lucid Sight, Inc.)
+ * @author Fazri Zubair & Farhan Khwaja (Lucid Sight, Inc.)
  */
 contract StringHelpers {
     using strings for *;
@@ -224,12 +224,12 @@ contract ERC721 {
 
 /* Controls game play state and access rights for game functions
  * @title Operational Control
- * @author Fazri Zubair &amp; Farhan Khwaja (Lucid Sight, Inc.)
+ * @author Fazri Zubair & Farhan Khwaja (Lucid Sight, Inc.)
  * Inspired and adapted from contract created by OpenZeppelin
  * Ref: https://github.com/OpenZeppelin/zeppelin-solidity/
  */
 contract OperationalControl {
-    // Facilitates access &amp; control for the game.
+    // Facilitates access & control for the game.
     // Roles:
     //  -The Game Managers (Primary/Secondary): Has universal control of all game elements (No ability to withdraw)
     //  -The Banker: The Bank can withdraw funds and adjust fees / prices.
@@ -245,7 +245,7 @@ contract OperationalControl {
     // @dev Keeps track whether the contract is paused. When that is true, most actions are blocked
     bool public paused = false;
 
-    // @dev Keeps track whether the contract erroredOut. When that is true, most actions are blocked &amp; refund can be claimed
+    // @dev Keeps track whether the contract erroredOut. When that is true, most actions are blocked & refund can be claimed
     bool public error = false;
 
     /// @dev Operation modifiers for limiting access
@@ -400,7 +400,7 @@ contract CSCCollectibleBase is ERC721, OperationalControl, StringHelpers {
   function supportsInterface(bytes4 _interfaceID) external view returns (bool)
   {
       // DEBUG ONLY
-      //require((InterfaceSignature_ERC165 == 0x01ffc9a7) &amp;&amp; (InterfaceSignature_ERC721 == 0x9a20483d));
+      //require((InterfaceSignature_ERC165 == 0x01ffc9a7) && (InterfaceSignature_ERC721 == 0x9a20483d));
       return ((_interfaceID == InterfaceSignature_ERC165) || (_interfaceID == InterfaceSignature_ERC721));
   }
 
@@ -613,14 +613,14 @@ contract CSCCollectibleBase is ERC721, OperationalControl, StringHelpers {
 
 /* Lucid Sight, Inc. ERC-721 CSC Collectilbe Sale Contract. 
  * @title CSCCollectibleSale
- * @author Fazri Zubair &amp; Farhan Khwaja (Lucid Sight, Inc.)
+ * @author Fazri Zubair & Farhan Khwaja (Lucid Sight, Inc.)
  */
 contract CSCCollectibleSale is CSCCollectibleBase {
   event SaleWinner(address owner, uint256 collectibleId, uint256 buyingPrice);
   event CollectibleBidSuccess(address owner, uint256 collectibleId, uint256 newBidPrice, bool isActive);
   event SaleCreated(uint256 tokenID, uint256 startingPrice, uint256 endingPrice, uint256 duration, uint64 startedAt, bool isActive, uint256 bidPrice);
 
-  //  SHIP DATATYPES &amp; CONSTANTS
+  //  SHIP DATATYPES & CONSTANTS
   struct CollectibleSale {
     // Current owner of NFT (ERC721)
     address seller;
@@ -647,7 +647,7 @@ contract CSCCollectibleSale is CSCCollectibleBase {
     uint256 tokenId;
   }
 
-  // @dev ship Prices &amp; price cap
+  // @dev ship Prices & price cap
   uint256 public constant SALE_DURATION = 2592000;
   
   /// mapping holding details of the last person who had a successfull bid. used for giving back the last bid price until the asset is bought
@@ -739,7 +739,7 @@ contract CSCCollectibleSale is CSCCollectibleBase {
 
   /// @dev Returns true if the FT (ERC721) is on sale.
   function _isOnSale(CollectibleSale memory _sale) internal view returns (bool) {
-      return (_sale.startedAt > 0 &amp;&amp; _sale.isActive);
+      return (_sale.startedAt > 0 && _sale.isActive);
   }
 
   /// @dev Returns current price of a Collectible (ERC721) on sale. Broken into two
@@ -886,7 +886,7 @@ contract CSCCollectibleSale is CSCCollectibleBase {
 
 /* Lucid Sight, Inc. ERC-721 Collectibles. 
  * @title LSNFT - Lucid Sight, Inc. Non-Fungible Token
- * @author Fazri Zubair &amp; Farhan Khwaja (Lucid Sight, Inc.)
+ * @author Fazri Zubair & Farhan Khwaja (Lucid Sight, Inc.)
  */
 contract CSCRarePreSaleManager is CSCCollectibleSale {
   event RefundClaimed(address owner);

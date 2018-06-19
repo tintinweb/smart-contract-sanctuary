@@ -22,7 +22,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -32,7 +32,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -41,7 +41,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -123,8 +123,8 @@ contract ERC20Token is ERC20Interface {
 
     using SafeMath for uint;
 
-    mapping (address =&gt; uint) balances;
-    mapping (address =&gt; mapping (address =&gt; uint)) allowed;
+    mapping (address => uint) balances;
+    mapping (address => mapping (address => uint)) allowed;
 
     function balanceOf(address _owner) public constant returns (uint balance) {
         return balances[_owner];
@@ -136,7 +136,7 @@ contract ERC20Token is ERC20Interface {
 
     function approve(address _spender, uint _value) public returns (bool) {
         require((_value == 0) || (allowed[msg.sender][_spender] == 0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
         return true;
@@ -156,7 +156,7 @@ contract ERC20Token is ERC20Interface {
 
     function _transferFrom(address _from, address _to, uint _value) internal {
         require(_to != address(0)); // Use burnTokens for this case
-        require(_value &gt; 0);
+        require(_value > 0);
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
         Transfer(_from, _to, _value);
@@ -282,7 +282,7 @@ contract LEN is ERC20Token, Ownable {
      * @return A boolean that indicates if the operation was successful
      */
     function burnTokens(uint _value) public returns (bool success) {
-        require(balances[msg.sender] &gt;= _value);
+        require(balances[msg.sender] >= _value);
         totalSupply = totalSupply.sub(_value);
         balances[msg.sender] = balances[msg.sender].sub(_value);
         Burn(msg.sender, _value);
@@ -297,9 +297,9 @@ contract LEN is ERC20Token, Ownable {
      * @return A boolean that indicates if the operation was successful
      */
     function burnFrom(address _from, uint _value) public returns (bool success) {
-        require(_value &gt; 0);
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value > 0);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
 
         balances[_from] = balances[_from].sub(_value);
         allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
@@ -315,7 +315,7 @@ contract LEN is ERC20Token, Ownable {
              //retrieve the size of the code on target address, this needs assembly
              length := extcodesize(_addr)
         }
-        return (length &gt; 0);
+        return (length > 0);
      }
 
    /**

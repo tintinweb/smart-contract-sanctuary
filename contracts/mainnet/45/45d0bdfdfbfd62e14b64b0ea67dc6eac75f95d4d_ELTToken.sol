@@ -55,7 +55,7 @@ contract ContractReceiver {
         tkn.sender = _from;
         tkn.value = _value;
         tkn.data = _data;
-        uint32 u = uint32(_data[3]) + (uint32(_data[2]) &lt;&lt; 8) + (uint32(_data[1]) &lt;&lt; 16) + (uint32(_data[0]) &lt;&lt; 24);
+        uint32 u = uint32(_data[3]) + (uint32(_data[2]) << 8) + (uint32(_data[1]) << 16) + (uint32(_data[0]) << 24);
         tkn.sig = bytes4(u);
 
         /* tkn variable is analogue of msg variable of Ether transaction
@@ -80,20 +80,20 @@ library SafeMath {
     }
 
     function div(uint a, uint b) internal pure returns (uint) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint a, uint b) internal pure returns (uint) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -109,10 +109,10 @@ contract ELTTokenType {
     uint public decimals;
     uint public totalSupply;
 
-    mapping(address =&gt; uint) balances;
+    mapping(address => uint) balances;
 
-    mapping(address =&gt; uint) timevault;
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => uint) timevault;
+    mapping(address => mapping(address => uint)) allowed;
 
     // Token release switch
     bool public released;
@@ -178,7 +178,7 @@ contract ERC20Token is ERC20Interface, ERC223Interface, ELTTokenType {
         //retrieve the size of the code on target address, this needs assembly
             length := extcodesize(_addr)
         }
-        return (length &gt; 0);
+        return (length > 0);
     }
 
 
@@ -205,12 +205,12 @@ contract ERC20Token is ERC20Interface, ERC223Interface, ELTTokenType {
     function checkTransferRequirements(address _to, uint _value) private view {
         require(_to != address(0));
         require(released == true);
-        require(now &gt; globalTimeVault);
+        require(now > globalTimeVault);
         if (timevault[msg.sender] != 0)
         {
-            require(now &gt; timevault[msg.sender]);
+            require(now > timevault[msg.sender]);
         }
-        require(balanceOf(msg.sender) &gt;= _value);
+        require(balanceOf(msg.sender) >= _value);
     }
 
     // Do the transfer if the requirements are met
@@ -218,7 +218,7 @@ contract ERC20Token is ERC20Interface, ERC223Interface, ELTTokenType {
         checkTransferRequirements(_to, _value);
         if ( withAllowances)
         {
-            require (_value &lt;= allowed[_from][msg.sender]);
+            require (_value <= allowed[_from][msg.sender]);
         }
         balances[_from] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -269,7 +269,7 @@ contract StandardToken is TimeVaultToken {
 
     function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool success) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);

@@ -5,7 +5,7 @@ contract VernamWhiteListDeposit {
 	
 	address public benecifiary;
 	
-	mapping (address =&gt; bool) public isWhiteList;
+	mapping (address => bool) public isWhiteList;
 	uint256 public constant depositAmount = 10000000000000000 wei;   // 0.01 ETH
 	
 	uint256 public constant maxWiteList = 9960;					// maximum 10 000 whitelist participant
@@ -20,9 +20,9 @@ contract VernamWhiteListDeposit {
 	
 	event WhiteListSuccess(address indexed _whiteListParticipant, uint256 _amount);
 	function() public payable {
-		require(participants.length &lt;= maxWiteList);               //check does have more than 10 000 whitelist
-		require(block.timestamp &lt;= deadLine);					   // check does whitelist period over
-		require(msg.value &gt;= depositAmount);					
+		require(participants.length <= maxWiteList);               //check does have more than 10 000 whitelist
+		require(block.timestamp <= deadLine);					   // check does whitelist period over
+		require(msg.value >= depositAmount);					
 		require(!isWhiteList[msg.sender]);							// can&#39;t whitelist twice
 		
 		benecifiary.transfer(msg.value);							// transfer the money

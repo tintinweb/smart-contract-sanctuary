@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 
 /*
-    Utilities &amp; Common Modifiers
+    Utilities & Common Modifiers
 */
 contract Utils {
     /**
@@ -12,7 +12,7 @@ contract Utils {
 
     // verifies that an amount is greater than zero
     modifier greaterThanZero(uint256 _amount) {
-        require(_amount &gt; 0);
+        require(_amount > 0);
         _;
     }
 
@@ -40,7 +40,7 @@ contract Utils {
     */
     function safeAdd(uint256 _x, uint256 _y) internal pure returns (uint256) {
         uint256 z = _x + _y;
-        assert(z &gt;= _x);
+        assert(z >= _x);
         return z;
     }
 
@@ -53,7 +53,7 @@ contract Utils {
         @return difference
     */
     function safeSub(uint256 _x, uint256 _y) internal pure returns (uint256) {
-        assert(_x &gt;= _y);
+        assert(_x >= _y);
         return _x - _y;
     }
 
@@ -154,8 +154,8 @@ contract ERC20Token is IERC20Token, Utils {
     string public symbol = &#39;&#39;;
     uint8 public decimals = 0;
     uint256 public totalSupply = 0;
-    mapping (address =&gt; uint256) public balanceOf;
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => uint256) public balanceOf;
+    mapping (address => mapping (address => uint256)) public allowance;
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
@@ -168,7 +168,7 @@ contract ERC20Token is IERC20Token, Utils {
         @param _decimals    decimal points, for display purposes
     */
     function ERC20Token(string _name, string _symbol, uint8 _decimals) public {
-        require(bytes(_name).length &gt; 0 &amp;&amp; bytes(_symbol).length &gt; 0); // validate input
+        require(bytes(_name).length > 0 && bytes(_symbol).length > 0); // validate input
 
         name = _name;
         symbol = _symbol;

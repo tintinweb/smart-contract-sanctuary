@@ -110,7 +110,7 @@ contract BlupassToken is ERC20Interface {
     // - 0 value transfers are allowed
     // ------------------------------------------------------------------------
     function transfer(address to, uint tokens) public returns (bool success) {
-        if(balances[msg.sender] >= tokens &amp;&amp; tokens > 0 &amp;&amp; to != address(0)) {
+        if(balances[msg.sender] >= tokens && tokens > 0 && to != address(0)) {
             balances[msg.sender] = balances[msg.sender].sub(tokens);
             balances[to] = balances[to].add(tokens);
             emit Transfer(msg.sender, to, tokens);
@@ -128,7 +128,7 @@ contract BlupassToken is ERC20Interface {
     // as this should be implemented in user interfaces 
     // ------------------------------------------------------------------------
     function approve(address spender, uint tokens) public returns (bool success) {
-        if(tokens > 0 &amp;&amp; spender != address(0)) {
+        if(tokens > 0 && spender != address(0)) {
             allowed[msg.sender][spender] = tokens;
             emit Approval(msg.sender, spender, tokens);
             return true;
@@ -146,7 +146,7 @@ contract BlupassToken is ERC20Interface {
     // - 0 value transfers are allowed
     // ------------------------------------------------------------------------
     function transferFrom(address from, address to, uint tokens) public returns (bool success) {
-        if (balances[from] >= tokens &amp;&amp; allowed[from][msg.sender] >= tokens &amp;&amp; tokens > 0) {
+        if (balances[from] >= tokens && allowed[from][msg.sender] >= tokens && tokens > 0) {
             balances[from] = balances[from].sub(tokens);
             allowed[from][msg.sender] = allowed[from][msg.sender].sub(tokens);
             balances[to] = balances[to].add(tokens);

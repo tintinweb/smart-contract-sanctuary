@@ -174,20 +174,20 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
     }
 
     function checkCrowdsaleState() internal returns (bool) {
-        if (tokensIssued == maxCap &amp;&amp; crowdsaleState != state.crowdsaleEnded) {
+        if (tokensIssued == maxCap && crowdsaleState != state.crowdsaleEnded) {
             crowdsaleState = state.crowdsaleEnded;
             emit CrowdsaleEnded(block.number);
             return true;
         }
 
-        if (block.number >= crowdsaleStartBlock &amp;&amp; block.number <= crowdsaleEndedBlock) {
+        if (block.number >= crowdsaleStartBlock && block.number <= crowdsaleEndedBlock) {
             if (crowdsaleState != state.crowdsale) {
                 crowdsaleState = state.crowdsale;
                 emit CrowdsaleStarted(block.number);
                 return true;
             }
         } else {
-            if (crowdsaleState != state.crowdsaleEnded &amp;&amp; block.number > crowdsaleEndedBlock) {
+            if (crowdsaleState != state.crowdsaleEnded && block.number > crowdsaleEndedBlock) {
                 crowdsaleState = state.crowdsaleEnded;
                 emit CrowdsaleEnded(block.number);
                 return true;
@@ -239,7 +239,7 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
         uint returnAmount = 0;
         uint tokensToGive = 0;
 
-        if (block.number < crowdsaleStartBlock + startPhaseLength &amp;&amp; _amount > startPhaseMaximumcontribution) {
+        if (block.number < crowdsaleStartBlock + startPhaseLength && _amount > startPhaseMaximumcontribution) {
             contributionAmount = startPhaseMaximumcontribution;
             returnAmount = _amount - startPhaseMaximumcontribution;
         } else {
@@ -284,7 +284,7 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
     }
 
     function claimEthIfFailed() public {
-        require(block.number > crowdsaleEndedBlock &amp;&amp; tokensIssued < minCap);
+        require(block.number > crowdsaleEndedBlock && tokensIssued < minCap);
         require(contributorList[msg.sender].contributionAmount > 0);
         require(!hasClaimedEthWhenFail[msg.sender]);
 
@@ -296,7 +296,7 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
     }
 
     function batchReturnEthIfFailed(uint _numberOfReturns) onlyOwner public {
-        require(block.number > crowdsaleEndedBlock &amp;&amp; tokensIssued < minCap);
+        require(block.number > crowdsaleEndedBlock && tokensIssued < minCap);
         address currentParticipantAddress;
         uint contribution;
         for (uint cnt = 0; cnt < _numberOfReturns; cnt++) {
@@ -368,7 +368,7 @@ contract ERC20Token is ERC20TokenInterface, SafeMath, Owned, Lockable {
     }
 
     function transfer(address _to, uint256 _value) lockAffected public returns (bool success) {
-        require(_to != 0x0 &amp;&amp; _to != address(this));
+        require(_to != 0x0 && _to != address(this));
         balances[msg.sender] = safeSub(balanceOf(msg.sender), _value);
         balances[_to] = safeAdd(balanceOf(_to), _value);
         emit Transfer(msg.sender, _to, _value);
@@ -389,7 +389,7 @@ contract ERC20Token is ERC20TokenInterface, SafeMath, Owned, Lockable {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) lockAffected public returns (bool success) {
-        require(_to != 0x0 &amp;&amp; _to != address(this));
+        require(_to != 0x0 && _to != address(this));
         balances[_from] = safeSub(balanceOf(_from), _value);
         balances[_to] = safeAdd(balanceOf(_to), _value);
         allowances[_from][msg.sender] = safeSub(allowances[_from][msg.sender], _value);

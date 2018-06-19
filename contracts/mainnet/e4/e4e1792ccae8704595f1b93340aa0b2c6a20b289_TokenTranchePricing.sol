@@ -252,7 +252,7 @@ contract Haltable is Ownable {
   }
 
   modifier stopNonOwnersInEmergency {
-    if (halted &amp;&amp; msg.sender != owner) throw;
+    if (halted && msg.sender != owner) throw;
     _;
   }
 
@@ -696,9 +696,9 @@ contract CrowdsaleBase is Haltable {
     else if (!finalizeAgent.isSane()) return State.Preparing;
     else if (!pricingStrategy.isSane(address(this))) return State.Preparing;
     else if (block.timestamp < startsAt) return State.PreFunding;
-    else if (block.timestamp <= endsAt &amp;&amp; !isCrowdsaleFull()) return State.Funding;
+    else if (block.timestamp <= endsAt && !isCrowdsaleFull()) return State.Funding;
     else if (isMinimumGoalReached()) return State.Success;
-    else if (!isMinimumGoalReached() &amp;&amp; weiRaised > 0 &amp;&amp; loadedRefund >= weiRaised) return State.Refunding;
+    else if (!isMinimumGoalReached() && weiRaised > 0 && loadedRefund >= weiRaised) return State.Refunding;
     else return State.Failure;
   }
 
@@ -975,7 +975,7 @@ contract TokenTranchePricing is PricingStrategy, Ownable {
       tranches[i].price = _tranches[i*2+1];
 
       // No invalid steps
-      if((highestAmount != 0) &amp;&amp; (tranches[i].amount <= highestAmount)) {
+      if((highestAmount != 0) && (tranches[i].amount <= highestAmount)) {
         throw;
       }
 

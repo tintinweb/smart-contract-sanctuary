@@ -18,7 +18,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -28,7 +28,7 @@ library SafeMath {
     * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -37,7 +37,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -93,7 +93,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic, Ownable {
     using SafeMath for uint256;
 
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
 
     uint256 maxSupply_;
     uint256 totalSupply_;
@@ -121,7 +121,7 @@ contract BasicToken is ERC20Basic, Ownable {
     */
     function transfer(address _to, uint256 _value) onlyPayloadSize(2) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
 
         // SafeMath.sub will throw if there is not enough balance.
         balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -135,11 +135,11 @@ contract BasicToken is ERC20Basic, Ownable {
         // Prevent transfer to 0x0 address. Use burn() instead
         require(_to != address(0));
         // Check value more than 0
-        require(_value &gt; 0);
+        require(_value > 0);
         // Check if the sender has enough
-        require(balances[_from] &gt;= _value);
+        require(balances[_from] >= _value);
         // Check for overflows
-        require(balances[_to] + _value &gt; balances[_to]);
+        require(balances[_to] + _value > balances[_to]);
         // Save this for an assertion in the future
         uint256 previousBalances = balances[_from] + balances[_to];
         // Subtract from the sender
@@ -163,8 +163,8 @@ contract BasicToken is ERC20Basic, Ownable {
 
     function mintToken(address _target, uint256 _mintedAmount) onlyOwner public {
         require(_target != address(0));
-        require(_mintedAmount &gt; 0);
-        require(maxSupply_ &gt; 0 &amp;&amp; totalSupply_.add(_mintedAmount) &lt;= maxSupply_);
+        require(_mintedAmount > 0);
+        require(maxSupply_ > 0 && totalSupply_.add(_mintedAmount) <= maxSupply_);
         balances[_target] = balances[_target].add(_mintedAmount);
         totalSupply_ = totalSupply_.add(_mintedAmount);
         Transfer(0, _target, _mintedAmount);
@@ -210,7 +210,7 @@ library SafeERC20 {
 
 contract StandardToken is ERC20, BasicToken {
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping (address => mapping (address => uint256)) internal allowed;
 
 
     /**
@@ -221,8 +221,8 @@ contract StandardToken is ERC20, BasicToken {
      */
     function transferFrom(address _from, address _to, uint256 _value) onlyPayloadSize(3) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -285,7 +285,7 @@ contract StandardToken is ERC20, BasicToken {
      */
     function decreaseApproval(address _spender, uint _subtractedValue) onlyPayloadSize(2) public returns (bool) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -366,8 +366,8 @@ contract CBS is StandardToken, CanReclaimToken {
     function BuyTokens(uint256 _value)  internal {
         tokens = _value.div(buyPrice).mul(100);
         require(allowBuy);
-        require(_value &gt; 0 &amp;&amp; _value &gt;= buyPrice &amp;&amp; tokens &gt; 0);
-        require(balances[owner] &gt;= tokens);
+        require(_value > 0 && _value >= buyPrice && tokens > 0);
+        require(balances[owner] >= tokens);
 
         super.transferByInternal(owner, msg.sender, tokens);
         contractEth = contractEth.add(_value);
@@ -375,7 +375,7 @@ contract CBS is StandardToken, CanReclaimToken {
     }
 
     function transferEther(address _to, uint256 _value) onlyOwner public returns (bool) {
-        require(_value &lt;= contractEth);
+        require(_value <= contractEth);
         _to.transfer(_value);
         contractEth = contractEth.sub(_value);
         TransferContractEth(_to, _value);
@@ -387,8 +387,8 @@ contract CBS is StandardToken, CanReclaimToken {
     function sellTokens(uint256 _value) public returns (bool) {
         uint256 sellEth;
         require(allowSell);
-        require(_value &gt; 0);
-        require(balances[msg.sender] &gt;= _value);
+        require(_value > 0);
+        require(balances[msg.sender] >= _value);
         if (sellPrice == 0){
             sellEth = 0;
         }

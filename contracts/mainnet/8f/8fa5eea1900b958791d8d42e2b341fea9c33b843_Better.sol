@@ -87,7 +87,7 @@ contract Better{
         uint devTax= SafeMath.div(msg.value,DEV_TAX_DIVISOR);
         uint finalValue=SafeMath.sub(msg.value,devTax);
         
-        assert(finalValue>0 &amp;&amp; devTax>0);
+        assert(finalValue>0 && devTax>0);
         
         creatorAddr.transfer(devTax);
         

@@ -44,8 +44,8 @@ contract _ERC20Pool {
 
   address public owner = msg.sender;
   uint32 public totalTokenSupply;
-  mapping (address =&gt; uint32) public minerTokens;
-  mapping (address =&gt; uint32) public minerTokenPayouts;
+  mapping (address => uint32) public minerTokens;
+  mapping (address => uint32) public minerTokenPayouts;
 
   // Modifier for important owner only functions
   modifier onlyOwner() {
@@ -55,14 +55,14 @@ contract _ERC20Pool {
 
   // Require that the caller actually has tokens to withdraw.
   modifier hasTokens(address sentFrom) {
-    require(minerTokens[sentFrom] &gt; 0);
+    require(minerTokens[sentFrom] > 0);
     _;
   }
 
   // Pool software updates the contract when it finds a reward
   function addMinerTokens(uint32 totalTokensInBatch, address[] minerAddress, uint32[] minerRewardTokens) public onlyOwner {
     totalTokenSupply += totalTokensInBatch;
-    for (uint i = 0; i &lt; minerAddress.length; i ++) {
+    for (uint i = 0; i < minerAddress.length; i ++) {
       minerTokens[minerAddress[i]] += minerRewardTokens[i];
     }
   }

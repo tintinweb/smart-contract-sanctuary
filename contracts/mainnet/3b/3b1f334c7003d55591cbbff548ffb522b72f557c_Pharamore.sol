@@ -285,9 +285,9 @@ contract Pharamore is ERC20, SafeMath {
         // Once it is unlocked, it is unlocked forever and no one can lock again
         require(unlocked);
         // Protect against wrapping uints.
-        require(balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value &amp;&amp; balances[_to] + _value > balances[_to]);
+        require(balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value > balances[_to]);
         uint256 allowance = allowed[_from][msg.sender];
-        require(balances[_from] >= _value &amp;&amp; allowance >= _value);
+        require(balances[_from] >= _value && allowance >= _value);
         balances[_to] = safeAdd(balanceOf(_to), _value);
         balances[_from] = safeSub(balanceOf(_from), _value);
         if (allowance < MAX_UINT256) {

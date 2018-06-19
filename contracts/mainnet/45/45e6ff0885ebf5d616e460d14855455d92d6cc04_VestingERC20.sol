@@ -40,20 +40,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal constant returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal constant returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -71,20 +71,20 @@ library SafeMath64 {
   }
 
   function div(uint64 a, uint64 b) internal constant returns (uint64) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint64 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint64 a, uint64 b) internal constant returns (uint64) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint64 a, uint64 b) internal constant returns (uint64) {
     uint64 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -108,11 +108,11 @@ contract VestingERC20 {
         uint256 withdrawnAmount;
     }
 
-    // list of the grants (token =&gt; granter =&gt; vester =&gt; Grant).
-    mapping(address =&gt; mapping(address =&gt; mapping(address =&gt; Grant))) public grantPerTokenGranterVester;
+    // list of the grants (token => granter => vester => Grant).
+    mapping(address => mapping(address => mapping(address => Grant))) public grantPerTokenGranterVester;
 
-    // Ledger of the tokens hodled (this not a typo ;) ) in this contract (token =&gt; user =&gt; balance).
-    mapping(address =&gt; mapping(address =&gt; uint256)) private balancePerPersonPerToken;
+    // Ledger of the tokens hodled (this not a typo ;) ) in this contract (token => user => balance).
+    mapping(address => mapping(address => uint256)) private balancePerPersonPerToken;
 
 
     event NewGrant(address granter, address vester, address token, uint256 vestedAmount, uint64 startTime, uint64 cliffTime, uint64 endTime);
@@ -144,9 +144,9 @@ contract VestingERC20 {
     {
         require(_token != 0);
         require(_vester != 0);
-        require(_cliffPeriod &lt;= _grantPeriod);
+        require(_cliffPeriod <= _grantPeriod);
         require(_vestedAmount != 0);
-        require(_grantPeriod==0 || _vestedAmount * _grantPeriod &gt;= _vestedAmount); // no overflow allow here! (to make getBalanceVestingInternal safe).
+        require(_grantPeriod==0 || _vestedAmount * _grantPeriod >= _vestedAmount); // no overflow allow here! (to make getBalanceVestingInternal safe).
 
         // verify that there is not already a grant between the addresses for this specific contract.
         require(grantPerTokenGranterVester[_token][msg.sender][_vester].vestedAmount==0);
@@ -278,12 +278,12 @@ contract VestingERC20 {
         constant
         returns(uint256)
     {
-        if(now &lt; _grant.cliffTime) 
+        if(now < _grant.cliffTime) 
         {
             // the grant didn&#39;t start 
             return 0;
         }
-        else if(now &gt;= _grant.endTime)
+        else if(now >= _grant.endTime)
         {
             // after the end of the grant release everything
             return _grant.vestedAmount.sub(_grant.withdrawnAmount);
@@ -291,7 +291,7 @@ contract VestingERC20 {
         else
         {
             //  token available = vestedAmount * (now - startTime) / (endTime - startTime)  - withdrawnAmount
-            //  =&gt; in other words : (number_of_token_granted_per_second * second_since_grant_started) - amount_already_withdraw
+            //  => in other words : (number_of_token_granted_per_second * second_since_grant_started) - amount_already_withdraw
             return _grant.vestedAmount.mul( 
                         now.sub(_grant.startTime)
                     ).div(

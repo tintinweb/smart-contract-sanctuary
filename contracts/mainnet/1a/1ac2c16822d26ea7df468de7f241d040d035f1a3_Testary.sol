@@ -258,7 +258,7 @@ contract Testary is Ownable {
     }
 
     modifier saleIsOn() {
-    	require(now > start_ico &amp;&amp; now < start_ico + period * 1 days);
+    	require(now > start_ico && now < start_ico + period * 1 days);
     	_;
     }
 	

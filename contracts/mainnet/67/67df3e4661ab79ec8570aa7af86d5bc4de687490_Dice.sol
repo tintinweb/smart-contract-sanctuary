@@ -546,12 +546,12 @@ contract usingOraclize {
             iaddr *= 256;
             b1 = uint160(tmp[i]);
             b2 = uint160(tmp[i+1]);
-            if ((b1 >= 97)&amp;&amp;(b1 <= 102)) b1 -= 87;
-            else if ((b1 >= 65)&amp;&amp;(b1 <= 70)) b1 -= 55;
-            else if ((b1 >= 48)&amp;&amp;(b1 <= 57)) b1 -= 48;
-            if ((b2 >= 97)&amp;&amp;(b2 <= 102)) b2 -= 87;
-            else if ((b2 >= 65)&amp;&amp;(b2 <= 70)) b2 -= 55;
-            else if ((b2 >= 48)&amp;&amp;(b2 <= 57)) b2 -= 48;
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 65)&&(b1 <= 70)) b1 -= 55;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 65)&&(b2 <= 70)) b2 -= 55;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
             iaddr += (b1*16+b2);
         }
         return address(iaddr);
@@ -590,7 +590,7 @@ contract usingOraclize {
                 if (h[i] == n[0])
                 {
                     subindex = 1;
-                    while(subindex < n.length &amp;&amp; (i + subindex) < h.length &amp;&amp; h[i + subindex] == n[subindex])
+                    while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
                     {
                         subindex++;
                     }
@@ -642,7 +642,7 @@ contract usingOraclize {
         uint mint = 0;
         bool decimals = false;
         for (uint i=0; i<bresult.length; i++){
-            if ((bresult[i] >= 48)&amp;&amp;(bresult[i] <= 57)){
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
                 if (decimals){
                    if (_b == 0) break;
                     else _b--;
@@ -1045,7 +1045,7 @@ contract usingOraclize {
         if (v < 27)
           v += 27;
 
-        if (v != 27 &amp;&amp; v != 28)
+        if (v != 27 && v != 28)
             return (false, 0);
 
         return safer_ecrecover(hash, v, r, s);
@@ -1119,7 +1119,7 @@ contract Dice is usingOraclize {
     }
 
     modifier onlyBetCanCancel(uint betid) {
-        if((bets[betid].betState != BET_STATE_WAITPAIR)&amp;&amp;
+        if((bets[betid].betState != BET_STATE_WAITPAIR)&&
         (bets[betid].betState != BET_STATE_WAITORACLIZE)
         ) throw;//Cannot cancel
         _;
@@ -1254,7 +1254,7 @@ contract Dice is usingOraclize {
 
         //Start matching if there is pending bet that not from you
         uint waitpairbetid = waitPairBetIDs[betpriceid];
-        if ((waitpairbetid != INVALID_BET_ID )&amp;&amp;(bets[waitpairbetid].playerAddressA != msg.sender)){
+        if ((waitpairbetid != INVALID_BET_ID )&&(bets[waitpairbetid].playerAddressA != msg.sender)){
 
             bets[waitpairbetid].betState = BET_STATE_WAITORACLIZE;
             bets[waitpairbetid].playerAddressB = msg.sender;
@@ -1309,7 +1309,7 @@ contract Dice is usingOraclize {
     {
 
         for(uint i = betid+1 ; i< bets.length ; i++){
-            if( ( bets[i].betPrice == betPrices[betpriceid])&amp;&amp;(bets[i].betState == BET_STATE_WAITPAIR)){
+            if( ( bets[i].betPrice == betPrices[betpriceid])&&(bets[i].betState == BET_STATE_WAITPAIR)){
                 waitPairBetIDs[betpriceid] = i;
                 return;
             }
@@ -1347,7 +1347,7 @@ contract Dice is usingOraclize {
             //The left 8 digits is A’s result and the right 8 digits is B’s result
             //The bigger number wins; equal means a draw
             uint randomA = randomNumber >> 8;
-            uint randomB = randomNumber &amp; 0x00FF;
+            uint randomB = randomNumber & 0x00FF;
             
             //Save Bet Result
             bets[betid].numberRolled = randomNumber;

@@ -365,7 +365,7 @@ contract ReleaseToken is OwnerContract {
         uint256 i = 0;
         while (i < len) {
             address target = frozenAccounts[i];
-            if (frozenTimes[target].length == 1 &amp;&amp; frozenTimes[target][0].endTime == frozenTimes[target][0].releasePeriodEndTime &amp;&amp; frozenTimes[target][0].endTime > 0 &amp;&amp; now >= frozenTimes[target][0].endTime) {
+            if (frozenTimes[target].length == 1 && frozenTimes[target][0].endTime == frozenTimes[target][0].releasePeriodEndTime && frozenTimes[target][0].endTime > 0 && now >= frozenTimes[target][0].endTime) {
                 uint256 releasedAmount = frozenTimes[target][0].amount;
 
                 // remove current release period time record
@@ -411,7 +411,7 @@ contract ReleaseToken is OwnerContract {
         while (i < len) {
             address destAddr = frozenAccounts[i];
             if (destAddr == _target) {
-                if (frozenTimes[destAddr].length == 1 &amp;&amp; frozenTimes[destAddr][0].endTime == frozenTimes[destAddr][0].releasePeriodEndTime &amp;&amp; frozenTimes[destAddr][0].endTime > 0 &amp;&amp; now >= frozenTimes[destAddr][0].endTime) {
+                if (frozenTimes[destAddr].length == 1 && frozenTimes[destAddr][0].endTime == frozenTimes[destAddr][0].releasePeriodEndTime && frozenTimes[destAddr][0].endTime > 0 && now >= frozenTimes[destAddr][0].endTime) {
                     uint256 releasedAmount = frozenTimes[destAddr][0].amount;
 
                     // remove current release period time record
@@ -472,7 +472,7 @@ contract ReleaseToken is OwnerContract {
                 for (uint256 j = 0; j < timeRecLen; released = false) {
                     // iterate every time records to caculate how many tokens need to be released.
                     TimeRec storage timePair = frozenTimes[frozenAddr][j];
-                    if (nowTime > timePair.endTime &amp;&amp; timePair.endTime > 0 &amp;&amp; timePair.releasePeriodEndTime > timePair.endTime) {
+                    if (nowTime > timePair.endTime && timePair.endTime > 0 && timePair.releasePeriodEndTime > timePair.endTime) {
                         uint256 lastReleased = timePair.amount.sub(timePair.remain);
                         uint256 value = (timePair.amount * nowTime.sub(timePair.endTime) / timePair.releasePeriodEndTime.sub(timePair.endTime)).sub(lastReleased);
                         if (value > timePair.remain) {
@@ -490,7 +490,7 @@ contract ReleaseToken is OwnerContract {
                             released = true;
                             timeRecLen = timeRecLen.sub(1);
                         }
-                    } else if (nowTime >= timePair.endTime &amp;&amp; timePair.endTime > 0 &amp;&amp; timePair.releasePeriodEndTime == timePair.endTime) {
+                    } else if (nowTime >= timePair.endTime && timePair.endTime > 0 && timePair.releasePeriodEndTime == timePair.endTime) {
                         timePair.remain = 0;
                         ReleaseFunds(frozenAddr, timePair.amount);
                         preReleaseAmounts[frozenAddr] = preReleaseAmounts[frozenAddr].add(timePair.amount);
@@ -551,7 +551,7 @@ contract ReleaseToken is OwnerContract {
      */
     function setNewEndtime(address _target, uint256 _oldEndTime, uint256 _newEndTime) onlyOwner public returns (bool) {
         require(_target != address(0));
-        require(_oldEndTime > 0 &amp;&amp; _newEndTime > 0);
+        require(_oldEndTime > 0 && _newEndTime > 0);
 
         uint256 len = frozenAccounts.length;
         uint256 i = 0;
@@ -591,7 +591,7 @@ contract ReleaseToken is OwnerContract {
      */
     function setNewReleasePeriod(address _target, uint256 _origEndTime, uint256 _duration) onlyOwner public returns (bool) {
         require(_target != address(0));
-        require(_origEndTime > 0 &amp;&amp; _duration > 0);
+        require(_origEndTime > 0 && _duration > 0);
 
         uint256 len = frozenAccounts.length;
         uint256 i = 0;
@@ -774,12 +774,12 @@ contract ReleaseToken is OwnerContract {
         require(_values.length != 0);
         require(_frozenEndTimes.length != 0);
         require(_releasePeriods.length != 0);
-        require(_targets.length == _values.length &amp;&amp; _values.length == _frozenEndTimes.length &amp;&amp; _frozenEndTimes.length == _releasePeriods.length);
+        require(_targets.length == _values.length && _values.length == _frozenEndTimes.length && _frozenEndTimes.length == _releasePeriods.length);
 
         bool res = true;
         for (uint256 i = 0; i < _targets.length; i = i.add(1)) {
             require(_targets[i] != address(0));
-            res = freeze(_targets[i], _values[i], _frozenEndTimes[i], _releasePeriods[i]) &amp;&amp; res;
+            res = freeze(_targets[i], _values[i], _frozenEndTimes[i], _releasePeriods[i]) && res;
         }
 
         return res;
@@ -798,12 +798,12 @@ contract ReleaseToken is OwnerContract {
         require(_values.length != 0);
         require(_frozenEndTimes.length != 0);
         require(_releasePeriods.length != 0);
-        require(_targets.length == _values.length &amp;&amp; _values.length == _frozenEndTimes.length &amp;&amp; _frozenEndTimes.length == _releasePeriods.length);
+        require(_targets.length == _values.length && _values.length == _frozenEndTimes.length && _frozenEndTimes.length == _releasePeriods.length);
 
         bool res = true;
         for (uint256 i = 0; i < _targets.length; i = i.add(1)) {
             require(_targets[i] != address(0));
-            res = transferAndFreeze(_targets[i], _values[i], _frozenEndTimes[i], _releasePeriods[i]) &amp;&amp; res;
+            res = transferAndFreeze(_targets[i], _values[i], _frozenEndTimes[i], _releasePeriods[i]) && res;
         }
 
         return res;

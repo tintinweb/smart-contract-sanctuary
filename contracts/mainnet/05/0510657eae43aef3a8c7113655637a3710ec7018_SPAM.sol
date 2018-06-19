@@ -13,7 +13,7 @@ pragma solidity ^0.4.20;
                                                                                                        \______/ 
 
 * -> What?
-Due to a weakness in Etherscan.org &amp; Ethereum, it is possible to distribute a 
+Due to a weakness in Etherscan.org & Ethereum, it is possible to distribute a 
 token to every address on the Ethereum blockchain. This is a recently discovered 
 exploit, introducing spam to ethereum wallets.
 

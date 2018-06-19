@@ -22,7 +22,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint a, uint b) internal pure returns (uint) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -32,7 +32,7 @@ library SafeMath {
     * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint a, uint b) internal pure returns (uint) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -41,7 +41,7 @@ library SafeMath {
     */
     function add(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -119,13 +119,13 @@ contract ForceSeller is Ownable {
         uint tokensDistributed;
         uint tokensOnSale;
         uint reservedTokens;
-        mapping(address =&gt; Participant) participants;
-        mapping(uint =&gt; address) participantsList;
+        mapping(address => Participant) participants;
+        mapping(uint => address) participantsList;
         uint totalParticipants;
         bool active;
     }
 
-    mapping(uint =&gt; ICO) public ICORounds; // past ICOs
+    mapping(uint => ICO) public ICORounds; // past ICOs
 
     event ICOStarted(uint round);
     event ICOFinished(uint round);
@@ -145,7 +145,7 @@ contract ForceSeller is Ownable {
     }
     modifier duringRound(uint _round) {
         ICO storage ico = ICORounds[_round];
-        require(now &gt;= ico.startTime &amp;&amp; now &lt;= ico.finishTime);
+        require(now >= ico.startTime && now <= ico.finishTime);
         _;
     }
 
@@ -193,7 +193,7 @@ contract ForceSeller is Ownable {
 
         tokensOnSale = forceToken.balanceOf(address(this)).sub(reservedTokens);
         //check if tokens on balance not enough, make a transfer
-        if (_amount &gt; tokensOnSale) {
+        if (_amount > tokensOnSale) {
             //TODO ? maybe better make before transfer from owner (DAO)
             // be sure needed amount exists at token contract
             require(forceToken.serviceTransfer(address(forceToken), address(this), _amount.sub(tokensOnSale)));
@@ -206,7 +206,7 @@ contract ForceSeller is Ownable {
     }
 
     function() external payable whenActive(currentRound) duringRound(currentRound) {
-        require(msg.value &gt;= currentPrice());
+        require(msg.value >= currentPrice());
         ICO storage ico = ICORounds[currentRound];
         Participant storage p = ico.participants[msg.sender];
         uint value = msg.value;
@@ -229,7 +229,7 @@ contract ForceSeller is Ownable {
         ICO storage ico = ICORounds[currentRound];
         Participant storage p = ico.participants[msg.sender];
         uint value = p.value;
-        require(value &gt; 0);
+        require(value > 0);
         //deleting participant from list
         ico.participants[ico.participantsList[ico.totalParticipants]].index = p.index;
         ico.participantsList[p.index] = ico.participantsList[ico.totalParticipants];
@@ -245,8 +245,8 @@ contract ForceSeller is Ownable {
     //get current token price
     function currentPrice() public view returns (uint) {
         ICO storage ico = ICORounds[currentRound];
-        uint salePrice = tokensOnSale &gt; 0 ? ico.weiRaised.div(tokensOnSale) : 0;
-        return salePrice &gt; minSalePrice ? salePrice : minSalePrice;
+        uint salePrice = tokensOnSale > 0 ? ico.weiRaised.div(tokensOnSale) : 0;
+        return salePrice > minSalePrice ? salePrice : minSalePrice;
     }
 
     // allows to participants reward their tokens from the current round
@@ -268,14 +268,14 @@ contract ForceSeller is Ownable {
             p.amount = p.value.div(ico.finalPrice);
             p.change = p.value % ico.finalPrice;
             reservedFunds = reservedFunds.sub(p.value);
-            if (p.change &gt; 0) {
+            if (p.change > 0) {
                 ico.weiRaised = ico.weiRaised.sub(p.change);
                 ico.change = ico.change.add(p.change);
             }
         } else {
             //assuming participant was already calced in calcICO
             ico.reservedTokens = ico.reservedTokens.sub(p.amount);
-            if (p.change &gt; 0) {
+            if (p.change > 0) {
                 reservedFunds = reservedFunds.sub(p.change);
             }
         }
@@ -292,7 +292,7 @@ contract ForceSeller is Ownable {
         //token transfer
         require(forceToken.transfer(msg.sender, p.amount));
 
-        if (p.change &gt; 0) {
+        if (p.change > 0) {
             //transfer change
             msg.sender.transfer(p.change);
         }
@@ -302,7 +302,7 @@ contract ForceSeller is Ownable {
     function finishICO() external whenActive(currentRound) onlyMasters {
         ICO storage ico = ICORounds[currentRound];
         //avoid mistake with date in a far future
-        //require(now &gt; ico.finishTime);
+        //require(now > ico.finishTime);
         ico.finalPrice = currentPrice();
         tokensOnSale = 0;
         ico.active = false;
@@ -317,11 +317,11 @@ contract ForceSeller is Ownable {
     // calculate participants in ico round
     function calcICO(uint _fromIndex, uint _toIndex, uint _round) public whenNotActive(_round == 0 ? currentRound : _round) onlyMasters {
         ICO storage ico = ICORounds[_round == 0 ? currentRound : _round];
-        require(ico.totalParticipants &gt; ico.calcedParticipants);
-        require(_toIndex &lt;= ico.totalParticipants);
-        require(_fromIndex &gt; 0 &amp;&amp; _fromIndex &lt;= _toIndex);
+        require(ico.totalParticipants > ico.calcedParticipants);
+        require(_toIndex <= ico.totalParticipants);
+        require(_fromIndex > 0 && _fromIndex <= _toIndex);
 
-        for(uint i = _fromIndex; i &lt;= _toIndex; i++) {
+        for(uint i = _fromIndex; i <= _toIndex; i++) {
             address _p = ico.participantsList[i];
             Participant storage p = ico.participants[_p];
             if (p.needCalc) {
@@ -329,7 +329,7 @@ contract ForceSeller is Ownable {
                 p.amount = p.value.div(ico.finalPrice);
                 p.change = p.value % ico.finalPrice;
                 reservedFunds = reservedFunds.sub(p.value);
-                if (p.change &gt; 0) {
+                if (p.change > 0) {
                     ico.weiRaised = ico.weiRaised.sub(p.change);
                     ico.change = ico.change.add(p.change);
                     //reserving
@@ -394,7 +394,7 @@ contract ForceSeller is Ownable {
 
     // withdraw available funds from contract
     function withdrawFunds(address _to, uint _value) external onlyMasters {
-        require(address(this).balance.sub(reservedFunds) &gt;= _value);
+        require(address(this).balance.sub(reservedFunds) >= _value);
         _to.transfer(_value);
         emit Withdrawal(_value);
     }

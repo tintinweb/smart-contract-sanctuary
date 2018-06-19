@@ -1,5 +1,5 @@
 /*
-Capital Technologies &amp; Research - Capital GAS (CALLG)
+Capital Technologies & Research - Capital GAS (CALLG)
 */
 pragma solidity ^0.4.19;
 
@@ -121,8 +121,8 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _amount) public returns (bool success) {
     require(_to != address(0));
-    require(balances[msg.sender] >= _amount &amp;&amp; _amount > 0
-        &amp;&amp; balances[_to].add(_amount) > balances[_to]);
+    require(balances[msg.sender] >= _amount && _amount > 0
+        && balances[_to].add(_amount) > balances[_to]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_amount);
@@ -164,7 +164,7 @@ contract StandardToken is ERC20, BasicToken {
     require(_to != address(0));
     require(balances[_from] >= _amount);
     require(allowed[_from][msg.sender] >= _amount);
-    require(_amount > 0 &amp;&amp; balances[_to].add(_amount) > balances[_to]);
+    require(_amount > 0 && balances[_to].add(_amount) > balances[_to]);
 
     balances[_from] = balances[_from].sub(_amount);
     balances[_to] = balances[_to].add(_amount);

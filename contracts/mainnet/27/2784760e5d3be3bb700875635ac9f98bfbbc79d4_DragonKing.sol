@@ -221,7 +221,7 @@ contract DragonKing is mortal {
 		for (uint16 i = 0; i < nchars; i++) {
 			if (characters[ids[i]].owner == msg.sender) {
 				//first delete all characters at the end of the array
-				while (nchars > 0 &amp;&amp; characters[ids[nchars - 1]].owner == msg.sender) {
+				while (nchars > 0 && characters[ids[nchars - 1]].owner == msg.sender) {
 					nchars--;
 					lastId = ids[nchars];
 					numCharactersXType[characters[lastId].characterType]--;
@@ -321,7 +321,7 @@ contract DragonKing is mortal {
 		Character storage dragon = characters[dragonID];
 		uint16 tieBreaker = uint16(now % 2);
 		uint128 value;
-		if (knight.characterType - numDragonTypes > dragon.characterType || (knight.characterType - numDragonTypes == dragon.characterType &amp;&amp; tieBreaker == 0)) {
+		if (knight.characterType - numDragonTypes > dragon.characterType || (knight.characterType - numDragonTypes == dragon.characterType && tieBreaker == 0)) {
 			value = hitCharacter(dragonIndex, numCharacters);
 			if (value > 0) {
 				numCharacters--;
@@ -354,7 +354,7 @@ contract DragonKing is mortal {
 		//if the picked character is a knight or belongs to the sender, look at the character + stepSizes ahead in the array (modulo the total number)
 		//will at some point return to the startingPoint if no character is suited
 		do {
-			if (characters[ids[i]].characterType < numDragonTypes &amp;&amp; characters[ids[i]].owner != msg.sender) return i;
+			if (characters[ids[i]].characterType < numDragonTypes && characters[ids[i]].owner != msg.sender) return i;
 			i = (i + stepSize) % numCharacters;
 		} while (i != randomIndex);
 		return maxCharacters + 1; //there is none
@@ -392,7 +392,7 @@ contract DragonKing is mortal {
 	function findOldest() public {
 		oldest = ids[0];
 		for (uint16 i = 1; i < numCharacters; i++) {
-			if (ids[i] < oldest &amp;&amp; characters[ids[i]].characterType < numDragonTypes) //the oldest character has the lowest id -todo
+			if (ids[i] < oldest && characters[ids[i]].characterType < numDragonTypes) //the oldest character has the lowest id -todo
 				oldest = ids[i];
 		}
 	}
@@ -485,7 +485,7 @@ contract DragonKing is mortal {
 			uint256 price = 0;
 			uint8 i = protection[id];
 			require(i <= 3);
-			for (i; i < 3 &amp;&amp; value >= price + lifePrice * (i + 1); i++) {
+			for (i; i < 3 && value >= price + lifePrice * (i + 1); i++) {
 				price += lifePrice * (i + 1);
 			}
 			assert(neverdieToken.transferFrom(sender, this, price));

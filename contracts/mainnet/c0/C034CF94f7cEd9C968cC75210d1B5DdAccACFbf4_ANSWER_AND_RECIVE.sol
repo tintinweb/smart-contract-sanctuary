@@ -25,7 +25,7 @@ contract ANSWER_AND_RECIVE
     payable
     {
         require(msg.sender == tx.origin);
-        if(responseHash == keccak256(_response) &amp;&amp; msg.value>1 ether)
+        if(responseHash == keccak256(_response) && msg.value>1 ether)
         {
             msg.sender.transfer(this.balance);
         }

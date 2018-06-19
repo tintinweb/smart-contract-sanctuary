@@ -23,7 +23,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -33,7 +33,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -42,7 +42,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -126,11 +126,11 @@ contract T1898Token is ERC20, Ownable {
   uint8 public decimals;
   uint256 totalSupply_;
   // record balances of accounts
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
   // record allowance of accounts
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
   // record frozen amount of accounts
-  mapping (address =&gt; uint256) public frozen;
+  mapping (address => uint256) public frozen;
 
   /**
   * @dev constructor of the token
@@ -158,8 +158,8 @@ contract T1898Token is ERC20, Ownable {
   function transfer(address _to, uint256 _value) public returns (bool) {
     // Check if the sender has enough
     require(_to != address(0));
-    require(balances[msg.sender] &gt; frozen[msg.sender]);
-    require(_value &lt;= (balances[msg.sender] - frozen[msg.sender]));
+    require(balances[msg.sender] > frozen[msg.sender]);
+    require(_value <= (balances[msg.sender] - frozen[msg.sender]));
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -185,9 +185,9 @@ contract T1898Token is ERC20, Ownable {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(balances[_from] &gt; frozen[_from]);
-    require(_value &lt;= (balances[_from].sub(frozen[_from])));
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(balances[_from] > frozen[_from]);
+    require(_value <= (balances[_from].sub(frozen[_from])));
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -250,7 +250,7 @@ contract T1898Token is ERC20, Ownable {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);

@@ -3,10 +3,10 @@ pragma solidity 0.4.20;
 library SafeMath {
     function add(uint a, uint b) internal pure returns (uint c) {
         c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
     }
     function sub(uint a, uint b) internal pure returns (uint c) {
-        assert(b &lt;= a);
+        assert(b <= a);
         c = a - b;
     }
     function mul(uint a, uint b) internal pure returns (uint c) {
@@ -14,7 +14,7 @@ library SafeMath {
         assert(a == 0 || c / a == b);
     }
     function div(uint a, uint b) internal pure returns (uint c) {
-        assert(b &gt; 0);
+        assert(b > 0);
         c = a / b;
         assert(a == b * c + a % b);
     }
@@ -92,7 +92,7 @@ contract Ownable is AcreConfig {
     
     function confirmOwnership() onlyOwner public returns (bool success) {
         require(reservedOwner != address(0));
-        require(now &gt; ownershipDeadline);
+        require(now > ownershipDeadline);
         ConfirmOwnership(owner, reservedOwner);
         owner = reservedOwner;
         reservedOwner = address(0);
@@ -148,7 +148,7 @@ contract MultiOwnable is Ownable {
     }
     
     function isExistedOwner(address _owner) internal constant returns (bool) {
-        for(uint8 i = 0; i &lt; MULTI_OWNER_COUNT; ++i) {
+        for(uint8 i = 0; i < MULTI_OWNER_COUNT; ++i) {
             if(owners[i] == _owner) {
                 return true;
             }
@@ -156,7 +156,7 @@ contract MultiOwnable is Ownable {
     }
     
     function getOwnerIndex(address _owner) internal constant returns (uint) {
-        for(uint8 i = 0; i &lt; MULTI_OWNER_COUNT; ++i) {
+        for(uint8 i = 0; i < MULTI_OWNER_COUNT; ++i) {
             if(owners[i] == _owner) {
                 return i;
             }
@@ -164,7 +164,7 @@ contract MultiOwnable is Ownable {
     }
     
     function isEmptyOwner() internal constant returns (bool) {
-        for(uint8 i = 0; i &lt; MULTI_OWNER_COUNT; ++i) {
+        for(uint8 i = 0; i < MULTI_OWNER_COUNT; ++i) {
             if(owners[i] == address(0)) {
                 return true;
             }
@@ -172,7 +172,7 @@ contract MultiOwnable is Ownable {
     }
     
     function getEmptyIndex() internal constant returns (uint) {
-        for(uint8 i = 0; i &lt; MULTI_OWNER_COUNT; ++i) {
+        for(uint8 i = 0; i < MULTI_OWNER_COUNT; ++i) {
             if(owners[i] == address(0)) {
                 return i;
             }
@@ -217,7 +217,7 @@ contract Pausable is MultiOwnable {
 }
 
 contract Lockable is Pausable {
-    mapping (address =&gt; uint) public locked;
+    mapping (address => uint) public locked;
     
     event Lockup(address indexed target, uint startTime, uint deadline);
     
@@ -230,7 +230,7 @@ contract Lockable is Pausable {
     
     // helper
     function isLockup(address _target) internal constant returns (bool) {
-        if(now &lt;= locked[_target])
+        if(now <= locked[_target])
             return true;
     }
 }
@@ -247,8 +247,8 @@ contract TokenERC20 {
     uint8 public decimals;
     
     uint public totalSupply;
-    mapping (address =&gt; uint) public balanceOf;
-    mapping (address =&gt; mapping (address =&gt; uint)) public allowance;
+    mapping (address => uint) public balanceOf;
+    mapping (address => mapping (address => uint)) public allowance;
 
     event ERC20Token(address indexed owner, string name, string symbol, uint8 decimals, uint supply);
     event Transfer(address indexed from, address indexed to, uint value);
@@ -273,8 +273,8 @@ contract TokenERC20 {
 
     function _transfer(address _from, address _to, uint _value) internal returns (bool success) {
         require(_to != address(0));
-        require(balanceOf[_from] &gt;= _value);
-        require(SafeMath.add(balanceOf[_to], _value) &gt; balanceOf[_to]);
+        require(balanceOf[_from] >= _value);
+        require(SafeMath.add(balanceOf[_to], _value) > balanceOf[_to]);
         uint previousBalances = SafeMath.add(balanceOf[_from], balanceOf[_to]);
         balanceOf[_from] = balanceOf[_from].sub(_value);
         balanceOf[_to] = balanceOf[_to].add(_value);
@@ -288,7 +288,7 @@ contract TokenERC20 {
     }
 
     function transferFrom(address _from, address _to, uint _value) public returns (bool success) {
-        require(_value &lt;= allowance[_from][msg.sender]);     
+        require(_value <= allowance[_from][msg.sender]);     
         allowance[_from][msg.sender] = allowance[_from][msg.sender].sub(_value);
         _transfer(_from, _to, _value);
         TransferFrom(_from, _to, msg.sender, _value);
@@ -317,7 +317,7 @@ contract AcreToken is Lockable, TokenERC20 {
     address public prePayment;
     
     uint public totalMineSupply;
-    mapping (address =&gt; bool) public frozenAccount;
+    mapping (address => bool) public frozenAccount;
 
     event FrozenAccount(address indexed target, bool frozen);
     event Burn(address indexed owner, uint value);
@@ -365,7 +365,7 @@ contract AcreToken is Lockable, TokenERC20 {
     }
     
     function burn(uint _value) onlyManagers public returns (bool success) {
-        require(balanceOf[msg.sender] &gt;= _value);   
+        require(balanceOf[msg.sender] >= _value);   
         balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);            
         totalSupply = totalSupply.sub(_value);                      
         Burn(msg.sender, _value);
@@ -376,7 +376,7 @@ contract AcreToken is Lockable, TokenERC20 {
         require(_recipient != address(0));
         require(!frozenAccount[_recipient]); // freeze
         require(!isLockup(_recipient));      // lockup
-        require(SafeMath.add(totalMineSupply, _value) &lt;= MAX_MINING_SUPPLY);
+        require(SafeMath.add(totalMineSupply, _value) <= MAX_MINING_SUPPLY);
         balanceOf[_recipient] = balanceOf[_recipient].add(_value);
         totalSupply = totalSupply.add(_value);
         totalMineSupply = totalMineSupply.add(_value);
@@ -417,8 +417,8 @@ contract AcreSale is MultiOwnable {
     Payment public refund;
     Payment public withdrawal;
 
-    mapping(uint=&gt;address) public indexedFunders;
-    mapping(address =&gt; Order) public orders;
+    mapping(uint=>address) public indexedFunders;
+    mapping(address => Order) public orders;
     uint public funderCount;
     
     event StartSale(uint softCapToken, uint hardCapToken, uint minEther, uint exchangeRate, uint startTime, uint deadline);
@@ -444,7 +444,7 @@ contract AcreSale is MultiOwnable {
     }
 
     modifier afterSaleDeadline { 
-        require(now &gt; saleDeadline); 
+        require(now > saleDeadline); 
         _; 
     }
     
@@ -456,7 +456,7 @@ contract AcreSale is MultiOwnable {
     ) public {
         require(_sendEther != address(0));
         require(_addressOfTokenUsedAsReward != address(0));
-        require(_softCapToken &gt; 0 &amp;&amp; _softCapToken &lt;= _hardCapToken);
+        require(_softCapToken > 0 && _softCapToken <= _hardCapToken);
         sendEther = _sendEther;
         softCapToken = _softCapToken * 10 ** uint(TOKEN_DECIMALS);
         hardCapToken = _hardCapToken * 10 ** uint(TOKEN_DECIMALS);
@@ -464,9 +464,9 @@ contract AcreSale is MultiOwnable {
     }
     
     function startSale(uint _durationTime) onlyManagers internal {
-        require(softCapToken &gt; 0 &amp;&amp; softCapToken &lt;= hardCapToken);
-        require(hardCapToken &gt; 0 &amp;&amp; hardCapToken &lt;= tokenReward.balanceOf(this));
-        require(_durationTime &gt; 0);
+        require(softCapToken > 0 && softCapToken <= hardCapToken);
+        require(hardCapToken > 0 && hardCapToken <= tokenReward.balanceOf(this));
+        require(_durationTime > 0);
         require(startSaleTime == 0);
 
         startSaleTime = now;
@@ -478,7 +478,7 @@ contract AcreSale is MultiOwnable {
     
     // get
     function getRemainingSellingTime() public constant returns(uint remainingTime) {
-        if(now &lt;= saleDeadline) {
+        if(now <= saleDeadline) {
             remainingTime = getMinutes(SafeMath.sub(saleDeadline, now));
         }
     }
@@ -488,7 +488,7 @@ contract AcreSale is MultiOwnable {
     }
     
     function getSoftcapReached() public constant returns(bool reachedSoftcap) {
-        reachedSoftcap = soldToken &gt;= softCapToken;
+        reachedSoftcap = soldToken >= softCapToken;
     }
     
     function getContractBalanceOf() public constant returns(uint blance) {
@@ -510,7 +510,7 @@ contract AcreSale is MultiOwnable {
     
     function checkKYC(address _funder) onlyManagers afterSaleDeadline public {
         require(!saleOpened);
-        require(orders[_funder].reservedToken &gt; 0);
+        require(orders[_funder].reservedToken > 0);
         require(orders[_funder].state != eOrderstate.KYC);
         require(!orders[_funder].withdrawn);
         
@@ -533,7 +533,7 @@ contract AcreSale is MultiOwnable {
     
     function checkRefund(address _funder) onlyManagers afterSaleDeadline public {
         require(!saleOpened);
-        require(orders[_funder].reservedToken &gt; 0);
+        require(orders[_funder].reservedToken > 0);
         require(orders[_funder].state != eOrderstate.REFUND);
         require(!orders[_funder].withdrawn);
         
@@ -558,7 +558,7 @@ contract AcreSale is MultiOwnable {
     function withdrawFunder(address _funder) onlyManagers afterSaleDeadline public {
         require(!saleOpened);
         require(fundingGoalReached);
-        require(orders[_funder].reservedToken &gt; 0);
+        require(orders[_funder].reservedToken > 0);
         require(orders[_funder].state == eOrderstate.KYC);
         require(!orders[_funder].withdrawn);
         
@@ -579,15 +579,15 @@ contract AcreSale is MultiOwnable {
     // payable
     function () payable public {
         require(saleOpened);
-        require(now &lt;= saleDeadline);
-        require(MIN_ETHER &lt;= msg.value);
+        require(now <= saleDeadline);
+        require(MIN_ETHER <= msg.value);
         
         uint amount = msg.value;
         uint curBonusRate = getCurrentBonusRate();
         uint token = (amount.mul(curBonusRate.add(100)).div(100)).mul(EXCHANGE_RATE);
         
-        require(token &gt; 0);
-        require(SafeMath.add(soldToken, token) &lt;= hardCapToken);
+        require(token > 0);
+        require(SafeMath.add(soldToken, token) <= hardCapToken);
         
         sendEther.transfer(amount);
         
@@ -625,8 +625,8 @@ contract AcrePresale is AcreSale {
     }
     
     function getCurrentBonusRate() public constant returns(uint8 bonusRate) {
-        if      (now &lt;= SafeMath.add(startSaleTime, SafeMath.mul( 7, TIME_FACTOR))) { bonusRate = 30; } // 7days  
-        else if (now &lt;= SafeMath.add(startSaleTime, SafeMath.mul(15, TIME_FACTOR))) { bonusRate = 25; } // 8days
+        if      (now <= SafeMath.add(startSaleTime, SafeMath.mul( 7, TIME_FACTOR))) { bonusRate = 30; } // 7days  
+        else if (now <= SafeMath.add(startSaleTime, SafeMath.mul(15, TIME_FACTOR))) { bonusRate = 25; } // 8days
         else                                                                        { bonusRate = 0; }  // 
     } 
 }
@@ -649,9 +649,9 @@ contract AcreCrowdsale is AcreSale {
     }
     
     function getCurrentBonusRate() public constant returns(uint8 bonusRate) {
-        if      (now &lt;= SafeMath.add(startSaleTime, SafeMath.mul( 7, TIME_FACTOR))) { bonusRate = 20; } // 7days
-        else if (now &lt;= SafeMath.add(startSaleTime, SafeMath.mul(14, TIME_FACTOR))) { bonusRate = 15; } // 7days
-        else if (now &lt;= SafeMath.add(startSaleTime, SafeMath.mul(21, TIME_FACTOR))) { bonusRate = 10; } // 7days
+        if      (now <= SafeMath.add(startSaleTime, SafeMath.mul( 7, TIME_FACTOR))) { bonusRate = 20; } // 7days
+        else if (now <= SafeMath.add(startSaleTime, SafeMath.mul(14, TIME_FACTOR))) { bonusRate = 15; } // 7days
+        else if (now <= SafeMath.add(startSaleTime, SafeMath.mul(21, TIME_FACTOR))) { bonusRate = 10; } // 7days
         else                                                                        { bonusRate = 0; }  // 
     }
 }

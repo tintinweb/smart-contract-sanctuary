@@ -135,7 +135,7 @@ contract IronHands is Owned {
     //The creditor line
     Participant[] public participants;
     //How much each person is owed
-    mapping(address =&gt; uint256) public creditRemaining;
+    mapping(address => uint256) public creditRemaining;
     //What we will be buying
     POOH weak_hands;
 
@@ -162,7 +162,7 @@ contract IronHands is Owned {
      */ 
     function deposit() payable public {
         //You have to send more than 1000000 wei.
-        require(msg.value &gt; 1000000);
+        require(msg.value > 1000000);
         //Compute how much to pay them
         uint256 amountCredited = (msg.value * multiplier) / 100;
         //Get in line to be paid back.
@@ -174,7 +174,7 @@ contract IronHands is Owned {
         //Emit a deposit event.
         emit Deposit(msg.value, msg.sender);
         //If I have dividends
-        if(myDividends() &gt; 0){
+        if(myDividends() > 0){
             //Withdraw dividends
             withdraw();
         }
@@ -190,7 +190,7 @@ contract IronHands is Owned {
         //Take everything in the pool
         uint balance = address(this).balance;
         //It needs to be something worth splitting up
-        require(balance &gt; 1);
+        require(balance > 1);
         //Increase our total throughput
         throughput += balance;
         //Split it into two parts
@@ -202,11 +202,11 @@ contract IronHands is Owned {
         //Record that tokens were purchased
         emit Purchase(investment, tokens);
         //While we still have money to send
-        while (balance &gt; 0) {
+        while (balance > 0) {
             //Either pay them what they are owed or however much we have, whichever is lower.
-            uint payoutToSend = balance &lt; participants[payoutOrder].payout ? balance : participants[payoutOrder].payout;
+            uint payoutToSend = balance < participants[payoutOrder].payout ? balance : participants[payoutOrder].payout;
             //if we have something to pay them
-            if(payoutToSend &gt; 0){
+            if(payoutToSend > 0){
                 //subtract how much we&#39;ve spent
                 balance -= payoutToSend;
                 //subtract the amount paid from the amount owed
@@ -229,12 +229,12 @@ contract IronHands is Owned {
 
             }
             //If we still have balance left over
-            if(balance &gt; 0){
+            if(balance > 0){
                 // go to the next person in line
                 payoutOrder += 1;
             }
             //If we&#39;ve run out of people to pay, stop
-            if(payoutOrder &gt;= participants.length){
+            if(payoutOrder >= participants.length){
                 return;
             }
         }

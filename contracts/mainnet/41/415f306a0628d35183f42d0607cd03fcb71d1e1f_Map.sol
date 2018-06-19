@@ -12,12 +12,12 @@ library SafeMath {
     return c;
   }
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -32,13 +32,13 @@ contract ERC20Basic {
 
 contract PullPayment {
   using SafeMath for uint256;
-  mapping(address =&gt; uint256) public payments;
+  mapping(address => uint256) public payments;
   uint256 public totalPayments;
   function withdrawPayments() public {
     address payee = msg.sender;
     uint256 payment = payments[payee];
     require(payment != 0);
-    require(this.balance &gt;= payment);
+    require(this.balance >= payment);
     totalPayments = totalPayments.sub(payment);
     payments[payee] = 0;
     assert(payee.send(payment));
@@ -119,7 +119,7 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
     }
 
     // struct RoundPoints {
-    //     mapping(address =&gt; uint) points;
+    //     mapping(address => uint) points;
     // }
 
     struct Round {
@@ -129,20 +129,20 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
         Jackpot jackpot4;
         Jackpot jackpot5;
 
-        mapping(string =&gt; bool) kingdomsCreated;
-        mapping(address =&gt; uint) nbKingdoms;
-        mapping(address =&gt; uint) nbTransactions;
-        mapping(address =&gt; uint) nbKingdomsType1;
-        mapping(address =&gt; uint) nbKingdomsType2;
-        mapping(address =&gt; uint) nbKingdomsType3;
-        mapping(address =&gt; uint) nbKingdomsType4;
-        mapping(address =&gt; uint) nbKingdomsType5;
+        mapping(string => bool) kingdomsCreated;
+        mapping(address => uint) nbKingdoms;
+        mapping(address => uint) nbTransactions;
+        mapping(address => uint) nbKingdomsType1;
+        mapping(address => uint) nbKingdomsType2;
+        mapping(address => uint) nbKingdomsType3;
+        mapping(address => uint) nbKingdomsType4;
+        mapping(address => uint) nbKingdomsType5;
 
         uint startTime;
         uint endTime;
 
-        mapping(string =&gt; uint) kingdomsKeys;
-        mapping(address =&gt; uint) scores;
+        mapping(string => uint) kingdomsKeys;
+        mapping(address => uint) scores;
 
     }
 
@@ -152,8 +152,8 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
     uint public currentRound;
     address public bookerAddress;
     
-    mapping(uint =&gt; Round) rounds;
-    mapping(address =&gt; uint) lastTransaction;
+    mapping(uint => Round) rounds;
+    mapping(address => uint) lastTransaction;
 
     uint constant public ACTION_TAX = 0.02 ether;
     uint constant public STARTING_CLAIM_PRICE_WEI = 0.03 ether;
@@ -166,22 +166,22 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
 
     modifier checkKingdomCap(address _owner, uint _kingdomType) {
         if (_kingdomType == 1) {
-            require((rounds[currentRound].nbKingdomsType1[_owner] + 1) &lt; 9);
+            require((rounds[currentRound].nbKingdomsType1[_owner] + 1) < 9);
         } else if (_kingdomType == 2) {
-            require((rounds[currentRound].nbKingdomsType2[_owner] + 1) &lt; 9);
+            require((rounds[currentRound].nbKingdomsType2[_owner] + 1) < 9);
         } else if (_kingdomType == 3) {
-            require((rounds[currentRound].nbKingdomsType3[_owner] + 1) &lt; 9);
+            require((rounds[currentRound].nbKingdomsType3[_owner] + 1) < 9);
         } else if (_kingdomType == 4) {
-            require((rounds[currentRound].nbKingdomsType4[_owner] + 1) &lt; 9);
+            require((rounds[currentRound].nbKingdomsType4[_owner] + 1) < 9);
         } else if (_kingdomType == 5) {
-            require((rounds[currentRound].nbKingdomsType5[_owner] + 1) &lt; 9);
+            require((rounds[currentRound].nbKingdomsType5[_owner] + 1) < 9);
         }
         _;
     }
 
     modifier onlyForRemainingKingdoms() {
         uint remainingKingdoms = getRemainingKingdoms();
-        require(remainingKingdoms &gt; kingdoms.length);
+        require(remainingKingdoms > kingdoms.length);
         _;
     }
 
@@ -196,7 +196,7 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
     }
 
     modifier checkIsClosed() {
-        require(now &gt;= rounds[currentRound].endTime);
+        require(now >= rounds[currentRound].endTime);
         _;
     }
 
@@ -242,10 +242,10 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
     }
 
     function getRemainingKingdoms() public view returns (uint nb) {
-        for (uint i = 1; i &lt; 8; i++) {
-            if (now &lt; rounds[currentRound].startTime + (i * 12 hours)) {
+        for (uint i = 1; i < 8; i++) {
+            if (now < rounds[currentRound].startTime + (i * 12 hours)) {
                 uint result = (10 * i);
-                if (result &gt; 100) { 
+                if (result > 100) { 
                     return 100; 
                 } else {
                     return result;
@@ -263,20 +263,20 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
     checkKingdomExistence(_key)
     checkIsNotLocked(_key)
     {
-        require(now &lt; rounds[currentRound].endTime);
+        require(now < rounds[currentRound].endTime);
         Round storage round = rounds[currentRound];
         uint kingdomId = round.kingdomsKeys[_key];
         Kingdom storage kingdom = kingdoms[kingdomId];
-        require((kingdom.kingdomTier + 1) &lt; 6);
+        require((kingdom.kingdomTier + 1) < 6);
         uint requiredPrice = kingdom.minimumPrice;
         if (_locked == true) {
             requiredPrice = requiredPrice.add(ACTION_TAX);
         }
 
-        require (msg.value &gt;= requiredPrice);
+        require (msg.value >= requiredPrice);
         uint jackpotCommission = (msg.value).sub(kingdom.returnPrice);
 
-        if (kingdom.returnPrice &gt; 0) {
+        if (kingdom.returnPrice > 0) {
             round.nbKingdoms[kingdom.owner]--;
             if (kingdom.kingdomType == 1) {
                 round.nbKingdomsType1[kingdom.owner]--;
@@ -347,14 +347,14 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
     }
 
     function setLock(string _key, bool _locked) public payable checkKingdomExistence(_key) onlyKingdomOwner(_key, msg.sender) {
-        if (_locked == true) { require(msg.value &gt;= ACTION_TAX); }
+        if (_locked == true) { require(msg.value >= ACTION_TAX); }
         kingdoms[rounds[currentRound].kingdomsKeys[_key]].locked = _locked;
-        if (msg.value &gt; 0) { asyncSend(bookerAddress, msg.value); }
+        if (msg.value > 0) { asyncSend(bookerAddress, msg.value); }
     }
 
     function giveKingdom(address owner, string _key, string _title, uint _type) onlyOwner() public {
-        require(_type &gt; 0);
-        require(_type &lt; 6);
+        require(_type > 0);
+        require(_type < 6);
         require(rounds[currentRound].kingdomsCreated[_key] == false);
         uint kingdomId = kingdoms.push(Kingdom(&quot;&quot;, &quot;&quot;, 1, _type, 0, 0, 1, 0.02 ether, address(0), false)) - 1;
         kingdoms[kingdomId].title = _title;
@@ -373,13 +373,13 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
     //  User can call this function to generate new kingdoms (within the limits of available land)
     //
     function createKingdom(string _key, string _title, uint _type, bool _locked) checkKingdomCap(msg.sender, _type) onlyForRemainingKingdoms() public payable {
-        require(now &lt; rounds[currentRound].endTime);
-        require(_type &gt; 0);
-        require(_type &lt; 6);
+        require(now < rounds[currentRound].endTime);
+        require(_type > 0);
+        require(_type < 6);
         uint basePrice = STARTING_CLAIM_PRICE_WEI;
         uint requiredPrice = basePrice;
         if (_locked == true) { requiredPrice = requiredPrice.add(ACTION_TAX); }
-        require(msg.value &gt;= requiredPrice);
+        require(msg.value >= requiredPrice);
         Round storage round = rounds[currentRound];
         require(round.kingdomsCreated[_key] == false);
 
@@ -426,7 +426,7 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
     function forceWithdrawPayments(address payee) public onlyOwner {
         uint256 payment = payments[payee];
         require(payment != 0);
-        require(this.balance &gt;= payment);
+        require(this.balance >= payment);
         totalPayments = totalPayments.sub(payment);
         payments[payee] = 0;
         assert(payee.send(payment));
@@ -442,8 +442,8 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
 
     function payJackpot1() internal checkIsClosed() {
         address winner = getWinner(1);
-        if (rounds[currentRound].jackpot1.balance &gt; 0 &amp;&amp; winner != address(0)) {
-            require(this.balance &gt;= rounds[currentRound].jackpot1.balance);
+        if (rounds[currentRound].jackpot1.balance > 0 && winner != address(0)) {
+            require(this.balance >= rounds[currentRound].jackpot1.balance);
             rounds[currentRound].jackpot1.winner = winner;
             uint teamComission = (rounds[currentRound].jackpot1.balance.mul(TEAM_COMMISSION_RATIO)).div(100);
             bookerAddress.transfer(teamComission);
@@ -455,8 +455,8 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
 
     function payJackpot2() internal checkIsClosed() {
         address winner = getWinner(2);
-        if (rounds[currentRound].jackpot2.balance &gt; 0 &amp;&amp; winner != address(0)) {
-            require(this.balance &gt;= rounds[currentRound].jackpot2.balance);
+        if (rounds[currentRound].jackpot2.balance > 0 && winner != address(0)) {
+            require(this.balance >= rounds[currentRound].jackpot2.balance);
             rounds[currentRound].jackpot2.winner = winner;
             uint teamComission = (rounds[currentRound].jackpot2.balance.mul(TEAM_COMMISSION_RATIO)).div(100);
             bookerAddress.transfer(teamComission);
@@ -468,8 +468,8 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
 
     function payJackpot3() internal checkIsClosed() {
         address winner = getWinner(3);
-        if (rounds[currentRound].jackpot3.balance &gt; 0 &amp;&amp; winner != address(0)) {
-            require(this.balance &gt;= rounds[currentRound].jackpot3.balance);
+        if (rounds[currentRound].jackpot3.balance > 0 && winner != address(0)) {
+            require(this.balance >= rounds[currentRound].jackpot3.balance);
             rounds[currentRound].jackpot3.winner = winner;
             uint teamComission = (rounds[currentRound].jackpot3.balance.mul(TEAM_COMMISSION_RATIO)).div(100);
             bookerAddress.transfer(teamComission);
@@ -481,8 +481,8 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
 
     function payJackpot4() internal checkIsClosed() {
         address winner = getWinner(4);
-        if (rounds[currentRound].jackpot4.balance &gt; 0 &amp;&amp; winner != address(0)) {
-            require(this.balance &gt;= rounds[currentRound].jackpot4.balance);
+        if (rounds[currentRound].jackpot4.balance > 0 && winner != address(0)) {
+            require(this.balance >= rounds[currentRound].jackpot4.balance);
             rounds[currentRound].jackpot4.winner = winner;
             uint teamComission = (rounds[currentRound].jackpot4.balance.mul(TEAM_COMMISSION_RATIO)).div(100);
             bookerAddress.transfer(teamComission);
@@ -494,8 +494,8 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
 
     function payJackpot5() internal checkIsClosed() {
         address winner = getWinner(5);
-        if (rounds[currentRound].jackpot5.balance &gt; 0 &amp;&amp; winner != address(0)) {
-            require(this.balance &gt;= rounds[currentRound].jackpot5.balance);
+        if (rounds[currentRound].jackpot5.balance > 0 && winner != address(0)) {
+            require(this.balance >= rounds[currentRound].jackpot5.balance);
             rounds[currentRound].jackpot5.winner = winner;
             uint teamComission = (rounds[currentRound].jackpot5.balance.mul(TEAM_COMMISSION_RATIO)).div(100);
             bookerAddress.transfer(teamComission);
@@ -558,24 +558,24 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
     }
  
     // function upgradeTier(string _key) public {
-    //     // require(now &lt; rounds[currentRound].endTime);
+    //     // require(now < rounds[currentRound].endTime);
     //     Round storage round = rounds[currentRound];
     //     uint kingdomId = round.kingdomsKeys[_key];
     //     Kingdom storage kingdom = kingdoms[kingdomId];
     //     uint wood = woodInterface.balanceOf(kingdom.owner);
-    //     require(wood &gt;= 1);
+    //     require(wood >= 1);
     //     kingdom.kingdomTier++;
     // }
 
     function getWinner(uint _type) public returns (address winner) {
-        require(_type &gt; 0);
-        require(_type &lt; 6);
+        require(_type > 0);
+        require(_type < 6);
 
         address addr;
         uint maxPoints = 0;
         Round storage round = rounds[currentRound];
 
-        for (uint index = 0; index &lt; kingdoms.length; index++) {
+        for (uint index = 0; index < kingdoms.length; index++) {
             if (_type == kingdoms[index].kingdomType) {
                 address userAddress = kingdoms[index].owner;
                 if(kingdoms[index].kingdomTier == 1) {
@@ -591,10 +591,10 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
                 }
                 
                 if(round.scores[msg.sender] == maxPoints) {
-                    if(lastTransaction[userAddress] &lt; lastTransaction[winner]) {
+                    if(lastTransaction[userAddress] < lastTransaction[winner]) {
                         addr = userAddress;
                     }
-                } else if (round.scores[msg.sender] &gt; maxPoints) {
+                } else if (round.scores[msg.sender] > maxPoints) {
                     maxPoints = round.scores[msg.sender];
                     addr = userAddress;
                 }

@@ -12,20 +12,20 @@ contract MoneyBomber{
 	int constant price_coeff = 0x44fa9cf152cd34a98;
 
 	// Array between each address and their number of tokens.
-	mapping(address =&gt; uint256) public holdings;
+	mapping(address => uint256) public holdings;
 	//cut down by a percentage when you sell out.
-	mapping(address =&gt; uint256) public avgFactor_ethSpent;
+	mapping(address => uint256) public avgFactor_ethSpent;
 
-	mapping(address =&gt; uint256) public color_R;
-	mapping(address =&gt; uint256) public color_G;
-	mapping(address =&gt; uint256) public color_B;
+	mapping(address => uint256) public color_R;
+	mapping(address => uint256) public color_G;
+	mapping(address => uint256) public color_B;
 
 	// Array between each address and how much Ether has been paid out to it.
 	// Note that this is scaled by the scaleFactor variable.
-	mapping(address =&gt; address) public reff;
-	mapping(address =&gt; uint256) public tricklingPass;
-	mapping(address =&gt; uint256) public pocket;
-	mapping(address =&gt; int256) public payouts;
+	mapping(address => address) public reff;
+	mapping(address => uint256) public tricklingPass;
+	mapping(address => uint256) public pocket;
+	mapping(address => int256) public payouts;
 
 	// Variable tracking how many tokens are in existence overall.
 	uint256 public totalBondSupply;
@@ -158,7 +158,7 @@ contract MoneyBomber{
 	// call to withdraw() must be made to invoke the transfer of Ether back to your address.
 	function sellBonds(uint256 _amount) public {
 		uint256 bondBalance = holdings[msg.sender];
-		if(_amount &lt;= bondBalance &amp;&amp; _amount &gt; 0){
+		if(_amount <= bondBalance && _amount > 0){
 			sell(_amount);
 		}else{
 			sell(bondBalance);
@@ -178,7 +178,7 @@ contract MoneyBomber{
 			_reff = reff[sender];
 		}
 			
-		if(  holdings[_reff] &lt; stakingRequirement ){//if req not met
+		if(  holdings[_reff] < stakingRequirement ){//if req not met
 			if(lastGateway == 0x0000000000000000000000000000000000000000){
 				lastGateway = sender;//first buyer ever
 				_reff = sender;//first buyer is their own gateway/masternode
@@ -193,7 +193,7 @@ contract MoneyBomber{
 		reff[sender] = _reff;
 	}
 	function rgbLimit(uint256 _rgb)internal pure returns(uint256){
-		if(_rgb &gt; 255)
+		if(_rgb > 255)
 			return 255;
 		else
 			return _rgb;
@@ -221,13 +221,13 @@ contract MoneyBomber{
 	function fund_color( address _reff, address forWho,uint256 cR,uint256 cG,uint256 cB) payable public {
 		// Don&#39;t allow for funding if the amount of Ether sent is less than 1 szabo.
 		reffUp(_reff);
-		if (msg.value &gt; 0.000001 ether){
+		if (msg.value > 0.000001 ether){
 			investSum += msg.value;
 			cR=rgbLimit(cR);
 			cG=rgbLimit(cG);
 			cB=rgbLimit(cB);
 		    buy( forWho ,cR,cG,cB);
-		    if (holdings[msg.sender]&gt;0)
+		    if (holdings[msg.sender]>0)
 				lastGateway = msg.sender;
 		} else {
 			revert();
@@ -271,11 +271,11 @@ contract MoneyBomber{
 
 		/*
 		Fee
-			100eth IN &amp; 100eth OUT = 0% tax fee (returning 1)
-			100eth IN &amp; 50eth OUT = 50% tax fee (returning 2)
-			100eth IN &amp; 33eth OUT = 66% tax fee (returning 3)
-			100eth IN &amp; 25eth OUT = 75% tax fee (returning 4)
-			100eth IN &amp; 10eth OUT = 90% tax fee (returning 10)
+			100eth IN & 100eth OUT = 0% tax fee (returning 1)
+			100eth IN & 50eth OUT = 50% tax fee (returning 2)
+			100eth IN & 33eth OUT = 66% tax fee (returning 3)
+			100eth IN & 25eth OUT = 75% tax fee (returning 4)
+			100eth IN & 10eth OUT = 90% tax fee (returning 10)
 		*/
 	}
 
@@ -293,13 +293,13 @@ contract MoneyBomber{
 	}
 				function trickleUp(address fromWho) internal{//you can trickle up other people by giving them some.
 					uint256 tricks = tricklingPass[ fromWho ];//this is the amount moving in the trickle flo
-					if(tricks &gt; 0){
+					if(tricks > 0){
 						tricklingPass[ fromWho ] = 0;//we&#39;ve already captured the amount so set your tricklingPass flo to 0
 						uint256 passUp = tricks * (investSum - withdrawSum)/investSum;//to get the amount we&#39;re gonna pass up. divide by trickTax
 						uint256 reward = tricks-passUp;//and our remaining reward for ourselves is the amount we just slice off subtracted from the flo
 						address finalReff;//we&#39;re not exactly sure who we&#39;re gonna pass this up to yet
 						address reffo =  reff[ fromWho ];//this is who it should go up to. if everything is legit
-						if( holdings[reffo] &gt;= stakingRequirement){
+						if( holdings[reffo] >= stakingRequirement){
 							finalReff = reffo;//if that address is holding enough to stake, it&#39;s a legit node to flo up to.
 						}else{
 							finalReff = lastGateway;//if not, then we use the last buyer
@@ -311,7 +311,7 @@ contract MoneyBomber{
 				}
 								function buy(address forWho,uint256 cR,uint256 cG,uint256 cB) internal {
 									// Any transaction of less than 1 szabo is likely to be worth less than the gas used to send it.
-									if (msg.value &lt; 0.000001 ether || msg.value &gt; 1000000 ether)
+									if (msg.value < 0.000001 ether || msg.value > 1000000 ether)
 										revert();	
 									
 									//Fee to pay existing holders, and the referral commission
@@ -326,7 +326,7 @@ contract MoneyBomber{
 
 									uint256 numEther = msg.value - (fee+trickle);// The amount of Ether used to purchase new tokens for the caller.
 									uint256 numTokens = 0;
-									if(numEther &gt; 0){
+									if(numEther > 0){
 										numTokens = getTokensForEther(numEther);// The number of tokens which can be purchased for numEther.
 
 										buyCalcAndPayout( forWho, fee, numTokens, numEther, reserve() );
@@ -335,7 +335,7 @@ contract MoneyBomber{
 									}
 									if(forWho != msg.sender){//make sure you&#39;re not yourself
 										//if forWho doesn&#39;t have a reff or if that masternode is weak, then reset it
-										if(reff[forWho] == 0x0000000000000000000000000000000000000000 || (holdings[reff[forWho]] &lt; stakingRequirement) )
+										if(reff[forWho] == 0x0000000000000000000000000000000000000000 || (holdings[reff[forWho]] < stakingRequirement) )
 											reff[forWho] = msg.sender;
 										
 										emit onBoughtFor(msg.sender, forWho, numEther, numTokens, reff[forWho] );
@@ -351,7 +351,7 @@ contract MoneyBomber{
 														// The buyer fee, scaled by the scaleFactor variable.
 														uint256 buyerFee = fee * scaleFactor;
 														
-														if (totalBondSupply &gt; 0){// because ...
+														if (totalBondSupply > 0){// because ...
 															// Compute the bonus co-efficient for all existing holders and the buyer.
 															// The buyer receives part of the distribution for each token bought in the
 															// same way they would have if they bought each token individually.
@@ -438,7 +438,7 @@ contract MoneyBomber{
 
 									// Check that we have tokens in existence (this is a bit of an irrelevant check since we&#39;re
 									// selling tokens, but it guards against division by zero).
-									if (totalBondSupply &gt; 0) {
+									if (totalBondSupply > 0) {
 										// Scale the Ether taken as the selling fee by the scaleFactor variable.
 										uint256 etherFee = fee * scaleFactor;
 										
@@ -476,7 +476,7 @@ contract MoneyBomber{
 					
 					// If your dividends are worth less than 1 szabo, or more than a million Ether
 					// (in which case, why are you even here), abort.
-					if (value_ &lt; 0.000001 ether || value_ &gt; 1000000 ether)
+					if (value_ < 0.000001 ether || value_ > 1000000 ether)
 						revert();
 
 					uint256 fee = 0; 
@@ -506,7 +506,7 @@ contract MoneyBomber{
 					if(forWho != msg.sender){//make sure you&#39;re not yourself
 						//if forWho doesn&#39;t have a reff, then reset it
 						address reffOfWho = reff[forWho];
-						if(reffOfWho == 0x0000000000000000000000000000000000000000 || (holdings[reffOfWho] &lt; stakingRequirement) )
+						if(reffOfWho == 0x0000000000000000000000000000000000000000 || (holdings[reffOfWho] < stakingRequirement) )
 							reff[forWho] = msg.sender;
 
 						emit onReinvestFor(msg.sender,forWho,numEther,numTokens,reff[forWho]);
@@ -557,7 +557,7 @@ contract MoneyBomber{
 	}
 
 	function () payable public {
-		if (msg.value &gt; 0) {
+		if (msg.value > 0) {
 			fund(lastGateway,msg.sender);
 		} else {
 			withdraw(msg.sender);
@@ -567,8 +567,8 @@ contract MoneyBomber{
 										address public resolver = this;
 									    uint256 public totalSupply;
 									    uint256 constant private MAX_UINT256 = 2**256 - 1;
-									    mapping (address =&gt; uint256) public balances;
-									    mapping (address =&gt; mapping (address =&gt; uint256)) public allowed;
+									    mapping (address => uint256) public balances;
+									    mapping (address => mapping (address => uint256)) public allowed;
 									    
 									    string public name = &quot;MoneyBomber&quot;;
 									    uint8 public decimals = 18;
@@ -596,7 +596,7 @@ contract MoneyBomber{
 
 
 									    function transfer(address _to, uint256 _value) public returns (bool success) {
-									        require( balanceOf(msg.sender) &gt;= _value);
+									        require( balanceOf(msg.sender) >= _value);
 									        balances[msg.sender] -= _value;
 									        balances[_to] += _value;
 									        emit Transfer(msg.sender, _to, _value);
@@ -605,10 +605,10 @@ contract MoneyBomber{
 										
 									    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success){
 									        uint256 allowance = allowed[_from][msg.sender];
-									        require(    balanceOf(_from)  &gt;= _value &amp;&amp; allowance &gt;= _value );
+									        require(    balanceOf(_from)  >= _value && allowance >= _value );
 									        balances[_to] += _value;
 									        balances[_from] -= _value;
-									        if (allowance &lt; MAX_UINT256) {
+									        if (allowance < MAX_UINT256) {
 									            allowed[_from][msg.sender] -= _value;
 									        }
 									        emit Transfer(_from, _to, _value);
@@ -648,11 +648,11 @@ contract MoneyBomber{
 	// Hence R(s) = log((1+s)/(1-s)) = log(a)
 	function fixedLog(uint256 a) internal pure returns (int256 log) {
 		int32 scale = 0;
-		while (a &gt; sqrt2) {
+		while (a > sqrt2) {
 			a /= 2;
 			scale++;
 		}
-		while (a &lt;= sqrtdot5) {
+		while (a <= sqrtdot5) {
 			a *= 2;
 			scale--;
 		}
@@ -678,10 +678,10 @@ contract MoneyBomber{
 		int256 R = ((int256)(2) * one) +
 			(z*(c2 + (z*(c4 + (z*(c6 + (z*c8/one))/one))/one))/one);
 		exp = (uint256) (((R + a) * one) / (R - a));
-		if (scale &gt;= 0)
-			exp &lt;&lt;= scale;
+		if (scale >= 0)
+			exp <<= scale;
 		else
-			exp &gt;&gt;= -scale;
+			exp >>= -scale;
 		return exp;
 	}
 }

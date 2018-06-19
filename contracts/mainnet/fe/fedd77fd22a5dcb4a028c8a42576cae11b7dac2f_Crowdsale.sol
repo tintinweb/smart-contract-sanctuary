@@ -543,7 +543,7 @@ contract Crowdsale is Ownable {
    * @dev modifier to allow token creation only when the sale IS ON
    */
   modifier saleIsOn() {
-    require(now >= start &amp;&amp; now < start + period * 1 days);
+    require(now >= start && now < start + period * 1 days);
     require(pause!=true);
     _;
   }

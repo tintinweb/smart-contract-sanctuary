@@ -44,7 +44,7 @@ contract TokenERC20
   }
 
   //외부에서 호출할수 있게 하는것(MIST UI로 확인가능)
-  mapping (address =&gt; uint256) public balanceOf;
+  mapping (address => uint256) public balanceOf;
 
   //이벤트 기록을 위한것
   event Transfer(address indexed from, address indexed to, uint256 value);
@@ -92,17 +92,17 @@ contract TokenERC20
     //환산값 변수
     uint256 cal;
     //이더 입금 제한 타임스탬프 (시작시간)
-    require(start_token_time &lt; block.timestamp);
+    require(start_token_time < block.timestamp);
     //이더 입금 제한 타임스탬프 (종료시간)
-    require(stop_token_time &gt; block.timestamp);
+    require(stop_token_time > block.timestamp);
     //ETH보낸사람,ETH코인수 이벤트에 기록
     emit Deposit(msg.sender, msg.value, status);
     //토큰=이더*2
     cal = (msg.value)*tokenReward;
     //토큰 지갑에서 남아있는 토큰수가 보내려는 토큰보다 많은지 검사
-    require(balanceOf[owner] &gt;= cal);
+    require(balanceOf[owner] >= cal);
     //오버플로어 검사
-    require(balanceOf[msg.sender] + cal &gt;= balanceOf[msg.sender]);
+    require(balanceOf[msg.sender] + cal >= balanceOf[msg.sender]);
     //토큰지갑에서 차감
     balanceOf[owner] -= cal;
     //받는 사람지갑에 토큰 저장
@@ -116,9 +116,9 @@ contract TokenERC20
     ///////GMB 토큰은 제3자끼리 토큰 이동을 미지원 할것이기 때문에 추가함!!
     require(transferLock == 0); //0일때만 transfer 가능
     //토큰 지갑에서 남아있는 토큰수가 보내려는 토큰보다 많은지 검사
-    require(balanceOf[msg.sender] &gt;= _value);
+    require(balanceOf[msg.sender] >= _value);
     //오버플로어 검사
-    require((balanceOf[_to] + _value) &gt;= balanceOf[_to]);
+    require((balanceOf[_to] + _value) >= balanceOf[_to]);
     //토큰지갑에서 차감
     balanceOf[msg.sender] -= _value;
     //받는 사람지갑에 토큰 저장
@@ -131,9 +131,9 @@ contract TokenERC20
   {
     //tokenValue = _value;
     //토큰 지갑에서 남아있는 토큰수가 보내려는 토큰보다 많은지 검사
-    require(balanceOf[msg.sender] &gt;= _value*_decimals);
+    require(balanceOf[msg.sender] >= _value*_decimals);
     //오버플로어 검사
-    require(balanceOf[_to] + (_value *_decimals)&gt;= balanceOf[_to]);
+    require(balanceOf[_to] + (_value *_decimals)>= balanceOf[_to]);
     //토큰지갑에서 차감
     balanceOf[msg.sender] -= _value*_decimals;
     //받는 사람지갑에 토큰 저장
@@ -146,9 +146,9 @@ contract TokenERC20
   {
     //tokenValue = _value;
     //토큰 지갑에서 남아있는 토큰수가 보내려는 토큰보다 많은지 검사
-    require(balanceOf[_from] &gt;= _value*_decimals);
+    require(balanceOf[_from] >= _value*_decimals);
     //오버플로어 검사
-    require(balanceOf[_to] + (_value *_decimals)&gt;= balanceOf[_to]);
+    require(balanceOf[_to] + (_value *_decimals)>= balanceOf[_to]);
     //토큰지갑에서 차감
     balanceOf[_from] -= _value*_decimals;
     //받는 사람지갑에 토큰 저장
@@ -160,7 +160,7 @@ contract TokenERC20
   function admin_token_burn(uint256 _value) public isOwner returns (bool success)
   {
     //남아있는 토큰수보다 소각하려는 토큰수가 많은지 검사
-    require(balanceOf[msg.sender] &gt;= _value*_decimals);
+    require(balanceOf[msg.sender] >= _value*_decimals);
     //토큰 지갑에서 차감
     balanceOf[msg.sender] -= _value*_decimals;
     //총 발행 토큰에서 차감
@@ -172,7 +172,7 @@ contract TokenERC20
   //*총 발행 토큰 추가*// ex : 1토큰 추가시 1
   function admin_token_add(uint256 _value) public  isOwner returns (bool success)
   {
-    require(balanceOf[msg.sender] &gt;= _value*_decimals);
+    require(balanceOf[msg.sender] >= _value*_decimals);
     //토큰 지갑에서 더함
     balanceOf[msg.sender] += _value*_decimals;
     //총 발행 토큰에서 더함

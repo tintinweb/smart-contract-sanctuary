@@ -59,7 +59,7 @@ contract Utils{
 	//verifies the amount greater than zero
 
 	modifier greaterThanZero(uint256 _value){
-		require(_value&gt;0);
+		require(_value>0);
 		_;
 	}
 
@@ -130,20 +130,20 @@ contract SMTToken is Token,Ownable,Sales {
     uint256 public  tokensPerEther = 150; //TODO
     uint256 public  tokensPerBTC = 22*150*(10**10);
     uint256 public tokenCreationMax= 72* (10**5) * 10**decimals; //TODO
-    mapping (address =&gt; bool) ownership;
+    mapping (address => bool) ownership;
 
 
-    mapping (address =&gt; uint256) balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) allowed;
 
     modifier onlyPayloadSize(uint size) {
-        require(msg.data.length &gt;= size + 4);
+        require(msg.data.length >= size + 4);
         _;
     }
 
     function transfer(address _to, uint256 _value) onlyPayloadSize(2 * 32) returns (bool success) {
       if(!istransferAllowed) throw;
-      if (balances[msg.sender] &gt;= _value &amp;&amp; _value &gt; 0) {
+      if (balances[msg.sender] >= _value && _value > 0) {
         balances[msg.sender] -= _value;
         balances[_to] += _value;
         Transfer(msg.sender, _to, _value);
@@ -193,7 +193,7 @@ contract SMTToken is Token,Ownable,Sales {
 
     function transferFrom(address _from, address _to, uint256 _value) onlyPayloadSize(3 * 32) returns (bool success) {
         if(!istransferAllowed) throw;
-      if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; _value &gt; 0) {
+      if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0) {
         balances[_to] += _value;
         balances[_from] -= _value;
         allowed[_from][msg.sender] -= _value;
@@ -261,7 +261,7 @@ contract SMTToken is Token,Ownable,Sales {
 
 
     function isValid() returns(bool){
-        if(block.number&gt;=fundingStartBlock &amp;&amp; block.number&lt;fundingEndBlock ){
+        if(block.number>=fundingStartBlock && block.number<fundingEndBlock ){
             return true;
         }else{
             return false;
@@ -334,7 +334,7 @@ contract Pausable is Ownable {
 }
 // Bitcoin transaction parsing library
 
-// Copyright 2016 rain &lt;https://keybase.io/rain&gt;
+// Copyright 2016 rain <https://keybase.io/rain>
 //
 // Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
 // you may not use this file except in compliance with the License.
@@ -388,23 +388,23 @@ contract Pausable is Ownable {
 // Variable integer encodings as a function of represented value:
 //
 // value           | bytes  | format
-// &lt;0xFD (253)     | 1      | uint8
-// &lt;=0xFFFF (65535)| 3      | 0xFD followed by length as uint16
-// &lt;=0xFFFF FFFF   | 5      | 0xFE followed by length as uint32
+// <0xFD (253)     | 1      | uint8
+// <=0xFFFF (65535)| 3      | 0xFD followed by length as uint16
+// <=0xFFFF FFFF   | 5      | 0xFE followed by length as uint32
 // -               | 9      | 0xFF followed by length as uint64
 //
 // Public key scripts `pk_script` are set on the output and can
 // take a number of forms. The regular transaction script is
 // called &#39;pay-to-pubkey-hash&#39; (P2PKH):
 //
-// OP_DUP OP_HASH160 &lt;pubKeyHash&gt; OP_EQUALVERIFY OP_CHECKSIG
+// OP_DUP OP_HASH160 <pubKeyHash> OP_EQUALVERIFY OP_CHECKSIG
 //
 // OP_x are Bitcoin script opcodes. The bytes representation (including
 // the 0x14 20-byte stack push) is:
 //
-// 0x76 0xA9 0x14 &lt;pubKeyHash&gt; 0x88 0xAC
+// 0x76 0xA9 0x14 <pubKeyHash> 0x88 0xAC
 //
-// The &lt;pubKeyHash&gt; is the ripemd160 hash of the sha256 hash of
+// The <pubKeyHash> is the ripemd160 hash of the sha256 hash of
 // the public key, preceded by a network version byte. (21 bytes total)
 //
 // Network version bytes: 0x00 (mainnet); 0x6f (testnet); 0x34 (namecoin)
@@ -423,11 +423,11 @@ contract Pausable is Ownable {
 //
 // The P2SH script format is simple:
 //
-// OP_HASH160 &lt;scriptHash&gt; OP_EQUAL
+// OP_HASH160 <scriptHash> OP_EQUAL
 //
-// 0xA9 0x14 &lt;scriptHash&gt; 0x87
+// 0xA9 0x14 <scriptHash> 0x87
 //
-// The &lt;scriptHash&gt; is the ripemd160 hash of the sha256 hash of the
+// The <scriptHash> is the ripemd160 hash of the sha256 hash of the
 // redeem script. The P2SH address is derived from the scriptHash.
 // Addresses are the scriptHash with a version prefix of 5, encoded as
 // Base58check. These addresses begin with a &#39;3&#39;.
@@ -443,7 +443,7 @@ library BTC {
         var ibit = uint8(txBytes[pos]);
         pos += 1;  // skip ibit
 
-        if (ibit &lt; 0xfd) {
+        if (ibit < 0xfd) {
             return (ibit, pos);
         } else if (ibit == 0xfd) {
             return (getBytesLE(txBytes, pos, 16), pos + 2);
@@ -494,7 +494,7 @@ library BTC {
 
         (output_values, script_starts, output_script_lens, pos) = scanOutputs(txBytes, pos, 2);
 
-        for (uint i = 0; i &lt; 2; i++) {
+        for (uint i = 0; i < 2; i++) {
             var pkhash = parseOutputScript(txBytes, script_starts[i], output_script_lens[i]);
             output_addresses[i] = pkhash;
         }
@@ -516,9 +516,9 @@ library BTC {
         var (output_values, script_starts, output_script_lens,) = scanOutputs(txBytes, pos, 0);
 
         // look at each output and check whether it at least value to btcAddress
-        for (uint i = 0; i &lt; output_values.length; i++) {
+        for (uint i = 0; i < output_values.length; i++) {
             var pkhash = parseOutputScript(txBytes, script_starts[i], output_script_lens[i]);
-            if (pkhash == btcAddress &amp;&amp; output_values[i] &gt;= value) {
+            if (pkhash == btcAddress && output_values[i] >= value) {
                 return (true,output_values[i]);
             }
         }
@@ -527,7 +527,7 @@ library BTC {
     // return an array of script lengths and the end position
     // of the inputs.
     // takes a &#39;stop&#39; argument which sets the maximum number of
-    // outputs to scan through. stop=0 =&gt; scan all.
+    // outputs to scan through. stop=0 => scan all.
     function scanInputs(bytes txBytes, uint pos, uint stop)
              returns (uint[], uint)
     {
@@ -537,7 +537,7 @@ library BTC {
 
         (n_inputs, pos) = parseVarInt(txBytes, pos);
 
-        if (stop == 0 || stop &gt; n_inputs) {
+        if (stop == 0 || stop > n_inputs) {
             halt = n_inputs;
         } else {
             halt = stop;
@@ -545,7 +545,7 @@ library BTC {
 
         uint[] memory script_lens = new uint[](halt);
 
-        for (var i = 0; i &lt; halt; i++) {
+        for (var i = 0; i < halt; i++) {
             pos += 36;  // skip outpoint
             (script_len, pos) = parseVarInt(txBytes, pos);
             script_lens[i] = script_len;
@@ -558,7 +558,7 @@ library BTC {
     // return array of values, array of script lengths and the
     // end position of the outputs.
     // takes a &#39;stop&#39; argument which sets the maximum number of
-    // outputs to scan through. stop=0 =&gt; scan all.
+    // outputs to scan through. stop=0 => scan all.
     function scanOutputs(bytes txBytes, uint pos, uint stop)
              returns (uint[], uint[], uint[], uint)
     {
@@ -568,7 +568,7 @@ library BTC {
 
         (n_outputs, pos) = parseVarInt(txBytes, pos);
 
-        if (stop == 0 || stop &gt; n_outputs) {
+        if (stop == 0 || stop > n_outputs) {
             halt = n_outputs;
         } else {
             halt = stop;
@@ -578,7 +578,7 @@ library BTC {
         uint[] memory script_lens = new uint[](halt);
         uint[] memory output_values = new uint[](halt);
 
-        for (var i = 0; i &lt; halt; i++) {
+        for (var i = 0; i < halt; i++) {
             output_values[i] = getBytesLE(txBytes, pos, 64);
             pos += 8;
 
@@ -593,8 +593,8 @@ library BTC {
     // Slice 20 contiguous bytes from bytes `data`, starting at `start`
     function sliceBytes20(bytes data, uint start) returns (bytes20) {
         uint160 slice = 0;
-        for (uint160 i = 0; i &lt; 20; i++) {
-            slice += uint160(data[i + start]) &lt;&lt; (8 * (19 - i));
+        for (uint160 i = 0; i < 20; i++) {
+            slice += uint160(data[i + start]) << (8 * (19 - i));
         }
         return bytes20(slice);
     }
@@ -602,19 +602,19 @@ library BTC {
     // script_len represent a P2PKH script
     function isP2PKH(bytes txBytes, uint pos, uint script_len) returns (bool) {
         return (script_len == 25)           // 20 byte pubkeyhash + 5 bytes of script
-            &amp;&amp; (txBytes[pos] == 0x76)       // OP_DUP
-            &amp;&amp; (txBytes[pos + 1] == 0xa9)   // OP_HASH160
-            &amp;&amp; (txBytes[pos + 2] == 0x14)   // bytes to push
-            &amp;&amp; (txBytes[pos + 23] == 0x88)  // OP_EQUALVERIFY
-            &amp;&amp; (txBytes[pos + 24] == 0xac); // OP_CHECKSIG
+            && (txBytes[pos] == 0x76)       // OP_DUP
+            && (txBytes[pos + 1] == 0xa9)   // OP_HASH160
+            && (txBytes[pos + 2] == 0x14)   // bytes to push
+            && (txBytes[pos + 23] == 0x88)  // OP_EQUALVERIFY
+            && (txBytes[pos + 24] == 0xac); // OP_CHECKSIG
     }
     // returns true if the bytes located in txBytes by pos and
     // script_len represent a P2SH script
     function isP2SH(bytes txBytes, uint pos, uint script_len) returns (bool) {
         return (script_len == 23)           // 20 byte scripthash + 3 bytes of script
-            &amp;&amp; (txBytes[pos + 0] == 0xa9)   // OP_HASH160
-            &amp;&amp; (txBytes[pos + 1] == 0x14)   // bytes to push
-            &amp;&amp; (txBytes[pos + 22] == 0x87); // OP_EQUAL
+            && (txBytes[pos + 0] == 0xa9)   // OP_HASH160
+            && (txBytes[pos + 1] == 0x14)   // bytes to push
+            && (txBytes[pos + 22] == 0x87); // OP_EQUAL
     }
     // Get the pubkeyhash / scripthash from an output script. Assumes
     // pay-to-pubkey-hash (P2PKH) or pay-to-script-hash (P2SH) outputs.
@@ -651,20 +651,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -682,17 +682,17 @@ contract PricingStrategy{
 	function baseDiscounts(uint256 currentsupply,uint256 contribution,string types) returns (uint256){
 		if(contribution==0) throw;
 		if(keccak256(&quot;ethereum&quot;)==keccak256(types)){
-			if(currentsupply&gt;=0 &amp;&amp; currentsupply&lt;= 15*(10**5) * (10**18) &amp;&amp; contribution&gt;=1*10**18){
+			if(currentsupply>=0 && currentsupply<= 15*(10**5) * (10**18) && contribution>=1*10**18){
 			 return 40;
-			}else if(currentsupply&gt; 15*(10**5) * (10**18) &amp;&amp; currentsupply&lt; 30*(10**5) * (10**18) &amp;&amp; contribution&gt;=5*10**17){
+			}else if(currentsupply> 15*(10**5) * (10**18) && currentsupply< 30*(10**5) * (10**18) && contribution>=5*10**17){
 				return 30;
 			}else{
 				return 0;
 			}
 			}else if(keccak256(&quot;bitcoin&quot;)==keccak256(types)){
-				if(currentsupply&gt;=0 &amp;&amp; currentsupply&lt;= 15*(10**5) * (10**18) &amp;&amp; contribution&gt;=45*10**5){
+				if(currentsupply>=0 && currentsupply<= 15*(10**5) * (10**18) && contribution>=45*10**5){
 				 return 40;
-				}else if(currentsupply&gt; 15*(10**5) * (10**18) &amp;&amp; currentsupply&lt; 30*(10**5) * (10**18) &amp;&amp; contribution&gt;=225*10**4){
+				}else if(currentsupply> 15*(10**5) * (10**18) && currentsupply< 30*(10**5) * (10**18) && contribution>=225*10**4){
 					return 30;
 				}else{
 					return 0;
@@ -712,21 +712,21 @@ contract PricingStrategy{
 		//its unsigned negative checking not required
 		if(contribution==0) throw;
 		if(keccak256(&quot;ethereum&quot;)==keccak256(types)){
-			if(contribution&gt;=3*10**18 &amp;&amp; contribution&lt;10*10**18){
+			if(contribution>=3*10**18 && contribution<10*10**18){
 				return 0;
-			}else if(contribution&gt;=10*10**18 &amp;&amp; contribution&lt;20*10**18){
+			}else if(contribution>=10*10**18 && contribution<20*10**18){
 				return 5;
-			}else if(contribution&gt;=20*10**18){
+			}else if(contribution>=20*10**18){
 				return 10;
 			}else{
 				return 0;
 			}
 			}else if(keccak256(&quot;bitcoin&quot;)==keccak256(types)){
-				if(contribution&gt;=3*45*10**5 &amp;&amp; contribution&lt;10*45*10**5){
+				if(contribution>=3*45*10**5 && contribution<10*45*10**5){
 					return 0;
-				}else if(contribution&gt;=10*45*10**5 &amp;&amp; contribution&lt;20*45*10**5){
+				}else if(contribution>=10*45*10**5 && contribution<20*45*10**5){
 					return 5;
-				}else if(contribution&gt;=20*45*10**5){
+				}else if(contribution>=20*45*10**5){
 					return 10;
 				}else{
 					return 0;
@@ -785,12 +785,12 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
 	///the txorigin is the web3.eth.coinbase account
 	//record Transactions that have claimed ether to prevent the replay attacks
 	//to-do
-	mapping(uint256 =&gt; bool) transactionsClaimed;
+	mapping(uint256 => bool) transactionsClaimed;
 	uint256 public valueToBeSent;
 
 	//the constructor function
    function PreICO(address tokenAddress){
-		//require(bytes(_name).length &gt; 0 &amp;&amp; bytes(_symbol).length &gt; 0); // validate input
+		//require(bytes(_name).length > 0 && bytes(_symbol).length > 0); // validate input
 		token = SMTToken(tokenAddress);
 		tokensPerEther = token.tokensPerEther();
 		tokensPerBTC = token.tokensPerBTC();
@@ -826,10 +826,10 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
         uint256 newCreatedTokens;
         ///since we are creating tokens we need to increase the total supply
         if(token.getState()==ICOSaleState.PrivateSale||token.getState()==ICOSaleState.PreSale) {
-        	if((msg.value) &lt; 1*10**18) throw;
+        	if((msg.value) < 1*10**18) throw;
         	newCreatedTokens =calNewTokens(msg.value,&quot;ethereum&quot;);
         	uint256 temp = SafeMath.add(initialSupplyPrivateSale,newCreatedTokens);
-        	if(temp&gt;tokenCreationMaxPrivateSale){
+        	if(temp>tokenCreationMaxPrivateSale){
         		uint256 consumed = SafeMath.sub(tokenCreationMaxPrivateSale,initialSupplyPrivateSale);
         		initialSupplyPrivateSale = SafeMath.add(initialSupplyPrivateSale,consumed);
         		currentSupply = SafeMath.add(currentSupply,consumed);
@@ -838,7 +838,7 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
         		switchState();
         		initialSupplyPublicPreICO = SafeMath.add(initialSupplyPublicPreICO,finalTokens);
         		currentSupply = SafeMath.add(currentSupply,finalTokens);
-        		if(initialSupplyPublicPreICO&gt;tokenCreationMaxPreICO) throw;
+        		if(initialSupplyPublicPreICO>tokenCreationMaxPreICO) throw;
         		numberOfBackers++;
                token.addToBalances(msg.sender,SafeMath.add(finalTokens,consumed));
         	 if(!ownerAddr.send(msg.value))throw;
@@ -846,7 +846,7 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
         	}else{
     			initialSupplyPrivateSale = SafeMath.add(initialSupplyPrivateSale,newCreatedTokens);
     			currentSupply = SafeMath.add(currentSupply,newCreatedTokens);
-    			if(initialSupplyPrivateSale&gt;tokenCreationMaxPrivateSale) throw;
+    			if(initialSupplyPrivateSale>tokenCreationMaxPrivateSale) throw;
     			numberOfBackers++;
                 token.addToBalances(msg.sender,newCreatedTokens);
             	if(!ownerAddr.send(msg.value))throw;
@@ -854,11 +854,11 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
     		}
         }
         else if(token.getState()==ICOSaleState.PreICO){
-        	if(msg.value &lt; 5*10**17) throw;
+        	if(msg.value < 5*10**17) throw;
         	newCreatedTokens =calNewTokens(msg.value,&quot;ethereum&quot;);
         	initialSupplyPublicPreICO = SafeMath.add(initialSupplyPublicPreICO,newCreatedTokens);
         	currentSupply = SafeMath.add(currentSupply,newCreatedTokens);
-        	if(initialSupplyPublicPreICO&gt;tokenCreationMaxPreICO) throw;
+        	if(initialSupplyPublicPreICO>tokenCreationMaxPreICO) throw;
         	numberOfBackers++;
              token.addToBalances(msg.sender,newCreatedTokens);
         	if(!ownerAddr.send(msg.value))throw;
@@ -880,10 +880,10 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
 	  if(!isValid) throw;
 	  uint256 newCreatedTokens;
         if(token.getState()==ICOSaleState.PrivateSale||token.getState()==ICOSaleState.PreSale) {
-        	if(val &lt; 1*10**18) throw;
+        	if(val < 1*10**18) throw;
         	newCreatedTokens =calNewTokens(val,&quot;ethereum&quot;);
         	uint256 temp = SafeMath.add(initialSupplyPrivateSale,newCreatedTokens);
-        	if(temp&gt;tokenCreationMaxPrivateSale){
+        	if(temp>tokenCreationMaxPrivateSale){
         		uint256 consumed = SafeMath.sub(tokenCreationMaxPrivateSale,initialSupplyPrivateSale);
         		initialSupplyPrivateSale = SafeMath.add(initialSupplyPrivateSale,consumed);
         		currentSupply = SafeMath.add(currentSupply,consumed);
@@ -892,25 +892,25 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
         		switchState();
         		initialSupplyPublicPreICO = SafeMath.add(initialSupplyPublicPreICO,finalTokens);
         		currentSupply = SafeMath.add(currentSupply,finalTokens);
-        		if(initialSupplyPublicPreICO&gt;tokenCreationMaxPreICO) throw;
+        		if(initialSupplyPublicPreICO>tokenCreationMaxPreICO) throw;
         		numberOfBackers++;
                token.addToBalances(addr,SafeMath.add(finalTokens,consumed));
         	   token.increaseEthRaised(val);
         	}else{
     			initialSupplyPrivateSale = SafeMath.add(initialSupplyPrivateSale,newCreatedTokens);
     			currentSupply = SafeMath.add(currentSupply,newCreatedTokens);
-    			if(initialSupplyPrivateSale&gt;tokenCreationMaxPrivateSale) throw;
+    			if(initialSupplyPrivateSale>tokenCreationMaxPrivateSale) throw;
     			numberOfBackers++;
                 token.addToBalances(addr,newCreatedTokens);
             	token.increaseEthRaised(val);
     		}
         }
         else if(token.getState()==ICOSaleState.PreICO){
-        	if(msg.value &lt; 5*10**17) throw;
+        	if(msg.value < 5*10**17) throw;
         	newCreatedTokens =calNewTokens(val,&quot;ethereum&quot;);
         	initialSupplyPublicPreICO = SafeMath.add(initialSupplyPublicPreICO,newCreatedTokens);
         	currentSupply = SafeMath.add(currentSupply,newCreatedTokens);
-        	if(initialSupplyPublicPreICO&gt;tokenCreationMaxPreICO) throw;
+        	if(initialSupplyPublicPreICO>tokenCreationMaxPreICO) throw;
         	numberOfBackers++;
              token.addToBalances(addr,newCreatedTokens);
         	token.increaseEthRaised(val);
@@ -934,10 +934,10 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
 				uint256 newCreatedTokens;
 				 ///since we are creating tokens we need to increase the total supply
             if(token.getState()==ICOSaleState.PrivateSale||token.getState()==ICOSaleState.PreSale) {
-        	if(b &lt; 45*10**5) throw;
+        	if(b < 45*10**5) throw;
         	newCreatedTokens =calNewTokens(b,&quot;bitcoin&quot;);
         	uint256 temp = SafeMath.add(initialSupplyPrivateSale,newCreatedTokens);
-        	if(temp&gt;tokenCreationMaxPrivateSale){
+        	if(temp>tokenCreationMaxPrivateSale){
         		uint256 consumed = SafeMath.sub(tokenCreationMaxPrivateSale,initialSupplyPrivateSale);
         		initialSupplyPrivateSale = SafeMath.add(initialSupplyPrivateSale,consumed);
         		currentSupply = SafeMath.add(currentSupply,consumed);
@@ -946,25 +946,25 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
         		switchState();
         		initialSupplyPublicPreICO = SafeMath.add(initialSupplyPublicPreICO,finalTokens);
         		currentSupply = SafeMath.add(currentSupply,finalTokens);
-        		if(initialSupplyPublicPreICO&gt;tokenCreationMaxPreICO) throw;
+        		if(initialSupplyPublicPreICO>tokenCreationMaxPreICO) throw;
         		numberOfBackers++;
                token.addToBalances(addr,SafeMath.add(finalTokens,consumed));
         	   token.increaseBTCRaised(b);
         	}else{
     			initialSupplyPrivateSale = SafeMath.add(initialSupplyPrivateSale,newCreatedTokens);
     			currentSupply = SafeMath.add(currentSupply,newCreatedTokens);
-    			if(initialSupplyPrivateSale&gt;tokenCreationMaxPrivateSale) throw;
+    			if(initialSupplyPrivateSale>tokenCreationMaxPrivateSale) throw;
     			numberOfBackers++;
                 token.addToBalances(addr,newCreatedTokens);
             	token.increaseBTCRaised(b);
     		}
         }
         else if(token.getState()==ICOSaleState.PreICO){
-        	if(msg.value &lt; 225*10**4) throw;
+        	if(msg.value < 225*10**4) throw;
         	newCreatedTokens =calNewTokens(b,&quot;bitcoin&quot;);
         	initialSupplyPublicPreICO = SafeMath.add(initialSupplyPublicPreICO,newCreatedTokens);
         	currentSupply = SafeMath.add(currentSupply,newCreatedTokens);
-        	if(initialSupplyPublicPreICO&gt;tokenCreationMaxPreICO) throw;
+        	if(initialSupplyPublicPreICO>tokenCreationMaxPreICO) throw;
         	numberOfBackers++;
              token.addToBalances(addr,newCreatedTokens);
         	token.increaseBTCRaised(b);

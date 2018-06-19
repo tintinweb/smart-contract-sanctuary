@@ -34,7 +34,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -97,8 +97,8 @@ contract FlexiFarmv2 is Ownable {
     
     bool private reentrancy_lock = false;
 
-    mapping(address =&gt; mapping(address =&gt; uint256)) public tokenInventory;
-    mapping(address =&gt; address) public shops;
+    mapping(address => mapping(address => uint256)) public tokenInventory;
+    mapping(address => address) public shops;
 
     uint256 public total_buy;
     uint256 public gas_amount;
@@ -126,7 +126,7 @@ contract FlexiFarmv2 is Ownable {
     {
       require (shop_addresses.length == token_addresses.length);       
 
-      for(uint256 i = 0; i &lt; shop_addresses.length; i++){        
+      for(uint256 i = 0; i < shop_addresses.length; i++){        
           shops[shop_addresses[i]] = token_addresses[i];              
       } 
     }
@@ -135,9 +135,9 @@ contract FlexiFarmv2 is Ownable {
 
     function initialBuy(address[] shop_addresses) onlyOwner nonReentrant external
     {
-      require (shop_addresses.length &lt;= 15);       
+      require (shop_addresses.length <= 15);       
 
-      for(uint256 i = 0; i &lt; shop_addresses.length; i++){        
+      for(uint256 i = 0; i < shop_addresses.length; i++){        
           FreeItemFarm(shop_addresses[i]).buyObject(this);              
       } 
     }
@@ -146,13 +146,13 @@ contract FlexiFarmv2 is Ownable {
     {
       require(shop_addresses.length == buy_amounts.length);
       uint256 totals;
-      for (uint256 j = 0; j &lt; buy_amounts.length; j++){  
+      for (uint256 j = 0; j < buy_amounts.length; j++){  
         totals+=buy_amounts[j];
-        assert(totals &gt;= buy_amounts[j]);
+        assert(totals >= buy_amounts[j]);
       }
-      require(totals &lt;= total_buy);     
+      require(totals <= total_buy);     
       
-      for (uint256 i = 0; i &lt; buy_amounts.length; i++){
+      for (uint256 i = 0; i < buy_amounts.length; i++){
         farmSingle(shop_addresses[i], buy_amounts[i]);
       }
     }
@@ -161,20 +161,20 @@ contract FlexiFarmv2 is Ownable {
     {   
       address token_address = shops[shop_address];
                                
-      for (uint256 i = 0; i &lt; buy_amount; i++) {
+      for (uint256 i = 0; i < buy_amount; i++) {
             require(shop_address.call.gas(26290).value(0)() == true);
       }
       tokenInventory[msg.sender][token_address] = tokenInventory[msg.sender][token_address].add(buy_amount);   
     } 
 
     function withdrawTokens(address[] token_addresses) nonReentrant external{
-      for(uint256 i = 0; i &lt; token_addresses.length; i++){
+      for(uint256 i = 0; i < token_addresses.length; i++){
         withdrawToken(token_addresses[i]);
       }
     }
 
     function withdrawToken(address token_address) private {
-        require(tokenInventory[msg.sender][token_address] &gt; 0);
+        require(tokenInventory[msg.sender][token_address] > 0);
         uint256 tokenbal = tokenInventory[msg.sender][token_address].mul(1 ether);
         tokenInventory[msg.sender][token_address] = 0;
         Item_token(token_address).transfer(msg.sender, tokenbal);        
@@ -185,13 +185,13 @@ contract FlexiFarmv2 is Ownable {
     {
       require(shop_addresses.length == buy_amounts.length);
       uint256 totals;
-      for (uint256 j = 0; j &lt; buy_amounts.length; j++){  
+      for (uint256 j = 0; j < buy_amounts.length; j++){  
         totals=buy_amounts[j];
-        assert(totals &gt;= buy_amounts[j]);
+        assert(totals >= buy_amounts[j]);
       }
-      require(totals &lt;= total_buy);     
+      require(totals <= total_buy);     
       
-      for (uint256 i = 0; i &lt; buy_amounts.length; i++){
+      for (uint256 i = 0; i < buy_amounts.length; i++){
         backupfarmSingle(shop_addresses[i], buy_amounts[i]);
       }
     }        
@@ -199,7 +199,7 @@ contract FlexiFarmv2 is Ownable {
     function backupfarmSingle(address shop_address, uint256 buy_amount) private
     { 
       address token_address = shops[shop_address]; 
-      for (uint256 i = 0; i &lt; buy_amount; i++) {
+      for (uint256 i = 0; i < buy_amount; i++) {
             require(shop_address.call.gas(gas_amount).value(0)() == true);
       }
       tokenInventory[msg.sender][token_address] = tokenInventory[msg.sender][token_address].add(buy_amount); 

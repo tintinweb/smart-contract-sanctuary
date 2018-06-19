@@ -876,13 +876,13 @@ library CryptoUtils {
     
 	function _changeParameter(uint256 _paramIndex, uint32 _value, uint32[19] storage parameters) internal {
 		//we can change only view parameters, and unique count in max range <= 100
-		require(_paramIndex >= BODY_COLOR_MAX_INDEX_0 &amp;&amp; _paramIndex <= UNIQUE_INDEX_13);
+		require(_paramIndex >= BODY_COLOR_MAX_INDEX_0 && _paramIndex <= UNIQUE_INDEX_13);
 		//we can NOT set pet, border and background values,
 		//those values have special logic behind them
 		require(
-		    _paramIndex != RUNES_MAX_8 &amp;&amp; 
-		    _paramIndex != PET_MAX_10 &amp;&amp; 
-		    _paramIndex != BORDER_MAX_11 &amp;&amp; 
+		    _paramIndex != RUNES_MAX_8 && 
+		    _paramIndex != PET_MAX_10 && 
+		    _paramIndex != BORDER_MAX_11 && 
 		    _paramIndex != BACKGROUND_MAX_12
 		);
 		//value of bodyColor, eyes, mouth, hair, hairColor, armor, weapon, hat must be < 1000
@@ -926,19 +926,19 @@ library CryptoUtils {
         
         require(
             rarity <= COMMON ||//common 
-            (rarity == UNCOMMON &amp;&amp; params[UNCOMMON_INDEX_17] > 0) ||//uncommon
-            (rarity == RARE &amp;&amp; params[RARE_INDEX_16] > 0) ||//rare
-            (rarity == MYTHIC &amp;&amp; params[MYTHIC_INDEX_15] > 0) ||//mythic
-            (rarity == LEGENDARY &amp;&amp; params[LEGENDARY_INDEX_14] > 0) ||//legendary
-            (rarity == UNIQUE &amp;&amp; params[UNIQUE_INDEX_13] > 0)//unique
+            (rarity == UNCOMMON && params[UNCOMMON_INDEX_17] > 0) ||//uncommon
+            (rarity == RARE && params[RARE_INDEX_16] > 0) ||//rare
+            (rarity == MYTHIC && params[MYTHIC_INDEX_15] > 0) ||//mythic
+            (rarity == LEGENDARY && params[LEGENDARY_INDEX_14] > 0) ||//legendary
+            (rarity == UNIQUE && params[UNIQUE_INDEX_13] > 0)//unique
         );
         require(rarity != UNIQUE || getUniqueValue(_identity) > params[UNIQUE_TOTAL_INDEX_18]);
         
         //check battle parameters
         require(
-            getStrengthValue(_identity) < 100 &amp;&amp;
-            getAgilityValue(_identity) < 100 &amp;&amp;
-            getIntelligenceValue(_identity) < 100 &amp;&amp;
+            getStrengthValue(_identity) < 100 &&
+            getAgilityValue(_identity) < 100 &&
+            getIntelligenceValue(_identity) < 100 &&
             getDamageValue(_identity) <= 55
         );
         require(getClassMechValue(_identity) <= MAGE);
@@ -1149,7 +1149,7 @@ library CryptoUtils {
     
     // Get bit value at position
     function isAuraSet(uint256 aura, uint256 auraIndex) internal pure returns (bool) {
-        return aura &amp; (uint256(0x01) << auraIndex) != 0;
+        return aura & (uint256(0x01) << auraIndex) != 0;
     }
     
     // Set bit value at position
@@ -1159,7 +1159,7 @@ library CryptoUtils {
     
     //switch off warrior auras that are enabled in pets auras, pet aura have priority
     function filterWarriorAuras(uint256 _warriorAuras, uint256 _petAuras) internal pure returns(uint256) {
-        return (_warriorAuras &amp; _petAuras) ^ _warriorAuras;
+        return (_warriorAuras & _petAuras) ^ _warriorAuras;
     }
   
     function _getTournamentBattles(uint256 _numberOfContenders) internal pure returns(uint256) {
@@ -1356,7 +1356,7 @@ library CryptoUtils {
     }
     
     function isMatching(int256 evenRating, int256 oddRating, int256 ratingGap) internal pure returns(bool) {
-        return evenRating <= (oddRating + ratingGap) &amp;&amp; evenRating >= (oddRating - ratingGap);
+        return evenRating <= (oddRating + ratingGap) && evenRating >= (oddRating - ratingGap);
     }
     
     function sort(uint256[] memory data) internal pure {
@@ -1420,14 +1420,14 @@ library CryptoUtils {
             rating1 = int256(_unpackRatingValue(warriorId));
             ratingRange = int256(getRatingRange(_unpackCycleValue(warriorId) + _skipCycles, _pvpInterval, _expandInterval));
             
-            if (index > pairIndex &amp;&amp; //check left neighbor
+            if (index > pairIndex && //check left neighbor
             isMatching(rating1, int256(_unpackRatingValue(matchingIds[index - 1])), ratingRange)) {
                 //move matched pairs to the left
                 //swap pairs
                 _swapPair(matchingIds, pairIndex, index - 1, pairIndex + 1, index);
                 //mark last pair position
                 pairIndex += 2;
-            } else if (index + 1 < matchingCount &amp;&amp; //check right neighbor
+            } else if (index + 1 < matchingCount && //check right neighbor
             isMatching(rating1, int256(_unpackRatingValue(matchingIds[index + 1])), ratingRange)) {
                 //move matched pairs to the left
                 //swap pairs
@@ -1454,7 +1454,7 @@ library CryptoUtils {
                 
             //compute battle result 1 = even(left) id won, 2 - odd(right) id won
             result = getPVPBattleResult(matchingIds[even], matchingIds[even + 1], hash % (1000 * 10**exp) / 10**exp);
-            require(result > 0 &amp;&amp; result < 3);
+            require(result > 0 && result < 3);
             exp++;
             //if odd warrior won, swap his id with even warrior,
             //otherwise do nothing,
@@ -1677,7 +1677,7 @@ contract WarriorTokenImpl is CryptoWarriorBase, ERC721 {
     function supportsInterface(bytes4 _interfaceID) external view returns (bool)
     {
         // DEBUG ONLY
-        //require((InterfaceSignature_ERC165 == 0x01ffc9a7) &amp;&amp; (InterfaceSignature_ERC721 == 0x9f40b779));
+        //require((InterfaceSignature_ERC165 == 0x01ffc9a7) && (InterfaceSignature_ERC721 == 0x9f40b779));
 
         return ((_interfaceID == InterfaceSignature_ERC165) || (_interfaceID == InterfaceSignature_ERC721));
     }
@@ -1691,12 +1691,12 @@ contract WarriorTokenImpl is CryptoWarriorBase, ERC721 {
      * @param _tokenId warrior id
      */
     function _owns(address _claimant, uint256 _tokenId) internal view returns (bool) {
-        return _claimant != address(0) &amp;&amp; warriorToOwner[_tokenId] == _claimant;    
+        return _claimant != address(0) && warriorToOwner[_tokenId] == _claimant;    
     }
 
     function _ownerApproved(address _claimant, uint256 _tokenId) internal view returns (bool) {
-        return _claimant != address(0) &amp;&amp;//0 address means token is burned 
-        warriorToOwner[_tokenId] == _claimant &amp;&amp; warriorToApproved[_tokenId] == address(0);    
+        return _claimant != address(0) &&//0 address means token is burned 
+        warriorToOwner[_tokenId] == _claimant && warriorToApproved[_tokenId] == address(0);    
     }
 
     /// @dev Checks if a given address currently has transferApproval for a particular Warrior.
@@ -1937,8 +1937,8 @@ contract CryptoWarriorPVE is WarriorTokenImpl {
     ///  current cooldown is finished and also checks that warrior is idle (does not participate in any action)
     ///  and dungeon level requirement is satisfied
     function _isReadyToPVE(DataTypes.Warrior _warrior) internal view returns (bool) {
-        return (_warrior.action == IDLE) &amp;&amp; //is idle
-        (_warrior.cooldownEndBlock <= uint64(block.number)) &amp;&amp; //no cooldown
+        return (_warrior.action == IDLE) && //is idle
+        (_warrior.cooldownEndBlock <= uint64(block.number)) && //no cooldown
         (_warrior.level >= dungeonRequirements[_warrior.dungeonIndex]);//dungeon level requirement is satisfied
     }
     
@@ -2070,9 +2070,9 @@ contract CryptoWarriorPVE is WarriorTokenImpl {
             DataTypes.Warrior storage warrior = warriors[_warriorIds[index]];
 			require(
 		        // Check that the warrior exists.
-			    warrior.identity != 0 &amp;&amp;
+			    warrior.identity != 0 &&
 		        // Check that warrior participated in PVE battle action
-			    warrior.action == PVE_BATTLE &amp;&amp;
+			    warrior.action == PVE_BATTLE &&
 		        // And the battle time is over
 			    warrior.cooldownEndBlock <= blockNumber
 			);
@@ -2272,7 +2272,7 @@ contract CryptoWarriorTournament is CryptoWarriorPVP {
     }
     
     function _isReadyToTournament(DataTypes.Warrior storage _warrior) internal view returns(bool){
-        return _warrior.level >= 50 &amp;&amp; _warrior.action == IDLE;//must not participate in any action
+        return _warrior.level >= 50 && _warrior.action == IDLE;//must not participate in any action
     }
     
     function _packTournamentData(uint256[] memory _warriorIds) internal view returns(uint256[] memory tournamentData) {
@@ -2755,7 +2755,7 @@ contract PVP is PausableBattle, PVPInterface {
     
     function sendBooty(address _recipient, uint256 _amaunt) internal returns(uint256) {
         bool success = _recipient.send(_amaunt);
-        if (!success &amp;&amp; _amaunt > 0) {
+        if (!success && _amaunt > 0) {
             ownerToBooty[_recipient] += _amaunt;
             BootySendFailed(_recipient, _amaunt);
             return _amaunt;
@@ -2774,7 +2774,7 @@ contract PVP is PausableBattle, PVPInterface {
     function _scheduleTournament() internal {
         //we can chedule only if there is nobody in tournament queue and
         //time of tournament battle have passed
-		if (tournamentQueueSize == 0 &amp;&amp; tournamentEndBlock <= block.number) {
+		if (tournamentQueueSize == 0 && tournamentEndBlock <= block.number) {
 		    tournamentEndBlock = ((FUND_GATHERING_TIME / 2 + ADMISSION_TIME) / secondsPerBlock) + block.number;
 		    TournamentScheduled(tournamentEndBlock);
 		}
@@ -2894,7 +2894,7 @@ contract PVP is PausableBattle, PVPInterface {
     }
     
     function canFinishPVP() external view returns(bool) {
-        return nextPVPBatleBlock <= block.number &amp;&amp;
+        return nextPVPBatleBlock <= block.number &&
          CryptoUtils._getMatchingIds(_packPVPData(), PVP_INTERVAL, _computeCycleSkip(), RATING_EXPAND_INTERVAL) > 1;
     }
     
@@ -2918,7 +2918,7 @@ contract PVP is PausableBattle, PVPInterface {
 		    nextPVPBatleBlock = nextBattleBlock;
 		    PVPScheduled(nextBattleBlock);
 		//if pvp queue will be full and there is still too much time left, then let the battle begin! 
-		} else if (length + 1 == pvpQueue.length &amp;&amp; (currentBlock + SAFETY_GAP * 2) < nextBattleBlock) {
+		} else if (length + 1 == pvpQueue.length && (currentBlock + SAFETY_GAP * 2) < nextBattleBlock) {
 		    nextBattleBlock = currentBlock + SAFETY_GAP;
 		    nextPVPBatleBlock = nextBattleBlock;
 		    PVPScheduled(nextBattleBlock);
@@ -3280,7 +3280,7 @@ contract Tournament is PVP {
     // tournament queue is empty
     // @param _cut range from 0 - 10000, mapped to 0-100%
     function setTournamentEntranceFeeCut(uint256 _cut) external onlyOwner {
-        //cut must be less or equal 100&amp;
+        //cut must be less or equal 100&
         require(_cut <= 10000);
         //tournament queue must be empty
         require(tournamentQueueSize == 0);
@@ -3303,7 +3303,7 @@ contract Tournament is PVP {
     }
     
     function canFinishTournament() external view returns(bool) {
-        return tournamentEndBlock <= block.number &amp;&amp; tournamentQueueSize > 0;
+        return tournamentEndBlock <= block.number && tournamentQueueSize > 0;
     }
     
     // @dev Internal utility function to sigin up to tournament, 
@@ -3661,7 +3661,7 @@ contract WarriorSanctuary is WarriorGenerator {
         require(recoveryAllowed);
         
         uint256 length = owners.length;
-        require(length == souls.length &amp;&amp; length == blocks.length);
+        require(length == souls.length && length == blocks.length);
         
         for(uint256 i = 0; i < length; i ++) {
             soulCounter[owners[i]] = souls[i];
@@ -3718,7 +3718,7 @@ contract WarriorSanctuary is WarriorGenerator {
     function finishRitual(address _owner) whenNotPaused external {
         // Check ritual time is over
         uint256 timeBlock = ritualTimeBlock[_owner];
-        require(timeBlock > 0 &amp;&amp; timeBlock <= block.number);
+        require(timeBlock > 0 && timeBlock <= block.number);
         
         uint256 souls = soulCounter[_owner];
         
@@ -4013,7 +4013,7 @@ contract SaleClockAuction is Pausable, AuctionBase {
 	            uint32 tokenId;
 	            uint32 size = 0;
 				auctionData = new uint256[](count * stepSize);
-	            for (tokenId = 0; tokenId < totalWarriors &amp;&amp; size < count; tokenId++) {
+	            for (tokenId = 0; tokenId < totalWarriors && size < count; tokenId++) {
 	                AuctionBase.Auction storage auction1 = tokenIdToAuction[tokenId];
 	        
 		        		if (_isOnAuction(auction1)) {

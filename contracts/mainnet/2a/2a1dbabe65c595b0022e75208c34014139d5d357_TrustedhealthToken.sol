@@ -6,13 +6,13 @@ pragma solidity ^0.4.21;
 
 library SafeMath {
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -69,9 +69,9 @@ contract TrustedhealthToken is ERC20Token, owned {
 
     /* Private variables */
     uint256 supply;
-    mapping (address =&gt; uint256) balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowances;
-    mapping (address =&gt; bool) allowedToMint;
+    mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) allowances;
+    mapping (address => bool) allowedToMint;
 
     /* Events */
     event TokenFrozen(bool _frozen, string _reason);
@@ -92,7 +92,7 @@ contract TrustedhealthToken is ERC20Token, owned {
     function _transfer(address _from, address _to, uint256 _amount) private {
         require(_to != 0x0);
         require(_to != address(this));
-        require(balances[_from] &gt;= _amount);
+        require(balances[_from] >= _amount);
         balances[_to] = balances[_to].add(_amount);
         balances[_from] = balances[_from].sub(_amount);
         emit Transfer(_from, _to, _amount);
@@ -139,7 +139,7 @@ contract TrustedhealthToken is ERC20Token, owned {
     * @return Whether the transfer was successful or not.
     **/
     function transferFrom(address _from, address _to, uint256 _amount) public returns (bool _success) {
-        require(_amount &lt;= allowances[_from][msg.sender]);
+        require(_amount <= allowances[_from][msg.sender]);
         require(!tokenFrozen);
         _transfer(_from, _to, _amount);
         allowances[_from][msg.sender] = allowances[_from][msg.sender].sub(_amount);
@@ -156,8 +156,8 @@ contract TrustedhealthToken is ERC20Token, owned {
     **/
     function mintTokens(address _atAddress, uint256 _amount) public {
         require(allowedToMint[msg.sender]);
-        require(balances[_atAddress].add(_amount) &gt; balances[_atAddress]);
-        require((supply.add(_amount)) &lt;= 201225419354262000000000000);
+        require(balances[_atAddress].add(_amount) > balances[_atAddress]);
+        require((supply.add(_amount)) <= 201225419354262000000000000);
         supply = supply.add(_amount);
         balances[_atAddress] = balances[_atAddress].add(_amount);
         emit Mint(_atAddress, _amount);

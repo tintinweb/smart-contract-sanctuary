@@ -159,7 +159,7 @@ contract A2AToken is Ownable, StandardToken {
 	function transfer(address _to, uint256 _value) public returns (bool) {
 		require(releasedForTransfer);
 		// Cancel transaction if transfer value more then available without vesting amount
-		if ( ( vestingAmount[msg.sender] > 0 ) &amp;&amp; ( block.number < vestingBeforeBlockNumber[msg.sender] ) ) {
+		if ( ( vestingAmount[msg.sender] > 0 ) && ( block.number < vestingBeforeBlockNumber[msg.sender] ) ) {
 			if ( balances[msg.sender] < _value ) revert();
 			if ( balances[msg.sender] <= vestingAmount[msg.sender] ) revert();
 			if ( balances[msg.sender].sub(_value) < vestingAmount[msg.sender] ) revert();
@@ -402,7 +402,7 @@ contract A2ACrowdsale is ICrowdsaleProcessor {
 		require(_startTimestamp >= block.timestamp);
 		require(_endTimestamp > _startTimestamp);
 		duration = _endTimestamp - _startTimestamp;
-		require(duration >= MIN_CROWDSALE_TIME &amp;&amp; duration <= MAX_CROWDSALE_TIME);
+		require(duration >= MIN_CROWDSALE_TIME && duration <= MAX_CROWDSALE_TIME);
 		startTimestamp = _startTimestamp;
 		endTimestamp = _endTimestamp;
 		started = true;
@@ -413,10 +413,10 @@ contract A2ACrowdsale is ICrowdsaleProcessor {
 	function isFailed() public constant returns(bool) {
 		return (
 			// it was started
-			started &amp;&amp;
+			started &&
 
 			// crowdsale period has finished
-			block.timestamp >= endTimestamp &amp;&amp;
+			block.timestamp >= endTimestamp &&
 
 			// but collected ETH is below the required minimum
 			totalCollected < minimalGoal
@@ -427,13 +427,13 @@ contract A2ACrowdsale is ICrowdsaleProcessor {
 	function isActive() public constant returns(bool) {
 		return (
 			// it was started
-			started &amp;&amp;
+			started &&
 
 			// hard cap wasn&#39;t reached yet
-			totalCollected < hardCap &amp;&amp;
+			totalCollected < hardCap &&
 
 			// and current time is within the crowdfunding period
-			block.timestamp >= startTimestamp &amp;&amp;
+			block.timestamp >= startTimestamp &&
 			block.timestamp < endTimestamp
 		);
 	}
@@ -445,7 +445,7 @@ contract A2ACrowdsale is ICrowdsaleProcessor {
 			totalCollected >= hardCap ||
 
 			// ...or the crowdfunding period is over, but the minimum has been reached
-			(block.timestamp >= endTimestamp &amp;&amp; totalCollected >= minimalGoal)
+			(block.timestamp >= endTimestamp && totalCollected >= minimalGoal)
 		);
 	}
 	
@@ -495,7 +495,7 @@ contract A2ACrowdsale is ICrowdsaleProcessor {
 		require( totalCollected < hardCap );
 		
 		uint256 tokensAmount = _val.mul( icoPrice ) / 10**10;
-		if ( ( icoBonus > 0 ) &amp;&amp; ( totalSold.add(tokensAmount) < maxTokensWithBonus ) ) {
+		if ( ( icoBonus > 0 ) && ( totalSold.add(tokensAmount) < maxTokensWithBonus ) ) {
 			tokensAmount = tokensAmount.add( tokensAmount.mul(icoBonus) / 1000000 );
 		} else {
 			icoBonus = 0;
@@ -506,7 +506,7 @@ contract A2ACrowdsale is ICrowdsaleProcessor {
 		wingsTokenRewards = wingsTokenRewards.add( tokensAmount.mul( wingsTokenRewardsPercent ) / 1000000 );
 		wingsETHRewards = wingsETHRewards.add( _val.mul( wingsETHRewardsPercent ) / 1000000 );
 		
-		if ( ( bountyAddress != address(0) ) &amp;&amp; ( totalSold.add(tokensAmount) < maxTokensWithBonus ) ) {
+		if ( ( bountyAddress != address(0) ) && ( totalSold.add(tokensAmount) < maxTokensWithBonus ) ) {
 			require( token.issueDuringICO(bountyAddress, tokensAmount.mul(bountyPercent) / 1000000) );
 			tokensAmount = tokensAmount.add( tokensAmount.mul(bountyPercent) / 1000000 );
 		}

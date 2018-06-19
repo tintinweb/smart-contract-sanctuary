@@ -12,20 +12,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -113,13 +113,13 @@ contract ICOEngineInterface {
 contract KYCBase {
     using SafeMath for uint256;
 
-    mapping (address =&gt; bool) public isKycSigner;
-    mapping (uint64 =&gt; uint256) public alreadyPayed;
+    mapping (address => bool) public isKycSigner;
+    mapping (uint64 => uint256) public alreadyPayed;
 
     event KycVerified(address indexed signer, address buyerAddress, uint64 buyerId, uint maxAmount);
 
     function KYCBase(address [] kycSigners) internal {
-        for (uint i = 0; i &lt; kycSigners.length; i++) {
+        for (uint i = 0; i < kycSigners.length; i++) {
             isKycSigner[kycSigners[i]] = true;
         }
     }
@@ -157,7 +157,7 @@ contract KYCBase {
             revert();
         } else {
             uint256 totalPayed = alreadyPayed[buyerId].add(msg.value);
-            require(totalPayed &lt;= maxAmount);
+            require(totalPayed <= maxAmount);
             alreadyPayed[buyerId] = totalPayed;
             emit KycVerified(signer, buyerAddress, buyerId, maxAmount);
             return releaseTokensTo(buyerAddress);
@@ -178,9 +178,9 @@ contract RC is ICOEngineInterface, KYCBase {
     uint256 public oneTokenInFiatWei;
 	
 	
-	mapping(address =&gt; uint256) public etherUser; // address =&gt; ether amount
-	mapping(address =&gt; uint256) public pendingTokenUser; // address =&gt; token amount that will be claimed
-	mapping(address =&gt; uint256) public tokenUser; // address =&gt; token amount owned
+	mapping(address => uint256) public etherUser; // address => ether amount
+	mapping(address => uint256) public pendingTokenUser; // address => token amount that will be claimed
+	mapping(address => uint256) public tokenUser; // address => token amount owned
 	uint256[] public tokenThreshold; // array of token threshold reached in wei of token
     uint256[] public bonusThreshold; // array of bonus of each tokenThreshold reached - 20% = 20
 
@@ -234,17 +234,17 @@ contract RC is ICOEngineInterface, KYCBase {
     }
     
     function releaseTokensTo(address buyer) internal returns(bool) {
-        if( msg.value &gt; 0 ) takeEther(buyer);
+        if( msg.value > 0 ) takeEther(buyer);
         giveToken(buyer);
         return true;
     }
     
     function started() public view returns(bool) {
-        return now &gt; startTime || remainingTokens == 0;
+        return now > startTime || remainingTokens == 0;
     }
     
     function ended() public view returns(bool) {
-        return now &gt; endTime || remainingTokens == 0;
+        return now > endTime || remainingTokens == 0;
     }
     
     function startTime() public view returns(uint) {
@@ -269,8 +269,8 @@ contract RC is ICOEngineInterface, KYCBase {
     }
 	
 	function () public payable{
-	    require( now &gt; startTime );
-	    if(now &lt; endTime) {
+	    require( now > startTime );
+	    if(now < endTime) {
 	        takeEther(msg.sender);
 	    } else {
 	        claimTokenBonus(msg.sender);
@@ -281,22 +281,22 @@ contract RC is ICOEngineInterface, KYCBase {
 	event Buy(address buyer, uint256 value, uint256 soldToken, uint256 valueTokenInUsdWei );
 	
 	function takeEther(address _buyer) internal {
-	    require( now &gt; startTime );
-        require( now &lt; endTime );
-        require( msg.value &gt;= etherMinimum); 
-        require( remainingTokens &gt; 0 );
+	    require( now > startTime );
+        require( now < endTime );
+        require( msg.value >= etherMinimum); 
+        require( remainingTokens > 0 );
         
         uint256 oneToken = 10 ** uint256(tokenSaleContract.decimals());
         uint256 tokenValue = tokenSaleContract.tokenValueInEther(oneTokenInFiatWei);
         uint256 tokenAmount = msg.value.mul(oneToken).div(tokenValue);
         
         uint256 unboughtTokens = tokenInterface(tokenSaleContract.tokenContract()).balanceOf(tokenSaleContract);
-        if ( unboughtTokens &gt; remainingTokens ) {
+        if ( unboughtTokens > remainingTokens ) {
             unboughtTokens = remainingTokens;
         }
         
         uint256 refund = 0;
-        if ( unboughtTokens &lt; tokenAmount ) {
+        if ( unboughtTokens < tokenAmount ) {
             refund = (tokenAmount - unboughtTokens).mul(tokenValue).div(oneToken);
             tokenAmount = unboughtTokens;
 			remainingTokens = 0; // set remaining token to 0
@@ -312,7 +312,7 @@ contract RC is ICOEngineInterface, KYCBase {
 	}
 	
 	function giveToken(address _buyer) internal {
-	    require( pendingTokenUser[_buyer] &gt; 0 );
+	    require( pendingTokenUser[_buyer] > 0 );
 
 		tokenUser[_buyer] = tokenUser[_buyer].add(pendingTokenUser[_buyer]);
 	
@@ -325,15 +325,15 @@ contract RC is ICOEngineInterface, KYCBase {
 	}
 
     function claimTokenBonus(address _buyer) internal {
-        require( now &gt; endTime );
-        require( tokenUser[_buyer] &gt; 0 );
+        require( now > endTime );
+        require( tokenUser[_buyer] > 0 );
         uint256 bonusApplied = 0;
-        for (uint i = 0; i &lt; tokenThreshold.length; i++) {
-            if ( soldTokens &gt; tokenThreshold[i] ) {
+        for (uint i = 0; i < tokenThreshold.length; i++) {
+            if ( soldTokens > tokenThreshold[i] ) {
                 bonusApplied = bonusThreshold[i];
 			}
 		}    
-		require( bonusApplied &gt; 0 );
+		require( bonusApplied > 0 );
 		
 		uint256 addTokenAmount = tokenUser[_buyer].mul( bonusApplied ).div(10**2);
 		tokenUser[_buyer] = 0; 
@@ -371,9 +371,9 @@ contract RCpro is ICOEngineInterface, KYCBase {
     uint256[] public sendThreshold;
 	
 	
-	mapping(address =&gt; uint256) public etherUser; // address =&gt; ether amount
-	mapping(address =&gt; uint256) public pendingTokenUser; // address =&gt; token amount that will be claimed
-	mapping(address =&gt; uint256) public tokenUser; // address =&gt; token amount owned
+	mapping(address => uint256) public etherUser; // address => ether amount
+	mapping(address => uint256) public pendingTokenUser; // address => token amount that will be claimed
+	mapping(address => uint256) public tokenUser; // address => token amount owned
 	uint256[] public tokenThreshold; // array of token threshold reached in wei of token
     uint256[] public bonusThreshold; // array of bonus of each tokenThreshold reached - 20% = 20
 
@@ -429,17 +429,17 @@ contract RCpro is ICOEngineInterface, KYCBase {
     }
     
     function releaseTokensTo(address buyer) internal returns(bool) {
-        if( msg.value &gt; 0 ) takeEther(buyer);
+        if( msg.value > 0 ) takeEther(buyer);
         giveToken(buyer);
         return true;
     }
     
     function started() public view returns(bool) {
-        return now &gt; startTime || remainingTokens == 0;
+        return now > startTime || remainingTokens == 0;
     }
     
     function ended() public view returns(bool) {
-        return now &gt; endTime || remainingTokens == 0;
+        return now > endTime || remainingTokens == 0;
     }
     
     function startTime() public view returns(uint) {
@@ -464,8 +464,8 @@ contract RCpro is ICOEngineInterface, KYCBase {
     }
 	
 	function () public payable{
-	    require( now &gt; startTime );
-	    if(now &lt; endTime) {
+	    require( now > startTime );
+	    if(now < endTime) {
 	        takeEther(msg.sender);
 	    } else {
 	        claimTokenBonus(msg.sender);
@@ -476,31 +476,31 @@ contract RCpro is ICOEngineInterface, KYCBase {
 	event Buy(address buyer, uint256 value, uint256 soldToken, uint256 valueTokenInFiatWei );
 	
 	function takeEther(address _buyer) internal {
-	    require( now &gt; startTime );
-        require( now &lt; endTime );
-        require( msg.value &gt;= etherMinimum); 
-        require( remainingTokens &gt; 0 );
+	    require( now > startTime );
+        require( now < endTime );
+        require( msg.value >= etherMinimum); 
+        require( remainingTokens > 0 );
         
         uint256 oneToken = 10 ** uint256(tokenSaleContract.decimals());
 		
 		uint256 tknPriceApplied = 0;
-        for (uint i = 0; i &lt; sendThreshold.length; i++) {
-            if ( msg.value &gt;= sendThreshold[i] ) {
+        for (uint i = 0; i < sendThreshold.length; i++) {
+            if ( msg.value >= sendThreshold[i] ) {
                 tknPriceApplied = oneTokenInFiatWei[i];
 			}
 		}    
-		require( tknPriceApplied &gt; 0 );
+		require( tknPriceApplied > 0 );
 		
         uint256 tokenValue = tokenSaleContract.tokenValueInEther(tknPriceApplied);
         uint256 tokenAmount = msg.value.mul(oneToken).div(tokenValue);
         
         uint256 unboughtTokens = tokenInterface(tokenSaleContract.tokenContract()).balanceOf(tokenSaleContract);
-        if ( unboughtTokens &gt; remainingTokens ) {
+        if ( unboughtTokens > remainingTokens ) {
             unboughtTokens = remainingTokens;
         }
         
         uint256 refund = 0;
-        if ( unboughtTokens &lt; tokenAmount ) {
+        if ( unboughtTokens < tokenAmount ) {
             refund = (tokenAmount - unboughtTokens).mul(tokenValue).div(oneToken);
             tokenAmount = unboughtTokens;
 			remainingTokens = 0; // set remaining token to 0
@@ -516,7 +516,7 @@ contract RCpro is ICOEngineInterface, KYCBase {
 	}
 	
 	function giveToken(address _buyer) internal {
-	    require( pendingTokenUser[_buyer] &gt; 0 );
+	    require( pendingTokenUser[_buyer] > 0 );
 
 		tokenUser[_buyer] = tokenUser[_buyer].add(pendingTokenUser[_buyer]);
 	
@@ -529,15 +529,15 @@ contract RCpro is ICOEngineInterface, KYCBase {
 	}
 
     function claimTokenBonus(address _buyer) internal {
-        require( now &gt; endTime );
-        require( tokenUser[_buyer] &gt; 0 );
+        require( now > endTime );
+        require( tokenUser[_buyer] > 0 );
         uint256 bonusApplied = 0;
-        for (uint i = 0; i &lt; tokenThreshold.length; i++) {
-            if ( soldTokens &gt; tokenThreshold[i] ) {
+        for (uint i = 0; i < tokenThreshold.length; i++) {
+            if ( soldTokens > tokenThreshold[i] ) {
                 bonusApplied = bonusThreshold[i];
 			}
 		}    
-		require( bonusApplied &gt; 0 );
+		require( bonusApplied > 0 );
 		
 		uint256 addTokenAmount = tokenUser[_buyer].mul( bonusApplied ).div(10**2);
 		tokenUser[_buyer] = 0; 
@@ -575,7 +575,7 @@ contract TokenSale is Ownable {
     uint256 public endTime;  // seconds from 1970-01-01T00:00:00Z
     uint256 public startTime;  // seconds from 1970-01-01T00:00:00Z
 
-    mapping(address =&gt; bool) public rc;
+    mapping(address => bool) public rc;
 
 
     function TokenSale(address _tokenAddress, address _rateAddress, uint256 _startTime, uint256 _endTime) public {
@@ -594,12 +594,12 @@ contract TokenSale is Ownable {
     } 
     
     modifier isBuyable() {
-        require( now &gt; startTime ); // check if started
-        require( now &lt; endTime ); // check if ended
-        require( msg.value &gt; 0 );
+        require( now > startTime ); // check if started
+        require( now < endTime ); // check if ended
+        require( msg.value > 0 );
 		
 		uint256 remainingTokens = tokenContract.balanceOf(this);
-        require( remainingTokens &gt; 0 ); // Check if there are any remaining tokens 
+        require( remainingTokens > 0 ); // Check if there are any remaining tokens 
         _;
     }
     
@@ -618,11 +618,11 @@ contract TokenSale is Ownable {
         
         
         uint256 remainingTokens = tokenContract.balanceOf(this);
-        if ( _remainingTokens &lt; remainingTokens ) {
+        if ( _remainingTokens < remainingTokens ) {
             remainingTokens = _remainingTokens;
         }
         
-        if ( remainingTokens &lt; tokenAmount ) {
+        if ( remainingTokens < tokenAmount ) {
             uint256 refund = (tokenAmount - remainingTokens).mul(tokenValue).div(oneToken);
             tokenAmount = remainingTokens;
             forward(msg.value-refund);

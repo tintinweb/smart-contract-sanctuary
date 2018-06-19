@@ -14,7 +14,7 @@ contract SafeMath {
 
   function safeAdd(uint a, uint b) pure internal returns (uint) {
     uint c = a + b;
-    assert(c>=a &amp;&amp; c>=b);
+    assert(c>=a && c>=b);
     return c;
   }
 }
@@ -76,7 +76,7 @@ contract MDOT is StandardToken {
     /*
     NOTE:
     The following variables are OPTIONAL vanities. One does not have to include them.
-    They allow one to customise the token contract &amp; in no way influences the core functionality.
+    They allow one to customise the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
     string public name = &quot;Maolulu Polkadot&quot;;   // Fancy name: eg: Maolulu Polkadot

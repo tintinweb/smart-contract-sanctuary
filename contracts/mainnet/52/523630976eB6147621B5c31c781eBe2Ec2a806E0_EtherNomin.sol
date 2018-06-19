@@ -590,7 +590,7 @@ contract Court is Owned, SafeDecimalMath {
         external
         onlyOwner
     {
-        require(MIN_VOTING_PERIOD <= duration &amp;&amp;
+        require(MIN_VOTING_PERIOD <= duration &&
                 duration <= MAX_VOTING_PERIOD);
         // Require that the voting period is no longer than a single fee period,
         // So that a single vote can span at most two fee periods.
@@ -602,7 +602,7 @@ contract Court is Owned, SafeDecimalMath {
         external
         onlyOwner
     {
-        require(MIN_CONFIRMATION_PERIOD <= duration &amp;&amp;
+        require(MIN_CONFIRMATION_PERIOD <= duration &&
                 duration <= MAX_CONFIRMATION_PERIOD);
         confirmationPeriod = duration;
     }
@@ -650,7 +650,7 @@ contract Court is Owned, SafeDecimalMath {
         // These values are timestamps, they will not overflow
         // as they can only ever be initialised to relatively small values.
         uint startTime = motionStartTime[motionID];
-        return startTime + votingPeriod <= now &amp;&amp;
+        return startTime + votingPeriod <= now &&
                now < startTime + votingPeriod + confirmationPeriod;
     }
 
@@ -685,7 +685,7 @@ contract Court is Owned, SafeDecimalMath {
 
         // We require the result to be strictly greater than the requirement
         // to enforce a majority being &quot;50% + 1&quot;, and so on.
-        return participation > requiredParticipation &amp;&amp;
+        return participation > requiredParticipation &&
                fractionInFavour > requiredMajority;
     }
 
@@ -840,7 +840,7 @@ contract Court is Owned, SafeDecimalMath {
     function closeMotion(uint motionID)
         external
     {
-        require((motionConfirming(motionID) &amp;&amp; !motionPasses(motionID)) || motionWaiting(motionID));
+        require((motionConfirming(motionID) && !motionPasses(motionID)) || motionWaiting(motionID));
         _closeMotion(motionID);
     }
 
@@ -850,7 +850,7 @@ contract Court is Owned, SafeDecimalMath {
         external
         onlyOwner
     {
-        require(motionConfirming(motionID) &amp;&amp; motionPasses(motionID));
+        require(motionConfirming(motionID) && motionPasses(motionID));
         address target = motionTarget[motionID];
         nomin.confiscateBalance(target);
         _closeMotion(motionID);
@@ -1001,7 +1001,7 @@ contract ExternStateProxyFeeToken is Proxyable, SafeDecimalMath {
         // Transfers less than the reciprocal of transferFeeRate should be completely eaten up by fees.
         // This is on the basis that transfers less than this value will result in a nil fee.
         // Probably too insignificant to worry about, but the following code will achieve it.
-        //      if (fee == 0 &amp;&amp; transferFeeRate != 0) {
+        //      if (fee == 0 && transferFeeRate != 0) {
         //          return _value;
         //      }
         //      return fee;
@@ -1108,7 +1108,7 @@ contract ExternStateProxyFeeToken is Proxyable, SafeDecimalMath {
         external
         returns (bool)
     {
-        require(msg.sender == feeAuthority &amp;&amp; account != address(0));
+        require(msg.sender == feeAuthority && account != address(0));
         
         // 0-value withdrawals do nothing.
         if (value == 0) {
@@ -1505,7 +1505,7 @@ contract EtherNomin is ExternStateProxyFeeToken {
             // cannot overflow.
             bool totalPeriodElapsed = liquidationTimestamp + liquidationPeriod < now;
             // Total supply of 0 means all tokens have returned to the pool.
-            bool allTokensReturned = (liquidationTimestamp + 1 weeks < now) &amp;&amp; (totalSupply == 0);
+            bool allTokensReturned = (liquidationTimestamp + 1 weeks < now) && (totalSupply == 0);
             return totalPeriodElapsed || allTokensReturned;
         }
         return false;
@@ -1554,7 +1554,7 @@ contract EtherNomin is ExternStateProxyFeeToken {
         require(msg.sender == oracle);
         // Must be the most recently sent price, but not too far in the future.
         // (so we can&#39;t lock ourselves out of updating the oracle for longer than this)
-        require(lastPriceUpdateTime < timeSent &amp;&amp; timeSent < now + 10 minutes);
+        require(lastPriceUpdateTime < timeSent && timeSent < now + 10 minutes);
 
         etherPrice = price;
         lastPriceUpdateTime = timeSent;
@@ -1610,7 +1610,7 @@ contract EtherNomin is ExternStateProxyFeeToken {
         optionalProxy
     {
         // Price staleness check occurs inside the call to purchaseEtherCost.
-        require(n >= MINIMUM_PURCHASE &amp;&amp;
+        require(n >= MINIMUM_PURCHASE &&
                 msg.value == purchaseCostEther(n));
         address sender = messageSender;
         // sub requires that nominPool >= n
@@ -1755,7 +1755,7 @@ contract EtherNomin is ExternStateProxyFeeToken {
         external
         optionalProxy_onlyOwner
     {
-        if (frozen[target] &amp;&amp; EtherNomin(target) != this) {
+        if (frozen[target] && EtherNomin(target) != this) {
             frozen[target] = false;
             emit AccountUnfrozen(target, target);
         }
@@ -1788,7 +1788,7 @@ contract EtherNomin is ExternStateProxyFeeToken {
     modifier postCheckAutoLiquidate
     {
         _;
-        if (!isLiquidating() &amp;&amp; _nominCap() != 0 &amp;&amp; collateralisationRatio() < AUTO_LIQUIDATION_RATIO) {
+        if (!isLiquidating() && _nominCap() != 0 && collateralisationRatio() < AUTO_LIQUIDATION_RATIO) {
             beginLiquidation();
         }
     }
@@ -2471,7 +2471,7 @@ contract Havven is ExternStateProxyToken, SelfDestructible {
         postCheckFeePeriodRollover
         optionalProxy_onlyOwner
     {
-        require(MIN_FEE_PERIOD_DURATION_SECONDS <= duration &amp;&amp;
+        require(MIN_FEE_PERIOD_DURATION_SECONDS <= duration &&
                 duration <= MAX_FEE_PERIOD_DURATION_SECONDS);
         targetFeePeriodDurationSeconds = duration;
         emit FeePeriodDurationUpdated(duration);

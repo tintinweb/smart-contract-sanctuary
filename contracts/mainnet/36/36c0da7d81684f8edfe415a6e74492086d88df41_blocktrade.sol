@@ -30,10 +30,10 @@ contract controlled{
   * @param _restrict bool Restricts uder from using token. true restricts the address while false enables it.
   */
   function editRestrictedAddress(address _restrictedAddress, bool _restrict) public onlyOwner{
-    if(!restrictedAddresses[_restrictedAddress] &amp;&amp; _restrict){
+    if(!restrictedAddresses[_restrictedAddress] && _restrict){
       restrictedAddresses[_restrictedAddress] = _restrict;
     }
-    else if(restrictedAddresses[_restrictedAddress] &amp;&amp; !_restrict){
+    else if(restrictedAddresses[_restrictedAddress] && !_restrict){
       restrictedAddresses[_restrictedAddress] = _restrict;
     }
     else{

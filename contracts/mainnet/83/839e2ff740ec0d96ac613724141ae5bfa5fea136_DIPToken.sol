@@ -17,10 +17,10 @@ pragma solidity ^0.4.18;
 contract SafeMath {
     function safeAdd(uint a, uint b) internal pure returns (uint c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function safeSub(uint a, uint b) internal pure returns (uint c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function safeMul(uint a, uint b) internal pure returns (uint c) {
@@ -28,7 +28,7 @@ contract SafeMath {
         require(a == 0 || c / a == b);
     }
     function safeDiv(uint a, uint b) internal pure returns (uint c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
@@ -105,8 +105,8 @@ contract DIPToken is ERC20Interface, Owned, SafeMath {
     uint public bonusEnds5;
     uint public endDate;
 
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => uint) balances;
+    mapping(address => mapping(address => uint)) allowed;
 
 
     // ------------------------------------------------------------------------
@@ -212,45 +212,45 @@ contract DIPToken is ERC20Interface, Owned, SafeMath {
     // 11,000 DIP Tokens per 1 ETH (No bonus)
     // ------------------------------------------------------------------------
     function () public payable {
-        require(now &gt;= startDate &amp;&amp; now &lt;= endDate);
+        require(now >= startDate && now <= endDate);
         uint tokens;
-        if (now &lt;= bonusEnds50) {
-            if (msg.value &lt; 10000000000000000000) {
+        if (now <= bonusEnds50) {
+            if (msg.value < 10000000000000000000) {
             tokens = msg.value * 16500;
             } else {
             tokens = msg.value * 17490;
             }
         }
-        if (now &gt; bonusEnds50 &amp;&amp; now &lt;= bonusEnds20) {
-            if (msg.value &lt; 10000000000000000000) {
+        if (now > bonusEnds50 && now <= bonusEnds20) {
+            if (msg.value < 10000000000000000000) {
             tokens = msg.value * 13200;
             } else {
             tokens = msg.value * 13992;
             }
         }
-        if (now &gt; bonusEnds20 &amp;&amp; now &lt;= bonusEnds15) {
-            if (msg.value &lt; 10000000000000000000) {
+        if (now > bonusEnds20 && now <= bonusEnds15) {
+            if (msg.value < 10000000000000000000) {
             tokens = msg.value * 12650;
             } else {
             tokens = msg.value * 13409;
             }
         }
-        if (now &gt; bonusEnds15 &amp;&amp; now &lt;= bonusEnds10) {
-            if (msg.value &lt; 10000000000000000000) {
+        if (now > bonusEnds15 && now <= bonusEnds10) {
+            if (msg.value < 10000000000000000000) {
             tokens = msg.value * 12100;
             } else {
             tokens = msg.value * 12826;
             }
         }
-        if (now &gt; bonusEnds10 &amp;&amp; now &lt;= bonusEnds5) {
-            if (msg.value &lt; 10000000000000000000) {
+        if (now > bonusEnds10 && now <= bonusEnds5) {
+            if (msg.value < 10000000000000000000) {
             tokens = msg.value * 11550;
             } else {
             tokens = msg.value * 12243;
             }
         }
-        if (bonusEnds5 &lt; now) {
-            if (msg.value &lt; 10000000000000000000) {
+        if (bonusEnds5 < now) {
+            if (msg.value < 10000000000000000000) {
             tokens = msg.value * 11000;
             } else {
             tokens = msg.value * 11660;

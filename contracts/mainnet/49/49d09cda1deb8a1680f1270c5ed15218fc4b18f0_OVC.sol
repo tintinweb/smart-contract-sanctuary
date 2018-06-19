@@ -254,7 +254,7 @@ contract OVC is Ownable, TokenERC20 {
         address bountyAccount = 0xb690acb524BFBD968A91D614654aEEC5041597E0;
         balanceOf[bountyAccount] = safeMul(2450000,(10 ** uint256(decimals)));
 
-        // 14,850,000 &amp; 4,000,000 for our investors
+        // 14,850,000 & 4,000,000 for our investors
         address investor1 = 0x17dC8dD84bD8DbAC168209360EDc1E8539D965DA;
         balanceOf[investor1] = safeMul(14850000,(10 ** uint256(decimals)));
         address investor2 = 0x5B2213eeFc9b7939D863085f7F2D9D1f3a771D5f;
@@ -333,7 +333,7 @@ contract OVC is Ownable, TokenERC20 {
         emit Transfer(this, target, mintedAmount);
     }
 
-    /// @notice `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens
+    /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
     function freezeAccount(address target, bool freeze) onlyOwner public {

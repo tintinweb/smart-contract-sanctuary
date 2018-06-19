@@ -19,19 +19,19 @@ library Math {
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256 r) {
-    require((r = a - b) &lt;= a);
+    require((r = a - b) <= a);
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256 r) {
-    require((r = a + b) &gt;= a);
+    require((r = a + b) >= a);
   }
 
   function min(uint256 x, uint256 y) internal pure returns (uint256 r) {
-    return x &lt;= y ? x : y;
+    return x <= y ? x : y;
   }
 
   function max(uint256 x, uint256 y) internal pure returns (uint256 r) {
-    return x &gt;= y ? x : y;
+    return x >= y ? x : y;
   }
 
   function mulDiv(uint256 value, uint256 m, uint256 d) internal pure returns (uint256 r) {
@@ -128,16 +128,16 @@ contract FsTKColdWallet {
   uint256 public lastDay;
 
   address[256] public authorities;
-  mapping(address =&gt; uint256) public authorityIndex;
-  mapping(bytes32 =&gt; PendingTransactionState) public pendingTransaction;
+  mapping(address => uint256) public authorityIndex;
+  mapping(bytes32 => PendingTransactionState) public pendingTransaction;
   bytes32[] public pendingOperation;
 
   constructor(address[] _authorities, uint256 required, uint256 _daylimit) public {
-    require(required &gt; 0);
-    require(authorities.length &gt;= required);
+    require(required > 0);
+    require(authorities.length >= required);
 
     numAuthorities = _authorities.length;
-    for (uint256 i = 0; i &lt; _authorities.length; i += 1) {
+    for (uint256 i = 0; i < _authorities.length; i += 1) {
       authorities[1 + i] = _authorities[i];
       authorityIndex[_authorities[i]] = 1 + i;
     }
@@ -149,7 +149,7 @@ contract FsTKColdWallet {
   }
 
   function() external payable {
-    if (msg.value &gt; 0) {
+    if (msg.value > 0) {
       emit Deposit(msg.sender, msg.value);
     }
   }
@@ -160,15 +160,15 @@ contract FsTKColdWallet {
 
   function getAuthorityIndex(address authority) public view returns (uint256 index) {
     index = authorityIndex[authority];
-    require(index &gt; 0);
+    require(index > 0);
   }
 
   function isAuthority(address authority) public view returns (bool) {
-    return authorityIndex[authority] &gt; 0;
+    return authorityIndex[authority] > 0;
   }
 
   function hasConfirmed(bytes32 operation, address _address) public view returns (bool) {
-    return (pendingTransaction[operation].confirmBitmap &amp; (1 &lt;&lt; getAuthorityIndex(_address))) != 0;
+    return (pendingTransaction[operation].confirmBitmap & (1 << getAuthorityIndex(_address))) != 0;
   }
 
   function changeAuthority(address from, address to) public confirmAndRun(keccak256(msg.data)) {
@@ -185,10 +185,10 @@ contract FsTKColdWallet {
 
   function addAuthority(address authority) public confirmAndRun(keccak256(msg.data)) {
     require(!isAuthority(authority));
-    if (numAuthorities &gt;= MAX_AUTHORITIES) {
+    if (numAuthorities >= MAX_AUTHORITIES) {
       reOrganizeAuthorities();
     }
-    require(numAuthorities &lt; MAX_AUTHORITIES);
+    require(numAuthorities < MAX_AUTHORITIES);
 
     numAuthorities += 1;
     authorities[numAuthorities] = authority;
@@ -199,7 +199,7 @@ contract FsTKColdWallet {
   }
 
   function removeAuthority(address authority) public confirmAndRun(keccak256(msg.data)) {
-    require(numAuthorities &gt; requiredAuthorities);
+    require(numAuthorities > requiredAuthorities);
 
     uint256 index = getAuthorityIndex(authority);
     delete authorities[index];
@@ -211,7 +211,7 @@ contract FsTKColdWallet {
   }
 
   function setRequirement(uint256 required) public confirmAndRun(keccak256(msg.data)) {
-    require(numAuthorities &gt;= requiredAuthorities);
+    require(numAuthorities >= requiredAuthorities);
     clearPending();
 
     emit RequirementChanged(requiredAuthorities = required);
@@ -239,12 +239,12 @@ contract FsTKColdWallet {
     onlyAuthority
     returns (bytes32 operation)
   {
-    if ((data.length == 0 &amp;&amp; checkAndUpdateLimit(value)) || requiredAuthorities == 1) {
+    if ((data.length == 0 && checkAndUpdateLimit(value)) || requiredAuthorities == 1) {
       emit SingleTransaction(msg.sender, to, value, data, execute0(to, value, data));
     } else {
       operation = keccak256(msg.data, pendingOperation.length);
       PendingTransactionState storage status = pendingTransaction[operation];
-      if (status.info.to == 0 &amp;&amp; status.info.value == 0 &amp;&amp; status.info.data.length == 0) {
+      if (status.info.to == 0 && status.info.value == 0 && status.info.data.length == 0) {
         status.info = TransactionInfo({
           to: to,
           value: value,
@@ -259,11 +259,11 @@ contract FsTKColdWallet {
   }
 
   function revoke(bytes32 operation) public {
-    uint256 confirmFlag = 1 &lt;&lt; getAuthorityIndex(msg.sender);
+    uint256 confirmFlag = 1 << getAuthorityIndex(msg.sender);
     PendingTransactionState storage state = pendingTransaction[operation];
-    if (state.confirmBitmap &amp; confirmFlag &gt; 0) {
+    if (state.confirmBitmap & confirmFlag > 0) {
       state.confirmNeeded += 1;
-      state.confirmBitmap &amp;= ~confirmFlag;
+      state.confirmBitmap &= ~confirmFlag;
       emit Revoke(msg.sender, operation);
     }
   }
@@ -318,11 +318,11 @@ contract FsTKColdWallet {
       pendingOperation.push(operation);
     }
 
-    uint256 confirmFlag = 1 &lt;&lt; getAuthorityIndex(msg.sender);
+    uint256 confirmFlag = 1 << getAuthorityIndex(msg.sender);
 
-    if (pending.confirmBitmap &amp; confirmFlag == 0) {
+    if (pending.confirmBitmap & confirmFlag == 0) {
       emit Confirmation(msg.sender, operation);
-      if (pending.confirmNeeded &lt;= 1) {
+      if (pending.confirmNeeded <= 1) {
         delete pendingOperation[pending.index];
         delete pending.confirmNeeded;
         delete pending.confirmBitmap;
@@ -336,13 +336,13 @@ contract FsTKColdWallet {
   }
 
   function checkAndUpdateLimit(uint256 value) private returns (bool) {
-    if (today() &gt; lastDay) {
+    if (today() > lastDay) {
       spentToday = 0;
       lastDay = today();
     }
 
     uint256 _spentToday = spentToday.add(value);
-    if (_spentToday &lt;= dailyLimit) {
+    if (_spentToday <= dailyLimit) {
       spentToday = _spentToday;
       return true;
     }
@@ -355,14 +355,14 @@ contract FsTKColdWallet {
 
   function reOrganizeAuthorities() private {
     uint256 free = 1;
-    while (free &lt; numAuthorities) {
-      while (free &lt; numAuthorities &amp;&amp; authorities[free] != 0) {
+    while (free < numAuthorities) {
+      while (free < numAuthorities && authorities[free] != 0) {
         free += 1;
       }
-      while (numAuthorities &gt; 1 &amp;&amp; authorities[numAuthorities] == 0) {
+      while (numAuthorities > 1 && authorities[numAuthorities] == 0) {
         numAuthorities -= 1;
       }
-      if (free &lt; numAuthorities &amp;&amp; authorities[numAuthorities] != 0 &amp;&amp; authorities[free] == 0) {
+      if (free < numAuthorities && authorities[numAuthorities] != 0 && authorities[free] == 0) {
         authorities[free] = authorities[numAuthorities];
         authorityIndex[authorities[free]] = free;
         delete authorities[numAuthorities];
@@ -371,7 +371,7 @@ contract FsTKColdWallet {
   }
 
   function clearPending() private {
-    for (uint256 i = 0; i &lt; pendingOperation.length; i += 1) {
+    for (uint256 i = 0; i < pendingOperation.length; i += 1) {
       delete pendingTransaction[pendingOperation[i]];
     }
     delete pendingOperation;

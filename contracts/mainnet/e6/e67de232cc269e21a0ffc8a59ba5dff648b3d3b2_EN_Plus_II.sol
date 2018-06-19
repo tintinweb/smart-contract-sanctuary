@@ -30,7 +30,7 @@ contract	EN_Plus_II				is	Ownable	{
 	mapping (address => mapping(address => uint)) allowed;								
 									
 	function mint(address _to, uint _value) onlyOwner {								
-		assert(totalSupply + _value >= totalSupply &amp;&amp; balances[_to] + _value >= balances[_to]);							
+		assert(totalSupply + _value >= totalSupply && balances[_to] + _value >= balances[_to]);							
 		balances[_to] += _value;							
 		totalSupply += _value;							
 	}								
@@ -40,7 +40,7 @@ contract	EN_Plus_II				is	Ownable	{
 	}								
 									
 	function transfer(address _to, uint _value) returns (bool success) {								
-		if(balances[msg.sender] >= _value &amp;&amp; balances[_to] + _value >= balances[_to]) {							
+		if(balances[msg.sender] >= _value && balances[_to] + _value >= balances[_to]) {							
 			balances[msg.sender] -= _value; 						
 			balances[_to] += _value;						
 			return true;						
@@ -49,9 +49,9 @@ contract	EN_Plus_II				is	Ownable	{
 	}								
 									
 	function transferFrom(address _from, address _to, uint _value) returns (bool success) {								
-		if( allowed[_from][msg.sender] >= _value &amp;&amp;							
+		if( allowed[_from][msg.sender] >= _value &&							
 			balances[_from] >= _value 						
-			&amp;&amp; balances[_to] + _value >= balances[_to]) {						
+			&& balances[_to] + _value >= balances[_to]) {						
 			allowed[_from][msg.sender] -= _value;						
 			balances[_from] -= _value;						
 			balances[_to] += _value;						

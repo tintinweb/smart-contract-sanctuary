@@ -363,7 +363,7 @@ contract PreICO is Ownable, ReentrancyGuard {
 
   // @return true if the transaction can buy tokens
   modifier saleIsOn() {
-    bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+    bool withinPeriod = now >= startTime && now <= endTime;
     require(withinPeriod);
     _;
   }
@@ -432,7 +432,7 @@ contract PreICO is Ownable, ReentrancyGuard {
 
   // low level token purchase function
   function buyTokens(address beneficiary) saleIsOn isUnderHardCap nonReentrant public payable {
-    require(beneficiary != address(0) &amp;&amp; msg.value != 0);
+    require(beneficiary != address(0) && msg.value != 0);
     uint256 weiAmount = msg.value;
     uint256 centValue = weiAmount.div(priceUSD);
     uint256 tokens = getTokenAmount(centValue);

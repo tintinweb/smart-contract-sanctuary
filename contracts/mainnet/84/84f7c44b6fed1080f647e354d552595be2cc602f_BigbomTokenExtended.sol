@@ -351,7 +351,7 @@ contract BigbomToken is StandardToken, Ownable {
         _;
     }
     modifier onlyWhenTransferEnabled() {
-        if( now <= saleEndTime &amp;&amp; now >= saleStartTime ) {
+        if( now <= saleEndTime && now >= saleStartTime ) {
             require( msg.sender == tokenSaleContract );
         }
         _;

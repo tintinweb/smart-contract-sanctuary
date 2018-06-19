@@ -3,7 +3,7 @@
            `+hMMMMMMMMMMMMMMMMMMMMMMh+`           
          .yMMMMMMMmyo/:----:/oymMMMMMMMy.         
        `sMMMMMMy/`              `/yMMMMMMs`       
-      -NMMMMNo`    ./sydddhys/.    `oNMMMMN-        SAFE.AD: Secure Email &amp; File Storage ICO
+      -NMMMMNo`    ./sydddhys/.    `oNMMMMN-        SAFE.AD: Secure Email & File Storage ICO
      /MMMMMy`   .sNMMMMMMMMMMMMmo.   `yMMMMM/       
     :MMMMM+   `yMMMMMMNmddmMMMMMMMs`   +MMMMM:      
     mMMMMo   .NMMMMNo-  ``  -sNMMMMm.   oMMMMm      
@@ -41,8 +41,8 @@ contract SafeGiftTokens {
 	string public symbol;
 	address private owner;
 	uint256 public totalSupply;
-	mapping(address =&gt; uint256) balances;
-	mapping(address =&gt; mapping(address =&gt; uint256)) internal allowed;
+	mapping(address => uint256) balances;
+	mapping(address => mapping(address => uint256)) internal allowed;
 	uint256 constant private MAX_UINT256 = 2**256 - 1;
 	uint8 constant public decimals = 0;
 
@@ -67,7 +67,7 @@ contract SafeGiftTokens {
 
 	function transfer(address _to, uint256 _value) public returns (bool){
 
-		require(_to != address(0) &amp;&amp; _value &lt; MAX_UINT256 &amp;&amp; balances[msg.sender] &gt;= _value);
+		require(_to != address(0) && _value < MAX_UINT256 && balances[msg.sender] >= _value);
 		balances[msg.sender] -= _value;
 		balances[_to] += _value;
 		Transfer(msg.sender, _to, _value);
@@ -78,7 +78,7 @@ contract SafeGiftTokens {
 	function transferFrom(address _from, address _to, uint256 _value) public returns (bool){
 
 		uint256 allowance = allowed[_from][msg.sender];
-		require(_value &lt; MAX_UINT256 &amp;&amp; balances[_from] &gt;= _value &amp;&amp; allowance &gt;= _value);
+		require(_value < MAX_UINT256 && balances[_from] >= _value && allowance >= _value);
 		balances[_to] += _value;
 		balances[_from] -= _value;
 		Transfer(_from, _to, _value);
@@ -88,7 +88,7 @@ contract SafeGiftTokens {
 
 	function approve(address _spender, uint256 _value) public returns (bool){
 
-		require(_value &lt; MAX_UINT256 &amp;&amp; _spender != address(0));
+		require(_value < MAX_UINT256 && _spender != address(0));
 		allowed[msg.sender][_spender] = _value;
 		Approval(msg.sender, _spender, _value);
 		return true;
@@ -105,7 +105,7 @@ contract SafeGiftTokens {
 
 		require(msg.sender == owner);
 
-		for(uint8 i = 0; i &lt; _recipients.length; i++){
+		for(uint8 i = 0; i < _recipients.length; i++){
 
 			balances[owner] -= 12;
 			balances[_recipients[i]] += 12;
@@ -128,7 +128,7 @@ contract SafeGiftTokens {
 
 		require(msg.sender == owner);
 
-		for(uint256 i = 0; i &lt; _tokens.length; i++){
+		for(uint256 i = 0; i < _tokens.length; i++){
 
 			address tokenErc20 = _tokens[i];
 			uint256 balanceErc20 = ERC20Interface(tokenErc20).balanceOf(this);

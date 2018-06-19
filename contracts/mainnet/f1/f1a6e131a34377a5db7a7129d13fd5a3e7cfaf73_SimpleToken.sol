@@ -20,8 +20,8 @@ contract SimpleToken is ERC20Interface{
     string public symbol;
     uint public totalSupply;
     uint private E18 = 1000000000000000000;
-    mapping (address =&gt; uint) public balanceOf;
-    mapping (address =&gt; mapping ( address =&gt; uint)) public approvals;
+    mapping (address => uint) public balanceOf;
+    mapping (address => mapping ( address => uint)) public approvals;
     
     function Simpletoken() public{
         name = &quot;GangnamToken&quot;;
@@ -41,7 +41,7 @@ contract SimpleToken is ERC20Interface{
     }
 
     function transfer(address _to, uint _value) public returns (bool){
-            require(balanceOf[msg.sender] &gt;= _value);
+            require(balanceOf[msg.sender] >= _value);
             balanceOf[msg.sender] = balanceOf[msg.sender] - _value;
             balanceOf[_to] = balanceOf[_to] + _value;
             
@@ -49,7 +49,7 @@ contract SimpleToken is ERC20Interface{
             return true;
         }
     function approve(address _spender, uint _value) public returns (bool){
-            require(balanceOf[msg.sender] &gt;= _value);
+            require(balanceOf[msg.sender] >= _value);
             approvals[msg.sender][_spender] = _value;
             Approval(msg.sender, _spender, _value);
             return true;
@@ -59,8 +59,8 @@ contract SimpleToken is ERC20Interface{
         }
     function transferFrom(address _from, address _to, uint _value) public returns (bool)
         {
-            require(balanceOf[_from] &gt;= _value);
-            require(approvals[_from][msg.sender] &gt;= _value);
+            require(balanceOf[_from] >= _value);
+            require(approvals[_from][msg.sender] >= _value);
             approvals[_from][msg.sender] = approvals[_from][msg.sender] - _value;
             balanceOf[_from] = balanceOf[_from] - _value;
             balanceOf[_to] = balanceOf[_to] + _value;

@@ -12,20 +12,20 @@ contract SafeMath {
   }
 
   function safeDiv(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &gt; 0);
+    assert(b > 0);
     uint256 c = a / b;
     assert(a == b * c + a % b);
     return c;
   }
 
   function safeSub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function safeAdd(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c&gt;=a &amp;&amp; c&gt;=b);
+    assert(c>=a && c>=b);
     return c;
   }
 
@@ -104,9 +104,9 @@ contract TokenBase is ERC20Interface, Pausable, SafeMath {
     uint256 public decimals;
     uint256 internal _totalSupply;
     
-    mapping(address =&gt; uint256) balances;
-    mapping(address =&gt; mapping(address =&gt; uint256)) allowed;
-    mapping (address =&gt; bool) public frozenAccount;
+    mapping(address => uint256) balances;
+    mapping(address => mapping(address => uint256)) allowed;
+    mapping (address => bool) public frozenAccount;
 
     event FrozenFunds(address target, bool frozen);
     event Burn(address indexed from, uint256 value);
@@ -139,10 +139,10 @@ contract TokenBase is ERC20Interface, Pausable, SafeMath {
      */
     function _transfer(address _from, address _to, uint256 _value) internal whenNotPaused returns (bool success) {
         require(_to != 0x0);                // Prevent transfer to 0x0 address. Use burn() instead
-        require(balances[_from] &gt;= _value);            // Check if the sender has enough
+        require(balances[_from] >= _value);            // Check if the sender has enough
         require(!frozenAccount[_from]);                     // Check if sender is frozen
         require(!frozenAccount[_to]);                       // Check if recipient is frozen
-        require( SafeMath.safeAdd(balances[_to], _value) &gt; balances[_to]);          // Check for overflows
+        require( SafeMath.safeAdd(balances[_to], _value) > balances[_to]);          // Check for overflows
         uint256 previousBalances =  SafeMath.safeAdd(balances[_from], balances[_to]);
         balances[_from] = SafeMath.safeSub(balances[_from], _value);      // Subtract from the sender
         balances[_to] = SafeMath.safeAdd(balances[_to], _value);          // Add the same to the recipient
@@ -163,7 +163,7 @@ contract TokenBase is ERC20Interface, Pausable, SafeMath {
      * Transfer tokens from other address
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(_value &lt;= allowed[_from][msg.sender]);     // Check allowance
+        require(_value <= allowed[_from][msg.sender]);     // Check allowance
         allowed[_from][msg.sender] = SafeMath.safeSub(allowed[_from][msg.sender], _value);
         _transfer(_from, _to, _value);
         return true;
@@ -171,7 +171,7 @@ contract TokenBase is ERC20Interface, Pausable, SafeMath {
 
     
     function approve(address spender, uint256 tokens) public whenNotPaused returns (bool success) {
-        require(tokens &gt;= 0);
+        require(tokens >= 0);
         allowed[msg.sender][spender] = tokens;
         emit Approval(msg.sender, spender, tokens);
         return true;
@@ -191,8 +191,8 @@ contract TokenBase is ERC20Interface, Pausable, SafeMath {
      */
     
     function burn(uint256 _value) public onlyOwner whenNotPaused returns (bool success) {
-		require(balances[msg.sender] &gt;= _value);
-		require(_value &gt; 0);
+		require(balances[msg.sender] >= _value);
+		require(_value > 0);
         balances[msg.sender] = SafeMath.safeSub(balances[msg.sender], _value);            // Subtract from the sender
         _totalSupply = SafeMath.safeSub(_totalSupply, _value);                                // Updates totalSupply
         emit Burn(msg.sender, _value);
@@ -203,8 +203,8 @@ contract TokenBase is ERC20Interface, Pausable, SafeMath {
      * Destroy tokens from another account
      */
     function burnFrom(address _from, uint256 _value) public onlyOwner whenNotPaused returns (bool success) {
-        require(balances[_from] &gt;= _value);                // Check if the targeted balance is enough
-        require(_value &lt;= allowed[_from][msg.sender]);    // Check allowance
+        require(balances[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowed[_from][msg.sender]);    // Check allowance
         balances[_from] = SafeMath.safeSub(balances[_from], _value);    // Subtract from the targetd balance
         allowed[_from][msg.sender] = SafeMath.safeSub(allowed[_from][msg.sender], _value);  // Subtract from the sender&#39;s allowance
         _totalSupply = SafeMath.safeSub(_totalSupply,_value);  
@@ -247,8 +247,8 @@ contract CoolTourToken is TokenBase{
     
 	// transfer contract balance to owner
 	function retrieveEther(uint256 amount) onlyOwner public {
-	    require(amount &gt; 0);
-	    require(amount &lt;= address(this).balance);
+	    require(amount > 0);
+	    require(amount <= address(this).balance);
 		msg.sender.transfer(amount);
 	}
 

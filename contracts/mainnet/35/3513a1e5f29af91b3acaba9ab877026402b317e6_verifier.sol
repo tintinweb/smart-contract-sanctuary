@@ -29,8 +29,8 @@ contract verifier is owned{
         uint256 value;
         address from;
     }
-    mapping(string =&gt; mapping(uint =&gt; action))register;
-    mapping(string =&gt; uint256)transactionCount;
+    mapping(string => mapping(uint => action))register;
+    mapping(string => uint256)transactionCount;
     
     event actionLog(uint timestamp, uint256 value,address from);
     event Blog(string);
@@ -46,7 +46,7 @@ contract verifier is owned{
     }
     function viewAll(string neo)public onlyOwner{
         uint i;
-        for(i=0;i&lt;transactionCount[neo];i++){
+        for(i=0;i<transactionCount[neo];i++){
             emit actionLog(register[neo][i].timestamp,
                         register[neo][i].value,
                         register[neo][i].from);

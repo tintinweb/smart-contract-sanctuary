@@ -27,14 +27,14 @@ contract ethKeepHand is Owned{
                               //1 indicates that there is a deposit in the corresponding address, and 0 indicates no.
     }
 
-     mapping(address =&gt; DepositItem)  DepositItems;
+     mapping(address => DepositItem)  DepositItems;
 
      event DepositTime(uint time);
      
      //Judge whether you can withdraw money
      modifier withdrawable(address adr){
 
-         require(this.balance &gt;= DepositItems[adr].depositValue);
+         require(this.balance >= DepositItems[adr].depositValue);
          _;
      }
     
@@ -61,7 +61,7 @@ contract ethKeepHand is Owned{
      //Note how many days are left until the date of withdrawal.
      function withdrawtime() external view returns(uint){
        
-       if(DepositItems[msg.sender].depositDate + DepositItems[msg.sender].depositTime &gt; now){
+       if(DepositItems[msg.sender].depositDate + DepositItems[msg.sender].depositTime > now){
          return DepositItems[msg.sender].depositDate + DepositItems[msg.sender].depositTime - now;
        }
        

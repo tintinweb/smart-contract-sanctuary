@@ -206,7 +206,7 @@ contract Coin786token18 is ERC20Interface, Owned, SafeMath {
     // 10000 786 2018 Token per 1 ETH
     // ------------------------------------------------------------------------
     function () public payable {
-        require(now >= startDate &amp;&amp; now <= endDate);
+        require(now >= startDate && now <= endDate);
         uint tokens;
         if (msg.sender == owner) {
             tokens = msg.value * 200000;

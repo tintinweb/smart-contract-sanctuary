@@ -55,7 +55,7 @@ contract BasicToken is ERC20 {
   */
 
     function transfer(address _to, uint256 _value) returns (bool) {
-        if (balances[msg.sender] >= _value &amp;&amp; balances[_to] + _value > balances[_to]) {
+        if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
             balances[msg.sender] = balances[msg.sender].sub(_value);
             balances[_to] = balances[_to].add(_value);
             Transfer(msg.sender, _to, _value);
@@ -74,7 +74,7 @@ contract BasicToken is ERC20 {
    */
 
     function transferFrom(address _from, address _to, uint256 _value) returns (bool) {
-      if (balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value &amp;&amp; balances[_to] + _value > balances[_to]) {
+      if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
         uint256 _allowance = allowed[_from][msg.sender];
         allowed[_from][msg.sender] = _allowance.sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -301,7 +301,7 @@ contract TalentICO {
     {
         require(msg.value >= minAmount);
 
-        require(now >= IcoStartDate &amp;&amp; now <= IcoEndDate);
+        require(now >= IcoStartDate && now <= IcoEndDate);
         fundTransfer(msg.value);
 
         uint256 amount = numberOfTokens(getCurrentExchangeRate(), msg.value);
@@ -351,7 +351,7 @@ contract TalentICO {
     // Gets the current state of the crowdsale
     function getState() public constant returns(State) {
 
-        if (now >= IcoStartDate &amp;&amp; now <= IcoEndDate) {
+        if (now >= IcoStartDate && now <= IcoEndDate) {
             return State.Crowdfund;
         } 
         return State.Finish;

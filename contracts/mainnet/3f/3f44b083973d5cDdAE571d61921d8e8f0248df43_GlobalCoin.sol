@@ -51,7 +51,7 @@ library IterableMapping
     function iterate_next(itmap storage self, uint keyIndex) internal returns (uint r_keyIndex)
     {
         keyIndex++;
-        while (keyIndex < self.keys.length &amp;&amp; self.keys[keyIndex].deleted)
+        while (keyIndex < self.keys.length && self.keys[keyIndex].deleted)
             keyIndex++;
         return keyIndex;
     }
@@ -180,7 +180,7 @@ contract StandardToken is BasicToken, ERC20{
         // allowance to zero by calling approve(_spender, 0) if if it not
         // already 0 to mitigate the race condition described here:
         // https://github.com/ethereum/EIPs/issues/20#issuscomment-263524729
-        if ((_value != 0) &amp;&amp; (allowed[msg.sender][_spender] != 0)) throw;
+        if ((_value != 0) && (allowed[msg.sender][_spender] != 0)) throw;
 
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
@@ -305,7 +305,7 @@ contract GlobalCoin is Ownable, StandardToken{
     }
     //transfer shares
     function transferShares(address _to, uint _value){
-        SafeMath.assert(vips[msg.sender] >= _value &amp;&amp; _value > 0);
+        SafeMath.assert(vips[msg.sender] >= _value && _value > 0);
         var _skey = msg.sender;
         uint _svalue = 0;
         var _tkey = _to;

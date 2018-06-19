@@ -18,9 +18,9 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU lesser General Public License for more details.
 
 You should have received a copy of the GNU lesser General Public License
-along with the eHealth First Contract. If not, see &lt;http://www.gnu.org/licenses/&gt;.
+along with the eHealth First Contract. If not, see <http://www.gnu.org/licenses/>.
 
-@author Ilya Svirin &lt;<span class="__cf_email__" data-cfemail="b6df98c5c0dfc4dfd8f6c6c4d9c0d3c498c4c3">[email&#160;protected]</span>&gt;
+@author Ilya Svirin <<span class="__cf_email__" data-cfemail="b6df98c5c0dfc4dfd8f6c6c4d9c0d3c498c4c3">[email&#160;protected]</span>>
 
 IF YOU ARE ENJOYED IT DONATE TO 0x3Ad38D1060d1c350aF29685B2b8Ec3eDE527452B ! :)
 */
@@ -83,9 +83,9 @@ contract Token is owned, ERC20 {
         uint balanceBeforeUpdate;
         uint balanceUpdateTime;
     }
-    mapping (address =&gt; TokenHolder) public holders;
-    mapping (address =&gt; uint) public vesting;
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowed;
+    mapping (address => TokenHolder) public holders;
+    mapping (address => uint) public vesting;
+    mapping (address => mapping (address => uint256)) public allowed;
 
     address public vestingManager;
 
@@ -94,7 +94,7 @@ contract Token is owned, ERC20 {
     }
 
     function beforeBalanceChanges(address _who) internal {
-        if (holders[_who].balanceUpdateTime &lt;= freezedMoment) {
+        if (holders[_who].balanceUpdateTime <= freezedMoment) {
             holders[_who].balanceUpdateTime = now;
             holders[_who].balanceBeforeUpdate = holders[_who].balance;
         }
@@ -109,22 +109,22 @@ contract Token is owned, ERC20 {
     }
 
     function transfer(address _to, uint256 _value) public {
-        require(now &gt; vesting[msg.sender] || msg.sender == vestingManager);
-        require(holders[_to].balance + _value &gt;= holders[_to].balance); // overflow
+        require(now > vesting[msg.sender] || msg.sender == vestingManager);
+        require(holders[_to].balance + _value >= holders[_to].balance); // overflow
         beforeBalanceChanges(msg.sender);
         beforeBalanceChanges(_to);
         holders[msg.sender].balance -= _value;
         holders[_to].balance += _value;
-        if (vesting[_to] &lt; vesting[msg.sender]) {
+        if (vesting[_to] < vesting[msg.sender]) {
             vesting[_to] = vesting[msg.sender];
         }
         emit Transfer(msg.sender, _to, _value);
     }
     
     function transferFrom(address _from, address _to, uint256 _value) public {
-        require(now &gt; vesting[_from]);
-        require(holders[_to].balance + _value &gt;= holders[_to].balance); // overflow
-        require(allowed[_from][msg.sender] &gt;= _value);
+        require(now > vesting[_from]);
+        require(holders[_to].balance + _value >= holders[_to].balance); // overflow
+        require(allowed[_from][msg.sender] >= _value);
         beforeBalanceChanges(_from);
         beforeBalanceChanges(_to);
         holders[_from].balance -= _value;
@@ -144,7 +144,7 @@ contract Token is owned, ERC20 {
     }
     
     function burn(uint256 _value) public {
-        require(holders[msg.sender].balance &gt;= _value);
+        require(holders[msg.sender].balance >= _value);
         beforeBalanceChanges(msg.sender);
         holders[msg.sender].balance -= _value;
         totalSupply -= _value;
@@ -180,10 +180,10 @@ contract Crowdsale is Token {
 
     function startStage(uint _startTokenPriceWei, uint _tokensForSale, uint _milliPercent) public onlyOwner notSealed {
         require(!started);
-        require(_startTokenPriceWei &gt;= lastTokenPriceWei);
+        require(_startTokenPriceWei >= lastTokenPriceWei);
         startTokenPriceWei = _startTokenPriceWei;
         tokensForSale = _tokensForSale * 100000000;
-        if(tokensForSale &gt; holders[this].balance) {
+        if(tokensForSale > holders[this].balance) {
             tokensForSale = holders[this].balance;
         }
         milliPercent = _milliPercent;
@@ -195,7 +195,7 @@ contract Crowdsale is Token {
     
     function currentTokenPrice() public constant returns(uint) {
         uint price;
-        if(!sealed &amp;&amp; started) {
+        if(!sealed && started) {
             uint d = (now - startTime) / 1 days;
             price = startTokenPriceWei;
             price += startTokenPriceWei * d * milliPercent / 100;
@@ -214,18 +214,18 @@ contract Crowdsale is Token {
     function () payable public notSealed {
         require(started);
         uint price = currentTokenPrice();
-        if(paymentsCount &lt; 100) {
+        if(paymentsCount < 100) {
             price = price * 90 / 100;
         }
         ++paymentsCount;
         uint tokens = 100000000 * msg.value / price;
-        if(tokens &gt; tokensForSale) {
+        if(tokens > tokensForSale) {
             tokens = tokensForSale;
             uint sumWei = tokens * lastTokenPriceWei / 100000000;
             require(msg.sender.call.gas(3000000).value(msg.value - sumWei)());
         }
-        require(tokens &gt; 0);
-        require(holders[msg.sender].balance + tokens &gt; holders[msg.sender].balance); // overflow
+        require(tokens > 0);
+        require(holders[msg.sender].balance + tokens > holders[msg.sender].balance); // overflow
         tokensForSale -= tokens;
         beforeBalanceChanges(msg.sender);
         beforeBalanceChanges(this);
@@ -238,11 +238,11 @@ contract Crowdsale is Token {
         require(msg.sender == owner || msg.sender == backend);
         require(started);
         _tokens *= 100000000;
-        if(_tokens &gt; tokensForSale) {
+        if(_tokens > tokensForSale) {
             _tokens = tokensForSale;
         }
-        require(_tokens &gt; 0);
-        require(holders[_who].balance + _tokens &gt; holders[_who].balance); // overflow
+        require(_tokens > 0);
+        require(holders[_who].balance + _tokens > holders[_who].balance); // overflow
         tokensForSale -= _tokens;
         beforeBalanceChanges(_who);
         beforeBalanceChanges(this);
@@ -256,10 +256,10 @@ contract Crowdsale is Token {
     function mintTokens2(address _who, uint _tokens, uint _vesting) public notSealed {
         require(msg.sender == owner || msg.sender == backend);
         require(!started);
-        require(_tokens &gt; 0);
+        require(_tokens > 0);
         _tokens *= 100000000;
-        require(_tokens &lt;= holders[this].balance);
-        require(holders[_who].balance + _tokens &gt; holders[_who].balance); // overflow
+        require(_tokens <= holders[this].balance);
+        require(holders[_who].balance + _tokens > holders[_who].balance); // overflow
         if(_vesting != 0) {
             vesting[_who] = _vesting;
         }
@@ -297,7 +297,7 @@ contract Ehfirst is Crowdsale {
      *  freezeTheMoment()
      */
     function freezedBalanceOf(address _who) constant public returns(uint) {
-        if (holders[_who].balanceUpdateTime &lt;= freezedMoment) {
+        if (holders[_who].balanceUpdateTime <= freezedMoment) {
             return holders[_who].balance;
         } else {
             return holders[_who].balanceBeforeUpdate;

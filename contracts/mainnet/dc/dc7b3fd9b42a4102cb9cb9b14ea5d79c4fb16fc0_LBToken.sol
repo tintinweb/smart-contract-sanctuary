@@ -15,19 +15,19 @@ contract ERC20 {
 contract StandardToken is ERC20 {
 
 	uint256 public totalSupply;
-	mapping (address =&gt; uint256) balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+	mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) allowed;
     
     modifier when_can_transfer(address _from, uint256 _value) {
-        if (balances[_from] &gt;= _value) _;
+        if (balances[_from] >= _value) _;
     }
 
     modifier when_can_receive(address _recipient, uint256 _value) {
-        if (balances[_recipient] + _value &gt; balances[_recipient]) _;
+        if (balances[_recipient] + _value > balances[_recipient]) _;
     }
 
     modifier when_is_allowed(address _from, address _delegate, uint256 _value) {
-        if (allowed[_from][_delegate] &gt;= _value) _;
+        if (allowed[_from][_delegate] >= _value) _;
     }
 
     function transfer(address _recipient, uint256 _value)

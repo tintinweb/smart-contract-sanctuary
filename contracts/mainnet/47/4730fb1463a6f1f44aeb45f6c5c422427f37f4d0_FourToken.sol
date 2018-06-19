@@ -461,12 +461,12 @@ contract SignedTransferToken is BaseToken {
                                  bytes32[] _r,
                                  bytes32[] _s) public returns (bool) {
     // Make sure all the arrays are of the same length
-    require(_from.length == _to.length &amp;&amp;
-            _to.length ==_values.length &amp;&amp;
-            _values.length == _fees.length &amp;&amp;
-            _fees.length == _nonces.length &amp;&amp;
-            _nonces.length == _v.length &amp;&amp;
-            _v.length == _r.length &amp;&amp;
+    require(_from.length == _to.length &&
+            _to.length ==_values.length &&
+            _values.length == _fees.length &&
+            _fees.length == _nonces.length &&
+            _nonces.length == _v.length &&
+            _v.length == _r.length &&
             _r.length == _s.length);
 
     for(uint i; i < _from.length; i++) {

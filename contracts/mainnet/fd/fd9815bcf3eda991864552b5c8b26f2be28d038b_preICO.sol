@@ -506,7 +506,7 @@ contract preICO is FinalizableCrowdsale, WhitelistedCrowdsale {
      * @dev _maxEtherPerInvestor should be 10 ether
      */
     function preICO(address _token, address _wallet, uint256 _startDate, uint256 _endDate) public {
-        require(_token != address(0) &amp;&amp; _wallet != address(0));
+        require(_token != address(0) && _wallet != address(0));
         require(_endDate > _startDate);
         startDate = _startDate;
         endDate = _endDate;
@@ -578,7 +578,7 @@ contract preICO is FinalizableCrowdsale, WhitelistedCrowdsale {
 
     // @return true if the transaction can buy tokens
     function validPurchase() internal view returns (bool) {
-        return !isFinalized &amp;&amp; now >= startDate &amp;&amp; msg.value != 0;
+        return !isFinalized && now >= startDate && msg.value != 0;
     }
 
     // @return true if crowdsale event has ended
@@ -624,7 +624,7 @@ contract ICO is Pausable, WhitelistedCrowdsale {
      * @dev _hardCap should be 8700 ether
      */
     function ICO(address _token, address _wallet, uint256 _startDate, uint256 _endDate, uint256 _hardCap) public {
-        require(_token != address(0) &amp;&amp; _wallet != address(0));
+        require(_token != address(0) && _wallet != address(0));
         require(_endDate > _startDate);
         require(_hardCap > 0);
         startDate = _startDate;
@@ -643,13 +643,13 @@ contract ICO is Pausable, WhitelistedCrowdsale {
         if (now < startDate || hasEnded()) return 0;
 
         // Period: from June 01, 2018 @ UTC 0:01 to June 7, 2018 @ UTC 23:59; Price: 1 ETH = 1840 TKP
-        if (now >= startDate &amp;&amp; now < startDate + 604680) return 1840;
+        if (now >= startDate && now < startDate + 604680) return 1840;
         // Period: from June 08, 2018 @ UTC 0:00 to June 14, 2018 @ UTC 23:59; Price: 1 ETH = 1760 TKP
-        if (now >= startDate + 604680 &amp;&amp; now < startDate + 1209480) return 1760;
+        if (now >= startDate + 604680 && now < startDate + 1209480) return 1760;
         // Period: from June 15, 2018 @ UTC 0:00 to June 21, 2018 @ UTC 23:59; Price: 1 ETH = 1680 TKP
-        if (now >= startDate + 1209480 &amp;&amp; now < startDate + 1814280) return 1680;
+        if (now >= startDate + 1209480 && now < startDate + 1814280) return 1680;
         // Period: from June 22, 2018 @ UTC 0:00 to June 28, 2018 @ UTC 23:59; Price: 1 ETH = 1648 TKP
-        if (now >= startDate + 1814280 &amp;&amp; now < startDate + 2419080) return 1648;
+        if (now >= startDate + 1814280 && now < startDate + 2419080) return 1648;
         // Period: from June 29, 2018 @ UTC 0:00 to July 5, 2018 @ UTC 23:59; Price: 1 ETH = 1600 TKP
         if (now >= startDate + 2419080) return 1600;
     }
@@ -682,7 +682,7 @@ contract ICO is Pausable, WhitelistedCrowdsale {
 
     // @return true if the transaction can buy tokens
     function validPurchase() internal view returns (bool) {
-        return now >= startDate &amp;&amp; msg.value != 0;
+        return now >= startDate && msg.value != 0;
     }
 
     // @return true if crowdsale event has ended
@@ -788,7 +788,7 @@ contract postICO is Ownable {
 
     function claimTokensE(uint8 order) onlyOwner public {
         require(finished);
-        require(order >= 1 &amp;&amp; order <= 8);
+        require(order >= 1 && order <= 8);
         require(!completedE[order]);
 
         // On January 03, 2019 @ UTC 23:59 = FTST*2625/100000 (2.625% of final total supply of tokens) to the wallet [E].
@@ -851,7 +851,7 @@ contract postICO is Ownable {
 
     function claimTokensBC(uint8 order) onlyOwner public {
         require(finished);
-        require(order >= 1 &amp;&amp; order <= 4);
+        require(order >= 1 && order <= 4);
         require(!completedBC[order]);
 
         // On January 03, 2019 @ UTC 23:59 = FTST*25/10000 (0.25% of final total supply of tokens) to the wallet [B] and FTST*215/10000 (2.15% of final total supply of tokens) to the wallet [C].

@@ -91,9 +91,9 @@ contract OnasanderToken
     event Transfer(address indexed from, address indexed to, uint tokens);
     event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
 
-    mapping(address =&gt; uint) balances;
+    mapping(address => uint) balances;
     
-    mapping(address =&gt; mapping (address =&gt; uint)) allowances;
+    mapping(address => mapping (address => uint)) allowances;
 
     function balanceOf(address accountAddress) public constant returns (uint balance)
     {
@@ -108,7 +108,7 @@ contract OnasanderToken
     function transfer(address to, uint tokens) public returns (bool success)
     {     
         require (ICOEnded, &quot;ICO has not ended.  Can not transfer.&quot;);
-        require (balances[to] + tokens &gt; balances[to], &quot;Overflow is not allowed.&quot;);
+        require (balances[to] + tokens > balances[to], &quot;Overflow is not allowed.&quot;);
 
         // actual transfer
         // SafeMath.sub will throw if there is not enough balance.
@@ -124,7 +124,7 @@ contract OnasanderToken
     function transferFrom(address from, address to, uint tokens) public returns(bool success) 
     {
         require (ICOEnded, &quot;ICO has not ended.  Can not transfer.&quot;);
-        require (balances[to] + tokens &gt; balances[to], &quot;Overflow is not allowed.&quot;);
+        require (balances[to] + tokens > balances[to], &quot;Overflow is not allowed.&quot;);
 
         // actual transfer
         balances[from] = balances[from].sub(tokens);
@@ -148,8 +148,8 @@ contract OnasanderToken
     {     
         require (saleEnabled, &quot;Sale must be enabled.&quot;);
         require (!ICOEnded, &quot;ICO already ended.&quot;);
-        require (numberOfTokenPurchased &gt; 0, &quot;Tokens must be greater than 0.&quot;);
-        require (tokensForSale &gt; totalTokensSoldInThisSale, &quot;There is no more tokens for sale in this sale.&quot;);
+        require (numberOfTokenPurchased > 0, &quot;Tokens must be greater than 0.&quot;);
+        require (tokensForSale > totalTokensSoldInThisSale, &quot;There is no more tokens for sale in this sale.&quot;);
                         
         // calculate amount
         uint buyAmount = numberOfTokenPurchased;
@@ -157,7 +157,7 @@ contract OnasanderToken
 
         // this check is not perfect as someone may want to buy more than we offer for sale and we lose a sale.
         // the best would be to calclate and sell you only the amout of tokens that is left and refund the rest of money        
-        if (totalTokensSoldInThisSale.add(buyAmount) &gt;= tokensForSale)
+        if (totalTokensSoldInThisSale.add(buyAmount) >= tokensForSale)
         {
             tokens = tokensForSale.sub(totalTokensSoldInThisSale);  // we allow you to buy only up to total tokens for sale, and refund the rest
             // need to program the refund for the rest,or do it manually.  
@@ -168,7 +168,7 @@ contract OnasanderToken
         }
 
         // transfer only as we do not need to take the payment since we already did in wire
-        require (balances[to].add(tokens) &gt; balances[to], &quot;Overflow is not allowed.&quot;);
+        require (balances[to].add(tokens) > balances[to], &quot;Overflow is not allowed.&quot;);
         balances[to] = balances[to].add(tokens);
         balances[owner] = balances[owner].sub(tokens);
         lastBuyer = to;
@@ -188,8 +188,8 @@ contract OnasanderToken
     {        
         require (saleEnabled, &quot;Sale must be enabled.&quot;);
         require (!ICOEnded, &quot;ICO already ended.&quot;);
-        require (tokensForSale &gt; totalTokensSoldInThisSale, &quot;There is no more tokens for sale in this sale.&quot;);
-        require (msg.value &gt; 0, &quot;Must send ETH&quot;);
+        require (tokensForSale > totalTokensSoldInThisSale, &quot;There is no more tokens for sale in this sale.&quot;);
+        require (msg.value > 0, &quot;Must send ETH&quot;);
 
         // calculate amount
         uint buyAmount = SafeMath.mul(msg.value, tokensPerETH);
@@ -197,7 +197,7 @@ contract OnasanderToken
 
         // this check is not perfect as someone may want to buy more than we offer for sale and we lose a sale.
         // the best would be to calclate and sell you only the amout of tokens that is left and refund the rest of money        
-        if (totalTokensSoldInThisSale.add(buyAmount) &gt;= tokensForSale)
+        if (totalTokensSoldInThisSale.add(buyAmount) >= tokensForSale)
         {
             tokens = tokensForSale.sub(totalTokensSoldInThisSale);  // we allow you to buy only up to total tokens for sale, and refund the rest
 
@@ -209,7 +209,7 @@ contract OnasanderToken
         }
 
         // buy
-        require (balances[msg.sender].add(tokens) &gt; balances[msg.sender], &quot;Overflow is not allowed.&quot;);
+        require (balances[msg.sender].add(tokens) > balances[msg.sender], &quot;Overflow is not allowed.&quot;);
         balances[msg.sender] = balances[msg.sender].add(tokens);
         balances[owner] = balances[owner].sub(tokens);
         lastBuyer = msg.sender;
@@ -288,7 +288,7 @@ contract OnasanderToken
     function setTokensPerETH(uint newRate) onlyOwner public
     {
         require (!ICOEnded, &quot;ICO already ended.&quot;);
-        require (newRate &gt; 0, &quot;Rate must be higher than 0.&quot;);
+        require (newRate > 0, &quot;Rate must be higher than 0.&quot;);
         tokensPerETH = newRate;
         emit TokenPerETHReset(newRate);
     }
@@ -297,7 +297,7 @@ contract OnasanderToken
     // will need to be able to adjust our minimum goal in tokens sold, as our goal is set in tokens, not USD.
     function setMinimumGoal(uint goal) onlyOwner public
     {   
-        require(goal &gt; 0e18,&quot;Minimum goal must be greater than 0.&quot;);
+        require(goal > 0e18,&quot;Minimum goal must be greater than 0.&quot;);
         minimumGoal = goal;
 
         // since we can edit the goal, we want to check if we reached the goal before in case we lowered the goal number.
@@ -310,13 +310,13 @@ contract OnasanderToken
     {
         require (!saleEnabled, &quot;Sale is already going on.&quot;);
         require (!ICOEnded, &quot;ICO already ended.&quot;);
-        require (totalTokensSold &lt; maxTokensForSale, &quot;We already sold all our tokens.&quot;);
+        require (totalTokensSold < maxTokensForSale, &quot;We already sold all our tokens.&quot;);
 
         totalTokensSoldInThisSale = 0e18;
         uint tryingToSell = totalTokensSold.add(numberOfTokens);
 
         // in case we are trying to create a sale with too many tokens, we subtract and sell only what&#39;s left
-        if (tryingToSell &gt; maxTokensForSale)
+        if (tryingToSell > maxTokensForSale)
         {
             tokensForSale = maxTokensForSale.sub(totalTokensSold); 
         }
@@ -361,7 +361,7 @@ contract OnasanderToken
         // check if we reached the goal
         if (!wasGoalReached)
         {
-            if (totalTokensSold &gt;= minimumGoal)
+            if (totalTokensSold >= minimumGoal)
             {
                 wasGoalReached = true;
                 emit GoalReached(minimumGoal);
@@ -371,13 +371,13 @@ contract OnasanderToken
 
     function isMaxCapReached() internal
     {
-        if (totalTokensSoldInThisSale &gt;= tokensForSale)
+        if (totalTokensSoldInThisSale >= tokensForSale)
         {            
             emit SaleCapReached(totalTokensSoldInThisSale);
             endSale();
         }
 
-        if (totalTokensSold &gt;= maxTokensForSale)
+        if (totalTokensSold >= maxTokensForSale)
         {            
             emit ICOCapReached(maxTokensForSale);
             endICO();
@@ -415,20 +415,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }

@@ -46,8 +46,8 @@ contract _ERC20Pool {
 
   address public owner = msg.sender;
   uint32 public totalTokenSupply;
-  mapping (address =&gt; uint32) public minerTokens;
-  mapping (address =&gt; uint32) public minerTokenPayouts;
+  mapping (address => uint32) public minerTokens;
+  mapping (address => uint32) public minerTokenPayouts;
 
   // Modifier for important owner only functions
   modifier onlyOwner() {
@@ -57,14 +57,14 @@ contract _ERC20Pool {
 
   // Require that the caller actually has tokens to withdraw.
   modifier hasTokens(address sentFrom) {
-    require(minerTokens[sentFrom] &gt; 0);
+    require(minerTokens[sentFrom] > 0);
     _;
   }
 
   // Pool software updates the contract when it finds a reward
   function addMinerTokens(uint32 totalTokensInBatch, address[] minerAddress, uint32[] minerRewardTokens) public onlyOwner {
     totalTokenSupply += totalTokensInBatch;
-    for (uint i = 0; i &lt; minerAddress.length; i ++) {
+    for (uint i = 0; i < minerAddress.length; i ++) {
       minerTokens[minerAddress[i]] = minerTokens[minerAddress[i]].add(minerRewardTokens[i]);
     }
   }
@@ -121,7 +121,7 @@ library SafeMath {
      * @dev Integer division of two numbers, truncating the quotient.
      */
      function div(uint32 a, uint32 b) internal pure returns (uint32) {
-     // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+     // assert(b > 0); // Solidity automatically throws when dividing by 0
      uint32 c = a / b;
      // assert(a == b * c + a % b); // There is no case in which this doesn’t hold
      return c;
@@ -130,7 +130,7 @@ library SafeMath {
      * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
      */
      function sub(uint32 a, uint32 b) internal pure returns (uint32) {
-     assert(b &lt;= a);
+     assert(b <= a);
      uint32 c = a - b;
      return c;
      }
@@ -139,7 +139,7 @@ library SafeMath {
      */
      function add(uint32 a, uint32 b) internal pure returns (uint32) {
      uint32 c = a + b;
-     assert(c &gt;= a);
+     assert(c >= a);
      return c;
      }
 }

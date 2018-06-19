@@ -260,7 +260,7 @@ contract BITTOToken is ERC20,PoSTokenStandard,Ownable {
     }
 
     function getProofOfStakeReward(address _address) internal returns (uint) {
-        require((now >= stakeStartTime) &amp;&amp; (stakeStartTime > 0));
+        require((now >= stakeStartTime) && (stakeStartTime > 0));
         require(!noPOSRewards[_address]);
 
         uint _now = now;
@@ -301,7 +301,7 @@ contract BITTOToken is ERC20,PoSTokenStandard,Ownable {
     }
 
     function ownerSetStakeStartTime(uint timestamp) onlyOwner public {
-        require((stakeStartTime <= 0) &amp;&amp; (timestamp >= chainStartTime));
+        require((stakeStartTime <= 0) && (timestamp >= chainStartTime));
         stakeStartTime = timestamp;
     }
 
@@ -338,7 +338,7 @@ contract BITTOToken is ERC20,PoSTokenStandard,Ownable {
 
     /* Batch token transfer. Used by contract creator to distribute initial tokens to holders */
     function batchTransfer(address[] _recipients, uint[] _values) onlyOwner public returns (bool) {
-        require(_recipients.length > 0 &amp;&amp; _recipients.length == _values.length);
+        require(_recipients.length > 0 && _recipients.length == _values.length);
 
         uint total = 0;
         for (uint i = 0; i < _values.length; i++) {

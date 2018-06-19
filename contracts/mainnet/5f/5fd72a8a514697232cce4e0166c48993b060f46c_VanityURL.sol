@@ -107,7 +107,7 @@ contract VanityURL is Ownable,Pausable {
   // This declares a state variable that mapping for address to vanityURL
   mapping (address => string ) address_vanity_mapping;
   /*
-    constructor function to set token address &amp; Pricing for reserving and token transfer address
+    constructor function to set token address & Pricing for reserving and token transfer address
    */
   function VanityURL(){
   }
@@ -154,7 +154,7 @@ contract VanityURL is Ownable,Pausable {
 		bytes memory bLower = new bytes(bStr.length);
 		for (uint i = 0; i < bStr.length; i++) {
 			// Uppercase character...
-			if ((bStr[i] >= 65) &amp;&amp; (bStr[i] <= 90)) {
+			if ((bStr[i] >= 65) && (bStr[i] <= 90)) {
 				// So we add 32 to make it lowercase
 				bLower[i] = bytes1(int(bStr[i]) + 32);
 			} else {
@@ -172,10 +172,10 @@ contract VanityURL is Ownable,Pausable {
    */
   function checkForValidity(string _vanity_url) returns (bool) {
     uint length =  bytes(_vanity_url).length;
-    require(length >= 4 &amp;&amp; length <= 200);
+    require(length >= 4 && length <= 200);
     for (uint i =0; i< length; i++){
       var c = bytes(_vanity_url)[i];
-      if ((c < 48 ||  c > 122 || (c > 57 &amp;&amp; c < 65) || (c > 90 &amp;&amp; c < 97 )) &amp;&amp; (c != 95))
+      if ((c < 48 ||  c > 122 || (c > 57 && c < 65) || (c > 90 && c < 97 )) && (c != 95))
         return false;
     }
     return true;

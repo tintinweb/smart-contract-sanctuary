@@ -35,8 +35,8 @@ contract Token {
     uint8 public decimals;
     uint256 public totalSupply;
 
-    mapping (address =&gt; uint256) public balanceOf;
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => uint256) public balanceOf;
+    mapping (address => mapping (address => uint256)) public allowance;
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
@@ -55,10 +55,10 @@ contract Token {
     }
     
     function transfer(address _to, uint256 _value) returns (bool success) {
-        if (balanceOf[msg.sender] &lt; _value) {
+        if (balanceOf[msg.sender] < _value) {
             revert();           // Check if the sender has enough
         }
-        if (balanceOf[_to] + _value &lt; balanceOf[_to]) {
+        if (balanceOf[_to] + _value < balanceOf[_to]) {
             revert(); // Check for overflows
         }
 
@@ -69,7 +69,7 @@ contract Token {
     }
     
     function approve(address _spender, uint256 _value) returns (bool success) {
-        require(balanceOf[msg.sender] &gt;= _value);
+        require(balanceOf[msg.sender] >= _value);
 
         allowance[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
@@ -92,13 +92,13 @@ contract Token {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
-        if (balanceOf[_from] &lt; _value) {
+        if (balanceOf[_from] < _value) {
             revert();                                        // Check if the sender has enough
         }                 
-        if (balanceOf[_to] + _value &lt; balanceOf[_to]) {
+        if (balanceOf[_to] + _value < balanceOf[_to]) {
             revert();  // Check for overflows
         }
-        if (_value &gt; allowance[_from][msg.sender]) {
+        if (_value > allowance[_from][msg.sender]) {
             revert();   // Check allowance
         }
 
@@ -131,7 +131,7 @@ contract AngelToken is Token, Owner {
     uint256 public buyPrice;
     uint minBalanceForAccounts;
 
-    mapping (address =&gt; bool) frozenAccount;
+    mapping (address => bool) frozenAccount;
 
     event FrozenFunds(address indexed _target, bool _frozen);
 
@@ -142,10 +142,10 @@ contract AngelToken is Token, Owner {
     }
 
     function transfer(address _to, uint256 _value) returns (bool success) {
-        if (balanceOf[msg.sender] &lt; _value) {
+        if (balanceOf[msg.sender] < _value) {
             revert();           // Check if the sender has enough
         }
-        if (balanceOf[_to] + _value &lt; balanceOf[_to]) {
+        if (balanceOf[_to] + _value < balanceOf[_to]) {
             revert(); // Check for overflows
         }
         if (frozenAccount[msg.sender]) {
@@ -162,13 +162,13 @@ contract AngelToken is Token, Owner {
         if (frozenAccount[_from]) {
             revert();                        // Check if frozen       
         }     
-        if (balanceOf[_from] &lt; _value) {
+        if (balanceOf[_from] < _value) {
             revert();                 // Check if the sender has enough
         }
-        if (balanceOf[_to] + _value &lt; balanceOf[_to]) {
+        if (balanceOf[_to] + _value < balanceOf[_to]) {
             revert();  // Check for overflows
         }
-        if (_value &gt; allowance[_from][msg.sender]) {
+        if (_value > allowance[_from][msg.sender]) {
             revert();   // Check allowance
         }
 
@@ -192,8 +192,8 @@ contract AngelToken is Token, Owner {
     function buy() payable returns (uint amount) {
         require(couldTrade);
         amount = msg.value * RATE / buyPrice;
-        require(balanceOf[this] &gt;= amount);
-        require(balanceOf[msg.sender] + amount &gt;= amount);
+        require(balanceOf[this] >= amount);
+        require(balanceOf[msg.sender] + amount >= amount);
         balanceOf[this] -= amount;
         balanceOf[msg.sender] += amount;
         Transfer(this, msg.sender, amount);
@@ -203,7 +203,7 @@ contract AngelToken is Token, Owner {
     function sell(uint256 amountInWeiDecimalIs18) returns (uint256 revenue) {
         require(couldTrade);
         uint256 amount = amountInWeiDecimalIs18;
-        require(balanceOf[msg.sender] &gt;= amount);
+        require(balanceOf[msg.sender] >= amount);
         require(!frozenAccount[msg.sender]);
 
         revenue = amount * sellPrice / RATE;
@@ -221,8 +221,8 @@ contract AngelToken is Token, Owner {
 
     function setCouldTrade(uint256 amountInWeiDecimalIs18) onlyOwner returns (bool success) {
         couldTrade = true;
-        require(balanceOf[msg.sender] &gt;= amountInWeiDecimalIs18);
-        require(balanceOf[this] + amountInWeiDecimalIs18 &gt;= amountInWeiDecimalIs18);
+        require(balanceOf[msg.sender] >= amountInWeiDecimalIs18);
+        require(balanceOf[this] + amountInWeiDecimalIs18 >= amountInWeiDecimalIs18);
         balanceOf[msg.sender] -= amountInWeiDecimalIs18;
         balanceOf[this] += amountInWeiDecimalIs18;
         Transfer(msg.sender, this, amountInWeiDecimalIs18);
@@ -232,7 +232,7 @@ contract AngelToken is Token, Owner {
     function stopTrade() onlyOwner returns (bool success) {
         couldTrade = false;
         uint256 _remain = balanceOf[this];
-        require(balanceOf[msg.sender] + _remain &gt;= _remain);
+        require(balanceOf[msg.sender] + _remain >= _remain);
         balanceOf[msg.sender] += _remain;
         balanceOf[this] -= _remain;
         Transfer(this, msg.sender, _remain);

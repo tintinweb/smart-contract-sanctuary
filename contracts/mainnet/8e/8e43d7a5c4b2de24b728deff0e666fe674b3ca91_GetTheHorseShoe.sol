@@ -106,22 +106,22 @@ contract HorseShoeShopOwner is HorseShoeControl, ERC721 {
     
 
     
-    mapping (uint256 =&gt; address) public HShoeShopO;
+    mapping (uint256 => address) public HShoeShopO;
     
-    mapping (uint256 =&gt; uint256) public HSShopPrice;
+    mapping (uint256 => uint256) public HSShopPrice;
     
-    mapping (uint256 =&gt; bool) public HSShopForSale;
-    mapping (uint256 =&gt; bool) public HSShopForBiding;
+    mapping (uint256 => bool) public HSShopForSale;
+    mapping (uint256 => bool) public HSShopForBiding;
     
-    mapping (address =&gt; uint256) HSShopOwnCount;
+    mapping (address => uint256) HSShopOwnCount;
     
      uint256 public HSShopSaleFee = 20;
    
   
-        mapping (uint256 =&gt; uint256)  startBlock;
+        mapping (uint256 => uint256)  startBlock;
       
-    mapping (uint256 =&gt; uint256) startPrice;
-    mapping (uint256 =&gt; uint256) public priceDecreaseRate;
+    mapping (uint256 => uint256) startPrice;
+    mapping (uint256 => uint256) public priceDecreaseRate;
     
 
       function getCurrentItemPrice(uint256 _id) public view returns (uint256)  {
@@ -153,7 +153,7 @@ contract HorseShoeShopOwner is HorseShoeControl, ERC721 {
          
               uint256 price = HSShopPrice[id];
             
-            require(price&lt;=msg.value);
+            require(price<=msg.value);
             
          uint256 Fee = price / HSShopSaleFee ;
             
@@ -214,11 +214,11 @@ contract HorseShoeShopOwner is HorseShoeControl, ERC721 {
         
         
         uint256 priceNow = getCurrentItemPrice(_id);
-        require(msg.value&gt;=priceNow);
+        require(msg.value>=priceNow);
         
         require(HSShopForBiding[_id]==true);
         
-          if(priceNow&lt;=0||priceNow&gt;=startPrice[_id]){
+          if(priceNow<=0||priceNow>=startPrice[_id]){
         HSShopForBiding[_id]=false;
               _to.transfer( msg.value);
         }else{
@@ -281,20 +281,20 @@ contract HorseShoeBasis is  HorseShoeShopOwner {
 
     HorseShoe[] horseShoes;
 
-    mapping (uint256 =&gt; address) horseShoeOwnerIndex;
+    mapping (uint256 => address) horseShoeOwnerIndex;
     
-    mapping (uint256 =&gt; uint256) public horseShoeIndexPrice;
+    mapping (uint256 => uint256) public horseShoeIndexPrice;
     
-    mapping (uint256 =&gt; uint256) public processingQuality;
+    mapping (uint256 => uint256) public processingQuality;
     
-    mapping (uint256 =&gt; uint256) public WearOut;
+    mapping (uint256 => uint256) public WearOut;
     
     
-    mapping (uint256 =&gt; bool)  horseShoeIndexForSale;
+    mapping (uint256 => bool)  horseShoeIndexForSale;
 
-    mapping (address =&gt; uint256) tokenOwnershipCount;
+    mapping (address => uint256) tokenOwnershipCount;
     
-    mapping (uint256 =&gt; bool)  raceListed;
+    mapping (uint256 => bool)  raceListed;
 
 
   uint256 public saleFee = 20;
@@ -364,7 +364,7 @@ contract HorseShoeBasis is  HorseShoeShopOwner {
          
               uint256 price = horseShoeIndexPrice[_tokenId];
             
-            require(price&lt;=value);
+            require(price<=value);
             
          uint256 Fee = price / saleFee /2;
             
@@ -388,23 +388,23 @@ contract HorseShoeBasis is  HorseShoeShopOwner {
             uint256 HSQ = processingQuality[_tokenId]/10;
              address HSSOwner;
              
-              if(HSQ&gt;=10||WearOut[_tokenId]&gt;=1){
+              if(HSQ>=10||WearOut[_tokenId]>=1){
                  
             HSSOwner= HShoeShopO[6];
             
-             }else  if(HSQ&gt;=0&amp;&amp;HSQ&lt;=2){
+             }else  if(HSQ>=0&&HSQ<=2){
               HSSOwner= HShoeShopO[5];
                  
-             }else  if(HSQ&gt;=2&amp;&amp;HSQ&lt;=4){
+             }else  if(HSQ>=2&&HSQ<=4){
               HSSOwner= HShoeShopO[4];
                  
-             } else  if(HSQ&gt;=4&amp;&amp;HSQ&lt;=6){
+             } else  if(HSQ>=4&&HSQ<=6){
              HSSOwner=  HShoeShopO[3];
                  
-             } else  if(HSQ&gt;=6&amp;&amp;HSQ&lt;=8){
+             } else  if(HSQ>=6&&HSQ<=8){
              HSSOwner=  HShoeShopO[2];
                  
-             }else  if(HSQ&gt;=8&amp;&amp;HSQ&lt;=10){
+             }else  if(HSQ>=8&&HSQ<=10){
              HSSOwner=  HShoeShopO[1];
                  
              }else{
@@ -498,7 +498,7 @@ contract IronConnect {
 
 contract SmithConnect {
 
-      mapping (uint256 =&gt; uint256) public averageQuality;
+      mapping (uint256 => uint256) public averageQuality;
 
     function ownerOf(uint256 _tokenId) external view returns (address owner);
     function balanceOf(address _owner) public view returns (uint256 balance);
@@ -509,7 +509,7 @@ contract SmithConnect {
 contract ForgeConnection {
     
     
-    mapping (uint256 =&gt; uint256) public forgeToolQuality;
+    mapping (uint256 => uint256) public forgeToolQuality;
     
     function ownerOf(uint256 _tokenId) external view returns (address owner);
     function balanceOf(address _owner) public view returns (uint256 balance);
@@ -645,7 +645,7 @@ function raceOut(uint256 _tokenIdA) external {
     
     require(msg.sender==raceDistCon);
 
-        require(WearOut[_tokenIdA] &lt;10 );
+        require(WearOut[_tokenIdA] <10 );
     
 		
       HorseShoe storage horseshoeA = horseShoes[_tokenIdA];
@@ -688,7 +688,7 @@ function raceRegistration(uint256 _tokenIdA, address owner) external {
     
   //  require(msg.sender==raceDistCon);
     
-    require(tokenOwnershipCount[owner]&gt;=4);
+    require(tokenOwnershipCount[owner]>=4);
     
   require(horseShoeOwnerIndex[_tokenIdA]==owner);
   
@@ -724,7 +724,7 @@ contract HorseShoeMinting is HorseShoeOwnership {
     function createHorseShoe4(uint256 _genes2,uint256 _genes3,uint256 _genes2a,uint256 _genes3a, uint256 _genes2b,uint256 _genes3b,uint256 _genes2c,uint256 _genes3c, address _owner) external onlyC {
         address horseShoeOwner = _owner;
         
-   require(horseShoes.length+3 &lt; HShoe_Limit);
+   require(horseShoes.length+3 < HShoe_Limit);
 
             
               _newHorseShoe(0, _genes2, _genes3,true,false , horseShoeOwner);
@@ -742,7 +742,7 @@ contract HorseShoeMinting is HorseShoeOwnership {
         function createHorseShoe1(uint256 _genes2,uint256 _genes3, address _owner) external onlyC {
         address horseShoeOwner = _owner;
         
-   require(horseShoes.length+3 &lt; HShoe_Limit);
+   require(horseShoes.length+3 < HShoe_Limit);
 
             
               _newHorseShoe(0, _genes2, _genes3,true,false , horseShoeOwner);
@@ -754,7 +754,7 @@ contract HorseShoeMinting is HorseShoeOwnership {
     function createHorseShoe10(uint256 _genes2,uint256 _genes3,uint256 _genes2a,uint256 _genes3a, uint256 _genes2b,uint256 _genes3b,uint256 _genes2c,uint256 _genes3c, uint256 _genes2d,uint256 _genes3d, address _owner) external onlyC {
         address horseShoeOwner = _owner;
         
-   require(horseShoes.length+3 &lt; HShoe_Limit);
+   require(horseShoes.length+3 < HShoe_Limit);
 
             
               _newHorseShoe(0, _genes2, _genes3,true,false , horseShoeOwner);

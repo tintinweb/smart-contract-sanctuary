@@ -506,7 +506,7 @@ contract RealityCheck is BalanceHolder {
     function isFinalized(bytes32 question_id) 
     constant public returns (bool) {
         uint32 finalize_ts = questions[question_id].finalize_ts;
-        return ( !questions[question_id].is_pending_arbitration &amp;&amp; (finalize_ts > UNANSWERED) &amp;&amp; (finalize_ts <= uint32(now)) );
+        return ( !questions[question_id].is_pending_arbitration && (finalize_ts > UNANSWERED) && (finalize_ts <= uint32(now)) );
     }
 
     /// @notice Return the final answer to the specified question, or revert if there isn&#39;t one

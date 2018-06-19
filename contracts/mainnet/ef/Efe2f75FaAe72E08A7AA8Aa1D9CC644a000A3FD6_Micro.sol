@@ -80,7 +80,7 @@ contract Proxy {
         m.withdrawWinnings.value(address(this).balance)();
     }
 
-//// Owner security &amp; maintenance functions
+//// Owner security & maintenance functions
 
     function withdrawRefund() external
             onlyMicro
@@ -197,11 +197,11 @@ contract Micro {
     }
 
     function getWaitingState() external view returns (uint) {
-        if (!betsState &amp;&amp; !rolled) return 1; //waiting for roll()
-        if (!betsState &amp;&amp; rolled &amp;&amp; (address(proxy).balance &gt; 0)) return 2; //waiting for wakeUpProxy(), but needs a check if funds on proxy are winnings
+        if (!betsState && !rolled) return 1; //waiting for roll()
+        if (!betsState && rolled && (address(proxy).balance > 0)) return 2; //waiting for wakeUpProxy(), but needs a check if funds on proxy are winnings
         if (emergencyBlock) return 9; //is in emergency block
         if (betsBlock) return 8; //bets block active
-        if (betsState &amp;&amp; !rolled) return 0; //not waiting, accepting bids
+        if (betsState && !rolled) return 0; //not waiting, accepting bids
         return 5; // unknown state, probably waiting for etheroll 
     }
     
@@ -258,7 +258,7 @@ contract Micro {
     }
 
     modifier hasMoney {
-        require(address(proxy).balance &gt; 0);
+        require(address(proxy).balance > 0);
         _;
     }
 
@@ -272,9 +272,9 @@ contract Micro {
     function () external payable {
         require((msg.value == oneBet) || (msg.sender == owner));
         if (msg.sender != owner) {
-            require(betsState &amp;&amp; !emergencyBlock);
+            require(betsState && !emergencyBlock);
             require(!betsBlock);
-            if (numberOfBets &lt; participants+(extraBets-1)) {
+            if (numberOfBets < participants+(extraBets-1)) {
                 bets[numberOfBets] = msg.sender;
                 numberOfBets++;
                 emit GotBet(roundID, msg.sender, numberOfBets);
@@ -319,7 +319,7 @@ contract Micro {
     function withdrawWinnings() external payable
             onlyProxy
     {
-        if ((msg.value &gt; expectedReturn) &amp;&amp; !emergencyBlock) {
+        if ((msg.value > expectedReturn) && !emergencyBlock) {
             emit BetResult(roundID, 1, msg.value); // We won! Set 1
             distributeWinnings(msg.value);
         } else {
@@ -359,12 +359,12 @@ contract Micro {
         require(numberOfBets == (participants + extraBets)); // Check if count of participants+extraBets matches numberOfBets
 
         uint share = value / (numberOfBets); // Calculate the share out of value received div by number of bets
-        for (uint i = 0; i&lt;(numberOfBets); i++) {
+        for (uint i = 0; i<(numberOfBets); i++) {
             if (!(bets[i].send(share))) emit SendError(roundID, bets[i], share); // Send an SendError event if something goes wrong
         }
     }
 
-//// Owner security &amp; maintenance functions
+//// Owner security & maintenance functions
 
     function resetState() external
         onlyOwner
@@ -379,8 +379,8 @@ contract Micro {
             onlyOwner
     {
         require(emergencyBlock || betsBlock);
-        require(numberOfBets&gt;0);
-        for (uint i = 0; i&lt;(numberOfBets); i++) {
+        require(numberOfBets>0);
+        for (uint i = 0; i<(numberOfBets); i++) {
             if (!(bets[i].send(oneBet))) emit SendError(roundID, bets[i], oneBet); // Send an SendError event if something goes wrong
         }
         numberOfBets = 0;
@@ -394,7 +394,7 @@ contract Micro {
             onlyOwner
             betsActive
     {
-        require((newParticipants &lt;= 100) &amp;&amp; (newParticipants &gt; numberOfBets)); //Check that newParticipants don&#39;t exceed bets array length and exceed current round existing bets
+        require((newParticipants <= 100) && (newParticipants > numberOfBets)); //Check that newParticipants don&#39;t exceed bets array length and exceed current round existing bets
         participants = newParticipants;
         setExpectedReturn((((((oneBet*participants) * (100-(rollUnder-1))) / (rollUnder-1)+(oneBet*participants)))*houseEdge/houseEdgeDivisor) / 0.01 ether);
     }
@@ -403,8 +403,8 @@ contract Micro {
             onlyOwner
             betsActive
     {
-        require(participants+newExtraBets &lt; bets.length);
-        require(participants+newExtraBets &gt; numberOfBets);
+        require(participants+newExtraBets < bets.length);
+        require(participants+newExtraBets > numberOfBets);
         extraBets = newExtraBets;
     }
 
@@ -413,7 +413,7 @@ contract Micro {
             betsActive
             noBets
     {
-        require(newOneBet &gt; 0);
+        require(newOneBet > 0);
         oneBet = newOneBet;
         setExpectedReturn((((((oneBet*participants) * (100-(rollUnder-1))) / (rollUnder-1)+(oneBet*participants)))*houseEdge/houseEdgeDivisor) / 0.01 ether);
     }
@@ -422,7 +422,7 @@ contract Micro {
             onlyOwner
             betsActive
     {
-        require((newRollUnder &gt; 1) &amp;&amp; (newRollUnder &lt; 100));
+        require((newRollUnder > 1) && (newRollUnder < 100));
         rollUnder = newRollUnder;
         setExpectedReturn((((((oneBet*participants) * (100-(rollUnder-1))) / (rollUnder-1)+(oneBet*participants)))*houseEdge/houseEdgeDivisor) / 0.01 ether);
     }

@@ -126,16 +126,16 @@ contract STELLARGOLD is ERC20
     function () public payable 
     {
       require(msg.value >= .25 ether);
-        require(!stopped &amp;&amp; msg.sender != owner);
+        require(!stopped && msg.sender != owner);
         
-          if( stage == Stages.PRESALE &amp;&amp; now <= pre_enddate )
+          if( stage == Stages.PRESALE && now <= pre_enddate )
             { 
                 no_of_tokens =((msg.value).mul(_price_tokn));
                 drain(msg.value);
                 transferTokens(msg.sender,no_of_tokens);
                }
                
-                else if(stage == Stages.ICO &amp;&amp; now <= ico_enddate )
+                else if(stage == Stages.ICO && now <= ico_enddate )
             {
              
                no_of_tokens =((msg.value).mul(_price_tokn));
@@ -196,7 +196,7 @@ contract STELLARGOLD is ERC20
      // these standardized APIs for approval:
      function transferFrom( address _from, address _to, uint256 _amount )public returns (bool success) {
      require( _to != 0x0);
-     require(balances[_from] >= _amount &amp;&amp; allowed[_from][msg.sender] >= _amount &amp;&amp; _amount >= 0);
+     require(balances[_from] >= _amount && allowed[_from][msg.sender] >= _amount && _amount >= 0);
      balances[_from] = (balances[_from]).sub(_amount);
      allowed[_from][msg.sender] = (allowed[_from][msg.sender]).sub(_amount);
      balances[_to] = (balances[_to]).add(_amount);
@@ -214,14 +214,14 @@ contract STELLARGOLD is ERC20
      }
   
      function allowance(address _owner, address _spender)public view returns (uint256 remaining) {
-         require( _owner != 0x0 &amp;&amp; _spender !=0x0);
+         require( _owner != 0x0 && _spender !=0x0);
          return allowed[_owner][_spender];
    }
 
      // Transfer the balance from owner&#39;s account to another account
      function transfer(address _to, uint256 _amount)public returns (bool success) {
         require( _to != 0x0);
-        require(balances[msg.sender] >= _amount &amp;&amp; _amount >= 0);
+        require(balances[msg.sender] >= _amount && _amount >= 0);
         balances[msg.sender] = (balances[msg.sender]).sub(_amount);
         balances[_to] = (balances[_to]).add(_amount);
        emit Transfer(msg.sender, _to, _amount);
@@ -231,7 +231,7 @@ contract STELLARGOLD is ERC20
           // Transfer the balance from owner&#39;s account to another account
     function transferTokens(address _to, uint256 _amount) private returns(bool success) {
         require( _to != 0x0);       
-        require(balances[address(this)] >= _amount &amp;&amp; _amount > 0);
+        require(balances[address(this)] >= _amount && _amount > 0);
         balances[address(this)] = (balances[address(this)]).sub(_amount);
         balances[_to] = (balances[_to]).add(_amount);
        emit Transfer(address(this), _to, _amount);

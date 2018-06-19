@@ -99,7 +99,7 @@ contract TimeLimitedStoppable is TimeLimitedStoppableInterface, Owned
     view 
     returns(bool contractRunning) 
   {
-    return running &amp;&amp; now <= finalBlock;
+    return running && now <= finalBlock;
   }
 
   function getLastBlock() public view returns(uint lastBlock) {

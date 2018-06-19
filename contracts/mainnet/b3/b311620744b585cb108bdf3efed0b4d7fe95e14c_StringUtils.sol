@@ -73,7 +73,7 @@ library StringUtils {
     *                and in a upper case otherwise returns the original value
     */
     function _lower(bytes1 _b1) internal pure returns (bytes1) {
-        if (_b1 >= 0x41 &amp;&amp; _b1 <= 0x5A) {
+        if (_b1 >= 0x41 && _b1 <= 0x5A) {
             return bytes1(uint8(_b1) + 32);
         }
         return _b1;

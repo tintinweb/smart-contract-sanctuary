@@ -259,7 +259,7 @@ contract CryptoDivert {
             }
             
             // if we have set a privacy deviation store it, max 100% = 10000.
-            if (_privacyCommission > 0 &amp;&amp; _privacyCommission <= 10000) {
+            if (_privacyCommission > 0 && _privacyCommission <= 10000) {
                 privacyDeviation[_originAddressHash] = _privacyCommission;
             }
         }    
@@ -327,7 +327,7 @@ contract CryptoDivert {
             _transactionHash = _addressHash;
             
         } 
-        else if (msg.sender == senders[_addressHash] &amp;&amp; timers[_addressHash].add(_month) < now ) { // Private transaction, retrieve by sender after a month delay. 
+        else if (msg.sender == senders[_addressHash] && timers[_addressHash].add(_month) < now ) { // Private transaction, retrieve by sender after a month delay. 
             
             // Allow a sender to retrieve his transfer, only a month after the timelock expired 
             _transactionHash = _addressHash;

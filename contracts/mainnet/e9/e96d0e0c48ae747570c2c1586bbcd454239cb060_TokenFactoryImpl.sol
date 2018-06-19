@@ -12,7 +12,7 @@
 */
 pragma solidity 0.4.21;
 /// @title Utility Functions for address
-/// @author Kongliang Zhong - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6f0400010803060e01082f0300001f1d06010841001d08">[email&#160;protected]</a>&gt;
+/// @author Kongliang Zhong - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6f0400010803060e01082f0300001f1d06010841001d08">[email&#160;protected]</a>>
 library StringUtil {
     function stringToBytes12(string str)
         internal
@@ -32,14 +32,14 @@ library StringUtil {
             result := mload(add(str, 32))
         }
     }
-    /// check length &gt;= min &amp;&amp; &lt;= max
+    /// check length >= min && <= max
     function checkStringLength(string name, uint min, uint max)
         internal
         pure
         returns (bool)
     {
         bytes memory temp = bytes(name);
-        return temp.length &gt;= min &amp;&amp; temp.length &lt;= max;
+        return temp.length >= min && temp.length <= max;
     }
 }
 /*
@@ -55,7 +55,7 @@ library StringUtil {
   limitations under the License.
 */
 /// @title Utility Functions for address
-/// @author Daniel Wang - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="98fcf9f6f1fdf4d8f4f7f7e8eaf1f6ffb6f7eaff">[email&#160;protected]</a>&gt;
+/// @author Daniel Wang - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="98fcf9f6f1fdf4d8f4f7f7e8eaf1f6ffb6f7eaff">[email&#160;protected]</a>>
 library AddressUtil {
     function isContract(
         address addr
@@ -69,7 +69,7 @@ library AddressUtil {
         } else {
             uint size;
             assembly { size := extcodesize(addr) }
-            return size &gt; 0;
+            return size > 0;
         }
     }
 }
@@ -111,7 +111,7 @@ library AddressUtil {
 */
 /// @title ERC20 Token Interface
 /// @dev see https://github.com/ethereum/EIPs/issues/20
-/// @author Daniel Wang - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dabebbb4b3bfb69ab6b5b5aaa8b3b4bdf4b5a8bd">[email&#160;protected]</a>&gt;
+/// @author Daniel Wang - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dabebbb4b3bfb69ab6b5b5aaa8b3b4bdf4b5a8bd">[email&#160;protected]</a>>
 contract ERC20 {
     function balanceOf(
         address who
@@ -159,7 +159,7 @@ contract ERC20 {
   limitations under the License.
 */
 /// @title Utility Functions for uint
-/// @author Daniel Wang - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7410151a1d111834181b1b04061d1a135a1b0613">[email&#160;protected]</a>&gt;
+/// @author Daniel Wang - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7410151a1d111834181b1b04061d1a135a1b0613">[email&#160;protected]</a>>
 library MathUint {
     function mul(
         uint a,
@@ -180,7 +180,7 @@ library MathUint {
         pure
         returns (uint)
     {
-        require(b &lt;= a);
+        require(b <= a);
         return a - b;
     }
     function add(
@@ -192,7 +192,7 @@ library MathUint {
         returns (uint c)
     {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function tolerantSub(
         uint a,
@@ -202,7 +202,7 @@ library MathUint {
         pure
         returns (uint c)
     {
-        return (a &gt;= b) ? a - b : 0;
+        return (a >= b) ? a - b : 0;
     }
     /// @dev calculate the square of Coefficient of Variation (CV)
     /// https://en.wikipedia.org/wiki/Coefficient_of_variation
@@ -215,10 +215,10 @@ library MathUint {
         returns (uint)
     {
         uint len = arr.length;
-        require(len &gt; 1);
-        require(scale &gt; 0);
+        require(len > 1);
+        require(scale > 0);
         uint avg = 0;
-        for (uint i = 0; i &lt; len; i++) {
+        for (uint i = 0; i < len; i++) {
             avg = add(avg, arr[i]);
         }
         avg = avg / len;
@@ -228,9 +228,9 @@ library MathUint {
         uint cvs = 0;
         uint s;
         uint item;
-        for (i = 0; i &lt; len; i++) {
+        for (i = 0; i < len; i++) {
             item = arr[i];
-            s = item &gt; avg ? item - avg : avg - item;
+            s = item > avg ? item - avg : avg - item;
             cvs = add(cvs, mul(s, s));
         }
         return ((mul(mul(cvs, scale), scale) / avg) / avg) / (len - 1);
@@ -238,15 +238,15 @@ library MathUint {
 }
 /// @title ERC20 Token Implementation
 /// @dev see https://github.com/ethereum/EIPs/issues/20
-/// @author Daniel Wang - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4521242b2c202905292a2a35372c2b226b2a3722">[email&#160;protected]</a>&gt;
+/// @author Daniel Wang - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4521242b2c202905292a2a35372c2b226b2a3722">[email&#160;protected]</a>>
 contract ERC20Token is ERC20 {
     using MathUint for uint;
     string  public name;
     string  public symbol;
     uint8   public decimals;
     uint    public totalSupply_;
-    mapping (address =&gt; uint256) balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) internal allowed;
     event Transfer(
         address indexed from,
         address indexed to,
@@ -266,7 +266,7 @@ contract ERC20Token is ERC20 {
         )
         public
     {
-        require(_totalSupply &gt; 0);
+        require(_totalSupply > 0);
         require(_firstHolder != 0x0);
         checkSymbolAndName(_symbol,_name);
         name = _name;
@@ -304,7 +304,7 @@ contract ERC20Token is ERC20 {
         returns (bool)
     {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
         // SafeMath.sub will throw if there is not enough balance.
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -340,8 +340,8 @@ contract ERC20Token is ERC20 {
         returns (bool)
     {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
         allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
@@ -424,7 +424,7 @@ contract ERC20Token is ERC20 {
         returns (bool)
     {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -441,20 +441,20 @@ contract ERC20Token is ERC20 {
         pure
     {
         bytes memory s = bytes(_symbol);
-        require(s.length &gt;= 3 &amp;&amp; s.length &lt;= 8);
-        for (uint i = 0; i &lt; s.length; i++) {
+        require(s.length >= 3 && s.length <= 8);
+        for (uint i = 0; i < s.length; i++) {
             // make sure symbol contains only [A-Za-z._]
             require(
                 s[i] == 0x2E || (
                 s[i] == 0x5F) || (
-                s[i] &gt;= 0x41 &amp;&amp; s[i] &lt;= 0x5A) || (
-                s[i] &gt;= 0x61 &amp;&amp; s[i] &lt;= 0x7A)
+                s[i] >= 0x41 && s[i] <= 0x5A) || (
+                s[i] >= 0x61 && s[i] <= 0x7A)
             );
         }
         bytes memory n = bytes(_name);
-        require(n.length &gt;= s.length &amp;&amp; n.length &lt;= 128);
-        for (i = 0; i &lt; n.length; i++) {
-            require(n[i] &gt;= 0x20 &amp;&amp; n[i] &lt;= 0x7E);
+        require(n.length >= s.length && n.length <= 128);
+        for (i = 0; i < n.length; i++) {
+            require(n[i] >= 0x20 && n[i] <= 0x7E);
         }
     }
 }
@@ -473,8 +473,8 @@ contract ERC20Token is ERC20 {
 /// @title ERC20 Token Mint
 /// @dev This contract deploys ERC20 token contract and registered the contract
 ///      so the token can be traded with Loopring Protocol.
-/// @author Kongliang Zhong - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3f5450515853565e51587f5350504f4d56515811504d58">[email&#160;protected]</a>&gt;,
-/// @author Daniel Wang - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d4b0b5babdb1b894b8bbbba4a6bdbab3fabba6b3">[email&#160;protected]</a>&gt;.
+/// @author Kongliang Zhong - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3f5450515853565e51587f5350504f4d56515811504d58">[email&#160;protected]</a>>,
+/// @author Daniel Wang - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d4b0b5babdb1b894b8bbbba4a6bdbab3fabba6b3">[email&#160;protected]</a>>.
 contract TokenFactory {
     event TokenCreated(
         address indexed addr,
@@ -500,12 +500,12 @@ contract TokenFactory {
         returns (address addr);
 }
 /// @title An Implementation of TokenFactory.
-/// @author Kongliang Zhong - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1f7470717873767e71785f7370706f6d76717831706d78">[email&#160;protected]</a>&gt;,
-/// @author Daniel Wang - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b1d5d0dfd8d4ddf1dddedec1c3d8dfd69fdec3d6">[email&#160;protected]</a>&gt;.
+/// @author Kongliang Zhong - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1f7470717873767e71785f7370706f6d76717831706d78">[email&#160;protected]</a>>,
+/// @author Daniel Wang - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b1d5d0dfd8d4ddf1dddedec1c3d8dfd69fdec3d6">[email&#160;protected]</a>>.
 contract TokenFactoryImpl is TokenFactory {
     using AddressUtil for address;
     using StringUtil for string;
-    mapping(bytes10 =&gt; address) public tokens;
+    mapping(bytes10 => address) public tokens;
     /// @dev Disable default function.
     function ()
         payable

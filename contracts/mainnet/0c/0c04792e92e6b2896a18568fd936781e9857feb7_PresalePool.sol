@@ -145,7 +145,7 @@ contract PresalePool {
   // it sets the initial variables and whitelists the contract owner.
   function PresalePool(address receiverAddr, uint[] capAmounts, uint fee) public {
     require (fee < 100);
-    require (capAmounts.length>1 &amp;&amp; capAmounts.length<256);
+    require (capAmounts.length>1 && capAmounts.length<256);
     for (uint8 i=1; i<capAmounts.length; i++) {
       require (capAmounts[i] <= capAmounts[0]);
     }
@@ -258,7 +258,7 @@ contract PresalePool {
     require (contractStage == 1);
     _checkWhitelistContract(addr);
     require (!whitelist[addr].authorized);
-    require ((cap > 0 &amp;&amp; cap < contributionCaps.length) || (cap >= contributionMin &amp;&amp; cap <= contributionCaps[0]) );
+    require ((cap > 0 && cap < contributionCaps.length) || (cap >= contributionMin && cap <= contributionCaps[0]) );
     uint size;
     assembly { size := extcodesize(addr) }
     require (size == 0);
@@ -270,7 +270,7 @@ contract PresalePool {
   // Each address will be given the same cap, and the cap must be one of the standard levels.
   function authorizeMany (address[] addr, uint cap) public onlyOwner {
     require (addr.length < 255);
-    require (cap > 0 &amp;&amp; cap < contributionCaps.length);
+    require (cap > 0 && cap < contributionCaps.length);
     for (uint8 i=0; i<addr.length; i++) {
       authorize(addr[i], cap);
     }
@@ -296,7 +296,7 @@ contract PresalePool {
   // If the current contribution balance exceeds the new cap, the excess balance is refunded.
   function modifyIndividualCap (address addr, uint cap) public onlyOwner {
     require (contractStage < 3);
-    require (cap < contributionCaps.length || (cap >= contributionMin &amp;&amp; cap <= contributionCaps[0]) );
+    require (cap < contributionCaps.length || (cap >= contributionMin && cap <= contributionCaps[0]) );
     _checkWhitelistContract(addr);
     var c = whitelist[addr];
     require (c.authorized);
@@ -314,8 +314,8 @@ contract PresalePool {
   // The cap cannot be decreased below the current balance or increased past the contract limit.
   function modifyLevelCap (uint level, uint cap) public onlyOwner {
     require (contractStage < 3);
-    require (level > 0 &amp;&amp; level < contributionCaps.length);
-    require (this.balance <= cap &amp;&amp; contributionCaps[0] >= cap);
+    require (level > 0 && level < contributionCaps.length);
+    require (this.balance <= cap && contributionCaps[0] >= cap);
     contributionCaps[level] = cap;
     nextCapTime = 0;
   }
@@ -334,7 +334,7 @@ contract PresalePool {
       nextContributionCaps = contributionCaps;
       nextCapTime = time;
       for (i = 0; i < cap.length; i++) {
-        require (contributionCaps[i+1] <= cap[i] &amp;&amp; contributionCaps[0] >= cap[i]);
+        require (contributionCaps[i+1] <= cap[i] && contributionCaps[0] >= cap[i]);
         nextContributionCaps[i+1] = cap[i];
       }
     }
@@ -363,7 +363,7 @@ contract PresalePool {
     _checkWhitelistContract(addr);
     var c = whitelist[addr];
     if (!c.authorized) return 0;
-    if (nextCapTime>0 &amp;&amp; block.timestamp>nextCapTime) {
+    if (nextCapTime>0 && block.timestamp>nextCapTime) {
       contributionCaps = nextContributionCaps;
       nextCapTime = 0;
     }
@@ -450,7 +450,7 @@ contract PresalePool {
   // This limitation is so that if the owner acts maliciously in making the change, all whitelisted
   // addresses have ~24 hours to withdraw their eth from the contract.
   function setReceiverAddress (address addr) public onlyOwner {
-    require (addr != 0x00 &amp;&amp; receiverAddress == 0x00);
+    require (addr != 0x00 && receiverAddress == 0x00);
     require (contractStage < 3);
     receiverAddress = addr;
     addressChangeBlock = block.number;
@@ -465,7 +465,7 @@ contract PresalePool {
     require (contractStage < 3);
     require (receiverAddress != 0x00);
     require (block.number >= addressChangeBlock.add(6000));
-    require (contributionMin <= amountInWei &amp;&amp; amountInWei <= this.balance);
+    require (contributionMin <= amountInWei && amountInWei <= this.balance);
     finalBalance = this.balance;
     require (receiverAddress.call.value(amountInWei).gas(msg.gas.sub(5000))());
     if (this.balance > 0) ethRefundAmount.push(this.balance);

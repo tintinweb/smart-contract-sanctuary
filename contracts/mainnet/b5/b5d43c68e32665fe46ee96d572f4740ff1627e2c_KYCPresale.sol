@@ -73,7 +73,7 @@ contract Haltable is Ownable {
   }
 
   modifier stopNonOwnersInEmergency {
-    if (halted &amp;&amp; msg.sender != owner) throw;
+    if (halted && msg.sender != owner) throw;
     _;
   }
 
@@ -608,9 +608,9 @@ contract CrowdsaleBase is Haltable {
     else if (!finalizeAgent.isSane()) return State.Preparing;
     else if (!pricingStrategy.isSane(address(this))) return State.Preparing;
     else if (block.timestamp < startsAt) return State.PreFunding;
-    else if (block.timestamp <= endsAt &amp;&amp; !isCrowdsaleFull()) return State.Funding;
+    else if (block.timestamp <= endsAt && !isCrowdsaleFull()) return State.Funding;
     else if (isMinimumGoalReached()) return State.Success;
-    else if (!isMinimumGoalReached() &amp;&amp; weiRaised > 0 &amp;&amp; loadedRefund >= weiRaised) return State.Refunding;
+    else if (!isMinimumGoalReached() && weiRaised > 0 && loadedRefund >= weiRaised) return State.Refunding;
     else return State.Failure;
   }
 
@@ -706,7 +706,7 @@ library BytesDeserializer {
     bytes32 out;
 
     for (uint i = 0; i < 32; i++) {
-      out |= bytes32(b[offset + i] &amp; 0xFF) >> (i * 8);
+      out |= bytes32(b[offset + i] & 0xFF) >> (i * 8);
     }
     return out;
   }
@@ -718,7 +718,7 @@ library BytesDeserializer {
     bytes32 out;
 
     for (uint i = 0; i < 20; i++) {
-      out |= bytes32(b[offset + i] &amp; 0xFF) >> ((i+12) * 8);
+      out |= bytes32(b[offset + i] & 0xFF) >> ((i+12) * 8);
     }
     return address(uint(out));
   }
@@ -730,7 +730,7 @@ library BytesDeserializer {
     bytes16 out;
 
     for (uint i = 0; i < 16; i++) {
-      out |= bytes16(b[offset + i] &amp; 0xFF) >> (i * 8);
+      out |= bytes16(b[offset + i] & 0xFF) >> (i * 8);
     }
     return out;
   }
@@ -742,7 +742,7 @@ library BytesDeserializer {
     bytes4 out;
 
     for (uint i = 0; i < 4; i++) {
-      out |= bytes4(b[offset + i] &amp; 0xFF) >> (i * 8);
+      out |= bytes4(b[offset + i] & 0xFF) >> (i * 8);
     }
     return out;
   }
@@ -754,7 +754,7 @@ library BytesDeserializer {
     bytes2 out;
 
     for (uint i = 0; i < 2; i++) {
-      out |= bytes2(b[offset + i] &amp; 0xFF) >> (i * 8);
+      out |= bytes2(b[offset + i] & 0xFF) >> (i * 8);
     }
     return out;
   }

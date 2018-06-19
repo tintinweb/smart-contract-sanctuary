@@ -59,7 +59,7 @@ contract SvEnsRegistrar {
     }
 
     function remAdmin(address oldAdmin) req(admins[msg.sender]) external {
-        require(oldAdmin != msg.sender &amp;&amp; oldAdmin != owner);
+        require(oldAdmin != msg.sender && oldAdmin != owner);
         admins[oldAdmin] = false;
     }
 

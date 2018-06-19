@@ -128,7 +128,7 @@ library AddressUtils {
     // TODO Check this again before the Serenity release, because all addresses will be
     // contracts then.
     assembly { size := extcodesize(addr) }  // solium-disable-line security/no-inline-assembly
-    return size &gt; 0;
+    return size > 0;
   }
 
 }
@@ -157,7 +157,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -167,7 +167,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -176,7 +176,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -226,16 +226,16 @@ contract ERC721BasicToken is ERC721Basic {
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
   // Mapping from token ID to owner
-  mapping (uint256 =&gt; address) internal tokenOwner;
+  mapping (uint256 => address) internal tokenOwner;
 
   // Mapping from token ID to approved address
-  mapping (uint256 =&gt; address) internal tokenApprovals;
+  mapping (uint256 => address) internal tokenApprovals;
 
   // Mapping from owner to number of owned token
-  mapping (address =&gt; uint256) internal ownedTokensCount;
+  mapping (address => uint256) internal ownedTokensCount;
 
   // Mapping from owner to operator approvals
-  mapping (address =&gt; mapping (address =&gt; bool)) internal operatorApprovals;
+  mapping (address => mapping (address => bool)) internal operatorApprovals;
 
   /**
    * @dev Guarantees msg.sender is owner of the given token
@@ -517,19 +517,19 @@ contract ERC721Token is ERC721, ERC721BasicToken {
   string internal symbol_;
 
   // Mapping from owner to list of owned token IDs
-  mapping (address =&gt; uint256[]) internal ownedTokens;
+  mapping (address => uint256[]) internal ownedTokens;
 
   // Mapping from token ID to index of the owner tokens list
-  mapping(uint256 =&gt; uint256) internal ownedTokensIndex;
+  mapping(uint256 => uint256) internal ownedTokensIndex;
 
   // Array with all token ids, used for enumeration
   uint256[] internal allTokens;
 
   // Mapping from token id to position in the allTokens array
-  mapping(uint256 =&gt; uint256) internal allTokensIndex;
+  mapping(uint256 => uint256) internal allTokensIndex;
 
   // Optional mapping for token URIs
-  mapping(uint256 =&gt; string) internal tokenURIs;
+  mapping(uint256 => string) internal tokenURIs;
 
   /**
    * @dev Constructor function
@@ -572,7 +572,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
    * @return uint256 token ID at the given index of the tokens list owned by the requested address
    */
   function tokenOfOwnerByIndex(address _owner, uint256 _index) public view returns (uint256) {
-    require(_index &lt; balanceOf(_owner));
+    require(_index < balanceOf(_owner));
     return ownedTokens[_owner][_index];
   }
 
@@ -591,7 +591,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
    * @return uint256 token ID at the given index of the tokens list
    */
   function tokenByIndex(uint256 _index) public view returns (uint256) {
-    require(_index &lt; totalSupply());
+    require(_index < totalSupply());
     return allTokens[_index];
   }
 
@@ -695,9 +695,9 @@ contract CryptovoxelsProperty is ERC721Token, Ownable {
     uint z2;
   }
 
-  mapping(uint256 =&gt; BoundingBox) internal boundingBoxes;
-  mapping(uint256 =&gt; string) internal contentURIs;
-  mapping(uint256 =&gt; uint256) public tokenPrice;
+  mapping(uint256 => BoundingBox) internal boundingBoxes;
+  mapping(uint256 => string) internal contentURIs;
+  mapping(uint256 => uint256) public tokenPrice;
   address public creator;
 
   function CryptovoxelsProperty (string name, string symbol) public
@@ -759,7 +759,7 @@ contract CryptovoxelsProperty is ERC721Token, Ownable {
 
     // Price must be non zero
     uint256 price = tokenPrice[_tokenId];
-    require(price &gt; 0);
+    require(price > 0);
     require(msg.value == price);
 
     // Do transfer

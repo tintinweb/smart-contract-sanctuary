@@ -131,22 +131,22 @@ contract Fundraiser {
     }
 
     modifier participationPhase() {
-        require(now &lt; deployment._endTime);
+        require(now < deployment._endTime);
         _;
     }
 
     modifier recapPhase() {
-        require((now &gt;= deployment._endTime) &amp;&amp; (now &lt; deployment._expireTime));
+        require((now >= deployment._endTime) && (now < deployment._expireTime));
         _;
     }
 
     modifier destructionPhase() {
-        require(now &gt;= deployment._destructTime);
+        require(now >= deployment._destructTime);
         _;
     }
     
     Deployment public deployment;
-    mapping(address =&gt; Participant) public participants;
+    mapping(address => Participant) public participants;
     Fund[] private funds;
     State private _state;
 
@@ -172,10 +172,10 @@ contract Fundraiser {
         require(_causeSplit + _participantSplit + _ownerSplit == 1000);
         require(_ownerSecret != 0x0);
         require(_valuePerEntry != 0);
-        require(_endTime &gt; now); // participation phase
-        require(_expireTime &gt; _endTime); // end phase
-        require(_destructTime &gt; _expireTime); // destruct phase
-        require(_entropy &gt; 0);
+        require(_endTime > now); // participation phase
+        require(_expireTime > _endTime); // end phase
+        require(_destructTime > _expireTime); // destruct phase
+        require(_entropy > 0);
 
         // set the deployment
         deployment = Deployment(
@@ -301,13 +301,13 @@ contract Fundraiser {
     ) {
         // calculate the number of entries from the wei sent
         _entries = msg.value / deployment._valuePerEntry;
-        require(_entries &gt;= 1); // ensure we have at least one entry
+        require(_entries >= 1); // ensure we have at least one entry
         // update participant totals
         _participant._entries += _entries;
         _state._entries += _entries;
 
         // get previous fund&#39;s entries
-        uint256 _previousFundEntries = (funds.length &gt; 0) ?
+        uint256 _previousFundEntries = (funds.length > 0) ?
             funds[funds.length - 1]._entries : 0;
         // create and save new fund with cumulative entries
         Fund memory _fund = Fund(msg.sender, _previousFundEntries + _entries);
@@ -316,7 +316,7 @@ contract Fundraiser {
         // calculate partial entry refund
         _refund = msg.value % deployment._valuePerEntry;
         // refund any excess wei immediately (partial entry)
-        if (_refund &gt; 0) {
+        if (_refund > 0) {
             msg.sender.transfer(_refund);
         }
     }
@@ -365,7 +365,7 @@ contract Fundraiser {
         require(_state._revealBlockNumber != 0); // reveal block number must be set
         require(_state._ownerMessage == 0x0); // cannot have ended already
         require(_decode(deployment._ownerSecret, _message)); // check for valid message
-        require(block.number &gt; _state._revealBlockNumber); // verify reveal has been mined
+        require(block.number > _state._revealBlockNumber); // verify reveal has been mined
 
         // get the (cause) reveal blockhash and ensure within 256 blocks (non-zero)
         _state._revealBlockHash = uint256(block.blockhash(_state._revealBlockNumber));
@@ -377,7 +377,7 @@ contract Fundraiser {
         address _participant;
         bytes32 _participantMessage;
         // add additional entropy to the random from participant messages
-        for (uint256 i = 0; i &lt; deployment._entropy; i++) {
+        for (uint256 i = 0; i < deployment._entropy; i++) {
             // calculate the next random
             _randomNumber = keccak256(
                 _message,
@@ -413,7 +413,7 @@ contract Fundraiser {
             if (_leftFundIndex == _rightFundIndex) {
                 return funds[_leftFundIndex]._participant;
             }
-            // get fund indexes for mid &amp; next
+            // get fund indexes for mid & next
             uint256 _midFundIndex =
                 _leftFundIndex + ((_rightFundIndex - _leftFundIndex) / 2);
             uint256 _nextFundIndex = _midFundIndex + 1;
@@ -421,8 +421,8 @@ contract Fundraiser {
             Fund memory _midFund = funds[_midFundIndex];
             Fund memory _nextFund = funds[_nextFundIndex];
             // binary search
-            if (_entry &gt;= _midFund._entries) {
-                if (_entry &lt; _nextFund._entries) {
+            if (_entry >= _midFund._entries) {
+                if (_entry < _nextFund._entries) {
                     // we are in range, participant found
                     return _nextFund._participant;
                 }
@@ -442,8 +442,8 @@ contract Fundraiser {
         require(_state._participant == address(0)); // selected must not have been chosen
         
         // open cancellation to community if past expire time (but before destruct time)
-        if ((msg.sender != deployment._owner) &amp;&amp; (msg.sender != deployment._cause)) {
-            require((now &gt;= deployment._expireTime) &amp;&amp; (now &lt; deployment._destructTime));
+        if ((msg.sender != deployment._owner) && (msg.sender != deployment._cause)) {
+            require((now >= deployment._expireTime) && (now < deployment._destructTime));
         }
 
         // immediately set us to cancelled
@@ -458,7 +458,7 @@ contract Fundraiser {
     function withdraw() public {
         // check for a balance
         uint256 _balance = balance();
-        require (_balance &gt; 0); // can only withdraw a balance
+        require (_balance > 0); // can only withdraw a balance
 
         address _wallet;
         // check for fundraiser ended normally

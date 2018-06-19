@@ -74,17 +74,17 @@ contract AirDropContract {
         view
         returns (bool result)
     {
-        result = addr != 0x0 &amp;&amp; addr != msg.sender &amp;&amp; !isContract(addr);
+        result = addr != 0x0 && addr != msg.sender && !isContract(addr);
 
         uint ethBalance = addr.balance;
         uint tokenBbalance = token.balanceOf(addr);
         uint conTokenBalance = contoken.balanceOf(addr);
 
-        result = result &amp;&amp; (ethBalance>= minmaxEthBalance[0] &amp;&amp;
-            ethBalance <= minmaxEthBalance[1] &amp;&amp;
-            tokenBbalance >= minmaxTokenBalance[0] &amp;&amp;
-            tokenBbalance <= minmaxTokenBalance[1] &amp;&amp;
-            conTokenBalance >= minmaxConBalance[0] &amp;&amp;
+        result = result && (ethBalance>= minmaxEthBalance[0] &&
+            ethBalance <= minmaxEthBalance[1] &&
+            tokenBbalance >= minmaxTokenBalance[0] &&
+            tokenBbalance <= minmaxTokenBalance[1] &&
+            conTokenBalance >= minmaxConBalance[0] &&
             conTokenBalance <= minmaxConBalance[1]);
     }
 

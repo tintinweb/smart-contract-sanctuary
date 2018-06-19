@@ -68,7 +68,7 @@ contract DSC is IERC20 {
     //  
     // DSC Phases
     // 1. Create DSC (tokens)
-    // 2. Individually distribute tokens to existing BigPlace users &amp; notify them
+    // 2. Individually distribute tokens to existing BigPlace users & notify them
     // 3. Private Sale
     // 4. Crowdsale (ICO)
     // 5. PROMOTE DATA SCIENCE !
@@ -102,7 +102,7 @@ contract DSC is IERC20 {
     function transfer(address _to, uint256 _value) returns (bool success) {
         require(
             balances[msg.sender] >= _value
-            &amp;&amp; _value > 0
+            && _value > 0
         );
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -113,8 +113,8 @@ contract DSC is IERC20 {
     function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
         require(
             allowed[_from][msg.sender] >= _value
-            &amp;&amp; balances[_from] >= _value
-            &amp;&amp; _value > 0
+            && balances[_from] >= _value
+            && _value > 0
         );
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].sub(_value);

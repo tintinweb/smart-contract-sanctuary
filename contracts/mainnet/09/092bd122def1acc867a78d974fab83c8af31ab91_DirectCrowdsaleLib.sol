@@ -133,10 +133,10 @@ library DirectCrowdsaleLib {
   	require(validPurchase(self));
 
   	// if the token price increase interval has passed, update the current day and change the token price
-  	if ((self.milestoneTimes.length > self.currentMilestone + 1) &amp;&amp;
+  	if ((self.milestoneTimes.length > self.currentMilestone + 1) &&
         (now > self.milestoneTimes[self.currentMilestone + 1]))
     {
-        while((self.milestoneTimes.length > self.currentMilestone + 1) &amp;&amp;
+        while((self.milestoneTimes.length > self.currentMilestone + 1) &&
               (now > self.milestoneTimes[self.currentMilestone + 1]))
         {
           self.currentMilestone += 1;
@@ -211,7 +211,7 @@ library DirectCrowdsaleLib {
   /// @return true if the transaction can buy tokens
   function validPurchase(DirectCrowdsaleStorage storage self) internal returns (bool) {
     bool nonZeroPurchase = msg.value != 0;
-    if (crowdsaleActive(self) &amp;&amp; nonZeroPurchase) {
+    if (crowdsaleActive(self) && nonZeroPurchase) {
       return true;
     } else {
       emit LogErrorMsg(msg.value, &quot;Invalid Purchase! Check start time and amount of ether.&quot;);
@@ -272,7 +272,7 @@ library DirectCrowdsaleLib {
   /// @param self Stored crowdsale from crowdsale contract
   /// @return true if owner withdrew eth
   function withdrawOwnerEth(DirectCrowdsaleStorage storage self) public returns (bool) {
-    if ((!crowdsaleEnded(self)) &amp;&amp; (self.token.balanceOf(this)>0)) {
+    if ((!crowdsaleEnded(self)) && (self.token.balanceOf(this)>0)) {
       emit LogErrorMsg(0, &quot;Cannot withdraw owner ether until after the sale!&quot;);
       return false;
     }
@@ -300,7 +300,7 @@ library DirectCrowdsaleLib {
     uint256[2] memory _thisData;
     uint256 index;
 
-    while((index < self.milestoneTimes.length) &amp;&amp; (self.milestoneTimes[index] < timestamp)) {
+    while((index < self.milestoneTimes.length) && (self.milestoneTimes[index] < timestamp)) {
       index++;
     }
     if(index == 0)
@@ -322,7 +322,7 @@ library DirectCrowdsaleLib {
   /// @param self Stored crowdsale from crowdsale contract
   /// @return success
   function crowdsaleActive(DirectCrowdsaleStorage storage self) public view returns (bool) {
-    return (now >= self.startTime &amp;&amp; now <= self.endTime);
+    return (now >= self.startTime && now <= self.endTime);
   }
 
   /// @dev function to check if the crowdsale has ended
@@ -689,7 +689,7 @@ library TokenLib {
   /// @param _newOwner Address for the new owner
   /// @return True if completed
   function changeOwner(TokenStorage storage self, address _newOwner) public returns (bool) {
-    require((self.owner == msg.sender) &amp;&amp; (_newOwner > 0));
+    require((self.owner == msg.sender) && (_newOwner > 0));
 
     self.owner = _newOwner;
     emit OwnerChange(msg.sender, _newOwner);
@@ -701,7 +701,7 @@ library TokenLib {
   /// @param _amount Number of tokens to mint
   /// @return True if completed
   function mintToken(TokenStorage storage self, uint256 _amount) public returns (bool) {
-    require((self.owner == msg.sender) &amp;&amp; self.stillMinting);
+    require((self.owner == msg.sender) && self.stillMinting);
     uint256 _newAmount;
     bool err;
 

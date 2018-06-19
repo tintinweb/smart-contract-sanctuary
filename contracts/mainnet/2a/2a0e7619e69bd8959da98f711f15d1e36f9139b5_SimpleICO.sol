@@ -147,7 +147,7 @@ contract SimpleICO {
 		adjustedRaised = adjustedRaised.add(adjusted);
 		emit ContributionReceived(msg.sender, msg.value, total);
 	
-		if (currentRate == 4 &amp;&amp; now > (startTime.add(2 weeks))) {
+		if (currentRate == 4 && now > (startTime.add(2 weeks))) {
 			currentRate = 2;
 			emit RateDecreased(now, currentRate);
 		}

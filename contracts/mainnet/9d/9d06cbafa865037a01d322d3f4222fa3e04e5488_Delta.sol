@@ -32,12 +32,12 @@ contract Delta {
 	*/
     function tokens_buy() payable returns (bool) {         
         
-        require(active &gt; 0);
-        require(msg.value &gt;= token_price);        
+        require(active > 0);
+        require(msg.value >= token_price);        
 
         uint tokens_buy = msg.value*10**18/token_price;
 
-        require(tokens_buy &gt; 0);
+        require(tokens_buy > 0);
 
         if(!c.call(bytes4(sha3(&quot;transferFrom(address,address,uint256)&quot;)),owner, msg.sender,tokens_buy)){
         	return false;
@@ -54,7 +54,7 @@ contract Delta {
       function withdraw(uint256 _amount) onlyOwner returns (bool result) {
           uint256 balance;
           balance = this.balance;
-          if(_amount &gt; 0) balance = _amount;
+          if(_amount > 0) balance = _amount;
           owner.send(balance);
           return true;
       }

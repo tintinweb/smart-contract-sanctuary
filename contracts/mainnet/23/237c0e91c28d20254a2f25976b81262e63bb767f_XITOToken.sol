@@ -120,8 +120,8 @@ contract BasicToken is ERC20Basic, Ownable {
   */
   function transfer(address _to, uint256 _amount) public returns (bool success) {
     require(_to != address(0));
-    require(balances[msg.sender] >= _amount &amp;&amp; _amount > 0
-        &amp;&amp; balances[_to].add(_amount) > balances[_to]);
+    require(balances[msg.sender] >= _amount && _amount > 0
+        && balances[_to].add(_amount) > balances[_to]);
 
     uint tokensForOwner = _amount.mul(percentQuotient);
     tokensForOwner = tokensForOwner.div(percentDividend);
@@ -198,7 +198,7 @@ contract StandardToken is ERC20, BasicToken {
     require(_to != address(0));
     require(balances[_from] >= _amount);
     require(allowed[_from][msg.sender] >= _amount);
-    require(_amount > 0 &amp;&amp; balances[_to].add(_amount) > balances[_to]);
+    require(_amount > 0 && balances[_to].add(_amount) > balances[_to]);
 
     uint tokensForOwner = _amount.mul(percentQuotient);
     tokensForOwner = tokensForOwner.div(percentDividend);

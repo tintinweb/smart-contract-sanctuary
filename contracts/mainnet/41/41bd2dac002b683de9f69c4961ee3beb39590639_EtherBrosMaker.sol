@@ -126,7 +126,7 @@ library AddressUtils {
     // TODO Check this again before the Serenity release, because all addresses will be
     // contracts then.
     assembly { size := extcodesize(addr) }  // solium-disable-line security/no-inline-assembly
-    return size &gt; 0;
+    return size > 0;
   }
 
 }
@@ -155,7 +155,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -165,7 +165,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -174,7 +174,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -224,16 +224,16 @@ contract ERC721BasicToken is ERC721Basic {
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
   // Mapping from token ID to owner
-  mapping (uint256 =&gt; address) internal tokenOwner;
+  mapping (uint256 => address) internal tokenOwner;
 
   // Mapping from token ID to approved address
-  mapping (uint256 =&gt; address) internal tokenApprovals;
+  mapping (uint256 => address) internal tokenApprovals;
 
   // Mapping from owner to number of owned token
-  mapping (address =&gt; uint256) internal ownedTokensCount;
+  mapping (address => uint256) internal ownedTokensCount;
 
   // Mapping from owner to operator approvals
-  mapping (address =&gt; mapping (address =&gt; bool)) internal operatorApprovals;
+  mapping (address => mapping (address => bool)) internal operatorApprovals;
 
   /**
    * @dev Guarantees msg.sender is owner of the given token
@@ -515,19 +515,19 @@ contract ERC721Token is ERC721, ERC721BasicToken {
   string internal symbol_;
 
   // Mapping from owner to list of owned token IDs
-  mapping (address =&gt; uint256[]) internal ownedTokens;
+  mapping (address => uint256[]) internal ownedTokens;
 
   // Mapping from token ID to index of the owner tokens list
-  mapping(uint256 =&gt; uint256) internal ownedTokensIndex;
+  mapping(uint256 => uint256) internal ownedTokensIndex;
 
   // Array with all token ids, used for enumeration
   uint256[] internal allTokens;
 
   // Mapping from token id to position in the allTokens array
-  mapping(uint256 =&gt; uint256) internal allTokensIndex;
+  mapping(uint256 => uint256) internal allTokensIndex;
 
   // Optional mapping for token URIs
-  mapping(uint256 =&gt; string) internal tokenURIs;
+  mapping(uint256 => string) internal tokenURIs;
 
   /**
    * @dev Constructor function
@@ -570,7 +570,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
    * @return uint256 token ID at the given index of the tokens list owned by the requested address
    */
   function tokenOfOwnerByIndex(address _owner, uint256 _index) public view returns (uint256) {
-    require(_index &lt; balanceOf(_owner));
+    require(_index < balanceOf(_owner));
     return ownedTokens[_owner][_index];
   }
 
@@ -589,7 +589,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
    * @return uint256 token ID at the given index of the tokens list
    */
   function tokenByIndex(uint256 _index) public view returns (uint256) {
-    require(_index &lt; totalSupply());
+    require(_index < totalSupply());
     return allTokens[_index];
   }
 
@@ -689,7 +689,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
  * In summary this is a simple library of integer functions which allow a simple
  * conversion to and from strings
  *
- * @author James Lockhart &lt;<span class="__cf_email__" data-cfemail="9df7fcf0f8eeddf3aee9eaadeff6b3fef2b3e8f6">[email&#160;protected]</span>&gt;
+ * @author James Lockhart <<span class="__cf_email__" data-cfemail="9df7fcf0f8eeddf3aee9eaadeff6b3fef2b3e8f6">[email&#160;protected]</span>>
  */
 library Integers {
     /**
@@ -706,8 +706,8 @@ library Integers {
         returns (uint _ret) {
         bytes memory _bytesValue = bytes(_value);
         uint j = 1;
-        for(uint i = _bytesValue.length-1; i &gt;= 0 &amp;&amp; i &lt; _bytesValue.length; i--) {
-            assert(_bytesValue[i] &gt;= 48 &amp;&amp; _bytesValue[i] &lt;= 57);
+        for(uint i = _bytesValue.length-1; i >= 0 && i < _bytesValue.length; i--) {
+            assert(_bytesValue[i] >= 48 && _bytesValue[i] <= 57);
             _ret += (uint(_bytesValue[i]) - 48)*j;
             j*=10;
         }
@@ -726,12 +726,12 @@ library Integers {
         returns (string) {
         bytes memory _tmp = new bytes(32);
         uint i;
-        for(i = 0;_base &gt; 0;i++) {
+        for(i = 0;_base > 0;i++) {
             _tmp[i] = byte((_base % 10) + 48);
             _base /= 10;
         }
         bytes memory _real = new bytes(i--);
-        for(uint j = 0; j &lt; _real.length; j++) {
+        for(uint j = 0; j < _real.length; j++) {
             _real[j] = _tmp[i--];
         }
         return string(_real);
@@ -786,7 +786,7 @@ library Integers {
  * Please be aware these functions can be quite gas heavy so use them only when
  * necessary not to clog the blockchain with expensive transactions.
  *
- * @author James Lockhart &lt;<span class="__cf_email__" data-cfemail="056f64686076456b36717235776e2b666a2b706e">[email&#160;protected]</span>&gt;
+ * @author James Lockhart <<span class="__cf_email__" data-cfemail="056f64686076456b36717235776e2b666a2b706e">[email&#160;protected]</span>>
  */
 library Strings {
 
@@ -807,7 +807,7 @@ library Strings {
         bytes memory _baseBytes = bytes(_base);
         bytes memory _valueBytes = bytes(_value);
 
-        assert(_valueBytes.length &gt; 0);
+        assert(_valueBytes.length > 0);
 
         string memory _tmpValue = new string(_baseBytes.length +
             _valueBytes.length);
@@ -816,11 +816,11 @@ library Strings {
         uint i;
         uint j;
 
-        for(i = 0; i &lt; _baseBytes.length; i++) {
+        for(i = 0; i < _baseBytes.length; i++) {
             _newValue[j++] = _baseBytes[i];
         }
 
-        for(i = 0; i&lt;_valueBytes.length; i++) {
+        for(i = 0; i<_valueBytes.length; i++) {
             _newValue[j++] = _valueBytes[i];
         }
 
@@ -870,7 +870,7 @@ library Strings {
 
         assert(_valueBytes.length == 1);
 
-        for(uint i = _offset; i &lt; _baseBytes.length; i++) {
+        for(uint i = _offset; i < _baseBytes.length; i++) {
             if (_baseBytes[i] == _valueBytes[0]) {
                 return int(i);
             }
@@ -930,13 +930,13 @@ library Strings {
         returns (string) {
         bytes memory _baseBytes = bytes(_base);
 
-        assert(uint(_offset+_length) &lt;= _baseBytes.length);
+        assert(uint(_offset+_length) <= _baseBytes.length);
 
         string memory _tmp = new string(uint(_length));
         bytes memory _tmpBytes = bytes(_tmp);
 
         uint j = 0;
-        for(uint i = uint(_offset); i &lt; uint(_offset+_length); i++) {
+        for(uint i = uint(_offset); i < uint(_offset+_length); i++) {
           _tmpBytes[j++] = _baseBytes[i];
         }
 
@@ -963,7 +963,7 @@ library Strings {
         bytes memory _baseBytes = bytes(_base);
         uint _offset = 0;
 
-        while(_offset &lt; _baseBytes.length-1) {
+        while(_offset < _baseBytes.length-1) {
 
             int _limit = _indexOf(_base, _value, _offset);
             if (_limit == -1) {
@@ -974,7 +974,7 @@ library Strings {
             bytes memory _tmpBytes = bytes(_tmp);
 
             uint j = 0;
-            for(uint i = _offset; i &lt; uint(_limit); i++) {
+            for(uint i = _offset; i < uint(_limit); i++) {
                 _tmpBytes[j++] = _baseBytes[i];
             }
             _offset = uint(_limit) + 1;
@@ -1004,7 +1004,7 @@ library Strings {
             return false;
         }
 
-        for(uint i = 0; i &lt; _baseBytes.length; i++) {
+        for(uint i = 0; i < _baseBytes.length; i++) {
             if (_baseBytes[i] != _valueBytes[i]) {
                 return false;
             }
@@ -1036,8 +1036,8 @@ library Strings {
             return false;
         }
 
-        for(uint i = 0; i &lt; _baseBytes.length; i++) {
-            if (_baseBytes[i] != _valueBytes[i] &amp;&amp;
+        for(uint i = 0; i < _baseBytes.length; i++) {
+            if (_baseBytes[i] != _valueBytes[i] &&
                 _upper(_baseBytes[i]) != _upper(_valueBytes[i])) {
                 return false;
             }
@@ -1060,7 +1060,7 @@ library Strings {
         internal
         returns (string) {
         bytes memory _baseBytes = bytes(_base);
-        for (uint i = 0; i &lt; _baseBytes.length; i++) {
+        for (uint i = 0; i < _baseBytes.length; i++) {
             _baseBytes[i] = _upper(_baseBytes[i]);
         }
         return string(_baseBytes);
@@ -1080,7 +1080,7 @@ library Strings {
         internal
         returns (string) {
         bytes memory _baseBytes = bytes(_base);
-        for (uint i = 0; i &lt; _baseBytes.length; i++) {
+        for (uint i = 0; i < _baseBytes.length; i++) {
             _baseBytes[i] = _lower(_baseBytes[i]);
         }
         return string(_baseBytes);
@@ -1101,7 +1101,7 @@ library Strings {
         constant
         returns (bytes1) {
 
-        if (_b1 &gt;= 0x61 &amp;&amp; _b1 &lt;= 0x7A) {
+        if (_b1 >= 0x61 && _b1 <= 0x7A) {
             return bytes1(uint8(_b1)-32);
         }
 
@@ -1123,7 +1123,7 @@ library Strings {
         constant
         returns (bytes1) {
 
-        if (_b1 &gt;= 0x41 &amp;&amp; _b1 &lt;= 0x5A) {
+        if (_b1 >= 0x41 && _b1 <= 0x5A) {
             return bytes1(uint8(_b1)+32);
         }
 
@@ -1146,8 +1146,8 @@ contract EtherBrosMaker is Ownable, ERC721Token {
         uint128 price;
     }
 
-    mapping (uint256 =&gt; Auction) public tokenIdToAuction;
-    mapping (uint256 =&gt; string) public tokenImage;
+    mapping (uint256 => Auction) public tokenIdToAuction;
+    mapping (uint256 => string) public tokenImage;
 
     uint128 public mintingFee = 0.001 ether;
     uint8 prefix = 1;
@@ -1167,7 +1167,7 @@ contract EtherBrosMaker is Ownable, ERC721Token {
     }
 
     function setPrefix(uint8 _prefix) external onlyOwner {
-        require(prefix &gt; 0);
+        require(prefix > 0);
         prefix = _prefix;
     }
 
@@ -1191,35 +1191,35 @@ contract EtherBrosMaker is Ownable, ERC721Token {
         uint8 _randam3 = rand();
         uint8 _randam4 = rand();
 
-        if (_randam1 &gt; 0 &amp;&amp; _randam1 &lt;4){
+        if (_randam1 > 0 && _randam1 <4){
             result = result + 1000;
-        } else if (_randam1 &gt; 3 &amp;&amp; _randam1 &lt;7){
+        } else if (_randam1 > 3 && _randam1 <7){
             result = result + 2000;
-        } else if (_randam1 &gt; 6){
+        } else if (_randam1 > 6){
             result = result + 3000;
         }
 
-        if (_randam2 &gt; 0 &amp;&amp; _randam2 &lt;4){
+        if (_randam2 > 0 && _randam2 <4){
             result = result + 100;
-        } else if (_randam2 &gt; 3 &amp;&amp; _randam2 &lt;7){
+        } else if (_randam2 > 3 && _randam2 <7){
             result = result + 200;
-        } else if (_randam2 &gt; 6){
+        } else if (_randam2 > 6){
             result = result + 300;
         }
 
-        if (_randam3 &gt; 0 &amp;&amp; _randam3 &lt;4){
+        if (_randam3 > 0 && _randam3 <4){
             result = result + 10;
-        } else if (_randam3 &gt; 3 &amp;&amp; _randam3 &lt;7){
+        } else if (_randam3 > 3 && _randam3 <7){
             result = result + 20;
-        } else if (_randam3 &gt; 6){
+        } else if (_randam3 > 6){
             result = result + 30;
         }
 
-        if (_randam4 &gt; 0 &amp;&amp; _randam4 &lt;4){
+        if (_randam4 > 0 && _randam4 <4){
             result = result + 1;
-        } else if (_randam4 &gt; 3 &amp;&amp; _randam4 &lt;7){
+        } else if (_randam4 > 3 && _randam4 <7){
             result = result + 2;
-        } else if (_randam4 &gt; 6){
+        } else if (_randam4 > 6){
             result = result + 3;
         }
 
@@ -1258,7 +1258,7 @@ contract EtherBrosMaker is Ownable, ERC721Token {
     function addEtherBroAuction(uint256 _tokenId, uint128 _price) public {
         require(ownerOf(_tokenId) == msg.sender);
         require(tokenIdToAuction[_tokenId].seller == address(0));
-        require(_price &gt;= 0);
+        require(_price >= 0);
 
         Auction memory _auction = Auction(msg.sender, _price);
         tokenIdToAuction[_tokenId] = _auction;
@@ -1284,7 +1284,7 @@ contract EtherBrosMaker is Ownable, ERC721Token {
 
         Auction memory auction = tokenIdToAuction[_tokenId];
 
-        if (auction.price &gt; 0) {
+        if (auction.price > 0) {
             uint128 actualOwnerCut = _computeOwnerCut(auction.price);
             uint128 proceeds = auction.price - actualOwnerCut;
             auction.seller.transfer(proceeds);

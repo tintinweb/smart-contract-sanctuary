@@ -257,7 +257,7 @@ contract DSToken is DSTokenBase(0), DSStop {
         stoppable
         returns (bool)
     {
-        if (src != msg.sender &amp;&amp; !_trusted[src][msg.sender]) {
+        if (src != msg.sender && !_trusted[src][msg.sender]) {
             _approvals[src][msg.sender] = sub(_approvals[src][msg.sender], wad);
         }
 
@@ -291,7 +291,7 @@ contract DSToken is DSTokenBase(0), DSStop {
         Mint(guy, wad);
     }
     function burn(address guy, uint wad) public auth stoppable {
-        if (guy != msg.sender &amp;&amp; !_trusted[guy][msg.sender]) {
+        if (guy != msg.sender && !_trusted[guy][msg.sender]) {
             _approvals[guy][msg.sender] = sub(_approvals[guy][msg.sender], wad);
         }
 
@@ -405,7 +405,7 @@ contract OMT is DSToken(&quot;OMT&quot;), ERC223, Controlled {
 
         success = super.transferFrom(_from, _to, _amount);
 
-        if (success &amp;&amp; isContract(_to))
+        if (success && isContract(_to))
         {
             // ERC20 backward compatiability
             if(!_to.call(bytes4(keccak256(&quot;tokenFallback(address,uint256)&quot;)), _from, _amount)) {

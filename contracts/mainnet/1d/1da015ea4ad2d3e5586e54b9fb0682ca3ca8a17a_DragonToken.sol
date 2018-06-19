@@ -101,17 +101,17 @@ library DateTime {
                 secondsAccountedFor += YEAR_IN_SECONDS * (dt.year - ORIGIN_YEAR - buf);
                 // Month
                 uint secondsInMonth;
-                for (i = 1; i &lt;= 12; i++) {
+                for (i = 1; i <= 12; i++) {
                         secondsInMonth = DAY_IN_SECONDS * getDaysInMonth(i, dt.year);
-                        if (secondsInMonth + secondsAccountedFor &gt; timestamp) {
+                        if (secondsInMonth + secondsAccountedFor > timestamp) {
                                 dt.month = i;
                                 break;
                         }
                         secondsAccountedFor += secondsInMonth;
                 }
                 // Day
-                for (i = 1; i &lt;= getDaysInMonth(dt.month, dt.year); i++) {
-                        if (DAY_IN_SECONDS + secondsAccountedFor &gt; timestamp) {
+                for (i = 1; i <= getDaysInMonth(dt.month, dt.year); i++) {
+                        if (DAY_IN_SECONDS + secondsAccountedFor > timestamp) {
                                 dt.day = i;
                                 break;
                         }
@@ -135,7 +135,7 @@ library DateTime {
                 numLeapYears = leapYearsBefore(year) - leapYearsBefore(ORIGIN_YEAR);
                 secondsAccountedFor += LEAP_YEAR_IN_SECONDS * numLeapYears;
                 secondsAccountedFor += YEAR_IN_SECONDS * (year - ORIGIN_YEAR - numLeapYears);
-                while (secondsAccountedFor &gt; timestamp) {
+                while (secondsAccountedFor > timestamp) {
                         if (isLeapYear(uint16(year - 1))) {
                                 secondsAccountedFor -= LEAP_YEAR_IN_SECONDS;
                         }
@@ -172,7 +172,7 @@ library DateTime {
         function toTimestamp(uint16 year, uint8 month, uint8 day, uint8 hour, uint8 minute, uint8 second) constant returns (uint timestamp) {
                 uint16 i;
                 // Year
-                for (i = ORIGIN_YEAR; i &lt; year; i++) {
+                for (i = ORIGIN_YEAR; i < year; i++) {
                         if (isLeapYear(i)) {
                                 timestamp += LEAP_YEAR_IN_SECONDS;
                         }
@@ -199,7 +199,7 @@ library DateTime {
                 monthDayCounts[9] = 31;
                 monthDayCounts[10] = 30;
                 monthDayCounts[11] = 31;
-                for (i = 1; i &lt; month; i++) {
+                for (i = 1; i < month; i++) {
                         timestamp += DAY_IN_SECONDS * monthDayCounts[i - 1];
                 }
                 // Day
@@ -267,18 +267,18 @@ library SafeMath {
     return c;
   }
   function div(uint256 a, uint256 b) internal constant returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
   function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
   function add(uint256 a, uint256 b) internal constant returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -288,7 +288,7 @@ library SafeMath {
  */
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
   /**
   * @dev transfer token for a specified address
   * @param _to The address to transfer to.
@@ -296,7 +296,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -330,7 +330,7 @@ contract ERC20 is ERC20Basic {
  * @dev Based on code by FirstBlood: https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol
  */
 contract StandardToken is ERC20, BasicToken {
-  mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+  mapping (address => mapping (address => uint256)) allowed;
   /**
    * @dev Transfer tokens from one address to another
    * @param _from address The address which you want to send tokens from
@@ -339,8 +339,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -375,7 +375,7 @@ contract StandardToken is ERC20, BasicToken {
 }
 /**
  * @title Helps contracts guard agains rentrancy attacks.
- * @author Remco Bloemen &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bbc9ded6d8d4fb89">[email&#160;protected]</a>π.com&gt;
+ * @author Remco Bloemen <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bbc9ded6d8d4fb89">[email&#160;protected]</a>π.com>
  * @notice If you mark a function `nonReentrant`, you should also
  * mark it `external`.
  */
@@ -410,9 +410,9 @@ contract BurnableToken is StandardToken {
      * @param _value The amount of token to be burned.
      */
     function burn(uint256 _value) public returns (bool) {
-        require(_value &gt; 0);
-        require(_value &lt;= balances[msg.sender]);
-        // no need to require value &lt;= totalSupply, since that would imply the
+        require(_value > 0);
+        require(_value <= balances[msg.sender]);
+        // no need to require value <= totalSupply, since that would imply the
         // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
         address burner = msg.sender;
         balances[burner] = balances[burner].sub(_value);
@@ -431,17 +431,17 @@ contract FrozenableToken is Operational, BurnableToken, ReentrancyGuard {
         uint256 value;
         uint256 day;
     }
-    mapping (uint256 =&gt; FrozenRecord) public frozenBalances;
+    mapping (uint256 => FrozenRecord) public frozenBalances;
 
     event FreezeForOwner(address indexed owner, uint256 value, uint256 unFrozenTime);
     event Unfreeze(address indexed owner, uint256 value);
     // freeze _value token to _unFrozenTime
 
     function freezeForOwner(uint256 _value, uint256 _unFrozenTime) onlyOperator returns(bool) {
-        require(balances[owner] &gt;= _value);
-        require(_unFrozenTime &gt; createTime);
-        require(_unFrozenTime &gt; now);  
-        if (_unFrozenTime.parseTimestamp().year - createTime.parseTimestamp().year &gt; 10 ){
+        require(balances[owner] >= _value);
+        require(_unFrozenTime > createTime);
+        require(_unFrozenTime > now);  
+        if (_unFrozenTime.parseTimestamp().year - createTime.parseTimestamp().year > 10 ){
                 balances[owner] = balances[owner].sub(_value);
                 frozenForever = frozenForever.add(_value);
                 FreezeForOwner(owner, _value, _unFrozenTime);
@@ -461,10 +461,10 @@ contract FrozenableToken is Operational, BurnableToken, ReentrancyGuard {
 
     // unfreeze frozen amount
     function unfreeze(uint256 _unFrozenTime) onlyOperator returns (bool) {
-        require(_unFrozenTime &lt; block.timestamp);
+        require(_unFrozenTime < block.timestamp);
         uint256 day = _unFrozenTime.toDay();
         uint256 _value = frozenBalances[day].value;
-        if (_value&gt;0) {
+        if (_value>0) {
                 frozenBalances[day].value = 0;
                 frozenAnnually = frozenAnnually.sub(_value);
                 balances[owner] = balances[owner].add(_value);
@@ -484,14 +484,14 @@ contract DragonReleaseableToken is FrozenableToken {
         uint256 amount; // release amount
         uint256 releasedDay;
     }
-    mapping (uint256 =&gt; ReleaseRecord) public releasedRecords;
+    mapping (uint256 => ReleaseRecord) public releasedRecords;
     function DragonReleaseableToken(
                     address operator
                 ) Operational(operator) {
         createTime = 1509580800;
     }
     function releaseSupply(uint256 timestamp) onlyOperator returns(uint256 _actualRelease) {
-        require(timestamp &gt;= createTime &amp;&amp; timestamp &lt;= now);
+        require(timestamp >= createTime && timestamp <= now);
         require(!judgeReleaseRecordExist(timestamp));
         updateAward(timestamp);
         balances[owner] = balances[owner].add(award);
@@ -510,25 +510,25 @@ contract DragonReleaseableToken is FrozenableToken {
         return exist;
     }
     function updateAward(uint256 timestamp) internal {
-        if (timestamp &lt; createTime.add(1 years)) {
+        if (timestamp < createTime.add(1 years)) {
             award = standardDecimals.mul(51200);
-        } else if (timestamp &lt; createTime.add(2 years)) {
+        } else if (timestamp < createTime.add(2 years)) {
             award = standardDecimals.mul(25600);
-        } else if (timestamp &lt; createTime.add(3 years)) {
+        } else if (timestamp < createTime.add(3 years)) {
             award = standardDecimals.mul(12800);
-        } else if (timestamp &lt; createTime.add(4 years)) {
+        } else if (timestamp < createTime.add(4 years)) {
             award = standardDecimals.mul(6400);
-        } else if (timestamp &lt; createTime.add(5 years)) {
+        } else if (timestamp < createTime.add(5 years)) {
             award = standardDecimals.mul(3200);
-        } else if (timestamp &lt; createTime.add(6 years)) {
+        } else if (timestamp < createTime.add(6 years)) {
             award = standardDecimals.mul(1600);
-        } else if (timestamp &lt; createTime.add(7 years)) {
+        } else if (timestamp < createTime.add(7 years)) {
             award = standardDecimals.mul(800);
-        } else if (timestamp &lt; createTime.add(8 years)) {
+        } else if (timestamp < createTime.add(8 years)) {
             award = standardDecimals.mul(400);
-        } else if (timestamp &lt; createTime.add(9 years)) {
+        } else if (timestamp < createTime.add(9 years)) {
             award = standardDecimals.mul(200);
-        } else if (timestamp &lt; createTime.add(10 years)) {
+        } else if (timestamp < createTime.add(10 years)) {
             award = standardDecimals.mul(100);
         } else {
             award = 0;

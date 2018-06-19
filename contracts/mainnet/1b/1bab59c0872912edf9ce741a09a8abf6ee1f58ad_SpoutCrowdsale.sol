@@ -318,7 +318,7 @@ contract SpoutCrowdsale is Ownable {
   }
 
   function getCurrentTokenRate() public view returns (uint256) {
-    if (now >= APRIL_23_2018 &amp;&amp; now < MAY_15_2018) {
+    if (now >= APRIL_23_2018 && now < MAY_15_2018) {
       return presaleRate;
     } else {
       return icoRate;
@@ -326,37 +326,37 @@ contract SpoutCrowdsale is Ownable {
   }
 
   function isPresalePeriod() public view returns (bool) {
-    if (now >= APRIL_23_2018 &amp;&amp; now < MAY_15_2018) {
+    if (now >= APRIL_23_2018 && now < MAY_15_2018) {
       return true;
     }
     return false;
   }
 
   function isICOPeriod() public view returns (bool) {
-    if (now >= MAY_15_2018 &amp;&amp; now < JULY_01_2018) {
+    if (now >= MAY_15_2018 && now < JULY_01_2018) {
       return true;
     }
     return false;
   }
 
   function getCurrentBonus() public view returns (uint256) {
-    if (now >= APRIL_23_2018 &amp;&amp; now < MAY_01_2018) {
+    if (now >= APRIL_23_2018 && now < MAY_01_2018) {
       return 15;
     }
-    if (now >= MAY_01_2018 &amp;&amp; now < MAY_08_2018) {
+    if (now >= MAY_01_2018 && now < MAY_08_2018) {
       return 10;
     }
-    if (now >= MAY_08_2018 &amp;&amp; now < MAY_15_2018) {
+    if (now >= MAY_08_2018 && now < MAY_15_2018) {
       return 5;
     }
 
-    if (now >= MAY_15_2018 &amp;&amp; now < JUN_01_2018) {
+    if (now >= MAY_15_2018 && now < JUN_01_2018) {
       return 5;
     }
-    if (now >= JUN_01_2018 &amp;&amp; now < JUN_15_2018) {
+    if (now >= JUN_01_2018 && now < JUN_15_2018) {
       return 3;
     }
-    if (now >= JUN_15_2018 &amp;&amp; now < JULY_01_2018) {
+    if (now >= JUN_15_2018 && now < JULY_01_2018) {
       return 2;
     }
 

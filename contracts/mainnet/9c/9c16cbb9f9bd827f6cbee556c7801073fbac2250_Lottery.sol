@@ -10,18 +10,18 @@ library SafeMath {
     return c;
   }
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-// assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+// assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
 // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -61,14 +61,14 @@ contract Lottery is Ownable {
   uint256 public playValue;
   uint256 public roundEnds;
   bool public stopped;
-  mapping (address =&gt; uint256) public payOuts;
+  mapping (address => uint256) public payOuts;
   uint256 private _seed;
 
   
   function bitSlice(uint256 n, uint256 bits, uint256 slot) private pure returns(uint256) {
     uint256 offset = slot * bits;
-    uint256 mask = uint256((2**bits) - 1) &lt;&lt; offset;
-    return uint256((n &amp; mask) &gt;&gt; offset);
+    uint256 mask = uint256((2**bits) - 1) << offset;
+    return uint256((n & mask) >> offset);
   }
 
   function maxRandom() private returns (uint256 randomNumber) {
@@ -110,15 +110,15 @@ contract Lottery is Ownable {
   }
 
   function draw() public {
-    require(now &gt; roundEnds);
+    require(now > roundEnds);
     uint256 howMuchBets = players.length;
     uint256 k;
     lastWinner = players[produceRandom(howMuchBets)];
     lastPayOut = getPayOutAmount();
     
     winners.push(lastWinner);
-    if (winners.length &gt; 9) {
-      for (uint256 i = (winners.length - 10); i &lt; winners.length; i++) {
+    if (winners.length > 9) {
+      for (uint256 i = (winners.length - 10); i < winners.length; i++) {
         last10Winners[k] = winners[i];
         k += 1;
       }
@@ -142,7 +142,7 @@ contract Lottery is Ownable {
     if (players.length == 0) {
       roundEnds = now + (1 * 1 days);
     }
-    if (now &gt; roundEnds) {
+    if (now > roundEnds) {
       draw();
     }
     players.push(msg.sender);
@@ -177,7 +177,7 @@ contract Lottery is Ownable {
   }
   
   function last10() public view returns (address[]) {
-    if (winners.length &lt; 11) {
+    if (winners.length < 11) {
       return winners;
     } else {
       return last10Winners;

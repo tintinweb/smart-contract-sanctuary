@@ -29,7 +29,7 @@ contract SaiContest_Gaia {
 	}
 
 	function kill(address addr) public { 
-	    if (msg.sender == owner &amp;&amp; now > start + 1 years){
+	    if (msg.sender == owner && now > start + 1 years){
 	        selfdestruct(addr);
 	    }
 	}

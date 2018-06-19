@@ -74,7 +74,7 @@ library ABCMaths {
 // Saftey Checks for Addition Tasks
   function add(uint256 a, uint256 b) internal constant returns (uint256) {
     uint256 c = a + b;
-    assert(c>=a &amp;&amp; c>=b);
+    assert(c>=a && c>=b);
     return c;
   }
 }
@@ -139,10 +139,10 @@ contract LXRStandardToken is LUXREUMToken, Ownable {
         if (frozenAccount[msg.sender]) return false;
         require(
             (balances[msg.sender] >= _value) // Check if the sender has enough
-            &amp;&amp; (_value > 0) // Don&#39;t allow 0value transfer
-            &amp;&amp; (_to != address(0)) // Prevent transfer to 0x0 address
-            &amp;&amp; (balances[_to].add(_value) >= balances[_to]) // Check for overflows
-            &amp;&amp; (msg.data.length >= (2 * 32) + 4)); //mitigates the ERC20 short address attack
+            && (_value > 0) // Don&#39;t allow 0value transfer
+            && (_to != address(0)) // Prevent transfer to 0x0 address
+            && (balances[_to].add(_value) >= balances[_to]) // Check for overflows
+            && (msg.data.length >= (2 * 32) + 4)); //mitigates the ERC20 short address attack
             //most of these things are not necesary
 
         balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -155,11 +155,11 @@ contract LXRStandardToken is LUXREUMToken, Ownable {
         if (frozenAccount[msg.sender]) return false;
         require(
             (allowed[_from][msg.sender] >= _value) // Check allowance
-            &amp;&amp; (balances[_from] >= _value) // Check if the sender has enough
-            &amp;&amp; (_value > 0) // Don&#39;t allow 0value transfer
-            &amp;&amp; (_to != address(0)) // Prevent transfer to 0x0 address
-            &amp;&amp; (balances[_to].add(_value) >= balances[_to]) // Check for overflows
-            &amp;&amp; (msg.data.length >= (2 * 32) + 4) //mitigates the ERC20 short address attack
+            && (balances[_from] >= _value) // Check if the sender has enough
+            && (_value > 0) // Don&#39;t allow 0value transfer
+            && (_to != address(0)) // Prevent transfer to 0x0 address
+            && (balances[_to].add(_value) >= balances[_to]) // Check for overflows
+            && (msg.data.length >= (2 * 32) + 4) //mitigates the ERC20 short address attack
             //most of these things are not necesary
         );
         balances[_from] = balances[_from].sub(_value);

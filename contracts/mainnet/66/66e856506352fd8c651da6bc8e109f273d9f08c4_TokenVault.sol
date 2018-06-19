@@ -116,13 +116,13 @@ library SafeMathLib {
   }
 
   function minus(uint a, uint b) returns (uint) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function plus(uint a, uint b) returns (uint) {
     uint c = a + b;
-    assert(c&gt;=a);
+    assert(c>=a);
     return c;
   }
 
@@ -163,7 +163,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -173,7 +173,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -182,7 +182,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -196,7 +196,7 @@ library SafeMath {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -214,7 +214,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -260,7 +260,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -271,8 +271,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -335,7 +335,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -542,10 +542,10 @@ contract TokenVault is Ownable, Recoverable {
   uint public tokensAllocatedTotal;
 
   /** How much we have allocated to the investors invested */
-  mapping(address =&gt; uint) public balances;
+  mapping(address => uint) public balances;
 
   /** How many tokens investors have claimed */
-  mapping(address =&gt; uint) public claimed;
+  mapping(address => uint) public claimed;
 
   /** When our claim freeze is over (UNIX timestamp) */
   uint public freezeEndsAt;
@@ -614,7 +614,7 @@ contract TokenVault is Ownable, Recoverable {
   /// @dev Add a presale participating allocation
   function setInvestor(address investor, uint amount) public onlyOwner {
 
-    if(lockedAt &gt; 0) {
+    if(lockedAt > 0) {
       // Cannot add new investors after the vault is locked
       throw;
     }
@@ -622,7 +622,7 @@ contract TokenVault is Ownable, Recoverable {
     if(amount == 0) throw; // No empty buys
 
     // Don&#39;t allow reset
-    if(balances[investor] &gt; 0) {
+    if(balances[investor] > 0) {
       throw;
     }
 
@@ -641,7 +641,7 @@ contract TokenVault is Ownable, Recoverable {
   ///      - Checks are in place to prevent creating a vault that is locked with incorrect token balances.
   function lock() onlyOwner {
 
-    if(lockedAt &gt; 0) {
+    if(lockedAt > 0) {
       throw; // Already locked
     }
 
@@ -662,7 +662,7 @@ contract TokenVault is Ownable, Recoverable {
 
   /// @dev In the case locking failed, then allow the owner to reclaim the tokens on the contract.
   function recoverFailedLock() onlyOwner {
-    if(lockedAt &gt; 0) {
+    if(lockedAt > 0) {
       throw;
     }
 
@@ -685,7 +685,7 @@ contract TokenVault is Ownable, Recoverable {
       throw; // We were never locked
     }
 
-    if(now &lt; freezeEndsAt) {
+    if(now < freezeEndsAt) {
       throw; // Trying to claim early
     }
 
@@ -694,7 +694,7 @@ contract TokenVault is Ownable, Recoverable {
       throw;
     }
 
-    if(claimed[investor] &gt; 0) {
+    if(claimed[investor] > 0) {
       throw; // Already claimed
     }
 
@@ -722,7 +722,7 @@ contract TokenVault is Ownable, Recoverable {
   function getState() public constant returns(State) {
     if(lockedAt == 0) {
       return State.Loading;
-    } else if(now &gt; freezeEndsAt) {
+    } else if(now > freezeEndsAt) {
       return State.Distributing;
     } else {
       return State.Holding;

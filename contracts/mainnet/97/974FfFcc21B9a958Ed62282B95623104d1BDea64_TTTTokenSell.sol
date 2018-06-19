@@ -22,7 +22,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -32,7 +32,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -41,7 +41,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -92,7 +92,7 @@ contract Ownable {
  * @dev This simplifies the implementation of &quot;user permissions&quot;.
  */
 contract Whitelist is Ownable {
-  mapping(address =&gt; bool) public whitelist;
+  mapping(address => bool) public whitelist;
 
   event WhitelistedAddressAdded(address addr);
   event WhitelistedAddressRemoved(address addr);
@@ -125,7 +125,7 @@ contract Whitelist is Ownable {
    * false if all addresses were already in the whitelist
    */
   function addAddressesToWhitelist(address[] addrs) onlyOwner public returns(bool success) {
-    for (uint256 i = 0; i &lt; addrs.length; i++) {
+    for (uint256 i = 0; i < addrs.length; i++) {
       if (addAddressToWhitelist(addrs[i])) {
         success = true;
       }
@@ -153,7 +153,7 @@ contract Whitelist is Ownable {
    * false if all addresses weren&#39;t in the whitelist in the first place
    */
   function removeAddressesFromWhitelist(address[] addrs) onlyOwner public returns(bool success) {
-    for (uint256 i = 0; i &lt; addrs.length; i++) {
+    for (uint256 i = 0; i < addrs.length; i++) {
       if (removeAddressFromWhitelist(addrs[i])) {
         success = true;
       }
@@ -237,8 +237,8 @@ contract TTTToken is ERC20, Ownable {
 
 	uint8 public decimals = 18;
 
-	mapping(address=&gt;uint256) balances;
-	mapping(address=&gt;mapping(address=&gt;uint256)) allowed;
+	mapping(address=>uint256) balances;
+	mapping(address=>mapping(address=>uint256)) allowed;
 
 	// Supply variables
 	uint256 public totalSupply_;
@@ -285,7 +285,7 @@ contract TTTToken is ERC20, Ownable {
 	}
 
 	modifier canItoSend() {
-		require(crowdsaleFinalized == true || (crowdsaleFinalized == false &amp;&amp; msg.sender == ecoSupplyAddress));
+		require(crowdsaleFinalized == true || (crowdsaleFinalized == false && msg.sender == ecoSupplyAddress));
 		_;
 	}
 
@@ -329,7 +329,7 @@ contract TTTToken is ERC20, Ownable {
 
 	// Transfer
 	function transfer(address _to, uint256 _amount) public canItoSend returns (bool success) {
-		require(balanceOf(msg.sender) &gt;= _amount);
+		require(balanceOf(msg.sender) >= _amount);
 		addToBalance(_to, _amount);
 		decrementBalance(msg.sender, _amount);
 		Transfer(msg.sender, _to, _amount);
@@ -338,7 +338,7 @@ contract TTTToken is ERC20, Ownable {
 
 	// Transfer from one address to another
 	function transferFrom(address _from, address _to, uint256 _amount) public canItoSend returns (bool success) {
-		require(allowance(_from, msg.sender) &gt;= _amount);
+		require(allowance(_from, msg.sender) >= _amount);
 		decrementBalance(_from, _amount);
 		addToBalance(_to, _amount);
 		allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_amount);
@@ -348,9 +348,9 @@ contract TTTToken is ERC20, Ownable {
 
 	// Function for token sell contract to call on transfers
 	function transferFromTokenSell(address _to, address _from, uint256 _amount) external onlyTokenSale returns (bool success) {
-		require(_amount &gt; 0);
+		require(_amount > 0);
 		require(_to != 0x0);
-		require(balanceOf(_from) &gt;= _amount);
+		require(balanceOf(_from) >= _amount);
 		decrementBalance(_from, _amount);
 		addToBalance(_to, _amount);
 		Transfer(_from, _to, _amount);
@@ -402,7 +402,7 @@ contract TTTToken is ERC20, Ownable {
 
 	// Finalize presale. If there are leftover TTT, overflow to crowdsale
 	function finalizePresale() external onlyTokenSale returns (bool success) {
-		require(presaleFinalized == false &amp;&amp; privatesaleFinalized == true);
+		require(presaleFinalized == false && privatesaleFinalized == true);
 		uint256 amount = balanceOf(presaleAddress);
 		if (amount != 0) {
 			addToBalance(crowdsaleAddress, amount);
@@ -415,10 +415,10 @@ contract TTTToken is ERC20, Ownable {
 
 	// Finalize crowdsale. If there are leftover TTT, add 10% to airdrop, 20% to ecosupply, burn 70% at a later date
 	function finalizeCrowdsale(uint256 _burnAmount, uint256 _ecoAmount, uint256 _airdropAmount) external onlyTokenSale returns(bool success) {
-		require(presaleFinalized == true &amp;&amp; crowdsaleFinalized == false);
+		require(presaleFinalized == true && crowdsaleFinalized == false);
 		uint256 amount = balanceOf(crowdsaleAddress);
 		assert((_burnAmount.add(_ecoAmount).add(_airdropAmount)) == amount);
-		if (amount &gt; 0) {
+		if (amount > 0) {
 			crowdsaleBurnAmount = _burnAmount;
 			addToBalance(ecoSupplyAddress, _ecoAmount);
 			addToBalance(crowdsaleBurnAddress, crowdsaleBurnAmount);
@@ -437,9 +437,9 @@ contract TTTToken is ERC20, Ownable {
 	* @dev imported from https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/token/ERC20/BurnableToken.sol
 	*/
 	function burn(uint256 _value) public onlyOwner {
-		require(_value &lt;= balances[msg.sender]);
+		require(_value <= balances[msg.sender]);
 		require(crowdsaleFinalized == true);
-		// no need to require value &lt;= totalSupply, since that would imply the
+		// no need to require value <= totalSupply, since that would imply the
 		// sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
 		address burner = msg.sender;
@@ -451,17 +451,17 @@ contract TTTToken is ERC20, Ownable {
 
 	// Transfer tokens from the vested address. 50% available 12/01/2018, the rest available 06/01/2019
 	function transferFromVest(uint256 _amount) public onlyOwner {
-		require(block.timestamp &gt; firstVestStartsAt);
+		require(block.timestamp > firstVestStartsAt);
 		require(crowdsaleFinalized == true);
-		require(_amount &gt; 0);
-		if(block.timestamp &gt; secondVestStartsAt) {
+		require(_amount > 0);
+		if(block.timestamp > secondVestStartsAt) {
 			// all tokens available for vest withdrawl
-			require(_amount &lt;= teamSupply);
-			require(_amount &lt;= balanceOf(teamSupplyAddress));
+			require(_amount <= teamSupply);
+			require(_amount <= balanceOf(teamSupplyAddress));
 		} else {
 			// only first vest available
-			require(_amount &lt;= (firstVestAmount - currentVestedAmount));
-			require(_amount &lt;= balanceOf(teamSupplyAddress));
+			require(_amount <= (firstVestAmount - currentVestedAmount));
+			require(_amount <= balanceOf(teamSupplyAddress));
 		}
 		currentVestedAmount = currentVestedAmount.add(_amount);
 		addToBalance(msg.sender, _amount);
@@ -519,7 +519,7 @@ contract TTTTokenSell is Whitelist, Pausable {
 	event TokenPhaseEnded(CurrentPhase phase);
 
 	modifier tokenPhaseIsActive() {
-		assert(now &gt;= startsAt &amp;&amp; now &lt;= endsAt);
+		assert(now >= startsAt && now <= endsAt);
 		_;
 	}
 
@@ -545,9 +545,9 @@ contract TTTTokenSell is Whitelist, Pausable {
 	}
 
 	function startPhase(uint _phase, uint _currentPhaseRate, uint256 _startsAt, uint256 _endsAt) external onlyOwner {
-		require(_phase &gt;= 0 &amp;&amp; _phase &lt;= 2);
-		require(_startsAt &gt; endsAt &amp;&amp; _endsAt &gt; _startsAt);
-		require(_currentPhaseRate &gt; 0);
+		require(_phase >= 0 && _phase <= 2);
+		require(_startsAt > endsAt && _endsAt > _startsAt);
+		require(_currentPhaseRate > 0);
 		currentPhase = CurrentPhase(_phase);
 		currentPhaseAddress = getPhaseAddress();
 		assert(currentPhaseAddress != 0x0);
@@ -564,7 +564,7 @@ contract TTTTokenSell is Whitelist, Pausable {
 
 	function buyTokens(address _to) tokenPhaseIsActive whenNotPaused payable {
 		require(whitelist[_to]);
-		require(msg.value &gt;= ethMin &amp;&amp; msg.value &lt;= ethMax);
+		require(msg.value >= ethMin && msg.value <= ethMax);
 		require(_to != 0x0);
 		uint256 weiAmount = msg.value;
 		uint256 tokens = weiAmount.mul(currentPhaseRate);

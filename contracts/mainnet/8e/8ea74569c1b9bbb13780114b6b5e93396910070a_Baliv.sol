@@ -20,7 +20,7 @@ contract SafeMath {
         pure
     returns(uint) {
       uint256 z = x + y;
-      require((z >= x) &amp;&amp; (z >= y));
+      require((z >= x) && (z >= y));
       return z;
     }
 
@@ -293,7 +293,7 @@ contract Baliv is SafeMath, Authorization {
         onlyOperator
         public
     {
-        require(feerate_[0] < 0.05 ether &amp;&amp; feerate_[1] < 0.05 ether &amp;&amp; feerate_[2] < 0.05 ether);
+        require(feerate_[0] < 0.05 ether && feerate_[1] < 0.05 ether && feerate_[2] < 0.05 ether);
         feerate = feerate_;
     }
 
@@ -349,7 +349,7 @@ contract Baliv is SafeMath, Authorization {
         // depositToken => makeOrder => updateBalance
         uint256 depositAmount = depositAndFreeze(fromToken_, representor_);
         if(
-            checkAmount(fromToken_, amount_) &amp;&amp;
+            checkAmount(fromToken_, amount_) &&
             checkPriceAmount(price_)
         ) {
             require(representor_ != address(0));
@@ -380,8 +380,8 @@ contract Baliv is SafeMath, Authorization {
         address user = getUser(representor_);
         uint256 depositAmount = depositAndFreeze(fromToken_, user);
         if(
-            checkAmount(fromToken_, amount_) &amp;&amp;
-            checkPriceAmount(price_) &amp;&amp;
+            checkAmount(fromToken_, amount_) &&
+            checkPriceAmount(price_) &&
             checkBalance(user, fromToken_, amount_, depositAmount)
         ) {
             // log event: MakeOrder
@@ -561,7 +561,7 @@ contract Baliv is SafeMath, Authorization {
             }
             amount = Token(token_).allowance(msg.sender, this);
             if(
-                amount > 0 &amp;&amp;
+                amount > 0 &&
                 Token(token_).transferFrom(msg.sender, this, amount)
             ) {
                 // log event: Deposit
@@ -660,7 +660,7 @@ contract Baliv is SafeMath, Authorization {
         uint256 matches = 0;
         uint256 prevBestPrice = 0;
         uint256 bestPrice = getNextOrderPrice(toToken_, fromToken_, prevBestPrice);
-        for(; matches < autoMatch &amp;&amp; remaining > 0;) {
+        for(; matches < autoMatch && remaining > 0;) {
             matchAmount = makeTrade(fromToken_, toToken_, price_, bestPrice, remaining);
             if(matchAmount[0] > 0) {
                 remaining = safeSub(remaining, matchAmount[0]);
@@ -721,7 +721,7 @@ contract Baliv is SafeMath, Authorization {
                 totalFill[2]: Total Maker fee
              */
             uint256[3] memory totalFill;
-            for(uint256 i = 0; i < autoMatch &amp;&amp; remaining > 0 &amp;&amp; maker != address(0); i++) {
+            for(uint256 i = 0; i < autoMatch && remaining > 0 && maker != address(0); i++) {
                 uint256[3] memory fill;
                 fill = makeTradeDetail(fromToken_, toToken_, price_, bestPrice_, maker, remaining);
                 if(fill[0] > 0) {
@@ -885,7 +885,7 @@ contract Baliv is SafeMath, Authorization {
         if(checkPriceAmount(price_)) {
             uint256 prevPrice = getNextOrderPrice(fromToken_, toToken_, prev_);
             uint256 nextPrice = getNextOrderPrice(fromToken_, toToken_, prevPrice);
-            if(prev_ != price_ &amp;&amp; prevPrice != price_ &amp;&amp; nextPrice != price_) {
+            if(prev_ != price_ && prevPrice != price_ && nextPrice != price_) {
                 if(price_ < prevPrice) {
                     updateNextOrderPrice(fromToken_, toToken_, prev_, price_);
                     updateNextOrderPrice(fromToken_, toToken_, price_, prevPrice);
@@ -907,7 +907,7 @@ contract Baliv is SafeMath, Authorization {
         internal 
     {
         address firstUser = getNextOrderUser(fromToken_, toToken_, price_, 0);
-        if(user_ != address(0) &amp;&amp; user_ != firstUser) {
+        if(user_ != address(0) && user_ != firstUser) {
             updateNextOrderUser(fromToken_, toToken_, price_, 0, user_);
             if(firstUser != address(0)) {
                 updateNextOrderUser(fromToken_, toToken_, price_, user_, firstUser);

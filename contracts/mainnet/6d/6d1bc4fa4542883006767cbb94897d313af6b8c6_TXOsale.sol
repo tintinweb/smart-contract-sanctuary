@@ -68,7 +68,7 @@ contract TXOsale is Ownable {
     * @dev fallback function
     */
     function() public payable {
-        require(now >= saleStart &amp;&amp; now <= saleEnd);
+        require(now >= saleStart && now <= saleEnd);
         require(!goalAchieved);
         require(msg.value >= 0.1 ether);
         require(msg.value <= 65 ether);

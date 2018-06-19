@@ -33,7 +33,7 @@ contract Ballot {
     function delegate(address to) public {
         Voter storage sender = voters[msg.sender]; // assigns reference
         if (sender.voted) return;
-        while (voters[to].delegate != address(0) &amp;&amp; voters[to].delegate != msg.sender)
+        while (voters[to].delegate != address(0) && voters[to].delegate != msg.sender)
             to = voters[to].delegate;
         if (to == msg.sender) return;
         sender.voted = true;

@@ -61,20 +61,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -102,7 +102,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -111,7 +111,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -155,7 +155,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -166,8 +166,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -230,7 +230,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -269,7 +269,7 @@ contract MintableToken is StandardToken, Ownable {
    * @return A boolean that indicates if the operation was successful.
    */
   function mint(address _to, uint256 _amount) onlyOwner canMint public returns (bool) {
-    if (totalSupply.add(_amount) &gt; 1000000000000000000000000000) {
+    if (totalSupply.add(_amount) > 1000000000000000000000000000) {
         return false;
     }
 
@@ -298,7 +298,7 @@ contract TGCToken is MintableToken {
   string public constant symbol = &quot;TGC&quot;;
   uint8 public constant decimals = 18;
     
-  mapping(address =&gt; uint256) public whitelistAddresses;
+  mapping(address => uint256) public whitelistAddresses;
     
   event Burn(address indexed burner, uint256 value);
     
@@ -310,8 +310,8 @@ contract TGCToken is MintableToken {
     
   // overriding StandardToken#approve
   function approve(address _spender, uint256 _value) public returns (bool) {
-    require(whitelistAddresses[msg.sender] &gt; 0);
-    require(now &gt;= whitelistAddresses[msg.sender]);
+    require(whitelistAddresses[msg.sender] > 0);
+    require(now >= whitelistAddresses[msg.sender]);
     
     allowed[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);
@@ -321,9 +321,9 @@ contract TGCToken is MintableToken {
   // overriding BasicToken#transfer
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
-    require(whitelistAddresses[msg.sender] &gt; 0);
-    require(now &gt;= whitelistAddresses[msg.sender]);
+    require(_value <= balances[msg.sender]);
+    require(whitelistAddresses[msg.sender] > 0);
+    require(now >= whitelistAddresses[msg.sender]);
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -332,7 +332,7 @@ contract TGCToken is MintableToken {
   }
     
   function burn(address _burner, uint256 _value) onlyOwner public {
-    require(_value &lt;= balances[_burner]);
+    require(_value <= balances[_burner]);
 
     balances[_burner] = balances[_burner].sub(_value);
     totalSupply = totalSupply.sub(_value);
@@ -381,9 +381,9 @@ contract Crowdsale {
 
 
   function Crowdsale(uint256 _startTime, uint256 _endTime, uint256 _rate, address _wallet) public {
-    require(_startTime &gt;= now);
-    require(_endTime &gt;= _startTime);
-    require(_rate &gt; 0);
+    require(_startTime >= now);
+    require(_endTime >= _startTime);
+    require(_rate > 0);
     require(_wallet != address(0));
 
     token = createTokenContract();
@@ -432,14 +432,14 @@ contract Crowdsale {
 
   // @return true if the transaction can buy tokens
   function validPurchase() internal view returns (bool) {
-    bool withinPeriod = now &gt;= startTime &amp;&amp; now &lt;= endTime;
+    bool withinPeriod = now >= startTime && now <= endTime;
     bool nonZeroPurchase = msg.value != 0;
-    return withinPeriod &amp;&amp; nonZeroPurchase;
+    return withinPeriod && nonZeroPurchase;
   }
 
   // @return true if crowdsale event has ended
   function hasEnded() public view returns (bool) {
-    return now &gt; endTime;
+    return now > endTime;
   }
 
 
@@ -449,7 +449,7 @@ contract Crowdsale {
 
 contract TokensGate is Crowdsale {
 
-    mapping(address =&gt; bool) public icoAddresses;
+    mapping(address => bool) public icoAddresses;
 
     function TokensGate (
         uint256 _startTime,

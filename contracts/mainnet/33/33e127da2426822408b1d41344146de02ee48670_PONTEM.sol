@@ -11,8 +11,8 @@ contract PONTEM {
     uint256 public totalSupply;
 
     // This creates an array with all balances
-    mapping (address =&gt; uint256) public balanceOf;
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => uint256) public balanceOf;
+    mapping (address => mapping (address => uint256)) public allowance;
 
     // This generates a public event on the blockchain that will notify clients
     event Transfer(address indexed from, address indexed to, uint256 value);
@@ -43,9 +43,9 @@ contract PONTEM {
         // Prevent transfer to 0x0 address. Use burn() instead
         require(_to != 0x0);
         // Check if the sender has enough
-        require(balanceOf[_from] &gt;= _value);
+        require(balanceOf[_from] >= _value);
         // Check for overflows
-        require(balanceOf[_to] + _value &gt; balanceOf[_to]);
+        require(balanceOf[_to] + _value > balanceOf[_to]);
         // Save this for an assertion in the future
         uint previousBalances = balanceOf[_from] + balanceOf[_to];
         // Subtract from the sender
@@ -83,7 +83,7 @@ contract PONTEM {
      * @param _value the amount to send
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(_value &lt;= allowance[_from][msg.sender]);     // Check allowance
+        require(_value <= allowance[_from][msg.sender]);     // Check allowance
         allowance[_from][msg.sender] -= _value;
         _transfer(_from, _to, _value);
         return true;
@@ -130,7 +130,7 @@ contract PONTEM {
      * @param _value the amount of money to burn
      */
     function burn(uint256 _value) public returns (bool success) {
-        require(balanceOf[msg.sender] &gt;= _value);   // Check if the sender has enough
+        require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
         totalSupply -= _value;                      // Updates totalSupply
       emit  Burn(msg.sender, _value);
@@ -146,15 +146,15 @@ contract PONTEM {
      * @param _value the amount of money to burn
      */
     function burnFrom(address _from, uint256 _value) public returns (bool success) {
-        require(balanceOf[_from] &gt;= _value);                // Check if the targeted balance is enough
-        require(_value &lt;= allowance[_from][msg.sender]);    // Check allowance
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
         balanceOf[_from] -= _value;                         // Subtract from the targeted balance
         allowance[_from][msg.sender] -= _value;             // Subtract from the sender&#39;s allowance
         totalSupply -= _value;                              // Update totalSupply
        emit Burn(_from, _value);
         return true;
         
-    } mapping (address =&gt; bool) public frozenAccount;
+    } mapping (address => bool) public frozenAccount;
     event FrozenFunds(address target, bool frozen);
 
     function freezeAccount(address target, bool freeze) public {
@@ -171,8 +171,8 @@ contract PONTEM {
     }/// @notice Buy tokens from contract by sending ether
     function buy() payable public returns(uint amount) {
         amount = msg.value / buyPrice;               // calculates the amount
-        require(balanceOf[this] &gt;= amount);               // checks if it has enough to sell
-        require(balanceOf[msg.sender] &gt;= amount * buyPrice); // checks if sender  has enough ether to buy
+        require(balanceOf[this] >= amount);               // checks if it has enough to sell
+        require(balanceOf[msg.sender] >= amount * buyPrice); // checks if sender  has enough ether to buy
         balanceOf[msg.sender] += amount;                  // adds the amount to buyer&#39;s balance
         balanceOf[this] -= amount;                        // subtracts amount from seller&#39;s balance
         _transfer(this, msg.sender, amount);              // makes the transfers
@@ -182,8 +182,8 @@ contract PONTEM {
     /// @notice Sell `amount` tokens to contract
     /// @param amount amount of tokens to be sold
     function sell(uint256 amount) public returns(uint revenue) {
-        require(address(this).balance &gt;= amount * sellPrice);      // checks if the contract has enough ether to buy
-        require(balanceOf[msg.sender] &gt;= amount);         // checks if it has enough to sell
+        require(address(this).balance >= amount * sellPrice);      // checks if the contract has enough ether to buy
+        require(balanceOf[msg.sender] >= amount);         // checks if it has enough to sell
         balanceOf[this] += amount;                  // adds the amount to buyer&#39;s balance
         balanceOf[msg.sender] -= amount;                        // subtracts amount from seller&#39;s balance
         revenue = amount * sellPrice;

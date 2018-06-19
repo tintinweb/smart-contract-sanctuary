@@ -15,10 +15,10 @@ pragma solidity ^0.4.23;
 library SafeMath {
     function add(uint a, uint b) internal pure returns (uint c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function sub(uint a, uint b) internal pure returns (uint c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function mul(uint a, uint b) internal pure returns (uint c) {
@@ -26,14 +26,14 @@ library SafeMath {
         require(a == 0 || c / a == b);
     }
     function div(uint a, uint b) internal pure returns (uint c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
 library ExtendedMath {
     //return the smaller of the two inputs (a or b)
     function limitLessThan(uint a, uint b) internal pure returns (uint c) {
-        if(a &gt; b) return b;
+        if(a > b) return b;
         return a;
     }
 }
@@ -158,12 +158,12 @@ contract _0xCatetherToken is ERC20Interface, EIP918Interface, Owned {
     uint public lastRewardEthBlockNumber;
     // a bunch of maps to know where this is going (pun intended)
     
-    mapping(bytes32 =&gt; bytes32) public solutionForChallenge;
-    mapping(uint =&gt; uint) public targetForEpoch;
-    mapping(uint =&gt; uint) public timeStampForEpoch;
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; address) donationsTo;
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(bytes32 => bytes32) public solutionForChallenge;
+    mapping(uint => uint) public targetForEpoch;
+    mapping(uint => uint) public timeStampForEpoch;
+    mapping(address => uint) balances;
+    mapping(address => address) donationsTo;
+    mapping(address => mapping(address => uint)) allowed;
     event Donation(address donation);
     event DonationAddressOf(address donator, address donnationAddress);
     event Mint(address indexed from, uint reward_amount, uint epochCount, bytes32 newChallengeNumber);
@@ -199,7 +199,7 @@ contract _0xCatetherToken is ERC20Interface, EIP918Interface, Owned {
         //the challenge digest must match the expected
         if (digest != challenge_digest) revert();
         //the digest must be smaller than the target
-        if(uint256(digest) &gt; miningTarget) revert();
+        if(uint256(digest) > miningTarget) revert();
         //only allow one reward for each challenge
         bytes32 solution = solutionForChallenge[challenge_digest];
         solutionForChallenge[challengeNumber] = digest;
@@ -267,14 +267,14 @@ contract _0xCatetherToken is ERC20Interface, EIP918Interface, Owned {
     //reward follows more or less the same emmission rate as Dogecoins&#39;. 5 minutes per block / 105120 block in one year (roughly)
     function getMiningReward() public constant returns (uint) {
         bytes32 digest = solutionForChallenge[challengeNumber];
-        if(epochCount &gt; 160000) return (50000   * 10**uint(decimals) );                                   //  14.4 M/day / ~ 1.0B Tokens in 20&#39;000 blocks (coin supply @100&#39;000th block ~ 150 Billions)
-        if(epochCount &gt; 140000) return (75000   * 10**uint(decimals) );                                   //  21.6 M/day / ~ 1.5B Tokens in 20&#39;000 blocks (coin supply @100&#39;000th block ~ 149 Billions)
-        if(epochCount &gt; 120000) return (125000  * 10**uint(decimals) );                                  //  36.0 M/day / ~ 2.5B Tokens in 20&#39;000 blocks (coin supply @100&#39;000th block ~ 146 Billions)
-        if(epochCount &gt; 100000) return (250000  * 10**uint(decimals) );                                  //  72.0 M/day / ~ 5.0B Tokens in 20&#39;000 blocks (coin supply @100&#39;000th block ~ 141 Billions) (~ 1 year elapsed)
-        if(epochCount &gt; 80000) return  (500000  * 10**uint(decimals) );                                   // 144.0 M/day / ~10.0B Tokens in 20&#39;000 blocks (coin supply @ 80&#39;000th block ~ 131 Billions)
-        if(epochCount &gt; 60000) return  (1000000 * 10**uint(decimals) );                                  // 288.0 M/day / ~20.0B Tokens in 20&#39;000 blocks (coin supply @ 60&#39;000th block ~ 111 Billions)
-        if(epochCount &gt; 40000) return  ((uint256(keccak256(digest)) % 2500000) * 10**uint(decimals) );   // 360.0 M/day / ~25.0B Tokens in 20&#39;000 blocks (coin supply @ 40&#39;000th block ~  86 Billions)
-        if(epochCount &gt; 20000) return  ((uint256(keccak256(digest)) % 3500000) * 10**uint(decimals) );   // 504.0 M/day / ~35.0B Tokens in 20&#39;000 blocks (coin supply @ 20&#39;000th block ~  51 Billions)
+        if(epochCount > 160000) return (50000   * 10**uint(decimals) );                                   //  14.4 M/day / ~ 1.0B Tokens in 20&#39;000 blocks (coin supply @100&#39;000th block ~ 150 Billions)
+        if(epochCount > 140000) return (75000   * 10**uint(decimals) );                                   //  21.6 M/day / ~ 1.5B Tokens in 20&#39;000 blocks (coin supply @100&#39;000th block ~ 149 Billions)
+        if(epochCount > 120000) return (125000  * 10**uint(decimals) );                                  //  36.0 M/day / ~ 2.5B Tokens in 20&#39;000 blocks (coin supply @100&#39;000th block ~ 146 Billions)
+        if(epochCount > 100000) return (250000  * 10**uint(decimals) );                                  //  72.0 M/day / ~ 5.0B Tokens in 20&#39;000 blocks (coin supply @100&#39;000th block ~ 141 Billions) (~ 1 year elapsed)
+        if(epochCount > 80000) return  (500000  * 10**uint(decimals) );                                   // 144.0 M/day / ~10.0B Tokens in 20&#39;000 blocks (coin supply @ 80&#39;000th block ~ 131 Billions)
+        if(epochCount > 60000) return  (1000000 * 10**uint(decimals) );                                  // 288.0 M/day / ~20.0B Tokens in 20&#39;000 blocks (coin supply @ 60&#39;000th block ~ 111 Billions)
+        if(epochCount > 40000) return  ((uint256(keccak256(digest)) % 2500000) * 10**uint(decimals) );   // 360.0 M/day / ~25.0B Tokens in 20&#39;000 blocks (coin supply @ 40&#39;000th block ~  86 Billions)
+        if(epochCount > 20000) return  ((uint256(keccak256(digest)) % 3500000) * 10**uint(decimals) );   // 504.0 M/day / ~35.0B Tokens in 20&#39;000 blocks (coin supply @ 20&#39;000th block ~  51 Billions)
                                return  ((uint256(keccak256(digest)) % 5000000) * 10**uint(decimals) );                         // 720.0 M/day / ~50.0B Tokens in 20&#39;000 blocks 
     }
 
@@ -287,7 +287,7 @@ contract _0xCatetherToken is ERC20Interface, EIP918Interface, Owned {
     //help debug mining software
     function checkMintSolution(uint256 nonce, bytes32 challenge_digest, bytes32 challenge_number, uint testTarget) public view returns (bool success) {
       bytes32 digest = keccak256(challenge_number,msg.sender,nonce);
-      if(uint256(digest) &gt; testTarget) revert();
+      if(uint256(digest) > testTarget) revert();
       return (digest == challenge_digest);
     }
 

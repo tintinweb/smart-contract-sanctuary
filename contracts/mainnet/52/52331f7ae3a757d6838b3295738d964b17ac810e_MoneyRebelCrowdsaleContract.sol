@@ -64,8 +64,8 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
         uint bonus;
         bool tierActive;
     }
-    mapping (address =&gt; uint) public verifiedAddresses;
-    mapping(uint =&gt; Tier) public tierList;
+    mapping (address => uint) public verifiedAddresses;
+    mapping(uint => Tier) public tierList;
     uint public nextFreeTier = 1;
     
 
@@ -76,9 +76,9 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
     uint public crowdsaleStartBlock;
     uint public crowdsaleEndedBlock;
 
-    mapping(address =&gt; ContributorData) public contributorList;
+    mapping(address => ContributorData) public contributorList;
     uint public nextContributorIndex;
-    mapping(uint =&gt; address) public contributorIndexes;
+    mapping(uint => address) public contributorIndexes;
 
     uint public minCap;
     uint public maxCap;
@@ -107,20 +107,20 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
     }
 
     function checkCrowdsaleState() internal returns (bool) {
-        if (tokensIssued == maxCap &amp;&amp; crowdsaleState != state.crowdsaleEnded) {
+        if (tokensIssued == maxCap && crowdsaleState != state.crowdsaleEnded) {
             crowdsaleState = state.crowdsaleEnded;
             emit CrowdsaleEnded(block.number);
             return true;
         }
 
-        if (block.number &gt;= crowdsaleStartBlock &amp;&amp; block.number &lt;= crowdsaleEndedBlock) {
+        if (block.number >= crowdsaleStartBlock && block.number <= crowdsaleEndedBlock) {
             if (crowdsaleState != state.crowdsale) {
                 crowdsaleState = state.crowdsale;
                 emit CrowdsaleStarted(block.number);
                 return true;
             }
         } else {
-            if (crowdsaleState != state.crowdsaleEnded &amp;&amp; block.number &gt; crowdsaleEndedBlock) {
+            if (crowdsaleState != state.crowdsaleEnded && block.number > crowdsaleEndedBlock) {
                 crowdsaleState = state.crowdsaleEnded;
                 emit CrowdsaleEnded(block.number);
                 return true;
@@ -173,20 +173,20 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
         uint bonus;
         (contributorTier, minContribution, maxContribution, bonus) = getContributorData(_contributor); 
 
-        if (block.number &gt;= crowdsaleStartBlock &amp;&amp; block.number &lt; crowdsaleStartBlock + blocksInADay){
-            require(_amount &gt;= minContribution);
+        if (block.number >= crowdsaleStartBlock && block.number < crowdsaleStartBlock + blocksInADay){
+            require(_amount >= minContribution);
             require(contributorTier == 1 || contributorTier == 2 || contributorTier == 5 || contributorTier == 6 || contributorTier == 7 || contributorTier == 8);
-            if (_amount &gt; maxContribution &amp;&amp; maxContribution != 0){
+            if (_amount > maxContribution && maxContribution != 0){
                 contributionAmount = maxContribution;
                 returnAmount = _amount - maxContribution;
             } else {
                 contributionAmount = _amount;
             }
             tokensToGive = calculateEthToToken(contributionAmount, bonus);
-        } else if (block.number &gt;= crowdsaleStartBlock + blocksInADay &amp;&amp; block.number &lt; crowdsaleStartBlock + 2 * blocksInADay) {
-            require(_amount &gt;= minContribution);
+        } else if (block.number >= crowdsaleStartBlock + blocksInADay && block.number < crowdsaleStartBlock + 2 * blocksInADay) {
+            require(_amount >= minContribution);
             require(contributorTier == 3 || contributorTier == 5 || contributorTier == 6 || contributorTier == 7 || contributorTier == 8);
-            if (_amount &gt; maxContribution &amp;&amp; maxContribution != 0) {
+            if (_amount > maxContribution && maxContribution != 0) {
                 contributionAmount = maxContribution;
                 returnAmount = _amount - maxContribution;
             } else {
@@ -194,8 +194,8 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
             }
             tokensToGive = calculateEthToToken(contributionAmount, bonus);
         } else {
-            require(_amount &gt;= minContribution);
-            if (_amount &gt; maxContribution &amp;&amp; maxContribution != 0) {
+            require(_amount >= minContribution);
+            if (_amount > maxContribution && maxContribution != 0) {
                 contributionAmount = maxContribution;
                 returnAmount = _amount - maxContribution;
             } else {
@@ -208,10 +208,10 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
             }
         }
 
-        if (tokensToGive &gt; (maxCap - tokensIssued)) {
-            if (block.number &gt;= crowdsaleStartBlock &amp;&amp; block.number &lt; crowdsaleStartBlock + blocksInADay){
+        if (tokensToGive > (maxCap - tokensIssued)) {
+            if (block.number >= crowdsaleStartBlock && block.number < crowdsaleStartBlock + blocksInADay){
                 contributionAmount = calculateTokenToEth(maxCap - tokensIssued, bonus);
-            }else if (block.number &gt;= crowdsaleStartBlock + blocksInADay &amp;&amp; block.number &lt; crowdsaleStartBlock + 2 * blocksInADay) {
+            }else if (block.number >= crowdsaleStartBlock + blocksInADay && block.number < crowdsaleStartBlock + 2 * blocksInADay) {
                 contributionAmount = calculateTokenToEth(maxCap - tokensIssued, bonus);
             }else{
                 if(contributorTier == 5 || contributorTier == 6 || contributorTier == 7 || contributorTier == 8){
@@ -234,7 +234,7 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
         contributorList[_contributor].contributionAmount += contributionAmount;
         ethRaised += contributionAmount;
 
-        if (tokensToGive &gt; 0) {
+        if (tokensToGive > 0) {
             contributorList[_contributor].tokensIssued += tokensToGive;
             tokensIssued += tokensToGive;
         }
@@ -249,7 +249,7 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
 
     function withdrawEth() onlyOwner public {
         require(address(this).balance != 0);
-        require(tokensIssued &gt;= minCap);
+        require(tokensIssued >= minCap);
 
         multisigAddress.transfer(address(this).balance);
     }
@@ -295,7 +295,7 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
     
     function batchAddAddresses(address[] _addresses, uint[] _tiers) public onlyOwner {
         require(_addresses.length == _tiers.length);
-        for (uint cnt = 0; cnt &lt; _addresses.length; cnt++) {
+        for (uint cnt = 0; cnt < _addresses.length; cnt++) {
             assert(verifiedAddresses[_addresses[cnt]] != 0);
             verifiedAddresses[_addresses[cnt]] = _tiers[cnt];
         }

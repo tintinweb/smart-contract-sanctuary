@@ -183,7 +183,7 @@ contract ManagerProxy is ManagerProxyTarget {
     function() public payable {
         address target = controller.getContract(targetContractId);
         // Target contract must be registered
-        require(target &gt; 0);
+        require(target > 0);
 
         assembly {
             // Solidity keeps a free memory pointer at position 0x40 in memory

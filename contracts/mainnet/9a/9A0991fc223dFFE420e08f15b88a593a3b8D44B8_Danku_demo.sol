@@ -108,7 +108,7 @@ contract Danku_demo {
     assert(init_level == 1);
     // Make sure it&#39;s being called within 20 blocks on init1()
     // to minimize organizer influence on random index selection
-    if (block.number <= init1_block_height+20 &amp;&amp; block.number > init1_block_height) {
+    if (block.number <= init1_block_height+20 && block.number > init1_block_height) {
       // TODO: Also make sure it&#39;s being called 1 block after init1()
       // Randomly select indexes
       uint[] memory index_array = new uint[](max_num_data_groups/partition_size);
@@ -172,7 +172,7 @@ contract Danku_demo {
       assert(init_level == 3);
       // Make sure it&#39;s still within the submission stage
       assert(block.number < init3_block_height + submission_stage_block_size);
-      // Make sure that num of neurons in the input &amp; output layer matches
+      // Make sure that num of neurons in the input & output layer matches
       // the problem description
       assert(num_neurons_input_layer == datapoint_size - prediction_size);
       // Because we can encode binary output in two different ways, we check
@@ -263,7 +263,7 @@ contract Danku_demo {
     assert(block.number >= init3_block_height + submission_stage_block_size + reveal_test_data_groups_block_size);
     // Make sure it&#39;s evaluated within the evaluation stage
     assert(block.number < init3_block_height + submission_stage_block_size + reveal_test_data_groups_block_size + evaluation_stage_block_size);
-    // Evaluates a submitted model &amp; keeps track of the best model
+    // Evaluates a submitted model & keeps track of the best model
     int256 submission_accuracy = 0;
     if (use_test_data == true) {
       submission_accuracy = model_accuracy(submission_index, test_data);

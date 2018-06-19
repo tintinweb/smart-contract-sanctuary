@@ -113,7 +113,7 @@ contract BasicToken is ERC20Basic, Ownable {
   * @param _value The amount to be transferred.
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
-    if (msg.sender != owner &amp;&amp; msg.sender != addressTeam){  
+    if (msg.sender != owner && msg.sender != addressTeam){  
       require(!frozenAccountICO); 
     }
     require(!frozenAccount[_to]);   // Check if recipient is frozen  
@@ -152,7 +152,7 @@ contract StandardToken is ERC20, BasicToken {
    * @param _value uint256 the amout of tokens to be transfered
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
-    if (msg.sender != owner &amp;&amp; msg.sender != addressTeam){  
+    if (msg.sender != owner && msg.sender != addressTeam){  
       require(!frozenAccountICO); 
     }    
     require(!frozenAccount[_from]);                     // Check if sender is frozen
@@ -257,7 +257,7 @@ contract MahalaCoin is Ownable, MintableToken {
     mint(addressTeam, summTeam);
 	mint(owner, 70000000 * 1 ether);
   }
-      /// @notice `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens
+      /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
     function freezeAccount(address target, bool freeze) onlyOwner public {
@@ -403,7 +403,7 @@ contract Crowdsale is Ownable {
     require(hardcap > _this.balance);
 
     //Pre-sale
-    if (now >= startPreSale &amp;&amp; now < endPreSale &amp;&amp; totalPreSale < maxPreSale){
+    if (now >= startPreSale && now < endPreSale && totalPreSale < maxPreSale){
       tokens = weiAmount.mul(ratePreSale);
 	  if (maxPreSale.sub(totalPreSale) <= tokens){
 	    endPreSale = now;
@@ -419,7 +419,7 @@ contract Crowdsale is Ownable {
     }
        
     //ico   
-    if (now >= startIco &amp;&amp; now < endIco &amp;&amp; totalIco < maxIco){
+    if (now >= startIco && now < endIco && totalIco < maxIco){
       tokens = weiAmount.mul(rateIco);
       if (maxIco.sub(totalIco) < tokens){
         tokens = maxIco.sub(totalIco); 
@@ -442,7 +442,7 @@ contract Crowdsale is Ownable {
 
   function refund() public{
     address _this = this;
-    require(_this.balance < softcap &amp;&amp; now > endIco);
+    require(_this.balance < softcap && now > endIco);
     require(balances[msg.sender] > 0);
     uint value = balances[msg.sender];
     balances[msg.sender] = 0;
@@ -451,17 +451,17 @@ contract Crowdsale is Ownable {
   
   function transferTokenToMultisig(address _address) public onlyOwner {
     address _this = this;
-    require(_this.balance < softcap &amp;&amp; now > endIco);  
+    require(_this.balance < softcap && now > endIco);  
     token.transfer(_address, token.balanceOf(_this));
   }   
   
   function transferEthToMultisig() public onlyOwner {
     address _this = this;
-    require(_this.balance >= softcap &amp;&amp; now > endIco);  
+    require(_this.balance >= softcap && now > endIco);  
     wallet.transfer(_this.balance);
     token.setFrozenAccountICO(false);
   }  
-    /// @notice `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens
+    /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
   function freezeAccount(address target, bool freeze) onlyOwner public {

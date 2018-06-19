@@ -46,7 +46,7 @@ contract Ownable {
 
 contract ReturnVestingRegistry is Ownable {
 
-  mapping (address =&gt; address) public returnAddress;
+  mapping (address => address) public returnAddress;
 
   function record(address from, address to) onlyOwner public {
     require(from != 0);
@@ -87,7 +87,7 @@ contract ERC20 is ERC20Basic {
 contract TerraformReserve is Ownable {
 
   /* Storing a balance for each user */
-  mapping (address =&gt; uint256) public lockedBalance;
+  mapping (address => uint256) public lockedBalance;
 
   /* Store the total sum locked */
   uint public totalLocked;
@@ -119,7 +119,7 @@ contract TerraformReserve is Ownable {
    */
   function lockMana(address _from, uint256 mana) public {
     require(acceptingDeposits);
-    require(mana &gt;= 1000 * 1e18);
+    require(mana >= 1000 * 1e18);
     require(manaToken.transferFrom(_from, this, mana));
 
     lockedBalance[_from] += mana;
@@ -161,19 +161,19 @@ contract TerraformReserve is Ownable {
  */
 library Math {
   function max64(uint64 a, uint64 b) internal pure returns (uint64) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min64(uint64 a, uint64 b) internal pure returns (uint64) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
   function max256(uint256 a, uint256 b) internal pure returns (uint256) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min256(uint256 a, uint256 b) internal pure returns (uint256) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 }
 
@@ -201,7 +201,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -211,7 +211,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -220,7 +220,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -295,7 +295,7 @@ contract TokenVesting is Ownable {
     address _token
   ) {
     require(_beneficiary != 0x0);
-    require(_cliff &lt;= _duration);
+    require(_cliff <= _duration);
 
     beneficiary = _beneficiary;
     start       = _start;
@@ -326,7 +326,7 @@ contract TokenVesting is Ownable {
    * @notice Transfers vested tokens to beneficiary.
    */
   function release() onlyBeneficiary public {
-    require(now &gt;= cliff);
+    require(now >= cliff);
     _releaseTo(beneficiary);
   }
 
@@ -335,7 +335,7 @@ contract TokenVesting is Ownable {
    * @param target the address to send the tokens to
    */
   function releaseTo(address target) onlyBeneficiary public {
-    require(now &gt;= cliff);
+    require(now >= cliff);
     _releaseTo(target);
   }
 
@@ -385,9 +385,9 @@ contract TokenVesting is Ownable {
     uint256 currentBalance = token.balanceOf(this);
     uint256 totalBalance = currentBalance.add(released);
 
-    if (now &lt; cliff) {
+    if (now < cliff) {
       return 0;
-    } else if (now &gt;= start.add(duration) || revoked) {
+    } else if (now >= start.add(duration) || revoked) {
       return totalBalance;
     } else {
       return totalBalance.mul(now.sub(start)).div(duration);
@@ -431,10 +431,10 @@ contract DecentralandVesting is TokenVesting {
 
   function lockMana(uint256 amount) onlyBeneficiary public {
     // Require allowance to be enough
-    require(token.allowance(beneficiary, terraformReserve) &gt;= amount);
+    require(token.allowance(beneficiary, terraformReserve) >= amount);
 
     // Check the balance of the vesting contract
-    require(amount &lt;= token.balanceOf(this));
+    require(amount <= token.balanceOf(this));
 
     // Check the registry of the beneficiary is fixed to return to this contract
     require(returnVesting.returnAddress(beneficiary) == address(this));

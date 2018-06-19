@@ -81,7 +81,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -99,7 +99,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -139,7 +139,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -150,8 +150,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -214,7 +214,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -327,7 +327,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -337,7 +337,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -346,7 +346,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -360,7 +360,7 @@ contract MintingERC20 is ElyERC20 {
     using SafeMath for uint256;
 
     //Variables
-    mapping (address =&gt; bool) public minters;
+    mapping (address => bool) public minters;
 
     uint256 public maxSupply;
 
@@ -403,7 +403,7 @@ contract MintingERC20 is ElyERC20 {
             return uint256(0);
         }
 
-        if (totalSupply_.add(_amount) &gt; maxSupply) {
+        if (totalSupply_.add(_amount) > maxSupply) {
             return uint256(0);
         }
 
@@ -467,7 +467,7 @@ contract ElyToken is MintingERC20 {
     }
 
     function freezing(bool _transferFrozen) public onlyOwner {
-        if (address(ico) != address(0) &amp;&amp; !ico.isActive() &amp;&amp; block.timestamp &gt;= ico.startTime()) {
+        if (address(ico) != address(0) && !ico.isActive() && block.timestamp >= ico.startTime()) {
             transferFrozen = _transferFrozen;
         }
     }
@@ -484,7 +484,7 @@ contract ElyToken is MintingERC20 {
     }
 
     function transferAllowed(address _address, uint256 _amount) public view returns (bool) {
-        return !transferFrozen &amp;&amp; lockupContract.isTransferAllowed(_address, _amount);
+        return !transferFrozen && lockupContract.isTransferAllowed(_address, _amount);
     }
 
     function transfer(address _to, uint _value) public returns (bool) {
@@ -504,7 +504,7 @@ contract ElyToken is MintingERC20 {
     }
 
     function burnTokens(uint256 _amount) public onlySellable {
-        if (totalSupply_.add(_amount) &gt; maxSupply) {
+        if (totalSupply_.add(_amount) > maxSupply) {
             Burn(address(this), maxSupply.sub(totalSupply_));
             totalSupply_ = maxSupply;
         } else {
@@ -514,7 +514,7 @@ contract ElyToken is MintingERC20 {
     }
 
     function burnInvestorTokens(address _address, uint256 _amount) public constant onlySellable returns (uint256) {
-        require(balances[_address] &gt;= _amount);
+        require(balances[_address] >= _amount);
         balances[_address] = balances[_address].sub(_amount);
         Burn(_address, _amount);
         Transfer(_address, address(0), _amount);
@@ -529,7 +529,7 @@ contract Multivest is Ownable {
     using SafeMath for uint256;
 
     /* public variables */
-    mapping (address =&gt; bool) public allowedMultivests;
+    mapping (address => bool) public allowedMultivests;
 
     /* events */
     event MultivestSet(address multivest);
@@ -566,7 +566,7 @@ contract Multivest is Ownable {
         bytes32 _r,
         bytes32 _s
     ) public payable onlyAllowedMultivests(verify(keccak256(msg.sender), _v, _r, _s)) {
-        require(_address == msg.sender &amp;&amp; buy(msg.sender, msg.value) == true);
+        require(_address == msg.sender && buy(msg.sender, msg.value) == true);
     }
 
     function verify(bytes32 _hash, uint8 _v, bytes32 _r, bytes32 _s) internal pure returns (address) {
@@ -612,9 +612,9 @@ contract SellableToken is Multivest {
 
     uint256 public etherPriceInUSD; //$753.25  75325000
 
-    mapping (address =&gt; uint256) public etherBalances;
+    mapping (address => uint256) public etherBalances;
 
-    mapping (address =&gt; bool) public whitelist;
+    mapping (address => bool) public whitelist;
 
     Tier[] public tiers;
 
@@ -641,10 +641,10 @@ contract SellableToken is Multivest {
         require(_token != address(0));
         token = ElyToken(_token);
 
-        require(_etherHolder != address(0) &amp;&amp; _compensationAddress != address(0));
+        require(_etherHolder != address(0) && _compensationAddress != address(0));
         etherHolder = _etherHolder;
         compensationAddress = _compensationAddress;
-        require((_maxTokenSupply == uint256(0)) || (_maxTokenSupply &lt;= token.maxSupply()));
+        require((_maxTokenSupply == uint256(0)) || (_maxTokenSupply <= token.maxSupply()));
 
         etherPriceInUSD = _etherPriceInUSD;
         maxTokenSupply = _maxTokenSupply;
@@ -653,7 +653,7 @@ contract SellableToken is Multivest {
     }
 
     function() public payable {
-        require(true == whitelist[msg.sender] &amp;&amp; buy(msg.sender, msg.value) == true);
+        require(true == whitelist[msg.sender] && buy(msg.sender, msg.value) == true);
     }
 
     function setTokenContract(address _token) public onlyOwner {
@@ -662,7 +662,7 @@ contract SellableToken is Multivest {
     }
 
     function isActive() public view returns (bool) {
-        if (maxTokenSupply &gt; uint256(0) &amp;&amp; soldTokens == maxTokenSupply) {
+        if (maxTokenSupply > uint256(0) && soldTokens == maxTokenSupply) {
             return false;
         }
 
@@ -670,7 +670,7 @@ contract SellableToken is Multivest {
     }
 
     function withinPeriod() public view returns (bool) {
-        return block.timestamp &gt;= startTime &amp;&amp; block.timestamp &lt;= endTime;
+        return block.timestamp >= startTime && block.timestamp <= endTime;
     }
 
     function setEtherHolder(address _etherHolder) public onlyOwner {
@@ -708,7 +708,7 @@ contract SellableToken is Multivest {
 
         uint256 newPrice = uint256(10 ** 23).div(parseInt(_price, 5));
 
-        require(newPrice &gt; 0);
+        require(newPrice > 0);
 
         etherPriceInUSD = parseInt(_price, 5);
 
@@ -723,16 +723,16 @@ contract SellableToken is Multivest {
         mintedAmount = mintedAmount.add(token.mint(compensationAddress, _tokenAmount.mul(5).div(1000)));
 
         soldTokens = soldTokens.add(_tokenAmount);
-        if (maxTokenSupply &gt; 0) {
-            require(maxTokenSupply &gt;= soldTokens);
+        if (maxTokenSupply > 0) {
+            require(maxTokenSupply >= soldTokens);
         }
 
         return _tokenAmount;
     }
 
     function transferEthersInternal() internal {
-        if (collectedUSD &gt;= softCap) {
-            if (compensatedAmount &lt; compensationAmount) {
+        if (collectedUSD >= softCap) {
+            if (compensatedAmount < compensationAmount) {
                 uint256 amount = uint256(1 ether).mul(compensationAmount.sub(compensatedAmount)).div(etherPriceInUSD);
                 compensatedAmount = compensationAmount;
                 compensationAddress.transfer(amount);
@@ -746,8 +746,8 @@ contract SellableToken is Multivest {
         bytes memory bresult = bytes(_a);
         uint mintt = 0;
         bool decimals = false;
-        for (uint i = 0; i &lt; bresult.length; i++) {
-            if ((bresult[i] &gt;= 48) &amp;&amp; (bresult[i] &lt;= 57)) {
+        for (uint i = 0; i < bresult.length; i++) {
+            if ((bresult[i] >= 48) && (bresult[i] <= 57)) {
                 if (decimals) {
                     if (_b == 0) break;
                     else _b--;
@@ -756,7 +756,7 @@ contract SellableToken is Multivest {
                 mintt += uint(bresult[i]) - 48;
             } else if (bresult[i] == 46) decimals = true;
         }
-        if (_b &gt; 0) mintt *= 10 ** _b;
+        if (_b > 0) mintt *= 10 ** _b;
         return mintt;
     }
 
@@ -776,8 +776,8 @@ contract ICO is SellableToken {
 
     uint256 public lockupThreshold = 10000000000;
 
-    mapping(address =&gt; uint256) public icoBalances;
-    mapping(address =&gt; uint256) public icoLockedBalance;
+    mapping(address => uint256) public icoBalances;
+    mapping(address => uint256) public icoLockedBalance;
 
     struct Stats {
         uint256 soldTokens;
@@ -848,7 +848,7 @@ contract ICO is SellableToken {
     }
 
     function changePreICODates(uint256 _start, uint256 _end) public onlyOwner {
-        if (_start != 0 &amp;&amp; _start &lt; _end) {
+        if (_start != 0 && _start < _end) {
             Tier storage preICOTier = tiers[PRE_ICO_TIER];
             preICOTier.startTime = _start;
             preICOTier.endTime = _end;
@@ -856,7 +856,7 @@ contract ICO is SellableToken {
     }
 
     function changeICODates(uint8 _tierId, uint256 _start, uint256 _end) public onlyOwner {
-        if (_start != 0 &amp;&amp; _start &lt; _end &amp;&amp; _tierId &lt; tiers.length) {
+        if (_start != 0 && _start < _end && _tierId < tiers.length) {
             Tier storage icoTier = tiers[_tierId];
             icoTier.startTime = _start;
             icoTier.endTime = _end;
@@ -869,11 +869,11 @@ contract ICO is SellableToken {
     }
 
     function burnUnsoldTokens() public onlyOwner {
-        if (block.timestamp &gt;= tiers[PRE_ICO_TIER].endTime &amp;&amp; preICOStats.burned == false) {
+        if (block.timestamp >= tiers[PRE_ICO_TIER].endTime && preICOStats.burned == false) {
             token.burnTokens(tiers[PRE_ICO_TIER].maxAmount.sub(preICOStats.soldTokens));
             preICOStats.burned = true;
         }
-        if (block.timestamp &gt;= endTime &amp;&amp; maxTokenSupply &gt; soldTokens) {
+        if (block.timestamp >= endTime && maxTokenSupply > soldTokens) {
             token.burnTokens(maxTokenSupply.sub(soldTokens));
             maxTokenSupply = soldTokens;
         }
@@ -890,8 +890,8 @@ contract ICO is SellableToken {
     }
 
     function getActiveTier() public view returns (uint8) {
-        for (uint8 i = 0; i &lt; tiers.length; i++) {
-            if (block.timestamp &gt;= tiers[i].startTime &amp;&amp; block.timestamp &lt;= tiers[i].endTime) {
+        for (uint8 i = 0; i < tiers.length; i++) {
+            if (block.timestamp >= tiers[i].startTime && block.timestamp <= tiers[i].endTime) {
                 return i;
             }
         }
@@ -906,10 +906,10 @@ contract ICO is SellableToken {
         uint8 activeTier = getActiveTier();
 
         if (activeTier == tiers.length) {
-            if (endTime &lt; block.timestamp) {
+            if (endTime < block.timestamp) {
                 return (0, 0);
             }
-            if (startTime &gt; block.timestamp) {
+            if (startTime > block.timestamp) {
                 activeTier = PRE_ICO_TIER;
             }
         }
@@ -917,12 +917,12 @@ contract ICO is SellableToken {
         if (_isEther) {
             currencyAmount = _value.mul(etherPriceInUSD);
             tokenAmount = currencyAmount.div(tiers[activeTier].price);
-            if (currencyAmount &lt; minPurchase.mul(1 ether)) {
+            if (currencyAmount < minPurchase.mul(1 ether)) {
                 return (0, 0);
             }
             currencyAmount = currencyAmount.div(1 ether);
         } else {
-            if (_value &lt; minPurchase) {
+            if (_value < minPurchase) {
                 return (0, 0);
             }
             currencyAmount = uint256(1 ether).mul(_value).div(etherPriceInUSD);
@@ -934,15 +934,15 @@ contract ICO is SellableToken {
         uint8 activeTier = getActiveTier();
 
         if (activeTier == tiers.length) {
-            if (endTime &lt; block.timestamp) {
+            if (endTime < block.timestamp) {
                 return 0;
             }
-            if (startTime &gt; block.timestamp) {
+            if (startTime > block.timestamp) {
                 activeTier = PRE_ICO_TIER;
             }
         }
 
-        if (_amount == 0 || _amount.mul(tiers[activeTier].price) &lt; minPurchase) {
+        if (_amount == 0 || _amount.mul(tiers[activeTier].price) < minPurchase) {
             return 0;
         }
 
@@ -979,7 +979,7 @@ contract ICO is SellableToken {
         uint256 usd;
         (tokensPerEth, usd) = calculateTokensAmount(1 ether, true);
         uint256 j = 0;
-        for (uint256 i = 0; i &lt; tiers.length; i++) {
+        for (uint256 i = 0; i < tiers.length; i++) {
             tiersData[j++] = uint256(tiers[i].maxAmount);
             tiersData[j++] = uint256(tiers[i].price);
             tiersData[j++] = uint256(tiers[i].startTime);
@@ -988,7 +988,7 @@ contract ICO is SellableToken {
     }
 
     function isRefundPossible() public view returns (bool) {
-        if (getActiveTier() != tiers.length || block.timestamp &lt; startTime || collectedUSD &gt;= softCap) {
+        if (getActiveTier() != tiers.length || block.timestamp < startTime || collectedUSD >= softCap) {
             return false;
         }
         return true;
@@ -1004,7 +1004,7 @@ contract ICO is SellableToken {
         if (burnedAmount == 0) {
             return false;
         }
-        if (icoLockedBalance[msg.sender] &gt; 0) {
+        if (icoLockedBalance[msg.sender] > 0) {
             lockupContract.decreaseAfterBurn(msg.sender, icoLockedBalance[msg.sender]);
         }
         Refund(msg.sender, balance, burnedAmount);
@@ -1028,9 +1028,9 @@ contract ICO is SellableToken {
         preICOStats.collectedEthers = preICOStats.collectedEthers.add(_ethAmount);
         preICOStats.collectedUSD = preICOStats.collectedUSD.add(_usdAmount);
 
-        require(tiers[PRE_ICO_TIER].maxAmount &gt;= preICOStats.soldTokens);
+        require(tiers[PRE_ICO_TIER].maxAmount >= preICOStats.soldTokens);
 
-        if (preICOStats.collectedUSD &lt;= compensationAmount) {
+        if (preICOStats.collectedUSD <= compensationAmount) {
             compensatedAmount = compensatedAmount.add(_usdAmount);
             compensationAddress.transfer(this.balance);
         }
@@ -1052,9 +1052,9 @@ contract ICO is SellableToken {
         uint256 mintedAmount;
 
         (tokenAmount, usdAmount) = calculateTokensAmount(_value, true);
-        require(usdAmount &gt; 0 &amp;&amp; tokenAmount &gt; 0);
+        require(usdAmount > 0 && tokenAmount > 0);
 
-        if (usdAmount &gt;= lockupThreshold) {
+        if (usdAmount >= lockupThreshold) {
             lockupContract.logLargeContribution(_address, tokenAmount);
             icoLockedBalance[_address] = icoLockedBalance[_address].add(tokenAmount);
         }
@@ -1067,7 +1067,7 @@ contract ICO is SellableToken {
             collectedEthers = collectedEthers.add(_value);
             collectedUSD = collectedUSD.add(usdAmount);
 
-            require(hardCap &gt;= collectedUSD);
+            require(hardCap >= collectedUSD);
 
             etherBalances[_address] = etherBalances[_address].add(_value);
             icoBalances[_address] = icoBalances[_address].add(tokenAmount);
@@ -1099,20 +1099,20 @@ contract PrivateSale is SellableToken {
         _etherPriceInUSD,
         _maxTokenSupply
     ) {
-        require(_startTime &gt; 0 &amp;&amp; _endTime &gt; _startTime);
+        require(_startTime > 0 && _endTime > _startTime);
         startTime = _startTime;
         endTime = _endTime;
     }
 
     function changeSalePeriod(uint256 _start, uint256 _end) public onlyOwner {
-        if (_start != 0 &amp;&amp; _start &lt; _end) {
+        if (_start != 0 && _start < _end) {
             startTime = _start;
             endTime = _end;
         }
     }
 
     function burnUnsoldTokens() public onlyOwner {
-        if (block.timestamp &gt;= endTime &amp;&amp; maxTokenSupply &gt; soldTokens) {
+        if (block.timestamp >= endTime && maxTokenSupply > soldTokens) {
             token.burnTokens(maxTokenSupply.sub(soldTokens));
             maxTokenSupply = soldTokens;
         }
@@ -1124,7 +1124,7 @@ contract PrivateSale is SellableToken {
         }
 
         usdAmount = _value.mul(etherPriceInUSD);
-        if (usdAmount &lt; minPurchase.mul(1 ether)) {
+        if (usdAmount < minPurchase.mul(1 ether)) {
             return (0, 0);
         }
         tokenAmount = usdAmount.div(price);
@@ -1133,7 +1133,7 @@ contract PrivateSale is SellableToken {
     }
 
     function calculateEthersAmount(uint256 _amount) public view returns (uint256 ethersAmount) {
-        if (_amount == 0 || _amount.mul(price) &lt; minPurchase.mul(1 ether)) {
+        if (_amount == 0 || _amount.mul(price) < minPurchase.mul(1 ether)) {
             return 0;
         }
 
@@ -1171,7 +1171,7 @@ contract PrivateSale is SellableToken {
         if (_value == 0) {
             return false;
         }
-        require(_address != address(0) &amp;&amp; withinPeriod());
+        require(_address != address(0) && withinPeriod());
 
         uint256 tokenAmount;
         uint256 usdAmount;
@@ -1180,7 +1180,7 @@ contract PrivateSale is SellableToken {
 
         uint256 mintedAmount = token.mint(_address, tokenAmount);
         soldTokens = soldTokens.add(tokenAmount);
-        require(mintedAmount == tokenAmount &amp;&amp; maxTokenSupply &gt;= soldTokens &amp;&amp; usdAmount &gt; 0 &amp;&amp; mintedAmount &gt; 0);
+        require(mintedAmount == tokenAmount && maxTokenSupply >= soldTokens && usdAmount > 0 && mintedAmount > 0);
 
         collectedEthers = collectedEthers.add(_value);
         collectedUSD = collectedUSD.add(usdAmount);
@@ -1204,14 +1204,14 @@ contract Referral is Multivest {
 
     address public tokenHolder;
 
-    mapping (address =&gt; bool) public claimed;
+    mapping (address => bool) public claimed;
 
     /* constructor */
     function Referral(
         address _token,
         address _tokenHolder
     ) public Multivest() {
-        require(_token != address(0) &amp;&amp; _tokenHolder != address(0));
+        require(_token != address(0) && _tokenHolder != address(0));
         token = ElyToken(_token);
         tokenHolder = _tokenHolder;
     }
@@ -1242,10 +1242,10 @@ contract Referral is Multivest {
     ) public onlyAllowedMultivests(verify(keccak256(msg.sender, _amount), _v, _r, _s)) {
         _amount = _amount.mul(10 ** DECIMALS);
         require(
-            claimed[_address] == false &amp;&amp;
-            _address == msg.sender &amp;&amp;
-            _amount &gt; 0 &amp;&amp;
-            _amount &lt;= totalSupply &amp;&amp;
+            claimed[_address] == false &&
+            _address == msg.sender &&
+            _amount > 0 &&
+            _amount <= totalSupply &&
             _amount == token.mint(_address, _amount)
         );
 
@@ -1255,7 +1255,7 @@ contract Referral is Multivest {
     }
 
     function claimUnsoldTokens() public {
-        if (msg.sender == tokenHolder &amp;&amp; totalSupply &gt; 0) {
+        if (msg.sender == tokenHolder && totalSupply > 0) {
             require(totalSupply == token.mint(msg.sender, totalSupply));
             totalSupply = 0;
         }
@@ -1279,15 +1279,15 @@ contract LockupContract is Ownable {
     uint256 public lockPeriod = 2 weeks;
     uint256 public contributionLockPeriod = uint256(1 years).div(2);
 
-    mapping (address =&gt; uint256) public lockedAmount;
-    mapping (address =&gt; uint256) public lockedContributions;
+    mapping (address => uint256) public lockedAmount;
+    mapping (address => uint256) public lockedContributions;
 
     function LockupContract(
         address _token,
         address _ico,
         address _referral
     ) public {
-        require(_token != address(0) &amp;&amp; _ico != address(0) &amp;&amp; _referral != address(0));
+        require(_token != address(0) && _ico != address(0) && _referral != address(0));
         token = ElyToken(_token);
         ico = SellableToken(_ico);
         referral = Referral(_referral);
@@ -1335,10 +1335,10 @@ contract LockupContract is Ownable {
     }
 
     function isTransferAllowed(address _address, uint256 _value) public view returns (bool) {
-        if (ico.endTime().add(lockPeriod) &lt; block.timestamp) {
+        if (ico.endTime().add(lockPeriod) < block.timestamp) {
             return checkLargeContributionsLock(_address, _value);
         }
-        if (token.balanceOf(_address).sub(lockedAmount[_address]) &gt;= _value) {
+        if (token.balanceOf(_address).sub(lockedAmount[_address]) >= _value) {
             return checkLargeContributionsLock(_address, _value);
         }
 
@@ -1346,10 +1346,10 @@ contract LockupContract is Ownable {
     }
 
     function checkLargeContributionsLock(address _address, uint256 _value) public view returns (bool) {
-        if (ico.endTime().add(contributionLockPeriod) &lt; block.timestamp) {
+        if (ico.endTime().add(contributionLockPeriod) < block.timestamp) {
             return true;
         }
-        if (token.balanceOf(_address).sub(lockedContributions[_address]) &gt;= _value) {
+        if (token.balanceOf(_address).sub(lockedContributions[_address]) >= _value) {
             return true;
         }
 
@@ -1380,8 +1380,8 @@ contract TokenVesting is Ownable {
 
   bool public revocable;
 
-  mapping (address =&gt; uint256) public released;
-  mapping (address =&gt; bool) public revoked;
+  mapping (address => uint256) public released;
+  mapping (address => bool) public revoked;
 
   /**
    * @dev Creates a vesting contract that vests its balance of any ERC20 token to the
@@ -1394,7 +1394,7 @@ contract TokenVesting is Ownable {
    */
   function TokenVesting(address _beneficiary, uint256 _start, uint256 _cliff, uint256 _duration, bool _revocable) public {
     require(_beneficiary != address(0));
-    require(_cliff &lt;= _duration);
+    require(_cliff <= _duration);
 
     beneficiary = _beneficiary;
     revocable = _revocable;
@@ -1410,7 +1410,7 @@ contract TokenVesting is Ownable {
   function release(ERC20Basic token) public {
     uint256 unreleased = releasableAmount(token);
 
-    require(unreleased &gt; 0);
+    require(unreleased > 0);
 
     released[token] = released[token].add(unreleased);
 
@@ -1456,9 +1456,9 @@ contract TokenVesting is Ownable {
     uint256 currentBalance = token.balanceOf(this);
     uint256 totalBalance = currentBalance.add(released[token]);
 
-    if (now &lt; cliff) {
+    if (now < cliff) {
       return 0;
-    } else if (now &gt;= start.add(duration) || revoked[token]) {
+    } else if (now >= start.add(duration) || revoked[token]) {
       return totalBalance;
     } else {
       return totalBalance.mul(now.sub(start)).div(duration);
@@ -1485,9 +1485,9 @@ contract PeriodicTokenVesting is TokenVesting {
         uint256 currentBalance = token.balanceOf(this);
         uint256 totalBalance = currentBalance.add(released[token]);
 
-        if (now &lt; cliff) {
+        if (now < cliff) {
             return 0;
-        } else if (now &gt;= start.add(duration * periods) || revoked[token]) {
+        } else if (now >= start.add(duration * periods) || revoked[token]) {
             return totalBalance;
         } else {
 
@@ -1495,7 +1495,7 @@ contract PeriodicTokenVesting is TokenVesting {
 
             uint256 periodsOver = now.sub(start).div(duration) + 1;
 
-            if (periodsOver &gt;= periods) {
+            if (periodsOver >= periods) {
                 return totalBalance;
             }
 
@@ -1530,7 +1530,7 @@ contract ElyAllocation is Ownable {
     }
 
     function vestingMint(PeriodicTokenVesting _vesting, MintingERC20 _token, uint256 _amount) public onlyOwner {
-        require(_amount &gt; 0 &amp;&amp; _token.mint(address(_vesting), _amount) == _amount);
+        require(_amount > 0 && _token.mint(address(_vesting), _amount) == _amount);
     }
 
     function createVesting(

@@ -42,7 +42,7 @@ contract StandardToken is Token {
     mapping (address => mapping (address => uint256)) allowed;
 
     function transfer(address _to, uint256 _value) returns (bool success) {
-        if (balances[msg.sender] >= _value &amp;&amp; _value > 0) {
+        if (balances[msg.sender] >= _value && _value > 0) {
             balances[msg.sender] -= _value;
             balances[_to] += _value;
             Transfer(msg.sender, _to, _value);
@@ -52,7 +52,7 @@ contract StandardToken is Token {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
-        if (balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value &amp;&amp; _value > 0) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0) {
             balances[_to] += _value;
             balances[_from] -= _value;
             allowed[_from][msg.sender] -= _value;

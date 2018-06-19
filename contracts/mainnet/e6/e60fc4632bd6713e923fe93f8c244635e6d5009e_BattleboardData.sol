@@ -203,7 +203,7 @@ contract BattleboardData is IBattleboardData  {
         function createTile(uint16 _battleboardId, uint8 _tileType, uint8 _value, uint8 _position, uint32 _hp, uint16 _petPower, uint64 _angelId, uint64 _petId, address _owner, uint8 _team) onlySERAPHIM external  returns (uint8)   {
       //main function to create a tile and add it to the board. 
         if ((_battleboardId <0) || (_battleboardId > totalBattleboards)) {revert();}
-        if ((angelsOnBattleboards[_angelId] == true) &amp;&amp; (_angelId != 0)) {revert();}
+        if ((angelsOnBattleboards[_angelId] == true) && (_angelId != 0)) {revert();}
         angelsOnBattleboards[_angelId] = true;
         Tile memory tile ;
         tile.tileType = _tileType; 
@@ -245,8 +245,8 @@ contract BattleboardData is IBattleboardData  {
         
         //Can&#39;t add a team if the board is live, or if the board is already full of teams. 
          if (Battleboards[battleboardId].isLive == true) {revert();}
-         if ((Battleboards[battleboardId].prize == 0) &amp;&amp;(Battleboards[battleboardId].numTeams == maxFreeTeams)) {revert();}
-         if ((Battleboards[battleboardId].prize != 0) &amp;&amp;(Battleboards[battleboardId].numTeams == maxPaidTeams)) {revert();}
+         if ((Battleboards[battleboardId].prize == 0) &&(Battleboards[battleboardId].numTeams == maxFreeTeams)) {revert();}
+         if ((Battleboards[battleboardId].prize != 0) &&(Battleboards[battleboardId].numTeams == maxPaidTeams)) {revert();}
          
          //only one team per address can be on the board. 
          for (uint i =0; i<Battleboards[battleboardId].numTeams; i++) {
@@ -264,8 +264,8 @@ contract BattleboardData is IBattleboardData  {
          Battleboards[battleboardId].team2.push(owner);
          
          //if the board is now full, then go ahead and make it live. 
-         if ((Battleboards[battleboardId].numTeams1 == 3) &amp;&amp; (Battleboards[battleboardId].numTeams2 ==3)) {Battleboards[battleboardId].isLive = true;}
-        if ((Battleboards[battleboardId].prize != 0) &amp;&amp;(Battleboards[battleboardId].numTeams == maxPaidTeams)) {Battleboards[battleboardId].isLive = true;}
+         if ((Battleboards[battleboardId].numTeams1 == 3) && (Battleboards[battleboardId].numTeams2 ==3)) {Battleboards[battleboardId].isLive = true;}
+        if ((Battleboards[battleboardId].prize != 0) &&(Battleboards[battleboardId].numTeams == maxPaidTeams)) {Battleboards[battleboardId].isLive = true;}
          }
           
      }

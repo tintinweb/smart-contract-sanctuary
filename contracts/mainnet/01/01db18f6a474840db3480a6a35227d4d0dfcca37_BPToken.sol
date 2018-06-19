@@ -42,7 +42,7 @@ contract SafeMath {
 
     function safeAdd(uint a, uint b) internal returns (uint) {
         uint c = a + b;
-        assert(c >= a &amp;&amp; c >= b);
+        assert(c >= a && c >= b);
         return c;
     }
 
@@ -262,7 +262,7 @@ contract BPToken is SafeMath, Owned, ERC20 {
         if (safeSub(balances[msg.sender],value) < shouldHadBalance(msg.sender)) throw;
 
         uint256 senderBalance = balances[msg.sender];
-        if (senderBalance >= value &amp;&amp; value > 0) {
+        if (senderBalance >= value && value > 0) {
             senderBalance = safeSub(senderBalance, value);
             balances[msg.sender] = senderBalance;
             balances[to] = safeAdd(balances[to], value);
@@ -284,8 +284,8 @@ contract BPToken is SafeMath, Owned, ERC20 {
     function transferFrom(address from, address to, uint256 value) returns (bool) {
         // Abort if not in Success state.
         // protect against wrapping uints
-        if (balances[from] >= value &amp;&amp;
-        allowed[from][msg.sender] >= value &amp;&amp;
+        if (balances[from] >= value &&
+        allowed[from][msg.sender] >= value &&
         safeAdd(balances[to], value) > balances[to])
         {
             balances[to] = safeAdd(balances[to], value);

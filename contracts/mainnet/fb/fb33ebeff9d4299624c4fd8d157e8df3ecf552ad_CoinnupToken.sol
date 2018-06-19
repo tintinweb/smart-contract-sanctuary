@@ -309,8 +309,8 @@ contract CoinnupToken is StandardToken, Ownable {
     require(maxSupply > 0);
     require(founder != address(0));
     require(rate > 0);
-    require(bonus >= 0 &amp;&amp; bonus <= 100); // in percentage
-    require(allowedToBeSold > 0 &amp;&amp; allowedToBeSold < maxSupply);
+    require(bonus >= 0 && bonus <= 100); // in percentage
+    require(allowedToBeSold > 0 && allowedToBeSold < maxSupply);
 
     require(softCap > 0);
 
@@ -346,7 +346,7 @@ contract CoinnupToken is StandardToken, Ownable {
     require(totalSupply_.add(amount) <= maxSupply); // if we have enough tokens to be minted
 
     require(
-      rounds[_currentRound].minPurchase <= amount_without_bonus &amp;&amp;
+      rounds[_currentRound].minPurchase <= amount_without_bonus &&
       rounds[_currentRound].maxPurchase >= amount_without_bonus
     );
 
@@ -372,7 +372,7 @@ contract CoinnupToken is StandardToken, Ownable {
   function mintForInvestor(address _to, uint256 _tokens) public onlyOwner onlyWhileOpen {
     uint8 _round = _getCurrentRound(now);
 
-    require(_round >= 0 &amp;&amp; _round <= 5);
+    require(_round >= 0 && _round <= 5);
     require(_to != address(0)); // handling incorrect values from system in addresses
     require(_tokens >= 0); // handling incorrect values from system in tokens calculation
     require(rounds[_round].allocatedCoins >= _tokens + rounds[_round].soldCoins);
@@ -448,14 +448,14 @@ contract CoinnupToken is StandardToken, Ownable {
    * @return bool - Changed or not
    */
   function setBonus(uint256 _bonus) onlyOwner public {
-    require(_bonus >= 0 &amp;&amp; _bonus <= 100); //%
+    require(_bonus >= 0 && _bonus <= 100); //%
     bonus = _bonus;
   }
 
   /// @dev gets number of current round
   function _getCurrentRound(uint256 _time) public view returns (uint8) {
     for (uint8 i = 0; i < 6; i++) {
-      if (rounds[i].openingTime < _time &amp;&amp; rounds[i].closingTime > _time) {
+      if (rounds[i].openingTime < _time && rounds[i].closingTime > _time) {
         return i;
       }
     }
@@ -499,7 +499,7 @@ contract CoinnupToken is StandardToken, Ownable {
 
   modifier onlyWhileOpen {
     uint8 _round = _getCurrentRound(now);
-    require(_round >= 0 &amp;&amp; _round <= 5); // we have 6 rounds, other values are invalid
+    require(_round >= 0 && _round <= 5); // we have 6 rounds, other values are invalid
     _;
   }
 

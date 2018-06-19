@@ -148,7 +148,7 @@ contract CrowdSaleMacroansyA is SafeMath {
 
       if(msg.sender != owner){
 
-        require(crowdsaleClosed == false &amp;&amp; crowdsaleStart == true);
+        require(crowdsaleClosed == false && crowdsaleStart == true);
 
         token t = token( _getTknAddr() );
 
@@ -175,7 +175,7 @@ contract CrowdSaleMacroansyA is SafeMath {
 //
     function viewCrowdSaleLive(bool show, bool showFundsInWei) public view returns(uint fundingGoal_, uint fundRaised, uint fundWithDrawn, uint timeRemainingInMin, uint tokenPriceInWei, bool fundingGoalReached_ ){
         
-        if(show == true &amp;&amp; crowdsaleStart == true){
+        if(show == true && crowdsaleStart == true){
             
             if( deadline >= now ) timeRemainingInMin = safeSub( deadline, now) / 60;
             if( now > deadline ) timeRemainingInMin == 0;
@@ -196,7 +196,7 @@ contract CrowdSaleMacroansyA is SafeMath {
 //_______________________________________________
 //
     function viewMyContribution(bool show) public view returns(uint yourContributionInWEI){
-        if(show == true &amp;&amp; crowdsaleStart == true){
+        if(show == true && crowdsaleStart == true){
 
             return(balanceOf[msg.sender]);
         }
@@ -230,7 +230,7 @@ contract CrowdSaleMacroansyA is SafeMath {
      */
     function safeWithdrawal() afterDeadline public {
 
-        if ( (!fundingGoalReached || unlockFundersBalance == true) &amp;&amp; msg.sender != owner) {
+        if ( (!fundingGoalReached || unlockFundersBalance == true) && msg.sender != owner) {
             uint amount = balanceOf[msg.sender];
             balanceOf[msg.sender] = 0;
             if (amount > 0) {
@@ -252,7 +252,7 @@ contract CrowdSaleMacroansyA is SafeMath {
     */
     function withdrawFund(uint withdrawAmount, bool withdrawTotalAmountBalance) onlyOwner public returns(bool success) {
       
-        if (fundingGoalReached &amp;&amp; beneficiaryFunds == msg.sender &amp;&amp; unlockFundersBalance == false ) {
+        if (fundingGoalReached && beneficiaryFunds == msg.sender && unlockFundersBalance == false ) {
                       
             if( withdrawTotalAmountBalance == true ) withdrawAmount = safeSub( amountRaised, amountWithdrawn);
             require(this.balance >= withdrawAmount );
@@ -296,7 +296,7 @@ contract CrowdSaleMacroansyA is SafeMath {
                 //
                 function endOfRewardsConfirmed(bool isEndNow) public onlyOwner{
 
-                    if(isEndOk == true &amp;&amp; isEndNow == true) selfdestruct(owner);
+                    if(isEndOk == true && isEndNow == true) selfdestruct(owner);
                 }
 //________________________________________________
 }

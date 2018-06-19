@@ -126,11 +126,11 @@ contract ERC20 {
 // Ethen Decentralized Exchange Contract
 // https://ethen.io/
 contract Ethen is Pausable {
-    // Trade &amp; order types
+    // Trade & order types
     uint public constant BUY = 1; // order type BID
     uint public constant SELL = 0; // order type ASK
 
-    // Percent multiplier in makeFee &amp; takeFee
+    // Percent multiplier in makeFee & takeFee
     uint public FEE_MUL = 1000000;
 
     // x1000000, 0.5%
@@ -754,7 +754,7 @@ contract Ethen is Pausable {
         }
 
         if (shouldHave <= spendable) {
-            // everyone have needed amount of tokens &amp; ether
+            // everyone have needed amount of tokens & ether
             _totalPrice = shouldHave;
             return;
         }

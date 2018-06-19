@@ -106,7 +106,7 @@ contract NDUXBase is BasicToken, Ownable {
   }
 
   function mint(address to, uint amount) internal returns(bool) {
-    require(to != address(0) &amp;&amp; amount > 0);
+    require(to != address(0) && amount > 0);
     totalSupply_ = totalSupply_.add(amount);
     balances[to] = balances[to].add(amount);
     emit Transfer(address(0), to, amount);
@@ -124,7 +124,7 @@ contract NDUXBase is BasicToken, Ownable {
   }
 
   function burn(address from, uint amount) public onlyOwner returns(bool) {
-    require(from != address(0) &amp;&amp; amount > 0);
+    require(from != address(0) && amount > 0);
     balances[from] = balances[from].sub(amount);
     totalSupply_ = totalSupply_.sub(amount);
     emit Transfer(from, address(0), amount);
@@ -224,7 +224,7 @@ contract NDUXB is NDUXBase, TxFeatures {
   function airdrop(address[] users, uint minAge, uint percent, uint maxToSend) public onlyOwner returns(uint) {
     require(users.length > 0);
     require(balanceOf(msg.sender) >= maxToSend);
-    require(percent > 0 &amp;&amp; percent < 10);
+    require(percent > 0 && percent < 10);
 
     uint total = 0;
 

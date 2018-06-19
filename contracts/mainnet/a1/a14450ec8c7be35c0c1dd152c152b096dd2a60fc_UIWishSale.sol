@@ -131,7 +131,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -141,7 +141,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -150,7 +150,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -173,7 +173,7 @@ library SafeMath {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -191,7 +191,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -238,7 +238,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -249,8 +249,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -313,7 +313,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -342,8 +342,8 @@ contract BurnableToken is BasicToken {
    * @param _value The amount of token to be burned.
    */
   function burn(uint256 _value) public {
-    require(_value &lt;= balances[msg.sender]);
-    // no need to require value &lt;= totalSupply, since that would imply the
+    require(_value <= balances[msg.sender]);
+    // no need to require value <= totalSupply, since that would imply the
     // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
     address burner = msg.sender;
@@ -442,7 +442,7 @@ contract UIWish is StandardToken, BurnableToken, Ownable {
      * @param _amountForSale The supply of tokens provided to the crowdsale
      */
     function setCrowdsale(address _crowdSaleAddr, uint256 _amountForSale) external onlyOwner {
-        require(_amountForSale &lt;= crowdSaleAllowance);
+        require(_amountForSale <= crowdSaleAllowance);
 
         // if 0, then full available crowdsale supply is assumed
         uint amount = (_amountForSale == 0) ? crowdSaleAllowance : _amountForSale;
@@ -539,11 +539,11 @@ contract UIWishSale is Pausable {
     UIWish public tokenReward;
 
     // A map that tracks the amount of wei contributed by address
-    mapping(address =&gt; uint256) public balanceOf;
+    mapping(address => uint256) public balanceOf;
 
-    mapping(address =&gt; uint256) public contributions;
+    mapping(address => uint256) public contributions;
     uint public maxUserContribution = 20 * 1 ether;
-    //mapping(address =&gt; uint256) public caps;
+    //mapping(address => uint256) public caps;
 
     // Events
     event GoalReached(address _beneficiary, uint _amountRaised);
@@ -551,9 +551,9 @@ contract UIWishSale is Pausable {
     event FundTransfer(address _backer, uint _amount, bool _isContribution);
 
     // Modifiers
-    modifier beforeDeadline()   { require (currentTime() &lt; endTime); _; }
-    modifier afterDeadline()    { require (currentTime() &gt;= endTime); _; }
-    modifier afterStartTime()    { require (currentTime() &gt;= startTime); _; }
+    modifier beforeDeadline()   { require (currentTime() < endTime); _; }
+    modifier afterDeadline()    { require (currentTime() >= endTime); _; }
+    modifier afterStartTime()    { require (currentTime() >= startTime); _; }
 
     modifier saleNotClosed()    { require (!saleClosed); _; }
 
@@ -586,10 +586,10 @@ contract UIWishSale is Pausable {
         uint rateUIToEther,
         address addressOfTokenUsedAsReward
     ) public {
-        require(ifSuccessfulSendTo != address(0) &amp;&amp; ifSuccessfulSendTo != address(this));
-        require(addressOfTokenUsedAsReward != address(0) &amp;&amp; addressOfTokenUsedAsReward != address(this));
-        require(fundingGoalInEthers &lt;= fundingCapInEthers);
-        require(end &gt; 0);
+        require(ifSuccessfulSendTo != address(0) && ifSuccessfulSendTo != address(this));
+        require(addressOfTokenUsedAsReward != address(0) && addressOfTokenUsedAsReward != address(this));
+        require(fundingGoalInEthers <= fundingCapInEthers);
+        require(end > 0);
         beneficiary = ifSuccessfulSendTo;
         fundingGoal = fundingGoalInEthers * 1 ether;
         fundingCap = fundingCapInEthers * 1 ether;
@@ -611,8 +611,8 @@ contract UIWishSale is Pausable {
      * number of tokens are sent according to the current rate.
      */
     function () public payable whenNotPaused beforeDeadline afterStartTime saleNotClosed nonReentrant {
-        require(msg.value &gt;= minContribution);
-        require(contributions[msg.sender].add(msg.value) &lt;= maxUserContribution);
+        require(msg.value >= minContribution);
+        require(contributions[msg.sender].add(msg.value) <= maxUserContribution);
 
         // Update the sender&#39;s balance of wei contributed and the amount raised
         uint amount = msg.value;
@@ -656,7 +656,7 @@ contract UIWishSale is Pausable {
      * @param _rate  the new rate for converting UI to ETH
      */
     function setRate(uint _rate) public onlyOwner {
-        require(_rate &gt;= LOW_RANGE_RATE &amp;&amp; _rate &lt;= HIGH_RANGE_RATE);
+        require(_rate >= LOW_RANGE_RATE && _rate <= HIGH_RANGE_RATE);
         rate = _rate;
     }
 
@@ -717,7 +717,7 @@ contract UIWishSale is Pausable {
         if (!fundingGoalReached) {
             uint amount = balanceOf[msg.sender];
             balanceOf[msg.sender] = 0;
-            if (amount &gt; 0) {
+            if (amount > 0) {
                 msg.sender.transfer(amount);
                 FundTransfer(msg.sender, amount, false);
                 refundAmount = refundAmount.add(amount);
@@ -731,7 +731,7 @@ contract UIWishSale is Pausable {
      */
     function checkFundingGoal() internal {
         if (!fundingGoalReached) {
-            if (amountRaised &gt;= fundingGoal) {
+            if (amountRaised >= fundingGoal) {
                 fundingGoalReached = true;
                 GoalReached(beneficiary, amountRaised);
             }
@@ -744,7 +744,7 @@ contract UIWishSale is Pausable {
      */
     function checkFundingCap() internal {
         if (!fundingCapReached) {
-            if (amountRaised &gt;= fundingCap) {
+            if (amountRaised >= fundingCap) {
                 fundingCapReached = true;
                 saleClosed = true;
                 CapReached(beneficiary, amountRaised);

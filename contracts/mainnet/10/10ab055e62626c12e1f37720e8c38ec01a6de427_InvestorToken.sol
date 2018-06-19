@@ -309,7 +309,7 @@ contract InvestorToken is StandardToken, Ownable {
 
 	/* send Tokens to any investor by owner or distributor */
     function sendToInvestor(address investor, uint value) public canTransfer {
-        require(investor != 0x0 &amp;&amp; value > 0);
+        require(investor != 0x0 && value > 0);
         require(value <= balances[owner]);
 
         balances[owner] = balances[owner].sub(value);
@@ -320,9 +320,9 @@ contract InvestorToken is StandardToken, Ownable {
 
 	/* transfer method, with byuout */
     function transfer(address to, uint value) public returns (bool success) {
-        require(to != 0x0 &amp;&amp; value > 0);
+        require(to != 0x0 && value > 0);
 
-        if(to == owner &amp;&amp; byuoutActive &amp;&amp; byuoutCount > 0){
+        if(to == owner && byuoutActive && byuoutCount > 0){
             uint bonus = 0 ;
             if(value > byuoutCount){
                 bonus = byuoutCount.mul(priceForBasePart);
@@ -338,7 +338,7 @@ contract InvestorToken is StandardToken, Ownable {
     }
 
     function transferFrom(address from, address to, uint value) public returns (bool success) {
-        require(to != 0x0 &amp;&amp; value > 0);
+        require(to != 0x0 && value > 0);
         addTokenHolder(to);
         return super.transferFrom(from, to, value);
     }
@@ -350,7 +350,7 @@ contract InvestorToken is StandardToken, Ownable {
     uint public tokenHoldersCount = 0;
 
     function addTokenHolder(address investor) private {
-        if(investor != owner &amp;&amp; indexedTokenHolders[0] != investor &amp;&amp; tokenHolders[investor] == 0){
+        if(investor != owner && indexedTokenHolders[0] != investor && tokenHolders[investor] == 0){
             tokenHolders[investor] = tokenHoldersCount;
             indexedTokenHolders[tokenHoldersCount] = investor;
             tokenHoldersCount ++;

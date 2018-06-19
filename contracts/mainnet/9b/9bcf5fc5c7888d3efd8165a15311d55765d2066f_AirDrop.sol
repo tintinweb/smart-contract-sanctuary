@@ -60,7 +60,7 @@ contract AirDrop
     {
         uint256 i = 0;
         ERC20Interface T = ERC20Interface(_tokenAddr);
-        while (i &lt; dests.length) {
+        while (i < dests.length) {
             T.transfer(dests[i], values[i]);
             i += 1;
         }

@@ -31,7 +31,7 @@ contract Utils {
     */
     function safeAdd(uint256 _x, uint256 _y) internal pure returns (uint256) {
         uint256 z = _x + _y;
-        assert(z &gt;= _x);
+        assert(z >= _x);
         return z;
     }
 
@@ -44,7 +44,7 @@ contract Utils {
         @return difference
     */
     function safeSub(uint256 _x, uint256 _y) internal pure returns (uint256) {
-        assert(_x &gt;= _y);
+        assert(_x >= _y);
         return _x - _y;
     }
 
@@ -173,7 +173,7 @@ contract YoobaEarlyInvest is  Owned,YooStop,Utils {
         public ownerOnly stoppable
         notThis(_to)
     {   
-        require(_amount &lt;= this.balance);
+        require(_amount <= this.balance);
         _to.transfer(_amount); // send the amount to the target account
     }
     
@@ -190,7 +190,7 @@ contract YoobaEarlyInvest is  Owned,YooStop,Utils {
     
     function buyToken() internal
     {
-        require(!stopped &amp;&amp; msg.value &gt;= 0.1 ether);
+        require(!stopped && msg.value >= 0.1 ether);
         uint256  amount = msg.value * 350000;
         assert(yoobaTokenAddress.transfer(msg.sender, amount));
     }

@@ -46,19 +46,19 @@ library SafeMath {
     }
     
     function div(uint a, uint b) internal pure returns (uint) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint c = a / b;
         return c;
     }
     
     function sub(uint a, uint b) internal pure returns (uint) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
     
     function add(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -77,7 +77,7 @@ contract ERC20Token {
     uint256 public totalSupply;
     
     /// user tokens
-    mapping (address =&gt; uint256) public balances;
+    mapping (address => uint256) public balances;
     
     /// @param _owner The address from which the balance will be retrieved
     /// @return The balance
@@ -123,7 +123,7 @@ contract Controlled is Owned, ERC20Token {
         uint256 UST;
         uint256 addrLockType;
     }
-    mapping (address =&gt; userToken) public userReleaseToken;
+    mapping (address => userToken) public userReleaseToken;
     
     modifier canTransfer {
         require(emergencyStop == false);
@@ -133,7 +133,7 @@ contract Controlled is Owned, ERC20Token {
     modifier releaseTokenValid(address _user, uint256 _time, uint256 _value) {
 		uint256 _lockTypeIndex = userReleaseToken[_user].addrLockType;
 		if(_lockTypeIndex != 0) {
-			require (balances[_user].sub(_value) &gt;= userReleaseToken[_user].UST.sub(calcReleaseToken(_user, _time, _lockTypeIndex)));
+			require (balances[_user].sub(_value) >= userReleaseToken[_user].UST.sub(calcReleaseToken(_user, _time, _lockTypeIndex)));
         }
         
 		_;
@@ -177,21 +177,21 @@ contract Controlled is Owned, ERC20Token {
     function getPeriod(uint256 _lockTypeIndex, uint256 _timeDifference) internal view returns (uint256) {
         if(_lockTypeIndex == 1) {           //The lock for the usechain coreTeamSupply
             uint256 _period1 = (_timeDifference.div(oneMonth)).div(12);
-            if(_period1 &gt;= 3){
+            if(_period1 >= 3){
                 _period1 = 3;
             }
             return _period1;
         }
         if(_lockTypeIndex == 2) {           //The lock for medium investment
             uint256 _period2 = _timeDifference.div(oneMonth);
-            if(_period2 &gt;= 3){
+            if(_period2 >= 3){
                 _period2 = 3;
             }
             return _period2;
         }
         if(_lockTypeIndex == 3) {           //The lock for massive investment
             uint256 _period3 = _timeDifference.div(oneMonth);
-            if(_period3 &gt;= 6){
+            if(_period3 >= 6){
                 _period3 = 6;
             }
             return _period3;
@@ -208,7 +208,7 @@ contract Controlled is Owned, ERC20Token {
 
 contract standardToken is ERC20Token, Controlled {
     
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowances;
+    mapping (address => mapping (address => uint256)) public allowances;
     
     /// @param _owner The address that&#39;s balance is being requested
     /// @return The balance of `_owner` at the current block
@@ -229,8 +229,8 @@ contract standardToken is ERC20Token, Controlled {
         releaseTokenValid(msg.sender, now, _value)
         returns (bool) 
     {
-        require (balances[msg.sender] &gt;= _value);           // Throw if sender has insufficient balance
-        require (balances[_to] + _value &gt;= balances[_to]);  // Throw if owerflow detected
+        require (balances[msg.sender] >= _value);           // Throw if sender has insufficient balance
+        require (balances[_to] + _value >= balances[_to]);  // Throw if owerflow detected
         balances[msg.sender] -= _value;                     // Deduct senders balance
         balances[_to] += _value;                            // Add recivers balance
         emit Transfer(msg.sender, _to, _value);             // Raise Transfer event
@@ -273,9 +273,9 @@ contract standardToken is ERC20Token, Controlled {
     /// @param _value The amount of tokens to be transferred
     /// @return True if the transfer was successful
     function transferFrom(address _from, address _to, uint256 _value) public canTransfer releaseTokenValid(msg.sender, now, _value) returns (bool success) {
-        require (balances[_from] &gt;= _value);                // Throw if sender does not have enough balance
-        require (balances[_to] + _value &gt;= balances[_to]);  // Throw if overflow detected
-        require (_value &lt;= allowances[_from][msg.sender]);  // Throw if you do not have allowance
+        require (balances[_from] >= _value);                // Throw if sender does not have enough balance
+        require (balances[_to] + _value >= balances[_to]);  // Throw if overflow detected
+        require (_value <= allowances[_from][msg.sender]);  // Throw if you do not have allowance
         balances[_from] -= _value;                          // Deduct senders balance
         balances[_to] += _value;                            // Add recipient balance
         allowances[_from][msg.sender] -= _value;            // Deduct allowance for this address
@@ -323,8 +323,8 @@ contract UST is Owned, standardToken {
     /// @param _values The amount of tokens
     /// @param _addrLockType The locktype for different investment type
     function allocateToken(address[] _owners, uint256[] _values, uint256[] _addrLockType) public onlyOwner {
-        require ((_owners.length == _values.length) &amp;&amp; ( _values.length == _addrLockType.length));
-        for(uint i = 0; i &lt; _owners.length ; i++){
+        require ((_owners.length == _values.length) && ( _values.length == _addrLockType.length));
+        for(uint i = 0; i < _owners.length ; i++){
             uint256 value = _values[i] * 10 ** decimals;
             
             totalSupply = totalSupply.add(value);
@@ -340,7 +340,7 @@ contract UST is Owned, standardToken {
     /// @param _owners The address of the account that owns the token
     /// @param _values The amount of tokens
 	function allocateCandyToken(address[] _owners, uint256[] _values) public onlyOwner {
-       for(uint i = 0; i &lt; _owners.length ; i++){
+       for(uint i = 0; i < _owners.length ; i++){
            uint256 value = _values[i] * 10 ** decimals;
            totalSupply = totalSupply.add(value);
 		   balances[_owners[i]] = balances[_owners[i]].add(value); 

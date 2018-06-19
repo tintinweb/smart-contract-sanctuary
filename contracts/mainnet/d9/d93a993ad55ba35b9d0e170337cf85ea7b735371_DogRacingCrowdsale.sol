@@ -345,7 +345,7 @@ contract DogRacingCrowdsale {
   }
 
   modifier withinCrowdsaleTime {
-	require(now >= stage1_start &amp;&amp; now < crowdsale_end);
+	require(now >= stage1_start && now < crowdsale_end);
 	_;
   }
 

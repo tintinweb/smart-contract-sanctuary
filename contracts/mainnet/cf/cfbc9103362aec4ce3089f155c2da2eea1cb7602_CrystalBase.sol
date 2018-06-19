@@ -148,7 +148,7 @@ library AddressUtils {
   function isContract(address addr) internal view returns (bool) {
     uint256 size;
     assembly { size := extcodesize(addr) }
-    return size &gt; 0;
+    return size > 0;
   }
 
 }
@@ -177,7 +177,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -187,7 +187,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -196,7 +196,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -246,16 +246,16 @@ contract ERC721BasicToken is ERC721Basic {
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba; 
 
   // Mapping from token ID to owner
-  mapping (uint256 =&gt; address) internal tokenOwner;
+  mapping (uint256 => address) internal tokenOwner;
 
   // Mapping from token ID to approved address
-  mapping (uint256 =&gt; address) internal tokenApprovals;
+  mapping (uint256 => address) internal tokenApprovals;
 
   // Mapping from owner to number of owned token
-  mapping (address =&gt; uint256) internal ownedTokensCount;
+  mapping (address => uint256) internal ownedTokensCount;
 
   // Mapping from owner to operator approvals
-  mapping (address =&gt; mapping (address =&gt; bool)) internal operatorApprovals;
+  mapping (address => mapping (address => bool)) internal operatorApprovals;
 
   /**
   * @dev Guarantees msg.sender is owner of the given token
@@ -513,19 +513,19 @@ contract ERC721Token is ERC721, ERC721BasicToken {
   string internal symbol_;
 
   // Mapping from owner to list of owned token IDs
-  mapping (address =&gt; uint256[]) internal ownedTokens;
+  mapping (address => uint256[]) internal ownedTokens;
 
   // Mapping from token ID to index of the owner tokens list
-  mapping(uint256 =&gt; uint256) internal ownedTokensIndex;
+  mapping(uint256 => uint256) internal ownedTokensIndex;
 
   // Array with all token ids, used for enumeration
   uint256[] internal allTokens;
 
   // Mapping from token id to position in the allTokens array
-  mapping(uint256 =&gt; uint256) internal allTokensIndex;
+  mapping(uint256 => uint256) internal allTokensIndex;
 
   // Optional mapping for token URIs 
-  mapping(uint256 =&gt; string) internal tokenURIs;
+  mapping(uint256 => string) internal tokenURIs;
 
   /**
   * @dev Constructor function
@@ -579,7 +579,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
   * @return uint256 token ID at the given index of the tokens list owned by the requested address
   */
   function tokenOfOwnerByIndex(address _owner, uint256 _index) public view returns (uint256) {
-    require(_index &lt; balanceOf(_owner));
+    require(_index < balanceOf(_owner));
     return ownedTokens[_owner][_index];
   }
 
@@ -598,7 +598,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
   * @return uint256 token ID at the given index of the tokens list
   */
   function tokenByIndex(uint256 _index) public view returns (uint256) {
-    require(_index &lt; totalSupply());
+    require(_index < totalSupply());
     return allTokens[_index];
   }
 
@@ -710,7 +710,7 @@ contract CrystalBase is Acceptable, ERC721Token {
         uint64 mintedAt;
     }
 
-    mapping(uint256 =&gt; Crystal) internal tokenIdToCrystal;
+    mapping(uint256 => Crystal) internal tokenIdToCrystal;
     event CrystalBurned(address indexed owner, uint256 tokenId);
     event CrystalMinted(address indexed owner, uint256 tokenId, uint256 gene, uint256 kind, uint256 weight);
 
@@ -726,8 +726,8 @@ contract CrystalBase is Acceptable, ERC721Token {
         uint256 _kind,
         uint256 _weight
     ) public onlyAcceptable returns(uint256) {
-        require(_gene &gt; 0);
-        require(_weight &gt; 0);
+        require(_gene > 0);
+        require(_weight > 0);
 
         uint256 _tokenId = currentTokenId;
         currentTokenId++;
@@ -820,7 +820,7 @@ contract CrystalBase is Acceptable, ERC721Token {
         amounts = new uint256[](100);
         weights = new uint256[](100);
         uint256 _tokenCount = ownedTokensCount[_owner];
-        for (uint256 i = 0; i &lt; _tokenCount; i++) {
+        for (uint256 i = 0; i < _tokenCount; i++) {
             uint256 _tokenId = ownedTokens[_owner][i];
             Crystal memory _crystal = tokenIdToCrystal[_tokenId];
             amounts[_crystal.kind] = amounts[_crystal.kind].add(1);
@@ -841,7 +841,7 @@ contract CrystalBase is Acceptable, ERC721Token {
         kinds = new uint256[](_tokenCount);
         weights = new uint256[](_tokenCount);
         mintedAts = new uint256[](_tokenCount);
-        for (uint256 i = 0; i &lt; _tokenCount; i++) {
+        for (uint256 i = 0; i < _tokenCount; i++) {
             uint256 _tokenId = ownedTokens[_owner][i];
             Crystal memory _crystal = tokenIdToCrystal[_tokenId];
             tokenIds[i] = _tokenId;
@@ -858,7 +858,7 @@ contract CrystalBase is Acceptable, ERC721Token {
         uint256[] weights,
         uint256[] mintedAts
     ) {
-        require(_kind &lt; 100);
+        require(_kind < 100);
 
         uint256 _tokenCount = ownedTokensCount[_owner];
         tokenIds = new uint256[](_tokenCount);
@@ -866,7 +866,7 @@ contract CrystalBase is Acceptable, ERC721Token {
         weights = new uint256[](_tokenCount);
         mintedAts = new uint256[](_tokenCount);
         uint256 index;
-        for (uint256 i = 0; i &lt; _tokenCount; i++) {
+        for (uint256 i = 0; i < _tokenCount; i++) {
             uint256 _tokenId = ownedTokens[_owner][i];
             Crystal memory _crystal = tokenIdToCrystal[_tokenId];
             if (_crystal.kind == _kind) {

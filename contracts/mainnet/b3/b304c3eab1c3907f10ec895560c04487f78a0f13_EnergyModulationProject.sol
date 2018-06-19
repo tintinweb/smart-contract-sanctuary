@@ -10,8 +10,8 @@ contract EnergyModulationProject {
     address public owner;
     uint256 public _totalSupply;
 
-    mapping (address =&gt; uint256) public balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowances;
+    mapping (address => uint256) public balances;
+    mapping (address => mapping (address => uint256)) public allowances;
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Burn(address indexed from, uint256 value);
@@ -40,8 +40,8 @@ contract EnergyModulationProject {
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
         if (_to == 0x0) return false;
-        if (balances[msg.sender] &lt; _value) return false;
-        if (balances[_to] + _value &lt; balances[_to]) return false;
+        if (balances[msg.sender] < _value) return false;
+        if (balances[_to] + _value < balances[_to]) return false;
         balances[msg.sender] -= _value;
         balances[_to] += _value;
         Transfer(msg.sender, _to, _value);
@@ -64,9 +64,9 @@ contract EnergyModulationProject {
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         if (_to == 0x0) return false;
-        if (balances[_from] &lt; _value) return false;
-        if (balances[_to] + _value &lt; balances[_to]) return false;
-        if (_value &gt; allowances[_from][msg.sender]) return false;
+        if (balances[_from] < _value) return false;
+        if (balances[_to] + _value < balances[_to]) return false;
+        if (_value > allowances[_from][msg.sender]) return false;
         balances[_from] -= _value;
         balances[_to] += _value;
         allowances[_from][msg.sender] -= _value;
@@ -75,7 +75,7 @@ contract EnergyModulationProject {
     }
 
     function burn(uint256 _value) public returns (bool success) {
-        if (balances[msg.sender] &lt; _value) return false;
+        if (balances[msg.sender] < _value) return false;
         balances[msg.sender] -= _value;
         _totalSupply -= _value;
         Burn(msg.sender, _value);
@@ -83,8 +83,8 @@ contract EnergyModulationProject {
     }
 
     function burnFrom(address _from, uint256 _value) public returns (bool success) {
-        if (balances[_from] &lt; _value) return false;
-        if (_value &gt; allowances[_from][msg.sender]) return false;
+        if (balances[_from] < _value) return false;
+        if (_value > allowances[_from][msg.sender]) return false;
         balances[_from] -= _value;
         _totalSupply -= _value;
         Burn(_from, _value);

@@ -266,7 +266,7 @@ contract GWTCrowdsale is Ownable {
 
     function isInActiveStage() private returns(bool) {
         if (currentStageNumber == 8) return true;
-        if (now >= currentStageStartTimestamp &amp;&amp; now <= currentStageEndTimestamp){
+        if (now >= currentStageStartTimestamp && now <= currentStageEndTimestamp){
             return true;
         }else if (now < currentStageStartTimestamp) {
             return false;
@@ -306,7 +306,7 @@ contract GWTCrowdsale is Ownable {
     }
 
     function setStage(uint _index) public onlyOwner {
-        require(_index >= 0 &amp;&amp; _index < 9);
+        require(_index >= 0 && _index < 9);
         
         if (_index == 0) return startPrivateSale();
         currentStageNumber = _index - 1;
@@ -401,10 +401,10 @@ contract GWTCrowdsale is Ownable {
     function createTokens() public isActive payable {
         uint tokens = baseExchangeRate.mul(msg.value).div(1 ether); // Переводим ETH в GWT
 
-        if (currentStageMultiplier > 0 &amp;&amp; currentStageEndTimestamp > now) {            // Начисляем бонус
+        if (currentStageMultiplier > 0 && currentStageEndTimestamp > now) {            // Начисляем бонус
             tokens = tokens + tokens.div(100).mul(currentStageMultiplier);
         }
-        // require(tokens > minLimit &amp;&amp; tokens < buyLimit);
+        // require(tokens > minLimit && tokens < buyLimit);
         require(token.totalSupply() + tokens <= supplyLimit);
         ethAddress.transfer(msg.value);   // переводим на основной кошелек
         token.mint(msg.sender, tokens); // Начисляем

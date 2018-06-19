@@ -88,7 +88,7 @@ library SafeMath {
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
 
-        assert(b &lt;= a);
+        assert(b <= a);
 
         return a - b;
 
@@ -100,7 +100,7 @@ library SafeMath {
 
         uint256 c = a + b;
 
-        assert(c &gt;= a);
+        assert(c >= a);
 
         return c;
 
@@ -124,7 +124,7 @@ contract BasicToken is ERC20Basic {
 
 
 
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
 
 
 
@@ -144,7 +144,7 @@ contract BasicToken is ERC20Basic {
 
         require(_to != address(0));
 
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
 
 
 
@@ -184,7 +184,7 @@ contract StandardToken is ERC20, BasicToken {
 
 
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping (address => mapping (address => uint256)) internal allowed;
 
 
 
@@ -192,9 +192,9 @@ contract StandardToken is ERC20, BasicToken {
 
         require(_to != address(0));
 
-        require(_value &lt;= balances[_from]);
+        require(_value <= balances[_from]);
 
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= allowed[_from][msg.sender]);
 
 
 
@@ -248,7 +248,7 @@ contract StandardToken is ERC20, BasicToken {
 
         uint oldValue = allowed[msg.sender][_spender];
 
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
 
             allowed[msg.sender][_spender] = 0;
 

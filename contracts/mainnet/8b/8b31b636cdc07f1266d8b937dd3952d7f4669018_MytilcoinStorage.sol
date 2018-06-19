@@ -82,7 +82,7 @@ contract MytilcoinStorage is Manageable {
         bytes32 key = str_to_bytes32(_hash);
 
         require(!(pictures[key].rows > 0));
-        require(_rows > 0 &amp;&amp; _cols > 0 &amp;&amp; _width > 0 &amp;&amp; _height > 0);
+        require(_rows > 0 && _cols > 0 && _width > 0 && _height > 0);
         
         pictures[key] = Picture({
             hash: _hash,
@@ -104,7 +104,7 @@ contract MytilcoinStorage is Manageable {
         bytes32 key = str_to_bytes32(_picture);
 
         require(pictures[key].rows > 0);
-        require(_row > 0 &amp;&amp; _col > 0 &amp;&amp; _row <= pictures[key].rows &amp;&amp; _col <= pictures[key].cols);
+        require(_row > 0 && _col > 0 && _row <= pictures[key].rows && _col <= pictures[key].cols);
         require(!(segments[key][_row][_col].row > 0));
         
         segments[key][_row][_col] = Segment({
@@ -126,7 +126,7 @@ contract MytilcoinStorage is Manageable {
         bytes32 key = str_to_bytes32(_picture);
 
         require(pictures[key].rows > 0);
-        require(_row > 0 &amp;&amp; _col > 0 &amp;&amp; _row <= pictures[key].rows &amp;&amp; _col <= pictures[key].cols);
+        require(_row > 0 && _col > 0 && _row <= pictures[key].rows && _col <= pictures[key].cols);
         require(segments[key][_row][_col].row > 0);
         
         segments[key][_row][_col].email = _email;

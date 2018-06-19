@@ -1110,7 +1110,7 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
     require(_classRank < 5);
     require(_classType < 3);
     require(_aura < 5);
-    require(_minIVForStats[0] <= _maxIVForStats[0] &amp;&amp; _minIVForStats[1] <= _maxIVForStats[1] &amp;&amp; _minIVForStats[2] <= _maxIVForStats[2] &amp;&amp; _minIVForStats[3] <= _maxIVForStats[3] &amp;&amp; _minIVForStats[4] <= _maxIVForStats[4]);
+    require(_minIVForStats[0] <= _maxIVForStats[0] && _minIVForStats[1] <= _maxIVForStats[1] && _minIVForStats[2] <= _maxIVForStats[2] && _minIVForStats[3] <= _maxIVForStats[3] && _minIVForStats[4] <= _maxIVForStats[4]);
 
     HeroClass memory _heroType = HeroClass({
       className: _className,
@@ -1715,10 +1715,10 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
     public
   {
     // Each hero should be different ids.
-    require(_tokenIds[0] == 0 || (_tokenIds[0] != _tokenIds[1] &amp;&amp; _tokenIds[0] != _tokenIds[2] &amp;&amp; _tokenIds[0] != _tokenIds[3]));
-    require(_tokenIds[1] == 0 || (_tokenIds[1] != _tokenIds[0] &amp;&amp; _tokenIds[1] != _tokenIds[2] &amp;&amp; _tokenIds[1] != _tokenIds[3]));
-    require(_tokenIds[2] == 0 || (_tokenIds[2] != _tokenIds[0] &amp;&amp; _tokenIds[2] != _tokenIds[1] &amp;&amp; _tokenIds[2] != _tokenIds[3]));
-    require(_tokenIds[3] == 0 || (_tokenIds[3] != _tokenIds[0] &amp;&amp; _tokenIds[3] != _tokenIds[1] &amp;&amp; _tokenIds[3] != _tokenIds[2]));
+    require(_tokenIds[0] == 0 || (_tokenIds[0] != _tokenIds[1] && _tokenIds[0] != _tokenIds[2] && _tokenIds[0] != _tokenIds[3]));
+    require(_tokenIds[1] == 0 || (_tokenIds[1] != _tokenIds[0] && _tokenIds[1] != _tokenIds[2] && _tokenIds[1] != _tokenIds[3]));
+    require(_tokenIds[2] == 0 || (_tokenIds[2] != _tokenIds[0] && _tokenIds[2] != _tokenIds[1] && _tokenIds[2] != _tokenIds[3]));
+    require(_tokenIds[3] == 0 || (_tokenIds[3] != _tokenIds[0] && _tokenIds[3] != _tokenIds[1] && _tokenIds[3] != _tokenIds[2]));
 
     // Check the previous dungeon&#39;s progress.
     if (requiredProgressOfPreviousDungeon != 0) {
@@ -1755,7 +1755,7 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
     // The information that can give additional information.
     TurnInfo memory _turnInfo;
 
-    // Step 1: Retrieve Hero information (0 ~ 3) &amp; Enemy information (4 ~ 7).
+    // Step 1: Retrieve Hero information (0 ~ 3) & Enemy information (4 ~ 7).
 
     uint32[5][8] memory _unitStats; // Stats of units for given levels and class ids.
     uint8[2][8] memory _unitTypesAuras; // 0: Types of units for given levels and class ids. 1: Auras of units for given levels and class ids.
@@ -1829,16 +1829,16 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
     // Fight for 24 turns. (8 units x 3 rounds.)
     _turnInfo.turnLength = 24;
     for (i = 0; i < 24; i ++) {
-      if (_unitStats[4][4] == 0 &amp;&amp; _unitStats[5][4] == 0 &amp;&amp; _unitStats[6][4] == 0 &amp;&amp; _unitStats[7][4] == 0) {
+      if (_unitStats[4][4] == 0 && _unitStats[5][4] == 0 && _unitStats[6][4] == 0 && _unitStats[7][4] == 0) {
         _turnInfo.turnLength = i;
         break;
-      } else if (_unitStats[0][4] == 0 &amp;&amp; _unitStats[1][4] == 0 &amp;&amp; _unitStats[2][4] == 0 &amp;&amp; _unitStats[3][4] == 0) {
+      } else if (_unitStats[0][4] == 0 && _unitStats[1][4] == 0 && _unitStats[2][4] == 0 && _unitStats[3][4] == 0) {
         _turnInfo.turnLength = i;
         break;
       }
       
       var _slotId = _turnInfo.turnOrder[(i % 8)];
-      if (_slotId < 4 &amp;&amp; _tokenIds[_slotId] == 0) {
+      if (_slotId < 4 && _tokenIds[_slotId] == 0) {
         // This means the slot is empty.
         // Defender should be default value.
         _turnInfo.defenderList[i] = 127;
@@ -1900,23 +1900,23 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
         }
 
         // Is attacker has the advantageous Type?
-        if (_unitTypesAuras[_slotId][0] == 0 &amp;&amp; _unitTypesAuras[_targetSlotId][0] == 1) // Fighter > Rogue
+        if (_unitTypesAuras[_slotId][0] == 0 && _unitTypesAuras[_targetSlotId][0] == 1) // Fighter > Rogue
           _damage = _damage * 125 / 100;
-        else if (_unitTypesAuras[_slotId][0] == 1 &amp;&amp; _unitTypesAuras[_targetSlotId][0] == 2) // Rogue > Mage
+        else if (_unitTypesAuras[_slotId][0] == 1 && _unitTypesAuras[_targetSlotId][0] == 2) // Rogue > Mage
           _damage = _damage * 125 / 100;
-        else if (_unitTypesAuras[_slotId][0] == 2 &amp;&amp; _unitTypesAuras[_targetSlotId][0] == 0) // Mage > Fighter
+        else if (_unitTypesAuras[_slotId][0] == 2 && _unitTypesAuras[_targetSlotId][0] == 0) // Mage > Fighter
           _damage = _damage * 125 / 100;
 
         // Is attacker has the advantageous Aura?
-        if (_unitTypesAuras[_slotId][1] == 0 &amp;&amp; _unitTypesAuras[_targetSlotId][1] == 1) // Water > Fire
+        if (_unitTypesAuras[_slotId][1] == 0 && _unitTypesAuras[_targetSlotId][1] == 1) // Water > Fire
           _damage = _damage * 150 / 100;
-        else if (_unitTypesAuras[_slotId][1] == 1 &amp;&amp; _unitTypesAuras[_targetSlotId][1] == 2) // Fire > Nature
+        else if (_unitTypesAuras[_slotId][1] == 1 && _unitTypesAuras[_targetSlotId][1] == 2) // Fire > Nature
           _damage = _damage * 150 / 100;
-        else if (_unitTypesAuras[_slotId][1] == 2 &amp;&amp; _unitTypesAuras[_targetSlotId][1] == 0) // Nature > Water
+        else if (_unitTypesAuras[_slotId][1] == 2 && _unitTypesAuras[_targetSlotId][1] == 0) // Nature > Water
           _damage = _damage * 150 / 100;
-        else if (_unitTypesAuras[_slotId][1] == 3 &amp;&amp; _unitTypesAuras[_targetSlotId][1] == 4) // Light > Darkness
+        else if (_unitTypesAuras[_slotId][1] == 3 && _unitTypesAuras[_targetSlotId][1] == 4) // Light > Darkness
           _damage = _damage * 150 / 100;
-        else if (_unitTypesAuras[_slotId][1] == 4 &amp;&amp; _unitTypesAuras[_targetSlotId][1] == 3) // Darkness > Light
+        else if (_unitTypesAuras[_slotId][1] == 4 && _unitTypesAuras[_targetSlotId][1] == 3) // Darkness > Light
           _damage = _damage * 150 / 100;
         
         // Apply damage so that reduce hp of defender.
@@ -2000,7 +2000,7 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
     private view
     returns(bool)
   {
-    if ((_tokenIds[0] == 0 || heroContract.ownerOf(_tokenIds[0]) == _playerAddress) &amp;&amp; (_tokenIds[1] == 0 || heroContract.ownerOf(_tokenIds[1]) == _playerAddress) &amp;&amp; (_tokenIds[2] == 0 || heroContract.ownerOf(_tokenIds[2]) == _playerAddress) &amp;&amp; (_tokenIds[3] == 0 || heroContract.ownerOf(_tokenIds[3]) == _playerAddress)) {
+    if ((_tokenIds[0] == 0 || heroContract.ownerOf(_tokenIds[0]) == _playerAddress) && (_tokenIds[1] == 0 || heroContract.ownerOf(_tokenIds[1]) == _playerAddress) && (_tokenIds[2] == 0 || heroContract.ownerOf(_tokenIds[2]) == _playerAddress) && (_tokenIds[3] == 0 || heroContract.ownerOf(_tokenIds[3]) == _playerAddress)) {
       
       // Retrieve avail time of heroes.
       uint256[4] memory _heroAvailAts;
@@ -2013,7 +2013,7 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
       if (_tokenIds[3] != 0)
         ( , , , , , _heroAvailAts[3], , , ) = heroContract.getHeroInfo(_tokenIds[3]);
 
-      if (_heroAvailAts[0] <= now &amp;&amp; _heroAvailAts[1] <= now &amp;&amp; _heroAvailAts[2] <= now &amp;&amp; _heroAvailAts[3] <= now) {
+      if (_heroAvailAts[0] <= now && _heroAvailAts[1] <= now && _heroAvailAts[2] <= now && _heroAvailAts[3] <= now) {
         return true;
       } else {
         return false;

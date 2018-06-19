@@ -92,15 +92,15 @@ contract ReturnData {
  * Every request that is made by caller first sent to the specific asset implementation
  * contract, which then calls back to be forwarded onto EToken2.
  *
- * Calls flow: Caller -&gt;
- *             Proxy.func(...) -&gt;
- *             Asset._performFunc(..., Caller.address) -&gt;
- *             Proxy._forwardFunc(..., Caller.address) -&gt;
+ * Calls flow: Caller ->
+ *             Proxy.func(...) ->
+ *             Asset._performFunc(..., Caller.address) ->
+ *             Proxy._forwardFunc(..., Caller.address) ->
  *             Platform.proxyFunc(..., symbol, Caller.address)
  *
- * Generic call flow: Caller -&gt;
- *             Proxy.unknownFunc(...) -&gt;
- *             Asset._performGeneric(..., Caller.address) -&gt;
+ * Generic call flow: Caller ->
+ *             Proxy.unknownFunc(...) ->
+ *             Asset._performGeneric(..., Caller.address) ->
  *             Asset.unknownFunc(...)
  *
  * Asset implementation contract is mutable, but each user have an option to stick with
@@ -459,7 +459,7 @@ contract SyncFab is ERC20Interface, AssetProxyInterface, Bytes32, ReturnData {
 
     // Asset implementation contract address that user decided to stick with.
     // 0x0 means that user uses latest version.
-    mapping(address =&gt; address) userOptOutVersion;
+    mapping(address => address) userOptOutVersion;
 
     /**
      * Only asset implementation contract assigned to sender is allowed to call.
@@ -567,7 +567,7 @@ contract SyncFab is ERC20Interface, AssetProxyInterface, Bytes32, ReturnData {
         if (pendingVersion == 0x0) {
             return false;
         }
-        if (pendingVersionTimestamp + UPGRADE_FREEZE_TIME &gt; now) {
+        if (pendingVersionTimestamp + UPGRADE_FREEZE_TIME > now) {
             return false;
         }
         latestVersion = pendingVersion;

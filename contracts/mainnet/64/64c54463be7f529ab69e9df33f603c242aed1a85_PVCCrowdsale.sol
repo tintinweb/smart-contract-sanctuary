@@ -16,20 +16,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -120,7 +120,7 @@ interface TokenInterface {
   bool isCrowdsalePaused = false;
   
   uint256 totalDurationInDays = 145 days;
-  mapping(address=&gt;bool) isAddressWhiteListed;
+  mapping(address=>bool) isAddressWhiteListed;
   /**
    * event for token purchase logging
    * @param purchaser who paid for the tokens
@@ -136,7 +136,7 @@ interface TokenInterface {
     require(_wallet != 0x0);
     startTime = _startTime;  
     endTime = startTime + totalDurationInDays;
-    require(endTime &gt;= startTime);
+    require(endTime >= startTime);
    
     owner = _wallet;
     
@@ -171,63 +171,63 @@ interface TokenInterface {
         uint256 timeElapsedInDays = timeElapsed.div(1 days);
         
         //Closed pre-sale phase 1 (8 days starting apr 9)
-        if (timeElapsedInDays &lt;8)
+        if (timeElapsedInDays <8)
         {
             bonus = tokens.mul(bonusInPreSalePhase1); 
             bonus = bonus.div(100);
-            require (TOKENS_SOLD.add(tokens.add(bonus)) &lt;= maxTokensToSale);
+            require (TOKENS_SOLD.add(tokens.add(bonus)) <= maxTokensToSale);
         }
         //Closed pre-sale phase 2 (8 days starting apr 17)
-        else if (timeElapsedInDays &gt;=8 &amp;&amp; timeElapsedInDays &lt;16)
+        else if (timeElapsedInDays >=8 && timeElapsedInDays <16)
         {
             bonus = tokens.mul(bonusInPreSalePhase2); 
             bonus = bonus.div(100);
-            require (TOKENS_SOLD.add(tokens.add(bonus)) &lt;= maxTokensToSale);
+            require (TOKENS_SOLD.add(tokens.add(bonus)) <= maxTokensToSale);
         }
         //Public sale phase 1 original (30 days starting on apr 25)
         //Public sale phase 1 new (10 days ending may 4)
-        else if (timeElapsedInDays &gt;=16 &amp;&amp; timeElapsedInDays &lt;26)
+        else if (timeElapsedInDays >=16 && timeElapsedInDays <26)
         {
             bonus = tokens.mul(bonusInPublicSalePhase1); 
             bonus = bonus.div(100);
-            require (TOKENS_SOLD.add(tokens.add(bonus)) &lt;= maxTokensToSale);
+            require (TOKENS_SOLD.add(tokens.add(bonus)) <= maxTokensToSale);
         }
 
         //Public sale phase 2 (27 days)
-        else if (timeElapsedInDays &gt;=26 &amp;&amp; timeElapsedInDays &lt;53)
+        else if (timeElapsedInDays >=26 && timeElapsedInDays <53)
         {
             bonus = tokens.mul(bonusInPublicSalePhase2); 
             bonus = bonus.div(100);
-            require (TOKENS_SOLD.add(tokens.add(bonus)) &lt;= maxTokensToSale);
+            require (TOKENS_SOLD.add(tokens.add(bonus)) <= maxTokensToSale);
         }
 
          //Public sale phase 3 (30 days)
-        else if (timeElapsedInDays &gt;=53 &amp;&amp; timeElapsedInDays &lt;83)
+        else if (timeElapsedInDays >=53 && timeElapsedInDays <83)
         {
             bonus = tokens.mul(bonusInPublicSalePhase3); 
             bonus = bonus.div(100);
-            require (TOKENS_SOLD.add(tokens.add(bonus)) &lt;= maxTokensToSale);
+            require (TOKENS_SOLD.add(tokens.add(bonus)) <= maxTokensToSale);
         }
         //Public sale phase 4 (15 days)
-        else if (timeElapsedInDays &gt;=83 &amp;&amp; timeElapsedInDays &lt;98)
+        else if (timeElapsedInDays >=83 && timeElapsedInDays <98)
         {
             bonus = tokens.mul(bonusInPublicSalePhase4); 
             bonus = bonus.div(100);
-            require (TOKENS_SOLD.add(tokens.add(bonus)) &lt;= maxTokensToSale);
+            require (TOKENS_SOLD.add(tokens.add(bonus)) <= maxTokensToSale);
         }
         //Public sale phase 5 (16 days)
-        else if (timeElapsedInDays &gt;=98 &amp;&amp; timeElapsedInDays &lt;114)
+        else if (timeElapsedInDays >=98 && timeElapsedInDays <114)
         {
             bonus = tokens.mul(bonusInPublicSalePhase5); 
             bonus = bonus.div(100);
-            require (TOKENS_SOLD.add(tokens.add(bonus)) &lt;= maxTokensToSale);
+            require (TOKENS_SOLD.add(tokens.add(bonus)) <= maxTokensToSale);
         }
         //Public sale phase 6 (31 days)
-        else if (timeElapsedInDays &gt;=114 &amp;&amp; timeElapsedInDays &lt;145)
+        else if (timeElapsedInDays >=114 && timeElapsedInDays <145)
         {
             bonus = tokens.mul(bonusInPublicSalePhase6); 
             bonus = bonus.div(100);
-            require (TOKENS_SOLD.add(tokens.add(bonus)) &lt;= maxTokensToSale);
+            require (TOKENS_SOLD.add(tokens.add(bonus)) <= maxTokensToSale);
         }
         //
         else 
@@ -244,7 +244,7 @@ interface TokenInterface {
     require(isCrowdsalePaused == false);
     require(validPurchase());
     
-    require(TOKENS_SOLD&lt;maxTokensToSale);
+    require(TOKENS_SOLD<maxTokensToSale);
    
     uint256 weiAmount = msg.value;
     
@@ -269,14 +269,14 @@ interface TokenInterface {
 
   // @return true if the transaction can buy tokens
   function validPurchase() internal constant returns (bool) {
-    bool withinPeriod = now &gt;= startTime &amp;&amp; now &lt;= endTime;
+    bool withinPeriod = now >= startTime && now <= endTime;
     bool nonZeroPurchase = msg.value != 0;
-    return withinPeriod &amp;&amp; nonZeroPurchase;
+    return withinPeriod && nonZeroPurchase;
   }
 
   // @return true if crowdsale event has ended
   function hasEnded() public constant returns (bool) {
-    return now &gt; endTime;
+    return now > endTime;
   }
   
    /**

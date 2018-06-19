@@ -285,7 +285,7 @@ contract IndexedBytesIteratorInteractive {
         _real_count = 1;
       }
       _this_item = _current_item;
-      for (_i = _real_count; (_i < _count) &amp;&amp; (_this_item != _last_item);_i++) {
+      for (_i = _real_count; (_i < _count) && (_this_item != _last_item);_i++) {
         _this_item = _function_next(_collection_index, _this_item);
         if (_this_item != bytes32(0x0)) {
           _real_count++;
@@ -393,7 +393,7 @@ contract BytesIteratorInteractive {
         _real_count = 1;
       }
       _this_item = _current_item;
-      for (_i = _real_count; (_i < _count) &amp;&amp; (_this_item != _last_item);_i++) {
+      for (_i = _real_count; (_i < _count) && (_this_item != _last_item);_i++) {
         _this_item = _function_next(_this_item);
         if (_this_item != bytes32(0x0)) {
           _real_count++;

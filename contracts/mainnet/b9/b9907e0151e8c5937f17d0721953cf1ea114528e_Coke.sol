@@ -67,7 +67,7 @@ library LinkedListLib {
         internal
         view returns (bool)
     {
-        if (self.list[_node][PREV] == HEAD &amp;&amp; self.list[_node][NEXT] == HEAD) {
+        if (self.list[_node][PREV] == HEAD && self.list[_node][NEXT] == HEAD) {
             if (self.list[HEAD][NEXT] == _node) {
                 return true;
             } else {
@@ -132,7 +132,7 @@ library LinkedListLib {
         bool exists;
         uint256 next;
         (exists,next) = getAdjacent(self, _node, _direction);
-        while  ((next != 0) &amp;&amp; (_value != next) &amp;&amp; ((_value < next) != _direction)) next = self.list[next][_direction];
+        while  ((next != 0) && (_value != next) && ((_value < next) != _direction)) next = self.list[next][_direction];
         return next;
     }
     
@@ -150,7 +150,7 @@ library LinkedListLib {
         bool exists;
         uint256 next;
         (exists,next) = getAdjacent(self, _node, _direction);
-        while  ((--searchLimit >= 0) &amp;&amp; (next != 0) &amp;&amp; (_value != next) &amp;&amp; (smallerComparator(_value, next) != _direction)) next = self.list[next][_direction];
+        while  ((--searchLimit >= 0) && (next != 0) && (_value != next) && (smallerComparator(_value, next) != _direction)) next = self.list[next][_direction];
         if(searchLimit >= 0)
             return (next, true, sizeEnd + 1);
         else return (0, false, sizeEnd); //We exhausted the search limit without finding a position!
@@ -171,7 +171,7 @@ library LinkedListLib {
     /// @param _new  new node to insert
     /// @param _direction direction to insert node in
     function insert(LinkedList storage self, uint256 _node, uint256 _new, bool _direction) internal returns (bool) {
-        if(!nodeExists(self,_new) &amp;&amp; nodeExists(self,_node)) {
+        if(!nodeExists(self,_new) && nodeExists(self,_node)) {
             uint256 c = self.list[_node][_direction];
             createLink(self, _node, _new, _direction);
             createLink(self, _new, c, _direction);
@@ -232,7 +232,7 @@ library LinkedListLib {
 contract SafeMath {
     function safeAdd(uint a, uint b) public pure returns (uint c) {
         c = a + b;
-        require(c >= a &amp;&amp; c >= b);
+        require(c >= a && c >= b);
     }
     function safeSub(uint a, uint b) public pure returns (uint c) {
         require(b <= a);
@@ -900,7 +900,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
             }
             */
         }
-        while(quantity > 0 &amp;&amp; counter < howManyInt);
+        while(quantity > 0 && counter < howManyInt);
         
         return true;
     }
@@ -910,7 +910,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
     // The list of addresses should be gotten from the main ethereum, by checking for addresses used in the latest transactions.
     // ------------------------------------------------------------------------
     function setAddressesForRain(address[] memory addresses) public onlyOwner returns (bool success) {
-        require(addresses.length <= uint(maxAddresses) &amp;&amp; addresses.length > 0);
+        require(addresses.length <= uint(maxAddresses) && addresses.length > 0);
         lastAddresses = addresses;
         firstAddress = 0;
         lastAddress = int32(addresses.length) - 1;
@@ -928,7 +928,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
     // Will set the Maximum of addresses to be used for making it rain (Maximum of 255 Addresses)
     // ------------------------------------------------------------------------
     function setMaxAddresses(int32 _maxAddresses) public onlyOwner returns (bool success) {
-        require(_maxAddresses > 0 &amp;&amp; _maxAddresses < 256);
+        require(_maxAddresses > 0 && _maxAddresses < 256);
         maxAddresses = _maxAddresses;
         return true;
     }
@@ -1169,8 +1169,8 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
             (exists, offerNodeIndex) = blackMarketOffersSorted.getAdjacent(offerNodeIndex, NEXT); //Get next node
             //Analyse current node, to see if it is the one to cancel:
             if(   blackMarketOffersMap[offerNodeIndexToProcess].seller == msg.sender 
-               &amp;&amp; blackMarketOffersMap[offerNodeIndexToProcess].quantity == quantity
-               &amp;&amp; blackMarketOffersMap[offerNodeIndexToProcess].price == priceRatio) {
+               && blackMarketOffersMap[offerNodeIndexToProcess].quantity == quantity
+               && blackMarketOffersMap[offerNodeIndexToProcess].price == priceRatio) {
                    //Cancel current offer:
                    blackMarketOffersSorted.remove(offerNodeIndexToProcess);
                    delete blackMarketOffersMap[offerNodeIndexToProcess];
@@ -1184,7 +1184,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
             }
             
         }
-        while(offerNodeIndex != NULL &amp;&amp; exists &amp;&amp; (!matchFound || continueAfterFirstMatch));
+        while(offerNodeIndex != NULL && exists && (!matchFound || continueAfterFirstMatch));
         
         return (success, numOrdersCanceled);
     }
@@ -1349,7 +1349,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
                 abort = true;
             }
         }
-        while (exists &amp;&amp; quantity > 0 &amp;&amp; !abort);
+        while (exists && quantity > 0 && !abort);
         //End Cycle through orders!
 
         //Final operations after checking all orders:
@@ -1451,7 +1451,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
     // The price ratio is how much micrograms (ug) of material (tokens) the buyer will get per ETH (ug/ETH)
     // ------------------------------------------------------------------------
     function sellToConsumer(address consumer, uint quantity, uint priceRatio) public whenNotPaused whenNotFlushing returns (bool success) {
-        require(consumer != address(0) &amp;&amp; quantity > 0 &amp;&amp; priceRatio > 0);
+        require(consumer != address(0) && quantity > 0 && priceRatio > 0);
         //Mark offer to sell to consumer on registry:
         SellOffer storage offer = directOffers[msg.sender][consumer];
         offer.quantity = quantity;
@@ -1506,7 +1506,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
     // ------------------------------------------------------------------------
     function buyFromTrusterDealer(address dealer, uint quantity, uint priceRatio) public payable noReentrancy whenNotPaused returns (bool success) {
         //Check up on offer:
-        require(directOffers[dealer][msg.sender].quantity > 0 &amp;&amp; directOffers[dealer][msg.sender].price > 0); //Offer exists?
+        require(directOffers[dealer][msg.sender].quantity > 0 && directOffers[dealer][msg.sender].price > 0); //Offer exists?
         if(quantity > directOffers[dealer][msg.sender].quantity) {
             emit OrderQuantityMismatch(dealer, directOffers[dealer][msg.sender].quantity, quantity);
             changeToReturn[msg.sender] = safeAdd(changeToReturn[msg.sender], msg.value); //Operation aborted: The buyer can get its ether back by using retrieveChange().
@@ -1654,7 +1654,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
         newMsg.msg = message;
         newMsg.from = anon ? address(0) : msg.sender;
         
-        if(((lastMsgGlobal + 1) >= int32(messages.length) &amp;&amp; int32(messages.length) < maxMessagesGlobal)) {
+        if(((lastMsgGlobal + 1) >= int32(messages.length) && int32(messages.length) < maxMessagesGlobal)) {
             //Still have space in the messages array, add new message at the end:
             messages.push(newMsg);
             //lastMsgGlobal++;
@@ -1666,7 +1666,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
         //Rotating indexes in case we reach the end of the array!
         uint sizeMessages = lengthMessages(); //lengthMessages() depends on lastMsgGlobal, se we have to keep a temporary copy first!
         lastMsgGlobal = (lastMsgGlobal + 1) % maxMessagesGlobal; 
-        if(lastMsgGlobal <= firstMsgGlobal &amp;&amp; sizeMessages > 0) {
+        if(lastMsgGlobal <= firstMsgGlobal && sizeMessages > 0) {
             firstMsgGlobal = (firstMsgGlobal + 1) % maxMessagesGlobal;
         }
         
@@ -1722,7 +1722,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
             //messages.clear(); //No need to clear the array completely (costs gas!): Just reinitialize the pointers!
             //lastMsgGlobal = firstMsgGlobal > 0 ? int32(messages.length) - 1 : lastMsgGlobal; //The last position will specify the real size of the array, that is, until the firstMsgGlobal is greater than zero, at that time we know the array is full, so the real size is the size of the complete array!
             lastMsgGlobal = int32(lengthMessages()) - 1; //The last position will specify the real size of the array, that is, until the firstMsgGlobal is greater than zero, at that time we know the array is full, so the real size is the size of the complete array!
-            if(lastMsgGlobal != -1 &amp;&amp; lastMsgGlobal > (int32(_maxMessagesGlobal) - 1)) {
+            if(lastMsgGlobal != -1 && lastMsgGlobal > (int32(_maxMessagesGlobal) - 1)) {
                 lastMsgGlobal = int32(_maxMessagesGlobal) - 1;
             }
             firstMsgGlobal = 0;

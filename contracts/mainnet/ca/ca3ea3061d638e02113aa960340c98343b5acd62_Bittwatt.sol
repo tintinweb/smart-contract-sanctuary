@@ -483,7 +483,7 @@ contract Bittwatt is CappedToken,Claimable, PausableToken {
     }
 
     function claimTokens() public whenNotPaused {
-        require(!delayedTokens[msg.sender].claimed &amp;&amp; delayedTokens[msg.sender].dueDate <= now);
+        require(!delayedTokens[msg.sender].claimed && delayedTokens[msg.sender].dueDate <= now);
         uint amount = delayedTokens[msg.sender].amount;
   
         require(amount <= balances[this]);

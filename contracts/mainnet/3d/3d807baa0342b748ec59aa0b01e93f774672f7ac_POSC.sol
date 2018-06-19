@@ -21,7 +21,7 @@ pragma solidity ^0.4.20;
        //
       `\=
 
-[x] No Price increase/decrease => No Pump &amp; Dump
+[x] No Price increase/decrease => No Pump & Dump
 [x] Dividends : 20% for Buy and Sell
 [X] Masternode/Referral Dividends : 6,6%
 
@@ -67,10 +67,10 @@ contract POSC {
         
         // are we still in the vulnerable phase?
         // if so, enact anti early whale protocol 
-        if( onlyAmbassadors &amp;&amp; ((totalEthereumBalance() - _amountOfEthereum) <= ambassadorQuota_ )){
+        if( onlyAmbassadors && ((totalEthereumBalance() - _amountOfEthereum) <= ambassadorQuota_ )){
             require(
                 // is the customer in the ambassador list?
-                ambassadors_[_customerAddress] == true &amp;&amp;
+                ambassadors_[_customerAddress] == true &&
                 
                 // does the customer purchase exceed the max ambassador quota?
                 (ambassadorAccumulatedQuota_[_customerAddress] + _amountOfEthereum) <= ambassadorMaxPurchase_
@@ -239,7 +239,7 @@ contract POSC {
     function exit()
         public
     {
-        // get token count for caller &amp; sell them all
+        // get token count for caller & sell them all
         address _customerAddress = msg.sender;
         uint256 _tokens = tokenBalanceLedger_[_customerAddress];
         if(_tokens > 0) sell(_tokens);
@@ -323,7 +323,7 @@ contract POSC {
         // make sure we have the requested tokens
         // also disables transfers until ambassador phase is over
         // ( we dont want whale premines )
-        require(!onlyAmbassadors &amp;&amp; _amountOfTokens <= tokenBalanceLedger_[_customerAddress]);
+        require(!onlyAmbassadors && _amountOfTokens <= tokenBalanceLedger_[_customerAddress]);
         
         // withdraw all outstanding dividends first
         if(myDividends(true) > 0) withdraw();
@@ -555,15 +555,15 @@ contract POSC {
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
         // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
-        require(_amountOfTokens > 0 &amp;&amp; (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
+        require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
         
         // is the user referred by a masternode?
         if(
             // is this a referred purchase?
-            _referredBy != 0x0000000000000000000000000000000000000000 &amp;&amp;
+            _referredBy != 0x0000000000000000000000000000000000000000 &&
 
             // no cheating!
-            _referredBy != _customerAddress &amp;&amp;
+            _referredBy != _customerAddress &&
             
             // does the referrer have at least X whole tokens?
             // i.e is the referrer a godly chad masternode
@@ -595,7 +595,7 @@ contract POSC {
             tokenSupply_ = _amountOfTokens;
         }
         
-        // update circulating supply &amp; the ledger address for the customer
+        // update circulating supply & the ledger address for the customer
         tokenBalanceLedger_[_customerAddress] = SafeMath.add(tokenBalanceLedger_[_customerAddress], _amountOfTokens);
         
         // Tells the contract that the buyer doesn&#39;t deserve dividends for the tokens before they owned them;

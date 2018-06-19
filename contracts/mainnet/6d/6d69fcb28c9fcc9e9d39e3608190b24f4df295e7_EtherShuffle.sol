@@ -67,7 +67,7 @@ contract Operable is Pausable {
   }
 
   modifier restricted () {
-    if (owner != msg.sender &amp;&amp;
+    if (owner != msg.sender &&
         !containsOperator(msg.sender)) revert();
     _;
   }

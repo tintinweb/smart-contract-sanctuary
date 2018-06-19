@@ -18,7 +18,7 @@ library SafeMath {
  * @dev Integer division of two numbers, truncating the quotient.
  */
 	function div(uint256 a, uint256 b) internal pure returns (uint256) {
-		// assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+		// assert(b > 0); // Solidity automatically throws when dividing by 0
 		// uint256 c = a / b;
 		// assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
 		return a / b;
@@ -28,7 +28,7 @@ library SafeMath {
  * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
  */
 	function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-		assert(b &lt;= a);
+		assert(b <= a);
 		return a - b;
 	}
 
@@ -37,7 +37,7 @@ library SafeMath {
  */
 	function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
 		c = a + b;
-		assert(c &gt;= a);
+		assert(c >= a);
 		return c;
 	}
 }
@@ -53,8 +53,8 @@ contract ZperToken {
 	uint8 public constant decimals = 18;
 
 
-	mapping (address =&gt; uint256) public balances;
-	mapping (address =&gt; mapping (address =&gt; uint256)) public allowed;
+	mapping (address => uint256) public balances;
+	mapping (address => mapping (address => uint256)) public allowed;
 
 	event Mint(address indexed to, uint256 amount);
 	event Transfer(address indexed _from, address indexed _to, uint256 _value);
@@ -64,7 +64,7 @@ contract ZperToken {
 
 	function ZperToken (address _owner, uint256 _totalSupply, uint256 _cap) public {
 		require(_owner != address(0));
-		require(_cap &gt; _totalSupply &amp;&amp; _totalSupply &gt; 0);
+		require(_cap > _totalSupply && _totalSupply > 0);
 		
 		totalSupply = _totalSupply * (10 ** 18);
 		cap = _cap * (10 ** 18);
@@ -86,7 +86,7 @@ contract ZperToken {
 
 	function transfer(address _to, uint256 _value) public returns (bool success) {
 		require(_to != address(0));
-		require(balances[msg.sender] &gt;= _value);
+		require(balances[msg.sender] >= _value);
 
 		balances[msg.sender] = balances[msg.sender].sub(_value);
 		balances[_to] = balances[_to].add(_value);
@@ -97,7 +97,7 @@ contract ZperToken {
 
 	function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
 		require(_to != address(0));
-		require(balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value);
+		require(balances[_from] >= _value && allowed[_from][msg.sender] >= _value);
 
 		balances[_from] = balances[_from].sub(_value);
 		balances[_to] = balances[_to].add(_value);
@@ -124,7 +124,7 @@ contract ZperToken {
 
 	function mint(address _to, uint256 _amount) onlyOwner public returns (bool) {
 		require(_to != address(0));
-		require(cap &gt;= totalSupply.add(_amount));
+		require(cap >= totalSupply.add(_amount));
 
 		totalSupply = totalSupply.add(_amount);
 		balances[_to] = balances[_to].add(_amount);
@@ -136,7 +136,7 @@ contract ZperToken {
 	}
 
 	function burn(uint256 _value) public returns (bool) {
-		require(_value &lt;= balances[msg.sender]);
+		require(_value <= balances[msg.sender]);
 
 		balances[msg.sender] = balances[msg.sender].sub(_value);
 		totalSupply = totalSupply.sub(_value);
@@ -152,14 +152,14 @@ contract ZperToken {
 		uint256 i;
 		uint256 sum = 0;
 
-		for(i = 0; i &lt; _amount.length; i++) {
+		for(i = 0; i < _amount.length; i++) {
 			sum = sum.add(_amount[i]);
 			require(_tos[i] != address(0));
 		}
 
-		require(balances[msg.sender] &gt;= sum);
+		require(balances[msg.sender] >= sum);
 
-		for(i = 0; i &lt; _tos.length; i++)
+		for(i = 0; i < _tos.length; i++)
 			transfer(_tos[i], _amount[i]);
 
 		return true;

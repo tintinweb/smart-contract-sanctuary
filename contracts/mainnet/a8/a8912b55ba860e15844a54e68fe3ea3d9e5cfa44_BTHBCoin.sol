@@ -178,7 +178,7 @@ contract BTHBCoin is ERC20, Ownable {
         require(_to != address(0));
         require(_to != address(this));
         require(_value <= _balances[owner]);
-        require(_lockupRate >= 50 &amp;&amp; _lockupRate<=100 &amp;&amp; _lockupRate.div(5).mul(5) == _lockupRate );
+        require(_lockupRate >= 50 && _lockupRate<=100 && _lockupRate.div(5).mul(5) == _lockupRate );
 
         _balances[owner] = _balances[owner].sub(_value);
 

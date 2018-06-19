@@ -6,13 +6,13 @@ contract APS{
     uint256 public decimals = 18;
     uint256 public totalSupply; 
     address public centralMinter; // Urbana
-    uint256 public divisor; // Denominator used with buyPrice, sellPrice. If value(APS) &gt; value(ETH), divisor = 1. Otherwise, divisor = 10**N()
+    uint256 public divisor; // Denominator used with buyPrice, sellPrice. If value(APS) > value(ETH), divisor = 1. Otherwise, divisor = 10**N()
     uint256 public buyPrice; // Numerator used with divisor. 1 APS = ($buyPrice) ETH.
     uint256 public sellPrice;  // Numerator used with divisor. 1 APS = ($sellPrice) ETH.
 
-    mapping (address =&gt; uint256) public balanceOf;
-    mapping (address =&gt; mapping(address =&gt; uint256)) allowed;
-    mapping (address =&gt; bool) public frozenAccount; // freezing balances of invalid account
+    mapping (address => uint256) public balanceOf;
+    mapping (address => mapping(address => uint256)) allowed;
+    mapping (address => bool) public frozenAccount; // freezing balances of invalid account
 
     event SetPrice(uint256 buyPrice, uint256 sellPrice);
     event MintToken(uint256 amount);
@@ -80,7 +80,7 @@ contract APS{
     function buy() payable public returns (uint256 amount) {
         if(divisor == 1) amount = msg.value / buyPrice;
         else amount = msg.value * (divisor/buyPrice);
-        require(balanceOf[centralMinter]&gt;= amount);
+        require(balanceOf[centralMinter]>= amount);
         balanceOf[msg.sender] += amount;
         balanceOf[centralMinter] -= amount;
         emit Transfer(centralMinter,msg.sender,amount);
@@ -89,7 +89,7 @@ contract APS{
 
     
     function sell(uint256 amount) payable public returns (uint256 revenue) {
-        require(balanceOf[msg.sender]&gt;=amount);
+        require(balanceOf[msg.sender]>=amount);
         balanceOf[msg.sender] -= amount;
         balanceOf[centralMinter] += amount;
         revenue = amount * sellPrice / divisor;
@@ -121,8 +121,8 @@ contract APS{
         require(_to != 0x0);
         require(!frozenAccount[_from]);
         require(!frozenAccount[_to]);
-        require(balanceOf[_from]&gt;= _value);
-        require(balanceOf[_to] + _value &gt;= balanceOf[_to]);
+        require(balanceOf[_from]>= _value);
+        require(balanceOf[_to] + _value >= balanceOf[_to]);
         uint256 totalBalances = balanceOf[_from] + balanceOf[_to];
         balanceOf[_from] -= _value;
         balanceOf[_to] += _value;
@@ -139,7 +139,7 @@ contract APS{
     // ERC20 Standard: Allow spender to withdraw from your account, multiple times, up to the tokens amount. 
     function approve(address _spender, uint256 _value) public returns (bool success){
         require(_spender != 0x0);
-        require(balanceOf[msg.sender]&gt;=_value);
+        require(balanceOf[msg.sender]>=_value);
         allowed[msg.sender][_spender] = _value;
         emit Approval(msg.sender,_spender,_value);
         return true;
@@ -147,7 +147,7 @@ contract APS{
 
     // ERC20 Standard: send tokens from address from to address to
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success){
-        require(allowed[_from][msg.sender]&gt;=_value);
+        require(allowed[_from][msg.sender]>=_value);
         allowed[_from][msg.sender] -= _value;
         _transfer(_from,_to,_value);
         // emit Transfer(msg.sender,_from,_to,_value);

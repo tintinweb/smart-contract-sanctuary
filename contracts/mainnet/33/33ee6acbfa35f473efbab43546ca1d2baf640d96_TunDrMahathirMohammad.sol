@@ -75,8 +75,8 @@
       // Transfer the balance from owner&#39;s account to another account
       function transfer(address _to, uint256 _amount) returns (bool success) {
          if (balances[msg.sender] >= _amount 
-              &amp;&amp; _amount > 0
-              &amp;&amp; balances[_to] + _amount > balances[_to]) {
+              && _amount > 0
+              && balances[_to] + _amount > balances[_to]) {
               balances[msg.sender] -= _amount;
               balances[_to] += _amount;
               Transfer(msg.sender, _to, _amount);
@@ -98,9 +98,9 @@
          uint256 _amount
     ) returns (bool success) {
        if (balances[_from] >= _amount
-            &amp;&amp; allowed[_from][msg.sender] >= _amount
-           &amp;&amp; _amount > 0
-            &amp;&amp; balances[_to] + _amount > balances[_to]) {
+            && allowed[_from][msg.sender] >= _amount
+           && _amount > 0
+            && balances[_to] + _amount > balances[_to]) {
            balances[_from] -= _amount;
            allowed[_from][msg.sender] -= _amount;
             balances[_to] += _amount;

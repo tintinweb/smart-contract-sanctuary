@@ -351,7 +351,7 @@ contract WebcoinToken is CappedToken {
     address private miningWallet;
 
 	function WebcoinToken(uint256 _cap, address[] _wallets) public CappedToken(_cap) {
-        require(_wallets[0] != address(0) &amp;&amp; _wallets[1] != address(0) &amp;&amp; _wallets[2] != address(0) &amp;&amp; _wallets[3] != address(0) &amp;&amp; _wallets[4] != address(0) &amp;&amp; _wallets[5] != address(0) &amp;&amp; _wallets[6] != address(0));
+        require(_wallets[0] != address(0) && _wallets[1] != address(0) && _wallets[2] != address(0) && _wallets[3] != address(0) && _wallets[4] != address(0) && _wallets[5] != address(0) && _wallets[6] != address(0));
         
         uint256 mil = (10**6);
         uint256 teamSupply = mil.mul(5).mul(1 ether);
@@ -549,7 +549,7 @@ contract TimedCrowdsale is Crowdsale {
    * @dev Reverts if not in crowdsale time range. 
    */
   modifier onlyWhileOpen {
-    require(now >= openingTime &amp;&amp; now <= closingTime);
+    require(now >= openingTime && now <= closingTime);
     _;
   }
 
@@ -732,8 +732,8 @@ contract WebcoinCrowdsale is CappedCrowdsale, TimedCrowdsale, FinalizableCrowdsa
     Crowdsale(_rates[0], _wallets[0], _token) 
     {
         require(_softCap > 0);
-        require(_wallets[1] != address(0) &amp;&amp; _wallets[2] != address(0) &amp;&amp; _wallets[3] != address(0) &amp;&amp; _vaultAddress != address(0));
-        require(_rates[1] > 0 &amp;&amp; _rates[2] > 0 &amp;&amp; _rates[3] > 0 &amp;&amp; _rates[4] > 0 &amp;&amp; _rates[5] > 0 &amp;&amp; _rates[6] > 0 &amp;&amp; _rates[7] > 0);
+        require(_wallets[1] != address(0) && _wallets[2] != address(0) && _wallets[3] != address(0) && _vaultAddress != address(0));
+        require(_rates[1] > 0 && _rates[2] > 0 && _rates[3] > 0 && _rates[4] > 0 && _rates[5] > 0 && _rates[6] > 0 && _rates[7] > 0);
         wallets = _wallets;
         vaultWallet = Vault(_vaultAddress);
         rates = _rates;
@@ -754,17 +754,17 @@ contract WebcoinCrowdsale is CappedCrowdsale, TimedCrowdsale, FinalizableCrowdsa
   function _updatePurchasingState(address _beneficiary, uint256 _weiAmount) internal {
     uint256 crowdsaleSupply = token.totalSupply().sub(initialSupply);
     uint256 mil = (10**6) * 1 ether;
-    if (crowdsaleSupply >= mil.mul(2) &amp;&amp; crowdsaleSupply < mil.mul(5)) {
+    if (crowdsaleSupply >= mil.mul(2) && crowdsaleSupply < mil.mul(5)) {
       rate = rates[1];
-    } else if (crowdsaleSupply >= mil.mul(5) &amp;&amp; crowdsaleSupply < mil.mul(11)) {
+    } else if (crowdsaleSupply >= mil.mul(5) && crowdsaleSupply < mil.mul(11)) {
       rate = rates[2];
-    } else if (crowdsaleSupply >= mil.mul(11) &amp;&amp; crowdsaleSupply < mil.mul(16)) {
+    } else if (crowdsaleSupply >= mil.mul(11) && crowdsaleSupply < mil.mul(16)) {
       rate = rates[3];
-    } else if (crowdsaleSupply >= mil.mul(16) &amp;&amp; crowdsaleSupply < mil.mul(20)) {
+    } else if (crowdsaleSupply >= mil.mul(16) && crowdsaleSupply < mil.mul(20)) {
       rate = rates[4];
-    } else if (crowdsaleSupply >= mil.mul(20) &amp;&amp; crowdsaleSupply < mil.mul(22)) {
+    } else if (crowdsaleSupply >= mil.mul(20) && crowdsaleSupply < mil.mul(22)) {
       rate = rates[5];
-    } else if (crowdsaleSupply >= mil.mul(22) &amp;&amp; crowdsaleSupply < mil.mul(24)) {
+    } else if (crowdsaleSupply >= mil.mul(22) && crowdsaleSupply < mil.mul(24)) {
       rate = rates[6];
     } else if (crowdsaleSupply >= mil.mul(24)) {
       rate = rates[7];
@@ -782,7 +782,7 @@ contract WebcoinCrowdsale is CappedCrowdsale, TimedCrowdsale, FinalizableCrowdsa
         uint256 teamFund = totalInvestment.mul(15).div(100);
         uint256 devFund = totalInvestment.mul(35).div(100);
         uint256 marketingFund = totalInvestment.mul(40).div(100);
-        require(wallets[0].send(miningFund) &amp;&amp; wallets[1].send(teamFund) &amp;&amp; wallets[2].send(devFund) &amp;&amp; wallets[3].send(marketingFund));
+        require(wallets[0].send(miningFund) && wallets[1].send(teamFund) && wallets[2].send(devFund) && wallets[3].send(marketingFund));
     } else {
         require(vaultWallet.sendFunds.value(msg.value)());
     }

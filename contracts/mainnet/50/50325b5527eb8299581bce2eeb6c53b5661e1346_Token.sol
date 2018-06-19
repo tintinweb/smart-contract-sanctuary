@@ -14,7 +14,7 @@ contract Base {
     uint private bitlocks = 0;
     modifier noReentrancy(uint m) {
         var _locks = bitlocks;
-        require(_locks &amp; m <= 0);
+        require(_locks & m <= 0);
         bitlocks |= m;
         _;
         bitlocks = _locks;

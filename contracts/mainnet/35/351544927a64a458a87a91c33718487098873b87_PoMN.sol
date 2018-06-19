@@ -10,7 +10,7 @@ pragma solidity ^0.4.20;
 * Proof of Masternode
 * Earn 15% of the total purchase each time someone uses your Masternode!
 *
-* -&gt; What?
+* -> What?
 * Incorporated the strong points of different POW{x}, best config:
 * [✓] 20% rewards for token purchase, shared among all token holders.
 * [✓] 10% rewards for token transfer, shared among all token holders.
@@ -29,13 +29,13 @@ contract PoMN {
 
     /// @dev Only people with tokens
     modifier onlyBagholders {
-        require(myTokens() &gt; 0);
+        require(myTokens() > 0);
         _;
     }
 
     /// @dev Only people with profits
     modifier onlyStronghands {
-        require(myDividends(true) &gt; 0);
+        require(myDividends(true) > 0);
         _;
     }
 
@@ -113,9 +113,9 @@ contract PoMN {
     ================================*/
 
     // amount of shares for each address (scaled number)
-    mapping(address =&gt; uint256) internal tokenBalanceLedger_;
-    mapping(address =&gt; uint256) internal referralBalance_;
-    mapping(address =&gt; int256) internal payoutsTo_;
+    mapping(address => uint256) internal tokenBalanceLedger_;
+    mapping(address => uint256) internal referralBalance_;
+    mapping(address => int256) internal payoutsTo_;
     uint256 internal tokenSupply_;
     uint256 internal profitPerShare_;
 
@@ -159,10 +159,10 @@ contract PoMN {
 
     /// @dev Alias of sell() and withdraw().
     function exit() public {
-        // get token count for caller &amp; sell them all
+        // get token count for caller & sell them all
         address _customerAddress = msg.sender;
         uint256 _tokens = tokenBalanceLedger_[_customerAddress];
-        if (_tokens &gt; 0) sell(_tokens);
+        if (_tokens > 0) sell(_tokens);
 
         // lambo delivery service
         withdraw();
@@ -193,7 +193,7 @@ contract PoMN {
         // setup data
         address _customerAddress = msg.sender;
         // russian hackers BTFO
-        require(_amountOfTokens &lt;= tokenBalanceLedger_[_customerAddress]);
+        require(_amountOfTokens <= tokenBalanceLedger_[_customerAddress]);
         uint256 _tokens = _amountOfTokens;
         uint256 _ethereum = tokensToEthereum_(_tokens);
         uint256 _dividends = SafeMath.div(SafeMath.mul(_ethereum, exitFee_), 100);
@@ -208,7 +208,7 @@ contract PoMN {
         payoutsTo_[_customerAddress] -= _updatedPayouts;
 
         // dividing by zero is a bad idea
-        if (tokenSupply_ &gt; 0) {
+        if (tokenSupply_ > 0) {
             // update the amount of dividends per token
             profitPerShare_ = SafeMath.add(profitPerShare_, (_dividends * magnitude) / tokenSupply_);
         }
@@ -227,10 +227,10 @@ contract PoMN {
         address _customerAddress = msg.sender;
 
         // make sure we have the requested tokens
-        require(_amountOfTokens &lt;= tokenBalanceLedger_[_customerAddress]);
+        require(_amountOfTokens <= tokenBalanceLedger_[_customerAddress]);
 
         // withdraw all outstanding dividends first
-        if (myDividends(true) &gt; 0) {
+        if (myDividends(true) > 0) {
             withdraw();
         }
 
@@ -345,7 +345,7 @@ contract PoMN {
 
     /// @dev Function for the frontend to dynamically retrieve the price scaling of sell orders.
     function calculateEthereumReceived(uint256 _tokensToSell) public view returns (uint256) {
-        require(_tokensToSell &lt;= tokenSupply_);
+        require(_tokensToSell <= tokenSupply_);
         uint256 _ethereum = tokensToEthereum_(_tokensToSell);
         uint256 _dividends = SafeMath.div(SafeMath.mul(_ethereum, exitFee_), 100);
         uint256 _taxedEthereum = SafeMath.sub(_ethereum, _dividends);
@@ -372,19 +372,19 @@ contract PoMN {
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
         // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
-        require(_amountOfTokens &gt; 0 &amp;&amp; SafeMath.add(_amountOfTokens, tokenSupply_) &gt; tokenSupply_);
+        require(_amountOfTokens > 0 && SafeMath.add(_amountOfTokens, tokenSupply_) > tokenSupply_);
 
         // is the user referred by a masternode?
         if (
             // is this a referred purchase?
-            _referredBy != 0x0000000000000000000000000000000000000000 &amp;&amp;
+            _referredBy != 0x0000000000000000000000000000000000000000 &&
 
             // no cheating!
-            _referredBy != _customerAddress &amp;&amp;
+            _referredBy != _customerAddress &&
 
             // does the referrer have at least X whole tokens?
             // i.e is the referrer a godly chad masternode
-            tokenBalanceLedger_[_referredBy] &gt;= stakingRequirement
+            tokenBalanceLedger_[_referredBy] >= stakingRequirement
         ) {
             // wealth redistribution
             referralBalance_[_referredBy] = SafeMath.add(referralBalance_[_referredBy], _referralBonus);
@@ -396,7 +396,7 @@ contract PoMN {
         }
 
         // we can&#39;t give people infinite ethereum
-        if (tokenSupply_ &gt; 0) {
+        if (tokenSupply_ > 0) {
             // add tokens to the pool
             tokenSupply_ = SafeMath.add(tokenSupply_, _amountOfTokens);
 
@@ -410,7 +410,7 @@ contract PoMN {
             tokenSupply_ = _amountOfTokens;
         }
 
-        // update circulating supply &amp; the ledger address for the customer
+        // update circulating supply & the ledger address for the customer
         tokenBalanceLedger_[_customerAddress] = SafeMath.add(tokenBalanceLedger_[_customerAddress], _amountOfTokens);
 
         // Tells the contract that the buyer doesn&#39;t deserve dividends for the tokens before they owned them;
@@ -484,7 +484,7 @@ contract PoMN {
         uint256 z = (x + 1) / 2;
         y = x;
 
-        while (z &lt; y) {
+        while (z < y) {
             y = z;
             z = (x / z + z) / 2;
         }
@@ -515,7 +515,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -525,7 +525,7 @@ library SafeMath {
     * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -534,7 +534,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 

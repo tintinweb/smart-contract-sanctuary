@@ -25,20 +25,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -156,20 +156,20 @@ contract MplusCrowdsaleB {
     // Low level token purchase function
     function buyTokens(address _beneficiary) public payable {
         require(_beneficiary != address(0));
-        require(msg.value &gt;= MIN_CAP);
-        require(msg.value &lt;= MAX_CAP);
-        require(now &gt;= ICO_START1);
-        require(now &lt;= ICO_END);
-        require(stage &lt;= NUM_STAGES);
+        require(msg.value >= MIN_CAP);
+        require(msg.value <= MAX_CAP);
+        require(now >= ICO_START1);
+        require(now <= ICO_END);
+        require(stage <= NUM_STAGES);
 
         determineCurrentStage();
-//        require(stage &gt;= 1 &amp;&amp; stage &lt;= NUM_STAGES);
+//        require(stage >= 1 && stage <= NUM_STAGES);
 
         uint256 weiAmount = msg.value;
 
         // calculate token amount to be created
         uint256 tokens = getTokenAmount(weiAmount);
-        require(tokens &gt; 0);
+        require(tokens > 0);
 
         // Update totals
         weiRaised = weiRaised.add(weiAmount);
@@ -188,32 +188,32 @@ contract MplusCrowdsaleB {
 
     function determineCurrentStage() internal {
 //        uint256 prevStage = stage;
-        if (stage &lt; 4 &amp;&amp; now &gt;= ICO_START4) {
+        if (stage < 4 && now >= ICO_START4) {
             stage = 4;
             emit IcoStageStarted(4);
-        } else if (stage &lt; 3 &amp;&amp; now &gt;= ICO_START3) {
+        } else if (stage < 3 && now >= ICO_START3) {
             stage = 3;
             emit IcoStageStarted(3);
-        } else if (stage &lt; 2 &amp;&amp; now &gt;= ICO_START2) {
+        } else if (stage < 2 && now >= ICO_START2) {
             stage = 2;
             emit IcoStageStarted(2);
-        } else if (stage &lt; 1 &amp;&amp; now &gt;= ICO_START1) {
+        } else if (stage < 1 && now >= ICO_START1) {
             stage = 1;
             emit IcoStageStarted(1);
         }
     }
 
     function checkCap() internal {
-        if (weiRaised &gt;= ICO_CAP4) {
+        if (weiRaised >= ICO_CAP4) {
             stage = 5;
             emit IcoEnded();
-        } else if (stage &lt; 4 &amp;&amp; weiRaised &gt;= ICO_CAP3) {
+        } else if (stage < 4 && weiRaised >= ICO_CAP3) {
             stage = 4;
             emit IcoStageStarted(4);
-        } else if (stage &lt; 3 &amp;&amp; weiRaised &gt;= ICO_CAP2) {
+        } else if (stage < 3 && weiRaised >= ICO_CAP2) {
             stage = 3;
             emit IcoStageStarted(3);
-        } else if (stage &lt; 2 &amp;&amp; weiRaised &gt;= ICO_CAP1) {
+        } else if (stage < 2 && weiRaised >= ICO_CAP1) {
             stage = 2;
             emit IcoStageStarted(2);
         }

@@ -43,7 +43,7 @@ contract DoacaoEvento {
     }  
     
     function sacarDoacoes() public {
-        require(msg.sender == ong &amp;&amp; address(this).balance > 0 &amp;&amp; statusDoacao == StatusDoacao.FECHADO);
+        require(msg.sender == ong && address(this).balance > 0 && statusDoacao == StatusDoacao.FECHADO);
         statusDoacao = StatusDoacao.SACADO;
         emit LogSaqueEfetuado(block.timestamp);
         msg.sender.transfer(address(this).balance);
@@ -51,7 +51,7 @@ contract DoacaoEvento {
     
     // fun&#231;&#227;o callback
     function() public payable {
-        require(msg.value > 0 &amp;&amp; statusDoacao == StatusDoacao.ABERTO);
+        require(msg.value > 0 && statusDoacao == StatusDoacao.ABERTO);
         emit LogDoacaoRecebida(msg.sender, msg.value);
         Doador memory d = Doador(msg.sender, msg.value, block.timestamp);
         doadores.push(d);

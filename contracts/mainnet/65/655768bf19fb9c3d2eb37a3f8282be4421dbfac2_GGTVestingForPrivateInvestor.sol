@@ -44,7 +44,7 @@ contract SafeMath {
 
   function safeAdd(uint a, uint b) internal returns (uint) {
     uint c = a + b;
-    assert(c>=a &amp;&amp; c>=b);
+    assert(c>=a && c>=b);
     return c;
   }
 
@@ -154,7 +154,7 @@ contract StandardToken is ERC20, SafeMath {
     //  allowance to zero by calling `approve(_spender, 0)` if it is not
     //  already 0 to mitigate the race condition described here:
     //  https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-    if ((_value != 0) &amp;&amp; (allowed[msg.sender][_spender] != 0)) revert();
+    if ((_value != 0) && (allowed[msg.sender][_spender] != 0)) revert();
 
     allowed[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);

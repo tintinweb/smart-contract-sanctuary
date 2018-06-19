@@ -554,7 +554,7 @@ contract TimedCrowdsale is Crowdsale {
    * @dev Reverts if not in crowdsale time range. 
    */
   modifier onlyWhileOpen {
-    require(now >= openingTime &amp;&amp; now <= closingTime);
+    require(now >= openingTime && now <= closingTime);
     _;
   }
 
@@ -980,15 +980,15 @@ contract HieCrowdsale is Crowdsale, CappedCrowdsale, RefundableCrowdsale, PostDe
   }
 
   function sale1Accepting() internal view returns (bool) {
-    return startTimeSale1 <= now &amp;&amp; now <= endTimeSale1;
+    return startTimeSale1 <= now && now <= endTimeSale1;
   }
 
   function sale2Accepting() internal view returns (bool) {
-    return startTimeSale2 <= now &amp;&amp; now <= endTimeSale2;
+    return startTimeSale2 <= now && now <= endTimeSale2;
   }
 
   function sale3Accepting() internal view returns (bool) {
-    return startTimeSale3 <= now &amp;&amp; now <= endTimeSale3;
+    return startTimeSale3 <= now && now <= endTimeSale3;
   }
 
   function saleAccepting() internal view returns (bool) {

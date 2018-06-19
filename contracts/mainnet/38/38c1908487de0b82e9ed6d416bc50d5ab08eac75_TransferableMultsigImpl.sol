@@ -146,7 +146,7 @@ contract TransferableMultsigImpl is TransferableMultsig {
                 sigR[i],
                 sigS[i]
             );
-            require(recovered > lastAddr &amp;&amp; ownerMap[recovered]);
+            require(recovered > lastAddr && ownerMap[recovered]);
             lastAddr = recovered;
         }
     }

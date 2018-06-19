@@ -12,20 +12,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -59,13 +59,13 @@ contract TokenSale {
   bool public isAcceptingPayments;
 
   // List of admins who can edit the whitelist
-  mapping (address =&gt; bool) public tokenSaleAdmins;
+  mapping (address => bool) public tokenSaleAdmins;
 
   // List of addresses that are whitelisted for private sale
-  mapping (address =&gt; bool) public whitelist;
+  mapping (address => bool) public whitelist;
 
   // List of addresses that have made payments (in Wei)
-  mapping (address =&gt; uint256) public amountPaid;
+  mapping (address => uint256) public amountPaid;
 
   // modifier to check owner
   modifier onlyOwner() {
@@ -107,8 +107,8 @@ contract TokenSale {
    */
   function () isWhitelisted acceptingPayments payable public {
     uint256 _contribution = msg.value;
-    require(_contribution &gt;= minContribution);
-    require(_contribution &lt;= maxContribution);
+    require(_contribution >= minContribution);
+    require(_contribution <= maxContribution);
     require(msg.sender != address(0));
 
     // add to sender&#39;s amountPaid record
@@ -118,7 +118,7 @@ contract TokenSale {
     amountRaised = amountRaised.add(_contribution);
 
     // handle edge case where amountRaised exceeds saleLimit
-    if (amountRaised &gt; saleLimit) {
+    if (amountRaised > saleLimit) {
       uint256 _refundAmount = amountRaised.sub(saleLimit);
       msg.sender.transfer(_refundAmount);
       _contribution = _contribution.sub(_refundAmount);
@@ -172,7 +172,7 @@ contract TokenSale {
    * @param _contributors The addresses of the contributor
    */
   function whitelistAddresses(address[] _contributors) onlyAdmin public {
-    for (uint256 i = 0; i &lt; _contributors.length; i++) {
+    for (uint256 i = 0; i < _contributors.length; i++) {
       whitelist[_contributors[i]] = true;
     }
   }
@@ -190,7 +190,7 @@ contract TokenSale {
    * @param _contributors The addresses of the contributor
    */
   function unWhitelistAddresses(address[] _contributors) onlyAdmin public {
-    for (uint256 i = 0; i &lt; _contributors.length; i++) {
+    for (uint256 i = 0; i < _contributors.length; i++) {
       whitelist[_contributors[i]] = false;
     }
   }

@@ -6,7 +6,7 @@ contract controlled{
   uint256 public tokenFrozenSinceBlock;
   uint256 public blockLock;
 
-  mapping (address =&gt; bool) restrictedAddresses;
+  mapping (address => bool) restrictedAddresses;
 
   // @dev Constructor function that sets freeze parameters so they don&#39;t unintentionally hinder operations.
   function controlled() public{
@@ -30,10 +30,10 @@ contract controlled{
   * @param _restrict bool Restricts uder from using token. true restricts the address while false enables it.
   */
   function editRestrictedAddress(address _restrictedAddress, bool _restrict) public onlyOwner{
-    if(!restrictedAddresses[_restrictedAddress] &amp;&amp; _restrict){
+    if(!restrictedAddresses[_restrictedAddress] && _restrict){
       restrictedAddresses[_restrictedAddress] = _restrict;
     }
-    else if(restrictedAddresses[_restrictedAddress] &amp;&amp; !_restrict){
+    else if(restrictedAddresses[_restrictedAddress] && !_restrict){
       restrictedAddresses[_restrictedAddress] = _restrict;
     }
     else{
@@ -65,9 +65,9 @@ contract controlled{
 
   // @dev Modifier to check if the token is operational at the moment.
   modifier unfrozenToken{
-    require(block.number &gt;= blockLock || msg.sender == owner);
-    require(block.number &gt;= tokenFrozenUntilBlock);
-    require(block.number &lt;= tokenFrozenSinceBlock);
+    require(block.number >= blockLock || msg.sender == owner);
+    require(block.number >= tokenFrozenUntilBlock);
+    require(block.number <= tokenFrozenSinceBlock);
     _;
   }
 }
@@ -82,8 +82,8 @@ contract blocktrade is controlled{
   string public tokenFrozenSinceNotice;
   bool public airDropFinished;
 
-  mapping (address =&gt; uint256) balances;
-  mapping (address =&gt; mapping (address =&gt; uint256)) allowances;
+  mapping (address => uint256) balances;
+  mapping (address => mapping (address => uint256)) allowances;
 
   event Transfer(address indexed from, address indexed to, uint256 value);
   event TokenFrozenUntil(uint256 _frozenUntilBlock, string _reason);
@@ -165,8 +165,8 @@ contract blocktrade is controlled{
   * @param _value uint256 Amount of tokens we want to sender.
   */
   function transfer(address _to, uint256 _value) unfrozenToken instForbiddenAddress(_to) public returns(bool success){
-    require(balances[msg.sender] &gt;= _value);           // Check if the sender has enough
-    require(balances[_to] + _value &gt;= balances[_to]) ;  // Check for overflows
+    require(balances[msg.sender] >= _value);           // Check if the sender has enough
+    require(balances[_to] + _value >= balances[_to]) ;  // Check for overflows
 
     balances[msg.sender] -= _value;                     // Subtract from the sender
     balances[_to] += _value;                            // Add the same to the recipient
@@ -192,9 +192,9 @@ contract blocktrade is controlled{
   * @param _value uint256 Amount of tokens we want to transfer. Note the decimal spaces.
   */
   function transferFrom(address _from, address _to, uint256 _value) unfrozenToken instForbiddenAddress(_to) public returns(bool success){
-    require(balances[_from] &gt;= _value);                // Check if the sender has enough
-    require(balances[_to] + _value &gt;= balances[_to]);  // Check for overflows
-    require(_value &lt;= allowances[_from][msg.sender]);  // Check allowance
+    require(balances[_from] >= _value);                // Check if the sender has enough
+    require(balances[_to] + _value >= balances[_to]);  // Check for overflows
+    require(_value <= allowances[_from][msg.sender]);  // Check allowance
 
     balances[_from] -= _value;                          // Subtract from the sender
     balances[_to] += _value;                            // Add the same to the recipient
@@ -208,7 +208,7 @@ contract blocktrade is controlled{
   * @param _value uint256 Amount of tokens we want to destroy.
   */
   function burn(uint256 _value) onlyOwner public returns(bool success){
-    require(balances[msg.sender] &gt;= _value);                 // Check if the sender has enough
+    require(balances[msg.sender] >= _value);                 // Check if the sender has enough
     balances[msg.sender] -= _value;                          // Subtract from the sender
     supply -= _value;
     emit Burn(msg.sender, _value);

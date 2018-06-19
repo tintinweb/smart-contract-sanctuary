@@ -485,17 +485,17 @@ contract EMACCrowdsale is Ownable {
     uint256 tokenExchangeRate = MAIN_SALE_BONUS_PERCENTAGE_PHASE4;
     uint256 convertToWei = (10**18);
 
-    if (now <= (startTime + 14 days) &amp;&amp; weiRaised <= PRE_SALE_CAP) {
+    if (now <= (startTime + 14 days) && weiRaised <= PRE_SALE_CAP) {
       tokenExchangeRate = PRE_SALE_BONUS_PERCENTAGE;
     }
-    else if (now <= endTime &amp;&amp; weiRaised <= HARD_CAP) {
+    else if (now <= endTime && weiRaised <= HARD_CAP) {
       if (weiRaised < 10000 * convertToWei) {
         tokenExchangeRate = MAIN_SALE_BONUS_PERCENTAGE_PHASE1;
       }
-      else if (weiRaised >= 10000 * convertToWei &amp;&amp; weiRaised < 20000 * convertToWei) {
+      else if (weiRaised >= 10000 * convertToWei && weiRaised < 20000 * convertToWei) {
         tokenExchangeRate = MAIN_SALE_BONUS_PERCENTAGE_PHASE2;
       }
-      else if (weiRaised >= 20000 * convertToWei &amp;&amp; weiRaised < 30000 * convertToWei) {
+      else if (weiRaised >= 20000 * convertToWei && weiRaised < 30000 * convertToWei) {
         tokenExchangeRate = MAIN_SALE_BONUS_PERCENTAGE_PHASE3;
       }
     }
@@ -511,9 +511,9 @@ contract EMACCrowdsale is Ownable {
 
   // @return true if the transaction can buy tokens
   function validPurchase() internal view returns (bool) {
-    bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+    bool withinPeriod = now >= startTime && now <= endTime;
     bool nonZeroPurchase = msg.value != 0;
     bool notReachedHardCap = weiRaised <= HARD_CAP;
-    return withinPeriod &amp;&amp; nonZeroPurchase &amp;&amp; notReachedHardCap;
+    return withinPeriod && nonZeroPurchase && notReachedHardCap;
   }
 }

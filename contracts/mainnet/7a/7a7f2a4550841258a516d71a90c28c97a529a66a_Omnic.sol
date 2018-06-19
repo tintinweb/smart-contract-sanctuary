@@ -36,13 +36,13 @@ library SafeMath {
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -55,8 +55,8 @@ contract ERC20Token {
     uint256 public decimals;
     uint256 public totalSupply;
 
-    mapping (address =&gt; uint256) public balanceOf;
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => uint256) public balanceOf;
+    mapping (address => mapping (address => uint256)) public allowance;
 
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Approval(address indexed owner, address indexed spender, uint256 value);
@@ -76,8 +76,8 @@ contract ERC20Token {
 
     function _transfer(address _from, address _to, uint256 _value) internal {
         require(_to != 0x0);
-        require(balanceOf[_from] &gt;= _value);
-        require(balanceOf[_to].add(_value) &gt; balanceOf[_to]);
+        require(balanceOf[_from] >= _value);
+        require(balanceOf[_to].add(_value) > balanceOf[_to]);
         uint256 previousBalances = balanceOf[_from].add(balanceOf[_to]);
         balanceOf[_from] = balanceOf[_from].sub(_value);
         balanceOf[_to] = balanceOf[_to].add(_value);
@@ -92,7 +92,7 @@ contract ERC20Token {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(_value &lt;= allowance[_from][msg.sender]);
+        require(_value <= allowance[_from][msg.sender]);
         allowance[_from][msg.sender] = allowance[_from][msg.sender].sub(_value);
         _transfer(_from, _to, _value);
         return true;
@@ -120,7 +120,7 @@ contract Omnic is Ownable, ERC20Token {
     }
 
     function burn(uint256 _value) onlyOwner public returns (bool success) {
-        require(balanceOf[msg.sender] &gt;= _value);
+        require(balanceOf[msg.sender] >= _value);
         balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
         totalSupply = totalSupply.sub(_value);
         Burn(msg.sender, _value);

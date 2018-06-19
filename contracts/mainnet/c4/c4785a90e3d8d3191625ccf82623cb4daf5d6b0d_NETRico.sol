@@ -176,7 +176,7 @@ contract NETRico {
     */
     function checkIfFundingCompleteOrExpired() public {
 
-        if(now > deadline &amp;&amp; state != State.Successful){
+        if(now > deadline && state != State.Successful){
 
             state = State.Successful; //Sale becomes Successful
             completedAt = now; //ICO finished
@@ -184,15 +184,15 @@ contract NETRico {
             emit LogFundingSuccessful(totalRaised); //we log the finish
 
             finished();
-        } else if(state == State.Stage3 &amp;&amp; now > dateTimeContract.toTimestamp(2018,12,27,0)){
+        } else if(state == State.Stage3 && now > dateTimeContract.toTimestamp(2018,12,27,0)){
 
             state = State.Stage4;
             
-        } else if(state == State.Stage2 &amp;&amp; now > dateTimeContract.toTimestamp(2018,9,28,0)){
+        } else if(state == State.Stage2 && now > dateTimeContract.toTimestamp(2018,9,28,0)){
 
             state = State.Stage3;
             
-        } else if(state == State.Stage1 &amp;&amp; now > dateTimeContract.toTimestamp(2018,6,30,0)){
+        } else if(state == State.Stage1 && now > dateTimeContract.toTimestamp(2018,6,30,0)){
 
             state = State.Stage2;
 

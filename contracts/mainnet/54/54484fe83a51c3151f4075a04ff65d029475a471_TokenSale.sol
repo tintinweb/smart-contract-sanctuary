@@ -60,7 +60,7 @@ contract AbstractToken is Token, SafeMath {
 
   function transfer (address _to, uint256 _value) returns (bool success) {
     if (accounts [msg.sender] < _value) return false;
-    if (_value > 0 &amp;&amp; msg.sender != _to) {
+    if (_value > 0 && msg.sender != _to) {
       accounts [msg.sender] = safeSub (accounts [msg.sender], _value);
       accounts [_to] = safeAdd (accounts [_to], _value);
     }
@@ -75,7 +75,7 @@ contract AbstractToken is Token, SafeMath {
     allowances [_from][msg.sender] =
       safeSub (allowances [_from][msg.sender], _value);
 
-    if (_value > 0 &amp;&amp; _from != _to) {
+    if (_value > 0 && _from != _to) {
       accounts [_from] = safeSub (accounts [_from], _value);
       accounts [_to] = safeAdd (accounts [_to], _value);
     }
@@ -258,7 +258,7 @@ contract TokenSale is LicerioToken  {
     }
     
     modifier saleIsOn() {
-        require(currentState != State.STOPPED &amp;&amp; currentState != State.CLOSED &amp;&amp; totalSold < SaleFound);
+        require(currentState != State.STOPPED && currentState != State.CLOSED && totalSold < SaleFound);
         _;
     }
     

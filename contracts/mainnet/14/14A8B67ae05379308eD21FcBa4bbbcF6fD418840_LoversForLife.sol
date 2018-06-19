@@ -15,7 +15,7 @@ contract LoversForLife {
     address creator;
     Lovers[] public loverList;
     uint public amountOfLovers = 0;
-    mapping(address =&gt; uint) loverNumber;
+    mapping(address => uint) loverNumber;
 
     constructor() public {
         creator = msg.sender;
@@ -27,8 +27,8 @@ contract LoversForLife {
     }
     
     function createLover(string l1, string l2, string message) public payable{
-        require(msg.value &gt;= minPrice);
-        require(msg.value &lt;= maxPrice);
+        require(msg.value >= minPrice);
+        require(msg.value <= maxPrice);
         Lovers memory newLover = Lovers ({
             lover1: l1,
             lover2: l2,

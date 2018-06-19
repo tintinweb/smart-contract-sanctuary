@@ -21,7 +21,7 @@ library SafeMath {
      * @dev Integer division of two numbers, truncating the quotient.
      */
     function div(uint a, uint b) internal pure returns(uint) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         // uint c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return a / b;
@@ -30,7 +30,7 @@ library SafeMath {
      * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
      */
     function sub(uint a, uint b) internal pure returns(uint) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
     /**
@@ -38,13 +38,13 @@ library SafeMath {
      */
     function add(uint a, uint b) internal pure returns(uint) {
         uint c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
 
 /// @title Interface for contracts conforming to ERC-721: Non-Fungible Tokens
-/// @author Dieter Shirley &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81e5e4f5e4c1e0f9e8eeecfbe4efafe2ee">[email&#160;protected]</a>&gt; (https://github.com/dete)
+/// @author Dieter Shirley <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81e5e4f5e4c1e0f9e8eeecfbe4efafe2ee">[email&#160;protected]</a>> (https://github.com/dete)
 
 contract ERC721 {
     // Required methods
@@ -109,22 +109,22 @@ contract CryptoCovfefes is ERC721 {
     /*** STORAGE ***/
     /// @dev A mapping from covfefe IDs to the address that owns them. All covfefes have
     ///  some valid owner address.
-    mapping(uint =&gt; address) public covfefeIndexToOwner;
+    mapping(uint => address) public covfefeIndexToOwner;
     
     // @dev A mapping from owner address to count of tokens that address owns.
     //  Used internally inside balanceOf() to resolve ownership count.
-    mapping(address =&gt; uint) private ownershipTokenCount;
+    mapping(address => uint) private ownershipTokenCount;
     
     /// @dev A mapping from CovfefeIDs to an address that has been approved to call
     ///  transferFrom(). Each Covfefe can only have one approved address for transfer
     ///  at any time. A zero value means no approval is outstanding.
-    mapping(uint =&gt; address) public covfefeIndexToApproved;
+    mapping(uint => address) public covfefeIndexToApproved;
     
     // @dev A mapping from CovfefeIDs to the price of the token.
-    mapping(uint =&gt; uint) private covfefeIndexToPrice;
+    mapping(uint => uint) private covfefeIndexToPrice;
     
     // @dev A mapping from CovfefeIDs to the price of the token.
-    mapping(uint =&gt; uint) private covfefeIndexToLastPrice;
+    mapping(uint => uint) private covfefeIndexToLastPrice;
     
     // The addresses of the accounts (or contracts) that can execute actions within each roles.
     address public covmanAddress;
@@ -188,12 +188,12 @@ contract CryptoCovfefes is ERC721 {
 
     /// @dev Creates a new promo Covfefe with the given term, with given _price and assignes it to an address.
     function createPromoCovfefe(address _owner, string _term, string _meaning, uint16 _generation, uint _price) public onlyCovmanager {
-        require(promoCreatedCount &lt; PROMO_CREATION_LIMIT);
+        require(promoCreatedCount < PROMO_CREATION_LIMIT);
         address covfefeOwner = _owner;
         if (covfefeOwner == address(0)) {
             covfefeOwner = covmanagerAddress;
         }
-        if (_price &lt;= 0) {
+        if (_price <= 0) {
             _price = startingPrice;
         }
         promoCreatedCount++;
@@ -202,7 +202,7 @@ contract CryptoCovfefes is ERC721 {
     
     /// @dev Creates a new Covfefe with the given term.
     function createContractCovfefe(string _term, string _meaning, uint16 _generation) public onlyCovmanager {
-        require(contractCreatedCount &lt; CONTRACT_CREATION_LIMIT);
+        require(contractCreatedCount < CONTRACT_CREATION_LIMIT);
         contractCreatedCount++;
         _createCovfefe(_term, _meaning, _generation, address(this), startingPrice);
     }
@@ -212,7 +212,7 @@ contract CryptoCovfefes is ERC721 {
     }
 
     function _ripeForSale(Covfefe storage _covfefe) internal view returns(bool) {
-        return (_covfefe.saleReadyTime &lt;= now);
+        return (_covfefe.saleReadyTime <= now);
     }
     /// @notice Returns all the relevant information about a specific covfefe.
     /// @param _tokenId The tokenId of the covfefe of interest.
@@ -297,7 +297,7 @@ contract CryptoCovfefes is ERC721 {
         require(_addressNotNull(newOwner));
         
         // Making sure sent amount is greater than or equal to the sellingPrice
-        require(msg.value &gt;= sellingPrice);
+        require(msg.value >= sellingPrice);
         uint payment = uint(SafeMath.div(SafeMath.mul(sellingPrice, 95), 100));
         uint purchaseExcess = SafeMath.sub(msg.value, sellingPrice);
         
@@ -366,8 +366,8 @@ contract CryptoCovfefes is ERC721 {
         require(!isContract(msg.sender));
         
         //Making sure amount is within the min and max range
-        require(msg.value &gt;= 0.001 ether);
-        require(msg.value &lt;= 9999.000 ether);
+        require(msg.value >= 0.001 ether);
+        require(msg.value <= 9999.000 ether);
         
         //Keeping a record of lastprice before updating price
         covfefeIndexToLastPrice[_tokenId] = covfefeIndexToPrice[_tokenId];
@@ -398,7 +398,7 @@ contract CryptoCovfefes is ERC721 {
             uint totalCovfefes = totalSupply();
             uint resultIndex = 0;
             uint covfefeId;
-            for (covfefeId = 0; covfefeId &lt;= totalCovfefes; covfefeId++) {
+            for (covfefeId = 0; covfefeId <= totalCovfefes; covfefeId++) {
                 if (covfefeIndexToOwner[covfefeId] == _owner) {
                     result[resultIndex] = covfefeId;
                     resultIndex++;
@@ -526,7 +526,7 @@ contract CryptoCovfefes is ERC721 {
         Covfefe storage enemyCovfefe = covfefes[_targetId];
         uint rand = randMod(100);
         
-        if (rand &lt;= duelVictoryProbability) {
+        if (rand <= duelVictoryProbability) {
             myCovfefe.winCount++;
             enemyCovfefe.lossCount++;
         
@@ -550,6 +550,6 @@ contract CryptoCovfefes is ERC721 {
         assembly {
             size: = extcodesize(addr)
         }
-        return size &gt; 0;
+        return size > 0;
     }
 }

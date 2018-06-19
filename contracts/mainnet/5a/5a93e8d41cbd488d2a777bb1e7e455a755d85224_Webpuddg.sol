@@ -29,13 +29,13 @@ contract owned {
 
 library SafeMath {
     function sub(uint256 a, uint256 b) pure internal returns (uint256) {
-        assert(a &gt;= b);
+        assert(a >= b);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) pure internal returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a &amp;&amp; c &gt;= b);
+        assert(c >= a && c >= b);
         return c;
     }
 }
@@ -61,9 +61,9 @@ contract Webpuddg is ERC20, owned {
     uint8 public decimals = 18;
     uint256 public totalSupply;
 
-    mapping (address =&gt; uint256) private balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) private allowed;
-    mapping (address =&gt; bool) public frozenAccount;
+    mapping (address => uint256) private balances;
+    mapping (address => mapping (address => uint256)) private allowed;
+    mapping (address => bool) public frozenAccount;
 
     event FrozenFunds(address target, bool frozen);
     event Burn(address indexed from, uint256 value);
@@ -84,8 +84,8 @@ contract Webpuddg is ERC20, owned {
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
         require(_to != address(0));
-        require(balances[msg.sender] &gt;= _value);
-        require(!frozenAccount[msg.sender] &amp;&amp; !frozenAccount[_to]);
+        require(balances[msg.sender] >= _value);
+        require(!frozenAccount[msg.sender] && !frozenAccount[_to]);
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
         Transfer(msg.sender, _to, _value);
@@ -94,8 +94,8 @@ contract Webpuddg is ERC20, owned {
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         require(_to != address(0));
-        require(balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value);
-        require(!frozenAccount[_from] &amp;&amp; !frozenAccount[_to]);
+        require(balances[_from] >= _value && allowed[_from][msg.sender] >= _value);
+        require(!frozenAccount[_from] && !frozenAccount[_to]);
         allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -105,8 +105,8 @@ contract Webpuddg is ERC20, owned {
 
     function approve(address _spender, uint256 _value) public returns (bool success) {
         require(_spender != address(0));
-        require(balances[msg.sender] &gt;= _value);
-        require(!frozenAccount[_spender] &amp;&amp; !frozenAccount[msg.sender]);
+        require(balances[msg.sender] >= _value);
+        require(!frozenAccount[_spender] && !frozenAccount[msg.sender]);
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
         return true;

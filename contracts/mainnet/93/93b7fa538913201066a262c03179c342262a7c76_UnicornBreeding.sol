@@ -282,7 +282,7 @@ contract UnicornBreeding is UnicornAccessControl {
     function acceptHybridization(uint _firstUnicornId, uint _secondUnicornId) whenNotPaused public payable {
         require(unicornToken.owns(msg.sender, _secondUnicornId));
         require(_secondUnicornId != _firstUnicornId);
-        require(unicornToken.isUnfreezed(_firstUnicornId) &amp;&amp; unicornToken.isUnfreezed(_secondUnicornId));
+        require(unicornToken.isUnfreezed(_firstUnicornId) && unicornToken.isUnfreezed(_secondUnicornId));
         require(hybridizations[_firstUnicornId].exists);
         require(msg.value == unicornManagement.oraclizeFee());
         if (hybridizations[_firstUnicornId].price > 0) {
@@ -526,7 +526,7 @@ contract UnicornBreeding is UnicornAccessControl {
 
     function setSellDividendPercent(uint _percentCandy, uint _percentEth) public onlyManager {
         //no more then 25%
-        require(_percentCandy < 2500 &amp;&amp; _percentEth < 2500);
+        require(_percentCandy < 2500 && _percentEth < 2500);
 
         sellDividendPercentCandy = _percentCandy;
         sellDividendPercentEth = _percentEth;

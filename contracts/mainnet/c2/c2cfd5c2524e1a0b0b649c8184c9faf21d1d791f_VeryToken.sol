@@ -17,13 +17,13 @@ library SafeMath {
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -51,8 +51,8 @@ contract ERC20 {
 contract StandardToken is ERC20 {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
-  mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+  mapping(address => uint256) balances;
+  mapping (address => mapping (address => uint256)) allowed;
 
   /**
    * @dev Gets the balance of the specified address.
@@ -87,7 +87,7 @@ contract StandardToken is ERC20 {
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     var _allowance = allowed[_from][msg.sender];
     require(_to != address(0));
-    require (_value &lt;= _allowance);
+    require (_value <= _allowance);
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
     allowed[_from][msg.sender] = _allowance.sub(_value);

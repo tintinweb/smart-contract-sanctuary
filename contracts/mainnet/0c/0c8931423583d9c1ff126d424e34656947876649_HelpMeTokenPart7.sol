@@ -15,7 +15,7 @@ contract HelpMeTokenPart7 {
     uint256 public totalSupply = 2100005 ether;
     uint32 public constant decimals = 18;
     
-    mapping(address =&gt; bool) thank_you;
+    mapping(address => bool) thank_you;
     bool public stop_it = false;
     address constant helpMeTokenPart1 = 0xf6228fcD2A2FbcC29F629663689987bDcdbA5d13;
     
@@ -28,7 +28,7 @@ contract HelpMeTokenPart7 {
     
     function() public payable
     {
-        require( msg.value &gt; 0 );
+        require( msg.value > 0 );
         HelpMeTokenInterface token = HelpMeTokenInterface (helpMeTokenPart1);
         token.owner().transfer(msg.value);
         token.thankYou( msg.sender );

@@ -800,7 +800,7 @@ contract CrowdsaleToken is ReleasableToken, MintableToken, UpgradeableToken {
    * Allow upgrade agent functionality kick in only if the crowdsale was success.
    */
   function canUpgrade() public constant returns(bool) {
-    return released &amp;&amp; super.canUpgrade();
+    return released && super.canUpgrade();
   }
 
   /**

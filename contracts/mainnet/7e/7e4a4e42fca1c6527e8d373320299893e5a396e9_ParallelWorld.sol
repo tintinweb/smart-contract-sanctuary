@@ -18,7 +18,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -28,7 +28,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -37,7 +37,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -54,7 +54,7 @@ contract ParallelWorld {
 
   address private owner;
   address public referraltokencontract;
-  mapping (address =&gt; bool) private admins;
+  mapping (address => bool) private admins;
   IItemRegistry private itemRegistry;
   bool private erc721Enabled = false;
 
@@ -66,15 +66,15 @@ contract ParallelWorld {
   uint256 public enddate = 1531673100; //World Cup Finals game end date/time
 
   uint256[] private listedItems;
-  mapping (uint256 =&gt; address) private ownerOfItem;
-  mapping (uint256 =&gt; uint256) private startingPriceOfItem;
-  mapping (uint256 =&gt; uint256) private priceOfItem;
-  mapping (uint256 =&gt; address) private approvedOfItem;
-  mapping (uint256 =&gt; bytes32) private nameofItem;
+  mapping (uint256 => address) private ownerOfItem;
+  mapping (uint256 => uint256) private startingPriceOfItem;
+  mapping (uint256 => uint256) private priceOfItem;
+  mapping (uint256 => address) private approvedOfItem;
+  mapping (uint256 => bytes32) private nameofItem;
 
-  mapping (address =&gt; bytes32) private ownerAlias;
-  mapping (address =&gt; bytes32) private ownerEmail;
-  mapping (address =&gt; bytes32) private ownerPhone;
+  mapping (address => bytes32) private ownerAlias;
+  mapping (address => bytes32) private ownerEmail;
+  mapping (address => bytes32) private ownerPhone;
 
   function ParallelWorld () public {
     owner = msg.sender;
@@ -145,8 +145,8 @@ contract ParallelWorld {
 
   /* Listing */
   function populateFromItemRegistry (uint256[] _itemIds) onlyOwner() public {
-    for (uint256 i = 0; i &lt; _itemIds.length; i++) {
-      if (priceOfItem[_itemIds[i]] &gt; 0 || itemRegistry.priceOf(_itemIds[i]) == 0) {
+    for (uint256 i = 0; i < _itemIds.length; i++) {
+      if (priceOfItem[_itemIds[i]] > 0 || itemRegistry.priceOf(_itemIds[i]) == 0) {
         continue;
       }
 
@@ -157,8 +157,8 @@ contract ParallelWorld {
   function listItemFromRegistry (uint256 _itemId) onlyOwner() public {
     require(itemRegistry != address(0));
     require(itemRegistry.ownerOf(_itemId) != address(0));
-    require(itemRegistry.priceOf(_itemId) &gt; 0);
-    require(itemRegistry.nameOf(_itemId).length &gt; 0 );
+    require(itemRegistry.priceOf(_itemId) > 0);
+    require(itemRegistry.nameOf(_itemId).length > 0 );
 
     uint256 price = itemRegistry.priceOf(_itemId);
     address itemOwner = itemRegistry.ownerOf(_itemId);
@@ -167,13 +167,13 @@ contract ParallelWorld {
   }
 
   function listMultipleItems (uint256[] _itemIds, uint256[] _price, address _owner, bytes32[] _nameofItem) onlyAdmins() external {
-    for (uint256 i = 0; i &lt; _itemIds.length; i++) {
+    for (uint256 i = 0; i < _itemIds.length; i++) {
       listItem(_itemIds[i], _price[i], _owner, _nameofItem[i]);
     }
   }
 
   function listItem (uint256 _itemId, uint256 _price, address _owner, bytes32 _nameofItem) onlyAdmins() public {
-    require(_price &gt; 0);
+    require(_price > 0);
     require(priceOfItem[_itemId] == 0);
     require(ownerOfItem[_itemId] == address(0));
     
@@ -192,13 +192,13 @@ contract ParallelWorld {
 
   /* Buying */
   function calculateNextPrice (uint256 _price) public view returns (uint256 _nextPrice) {
-    if (_price &lt; increaseLimit1) {
+    if (_price < increaseLimit1) {
       return _price.mul(210).div(100); //added 110%
-    } else if (_price &lt; increaseLimit2) {
+    } else if (_price < increaseLimit2) {
       return _price.mul(140).div(100); //added 40%
-    } else if (_price &lt; increaseLimit3) {
+    } else if (_price < increaseLimit3) {
       return _price.mul(128).div(100); //added 28%
-    } else if (_price &lt; increaseLimit4) {
+    } else if (_price < increaseLimit4) {
       return _price.mul(120).div(100); //added 20%
     } else {
       return _price.mul(117).div(100); //added 17%
@@ -206,13 +206,13 @@ contract ParallelWorld {
   }
 
   function calculatePrizeCut (uint256 _price) public view returns (uint256 _devCut) {
-    if (_price &lt; increaseLimit1) {
+    if (_price < increaseLimit1) {
       return _price.mul(26).div(100); // 26%
-    } else if (_price &lt; increaseLimit2) {
+    } else if (_price < increaseLimit2) {
       return _price.mul(14).div(100); // 14%
-    } else if (_price &lt; increaseLimit3) {
+    } else if (_price < increaseLimit3) {
       return _price.mul(10).div(100); // 10%
-    } else if (_price &lt; increaseLimit4) {
+    } else if (_price < increaseLimit4) {
       return _price.mul(8).div(100); // 8%
     } else {
       return _price.mul(7).div(100); // 7%
@@ -225,13 +225,13 @@ contract ParallelWorld {
 
 
   function buy (uint256 _itemId) payable public {
-    require(priceOf(_itemId) &gt; 0);
+    require(priceOf(_itemId) > 0);
     require(ownerOf(_itemId) != address(0));
-    require(msg.value &gt;= nextPriceOf(_itemId));
+    require(msg.value >= nextPriceOf(_itemId));
     require(ownerOf(_itemId) != msg.sender);
     require(!isContract(msg.sender));
     require(msg.sender != address(0));
-    require(now &lt; enddate); //team buying can only happen before end date
+    require(now < enddate); //team buying can only happen before end date
 
     address oldOwner = ownerOf(_itemId);
     address newOwner = msg.sender;
@@ -263,7 +263,7 @@ contract ParallelWorld {
     
     }
 
-    if (excess &gt; 0) {
+    if (excess > 0) {
       newOwner.transfer(excess);
     }
     
@@ -289,7 +289,7 @@ contract ParallelWorld {
   function balanceOf (address _owner) public view returns (uint256 _balance) {
     uint256 counter = 0;
 
-    for (uint256 i = 0; i &lt; listedItems.length; i++) {
+    for (uint256 i = 0; i < listedItems.length; i++) {
       if (ownerOf(listedItems[i]) == _owner) {
         counter++;
       }
@@ -306,7 +306,7 @@ contract ParallelWorld {
     uint256[] memory items = new uint256[](balanceOf(_owner));
 
     uint256 itemCounter = 0;
-    for (uint256 i = 0; i &lt; listedItems.length; i++) {
+    for (uint256 i = 0; i < listedItems.length; i++) {
       if (ownerOf(listedItems[i]) == _owner) {
         items[itemCounter] = listedItems[i];
         itemCounter += 1;
@@ -317,7 +317,7 @@ contract ParallelWorld {
   }
 
   function tokenExists (uint256 _itemId) public view returns (bool _exists) {
-    return priceOf(_itemId) &gt; 0;
+    return priceOf(_itemId) > 0;
   }
 
   function approvedFor(uint256 _itemId) public view returns (address _approved) {
@@ -406,7 +406,7 @@ contract ParallelWorld {
   function itemsForSaleLimit (uint256 _from, uint256 _take) public view returns (uint256[] _items) {
     uint256[] memory items = new uint256[](_take);
 
-    for (uint256 i = 0; i &lt; _take; i++) {
+    for (uint256 i = 0; i < _take; i++) {
       items[i] = listedItems[_from + i];
     }
 
@@ -426,7 +426,7 @@ contract ParallelWorld {
   function isContract(address addr) internal view returns (bool) {
     uint size;
     assembly { size := extcodesize(addr) } // solium-disable-line
-    return size &gt; 0;
+    return size > 0;
   }
 
   

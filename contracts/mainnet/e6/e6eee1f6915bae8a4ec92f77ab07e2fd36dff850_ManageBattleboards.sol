@@ -3,7 +3,7 @@ pragma solidity ^0.4.17;
 contract SafeMath {
     function safeAdd(uint x, uint y) pure internal returns(uint) {
       uint z = x + y;
-      assert((z >= x) &amp;&amp; (z >= y));
+      assert((z >= x) && (z >= y));
       return z;
     }
 
@@ -313,8 +313,8 @@ contract ManageBattleboards is AccessControl, SafeMath  {
         (,angelCardSeries,,,,,,,,,) = angelCardData.getAngel(angelId);
         
         if (angelCardSeries > restrictions) {return false;}
-        if ((angelCardSeries == 2) &amp;&amp; (restrictions < 19)) {return false;} //Lucifer Card 
-        if ((angelCardSeries == 3) &amp;&amp; (restrictions < 21)) {return false;} //Michael Card
+        if ((angelCardSeries == 2) && (restrictions < 19)) {return false;} //Lucifer Card 
+        if ((angelCardSeries == 3) && (restrictions < 21)) {return false;} //Michael Card
         return true;
        }
        
@@ -335,7 +335,7 @@ contract ManageBattleboards is AccessControl, SafeMath  {
        
        if (battleboardData.isBattleboardLive(battleboardId) == false) {revert();}
        battleboardData.killBoard(battleboardId); 
-        if ((battleboardData.getNumTeams(battleboardId,1) != 0) &amp;&amp; (battleboardData.getNumTeams(battleboardId,2) != 0)) {revert();}
+        if ((battleboardData.getNumTeams(battleboardId,1) != 0) && (battleboardData.getNumTeams(battleboardId,2) != 0)) {revert();}
         //No teams are out, function shouldn&#39;t be called. 
         uint8 id;
         uint64 petId;
@@ -343,7 +343,7 @@ contract ManageBattleboards is AccessControl, SafeMath  {
         address ownerLost;
         uint8 i = 0;
         IPetCardData PetCardData = IPetCardData(petCardDataContract);
-        if ((battleboardData.getNumTeams(battleboardId,1) == 0) &amp;&amp; (battleboardData.getNumTeams(battleboardId,2) == 0)) {
+        if ((battleboardData.getNumTeams(battleboardId,1) == 0) && (battleboardData.getNumTeams(battleboardId,2) == 0)) {
               //Something odd happened and BOTH teams have lost - this is a tie. 
               
               for (i =0; i<battleboardData.getMaxFreeTeams(); i++) {
@@ -353,7 +353,7 @@ contract ManageBattleboards is AccessControl, SafeMath  {
                  PetCardData.transferPet(address(this), ownerWon, petId);
               }
         }
-       if ((battleboardData.getNumTeams(battleboardId,1) != 0) &amp;&amp; (battleboardData.getNumTeams(battleboardId,2) == 0)) {
+       if ((battleboardData.getNumTeams(battleboardId,1) != 0) && (battleboardData.getNumTeams(battleboardId,2) == 0)) {
        //Team 1 won 
        //Give team 1 back their pets. 
         for (i =0; i<3; i++) {
@@ -370,7 +370,7 @@ contract ManageBattleboards is AccessControl, SafeMath  {
                  PetCardData.transferPet(address(this), ownerWon, petId);
               }    
        }
-          if ((battleboardData.getNumTeams(battleboardId,1) == 0) &amp;&amp; (battleboardData.getNumTeams(battleboardId,2) != 0)) {
+          if ((battleboardData.getNumTeams(battleboardId,1) == 0) && (battleboardData.getNumTeams(battleboardId,2) != 0)) {
        //Team 2 won 
         //Give team 2 back their pets. 
             for (i =0; i<3; i++) {
@@ -521,22 +521,22 @@ contract ManageBattleboards is AccessControl, SafeMath  {
                 newTileType = getRandomNumber(5,3,seed);
                 newTilePower = getRandomNumber(30,10,seed);
             }
-                if ((chance >=30) &amp;&amp; (chance <50)) {
+                if ((chance >=30) && (chance <50)) {
                 //HP boost
                 newTileType = 7;
                 newTilePower = getRandomNumber(45,15,seed);
             }
-             if ((chance >=50) &amp;&amp; (chance <60)) {
+             if ((chance >=50) && (chance <60)) {
                 //EXP boost
                 newTileType = 6;
                 newTilePower = getRandomNumber(5,1,seed);
             }
-            if ((chance >=60) &amp;&amp; (chance <80)) {
+            if ((chance >=60) && (chance <80)) {
                 //Warp
                 newTileType = 9;
                 newTilePower = getRandomNumber(64,1,seed);
             }
-            if ((chance >=80) &amp;&amp; (chance <90)) {
+            if ((chance >=80) && (chance <90)) {
                 //Medal
                 newTileType = 10;
                 newTilePower = getRandomNumber(2,0,seed);
@@ -608,8 +608,8 @@ contract ManageBattleboards is AccessControl, SafeMath  {
         
        
             color = 1; //assume red to start 
-            if (((pet1auraBlue) > (pet1auraRed)) &amp;&amp; ((pet1auraBlue) > (pet1auraYellow))) {color = 2;}
-            if (((pet1auraYellow)> (pet1auraRed)) &amp;&amp; ((pet1auraYellow)> (pet1auraBlue))) {color = 3;}
+            if (((pet1auraBlue) > (pet1auraRed)) && ((pet1auraBlue) > (pet1auraYellow))) {color = 2;}
+            if (((pet1auraYellow)> (pet1auraRed)) && ((pet1auraYellow)> (pet1auraBlue))) {color = 3;}
             composite = (pet1auraRed) + (pet1auraYellow) + (pet1auraBlue);
             return;
             }

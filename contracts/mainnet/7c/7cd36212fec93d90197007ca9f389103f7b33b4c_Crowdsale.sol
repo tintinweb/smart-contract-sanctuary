@@ -156,9 +156,9 @@ contract Crowdsale {
 
   // @return true if the transaction can buy tokens
   function validPurchase() internal constant returns (bool) {
-    bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+    bool withinPeriod = now >= startTime && now <= endTime;
     bool nonZeroPurchase = msg.value != 0;
-    return withinPeriod &amp;&amp; nonZeroPurchase;
+    return withinPeriod && nonZeroPurchase;
   }
 
   // @return true if crowdsale event has ended

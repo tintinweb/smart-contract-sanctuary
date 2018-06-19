@@ -489,7 +489,7 @@ contract PreSale is Ownable, ReentrancyGuard {
 
     // @return true if the transaction can buy tokens
     modifier saleIsOn() {
-        bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+        bool withinPeriod = now >= startTime && now <= endTime;
         require(withinPeriod);
         _;
     }
@@ -500,7 +500,7 @@ contract PreSale is Ownable, ReentrancyGuard {
     }
 
     modifier refundAllowed() {
-        require(weiRaised < softCap &amp;&amp; now > endTime);
+        require(weiRaised < softCap && now > endTime);
         _;
     }
 
@@ -548,7 +548,7 @@ contract PreSale is Ownable, ReentrancyGuard {
 
     // Change owner of token after end of PreSale if Soft Cap has not raised
     function changeTokenOwner() public onlyOwner {
-        require(now > endTime &amp;&amp; weiRaised < softCap);
+        require(now > endTime && weiRaised < softCap);
         token.transferOwnership(owner);
     }
 

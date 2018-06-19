@@ -108,7 +108,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -118,7 +118,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -127,14 +127,14 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
 
 
 contract Whitelisting is Ownable {
-    mapping(address =&gt; bool) public isInvestorApproved;
+    mapping(address => bool) public isInvestorApproved;
 
     event Approved(address indexed investor);
     event Disapproved(address indexed investor);
@@ -145,7 +145,7 @@ contract Whitelisting is Ownable {
     }
 
     function approveInvestorsInBulk(address[] toApprove) public onlyOwner {
-        for (uint i=0; i&lt;toApprove.length; i++) {
+        for (uint i=0; i<toApprove.length; i++) {
             isInvestorApproved[toApprove[i]] = true;
             emit Approved(toApprove[i]);
         }
@@ -157,7 +157,7 @@ contract Whitelisting is Ownable {
     }
 
     function disapproveInvestorsInBulk(address[] toDisapprove) public onlyOwner {
-        for (uint i=0; i&lt;toDisapprove.length; i++) {
+        for (uint i=0; i<toDisapprove.length; i++) {
             delete isInvestorApproved[toDisapprove[i]];
             emit Disapproved(toDisapprove[i]);
         }
@@ -183,7 +183,7 @@ contract TokenVesting is Ownable {
         uint256 releaseTime;
     }
 
-    mapping (address  =&gt; VestingObj[]) public vestingObj;
+    mapping (address  => VestingObj[]) public vestingObj;
 
     uint256 public totalTokenVested;
 
@@ -215,8 +215,8 @@ contract TokenVesting is Ownable {
         checkZeroAddress(_beneficiary)
         checkZeroValue(_token)
     {
-        require(_vestingTime &gt; now);
-        require(uint256(getBalance()) &gt;= totalTokenVested.add(_token));
+        require(_vestingTime > now);
+        require(uint256(getBalance()) >= totalTokenVested.add(_token));
         vestingObj[_beneficiary].push(VestingObj({
             token : _token,
             releaseTime : _vestingTime
@@ -231,13 +231,13 @@ contract TokenVesting is Ownable {
     function claim() external {
         require(whitelisting.isInvestorApproved(msg.sender));
         uint256 transferTokenCount = 0;
-        for (uint i = 0; i &lt; vestingObj[msg.sender].length; i++) {
-            if (now &gt;= vestingObj[msg.sender][i].releaseTime) {
+        for (uint i = 0; i < vestingObj[msg.sender].length; i++) {
+            if (now >= vestingObj[msg.sender][i].releaseTime) {
                 transferTokenCount = transferTokenCount.add(vestingObj[msg.sender][i].token);
                 delete vestingObj[msg.sender][i];
             }
         }
-        require(transferTokenCount &gt; 0);
+        require(transferTokenCount > 0);
         token.safeTransfer(msg.sender, transferTokenCount);
         emit Release(msg.sender, transferTokenCount, now);
     }

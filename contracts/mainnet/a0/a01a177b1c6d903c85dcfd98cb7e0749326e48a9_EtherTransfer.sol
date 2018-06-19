@@ -53,7 +53,7 @@ contract EtherTransfer {
 
         uint amount = msg.value;
         require(isAutoFowarding);
-        require(amount&gt;0);
+        require(amount>0);
         to.transfer(amount);
         FundTransfer(msg.sender, amount, true);
     }

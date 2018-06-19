@@ -542,12 +542,12 @@ contract usingOraclize {
             iaddr *= 256;
             b1 = uint160(tmp[i]);
             b2 = uint160(tmp[i+1]);
-            if ((b1 >= 97)&amp;&amp;(b1 <= 102)) b1 -= 87;
-            else if ((b1 >= 65)&amp;&amp;(b1 <= 70)) b1 -= 55;
-            else if ((b1 >= 48)&amp;&amp;(b1 <= 57)) b1 -= 48;
-            if ((b2 >= 97)&amp;&amp;(b2 <= 102)) b2 -= 87;
-            else if ((b2 >= 65)&amp;&amp;(b2 <= 70)) b2 -= 55;
-            else if ((b2 >= 48)&amp;&amp;(b2 <= 57)) b2 -= 48;
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 65)&&(b1 <= 70)) b1 -= 55;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 65)&&(b2 <= 70)) b2 -= 55;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
             iaddr += (b1*16+b2);
         }
         return address(iaddr);
@@ -586,7 +586,7 @@ contract usingOraclize {
                 if (h[i] == n[0])
                 {
                     subindex = 1;
-                    while(subindex < n.length &amp;&amp; (i + subindex) < h.length &amp;&amp; h[i + subindex] == n[subindex])
+                    while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
                     {
                         subindex++;
                     }
@@ -638,7 +638,7 @@ contract usingOraclize {
         uint mint = 0;
         bool decimals = false;
         for (uint i=0; i<bresult.length; i++){
-            if ((bresult[i] >= 48)&amp;&amp;(bresult[i] <= 57)){
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
                 if (decimals){
                    if (_b == 0) break;
                     else _b--;
@@ -1020,7 +1020,7 @@ contract usingOraclize {
         if (v < 27)
           v += 27;
 
-        if (v != 27 &amp;&amp; v != 28)
+        if (v != 27 && v != 28)
             return (false, 0);
 
         return safer_ecrecover(hash, v, r, s);
@@ -1030,7 +1030,7 @@ contract usingOraclize {
 // </ORACLIZE_API>
 
 /*
- * @title String &amp; slice utility library for Solidity contracts.
+ * @title String & slice utility library for Solidity contracts.
  * @author Nick Johnson <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b2a392a282325222f0b25243f2f243f65252e3f">[email&#160;protected]</a>>
  *
  * @dev Functionality in this library is largely implemented using an
@@ -1111,23 +1111,23 @@ library strings {
         uint ret;
         if (self == 0)
             return 0;
-        if (self &amp; 0xffffffffffffffffffffffffffffffff == 0) {
+        if (self & 0xffffffffffffffffffffffffffffffff == 0) {
             ret += 16;
             self = bytes32(uint(self) / 0x100000000000000000000000000000000);
         }
-        if (self &amp; 0xffffffffffffffff == 0) {
+        if (self & 0xffffffffffffffff == 0) {
             ret += 8;
             self = bytes32(uint(self) / 0x10000000000000000);
         }
-        if (self &amp; 0xffffffff == 0) {
+        if (self & 0xffffffff == 0) {
             ret += 4;
             self = bytes32(uint(self) / 0x100000000);
         }
-        if (self &amp; 0xffff == 0) {
+        if (self & 0xffff == 0) {
             ret += 2;
             self = bytes32(uint(self) / 0x10000);
         }
-        if (self &amp; 0xff == 0) {
+        if (self & 0xff == 0) {
             ret += 1;
         }
         return 32 - ret;
@@ -1241,7 +1241,7 @@ library strings {
             if (a != b) {
                 // Mask out irrelevant bytes and check again
                 uint mask = ~(2 ** (8 * (32 - shortest + idx)) - 1);
-                var diff = (a &amp; mask) - (b &amp; mask);
+                var diff = (a & mask) - (b & mask);
                 if (diff != 0)
                     return int(diff);
             }
@@ -1335,13 +1335,13 @@ library strings {
             ret = b;
             len = 1;
         } else if(b < 0xE0) {
-            ret = b &amp; 0x1F;
+            ret = b & 0x1F;
             len = 2;
         } else if(b < 0xF0) {
-            ret = b &amp; 0x0F;
+            ret = b & 0x0F;
             len = 3;
         } else {
-            ret = b &amp; 0x07;
+            ret = b & 0x07;
             len = 4;
         }
 
@@ -1352,12 +1352,12 @@ library strings {
 
         for (uint i = 1; i < len; i++) {
             div = div / 256;
-            b = (word / div) &amp; 0xFF;
-            if (b &amp; 0xC0 != 0x80) {
+            b = (word / div) & 0xFF;
+            if (b & 0xC0 != 0x80) {
                 // Invalid UTF-8 sequence
                 return 0;
             }
-            ret = (ret * 64) | (b &amp; 0x3F);
+            ret = (ret * 64) | (b & 0x3F);
         }
 
         return ret;
@@ -1769,7 +1769,7 @@ contract Etheroll is usingOraclize, SafeMath {
      * checks user profit, bet size and user number is within range
     */
     modifier betIsValid(uint _betSize, uint _userNumber) {
-        require(((((_betSize * (100-(safeSub(_userNumber,1)))) / (safeSub(_userNumber,1))+_betSize))*houseEdge/houseEdgeDivisor)-_betSize <= maxProfit &amp;&amp; _betSize >= minBet &amp;&amp; _userNumber >= minNumber &amp;&amp; _userNumber <= maxNumber); 
+        require(((((_betSize * (100-(safeSub(_userNumber,1)))) / (safeSub(_userNumber,1))+_betSize))*houseEdge/houseEdgeDivisor)-_betSize <= maxProfit && _betSize >= minBet && _userNumber >= minNumber && _userNumber <= maxNumber); 
         _;
     }
 
@@ -1903,7 +1903,7 @@ contract Etheroll is usingOraclize, SafeMath {
     /*
      * public function
      * user submit bet
-     * only if game is active &amp; bet is valid can query oraclize and set user vars     
+     * only if game is active & bet is valid can query oraclize and set user vars     
     */
     function userRollDice(uint rollUnder) public 
         payable

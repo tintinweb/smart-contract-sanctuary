@@ -58,17 +58,17 @@ contract CryptoStorage is StorageBase {
     // number of monsters in pregnant
     uint256 public pregnantMonsters;
     
-    // monsterId =&gt; total number
-    mapping (uint256 =&gt; uint32) public monsterCurrentNumber;
+    // monsterId => total number
+    mapping (uint256 => uint32) public monsterCurrentNumber;
     
-    // tokenId =&gt; owner address
-    mapping (uint256 =&gt; address) public monsterIndexToOwner;
+    // tokenId => owner address
+    mapping (uint256 => address) public monsterIndexToOwner;
 
-    // owner address =&gt; balance of tokens
-    mapping (address =&gt; uint256) public ownershipTokenCount;
+    // owner address => balance of tokens
+    mapping (address => uint256) public ownershipTokenCount;
 
-    // tokenId =&gt; approved address
-    mapping (uint256 =&gt; address) public monsterIndexToApproved;
+    // tokenId => approved address
+    mapping (uint256 => address) public monsterIndexToApproved;
 
     function CryptoStorage() public {
         // placeholder to make the first available monster to have a tokenId starts from 1
@@ -137,7 +137,7 @@ contract CryptoStorage is StorageBase {
         Monster storage monster = monsters[_tokenId];
 
         isGestating = (monster.siringWithId != 0);
-        isReady = (monster.cooldownEndBlock &lt;= block.number);
+        isReady = (monster.cooldownEndBlock <= block.number);
         cooldownIndex = monster.cooldownIndex;
         nextActionAt = monster.cooldownEndBlock;
         siringWithId = monster.siringWithId;

@@ -93,7 +93,7 @@ contract SONICToken {
      */
     function approve(address _spender, uint256 _value) notPendingWithdrawal
     returns (bool success) {
-        if ((_value != 0) &amp;&amp; (allowance[msg.sender][_spender] != 0)) throw;
+        if ((_value != 0) && (allowance[msg.sender][_spender] != 0)) throw;
         allowance[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
         return true;                                      // we must return a bool as part of the ERC20
@@ -141,7 +141,7 @@ contract SONICToken {
 
     /**
      * withdrawalInitiate initiates the withdrawal by going into a waiting period
-     * It remembers the block number &amp; amount held at the time of request.
+     * It remembers the block number & amount held at the time of request.
      * Tokens cannot be moved out during the waiting period, locking the tokens until then.
      * After the waiting period finishes, the call withdrawalComplete
      *

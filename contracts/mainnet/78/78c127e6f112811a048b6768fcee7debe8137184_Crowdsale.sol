@@ -309,12 +309,12 @@ contract Token is CappedToken, BurnableToken, Withdrawable {
     }
 
     function transfer(address _to, uint256 _value) public returns(bool) {
-        require(mintingFinishedTime > 0 &amp;&amp; now + 2 weeks >= mintingFinishedTime);
+        require(mintingFinishedTime > 0 && now + 2 weeks >= mintingFinishedTime);
         return super.transfer(_to, _value);
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public returns(bool) {
-        require(mintingFinishedTime > 0 &amp;&amp; now + 2 weeks >= mintingFinishedTime);
+        require(mintingFinishedTime > 0 && now + 2 weeks >= mintingFinishedTime);
         return super.transferFrom(_from, _to, _value);
     }
 

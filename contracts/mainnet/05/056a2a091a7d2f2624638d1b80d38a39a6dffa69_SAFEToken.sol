@@ -3,7 +3,7 @@
            `+hMMMMMMMMMMMMMMMMMMMMMMh+`           
          .yMMMMMMMmyo/:----:/oymMMMMMMMy.         
        `sMMMMMMy/`              `/yMMMMMMs`       
-      -NMMMMNo`    ./sydddhys/.    `oNMMMMN-        *** Secure Email &amp; File Storage ***
+      -NMMMMNo`    ./sydddhys/.    `oNMMMMN-        *** Secure Email & File Storage ***
      /MMMMMy`   .sNMMMMMMMMMMMMmo.   `yMMMMM/       
     :MMMMM+   `yMMMMMMNmddmMMMMMMMs`   +MMMMM:      https://safe.ad
     mMMMMo   .NMMMMNo-  ``  -sNMMMMm.   oMMMMm      

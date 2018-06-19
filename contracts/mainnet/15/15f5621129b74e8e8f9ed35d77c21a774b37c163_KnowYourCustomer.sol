@@ -56,8 +56,8 @@ contract KnowYourCustomer is Ownable
         bool cleared;
 
         // % more for the contributor bring on board in 1/100 of %
-        // 2.51 % --&gt; 251
-        // 100% --&gt; 10000
+        // 2.51 % --> 251
+        // 100% --> 10000
         uint16 contributor_get;
 
         // eth address of the referer if any - the contributor address is the key of the hash
@@ -68,7 +68,7 @@ contract KnowYourCustomer is Ownable
     }
 
 
-    mapping (address =&gt; Contributor) public whitelist;
+    mapping (address => Contributor) public whitelist;
     //address[] public whitelistArray;
 
     /**
@@ -79,8 +79,8 @@ contract KnowYourCustomer is Ownable
     function setContributor(address _address, bool cleared, uint16 contributor_get, uint16 affiliate_get, address ref) onlyOwner public{
 
         // not possible to give an exorbitant bonus to be more than 100% (100x100 = 10000)
-        require(contributor_get&lt;10000);
-        require(affiliate_get&lt;10000);
+        require(contributor_get<10000);
+        require(affiliate_get<10000);
 
         Contributor storage contributor = whitelist[_address];
 

@@ -23,11 +23,11 @@ contract IngressRegistrar {
 	}
 	
 	uint256 public numHashTypes;
-	mapping(bytes32 =&gt; Manifest) private manifests;
-	mapping(address =&gt; bytes32[]) private registrantManifests;
-	mapping(bytes32 =&gt; bytes32[]) private registrantNameManifests;
-	mapping(bytes32 =&gt; uint256) public hashTypeIdLookup;
-	mapping(uint256 =&gt; HashType) public hashTypes;
+	mapping(bytes32 => Manifest) private manifests;
+	mapping(address => bytes32[]) private registrantManifests;
+	mapping(bytes32 => bytes32[]) private registrantNameManifests;
+	mapping(bytes32 => uint256) public hashTypeIdLookup;
+	mapping(uint256 => HashType) public hashTypes;
 	
 	 /**
 	  * @dev Log when a manifest registration is successful
@@ -54,11 +54,11 @@ contract IngressRegistrar {
      * @dev Checks if the values provided for this manifest are valid
      */
     modifier manifestIsValid(bytes32 name, bytes32 version, bytes32 hashTypeName, string checksum, address registrant) {
-        require(name != bytes32(0x0) &amp;&amp; 
-            version != bytes32(0x0) &amp;&amp; 
-            hashTypes[hashTypeIdLookup[hashTypeName]].active == true &amp;&amp;
-            bytes(checksum).length != 0 &amp;&amp;
-            registrant != address(0x0) &amp;&amp;
+        require(name != bytes32(0x0) && 
+            version != bytes32(0x0) && 
+            hashTypes[hashTypeIdLookup[hashTypeName]].active == true &&
+            bytes(checksum).length != 0 &&
+            registrant != address(0x0) &&
             manifests[keccak256(registrant, name, version)].name == bytes32(0x0)
             );
         _;
@@ -98,7 +98,7 @@ contract IngressRegistrar {
 	 * @param active The value to be set
 	 */
 	function setActiveHashType(bytes32 name, bool active) public onlyOwner {
-        require(hashTypeIdLookup[name] &gt; 0);
+        require(hashTypeIdLookup[name] > 0);
         hashTypes[hashTypeIdLookup[name]].active = active;
 	}
     
@@ -229,7 +229,7 @@ contract IngressRegistrar {
 	    returns (address, bytes32, bytes32, uint256, bytes32, string, uint256) {
 	        
 	    bytes32 registrantNameIndex = keccak256(registrant, name);
-	    require(registrantNameManifests[registrantNameIndex].length &gt; 0);
+	    require(registrantNameManifests[registrantNameIndex].length > 0);
 	    
 	    bytes32 manifestId = registrantNameManifests[registrantNameIndex][registrantNameManifests[registrantNameIndex].length - 1];
 	    Manifest memory _manifest = manifests[manifestId];
@@ -258,7 +258,7 @@ contract IngressRegistrar {
      */
 	function getLatestManifest(address registrant) public view
 	    returns (address, bytes32, bytes32, uint256, bytes32, string, uint256) {
-	    require(registrantManifests[registrant].length &gt; 0);
+	    require(registrantManifests[registrant].length > 0);
 	    
 	    bytes32 manifestId = registrantManifests[registrant][registrantManifests[registrant].length - 1];
 	    Manifest memory _manifest = manifests[manifestId];

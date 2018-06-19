@@ -22,7 +22,7 @@ contract NoteChain {
                 uint16 metadata;
                 bytes2 publicKey; 
                 // publicKey: generated client-side, 
-                // it will create a code for share URL-&gt; publicKey + hex(_noteId)
+                // it will create a code for share URL-> publicKey + hex(_noteId)
 
                 bytes12 title;
                 bytes content;
@@ -30,12 +30,12 @@ contract NoteChain {
 
         Note[] private notes;
 
-        mapping (uint64 =&gt; address) private noteToOwner;
-        mapping (address =&gt; uint64[]) private ownerNotes;
+        mapping (uint64 => address) private noteToOwner;
+        mapping (address => uint64[]) private ownerNotes;
 
         // PURE FUNCTIONS
         function isPosBitOne(uint data, uint pos) internal pure returns (bool) {
-                return data % (2**(pos+1)) &gt;= (2**pos);
+                return data % (2**(pos+1)) >= (2**pos);
         }
 
         // MODIFIERS
@@ -50,7 +50,7 @@ contract NoteChain {
         }
 
         modifier payFee() {
-                require(msg.value &gt;= noteChainFee);
+                require(msg.value >= noteChainFee);
                 _;
         }
 
@@ -74,7 +74,7 @@ contract NoteChain {
         }
 
         function withdraw(address _address, uint _amount) external onlyOwner {
-                require(_amount &lt;= address(this).balance);
+                require(_amount <= address(this).balance);
                 address(_address).transfer(_amount);
         }
 
@@ -140,14 +140,14 @@ contract NoteChain {
 
         function getMyNotes(uint64 _startFrom, uint64 _limit) external view returns (uint64[], uint16[], bytes2[], bytes12[], uint64) {
                 uint64 len = uint64(ownerNotes[msg.sender].length);
-                uint64 maxLoop = (len - _startFrom) &gt; _limit ? _limit : (len - _startFrom);
+                uint64 maxLoop = (len - _startFrom) > _limit ? _limit : (len - _startFrom);
 
                 uint64[] memory ids = new uint64[](maxLoop);
                 uint16[] memory metadatas = new uint16[](maxLoop);
                 bytes2[] memory publicKeys = new bytes2[](maxLoop);
                 bytes12[] memory titles = new bytes12[](maxLoop);
 
-                for (uint64 i = 0; i &lt; maxLoop; i++) {
+                for (uint64 i = 0; i < maxLoop; i++) {
                         ids[i] = ownerNotes[msg.sender][i+_startFrom];
                         metadatas[i] = notes[ ids[i] ].metadata;
                         publicKeys[i] = notes[ ids[i] ].publicKey;

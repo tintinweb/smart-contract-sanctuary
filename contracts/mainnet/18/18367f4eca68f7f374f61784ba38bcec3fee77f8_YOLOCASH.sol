@@ -90,7 +90,7 @@ contract YOLOCASH {//is inherently ERC20
 
         /* Only reduce allowance if not MAX_UINT256 in order to save gas on unlimited allowance */
         /* Balance holder does not need allowance to send from self. */
-        if (allowed[_from][msg.sender] != MAX_UINT256 &amp;&amp; _from != msg.sender) {
+        if (allowed[_from][msg.sender] != MAX_UINT256 && _from != msg.sender) {
             allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
         }
         Transfer(_from, _to, _value);

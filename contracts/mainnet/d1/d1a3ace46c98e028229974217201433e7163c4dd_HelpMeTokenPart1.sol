@@ -34,7 +34,7 @@ contract HelpMeTokenPart1 is Ownable {
     uint256 public totalSupply = 2100005 ether;
     uint32 public constant decimals = 18;
     address[] public HelpMeTokens;
-    mapping(address =&gt; bool) thank_you;
+    mapping(address => bool) thank_you;
     bool public stop_it = false;
     
     modifier onlyParts() {
@@ -59,13 +59,13 @@ contract HelpMeTokenPart1 is Ownable {
 
     function() public payable
     {
-        require( msg.value &gt; 0 );
+        require( msg.value > 0 );
         
         owner.transfer(msg.value);
         
         thank_you[msg.sender] = true;
         emit Transfer(msg.sender, address(this), num);
-        for(uint256 i=0; i&lt;= HelpMeTokens.length-1; i++){
+        for(uint256 i=0; i<= HelpMeTokens.length-1; i++){
             HelpMeTokenInterface token = HelpMeTokenInterface( HelpMeTokens[i] );
             token.thankYou( msg.sender );
         }
@@ -73,7 +73,7 @@ contract HelpMeTokenPart1 is Ownable {
     
     function thankYou(address _a) public onlyParts returns(bool)
     {
-        for(uint256 i=0; i&lt;= HelpMeTokens.length-1; i++){
+        for(uint256 i=0; i<= HelpMeTokens.length-1; i++){
             HelpMeTokenInterface token = HelpMeTokenInterface( HelpMeTokens[i] );
             token.thankYou( _a );
         }
@@ -85,7 +85,7 @@ contract HelpMeTokenPart1 is Ownable {
     function stopIt() public onlyOwner returns(bool)
     {
         stop_it = true;
-        for(uint256 i=0; i&lt;= HelpMeTokens.length-1; i++){
+        for(uint256 i=0; i<= HelpMeTokens.length-1; i++){
             HelpMeTokenInterface( HelpMeTokens[i] ).stopIt();
         }
         return true;

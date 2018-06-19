@@ -149,10 +149,10 @@ contract JoyArt is AccessControl, DetailedERC721 {
         address indexed newOwner
     );
 
-    mapping (uint256 =&gt; address) private tokenIdToOwner;
-    mapping (uint256 =&gt; uint256) private tokenIdToPrice;
-    mapping (address =&gt; uint256) private ownershipTokenCount;
-    mapping (uint256 =&gt; address) private tokenIdToApproved;
+    mapping (uint256 => address) private tokenIdToOwner;
+    mapping (uint256 => uint256) private tokenIdToPrice;
+    mapping (address => uint256) private ownershipTokenCount;
+    mapping (uint256 => address) private tokenIdToApproved;
 
     struct Art {
         string name;
@@ -170,7 +170,7 @@ contract JoyArt is AccessControl, DetailedERC721 {
 
     function createToken(string _name, address _owner, uint256 _price) public onlyCLevel {
         require(_owner != address(0));
-        require(_price &gt;= startingPrice);
+        require(_price >= startingPrice);
 
         _createToken(_name, _owner, _price);
     }
@@ -214,7 +214,7 @@ contract JoyArt is AccessControl, DetailedERC721 {
         uint256[] memory nextPrices = new uint256[](total);
         address[] memory owners = new address[](total);
 
-        for (uint256 i = 0; i &lt; total; i++) {
+        for (uint256 i = 0; i < total; i++) {
             prices[i] = tokenIdToPrice[i];
             nextPrices[i] = nextPriceOf(i);
             owners[i] = tokenIdToOwner[i];
@@ -232,7 +232,7 @@ contract JoyArt is AccessControl, DetailedERC721 {
             uint256 total = totalSupply();
             uint256 resultIndex = 0;
 
-            for (uint256 i = 0; i &lt; total; i++) {
+            for (uint256 i = 0; i < total; i++) {
                 if (tokenIdToOwner[i] == _owner) {
                     result[resultIndex] = i;
                     resultIndex++;
@@ -243,7 +243,7 @@ contract JoyArt is AccessControl, DetailedERC721 {
     }
 
     function withdrawBalance(address _to, uint256 _amount) public onlyCEO {
-        require(_amount &lt;= this.balance);
+        require(_amount <= this.balance);
  
         uint256 amountToWithdraw = _amount;
  
@@ -267,8 +267,8 @@ contract JoyArt is AccessControl, DetailedERC721 {
         require(newOwner != address(0));
         require(oldOwner != newOwner);
         require(!_isContract(newOwner));
-        require(sellingPrice &gt; 0);
-        require(msg.value &gt;= sellingPrice);
+        require(sellingPrice > 0);
+        require(msg.value >= sellingPrice);
 
         _transfer(oldOwner, newOwner, _tokenId);
         tokenIdToPrice[_tokenId] = nextPriceOf(_tokenId);
@@ -288,7 +288,7 @@ contract JoyArt is AccessControl, DetailedERC721 {
             oldOwner.transfer(sellingPrice.sub(contractCut));
         }
 
-        if (excess &gt; 0) {
+        if (excess > 0) {
             newOwner.transfer(excess);
         }
     }
@@ -304,13 +304,13 @@ contract JoyArt is AccessControl, DetailedERC721 {
 
     function nextPriceOf(uint256 _tokenId) public view returns (uint256 _nextPrice) {
         uint256 _price = priceOf(_tokenId);
-        if (_price &lt; increaseLimit1) {
+        if (_price < increaseLimit1) {
             return _price.mul(200).div(95);
-        } else if (_price &lt; increaseLimit2) {
+        } else if (_price < increaseLimit2) {
             return _price.mul(135).div(96);
-        } else if (_price &lt; increaseLimit3) {
+        } else if (_price < increaseLimit3) {
             return _price.mul(125).div(97);
-        } else if (_price &lt; increaseLimit4) {
+        } else if (_price < increaseLimit4) {
             return _price.mul(117).div(97);
         } else {
             return _price.mul(115).div(98);
@@ -394,7 +394,7 @@ contract JoyArt is AccessControl, DetailedERC721 {
     function _isContract(address addr) private view returns (bool) {
         uint256 size;
         assembly { size := extcodesize(addr) }
-        return size &gt; 0;
+        return size > 0;
     }
 }
 
@@ -417,7 +417,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -427,7 +427,7 @@ library SafeMath {
     * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -436,7 +436,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }

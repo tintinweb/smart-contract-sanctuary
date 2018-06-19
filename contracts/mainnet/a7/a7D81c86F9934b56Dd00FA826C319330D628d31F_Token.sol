@@ -9,20 +9,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -101,7 +101,7 @@ contract ERC20Token {
 
     /// @param _owner The address from which the balance will be retrieved
     /// @return The balance
-    mapping (address =&gt; uint256) public balanceOf;
+    mapping (address => uint256) public balanceOf;
     //function balanceOf(address _owner) public constant returns (uint256 balance);
 
     /// @notice send `_value` token to `_to` from `msg.sender`
@@ -126,7 +126,7 @@ contract ERC20Token {
     /// @param _owner The address of the account owning tokens
     /// @param _spender The address of the account able to transfer the tokens
     /// @return Amount of remaining tokens allowed to spent
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => mapping (address => uint256)) public allowance;
     //function allowance(address _owner, address _spender) public constant returns (uint256 remaining);
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
@@ -203,9 +203,9 @@ contract Token is TokenI {
         uint256 amount;
     }
     //Key1: step(募资阶段); Key2: user sequence(用户序列)
-    mapping (uint8 =&gt; mapping (uint32 =&gt; FreezeInfo)) public freezeOf; //所有锁仓，key 使用序号向上增加，方便程序查询。
-    mapping (uint8 =&gt; uint32) public lastFreezeSeq; //最后的 freezeOf 键值。key: step; value: sequence
-    mapping (uint8 =&gt; uint) internal unlockTime;
+    mapping (uint8 => mapping (uint32 => FreezeInfo)) public freezeOf; //所有锁仓，key 使用序号向上增加，方便程序查询。
+    mapping (uint8 => uint32) public lastFreezeSeq; //最后的 freezeOf 键值。key: step; value: sequence
+    mapping (uint8 => uint) internal unlockTime;
 
     bool public transfersEnabled;
 
@@ -266,14 +266,14 @@ contract Token is TokenI {
     }
 
     modifier moreThanZero(uint256 _value){
-        if (_value &lt;= 0){
+        if (_value <= 0){
             revert();
         }
         _;
     }
 
     modifier moreOrEqualZero(uint256 _value){
-        if(_value &lt; 0){
+        if(_value < 0){
             revert();
         }
         _;
@@ -290,15 +290,15 @@ contract Token is TokenI {
         assembly {
             size := extcodesize(_addr)
         }
-        return size&gt;0;
+        return size>0;
     }
 
     /* Send coins */
     function transfer(address _to, uint256 _value) realUser(_to) moreThanZero(_value) transable public returns (bool) {
         //infoAddr(&#39;msg.sender&#39;, msg.sender);
         //infoBool(&#39;typeOf msg.sender&#39;, isContract(msg.sender));
-        require(balanceOf[msg.sender] &gt;= _value);          // Check if the sender has enough
-        //require(balanceOf[_to] + _value &gt; balanceOf[_to]); // Check for overflows
+        require(balanceOf[msg.sender] >= _value);          // Check if the sender has enough
+        //require(balanceOf[_to] + _value > balanceOf[_to]); // Check for overflows
         balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
         balanceOf[_to] = balanceOf[_to].add(_value);
         Transfer(msg.sender, _to, _value);                   // Notify anyone listening that this transfer took place
@@ -336,9 +336,9 @@ contract Token is TokenI {
 
     /* A contract attempts to get the coins */
     function transferFrom(address _from, address _to, uint256 _value) realUser(_from) realUser(_to) moreThanZero(_value) transable public returns (bool success) {
-        require(balanceOf[_from] &gt;= _value);                 // Check if the sender has enough
-        require(balanceOf[_to] + _value &gt; balanceOf[_to]);   // Check for overflows
-        require(_value &lt;= allowance[_from][msg.sender]);     // Check allowance
+        require(balanceOf[_from] >= _value);                 // Check if the sender has enough
+        require(balanceOf[_to] + _value > balanceOf[_to]);   // Check for overflows
+        require(_value <= allowance[_from][msg.sender]);     // Check allowance
         balanceOf[_from] = balanceOf[_from].sub(_value);                           // Subtract from the sender
         balanceOf[_to] = balanceOf[_to].add(_value);                             // Add the same to the recipient
         allowance[_from][msg.sender] = allowance[_from][msg.sender].add(_value);
@@ -347,16 +347,16 @@ contract Token is TokenI {
     }
 
     function transferMulti(address[] _to, uint256[] _value) transable public returns (uint256 amount){
-        require(_to.length == _value.length &amp;&amp; _to.length &lt;= 1024);
+        require(_to.length == _value.length && _to.length <= 1024);
         uint256 balanceOfSender = balanceOf[msg.sender];
         uint256 len = _to.length;
-        for(uint256 j; j&lt;len; j++){
-            require(_value[j] &lt;= balanceOfSender); //limit transfer value
+        for(uint256 j; j<len; j++){
+            require(_value[j] <= balanceOfSender); //limit transfer value
             amount = amount.add(_value[j]);
         }
-        require(balanceOfSender - amount &lt; balanceOfSender); //check enough and not overflow
+        require(balanceOfSender - amount < balanceOfSender); //check enough and not overflow
         balanceOf[msg.sender] = balanceOf[msg.sender].sub(amount);
-        for(uint256 i; i&lt;len; i++){
+        for(uint256 i; i<len; i++){
             address _toI = _to[i];
             uint256 _valueI = _value[i];
             balanceOf[_toI] = balanceOf[_toI].add(_valueI);
@@ -367,7 +367,7 @@ contract Token is TokenI {
     //只能自己或者 owner 才能冻结账户
     function freeze(address _user, uint256 _value, uint8 _step) moreThanZero(_value) onlyController public returns (bool success) {
         //info256(&quot;balanceOf[_user]&quot;, balanceOf[_user]);
-        require(balanceOf[_user] &gt;= _value);
+        require(balanceOf[_user] >= _value);
         balanceOf[_user] = balanceOf[_user] - _value;
         freezeOf[_step][lastFreezeSeq[_step]] = FreezeInfo({user:_user, amount:_value});
         lastFreezeSeq[_step]++;
@@ -384,12 +384,12 @@ contract Token is TokenI {
     function unFreeze(uint8 _step) onlyOwner public returns (bool unlockOver) {
         //_end = length of freezeOf[_step]
         uint32 _end = lastFreezeSeq[_step];
-        require(_end &gt; 0);
+        require(_end > 0);
         //info(&quot;_end&quot;, _end);
-        unlockOver = (_end &lt;= 99);
-        uint32 _start = (_end &gt; 99) ? _end-100 : 0;
+        unlockOver = (_end <= 99);
+        uint32 _start = (_end > 99) ? _end-100 : 0;
         //info(&quot;_start&quot;, _start);
-        for(; _end&gt;_start; _end--){
+        for(; _end>_start; _end--){
             FreezeInfo storage fInfo = freezeOf[_step][_end-1];
             uint256 _amount = fInfo.amount;
             balanceOf[fInfo.user] += _amount;
@@ -416,7 +416,7 @@ contract Token is TokenI {
     /// @param _amount The quantity of tokens generated
     /// @return True if the tokens are generated correctly
     function generateTokens(address _user, uint _amount) onlyController public returns (bool) {
-        require(balanceOf[owner] &gt;= _amount);
+        require(balanceOf[owner] >= _amount);
         balanceOf[_user] += _amount;
         balanceOf[owner] -= _amount;
         Transfer(0, _user, _amount);
@@ -428,7 +428,7 @@ contract Token is TokenI {
     /// @param _amount The quantity of tokens to burn
     /// @return True if the tokens are burned correctly
     function destroyTokens(address _user, uint _amount) onlyOwner public returns (bool) {
-        require(balanceOf[_user] &gt;= _amount);
+        require(balanceOf[_user] >= _amount);
         balanceOf[owner] += _amount;
         balanceOf[_user] -= _amount;
         Transfer(_user, 0, _amount);

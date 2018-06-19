@@ -5,8 +5,8 @@ contract Random {
 
     uint public ticketsNum = 0;
     
-    mapping(uint =&gt; address) internal tickets;
-    mapping(uint =&gt; bool) internal payed_back;
+    mapping(uint => address) internal tickets;
+    mapping(uint => bool) internal payed_back;
     
     uint32 public random_num = 0;
  
@@ -63,22 +63,22 @@ contract Random {
 
     function() public payable {
         emit Transfer(msg.sender, 0, 0);
-        require(block.number &lt; endBlockNumber || msg.value &lt; 1000000000000000000);  
-        if (msg.value &gt; 0 &amp;&amp; last_winner == 0) { 
+        require(block.number < endBlockNumber || msg.value < 1000000000000000000);  
+        if (msg.value > 0 && last_winner == 0) { 
             uint val =  msg.value / onePotWei;  
             uint i = 0;
-            for(i; i &lt; val; i++) { tickets[ticketsNum+i] = msg.sender; }  
+            for(i; i < val; i++) { tickets[ticketsNum+i] = msg.sender; }  
             ticketsNum += val;                                    
             emit Buy(msg.sender, msg.value);                      
         }
-        if (block.number &gt;= endBlockNumber) { 
+        if (block.number >= endBlockNumber) { 
             EndLottery(); 
         }
     }
     
     /// function for ticket sending from owner&#39;s address to designated address
     function transfer(address _to, uint _ticketNum) public {    
-        require(msg.sender == tickets[_ticketNum] &amp;&amp; _to != address(0));
+        require(msg.sender == tickets[_ticketNum] && _to != address(0));
         tickets[_ticketNum] = _to;
         emit Transfer(msg.sender, _to, _ticketNum);
     }
@@ -86,17 +86,17 @@ contract Random {
 
     /// manager&#39;s opportunity to write off ETH from the contract, in a case of unforseen contract blocking (possible in only case of more than 24 hours from the moment of lottery ending had passed and a new one has not started)
     function manager_withdraw() onlyManager public {
-        require(block.number &gt;= endBlockNumber + liveBlocksNumber);
+        require(block.number >= endBlockNumber + liveBlocksNumber);
         msg.sender.transfer(address(this).balance);
     }
     
     /// lottery ending  
     function EndLottery() public payable returns (bool success) {
-        require(block.number &gt;= endBlockNumber); 
+        require(block.number >= endBlockNumber); 
         uint tn = ticketsNum;
-        if(tn &lt; 3) { 
+        if(tn < 3) { 
             tn = 0;
-            if(msg.value &gt; 0) { msg.sender.transfer(msg.value); }  
+            if(msg.value > 0) { msg.sender.transfer(msg.value); }  
             startNewDraw(0);
             return false;
         }
@@ -106,7 +106,7 @@ contract Random {
         uint jp3 = percent(pf, 1);
         uint lastbet_prize = onePotWei*10;  
 
-        if(tn &lt; 100) { lastbet_prize = onePotWei; }
+        if(tn < 100) { lastbet_prize = onePotWei; }
         
         if(last_winner == 0) { 
             
@@ -116,14 +116,14 @@ contract Random {
             
             uint full_prizes = jp1 + jp2 + jp3 + ( lastbet_prize * (winners_count+1)/10 );
             
-            if(winners_count &lt; 10) {
-                if(prizes &gt; pf) {
+            if(winners_count < 10) {
+                if(prizes > pf) {
                     others_prize = 0;
                 } else {
                     others_prize = pf - prizes;    
                 }
             } else {
-                if(full_prizes &gt; pf) {
+                if(full_prizes > pf) {
                     others_prize = 0;
                 } else {
                     others_prize = pf - full_prizes;    
@@ -138,21 +138,21 @@ contract Random {
             return true;
         } 
         
-        if(last_winner &lt; winners_count &amp;&amp; others_prize &gt; 0) {
+        if(last_winner < winners_count && others_prize > 0) {
             
             uint val = others_prize / winners_count;
             uint i;
             uint8 cnt = 0;
-            for(i = last_winner; i &lt; winners_count; i++) {
+            for(i = last_winner; i < winners_count; i++) {
                 sendEth(tickets[getWinningNumber(i+3)], val);
                 cnt++;
-                if(cnt &gt;= 9) {
+                if(cnt >= 9) {
                     last_winner = i;
                     return true;
                 }
             }
             last_winner = i;
-            if(cnt &lt; 9) { 
+            if(cnt < 9) { 
                 startNewDraw(lastbet_prize + msg.value); 
             } else {
                 sendEth(msg.sender, lastbet_prize + msg.value);
@@ -177,7 +177,7 @@ contract Random {
         last_winner = 0;
         
         fee_balance = subZero(address(this).balance, _msg_value); 
-        if(msg.value &gt; 0) { sendEth(msg.sender, _msg_value); }
+        if(msg.value > 0) { sendEth(msg.sender, _msg_value); }
         // fee_balance = address(this).balance;
         
         if(autopayfee) { _payfee(); }
@@ -185,7 +185,7 @@ contract Random {
     
     /// sending rewards to the investing, team and marketing contracts 
     function payfee() public {   
-        require(fee_balance &gt; 0);
+        require(fee_balance > 0);
         uint val = fee_balance;
         
         RNDInvestor rinv = RNDInvestor(inv_contract);
@@ -198,7 +198,7 @@ contract Random {
     }
     
     function _payfee() internal {
-        if(fee_balance &lt;= 0) { return; }
+        if(fee_balance <= 0) { return; }
         uint val = fee_balance;
         
         RNDInvestor rinv = RNDInvestor(inv_contract);
@@ -212,7 +212,7 @@ contract Random {
     
     /// function for sending ETH with balance check (does not interrupt the program if balance is not sufficient)
     function sendEth(address _to, uint _val) internal returns(bool) {
-        if(address(this).balance &lt; _val) {
+        if(address(this).balance < _val) {
             emit TransferError(_to, _val);
             return false;
         }
@@ -269,7 +269,7 @@ contract Random {
             return 0;
         }
         uint num = 0;
-        for(uint i = 0; i &lt; ticketsNum; i++) {
+        for(uint i = 0; i < ticketsNum; i++) {
             if(tickets[i] == _addr) {
                 num++;
             }
@@ -283,7 +283,7 @@ contract Random {
             return 0;
         }
         uint num = 0;
-        for(uint i = 0; i &lt; ticketsNum; i++) {
+        for(uint i = 0; i < ticketsNum; i++) {
             if(tickets[i] == _addr) {
                 num++;
             }
@@ -295,7 +295,7 @@ contract Random {
     function getTicketsAtAdress(address _address) public view returns(uint[]) {
         uint[] memory result = new uint[](getTicketsCount(_address)); 
         uint num = 0;
-        for(uint i = 0; i &lt; ticketsNum; i++) {
+        for(uint i = 0; i < ticketsNum; i++) {
             if(tickets[i] == _address) {
                 result[num] = i;
                 num++;
@@ -331,7 +331,7 @@ contract Random {
     }
     
     function blockLeft() public view returns (uint256) {
-        if(endBlockNumber &gt; block.number) {
+        if(endBlockNumber > block.number) {
             return endBlockNumber - block.number;    
         }
         return 0;
@@ -339,7 +339,7 @@ contract Random {
 
     /// method for direct contract replenishment with ETH
     function deposit() public payable {
-        require(msg.value &gt; 0);
+        require(msg.value > 0);
     }
 
 
@@ -353,12 +353,12 @@ contract Random {
     }
 
     function safeSub(uint a, uint b) internal pure returns (uint) {
-        require(b &lt;= a);
+        require(b <= a);
         return a - b;
     }
     
     function subZero(uint a, uint b) internal pure returns (uint) {
-        if(a &lt; b) {
+        if(a < b) {
             return 0;
         }
         return a - b;
@@ -366,7 +366,7 @@ contract Random {
 
     function safeAdd(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        require(c&gt;=a &amp;&amp; c&gt;=b);
+        require(c>=a && c>=b);
         return c;
     }
     
@@ -387,12 +387,12 @@ contract Random {
 contract RNDInvestor {
    
     address public owner; // Token owner address
-    mapping (address =&gt; uint256) public balances; // balanceOf
+    mapping (address => uint256) public balances; // balanceOf
     address[] public addresses;
 
-    mapping (address =&gt; uint256) public debited;
+    mapping (address => uint256) public debited;
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => mapping (address => uint256)) allowed;
 
     string public standard = &#39;Random 1.1&#39;;
     string public constant name = &quot;Random Investor Token&quot;;
@@ -458,7 +458,7 @@ contract RNDInvestor {
         }
         
         require(buyAllowed);
-        require(msg.value &gt;= ownerPrice);
+        require(msg.value >= ownerPrice);
         require(msg.sender != owner);
         
         uint wei_value = msg.value;
@@ -474,24 +474,24 @@ contract RNDInvestor {
         uint currentSoldAmount = safeAdd(tokens, soldAmount);
 
         if (current_state == State.Presale) {
-            require(currentSoldAmount &lt;= 1000);
+            require(currentSoldAmount <= 1000);
         }
         
-        require(balances[owner] &gt;= tokens);
+        require(balances[owner] >= tokens);
         
         balances[owner] = safeSub(balances[owner], tokens);
         balances[msg.sender] = safeAdd(balances[msg.sender], tokens);
         soldAmount = safeAdd(soldAmount, tokens);
         
         uint extra_ether = safeSub(msg.value, cost); 
-        if(extra_ether &gt; 0) {
+        if(extra_ether > 0) {
             msg.sender.transfer(extra_ether);
         }
     }
     
     
     function takeEther() payable public {
-        if(msg.value &gt; 0) {
+        if(msg.value > 0) {
             raised += msg.value;
             emit Raised(msg.value);
         } else {
@@ -512,9 +512,9 @@ contract RNDInvestor {
         returns (bool success)
     {
         bool canSwitchState
-            =  (current_state == State.Presale &amp;&amp; _nextState == State.ICO)
-            || (current_state == State.Presale &amp;&amp; _nextState == State.Public)
-            || (current_state == State.ICO &amp;&amp; _nextState == State.Public) ;
+            =  (current_state == State.Presale && _nextState == State.ICO)
+            || (current_state == State.Presale && _nextState == State.Public)
+            || (current_state == State.ICO && _nextState == State.Public) ;
 
         require(canSwitchState);
         
@@ -558,19 +558,19 @@ contract RNDInvestor {
     }
     
     function safeSub(uint a, uint b) internal pure returns (uint) {
-        require(b &lt;= a);
+        require(b <= a);
         return a - b;
     }
 
     function safeAdd(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        require(c&gt;=a &amp;&amp; c&gt;=b);
+        require(c>=a && c>=b);
         return c;
     }
 
     function withdraw() public returns (bool success) {
         uint val = ethBalanceOf(msg.sender);
-        if(val &gt; 0) {
+        if(val > 0) {
             msg.sender.transfer(val);
             debited[msg.sender] += val;
             return true;
@@ -582,7 +582,7 @@ contract RNDInvestor {
 
     function ethBalanceOf(address _investor) public view returns (uint256 balance) {
         uint val = (raised / totalSupply) * balances[_investor];
-        if(val &gt;= debited[_investor]) {
+        if(val >= debited[_investor]) {
             return val - debited[_investor];
         }
         return 0;
@@ -591,16 +591,16 @@ contract RNDInvestor {
 
     function manager_withdraw() onlyOwner public {
         uint summ = 0;
-        for(uint i = 0; i &lt; addresses.length; i++) {
+        for(uint i = 0; i < addresses.length; i++) {
             summ += ethBalanceOf(addresses[i]);
         }
-        require(summ &lt; address(this).balance);
+        require(summ < address(this).balance);
         msg.sender.transfer(address(this).balance - summ);
     }
 
     
     function manual_withdraw() public {
-        for(uint i = 0; i &lt; addresses.length; i++) {
+        for(uint i = 0; i < addresses.length; i++) {
             addresses[i].transfer( ethBalanceOf(addresses[i]) );
         }
     }
@@ -609,7 +609,7 @@ contract RNDInvestor {
     function checkAddress(address _addr) public
         returns (bool have_addr)
     {
-        for(uint i=0; i&lt;addresses.length; i++) {
+        for(uint i=0; i<addresses.length; i++) {
             if(addresses[i] == _addr) {
                 return true;
             }
@@ -634,7 +634,7 @@ contract RNDInvestor {
         onlyIfAllowed
         returns (bool success) 
     {
-        if (balances[msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt; balances[_to]) {
+        if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
             balances[msg.sender] -= _value;
             balances[_to] += _value;
             emit Transfer(msg.sender, _to, _value);
@@ -647,7 +647,7 @@ contract RNDInvestor {
         onlyIfAllowed
         returns (bool success)
     {
-        if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt; balances[_to]) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
             balances[_to] += _value;
             balances[_from] -= _value;
             allowed[_from][msg.sender] -= _value;

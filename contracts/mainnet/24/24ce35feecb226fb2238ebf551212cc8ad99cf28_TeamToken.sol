@@ -22,7 +22,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         // uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return a / b;
@@ -32,7 +32,7 @@ library SafeMath {
     * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -41,7 +41,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -87,8 +87,8 @@ contract StandardToken {
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Approval(address indexed owner, address indexed spender, uint256 value);
 
-    mapping(address =&gt; uint256) internal balances_;
-    mapping(address =&gt; mapping(address =&gt; uint256)) internal allowed_;
+    mapping(address => uint256) internal balances_;
+    mapping(address => mapping(address => uint256)) internal allowed_;
 
     uint256 internal totalSupply_;
     string public name;
@@ -128,7 +128,7 @@ contract StandardToken {
     */
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances_[msg.sender]);
+        require(_value <= balances_[msg.sender]);
 
         balances_[msg.sender] = balances_[msg.sender].sub(_value);
         balances_[_to] = balances_[_to].add(_value);
@@ -145,8 +145,8 @@ contract StandardToken {
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances_[_from]);
-        require(_value &lt;= allowed_[_from][msg.sender]);
+        require(_value <= balances_[_from]);
+        require(_value <= allowed_[_from][msg.sender]);
 
         balances_[_from] = balances_[_from].sub(_value);
         balances_[_to] = balances_[_to].add(_value);
@@ -188,8 +188,8 @@ contract TeamToken is StandardToken, Ownable {
     */
     uint256 public price;
     /**
-    * @dev status=0 buyable &amp; sellable, user can buy or sell the token.
-    * status=1 not buyable &amp; not sellable, user cannot buy or sell the token.
+    * @dev status=0 buyable & sellable, user can buy or sell the token.
+    * status=1 not buyable & not sellable, user cannot buy or sell the token.
     */
     uint8 public status;
     /**
@@ -224,7 +224,7 @@ contract TeamToken is StandardToken, Ownable {
     *
     * Override ERC20 transfer token function. If the _to address is not this TeamToken,
     * then call the super transfer function, which will be ERC20 token transfer.
-    * Otherwise, the user want to sell the token (TeamToken -&gt; ETH).
+    * Otherwise, the user want to sell the token (TeamToken -> ETH).
     * @param _to address The address which you want to transfer/sell to
     * @param _value uint256 the amount of tokens to be transferred/sold
     */
@@ -232,11 +232,11 @@ contract TeamToken is StandardToken, Ownable {
         if (_to != address(this)) {
             return super.transfer(_to, _value);
         }
-        require(_value &lt;= balances_[msg.sender] &amp;&amp; status == 0);
+        require(_value <= balances_[msg.sender] && status == 0);
         // If gameTime is enabled (larger than 1514764800 (2018-01-01))
-        if (gameTime &gt; 1514764800) {
+        if (gameTime > 1514764800) {
             // We will not allowed to sell after 5 minutes (300 seconds) before game start
-            require(gameTime - 300 &gt; block.timestamp);
+            require(gameTime - 300 > block.timestamp);
         }
         balances_[msg.sender] = balances_[msg.sender].sub(_value);
         totalSupply_ = totalSupply_.sub(_value);
@@ -253,11 +253,11 @@ contract TeamToken is StandardToken, Ownable {
     * The total supply will also be increased.
     */
     function() payable public {
-        require(status == 0 &amp;&amp; price &gt; 0);
+        require(status == 0 && price > 0);
         // If gameTime is enabled (larger than 1514764800 (2018-01-01))
-        if (gameTime &gt; 1514764800) {
+        if (gameTime > 1514764800) {
             // We will not allowed to sell after 5 minutes (300 seconds) before game start
-            require(gameTime - 300 &gt; block.timestamp);
+            require(gameTime - 300 > block.timestamp);
         }
         uint256 amount = msg.value.div(price);
         balances_[msg.sender] = balances_[msg.sender].add(amount);
@@ -269,8 +269,8 @@ contract TeamToken is StandardToken, Ownable {
     /**
     * @dev The the game status.
     *
-    * status = 0 buyable &amp; sellable, user can buy or sell the token.
-    * status=1 not buyable &amp; not sellable, user cannot buy or sell the token.
+    * status = 0 buyable & sellable, user can buy or sell the token.
+    * status=1 not buyable & not sellable, user cannot buy or sell the token.
     * @param _status The game status.
     */
     function changeStatus(uint8 _status) onlyOwner public {
@@ -288,7 +288,7 @@ contract TeamToken is StandardToken, Ownable {
     */
     function finish() onlyOwner public {
         // 2018-06-25 18:45:00 UTC
-        require(block.timestamp &gt;= 1529952300);
+        require(block.timestamp >= 1529952300);
         feeOwner.transfer(address(this).balance);
     }
 
@@ -300,10 +300,10 @@ contract TeamToken is StandardToken, Ownable {
     * @param _gameTime The game begin time. optional
     */
     function beginGame(address _gameOpponent, uint64 _gameTime) onlyOwner public {
-        require(_gameOpponent != address(0) &amp;&amp; _gameOpponent != address(this) &amp;&amp; gameOpponent == address(0));
+        require(_gameOpponent != address(0) && _gameOpponent != address(this) && gameOpponent == address(0));
         // 1514764800 = 2018-01-01
         // 1546300800 = 2019-01-01
-        require(_gameTime == 0 || (_gameTime &gt; 1514764800 &amp;&amp; _gameTime &lt; 1546300800));
+        require(_gameTime == 0 || (_gameTime > 1514764800 && _gameTime < 1546300800));
         gameOpponent = _gameOpponent;
         gameTime = _gameTime;
         status = 0;
@@ -328,17 +328,17 @@ contract TeamToken is StandardToken, Ownable {
     * @param _gameResult game result. 1=lose, 2=draw, 3=cancel, 4=win (not allow)
     */
     function endGame(address _gameOpponent, uint8 _gameResult) onlyOwner public {
-        require(gameOpponent != address(0) &amp;&amp; gameOpponent == _gameOpponent);
+        require(gameOpponent != address(0) && gameOpponent == _gameOpponent);
         uint256 amount = address(this).balance;
         uint256 opAmount = gameOpponent.balance;
-        require(_gameResult == 1 || (_gameResult == 2 &amp;&amp; amount &gt;= opAmount) || _gameResult == 3);
+        require(_gameResult == 1 || (_gameResult == 2 && amount >= opAmount) || _gameResult == 3);
         TeamToken op = TeamToken(gameOpponent);
         if (_gameResult == 1) {
             // Lose
-            if (amount &gt; 0 &amp;&amp; totalSupply_ &gt; 0) {
+            if (amount > 0 && totalSupply_ > 0) {
                 uint256 lostAmount = amount;
                 // If opponent has supply
-                if (op.totalSupply() &gt; 0) {
+                if (op.totalSupply() > 0) {
                     // fee is 5%
                     uint256 feeAmount = lostAmount.div(20);
                     lostAmount = lostAmount.sub(feeAmount);
@@ -354,9 +354,9 @@ contract TeamToken is StandardToken, Ownable {
             }
         } else if (_gameResult == 2) {
             // Draw
-            if (amount &gt; opAmount) {
+            if (amount > opAmount) {
                 lostAmount = amount.sub(opAmount).div(2);
-                if (op.totalSupply() &gt; 0) {
+                if (op.totalSupply() > 0) {
                     // fee is 5%
                     feeAmount = lostAmount.div(20);
                     lostAmount = lostAmount.sub(feeAmount);
@@ -381,7 +381,7 @@ contract TeamToken is StandardToken, Ownable {
             revert();
         }
         endGameInternal();
-        if (totalSupply_ &gt; 0) {
+        if (totalSupply_ > 0) {
             price = address(this).balance.div(totalSupply_);
         }
         emit EndGame(address(this), _gameOpponent, _gameResult);
@@ -405,8 +405,8 @@ contract TeamToken is StandardToken, Ownable {
     * new balance and total supply.
     */
     function transferFundAndEndGame() payable public {
-        require(gameOpponent != address(0) &amp;&amp; gameOpponent == msg.sender);
-        if (msg.value &gt; 0 &amp;&amp; totalSupply_ &gt; 0) {
+        require(gameOpponent != address(0) && gameOpponent == msg.sender);
+        if (msg.value > 0 && totalSupply_ > 0) {
             price = address(this).balance.div(totalSupply_);
         }
         endGameInternal();

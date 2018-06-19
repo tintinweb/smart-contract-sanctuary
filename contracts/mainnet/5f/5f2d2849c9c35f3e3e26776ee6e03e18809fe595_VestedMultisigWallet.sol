@@ -395,13 +395,13 @@ contract SimpleMultisigWallet is ERC223Receiver {
     }
 
     modifier notConfirmed(uint transactionId, address owner) {
-        require(transactionId >= 0 &amp;&amp; transactionId < transactionCount);
+        require(transactionId >= 0 && transactionId < transactionCount);
         require(!confirmations[transactionId][owner]);
         _;
     }
 
     modifier notExecuted(uint transactionId) {
-        require(transactionId >= 0 &amp;&amp; transactionId < transactionCount);
+        require(transactionId >= 0 && transactionId < transactionCount);
         require(!transactions[transactionId].executed);
         _;
     }
@@ -580,27 +580,27 @@ contract SimpleMultisigWallet is ERC223Receiver {
     returns(bool)
     {
         if (transactions[transactionId].transactionType == TransactionType.Standard
-        &amp;&amp; isConfirmed(transactionId)
-        &amp;&amp; this.balance >= transactions[transactionId].value) {
+        && isConfirmed(transactionId)
+        && this.balance >= transactions[transactionId].value) {
             transactions[transactionId].executed = true;
             transactions[transactionId].destination.transfer(transactions[transactionId].value);
             Execution(transactionId, now);
             return true;
         } else if(transactions[transactionId].transactionType == TransactionType.Token
-        &amp;&amp; isConfirmed(transactionId)
-        &amp;&amp; StandardToken(transactions[transactionId].token).balanceOf(address(this)) >= transactions[transactionId].value) {
+        && isConfirmed(transactionId)
+        && StandardToken(transactions[transactionId].token).balanceOf(address(this)) >= transactions[transactionId].value) {
             transactions[transactionId].executed = true;
             StandardToken(transactions[transactionId].token).transfer(transactions[transactionId].destination, transactions[transactionId].value);
             Execution(transactionId, now);
             return true;
         } else if(transactions[transactionId].transactionType == TransactionType.Unfreeze
-        &amp;&amp; isConfirmed(transactionId)) {
+        && isConfirmed(transactionId)) {
             transactions[transactionId].executed = true;
             FreezableToken(transactions[transactionId].token).unfreeze();
             Execution(transactionId, now);
             return true;
         } else if(transactions[transactionId].transactionType == TransactionType.PassOwnership
-        &amp;&amp; isConfirmed(transactionId)) {
+        && isConfirmed(transactionId)) {
             transactions[transactionId].executed = true;
             Ownable(transactions[transactionId].token).transferOwnership(transactions[transactionId].destination);
             Execution(transactionId, now);
@@ -660,7 +660,7 @@ contract SimpleMultisigWallet is ERC223Receiver {
     returns (uint founded)
     {
         for (uint i=0; i < transactionCount; i++) {
-            if ((pending &amp;&amp; !transactions[i].executed) || (executed &amp;&amp; transactions[i].executed)) {
+            if ((pending && !transactions[i].executed) || (executed && transactions[i].executed)) {
                 founded += 1;
             }
         }
@@ -714,8 +714,8 @@ contract SimpleMultisigWallet is ERC223Receiver {
         uint count;
         uint i;
         for (i=0; i < transactionCount; i++){
-            if ((pending &amp;&amp; !transactions[i].executed) ||
-                (executed &amp;&amp; transactions[i].executed))
+            if ((pending && !transactions[i].executed) ||
+                (executed && transactions[i].executed))
             {
                 transactionIdsTemp[count] = i;
                 count +=1;
@@ -848,28 +848,28 @@ contract VestedMultisigWallet is SimpleMultisigWallet {
     returns(bool)
     {
         if (transactions[transactionId].transactionType == TransactionType.Standard
-        &amp;&amp; isConfirmed(transactionId)
-        &amp;&amp; this.balance >= transactions[transactionId].value) {
+        && isConfirmed(transactionId)
+        && this.balance >= transactions[transactionId].value) {
             transactions[transactionId].executed = true;
             transactions[transactionId].destination.transfer(transactions[transactionId].value);
             Execution(transactionId, now);
             return true;
         } else if(transactions[transactionId].transactionType == TransactionType.Token
-        &amp;&amp; isConfirmed(transactionId)
-        &amp;&amp; StandardToken(transactions[transactionId].token).balanceOf(address(this)) >= transactions[transactionId].value) {
+        && isConfirmed(transactionId)
+        && StandardToken(transactions[transactionId].token).balanceOf(address(this)) >= transactions[transactionId].value) {
             require(now >= vestedDate);
             transactions[transactionId].executed = true;
             StandardToken(transactions[transactionId].token).transfer(transactions[transactionId].destination, transactions[transactionId].value);
             Execution(transactionId, now);
             return true;
         } else if(transactions[transactionId].transactionType == TransactionType.Unfreeze
-        &amp;&amp; isConfirmed(transactionId)) {
+        && isConfirmed(transactionId)) {
             transactions[transactionId].executed = true;
             FreezableToken(transactions[transactionId].token).unfreeze();
             Execution(transactionId, now);
             return true;
         } else if(transactions[transactionId].transactionType == TransactionType.PassOwnership
-        &amp;&amp; isConfirmed(transactionId)) {
+        && isConfirmed(transactionId)) {
             transactions[transactionId].executed = true;
             Ownable(transactions[transactionId].token).transferOwnership(transactions[transactionId].destination);
             Execution(transactionId, now);

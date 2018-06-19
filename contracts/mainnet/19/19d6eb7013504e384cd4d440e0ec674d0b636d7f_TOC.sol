@@ -16,9 +16,9 @@ uint8 public decimals;
 uint256 public totalSupply;
 
 /*user coin balance*/
-mapping (address =&gt; uint256) public balances;
+mapping (address => uint256) public balances;
 /*user coin allowances*/
-mapping(address =&gt; mapping (address =&gt; uint256)) public allowed;
+mapping(address => mapping (address => uint256)) public allowed;
 
 /*EVENTS*/		
 /*broadcast token transfers on the blockchain*/
@@ -41,9 +41,9 @@ function _transfer(address _from, address _to, uint _value) internal {
 /*prevent transfer to invalid address*/    
 if(_to == 0x0) revert();
 /*check if the sender has enough value to send*/
-if(balances[_from] &lt; _value) revert(); 
+if(balances[_from] < _value) revert(); 
 /*check for overflows*/
-if(balances[_to] + _value &lt; balances[_to]) revert();
+if(balances[_to] + _value < balances[_to]) revert();
 /*compute sending and receiving balances before transfer*/
 uint PreviousBalances = balances[_from] + balances[_to];
 /*substract from sender*/
@@ -75,7 +75,7 @@ return true;
 function transferFrom(address _from, address _to, uint256 _value) 
 external returns (bool success) {
 /*check if the message sender can spend*/
-require(_value &lt;= allowed[_from][msg.sender]); 
+require(_value <= allowed[_from][msg.sender]); 
 /*substract from message sender&#39;s spend allowance*/
 allowed[_from][msg.sender] -= _value;
 /*transfer tokens*/

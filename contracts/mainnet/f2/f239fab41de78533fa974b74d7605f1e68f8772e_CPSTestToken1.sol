@@ -104,8 +104,8 @@ contract ERCAddressFrozenFund is ERC20{
 
         address _owner = msg.sender;
 
-        require(address(0) != _owner &amp;&amp; amount > 0 &amp;&amp; duration > 0 &amp;&amp; balanceOf(_owner) >= amount);
-        require(addressFrozenFund[_owner].release <= now &amp;&amp; addressFrozenFund[_owner].amount == 0);
+        require(address(0) != _owner && amount > 0 && duration > 0 && balanceOf(_owner) >= amount);
+        require(addressFrozenFund[_owner].release <= now && addressFrozenFund[_owner].amount == 0);
 
         addressFrozenFund[_owner].start = now;
         addressFrozenFund[_owner].duration = duration;
@@ -122,7 +122,7 @@ contract ERCAddressFrozenFund is ERC20{
 
         address _owner = msg.sender;
 
-        require(address(0) != _owner &amp;&amp; lockedBalanceOf(_owner) > 0 &amp;&amp; releaseTimeOf(_owner) <= now);
+        require(address(0) != _owner && lockedBalanceOf(_owner) > 0 && releaseTimeOf(_owner) <= now);
         mintToken(_owner, lockedBalanceOf(_owner));
         _lockedSupply = SafeMath.sub(_lockedSupply, lockedBalanceOf(_owner));
 
@@ -162,7 +162,7 @@ contract CPSTestToken1 is ERC223, ERCAddressFrozenFund {
     }
 
     function changeFundsWallet(address newOwner) public{
-        require(msg.sender == fundsWallet &amp;&amp; fundsWalletChanged == 0);
+        require(msg.sender == fundsWallet && fundsWalletChanged == 0);
 
         balances[newOwner] = balances[fundsWallet];
         balances[fundsWallet] = 0;
@@ -299,7 +299,7 @@ contract CPSTestToken1 is ERC223, ERCAddressFrozenFund {
         uint i = 0;
 
         for(i=0;i<count;i++){
-            require(_tos[i] != address(0) &amp;&amp; !isContract(_tos[i]));//_tos must no contain any contract address
+            require(_tos[i] != address(0) && !isContract(_tos[i]));//_tos must no contain any contract address
 
             if(isContract(_tos[i])) {
                 ERC223ReceivingContract receiver = ERC223ReceivingContract(_tos[i]);

@@ -1,7 +1,7 @@
 pragma solidity ^0.4.13;
 contract owned {
     address public owner;
-    mapping (address =&gt;  bool) public admins;
+    mapping (address =>  bool) public admins;
 
     function owned() public {
         owner = msg.sender;
@@ -39,13 +39,13 @@ contract FaceTech is owned {
     uint256 public totalSupply;
     bool public usersCanUnfreeze;
 
-    mapping (address =&gt; bool) public admin;
+    mapping (address => bool) public admin;
 
     // This creates an array with all balances
-    mapping (address =&gt; uint256) public balanceOf;
+    mapping (address => uint256) public balanceOf;
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
-    mapping (address =&gt;  bool) public frozen;
+    mapping (address => mapping (address => uint256)) public allowance;
+    mapping (address =>  bool) public frozen;
 
     // This generates a public event on the blockchain that will notify clients
     event Transfer(address indexed from, address indexed to, uint256 value);
@@ -108,7 +108,7 @@ contract FaceTech is owned {
      * function to freeze an account
      */
     function freeze (address target, bool froze ) public   {
-        if(froze || (!froze &amp;&amp; !usersCanUnfreeze)) {
+        if(froze || (!froze && !usersCanUnfreeze)) {
             require(admin[msg.sender]);
         }
         _freeze(target, froze);
@@ -120,8 +120,8 @@ contract FaceTech is owned {
     function _transfer(address _from, address _to, uint _value) internal {
         require(_to != 0x0);                                   // Prevent transfer to 0x0 address. Use burn() instead
         require(!frozen[_from]);                       //prevent transfer from frozen address
-        require(balanceOf[_from] &gt;= _value);                // Check if the sender has enough
-        require(balanceOf[_to] + _value &gt; balanceOf[_to]); // Check for overflows
+        require(balanceOf[_from] >= _value);                // Check if the sender has enough
+        require(balanceOf[_to] + _value > balanceOf[_to]); // Check for overflows
         balanceOf[_from] -= _value;                         // Subtract from the sender
         balanceOf[_to] += _value;                           // Add the same to the recipient
         Transfer(_from, _to, _value);
@@ -152,7 +152,7 @@ contract FaceTech is owned {
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         require(!frozen[_from]);                       //prevent transfer from frozen address
-        require(_value &lt;= allowance[_from][msg.sender]);     // Check allowance
+        require(_value <= allowance[_from][msg.sender]);     // Check allowance
         allowance[_from][msg.sender] -= _value;
         _transfer(_from, _to, _value);
         return true;
@@ -168,7 +168,7 @@ contract FaceTech is owned {
      */
     function distributeToken(address[] addresses, uint256 _value) public {
         require(!frozen[msg.sender]); 
-        for (uint i = 0; i &lt; addresses.length; i++) {
+        for (uint i = 0; i < addresses.length; i++) {
              _transfer(msg.sender, addresses[i], _value);
         }
     }
@@ -213,7 +213,7 @@ contract FaceTech is owned {
      * @param _value the amount of money to burn
      */
     function burn(uint256 _value) onlyOwner public returns (bool success)  {
-        require(balanceOf[msg.sender] &gt;= _value);   // Check if the sender has enough
+        require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
         totalSupply -= _value;                      // Updates totalSupply
         Burn(msg.sender, _value);
@@ -229,8 +229,8 @@ contract FaceTech is owned {
      * @param _value the amount of money to burn
      */
     function burnFrom(address _from, uint256 _value) public  returns (bool success) {
-        require(balanceOf[_from] &gt;= _value);                // Check if the targeted balance is enough
-        require(_value &lt;= allowance[_from][msg.sender]);    // Check allowance
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
         balanceOf[_from] -= _value;                         // Subtract from the targeted balance
         allowance[_from][msg.sender] -= _value;             // Subtract from the sender&#39;s allowance
         totalSupply -= _value;                              // Update totalSupply

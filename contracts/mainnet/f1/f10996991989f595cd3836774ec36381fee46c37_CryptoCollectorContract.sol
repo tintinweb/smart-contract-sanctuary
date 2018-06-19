@@ -251,7 +251,7 @@ contract CryptoCollectorContract is ERC721, Ownable {
         uint256 i=0;
           for (i = 0; i  <= totalCards-1; i++) {
             //check for the same category
-            if ((keccak256(cards[i].category)==keccak256(_category)) &amp;&amp; (cards[i].Iswildcard==1)){
+            if ((keccak256(cards[i].category)==keccak256(_category)) && (cards[i].Iswildcard==1)){
 			   iscreated=true;
             }
           }
@@ -604,7 +604,7 @@ function GetWildCardOwner(uint256 _tokenId) public view returns (address _cardow
         uint256 i=0;
           for (i = 0; i  <= totalCards-1; i++) {
             //check for the same category
-            if ((keccak256(cards[i].category)==keccak256(cardCategory)) &amp;&amp; cards[i].Iswildcard==1){
+            if ((keccak256(cards[i].category)==keccak256(cardCategory)) && cards[i].Iswildcard==1){
                return cards[i].owner;
             }
           }

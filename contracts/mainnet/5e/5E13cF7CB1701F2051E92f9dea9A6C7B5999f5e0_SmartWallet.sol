@@ -129,7 +129,7 @@ library SmartWalletLib {
             validAddress(_self.userWithdrawalAccount)
             {
 
-                if (_fee &gt; 0) {        
+                if (_fee > 0) {        
                     _feesToken.transfer(_self.feesAccount, _fee); 
                 }       
                 

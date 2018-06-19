@@ -53,8 +53,8 @@ contract Flame is ERC20Interface, Owned {
     uint public _ratio;
     bool disabled;
 
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => uint) balances;
+    mapping(address => mapping(address => uint)) allowed;
     
 
 
@@ -85,7 +85,7 @@ contract Flame is ERC20Interface, Owned {
 
  
     function transfer(address to, uint tokens) public returns (bool success) {
-        require(balances[msg.sender] &gt;= tokens);
+        require(balances[msg.sender] >= tokens);
         balances[msg.sender] -= tokens;
         balances[to] += tokens;
       emit  Transfer(msg.sender, to, tokens);
@@ -100,8 +100,8 @@ contract Flame is ERC20Interface, Owned {
     }
 
  function transferFrom(address from, address to, uint tokens) public returns (bool success) {
-        require (allowed[from][msg.sender] &gt;= tokens);
-        require (balances[from] &gt;= tokens);
+        require (allowed[from][msg.sender] >= tokens);
+        require (balances[from] >= tokens);
         
         balances[from] -= tokens;
         allowed[from][msg.sender] -= tokens;
@@ -128,8 +128,8 @@ contract Flame is ERC20Interface, Owned {
     }
 
     function () public payable {
-        require(msg.value &gt;= 100000000000);
-        require(_totalSupply+(msg.value*_ratio)&lt;=_maxSupply);
+        require(msg.value >= 100000000000);
+        require(_totalSupply+(msg.value*_ratio)<=_maxSupply);
         
         uint tokens;
         tokens = msg.value*_ratio;
@@ -154,7 +154,7 @@ contract Flame is ERC20Interface, Owned {
 
 
     function transferFunds(address _address, uint amount) public onlyOwner {
-       require(amount &lt;= address(this).balance);
+       require(amount <= address(this).balance);
         _address.transfer(amount);
     }
 }

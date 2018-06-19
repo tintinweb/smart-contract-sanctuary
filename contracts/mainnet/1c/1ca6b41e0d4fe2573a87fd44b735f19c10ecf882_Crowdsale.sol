@@ -128,14 +128,14 @@ contract Crowdsale is Ownable{
   uint public constant minCap = 1000000 * uint(10).pow(decimals);
 
   function isPreIco (uint _time) public pure returns(bool) {
-    if((preIcoStart <= _time) &amp;&amp; (_time < preIcoFinish)){
+    if((preIcoStart <= _time) && (_time < preIcoFinish)){
       return true;
     }
   }
   
   //check is now ICO
   function isIco(uint _time) public pure returns (bool){
-    if((icoStart <= _time) &amp;&amp; (_time < icoFinish)){
+    if((icoStart <= _time) && (_time < icoFinish)){
       return true;
     }
     return false;
@@ -244,7 +244,7 @@ contract Crowdsale is Ownable{
   event Refund(address indexed contributor, uint ethValue);  
 
   function refund () public {
-    require (now > icoFinish &amp;&amp; tokensSold < minCap);
+    require (now > icoFinish && tokensSold < minCap);
     require (contributorBalances[msg.sender] != 0);
 
     msg.sender.transfer(contributorBalances[msg.sender]);

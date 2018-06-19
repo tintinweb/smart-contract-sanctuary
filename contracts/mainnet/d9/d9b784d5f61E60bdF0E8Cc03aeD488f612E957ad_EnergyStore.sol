@@ -33,10 +33,10 @@ contract consumerRegistry is owned {
     event consumerDeregistered(address indexed consumer);
 
     // map address to userID
-    mapping(address =&gt; uint32) public consumers;
+    mapping(address => uint32) public consumers;
 
     modifier onlyRegisteredConsumers {
-        require(consumers[msg.sender] &gt; 0);
+        require(consumers[msg.sender] > 0);
         _;
     }
 
@@ -69,7 +69,7 @@ contract producerRegistry is owned {
     event producerDeregistered(address indexed producer);
     
     // map address to bool &quot;is a registered producer&quot;
-    mapping(address =&gt; bool) public producers;
+    mapping(address => bool) public producers;
 
     modifier onlyRegisteredProducers {
         require(producers[msg.sender]);
@@ -148,10 +148,10 @@ contract EnergyStore is owned, consumerRegistry, producerRegistry {
     Ask[] public asks;
     
     // map (address, day) to index into bids
-    mapping(address =&gt; mapping(uint32 =&gt; uint)) public bidsIndex;
+    mapping(address => mapping(uint32 => uint)) public bidsIndex;
     
     // map (userid) to index into asks [last take written]
-    mapping(uint32 =&gt; uint) public asksIndex;
+    mapping(uint32 => uint) public asksIndex;
     
     /// @notice Offer `(aenergy / 1.0e6).toFixed(6)` kWh of energy for
     ///         day `aday` at a price `(aprice / 1.0e3).toFixed(3) + &#39;
@@ -167,14 +167,14 @@ contract EnergyStore is owned, consumerRegistry, producerRegistry {
     ///        nanoseconds
     function offer_energy(uint32 aday, uint32 aprice, uint64 aenergy, uint64 atimestamp) onlyRegisteredProducers external {
         // require a minimum offer of 1 kWh
-        require(aenergy &gt;= kWh);
+        require(aenergy >= kWh);
         
         uint idx = bidsIndex[msg.sender][aday];
         
         // idx is either 0 or such that bids[idx] has the right producer and day (or both 0 and ...)
-        if ((bids.length &gt; idx) &amp;&amp; (bids[idx].producer == msg.sender) &amp;&amp; (bids[idx].day == aday)) {
+        if ((bids.length > idx) && (bids[idx].producer == msg.sender) && (bids[idx].day == aday)) {
             // we will only let newer timestamps affect the stored data
-            require(atimestamp &gt; bids[idx].timestamp);
+            require(atimestamp > bids[idx].timestamp);
             
             // NOTE: Should we sanity-check timestamps here (ensure that
             //       they are either in the past or not in the too-distant
@@ -202,7 +202,7 @@ contract EnergyStore is owned, consumerRegistry, producerRegistry {
 
     function getBidByProducerAndDay(address producer, uint32 day) external view returns(uint32 price, uint64 energy) {
         uint idx = bidsIndex[producer][day];
-        require(bids.length &gt; idx);
+        require(bids.length > idx);
         require(bids[idx].producer == producer);
         require(bids[idx].day == day);
         return (bids[idx].price, bids[idx].energy);
@@ -255,7 +255,7 @@ contract EnergyStore is owned, consumerRegistry, producerRegistry {
         uint idx = bidsIndex[aproducer][aday];
         
         // if the offer exists...
-        if ((bids.length &gt; idx) &amp;&amp; (bids[idx].producer == aproducer) &amp;&amp; (bids[idx].day == aday)) {
+        if ((bids.length > idx) && (bids[idx].producer == aproducer) && (bids[idx].day == aday)) {
             // ...and has the right price...
             require(bids[idx].price == aprice);
             
@@ -267,8 +267,8 @@ contract EnergyStore is owned, consumerRegistry, producerRegistry {
             // NOTE: The timestamp checking logic can be turned off by
             //       using a timestamp of zero.
             uint asksIdx = asksIndex[auserID];
-            if ((asks.length &gt; asksIdx) &amp;&amp; (asks[asksIdx].day == aday)) {
-                require((atimestamp == 0) || (asks[asksIdx].timestamp &lt; atimestamp));
+            if ((asks.length > asksIdx) && (asks[asksIdx].day == aday)) {
+                require((atimestamp == 0) || (asks[asksIdx].timestamp < atimestamp));
                 emit DealRevoked(asks[asksIdx].producer, asks[asksIdx].day, asks[asksIdx].price, asks[asksIdx].energy, asks[asksIdx].userID);
             }
             

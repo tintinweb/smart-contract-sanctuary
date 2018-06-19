@@ -226,7 +226,7 @@ contract C4FEscrow {
     // ----------------------------------------------------------------------------
     function changeDeadline(uint newDeadline) public onlyRequester returns (bool success) {
         // deadline can only be changed if not locked by provider and not completed
-        require ((!providerLocked) &amp;&amp; (!providerDisputed) &amp;&amp; (!providerCompleted) &amp;&amp; (status==1));
+        require ((!providerLocked) && (!providerDisputed) && (!providerCompleted) && (status==1));
         deadlineChanged(newDeadline, deadline);
         deadline = newDeadline;
         return true;
@@ -362,7 +362,7 @@ contract C4FEscrow {
     // ----------------------------------------------------------------------------
     function cancelFavor() public onlyRequester returns (bool success) {
         // cannot cancel if locked by provider unless deadline expired by 12 hours and not completed/disputed
-        require((!providerLocked) || ((now > deadline.add(12*3600)) &amp;&amp; (!providerCompleted) &amp;&amp; (!providerDisputed)));
+        require((!providerLocked) || ((now > deadline.add(12*3600)) && (!providerCompleted) && (!providerDisputed)));
         // cannot cancel after completed or arbitrated
         require(status==1);
         // send tokens back to requester
@@ -381,7 +381,7 @@ contract C4FEscrow {
     // ----------------------------------------------------------------------------
     function changeTokenOffer(uint256 newOffer) public onlyRequester returns (bool success) {
         // cannot change if locked by provider
-        require((!providerLocked) &amp;&amp; (!providerDisputed) &amp;&amp; (!providerCompleted));
+        require((!providerLocked) && (!providerDisputed) && (!providerCompleted));
         // cannot change if cancelled, closed or arbitrated
         require(status==1);
         // only use for reducing tokens (to increase simply transfer tokens to contract)
@@ -432,7 +432,7 @@ contract C4FEscrow {
         // arbitration fee to system for distribution
         if(!C4F.transfer(commissionTarget, arbitrationTokens)) revert();
         
-        // set status &amp; closeTime
+        // set status & closeTime
         status = 4;
         closeTime = now;
         success = true;
@@ -562,7 +562,7 @@ contract C4FToken is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
     
     modifier onlyDuringICO {
-        require((now >= _beginOfICO) &amp;&amp; (now <= _endOfICO));
+        require((now >= _beginOfICO) && (now <= _endOfICO));
         _;
     }
     
@@ -903,7 +903,7 @@ contract C4FToken is ERC20Interface, Owned {
         // send C4F tokens back to sender based on Ether received
         if (msg.value > 0) {
             
-            // check if whitelisted and sufficient contribution left (AML &amp; KYC)
+            // check if whitelisted and sufficient contribution left (AML & KYC)
             if(!(whitelisted_amount[msg.sender] >= msg.value)) revert();
             // reduce remaining contribution limit
             whitelisted_amount[msg.sender] = whitelisted_amount[msg.sender].sub(msg.value);

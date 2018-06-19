@@ -26,7 +26,7 @@ contract SafeMath {
         pure
     returns(uint) {
         uint256 z = x + y;
-        require((z >= x) &amp;&amp; (z >= y));
+        require((z >= x) && (z >= y));
         return z;
     }
 
@@ -111,7 +111,7 @@ contract Authorization {
         public
         onlyOwner
     {
-        if(user_ != address(0) &amp;&amp; !authbook[user_]) {
+        if(user_ != address(0) && !authbook[user_]) {
             authbook[user_] = true;
             operators.push(user_);
         }
@@ -158,7 +158,7 @@ contract StandardToken is SafeMath {
     )
         public
     returns(bool success) {
-        if(balances[msg.sender] >= amount_ &amp;&amp; amount_ > 0) {
+        if(balances[msg.sender] >= amount_ && amount_ > 0) {
             balances[msg.sender] = safeSub(balances[msg.sender], amount_);
             balances[to_] = safeAdd(balances[to_], amount_);
             emit Transfer(msg.sender, to_, amount_);
@@ -174,7 +174,7 @@ contract StandardToken is SafeMath {
         address to_,
         uint256 amount_
     ) public returns(bool success) {
-        if(balances[from_] >= amount_ &amp;&amp; allowed[from_][msg.sender] >= amount_ &amp;&amp; amount_ > 0) {
+        if(balances[from_] >= amount_ && allowed[from_][msg.sender] >= amount_ && amount_ > 0) {
             balances[to_] = safeAdd(balances[to_], amount_);
             balances[from_] = safeSub(balances[from_], amount_);
             allowed[from_][msg.sender] = safeSub(allowed[from_][msg.sender], amount_);
@@ -264,7 +264,7 @@ contract XPAAssetToken is StandardToken, Authorization {
         public
         onlyOperator
     returns(bool success) {
-        if(amount_ > 0 &amp;&amp; user_ != address(0)) {
+        if(amount_ > 0 && user_ != address(0)) {
             totalSupply = safeAdd(totalSupply, amount_);
             balances[user_] = safeAdd(balances[user_], amount_);
             emit Issue(owner, amount_);
@@ -279,7 +279,7 @@ contract XPAAssetToken is StandardToken, Authorization {
         public
     returns(bool success) {
         require(allowToBurn(msg.sender));
-        if(amount_ > 0 &amp;&amp; balances[msg.sender] >= amount_) {
+        if(amount_ > 0 && balances[msg.sender] >= amount_) {
             balances[msg.sender] = safeSub(balances[msg.sender], amount_);
             totalSupply = safeSub(totalSupply, amount_);
             emit Transfer(msg.sender, owner, amount_);
@@ -295,7 +295,7 @@ contract XPAAssetToken is StandardToken, Authorization {
         public
     returns(bool success) {
         require(allowToBurn(msg.sender));
-        if(balances[user_] >= amount_ &amp;&amp; allowed[user_][msg.sender] >= amount_ &amp;&amp; amount_ > 0) {
+        if(balances[user_] >= amount_ && allowed[user_][msg.sender] >= amount_ && amount_ > 0) {
             balances[user_] = safeSub(balances[user_], amount_);
             totalSupply = safeSub(totalSupply, amount_);
             allowed[user_][msg.sender] = safeSub(allowed[user_][msg.sender], amount_);
@@ -447,7 +447,7 @@ contract TokenFactory is Authorization {
             exchange_ != address(0)
         );
         if(
-            exchange_ == exchange &amp;&amp;
+            exchange_ == exchange &&
             candidateExchange != address(0)
         ) {
             emit eCancelNominatingExchange(candidateExchange);
@@ -461,7 +461,7 @@ contract TokenFactory is Authorization {
             exchange = exchange_;
             exchangeOldVersion = exchange_;
         } else if(
-            exchange_ != candidateExchange &amp;&amp;
+            exchange_ != candidateExchange &&
             candidateTillExchange + 86400 * 7 < block.timestamp
         ) {
             // set to candadite
@@ -469,7 +469,7 @@ contract TokenFactory is Authorization {
             candidateExchange = exchange_;
             candidateTillExchange = block.timestamp + 86400 * 7;
         } else if(
-            exchange_ == candidateExchange &amp;&amp;
+            exchange_ == candidateExchange &&
             candidateTillExchange < block.timestamp
         ) {
             // set to exchange
@@ -490,7 +490,7 @@ contract TokenFactory is Authorization {
             XPAAssets_ != address(0)
         );
         if(
-            XPAAssets_ == XPAAssets &amp;&amp;
+            XPAAssets_ == XPAAssets &&
             candidateXPAAssets != address(0)
         ) {
             emit eCancelNominatingXPAAssets(candidateXPAAssets);
@@ -503,7 +503,7 @@ contract TokenFactory is Authorization {
             emit eChangeXPAAssets(address(0), XPAAssets_);
             XPAAssets = XPAAssets_;
         } else if(
-            XPAAssets_ != candidateXPAAssets &amp;&amp;
+            XPAAssets_ != candidateXPAAssets &&
             candidateTillXPAAssets + 86400 * 7 < block.timestamp
         ) {
             // set to candadite
@@ -511,7 +511,7 @@ contract TokenFactory is Authorization {
             candidateXPAAssets = XPAAssets_;
             candidateTillXPAAssets = block.timestamp + 86400 * 7;
         } else if(
-            XPAAssets_ == candidateXPAAssets &amp;&amp;
+            XPAAssets_ == candidateXPAAssets &&
             candidateTillXPAAssets < block.timestamp
         ) {
             // set to XPAAssets
@@ -533,7 +533,7 @@ contract TokenFactory is Authorization {
             ETHAssets_ != address(0)
         );
         if(
-            ETHAssets_ == ETHAssets &amp;&amp;
+            ETHAssets_ == ETHAssets &&
             candidateETHAssets != address(0)
         ) {
             emit eCancelNominatingETHAssets(candidateETHAssets);
@@ -545,7 +545,7 @@ contract TokenFactory is Authorization {
             // initial value
             ETHAssets = ETHAssets_;
         } else if(
-            ETHAssets_ != candidateETHAssets &amp;&amp;
+            ETHAssets_ != candidateETHAssets &&
             candidateTillETHAssets + 86400 * 7 < block.timestamp
         ) {
             // set to candadite
@@ -553,7 +553,7 @@ contract TokenFactory is Authorization {
             candidateETHAssets = ETHAssets_;
             candidateTillETHAssets = block.timestamp + 86400 * 7;
         } else if(
-            ETHAssets_ == candidateETHAssets &amp;&amp;
+            ETHAssets_ == candidateETHAssets &&
             candidateTillETHAssets < block.timestamp
         ) {
             // set to ETHAssets

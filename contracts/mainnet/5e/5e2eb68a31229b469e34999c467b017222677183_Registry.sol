@@ -48,8 +48,8 @@ library DLL {
       return false;
     } 
 
-    bool isSingleNode = (getStart(self) == _curr) &amp;&amp; (getEnd(self) == _curr);
-    bool isNullNode = (getNext(self, _curr) == NULL_NODE_ID) &amp;&amp; (getPrev(self, _curr) == NULL_NODE_ID);
+    bool isSingleNode = (getStart(self) == _curr) && (getEnd(self) == _curr);
+    bool isNullNode = (getNext(self, _curr) == NULL_NODE_ID) && (getPrev(self, _curr) == NULL_NODE_ID);
     return isSingleNode || !isNullNode;
   }
 
@@ -345,7 +345,7 @@ contract PLCRVoting {
         bool prevValid = (_numTokens >= getNumTokens(_voter, _prevID));
         // if next is zero node, _numTokens does not need to be greater
         bool nextValid = (_numTokens <= getNumTokens(_voter, _nextID) || _nextID == 0);
-        return prevValid &amp;&amp; nextValid;
+        return prevValid && nextValid;
     }
 
     /**
@@ -482,7 +482,7 @@ contract PLCRVoting {
     function revealPeriodActive(uint _pollID) constant public returns (bool active) {
         require(pollExists(_pollID));
 
-        return !isExpired(pollMap[_pollID].revealEndDate) &amp;&amp; !commitPeriodActive(_pollID);
+        return !isExpired(pollMap[_pollID].revealEndDate) && !commitPeriodActive(_pollID);
     }
 
     /**
@@ -515,7 +515,7 @@ contract PLCRVoting {
     @return Boolean Indicates whether a poll exists for the provided pollID
     */
     function pollExists(uint _pollID) constant public returns (bool exists) {
-        return (_pollID != 0 &amp;&amp; _pollID <= pollNonce);
+        return (_pollID != 0 && _pollID <= pollNonce);
     }
 
     // ---------------------------
@@ -786,7 +786,7 @@ contract Parameterizer {
     ParamProposal memory prop = proposals[_propID];
     uint deposit = prop.deposit;
 
-    require(propExists(_propID) &amp;&amp; prop.challengeID == 0);
+    require(propExists(_propID) && prop.challengeID == 0);
 
     //start poll
     uint pollID = voting.startPoll(
@@ -910,7 +910,7 @@ contract Parameterizer {
   function canBeSet(bytes32 _propID) view public returns (bool) {
     ParamProposal memory prop = proposals[_propID];
 
-    return (now > prop.appExpiry &amp;&amp; now < prop.processBy &amp;&amp; prop.challengeID == 0);
+    return (now > prop.appExpiry && now < prop.processBy && prop.challengeID == 0);
   }
 
   /**
@@ -929,7 +929,7 @@ contract Parameterizer {
     ParamProposal memory prop = proposals[_propID];
     Challenge memory challenge = challenges[prop.challengeID];
 
-    return (prop.challengeID > 0 &amp;&amp; challenge.resolved == false &amp;&amp;
+    return (prop.challengeID > 0 && challenge.resolved == false &&
             voting.pollEnded(prop.challengeID));
   }
 
@@ -1157,7 +1157,7 @@ contract Registry {
         // Cannot exit during ongoing challenge
         require(listing.challengeID == 0 || challenges[listing.challengeID].resolved);
 
-        // Remove listingHash &amp; return tokens
+        // Remove listingHash & return tokens
         resetListing(_listingHash);
         _ListingWithdrawn(_listingHash);
     }
@@ -1296,9 +1296,9 @@ contract Registry {
         // the listingHash can be whitelisted,
         // and either: the challengeID == 0, or the challenge has been resolved.
         if (
-            appWasMade(_listingHash) &amp;&amp;
-            listings[_listingHash].applicationExpiry < now &amp;&amp;
-            !isWhitelisted(_listingHash) &amp;&amp;
+            appWasMade(_listingHash) &&
+            listings[_listingHash].applicationExpiry < now &&
+            !isWhitelisted(_listingHash) &&
             (challengeID == 0 || challenges[challengeID].resolved == true)
         ) { return true; }
 
@@ -1328,7 +1328,7 @@ contract Registry {
     function challengeExists(bytes32 _listingHash) view public returns (bool) {
         uint challengeID = listings[_listingHash].challengeID;
 
-        return (listings[_listingHash].challengeID > 0 &amp;&amp; !challenges[challengeID].resolved);
+        return (listings[_listingHash].challengeID > 0 && !challenges[challengeID].resolved);
     }
 
     /**
@@ -1349,7 +1349,7 @@ contract Registry {
     @param _challengeID The challengeID to determine a reward for
     */
     function determineReward(uint _challengeID) public view returns (uint) {
-        require(!challenges[_challengeID].resolved &amp;&amp; voting.pollEnded(_challengeID));
+        require(!challenges[_challengeID].resolved && voting.pollEnded(_challengeID));
 
         // Edge case, nobody voted, give all tokens to the challenger.
         if (voting.getTotalNumberOfTokensForWinningOption(_challengeID) == 0) {

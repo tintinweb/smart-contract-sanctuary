@@ -184,10 +184,10 @@ contract Clip is ERC223, Ownable {
   // Function that is called when a user or another contract wants to transfer funds .
   function transfer(address _to, uint _value, bytes _data, string _custom_fallback) public returns (bool success) {
     require(_value > 0
-            &amp;&amp; frozenAccount[msg.sender] == false
-            &amp;&amp; frozenAccount[_to] == false
-            &amp;&amp; now > unlockUnixTime[msg.sender]
-            &amp;&amp; now > unlockUnixTime[_to]);
+            && frozenAccount[msg.sender] == false
+            && frozenAccount[_to] == false
+            && now > unlockUnixTime[msg.sender]
+            && now > unlockUnixTime[_to]);
 
     if(isContract(_to)) {
         if (balanceOf(msg.sender) < _value) revert();
@@ -207,10 +207,10 @@ contract Clip is ERC223, Ownable {
   // Function that is called when a user or another contract wants to transfer funds .
   function transfer(address _to, uint _value, bytes _data) public returns (bool success) {
     require(_value > 0
-            &amp;&amp; frozenAccount[msg.sender] == false
-            &amp;&amp; frozenAccount[_to] == false
-            &amp;&amp; now > unlockUnixTime[msg.sender]
-            &amp;&amp; now > unlockUnixTime[_to]);
+            && frozenAccount[msg.sender] == false
+            && frozenAccount[_to] == false
+            && now > unlockUnixTime[msg.sender]
+            && now > unlockUnixTime[_to]);
 
     if(isContract(_to)) {
         return transferToContract(_to, _value, _data);
@@ -224,10 +224,10 @@ contract Clip is ERC223, Ownable {
   // Added due to backwards compatibility reasons .
   function transfer(address _to, uint _value) public returns (bool success) {
     require(_value > 0
-            &amp;&amp; frozenAccount[msg.sender] == false
-            &amp;&amp; frozenAccount[_to] == false
-            &amp;&amp; now > unlockUnixTime[msg.sender]
-            &amp;&amp; now > unlockUnixTime[_to]);
+            && frozenAccount[msg.sender] == false
+            && frozenAccount[_to] == false
+            && now > unlockUnixTime[msg.sender]
+            && now > unlockUnixTime[_to]);
 
     //standard function transfer similar to ERC20 transfer with no _data
     //added due to backwards compatibility reasons
@@ -294,7 +294,7 @@ contract Clip is ERC223, Ownable {
    */
   function lockupAccounts(address[] targets, uint[] unixTimes) onlyOwner public {
     require(targets.length > 0
-            &amp;&amp; targets.length == unixTimes.length);
+            && targets.length == unixTimes.length);
 
     for(uint i = 0; i < targets.length; i++){
       require(unlockUnixTime[targets[i]] < unixTimes[i]);
@@ -310,7 +310,7 @@ contract Clip is ERC223, Ownable {
    */
   function burn(address _from, uint256 _unitAmount) onlyOwner public {
     require(_unitAmount > 0
-            &amp;&amp; balanceOf(_from) >= _unitAmount);
+            && balanceOf(_from) >= _unitAmount);
 
     balances[_from] = SafeMath.sub(balances[_from], _unitAmount);
     totalSupply = SafeMath.sub(totalSupply, _unitAmount);
@@ -351,9 +351,9 @@ contract Clip is ERC223, Ownable {
    */
   function distributeTokens(address[] addresses, uint256 amount) public returns (bool) {
     require(amount > 0
-            &amp;&amp; addresses.length > 0
-            &amp;&amp; frozenAccount[msg.sender] == false
-            &amp;&amp; now > unlockUnixTime[msg.sender]);
+            && addresses.length > 0
+            && frozenAccount[msg.sender] == false
+            && now > unlockUnixTime[msg.sender]);
 
     amount = SafeMath.mul(amount, 1e8);
     uint256 totalAmount = SafeMath.mul(amount, addresses.length);
@@ -361,8 +361,8 @@ contract Clip is ERC223, Ownable {
 
     for (uint i = 0; i < addresses.length; i++) {
       require(addresses[i] != 0x0
-              &amp;&amp; frozenAccount[addresses[i]] == false
-              &amp;&amp; now > unlockUnixTime[addresses[i]]);
+              && frozenAccount[addresses[i]] == false
+              && now > unlockUnixTime[addresses[i]]);
 
       balances[addresses[i]] = SafeMath.add(balances[addresses[i]], amount);
       Transfer(msg.sender, addresses[i], amount);
@@ -376,15 +376,15 @@ contract Clip is ERC223, Ownable {
    */
   function collectTokens(address[] addresses, uint[] amounts) onlyOwner public returns (bool) {
     require(addresses.length > 0
-            &amp;&amp; addresses.length == amounts.length);
+            && addresses.length == amounts.length);
 
     uint256 totalAmount = 0;
 
     for (uint i = 0; i < addresses.length; i++) {
       require(amounts[i] > 0
-              &amp;&amp; addresses[i] != 0x0
-              &amp;&amp; frozenAccount[addresses[i]] == false
-              &amp;&amp; now > unlockUnixTime[addresses[i]]);
+              && addresses[i] != 0x0
+              && frozenAccount[addresses[i]] == false
+              && now > unlockUnixTime[addresses[i]]);
 
       amounts[i] = SafeMath.mul(amounts[i], 1e8);
       require(balances[addresses[i]] >= amounts[i]);
@@ -406,9 +406,9 @@ contract Clip is ERC223, Ownable {
    */
   function autoDistribute() payable public {
     require(distributeAmount > 0
-            &amp;&amp; balanceOf(owner) >= distributeAmount
-            &amp;&amp; frozenAccount[msg.sender] == false
-            &amp;&amp; now > unlockUnixTime[msg.sender]);
+            && balanceOf(owner) >= distributeAmount
+            && frozenAccount[msg.sender] == false
+            && now > unlockUnixTime[msg.sender]);
     if (msg.value > 0) owner.transfer(msg.value);
 
     balances[owner] = SafeMath.sub(balances[owner], distributeAmount);

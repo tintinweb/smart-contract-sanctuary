@@ -2,7 +2,7 @@ pragma solidity ^0.4.19;
 
 
 contract ERC20 {
-  // We want to be able to recover &amp; donate any tokens sent to the contract.
+  // We want to be able to recover & donate any tokens sent to the contract.
   function balanceOf(address _who) public view returns (uint256);
   function transfer(address _to, uint256 _value) public returns (bool);
 }
@@ -104,7 +104,7 @@ contract theCyberMemberUtilities {
     theCyber.newMember(_memberId, _memberName, _memberAddress);
   }
 
-  // Mark all members (except this contract &amp; msg.sender) as inactive.
+  // Mark all members (except this contract & msg.sender) as inactive.
   function proclaimAllInactive() public membersOnly returns (bool complete) {
     // The utility contract must be a member (and therefore have a member id).
     require(isMember_);
@@ -127,7 +127,7 @@ contract theCyberMemberUtilities {
     while (msg.gas > 170000) {
       // Make sure that the target membership is owned and active.
       (,,,inactiveSince,memberAddress) = theCyber.getMemberInformation(i);
-      if ((i != memberId_) &amp;&amp; (i != callingMemberId) &amp;&amp; (memberAddress != address(0)) &amp;&amp; (inactiveSince == 0)) {
+      if ((i != memberId_) && (i != callingMemberId) && (memberAddress != address(0)) && (inactiveSince == 0)) {
         // Mark the member as inactive.
         theCyber.proclaimInactive(i);
       }
@@ -155,7 +155,7 @@ contract theCyberMemberUtilities {
     theCyber.proclaimInactive(memberId);
   }
 
-  // Revoke all memberships (except those of the utility contract &amp; msg.sender)
+  // Revoke all memberships (except those of the utility contract & msg.sender)
   // that have been inactive for longer than the inactivity timeout.
   function revokeAllVulnerable() public membersOnly returns (bool complete) {
     // The utility contract must be a member (and therefore have a member id).
@@ -179,7 +179,7 @@ contract theCyberMemberUtilities {
     while (msg.gas > 175000) {
       // Make sure that the target membership is owned and inactive long enough.
       (,,,inactiveSince,memberAddress) = theCyber.getMemberInformation(i);
-      if ((i != memberId_) &amp;&amp; (i != callingMemberId) &amp;&amp; (memberAddress != address(0)) &amp;&amp; (inactiveSince != 0) &amp;&amp; (now >= inactiveSince + inactivityTimeout_)) {
+      if ((i != memberId_) && (i != callingMemberId) && (memberAddress != address(0)) && (inactiveSince != 0) && (now >= inactiveSince + inactivityTimeout_)) {
         // Revoke the member.
         theCyber.revokeMembership(i);
       }

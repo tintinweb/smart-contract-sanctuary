@@ -364,13 +364,13 @@ contract DigixReserve is KyberReserveInterface, Withdrawable, Utils {
         if (!isRateValid || uint(dollarsPerEtherWei) > MAX_RATE) return 0;
 
         uint rate;
-        if (ETH_TOKEN_ADDRESS == src &amp;&amp; digix == dest) {
+        if (ETH_TOKEN_ADDRESS == src && digix == dest) {
             //buy digix with ether == sell ether
             if (ask1KDigix == 0) return 0;
             //rate = (ether $ price / digix $ price) * precision
             //rate = ((dollarsPerEtherWei / etherwei == 10**18) / (bid1KDigix / 1000)) * PRECISION
             rate = 1000 * uint(dollarsPerEtherWei) / ask1KDigix;
-        } else if (digix == src &amp;&amp; ETH_TOKEN_ADDRESS == dest) {
+        } else if (digix == src && ETH_TOKEN_ADDRESS == dest) {
             //sell digix == buy ether with digix
             //rate = (digix $ price / ether $ price) * precision
             //rate = ((bid1KDigix / 1000) / (dollarsPerEtherWei / etherwei == 10**18)) * PRECISION

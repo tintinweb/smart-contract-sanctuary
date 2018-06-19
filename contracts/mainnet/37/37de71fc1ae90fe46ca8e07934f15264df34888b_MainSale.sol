@@ -16,9 +16,9 @@ contract MainSale {
 	}
 
 	function () external payable {
-		require(now &gt;= startTime &amp;&amp; now &lt;= endTime);
-		require(hardCap &gt;= msg.value + totalContributed);
-		require(msg.value &gt;= 10 ** 17);
+		require(now >= startTime && now <= endTime);
+		require(hardCap >= msg.value + totalContributed);
+		require(msg.value >= 10 ** 17);
 		totalContributed += msg.value;
 	}
 

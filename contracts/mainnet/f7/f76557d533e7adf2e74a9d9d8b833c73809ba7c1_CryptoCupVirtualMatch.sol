@@ -17,7 +17,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -27,7 +27,7 @@ library SafeMath {
     * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -36,7 +36,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -56,9 +56,9 @@ contract CryptoCupVirtualMatch {
     CryptoCupToken cryptoCupTokenContract;
     address public contractModifierAddress;
     address public developerAddress;
-    mapping (uint256 =&gt; Match) public matches;
-    mapping (address =&gt; Player) public players;
-    mapping (uint256 =&gt; Team) public teams;
+    mapping (uint256 => Match) public matches;
+    mapping (address => Player) public players;
+    mapping (uint256 => Team) public teams;
     uint256 private developerBalance;
     bool private allowInPlayJoining = true;
     bool private allowPublicMatches = true;
@@ -76,10 +76,10 @@ contract CryptoCupVirtualMatch {
         uint256 id;
         uint256 playerEntryPrice;
         uint256 homeTeam;
-        mapping (uint256 =&gt; Player) homeTeamPlayers;
+        mapping (uint256 => Player) homeTeamPlayers;
         uint256 homeTeamPlayersCount;
         uint256 awayTeam;
-        mapping (uint256 =&gt; Player) awayTeamPlayers;
+        mapping (uint256 => Player) awayTeamPlayers;
         uint256 awayTeamPlayersCount;
         uint256 kickOff;
         uint256 fullTime;
@@ -192,10 +192,10 @@ contract CryptoCupVirtualMatch {
     function createPlayerMatch(uint256 _homeTeam, uint256 _awayTeam, uint256 _entryPrice, uint256 _startInSecondsTime, uint256 _matchDuration) public {
         require(allowPublicMatches);
         require(_homeTeam != _awayTeam);
-        require(_homeTeam &lt; 32 &amp;&amp; _awayTeam &lt; 32);
-        require(_entryPrice &gt;= entryPrice);
-        require(_startInSecondsTime &gt; 0);
-        require(_matchDuration &gt;= durationInSeconds);
+        require(_homeTeam < 32 && _awayTeam < 32);
+        require(_entryPrice >= entryPrice);
+        require(_startInSecondsTime > 0);
+        require(_matchDuration >= durationInSeconds);
         
         // Does home team exist?
         if (!teams[_homeTeam].init) {
@@ -252,23 +252,23 @@ contract CryptoCupVirtualMatch {
         
         // Validation
         require(theMatch.id != 0); 
-        require(msg.value &gt;= theMatch.playerEntryPrice);
+        require(msg.value >= theMatch.playerEntryPrice);
 	    require(_addressNotNull(msg.sender));
 
         // Match status
         if (allowInPlayJoining) {
-            require(now &lt; theMatch.fullTime);    
+            require(now < theMatch.fullTime);    
         } else {
-            require(now &lt; theMatch.kickOff);
+            require(now < theMatch.kickOff);
         }
 
         // Spaces left on team
         if (theMatch.homeTeam == _team)
         {
-            require(theMatch.homeTeamPlayersCount &lt; 11);
+            require(theMatch.homeTeamPlayersCount < 11);
             theMatch.homeTeamPlayers[theMatch.homeTeamPlayersCount++] = players[msg.sender];
         } else {
-            require(theMatch.awayTeamPlayersCount &lt; 11);
+            require(theMatch.awayTeamPlayersCount < 11);
             theMatch.awayTeamPlayers[theMatch.awayTeamPlayersCount++] = players[msg.sender];
         }
 
@@ -288,7 +288,7 @@ contract CryptoCupVirtualMatch {
         
         // We only return matches that are in play
         address[] memory matchPlayers = new address[](matches[matchId].homeTeamPlayersCount);
-        for (uint256 i = 0; i &lt; matches[matchId].homeTeamPlayersCount; i++) {
+        for (uint256 i = 0; i < matches[matchId].homeTeamPlayersCount; i++) {
             matchPlayers[i] =  matches[matchId].homeTeamPlayers[i].account;
         }
         return (matchPlayers);
@@ -301,7 +301,7 @@ contract CryptoCupVirtualMatch {
         
         // We only return matches that are in play
         address[] memory matchPlayers = new address[](matches[matchId].awayTeamPlayersCount);
-        for (uint256 i = 0; i &lt; matches[matchId].awayTeamPlayersCount; i++) {
+        for (uint256 i = 0; i < matches[matchId].awayTeamPlayersCount; i++) {
             matchPlayers[i] =  matches[matchId].awayTeamPlayers[i].account;
         }
         return (matchPlayers);
@@ -314,8 +314,8 @@ contract CryptoCupVirtualMatch {
 
         uint256[] memory matchIds = new uint256[](matchCounter);
         uint256 numberOfMatches = 0;
-        for (uint256 i = 1; i &lt;= matchCounter; i++) {
-            if (now &lt; matches[i].kickOff) {
+        for (uint256 i = 1; i <= matchCounter; i++) {
+            if (now < matches[i].kickOff) {
                 matchIds[numberOfMatches] = matches[i].id;
                 numberOfMatches++;
             }
@@ -323,7 +323,7 @@ contract CryptoCupVirtualMatch {
 
         // copy it to a shorter array
         uint[] memory smallerArray = new uint[](numberOfMatches);
-        for (uint j = 0; j &lt; numberOfMatches; j++) {
+        for (uint j = 0; j < numberOfMatches; j++) {
             smallerArray[j] = matchIds[j];
         }
         return (smallerArray);
@@ -337,8 +337,8 @@ contract CryptoCupVirtualMatch {
         // We only return matches that are in play
         uint256[] memory matchIds = new uint256[](matchCounter);
         uint256 numberOfMatches = 0;
-        for (uint256 i = 1; i &lt;= matchCounter; i++) {
-            if (now &gt; matches[i].kickOff &amp;&amp; now &lt; matches[i].fullTime) {
+        for (uint256 i = 1; i <= matchCounter; i++) {
+            if (now > matches[i].kickOff && now < matches[i].fullTime) {
                 matchIds[numberOfMatches] = matches[i].id;
                 numberOfMatches++;
             }
@@ -346,7 +346,7 @@ contract CryptoCupVirtualMatch {
 
         // copy it to a shorter array
         uint[] memory smallerArray = new uint[](numberOfMatches);
-        for (uint j = 0; j &lt; numberOfMatches; j++) {
+        for (uint j = 0; j < numberOfMatches; j++) {
             smallerArray[j] = matchIds[j];
         }
         return (smallerArray);
@@ -360,8 +360,8 @@ contract CryptoCupVirtualMatch {
         // We only return matches that are finished and unreported that had players
         uint256[] memory matchIds = new uint256[](matchCounter);
         uint256 numberOfMatches = 0;
-        for (uint256 i = 1; i &lt;= matchCounter; i++) {
-            if (!matches[i].reported &amp;&amp; now &gt; matches[i].fullTime &amp;&amp; (matches[i].homeTeamPlayersCount + matches[i].awayTeamPlayersCount) &gt; 0) {
+        for (uint256 i = 1; i <= matchCounter; i++) {
+            if (!matches[i].reported && now > matches[i].fullTime && (matches[i].homeTeamPlayersCount + matches[i].awayTeamPlayersCount) > 0) {
                 matchIds[numberOfMatches] = matches[i].id;
                 numberOfMatches++;
             }
@@ -369,7 +369,7 @@ contract CryptoCupVirtualMatch {
 
         // copy it to a shorter array
         uint[] memory smallerArray = new uint[](numberOfMatches);
-        for (uint j = 0; j &lt; numberOfMatches; j++) {
+        for (uint j = 0; j < numberOfMatches; j++) {
             smallerArray[j] = matchIds[j];
         }
         return (smallerArray);
@@ -379,17 +379,17 @@ contract CryptoCupVirtualMatch {
         
         Match storage theMatch = matches[_matchId];
         
-        require(theMatch.id &gt; 0 &amp;&amp; !theMatch.reported);
+        require(theMatch.id > 0 && !theMatch.reported);
         
         uint256 index;
         // if a match was one sided, refund all players
         if (theMatch.homeTeamPlayersCount == 0 || theMatch.awayTeamPlayersCount == 0)
         {
-            for (index = 0; index &lt; theMatch.homeTeamPlayersCount; index++) {
+            for (index = 0; index < theMatch.homeTeamPlayersCount; index++) {
                 players[theMatch.homeTeamPlayers[index].account].balance += theMatch.playerEntryPrice;
             }
 
-            for (index = 0; index &lt; theMatch.awayTeamPlayersCount; index++) {
+            for (index = 0; index < theMatch.awayTeamPlayersCount; index++) {
                 players[theMatch.awayTeamPlayers[index].account].balance += theMatch.playerEntryPrice;
             }
 
@@ -397,12 +397,12 @@ contract CryptoCupVirtualMatch {
             
             // Get the account balances of each team, NOT the in game balance.
             uint256 htpBalance = 0;
-            for (index = 0; index &lt; theMatch.homeTeamPlayersCount; index++) {
+            for (index = 0; index < theMatch.homeTeamPlayersCount; index++) {
                htpBalance += theMatch.homeTeamPlayers[index].account.balance;
             }
             
             uint256 atpBalance = 0;
-            for (index = 0; index &lt; theMatch.awayTeamPlayersCount; index++) {
+            for (index = 0; index < theMatch.awayTeamPlayersCount; index++) {
                atpBalance += theMatch.awayTeamPlayers[index].account.balance;
             }
             
@@ -420,7 +420,7 @@ contract CryptoCupVirtualMatch {
             }
     
             uint256 prizeMoney = 0;
-            if(theMatch.homeScore &gt; theMatch.awayScore){
+            if(theMatch.homeScore > theMatch.awayScore){
               // home wins
               theMatch.winningTeam = theMatch.homeTeam;
               prizeMoney = SafeMath.mul(theMatch.playerEntryPrice, theMatch.awayTeamPlayersCount);
@@ -442,14 +442,14 @@ contract CryptoCupVirtualMatch {
             {
                 playersProfitShare = SafeMath.add(SafeMath.div(playersProfit, theMatch.homeTeamPlayersCount), theMatch.playerEntryPrice);
                 
-                for (index = 0; index &lt; theMatch.homeTeamPlayersCount; index++) {
+                for (index = 0; index < theMatch.homeTeamPlayersCount; index++) {
                     players[theMatch.homeTeamPlayers[index].account].balance += playersProfitShare;
                 }
                 
             } else {
                 playersProfitShare = SafeMath.add(SafeMath.div(playersProfit, theMatch.awayTeamPlayersCount), theMatch.playerEntryPrice);
                 
-                for (index = 0; index &lt; theMatch.awayTeamPlayersCount; index++) {
+                for (index = 0; index < theMatch.awayTeamPlayersCount; index++) {
                     players[theMatch.awayTeamPlayers[index].account].balance += playersProfitShare;
                 }
             }
@@ -475,8 +475,8 @@ contract CryptoCupVirtualMatch {
         // We only return matches for the last x hours - everything else is on chain
         uint256[] memory matchIds = new uint256[](matchCounter);
         uint256 numberOfMatches = 0;
-        for (uint256 i = 1; i &lt;= matchCounter; i++) {
-            if (matches[i].reported &amp;&amp; now &gt; matches[i].fullTime &amp;&amp; matches[i].fullTime + dataVisibleWindow &gt; now) {
+        for (uint256 i = 1; i <= matchCounter; i++) {
+            if (matches[i].reported && now > matches[i].fullTime && matches[i].fullTime + dataVisibleWindow > now) {
                 matchIds[numberOfMatches] = matches[i].id;
                 numberOfMatches++;
             }
@@ -484,7 +484,7 @@ contract CryptoCupVirtualMatch {
 
         // copy it to a shorter array
         uint[] memory smallerArray = new uint[](numberOfMatches);
-        for (uint j = 0; j &lt; numberOfMatches; j++) {
+        for (uint j = 0; j < numberOfMatches; j++) {
             smallerArray[j] = matchIds[j];
         }
         return (smallerArray);

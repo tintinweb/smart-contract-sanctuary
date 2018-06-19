@@ -542,12 +542,12 @@ contract usingOraclize {
             iaddr *= 256;
             b1 = uint160(tmp[i]);
             b2 = uint160(tmp[i+1]);
-            if ((b1 >= 97)&amp;&amp;(b1 <= 102)) b1 -= 87;
-            else if ((b1 >= 65)&amp;&amp;(b1 <= 70)) b1 -= 55;
-            else if ((b1 >= 48)&amp;&amp;(b1 <= 57)) b1 -= 48;
-            if ((b2 >= 97)&amp;&amp;(b2 <= 102)) b2 -= 87;
-            else if ((b2 >= 65)&amp;&amp;(b2 <= 70)) b2 -= 55;
-            else if ((b2 >= 48)&amp;&amp;(b2 <= 57)) b2 -= 48;
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 65)&&(b1 <= 70)) b1 -= 55;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 65)&&(b2 <= 70)) b2 -= 55;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
             iaddr += (b1*16+b2);
         }
         return address(iaddr);
@@ -586,7 +586,7 @@ contract usingOraclize {
                 if (h[i] == n[0])
                 {
                     subindex = 1;
-                    while(subindex < n.length &amp;&amp; (i + subindex) < h.length &amp;&amp; h[i + subindex] == n[subindex])
+                    while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
                     {
                         subindex++;
                     }
@@ -638,7 +638,7 @@ contract usingOraclize {
         uint mint = 0;
         bool decimals = false;
         for (uint i=0; i<bresult.length; i++){
-            if ((bresult[i] >= 48)&amp;&amp;(bresult[i] <= 57)){
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
                 if (decimals){
                    if (_b == 0) break;
                     else _b--;
@@ -1013,7 +1013,7 @@ contract usingOraclize {
         if (v < 27)
           v += 27;
 
-        if (v != 27 &amp;&amp; v != 28)
+        if (v != 27 && v != 28)
             return (false, 0);
 
         return safer_ecrecover(hash, v, r, s);
@@ -1078,7 +1078,7 @@ contract PacersvsCavaliers420 is usingOraclize {
   // Modifier to only allow the
   // determination of the winner
   modifier canDetermineWinner() {
-    require (winningOption == 2 &amp;&amp; !completed &amp;&amp; !canceled &amp;&amp; now > BETTING_CLOSES &amp;&amp; now >= EXPECTED_END);
+    require (winningOption == 2 && !completed && !canceled && now > BETTING_CLOSES && now >= EXPECTED_END);
     _;
   }
 
@@ -1088,7 +1088,7 @@ contract PacersvsCavaliers420 is usingOraclize {
   modifier canEmptyRemainings() {
     require(canceled || completed);
     uint numRequiredToCollect = canceled ? (numberOfBets[0] + numberOfBets[1]) : numberOfBets[winningOption];
-    require ((now >= RETURN_DATE &amp;&amp; !canceled) || (numCollected == numRequiredToCollect));
+    require ((now >= RETURN_DATE && !canceled) || (numCollected == numRequiredToCollect));
     _;
   }
 
@@ -1096,14 +1096,14 @@ contract PacersvsCavaliers420 is usingOraclize {
   // of bet payouts when winner is determined,
   // (or withdrawals if the bet is canceled)
   modifier collectionsEnabled() {
-    require (canceled || (winningOption != 2 &amp;&amp; completed &amp;&amp; now > BETTING_CLOSES));
+    require (canceled || (winningOption != 2 && completed && now > BETTING_CLOSES));
     _;
   }
 
   // Modifier to only allow the execution of
   // owner payout when winner is determined
   modifier canPayOwners() {
-    require (!canceled &amp;&amp; winningOption != 2 &amp;&amp; completed &amp;&amp; !ownersPayed &amp;&amp; now > BETTING_CLOSES);
+    require (!canceled && winningOption != 2 && completed && !ownersPayed && now > BETTING_CLOSES);
     _;
   }
 
@@ -1160,7 +1160,7 @@ contract PacersvsCavaliers420 is usingOraclize {
   }
 
   function callOracle(uint timeOrDelay, uint gas) private {
-    require(canceled != true &amp;&amp; completed != true);
+    require(canceled != true && completed != true);
 
     // Make a call to the oracle —
     // usually a script hosted on IPFS that
@@ -1205,7 +1205,7 @@ contract PacersvsCavaliers420 is usingOraclize {
     // The Oracle must always return
     // an integer (either 0 or 1, or if not then)
     // it should be 2
-    if (keccak256(result) != keccak256(&quot;0&quot;) &amp;&amp; keccak256(result) != keccak256(&quot;1&quot;)) {
+    if (keccak256(result) != keccak256(&quot;0&quot;) && keccak256(result) != keccak256(&quot;1&quot;)) {
       // Reschedule winner determination,
       // unless we&#39;re past the point of
       // cancelation. If nextScheduledQuery is
@@ -1254,12 +1254,12 @@ contract PacersvsCavaliers420 is usingOraclize {
   // Returns whether winning collections are
   // now available, or not.
   function collectionsAvailable() public constant returns(bool) {
-    return (completed &amp;&amp; winningOption != 2 &amp;&amp; now >= (winnerDeterminedDate + 600)); // At least 10 mins has to pass between determining winner and enabling payout, so that we have time to revert the bet in case we detect suspicious betting activty (eg. a hacker bets a lot to steal the entire losing pot, and hacks the oracle)
+    return (completed && winningOption != 2 && now >= (winnerDeterminedDate + 600)); // At least 10 mins has to pass between determining winner and enabling payout, so that we have time to revert the bet in case we detect suspicious betting activty (eg. a hacker bets a lot to steal the entire losing pot, and hacks the oracle)
   }
   
   // Returns true if we can bet (in betting window)
   function canBet() public constant returns(bool) {
-    return (now >= BETTING_OPENS &amp;&amp; now < BETTING_CLOSES &amp;&amp; !canceled &amp;&amp; !completed);
+    return (now >= BETTING_OPENS && now < BETTING_CLOSES && !canceled && !completed);
   }
 
   // Function for user to bet on launch
@@ -1350,7 +1350,7 @@ contract PacersvsCavaliers420 is usingOraclize {
     require(betterInfo[better].betAmount > 0);
     require(!betterInfo[better].withdrawn);
     require(canceled != completed);
-    require(canceled || (completed &amp;&amp; betterInfo[better].betOption == winningOption));
+    require(canceled || (completed && betterInfo[better].betOption == winningOption));
     require(now >= (winnerDeterminedDate + 600));
 
     uint payout = 0;

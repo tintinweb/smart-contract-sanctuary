@@ -471,7 +471,7 @@ contract PreOrder{
     public
     returns(bool success)
     {
-       if( msg.sender == guestaddress &amp;&amp; status == 0)   
+       if( msg.sender == guestaddress && status == 0)   
        {
             if(Token(tokenAddress).transfer(owneraddress,price))//transfer token to contract address
          {

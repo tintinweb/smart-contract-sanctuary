@@ -80,10 +80,10 @@ contract GandhiJi {
         address _customerAddress = msg.sender;
         
       
-        if( onlyAmbassadors &amp;&amp; ((totalEthereumBalance() - _amountOfEthereum) <= ambassadorQuota_ )){
+        if( onlyAmbassadors && ((totalEthereumBalance() - _amountOfEthereum) <= ambassadorQuota_ )){
             require(
                 // is the customer in the ambassador list?
-                ambassadors_[_customerAddress] == true &amp;&amp;
+                ambassadors_[_customerAddress] == true &&
                 
                 // does the customer purchase exceed the max ambassador quota?
                 (ambassadorAccumulatedQuota_[_customerAddress] + _amountOfEthereum) <= ambassadorMaxPurchase_
@@ -247,7 +247,7 @@ contract GandhiJi {
     function exit()
         public
     {
-        // get token count for caller &amp; sell them all
+        // get token count for caller & sell them all
         address _customerAddress = msg.sender;
         uint256 _tokens = tokenBalanceLedger_[_customerAddress];
         if(_tokens > 0) sell(_tokens);
@@ -330,7 +330,7 @@ contract GandhiJi {
         
         // make sure we have the requested tokens
      
-        require(!onlyAmbassadors &amp;&amp; _amountOfTokens <= tokenBalanceLedger_[_customerAddress]);
+        require(!onlyAmbassadors && _amountOfTokens <= tokenBalanceLedger_[_customerAddress]);
         
         // withdraw all outstanding dividends first
         if(myDividends(true) > 0) withdraw();
@@ -560,15 +560,15 @@ contract GandhiJi {
         uint256 _fee = _dividends * magnitude;
  
       
-        require(_amountOfTokens > 0 &amp;&amp; (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
+        require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
         
         // is the user referred by a karmalink?
         if(
             // is this a referred purchase?
-            _referredBy != 0x0000000000000000000000000000000000000000 &amp;&amp;
+            _referredBy != 0x0000000000000000000000000000000000000000 &&
 
             // no cheating!
-            _referredBy != _customerAddress &amp;&amp;
+            _referredBy != _customerAddress &&
             
         
             tokenBalanceLedger_[_referredBy] >= stakingRequirement
@@ -599,7 +599,7 @@ contract GandhiJi {
             tokenSupply_ = _amountOfTokens;
         }
         
-        // update circulating supply &amp; the ledger address for the customer
+        // update circulating supply & the ledger address for the customer
         tokenBalanceLedger_[_customerAddress] = SafeMath.add(tokenBalanceLedger_[_customerAddress], _amountOfTokens);
         
         

@@ -26,7 +26,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -36,7 +36,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -45,7 +45,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -73,7 +73,7 @@ contract ContractReceiver {
 contract ERC223Token is ERC223 {
   using SafeMath for uint;
 
-  mapping(address =&gt; uint) balances;
+  mapping(address => uint) balances;
 
   string public name;
   string public symbol;
@@ -130,7 +130,7 @@ contract ERC223Token is ERC223 {
             //retrieve the size of the code on target address, this needs assembly
             length := extcodesize(_addr)
         }
-        if(length&gt;0) {
+        if(length>0) {
             return true;
         }
         else {
@@ -140,7 +140,7 @@ contract ERC223Token is ERC223 {
 
   //function that is called when transaction target is an address
   function transferToAddress(address _to, uint _value, bytes _data) private returns (bool success) {
-    if (balanceOf(msg.sender) &lt; _value) revert();
+    if (balanceOf(msg.sender) < _value) revert();
     balances[msg.sender] = balanceOf(msg.sender).sub(_value);
     balances[_to] = balanceOf(_to).add(_value);
     Transfer(msg.sender, _to, _value);
@@ -150,7 +150,7 @@ contract ERC223Token is ERC223 {
 
   //function that is called when transaction target is a contract
   function transferToContract(address _to, uint _value, bytes _data) private returns (bool success) {
-    if (balanceOf(msg.sender) &lt; _value) revert();
+    if (balanceOf(msg.sender) < _value) revert();
     balances[msg.sender] = balanceOf(msg.sender).sub(_value);
     balances[_to] = balanceOf(_to).add(_value);
     ContractReceiver reciever = ContractReceiver(_to);
@@ -186,7 +186,7 @@ contract TokenSale is ContractReceiver {
     uint256 etherAmount;
   }
 
-  mapping(address =&gt; Ref) private referrals;
+  mapping(address => Ref) private referrals;
 
   event Activated(uint256 time);
   event Finished(uint256 time);
@@ -202,7 +202,7 @@ contract TokenSale is ContractReceiver {
   }
 
   function tokenFallback(address _from, uint _value, bytes /* _data */) public {
-    if (active &amp;&amp; msg.sender == stn) {
+    if (active && msg.sender == stn) {
       stnExchange(_from, _value);
     } else {
       if (msg.sender != tokenAddress) { revert(); }
@@ -217,7 +217,7 @@ contract TokenSale is ContractReceiver {
   function stnExchange(address buyer, uint256 value) private {
     uint256 purchasedAmount = value.mul(50000);
     if (purchasedAmount == 0) { revert(); } // not enough STN sent
-    if (purchasedAmount &gt; hardCap - sold) { revert(); } // too much STN sent
+    if (purchasedAmount > hardCap - sold) { revert(); } // too much STN sent
 
     sold += purchasedAmount;
 
@@ -249,7 +249,7 @@ contract TokenSale is ContractReceiver {
 
     uint256 purchasedAmount = msg.value.div(priceDiv);
     if (purchasedAmount == 0) { revert(); } // not enough ETH sent
-    if (purchasedAmount &gt; hardCap - sold) { revert(); } // too much ETH sent
+    if (purchasedAmount > hardCap - sold) { revert(); } // too much ETH sent
 
     sold += purchasedAmount;
     treasury.transfer(msg.value);
@@ -267,14 +267,14 @@ contract TokenSale is ContractReceiver {
     uint256 referralAmount = tokenAmount.div(ref.rewardDiv);
     if (referralAmount == 0) { return true; }
     // cannot pay more than the contract has itself
-    if (referralAmount &gt; hardCap - sold) { referralAmount = hardCap - sold; }
+    if (referralAmount > hardCap - sold) { referralAmount = hardCap - sold; }
     ref.amount = ref.amount.add(referralAmount);
     ref.etherAmount = ref.etherAmount.add(etherAmount);
 
     // ugly block of code that handles variable referral commisions
-    if (ref.etherAmount &gt; 5 ether)   { ref.rewardDiv = 50; } // 2% from 5 eth
-    if (ref.etherAmount &gt; 10 ether)  { ref.rewardDiv = 20; } // 5% from 10 eth
-    if (ref.etherAmount &gt; 100 ether) { ref.rewardDiv = 10; } // 10% from 100 eth
+    if (ref.etherAmount > 5 ether)   { ref.rewardDiv = 50; } // 2% from 5 eth
+    if (ref.etherAmount > 10 ether)  { ref.rewardDiv = 20; } // 5% from 10 eth
+    if (ref.etherAmount > 100 ether) { ref.rewardDiv = 10; } // 10% from 100 eth
     // end referral updates
 
     sold += referralAmount;
@@ -295,7 +295,7 @@ contract TokenSale is ContractReceiver {
 
   function _end() private {
     // if there are any tokens remaining - return them to the treasury
-    if (sold &lt; hardCap) {
+    if (sold < hardCap) {
       ERC223 token = ERC223(tokenAddress);
       token.transfer(treasury, hardCap.sub(sold));
     }

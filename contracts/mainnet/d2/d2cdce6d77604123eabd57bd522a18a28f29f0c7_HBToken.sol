@@ -20,7 +20,7 @@ pragma solidity ^0.4.23;
    * @dev Integer division of two numbers, truncating the quotient.
    */
    function div(uint256 a, uint256 b) internal returns (uint256) {
-     // assert(b &gt; 0); // Solidity automatically revert()s when dividing by 0
+     // assert(b > 0); // Solidity automatically revert()s when dividing by 0
      // uint256 c = a / b;
      // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
      return a / b;
@@ -30,7 +30,7 @@ pragma solidity ^0.4.23;
    * @dev Subtracts two numbers, revert()s on overflow (i.e. if subtrahend is greater than minuend).
    */
    function sub(uint256 a, uint256 b) internal returns (uint256) {
-     assert(b &lt;= a);
+     assert(b <= a);
      return a - b;
    }
 
@@ -39,7 +39,7 @@ pragma solidity ^0.4.23;
    */
    function add(uint256 a, uint256 b) internal returns (uint256 c) {
      c = a + b;
-     assert(c &gt;= a &amp;&amp; c &gt;= b);
+     assert(c >= a && c >= b);
      return c;
    }
 
@@ -68,13 +68,13 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint;
 
-  mapping(address =&gt; uint) balances;
+  mapping(address => uint) balances;
 
   /**
    * @dev Fix for the ERC20 short address attack.
    */
   modifier onlyPayloadSize(uint size) {
-     if(msg.data.length &lt; size.add(4)) {
+     if(msg.data.length < size.add(4)) {
        revert();
      }
      _;
@@ -122,7 +122,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is BasicToken, ERC20 {
 
-  mapping (address =&gt; mapping (address =&gt; uint)) allowed;
+  mapping (address => mapping (address => uint)) allowed;
 
   /**
    * @dev Transfer tokens from one address to another
@@ -135,7 +135,7 @@ contract StandardToken is BasicToken, ERC20 {
     uint _allowance = allowed[_from][msg.sender];
 
     // Check is not needed because sub(_allowance, _value) will already revert() if this condition is not met
-    // if (_value &gt; _allowance) revert();
+    // if (_value > _allowance) revert();
 
     balances[_to] = balances[_to].add(_value);
     balances[_from] = balances[_from].sub(_value);
@@ -154,7 +154,7 @@ contract StandardToken is BasicToken, ERC20 {
     //  allowance to zero by calling `approve(_spender, 0)` if it is not
     //  already 0 to mitigate the race condition described here:
     //  https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-    if ((_value != 0) &amp;&amp; (allowed[msg.sender][_spender] != 0)) revert();
+    if ((_value != 0) && (allowed[msg.sender][_spender] != 0)) revert();
 
     allowed[msg.sender][_spender] = _value;
     emit Approval(msg.sender, _spender, _value);
@@ -288,7 +288,7 @@ contract TokenTimelock {
   uint releaseTime;
 
   function TokenTimelock(ERC20Basic _token, address _beneficiary, uint _releaseTime) {
-    require(_releaseTime &gt; now);
+    require(_releaseTime > now);
     token = _token;
     beneficiary = _beneficiary;
     releaseTime = _releaseTime;
@@ -299,10 +299,10 @@ contract TokenTimelock {
    */
   function claim() {
     require(msg.sender == beneficiary);
-    require(now &gt;= releaseTime);
+    require(now >= releaseTime);
 
     uint amount = token.balanceOf(this);
-    require(amount &gt; 0);
+    require(amount > 0);
 
     token.transfer(beneficiary, amount);
   }
@@ -355,8 +355,8 @@ contract HBToken is PausableToken {
   }
 
   function _burn(address _who, uint256 _value) internal {
-    require(_value &lt;= balances[_who]);
-    // no need to require value &lt;= totalSupply, since that would imply the
+    require(_value <= balances[_who]);
+    // no need to require value <= totalSupply, since that would imply the
     // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
     balances[_who] = balances[_who].sub(_value);

@@ -49,7 +49,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -59,7 +59,7 @@ library SafeMath {
     * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -68,7 +68,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 
@@ -76,7 +76,7 @@ library SafeMath {
     * @dev Compara two numbers, and return the bigger one.
     */
     function max(int256 a, int256 b) internal pure returns (int256) {
-        if (a &gt; b) {
+        if (a > b) {
             return a;
         } else {
             return b;
@@ -87,7 +87,7 @@ library SafeMath {
     * @dev Compara two numbers, and return the bigger one.
     */
     function min(int256 a, int256 b) internal pure returns (int256) {
-        if (a &lt; b) {
+        if (a < b) {
             return a;
         } else {
             return b;
@@ -317,7 +317,7 @@ contract EthernautsStorage is EthernautsAccessControl {
     }
 
     /*** Mapping for Contracts with granted permission ***/
-    mapping (address =&gt; bool) public contractsGrantedAccess;
+    mapping (address => bool) public contractsGrantedAccess;
 
     /// @dev grant access for a contract to interact with this contract.
     /// @param _v2Address The contract address to grant access
@@ -340,7 +340,7 @@ contract EthernautsStorage is EthernautsAccessControl {
     }
 
     modifier validAsset(uint256 _tokenId) {
-        require(assets[_tokenId].ID &gt; 0);
+        require(assets[_tokenId].ID > 0);
         _;
     }
     /*** DATA TYPES ***/
@@ -407,19 +407,19 @@ contract EthernautsStorage is EthernautsAccessControl {
 
     /// @dev A mapping from Asset UniqueIDs to the price of the token.
     /// stored outside Asset Struct to save gas, because price can change frequently
-    mapping (uint256 =&gt; uint256) internal assetIndexToPrice;
+    mapping (uint256 => uint256) internal assetIndexToPrice;
 
     /// @dev A mapping from asset UniqueIDs to the address that owns them. All assets have some valid owner address.
-    mapping (uint256 =&gt; address) internal assetIndexToOwner;
+    mapping (uint256 => address) internal assetIndexToOwner;
 
     // @dev A mapping from owner address to count of tokens that address owns.
     //  Used internally inside balanceOf() to resolve ownership count.
-    mapping (address =&gt; uint256) internal ownershipTokenCount;
+    mapping (address => uint256) internal ownershipTokenCount;
 
     /// @dev A mapping from AssetUniqueIDs to an address that has been approved to call
     ///  transferFrom(). Each Asset can only have one approved address for transfer
     ///  at any time. A zero value means no approval is outstanding.
-    mapping (uint256 =&gt; address) internal assetIndexToApproved;
+    mapping (uint256 => address) internal assetIndexToApproved;
 
 
     /*** SETTERS ***/
@@ -482,10 +482,10 @@ contract EthernautsStorage is EthernautsAccessControl {
     returns (uint256)
     {
         // Ensure our data structures are always valid.
-        require(_ID &gt; 0);
-        require(_category &gt; 0);
+        require(_ID > 0);
+        require(_category > 0);
         require(_attributes != 0x0);
-        require(_stats.length &gt; 0);
+        require(_stats.length > 0);
 
         Asset memory asset = Asset({
             ID: _ID,
@@ -540,10 +540,10 @@ contract EthernautsStorage is EthernautsAccessControl {
     returns (uint256)
     {
         // Ensure our data structures are always valid.
-        require(_ID &gt; 0);
-        require(_category &gt; 0);
+        require(_ID > 0);
+        require(_category > 0);
         require(_attributes != 0x0);
-        require(_stats.length &gt; 0);
+        require(_stats.length > 0);
 
         // store price
         assetIndexToPrice[_tokenId] = _price;
@@ -601,14 +601,14 @@ contract EthernautsStorage is EthernautsAccessControl {
     /// @param _tokenId The UniqueId of the asset of interest.
     /// @param _attributes see Asset Struct description
     function hasAllAttrs(uint256 _tokenId, bytes2 _attributes) public view returns (bool) {
-        return assets[_tokenId].attributes &amp; _attributes == _attributes;
+        return assets[_tokenId].attributes & _attributes == _attributes;
     }
 
     /// @notice Check if asset has any attribute passed by parameter
     /// @param _tokenId The UniqueId of the asset of interest.
     /// @param _attributes see Asset Struct description
     function hasAnyAttrs(uint256 _tokenId, bytes2 _attributes) public view returns (bool) {
-        return assets[_tokenId].attributes &amp; _attributes != 0x0;
+        return assets[_tokenId].attributes & _attributes != 0x0;
     }
 
     /// @notice Check if asset is in the state passed by parameter
@@ -663,17 +663,17 @@ contract EthernautsStorage is EthernautsAccessControl {
             // Return an empty array
             return new uint256[6][](0);
         } else {
-            uint256[6][] memory result = new uint256[6][](totalAssets &gt; count ? count : totalAssets);
+            uint256[6][] memory result = new uint256[6][](totalAssets > count ? count : totalAssets);
             uint256 resultIndex = 0;
             bytes2 hasAttributes  = bytes2(_withAttributes);
             Asset memory asset;
 
-            for (uint256 tokenId = start; tokenId &lt; totalAssets &amp;&amp; resultIndex &lt; count; tokenId++) {
+            for (uint256 tokenId = start; tokenId < totalAssets && resultIndex < count; tokenId++) {
                 asset = assets[tokenId];
                 if (
-                    (asset.state != uint8(AssetState.Used)) &amp;&amp;
-                    (assetIndexToOwner[tokenId] == _owner || _owner == address(0)) &amp;&amp;
-                    (asset.attributes &amp; hasAttributes == hasAttributes)
+                    (asset.state != uint8(AssetState.Used)) &&
+                    (assetIndexToOwner[tokenId] == _owner || _owner == address(0)) &&
+                    (asset.attributes & hasAttributes == hasAttributes)
                 ) {
                     result[resultIndex][0] = tokenId;
                     result[resultIndex][1] = asset.ID;
@@ -739,14 +739,14 @@ contract EthernautsOwnership is EthernautsAccessControl, ERC721 {
 
     /// @dev Checks if a given address is the current owner of a particular Asset.
     /// @param _claimant the address we are validating against.
-    /// @param _tokenId asset UniqueId, only valid when &gt; 0
+    /// @param _tokenId asset UniqueId, only valid when > 0
     function _owns(address _claimant, uint256 _tokenId) internal view returns (bool) {
         return ethernautsStorage.ownerOf(_tokenId) == _claimant;
     }
 
     /// @dev Checks if a given address currently has transferApproval for a particular Asset.
     /// @param _claimant the address we are confirming asset is approved for.
-    /// @param _tokenId asset UniqueId, only valid when &gt; 0
+    /// @param _tokenId asset UniqueId, only valid when > 0
     function _approvedFor(address _claimant, uint256 _tokenId) internal view returns (bool) {
         return ethernautsStorage.approvedFor(_tokenId) == _claimant;
     }
@@ -947,7 +947,7 @@ contract EthernautsOwnership is EthernautsAccessControl, ERC721 {
         uint256 cooldown;
         uint64 cooldownEndBlock;
         (,,,,,cooldownEndBlock, cooldown,) = ethernautsStorage.assets(_tokenId);
-        return (cooldown &gt; now) || (cooldownEndBlock &gt; uint64(block.number));
+        return (cooldown > now) || (cooldownEndBlock > uint64(block.number));
     }
 }
 
@@ -1065,20 +1065,20 @@ contract EthernautsExplore is EthernautsLogic {
     uint256[] explorers;
 
     /// @dev A mapping from Ship token to the exploration index.
-    mapping (uint256 =&gt; uint256) public tokenIndexToExplore;
+    mapping (uint256 => uint256) public tokenIndexToExplore;
 
     /// @dev A mapping from Asset UniqueIDs to the sector token id.
-    mapping (uint256 =&gt; uint256) public tokenIndexToSector;
+    mapping (uint256 => uint256) public tokenIndexToSector;
 
     /// @dev A mapping from exploration index to the crew token id.
-    mapping (uint256 =&gt; uint256) public exploreIndexToCrew;
+    mapping (uint256 => uint256) public exploreIndexToCrew;
 
     /// @dev A mission counter for crew.
-    mapping (uint256 =&gt; uint16) public missions;
+    mapping (uint256 => uint16) public missions;
 
     /// @dev A mapping from Owner Cut (wei) to the sector token id.
-    mapping (uint256 =&gt; uint256) public sectorToOwnerCut;
-    mapping (uint256 =&gt; uint256) public sectorToOracleFee;
+    mapping (uint256 => uint256) public sectorToOwnerCut;
+    mapping (uint256 => uint256) public sectorToOracleFee;
 
     /// @dev Get a list of ship exploring our universe
     function getExplorerList() public view returns(
@@ -1087,8 +1087,8 @@ contract EthernautsExplore is EthernautsLogic {
         uint256[3][] memory tokens = new uint256[3][](50);
         uint256 index = 0;
 
-        for(uint256 i = 0; i &lt; explorers.length &amp;&amp; index &lt; 50; i++) {
-            if (explorers[i] &gt; 0) {
+        for(uint256 i = 0; i < explorers.length && index < 50; i++) {
+            if (explorers[i] > 0) {
                 tokens[index][0] = explorers[i];
                 tokens[index][1] = tokenIndexToSector[explorers[i]];
                 tokens[index][2] = exploreIndexToCrew[i];
@@ -1107,7 +1107,7 @@ contract EthernautsExplore is EthernautsLogic {
     /// @dev Get a list of ship exploring our universe
     /// @param _shipTokenId The Token ID that represents a ship
     function getIndexByShip(uint256 _shipTokenId) public view returns( uint256 ) {
-        for(uint256 i = 0; i &lt; explorers.length; i++) {
+        for(uint256 i = 0; i < explorers.length; i++) {
             if (explorers[i] == _shipTokenId) {
                 return i;
             }
@@ -1147,7 +1147,7 @@ contract EthernautsExplore is EthernautsLogic {
     /// @param _crewTokenId The Token ID that represents a crew
     function explore(uint256 _shipTokenId, uint256 _sectorTokenId, uint256 _crewTokenId) payable external whenNotPaused {
         // charge a fee for each exploration when the results are ready
-        require(msg.value &gt;= sectorToOwnerCut[_sectorTokenId]);
+        require(msg.value >= sectorToOwnerCut[_sectorTokenId]);
 
         // check if Asset is a ship or not
         require(ethernautsStorage.isCategory(_shipTokenId, uint8(AssetCategory.Ship)));
@@ -1169,7 +1169,7 @@ contract EthernautsExplore is EthernautsLogic {
         address sectorOwner = ethernautsStorage.ownerOf(_sectorTokenId);
 
         // check if there is a crew and validating crew member
-        if (_crewTokenId &gt; 0) {
+        if (_crewTokenId > 0) {
             // crew member should not be in exploration
             require(!isExploring(_crewTokenId));
 
@@ -1188,7 +1188,7 @@ contract EthernautsExplore is EthernautsLogic {
         uint8[STATS_SIZE] memory _sectorStats = ethernautsStorage.getStats(_sectorTokenId);
 
         // check if there is a crew and store data and change ship stats
-        if (_crewTokenId &gt; 0) {
+        if (_crewTokenId > 0) {
             /// store crew exploration data
             exploreIndexToCrew[tokenIndexToExplore[_shipTokenId]] = _crewTokenId;
             missions[_crewTokenId]++;
@@ -1198,10 +1198,10 @@ contract EthernautsExplore is EthernautsLogic {
             _shipStats[uint256(ShipStats.Range)] += _crewStats[uint256(ShipStats.Range)];
             _shipStats[uint256(ShipStats.Speed)] += _crewStats[uint256(ShipStats.Speed)];
 
-            if (_shipStats[uint256(ShipStats.Range)] &gt; STATS_CAPOUT) {
+            if (_shipStats[uint256(ShipStats.Range)] > STATS_CAPOUT) {
                 _shipStats[uint256(ShipStats.Range)] = STATS_CAPOUT;
             }
-            if (_shipStats[uint256(ShipStats.Speed)] &gt; STATS_CAPOUT) {
+            if (_shipStats[uint256(ShipStats.Speed)] > STATS_CAPOUT) {
                 _shipStats[uint256(ShipStats.Speed)] = STATS_CAPOUT;
             }
         }
@@ -1219,7 +1219,7 @@ contract EthernautsExplore is EthernautsLogic {
         ethernautsStorage.setAssetCooldown(_shipTokenId, now + time, _cooldownEndBlock);
 
         // check if there is a crew store data and set crew exploration time
-        if (_crewTokenId &gt; 0) {
+        if (_crewTokenId > 0) {
             /// store crew exploration time
             ethernautsStorage.setAssetCooldown(_crewTokenId, now + time, _cooldownEndBlock);
         }
@@ -1266,7 +1266,7 @@ contract EthernautsExplore is EthernautsLogic {
 
         /// create objects returned from exploration
         uint256 i = 0;
-        for (i = 0; i &lt; 10 &amp;&amp; _IDs[i] &gt; 0; i++) {
+        for (i = 0; i < 10 && _IDs[i] > 0; i++) {
             _buildAsset(
                 _sectorTokenId,
                 owner,
@@ -1281,7 +1281,7 @@ contract EthernautsExplore is EthernautsLogic {
         }
 
         // to guarantee at least 1 result per exploration
-        require(i &gt; 0);
+        require(i > 0);
 
         /// remove from explore list
         explorers[tokenIndexToExplore[_shipTokenId]] = 0;
@@ -1301,11 +1301,11 @@ contract EthernautsExplore is EthernautsLogic {
     {
         uint256 index = tokenIndexToExplore[_shipTokenId];
 
-        if (index &gt; 0) {
+        if (index > 0) {
             /// remove from explore list
             explorers[index] = 0;
 
-            if (exploreIndexToCrew[index] &gt; 0) {
+            if (exploreIndexToCrew[index] > 0) {
                 delete exploreIndexToCrew[index];
             }
         }
@@ -1326,12 +1326,12 @@ contract EthernautsExplore is EthernautsLogic {
         /// remove from exploration list
         explorers[_index] = 0;
 
-        if (shipId &gt; 0) {
+        if (shipId > 0) {
             delete tokenIndexToExplore[shipId];
             delete tokenIndexToSector[shipId];
         }
 
-        if (exploreIndexToCrew[_index] &gt; 0) {
+        if (exploreIndexToCrew[_index] > 0) {
             delete exploreIndexToCrew[_index];
         }
     }
@@ -1351,7 +1351,7 @@ contract EthernautsExplore is EthernautsLogic {
         tokenIndexToSector[_shipTokenId] = _sectorTokenId;
 
         // check if there is a crew and store data and change ship stats
-        if (_crewTokenId &gt; 0) {
+        if (_crewTokenId > 0) {
             /// store crew exploration data
             exploreIndexToCrew[index] = _crewTokenId;
             missions[_crewTokenId]++;
@@ -1444,7 +1444,7 @@ contract EthernautsExplore is EthernautsLogic {
     /// @notice Any C-level can fix how many seconds per blocks are currently observed.
     /// @param _secs The seconds per block
     function setSecondsPerBlock(uint256 _secs) external onlyCLevel {
-        require(_secs &gt; 0);
+        require(_secs > 0);
         secondsPerBlock = _secs;
     }
 }

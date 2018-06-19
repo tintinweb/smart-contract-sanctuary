@@ -22,7 +22,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -32,7 +32,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -41,7 +41,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -54,7 +54,7 @@ library SafeMathUint256 {
     using SafeMath for uint256;
 
     function min(uint256 a, uint256 b) internal pure returns (uint256) {
-        if (a &lt;= b) {
+        if (a <= b) {
             return a;
         } else {
             return b;
@@ -62,7 +62,7 @@ library SafeMathUint256 {
     }
 
     function max(uint256 a, uint256 b) internal pure returns (uint256) {
-        if (a &gt;= b) {
+        if (a >= b) {
             return a;
         } else {
             return b;
@@ -127,7 +127,7 @@ contract ERC20 is ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -145,7 +145,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -176,7 +176,7 @@ contract BasicToken is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -187,8 +187,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -251,7 +251,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -319,9 +319,9 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
   ///////////////////////////////////////////////////////////
   uint public naturalUnit;
   Component[] public components;
-  mapping(address =&gt; bool) internal isComponent;
-  // Mapping of token address -&gt; user address -&gt; UnredeemedComponent
-  mapping(address =&gt; mapping(address =&gt; UnredeemedComponent)) public unredeemedComponents;
+  mapping(address => bool) internal isComponent;
+  // Mapping of token address -> user address -> UnredeemedComponent
+  mapping(address => mapping(address => UnredeemedComponent)) public unredeemedComponents;
 
 
   ///////////////////////////////////////////////////////////
@@ -345,7 +345,7 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
     // Check that the sender has sufficient components
     // Since the component length is defined ahead of time, this is not
     // an unbounded loop
-    require(balances[msg.sender] &gt;= quantity, &quot;User does not have sufficient balance&quot;);
+    require(balances[msg.sender] >= quantity, &quot;User does not have sufficient balance&quot;);
     _;
   }
 
@@ -361,7 +361,7 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
   }
 
   modifier isNonZero(uint _quantity) {
-    require(_quantity &gt; 0);
+    require(_quantity > 0);
     _;
   }
 
@@ -372,15 +372,15 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
    */
   constructor(address[] _components, uint[] _units, uint _naturalUnit) public {
     // There must be component present
-    require(_components.length &gt; 0, &quot;Component length needs to be great than 0&quot;);
+    require(_components.length > 0, &quot;Component length needs to be great than 0&quot;);
 
     // There must be an array of units
-    require(_units.length &gt; 0, &quot;Units must be greater than 0&quot;);
+    require(_units.length > 0, &quot;Units must be greater than 0&quot;);
 
     // The number of components must equal the number of units
     require(_components.length == _units.length, &quot;Component and unit lengths must be the same&quot;);
 
-    require(_naturalUnit &gt; 0);
+    require(_naturalUnit > 0);
     naturalUnit = _naturalUnit;
 
     // As looping operations are expensive, checking for duplicates will be
@@ -388,10 +388,10 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
 
     // NOTE: It will be the onus of developers to check whether the addressExists
     // are in fact ERC20 addresses
-    for (uint i = 0; i &lt; _units.length; i++) {
+    for (uint i = 0; i < _units.length; i++) {
       // Check that all units are non-zero. Negative numbers will underflow
       uint currentUnits = _units[i];
-      require(currentUnits &gt; 0, &quot;Unit declarations must be non-zero&quot;);
+      require(currentUnits > 0, &quot;Unit declarations must be non-zero&quot;);
 
       // Check that all addresses are non-zero
       address currentComponent = _components[i];
@@ -431,7 +431,7 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
     // Transfers the sender&#39;s components to the contract
     // Since the component length is defined ahead of time, this is not
     // an unbounded loop
-    for (uint i = 0; i &lt; components.length; i++) {
+    for (uint i = 0; i < components.length; i++) {
       address currentComponent = components[i].address_;
       uint currentUnits = components[i].unit_;
 
@@ -463,7 +463,7 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
   {
     burn(quantity);
 
-    for (uint i = 0; i &lt; components.length; i++) {
+    for (uint i = 0; i < components.length; i++) {
       address currentComponent = components[i].address_;
       uint currentUnits = components[i].unit_;
 
@@ -498,21 +498,21 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
     // Excluded tokens should be less than the number of components
     // Otherwise, use the normal redeem function
     require(
-      excludedComponents.length &lt; components.length,
+      excludedComponents.length < components.length,
       &quot;Excluded component length must be less than component length&quot;
     );
-    require(excludedComponents.length &gt; 0, &quot;Excluded components must be non-zero&quot;);
+    require(excludedComponents.length > 0, &quot;Excluded components must be non-zero&quot;);
 
     burn(quantity);
 
-    for (uint i = 0; i &lt; components.length; i++) {
+    for (uint i = 0; i < components.length; i++) {
       bool isExcluded = false;
 
       uint transferValue = calculateTransferValue(components[i].unit_, quantity);
 
       // This is unideal to do a doubly nested loop, but the number of excludedComponents
       // should generally be a small number
-      for (uint j = 0; j &lt; excludedComponents.length; j++) {
+      for (uint j = 0; j < excludedComponents.length; j++) {
         address currentExcluded = excludedComponents[j];
 
         // Check that excluded token is indeed a component in this contract
@@ -540,7 +540,7 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
     }
 
     // Mark all excluded components not redeemed
-    for (uint k = 0; k &lt; excludedComponents.length; k++) {
+    for (uint k = 0; k < excludedComponents.length; k++) {
       address currentExcludedToUnredeem = excludedComponents[k];
       unredeemedComponents[currentExcludedToUnredeem][msg.sender].isRedeemed = false;
     }
@@ -564,17 +564,17 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
     public
     returns (bool success)
   {
-    require(quantities.length &gt; 0, &quot;Quantities must be non-zero&quot;);
-    require(componentsToRedeem.length &gt; 0, &quot;Components redeemed must be non-zero&quot;);
+    require(quantities.length > 0, &quot;Quantities must be non-zero&quot;);
+    require(componentsToRedeem.length > 0, &quot;Components redeemed must be non-zero&quot;);
     require(quantities.length == componentsToRedeem.length, &quot;Lengths must be the same&quot;);
 
-    for (uint i = 0; i &lt; quantities.length; i++) {
+    for (uint i = 0; i < quantities.length; i++) {
       address currentComponent = componentsToRedeem[i];
       uint currentQuantity = quantities[i];
 
       // Check there is enough balance
       uint remainingBalance = unredeemedComponents[currentComponent][msg.sender].balance;
-      require(remainingBalance &gt;= currentQuantity);
+      require(remainingBalance >= currentQuantity);
 
       // To prevent re-entrancy attacks, decrement the user&#39;s Set balance
       unredeemedComponents[currentComponent][msg.sender].balance = remainingBalance.sub(currentQuantity);
@@ -597,7 +597,7 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
 
   function getComponents() public view returns(address[]) {
     address[] memory componentAddresses = new address[](components.length);
-    for (uint i = 0; i &lt; components.length; i++) {
+    for (uint i = 0; i < components.length; i++) {
         componentAddresses[i] = components[i].address_;
     }
     return componentAddresses;
@@ -605,7 +605,7 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
 
   function getUnits() public view returns(uint[]) {
     uint[] memory units = new uint[](components.length);
-    for (uint i = 0; i &lt; components.length; i++) {
+    for (uint i = 0; i < components.length; i++) {
         units[i] = components[i].unit_;
     }
     return units;

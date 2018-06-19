@@ -245,8 +245,8 @@ contract QuantumGoldDAO is Ownable, tokenRecipient {
         Proposal storage p = proposals[proposalNumber];
 
         require(now > p.minExecutionDate                                             // If it is past the voting deadline
-            &amp;&amp; !p.executed                                                          // and it has not already been executed
-            &amp;&amp; p.proposalHash == keccak256(p.recipient, p.amount, transactionBytecode)); // and the supplied code matches the proposal...
+            && !p.executed                                                          // and it has not already been executed
+            && p.proposalHash == keccak256(p.recipient, p.amount, transactionBytecode)); // and the supplied code matches the proposal...
 
 
         // ...then tally the results

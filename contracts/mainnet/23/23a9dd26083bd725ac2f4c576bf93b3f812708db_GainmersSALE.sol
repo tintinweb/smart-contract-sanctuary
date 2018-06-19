@@ -508,10 +508,10 @@ contract ModifiedCrowdsale {
     function validPurchase()  internal  view
         returns(bool) 
     {
-        bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+        bool withinPeriod = now >= startTime && now <= endTime;
         bool nonZeroPurchase = msg.value != 0;
         bool nonInvalidAccount = msg.sender != 0;
-        return withinPeriod &amp;&amp; nonZeroPurchase &amp;&amp; nonInvalidAccount;
+        return withinPeriod && nonZeroPurchase && nonInvalidAccount;
     }
 
     // @return true if crowdsale event has ended
@@ -530,11 +530,11 @@ contract ModifiedCrowdsale {
     */
     function getBonus(uint256 _tokens) internal view returns (uint256 bonus) {
         require(_tokens != 0);
-        if (startTime <= now &amp;&amp; now < startTime + 7 days ) {
+        if (startTime <= now && now < startTime + 7 days ) {
             return _tokens.div(5);
-        } else if (startTime + 7 days <= now &amp;&amp; now < startTime + 14 days ) {
+        } else if (startTime + 7 days <= now && now < startTime + 14 days ) {
             return _tokens.div(10);
-        } else if (startTime + 14 days <= now &amp;&amp; now < startTime + 21 days ) {
+        } else if (startTime + 14 days <= now && now < startTime + 21 days ) {
             return _tokens.div(20);
         }
 
@@ -561,7 +561,7 @@ contract CappedCrowdsale is ModifiedCrowdsale {
   // Request Modification : delete constant because needed in son contract
   function validPurchase() internal view returns (bool) {
     bool withinCap = weiRaised.add(msg.value) <= cap;
-    return super.validPurchase() &amp;&amp; withinCap;
+    return super.validPurchase() && withinCap;
   }
 
   // overriding Crowdsale#hasEnded to add cap logic

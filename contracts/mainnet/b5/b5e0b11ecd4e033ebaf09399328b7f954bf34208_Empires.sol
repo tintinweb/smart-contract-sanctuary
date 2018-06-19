@@ -74,7 +74,7 @@ contract Empires is Ownable {
 
     function regSpots (uint16 cntryId, uint16 numOfSpots, bytes32 stxt) external payable {
 
-        require (numOfSpots > 0 &amp;&amp; numOfSpots <= 600);
+        require (numOfSpots > 0 && numOfSpots <= 600);
 
         uint i;
         uint j;

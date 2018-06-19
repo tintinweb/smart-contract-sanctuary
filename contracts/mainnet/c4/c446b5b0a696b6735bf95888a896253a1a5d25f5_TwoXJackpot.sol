@@ -125,7 +125,7 @@ contract TwoXJackpot {
     contractTotalInvested += msg.value;
     totalInvested[msg.sender] += msg.value;
 
-    while (index < buyIns.length &amp;&amp; valueAfterTax > 0) {
+    while (index < buyIns.length && valueAfterTax > 0) {
       BuyIn storage buyIn = buyIns[index];
 
       if (valueAfterTax < buyIn.value) {

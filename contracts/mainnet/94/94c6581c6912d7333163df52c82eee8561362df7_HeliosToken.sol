@@ -61,7 +61,7 @@ contract HeliosToken { //ERC - 20 token contract
 
   //standart ERC-20 function
   function transfer(address _to, uint256 _amount) public returns (bool success) {
-    require(address(this) != _to &amp;&amp; _to != address(0));
+    require(address(this) != _to && _to != address(0));
     balances[msg.sender] = balances[msg.sender].sub(_amount);
     balances[_to] = balances[_to].add(_amount);
     emit Transfer(msg.sender,_to,_amount);
@@ -87,7 +87,7 @@ contract HeliosToken { //ERC - 20 token contract
   }
 
   function transferFrom(address _from, address _to, uint256 _amount) public returns(bool success){
-    require(address(this) != _to &amp;&amp; _to != address(0));
+    require(address(this) != _to && _to != address(0));
     balances[_from] = balances[_from].sub(_amount);
     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_amount);
     balances[_to] = balances[_to].add(_amount);

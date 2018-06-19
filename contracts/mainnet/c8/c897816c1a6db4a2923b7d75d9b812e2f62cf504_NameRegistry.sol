@@ -113,7 +113,7 @@ contract NameRegistry {
         external
         returns (uint)
     {
-        require(feeRecipient != 0x0 &amp;&amp; singer != 0x0);
+        require(feeRecipient != 0x0 && singer != 0x0);
         NameInfo storage nameInfo = nameInfoMap[msg.sender];
         bytes12 name = nameInfo.name;
         require(name.length > 0);
@@ -208,7 +208,7 @@ contract NameRegistry {
         returns (bool)
     {
         bytes memory temp = bytes(name);
-        return temp.length >= 6 &amp;&amp; temp.length <= 12;
+        return temp.length >= 6 && temp.length <= 12;
     }
     function stringToBytes12(string str)
         internal

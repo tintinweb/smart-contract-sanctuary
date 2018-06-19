@@ -30,9 +30,9 @@ contract PreSale {
   function buyFunderSmartToken (string _email, string _code) payable public returns (bool) {
     require(FunderSmartTokenAddress != 0x0); // 需初始化過 token contract 位址
     require(FundersTokenCentral != 0x0); // 需初始化過 fstk 中央帳戶
-    require(msg.value &gt;= 1 ether); // 人們要至少用 1 ether 買 token
-    require(now &gt;= startTime &amp;&amp; now &lt;= endTime); // presale 舉辦期間
-    require(soldTokenValue &lt;= preSaleHardCap); // 累積 presale 量不得超過 fst 總發行量 2%
+    require(msg.value >= 1 ether); // 人們要至少用 1 ether 買 token
+    require(now >= startTime && now <= endTime); // presale 舉辦期間
+    require(soldTokenValue <= preSaleHardCap); // 累積 presale 量不得超過 fst 總發行量 2%
 
     uint256 _tokenValue = msg.value * oneEtherIsHowMuchFST;
 

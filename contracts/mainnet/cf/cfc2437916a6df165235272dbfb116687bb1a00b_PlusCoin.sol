@@ -9,8 +9,8 @@ pragma solidity ^0.4.23;
 
 contract PlusCoin {
     address public owner; // Token owner address
-    mapping (address =&gt; uint256) public balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => uint256) public balances;
+    mapping (address => mapping (address => uint256)) allowed;
 
     string public standard = &#39;PlusCoin 2.0&#39;;
     string public constant name = &quot;PlusCoin&quot;;
@@ -72,13 +72,13 @@ contract PlusCoin {
     }
 
     function safeSub(uint a, uint b) internal pure returns (uint) {
-        require(b &lt;= a);
+        require(b <= a);
         return a - b;
     }
 
     function safeAdd(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        require(c&gt;=a &amp;&amp; c&gt;=b);
+        require(c>=a && c>=b);
         return c;
     }
 
@@ -110,7 +110,7 @@ contract PlusCoin {
     function transfer(address _to, uint256 _value) public
         returns (bool success) 
     {
-        if (balances[msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt; balances[_to]) {
+        if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
             balances[msg.sender] -= _value;
             balances[_to] += _value;
             emit Transfer(msg.sender, _to, _value);
@@ -121,7 +121,7 @@ contract PlusCoin {
     function transferFrom(address _from, address _to, uint256 _value) public
         returns (bool success)
     {
-        if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt; balances[_to]) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
             balances[_to] += _value;
             balances[_from] -= _value;
             allowed[_from][msg.sender] -= _value;

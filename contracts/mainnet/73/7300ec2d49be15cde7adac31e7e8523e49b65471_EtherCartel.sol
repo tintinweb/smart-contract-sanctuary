@@ -3,11 +3,11 @@ pragma solidity ^0.4.18;
 library SafeMath {
     function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256 c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
 
@@ -22,7 +22,7 @@ library NumericSequence
     using SafeMath for uint256;
     function sumOfN(uint256 basePrice, uint256 pricePerLevel, uint256 owned, uint256 count) internal pure returns (uint256 price)
     {
-        require(count &gt; 0);
+        require(count > 0);
         
         price = 0;
         price += SafeMath.mul((basePrice + pricePerLevel * owned), count);
@@ -95,7 +95,7 @@ contract EtherCartel  {
     uint256 private jackPot;
     uint256 private devFund;
     uint256 private nextPotDistributionTime;
-    mapping(address =&gt; mapping(uint256 =&gt; uint256)) private minerICOPerCycle;
+    mapping(address => mapping(uint256 => uint256)) private minerICOPerCycle;
     uint256[] private honeyPotPerCycle;
     uint256[] private globalICOPerCycle;
     uint256 private cycleCount;
@@ -106,9 +106,9 @@ contract EtherCartel  {
     uint256 private nextBoosterPrice;
     address[5] private boosterHolders;
     
-    mapping(address =&gt; MinerData) private miners;
-    mapping(address =&gt; PVPData)   private pvpMap;
-    mapping(uint256 =&gt; address)   private indexes;
+    mapping(address => MinerData) private miners;
+    mapping(address => PVPData)   private pvpMap;
+    mapping(uint256 => address)   private indexes;
     uint256 private topindex;
     
     address private owner;
@@ -177,12 +177,12 @@ contract EtherCartel  {
         lastupdate = miners[minerAddr].lastUpdateTime;
         prodPerSec = GetProductionPerSecond(minerAddr);
         
-        for(i = 0; i &lt; NUMBER_OF_RIG_TYPES; ++i)
+        for(i = 0; i < NUMBER_OF_RIG_TYPES; ++i)
         {
             rigs[i] = miners[minerAddr].rigs[i];
         }
         
-        for(i = 0; i &lt; NUMBER_OF_UPGRADES; ++i)
+        for(i = 0; i < NUMBER_OF_UPGRADES; ++i)
         {
             upgrades[i] = miners[minerAddr].hasUpgrade[i];
         }
@@ -200,7 +200,7 @@ contract EtherCartel  {
     
     function GetMinerAt(uint256 idx) public constant returns (address minerAddr)
     {
-        require(idx &lt; topindex);
+        require(idx < topindex);
         minerAddr = indexes[idx];
     }
     
@@ -222,7 +222,7 @@ contract EtherCartel  {
         if(HasBooster(minerAddr)) // 500% bonus
             productionSpeed += 500;
         
-        for(uint8 j = 0; j &lt; NUMBER_OF_RIG_TYPES; ++j)
+        for(uint8 j = 0; j < NUMBER_OF_RIG_TYPES; ++j)
         {
             personalProduction += m.rigs[j] * rigData[j].baseOutput;
         }
@@ -235,7 +235,7 @@ contract EtherCartel  {
         globalMoney = 0;
         globalHashRate = 0;
         uint i = 0;
-        for(i = 0; i &lt; topindex; ++i)
+        for(i = 0; i < topindex; ++i)
         {
             MinerData storage m = miners[indexes[i]];
             globalMoney += m.money;
@@ -245,7 +245,7 @@ contract EtherCartel  {
     
     function GetBoosterData() public constant returns (address[5] _boosterHolders, uint256 currentPrice, uint256 currentIndex)
     {
-        for(uint i = 0; i &lt; NUMBER_OF_BOOSTERS; ++i)
+        for(uint i = 0; i < NUMBER_OF_BOOSTERS; ++i)
         {
             _boosterHolders[i] = boosterHolders[i];
         }
@@ -255,7 +255,7 @@ contract EtherCartel  {
     
     function HasBooster(address addr) public constant returns (bool hasBoost)
     { 
-        for(uint i = 0; i &lt; NUMBER_OF_BOOSTERS; ++i)
+        for(uint i = 0; i < NUMBER_OF_BOOSTERS; ++i)
         {
            if(boosterHolders[i] == addr)
             return true;
@@ -273,7 +273,7 @@ contract EtherCartel  {
         
         attackpower = 0;
         defensepower = 0;
-        for(uint i = 0; i &lt; NUMBER_OF_TROOPS; ++i)
+        for(uint i = 0; i < NUMBER_OF_TROOPS; ++i)
         {
             attackpower  += a.troops[i] * troopData[i].attackPower;
             defensepower += a.troops[i] * troopData[i].defensePower;
@@ -289,9 +289,9 @@ contract EtherCartel  {
     
     function GetICOData(uint256 idx) public constant returns (uint256 ICOFund, uint256 ICOPot)
     {
-        require(idx &lt;= cycleCount);
+        require(idx <= cycleCount);
         ICOFund = globalICOPerCycle[idx];
-        if(idx &lt; cycleCount)
+        if(idx < cycleCount)
         {
             ICOPot = honeyPotPerCycle[idx];
         } else
@@ -302,9 +302,9 @@ contract EtherCartel  {
     
     function GetMinerICOData(address miner, uint256 idx) public constant returns (uint256 ICOFund, uint256 ICOShare, uint256 lastClaimIndex)
     {
-        require(idx &lt;= cycleCount);
+        require(idx <= cycleCount);
         ICOFund = minerICOPerCycle[miner][idx];
-        if(idx &lt; cycleCount)
+        if(idx < cycleCount)
         {
             ICOShare = (honeyPotPerCycle[idx] * minerICOPerCycle[miner][idx]) / globalICOPerCycle[idx];
         } else 
@@ -319,18 +319,18 @@ contract EtherCartel  {
         MinerData storage m = miners[miner];
         
         require(m.lastUpdateTime != 0);
-        require(m.lastPotClaimIndex &lt; cycleCount);
+        require(m.lastPotClaimIndex < cycleCount);
         
         uint256 i = m.lastPotClaimIndex;
         uint256 limit = cycleCount;
         
-        if((limit - i) &gt; 30) // more than 30 iterations(days) afk
+        if((limit - i) > 30) // more than 30 iterations(days) afk
             limit = i + 30;
         
         unclaimedPot = 0;
-        for(; i &lt; cycleCount; ++i)
+        for(; i < cycleCount; ++i)
         {
-            if(minerICOPerCycle[msg.sender][i] &gt; 0)
+            if(minerICOPerCycle[msg.sender][i] > 0)
                 unclaimedPot += (honeyPotPerCycle[i] * minerICOPerCycle[miner][i]) / globalICOPerCycle[i];
         }
     }
@@ -357,24 +357,24 @@ contract EtherCartel  {
     
     function UpgradeRig(uint8 rigIdx, uint16 count) external
     {
-        require(rigIdx &lt; NUMBER_OF_RIG_TYPES);
-        require(count &gt; 0);
-        require(count &lt;= 256);
+        require(rigIdx < NUMBER_OF_RIG_TYPES);
+        require(count > 0);
+        require(count <= 256);
         
         MinerData storage m = miners[msg.sender];
         
-        require(rigData[rigIdx].limit &gt;= (m.rigs[rigIdx] + count));
+        require(rigData[rigIdx].limit >= (m.rigs[rigIdx] + count));
         
         UpdateMoney();
      
         // the base of geometrical sequence
         uint256 price = NumericSequence.sumOfN(rigData[rigIdx].basePrice, rigData[rigIdx].pricePerLevel, m.rigs[rigIdx], count); 
        
-        require(m.money &gt;= price);
+        require(m.money >= price);
         
         m.rigs[rigIdx] = m.rigs[rigIdx] + count;
         
-        if(m.rigs[rigIdx] &gt; rigData[rigIdx].limit)
+        if(m.rigs[rigIdx] > rigData[rigIdx].limit)
             m.rigs[rigIdx] = rigData[rigIdx].limit;
         
         m.money -= price;
@@ -382,18 +382,18 @@ contract EtherCartel  {
     
     function UpgradeRigETH(uint8 rigIdx, uint256 count) external payable
     {
-        require(rigIdx &lt; NUMBER_OF_RIG_TYPES);
-        require(count &gt; 0);
-        require(count &lt;= 256);
-        require(rigData[rigIdx].priceInETH &gt; 0);
+        require(rigIdx < NUMBER_OF_RIG_TYPES);
+        require(count > 0);
+        require(count <= 256);
+        require(rigData[rigIdx].priceInETH > 0);
         
         MinerData storage m = miners[msg.sender];
         
-        require(rigData[rigIdx].limit &gt;= (m.rigs[rigIdx] + count));
+        require(rigData[rigIdx].limit >= (m.rigs[rigIdx] + count));
       
         uint256 price = (rigData[rigIdx].priceInETH).mul(count); 
        
-        require(msg.value &gt;= price);
+        require(msg.value >= price);
         
         BuyHandler(msg.value);
         
@@ -401,21 +401,21 @@ contract EtherCartel  {
         
         m.rigs[rigIdx] = m.rigs[rigIdx] + count;
         
-        if(m.rigs[rigIdx] &gt; rigData[rigIdx].limit)
+        if(m.rigs[rigIdx] > rigData[rigIdx].limit)
             m.rigs[rigIdx] = rigData[rigIdx].limit;
     }
     
     function UpdateMoney() private
     {
         require(miners[msg.sender].lastUpdateTime != 0);
-        require(block.timestamp &gt;= miners[msg.sender].lastUpdateTime);
+        require(block.timestamp >= miners[msg.sender].lastUpdateTime);
         
         MinerData storage m = miners[msg.sender];
         uint256 diff = block.timestamp - m.lastUpdateTime;
         uint256 revenue = GetProductionPerSecond(msg.sender);
    
         m.lastUpdateTime = block.timestamp;
-        if(revenue &gt; 0)
+        if(revenue > 0)
         {
             revenue *= diff;
             
@@ -426,14 +426,14 @@ contract EtherCartel  {
     function UpdateMoneyAt(address addr) private
     {
         require(miners[addr].lastUpdateTime != 0);
-        require(block.timestamp &gt;= miners[addr].lastUpdateTime);
+        require(block.timestamp >= miners[addr].lastUpdateTime);
         
         MinerData storage m = miners[addr];
         uint256 diff = block.timestamp - m.lastUpdateTime;
         uint256 revenue = GetProductionPerSecond(addr);
    
         m.lastUpdateTime = block.timestamp;
-        if(revenue &gt; 0)
+        if(revenue > 0)
         {
             revenue *= diff;
             
@@ -443,8 +443,8 @@ contract EtherCartel  {
     
     function BuyUpgrade(uint256 idx) external payable
     {
-        require(idx &lt; NUMBER_OF_UPGRADES);
-        require(msg.value &gt;= boostData[idx].priceInWEI);
+        require(idx < NUMBER_OF_UPGRADES);
+        require(msg.value >= boostData[idx].priceInWEI);
         require(miners[msg.sender].hasUpgrade[idx] == 0);
         require(miners[msg.sender].lastUpdateTime != 0);
         
@@ -461,10 +461,10 @@ contract EtherCartel  {
     //--------------------------------------------------------------------------
     function BuyBooster() external payable 
     {
-        require(msg.value &gt;= nextBoosterPrice);
+        require(msg.value >= nextBoosterPrice);
         require(miners[msg.sender].lastUpdateTime != 0);
         
-        for(uint i = 0; i &lt; NUMBER_OF_BOOSTERS; ++i)
+        for(uint i = 0; i < NUMBER_OF_BOOSTERS; ++i)
             if(boosterHolders[i] == msg.sender)
                 revert();
                 
@@ -490,7 +490,7 @@ contract EtherCartel  {
         
         // increase booster index
         boosterIndex += 1;
-        if(boosterIndex &gt;= 5)
+        if(boosterIndex >= 5)
             boosterIndex = 0;
     }
     
@@ -500,9 +500,9 @@ contract EtherCartel  {
     // 0 for attacker 1 for defender
     function BuyTroop(uint256 idx, uint256 count) external payable
     {
-        require(idx &lt; NUMBER_OF_TROOPS);
-        require(count &gt; 0);
-        require(count &lt;= 1000);
+        require(idx < NUMBER_OF_TROOPS);
+        require(count > 0);
+        require(count <= 1000);
         
         PVPData storage pvp = pvpMap[msg.sender];
         MinerData storage m = miners[msg.sender];
@@ -514,13 +514,13 @@ contract EtherCartel  {
         
         UpdateMoney();
         
-        require(m.money &gt;= priceGold);
-        require(msg.value &gt;= priceETH);
+        require(m.money >= priceGold);
+        require(msg.value >= priceETH);
         
-        if(priceGold &gt; 0)
+        if(priceGold > 0)
             m.money -= priceGold;
          
-        if(msg.value &gt; 0)
+        if(msg.value > 0)
             BuyHandler(msg.value);
         
         pvp.troops[idx] += count;
@@ -537,26 +537,26 @@ contract EtherCartel  {
         uint i = 0;
         uint256 count = 0;
         
-        require(block.timestamp &gt; attacker.exhaustTime);
-        require(block.timestamp &gt; defender.immunityTime);
+        require(block.timestamp > attacker.exhaustTime);
+        require(block.timestamp > defender.immunityTime);
         
         // the aggressor loses immunity
-        if(attacker.immunityTime &gt; block.timestamp)
+        if(attacker.immunityTime > block.timestamp)
             attacker.immunityTime = block.timestamp - 1;
             
         attacker.exhaustTime = block.timestamp + 7200;
         
         uint256 attackpower = 0;
         uint256 defensepower = 0;
-        for(i = 0; i &lt; ATTACKER_END_IDX; ++i)
+        for(i = 0; i < ATTACKER_END_IDX; ++i)
         {
             attackpower  += attacker.troops[i] * troopData[i].attackPower;
             defensepower += defender.troops[i + DEFENDER_START_IDX] * troopData[i + DEFENDER_START_IDX].defensePower;
         }
         
-        if(attackpower &gt; defensepower)
+        if(attackpower > defensepower)
         {
-            if(defender.immunityTime &lt; block.timestamp + 14400)
+            if(defender.immunityTime < block.timestamp + 14400)
                 defender.immunityTime = block.timestamp + 14400;
             
             UpdateMoneyAt(defenderAddr);
@@ -565,19 +565,19 @@ contract EtherCartel  {
             MinerData storage m2 = miners[msg.sender];
             uint256 moneyStolen = m.money / 2;
          
-            for(i = DEFENDER_START_IDX; i &lt; DEFENDER_END_IDX; ++i)
+            for(i = DEFENDER_START_IDX; i < DEFENDER_END_IDX; ++i)
             {
                 defender.troops[i] = 0;
             }
             
-            for(i = ATTACKER_START_IDX; i &lt; ATTACKER_END_IDX; ++i)
+            for(i = ATTACKER_START_IDX; i < ATTACKER_END_IDX; ++i)
             {
-                if(troopData[i].attackPower &gt; 0)
+                if(troopData[i].attackPower > 0)
                 {
                     count = attacker.troops[i];
                     
                     // if the troops overpower the total defense power only a fraction is lost
-                    if((count * troopData[i].attackPower) &gt; defensepower)
+                    if((count * troopData[i].attackPower) > defensepower)
                         count = defensepower / troopData[i].attackPower;
                         
                     attacker.troops[i] -= count;
@@ -589,19 +589,19 @@ contract EtherCartel  {
             m2.money += moneyStolen;
         } else
         {
-            for(i = ATTACKER_START_IDX; i &lt; ATTACKER_END_IDX; ++i)
+            for(i = ATTACKER_START_IDX; i < ATTACKER_END_IDX; ++i)
             {
                 attacker.troops[i] = 0;
             }
             
-            for(i = DEFENDER_START_IDX; i &lt; DEFENDER_END_IDX; ++i)
+            for(i = DEFENDER_START_IDX; i < DEFENDER_END_IDX; ++i)
             {
-                if(troopData[i].defensePower &gt; 0)
+                if(troopData[i].defensePower > 0)
                 {
                     count = defender.troops[i];
                     
                     // if the troops overpower the total defense power only a fraction is lost
-                    if((count * troopData[i].defensePower) &gt; attackpower)
+                    if((count * troopData[i].defensePower) > attackpower)
                         count = attackpower / troopData[i].defensePower;
                         
                     defender.troops[i] -= count;
@@ -617,9 +617,9 @@ contract EtherCartel  {
     function ReleaseICO() external
     {
         require(miners[msg.sender].lastUpdateTime != 0);
-        require(nextPotDistributionTime &lt;= block.timestamp);
-        require(honeyPotAmount &gt; 0);
-        require(globalICOPerCycle[cycleCount] &gt; 0);
+        require(nextPotDistributionTime <= block.timestamp);
+        require(honeyPotAmount > 0);
+        require(globalICOPerCycle[cycleCount] > 0);
 
         nextPotDistributionTime = block.timestamp + 86400;
 
@@ -639,13 +639,13 @@ contract EtherCartel  {
     function FundICO(uint amount) external
     {
         require(miners[msg.sender].lastUpdateTime != 0);
-        require(amount &gt; 0);
+        require(amount > 0);
         
         MinerData storage m = miners[msg.sender];
         
         UpdateMoney();
         
-        require(m.money &gt;= amount);
+        require(m.money >= amount);
         
         m.money = (m.money).sub(amount);
         
@@ -658,18 +658,18 @@ contract EtherCartel  {
         MinerData storage m = miners[msg.sender];
         
         require(miners[msg.sender].lastUpdateTime != 0);
-        require(miners[msg.sender].lastPotClaimIndex &lt; cycleCount);
+        require(miners[msg.sender].lastPotClaimIndex < cycleCount);
         
         uint256 i = m.lastPotClaimIndex;
         uint256 limit = cycleCount;
         
-        if((limit - i) &gt; 30) // more than 30 iterations(days) afk
+        if((limit - i) > 30) // more than 30 iterations(days) afk
             limit = i + 30;
         
         m.lastPotClaimIndex = limit;
-        for(; i &lt; cycleCount; ++i)
+        for(; i < cycleCount; ++i)
         {
-            if(minerICOPerCycle[msg.sender][i] &gt; 0)
+            if(minerICOPerCycle[msg.sender][i] > 0)
                 m.unclaimedPot += (honeyPotPerCycle[i] * minerICOPerCycle[msg.sender][i]) / globalICOPerCycle[i];
         }
     }
@@ -689,7 +689,7 @@ contract EtherCartel  {
     {
         MinerData storage m = miners[msg.sender];
         
-        require(m.unclaimedPot &gt; 0);
+        require(m.unclaimedPot > 0);
         require(m.lastUpdateTime != 0);
         
         uint256 amntToSend = m.unclaimedPot;

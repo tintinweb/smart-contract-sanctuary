@@ -90,7 +90,7 @@ contract Random {
       // mask is made by shifting left an offset number of times
       uint256 mask = uint256((2**bits) - 1) << offset;
       // AND n with mask, and trim to max of 5 bits
-      return uint256((n &amp; mask) >> offset);
+      return uint256((n & mask) >> offset);
   }
 
   function maxRandom() public returns (uint256 randomNumber) {

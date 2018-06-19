@@ -379,7 +379,7 @@ contract CommonTokensale is MultiOwnable, Pausable {
         uint256 _amountWei
     ) ifNotPaused internal {
         
-        require(startTime <= now &amp;&amp; now <= endTime);
+        require(startTime <= now && now <= endTime);
         require(_amountWei >= minPaymentWei);
         require(totalWeiReceived.add(_amountWei) <= maxCapWei);
 
@@ -501,7 +501,7 @@ contract Presale is CommonTokensale {
      * refund requested during 3 months after presale finished.
      */
     function canRefund() public view returns (bool) {
-        return totalWeiReceived < minCapWei &amp;&amp; endTime < now &amp;&amp; now <= refundDeadlineTime;
+        return totalWeiReceived < minCapWei && endTime < now && now <= refundDeadlineTime;
     }
 
     function refund() public {

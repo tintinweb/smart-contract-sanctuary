@@ -343,7 +343,7 @@ contract GooToken is StandardToken, BurnableToken {
 
     function checkPermissions(address _from) internal constant returns (bool) {
 
-        if (_from == team &amp;&amp; now < vestingTime) {
+        if (_from == team && now < vestingTime) {
             return false;
         }
 
@@ -544,7 +544,7 @@ contract TimedCrowdsale is Crowdsale {
    * @dev Reverts if not in crowdsale time range. 
    */
   modifier onlyWhileOpen {
-    require(now >= openingTime &amp;&amp; now <= closingTime);
+    require(now >= openingTime && now <= closingTime);
     _;
   }
 

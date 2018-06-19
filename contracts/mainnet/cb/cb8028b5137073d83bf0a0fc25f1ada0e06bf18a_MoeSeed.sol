@@ -11,20 +11,20 @@ contract SafeMath {
     }
 
     function safeDiv(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function safeSub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function safeAdd(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -43,7 +43,7 @@ contract ContractReceiver {
         tkn.sender = _from;
         tkn.value = _value;
         tkn.data = _data;
-        uint32 u = uint32(_data[3]) + (uint32(_data[2]) &lt;&lt; 8) + (uint32(_data[1]) &lt;&lt; 16) + (uint32(_data[0]) &lt;&lt; 24);
+        uint32 u = uint32(_data[3]) + (uint32(_data[2]) << 8) + (uint32(_data[1]) << 16) + (uint32(_data[0]) << 24);
         tkn.sig = bytes4(u);
       
         /* tkn variable is analogue of msg variable of Ether transaction
@@ -75,7 +75,7 @@ contract ERC223 {
 
 contract ERC223Token is ERC223, SafeMath {
 
-    mapping(address =&gt; uint) balances;
+    mapping(address => uint) balances;
     
     string public name;
     string public symbol;
@@ -104,7 +104,7 @@ contract ERC223Token is ERC223, SafeMath {
     function transfer(address _to, uint _value, bytes _data, string _custom_fallback) public returns (bool success) {
         
         if(isContract(_to)) {
-            if (balanceOf(msg.sender) &lt; _value) revert();
+            if (balanceOf(msg.sender) < _value) revert();
             balances[msg.sender] = safeSub(balanceOf(msg.sender), _value);
             balances[_to] = safeAdd(balanceOf(_to), _value);
             assert(_to.call.value(0)(bytes4(keccak256(_custom_fallback)), msg.sender, _value, _data));
@@ -148,12 +148,12 @@ contract ERC223Token is ERC223, SafeMath {
             //retrieve the size of the code on target address, this needs assembly
             length := extcodesize(_addr)
         }
-        return (length&gt;0);
+        return (length>0);
     }
 
     //function that is called when transaction target is an address
     function transferToAddress(address _to, uint _value, bytes _data) private returns (bool success) {
-        if (balanceOf(msg.sender) &lt; _value) revert();
+        if (balanceOf(msg.sender) < _value) revert();
         balances[msg.sender] = safeSub(balanceOf(msg.sender), _value);
         balances[_to] = safeAdd(balanceOf(_to), _value);
         emit Transfer(msg.sender, _to, _value, _data);
@@ -163,7 +163,7 @@ contract ERC223Token is ERC223, SafeMath {
   
     //function that is called when transaction target is a contract
     function transferToContract(address _to, uint _value, bytes _data) private returns (bool success) {
-        if (balanceOf(msg.sender) &lt; _value) revert();
+        if (balanceOf(msg.sender) < _value) revert();
         balances[msg.sender] = safeSub(balanceOf(msg.sender), _value);
         balances[_to] = safeAdd(balanceOf(_to), _value);
         ContractReceiver receiver = ContractReceiver(_to);
@@ -223,7 +223,7 @@ contract MoeSeed is ERC223Token, owned{
     
     function transferFromOwner(address _from, address _to, uint _value, uint _fee) onlyOwner public{
         bytes memory empty;
-        if (balanceOf(_from) &lt; (_value + _fee)) revert();
+        if (balanceOf(_from) < (_value + _fee)) revert();
         balances[_from] = safeSub(balanceOf(_from), _value);
         balances[_to] = safeAdd(balanceOf(_to), _value);
         emit Transfer(_from, _to, _value, empty);

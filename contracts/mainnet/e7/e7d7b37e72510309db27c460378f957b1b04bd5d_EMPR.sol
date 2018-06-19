@@ -102,7 +102,7 @@ contract EMPR is Owned {
 	event TransferredEth(address indexed _to, uint256 _value);
 	function FoundationTransfer(address _to, uint256 amtEth, uint256 amtToken) public onlyOwner
 	{
-		require(address(this).balance >= amtEth &amp;&amp; balances[this] >= amtToken );
+		require(address(this).balance >= amtEth && balances[this] >= amtToken );
 		
 		if(amtEth >0)
 		{
@@ -185,7 +185,7 @@ contract EMPR is Owned {
     event SoldToken(address _buyer, uint256 _value, string note);
     function BuyToken(address _buyer, uint256 _value, string note) public onlyOwner
     {
-		require(balances[this] >= _value &amp;&amp; balances[_buyer] + _value > balances[_buyer]);
+		require(balances[this] >= _value && balances[_buyer] + _value > balances[_buyer]);
 		
         emit SoldToken( _buyer,  _value,  note);
         balances[this] -= _value;
@@ -222,7 +222,7 @@ contract EMPR is Owned {
     }
     function transfer(address _to, uint256 _value) public notLocked returns (bool success) {
         require(tradeable);
-         if (balances[msg.sender] >= _value &amp;&amp; balances[_to] + _value > balances[_to]) {
+         if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
              emit Transfer( msg.sender, _to,  _value);
              balances[msg.sender] -= _value;
              balances[_to] += _value;
@@ -232,11 +232,11 @@ contract EMPR is Owned {
          }
      }
     function transferFrom(address _from, address _to, uint _value)public notLocked returns (bool success) {
-        require(!lockedAccounts[_from] &amp;&amp; !lockedAccounts[_to]);
+        require(!lockedAccounts[_from] && !lockedAccounts[_to]);
 		require(tradeable);
         if (balances[_from] >= _value
-            &amp;&amp; allowed[_from][msg.sender] >= _value
-            &amp;&amp; balances[_to] + _value > balances[_to]) {
+            && allowed[_from][msg.sender] >= _value
+            && balances[_to] + _value > balances[_to]) {
                 
             emit Transfer( _from, _to,  _value);
                 

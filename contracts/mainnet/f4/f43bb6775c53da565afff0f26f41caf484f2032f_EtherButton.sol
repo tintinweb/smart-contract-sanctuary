@@ -293,7 +293,7 @@ contract EtherButton is Ownable, ReentrancyGuard {
     // and they were not the last player in the previous round then exit as they&#39;re not authorized.
     bool isBonusUnlockExempt = getIsBonusUnlockExempt(previousRoundId, msg.sender);
     bool isBonusUnlocked = getPlayerClickCount(roundId, msg.sender) > 0;
-    if (!isBonusUnlockExempt &amp;&amp; !isBonusUnlocked) {
+    if (!isBonusUnlockExempt && !isBonusUnlocked) {
       return;
     }
 

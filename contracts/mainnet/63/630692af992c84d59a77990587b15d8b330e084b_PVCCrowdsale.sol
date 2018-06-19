@@ -174,28 +174,28 @@ interface TokenInterface {
             require (TOKENS_SOLD.add(tokens.add(bonus)) <= maxTokensToSale);
         }
         //Closed pre-sale phase 2 (8 days)
-        else if (timeElapsedInDays >=8 &amp;&amp; timeElapsedInDays <16)
+        else if (timeElapsedInDays >=8 && timeElapsedInDays <16)
         {
             bonus = tokens.mul(bonusInPreSalePhase2); 
             bonus = bonus.div(100);
             require (TOKENS_SOLD.add(tokens.add(bonus)) <= maxTokensToSale);
         }
         //Public sale phase 1 (30 days)
-        else if (timeElapsedInDays >=16 &amp;&amp; timeElapsedInDays <46)
+        else if (timeElapsedInDays >=16 && timeElapsedInDays <46)
         {
             bonus = tokens.mul(bonusInPublicSalePhase1); 
             bonus = bonus.div(100);
             require (TOKENS_SOLD.add(tokens.add(bonus)) <= maxTokensToSale);
         }
          //Public sale phase 2 (11 days)
-        else if (timeElapsedInDays >=46 &amp;&amp; timeElapsedInDays <57)
+        else if (timeElapsedInDays >=46 && timeElapsedInDays <57)
         {
             bonus = tokens.mul(bonusInPublicSalePhase2); 
             bonus = bonus.div(100);
             require (TOKENS_SOLD.add(tokens.add(bonus)) <= maxTokensToSale);
         }
         //Public sale phase 3 (6 days)
-        else if (timeElapsedInDays >=57 &amp;&amp; timeElapsedInDays <63)
+        else if (timeElapsedInDays >=57 && timeElapsedInDays <63)
         {
             bonus = tokens.mul(bonusInPublicSalePhase3); 
             bonus = bonus.div(100);
@@ -240,9 +240,9 @@ interface TokenInterface {
 
   // @return true if the transaction can buy tokens
   function validPurchase() internal constant returns (bool) {
-    bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+    bool withinPeriod = now >= startTime && now <= endTime;
     bool nonZeroPurchase = msg.value != 0;
-    return withinPeriod &amp;&amp; nonZeroPurchase;
+    return withinPeriod && nonZeroPurchase;
   }
 
   // @return true if crowdsale event has ended

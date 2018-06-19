@@ -218,7 +218,7 @@ contract Crowdsale is Ownable {
     require(hardcap > _this.balance);
 
     //Pre-sale
-    if (now >= startPreSale &amp;&amp; now < endPreSale &amp;&amp; totalPreSale < maxPreSale){
+    if (now >= startPreSale && now < endPreSale && totalPreSale < maxPreSale){
       tokens = weiAmount.mul(ratePreSale);
 	  if (maxPreSale.sub(totalPreSale) <= tokens){
 	    endPreSale = now;
@@ -234,7 +234,7 @@ contract Crowdsale is Ownable {
     }
        
     //ico   
-    if (now >= startIco &amp;&amp; now < endIco &amp;&amp; totalIco < maxIco){
+    if (now >= startIco && now < endIco && totalIco < maxIco){
       tokens = weiAmount.mul(rateIco);
       if (maxIco.sub(totalIco) < tokens){
         tokens = maxIco.sub(totalIco); 
@@ -255,7 +255,7 @@ contract Crowdsale is Ownable {
   }
   function getToken() public{
     address _this = this;
-    require(_this.balance >= softcap &amp;&amp; now > endIco); 
+    require(_this.balance >= softcap && now > endIco); 
     uint value = balancesToken[msg.sender];
     balancesToken[msg.sender] = 0;
     token.transfer(msg.sender, value);
@@ -263,7 +263,7 @@ contract Crowdsale is Ownable {
   
   function refund() public{
     address _this = this;
-    require(_this.balance < softcap &amp;&amp; now > endIco);
+    require(_this.balance < softcap && now > endIco);
     require(balances[msg.sender] > 0);
     uint value = balances[msg.sender];
     balances[msg.sender] = 0;
@@ -272,13 +272,13 @@ contract Crowdsale is Ownable {
   
   function transferTokenToMultisig(address _address) public onlyOwner {
     address _this = this;
-    require(_this.balance >= softcap &amp;&amp; now > endIco);  
+    require(_this.balance >= softcap && now > endIco);  
     token.transfer(_address, token.balanceOf(_this));
   }   
   
   function transferEthToMultisig() public onlyOwner {
     address _this = this;
-    require(_this.balance >= softcap &amp;&amp; now > endIco);  
+    require(_this.balance >= softcap && now > endIco);  
     wallet.transfer(_this.balance);
   }  
 }

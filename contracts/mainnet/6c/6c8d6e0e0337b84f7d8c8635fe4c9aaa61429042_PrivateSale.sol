@@ -22,7 +22,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -32,7 +32,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -41,7 +41,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title TokenlessCrowdsale
  * @dev Crowdsale based on OpenZeppelin&#39;s Crowdsale but without token-related logic
- * @author U-Zyn Chua &lt;<span class="__cf_email__" data-cfemail="54212e2d3a142e2d3a31273d277a373b39">[email&#160;protected]</span>&gt;
+ * @author U-Zyn Chua <<span class="__cf_email__" data-cfemail="54212e2d3a142e2d3a31273d277a373b39">[email&#160;protected]</span>>
  *
  * Largely similar to OpenZeppelin except the following irrelevant token-related hooks removed:
  * - function _processPurchase(address _beneficiary, uint256 _tokenAmount) internal
@@ -219,16 +219,16 @@ contract Ownable {
  * with a defined individual cap in wei,
  * and a bool flag on whether a user is an accredited investor (AI)
  * Based on OpenZeppelin&#39;s WhitelistedCrowdsale and IndividuallyCappedCrowdsale
- * @author U-Zyn Chua &lt;<span class="__cf_email__" data-cfemail="cbbeb1b2a58bb1b2a5aeb8a2b8e5a8a4a6">[email&#160;protected]</span>&gt;
+ * @author U-Zyn Chua <<span class="__cf_email__" data-cfemail="cbbeb1b2a58bb1b2a5aeb8a2b8e5a8a4a6">[email&#160;protected]</span>>
  */
 contract WhitelistedAICrowdsale is TokenlessCrowdsale, Ownable {
   using SafeMath for uint256;
 
-  mapping(address =&gt; bool) public accredited;
+  mapping(address => bool) public accredited;
 
   // Individual cap
-  mapping(address =&gt; uint256) public contributions;
-  mapping(address =&gt; uint256) public caps;
+  mapping(address => uint256) public contributions;
+  mapping(address => uint256) public caps;
 
  /**
   * @dev Returns if a beneficiary is whitelisted
@@ -267,7 +267,7 @@ contract WhitelistedAICrowdsale is TokenlessCrowdsale, Ownable {
    */
   function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) internal {
     super._preValidatePurchase(_beneficiary, _weiAmount);
-    require(contributions[_beneficiary].add(_weiAmount) &lt;= caps[_beneficiary]);
+    require(contributions[_beneficiary].add(_weiAmount) <= caps[_beneficiary]);
   }
 
   /**
@@ -288,7 +288,7 @@ contract WhitelistedAICrowdsale is TokenlessCrowdsale, Ownable {
  * @dev Crowdsale with a limit for total contributions defined in fiat (USD).
  * Based on OpenZeppelin&#39;s CappedCrowdsale
  * Handles fiat rates, but does not handle token awarding.
- * @author U-Zyn Chua &lt;<span class="__cf_email__" data-cfemail="2c595655426c565542495f455f024f4341">[email&#160;protected]</span>&gt;
+ * @author U-Zyn Chua <<span class="__cf_email__" data-cfemail="2c595655426c565542495f455f024f4341">[email&#160;protected]</span>>
  */
 contract FiatCappedCrowdsale is TokenlessCrowdsale, Ownable {
   using SafeMath for uint256;
@@ -322,8 +322,8 @@ contract FiatCappedCrowdsale is TokenlessCrowdsale, Ownable {
    * @dev Throws if mill rate for ETH wei is not sane
    */
   modifier isSaneETHRate(uint256 _millWeiRate) {
-    require(_millWeiRate &gt;= minMillWeiRate);
-    require(_millWeiRate &lt;= maxMillWeiRate);
+    require(_millWeiRate >= minMillWeiRate);
+    require(_millWeiRate <= maxMillWeiRate);
     _;
   }
 
@@ -331,8 +331,8 @@ contract FiatCappedCrowdsale is TokenlessCrowdsale, Ownable {
    * @dev Throws if mill rate for SPX wei is not sane
    */
   modifier isSaneSPXRate(uint256 _millLeconteRate) {
-    require(_millLeconteRate &gt;= minMillLeconteRate);
-    require(_millLeconteRate &lt;= maxMillLeconteRate);
+    require(_millLeconteRate >= minMillLeconteRate);
+    require(_millLeconteRate <= maxMillLeconteRate);
     _;
   }
 
@@ -348,8 +348,8 @@ contract FiatCappedCrowdsale is TokenlessCrowdsale, Ownable {
     uint256 _millLeconteRate,
     uint256 _millWeiRate
   ) public isSaneSPXRate(_millLeconteRate) isSaneETHRate(_millWeiRate) {
-    require(_millCap &gt; 0);
-    require(_minMillPurchase &gt; 0);
+    require(_millCap > 0);
+    require(_minMillPurchase > 0);
 
     millCap = _millCap;
     minMillPurchase = _minMillPurchase;
@@ -362,7 +362,7 @@ contract FiatCappedCrowdsale is TokenlessCrowdsale, Ownable {
    * @return Whether the cap was reached
    */
   function capReached() public view returns (bool) {
-    return millRaised &gt;= millCap;
+    return millRaised >= millCap;
   }
 
   /**
@@ -374,7 +374,7 @@ contract FiatCappedCrowdsale is TokenlessCrowdsale, Ownable {
 
   /**
    * @dev Extend parent behavior requiring purchase to respect the funding cap,
-   * and that contribution should be &gt;= minMillPurchase
+   * and that contribution should be >= minMillPurchase
    * @param _beneficiary Token purchaser
    * @param _weiAmount Amount of wei contributed
    */
@@ -383,11 +383,11 @@ contract FiatCappedCrowdsale is TokenlessCrowdsale, Ownable {
 
     // Check for minimum contribution
     uint256 _millAmount = _toMill(_weiAmount);
-    require(_millAmount &gt;= minMillPurchase);
+    require(_millAmount >= minMillPurchase);
 
     // Check for funding cap
     uint256 _millRaised = millRaised.add(_millAmount);
-    require(_millRaised &lt;= millCap);
+    require(_millRaised <= millCap);
     millRaised = _millRaised;
   }
 
@@ -414,7 +414,7 @@ contract FiatCappedCrowdsale is TokenlessCrowdsale, Ownable {
  * @title PausableCrowdsale
  * @dev Crowdsale allowing owner to halt sale process
  * Based on OpenZeppelin&#39;s TimedCrowdsale
- * @author U-Zyn Chua &lt;<span class="__cf_email__" data-cfemail="add8d7d4c3edd7d4c3c8dec4de83cec2c0">[email&#160;protected]</span>&gt;
+ * @author U-Zyn Chua <<span class="__cf_email__" data-cfemail="add8d7d4c3edd7d4c3c8dec4de83cec2c0">[email&#160;protected]</span>>
  */
 contract PausableCrowdsale is TokenlessCrowdsale, Ownable {
   /**
@@ -465,7 +465,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -483,7 +483,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -514,7 +514,7 @@ contract BasicERC223Receiver {
  * @title RestrictedToken
  * @dev Standard Mintable ERC20 Token that can only be sent to an authorized address
  * Based on Consensys&#39; TokenFoundry&#39;s ControllableToken
- * @author U-Zyn Chua &lt;<span class="__cf_email__" data-cfemail="93e6e9eafdd3e9eafdf6e0fae0bdf0fcfe">[email&#160;protected]</span>&gt;
+ * @author U-Zyn Chua <<span class="__cf_email__" data-cfemail="93e6e9eafdd3e9eafdf6e0fae0bdf0fcfe">[email&#160;protected]</span>>
  */
 contract RestrictedToken is BasicToken, Ownable {
   string public name;
@@ -529,13 +529,13 @@ contract RestrictedToken is BasicToken, Ownable {
   uint256 public vestingPeriod;
 
   // Holders of RestrictedToken are only able to transfer token to authorizedRecipients, usu. Exchange contract
-  mapping(address =&gt; bool) public authorizedRecipients;
+  mapping(address => bool) public authorizedRecipients;
 
   // Whether recipients are ERC223-compliant
-  mapping(address =&gt; bool) public erc223Recipients;
+  mapping(address => bool) public erc223Recipients;
 
   // Last issued time of token per recipient
-  mapping(address =&gt; uint256) public lastIssuedTime;
+  mapping(address => uint256) public lastIssuedTime;
 
   event Issue(address indexed to, uint256 value);
 

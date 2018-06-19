@@ -149,7 +149,7 @@ contract Config is Ownable, ConfigInterface
     function getCooldownIndexFromGeneration(uint16 _generation) public view returns (uint16)
     {
         uint16 result = uint16(_generation / 2);
-        if (result &gt; getCooldownIndexCount()) {
+        if (result > getCooldownIndexCount()) {
             result = uint16(getCooldownIndexCount() - 1);
         }
         return result;
@@ -168,7 +168,7 @@ contract Config is Ownable, ConfigInterface
     function getBabyGen(uint16 _momGen, uint16 _dadGen) public pure returns (uint16)
     {
         uint16 babyGen = _momGen;
-        if (_dadGen &gt; _momGen) {
+        if (_dadGen > _momGen) {
             babyGen = _dadGen;
         }
         babyGen = babyGen + 1;

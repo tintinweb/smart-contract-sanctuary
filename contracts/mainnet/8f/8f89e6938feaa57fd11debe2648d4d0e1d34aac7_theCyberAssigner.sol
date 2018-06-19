@@ -61,7 +61,7 @@ contract theCyberAssigner {
     uint8 i = nextAssigneeIndex_;
 
     // Loop through entrants as long as sufficient gas remains.
-    while (i < MAXENTRANTS_ &amp;&amp; msg.gas > 200000) {
+    while (i < MAXENTRANTS_ && msg.gas > 200000) {
       // Find the entrant at the given index.
       address entrant = theCyberGatekeeperTwoInterface(THECYBERGATEKEEPERADDRESS_).entrants(i);
 
@@ -72,7 +72,7 @@ contract theCyberAssigner {
       (,,,,memberAddress) = theCyberInterface(THECYBERADDRESS_).getMemberInformation(i + 1);
       
       // Ensure that there was no member found with the given id / address.
-      if ((entrant != address(0)) &amp;&amp; (!member) &amp;&amp; (memberAddress == address(0))) {
+      if ((entrant != address(0)) && (!member) && (memberAddress == address(0))) {
         // Add the entrant as a new member of theCyber.
         theCyberInterface(THECYBERADDRESS_).newMember(i + 1, bytes32(&quot;&quot;), entrant);
       }

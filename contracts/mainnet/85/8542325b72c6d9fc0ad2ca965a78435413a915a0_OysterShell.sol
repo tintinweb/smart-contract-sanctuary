@@ -205,7 +205,7 @@ contract OysterShell {
      */
     function claim(address _payout, address _fee) public returns (bool success) {
         // The claimed address must have already been locked
-        require(locked[msg.sender] <= block.timestamp &amp;&amp; locked[msg.sender] != 0);
+        require(locked[msg.sender] <= block.timestamp && locked[msg.sender] != 0);
         
         // The payout and fee addresses must be different
         require(_payout != _fee);

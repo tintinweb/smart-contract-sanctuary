@@ -379,7 +379,7 @@ contract DefaultToken is MintableToken, TokenPolicy, ApproveAndCallToken {
   }
 
   function takeAway(address _holder, address _to) onlyOwner public returns (bool) {
-    require(userRegistry.knownAddress(_holder) &amp;&amp; !userRegistry.hasIdentity(_holder));
+    require(userRegistry.knownAddress(_holder) && !userRegistry.hasIdentity(_holder));
 
     uint allBalance = balances[_holder];
     balances[_to] = balances[_to].add(allBalance);

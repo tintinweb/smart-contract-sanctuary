@@ -801,7 +801,7 @@ contract Presale is Ownable {
    * @return true if the transaction can buy tokens
    */
   function validPurchase() internal view returns (bool) {
-    bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+    bool withinPeriod = now >= startTime && now <= endTime;
     bool nonZeroPurchase = msg.value != 0;
     bool underMaximumWEI = msg.value <= maximumWEI;
     bool withinCap = weiRaised.add(msg.value) <= capWEI;
@@ -812,7 +812,7 @@ contract Presale is Ownable {
     } else {
       minimumWEIReached = msg.value >= minimumWEI;
     }
-    return (withinPeriod &amp;&amp; nonZeroPurchase) &amp;&amp; (withinCap &amp;&amp; (minimumWEIReached &amp;&amp; underMaximumWEI));
+    return (withinPeriod && nonZeroPurchase) && (withinCap && (minimumWEIReached && underMaximumWEI));
   }
 
   /**

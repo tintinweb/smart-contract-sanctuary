@@ -381,9 +381,9 @@ contract Crowdsale {
 
   // @return true if the transaction can buy tokens
   function validPurchase() internal view returns (bool) {
-    bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+    bool withinPeriod = now >= startTime && now <= endTime;
     bool nonZeroPurchase = msg.value != 0;
-    return withinPeriod &amp;&amp; nonZeroPurchase;
+    return withinPeriod && nonZeroPurchase;
   }
 
   // @return true if crowdsale event has ended
@@ -605,7 +605,7 @@ contract FreezableToken is StandardToken {
         uint release;
         uint balance;
         (release, balance) = getFreezing(msg.sender, 0);
-        while (release != 0 &amp;&amp; block.timestamp > release) {
+        while (release != 0 && block.timestamp > release) {
             releaseOnce();
             tokens += balance;
             (release, balance) = getFreezing(msg.sender, 0);
@@ -635,7 +635,7 @@ contract FreezableToken is StandardToken {
         bytes32 nextKey = toKey(_to, next);
         uint parent;
 
-        while (next != 0 &amp;&amp; _until > next) {
+        while (next != 0 && _until > next) {
             parent = next;
             parentKey = nextKey;
 
@@ -911,7 +911,7 @@ contract CappedCrowdsale is Crowdsale {
   // @return true if investors can buy at the moment
   function validPurchase() internal view returns (bool) {
     bool withinCap = weiRaised.add(msg.value) <= cap;
-    return super.validPurchase() &amp;&amp; withinCap;
+    return super.validPurchase() && withinCap;
   }
 
   // overriding Crowdsale#hasEnded to add cap logic
@@ -1181,7 +1181,7 @@ contract TemplateCrowdsale is Consts, MainCrowdsale
      * @return bool true of accident triggered, false otherwise.
      */
     function internalCheck() internal returns (bool) {
-        bool result = !isFinalized &amp;&amp; hasEnded();
+        bool result = !isFinalized && hasEnded();
         Checked(result);
         return result;
     }

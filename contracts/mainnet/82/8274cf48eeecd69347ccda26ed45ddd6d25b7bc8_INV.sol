@@ -383,7 +383,7 @@ contract Crowdsale is Ownable {
     require(weiAmount >= minPayment);
     require(totalAllStage < totalTokens);
     //Seed
-    if (now >= startSeedStage &amp;&amp; now < endSeedStage &amp;&amp; totalSeedStage < maxSeedStage){
+    if (now >= startSeedStage && now < endSeedStage && totalSeedStage < maxSeedStage){
       tokens = weiAmount.mul(rateSeedStage);
       if (maxSeedStage.sub(totalSeedStage) < tokens){
         tokens = maxSeedStage.sub(totalSeedStage); 
@@ -393,7 +393,7 @@ contract Crowdsale is Ownable {
       totalSeedStage = totalSeedStage.add(tokens);
     }
     //Private Sale
-    if (now >= startPrivateSaleStage &amp;&amp; now < endPrivateSaleStage &amp;&amp; totalPrivateSaleStage < maxPrivateSaleStage){
+    if (now >= startPrivateSaleStage && now < endPrivateSaleStage && totalPrivateSaleStage < maxPrivateSaleStage){
       tokens = weiAmount.mul(ratePrivateSaleStage);
       if (maxPrivateSaleStage.sub(totalPrivateSaleStage) < tokens){
         tokens = maxPrivateSaleStage.sub(totalPrivateSaleStage); 
@@ -403,7 +403,7 @@ contract Crowdsale is Ownable {
       totalPrivateSaleStage = totalPrivateSaleStage.add(tokens);
     }    
     //Pre-sale
-    if (now >= startPreSaleStage &amp;&amp; now < endPreSaleStage &amp;&amp; totalPreSaleStage < maxPreSaleStage){
+    if (now >= startPreSaleStage && now < endPreSaleStage && totalPreSaleStage < maxPreSaleStage){
       tokens = weiAmount.mul(ratePreSaleStage);
       if (maxPreSaleStage.sub(totalPreSaleStage) < tokens){
         tokens = maxPreSaleStage.sub(totalPreSaleStage); 
@@ -413,7 +413,7 @@ contract Crowdsale is Ownable {
       totalPreSaleStage = totalPreSaleStage.add(tokens);
     }    
     //Public Sale
-    if (now >= startPublicSaleStage &amp;&amp; now < endPublicSaleStage &amp;&amp; totalPublicSaleStage < maxPublicSaleStage){
+    if (now >= startPublicSaleStage && now < endPublicSaleStage && totalPublicSaleStage < maxPublicSaleStage){
       tokens = weiAmount.mul(ratePublicSaleStage);
       if (maxPublicSaleStage.sub(totalPublicSaleStage) < tokens){
         tokens = maxPublicSaleStage.sub(totalPublicSaleStage); 

@@ -67,7 +67,7 @@ library LSafeMath {
     }
     
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        if (b &gt; 0) { 
+        if (b > 0) { 
             uint256 c = a / b;
             return c;
         }
@@ -75,14 +75,14 @@ library LSafeMath {
     }
     
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        if (b &lt;= a)
+        if (b <= a)
             return a - b;
         revert();
     }
     
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        if (c &gt;= a) 
+        if (c >= a) 
             return c;
         revert();
     }
@@ -118,8 +118,8 @@ contract Coinchangex {
   address public feeAccount; // the account that will receive fees
   uint public feeTake; // percentage times (1 ether)
   bool private depositingTokenFlag; // True when Token.transferFrom is being called from depositToken
-  mapping (address =&gt; mapping (address =&gt; uint)) public tokens; // mapping of token addresses to mapping of account balances (token=0 means Ether)
-  mapping (address =&gt; mapping (bytes32 =&gt; uint)) public orderFills; // mapping of user accounts to mapping of order hashes to uints (amount of order that has been filled)
+  mapping (address => mapping (address => uint)) public tokens; // mapping of token addresses to mapping of account balances (token=0 means Ether)
+  mapping (address => mapping (bytes32 => uint)) public orderFills; // mapping of user accounts to mapping of order hashes to uints (amount of order that has been filled)
   SpecialTokenBalanceFeeTake[] public specialFees;
   
 
@@ -161,7 +161,7 @@ contract Coinchangex {
 
   /// Changes the fee on takes. Can only be changed to a value less than it is currently set at.
   function changeFeeTake(uint feeTake_) public isAdmin {
-    // require(feeTake_ &lt;= feeTake);
+    // require(feeTake_ <= feeTake);
     feeTake = feeTake_;
   }
   
@@ -177,7 +177,7 @@ contract Coinchangex {
   
   // chnage special promotion fee
   function chnageSpecialFeeTake(uint id, address token, uint256 balance, uint256 feeTake) public isAdmin {
-      require(id &lt; specialFees.length);
+      require(id < specialFees.length);
       specialFees[id] = SpecialTokenBalanceFeeTake(
           true,
           token,
@@ -188,10 +188,10 @@ contract Coinchangex {
   
     // remove special promotion fee
    function removeSpecialFeeTake(uint id) public isAdmin {
-       if (id &gt;= specialFees.length) revert();
+       if (id >= specialFees.length) revert();
 
         uint last = specialFees.length-1;
-        for (uint i = id; i&lt;last; i++){
+        for (uint i = id; i<last; i++){
             specialFees[i] = specialFees[i+1];
         }
         
@@ -226,7 +226,7 @@ contract Coinchangex {
   * @param amount uint of the amount of Ether the user wishes to withdraw
   */
   function withdraw(uint amount) public {
-    require(tokens[0][msg.sender] &gt;= amount);
+    require(tokens[0][msg.sender] >= amount);
     tokens[0][msg.sender] = tokens[0][msg.sender].sub(amount);
     msg.sender.transfer(amount);
     Withdraw(0, msg.sender, amount, tokens[0][msg.sender]);
@@ -279,7 +279,7 @@ contract Coinchangex {
   */
   function withdrawToken(address token, uint amount) public {
     require(token != 0);
-    require(tokens[token][msg.sender] &gt;= amount);
+    require(tokens[token][msg.sender] >= amount);
     tokens[token][msg.sender] = tokens[token][msg.sender].sub(amount);
     require(IToken(token).transfer(msg.sender, amount));
     Withdraw(token, msg.sender, amount, tokens[token][msg.sender]);
@@ -305,7 +305,7 @@ contract Coinchangex {
   * Calls tradeBalances().
   * Updates orderFills with the amount traded.
   * Emits a Trade event.
-  * Note: tokenGet &amp; tokenGive can be the Ethereum contract address.
+  * Note: tokenGet & tokenGive can be the Ethereum contract address.
   * Note: amount is in amountGet / tokenGet terms.
   * @param tokenGet Ethereum contract address of the token to receive
   * @param amountGet uint amount of tokens being received
@@ -322,9 +322,9 @@ contract Coinchangex {
   function trade(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s, uint amount) public {
     bytes32 hash = sha256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
     require((
-      (ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), v, r, s) == user) &amp;&amp;
-      block.number &lt;= expires &amp;&amp;
-      orderFills[user][hash].add(amount) &lt;= amountGet
+      (ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), v, r, s) == user) &&
+      block.number <= expires &&
+      orderFills[user][hash].add(amount) <= amountGet
     ));
     tradeBalances(tokenGet, amountGet, tokenGive, amountGive, user, amount);
     orderFills[user][hash] = orderFills[user][hash].add(amount);
@@ -336,7 +336,7 @@ contract Coinchangex {
   * Handles the movement of funds when a trade occurs.
   * Takes fees.
   * Updates token balances for both buyer and seller.
-  * Note: tokenGet &amp; tokenGive can be the Ethereum contract address.
+  * Note: tokenGet & tokenGive can be the Ethereum contract address.
   * Note: amount is in amountGet / tokenGet terms.
   * @param tokenGet Ethereum contract address of the token to receive
   * @param amountGet uint amount of tokens being received
@@ -362,14 +362,14 @@ contract Coinchangex {
     
     uint length = specialFees.length;
     bool applied = false;
-    for(uint i = 0; length &gt; 0 &amp;&amp; i &lt; length; i++) {
+    for(uint i = 0; length > 0 && i < length; i++) {
         SpecialTokenBalanceFeeTake memory special = specialFees[i];
-        if(special.exist &amp;&amp; special.balance &lt;= tokens[special.token][msg.sender]) {
+        if(special.exist && special.balance <= tokens[special.token][msg.sender]) {
             applied = true;
             feeTakeXfer = amount.mul(special.feeTake).div(1 ether);
             break;
         }
-        if(i &gt;= MAX_SPECIALS)
+        if(i >= MAX_SPECIALS)
             break;
     }
     
@@ -382,7 +382,7 @@ contract Coinchangex {
 
   /**
   * This function is to test if a trade would go through.
-  * Note: tokenGet &amp; tokenGive can be the Ethereum contract address.
+  * Note: tokenGet & tokenGive can be the Ethereum contract address.
   * Note: amount is in amountGet / tokenGet terms.
   * @param tokenGet Ethereum contract address of the token to receive
   * @param amountGet uint amount of tokens being received
@@ -400,8 +400,8 @@ contract Coinchangex {
   */
   function testTrade(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s, uint amount, address sender) public constant returns(bool) {
     if (!(
-      tokens[tokenGet][sender] &gt;= amount &amp;&amp;
-      availableVolume(tokenGet, amountGet, tokenGive, amountGive, expires, nonce, user, v, r, s) &gt;= amount
+      tokens[tokenGet][sender] >= amount &&
+      availableVolume(tokenGet, amountGet, tokenGive, amountGive, expires, nonce, user, v, r, s) >= amount
       )) { 
       return false;
     } else {
@@ -411,7 +411,7 @@ contract Coinchangex {
 
   /**
   * This function checks the available volume for a given order.
-  * Note: tokenGet &amp; tokenGive can be the Ethereum contract address.
+  * Note: tokenGet & tokenGive can be the Ethereum contract address.
   * @param tokenGet Ethereum contract address of the token to receive
   * @param amountGet uint amount of tokens being received
   * @param tokenGive Ethereum contract address of the token to give
@@ -427,15 +427,15 @@ contract Coinchangex {
   function availableVolume(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s) public constant returns(uint) {
     bytes32 hash = sha256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
     if (!(
-      (ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), v, r, s) == user) &amp;&amp;
-      block.number &lt;= expires
+      (ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), v, r, s) == user) &&
+      block.number <= expires
       )) {
       return 0;
     }
     uint[2] memory available;
     available[0] = amountGet.sub(orderFills[user][hash]);
     available[1] = tokens[tokenGive][user].mul(amountGet) / amountGive;
-    if (available[0] &lt; available[1]) {
+    if (available[0] < available[1]) {
       return available[0];
     } else {
       return available[1];
@@ -444,7 +444,7 @@ contract Coinchangex {
 
   /**
   * This function checks the amount of an order that has already been filled.
-  * Note: tokenGet &amp; tokenGive can be the Ethereum contract address.
+  * Note: tokenGet & tokenGive can be the Ethereum contract address.
   * @param tokenGet Ethereum contract address of the token to receive
   * @param amountGet uint amount of tokens being received
   * @param tokenGive Ethereum contract address of the token to give
@@ -467,7 +467,7 @@ contract Coinchangex {
   * Requires that the transaction is signed properly.
   * Updates orderFills to the full amountGet
   * Emits a Cancel event.
-  * Note: tokenGet &amp; tokenGive can be the Ethereum contract address.
+  * Note: tokenGet & tokenGive can be the Ethereum contract address.
   * @param tokenGet Ethereum contract address of the token to receive
   * @param amountGet uint amount of tokens being received
   * @param tokenGive Ethereum contract address of the token to give
@@ -494,7 +494,7 @@ contract Coinchangex {
   */
   function depositForUser(address user) public payable {
     require(user != address(0));
-    require(msg.value &gt; 0);
+    require(msg.value > 0);
     tokens[0][user] = tokens[0][user].add(msg.value);
   }
   
@@ -510,7 +510,7 @@ contract Coinchangex {
   function depositTokenForUser(address token, uint amount, address user) public {
     require(token != address(0));
     require(user != address(0));
-    require(amount &gt; 0);
+    require(amount > 0);
     depositingTokenFlag = true;
     require(IToken(token).transferFrom(msg.sender, this, amount));
     depositingTokenFlag = false;

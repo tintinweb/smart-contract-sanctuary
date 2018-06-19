@@ -67,8 +67,8 @@ contract AnetCoin is Token(&quot;ANET&quot;, &quot;ANET&quot;, 0, 500000000), ER
     }
 
     function transfer(address _to, uint _value) public returns (bool) {
-        if (_value > 0 &amp;&amp; 
-            _value <= _balanceOf[msg.sender] &amp;&amp;
+        if (_value > 0 && 
+            _value <= _balanceOf[msg.sender] &&
             !isContract(_to)) {
             _balanceOf[msg.sender] -= _value;
             _balanceOf[_to] += _value;
@@ -79,8 +79,8 @@ contract AnetCoin is Token(&quot;ANET&quot;, &quot;ANET&quot;, 0, 500000000), ER
     }
 
     function transfer(address _to, uint _value, bytes _data) public returns (bool) {
-        if (_value > 0 &amp;&amp; 
-            _value <= _balanceOf[msg.sender] &amp;&amp;
+        if (_value > 0 && 
+            _value <= _balanceOf[msg.sender] &&
             isContract(_to)) {
             _balanceOf[msg.sender] -= _value;
             _balanceOf[_to] += _value;
@@ -101,9 +101,9 @@ contract AnetCoin is Token(&quot;ANET&quot;, &quot;ANET&quot;, 0, 500000000), ER
     }
 
     function transferFrom(address _from, address _to, uint _value) public returns (bool) {
-        if (_allowances[_from][msg.sender] > 0 &amp;&amp;
-            _value > 0 &amp;&amp;
-            _allowances[_from][msg.sender] >= _value &amp;&amp;
+        if (_allowances[_from][msg.sender] > 0 &&
+            _value > 0 &&
+            _allowances[_from][msg.sender] >= _value &&
             _balanceOf[_from] >= _value) {
             _balanceOf[_from] -= _value;
             _balanceOf[_to] += _value;

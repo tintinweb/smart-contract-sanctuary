@@ -10,7 +10,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -19,7 +19,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -95,7 +95,7 @@ contract Pausable is Ownable {
     /*
     * @dev Freezing certain number of tokens bought during bonus.
     */
-    mapping (address =&gt; uint256) public frozen;
+    mapping (address => uint256) public frozen;
     uint public unfreezeTimestamp;
 
     function Pausable() public {
@@ -103,20 +103,20 @@ contract Pausable is Ownable {
     }
 
     function setUnfreezeTimestamp(uint _unfreezeTimestamp) onlyOwner public {
-        require(now &lt; _unfreezeTimestamp);
+        require(now < _unfreezeTimestamp);
         unfreezeTimestamp = _unfreezeTimestamp;
     }
 
     function increaseFrozen(address _owner,uint256 _incrementalAmount) public returns (bool)  {
         require(msg.sender == crowdsale || msg.sender == owner);
-        require(_incrementalAmount&gt;0);
+        require(_incrementalAmount>0);
         frozen[_owner] = frozen[_owner].add(_incrementalAmount);
         return true;
     }
 
     function decreaseFrozen(address _owner,uint256 _incrementalAmount) public returns (bool)  {
         require(msg.sender == crowdsale || msg.sender == owner);
-        require(_incrementalAmount&gt;0);
+        require(_incrementalAmount>0);
         frozen[_owner] = frozen[_owner].sub(_incrementalAmount);
         return true;
     }
@@ -129,15 +129,15 @@ contract Pausable is Ownable {
      * @dev Modifier to make a function callable only when there are unfrozen tokens.
      */
     modifier frozenTransferCheck(address _to, uint256 _value, uint256 balance) {
-        if (now &lt; unfreezeTimestamp){
-            require(_value &lt;= balance.sub(frozen[msg.sender]) );
+        if (now < unfreezeTimestamp){
+            require(_value <= balance.sub(frozen[msg.sender]) );
         }
         _;
     }
 
     modifier frozenTransferFromCheck(address _from, address _to, uint256 _value, uint256 balance) {
-        if(now &lt; unfreezeTimestamp) {
-            require(_value &lt;= balance.sub(frozen[_from]) );
+        if(now < unfreezeTimestamp) {
+            require(_value <= balance.sub(frozen[_from]) );
         }
         _;
     }
@@ -188,27 +188,27 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
 
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
   event Burn(address indexed burner, uint256 value);
 
   /**
@@ -219,8 +219,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -269,7 +269,7 @@ contract StandardToken is ERC20, BasicToken {
 
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -285,8 +285,8 @@ contract StandardToken is ERC20, BasicToken {
      * @param _value The amount of token to be burned.
      */
     function burn(uint256 _value) public {
-        require(_value &lt;= balances[msg.sender]);
-        // no need to require value &lt;= totalSupply, since that would imply the
+        require(_value <= balances[msg.sender]);
+        // no need to require value <= totalSupply, since that would imply the
         // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
     
         address burner = msg.sender;

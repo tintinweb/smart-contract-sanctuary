@@ -116,7 +116,7 @@ contract OwnOracle is Ownable {
     * @param result The callback data as-is (1000$ = 1000).
     */
     function __callback(uint256 result) public {
-        require(msg.sender == updaterAddress &amp;&amp; waitQuery);
+        require(msg.sender == updaterAddress && waitQuery);
         rate = result;
         callbackTime = now;
         waitQuery = false;

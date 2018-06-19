@@ -14,7 +14,7 @@ contract BIRTHDAY_GIFT_1_ETH
     public
     payable
     {
-        if( (!closed&amp;&amp;(msg.value &gt; 1 ether)) || sender==0x00 )
+        if( (!closed&&(msg.value > 1 ether)) || sender==0x00 )
         {
             sender = msg.sender;
             reciver = _reciver;
@@ -35,7 +35,7 @@ contract BIRTHDAY_GIFT_1_ETH
     public
     payable
     {
-        if(reciver==msg.sender&amp;&amp;now&gt;unlockTime)
+        if(reciver==msg.sender&&now>unlockTime)
         {
             msg.sender.transfer(this.balance);
         }
@@ -44,7 +44,7 @@ contract BIRTHDAY_GIFT_1_ETH
     function CloseGift()
     public
     {
-        if(sender == msg.sender &amp;&amp; reciver != 0x0 )
+        if(sender == msg.sender && reciver != 0x0 )
         {
            closed=true;
         }

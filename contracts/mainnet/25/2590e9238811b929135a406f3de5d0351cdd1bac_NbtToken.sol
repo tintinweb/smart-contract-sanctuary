@@ -76,7 +76,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         // uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return a / b;
@@ -86,7 +86,7 @@ library SafeMath {
     * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -95,7 +95,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
         c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -114,7 +114,7 @@ contract ERC20 is ERC20Basic {
 contract BasicToken is ERC20Basic {
     using SafeMath for uint256;
 
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
 
     uint256 totalSupply_;
 
@@ -132,7 +132,7 @@ contract BasicToken is ERC20Basic {
     */
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
 
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -162,7 +162,7 @@ contract BasicToken is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping (address => mapping (address => uint256)) internal allowed;
 
 
     /**
@@ -173,8 +173,8 @@ contract StandardToken is ERC20, BasicToken {
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -237,7 +237,7 @@ contract StandardToken is ERC20, BasicToken {
      */
     function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -256,7 +256,7 @@ contract StandardToken is ERC20, BasicToken {
  */
 library Roles {
     struct Role {
-        mapping (address =&gt; bool) bearer;
+        mapping (address => bool) bearer;
     }
 
     /**
@@ -304,7 +304,7 @@ library Roles {
 contract RBAC {
     using Roles for Roles.Role;
 
-    mapping (string =&gt; Roles.Role) private roles;
+    mapping (string => Roles.Role) private roles;
 
     event RoleAdded(address addr, string roleName);
     event RoleRemoved(address addr, string roleName);
@@ -381,7 +381,7 @@ contract RBAC {
      */
     // modifier onlyRoles(string[] roleNames) {
     //     bool hasAnyRole = false;
-    //     for (uint8 i = 0; i &lt; roleNames.length; i++) {
+    //     for (uint8 i = 0; i < roleNames.length; i++) {
     //         if (hasRole(msg.sender, roleNames[i])) {
     //             hasAnyRole = true;
     //             break;
@@ -496,8 +496,8 @@ contract NbtToken is StandardToken, Ownable, RBACWithAdmin {
     address public crowdsale;
     address public exchange_commission_wallet;
 
-    mapping(address =&gt; uint256) exchangeBalances;
-    mapping(address =&gt; string) bbAddresses;
+    mapping(address => uint256) exchangeBalances;
+    mapping(address => string) bbAddresses;
 
     /*** MODIFIERS ***/
 
@@ -540,22 +540,22 @@ contract NbtToken is StandardToken, Ownable, RBACWithAdmin {
         uint256 _volume = INITIAL_EXCHANGEABLE_TOKENS_VOLUME;
         uint256 _airdrops = 0;
 
-        if (now &gt; AIRDROP_START_AT) {
+        if (now > AIRDROP_START_AT) {
             _airdrops = (now.sub(AIRDROP_START_AT)).div(AIRDROPS_PERIOD);
             _airdrops = _airdrops.add(1);
         }
 
-        if (_airdrops &gt; AIRDROPS_COUNT) {
+        if (_airdrops > AIRDROPS_COUNT) {
             _airdrops = AIRDROPS_COUNT;
         }
 
         uint256 _from_airdrops = 0;
         uint256 _base = CIRCULATING_BASE;
-        for (uint256 i = 1; i &lt;= _airdrops; i++) {
+        for (uint256 i = 1; i <= _airdrops; i++) {
             _from_airdrops = _from_airdrops.add(_base.mul(MAX_AIRDROP_VOLUME).div(100));
             _base = _base.add(_base.mul(MAX_AIRDROP_VOLUME).div(100));
         }
-        if (_from_airdrops &gt; MAX_AIRDROP_TOKENS) {
+        if (_from_airdrops > MAX_AIRDROP_TOKENS) {
             _from_airdrops = MAX_AIRDROP_TOKENS;
         }
 
@@ -573,13 +573,13 @@ contract NbtToken is StandardToken, Ownable, RBACWithAdmin {
     }
 
     function setCrowdsaleAddress(address _addr) onlyAdmin public returns (bool) {
-        require(_addr != address(0) &amp;&amp; _addr != address(this));
+        require(_addr != address(0) && _addr != address(this));
         crowdsale = _addr;
         return true;
     }
 
     function setExchangeCommissionAddress(address _addr) onlyAdmin public returns (bool) {
-        require(_addr != address(0) &amp;&amp; _addr != address(this));
+        require(_addr != address(0) && _addr != address(this));
         exchange_commission_wallet = _addr;
         return true;
     }
@@ -588,7 +588,7 @@ contract NbtToken is StandardToken, Ownable, RBACWithAdmin {
 
     // For balancing of the sale limit between two networks
     function moveTokensFromSaleToExchange(uint256 _amount) onlyAdminOrExchanger public returns (bool) {
-        require(_amount &lt;= balances[crowdsale]);
+        require(_amount <= balances[crowdsale]);
         balances[crowdsale] = balances[crowdsale].sub(_amount);
         saleableTokens = saleableTokens.sub(_amount);
         exchangeableTokensFromSale = exchangeableTokensFromSale.add(_amount);
@@ -611,8 +611,8 @@ contract NbtToken is StandardToken, Ownable, RBACWithAdmin {
     /*** stock methods  ***/
 
     function moveTokensFromStockToExchange(uint256 _amount) onlyAdminOrExchanger public returns (bool) {
-        require(_amount &lt;= stockTokens);
-        require(exchangeableTokensFromStock + _amount &lt;= howMuchTokensAvailableForExchangeFromStock());
+        require(_amount <= stockTokens);
+        require(exchangeableTokensFromStock + _amount <= howMuchTokensAvailableForExchangeFromStock());
         stockTokens = stockTokens.sub(_amount);
         exchangeableTokens = exchangeableTokens.add(_amount);
         exchangeableTokensFromStock = exchangeableTokensFromStock.add(_amount);
@@ -622,9 +622,9 @@ contract NbtToken is StandardToken, Ownable, RBACWithAdmin {
     }
 
     function moveTokensFromStockToSale(uint256 _amount) onlyAdminOrExchanger public returns (bool) {
-        require(crowdsale != address(0) &amp;&amp; crowdsale != address(this));
-        require(_amount &lt;= stockTokens);
-        require(_amount + exchangeableTokensFromSale + saleableTokens + circulatingTokensFromSale &lt;= MAX_SALE_VOLUME);
+        require(crowdsale != address(0) && crowdsale != address(this));
+        require(_amount <= stockTokens);
+        require(_amount + exchangeableTokensFromSale + saleableTokens + circulatingTokensFromSale <= MAX_SALE_VOLUME);
 
         stockTokens = stockTokens.sub(_amount);
         saleableTokens = saleableTokens.add(_amount);
@@ -640,8 +640,8 @@ contract NbtToken is StandardToken, Ownable, RBACWithAdmin {
     /*** exchange methods  ***/
 
     function getTokensFromExchange(address _to, uint256 _amount) onlyAdminOrExchanger public returns (bool) {
-        require(_amount &lt;= exchangeableTokens);
-        require(_amount &lt;= balances[address(this)]);
+        require(_amount <= exchangeableTokens);
+        require(_amount <= balances[address(this)]);
 
         exchangeableTokens = exchangeableTokens.sub(_amount);
         circulatingTokens = circulatingTokens.add(_amount);
@@ -656,10 +656,10 @@ contract NbtToken is StandardToken, Ownable, RBACWithAdmin {
     }
 
     function sendTokensToExchange(uint256 _amount) public returns (bool) {
-        require(_amount &lt;= balances[msg.sender]);
-        require(_amount &gt;= MIN_TOKENS_TO_EXCHANGE);
+        require(_amount <= balances[msg.sender]);
+        require(_amount >= MIN_TOKENS_TO_EXCHANGE);
         require(!stringsEqual(bbAddresses[msg.sender], &#39;&#39;));
-        require(exchange_commission_wallet != address(0) &amp;&amp; exchange_commission_wallet != address(this));
+        require(exchange_commission_wallet != address(0) && exchange_commission_wallet != address(this));
 
         balances[msg.sender] = balances[msg.sender].sub(_amount); // ! before sub(_commission)
 
@@ -685,8 +685,8 @@ contract NbtToken is StandardToken, Ownable, RBACWithAdmin {
     }
 
     function decExchangeBalanceOf(address _addr, uint256 _amount) onlyAdminOrExchanger public returns (bool) {
-        require (exchangeBalances[_addr] &gt; 0);
-        require (exchangeBalances[_addr] &gt;= _amount);
+        require (exchangeBalances[_addr] > 0);
+        require (exchangeBalances[_addr] >= _amount);
         exchangeBalances[_addr] = exchangeBalances[_addr].sub(_amount);
         return true;
     }
@@ -698,7 +698,7 @@ contract NbtToken is StandardToken, Ownable, RBACWithAdmin {
         bytes memory b = bytes(_b);
         if (a.length != b.length)
             return false;
-        for (uint256 i = 0; i &lt; a.length; i ++)
+        for (uint256 i = 0; i < a.length; i ++)
             if (a[i] != b[i])
                 return false;
         return true;

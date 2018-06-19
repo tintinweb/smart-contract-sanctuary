@@ -76,7 +76,7 @@ contract ICOToken is BaseToken {
     event Withdraw(address indexed from, address indexed holder, uint256 value);
 
     function ico() public payable {
-        require(now >= icoBegintime &amp;&amp; now <= icoEndtime);
+        require(now >= icoBegintime && now <= icoEndtime);
         uint256 tokenValue = (msg.value * icoRatio * 10 ** uint256(decimals)) / (1 ether / 1 wei);
         if (tokenValue == 0 || balanceOf[icoSender] < tokenValue) {
             revert();

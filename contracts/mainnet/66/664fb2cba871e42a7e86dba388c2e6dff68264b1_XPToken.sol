@@ -28,7 +28,7 @@ library Maths {
     uint256 minuend,
     uint256 subtrahend
   ) public pure returns (uint256 difference) {
-    assert(minuend &gt;= subtrahend);
+    assert(minuend >= subtrahend);
     difference = minuend - subtrahend;
   }
 
@@ -112,7 +112,7 @@ library Maths {
     uint256 a,
     uint256 b
   ) public pure returns (uint256 result) {
-    result = a &lt;= b ? a : b;
+    result = a <= b ? a : b;
   }
 
   /**
@@ -125,7 +125,7 @@ library Maths {
     uint256 a,
     uint256 b
   ) public pure returns (uint256 result) {
-    result = a &gt;= b ? a : b;
+    result = a >= b ? a : b;
   }
 
   /**
@@ -135,7 +135,7 @@ library Maths {
    * @return isTrue whether a is less than b
    */
   function isLessThan(uint256 a, uint256 b) public pure returns (bool isTrue) {
-    isTrue = a &lt; b;
+    isTrue = a < b;
   }
 
   /**
@@ -145,7 +145,7 @@ library Maths {
    * @return isTrue whether a is less than or equal to b
    */
   function isAtMost(uint256 a, uint256 b) public pure returns (bool isTrue) {
-    isTrue = a &lt;= b;
+    isTrue = a <= b;
   }
 
   /**
@@ -155,7 +155,7 @@ library Maths {
    * @return isTrue whether a is greater than b
    */
   function isGreaterThan(uint256 a, uint256 b) public pure returns (bool isTrue) {
-    isTrue = a &gt; b;
+    isTrue = a > b;
   }
 
   /**
@@ -165,7 +165,7 @@ library Maths {
    * @return isTrue whether a is less than b
    */
   function isAtLeast(uint256 a, uint256 b) public pure returns (bool isTrue) {
-    isTrue = a &gt;= b;
+    isTrue = a >= b;
   }
 }
 
@@ -255,7 +255,7 @@ contract ERC20 is ERC20Basic {
 contract BasicToken is ERC20Basic {
   using Maths for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -273,7 +273,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     balances[msg.sender] = balances[msg.sender].minus(_value);
     balances[_to] = balances[_to].plus(_value);
@@ -302,7 +302,7 @@ contract BasicToken is ERC20Basic {
 contract StandardToken is ERC20, BasicToken {
   using Maths for uint256;
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -313,8 +313,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].minus(_value);
     balances[_to] = balances[_to].plus(_value);
@@ -377,7 +377,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.minus(_subtractedValue);

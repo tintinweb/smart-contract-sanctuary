@@ -292,7 +292,7 @@ contract UnitedfansToken is MintableToken {
     }
 
     modifier onlyAuthorized() {
-        if (msg.sender != owner &amp;&amp; msg.sender != crowdSaleAddress &amp;&amp; msg.sender != admin) 
+        if (msg.sender != owner && msg.sender != crowdSaleAddress && msg.sender != admin) 
             revert();
         _;
     }
@@ -466,9 +466,9 @@ contract Crowdsale {
 
   // @return true if the transaction can buy tokens
   function validPurchase() internal constant returns (bool) {
-    bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+    bool withinPeriod = now >= startTime && now <= endTime;
     bool nonZeroPurchase = msg.value != 0;
-    return withinPeriod &amp;&amp; nonZeroPurchase;
+    return withinPeriod && nonZeroPurchase;
   }
 
   // @return true if crowdsale event has ended
@@ -532,8 +532,8 @@ contract UnitedfansTokenCrowdsale is Ownable, Crowdsale {
     }
 
     function buyTokensUpdateState() internal {
-        if(state == State.BeforeSale &amp;&amp; now >= startTimeNumber) { state = State.NormalSale; }
-        require(state != State.ShouldFinalize &amp;&amp; state != State.SaleOver &amp;&amp; msg.value >= 25 * toDec);
+        if(state == State.BeforeSale && now >= startTimeNumber) { state = State.NormalSale; }
+        require(state != State.ShouldFinalize && state != State.SaleOver && msg.value >= 25 * toDec);
         if(msg.value.mul(rate) >= tokensLeft) { state = State.ShouldFinalize; }
     }
 
@@ -551,8 +551,8 @@ contract UnitedfansTokenCrowdsale is Ownable, Crowdsale {
     }
 
     function buyCoinsUpdateState(uint256 amount) internal {
-        if(state == State.BeforeSale &amp;&amp; now >= startTimeNumber) { state = State.NormalSale; }
-        require(state != State.ShouldFinalize &amp;&amp; state != State.SaleOver &amp;&amp; amount >= 25 * toDec);
+        if(state == State.BeforeSale && now >= startTimeNumber) { state = State.NormalSale; }
+        require(state != State.ShouldFinalize && state != State.SaleOver && amount >= 25 * toDec);
         if(amount.mul(rate) >= tokensLeft) { state = State.ShouldFinalize; }
     }
 

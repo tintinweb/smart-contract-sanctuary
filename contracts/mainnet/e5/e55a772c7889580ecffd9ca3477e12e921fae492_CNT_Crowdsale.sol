@@ -46,7 +46,7 @@ contract WhiteListAccess {
     }
     
     address public owner;
-    mapping (address =&gt; bool) whitelist;
+    mapping (address => bool) whitelist;
 
     modifier onlyOwner {require(msg.sender == owner); _;}
     modifier onlyWhitelisted {require(whitelist[msg.sender]); _;}
@@ -93,10 +93,10 @@ contract CNT_Crowdsale is CNT_Common {
     uint public bgb_per_Keos;
     uint public vpe_per_Keos;
     uint public gvpe_per_Keos;
-    mapping(address =&gt; uint) public paid;
+    mapping(address => uint) public paid;
     
     // a global list of users (uniques ids across)
-    mapping(uint =&gt; Reward) public rewards;
+    mapping(uint => Reward) public rewards;
 
     // length of prev list
     uint public rewardslength;
@@ -146,10 +146,10 @@ contract CNT_Crowdsale is CNT_Common {
         uint bgb  = _Keos_amount * bgb_per_Keos;
         uint vpe  = _Keos_amount * vpe_per_Keos;
         uint gvpe = _Keos_amount * gvpe_per_Keos;        
-        if (vpe % 1000000000000000000 &gt; 0) {
+        if (vpe % 1000000000000000000 > 0) {
             vpe = vpe - vpe % 1000000000000000000;
         }
-        if (gvpe % 1000000000000000000 &gt; 0) {
+        if (gvpe % 1000000000000000000 > 0) {
             gvpe = gvpe - gvpe % 1000000000000000000;
         }
         return (
@@ -163,7 +163,7 @@ contract CNT_Crowdsale is CNT_Common {
     function buy(uint _Keos_amount) public {
         // calculate how much of each token must be sent
         uint _eos_amount = _Keos_amount * 1000;
-        require(remaining &gt;= _eos_amount);
+        require(remaining >= _eos_amount);
 
         uint cnt_amount  = 0;
         uint bgb_amount = 0;

@@ -239,7 +239,7 @@ contract MintDRCT is OwnerContract, Autonomy {
 
         bool res = true;
         for(uint i = 0; i < _values.length; i = i.add(1)) {
-            res = mintUnderCap(i, _values[i]) &amp;&amp; res;
+            res = mintUnderCap(i, _values[i]) && res;
         }
 
         return res;
@@ -253,7 +253,7 @@ contract MintDRCT is OwnerContract, Autonomy {
         bool res = true;
         for(uint i = 0; i < mainAccounts.length; i = i.add(1)) {
             require(MintableToken(ownedContract).balanceOf(mainAccounts[i]) == 0);
-            res = MintableToken(ownedContract).mint(mainAccounts[i], accountCaps[mainAccounts[i]]) &amp;&amp; res;
+            res = MintableToken(ownedContract).mint(mainAccounts[i], accountCaps[mainAccounts[i]]) && res;
         }
 
         require(res);

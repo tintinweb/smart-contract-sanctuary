@@ -8,13 +8,13 @@ contract SafeMath {
      }
 
      function safeSub(uint a, uint b) internal pure returns (uint) {
-          assert(b &lt;= a);
+          assert(b <= a);
           return a - b;
      }
 
      function safeAdd(uint a, uint b) internal pure returns (uint) {
           uint c = a + b;
-          assert(c&gt;=a &amp;&amp; c&gt;=b);
+          assert(c>=a && c>=b);
           return c;
      }
 }
@@ -46,8 +46,8 @@ contract Crowdsale is Token {
 
 
     // This creates an array with all balances
-    mapping (address =&gt; uint256) public balanceOf;
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => uint256) public balanceOf;
+    mapping (address => mapping (address => uint256)) public allowance;
 
 
     // This generates a public event on the blockchain that will notify clients
@@ -87,9 +87,9 @@ contract Crowdsale is Token {
         // Prevent transfer to 0x0 address. Use burn() instead
         require(_to != 0x0);
         // Check if the sender has enough
-        require(balanceOf[_from] &gt;= _value);
+        require(balanceOf[_from] >= _value);
         // Check for overflows
-        require(balanceOf[_to] + _value &gt; balanceOf[_to]);
+        require(balanceOf[_to] + _value > balanceOf[_to]);
         // Subtract from the sender
         balanceOf[_from] = safeSub(balanceOf[_from],_value);
         // Add the same to the recipient
@@ -107,12 +107,12 @@ contract Crowdsale is Token {
      * @param _value the amount to send
      */
     function transfer(address _to, uint256 _value) public  {
-        if(now &lt; (dayStart + 365 days)){
-            require(msg.sender != foundersAddress &amp;&amp; tx.origin != foundersAddress);
+        if(now < (dayStart + 365 days)){
+            require(msg.sender != foundersAddress && tx.origin != foundersAddress);
         }
         
-        if(now &lt; (dayStart + 180 days)){
-            require(msg.sender != bonusAddress &amp;&amp; tx.origin != bonusAddress);
+        if(now < (dayStart + 180 days)){
+            require(msg.sender != bonusAddress && tx.origin != bonusAddress);
         }
         
 
@@ -123,13 +123,13 @@ contract Crowdsale is Token {
 
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
-        require(_value &lt;= allowance[_from][msg.sender]);     // Check allowance
+        require(_value <= allowance[_from][msg.sender]);     // Check allowance
         
-        if(now &lt; (dayStart + 365 days)){
+        if(now < (dayStart + 365 days)){
             require(_from != foundersAddress);
         }
         
-        if(now &lt; (dayStart + 180 days)){
+        if(now < (dayStart + 180 days)){
             require(_from != bonusAddress);
         }
 
@@ -156,12 +156,12 @@ contract Crowdsale is Token {
     function approve(address _spender, uint256 _amount) public returns(bool success) {
         require((_amount == 0) || (allowance[msg.sender][_spender] == 0));
         
-        if(now &lt; (dayStart + 365 days)){
-            require(msg.sender != foundersAddress &amp;&amp; tx.origin != foundersAddress);
+        if(now < (dayStart + 365 days)){
+            require(msg.sender != foundersAddress && tx.origin != foundersAddress);
         }
         
-        if(now &lt; (dayStart + 180 days)){
-            require(msg.sender != bonusAddress &amp;&amp; tx.origin != bonusAddress);
+        if(now < (dayStart + 180 days)){
+            require(msg.sender != bonusAddress && tx.origin != bonusAddress);
         }
         
         

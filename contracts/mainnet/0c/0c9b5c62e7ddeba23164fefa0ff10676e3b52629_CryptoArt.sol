@@ -60,7 +60,7 @@ contract TimeAware is Ownable {
  */
 contract Withdrawable {
 
-    mapping(address =&gt; uint) private pendingWithdrawals;
+    mapping(address => uint) private pendingWithdrawals;
 
     event Withdrawal(address indexed receiver, uint amount);
     event BalanceChanged(address indexed _address, uint oldBalance, uint newBalance);
@@ -89,7 +89,7 @@ contract Withdrawable {
     */
     function withdraw() external {
         uint amount = getPendingWithdrawal(msg.sender);
-        require(amount &gt; 0);
+        require(amount > 0);
 
         pendingWithdrawals[msg.sender] = 0;
         msg.sender.transfer(amount);
@@ -140,7 +140,7 @@ contract CanvasFactory is TimeAware {
     }
 
     modifier validPixelIndex(uint32 _pixelIndex) {
-        require(_pixelIndex &lt; PIXEL_COUNT);
+        require(_pixelIndex < PIXEL_COUNT);
         _;
     }
 
@@ -149,8 +149,8 @@ contract CanvasFactory is TimeAware {
     *           There can&#39;t be more unfinished canvases than MAX_ACTIVE_CANVAS.
     */
     function createCanvas() external returns (uint canvasId) {
-        require(canvases.length &lt; MAX_CANVAS_COUNT);
-        require(activeCanvasCount &lt; MAX_ACTIVE_CANVAS);
+        require(canvases.length < MAX_CANVAS_COUNT);
+        require(activeCanvasCount < MAX_ACTIVE_CANVAS);
 
         uint id = canvases.push(Canvas(STATE_NOT_FINISHED, 0x0, 0, 0, false)) - 1;
 
@@ -164,7 +164,7 @@ contract CanvasFactory is TimeAware {
     * @notice   Sets pixel. Given canvas can&#39;t be yet finished.
     */
     function setPixel(uint32 _canvasId, uint32 _index, uint8 _color) external notFinished(_canvasId) validPixelIndex(_index) {
-        require(_color &gt; 0);
+        require(_color > 0);
 
         Canvas storage canvas = _getCanvas(_canvasId);
         Pixel storage pixel = canvas.pixels[_index];
@@ -196,7 +196,7 @@ contract CanvasFactory is TimeAware {
         Canvas storage canvas = _getCanvas(_canvasId);
         uint8[] memory result = new uint8[](PIXEL_COUNT);
 
-        for (uint32 i = 0; i &lt; PIXEL_COUNT; i++) {
+        for (uint32 i = 0; i < PIXEL_COUNT; i++) {
             result[i] = canvas.pixels[i].color;
         }
 
@@ -248,7 +248,7 @@ contract CanvasFactory is TimeAware {
     }
 
     function _getCanvas(uint32 _canvasId) internal view returns (Canvas storage) {
-        require(_canvasId &lt; canvases.length);
+        require(_canvasId < canvases.length);
         return canvases[_canvasId];
     }
 
@@ -261,7 +261,7 @@ contract CanvasFactory is TimeAware {
         /**
         * Map of all pixels. 
         */
-        mapping(uint32 =&gt; Pixel) pixels;
+        mapping(uint32 => Pixel) pixels;
 
         uint8 state;
 
@@ -276,7 +276,7 @@ contract CanvasFactory is TimeAware {
         */
         uint32 paintedPixelsCount;
 
-        mapping(address =&gt; uint32) addressToCount;
+        mapping(address => uint32) addressToCount;
 
 
         /**
@@ -292,7 +292,7 @@ contract CanvasFactory is TimeAware {
         /**
         * @dev if address has been paid a reward for drawing.
         */
-        mapping(address =&gt; bool) isAddressPaid;
+        mapping(address => bool) isAddressPaid;
     }
 }
 
@@ -316,8 +316,8 @@ contract BiddableCanvas is CanvasFactory, Withdrawable {
 
     uint public constant BIDDING_DURATION = 48 hours;
 
-    mapping(uint32 =&gt; Bid) bids;
-    mapping(address =&gt; uint32) addressToCount;
+    mapping(uint32 => Bid) bids;
+    mapping(address => uint32) addressToCount;
 
     uint public minimumBidAmount = 0.1 ether;
 
@@ -360,11 +360,11 @@ contract BiddableCanvas is CanvasFactory, Withdrawable {
         Canvas storage canvas = _getCanvas(_canvasId);
         Bid storage oldBid = bids[_canvasId];
 
-        if (msg.value &lt; minimumBidAmount || msg.value &lt;= oldBid.amount) {
+        if (msg.value < minimumBidAmount || msg.value <= oldBid.amount) {
             revert();
         }
 
-        if (oldBid.bidder != 0x0 &amp;&amp; oldBid.amount &gt; 0) {
+        if (oldBid.bidder != 0x0 && oldBid.amount > 0) {
             //return old bidder his money
             addPendingWithdrawal(oldBid.bidder, oldBid.amount);
         }
@@ -412,7 +412,7 @@ contract BiddableCanvas is CanvasFactory, Withdrawable {
         //current time, we have to double check if initial bidding
         //hasn&#39;t finish yet
         uint finishTime = canvas.initialBiddingFinishTime;
-        if (finishTime == 0 || finishTime &gt; getTime()) {
+        if (finishTime == 0 || finishTime > getTime()) {
             return STATE_INITIAL_BIDDING;
 
         } else {
@@ -434,7 +434,7 @@ contract BiddableCanvas is CanvasFactory, Withdrawable {
         uint32[] memory result = new uint32[](size);
         uint currentIndex = 0;
 
-        for (uint32 i = 0; i &lt; canvases.length; i++) {
+        for (uint32 i = 0; i < canvases.length; i++) {
             if (getCanvasState(i) == _state) {
                 result[currentIndex] = i;
                 currentIndex++;
@@ -482,8 +482,8 @@ contract BiddableCanvas is CanvasFactory, Withdrawable {
         bool isPaid;
         (pixelCount, reward, isPaid) = calculateReward(_canvasId, msg.sender);
 
-        require(pixelCount &gt; 0);
-        require(reward &gt; 0);
+        require(pixelCount > 0);
+        require(reward > 0);
         require(!isPaid);
 
         canvas.isAddressPaid[msg.sender] = true;
@@ -523,7 +523,7 @@ contract BiddableCanvas is CanvasFactory, Withdrawable {
         bool isPaid;
         (commission, isPaid) = calculateCommission(_canvasId);
 
-        require(commission &gt; 0);
+        require(commission > 0);
         require(!isPaid);
 
         canvas.isCommissionPaid = true;
@@ -559,16 +559,16 @@ contract BiddableCanvas is CanvasFactory, Withdrawable {
     *       Doesn&#39;t modify input array.
     */
     function _slice(uint32[] memory _array, uint _start, uint _end) internal pure returns (uint32[]) {
-        require(_start &lt;= _end);
+        require(_start <= _end);
 
-        if (_start == 0 &amp;&amp; _end == _array.length) {
+        if (_start == 0 && _end == _array.length) {
             return _array;
         }
 
         uint size = _end - _start;
         uint32[] memory sliced = new uint32[](size);
 
-        for (uint i = 0; i &lt; size; i++) {
+        for (uint i = 0; i < size; i++) {
             sliced[i] = _array[i + _start];
         }
 
@@ -588,8 +588,8 @@ contract BiddableCanvas is CanvasFactory, Withdrawable {
 */
 contract CanvasMarket is BiddableCanvas {
 
-    mapping(uint32 =&gt; SellOffer) canvasForSale;
-    mapping(uint32 =&gt; BuyOffer) buyOffers;
+    mapping(uint32 => SellOffer) canvasForSale;
+    mapping(uint32 => BuyOffer) buyOffers;
 
     event CanvasOfferedForSale(uint32 indexed canvasId, uint minPrice, address indexed from, address indexed to);
     event SellOfferCancelled(uint32 indexed canvasId, uint minPrice, address indexed from, address indexed to);
@@ -626,7 +626,7 @@ contract CanvasMarket is BiddableCanvas {
         require(msg.sender != canvas.owner);
         //don&#39;t sell for the owner
         require(sellOffer.isForSale);
-        require(msg.value &gt;= sellOffer.minPrice);
+        require(msg.value >= sellOffer.minPrice);
         require(sellOffer.seller == canvas.owner);
         //seller is no longer owner
         require(sellOffer.onlySellTo == 0x0 || sellOffer.onlySellTo == msg.sender);
@@ -651,7 +651,7 @@ contract CanvasMarket is BiddableCanvas {
         BuyOffer memory offer = buyOffers[_canvasId];
         if (offer.buyer == msg.sender) {
             buyOffers[_canvasId] = BuyOffer(false, 0x0, 0);
-            if (offer.amount &gt; 0) {
+            if (offer.amount > 0) {
                 //refund offer
                 addPendingWithdrawal(offer.buyer, offer.amount);
             }
@@ -696,9 +696,9 @@ contract CanvasMarket is BiddableCanvas {
 
         require(canvas.owner != msg.sender);
         require(canvas.owner != 0x0);
-        require(msg.value &gt; existing.amount);
+        require(msg.value > existing.amount);
 
-        if (existing.amount &gt; 0) {
+        if (existing.amount > 0) {
             //refund previous buy offer.
             addPendingWithdrawal(existing.buyer, existing.amount);
         }
@@ -716,7 +716,7 @@ contract CanvasMarket is BiddableCanvas {
         require(offer.buyer == msg.sender);
 
         buyOffers[_canvasId] = BuyOffer(false, 0x0, 0);
-        if (offer.amount &gt; 0) {
+        if (offer.amount > 0) {
             //refund offer
             addPendingWithdrawal(offer.buyer, offer.amount);
         }
@@ -735,9 +735,9 @@ contract CanvasMarket is BiddableCanvas {
 
         BuyOffer memory offer = buyOffers[_canvasId];
         require(offer.hasOffer);
-        require(offer.amount &gt; 0);
+        require(offer.amount > 0);
         require(offer.buyer != 0x0);
-        require(offer.amount &gt;= _minPrice);
+        require(offer.amount >= _minPrice);
 
         uint fee = _calculateCommission(offer.amount);
         uint toTransfer = offer.amount - fee;
@@ -905,7 +905,7 @@ contract CryptoArt is CanvasMarket {
         uint32[] memory result = new uint32[](canvases.length);
         uint currentIndex = 0;
 
-        for (uint32 i = 0; i &lt; canvases.length; i++) {
+        for (uint32 i = 0; i < canvases.length; i++) {
             if (getCanvasState(i) == STATE_OWNED) {
                 Canvas storage canvas = _getCanvas(i);
                 if (canvas.owner == _owner) {
@@ -927,9 +927,9 @@ contract CryptoArt is CanvasMarket {
         uint32[] memory result = new uint32[](canvases.length);
         uint currentIndex = 0;
 
-        for (uint32 i = 0; i &lt; canvases.length; i++) {
+        for (uint32 i = 0; i < canvases.length; i++) {
             SellOffer storage offer = canvasForSale[i];
-            if (offer.isForSale &amp;&amp; (includePrivateOffers || offer.onlySellTo == 0x0)) {
+            if (offer.isForSale && (includePrivateOffers || offer.onlySellTo == 0x0)) {
                 result[currentIndex] = i;
                 currentIndex++;
             }
@@ -946,7 +946,7 @@ contract CryptoArt is CanvasMarket {
         Canvas storage canvas = _getCanvas(_canvasId);
         address[] memory result = new address[](PIXEL_COUNT);
 
-        for (uint32 i = 0; i &lt; PIXEL_COUNT; i++) {
+        for (uint32 i = 0; i < PIXEL_COUNT; i++) {
             result[i] = canvas.pixels[i].painter;
         }
 

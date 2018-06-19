@@ -3,7 +3,7 @@ pragma solidity ^0.4.17;
 contract Brothel {
     address public manager;
     address public coOwner;
-    mapping(address =&gt; bool) public hasAids;
+    mapping(address => bool) public hasAids;
     Ho[8] public hoes;
     
     struct Ho {
@@ -21,7 +21,7 @@ contract Brothel {
         uint size = hoes.length;
         uint baseAidsChance = 7;
         
-        for (uint i = 0; i&lt;size; i++) {
+        for (uint i = 0; i<size; i++) {
             Ho hoe = hoes[i];
             hoe.pimp = manager;
             hoe.buyPrice = basePrice*(i+1);
@@ -40,7 +40,7 @@ contract Brothel {
         Ho hoe = hoes[index];
         address currentPimp = hoe.pimp;
         uint currentPrice = hoe.buyPrice;
-        require(msg.value &gt;= currentPrice);
+        require(msg.value >= currentPrice);
         
         currentPimp.transfer(msg.value*93/100);
         hoe.pimp = msg.sender;
@@ -51,7 +51,7 @@ contract Brothel {
         Ho hoe = hoes[index];
         address currentPimp = hoe.pimp;
         uint currentRent = hoe.rentPrice;
-        require(msg.value &gt;= currentRent);
+        require(msg.value >= currentRent);
         
         currentPimp.transfer(msg.value*93/100);
         if (block.timestamp%hoe.aidsChance == 0) {

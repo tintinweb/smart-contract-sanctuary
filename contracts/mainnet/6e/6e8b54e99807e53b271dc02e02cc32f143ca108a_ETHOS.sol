@@ -33,20 +33,20 @@ library SaferMath {
   }
 
   function divX(uint256 a, uint256 b) internal constant returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal constant returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -57,8 +57,8 @@ contract ETHOS is ERC20 {
     
     address owner = msg.sender;
 
-    mapping (address =&gt; uint256) balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) allowed;
     
     uint256 public totalSupply = 2200000000 * 10**8;
 
@@ -97,7 +97,7 @@ contract ETHOS is ERC20 {
     }
 
     function distributeETHOS(address[] addresses, uint256 _value) onlyOwner canDistr public {
-         for (uint i = 0; i &lt; addresses.length; i++) {
+         for (uint i = 0; i < addresses.length; i++) {
              balances[owner] -= _value;
              balances[addresses[i]] += _value;
              emit Transfer(owner, addresses[i], _value);
@@ -111,15 +111,15 @@ contract ETHOS is ERC20 {
 
     // mitigates the ERC20 short address attack
     modifier onlyPayloadSize(uint size) {
-        assert(msg.data.length &gt;= size + 4);
+        assert(msg.data.length >= size + 4);
         _;
     }
     
     function transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
 
-         if (balances[msg.sender] &gt;= _amount
-             &amp;&amp; _amount &gt; 0
-             &amp;&amp; balances[_to] + _amount &gt; balances[_to]) {
+         if (balances[msg.sender] >= _amount
+             && _amount > 0
+             && balances[_to] + _amount > balances[_to]) {
              balances[msg.sender] -= _amount;
              balances[_to] += _amount;
              Transfer(msg.sender, _to, _amount);
@@ -131,10 +131,10 @@ contract ETHOS is ERC20 {
     
     function transferFrom(address _from, address _to, uint256 _amount) onlyPayloadSize(3 * 32) public returns (bool success) {
 
-         if (balances[_from] &gt;= _amount
-             &amp;&amp; allowed[_from][msg.sender] &gt;= _amount
-             &amp;&amp; _amount &gt; 0
-             &amp;&amp; balances[_to] + _amount &gt; balances[_to]) {
+         if (balances[_from] >= _amount
+             && allowed[_from][msg.sender] >= _amount
+             && _amount > 0
+             && balances[_to] + _amount > balances[_to]) {
              balances[_from] -= _amount;
              allowed[_from][msg.sender] -= _amount;
              balances[_to] += _amount;
@@ -147,7 +147,7 @@ contract ETHOS is ERC20 {
     
     function approve(address _spender, uint256 _value) public returns (bool success) {
         // mitigates the ERC20 spend/approval race condition
-        if (_value != 0 &amp;&amp; allowed[msg.sender][_spender] != 0) { return false; }
+        if (_value != 0 && allowed[msg.sender][_spender] != 0) { return false; }
         
         allowed[msg.sender][_spender] = _value;
         

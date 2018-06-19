@@ -165,7 +165,7 @@ contract LandCoin is owned, TokenERC20 {
 
     /// Modifier to only allow after ICO has started
     modifier inICOtimeframe() {
-        require((now >= icoStartUnix * 1 seconds &amp;&amp; now <= icoEndUnix * 1 seconds) || (icoOverride == true));
+        require((now >= icoStartUnix * 1 seconds && now <= icoEndUnix * 1 seconds) || (icoOverride == true));
         _;
     }
 
@@ -195,7 +195,7 @@ contract LandCoin is owned, TokenERC20 {
         emit Transfer(this, target, mintedAmount);
     }
 
-    /// @notice `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens
+    /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
     function freezeAccount(address target, bool freeze) onlyOwner public {
@@ -249,7 +249,7 @@ contract LandCoin is owned, TokenERC20 {
     	// A tokenholder gets the Eth back for their remaining token max
     	if(weiAmount > balanceOf[msg.sender] * buyPrice / (10 ** uint256(decimals))) { weiAmount = balanceOf[msg.sender] * buyPrice / (10 ** uint256(decimals)); }
     	
-        if (purchasedTokenAmount > 0 &amp;&amp; weiAmount > 0) {
+        if (purchasedTokenAmount > 0 && weiAmount > 0) {
 	        _transfer(msg.sender, this, purchasedTokenAmount);
             if (msg.sender.send(weiAmount)) {
                 paidIn[msg.sender] = 0;
@@ -261,7 +261,7 @@ contract LandCoin is owned, TokenERC20 {
     }
 
     function withdrawal() onlyOwner public returns (bool success) {
-		require(now > icoEndUnix &amp;&amp; !icoOverride);
+		require(now > icoEndUnix && !icoOverride);
 		address thisContract = this;
 		if (owner == msg.sender) {
             if (msg.sender.send(thisContract.balance)) {
@@ -274,7 +274,7 @@ contract LandCoin is owned, TokenERC20 {
     }
 
     function manualWithdrawalFallback(address target, uint256 amount) onlyOwner public returns (bool success) {
-    	require(now > icoEndUnix &amp;&amp; !icoOverride);
+    	require(now > icoEndUnix && !icoOverride);
     	address thisContract = this;
     	require(amount <= thisContract.balance);
 		if (owner == msg.sender) {

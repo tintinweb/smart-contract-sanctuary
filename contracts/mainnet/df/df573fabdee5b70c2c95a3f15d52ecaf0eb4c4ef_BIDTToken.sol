@@ -13,29 +13,29 @@ library SafeMath {
 	}
 
 	function sub(uint a, uint b) internal returns(uint) {
-		assert(b &lt;= a);
+		assert(b <= a);
 		return a - b;
 	}
 
 	function add(uint a, uint b) internal returns(uint) {
 		uint c = a + b;
-		assert(c &gt;= a);
+		assert(c >= a);
 		return c;
 	}
 	function max64(uint64 a, uint64 b) internal constant returns(uint64) {
-		return a &gt;= b ? a : b;
+		return a >= b ? a : b;
 	}
 
 	function min64(uint64 a, uint64 b) internal constant returns(uint64) {
-		return a &lt; b ? a : b;
+		return a < b ? a : b;
 	}
 
 	function max256(uint256 a, uint256 b) internal constant returns(uint256) {
-		return a &gt;= b ? a : b;
+		return a >= b ? a : b;
 	}
 
 	function min256(uint256 a, uint256 b) internal constant returns(uint256) {
-		return a &lt; b ? a : b;
+		return a < b ? a : b;
 	}
 
 	function assert(bool assertion) internal {
@@ -54,10 +54,10 @@ contract ERC20Basic {
 
 contract BasicToken is ERC20Basic {
 	using SafeMath 	for uint;
-	mapping(address =&gt; uint) balances;
+	mapping(address => uint) balances;
 
 	modifier onlyPayloadSize(uint size) {
-		if(msg.data.length &lt; size + 4) {
+		if(msg.data.length < size + 4) {
 			throw;
 		}
 		_;
@@ -83,7 +83,7 @@ contract ERC20 is ERC20Basic {
 }
 
 contract StandardToken is BasicToken, ERC20 {
-	mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+	mapping(address => mapping(address => uint)) allowed;
 	function transferFrom(address _from, address _to, uint _value) onlyPayloadSize(3 * 32) {
 		var _allowance = allowed[_from][msg.sender];
 		balances[_to] = balances[_to].add(_value);
@@ -93,7 +93,7 @@ contract StandardToken is BasicToken, ERC20 {
 	}
 
 	function approve(address _spender, uint _value) {
-		if((_value != 0) &amp;&amp; (allowed[msg.sender][_spender] != 0)) throw;
+		if((_value != 0) && (allowed[msg.sender][_spender] != 0)) throw;
 		allowed[msg.sender][_spender] = _value;
 		Approval(msg.sender, _spender, _value);
 	}
@@ -163,8 +163,8 @@ contract BIDTToken is StandardToken {
 
 	function issueToken() payable {
 	    if(allowedBuy){
-	        assert(msg.value &gt;= 1 ether );
-    		assert(msg.value &lt;= 50 ether );
+	        assert(msg.value >= 1 ether );
+    		assert(msg.value <= 50 ether );
     		uint tokens = computeTokenAmount(msg.value);
     		balances[msg.sender] = balances[msg.sender].add(tokens);
     		balances[target] = balances[target].sub(tokens);
@@ -178,7 +178,7 @@ contract BIDTToken is StandardToken {
 
 	function computeTokenAmount(uint ethAmount) internal constant returns(uint tokens) {
 		uint tokenBase = ethAmount.mul(baseRate);
-		if(	balances[target] &gt; (totalSupply.div(100)).mul(8-basePublicPlacement)){
+		if(	balances[target] > (totalSupply.div(100)).mul(8-basePublicPlacement)){
 		    	tokens = tokenBase;
 		}else{
 		   	throw;

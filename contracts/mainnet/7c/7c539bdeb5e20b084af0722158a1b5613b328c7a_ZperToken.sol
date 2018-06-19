@@ -9,8 +9,8 @@ contract ZperToken {
 	string public constant symbol = &quot;ZPR&quot;;
 	uint8 public constant decimals = 18;
 
-	mapping (address =&gt; uint256) public balances;
-	mapping (address =&gt; mapping (address =&gt; uint256)) public allowed;
+	mapping (address => uint256) public balances;
+	mapping (address => mapping (address => uint256)) public allowed;
 
 	event Mint(address indexed to, uint256 amount);
 	event Transfer(address indexed _from, address indexed _to, uint256 _value);
@@ -20,7 +20,7 @@ contract ZperToken {
 
 	function ZperToken (address _owner, uint256 _totalSupply, uint256 _cap) public {
 		require(_owner != address(0));
-		require(_cap &gt; _totalSupply &amp;&amp; _totalSupply &gt; 0);
+		require(_cap > _totalSupply && _totalSupply > 0);
 		
 		totalSupply = _totalSupply * (10 ** 18);
 		cap = _cap * (10 ** 18);
@@ -41,7 +41,7 @@ contract ZperToken {
 	}
 
 	function transfer(address _to, uint256 _value) public returns (bool success) {
-		require(balances[msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt; balances[_to]);
+		require(balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]);
 		balances[msg.sender] -= _value;
 		balances[_to] += _value;
 		emit Transfer(msg.sender, _to, _value);
@@ -49,8 +49,8 @@ contract ZperToken {
 	}
 
 	function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-		require(balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value
-			   	&amp;&amp; balances[_to] + _value &gt; balances[_to]);
+		require(balances[_from] >= _value && allowed[_from][msg.sender] >= _value
+			   	&& balances[_to] + _value > balances[_to]);
 		balances[_to] += _value;
 		balances[_from] -= _value;
 		allowed[_from][msg.sender] -= _value;
@@ -73,8 +73,8 @@ contract ZperToken {
 	}
 
 	function mint(address _to, uint256 _amount) onlyOwner public returns (bool) {
-		require(cap &gt;= totalSupply + _amount);
-		require(totalSupply + _amount &gt; totalSupply &amp;&amp; balances[_to] + _amount &gt; balances[_to]);
+		require(cap >= totalSupply + _amount);
+		require(totalSupply + _amount > totalSupply && balances[_to] + _amount > balances[_to]);
 		totalSupply += _amount;
 		balances[_to] += _amount;
 		emit Mint(_to, _amount);
@@ -83,7 +83,7 @@ contract ZperToken {
 	}
 
 	function burn(uint256 _value) public returns (bool) {
-		require(_value &lt;= balances[msg.sender]);
+		require(_value <= balances[msg.sender]);
 		balances[msg.sender] -= _value;
 		totalSupply -= _value;
 		emit Burn(msg.sender, _value);
@@ -95,12 +95,12 @@ contract ZperToken {
 		require(_tos.length == _amount.length);
 		uint256 i;
 		uint256 sum = 0;
-		for(i = 0; i &lt; _amount.length; i++)
+		for(i = 0; i < _amount.length; i++)
 			sum += _amount[i];
 
-		require(balances[msg.sender] &gt;= sum);
+		require(balances[msg.sender] >= sum);
 
-		for(i = 0; i &lt; _tos.length; i++)
+		for(i = 0; i < _tos.length; i++)
 			transfer(_tos[i], _amount[i]);
 
 		return true;

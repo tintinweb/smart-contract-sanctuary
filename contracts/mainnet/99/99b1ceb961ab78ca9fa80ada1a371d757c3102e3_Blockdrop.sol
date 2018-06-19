@@ -18,20 +18,20 @@ library SafeMath {
   }
 
  function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -93,14 +93,14 @@ contract Blockdrop is ERC20Interface,Ownable {
    uint256 public decimals;
 
    uint256 public _totalSupply;
-   mapping(address =&gt; uint256) tokenBalances;
+   mapping(address => uint256) tokenBalances;
    address ownerWallet;
    // Owner of account approves the transfer of an amount to another account
-   mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+   mapping (address => mapping (address => uint256)) allowed;
    event Debug(string message, address addr, uint256 number);
 
     modifier checkSize(uint numwords) {
-        assert(msg.data.length &gt;= numwords * 32 + 4);
+        assert(msg.data.length >= numwords * 32 + 4);
         _;
     }     
     
@@ -125,7 +125,7 @@ contract Blockdrop is ERC20Interface,Ownable {
      // Transfer the balance from owner&#39;s account to another account
      function transfer(address to, uint tokens) public checkSize(2) returns (bool success) {
          require(to != address(0));
-         require(tokens &lt;= tokenBalances[msg.sender]);
+         require(tokens <= tokenBalances[msg.sender]);
          tokenBalances[msg.sender] = tokenBalances[msg.sender].sub(tokens);
          tokenBalances[to] = tokenBalances[to].add(tokens);
          Transfer(msg.sender, to, tokens);
@@ -140,8 +140,8 @@ contract Blockdrop is ERC20Interface,Ownable {
    */
   function transferFrom(address _from, address _to, uint256 _value) public checkSize(3) returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= tokenBalances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= tokenBalances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     tokenBalances[_from] = tokenBalances[_from].sub(_value);
     tokenBalances[_to] = tokenBalances[_to].add(_value);

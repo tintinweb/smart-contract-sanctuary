@@ -12,20 +12,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal constant returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal constant returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -49,7 +49,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -58,7 +58,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &gt; 0 &amp;&amp; _value &lt;= balances[msg.sender]);
+    require(_value > 0 && _value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -98,7 +98,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -109,8 +109,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &gt; 0 &amp;&amp; _value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value > 0 && _value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -239,7 +239,7 @@ contract Pausable is Ownable {
  **/
 
 contract PausableToken is StandardToken, Pausable {
-  mapping (address =&gt; bool) public frozenAccount;
+  mapping (address => bool) public frozenAccount;
   event FrozenFunds(address target, bool frozen);
 
   function transfer(address _to, uint256 _value) public whenNotPaused returns (bool) {
@@ -259,11 +259,11 @@ contract PausableToken is StandardToken, Pausable {
     require(!frozenAccount[msg.sender]);
     uint cnt = _receivers.length;
     uint256 amount = uint256(cnt).mul(_value);
-    require(cnt &gt; 0 &amp;&amp; cnt &lt;= 50);
-    require(_value &gt; 0 &amp;&amp; balances[msg.sender] &gt;= amount);
+    require(cnt > 0 && cnt <= 50);
+    require(_value > 0 && balances[msg.sender] >= amount);
     
     balances[msg.sender] = balances[msg.sender].sub(amount);
-    for (uint i = 0; i &lt; cnt; i++) {
+    for (uint i = 0; i < cnt; i++) {
         balances[_receivers[i]] = balances[_receivers[i]].add(_value);
         Transfer(msg.sender, _receivers[i], _value);
     }
@@ -276,7 +276,7 @@ contract PausableToken is StandardToken, Pausable {
   }
   
   function batchFreeze(address[] addresses, bool freeze) onlyOwner public {
-    for (uint i = 0; i &lt; addresses.length; i++) {
+    for (uint i = 0; i < addresses.length; i++) {
         frozenAccount[addresses[i]] = freeze;
         FrozenFunds(addresses[i], freeze);
     }
@@ -292,7 +292,7 @@ contract AdvancedToken is PausableToken {
     /**
     * Public variables of the token
     * The following variables are OPTIONAL vanities. One does not have to include them.
-    * They allow one to customise the token contract &amp; in no way influences the core functionality.
+    * They allow one to customise the token contract & in no way influences the core functionality.
     * Some wallets/interfaces might not even bother to look at this information.
     */
     string public name = &quot;MicroBusinessCoin&quot;;

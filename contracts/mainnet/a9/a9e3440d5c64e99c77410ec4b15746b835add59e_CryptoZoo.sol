@@ -45,14 +45,14 @@ contract ActivityStorage is StorageBase {
         uint64 startDate;
         // endDate (in seconds)
         uint64 endDate;
-        // packId =&gt; address of bid winner
-        mapping(uint16 =&gt; address) soldPackToAddress;
-        // address =&gt; number of success bid
-        mapping(address =&gt; uint16) addressBoughtCount;
+        // packId => address of bid winner
+        mapping(uint16 => address) soldPackToAddress;
+        // address => number of success bid
+        mapping(address => uint16) addressBoughtCount;
     }
 
     // limit max activityId to 65536, big enough
-    mapping(uint16 =&gt; Activity) public activities;
+    mapping(uint16 => Activity) public activities;
 
     function createActivity(
         uint16 _activityId,
@@ -326,15 +326,15 @@ contract ActivityCore is LogicBase {
         // not allow to bid when activity is paused
         require(!isPause);
         // not allow to bid when activity is not initialized (buyLimit == 0)
-        require(buyLimit &gt; 0);
+        require(buyLimit > 0);
         // should send enough ether
-        require(msg.value &gt;= packPrice);
-        // verify startDate &amp; endDate
-        require(now &gt;= startDate &amp;&amp; now &lt;= endDate);
+        require(msg.value >= packPrice);
+        // verify startDate & endDate
+        require(now >= startDate && now <= endDate);
         // this pack is not sold out
         require(activityStorage.getBuyerAddress(_activityId, _packId) == address(0));
         // buyer not exceed buyLimit
-        require(activityStorage.getAddressBoughtCount(_activityId, msg.sender) &lt; buyLimit);
+        require(activityStorage.getAddressBoughtCount(_activityId, msg.sender) < buyLimit);
         // record in blockchain
         activityStorage.sellPackToAddress(_activityId, _packId, msg.sender);
         // emit the success event
@@ -369,17 +369,17 @@ contract CryptoStorage is StorageBase {
     // number of monsters in pregnant
     uint256 public pregnantMonsters;
     
-    // monsterId =&gt; total number
-    mapping (uint256 =&gt; uint32) public monsterCurrentNumber;
+    // monsterId => total number
+    mapping (uint256 => uint32) public monsterCurrentNumber;
     
-    // tokenId =&gt; owner address
-    mapping (uint256 =&gt; address) public monsterIndexToOwner;
+    // tokenId => owner address
+    mapping (uint256 => address) public monsterIndexToOwner;
 
-    // owner address =&gt; balance of tokens
-    mapping (address =&gt; uint256) public ownershipTokenCount;
+    // owner address => balance of tokens
+    mapping (address => uint256) public ownershipTokenCount;
 
-    // tokenId =&gt; approved address
-    mapping (uint256 =&gt; address) public monsterIndexToApproved;
+    // tokenId => approved address
+    mapping (uint256 => address) public monsterIndexToApproved;
 
     function CryptoStorage() public {
         // placeholder to make the first available monster to have a tokenId starts from 1
@@ -448,7 +448,7 @@ contract CryptoStorage is StorageBase {
         Monster storage monster = monsters[_tokenId];
 
         isGestating = (monster.siringWithId != 0);
-        isReady = (monster.cooldownEndBlock &lt;= block.number);
+        isReady = (monster.cooldownEndBlock <= block.number);
         cooldownIndex = monster.cooldownIndex;
         nextActionAt = monster.cooldownEndBlock;
         siringWithId = monster.siringWithId;
@@ -581,7 +581,7 @@ contract ClockAuctionStorage is StorageBase {
     }
 
     // Map from token ID to their corresponding auction.
-    mapping (uint256 =&gt; Auction) tokenIdToAuction;
+    mapping (uint256 => Auction) tokenIdToAuction;
 
     function addAuction(
         uint256 _tokenId,
@@ -629,7 +629,7 @@ contract ClockAuctionStorage is StorageBase {
     }
 
     function isOnAuction(uint256 _tokenId) external view returns (bool) {
-        return (tokenIdToAuction[_tokenId].startedAt &gt; 0);
+        return (tokenIdToAuction[_tokenId].startedAt > 0);
     }
 
     function getSeller(uint256 _tokenId) external view returns (address) {
@@ -655,7 +655,7 @@ contract SaleClockAuctionStorage is ClockAuctionStorage {
     uint256 public systemOnSaleCount;
 
     // map of on sale token ids from system
-    mapping (uint256 =&gt; bool) systemOnSaleTokens;
+    mapping (uint256 => bool) systemOnSaleTokens;
 
     function removeAuction(uint256 _tokenId) public onlyOwner {
         // first remove auction from state variable
@@ -665,7 +665,7 @@ contract SaleClockAuctionStorage is ClockAuctionStorage {
         if (systemOnSaleTokens[_tokenId]) {
             delete systemOnSaleTokens[_tokenId];
             
-            if (systemOnSaleCount &gt; 0) {
+            if (systemOnSaleCount > 0) {
                 systemOnSaleCount--;
             }
         }
@@ -687,8 +687,8 @@ contract SaleClockAuctionStorage is ClockAuctionStorage {
         if (totalSoldCount == 0) return 0;
         
         uint256 sum = 0;
-        uint256 len = (totalSoldCount &lt; 3 ? totalSoldCount : 3);
-        for (uint256 i = 0; i &lt; len; i++) {
+        uint256 len = (totalSoldCount < 3 ? totalSoldCount : 3);
+        for (uint256 i = 0; i < len; i++) {
             sum += lastSoldPrices[i];
         }
         return sum / len;
@@ -721,7 +721,7 @@ contract ClockAuction is LogicBase {
     }
 
     function setOwnerCut(uint256 _cut) public onlyOwner {
-        require(_cut &lt;= 10000);
+        require(_cut <= 10000);
         ownerCut = _cut;
     }
 
@@ -730,7 +730,7 @@ contract ClockAuction is LogicBase {
     }
 
     function getMinPrice() public view returns (uint256) {
-        // return ownerCut &gt; 0 ? (minCutValue / ownerCut * 10000) : 0;
+        // return ownerCut > 0 ? (minCutValue / ownerCut * 10000) : 0;
         // use minCutValue directly, when the price == minCutValue seller will get no profit
         return minCutValue;
     }
@@ -738,7 +738,7 @@ contract ClockAuction is LogicBase {
     // Only auction from none system user need to verify the price
     // System auction can set any price
     function isValidPrice(uint256 _startingPrice, uint256 _endingPrice) public view returns (bool) {
-        return (_startingPrice &lt; _endingPrice ? _startingPrice : _endingPrice) &gt;= getMinPrice();
+        return (_startingPrice < _endingPrice ? _startingPrice : _endingPrice) >= getMinPrice();
     }
 
     function createAuction(
@@ -762,7 +762,7 @@ contract ClockAuction is LogicBase {
         nonFungibleContract.transferFrom(_seller, address(clockAuctionStorage), _tokenId);
 
         // Require that all auctions have a duration of at least one minute.
-        require(_duration &gt;= 1 minutes);
+        require(_duration >= 1 minutes);
 
         clockAuctionStorage.addAuction(
             _tokenId,
@@ -825,7 +825,7 @@ contract ClockAuction is LogicBase {
 
         // Check that the bid is greater than or equal to the current price
         uint256 price = _currentPrice(_tokenId);
-        require(_bidAmount &gt;= price);
+        require(_bidAmount >= price);
 
         address seller = clockAuctionStorage.getSeller(_tokenId);
         uint256 sellerProceeds = 0;
@@ -834,7 +834,7 @@ contract ClockAuction is LogicBase {
         clockAuctionStorage.removeAuction(_tokenId);
 
         // Transfer proceeds to seller (if there are any!)
-        if (price &gt; 0) {
+        if (price > 0) {
             // Calculate the auctioneer&#39;s cut, so this subtraction can&#39;t go negative
             uint256 auctioneerCut = _computeCut(price);
             sellerProceeds = price - auctioneerCut;
@@ -865,7 +865,7 @@ contract ClockAuction is LogicBase {
         uint64 startedAt;
         (seller, startingPrice, endingPrice, duration, startedAt) = clockAuctionStorage.getAuction(_tokenId);
 
-        if (now &gt; startedAt) {
+        if (now > startedAt) {
             secondsPassed = now - startedAt;
         }
 
@@ -887,7 +887,7 @@ contract ClockAuction is LogicBase {
         pure
         returns (uint256)
     {
-        if (_secondsPassed &gt;= _duration) {
+        if (_secondsPassed >= _duration) {
             return _endingPrice;
         } else {
             // this delta can be negative.
@@ -907,8 +907,8 @@ contract ClockAuction is LogicBase {
 
     function _computeCut(uint256 _price) internal view returns (uint256) {
         uint256 cutValue = _price * ownerCut / 10000;
-        if (_price &lt; minCutValue) return cutValue;
-        if (cutValue &gt; minCutValue) return cutValue;
+        if (_price < minCutValue) return cutValue;
+        if (cutValue > minCutValue) return cutValue;
         return minCutValue;
     }
 }
@@ -991,7 +991,7 @@ contract SaleClockAuction is ClockAuction {
 
         uint256 nextPrice = avePrice + (avePrice / 2);
 
-        if (nextPrice &lt; systemStartingPriceMin) {
+        if (nextPrice < systemStartingPriceMin) {
             nextPrice = systemStartingPriceMin;
         }
 
@@ -1165,7 +1165,7 @@ contract Zoo721 is ZooAccessControl, ERC721 {
 
             uint256 tokenId;
 
-            for (tokenId = 1; tokenId &lt;= totalTokens; tokenId++) {
+            for (tokenId = 1; tokenId <= totalTokens; tokenId++) {
                 if (cryptoStorage.monsterIndexToOwner(tokenId) == _owner) {
                     result[resultIndex] = tokenId;
                     resultIndex++;
@@ -1328,7 +1328,7 @@ contract CryptoZoo is Zoo721 {
         // Subtract all the currently pregnant kittens we have, plus 1 of margin.
         uint256 subtractFees = (cryptoStorage.pregnantMonsters() + 1) * autoBirthFee;
 
-        if (balance &gt; subtractFees) {
+        if (balance > subtractFees) {
             cfoAddress.transfer(balance - subtractFees);
         }
     }
@@ -1364,7 +1364,7 @@ contract CryptoZoo is Zoo721 {
     }
 
     function setSecondsPerBlock(uint256 _secs) public onlyCLevel {
-        require(_secs &lt; hatchDurationByTimes[0]);
+        require(_secs < hatchDurationByTimes[0]);
         secondsPerBlock = _secs;
     }
 
@@ -1372,18 +1372,18 @@ contract CryptoZoo is Zoo721 {
     function setHatchDurationByTimes(uint32[] _durationByTimes) public onlyCLevel {
         uint256 len = _durationByTimes.length;
         // hatch duration should not be empty
-        require(len &gt; 0);
+        require(len > 0);
         // check overflow
         require(len == uint256(uint16(len)));
         
         delete hatchDurationByTimes;
         
         uint32 value;
-        for (uint256 idx = 0; idx &lt; len; idx++) {
+        for (uint256 idx = 0; idx < len; idx++) {
             value = _durationByTimes[idx];
             
             // duration must be larger than 1 minute, and must be an integral multiple of 1 minute
-            require(value &gt;= 1 minutes &amp;&amp; value % 1 minutes == 0);
+            require(value >= 1 minutes && value % 1 minutes == 0);
             
             hatchDurationByTimes.push(value);
         }
@@ -1397,18 +1397,18 @@ contract CryptoZoo is Zoo721 {
     function setHatchDurationMultiByGeneration(uint32[] _multiByGeneration) public onlyCLevel {
         uint256 len = _multiByGeneration.length;
         // multi configuration should not be empty
-        require(len &gt; 0);
+        require(len > 0);
         // check overflow
         require(len == uint256(uint16(len)));
         
         delete hatchDurationMultiByGeneration;
         
         uint32 value;
-        for (uint256 idx = 0; idx &lt; len; idx++) {
+        for (uint256 idx = 0; idx < len; idx++) {
             value = _multiByGeneration[idx];
             
             // multiple must be larger than 60, and must be an integral multiple of secondsPerBlock
-            require(value &gt;= 60 &amp;&amp; value % secondsPerBlock == 0);
+            require(value >= 60 && value % secondsPerBlock == 0);
             
             hatchDurationMultiByGeneration.push(value);
         }
@@ -1452,7 +1452,7 @@ contract CryptoZoo is Zoo721 {
         onlyCOO 
         whenNotPaused 
     {
-        require(_tokenId &gt; 0 &amp;&amp; cryptoStorage.getMonsterCount() + 1 == _tokenId);
+        require(_tokenId > 0 && cryptoStorage.getMonsterCount() + 1 == _tokenId);
         
         createPromoMonster(_monsterId, _properties, _owner);
     }
@@ -1466,7 +1466,7 @@ contract CryptoZoo is Zoo721 {
         onlyCOO
         whenNotPaused
     {
-        require(cryptoStorage.systemCreatedCount() &lt; SYSTEM_CREATION_LIMIT);
+        require(cryptoStorage.systemCreatedCount() < SYSTEM_CREATION_LIMIT);
 
         uint256 tokenId = _createMonster(
             0, 
@@ -1494,7 +1494,7 @@ contract CryptoZoo is Zoo721 {
         external
         whenNotPaused
     {
-        require(_tokenId &gt; 0);
+        require(_tokenId > 0);
         require(_owns(msg.sender, _tokenId));
         // the monster must not pregnant othewise the birth child may owned by the the sale auction or the buyer
         require(!isPregnant(_tokenId));
@@ -1519,7 +1519,7 @@ contract CryptoZoo is Zoo721 {
         external
         whenNotPaused
     {
-        require(_tokenId &gt; 0);
+        require(_tokenId > 0);
         require(_owns(msg.sender, _tokenId));
         require(isReadyToBreed(_tokenId));
         require(siringAuction.isValidPrice(_startingPrice, _endingPrice));
@@ -1543,7 +1543,7 @@ contract CryptoZoo is Zoo721 {
         payable
         whenNotPaused
     {
-        require(_matronId &gt; 0);
+        require(_matronId > 0);
         require(_owns(msg.sender, _matronId));
         require(isReadyToBreed(_matronId));
         require(isValidMatingPair(_matronId, _sireId));
@@ -1551,7 +1551,7 @@ contract CryptoZoo is Zoo721 {
         // Define the current price of the auction.
         uint256 currentPrice = siringAuction.getCurrentPrice(_sireId);
         uint256 breedCost = currentPrice + autoBirthFee;
-        require(msg.value &gt;= breedCost);
+        require(msg.value >= breedCost);
 
         // Siring auction will throw if the bid fails.
         siringAuction.bid.value(msg.value - autoBirthFee)(_sireId, msg.sender);
@@ -1565,7 +1565,7 @@ contract CryptoZoo is Zoo721 {
         whenNotPaused
     {
         // Checks for payment.
-        require(msg.value &gt;= autoBirthFee);
+        require(msg.value >= autoBirthFee);
 
         // Caller must own the matron and sire
         require(_owns(msg.sender, _matronId));
@@ -1606,7 +1606,7 @@ contract CryptoZoo is Zoo721 {
         // determine higher generation of the parents
         uint16 parentGen = cryptoStorage.getGeneration(_matronId);
         uint16 sireGen = cryptoStorage.getGeneration(sireId);
-        if (sireGen &gt; parentGen) parentGen = sireGen;
+        if (sireGen > parentGen) parentGen = sireGen;
 
         address owner = cryptoStorage.monsterIndexToOwner(_matronId);
         uint256 tokenId = _createMonster(
@@ -1632,21 +1632,21 @@ contract CryptoZoo is Zoo721 {
     }
 
     function computeCooldownSeconds(uint16 _hatchTimes, uint16 _generation) public view returns (uint32) {
-        require(hatchDurationByTimes.length &gt; 0);
-        require(hatchDurationMultiByGeneration.length &gt; 0);
+        require(hatchDurationByTimes.length > 0);
+        require(hatchDurationMultiByGeneration.length > 0);
 
         uint16 hatchTimesMax = uint16(hatchDurationByTimes.length - 1);
-        uint16 hatchTimes = (_hatchTimes &gt; hatchTimesMax ? hatchTimesMax : _hatchTimes);
+        uint16 hatchTimes = (_hatchTimes > hatchTimesMax ? hatchTimesMax : _hatchTimes);
         
         uint16 generationMax = uint16(hatchDurationMultiByGeneration.length - 1);
-        uint16 generation = (_generation &gt; generationMax ? generationMax : _generation);
+        uint16 generation = (_generation > generationMax ? generationMax : _generation);
 
         return hatchDurationByTimes[hatchTimes] * hatchDurationMultiByGeneration[generation] / 60;
     }
 
     function isReadyToBreed(uint256 _tokenId) public view returns (bool) {
         // not pregnant and not in cooldown
-        return (cryptoStorage.getSiringWithId(_tokenId) == 0) &amp;&amp; (cryptoStorage.getCooldownEndBlock(_tokenId) &lt;= uint64(block.number));
+        return (cryptoStorage.getSiringWithId(_tokenId) == 0) && (cryptoStorage.getCooldownEndBlock(_tokenId) <= uint64(block.number));
     }
 
     function isPregnant(uint256 _tokenId) public view returns (bool) {

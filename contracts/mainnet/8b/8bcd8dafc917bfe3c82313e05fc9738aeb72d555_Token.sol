@@ -16,13 +16,13 @@ library SafeMath {
     }
 
     function sub(uint256 a, uint256 b) internal pure returns(uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns(uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -62,7 +62,7 @@ contract Manageable is Ownable {
     }
 
     function isManager(address _manager) view public returns(bool) {
-        for(uint i = 0; i &lt; managers.length; i++) {
+        for(uint i = 0; i < managers.length; i++) {
             if(managers[i] == _manager) {
                 return true;
             }
@@ -83,13 +83,13 @@ contract Manageable is Ownable {
         require(isManager(_manager));
 
         uint index = 0;
-        for(uint i = 0; i &lt; managers.length; i++) {
+        for(uint i = 0; i < managers.length; i++) {
             if(managers[i] == _manager) {
                 index = i;
             }
         }
 
-        for(; index &lt; managers.length - 1; index++) {
+        for(; index < managers.length - 1; index++) {
             managers[index] = managers[index + 1];
         }
         
@@ -101,7 +101,7 @@ contract Manageable is Ownable {
 contract Withdrawable is Ownable {
     function withdrawEther(address _to, uint _value) onlyOwner public returns(bool) {
         require(_to != address(0));
-        require(this.balance &gt;= _value);
+        require(this.balance >= _value);
 
         _to.transfer(_value);
 
@@ -155,8 +155,8 @@ contract StandardToken is ERC20 {
     string public symbol;
     uint8 public decimals;
 
-    mapping(address =&gt; uint256) balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping(address => uint256) balances;
+    mapping (address => mapping (address => uint256)) internal allowed;
 
     function StandardToken(string _name, string _symbol, uint8 _decimals) public {
         name = _name;
@@ -170,7 +170,7 @@ contract StandardToken is ERC20 {
 
     function transfer(address _to, uint256 _value) public returns(bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
 
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -183,7 +183,7 @@ contract StandardToken is ERC20 {
     function multiTransfer(address[] _to, uint256[] _value) public returns(bool) {
         require(_to.length == _value.length);
 
-        for(uint i = 0; i &lt; _to.length; i++) {
+        for(uint i = 0; i < _to.length; i++) {
             transfer(_to[i], _value[i]);
         }
 
@@ -192,8 +192,8 @@ contract StandardToken is ERC20 {
 
     function transferFrom(address _from, address _to, uint256 _value) public returns(bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -227,7 +227,7 @@ contract StandardToken is ERC20 {
     function decreaseApproval(address _spender, uint _subtractedValue) public returns(bool) {
         uint oldValue = allowed[msg.sender][_spender];
 
-        if(_subtractedValue &gt; oldValue) {
+        if(_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -270,12 +270,12 @@ contract CappedToken is MintableToken {
     uint256 public cap;
 
     function CappedToken(uint256 _cap) public {
-        require(_cap &gt; 0);
+        require(_cap > 0);
         cap = _cap;
     }
 
     function mint(address _to, uint256 _amount) onlyOwner canMint public returns(bool) {
-        require(totalSupply.add(_amount) &lt;= cap);
+        require(totalSupply.add(_amount) <= cap);
 
         return super.mint(_to, _amount);
     }
@@ -285,7 +285,7 @@ contract BurnableToken is StandardToken {
     event Burn(address indexed burner, uint256 value);
 
     function burn(uint256 _value) public {
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
 
         address burner = msg.sender;
 

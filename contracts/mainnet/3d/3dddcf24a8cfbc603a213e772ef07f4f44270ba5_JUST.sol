@@ -19,7 +19,7 @@ Quick rundown on them:
 >both brothers said to have 200+ IQ
 >ancient Indian scriptures tell of two angels who will descend upon the Earth and will bring an era of enlightenment
 >These are the Bogdanoff twins
->They own Nanobot R&amp;D labs around the world
+>They own Nanobot R&D labs around the world
 >You likely have Bogdabots inside you right now
 >The Bogdanoffs are in regular communication with the Archangels Michael and Gabriel, forwarding the word of God to the Church
 >They learned fluent French in under a week

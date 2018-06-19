@@ -18,20 +18,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -125,15 +125,15 @@ contract BonusScheme is Ownable {
 	 * @return Number of bonus tokens that can be granted with the specified _tokenAmount.
 	 */
 	function getBonusTokens(uint256 _tokenAmount)onlyOwner public returns(uint256) {
-		if (block.timestamp &gt;= startOfFirstBonus &amp;&amp; block.timestamp &lt;= endOfFirstBonus) {
+		if (block.timestamp >= startOfFirstBonus && block.timestamp <= endOfFirstBonus) {
 			_tokenAmount = _tokenAmount.mul(firstBonus).div(100);
-		} else if (block.timestamp &gt;= startOfSecondBonus &amp;&amp; block.timestamp &lt;= endOfSecondBonus) {
+		} else if (block.timestamp >= startOfSecondBonus && block.timestamp <= endOfSecondBonus) {
 			_tokenAmount = _tokenAmount.mul(secondBonus).div(100);
-		} else if (block.timestamp &gt;= startOfThirdBonus &amp;&amp; block.timestamp &lt;= endOfThirdBonus) {
+		} else if (block.timestamp >= startOfThirdBonus && block.timestamp <= endOfThirdBonus) {
 			_tokenAmount = _tokenAmount.mul(thirdBonus).div(100);
-		} else if (block.timestamp &gt;= startOfFourthBonus &amp;&amp; block.timestamp &lt;= endOfFourthBonus) {
+		} else if (block.timestamp >= startOfFourthBonus && block.timestamp <= endOfFourthBonus) {
 			_tokenAmount = _tokenAmount.mul(fourthBonus).div(100);
-		} else if (block.timestamp &gt;= startOfFifthBonus &amp;&amp; block.timestamp &lt;= endOfFifthBonus) {
+		} else if (block.timestamp >= startOfFifthBonus && block.timestamp <= endOfFifthBonus) {
 			_tokenAmount = _tokenAmount.mul(fifthBonus).div(100);
 		} else _tokenAmount=0;
 		emit BonusCalculated(_tokenAmount);

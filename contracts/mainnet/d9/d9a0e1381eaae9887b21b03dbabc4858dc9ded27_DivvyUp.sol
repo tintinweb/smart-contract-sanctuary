@@ -6,11 +6,11 @@ pragma solidity 0.4.23;
 * ====================================================================*
 *&#39;||&#39;&#39;|.    ||                                    &#39;||&#39;  &#39;|&#39;         
 * ||   ||  ...  .... ... .... ... .... ...      ,  ||    |  ... ... 
-* ||    ||  ||   &#39;|.  |   &#39;|.  |   &#39;|.  |  &lt;&gt;  /   ||    |   ||&#39;  ||
+* ||    ||  ||   &#39;|.  |   &#39;|.  |   &#39;|.  |  <>  /   ||    |   ||&#39;  ||
 * ||    ||  ||    &#39;|.|     &#39;|.|     &#39;|.|      /    ||    |   ||    |
 *.||...|&#39;  .||.    &#39;|       &#39;|       &#39;|      /      &#39;|..&#39;    ||...&#39; 
 *                                 .. |      /                ||     
-*                                  &#39;&#39;      /  &lt;&gt;            &#39;&#39;&#39;&#39;    
+*                                  &#39;&#39;      /  <>            &#39;&#39;&#39;&#39;    
 * =====================================================================*
 *
 * A wealth redistribution smart contract cleverly disguised as a ERC20 token.
@@ -92,7 +92,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -102,7 +102,7 @@ library SafeMath {
     * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -111,7 +111,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -201,13 +201,13 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
     =================================*/
     // only people with tokens
     modifier onlyTokenHolders() {
-        require(myTokens() &gt; 0);
+        require(myTokens() > 0);
         _;
     }
     
     // only people with profits
     modifier onlyDividendHolders() {
-        require(dividendDivisor &gt; 0 &amp;&amp; myDividends() &gt; 0);
+        require(dividendDivisor > 0 && myDividends() > 0);
         _;
     }
 
@@ -258,11 +258,11 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
     =            DATASETS            =
     ================================*/
     // amount of tokens for each address
-    mapping(address =&gt; uint256) internal tokenBalanceLedger;
+    mapping(address => uint256) internal tokenBalanceLedger;
     // amount of eth withdrawn
-    mapping(address =&gt; int256) internal payoutsTo;
+    mapping(address => int256) internal payoutsTo;
     // amount of tokens allowed to someone else 
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => mapping(address => uint)) allowed;
     // the actual amount of tokens
     uint256 internal tokenSupply = 0;
     // the amount of dividends per token
@@ -276,7 +276,7 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
     */
     function DivvyUp(bytes32 aName, bytes32 aSymbol, uint8 aDividendDivisor, uint8 aDecimals, uint256 aTokenPriceInitial, uint256 aTokenPriceIncremental, uint256 aMagnitude, address aCounter) 
     public {
-        require(aDividendDivisor &lt; 100);
+        require(aDividendDivisor < 100);
         name = aName;
         symbol = aSymbol;
         dividendDivisor = aDividendDivisor;
@@ -310,7 +310,7 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
         payable
         returns(uint256)
     {
-        if(msg.value &gt; 0){
+        if(msg.value > 0){
             require(counter == 0x0);
         }
         return purchaseTokens(msg.value);
@@ -338,7 +338,7 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
         payable
         public
     {
-        if(msg.value &gt; 0){
+        if(msg.value > 0){
             require(counter == 0x0);
         }
         purchaseTokens(msg.value);
@@ -375,10 +375,10 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
     function exit()
         public
     {
-        // get token count for caller &amp; sell them all
+        // get token count for caller & sell them all
         address customerAddress = msg.sender;
         uint256 tokens = tokenBalanceLedger[customerAddress];
-        if(tokens &gt; 0) {
+        if(tokens > 0) {
             sell(tokens);
         }
         // lambo delivery service
@@ -410,14 +410,14 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
         onlyTokenHolders()
         public
     {
-        require(amountOfTokens &gt; 0);
+        require(amountOfTokens > 0);
         // setup data
         address customerAddress = msg.sender;
         // russian hackers BTFO
-        require(amountOfTokens &lt;= tokenBalanceLedger[customerAddress]);
+        require(amountOfTokens <= tokenBalanceLedger[customerAddress]);
         uint256 tokens = amountOfTokens;
         uint256 counterAmount = tokensToCounter(tokens);
-        uint256 dividends = dividendDivisor &gt; 0 ? SafeMath.div(counterAmount, dividendDivisor) : 0;
+        uint256 dividends = dividendDivisor > 0 ? SafeMath.div(counterAmount, dividendDivisor) : 0;
         uint256 taxedCounter = SafeMath.sub(counterAmount, dividends);
         
         // burn the sold tokens
@@ -429,7 +429,7 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
         payoutsTo[customerAddress] -= updatedPayouts;       
         
         // dividing by zero is a bad idea
-        if (tokenSupply &gt; 0 &amp;&amp; dividendDivisor &gt; 0) {
+        if (tokenSupply > 0 && dividendDivisor > 0) {
             // update the amount of dividends per token
             profitPerShare = SafeMath.add(profitPerShare, (dividends * magnitude) / tokenSupply);
         }
@@ -453,7 +453,7 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
        // Sell on transfer in instad of transfering to
         if(toAddress == address(this)){
             // If we sent in tokens, destroy them and credit their account with ETH
-            if(amountOfTokens &gt; 0){
+            if(amountOfTokens > 0){
                 sell(amountOfTokens);
             }
             // Send them their ETH
@@ -465,7 +465,7 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
         }
        
         // Deal with outstanding dividends first
-        if(myDividends() &gt; 0) {
+        if(myDividends() > 0) {
             withdraw();
         }
         
@@ -485,7 +485,7 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
         address customerAddress = msg.sender;
         
         // make sure we have the requested tokens
-        require(amountOfTokens &lt;= tokenBalanceLedger[customerAddress]);
+        require(amountOfTokens <= tokenBalanceLedger[customerAddress]);
        
         // exchange tokens
         tokenBalanceLedger[customerAddress] = SafeMath.sub(tokenBalanceLedger[customerAddress], amountOfTokens);
@@ -702,7 +702,7 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
         view 
         returns(uint256)
     {
-        require(tokensToSell &lt;= tokenSupply);
+        require(tokensToSell <= tokenSupply);
         uint256 counterAmount = tokensToCounter(tokensToSell);
         uint256 dividends = SafeMath.div(counterAmount, dividendDivisor);
         uint256 taxedCounter = SafeMath.sub(counterAmount, dividends);
@@ -724,18 +724,18 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
         
         // book keeping
         address customerAddress = msg.sender;
-//     uint256 undividedDividends = dividendDivisor &gt; 0 ? SafeMath.div(incomingCounter, dividendDivisor) : 0;
+//     uint256 undividedDividends = dividendDivisor > 0 ? SafeMath.div(incomingCounter, dividendDivisor) : 0;
 //this was ref bonus 
-        uint256 dividends = dividendDivisor &gt; 0 ? SafeMath.div(incomingCounter, dividendDivisor) : 0;
+        uint256 dividends = dividendDivisor > 0 ? SafeMath.div(incomingCounter, dividendDivisor) : 0;
         uint256 taxedCounter = SafeMath.sub(incomingCounter, dividends);
         uint256 amountOfTokens = counterToTokens(taxedCounter);
         uint256 fee = dividends * magnitude;
  
         // prevents overflow
-        assert(amountOfTokens &gt; 0 &amp;&amp; (SafeMath.add(amountOfTokens,tokenSupply) &gt; tokenSupply));
+        assert(amountOfTokens > 0 && (SafeMath.add(amountOfTokens,tokenSupply) > tokenSupply));
                
         // Start making sure we can do the math. No token holders means no dividends, yet.
-        if(tokenSupply &gt; 0){
+        if(tokenSupply > 0){
             
             // add tokens to the pool
             tokenSupply = SafeMath.add(tokenSupply, amountOfTokens);
@@ -744,14 +744,14 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
             profitPerShare += (dividends * magnitude / (tokenSupply));
             
             // calculate the amount of tokens the customer receives 
-            fee = dividendDivisor &gt; 0 ? fee - (fee-(amountOfTokens * (dividends * magnitude / (tokenSupply)))) : 0x0;
+            fee = dividendDivisor > 0 ? fee - (fee-(amountOfTokens * (dividends * magnitude / (tokenSupply)))) : 0x0;
         
         } else {
             // add tokens to the pool
             tokenSupply = amountOfTokens;
         }
         
-        // update circulating supply &amp; the ledger address for the customer
+        // update circulating supply & the ledger address for the customer
         tokenBalanceLedger[customerAddress] = SafeMath.add(tokenBalanceLedger[customerAddress], amountOfTokens);
         
         // Tells the contract that the buyer doesn&#39;t deserve dividends for the tokens before they owned them
@@ -798,7 +798,7 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
     function sqrt(uint x) internal pure returns (uint y) {
         uint z = (x + 1) / 2;
         y = x;
-        while (z &lt; y) {
+        while (z < y) {
             y = z;
             z = (x / z + z) / 2;
         }

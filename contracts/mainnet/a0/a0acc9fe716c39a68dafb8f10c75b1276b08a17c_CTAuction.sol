@@ -242,7 +242,7 @@ contract TittyPurchase is TittyOwnership {
 
     function purchaseNew(uint256 _id, string _name, string _gender, uint256 _price) public payable {
 
-        if (msg.value == 0 &amp;&amp; msg.value != _price)
+        if (msg.value == 0 && msg.value != _price)
             revert();
 
         uint256 boatFee = calculateBoatFee(msg.value);
@@ -256,7 +256,7 @@ contract TittyPurchase is TittyOwnership {
 
         Titty storage titty = Titties[_tittyId];
         uint256 fee = calculateFee(titty.salePrice);
-        if (msg.value == 0 &amp;&amp; msg.value != titty.salePrice)
+        if (msg.value == 0 && msg.value != titty.salePrice)
             revert();
         
         uint256 val = msg.value - fee;
@@ -270,7 +270,7 @@ contract TittyPurchase is TittyOwnership {
 
     function purchaseAccessory(uint256 _tittyId, uint256 _accId, string _name, uint256 _price) public payable {
 
-        if (msg.value == 0 &amp;&amp; msg.value != _price)
+        if (msg.value == 0 && msg.value != _price)
             revert();
 
         wallet.transfer(msg.value);
@@ -292,7 +292,7 @@ contract TittyPurchase is TittyOwnership {
         for (uint256 i = 1; i<=totalSupply(); i++) {
             Titty storage titty = Titties[i];
             bool isOwner = _isOwner(_owner, i);
-            if (titty.id == _wpId &amp;&amp; isOwner) {
+            if (titty.id == _wpId && isOwner) {
                 return (true, i);
             }
         }

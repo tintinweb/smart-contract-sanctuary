@@ -355,10 +355,10 @@ contract DungeonRunCore is Pausable, Destructible {
 
         // Dungeon run is ended if either hero is defeated (health exhausted),
         // or hero failed to damage a monster before it flee.
-        bool _dungeonRunEnded = monster.level > 0 &amp;&amp; (
+        bool _dungeonRunEnded = monster.level > 0 && (
             _heroHealth == 0 || 
             now > _monsterCreationTime + monsterFleeTime * 2 ||
-            (monster.health == monster.initialHealth &amp;&amp; now > monster.creationTime + monsterFleeTime)
+            (monster.health == monster.initialHealth && now > monster.creationTime + monsterFleeTime)
         );
 
         // Calculate hero and monster stats based on different game state.
@@ -452,7 +452,7 @@ contract DungeonRunCore is Pausable, Destructible {
             // If a hero failed to damage a monster before it flee, the dungeon run ends,
             // regardless of the remaining hero health.
             dungeonRunEnded = now > monster.creationTime + monsterFleeTime * 2 ||
-                (monster.health == monster.initialHealth &amp;&amp; now > monster.creationTime + monsterFleeTime);
+                (monster.health == monster.initialHealth && now > monster.creationTime + monsterFleeTime);
 
             if (dungeonRunEnded) {
                 // Add the non-refunded fee to jackpot.

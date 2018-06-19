@@ -118,7 +118,7 @@ contract Library {
 	/*
 	function getCheckSum( bytes20 _hashedPubKey ) public pure returns(bytes4 checkSum) {
 		var full = sha256((sha256(network, _hashedPubKey)));
-		return bytes4(full&amp;mask4);
+		return bytes4(full&mask4);
 	}
     */
     function toAsciiString(address x) internal pure returns (string) {

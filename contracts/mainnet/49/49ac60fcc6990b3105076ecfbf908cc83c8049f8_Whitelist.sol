@@ -49,7 +49,7 @@ contract Ownable {
  * @dev Whitelist for wallets.
 */
 contract Whitelist is Ownable {
-    mapping(address =&gt; bool) whitelist;
+    mapping(address => bool) whitelist;
 
     uint256 public whitelistLength = 0;
 

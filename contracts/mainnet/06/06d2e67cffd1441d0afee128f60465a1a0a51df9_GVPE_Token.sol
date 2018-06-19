@@ -13,7 +13,7 @@ contract WhiteListAccess {
     }
     
     address public owner;
-    mapping (address =&gt; bool) whitelist;
+    mapping (address => bool) whitelist;
 
     modifier onlyOwner {require(msg.sender == owner); _;}
     modifier onlyWhitelisted {require(whitelist[msg.sender]); _;}
@@ -33,10 +33,10 @@ contract WhiteListAccess {
 library SafeMath {
     function add(uint a, uint b) internal pure returns (uint c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function sub(uint a, uint b) internal pure returns (uint c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function mul(uint a, uint b) internal pure returns (uint c) {
@@ -44,7 +44,7 @@ library SafeMath {
         require(a == 0 || c / a == b);
     }
     function div(uint a, uint b) internal pure returns (uint c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
@@ -104,8 +104,8 @@ contract Token is ERC20Interface, CNT_Common {
     uint    public   totSupply;
     string  public   symbol;
 
-    mapping(address =&gt; uint) public balances;
-    mapping(address =&gt; mapping(address =&gt; uint)) public allowed;
+    mapping(address => uint) public balances;
+    mapping(address => mapping(address => uint)) public allowed;
 
     address public ICO_PRE_SALE = address(0x1);
     address public ICO_TEAM = address(0x2);

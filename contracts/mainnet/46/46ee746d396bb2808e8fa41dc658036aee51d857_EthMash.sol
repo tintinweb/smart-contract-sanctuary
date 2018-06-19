@@ -3,7 +3,7 @@ pragma solidity ^0.4.23;
 contract EthMash {
 
     address public owner;
-    mapping (address =&gt; uint) public balances;
+    mapping (address => uint) public balances;
 
     address[6] public leaders;
     uint[6] public buyins;
@@ -32,7 +32,7 @@ contract EthMash {
     }
 
     function userWithdraw() public {
-        require(balances[msg.sender] &gt; 0);
+        require(balances[msg.sender] > 0);
         uint amount = balances[msg.sender];
         balances[msg.sender] = 0;
         emit Withdraw(msg.sender, amount);
@@ -40,12 +40,12 @@ contract EthMash {
     }
 
     function userChallenge(uint index) public payable {
-        require(index &gt;= 0 &amp;&amp; index &lt; 6);
+        require(index >= 0 && index < 6);
         require(msg.value == buyins[index]);
         
         uint random = ((uint(blockhash(block.number - 1)) + uint(leaders[index]) + uint(msg.sender)) % 100) + 1;
         
-        if (random &gt; 50) {
+        if (random > 50) {
             emit Challenge(buyins[index], random, msg.sender, leaders[index], true);
             balances[msg.sender] += buyins[index];
             leaders[index] = msg.sender;

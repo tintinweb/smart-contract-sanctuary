@@ -51,13 +51,13 @@ library SafeMath {
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -92,7 +92,7 @@ contract BasicToken is ERC20Basic {
     
     using SafeMath for uint256;
     
-    mapping (address =&gt; uint256) internal balances;
+    mapping (address => uint256) internal balances;
     
     /**
     * Returns the balance of the qeuried address
@@ -110,7 +110,7 @@ contract BasicToken is ERC20Basic {
     * @param _value The amount of tokens to send
     **/
     function transfer(address _to, uint256 _value) public returns(bool) {
-        require(balances[msg.sender] &gt;= _value &amp;&amp; _value &gt; 0 &amp;&amp; _to != 0x0);
+        require(balances[msg.sender] >= _value && _value > 0 && _to != 0x0);
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
         Transfer(msg.sender, _to, _value);
@@ -123,7 +123,7 @@ contract BasicToken is ERC20Basic {
 
 contract StandardToken is BasicToken, ERC20 {
     
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowances;
+    mapping (address => mapping (address => uint256)) internal allowances;
     
     /**
     * Returns the amount of tokens one has allowed another to spend on his or her behalf.
@@ -145,7 +145,7 @@ contract StandardToken is BasicToken, ERC20 {
     * @param _value The amount of tokens to be sent
     **/
     function transferFrom(address _from, address _to, uint256 _value) public  returns (bool) {
-        require(allowances[_from][msg.sender] &gt;= _value &amp;&amp; _to != 0x0 &amp;&amp; balances[_from] &gt;= _value &amp;&amp; _value &gt; 0);
+        require(allowances[_from][msg.sender] >= _value && _to != 0x0 && balances[_from] >= _value && _value > 0);
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
         allowances[_from][msg.sender] = allowances[_from][msg.sender].sub(_value);
@@ -160,8 +160,8 @@ contract StandardToken is BasicToken, ERC20 {
     * @param _value The amount of tokens to be sent
     **/
     function approve(address _spender, uint256 _value) public returns (bool) {
-        require(_spender != 0x0 &amp;&amp; _value &gt; 0);
-        if(allowances[msg.sender][_spender] &gt; 0 ) {
+        require(_spender != 0x0 && _value > 0);
+        if(allowances[msg.sender][_spender] > 0 ) {
             allowances[msg.sender][_spender] = 0;
         }
         allowances[msg.sender][_spender] = _value;
@@ -271,7 +271,7 @@ contract MSTCOIN is PausableToken {
     * @param _value The amount of tokens to be burned
     **/
     function _burn(address _who, uint256 _value) internal {
-        require(_value &lt;= balances[_who]);
+        require(_value <= balances[_who]);
         balances[_who] = balances[_who].sub(_value);
         totalSupply = totalSupply.sub(_value);
         Burn(_who, _value);

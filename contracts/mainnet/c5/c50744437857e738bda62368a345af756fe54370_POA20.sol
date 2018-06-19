@@ -383,7 +383,7 @@ contract POA20 is
     public DetailedERC20(_name, _symbol, _decimals) {}
 
     modifier validRecipient(address _recipient) {
-        require(_recipient != address(0) &amp;&amp; _recipient != address(this));
+        require(_recipient != address(0) && _recipient != address(this));
         _;
     }
 

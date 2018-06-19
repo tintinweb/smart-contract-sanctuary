@@ -24,7 +24,7 @@ library SafeMath {
     * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -33,7 +33,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
         c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -166,7 +166,7 @@ library AddressUtils {
         // TODO Check this again before the Serenity release, because all addresses will be
         // contracts then.
         assembly { size := extcodesize(addr) }  // solium-disable-line security/no-inline-assembly
-        return size &gt; 0;
+        return size > 0;
     }
 
 }
@@ -216,16 +216,16 @@ contract ERC721BasicToken is ERC721Basic {
     bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
     // Mapping from token ID to owner
-    mapping (uint256 =&gt; address) internal tokenOwner;
+    mapping (uint256 => address) internal tokenOwner;
 
     // Mapping from token ID to approved address
-    mapping (uint256 =&gt; address) internal tokenApprovals;
+    mapping (uint256 => address) internal tokenApprovals;
 
     // Mapping from owner to number of owned token
-    mapping (address =&gt; uint256) internal ownedTokensCount;
+    mapping (address => uint256) internal ownedTokensCount;
 
     // Mapping from owner to operator approvals
-    mapping (address =&gt; mapping (address =&gt; bool)) internal operatorApprovals;
+    mapping (address => mapping (address => bool)) internal operatorApprovals;
 
     /**
      * @dev Guarantees msg.sender is owner of the given token
@@ -496,19 +496,19 @@ contract ERC721Token is ERC721, ERC721BasicToken {
     string internal symbol_;
 
     // Mapping from owner to list of owned token IDs
-    mapping (address =&gt; uint256[]) internal ownedTokens;
+    mapping (address => uint256[]) internal ownedTokens;
 
     // Mapping from token ID to index of the owner tokens list
-    mapping(uint256 =&gt; uint256) internal ownedTokensIndex;
+    mapping(uint256 => uint256) internal ownedTokensIndex;
 
     // Array with all token ids, used for enumeration
     uint256[] internal allTokens;
 
     // Mapping from token id to position in the allTokens array
-    mapping(uint256 =&gt; uint256) internal allTokensIndex;
+    mapping(uint256 => uint256) internal allTokensIndex;
 
     // Optional mapping for token URIs
-    mapping(uint256 =&gt; string) internal tokenURIs;
+    mapping(uint256 => string) internal tokenURIs;
 
     /**
      * @dev Constructor function
@@ -551,7 +551,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
      * @return uint256 token ID at the given index of the tokens list owned by the requested address
      */
     function tokenOfOwnerByIndex(address _owner, uint256 _index) public view returns (uint256) {
-        require(_index &lt; balanceOf(_owner));
+        require(_index < balanceOf(_owner));
         return ownedTokens[_owner][_index];
     }
 
@@ -570,7 +570,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
      * @return uint256 token ID at the given index of the tokens list
      */
     function tokenByIndex(uint256 _index) public view returns (uint256) {
-        require(_index &lt; totalSupply());
+        require(_index < totalSupply());
         return allTokens[_index];
     }
 
@@ -647,7 +647,7 @@ contract FYouToken is Ownable, ERC721Token {
 
 
     modifier onlyTwoMil() {
-        require(fYouTokens &lt; 2000001);
+        require(fYouTokens < 2000001);
         _;
     }
 
@@ -658,7 +658,7 @@ contract FYouToken is Ownable, ERC721Token {
     }
 
 
-    mapping(uint256 =&gt; Graffiti) private tokenGraffiti;
+    mapping(uint256 => Graffiti) private tokenGraffiti;
 
     uint256 private fYouTokens;
 
@@ -678,7 +678,7 @@ contract FYouToken is Ownable, ERC721Token {
      * @param _infoUrlOrIPFSHash the url or ipfs hash that has more metadata about this Graffiti.
      */
     function fYou(address _schmuck, string _clearTextMessageJustToBeSuperClear, string _infoUrlOrIPFSHash) external payable onlyTwoMil {
-        require(_schmuck != address(0) &amp;&amp; msg.value == (fee * (1 finney)));
+        require(_schmuck != address(0) && msg.value == (fee * (1 finney)));
 
         _fYou(_schmuck, fYouTokens, _clearTextMessageJustToBeSuperClear, _infoUrlOrIPFSHash);
         fYouTokens = fYouTokens + 1;
@@ -691,10 +691,10 @@ contract FYouToken is Ownable, ERC721Token {
      * @param _numTokens number of tokens to create.
      */
     function giantFYou(address _to, uint256 _numTokens) external payable onlyTwoMil {
-        require(_to != address(0) &amp;&amp; _numTokens &gt; 0 &amp;&amp; _numTokens &lt; 11 &amp;&amp; msg.value == (fee.mul(_numTokens) * (1 finney)));
+        require(_to != address(0) && _numTokens > 0 && _numTokens < 11 && msg.value == (fee.mul(_numTokens) * (1 finney)));
         uint tokensCount = _numTokens.add(fYouTokens);
-        require(allTokens.length &lt; 2000001 &amp;&amp; tokensCount &lt; 2000001);
-        for (uint256 i = 0; i &lt; _numTokens; i++) {
+        require(allTokens.length < 2000001 && tokensCount < 2000001);
+        for (uint256 i = 0; i < _numTokens; i++) {
         _fYou(_to, (fYouTokens + i), &#39;&#39;, &#39;&#39;);
         }
         fYouTokens = tokensCount;
@@ -721,7 +721,7 @@ contract FYouToken is Ownable, ERC721Token {
         require(tokenGraffiti[_tokenId].exists == false);
         bytes memory msgSize = bytes(_clearTextMessageJustToBeSuperClear);
         bytes memory urlSize = bytes(_infoUrlOrIPFSHash);
-        if (urlSize.length &gt; 0 || msgSize.length &gt; 0) {
+        if (urlSize.length > 0 || msgSize.length > 0) {
             tokenGraffiti[_tokenId] = Graffiti(true, _clearTextMessageJustToBeSuperClear, _infoUrlOrIPFSHash);
         }
     }
@@ -753,7 +753,7 @@ contract FYouToken is Ownable, ERC721Token {
         /**
          * Withdraw fees collected by the contract. Only the owner or arbitrator can call this.
          */
-        require(_amount &lt;= feesAvailableForWithdraw);
+        require(_amount <= feesAvailableForWithdraw);
         // Also prevents underflow
         feesAvailableForWithdraw = feesAvailableForWithdraw.sub(_amount);
         _to.transfer(_amount);

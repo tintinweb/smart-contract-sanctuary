@@ -585,7 +585,7 @@ contract AdaptableToken is Burnable, Mintable, PausableToken {
     * @return A boolean that indicates if the operation was successful.
     */
     function burn(uint256 _amount) public returns (bool burned) {
-        //require(0 < _amount &amp;&amp; _amount <= balances[msg.sender]);
+        //require(0 < _amount && _amount <= balances[msg.sender]);
 
         balances[msg.sender] = balances[msg.sender].sub(_amount);
         totalSupply = totalSupply.sub(_amount);

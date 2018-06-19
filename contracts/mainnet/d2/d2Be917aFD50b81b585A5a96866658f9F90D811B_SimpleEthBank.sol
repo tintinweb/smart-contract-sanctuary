@@ -31,14 +31,14 @@ contract SimpleEthBank {
     }
 
     function withdraw(uint amount) public {
-        require(accountExists[msg.sender] &amp;&amp; accountBalances[msg.sender] >= amount);
+        require(accountExists[msg.sender] && accountBalances[msg.sender] >= amount);
         accountBalances[msg.sender] -= amount;
         msg.sender.call.value(amount);
         Withdrawal(msg.sender, amount);
     }
 
     function transfer(address to, uint amount) public {
-        require(accountExists[msg.sender] &amp;&amp; accountExists[to]);
+        require(accountExists[msg.sender] && accountExists[to]);
         require(msg.sender != to);
         require(accountBalances[msg.sender] >= amount);
         accountBalances[to] += amount;

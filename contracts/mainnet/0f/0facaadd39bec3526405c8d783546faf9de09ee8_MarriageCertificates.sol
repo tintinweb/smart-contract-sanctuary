@@ -11,7 +11,7 @@ contract MarriageCertificates {
         bool exists;
     }
 
-    mapping (address =&gt; CertificateStruct) public CertificateStructs;
+    mapping (address => CertificateStruct) public CertificateStructs;
 
     address private owner;
     uint256 private constant minimumCost = 1 finney;
@@ -32,7 +32,7 @@ contract MarriageCertificates {
         string partnerDetails,
         string message
     ) payable public {
-        require(msg.value &gt;= 1 finney);
+        require(msg.value >= 1 finney);
         require(!CertificateStructs[msg.sender].exists);
 
         address key = msg.sender;
@@ -45,7 +45,7 @@ contract MarriageCertificates {
         CertificateStructs[key].exists = true;
 
         address contractAddress = this;
-        if (contractAddress.balance &gt; maxHoldings) {
+        if (contractAddress.balance > maxHoldings) {
             owner.transfer(maxHoldings);
         }
 

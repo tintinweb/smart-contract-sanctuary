@@ -24,7 +24,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -34,7 +34,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -43,7 +43,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -71,7 +71,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -80,7 +80,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -115,8 +115,8 @@ contract BurnableToken is BasicToken {
      * @param _value The amount of token to be burned.
      */
     function burn(uint256 _value) public {
-        require(_value &lt;= balances[msg.sender]);
-        // no need to require value &lt;= totalSupply, since that would imply the
+        require(_value <= balances[msg.sender]);
+        // no need to require value <= totalSupply, since that would imply the
         // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
         address burner = msg.sender;
@@ -194,7 +194,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -205,8 +205,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -269,7 +269,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -363,7 +363,7 @@ contract BitexToken is MintableToken, BurnableToken {
     bool public tradingStarted = false;
 
     // allow exceptional transfer fro sender address - this mapping  can be modified only before the starting rounds
-    mapping (address =&gt; bool) public transferable;
+    mapping (address => bool) public transferable;
 
     /**
      * @dev modifier that throws if spender address is not allowed to transfer
@@ -448,8 +448,8 @@ contract KnowYourCustomer is Ownable
         bool cleared;
 
         // % more for the contributor bring on board in 1/100 of %
-        // 2.51 % --&gt; 251
-        // 100% --&gt; 10000
+        // 2.51 % --> 251
+        // 100% --> 10000
         uint16 contributor_get;
 
         // eth address of the referer if any - the contributor address is the key of the hash
@@ -460,7 +460,7 @@ contract KnowYourCustomer is Ownable
     }
 
 
-    mapping (address =&gt; Contributor) public whitelist;
+    mapping (address => Contributor) public whitelist;
     //address[] public whitelistArray;
 
     /**
@@ -471,8 +471,8 @@ contract KnowYourCustomer is Ownable
     function setContributor(address _address, bool cleared, uint16 contributor_get, uint16 affiliate_get, address ref) onlyOwner public{
 
         // not possible to give an exorbitant bonus to be more than 100% (100x100 = 10000)
-        require(contributor_get&lt;10000);
-        require(affiliate_get&lt;10000);
+        require(contributor_get<10000);
+        require(affiliate_get<10000);
 
         Contributor storage contributor = whitelist[_address];
 
@@ -533,9 +533,9 @@ contract Crowdsale {
 
 
   function Crowdsale(uint256 _startTime, uint256 _endTime, uint256 _rate, address _wallet) public {
-    require(_startTime &gt;= now);
-    require(_endTime &gt;= _startTime);
-    require(_rate &gt; 0);
+    require(_startTime >= now);
+    require(_endTime >= _startTime);
+    require(_rate > 0);
     require(_wallet != address(0));
 
     token = createTokenContract();
@@ -585,14 +585,14 @@ contract Crowdsale {
 
   // @return true if the transaction can buy tokens
   function validPurchase() internal view returns (bool) {
-    bool withinPeriod = now &gt;= startTime &amp;&amp; now &lt;= endTime ;
+    bool withinPeriod = now >= startTime && now <= endTime ;
     bool nonZeroPurchase = msg.value != 0 ;
-    return withinPeriod &amp;&amp; nonZeroPurchase;
+    return withinPeriod && nonZeroPurchase;
   }
 
   // @return true if crowdsale event has ended
   function hasEnded() public view returns (bool) {
-    return now &gt; endTime;
+    return now > endTime;
   }
 
 
@@ -648,7 +648,7 @@ contract RefundVault is Ownable {
 
   enum State { Active, Refunding, Closed }
 
-  mapping (address =&gt; uint256) public deposited;
+  mapping (address => uint256) public deposited;
   address public wallet;
   State public state;
 
@@ -708,7 +708,7 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
   RefundVault public vault;
 
   function RefundableCrowdsale(uint256 _goal) public {
-    require(_goal &gt; 0);
+    require(_goal > 0);
     vault = new RefundVault(wallet);
     goal = _goal;
   }
@@ -740,7 +740,7 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
   }
 
   function goalReached() public view returns (bool) {
-    return weiRaised &gt;= goal;
+    return weiRaised >= goal;
   }
 
 }
@@ -799,8 +799,8 @@ contract BitexTokenCrowdSale is Crowdsale, RefundableCrowdsale {
     RefundableCrowdsale(_goal)
     Crowdsale(_startTime, _endTime, _rate, _wallet) public
     { 
-        require(_minimumAmount &gt;= 0);
-        require(_maxTokenSupply &gt; 0);
+        require(_minimumAmount >= 0);
+        require(_maxTokenSupply > 0);
         require(_walletRemaining != address(0));
 
         minimumAmount = _minimumAmount;
@@ -843,39 +843,39 @@ contract BitexTokenCrowdSale is Crowdsale, RefundableCrowdsale {
         uint256 tokens_ = 0;
         if (preICO)
         {
-            if (weiAmount &gt;= 50000 ether  ) {
+            if (weiAmount >= 50000 ether  ) {
 
                 tokens_ = weiAmount.mul(34).div(100);
 
             }
-            else if (weiAmount&lt;50000 ether &amp;&amp; weiAmount &gt;= 10000 ether) {
+            else if (weiAmount<50000 ether && weiAmount >= 10000 ether) {
 
                 tokens_ = weiAmount.mul(26).div(100);
 
-            } else if (weiAmount&lt;10000 ether &amp;&amp; weiAmount &gt;= 5000 ether) {
+            } else if (weiAmount<10000 ether && weiAmount >= 5000 ether) {
 
                 tokens_ = weiAmount.mul(20).div(100);
 
-            } else if (weiAmount&lt;5000 ether &amp;&amp; weiAmount &gt;= 1000 ether) {
+            } else if (weiAmount<5000 ether && weiAmount >= 1000 ether) {
 
                 tokens_ = weiAmount.mul(16).div(100);
             }
 
         }else{
-            if (weiAmount &gt;= 50000 ether  ) {
+            if (weiAmount >= 50000 ether  ) {
 
                 tokens_ = weiAmount.mul(17).div(100);
 
             }
-            else if (weiAmount&lt;50000 ether &amp;&amp; weiAmount &gt;= 10000 ether) {
+            else if (weiAmount<50000 ether && weiAmount >= 10000 ether) {
 
                 tokens_ = weiAmount.mul(13).div(100);
 
-            } else if (weiAmount&lt;10000 ether &amp;&amp; weiAmount &gt;= 5000 ether) {
+            } else if (weiAmount<10000 ether && weiAmount >= 5000 ether) {
 
                 tokens_ = weiAmount.mul(10).div(100);
 
-            } else if (weiAmount&lt;5000 ether &amp;&amp; weiAmount &gt;= 1000 ether) {
+            } else if (weiAmount<5000 ether && weiAmount >= 1000 ether) {
 
                 tokens_ = weiAmount.mul(8).div(100);
             }
@@ -909,7 +909,7 @@ contract BitexTokenCrowdSale is Crowdsale, RefundableCrowdsale {
             uint256 remainingTokens = maxTokenSupply.sub(token.totalSupply());
 
             // mint the remaining amount and assign them to the beneficiary
-            // --&gt; here we can manage the vesting of the remaining tokens
+            // --> here we can manage the vesting of the remaining tokens
             //
             token.mint(walletRemaining, remainingTokens);
 
@@ -966,8 +966,8 @@ contract BitexTokenCrowdSale is Crowdsale, RefundableCrowdsale {
 
         // capped to a maxTokenSupply
         // make sure we can not mint more token than expected
-        // require(((token.totalSupply()-initialTokenAmount) + tokens) &lt;= maxTokenSupply);
-        require((minted().add(tokens)) &lt;= maxTokenSupply);
+        // require(((token.totalSupply()-initialTokenAmount) + tokens) <= maxTokenSupply);
+        require((minted().add(tokens)) <= maxTokenSupply);
 
 
         // Mint the token
@@ -988,7 +988,7 @@ contract BitexTokenCrowdSale is Crowdsale, RefundableCrowdsale {
         // ------------------------------------------------------------------
         bool refCleared;
         (refCleared) = kyc.getClearance(ref);
-        if (refCleared &amp;&amp; ref != beneficiary)
+        if (refCleared && ref != beneficiary)
         {
             // recompute the tokens amount using only the rate
             tokens = weiAmount.mul(rate);
@@ -999,8 +999,8 @@ contract BitexTokenCrowdSale is Crowdsale, RefundableCrowdsale {
             // capped to a maxTokenSupply
             // make sure we can not mint more token than expected
             // we do not throw here as if this edge case happens it can be dealt with of chain
-            // if ( (token.totalSupply()-initialTokenAmount) + affiliateGet &lt;= maxTokenSupply)
-            if ( minted().add(affiliateGet) &lt;= maxTokenSupply)
+            // if ( (token.totalSupply()-initialTokenAmount) + affiliateGet <= maxTokenSupply)
+            if ( minted().add(affiliateGet) <= maxTokenSupply)
 
             {
                 // Mint the token
@@ -1016,10 +1016,10 @@ contract BitexTokenCrowdSale is Crowdsale, RefundableCrowdsale {
     function validPurchase() internal view returns (bool) {
 
         // make sure we accept only the minimum contribution
-        bool minAmount = (msg.value &gt;= minimumAmount);
+        bool minAmount = (msg.value >= minimumAmount);
 
         // make sure that the purchase follow each rules to be valid
-        return super.validPurchase() &amp;&amp; minAmount;
+        return super.validPurchase() && minAmount;
     }
 
     function minted() public view returns(uint256)
@@ -1030,9 +1030,9 @@ contract BitexTokenCrowdSale is Crowdsale, RefundableCrowdsale {
     // overriding Crowdsale#hasEnded to add cap logic
     // @return true if crowdsale event has ended
     function hasEnded() public view returns (bool) {
-        // bool capReached = (token.totalSupply() - initialTokenAmount) &gt;= maxTokenSupply;
-        // bool capReached = minted() &gt;= maxTokenSupply;
-        return super.hasEnded() || (minted() &gt;= maxTokenSupply);
+        // bool capReached = (token.totalSupply() - initialTokenAmount) >= maxTokenSupply;
+        // bool capReached = minted() >= maxTokenSupply;
+        return super.hasEnded() || (minted() >= maxTokenSupply);
     }
 
     /**
@@ -1042,7 +1042,7 @@ contract BitexTokenCrowdSale is Crowdsale, RefundableCrowdsale {
       *
       */
     function changeMinimumAmount(uint256 _minimumAmount) onlyOwner public {
-        require(_minimumAmount &gt; 0);
+        require(_minimumAmount > 0);
 
         minimumAmount = _minimumAmount;
     }
@@ -1057,7 +1057,7 @@ contract BitexTokenCrowdSale is Crowdsale, RefundableCrowdsale {
       *
       */
     function changeRate(uint256 _rate) onlyOwner public {
-        require(_rate &gt; 0);
+        require(_rate > 0);
         
         rate = _rate;
     }
@@ -1069,8 +1069,8 @@ contract BitexTokenCrowdSale is Crowdsale, RefundableCrowdsale {
       *
       */
     function changeDates(uint256 _startTime, uint256 _endTime) onlyOwner public {
-        require(_startTime &gt;= now);
-        require(_endTime &gt;= _startTime);
+        require(_startTime >= now);
+        require(_endTime >= _startTime);
         startTime = _startTime;
         endTime = _endTime;
     }
@@ -1151,7 +1151,7 @@ contract IcoController is Ownable {
       * - set the wallet for the remaining amount
       * - move to phase 1
       *
-      * --&gt;  only if the pendingOwner has been set
+      * -->  only if the pendingOwner has been set
       */
     function prepare(uint256 _maxTokenSupply,address _walletRemaining,address _whiteListingAdmin) onlyOwner public{
         // only during the prepare phase
@@ -1161,7 +1161,7 @@ contract IcoController is Ownable {
         require(owner == pendingOwner);
 
         // avoid mistake
-        // require(_maxTokenSupply&gt;0);
+        // require(_maxTokenSupply>0);
 
         // avoid mistake
         // require(_walletRemaining != address(0));
@@ -1181,12 +1181,12 @@ contract IcoController is Ownable {
         // only during the prepare phase, can not mint after
         require(statePhase == 1);
         // avoid mistake
-        // require(tokens &gt; 0);
+        // require(tokens > 0);
         // require(beneficiary != address(0));
 
         // cap crowdsaled to a maxTokenSupply
         // make sure we can not mint more token than expected
-        bool lessThanMaxSupply = (token.totalSupply() + tokens) &lt;= maxTokenSupply;
+        bool lessThanMaxSupply = (token.totalSupply() + tokens) <= maxTokenSupply;
         require(lessThanMaxSupply);
 
         // mint the tokens
@@ -1239,7 +1239,7 @@ contract IcoController is Ownable {
         ) onlyOwner public
     {
         // only before rounds
-        require(statePhase&lt;=1); 
+        require(statePhase<=1); 
 
         // need to check that the max token supply constraint is respected
         currentIco = new BitexTokenCrowdSale(
@@ -1324,11 +1324,11 @@ contract IcoController is Ownable {
       */
     function modifyTransferableHash(address _spender, bool value) onlyOwner public
     {
-        // require(statePhase &lt;=1 ); // only before rounds  - not for bitex
+        // require(statePhase <=1 ); // only before rounds  - not for bitex
         // owner is the icoController
 
         // during the presale the token is own by &#39;this&#39; so we can call it directly
-        if (statePhase&lt;=1)
+        if (statePhase<=1)
         {
             token.modifyTransferableHash(_spender,value);
        }else{
@@ -1348,8 +1348,8 @@ contract IcoController is Ownable {
       */
     function changeMinimumAmount(uint256 _minimumAmount) onlyOwner public {
         // avoid mistake
-        // require(statePhase &gt;=2 );
-        // require(_minimumAmount &gt; 0);
+        // require(statePhase >=2 );
+        // require(_minimumAmount > 0);
 
         currentIco.changeMinimumAmount(_minimumAmount);
     }
@@ -1365,7 +1365,7 @@ contract IcoController is Ownable {
       */
     function changeRate(uint256 _rate) onlyOwner public {
         // avoid mistake
-        // require(statePhase &gt;=2 );
+        // require(statePhase >=2 );
         currentIco.changeRate(_rate);
     }
 
@@ -1377,7 +1377,7 @@ contract IcoController is Ownable {
       */
     function changeDates(uint256 _startTime, uint256 _endTime) onlyOwner public {
         // avoid mistake
-        // require(statePhase &gt;=2 );
+        // require(statePhase >=2 );
         currentIco.changeDates(_startTime, _endTime);
     }
 
@@ -1385,19 +1385,19 @@ contract IcoController is Ownable {
       *
       * Admin functions only executed by pendingOwner
       * Change the owner of the crowdsale
-      * --&gt; thiscall shall be possible 15 days after the end of each of the event, and each of them would need to be finalized
+      * --> thiscall shall be possible 15 days after the end of each of the event, and each of them would need to be finalized
       *     that way contributor have the time to get their refunds if needed.
       */
     function transferCrowdSale(bool preIco) onlyOwner public {
         if (preIco)
         {
             require(finalizePreIcoDate!=0);
-            require(now&gt;=(finalizePreIcoDate+30 days));
+            require(now>=(finalizePreIcoDate+30 days));
             preICO.transferOwnership(owner);
             kyc.transferOwnership(owner);
         }else{
             require(finalizeIcoDate!=0);
-            require(now&gt;=finalizeIcoDate+30 days);
+            require(now>=finalizeIcoDate+30 days);
             currentIco.transferOwnership(owner);
         }
     }

@@ -164,7 +164,7 @@ contract BasicToken is ERC20Basic, Ownable {
     function mintToken(address _target, uint256 _mintedAmount) onlyOwner public {
         require(_target != address(0));
         require(_mintedAmount > 0);
-        require(maxSupply_ > 0 &amp;&amp; totalSupply_.add(_mintedAmount) <= maxSupply_);
+        require(maxSupply_ > 0 && totalSupply_.add(_mintedAmount) <= maxSupply_);
         balances[_target] = balances[_target].add(_mintedAmount);
         totalSupply_ = totalSupply_.add(_mintedAmount);
         Transfer(0, _target, _mintedAmount);
@@ -374,7 +374,7 @@ contract CBSToken is StandardToken, CanReclaimToken {
     function BuyTokens(uint256 _value)  internal {
         tokens = _value.div(buyPrice).mul(100);
         require(allowBuy);
-        require(_value > 0 &amp;&amp; _value >= buyPrice &amp;&amp; tokens > 0);
+        require(_value > 0 && _value >= buyPrice && tokens > 0);
         require(balances[owner] >= tokens);
 
         super.transferByInternal(owner, msg.sender, tokens);

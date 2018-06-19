@@ -13,13 +13,13 @@ library SafeMath {
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -71,8 +71,8 @@ contract Token {
 
     uint256 public totalSupply = 0;
 
-    mapping(address =&gt; uint256) balances;
-    mapping(address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping(address => uint256) balances;
+    mapping(address => mapping (address => uint256)) allowed;
 
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
@@ -112,7 +112,7 @@ contract Token {
     function transferFrom(address _from, address _to, uint256 _value) unlocked public returns (bool) {
         require(_to != address(0));
         uint256 _allowance = allowed[_from][msg.sender];
-        require(_allowance &gt;= _value);
+        require(_allowance >= _value);
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
         allowed[_from][msg.sender] = _allowance.sub(_value);
@@ -154,7 +154,7 @@ contract Token {
     function decreaseApproval (address _spender, uint _subtractedValue) unlocked public
         returns (bool success) {
             uint oldValue = allowed[msg.sender][_spender];
-            if (_subtractedValue &gt; oldValue) {
+            if (_subtractedValue > oldValue) {
                 allowed[msg.sender][_spender] = 0;
             } else {
                 allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -241,7 +241,7 @@ contract Token {
         require(upgraderSet);
         require(upgrader != TokenUpgraderInterface(0));
         uint256 value = balances[msg.sender];
-        assert(value &gt; 0);
+        assert(value > 0);
         delete balances[msg.sender];
         totalSupply = totalSupply.sub(value);
         assert(upgrader.upgradeFor(msg.sender, value));
@@ -253,7 +253,7 @@ contract Token {
         require(upgraderSet);
         require(upgrader != TokenUpgraderInterface(0));
         uint256 _allowance = allowed[_for][msg.sender];
-        require(_allowance &gt;= _value);
+        require(_allowance >= _value);
         balances[_for] = balances[_for].sub(_value);
         allowed[_for][msg.sender] = _allowance.sub(_value);
         totalSupply = totalSupply.sub(_value);

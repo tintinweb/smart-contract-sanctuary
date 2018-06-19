@@ -4,7 +4,7 @@ contract AccessControl {
     address public owner;
     // address[] public moderators;
     uint16 public totalModerators = 0;
-    mapping (address =&gt; bool) public moderators;
+    mapping (address => bool) public moderators;
     bool public isMaintaining = false;
 
     function AccessControl() public {
@@ -56,7 +56,7 @@ contract DTT is AccessControl{
   function approve(address _spender, uint256 _value) public returns (bool success);
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool success);
   function balanceOf(address _addr) public returns (uint);
-  mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+  mapping (address => mapping (address => uint256)) public allowance;
 }
 
 contract DataBase is AccessControl{
@@ -85,9 +85,9 @@ contract CryptoAndDragonsPresale is AccessControl{
   uint256 public totalAuction;
   uint256 private increaseRate = 0.1 ether;
   uint64 public cooldownTime = 2 hours;
-  mapping (address =&gt; address) public masterToReferral;
-  mapping (uint16 =&gt; uint32[]) private EggTable;
-  mapping (uint8 =&gt; uint256) public EggTotal;
+  mapping (address => address) public masterToReferral;
+  mapping (uint16 => uint32[]) private EggTable;
+  mapping (uint8 => uint256) public EggTotal;
   function setNewMonster(uint256 _genes,uint32 _classId,address _master,string _name,string _skills) onlyModerators public returns(uint64 _monsterId) {
     DataBase data = DataBase(databaseContract);
     uint64 monsterId = data.getTotalMonster() + 1;
@@ -161,17 +161,17 @@ contract CryptoAndDragonsPresale is AccessControl{
       a[r] = t;
   }
   function getPivot(uint a, uint b, uint c) private pure returns(uint) {
-      if(a &gt; b){
-          if(b &gt; c){
+      if(a > b){
+          if(b > c){
               return b;
           }else{
-              return a &gt; c ? c : a ;
+              return a > c ? c : a ;
           }
       }else{
-          if(a &gt; c){
+          if(a > c){
               return a;
           }else{
-              return b &gt; c ? c : b ;
+              return b > c ? c : b ;
           }
       }
   }
@@ -181,20 +181,20 @@ contract CryptoAndDragonsPresale is AccessControl{
       quicksort_core(a, left, right);
   }
   function quicksort_core(uint[] a, uint left, uint right) private pure {
-      if(right &lt;= left){
+      if(right <= left){
           return;
       }
       uint l = left;
       uint r = right;
       uint p = getPivot(a[l], a[l+1], a[r]);
       while(true){
-          while(a[l] &lt; p){
+          while(a[l] < p){
               l++;
           }
-          while(p &lt; a[r]){
+          while(p < a[r]){
               r--;
           }
-          if(r &lt;= l){
+          if(r <= l){
               break;
           }
           swap(a, l, r);
@@ -235,8 +235,8 @@ contract CryptoAndDragonsPresale is AccessControl{
 
   function burnAuction() onlyOwner external {
     uint256 counter = 0;
-    for (uint256 i = 0; i &lt; totalAuction; i++) {
-      if(auctions[i].endTime &lt; now - 86400 * 3){
+    for (uint256 i = 0; i < totalAuction; i++) {
+      if(auctions[i].endTime < now - 86400 * 3){
         delete auctions[i];
         counter++;
       }
@@ -258,7 +258,7 @@ contract CryptoAndDragonsPresale is AccessControl{
   function setGenes(uint256 _price, uint256 _monsterId) internal{
     DataBase data = DataBase(databaseContract);
     uint256 gene = _price / 10000000000000000;
-    if(gene &gt; 255)
+    if(gene > 255)
       gene = 255;
     uint256 genes = 0;
     genes += gene * 1000000000000000;
@@ -267,16 +267,16 @@ contract CryptoAndDragonsPresale is AccessControl{
     genes += gene * 1000000;
     genes += gene * 1000;
     genes += gene;
-    if(genes &gt; 255255255255255255)
+    if(genes > 255255255255255255)
       genes = 255255255255255255;
     data.setMonsterGene(uint64(_monsterId),genes);
   }
 
   function buy (uint256 _auctionId, address _referral) payable public {
     NFTToken CNDERC721 = NFTToken(ERC721Contract);
-    require(auctions[_auctionId].endTime &gt; now);
+    require(auctions[_auctionId].endTime > now);
     require(CNDERC721.ownerOf(auctions[_auctionId].monsterId) != address(0));
-    require(ceil(msg.value) &gt;= ceil(auctions[_auctionId].price + increaseRate));
+    require(ceil(msg.value) >= ceil(auctions[_auctionId].price + increaseRate));
     require(CNDERC721.ownerOf(auctions[_auctionId].monsterId) != msg.sender);
     require(!isContract(msg.sender));
     require(msg.sender != address(0));
@@ -289,27 +289,27 @@ contract CryptoAndDragonsPresale is AccessControl{
     auctions[_auctionId].price = ceil(price);
     auctions[_auctionId].bidder = msg.sender;
     DTT DTTtoken = DTT(dragonTreasureToken);
-    if(masterToReferral[msg.sender] != address(0) &amp;&amp; masterToReferral[msg.sender] != msg.sender){
+    if(masterToReferral[msg.sender] != address(0) && masterToReferral[msg.sender] != msg.sender){
       DTTtoken.approve(masterToReferral[msg.sender], DTTtoken.allowance(this,masterToReferral[msg.sender]) + price / 1000000000 * 5);
-    }else if(_referral != address(0) &amp;&amp; _referral != msg.sender){
+    }else if(_referral != address(0) && _referral != msg.sender){
       masterToReferral[msg.sender] = _referral;
       DTTtoken.approve(_referral, DTTtoken.allowance(this,_referral) + price / 1000000000 * 5);
     }
 
     DTTtoken.approve(msg.sender, DTTtoken.allowance(this,msg.sender) + price / 1000000000 * 5);
-    if(oldPrice &gt; 0)
+    if(oldPrice > 0)
       oldOwner.transfer(oldPrice);
     Bought(auctions[_auctionId].monsterId, newOwner, price);
     Sold(auctions[_auctionId].monsterId, oldOwner, price);
   }
 
   function buyBlueStarEgg(address _sender, uint256 _tokens, uint16 _amount) isActive public returns(uint256) {
-    require(_amount &lt;= 10 &amp;&amp; _amount &gt; 0);
+    require(_amount <= 10 && _amount > 0);
     uint256 price = ceil(5 * 10**8);
-    if (_tokens &lt; price)
+    if (_tokens < price)
         revert();
     DataBase data = DataBase(databaseContract);
-    for (uint8 i = 0; i &lt; _amount; i++) {
+    for (uint8 i = 0; i < _amount; i++) {
       uint256 genes = 0;
       genes += (randMod(205) + 51) * 1000000000000000;
       genes += (randMod(205) + 51) * 1000000000000;
@@ -327,27 +327,27 @@ contract CryptoAndDragonsPresale is AccessControl{
   }
 
   function buyRareEgg(uint8 _table, uint _amount, address _referral) isActive payable public {
-    require(_amount &lt;= 10 &amp;&amp; _amount &gt; 0);
+    require(_amount <= 10 && _amount > 0);
     uint256 price = 0.1 ether;
-    if(EggTotal[_table] &gt; 0)
+    if(EggTotal[_table] > 0)
     price += uint((int(EggTotal[_table] / 500) * 10**18) / 20);
-    require(msg.value &gt;= price * _amount);
+    require(msg.value >= price * _amount);
 
     DTT DTTtoken = DTT(dragonTreasureToken);
     DataBase data = DataBase(databaseContract);
     uint256 bonus = 10;
-    if(_amount &gt;= 10){
+    if(_amount >= 10){
       bonus = 12;
     }
-    if(masterToReferral[msg.sender] != address(0) &amp;&amp; masterToReferral[msg.sender] != msg.sender){
+    if(masterToReferral[msg.sender] != address(0) && masterToReferral[msg.sender] != msg.sender){
       DTTtoken.approve(masterToReferral[msg.sender], DTTtoken.allowance(this,masterToReferral[msg.sender]) + price / 10000000000 * 5 * bonus * _amount);
-    }else if(_referral != address(0) &amp;&amp; _referral != msg.sender){
+    }else if(_referral != address(0) && _referral != msg.sender){
       masterToReferral[msg.sender] = _referral;
       DTTtoken.approve(_referral, DTTtoken.allowance(this,_referral) + price / 10000000000 * 5 * bonus * _amount);
     }
 
     DTTtoken.approve(msg.sender, DTTtoken.allowance(this,msg.sender) + price / 10000000000 * 5 * bonus * _amount);
-    for (uint8 i = 0; i &lt; _amount; i++) {
+    for (uint8 i = 0; i < _amount; i++) {
       uint256 genes = 0;
       genes += (randMod(155) + 101) * 1000000000000000;
       genes += (randMod(155) + 101) * 1000000000000;
@@ -364,8 +364,8 @@ contract CryptoAndDragonsPresale is AccessControl{
   }
 
   function hatchEgg(uint256 _eggId, string _name) public{
-    require(eggs[_eggId].hatchTime &lt;= now);
-    require(eggs[_eggId].classId != 0 &amp;&amp; eggs[_eggId].master == msg.sender);
+    require(eggs[_eggId].hatchTime <= now);
+    require(eggs[_eggId].classId != 0 && eggs[_eggId].master == msg.sender);
     DataBase CNDDB = DataBase(databaseContract);
     uint64 monsterId = CNDDB.getTotalMonster() + 1;
     string memory skills = &quot;0:0:0:0&quot;;
@@ -377,7 +377,7 @@ contract CryptoAndDragonsPresale is AccessControl{
   function monstersForSale (uint8 optSort) external view returns (uint256[] _monsters){
     uint256[] memory mcount = new uint256[](totalAuction);
     uint256 counter = 0;
-    for (uint256 i = 0; i &lt; totalAuction; i++) {
+    for (uint256 i = 0; i < totalAuction; i++) {
         mcount[counter] = i;
         counter++;
     }
@@ -388,12 +388,12 @@ contract CryptoAndDragonsPresale is AccessControl{
   }
   function sortAuction (uint256[] _mcount) public view returns (uint256[] _monsters){
     uint256[] memory mcount = new uint256[](_mcount.length);
-    for(uint256 i = 0; i &lt; _mcount.length; i++){
+    for(uint256 i = 0; i < _mcount.length; i++){
       mcount[i] = auctions[i].price * 10000000000 + i;
     }
     uint256[] memory tmps = getSortedArray(_mcount);
     uint256[] memory result = new uint256[](tmps.length);
-    for(uint256 i2 = 0; i2 &lt; tmps.length; i2++){
+    for(uint256 i2 = 0; i2 < tmps.length; i2++){
       result[i2] = tmps[i2] % 10000000000;
     }
     return result;
@@ -403,6 +403,6 @@ contract CryptoAndDragonsPresale is AccessControl{
   function isContract(address addr) internal view returns (bool) {
     uint size;
     assembly { size := extcodesize(addr) } // solium-disable-line
-    return size &gt; 0;
+    return size > 0;
   }
 }

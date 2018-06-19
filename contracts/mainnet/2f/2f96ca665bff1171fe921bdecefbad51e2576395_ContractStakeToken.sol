@@ -8,37 +8,37 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 
     function max64(uint64 a, uint64 b) internal pure returns (uint64) {
-        return a &gt;= b ? a : b;
+        return a >= b ? a : b;
     }
 
     function min64(uint64 a, uint64 b) internal pure returns (uint64) {
-        return a &lt; b ? a : b;
+        return a < b ? a : b;
     }
 
     function max256(uint256 a, uint256 b) internal pure returns (uint256) {
-        return a &gt;= b ? a : b;
+        return a >= b ? a : b;
     }
 
     function min256(uint256 a, uint256 b) internal pure returns (uint256) {
-        return a &lt; b ? a : b;
+        return a < b ? a : b;
     }
 }
 
@@ -108,11 +108,11 @@ contract ContractStakeToken is Ownable {
 
     uint256 public totalWithdrawTokenAll;
 
-    mapping (address =&gt; uint256) balancesToken;
-    mapping (address =&gt; uint256) totalDepositToken;
-    mapping (address =&gt; uint256) totalWithdrawToken;
-    mapping (address =&gt; TransferInStructToken[]) transferInsToken;
-    mapping (address =&gt; bool) public contractUsers;
+    mapping (address => uint256) balancesToken;
+    mapping (address => uint256) totalDepositToken;
+    mapping (address => uint256) totalWithdrawToken;
+    mapping (address => TransferInStructToken[]) transferInsToken;
+    mapping (address => bool) public contractUsers;
 
     event Withdraw(address indexed receiver, uint256 amount);
 
@@ -141,8 +141,8 @@ contract ContractStakeToken is Ownable {
 
     function depositToken(address _investor, TypeStake _stakeType, uint256 _time, uint256 _value) onlyOwnerOrUser external returns (bool){
         require(_investor != address(0));
-        require(_value &gt; 0);
-        require(transferInsToken[_investor].length &lt; 31);
+        require(_value > 0);
+        require(transferInsToken[_investor].length < 31);
 
         balancesToken[_investor] = balancesToken[_investor].add(_value);
         totalDepositToken[_investor] = totalDepositToken[_investor].add(_value);
@@ -171,11 +171,11 @@ contract ContractStakeToken is Ownable {
         require(_address != address(0));
         uint256 amount = 0;
 
-        if (balancesToken[_address] &lt;= 0 || transferInsToken[_address].length &lt;= 0) {
+        if (balancesToken[_address] <= 0 || transferInsToken[_address].length <= 0) {
             return amount;
         }
 
-        for (uint i = 0; i &lt; transferInsToken[_address].length; i++) {
+        for (uint i = 0; i < transferInsToken[_address].length; i++) {
             uint256 indexCurStake = transferInsToken[_address][i].indexStake;
             TypeStake stake = arrayStakesToken[indexCurStake].stakeType;
             uint256 stakeTime = arrayStakesToken[indexCurStake].time;
@@ -188,15 +188,15 @@ contract ContractStakeToken is Ownable {
             }
             if (stake == TypeStake.DAY) {
                 currentStake = 0;
-                if (_now &lt; stakeTime.add(1 days)) continue;
+                if (_now < stakeTime.add(1 days)) continue;
             }
             if (stake == TypeStake.WEEK) {
                 currentStake = 1;
-                if (_now &lt; stakeTime.add(7 days)) continue;
+                if (_now < stakeTime.add(7 days)) continue;
             }
             if (stake == TypeStake.MONTH) {
                 currentStake = 2;
-                if (_now &lt; stakeTime.add(730 hours)) continue;
+                if (_now < stakeTime.add(730 hours)) continue;
             }
             uint256 amountHours = _now.sub(stakeTime).div(1 hours);
             stakeAmount = calculator(currentStake, stakeAmount, amountHours);
@@ -212,7 +212,7 @@ contract ContractStakeToken is Ownable {
         uint256 _currentTime = now;
         _currentTime = 1525651200; // for test
         uint256 _amount = validWithdrawToken(_address, _currentTime);
-        require(_amount &gt; 0);
+        require(_amount > 0);
         totalWithdrawToken[_address] = totalWithdrawToken[_address].add(_amount);
         totalWithdrawTokenAll = totalWithdrawTokenAll.add(_amount);
         while (clearTransferInsToken(_address) == false) {
@@ -223,7 +223,7 @@ contract ContractStakeToken is Ownable {
     }
 
     function clearTransferInsToken(address _owner) private returns (bool) {
-        for (uint i = 0; i &lt; transferInsToken[_owner].length; i++) {
+        for (uint i = 0; i < transferInsToken[_owner].length; i++) {
             if (transferInsToken[_owner][i].isRipe == true) {
                 balancesToken[_owner] = balancesToken[_owner].sub(arrayStakesToken[transferInsToken[_owner][i].indexStake].amount);
                 removeMemberArrayToken(_owner, i);
@@ -234,8 +234,8 @@ contract ContractStakeToken is Ownable {
     }
 
     function removeMemberArrayToken(address _address, uint index) private {
-        if (index &gt;= transferInsToken[_address].length) return;
-        for (uint i = index; i &lt; transferInsToken[_address].length - 1; i++) {
+        if (index >= transferInsToken[_address].length) return;
+        for (uint i = index; i < transferInsToken[_address].length - 1; i++) {
             transferInsToken[_address][i] = transferInsToken[_address][i + 1];
         }
         delete transferInsToken[_address][transferInsToken[_address].length - 1];
@@ -247,7 +247,7 @@ contract ContractStakeToken is Ownable {
     }
 
     function cancel(uint256 _index, address _address) onlyOwnerOrUser public returns (bool _result) {
-        require(_index &gt;= 0);
+        require(_index >= 0);
         require(_address != address(0));
         if(_address != arrayStakesToken[_index].owner){
             return false;
@@ -257,14 +257,14 @@ contract ContractStakeToken is Ownable {
     }
 
     function withdrawOwner(uint256 _amount) public onlyOwner returns (bool) {
-        require(this.balance &gt;= _amount);
+        require(this.balance >= _amount);
         owner.transfer(_amount);
         Withdraw(owner, _amount);
     }
 
     function changeRates(uint8 _numberRate, uint256 _percent) onlyOwnerOrUser public returns (bool) {
-        require(_percent &gt;= 0);
-        require(0 &lt;= _numberRate &amp;&amp; _numberRate &lt; 3);
+        require(_percent >= 0);
+        require(0 <= _numberRate && _numberRate < 3);
         rates[_numberRate] = _percent.add(100);
         return true;
 
@@ -277,7 +277,7 @@ contract ContractStakeToken is Ownable {
         uint256 _time,
         StatusStake _status
     ) {
-        require(_index &lt; arrayStakesToken.length);
+        require(_index < arrayStakesToken.length);
         _owner = arrayStakesToken[_index].owner;
         _amount = arrayStakesToken[_index].amount;
         _stakeType = arrayStakesToken[_index].stakeType;
@@ -289,7 +289,7 @@ contract ContractStakeToken is Ownable {
         uint256 _indexStake,
         bool _isRipe
     ) {
-        require(_index &lt; transferInsToken[_address].length);
+        require(_index < transferInsToken[_address].length);
         _indexStake = transferInsToken[_address][_index].indexStake;
         _isRipe = transferInsToken[_address][_index].isRipe;
     }
@@ -327,7 +327,7 @@ contract ContractStakeToken is Ownable {
         if (_currentStake == 2) {
             number = _amountHours.div(730);
         }
-        while(i &lt; number){
+        while(i < number){
             stakeAmount= stakeAmount.mul(rates[_currentStake]).div(100);
             i++;
         }

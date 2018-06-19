@@ -190,7 +190,7 @@ contract GreenX is Owner {
     // Fallback function for token purchasing  
     function () external payable isActive isInSale {
         uint state = getCurrentState();
-        require(state >= IN_PRIVATE_SALE &amp;&amp; state < END_SALE);
+        require(state >= IN_PRIVATE_SALE && state < END_SALE);
         require(msg.value >= minInvestedAmount);
 
         bool isPrivate = privateList[msg.sender];
@@ -200,7 +200,7 @@ contract GreenX is Owner {
         if (state == IN_PRESALE) {
             return issueTokensForPresale(state);
         }
-        if (IN_1ST_ICO <= state &amp;&amp; state <= IN_3RD_ICO) {
+        if (IN_1ST_ICO <= state && state <= IN_3RD_ICO) {
             return issueTokensForICO(state);
         }
         revert();
@@ -355,7 +355,7 @@ contract GreenX is Owner {
         require(_noneKycAddr != address(0));
         uint256 investedAmount = totalInvestedAmountOf[_noneKycAddr];
         uint256 totalRemainingRefund = totalLoadedRefund.sub(totalRefundedAmount);
-        require(whiteList[_noneKycAddr] == false &amp;&amp; privateList[_noneKycAddr] == false);
+        require(whiteList[_noneKycAddr] == false && privateList[_noneKycAddr] == false);
         require(investedAmount > 0);
         require(totalRemainingRefund >= investedAmount);
         require(saleState == END_SALE);
@@ -377,7 +377,7 @@ contract GreenX is Owner {
         uint256 tokenRevoked = balances[msg.sender];
         require(saleState == END_SALE);
         require(!isSoftCapReached());
-        require(totalRemainingRefund >= refundedAmount &amp;&amp; refundedAmount > 0);
+        require(totalRemainingRefund >= refundedAmount && refundedAmount > 0);
 		
         totalInvestedAmountOf[msg.sender] = 0;
         balances[msg.sender] = 0;

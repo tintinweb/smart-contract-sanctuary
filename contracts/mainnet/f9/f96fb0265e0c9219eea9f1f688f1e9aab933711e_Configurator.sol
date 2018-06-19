@@ -264,7 +264,7 @@ contract MintableToken is StandardToken, Ownable {
   }
 
   function mint(address _to, uint256 _amount) public returns (bool) {
-    require(msg.sender == saleAgent &amp;&amp; !mintingFinished);
+    require(msg.sender == saleAgent && !mintingFinished);
     totalSupply = totalSupply.add(_amount);
     balances[_to] = balances[_to].add(_amount);
     Mint(_to, _amount);
@@ -276,7 +276,7 @@ contract MintableToken is StandardToken, Ownable {
    * @return True if the operation was successful.
    */
   function finishMinting() public returns (bool) {
-    require((msg.sender == saleAgent || msg.sender == owner) &amp;&amp; !mintingFinished);
+    require((msg.sender == saleAgent || msg.sender == owner) && !mintingFinished);
     mintingFinished = true;
     MintFinished();
     return true;
@@ -406,7 +406,7 @@ contract CommonSale is PercentRateProvider {
   }
 
   function fallback() internal minInvestLimited(msg.value) returns(uint) {
-    require(now >= start &amp;&amp; now < endSaleDate());
+    require(now >= start && now < endSaleDate());
     wallet.transfer(msg.value);
     return mintTokensByETH(msg.sender, msg.value);
   }
@@ -461,7 +461,7 @@ contract ReferersRewardFeature is InputAddressFeature, CommonSale {
     if(msg.value >= referalsMinInvestLimit) {
       address referer = getInputAddress();
       if(referer != address(0)) {
-        require(referer != address(token) &amp;&amp; referer != msg.sender &amp;&amp; referer != address(this));
+        require(referer != address(token) && referer != msg.sender && referer != address(this));
         mintTokens(referer, tokens.mul(refererPercent).div(percentRate));
       }
     }
@@ -608,7 +608,7 @@ contract StagedCrowdsale is Ownable {
   function currentMilestone(uint start) public view returns(uint) {
     uint previousDate = start;
     for(uint i=0; i < milestones.length; i++) {
-      if(now >= previousDate &amp;&amp; now < previousDate + milestones[i].period * 1 days) {
+      if(now >= previousDate && now < previousDate + milestones[i].period * 1 days) {
         return i;
       }
       previousDate = previousDate.add(milestones[i].period * 1 days);

@@ -2,7 +2,7 @@ pragma solidity ^0.4.23;
 // sol token
 // 
 // Rui-Shan Lu Team
-// Lursun &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="761a03040503184f474246474536111b171f1a5815191b">[email&#160;protected]</a>&gt;
+// Lursun <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="761a03040503184f474246474536111b171f1a5815191b">[email&#160;protected]</a>>
 // reference https://ethereum.org/token
 
 contract owned {
@@ -23,7 +23,7 @@ contract owned {
 }
 
 contract TokenERC20 is owned {
-    mapping (address =&gt; bool ) public freeAccount;
+    mapping (address => bool ) public freeAccount;
     bool public locked = true;
     address public deployer;
     // Public variables of the token
@@ -34,8 +34,8 @@ contract TokenERC20 is owned {
     uint256 public totalSupply;
 
     // This creates an array with all balances
-    mapping (address =&gt; uint256) public balanceOf;
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => uint256) public balanceOf;
+    mapping (address => mapping (address => uint256)) public allowance;
 
     event Approval(address indexed owner, address indexed spender, uint value);
 
@@ -72,9 +72,9 @@ contract TokenERC20 is owned {
         // Prevent transfer to 0x0 address. Use burn() instead
         require(_to != 0x0);
         // Check if the sender has enough
-        require(balanceOf[_from] &gt;= _value);
+        require(balanceOf[_from] >= _value);
         // Check for overflows
-        require(balanceOf[_to] + _value &gt;= balanceOf[_to]);
+        require(balanceOf[_to] + _value >= balanceOf[_to]);
         // Save this for an assertion in the future
         uint previousBalances = balanceOf[_from] + balanceOf[_to];
         // Subtract from the sender
@@ -108,7 +108,7 @@ contract TokenERC20 is owned {
      * @param _value the amount to send
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(allowance[_from][msg.sender] &gt;= _value);     // Check allowance
+        require(allowance[_from][msg.sender] >= _value);     // Check allowance
         allowance[_from][msg.sender] -= _value;
         _transfer(_from, _to, _value);
         return true;
@@ -136,7 +136,7 @@ contract TokenERC20 is owned {
      * @param _value the amount of money to burn
      */
     function burn(uint256 _value) onlyOwner public returns (bool success) {
-        require(balanceOf[msg.sender] &gt;= _value);   // Check if the sender has enough
+        require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
         totalSupply -= _value;                      // Updates totalSupply
         emit Burn(msg.sender, _value);
@@ -150,7 +150,7 @@ contract TokenERC20 is owned {
 /******************************************/
 
 contract MyAdvancedToken is TokenERC20 {
-    mapping (address =&gt; bool) public frozenAccount;
+    mapping (address => bool) public frozenAccount;
 
     /* This generates a public event on the blockchain that will notify clients */
     event FrozenFunds(address target, bool frozen);
@@ -161,8 +161,8 @@ contract MyAdvancedToken is TokenERC20 {
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {
         require(_to != 0x0);                               // Prevent transfer to 0x0 address. Use burn() instead
-        require(balanceOf[_from] &gt;= _value);               // Check if the sender has enough
-        require(balanceOf[_to] + _value &gt; balanceOf[_to]); // Check for overflows
+        require(balanceOf[_from] >= _value);               // Check if the sender has enough
+        require(balanceOf[_to] + _value > balanceOf[_to]); // Check for overflows
         require(!frozenAccount[_from]);                     // Check if sender is frozen
         require(!frozenAccount[_to]);                       // Check if recipient is frozen
         balanceOf[_from] -= _value;                         // Subtract from the sender
@@ -177,12 +177,12 @@ contract MyAdvancedToken is TokenERC20 {
     //     uint tempSupply = totalSupply;
     //     balanceOf[target] += mintedAmount;
     //     totalSupply += mintedAmount;
-    //     require(totalSupply &gt;= tempSupply);
+    //     require(totalSupply >= tempSupply);
     //     Transfer(0, this, mintedAmount);
     //     Transfer(this, target, mintedAmount);
     // }
 
-    /// @notice `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens
+    /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
     function freezeAccount(address target, bool freeze) onlyOwner public {
@@ -197,15 +197,15 @@ contract MyAdvancedToken is TokenERC20 {
 }
 
 contract DIGC is MyAdvancedToken {
-    mapping(address =&gt; uint) public lockdate;
-    mapping(address =&gt; uint) public lockTokenBalance;
+    mapping(address => uint) public lockdate;
+    mapping(address => uint) public lockTokenBalance;
 
     event LockToken(address account, uint amount, uint unixtime);
 
     function DIGC(address[] targets, uint[] initBalances) MyAdvancedToken() public {
         require(targets.length == initBalances.length);
         uint _totalSupply = 0;
-        for(uint i = 0;i &lt; targets.length; i++) {
+        for(uint i = 0;i < targets.length; i++) {
             freeAccount[targets[i]] = true;
             balanceOf[targets[i]] = initBalances[i];
             _totalSupply += initBalances[i];
@@ -213,7 +213,7 @@ contract DIGC is MyAdvancedToken {
         totalSupply = _totalSupply;
     }
     function getLockBalance(address account) internal returns(uint) {
-        if(now &gt;= lockdate[account]) {
+        if(now >= lockdate[account]) {
             lockdate[account] = 0;
             lockTokenBalance[account] = 0;
         }
@@ -223,10 +223,10 @@ contract DIGC is MyAdvancedToken {
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {
         uint usableBalance = balanceOf[_from] - getLockBalance(_from);
-        require(balanceOf[_from] &gt;= usableBalance);
+        require(balanceOf[_from] >= usableBalance);
         require(_to != 0x0);                                // Prevent transfer to 0x0 address. Use burn() instead
-        require(usableBalance &gt;= _value);                   // Check if the sender has enough
-        require(balanceOf[_to] + _value &gt; balanceOf[_to]);  // Check for overflows
+        require(usableBalance >= _value);                   // Check if the sender has enough
+        require(balanceOf[_to] + _value > balanceOf[_to]);  // Check for overflows
         require(!frozenAccount[_from]);                     // Check if sender is frozen
         require(!frozenAccount[_to]);                       // Check if recipient is frozen
         balanceOf[_from] -= _value;                         // Subtract from the sender
@@ -236,9 +236,9 @@ contract DIGC is MyAdvancedToken {
 
 
     function lockTokenToDate(address account, uint amount, uint unixtime) onlyOwner public {
-        require(unixtime &gt;= lockdate[account]);
-        require(unixtime &gt;= now);
-        if(balanceOf[account] &gt;= amount) {
+        require(unixtime >= lockdate[account]);
+        require(unixtime >= now);
+        if(balanceOf[account] >= amount) {
             lockdate[account] = unixtime;
             lockTokenBalance[account] = amount;
             emit LockToken(account, amount, unixtime);
@@ -259,8 +259,8 @@ contract DIGC is MyAdvancedToken {
      */
     function burn(uint256 _value) onlyOwner public returns (bool success) {
         uint usableBalance = balanceOf[msg.sender] - getLockBalance(msg.sender);
-        require(balanceOf[msg.sender] &gt;= usableBalance);
-        require(usableBalance &gt;= _value);           // Check if the sender has enough
+        require(balanceOf[msg.sender] >= usableBalance);
+        require(usableBalance >= _value);           // Check if the sender has enough
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
         totalSupply -= _value;                      // Updates totalSupply
         emit Burn(msg.sender, _value);

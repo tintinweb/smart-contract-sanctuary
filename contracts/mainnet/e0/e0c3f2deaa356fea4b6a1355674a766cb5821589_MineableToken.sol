@@ -76,7 +76,7 @@ contract MineableToken is owned {
 
   function mine( uint256 qty ) public onlyOwner {
     require (    (totalSupply + qty) > totalSupply
-              &amp;&amp; (totalSupply + qty) <= supplyCap
+              && (totalSupply + qty) <= supplyCap
             );
 
     totalSupply += qty;

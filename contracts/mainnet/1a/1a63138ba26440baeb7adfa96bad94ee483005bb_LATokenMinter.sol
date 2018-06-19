@@ -13,20 +13,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal constant returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal constant returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -96,15 +96,15 @@ Implements ERC 20 Token standard: https://github.com/ethereum/EIPs/issues/20
 
 contract StandardToken is Token {
 
-    mapping (address =&gt; uint256) balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) allowed;
 
     function transfer(address _to, uint256 _value) returns (bool success) {
         //Default assumes totalSupply can&#39;t be over max (2^256 - 1).
         //If your token leaves out totalSupply and can issue more tokens as time goes on, you need to check if it doesn&#39;t wrap.
         //Replace the if with this one instead.
-        //if (balances[msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt; balances[_to]) {
-        if (balances[msg.sender] &gt;= _value &amp;&amp; _value &gt; 0) {
+        //if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
+        if (balances[msg.sender] >= _value && _value > 0) {
             balances[msg.sender] -= _value;
             balances[_to] += _value;
             Transfer(msg.sender, _to, _value);
@@ -114,8 +114,8 @@ contract StandardToken is Token {
 
     function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
         //same as above. Replace this line with the following if you want to protect against wrapping uints.
-        //if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt; balances[_to]) {
-        if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; _value &gt; 0) {
+        //if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0) {
             balances[_from] -= _value;
             balances[_to] += _value;
             allowed[_from][msg.sender] -= _value;
@@ -176,7 +176,7 @@ contract LATToken is StandardToken {
     }
 
     modifier onlyMinterAndExchanger() {
-        if (msg.sender != minter &amp;&amp; msg.sender != exchanger) {
+        if (msg.sender != minter && msg.sender != exchanger) {
             revert();
         }
         _;
@@ -184,12 +184,12 @@ contract LATToken is StandardToken {
 
     function transfer(address _to, uint256 _value) returns (bool success) {
 
-        if (exchanger != 0x0 &amp;&amp; _to == exchanger) {
+        if (exchanger != 0x0 && _to == exchanger) {
             assert(ExchangeContract(exchanger).exchange(msg.sender, _value));
             return true;
         }
 
-        if (balances[msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt; balances[_to]) {
+        if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
 
             balances[msg.sender] = balances[msg.sender].sub(_value);
             balances[_to] = balances[_to].add(_value);
@@ -226,11 +226,11 @@ contract LATToken is StandardToken {
             return false;
         }
 
-        if (totalSupply.sub(tokenCount) &gt; totalSupply) {
+        if (totalSupply.sub(tokenCount) > totalSupply) {
             revert();
         }
 
-        if (balances[_for].sub(tokenCount) &gt; balances[_for]) {
+        if (balances[_for].sub(tokenCount) > balances[_for]) {
             revert();
         }
 
@@ -322,7 +322,7 @@ contract ExchangeContract {
      	LATToken nextToken = LATToken(nextTokenAddress);
 
 		// check if balance is correct
-		if (prevToken.balanceOf(_for) &gt;= prevTokensAmount) {
+		if (prevToken.balanceOf(_for) >= prevTokensAmount) {
 			uint256 amount = prevTokensAmount.div(prevCourse);
 
 			assert(prevToken.burnTokens(_for, amount.mul(prevCourse))); // remove previous tokens
@@ -468,7 +468,7 @@ contract LATokenMinter {
         uint daysFromStart = currentTimeDiff.div(secondsPerDay);
         uint currentDay = daysFromStart.add(1);
 
-        if (getBlockTimestamp() &gt;= endTime) {
+        if (getBlockTimestamp() >= endTime) {
             currentTimeDiff = endTime.sub(startTime).add(1);
             currentDay = 5 * 365;
         }
@@ -476,7 +476,7 @@ contract LATokenMinter {
         uint maxCurrentHarvest = currentDay.mul(unfrozePerDay);
         uint wasNotHarvested = maxCurrentHarvest.sub(alreadyHarvestedTokens);
 
-        require(wasNotHarvested &gt; 0);
+        require(wasNotHarvested > 0);
         require(token.issueTokens(teamPoolForFrozenTokens, wasNotHarvested));
         alreadyHarvestedTokens = alreadyHarvestedTokens.add(wasNotHarvested);
 

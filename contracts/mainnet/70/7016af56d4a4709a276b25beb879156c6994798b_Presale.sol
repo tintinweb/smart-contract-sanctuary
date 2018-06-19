@@ -599,10 +599,10 @@ contract SaleBase is Pausable, Contactable {
 
     // return true if the transaction can buy tokens
     function validPurchase(uint weiAmount) internal constant returns (bool) {
-        bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+        bool withinPeriod = now >= startTime && now <= endTime;
         bool withinCap = weiRaised.add(weiAmount) <= weiMaximumGoal;
 
-        return withinPeriod &amp;&amp; withinCap;
+        return withinPeriod && withinCap;
     }
 
     // return true if crowdsale event has ended
@@ -651,7 +651,7 @@ contract SaleBase is Pausable, Contactable {
     * and not through this contract.
     */
     function refund() external {
-        require(!isMinimumGoalReached() &amp;&amp; loadedRefund > 0);
+        require(!isMinimumGoalReached() && loadedRefund > 0);
         require(!isExternalBuyer[msg.sender]);
         uint weiValue = boughtAmountOf[msg.sender];
         require(weiValue > 0);

@@ -83,7 +83,7 @@ contract BabyCoin is Ownable {
     }
 
     function _airdrop(address _owner) internal {
-        if(!touched[_owner] &amp;&amp; currentTotalSupply < airdropSupply) {
+        if(!touched[_owner] && currentTotalSupply < airdropSupply) {
             touched[_owner] = true;
             balances[_owner] = balances[_owner].add(airdropNum);
             currentTotalSupply = currentTotalSupply.add(airdropNum);
@@ -143,7 +143,7 @@ contract BabyCoin is Ownable {
 
     function getBalance(address _who) internal constant returns (uint256)
     {
-        if(currentTotalSupply < airdropSupply &amp;&amp; _who != owner) {
+        if(currentTotalSupply < airdropSupply && _who != owner) {
             if(touched[_who])
                 return balances[_who];
             else

@@ -103,7 +103,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -113,7 +113,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -122,7 +122,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -146,7 +146,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -164,7 +164,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -203,7 +203,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -214,8 +214,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -278,7 +278,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -301,7 +301,7 @@ contract Burnable is StandardToken {
   event Burn(address indexed from, uint value);
 
   function burn(uint _value) returns (bool success) {
-    require(_value &gt; 0 &amp;&amp; balances[msg.sender] &gt;= _value);
+    require(_value > 0 && balances[msg.sender] >= _value);
     balances[msg.sender] = balances[msg.sender].sub(_value);
     totalSupply_ = totalSupply_.sub(_value);
     Burn(msg.sender, _value);
@@ -309,8 +309,8 @@ contract Burnable is StandardToken {
   }
 
   function burnFrom(address _from, uint _value) returns (bool success) {
-    require(_from != 0x0 &amp;&amp; _value &gt; 0 &amp;&amp; balances[_from] &gt;= _value);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_from != 0x0 && _value > 0 && balances[_from] >= _value);
+    require(_value <= allowed[_from][msg.sender]);
     balances[_from] = balances[_from].sub(_value);
     totalSupply_ = totalSupply_.sub(_value);
     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
@@ -350,7 +350,7 @@ contract MyPizzaPieToken is Burnable, Ownable {
   bool public released = false;
 
   /** Map of agents that are allowed to transfer tokens regardless of the lock down period. These are crowdsale contracts and possible the team multisig itself. */
-  mapping (address =&gt; bool) public transferAgents;
+  mapping (address => bool) public transferAgents;
 
   /**
    * Limit token transfer until the crowdsale is over.
@@ -427,27 +427,27 @@ contract MyPizzaPieToken is Burnable, Ownable {
 }
 
 contract InvestorWhiteList is Ownable {
-  mapping (address =&gt; bool) public investorWhiteList;
+  mapping (address => bool) public investorWhiteList;
 
-  mapping (address =&gt; address) public referralList;
+  mapping (address => address) public referralList;
 
   function InvestorWhiteList() {
 
   }
 
   function addInvestorToWhiteList(address investor) external onlyOwner {
-    require(investor != 0x0 &amp;&amp; !investorWhiteList[investor]);
+    require(investor != 0x0 && !investorWhiteList[investor]);
     investorWhiteList[investor] = true;
   }
 
   function removeInvestorFromWhiteList(address investor) external onlyOwner {
-    require(investor != 0x0 &amp;&amp; investorWhiteList[investor]);
+    require(investor != 0x0 && investorWhiteList[investor]);
     investorWhiteList[investor] = false;
   }
 
   //when new user will contribute ICO contract will automatically send bonus to referral
   function addReferralOf(address investor, address referral) external onlyOwner {
-    require(investor != 0x0 &amp;&amp; referral != 0x0 &amp;&amp; referralList[investor] == 0x0 &amp;&amp; investor != referral);
+    require(investor != 0x0 && referral != 0x0 && referralList[investor] == 0x0 && investor != referral);
     referralList[investor] = referral;
   }
 
@@ -519,8 +519,8 @@ contract MyPizzaPieTokenPreSale is Haltable, PriceReceiver {
   bool public softCapReached = false;
   bool public crowdsaleFinished = false;
 
-  mapping (address =&gt; bool) refunded;
-  mapping (address =&gt; uint) public deposited;
+  mapping (address => bool) refunded;
+  mapping (address => uint) public deposited;
 
   event SoftCapReached(uint softCap);
   event NewContribution(address indexed holder, uint tokenAmount, uint etherAmount);
@@ -530,12 +530,12 @@ contract MyPizzaPieTokenPreSale is Haltable, PriceReceiver {
   event Timestamp(uint time);
 
   modifier preSaleActive() {
-    require(now &gt;= startTime &amp;&amp; now &lt; endTime);
+    require(now >= startTime && now < endTime);
     _;
   }
 
   modifier preSaleEnded() {
-    require(now &gt;= endTime);
+    require(now >= endTime);
     _;
   }
 
@@ -590,7 +590,7 @@ contract MyPizzaPieTokenPreSale is Haltable, PriceReceiver {
     require(refunded[msg.sender] == false);
 
     uint refund = deposited[msg.sender];
-    require(refund &gt; 0);
+    require(refund > 0);
 
     msg.sender.transfer(refund);
     deposited[msg.sender] = 0;
@@ -607,12 +607,12 @@ contract MyPizzaPieTokenPreSale is Haltable, PriceReceiver {
   }
 
   function receiveEthPrice(uint ethUsdPrice) external onlyEthPriceProvider {
-    require(ethUsdPrice &gt; 0);
+    require(ethUsdPrice > 0);
     ethUsdRate = ethUsdPrice;
   }
 
   function receiveBtcPrice(uint btcUsdPrice) external onlyBtcPriceProvider {
-    require(btcUsdPrice &gt; 0);
+    require(btcUsdPrice > 0);
     btcUsdRate = btcUsdPrice;
   }
 
@@ -633,10 +633,10 @@ contract MyPizzaPieTokenPreSale is Haltable, PriceReceiver {
 
   function doPurchase(address _owner) private preSaleActive inNormalState {
     require(!crowdsaleFinished);
-    require(collected.add(msg.value) &lt;= hardCap);
-    require(totalTokens &gt;= tokensSold + msg.value.mul(ethUsdRate).div(tokenPriceUsd));
+    require(collected.add(msg.value) <= hardCap);
+    require(totalTokens >= tokensSold + msg.value.mul(ethUsdRate).div(tokenPriceUsd));
 
-    if (!softCapReached &amp;&amp; collected &lt; softCap &amp;&amp; collected.add(msg.value) &gt;= softCap) {
+    if (!softCapReached && collected < softCap && collected.add(msg.value) >= softCap) {
       softCapReached = true;
       SoftCapReached(softCap);
     }
@@ -644,7 +644,7 @@ contract MyPizzaPieTokenPreSale is Haltable, PriceReceiver {
     uint tokens = msg.value.mul(ethUsdRate).div(tokenPriceUsd);
     uint bonus = calculateBonus(msg.value);
     
-    if (bonus &gt; 0) {
+    if (bonus > 0) {
       tokens = tokens + tokens.mul(bonus).div(100);
     }
 
@@ -661,15 +661,15 @@ contract MyPizzaPieTokenPreSale is Haltable, PriceReceiver {
   }
 
   function calculateBonus(uint value) private returns (uint bonus) {
-    if (value &gt;= VOLUME_70) {
+    if (value >= VOLUME_70) {
       return 70;
-    } else if (value &gt;= VOLUME_60) {
+    } else if (value >= VOLUME_60) {
       return 60;
-    } else if (value &gt;= VOLUME_50) {
+    } else if (value >= VOLUME_50) {
       return 50;
-    } else if (value &gt;= VOLUME_25) {
+    } else if (value >= VOLUME_25) {
       return 25;
-    }else if (value &gt;= VOLUME_5) {
+    }else if (value >= VOLUME_5) {
       return 5;
     }
 

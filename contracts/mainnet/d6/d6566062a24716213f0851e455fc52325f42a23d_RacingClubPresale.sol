@@ -134,7 +134,7 @@ contract RacingClubPresale is AccessControl {
   // If order count is 5 then one car can be preselected.
   function purchaseCars(uint256 _carsToBuy, uint256 _pickedId, bool _upgradePackage) public payable whenNotPaused {
     require(now < PRESALE_END_TIMESTAMP);
-    require(_carsToBuy > 0 &amp;&amp; _carsToBuy <= MAX_ORDER);
+    require(_carsToBuy > 0 && _carsToBuy <= MAX_ORDER);
     require(carsCount + _carsToBuy <= MAX_CARS);
 
     uint256 priceToPay = calculatePrice(_carsToBuy, _upgradePackage);

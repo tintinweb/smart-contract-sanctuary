@@ -221,7 +221,7 @@ contract BasicCrowdsale is ICrowdsaleProcessor {
     duration = _endTimestamp - _startTimestamp;
 
     // duration must fit constraints
-    require(duration >= MIN_CROWDSALE_TIME &amp;&amp; duration <= MAX_CROWDSALE_TIME);
+    require(duration >= MIN_CROWDSALE_TIME && duration <= MAX_CROWDSALE_TIME);
 
     startTimestamp = _startTimestamp;
     endTimestamp = _endTimestamp;
@@ -241,10 +241,10 @@ contract BasicCrowdsale is ICrowdsaleProcessor {
   {
     return (
       // it was started
-      started &amp;&amp;
+      started &&
 
       // crowdsale period has finished
-      block.timestamp >= endTimestamp &amp;&amp;
+      block.timestamp >= endTimestamp &&
 
       // but collected ETH is below the required minimum
       totalCollected < minimalGoal
@@ -259,13 +259,13 @@ contract BasicCrowdsale is ICrowdsaleProcessor {
   {
     return (
       // it was started
-      started &amp;&amp;
+      started &&
 
       // hard cap wasn&#39;t reached yet
-      totalCollected < hardCap &amp;&amp;
+      totalCollected < hardCap &&
 
       // and current time is within the crowdfunding period
-      block.timestamp >= startTimestamp &amp;&amp;
+      block.timestamp >= startTimestamp &&
       block.timestamp < endTimestamp
     );
   }
@@ -281,7 +281,7 @@ contract BasicCrowdsale is ICrowdsaleProcessor {
       totalCollected >= hardCap ||
 
       // ...or the crowdfunding period is over, but the minimum has been reached
-      (block.timestamp >= endTimestamp &amp;&amp; totalCollected >= minimalGoal)
+      (block.timestamp >= endTimestamp && totalCollected >= minimalGoal)
     );
   }
 }

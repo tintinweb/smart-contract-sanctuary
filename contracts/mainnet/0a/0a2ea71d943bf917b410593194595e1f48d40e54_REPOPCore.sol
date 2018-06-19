@@ -71,7 +71,7 @@ contract REPOPAccessControl {
 }
 
 contract PullPayment {
-  mapping(address =&gt; uint) public payments;
+  mapping(address => uint) public payments;
 
   function asyncSend(address dest, uint amount) internal {
     payments[dest] += amount;
@@ -87,7 +87,7 @@ contract PullPayment {
 }
 
 
-/// @author Dieter Shirley &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="375352435277564f5e585a4d5259195458">[email&#160;protected]</a>&gt; (https://github.com/dete)
+/// @author Dieter Shirley <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="375352435277564f5e585a4d5259195458">[email&#160;protected]</a>> (https://github.com/dete)
 contract ERC721 {
 
   function approve(address _to, uint256 _tokenId) public;
@@ -117,20 +117,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -145,7 +145,7 @@ contract MetadataContract{
 
       function _memcpy(uint _dest, uint _src, uint _len) private view {
 
-        for(; _len &gt;= 32; _len -= 32) {
+        for(; _len >= 32; _len -= 32) {
             assembly {
                 mstore(_dest, mload(_src))
             }
@@ -189,7 +189,7 @@ contract MetadataContract{
             ret = &#39;0&#39;;
         }
         else {
-            while (v &gt; 0) {
+            while (v > 0) {
                 ret = bytes32(uint(ret) / (2 ** 8));
                 ret |= bytes32(((v % 10) + 48) * 2 ** (8 * 31));
                 v /= 10;
@@ -222,7 +222,7 @@ contract REPOPERC721 is ERC721, REPOPAccessControl{
 
     function tokenMetadata(uint256 _tokenId) public view returns (string infoUrl) {
       require(metadataContract != address(0));
-      require(_tokenId &gt;= 0 &amp;&amp; _tokenId &lt;= pops.length);
+      require(_tokenId >= 0 && _tokenId <= pops.length);
 
       return metadataContract.getMetadataUrl(_tokenId);
     }
@@ -284,7 +284,7 @@ contract REPOPERC721 is ERC721, REPOPAccessControl{
             uint256 resultIndex = 0;
             uint256 popId;
 
-            for (popId = 1; popId &lt;= totalPops; popId++) {
+            for (popId = 1; popId <= totalPops; popId++) {
                 if (popIndexToOwner[popId] == _owner) {
                     result[resultIndex] = popId;
                     resultIndex++;
@@ -371,10 +371,10 @@ contract REPOPERC721 is ERC721, REPOPAccessControl{
 
     Pop[] public pops;
 
-    mapping (uint256 =&gt; address) public popIndexToOwner;
-    mapping (address =&gt; uint256) public ownershipTokenCount;
-    mapping (uint256 =&gt; address) public popIndexToApproved;
-    mapping (uint256 =&gt; uint256) public genesToTokenId;
+    mapping (uint256 => address) public popIndexToOwner;
+    mapping (address => uint256) public ownershipTokenCount;
+    mapping (uint256 => address) public popIndexToApproved;
+    mapping (uint256 => uint256) public genesToTokenId;
 
     function getPop(uint256 _popId) public view
                     returns (
@@ -389,7 +389,7 @@ contract REPOPERC721 is ERC721, REPOPAccessControl{
                                 uint16 generation){
         Pop memory pop = pops[_popId];
         return(
-                isReady = (pop.cooldownEndTimestamp &lt;= now),
+                isReady = (pop.cooldownEndTimestamp <= now),
                 pop.genes,
                 pop.birthTime,
                 pop.cooldownEndTimestamp,
@@ -466,7 +466,7 @@ contract MoneyManager is PullPayment, CarefulTransfer, REPOPAccessControl {
     }
 
     function withdraw(uint amount) external onlyCFO {
-        require(amount &lt; address(this).balance);
+        require(amount < address(this).balance);
         cfoAddress.transfer(amount);
     }
 
@@ -478,21 +478,21 @@ contract MoneyManager is PullPayment, CarefulTransfer, REPOPAccessControl {
 library RoundMoneyNicely {
     function roundMoneyDownNicely(uint _rawValueWei) internal pure
     returns (uint nicerValueWei) {
-        if (_rawValueWei &lt; 1 finney) {
+        if (_rawValueWei < 1 finney) {
             return _rawValueWei;
-        } else if (_rawValueWei &lt; 10 finney) {
+        } else if (_rawValueWei < 10 finney) {
             return 10 szabo * (_rawValueWei / 10 szabo);
-        } else if (_rawValueWei &lt; 100 finney) {
+        } else if (_rawValueWei < 100 finney) {
             return 100 szabo * (_rawValueWei / 100 szabo);
-        } else if (_rawValueWei &lt; 1 ether) {
+        } else if (_rawValueWei < 1 ether) {
             return 1 finney * (_rawValueWei / 1 finney);
-        } else if (_rawValueWei &lt; 10 ether) {
+        } else if (_rawValueWei < 10 ether) {
             return 10 finney * (_rawValueWei / 10 finney);
-        } else if (_rawValueWei &lt; 100 ether) {
+        } else if (_rawValueWei < 100 ether) {
             return 100 finney * (_rawValueWei / 100 finney);
-        } else if (_rawValueWei &lt; 1000 ether) {
+        } else if (_rawValueWei < 1000 ether) {
             return 1 ether * (_rawValueWei / 1 ether);
-        } else if (_rawValueWei &lt; 10000 ether) {
+        } else if (_rawValueWei < 10000 ether) {
             return 10 ether * (_rawValueWei / 10 ether);
         } else {
             return _rawValueWei;
@@ -524,8 +524,8 @@ contract AuctionManager is MoneyManager {
     uint256 private auctionsStartBid = 0.1 ether;
     address private auctionsStartAddress;
 
-    mapping (uint256 =&gt; uint256) public _itemID2auctionID;
-    mapping (uint256 =&gt; uint256) public _auctionID2itemID;
+    mapping (uint256 => uint256) public _itemID2auctionID;
+    mapping (uint256 => uint256) public _auctionID2itemID;
     Auction[] public _auctionsArray;
 
     ERC721 public nonFungibleContract;
@@ -558,7 +558,7 @@ contract AuctionManager is MoneyManager {
         bool[] memory toReturnCanBeEnded = new bool[](_auctionsArray.length);
         uint256 index = 0;
 
-        for(uint256 i = 1; i &lt; _auctionsArray.length; i++){
+        for(uint256 i = 1; i < _auctionsArray.length; i++){
             uint256 popId = _auctionID2itemID[i];
             uint256 price = requiredBid(i);
 
@@ -567,7 +567,7 @@ contract AuctionManager is MoneyManager {
                 toReturnAuctionsIDs[index] = i;
                 toReturnSellingPrices[index] = price;
                 toReturnSellerAddress[index] = _auctionsArray[i].highestBidder;
-                toReturnCanBeEnded[index] = _auctionsArray[i].auctionEnd &lt; now;
+                toReturnCanBeEnded[index] = _auctionsArray[i].auctionEnd < now;
                 index++;
             }
         }
@@ -582,7 +582,7 @@ contract AuctionManager is MoneyManager {
 
         uint256 index = 0;
 
-        for(uint256 i = 1; i &lt; _auctionsArray.length; i++){
+        for(uint256 i = 1; i < _auctionsArray.length; i++){
             uint256 popId = _auctionID2itemID[i];
             uint256 price = requiredBid(i);
             toReturnPopsIDs[index] = popId;
@@ -596,8 +596,8 @@ contract AuctionManager is MoneyManager {
 
     function createAuction(uint256 _itemForAuctionID, uint256 _auctionDurationSeconds, address _seller) public {
         require(msg.sender == getERCContractAddress());
-        require(_auctionDurationSeconds &gt;= 20 seconds);
-        require(_auctionDurationSeconds &lt; 45 days);
+        require(_auctionDurationSeconds >= 20 seconds);
+        require(_auctionDurationSeconds < 45 days);
         require(_itemForAuctionID != 0);
         require(_seller != 0);
 
@@ -625,10 +625,10 @@ contract AuctionManager is MoneyManager {
         require(auctionID != 0);
         Auction storage auction = _auctionsArray[auctionID];
         require(auction.ended == false);
-        require(auction.auctionEnd &gt;= now);
+        require(auction.auctionEnd >= now);
         uint claimBidPrice = requiredBid(auctionID);
         uint256 bidValue = msg.value;
-        require(bidValue &gt;= claimBidPrice);
+        require(bidValue >= claimBidPrice);
         address previousHighestBidder = auction.highestBidder;
         auction.highestBid = msg.value;
         auction.highestBidder = msg.sender;
@@ -640,7 +640,7 @@ contract AuctionManager is MoneyManager {
         require(auctionID != 0);
         Auction storage auction = _auctionsArray[auctionID];
         require(auction.ended == false);
-        require(auction.auctionEnd &lt; now);
+        require(auction.auctionEnd < now);
         auction.ended = true;
         nonFungibleContract.transfer(auction.highestBidder, _auctionID2itemID[auctionID]);
         emit NewAuctionWinner(auction.highestBidder, auctionID);
@@ -711,8 +711,8 @@ contract MarketManager is MoneyManager {
     bool public isMarketManager = true;
     uint256 private marginPerThousandForDevelopers = 50;
     uint256 private MAX_SELLING_PRICE = 100000 ether;
-    mapping (uint256 =&gt; uint256) public _itemID2saleID;
-    mapping (uint256 =&gt; uint256) public _saleID2itemID;
+    mapping (uint256 => uint256) public _itemID2saleID;
+    mapping (uint256 => uint256) public _saleID2itemID;
     Sale[] public _salesArray;
     ERC721 public nonFungibleContract;
 
@@ -742,7 +742,7 @@ contract MarketManager is MoneyManager {
         address[] memory toReturnSellerAddress = new address[](_salesArray.length);
         uint256 index = 0;
 
-        for(uint256 i = 1; i &lt; _salesArray.length; i++){
+        for(uint256 i = 1; i < _salesArray.length; i++){
             uint256 popId = _saleID2itemID[i];
             uint256 price = _salesArray[i].sellingPrice;
             address seller = _salesArray[i].seller;
@@ -764,7 +764,7 @@ contract MarketManager is MoneyManager {
         address[] memory toReturnSellerAddress = new address[](_salesArray.length);
         uint256 index = 0;
 
-        for(uint256 i = 1; i &lt; _salesArray.length; i++){
+        for(uint256 i = 1; i < _salesArray.length; i++){
             uint256 popId = _saleID2itemID[i];
             uint256 price = _salesArray[i].sellingPrice;
             address seller = _salesArray[i].seller;
@@ -803,9 +803,9 @@ contract MarketManager is MoneyManager {
     }
 
     function sellPop(address seller, uint256 _popId, uint256 _sellingPrice) public whenNotPaused{
-        require(_sellingPrice &lt; MAX_SELLING_PRICE);
+        require(_sellingPrice < MAX_SELLING_PRICE);
         require(msg.sender == getERCContractAddress());
-        require(_sellingPrice &gt; 0);
+        require(_sellingPrice > 0);
         _takeOwnershipOfTokenFrom(_popId,seller);
         uint256 saleID = _itemID2saleID[_popId];
         if(saleID == 0) {
@@ -830,8 +830,8 @@ contract MarketManager is MoneyManager {
     }
 
     function changeSellPOPPrice(uint256 _popId, uint256 _newSellingValue) public whenNotPaused{
-      require(_newSellingValue &lt; MAX_SELLING_PRICE);
-      require(_newSellingValue &gt; 0);
+      require(_newSellingValue < MAX_SELLING_PRICE);
+      require(_newSellingValue > 0);
       Sale storage sale = _salesArray[_itemID2saleID[_popId]];
       require(sale.seller == msg.sender);
       sale.sellingPrice = _newSellingValue;
@@ -866,14 +866,14 @@ contract GenesMarket is MoneyManager {
             address currentOwner;
     }
 
-    mapping (uint256 =&gt; uint256) public _itemID2geneSaleID;
-    mapping (uint256 =&gt; uint256) public _geneSaleID2itemID;
+    mapping (uint256 => uint256) public _itemID2geneSaleID;
+    mapping (uint256 => uint256) public _geneSaleID2itemID;
     GeneForSale[] public _genesForSaleArray;
     uint256 marginPerThousandForDevelopers = 50;
     uint256 MAX_SELLING_PRICE = 10000 ether;
 
-    mapping(address =&gt; mapping (uint256 =&gt; uint256)) _genesOwned;
-    mapping(address =&gt; uint256[]) _ownedGenesPopsId;
+    mapping(address => mapping (uint256 => uint256)) _genesOwned;
+    mapping(address => uint256[]) _ownedGenesPopsId;
     bool public isGenesMarket = true;
 
     function GenesMarket() public {
@@ -894,9 +894,9 @@ contract GenesMarket is MoneyManager {
     }
 
     function startSellingGenes(uint256 _popId, uint256 _sellingPrice, address _seller) public {
-        require(_sellingPrice &lt; MAX_SELLING_PRICE);
+        require(_sellingPrice < MAX_SELLING_PRICE);
         require(msg.sender == getERCContractAddress());
-        require(_sellingPrice &gt; 0);
+        require(_sellingPrice > 0);
         _takeOwnershipOfTokenFrom(_popId,_seller);
         uint256 geneSaleID = _itemID2geneSaleID[_popId];
         if(geneSaleID == 0){
@@ -937,13 +937,13 @@ contract GenesMarket is MoneyManager {
 
     function useBottle(address _user, uint _popId) external whenNotPaused {
         require(msg.sender == getERCContractAddress());
-        require(_genesOwned[_user][_popId] &gt; 0);
+        require(_genesOwned[_user][_popId] > 0);
         _genesOwned[_user][_popId] = _genesOwned[_user][_popId] - 1;
     }
 
 
     function purchaseGenes(uint256 _popId, uint256 _amountGenes, bool update) public payable whenNotPaused{
-        require(_amountGenes &gt; 0);
+        require(_amountGenes > 0);
         uint256 geneSaleID = _itemID2geneSaleID[_popId];
         GeneForSale memory gene = _genesForSaleArray[geneSaleID];
         require(gene.sellingPrice != 0);
@@ -952,7 +952,7 @@ contract GenesMarket is MoneyManager {
         uint256 sellingPrice = gene.sellingPrice;
         require(popOwner != genesReceiver);
         require(msg.value == SafeMath.mul(sellingPrice, _amountGenes));
-        if( update &amp;&amp; _genesOwned[msg.sender][_popId] == 0) {
+        if( update && _genesOwned[msg.sender][_popId] == 0) {
             _ownedGenesPopsId[msg.sender].push(_popId);
         }
         _genesOwned[msg.sender][_popId] = _genesOwned[msg.sender][_popId] + _amountGenes;
@@ -967,7 +967,7 @@ contract GenesMarket is MoneyManager {
         address[] memory toReturnSellers = new address[](_genesForSaleArray.length);
         uint256 index = 0;
 
-        for(uint256 i = 1; i &lt; _genesForSaleArray.length; i++){
+        for(uint256 i = 1; i < _genesForSaleArray.length; i++){
             uint256 popId = _geneSaleID2itemID[i];
             uint256 price = _genesForSaleArray[i].sellingPrice;
 
@@ -989,7 +989,7 @@ contract GenesMarket is MoneyManager {
         address[] memory toReturnSellers = new address[](_genesForSaleArray.length);
         uint256 index = 0;
 
-        for(uint256 i = 1; i &lt; _genesForSaleArray.length; i++){
+        for(uint256 i = 1; i < _genesForSaleArray.length; i++){
             uint256 popId = _geneSaleID2itemID[i];
             uint256 price = _genesForSaleArray[i].sellingPrice;
 
@@ -1014,7 +1014,7 @@ contract GenesMarket is MoneyManager {
         uint256[] memory toReturnPopsIDs = new uint256[](_ownedGenesPopsId[msg.sender].length);
         uint256[] memory toReturnAmount = new uint256[](_ownedGenesPopsId[msg.sender].length);
 
-        for(uint256 i = 0; i &lt; _ownedGenesPopsId[msg.sender].length; i++) {
+        for(uint256 i = 0; i < _ownedGenesPopsId[msg.sender].length; i++) {
             toReturnPopsIDs[i] = _ownedGenesPopsId[msg.sender][i];
             toReturnAmount[i] = _genesOwned[msg.sender][_ownedGenesPopsId[msg.sender][i]];
         }
@@ -1022,8 +1022,8 @@ contract GenesMarket is MoneyManager {
     }
 
     function changeSellGenesPrice(uint256 _popId, uint256 _newSellingValue) public whenNotPaused{
-      require(_newSellingValue &lt; MAX_SELLING_PRICE);
-      require(_newSellingValue &gt; 0);
+      require(_newSellingValue < MAX_SELLING_PRICE);
+      require(_newSellingValue > 0);
       uint256 geneSaleID = _itemID2geneSaleID[_popId];
       require(geneSaleID != 0);
 
@@ -1116,14 +1116,14 @@ contract REPOPCore is REPOPERC721, MoneyManager{
 
     function sellPop(uint256 _popId, uint256 _price) public {
         Pop storage pop = pops[_popId];
-        require(pop.cooldownEndTimestamp &lt;= now);
+        require(pop.cooldownEndTimestamp <= now);
         approve(address(marketManager),_popId);
         marketManager.sellPop(msg.sender,_popId,_price);
         emit SellingPop(msg.sender, _popId, _price);
     }
 
     function sellGenes(uint256 _popId, uint256 _price) public {
-        require(_popId &gt; 0);
+        require(_popId > 0);
         approve(address(genesMarket),_popId);
         genesMarket.startSellingGenes(_popId,_price,msg.sender);
         emit SellingGenes(msg.sender, _popId, _price);
@@ -1148,7 +1148,7 @@ contract REPOPCore is REPOPERC721, MoneyManager{
     function setPopName(uint256 popId, string newName) external {
       require(_ownerOfPopInAnyPlatform(popId));
       Pop storage pop = pops[popId];
-      require(pop.generation &gt; 0);
+      require(pop.generation > 0);
       bytes32 name32 = stringToBytes32(newName);
       pop.popName = name32;
       emit ChangedPopName(msg.sender, popId, name32);
@@ -1159,7 +1159,7 @@ contract REPOPCore is REPOPERC721, MoneyManager{
       payable
       {
         require(_ownerOfPopInAnyPlatform(popId));
-        require(msg.value &gt;= refresherFee);
+        require(msg.value >= refresherFee);
         Pop storage pop = pops[popId];
         pop.cooldownEndTimestamp = 1;
         emit CooldownRemoval(popId, msg.sender, refresherFee);
@@ -1182,8 +1182,8 @@ contract REPOPCore is REPOPERC721, MoneyManager{
       whenNotPaused
       returns (uint256)
       {
-        require(_aParentId &gt; 0);
-        require(_bParentId &gt; 0);
+        require(_aParentId > 0);
+        require(_bParentId > 0);
         require(getOwnershipForCloning(_aParentId));
         require(getOwnershipForCloning(_bParentId));
         Pop storage aParent = pops[_aParentId];
@@ -1191,16 +1191,16 @@ contract REPOPCore is REPOPERC721, MoneyManager{
         Pop storage bParent = pops[_bParentId];
 
         require(aParent.genes != bParent.genes);
-        require(aParent.cooldownEndTimestamp &lt;= now);
-        require(bParent.cooldownEndTimestamp &lt;= now);
+        require(aParent.cooldownEndTimestamp <= now);
+        require(bParent.cooldownEndTimestamp <= now);
 
         uint16 parentGen = aParent.generation;
-        if (bParent.generation &gt; aParent.generation) {
+        if (bParent.generation > aParent.generation) {
             parentGen = bParent.generation;
         }
 
         uint16 cooldownIndex = parentGen + 1;
-        if (cooldownIndex &gt; 13) {
+        if (cooldownIndex > 13) {
             cooldownIndex = 13;
         }
 
@@ -1225,21 +1225,21 @@ contract REPOPCore is REPOPERC721, MoneyManager{
         whenNotPaused
         returns (uint256)
         {
-          require(_aParentId &gt; 0);
+          require(_aParentId > 0);
           require(getOwnershipForCloning(_aParentId));
           Pop storage aParent = pops[_aParentId];
           Pop memory bParent = pops[_bParentId_bottle];
 
           require(aParent.genes != bParent.genes);
-          require(aParent.cooldownEndTimestamp &lt;= now);
+          require(aParent.cooldownEndTimestamp <= now);
 
           uint16 parentGen = aParent.generation;
-          if (bParent.generation &gt; aParent.generation) {
+          if (bParent.generation > aParent.generation) {
               parentGen = bParent.generation;
           }
 
           uint16 cooldownIndex = parentGen + 1;
-          if (cooldownIndex &gt; 13) {
+          if (cooldownIndex > 13) {
               cooldownIndex = 13;
           }
 

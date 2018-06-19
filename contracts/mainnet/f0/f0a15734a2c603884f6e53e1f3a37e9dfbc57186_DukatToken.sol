@@ -350,7 +350,7 @@ contract DukatToken is StandardToken, BurnableToken {
     * @dev Setting up token price and ethereum USD rate
     */
     function setPriceAndRate (uint256 price, uint256 rate) public onlyOwner {
-        require(price > 0 &amp;&amp; rate > 0);
+        require(price > 0 && rate > 0);
 
         tokenPrice = price;
         ethRate = rate;

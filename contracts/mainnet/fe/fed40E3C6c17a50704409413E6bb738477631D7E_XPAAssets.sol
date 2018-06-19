@@ -41,7 +41,7 @@ contract SafeMath {
         pure
     returns(uint) {
       uint256 z = x + y;
-      require((z &gt;= x) &amp;&amp; (z &gt;= y));
+      require((z >= x) && (z >= y));
       return z;
     }
 
@@ -49,7 +49,7 @@ contract SafeMath {
         internal
         pure
     returns(uint) {
-      require(x &gt;= y);
+      require(x >= y);
       uint256 z = x - y;
       return z;
     }
@@ -67,7 +67,7 @@ contract SafeMath {
         internal
         pure
     returns(uint) {
-        require(y &gt; 0);
+        require(y > 0);
         return x / y;
     }
 
@@ -81,7 +81,7 @@ contract SafeMath {
 }
 
 contract Authorization {
-    mapping(address =&gt; address) public agentBooks;
+    mapping(address => address) public agentBooks;
     address public owner;
     address public operator;
     address public bank;
@@ -189,14 +189,14 @@ contract XPAAssets is SafeMath, Authorization {
     event eMigrateAmount(address);
 
     //data
-    mapping(address =&gt; uint256) public fromAmountBooks;
-    mapping(address =&gt; mapping(address =&gt; uint256)) public toAmountBooks;
-    mapping(address =&gt; uint256) public forceOffsetBooks;
-    mapping(address =&gt; bool) public migrateBooks;
+    mapping(address => uint256) public fromAmountBooks;
+    mapping(address => mapping(address => uint256)) public toAmountBooks;
+    mapping(address => uint256) public forceOffsetBooks;
+    mapping(address => bool) public migrateBooks;
     address[] public xpaAsset;
     address public fundAccount;
     uint256 public profit = 0;
-    mapping(address =&gt; uint256) public unPaidFundAccount;
+    mapping(address => uint256) public unPaidFundAccount;
     uint256 public initCanOffsetTime = 0;
     
     //fee
@@ -234,7 +234,7 @@ contract XPAAssets is SafeMath, Authorization {
         onlyOperator 
     {
         address newAsset = TokenFactory(tokenFactory).createToken(symbol_, name_, defaultExchangeRate_);
-        for(uint256 i = 0; i &lt; xpaAsset.length; i++) {
+        for(uint256 i = 0; i < xpaAsset.length; i++) {
             if(xpaAsset[i] == newAsset){
                 return;
             }
@@ -252,7 +252,7 @@ contract XPAAssets is SafeMath, Authorization {
         address user = getUser(representor_);
         uint256 amount_ = Token(XPA).allowance(msg.sender, this); // get mortgage amount
         if(
-            amount_ &gt;= 100 ether &amp;&amp; 
+            amount_ >= 100 ether && 
             Token(XPA).transferFrom(msg.sender, this, amount_) 
         ){
             fromAmountBooks[user] = safeAdd(fromAmountBooks[user], amount_); // update books
@@ -271,9 +271,9 @@ contract XPAAssets is SafeMath, Authorization {
     {
         address user = getUser(representor_);
         if(
-            token_ != XPA &amp;&amp;
-            amount_ &gt; 0 &amp;&amp;
-            amount_ &lt;= safeDiv(safeMul(safeDiv(safeMul(getUsableXPA(user), getPrice(token_)), 1 ether), getHighestMortgageRate()), 1 ether)
+            token_ != XPA &&
+            amount_ > 0 &&
+            amount_ <= safeDiv(safeMul(safeDiv(safeMul(getUsableXPA(user), getPrice(token_)), 1 ether), getHighestMortgageRate()), 1 ether)
         ){
             toAmountBooks[user][token_] = safeAdd(toAmountBooks[user][token_],amount_);
             uint256 withdrawFee = safeDiv(safeMul(amount_,withdrawFeeRate),1 ether); // calculate withdraw fee
@@ -293,8 +293,8 @@ contract XPAAssets is SafeMath, Authorization {
     {
         address user = getUser(representor_);
         if(
-            amount_ &gt;= 100 ether &amp;&amp; 
-            amount_ &lt;= getUsableXPA(user)
+            amount_ >= 100 ether && 
+            amount_ <= getUsableXPA(user)
         ){
             fromAmountBooks[user] = safeSub(fromAmountBooks[user], amount_);
             require(Token(XPA).transfer(user, amount_));
@@ -312,13 +312,13 @@ contract XPAAssets is SafeMath, Authorization {
         view
     returns(bool) {
         if(
-            token_ != XPA &amp;&amp; 
-            amount_ &lt;= safeDiv(safeMul(safeDiv(safeMul(getUsableXPA(user_), getPrice(token_)), 1 ether), getHighestMortgageRate()), 1 ether)
+            token_ != XPA && 
+            amount_ <= safeDiv(safeMul(safeDiv(safeMul(getUsableXPA(user_), getPrice(token_)), 1 ether), getHighestMortgageRate()), 1 ether)
         ){
             return true;
         }else if(
-            token_ == XPA &amp;&amp; 
-            amount_ &lt;= getUsableXPA(user_)
+            token_ == XPA && 
+            amount_ <= getUsableXPA(user_)
         ){
             return true;
         }else{
@@ -352,14 +352,14 @@ contract XPAAssets is SafeMath, Authorization {
         onlyActive
         public
     {
-        uint256 userFromAmount = fromAmountBooks[user_] &gt;= maxForceOffsetAmount ? maxForceOffsetAmount : fromAmountBooks[user_];
-        require(block.timestamp &gt; initCanOffsetTime);
-        require(userFromAmount &gt; 0);
+        uint256 userFromAmount = fromAmountBooks[user_] >= maxForceOffsetAmount ? maxForceOffsetAmount : fromAmountBooks[user_];
+        require(block.timestamp > initCanOffsetTime);
+        require(userFromAmount > 0);
         address user = getUser(user_);
 
         if(
-            user_ == user &amp;&amp;
-            getLoanAmount(user, token_) &gt; 0
+            user_ == user &&
+            getLoanAmount(user, token_) > 0
         ){
             emit eOffset(user, user_, userFromAmount);
             uint256 remainingXPA = executeOffset(user_, userFromAmount, token_, offsetFeeRate);
@@ -367,9 +367,9 @@ contract XPAAssets is SafeMath, Authorization {
             require(Token(XPA).transfer(fundAccount, safeDiv(safeMul(safeSub(userFromAmount, remainingXPA), 1 ether), safeAdd(1 ether, offsetFeeRate)))); //轉帳至平倉基金
             fromAmountBooks[user_] = remainingXPA;
         }else if(
-            user_ != user &amp;&amp; 
-            block.timestamp &gt; (forceOffsetBooks[user_] + 28800) &amp;&amp;
-            getMortgageRate(user_) &gt;= getClosingLine()
+            user_ != user && 
+            block.timestamp > (forceOffsetBooks[user_] + 28800) &&
+            getMortgageRate(user_) >= getClosingLine()
         ){
             forceOffsetBooks[user_] = block.timestamp;
                 
@@ -380,14 +380,14 @@ contract XPAAssets is SafeMath, Authorization {
             forceOffsetFee[0] = safeDiv(safeMul(punishXPA, forceOffsetBasicFeeRate), 1 ether); //基本手續費(收益)
             forceOffsetFee[1] = safeDiv(safeMul(punishXPA, forceOffsetExtraFeeRate), 1 ether); //額外手續費(平倉基金)
             forceOffsetFee[2] = safeDiv(safeMul(punishXPA, forceOffsetExecuteFeeRate), 1 ether);//執行手續費(執行者)
-            forceOffsetFee[2] = forceOffsetFee[2] &gt; forceOffsetExecuteMaxFee ? forceOffsetExecuteMaxFee : forceOffsetFee[2];
+            forceOffsetFee[2] = forceOffsetFee[2] > forceOffsetExecuteMaxFee ? forceOffsetExecuteMaxFee : forceOffsetFee[2];
 
             profit = safeAdd(profit, forceOffsetFee[0]);
             uint256 allFee = safeAdd(forceOffsetFee[2],safeAdd(forceOffsetFee[0], forceOffsetFee[1]));
             remainingXPA = safeSub(punishXPA,allFee);
 
-            for(uint256 i = 0; i &lt; xpaAsset.length; i++) {
-                if(getLoanAmount(user_, xpaAsset[i]) &gt; 0){
+            for(uint256 i = 0; i < xpaAsset.length; i++) {
+                if(getLoanAmount(user_, xpaAsset[i]) > 0){
                     remainingXPA = executeOffset(user_, remainingXPA, xpaAsset[i],0);
                     if(remainingXPA == 0){
                         break;
@@ -414,7 +414,7 @@ contract XPAAssets is SafeMath, Authorization {
         uint256 fee = safeDiv(safeMul(userToAmount, feeRate), 1 ether);
         uint256 burnXPA;
         uint256 burnXPAAsset;
-        if(fromXPAAsset &gt;= safeAdd(userToAmount, fee)){
+        if(fromXPAAsset >= safeAdd(userToAmount, fee)){
             burnXPA = safeDiv(safeMul(safeAdd(userToAmount, fee), 1 ether), getPrice(xpaAssetToken));
             emit eExecuteOffset(burnXPA, xpaAssetToken, safeAdd(userToAmount, fee));
             xpaAmount_ = safeSub(xpaAmount_, burnXPA);
@@ -453,11 +453,11 @@ contract XPAAssets is SafeMath, Authorization {
     returns(uint256){
         uint256 userFromAmount = fromAmountBooks[user_];
         uint256 punishXPA = safeDiv(safeMul(userFromAmount, 0.1 ether),1 ether);
-        if(userFromAmount &lt;= safeAdd(minForceOffsetAmount, 100 ether)){
+        if(userFromAmount <= safeAdd(minForceOffsetAmount, 100 ether)){
             return userFromAmount;
-        }else if(punishXPA &lt; minForceOffsetAmount){
+        }else if(punishXPA < minForceOffsetAmount){
             return minForceOffsetAmount;
-        }else if(punishXPA &gt; maxForceOffsetAmount){
+        }else if(punishXPA > maxForceOffsetAmount){
             return maxForceOffsetAmount;
         }else{
             return punishXPA;
@@ -473,7 +473,7 @@ contract XPAAssets is SafeMath, Authorization {
     returns(uint256){
         if(fromAmountBooks[user_] != 0){
             uint256 totalLoanXPA = 0;
-            for(uint256 i = 0; i &lt; xpaAsset.length; i++) {
+            for(uint256 i = 0; i < xpaAsset.length; i++) {
                 totalLoanXPA = safeAdd(totalLoanXPA, safeDiv(safeMul(getLoanAmount(user_,xpaAsset[i]), 1 ether), getPrice(xpaAsset[i])));
             }
             return safeDiv(safeMul(totalLoanXPA,1 ether),fromAmountBooks[user_]);
@@ -489,13 +489,13 @@ contract XPAAssets is SafeMath, Authorization {
     returns(uint256){
         uint256 totalXPA = Token(XPA).totalSupply();
         uint256 issueRate = safeDiv(safeMul(Token(XPA).balanceOf(this), 1 ether), totalXPA);
-        if(issueRate &gt;= 0.7 ether){
+        if(issueRate >= 0.7 ether){
             return 0.7 ether;
-        }else if(issueRate &gt;= 0.6 ether){
+        }else if(issueRate >= 0.6 ether){
             return 0.6 ether;
-        }else if(issueRate &gt;= 0.5 ether){
+        }else if(issueRate >= 0.5 ether){
             return 0.5 ether;
-        }else if(issueRate &gt;= 0.3 ether){
+        }else if(issueRate >= 0.3 ether){
             return 0.3 ether;
         }else{
             return 0.1 ether;
@@ -508,7 +508,7 @@ contract XPAAssets is SafeMath, Authorization {
         view
     returns(uint256){
         uint256 highestMortgageRate = getHighestMortgageRate();
-        if(highestMortgageRate &gt;= 0.6 ether){
+        if(highestMortgageRate >= 0.6 ether){
             return safeAdd(highestMortgageRate, 0.1 ether);
         }else{
             return 0.6 ether;
@@ -533,10 +533,10 @@ contract XPAAssets is SafeMath, Authorization {
         view
     returns(uint256) {
         uint256 totalLoanXPA = 0;
-        for(uint256 i = 0; i &lt; xpaAsset.length; i++) {
+        for(uint256 i = 0; i < xpaAsset.length; i++) {
             totalLoanXPA = safeAdd(totalLoanXPA, safeDiv(safeMul(getLoanAmount(user_,xpaAsset[i]), 1 ether), getPrice(xpaAsset[i])));
         }
-        if(fromAmountBooks[user_] &gt; safeDiv(safeMul(totalLoanXPA, 1 ether), getHighestMortgageRate())){
+        if(fromAmountBooks[user_] > safeDiv(safeMul(totalLoanXPA, 1 ether), getHighestMortgageRate())){
             return safeSub(fromAmountBooks[user_], safeDiv(safeMul(totalLoanXPA, 1 ether), getHighestMortgageRate()));
         }else{
             return 0;
@@ -599,7 +599,7 @@ contract XPAAssets is SafeMath, Authorization {
         onlyOperator 
         public
     {
-        if(amount_ &gt; 0 &amp;&amp; Token(token_).balanceOf(this) &gt;= amount_){
+        if(amount_ > 0 && Token(token_).balanceOf(this) >= amount_){
             require(Token(token_).transfer(bank, amount_));
             profit = safeSub(profit,amount_);
         }
@@ -616,11 +616,11 @@ contract XPAAssets is SafeMath, Authorization {
         onlyOperator 
         public
     {
-        require(withDrawFeerate_ &lt; 0.05 ether);
-        require(offsetFeerate_ &lt; 0.05 ether);
-        require(forceOffsetBasicFeerate_ &lt; 0.05 ether);
-        require(forceOffsetExecuteFeerate_ &lt; 0.05 ether);
-        require(forceOffsetExtraFeerate_ &lt; 0.05 ether);
+        require(withDrawFeerate_ < 0.05 ether);
+        require(offsetFeerate_ < 0.05 ether);
+        require(forceOffsetBasicFeerate_ < 0.05 ether);
+        require(forceOffsetExecuteFeerate_ < 0.05 ether);
+        require(forceOffsetExtraFeerate_ < 0.05 ether);
         withdrawFeeRate = withDrawFeerate_;
         offsetFeeRate = offsetFeerate_;
         forceOffsetBasicFeeRate = forceOffsetBasicFeerate_;
@@ -636,14 +636,14 @@ contract XPAAssets is SafeMath, Authorization {
         onlyOwner
     {
         if(
-            newXPAAssets == address(0) &amp;&amp;
-            XPAAssets(newContract_).transferXPAAssetAndProfit(xpaAsset, profit) &amp;&amp;
+            newXPAAssets == address(0) &&
+            XPAAssets(newContract_).transferXPAAssetAndProfit(xpaAsset, profit) &&
             Token(XPA).transfer(newContract_, Token(XPA).balanceOf(this))
         ) {
             forceOff = true;
             powerStatus = false;
             newXPAAssets = newContract_;
-            for(uint256 i = 0; i &lt; xpaAsset.length; i++) {
+            for(uint256 i = 0; i < xpaAsset.length; i++) {
                 XPAAssets(newContract_).transferUnPaidFundAccount(xpaAsset[i], unPaidFundAccount[xpaAsset[i]]);
             }
             emit eMigrate(newContract_);
@@ -695,7 +695,7 @@ contract XPAAssets is SafeMath, Authorization {
         migrateBooks[user_] = true;
         fromAmountBooks[user_] = safeAdd(fromAmountBooks[user_],XPAAssets(oldXPAAssets).getFromAmountBooks(user_));
         forceOffsetBooks[user_] = XPAAssets(oldXPAAssets).getForceOffsetBooks(user_);
-        for(uint256 i = 0; i &lt; xpaAsset.length; i++) {
+        for(uint256 i = 0; i < xpaAsset.length; i++) {
             toAmountBooks[user_][xpaAsset[i]] = safeAdd(toAmountBooks[user_][xpaAsset[i]], XPAAssets(oldXPAAssets).getLoanAmount(user_,xpaAsset[i]));
         }
         emit eMigrateAmount(user_);

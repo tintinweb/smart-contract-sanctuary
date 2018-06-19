@@ -141,15 +141,15 @@ contract Crowdsale is Owned {
     only(owner)
     {
         require(
-        currentState == State.INIT &amp;&amp; _newState == State.PRESALE
-        || currentState == State.PRESALE &amp;&amp; _newState == State.PREICO
-        || currentState == State.PREICO &amp;&amp; _newState == State.PREICO_FINISHED
-        || currentState == State.PREICO_FINISHED &amp;&amp; _newState == State.ICO_FIRST
-        || currentState == State.ICO_FIRST &amp;&amp; _newState == State.STOPPED
-        || currentState == State.STOPPED &amp;&amp; _newState == State.ICO_SECOND        
-        || currentState == State.ICO_SECOND &amp;&amp; _newState == State.STOPPED
-        || currentState == State.STOPPED &amp;&amp; _newState == State.ICO_THIRD
-        || currentState == State.ICO_THIRD &amp;&amp; _newState == State.CLOSED
+        currentState == State.INIT && _newState == State.PRESALE
+        || currentState == State.PRESALE && _newState == State.PREICO
+        || currentState == State.PREICO && _newState == State.PREICO_FINISHED
+        || currentState == State.PREICO_FINISHED && _newState == State.ICO_FIRST
+        || currentState == State.ICO_FIRST && _newState == State.STOPPED
+        || currentState == State.STOPPED && _newState == State.ICO_SECOND        
+        || currentState == State.ICO_SECOND && _newState == State.STOPPED
+        || currentState == State.STOPPED && _newState == State.ICO_THIRD
+        || currentState == State.ICO_THIRD && _newState == State.CLOSED
         || _newState == State.EMERGENCY_STOP
         );
         currentState = _newState;
@@ -168,15 +168,15 @@ contract Crowdsale is Owned {
     only(owner)
     {
         require(
-        currentState == State.INIT &amp;&amp; _newState == State.PRESALE
-        || currentState == State.PRESALE &amp;&amp; _newState == State.PREICO
-        || currentState == State.PREICO &amp;&amp; _newState == State.PREICO_FINISHED
-        || currentState == State.PREICO_FINISHED &amp;&amp; _newState == State.ICO_FIRST
-        || currentState == State.ICO_FIRST &amp;&amp; _newState == State.STOPPED
-        || currentState == State.STOPPED &amp;&amp; _newState == State.ICO_SECOND        
-        || currentState == State.ICO_SECOND &amp;&amp; _newState == State.STOPPED
-        || currentState == State.STOPPED &amp;&amp; _newState == State.ICO_THIRD
-        || currentState == State.ICO_THIRD &amp;&amp; _newState == State.CLOSED
+        currentState == State.INIT && _newState == State.PRESALE
+        || currentState == State.PRESALE && _newState == State.PREICO
+        || currentState == State.PREICO && _newState == State.PREICO_FINISHED
+        || currentState == State.PREICO_FINISHED && _newState == State.ICO_FIRST
+        || currentState == State.ICO_FIRST && _newState == State.STOPPED
+        || currentState == State.STOPPED && _newState == State.ICO_SECOND        
+        || currentState == State.ICO_SECOND && _newState == State.STOPPED
+        || currentState == State.STOPPED && _newState == State.ICO_THIRD
+        || currentState == State.ICO_THIRD && _newState == State.CLOSED
         || _newState == State.EMERGENCY_STOP
         );
         currentState = _newState;

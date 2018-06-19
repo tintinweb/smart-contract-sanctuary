@@ -297,7 +297,7 @@ contract PixelToken is StandardToken, BurnableToken, Ownable {
 
     function checkPermissions(address _from) internal constant returns (bool) {
 
-        if (_from == team &amp;&amp; now < unlockTime) {
+        if (_from == team && now < unlockTime) {
             return false;
         }
 

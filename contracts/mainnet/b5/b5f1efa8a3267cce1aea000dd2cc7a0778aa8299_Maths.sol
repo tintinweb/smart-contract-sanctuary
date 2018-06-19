@@ -28,7 +28,7 @@ library Maths {
     uint256 minuend,
     uint256 subtrahend
   ) public pure returns (uint256 difference) {
-    assert(minuend &gt;= subtrahend);
+    assert(minuend >= subtrahend);
     difference = minuend - subtrahend;
   }
 
@@ -112,7 +112,7 @@ library Maths {
     uint256 a,
     uint256 b
   ) public pure returns (uint256 result) {
-    result = a &lt;= b ? a : b;
+    result = a <= b ? a : b;
   }
 
   /**
@@ -125,7 +125,7 @@ library Maths {
     uint256 a,
     uint256 b
   ) public pure returns (uint256 result) {
-    result = a &gt;= b ? a : b;
+    result = a >= b ? a : b;
   }
 
   /**
@@ -135,7 +135,7 @@ library Maths {
    * @return isTrue whether a is less than b
    */
   function isLessThan(uint256 a, uint256 b) public pure returns (bool isTrue) {
-    isTrue = a &lt; b;
+    isTrue = a < b;
   }
 
   /**
@@ -145,7 +145,7 @@ library Maths {
    * @return isTrue whether a is less than or equal to b
    */
   function isAtMost(uint256 a, uint256 b) public pure returns (bool isTrue) {
-    isTrue = a &lt;= b;
+    isTrue = a <= b;
   }
 
   /**
@@ -155,7 +155,7 @@ library Maths {
    * @return isTrue whether a is greater than b
    */
   function isGreaterThan(uint256 a, uint256 b) public pure returns (bool isTrue) {
-    isTrue = a &gt; b;
+    isTrue = a > b;
   }
 
   /**
@@ -165,6 +165,6 @@ library Maths {
    * @return isTrue whether a is less than b
    */
   function isAtLeast(uint256 a, uint256 b) public pure returns (bool isTrue) {
-    isTrue = a &gt;= b;
+    isTrue = a >= b;
   }
 }

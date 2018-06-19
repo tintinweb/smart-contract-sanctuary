@@ -102,9 +102,9 @@ contract PreICO is Ownable {
 
   function isActive() constant returns (bool) {
     return (
-        initialized == true &amp;&amp;
-        now >= START &amp;&amp; // Must be after the START date
-        now <= START.add(DAYS * 1 days) &amp;&amp; // Must be before the end date
+        initialized == true &&
+        now >= START && // Must be after the START date
+        now <= START.add(DAYS * 1 days) && // Must be before the end date
         goalReached() == false // Goal must not already be reached
     );
   }

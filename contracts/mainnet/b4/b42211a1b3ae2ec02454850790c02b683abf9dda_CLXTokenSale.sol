@@ -16,20 +16,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -92,7 +92,7 @@ interface Token {
 contract Vault is Ownable {
     using SafeMath for uint256;
 
-    mapping (address =&gt; uint256) public deposited;
+    mapping (address => uint256) public deposited;
     address public wallet;
     
     event Withdrawn(address _wallet);
@@ -220,7 +220,7 @@ contract CLXTokenSale is Ownable{
         require(!contractUp);
 
         // Contract should have enough CLX credits
-        require(token.balanceOf(this) &gt;= tokensAvailableForSale);
+        require(token.balanceOf(this) >= tokensAvailableForSale);
         
         //activate the sale process
         contractUp = true;
@@ -273,11 +273,11 @@ contract CLXTokenSale is Ownable{
     
     noOfPhases = _noOfPhases;
     
-    for(uint8 i = 0; i &lt; _noOfPhases; i++){
+    for(uint8 i = 0; i < _noOfPhases; i++){
 
-        require(_hardCaps[i] &gt; 0);
+        require(_hardCaps[i] > 0);
        
-        if(i&gt;0){
+        if(i>0){
 
             phases.push(PhaseInfo({
                 hardcap:_hardCaps[i],
@@ -290,7 +290,7 @@ contract CLXTokenSale is Ownable{
         }
         else{
             //start time of tier1 should be greater than current time
-            require(_startTimes[i] &gt; now);
+            require(_startTimes[i] > now);
           
             phases.push(PhaseInfo({
                 hardcap:_hardCaps[i],
@@ -356,7 +356,7 @@ contract CLXTokenSale is Ownable{
        uint256 tokensInPreICO = 7200000000000000; //considering 8 decimal places
              
        //Checking if tokens are left after the Pre ICO sale, if left, transfer all to the owner   
-       if(currentlyRunningPhase.weiRaised &lt;= 7500 ether) {
+       if(currentlyRunningPhase.weiRaised <= 7500 ether) {
            tokensLeft = tokensInPreICO.sub(currentlyRunningPhase.weiRaised.mul(9600).div(10000000000));
            token.transfer(msg.sender, tokensLeft);
        }
@@ -384,7 +384,7 @@ contract CLXTokenSale is Ownable{
       uint256 tokensInPublicSale = 10500000000000000; //considering 8 decimal places
           
           //Checking if tokens are left after the Public sale, if left, transfer all to the owner   
-       if(currentlyRunningPhase.weiRaised &lt;= 12500 ether) {
+       if(currentlyRunningPhase.weiRaised <= 12500 ether) {
            tokensLeft = tokensInPublicSale.sub(currentlyRunningPhase.weiRaised.mul(8400).div(10000000000));
            token.transfer(msg.sender, tokensLeft);
        }
@@ -406,7 +406,7 @@ contract CLXTokenSale is Ownable{
    function buyTokens(address beneficiary)public _contractUp _saleNotEnded _ifNotEmergencyStop nonZeroAddress(beneficiary) payable returns(bool){
        
        int8 currentPhaseIndex = getCurrentlyRunningPhase();
-       assert(currentPhaseIndex &gt;= 0);
+       assert(currentPhaseIndex >= 0);
        
         // recheck this for storage and memory
        PhaseInfo storage currentlyRunningPhase = phases[uint256(currentPhaseIndex)];
@@ -415,10 +415,10 @@ contract CLXTokenSale is Ownable{
        uint256 weiAmount = msg.value;
 
        //Check hard cap for this phase has not been reached
-       require(weiAmount.add(currentlyRunningPhase.weiRaised) &lt;= currentlyRunningPhase.hardcap);
+       require(weiAmount.add(currentlyRunningPhase.weiRaised) <= currentlyRunningPhase.hardcap);
        
        //check the minimum ether contribution
-       require(weiAmount &gt;= currentlyRunningPhase.minEtherContribution);
+       require(weiAmount >= currentlyRunningPhase.minEtherContribution);
        
        
        uint256 tokens = weiAmount.mul(rate).div(10000000000);//considering decimal places to be 8 for token
@@ -457,9 +457,9 @@ contract CLXTokenSale is Ownable{
     * Return -1 if no tier is running currently
     * */
    function getCurrentlyRunningPhase()public view returns(int8){
-      for(uint8 i=0;i&lt;noOfPhases;i++){
+      for(uint8 i=0;i<noOfPhases;i++){
 
-          if(phases[i].startTime!=0 &amp;&amp; now&gt;=phases[i].startTime &amp;&amp; phases[i].endTime == 0){
+          if(phases[i].startTime!=0 && now>=phases[i].startTime && phases[i].endTime == 0){
               return int8(i);
           }
       }   

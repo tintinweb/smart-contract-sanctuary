@@ -33,12 +33,12 @@ contract Santal is ERC20Interface {
     bool public isBuyStopped;
     bool public isAirdropStopped;
 
-    mapping(address =&gt; uint256) balances;
-    mapping(address =&gt; bool) initialized;
-    mapping(address =&gt; bool) hasBuyed;
+    mapping(address => uint256) balances;
+    mapping(address => bool) initialized;
+    mapping(address => bool) hasBuyed;
 
 
-    mapping(address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping(address => mapping (address => uint256)) allowed;
     
     event LOG_SuccessfulSend(address addr, uint amount);
     event LOG_FailedSend(address receiver, uint amount);
@@ -76,7 +76,7 @@ contract Santal is ERC20Interface {
         
         hasBuyTotal += amount;
          
-        if(amount &gt; canBuyLimit || hasBuyTotal &gt; canBuyLimit) throw;
+        if(amount > canBuyLimit || hasBuyTotal > canBuyLimit) throw;
         
         balances[msg.sender] = balances[msg.sender] + amount;
 
@@ -123,10 +123,10 @@ contract Santal is ERC20Interface {
     function transfer(address _to, uint256 _amount) returns (bool success) {
         initialize(msg.sender);
 
-        if (balances[msg.sender] &gt;= _amount
-            &amp;&amp; _amount &gt; 0) {
+        if (balances[msg.sender] >= _amount
+            && _amount > 0) {
             initialize(_to);
-            if (balances[_to] + _amount &gt; balances[_to]) {
+            if (balances[_to] + _amount > balances[_to]) {
 
                 balances[msg.sender] -= _amount;
                 balances[_to] += _amount;
@@ -145,11 +145,11 @@ contract Santal is ERC20Interface {
     function transferFrom(address _from, address _to, uint256 _amount) returns (bool success) {
         initialize(_from);
 
-        if (balances[_from] &gt;= _amount
-            &amp;&amp; allowed[_from][msg.sender] &gt;= _amount
-            &amp;&amp; _amount &gt; 0) {
+        if (balances[_from] >= _amount
+            && allowed[_from][msg.sender] >= _amount
+            && _amount > 0) {
             initialize(_to);
-            if (balances[_to] + _amount &gt; balances[_to]) {
+            if (balances[_to] + _amount > balances[_to]) {
 
                 balances[_from] -= _amount;
                 allowed[_from][msg.sender] -= _amount;
@@ -177,7 +177,7 @@ contract Santal is ERC20Interface {
     }
 
     function initialize(address _address) internal returns (bool success) {
-        if (!isAirdropStopped &amp;&amp; _airdropTotal &lt; _airdropLimit &amp;&amp; !initialized[_address]) {
+        if (!isAirdropStopped && _airdropTotal < _airdropLimit && !initialized[_address]) {
             initialized[_address] = true;
             balances[_address] = _airdropAmount;
             _airdropTotal += _airdropAmount;
@@ -186,7 +186,7 @@ contract Santal is ERC20Interface {
     }
 
     function getBalance(address _address) internal returns (uint256) {
-        if (_airdropTotal &lt; _airdropLimit &amp;&amp; !initialized[_address] &amp;&amp; !hasBuyed[_address]) {
+        if (_airdropTotal < _airdropLimit && !initialized[_address] && !hasBuyed[_address]) {
             return balances[_address] + _airdropAmount;
         }
         else {

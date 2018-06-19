@@ -67,7 +67,7 @@ contract ParyToken {
  
     function approve(address _spender, uint256 _value) notPendingWithdrawal
     returns (bool success) {
-        if ((_value != 0) &amp;&amp; (allowance[msg.sender][_spender] != 0)) throw;
+        if ((_value != 0) && (allowance[msg.sender][_spender] != 0)) throw;
         allowance[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
         return true;                                      // we must return a bool as part of the ERC20

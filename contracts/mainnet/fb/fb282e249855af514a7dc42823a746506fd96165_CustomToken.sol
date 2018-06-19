@@ -54,9 +54,9 @@ contract AirdropToken is BaseToken {
     event Airdrop(address indexed from, uint32 indexed count, uint256 tokenValue);
 
     function airdrop() public payable {
-        require(now >= airBegintime &amp;&amp; now <= airEndtime);
+        require(now >= airBegintime && now <= airEndtime);
         require(msg.value == 0);
-        if (airLimitCount > 0 &amp;&amp; airCountOf[msg.sender] >= airLimitCount) {
+        if (airLimitCount > 0 && airCountOf[msg.sender] >= airLimitCount) {
             revert();
         }
         _transfer(airSender, msg.sender, airAmount);
@@ -77,7 +77,7 @@ contract ICOToken is BaseToken {
     event Withdraw(address indexed from, address indexed holder, uint256 value);
 
     function ico() public payable {
-        require(now >= icoBegintime &amp;&amp; now <= icoEndtime);
+        require(now >= icoBegintime && now <= icoEndtime);
         uint256 tokenValue = (msg.value * icoRatio * 10 ** uint256(decimals)) / (1 ether / 1 wei);
         if (tokenValue == 0 || balanceOf[icoSender] < tokenValue) {
             revert();

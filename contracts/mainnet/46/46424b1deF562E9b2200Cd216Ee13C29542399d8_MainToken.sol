@@ -14,7 +14,7 @@
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
 pragma solidity ^0.4.20;
@@ -49,20 +49,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -76,7 +76,7 @@ library SafeMath {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -85,7 +85,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -129,7 +129,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -190,7 +190,7 @@ contract StandardToken is ERC20, BasicToken {
 
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -295,11 +295,11 @@ contract MintableToken is StandardToken, Ownable {
 
 contract FreezableToken is StandardToken {
     // freezing chains
-    mapping (bytes32 =&gt; uint64) internal chains;
+    mapping (bytes32 => uint64) internal chains;
     // freezing amounts for each chain
-    mapping (bytes32 =&gt; uint) internal freezings;
+    mapping (bytes32 => uint) internal freezings;
     // total freezing balance per address
-    mapping (address =&gt; uint) internal freezingBalance;
+    mapping (address => uint) internal freezingBalance;
 
     event Freezed(address indexed to, uint64 release, uint amount);
     event Released(address indexed owner, uint amount);
@@ -345,7 +345,7 @@ contract FreezableToken is StandardToken {
      * @param _index Freezing portion index. It ordered by release date descending.
      */
     function getFreezing(address _addr, uint _index) public view returns (uint64 _release, uint _balance) {
-        for (uint i = 0; i &lt; _index + 1; i ++) {
+        for (uint i = 0; i < _index + 1; i ++) {
             _release = chains[toKey(_addr, _release)];
             if (_release == 0) {
                 return;
@@ -364,7 +364,7 @@ contract FreezableToken is StandardToken {
      */
     function freezeTo(address _to, uint _amount, uint64 _until) public {
         require(_to != address(0));
-        require(_amount &lt;= balances[msg.sender]);
+        require(_amount <= balances[msg.sender]);
 
         balances[msg.sender] = balances[msg.sender].sub(_amount);
 
@@ -384,7 +384,7 @@ contract FreezableToken is StandardToken {
         bytes32 headKey = toKey(msg.sender, 0);
         uint64 head = chains[headKey];
         require(head != 0);
-        require(uint64(block.timestamp) &gt; head);
+        require(uint64(block.timestamp) > head);
         bytes32 currentKey = toKey(msg.sender, head);
 
         uint64 next = chains[currentKey];
@@ -413,7 +413,7 @@ contract FreezableToken is StandardToken {
         uint release;
         uint balance;
         (release, balance) = getFreezing(msg.sender, 0);
-        while (release != 0 &amp;&amp; block.timestamp &gt; release) {
+        while (release != 0 && block.timestamp > release) {
             releaseOnce();
             tokens += balance;
             (release, balance) = getFreezing(msg.sender, 0);
@@ -430,7 +430,7 @@ contract FreezableToken is StandardToken {
     }
 
     function freeze(address _to, uint64 _until) internal {
-        require(_until &gt; block.timestamp);
+        require(_until > block.timestamp);
         bytes32 key = toKey(_to, _until);
         bytes32 parentKey = toKey(_to, uint64(0));
         uint64 next = chains[parentKey];
@@ -443,7 +443,7 @@ contract FreezableToken is StandardToken {
         bytes32 nextKey = toKey(_to, next);
         uint parent;
 
-        while (next != 0 &amp;&amp; _until &gt; next) {
+        while (next != 0 && _until > next) {
             parent = next;
             parentKey = nextKey;
 
@@ -514,9 +514,9 @@ contract BurnableToken is StandardToken {
      * @param _value The amount of token to be burned.
      */
     function burn(uint256 _value) public {
-        require(_value &gt; 0);
-        require(_value &lt;= balances[msg.sender]);
-        // no need to require value &lt;= totalSupply, since that would imply the
+        require(_value > 0);
+        require(_value <= balances[msg.sender]);
+        // no need to require value <= totalSupply, since that would imply the
         // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
         address burner = msg.sender;
@@ -644,7 +644,7 @@ contract ERC223Token is ERC223Basic, BasicToken, FailingERC223Receiver {
 
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
-        if(codeLength &gt; 0) {
+        if(codeLength > 0) {
             ERC223Receiver receiver = ERC223Receiver(_to);
             receiver.tokenFallback(msg.sender, _value, _data);
         }

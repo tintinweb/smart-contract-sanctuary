@@ -12,37 +12,37 @@ library SafeMath {
   }
 
   function div(uint a, uint b) internal returns (uint) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint a, uint b) internal returns (uint) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint a, uint b) internal returns (uint) {
     uint c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 
   function max64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
   function max256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
   function assert(bool assertion) internal {
@@ -73,13 +73,13 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint;
 
-  mapping(address =&gt; uint) balances;
+  mapping(address => uint) balances;
 
   /**
    * @dev Fix for the ERC20 short address attack.
    */
   modifier onlyPayloadSize(uint size) {
-     if(msg.data.length &lt; size + 4) {
+     if(msg.data.length < size + 4) {
        throw;
      }
      _;
@@ -129,7 +129,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is BasicToken, ERC20 {
 
-  mapping (address =&gt; mapping (address =&gt; uint)) allowed;
+  mapping (address => mapping (address => uint)) allowed;
 
 
   /**
@@ -142,7 +142,7 @@ contract StandardToken is BasicToken, ERC20 {
     var _allowance = allowed[_from][msg.sender];
 
     // Check is not needed because sub(_allowance, _value) will already throw if this condition is not met
-    // if (_value &gt; _allowance) throw;
+    // if (_value > _allowance) throw;
 
     balances[_to] = balances[_to].add(_value);
     balances[_from] = balances[_from].sub(_value);
@@ -161,7 +161,7 @@ contract StandardToken is BasicToken, ERC20 {
     //  allowance to zero by calling `approve(_spender, 0)` if it is not
     //  already 0 to mitigate the race condition described here:
     //  https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-    if ((_value != 0) &amp;&amp; (allowed[msg.sender][_spender] != 0)) throw;
+    if ((_value != 0) && (allowed[msg.sender][_spender] != 0)) throw;
 
     allowed[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);
@@ -349,7 +349,7 @@ contract TokenTimelock {
   uint releaseTime;
 
   function TokenTimelock(ERC20Basic _token, address _beneficiary, uint _releaseTime) {
-    require(_releaseTime &gt; now);
+    require(_releaseTime > now);
     token = _token;
     beneficiary = _beneficiary;
     releaseTime = _releaseTime;
@@ -360,10 +360,10 @@ contract TokenTimelock {
    */
   function claim() {
     require(msg.sender == beneficiary);
-    require(now &gt;= releaseTime);
+    require(now >= releaseTime);
 
     uint amount = token.balanceOf(this);
-    require(amount &gt; 0);
+    require(amount > 0);
 
     token.transfer(beneficiary, amount);
   }

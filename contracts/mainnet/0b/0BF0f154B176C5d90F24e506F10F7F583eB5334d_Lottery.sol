@@ -11,7 +11,7 @@ contract Lottery {
 
     function guess(uint8 number) public payable {
         // each next attempt is more expensive than all previous ones
-        if (keccak256(number) == secretNumberHash &amp;&amp; msg.value &gt; this.balance) {
+        if (keccak256(number) == secretNumberHash && msg.value > this.balance) {
             // send the jack pot
             msg.sender.transfer(this.balance + msg.value);
         }

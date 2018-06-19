@@ -80,10 +80,10 @@ contract AccessService is AccessAdmin {
         external 
     {
         require(msg.sender == addrFinance || msg.sender == addrAdmin);
-        require(_amount &gt; 0);
+        require(_amount > 0);
         address receiver = _target == address(0) ? addrFinance : _target;
         uint256 balance = this.balance;
-        if (_amount &lt; balance) {
+        if (_amount < balance) {
             receiver.transfer(_amount);
         } else {
             receiver.transfer(this.balance);
@@ -102,10 +102,10 @@ contract EOMarketToken is AccessService {
     string public name = &quot; Ether Online Shares Token&quot;;
     string public symbol = &quot;EOST&quot;;
 
-    mapping (address =&gt; uint256) balances;
-    mapping (address =&gt; mapping(address =&gt; uint256)) allowed;
+    mapping (address => uint256) balances;
+    mapping (address => mapping(address => uint256)) allowed;
     address[] shareholders;
-    mapping (address =&gt; uint256) addressToIndex;
+    mapping (address => uint256) addressToIndex;
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
@@ -137,7 +137,7 @@ contract EOMarketToken is AccessService {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) external returns (bool) {
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= allowed[_from][msg.sender]);
         allowed[_from][msg.sender] -= _value;
         return _transfer(_from, _to, _value);
     }
@@ -161,15 +161,15 @@ contract EOMarketToken is AccessService {
         require(_to != address(0));
         uint256 oldToVal = balances[_to];
         uint256 oldFromVal = balances[_from];
-        require(_value &gt; 0 &amp;&amp; _value &lt;= oldFromVal);
+        require(_value > 0 && _value <= oldFromVal);
         uint256 newToVal = oldToVal + _value;
-        assert(newToVal &gt;= oldToVal);
-        require(newToVal &lt;= 10);
+        assert(newToVal >= oldToVal);
+        require(newToVal <= 10);
         uint256 newFromVal = oldFromVal - _value;
         balances[_from] = newFromVal;
         balances[_to] = newToVal;
 
-        if (newFromVal == 0 &amp;&amp; _from != address(this)) {
+        if (newFromVal == 0 && _from != address(this)) {
             uint256 index = addressToIndex[_from];
             uint256 lastIndex = shareholders.length - 1;
             if (index != lastIndex) {
@@ -194,13 +194,13 @@ contract EOMarketToken is AccessService {
         payable
         whenNotPaused
     {    
-        require(_amount &gt; 0 &amp;&amp; _amount &lt;= 10);
+        require(_amount > 0 && _amount <= 10);
         uint256 price = (1 ether) * _amount;
         require(msg.value == price);
-        require(balances[this] &gt; _amount);
+        require(balances[this] > _amount);
         uint256 newBanlance = balances[msg.sender] + _amount;
-        assert(newBanlance &gt;= _amount);
-        require(newBanlance &lt;= 10);
+        assert(newBanlance >= _amount);
+        require(newBanlance <= 10);
         _transfer(this, msg.sender, _amount);
         totalSold += _amount;
         addrFinance.transfer(price);
@@ -208,7 +208,7 @@ contract EOMarketToken is AccessService {
 
     function getShareholders() external view returns(address[100] addrArray, uint256[100] amountArray, uint256 soldAmount) {
         uint256 length = shareholders.length;
-        for (uint256 i = 0; i &lt; length; ++i) {
+        for (uint256 i = 0; i < length; ++i) {
             addrArray[i] = shareholders[i];
             amountArray[i] = balances[shareholders[i]];
         } 

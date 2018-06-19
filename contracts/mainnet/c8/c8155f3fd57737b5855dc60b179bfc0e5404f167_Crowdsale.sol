@@ -110,7 +110,7 @@ contract Crowdsale is Ownable {
     }
     
         modifier saleIsOn() {
-        require(now > start &amp;&amp; now < start + period * 1 days);
+        require(now > start && now < start + period * 1 days);
         _;
     }
     

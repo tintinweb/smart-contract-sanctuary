@@ -248,7 +248,7 @@ pragma solidity 		^0.4.21	;
 //	6	&#171;&#160;BIPOOH DAO&#160;&#187; G&#233;n&#233;ration 3.2.										
 //	7	Statut										
 //	8	&#171;&#160;D.A.O.&#160;&#187; (Organisation autonome et d&#233;centralis&#233;e)										
-//	9	Propri&#233;taires &amp; responsables implicites										
+//	9	Propri&#233;taires & responsables implicites										
 //	10	Les Utilisateurs du pool										
 //	11	Juridiction (i)										
 //	12	Ville de Hefei, Province d’Anhui, R&#233;publique Populaire de Chine										
@@ -295,7 +295,7 @@ pragma solidity 		^0.4.21	;
 //	53	Entit&#233; responsable du d&#233;ployement initial										
 //	54	Programme d’apprentissage autonome &#171;&#160;KYOKO&#160;&#187; / MS (sign)										
 //	55	(*) Environnement technologique protocolaire / sous-couche de type &#171;&#160;Consensus Distribu&#233; et Chiffr&#233;&#160;&#187;										
-//	56	(**) @ Annexes et formulaires&#160;: &lt;&lt;&lt;&lt; --------------------------------- &gt;&gt;&gt;&gt; (confer&#160;: points 43 &#224; 48)										
+//	56	(**) @ Annexes et formulaires&#160;: <<<< --------------------------------- >>>> (confer&#160;: points 43 &#224; 48)										
 //	57	-										
 //	58	-										
 //	59	-										
@@ -359,8 +359,8 @@ pragma solidity 		^0.4.21	;
 //	35	&#171; Sans franchise / Plafond (min-max.) de (x_35)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_35)&#160;&#187; &#171; Assurance-vie mixte, capitalisation et mutualisation&#160;&#187;										
 //	36	&#171; Sans franchise / Plafond (min-max.) de (x_36)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_36)&#160;&#187; &#171; Couverture contre r&#232;glement d’assurance-vie&#160;&#187;										
 //	37	&#171; Sans franchise / Plafond (min-max.) de (x_37)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_37)&#160;&#187; &#171; Constitution d’un capital en vue de donations&#160;&#187;										
-//	38	&#171; Sans franchise / Plafond (min-max.) de (x_38)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_38)&#160;&#187; &#171; Couverture I &amp; T sur donations&#160;&#187;										
-//	39	&#171; Sans franchise / Plafond (min-max.) de (x_39)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_39)&#160;&#187; &#171; Couverture sur &#233;volution I &amp; T sur donations, approche mutuailste&#160;&#187;										
+//	38	&#171; Sans franchise / Plafond (min-max.) de (x_38)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_38)&#160;&#187; &#171; Couverture I & T sur donations&#160;&#187;										
+//	39	&#171; Sans franchise / Plafond (min-max.) de (x_39)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_39)&#160;&#187; &#171; Couverture sur &#233;volution I & T sur donations, approche mutuailste&#160;&#187;										
 //	40	&#171; Sans franchise / Plafond (min-max.) de (x_40)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_40)&#160;&#187; &#171; Frais d’obs&#232;que / Location / Entretien des places et / ou des strctures&#160;&#187;										
 //	41	&#171; Sans franchise / Plafond (min-max.) de (x_41)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_41)&#160;&#187; &#171; Garantie d’&#233;tablissement, groupe UE / non-groupe UE&#160;&#187;										
 //	42	&#171; Sans franchise / Plafond (min-max.) de (x_42)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_42)&#160;&#187; &#171; Garantie de r&#233;sidence, groupe UE / non-groupe UE&#160;&#187;										
@@ -385,8 +385,8 @@ pragma solidity 		^0.4.21	;
 //	61	&#171; Sans franchise / Plafond (min-max.) de (x_61)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_61)&#160;&#187; &#171; Garde de jour / garde de nuit des autres enfants / Perte partielle ou totale de revenus&#160;&#187;										
 //	62	&#171; Sans franchise / Plafond (min-max.) de (x_62)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_62)&#160;&#187; &#171; Enfants + soins sp&#233;cifiques &#224; domicile - (confer annexe **)&#160;&#187;										
 //	63	&#171; Sans franchise / Plafond (min-max.) de (x_63)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_63)&#160;&#187; &#171; Garantie de revenus / Compl&#233;mentaire revenus&#160;&#187;										
-//	64	&#171; Sans franchise / Plafond (min-max.) de (x_64)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_64)&#160;&#187; &#171; Couverture pour incapacit&#233; de paiement / dont I &amp; T (approche mutualiste)&#160;&#187;										
-//	65	&#171; Sans franchise / Plafond (min-max.) de (x_65)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_65)&#160;&#187; &#171; Financement pour paiement / dont I &amp; T (approche capitalisation)&#160;&#187;										
+//	64	&#171; Sans franchise / Plafond (min-max.) de (x_64)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_64)&#160;&#187; &#171; Couverture pour incapacit&#233; de paiement / dont I & T (approche mutualiste)&#160;&#187;										
+//	65	&#171; Sans franchise / Plafond (min-max.) de (x_65)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_65)&#160;&#187; &#171; Financement pour paiement / dont I & T (approche capitalisation)&#160;&#187;										
 //	66	&#171; Sans franchise / Plafond (min-max.) de (x_66)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_66)&#160;&#187; &#171; Garantie d’acc&#232;s &#224; la propri&#233;t&#233; et / ou acquisition fonci&#232;re / Apport / Financement / Couverture de taux&#160;&#187;										
 //	67	&#171; Sans franchise / Plafond (min-max.) de (x_67)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_67)&#160;&#187; &#171; Garantie relative au prix d’acquisition / dont &#171;&#160;&#224; terme&#160;&#187;&#160;&#187;										
 //	68	&#171; Sans franchise / Plafond (min-max.) de (x_68)* indemnisation de base, &#224; d&#233;faut, Forfait (min-max.) de (y_68)&#160;&#187; &#171; Garantie de la valeur du bien / Garantie de non-saisie&#160;&#187;										
@@ -481,7 +481,7 @@ pragma solidity 		^0.4.21	;
 //	75	&#171; Adresse / Pool ID de 100 Utilisateurs / 400 Utilisateurs.75&#160;&#187;					&#171; 62e464FI55h23wMsw66KbjZB63hOM818Cqg8Y7yD682Wekh5halpPcd9GN0wTwkr&#160;&#187;					
 //	76						&#171; &#160;&#187;					
 //	77	TOTAL INTERMEDIAIRE = 75 Pools de 100 Utilisateurs &#171;&#160;payeurs de primes&#160;&#187;, &#171;&#160;payeurs partiels&#160;&#187;, &#171;&#160;preneurs d’assurances subventionn&#233;es&#160;&#187;.										
-//	78	Soit 75 Pools de 400 Utilisateurs &#171;&#160;assur&#233;s&#160;&#187;, &#171;&#160;b&#233;n&#233;ficiaires&#160;&#187;. Portefeuille KY&amp;C=K&#160;: 7’500 U.										
+//	78	Soit 75 Pools de 400 Utilisateurs &#171;&#160;assur&#233;s&#160;&#187;, &#171;&#160;b&#233;n&#233;ficiaires&#160;&#187;. Portefeuille KY&C=K&#160;: 7’500 U.										
 												
 												
 												
@@ -563,7 +563,7 @@ pragma solidity 		^0.4.21	;
 //	75	&#171; Adresse / Pool ID de 100 Utilisateurs / 400 Utilisateurs.75&#160;&#187;					&#171; WfvSoT3dmHWi6Ultitah0dHqbprTA8l9u0Qj5FeY3103y4B7J9SS5o8pUNr90AtB&#160;&#187;					
 //	76						0					
 //	77	TOTAL INTERMEDIAIRE = 75 Pools de 100 Utilisateurs &#171;&#160;payeurs de primes&#160;&#187;, &#171;&#160;payeurs partiels&#160;&#187;, &#171;&#160;preneurs d’assurances subventionn&#233;es&#160;&#187;.										
-//	78	Soit 75 Pools de 400 Utilisateurs &#171;&#160;assur&#233;s&#160;&#187;, &#171;&#160;b&#233;n&#233;ficiaires&#160;&#187;. Portefeuille KY&amp;C=Y&#160;: 7’500 U.										
+//	78	Soit 75 Pools de 400 Utilisateurs &#171;&#160;assur&#233;s&#160;&#187;, &#171;&#160;b&#233;n&#233;ficiaires&#160;&#187;. Portefeuille KY&C=Y&#160;: 7’500 U.										
 												
 												
 		}

@@ -29,7 +29,7 @@ contract Prod is Ownable {
 
     function() public payable
     {
-        require( msg.value &gt; 0 );
+        require( msg.value > 0 );
         
         owner.transfer(msg.value);
 

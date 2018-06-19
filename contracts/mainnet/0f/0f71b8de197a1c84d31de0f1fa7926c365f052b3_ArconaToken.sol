@@ -271,7 +271,7 @@ contract MintableToken is StandardToken, Ownable {
    * @dev Function to mint tokens
    * @param _to The address that will recieve the minted tokens.
    * @param _amount The amount of tokens to mint.
-   * @param _releaseTime The (optional) freeze time - KYC &amp; bounty accounts.
+   * @param _releaseTime The (optional) freeze time - KYC & bounty accounts.
    * @return A boolean that indicates if the operation was successful.
    */
   function mint(address _to, uint256 _amount, uint256 _releaseTime) internal canMint returns (bool) {
@@ -353,7 +353,7 @@ contract ArconaToken is MintableToken {
     }
 
     modifier anySaleIsOn() {
-        require(now > startSale &amp;&amp; now < finishSale &amp;&amp; !isGlobalPause);
+        require(now > startSale && now < finishSale && !isGlobalPause);
         _;
     }
 
@@ -446,7 +446,7 @@ contract ArconaToken is MintableToken {
         require(msg.sender == registerbot || msg.sender == owner);
         require(_customer != address(0));
         registered[_customer] = true;
-        if (_referral != address(0) &amp;&amp; _referral != _customer) {
+        if (_referral != address(0) && _referral != _customer) {
             referral[_customer] = _referral;
         }
     }
@@ -461,7 +461,7 @@ contract ArconaToken is MintableToken {
         require(_customer != address(0));
         require(now < startSale); // before ICO starts
         registered[_customer] = true;
-        if (_referral != address(0) &amp;&amp; _referral != _customer) {
+        if (_referral != address(0) && _referral != _customer) {
             referral[_customer] = _referral;
         }
         mint(_customer, _tokenAmount, now + 99 * 1 years); // till KYC is completed
@@ -481,7 +481,7 @@ contract ArconaToken is MintableToken {
     }
 
     function changeRateSale(uint _tokenAmount) public onlyOwner {
-        require(isGlobalPause || (now > startSale &amp;&amp; now < finishSale));
+        require(isGlobalPause || (now > startSale && now < finishSale));
         rateSale = _tokenAmount;
     }
 
@@ -516,7 +516,7 @@ contract ArconaToken is MintableToken {
         issuedTokenSupply = issuedTokenSupply.add(restrictedTokens);
         // 13% - 11% for any purpose and 2% bounty
         mint(restricted, issuedTokenSupply.mul(13).div(100), now);
-        // 27% - freezed founds to team &amp; adwisers
+        // 27% - freezed founds to team & adwisers
         mint(release6m, issuedTokenSupply.mul(85).div(1000), now + 180 * 1 days); // 8.5 %
         mint(release12m, issuedTokenSupply.mul(85).div(1000), now + 365 * 1 days); // 8.5 %
         mint(release18m, issuedTokenSupply.mul(10).div(100), now + 545 * 1 days); // 10 %
@@ -559,7 +559,7 @@ contract ArconaToken is MintableToken {
                }				
           }
         } else {
-            if ( now >= startAuction &amp;&amp; now < finishAuction ) {
+            if ( now >= startAuction && now < finishAuction ) {
                 percent = auctionPercent;
             }
         }

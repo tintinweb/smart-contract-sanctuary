@@ -9,20 +9,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -61,7 +61,7 @@ contract ERC20 {
 contract BasicToken is ERC20Basic {
     using SafeMath for uint256;
 
-    mapping (address =&gt; uint256) balances;
+    mapping (address => uint256) balances;
     uint256 public endTimeLockedTokensTeam = 1601510399; // +2 years (Wed, 30 Sep 2020 23:59:59 GMT)
     uint256 public endTimeLockedTokensAdvisor = 1554076800; // + 6 months (Mon, 01 Apr 2019 00:00:00 GMT)
     address public walletTeam = 0xdEffB0629FD35AD1A462C13D65f003E9079C3bb1;
@@ -82,14 +82,14 @@ contract BasicToken is ERC20Basic {
     */
     function transfer(address _to, uint256 _value) public onlyPayloadSize(2) returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
 
         // Block the sending of tokens from the fund Advisors
-        if ((msg.sender == walletAdvisor) &amp;&amp; (now &lt; endTimeLockedTokensAdvisor)) {
+        if ((msg.sender == walletAdvisor) && (now < endTimeLockedTokensAdvisor)) {
             revert();
         }
         // Block the sending of tokens from the fund Team
-        if((msg.sender == walletTeam) &amp;&amp; (now &lt; endTimeLockedTokensTeam)) {
+        if((msg.sender == walletTeam) && (now < endTimeLockedTokensTeam)) {
             revert();
         }
 
@@ -114,7 +114,7 @@ contract BasicToken is ERC20Basic {
 
 contract StandardToken is ERC20, BasicToken {
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping (address => mapping (address => uint256)) internal allowed;
 
     /**
      * @dev Transfer tokens from one address to another
@@ -124,8 +124,8 @@ contract StandardToken is ERC20, BasicToken {
      */
     function transferFrom(address _from, address _to, uint256 _value) public onlyPayloadSize(3) returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -174,7 +174,7 @@ contract StandardToken is ERC20, BasicToken {
 
     function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool success) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         }
         else {
@@ -207,7 +207,7 @@ contract Ownable {
     function Ownable() public {
         permissions.push(PermissionFunction(false, false));
 /*
-        for (uint8 i = 0; i &lt; 5; i++) {
+        for (uint8 i = 0; i < 5; i++) {
             permissions.push(PermissionFunction(false, false));
         }
 */
@@ -283,7 +283,7 @@ contract MintableToken is StandardToken, Ownable {
      */
     function claimTokens(address _token) public  onlyOwner {
     //function claimTokens(address _token) public {  //for test&#39;s
-        //require(permissions[4].approveOwner == true &amp;&amp; permissions[4].approveOwnerTwo == true);
+        //require(permissions[4].approveOwner == true && permissions[4].approveOwnerTwo == true);
         if (_token == 0x0) {
                 owner.transfer(this.balance);
                 return;
@@ -340,8 +340,8 @@ contract GNCCrowdsale is Ownable, Crowdsale, MintableToken {
     uint256[] public rates  = [575, 550, 525, 500];
     uint256 public weiMinSale =  1 * 10**17;
 
-    mapping (address =&gt; uint256) public deposited;
-    mapping(address =&gt; bool) public whitelist;
+    mapping (address => uint256) public deposited;
+    mapping(address => bool) public whitelist;
 
     uint256 public constant INITIAL_SUPPLY = 50 * (10 ** 6) * (10 ** uint256(decimals));
     uint256 public fundForSale = 30 *   (10 ** 6) * (10 ** uint256(decimals));
@@ -407,13 +407,13 @@ contract GNCCrowdsale is Ownable, Crowdsale, MintableToken {
         //currentDate = 1529020800; //for test&#39;s (Jun, 15)
         uint256 currentPeriod = getPeriod(currentDate);
         uint256 amountOfTokens = 0;
-        if(currentPeriod &lt; 4){
+        if(currentPeriod < 4){
             amountOfTokens = _weiAmount.mul(rates[currentPeriod]);
             if(whitelist[msg.sender]){
                 amountOfTokens = amountOfTokens.mul(105).div(100);
             }
             if (currentPeriod == 0) {
-                if (tokenAllocated.add(amountOfTokens) &gt; fundPreIco) {
+                if (tokenAllocated.add(amountOfTokens) > fundPreIco) {
                     TokenLimitReached(tokenAllocated, amountOfTokens);
                     return 0;
                 }
@@ -424,22 +424,22 @@ contract GNCCrowdsale is Ownable, Crowdsale, MintableToken {
 
     function getPeriod(uint256 _currentDate) public pure returns (uint) {
         /**
-        * 1527811200 - Jun, 01, 2018 00:00:00 &amp;&amp; 1530403199 - Jun, 30, 2018 23:59:59
-        * 1533081600 - Aug, 01, 2018 00:00:00 &amp;&amp; 1534377599 - Aug, 15, 2018 23:59:59
-        * 1534377600 - Aug, 16, 2018 00:00:00 &amp;&amp; 1535759999 - Aug, 31, 2018 23:59:59
-        * 1535760000 - Sep, 01, 2018 00:00:00 &amp;&amp; 1538351999 - Sep, 30, 2018 23:59:59
+        * 1527811200 - Jun, 01, 2018 00:00:00 && 1530403199 - Jun, 30, 2018 23:59:59
+        * 1533081600 - Aug, 01, 2018 00:00:00 && 1534377599 - Aug, 15, 2018 23:59:59
+        * 1534377600 - Aug, 16, 2018 00:00:00 && 1535759999 - Aug, 31, 2018 23:59:59
+        * 1535760000 - Sep, 01, 2018 00:00:00 && 1538351999 - Sep, 30, 2018 23:59:59
         */
 
-        if( 1527811200 &lt;= _currentDate &amp;&amp; _currentDate &lt;= 1530403199){
+        if( 1527811200 <= _currentDate && _currentDate <= 1530403199){
             return 0;
         }
-        if( 1533081600 &lt;= _currentDate &amp;&amp; _currentDate &lt;= 1534377599){
+        if( 1533081600 <= _currentDate && _currentDate <= 1534377599){
             return 1;
         }
-        if( 1534377600 &lt;= _currentDate &amp;&amp; _currentDate &lt;= 1535759999){
+        if( 1534377600 <= _currentDate && _currentDate <= 1535759999){
             return 2;
         }
-        if( 1535760000 &lt;= _currentDate &amp;&amp; _currentDate &lt;= 1538351999){
+        if( 1535760000 <= _currentDate && _currentDate <= 1538351999){
             return 3;
         }
         return 10;
@@ -465,14 +465,14 @@ contract GNCCrowdsale is Ownable, Crowdsale, MintableToken {
 
     function validPurchaseTokens(uint256 _weiAmount) public returns (uint256) {
         uint256 addTokens = getTotalAmountOfTokens(_weiAmount);
-        if(_weiAmount &lt; weiMinSale){
+        if(_weiAmount < weiMinSale){
             return 0;
         }
-        if (tokenAllocated.add(addTokens) &gt; fundForSale) {
+        if (tokenAllocated.add(addTokens) > fundForSale) {
             TokenLimitReached(tokenAllocated, addTokens);
             return 0;
         }
-        if (weiRaised.add(_weiAmount) &gt; hardWeiCap) {
+        if (weiRaised.add(_weiAmount) > hardWeiCap) {
             HardCapReached();
             return 0;
         }
@@ -484,9 +484,9 @@ contract GNCCrowdsale is Ownable, Crowdsale, MintableToken {
      * @return True if the operation was successful.
      */
     function ownerBurnToken(uint _value) public onlyOwner returns (bool) {
-        require(_value &gt; 0);
-        require(_value &lt;= balances[owner]);
-        require(permissions[0].approveOwner == true &amp;&amp; permissions[0].approveOwnerTwo == true);
+        require(_value > 0);
+        require(_value <= balances[owner]);
+        require(permissions[0].approveOwner == true && permissions[0].approveOwnerTwo == true);
 
         balances[owner] = balances[owner].sub(_value);
         totalSupply = totalSupply.sub(_value);
@@ -500,7 +500,7 @@ contract GNCCrowdsale is Ownable, Crowdsale, MintableToken {
    * @param _beneficiary Address to be added to the whitelist
    */
     function addToWhitelist(address _beneficiary) external onlyOwner {
-        //require(permissions[1].approveOwner == true &amp;&amp; permissions[1].approveOwnerTwo == true);
+        //require(permissions[1].approveOwner == true && permissions[1].approveOwnerTwo == true);
         whitelist[_beneficiary] = true;
     }
 
@@ -509,8 +509,8 @@ contract GNCCrowdsale is Ownable, Crowdsale, MintableToken {
      * @param _beneficiaries Addresses to be added to the whitelist
      */
     function addManyToWhitelist(address[] _beneficiaries) external onlyOwner {
-        //require(permissions[2].approveOwner == true &amp;&amp; permissions[2].approveOwnerTwo == true);
-        for (uint256 i = 0; i &lt; _beneficiaries.length; i++) {
+        //require(permissions[2].approveOwner == true && permissions[2].approveOwnerTwo == true);
+        for (uint256 i = 0; i < _beneficiaries.length; i++) {
             whitelist[_beneficiaries[i]] = true;
         }
     }
@@ -520,7 +520,7 @@ contract GNCCrowdsale is Ownable, Crowdsale, MintableToken {
      * @param _beneficiary Address to be removed to the whitelist
      */
     function removeFromWhitelist(address _beneficiary) external onlyOwner {
-        //require(permissions[3].approveOwner == true &amp;&amp; permissions[3].approveOwnerTwo == true);
+        //require(permissions[3].approveOwner == true && permissions[3].approveOwnerTwo == true);
         whitelist[_beneficiary] = false;
     }
 }

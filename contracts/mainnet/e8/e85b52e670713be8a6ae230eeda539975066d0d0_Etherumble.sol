@@ -29,7 +29,7 @@ contract Etherumble {
     }
 
     modifier hasValue() {
-        require(msg.value >= 10000000000000000 &amp;&amp; nbUsers < 19); //0.01 ether min
+        require(msg.value >= 10000000000000000 && nbUsers < 19); //0.01 ether min
         _;
     }
 
@@ -121,14 +121,14 @@ contract Etherumble {
 
     function checkinter() internal{ //this can be called by anyone if the timmer freez
         //check block time
-        if (endBlock <= block.number &amp;&amp; endBlock != 0) {
+        if (endBlock <= block.number && endBlock != 0) {
             endLottery();
         }
     }
     
     function callback() public isOwner{ //this can be called by anyone if the timmer freez
         //check block time
-        if (endBlock <= block.number &amp;&amp; endBlock != 0) {
+        if (endBlock <= block.number && endBlock != 0) {
             endLottery();
         }
     }

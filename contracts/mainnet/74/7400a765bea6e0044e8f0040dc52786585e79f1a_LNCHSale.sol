@@ -144,15 +144,15 @@ contract DSMath {
      */
 
     function add(uint256 x, uint256 y) constant internal returns (uint256 z) {
-        assert((z = x + y) &gt;= x);
+        assert((z = x + y) >= x);
     }
 
     function sub(uint256 x, uint256 y) constant internal returns (uint256 z) {
-        assert((z = x - y) &lt;= x);
+        assert((z = x - y) <= x);
     }
 
     function mul(uint256 x, uint256 y) constant internal returns (uint256 z) {
-        assert((z = x * y) &gt;= x);
+        assert((z = x * y) >= x);
     }
 
     function div(uint256 x, uint256 y) constant internal returns (uint256 z) {
@@ -160,10 +160,10 @@ contract DSMath {
     }
 
     function min(uint256 x, uint256 y) constant internal returns (uint256 z) {
-        return x &lt;= y ? x : y;
+        return x <= y ? x : y;
     }
     function max(uint256 x, uint256 y) constant internal returns (uint256 z) {
-        return x &gt;= y ? x : y;
+        return x >= y ? x : y;
     }
 
     /*
@@ -172,15 +172,15 @@ contract DSMath {
 
 
     function hadd(uint128 x, uint128 y) constant internal returns (uint128 z) {
-        assert((z = x + y) &gt;= x);
+        assert((z = x + y) >= x);
     }
 
     function hsub(uint128 x, uint128 y) constant internal returns (uint128 z) {
-        assert((z = x - y) &lt;= x);
+        assert((z = x - y) <= x);
     }
 
     function hmul(uint128 x, uint128 y) constant internal returns (uint128 z) {
-        assert((z = x * y) &gt;= x);
+        assert((z = x * y) >= x);
     }
 
     function hdiv(uint128 x, uint128 y) constant internal returns (uint128 z) {
@@ -188,10 +188,10 @@ contract DSMath {
     }
 
     function hmin(uint128 x, uint128 y) constant internal returns (uint128 z) {
-        return x &lt;= y ? x : y;
+        return x <= y ? x : y;
     }
     function hmax(uint128 x, uint128 y) constant internal returns (uint128 z) {
-        return x &gt;= y ? x : y;
+        return x >= y ? x : y;
     }
 
 
@@ -200,10 +200,10 @@ contract DSMath {
      */
 
     function imin(int256 x, int256 y) constant internal returns (int256 z) {
-        return x &lt;= y ? x : y;
+        return x <= y ? x : y;
     }
     function imax(int256 x, int256 y) constant internal returns (int256 z) {
-        return x &gt;= y ? x : y;
+        return x >= y ? x : y;
     }
 
     /*
@@ -316,8 +316,8 @@ contract DSStop is DSAuth, DSNote {
 
 contract DSTokenBase is ERC20, DSMath {
     uint256                                            _supply;
-    mapping (address =&gt; uint256)                       _balances;
-    mapping (address =&gt; mapping (address =&gt; uint256))  _approvals;
+    mapping (address => uint256)                       _balances;
+    mapping (address => mapping (address => uint256))  _approvals;
     
     function DSTokenBase(uint256 supply) {
         _balances[msg.sender] = supply;
@@ -335,7 +335,7 @@ contract DSTokenBase is ERC20, DSMath {
     }
     
     function transfer(address dst, uint wad) returns (bool) {
-        assert(_balances[msg.sender] &gt;= wad);
+        assert(_balances[msg.sender] >= wad);
         
         _balances[msg.sender] = sub(_balances[msg.sender], wad);
         _balances[dst] = add(_balances[dst], wad);
@@ -346,8 +346,8 @@ contract DSTokenBase is ERC20, DSMath {
     }
     
     function transferFrom(address src, address dst, uint wad) returns (bool) {
-        assert(_balances[src] &gt;= wad);
-        assert(_approvals[src][msg.sender] &gt;= wad);
+        assert(_balances[src] >= wad);
+        assert(_approvals[src][msg.sender] >= wad);
         
         _approvals[src][msg.sender] = sub(_approvals[src][msg.sender], wad);
         _balances[src] = sub(_balances[src], wad);
@@ -436,10 +436,10 @@ contract LNCHSale is DSAuth, DSExec, DSMath {
     uint     public  numberOfDays;         // Number of windows after 0
     uint     public  createPerDay;         // Tokens sold in each window
 
-    mapping (uint =&gt; uint)                       public  dailyTotals;
-    mapping (uint =&gt; mapping (address =&gt; uint))  public  userBuys;
-    mapping (uint =&gt; mapping (address =&gt; bool))  public  claimed;
-    mapping (address =&gt; string)                  public  keys;
+    mapping (uint => uint)                       public  dailyTotals;
+    mapping (uint => mapping (address => uint))  public  userBuys;
+    mapping (uint => mapping (address => bool))  public  claimed;
+    mapping (address => string)                  public  keys;
 
     event LogBuy      (uint window, address user, uint amount);
     event LogClaim    (uint window, address user, uint amount);
@@ -484,19 +484,19 @@ function LNCHSale(
             numberOfDays
         );
 
-        assert(numberOfDays &gt; 0);
-        assert(totalSupply &gt; foundersAllocation);
-        assert(totalSupply &gt; partnersAllocation);
-        assert(totalSupply &gt; consultantsAllocation);
-        assert(totalSupply &gt; advisorsAllocation);
-        assert(totalSupply &gt; developersAllocation);
-        assert(openTime &lt; startTime);
+        assert(numberOfDays > 0);
+        assert(totalSupply > foundersAllocation);
+        assert(totalSupply > partnersAllocation);
+        assert(totalSupply > consultantsAllocation);
+        assert(totalSupply > advisorsAllocation);
+        assert(totalSupply > developersAllocation);
+        assert(openTime < startTime);
     }
 
     function digitToNumber(uint8 b) constant returns (uint8) {
-      if ( b &lt;= 57 )
+      if ( b <= 57 )
 	return b-48 ;
-      if ( b &lt;= 70 )
+      if ( b <= 70 )
 	return b-65+10 ;
       return b-97+10 ;
     }	    
@@ -506,7 +506,7 @@ function LNCHSale(
       uint160 m = 0;
       uint160 b = 0;
       
-      for (uint8 i = 2; i &lt; 42; i++) {
+      for (uint8 i = 2; i < 42; i++) {
 	m *= 16;
 	b = uint160(digitToNumber(uint8(_address[i])));
 	m += (b);
@@ -563,7 +563,7 @@ function LNCHSale(
     // Each window is 23 hours long so that end-of-window rotates
     // around the clock for all timezones.
     function dayFor(uint timestamp) constant returns (uint) {
-        return timestamp &lt; startTime
+        return timestamp < startTime
             ? 0
             : sub(timestamp, startTime) / 23 hours + 1;
     }
@@ -576,17 +576,17 @@ function LNCHSale(
     // day the buy order is submitted and the maximum price prior to
     // applying this payment that will be allowed.
     function buyWithLimit(uint day, uint limit) payable {
-        assert(time() &gt;= openTime &amp;&amp; today() &lt;= numberOfDays);
-        assert(msg.value &gt;= 0.01 ether);
+        assert(time() >= openTime && today() <= numberOfDays);
+        assert(msg.value >= 0.01 ether);
 
-        assert(day &gt;= today());
-        assert(day &lt;= numberOfDays);
+        assert(day >= today());
+        assert(day <= numberOfDays);
 
         userBuys[day][msg.sender] += msg.value;
         dailyTotals[day] += msg.value;
 
         if (limit != 0) {
-            assert(dailyTotals[day] &lt;= limit);
+            assert(dailyTotals[day] <= limit);
         }
 
         LogBuy(day, msg.sender, msg.value);
@@ -601,7 +601,7 @@ function LNCHSale(
     }
 
     function claim(uint day) {
-        assert(today() &gt; day);
+        assert(today() > day);
 
         if (claimed[day][msg.sender] || dailyTotals[day] == 0) {
             return;
@@ -623,7 +623,7 @@ function LNCHSale(
     }
 
     function claimAll() {
-        for (uint i = 0; i &lt; today(); i++) {
+        for (uint i = 0; i < today(); i++) {
             claim(i);
         }
     }
@@ -632,8 +632,8 @@ function LNCHSale(
     // Manually registering requires a base58
     // encoded using the LNCH public key format.
     function register(string key) {
-        assert(today() &lt;=  numberOfDays + 1);
-        assert(bytes(key).length &lt;= 64);
+        assert(today() <=  numberOfDays + 1);
+        assert(bytes(key).length <= 64);
 
         keys[msg.sender] = key;
 
@@ -642,14 +642,14 @@ function LNCHSale(
 
     // Crowdsale owners can collect ETH any number of times
     function collect() auth {
-        assert(today() &gt; 0); // Prevent recycling during window 0
+        assert(today() > 0); // Prevent recycling during window 0
         exec(msg.sender, this.balance);
         LogCollect(this.balance);
     }
 
     // Anyone can freeze the token 1 day after the sale ends
     function freeze() {
-        assert(today() &gt; numberOfDays + 1);
+        assert(today() > numberOfDays + 1);
         LNCH.stop();
         LogFreeze();
     }

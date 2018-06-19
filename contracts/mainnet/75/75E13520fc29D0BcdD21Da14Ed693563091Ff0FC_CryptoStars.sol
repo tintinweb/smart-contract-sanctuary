@@ -113,7 +113,7 @@ contract CryptoStars {
         if (msg.sender != owner) throw;
         if (numberOfStarsReserved >= numberOfStarsToReserve) throw;
         uint numberStarsReservedThisRun = 0;
-        while (numberOfStarsReserved < numberOfStarsToReserve &amp;&amp; numberStarsReservedThisRun < maxForThisRun) {
+        while (numberOfStarsReserved < numberOfStarsToReserve && numberStarsReservedThisRun < maxForThisRun) {
             starIndexToAddress[nextStarIndexToAssign] = msg.sender;
             Assign(msg.sender, nextStarIndexToAssign,starIndexToSTRZName[nextStarIndexToAssign], starIndexToSTRZMasterName[nextStarIndexToAssign]);
             numberStarsReservedThisRun++;
@@ -230,7 +230,7 @@ contract CryptoStars {
     function buyStar(uint starIndex) payable {
         Offer offer = starsOfferedForSale[starIndex];
         if (!offer.isForSale) throw;                                            // star not actually for sale
-        if (offer.onlySellTo != 0x0 &amp;&amp; offer.onlySellTo != msg.sender) throw;   // star not supposed to be sold to this user
+        if (offer.onlySellTo != 0x0 && offer.onlySellTo != msg.sender) throw;   // star not supposed to be sold to this user
         if (msg.value < offer.minValue) throw;                                  // Didn&#39;t send enough ETH
         if (offer.seller != starIndexToAddress[starIndex]) throw;               // Seller no longer owner of star
 

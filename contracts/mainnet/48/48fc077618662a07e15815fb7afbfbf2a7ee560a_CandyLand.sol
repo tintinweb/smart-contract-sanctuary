@@ -187,7 +187,7 @@ contract CanReceiveApproval {
 
     function bytesToBytes4(bytes b) internal pure returns (bytes4 out) {
         for (uint i = 0; i < 4; i++) {
-            out |= bytes4(b[i] &amp; 0xFF) >> (i << 3);
+            out |= bytes4(b[i] & 0xFF) >> (i << 3);
         }
     }
 
@@ -377,7 +377,7 @@ contract CandyLand is ERC20, LandAccessControl, CanReceiveApproval {
 
 
     function _makePlant(address _owner, uint _count, uint _gardenerId) internal {
-        require(_count <= balances[_owner].sub(planted[_owner]) &amp;&amp; _count > 0);
+        require(_count <= balances[_owner].sub(planted[_owner]) && _count > 0);
 
         //require(candyToken.transferFrom(msg.sender, this, _count.mul(priceRate)));
 

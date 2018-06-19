@@ -326,12 +326,12 @@ contract EnclavesDEX is StorageStateful {
   function processDeposits(address _token, uint256 _amount) internal {
     //Always need to deal with possible non-zero msg.value
     uint256 etherAmount = 0;
-    if ((_token == address(0)) &amp;&amp; (tokens[address(0)][msg.sender] < _amount)) {
+    if ((_token == address(0)) && (tokens[address(0)][msg.sender] < _amount)) {
       etherAmount = _amount.sub(tokens[address(0)][msg.sender]);
     }
     depositEther(etherAmount);
     //Only pull tokens if needed
-    if ((_token != address(0)) &amp;&amp; (tokens[_token][msg.sender] < _amount)) {
+    if ((_token != address(0)) && (tokens[_token][msg.sender] < _amount)) {
       depositToken(_token, _amount.sub(tokens[_token][msg.sender]));
     }
   }
@@ -500,7 +500,7 @@ contract EnclavesDEX is StorageStateful {
   function availableVolumeEnclaves(address _tokenGet, uint256 _amountGet, address _tokenGive, uint256 _amountGive, uint256 _expires, uint256 _nonce, address _user, uint8 _v, bytes32 _r, bytes32 _s) public view returns (uint256, bytes32) {
     bytes32 orderHash = keccak256(address(this), _tokenGet, _amountGet, _tokenGive, _amountGive, _expires, _nonce);
     if (!(
-      (orders[_user][orderHash] || checkSig(tradeABIHash, orderHash, _v, _r, _s, _user)) &amp;&amp;
+      (orders[_user][orderHash] || checkSig(tradeABIHash, orderHash, _v, _r, _s, _user)) &&
       block.number <= _expires
     )) return (0, orderHash);
     //Reuse amountGet/Give to avoid &quot;CompilerError: Stack too deep, try removing local variables.&quot;

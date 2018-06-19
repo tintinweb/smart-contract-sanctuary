@@ -1,7 +1,7 @@
 pragma solidity ^0.4.23;
 
 contract PoormansHoneyPot {
-    mapping (address =&gt; uint) public balances;
+    mapping (address => uint) public balances;
 
     constructor() public payable {
         store();

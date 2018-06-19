@@ -10,7 +10,7 @@ library MathUtils {
             return result;
         }
 
-        require(result > a &amp;&amp; result > b);
+        require(result > a && result > b);
 
         return result;
     }
@@ -333,7 +333,7 @@ contract CryptoPoliceCrowdsale is Ownable {
 
         uint balance = address(this).balance;
 
-        if (success &amp;&amp; balance > 0) {
+        if (success && balance > 0) {
             uint amount = balance.sub(suspendedPayments);
             owner.transfer(amount);
         }
@@ -393,7 +393,7 @@ contract CryptoPoliceCrowdsale is Ownable {
 
     function burnLeftoverTokens(uint8 percentage) public grantOwner {
         require(state == CrowdsaleState.Ended);
-        require(percentage <= 100 &amp;&amp; percentage > 0);
+        require(percentage <= 100 && percentage > 0);
 
         uint balance = token.balanceOf(address(this));
 
@@ -404,8 +404,8 @@ contract CryptoPoliceCrowdsale is Ownable {
     }
 
     function updateExchangeRate(uint8 idx, uint tokens, uint price) public grantOwnerOrAdmin {
-        require(tokens > 0 &amp;&amp; price > 0);
-        require(idx >= 0 &amp;&amp; idx <= 3);
+        require(tokens > 0 && price > 0);
+        require(idx >= 0 && idx <= 3);
 
         exchangeRates[idx] = ExchangeRate({
             tokens: tokens,
@@ -426,7 +426,7 @@ contract CryptoPoliceCrowdsale is Ownable {
 
         ExchangeRate storage rate = exchangeRates[idx];
 
-        require(rate.tokens > 0 &amp;&amp; rate.price > 0, &quot;Exchange rate not set&quot;);
+        require(rate.tokens > 0 && rate.price > 0, &quot;Exchange rate not set&quot;);
 
         return rate;
     }
@@ -477,12 +477,12 @@ contract CryptoPoliceCrowdsale is Ownable {
      * @param suspended Whether or not suspended payments should be included
      */
     function returnDirectPayments(address participant, bool processed, bool suspended) internal {
-        if (processed &amp;&amp; participants[participant].processedDirectWeiAmount > 0) {
+        if (processed && participants[participant].processedDirectWeiAmount > 0) {
             participant.transfer(participants[participant].processedDirectWeiAmount);
             participants[participant].processedDirectWeiAmount = 0;
         }
 
-        if (suspended &amp;&amp; participants[participant].suspendedDirectWeiAmount > 0) {
+        if (suspended && participants[participant].suspendedDirectWeiAmount > 0) {
             participant.transfer(participants[participant].suspendedDirectWeiAmount);
             participants[participant].suspendedDirectWeiAmount = 0;
         }
@@ -496,11 +496,11 @@ contract CryptoPoliceCrowdsale is Ownable {
      * @param suspended Whether or not suspended payments should be included
      */
     function returnExternalPayments(address participant, bool processed, bool suspended) internal {
-        if (processed &amp;&amp; participants[participant].processedExternalWeiAmount > 0) {
+        if (processed && participants[participant].processedExternalWeiAmount > 0) {
             participants[participant].processedExternalWeiAmount = 0;
         }
         
-        if (suspended &amp;&amp; participants[participant].suspendedExternalWeiAmount > 0) {
+        if (suspended && participants[participant].suspendedExternalWeiAmount > 0) {
             participants[participant].suspendedExternalWeiAmount = 0;
         }
     }
@@ -528,11 +528,11 @@ contract CryptoPoliceCrowdsale is Ownable {
     }
 
     function isAdmin() internal view returns(bool) {
-        return isAdminSet() &amp;&amp; msg.sender == admin;
+        return isAdminSet() && msg.sender == admin;
     }
 
     function isCrowdsaleSuccessful() public view returns(bool) {
-        return state == CrowdsaleState.Ended &amp;&amp; crowdsaleEndedSuccessfully;
+        return state == CrowdsaleState.Ended && crowdsaleEndedSuccessfully;
     }
 
     modifier notEnded {

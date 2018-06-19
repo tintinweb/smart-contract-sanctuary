@@ -43,8 +43,8 @@ contract MineableToken is owned {
   uint256 public totalSupply;
   uint256 public supplyCap;
 
-  mapping( address =&gt; uint256 ) balances_;
-  mapping( address =&gt; mapping(address =&gt; uint256) ) allowances_;
+  mapping( address => uint256 ) balances_;
+  mapping( address => mapping(address => uint256) ) allowances_;
 
   // ERC20
   event Approval( address indexed owner,
@@ -72,8 +72,8 @@ contract MineableToken is owned {
 
   function mine( uint256 qty ) public onlyOwner {
 
-    require (    (totalSupply + qty) &gt; totalSupply
-              &amp;&amp; (totalSupply + qty) &lt;= supplyCap
+    require (    (totalSupply + qty) > totalSupply
+              && (totalSupply + qty) <= supplyCap
             );
 
     totalSupply += qty;
@@ -139,7 +139,7 @@ contract MineableToken is owned {
   function transferFrom( address from, address to, uint256 value ) public
   returns (bool success)
   {
-    require( value &lt;= allowances_[from][msg.sender] );
+    require( value <= allowances_[from][msg.sender] );
 
     allowances_[from][msg.sender] -= value;
     bytes memory empty;
@@ -171,7 +171,7 @@ contract MineableToken is owned {
   function burn( uint256 value ) public
   returns (bool success)
   {
-    require( balances_[msg.sender] &gt;= value );
+    require( balances_[msg.sender] >= value );
     balances_[msg.sender] -= value;
     totalSupply -= value;
 
@@ -183,8 +183,8 @@ contract MineableToken is owned {
   function burnFrom( address from, uint256 value ) public
   returns (bool success)
   {
-    require( balances_[from] &gt;= value );
-    require( value &lt;= allowances_[from][msg.sender] );
+    require( balances_[from] >= value );
+    require( value <= allowances_[from][msg.sender] );
 
     balances_[from] -= value;
     allowances_[from][msg.sender] -= value;
@@ -244,7 +244,7 @@ contract MineableToken is owned {
   {
     uint length;
     assembly { length := extcodesize(_addr) }
-    return (length &gt; 0);
+    return (length > 0);
   }
 
   function _transfer( address from,
@@ -253,8 +253,8 @@ contract MineableToken is owned {
                       bytes data ) internal
   {
     require( to != 0x0 );
-    require( balances_[from] &gt;= value );
-    require( balances_[to] + value &gt; balances_[to] ); // catch overflow
+    require( balances_[from] >= value );
+    require( balances_[to] + value > balances_[to] ); // catch overflow
 
     balances_[from] -= value;
     balances_[to] += value;

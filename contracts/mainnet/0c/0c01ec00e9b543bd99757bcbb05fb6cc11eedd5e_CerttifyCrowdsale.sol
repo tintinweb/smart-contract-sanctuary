@@ -402,9 +402,9 @@ contract CerttifyCrowdsale is Ownable {
     }
 
     function validPurchase() internal view returns (bool) {
-        bool withinPeriod = now >= startTimeStage1 &amp;&amp; now < endTime;
+        bool withinPeriod = now >= startTimeStage1 && now < endTime;
         bool nonZeroPurchase = msg.value != 0;
-        return withinPeriod &amp;&amp; nonZeroPurchase;
+        return withinPeriod && nonZeroPurchase;
     }
 
     function checkCapNotReached(uint256 tokenBuyReq) internal view returns (bool) {
@@ -414,9 +414,9 @@ contract CerttifyCrowdsale is Ownable {
     function getCurrentStage() internal view returns (uint8) {
         if (now < startTimeStage1) {
             return 0;
-        } else if (now >= startTimeStage1 &amp;&amp; now < startTimeStage2) {
+        } else if (now >= startTimeStage1 && now < startTimeStage2) {
             return 1;
-        } else if (now >= startTimeStage2 &amp;&amp; now < startTimeStage3) {
+        } else if (now >= startTimeStage2 && now < startTimeStage3) {
             return 2;
         } else {
             return 3;

@@ -503,7 +503,7 @@ contract TimedCrowdsale is Crowdsale {
    * @dev Reverts if not in crowdsale time range.
    */
   modifier onlyWhileOpen {
-    require(block.timestamp >= openingTime &amp;&amp; block.timestamp <= closingTime);
+    require(block.timestamp >= openingTime && block.timestamp <= closingTime);
     _;
   }
 

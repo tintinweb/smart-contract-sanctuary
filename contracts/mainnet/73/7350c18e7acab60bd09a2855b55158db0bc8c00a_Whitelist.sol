@@ -26,7 +26,7 @@ contract Ownable {
 
 
 contract Whitelist is Ownable {
-    mapping (address =&gt; uint128) whitelist;
+    mapping (address => uint128) whitelist;
 
     event Whitelisted(address who, uint128 nonce);
 
@@ -53,6 +53,6 @@ contract Whitelist is Ownable {
     }
 
     function isWhitelisted(address who) external view returns(bool) {
-        return whitelist[who] &gt; 0;
+        return whitelist[who] > 0;
     }
 }

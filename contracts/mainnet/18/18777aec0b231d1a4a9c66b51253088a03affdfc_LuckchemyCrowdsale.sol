@@ -363,7 +363,7 @@ contract LuckchemyCrowdsale {
     }
 
     function isPrivateSale() public constant returns (bool) {
-        return now >= START_TIME_PRESALE &amp;&amp; now <= END_TIME_PRESALE;
+        return now >= START_TIME_PRESALE && now <= END_TIME_PRESALE;
     }
 
     /*
@@ -396,7 +396,7 @@ contract LuckchemyCrowdsale {
      */
     function refund() public {
         require(hasEnded());
-        require(!softCapReached() || ((now > END_TIME_SALE + 30 days) &amp;&amp; !token.released()));
+        require(!softCapReached() || ((now > END_TIME_SALE + 30 days) && !token.released()));
         uint256 amount = deposits[msg.sender];
         require(amount > 0);
         deposits[msg.sender] = 0;
@@ -412,8 +412,8 @@ contract LuckchemyCrowdsale {
      *  function for checking period of investment and investment amount restriction for ETH purchases
      */
     function validPurchase() internal constant returns (bool) {
-        bool withinPeriod = (now >= START_TIME_PRESALE &amp;&amp; now <= END_TIME_PRESALE) || (now >= START_TIME_SALE &amp;&amp; now <= END_TIME_SALE);
-        return withinPeriod &amp;&amp; !hardCapReached();
+        bool withinPeriod = (now >= START_TIME_PRESALE && now <= END_TIME_PRESALE) || (now >= START_TIME_SALE && now <= END_TIME_SALE);
+        return withinPeriod && !hardCapReached();
     }
     /*
      * function for adding address to whitelist

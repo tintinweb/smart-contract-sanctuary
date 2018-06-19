@@ -250,11 +250,11 @@ Key Features
 		//so instead we expand the value by multiplying then shrink it. by the denominator
 
 		/*
-		100eth IN &amp; 100eth OUT = 100% tax fee (returning 1) !!!
-		100eth IN &amp; 50eth OUT = 50% tax fee (returning 2)
-		100eth IN &amp; 33eth OUT = 33% tax fee (returning 3)
-		100eth IN &amp; 25eth OUT = 25% tax fee (returning 4)
-		100eth IN &amp; 10eth OUT = 10% tax fee (returning 10)
+		100eth IN & 100eth OUT = 100% tax fee (returning 1) !!!
+		100eth IN & 50eth OUT = 50% tax fee (returning 2)
+		100eth IN & 33eth OUT = 33% tax fee (returning 3)
+		100eth IN & 25eth OUT = 25% tax fee (returning 4)
+		100eth IN & 10eth OUT = 10% tax fee (returning 10)
 
 		!!! keep in mind there is no fee if there are no holders. So if 100% of the eth has left the contract that means there can&#39;t possibly be holders to tax you
 		*/
@@ -726,7 +726,7 @@ Key Features
 	
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success){
         uint256 allowance = allowed[_from][msg.sender];
-        require(balances[_from] >= _value &amp;&amp; allowance >= _value);
+        require(balances[_from] >= _value && allowance >= _value);
         balances[_to] += _value;
         balances[_from] -= _value;
         if (allowance < MAX_UINT256) {

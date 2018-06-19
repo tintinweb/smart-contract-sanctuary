@@ -22,7 +22,7 @@ contract SafeMath {
         pure
     returns(uint) {
       uint256 z = x + y;
-      require((z &gt;= x) &amp;&amp; (z &gt;= y));
+      require((z >= x) && (z >= y));
       return z;
     }
 
@@ -30,7 +30,7 @@ contract SafeMath {
         internal
         pure
     returns(uint) {
-      require(x &gt;= y);
+      require(x >= y);
       uint256 z = x - y;
       return z;
     }
@@ -48,7 +48,7 @@ contract SafeMath {
         internal
         pure
     returns(uint) {
-        require(y &gt; 0);
+        require(y > 0);
         return x / y;
     }
 
@@ -62,7 +62,7 @@ contract SafeMath {
 }
 
 contract Authorization {
-    mapping(address =&gt; bool) internal authbook;
+    mapping(address => bool) internal authbook;
     address[] public operators;
     address public owner;
     bool public powerStatus = true;
@@ -107,7 +107,7 @@ contract Authorization {
         public
         onlyOwner
     {
-        if(user_ != address(0) &amp;&amp; !authbook[user_]) {
+        if(user_ != address(0) && !authbook[user_]) {
             authbook[user_] = true;
             operators.push(user_);
         }
@@ -118,7 +118,7 @@ contract Authorization {
         onlyOwner
     {
         delete authbook[user_];
-        for(uint i = 0; i &lt; operators.length; i++) {
+        for(uint i = 0; i < operators.length; i++) {
             if(operators[i] == user_) {
                 operators[i] = operators[operators.length - 1];
                 operators.length -= 1;
@@ -135,8 +135,8 @@ contract Authorization {
 }
 
 contract StandardToken is SafeMath {
-    mapping(address =&gt; uint256) balances;
-    mapping(address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping(address => uint256) balances;
+    mapping(address => mapping (address => uint256)) allowed;
     uint256 public totalSupply;
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
@@ -154,7 +154,7 @@ contract StandardToken is SafeMath {
     )
         public
     returns(bool success) {
-        if(balances[msg.sender] &gt;= amount_ &amp;&amp; amount_ &gt; 0) {
+        if(balances[msg.sender] >= amount_ && amount_ > 0) {
             balances[msg.sender] = safeSub(balances[msg.sender], amount_);
             balances[to_] = safeAdd(balances[to_], amount_);
             emit Transfer(msg.sender, to_, amount_);
@@ -170,7 +170,7 @@ contract StandardToken is SafeMath {
         address to_,
         uint256 amount_
     ) public returns(bool success) {
-        if(balances[from_] &gt;= amount_ &amp;&amp; allowed[from_][msg.sender] &gt;= amount_ &amp;&amp; amount_ &gt; 0) {
+        if(balances[from_] >= amount_ && allowed[from_][msg.sender] >= amount_ && amount_ > 0) {
             balances[to_] = safeAdd(balances[to_], amount_);
             balances[from_] = safeSub(balances[from_], amount_);
             allowed[from_][msg.sender] = safeSub(allowed[from_][msg.sender], amount_);
@@ -227,7 +227,7 @@ contract XPAAssetToken is StandardToken, Authorization {
         totalSupply = 0;
         symbol = symbol_;
         name = name_;
-        defaultExchangeRate = defaultExchangeRate_ &gt; 0 ? defaultExchangeRate_ : 0.01 ether;
+        defaultExchangeRate = defaultExchangeRate_ > 0 ? defaultExchangeRate_ : 0.01 ether;
     }
 
     function transferOwnership(
@@ -246,7 +246,7 @@ contract XPAAssetToken is StandardToken, Authorization {
         public
         onlyOperator
     returns(bool success) {
-        if(amount_ &gt; 0 &amp;&amp; user_ != address(0)) {
+        if(amount_ > 0 && user_ != address(0)) {
             totalSupply = safeAdd(totalSupply, amount_);
             balances[user_] = safeAdd(balances[user_], amount_);
             emit Issue(owner, amount_);
@@ -261,7 +261,7 @@ contract XPAAssetToken is StandardToken, Authorization {
         public
     returns(bool success) {
         require(allowToBurn(msg.sender));
-        if(amount_ &gt; 0 &amp;&amp; balances[msg.sender] &gt;= amount_) {
+        if(amount_ > 0 && balances[msg.sender] >= amount_) {
             balances[msg.sender] = safeSub(balances[msg.sender], amount_);
             totalSupply = safeSub(totalSupply, amount_);
             emit Transfer(msg.sender, owner, amount_);
@@ -277,7 +277,7 @@ contract XPAAssetToken is StandardToken, Authorization {
         public
     returns(bool success) {
         require(allowToBurn(msg.sender));
-        if(balances[user_] &gt;= amount_ &amp;&amp; allowed[user_][msg.sender] &gt;= amount_ &amp;&amp; amount_ &gt; 0) {
+        if(balances[user_] >= amount_ && allowed[user_][msg.sender] >= amount_ && amount_ > 0) {
             balances[user_] = safeSub(balances[user_], amount_);
             totalSupply = safeSub(totalSupply, amount_);
             allowed[user_][msg.sender] = safeSub(allowed[user_][msg.sender], amount_);
@@ -310,7 +310,7 @@ contract XPAAssetToken is StandardToken, Authorization {
         onlyOperator
     {
         require(account_ != address(0));
-        for(uint256 i = 0; i &lt; burners.length; i++) {
+        for(uint256 i = 0; i < burners.length; i++) {
             if(burners[i] == account_) {
                 return;
             }
@@ -325,7 +325,7 @@ contract XPAAssetToken is StandardToken, Authorization {
         onlyOperator
     {
         require(account_ != address(0));
-        for(uint256 i = 0; i &lt; burners.length; i++) {
+        for(uint256 i = 0; i < burners.length; i++) {
             if(burners[i] == account_) {
                 burners[i] = burners[burners.length - 1];
                 burners.length -= 1;
@@ -342,7 +342,7 @@ contract XPAAssetToken is StandardToken, Authorization {
         if(checkOperator(account_)) {
             return true;
         }
-        for(uint256 i = 0; i &lt; burners.length; i++) {
+        for(uint256 i = 0; i < burners.length; i++) {
             if(burners[i] == account_) {
                 return true;
             }
@@ -390,7 +390,7 @@ contract TokenFactory is Authorization {
         require(msg.sender == XPAAssets);
         bool tokenRepeat = false;
         address newAsset;
-        for(uint256 i = 0; i &lt; assetTokens.length; i++) {
+        for(uint256 i = 0; i < assetTokens.length; i++) {
             if(XPAAssetToken(assetTokens[i]).getSymbol() == keccak256(symbol_)){
                 tokenRepeat = true;
                 newAsset = assetTokens[i];
@@ -401,7 +401,7 @@ contract TokenFactory is Authorization {
             newAsset = new XPAAssetToken(symbol_, name_, defaultExchangeRate_);
             XPAAssetToken(newAsset).assignOperator(XPAAssets);
             XPAAssetToken(newAsset).assignOperator(ETHAssets);
-            for(uint256 j = 0; j &lt; fundAccounts.length; j++) {
+            for(uint256 j = 0; j < fundAccounts.length; j++) {
                 XPAAssetToken(newAsset).assignBurner(fundAccounts[j]);
             }
             assetTokens.push(newAsset);
@@ -420,7 +420,7 @@ contract TokenFactory is Authorization {
             exchange_ != address(0)
         );
         if(
-            exchange_ == exchange &amp;&amp;
+            exchange_ == exchange &&
             candidateExchange != address(0)
         ) {
             emit eCancelNominatingExchange(candidateExchange);
@@ -434,16 +434,16 @@ contract TokenFactory is Authorization {
             exchange = exchange_;
             exchangeOldVersion = exchange_;
         } else if(
-            exchange_ != candidateExchange &amp;&amp;
-            candidateTillExchange + 86400 * 7 &lt; block.timestamp
+            exchange_ != candidateExchange &&
+            candidateTillExchange + 86400 * 7 < block.timestamp
         ) {
             // set to candadite
             emit eNominatingExchange(exchange_);
             candidateExchange = exchange_;
             candidateTillExchange = block.timestamp + 86400 * 7;
         } else if(
-            exchange_ == candidateExchange &amp;&amp;
-            candidateTillExchange &lt; block.timestamp
+            exchange_ == candidateExchange &&
+            candidateTillExchange < block.timestamp
         ) {
             // set to exchange
             emit eChangeExchange(exchange, candidateExchange);
@@ -463,7 +463,7 @@ contract TokenFactory is Authorization {
             XPAAssets_ != address(0)
         );
         if(
-            XPAAssets_ == XPAAssets &amp;&amp;
+            XPAAssets_ == XPAAssets &&
             candidateXPAAssets != address(0)
         ) {
             emit eCancelNominatingXPAAssets(candidateXPAAssets);
@@ -476,16 +476,16 @@ contract TokenFactory is Authorization {
             emit eChangeXPAAssets(address(0), XPAAssets_);
             XPAAssets = XPAAssets_;
         } else if(
-            XPAAssets_ != candidateXPAAssets &amp;&amp;
-            candidateTillXPAAssets + 86400 * 7 &lt; block.timestamp
+            XPAAssets_ != candidateXPAAssets &&
+            candidateTillXPAAssets + 86400 * 7 < block.timestamp
         ) {
             // set to candadite
             emit eNominatingXPAAssets(XPAAssets_);
             candidateXPAAssets = XPAAssets_;
             candidateTillXPAAssets = block.timestamp + 86400 * 7;
         } else if(
-            XPAAssets_ == candidateXPAAssets &amp;&amp;
-            candidateTillXPAAssets &lt; block.timestamp
+            XPAAssets_ == candidateXPAAssets &&
+            candidateTillXPAAssets < block.timestamp
         ) {
             // set to XPAAssets
             emit eChangeXPAAssets(XPAAssets, candidateXPAAssets);
@@ -506,7 +506,7 @@ contract TokenFactory is Authorization {
             ETHAssets_ != address(0)
         );
         if(
-            ETHAssets_ == ETHAssets &amp;&amp;
+            ETHAssets_ == ETHAssets &&
             candidateETHAssets != address(0)
         ) {
             emit eCancelNominatingETHAssets(candidateETHAssets);
@@ -518,16 +518,16 @@ contract TokenFactory is Authorization {
             // initial value
             ETHAssets = ETHAssets_;
         } else if(
-            ETHAssets_ != candidateETHAssets &amp;&amp;
-            candidateTillETHAssets + 86400 * 7 &lt; block.timestamp
+            ETHAssets_ != candidateETHAssets &&
+            candidateTillETHAssets + 86400 * 7 < block.timestamp
         ) {
             // set to candadite
             emit eNominatingETHAssets(ETHAssets_);
             candidateETHAssets = ETHAssets_;
             candidateTillETHAssets = block.timestamp + 86400 * 7;
         } else if(
-            ETHAssets_ == candidateETHAssets &amp;&amp;
-            candidateTillETHAssets &lt; block.timestamp
+            ETHAssets_ == candidateETHAssets &&
+            candidateTillETHAssets < block.timestamp
         ) {
             // set to ETHAssets
             emit eChangeETHAssets(ETHAssets, candidateETHAssets);
@@ -545,12 +545,12 @@ contract TokenFactory is Authorization {
         onlyOperator
     {
         require(account_ != address(0));
-        for(uint256 i = 0; i &lt; fundAccounts.length; i++) {
+        for(uint256 i = 0; i < fundAccounts.length; i++) {
             if(fundAccounts[i] == account_) {
                 return;
             }
         }
-        for(uint256 j = 0; j &lt; assetTokens.length; j++) {
+        for(uint256 j = 0; j < assetTokens.length; j++) {
             XPAAssetToken(assetTokens[i]).assignBurner(account_);
         }
         emit eAddFundAccount(account_);
@@ -566,9 +566,9 @@ contract TokenFactory is Authorization {
         require(account_ != address(0));
         uint256 i = 0;
         uint256 j = 0;
-        for(i = 0; i &lt; fundAccounts.length; i++) {
+        for(i = 0; i < fundAccounts.length; i++) {
             if(fundAccounts[i] == account_) {
-                for(j = 0; j &lt; assetTokens.length; j++) {
+                for(j = 0; j < assetTokens.length; j++) {
                     XPAAssetToken(assetTokens[i]).dismissBunner(account_);
                 }
                 fundAccounts[i] = fundAccounts[fundAccounts.length - 1];
@@ -611,7 +611,7 @@ contract TokenFactory is Authorization {
         internal
     {
         if(user_ != address(0)) {
-            for(uint256 i = 0; i &lt; assetTokens.length; i++) {
+            for(uint256 i = 0; i < assetTokens.length; i++) {
                 XPAAssetToken(assetTokens[i]).assignOperator(user_);
             }
         }
@@ -621,7 +621,7 @@ contract TokenFactory is Authorization {
         internal
     {
         if(user_ != address(0)) {
-            for(uint256 i = 0; i &lt; assetTokens.length; i++) {
+            for(uint256 i = 0; i < assetTokens.length; i++) {
                 XPAAssetToken(assetTokens[i]).dismissOperator(user_);
             }
         }

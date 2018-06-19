@@ -133,20 +133,20 @@ library SafeMathLibExt {
   }
 
   function divides(uint a, uint b) returns (uint) {
-    assert(b &gt; 0);
+    assert(b > 0);
     uint c = a / b;
     assert(a == b * c + a % b);
     return c;
   }
 
   function minus(uint a, uint b) returns (uint) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function plus(uint a, uint b) returns (uint) {
     uint c = a + b;
-    assert(c&gt;=a);
+    assert(c>=a);
     return c;
   }
 
@@ -178,7 +178,7 @@ contract FlatPricingExt is PricingStrategy, Ownable {
   }
 
   function FlatPricingExt(uint _oneTokenInWei) onlyOwner {
-    require(_oneTokenInWei &gt; 0);
+    require(_oneTokenInWei > 0);
     oneTokenInWei = _oneTokenInWei;
   }
 

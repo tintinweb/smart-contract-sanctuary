@@ -43,7 +43,7 @@ contract FlightDelayConstants {
     * General events
     */
 
-// --&gt; test-mode
+// --> test-mode
 //        event LogUint(string _message, uint _uint);
 //        event LogUintEth(string _message, uint ethUint);
 //        event LogUintTime(string _message, uint timeUint);
@@ -55,7 +55,7 @@ contract FlightDelayConstants {
 //        event LogString(string _message, string _string);
 //        event LogBool(string _message, bool _bool);
 //        event Log(address);
-// &lt;-- test-mode
+// <-- test-mode
 
     event LogPolicyApplied(
         uint _policyId,
@@ -172,21 +172,21 @@ contract FlightDelayConstants {
         50
     ];
 
-// --&gt; prod-mode
+// --> prod-mode
     // DEFINITIONS FOR ROPSTEN AND MAINNET
     // minimum time before departure for applying
     uint constant MIN_TIME_BEFORE_DEPARTURE	= 24 hours; // for production
     // check for delay after .. minutes after scheduled arrival
     uint constant CHECK_PAYOUT_OFFSET = 15 minutes; // for production
-// &lt;-- prod-mode
+// <-- prod-mode
 
-// --&gt; test-mode
+// --> test-mode
 //        // DEFINITIONS FOR LOCAL TESTNET
 //        // minimum time before departure for applying
 //        uint constant MIN_TIME_BEFORE_DEPARTURE = 1 seconds; // for testing
 //        // check for delay after .. minutes after scheduled arrival
 //        uint constant CHECK_PAYOUT_OFFSET = 1 seconds; // for testing
-// &lt;-- test-mode
+// <-- test-mode
 
     // maximum duration of flight
     uint constant MAX_FLIGHT_DURATION = 2 days;
@@ -202,7 +202,7 @@ contract FlightDelayConstants {
     * URLs and query strings for oraclize
     */
 
-// --&gt; prod-mode
+// --> prod-mode
     // DEFINITIONS FOR ROPSTEN AND MAINNET
     string constant ORACLIZE_RATINGS_BASE_URL =
         // ratings api is v1, see https://developer.flightstats.com/api-docs/ratings/v1
@@ -214,10 +214,10 @@ contract FlightDelayConstants {
         &quot;[URL] json(https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/&quot;;
     string constant ORACLIZE_STATUS_QUERY =
         // pattern:
-        &quot;?${[decrypt] BA3YyqF4iMQszBawvgG82bqX3fw7JoWA1thFsboUECR/L8JkBCgvaThg1LcUWbIntosEKs/kvqyzOtvdQfMgjYPV0c6hsq/gKQkmJYILZmLY4SgBebH8g0qbfrrjxF5gEbfCi2qoR6PSxcQzKIjgd4HvAaumlQd4CkJLmY463ymqNN9B8/PL}&amp;utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
-// &lt;-- prod-mode
+        &quot;?${[decrypt] BA3YyqF4iMQszBawvgG82bqX3fw7JoWA1thFsboUECR/L8JkBCgvaThg1LcUWbIntosEKs/kvqyzOtvdQfMgjYPV0c6hsq/gKQkmJYILZmLY4SgBebH8g0qbfrrjxF5gEbfCi2qoR6PSxcQzKIjgd4HvAaumlQd4CkJLmY463ymqNN9B8/PL}&utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
+// <-- prod-mode
 
-// --&gt; test-mode
+// --> test-mode
 //        // DEFINITIONS FOR LOCAL TESTNET
 //        string constant ORACLIZE_RATINGS_BASE_URL =
 //            // ratings api is v1, see https://developer.flightstats.com/api-docs/ratings/v1
@@ -231,7 +231,7 @@ contract FlightDelayConstants {
 //        string constant ORACLIZE_STATUS_QUERY =
 //            // for testrpc:
 //            &quot;?utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
-// &lt;-- test-mode
+// <-- test-mode
 }
 
 // File: contracts/FlightDelayControllerInterface.sol
@@ -293,7 +293,7 @@ contract FlightDelayDatabaseModel {
     //					        customer by the oracle.
     // 03 = PaidOut:	  The flight has ended with delay.
     //					        The oracle has checked and payed out.
-    // 04 = Expired:	  The flight has endet with &lt;15min. delay.
+    // 04 = Expired:	  The flight has endet with <15min. delay.
     //					        No payout.
     // 05 = Declined:	  The application was invalid.
     //					        The premium minus cancellation fee is payed back to the
@@ -557,21 +557,21 @@ contract FlightDelayDatabase is FlightDelayControlledContract, FlightDelayDataba
     // Table of policies
     Policy[] public policies;
 
-    mapping (bytes32 =&gt; uint[]) public extCustomerPolicies;
+    mapping (bytes32 => uint[]) public extCustomerPolicies;
 
-    mapping (address =&gt; Customer) public customers;
+    mapping (address => Customer) public customers;
 
     // Lookup policyIds from customer addresses
-    mapping (address =&gt; uint[]) public customerPolicies;
+    mapping (address => uint[]) public customerPolicies;
 
     // Lookup policy Ids from queryIds
-    mapping (bytes32 =&gt; OraclizeCallback) public oraclizeCallbacks;
+    mapping (bytes32 => OraclizeCallback) public oraclizeCallbacks;
 
     // Lookup risks from risk IDs
-    mapping (bytes32 =&gt; Risk) public risks;
+    mapping (bytes32 => Risk) public risks;
 
     // Lookup AccessControl
-    mapping(address =&gt; mapping(address =&gt; mapping(uint8 =&gt; bool))) public accessControl;
+    mapping(address => mapping(address => mapping(uint8 => bool))) public accessControl;
 
     // Lookup accounts of internal ledger
     int[6] public ledger;
@@ -677,7 +677,7 @@ contract FlightDelayDatabase is FlightDelayControlledContract, FlightDelayDataba
         accessControl[_contract][_caller][_perm] = _access;
     }
 
-// --&gt; test-mode
+// --> test-mode
 //        function setAccessControlTestOnly (
 //            address _contract,
 //            address _caller,
@@ -686,7 +686,7 @@ contract FlightDelayDatabase is FlightDelayControlledContract, FlightDelayDataba
 //        ) public {
 //            accessControl[_contract][_caller][_perm] = _access;
 //        }
-// &lt;-- test-mode
+// <-- test-mode
 
     function setAccessControl(address _contract, address _caller, uint8 _perm) public {
         setAccessControl(
@@ -708,17 +708,17 @@ contract FlightDelayDatabase is FlightDelayControlledContract, FlightDelayDataba
         int previous = ledger[_index];
         ledger[_index] += _value;
 
-// --&gt; debug-mode
+// --> debug-mode
 //            LogInt(&quot;previous&quot;, previous);
 //            LogInt(&quot;ledger[_index]&quot;, ledger[_index]);
 //            LogInt(&quot;_value&quot;, _value);
-// &lt;-- debug-mode
+// <-- debug-mode
 
         // check for int overflow
-        if (_value &lt; 0) {
-            assert(ledger[_index] &lt; previous);
-        } else if (_value &gt; 0) {
-            assert(ledger[_index] &gt; previous);
+        if (_value < 0) {
+            assert(ledger[_index] < previous);
+        } else if (_value > 0) {
+            assert(ledger[_index] > previous);
         }
     }
 
@@ -757,9 +757,9 @@ contract FlightDelayDatabase is FlightDelayControlledContract, FlightDelayDataba
 
         //todo: check for ovewflows
 
-// --&gt; test-mode
+// --> test-mode
 //            LogUint(&quot;_policyId&quot;, _policyId);
-// &lt;-- test-mode
+// <-- test-mode
 
         customerPolicies[_customer].push(_policyId);
         extCustomerPolicies[_customerExternalId].push(_policyId);
@@ -845,9 +845,9 @@ contract FlightDelayDatabase is FlightDelayControlledContract, FlightDelayDataba
             _arrivalTime
         );
 
-// --&gt; test-mode
+// --> test-mode
 //            LogBytes32(&quot;riskId&quot;, _riskId);
-// &lt;-- test-mode
+// <-- test-mode
 
         Risk storage r = risks[_riskId];
 
@@ -894,6 +894,6 @@ contract FlightDelayDatabase is FlightDelayControlledContract, FlightDelayDataba
         OraclizeCallback storage o = oraclizeCallbacks[_queryId];
         Risk storage r = risks[_riskId];
 
-        _result = o.oraclizeTime &gt; r.arrivalTime + _offset;
+        _result = o.oraclizeTime > r.arrivalTime + _offset;
     }
 }

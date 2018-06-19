@@ -536,7 +536,7 @@ contract APOTokenCrowdsale is Ownable, Crowdsale  {
     event Finalized();
 
     modifier onlyWhileOpen {
-        require(now >= startTime &amp;&amp; now <= endTime);
+        require(now >= startTime && now <= endTime);
         _;
     }
     
@@ -569,9 +569,9 @@ contract APOTokenCrowdsale is Ownable, Crowdsale  {
         // Calculate discount rate
         if (now <= startTime + 1 * discountPeriod) {
             _tokenAmount = _tokenAmount.mul(125).div(100);
-        } else if ((now > startTime + 1 * discountPeriod) &amp;&amp; (now <= startTime + 2 * discountPeriod))  {
+        } else if ((now > startTime + 1 * discountPeriod) && (now <= startTime + 2 * discountPeriod))  {
             _tokenAmount = _tokenAmount.mul(115).div(100);
-        } else if ((now > startTime + 2 * discountPeriod) &amp;&amp; (now <= startTime + 3 * discountPeriod))  {
+        } else if ((now > startTime + 2 * discountPeriod) && (now <= startTime + 3 * discountPeriod))  {
             _tokenAmount = _tokenAmount.mul(105).div(100);
         }
         

@@ -2,7 +2,7 @@ pragma solidity ^0.4.19;
 
 /* Adapted from strings.sol created by Nick Johnson <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="43223122202b2d2a27032d2c37272c376d2d2637">[email&#160;protected]</a>>
  * Ref: https://github.com/Arachnid/solidity-stringutils/blob/2f6ca9accb48ae14c66f1437ec50ed19a0616f78/strings.sol
- * @title String &amp; slice utility library for Solidity contracts.
+ * @title String & slice utility library for Solidity contracts.
  * @author Nick Johnson <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="83e2f1e2e0ebedeae7c3edecf7e7ecf7adede6f7">[email&#160;protected]</a>>
  */
 library strings {
@@ -162,7 +162,7 @@ library strings {
 
 /* Helper String Functions for Game Manager Contract
  * @title String Healpers
- * @author Fazri Zubair &amp; Farhan Khwaja (Lucid Sight, Inc.)
+ * @author Fazri Zubair & Farhan Khwaja (Lucid Sight, Inc.)
  */
 contract StringHelpers {
     using strings for *;
@@ -224,12 +224,12 @@ contract ERC721 {
 
 /* Controls state and access rights for contract functions
  * @title Operational Control
- * @author Fazri Zubair &amp; Farhan Khwaja (Lucid Sight, Inc.)
+ * @author Fazri Zubair & Farhan Khwaja (Lucid Sight, Inc.)
  * Inspired and adapted from contract created by OpenZeppelin
  * Ref: https://github.com/OpenZeppelin/zeppelin-solidity/
  */
 contract OperationalControl {
-    // Facilitates access &amp; control for the game.
+    // Facilitates access & control for the game.
     // Roles:
     //  -The Managers (Primary/Secondary): Has universal control of all elements (No ability to withdraw)
     //  -The Banker: The Bank can withdraw funds and adjust fees / prices.
@@ -245,7 +245,7 @@ contract OperationalControl {
     // @dev Keeps track whether the contract is paused. When that is true, most actions are blocked
     bool public paused = false;
 
-    // @dev Keeps track whether the contract erroredOut. When that is true, most actions are blocked &amp; refund can be claimed
+    // @dev Keeps track whether the contract erroredOut. When that is true, most actions are blocked & refund can be claimed
     bool public error = false;
 
     /// @dev Operation modifiers for limiting access
@@ -423,13 +423,13 @@ contract CSCPreSaleItemBase is ERC721, OperationalControl, StringHelpers {
     function supportsInterface(bytes4 _interfaceID) external view returns (bool)
     {
         // DEBUG ONLY
-        //require((InterfaceSignature_ERC165 == 0x01ffc9a7) &amp;&amp; (InterfaceSignature_ERC721 == 0x9a20483d));
+        //require((InterfaceSignature_ERC165 == 0x01ffc9a7) && (InterfaceSignature_ERC721 == 0x9a20483d));
         return ((_interfaceID == InterfaceSignature_ERC165) || (_interfaceID == InterfaceSignature_ERC721));
     }
     
     function setMaxLimit(string _collectibleName, uint256 _collectibleType, uint256 _collectibleClass, uint256 _maxLimit) external onlyManager whenNotPaused {
         require(_maxLimit > 0);
-        require(_collectibleType >= 0 &amp;&amp; _collectibleClass >= 0);
+        require(_collectibleType >= 0 && _collectibleClass >= 0);
         require(stringToBytes32(_collectibleName) != stringToBytes32(&quot;&quot;));
 
         require(!preSaleItemTypeToClassToMaxLimitSet[_collectibleType][_collectibleClass]);
@@ -667,7 +667,7 @@ contract CSCPreSaleItemBase is ERC721, OperationalControl, StringHelpers {
 
 /* Lucid Sight, Inc. ERC-721 Collectibles Manager. 
  * @title LSPreSaleManager - Lucid Sight, Inc. Non-Fungible Token
- * @author Fazri Zubair &amp; Farhan Khwaja (Lucid Sight, Inc.)
+ * @author Fazri Zubair & Farhan Khwaja (Lucid Sight, Inc.)
  */
 contract CSCPreSaleManager is CSCPreSaleItemBase {
 

@@ -58,7 +58,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value > 0 &amp;&amp; _value <= balances[msg.sender]);
+    require(_value > 0 && _value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -109,7 +109,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value > 0 &amp;&amp; _value <= balances[_from]);
+    require(_value > 0 && _value <= balances[_from]);
     require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
@@ -240,7 +240,7 @@ contract Frozen is Pausable {
     
     mapping (address => bool) public frozenAccount;
     
-    /// @notice `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens
+    /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
     function freezeAccount(address target, bool freeze) onlyOwner whenNotPaused public {
@@ -277,8 +277,8 @@ contract PausableFrozenToken is StandardToken, Frozen {
   function batchTransfer(address[] _receivers, uint256 _value) public whenNotPaused whenNotFrozen returns (bool) {
     uint cnt = _receivers.length;
     uint256 amount = _value.mul(uint256(cnt));
-    require(cnt > 0 &amp;&amp; cnt <= 20);
-    require(_value > 0 &amp;&amp; balances[msg.sender] >= amount);
+    require(cnt > 0 && cnt <= 20);
+    require(_value > 0 && balances[msg.sender] >= amount);
 
     balances[msg.sender] = balances[msg.sender].sub(amount);
     for (uint i = 0; i < cnt; i++) {
@@ -299,7 +299,7 @@ contract WeMediaChainToken is PausableFrozenToken {
     /**
     * Public variables of the token
     * The following variables are OPTIONAL vanities. One does not have to include them.
-    * They allow one to customise the token contract &amp; in no way influences the core functionality.
+    * They allow one to customise the token contract & in no way influences the core functionality.
     * Some wallets/interfaces might not even bother to look at this information.
     */
     string public name = &quot;WeMediaChain&quot;;

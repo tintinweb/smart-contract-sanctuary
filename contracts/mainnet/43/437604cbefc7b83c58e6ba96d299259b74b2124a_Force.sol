@@ -109,7 +109,7 @@ contract hasHolders {
     // delete token holder
     function _delHolder(address _holder) internal returns (bool){
         uint id = holdersId[_holder];
-        if (id != 0 &amp;&amp; holdersCount > 0) {
+        if (id != 0 && holdersCount > 0) {
             //replace with last
             holders[id] = holders[holdersCount];
             // delete Holder element

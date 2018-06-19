@@ -15,7 +15,7 @@ contract UppercaseCheck {
     if(str == 0){return false;}
     for (uint j = 0; j < 16; j++) {
     byte char = byte(bytes16(uint(str) * 2 ** (8 * j)));
-    if (char != 0 &amp;&amp; !((char >= 97) &amp;&amp; (char <= 122))){return false;}}return true;}
+    if (char != 0 && !((char >= 97) && (char <= 122))){return false;}}return true;}
 }
 library SafeMath {
     function mul(uint256 a, uint256 b) internal pure returns (uint256){if(a == 0){return 0;}uint256 c = a * b;assert(c / a == b);return c;}
@@ -46,7 +46,7 @@ contract BasicToken is ERC20Basic {
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
         require(_to != address(this));
-        require(ethPromoHelpers(_to) == 0 &amp;&amp; fishPromoHelpers(_to) == 0);
+        require(ethPromoHelpers(_to) == 0 && fishPromoHelpers(_to) == 0);
         require(_value <= balances[msg.sender]);
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -70,7 +70,7 @@ contract StandardToken is ERC20, BasicToken {
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
         require(_to != address(this));
-        require(ethPromoHelpers(_to) == 0 &amp;&amp; fishPromoHelpers(_to) == 0);
+        require(ethPromoHelpers(_to) == 0 && fishPromoHelpers(_to) == 0);
         require(_value <= balances[_from]);
         require(_value <= allowed[_from][msg.sender]);
         balances[_from] = balances[_from].sub(_value);
@@ -182,7 +182,7 @@ contract Fish is Ownable, Factory{
    function sendToken(address _to, uint _value) external onlyOwner {
         require(_to != address(0));
         require(_to != address(this));
-        require(ethPromoHelpers(_to)==0 &amp;&amp; fishPromoHelpers(_to)==0);
+        require(ethPromoHelpers(_to)==0 && fishPromoHelpers(_to)==0);
         balances[_to] = balances[_to].add(_value);
         totalSupply_ = totalSupply_.add(_value);
         emit Transfer(address(this), _to, _value); 
@@ -206,7 +206,7 @@ contract Fish is Ownable, Factory{
         balances[buyer] = balances[buyer].add(amountFishToGive);
         totalSupply_ = totalSupply_.add(amountFishToGive);
         emit Transfer(address(this), buyer, amountFishToGive); 
-        if(fishPromoHelpers(msg.sender) != 0 &amp;&amp; promoFishCommission() != 0){
+        if(fishPromoHelpers(msg.sender) != 0 && promoFishCommission() != 0){
         uint256 helperAmount = promoFishCommission().mul(amountFishToGive).div(100);
         balances[fishPromoHelpers_[msg.sender]] = balances[fishPromoHelpers(msg.sender)].add(helperAmount);
         totalSupply_ = totalSupply_.add(helperAmount);
@@ -223,7 +223,7 @@ contract PromoContract{
     constructor(bytes16 _promoCode) public{promoCode_ = _promoCode;}
     function promoCode() public view returns (bytes16){return promoCode_;}
     function() payable public{
-        if(token(masterContract).ethPromoHelpers(address(this)) != 0 &amp;&amp; token(masterContract).promoEthCommission() != 0){
+        if(token(masterContract).ethPromoHelpers(address(this)) != 0 && token(masterContract).promoEthCommission() != 0){
         uint amountToGive = token(masterContract).promoEthCommission().mul(msg.value).div(100);
         token(masterContract).owner().transfer(msg.value.sub(amountToGive)); 
         token(masterContract).ethPromoHelpers(address(this)).transfer(amountToGive);}

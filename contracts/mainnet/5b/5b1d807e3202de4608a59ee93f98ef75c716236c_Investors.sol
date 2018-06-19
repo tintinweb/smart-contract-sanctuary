@@ -36,20 +36,20 @@ contract Investors is Ownable {
     */
     address[] public investors;
 
-    // investor address =&gt; percentage * 10^(-2)
+    // investor address => percentage * 10^(-2)
     /*
         3026,1500,510,462,453,302,250,250,226,220,150,129,100,100,60,50,50,50,50,50,50,50,50,50,50,40,40,30,27,26,25,25,25,25,25,25,25,25,23,20,19,15,15,15,15,15,14,14,13,13,13,13,12,12,11,11,11,11,11,11,10,10,10,10,10,10,10,10,12,9,9,8,8,8,8,7,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5
         5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,1,6
         6,125,50,5,8,50,23,3,115,14,10,50,5,5
     */
-    mapping (address =&gt; uint) public investorPercentages;
+    mapping (address => uint) public investorPercentages;
 
 
     /**
      * @dev Add investors
      */
     function addInvestors(address[] _investors, uint[] _investorPercentages) onlyOwner public {
-        for (uint i = 0; i &lt; _investors.length; i++) {
+        for (uint i = 0; i < _investors.length; i++) {
             investors.push(_investors[i]);
             investorPercentages[_investors[i]] = _investorPercentages[i];
         }
@@ -71,11 +71,11 @@ contract Investors is Ownable {
      */
     function getInvestorsFee() public constant returns (uint8) {
         //01/01/2020
-        if (now &gt;= 1577836800) {
+        if (now >= 1577836800) {
             return 1;
         }
         //01/01/2019
-        if (now &gt;= 1546300800) {
+        if (now >= 1546300800) {
             return 5;
         }
         return 10;

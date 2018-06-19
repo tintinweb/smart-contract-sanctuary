@@ -22,7 +22,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -32,7 +32,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -41,7 +41,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -89,7 +89,7 @@ contract Ownable {
 contract B0xAccount is Ownable {
     using SafeMath for uint;
 
-	mapping (address =&gt; Withdraw[]) public withdrawals;
+	mapping (address => Withdraw[]) public withdrawals;
 
     address public receiver1;
     address public receiver2;
@@ -107,7 +107,7 @@ contract B0xAccount is Ownable {
         public
         payable
     {
-        require(msg.value &gt; 0);
+        require(msg.value > 0);
         uint toSend = address(this).balance.mul(numerator).div(denominator);
         require(receiver1.send(toSend));
         require(receiver2.send(toSend));
@@ -138,7 +138,7 @@ contract B0xAccount is Ownable {
             || msg.sender == receiver2);
 
         uint amount = _value;
-        if (amount &gt; address(this).balance) {
+        if (amount > address(this).balance) {
             amount = address(this).balance;
         }
 
@@ -157,7 +157,7 @@ contract B0xAccount is Ownable {
         public
         onlyOwner
     {
-        require(_receiver != address(0) &amp;&amp; _receiver != receiver1);
+        require(_receiver != address(0) && _receiver != receiver1);
         receiver1 = _receiver;
     }
 
@@ -167,7 +167,7 @@ contract B0xAccount is Ownable {
         public
         onlyOwner
     {
-        require(_receiver != address(0) &amp;&amp; _receiver != receiver2);
+        require(_receiver != address(0) && _receiver != receiver2);
         receiver2 = _receiver;
     }
 
@@ -178,7 +178,7 @@ contract B0xAccount is Ownable {
         public
         onlyOwner
     {
-        require(_numerator &gt; 0 &amp;&amp; (_numerator*2) &lt;= _denominator);
+        require(_numerator > 0 && (_numerator*2) <= _denominator);
         numerator = _numerator;
         denominator = _denominator;
     }

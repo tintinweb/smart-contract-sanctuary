@@ -2,7 +2,7 @@ pragma solidity ^0.4.18;
 
 contract DSSafeAddSub {
     function safeToAdd(uint a, uint b) internal returns (bool) {
-        return (a + b &gt;= a);
+        return (a + b >= a);
     }
 
     function safeAdd(uint a, uint b) internal returns (uint) {
@@ -11,7 +11,7 @@ contract DSSafeAddSub {
     }
 
     function safeToSubtract(uint a, uint b) internal returns (bool) {
-        return (b &lt;= a);
+        return (b <= a);
     }
 
     function safeSub(uint a, uint b) internal returns (uint) {
@@ -24,10 +24,10 @@ contract DSSafeAddSub {
 contract LuckyDice is DSSafeAddSub {
 
     /*
-     * bet size &gt;= minBet, minNumber &lt; minRollLimit &lt; maxRollLimit - 1 &lt; maxNumber
+     * bet size >= minBet, minNumber < minRollLimit < maxRollLimit - 1 < maxNumber
     */
     modifier betIsValid(uint _betSize, uint minRollLimit, uint maxRollLimit) {
-        if (_betSize &lt; minBet || maxRollLimit &lt; minNumber || minRollLimit &gt; maxNumber || maxRollLimit - 1 &lt;= minRollLimit) throw;
+        if (_betSize < minBet || maxRollLimit < minNumber || minRollLimit > maxNumber || maxRollLimit - 1 <= minRollLimit) throw;
         _;
     }
 
@@ -106,18 +106,18 @@ contract LuckyDice is DSSafeAddSub {
     /*
      * player vars
     */
-    mapping(bytes32 =&gt; address) public playerAddress;
-    mapping(bytes32 =&gt; address) playerTempAddress;
-    mapping(bytes32 =&gt; bytes32) playerBetDiceRollHash;
-    mapping(bytes32 =&gt; uint) playerBetValue;
-    mapping(bytes32 =&gt; uint) playerTempBetValue;
-    mapping(bytes32 =&gt; uint) playerRollResult;
-    mapping(bytes32 =&gt; uint) playerMaxRollLimit;
-    mapping(bytes32 =&gt; uint) playerMinRollLimit;
-    mapping(address =&gt; uint) playerPendingWithdrawals;
-    mapping(bytes32 =&gt; uint) playerProfit;
-    mapping(bytes32 =&gt; uint) playerToJackpot;
-    mapping(bytes32 =&gt; uint) playerTempReward;
+    mapping(bytes32 => address) public playerAddress;
+    mapping(bytes32 => address) playerTempAddress;
+    mapping(bytes32 => bytes32) playerBetDiceRollHash;
+    mapping(bytes32 => uint) playerBetValue;
+    mapping(bytes32 => uint) playerTempBetValue;
+    mapping(bytes32 => uint) playerRollResult;
+    mapping(bytes32 => uint) playerMaxRollLimit;
+    mapping(bytes32 => uint) playerMinRollLimit;
+    mapping(address => uint) playerPendingWithdrawals;
+    mapping(bytes32 => uint) playerProfit;
+    mapping(bytes32 => uint) playerToJackpot;
+    mapping(bytes32 => uint) playerTempReward;
 
     /*
      * events
@@ -164,7 +164,7 @@ contract LuckyDice is DSSafeAddSub {
     /*
      * public function
      * player submit bet
-     * only if game is active &amp; bet is valid
+     * only if game is active & bet is valid
     */
     function playerMakeBet(uint minRollLimit, uint maxRollLimit, bytes32 diceRollHash, uint8 v, bytes32 r, bytes32 s) public
     payable
@@ -180,7 +180,7 @@ contract LuckyDice is DSSafeAddSub {
 
         tempFullprofit = getFullProfit(msg.value, minRollLimit, maxRollLimit);
         playerProfit[diceRollHash] = getProfit(msg.value, tempFullprofit);
-        if (playerProfit[diceRollHash] &gt; maxProfit)
+        if (playerProfit[diceRollHash] > maxProfit)
             throw;
 
         playerToJackpot[diceRollHash] = getToJackpot(msg.value);
@@ -201,7 +201,7 @@ contract LuckyDice is DSSafeAddSub {
 
 
         /* check contract can payout on win */
-        if (maxPendingPayouts &gt;= contractBalance)
+        if (maxPendingPayouts >= contractBalance)
             throw;
 
         /* provides accurate numbers for web3 and allows for manual refunds in case of any error */
@@ -211,7 +211,7 @@ contract LuckyDice is DSSafeAddSub {
 
     function getFullProfit(uint _betSize, uint minRollLimit, uint maxRollLimit) internal returns (uint){
         uint probabilitySum = 0;
-        for (uint i = minRollLimit + 1; i &lt; maxRollLimit; i++)
+        for (uint i = minRollLimit + 1; i < maxRollLimit; i++)
         {
             probabilitySum += rollSumProbability[i];
         }
@@ -264,7 +264,7 @@ contract LuckyDice is DSSafeAddSub {
         tempDiceSum = 0;
         tempJpCounter = 0;
         tempRollResult = bytes(rollResult);
-        for (uint i = 0; i &lt; 5; i++) {
+        for (uint i = 0; i < 5; i++) {
             tempDiceValue = uint(tempRollResult[i]) - 48;
             tempDiceSum += tempDiceValue;
             playerRollResult[diceRollHash] = playerRollResult[diceRollHash] * 10 + tempDiceValue;
@@ -277,7 +277,7 @@ contract LuckyDice is DSSafeAddSub {
         /*
         * CONGRATULATIONS!!! SOMEBODY WON JP!
         */
-        if (playerTempBetValue[diceRollHash] &gt;= jpMinBet &amp;&amp; tempJpCounter &gt;= 4) {
+        if (playerTempBetValue[diceRollHash] >= jpMinBet && tempJpCounter >= 4) {
             LogJpPayment(playerBetDiceRollHash[diceRollHash], playerTempAddress[diceRollHash],
                 playerRollResult[diceRollHash], jackpot, 0);
 
@@ -300,7 +300,7 @@ contract LuckyDice is DSSafeAddSub {
         * send reward
         * if send of reward fails save value to playerPendingWithdrawals
         */
-        if (playerMinRollLimit[diceRollHash] &lt; tempDiceSum &amp;&amp; tempDiceSum &lt; playerMaxRollLimit[diceRollHash]) {
+        if (playerMinRollLimit[diceRollHash] < tempDiceSum && tempDiceSum < playerMaxRollLimit[diceRollHash]) {
             /* safely reduce contract balance by player profit */
             contractBalance = safeSub(contractBalance, playerTempReward[diceRollHash]);
 

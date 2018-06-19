@@ -327,7 +327,7 @@ contract TestSale is GeniusEther {
     }
 
     modifier saleIsOn() {
-    	require(now >= start &amp;&amp; now < stop);
+    	require(now >= start && now < stop);
     	_;
     }
 	
@@ -339,11 +339,11 @@ contract TestSale is GeniusEther {
     function finish() public onlyOwner {
 	uint issuedTokenSupply = token.totalSupply();
 	uint restrictedTokens = issuedTokenSupply.mul(30).div(70);
-	if (now >= stop &amp;&amp; this.balance>softcap) {
+	if (now >= stop && this.balance>softcap) {
 	    token.mint(multisig, restrictedTokens);
         token.finishMinting();
         multisig.transfer(this.balance); }
-    if (now >= stop &amp;&amp; this.balance<=softcap) {
+    if (now >= stop && this.balance<=softcap) {
 	    reco=true; }
 	}
 	
@@ -364,7 +364,7 @@ contract TestSale is GeniusEther {
     }
 
     function() external payable {
-        if (now >= start &amp;&amp; now < stop) {
+        if (now >= start && now < stop) {
             createTokens(); }
         else {
             msg.sender.transfer(msg.value);    

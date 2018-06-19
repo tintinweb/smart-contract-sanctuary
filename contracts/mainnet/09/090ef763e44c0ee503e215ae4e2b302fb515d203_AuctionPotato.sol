@@ -197,7 +197,7 @@ contract AuctionPotato {
         }
         
         // owner can withdraw once auction is cancelled or ended
-        //if (ownerHasWithdrawn == false &amp;&amp; msg.sender == owner &amp;&amp; (canceled == true || now > endTime)) {
+        //if (ownerHasWithdrawn == false && msg.sender == owner && (canceled == true || now > endTime)) {
         if (msg.sender == owner) {
             withdrawalAccount = owner;
             withdrawalAmount = highestBindingBid;
@@ -209,14 +209,14 @@ contract AuctionPotato {
         
         // overbid people can withdraw their bid + profit
         // exclude owner because he is set above
-        if (!canceled &amp;&amp; (msg.sender != highestBidder &amp;&amp; msg.sender != owner)) {
+        if (!canceled && (msg.sender != highestBidder && msg.sender != owner)) {
             withdrawalAccount = msg.sender;
             withdrawalAmount = fundsByBidder[withdrawalAccount];
             fundsByBidder[withdrawalAccount] = 0;
         }
 
         // highest bidder can withdraw leftovers if he didn&#39;t before
-        if (msg.sender == highestBidder &amp;&amp; msg.sender != owner) {
+        if (msg.sender == highestBidder && msg.sender != owner) {
             withdrawalAccount = msg.sender;
             withdrawalAmount = fundsByBidder[withdrawalAccount].sub(highestBindingBid);
             fundsByBidder[withdrawalAccount] = fundsByBidder[withdrawalAccount].sub(withdrawalAmount);

@@ -17,7 +17,7 @@ contract Token {
 }
 
 contract Casino {
-  mapping(address =&gt; bool) public authorized;
+  mapping(address => bool) public authorized;
 }
 
 contract Owned {
@@ -39,13 +39,13 @@ contract Owned {
 contract SafeMath {
 
 	function safeSub(uint a, uint b) pure internal returns(uint) {
-		assert(b &lt;= a);
+		assert(b <= a);
 		return a - b;
 	}
 
 	function safeAdd(uint a, uint b) pure internal returns(uint) {
 		uint c = a + b;
-		assert(c &gt;= a &amp;&amp; c &gt;= b);
+		assert(c >= a && c >= b);
 		return c;
 	}
 
@@ -66,9 +66,9 @@ contract BankrollLending is Owned, SafeMath {
   /** The Edgeless casino token contract **/
   Token public token;
   /** The sum of the initial stakes per cycle **/
-  mapping(uint =&gt; uint) public initialStakes;
+  mapping(uint => uint) public initialStakes;
   /** The sum of the final stakes per cycle **/
-  mapping(uint =&gt; uint) public finalStakes;
+  mapping(uint => uint) public finalStakes;
   /** The sum of the user stakes currently on the contract **/
   uint public totalStakes; //note: uint is enough because the Edgeless Token Contract has 0 decimals and a total supply of 132,046,997 EDG
   /** the number of stake holders **/
@@ -76,7 +76,7 @@ contract BankrollLending is Owned, SafeMath {
   /** List of all stakeholders **/
   address[] public stakeholders;
   /** Stake per user address **/
-  mapping(address =&gt; uint) public stakes;
+  mapping(address => uint) public stakes;
   /** the gas cost if the casino helps the user with the deposit in full EDG **/
   uint8 public depositGasCost;
   /** the gas cost if the casino helps the user with the withdrawal in full EDG **/
@@ -92,7 +92,7 @@ contract BankrollLending is Owned, SafeMath {
   /** The maximum number of addresses that can be assigned in one batch **/
   uint public maxBatchAssignment;
   /** remembers the last index updated per cycle **/
-  mapping(uint =&gt; uint) lastUpdateIndex;
+  mapping(uint => uint) lastUpdateIndex;
   /** notifies listeners about a stake update **/
   event StakeUpdate(address holder, uint stake);
 
@@ -189,17 +189,17 @@ contract BankrollLending is Owned, SafeMath {
    * */
   function batchAssignment(address[] to, uint[] value) public onlyAuthorized depositPhase {
     require(to.length == value.length);
-    require(to.length &lt;= maxBatchAssignment);
+    require(to.length <= maxBatchAssignment);
     uint newTotalStakes = totalStakes;
     uint numSH = numHolders;
-    for (uint8 i = 0; i &lt; to.length; i++) {
+    for (uint8 i = 0; i < to.length; i++) {
       newTotalStakes = safeSub(safeAdd(newTotalStakes, value[i]), depositGasCost);
       if(addDeposit(to[i], value[i], numSH, 0))
         numSH = safeAdd(numSH, 1);//save gas costs by increasing a memory variable instead of the storage variable per iteration
     }
     numHolders = numSH;
     //rollback if more tokens have been assigned than the contract possesses
-    assert(newTotalStakes &lt; tokenBalance());
+    assert(newTotalStakes < tokenBalance());
     totalStakes = newTotalStakes;
   }
   
@@ -211,11 +211,11 @@ contract BankrollLending is Owned, SafeMath {
    *        allowedMax the maximum amount a user may stake (0 in case the casino is making the assignment)
    * */
   function addDeposit(address to, uint value, uint numSH, uint allowedMax) internal returns (bool newHolder) {
-    require(value &gt; 0);
+    require(value > 0);
     uint newStake = safeSub(safeAdd(stakes[to], value), depositGasCost);
-    require(newStake &gt;= minStakingAmount);
-    if(allowedMax &gt; 0){//if allowedMax &gt; 0 the caller is the user himself
-      require(newStake &lt;= allowedMax);
+    require(newStake >= minStakingAmount);
+    if(allowedMax > 0){//if allowedMax > 0 the caller is the user himself
+      require(newStake <= allowedMax);
       assert(token.transferFrom(to, address(this), value));
     }
     if(stakes[to] == 0){
@@ -232,7 +232,7 @@ contract BankrollLending is Owned, SafeMath {
    * */
   function useAsBankroll() public onlyAuthorized depositPhase {
     initialStakes[cycle] = totalStakes;
-    totalStakes = 0; //withdrawals are unlocked until this value is &gt; 0 again and the final stakes have been set
+    totalStakes = 0; //withdrawals are unlocked until this value is > 0 again and the final stakes have been set
     assert(token.transfer(address(casino), initialStakes[cycle]));
   }
 
@@ -241,7 +241,7 @@ contract BankrollLending is Owned, SafeMath {
    * */
   function startNextCycle() public onlyAuthorized {
     // make sure the last cycle was closed, can be called in update or withdraw phase
-    require(finalStakes[cycle] &gt; 0);
+    require(finalStakes[cycle] > 0);
     cycle = safeAdd(cycle, 1);
   }
 
@@ -251,7 +251,7 @@ contract BankrollLending is Owned, SafeMath {
    * @param value the number of EDG tokens that were transfered from the bankroll
    * */
   function closeCycle(uint value) public onlyAuthorized bankrollPhase {
-    require(tokenBalance() &gt;= value);
+    require(tokenBalance() >= value);
     finalStakes[cycle] = safeSub(value, safeMul(updateGasCost, numHolders)/100);//updateGasCost is using 2 decimals
   }
 
@@ -265,16 +265,16 @@ contract BankrollLending is Owned, SafeMath {
    * */
   function updateUserShares() public onlyAuthorized updatePhase {
     uint limit = safeAdd(lastUpdateIndex[cycle], maxUpdates);
-    if(limit &gt;= numHolders) {
+    if(limit >= numHolders) {
       limit = numHolders;
       totalStakes = finalStakes[cycle]; //enable withdrawals after this method call was processed
-      if (cycle &gt; 1) {
+      if (cycle > 1) {
         lastUpdateIndex[cycle - 1] = 0;
       }
     }
     address holder;
     uint newStake;
-    for(uint i = lastUpdateIndex[cycle]; i &lt; limit; i++){
+    for(uint i = lastUpdateIndex[cycle]; i < limit; i++){
       holder = stakeholders[i];
       newStake = computeFinalStake(stakes[holder]);
       stakes[holder] = newStake;
@@ -289,12 +289,12 @@ contract BankrollLending is Owned, SafeMath {
   * @param value the number of tokens to release
   **/
   function unlockWithdrawals(uint value) public onlyOwner {
-    require(value &lt;= tokenBalance());
+    require(value <= tokenBalance());
     totalStakes = value;
   }
 
   /**
-   * If withdrawals are unlocked (final stakes of the cycle &gt; 0 and totalStakes &gt; 0), this function withdraws tokens from the sender’s balance to
+   * If withdrawals are unlocked (final stakes of the cycle > 0 and totalStakes > 0), this function withdraws tokens from the sender’s balance to
    * the specified address. If no balance remains, the user is removed from the stakeholder array.
    * @param to the receiver
    *        value the number of tokens
@@ -333,7 +333,7 @@ contract BankrollLending is Owned, SafeMath {
     }
     else{
       uint newStake = safeSub(stakes[from], value);
-      require(newStake &gt;= minStakingAmount);
+      require(newStake >= minStakingAmount);
       stakes[from] = newStake;
       emit StakeUpdate(from, newStake);
     }
@@ -373,7 +373,7 @@ contract BankrollLending is Owned, SafeMath {
   *        numSH  the current number of stakeholders
   **/
   function addHolder(address holder, uint numSH) internal{
-    if(numSH &lt; stakeholders.length)
+    if(numSH < stakeholders.length)
       stakeholders[numSH] = holder;
     else
       stakeholders.push(holder);
@@ -437,19 +437,19 @@ contract BankrollLending is Owned, SafeMath {
     _;
   }
 
-  // bankroll phase: initialStakes[cycle] &gt; 0 and finalStakes[cycle] == 0
+  // bankroll phase: initialStakes[cycle] > 0 and finalStakes[cycle] == 0
   modifier bankrollPhase {
     require(getPhase() == StatePhases.bankroll);
     _;
   }
 
-  // update phase: finalStakes[cycle] &gt; 0 and totalStakes == 0
+  // update phase: finalStakes[cycle] > 0 and totalStakes == 0
   modifier updatePhase {
     require(getPhase() == StatePhases.update);
     _;
   }
 
-  // withdraw phase: finalStakes[cycle] &gt; 0 and totalStakes &gt; 0
+  // withdraw phase: finalStakes[cycle] > 0 and totalStakes > 0
   modifier withdrawPhase {
     require(getPhase() == StatePhases.withdraw);
     _;

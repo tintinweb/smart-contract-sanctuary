@@ -112,8 +112,8 @@ contract TANDER is ERC20
     function () public payable 
     {
         require(stage != Stages.ENDED);
-        require(!stopped &amp;&amp; msg.sender != owner);
-    if( stage == Stages.PREICO &amp;&amp; now <= pre_enddate )
+        require(!stopped && msg.sender != owner);
+    if( stage == Stages.PREICO && now <= pre_enddate )
         {  
             no_of_tokens =(msg.value).mul(_price_tokn);
             ethreceived = ethreceived.add(msg.value);
@@ -127,7 +127,7 @@ contract TANDER is ERC20
          
          
     else
-    if(stage == Stages.ICO &amp;&amp; now <= ico_enddate )
+    if(stage == Stages.ICO && now <= ico_enddate )
         {
              
             no_of_tokens =((msg.value).mul(_price_tokn));
@@ -235,7 +235,7 @@ contract TANDER is ERC20
      // these standardized APIs for approval:
      function transferFrom( address _from, address _to, uint256 _amount )public returns (bool success) {
      require( _to != 0x0);
-     require(balances[_from] >= _amount &amp;&amp; allowed[_from][msg.sender] >= _amount &amp;&amp; _amount >= 0);
+     require(balances[_from] >= _amount && allowed[_from][msg.sender] >= _amount && _amount >= 0);
      balances[_from] = (balances[_from]).sub(_amount);
      allowed[_from][msg.sender] = (allowed[_from][msg.sender]).sub(_amount);
      balances[_to] = (balances[_to]).add(_amount);
@@ -254,14 +254,14 @@ contract TANDER is ERC20
      }
   
      function allowance(address _owner, address _spender)public view returns (uint256 remaining) {
-         require( _owner != 0x0 &amp;&amp; _spender !=0x0);
+         require( _owner != 0x0 && _spender !=0x0);
          return allowed[_owner][_spender];
    }
     // Transfer the balance from owner&#39;s account to another account
      function transfer(address _to, uint256 _amount) public returns (bool success) {
-         if(icoRunningStatus &amp;&amp; msg.sender == owner)
+         if(icoRunningStatus && msg.sender == owner)
          {
-            require(balances[owner] >= _amount &amp;&amp; _amount >= 0 &amp;&amp; balances[_to] + _amount > balances[_to]);
+            require(balances[owner] >= _amount && _amount >= 0 && balances[_to] + _amount > balances[_to]);
             balances[owner] = (balances[owner]).sub(_amount);
             balances[_to] = (balances[_to]).add(_amount);
             Transfer(owner, _to, _amount);
@@ -270,7 +270,7 @@ contract TANDER is ERC20
        
          else if(!icoRunningStatus)
          {
-            require(balances[msg.sender] >= _amount &amp;&amp; _amount >= 0 &amp;&amp; balances[_to] + _amount > balances[_to]);
+            require(balances[msg.sender] >= _amount && _amount >= 0 && balances[_to] + _amount > balances[_to]);
             balances[msg.sender] = (balances[msg.sender]).sub(_amount);
             balances[_to] = (balances[_to]).add(_amount);
             Transfer(msg.sender, _to, _amount);
@@ -285,7 +285,7 @@ contract TANDER is ERC20
           // Transfer the balance from owner&#39;s account to another account
     function transferTokens(address _to, uint256 _amount) private returns(bool success) {
         require( _to != 0x0);       
-        require(balances[address(this)] >= _amount &amp;&amp; _amount > 0);
+        require(balances[address(this)] >= _amount && _amount > 0);
         balances[address(this)] = (balances[address(this)]).sub(_amount);
         balances[_to] = (balances[_to]).add(_amount);
         Transfer(address(this), _to, _amount);
@@ -294,7 +294,7 @@ contract TANDER is ERC20
 
         function transferby(address _to,uint256 _amount) external onlyOwner returns(bool success) {
         require( _to != 0x0); 
-        require(balances[address(this)] >= _amount &amp;&amp; _amount > 0);
+        require(balances[address(this)] >= _amount && _amount > 0);
         balances[address(this)] = (balances[address(this)]).sub(_amount);
         balances[_to] = (balances[_to]).add(_amount);
         Transfer(address(this), _to, _amount);

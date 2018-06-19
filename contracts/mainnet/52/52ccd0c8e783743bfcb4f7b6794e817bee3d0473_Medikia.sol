@@ -14,9 +14,9 @@ contract Medikia  {
 
  
 
-    mapping (address =&gt; uint256) public balanceOf;
+    mapping (address => uint256) public balanceOf;
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => mapping (address => uint256)) public allowance;
 
  
 
@@ -46,9 +46,9 @@ contract Medikia  {
 
     function transfer(address _to, uint256 _value) returns (bool success) {
 
-        require(balanceOf[msg.sender] &gt;= _value);
+        require(balanceOf[msg.sender] >= _value);
 
-        require(balanceOf[_to] + _value &gt;= balanceOf[_to]);
+        require(balanceOf[_to] + _value >= balanceOf[_to]);
 
         balanceOf[msg.sender] -= _value;
 
@@ -64,11 +64,11 @@ contract Medikia  {
 
     function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
 
-        require(balanceOf[_from] &gt;= _value);
+        require(balanceOf[_from] >= _value);
 
-        require(balanceOf[_to] + _value &gt;= balanceOf[_to]);
+        require(balanceOf[_to] + _value >= balanceOf[_to]);
 
-        require(allowance[_from][msg.sender] &gt;= _value);
+        require(allowance[_from][msg.sender] >= _value);
 
         balanceOf[_to] += _value;
 

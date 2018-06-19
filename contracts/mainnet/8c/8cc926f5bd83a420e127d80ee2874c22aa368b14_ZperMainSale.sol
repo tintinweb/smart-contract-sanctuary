@@ -16,7 +16,7 @@ contract ZperMainSale {
 	}
 
 	function () external payable {
-		require(now >= startTime &amp;&amp; now <= endTime);
+		require(now >= startTime && now <= endTime);
 		require(hardCap >= msg.value + totalContributed);
 		require(msg.value >= 10 ** 17);
 		totalContributed += msg.value;

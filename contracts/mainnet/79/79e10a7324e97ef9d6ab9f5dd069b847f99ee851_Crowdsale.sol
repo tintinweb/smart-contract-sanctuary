@@ -13,7 +13,7 @@ contract Crowdsale {
     uint public deadline;
     uint public price;
     Token public tokenReward;
-    mapping(address =&gt; uint256) public balanceOf;
+    mapping(address => uint256) public balanceOf;
 
     bool softCapReached = false;
     bool crowdsaleClosed = false;
@@ -44,7 +44,7 @@ contract Crowdsale {
     function () payable {
 
         require(!crowdsaleClosed);
-        require(hardCap &gt;= amountRaised);
+        require(hardCap >= amountRaised);
 
         uint amount = msg.value;
         balanceOf[msg.sender] += amount;
@@ -53,11 +53,11 @@ contract Crowdsale {
         FundTransfer(msg.sender, amount, true);
     }
 
-    modifier afterDeadline() { if (now &gt;= deadline) _; }
+    modifier afterDeadline() { if (now >= deadline) _; }
 
   
     function checkGoalReached() afterDeadline {
-        if (amountRaised &gt;= softCap){
+        if (amountRaised >= softCap){
             softCapReached = true;
             GoalReached(beneficiary, amountRaised);
         }
@@ -71,7 +71,7 @@ contract Crowdsale {
         if (!softCapReached) {
             uint amount = balanceOf[msg.sender];
             balanceOf[msg.sender] = 0;
-            if (amount &gt; 0) {
+            if (amount > 0) {
                 if (msg.sender.send(amount)) {
                     FundTransfer(msg.sender, amount, false);
                 } else {
@@ -80,7 +80,7 @@ contract Crowdsale {
             }
         }
 
-        if (softCapReached &amp;&amp; beneficiary == msg.sender) {
+        if (softCapReached && beneficiary == msg.sender) {
             if (beneficiary.send(amountRaised)) {
                 FundTransfer(beneficiary, amountRaised, false);
             } else {

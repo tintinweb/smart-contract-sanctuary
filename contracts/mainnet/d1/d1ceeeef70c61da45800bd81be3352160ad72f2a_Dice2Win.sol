@@ -61,7 +61,7 @@ contract Dice2Win {
     uint256 constant MAX_AMOUNT = 2 ** 128;
 
     // Struct is tightly packed into a single 256-bit by Solidity compiler.
-    // This is made to reduce gas costs of placing &amp; settlement transactions.
+    // This is made to reduce gas costs of placing & settlement transactions.
     struct ActiveBet {
         // A game that was played.
         GameId gameId;
@@ -75,7 +75,7 @@ contract Dice2Win {
         uint128 amount;
     }
 
-    mapping (address =&gt; ActiveBet) activeBets;
+    mapping (address => ActiveBet) activeBets;
 
     // Events that are issued to make statistic recovery easier.
     event FailedPayment(address indexed _beneficiary, uint256 amount);
@@ -130,15 +130,15 @@ contract Dice2Win {
 
     // Ability to top up jackpot faster than it&#39;s natural growth by house fees.
     function increaseJackpot(uint256 increaseAmount) public onlyOwner {
-        require (increaseAmount &lt;= address(this).balance);
-        require (jackpotSize + lockedInBets + increaseAmount &lt;= address(this).balance);
+        require (increaseAmount <= address(this).balance);
+        require (jackpotSize + lockedInBets + increaseAmount <= address(this).balance);
         jackpotSize += uint128(increaseAmount);
     }
 
     // Funds withdrawal to cover costs of dice2.win operation.
     function withdrawFunds(address beneficiary, uint256 withdrawAmount) public onlyOwner {
-        require (withdrawAmount &lt;= address(this).balance);
-        require (jackpotSize + lockedInBets + withdrawAmount &lt;= address(this).balance);
+        require (withdrawAmount <= address(this).balance);
+        require (jackpotSize + lockedInBets + withdrawAmount <= address(this).balance);
         sendFunds(beneficiary, withdrawAmount, withdrawAmount);
     }
 
@@ -153,9 +153,9 @@ contract Dice2Win {
         require (bet.amount == 0);
 
         // Check that the values passed fit into respective limits.
-        require (gameId &lt; GameId.MaxGameId);
-        require (msg.value &gt;= MIN_BET &amp;&amp; msg.value &lt;= getMaxBet(gameId));
-        require (betMask &lt; MAX_BET_MASK);
+        require (gameId < GameId.MaxGameId);
+        require (msg.value >= MIN_BET && msg.value <= getMaxBet(gameId));
+        require (betMask < MAX_BET_MASK);
 
         // Determine roll parameters.
         uint256 rollModulo = getRollModulo(gameId);
@@ -164,7 +164,7 @@ contract Dice2Win {
         // Check whether contract has enough funds to process this bet.
         uint256 reservedAmount = getDiceWinAmount(msg.value, rollModulo, rollUnder);
         uint256 jackpotFee = getJackpotFee(msg.value);
-        require (jackpotSize + lockedInBets + reservedAmount + jackpotFee &lt;= address(this).balance);
+        require (jackpotSize + lockedInBets + reservedAmount + jackpotFee <= address(this).balance);
 
         // Update reserved amounts.
         lockedInBets += uint128(reservedAmount);
@@ -187,8 +187,8 @@ contract Dice2Win {
         require (bet.amount != 0);
 
         // Check that the bet is neither too early nor too late.
-        require (block.number &gt; bet.placeBlockNumber + BLOCK_DELAY);
-        require (block.number &lt;= bet.placeBlockNumber + BET_EXPIRATION_BLOCKS);
+        require (block.number > bet.placeBlockNumber + BLOCK_DELAY);
+        require (block.number <= bet.placeBlockNumber + BET_EXPIRATION_BLOCKS);
 
         // The RNG - use hash of the block that is unknown at the time of placing the bet,
         // SHA3 it with gambler address. The latter step is required to make the outcomes of
@@ -206,7 +206,7 @@ contract Dice2Win {
         uint256 diceWinAmount = getDiceWinAmount(bet.amount, rollModulo, rollUnder);
 
         // Check the roll result against the bet bit mask.
-        if ((2 ** dice) &amp; bet.mask != 0) {
+        if ((2 ** dice) & bet.mask != 0) {
             diceWin = diceWinAmount;
         }
 
@@ -214,7 +214,7 @@ contract Dice2Win {
         lockedInBets -= uint128(diceWinAmount);
 
         // Roll for a jackpot (if eligible).
-        if (bet.amount &gt;= MIN_JACKPOT_BET) {
+        if (bet.amount >= MIN_JACKPOT_BET) {
             // The second modulo, statistically independent from the &quot;main&quot; dice roll.
             // Effectively you are playing two games at once!
             uint256 jackpotRng = (uint256(entropy) / rollModulo) % JACKPOT_MODULO;
@@ -236,7 +236,7 @@ contract Dice2Win {
             totalWin = 1 wei;
         }
 
-        if (jackpotWin &gt; 0) {
+        if (jackpotWin > 0) {
             emit JackpotPayment(gambler, jackpotWin);
         }
 
@@ -256,7 +256,7 @@ contract Dice2Win {
         require (bet.amount != 0);
 
         // The bet should be indeed late.
-        require (block.number &gt; bet.placeBlockNumber + BET_EXPIRATION_BLOCKS);
+        require (block.number > bet.placeBlockNumber + BET_EXPIRATION_BLOCKS);
 
         // Determine roll parameters to calculate correct amount of funds locked.
         uint256 rollModulo = getRollModulo(bet.gameId);
@@ -309,8 +309,8 @@ contract Dice2Win {
     function getRollUnder(uint256 rollModulo, uint256 betMask) pure private returns (uint256) {
         uint256 rollUnder = 0;
         uint256 singleBitMask = 1;
-        for (uint256 shift = 0; shift &lt; rollModulo; shift++) {
-            if (betMask &amp; singleBitMask != 0) {
+        for (uint256 shift = 0; shift < rollModulo; shift++) {
+            if (betMask & singleBitMask != 0) {
                 rollUnder++;
             }
 
@@ -323,7 +323,7 @@ contract Dice2Win {
     // Get the expected win amount after house edge is subtracted.
     function getDiceWinAmount(uint256 amount, uint256 rollModulo, uint256 rollUnder) pure private
       returns (uint256) {
-        require (0 &lt; rollUnder &amp;&amp; rollUnder &lt;= rollModulo);
+        require (0 < rollUnder && rollUnder <= rollModulo);
         return amount * rollModulo / rollUnder * (100 - HOUSE_EDGE_PERCENT) / 100;
     }
 

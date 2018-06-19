@@ -612,12 +612,12 @@ contract usingOraclize {
             iaddr *= 256;
             b1 = uint160(tmp[i]);
             b2 = uint160(tmp[i+1]);
-            if ((b1 >= 97)&amp;&amp;(b1 <= 102)) b1 -= 87;
-            else if ((b1 >= 65)&amp;&amp;(b1 <= 70)) b1 -= 55;
-            else if ((b1 >= 48)&amp;&amp;(b1 <= 57)) b1 -= 48;
-            if ((b2 >= 97)&amp;&amp;(b2 <= 102)) b2 -= 87;
-            else if ((b2 >= 65)&amp;&amp;(b2 <= 70)) b2 -= 55;
-            else if ((b2 >= 48)&amp;&amp;(b2 <= 57)) b2 -= 48;
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 65)&&(b1 <= 70)) b1 -= 55;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 65)&&(b2 <= 70)) b2 -= 55;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
             iaddr += (b1*16+b2);
         }
         return address(iaddr);
@@ -656,7 +656,7 @@ contract usingOraclize {
                 if (h[i] == n[0])
                 {
                     subindex = 1;
-                    while(subindex < n.length &amp;&amp; (i + subindex) < h.length &amp;&amp; h[i + subindex] == n[subindex])
+                    while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
                     {
                         subindex++;
                     }
@@ -708,7 +708,7 @@ contract usingOraclize {
         uint mint = 0;
         bool decimals = false;
         for (uint i=0; i<bresult.length; i++){
-            if ((bresult[i] >= 48)&amp;&amp;(bresult[i] <= 57)){
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
                 if (decimals){
                    if (_b == 0) break;
                     else _b--;
@@ -1090,7 +1090,7 @@ contract usingOraclize {
         if (v < 27)
           v += 27;
 
-        if (v != 27 &amp;&amp; v != 28)
+        if (v != 27 && v != 28)
             return (false, 0);
 
         return safer_ecrecover(hash, v, r, s);
@@ -1186,13 +1186,13 @@ contract BitChordCrowdsale is Ownable, usingOraclize{
     if(_time == 0){
       _time = now;
     }
-    if (STAGE_1_START <= _time &amp;&amp; _time < STAGE_1_FINISH){
+    if (STAGE_1_START <= _time && _time < STAGE_1_FINISH){
       return 1;
     }
-    if (STAGE_2_START <= _time &amp;&amp; _time < STAGE_2_FINISH){
+    if (STAGE_2_START <= _time && _time < STAGE_2_FINISH){
       return 2;
     }
-    if (STAGE_3_START <= _time &amp;&amp; _time < STAGE_3_FINISH){
+    if (STAGE_3_START <= _time && _time < STAGE_3_FINISH){
       return 3;
     }
     return 0;

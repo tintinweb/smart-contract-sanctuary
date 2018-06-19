@@ -28,16 +28,16 @@ contract ContractFPC is ERC20Interface {
     address public owner;
 
     // Balances AAC for each account
-    mapping(address =&gt; uint256) private balances;
+    mapping(address => uint256) private balances;
 
     // Owner of account approves the transfer of an amount to another account
-    mapping(address =&gt; mapping (address =&gt; uint256)) private allowed;
+    mapping(address => mapping (address => uint256)) private allowed;
 
     // List of approved investors
-    mapping(address =&gt; bool) private approvedInvestorList;
+    mapping(address => bool) private approvedInvestorList;
 
     // deposit
-    mapping(address =&gt; uint256) private deposit;
+    mapping(address => uint256) private deposit;
 
 
     // totalTokenSold
@@ -53,7 +53,7 @@ contract ContractFPC is ERC20Interface {
      * @dev Fix for the ERC20 short address attack.
      */
     modifier onlyPayloadSize(uint size) {
-      if(msg.data.length &lt; size + 4) {
+      if(msg.data.length < size + 4) {
         revert();
       }
       _;
@@ -119,12 +119,12 @@ contract ContractFPC is ERC20Interface {
         public
 
         returns (bool) {
-        // if sender&#39;s balance has enough unit and amount &gt;= 0,
+        // if sender&#39;s balance has enough unit and amount >= 0,
         //      and the sum is not overflow,
         // then do transfer
-        if ( (balances[msg.sender] &gt;= _amount) &amp;&amp;
-             (_amount &gt;= 0) &amp;&amp;
-             (balances[_to] + _amount &gt; balances[_to]) ) {
+        if ( (balances[msg.sender] >= _amount) &&
+             (_amount >= 0) &&
+             (balances[_to] + _amount > balances[_to]) ) {
 
             balances[msg.sender] -= _amount;
             balances[_to] += _amount;
@@ -149,7 +149,7 @@ contract ContractFPC is ERC20Interface {
     public
 
     returns (bool success) {
-        if (balances[_from] &gt;= _amount &amp;&amp; _amount &gt; 0 &amp;&amp; allowed[_from][msg.sender] &gt;= _amount) {
+        if (balances[_from] >= _amount && _amount > 0 && allowed[_from][msg.sender] >= _amount) {
             balances[_from] -= _amount;
             allowed[_from][msg.sender] -= _amount;
             balances[_to] += _amount;

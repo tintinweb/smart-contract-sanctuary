@@ -632,22 +632,22 @@ contract SeedSale is Ownable, Pausable {
       uint256 lockedAmount_3 = lockedTeamUFT.mul(25).div(100);
       uint256 lockedAmount_4 = lockedTeamUFT.mul(25).div(100);
 
-      if(seedStartTime >= release_1 &amp;&amp; releasedLockedAmount < lockedAmount_1) {
+      if(seedStartTime >= release_1 && releasedLockedAmount < lockedAmount_1) {
         token.transferFromVault(token, _beneficiary, lockedAmount_1 );
         releasedLockedAmount = releasedLockedAmount.add(lockedAmount_1);
         return true;
 
-      } else if(seedStartTime >= release_2 &amp;&amp; releasedLockedAmount < lockedAmount_2.mul(2)) {
+      } else if(seedStartTime >= release_2 && releasedLockedAmount < lockedAmount_2.mul(2)) {
         token.transferFromVault(token, _beneficiary, lockedAmount_2 );
         releasedLockedAmount = releasedLockedAmount.add(lockedAmount_2);
         return true;
 
-      } else if(seedStartTime >= release_3 &amp;&amp; releasedLockedAmount < lockedAmount_3.mul(3)) {
+      } else if(seedStartTime >= release_3 && releasedLockedAmount < lockedAmount_3.mul(3)) {
         token.transferFromVault(token, _beneficiary, lockedAmount_3 );
         releasedLockedAmount = releasedLockedAmount.add(lockedAmount_3);
         return true;
 
-      } else if(seedStartTime >= release_4 &amp;&amp; releasedLockedAmount < lockedAmount_4.mul(4)) {
+      } else if(seedStartTime >= release_4 && releasedLockedAmount < lockedAmount_4.mul(4)) {
         token.transferFromVault(token, _beneficiary, lockedAmount_4 );
         releasedLockedAmount = releasedLockedAmount.add(lockedAmount_4);
         return true;
@@ -667,7 +667,7 @@ contract SeedSale is Ownable, Pausable {
     }
 
      function finalizeSeedSale() public onlyOwner {
-        if(seedStartTime >= seedEndTime &amp;&amp; SoftCapReached) {
+        if(seedStartTime >= seedEndTime && SoftCapReached) {
 
         // Bounty Campaign: 5,000,000 UFT
         uint256 bountyAmountUFT = token.supplySeed().mul(5).div(100);
@@ -677,7 +677,7 @@ contract SeedSale is Ownable, Pausable {
         uint256 reservedCompanyUFT = token.supplySeed().mul(20).div(100);
         token.transferFromVault(token, fundWallet, reservedCompanyUFT);
 
-        } else if(seedStartTime >= seedEndTime &amp;&amp; !SoftCapReached) {
+        } else if(seedStartTime >= seedEndTime && !SoftCapReached) {
 
             // Enable fund`s crowdsale refund if soft cap is not reached
             refundAllowed = true;

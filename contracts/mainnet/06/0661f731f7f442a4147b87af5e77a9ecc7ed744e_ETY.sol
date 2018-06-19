@@ -15,13 +15,13 @@ library SafeMath {
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
         c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -58,10 +58,10 @@ contract ERC20 is ERC20Basic {
 contract BasicToken is ERC20Basic {
     using SafeMath for uint;
 
-    mapping(address =&gt; uint) balances;
+    mapping(address => uint) balances;
 
     modifier onlyPayloadSize(uint size) {
-        require(msg.data.length &gt;= size + 4);
+        require(msg.data.length >= size + 4);
         _;
     }
 
@@ -77,7 +77,7 @@ contract BasicToken is ERC20Basic {
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
 
-        if(codeLength &gt; 0) {
+        if(codeLength > 0) {
             ERC223ReceivingContract receiver = ERC223ReceivingContract(_to);
             receiver.tokenFallback(msg.sender, _value, empty);
         }
@@ -93,7 +93,7 @@ contract BasicToken is ERC20Basic {
 
 contract StandardToken is BasicToken, ERC20 {
 
-    mapping (address =&gt; mapping (address =&gt; uint)) allowed;
+    mapping (address => mapping (address => uint)) allowed;
 
     function transferFrom(address _from, address _to, uint _value) public {
         uint256 _allowance = allowed[_from][msg.sender];
@@ -108,7 +108,7 @@ contract StandardToken is BasicToken, ERC20 {
         balances[_from] = balances[_from].sub(_value);
         allowed[_from][msg.sender] = _allowance.sub(_value);
 
-        if(codeLength&gt;0) {
+        if(codeLength>0) {
             ERC223ReceivingContract receiver = ERC223ReceivingContract(_to);
             receiver.tokenFallback(msg.sender, _value, empty);
         }
@@ -130,7 +130,7 @@ contract StandardToken is BasicToken, ERC20 {
 contract BurnableToken is StandardToken {
 
     function burn(uint _value) public {
-        require(_value &gt; 0);
+        require(_value > 0);
         address burner = msg.sender;
         balances[burner] = balances[burner].sub(_value);
         totalSupply = totalSupply.sub(_value);
@@ -159,7 +159,7 @@ contract ETY is BurnableToken {
     function mint(address _holder, uint _value) external {
         require(msg.sender == ico);
         require(_value != 0);
-        require(totalSupply + _value &lt;= TOKEN_LIMIT);
+        require(totalSupply + _value <= TOKEN_LIMIT);
 
         balances[_holder] += _value;
         totalSupply += _value;

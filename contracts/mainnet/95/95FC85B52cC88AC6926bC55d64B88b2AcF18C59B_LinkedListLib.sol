@@ -67,7 +67,7 @@ library LinkedListLib {
         public
         view returns (bool)
     {
-        if (self.list[_node][PREV] == HEAD &amp;&amp; self.list[_node][NEXT] == HEAD) {
+        if (self.list[_node][PREV] == HEAD && self.list[_node][NEXT] == HEAD) {
             if (self.list[HEAD][NEXT] == _node) {
                 return true;
             } else {
@@ -132,7 +132,7 @@ library LinkedListLib {
         bool exists;
         uint256 next;
         (exists,next) = getAdjacent(self, _node, _direction);
-        while  ((next != 0) &amp;&amp; (_value != next) &amp;&amp; ((_value < next) != _direction)) next = self.list[next][_direction];
+        while  ((next != 0) && (_value != next) && ((_value < next) != _direction)) next = self.list[next][_direction];
         return next;
     }
 
@@ -151,7 +151,7 @@ library LinkedListLib {
     /// @param _new  new node to insert
     /// @param _direction direction to insert node in
     function insert(LinkedList storage self, uint256 _node, uint256 _new, bool _direction) internal returns (bool) {
-        if(!nodeExists(self,_new) &amp;&amp; nodeExists(self,_node)) {
+        if(!nodeExists(self,_new) && nodeExists(self,_node)) {
             uint256 c = self.list[_node][_direction];
             createLink(self, _node, _new, _direction);
             createLink(self, _new, c, _direction);

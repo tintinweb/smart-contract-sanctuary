@@ -7,7 +7,7 @@ contract Keystore {
   event QuantumPilotKeyPurchased(address indexed buyer);
 
   function buyKey() public payable returns (bool success)  {
-    require(msg.value &gt;= 1000000000000000);
+    require(msg.value >= 1000000000000000);
     owners.push(msg.sender);
     ownersNum = ownersNum + 1;
     emit QuantumPilotKeyPurchased(msg.sender);
@@ -16,7 +16,7 @@ contract Keystore {
 
   function payout() public returns (bool success) {
     address c = this;
-    require(c.balance &gt;= 1000000000000000);
+    require(c.balance >= 1000000000000000);
     developer.transfer(c.balance);
     return true;
   }

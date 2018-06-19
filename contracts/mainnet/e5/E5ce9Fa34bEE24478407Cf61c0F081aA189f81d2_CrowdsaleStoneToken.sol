@@ -24,23 +24,23 @@ library SafeMath {
     uint256 c = a / b; return c;
   }
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a); return a - b;
+    assert(b <= a); return a - b;
   }
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
-    uint256 c = a + b; assert(c &gt;= a); return c;
+    uint256 c = a + b; assert(c >= a); return c;
   }
   
 }
 
 contract BasicToken is ERC20Basic {
 	using SafeMath for uint256;
-	mapping(address =&gt; uint256) balances;
+	mapping(address => uint256) balances;
 
 	function balanceOf(address _owner) public constant returns (uint256 balance) {return balances[_owner];}	
 }
 
 contract StandardToken is BasicToken, ERC20 {
-	mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+	mapping (address => mapping (address => uint256)) internal allowed;
 	
 	function approve(address _spender, uint256 _value) public returns (bool) {
 		allowed[msg.sender][_spender] = _value;
@@ -57,7 +57,7 @@ contract StandardToken is BasicToken, ERC20 {
 	}
 	function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
 		uint oldValue = allowed[msg.sender][_spender];
-		if (_subtractedValue &gt; oldValue) {allowed[msg.sender][_spender] = 0;} 
+		if (_subtractedValue > oldValue) {allowed[msg.sender][_spender] = 0;} 
 		else {allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);}
 		emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
 		return true;
@@ -119,12 +119,12 @@ contract Crowdsale is owned,StandardToken {
 	uint256 public fiatCost;
     
 	uint256 public totalSupply;			 		//total tokens will be issued
-	mapping (address =&gt; uint256) public balanceOf;			 
-	mapping (address =&gt; uint256) public userBalances;		    
-	mapping(address =&gt; uint) preICOreserved;		 
+	mapping (address => uint256) public balanceOf;			 
+	mapping (address => uint256) public userBalances;		    
+	mapping(address => uint) preICOreserved;		 
 	
-	mapping(uint =&gt; string)  consumptionLink;		 								//The URL of documents for withdrawal of funds from the balance 
-	mapping(uint =&gt; uint)  consumptionSum;			 											//The amount of withdrawn funds from the balance
+	mapping(uint => string)  consumptionLink;		 								//The URL of documents for withdrawal of funds from the balance 
+	mapping(uint => uint)  consumptionSum;			 											//The amount of withdrawn funds from the balance
 	uint public consumptionPointer;						 	//Maximum withdrawal transaction number 
 
 	function Crowdsale() public payable owned() {
@@ -172,27 +172,27 @@ contract Crowdsale is owned,StandardToken {
 	
 	function statusICO() public constant returns (uint256) {
 		uint status=0;																																											 
-		if((now &gt; startPREICO )  &amp;&amp; now &lt; (startPREICO + periodPREICO * 1 days) &amp;&amp; PayToken &lt; PREICOcap) status=1; 							 
-		else if((now &gt; (startPREICO + periodPREICO * 1 days) || PayToken&gt;=PREICOcap) &amp;&amp; now &lt; start) status=2;									 
-		else if((now &gt; start )  &amp;&amp; (now &lt; (start + period * 1 days)) &amp;&amp;  PayToken &lt; hardcap) status=3;															 
-		else if((now &gt; (start + period * 1 days)) &amp;&amp; (PayToken &lt; softcap)) status=4;																					 
-		else if((now &gt; start )  &amp;&amp; (now &lt; (start + period * 1 days)) &amp;&amp; (PayToken == hardcap)) status=5;													 
-		else if((now &gt; (start + period * 1 days)) &amp;&amp; (PayToken &gt; softcap)  &amp;&amp; (now &lt; (start + (period+waitTokensPeriod) * 1 days)) ) status=5;	
-		else if((now &gt; (start + (period+waitTokensPeriod) * 1 days)) &amp;&amp; PayToken &gt; softcap) status=6;														 
+		if((now > startPREICO )  && now < (startPREICO + periodPREICO * 1 days) && PayToken < PREICOcap) status=1; 							 
+		else if((now > (startPREICO + periodPREICO * 1 days) || PayToken>=PREICOcap) && now < start) status=2;									 
+		else if((now > start )  && (now < (start + period * 1 days)) &&  PayToken < hardcap) status=3;															 
+		else if((now > (start + period * 1 days)) && (PayToken < softcap)) status=4;																					 
+		else if((now > start )  && (now < (start + period * 1 days)) && (PayToken == hardcap)) status=5;													 
+		else if((now > (start + period * 1 days)) && (PayToken > softcap)  && (now < (start + (period+waitTokensPeriod) * 1 days)) ) status=5;	
+		else if((now > (start + (period+waitTokensPeriod) * 1 days)) && PayToken > softcap) status=6;														 
 		return status;
 	}
 
-	function correctPreICOPeriod(uint _value)  public onlyOwner returns (bool){if(_value&gt;30) _value=30; periodPREICO=_value;return true;}
+	function correctPreICOPeriod(uint _value)  public onlyOwner returns (bool){if(_value>30) _value=30; periodPREICO=_value;return true;}
 
 
 	function fromOtherCurrencies(uint256 _value,address _investor) public onlyOwner returns (uint){
 		uint256 tokens =0; uint status=statusICO(); 
-		if(status&lt;=1){
+		if(status<=1){
 			tokens =_value.add(_value.mul(bonusPREICO).div(100)).div(fiatCost);
-		} else if(status&lt;=3) {
+		} else if(status<=3) {
 			tokens =_value.div(fiatCost); 
 		} 
-		if(tokens&gt;0){
+		if(tokens>0){
 			balanceOf[_investor]=balanceOf[_investor].add(tokens);
 			balanceOf[this]= balanceOf[this].sub(tokens);
 			PayToken=PayToken.add(tokens);
@@ -206,17 +206,17 @@ contract Crowdsale is owned,StandardToken {
 
 							 // reservation of tokens for sale during
 	function toReserved(address _purse, uint256  _value) public onlyOwner returns (bool){
-		uint status=statusICO(); if(status&gt;1) return;	
-		if(preICOreserved[_purse]&gt;0) PREICOcap=PREICOcap.add(preICOreserved[_purse]);
-		if(PREICOcap&lt;_value) return false;						 		//not enough tokens PREICOcap to reserve for purchase by subscription
+		uint status=statusICO(); if(status>1) return;	
+		if(preICOreserved[_purse]>0) PREICOcap=PREICOcap.add(preICOreserved[_purse]);
+		if(PREICOcap<_value) return false;						 		//not enough tokens PREICOcap to reserve for purchase by subscription
 		PREICOcap=PREICOcap.sub(_value);									 																	//reduce
 		preICOreserved[_purse]=_value;						 											//insertion of the wallet to the list preICOreserved	
 		return true;
 	}
 
 							function isReserved(address _purse) public constant returns (uint256) {			 	//how many Tokens are reserved for PREICO by subscription 
-		uint status=statusICO(); if(status&gt;2) return 0;												 
-		if(preICOreserved[_purse]&gt;0) return preICOreserved[_purse];						 		//return the resolved value of the Token by subscription
+		uint status=statusICO(); if(status>2) return 0;												 
+		if(preICOreserved[_purse]>0) return preICOreserved[_purse];						 		//return the resolved value of the Token by subscription
 		else return 0;																															 				// not by subscription
 	}
 	
@@ -224,16 +224,16 @@ contract Crowdsale is owned,StandardToken {
 		uint status=statusICO(); if(status!=4) return;
 		uint _value = userBalances[msg.sender]; 
 		userBalances[msg.sender]=0;
-		if(_value&gt;0) msg.sender.transfer(_value);
+		if(_value>0) msg.sender.transfer(_value);
 	}
 	
 
 
 													
 	function transferMoneyForTaskSolutions(string url, uint  _value) public onlyOwner {	//transfer of funds on multisig wallet 
-		uint ICOstatus=statusICO(); if(ICOstatus&lt;5) return;									// ICO it&#39;s not over yet
+		uint ICOstatus=statusICO(); if(ICOstatus<5) return;									// ICO it&#39;s not over yet
 		_value=_value.mul(1000000000000000000).div(currency);
-		if(_value&gt;multisigMoney) return; 														//The sum is greater than
+		if(_value>multisigMoney) return; 														//The sum is greater than
 		
 		multisigMoney=multisigMoney.sub(_value); multisig.transfer(_value);
 		consumptionLink[consumptionPointer]=url; consumptionSum[consumptionPointer]=_value; consumptionPointer++;
@@ -246,7 +246,7 @@ contract Crowdsale is owned,StandardToken {
 
 									//open waittokens and transfer them into the multisig wallet
 	function openClosedToken() public onlyOwner {	
-		uint ICOstatus=statusICO(); if(ICOstatus&lt;6) return; 							 			//but only if has passed waitTokensPeriod
+		uint ICOstatus=statusICO(); if(ICOstatus<6) return; 							 			//but only if has passed waitTokensPeriod
 		balanceOf[multisig]=balanceOf[multisig].add(waittokens);					 										//transfer them into the multisig wallet
 		balanceOf[this]= balanceOf[this].sub(waittokens);
 		emit Transfer(this, multisig, waittokens);		
@@ -256,7 +256,7 @@ contract Crowdsale is owned,StandardToken {
 
 							 		//ICO is finished, we distribute money and issue bounty tokens
 	function finishICO() public onlyOwner {						
-		if(softcap&gt;PayToken) return; 									 			//if not scored softcap, we can not finish
+		if(softcap>PayToken) return; 									 			//if not scored softcap, we can not finish
 		if(IcoFinished==1) return;												uint status=statusICO(); 
 		if(status==3 || status==5) period=0;						 	
 		
@@ -271,13 +271,13 @@ contract Crowdsale is owned,StandardToken {
 		balanceOf[this]=balanceOf[this].sub(bounty);
 		emit Transfer(this, restricted, bounty);
 					 	// transfer bonus tokens to purseBonus
-		if(bonusTokens&gt;0){
+		if(bonusTokens>0){
 			balanceOf[purseBonus]=balanceOf[purseBonus].add(bonusTokens);
 			balanceOf[this]=balanceOf[this].sub(bonusTokens);
 			emit Transfer(this, purseBonus, bonusTokens);
 		}
 					 		//transfer the balance of exchangeTokens to a multisig wallet for sale on the exchange
-		if(exchangeTokens&gt;0){
+		if(exchangeTokens>0){
 			balanceOf[multisig]=balanceOf[multisig].add(exchangeTokens);
 			balanceOf[this]=balanceOf[this].sub(exchangeTokens);
 			emit Transfer(this, multisig, exchangeTokens);
@@ -299,7 +299,7 @@ contract Crowdsale is owned,StandardToken {
 		uint allMoney=msg.value; 
 		uint256 tokens=0; uint256 returnedMoney=0; uint256 maxToken; uint256 accessTokens; uint256 restMoney;uint256 calcMoney;
 		
-		if(preICOreserved[msg.sender]&gt;0){														 																// tokens by subscription 
+		if(preICOreserved[msg.sender]>0){														 																// tokens by subscription 
 			PREICOcap=PREICOcap.add(preICOreserved[msg.sender]);				 				//PREICOcap increase to the reserved amount
 			preICOreserved[msg.sender]=0;																 //reset the subscription limit. Further he is on a General basis, anyway - the first in the queue
 		}
@@ -308,7 +308,7 @@ contract Crowdsale is owned,StandardToken {
 			maxToken=PREICOcap-PayToken;
 			tokens = rate.mul(allMoney).add(rate.mul(allMoney).mul(bonusPREICO).div(100)).div(1 ether);			 			//calculate how many tokens paid
 			accessTokens=tokens;
-			if(tokens&gt;maxToken){																 												// if paid more than we can accept
+			if(tokens>maxToken){																 												// if paid more than we can accept
 				accessTokens=maxToken; 														  																		//take only what we can
 				returnedMoney=allMoney.sub(allMoney.mul(accessTokens).div(tokens));		//calculate how much should be returned, depending on the % return of tokens 
 				allMoney=allMoney.sub(returnedMoney); 													 		//after refund paid by allMoney
@@ -324,7 +324,7 @@ contract Crowdsale is owned,StandardToken {
 			maxToken=hardcap-PayToken;
 			tokens = rate.mul(allMoney).div(1 ether);					 		//calculate how many tokens were paid
 			accessTokens=tokens;
-			if(tokens&gt;maxToken){												 // if paid more than we can accept
+			if(tokens>maxToken){												 // if paid more than we can accept
 				accessTokens=maxToken; 										 						// take only what we can
 				returnedMoney=allMoney.sub(allMoney.mul(accessTokens).div(tokens)); 	 // consider % of refund
 				allMoney=allMoney.sub(returnedMoney);  													 	//after refund paid by allMoney
@@ -337,14 +337,14 @@ contract Crowdsale is owned,StandardToken {
 		}
 		
 
-		if(accessTokens &gt; 0){
+		if(accessTokens > 0){
 			balanceOf[msg.sender]=balanceOf[msg.sender].add(accessTokens);
 			balanceOf[this]= balanceOf[this].sub(accessTokens);
 			PayToken=PayToken.add(accessTokens);
 			emit Transfer(this, msg.sender, accessTokens);
 		}
 
-		if(returnedMoney&gt;0) msg.sender.transfer(returnedMoney);								 		//and we return
+		if(returnedMoney>0) msg.sender.transfer(returnedMoney);								 		//and we return
 		
     }
     
@@ -363,7 +363,7 @@ contract StoneToken is Crowdsale {
     function StoneToken() public payable Crowdsale() {}
     
     function transfer(address _to, uint256 _value) public returns (bool) {
-		require(balanceOf[msg.sender] &gt;= _value);
+		require(balanceOf[msg.sender] >= _value);
 		balanceOf[msg.sender] -= _value;
 		balanceOf[_to] += _value;
 		emit Transfer(msg.sender, _to, _value);
@@ -371,8 +371,8 @@ contract StoneToken is Crowdsale {
     }
     
 	function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
-		if(_value &gt; balanceOf[_from]) return false;
-		if(_value &gt; allowed[_from][msg.sender]) return false;
+		if(_value > balanceOf[_from]) return false;
+		if(_value > allowed[_from][msg.sender]) return false;
 		balanceOf[_from] = balanceOf[_from].sub(_value);
 		balanceOf[_to] = balanceOf[_to].add(_value);
 		allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);

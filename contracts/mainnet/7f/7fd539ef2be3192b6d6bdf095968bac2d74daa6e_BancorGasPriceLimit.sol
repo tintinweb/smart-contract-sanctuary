@@ -62,7 +62,7 @@ contract Owned is IOwned {
 
 
 /*
-    Utilities &amp; Common Modifiers
+    Utilities & Common Modifiers
 */
 contract Utils {
     /**

@@ -79,10 +79,10 @@ contract AccessService is AccessAdmin {
         external 
     {
         require(msg.sender == addrFinance || msg.sender == addrAdmin);
-        require(_amount &gt; 0);
+        require(_amount > 0);
         address receiver = _target == address(0) ? addrFinance : _target;
         uint256 balance = this.balance;
-        if (_amount &lt; balance) {
+        if (_amount < balance) {
             receiver.transfer(_amount);
         } else {
             receiver.transfer(this.balance);
@@ -106,11 +106,11 @@ contract DataMining is AccessService, IDataMining {
     event FreeMineralChange(address indexed _target, uint32 _accCnt);
 
     /// @dev Recommend relationship map
-    mapping (address =&gt; address) recommendRelation;
+    mapping (address => address) recommendRelation;
     /// @dev Free mining count map
-    mapping (address =&gt; uint32) freeMineral;
+    mapping (address => uint32) freeMineral;
     /// @dev Trust contract
-    mapping (address =&gt; bool) actionContracts;
+    mapping (address => bool) actionContracts;
 
     function DataMining() public {
         addrAdmin = msg.sender;
@@ -132,10 +132,10 @@ contract DataMining is AccessService, IDataMining {
         onlyService
     {
         uint256 targetLength = _targets.length;
-        require(targetLength &lt;= 64);
+        require(targetLength <= 64);
         require(targetLength == _recommenders.length);
         address addrZero = address(0);
-        for (uint256 i = 0; i &lt; targetLength; ++i) {
+        for (uint256 i = 0; i < targetLength; ++i) {
             if (_targets[i] != addrZero) {
                 recommendRelation[_targets[i]] = _recommenders[i];
                 RecommenderChange(_targets[i], _recommenders[i]);
@@ -152,7 +152,7 @@ contract DataMining is AccessService, IDataMining {
         onlyService
     {
         require(_target != address(0));
-        require(_cnt &lt;= 32);
+        require(_cnt <= 32);
         uint32 oldCnt = freeMineral[_target];
         freeMineral[_target] = oldCnt + _cnt;
         FreeMineralChange(_target, freeMineral[_target]);
@@ -163,18 +163,18 @@ contract DataMining is AccessService, IDataMining {
         onlyService
     {
         uint256 targetLength = _targets.length;
-        require(targetLength &lt;= 64);
+        require(targetLength <= 64);
         require(targetLength == _cnts.length);
         address addrZero = address(0);
         uint32 oldCnt;
         uint32 newCnt;
         address addr;
-        for (uint256 i = 0; i &lt; targetLength; ++i) {
+        for (uint256 i = 0; i < targetLength; ++i) {
             addr = _targets[i];
-            if (addr != addrZero &amp;&amp; _cnts[i] &lt;= 32) {
+            if (addr != addrZero && _cnts[i] <= 32) {
                 oldCnt = freeMineral[addr];
                 newCnt = oldCnt + _cnts[i];
-                assert(oldCnt &lt; newCnt);
+                assert(oldCnt < newCnt);
                 freeMineral[addr] = newCnt;
                 FreeMineralChange(addr, freeMineral[addr]);
             }
@@ -193,7 +193,7 @@ contract DataMining is AccessService, IDataMining {
         require(actionContracts[msg.sender]);
         require(_target != address(0));
         uint32 cnts = freeMineral[_target];
-        assert(cnts &gt; 0);
+        assert(cnts > 0);
         freeMineral[_target] = cnts - 1;
         FreeMineralChange(_target, cnts - 1);
         return true;

@@ -77,7 +77,7 @@ contract Ownable {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -86,7 +86,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -134,7 +134,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -145,8 +145,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -195,7 +195,7 @@ contract StandardToken is ERC20, BasicToken {
 
   function decreaseApproval (address _spender, uint _subtractedValue) public returns (bool success) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -221,20 +221,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal constant returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal constant returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -251,12 +251,12 @@ contract NoteToken is StandardToken, Ownable {
     address compositionAddress;
 
     modifier beforeEndTime() {
-        require(now &lt; endTime);
+        require(now < endTime);
         _;
     }
 
     modifier afterEndTime() {
-        require(now &gt; endTime);
+        require(now > endTime);
         _;
     }
     event TokensBought(uint256 _num, uint256 _tokensLeft);
@@ -270,8 +270,8 @@ contract NoteToken is StandardToken, Ownable {
     }
 
     function purchaseNotes(uint256 _numNotes) beforeEndTime() external payable {
-        require(_numNotes &lt;= 100);
-        require(_numNotes &lt;= tokensLeft);
+        require(_numNotes <= 100);
+        require(_numNotes <= tokensLeft);
         require(_numNotes == (msg.value / 0.001 ether));
 
         balances[msg.sender] = balances[msg.sender].add(_numNotes);
@@ -281,7 +281,7 @@ contract NoteToken is StandardToken, Ownable {
     }
 
     function returnNotes(uint256 _numNotes) beforeEndTime() external {
-        require(_numNotes &lt;= balances[msg.sender]);
+        require(_numNotes <= balances[msg.sender]);
         
         uint256 refund = _numNotes * 0.001 ether;
         balances[msg.sender] = balances[msg.sender].sub(_numNotes);
@@ -298,7 +298,7 @@ contract NoteToken is StandardToken, Ownable {
 
     function transferToComposition(address _from, uint256 _value) beforeEndTime() public returns (bool) {
         require(msg.sender == compositionAddress);
-        require(_value &lt;= balances[_from]);
+        require(_value <= balances[_from]);
 
         balances[_from] = balances[_from].sub(_value);
         balances[compositionAddress] = balances[compositionAddress].add(_value);
@@ -331,25 +331,25 @@ contract CompositionPart {
     uint endTime;
 
     //keeps track of notes placed by an address
-    mapping (address =&gt; noteId[]) ownedNotes;
+    mapping (address => noteId[]) ownedNotes;
 
     modifier beforeEndTime() {
-        require(now &lt; endTime);
+        require(now < endTime);
         _;
     }
 
     modifier afterEndTime() {
-        require(now &gt; endTime);
+        require(now > endTime);
         _;
     }
 
     modifier placeValidNotes(uint[] _pitches, uint[] _places, uint256 _numNotes) {
         require(_pitches.length == _places.length);
-        require(_pitches.length &lt;= 10);
+        require(_pitches.length <= 10);
         require(_pitches.length == _numNotes);
 
-        for (uint256 i = 0; i &lt; _pitches.length; i++) {
-            if (_pitches[i] &gt; 127 || _places[i] &gt; 999) {
+        for (uint256 i = 0; i < _pitches.length; i++) {
+            if (_pitches[i] > 127 || _places[i] > 999) {
                 revert();
             } else if (composition[_pitches[i]][_places[i]]) {
                 revert();
@@ -360,11 +360,11 @@ contract CompositionPart {
 
     modifier removeValidNotes(uint[] _pitches, uint[] _places, uint256 _numNotes) {
         require(_pitches.length == _places.length);
-        require(_pitches.length &lt;= 10);
+        require(_pitches.length <= 10);
         require(_pitches.length == _numNotes);
 
-        for (uint256 i = 0; i &lt; _pitches.length; i++) {
-            if (_pitches[i] &gt; 127 || _places[i] &gt; 999) {
+        for (uint256 i = 0; i < _pitches.length; i++) {
+            if (_pitches[i] > 127 || _places[i] > 999) {
                 revert();
             } else if (composers[_pitches[i]][_places[i]] != msg.sender) {
                 revert();
@@ -386,7 +386,7 @@ contract CompositionPart {
     function placeNotes(uint256[] _pitches, uint256[] _places, uint256 _numNotes) beforeEndTime() placeValidNotes(_pitches, _places, _numNotes) external {
         require(notes.transferToComposition(msg.sender, _numNotes));
 
-        for (uint256 i = 0; i &lt; _pitches.length; i++) {
+        for (uint256 i = 0; i < _pitches.length; i++) {
             noteId memory note;
             note.pitch = _pitches[i];
             note.place = _places[i];
@@ -402,7 +402,7 @@ contract CompositionPart {
 
     //removes up to 10 owned notes from composition
     function removeNotes(uint256[] _pitches, uint256[] _places, uint256 _numNotes) beforeEndTime() removeValidNotes(_pitches, _places, _numNotes) external {
-        for (uint256 i = 0; i &lt; _pitches.length; i++) {
+        for (uint256 i = 0; i < _pitches.length; i++) {
             uint256 pitch = _pitches[i];
             uint256 place = _places[i];
             composition[pitch][place] = false;
@@ -420,8 +420,8 @@ contract CompositionPart {
     function removeOwnedNote(address sender, uint256 _pitch, uint256 _place) internal {
         uint256 length = ownedNotes[sender].length;
 
-        for (uint256 i = 0; i &lt; length; i++) {
-            if (ownedNotes[sender][i].pitch == _pitch &amp;&amp; ownedNotes[sender][i].place == _place) {
+        for (uint256 i = 0; i < length; i++) {
+            if (ownedNotes[sender][i].pitch == _pitch && ownedNotes[sender][i].place == _place) {
                 ownedNotes[sender][i] = ownedNotes[sender][length-1];
                 delete ownedNotes[sender][length-1];
                 ownedNotes[sender].length = (length - 1);
@@ -456,7 +456,7 @@ contract CompositionPart {
         uint[] memory pitches = new uint[](length);
         uint[] memory places = new uint[](length);
         
-        for (uint i = 0; i &lt; ownedNotes[msg.sender].length; i++) {
+        for (uint i = 0; i < ownedNotes[msg.sender].length; i++) {
             pitches[i] = ownedNotes[msg.sender][i].pitch;
             places[i] = ownedNotes[msg.sender][i].place;
         }

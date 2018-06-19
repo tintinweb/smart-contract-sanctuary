@@ -26,9 +26,9 @@ contract token {
     uint256 public totalSupply; // Total of tokens created.
 
     // Array containing the balance foreach address.
-    mapping (address =&gt; uint256) public balanceOf;
+    mapping (address => uint256) public balanceOf;
     // Array containing foreach address, an array containing each approved address and the amount of tokens it can spend.
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => mapping (address => uint256)) public allowance;
 
     /* This generates a public event on the blockchain that will notify about a transfer done. */
     event Transfer(address indexed from, address indexed to, uint256 value);
@@ -45,8 +45,8 @@ contract token {
     /* Internal transfer, only can be called by this contract. */
     function _transfer(address _from, address _to, uint _value) internal {
         require(_to != 0x0);                               // Prevent transfer to 0x0 address.
-        require(balanceOf[_from] &gt; _value);                // Check if the sender has enough.
-        require(balanceOf[_to] + _value &gt; balanceOf[_to]); // Check for overflows.
+        require(balanceOf[_from] > _value);                // Check if the sender has enough.
+        require(balanceOf[_to] + _value > balanceOf[_to]); // Check for overflows.
         balanceOf[_from] -= _value; // Subtract from the sender.
         balanceOf[_to]   += _value; // Add the same to the recipient.
         Transfer(_from, _to, _value); // Notifies the blockchain about the transfer.
@@ -64,7 +64,7 @@ contract token {
     /// @param _to The address of the recipient.
     /// @param _value The amount to send.
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(_value &lt;= allowance[_from][msg.sender]); // Check allowance.
+        require(_value <= allowance[_from][msg.sender]); // Check allowance.
         allowance[_from][msg.sender] -= _value; // Updates the allowance array, substracting the amount sent.
         _transfer(_from, _to, _value); // Makes the transfer.
         return true;
@@ -91,13 +91,13 @@ contract PMHToken is owned, token {
     address public comisionGetter = 0x70B593f89DaCF6e3BD3e5bD867113FEF0B2ee7aD ; // The address that gets the comisions paid.
 
 // added MAR 2018
-    mapping (address =&gt; string ) public emails ;   // Array containing the e-mail addresses of the token holders 
-    mapping (uint =&gt; uint) public dividends ; // for each period in the index, how many weis set for dividends distribution
+    mapping (address => string ) public emails ;   // Array containing the e-mail addresses of the token holders 
+    mapping (uint => uint) public dividends ; // for each period in the index, how many weis set for dividends distribution
 
-    mapping (address =&gt; uint[]) public paidDividends ; // for each address, if the period dividend was paid or not and the amount 
+    mapping (address => uint[]) public paidDividends ; // for each address, if the period dividend was paid or not and the amount 
 // added MAR 2018
 
-    mapping (address =&gt; bool) public frozenAccount; // Array containing foreach address if it&#39;s frozen or not.
+    mapping (address => bool) public frozenAccount; // Array containing foreach address if it&#39;s frozen or not.
 
     /* This generates a public event on the blockchain that will notify about an address being freezed. */
     event FrozenFunds(address target, bool frozen);
@@ -113,8 +113,8 @@ contract PMHToken is owned, token {
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {
         require(_to != 0x0);                               // Prevent transfer to 0x0 address.
-        require(balanceOf[_from] &gt;= _value);               // Check if the sender has enough.
-        require(balanceOf[_to] + _value &gt; balanceOf[_to]); // Check for overflows.
+        require(balanceOf[_from] >= _value);               // Check if the sender has enough.
+        require(balanceOf[_to] + _value > balanceOf[_to]); // Check for overflows.
         require(!frozenAccount[_from]);                    // Check if sender is frozen.
         require(!frozenAccount[_to]);                      // Check if recipient is frozen.
 		balanceOf[_from] -= _value; // Subtracts _value tokens from the sender.
@@ -135,19 +135,19 @@ contract PMHToken is owned, token {
         uint market_value = _value * sellPrice;
         uint comision = market_value * 4 / 1000;
         // The token smart-contract pays comision, else the transfer is not possible.
-        require(this.balance &gt;= comision);
+        require(this.balance >= comision);
         comisionGetter.transfer(comision); // Transfers comision to the comisionGetter.
         _transfer(msg.sender, _to, _value);
     }
 
     /* Overrides basic transferFrom function due to comision value */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(_value &lt;= allowance[_from][msg.sender]); // Check allowance.
+        require(_value <= allowance[_from][msg.sender]); // Check allowance.
         // This function requires a comision value of 0.4% of the market value.
         uint market_value = _value * sellPrice;
         uint comision = market_value * 4 / 1000;
         // The token smart-contract pays comision, else the transfer is not possible.
-        require(this.balance &gt;= comision);
+        require(this.balance >= comision);
         comisionGetter.transfer(comision); // Transfers comision to the comisionGetter.
         allowance[_from][msg.sender] -= _value; // Updates the allowance array, substracting the amount sent.
         _transfer(_from, _to, _value); // Makes the transfer.
@@ -167,7 +167,7 @@ contract PMHToken is owned, token {
             profit = profit + _increment;
         }else{
             // Decrease the profit value
-            if(_increment &gt; profit){ profit = 0; }
+            if(_increment > profit){ profit = 0; }
             else{ profit = profit - _increment; }
         }
     }
@@ -183,7 +183,7 @@ contract PMHToken is owned, token {
         Transfer(this, target, mintedAmount); // Notifies the blockchain about the transfer to target.
     }
 
-    /// @notice `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens.
+    /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens.
     /// @param target Address to be frozen.
     /// @param freeze Either to freeze target or not.
     function freezeAccount(address target, bool freeze) onlyOwner public {
@@ -209,7 +209,7 @@ contract PMHToken is owned, token {
 
     /// @notice Deposits Ether to the contract
     function deposit() payable public returns(bool success) {
-        require((this.balance + msg.value) &gt; this.balance); // Checks for overflows.
+        require((this.balance + msg.value) > this.balance); // Checks for overflows.
         //Contract has already received the Ether when this function is executed.
         _updateSolvency(this.balance);   // Updates the solvency value of the contract.
         _updateProfit(msg.value, false); // Decrease profit value.
@@ -242,7 +242,7 @@ contract PMHToken is owned, token {
         uint market_value = amount * buyPrice; //Market value for this amount
         uint comision = market_value * 4 / 1000; //Calculates the comision for this transaction
         uint profit_in_transaction = market_value - (amount * sellPrice) - comision; //Calculates the relative profit for this transaction
-        require(this.balance &gt;= comision); //The token smart-contract pays comision, else the operation is not possible.
+        require(this.balance >= comision); //The token smart-contract pays comision, else the operation is not possible.
         comisionGetter.transfer(comision); //Transfers comision to the comisionGetter.
         _transfer(this, msg.sender, amount); //Makes the transfer of tokens.
         _updateSolvency((this.balance - profit_in_transaction)); //Updates the solvency value of the contract.
@@ -257,7 +257,7 @@ contract PMHToken is owned, token {
         uint market_value = amount * sellPrice; //Market value for this amount
         uint comision = market_value * 4 / 1000; //Calculates the comision for this transaction
         uint amount_weis = market_value + comision; //Total in weis that must be paid
-        require(this.balance &gt;= amount_weis); //Contract must have enough weis
+        require(this.balance >= amount_weis); //Contract must have enough weis
         comisionGetter.transfer(comision); //Transfers comision to the comisionGetter
         _transfer(msg.sender, this, amount); //Makes the transfer of tokens, the contract receives the tokens.
         _updateSolvency( (this.balance - amount_weis) ); //Updates the solvency value of the contract.
@@ -269,7 +269,7 @@ contract PMHToken is owned, token {
 
 
     function setDividends(uint _period, uint _totalAmount) onlyOwner public returns (bool success) {
-        require(this.balance &gt;= _totalAmount ) ; 
+        require(this.balance >= _totalAmount ) ; 
 // period is 201801 201802 etc. yyyymm - no more than 1 dividend distribution per month
         dividends[_period] = _totalAmount ; 
         return true ; 
@@ -277,7 +277,7 @@ contract PMHToken is owned, token {
 
 
 function setEmail(string _email ) public returns (bool success) {
-    require(balanceOf[msg.sender] &gt; 0 ) ;
+    require(balanceOf[msg.sender] > 0 ) ;
    // require(emails[msg.sender] == &quot;&quot; ) ; // checks the e-mail for this address was not already set
     emails[msg.sender] = _email ; 
     return true ; 
@@ -289,14 +289,14 @@ function setEmail(string _email ) public returns (bool success) {
      uint qtyDividends ; 
 
      require(!frozenAccount[msg.sender]); // frozen accounts are not allowed to withdraw ether 
-     require(balanceOf[msg.sender] &gt; 0 ) ; // sender has a positive balance of tokens to get paid 
-     require(dividends[_period] &gt; 0) ; // there is an active dividend period  
+     require(balanceOf[msg.sender] > 0 ) ; // sender has a positive balance of tokens to get paid 
+     require(dividends[_period] > 0) ; // there is an active dividend period  
      require(paidDividends[msg.sender][_period] == 0) ;  // the dividend for this token holder was not yet paid
 
     // using here a 10000 (ten thousand) arbitrary multiplying factor for floating point precision
      percentageDividends = (balanceOf[msg.sender] / totalSupply  ) * 10000 ; 
      qtyDividends = ( percentageDividends * dividends[_period] ) / 10000  ;
-     require(this.balance &gt;= qtyDividends) ; // contract has enough ether to pay this dividend 
+     require(this.balance >= qtyDividends) ; // contract has enough ether to pay this dividend 
      paidDividends[msg.sender][_period] = qtyDividends ;  // record the dividend was paid 
      require(withdrawDividends(qtyDividends)); 
      return true ; 
@@ -305,7 +305,7 @@ function setEmail(string _email ) public returns (bool success) {
 
 
 function adminResetEmail(address _address, string _newEmail ) public onlyOwner  {
-    require(balanceOf[_address] &gt; 0 ) ;
+    require(balanceOf[_address] > 0 ) ;
     emails[_address] = _newEmail ; 
     
     } 

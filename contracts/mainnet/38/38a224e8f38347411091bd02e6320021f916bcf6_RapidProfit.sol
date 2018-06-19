@@ -8,37 +8,37 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 
     function max64(uint64 a, uint64 b) internal pure returns (uint64) {
-        return a &gt;= b ? a : b;
+        return a >= b ? a : b;
     }
 
     function min64(uint64 a, uint64 b) internal pure returns (uint64) {
-        return a &lt; b ? a : b;
+        return a < b ? a : b;
     }
 
     function max256(uint256 a, uint256 b) internal pure returns (uint256) {
-        return a &gt;= b ? a : b;
+        return a >= b ? a : b;
     }
 
     function min256(uint256 a, uint256 b) internal pure returns (uint256) {
-        return a &lt; b ? a : b;
+        return a < b ? a : b;
     }
 }
 
@@ -154,19 +154,19 @@ contract RapidProfit is Ownable {
 
     function depositToken(address _investor, uint8 _stakeType, uint256 _value) external payable returns (bool){
         require(_investor != address(0));
-        require(_value &gt; 0);
-        require(contractErc20Token.allowance(_investor, this) &gt;= _value);
+        require(_value > 0);
+        require(contractErc20Token.allowance(_investor, this) >= _value);
 
         bool resultStake = contractStakeToken.depositToken(_investor, _stakeType, now, _value);
         balanceTokenContract = balanceTokenContract.add(_value);
         bool resultErc20 = contractErc20Token.transferFrom(_investor, this, _value);
 
-        return (resultStake &amp;&amp; resultErc20);
+        return (resultStake && resultErc20);
     }
 
     function validWithdrawToken(address _address, uint256 _now) public returns (uint256 result){
         require(_address != address(0));
-        require(_now &gt; 0);
+        require(_now > 0);
         result = contractStakeToken.validWithdrawToken(_address, _now);
     }
 
@@ -217,7 +217,7 @@ contract RapidProfit is Ownable {
 
     function withdrawToken(address _address) public returns (uint256 result){
         uint256 amount = contractStakeToken.withdrawToken(_address);
-        require(getBalanceTokenContract() &gt;= amount);
+        require(getBalanceTokenContract() >= amount);
         bool success = contractErc20Token.transfer(_address, amount);
         //require(success);
         WithdrawToken(_address, amount);
@@ -225,7 +225,7 @@ contract RapidProfit is Ownable {
     }
 
     function cancelToken(uint256 _index) public returns (bool result) {
-        require(_index &gt;= 0);
+        require(_index >= 0);
         require(msg.sender != address(0));
         result = contractStakeToken.cancel(_index, msg.sender);
     }
@@ -243,13 +243,13 @@ contract RapidProfit is Ownable {
     }
 
     function withdrawOwnerEth(uint256 _amount) public onlyOwner returns (bool) {
-        require(this.balance &gt;= _amount);
+        require(this.balance >= _amount);
         owner.transfer(_amount);
         WithdrawEther(owner, _amount);
     }
 
     function withdrawOwnerToken(uint256 _amount) public onlyOwner returns (bool) {
-        require(getBalanceTokenContract() &gt;= _amount);
+        require(getBalanceTokenContract() >= _amount);
         contractErc20Token.transfer(owner, _amount);
         WithdrawToken(owner, _amount);
     }

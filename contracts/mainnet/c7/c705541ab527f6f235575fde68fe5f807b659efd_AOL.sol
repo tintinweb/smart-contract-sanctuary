@@ -9,20 +9,20 @@ contract SafeMath {
   }
 
   function safeDiv(uint256 a, uint256 b) internal returns (uint256) {
-    assert(b &gt; 0);
+    assert(b > 0);
     uint256 c = a / b;
     assert(a == b * c + a % b);
     return c;
   }
 
   function safeSub(uint256 a, uint256 b) internal returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function safeAdd(uint256 a, uint256 b) internal returns (uint256) {
     uint256 c = a + b;
-    assert(c&gt;=a &amp;&amp; c&gt;=b);
+    assert(c>=a && c>=b);
     return c;
   }
 
@@ -40,9 +40,9 @@ contract AOL is SafeMath{
 	address public owner;
 
     /* This creates an array with all balances */
-    mapping (address =&gt; uint256) public balanceOf;
-	mapping (address =&gt; uint256) public freezeOf;
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => uint256) public balanceOf;
+	mapping (address => uint256) public freezeOf;
+    mapping (address => mapping (address => uint256)) public allowance;
 
     /* This generates a public event on the blockchain that will notify clients */
     event Transfer(address indexed from, address indexed to, uint256 value);
@@ -74,9 +74,9 @@ contract AOL is SafeMath{
     /* Send coins */
     function transfer(address _to, uint256 _value) {
         if (_to == 0x0) throw;                               // Prevent transfer to 0x0 address. Use burn() instead
-		if (_value &lt;= 0) throw; 
-        if (balanceOf[msg.sender] &lt; _value) throw;           // Check if the sender has enough
-        if (balanceOf[_to] + _value &lt; balanceOf[_to]) throw; // Check for overflows
+		if (_value <= 0) throw; 
+        if (balanceOf[msg.sender] < _value) throw;           // Check if the sender has enough
+        if (balanceOf[_to] + _value < balanceOf[_to]) throw; // Check for overflows
         balanceOf[msg.sender] = SafeMath.safeSub(balanceOf[msg.sender], _value);                     // Subtract from the sender
         balanceOf[_to] = SafeMath.safeAdd(balanceOf[_to], _value);                            // Add the same to the recipient
         Transfer(msg.sender, _to, _value);                   // Notify anyone listening that this transfer took place
@@ -85,7 +85,7 @@ contract AOL is SafeMath{
     /* Allow another contract to spend some tokens in your behalf */
     function approve(address _spender, uint256 _value)
         returns (bool success) {
-		if (_value &lt;= 0) throw; 
+		if (_value <= 0) throw; 
         allowance[msg.sender][_spender] = _value;
         return true;
     }
@@ -94,10 +94,10 @@ contract AOL is SafeMath{
     /* A contract attempts to get the coins */
     function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
         if (_to == 0x0) throw;                                // Prevent transfer to 0x0 address. Use burn() instead
-		if (_value &lt;= 0) throw; 
-        if (balanceOf[_from] &lt; _value) throw;                 // Check if the sender has enough
-        if (balanceOf[_to] + _value &lt; balanceOf[_to]) throw;  // Check for overflows
-        if (_value &gt; allowance[_from][msg.sender]) throw;     // Check allowance
+		if (_value <= 0) throw; 
+        if (balanceOf[_from] < _value) throw;                 // Check if the sender has enough
+        if (balanceOf[_to] + _value < balanceOf[_to]) throw;  // Check for overflows
+        if (_value > allowance[_from][msg.sender]) throw;     // Check allowance
         balanceOf[_from] = SafeMath.safeSub(balanceOf[_from], _value);                           // Subtract from the sender
         balanceOf[_to] = SafeMath.safeAdd(balanceOf[_to], _value);                             // Add the same to the recipient
         allowance[_from][msg.sender] = SafeMath.safeSub(allowance[_from][msg.sender], _value);
@@ -106,8 +106,8 @@ contract AOL is SafeMath{
     }
 
     function burn(uint256 _value) returns (bool success) {
-        if (balanceOf[msg.sender] &lt; _value) throw;            // Check if the sender has enough
-		if (_value &lt;= 0) throw; 
+        if (balanceOf[msg.sender] < _value) throw;            // Check if the sender has enough
+		if (_value <= 0) throw; 
         balanceOf[msg.sender] = SafeMath.safeSub(balanceOf[msg.sender], _value);                      // Subtract from the sender
         totalSupply = SafeMath.safeSub(totalSupply,_value);                                // Updates totalSupply
         Burn(msg.sender, _value);
@@ -115,8 +115,8 @@ contract AOL is SafeMath{
     }
 	
 	function freeze(uint256 _value) returns (bool success) {
-        if (balanceOf[msg.sender] &lt; _value) throw;            // Check if the sender has enough
-		if (_value &lt;= 0) throw; 
+        if (balanceOf[msg.sender] < _value) throw;            // Check if the sender has enough
+		if (_value <= 0) throw; 
         balanceOf[msg.sender] = SafeMath.safeSub(balanceOf[msg.sender], _value);                      // Subtract from the sender
         freezeOf[msg.sender] = SafeMath.safeAdd(freezeOf[msg.sender], _value);                                // Updates totalSupply
         Freeze(msg.sender, _value);
@@ -124,8 +124,8 @@ contract AOL is SafeMath{
     }
 	
 	function unfreeze(uint256 _value) returns (bool success) {
-        if (freezeOf[msg.sender] &lt; _value) throw;            // Check if the sender has enough
-		if (_value &lt;= 0) throw; 
+        if (freezeOf[msg.sender] < _value) throw;            // Check if the sender has enough
+		if (_value <= 0) throw; 
         freezeOf[msg.sender] = SafeMath.safeSub(freezeOf[msg.sender], _value);                      // Subtract from the sender
 		balanceOf[msg.sender] = SafeMath.safeAdd(balanceOf[msg.sender], _value);
         Unfreeze(msg.sender, _value);

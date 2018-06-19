@@ -74,9 +74,9 @@ contract MultiSigWallet {
 
     modifier validRequirement(uint ownerCount, uint _required) {
         require(ownerCount <= MAX_OWNER_COUNT
-            &amp;&amp; _required <= ownerCount
-            &amp;&amp; _required != 0
-            &amp;&amp; ownerCount != 0);
+            && _required <= ownerCount
+            && _required != 0
+            && ownerCount != 0);
         _;
     }
 
@@ -297,8 +297,8 @@ contract MultiSigWallet {
         returns (uint count)
     {
         for (uint i=0; i<transactionCount; i++)
-            if ((!executed &amp;&amp; !transactions[i].executed)
-                || (executed &amp;&amp; transactions[i].executed))
+            if ((!executed && !transactions[i].executed)
+                || (executed && transactions[i].executed))
                 count += 1;
     }
 
@@ -345,8 +345,8 @@ contract MultiSigWallet {
         uint count = 0;
         uint i;
         for (i=0; i<transactionCount; i++)
-            if ((!executed &amp;&amp; !transactions[i].executed)
-                || (executed &amp;&amp; transactions[i].executed)) {
+            if ((!executed && !transactions[i].executed)
+                || (executed && transactions[i].executed)) {
                 transactionIdsTemp[count] = i;
                 count += 1;
             }
@@ -405,7 +405,7 @@ contract MultiSigWalletWithDailyLimit is MultiSigWallet {
     {
         Transaction tx = transactions[transactionId];
         bool confirmed = isConfirmed(transactionId);
-        if (confirmed || tx.data.length == 0 &amp;&amp; isUnderLimit(tx.value)) {
+        if (confirmed || tx.data.length == 0 && isUnderLimit(tx.value)) {
             tx.executed = true;
             if (!confirmed)
                 spentToday += tx.value;

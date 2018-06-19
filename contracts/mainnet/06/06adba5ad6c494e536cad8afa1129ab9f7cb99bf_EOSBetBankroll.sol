@@ -207,7 +207,7 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 		uint256 currentTotalBankroll = SafeMath.sub(getBankroll(), msg.value);
 		uint256 maxInvestmentsAllowed = MAXIMUMINVESTMENTSALLOWED;
 
-		require(currentTotalBankroll < maxInvestmentsAllowed &amp;&amp; msg.value != 0);
+		require(currentTotalBankroll < maxInvestmentsAllowed && msg.value != 0);
 
 		uint256 currentSupplyOfTokens = totalSupply;
 		uint256 contributedEther;
@@ -275,8 +275,8 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 		uint256 tokenBalance = balances[msg.sender];
 		// verify that the contributor has enough tokens to cash out this many, and has waited the required time.
 		require(_amountTokens <= tokenBalance 
-			&amp;&amp; contributionTime[msg.sender] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
-			&amp;&amp; _amountTokens > 0);
+			&& contributionTime[msg.sender] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
+			&& _amountTokens > 0);
 
 		// save in memory for cheap access.
 		// again, represents the total balance of the contract before the function was called.
@@ -341,7 +341,7 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 
 	function changeWaitTimeUntilWithdrawOrTransfer(uint256 waitTime) public {
 		// waitTime MUST be less than or equal to 10 weeks
-		require (msg.sender == OWNER &amp;&amp; waitTime <= 6048000);
+		require (msg.sender == OWNER && waitTime <= 6048000);
 
 		WAITTIMEUNTILWITHDRAWORTRANSFER = waitTime;
 	}
@@ -393,9 +393,9 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 	// and don&#39;t allow transfers to this contract addr, it&#39;ll just kill tokens
 	function transfer(address _to, uint256 _value) public returns (bool success){
 		require(balances[msg.sender] >= _value 
-			&amp;&amp; contributionTime[msg.sender] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
-			&amp;&amp; _to != address(this)
-			&amp;&amp; _to != address(0));
+			&& contributionTime[msg.sender] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
+			&& _to != address(this)
+			&& _to != address(0));
 
 		// safely subtract
 		balances[msg.sender] = SafeMath.sub(balances[msg.sender], _value);
@@ -410,10 +410,10 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 	// and don&#39;t allow transfers to the contract addr, it&#39;ll just kill tokens
 	function transferFrom(address _from, address _to, uint _value) public returns(bool){
 		require(allowed[_from][msg.sender] >= _value 
-			&amp;&amp; balances[_from] >= _value 
-			&amp;&amp; contributionTime[_from] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
-			&amp;&amp; _to != address(this)
-			&amp;&amp; _to != address(0));
+			&& balances[_from] >= _value 
+			&& contributionTime[_from] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
+			&& _to != address(this)
+			&& _to != address(0));
 
 		// safely add to _to and subtract from _from, and subtract from allowed balances.
 		balances[_to] = SafeMath.add(balances[_to], _value);

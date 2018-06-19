@@ -10,13 +10,13 @@ library MathUtils {
             return result;
         }
 
-        require(result &gt; a &amp;&amp; result &gt; b);
+        require(result > a && result > b);
 
         return result;
     }
 
     function sub(uint a, uint b) internal pure returns (uint) {
-        require(a &gt;= b);
+        require(a >= b);
 
         return a - b;
     }
@@ -37,7 +37,7 @@ library MathUtils {
 // File: contracts/Token/Balance.sol
 
 contract Balance {
-    mapping(address =&gt; uint) public balances;
+    mapping(address => uint) public balances;
 
     // ERC20 function
     function balanceOf(address account) public constant returns (uint) {
@@ -45,7 +45,7 @@ contract Balance {
     }
 
     modifier hasSufficientBalance(address account, uint balance) {
-        require(balances[account] &gt;= balance);
+        require(balances[account] >= balance);
         _;
     }
 }
@@ -87,7 +87,7 @@ contract Crowdsale is Ownable {
     address public crowdsaleContract;
 
     function isCrowdsale() internal view returns(bool) {
-        return crowdsaleSet() &amp;&amp; msg.sender == crowdsaleContract;
+        return crowdsaleSet() && msg.sender == crowdsaleContract;
     }
 
     function crowdsaleSet() internal view returns(bool) {
@@ -95,7 +95,7 @@ contract Crowdsale is Ownable {
     }
 
     function addressIsCrowdsale(address _address) public view returns(bool) {
-        return crowdsaleSet() &amp;&amp; crowdsaleContract == _address;
+        return crowdsaleSet() && crowdsaleContract == _address;
     }
 
     function setCrowdsaleContract(address crowdsale) public grantOwner {
@@ -160,7 +160,7 @@ contract CryptoPoliceOfficerToken is TotalSupply, Balance, Burnable {
     string public symbol;
     uint8 public decimals = 18;
 
-    mapping(address =&gt; mapping(address =&gt; uint)) allowances;
+    mapping(address => mapping(address => uint)) allowances;
     
     bool public publicTransfersEnabled = false;
     uint public releaseStartTime;
@@ -207,9 +207,9 @@ contract CryptoPoliceOfficerToken is TotalSupply, Balance, Burnable {
         whenTransferable(destination)
         hasUnlockedAmount(source, amount)
     {
-        require(destination != address(this) &amp;&amp; destination != 0x0);
+        require(destination != address(this) && destination != 0x0);
 
-        if (amount &gt; 0) {
+        if (amount > 0) {
             balances[source] -= amount;
             balances[destination] = balances[destination].add(amount);
         }
@@ -231,7 +231,7 @@ contract CryptoPoliceOfficerToken is TotalSupply, Balance, Burnable {
     )
         public returns (bool)
     {
-        require(allowances[source][msg.sender] &gt;= amount);
+        require(allowances[source][msg.sender] >= amount);
 
         allowances[source][msg.sender] -= amount;
 
@@ -314,9 +314,9 @@ contract CryptoPoliceOfficerToken is TotalSupply, Balance, Burnable {
     function releaseLockedTokens(uint8 idx)
     public grantOwner
     {
-        require(releaseStartTime &gt; 0);
+        require(releaseStartTime > 0);
         require(!locks[idx].released);
-        require((releaseStartTime + locks[idx].timespan) &lt; now);
+        require((releaseStartTime + locks[idx].timespan) < now);
 
         locks[idx].released = true;
         lockedAmount -= locks[idx].amount;
@@ -325,7 +325,7 @@ contract CryptoPoliceOfficerToken is TotalSupply, Balance, Burnable {
     function requireOwnerUnlockedAmount(uint amount)
     internal view
     {
-        require(balanceOf(owner).sub(lockedAmount) &gt;= amount);
+        require(balanceOf(owner).sub(lockedAmount) >= amount);
     }
 
     function setCrowdsaleContract(address crowdsale)
@@ -345,8 +345,8 @@ contract CryptoPoliceOfficerToken is TotalSupply, Balance, Burnable {
     modifier whenTransferable(address destination) {
         require(publicTransfersEnabled
             || isCrowdsale()
-            || (isOwner() &amp;&amp; addressIsCrowdsale(destination) &amp;&amp; balanceOf(crowdsaleContract) == 0)
-            || (isOwner() &amp;&amp; !crowdsaleSet())
+            || (isOwner() && addressIsCrowdsale(destination) && balanceOf(crowdsaleContract) == 0)
+            || (isOwner() && !crowdsaleSet())
         );
         _;
     }

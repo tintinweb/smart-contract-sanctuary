@@ -120,26 +120,26 @@ contract ERC20 is ERC20Events {
 
 contract DSMath {
     function add(uint x, uint y) internal pure returns (uint z) {
-        require((z = x + y) &gt;= x);
+        require((z = x + y) >= x);
     }
     function sub(uint x, uint y) internal pure returns (uint z) {
-        require((z = x - y) &lt;= x);
+        require((z = x - y) <= x);
     }
     function mul(uint x, uint y) internal pure returns (uint z) {
         require(y == 0 || (z = x * y) / y == x);
     }
 
     function min(uint x, uint y) internal pure returns (uint z) {
-        return x &lt;= y ? x : y;
+        return x <= y ? x : y;
     }
     function max(uint x, uint y) internal pure returns (uint z) {
-        return x &gt;= y ? x : y;
+        return x >= y ? x : y;
     }
     function imin(int x, int y) internal pure returns (int z) {
-        return x &lt;= y ? x : y;
+        return x <= y ? x : y;
     }
     function imax(int x, int y) internal pure returns (int z) {
-        return x &gt;= y ? x : y;
+        return x >= y ? x : y;
     }
 
     uint constant WAD = 10 ** 18;
@@ -189,8 +189,8 @@ contract DSMath {
 
 contract DSTokenBase is ERC20, DSMath {
     uint256                                            _supply;
-    mapping (address =&gt; uint256)                       _balances;
-    mapping (address =&gt; mapping (address =&gt; uint256))  _approvals;
+    mapping (address => uint256)                       _balances;
+    mapping (address => mapping (address => uint256))  _approvals;
 
     function DSTokenBase(uint supply) public {
         _balances[msg.sender] = supply;
@@ -271,7 +271,7 @@ contract DSToken is DSTokenBase(0), DSStop {
         stoppable
         returns (bool)
     {
-        if (src != msg.sender &amp;&amp; _approvals[src][msg.sender] != uint(-1)) {
+        if (src != msg.sender && _approvals[src][msg.sender] != uint(-1)) {
             _approvals[src][msg.sender] = sub(_approvals[src][msg.sender], wad);
         }
 
@@ -305,7 +305,7 @@ contract DSToken is DSTokenBase(0), DSStop {
         emit Mint(guy, wad);
     }
     function burn(address guy, uint wad) public auth stoppable {
-        if (guy != msg.sender &amp;&amp; _approvals[guy][msg.sender] != uint(-1)) {
+        if (guy != msg.sender && _approvals[guy][msg.sender] != uint(-1)) {
             _approvals[guy][msg.sender] = sub(_approvals[guy][msg.sender], wad);
         }
 
@@ -361,7 +361,7 @@ contract TICDist is DSAuth, DSMath {
     }
 
     address[] public founderList;                 // 创始人列表
-    mapping (address =&gt; Detail)  public  founders;// 发行时，创始人的分配比例
+    mapping (address => Detail)  public  founders;// 发行时，创始人的分配比例
     
     // 默认构造
     function TICDist(uint256 initial_supply) public {
@@ -391,19 +391,19 @@ contract TICDist is DSAuth, DSMath {
         // 判断是否配置过
         assert(isDistConfig == false);
         // 输入参数测试
-        assert(founders_.length &gt; 0);
+        assert(founders_.length > 0);
         assert(founders_.length == percents_.length);
         uint all_percents = 0;
         uint i = 0;
-        for (i=0; i&lt;percents_.length; ++i){
-            assert(percents_[i] &gt; 0);
+        for (i=0; i<percents_.length; ++i){
+            assert(percents_[i] > 0);
             assert(founders_[i] != address(0));
             all_percents += percents_[i];
         }
-        assert(all_percents &lt;= 100);
+        assert(all_percents <= 100);
         // 赋值
         founderList = founders_;
-        for (i=0; i&lt;founders_.length; ++i){
+        for (i=0; i<founders_.length; ++i){
             founders[founders_[i]].distPercent = percents_[i];
         }
         // 设置标志
@@ -420,19 +420,19 @@ contract TICDist is DSAuth, DSMath {
         // 判断是否配置过
         assert(isLockedConfig == false);
         // 判断是否有值
-        if (founders_.length &gt; 0){
+        if (founders_.length > 0){
             // 输入参数测试
             assert(founders_.length == percents_.length);
             assert(founders_.length == days_.length);
             uint i = 0;
-            for (i=0; i&lt;percents_.length; ++i){
-                assert(percents_[i] &gt; 0);
-                assert(percents_[i] &lt;= 100);
-                assert(days_[i] &gt; 0);
+            for (i=0; i<percents_.length; ++i){
+                assert(percents_[i] > 0);
+                assert(percents_[i] <= 100);
+                assert(days_[i] > 0);
                 assert(founders_[i] != address(0));
             }
             // 赋值
-            for (i=0; i&lt;founders_.length; ++i){
+            for (i=0; i<founders_.length; ++i){
                 founders[founders_[i]].lockedPercent = percents_[i];
                 founders[founders_[i]].lockedDay = days_[i];
             }
@@ -450,10 +450,10 @@ contract TICDist is DSAuth, DSMath {
         assert(isLockedConfig == true);
         // 对每个创始人代币初始化
         uint i = 0;
-        for(i=0; i&lt;founderList.length; ++i){
+        for(i=0; i<founderList.length; ++i){
             // 获得创始人的份额
             uint256 all_token_num = TIC.totalSupply()*founders[founderList[i]].distPercent/100;
-            assert(all_token_num &gt; 0);
+            assert(all_token_num > 0);
             // 获得锁仓的份额
             uint256 locked_token_num = all_token_num*founders[founderList[i]].lockedPercent/100;
             // 记录锁仓的token
@@ -464,7 +464,7 @@ contract TICDist is DSAuth, DSMath {
         // 设置发行时间
         distDay = today();
         // 更新锁仓时间
-        for(i=0; i&lt;founderList.length; ++i){
+        for(i=0; i<founderList.length; ++i){
             if (founders[founderList[i]].lockedDay != 0){
                 founders[founderList[i]].lockedDay += distDay;
             }
@@ -476,13 +476,13 @@ contract TICDist is DSAuth, DSMath {
         // 必须发行过
         assert(distDay != 0);
         // 有锁仓需求的创始人
-        assert(founders[msg.sender].lockedDay &gt; 0);
+        assert(founders[msg.sender].lockedDay > 0);
         // 有锁仓代币
-        assert(founders[msg.sender].lockedToken &gt; 0);
+        assert(founders[msg.sender].lockedToken > 0);
         if (bTest){
             // 计算需要解锁的份额
             uint unlock_percent = today() - distDay;
-            if(unlock_percent &gt; founders[msg.sender].lockedPercent){
+            if(unlock_percent > founders[msg.sender].lockedPercent){
                 unlock_percent = founders[msg.sender].lockedPercent;
             }
             // 获得总的代币
@@ -491,7 +491,7 @@ contract TICDist is DSAuth, DSMath {
             uint256 locked_token_num = all_token_num*founders[msg.sender].lockedPercent/100;
             // 每天释放的量
             uint256 unlock_token_num = locked_token_num*unlock_percent/founders[msg.sender].lockedPercent;
-            if (unlock_token_num &gt; founders[msg.sender].lockedToken){
+            if (unlock_token_num > founders[msg.sender].lockedToken){
                 unlock_token_num = founders[msg.sender].lockedToken;
             }
             // 开始解锁 token
@@ -500,7 +500,7 @@ contract TICDist is DSAuth, DSMath {
             founders[msg.sender].lockedToken -= unlock_token_num;
         } else {
             // 判断是否解锁时间到
-            assert(today() &gt; founders[msg.sender].lockedDay);
+            assert(today() > founders[msg.sender].lockedDay);
             // 开始解锁 token
             TIC.push(msg.sender, founders[msg.sender].lockedToken);
             // 锁仓token数据清空

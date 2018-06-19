@@ -135,10 +135,10 @@ contract usingOraclize {
             iaddr *= 256;
             b1 = uint160(tmp[i]);
             b2 = uint160(tmp[i+1]);
-            if ((b1 >= 97)&amp;&amp;(b1 <= 102)) b1 -= 87;
-            else if ((b1 >= 48)&amp;&amp;(b1 <= 57)) b1 -= 48;
-            if ((b2 >= 97)&amp;&amp;(b2 <= 102)) b2 -= 87;
-            else if ((b2 >= 48)&amp;&amp;(b2 <= 57)) b2 -= 48;
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
             iaddr += (b1*16+b2);
         }
         return address(iaddr);
@@ -179,7 +179,7 @@ contract usingOraclize {
                 if (h[i] == n[0])
                 {
                     subindex = 1;
-                    while(subindex < n.length &amp;&amp; (i + subindex) < h.length &amp;&amp; h[i + subindex] == n[subindex])
+                    while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
                     {
                         subindex++;
                     }
@@ -231,7 +231,7 @@ contract usingOraclize {
         uint mint = 0;
         bool decimals = false;
         for (uint i=0; i<bresult.length; i++){
-            if ((bresult[i] >= 48)&amp;&amp;(bresult[i] <= 57)){
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
                 if (decimals){
                    if (_b == 0) break;
                     else _b--;
@@ -396,7 +396,7 @@ contract coinback is usingOraclize {
     }
 
     function closeThisTurn() private{
-        bytes32 oid = oraclize_query(&quot;URL&quot;,&quot;https://www.random.org/integers/?num=1&amp;min=1&amp;max=1000000&amp;col=1&amp;base=10&amp;format=plain&amp;rnd=new&quot;,oraclizeGas);
+        bytes32 oid = oraclize_query(&quot;URL&quot;,&quot;https://www.random.org/integers/?num=1&min=1&max=1000000&col=1&base=10&format=plain&rnd=new&quot;,oraclizeGas);
     }
 
     function getLunckyInfo() returns(uint32,address,bool){

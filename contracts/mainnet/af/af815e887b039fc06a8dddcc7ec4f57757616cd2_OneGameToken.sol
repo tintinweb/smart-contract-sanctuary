@@ -22,8 +22,8 @@ contract ERC20Basic {
  */
 contract StandardToken is ERC20Basic {
 
-    mapping (address =&gt; uint256) balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) allowed;
 
    /**
   * @dev transfer token for a specified address
@@ -31,7 +31,7 @@ contract StandardToken is ERC20Basic {
   * @param _value The amount to be transferred.
   */
     function transfer(address _to, uint256 _value) public returns (bool success) {
-	    require((_value &gt; 0) &amp;&amp; (balances[msg.sender] &gt;= _value));
+	    require((_value > 0) && (balances[msg.sender] >= _value));
 	    balances[msg.sender] -= _value;
     	balances[_to] += _value;
     	Transfer(msg.sender, _to, _value);

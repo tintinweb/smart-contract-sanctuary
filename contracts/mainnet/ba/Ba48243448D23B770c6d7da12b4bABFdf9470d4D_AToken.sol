@@ -182,19 +182,19 @@ contract AToken is TokenControl,Owned
 
     function verifyStage()internal
     {
-        if (stage==Stage.second&amp;&amp;Remain==0)
+        if (stage==Stage.second&&Remain==0)
         {
             stage= Stage.secondreturn;
         }
-        if (stage==Stage.firstreturn&amp;&amp;confirm2stage)
+        if (stage==Stage.firstreturn&&confirm2stage)
         {
              stage=Stage.second;
         }
-        if (uint32(block.timestamp)> endtime&amp;&amp;Remain>10000000*10**9&amp;&amp;stage==Stage.first)
+        if (uint32(block.timestamp)> endtime&&Remain>10000000*10**9&&stage==Stage.first)
         {
             stage=Stage.fail;
         }
-        if (uint32(block.timestamp)>= endtime&amp;&amp;stage==Stage.first)
+        if (uint32(block.timestamp)>= endtime&&stage==Stage.first)
         {
              stage=Stage.firstreturn;
         }

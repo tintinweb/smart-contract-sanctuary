@@ -204,8 +204,8 @@ contract Gryphon is ERC20, Ownable {
     function transferTokens(address _recipient, uint256 tokens_in_cents) internal returns (bool) {
         require(
             tokens_in_cents > 0
-            &amp;&amp; _recipient != owner
-            &amp;&amp; tokens_in_cents < balances[owner]
+            && _recipient != owner
+            && tokens_in_cents < balances[owner]
         );
 
         balances[owner] = balances[owner].sub(tokens_in_cents);
@@ -313,7 +313,7 @@ contract Gryphon is ERC20, Ownable {
     }
 
     function calculateTokens(uint256 _amount) internal returns (uint256 tokens){
-        if(crowdSaleState == State.Preparing &amp;&amp; isPreSalePeriod()) {
+        if(crowdSaleState == State.Preparing && isPreSalePeriod()) {
             crowdSaleState = State.PreSale;
         }
         if(isCrowdSaleStatePreSale()) {

@@ -198,7 +198,7 @@ contract StandardToken is BasicToken, ERC20 {
     //  allowance to zero by calling `approve(_spender, 0)` if it is not
     //  already 0 to mitigate the race condition described here:
     //  https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-    if ((_value != 0) &amp;&amp; (allowed[msg.sender][_spender] != 0)) revert();
+    if ((_value != 0) && (allowed[msg.sender][_spender] != 0)) revert();
 
     allowed[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);
@@ -387,7 +387,7 @@ contract teuInitialTokenSale is Ownable {
     * @dev modifier to allow contribution only when the sale is ON
     */
     modifier saleIsOn() {
-        require(getCurrentDatetime() >= saleStart &amp;&amp; getCurrentDatetime() < saleEnd);
+        require(getCurrentDatetime() >= saleStart && getCurrentDatetime() < saleEnd);
         _;
     }
 
@@ -555,7 +555,7 @@ contract teuInitialTokenSale is Ownable {
     */
     function setClientIdentRejectList(address[] _clients, uint8 _valueToSet) public onlyOwner {
         for (uint i = 0; i < _clients.length; i++) {
-            if (_clients[i] != address(0) &amp;&amp; clientIdentRejectList[_clients[i]] != _valueToSet) {
+            if (_clients[i] != address(0) && clientIdentRejectList[_clients[i]] != _valueToSet) {
                 clientIdentRejectList[_clients[i]] = _valueToSet;
                 LogClientIdentRejectListChange(_clients[i], _valueToSet);
             }

@@ -176,7 +176,7 @@ contract LivepeerVerifier is Manager, IVerifier {
     // Solvers that can submit results for requests
     address[] public solvers;
     // Track if an address is a solver
-    mapping (address =&gt; bool) public isSolver;
+    mapping (address => bool) public isSolver;
 
     struct Request {
         uint256 jobId;
@@ -185,7 +185,7 @@ contract LivepeerVerifier is Manager, IVerifier {
         bytes32 commitHash;
     }
 
-    mapping (uint256 =&gt; Request) public requests;
+    mapping (uint256 => Request) public requests;
     uint256 public requestCount;
 
     event VerifyRequest(uint256 indexed requestId, uint256 indexed jobId, uint256 indexed claimId, uint256 segmentNumber, string transcodingOptions, string dataStorageHash, bytes32 dataHash, bytes32 transcodedDataHash);
@@ -205,9 +205,9 @@ contract LivepeerVerifier is Manager, IVerifier {
 
     function LivepeerVerifier(address _controller, address[] _solvers, string _verificationCodeHash) public Manager(_controller) {
         // Set solvers
-        for (uint256 i = 0; i &lt; _solvers.length; i++) {
+        for (uint256 i = 0; i < _solvers.length; i++) {
             // Address must not already be a solver and must not be a null address
-            require(!isSolver[_solvers[i]] &amp;&amp; _solvers[i] != address(0));
+            require(!isSolver[_solvers[i]] && _solvers[i] != address(0));
 
             isSolver[_solvers[i]] = true;
         }

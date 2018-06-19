@@ -231,7 +231,7 @@ contract CellBlocksToken is EIP20Interface, Ownable {
     /*
     NOTE:
     The following variables are OPTIONAL vanities. One does not have to include them.
-    They allow one to customise the token contract &amp; in no way influences the core functionality.
+    They allow one to customise the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
     string public name;                   //fancy name: eg Simon Bucks
@@ -250,7 +250,7 @@ contract CellBlocksToken is EIP20Interface, Ownable {
     //transfer will call halfPercent() and burn() to burn 0.5% of each transaction 
     function transfer(address _to, uint256 _value) public returns (bool success) {
         require(balances[msg.sender] >= _value);
-        if (totalSupply > 33*(10**24) &amp;&amp; block.timestamp >= 1529474460) {
+        if (totalSupply > 33*(10**24) && block.timestamp >= 1529474460) {
             uint halfP = halfPercent(_value);
             burn(msg.sender, halfP);
             _value = SafeMath.sub(_value, halfP);
@@ -265,8 +265,8 @@ contract CellBlocksToken is EIP20Interface, Ownable {
     //transferFrom will call halfPercent() and burn() to burn 0.5% of each transaction
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         uint256 allowance = allowed[_from][msg.sender];
-        require(balances[_from] >= _value &amp;&amp; allowance >= _value);
-        if (totalSupply > 33*(10**24) &amp;&amp; block.timestamp >= 1529474460) {
+        require(balances[_from] >= _value && allowance >= _value);
+        if (totalSupply > 33*(10**24) && block.timestamp >= 1529474460) {
             uint halfP = halfPercent(_value);
             burn(_from, halfP);
             _value = SafeMath.sub(_value, halfP);

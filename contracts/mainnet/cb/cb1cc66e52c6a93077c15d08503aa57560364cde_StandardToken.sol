@@ -18,20 +18,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -112,7 +112,7 @@ contract RefundVault is Ownable {
 		Closed
 	}
 
-	mapping(address =&gt; uint256)public deposited;
+	mapping(address => uint256)public deposited;
 	address public wallet;
 	State public state;
 
@@ -212,15 +212,15 @@ contract BonusScheme is Ownable {
 	 * @return Number of bonus tokens that can be granted with the specified _tokenAmount.
 	 */
 	function getBonusTokens(uint256 _tokenAmount)onlyOwner public returns(uint256) {
-		if (block.timestamp &gt;= startOfFirstBonus &amp;&amp; block.timestamp &lt;= endOfFirstBonus) {
+		if (block.timestamp >= startOfFirstBonus && block.timestamp <= endOfFirstBonus) {
 			_tokenAmount = _tokenAmount.mul(firstBonus).div(100);
-		} else if (block.timestamp &gt;= startOfSecondBonus &amp;&amp; block.timestamp &lt;= endOfSecondBonus) {
+		} else if (block.timestamp >= startOfSecondBonus && block.timestamp <= endOfSecondBonus) {
 			_tokenAmount = _tokenAmount.mul(secondBonus).div(100);
-		} else if (block.timestamp &gt;= startOfThirdBonus &amp;&amp; block.timestamp &lt;= endOfThirdBonus) {
+		} else if (block.timestamp >= startOfThirdBonus && block.timestamp <= endOfThirdBonus) {
 			_tokenAmount = _tokenAmount.mul(thirdBonus).div(100);
-		} else if (block.timestamp &gt;= startOfFourthBonus &amp;&amp; block.timestamp &lt;= endOfFourthBonus) {
+		} else if (block.timestamp >= startOfFourthBonus && block.timestamp <= endOfFourthBonus) {
 			_tokenAmount = _tokenAmount.mul(fourthBonus).div(100);
-		} else if (block.timestamp &gt;= startOfFifthBonus &amp;&amp; block.timestamp &lt;= endOfFifthBonus) {
+		} else if (block.timestamp >= startOfFifthBonus && block.timestamp <= endOfFifthBonus) {
 			_tokenAmount = _tokenAmount.mul(fifthBonus).div(100);
 		} else _tokenAmount=0;
 		emit BonusCalculated(_tokenAmount);
@@ -251,9 +251,9 @@ contract StandardToken is ERC20, ERC223, Ownable {
 
 	address public fundsWallet; // Where should the raised ETH go?
 
-	mapping(address =&gt; bool)public frozenAccount;
-	mapping(address =&gt; uint256)internal balances;
-	mapping(address =&gt; mapping(address =&gt; uint256))internal allowed;
+	mapping(address => bool)public frozenAccount;
+	mapping(address => uint256)internal balances;
+	mapping(address => mapping(address => uint256))internal allowed;
 
 	/* This generates a public event on the blockchain that will notify clients */
 	event Burn(address indexed burner, uint256 value);
@@ -300,12 +300,12 @@ contract StandardToken is ERC20, ERC223, Ownable {
 	}
 
 	modifier beforeICO() {
-		require(block.timestamp &lt;= start);
+		require(block.timestamp <= start);
 		_;
 	}
 	
 	modifier afterDeadline() {
-		require(block.timestamp &gt; end);
+		require(block.timestamp > end);
 		_;
 	}
 
@@ -353,12 +353,12 @@ contract StandardToken is ERC20, ERC223, Ownable {
 	 * @param _beneficiary Address performing the token purchase
 	 */
 	//bad calculations, change  //should be ok
-	//TODO: pre-ico phase to be defined and checked with other tokens, ICO-when closed check softcap, softcap-add pre-ico tokens, if isnt achieved revert all transactions, hardcap, timestamps&amp;bonus scheme(will be discussed next week), minimum amount is 0,1ETH ...
+	//TODO: pre-ico phase to be defined and checked with other tokens, ICO-when closed check softcap, softcap-add pre-ico tokens, if isnt achieved revert all transactions, hardcap, timestamps&bonus scheme(will be discussed next week), minimum amount is 0,1ETH ...
 	function buyTokens(address _beneficiary)public payable {
 		uint256 weiAmount = msg.value;
 		_preValidatePurchase(_beneficiary, weiAmount);
 		uint256 tokens = _getTokenAmount(weiAmount); // calculate token amount to be sold
-		require(balances[this] &gt; tokens); //check if the contract has enough tokens
+		require(balances[this] > tokens); //check if the contract has enough tokens
 
 		totalWeiRaised = totalWeiRaised.add(weiAmount); //update state
 		tokensSold = tokensSold.add(tokens); //update state
@@ -392,8 +392,8 @@ contract StandardToken is ERC20, ERC223, Ownable {
 	 */
 	function _preValidatePurchase(address _beneficiary, uint256 _weiAmount)internal view {
 		require(_beneficiary != address(0));
-		require(_weiAmount &gt;= min_contribution);
-		require(!crowdsaleClosed &amp;&amp; block.timestamp &gt;= start &amp;&amp; block.timestamp &lt;= end);
+		require(_weiAmount >= min_contribution);
+		require(!crowdsaleClosed && block.timestamp >= start && block.timestamp <= end);
 	}
 
 	/**
@@ -430,11 +430,11 @@ contract StandardToken is ERC20, ERC223, Ownable {
 	 */
 	function _processBonus(address _beneficiary, uint256 _tokenAmount)internal {
 		uint256 bonusTokens = bonusScheme.getBonusTokens(_tokenAmount); // Calculate bonus token amount
-		if (balances[bonusScheme] &lt; bonusTokens) { // If the bonus scheme does not have enough tokens, send all remaining
+		if (balances[bonusScheme] < bonusTokens) { // If the bonus scheme does not have enough tokens, send all remaining
 			bonusTokens = balances[bonusScheme];
 			balances[bonusScheme] = 0;
 		}
-		if (bonusTokens &gt; 0) { // If there are no tokens left in bonus scheme, we do not need transaction.
+		if (bonusTokens > 0) { // If there are no tokens left in bonus scheme, we do not need transaction.
 			balances[bonusScheme] = balances[bonusScheme].sub(bonusTokens);
 			balances[_beneficiary] = balances[_beneficiary].add(bonusTokens);
 			emit Transfer(address(bonusScheme), _beneficiary, bonusTokens);
@@ -474,7 +474,7 @@ contract StandardToken is ERC20, ERC223, Ownable {
 	//added due to backwards compatibility reasons
 	function transfer(address _to, uint256 _value)public returns(bool) {
 		require(_to != address(0));
-		require(_value &lt;= balances[msg.sender]);
+		require(_value <= balances[msg.sender]);
 		require(!frozenAccount[msg.sender]); // Check if sender is frozen
 		require(!frozenAccount[_to]); // Check if recipient is frozen
 		//require(!isContract(_to));
@@ -494,8 +494,8 @@ contract StandardToken is ERC20, ERC223, Ownable {
 		require(_to != address(0));
 		require(!frozenAccount[_from]); // Check if sender is frozen
 		require(!frozenAccount[_to]); // Check if recipient is frozen
-		require(_value &lt;= balances[_from]);
-		require(_value &lt;= allowed[_from][msg.sender]);
+		require(_value <= balances[_from]);
+		require(_value <= allowed[_from][msg.sender]);
 
 		balances[_from] = balances[_from].sub(_value);
 		balances[_to] = balances[_to].add(_value);
@@ -522,7 +522,7 @@ contract StandardToken is ERC20, ERC223, Ownable {
 
 	function decreaseApproval(address _spender, uint _subtractedValue)public returns(bool) {
 		uint oldValue = allowed[msg.sender][_spender];
-		if (_subtractedValue &gt; oldValue) {
+		if (_subtractedValue > oldValue) {
 			allowed[msg.sender][_spender] = 0;
 		} else {
 			allowed[msg.sender][_spender] = SafeMath.sub(oldValue, _subtractedValue);
@@ -553,7 +553,7 @@ contract StandardToken is ERC20, ERC223, Ownable {
 		}
 		/*
 		require(_to != address(0));
-		require(_value &gt; 0 &amp;&amp; _value &lt;= balances[msg.sender]);
+		require(_value > 0 && _value <= balances[msg.sender]);
 		if(isContract(_to)) {
 		ERC223ReceivingContract receiver = ERC223ReceivingContract(_to);
 		receiver.tokenFallback(msg.sender, _value, _data);
@@ -571,12 +571,12 @@ contract StandardToken is ERC20, ERC223, Ownable {
 			//retrieve the size of the code on target address, this needs assembly
 			length := extcodesize(_addr)
 		}
-		return (length &gt; 0);
+		return (length > 0);
 	}
 
 	//function that is called when transaction target is an address
 	function transferToAddress(address _to, uint _value, bytes _data)private returns(bool success) {
-		require(balanceOf(msg.sender) &gt; _value);
+		require(balanceOf(msg.sender) > _value);
 		balances[msg.sender] = balances[msg.sender].sub(_value);
 		balances[_to] = balances[_to].add(_value);
 		emit Transfer(msg.sender, _to, _value, _data);
@@ -585,7 +585,7 @@ contract StandardToken is ERC20, ERC223, Ownable {
 
 	//function that is called when transaction target is a contract
 	function transferToContract(address _to, uint _value, bytes _data)private returns(bool success) {
-		require(balanceOf(msg.sender) &gt; _value);
+		require(balanceOf(msg.sender) > _value);
 		balances[msg.sender] = balances[msg.sender].sub(_value);
 		balances[_to] = balances[_to].add(_value);
 		ERC223ReceivingContract receiver = ERC223ReceivingContract(_to);
@@ -596,7 +596,7 @@ contract StandardToken is ERC20, ERC223, Ownable {
 
 	//function that is called when transaction target is a contract with custom fallback
 	function transferToContractWithCustomFallback(address _to, uint _value, bytes _data, string _custom_fallback)private returns(bool success) {
-		require(balanceOf(msg.sender) &gt; _value);
+		require(balanceOf(msg.sender) > _value);
 		balances[msg.sender] = balances[msg.sender].sub(_value);
 		balances[_to] = balances[_to].add(_value);
 		assert(_to.call.value(0)(bytes4(keccak256(_custom_fallback)), msg.sender, _value, _data));
@@ -609,7 +609,7 @@ contract StandardToken is ERC20, ERC223, Ownable {
 		totalWeiRaised = totalWeiRaised.add(_raisedWei);
 	}
 	
-	/// @notice `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens
+	/// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
 	/// @param target Address to be frozen
 	/// @param freeze either to freeze it or not
 	function freezeAccount(address target, bool freeze)onlyOwner public {
@@ -625,7 +625,7 @@ contract StandardToken is ERC20, ERC223, Ownable {
 	 * @param _value the amount of money to burn
 	 */
 	function burn(uint256 _value)onlyOwner public returns(bool success) {
-		require(balances[msg.sender] &gt;= _value); // Check if the sender has enough
+		require(balances[msg.sender] >= _value); // Check if the sender has enough
 		balances[msg.sender] = balances[msg.sender].sub(_value); // Subtract from the sender
 		_totalSupply = _totalSupply.sub(_value); // Updates totalSupply
 		emit Burn(msg.sender, _value);
@@ -647,7 +647,7 @@ contract StandardToken is ERC20, ERC223, Ownable {
 		require(this.transfer(owner, balances[this]));
 		uint256 bonusTokens = balances[address(bonusScheme)];
 		balances[address(bonusScheme)] = 0;
-		if (bonusTokens &gt; 0) { // If there are no tokens left in bonus scheme, we do not need transaction.
+		if (bonusTokens > 0) { // If there are no tokens left in bonus scheme, we do not need transaction.
 			balances[owner] = balances[owner].add(bonusTokens);
 			emit Transfer(address(bonusScheme), owner, bonusTokens);
 		}
@@ -678,7 +678,7 @@ contract StandardToken is ERC20, ERC223, Ownable {
 	 * @return Whether funding goal was reached
 	 */
 	function goalReached()public view returns(bool) {
-		return tokensSold &gt;= softCap;
+		return tokensSold >= softCap;
 	}
 
 	/**

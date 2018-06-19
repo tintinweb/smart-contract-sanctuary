@@ -9,22 +9,22 @@ contract DocumentaryContract {
     address owner;
     
     // Get the editor rights of an address
-    mapping (address =&gt; bool) isEditor;
+    mapping (address => bool) isEditor;
 
     // Total number of documents, starts with 1    
     uint128 doccnt;
     
     // Get the author of a document with a given docid
-    mapping (uint128 =&gt; address) docauthor;		                    // docid =&gt; author
+    mapping (uint128 => address) docauthor;		                    // docid => author
     
     // Get visibility of a document with a given docid
-    mapping (uint128 =&gt; bool) isInvisible;		                    // docid =&gt; invisibility
+    mapping (uint128 => bool) isInvisible;		                    // docid => invisibility
     
     // Get the number of documents authored by an address
-    mapping (address =&gt; uint32) userdoccnt;		                    // author =&gt; number docs of user
+    mapping (address => uint32) userdoccnt;		                    // author => number docs of user
     
     // Get the document id that relates to the document number of a given address
-    mapping (address =&gt; mapping (uint32 =&gt; uint128)) userdocid;		// author =&gt; (userdocid =&gt; docid)
+    mapping (address => mapping (uint32 => uint128)) userdocid;		// author => (userdocid => docid)
 
 
     // Documents a new or modified document    
@@ -143,8 +143,8 @@ contract DocumentaryContract {
         userdoccnt[msg.sender]++;
         
         DocumentEvent(doccnt, refid, state, doctime, msg.sender, tags, title, text);
-        for (uint8 i=0; i&lt;taghashes.length; i++) {
-            if (i&gt;=5) break;
+        for (uint8 i=0; i<taghashes.length; i++) {
+            if (i>=5) break;
             if (taghashes[i] != 0) TagEvent(doccnt, msg.sender, taghashes[i], 0);
         }
         doccnt++;

@@ -21,10 +21,10 @@ pragma solidity ^0.4.0;pragma solidity ^0.4.18;
 contract SafeMath {
     function safeAdd(uint a, uint b) public pure returns (uint c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function safeSub(uint a, uint b) public pure returns (uint c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function safeMul(uint a, uint b) public pure returns (uint c) {
@@ -32,7 +32,7 @@ contract SafeMath {
         require(a == 0 || c / a == b);
     }
     function safeDiv(uint a, uint b) public pure returns (uint c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
@@ -105,8 +105,8 @@ contract TipSmart is ERC20Interface, Owned, SafeMath {
     uint8 public decimals;
     uint public _totalSupply;
 
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => uint) balances;
+    mapping(address => mapping(address => uint)) allowed;
 
 
     // ------------------------------------------------------------------------
@@ -234,7 +234,7 @@ contract Ballot {
     }
 
     address chairperson;
-    mapping(address =&gt; Voter) voters;
+    mapping(address => Voter) voters;
     Proposal[] proposals;
 
     /// Create a new ballot with $(_numProposals) different proposals.
@@ -255,7 +255,7 @@ contract Ballot {
     function delegate(address to) public {
         Voter storage sender = voters[msg.sender]; // assigns reference
         if (sender.voted) return;
-        while (voters[to].delegate != address(0) &amp;&amp; voters[to].delegate != msg.sender)
+        while (voters[to].delegate != address(0) && voters[to].delegate != msg.sender)
             to = voters[to].delegate;
         if (to == msg.sender) return;
         sender.voted = true;
@@ -270,7 +270,7 @@ contract Ballot {
     /// Give a single vote to proposal $(toProposal).
     function vote(uint8 toProposal) public {
         Voter storage sender = voters[msg.sender];
-        if (sender.voted || toProposal &gt;= proposals.length) return;
+        if (sender.voted || toProposal >= proposals.length) return;
         sender.voted = true;
         sender.vote = toProposal;
         proposals[toProposal].voteCount += sender.weight;
@@ -278,8 +278,8 @@ contract Ballot {
 
     function winningProposal() public constant returns (uint8 _winningProposal) {
         uint256 winningVoteCount = 0;
-        for (uint8 prop = 0; prop &lt; proposals.length; prop++)
-            if (proposals[prop].voteCount &gt; winningVoteCount) {
+        for (uint8 prop = 0; prop < proposals.length; prop++)
+            if (proposals[prop].voteCount > winningVoteCount) {
                 winningVoteCount = proposals[prop].voteCount;
                 _winningProposal = prop;
             }

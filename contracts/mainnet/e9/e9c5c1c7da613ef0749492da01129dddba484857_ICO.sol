@@ -50,13 +50,13 @@ library SafeMath {
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -102,7 +102,7 @@ contract ICO is Ownable {
     address public multiSigWallet;
     uint256 public tokensSold;
 
-    mapping (address =&gt; uint256) public investmentOf;
+    mapping (address => uint256) public investmentOf;
 
     enum State {FIRST_PRE_ICO, SECOND_PRE_ICO, MAIN_ICO, TERMINATED}
     State public icoState;
@@ -145,7 +145,7 @@ contract ICO is Ownable {
     * executed once the first pre ICO has finished. 
     **/
     function activateSecondPreIco() public onlyOwner {
-        require(now &gt;= endTime &amp;&amp; icoState == State.FIRST_PRE_ICO);
+        require(now >= endTime && icoState == State.FIRST_PRE_ICO);
         icoState = State.SECOND_PRE_ICO;
         endTime = now.add(4 days);
         bonus = 50;
@@ -157,7 +157,7 @@ contract ICO is Ownable {
     * executed once the second pre ICO has finished. 
     **/
     function activateMainIco() public onlyOwner {
-        require(now &gt;= endTime &amp;&amp; icoState == State.SECOND_PRE_ICO);
+        require(now >= endTime && icoState == State.SECOND_PRE_ICO);
         icoState = State.MAIN_ICO;
         mainIcoBonusStages[0] = now.add(7 days);
         mainIcoBonusStages[1] = now.add(14 days);
@@ -174,7 +174,7 @@ contract ICO is Ownable {
     * @param _newTokenPrice The new price per token. 
     **/
     function changeTokenPrice(uint256 _newTokenPrice) public onlyOwner {
-        require(tokenPrice != _newTokenPrice &amp;&amp; _newTokenPrice &gt; 0);
+        require(tokenPrice != _newTokenPrice && _newTokenPrice > 0);
         tokenPrice = _newTokenPrice;
         uint256 eth = 1e18;
         rate = eth.div(tokenPrice);
@@ -187,7 +187,7 @@ contract ICO is Ownable {
     * @param _newRate The new exchange rate
     **/
     function changeRate(uint256 _newRate) public onlyOwner {
-        require(rate != _newRate &amp;&amp; _newRate &gt; 0);
+        require(rate != _newRate && _newRate > 0);
         rate = _newRate;
         uint256 x = 1e12;
         tokenPrice = x.div(rate);
@@ -200,7 +200,7 @@ contract ICO is Ownable {
     * @param _newBonus The new bonus percentage investors will receive.
     **/
     function changeBonus(uint256 _newBonus) public onlyOwner {
-        require(bonus != _newBonus &amp;&amp; _newBonus &gt; 0);
+        require(bonus != _newBonus && _newBonus > 0);
         bonus = _newBonus;
         BonuseChanged(bonus);
     }
@@ -213,8 +213,8 @@ contract ICO is Ownable {
     * @param _value The amount of tokens to be sent.
     **/
     function processOffchainTokenPurchase(address _recipient, uint256 _value) public onlyOwner {
-        require(MSTCOIN.balanceOf(address(this)) &gt;= _value);
-        require(_recipient != 0x0 &amp;&amp; _value &gt; 0);
+        require(MSTCOIN.balanceOf(address(this)) >= _value);
+        require(_recipient != 0x0 && _value > 0);
         MSTCOIN.transfer(_recipient, _value);
         tokensSold = tokensSold.add(_value);
         OffchainPurchaseMade(_recipient, _value);
@@ -234,8 +234,8 @@ contract ICO is Ownable {
     **/
     function buyTokens(address _recipient) public payable {
         uint256 msgVal = msg.value.div(1e12); //because token has 6 decimals
-        require(MSTCOIN.balanceOf(address(this)) &gt;= msgVal.mul(rate.mul(getBonus()).div(100)).add(rate) ) ;
-        require(msg.value &gt;= minInvestment &amp;&amp; withinPeriod());
+        require(MSTCOIN.balanceOf(address(this)) >= msgVal.mul(rate.mul(getBonus()).div(100)).add(rate) ) ;
+        require(msg.value >= minInvestment && withinPeriod());
         require(_recipient != 0x0);
         uint256 toTransfer = msgVal.mul(rate.mul(getBonus()).div(100).add(rate));
         MSTCOIN.transfer(_recipient, toTransfer);
@@ -259,7 +259,7 @@ contract ICO is Ownable {
     * phase has not finished.
     **/
     function withinPeriod() internal view returns(bool) {
-        return IcoPaused == false &amp;&amp; now &lt; endTime &amp;&amp; icoState != State.TERMINATED;
+        return IcoPaused == false && now < endTime && icoState != State.TERMINATED;
     }
 
     /**
@@ -274,15 +274,15 @@ contract ICO is Ownable {
     function getBonus() public view returns(uint256 _bonus) {
         _bonus = bonus;
         if(icoState == State.MAIN_ICO) {
-            if(now &gt; mainIcoBonusStages[3]) {
+            if(now > mainIcoBonusStages[3]) {
                 _bonus = 0;
             } else {
                 uint256 timeStamp = now;
-                for(uint i = 0; i &lt; mainIcoBonusStages.length; i++) {
-                    if(timeStamp &lt;= mainIcoBonusStages[i]) {
+                for(uint i = 0; i < mainIcoBonusStages.length; i++) {
+                    if(timeStamp <= mainIcoBonusStages[i]) {
                         break;
                     } else {
-                        if(_bonus &gt;= 15) {
+                        if(_bonus >= 15) {
                             _bonus = _bonus.sub(10);
                         }
                     }
@@ -302,7 +302,7 @@ contract ICO is Ownable {
     **/
     function withdrawUnsoldTokens(address _recipient) public onlyOwner {
         require(icoState == State.TERMINATED);
-        require(now &gt;= endTime &amp;&amp; MSTCOIN.balanceOf(address(this)) &gt; 0);
+        require(now >= endTime && MSTCOIN.balanceOf(address(this)) > 0);
         if(_recipient == 0x0) { 
             _recipient = owner; 
         }
@@ -346,13 +346,13 @@ contract ICO is Ownable {
         if(icoState == State.MAIN_ICO) {
             uint256 blocks = 0;
             uint256 stage = 0;
-            for(uint i = 0; i &lt; mainIcoBonusStages.length; i++) {
-                if(now &lt; mainIcoBonusStages[i]) {
+            for(uint i = 0; i < mainIcoBonusStages.length; i++) {
+                if(now < mainIcoBonusStages[i]) {
                     stage = i;
                 }
             }
             blocks = (_days.mul(1 days)).div(mainIcoBonusStages.length.sub(stage));
-            for(uint x = stage; x &lt; mainIcoBonusStages.length; x++) {
+            for(uint x = stage; x < mainIcoBonusStages.length; x++) {
                 mainIcoBonusStages[x] = mainIcoBonusStages[x].add(blocks);
             }
         }
@@ -365,20 +365,20 @@ contract ICO is Ownable {
     * @param _days The number of days to reduce the druation of the ICO by. 
     **/
     function shortenDeadline(uint256 _days) public onlyOwner {
-        if(now.add(_days.mul(1 days)) &gt;= endTime) {
+        if(now.add(_days.mul(1 days)) >= endTime) {
             revert();
         } else {
             endTime = endTime.sub(_days.mul(1 days));
             if(icoState == State.MAIN_ICO) {
                 uint256 blocks = 0;
                 uint256 stage = 0;
-                for(uint i = 0; i &lt; mainIcoBonusStages.length; i++) {
-                    if(now &lt; mainIcoBonusStages[i]) {
+                for(uint i = 0; i < mainIcoBonusStages.length; i++) {
+                    if(now < mainIcoBonusStages[i]) {
                         stage = i;
                     }
                 }
                 blocks = (_days.mul(1 days)).div(mainIcoBonusStages.length.sub(stage));
-                for(uint x = stage; x &lt; mainIcoBonusStages.length; x++) {
+                for(uint x = stage; x < mainIcoBonusStages.length; x++) {
                     mainIcoBonusStages[x] = mainIcoBonusStages[x].sub(blocks);
                 }
             }
@@ -392,7 +392,7 @@ contract ICO is Ownable {
     **/
     function terminateIco() public onlyOwner {
         require(icoState == State.MAIN_ICO);
-        require(now &lt; endTime);
+        require(now < endTime);
         endTime = now;
         icoState = State.TERMINATED;
         IcoTerminated(now);
@@ -412,10 +412,10 @@ contract ICO is Ownable {
     * @param _values The list of amounts of tokens to send to each corresponding address.
     **/
     function airdrop(address[] _addrs, uint256[] _values) public onlyOwner returns(bool) {
-        require(_addrs.length == _values.length &amp;&amp; _addrs.length &lt;= 100);
-        require(MSTCOIN.balanceOf(address(this)) &gt;= getSumOfValues(_values));
-        for (uint i = 0; i &lt; _addrs.length; i++) {
-            if (_addrs[i] != 0x0 &amp;&amp; _values[i] &gt; 0) {
+        require(_addrs.length == _values.length && _addrs.length <= 100);
+        require(MSTCOIN.balanceOf(address(this)) >= getSumOfValues(_values));
+        for (uint i = 0; i < _addrs.length; i++) {
+            if (_addrs[i] != 0x0 && _values[i] > 0) {
                 MSTCOIN.transfer(_addrs[i], _values[i]);
             }
         }
@@ -431,7 +431,7 @@ contract ICO is Ownable {
     **/
     function getSumOfValues(uint256[] _values) internal pure returns(uint256) {
         uint256 sum = 0;
-        for(uint i=0; i &lt; _values.length; i++) {
+        for(uint i=0; i < _values.length; i++) {
             sum = sum.add(_values[i]);
         }
         return sum;

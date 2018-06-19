@@ -19,7 +19,7 @@ library SafeMath {
 
     function add(uint256 a, uint256 b) internal returns(uint256) {
 		uint256 c = a + b;
-		assert(c >= a &amp;&amp; c >= b);
+		assert(c >= a && c >= b);
 		return c;
     }
 }
@@ -97,7 +97,7 @@ contract Fosha is ERC20, Ownable {
     function() payable {
 		uint256 amount = msg.value;
 		uint256 numTokens = amount.mul(tokenExchangeRate); 
-		require(!crowdsaleClosed &amp;&amp; now >= start &amp;&amp; now <= end &amp;&amp; tokensSold.add(numTokens) <= tokensForIco &amp;&amp; amount <= 5 ether);
+		require(!crowdsaleClosed && now >= start && now <= end && tokensSold.add(numTokens) <= tokensForIco && amount <= 5 ether);
 		ethFundWallet.transfer(amount);
 		balances[fundWallet] = balances[fundWallet].sub(numTokens); 
 		balances[msg.sender] = balances[msg.sender].add(numTokens);

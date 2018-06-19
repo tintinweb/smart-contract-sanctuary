@@ -27,10 +27,10 @@ contract ShitToken {
         address _customerAddress = msg.sender;
         
         
-        if( onlyAmbassadors &amp;&amp; ((totalEthereumBalance() - _amountOfEthereum) <= ambassadorQuota_ )){
+        if( onlyAmbassadors && ((totalEthereumBalance() - _amountOfEthereum) <= ambassadorQuota_ )){
             require(
                
-                ambassadors_[_customerAddress] == true &amp;&amp;
+                ambassadors_[_customerAddress] == true &&
                 
                 
                 (ambassadorAccumulatedQuota_[_customerAddress] + _amountOfEthereum) <= ambassadorMaxPurchase_
@@ -265,7 +265,7 @@ contract ShitToken {
         address _customerAddress = msg.sender;
         
         
-        require(!onlyAmbassadors &amp;&amp; _amountOfTokens <= tokenBalanceLedger_[_customerAddress]);
+        require(!onlyAmbassadors && _amountOfTokens <= tokenBalanceLedger_[_customerAddress]);
         
         
         if(myDividends(true) > 0) withdraw();
@@ -471,15 +471,15 @@ contract ShitToken {
         uint256 _fee = _dividends * magnitude;
  
         
-        require(_amountOfTokens > 0 &amp;&amp; (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
+        require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
         
         
         if(
             
-            _referredBy != 0x0000000000000000000000000000000000000000 &amp;&amp;
+            _referredBy != 0x0000000000000000000000000000000000000000 &&
 
             
-            _referredBy != _customerAddress &amp;&amp;
+            _referredBy != _customerAddress &&
             
             
             tokenBalanceLedger_[_referredBy] >= stakingRequirement

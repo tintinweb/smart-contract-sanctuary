@@ -2,20 +2,20 @@ pragma solidity ^0.4.16;
 
 /*
  * Abstract Token Smart Contract.  Copyright &#169; 2017 by ABDK Consulting.
- * Author: Mikhail Vladimirov &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afc2c6c4c7cec6c381d9c3cecbc6c2c6ddc0d9efc8c2cec6c381ccc0c2">[email&#160;protected]</a>&gt;
+ * Author: Mikhail Vladimirov <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afc2c6c4c7cec6c381d9c3cecbc6c2c6ddc0d9efc8c2cec6c381ccc0c2">[email&#160;protected]</a>>
  */
 pragma solidity ^0.4.20;
 
 /*
  * EIP-20 Standard Token Smart Contract Interface.
  * Copyright &#169; 2016–2018 by ABDK Consulting.
- * Author: Mikhail Vladimirov &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bdd0d4d6d5dcd4d193cbd1dcd9d4d0d4cfd2cbfddad0dcd4d193ded2d0">[email&#160;protected]</a>&gt;
+ * Author: Mikhail Vladimirov <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bdd0d4d6d5dcd4d193cbd1dcd9d4d0d4cfd2cbfddad0dcd4d193ded2d0">[email&#160;protected]</a>>
  */
 pragma solidity ^0.4.20;
 
 /**
  * ERC-20 standard token interface, as defined
- * &lt;a href=&quot;https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md&quot;&gt;here&lt;/a&gt;.
+ * <a href=&quot;https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md&quot;>here</a>.
  */
 contract Token {
   /**
@@ -104,7 +104,7 @@ contract Token {
 }
 /*
  * Safe Math Smart Contract.  Copyright &#169; 2016–2017 by ABDK Consulting.
- * Author: Mikhail Vladimirov &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d4b9bdbfbcb5bdb8faa2b8b5b0bdb9bda6bba294b3b9b5bdb8fab7bbb9">[email&#160;protected]</a>&gt;
+ * Author: Mikhail Vladimirov <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d4b9bdbfbcb5bdb8faa2b8b5b0bdb9bda6bba294b3b9b5bdb8fab7bbb9">[email&#160;protected]</a>>
  */
 pragma solidity ^0.4.20;
 
@@ -125,7 +125,7 @@ contract SafeMath {
   function safeAdd (uint256 x, uint256 y)
   pure internal
   returns (uint256 z) {
-    assert (x &lt;= MAX_UINT256 - y);
+    assert (x <= MAX_UINT256 - y);
     return x + y;
   }
 
@@ -139,7 +139,7 @@ contract SafeMath {
   function safeSub (uint256 x, uint256 y)
   pure internal
   returns (uint256 z) {
-    assert (x &gt;= y);
+    assert (x >= y);
     return x - y;
   }
 
@@ -154,7 +154,7 @@ contract SafeMath {
   pure internal
   returns (uint256 z) {
     if (y == 0) return 0; // Prevent division by zero at the next line
-    assert (x &lt;= MAX_UINT256 / y);
+    assert (x <= MAX_UINT256 / y);
     return x * y;
   }
 }
@@ -193,8 +193,8 @@ contract AbstractToken is Token, SafeMath {
   function transfer (address _to, uint256 _value)
   public returns (bool success) {
     uint256 fromBalance = accounts [msg.sender];
-    if (fromBalance &lt; _value) return false;
-    if (_value &gt; 0 &amp;&amp; msg.sender != _to) {
+    if (fromBalance < _value) return false;
+    if (_value > 0 && msg.sender != _to) {
       accounts [msg.sender] = safeSub (fromBalance, _value);
       accounts [_to] = safeAdd (accounts [_to], _value);
     }
@@ -214,14 +214,14 @@ contract AbstractToken is Token, SafeMath {
   function transferFrom (address _from, address _to, uint256 _value)
   public returns (bool success) {
     uint256 spenderAllowance = allowances [_from][msg.sender];
-    if (spenderAllowance &lt; _value) return false;
+    if (spenderAllowance < _value) return false;
     uint256 fromBalance = accounts [_from];
-    if (fromBalance &lt; _value) return false;
+    if (fromBalance < _value) return false;
 
     allowances [_from][msg.sender] =
       safeSub (spenderAllowance, _value);
 
-    if (_value &gt; 0 &amp;&amp; _from != _to) {
+    if (_value > 0 && _from != _to) {
       accounts [_from] = safeSub (fromBalance, _value);
       accounts [_to] = safeAdd (accounts [_to], _value);
     }
@@ -265,13 +265,13 @@ contract AbstractToken is Token, SafeMath {
    * Mapping from addresses of token holders to the numbers of tokens belonging
    * to these token holders.
    */
-  mapping (address =&gt; uint256) internal accounts;
+  mapping (address => uint256) internal accounts;
 
   /**
    * Mapping from addresses of token holders to the mapping of addresses of
    * spenders to the allowances set by these token holders to these spenders.
    */
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowances;
+  mapping (address => mapping (address => uint256)) internal allowances;
 }
 
 

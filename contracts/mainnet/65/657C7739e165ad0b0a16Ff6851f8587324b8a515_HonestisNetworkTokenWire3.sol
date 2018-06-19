@@ -39,7 +39,7 @@ contract SafeMath {
 
   function safeAdd(uint a, uint b) internal returns (uint) {
     uint c = a + b;
-    assert(c>=a &amp;&amp; c>=b);
+    assert(c>=a && c>=b);
     return c;
   }
 
@@ -117,7 +117,7 @@ contract StandardToken is ERC20, SafeMath {
     //  allowance to zero by calling `approve(_spender, 0)` if it is not
     //  already 0 to mitigate the race condition described here:
     //  https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-    if ((_value != 0) &amp;&amp; (allowed[msg.sender][_spender] != 0)) throw;
+    if ((_value != 0) && (allowed[msg.sender][_spender] != 0)) throw;
 
     allowed[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);
@@ -192,8 +192,8 @@ uint256 public constant supply = 3300000.0 ether;
     //Default assumes totalSupply can&#39;t be over max (2^256 - 1).
     //If your token leaves out totalSupply and can issue more tokens as time goes on, you need to check if it doesn&#39;t wrap.
     //Replace the if with this one instead.
-    if (balances[msg.sender] >= _value &amp;&amp; balances[_to] + _value > balances[_to]) {
-    //if (balances[msg.sender] >= _value &amp;&amp; _value > 0) {
+    if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
+    //if (balances[msg.sender] >= _value && _value > 0) {
       balances[msg.sender] -= _value;
       balances[_to] += _value;
       Transfer(msg.sender, _to, _value);
@@ -203,8 +203,8 @@ uint256 public constant supply = 3300000.0 ether;
 
   function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
     //same as above. Replace this line with the following if you want to protect against wrapping uints.
-    if (balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value &amp;&amp; balances[_to] + _value > balances[_to]) {
-    //if (balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value &amp;&amp; _value > 0) {
+    if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
+    //if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0) {
       balances[_to] += _value;
       balances[_from] -= _value;
       allowed[_from][msg.sender] -= _value;

@@ -72,37 +72,37 @@ contract SafeMath {
   }
 
   function safeDiv(uint a, uint b) internal returns (uint) {
-    assert(b &gt; 0);
+    assert(b > 0);
     uint c = a / b;
     assert(a == b * c + a % b);
     return c;
   }
 
   function safeSub(uint a, uint b) internal returns (uint) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function safeAdd(uint a, uint b) internal returns (uint) {
     uint c = a + b;
-    assert(c&gt;=a &amp;&amp; c&gt;=b);
+    assert(c>=a && c>=b);
     return c;
   }
 
   function max64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
   function max256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
 }
@@ -151,10 +151,10 @@ contract StandardToken is ERC20, SafeMath {
   event Minted(address receiver, uint amount);
 
   /* Actual balances of token holders */
-  mapping(address =&gt; uint) balances;
+  mapping(address => uint) balances;
 
   /* approve() allowances */
-  mapping (address =&gt; mapping (address =&gt; uint)) allowed;
+  mapping (address => mapping (address => uint)) allowed;
 
   /* Interface declaration */
   function isToken() public constant returns (bool weAre) {
@@ -188,7 +188,7 @@ contract StandardToken is ERC20, SafeMath {
     //  allowance to zero by calling `approve(_spender, 0)` if it is not
     //  already 0 to mitigate the race condition described here:
     //  https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-    if ((_value != 0) &amp;&amp; (allowed[msg.sender][_spender] != 0)) throw;
+    if ((_value != 0) && (allowed[msg.sender][_spender] != 0)) throw;
 
     allowed[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);
@@ -382,7 +382,7 @@ contract ReleasableToken is ERC20, Ownable {
   bool public released = false;
 
   /** Map of agents that are allowed to transfer tokens regardless of the lock down period. These are crowdsale contracts and possible the team multisig itself. */
-  mapping (address =&gt; bool) public transferAgents;
+  mapping (address => bool) public transferAgents;
 
   /**
    * Limit token transfer until the crowdsale is over.
@@ -486,20 +486,20 @@ library SafeMathLibExt {
   }
 
   function divides(uint a, uint b) returns (uint) {
-    assert(b &gt; 0);
+    assert(b > 0);
     uint c = a / b;
     assert(a == b * c + a % b);
     return c;
   }
 
   function minus(uint a, uint b) returns (uint) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function plus(uint a, uint b) returns (uint) {
     uint c = a + b;
-    assert(c&gt;=a);
+    assert(c>=a);
     return c;
   }
 
@@ -522,7 +522,7 @@ contract MintableTokenExt is StandardToken, Ownable {
   bool public mintingFinished = false;
 
   /** List of agents that are allowed to create new tokens */
-  mapping (address =&gt; bool) public mintAgents;
+  mapping (address => bool) public mintAgents;
 
   event MintingAgentChanged(address addr, bool state  );
 
@@ -539,7 +539,7 @@ contract MintableTokenExt is StandardToken, Ownable {
     bool isDistributed;
   }
 
-  mapping (address =&gt; ReservedTokensData) public reservedTokensList;
+  mapping (address => ReservedTokensData) public reservedTokensList;
   address[] public reservedTokensDestinations;
   uint public reservedTokensDestinationsLen = 0;
   bool reservedTokensDestinationsAreSet = false;
@@ -593,7 +593,7 @@ contract MintableTokenExt is StandardToken, Ownable {
     assert(addrs.length == inTokens.length);
     assert(inTokens.length == inPercentageUnit.length);
     assert(inPercentageUnit.length == inPercentageDecimals.length);
-    for (uint iterator = 0; iterator &lt; addrs.length; iterator++) {
+    for (uint iterator = 0; iterator < addrs.length; iterator++) {
       if (addrs[iterator] != address(0)) {
         setReservedTokensList(addrs[iterator], inTokens[iterator], inPercentageUnit[iterator], inPercentageDecimals[iterator]);
       }
@@ -699,7 +699,7 @@ contract CrowdsaleTokenExt is ReleasableToken, MintableTokenExt, UpgradeableToke
     // Create initially all balance on the team multisig
     balances[owner] = totalSupply;
 
-    if(totalSupply &gt; 0) {
+    if(totalSupply > 0) {
       Minted(owner, totalSupply);
     }
 
@@ -724,7 +724,7 @@ contract CrowdsaleTokenExt is ReleasableToken, MintableTokenExt, UpgradeableToke
    * Allow upgrade agent functionality kick in only if the crowdsale was success.
    */
   function canUpgrade() public constant returns(bool) {
-    return released &amp;&amp; super.canUpgrade();
+    return released && super.canUpgrade();
   }
 
   /**

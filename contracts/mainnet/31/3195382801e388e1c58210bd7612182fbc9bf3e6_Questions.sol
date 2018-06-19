@@ -117,11 +117,11 @@ contract Questions {
     }
     
     function placeQuestion(uint paymentForAnswer, uint8 maxAnswers, uint minVoteWeight, string text) external payable {
-        require(maxAnswers > 0 &amp;&amp; maxAnswers <= 32);
+        require(maxAnswers > 0 && maxAnswers <= 32);
         require(msg.value == safeMul(paymentForAnswer, safeAdd(maxAnswers, 1)));
         require(paymentForAnswer >= safeAdd(minPaymentForAnswer, safeMul(minVoteWeight, minVoteWeightK)));
         uint len = bytes(text).length;
-        require(len > 0 &amp;&amp; len <= 1024);
+        require(len > 0 && len <= 1024);
         
         uint realPaymentForAnswer = paymentForAnswer / 2;
         uint realPaymentForVote = realPaymentForAnswer / votesForAnswer;
@@ -151,7 +151,7 @@ contract Questions {
         require(questions[questionId].creator != msg.sender);
         require(!answers[questionId][msg.sender].placed);
         uint len = bytes(text).length;
-        require(len > 0 &amp;&amp; len <= 1024);
+        require(len > 0 && len <= 1024);
         require(questions[questionId].answerCount < questions[questionId].maxAnswers);
         require(voteWeight[msg.sender] >= questions[questionId].minVoteWeight);
         

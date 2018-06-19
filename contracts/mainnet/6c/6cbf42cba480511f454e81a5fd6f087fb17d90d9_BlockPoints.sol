@@ -16,9 +16,9 @@ uint8 public decimals;
 uint256 public totalSupply;
 
 /*user coin balance*/
-mapping (address =&gt; uint256) public balances;
+mapping (address => uint256) public balances;
 /*user coin allowances*/
-mapping(address =&gt; mapping (address =&gt; uint256)) public allowed;
+mapping(address => mapping (address => uint256)) public allowed;
 
 /*EVENTS*/		
 /*broadcast token transfers on the blockchain*/
@@ -41,9 +41,9 @@ function _transfer(address _from, address _to, uint _value) internal {
 /*prevent transfer to invalid address*/    
 if(_to == 0x0) revert();
 /*check if the sender has enough value to send*/
-if(balances[_from] &lt; _value) revert(); 
+if(balances[_from] < _value) revert(); 
 /*check for overflows*/
-if(balances[_to] + _value &lt; balances[_to]) revert();
+if(balances[_to] + _value < balances[_to]) revert();
 /*compute sending and receiving balances before transfer*/
 uint PreviousBalances = balances[_from] + balances[_to];
 /*substract from sender*/
@@ -75,7 +75,7 @@ return true;
 function transferFrom(address _from, address _to, uint256 _value) 
 external returns (bool success) {
 /*check if the message sender can spend*/
-require(_value &lt;= allowed[_from][msg.sender]); 
+require(_value <= allowed[_from][msg.sender]); 
 /*substract from message sender&#39;s spend allowance*/
 allowed[_from][msg.sender] -= _value;
 /*transfer tokens*/
@@ -158,17 +158,17 @@ uint256 n5;
 Process pr;
 
 /*global operational record*/
-mapping (address =&gt; Global) public global;
+mapping (address => Global) public global;
 /*user coin balances*/
-mapping (address =&gt; uint256) public balances;
+mapping (address => uint256) public balances;
 /*list of authorised dapps*/
-mapping (address =&gt; DApps) public dapps;
+mapping (address => DApps) public dapps;
 /*special exchange rates for block points*/
-mapping(address =&gt; mapping(address =&gt; Coloured)) public coloured;
+mapping(address => mapping(address => Coloured)) public coloured;
 /*list of authorised admins*/
-mapping (address =&gt; Admin) public admin;
+mapping (address => Admin) public admin;
 /*comms address book*/
-mapping (address =&gt; AddressBook) public addressbook;
+mapping (address => AddressBook) public addressbook;
 
 
 /*MINT FIRST TOKEN*/
@@ -185,7 +185,7 @@ event BrodMint(address indexed from, address indexed enduser, uint256 amount);
 /*broadcast buring of tokens*/
 event BrodBurn(address indexed from, address indexed enduser, uint256 amount);
 
-/*RECEIVE APPROVAL &amp; WITHDRAW TOC TOKENS*/
+/*RECEIVE APPROVAL & WITHDRAW TOC TOKENS*/
 function receiveApproval(address _from, uint256 _value, 
 address _token, bytes _extraData) external returns(bool){ 
 TOC
@@ -197,8 +197,8 @@ return true;
 /*AUTHORISE ADMINS*/
 function AuthAdmin (address _admin, bool _authority, uint256 _level) external 
 returns(bool){
-if((msg.sender != Mars) &amp;&amp; (msg.sender != Mercury) &amp;&amp; (msg.sender != Europa) &amp;&amp;
-(msg.sender != Jupiter) &amp;&amp; (msg.sender != Neptune)) revert();      
+if((msg.sender != Mars) && (msg.sender != Mercury) && (msg.sender != Europa) &&
+(msg.sender != Jupiter) && (msg.sender != Neptune)) revert();      
 admin[_admin].Authorised = _authority;
 admin[_admin].Level = _level;
 return true;
@@ -207,7 +207,7 @@ return true;
 /*ADD ADDRESSES TO ADDRESS BOOK*/
 function AuthAddr(address _tocaddr) external returns(bool){
 if(admin[msg.sender].Authorised == false) revert();
-if(admin[msg.sender].Level &lt; 3 ) revert();
+if(admin[msg.sender].Level < 3 ) revert();
 addressbook[ContractAddr].TOCAddr = _tocaddr;
 return true;
 }
@@ -216,7 +216,7 @@ return true;
 function AuthDapps (address _dapp, bool _mint, bool _burn, bool _rate) external 
 returns(bool){
 if(admin[msg.sender].Authorised == false) revert();
-if(admin[msg.sender].Level &lt; 5) revert();
+if(admin[msg.sender].Level < 5) revert();
 dapps[_dapp].AuthoriseMint = _mint;
 dapps[_dapp].AuthoriseBurn = _burn;
 dapps[_dapp].AuthoriseRate = _rate;
@@ -226,7 +226,7 @@ return true;
 /*SUSPEND CONVERSIONS*/
 function AuthSuspend (bool _suspend) external returns(bool){
 if(admin[msg.sender].Authorised == false) revert();
-if(admin[msg.sender].Level &lt; 3) revert();
+if(admin[msg.sender].Level < 3) revert();
 global[ContractAddr].Suspend = _suspend;
 return true;
 }
@@ -234,7 +234,7 @@ return true;
 /*SET GLOBAL RATE*/
 function SetRate (uint256 _globalrate) external returns(bool){
 if(admin[msg.sender].Authorised == false) revert();
-if(admin[msg.sender].Level &lt; 5) revert();
+if(admin[msg.sender].Level < 5) revert();
 global[ContractAddr].Rate = _globalrate;
 return true;
 }
@@ -268,12 +268,12 @@ return true;
 function ConvertBkp(uint256 b_amount) external returns (bool){
 /*conduct integrity check*/
 require(global[ContractAddr].Suspend == false);
-require(b_amount &gt; 0);
-require(global[ContractAddr].Rate &gt; 0);
+require(b_amount > 0);
+require(global[ContractAddr].Rate > 0);
 /*compute expected balance after conversion*/
 pr.n1 = sub(balances[msg.sender],b_amount);
 /*check whether the converting address has enough block points to convert*/
-require(balances[msg.sender] &gt;= b_amount); 
+require(balances[msg.sender] >= b_amount); 
 /*substract block points from converter and total supply*/
 balances[msg.sender] -= b_amount;
 TotalSupply -= b_amount;
@@ -293,12 +293,12 @@ return true;
 function ConvertColouredBkp(address _dapp) external returns (bool){
 /*conduct integrity check*/
 require(global[ContractAddr].Suspend == false);
-require(coloured[msg.sender][_dapp].Rate &gt; 0);
+require(coloured[msg.sender][_dapp].Rate > 0);
 /*determine conversion amount*/
 uint256 b_amount = coloured[msg.sender][_dapp].Amount;
-require(b_amount &gt; 0);
+require(b_amount > 0);
 /*check whether the converting address has enough block points to convert*/
-require(balances[msg.sender] &gt;= b_amount); 
+require(balances[msg.sender] >= b_amount); 
 /*compute expected balance after conversion*/
 pr.n3 = sub(coloured[msg.sender][_dapp].Amount,b_amount);
 pr.n4 = sub(balances[msg.sender],b_amount);
@@ -324,7 +324,7 @@ function Burn(address b_to, uint256 b_amount) external returns (bool){
 /*check if dapp can burn blockpoints*/    
 if(dapps[msg.sender].AuthoriseBurn == false) revert();    
 /*check whether the burning address has enough block points to burn*/
-require(balances[b_to] &gt;= b_amount); 
+require(balances[b_to] >= b_amount); 
 /*substract blockpoints from burning address balance*/
 balances[b_to] -= b_amount;
 /*substract blockpoints from total supply*/
@@ -341,7 +341,7 @@ assert(a == 0 || c / a == b);
 return c;
   }
 function sub(uint256 a, uint256 b) public pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }  
   

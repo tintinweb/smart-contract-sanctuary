@@ -200,7 +200,7 @@ contract Crowdsale is Ownable {
   GoldenCurrencyToken public token = new GoldenCurrencyToken();
   
     modifier saleIsOn() {
-        require(now > start &amp;&amp; now < finish);
+        require(now > start && now < finish);
         _;
     }
 
@@ -238,9 +238,9 @@ contract Crowdsale is Ownable {
 
     if(now < period2) {
       bonusTokens = tokens.div(4);
-    } else if(now >= period2 &amp;&amp; now < period3) {
+    } else if(now >= period2 && now < period3) {
       bonusTokens = tokens.div(5);
-    } else if(now >= period3 &amp;&amp; now < finish) {
+    } else if(now >= period3 && now < finish) {
       bonusTokens = tokens.div(100).mul(15);
     }
 

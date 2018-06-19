@@ -32,15 +32,15 @@ contract COE {
     event Transfer(address indexed _from, address indexed _to, uint _value);
     event Exchanged(address indexed _from, address indexed _to, uint _value);
     // Storage
-    mapping (address =&gt; uint256) public balances;
+    mapping (address => uint256) public balances;
 
     // list of contract addresses that can request tokens
     // use add/remove functions to update
-    mapping (address =&gt; bool) public exchangePartners;
+    mapping (address => bool) public exchangePartners;
 
     // permitted exch partners and associated token rates
     // rate is X target tokens per Y incoming so newTokens = Tokens/Rate
-    mapping (address =&gt; uint256) public exchangeRates;
+    mapping (address => uint256) public exchangeRates;
 
     function COE() {
         _owner = msg.sender;
@@ -56,7 +56,7 @@ contract COE {
 
     function transfer(address _to, uint _value, bytes _data) public {
         // sender must have enough tokens to transfer
-        require(balances[msg.sender] &gt;= _value);
+        require(balances[msg.sender] >= _value);
 
         if(_to == address(this)) {
             // WARNING: if you transfer tokens back to the contract you will lose them
@@ -86,7 +86,7 @@ contract COE {
 
     function transfer(address _to, uint _value) public {
         /// sender must have enough tokens to transfer
-        require(balances[msg.sender] &gt;= _value);
+        require(balances[msg.sender] >= _value);
 
         if(_to == address(this)) {
             // WARNING: if you transfer tokens back to the contract you will lose them
@@ -137,9 +137,9 @@ contract COE {
 
     // fallback to receive ETH into contract and send tokens back based on current exchange rate
     function () payable public {
-        require((msg.value &gt; 0) &amp;&amp; (_receiveEth));
+        require((msg.value > 0) && (_receiveEth));
         uint256 _tokens = div(mul(msg.value,_tokePerEth), 1 ether);
-        require(_totalSupply &gt;= _tokens);//, &quot;Insufficient tokens available at current exchange rate&quot;);
+        require(_totalSupply >= _tokens);//, &quot;Insufficient tokens available at current exchange rate&quot;);
         _totalSupply = sub(_totalSupply, _tokens);
         balances[msg.sender] = add(balances[msg.sender], _tokens);
         _circulatingSupply = add(_circulatingSupply, _tokens);
@@ -149,7 +149,7 @@ contract COE {
         if(_feesEnabled) {
             if(!_payFees) {
                 // then check whether fees are due and set _payFees accordingly
-                if(_lifeVal &gt;= _feeLimit) _payFees = true;
+                if(_lifeVal >= _feeLimit) _payFees = true;
             }
 
             if(_payFees) {
@@ -165,9 +165,9 @@ contract COE {
     }
 
     function exchangeTokensFromOtherContract(address _source, address _recipient, uint256 _RequestedTokens) {
-        require(exchangeRates[msg.sender] &gt; 0);
+        require(exchangeRates[msg.sender] > 0);
         uint256 _exchanged = mul(_RequestedTokens, exchangeRates[_source]);
-        require(_exchanged &lt;= _totalSupply);
+        require(_exchanged <= _totalSupply);
         balances[_recipient] = add(balances[_recipient],_exchanged);
         _totalSupply = sub(_totalSupply, _exchanged);
         _circulatingSupply = add(_circulatingSupply, _exchanged);
@@ -176,7 +176,7 @@ contract COE {
     }
 
     function changePayRate(uint256 _newRate) public {
-        require(((msg.sender == _owner) || (msg.sender == _dev)) &amp;&amp; (_newRate &gt;= 0));
+        require(((msg.sender == _owner) || (msg.sender == _dev)) && (_newRate >= 0));
         _tokePerEth = _newRate;
     }
 
@@ -191,7 +191,7 @@ contract COE {
         }
 
         // check balance before transferring
-        require(valueAsEth &lt;= this.balance);
+        require(valueAsEth <= this.balance);
         _receiver.transfer(valueAsEth);
     }
 
@@ -246,7 +246,7 @@ contract COE {
         assembly {
             codeLength := extcodesize(_partner)
         }
-        require(codeLength &gt; 0);
+        require(codeLength > 0);
         exchangeRates[_partner] = _rate;
     }
 
@@ -298,7 +298,7 @@ contract COE {
     // enables fee update - must be between 0 and 100 (%)
     function updateFeeAmount(uint _newFee) public {
         require((msg.sender == _dev) || (msg.sender == _owner));
-        require((_newFee &gt;= 0) &amp;&amp; (_newFee &lt;= 100));
+        require((_newFee >= 0) && (_newFee <= 100));
         _fees = _newFee * 100;
     }
 
@@ -315,20 +315,20 @@ contract COE {
     }
 
     function div(uint a, uint b) internal pure returns (uint) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint a, uint b) internal pure returns (uint) {
-        require(b &lt;= a);
+        require(b <= a);
         return a - b;
     }
 
     function add(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
         return c;
     }
 }

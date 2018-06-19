@@ -50,7 +50,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value > 0 &amp;&amp; _value <= balances[msg.sender]);
+    require(_value > 0 && _value <= balances[msg.sender]);
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -93,7 +93,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value > 0 &amp;&amp; _value <= balances[_from]);
+    require(_value > 0 && _value <= balances[_from]);
     require(_value <= allowed[_from][msg.sender]);
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -220,7 +220,7 @@ contract BecToken is PausableToken {
     /**
     * Public variables of the token
     * The following variables are OPTIONAL vanities. One does not have to include them.
-    * They allow one to customise the token contract &amp; in no way influences the core functionality.
+    * They allow one to customise the token contract & in no way influences the core functionality.
     * Some wallets/interfaces might not even bother to look at this information.
     */
     string public name = &quot;BeautyChain&quot;;

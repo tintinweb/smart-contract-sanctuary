@@ -433,10 +433,10 @@ contract Sale is Configurable, Bonuses{
     }
 
     function validPurchase() internal constant returns (bool) {
-        bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+        bool withinPeriod = now >= startTime && now <= endTime;
         bool nonZeroPurchase = msg.value != 0;
         bool minimalPriceChecked = msg.value >= minimalPrice;
-        return withinPeriod &amp;&amp; nonZeroPurchase &amp;&amp; minimalPriceChecked &amp;&amp; activated &amp;&amp; !closed;
+        return withinPeriod && nonZeroPurchase && minimalPriceChecked && activated && !closed;
     }
 
     function isStarted() public constant returns (bool) {

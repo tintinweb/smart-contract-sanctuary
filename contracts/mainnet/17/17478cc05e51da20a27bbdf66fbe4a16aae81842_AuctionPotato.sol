@@ -29,7 +29,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -39,7 +39,7 @@ library SafeMath {
     * @dev Substracts two numbers, returns 0 if it would go into minus range.
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        if (b &gt;= a) {
+        if (b >= a) {
             return 0;
         }
         return a - b;
@@ -50,7 +50,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -88,7 +88,7 @@ contract AuctionPotato {
     bool blockerPay;
     bool blockerWithdraw;
     
-    mapping(address =&gt; uint256) public fundsByBidder;
+    mapping(address => uint256) public fundsByBidder;
     bool ownerHasWithdrawn;
 
     event LogBid(address bidder, address highestBidder, uint oldHighestBindingBid, uint highestBindingBid);
@@ -127,7 +127,7 @@ contract AuctionPotato {
     // this should not be used, query endTime once and then calculate it in your frontend
     // it&#39;s helpful when you want to debug in remix
     function timeLeft() public view returns (uint time) {
-        if (now &gt;= endTime) return 0;
+        if (now >= endTime) return 0;
         return endTime - now;
     }
     
@@ -231,7 +231,7 @@ contract AuctionPotato {
         }
         
         // owner can withdraw once auction is cancelled or ended
-        if (ownerHasWithdrawn == false &amp;&amp; msg.sender == owner &amp;&amp; (canceled == true || now &gt; endTime)) {
+        if (ownerHasWithdrawn == false && msg.sender == owner && (canceled == true || now > endTime)) {
             withdrawalAccount = owner;
             withdrawalAmount = highestBindingBid.sub(oldPotato);
             ownerHasWithdrawn = true;
@@ -242,14 +242,14 @@ contract AuctionPotato {
         
         // overbid people can withdraw their bid + profit
         // exclude owner because he is set above
-        if (!canceled &amp;&amp; (msg.sender != highestBidder &amp;&amp; msg.sender != owner)) {
+        if (!canceled && (msg.sender != highestBidder && msg.sender != owner)) {
             withdrawalAccount = msg.sender;
             withdrawalAmount = fundsByBidder[withdrawalAccount];
             fundsByBidder[withdrawalAccount] = 0;
         }
 
         // highest bidder can withdraw leftovers if he didn&#39;t before
-        if (!canceled &amp;&amp; msg.sender == highestBidder &amp;&amp; msg.sender != owner) {
+        if (!canceled && msg.sender == highestBidder && msg.sender != owner) {
             withdrawalAccount = msg.sender;
             withdrawalAmount = fundsByBidder[withdrawalAccount].sub(oldHighestBindingBid);
             fundsByBidder[withdrawalAccount] = fundsByBidder[withdrawalAccount].sub(withdrawalAmount);
@@ -294,12 +294,12 @@ contract AuctionPotato {
     }
 
     modifier onlyAfterStart {
-        if (now &lt; startTime) revert();
+        if (now < startTime) revert();
         _;
     }
 
     modifier onlyBeforeEnd {
-        if (now &gt; endTime) revert();
+        if (now > endTime) revert();
         _;
     }
 

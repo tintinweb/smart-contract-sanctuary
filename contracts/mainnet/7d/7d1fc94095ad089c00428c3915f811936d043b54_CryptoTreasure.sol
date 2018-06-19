@@ -659,12 +659,12 @@ contract usingOraclize {
             iaddr *= 256;
             b1 = uint160(tmp[i]);
             b2 = uint160(tmp[i+1]);
-            if ((b1 >= 97)&amp;&amp;(b1 <= 102)) b1 -= 87;
-            else if ((b1 >= 65)&amp;&amp;(b1 <= 70)) b1 -= 55;
-            else if ((b1 >= 48)&amp;&amp;(b1 <= 57)) b1 -= 48;
-            if ((b2 >= 97)&amp;&amp;(b2 <= 102)) b2 -= 87;
-            else if ((b2 >= 65)&amp;&amp;(b2 <= 70)) b2 -= 55;
-            else if ((b2 >= 48)&amp;&amp;(b2 <= 57)) b2 -= 48;
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 65)&&(b1 <= 70)) b1 -= 55;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 65)&&(b2 <= 70)) b2 -= 55;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
             iaddr += (b1*16+b2);
         }
         return address(iaddr);
@@ -703,7 +703,7 @@ contract usingOraclize {
                 if (h[i] == n[0])
                 {
                     subindex = 1;
-                    while(subindex < n.length &amp;&amp; (i + subindex) < h.length &amp;&amp; h[i + subindex] == n[subindex])
+                    while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
                     {
                         subindex++;
                     }
@@ -755,7 +755,7 @@ contract usingOraclize {
         uint mint = 0;
         bool decimals = false;
         for (uint i=0; i<bresult.length; i++){
-            if ((bresult[i] >= 48)&amp;&amp;(bresult[i] <= 57)){
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
                 if (decimals){
                    if (_b == 0) break;
                     else _b--;
@@ -1158,7 +1158,7 @@ contract usingOraclize {
         if (v < 27)
           v += 27;
 
-        if (v != 27 &amp;&amp; v != 28)
+        if (v != 27 && v != 28)
             return (false, 0);
 
         return safer_ecrecover(hash, v, r, s);
@@ -1240,7 +1240,7 @@ contract CryptoTreasure is Pausable, Destructible, usingOraclize {
 	}
 
 	function participate(uint8 _spot) public payable whenNotPaused {
-    require(_spot >= 1 &amp;&amp; _spot <= numberOfSpots);
+    require(_spot >= 1 && _spot <= numberOfSpots);
     require(msg.value == playPrice);
 
 		uint _restake = msg.value / 100 / 100 * restakePercent;
@@ -1366,7 +1366,7 @@ contract CryptoTreasure is Pausable, Destructible, usingOraclize {
 		uint totalUnfinished = 0;
 		uint i = 0;
 		for (i = 0; i < currentGame; i++) {
-			if (games[i].Ended == false &amp;&amp; games[i].Id > 0)
+			if (games[i].Ended == false && games[i].Id > 0)
 				totalUnfinished++;
 		}
 		uint[] memory arrId = new uint[](totalUnfinished);
@@ -1377,7 +1377,7 @@ contract CryptoTreasure is Pausable, Destructible, usingOraclize {
 		address[] memory arrPlayer = new address[](totalUnfinished);
 		uint g = 0;
 		for (i = 0; i < currentGame; i++) {
-			if (games[i].Ended == false &amp;&amp; games[i].Id > 0) {
+			if (games[i].Ended == false && games[i].Id > 0) {
 				arrId[g] = games[i].Id;
 				arrDate[g] = games[i].Date;
 				arrSpot[g] = games[i].Spot;

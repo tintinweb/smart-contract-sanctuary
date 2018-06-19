@@ -1,8 +1,8 @@
 // File: vendors/strings.sol
 
 /*
- * @title String &amp; slice utility library for Solidity contracts.
- * @author Nick Johnson &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3e5f4c5f5d5650575a7e50514a5a514a10505b4a">[email&#160;protected]</a>&gt;
+ * @title String & slice utility library for Solidity contracts.
+ * @author Nick Johnson <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3e5f4c5f5d5650575a7e50514a5a514a10505b4a">[email&#160;protected]</a>>
  *
  * @dev Functionality in this library is largely implemented using an
  *      abstraction called a &#39;slice&#39;. A slice represents a part of a string -
@@ -46,7 +46,7 @@ library strings {
 
     function memcpy(uint dest, uint src, uint len) private {
         // Copy word-length chunks while possible
-        for(; len &gt;= 32; len -= 32) {
+        for(; len >= 32; len -= 32) {
             assembly {
                 mstore(dest, mload(src))
             }
@@ -85,23 +85,23 @@ library strings {
         uint ret;
         if (self == 0)
             return 0;
-        if (self &amp; 0xffffffffffffffffffffffffffffffff == 0) {
+        if (self & 0xffffffffffffffffffffffffffffffff == 0) {
             ret += 16;
             self = bytes32(uint(self) / 0x100000000000000000000000000000000);
         }
-        if (self &amp; 0xffffffffffffffff == 0) {
+        if (self & 0xffffffffffffffff == 0) {
             ret += 8;
             self = bytes32(uint(self) / 0x10000000000000000);
         }
-        if (self &amp; 0xffffffff == 0) {
+        if (self & 0xffffffff == 0) {
             ret += 4;
             self = bytes32(uint(self) / 0x100000000);
         }
-        if (self &amp; 0xffff == 0) {
+        if (self & 0xffff == 0) {
             ret += 2;
             self = bytes32(uint(self) / 0x10000);
         }
-        if (self &amp; 0xff == 0) {
+        if (self & 0xff == 0) {
             ret += 1;
         }
         return 32 - ret;
@@ -160,18 +160,18 @@ library strings {
         // Starting at ptr-31 means the LSB will be the byte we care about
         var ptr = self._ptr - 31;
         var end = ptr + self._len;
-        for (uint len = 0; ptr &lt; end; len++) {
+        for (uint len = 0; ptr < end; len++) {
             uint8 b;
             assembly { b := and(mload(ptr), 0xFF) }
-            if (b &lt; 0x80) {
+            if (b < 0x80) {
                 ptr += 1;
-            } else if(b &lt; 0xE0) {
+            } else if(b < 0xE0) {
                 ptr += 2;
-            } else if(b &lt; 0xF0) {
+            } else if(b < 0xF0) {
                 ptr += 3;
-            } else if(b &lt; 0xF8) {
+            } else if(b < 0xF8) {
                 ptr += 4;
-            } else if(b &lt; 0xFC) {
+            } else if(b < 0xFC) {
                 ptr += 5;
             } else {
                 ptr += 6;
@@ -200,12 +200,12 @@ library strings {
      */
     function compare(slice self, slice other) internal returns (int) {
         uint shortest = self._len;
-        if (other._len &lt; self._len)
+        if (other._len < self._len)
             shortest = other._len;
 
         var selfptr = self._ptr;
         var otherptr = other._ptr;
-        for (uint idx = 0; idx &lt; shortest; idx += 32) {
+        for (uint idx = 0; idx < shortest; idx += 32) {
             uint a;
             uint b;
             assembly {
@@ -215,7 +215,7 @@ library strings {
             if (a != b) {
                 // Mask out irrelevant bytes and check again
                 uint mask = ~(2 ** (8 * (32 - shortest + idx)) - 1);
-                var diff = (a &amp; mask) - (b &amp; mask);
+                var diff = (a & mask) - (b & mask);
                 if (diff != 0)
                     return int(diff);
             }
@@ -254,18 +254,18 @@ library strings {
         uint b;
         // Load the first byte of the rune into the LSBs of b
         assembly { b := and(mload(sub(mload(add(self, 32)), 31)), 0xFF) }
-        if (b &lt; 0x80) {
+        if (b < 0x80) {
             len = 1;
-        } else if(b &lt; 0xE0) {
+        } else if(b < 0xE0) {
             len = 2;
-        } else if(b &lt; 0xF0) {
+        } else if(b < 0xF0) {
             len = 3;
         } else {
             len = 4;
         }
 
         // Check for truncated codepoints
-        if (len &gt; self._len) {
+        if (len > self._len) {
             rune._len = self._len;
             self._ptr += self._len;
             self._len = 0;
@@ -305,33 +305,33 @@ library strings {
         // Load the rune into the MSBs of b
         assembly { word:= mload(mload(add(self, 32))) }
         var b = word / div;
-        if (b &lt; 0x80) {
+        if (b < 0x80) {
             ret = b;
             len = 1;
-        } else if(b &lt; 0xE0) {
-            ret = b &amp; 0x1F;
+        } else if(b < 0xE0) {
+            ret = b & 0x1F;
             len = 2;
-        } else if(b &lt; 0xF0) {
-            ret = b &amp; 0x0F;
+        } else if(b < 0xF0) {
+            ret = b & 0x0F;
             len = 3;
         } else {
-            ret = b &amp; 0x07;
+            ret = b & 0x07;
             len = 4;
         }
 
         // Check for truncated codepoints
-        if (len &gt; self._len) {
+        if (len > self._len) {
             return 0;
         }
 
-        for (uint i = 1; i &lt; len; i++) {
+        for (uint i = 1; i < len; i++) {
             div = div / 256;
-            b = (word / div) &amp; 0xFF;
-            if (b &amp; 0xC0 != 0x80) {
+            b = (word / div) & 0xFF;
+            if (b & 0xC0 != 0x80) {
                 // Invalid UTF-8 sequence
                 return 0;
             }
-            ret = (ret * 64) | (b &amp; 0x3F);
+            ret = (ret * 64) | (b & 0x3F);
         }
 
         return ret;
@@ -355,7 +355,7 @@ library strings {
      * @return True if the slice starts with the provided text, false otherwise.
      */
     function startsWith(slice self, slice needle) internal returns (bool) {
-        if (self._len &lt; needle._len) {
+        if (self._len < needle._len) {
             return false;
         }
 
@@ -381,7 +381,7 @@ library strings {
      * @return `self`
      */
     function beyond(slice self, slice needle) internal returns (slice) {
-        if (self._len &lt; needle._len) {
+        if (self._len < needle._len) {
             return self;
         }
 
@@ -410,7 +410,7 @@ library strings {
      * @return True if the slice starts with the provided text, false otherwise.
      */
     function endsWith(slice self, slice needle) internal returns (bool) {
-        if (self._len &lt; needle._len) {
+        if (self._len < needle._len) {
             return false;
         }
 
@@ -438,7 +438,7 @@ library strings {
      * @return `self`
      */
     function until(slice self, slice needle) internal returns (slice) {
-        if (self._len &lt; needle._len) {
+        if (self._len < needle._len) {
             return self;
         }
 
@@ -465,8 +465,8 @@ library strings {
         uint ptr;
         uint idx;
 
-        if (needlelen &lt;= selflen) {
-            if (needlelen &lt;= 32) {
+        if (needlelen <= selflen) {
+            if (needlelen <= 32) {
                 // Optimized assembly for 68 gas per byte on short strings
                 assembly {
                     let mask := not(sub(exp(2, mul(8, sub(32, needlelen))), 1))
@@ -486,7 +486,7 @@ library strings {
                 bytes32 hash;
                 assembly { hash := sha3(needleptr, needlelen) }
                 ptr = selfptr;
-                for (idx = 0; idx &lt;= selflen - needlelen; idx++) {
+                for (idx = 0; idx <= selflen - needlelen; idx++) {
                     bytes32 testHash;
                     assembly { testHash := sha3(ptr, needlelen) }
                     if (hash == testHash)
@@ -503,8 +503,8 @@ library strings {
     function rfindPtr(uint selflen, uint selfptr, uint needlelen, uint needleptr) private returns (uint) {
         uint ptr;
 
-        if (needlelen &lt;= selflen) {
-            if (needlelen &lt;= 32) {
+        if (needlelen <= selflen) {
+            if (needlelen <= 32) {
                 // Optimized assembly for 69 gas per byte on short strings
                 assembly {
                     let mask := not(sub(exp(2, mul(8, sub(32, needlelen))), 1))
@@ -526,7 +526,7 @@ library strings {
                 bytes32 hash;
                 assembly { hash := sha3(needleptr, needlelen) }
                 ptr = selfptr + (selflen - needlelen);
-                while (ptr &gt;= selfptr) {
+                while (ptr >= selfptr) {
                     bytes32 testHash;
                     assembly { testHash := sha3(ptr, needlelen) }
                     if (hash == testHash)
@@ -648,7 +648,7 @@ library strings {
      */
     function count(slice self, slice needle) internal returns (uint count) {
         uint ptr = findPtr(self._len, self._ptr, needle._len, needle._ptr) + needle._len;
-        while (ptr &lt;= self._ptr + self._len) {
+        while (ptr <= self._ptr + self._len) {
             count++;
             ptr = findPtr(self._len - (ptr - self._ptr), ptr, needle._len, needle._ptr) + needle._len;
         }
@@ -693,17 +693,17 @@ library strings {
             return &quot;&quot;;
 
         uint len = self._len * (parts.length - 1);
-        for(uint i = 0; i &lt; parts.length; i++)
+        for(uint i = 0; i < parts.length; i++)
             len += parts[i]._len;
 
         var ret = new string(len);
         uint retptr;
         assembly { retptr := add(ret, 32) }
 
-        for(i = 0; i &lt; parts.length; i++) {
+        for(i = 0; i < parts.length; i++) {
             memcpy(retptr, parts[i]._ptr, parts[i]._len);
             retptr += parts[i]._len;
-            if (i &lt; parts.length - 1) {
+            if (i < parts.length - 1) {
                 memcpy(retptr, self._ptr, self._len);
                 retptr += self._len;
             }
@@ -758,7 +758,7 @@ contract FlightDelayConstants {
     * General events
     */
 
-// --&gt; test-mode
+// --> test-mode
 //        event LogUint(string _message, uint _uint);
 //        event LogUintEth(string _message, uint ethUint);
 //        event LogUintTime(string _message, uint timeUint);
@@ -770,7 +770,7 @@ contract FlightDelayConstants {
 //        event LogString(string _message, string _string);
 //        event LogBool(string _message, bool _bool);
 //        event Log(address);
-// &lt;-- test-mode
+// <-- test-mode
 
     event LogPolicyApplied(
         uint _policyId,
@@ -887,21 +887,21 @@ contract FlightDelayConstants {
         50
     ];
 
-// --&gt; prod-mode
+// --> prod-mode
     // DEFINITIONS FOR ROPSTEN AND MAINNET
     // minimum time before departure for applying
     uint constant MIN_TIME_BEFORE_DEPARTURE	= 24 hours; // for production
     // check for delay after .. minutes after scheduled arrival
     uint constant CHECK_PAYOUT_OFFSET = 15 minutes; // for production
-// &lt;-- prod-mode
+// <-- prod-mode
 
-// --&gt; test-mode
+// --> test-mode
 //        // DEFINITIONS FOR LOCAL TESTNET
 //        // minimum time before departure for applying
 //        uint constant MIN_TIME_BEFORE_DEPARTURE = 1 seconds; // for testing
 //        // check for delay after .. minutes after scheduled arrival
 //        uint constant CHECK_PAYOUT_OFFSET = 1 seconds; // for testing
-// &lt;-- test-mode
+// <-- test-mode
 
     // maximum duration of flight
     uint constant MAX_FLIGHT_DURATION = 2 days;
@@ -917,7 +917,7 @@ contract FlightDelayConstants {
     * URLs and query strings for oraclize
     */
 
-// --&gt; prod-mode
+// --> prod-mode
     // DEFINITIONS FOR ROPSTEN AND MAINNET
     string constant ORACLIZE_RATINGS_BASE_URL =
         // ratings api is v1, see https://developer.flightstats.com/api-docs/ratings/v1
@@ -929,10 +929,10 @@ contract FlightDelayConstants {
         &quot;[URL] json(https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/&quot;;
     string constant ORACLIZE_STATUS_QUERY =
         // pattern:
-        &quot;?${[decrypt] BI/xJBm/c0rYFpApw5ZoBJCRsVkPHwUgnbbtWTW18wMIC5zLHw8M3MJhf0041kLFqx/i2jj4aIQLX2sNSkm91/PDKydmtP1OOs1XQtAD4DB/mTlLiHcMy63XxoRngHr0ZRR4WBJQKkifhepmgiCht7VlXiYNclpZ0RGqmcndFs5pywIyvfAh}&amp;utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
-// &lt;-- prod-mode
+        &quot;?${[decrypt] BI/xJBm/c0rYFpApw5ZoBJCRsVkPHwUgnbbtWTW18wMIC5zLHw8M3MJhf0041kLFqx/i2jj4aIQLX2sNSkm91/PDKydmtP1OOs1XQtAD4DB/mTlLiHcMy63XxoRngHr0ZRR4WBJQKkifhepmgiCht7VlXiYNclpZ0RGqmcndFs5pywIyvfAh}&utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
+// <-- prod-mode
 
-// --&gt; test-mode
+// --> test-mode
 //        // DEFINITIONS FOR LOCAL TESTNET
 //        string constant ORACLIZE_RATINGS_BASE_URL =
 //            // ratings api is v1, see https://developer.flightstats.com/api-docs/ratings/v1
@@ -946,7 +946,7 @@ contract FlightDelayConstants {
 //        string constant ORACLIZE_STATUS_QUERY =
 //            // for testrpc:
 //            &quot;?utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
-// &lt;-- test-mode
+// <-- test-mode
 }
 
 // File: contracts/FlightDelayControllerInterface.sol
@@ -1008,7 +1008,7 @@ contract FlightDelayDatabaseModel {
     //					        customer by the oracle.
     // 03 = PaidOut:	  The flight has ended with delay.
     //					        The oracle has checked and payed out.
-    // 04 = Expired:	  The flight has endet with &lt;15min. delay.
+    // 04 = Expired:	  The flight has endet with <15min. delay.
     //					        No payout.
     // 05 = Declined:	  The application was invalid.
     //					        The premium minus cancellation fee is payed back to the
@@ -1268,7 +1268,7 @@ contract FlightDelayLedgerInterface is FlightDelayDatabaseModel {
 
 // File: vendors/usingOraclize.sol
 
-// &lt;ORACLIZE_API&gt;
+// <ORACLIZE_API>
 /*
 Copyright (c) 2015-2016 Oraclize SRL
 Copyright (c) 2016 Oraclize LTD
@@ -1298,7 +1298,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-pragma solidity ^0.4.0;//please import oraclizeAPI_pre0.4.sol when solidity &lt; 0.4.0
+pragma solidity ^0.4.0;//please import oraclizeAPI_pre0.4.sol when solidity < 0.4.0
 
 contract OraclizeI {
     address public cbAddress;
@@ -1350,35 +1350,35 @@ contract usingOraclize {
     }
 
     function oraclize_setNetwork(uint8 networkID) internal returns(bool){
-        if (getCodeSize(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed)&gt;0){ //mainnet
+        if (getCodeSize(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed)>0){ //mainnet
             OAR = OraclizeAddrResolverI(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed);
             oraclize_setNetworkName(&quot;eth_mainnet&quot;);
             return true;
         }
-        if (getCodeSize(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1)&gt;0){ //ropsten testnet
+        if (getCodeSize(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1)>0){ //ropsten testnet
             OAR = OraclizeAddrResolverI(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1);
             oraclize_setNetworkName(&quot;eth_ropsten3&quot;);
             return true;
         }
-        if (getCodeSize(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e)&gt;0){ //kovan testnet
+        if (getCodeSize(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e)>0){ //kovan testnet
             OAR = OraclizeAddrResolverI(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e);
             oraclize_setNetworkName(&quot;eth_kovan&quot;);
             return true;
         }
-        if (getCodeSize(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48)&gt;0){ //rinkeby testnet
+        if (getCodeSize(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48)>0){ //rinkeby testnet
             OAR = OraclizeAddrResolverI(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48);
             oraclize_setNetworkName(&quot;eth_rinkeby&quot;);
             return true;
         }
-        if (getCodeSize(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475)&gt;0){ //ethereum-bridge
+        if (getCodeSize(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475)>0){ //ethereum-bridge
             OAR = OraclizeAddrResolverI(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475);
             return true;
         }
-        if (getCodeSize(0x20e12A1F859B3FeaE5Fb2A0A32C18F5a65555bBF)&gt;0){ //ether.camp ide
+        if (getCodeSize(0x20e12A1F859B3FeaE5Fb2A0A32C18F5a65555bBF)>0){ //ether.camp ide
             OAR = OraclizeAddrResolverI(0x20e12A1F859B3FeaE5Fb2A0A32C18F5a65555bBF);
             return true;
         }
-        if (getCodeSize(0x51efaF4c8B3C9AfBD5aB9F4bbC82784Ab6ef8fAA)&gt;0){ //browser-solidity
+        if (getCodeSize(0x51efaF4c8B3C9AfBD5aB9F4bbC82784Ab6ef8fAA)>0){ //browser-solidity
             OAR = OraclizeAddrResolverI(0x51efaF4c8B3C9AfBD5aB9F4bbC82784Ab6ef8fAA);
             return true;
         }
@@ -1405,65 +1405,65 @@ contract usingOraclize {
 
     function oraclize_query(string datasource, string arg) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         return oraclize.query.value(price)(0, datasource, arg);
     }
     function oraclize_query(uint timestamp, string datasource, string arg) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         return oraclize.query.value(price)(timestamp, datasource, arg);
     }
     function oraclize_query(uint timestamp, string datasource, string arg, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         return oraclize.query_withGasLimit.value(price)(timestamp, datasource, arg, gaslimit);
     }
     function oraclize_query(string datasource, string arg, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         return oraclize.query_withGasLimit.value(price)(0, datasource, arg, gaslimit);
     }
     function oraclize_query(string datasource, string arg1, string arg2) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         return oraclize.query2.value(price)(0, datasource, arg1, arg2);
     }
     function oraclize_query(uint timestamp, string datasource, string arg1, string arg2) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         return oraclize.query2.value(price)(timestamp, datasource, arg1, arg2);
     }
     function oraclize_query(uint timestamp, string datasource, string arg1, string arg2, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         return oraclize.query2_withGasLimit.value(price)(timestamp, datasource, arg1, arg2, gaslimit);
     }
     function oraclize_query(string datasource, string arg1, string arg2, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         return oraclize.query2_withGasLimit.value(price)(0, datasource, arg1, arg2, gaslimit);
     }
     function oraclize_query(string datasource, string[] argN) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         bytes memory args = stra2cbor(argN);
         return oraclize.queryN.value(price)(0, datasource, args);
     }
     function oraclize_query(uint timestamp, string datasource, string[] argN) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         bytes memory args = stra2cbor(argN);
         return oraclize.queryN.value(price)(timestamp, datasource, args);
     }
     function oraclize_query(uint timestamp, string datasource, string[] argN, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         bytes memory args = stra2cbor(argN);
         return oraclize.queryN_withGasLimit.value(price)(timestamp, datasource, args, gaslimit);
     }
     function oraclize_query(string datasource, string[] argN, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         bytes memory args = stra2cbor(argN);
         return oraclize.queryN_withGasLimit.value(price)(0, datasource, args, gaslimit);
     }
@@ -1611,25 +1611,25 @@ contract usingOraclize {
     }
     function oraclize_query(string datasource, bytes[] argN) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         bytes memory args = ba2cbor(argN);
         return oraclize.queryN.value(price)(0, datasource, args);
     }
     function oraclize_query(uint timestamp, string datasource, bytes[] argN) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource);
-        if (price &gt; 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*200000) return 0; // unexpectedly high price
         bytes memory args = ba2cbor(argN);
         return oraclize.queryN.value(price)(timestamp, datasource, args);
     }
     function oraclize_query(uint timestamp, string datasource, bytes[] argN, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         bytes memory args = ba2cbor(argN);
         return oraclize.queryN_withGasLimit.value(price)(timestamp, datasource, args, gaslimit);
     }
     function oraclize_query(string datasource, bytes[] argN, uint gaslimit) oraclizeAPI internal returns (bytes32 id){
         uint price = oraclize.getPrice(datasource, gaslimit);
-        if (price &gt; 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
+        if (price > 1 ether + tx.gasprice*gaslimit) return 0; // unexpectedly high price
         bytes memory args = ba2cbor(argN);
         return oraclize.queryN_withGasLimit.value(price)(0, datasource, args, gaslimit);
     }
@@ -1804,16 +1804,16 @@ contract usingOraclize {
         uint160 iaddr = 0;
         uint160 b1;
         uint160 b2;
-        for (uint i=2; i&lt;2+2*20; i+=2){
+        for (uint i=2; i<2+2*20; i+=2){
             iaddr *= 256;
             b1 = uint160(tmp[i]);
             b2 = uint160(tmp[i+1]);
-            if ((b1 &gt;= 97)&amp;&amp;(b1 &lt;= 102)) b1 -= 87;
-            else if ((b1 &gt;= 65)&amp;&amp;(b1 &lt;= 70)) b1 -= 55;
-            else if ((b1 &gt;= 48)&amp;&amp;(b1 &lt;= 57)) b1 -= 48;
-            if ((b2 &gt;= 97)&amp;&amp;(b2 &lt;= 102)) b2 -= 87;
-            else if ((b2 &gt;= 65)&amp;&amp;(b2 &lt;= 70)) b2 -= 55;
-            else if ((b2 &gt;= 48)&amp;&amp;(b2 &lt;= 57)) b2 -= 48;
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 65)&&(b1 <= 70)) b1 -= 55;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 65)&&(b2 <= 70)) b2 -= 55;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
             iaddr += (b1*16+b2);
         }
         return address(iaddr);
@@ -1823,15 +1823,15 @@ contract usingOraclize {
         bytes memory a = bytes(_a);
         bytes memory b = bytes(_b);
         uint minLength = a.length;
-        if (b.length &lt; minLength) minLength = b.length;
-        for (uint i = 0; i &lt; minLength; i ++)
-            if (a[i] &lt; b[i])
+        if (b.length < minLength) minLength = b.length;
+        for (uint i = 0; i < minLength; i ++)
+            if (a[i] < b[i])
                 return -1;
-            else if (a[i] &gt; b[i])
+            else if (a[i] > b[i])
                 return 1;
-        if (a.length &lt; b.length)
+        if (a.length < b.length)
             return -1;
-        else if (a.length &gt; b.length)
+        else if (a.length > b.length)
             return 1;
         else
             return 0;
@@ -1840,19 +1840,19 @@ contract usingOraclize {
     function indexOf(string _haystack, string _needle) internal returns (int) {
         bytes memory h = bytes(_haystack);
         bytes memory n = bytes(_needle);
-        if(h.length &lt; 1 || n.length &lt; 1 || (n.length &gt; h.length))
+        if(h.length < 1 || n.length < 1 || (n.length > h.length))
             return -1;
-        else if(h.length &gt; (2**128 -1))
+        else if(h.length > (2**128 -1))
             return -1;
         else
         {
             uint subindex = 0;
-            for (uint i = 0; i &lt; h.length; i ++)
+            for (uint i = 0; i < h.length; i ++)
             {
                 if (h[i] == n[0])
                 {
                     subindex = 1;
-                    while(subindex &lt; n.length &amp;&amp; (i + subindex) &lt; h.length &amp;&amp; h[i + subindex] == n[subindex])
+                    while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
                     {
                         subindex++;
                     }
@@ -1873,11 +1873,11 @@ contract usingOraclize {
         string memory abcde = new string(_ba.length + _bb.length + _bc.length + _bd.length + _be.length);
         bytes memory babcde = bytes(abcde);
         uint k = 0;
-        for (uint i = 0; i &lt; _ba.length; i++) babcde[k++] = _ba[i];
-        for (i = 0; i &lt; _bb.length; i++) babcde[k++] = _bb[i];
-        for (i = 0; i &lt; _bc.length; i++) babcde[k++] = _bc[i];
-        for (i = 0; i &lt; _bd.length; i++) babcde[k++] = _bd[i];
-        for (i = 0; i &lt; _be.length; i++) babcde[k++] = _be[i];
+        for (uint i = 0; i < _ba.length; i++) babcde[k++] = _ba[i];
+        for (i = 0; i < _bb.length; i++) babcde[k++] = _bb[i];
+        for (i = 0; i < _bc.length; i++) babcde[k++] = _bc[i];
+        for (i = 0; i < _bd.length; i++) babcde[k++] = _bd[i];
+        for (i = 0; i < _be.length; i++) babcde[k++] = _be[i];
         return string(babcde);
     }
 
@@ -1903,8 +1903,8 @@ contract usingOraclize {
         bytes memory bresult = bytes(_a);
         uint mint = 0;
         bool decimals = false;
-        for (uint i=0; i&lt;bresult.length; i++){
-            if ((bresult[i] &gt;= 48)&amp;&amp;(bresult[i] &lt;= 57)){
+        for (uint i=0; i<bresult.length; i++){
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
                 if (decimals){
                    if (_b == 0) break;
                     else _b--;
@@ -1913,7 +1913,7 @@ contract usingOraclize {
                 mint += uint(bresult[i]) - 48;
             } else if (bresult[i] == 46) decimals = true;
         }
-        if (_b &gt; 0) mint *= 10**_b;
+        if (_b > 0) mint *= 10**_b;
         return mint;
     }
 
@@ -1940,7 +1940,7 @@ contract usingOraclize {
             // get correct cbor output length
             uint outputlen = 0;
             bytes[] memory elemArray = new bytes[](arrlen);
-            for (uint i = 0; i &lt; arrlen; i++) {
+            for (uint i = 0; i < arrlen; i++) {
                 elemArray[i] = (bytes(arr[i]));
                 outputlen += elemArray[i].length + (elemArray[i].length - 1)/23 + 3; //+3 accounts for paired identifier types
             }
@@ -1949,20 +1949,20 @@ contract usingOraclize {
             outputlen += byte(cborlen).length;
             bytes memory res = new bytes(outputlen);
 
-            while (byte(cborlen).length &gt; ctr) {
+            while (byte(cborlen).length > ctr) {
                 res[ctr] = byte(cborlen)[ctr];
                 ctr++;
             }
-            for (i = 0; i &lt; arrlen; i++) {
+            for (i = 0; i < arrlen; i++) {
                 res[ctr] = 0x5F;
                 ctr++;
-                for (uint x = 0; x &lt; elemArray[i].length; x++) {
+                for (uint x = 0; x < elemArray[i].length; x++) {
                     // if there&#39;s a bug with larger strings, this may be the culprit
                     if (x % 23 == 0) {
-                        uint elemcborlen = elemArray[i].length - x &gt;= 24 ? 23 : elemArray[i].length - x;
+                        uint elemcborlen = elemArray[i].length - x >= 24 ? 23 : elemArray[i].length - x;
                         elemcborlen += 0x40;
                         uint lctr = ctr;
-                        while (byte(elemcborlen).length &gt; ctr - lctr) {
+                        while (byte(elemcborlen).length > ctr - lctr) {
                             res[ctr] = byte(elemcborlen)[ctr - lctr];
                             ctr++;
                         }
@@ -1982,7 +1982,7 @@ contract usingOraclize {
             // get correct cbor output length
             uint outputlen = 0;
             bytes[] memory elemArray = new bytes[](arrlen);
-            for (uint i = 0; i &lt; arrlen; i++) {
+            for (uint i = 0; i < arrlen; i++) {
                 elemArray[i] = (bytes(arr[i]));
                 outputlen += elemArray[i].length + (elemArray[i].length - 1)/23 + 3; //+3 accounts for paired identifier types
             }
@@ -1991,20 +1991,20 @@ contract usingOraclize {
             outputlen += byte(cborlen).length;
             bytes memory res = new bytes(outputlen);
 
-            while (byte(cborlen).length &gt; ctr) {
+            while (byte(cborlen).length > ctr) {
                 res[ctr] = byte(cborlen)[ctr];
                 ctr++;
             }
-            for (i = 0; i &lt; arrlen; i++) {
+            for (i = 0; i < arrlen; i++) {
                 res[ctr] = 0x5F;
                 ctr++;
-                for (uint x = 0; x &lt; elemArray[i].length; x++) {
+                for (uint x = 0; x < elemArray[i].length; x++) {
                     // if there&#39;s a bug with larger strings, this may be the culprit
                     if (x % 23 == 0) {
-                        uint elemcborlen = elemArray[i].length - x &gt;= 24 ? 23 : elemArray[i].length - x;
+                        uint elemcborlen = elemArray[i].length - x >= 24 ? 23 : elemArray[i].length - x;
                         elemcborlen += 0x40;
                         uint lctr = ctr;
-                        while (byte(elemcborlen).length &gt; ctr - lctr) {
+                        while (byte(elemcborlen).length > ctr - lctr) {
                             res[ctr] = byte(elemcborlen)[ctr - lctr];
                             ctr++;
                         }
@@ -2029,7 +2029,7 @@ contract usingOraclize {
     }
 
     function oraclize_newRandomDSQuery(uint _delay, uint _nbytes, uint _customGasLimit) internal returns (bytes32){
-        if ((_nbytes == 0)||(_nbytes &gt; 32)) throw;
+        if ((_nbytes == 0)||(_nbytes > 32)) throw;
         bytes memory nbytes = new bytes(1);
         nbytes[0] = byte(_nbytes);
         bytes memory unonce = new bytes(32);
@@ -2051,8 +2051,8 @@ contract usingOraclize {
         oraclize_randomDS_args[queryId] = commitment;
     }
 
-    mapping(bytes32=&gt;bytes32) oraclize_randomDS_args;
-    mapping(bytes32=&gt;bool) oraclize_randomDS_sessionKeysHashVerified;
+    mapping(bytes32=>bytes32) oraclize_randomDS_args;
+    mapping(bytes32=>bool) oraclize_randomDS_sessionKeysHashVerified;
 
     function verifySig(bytes32 tosignh, bytes dersig, bytes pubkey) internal returns (bool){
         bool sigok;
@@ -2140,7 +2140,7 @@ contract usingOraclize {
     function matchBytes32Prefix(bytes32 content, bytes prefix) internal returns (bool){
         bool match_ = true;
 
-        for (var i=0; i&lt;prefix.length; i++){
+        for (var i=0; i<prefix.length; i++){
             if (content[i] != prefix[i]) match_ = false;
         }
 
@@ -2201,7 +2201,7 @@ contract usingOraclize {
     function copyBytes(bytes from, uint fromOffset, uint length, bytes to, uint toOffset) internal returns (bytes) {
         uint minLength = length + toOffset;
 
-        if (to.length &lt; minLength) {
+        if (to.length < minLength) {
             // Buffer too small
             throw; // Should be a better way?
         }
@@ -2210,7 +2210,7 @@ contract usingOraclize {
         uint i = 32 + fromOffset;
         uint j = 32 + toOffset;
 
-        while (i &lt; (32 + fromOffset + length)) {
+        while (i < (32 + fromOffset + length)) {
             assembly {
                 let tmp := mload(add(from, i))
                 mstore(add(to, j), tmp)
@@ -2283,17 +2283,17 @@ contract usingOraclize {
         //
         // geth uses [0, 1] and some clients have followed. This might change, see:
         //  https://github.com/ethereum/go-ethereum/issues/2053
-        if (v &lt; 27)
+        if (v < 27)
           v += 27;
 
-        if (v != 27 &amp;&amp; v != 28)
+        if (v != 27 && v != 28)
             return (false, 0);
 
         return safer_ecrecover(hash, v, r, s);
     }
 
 }
-// &lt;/ORACLIZE_API&gt;
+// </ORACLIZE_API>
 
 // File: contracts/FlightDelayOraclizeInterface.sol
 
@@ -2312,9 +2312,9 @@ pragma solidity ^0.4.11;
 contract FlightDelayOraclizeInterface is usingOraclize {
 
     modifier onlyOraclizeOr (address _emergency) {
-// --&gt; prod-mode
+// --> prod-mode
         require(msg.sender == oraclize_cbAddress() || msg.sender == _emergency);
-// &lt;-- prod-mode
+// <-- prod-mode
         _;
     }
 }
@@ -2373,7 +2373,7 @@ contract ConvertLib {
         bytes memory bytesString = new bytes(32);
         uint charCount = 0;
 
-        for (uint j = 0; j &lt; 32; j++) {
+        for (uint j = 0; j < 32; j++) {
             byte char = byte(bytes32(uint(x) * 2 ** (8 * j)));
             if (char != 0) {
                 bytesString[charCount] = char;
@@ -2383,7 +2383,7 @@ contract ConvertLib {
 
         bytes memory bytesStringTrimmed = new bytes(charCount);
 
-        for (j = 0; j &lt; charCount; j++) {
+        for (j = 0; j < charCount; j++) {
             bytesStringTrimmed[j] = bytesString[j];
         }
 
@@ -2392,14 +2392,14 @@ contract ConvertLib {
 
     function b32toHexString(bytes32 x) returns (string) {
         bytes memory b = new bytes(64);
-        for (uint i = 0; i &lt; 32; i++) {
+        for (uint i = 0; i < 32; i++) {
             uint8 by = uint8(uint(x) / (2**(8*(31 - i))));
             uint8 high = by/16;
             uint8 low = by - 16*high;
-            if (high &gt; 9) {
+            if (high > 9) {
                 high += 39;
             }
-            if (low &gt; 9) {
+            if (low > 9) {
                 low += 39;
             }
             b[2*i] = byte(high+48);
@@ -2418,8 +2418,8 @@ contract ConvertLib {
         bytes memory bresult = bytes(_a);
         uint mint = 0;
         bool decimals = false;
-        for (uint i = 0; i&lt;bresult.length; i++) {
-            if ((bresult[i] &gt;= 48)&amp;&amp;(bresult[i] &lt;= 57)) {
+        for (uint i = 0; i<bresult.length; i++) {
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)) {
                 if (decimals) {
                     if (_b == 0) {
                         break;
@@ -2433,7 +2433,7 @@ contract ConvertLib {
                 decimals = true;
             }
         }
-        if (_b &gt; 0) {
+        if (_b > 0) {
             mint *= 10**_b;
         }
         return mint;
@@ -2583,9 +2583,9 @@ contract FlightDelayPayout is FlightDelayControlledContract, FlightDelayConstant
 
         bytes32 riskId = FD_DB.getRiskId(policyId);
 
-// --&gt; debug-mode
+// --> debug-mode
 //            LogBytes32(&quot;riskId&quot;, riskId);
-// &lt;-- debug-mode
+// <-- debug-mode
 
         var slResult = _result.toSlice();
 
@@ -2603,14 +2603,14 @@ contract FlightDelayPayout is FlightDelayControlledContract, FlightDelayConstant
             slResult.until(slResult.copy().find(&quot;\&quot;&quot;.toSlice()));
             bytes1 status = bytes(slResult.toString())[0];	// s = L
             if (status == &quot;C&quot;) {
-                // flight cancelled --&gt; payout
+                // flight cancelled --> payout
                 payOut(policyId, 4, 0);
                 return;
             } else if (status == &quot;D&quot;) {
-                // flight diverted --&gt; payout
+                // flight diverted --> payout
                 payOut(policyId, 5, 0);
                 return;
-            } else if (status != &quot;L&quot; &amp;&amp; status != &quot;A&quot; &amp;&amp; status != &quot;C&quot; &amp;&amp; status != &quot;D&quot;) {
+            } else if (status != &quot;L&quot; && status != &quot;A&quot; && status != &quot;C&quot; && status != &quot;D&quot;) {
                 LogPolicyManualPayout(policyId, &quot;Unprocessable status&quot;);
                 return;
             }
@@ -2619,14 +2619,14 @@ contract FlightDelayPayout is FlightDelayControlledContract, FlightDelayConstant
             slResult = _result.toSlice();
             bool arrived = slResult.contains(&quot;actualGateArrival&quot;.toSlice());
 
-            if (status == &quot;A&quot; || (status == &quot;L&quot; &amp;&amp; !arrived)) {
-                // flight still active or not at gate --&gt; reschedule
+            if (status == &quot;A&quot; || (status == &quot;L&quot; && !arrived)) {
+                // flight still active or not at gate --> reschedule
                 if (FD_DB.checkTime(_queryId, riskId, 180 minutes)) {
                     LogPolicyManualPayout(policyId, &quot;No arrival at +180 min&quot;);
                 } else {
                     schedulePayoutOraclizeCall(policyId, riskId, oraclizeTime + 45 minutes);
                 }
-            } else if (status == &quot;L&quot; &amp;&amp; arrived) {
+            } else if (status == &quot;L&quot; && arrived) {
                 var aG = &quot;\&quot;arrivalGateDelayMinutes\&quot;: &quot;.toSlice();
                 if (slResult.contains(aG)) {
                     slResult.find(aG).beyond(aG);
@@ -2639,11 +2639,11 @@ contract FlightDelayPayout is FlightDelayControlledContract, FlightDelayConstant
                     delayInMinutes = 0;
                 }
 
-                if (delayInMinutes &lt; 15) {
+                if (delayInMinutes < 15) {
                     payOut(policyId, 0, 0);
-                } else if (delayInMinutes &lt; 30) {
+                } else if (delayInMinutes < 30) {
                     payOut(policyId, 1, delayInMinutes);
-                } else if (delayInMinutes &lt; 45) {
+                } else if (delayInMinutes < 45) {
                     payOut(policyId, 2, delayInMinutes);
                 } else {
                     payOut(policyId, 3, delayInMinutes);
@@ -2665,12 +2665,12 @@ contract FlightDelayPayout is FlightDelayControlledContract, FlightDelayConstant
      * @param _delayInMinutes
      */
     function payOut(uint _policyId, uint8 _delay, uint _delayInMinutes)	internal {
-// --&gt; debug-mode
+// --> debug-mode
 //            LogString(&quot;im payOut&quot;, &quot;&quot;);
 //            LogUint(&quot;policyId&quot;, _policyId);
 //            LogUint(&quot;delay&quot;, _delay);
 //            LogUint(&quot;in minutes&quot;, _delayInMinutes);
-// &lt;-- debug-mode
+// <-- debug-mode
 
         FD_DB.setDelay(_policyId, _delay, _delayInMinutes);
 
@@ -2684,9 +2684,9 @@ contract FlightDelayPayout is FlightDelayControlledContract, FlightDelayConstant
         } else {
             var (customer, weight, premium) = FD_DB.getPolicyData(_policyId);
 
-// --&gt; debug-mode
+// --> debug-mode
 //                LogUint(&quot;weight&quot;, weight);
-// &lt;-- debug-mode
+// <-- debug-mode
 
             if (weight == 0) {
                 weight = 20000;
@@ -2695,7 +2695,7 @@ contract FlightDelayPayout is FlightDelayControlledContract, FlightDelayConstant
             uint payout = premium * WEIGHT_PATTERN[_delay] * 10000 / weight;
             uint calculatedPayout = payout;
 
-            if (payout &gt; MAX_PAYOUT) {
+            if (payout > MAX_PAYOUT) {
                 payout = MAX_PAYOUT;
             }
 

@@ -31,7 +31,7 @@ contract Presale is Ownable {
   event TokenPurchase(address indexed purchaser, address indexed beneficiary, uint256 value, uint256 amount);
 
   function Presale (uint256 _rate, address _wallet, ERC20 _token) public {
-    require(_rate &gt; 0);
+    require(_rate > 0);
     require(_wallet != address(0));
     require(_token != address(0));
 
@@ -81,7 +81,7 @@ contract Presale is Ownable {
 
 // Transfer tokens to owner
 
-    for (uint256 i = 0; i &lt; tokens.length; i++) {
+    for (uint256 i = 0; i < tokens.length; i++) {
       ERC20Basic token = ERC20Basic(tokens[i]);
       uint256 balance = token.balanceOf(this);
       token.transfer(owner, balance);} 
@@ -104,12 +104,12 @@ library SafeMath {
     return c; }
     
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b; }
     
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;}}
     
 // ERC20Basic    

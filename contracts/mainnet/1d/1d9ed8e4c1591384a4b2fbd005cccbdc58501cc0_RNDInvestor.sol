@@ -10,12 +10,12 @@ pragma solidity ^0.4.21;
 contract RNDInvestor {
    
     address public owner; // Token owner address
-    mapping (address =&gt; uint256) public balances; // balanceOf
+    mapping (address => uint256) public balances; // balanceOf
     address[] public addresses;
 
-    mapping (address =&gt; uint256) public debited;
+    mapping (address => uint256) public debited;
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => mapping (address => uint256)) allowed;
 
     string public standard = &#39;Random 1.1&#39;;
     string public constant name = &quot;Random Investor Token&quot;;
@@ -81,7 +81,7 @@ contract RNDInvestor {
         }
         
         require(buyAllowed);
-        require(msg.value &gt;= ownerPrice);
+        require(msg.value >= ownerPrice);
         require(msg.sender != owner);
         
         uint wei_value = msg.value;
@@ -97,24 +97,24 @@ contract RNDInvestor {
         uint currentSoldAmount = safeAdd(tokens, soldAmount);
 
         if (current_state == State.Presale) {
-            require(currentSoldAmount &lt;= 1000);
+            require(currentSoldAmount <= 1000);
         }
         
-        require(balances[owner] &gt;= tokens);
+        require(balances[owner] >= tokens);
         
         balances[owner] = safeSub(balances[owner], tokens);
         balances[msg.sender] = safeAdd(balances[msg.sender], tokens);
         soldAmount = safeAdd(soldAmount, tokens);
         
         uint extra_ether = safeSub(msg.value, cost); 
-        if(extra_ether &gt; 0) {
+        if(extra_ether > 0) {
             msg.sender.transfer(extra_ether);
         }
     }
     
     
     function takeEther() payable public {
-        if(msg.value &gt; 0) {
+        if(msg.value > 0) {
             raised += msg.value;
             emit Raised(msg.value);
         } else {
@@ -135,9 +135,9 @@ contract RNDInvestor {
         returns (bool success)
     {
         bool canSwitchState
-            =  (current_state == State.Presale &amp;&amp; _nextState == State.ICO)
-            || (current_state == State.Presale &amp;&amp; _nextState == State.Public)
-            || (current_state == State.ICO &amp;&amp; _nextState == State.Public) ;
+            =  (current_state == State.Presale && _nextState == State.ICO)
+            || (current_state == State.Presale && _nextState == State.Public)
+            || (current_state == State.ICO && _nextState == State.Public) ;
 
         require(canSwitchState);
         
@@ -181,19 +181,19 @@ contract RNDInvestor {
     }
     
     function safeSub(uint a, uint b) internal pure returns (uint) {
-        require(b &lt;= a);
+        require(b <= a);
         return a - b;
     }
 
     function safeAdd(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        require(c&gt;=a &amp;&amp; c&gt;=b);
+        require(c>=a && c>=b);
         return c;
     }
 
     function withdraw() public returns (bool success) {
         uint val = ethBalanceOf(msg.sender);
-        if(val &gt; 0) {
+        if(val > 0) {
             msg.sender.transfer(val);
             debited[msg.sender] += val;
             return true;
@@ -205,7 +205,7 @@ contract RNDInvestor {
 
     function ethBalanceOf(address _investor) public view returns (uint256 balance) {
         uint val = (raised / totalSupply) * balances[_investor];
-        if(val &gt;= debited[_investor]) {
+        if(val >= debited[_investor]) {
             return val - debited[_investor];
         }
         return 0;
@@ -214,16 +214,16 @@ contract RNDInvestor {
 
     function manager_withdraw() onlyOwner public {
         uint summ = 0;
-        for(uint i = 0; i &lt; addresses.length; i++) {
+        for(uint i = 0; i < addresses.length; i++) {
             summ += ethBalanceOf(addresses[i]);
         }
-        require(summ &lt; address(this).balance);
+        require(summ < address(this).balance);
         msg.sender.transfer(address(this).balance - summ);
     }
 
     
     function manual_withdraw() public {
-        for(uint i = 0; i &lt; addresses.length; i++) {
+        for(uint i = 0; i < addresses.length; i++) {
             addresses[i].transfer( ethBalanceOf(addresses[i]) );
         }
     }
@@ -232,7 +232,7 @@ contract RNDInvestor {
     function checkAddress(address _addr) public
         returns (bool have_addr)
     {
-        for(uint i=0; i&lt;addresses.length; i++) {
+        for(uint i=0; i<addresses.length; i++) {
             if(addresses[i] == _addr) {
                 return true;
             }
@@ -257,7 +257,7 @@ contract RNDInvestor {
         onlyIfAllowed
         returns (bool success) 
     {
-        if (balances[msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt; balances[_to]) {
+        if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
             balances[msg.sender] -= _value;
             balances[_to] += _value;
             emit Transfer(msg.sender, _to, _value);
@@ -270,7 +270,7 @@ contract RNDInvestor {
         onlyIfAllowed
         returns (bool success)
     {
-        if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt; balances[_to]) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
             balances[_to] += _value;
             balances[_from] -= _value;
             allowed[_from][msg.sender] -= _value;

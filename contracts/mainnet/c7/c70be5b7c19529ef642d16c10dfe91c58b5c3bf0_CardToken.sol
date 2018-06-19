@@ -28,7 +28,7 @@ library Maths {
     uint256 minuend,
     uint256 subtrahend
   ) public pure returns (uint256 difference) {
-    assert(minuend &gt;= subtrahend);
+    assert(minuend >= subtrahend);
     difference = minuend - subtrahend;
   }
 
@@ -112,7 +112,7 @@ library Maths {
     uint256 a,
     uint256 b
   ) public pure returns (uint256 result) {
-    result = a &lt;= b ? a : b;
+    result = a <= b ? a : b;
   }
 
   /**
@@ -125,7 +125,7 @@ library Maths {
     uint256 a,
     uint256 b
   ) public pure returns (uint256 result) {
-    result = a &gt;= b ? a : b;
+    result = a >= b ? a : b;
   }
 
   /**
@@ -135,7 +135,7 @@ library Maths {
    * @return isTrue whether a is less than b
    */
   function isLessThan(uint256 a, uint256 b) public pure returns (bool isTrue) {
-    isTrue = a &lt; b;
+    isTrue = a < b;
   }
 
   /**
@@ -145,7 +145,7 @@ library Maths {
    * @return isTrue whether a is less than or equal to b
    */
   function isAtMost(uint256 a, uint256 b) public pure returns (bool isTrue) {
-    isTrue = a &lt;= b;
+    isTrue = a <= b;
   }
 
   /**
@@ -155,7 +155,7 @@ library Maths {
    * @return isTrue whether a is greater than b
    */
   function isGreaterThan(uint256 a, uint256 b) public pure returns (bool isTrue) {
-    isTrue = a &gt; b;
+    isTrue = a > b;
   }
 
   /**
@@ -165,7 +165,7 @@ library Maths {
    * @return isTrue whether a is less than b
    */
   function isAtLeast(uint256 a, uint256 b) public pure returns (bool isTrue) {
-    isTrue = a &gt;= b;
+    isTrue = a >= b;
   }
 }
 
@@ -321,16 +321,16 @@ contract ERC721BasicToken is ERC721Basic {
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
   // Mapping from token ID to owner
-  mapping (uint256 =&gt; address) internal tokenOwner;
+  mapping (uint256 => address) internal tokenOwner;
 
   // Mapping from token ID to approved address
-  mapping (uint256 =&gt; address) internal tokenApprovals;
+  mapping (uint256 => address) internal tokenApprovals;
 
   // Mapping from owner to number of owned token
-  mapping (address =&gt; uint256) internal ownedTokensCount;
+  mapping (address => uint256) internal ownedTokensCount;
 
   // Mapping from owner to operator approvals
-  mapping (address =&gt; mapping (address =&gt; bool)) internal operatorApprovals;
+  mapping (address => mapping (address => bool)) internal operatorApprovals;
 
   /**
    * @dev Guarantees msg.sender is owner of the given token
@@ -611,7 +611,7 @@ contract ERC721BasicToken is ERC721Basic {
     // TODO Check this again before the Serenity release, because all addresses will be
     // contracts then.
     assembly { size := extcodesize(addr) }  // solium-disable-line security/no-inline-assembly
-    return size &gt; 0;
+    return size > 0;
   }
 }
 
@@ -623,19 +623,19 @@ contract ERC721BasicToken is ERC721Basic {
  */
 contract ERC721Token is ERC721, ERC721BasicToken {
   // Mapping from owner to list of owned token IDs
-  mapping (address =&gt; uint256[]) internal ownedTokens;
+  mapping (address => uint256[]) internal ownedTokens;
 
   // Mapping from token ID to index of the owner tokens list
-  mapping(uint256 =&gt; uint256) internal ownedTokensIndex;
+  mapping(uint256 => uint256) internal ownedTokensIndex;
 
   // Array with all token ids, used for enumeration
   uint256[] internal allTokens;
 
   // Mapping from token id to position in the allTokens array
-  mapping(uint256 =&gt; uint256) internal allTokensIndex;
+  mapping(uint256 => uint256) internal allTokensIndex;
 
   // Optional mapping for token URIs
-  mapping(uint256 =&gt; string) internal tokenURIs;
+  mapping(uint256 => string) internal tokenURIs;
 
   /**
    * @dev Constructor function
@@ -668,7 +668,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
    * @return uint256 token ID at the given index of the tokens list owned by the requested address
    */
   function tokenOfOwnerByIndex(address _owner, uint256 _index) public view returns (uint256) {
-    require(_index &lt; balanceOf(_owner));
+    require(_index < balanceOf(_owner));
     return ownedTokens[_owner][_index];
   }
 
@@ -687,7 +687,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
    * @return uint256 token ID at the given index of the tokens list
    */
   function tokenByIndex(uint256 _index) public view returns (uint256) {
-    require(_index &lt; totalSupply());
+    require(_index < totalSupply());
     return allTokens[_index];
   }
 
@@ -783,8 +783,8 @@ contract CardToken is ERC721Token, Manageable {
   string public constant name = &quot;Mythereum Card&quot;;
   string public constant symbol = &quot;CARD&quot;;
 
-  mapping (uint8 =&gt; string) public className;
-  mapping (uint8 =&gt; Card[]) public cardsInEdition;
+  mapping (uint8 => string) public className;
+  mapping (uint8 => Card[]) public cardsInEdition;
   uint8 public latestEditionReleased;
 
   struct Card {
@@ -810,7 +810,7 @@ contract CardToken is ERC721Token, Manageable {
   Ability[] public abilities;
 
   function isEditionAvailable(uint8 _editionNumber) public view returns (bool) {
-    return _editionNumber &lt;= latestEditionReleased;
+    return _editionNumber <= latestEditionReleased;
   }
 
   function mintRandomCards(
@@ -819,7 +819,7 @@ contract CardToken is ERC721Token, Manageable {
     uint8 _numCards
   ) public onlyManagement returns (bool) {
     require(isEditionAvailable(_editionNumber));
-    for(uint8 i = 0; i &lt; _numCards; i++) {
+    for(uint8 i = 0; i < _numCards; i++) {
       Card storage card = cardsInEdition[_editionNumber][
         uint256(keccak256(now, _owner, _editionNumber, _numCards, i)) % cardsInEdition[_editionNumber].length
       ];
@@ -835,7 +835,7 @@ contract CardToken is ERC721Token, Manageable {
     uint256 _cardIndex
   ) public onlyManagement returns (bool) {
     require(isEditionAvailable(_editionNumber));
-    require(_cardIndex &lt; cardsInEdition[_editionNumber].length);
+    require(_cardIndex < cardsInEdition[_editionNumber].length);
     _cloneCard(cardsInEdition[_editionNumber][_cardIndex], _owner);
   }
 
@@ -845,10 +845,10 @@ contract CardToken is ERC721Token, Manageable {
     uint256[] _cardIndexes
   ) public onlyManagement returns (bool) {
     require(isEditionAvailable(_editionNumber));
-    require(_cardIndexes.length &gt; 0 &amp;&amp; _cardIndexes.length &lt;= 10);
+    require(_cardIndexes.length > 0 && _cardIndexes.length <= 10);
 
-    for(uint8 i = 0; i &lt; _cardIndexes.length; i++) {
-      require(_cardIndexes[i] &lt; cardsInEdition[_editionNumber].length);
+    for(uint8 i = 0; i < _cardIndexes.length; i++) {
+      require(_cardIndexes[i] < cardsInEdition[_editionNumber].length);
       _cloneCard(cardsInEdition[_editionNumber][_cardIndexes[i]], _owner);
     }
   }
@@ -951,7 +951,7 @@ contract CardToken is ERC721Token, Manageable {
   }
 
   function _cloneCard(Card storage card, address owner) internal {
-    require(card.damagePoints &gt; 0 || card.shieldPoints &gt; 0);
+    require(card.damagePoints > 0 || card.shieldPoints > 0);
     uint256 tokenId = cards.length;
     cards.push(card);
     _mint(owner, tokenId);

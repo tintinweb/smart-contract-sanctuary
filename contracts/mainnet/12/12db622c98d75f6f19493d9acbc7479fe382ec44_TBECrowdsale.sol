@@ -151,7 +151,7 @@ contract TBECrowdsale {
 
         uint256 amount = msg.value * price;
 
-        if (now > startDate &amp;&amp; now <= bonusDate) {
+        if (now > startDate && now <= bonusDate) {
             uint256 _amount = amount / 10;
             amount += _amount * 3;
         }

@@ -503,7 +503,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     CurrentToken public token = new CurrentToken(this);
 
     modifier beforeReachingHardCap() {
-        require(tokensRemainingIco > 0 &amp;&amp; weiRaisedTotal < maxcap);
+        require(tokensRemainingIco > 0 && weiRaisedTotal < maxcap);
         _;
     }
 
@@ -513,7 +513,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     }
 
     modifier whenIcoSaleHasEnded() {
-        require(endTimeIco > 0 &amp;&amp; now > endTimeIco);
+        require(endTimeIco > 0 && now > endTimeIco);
         _;
     }
 
@@ -537,9 +537,9 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
         address _withdrawalWallet
     ) Whitelistable() public
     {
-        require(_foundersWallet != address(0) &amp;&amp; _operationalExpensesWallet != address(0) &amp;&amp; _withdrawalWallet != address(0));
-        require(_startTimePreIco >= now &amp;&amp; _endTimePreIco > _startTimePreIco);
-        require(_mincap > 0 &amp;&amp; _maxcap > _mincap);
+        require(_foundersWallet != address(0) && _operationalExpensesWallet != address(0) && _withdrawalWallet != address(0));
+        require(_startTimePreIco >= now && _endTimePreIco > _startTimePreIco);
+        require(_mincap > 0 && _maxcap > _mincap);
 
         startTimePreIco = _startTimePreIco;
         endTimePreIco = _endTimePreIco;
@@ -573,7 +573,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     * @dev Check whether the pre-ICO is active at the moment.
     */
     function isPreIco() public constant returns (bool) {
-        bool withinPreIco = now >= startTimePreIco &amp;&amp; now <= endTimePreIco;
+        bool withinPreIco = now >= startTimePreIco && now <= endTimePreIco;
         return withinPreIco;
     }
 
@@ -581,7 +581,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     * @dev Check whether the ICO is active at the moment.
     */
     function isIco() public constant returns (bool) {
-        bool withinIco = now >= startTimeIco &amp;&amp; now <= endTimeIco;
+        bool withinIco = now >= startTimeIco && now <= endTimeIco;
         return withinIco;
     }
 
@@ -727,7 +727,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     * @param _paginationCount The value that used for pagination.
     */
     function distributeTokensPreIco(uint256 _paginationCount) onlyOwner public {
-        require(isTokenRateCalculated &amp;&amp; !isTokensPreIcoDistributed);
+        require(isTokenRateCalculated && !isTokensPreIcoDistributed);
         require(_paginationCount > 0);
 
         uint256 count = 0;
@@ -792,7 +792,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     * @param _endTimeIco The ICO end time.
     */
     function setStartTimeIco(uint256 _startTimeIco, uint256 _endTimeIco) whenPreIcoSaleHasEnded beforeReachingHardCap onlyOwner public {
-        require(_startTimeIco >= now &amp;&amp; _endTimeIco > _startTimeIco);
+        require(_startTimeIco >= now && _endTimeIco > _startTimeIco);
         require(isTokenRateCalculated);
 
         startTimeIco = _startTimeIco;

@@ -52,7 +52,7 @@ contract AccessControl {
 contract SafeMath {
     function safeAdd(uint x, uint y) pure internal returns(uint) {
       uint z = x + y;
-      assert((z >= x) &amp;&amp; (z >= y));
+      assert((z >= x) && (z >= y));
       return z;
     }
 
@@ -521,13 +521,13 @@ contract Battleboards is AccessControl, SafeMath  {
         if (angel2aura == 4) {angel2BP += 10;}
         
         //if purple aura, 10% chance of sudden kill
-        if ((angel1aura == 2) &amp;&amp; (getRandomNumber(100,0,msg.sender) <10)) {return true;}
-        if ((angel2aura == 2) &amp;&amp; (getRandomNumber(100,0,msg.sender) <10)) {return false;}
+        if ((angel1aura == 2) && (getRandomNumber(100,0,msg.sender) <10)) {return true;}
+        if ((angel2aura == 2) && (getRandomNumber(100,0,msg.sender) <10)) {return false;}
         
         
         //if green aura, 20% chance of +75 hp
-        if ((angel1aura == 5) &amp;&amp; (getRandomNumber(100,0,msg.sender) <20)) {hp1 += 75;}
-        if ((angel2aura == 5) &amp;&amp; (getRandomNumber(100,0,msg.sender) <20)) {hp2 +=75;}
+        if ((angel1aura == 5) && (getRandomNumber(100,0,msg.sender) <20)) {hp1 += 75;}
+        if ((angel2aura == 5) && (getRandomNumber(100,0,msg.sender) <20)) {hp2 +=75;}
         
         
            uint16 strike;
@@ -672,25 +672,25 @@ contract Battleboards is AccessControl, SafeMath  {
            
            //moves up and down are protected from moving off the board by the position numbers. 
            //Check if trying to move off the board to left 
-           if (((position1 % 8) == 1) &amp;&amp; ((position2 == position1-1 ) || (position2 == position1 -2))) {return false;}
-           if (((position1 % 8) == 2) &amp;&amp; (position2 == (position1-2))) {return false;}
+           if (((position1 % 8) == 1) && ((position2 == position1-1 ) || (position2 == position1 -2))) {return false;}
+           if (((position1 % 8) == 2) && (position2 == (position1-2))) {return false;}
            
            //Now check if trying to move off board to right. 
-            if (((position1 % 8) == 0) &amp;&amp; ((position2 == position1+1 ) || (position2 == position1 +2))) {return false;}
-           if (((position1 % 8) == 7) &amp;&amp; (position2 == (position1+2))) {return false;}
+            if (((position1 % 8) == 0) && ((position2 == position1+1 ) || (position2 == position1 +2))) {return false;}
+           if (((position1 % 8) == 7) && (position2 == (position1+2))) {return false;}
            
              IBattleboardData battleboardData = IBattleboardData(battleboardDataContract);
            //legal move left. Either move one space or move two spaces, with nothing blocking the first move. 
-           if ((position2 == uint8(safeSubtract(position1,1))) || ((position2 == uint8(safeSubtract(position1,2)))  &amp;&amp; (battleboardData.getTileIDbyPosition(battleboardId,position1-1) == 0))) {return true;}
+           if ((position2 == uint8(safeSubtract(position1,1))) || ((position2 == uint8(safeSubtract(position1,2)))  && (battleboardData.getTileIDbyPosition(battleboardId,position1-1) == 0))) {return true;}
            
            //legal move right
-           if ((position2 == position1 +1) || ((position2 == position1 + 2) &amp;&amp; (battleboardData.getTileIDbyPosition(battleboardId, position1+1) == 0))) {return true;}
+           if ((position2 == position1 +1) || ((position2 == position1 + 2) && (battleboardData.getTileIDbyPosition(battleboardId, position1+1) == 0))) {return true;}
            
            //legal move down
-           if ((position2 == position1 +8) || ((position2 == position1 + 16) &amp;&amp; (battleboardData.getTileIDbyPosition(battleboardId, position1+8) == 0))) {return true;}
+           if ((position2 == position1 +8) || ((position2 == position1 + 16) && (battleboardData.getTileIDbyPosition(battleboardId, position1+8) == 0))) {return true;}
            
            //legal move up
-            if ((position2 == uint8(safeSubtract(position1,8))) || ((position2 == uint8(safeSubtract(position1,16)))  &amp;&amp; (battleboardData.getTileIDbyPosition(battleboardId,position1-8) == 0))) {return true;}
+            if ((position2 == uint8(safeSubtract(position1,8))) || ((position2 == uint8(safeSubtract(position1,16)))  && (battleboardData.getTileIDbyPosition(battleboardId,position1-8) == 0))) {return true;}
           return false;
            
        }

@@ -28,13 +28,13 @@ library SafeMath {
   }
 
   function sub(uint256 a, uint256 b) pure internal returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) pure internal returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 
@@ -63,7 +63,7 @@ contract OptionsExchange {
   address public admin = msg.sender;
   
   // User balances are stored as userBalance[user][asset], where ETH is stored as address 0.
-  mapping (address =&gt; mapping(address =&gt; uint256)) public userBalance;
+  mapping (address => mapping(address => uint256)) public userBalance;
   
   // Onchain Option data indicates the current Buyer and Seller along with corresponding nonces used to invalidate old offchain orders.
   // The Seller and Buyer addresses and their nonces take up two 32 byte storage slots, making up the only onchain data for each Option.
@@ -82,7 +82,7 @@ contract OptionsExchange {
   }
   
   // To reduce onchain storage, Options are indexed by a hash of their offchain parameters, optionHash.
-  mapping (bytes32 =&gt; optionDatum) public optionData;
+  mapping (bytes32 => optionDatum) public optionData;
   
   // Possible states an Option (or its offchain order) can be in.
   // Options implicitly store locked funds when they&#39;re Live or Matured.
@@ -130,7 +130,7 @@ contract OptionsExchange {
   
   // Users can withdraw any amount of ETH up to their current balance.
   function withdrawETH(uint256 amount) external {
-    require(userBalance[msg.sender][0] &gt;= amount);
+    require(userBalance[msg.sender][0] >= amount);
     userBalance[msg.sender][0] = userBalance[msg.sender][0].sub(amount);
     msg.sender.transfer(amount);
     emit Withdrawal(msg.sender, 0, amount);
@@ -148,7 +148,7 @@ contract OptionsExchange {
   
   // Users can withdraw any amount of a given token up to their current balance.
   function withdrawToken(address token, uint256 amount) external {
-    require(userBalance[msg.sender][token] &gt;= amount);
+    require(userBalance[msg.sender][token] >= amount);
     userBalance[msg.sender][token] = userBalance[msg.sender][token].sub(amount);
     require(Token(token).transfer(msg.sender, amount));
     emit Withdrawal(msg.sender, token, amount);
@@ -157,7 +157,7 @@ contract OptionsExchange {
   
   // Transfer funds from one user&#39;s balance to another&#39;s.  Not externally callable.
   function transferUserToUser(address from, address to, address asset, uint256 amount) private {
-    require(userBalance[from][asset] &gt;= amount);
+    require(userBalance[from][asset] >= amount);
     userBalance[from][asset] = userBalance[from][asset].sub(amount);
     userBalance[to][asset] = userBalance[to][asset].add(amount);
     emit UserBalanceUpdated(from, asset, userBalance[from][asset]);
@@ -208,8 +208,8 @@ contract OptionsExchange {
     // Exercising an Option must require trading a non-zero amount of assets.
     if(amountLocked_amountTraded_maturation[1] == 0) return optionStates.Invalid;
     // Options must reach Maturation between 2018 and 2030 to be Valid.
-    if(amountLocked_amountTraded_maturation[2] &lt; 1514764800) return optionStates.Invalid;
-    if(amountLocked_amountTraded_maturation[2] &gt; 1893456000) return optionStates.Invalid;
+    if(amountLocked_amountTraded_maturation[2] < 1514764800) return optionStates.Invalid;
+    if(amountLocked_amountTraded_maturation[2] > 1893456000) return optionStates.Invalid;
     bytes32 optionHash = getOptionHash(assetLocked_assetTraded_firstMaker, amountLocked_amountTraded_maturation);
     address seller = optionData[optionHash].seller;
     uint96 nonceSeller = optionData[optionHash].nonceSeller;
@@ -225,7 +225,7 @@ contract OptionsExchange {
     // If Seller is non-zero and Buyer is 0, Option must have been Exercised.
     if(buyer == 0x0) return optionStates.Exercised;
     // If Seller and Buyer are both non-zero and the Option hasn&#39;t passed Maturation, it&#39;s Live.
-    if(now &lt; amountLocked_amountTraded_maturation[2]) return optionStates.Live;
+    if(now < amountLocked_amountTraded_maturation[2]) return optionStates.Live;
     // Otherwise, the Option must have Matured.
     return optionStates.Matured;
   }
@@ -249,7 +249,7 @@ contract OptionsExchange {
                            uint8 v,
                            bytes32[2] r_s) external {
     // Verify offchain order hasn&#39;t expired.
-    require(now &lt; amountPremium_expiration[1]);
+    require(now < amountPremium_expiration[1]);
     bytes32 optionHash = getOptionHash(assetLocked_assetTraded_firstMaker, amountLocked_amountTraded_maturation);
     // A hash of the Order&#39;s information which was signed by the Maker to create the offchain order.
     bytes32 orderHash = getOrderHash(optionHash, amountPremium_expiration, assetPremium, makerIsSeller, nonce);
@@ -258,11 +258,11 @@ contract OptionsExchange {
       // Option must be Available, which means it is valid, unfilled, and uncancelled.
       require(getOptionState(assetLocked_assetTraded_firstMaker, amountLocked_amountTraded_maturation) == optionStates.Available);
       // Option must not already be past its Maturation time.
-      require(now &lt; amountLocked_amountTraded_maturation[2]);
+      require(now < amountLocked_amountTraded_maturation[2]);
       // Verify the Maker&#39;s offchain order is valid by checking whether it was signed by the first Maker.
       require(ecrecover(orderHash, v, r_s[0], r_s[1]) == assetLocked_assetTraded_firstMaker[2]);
       // Set the Option&#39;s Buyer and Seller and initialize the nonces to 1, marking the Option as Live.
-      // Ternary operator to assign the Seller and Buyer from the Maker and Taker: (&lt;conditional&gt; ? &lt;if-true&gt; : &lt;if-false&gt;)
+      // Ternary operator to assign the Seller and Buyer from the Maker and Taker: (<conditional> ? <if-true> : <if-false>)
       optionData[optionHash].seller = makerIsSeller ? assetLocked_assetTraded_firstMaker[2] : msg.sender;
       optionData[optionHash].nonceSeller = 1;
       optionData[optionHash].buyer = makerIsSeller ? msg.sender : assetLocked_assetTraded_firstMaker[2];
@@ -270,7 +270,7 @@ contract OptionsExchange {
       // The Buyer pays the Seller the premium for the Option.
       payForOption(optionData[optionHash].buyer, optionData[optionHash].seller, assetPremium, amountPremium_expiration[0]);
       // Lock amountLocked of the Seller&#39;s assetLocked in implicit storage as specified by the Option parameters.
-      require(userBalance[optionData[optionHash].seller][assetLocked_assetTraded_firstMaker[0]] &gt;= amountLocked_amountTraded_maturation[0]);
+      require(userBalance[optionData[optionHash].seller][assetLocked_assetTraded_firstMaker[0]] >= amountLocked_amountTraded_maturation[0]);
       userBalance[optionData[optionHash].seller][assetLocked_assetTraded_firstMaker[0]] = userBalance[optionData[optionHash].seller][assetLocked_assetTraded_firstMaker[0]].sub(amountLocked_amountTraded_maturation[0]);
       emit UserBalanceUpdated(optionData[optionHash].seller, assetLocked_assetTraded_firstMaker[0], userBalance[optionData[optionHash].seller][assetLocked_assetTraded_firstMaker[0]]);
       emit OrderFilled(optionHash, 

@@ -17,7 +17,7 @@ contract Ownable {
 contract DiscordPool is Ownable {
     uint public raised;
     bool public active = true;
-    mapping(address =&gt; uint) public balances;
+    mapping(address => uint) public balances;
     event Deposit(address indexed beneficiary, uint value);
     event Withdraw(address indexed beneficiary, uint value);
 

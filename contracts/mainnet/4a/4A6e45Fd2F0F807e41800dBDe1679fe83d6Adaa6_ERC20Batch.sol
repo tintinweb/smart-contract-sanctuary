@@ -75,14 +75,14 @@ library Math {
    function add(uint256 a, uint256 b) internal pure returns (uint256) {
       uint256 r = a + b;
 
-      require(r &gt;= a);
+      require(r >= a);
 
       return r;
    }
 
 
    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-      require(a &gt;= b);
+      require(a >= b);
 
       return a - b;
    }
@@ -169,9 +169,9 @@ contract ERC20Batch is Owned {
 
    function transferFromBatch(address[] _toArray, uint256[] _valueArray) public onlyOwner returns (bool success) {
       require(_toArray.length == _valueArray.length);
-      require(_toArray.length &gt; 0);
+      require(_toArray.length > 0);
 
-      for (uint256 i = 0; i &lt; _toArray.length; i++) {
+      for (uint256 i = 0; i < _toArray.length; i++) {
          require(token.transferFrom(tokenHolder, _toArray[i], _valueArray[i]));
       }
 

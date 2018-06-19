@@ -22,7 +22,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -32,7 +32,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -41,7 +41,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -65,7 +65,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -83,7 +83,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -112,8 +112,8 @@ contract BurnableToken is BasicToken {
    * @param _value The amount of token to be burned.
    */
   function burn(uint256 _value) public {
-    require(_value &lt;= balances[msg.sender]);
-    // no need to require value &lt;= totalSupply, since that would imply the
+    require(_value <= balances[msg.sender]);
+    // no need to require value <= totalSupply, since that would imply the
     // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
     address burner = msg.sender;
@@ -144,7 +144,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -155,8 +155,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -219,7 +219,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -286,7 +286,7 @@ contract MintableToken is StandardToken, Ownable {
   uint256 public maxSupply;
 
   function MintableToken(uint256 _maxSupply) public {
-    require(_maxSupply &gt; 0);
+    require(_maxSupply > 0);
 
     maxSupply = _maxSupply;
   }
@@ -298,7 +298,7 @@ contract MintableToken is StandardToken, Ownable {
   }
 
   modifier isWithinLimit(uint256 amount) {
-    require((totalSupply_.add(amount)) &lt;= maxSupply);
+    require((totalSupply_.add(amount)) <= maxSupply);
     _;
   }
 
@@ -473,7 +473,7 @@ contract Crowdsale {
    * @param _token Address of the token being sold
    */
   function Crowdsale(uint256 _rate, address _wallet, ERC20 _token) public {
-    require(_rate &gt; 0);
+    require(_rate > 0);
     require(_wallet != address(0));
     require(_token != address(0));
 
@@ -614,7 +614,7 @@ contract TimedCrowdsale is Crowdsale {
    * @dev Reverts if not in crowdsale time range. 
    */
   modifier onlyWhileOpen {
-    require(now &gt;= openingTime &amp;&amp; now &lt;= closingTime);
+    require(now >= openingTime && now <= closingTime);
     _;
   }
 
@@ -624,8 +624,8 @@ contract TimedCrowdsale is Crowdsale {
    * @param _closingTime Crowdsale closing time
    */
   function TimedCrowdsale(uint256 _openingTime, uint256 _closingTime) public {
-    require(_openingTime &gt;= now);
-    require(_closingTime &gt;= _openingTime);
+    require(_openingTime >= now);
+    require(_closingTime >= _openingTime);
 
     openingTime = _openingTime;
     closingTime = _closingTime;
@@ -636,7 +636,7 @@ contract TimedCrowdsale is Crowdsale {
    * @return Whether crowdsale period has elapsed
    */
   function hasClosed() public view returns (bool) {
-    return now &gt; closingTime;
+    return now > closingTime;
   }
   
   /**
@@ -699,7 +699,7 @@ contract CappedCrowdsale is Crowdsale {
    * @param _cap Max amount of wei to be contributed
    */
   function CappedCrowdsale(uint256 _cap) public {
-    require(_cap &gt; 0);
+    require(_cap > 0);
     cap = _cap;
   }
 
@@ -708,7 +708,7 @@ contract CappedCrowdsale is Crowdsale {
    * @return Whether the cap was reached
    */
   function capReached() public view returns (bool) {
-    return weiRaised &gt;= cap;
+    return weiRaised >= cap;
   }
 
   /**
@@ -718,7 +718,7 @@ contract CappedCrowdsale is Crowdsale {
    */
   function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) internal {
     super._preValidatePurchase(_beneficiary, _weiAmount);
-    require(weiRaised.add(_weiAmount) &lt;= cap);
+    require(weiRaised.add(_weiAmount) <= cap);
   }
 
 }
@@ -729,7 +729,7 @@ contract CappedCrowdsale is Crowdsale {
  */
 contract WhitelistedCrowdsale is Crowdsale, Ownable {
 
-  mapping(address =&gt; bool) public whitelist;
+  mapping(address => bool) public whitelist;
 
   /**
    * @dev Reverts if beneficiary is not whitelisted. Can be used when extending this contract.
@@ -752,7 +752,7 @@ contract WhitelistedCrowdsale is Crowdsale, Ownable {
    * @param _beneficiaries Addresses to be added to the whitelist
    */
   function addManyToWhitelist(address[] _beneficiaries) external onlyOwner {
-    for (uint256 i = 0; i &lt; _beneficiaries.length; i++) {
+    for (uint256 i = 0; i < _beneficiaries.length; i++) {
       whitelist[_beneficiaries[i]] = true;
     }
   }
@@ -782,11 +782,11 @@ contract IndividualCapCrowdsale is Crowdsale, Ownable {
   uint256 public minAmount;
   uint256 public maxAmount;
 
-  mapping(address =&gt; uint256) public contributions;
+  mapping(address => uint256) public contributions;
 
   function IndividualCapCrowdsale(uint256 _minAmount, uint256 _maxAmount) public {
-    require(_minAmount &gt; 0);
-    require(_maxAmount &gt; _minAmount);
+    require(_minAmount > 0);
+    require(_maxAmount > _minAmount);
 
     minAmount = _minAmount;
     maxAmount = _maxAmount;
@@ -797,8 +797,8 @@ contract IndividualCapCrowdsale is Crowdsale, Ownable {
    * @param _minAmount Minimum Amount of wei to be invested per each purchase
    */
   function setMinAmount(uint256 _minAmount) public onlyOwner {
-    require(_minAmount &gt; 0);
-    require(_minAmount &lt; maxAmount);
+    require(_minAmount > 0);
+    require(_minAmount < maxAmount);
 
     minAmount = _minAmount;
   }
@@ -808,8 +808,8 @@ contract IndividualCapCrowdsale is Crowdsale, Ownable {
    * @param _maxAmount Maximum Amount of wei allowed to be invested by any user
    */
   function setMaxAmount(uint256 _maxAmount) public onlyOwner {
-    require(_maxAmount &gt; 0);
-    require(_maxAmount &gt; minAmount);
+    require(_maxAmount > 0);
+    require(_maxAmount > minAmount);
 
     maxAmount = _maxAmount;
   }
@@ -820,9 +820,9 @@ contract IndividualCapCrowdsale is Crowdsale, Ownable {
    * @param _weiAmount Amount of wei contributed
    */
   function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) internal {
-    require(_weiAmount &gt;= minAmount);
+    require(_weiAmount >= minAmount);
     super._preValidatePurchase(_beneficiary, _weiAmount);
-    require(contributions[_beneficiary].add(_weiAmount) &lt;= maxAmount);
+    require(contributions[_beneficiary].add(_weiAmount) <= maxAmount);
   }
 
   /**
@@ -868,7 +868,7 @@ contract INCXPresale is CappedCrowdsale, FinalizableCrowdsale, WhitelistedCrowds
   }
 
   function isOpen() public view returns (bool) {
-    return now &gt;= openingTime;
+    return now >= openingTime;
   }
 
   /**
@@ -893,9 +893,9 @@ contract INCXPresale is CappedCrowdsale, FinalizableCrowdsale, WhitelistedCrowds
    */
   function refund(address _purchaser) public onlyOwner {
     uint256 amountToRefund = contributions[_purchaser];
-    require(amountToRefund &gt; 0);
-    require(weiRaised &gt;= amountToRefund);
-    require(address(this).balance &gt;= amountToRefund);
+    require(amountToRefund > 0);
+    require(weiRaised >= amountToRefund);
+    require(address(this).balance >= amountToRefund);
     contributions[_purchaser] = 0;
     uint256 _tokens = _getTokenAmount(amountToRefund);
     weiRaised = weiRaised.sub(amountToRefund);

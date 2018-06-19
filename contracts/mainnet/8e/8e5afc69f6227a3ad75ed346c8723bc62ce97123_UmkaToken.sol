@@ -16,13 +16,13 @@ library SafeMath {
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -49,7 +49,7 @@ library RingList {
     bool constant NEXT = true;
 
     struct LinkedList{
-        mapping (address =&gt; mapping (bool =&gt; address)) list;
+        mapping (address => mapping (bool => address)) list;
     }
 
     /// @dev returns true if the list exists
@@ -73,7 +73,7 @@ library RingList {
     internal
     view returns (bool)
     {
-        if (self.list[_node][PREV] == HEAD &amp;&amp; self.list[_node][NEXT] == HEAD) {
+        if (self.list[_node][PREV] == HEAD && self.list[_node][NEXT] == HEAD) {
             if (self.list[HEAD][NEXT] == _node) {
                 return true;
             } else {
@@ -138,7 +138,7 @@ library RingList {
         bool exists;
         address next;
         (exists,next) = getAdjacent(self, _node, _direction);
-        while  ((next != 0x0) &amp;&amp; (_value != next) &amp;&amp; ((_value &lt; next) != _direction)) next = self.list[next][_direction];
+        while  ((next != 0x0) && (_value != next) && ((_value < next) != _direction)) next = self.list[next][_direction];
         return next;
     }
 
@@ -157,7 +157,7 @@ library RingList {
     /// @param _new  new node to insert
     /// @param _direction direction to insert node in
     function insert(LinkedList storage self, address _node, address _new, bool _direction) internal returns (bool) {
-        if(!nodeExists(self,_new) &amp;&amp; nodeExists(self,_node)) {
+        if(!nodeExists(self,_new) && nodeExists(self,_node)) {
             address c = self.list[_node][_direction];
             createLink(self, _node, _new, _direction);
             createLink(self, _new, c, _direction);
@@ -214,11 +214,11 @@ contract UmkaToken is ERC20 {
     string  public              symbol = &quot;&quot;;
     uint8   public              decimals = 0;
 
-    mapping(address =&gt; uint256)                      private   accounts;
-    mapping(address =&gt; string)                       private   umkaAddresses;
-    mapping(address =&gt; mapping (address =&gt; uint256)) private   allowed;
-    mapping(address =&gt; uint8)                        private   group;
-    mapping(bytes32 =&gt; uint256)                      private   distribution;
+    mapping(address => uint256)                      private   accounts;
+    mapping(address => string)                       private   umkaAddresses;
+    mapping(address => mapping (address => uint256)) private   allowed;
+    mapping(address => uint8)                        private   group;
+    mapping(bytes32 => uint256)                      private   distribution;
 
     RingList.LinkedList                              private   holders;
 
@@ -254,12 +254,12 @@ contract UmkaToken is ERC20 {
     }
 
     modifier onlyPayloadSize(uint size) {
-        assert(msg.data.length &gt;= size + 4);
+        assert(msg.data.length >= size + 4);
         _;
     }
 
     modifier minGroup(int _require) {
-        require(group[msg.sender] &gt;= _require);
+        require(group[msg.sender] >= _require);
         _;
     }
 
@@ -269,7 +269,7 @@ contract UmkaToken is ERC20 {
     }
 
     modifier whenNotPaused() {
-        require(!paused || group[msg.sender] &gt;= currentState._backend);
+        require(!paused || group[msg.sender] >= currentState._backend);
         _;
     }
 
@@ -292,7 +292,7 @@ contract UmkaToken is ERC20 {
         require(_address != address(0));
 
         uint8 old = group[_address];
-        if(old &lt;= currentState._admin) {
+        if(old <= currentState._admin) {
             group[_address] = _group;
             emit EvGroupChanged(_address, old, _group);
         }
@@ -327,7 +327,7 @@ contract UmkaToken is ERC20 {
 
     function serviceIncreaseBalance(address _who, uint256 _value) minGroup(currentState._admin) external returns(bool) {
         require(_who != address(0));
-        require(_value &gt; 0);
+        require(_value > 0);
 
         accounts[_who] = accounts[_who].add(_value);
         summarySupply = summarySupply.add(_value);
@@ -338,8 +338,8 @@ contract UmkaToken is ERC20 {
 
     function serviceDecreaseBalance(address _who, uint256 _value) minGroup(currentState._admin) external returns(bool) {
         require(_who != address(0));
-        require(_value &gt; 0);
-        require(accounts[_who] &gt;= _value);
+        require(_value > 0);
+        require(accounts[_who] >= _value);
 
         accounts[_who] = accounts[_who].sub(_value);
         summarySupply = summarySupply.sub(_value);
@@ -353,8 +353,8 @@ contract UmkaToken is ERC20 {
     function serviceRedirect(address _from, address _to, uint256 _value) minGroup(currentState._admin) external returns(bool){
         require(_from != address(0));
         require(_to != address(0));
-        require(_value &gt; 0);
-        require(accounts[_from] &gt;= _value);
+        require(_value > 0);
+        require(accounts[_from] >= _value);
         require(_from != _to);
 
         accounts[_from] = accounts[_from].sub(_value);
@@ -369,7 +369,7 @@ contract UmkaToken is ERC20 {
 
     function serviceTokensBurn(address _address) external minGroup(currentState._admin) returns(uint256 balance) {
         require(_address != address(0));
-        require(accounts[_address] &gt; 0);
+        require(accounts[_address] > 0);
 
         uint256 sum = accounts[_address];
         accounts[_address] = 0;
@@ -380,8 +380,8 @@ contract UmkaToken is ERC20 {
     }
 
     function serviceTrasferToDist(bytes32 _to, uint256 _value) external minGroup(currentState._admin) {
-        require(_value &gt; 0);
-        require(accounts[owner] &gt;= _value);
+        require(_value > 0);
+        require(accounts[owner] >= _value);
 
         distribution[_to] = distribution[_to].add(_value);
         accounts[owner] = accounts[owner].sub(_value);
@@ -390,8 +390,8 @@ contract UmkaToken is ERC20 {
 
     function serviceTrasferFromDist(bytes32 _from, address _to, uint256 _value) external minGroup(currentState._backend) {
         require(_to != address(0));
-        require(_value &gt; 0);
-        require(distribution[_from] &gt;= _value);
+        require(_value > 0);
+        require(distribution[_from] >= _value);
 
         accounts[_to] = accounts[_to].add(_value);
         holders.push(_to, true);
@@ -425,7 +425,7 @@ contract UmkaToken is ERC20 {
 
     function transfer(address _to, uint256 _value) onlyPayloadSize(64) minGroup(currentState._default) whenNotPaused external returns (bool success) {
         require(_to != address(0));
-        require (accounts[msg.sender] &gt;= _value);
+        require (accounts[msg.sender] >= _value);
 
         accounts[msg.sender] = accounts[msg.sender].sub(_value);
         if(accounts[msg.sender] == 0){
@@ -441,8 +441,8 @@ contract UmkaToken is ERC20 {
     function transferFrom(address _from, address _to, uint256 _value) onlyPayloadSize(64) minGroup(currentState._default) whenNotPaused external returns (bool success) {
         require(_to != address(0));
         require(_from != address(0));
-        require(_value &lt;= accounts[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= accounts[_from]);
+        require(_value <= allowed[_from][msg.sender]);
 
         accounts[_from] = accounts[_from].sub(_value);
         if(accounts[_from] == 0){
@@ -500,7 +500,7 @@ contract UmkaToken is ERC20 {
     function userMigration(uint256 _secrect) external minGroup(currentState._migration) returns (bool successful) {
         uint256 balance = accounts[msg.sender];
 
-        require (balance &gt; 0);
+        require (balance > 0);
 
         accounts[msg.sender] = accounts[msg.sender].sub(balance);
         holders.remove(msg.sender);

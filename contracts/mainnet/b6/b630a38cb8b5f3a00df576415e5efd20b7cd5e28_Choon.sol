@@ -18,7 +18,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -28,7 +28,7 @@ library SafeMath {
     * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -37,7 +37,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -79,9 +79,9 @@ contract Notes is Token {
 
     address admin;
     bool public activated = false;
-    mapping (address =&gt; bool) public activeGroup;
-    mapping (address =&gt; uint256) public balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => bool) public activeGroup;
+    mapping (address => uint256) public balances;
+    mapping (address => mapping (address => uint256)) allowed;
 
     //// MODIFIERS
 
@@ -122,8 +122,8 @@ contract Notes is Token {
 
     function transfer(address _to, uint256 _value) active returns (bool success) {
         require(_to != address(0));
-        require(_value &gt; 0);
-        require(balances[msg.sender] &gt;= _value);
+        require(_value > 0);
+        require(balances[msg.sender] >= _value);
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
         Transfer(msg.sender, _to, _value);
@@ -132,8 +132,8 @@ contract Notes is Token {
 
     function transferFrom(address _from, address _to, uint256 _value) active returns (bool success) {
         require(_to != address(0));
-        require(balances[_from] &gt;= _value);
-        require(allowed[_from][msg.sender] &gt;= _value &amp;&amp; _value &gt; 0);
+        require(balances[_from] >= _value);
+        require(allowed[_from][msg.sender] >= _value && _value > 0);
         balances[_to] = balances[_to].add(_value);
         balances[_from] = balances[_from].sub(_value);
         allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
@@ -179,7 +179,7 @@ contract Choon  {
     address admin;
 
     // The total Notes payments to each address
-    mapping(address =&gt; uint256) public payments;
+    mapping(address => uint256) public payments;
 
     // Used to kill the contract in case it needs to be replaced with a new one
     bool active = true;
@@ -230,7 +230,7 @@ contract Choon  {
         // Compute the NOTES owed due to this voucher and pay the beneficiary (receiver).
         uint priorBalance = payments[receiver];
         uint owed = balance.sub(priorBalance);
-        require(owed &gt; 0);
+        require(owed > 0);
         payments[receiver] = balance;
         Notes(notesContract).transfer(receiver, owed);
         VoucherCashed(receiver, owed);
@@ -263,7 +263,7 @@ contract Choon  {
         }
 
         // Version of signature should be 27 or 28, but 0 and 1 are also possible
-        if (v &lt; 27) {
+        if (v < 27) {
             v += 27;
         }
 

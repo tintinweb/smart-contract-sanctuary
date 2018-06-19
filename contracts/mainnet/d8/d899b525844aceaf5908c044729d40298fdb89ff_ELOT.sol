@@ -266,9 +266,9 @@ contract LOTTERY{
         
         
         if(        1 == Notes[_id].star 
-                &amp;&amp; msg.sender == Notes[_id].client
-                &amp;&amp; 1 == Notes[_id].state
-                &amp;&amp; winNumbers[Notes[_id].round][4] == Notes[_id].betNumbers[4]
+                && msg.sender == Notes[_id].client
+                && 1 == Notes[_id].state
+                && winNumbers[Notes[_id].round][4] == Notes[_id].betNumbers[4]
           )
         {
             
@@ -278,10 +278,10 @@ contract LOTTERY{
                 return true;
             }
          }else if( 2 == Notes[_id].star 
-                &amp;&amp; msg.sender == Notes[_id].client 
-                &amp;&amp; 1 == Notes[_id].state
-                &amp;&amp; winNumbers[Notes[_id].round][4] == Notes[_id].betNumbers[4] 
-                &amp;&amp; winNumbers[Notes[_id].round][3] == Notes[_id].betNumbers[3]
+                && msg.sender == Notes[_id].client 
+                && 1 == Notes[_id].state
+                && winNumbers[Notes[_id].round][4] == Notes[_id].betNumbers[4] 
+                && winNumbers[Notes[_id].round][3] == Notes[_id].betNumbers[3]
           )
         {
             
@@ -292,11 +292,11 @@ contract LOTTERY{
             }
          }
         else if(   3 == Notes[_id].star
-                &amp;&amp; msg.sender == Notes[_id].client 
-                &amp;&amp; 1 == Notes[_id].state
-                &amp;&amp; winNumbers[Notes[_id].round][4] == Notes[_id].betNumbers[4] 
-                &amp;&amp; winNumbers[Notes[_id].round][3] == Notes[_id].betNumbers[3]
-                &amp;&amp; winNumbers[Notes[_id].round][2] == Notes[_id].betNumbers[2]
+                && msg.sender == Notes[_id].client 
+                && 1 == Notes[_id].state
+                && winNumbers[Notes[_id].round][4] == Notes[_id].betNumbers[4] 
+                && winNumbers[Notes[_id].round][3] == Notes[_id].betNumbers[3]
+                && winNumbers[Notes[_id].round][2] == Notes[_id].betNumbers[2]
             
           )
         {
@@ -308,12 +308,12 @@ contract LOTTERY{
             }
          }
          else if(   4 == Notes[_id].star
-                &amp;&amp; msg.sender == Notes[_id].client 
-                &amp;&amp; 1 == Notes[_id].state
-                &amp;&amp; winNumbers[Notes[_id].round][4] == Notes[_id].betNumbers[4] 
-                &amp;&amp; winNumbers[Notes[_id].round][3] == Notes[_id].betNumbers[3]
-                &amp;&amp; winNumbers[Notes[_id].round][2] == Notes[_id].betNumbers[2]
-                &amp;&amp; winNumbers[Notes[_id].round][1] == Notes[_id].betNumbers[1]
+                && msg.sender == Notes[_id].client 
+                && 1 == Notes[_id].state
+                && winNumbers[Notes[_id].round][4] == Notes[_id].betNumbers[4] 
+                && winNumbers[Notes[_id].round][3] == Notes[_id].betNumbers[3]
+                && winNumbers[Notes[_id].round][2] == Notes[_id].betNumbers[2]
+                && winNumbers[Notes[_id].round][1] == Notes[_id].betNumbers[1]
             
           )
         {
@@ -325,13 +325,13 @@ contract LOTTERY{
             }
          }
         else if(   5 == Notes[_id].star
-                &amp;&amp; msg.sender == Notes[_id].client 
-                &amp;&amp; 1 == Notes[_id].state
-                &amp;&amp; winNumbers[Notes[_id].round][4] == Notes[_id].betNumbers[4] 
-                &amp;&amp; winNumbers[Notes[_id].round][3] == Notes[_id].betNumbers[3]
-                &amp;&amp; winNumbers[Notes[_id].round][2] == Notes[_id].betNumbers[2]
-                &amp;&amp; winNumbers[Notes[_id].round][1] == Notes[_id].betNumbers[1]
-                &amp;&amp; winNumbers[Notes[_id].round][0] == Notes[_id].betNumbers[0]
+                && msg.sender == Notes[_id].client 
+                && 1 == Notes[_id].state
+                && winNumbers[Notes[_id].round][4] == Notes[_id].betNumbers[4] 
+                && winNumbers[Notes[_id].round][3] == Notes[_id].betNumbers[3]
+                && winNumbers[Notes[_id].round][2] == Notes[_id].betNumbers[2]
+                && winNumbers[Notes[_id].round][1] == Notes[_id].betNumbers[1]
+                && winNumbers[Notes[_id].round][0] == Notes[_id].betNumbers[0]
             
           )
         {
@@ -479,7 +479,7 @@ contract LOTTERY{
           uint mint = 0;
           bool decimals = false;
           for (uint i = 0; i < bresult.length; i++) {
-            if ((bresult[i] >= 48) &amp;&amp; (bresult[i] <= 57)) {
+            if ((bresult[i] >= 48) && (bresult[i] <= 57)) {
               if (decimals) {
                 if (_b == 0) break;
                   else _b--;

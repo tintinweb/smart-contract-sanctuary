@@ -112,7 +112,7 @@ library SafeMath {
 
 contract WarshipAccess is Pausable{
 	address[] public OfficialApps;
-	//Official games &amp; services
+	//Official games & services
 
 	function AddOfficialApps(address _app) onlyOwner public{
 		require(_app != address(0));
@@ -320,19 +320,19 @@ contract WarshipMain is WarshipAccess{
     /// @dev uint256 WSIC to warship structure 
     function _translateWSIC (uint256 _wsic) internal pure returns(Warship){
   //    uint128 _appearance = uint128(_wsic >> 128);
-  //    uint32 _profile = uint32((_wsic>>96)&amp;0xffffffff);
-  //    uint8 _firepower = uint8((_wsic>>88)&amp;0xff);
-        // uint8 _armor = uint8((_wsic>>80)&amp;0xff);
-        // uint8 _hitrate = uint8((_wsic>>72)&amp;0xff);
-        // uint8 _speed = uint8((_wsic>>64)&amp;0xff);
-        // uint8 _duration = uint8((_wsic>>56)&amp;0xff);
-        // uint8 _shiptype = uint8((_wsic>>48)&amp;0xff);
-        // uint8 _level = uint8((_wsic>>40)&amp;0xff);
-        // uint8 _status = uint8((_wsic>>32)&amp;0xff);
-        // uint16 _specials = uint16((_wsic>>16)&amp;0xffff);
-        // uint16 _extend = uint16(_wsic&amp;0xffff);
-        Warship memory  _ship = Warship(uint128(_wsic >> 128), uint32((_wsic>>96)&amp;0xffffffff), uint8((_wsic>>88)&amp;0xff), uint8((_wsic>>80)&amp;0xff), uint8((_wsic>>72)&amp;0xff), uint8((_wsic>>64)&amp;0xff),
-         uint8((_wsic>>56)&amp;0xff), uint8((_wsic>>48)&amp;0xff), uint8((_wsic>>40)&amp;0xff), uint8((_wsic>>32)&amp;0xff),  uint16((_wsic>>16)&amp;0xffff), uint16(_wsic&amp;0xffff));
+  //    uint32 _profile = uint32((_wsic>>96)&0xffffffff);
+  //    uint8 _firepower = uint8((_wsic>>88)&0xff);
+        // uint8 _armor = uint8((_wsic>>80)&0xff);
+        // uint8 _hitrate = uint8((_wsic>>72)&0xff);
+        // uint8 _speed = uint8((_wsic>>64)&0xff);
+        // uint8 _duration = uint8((_wsic>>56)&0xff);
+        // uint8 _shiptype = uint8((_wsic>>48)&0xff);
+        // uint8 _level = uint8((_wsic>>40)&0xff);
+        // uint8 _status = uint8((_wsic>>32)&0xff);
+        // uint16 _specials = uint16((_wsic>>16)&0xffff);
+        // uint16 _extend = uint16(_wsic&0xffff);
+        Warship memory  _ship = Warship(uint128(_wsic >> 128), uint32((_wsic>>96)&0xffffffff), uint8((_wsic>>88)&0xff), uint8((_wsic>>80)&0xff), uint8((_wsic>>72)&0xff), uint8((_wsic>>64)&0xff),
+         uint8((_wsic>>56)&0xff), uint8((_wsic>>48)&0xff), uint8((_wsic>>40)&0xff), uint8((_wsic>>32)&0xff),  uint16((_wsic>>16)&0xffff), uint16(_wsic&0xffff));
         return _ship;
     }
     function _encodeWSIC(Warship _ship) internal pure returns(uint256){

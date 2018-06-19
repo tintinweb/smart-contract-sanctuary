@@ -508,12 +508,12 @@ contract usingOraclize {
             iaddr *= 256;
             b1 = uint160(tmp[i]);
             b2 = uint160(tmp[i+1]);
-            if ((b1 >= 97)&amp;&amp;(b1 <= 102)) b1 -= 87;
-            else if ((b1 >= 65)&amp;&amp;(b1 <= 70)) b1 -= 55;
-            else if ((b1 >= 48)&amp;&amp;(b1 <= 57)) b1 -= 48;
-            if ((b2 >= 97)&amp;&amp;(b2 <= 102)) b2 -= 87;
-            else if ((b2 >= 65)&amp;&amp;(b2 <= 70)) b2 -= 55;
-            else if ((b2 >= 48)&amp;&amp;(b2 <= 57)) b2 -= 48;
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 65)&&(b1 <= 70)) b1 -= 55;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 65)&&(b2 <= 70)) b2 -= 55;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
             iaddr += (b1*16+b2);
         }
         return address(iaddr);
@@ -552,7 +552,7 @@ contract usingOraclize {
                 if (h[i] == n[0])
                 {
                     subindex = 1;
-                    while(subindex < n.length &amp;&amp; (i + subindex) < h.length &amp;&amp; h[i + subindex] == n[subindex])
+                    while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
                     {
                         subindex++;
                     }
@@ -604,7 +604,7 @@ contract usingOraclize {
         uint mint = 0;
         bool decimals = false;
         for (uint i=0; i<bresult.length; i++){
-            if ((bresult[i] >= 48)&amp;&amp;(bresult[i] <= 57)){
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
                 if (decimals){
                    if (_b == 0) break;
                     else _b--;
@@ -729,7 +729,7 @@ contract usingOraclize {
     }
 
     function oraclize_newRandomDSQuery(uint _delay, uint _nbytes, uint _customGasLimit) internal returns (bytes32){
-        require((_nbytes > 0) &amp;&amp; (_nbytes <= 32));
+        require((_nbytes > 0) && (_nbytes <= 32));
         // Convert from seconds to ledger timer ticks
         _delay *= 10; 
         bytes memory nbytes = new bytes(1);
@@ -845,7 +845,7 @@ contract usingOraclize {
 
     modifier oraclize_randomDS_proofVerify(bytes32 _queryId, string _result, bytes _proof) {
         // Step 1: the prefix has to match &#39;LP\x01&#39; (Ledger Proof version 1)
-        require((_proof[0] == &quot;L&quot;) &amp;&amp; (_proof[1] == &quot;P&quot;) &amp;&amp; (_proof[2] == 1));
+        require((_proof[0] == &quot;L&quot;) && (_proof[1] == &quot;P&quot;) && (_proof[2] == 1));
 
         bool proofVerified = oraclize_randomDS_proofVerify__main(_proof, _queryId, bytes(_result), oraclize_getNetworkName());
         require(proofVerified);
@@ -1004,7 +1004,7 @@ contract usingOraclize {
         if (v < 27)
           v += 27;
 
-        if (v != 27 &amp;&amp; v != 28)
+        if (v != 27 && v != 28)
             return (false, 0);
 
         return safer_ecrecover(hash, v, r, s);
@@ -1174,7 +1174,7 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 		uint256 currentTotalBankroll = SafeMath.sub(getBankroll(), msg.value);
 		uint256 maxInvestmentsAllowed = MAXIMUMINVESTMENTSALLOWED;
 
-		require(currentTotalBankroll < maxInvestmentsAllowed &amp;&amp; msg.value != 0);
+		require(currentTotalBankroll < maxInvestmentsAllowed && msg.value != 0);
 
 		uint256 currentSupplyOfTokens = totalSupply;
 		uint256 contributedEther;
@@ -1242,8 +1242,8 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 		uint256 tokenBalance = balances[msg.sender];
 		// verify that the contributor has enough tokens to cash out this many, and has waited the required time.
 		require(_amountTokens <= tokenBalance 
-			&amp;&amp; contributionTime[msg.sender] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
-			&amp;&amp; _amountTokens > 0);
+			&& contributionTime[msg.sender] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
+			&& _amountTokens > 0);
 
 		// save in memory for cheap access.
 		// again, represents the total balance of the contract before the function was called.
@@ -1308,7 +1308,7 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 
 	function changeWaitTimeUntilWithdrawOrTransfer(uint256 waitTime) public {
 		// waitTime MUST be less than or equal to 10 weeks
-		require (msg.sender == OWNER &amp;&amp; waitTime <= 6048000);
+		require (msg.sender == OWNER && waitTime <= 6048000);
 
 		WAITTIMEUNTILWITHDRAWORTRANSFER = waitTime;
 	}
@@ -1360,9 +1360,9 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 	// and don&#39;t allow transfers to this contract addr, it&#39;ll just kill tokens
 	function transfer(address _to, uint256 _value) public returns (bool success){
 		require(balances[msg.sender] >= _value 
-			&amp;&amp; contributionTime[msg.sender] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
-			&amp;&amp; _to != address(this)
-			&amp;&amp; _to != address(0));
+			&& contributionTime[msg.sender] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
+			&& _to != address(this)
+			&& _to != address(0));
 
 		// safely subtract
 		balances[msg.sender] = SafeMath.sub(balances[msg.sender], _value);
@@ -1377,10 +1377,10 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 	// and don&#39;t allow transfers to the contract addr, it&#39;ll just kill tokens
 	function transferFrom(address _from, address _to, uint _value) public returns(bool){
 		require(allowed[_from][msg.sender] >= _value 
-			&amp;&amp; balances[_from] >= _value 
-			&amp;&amp; contributionTime[_from] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
-			&amp;&amp; _to != address(this)
-			&amp;&amp; _to != address(0));
+			&& balances[_from] >= _value 
+			&& contributionTime[_from] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
+			&& _to != address(this)
+			&& _to != address(0));
 
 		// safely add to _to and subtract from _from, and subtract from allowed balances.
 		balances[_to] = SafeMath.add(balances[_to], _value);
@@ -1564,7 +1564,7 @@ contract EOSBetDice is usingOraclize, EOSBetGameInterface {
 	// WARNING!!!!! Can only set this function once!
 	function setBankrollerContractOnce(address bankrollAddress) public {
 		// require that BANKROLLER address == 0 (address not set yet), and coming from owner.
-		require(msg.sender == OWNER &amp;&amp; BANKROLLER == address(0));
+		require(msg.sender == OWNER && BANKROLLER == address(0));
 
 		// check here to make sure that the bankroll contract is legitimate
 		// just make sure that calling the bankroll contract getBankroll() returns non-zero
@@ -1616,26 +1616,26 @@ contract EOSBetDice is usingOraclize, EOSBetGameInterface {
 
 	function setHouseEdge(uint8 houseEdgeInThousandthPercents) public {
 		// house edge cannot be set > 5%, can be set to zero for promotions
-		require(msg.sender == OWNER &amp;&amp; houseEdgeInThousandthPercents <= 50);
+		require(msg.sender == OWNER && houseEdgeInThousandthPercents <= 50);
 
 		HOUSEEDGE_inTHOUSANDTHPERCENTS = houseEdgeInThousandthPercents;
 	}
 
 	function setMinBetPerRoll(uint256 minBet) public {
-		require(msg.sender == OWNER &amp;&amp; minBet > 1000);
+		require(msg.sender == OWNER && minBet > 1000);
 
 		MINBET_perROLL = minBet;
 	}
 
 	function setMinBetPerTx(uint256 minBet) public {
-		require(msg.sender == OWNER &amp;&amp; minBet > 1000);
+		require(msg.sender == OWNER && minBet > 1000);
 
 		MINBET_perTX = minBet;
 	}
 
 	function setMaxWin(uint8 newMaxWinInThousandthPercents) public {
 		// cannot set bet limit greater than 5% of total BANKROLL.
-		require(msg.sender == OWNER &amp;&amp; newMaxWinInThousandthPercents <= 50);
+		require(msg.sender == OWNER && newMaxWinInThousandthPercents <= 50);
 
 		MAXWIN_inTHOUSANDTHPERCENTS = newMaxWinInThousandthPercents;
 	}
@@ -1654,11 +1654,11 @@ contract EOSBetDice is usingOraclize, EOSBetGameInterface {
 		DiceGameData memory data = diceData[oraclizeQueryId];
 
 		require(block.timestamp - data.start >= ORACLIZEQUERYMAXTIME
-			&amp;&amp; (msg.sender == OWNER || msg.sender == data.player)
-			&amp;&amp; (!data.paidOut)
-			&amp;&amp; LIABILITIES >= data.etherReceived
-			&amp;&amp; data.etherReceived > 0
-			&amp;&amp; REFUNDSACTIVE);
+			&& (msg.sender == OWNER || msg.sender == data.player)
+			&& (!data.paidOut)
+			&& LIABILITIES >= data.etherReceived
+			&& data.etherReceived > 0
+			&& REFUNDSACTIVE);
 
 		// set paidout == true, so users can&#39;t request more refunds, and a super delayed oraclize __callback will just get reverted
 		diceData[oraclizeQueryId].paidOut = true;
@@ -1679,16 +1679,16 @@ contract EOSBetDice is usingOraclize, EOSBetGameInterface {
 		uint256 minBetPerTx = MINBET_perTX;
 
 		require(!GAMEPAUSED
-				&amp;&amp; betPerRoll * rolls >= minBetPerTx
-				&amp;&amp; msg.value >= minBetPerTx
-				&amp;&amp; betPerRoll >= MINBET_perROLL
-				&amp;&amp; rolls > 0
-				&amp;&amp; rolls <= 1024
-				&amp;&amp; betPerRoll <= msg.value
-				&amp;&amp; rollUnder > 1
-				&amp;&amp; rollUnder < 98
+				&& betPerRoll * rolls >= minBetPerTx
+				&& msg.value >= minBetPerTx
+				&& betPerRoll >= MINBET_perROLL
+				&& rolls > 0
+				&& rolls <= 1024
+				&& betPerRoll <= msg.value
+				&& rollUnder > 1
+				&& rollUnder < 98
 				// make sure that the player cannot win more than the max win (forget about house edge here)
-				&amp;&amp; (SafeMath.mul(betPerRoll, 100) / (rollUnder - 1)) <= getMaxWin());
+				&& (SafeMath.mul(betPerRoll, 100) / (rollUnder - 1)) <= getMaxWin());
 
 		// equation for gas to oraclize is:
 		// gas = (some fixed gas amt) + 1005 * rolls
@@ -1726,9 +1726,9 @@ contract EOSBetDice is usingOraclize, EOSBetGameInterface {
 		DiceGameData memory data = diceData[_queryId];
 		// only need to check these, as all of the game based checks were already done in the play(...) function 
 		require(msg.sender == oraclize_cbAddress() 
-			&amp;&amp; !data.paidOut 
-			&amp;&amp; data.player != address(0) 
-			&amp;&amp; LIABILITIES >= data.etherReceived);
+			&& !data.paidOut 
+			&& data.player != address(0) 
+			&& LIABILITIES >= data.etherReceived);
 
 		// if the proof has failed, immediately refund the player his original bet...
 		if (oraclize_randomDS_proofVerify__returnCode(_queryId, _result, _proof) != 0){
@@ -1768,7 +1768,7 @@ contract EOSBetDice is usingOraclize, EOSBetGameInterface {
 			// get this value outside of the loop for gas costs sake
 			uint256 hypotheticalWinAmount = SafeMath.mul(SafeMath.mul(data.betPerRoll, 100), (1000 - houseEdgeInThousandthPercents)) / (data.rollUnder - 1) / 1000;
 
-			while (gamesPlayed < data.rolls &amp;&amp; etherAvailable >= data.betPerRoll){
+			while (gamesPlayed < data.rolls && etherAvailable >= data.betPerRoll){
 				
 				// now, this roll is keccak256(_result, nonce) + 1 ... this is the main difference from using oraclize.
 

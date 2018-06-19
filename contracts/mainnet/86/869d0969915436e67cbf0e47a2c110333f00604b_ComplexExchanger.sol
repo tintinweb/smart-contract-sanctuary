@@ -22,7 +22,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -32,7 +32,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -41,7 +41,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -52,19 +52,19 @@ library SafeMath {
  */
 library Math {
   function max64(uint64 a, uint64 b) internal pure returns (uint64) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min64(uint64 a, uint64 b) internal pure returns (uint64) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
   function max256(uint256 a, uint256 b) internal pure returns (uint256) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min256(uint256 a, uint256 b) internal pure returns (uint256) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 }
 
@@ -87,7 +87,7 @@ interface ExchangerI {
     function buyTokens(address _recipient) payable public;
     function sellTokens(address _recipient, uint256 tokensCount) public;
 
-    /* Rate calc &amp; init  params */
+    /* Rate calc & init  params */
     function requestRates() payable public;
     function calcRates() public;
 
@@ -172,7 +172,7 @@ contract ERC20 is ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -190,7 +190,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -219,7 +219,7 @@ contract BasicToken is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -230,8 +230,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -294,7 +294,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -318,8 +318,8 @@ contract BurnableToken is BasicToken {
    * @param _value The amount of token to be burned.
    */
   function burn(uint256 _value) public {
-    require(_value &lt;= balances[msg.sender]);
-    // no need to require value &lt;= totalSupply, since that would imply the
+    require(_value <= balances[msg.sender]);
+    // no need to require value <= totalSupply, since that would imply the
     // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
     address burner = msg.sender;
@@ -476,10 +476,10 @@ contract ComplexExchanger is ExchangerI {
     ) public
     {
         require(
-            _withdrawWallet != address(0x0) &amp;&amp;
-            _token != address(0x0) &amp;&amp;
-            _deadline &gt; now &amp;&amp;
-            _oracles.length &gt;= MIN_READY_ORACLES
+            _withdrawWallet != address(0x0) &&
+            _token != address(0x0) &&
+            _deadline > now &&
+            _oracles.length >= MIN_READY_ORACLES
         );
 
         tokenAddress = _token;
@@ -495,16 +495,16 @@ contract ComplexExchanger is ExchangerI {
      * @dev Returns the contract state.
      */
     function getState() public view returns (State) {
-        if (now &gt;= deadline)
+        if (now >= deadline)
             return State.LOCKED;
 
-        if (now - calcTime &lt; RATE_PERIOD)
+        if (now - calcTime < RATE_PERIOD)
             return State.PROCESSING_ORDERS;
 
         if (waitingOracles() != 0)
             return State.WAIT_ORACLES;
         
-        if (readyOracles() &gt;= MIN_READY_ORACLES)
+        if (readyOracles() >= MIN_READY_ORACLES)
             return State.CALC_RATES;
 
         return State.REQUEST_RATES;
@@ -518,7 +518,7 @@ contract ComplexExchanger is ExchangerI {
         require(getState() == State.PROCESSING_ORDERS);
 
         uint256 availableTokens = tokenBalance();
-        require(availableTokens &gt; 0);
+        require(availableTokens > 0);
 
         uint256 tokensAmount = msg.value.mul(buyRate) / RATE_MULTIPLIER;
         require(tokensAmount != 0);
@@ -527,14 +527,14 @@ contract ComplexExchanger is ExchangerI {
         // if recipient set as 0x0 - recipient is sender
         address recipient = _recipient == 0x0 ? msg.sender : _recipient;
 
-        if (tokensAmount &gt; availableTokens) {
+        if (tokensAmount > availableTokens) {
             refundAmount = tokensAmount.sub(availableTokens).mul(RATE_MULTIPLIER) / buyRate;
             tokensAmount = availableTokens;
         }
 
         token.transfer(recipient, tokensAmount);
         Buy(msg.sender, recipient, tokensAmount, buyRate);
-        if (refundAmount &gt; 0)
+        if (refundAmount > 0)
             recipient.transfer(refundAmount);
     }
 
@@ -545,12 +545,12 @@ contract ComplexExchanger is ExchangerI {
      */
     function sellTokens(address _recipient, uint256 tokensCount) public {
         require(getState() == State.PROCESSING_ORDERS);
-        require(tokensCount &lt;= token.allowance(msg.sender, this));
+        require(tokensCount <= token.allowance(msg.sender, this));
 
         uint256 cryptoAmount = tokensCount.mul(RATE_MULTIPLIER) / sellRate;
         require(cryptoAmount != 0);
 
-        if (cryptoAmount &gt; this.balance) {
+        if (cryptoAmount > this.balance) {
             uint256 extraTokens = (cryptoAmount - this.balance).mul(sellRate) / RATE_MULTIPLIER;
             cryptoAmount = this.balance;
             tokensCount = tokensCount.sub(extraTokens);
@@ -570,15 +570,15 @@ contract ComplexExchanger is ExchangerI {
         require(getState() == State.REQUEST_RATES);
         // Or just sub msg.value
         // If it will be below zero - it will throw revert()
-        // require(msg.value &gt;= requestPrice());
+        // require(msg.value >= requestPrice());
         uint256 value = msg.value;
 
-        for (uint256 i = 0; i &lt; oracles.length; i++) {
+        for (uint256 i = 0; i < oracles.length; i++) {
             OracleI oracle = OracleI(oracles[i]);
             uint callPrice = oracle.getPrice();
             
             // If oracle needs funds - refill it
-            if (oracles[i].balance &lt; callPrice) {
+            if (oracles[i].balance < callPrice) {
                 value = value.sub(callPrice);
                 oracles[i].transfer(callPrice);
             }
@@ -588,7 +588,7 @@ contract ComplexExchanger is ExchangerI {
         }
         requestTime = now;
 
-        if (value &gt; 0)
+        if (value > 0)
             msg.sender.transfer(value);
     }
 
@@ -597,7 +597,7 @@ contract ComplexExchanger is ExchangerI {
      */
     function requestPrice() public view returns(uint256) {
         uint256 requestCost = 0;
-        for (uint256 i = 0; i &lt; oracles.length; i++) {
+        for (uint256 i = 0; i < oracles.length; i++) {
             requestCost = requestCost.add(OracleI(oracles[i]).getPrice());
         }
         return requestCost;
@@ -613,7 +613,7 @@ contract ComplexExchanger is ExchangerI {
         uint256 maxRate = 0;
         uint256 validOracles = 0;
 
-        for (uint256 i = 0; i &lt; oracles.length; i++) {
+        for (uint256 i = 0; i < oracles.length; i++) {
             OracleI oracle = OracleI(oracles[i]);
             uint256 rate = oracle.rate();
             if (oracle.waitQuery()) {
@@ -628,7 +628,7 @@ contract ComplexExchanger is ExchangerI {
             }
         }
         // If valid rates data is insufficient - throw
-        if (validOracles &lt; MIN_READY_ORACLES)
+        if (validOracles < MIN_READY_ORACLES)
             revert();
 
         buyRate = minRate.mul(FEE_MULTIPLIER * RATE_MULTIPLIER - buyFee * RATE_MULTIPLIER / 100) / FEE_MULTIPLIER / RATE_MULTIPLIER;
@@ -678,11 +678,11 @@ contract ComplexExchanger is ExchangerI {
      */
     function readyOracles() public view returns (uint256) {
         uint256 count = 0;
-        for (uint256 i = 0; i &lt; oracles.length; i++) {
+        for (uint256 i = 0; i < oracles.length; i++) {
             OracleI oracle = OracleI(oracles[i]);
-            if ((oracle.rate() != 0) &amp;&amp; 
-                !oracle.waitQuery() &amp;&amp;
-                (now - oracle.updateTime()) &lt; ORACLE_ACTUAL)
+            if ((oracle.rate() != 0) && 
+                !oracle.waitQuery() &&
+                (now - oracle.updateTime()) < ORACLE_ACTUAL)
                 count++;
         }
 
@@ -694,8 +694,8 @@ contract ComplexExchanger is ExchangerI {
      */
     function waitingOracles() public view returns (uint256) {
         uint256 count = 0;
-        for (uint256 i = 0; i &lt; oracles.length; i++) {
-            if (OracleI(oracles[i]).waitQuery() &amp;&amp; (now - requestTime) &lt; ORACLE_TIMEOUT) {
+        for (uint256 i = 0; i < oracles.length; i++) {
+            if (OracleI(oracles[i]).waitQuery() && (now - requestTime) < ORACLE_TIMEOUT) {
                 count++;
             }
         }
@@ -707,7 +707,7 @@ contract ComplexExchanger is ExchangerI {
      * @dev Withdraws balance only to special hardcoded wallet ONLY WHEN contract is locked.
      */
     function withdrawReserve() public {
-        require(getState() == State.LOCKED &amp;&amp; msg.sender == withdrawWallet);
+        require(getState() == State.LOCKED && msg.sender == withdrawWallet);
         ReserveWithdraw(this.balance);
         withdrawWallet.transfer(this.balance);
         token.burn(tokenBalance());
@@ -725,6 +725,6 @@ contract ComplexExchanger is ExchangerI {
      * @param rate Rate.
      */
     function isRateValid(uint256 rate) internal pure returns(bool) {
-        return rate &gt;= MIN_RATE &amp;&amp; rate &lt;= MAX_RATE;
+        return rate >= MIN_RATE && rate <= MAX_RATE;
     }
 }

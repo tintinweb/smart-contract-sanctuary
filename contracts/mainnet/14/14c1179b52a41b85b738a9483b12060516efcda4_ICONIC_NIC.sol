@@ -510,7 +510,7 @@ contract ICONIC_NIC is Ownable, TokenERC20 {
     }
 
     /**
-    * @notice `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens
+    * @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     * @param target Address to be frozen
     * @param freeze either to freeze it or not
     */

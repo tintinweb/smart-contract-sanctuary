@@ -32,25 +32,25 @@ library SafeMath {
     return c;
   }
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
   function totalSupply() public view returns (uint256) {
@@ -59,7 +59,7 @@ contract BasicToken is ERC20Basic {
 
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -80,11 +80,11 @@ contract ERC20 is ERC20Basic {
 }
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -119,7 +119,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -215,9 +215,9 @@ contract Crowdsale {
 
 
   function Crowdsale(uint256 _startTime, uint256 _endTime, uint256 _rate, address _wallet) public {
-    //require(_startTime &gt;= now);
-    require(_endTime &gt;= _startTime);
-    require(_rate &gt; 0);
+    //require(_startTime >= now);
+    require(_endTime >= _startTime);
+    require(_rate > 0);
     require(_wallet != address(0));
 
     token = createTokenContract();
@@ -253,7 +253,7 @@ contract Crowdsale {
 
   // @return true if crowdsale event has ended
   function hasEnded() public view returns (bool) {
-    return now &gt; endTime;
+    return now > endTime;
   }
 
   // creates the token to be sold.
@@ -275,9 +275,9 @@ contract Crowdsale {
 
   // @return true if the transaction can buy tokens
   function validPurchase() internal view returns (bool) {
-    bool withinPeriod = now &gt;= startTime &amp;&amp; now &lt;= endTime;
+    bool withinPeriod = now >= startTime && now <= endTime;
     bool nonZeroPurchase = msg.value != 0;
-    return withinPeriod &amp;&amp; nonZeroPurchase;
+    return withinPeriod && nonZeroPurchase;
   }
 
 }
@@ -288,16 +288,16 @@ contract CappedCrowdsale is Crowdsale {
   uint256 public cap;
 
   function CappedCrowdsale(uint256 _cap) public {
-    require(_cap &gt; 0);
+    require(_cap > 0);
     cap = _cap;
   }
   function hasEnded() public view returns (bool) {
-    bool capReached = weiRaised &gt;= cap;
+    bool capReached = weiRaised >= cap;
     return capReached || super.hasEnded();
   }
   function validPurchase() internal view returns (bool) {
-    bool withinCap = weiRaised.add(msg.value) &lt;= cap;
-    return withinCap &amp;&amp; super.validPurchase();
+    bool withinCap = weiRaised.add(msg.value) <= cap;
+    return withinCap && super.validPurchase();
   }
 
 }
@@ -358,7 +358,7 @@ contract RefundVault is Ownable {
 
   enum State { Active, Refunding, Closed }
 
-  mapping (address =&gt; uint256) public deposited;
+  mapping (address => uint256) public deposited;
   address public wallet;
   State public state;
 
@@ -417,7 +417,7 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
   RefundVault public vault;
 
   function RefundableCrowdsale(uint256 _goal) public {
-    require(_goal &gt; 0);
+    require(_goal > 0);
     vault = new RefundVault(wallet);
     goal = _goal;
   }
@@ -432,7 +432,7 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
   */
 
   function goalReached() public view returns (bool) {
-    return weiRaised &gt;= goal;
+    return weiRaised >= goal;
   }
 
   // vault finalization task, called when owner calls finalize()
@@ -489,7 +489,7 @@ contract HAICrowdsale is CappedCrowdsale, RefundableCrowdsale {
   // Constructor
   // ============
   function HAICrowdsale(uint256 _startTime, uint256 _endTime, uint256 _rate, address _wallet, uint256 _goal, uint256 _cap) CappedCrowdsale(_cap) FinalizableCrowdsale() RefundableCrowdsale(_goal) Crowdsale(_startTime, _endTime, _rate, _wallet) public {
-      require(_goal &lt;= _cap);
+      require(_goal <= _cap);
   }
   // =============
 
@@ -534,7 +534,7 @@ contract HAICrowdsale is CappedCrowdsale, RefundableCrowdsale {
   // =========================
   function () external payable {
       uint256 tokensThatWillBeMintedAfterPurchase = msg.value.mul(rate);
-      if ((stage == CrowdsaleStage.PreICO) &amp;&amp; (token.totalSupply() + tokensThatWillBeMintedAfterPurchase &gt; totalTokensForSaleDuringPreICO)) {
+      if ((stage == CrowdsaleStage.PreICO) && (token.totalSupply() + tokensThatWillBeMintedAfterPurchase > totalTokensForSaleDuringPreICO)) {
         msg.sender.transfer(msg.value); // Refund them
         EthRefunded(&quot;PreICO Limit Hit&quot;);
         return;
@@ -565,9 +565,9 @@ contract HAICrowdsale is CappedCrowdsale, RefundableCrowdsale {
 
       require(!isFinalized);
       uint256 alreadyMinted = token.totalSupply();
-      require(alreadyMinted &lt; maxTokens);
+      require(alreadyMinted < maxTokens);
       uint256 unsoldTokens = totalTokensForSale - alreadyMinted;
-      if (unsoldTokens &gt; 0) {
+      if (unsoldTokens > 0) {
         tokensForEcosystem = tokensForEcosystem + unsoldTokens;
       }
       token.mint(_teamFund,tokensForTeam);

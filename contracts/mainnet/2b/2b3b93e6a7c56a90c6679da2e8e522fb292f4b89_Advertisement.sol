@@ -2,7 +2,7 @@ pragma solidity ^0.4.21;
 
 
 contract AppCoins {
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => mapping (address => uint256)) public allowance;
     function balanceOf (address _owner) public constant returns (uint256);
     function transfer(address _to, uint256 _value) public returns (bool success);
     function transferFrom(address _from, address _to, uint256 _value) public returns (uint);
@@ -44,12 +44,12 @@ contract Advertisement {
 
 	ValidationRules public rules;
 	bytes32[] bidIdList;
-	mapping (bytes32 =&gt; Campaign) campaigns;
-	mapping (bytes =&gt; bytes32[]) campaignsByCountry;
+	mapping (bytes32 => Campaign) campaigns;
+	mapping (bytes => bytes32[]) campaignsByCountry;
 	AppCoins appc;
 	bytes2[] countryList;
     address public owner;
-	mapping (address =&gt; mapping (bytes32 =&gt; bool)) userAttributions;
+	mapping (address => mapping (bytes32 => bool)) userAttributions;
 
 
 
@@ -91,7 +91,7 @@ contract Advertisement {
 		newCampaign.endDate = endDate;
 
 		//Transfers the budget to contract address
-        require(appc.allowance(msg.sender, address(this)) &gt;= budget);
+        require(appc.allowance(msg.sender, address(this)) >= budget);
 
         appc.transferFrom(msg.sender, address(this), budget);
 
@@ -124,7 +124,7 @@ contract Advertisement {
 		bytes memory countriesInBytes = bytes(campaign.filters.countries);
 		uint countryLength = 0;
 
-		for (uint i=0; i&lt;countriesInBytes.length; i++){
+		for (uint i=0; i<countriesInBytes.length; i++){
 
 			//if &#39;,&#39; is found, new country ahead
 			if(countriesInBytes[i]==&quot;,&quot; || i == countriesInBytes.length-1){
@@ -171,7 +171,7 @@ contract Advertisement {
          require (isCampaignValid(bidId));
 		require (timestampList.length == nonces.length);
 		//Expect ordered array arranged in ascending order
-		for(uint i = 0; i &lt; timestampList.length-1; i++){
+		for(uint i = 0; i < timestampList.length-1; i++){
 		        uint timestamp_diff = (timestampList[i+1]-timestampList[i]);
 			require((timestamp_diff / 1000) == 10);
 		}
@@ -291,7 +291,7 @@ contract Advertisement {
     function isCampaignValid(bytes32 bidId) public view returns(bool) {
         Campaign storage campaign = campaigns[bidId];
         uint nowInMilliseconds = now * 1000;
-        return campaign.valid &amp;&amp; campaign.startDate &lt; nowInMilliseconds &amp;&amp; campaign.endDate &gt; nowInMilliseconds;
+        return campaign.valid && campaign.startDate < nowInMilliseconds && campaign.endDate > nowInMilliseconds;
 	}
 
     function payFromCampaign (bytes32 bidId, address appstore, address oem)
@@ -303,8 +303,8 @@ contract Advertisement {
 		//Search bid price
 		Campaign storage campaign = campaigns[bidId];
 
-		require (campaign.budget &gt; 0);
-		require (campaign.budget &gt;= campaign.price);
+		require (campaign.budget > 0);
+		require (campaign.budget >= campaign.price);
 
 		//transfer to user, appstore and oem
 		appc.transfer(msg.sender, division(campaign.price * dev_share,100));
@@ -317,16 +317,16 @@ contract Advertisement {
 
     function verifyNonces (bytes packageName,uint64[] timestampList, uint64[] nonces) internal {
 
-		for(uint i = 0; i &lt; nonces.length; i++){
+		for(uint i = 0; i < nonces.length; i++){
 			bytes8 timestamp = bytes8(timestampList[i]);
 			bytes8 nonce = bytes8(nonces[i]);
 			bytes memory byteList = new bytes(packageName.length + timestamp.length);
 
-			for(uint j = 0; j &lt; packageName.length;j++){
+			for(uint j = 0; j < packageName.length;j++){
 				byteList[j] = packageName[j];
 			}
 
-			for(j = 0; j &lt; timestamp.length; j++ ){
+			for(j = 0; j < timestamp.length; j++ ){
 				byteList[j + packageName.length] = timestamp[j];
 			}
 
@@ -334,11 +334,11 @@ contract Advertisement {
 
 			bytes memory noncePlusHash = new bytes(result.length + nonce.length);
 
-			for(j = 0; j &lt; nonce.length; j++){
+			for(j = 0; j < nonce.length; j++){
 				noncePlusHash[j] = nonce[j];
 			}
 
-			for(j = 0; j &lt; result.length; j++){
+			for(j = 0; j < result.length; j++){
 				noncePlusHash[j + nonce.length] = result[j];
 			}
 

@@ -8,12 +8,12 @@ pragma solidity 0.4.23;
  */
 contract EternalStorage {
 
-    mapping(bytes32 =&gt; uint256) internal uintStorage;
-    mapping(bytes32 =&gt; string) internal stringStorage;
-    mapping(bytes32 =&gt; address) internal addressStorage;
-    mapping(bytes32 =&gt; bytes) internal bytesStorage;
-    mapping(bytes32 =&gt; bool) internal boolStorage;
-    mapping(bytes32 =&gt; int256) internal intStorage;
+    mapping(bytes32 => uint256) internal uintStorage;
+    mapping(bytes32 => string) internal stringStorage;
+    mapping(bytes32 => address) internal addressStorage;
+    mapping(bytes32 => bytes) internal bytesStorage;
+    mapping(bytes32 => bool) internal boolStorage;
+    mapping(bytes32 => int256) internal intStorage;
 
 }
 
@@ -186,7 +186,7 @@ contract UpgradeabilityProxy is Proxy, UpgradeabilityStorage {
     */
     function _upgradeTo(uint256 version, address implementation) internal {
         require(_implementation != implementation);
-        require(version &gt; _version);
+        require(version > _version);
         _version = version;
         _implementation = implementation;
         emit Upgraded(version, implementation);

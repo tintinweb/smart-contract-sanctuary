@@ -82,7 +82,7 @@ library Message {
     // }
 
     function addressArrayContains(address[] array, address value) internal pure returns (bool) {
-        for (uint256 i = 0; i &lt; array.length; i++) {
+        for (uint256 i = 0; i < array.length; i++) {
             if (array[i] == value) {
                 return true;
             }
@@ -152,11 +152,11 @@ library Message {
         IBridgeValidators _validatorContract) internal view {
         require(isMessageValid(_message));
         uint256 requiredSignatures = _validatorContract.requiredSignatures();
-        require(_vs.length &gt;= requiredSignatures);
+        require(_vs.length >= requiredSignatures);
         bytes32 hash = hashMessage(_message);
         address[] memory encounteredAddresses = new address[](requiredSignatures);
 
-        for (uint256 i = 0; i &lt; requiredSignatures; i++) {
+        for (uint256 i = 0; i < requiredSignatures; i++) {
             address recoveredAddress = ecrecover(hash, _vs[i], _rs[i], _ss[i]);
             require(_validatorContract.isValidator(recoveredAddress));
             if (addressArrayContains(encounteredAddresses, recoveredAddress)) {
@@ -191,7 +191,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -201,7 +201,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -210,7 +210,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -223,12 +223,12 @@ library SafeMath {
  */
 contract EternalStorage {
 
-    mapping(bytes32 =&gt; uint256) internal uintStorage;
-    mapping(bytes32 =&gt; string) internal stringStorage;
-    mapping(bytes32 =&gt; address) internal addressStorage;
-    mapping(bytes32 =&gt; bytes) internal bytesStorage;
-    mapping(bytes32 =&gt; bool) internal boolStorage;
-    mapping(bytes32 =&gt; int256) internal intStorage;
+    mapping(bytes32 => uint256) internal uintStorage;
+    mapping(bytes32 => string) internal stringStorage;
+    mapping(bytes32 => address) internal addressStorage;
+    mapping(bytes32 => bytes) internal bytesStorage;
+    mapping(bytes32 => bool) internal boolStorage;
+    mapping(bytes32 => int256) internal intStorage;
 
 }
 
@@ -252,7 +252,7 @@ contract BasicBridge is EternalStorage {
     }
 
     function setGasPrice(uint256 _gasPrice) public onlyOwner {
-        require(_gasPrice &gt; 0);
+        require(_gasPrice > 0);
         uintStorage[keccak256(&quot;gasPrice&quot;)] = _gasPrice;
         emit GasPriceChanged(_gasPrice);
     }
@@ -262,7 +262,7 @@ contract BasicBridge is EternalStorage {
     }
 
     function setRequiredBlockConfirmations(uint256 _blockConfirmations) public onlyOwner {
-        require(_blockConfirmations &gt; 0);
+        require(_blockConfirmations > 0);
         uintStorage[keccak256(&quot;requiredBlockConfirmations&quot;)] = _blockConfirmations;
         emit RequiredBlockConfirmationChanged(_blockConfirmations);
     }
@@ -302,8 +302,8 @@ contract ForeignBridge is ERC677Receiver, BasicBridge {
     ) public returns(bool) {
         require(!isInitialized());
         require(_validatorContract != address(0));
-        require(_minPerTx &gt; 0 &amp;&amp; _maxPerTx &gt; _minPerTx &amp;&amp; _foreignDailyLimit &gt; _maxPerTx);
-        require(_foreignGasPrice &gt; 0);
+        require(_minPerTx > 0 && _maxPerTx > _minPerTx && _foreignDailyLimit > _maxPerTx);
+        require(_foreignGasPrice > 0);
         addressStorage[keccak256(&quot;validatorContract&quot;)] = _validatorContract;
         setErc677token(_erc677token);
         uintStorage[keccak256(&quot;foreignDailyLimit&quot;)] = _foreignDailyLimit;
@@ -326,12 +326,12 @@ contract ForeignBridge is ERC677Receiver, BasicBridge {
     }
 
     function setMaxPerTx(uint256 _maxPerTx) external onlyOwner {
-        require(_maxPerTx &lt; foreignDailyLimit());
+        require(_maxPerTx < foreignDailyLimit());
         uintStorage[keccak256(&quot;maxPerTx&quot;)] = _maxPerTx;
     }
 
     function setMinPerTx(uint256 _minPerTx) external onlyOwner {
-        require(_minPerTx &lt; foreignDailyLimit() &amp;&amp; _minPerTx &lt; maxPerTx());
+        require(_minPerTx < foreignDailyLimit() && _minPerTx < maxPerTx());
         uintStorage[keccak256(&quot;minPerTx&quot;)] = _minPerTx;
     }
 
@@ -405,7 +405,7 @@ contract ForeignBridge is ERC677Receiver, BasicBridge {
 
         emit SignedForDeposit(msg.sender, transactionHash);
 
-        if (signed &gt;= validatorContract().requiredSignatures()) {
+        if (signed >= validatorContract().requiredSignatures()) {
             // If the bridge contract does not own enough tokens to transfer
             // it will couse funds lock on the home side of the bridge
             setNumDepositsSigned(hashMsg, markAsProcessed(signed));
@@ -433,7 +433,7 @@ contract ForeignBridge is ERC677Receiver, BasicBridge {
         require(!isAlreadyProcessed(signed));
         // the check above assumes that the case when the value could be overflew will not happen in the addition operation below
         signed = signed + 1;
-        if (signed &gt; 1) {
+        if (signed > 1) {
             // Duplicated signatures
             require(!messagesSigned(hashSender));
         } else {
@@ -447,7 +447,7 @@ contract ForeignBridge is ERC677Receiver, BasicBridge {
         setNumMessagesSigned(hashMsg, signed);
 
         emit SignedForWithdraw(msg.sender, hashMsg);
-        if (signed &gt;= validatorContract().requiredSignatures()) {
+        if (signed >= validatorContract().requiredSignatures()) {
             setNumMessagesSigned(hashMsg, markAsProcessed(signed));
             emit CollectedSignatures(msg.sender, hashMsg);
         }
@@ -458,7 +458,7 @@ contract ForeignBridge is ERC677Receiver, BasicBridge {
     }
 
     function isAlreadyProcessed(uint256 _number) public pure returns(bool) {
-        return _number &amp; 2**255 == 2**255;
+        return _number & 2**255 == 2**255;
     }
 
     function signature(bytes32 _hash, uint256 _index) public view returns (bytes) {
@@ -482,7 +482,7 @@ contract ForeignBridge is ERC677Receiver, BasicBridge {
 
     function withinLimit(uint256 _amount) public view returns(bool) {
         uint256 nextLimit = totalSpentPerDay(getCurrentDay()).add(_amount);
-        return foreignDailyLimit() &gt;= nextLimit &amp;&amp; _amount &lt;= maxPerTx() &amp;&amp; _amount &gt;= minPerTx();
+        return foreignDailyLimit() >= nextLimit && _amount <= maxPerTx() && _amount >= minPerTx();
     }
 
     function isInitialized() public view returns(bool) {

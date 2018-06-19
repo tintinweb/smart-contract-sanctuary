@@ -328,7 +328,7 @@ contract OrguraExchange is StandardToken, Owned {
 
     modifier inProgress {
         require(totalSupply < TOKENS_SALE_HARD_CAP
-            &amp;&amp; !tokenSaleClosed &amp;&amp; now >= dateSeedSale);
+            && !tokenSaleClosed && now >= dateSeedSale);
         _;
     }
 
@@ -422,7 +422,7 @@ contract OrguraExchange is StandardToken, Owned {
         uint256 tokenBase = ethAmount.mul(BASE_RATE);
         uint8 roundNum = currentRoundIndex();
         tokens = tokenBase.mul(100)/(100 - (roundDiscountPercentages[roundNum]));
-        while(tokens.add(totalSupply) > roundCaps[roundNum] &amp;&amp; roundNum < 4){
+        while(tokens.add(totalSupply) > roundCaps[roundNum] && roundNum < 4){
            roundNum++;
            tokens = tokenBase.mul(100)/(100 - (roundDiscountPercentages[roundNum])); 
         }
@@ -434,7 +434,7 @@ contract OrguraExchange is StandardToken, Owned {
         roundNum = currentRoundIndexByDate();
 
         /// round determined by conjunction of both time and total sold tokens
-        while(roundNum < 4 &amp;&amp; totalSupply > roundCaps[roundNum]) {
+        while(roundNum < 4 && totalSupply > roundCaps[roundNum]) {
             roundNum++;
         }
     }
@@ -532,7 +532,7 @@ contract OrguraExchange is StandardToken, Owned {
 
     /**
      * issue the tokens for Reserved 
-     * @param reservedTokens &amp; bounty Tokens the amount of tokens to be issued
+     * @param reservedTokens & bounty Tokens the amount of tokens to be issued
      * */
     function issueReservedTokens(uint reservedTokens) internal{
         balances[owner] = reservedTokens;

@@ -22,7 +22,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -32,7 +32,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -41,7 +41,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -121,19 +121,19 @@ contract TraxionWallet is Ownable {
     }
 
     /** Whitelist an address and set max investment **/
-    mapping (address =&gt; bool) public whitelistedAddr;
-    mapping (address =&gt; uint256) public totalInvestment;
+    mapping (address => bool) public whitelistedAddr;
+    mapping (address => uint256) public totalInvestment;
   
     /** @dev whitelist an Address */
     function whitelistAddress(address[] buyer) external onlyOwner {
-        for (uint i = 0; i &lt; buyer.length; i++) {
+        for (uint i = 0; i < buyer.length; i++) {
             whitelistedAddr[buyer[i]] = true;
         }
     }
   
     /** @dev black list an address **/
     function blacklistAddr(address[] buyer) external onlyOwner {
-        for (uint i = 0; i &lt; buyer.length; i++) {
+        for (uint i = 0; i < buyer.length; i++) {
             whitelistedAddr[buyer[i]] = false;
         }
     }    
@@ -173,10 +173,10 @@ contract TraxionWallet is Ownable {
         require(_beneficiary != address(0)); 
         require(_weiAmount != 0);
     
-        require(_weiAmount &gt; minInvestment); // Revert if payment is less than 0.40 ETH
+        require(_weiAmount > minInvestment); // Revert if payment is less than 0.40 ETH
         require(whitelistedAddr[_beneficiary]); // Revert if investor is not whitelisted
-        require(totalInvestment[_beneficiary].add(_weiAmount) &lt;= investmentUpperBounds); // Revert if the investor already spent over 2k ETH investment or payment is greater than 2k ETH
-        require(weiRaised.add(_weiAmount) &lt;= hardcap); // Revert if ICO campaign reached Hard Cap
+        require(totalInvestment[_beneficiary].add(_weiAmount) <= investmentUpperBounds); // Revert if the investor already spent over 2k ETH investment or payment is greater than 2k ETH
+        require(weiRaised.add(_weiAmount) <= hardcap); // Revert if ICO campaign reached Hard Cap
     }
 
 

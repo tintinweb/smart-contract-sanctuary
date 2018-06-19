@@ -93,7 +93,7 @@ library Math {
         constant
         returns (bool)
     {
-        return a + b &gt;= a;
+        return a + b >= a;
     }
 
     /// @dev Returns whether a subtraction operation causes an underflow
@@ -105,7 +105,7 @@ library Math {
         constant
         returns (bool)
     {
-        return a &gt;= b;
+        return a >= b;
     }
 
     /// @dev Returns whether a multiply operation causes an overflow
@@ -168,8 +168,8 @@ contract StandardToken is Token {
     /*
      *  Storage
      */
-    mapping (address =&gt; uint) balances;
-    mapping (address =&gt; mapping (address =&gt; uint)) allowances;
+    mapping (address => uint) balances;
+    mapping (address => mapping (address => uint)) allowances;
 
     /*
      *  Public functions
@@ -276,7 +276,7 @@ contract DelphyToken is StandardToken {
     {
         totalSupply = 0;
 
-        for (uint i=0; i&lt;owners.length; i++) {
+        for (uint i=0; i<owners.length; i++) {
             require (owners[i] != 0);
 
             balances[owners[i]] += tokens[i];

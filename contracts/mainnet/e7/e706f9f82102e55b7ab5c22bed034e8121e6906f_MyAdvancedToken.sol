@@ -225,7 +225,7 @@ contract MyAdvancedToken is owned, TokenERC20 {
         return _transferadvanced(_from, _to, _value);
     }
 	
-    /// @notice `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens
+    /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
     function freezeAccount(address target, bool freeze) onlyOwner public {

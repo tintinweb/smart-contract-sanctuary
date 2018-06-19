@@ -8,37 +8,37 @@ contract SafeMath {
   }
 
   function safeDiv(uint256 a, uint256 b) internal returns (uint256) {
-    assert(b &gt; 0);
+    assert(b > 0);
     uint256 c = a / b;
     assert(a == b * c + a % b);
     return c;
   }
 
   function safeSub(uint256 a, uint256 b) internal returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function safeAdd(uint256 a, uint256 b) internal returns (uint256) {
     uint256 c = a + b;
-    assert(c&gt;=a &amp;&amp; c&gt;=b);
+    assert(c>=a && c>=b);
     return c;
   }
 
   function max64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
   function max256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
   function assert(bool assertion) internal {
@@ -62,8 +62,8 @@ contract ERC20 {
 
 contract StandardToken is ERC20, SafeMath {
 
-  mapping(address =&gt; uint256) balances;
-  mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+  mapping(address => uint256) balances;
+  mapping (address => mapping (address => uint256)) allowed;
 
   function transfer(address _to, uint256 _value) returns (bool success) {
     balances[msg.sender] = safeSub(balances[msg.sender], _value);
@@ -76,7 +76,7 @@ contract StandardToken is ERC20, SafeMath {
     var _allowance = allowed[_from][msg.sender];
 
     // Check is not needed because safeSub(_allowance, _value) will already throw if this condition is not met
-    // if (_value &gt; _allowance) throw;
+    // if (_value > _allowance) throw;
 
     balances[_to] = safeAdd(balances[_to], _value);
     balances[_from] = safeSub(balances[_from], _value);

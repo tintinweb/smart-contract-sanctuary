@@ -43,10 +43,10 @@ contract Share is Control {
     uint256 public watermark;
     Share public h;
 
-    mapping (address =&gt; uint256) public balances;
-    mapping (address =&gt; uint256) public fullfilled;
-    mapping (address =&gt; uint256) public sellPrice;
-    mapping (address =&gt; uint256) public toSell;
+    mapping (address => uint256) public balances;
+    mapping (address => uint256) public fullfilled;
+    mapping (address => uint256) public sellPrice;
+    mapping (address => uint256) public toSell;
 
     event Transfer(address from, address to, uint256 amount);
     event Income(uint256);
@@ -63,12 +63,12 @@ contract Share is Control {
     }
 
     function onIncome() public payable notPause {
-        if (msg.value &gt; 0) {
+        if (msg.value > 0) {
             uint256 split = (msg.value / totalSupply);
             watermark += split;
-            assert(watermark * totalSupply &gt; watermark);
+            assert(watermark * totalSupply > watermark);
 
-            if ((msg.value - split * totalSupply) &gt; 0) {
+            if ((msg.value - split * totalSupply) > 0) {
                 h.onIncome.value(msg.value - split * totalSupply)();
             }
             emit Income(msg.value);
@@ -96,9 +96,9 @@ contract Share is Control {
 
     function _transfer(address from, address to, uint256 amount) internal {
         // prevent overflow
-        require(amount &gt; 0);
-        require(balances[from] &gt;= amount);
-        require(balances[to] + amount &gt; balances[to]);
+        require(amount > 0);
+        require(balances[from] >= amount);
+        require(balances[to] + amount > balances[to]);
         
 
         uint256 fromBonus = (watermark - fullfilled[from]) * amount;
@@ -125,18 +125,18 @@ contract Share is Control {
     }
 
     function buy(address from) public payable notPause {
-        require(sellPrice[from] &gt; 0);
+        require(sellPrice[from] > 0);
         uint256 amount = msg.value / sellPrice[from];
 
-        if (amount &gt;= balances[from]) {
+        if (amount >= balances[from]) {
             amount = balances[from];
         }
 
-        if (amount &gt;= toSell[from]) {
+        if (amount >= toSell[from]) {
             amount = toSell[from];
         }
 
-        require(amount &gt; 0);
+        require(amount > 0);
 
         toSell[from] -= amount;
         _transfer(from, msg.sender, amount);
@@ -156,7 +156,7 @@ contract ShareErc20 is Share, ERC20Interface {
     string public name;
     uint256 public decimals;
 
-    mapping (address =&gt; mapping(address =&gt; uint256)) public allowance;
+    mapping (address => mapping(address => uint256)) public allowance;
 
     /**
      * at start the owner has 100% share, which is 10,000 holds
@@ -186,7 +186,7 @@ contract ShareErc20 is Share, ERC20Interface {
     }
 
     function transferFrom(address from, address to, uint256 amount) public returns(bool) {
-        require(allowance[from][msg.sender] &gt;= amount);
+        require(allowance[from][msg.sender] >= amount);
 
         allowance[from][msg.sender] -= amount;
         _transfer(from, to, amount);

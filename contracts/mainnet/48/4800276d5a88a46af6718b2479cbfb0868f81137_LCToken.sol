@@ -257,14 +257,14 @@ contract LCToken is StandardToken, Ownable{
         require(_to != 0x0);
         require(_value <= balances[msg.sender]);
         require(_value > 0);
-        require(_releaseTime > now &amp;&amp; _releaseTime <= now + 60*60*24*365*5);
+        require(_releaseTime > now && _releaseTime <= now + 60*60*24*365*5);
 
         // SafeMath.sub will throw if there is not enough balance.
         balances[msg.sender] = balances[msg.sender].sub(_value);
        
         //if preLock can release 
         uint preRelease = timeRelease[_to];
-        if (preRelease <= now &amp;&amp; preRelease != 0x0) {
+        if (preRelease <= now && preRelease != 0x0) {
             balances[_to] = balances[_to].add(lockedBalance[_to]);
             lockedBalance[_to] = 0;
         }

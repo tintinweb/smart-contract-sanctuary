@@ -3,11 +3,11 @@ pragma solidity ^0.4.23;
 contract EthMashTower {
 
     address public owner;
-    mapping (address =&gt; uint) public withdrawals;
+    mapping (address => uint) public withdrawals;
 
     int round;
     uint registered;
-    mapping (int =&gt; address[7]) public participants;
+    mapping (int => address[7]) public participants;
 
     constructor() public {
         owner = msg.sender;
@@ -27,7 +27,7 @@ contract EthMashTower {
     }
 
     function userWithdraw() public {
-        require(withdrawals[msg.sender] &gt; 0);
+        require(withdrawals[msg.sender] > 0);
         uint amount = withdrawals[msg.sender];
         withdrawals[msg.sender] = 0;
         msg.sender.transfer(amount);
@@ -35,7 +35,7 @@ contract EthMashTower {
 
     function userRegister() public payable {
         require(msg.value == 105 finney);
-        require(registered &lt; 4);
+        require(registered < 4);
 
         withdrawals[owner] += 5 finney;
         participants[round][registered] = msg.sender;
@@ -47,7 +47,7 @@ contract EthMashTower {
             calcWinner(4, 5, 6, 100 finney);
         }
 
-        if (registered &lt; 3) {
+        if (registered < 3) {
             registered++;
         } else {
             round++;

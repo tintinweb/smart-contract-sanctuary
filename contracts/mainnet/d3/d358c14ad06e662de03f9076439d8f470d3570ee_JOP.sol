@@ -8,20 +8,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal constant returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal constant returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -68,7 +68,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -105,7 +105,7 @@ contract ERC20 is ERC20Basic {
 
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+  mapping (address => mapping (address => uint256)) allowed;
   
   /**
    * @dev Transfer tokens from one address to another
@@ -117,7 +117,7 @@ contract StandardToken is ERC20, BasicToken {
     var _allowance = allowed[_from][msg.sender];
 
     // Check is not needed because sub(_allowance, _value) will already throw if this condition is not met
-    // require (_value &lt;= _allowance);
+    // require (_value <= _allowance);
 
     // KYBER-NOTE! code changed to comply with ERC20 standard
     balances[_from] = balances[_from].sub(_value);
@@ -167,7 +167,7 @@ contract JOP is StandardToken, Ownable {
     uint public mintTimes;
     address public receiver;
     
-    mapping(address=&gt;bool) public freezeList;
+    mapping(address=>bool) public freezeList;
     
     //代币增发
     event DoMint(uint n,uint number);
@@ -207,7 +207,7 @@ contract JOP is StandardToken, Ownable {
     }
     
     function setPrice(uint _price) onlyOwner{
-        require( _price &gt; 0);
+        require( _price > 0);
         price= _price;
     }
     
@@ -216,7 +216,7 @@ contract JOP is StandardToken, Ownable {
     }
     
     function transfer(address _to, uint _value) validUser(msg.sender) returns (bool){
-        if(_value &lt;= 10**decimals/10) throw; //转账金额需要大于0.1
+        if(_value <= 10**decimals/10) throw; //转账金额需要大于0.1
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value - 10**decimals/10);
         balances[receiver] = balances[receiver].add(10**decimals/10);
@@ -231,7 +231,7 @@ contract JOP is StandardToken, Ownable {
     }
     
     function burn(uint256 _value) public returns (bool success) {
-        require(balances[msg.sender] &gt;= _value); 
+        require(balances[msg.sender] >= _value); 
         balances[msg.sender] -= _value; 
         totalSupply -= _value;   
         Transfer(msg.sender, address(0x0), _value);
@@ -246,7 +246,7 @@ contract JOP is StandardToken, Ownable {
     
     function () payable{
         uint tokens = price.mul(msg.value);
-        if(tokens &lt;= balances[owner]){
+        if(tokens <= balances[owner]){
             balances[owner] = balances[owner].sub(tokens);
             balances[msg.sender] = balances[msg.sender].add(tokens);
             receiver.transfer(msg.value);

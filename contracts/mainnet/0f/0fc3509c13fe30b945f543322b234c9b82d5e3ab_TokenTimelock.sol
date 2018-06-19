@@ -11,20 +11,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -128,17 +128,17 @@ contract TokenTimelock is Ownable {
      */
     function release() public {
         // solium-disable-next-line security/no-block-members
-        require(now &gt;= releaseTime);
+        require(now >= releaseTime);
 
         uint256 amount = token.balanceOf(this);
-        require(amount &gt; 0);
+        require(amount > 0);
 
         token.safeTransfer(beneficiary, amount);
     }
 
 
     function setReleaseTime(uint256 _releaseTime) onlyOwner external {
-        require(_releaseTime &gt; releaseTime);
+        require(_releaseTime > releaseTime);
         releaseTime = _releaseTime;
     }
 }

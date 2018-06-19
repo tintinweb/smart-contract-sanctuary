@@ -14,13 +14,13 @@ library SafeMath {
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -89,10 +89,10 @@ contract PresalePool {
     uint ethRefund;
     uint balance;
     uint cap;
-    mapping (address =&gt; uint) tokensClaimed;
+    mapping (address => uint) tokensClaimed;
   }
   // mapping that holds the contributor struct for each whitelisted address
-  mapping (address =&gt; Contributor) whitelist;
+  mapping (address => Contributor) whitelist;
   
   // data structure for holding information related to token withdrawals.
   struct TokenAllocation {
@@ -101,7 +101,7 @@ contract PresalePool {
     uint balanceRemaining;
   }
   // mapping that holds the token allocation struct for each token address
-  mapping (address =&gt; TokenAllocation) distributionMap;
+  mapping (address => TokenAllocation) distributionMap;
   
   
   // modifier for functions that can only be accessed by the contract creator
@@ -110,7 +110,7 @@ contract PresalePool {
     _;
   }
   
-  // modifier to prevent re-entrancy exploits during contract &gt; contract interaction
+  // modifier to prevent re-entrancy exploits during contract > contract interaction
   bool locked;
   modifier noReentrancy() {
     require(!locked);
@@ -144,10 +144,10 @@ contract PresalePool {
   // This function is called at the time of contract creation,
   // it sets the initial variables and whitelists the contract owner.
   function PresalePool(address receiverAddr, uint[] capAmounts, uint fee) public {
-    require (fee &lt; 100);
-    require (capAmounts.length&gt;1 &amp;&amp; capAmounts.length&lt;256);
-    for (uint8 i=1; i&lt;capAmounts.length; i++) {
-      require (capAmounts[i] &lt;= capAmounts[0]);
+    require (fee < 100);
+    require (capAmounts.length>1 && capAmounts.length<256);
+    for (uint8 i=1; i<capAmounts.length; i++) {
+      require (capAmounts[i] <= capAmounts[0]);
     }
     owner = msg.sender;
     receiverAddress = receiverAddr;
@@ -170,12 +170,12 @@ contract PresalePool {
   // Internal function for handling eth deposits during contract stage one.
   function _ethDeposit () internal {
     assert (contractStage == 1);
-    require (tx.gasprice &lt;= maxGasPrice);
-    require (this.balance &lt;= contributionCaps[0]);
+    require (tx.gasprice <= maxGasPrice);
+    require (this.balance <= contributionCaps[0]);
     var c = whitelist[msg.sender];
     uint newBalance = c.balance.add(msg.value);
-    require (newBalance &gt;= contributionMin);
-    require (newBalance &lt;= _checkCap(msg.sender));
+    require (newBalance >= contributionMin);
+    require (newBalance <= _checkCap(msg.sender));
     c.balance = newBalance;
     ContributorBalanceChanged(msg.sender, newBalance);
   }
@@ -184,7 +184,7 @@ contract PresalePool {
   function _ethRefund () internal {
     assert (contractStage == 3);
     require (msg.sender == owner || msg.sender == receiverAddress);
-    require (msg.value &gt;= contributionMin);
+    require (msg.value >= contributionMin);
     ethRefundAmount.push(msg.value);
     EthRefundReceived(msg.sender, msg.value);
   }
@@ -196,8 +196,8 @@ contract PresalePool {
   // The token address may be provided optionally to withdraw tokens that are not currently the default token (airdrops).
   function withdraw (address tokenAddr) public {
     var c = whitelist[msg.sender];
-    require (c.balance &gt; 0);
-    if (contractStage &lt; 3) {
+    require (c.balance > 0);
+    if (contractStage < 3) {
       uint amountToTransfer = c.balance;
       c.balance = 0;
       msg.sender.transfer(amountToTransfer);
@@ -210,7 +210,7 @@ contract PresalePool {
   // This function allows the contract owner to force a withdrawal to any contributor.
   function withdrawFor (address contributor, address tokenAddr) public onlyOwner {
     require (contractStage == 3);
-    require (whitelist[contributor].balance &gt; 0);
+    require (whitelist[contributor].balance > 0);
     _withdraw(contributor,tokenAddr);
   }
   
@@ -223,26 +223,26 @@ contract PresalePool {
       tokenAddr = activeToken;
     }
     var d = distributionMap[tokenAddr];
-    require ( (ethRefundAmount.length &gt; c.ethRefund) || d.pct.length &gt; c.tokensClaimed[tokenAddr] );
-    if (ethRefundAmount.length &gt; c.ethRefund) {
+    require ( (ethRefundAmount.length > c.ethRefund) || d.pct.length > c.tokensClaimed[tokenAddr] );
+    if (ethRefundAmount.length > c.ethRefund) {
       uint pct = _toPct(c.balance,finalBalance);
       uint ethAmount = 0;
-      for (uint i=c.ethRefund; i&lt;ethRefundAmount.length; i++) {
+      for (uint i=c.ethRefund; i<ethRefundAmount.length; i++) {
         ethAmount = ethAmount.add(_applyPct(ethRefundAmount[i],pct));
       }
       c.ethRefund = ethRefundAmount.length;
-      if (ethAmount &gt; 0) {
+      if (ethAmount > 0) {
         receiver.transfer(ethAmount);
         EthRefunded(receiver,ethAmount);
       }
     }
-    if (d.pct.length &gt; c.tokensClaimed[tokenAddr]) {
+    if (d.pct.length > c.tokensClaimed[tokenAddr]) {
       uint tokenAmount = 0;
-      for (i=c.tokensClaimed[tokenAddr]; i&lt;d.pct.length; i++) {
+      for (i=c.tokensClaimed[tokenAddr]; i<d.pct.length; i++) {
         tokenAmount = tokenAmount.add(_applyPct(c.balance,d.pct[i]));
       }
       c.tokensClaimed[tokenAddr] = d.pct.length;
-      if (tokenAmount &gt; 0) {
+      if (tokenAmount > 0) {
         require(d.token.transfer(receiver,tokenAmount));
         d.balanceRemaining = d.balanceRemaining.sub(tokenAmount);
         TokensWithdrawn(receiver,tokenAddr,tokenAmount);
@@ -258,7 +258,7 @@ contract PresalePool {
     require (contractStage == 1);
     _checkWhitelistContract(addr);
     require (!whitelist[addr].authorized);
-    require ((cap &gt; 0 &amp;&amp; cap &lt; contributionCaps.length) || (cap &gt;= contributionMin &amp;&amp; cap &lt;= contributionCaps[0]) );
+    require ((cap > 0 && cap < contributionCaps.length) || (cap >= contributionMin && cap <= contributionCaps[0]) );
     uint size;
     assembly { size := extcodesize(addr) }
     require (size == 0);
@@ -269,9 +269,9 @@ contract PresalePool {
   // This function is used by the owner to authorize many addresses in a single call.
   // Each address will be given the same cap, and the cap must be one of the standard levels.
   function authorizeMany (address[] addr, uint cap) public onlyOwner {
-    require (addr.length &lt; 255);
-    require (cap &gt; 0 &amp;&amp; cap &lt; contributionCaps.length);
-    for (uint8 i=0; i&lt;addr.length; i++) {
+    require (addr.length < 255);
+    require (cap > 0 && cap < contributionCaps.length);
+    for (uint8 i=0; i<addr.length; i++) {
       authorize(addr[i], cap);
     }
   }
@@ -280,11 +280,11 @@ contract PresalePool {
   // It may only be executed during stages 1 and 2.  Any eth sent by the address is refunded and their personal cap is set to 0.
   // It will throw if the address is still authorised in the whitelist contract.
   function revoke (address addr) public onlyOwner {
-    require (contractStage &lt; 3);
+    require (contractStage < 3);
     require (whitelist[addr].authorized);
     require (whitelistContract.checkMemberLevel(addr) == 0);
     whitelist[addr].authorized = false;
-    if (whitelist[addr].balance &gt; 0) {
+    if (whitelist[addr].balance > 0) {
       uint amountToTransfer = whitelist[addr].balance;
       whitelist[addr].balance = 0;
       addr.transfer(amountToTransfer);
@@ -295,15 +295,15 @@ contract PresalePool {
   // This function is called by the owner to modify the contribution cap of a whitelisted address.
   // If the current contribution balance exceeds the new cap, the excess balance is refunded.
   function modifyIndividualCap (address addr, uint cap) public onlyOwner {
-    require (contractStage &lt; 3);
-    require (cap &lt; contributionCaps.length || (cap &gt;= contributionMin &amp;&amp; cap &lt;= contributionCaps[0]) );
+    require (contractStage < 3);
+    require (cap < contributionCaps.length || (cap >= contributionMin && cap <= contributionCaps[0]) );
     _checkWhitelistContract(addr);
     var c = whitelist[addr];
     require (c.authorized);
     uint amount = c.balance;
     c.cap = cap;
     uint capAmount = _checkCap(addr);
-    if (amount &gt; capAmount) {
+    if (amount > capAmount) {
       c.balance = capAmount;
       addr.transfer(amount.sub(capAmount));
       ContributorBalanceChanged(addr, capAmount);
@@ -313,9 +313,9 @@ contract PresalePool {
   // This function is called by the owner to modify the cap for a contribution level.
   // The cap cannot be decreased below the current balance or increased past the contract limit.
   function modifyLevelCap (uint level, uint cap) public onlyOwner {
-    require (contractStage &lt; 3);
-    require (level &gt; 0 &amp;&amp; level &lt; contributionCaps.length);
-    require (this.balance &lt;= cap &amp;&amp; contributionCaps[0] &gt;= cap);
+    require (contractStage < 3);
+    require (level > 0 && level < contributionCaps.length);
+    require (this.balance <= cap && contributionCaps[0] >= cap);
     contributionCaps[level] = cap;
     nextCapTime = 0;
   }
@@ -323,18 +323,18 @@ contract PresalePool {
   // This function changes every level cap at once, with an optional delay.
   // Modifying the caps immediately will cancel any delayed cap change.
   function modifyAllLevelCaps (uint[] cap, uint time) public onlyOwner {
-    require (contractStage &lt; 3);
+    require (contractStage < 3);
     require (cap.length == contributionCaps.length-1);
-    require (time == 0 || time&gt;block.timestamp);
+    require (time == 0 || time>block.timestamp);
     if (time == 0) {
-      for (uint8 i = 0; i &lt; cap.length; i++) {
+      for (uint8 i = 0; i < cap.length; i++) {
         modifyLevelCap(i+1, cap[i]);
       }
     } else {
       nextContributionCaps = contributionCaps;
       nextCapTime = time;
-      for (i = 0; i &lt; cap.length; i++) {
-        require (contributionCaps[i+1] &lt;= cap[i] &amp;&amp; contributionCaps[0] &gt;= cap[i]);
+      for (i = 0; i < cap.length; i++) {
+        require (contributionCaps[i+1] <= cap[i] && contributionCaps[0] >= cap[i]);
         nextContributionCaps[i+1] = cap[i];
       }
     }
@@ -343,13 +343,13 @@ contract PresalePool {
   // This function can be called during stages one or two to modify the maximum balance of the contract.
   // It can only be called by the owner. The amount cannot be set to lower than the current balance of the contract.
   function modifyMaxContractBalance (uint amount) public onlyOwner {
-    require (contractStage &lt; 3);
-    require (amount &gt;= contributionMin);
-    require (amount &gt;= this.balance);
+    require (contractStage < 3);
+    require (amount >= contributionMin);
+    require (amount >= this.balance);
     contributionCaps[0] = amount;
     nextCapTime = 0;
-    for (uint8 i=1; i&lt;contributionCaps.length; i++) {
-      if (contributionCaps[i]&gt;amount) contributionCaps[i]=amount;
+    for (uint8 i=1; i<contributionCaps.length; i++) {
+      if (contributionCaps[i]>amount) contributionCaps[i]=amount;
     }
   }
   
@@ -358,11 +358,11 @@ contract PresalePool {
     _checkWhitelistContract(addr);
     var c = whitelist[addr];
     if (!c.authorized) return 0;
-    if (nextCapTime&gt;0 &amp;&amp; block.timestamp&gt;nextCapTime) {
+    if (nextCapTime>0 && block.timestamp>nextCapTime) {
       contributionCaps = nextContributionCaps;
       nextCapTime = 0;
     }
-    if (c.cap&lt;contributionCaps.length) return contributionCaps[c.cap];
+    if (c.cap<contributionCaps.length) return contributionCaps[c.cap];
     return c.cap; 
   }
   
@@ -371,7 +371,7 @@ contract PresalePool {
     var c = whitelist[addr];
     if (!c.authorized) {
       var level = whitelistContract.checkMemberLevel(addr);
-      if (level == 0 || level &gt;= contributionCaps.length) return;
+      if (level == 0 || level >= contributionCaps.length) return;
       c.cap = level;
       c.authorized = true;
     }
@@ -398,15 +398,15 @@ contract PresalePool {
     }
     balance = c.balance;
     if (contractStage == 1) {
-      if (cap&lt;contributionCaps.length) { 
-        if (nextCapTime == 0 || nextCapTime &gt; block.timestamp) {
+      if (cap<contributionCaps.length) { 
+        if (nextCapTime == 0 || nextCapTime > block.timestamp) {
           cap = contributionCaps[cap];
         } else {
           cap = nextContributionCaps[cap];
         }
       }
       remaining = cap.sub(balance);
-      if (contributionCaps[0].sub(this.balance) &lt; remaining) remaining = contributionCaps[0].sub(this.balance);
+      if (contributionCaps[0].sub(this.balance) < remaining) remaining = contributionCaps[0].sub(this.balance);
     } else {
       remaining = 0;
     }
@@ -417,7 +417,7 @@ contract PresalePool {
   function checkAvailableTokens (address addr, address tokenAddr) view public returns (uint tokenAmount) {
     var c = whitelist[addr];
     var d = distributionMap[tokenAddr];
-    for (uint i = c.tokensClaimed[tokenAddr]; i &lt; d.pct.length; i++) {
+    for (uint i = c.tokensClaimed[tokenAddr]; i < d.pct.length; i++) {
       tokenAmount = tokenAmount.add(_applyPct(c.balance, d.pct[i]));
     }
     return tokenAmount;
@@ -444,8 +444,8 @@ contract PresalePool {
   // This limitation is so that if the owner acts maliciously in making the change, all whitelisted
   // addresses have ~24 hours to withdraw their eth from the contract.
   function setReceiverAddress (address addr) public onlyOwner {
-    require (addr != 0x00 &amp;&amp; receiverAddress == 0x00);
-    require (contractStage &lt; 3);
+    require (addr != 0x00 && receiverAddress == 0x00);
+    require (contractStage < 3);
     receiverAddress = addr;
     addressChangeBlock = block.number;
     ReceiverAddressSet(addr);
@@ -456,13 +456,13 @@ contract PresalePool {
   // The amount to send (given in wei) must be specified during the call. As this function can only be executed once,
   // it is VERY IMPORTANT not to get the amount wrong.
   function submitPool (uint amountInWei) public onlyOwner noReentrancy {
-    require (contractStage &lt; 3);
+    require (contractStage < 3);
     require (receiverAddress != 0x00);
-    require (block.number &gt;= addressChangeBlock.add(6000));
-    require (contributionMin &lt;= amountInWei &amp;&amp; amountInWei &lt;= this.balance);
+    require (block.number >= addressChangeBlock.add(6000));
+    require (contributionMin <= amountInWei && amountInWei <= this.balance);
     finalBalance = this.balance;
     require (receiverAddress.call.value(amountInWei).gas(msg.gas.sub(5000))());
-    if (this.balance &gt; 0) ethRefundAmount.push(this.balance);
+    if (this.balance > 0) ethRefundAmount.push(this.balance);
     contractStage = 3;
     PoolSubmitted(receiverAddress, amountInWei);
   }
@@ -481,8 +481,8 @@ contract PresalePool {
     var d = distributionMap[tokenAddr];    
     if (d.pct.length==0) d.token = ERC20(tokenAddr);
     uint amount = d.token.balanceOf(this).sub(d.balanceRemaining);
-    require (amount &gt; 0);
-    if (feePct &gt; 0) {
+    require (amount > 0);
+    if (feePct > 0) {
       require (d.token.transfer(owner,_applyPct(amount,feePct)));
     }
     amount = d.token.balanceOf(this).sub(d.balanceRemaining);

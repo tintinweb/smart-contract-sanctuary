@@ -10,7 +10,7 @@ pragma solidity ^0.4.18;
 // Decimals    : 18
 //
 // Crowdsale contract for PixoArena based on Moritz Neto tutorial! SO to bitfwd community
-// (c) by Moritz Neto &amp; Daniel Bar with BokkyPooBah / Bok Consulting Pty Ltd Au 2017. The MIT Licence.
+// (c) by Moritz Neto & Daniel Bar with BokkyPooBah / Bok Consulting Pty Ltd Au 2017. The MIT Licence.
 // ----------------------------------------------------------------------------
 
 
@@ -20,10 +20,10 @@ pragma solidity ^0.4.18;
 contract SafeMath {
     function safeAdd(uint a, uint b) internal pure returns (uint c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function safeSub(uint a, uint b) internal pure returns (uint c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function safeMul(uint a, uint b) internal pure returns (uint c) {
@@ -31,7 +31,7 @@ contract SafeMath {
         require(a == 0 || c / a == b);
     }
     function safeDiv(uint a, uint b) internal pure returns (uint c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
@@ -107,8 +107,8 @@ contract PixoArenaFounderToken is ERC20Interface, Owned, SafeMath {
     uint public bonusEnds;
     uint public endDate;
 
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => uint) balances;
+    mapping(address => mapping(address => uint)) allowed;
 
 
     // ------------------------------------------------------------------------
@@ -216,10 +216,10 @@ contract PixoArenaFounderToken is ERC20Interface, Owned, SafeMath {
     // Minimum at 0.0125 ETH
     // ------------------------------------------------------------------------
     function () public payable {
-        require(now &gt;= startDate &amp;&amp; now &lt;= endDate);
-        require(msg.value &gt;= 12500000000000000);
+        require(now >= startDate && now <= endDate);
+        require(msg.value >= 12500000000000000);
         uint tokens;
-        if (now &lt;= bonusEnds) {
+        if (now <= bonusEnds) {
             tokens = msg.value * 80;
         } else {
             tokens = msg.value * 50;
@@ -248,7 +248,7 @@ contract PixoArenaFounderToken is ERC20Interface, Owned, SafeMath {
     // Send Contracts Ethereum to address owner
     // ------------------------------------------------------------------------
     function weiToOwner(address _address, uint amount) public onlyOwner {
-        require(amount &lt;= address(this).balance);
+        require(amount <= address(this).balance);
         _address.transfer(amount);
     }
 

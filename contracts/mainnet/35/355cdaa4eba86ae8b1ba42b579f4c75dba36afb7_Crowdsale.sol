@@ -779,7 +779,7 @@ contract CrowdsaleToken is ReleasableToken, MintableToken, UpgradeableToken, Los
    * Allow upgrade agent functionality to kick in only if the crowdsale was a success.
    */
   function canUpgrade() public view returns(bool) {
-    return released &amp;&amp; super.canUpgrade();
+    return released && super.canUpgrade();
   }
 
   function burn(uint value) public {
@@ -889,8 +889,8 @@ contract GenericCrowdsale is Haltable {
     setMultisig(team_multisig);
 
     // Don&#39;t mess the dates
-    require(start != 0 &amp;&amp; end != 0);
-    require(now < start &amp;&amp; start < end);
+    require(start != 0 && end != 0);
+    require(now < start && start < end);
     startsAt = start;
     endsAt = end;
     configured = true;
@@ -1098,7 +1098,7 @@ contract GenericCrowdsale is Haltable {
     if (finalized) return State.Finalized;
     else if (!configured) return State.PendingConfiguration;
     else if (now < startsAt) return State.PreFunding;
-    else if (now <= endsAt &amp;&amp; !isCrowdsaleFull()) return State.Funding;
+    else if (now <= endsAt && !isCrowdsaleFull()) return State.Funding;
     else return State.Success;
   }
 
@@ -1244,11 +1244,11 @@ contract TokenTranchePricing {
       uint end = init_tranches[tranche_offset.add(end_offset)];
       uint price = init_tranches[tranche_offset.add(price_offset)];
       // No invalid steps
-      require(start < end &amp;&amp; now < end);
+      require(start < end && now < end);
       // Bail out when entering unnecessary tranches
       // This is preferably checked before deploying contract into any blockchain.
-      require(i == 0 || (end >= last_tranche.end &amp;&amp; amount > last_tranche.amount) ||
-              (end > last_tranche.end &amp;&amp; amount >= last_tranche.amount));
+      require(i == 0 || (end >= last_tranche.end && amount > last_tranche.amount) ||
+              (end > last_tranche.end && amount >= last_tranche.amount));
 
       last_tranche = Tranche(amount, start, end, price);
       tranches.push(last_tranche);
@@ -1260,7 +1260,7 @@ contract TokenTranchePricing {
   /// @return Returns the struct representing the current tranche
   function getCurrentTranche(uint tokensSold) private view returns (Tranche storage) {
     for (uint i = 0; i < tranches.length; i++) {
-      if (tranches[i].start <= now &amp;&amp; now < tranches[i].end &amp;&amp; tokensSold < tranches[i].amount) {
+      if (tranches[i].start <= now && now < tranches[i].end && tokensSold < tranches[i].amount) {
         return tranches[i];
       }
     }
@@ -1385,12 +1385,12 @@ contract Crowdsale is GenericCrowdsale, LostAndFoundToken, DeploymentInfo, Token
 
   // These two setters are present only to correct timestamps if they are off from their target date by more than, say, a day
   function setStartingTime(uint startingTime) public onlyOwner inState(State.PreFunding) {
-    require(now < startingTime &amp;&amp; startingTime < endsAt);
+    require(now < startingTime && startingTime < endsAt);
     startsAt = startingTime;
   }
 
   function setEndingTime(uint endingTime) public onlyOwner notFinished {
-    require(now < endingTime &amp;&amp; startsAt < endingTime);
+    require(now < endingTime && startsAt < endingTime);
     endsAt = endingTime;
   }
 

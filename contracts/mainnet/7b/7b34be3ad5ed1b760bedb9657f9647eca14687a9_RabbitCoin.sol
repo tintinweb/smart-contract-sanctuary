@@ -53,7 +53,7 @@ contract SafeMath {
 
     function safeAdd(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        assert(c>=a &amp;&amp; c>=b);
+        assert(c>=a && c>=b);
         return c;
     }
 
@@ -230,7 +230,7 @@ contract RabbitCoin is StandardToken {
     function setTokenInformation(string _name, string _symbol) public {
         require(msg.sender == coinMaster) ;
 
-        require(bytes(name).length > 0 &amp;&amp; bytes(symbol).length > 0);
+        require(bytes(name).length > 0 && bytes(symbol).length > 0);
 
         name = _name;
         symbol = _symbol;

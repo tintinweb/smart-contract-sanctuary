@@ -409,9 +409,9 @@ contract Crowdsale {
 
     // @return true if the transaction can buy tokens
     function validPurchase() internal constant returns (bool) {
-        bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+        bool withinPeriod = now >= startTime && now <= endTime;
         bool nonZeroPurchase = msg.value != 0;
-        return withinPeriod &amp;&amp; nonZeroPurchase;
+        return withinPeriod && nonZeroPurchase;
     }
 
     // @return true if crowdsale event has ended
@@ -549,7 +549,7 @@ contract BTHRTokenSale is FinalizableCrowdsale {
             }
         } 
         
-        if (tokensLeft > 0 &amp;&amp; _totalSupply < FRST_CRWDSALE_RATIO) {
+        if (tokensLeft > 0 && _totalSupply < FRST_CRWDSALE_RATIO) {
             
             if(_totalSupply + tokensLeft + tokensLeft.mul(30).div(100)> FRST_CRWDSALE_RATIO){
                 tokensToAdd = FRST_CRWDSALE_RATIO.sub(_totalSupply);
@@ -565,7 +565,7 @@ contract BTHRTokenSale is FinalizableCrowdsale {
             }
         }
         
-        if (tokensLeft > 0 &amp;&amp; _totalSupply < SCND_CRWDSALE_RATIO) {
+        if (tokensLeft > 0 && _totalSupply < SCND_CRWDSALE_RATIO) {
             
             if(_totalSupply + tokensLeft + tokensLeft.mul(15).div(100) > SCND_CRWDSALE_RATIO){
 
@@ -592,20 +592,20 @@ contract BTHRTokenSale is FinalizableCrowdsale {
         bool withinPeriod = now <= endTime;
         bool nonZeroPurchase = msg.value != 0;
         bool isRunning = ((currentPhase == Phase.ICORunning) || (currentPhase == Phase.PresaleRunning));
-        return withinPeriod &amp;&amp; nonZeroPurchase &amp;&amp; isRunning;
+        return withinPeriod && nonZeroPurchase && isRunning;
     }
 
     function setSalePhase(Phase _nextPhase) public onlyOwner {
     
         bool canSwitchPhase
-        =  (currentPhase == Phase.Created &amp;&amp; _nextPhase == Phase.PresaleRunning)
-        || (currentPhase == Phase.PresaleRunning &amp;&amp; _nextPhase == Phase.Paused)
+        =  (currentPhase == Phase.Created && _nextPhase == Phase.PresaleRunning)
+        || (currentPhase == Phase.PresaleRunning && _nextPhase == Phase.Paused)
         || ((currentPhase == Phase.PresaleRunning || currentPhase == Phase.Paused)
-        &amp;&amp; _nextPhase == Phase.ICORunning)
-        || (currentPhase == Phase.ICORunning &amp;&amp; _nextPhase == Phase.Paused)
-        || (currentPhase == Phase.Paused &amp;&amp; _nextPhase == Phase.PresaleRunning)
-        || (currentPhase == Phase.Paused &amp;&amp; _nextPhase == Phase.FinishingICO)
-        || (currentPhase == Phase.ICORunning &amp;&amp; _nextPhase == Phase.FinishingICO);
+        && _nextPhase == Phase.ICORunning)
+        || (currentPhase == Phase.ICORunning && _nextPhase == Phase.Paused)
+        || (currentPhase == Phase.Paused && _nextPhase == Phase.PresaleRunning)
+        || (currentPhase == Phase.Paused && _nextPhase == Phase.FinishingICO)
+        || (currentPhase == Phase.ICORunning && _nextPhase == Phase.FinishingICO);
 
         require(canSwitchPhase);
         currentPhase = _nextPhase;

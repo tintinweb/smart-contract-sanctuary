@@ -112,7 +112,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -122,7 +122,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -131,7 +131,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -159,7 +159,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -177,7 +177,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -221,7 +221,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -232,8 +232,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -296,7 +296,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -400,7 +400,7 @@ contract CurrentToken is StandardToken, Pausable {
  * @dev Whitelist for wallets.
 */
 contract Whitelist is Ownable {
-    mapping(address =&gt; bool) whitelist;
+    mapping(address => bool) whitelist;
 
     uint256 public whitelistLength = 0;
 
@@ -482,7 +482,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     uint256 public mincap = 0;
     uint256 public maxcap = 0;
 
-    mapping(address =&gt; uint256) private investments;    
+    mapping(address => uint256) private investments;    
 
     uint256 public tokensSoldIco = 0;
     uint256 public tokensRemainingIco = HARDCAP_TOKENS_ICO;
@@ -492,7 +492,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     uint256 public weiRaisedIco = 0;
     uint256 public weiRaisedTotal = 0;
 
-    mapping(address =&gt; uint256) private investmentsPreIco;
+    mapping(address => uint256) private investmentsPreIco;
     address[] private investorsPreIco;
 
     address private withdrawalWallet;
@@ -503,17 +503,17 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     CurrentToken public token = new CurrentToken(this);
 
     modifier beforeReachingHardCap() {
-        require(tokensRemainingIco &gt; 0 &amp;&amp; weiRaisedTotal &lt; maxcap);
+        require(tokensRemainingIco > 0 && weiRaisedTotal < maxcap);
         _;
     }
 
     modifier whenPreIcoSaleHasEnded() {
-        require(now &gt; endTimePreIco);
+        require(now > endTimePreIco);
         _;
     }
 
     modifier whenIcoSaleHasEnded() {
-        require(endTimeIco &gt; 0 &amp;&amp; now &gt; endTimeIco);
+        require(endTimeIco > 0 && now > endTimeIco);
         _;
     }
 
@@ -537,9 +537,9 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
         address _withdrawalWallet
     ) Whitelistable() public
     {
-        require(_foundersWallet != address(0) &amp;&amp; _operationalExpensesWallet != address(0) &amp;&amp; _withdrawalWallet != address(0));
-        require(_startTimePreIco &gt;= now &amp;&amp; _endTimePreIco &gt; _startTimePreIco);
-        require(_mincap &gt; 0 &amp;&amp; _maxcap &gt; _mincap);
+        require(_foundersWallet != address(0) && _operationalExpensesWallet != address(0) && _withdrawalWallet != address(0));
+        require(_startTimePreIco >= now && _endTimePreIco > _startTimePreIco);
+        require(_mincap > 0 && _maxcap > _mincap);
 
         startTimePreIco = _startTimePreIco;
         endTimePreIco = _endTimePreIco;
@@ -573,7 +573,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     * @dev Check whether the pre-ICO is active at the moment.
     */
     function isPreIco() public constant returns (bool) {
-        bool withinPreIco = now &gt;= startTimePreIco &amp;&amp; now &lt;= endTimePreIco;
+        bool withinPreIco = now >= startTimePreIco && now <= endTimePreIco;
         return withinPreIco;
     }
 
@@ -581,7 +581,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     * @dev Check whether the ICO is active at the moment.
     */
     function isIco() public constant returns (bool) {
-        bool withinIco = now &gt;= startTimeIco &amp;&amp; now &lt;= endTimeIco;
+        bool withinIco = now >= startTimeIco && now <= endTimeIco;
         return withinIco;
     }
 
@@ -590,23 +590,23 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     * @dev Only applies when the ICO was ended. 
     */
     function manualRefund() whenIcoSaleHasEnded public {
-        require(weiRaisedTotal &lt; mincap);
+        require(weiRaisedTotal < mincap);
 
         uint256 weiAmountTotal = investments[msg.sender];
-        require(weiAmountTotal &gt; 0);
+        require(weiAmountTotal > 0);
 
         investments[msg.sender] = 0;
 
         uint256 weiAmountPreIco = investmentsPreIco[msg.sender];
         uint256 weiAmountIco = weiAmountTotal;
 
-        if (weiAmountPreIco &gt; 0) {
+        if (weiAmountPreIco > 0) {
             investmentsPreIco[msg.sender] = 0;
             weiRaisedPreIco = weiRaisedPreIco.sub(weiAmountPreIco);
             weiAmountIco = weiAmountIco.sub(weiAmountPreIco);
         }
 
-        if (weiAmountIco &gt; 0) {
+        if (weiAmountIco > 0) {
             weiRaisedIco = weiRaisedIco.sub(weiAmountIco);
             uint256 tokensIco = weiAmountIco.mul(exchangeRateIco);
             tokensSoldIco = tokensSoldIco.sub(tokensIco);
@@ -629,14 +629,14 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     */
     function sellTokensPreIco() beforeReachingHardCap whenWhitelisted(msg.sender) whenNotPaused public payable {
         require(isPreIco());
-        require(msg.value &gt; 0);
+        require(msg.value > 0);
 
         uint256 weiAmount = msg.value;
         uint256 excessiveFunds = 0;
 
         uint256 plannedWeiTotal = weiRaisedTotal.add(weiAmount);
 
-        if (plannedWeiTotal &gt; maxcap) {
+        if (plannedWeiTotal > maxcap) {
             excessiveFunds = plannedWeiTotal.sub(maxcap);
             weiAmount = maxcap.sub(weiRaisedTotal);
         }
@@ -648,7 +648,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
 
         addInvestmentPreIco(msg.sender, weiAmount);
 
-        if (excessiveFunds &gt; 0) {
+        if (excessiveFunds > 0) {
             msg.sender.transfer(excessiveFunds);
         }
     }
@@ -659,21 +659,21 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     */
     function sellTokensIco() beforeReachingHardCap whenWhitelisted(msg.sender) whenNotPaused public payable {
         require(isIco());
-        require(msg.value &gt; 0);
+        require(msg.value > 0);
 
         uint256 weiAmount = msg.value;
         uint256 excessiveFunds = 0;
 
         uint256 plannedWeiTotal = weiRaisedTotal.add(weiAmount);
 
-        if (plannedWeiTotal &gt; maxcap) {
+        if (plannedWeiTotal > maxcap) {
             excessiveFunds = plannedWeiTotal.sub(maxcap);
             weiAmount = maxcap.sub(weiRaisedTotal);
         }
 
         uint256 tokensAmount = weiAmount.mul(exchangeRateIco);
 
-        if (tokensAmount &gt; tokensRemainingIco) {
+        if (tokensAmount > tokensRemainingIco) {
             uint256 weiToAccept = tokensRemainingIco.div(exchangeRateIco);
             excessiveFunds = excessiveFunds.add(weiAmount.sub(weiToAccept));
             
@@ -692,7 +692,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
 
         token.transferFromIco(msg.sender, tokensAmount);
 
-        if (excessiveFunds &gt; 0) {
+        if (excessiveFunds > 0) {
             msg.sender.transfer(excessiveFunds);
         }
     }
@@ -701,7 +701,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     * @dev Send raised funds to the withdrawal wallet.
     */
     function forwardFunds() onlyOwner public {
-        require(weiRaisedTotal &gt;= mincap);
+        require(weiRaisedTotal >= mincap);
         withdrawalWallet.transfer(this.balance);
     }
 
@@ -712,7 +712,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     */
     function calcTokenRate() whenPreIcoSaleHasEnded onlyOwner public {
         require(!isTokenRateCalculated);
-        require(weiRaisedPreIco &gt; 0);
+        require(weiRaisedPreIco > 0);
 
         exchangeRatePreIco = HARDCAP_TOKENS_PRE_ICO.div(weiRaisedPreIco);
 
@@ -727,11 +727,11 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     * @param _paginationCount The value that used for pagination.
     */
     function distributeTokensPreIco(uint256 _paginationCount) onlyOwner public {
-        require(isTokenRateCalculated &amp;&amp; !isTokensPreIcoDistributed);
-        require(_paginationCount &gt; 0);
+        require(isTokenRateCalculated && !isTokensPreIcoDistributed);
+        require(_paginationCount > 0);
 
         uint256 count = 0;
-        for (uint256 i = distributionPreIcoCount; i &lt; getPreIcoInvestorsCount(); i++) {
+        for (uint256 i = distributionPreIcoCount; i < getPreIcoInvestorsCount(); i++) {
             if (count == _paginationCount) {
                 break;
             }
@@ -757,7 +757,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     * @dev Only applies when the ICO was ended.
     */
     function burnUnsoldTokens() whenIcoSaleHasEnded onlyOwner public {
-        require(tokensRemainingIco &gt; 0);
+        require(tokensRemainingIco > 0);
         token.burnFromIco();
         tokensRemainingIco = 0;
     }
@@ -792,7 +792,7 @@ contract CurrentCrowdsale is Pausable, Whitelistable {
     * @param _endTimeIco The ICO end time.
     */
     function setStartTimeIco(uint256 _startTimeIco, uint256 _endTimeIco) whenPreIcoSaleHasEnded beforeReachingHardCap onlyOwner public {
-        require(_startTimeIco &gt;= now &amp;&amp; _endTimeIco &gt; _startTimeIco);
+        require(_startTimeIco >= now && _endTimeIco > _startTimeIco);
         require(isTokenRateCalculated);
 
         startTimeIco = _startTimeIco;

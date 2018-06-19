@@ -230,7 +230,7 @@ contract MIOTCrowdsales is Ownable{
         require(token.balanceOf(this) >= crowdSaleHardCap);
         
         //check whether tier information has been entered
-        require(noOfTiers>0 &amp;&amp; tiers.length==noOfTiers);
+        require(noOfTiers>0 && tiers.length==noOfTiers);
       
         //activate the sale process
         salesActive=true;
@@ -288,7 +288,7 @@ contract MIOTCrowdsales is Ownable{
   function setTiersInfo(uint8 _noOfTiers, uint256[] _startTimes, uint256[] _endTimes, uint256[] _hardCaps, uint256[] _rates, uint8[] _bonusPercentages)public onlyOwner tiersEmpty{
     
     //Minimu number of tiers should be 1 and less than or equal to 5
-    require(_noOfTiers>=1 &amp;&amp; _noOfTiers<=5);
+    require(_noOfTiers>=1 && _noOfTiers<=5);
     
     //Each array should contain info about each tier
     require(_startTimes.length == _noOfTiers);
@@ -398,7 +398,7 @@ contract MIOTCrowdsales is Ownable{
     * */
    function getCurrentlyRunningTier()public view returns(int8){
       for(uint8 i=0;i<noOfTiers;i++){
-          if(now>=tiers[i].startTime &amp;&amp; now<tiers[i].endTime){
+          if(now>=tiers[i].startTime && now<tiers[i].endTime){
               return int8(i);
           }
       }   

@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 
 /*
-    Utilities &amp; Common Modifiers
+    Utilities & Common Modifiers
 */
 contract Utils {
     /**
@@ -242,7 +242,7 @@ contract IBancorQuickConverter {
     The path defines which converters should be used and what kind of conversion should be done in each step.
 
     The path format doesn&#39;t include complex structure and instead, it is represented by a single array
-    in which each &#39;hop&#39; is represented by a 2-tuple - smart token &amp; to token.
+    in which each &#39;hop&#39; is represented by a 2-tuple - smart token & to token.
     In addition, the first element is always the source token.
     The smart token is only used as a pointer to a converter (since converter addresses are more likely to change).
 
@@ -263,7 +263,7 @@ contract BancorQuickConverter is IBancorQuickConverter, TokenHolder {
 
     // validates a conversion path - verifies that the number of elements is odd and that maximum number of &#39;hops&#39; is 10
     modifier validConversionPath(IERC20Token[] _path) {
-        require(_path.length > 2 &amp;&amp; _path.length <= (1 + 2 * 10) &amp;&amp; _path.length % 2 == 1);
+        require(_path.length > 2 && _path.length <= (1 + 2 * 10) && _path.length % 2 == 1);
         _;
     }
 
@@ -325,7 +325,7 @@ contract BancorQuickConverter is IBancorQuickConverter, TokenHolder {
         // checking that it is the first conversion with the given signature
         // and that the current block number doesn&#39;t exceeded the maximum block
         // number that&#39;s allowed with the current signature
-        require(!conversionHashes[hash] &amp;&amp; block.number <= _block);
+        require(!conversionHashes[hash] && block.number <= _block);
 
         // recovering the signing address and comparing it to the trusted signer
         // address that was set in the contract
@@ -377,14 +377,14 @@ contract BancorQuickConverter is IBancorQuickConverter, TokenHolder {
         validConversionPath(_path)
         returns (uint256)
     {
-        if (_v == 0x0 &amp;&amp; _r == 0x0 &amp;&amp; _s == 0x0)
+        if (_v == 0x0 && _r == 0x0 && _s == 0x0)
             gasPriceLimit.validateGasPrice(tx.gasprice);
         else
             require(verifyTrustedSender(_block, _for, _nonce, _v, _r, _s));
 
         // if ETH is provided, ensure that the amount is identical to _amount and verify that the source token is an ether token
         IERC20Token fromToken = _path[0];
-        require(msg.value == 0 || (_amount == msg.value &amp;&amp; etherTokens[fromToken]));
+        require(msg.value == 0 || (_amount == msg.value && etherTokens[fromToken]));
 
         IERC20Token toToken;
 

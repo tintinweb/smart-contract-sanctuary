@@ -78,13 +78,13 @@ library SafeMath {
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b &lt;= a);
+        require(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
         return c;
     }
 }
@@ -104,12 +104,12 @@ contract Migratable {
  */
 contract JoysoDataDecoder {
     function decodeOrderUserId(uint256 data) internal pure returns (uint256) {
-        return data &amp; 0x00000000000000000000000000000000000000000000000000000000ffffffff;
+        return data & 0x00000000000000000000000000000000000000000000000000000000ffffffff;
     }
 
     function retrieveV(uint256 data) internal pure returns (uint256) {
         // [24..24] v 0:27 1:28
-        return data &amp; 0x000000000000000000000000f000000000000000000000000000000000000000 == 0 ? 27 : 28;
+        return data & 0x000000000000000000000000f000000000000000000000000000000000000000 == 0 ? 27 : 28;
     }
 }
 
@@ -140,16 +140,16 @@ contract Joyso is Ownable, JoysoDataDecoder {
     uint256 private constant PAY_BY_JOY = 0x0000000000000000000000010000000000000000000000000000000000000000;
     uint256 private constant ORDER_ISBUY = 0x0000000000000000000000010000000000000000000000000000000000000000;
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) private balances;
-    mapping (address =&gt; uint256) public userLock;
-    mapping (address =&gt; uint256) public userNonce;
-    mapping (bytes32 =&gt; uint256) public orderFills;
-    mapping (bytes32 =&gt; bool) public usedHash;
-    mapping (address =&gt; bool) public isAdmin;
-    mapping (uint256 =&gt; address) public tokenId2Address;
-    mapping (uint256 =&gt; address) public userId2Address;
-    mapping (address =&gt; uint256) public userAddress2Id;
-    mapping (address =&gt; uint256) public tokenAddress2Id;
+    mapping (address => mapping (address => uint256)) private balances;
+    mapping (address => uint256) public userLock;
+    mapping (address => uint256) public userNonce;
+    mapping (bytes32 => uint256) public orderFills;
+    mapping (bytes32 => bool) public usedHash;
+    mapping (address => bool) public isAdmin;
+    mapping (uint256 => address) public tokenId2Address;
+    mapping (uint256 => address) public userId2Address;
+    mapping (address => uint256) public userAddress2Id;
+    mapping (address => uint256) public tokenAddress2Id;
 
     address public joysoWallet;
     address public joyToken;
@@ -188,7 +188,7 @@ contract Joyso is Ownable, JoysoDataDecoder {
      * @param amount The amount of token to deposit
      */
     function depositToken(address token, uint256 amount) external {
-        require(amount &gt; 0);
+        require(amount > 0);
         require(tokenAddress2Id[token] != 0);
         addUser(msg.sender);
         require(ERC20(token).transferFrom(msg.sender, this, amount));
@@ -205,7 +205,7 @@ contract Joyso is Ownable, JoysoDataDecoder {
      * @notice deposit Ether into the contract
      */
     function depositEther() external payable {
-        require(msg.value &gt; 0);
+        require(msg.value > 0);
         addUser(msg.sender);
         balances[0][msg.sender] = balances[0][msg.sender].add(msg.value);
         Deposit(
@@ -223,8 +223,8 @@ contract Joyso is Ownable, JoysoDataDecoder {
      * @param amount The amount of token to withdraw
      */
     function withdraw(address token, uint256 amount) external {
-        require(amount &gt; 0);
-        require(getTime() &gt; userLock[msg.sender] &amp;&amp; userLock[msg.sender] != 0);
+        require(amount > 0);
+        require(getTime() > userLock[msg.sender] && userLock[msg.sender] != 0);
         balances[token][msg.sender] = balances[token][msg.sender].sub(amount);
         if (token == 0) {
             msg.sender.transfer(amount);
@@ -281,7 +281,7 @@ contract Joyso is Ownable, JoysoDataDecoder {
      */
     function collectFee(address token) external onlyOwner {
         uint256 amount = balances[token][joysoWallet];
-        require(amount &gt; 0);
+        require(amount > 0);
         balances[token][joysoWallet] = 0;
         if (token == 0) {
             msg.sender.transfer(amount);
@@ -301,19 +301,19 @@ contract Joyso is Ownable, JoysoDataDecoder {
      * @dev can change from 1 days to 30 days, initial is 30 days
      */
     function changeLockPeriod(uint256 periodInDays) external onlyOwner {
-        require(periodInDays &lt;= 30 &amp;&amp; periodInDays &gt;= 1);
+        require(periodInDays <= 30 && periodInDays >= 1);
         lockPeriod = periodInDays * 1 days;
     }
 
     /**
      * @notice add a new token into the token list, only admins
-     * @dev index 0 &amp; 1 are saved for Ether and JOY
-     * @dev both index &amp; token can not be redundant, and no removed mathod
+     * @dev index 0 & 1 are saved for Ether and JOY
+     * @dev both index & token can not be redundant, and no removed mathod
      * @param tokenAddress token&#39;s address
      * @param index chosen index of the token
      */
     function registerToken(address tokenAddress, uint256 index) external onlyAdmin {
-        require(index &gt; 1);
+        require(index > 1);
         require(tokenAddress2Id[tokenAddress] == 0);
         require(tokenId2Address[index] == 0);
         tokenAddress2Id[tokenAddress] = index;
@@ -329,21 +329,21 @@ contract Joyso is Ownable, JoysoDataDecoder {
         uint256 amount = inputs[0];
         uint256 gasFee = inputs[1];
         uint256 data = inputs[2];
-        uint256 paymentMethod = data &amp; PAYMENT_METHOD_MASK;
-        address token = tokenId2Address[(data &amp; WITHDRAW_TOKEN_MASK) &gt;&gt; 32];
-        address user = userId2Address[data &amp; USER_MASK];
+        uint256 paymentMethod = data & PAYMENT_METHOD_MASK;
+        address token = tokenId2Address[(data & WITHDRAW_TOKEN_MASK) >> 32];
+        address user = userId2Address[data & USER_MASK];
         bytes32 hash = keccak256(
             this,
             amount,
             gasFee,
-            data &amp; SIGN_MASK | uint256(token)
+            data & SIGN_MASK | uint256(token)
         );
         require(!usedHash[hash]);
         require(
             verify(
                 hash,
                 user,
-                uint8(data &amp; V_MASK == 0 ? 27 : 28),
+                uint8(data & V_MASK == 0 ? 27 : 28),
                 bytes32(inputs[3]),
                 bytes32(inputs[4])
             )
@@ -380,9 +380,9 @@ contract Joyso is Ownable, JoysoDataDecoder {
      */
     function matchByAdmin_TwH36(uint256[] inputs) external onlyAdmin {
         uint256 data = inputs[3];
-        address user = userId2Address[data &amp; USER_MASK];
+        address user = userId2Address[data & USER_MASK];
         // check taker order nonce
-        require(data &gt;&gt; 224 &gt; userNonce[user]);
+        require(data >> 224 > userNonce[user]);
         address token;
         bool isBuy;
         (token, isBuy) = decodeOrderTokenAndIsBuy(data);
@@ -391,13 +391,13 @@ contract Joyso is Ownable, JoysoDataDecoder {
             inputs[0],
             inputs[1],
             inputs[2],
-            data &amp; MATCH_SIGN_MASK | (isBuy ? ORDER_ISBUY : 0) | uint256(token)
+            data & MATCH_SIGN_MASK | (isBuy ? ORDER_ISBUY : 0) | uint256(token)
         );
         require(
             verify(
                 orderHash,
                 user,
-                uint8(data &amp; V_MASK == 0 ? 27 : 28),
+                uint8(data & V_MASK == 0 ? 27 : 28),
                 bytes32(inputs[4]),
                 bytes32(inputs[5])
             )
@@ -409,26 +409,26 @@ contract Joyso is Ownable, JoysoDataDecoder {
         uint256 etherExecute = 0;  // taker order ether execute
 
         isBuy = !isBuy;
-        for (uint256 i = 6; i &lt; inputs.length; i += 6) {
+        for (uint256 i = 6; i < inputs.length; i += 6) {
             //check price, maker price should lower than taker price
-            require(tokenExecute &gt; 0 &amp;&amp; inputs[1].mul(inputs[i + 1]) &lt;= inputs[0].mul(inputs[i]));
+            require(tokenExecute > 0 && inputs[1].mul(inputs[i + 1]) <= inputs[0].mul(inputs[i]));
 
             data = inputs[i + 3];
-            user = userId2Address[data &amp; USER_MASK];
+            user = userId2Address[data & USER_MASK];
             // check maker order nonce
-            require(data &gt;&gt; 224 &gt; userNonce[user]);
+            require(data >> 224 > userNonce[user]);
             bytes32 makerOrderHash = keccak256(
                 this,
                 inputs[i],
                 inputs[i + 1],
                 inputs[i + 2],
-                data &amp; MATCH_SIGN_MASK | (isBuy ? ORDER_ISBUY : 0) | uint256(token)
+                data & MATCH_SIGN_MASK | (isBuy ? ORDER_ISBUY : 0) | uint256(token)
             );
             require(
                 verify(
                     makerOrderHash,
                     user,
-                    uint8(data &amp; V_MASK == 0 ? 27 : 28),
+                    uint8(data & V_MASK == 0 ? 27 : 28),
                     bytes32(inputs[i + 4]),
                     bytes32(inputs[i + 5])
                 )
@@ -461,7 +461,7 @@ contract Joyso is Ownable, JoysoDataDecoder {
     function matchTokenOrderByAdmin_k44j(uint256[] inputs) external onlyAdmin {
         address user = userId2Address[decodeOrderUserId(inputs[3])];
         // check taker order nonce
-        require(inputs[3] &gt;&gt; 224 &gt; userNonce[user]);
+        require(inputs[3] >> 224 > userNonce[user]);
         address token;
         address base;
         bool isBuy;
@@ -482,13 +482,13 @@ contract Joyso is Ownable, JoysoDataDecoder {
         uint256 baseExecute = 0;  // taker order ether execute
 
         isBuy = !isBuy;
-        for (uint256 i = 6; i &lt; inputs.length; i += 6) {
+        for (uint256 i = 6; i < inputs.length; i += 6) {
             //check price, taker price should better than maker price
-            require(tokenExecute &gt; 0 &amp;&amp; inputs[1].mul(inputs[i + 1]) &lt;= inputs[0].mul(inputs[i]));
+            require(tokenExecute > 0 && inputs[1].mul(inputs[i + 1]) <= inputs[0].mul(inputs[i]));
 
             user = userId2Address[decodeOrderUserId(inputs[i + 3])];
             // check maker order nonce
-            require(inputs[i + 3] &gt;&gt; 224 &gt; userNonce[user]);
+            require(inputs[i + 3] >> 224 > userNonce[user]);
             bytes32 makerOrderHash = getTokenOrderDataHash(inputs, i, inputs[i + 3], token, base);
             require(
                 verify(
@@ -526,13 +526,13 @@ contract Joyso is Ownable, JoysoDataDecoder {
      */
     function cancelByAdmin(uint256[] inputs) external onlyAdmin {
         uint256 data = inputs[1];
-        uint256 nonce = data &gt;&gt; 224;
-        address user = userId2Address[data &amp; USER_MASK];
-        require(nonce &gt; userNonce[user]);
+        uint256 nonce = data >> 224;
+        address user = userId2Address[data & USER_MASK];
+        require(nonce > userNonce[user]);
         uint256 gasFee = inputs[0];
         require(
             verify(
-                keccak256(this, gasFee, data &amp; SIGN_MASK),
+                keccak256(this, gasFee, data & SIGN_MASK),
                 user,
                 uint8(retrieveV(data)),
                 bytes32(inputs[2]),
@@ -542,10 +542,10 @@ contract Joyso is Ownable, JoysoDataDecoder {
 
         // update balance
         address gasToken = 0;
-        if (data &amp; PAYMENT_METHOD_MASK == PAY_BY_JOY) {
+        if (data & PAYMENT_METHOD_MASK == PAY_BY_JOY) {
             gasToken = joyToken;
         }
-        require(balances[gasToken][user] &gt;= gasFee);
+        require(balances[gasToken][user] >= gasFee);
         balances[gasToken][user] = balances[gasToken][user].sub(gasFee);
         balances[gasToken][joysoWallet] = balances[gasToken][joysoWallet].add(gasFee);
 
@@ -560,29 +560,29 @@ contract Joyso is Ownable, JoysoDataDecoder {
      */
     function migrateByAdmin_DQV(uint256[] inputs) external onlyAdmin {
         uint256 data = inputs[2];
-        address token = tokenId2Address[(data &amp; WITHDRAW_TOKEN_MASK) &gt;&gt; 32];
+        address token = tokenId2Address[(data & WITHDRAW_TOKEN_MASK) >> 32];
         address newContract = address(inputs[0]);
-        for (uint256 i = 1; i &lt; inputs.length; i += 4) {
+        for (uint256 i = 1; i < inputs.length; i += 4) {
             uint256 gasFee = inputs[i];
             data = inputs[i + 1];
-            address user = userId2Address[data &amp; USER_MASK];
+            address user = userId2Address[data & USER_MASK];
             bytes32 hash = keccak256(
                 this,
                 gasFee,
-                data &amp; SIGN_MASK | uint256(token),
+                data & SIGN_MASK | uint256(token),
                 newContract
             );
             require(
                 verify(
                     hash,
                     user,
-                    uint8(data &amp; V_MASK == 0 ? 27 : 28),
+                    uint8(data & V_MASK == 0 ? 27 : 28),
                     bytes32(inputs[i + 2]),
                     bytes32(inputs[i + 3])
                 )
             );
-            if (gasFee &gt; 0) {
-                uint256 paymentMethod = data &amp; PAYMENT_METHOD_MASK;
+            if (gasFee > 0) {
+                uint256 paymentMethod = data & PAYMENT_METHOD_MASK;
                 if (paymentMethod == PAY_BY_JOY) {
                     balances[joyToken][user] = balances[joyToken][user].sub(gasFee);
                     balances[joyToken][joysoWallet] = balances[joyToken][joysoWallet].add(gasFee);
@@ -634,9 +634,9 @@ contract Joyso is Ownable, JoysoDataDecoder {
      *      isBuy is true means this order is buying token
      */
     function decodeOrderTokenAndIsBuy(uint256 data) internal view returns (address token, bool isBuy) {
-        uint256 tokenId = (data &amp; TOKEN_SELL_MASK) &gt;&gt; 48;
+        uint256 tokenId = (data & TOKEN_SELL_MASK) >> 48;
         if (tokenId == 0) {
-            token = tokenId2Address[(data &amp; TOKEN_BUY_MASK) &gt;&gt; 32];
+            token = tokenId2Address[(data & TOKEN_BUY_MASK) >> 32];
             isBuy = true;
         } else {
             token = tokenId2Address[tokenId];
@@ -647,13 +647,13 @@ contract Joyso is Ownable, JoysoDataDecoder {
      * @dev decode token oreder data, internal
      */
     function decodeTokenOrderTokenAndIsBuy(uint256 data) internal view returns (address token, address base, bool isBuy) {
-        isBuy = data &amp; IS_BUY_MASK == ORDER_ISBUY;
+        isBuy = data & IS_BUY_MASK == ORDER_ISBUY;
         if (isBuy) {
-            token = tokenId2Address[(data &amp; TOKEN_BUY_MASK) &gt;&gt; 32];
-            base = tokenId2Address[(data &amp; TOKEN_SELL_MASK) &gt;&gt; 48];
+            token = tokenId2Address[(data & TOKEN_BUY_MASK) >> 32];
+            base = tokenId2Address[(data & TOKEN_SELL_MASK) >> 48];
         } else {
-            token = tokenId2Address[(data &amp; TOKEN_SELL_MASK) &gt;&gt; 48];
-            base = tokenId2Address[(data &amp; TOKEN_BUY_MASK) &gt;&gt; 32];
+            token = tokenId2Address[(data & TOKEN_SELL_MASK) >> 48];
+            base = tokenId2Address[(data & TOKEN_BUY_MASK) >> 32];
         }
     }
 
@@ -672,9 +672,9 @@ contract Joyso is Ownable, JoysoDataDecoder {
             inputs[offset],
             inputs[offset + 1],
             inputs[offset + 2],
-            data &amp; SIGN_MASK | uint256(token),
+            data & SIGN_MASK | uint256(token),
             base,
-            (data &amp; TOKEN_JOY_PRICE_MASK) &gt;&gt; 64
+            (data & TOKEN_JOY_PRICE_MASK) >> 64
         );
     }
 
@@ -719,7 +719,7 @@ contract Joyso is Ownable, JoysoDataDecoder {
         updateUserBalance(data, isBuy, baseExecute, tokenExecute, fee, token, base);
         orderFills[orderHash] = orderFills[orderHash].add(tokenExecute);
         if (tradeEventEnabled) {
-            TradeSuccess(userId2Address[data &amp; USER_MASK], baseExecute, tokenExecute, isBuy, fee);
+            TradeSuccess(userId2Address[data & USER_MASK], baseExecute, tokenExecute, isBuy, fee);
         }
     }
 
@@ -746,7 +746,7 @@ contract Joyso is Ownable, JoysoDataDecoder {
         baseExecute = _baseExecute.add(baseGet);
         if (tradeEventEnabled) {
             TradeSuccess(
-                userId2Address[data &amp; USER_MASK],
+                userId2Address[data & USER_MASK],
                 baseGet,
                 tokenGet,
                 isBuy,
@@ -766,10 +766,10 @@ contract Joyso is Ownable, JoysoDataDecoder {
     )
         internal
     {
-        address user = userId2Address[data &amp; USER_MASK];
+        address user = userId2Address[data & USER_MASK];
         uint256 baseFee = fee;
         uint256 joyFee = 0;
-        if ((base == 0 ? (data &amp; JOY_PRICE_MASK) &gt;&gt; 164 : (data &amp; TOKEN_JOY_PRICE_MASK) &gt;&gt; 64) != 0) {
+        if ((base == 0 ? (data & JOY_PRICE_MASK) >> 164 : (data & TOKEN_JOY_PRICE_MASK) >> 64) != 0) {
             joyFee = fee;
             baseFee = 0;
         }
@@ -801,8 +801,8 @@ contract Joyso is Ownable, JoysoDataDecoder {
         internal view returns (uint256)
     {
         uint256 fee = orderFills[orderHash] == 0 ? gasFee : 0;
-        uint256 txFee = baseGet.mul(isTaker ? (data &amp; TAKER_FEE_MASK) &gt;&gt; 208 : (data &amp; MAKER_FEE_MASK) &gt;&gt; 192) / 10000;
-        uint256 joyPrice = isEthOrder ? (data &amp; JOY_PRICE_MASK) &gt;&gt; 164 : (data &amp; TOKEN_JOY_PRICE_MASK) &gt;&gt; 64;
+        uint256 txFee = baseGet.mul(isTaker ? (data & TAKER_FEE_MASK) >> 208 : (data & MAKER_FEE_MASK) >> 192) / 10000;
+        uint256 joyPrice = isEthOrder ? (data & JOY_PRICE_MASK) >> 164 : (data & TOKEN_JOY_PRICE_MASK) >> 64;
         if (joyPrice != 0) {
             txFee = isEthOrder ? txFee / (10 ** 5) / joyPrice : txFee * (10 ** 12) / joyPrice;
         }
@@ -831,7 +831,7 @@ contract Joyso is Ownable, JoysoDataDecoder {
     {
         uint256 makerRemainingToken = isBuy ? amountBuy : amountSell;
         makerRemainingToken = makerRemainingToken.sub(orderFills[orderHash]);
-        require(makerRemainingToken &gt; 0); // the maker order should remain something to trade
-        return makerRemainingToken &gt;= remainingToken ? remainingToken : makerRemainingToken;
+        require(makerRemainingToken > 0); // the maker order should remain something to trade
+        return makerRemainingToken >= remainingToken ? remainingToken : makerRemainingToken;
     }
 }

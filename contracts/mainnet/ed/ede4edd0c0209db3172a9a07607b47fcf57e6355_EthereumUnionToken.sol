@@ -21,10 +21,10 @@ pragma solidity ^0.4.18;
 contract SafeMath {
     function safeAdd(uint a, uint b) public pure returns (uint c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function safeSub(uint a, uint b) public pure returns (uint c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function safeMul(uint a, uint b) public pure returns (uint c) {
@@ -32,7 +32,7 @@ contract SafeMath {
         require(a == 0 || c / a == b);
     }
     function safeDiv(uint a, uint b) public pure returns (uint c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
@@ -110,8 +110,8 @@ contract EthereumUnionToken is ERC20Interface, Owned, SafeMath {
     uint8 public decimals;
     uint public _totalSupply;
 
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => uint) balances;
+    mapping(address => mapping(address => uint)) allowed;
 
 
     // ------------------------------------------------------------------------
@@ -234,7 +234,7 @@ contract EthereumUnionToken is ERC20Interface, Owned, SafeMath {
      * @param _value the amount of money to burn
      */
     function burn(uint256 _value) public returns (bool success) {
-        require(balances[msg.sender] &gt;= _value);   // Check if the sender has enough
+        require(balances[msg.sender] >= _value);   // Check if the sender has enough
         balances[msg.sender] -= _value;            // Subtract from the sender
         _totalSupply -= _value;                      // Updates totalSupply
         emit Burn(msg.sender, _value);
@@ -250,8 +250,8 @@ contract EthereumUnionToken is ERC20Interface, Owned, SafeMath {
      * @param _value the amount of money to burn
      */
     function burnFrom(address _from, uint256 _value) public returns (bool success) {
-        require(balances[_from] &gt;= _value);                // Check if the targeted balance is enough
-        require(_value &lt;= allowed[_from][msg.sender]);    // Check allowance
+        require(balances[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowed[_from][msg.sender]);    // Check allowance
         balances[_from] -= _value;                         // Subtract from the targeted balance
         allowed[_from][msg.sender] -= _value;             // Subtract from the sender&#39;s allowance
         _totalSupply -= _value;                              // Update totalSupply

@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 
 /*
-    Utilities &amp; Common Modifiers
+    Utilities & Common Modifiers
 */
 contract Utils {
     /**
@@ -464,25 +464,25 @@ contract BancorConverter is ITokenConverter, SmartTokenController, Managed {
 
     // validates maximum conversion fee
     modifier validMaxConversionFee(uint32 _conversionFee) {
-        require(_conversionFee >= 0 &amp;&amp; _conversionFee <= MAX_CONVERSION_FEE);
+        require(_conversionFee >= 0 && _conversionFee <= MAX_CONVERSION_FEE);
         _;
     }
 
     // validates conversion fee
     modifier validConversionFee(uint32 _conversionFee) {
-        require(_conversionFee >= 0 &amp;&amp; _conversionFee <= maxConversionFee);
+        require(_conversionFee >= 0 && _conversionFee <= maxConversionFee);
         _;
     }
 
     // validates connector weight range
     modifier validConnectorWeight(uint32 _weight) {
-        require(_weight > 0 &amp;&amp; _weight <= MAX_WEIGHT);
+        require(_weight > 0 && _weight <= MAX_WEIGHT);
         _;
     }
 
     // validates a conversion path - verifies that the number of elements is odd and that maximum number of &#39;hops&#39; is 10
     modifier validConversionPath(IERC20Token[] _path) {
-        require(_path.length > 2 &amp;&amp; _path.length <= (1 + 2 * 10) &amp;&amp; _path.length % 2 == 1);
+        require(_path.length > 2 && _path.length <= (1 + 2 * 10) && _path.length % 2 == 1);
         _;
     }
 
@@ -630,7 +630,7 @@ contract BancorConverter is ITokenConverter, SmartTokenController, Managed {
         notThis(_token)
         validConnectorWeight(_weight)
     {
-        require(_token != token &amp;&amp; !connectors[_token].isSet &amp;&amp; totalConnectorWeight + _weight <= MAX_WEIGHT); // validate input
+        require(_token != token && !connectors[_token].isSet && totalConnectorWeight + _weight <= MAX_WEIGHT); // validate input
 
         connectors[_token].virtualBalance = 0;
         connectors[_token].weight = _weight;
@@ -815,7 +815,7 @@ contract BancorConverter is ITokenConverter, SmartTokenController, Managed {
         returns (uint256)
     {
         uint256 amount = getPurchaseReturn(_connectorToken, _depositAmount);
-        require(amount != 0 &amp;&amp; amount >= _minReturn); // ensure the trade gives something in return and meets the minimum requested amount
+        require(amount != 0 && amount >= _minReturn); // ensure the trade gives something in return and meets the minimum requested amount
 
         // update virtual balance if relevant
         Connector storage connector = connectors[_connectorToken];
@@ -849,12 +849,12 @@ contract BancorConverter is ITokenConverter, SmartTokenController, Managed {
         require(_sellAmount <= token.balanceOf(msg.sender)); // validate input
 
         uint256 amount = getSaleReturn(_connectorToken, _sellAmount);
-        require(amount != 0 &amp;&amp; amount >= _minReturn); // ensure the trade gives something in return and meets the minimum requested amount
+        require(amount != 0 && amount >= _minReturn); // ensure the trade gives something in return and meets the minimum requested amount
 
         uint256 tokenSupply = token.totalSupply();
         uint256 connectorBalance = getConnectorBalance(_connectorToken);
         // ensure that the trade will only deplete the connector if the total supply is depleted as well
-        assert(amount < connectorBalance || (amount == connectorBalance &amp;&amp; _sellAmount == tokenSupply));
+        assert(amount < connectorBalance || (amount == connectorBalance && _sellAmount == tokenSupply));
 
         // update virtual balance if relevant
         Connector storage connector = connectors[_connectorToken];

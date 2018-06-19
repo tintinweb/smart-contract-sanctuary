@@ -230,7 +230,7 @@ contract EladToken is PausableToken {
   }
 
   function unlockTokens(TokenLock lock) internal returns (bool) {
-    if (startTime + lock.duration < now &amp;&amp; lock.withdrawn == false) {
+    if (startTime + lock.duration < now && lock.withdrawn == false) {
       balances[owner] = balances[owner].add(lock.amount);
       balances[address(0)] = balances[address(0)].sub(lock.amount);
       Transfer(address(0), owner, lock.amount);

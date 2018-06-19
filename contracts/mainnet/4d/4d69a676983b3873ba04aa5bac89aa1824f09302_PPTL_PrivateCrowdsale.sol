@@ -292,7 +292,7 @@ contract PPToken is BurnableToken{
     
     
     function PPToken(uint256 initialSupply, uint256 _freezTime) public{
-        require(initialSupply > 0 &amp;&amp; now <= _freezTime);
+        require(initialSupply > 0 && now <= _freezTime);
         totalSupply_ = initialSupply * 10 ** uint256(decimals);
         balances[owner] = totalSupply_;
         emit Mint(owner, totalSupply_);
@@ -305,7 +305,7 @@ contract PPToken is BurnableToken{
         uint256 initialSupply = 20000;
         uint256 _freezTime = now + (10 minutes);
         
-        require(initialSupply > 0 &amp;&amp; now <= _freezTime);
+        require(initialSupply > 0 && now <= _freezTime);
         totalSupply_ = initialSupply * 10 ** uint256(decimals);
         balances[owner] = totalSupply_;
         emit Mint(owner, totalSupply_);
@@ -588,7 +588,7 @@ contract TimedCrowdsale is Crowdsale {
    * @dev Reverts if not in crowdsale time range. 
    */
   modifier onlyWhileOpen {
-    require(now >= openingTime &amp;&amp; now <= closingTime);
+    require(now >= openingTime && now <= closingTime);
     _;
   }
 

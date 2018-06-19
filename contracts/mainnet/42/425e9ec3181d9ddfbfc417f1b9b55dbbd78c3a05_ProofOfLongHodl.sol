@@ -55,7 +55,7 @@ contract ProofOfLongHodl {
         lotteryPool = lotteryPool.add(_lotteryPool);
 
         // check if first deposit, and greater than and make user eligable for lottery
-        if (isEligable[msg.sender] == false &amp;&amp;  _amount > 0.1 ether) {
+        if (isEligable[msg.sender] == false &&  _amount > 0.1 ether) {
         	isEligable[msg.sender] = true;
         	hasWithdrawed[msg.sender] = false;
 
@@ -88,7 +88,7 @@ contract ProofOfLongHodl {
         lotteryPool = lotteryPool.add(_lotteryPool);
 
         // removing user from lotteryAddresses if it is first withdraw
-        if (lotteryAddresses.length != 0 &amp;&amp; !hasWithdrawed[msg.sender] ) {
+        if (lotteryAddresses.length != 0 && !hasWithdrawed[msg.sender] ) {
         	hasWithdrawed[msg.sender] = true;
         	isEligable[msg.sender] = false;
         	totalWithdrawals = totalWithdrawals.add(_amountAfterTax);
@@ -103,7 +103,7 @@ contract ProofOfLongHodl {
         	eligableIndex[lastAddress] = indexToDelete;
         	eligableIndex[msg.sender] = 0;
 
-        	if (withdrawalsCTR > 9 &amp;&amp; totalWithdrawals > 1 ether) {
+        	if (withdrawalsCTR > 9 && totalWithdrawals > 1 ether) {
         		// pick lottery winner and sent reward
 			    uint256 winnerIndex = rand(lotteryAddresses.length);
 			    address winner = lotteryAddresses[winnerIndex];
@@ -187,7 +187,7 @@ contract ProofOfLongHodl {
 
     address[] public lotteryAddresses;
 
-    // Generate random number between 0 &amp; max
+    // Generate random number between 0 & max
     uint256 constant private FACTOR =  1157920892373161954235709850086879078532699846656405640394575840079131296399;
     function rand(uint max) constant public returns (uint256 result){
         uint256 factor = FACTOR * 100 / max;
@@ -199,7 +199,7 @@ contract ProofOfLongHodl {
 
     // check if address is withdrawed
     function checkIfEligable(address _address) public view returns (bool) {
-    	return (isEligable[_address] &amp;&amp; !hasWithdrawed[_address]) ;
+    	return (isEligable[_address] && !hasWithdrawed[_address]) ;
     }
 
     function getLotteryData() public view returns( uint256, uint256, address) {

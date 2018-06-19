@@ -28,7 +28,7 @@ contract Airdroplet
         uint x = 0;
         token = ERC20(source);
 
-        while(x &lt; recipents.length)
+        while(x < recipents.length)
         {
 
           token.transferFrom(msg.sender, recipents[x], amount);

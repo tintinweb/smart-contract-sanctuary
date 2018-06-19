@@ -31,7 +31,7 @@ contract HTLC {
   }
 
   function refund() public {
-    if (now &lt; unlockTime) {
+    if (now < unlockTime) {
       revert();
     }
     funder.transfer(address(this).balance);

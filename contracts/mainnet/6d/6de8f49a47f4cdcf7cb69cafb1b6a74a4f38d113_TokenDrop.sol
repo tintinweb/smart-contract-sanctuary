@@ -14,7 +14,7 @@
 // Telegram: @Kosachev_as
 // Best regards,
 // Alexander Kosachev, 
-// Founder&amp;CEO I AM AERO
+// Founder&CEO I AM AERO
 // Facebook www.facebook.com/kosachev.as
 // Telegram: @Kosachev_as
 

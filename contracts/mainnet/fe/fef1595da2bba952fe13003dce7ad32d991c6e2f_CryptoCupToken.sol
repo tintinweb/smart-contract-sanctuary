@@ -17,7 +17,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -27,7 +27,7 @@ library SafeMath {
     * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -36,7 +36,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -75,10 +75,10 @@ contract CryptoCupToken is ERC721 {
 	bool private tournamentComplete = false;
     
     /*****------- STORAGE -------******/
-    mapping (uint256 =&gt; address) public teamOwners;
-    mapping (address =&gt; uint256) private ownerTeamCount;
-    mapping (uint256 =&gt; address) public teamToApproved;
-    mapping (uint256 =&gt; uint256) private teamPrices;
+    mapping (uint256 => address) public teamOwners;
+    mapping (address => uint256) private ownerTeamCount;
+    mapping (uint256 => address) public teamToApproved;
+    mapping (uint256 => uint256) private teamPrices;
     address public contractModifierAddress;
     address public developerAddress;
     
@@ -90,7 +90,7 @@ contract CryptoCupToken is ERC721 {
         uint256 price;
         address owner;
         uint256 numPayouts;
-        mapping (uint256 =&gt; Payout) payouts;
+        mapping (uint256 => Payout) payouts;
     }
 
     struct Payout {
@@ -241,7 +241,7 @@ contract CryptoCupToken is ERC721 {
     
     function payLastSixteenWinner(uint256 _tokenId) public onlyContractModifier {
         require(prizes.LastSixteenTotalFixed != false);
-        require(lastSixteenWinnerPayments &lt; 8);
+        require(lastSixteenWinnerPayments < 8);
         require(tournamentComplete != true);
         
         Team storage team = teams[_tokenId];
@@ -267,7 +267,7 @@ contract CryptoCupToken is ERC721 {
     
     function payQuarterFinalWinner(uint256 _tokenId) public onlyContractModifier {
         require(prizes.QuarterFinalTotalFixed != false);
-        require(quarterFinalWinnerPayments &lt; 4);
+        require(quarterFinalWinnerPayments < 4);
         require(tournamentComplete != true);
         Team storage team = teams[_tokenId];
         require(team.numPayouts == 1);
@@ -293,7 +293,7 @@ contract CryptoCupToken is ERC721 {
         
     function paySemiFinalWinner(uint256 _tokenId) public onlyContractModifier {
         require(prizes.SemiFinalTotalFixed != false);
-        require(semiFinalWinnerPayments &lt; 2);
+        require(semiFinalWinnerPayments < 2);
         require(tournamentComplete != true);
         Team storage team = teams[_tokenId];
         require(team.numPayouts == 2);
@@ -367,7 +367,7 @@ contract CryptoCupToken is ERC721 {
         
 	    require(_addressNotNull(to));
         require(from != to);
-        require(msg.value &gt;= price);
+        require(msg.value >= price);
         
         Team storage team = teams[_tokenId];
 	    
@@ -416,7 +416,7 @@ contract CryptoCupToken is ERC721 {
 	    
 		// Set new price for team
 	    uint256 newPrice = 0;
-        if (price &lt; doublePriceUntil) {
+        if (price < doublePriceUntil) {
             newPrice = SafeMath.div(SafeMath.mul(price, 200), 100);
         } else {
             newPrice = SafeMath.div(SafeMath.mul(price, 115), 100);

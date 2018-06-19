@@ -242,7 +242,7 @@ contract ZanCoin is ERC20Interface, Owned {
         
         require(eth_sent > 0);
         require(exchangeRate > 0);
-        require(stateStartDate < now &amp;&amp; now < stateEndDate);
+        require(stateStartDate < now && now < stateEndDate);
         require(balances[owner] >= tokens_amount);
         require(_totalSupply - (balances[owner] - tokens_amount) <= saleCap);
         
@@ -259,7 +259,7 @@ contract ZanCoin is ERC20Interface, Owned {
     // Switches crowdsale stages: PreSale -> Round One -> Round Two
     // ------------------------------------------------------------------------
     function switchCrowdSaleStage() external onlyOwner {
-        require(!isInFinalState &amp;&amp; !isInRoundTwoState);
+        require(!isInFinalState && !isInRoundTwoState);
         
         if (!isInPreSaleState) {
             isInPreSaleState = true;
@@ -290,7 +290,7 @@ contract ZanCoin is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
     function completeCrowdSale() external onlyOwner {
         require(!isInFinalState);
-        require(isInPreSaleState &amp;&amp; isInRoundOneState &amp;&amp; isInRoundTwoState);
+        require(isInPreSaleState && isInRoundOneState && isInRoundTwoState);
         
         owner.transfer(address(this).balance);
         exchangeRate = 0;

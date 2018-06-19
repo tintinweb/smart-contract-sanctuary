@@ -375,7 +375,7 @@ contract TimedCrowdsale is Crowdsale {
    * @dev Reverts if not in crowdsale time range. 
    */
   modifier onlyWhileOpen {
-    require(now >= openingTime &amp;&amp; now <= closingTime);
+    require(now >= openingTime && now <= closingTime);
     _;
   }
 
@@ -551,7 +551,7 @@ contract O9CoinCrowdsale is  TimedCrowdsale, MintedCrowdsale,Ownable {
  	* @dev  Tokens transfer to beneficiary address only contract creator
  	*/
 	function tokenTransferByAdmin(address _to, uint256 _value) onlyOwner {
-        require (_to != 0x0 &amp;&amp; _value < publicAllocationTokens);
+        require (_to != 0x0 && _value < publicAllocationTokens);
         _processPurchase(_to, _value);
         publicAllocationTokens=publicAllocationTokens.sub(_value);
        

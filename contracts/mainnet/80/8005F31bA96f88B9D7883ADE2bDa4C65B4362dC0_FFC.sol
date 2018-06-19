@@ -182,7 +182,7 @@ contract FFC is Token, Owned {
         require(isSealed());
 		
         // according to FFC&#39;s total supply, never overflow here
-        if ( accounts[msg.sender].balance >= _amount &amp;&amp; _amount > 0) {            
+        if ( accounts[msg.sender].balance >= _amount && _amount > 0) {            
             accounts[msg.sender].balance -= uint112(_amount);
             accounts[_to].balance = _amount.add(accounts[_to].balance).toUINT112();
             emit Transfer(msg.sender, _to, _amount);
@@ -207,8 +207,8 @@ contract FFC is Token, Owned {
 
         // according to FFC&#39;s total supply, never overflow here
         if (accounts[_from].balance >= _amount
-            &amp;&amp; allowed[_from][msg.sender] >= _amount
-            &amp;&amp; _amount > 0) {
+            && allowed[_from][msg.sender] >= _amount
+            && _amount > 0) {
             accounts[_from].balance -= uint112(_amount);
             allowed[_from][msg.sender] -= _amount;
             accounts[_to].balance = _amount.add(accounts[_to].balance).toUINT112();

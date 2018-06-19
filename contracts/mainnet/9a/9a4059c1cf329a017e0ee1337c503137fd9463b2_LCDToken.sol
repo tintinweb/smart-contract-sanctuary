@@ -21,7 +21,7 @@ library SafeMath {
     internal constant
     returns(uint256) {
         uint256 z = x + y;
-        assert((z >= x) &amp;&amp; (z >= y));
+        assert((z >= x) && (z >= y));
         return z;
     }
 
@@ -65,7 +65,7 @@ library SafeMath {
     bytes memory b = bytes(s);
     uint result = 0;
     for (uint i = 0; i < b.length; i++) {
-        if (b[i] >= 48 &amp;&amp; b[i] <= 57) {
+        if (b[i] >= 48 && b[i] <= 57) {
             result = result * 10 + (uint(b[i]) - 48); 
         }
     }
@@ -124,7 +124,7 @@ contract StandardToken is Token {
     function transfer(address _to, uint256 _value)
     public
     returns (bool success) {
-        if (balances[msg.sender] >= _value &amp;&amp; _value > 0 &amp;&amp; balances[_to] + _value > balances[_to]) {
+        if (balances[msg.sender] >= _value && _value > 0 && balances[_to] + _value > balances[_to]) {
             balances[msg.sender] = SafeMath.sub(balances[msg.sender], _value);
             balances[_to] = SafeMath.add(balances[_to], _value);
             Transfer(msg.sender, _to, _value);
@@ -152,7 +152,7 @@ contract StandardToken is Token {
     function transferFrom(address _from, address _to, uint256 _value)
     public
     returns (bool success) {
-        if (balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value &amp;&amp; _value > 0 &amp;&amp; balances[_to] + _value > balances[_to]) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0 && balances[_to] + _value > balances[_to]) {
             balances[_to] = SafeMath.add(balances[_to], _value);
             balances[_from] = SafeMath.sub(balances[_from], _value);
             allowed[_from][msg.sender] = SafeMath.sub(allowed[_from][msg.sender], _value);

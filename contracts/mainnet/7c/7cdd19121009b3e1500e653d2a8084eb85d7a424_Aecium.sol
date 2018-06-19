@@ -13,20 +13,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal constant returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal constant returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -134,9 +134,9 @@ contract Aecium is ERC20, PoSTokenStandard, Ownable {
     uint64 time;
     }
 
-    mapping(address =&gt; uint256) balances;
-    mapping(address =&gt; mapping (address =&gt; uint256)) allowed;
-    mapping(address =&gt; transferInStruct[]) transferIns;
+    mapping(address => uint256) balances;
+    mapping(address => mapping (address => uint256)) allowed;
+    mapping(address => transferInStruct[]) transferIns;
 
     event Burn(address indexed burner, uint256 value);
 
@@ -144,12 +144,12 @@ contract Aecium is ERC20, PoSTokenStandard, Ownable {
      * @dev Fix for the ERC20 short address attack.
      */
     modifier onlyPayloadSize(uint size) {
-        require(msg.data.length &gt;= size + 4);
+        require(msg.data.length >= size + 4);
         _;
     }
 
     modifier canPoSMint() {
-        require(totalSupply &lt; maxTotalSupply);
+        require(totalSupply < maxTotalSupply);
         _;
     }
 
@@ -169,7 +169,7 @@ contract Aecium is ERC20, PoSTokenStandard, Ownable {
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
         Transfer(msg.sender, _to, _value);
-        if(transferIns[msg.sender].length &gt; 0) delete transferIns[msg.sender];
+        if(transferIns[msg.sender].length > 0) delete transferIns[msg.sender];
         uint64 _now = uint64(now);
         transferIns[msg.sender].push(transferInStruct(uint128(balances[msg.sender]),_now));
         transferIns[_to].push(transferInStruct(uint128(_value),_now));
@@ -186,13 +186,13 @@ contract Aecium is ERC20, PoSTokenStandard, Ownable {
         var _allowance = allowed[_from][msg.sender];
 
         // Check is not needed because sub(_allowance, _value) will already throw if this condition is not met
-        // require (_value &lt;= _allowance);
+        // require (_value <= _allowance);
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
         allowed[_from][msg.sender] = _allowance.sub(_value);
         Transfer(_from, _to, _value);
-        if(transferIns[_from].length &gt; 0) delete transferIns[_from];
+        if(transferIns[_from].length > 0) delete transferIns[_from];
         uint64 _now = uint64(now);
         transferIns[_from].push(transferInStruct(uint128(balances[_from]),_now));
         transferIns[_to].push(transferInStruct(uint128(_value),_now));
@@ -212,11 +212,11 @@ contract Aecium is ERC20, PoSTokenStandard, Ownable {
     }
 
     function mint() canPoSMint returns (bool) {
-        if(balances[msg.sender] &lt;= 0) return false;
-        if(transferIns[msg.sender].length &lt;= 0) return false;
+        if(balances[msg.sender] <= 0) return false;
+        if(transferIns[msg.sender].length <= 0) return false;
 
         uint reward = getProofOfStakeReward(msg.sender);
-        if(reward &lt;= 0) return false;
+        if(reward <= 0) return false;
 
         totalSupply = totalSupply.add(reward);
         balances[msg.sender] = balances[msg.sender].add(reward);
@@ -246,11 +246,11 @@ contract Aecium is ERC20, PoSTokenStandard, Ownable {
     }
 
     function getProofOfStakeReward(address _address) internal returns (uint) {
-        require( (now &gt;= stakeStartTime) &amp;&amp; (stakeStartTime &gt; 0) );
+        require( (now >= stakeStartTime) && (stakeStartTime > 0) );
 
         uint _now = now;
         uint _coinAge = getCoinAge(_address, _now);
-        if(_coinAge &lt;= 0) return 0;
+        if(_coinAge <= 0) return 0;
 
         uint interest = maxMintProofOfStake;
         // Due to the high interest rate for the first two years, compounding should be taken into account.
@@ -267,25 +267,25 @@ contract Aecium is ERC20, PoSTokenStandard, Ownable {
     }
 
     function getCoinAge(address _address, uint _now) internal returns (uint _coinAge) {
-        if(transferIns[_address].length &lt;= 0) return 0;
+        if(transferIns[_address].length <= 0) return 0;
 
-        for (uint i = 0; i &lt; transferIns[_address].length; i++){
-            if( _now &lt; uint(transferIns[_address][i].time).add(stakeMinAge) ) continue;
+        for (uint i = 0; i < transferIns[_address].length; i++){
+            if( _now < uint(transferIns[_address][i].time).add(stakeMinAge) ) continue;
 
             uint nCoinSeconds = _now.sub(uint(transferIns[_address][i].time));
-            if( nCoinSeconds &gt; stakeMaxAge ) nCoinSeconds = stakeMaxAge;
+            if( nCoinSeconds > stakeMaxAge ) nCoinSeconds = stakeMaxAge;
 
             _coinAge = _coinAge.add(uint(transferIns[_address][i].amount) * nCoinSeconds.div(1 days));
         }
     }
 
     function ownerSetStakeStartTime(uint timestamp) onlyOwner {
-        require((stakeStartTime &lt;= 0) &amp;&amp; (timestamp &gt;= chainStartTime));
+        require((stakeStartTime <= 0) && (timestamp >= chainStartTime));
         stakeStartTime = timestamp;
     }
 
     function ownerBurnToken(uint _value) onlyOwner {
-        require(_value &gt; 0);
+        require(_value > 0);
 
         balances[msg.sender] = balances[msg.sender].sub(_value);
         delete transferIns[msg.sender];
@@ -300,24 +300,24 @@ contract Aecium is ERC20, PoSTokenStandard, Ownable {
 
     /* Batch token transfer. Used by contract creator to distribute initial tokens to holders */
     function batchTransfer(address[] _recipients, uint[] _values) onlyOwner returns (bool) {
-        require( _recipients.length &gt; 0 &amp;&amp; _recipients.length == _values.length);
+        require( _recipients.length > 0 && _recipients.length == _values.length);
 
         uint total = 0;
-        for(uint i = 0; i &lt; _values.length; i++){
+        for(uint i = 0; i < _values.length; i++){
             total = total.add(_values[i]);
         }
-        require(total &lt;= balances[msg.sender]);
+        require(total <= balances[msg.sender]);
 
         uint64 _now = uint64(now);
-        for(uint j = 0; j &lt; _recipients.length; j++){
+        for(uint j = 0; j < _recipients.length; j++){
             balances[_recipients[j]] = balances[_recipients[j]].add(_values[j]);
             transferIns[_recipients[j]].push(transferInStruct(uint128(_values[j]),_now));
             Transfer(msg.sender, _recipients[j], _values[j]);
         }
 
         balances[msg.sender] = balances[msg.sender].sub(total);
-        if(transferIns[msg.sender].length &gt; 0) delete transferIns[msg.sender];
-        if(balances[msg.sender] &gt; 0) transferIns[msg.sender].push(transferInStruct(uint128(balances[msg.sender]),_now));
+        if(transferIns[msg.sender].length > 0) delete transferIns[msg.sender];
+        if(balances[msg.sender] > 0) transferIns[msg.sender].push(transferInStruct(uint128(balances[msg.sender]),_now));
 
         return true;
     }

@@ -40,20 +40,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -137,7 +137,7 @@ contract PoolPartyToken is Ownable {
   function _alreadyInList(address _thisHODLer) internal view returns(bool HolderinList) {
 
     bool result = false;
-    for (uint256 r = 0; r &lt; HOLDersList.length; r++) {
+    for (uint256 r = 0; r < HOLDersList.length; r++) {
       if (HOLDersList[r].HOLDersAddress == _thisHODLer) {
         result = true;
         break;
@@ -156,7 +156,7 @@ contract PoolPartyToken is Ownable {
 
   function UpdateHOLDer(address _currentHODLer, address _newHODLer) internal {
 
-    for (uint256 r = 0; r &lt; HOLDersList.length; r++){
+    for (uint256 r = 0; r < HOLDersList.length; r++){
       // Send individual token holder payroll
       if (HOLDersList[r].HOLDersAddress == _currentHODLer) {
         // write new holders address
@@ -173,7 +173,7 @@ contract PoolPartyToken is Ownable {
 contract BasicToken is PoolPartyToken, ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -202,7 +202,7 @@ contract BasicToken is PoolPartyToken, ERC20Basic {
   */
   function transfer(address _to, uint256 _value) openBarrier public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -234,7 +234,7 @@ contract BasicToken is PoolPartyToken, ERC20Basic {
 contract PoolPartyPayRoll is BasicToken {
   using SafeMath for uint256;
 
-  mapping (address =&gt; uint256) PayRollCount;
+  mapping (address => uint256) PayRollCount;
 
   // Manually spread iron profits to token holders
   function _HOLDersPayRoll() onlyOwner public {
@@ -242,7 +242,7 @@ contract PoolPartyPayRoll is BasicToken {
     uint256 _amountToPay = address(this).balance;
     uint256 individualPayRoll = _amountToPay.div(uint256(HOLDersList.length));
 
-    for (uint256 r = 0; r &lt; HOLDersList.length; r++){
+    for (uint256 r = 0; r < HOLDersList.length; r++){
       // Send individual token holder payroll
       address HODLer = HOLDersList[r].HOLDersAddress;
       HODLer.transfer(individualPayRoll);
@@ -266,7 +266,7 @@ contract PoolPartyPayRoll is BasicToken {
  */
 contract StandardToken is PoolPartyPayRoll, ERC20 {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
   /**
    * @dev Transfer tokens from one address to another
@@ -276,8 +276,8 @@ contract StandardToken is PoolPartyPayRoll, ERC20 {
    */
   function transferFrom(address _from, address _to, uint256 _value) openBarrier public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -344,7 +344,7 @@ contract StandardToken is PoolPartyPayRoll, ERC20 {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -422,7 +422,7 @@ contract CanReclaimToken is Ownable {
 
 /**
  * @title Contracts that should not own Ether
- * @author Remco Bloemen &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="89fbece4eae6c9bb">[email&#160;protected]</a>π.com&gt;
+ * @author Remco Bloemen <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="89fbece4eae6c9bb">[email&#160;protected]</a>π.com>
  * @dev This tries to block incoming ether to prevent accidental loss of Ether. Should Ether end up
  * in the contract, it will allow the owner to reclaim this ether.
  * @notice Ether can still be send to this contract by:
@@ -450,7 +450,7 @@ contract HasEther is Ownable {
 /**
  * @title Contracts that should not own Contracts
  * @notice updated to &quot;reclaimChildOwnership&quot;, ease to remember function&#39;s nature @AlberEre
- * @author Remco Bloemen &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7002151d131f3042">[email&#160;protected]</a>π.com&gt;
+ * @author Remco Bloemen <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7002151d131f3042">[email&#160;protected]</a>π.com>
  * @dev Should contracts (anything Ownable) end up being owned by this contract, it allows the owner
  * of this contract to reclaim ownership of the contracts.
  */
@@ -509,7 +509,7 @@ contract IRONtokenSale is PoolPartyToken, CanReclaimToken, HasNoContracts {
       token = new IRONtoken();
       token.setBarrierAsOpen(false);
       tokensMinted = token.totalSupply();
-      require(_hardCap &gt; 0);
+      require(_hardCap > 0);
       hardCap = _hardCap;
       mintTokens(msg.sender, _initMinted);
     }
@@ -529,7 +529,7 @@ contract IRONtokenSale is PoolPartyToken, CanReclaimToken, HasNoContracts {
     * @notice Mint tokens for multiple addresses for Airdrops (only external) - Alber Erre
     */
     function MultiplesaleAirdrop(address[] beneficiaries, uint256[] amounts) onlyOwner external {
-      for (uint256 r=0; r&lt;beneficiaries.length; r++){
+      for (uint256 r=0; r<beneficiaries.length; r++){
         mintTokens(address(beneficiaries[r]), uint256(amounts[r]));
       }
     }
@@ -538,7 +538,7 @@ contract IRONtokenSale is PoolPartyToken, CanReclaimToken, HasNoContracts {
     * @notice Shows if crowdsale is running
     */ 
     function ironTokensaleRunning() view public returns(bool){
-        return (!finalized &amp;&amp; (tokensMinted &lt; hardCap));
+        return (!finalized && (tokensMinted < hardCap));
     }
 
     function currentTime() view public returns(uint256) {
@@ -550,8 +550,8 @@ contract IRONtokenSale is PoolPartyToken, CanReclaimToken, HasNoContracts {
     */ 
     function RoundIndex() internal returns(uint256) {
       uint256 index = 0;
-      for (uint256 r=0; r&lt;rounds.length; r++){
-        if ( (rounds[r].start &lt; uint256(block.timestamp)) &amp;&amp; (uint256(block.timestamp) &lt; rounds[r].end) ) {
+      for (uint256 r=0; r<rounds.length; r++){
+        if ( (rounds[r].start < uint256(block.timestamp)) && (uint256(block.timestamp) < rounds[r].end) ) {
           index = r.add(1);
         }
       }
@@ -573,7 +573,7 @@ contract IRONtokenSale is PoolPartyToken, CanReclaimToken, HasNoContracts {
     
     function _magic(uint256 _weiAmount) internal view returns (uint256) {
       uint256 tokenRate = currentRate();
-      require(tokenRate &gt; 0);
+      require(tokenRate > 0);
       uint256 preTransformweiAmount = tokenRate.mul(_weiAmount);
       uint256 transform = 10**18;
       uint256 TransformedweiAmount = preTransformweiAmount.div(transform);
@@ -584,7 +584,7 @@ contract IRONtokenSale is PoolPartyToken, CanReclaimToken, HasNoContracts {
      * @dev fallback function ***DO NOT OVERRIDE***
      */
     function () external payable {
-      require(msg.value &gt; 0);
+      require(msg.value > 0);
       require(ironTokensaleRunning());
       uint256 weiAmount = msg.value;
       uint256 tokens = _magic(weiAmount);
@@ -599,7 +599,7 @@ contract IRONtokenSale is PoolPartyToken, CanReclaimToken, HasNoContracts {
     function mintTokens(address beneficiary, uint256 amount) internal {
         tokensMinted = tokensMinted.add(amount);       
 
-        require(tokensMinted &lt;= hardCap);
+        require(tokensMinted <= hardCap);
         assert(token.mint(beneficiary, amount));
 
         // Add holder for future iron profits distribution
@@ -611,7 +611,7 @@ contract IRONtokenSale is PoolPartyToken, CanReclaimToken, HasNoContracts {
     }
 
     function forwardCollectedEther() onlyOwner public {
-        if(address(this).balance &gt; 0){
+        if(address(this).balance > 0){
             owner.transfer(address(this).balance);
         }
     }

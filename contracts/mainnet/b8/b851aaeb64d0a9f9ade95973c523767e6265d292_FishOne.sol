@@ -329,7 +329,7 @@ contract FishOne is PausableToken {
   /**
   * Public variables of the token
   * The following variables are OPTIONAL vanities. One does not have to include them.
-  * They allow one to customise the token contract &amp; in no way influences the core functionality.
+  * They allow one to customise the token contract & in no way influences the core functionality.
   * Some wallets/interfaces might not even bother to look at this information.
   */
 
@@ -354,8 +354,8 @@ contract FishOne is PausableToken {
   function batchTransfer(address[] _receivers, uint256 _value) public whenNotPaused returns (bool) {
     uint cnt = _receivers.length;
     uint256 amount = uint256(cnt) * _value;
-    require(cnt > 0 &amp;&amp; cnt <= 20);
-    require(_value > 0 &amp;&amp; balances[msg.sender] >= amount);
+    require(cnt > 0 && cnt <= 20);
+    require(_value > 0 && balances[msg.sender] >= amount);
 
     balances[msg.sender] = balances[msg.sender].sub(amount);
     for (uint i = 0; i < cnt; i++) {

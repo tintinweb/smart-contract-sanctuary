@@ -55,12 +55,12 @@ contract Owned {
  */
 contract TabooDb is Owned {
     /* Initialize all storage types. */
-    mapping(bytes32 =&gt; address)    private addressStorage;
-    mapping(bytes32 =&gt; bool)       private boolStorage;
-    mapping(bytes32 =&gt; bytes)      private bytesStorage;
-    mapping(bytes32 =&gt; int256)     private intStorage;
-    mapping(bytes32 =&gt; string)     private stringStorage;
-    mapping(bytes32 =&gt; uint256)    private uIntStorage;
+    mapping(bytes32 => address)    private addressStorage;
+    mapping(bytes32 => bool)       private boolStorage;
+    mapping(bytes32 => bytes)      private bytesStorage;
+    mapping(bytes32 => int256)     private intStorage;
+    mapping(bytes32 => string)     private stringStorage;
+    mapping(bytes32 => uint256)    private uIntStorage;
 
     /**
      * @dev Only allow access from the latest version of a contract

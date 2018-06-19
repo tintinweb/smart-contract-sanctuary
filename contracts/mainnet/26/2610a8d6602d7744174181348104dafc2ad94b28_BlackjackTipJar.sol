@@ -83,13 +83,13 @@ contract BlackjackTipJar {
 
     // To be called by the pitboss
     function setDealerCut(uint8 cut) public auth {
-      require(cut <= 100 &amp;&amp; cut >= 1);
+      require(cut <= 100 && cut >= 1);
       dealer_cut = cut;
     }
 
     // To be called by the pitboss
     function setOverflowBounds(uint256 upper, uint256 lower) public auth {
-      require(lower > 0 &amp;&amp; upper > lower);
+      require(lower > 0 && upper > lower);
       overflow_upper = upper;
       overflow_lower = lower;
     }

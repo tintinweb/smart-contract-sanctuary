@@ -7,20 +7,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal constant returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal constant returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -39,7 +39,7 @@ contract ERC20 is ERC20Basic {
 contract BasicToken is ERC20Basic {
     using SafeMath for uint256;
 
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
 
     /**
     * @dev transfer token for a specified address
@@ -68,7 +68,7 @@ contract BasicToken is ERC20Basic {
 }
 contract StandardToken is ERC20, BasicToken {
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => mapping (address => uint256)) allowed;
 
 
     /**
@@ -83,7 +83,7 @@ contract StandardToken is ERC20, BasicToken {
         uint256 _allowance = allowed[_from][msg.sender];
 
         // Check is not needed because sub(_allowance, _value) will already throw if this condition is not met
-        // require (_value &lt;= _allowance);
+        // require (_value <= _allowance);
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -134,7 +134,7 @@ contract StandardToken is ERC20, BasicToken {
     function decreaseApproval (address _spender, uint _subtractedValue)
     returns (bool success) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -171,23 +171,23 @@ library Bonus {
         uint256 amountIndex = 0;
 
         // 0.02 NZD per token = 50 tokens per NZD
-        if (tokenAmount &gt;= 500000000) {
-            // &gt;10M NZD
+        if (tokenAmount >= 500000000) {
+            // >10M NZD
             amountIndex = 3;
-        } else if (tokenAmount &gt;= 100000000) {
-            // &gt;2M NZD
+        } else if (tokenAmount >= 100000000) {
+            // >2M NZD
             amountIndex = 2;
-        } else if (tokenAmount &gt;= 25000000) {
-            // &gt;500K NZD
+        } else if (tokenAmount >= 25000000) {
+            // >500K NZD
             amountIndex = 1;
         } else {
-            // &lt;500K NZD
+            // <500K NZD
             //amountIndex = 0;
         }
 
         uint256 maxcutoffindex = cutofftimes.length;
-        for (uint256 i = 0; i &lt; maxcutoffindex; i++) {
-            if (timestamp &lt; cutofftimes[i]) {
+        for (uint256 i = 0; i < maxcutoffindex; i++) {
+            if (timestamp < cutofftimes[i]) {
                 timeIndex = i;
                 break;
             }
@@ -226,7 +226,7 @@ library Bonus {
         monthDayCounts[10] = 30;
         monthDayCounts[11] = 31;
 
-        for (i = 1; i &lt; month; i++) {
+        for (i = 1; i < month; i++) {
             timestamp += monthDayCounts[i - 1] * 1 days;
         }
 
@@ -271,7 +271,7 @@ contract ClearToken is StandardToken {
         Paused         // for contract upgrades
     }
 
-    mapping(address =&gt; uint256) public ethPossibleRefunds;
+    mapping(address => uint256) public ethPossibleRefunds;
 
     uint256 public soldTokens;
 
@@ -281,7 +281,7 @@ contract ClearToken is StandardToken {
 
     uint8 public constant decimals = 18;
 
-    mapping(address =&gt; bool) public whitelist;
+    mapping(address => bool) public whitelist;
 
     address public reserves;
 
@@ -381,8 +381,8 @@ contract ClearToken is StandardToken {
     {
         require(whitelist[msg.sender] == true);
 
-        require(block.timestamp &lt; endTimestamp);
-        require(block.number &gt;= startAcceptingFundsBlock);
+        require(block.timestamp < endTimestamp);
+        require(block.number >= startAcceptingFundsBlock);
 
         uint256 soldToTuserWithBonus = calcBonus(msg.value);
 
@@ -394,7 +394,7 @@ contract ClearToken is StandardToken {
     internal
     {
         uint256 soldTokensAfterInvestment = soldTokens.add(amount);
-        require(soldTokensAfterInvestment &lt;= maxTotalSupply.mul(percentForSale).div(100));
+        require(soldTokensAfterInvestment <= maxTotalSupply.mul(percentForSale).div(100));
 
         balances[beneficiary] = balances[beneficiary].add(amount);
         balances[reserves] = balances[reserves].sub(amount);
@@ -431,8 +431,8 @@ contract ClearToken is StandardToken {
     onlyStateControl
     {
         require(state == States.Initial || state == States.ValuationSet);
-        require(_new_ETH_NZD &gt; 0);
-        require(block.timestamp &lt; _newEndTimestamp);
+        require(_new_ETH_NZD > 0);
+        require(block.timestamp < _newEndTimestamp);
         endTimestamp = _newEndTimestamp;
         // initial conversion rate of ETH_CLEAR set now, this is used during the Ico phase.
         ETH_CLEAR = _new_ETH_NZD.mul(NZD_CLEAR);
@@ -445,7 +445,7 @@ contract ClearToken is StandardToken {
     onlyTokenAssignmentControl
     requireState(States.Ico)
     {
-        require(_new_ETH_NZD &gt; 0);
+        require(_new_ETH_NZD > 0);
         ETH_CLEAR = _new_ETH_NZD.mul(NZD_CLEAR);
     }
 
@@ -454,7 +454,7 @@ contract ClearToken is StandardToken {
     onlyStateControl
     requireState(States.ValuationSet)
     {
-        require(block.timestamp &lt; endTimestamp);
+        require(block.timestamp < endTimestamp);
         startAcceptingFundsBlock = block.number;
         moveToState(States.Ico);
     }
@@ -481,7 +481,7 @@ contract ClearToken is StandardToken {
     public
     requireState(States.Ico)
     {
-        require(block.timestamp &gt; endTimestamp);
+        require(block.timestamp > endTimestamp);
         finishMinting();
         moveToState(States.Operational);
     }
@@ -535,7 +535,7 @@ contract ClearToken is StandardToken {
     public
     requireState(States.Underfunded)
     {
-        require(ethPossibleRefunds[msg.sender] &gt; 0);
+        require(ethPossibleRefunds[msg.sender] > 0);
         //there is no need for updateAccount(msg.sender) since the token never became active.
         uint256 payout = ethPossibleRefunds[msg.sender];
         //reverse calculate the amount to pay out

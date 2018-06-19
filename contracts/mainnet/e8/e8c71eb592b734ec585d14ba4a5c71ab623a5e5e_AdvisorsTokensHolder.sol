@@ -267,7 +267,7 @@ contract MiniMeToken is Controlled {
            require(parentSnapShotBlock < block.number);
 
            // Do not allow transfer to 0x0 or the token contract itself
-           require((_to != 0) &amp;&amp; (_to != address(this)));
+           require((_to != 0) && (_to != address(this)));
 
            // If the amount being transfered is more than the balance of the
            //  account the transfer throws
@@ -1067,19 +1067,19 @@ contract AdvisorsTokensHolder is Owned {
 
         uint256 finalizedTime = crowdsale.finalizedTime();
 
-        require(finalizedTime > 0 &amp;&amp; getTime() > finalizedTime.add(months(2)));
+        require(finalizedTime > 0 && getTime() > finalizedTime.add(months(2)));
 
         uint256 canExtract = 0;
         if (getTime() <= finalizedTime.add(months(3))) {
             require(collectedTokens < total.percent(20));
             canExtract = total.percent(20);
-        } else if (getTime() > finalizedTime.add(months(3)) &amp;&amp; getTime() <= finalizedTime.add(months(4))) {
+        } else if (getTime() > finalizedTime.add(months(3)) && getTime() <= finalizedTime.add(months(4))) {
             require(collectedTokens < total.percent(40));
             canExtract = total.percent(40);
-        } else if (getTime() > finalizedTime.add(months(4)) &amp;&amp; getTime() <= finalizedTime.add(months(5))) {
+        } else if (getTime() > finalizedTime.add(months(4)) && getTime() <= finalizedTime.add(months(5))) {
             require(collectedTokens < total.percent(60));
             canExtract = total.percent(60);
-        } else if (getTime() > finalizedTime.add(months(5)) &amp;&amp; getTime() <= finalizedTime.add(months(6))) {
+        } else if (getTime() > finalizedTime.add(months(5)) && getTime() <= finalizedTime.add(months(6))) {
             require(collectedTokens < total.percent(80));
             canExtract = total.percent(80);
         } else {

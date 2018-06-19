@@ -21,7 +21,7 @@ library AddressUtils {
     // TODO Check this again before the Serenity release, because all addresses will be
     // contracts then.
     assembly { size := extcodesize(addr) }  // solium-disable-line security/no-inline-assembly
-    return size &gt; 0;
+    return size > 0;
   }
 
 }

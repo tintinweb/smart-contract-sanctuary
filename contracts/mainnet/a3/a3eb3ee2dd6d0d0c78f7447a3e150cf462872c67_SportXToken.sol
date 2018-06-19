@@ -62,7 +62,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -72,7 +72,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -81,7 +81,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -144,7 +144,7 @@ library SafeERC20 {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -162,7 +162,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -200,7 +200,7 @@ contract TokenTimelock {
 
   function TokenTimelock(ERC20Basic _token, address _beneficiary, uint256 _releaseTime) public {
     // solium-disable-next-line security/no-block-members
-    require(_releaseTime &gt; block.timestamp);
+    require(_releaseTime > block.timestamp);
     token = _token;
     beneficiary = _beneficiary;
     releaseTime = _releaseTime;
@@ -211,10 +211,10 @@ contract TokenTimelock {
    */
   function release() public {
     // solium-disable-next-line security/no-block-members
-    require(block.timestamp &gt;= releaseTime);
+    require(block.timestamp >= releaseTime);
 
     uint256 amount = token.balanceOf(this);
-    require(amount &gt; 0);
+    require(amount > 0);
 
     token.safeTransfer(beneficiary, amount);
   }
@@ -237,8 +237,8 @@ contract BurnableToken is BasicToken {
   }
 
   function _burn(address _who, uint256 _value) internal {
-    require(_value &lt;= balances[_who]);
-    // no need to require value &lt;= totalSupply, since that would imply the
+    require(_value <= balances[_who]);
+    // no need to require value <= totalSupply, since that would imply the
     // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
     balances[_who] = balances[_who].sub(_value);
@@ -257,7 +257,7 @@ contract BurnableToken is BasicToken {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -268,8 +268,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -332,7 +332,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -395,7 +395,7 @@ contract CappedToken is MintableToken {
   uint256 public cap;
 
   function CappedToken(uint256 _cap) public {
-    require(_cap &gt; 0);
+    require(_cap > 0);
     cap = _cap;
   }
 
@@ -406,7 +406,7 @@ contract CappedToken is MintableToken {
    * @return A boolean that indicates if the operation was successful.
    */
   function mint(address _to, uint256 _amount) onlyOwner canMint public returns (bool) {
-    require(totalSupply_.add(_amount) &lt;= cap);
+    require(totalSupply_.add(_amount) <= cap);
 
     return super.mint(_to, _amount);
   }
@@ -512,7 +512,7 @@ contract SportXToken is DetailedERC20, PausableToken, CappedToken,BurnableToken 
   uint256 private constant TOKEN_UNIT = 10 ** uint256(4);
   uint256 public constant TOTAL_SUPPLY = 1000 * (10 ** 6) * TOKEN_UNIT;
 
-  mapping (address =&gt; TokenTimelock) private timelock;
+  mapping (address => TokenTimelock) private timelock;
 
   function SportXToken() public 
   DetailedERC20(&quot;SportX Token&quot;, &quot;SOX&quot;, 4) 

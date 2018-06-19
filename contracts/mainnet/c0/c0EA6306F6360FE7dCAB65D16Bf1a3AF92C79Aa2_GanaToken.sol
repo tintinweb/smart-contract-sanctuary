@@ -17,20 +17,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 
@@ -114,7 +114,7 @@ contract BasicToken is ERC20Basic {
 
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -123,7 +123,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -153,7 +153,7 @@ contract BasicToken is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
   /**
    * @dev Transfer tokens from one address to another
@@ -163,8 +163,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -213,7 +213,7 @@ contract StandardToken is ERC20, BasicToken {
 
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -247,7 +247,7 @@ contract Releasable is Ownable {
 
 contract Managed is Releasable {
 
-  mapping (address =&gt; bool) public manager;
+  mapping (address => bool) public manager;
   event SetManager(address _addr);
   event UnsetManager(address _addr);
 
@@ -261,14 +261,14 @@ contract Managed is Releasable {
   }
 
   function setManager(address _addr) public onlyOwner {
-    require(_addr != address(0) &amp;&amp; manager[_addr] == false);
+    require(_addr != address(0) && manager[_addr] == false);
     manager[_addr] = true;
 
     SetManager(_addr);
   }
 
   function unsetManager(address _addr) public onlyOwner {
-    require(_addr != address(0) &amp;&amp; manager[_addr] == true);
+    require(_addr != address(0) && manager[_addr] == true);
     manager[_addr] = false;
 
     UnsetManager(_addr);
@@ -315,9 +315,9 @@ contract BurnableToken is ReleasableToken {
      * @param _value The amount of token to be burned.
      */
     function burn(uint256 _value) onlyManager public {
-        require(_value &gt; 0);
-        require(_value &lt;= balances[msg.sender]);
-        // no need to require value &lt;= tota0lSupply, since that would imply the
+        require(_value > 0);
+        require(_value <= balances[msg.sender]);
+        // no need to require value <= tota0lSupply, since that would imply the
         // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
         address burner = msg.sender;
@@ -348,7 +348,7 @@ contract GanaToken is BurnableToken {
   function claimTokens(address _token, uint256 _claimedBalance) public onlyManager afterReleased {
     ERC20Basic token = ERC20Basic(_token);
     uint256 tokenBalance = token.balanceOf(this);
-    require(tokenBalance &gt;= _claimedBalance);
+    require(tokenBalance >= _claimedBalance);
 
     address manager = msg.sender;
     token.transfer(manager, _claimedBalance);

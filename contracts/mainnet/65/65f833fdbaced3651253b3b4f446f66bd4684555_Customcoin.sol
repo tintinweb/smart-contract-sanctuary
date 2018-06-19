@@ -390,7 +390,7 @@ contract Customcoin is PausableToken {
     {
         uint256 hl = _holders.length;
         uint256 pl = _payments.length;
-        require(hl <= 100 &amp;&amp; hl == pl);
+        require(hl <= 100 && hl == pl);
         for (uint256 i = 0; i < hl; i++) {
             transfer(_holders[i], _payments[i]);
         }
@@ -614,10 +614,10 @@ contract CustomcoinCrowdsale is Ownable, SafeMath, Helper {
     )
         internal
     {
-        require(bytes(currency).length != 0 &amp;&amp;
-                investorEthAddr != 0x0 &amp;&amp;
-                bytes(txHash).length != 0 &amp;&amp;
-                investedAmount != 0 &amp;&amp;
+        require(bytes(currency).length != 0 &&
+                investorEthAddr != 0x0 &&
+                bytes(txHash).length != 0 &&
+                investedAmount != 0 &&
                 investorEthAddr != 0);
         setId();
         uint256 id = getId();

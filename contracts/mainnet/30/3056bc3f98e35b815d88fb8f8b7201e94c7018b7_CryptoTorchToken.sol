@@ -1,5 +1,5 @@
 // CryptoTorch-Token Source code
-// copyright 2018 CryptoTorch &lt;https://cryptotorch.io&gt;
+// copyright 2018 CryptoTorch <https://cryptotorch.io>
 
 pragma solidity 0.4.19;
 
@@ -26,7 +26,7 @@ library SafeMath {
     * Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -36,7 +36,7 @@ library SafeMath {
     * Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -45,7 +45,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -152,10 +152,10 @@ contract CryptoTorchToken is ERC20, Ownable {
     uint256 internal profitPerShare_;
     address internal tokenController_;
     address internal donationsReceiver_;
-    mapping (address =&gt; uint256) internal tokenBalanceLedger_; // scaled by 1e18
-    mapping (address =&gt; uint256) internal referralBalance_;
-    mapping (address =&gt; uint256) internal profitsReceived_;
-    mapping (address =&gt; int256) internal payoutsTo_;
+    mapping (address => uint256) internal tokenBalanceLedger_; // scaled by 1e18
+    mapping (address => uint256) internal referralBalance_;
+    mapping (address => uint256) internal profitsReceived_;
+    mapping (address => int256) internal payoutsTo_;
 
     //
     // Modifiers
@@ -165,19 +165,19 @@ contract CryptoTorchToken is ERC20, Ownable {
     // CryptoTorch Controller Contract via the CryptoTorch Dapp
     //
     modifier onlyTokenController() {
-        require(tokenController_ != address(0) &amp;&amp; msg.sender == tokenController_);
+        require(tokenController_ != address(0) && msg.sender == tokenController_);
         _;
     }
 
     // Token Holders Only
     modifier onlyTokenHolders() {
-        require(myTokens() &gt; 0);
+        require(myTokens() > 0);
         _;
     }
 
     // Dividend Holders Only
     modifier onlyProfitHolders() {
-        require(myDividends(true) &gt; 0);
+        require(myDividends(true) > 0);
         _;
     }
 
@@ -211,7 +211,7 @@ contract CryptoTorchToken is ERC20, Ownable {
      *    is managed by the Dapp at https://cryptotorch.io
      */
     function() payable public {
-        if (msg.value &gt; 0 &amp;&amp; donationsReceiver_ != 0x0) {
+        if (msg.value > 0 && donationsReceiver_ != 0x0) {
             donationsReceiver_.transfer(msg.value); // donations?  Thank you!  :)
         }
     }
@@ -423,7 +423,7 @@ contract CryptoTorchToken is ERC20, Ownable {
      * Function for the frontend to dynamically retrieve the price scaling of sell orders.
      */
     function calculateEtherReceived(uint256 _tokensToSell) public view returns(uint256) {
-        require(_tokensToSell &lt;= tokenSupply_);
+        require(_tokensToSell <= tokenSupply_);
         uint256 _ether = tokensToEther_(_tokensToSell);
         uint256 _dividends = _ether.div(dividendFee_);
         uint256 _taxedEther = _ether.sub(_dividends);
@@ -439,7 +439,7 @@ contract CryptoTorchToken is ERC20, Ownable {
      * Liquifies tokens to ether.
      */
     function sell_(address _recipient, uint256 _amountOfTokens) internal {
-        require(_amountOfTokens &lt;= tokenBalanceLedger_[_recipient]);
+        require(_amountOfTokens <= tokenBalanceLedger_[_recipient]);
 
         uint256 _tokens = _amountOfTokens;
         uint256 _ether = tokensToEther_(_tokens);
@@ -455,7 +455,7 @@ contract CryptoTorchToken is ERC20, Ownable {
         payoutsTo_[_recipient] -= _updatedPayouts;
 
         // update the amount of dividends per token
-        if (tokenSupply_ &gt; 0) {
+        if (tokenSupply_ > 0) {
             profitPerShare_ = SafeMath.add(profitPerShare_, (_dividends * magnitude) / tokenSupply_);
         }
 
@@ -487,7 +487,7 @@ contract CryptoTorchToken is ERC20, Ownable {
         _recipient.transfer(_dividends);
 
         // Keep contract clean
-        if (tokenSupply_ == 0 &amp;&amp; this.balance &gt; 0) {
+        if (tokenSupply_ == 0 && this.balance > 0) {
             owner.transfer(this.balance);
         }
     }
@@ -496,7 +496,7 @@ contract CryptoTorchToken is ERC20, Ownable {
      * Assign tokens to player
      */
     function mintTokens_(address _to, uint256 _amountPaid, address _referredBy) internal returns(uint256) {
-        require(_to != address(this) &amp;&amp; _to != tokenController_);
+        require(_to != address(this) && _to != tokenController_);
 
         uint256 _undividedDividends = SafeMath.div(_amountPaid, dividendFee_);
         uint256 _referralBonus = SafeMath.div(_undividedDividends, 10);
@@ -507,10 +507,10 @@ contract CryptoTorchToken is ERC20, Ownable {
 
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        require(_amountOfTokens &gt; 0 &amp;&amp; (SafeMath.add(_amountOfTokens, tokenSupply_) &gt; tokenSupply_));
+        require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens, tokenSupply_) > tokenSupply_));
 
         // is the user referred by a masternode?
-        if (_referredBy != address(0) &amp;&amp; _referredBy != _to &amp;&amp; tokenBalanceLedger_[_referredBy] &gt;= stakingRequirement) {
+        if (_referredBy != address(0) && _referredBy != _to && tokenBalanceLedger_[_referredBy] >= stakingRequirement) {
             // wealth redistribution
             referralBalance_[_referredBy] = SafeMath.add(referralBalance_[_referredBy], _referralBonus);
         } else {
@@ -520,7 +520,7 @@ contract CryptoTorchToken is ERC20, Ownable {
             _fee = _dividends * magnitude;
         }
 
-        if (tokenSupply_ &gt; 0) {
+        if (tokenSupply_ > 0) {
             // add tokens to the pool
             tokenSupply_ = SafeMath.add(tokenSupply_, _amountOfTokens);
 
@@ -535,7 +535,7 @@ contract CryptoTorchToken is ERC20, Ownable {
             tokenSupply_ = _amountOfTokens;
         }
 
-        // update circulating supply &amp; the ledger address for the customer
+        // update circulating supply & the ledger address for the customer
         tokenBalanceLedger_[_to] = SafeMath.add(tokenBalanceLedger_[_to], _amountOfTokens);
 
         // Tells the contract that the buyer doesn&#39;t deserve dividends for the tokens before they owned them
@@ -554,13 +554,13 @@ contract CryptoTorchToken is ERC20, Ownable {
      */
     function transferFor_(address _from, address _to, uint256 _amountOfTokens) internal returns(bool) {
         require(_to != address(0));
-        require(tokenBalanceLedger_[_from] &gt;= _amountOfTokens &amp;&amp; tokenBalanceLedger_[_to] + _amountOfTokens &gt;= tokenBalanceLedger_[_to]);
+        require(tokenBalanceLedger_[_from] >= _amountOfTokens && tokenBalanceLedger_[_to] + _amountOfTokens >= tokenBalanceLedger_[_to]);
 
         // make sure we have the requested tokens
-        require(_amountOfTokens &lt;= tokenBalanceLedger_[_from]);
+        require(_amountOfTokens <= tokenBalanceLedger_[_from]);
 
         // withdraw all outstanding dividends first
-        if (getDividendsOf_(_from, true) &gt; 0) {
+        if (getDividendsOf_(_from, true) > 0) {
             withdraw_(_from);
         }
 
@@ -656,7 +656,7 @@ contract CryptoTorchToken is ERC20, Ownable {
     function sqrt(uint x) internal pure returns (uint y) {
         uint z = (x + 1) / 2;
         y = x;
-        while (z &lt; y) {
+        while (z < y) {
             y = z;
             z = (x / z + z) / 2;
         }

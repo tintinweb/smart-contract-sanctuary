@@ -165,7 +165,7 @@ contract GenexiToken is ERC20Token, Owned {
 
         totalSupply = initialSupply;
         // Initializing 70% of tokens for sale
-        // maxSaleToken = initialSupply * 70 / 100 (70% this is maxSaleToken &amp; 100% this is initialSupply)
+        // maxSaleToken = initialSupply * 70 / 100 (70% this is maxSaleToken & 100% this is initialSupply)
         // totalProjectToken will be calculated in function finalize()
         // 
         // |---------maxSaleToken---------totalProjectToken|
@@ -262,7 +262,7 @@ contract GenexiToken is ERC20Token, Owned {
 
         totalSoldTokens = soldTokens;
 
-        // totalProjectToken = totalSoldTokens * 30 / 70 (30% this is Genexi Project &amp; 70% this is totalSoldTokens)
+        // totalProjectToken = totalSoldTokens * 30 / 70 (30% this is Genexi Project & 70% this is totalSoldTokens)
         //
         // |-------totalSoldTokens--------totalProjectToken|
         // |===============70%============|======30%=======|

@@ -14,7 +14,7 @@ contract SafeMath {
     
     function safeAdd(uint a, uint b) internal returns (uint) {
         uint c = a + b;
-        safeassert(c>=a &amp;&amp; c>=b);
+        safeassert(c>=a && c>=b);
         return c;
     }
     
@@ -114,7 +114,7 @@ contract EtherIncPrivate is ERC20Interface,Owner,SafeMath {
     function () payable {
         require(privateIco);
         Whitelist storage w = whitelist[msg.sender];
-        require(w.active &amp;&amp; msg.value >= w.amount);
+        require(w.active && msg.value >= w.amount);
         uint256 token_amount = safeMul(msg.value, rate);
         _totalSupply = safeAdd(_totalSupply, token_amount);
         balances[msg.sender] = token_amount;
@@ -126,8 +126,8 @@ contract EtherIncPrivate is ERC20Interface,Owner,SafeMath {
         address _to, uint256 _amount
     ) onlyPayloadSize(2 * 32) public returns (bool success) {
         if (balances[msg.sender] >= _amount
-            &amp;&amp; _amount > 0
-            &amp;&amp; safeAdd(balances[_to], _amount) > balances[_to]) {
+            && _amount > 0
+            && safeAdd(balances[_to], _amount) > balances[_to]) {
             balances[msg.sender] = safeSub(balances[msg.sender], _amount);
             balances[_to] = safeAdd(balances[_to], _amount);
             Transfer(msg.sender, _to, _amount);
@@ -143,9 +143,9 @@ contract EtherIncPrivate is ERC20Interface,Owner,SafeMath {
         uint256 _amount
     ) onlyPayloadSize(2 * 32) public returns (bool success) {
         if (balances[_from] >= _amount
-        &amp;&amp; allowed[_from][msg.sender] >= _amount
-        &amp;&amp; _amount > 0
-        &amp;&amp; safeAdd(balances[_to], _amount) > balances[_to]) {
+        && allowed[_from][msg.sender] >= _amount
+        && _amount > 0
+        && safeAdd(balances[_to], _amount) > balances[_to]) {
             balances[_from] = safeSub(balances[_from], _amount);
             allowed[_from][msg.sender] = safeSub(allowed[_from][msg.sender], _amount);
             balances[_to] = safeAdd(balances[_to], _amount);
@@ -186,7 +186,7 @@ contract EtherIncPrivate is ERC20Interface,Owner,SafeMath {
     }
     
     function withdraw_to_eti() onlyPayloadSize(2 * 32) public returns (bool success) {
-        require(privateIco &amp;&amp; balances[msg.sender] > 0);
+        require(privateIco && balances[msg.sender] > 0);
         
         uint256 amount = balances[msg.sender];
         balances[msg.sender] = 0;

@@ -64,7 +64,7 @@ Imagine coins, currencies, shares, voting weight, etc.
 Machine-based, rapid creation of many tokens would not necessarily need these extra features or will be minted in other manners.
 
 1) Initial Finite Supply (upon creation one specifies how much is minted).
-2) In the absence of a token registry: Optional Decimal, Symbol &amp; Name.
+2) In the absence of a token registry: Optional Decimal, Symbol & Name.
 3) Optional approveAndCall() functionality to notify a contract if an approval() has occurred.
 
 .*/
@@ -82,7 +82,7 @@ contract HumanStandardToken is StandardToken {
     /*
     NOTE:
     The following variables are OPTIONAL vanities. One does not have to include them.
-    They allow one to customise the token contract &amp; in no way influences the core functionality.
+    They allow one to customise the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
     string public name;                   //fancy name: eg Simon Bucks
@@ -328,7 +328,7 @@ contract TokenSwap is Ownable {
           ptAmount = SafeMath.div(SafeMath.mul(SafeMath.mul(_amount, _rate), 10**(uint256(decimals - 18))), 1000);
         }
 
-        assert(ndc.transferFrom(_spender, this, _amount) &amp;&amp; ptoken.transfer(_spender, ptAmount));
+        assert(ndc.transferFrom(_spender, this, _amount) && ptoken.transfer(_spender, ptAmount));
 
         // Emit Swap event
         Swap(_spender, _PTaddress, _rate, _amount, ptAmount);
@@ -426,7 +426,7 @@ contract TokenSwap is Ownable {
     function kill() onlyOwner public {
         uint256 allNDC = ndc.balanceOf(this);
         uint256 allTPT = tpt.balanceOf(this);
-        assert(ndc.transfer(owner, allNDC) &amp;&amp; tpt.transfer(owner, allTPT));
+        assert(ndc.transfer(owner, allNDC) && tpt.transfer(owner, allTPT));
         selfdestruct(owner);
     }
 

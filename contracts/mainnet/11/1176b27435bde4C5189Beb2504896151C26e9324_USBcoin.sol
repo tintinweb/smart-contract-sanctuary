@@ -15,14 +15,14 @@ contract ERC20Standard {
 	}
 
 	function transfer(address _recipient, uint _value) onlyPayloadSize(2*32) public {
-		require(balances[msg.sender] >= _value &amp;&amp; _value > 0);
+		require(balances[msg.sender] >= _value && _value > 0);
 	    balances[msg.sender] -= _value;
 	    balances[_recipient] += _value;
 	    Transfer(msg.sender, _recipient, _value);        
     }
 
 	function transferFrom(address _from, address _to, uint _value) public {
-		require(balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value &amp;&amp; _value > 0);
+		require(balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0);
         balances[_to] += _value;
         balances[_from] -= _value;
         allowed[_from][msg.sender] -= _value;

@@ -42,18 +42,18 @@ library SafeMath {
         return c;
     }
     function div(uint256 a, uint256 b) internal constant returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
     function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
     function add(uint256 a, uint256 b) internal constant returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -85,7 +85,7 @@ contract Crowdsale is Owned {
     uint public bonus = 50000; //50%
     uint public currentPrice;
     address public beneficiary;
-    mapping(address =&gt; uint) balances;
+    mapping(address => uint) balances;
 
     address public foundersWallet; //replace
     uint public foundersAmount = 160000000 * DECIMALS;
@@ -107,7 +107,7 @@ contract Crowdsale is Owned {
         _;
     }
     modifier minAmount(){
-        require(msg.value &gt;= 0.2 ether);
+        require(msg.value >= 0.2 ether);
         _;
     }
 
@@ -142,15 +142,15 @@ contract Crowdsale is Owned {
     only(owner)
     {
         require(
-            currentState == State.INIT &amp;&amp; _newState == State.PRESALE
-            || currentState == State.PRESALE &amp;&amp; _newState == State.PREICO
-            || currentState == State.PREICO &amp;&amp; _newState == State.PREICO_FINISHED
-            || currentState == State.PREICO_FINISHED &amp;&amp; _newState == State.ICO_FIRST
-            || currentState == State.ICO_FIRST &amp;&amp; _newState == State.STOPPED
-            || currentState == State.STOPPED &amp;&amp; _newState == State.ICO_SECOND
-            || currentState == State.ICO_SECOND &amp;&amp; _newState == State.STOPPED
-            || currentState == State.STOPPED &amp;&amp; _newState == State.ICO_THIRD
-            || currentState == State.ICO_THIRD &amp;&amp; _newState == State.CLOSED
+            currentState == State.INIT && _newState == State.PRESALE
+            || currentState == State.PRESALE && _newState == State.PREICO
+            || currentState == State.PREICO && _newState == State.PREICO_FINISHED
+            || currentState == State.PREICO_FINISHED && _newState == State.ICO_FIRST
+            || currentState == State.ICO_FIRST && _newState == State.STOPPED
+            || currentState == State.STOPPED && _newState == State.ICO_SECOND
+            || currentState == State.ICO_SECOND && _newState == State.STOPPED
+            || currentState == State.STOPPED && _newState == State.ICO_THIRD
+            || currentState == State.ICO_THIRD && _newState == State.CLOSED
             || _newState == State.EMERGENCY_STOP
         );
         currentState = _newState;
@@ -169,15 +169,15 @@ contract Crowdsale is Owned {
     only(owner)
     {
         require(
-            currentState == State.INIT &amp;&amp; _newState == State.PRESALE
-            || currentState == State.PRESALE &amp;&amp; _newState == State.PREICO
-            || currentState == State.PREICO &amp;&amp; _newState == State.PREICO_FINISHED
-            || currentState == State.PREICO_FINISHED &amp;&amp; _newState == State.ICO_FIRST
-            || currentState == State.ICO_FIRST &amp;&amp; _newState == State.STOPPED
-            || currentState == State.STOPPED &amp;&amp; _newState == State.ICO_SECOND
-            || currentState == State.ICO_SECOND &amp;&amp; _newState == State.STOPPED
-            || currentState == State.STOPPED &amp;&amp; _newState == State.ICO_THIRD
-            || currentState == State.ICO_THIRD &amp;&amp; _newState == State.CLOSED
+            currentState == State.INIT && _newState == State.PRESALE
+            || currentState == State.PRESALE && _newState == State.PREICO
+            || currentState == State.PREICO && _newState == State.PREICO_FINISHED
+            || currentState == State.PREICO_FINISHED && _newState == State.ICO_FIRST
+            || currentState == State.ICO_FIRST && _newState == State.STOPPED
+            || currentState == State.STOPPED && _newState == State.ICO_SECOND
+            || currentState == State.ICO_SECOND && _newState == State.STOPPED
+            || currentState == State.STOPPED && _newState == State.ICO_THIRD
+            || currentState == State.ICO_THIRD && _newState == State.CLOSED
             || _newState == State.EMERGENCY_STOP
         );
         currentState = _newState;
@@ -191,7 +191,7 @@ contract Crowdsale is Owned {
     only(owner)
     inState(State.PRESALE)
     {
-        require(totalSaleSupply.add(_amount) &lt;= MAX_SALE_SUPPLY);
+        require(totalSaleSupply.add(_amount) <= MAX_SALE_SUPPLY);
         totalSaleSupply = totalSaleSupply.add(_amount);
         _mint(_to, _amount);
     }
@@ -212,7 +212,7 @@ contract Crowdsale is Owned {
     {
         require(msg.value != 0);
         uint transferTokens = msg.value.mul(DECIMALS).div(currentPrice);
-        require(totalSaleSupply.add(transferTokens) &lt;= MAX_SALE_SUPPLY);
+        require(totalSaleSupply.add(transferTokens) <= MAX_SALE_SUPPLY);
         uint bonusTokens = transferTokens.mul(bonus).div(bonusBase);
         transferTokens = transferTokens.add(bonusTokens);
         _checkMaxRoundSupply(transferTokens);
@@ -233,13 +233,13 @@ contract Crowdsale is Owned {
     internal
     {
         if (currentState == State.PREICO) {
-            require(currentRoundSupply.add(_amountTokens) &lt;= maxPreICOSupply);
+            require(currentRoundSupply.add(_amountTokens) <= maxPreICOSupply);
         } else if (currentState == State.ICO_FIRST) {
-            require(currentRoundSupply.add(_amountTokens) &lt;= maxICOFirstSupply);
+            require(currentRoundSupply.add(_amountTokens) <= maxICOFirstSupply);
         } else if (currentState == State.ICO_SECOND) {
-            require(currentRoundSupply.add(_amountTokens) &lt;= maxICOSecondSupply);
+            require(currentRoundSupply.add(_amountTokens) <= maxICOSecondSupply);
         } else if (currentState == State.ICO_THIRD) {
-            require(currentRoundSupply.add(_amountTokens) &lt;= maxICOThirdSupply);
+            require(currentRoundSupply.add(_amountTokens) <= maxICOThirdSupply);
         }
     }
 

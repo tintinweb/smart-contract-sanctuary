@@ -4,12 +4,12 @@ pragma solidity ^0.4.21;
 library SafeMath {
 	function add(uint256 a, uint256 b) internal pure returns (uint256) {
 		uint256 c = a + b;
-		assert(a &lt;= c);
+		assert(a <= c);
 		return c;
 	}
 
 	function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-		assert(a &gt;= b);
+		assert(a >= b);
 		return a - b;
 	}
 }
@@ -49,8 +49,8 @@ contract GangnamToken is EthereumStandards {
 	uint8 constant public decimals = 18;
 	uint256 public totalSupply;
 
-	mapping(address =&gt; uint256) public balances;
-	mapping(address =&gt; mapping(address =&gt; uint256)) public allowed;
+	mapping(address => uint256) public balances;
+	mapping(address => mapping(address => uint256)) public allowed;
 
 	address public contractOwner;
 	address public tokenSaleContract;
@@ -92,7 +92,7 @@ contract GangnamToken is EthereumStandards {
 
 	function decreaseApproval(address spender, uint256 value) public returns (bool) {
 		uint256 currentValue = allowed[msg.sender][spender];
-		if (value &gt; currentValue) {
+		if (value > currentValue) {
 			allowed[msg.sender][spender] = 0;
 		} else {
 			allowed[msg.sender][spender] = currentValue.sub(value);
@@ -169,7 +169,7 @@ contract GangnamToken is EthereumStandards {
 		assembly {
 			length := extcodesize(_address)
 		}
-		return (length &gt; 0);
+		return (length > 0);
 	}
 
 	function internalTransfer(address from, address to, uint256 value) private {

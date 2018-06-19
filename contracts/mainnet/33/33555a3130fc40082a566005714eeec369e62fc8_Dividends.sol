@@ -257,7 +257,7 @@ contract Dividends {
         uint256 total_payment = mul(amount_buyable, price) / (uint256(10 ** decimals));
         
         // Let&#39;s buy tokens and actually pay, okay?
-        require(amount_buyable > 0 &amp;&amp; total_payment > 0); 
+        require(amount_buyable > 0 && total_payment > 0); 
         
         // From the amount we actually pay, we take exchange fee from it 
         

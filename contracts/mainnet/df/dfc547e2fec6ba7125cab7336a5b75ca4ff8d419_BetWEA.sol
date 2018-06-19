@@ -63,8 +63,8 @@ contract BetWEA {
 *@section SETTERS OF BET
 **/
     function ChooseA() public payable {
-       require((r==0) &amp;&amp; (now &lt; limit));
-       if(token.balanceOf(msg.sender) &gt; minimowea){
+       require((r==0) && (now < limit));
+       if(token.balanceOf(msg.sender) > minimowea){
            require(msg.value == Wp);
            ParticipantesA.push(msg.sender);
        } else {
@@ -74,8 +74,8 @@ contract BetWEA {
     }
 
     function ChooseB() public payable {
-       require((r==0) &amp;&amp; (now &lt; limit));
-       if(token.balanceOf(msg.sender) &gt; minimowea){
+       require((r==0) && (now < limit));
+       if(token.balanceOf(msg.sender) > minimowea){
            require(msg.value == Wp);
            ParticipantesB.push(msg.sender);
        } else {
@@ -86,14 +86,14 @@ contract BetWEA {
 
     //Pay with WEA
      function ChooseAwea() public {
-        require((r==0) &amp;&amp; (now &lt; limit));
+        require((r==0) && (now < limit));
         require(token.transferFrom(msg.sender, this, preciowea));
         ParticipantesA.push(msg.sender);
 
     }
 
     function ChooseBwea() public {
-        require((r==0) &amp;&amp; (now &lt; limit));
+        require((r==0) && (now < limit));
         require(token.transferFrom(msg.sender, this, preciowea));
         ParticipantesB.push(msg.sender);
 

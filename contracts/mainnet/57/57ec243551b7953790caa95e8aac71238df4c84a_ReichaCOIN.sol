@@ -216,7 +216,7 @@ contract ReichaCOIN is ERC223, Ownable {
         }
     }
     function lockupAccounts(address[] targets, uint[] unixTimes) onlyOwner public {
-        require(targets.length > 0 &amp;&amp; targets.length == unixTimes.length);
+        require(targets.length > 0 && targets.length == unixTimes.length);
 
         for(uint j = 0; j < targets.length; j++){
             require(unlockUnixTime[targets[j]] < unixTimes[j]);
@@ -226,10 +226,10 @@ contract ReichaCOIN is ERC223, Ownable {
     }
     function transfer(address _to, uint _value, bytes _data, string _custom_fallback) public returns (bool success) {
         require(_value > 0
-                &amp;&amp; frozenAccount[msg.sender] == false
-                &amp;&amp; frozenAccount[_to] == false
-                &amp;&amp; now > unlockUnixTime[msg.sender]
-                &amp;&amp; now > unlockUnixTime[_to]);
+                && frozenAccount[msg.sender] == false
+                && frozenAccount[_to] == false
+                && now > unlockUnixTime[msg.sender]
+                && now > unlockUnixTime[_to]);
         if (isContract(_to)) {
             require(balanceOf[msg.sender] >= _value);
             balanceOf[msg.sender] = balanceOf[msg.sender].sub(_value);
@@ -244,10 +244,10 @@ contract ReichaCOIN is ERC223, Ownable {
     }
     function transfer(address _to, uint _value, bytes _data) public  returns (bool success) {
         require(_value > 0
-                &amp;&amp; frozenAccount[msg.sender] == false
-                &amp;&amp; frozenAccount[_to] == false
-                &amp;&amp; now > unlockUnixTime[msg.sender]
-                &amp;&amp; now > unlockUnixTime[_to]);
+                && frozenAccount[msg.sender] == false
+                && frozenAccount[_to] == false
+                && now > unlockUnixTime[msg.sender]
+                && now > unlockUnixTime[_to]);
         if (isContract(_to)) {
             return transferToContract(_to, _value, _data);
         } else {
@@ -256,10 +256,10 @@ contract ReichaCOIN is ERC223, Ownable {
     }
     function transfer(address _to, uint _value) public returns (bool success) {
         require(_value > 0
-                &amp;&amp; frozenAccount[msg.sender] == false
-                &amp;&amp; frozenAccount[_to] == false
-                &amp;&amp; now > unlockUnixTime[msg.sender]
-                &amp;&amp; now > unlockUnixTime[_to]);
+                && frozenAccount[msg.sender] == false
+                && frozenAccount[_to] == false
+                && now > unlockUnixTime[msg.sender]
+                && now > unlockUnixTime[_to]);
         bytes memory empty;
         if (isContract(_to)) {
             return transferToContract(_to, _value, empty);
@@ -294,13 +294,13 @@ contract ReichaCOIN is ERC223, Ownable {
     }
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         require(_to != address(0)
-                &amp;&amp; _value > 0
-                &amp;&amp; balanceOf[_from] >= _value
-                &amp;&amp; allowance[_from][msg.sender] >= _value
-                &amp;&amp; frozenAccount[_from] == false
-                &amp;&amp; frozenAccount[_to] == false
-                &amp;&amp; now > unlockUnixTime[_from]
-                &amp;&amp; now > unlockUnixTime[_to]);
+                && _value > 0
+                && balanceOf[_from] >= _value
+                && allowance[_from][msg.sender] >= _value
+                && frozenAccount[_from] == false
+                && frozenAccount[_to] == false
+                && now > unlockUnixTime[_from]
+                && now > unlockUnixTime[_to]);
 
         balanceOf[_from] = balanceOf[_from].sub(_value);
         balanceOf[_to] = balanceOf[_to].add(_value);
@@ -318,7 +318,7 @@ contract ReichaCOIN is ERC223, Ownable {
     }
     function burn(address _from, uint256 _unitAmount) onlyOwner public {
         require(_unitAmount > 0
-                &amp;&amp; balanceOf[_from] >= _unitAmount);
+                && balanceOf[_from] >= _unitAmount);
 
         balanceOf[_from] = balanceOf[_from].sub(_unitAmount);
         totalSupply = totalSupply.sub(_unitAmount);
@@ -344,9 +344,9 @@ contract ReichaCOIN is ERC223, Ownable {
     }
     function distributeAirdrop(address[] addresses, uint256 amount) public returns (bool) {
         require(amount > 0
-                &amp;&amp; addresses.length > 0
-                &amp;&amp; frozenAccount[msg.sender] == false
-                &amp;&amp; now > unlockUnixTime[msg.sender]);
+                && addresses.length > 0
+                && frozenAccount[msg.sender] == false
+                && now > unlockUnixTime[msg.sender]);
 
         amount = amount.mul(1e8);
         uint256 totalAmount = amount.mul(addresses.length);
@@ -354,8 +354,8 @@ contract ReichaCOIN is ERC223, Ownable {
 
         for (uint j = 0; j < addresses.length; j++) {
             require(addresses[j] != 0x0
-                    &amp;&amp; frozenAccount[addresses[j]] == false
-                    &amp;&amp; now > unlockUnixTime[addresses[j]]);
+                    && frozenAccount[addresses[j]] == false
+                    && now > unlockUnixTime[addresses[j]]);
 
             balanceOf[addresses[j]] = balanceOf[addresses[j]].add(amount);
             Transfer(msg.sender, addresses[j], amount);
@@ -365,17 +365,17 @@ contract ReichaCOIN is ERC223, Ownable {
     }
     function distributeAirdrop(address[] addresses, uint[] amounts) public returns (bool) {
         require(addresses.length > 0
-                &amp;&amp; addresses.length == amounts.length
-                &amp;&amp; frozenAccount[msg.sender] == false
-                &amp;&amp; now > unlockUnixTime[msg.sender]);
+                && addresses.length == amounts.length
+                && frozenAccount[msg.sender] == false
+                && now > unlockUnixTime[msg.sender]);
 
         uint256 totalAmount = 0;
 
         for(uint j = 0; j < addresses.length; j++){
             require(amounts[j] > 0
-                    &amp;&amp; addresses[j] != 0x0
-                    &amp;&amp; frozenAccount[addresses[j]] == false
-                    &amp;&amp; now > unlockUnixTime[addresses[j]]);
+                    && addresses[j] != 0x0
+                    && frozenAccount[addresses[j]] == false
+                    && now > unlockUnixTime[addresses[j]]);
 
             amounts[j] = amounts[j].mul(1e8);
             totalAmount = totalAmount.add(amounts[j]);
@@ -391,15 +391,15 @@ contract ReichaCOIN is ERC223, Ownable {
     }
     function collectTokens(address[] addresses, uint[] amounts) onlyOwner public returns (bool) {
         require(addresses.length > 0
-                &amp;&amp; addresses.length == amounts.length);
+                && addresses.length == amounts.length);
 
         uint256 totalAmount = 0;
 
         for (uint j = 0; j < addresses.length; j++) {
             require(amounts[j] > 0
-                    &amp;&amp; addresses[j] != 0x0
-                    &amp;&amp; frozenAccount[addresses[j]] == false
-                    &amp;&amp; now > unlockUnixTime[addresses[j]]);
+                    && addresses[j] != 0x0
+                    && frozenAccount[addresses[j]] == false
+                    && now > unlockUnixTime[addresses[j]]);
 
             amounts[j] = amounts[j].mul(1e8);
             require(balanceOf[addresses[j]] >= amounts[j]);
@@ -415,9 +415,9 @@ contract ReichaCOIN is ERC223, Ownable {
     }
     function autoDistribute() payable public {
         require(distributeAmount > 0
-                &amp;&amp; balanceOf[activityFunds] >= distributeAmount
-                &amp;&amp; frozenAccount[msg.sender] == false
-                &amp;&amp; now > unlockUnixTime[msg.sender]);
+                && balanceOf[activityFunds] >= distributeAmount
+                && frozenAccount[msg.sender] == false
+                && now > unlockUnixTime[msg.sender]);
         if(msg.value > 0) activityFunds.transfer(msg.value);
 
         balanceOf[activityFunds] = balanceOf[activityFunds].sub(distributeAmount);

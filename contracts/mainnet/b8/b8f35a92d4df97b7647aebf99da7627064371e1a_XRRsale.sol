@@ -18,7 +18,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -28,7 +28,7 @@ library SafeMath {
     * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -37,7 +37,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -112,21 +112,21 @@ contract XRRsale is Ownable {
     }
 
     function currentPrice() public view returns (uint256){
-        if (now &gt;= PreSaleStart &amp;&amp; now &lt; PreSaleEnd) return 26000;
-        else if (now &gt;= ICO1 &amp;&amp; now &lt; ICO2) return 12000;
-        else if (now &gt;= ICO2 &amp;&amp; now &lt; ICO3) return 11500;
-        else if (now &gt;= ICO3 &amp;&amp; now &lt; ICO4) return 11000;
-        else if (now &gt;= ICO4 &amp;&amp; now &lt; ICOend) return 10500;
+        if (now >= PreSaleStart && now < PreSaleEnd) return 26000;
+        else if (now >= ICO1 && now < ICO2) return 12000;
+        else if (now >= ICO2 && now < ICO3) return 11500;
+        else if (now >= ICO3 && now < ICO4) return 11000;
+        else if (now >= ICO4 && now < ICOend) return 10500;
         else return 0;
     }
 
 
     function checkAmount(uint256 _amount) public view returns (bool){
-        if (now &gt;= PreSaleStart &amp;&amp; now &lt; PreSaleEnd) return _amount &gt;= 1 ether;
-        else if (now &gt;= ICO1 &amp;&amp; now &lt; ICO2) return _amount &gt;= 0.1 ether;
-        else if (now &gt;= ICO2 &amp;&amp; now &lt; ICO3) return _amount &gt;= 0.1 ether;
-        else if (now &gt;= ICO3 &amp;&amp; now &lt; ICO4) return _amount &gt;= 0.1 ether;
-        else if (now &gt;= ICO4 &amp;&amp; now &lt; ICOend) return _amount &gt;= 0.1 ether;
+        if (now >= PreSaleStart && now < PreSaleEnd) return _amount >= 1 ether;
+        else if (now >= ICO1 && now < ICO2) return _amount >= 0.1 ether;
+        else if (now >= ICO2 && now < ICO3) return _amount >= 0.1 ether;
+        else if (now >= ICO3 && now < ICO4) return _amount >= 0.1 ether;
+        else if (now >= ICO4 && now < ICOend) return _amount >= 0.1 ether;
         else return false;
     }
 
@@ -136,18 +136,18 @@ contract XRRsale is Ownable {
     }
 
     function tokenWithdraw() public onlyOwner {
-        require(tokenTosale() &gt; 0);
+        require(tokenTosale() > 0);
         token.transfer(owner, tokenTosale());
     }
 
     function() public payable {
-        require(msg.value &gt; 0);
+        require(msg.value > 0);
         require(checkAmount(msg.value));
-        require(currentPrice() &gt; 0);
+        require(currentPrice() > 0);
 
         totalRaiseWei = totalRaiseWei.add(msg.value);
         uint256 tokens = currentPrice().mul(msg.value);
-        require(tokens &lt;= tokenTosale());
+        require(tokens <= tokenTosale());
 
         totalTokenRaiseWei = totalTokenRaiseWei.add(tokens);
         token.transfer(msg.sender, tokens);
@@ -155,10 +155,10 @@ contract XRRsale is Ownable {
     }
 
     function sendTokens(address _to, uint256 _value) public onlyOwner {
-        require(_value &gt; 0);
-        require(_value &lt;= tokenTosale());
-        require(currentPrice() &gt; 0);
-        require(tokenTosale() &gt;= _value);
+        require(_value > 0);
+        require(_value <= tokenTosale());
+        require(currentPrice() > 0);
+        require(tokenTosale() >= _value);
 
         uint256 amount = _value.div(currentPrice());
         totalRaiseWei = totalRaiseWei.add(amount);
@@ -168,7 +168,7 @@ contract XRRsale is Ownable {
 
     function finishSale() public onlyOwner {
         uint256 tokensToFrozen = 18000000 ether;
-        require(tokenTosale() &gt;= tokensToFrozen);
+        require(tokenTosale() >= tokensToFrozen);
         // Frozen tokens for Bounty, Airdrop, Stakeholders
         token.transfer(frozenVaults, tokensToFrozen);
     }

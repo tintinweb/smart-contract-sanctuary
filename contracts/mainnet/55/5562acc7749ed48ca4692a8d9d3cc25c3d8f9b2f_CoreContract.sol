@@ -460,13 +460,13 @@ contract TokenLayer is ERC721, Manageable {
 
         address[10] memory result;
 
-        if (_parentId != DEFAULTPARENT &amp;&amp; _addressNotNull(_parentAddr)) {
+        if (_parentId != DEFAULTPARENT && _addressNotNull(_parentAddr)) {
             uint256 resultIndex = 0;
 
             TokenLayer layer = TokenLayer(_parentAddr);
             bool parentExists = layer.exists(_parentId);
 
-            while ((_parentId != DEFAULTPARENT) &amp;&amp; _addressNotNull(_parentAddr) &amp;&amp; parentExists) {
+            while ((_parentId != DEFAULTPARENT) && _addressNotNull(_parentAddr) && parentExists) {
                 parentExists = layer.exists(_parentId);
                 if (!parentExists) {
                     return(result);
@@ -555,7 +555,7 @@ contract TokenLayer is ERC721, Manageable {
         TokenLayer layer = TokenLayer(_parentAddr);
         bool parentExists = layer.exists(_parentId);
 
-        while ((_parentId != DEFAULTPARENT) &amp;&amp; _addressNotNull(_parentAddr) &amp;&amp; parentExists) {
+        while ((_parentId != DEFAULTPARENT) && _addressNotNull(_parentAddr) && parentExists) {
             parentExists = layer.exists(_parentId);
             if(!parentExists) {
                     return(length);
@@ -730,7 +730,7 @@ contract CoreContract is Manageable {
     /******************************************** PRIVATE ***********************************************/
     function _setReferrer(address sender, address ref) private {
         // If we have a referrer, no referrer is set yet, and address is not referring itself
-        if (_addressNotNull(ref) &amp;&amp; !_addressNotNull(referrers[sender]) &amp;&amp; sender != ref) {
+        if (_addressNotNull(ref) && !_addressNotNull(referrers[sender]) && sender != ref) {
             referrers[sender] = ref;
         }
     }
@@ -764,6 +764,6 @@ contract CoreContract is Manageable {
     }
 
     function _blackListed(address _payer) private view returns (bool) {
-        return (blacklisted[_payer]) &amp;&amp; (blackListActive);
+        return (blacklisted[_payer]) && (blackListActive);
     }
 }

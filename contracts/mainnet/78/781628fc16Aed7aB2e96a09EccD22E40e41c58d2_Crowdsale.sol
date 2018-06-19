@@ -45,7 +45,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -55,7 +55,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -64,7 +64,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -107,7 +107,7 @@ contract Crowdsale is Ownable {
 
   
   function Crowdsale(uint256 _rate, address _wallet, ERC20 _token) public {
-    require(_rate &gt; 0);
+    require(_rate > 0);
     require(_wallet != address(0));
     require(_token != address(0));
 
@@ -175,17 +175,17 @@ contract Crowdsale is Ownable {
 
     uint256 tokensIssued = _weiAmount.mul(rate);
     
-    if( 20 * (10 ** 18) &lt; tokensIssued &amp;&amp; 100 * (10 ** 18) &gt; tokensIssued ) tokensIssued = tokensIssued * 103 / 100;
+    if( 20 * (10 ** 18) < tokensIssued && 100 * (10 ** 18) > tokensIssued ) tokensIssued = tokensIssued * 103 / 100;
 
-    else if( 100 * (10 ** 18) &lt;= tokensIssued &amp;&amp; 500 * (10 ** 18) &gt; tokensIssued ) tokensIssued = tokensIssued * 105 / 100;
+    else if( 100 * (10 ** 18) <= tokensIssued && 500 * (10 ** 18) > tokensIssued ) tokensIssued = tokensIssued * 105 / 100;
 
-    else if( 500 * (10 ** 18) &lt;= tokensIssued &amp;&amp; 1000 * (10 ** 18) &gt; tokensIssued ) tokensIssued = tokensIssued * 107 / 100;
+    else if( 500 * (10 ** 18) <= tokensIssued && 1000 * (10 ** 18) > tokensIssued ) tokensIssued = tokensIssued * 107 / 100;
 
-    else if( 1000 * (10 ** 18) &lt;= tokensIssued &amp;&amp; 5000 * (10 ** 18) &gt; tokensIssued ) tokensIssued = tokensIssued * 110 / 100;
+    else if( 1000 * (10 ** 18) <= tokensIssued && 5000 * (10 ** 18) > tokensIssued ) tokensIssued = tokensIssued * 110 / 100;
 
-    else if( 5000 * (10 ** 18) &lt;= tokensIssued &amp;&amp; 10000 * (10 ** 18) &gt; tokensIssued ) tokensIssued = tokensIssued * 115 / 100;
+    else if( 5000 * (10 ** 18) <= tokensIssued && 10000 * (10 ** 18) > tokensIssued ) tokensIssued = tokensIssued * 115 / 100;
 
-    else if( 10000 * (10 ** 18) &lt;= tokensIssued ) tokensIssued = tokensIssued * 120 / 100;
+    else if( 10000 * (10 ** 18) <= tokensIssued ) tokensIssued = tokensIssued * 120 / 100;
 
     return tokensIssued;
    

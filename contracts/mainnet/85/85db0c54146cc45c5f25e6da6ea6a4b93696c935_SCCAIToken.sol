@@ -234,7 +234,7 @@ contract SCCAIToken is BasicERC20Token {
     }
 
     modifier inProgress {
-        if(isStart &amp;&amp; !isClose) {
+        if(isStart && !isClose) {
             _;
         }else {
             revert();

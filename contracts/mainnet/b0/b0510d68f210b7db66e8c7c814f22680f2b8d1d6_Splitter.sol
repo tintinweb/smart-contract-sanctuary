@@ -4,7 +4,7 @@ contract Splitter{
     
 	address public owner;
 	address[] public puppets;
-	mapping (uint256 =&gt; address) public extra;
+	mapping (uint256 => address) public extra;
 	address private _addy;
 	uint256 private _share;
 	uint256 private _count;
@@ -74,8 +74,8 @@ function() payable public{
 
 contract Puppet {
     
-    mapping (uint256 =&gt; address) public target;
-    mapping (uint256 =&gt; address) public master;
+    mapping (uint256 => address) public target;
+    mapping (uint256 => address) public master;
 	
 	constructor() payable public{
 		//target[0] = 0x42D21d1182F3aDD44064F23c1F98843D4B9fd8aa;
@@ -118,13 +118,13 @@ library SafeMath {
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }

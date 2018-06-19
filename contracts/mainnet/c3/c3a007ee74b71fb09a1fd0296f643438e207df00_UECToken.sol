@@ -6,10 +6,10 @@ pragma solidity ^0.4.18;
 contract SafeMath {
     function safeAdd(uint256 a, uint256 b) public pure returns (uint256 c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function safeSub(uint256 a, uint256 b) public pure returns (uint256 c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function safeMul(uint256 a, uint256 b) public pure returns (uint256 c) {
@@ -17,7 +17,7 @@ contract SafeMath {
         require(a == 0 || c / a == b);
     }
     function safeDiv(uint256 a, uint256 b) public pure returns (uint256 c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
@@ -90,8 +90,8 @@ contract UECToken is ERC20Interface, Owned, SafeMath {
     uint8 public decimals;
     uint256 public _totalSupply;
 
-    mapping(address =&gt; uint256) balances;
-    mapping(address =&gt; mapping(address =&gt; uint256)) allowed;
+    mapping(address => uint256) balances;
+    mapping(address => mapping(address => uint256)) allowed;
 
 
     // ------------------------------------------------------------------------
@@ -145,7 +145,7 @@ contract UECToken is ERC20Interface, Owned, SafeMath {
     // as this should be implemented in user interfaces 
     // ------------------------------------------------------------------------
     function approve(address spender, uint256 tokens) public returns (bool success) {
-        require(balances[msg.sender] &gt; tokens &amp;&amp; tokens &gt; 0);
+        require(balances[msg.sender] > tokens && tokens > 0);
         allowed[msg.sender][spender] = tokens;
         emit Approval(msg.sender, spender, tokens);
         return true;

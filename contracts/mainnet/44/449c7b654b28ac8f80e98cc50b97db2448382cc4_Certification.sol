@@ -53,7 +53,7 @@ contract Certification is Ownable {
     string id;
   }
 
-  mapping (address =&gt; Certifier) public certifiers;
+  mapping (address => Certifier) public certifiers;
 
   event Certificate(bytes32 indexed certHash, bytes32 innerHash, address indexed certifier);
   event Revocation(bytes32 indexed certHash, bool invalid);
@@ -87,14 +87,14 @@ contract Certification is Ownable {
 
   function certifyMany(bytes32[] innerHashes) public {
     require(certifiers[msg.sender].valid);
-    for(uint i = 0; i &lt; innerHashes.length; i++) {
+    for(uint i = 0; i < innerHashes.length; i++) {
       _certify(innerHashes[i]);
     }
   }
 
   function revoke(bytes32 innerHash, address certifier, bool invalid) public {
     require(msg.sender == owner
-      || (certifiers[msg.sender].valid &amp;&amp; msg.sender == certifier &amp;&amp; invalid)
+      || (certifiers[msg.sender].valid && msg.sender == certifier && invalid)
     );
     emit Revocation(computeCertHash(certifier, innerHash), invalid);
   }

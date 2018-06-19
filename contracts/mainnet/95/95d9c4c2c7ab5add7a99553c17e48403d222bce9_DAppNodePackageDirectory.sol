@@ -3,9 +3,9 @@ pragma solidity ^0.4.19;
 
 
 /// @title Owned
-/// @author Adri&#224; Massanet &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e9888d9b8088a98a868d8c8a86879d8c919dc78086">[email&#160;protected]</a>&gt;
+/// @author Adri&#224; Massanet <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e9888d9b8088a98a868d8c8a86879d8c919dc78086">[email&#160;protected]</a>>
 /// @notice The Owned contract has an owner address, and provides basic 
-///  authorization control functions, this simplifies &amp; the implementation of
+///  authorization control functions, this simplifies & the implementation of
 ///  user permissions; this contract has three work flows for a change in
 ///  ownership, the first requires the new owner to validate that they have the
 ///  ability to accept ownership, the second allows the ownership to be
@@ -118,7 +118,7 @@ contract ERC20 {
 pragma solidity ^0.4.19;
 /*
     Copyright 2016, Jordi Baylina
-    Contributor: Adri&#224; Massanet &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6f0e0b1d060e2f0c000b0a0c00011b0a171b410600">[email&#160;protected]</a>&gt;
+    Contributor: Adri&#224; Massanet <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6f0e0b1d060e2f0c000b0a0c00011b0a171b410600">[email&#160;protected]</a>>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -131,7 +131,7 @@ pragma solidity ^0.4.19;
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 
@@ -146,7 +146,7 @@ pragma solidity ^0.4.19;
 contract Escapable is Owned {
     address public escapeHatchCaller;
     address public escapeHatchDestination;
-    mapping (address=&gt;bool) private escapeBlacklist; // Token contract addresses
+    mapping (address=>bool) private escapeBlacklist; // Token contract addresses
 
     /// @notice The Constructor assigns the `escapeHatchDestination` and the
     ///  `escapeHatchCaller`
@@ -238,7 +238,7 @@ pragma solidity ^0.4.19;
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 /// @title DAppNodePackageDirectory Contract
@@ -309,7 +309,7 @@ contract DAppNodePackageDirectory is Owned,Escapable {
         string name,
         address repo
     ) onlyOwner public {
-        require(idPackage &lt; DAppNodePackages.length);
+        require(idPackage < DAppNodePackages.length);
         DAppNodePackage storage c = DAppNodePackages[idPackage];
         c.name = name;
         c.repo = repo;
@@ -324,7 +324,7 @@ contract DAppNodePackageDirectory is Owned,Escapable {
         uint idPackage,
         DAppNodePackageStatus newStatus
     ) onlyOwner public {
-        require(idPackage &lt; DAppNodePackages.length);
+        require(idPackage < DAppNodePackages.length);
         DAppNodePackage storage c = DAppNodePackages[idPackage];
         c.status = newStatus;
         // An event to notify that the status of a packet has been updated
@@ -341,7 +341,7 @@ contract DAppNodePackageDirectory is Owned,Escapable {
         address repo,
         DAppNodePackageStatus status
     ) {
-        require(idPackage &lt; DAppNodePackages.length);
+        require(idPackage < DAppNodePackages.length);
         DAppNodePackage storage c = DAppNodePackages[idPackage];
         name = c.name;
         repo = c.repo;

@@ -14,26 +14,26 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 
   function toInt256Safe(uint256 a) internal pure returns (int256) {
     int256 b = int256(a);
-    assert(b &gt;= 0);
+    assert(b >= 0);
     return b;
   }
 }
@@ -47,7 +47,7 @@ library SafeMathInt {
   function mul(int256 a, int256 b) internal pure returns (int256) {
     // Prevent overflow when multiplying INT256_MIN with -1
     // https://github.com/RequestNetwork/requestNetwork/issues/43
-    assert(!(a == - 2**255 &amp;&amp; b == -1) &amp;&amp; !(b == - 2**255 &amp;&amp; a == -1));
+    assert(!(a == - 2**255 && b == -1) && !(b == - 2**255 && a == -1));
 
     int256 c = a * b;
     assert((b == 0) || (c / b == a));
@@ -57,28 +57,28 @@ library SafeMathInt {
   function div(int256 a, int256 b) internal pure returns (int256) {
     // Prevent overflow when dividing INT256_MIN by -1
     // https://github.com/RequestNetwork/requestNetwork/issues/43
-    assert(!(a == - 2**255 &amp;&amp; b == -1));
+    assert(!(a == - 2**255 && b == -1));
 
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     int256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(int256 a, int256 b) internal pure returns (int256) {
-    assert((b &gt;= 0 &amp;&amp; a - b &lt;= a) || (b &lt; 0 &amp;&amp; a - b &gt; a));
+    assert((b >= 0 && a - b <= a) || (b < 0 && a - b > a));
 
     return a - b;
   }
 
   function add(int256 a, int256 b) internal pure returns (int256) {
     int256 c = a + b;
-    assert((b &gt;= 0 &amp;&amp; c &gt;= a) || (b &lt; 0 &amp;&amp; c &lt; a));
+    assert((b >= 0 && c >= a) || (b < 0 && c < a));
     return c;
   }
 
   function toUint256Safe(int256 a) internal pure returns (uint256) {
-    assert(a&gt;=0);
+    assert(a>=0);
     return uint256(a);
   }
 }
@@ -96,20 +96,20 @@ library SafeMathUint8 {
   }
 
   function div(uint8 a, uint8 b) internal pure returns (uint8) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint8 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint8 a, uint8 b) internal pure returns (uint8) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint8 a, uint8 b) internal pure returns (uint8) {
     uint8 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -127,20 +127,20 @@ library SafeMathUint96 {
   }
 
   function div(uint96 a, uint96 b) internal pure returns (uint96) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint96 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint96 a, uint96 b) internal pure returns (uint96) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint96 a, uint96 b) internal pure returns (uint96) {
     uint96 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -263,7 +263,7 @@ contract Pausable is Ownable {
 contract Administrable is Pausable {
 
     // mapping of address of trusted contract
-    mapping(address =&gt; uint8) public trustedCurrencyContracts;
+    mapping(address => uint8) public trustedCurrencyContracts;
 
     // Events of the system
     event NewTrustedContract(address newContract);
@@ -381,11 +381,11 @@ contract RequestCore is Administrable {
     // Mapping of all the Requests. The key is the request ID.
     // not anymore public to avoid &quot;UnimplementedFeatureError: Only in-memory reference type can be stored.&quot;
     // https://github.com/ethereum/solidity/issues/3577
-    mapping(bytes32 =&gt; Request) requests;
+    mapping(bytes32 => Request) requests;
 
     // Mapping of subPayees of the requests. The key is the request ID.
     // This array is outside the Request structure to optimize the gas cost when there is only 1 payee.
-    mapping(bytes32 =&gt; Payee[256]) public subPayees;
+    mapping(bytes32 => Payee[256]) public subPayees;
 
     /*
      *  Events 
@@ -394,7 +394,7 @@ contract RequestCore is Administrable {
     event Accepted(bytes32 indexed requestId);
     event Canceled(bytes32 indexed requestId);
 
-    // Event for Payee &amp; subPayees
+    // Event for Payee & subPayees
     event NewSubPayee(bytes32 indexed requestId, address indexed payee); // Separated from the Created Event to allow a 4th indexed parameter (subpayees)
     event UpdateExpectedAmount(bytes32 indexed requestId, uint8 payeeIndex, int256 deltaAmount);
     event UpdateBalance(bytes32 indexed requestId, uint8 payeeIndex, int256 deltaAmount);
@@ -476,7 +476,7 @@ contract RequestCore is Administrable {
         // call must come from a trusted contract
         require(isTrustedContract(msg.sender)); // not as modifier to lighten the stack
 
-        // extract address creator &amp; payer
+        // extract address creator & payer
         address creator = extractAddress(_data, 0);
 
         address payer = extractAddress(_data, 20);
@@ -513,7 +513,7 @@ contract RequestCore is Administrable {
         Created(requestId, mainPayee, payer, creator, dataStr);
 
         // Store and declare the sub payees
-        for(uint8 i = 1; i &lt; payeesCount; i = i.add(1)) {
+        for(uint8 i = 1; i < payeesCount; i = i.add(1)) {
             address subPayeeAddress = extractAddress(_data, uint256(i).mul(52).add(41));
 
             // payees address cannot be 0x0
@@ -613,7 +613,7 @@ contract RequestCore is Administrable {
     {
         require(_payees.length == _expectedAmounts.length);
      
-        for (uint8 i = 1; i &lt; _payees.length; i = i.add(1))
+        for (uint8 i = 1; i < _payees.length; i = i.add(1))
         {
             // payees address cannot be 0x0
             require(_payees[i] != 0);
@@ -753,7 +753,7 @@ contract RequestCore is Administrable {
     {
         isNull = requests[_requestId].payee.balance == 0;
 
-        for (uint8 i = 0; isNull &amp;&amp; subPayees[_requestId][i].addr != address(0); i = i.add(1))
+        for (uint8 i = 0; isNull && subPayees[_requestId][i].addr != address(0); i = i.add(1))
         {
             isNull = subPayees[_requestId][i].balance == 0;
         }
@@ -849,7 +849,7 @@ contract RequestCore is Administrable {
         returns (string) 
     {
         bytes memory bytesString = new bytes(size);
-        for (uint j = 0; j &lt; size; j++) {
+        for (uint j = 0; j < size; j++) {
             bytesString[j] = data[_offset+j];
         }
         return string(bytesString);
@@ -866,7 +866,7 @@ contract RequestCore is Administrable {
         // Update numRequest
         numRequests = numRequests.add(1);
         // requestId = ADDRESS_CONTRACT_CORE + numRequests (0xADRRESSCONTRACT00000NUMREQUEST)
-        return bytes32((uint256(this) &lt;&lt; 96).add(numRequests));
+        return bytes32((uint256(this) << 96).add(numRequests));
     }
 
     /*
@@ -880,7 +880,7 @@ contract RequestCore is Administrable {
         pure
         returns (address m)
     {
-        require(offset &gt;=0 &amp;&amp; offset + 20 &lt;= _data.length);
+        require(offset >=0 && offset + 20 <= _data.length);
         assembly {
             m := and( mload(add(_data, add(20, offset))), 
                       0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)
@@ -898,7 +898,7 @@ contract RequestCore is Administrable {
         pure
         returns (bytes32 bs)
     {
-        require(offset &gt;=0 &amp;&amp; offset + 32 &lt;= _data.length);
+        require(offset >=0 && offset + 32 <= _data.length);
         assembly {
             bs := mload(add(_data, add(32, offset)))
         }
@@ -970,7 +970,7 @@ contract RequestCollectInterface is Pausable {
         view
         returns(uint256)
     {
-        if(_expectedAmount&lt;0) return 0;
+        if(_expectedAmount<0) return 0;
 
         uint256 computedCollect = uint256(_expectedAmount).mul(rateFeesNumerator);
 
@@ -978,7 +978,7 @@ contract RequestCollectInterface is Pausable {
             computedCollect = computedCollect.div(rateFeesDenominator);
         }
 
-        return computedCollect &lt; maxFees ? computedCollect : maxFees;
+        return computedCollect < maxFees ? computedCollect : maxFees;
     }
 
     /*
@@ -1069,10 +1069,10 @@ contract RequestCurrencyContractInterface is RequestCollectInterface {
         returns(bytes32 requestId, int256 totalExpectedAmounts)
     {
         totalExpectedAmounts = 0;
-        for (uint8 i = 0; i &lt; _expectedAmounts.length; i = i.add(1))
+        for (uint8 i = 0; i < _expectedAmounts.length; i = i.add(1))
         {
             // all expected amounts must be positive
-            require(_expectedAmounts[i]&gt;=0);
+            require(_expectedAmounts[i]>=0);
             // compute the total expected amount of the request
             totalExpectedAmounts = totalExpectedAmounts.add(_expectedAmounts[i]);
         }
@@ -1115,8 +1115,8 @@ contract RequestCurrencyContractInterface is RequestCollectInterface {
     {
         // payer can cancel if request is just created
         // payee can cancel when request is not canceled yet
-        require((requestCore.getPayer(_requestId)==msg.sender &amp;&amp; requestCore.getState(_requestId)==RequestCore.State.Created)
-                || (requestCore.getPayeeAddress(_requestId,0)==msg.sender &amp;&amp; requestCore.getState(_requestId)!=RequestCore.State.Canceled));
+        require((requestCore.getPayer(_requestId)==msg.sender && requestCore.getState(_requestId)==RequestCore.State.Created)
+                || (requestCore.getPayeeAddress(_requestId,0)==msg.sender && requestCore.getState(_requestId)!=RequestCore.State.Canceled));
 
         // impossible to cancel a Request with any payees balance != 0
         require(requestCore.areAllBalanceNull(_requestId));
@@ -1145,9 +1145,9 @@ contract RequestCurrencyContractInterface is RequestCollectInterface {
         require(requestCore.getState(_requestId)!=RequestCore.State.Canceled);
 
         // impossible to declare more additionals than the number of payees
-        require(_additionalAmounts.length &lt;= requestCore.getSubPayeesCount(_requestId).add(1));
+        require(_additionalAmounts.length <= requestCore.getSubPayeesCount(_requestId).add(1));
 
-        for(uint8 i = 0; i &lt; _additionalAmounts.length; i = i.add(1)) {
+        for(uint8 i = 0; i < _additionalAmounts.length; i = i.add(1)) {
             // no need to declare a zero as additional 
             if(_additionalAmounts[i] != 0) {
                 // Store and declare the additional in the core
@@ -1174,13 +1174,13 @@ contract RequestCurrencyContractInterface is RequestCollectInterface {
         require(requestCore.getState(_requestId)!=RequestCore.State.Canceled);
 
         // impossible to declare more subtracts than the number of payees
-        require(_subtractAmounts.length &lt;= requestCore.getSubPayeesCount(_requestId).add(1));
+        require(_subtractAmounts.length <= requestCore.getSubPayeesCount(_requestId).add(1));
 
-        for(uint8 i = 0; i &lt; _subtractAmounts.length; i = i.add(1)) {
+        for(uint8 i = 0; i < _subtractAmounts.length; i = i.add(1)) {
             // no need to declare a zero as subtracts 
             if(_subtractAmounts[i] != 0) {
                 // subtract must be equal or lower than amount expected
-                require(requestCore.getPayeeExpectedAmount(_requestId,i) &gt;= _subtractAmounts[i].toInt256Safe());
+                require(requestCore.getPayeeExpectedAmount(_requestId,i) >= _subtractAmounts[i].toInt256Safe());
                 // Store and declare the subtract in the core
                 requestCore.updateExpectedAmount(_requestId, i, -_subtractAmounts[i].toInt256Safe());
             }
@@ -1226,8 +1226,8 @@ contract RequestERC20 is RequestCurrencyContractInterface {
     using SafeMathUint8 for uint8;
 
     // payment addresses by requestId (optional). We separate the Identity of the payee/payer (in the core) and the wallet address in the currency contract
-    mapping(bytes32 =&gt; address[256]) public payeesPaymentAddress;
-    mapping(bytes32 =&gt; address) public payerRefundAddress;
+    mapping(bytes32 => address[256]) public payeesPaymentAddress;
+    mapping(bytes32 => address) public payerRefundAddress;
 
     // token address
     ERC20 public erc20Token;
@@ -1249,7 +1249,7 @@ contract RequestERC20 is RequestCurrencyContractInterface {
      * @dev Function to create a request as payee
      *
      * @dev msg.sender must be the main payee
-     * @dev if _payeesPaymentAddress.length &gt; _payeesIdAddress.length, the extra addresses will be stored but never used
+     * @dev if _payeesPaymentAddress.length > _payeesIdAddress.length, the extra addresses will be stored but never used
      *
      * @param _payeesIdAddress array of payees address (the index 0 will be the payee - must be msg.sender - the others are subPayees)
      * @param _payeesPaymentAddress array of payees address for payment (optional)
@@ -1272,17 +1272,17 @@ contract RequestERC20 is RequestCurrencyContractInterface {
         whenNotPaused
         returns(bytes32 requestId)
     {
-        require(msg.sender == _payeesIdAddress[0] &amp;&amp; msg.sender != _payer &amp;&amp; _payer != 0);
+        require(msg.sender == _payeesIdAddress[0] && msg.sender != _payer && _payer != 0);
 
         int256 totalExpectedAmounts;
         (requestId, totalExpectedAmounts) = createCoreRequestInternal(_payer, _payeesIdAddress, _expectedAmounts, _data);
         
         // compute and send fees
         uint256 fees = collectEstimation(totalExpectedAmounts);
-        require(fees == msg.value &amp;&amp; collectForREQBurning(fees));
+        require(fees == msg.value && collectForREQBurning(fees));
 
         // set payment addresses for payees
-        for (uint8 j = 0; j &lt; _payeesPaymentAddress.length; j = j.add(1)) {
+        for (uint8 j = 0; j < _payeesPaymentAddress.length; j = j.add(1)) {
             payeesPaymentAddress[requestId][j] = _payeesPaymentAddress[j];
         }
         // set payment address for payer
@@ -1295,7 +1295,7 @@ contract RequestERC20 is RequestCurrencyContractInterface {
 
 
     /*
-     * @dev Function to create a request as payer. The request is payed if _payeeAmounts &gt; 0.
+     * @dev Function to create a request as payer. The request is payed if _payeeAmounts > 0.
      *
      * @dev msg.sender will be the payer
      * @dev If a contract is given as a payee make sure it is payable. Otherwise, the request will not be payable.
@@ -1321,7 +1321,7 @@ contract RequestERC20 is RequestCurrencyContractInterface {
         whenNotPaused
         returns(bytes32 requestId)
     {
-        require(msg.sender != _payeesIdAddress[0] &amp;&amp; _payeesIdAddress[0] != 0);
+        require(msg.sender != _payeesIdAddress[0] && _payeesIdAddress[0] != 0);
 
         int256 totalExpectedAmounts;
         (requestId, totalExpectedAmounts) = createCoreRequestInternal(msg.sender, _payeesIdAddress, _expectedAmounts, _data);
@@ -1342,7 +1342,7 @@ contract RequestERC20 is RequestCurrencyContractInterface {
      *
      * @dev msg.sender will be the _payer
      * @dev only the _payer can make additionals
-     * @dev if _payeesPaymentAddress.length &gt; _requestData.payeesIdAddress.length, the extra addresses will be stored but never used
+     * @dev if _payeesPaymentAddress.length > _requestData.payeesIdAddress.length, the extra addresses will be stored but never used
      *
      * @param _requestData nasty bytes containing : creator, payer, payees|expectedAmounts, data
      * @param _payeesPaymentAddress array of payees address for payment (optional) 
@@ -1366,7 +1366,7 @@ contract RequestERC20 is RequestCurrencyContractInterface {
         returns(bytes32 requestId)
     {
         // check expiration date
-        require(_expirationDate &gt;= block.timestamp);
+        require(_expirationDate >= block.timestamp);
 
         // check the signature
         require(checkRequestSignature(_requestData, _payeesPaymentAddress, _expirationDate, _signature));
@@ -1396,26 +1396,26 @@ contract RequestERC20 is RequestCurrencyContractInterface {
     {
         // extract main payee
         address mainPayee = extractAddress(_requestData, 41);
-        require(msg.sender != mainPayee &amp;&amp; mainPayee != 0);
+        require(msg.sender != mainPayee && mainPayee != 0);
         // creator must be the main payee
         require(extractAddress(_requestData, 0) == mainPayee);
 
         // extract the number of payees
         uint8 payeesCount = uint8(_requestData[40]);
         int256 totalExpectedAmounts = 0;
-        for(uint8 i = 0; i &lt; payeesCount; i++) {
+        for(uint8 i = 0; i < payeesCount; i++) {
             // extract the expectedAmount for the payee[i]
             int256 expectedAmountTemp = int256(extractBytes32(_requestData, uint256(i).mul(52).add(61)));
             // compute the total expected amount of the request
             totalExpectedAmounts = totalExpectedAmounts.add(expectedAmountTemp);
             // all expected amount must be positive
-            require(expectedAmountTemp&gt;0);
+            require(expectedAmountTemp>0);
         }
 
         // compute and send fees
         uint256 fees = collectEstimation(totalExpectedAmounts);
         // check fees has been well received
-        require(fees == msg.value &amp;&amp; collectForREQBurning(fees));
+        require(fees == msg.value && collectForREQBurning(fees));
 
         // insert the msg.sender as the payer in the bytes
         updateBytes20inBytes(_requestData, 20, bytes20(msg.sender));
@@ -1423,7 +1423,7 @@ contract RequestERC20 is RequestCurrencyContractInterface {
         requestId = requestCore.createRequestFromBytes(_requestData);
         
         // set payment addresses for payees
-        for (uint8 j = 0; j &lt; _payeesPaymentAddress.length; j = j.add(1)) {
+        for (uint8 j = 0; j < _payeesPaymentAddress.length; j = j.add(1)) {
             payeesPaymentAddress[requestId][j] = _payeesPaymentAddress[j];
         }
 
@@ -1453,7 +1453,7 @@ contract RequestERC20 is RequestCurrencyContractInterface {
         
         additionalAction(_requestId, _additionals);
 
-        if(_payeeAmountsSum &gt; 0) {
+        if(_payeeAmountsSum > 0) {
             paymentInternal(_requestId, _payeeAmounts);
         }
     }
@@ -1477,7 +1477,7 @@ contract RequestERC20 is RequestCurrencyContractInterface {
         whenNotPaused
     {
         // automatically accept request if request is created and msg.sender is payer
-        if (requestCore.getState(_requestId)==RequestCore.State.Created &amp;&amp; msg.sender == requestCore.getPayer(_requestId)) {
+        if (requestCore.getState(_requestId)==RequestCore.State.Created && msg.sender == requestCore.getPayer(_requestId)) {
             acceptAction(_requestId);
         }
 
@@ -1522,9 +1522,9 @@ contract RequestERC20 is RequestCurrencyContractInterface {
         require(requestCore.getState(_requestId)!=RequestCore.State.Canceled);
 
         // we cannot have more amounts declared than actual payees
-        require(_payeeAmounts.length &lt;= requestCore.getSubPayeesCount(_requestId).add(1));
+        require(_payeeAmounts.length <= requestCore.getSubPayeesCount(_requestId).add(1));
 
-        for(uint8 i = 0; i &lt; _payeeAmounts.length; i = i.add(1)) {
+        for(uint8 i = 0; i < _payeeAmounts.length; i = i.add(1)) {
             if(_payeeAmounts[i] != 0) {
                 // Store and declare the payment to the core
                 requestCore.updateBalance(_requestId, i, _payeeAmounts[i].toInt256Safe());
@@ -1565,9 +1565,9 @@ contract RequestERC20 is RequestCurrencyContractInterface {
         // get the number of payees
         uint8 payeesCount = requestCore.getSubPayeesCount(_requestId).add(1);
 
-        if(payeeIndex &lt; 0) {
+        if(payeeIndex < 0) {
             // if not ID addresses maybe in the payee payments addresses
-            for (uint8 i = 0; i &lt; payeesCount &amp;&amp; payeeIndex == -1; i = i.add(1))
+            for (uint8 i = 0; i < payeesCount && payeeIndex == -1; i = i.add(1))
             {
                 if(payeesPaymentAddress[_requestId][i] == _address) {
                     // get the payeeIndex
@@ -1576,9 +1576,9 @@ contract RequestERC20 is RequestCurrencyContractInterface {
             }
         }
         // the address must be found somewhere
-        require(payeeIndex &gt;= 0); 
+        require(payeeIndex >= 0); 
 
-        // useless (subPayee size &lt;256): require(payeeIndex &lt; 265);
+        // useless (subPayee size <256): require(payeeIndex < 265);
         requestCore.updateBalance(_requestId, uint8(payeeIndex), -_amount.toInt256Safe());
 
         // refund to the payment address if given, the id address otherwise
@@ -1609,7 +1609,7 @@ contract RequestERC20 is RequestCurrencyContractInterface {
     // -----------------------------------------------------------------------------
 
     /*
-     * @dev Check the validity of a signed request &amp; the expiration date
+     * @dev Check the validity of a signed request & the expiration date
      * @param _data bytes containing all the data packed :
             address(creator)
             address(payer)
@@ -1642,7 +1642,7 @@ contract RequestERC20 is RequestCurrencyContractInterface {
 
         // extract &quot;v, r, s&quot; from the signature
         uint8 v = uint8(_signature[64]);
-        v = v &lt; 27 ? v.add(27) : v;
+        v = v < 27 ? v.add(27) : v;
         bytes32 r = extractBytes32(_signature, 0);
         bytes32 s = extractBytes32(_signature, 32);
 
@@ -1708,7 +1708,7 @@ contract RequestERC20 is RequestCurrencyContractInterface {
         pure
         returns (address m) 
     {
-        require(offset &gt;=0 &amp;&amp; offset + 20 &lt;= _data.length);
+        require(offset >=0 && offset + 20 <= _data.length);
         assembly {
             m := and( mload(add(_data, add(20, offset))), 
                       0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)
@@ -1726,7 +1726,7 @@ contract RequestERC20 is RequestCurrencyContractInterface {
         pure
         returns (bytes32 bs)
     {
-        require(offset &gt;=0 &amp;&amp; offset + 32 &lt;= _data.length);
+        require(offset >=0 && offset + 32 <= _data.length);
         assembly {
             bs := mload(add(_data, add(32, offset)))
         }
@@ -1743,7 +1743,7 @@ contract RequestERC20 is RequestCurrencyContractInterface {
         internal
         pure
     {
-        require(offset &gt;=0 &amp;&amp; offset + 20 &lt;= data.length);
+        require(offset >=0 && offset + 20 <= data.length);
         assembly {
             let m := mload(add(data, add(20, offset)))
             m := and(m, 0xFFFFFFFFFFFFFFFFFFFFFFFF0000000000000000000000000000000000000000)

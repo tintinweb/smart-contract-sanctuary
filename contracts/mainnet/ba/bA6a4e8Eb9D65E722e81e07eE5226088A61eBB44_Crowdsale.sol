@@ -132,12 +132,12 @@ contract Crowdsale {
 
     // Returns true if the transaction can buy tokens
     function validPurchase() internal view returns (bool) {
-        bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+        bool withinPeriod = now >= startTime && now <= endTime;
         bool moreThanMinPurchase = msg.value >= minSale;
         bool lessThanMaxPurchase = contributions[msg.sender] + msg.value <= maxSale;
         bool withinCap = weiRaised.add(msg.value) <= cap;
 
-        return withinPeriod &amp;&amp; moreThanMinPurchase &amp;&amp; lessThanMaxPurchase &amp;&amp; withinCap &amp;&amp; !finished;
+        return withinPeriod && moreThanMinPurchase && lessThanMaxPurchase && withinCap && !finished;
     }
 
     // Escape hatch in case the sale needs to be urgently stopped

@@ -10,21 +10,21 @@ contract EgeregToken {
     string public symbol = &quot;MNG&quot;;
     uint8 public decimals = 2;
     uint public totalSupply = 0;
-    mapping(address =&gt; uint) balances;
-    mapping (address =&gt; mapping (address =&gt; uint)) internal allowed;
+    mapping(address => uint) balances;
+    mapping (address => mapping (address => uint)) internal allowed;
 
     constructor() public {
         owner = msg.sender;
     }
 
     function subtr(uint a, uint b) internal pure returns (uint) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function addit(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 
@@ -44,7 +44,7 @@ contract EgeregToken {
     }
 
     function transfer(address _to, uint _value, bytes _data) public returns (bool) {
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
         balances[msg.sender] = subtr(balances[msg.sender], _value);
         balances[_to] = addit(balances[_to], _value);
         emit Transfer(msg.sender, _to, _value);
@@ -57,8 +57,8 @@ contract EgeregToken {
 
     function transferFrom(address _from, address _to, uint _value) external returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
         balances[_from] = subtr(balances[_from], _value);
         balances[_to] = addit(balances[_to], _value);
         allowed[_from][msg.sender] = subtr(allowed[_from][msg.sender], _value);
@@ -96,7 +96,7 @@ contract EgeregToken {
 
     function decreaseApproval(address _spender, uint _subtractedValue) external returns (bool) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = subtr(oldValue, _subtractedValue);
@@ -120,7 +120,7 @@ contract EgeregToken {
     }
 
     function burn(uint _value) external {
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
         address burner = msg.sender;
         balances[burner] = subtr(balances[burner], _value);
         totalSupply = subtr(totalSupply, _value);
@@ -133,7 +133,7 @@ contract EgeregToken {
         assembly {
             length := extcodesize(_addr)
         }
-        return (length&gt;0);
+        return (length>0);
     }
 
     event Transfer(address indexed from, address indexed to, uint value);

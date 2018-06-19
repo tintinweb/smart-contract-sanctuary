@@ -21,12 +21,12 @@ library SafeMath {
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 }
@@ -121,9 +121,9 @@ contract NETRico {
     function NETRico(string _campaignUrl, ERC20TokenInterface _addressOfTokenUsedAsReward,
         uint256 _startTime, uint256 _startStage2Time, uint256 _deadline) public {
         require(_addressOfTokenUsedAsReward != address(0)
-            &amp;&amp; _startTime &gt; now
-            &amp;&amp; _startStage2Time &gt; _startTime
-            &amp;&amp; _deadline &gt; _startStage2Time);
+            && _startTime > now
+            && _startStage2Time > _startTime
+            && _deadline > _startStage2Time);
 
         creator = 0xB987B463c7573f0B7b6eD7cc8E5Fab9042272065;
         //creator = msg.sender;
@@ -150,7 +150,7 @@ contract NETRico {
     * @notice Set timestamp of Stage2 start
     **/
     function setStage2Start(uint256 _startStage2Time) public onlyCreator {
-        require(_startStage2Time &gt; now &amp;&amp; _startStage2Time &gt; startTime &amp;&amp; _startStage2Time &lt; deadline);
+        require(_startStage2Time > now && _startStage2Time > startTime && _startStage2Time < deadline);
         startStage2Time = _startStage2Time;
     }
 
@@ -158,7 +158,7 @@ contract NETRico {
     * @notice Set timestamp of deadline
     **/
     function setDeadline(uint256 _deadline) public onlyCreator {
-        require(_deadline &gt; now &amp;&amp; _deadline &gt; startStage2Time);
+        require(_deadline > now && _deadline > startStage2Time);
         deadline = _deadline;
     }
 
@@ -166,7 +166,7 @@ contract NETRico {
     * @notice contribution handler
     */
     function contribute() public notFinished payable {
-        require(now &gt;= startTime);
+        require(now >= startTime);
 
         uint256 tokenBought;
         //Variable to store amount of tokens bought
@@ -186,7 +186,7 @@ contract NETRico {
         tokenBought = tokenBought.mul(10 ** 10);
         //Base 8 to Base 18
 
-        require(tokenBought &gt;= 100 * 10 ** 18);
+        require(tokenBought >= 100 * 10 ** 18);
         //Minimum 100 base tokens
 
         //Bonus calculation
@@ -222,7 +222,7 @@ contract NETRico {
     */
     function checkIfFundingCompleteOrExpired() public {
 
-        if (now &gt; deadline &amp;&amp; state != State.Successful) {
+        if (now > deadline && state != State.Successful) {
 
             state = State.Successful;
             //Sale becomes Successful
@@ -233,7 +233,7 @@ contract NETRico {
             //we log the finish
 
             finished();
-        } else if (state == State.Stage1 &amp;&amp; now &gt;= startStage2Time) {
+        } else if (state == State.Stage1 && now >= startStage2Time) {
 
             state = State.Stage2;
 
@@ -250,7 +250,7 @@ contract NETRico {
         uint256 remainder = tokenReward.balanceOf(this);
         //Remaining tokens on contract
         //Funds send to creator if any
-        if (address(this).balance &gt; 0) {
+        if (address(this).balance > 0) {
             creator.transfer(address(this).balance);
             emit LogBeneficiaryPaid(creator);
         }

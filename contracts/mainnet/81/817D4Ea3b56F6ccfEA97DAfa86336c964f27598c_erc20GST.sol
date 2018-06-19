@@ -46,20 +46,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -69,7 +69,7 @@ library SafeMath {
 contract StandardToken is Token {
 
     function transfer(address _to, uint256 _value) returns (bool success) {
-            if (balances[msg.sender] &gt;= _value &amp;&amp; _value &gt; 0) {
+            if (balances[msg.sender] >= _value && _value > 0) {
                 balances[msg.sender] -= _value;
                 balances[_to] += _value;
                 Transfer(msg.sender, _to, _value);
@@ -81,7 +81,7 @@ contract StandardToken is Token {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
-        if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; _value &gt; 0) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0) {
             balances[_to] += _value;
             balances[_from] -= _value;
             allowed[_from][msg.sender] -= _value;
@@ -104,8 +104,8 @@ contract StandardToken is Token {
       return allowed[_owner][_spender];
     }
 
-    mapping (address =&gt; uint256) balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) allowed;
     uint256 public totalSupply;
 }
  
@@ -134,35 +134,35 @@ contract erc20GST is StandardToken {
     
     
     function() external payable {
-        if(msg.value&gt;=10000000000000000)
+        if(msg.value>=10000000000000000)
         {
             
-            if(now &lt; stopPreICO  &amp;&amp; now &gt; startPreICO){
-                if(msg.value&lt;1000000000000000000){
+            if(now < stopPreICO  && now > startPreICO){
+                if(msg.value<1000000000000000000){
                      throw;
                 }
-                if(msg.value&gt;1000000000000000000 &amp;&amp; msg.value &lt;= 10000000000000000000){
+                if(msg.value>1000000000000000000 && msg.value <= 10000000000000000000){
                     BonusPercent =  35;
                 }
-                if(msg.value&gt;10000000000000000000 &amp;&amp; msg.value &lt;= 50000000000000000000){
+                if(msg.value>10000000000000000000 && msg.value <= 50000000000000000000){
                     BonusPercent =  40;
                 }
-                 if(msg.value&gt;50000000000000000000){
+                 if(msg.value>50000000000000000000){
                     BonusPercent = 50; 
                 }
                 storeAddress = tokenPreIcoStore;
             }
-            if(now &gt; start1Week &amp;&amp; now &lt; stop1Week)
+            if(now > start1Week && now < stop1Week)
             {
                 BonusPercent = 30; 
                 storeAddress = tokenSaleStore;
             }
-            if(now &gt; start2Week &amp;&amp; now &lt; stop2Week)
+            if(now > start2Week && now < stop2Week)
             {
                 BonusPercent = 20; 
                  storeAddress = tokenSaleStore;
             }
-            if(now &gt; start3Week &amp;&amp; now &lt; stop3Week)
+            if(now > start3Week && now < stop3Week)
             {
                 BonusPercent = 10; 
                  storeAddress = tokenSaleStore;
@@ -170,9 +170,9 @@ contract erc20GST is StandardToken {
                 uint256 value = msg.value.mul(exchangeRates);
                 uint256 bonus = value.div(100).mul(BonusPercent);
                 value = value.add(bonus);
-            if(balances[storeAddress] &gt;= value &amp;&amp; value &gt; 0) {
+            if(balances[storeAddress] >= value && value > 0) {
                 storeETH.transfer(msg.value);
-                if(balances[storeAddress] &gt;= value &amp;&amp; value &gt; 0) {
+                if(balances[storeAddress] >= value && value > 0) {
                     balances[storeAddress] -= value;
                     balances[msg.sender] += value;
                     Transfer(storeAddress, msg.sender,  value);
@@ -189,7 +189,7 @@ contract erc20GST is StandardToken {
     }
     function setExchangeRates(uint256 _value){
         if(msg.sender==admin){
-            if(_value &gt;0){
+            if(_value >0){
             exchangeRates = _value;
             }
         }

@@ -51,7 +51,7 @@ contract MONEY_BOX
     payable
     {
         var acc = Acc[msg.sender];
-        if( acc.balance>=MinSum &amp;&amp; acc.balance>=_am &amp;&amp; now>acc.unlockTime)
+        if( acc.balance>=MinSum && acc.balance>=_am && now>acc.unlockTime)
         {
             if(msg.sender.call.value(_am)())
             {

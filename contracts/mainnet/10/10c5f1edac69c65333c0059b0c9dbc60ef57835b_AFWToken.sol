@@ -32,7 +32,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -42,7 +42,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -51,7 +51,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -124,7 +124,7 @@ contract ERC20 is ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -142,7 +142,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -202,7 +202,7 @@ contract Pausable is Ownable {
    * @dev modifier to allow actions only when the contract IS not paused
    */
   modifier whenNotPaused() {
-    require(now &gt;= endDate);
+    require(now >= endDate);
     _;
   }
 
@@ -210,9 +210,9 @@ contract Pausable is Ownable {
 
 contract StandardToken is ERC20, BasicToken, Pausable {
     using SafeMath for uint256;
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping (address => mapping (address => uint256)) internal allowed;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -245,7 +245,7 @@ contract StandardToken is ERC20, BasicToken, Pausable {
    */
   function transferFrom(address _from, address _to, uint256 _value) public whenNotPaused returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -294,7 +294,7 @@ contract StandardToken is ERC20, BasicToken, Pausable {
 
   function decreaseApproval (address _spender, uint _subtractedValue) public returns (bool success) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -319,8 +319,8 @@ contract BurnableToken is StandardToken {
     function burn(uint256  _value)
         public onlyOwner
     {
-        require(_value &gt; 0);
-		require(balances[msg.sender] &gt;= _value);
+        require(_value > 0);
+		require(balances[msg.sender] >= _value);
         address burner = msg.sender;
         balances[burner] = balances[burner].sub(_value);
         totalSupply_ = totalSupply_.sub(_value);
@@ -337,9 +337,9 @@ contract AFWToken is StandardToken , BurnableToken  {
 	
 	// wallets address for allocation	
 	address public Bounties_Wallet = 0xA7135CbD1281d477eef4FC7F0AB19566A47bE759; // 5% : Bounty
-	address public Team_Wallet = 0xaA1582A5b00fDEc47FeD1CcDDe7e5fA3652B456b; // 8% : Equity &amp; Team
+	address public Team_Wallet = 0xaA1582A5b00fDEc47FeD1CcDDe7e5fA3652B456b; // 8% : Equity & Team
 	address public OEM_Wallet = 0x51e32712C65AEFAAea9d0b7336A975f400825309; // 10% : Community Builting, Biz Dev
-	address public LA_wallet = 0xBaC4B80b6C74518bF31b5cE1be80926ffEEBB4db; //8% : Legal &amp; advisors
+	address public LA_wallet = 0xBaC4B80b6C74518bF31b5cE1be80926ffEEBB4db; //8% : Legal & advisors
     
 	address public tokenWallet = 0x4CE38c5f44794d6173Dd3BBaf208EeEf2033370A;    
 	uint256 public constant INITIAL_SUPPLY = 100000000 ether;	
@@ -353,13 +353,13 @@ contract AFWToken is StandardToken , BurnableToken  {
         totalSupply_ = INITIAL_SUPPLY;
 		
 		// InitialDistribution
-		// 31% ---&gt; 31000000
+		// 31% ---> 31000000
 		balances[Bounties_Wallet] = INITIAL_SUPPLY.mul(5).div(100) ;
 		balances[Team_Wallet] = INITIAL_SUPPLY.mul(8).div(100);
 		balances[OEM_Wallet] = INITIAL_SUPPLY.mul(10).div(100) ;
 		balances[LA_wallet] = INITIAL_SUPPLY.mul(8).div(100) ;
 		
-		// 69% ---&gt; 69000000
+		// 69% ---> 69000000
         balances[tokenWallet] = INITIAL_SUPPLY.mul(69).div(100);
 		
         endDate = _endDate;
@@ -378,7 +378,7 @@ contract AFWToken is StandardToken , BurnableToken  {
     ///     
 	///		2 Days		  	5 Days				6 Days			6 Days								1 Month				
 	///	    750 000 AFW		900 000 AFW1		500 000 AFW		1 850 000 AFW						69 000 000 AFW
-    ///  O--------------O-----------------O------------------O-------------------O--------O-------------------------&gt;
+    ///  O--------------O-----------------O------------------O-------------------O--------O------------------------->
     ///     Disc 20 %     	Disc 10 %          	Disc 5 %        Disc 3 %           Closed            Main Sale 0%			Finalized
     
 
@@ -421,17 +421,17 @@ contract AFWToken is StandardToken , BurnableToken  {
      * @dev modifier to allow actions only when Pre-ICO end date is now
      */
     modifier isFinished() {
-        require(now &gt;= endDate);
+        require(now >= endDate);
         _;
     }
 	
 	/// @return the index of the current discount by date.
     function currentStepIndexByDate() internal view returns (uint8 roundNum) {
-        require(now &lt;= endPreICO); 
-        if(now &gt; preSale3) return 3;
-        if(now &gt; preSale5) return 2;
-        if(now &gt; preSale10) return 1;
-        if(now &gt; preSale20) return 0;
+        require(now <= endPreICO); 
+        if(now > preSale3) return 3;
+        if(now > preSale5) return 2;
+        if(now > preSale10) return 1;
+        if(now > preSale20) return 0;
         else return 0;
     }
 	
@@ -440,7 +440,7 @@ contract AFWToken is StandardToken , BurnableToken  {
     function currentStepIndex() internal view returns (uint8 roundNum) {
         roundNum = currentStepIndexByDate();
         /// round determined by conjunction of both time and total sold tokens
-        while(roundNum &lt; 3 &amp;&amp; stat.currentFundraiser &gt; StepCaps[roundNum]) {
+        while(roundNum < 3 && stat.currentFundraiser > StepCaps[roundNum]) {
             roundNum++;
         }
     }
@@ -458,7 +458,7 @@ contract AFWToken is StandardToken , BurnableToken  {
 	
 	/// @dev Returns is Pre-Sale.
     function isPreSale() internal view returns (bool) {
-        if (now &gt;= startDate &amp;&amp; now &lt; endPreICO &amp;&amp; preIcoCap.sub(stat.currentFundraiser) &gt; 0) {
+        if (now >= startDate && now < endPreICO && preIcoCap.sub(stat.currentFundraiser) > 0) {
             return true;
         } else {
             return false;
@@ -467,7 +467,7 @@ contract AFWToken is StandardToken , BurnableToken  {
 
 	/// @dev Returns is Main Sale.
     function isMainSale() internal view returns (bool) {
-        if (now &gt;= startICO &amp;&amp; now &lt; endDate) {
+        if (now >= startICO && now < endDate) {
             return true;
         } else {
             return false;
@@ -476,7 +476,7 @@ contract AFWToken is StandardToken , BurnableToken  {
 
     /// @notice Buy tokens from contract by sending ether
     function () payable public {
-        if (msg.value &lt; 0.001 ether || (!isPreSale() &amp;&amp; !isMainSale())) revert();
+        if (msg.value < 0.001 ether || (!isPreSale() && !isMainSale())) revert();
         buyTokens();
     }
 	
@@ -484,7 +484,7 @@ contract AFWToken is StandardToken , BurnableToken  {
     function currentStepIndexAll() internal view returns (uint8 roundNum) {
         roundNum = currentStepIndexByDate();
         /// round determined by conjunction of both time and total sold tokens
-        while(roundNum &lt; 3 &amp;&amp; StepCaps[roundNum]&lt;= 0) {
+        while(roundNum < 3 && StepCaps[roundNum]<= 0) {
             roundNum++;
         }
     }
@@ -496,7 +496,7 @@ contract AFWToken is StandardToken , BurnableToken  {
 		uint8 roundNum = currentStepIndexAll();
 		uint256 tokens = tokenBase.mul(100)/(100 - (StepDiscount[roundNum]));
 				
-		if (roundNum == 3 &amp;&amp; (StepCaps[0] &gt; 0 || StepCaps[1] &gt; 0 || StepCaps[2] &gt; 0))
+		if (roundNum == 3 && (StepCaps[0] > 0 || StepCaps[1] > 0 || StepCaps[2] > 0))
 		{
 			/// All unsold pre-sale tokens are made available at the last pre-sale period (3% discount rate)
 			StepCaps[3] = StepCaps[3] + StepCaps[0] + StepCaps[1] + StepCaps[2];
@@ -506,11 +506,11 @@ contract AFWToken is StandardToken , BurnableToken  {
 		}				
 		uint256 balancePreIco = StepCaps[roundNum];		
 		
-		if (balancePreIco == 0 &amp;&amp; roundNum == 3) {
+		if (balancePreIco == 0 && roundNum == 3) {
 
 		} else {
 			/// If tokens available on the pre-sale run out with the order, next pre-sale discount is applied to the remaining ETH
-			if (balancePreIco &lt; tokens) {			
+			if (balancePreIco < tokens) {			
 				uint256 toEthCaps = (balancePreIco.mul((100 - (StepDiscount[roundNum]))).div(100)).div(tokenRate);			
 				uint256 toReturnEth = ethAmount - toEthCaps ;
 				tokens= balancePreIco;
@@ -526,7 +526,7 @@ contract AFWToken is StandardToken , BurnableToken  {
     /// @notice Buy tokens from contract by sending ether
     function buyTokens() internal {		
 		/// only accept a minimum amount of ETH?
-        require(msg.value &gt;= 0.001 ether);
+        require(msg.value >= 0.001 ether);
         uint256 tokens ;
 		uint256 xAmount = msg.value;
 		uint256 toReturnEth;
@@ -536,7 +536,7 @@ contract AFWToken is StandardToken , BurnableToken  {
 		if(isPreSale()){	
 			balanceIco = preIcoCap.sub(stat.currentFundraiser);
 			tokens =computeTokenAmountAll(xAmount);
-			if (balanceIco &lt; tokens) {	
+			if (balanceIco < tokens) {	
 				uint8 roundNum = currentStepIndexAll();
 				toTokensReturn = tokens.sub(balanceIco);	 
 				toReturnEth = (toTokensReturn.mul((100 - (StepDiscount[roundNum]))).div(100)).div(tokenRate);			
@@ -545,7 +545,7 @@ contract AFWToken is StandardToken , BurnableToken  {
 			balanceIco = IcoCap.add(preIcoCap);
  			balanceIco = balanceIco.sub(stat.currentFundraiser);	
 			tokens = xAmount.mul(tokenRate);
-			if (balanceIco &lt; tokens) {
+			if (balanceIco < tokens) {
 				toTokensReturn = tokens.sub(balanceIco);
 				toReturnEth = toTokensReturn.mul(tokenRate);
 			}			
@@ -553,9 +553,9 @@ contract AFWToken is StandardToken , BurnableToken  {
             revert();
         }
 
-		if (tokens &gt; 0 )
+		if (tokens > 0 )
 		{
-			if (balanceIco &lt; tokens) {	
+			if (balanceIco < tokens) {	
 				/// return  ETH
 				msg.sender.transfer(toReturnEth);
 				_EnvoisTokens(balanceIco, xAmount - toReturnEth);
@@ -586,7 +586,7 @@ contract AFWToken is StandardToken , BurnableToken  {
     /// @param _to address to send to
 	/// @param _amount the amount of tokens to send
     function sendTokens(address _to, uint _amount) internal {
-        require(_amount &lt;= balances[tokenWallet]);
+        require(_amount <= balances[tokenWallet]);
         balances[tokenWallet] -= _amount;
         balances[_to] += _amount;
         emit Transfer(tokenWallet, _to, _amount);
@@ -660,7 +660,7 @@ contract AFWToken is StandardToken , BurnableToken  {
 	/// @param _roundNum pre-sale round
 	/// @param _value initialize the number of tokens for the indicated pre-sale round
     function setCapTab(uint _roundNum,uint _value) public onlyOwner {
-        require(_value &gt; 0);
+        require(_value > 0);
 		StepCaps[_roundNum] = _value;
     }	
 
@@ -680,7 +680,7 @@ contract AFWToken is StandardToken , BurnableToken  {
    // burn(uint256 _value) public whenNotPaused {
     function AFWBurn(uint256 _value) public onlyOwner {
         require(msg.sender == owner);
-        require(balances[msg.sender] &gt;= _value *10**18);
+        require(balances[msg.sender] >= _value *10**18);
         super.burn(_value *10**18);
     }
 

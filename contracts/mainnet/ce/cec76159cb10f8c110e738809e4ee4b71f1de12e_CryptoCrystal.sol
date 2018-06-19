@@ -154,7 +154,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -164,7 +164,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -173,7 +173,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -202,8 +202,8 @@ contract MiningSupplier {
         uint256 _currentBlockNumber,
         uint256 _secondsPerBlock
     ) public pure returns(uint256) {
-        //require(_currentBlockNumber &gt;= _initialBlockNumber, &quot;current is large than or equal to initial&quot;);
-        require(_currentBlockNumber &gt;= _initialBlockNumber);
+        //require(_currentBlockNumber >= _initialBlockNumber, &quot;current is large than or equal to initial&quot;);
+        require(_currentBlockNumber >= _initialBlockNumber);
         uint256 _blockIndex = _currentBlockNumber.sub(_initialBlockNumber);
         uint256 _blocksPerYear = _getBlocksPerYear(_secondsPerBlock);
         return _blockIndex.sub(_blockIndex.div(_blocksPerYear).mul(_blocksPerYear));
@@ -215,8 +215,8 @@ contract MiningSupplier {
         uint256 _initialBlockNumber,
         uint256 _currentBlockNumber
     ) public pure returns(uint256) {
-        //require(_currentBlockNumber &gt;= _initialBlockNumber, &quot;current is large than or equal to initial&quot;);
-        require(_currentBlockNumber &gt;= _initialBlockNumber);
+        //require(_currentBlockNumber >= _initialBlockNumber, &quot;current is large than or equal to initial&quot;);
+        require(_currentBlockNumber >= _initialBlockNumber);
         return _currentBlockNumber.sub(_initialBlockNumber);
     }
 
@@ -244,7 +244,7 @@ contract MiningSupplier {
         uint256 _yearIndex
     ) public pure returns(uint256) {
         uint256 _sum = 0;
-        for(uint256 i = 0; i &lt; _yearIndex; i++) {
+        for(uint256 i = 0; i < _yearIndex; i++) {
             _sum = _sum.add(_totalWeight / (2 ** (i + 1)));
         }
         return _sum;
@@ -286,7 +286,7 @@ contract MiningSupplier {
         uint256 _yearFactor = 2 ** _yearIndex;
         uint256 _defaultWeight = 10000; // mg
 
-        if(_currentWeight &gt; _supply) {
+        if(_currentWeight > _supply) {
             // (_supply / _currentWeight) * _defaultWeight / _yearFactor
             return _supply.mul(_defaultWeight).div(_currentWeight).div(_yearFactor);
         } else {
@@ -304,7 +304,7 @@ contract MiningSupplier {
             return true;
         }
         uint256 _waitingBlocks = _getWaitingBlocks(_secondsPerBlock);
-        return _currentBlockNumber &gt;= _blockNumberUpdated + _waitingBlocks;
+        return _currentBlockNumber >= _blockNumberUpdated + _waitingBlocks;
     }
 }
 
@@ -386,7 +386,7 @@ contract EOACallable {
     function isContract(address addr) internal view returns (bool) {
         uint size;
         assembly { size := extcodesize(addr) }
-        return size &gt; 0;
+        return size > 0;
     }
 
     modifier onlyEOA {
@@ -507,12 +507,12 @@ contract Sellable is Ownable {
     }
 
     function () external payable {
-        require(msg.value &gt;= MIN_WEI_AMOUNT);
+        require(msg.value >= MIN_WEI_AMOUNT);
         buyPickaxes(msg.sender);
     }
 
     function buyPickaxes(address _beneficiary) public payable {
-        require(msg.value &gt;= MIN_WEI_AMOUNT);
+        require(msg.value >= MIN_WEI_AMOUNT);
 
         uint256 _weiAmount = msg.value;
         uint256 _tokens = _weiAmount.mul(rate).div(1 ether);
@@ -537,7 +537,7 @@ contract Sellable is Ownable {
         emit ForwardFunds(msg.sender, value, donation);
 
         uint256 donationEth = 2014000000000000000; // 2.014 ether
-        if(address(this).balance &gt;= donationEth) {
+        if(address(this).balance >= donationEth) {
             donationWallet.transfer(donationEth);
             emit Donation(msg.sender, donationEth);
         }
@@ -688,8 +688,8 @@ contract CryptoCrystal is Sellable, EOACallable, CrystalWeightManager {
     // @param _pkxAmount uint256 the amount of tokens to be burned
     function mineCrystals(uint256 _pkxAmount) external onlyEOA {
         address _owner = msg.sender;
-        require(pickaxe.balanceOf(msg.sender) &gt;= _pkxAmount);
-        require(0 &lt; _pkxAmount &amp;&amp; _pkxAmount &lt;= 100);
+        require(pickaxe.balanceOf(msg.sender) >= _pkxAmount);
+        require(0 < _pkxAmount && _pkxAmount <= 100);
 
         uint256 _crystalAmount = _getRandom(5);
 
@@ -700,19 +700,19 @@ contract CryptoCrystal is Sellable, EOACallable, CrystalWeightManager {
 
         uint256[] memory _crystalWeightsCumsum = new uint256[](100);
         _crystalWeightsCumsum[0] = crystalWeights[0];
-        for(uint256 i = 1; i &lt; 100; i++) {
+        for(uint256 i = 1; i < 100; i++) {
             _crystalWeightsCumsum[i] = _crystalWeightsCumsum[i - 1].add(crystalWeights[i]);
         }
         uint256 _totalWeight = _crystalWeightsCumsum[_crystalWeightsCumsum.length - 1];
         uint256 _weightRandomSum = 0;
         uint256 _weightSum = 0;
 
-        for(i = 0; i &lt; _crystalAmount; i++) {
+        for(i = 0; i < _crystalAmount; i++) {
             _weights[i] = _getRandom(100);
             _weightRandomSum = _weightRandomSum.add(_weights[i]);
         }
 
-        for(i = 0; i &lt; _crystalAmount; i++) {
+        for(i = 0; i < _crystalAmount; i++) {
             // Kind is decided randomly according to remaining crystal weights.
             // That means crystals of large quantity are chosen with high probability.
             _kinds[i] = _getFirstIndex(_getRandom(_totalWeight), _crystalWeightsCumsum);
@@ -727,7 +727,7 @@ contract CryptoCrystal is Sellable, EOACallable, CrystalWeightManager {
             // Gene is decided randomly.
             _genes[i] = _generateGene();
 
-            require(_weights[i] &gt; 0);
+            require(_weights[i] > 0);
 
             _tokenIds[i] = crystal.mint(_owner, _genes[i], _kinds[i], _weights[i]);
 
@@ -758,13 +758,13 @@ contract CryptoCrystal is Sellable, EOACallable, CrystalWeightManager {
         uint256 _length = _tokenIds.length;
         address _owner = msg.sender;
 
-        require(2 &lt;= _length &amp;&amp; _length &lt;= 10);
+        require(2 <= _length && _length <= 10);
 
         uint256[] memory _kinds = new uint256[](_length);
         uint256 _weight;
         uint256 _totalWeight = 0;
 
-        for(uint256 i = 0; i &lt; _length; i++) {
+        for(uint256 i = 0; i < _length; i++) {
             require(crystal.ownerOf(_tokenIds[i]) == _owner);
             (_kinds[i], _weight) = crystal.getCrystalKindWeight(_tokenIds[i]);
             if (i != 0) {
@@ -798,7 +798,7 @@ contract CryptoCrystal is Sellable, EOACallable, CrystalWeightManager {
         CrystalWrapper memory _cw = getCrystalWrapper(msg.sender, _tokenId);
 
         require(crystal.ownerOf(_tokenId) == _cw.owner);
-        require(_kind &lt; 100);
+        require(_kind < 100);
 
         // escrow crystal to exchange contract
         crystal._transferFrom(_cw.owner, exchange, _tokenId);
@@ -850,7 +850,7 @@ contract CryptoCrystal is Sellable, EOACallable, CrystalWeightManager {
 
         require(_cwe.owner != _ew.owner);
         require(_cwe.kind == _ew.kind);
-        require(_cwe.weight &gt;= _ew.weight);
+        require(_cwe.weight >= _ew.weight);
 
         // transfer my crystal to owner of exchange
         crystal._transferFrom(_cwe.owner, _ew.owner, _cwe.tokenId);
@@ -867,8 +867,8 @@ contract CryptoCrystal is Sellable, EOACallable, CrystalWeightManager {
     // @param uint256 _min
     // @param uint256[] _sorted array is required to be sorted by ascending order
     function _getFirstIndex(uint256 _min, uint256[] _sorted) public pure returns(uint256) {
-        for(uint256 i = 0; i &lt; _sorted.length; i++) {
-            if(_min &lt; _sorted[i]) {
+        for(uint256 i = 0; i < _sorted.length; i++) {
+            if(_min < _sorted[i]) {
                 return i;
             }
         }

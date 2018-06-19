@@ -10,19 +10,19 @@ pragma solidity ^0.4.21;
 contract SafeMath {
 
 	function safeSub(uint a, uint b) pure internal returns(uint) {
-		assert(b &lt;= a);
+		assert(b <= a);
 		return a - b;
 	}
 	
 	function safeSub(int a, int b) pure internal returns(int) {
-		if(b &lt; 0) assert(a - b &gt; a);
-		else assert(a - b &lt;= a);
+		if(b < 0) assert(a - b > a);
+		else assert(a - b <= a);
 		return a - b;
 	}
 
 	function safeAdd(uint a, uint b) pure internal returns(uint) {
 		uint c = a + b;
-		assert(c &gt;= a &amp;&amp; c &gt;= b);
+		assert(c >= a && c >= b);
 		return c;
 	}
 
@@ -70,7 +70,7 @@ contract Mortal is Owned {
 	*/
   function closeContract(uint playerBalance) internal{
 		if(closeAt == 0) closeAt = now + 30 days;
-		if(closeAt &lt; now || playerBalance == 0){
+		if(closeAt < now || playerBalance == 0){
 			edg.transfer(owner, edg.balanceOf(address(this)));
 			selfdestruct(owner);
 		} 
@@ -95,16 +95,16 @@ contract Mortal is Owned {
 	* delays the time of closing.
 	**/
 	modifier keepAlive {
-		if(closeAt &gt; 0) closeAt = now + 30 days;
+		if(closeAt > 0) closeAt = now + 30 days;
 		_;
 	}
 }
 
 contract RequiringAuthorization is Mortal {
 	/** indicates if an address is authorized to act in the casino&#39;s name  */
-	mapping(address =&gt; bool) public authorized;
+	mapping(address => bool) public authorized;
 	/** tells if an address is allowed to receive funds from the bankroll **/
-	mapping(address =&gt; bool) public allowedReceiver;
+	mapping(address => bool) public allowedReceiver;
 
 	modifier onlyAuthorized {
 		require(authorized[msg.sender]);
@@ -170,7 +170,7 @@ contract ChargingGas is RequiringAuthorization, SafeMath {
 	/** the price per kgas and GWei in tokens (with decimals) */
 	uint public gasPrice;
 	/** the amount of gas used per transaction in kGas */
-	mapping(bytes4 =&gt; uint) public gasPerTx;
+	mapping(bytes4 => uint) public gasPerTx;
 	/** the number of tokens (5 decimals) payed by the users to cover the gas cost */
 	uint public gasPayback;
 	
@@ -190,7 +190,7 @@ contract ChargingGas is RequiringAuthorization, SafeMath {
 	 * */
 	function setGasUsage(bytes4[5] signatures, uint[5] gasNeeded) public onlyOwner {
 		require(signatures.length == gasNeeded.length);
-		for (uint8 i = 0; i &lt; signatures.length; i++)
+		for (uint8 i = 0; i < signatures.length; i++)
 			gasPerTx[signatures[i]] = gasNeeded[i];
 	}
 
@@ -199,7 +199,7 @@ contract ChargingGas is RequiringAuthorization, SafeMath {
 	 * @param price the new gas price (with decimals, max 0.1 EDG)
 	 **/
 	function setGasPrice(uint price) public onlyAuthorized {
-		require(price &lt; oneEDG/10);
+		require(price < oneEDG/10);
 		gasPrice = price;
 	}
 
@@ -217,11 +217,11 @@ contract CasinoBank is ChargingGas {
 	/** the total balance of all players with virtual decimals **/
 	uint public playerBalance;
 	/** the balance per player in edgeless tokens with virtual decimals */
-	mapping(address =&gt; uint) public balanceOf;
+	mapping(address => uint) public balanceOf;
 	/** in case the user wants/needs to call the withdraw function from his own wallet, he first needs to request a withdrawal */
-	mapping(address =&gt; uint) public withdrawAfter;
+	mapping(address => uint) public withdrawAfter;
 	/** a number to count withdrawal signatures to ensure each signature is different even if withdrawing the same amount to the same address */
-	mapping(address =&gt; uint) public withdrawCount;
+	mapping(address => uint) public withdrawCount;
 	/** the maximum amount of tokens the user is allowed to deposit (with decimals) */
 	uint public maxDeposit;
 	/** the maximum withdrawal of tokens the user is allowed to withdraw on one day (only enforced when the tx is not sent from an authorized wallet) **/
@@ -258,7 +258,7 @@ contract CasinoBank is ChargingGas {
 	 *				 chargeGas indicates if the gas cost is subtracted from the user&#39;s edgeless token balance
 	 **/
 	function deposit(address receiver, uint numTokens, bool chargeGas) public isAlive {
-		require(numTokens &gt; 0);
+		require(numTokens > 0);
 		uint value = safeMul(numTokens, oneEDG);
 		uint gasCost;
 		if (chargeGas) {
@@ -267,7 +267,7 @@ contract CasinoBank is ChargingGas {
 			gasPayback = safeAdd(gasPayback, gasCost);
 		}
 		uint newBalance = safeAdd(balanceOf[receiver], value);
-		require(newBalance &lt;= maxDeposit);
+		require(newBalance <= maxDeposit);
 		assert(edg.transferFrom(msg.sender, address(this), numTokens));
 		balanceOf[receiver] = newBalance;
 		playerBalance = safeAdd(playerBalance, value);
@@ -296,8 +296,8 @@ contract CasinoBank is ChargingGas {
 	 * @param amount the amount of tokens to withdraw
 	 **/
 	function withdraw(uint amount) public keepAlive {
-		require(amount &lt;= maxWithdrawal);
-		require(withdrawAfter[msg.sender] &gt; 0 &amp;&amp; now &gt; withdrawAfter[msg.sender]);
+		require(amount <= maxWithdrawal);
+		require(withdrawAfter[msg.sender] > 0 && now > withdrawAfter[msg.sender]);
 		withdrawAfter[msg.sender] = 0;
 		uint value = safeMul(amount, oneEDG);
 		balanceOf[msg.sender] = safeSub(balanceOf[msg.sender], value);
@@ -312,7 +312,7 @@ contract CasinoBank is ChargingGas {
 	 *				numTokens the number of tokens to withdraw (0 decimals)
 	 **/
 	function withdrawBankroll(address receiver, uint numTokens) public onlyAuthorized {
-		require(numTokens &lt;= bankroll());
+		require(numTokens <= bankroll());
 		require(allowedReceiver[receiver]);
 		assert(edg.transfer(receiver, numTokens));
 	}
@@ -322,7 +322,7 @@ contract CasinoBank is ChargingGas {
 	 **/
 	function withdrawGasPayback() public onlyAuthorized {
 		uint payback = gasPayback / oneEDG;
-		assert(payback &gt; 0);
+		assert(payback > 0);
 		gasPayback = safeSub(gasPayback, payback * oneEDG);
 		assert(edg.transfer(owner, payback));
 	}
@@ -357,7 +357,7 @@ contract CasinoBank is ChargingGas {
 	 * @param newWaitingTime the new waiting time in seconds
 	 * */
 	function setWaitingTime(uint newWaitingTime) public onlyAuthorized  {
-		require(newWaitingTime &lt;= 24 hours);
+		require(newWaitingTime <= 24 hours);
 		waitingTime = newWaitingTime;
 	}
 
@@ -390,7 +390,7 @@ contract CasinoBank is ChargingGas {
 		uint gasCost = 0;
 		if(chargeGas) gasCost = getGasCost();
 		uint value = safeSub(balanceOf[player], gasCost);
-		require(value &gt; oneEDG);
+		require(value > oneEDG);
 		//fractions of one EDG cannot be withdrawn 
 		value /= oneEDG;
 		playerBalance = safeSub(playerBalance, balanceOf[player]);
@@ -426,7 +426,7 @@ contract CasinoBank is ChargingGas {
 
 contract EdgelessCasino is CasinoBank{
 	/** the most recent known state of a state channel */
-	mapping(address =&gt; State) public lastState;
+	mapping(address => State) public lastState;
 	/** fired when the state is updated */
 	event StateUpdate(address player, uint128 count, int128 winBalance, int difference, uint gasCost);
   /** fired if one of the parties chooses to log the seeds and results */
@@ -465,13 +465,13 @@ contract EdgelessCasino is CasinoBank{
     require(winBalances.length == v.length);
     require(winBalances.length == r.length);
     require(winBalances.length == s.length);
-    require(winBalances.length &lt;= 50);
+    require(winBalances.length <= 50);
     address player;
     uint gasCost = 0;
     if(chargeGas) 
       gasCost = getGasCost();
     gasPayback = safeAdd(gasPayback, safeMul(gasCost, winBalances.length));
-    for(uint8 i = 0; i &lt; winBalances.length; i++){
+    for(uint8 i = 0; i < winBalances.length; i++){
       player = ecrecover(keccak256(winBalances[i], gameCounts[i]), v[i], r[i], s[i]);
       _updateState(player, winBalances[i], gameCounts[i], gasCost);
     }
@@ -508,7 +508,7 @@ contract EdgelessCasino is CasinoBank{
    * */
   function _updateState(address player, int128 winBalance,  uint128 gameCount, uint gasCost) internal {
     State storage last = lastState[player];
-  	require(gameCount &gt; last.count);
+  	require(gameCount > last.count);
   	int difference = updatePlayerBalance(player, winBalance, last.winBalance, gasCost);
   	lastState[player] = State(gameCount, winBalance);
   	emit StateUpdate(player, gameCount, winBalance, difference, gasCost);
@@ -521,7 +521,7 @@ contract EdgelessCasino is CasinoBank{
    *				v, r, s    the signature of the non-sending party
    * */
   function determinePlayer(int128 winBalance, uint128 gameCount, uint8 v, bytes32 r, bytes32 s) view internal returns(address){
-  	if (authorized[msg.sender])//casino is the sender -&gt; player is the signer
+  	if (authorized[msg.sender])//casino is the sender -> player is the signer
   		return ecrecover(keccak256(winBalance, gameCount), v, r, s);
   	else
   		return msg.sender;
@@ -539,14 +539,14 @@ contract EdgelessCasino is CasinoBank{
   	difference = safeSub(winBalance, lastWinBalance);
   	int outstanding = safeSub(difference, int(gasCost));
   	uint outs;
-  	if(outstanding &lt; 0){
+  	if(outstanding < 0){
   		outs = uint256(outstanding * (-1));
   		playerBalance = safeSub(playerBalance, outs);
   		balanceOf[player] = safeSub(balanceOf[player], outs);
   	}
   	else{
   		outs = uint256(outstanding);
-  		assert(bankroll() * oneEDG &gt; outs);
+  		assert(bankroll() * oneEDG > outs);
   	  playerBalance = safeAdd(playerBalance, outs);
   	  balanceOf[player] = safeAdd(balanceOf[player], outs);
   	}
@@ -581,7 +581,7 @@ contract EdgelessCasino is CasinoBank{
    * */
   function determinePlayer(bytes32[] serverSeeds, bytes32[] clientSeeds, int[] results, uint8 v, bytes32 r, bytes32 s) view internal returns(address){
   	address signer = ecrecover(keccak256(serverSeeds, clientSeeds, results), v, r, s);
-  	if (authorized[msg.sender])//casino is the sender -&gt; player is the signer
+  	if (authorized[msg.sender])//casino is the sender -> player is the signer
   		return signer;
   	else if (authorized[signer])
   		return msg.sender;

@@ -55,7 +55,7 @@ contract StandardToken is IERC20 {
     }
 
     function transfer(address _to, uint256 _value) external returns (bool success) {
-        require(_value > 0 &amp;&amp; balances[msg.sender] >= _value);
+        require(_value > 0 && balances[msg.sender] >= _value);
         balances[msg.sender] = safeMath.sub(balances[msg.sender], _value);
         balances[_to] = safeMath.add(balances[_to], _value);
         emit Transfer(msg.sender, _to, _value);
@@ -63,7 +63,7 @@ contract StandardToken is IERC20 {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) external returns (bool success) {
-        require(_value > 0 &amp;&amp; allowed[_from][msg.sender] >= _value &amp;&amp; balances[_from] >= _value);
+        require(_value > 0 && allowed[_from][msg.sender] >= _value && balances[_from] >= _value);
         balances[_from] = safeMath.sub(balances[_from], _value);
         balances[_to] = safeMath.add(balances[_to], _value);
         allowed[_from][msg.sender] = safeMath.sub(allowed[_from][msg.sender], _value);
@@ -107,8 +107,8 @@ contract OwnableToken is StandardToken {
     }
     
     function account(address _from, address _to, uint256 _value) onlyOwner public {
-        require(_from != address(0) &amp;&amp; _to != address(0));
-        require(_value > 0 &amp;&amp; balances[_from] >= _value);
+        require(_from != address(0) && _to != address(0));
+        require(_value > 0 && balances[_from] >= _value);
         balances[_from] = safeMath.sub(balances[_from], _value);
         balances[_to] = safeMath.add(balances[_to], _value);
         emit Transfer(_from, _to, _value);

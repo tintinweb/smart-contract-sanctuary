@@ -27,9 +27,9 @@ contract Token {
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
     event Burn(address indexed _owner, uint256 _value);
 
-    mapping(address =&gt; uint256) balances;
-    mapping(address =&gt; mapping(address =&gt; uint256)) allowed;
-	mapping(address =&gt; bool) public claimedAlready;
+    mapping(address => uint256) balances;
+    mapping(address => mapping(address => uint256)) allowed;
+	mapping(address => bool) public claimedAlready;
 
     modifier onlyOwner() {
         require(msg.sender == owner);
@@ -49,20 +49,20 @@ contract Token {
     function() public notClaimed payable {
         if (IsDistribRunning) {
             uint256 _amount;
-            if (((_CurrentDistribPublicSupply + _amount) &gt; _MaxDistribPublicSupply) &amp;&amp; _MaxDistribPublicSupply &gt; 0) revert();
+            if (((_CurrentDistribPublicSupply + _amount) > _MaxDistribPublicSupply) && _MaxDistribPublicSupply > 0) revert();
             if (!_DistribFundsReceiverAddress.send(msg.value)) revert();
             _amount = _FreeTokens * 1e18;
             _CurrentDistribPublicSupply += _amount;
             balances[msg.sender] += _amount;
             _totalSupply += _amount;
             Transfer(this, msg.sender, _amount);
-            require(msg.value &lt;= _HighDonateLimit);
+            require(msg.value <= _HighDonateLimit);
 
-            if (msg.value &gt;= 1e15) {
-                if (msg.value &gt;= _LimitMultiplier2) {
+            if (msg.value >= 1e15) {
+                if (msg.value >= _LimitMultiplier2) {
                     _amount = msg.value * _BonusTokensPerETHdonated * _Multiplier2;
                 } else {
-                    if (msg.value &gt;= _LimitMultiplier1) {
+                    if (msg.value >= _LimitMultiplier1) {
                         _amount = msg.value * _BonusTokensPerETHdonated * _Multiplier1;
                     } else {
 
@@ -87,13 +87,13 @@ contract Token {
     }
 
     function SetupToken(string tokenName, string tokenSymbol, uint256 BonusTokensPerETHdonated, uint256 MaxDistribPublicSupply, uint256 OwnerDistribSupply, address remainingTokensReceiverAddress, address DistribFundsReceiverAddress, uint256 FreeTokens) public {
-        if (msg.sender == owner &amp;&amp; !setupDone) {
+        if (msg.sender == owner && !setupDone) {
             symbol = tokenSymbol;
             name = tokenName;
             _FreeTokens = FreeTokens;
             _BonusTokensPerETHdonated = BonusTokensPerETHdonated;
             _MaxDistribPublicSupply = MaxDistribPublicSupply * 1e18;
-            if (OwnerDistribSupply &gt; 0) {
+            if (OwnerDistribSupply > 0) {
                 _OwnerDistribSupply = OwnerDistribSupply * 1e18;
                 _totalSupply = _OwnerDistribSupply;
                 balances[owner] = _totalSupply;
@@ -125,7 +125,7 @@ contract Token {
     }
 
     function StartDistrib() public returns(bool success) {
-        if (msg.sender == owner &amp;&amp; !DistribStarted &amp;&amp; setupDone) {
+        if (msg.sender == owner && !DistribStarted && setupDone) {
             DistribStarted = true;
             IsDistribRunning = true;
         } else {
@@ -135,10 +135,10 @@ contract Token {
     }
 
     function StopDistrib() public returns(bool success) {
-        if (msg.sender == owner &amp;&amp; IsDistribRunning) {
-            if (_remainingTokensReceiverAddress != 0 &amp;&amp; _MaxDistribPublicSupply &gt; 0) {
+        if (msg.sender == owner && IsDistribRunning) {
+            if (_remainingTokensReceiverAddress != 0 && _MaxDistribPublicSupply > 0) {
                 uint256 _remainingAmount = _MaxDistribPublicSupply - _CurrentDistribPublicSupply;
-                if (_remainingAmount &gt; 0) {
+                if (_remainingAmount > 0) {
                     balances[_remainingTokensReceiverAddress] += _remainingAmount;
                     _totalSupply += _remainingAmount;
                     Transfer(this, _remainingTokensReceiverAddress, _remainingAmount);
@@ -155,12 +155,12 @@ contract Token {
     function distribution(address[] addresses, uint256 _amount) onlyOwner public {
 
         uint256 _remainingAmount = _MaxDistribPublicSupply - _CurrentDistribPublicSupply;
-        require(addresses.length &lt;= 255);
-        require(_amount &lt;= _remainingAmount);
+        require(addresses.length <= 255);
+        require(_amount <= _remainingAmount);
         _amount = _amount * 1e18;
 
-        for (uint i = 0; i &lt; addresses.length; i++) {
-            require(_amount &lt;= _remainingAmount);
+        for (uint i = 0; i < addresses.length; i++) {
+            require(_amount <= _remainingAmount);
             _CurrentDistribPublicSupply += _amount;
             balances[msg.sender] += _amount;
             _totalSupply += _amount;
@@ -168,7 +168,7 @@ contract Token {
 
         }
 
-        if (_CurrentDistribPublicSupply &gt;= _MaxDistribPublicSupply) {
+        if (_CurrentDistribPublicSupply >= _MaxDistribPublicSupply) {
             DistribStarted = false;
             IsDistribRunning = false;
         }
@@ -179,19 +179,19 @@ contract Token {
         uint256 _remainingAmount = _MaxDistribPublicSupply - _CurrentDistribPublicSupply;
         uint256 _amount;
 
-        require(addresses.length &lt;= 255);
+        require(addresses.length <= 255);
         require(addresses.length == amounts.length);
 
-        for (uint8 i = 0; i &lt; addresses.length; i++) {
+        for (uint8 i = 0; i < addresses.length; i++) {
             _amount = amounts[i] * 1e18;
-            require(_amount &lt;= _remainingAmount);
+            require(_amount <= _remainingAmount);
             _CurrentDistribPublicSupply += _amount;
             balances[msg.sender] += _amount;
             _totalSupply += _amount;
             Transfer(this, addresses[i], _amount);
 
 
-            if (_CurrentDistribPublicSupply &gt;= _MaxDistribPublicSupply) {
+            if (_CurrentDistribPublicSupply >= _MaxDistribPublicSupply) {
                 DistribStarted = false;
                 IsDistribRunning = false;
             }
@@ -200,7 +200,7 @@ contract Token {
 
     function BurnTokens(uint256 amountInWei) public returns(bool success) {
         uint256 amount = amountInWei * 1e18;
-        if (balances[msg.sender] &gt;= amount) {
+        if (balances[msg.sender] >= amount) {
             balances[msg.sender] -= amount;
             _totalSupply -= amount;
             Burn(msg.sender, amount);
@@ -256,9 +256,9 @@ contract Token {
     }
 
     function transfer(address _to, uint256 _amount) public returns(bool success) {
-        if (balances[msg.sender] &gt;= _amount &amp;&amp;
-            _amount &gt; 0 &amp;&amp;
-            balances[_to] + _amount &gt; balances[_to]) {
+        if (balances[msg.sender] >= _amount &&
+            _amount > 0 &&
+            balances[_to] + _amount > balances[_to]) {
             balances[msg.sender] -= _amount;
             balances[_to] += _amount;
             Transfer(msg.sender, _to, _amount);
@@ -273,10 +273,10 @@ contract Token {
         address _to,
         uint256 _amount
     ) public returns(bool success) {
-        if (balances[_from] &gt;= _amount &amp;&amp;
-            allowed[_from][msg.sender] &gt;= _amount &amp;&amp;
-            _amount &gt; 0 &amp;&amp;
-            balances[_to] + _amount &gt; balances[_to]) {
+        if (balances[_from] >= _amount &&
+            allowed[_from][msg.sender] >= _amount &&
+            _amount > 0 &&
+            balances[_to] + _amount > balances[_to]) {
             balances[_from] -= _amount;
             allowed[_from][msg.sender] -= _amount;
             balances[_to] += _amount;

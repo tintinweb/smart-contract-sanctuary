@@ -236,7 +236,7 @@ contract PublicResolver {
      */
     function setABI(bytes32 node, uint256 contentType, bytes data) public only_owner(node) {
         // Content types must be powers of 2
-        require(((contentType - 1) &amp; contentType) == 0);
+        require(((contentType - 1) & contentType) == 0);
 
         records[node].abis[contentType] = data;
         emit ABIChanged(node, contentType);
@@ -296,7 +296,7 @@ contract PublicResolver {
     function ABI(bytes32 node, uint256 contentTypes) public view returns (uint256 contentType, bytes data) {
         Record storage record = records[node];
         for (contentType = 1; contentType <= contentTypes; contentType <<= 1) {
-            if ((contentType &amp; contentTypes) != 0 &amp;&amp; record.abis[contentType].length > 0) {
+            if ((contentType & contentTypes) != 0 && record.abis[contentType].length > 0) {
                 data = record.abis[contentType];
                 return;
             }
@@ -381,7 +381,7 @@ contract SvEnsRegistrar {
     }
 
     function remAdmin(address oldAdmin) req(admins[msg.sender]) external {
-        require(oldAdmin != msg.sender &amp;&amp; oldAdmin != owner);
+        require(oldAdmin != msg.sender && oldAdmin != owner);
         admins[oldAdmin] = false;
     }
 
@@ -460,7 +460,7 @@ contract SvEnsEverythingPx {
     }
 
     function remAdmin(address a) only_admin() external {
-        require(a != owner &amp;&amp; a != msg.sender);
+        require(a != owner && a != msg.sender);
         admins[a] = false;
     }
 

@@ -222,7 +222,7 @@ contract RabbitBase is ERC721, OwnerBase, FighterCamp {
         internal
         returns (uint)
     {
-        require(_star >= 1 &amp;&amp; _star <= 5);
+        require(_star >= 1 && _star <= 5);
 		
 		RabbitData memory _tmpRbt = RabbitData({
             genes: uint64(_genes),

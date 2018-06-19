@@ -70,7 +70,7 @@ contract ETHERCFeeModifiers is Ownable {
     }
 
     function setAccountFeeModifiers(address _user, uint256 _feeDiscount, uint256 _feeRebate) public onlyOwner {
-        require(_feeDiscount <= 100 &amp;&amp; _feeRebate <= 100);
+        require(_feeDiscount <= 100 && _feeRebate <= 100);
         discounts[_user] = _feeDiscount;
         rebates[_user] = _feeRebate;
     }

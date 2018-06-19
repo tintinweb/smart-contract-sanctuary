@@ -25,30 +25,30 @@ library SafeMath {
   }
 
   function sub(uint a, uint b) internal returns (uint) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint a, uint b) internal returns (uint) {
     uint c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 
   function max64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
   function max256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
   function assert(bool assertion) internal {
@@ -61,15 +61,15 @@ library SafeMath {
 contract Token is ERC20 {
 
     using SafeMath for uint;
-    mapping (address =&gt; uint256) balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) allowed;
     
     function balanceOf(address _owner) constant returns (uint256 balance) {
         return balances[_owner];
     }
     
     function transfer(address _to, uint256 _value) returns (bool success) {
-        if (balances[msg.sender] &gt;= _value &amp;&amp; _value &gt; 0) {
+        if (balances[msg.sender] >= _value && _value > 0) {
             balances[msg.sender] = balances[msg.sender].sub(_value);
             balances[_to] = balances[_to].add(_value);
             Transfer(msg.sender, _to, _value);
@@ -78,7 +78,7 @@ contract Token is ERC20 {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
-        if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; _value &gt; 0) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0) {
             var _allowance = allowed[_from][msg.sender];
             balances[_to] = balances[_to].add(_value);
             balances[_from] = balances[_from].sub(_value);
@@ -89,7 +89,7 @@ contract Token is ERC20 {
     }
 
     function approve(address _spender, uint256 _value) returns (bool success) {
-        if(_value &gt;= 0) {
+        if(_value >= 0) {
           allowed[msg.sender][_spender] = _value;
           Approval(msg.sender, _spender, _value);
           return true;

@@ -35,7 +35,7 @@ contract SnailToken is Token {
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
 
-        require(balances[msg.sender] >= _value &amp;&amp; balances[_to] + _value > balances[_to]);
+        require(balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]);
         require(_to != 0x0);
         balances[msg.sender] -= _value;
         balances[_to] += _value;
@@ -46,7 +46,7 @@ contract SnailToken is Token {
 
     function transferFrom(address _from, address _to, uint256 _value) public returns 
     (bool success) {
-        require(balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value);
+        require(balances[_from] >= _value && allowed[_from][msg.sender] >= _value);
         balances[_to] += _value;
         balances[_from] -= _value; 
         allowed[_from][msg.sender] -= _value;

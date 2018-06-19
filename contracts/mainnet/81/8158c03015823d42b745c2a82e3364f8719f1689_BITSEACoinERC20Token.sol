@@ -7,7 +7,7 @@ contract BITSEACoinERC20Token {
   uint public decimals;
   uint256 public totalSupply;
   event Transfer(address indexed from, address indexed to, uint256 value);
-  mapping (address =&gt; uint256) public balanceOf;
+  mapping (address => uint256) public balanceOf;
   
   function BITSEACoinERC20Token (uint256 initialSupply, string tokenName, string tokenSymbol, uint decimalUnits) public {
     owner = msg.sender;
@@ -19,7 +19,7 @@ contract BITSEACoinERC20Token {
   }
 
   function transfer(address _to, uint256 _value) public {
-    require(balanceOf[msg.sender] &gt;= _value &amp;&amp; balanceOf[_to] + _value &gt;= balanceOf[_to]);
+    require(balanceOf[msg.sender] >= _value && balanceOf[_to] + _value >= balanceOf[_to]);
     balanceOf[msg.sender] -= _value;
     balanceOf[_to] += _value;
     emit Transfer(msg.sender, _to, _value);

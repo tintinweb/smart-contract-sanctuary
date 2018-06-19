@@ -25,7 +25,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -35,7 +35,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -44,7 +44,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -86,7 +86,7 @@ contract Crowdsale {
    * @param _token Address of the token being sold
    */
   function Crowdsale(uint256 _rate, address _wallet, ERC20 _token) public {
-    require(_rate &gt; 0);
+    require(_rate > 0);
     require(_wallet != address(0));
     require(_token != address(0));
 
@@ -212,7 +212,7 @@ contract CappedCrowdsale is Crowdsale {
    * @param _cap Max amount of wei to be contributed
    */
   function CappedCrowdsale(uint256 _cap) public {
-    require(_cap &gt; 0);
+    require(_cap > 0);
     cap = _cap;
   }
 
@@ -221,7 +221,7 @@ contract CappedCrowdsale is Crowdsale {
    * @return Whether the cap was reached
    */
   function capReached() public view returns (bool) {
-    return weiRaised &gt;= cap;
+    return weiRaised >= cap;
   }
 
   /**
@@ -231,7 +231,7 @@ contract CappedCrowdsale is Crowdsale {
    */
   function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) internal {
     super._preValidatePurchase(_beneficiary, _weiAmount);
-    require(weiRaised.add(_weiAmount) &lt;= cap);
+    require(weiRaised.add(_weiAmount) <= cap);
   }
 
 }
@@ -259,7 +259,7 @@ contract TimedCrowdsale is Crowdsale {
    */
   modifier onlyWhileOpen {
     // solium-disable-next-line security/no-block-members
-    require(block.timestamp &gt;= openingTime &amp;&amp; block.timestamp &lt;= closingTime);
+    require(block.timestamp >= openingTime && block.timestamp <= closingTime);
     _;
   }
 
@@ -270,8 +270,8 @@ contract TimedCrowdsale is Crowdsale {
    */
   function TimedCrowdsale(uint256 _openingTime, uint256 _closingTime) public {
     // solium-disable-next-line security/no-block-members
-    require(_openingTime &gt;= block.timestamp);
-    require(_closingTime &gt;= _openingTime);
+    require(_openingTime >= block.timestamp);
+    require(_closingTime >= _openingTime);
 
     openingTime = _openingTime;
     closingTime = _closingTime;
@@ -283,7 +283,7 @@ contract TimedCrowdsale is Crowdsale {
    */
   function hasClosed() public view returns (bool) {
     // solium-disable-next-line security/no-block-members
-    return block.timestamp &gt; closingTime;
+    return block.timestamp > closingTime;
   }
 
   /**
@@ -300,7 +300,7 @@ contract TimedCrowdsale is Crowdsale {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -318,7 +318,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -339,7 +339,7 @@ contract BasicToken is ERC20Basic {
 
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -350,8 +350,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -414,7 +414,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -465,7 +465,7 @@ contract RefundVault is Ownable {
 
   enum State { Active, Refunding, Closed }
 
-  mapping (address =&gt; uint256) public deposited;
+  mapping (address => uint256) public deposited;
   address public wallet;
   State public state;
 
@@ -560,7 +560,7 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
    * @param _goal Funding goal
    */
   function RefundableCrowdsale(uint256 _goal) public {
-    require(_goal &gt; 0);
+    require(_goal > 0);
     vault = new RefundVault(wallet);
     goal = _goal;
   }
@@ -580,7 +580,7 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
    * @return Whether funding goal was reached
    */
   function goalReached() public view returns (bool) {
-    return weiRaised &gt;= goal;
+    return weiRaised >= goal;
   }
 
   /**
@@ -625,9 +625,9 @@ contract BaseMonoretoCrowdsale is CappedCrowdsale, RefundableCrowdsale, MintedCr
 
     function BaseMonoretoCrowdsale(uint256 _tokenTarget, uint256 _usdEth, uint256 _usdMnr) public
     {
-        require(_tokenTarget &gt; 0);
-        require(_usdEth &gt; 0);
-        require(_usdMnr &gt; 0);
+        require(_tokenTarget > 0);
+        require(_usdEth > 0);
+        require(_usdMnr > 0);
 
         tokenTarget = _tokenTarget;
         usdEth = _usdEth;
@@ -656,8 +656,8 @@ contract BaseMonoretoCrowdsale is CappedCrowdsale, RefundableCrowdsale, MintedCr
     function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) internal {
         uint256 newTokenAmount = tokensPurchased.add(_getTokenAmount(_weiAmount));
 
-        require(newTokenAmount &lt;= tokenTarget);
-        require(_weiAmount &gt;= ETHER_THRESHOLD);
+        require(newTokenAmount <= tokenTarget);
+        require(_weiAmount >= ETHER_THRESHOLD);
         super._preValidatePurchase(_beneficiary, _weiAmount);
     }
 
@@ -697,7 +697,7 @@ contract MonoretoPreIco is BaseMonoretoCrowdsale {
         TimedCrowdsale(_openTime, _closeTime)
         Crowdsale(_centWeiRate.mul(CENT_DECIMALS).div(_centMnrRate), _ownerWallet, _token)
     {
-        require(_goal &lt;= _cap);
+        require(_goal <= _cap);
     }
 
     /**
@@ -753,7 +753,7 @@ contract CappedToken is MintableToken {
   uint256 public cap;
 
   function CappedToken(uint256 _cap) public {
-    require(_cap &gt; 0);
+    require(_cap > 0);
     cap = _cap;
   }
 
@@ -764,7 +764,7 @@ contract CappedToken is MintableToken {
    * @return A boolean that indicates if the operation was successful.
    */
   function mint(address _to, uint256 _amount) onlyOwner canMint public returns (bool) {
-    require(totalSupply_.add(_amount) &lt;= cap);
+    require(totalSupply_.add(_amount) <= cap);
 
     return super.mint(_to, _amount);
   }

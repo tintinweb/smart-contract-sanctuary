@@ -8,7 +8,7 @@ in this smart contract and withdraw them at any later point in time
 */
 
 contract keepMyEther {
-    mapping(address =&gt; uint256) public balances;
+    mapping(address => uint256) public balances;
     
     function () payable public {
         balances[msg.sender] += msg.value;

@@ -106,7 +106,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -116,7 +116,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -125,7 +125,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -161,7 +161,7 @@ contract ERC20 is ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -179,7 +179,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -212,8 +212,8 @@ contract BurnableToken is BasicToken {
    * @param _value The amount of token to be burned.
    */
   function burn(uint256 _value) public {
-    require(_value &lt;= balances[msg.sender]);
-    // no need to require value &lt;= totalSupply, since that would imply the
+    require(_value <= balances[msg.sender]);
+    // no need to require value <= totalSupply, since that would imply the
     // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
     address burner = msg.sender;
@@ -234,7 +234,7 @@ contract BurnableToken is BasicToken {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -245,8 +245,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -309,7 +309,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -340,7 +340,7 @@ contract AMOCoin is StandardToken, BurnableToken, Ownable {
     bool public transferEnabled = false;
 
     // Accounts to be locked for certain period
-    mapping(address =&gt; uint256) private lockedAccounts;
+    mapping(address => uint256) private lockedAccounts;
 
     /*
      *
@@ -380,15 +380,15 @@ contract AMOCoin is StandardToken, BurnableToken, Ownable {
      */
     modifier onlyValidDestination(address to) {
         require(to != address(0x0)
-            &amp;&amp; to != address(this)
-            &amp;&amp; to != owner
-            &amp;&amp; to != adminAddr
-            &amp;&amp; to != tokenSaleAddr);
+            && to != address(this)
+            && to != owner
+            && to != adminAddr
+            && to != tokenSaleAddr);
         _;
     }
 
     modifier onlyAllowedAmount(address from, uint256 amount) {
-        require(balances[from].sub(amount) &gt;= lockedAccounts[from]);
+        require(balances[from].sub(amount) >= lockedAccounts[from]);
         _;
     }
     /*
@@ -420,7 +420,7 @@ contract AMOCoin is StandardToken, BurnableToken, Ownable {
         require(!transferEnabled);
 
         uint256 amount = (amountForSale == 0) ? TOKEN_SALE_ALLOWANCE : amountForSale;
-        require(amount &lt;= TOKEN_SALE_ALLOWANCE);
+        require(amount <= TOKEN_SALE_ALLOWANCE);
 
         approve(_tokenSaleAddr, amount);
         tokenSaleAddr = _tokenSaleAddr;
@@ -495,7 +495,7 @@ contract AMOCoin is StandardToken, BurnableToken, Ownable {
         onlyOwner
         onlyValidDestination(addr)
     {
-        require(amount &gt; 0);
+        require(amount > 0);
         lockedAccounts[addr] = amount;
     }
 
@@ -537,9 +537,9 @@ contract AMOCoinSale is Pausable {
     // Base minimum contribution
     uint256 public constant BASE_MIN_CONTRIBUTION = 0.1 * 1 ether;
     // Whitelisted addresses
-    mapping(address =&gt; bool) public whitelist;
+    mapping(address => bool) public whitelist;
     // Whitelisted users&#39; contributions per round
-    mapping(address =&gt; mapping(uint8 =&gt; uint256)) public contPerRound;
+    mapping(address => mapping(uint8 => uint256)) public contPerRound;
 
     // For each round, there are three stages.
     enum Stages {
@@ -570,7 +570,7 @@ contract AMOCoinSale is Pausable {
 
     // SaleRounds(key) : RoundInfo(value) map
     // Since solidity does not support enum as key of map, converted enum to uint8
-    mapping(uint8 =&gt; RoundInfo) public roundInfos;
+    mapping(uint8 => RoundInfo) public roundInfos;
 
     struct AllocationInfo {
         bool isAllowed;
@@ -578,7 +578,7 @@ contract AMOCoinSale is Pausable {
     }
 
     // List of users who will be allocated tokens and their allowed amount
-    mapping(address =&gt; AllocationInfo) private allocationList;
+    mapping(address => AllocationInfo) private allocationList;
 
     /*
      * Event for sale start logging
@@ -639,22 +639,22 @@ contract AMOCoinSale is Pausable {
      * 7. Total funds raised in current round must be smaller than hard cap for current round
      */
     modifier onlyValidPurchase() {
-        require(round &lt;= SaleRounds.CrowdSale);
-        require(now &gt;= startTime &amp;&amp; now &lt;= endTime);
+        require(round <= SaleRounds.CrowdSale);
+        require(now >= startTime && now <= endTime);
 
         uint256 contributionInWei = msg.value;
         address purchaser = msg.sender;
 
         require(whitelist[purchaser]);
         require(purchaser != address(0));
-        require(contributionInWei &gt;= roundInfos[uint8(round)].minContribution);
+        require(contributionInWei >= roundInfos[uint8(round)].minContribution);
         require(
             contPerRound[purchaser][uint8(round)].add(contributionInWei)
-            &lt;= roundInfos[uint8(round)].maxContribution
+            <= roundInfos[uint8(round)].maxContribution
         );
         require(
             roundInfos[uint8(round)].weiRaised.add(contributionInWei)
-            &lt;= roundInfos[uint8(round)].hardCap
+            <= roundInfos[uint8(round)].hardCap
         );
         _;
     }
@@ -709,7 +709,7 @@ contract AMOCoinSale is Pausable {
      * @param users: Addresses of users who passed KYC
      */
     function addManyToWhitelist(address[] users) external onlyOwner {
-        for (uint32 i = 0; i &lt; users.length; i++) {
+        for (uint32 i = 0; i < users.length; i++) {
             addToWhitelist(users[i]);
         }
     }
@@ -729,7 +729,7 @@ contract AMOCoinSale is Pausable {
      * @param users: Addresses of users who should not belong to whitelist
      */
     function removeManyFromWhitelist(address[] users) external onlyOwner {
-        for (uint32 i = 0; i &lt; users.length; i++) {
+        for (uint32 i = 0; i < users.length; i++) {
             removeFromWhitelist(users[i]);
         }
     }
@@ -758,7 +758,7 @@ contract AMOCoinSale is Pausable {
         onlyOwner
         atStage(Stages.SetUp)
     {
-        require(round &lt;= _round);
+        require(round <= _round);
         roundInfos[uint8(_round)].minContribution =
             (_minContribution == 0) ? BASE_MIN_CONTRIBUTION : _minContribution;
     }
@@ -778,7 +778,7 @@ contract AMOCoinSale is Pausable {
         onlyOwner
         atStage(Stages.SetUp)
     {
-        require(round &lt;= _round);
+        require(round <= _round);
         roundInfos[uint8(_round)].maxContribution =
             (_maxContribution == 0) ? UINT256_MAX : _maxContribution;
     }
@@ -798,7 +798,7 @@ contract AMOCoinSale is Pausable {
         onlyOwner
         atStage(Stages.SetUp)
     {
-        require(round &lt;= _round);
+        require(round <= _round);
         roundInfos[uint8(_round)].hardCap =
             (_hardCap == 0) ? BASE_HARD_CAP_PER_ROUND : _hardCap;
     }
@@ -817,7 +817,7 @@ contract AMOCoinSale is Pausable {
         onlyOwner
         atStage(Stages.SetUp)
     {
-        require(round &lt;= _round);
+        require(round <= _round);
         roundInfos[uint8(_round)].rate =
             (_rate == 0) ? BASE_AMO_TO_ETH_RATE : _rate;
     }
@@ -837,7 +837,7 @@ contract AMOCoinSale is Pausable {
         onlyOwner
         atStage(Stages.Ended)
     {
-        require(round &lt;= _round);
+        require(round <= _round);
         stage = Stages.SetUp;
         round = _round;
         setMinContributionForRound(_round, _minContribution);
@@ -854,8 +854,8 @@ contract AMOCoinSale is Pausable {
         onlyOwner
         atStage(Stages.SetUp)
     {
-        require(roundInfos[uint8(round)].minContribution &gt; 0
-            &amp;&amp; roundInfos[uint8(round)].hardCap &gt; 0);
+        require(roundInfos[uint8(round)].minContribution > 0
+            && roundInfos[uint8(round)].hardCap > 0);
         stage = Stages.Started;
         startTime = now;
         endTime = startTime.add(durationInSeconds);
@@ -930,7 +930,7 @@ contract AMOCoinSale is Pausable {
     {
         require(users.length == amounts.length);
 
-        for (uint32 i = 0; i &lt; users.length; i++) {
+        for (uint32 i = 0; i < users.length; i++) {
             addToAllocationList(users[i], amounts[i]);
         }
     }
@@ -958,7 +958,7 @@ contract AMOCoinSale is Pausable {
         onlyOwner
         atRound(SaleRounds.EarlyInvestment)
     {
-        for (uint32 i = 0; i &lt; users.length; i++) {
+        for (uint32 i = 0; i < users.length; i++) {
             removeFromAllocationList(users[i]);
         }
     }
@@ -978,7 +978,7 @@ contract AMOCoinSale is Pausable {
         returns (bool)
     {
         require(allocationList[to].isAllowed
-            &amp;&amp; tokenAmount &lt;= allocationList[to].allowedAmount);
+            && tokenAmount <= allocationList[to].allowedAmount);
 
         if (!token.transferFrom(token.owner(), to, tokenAmount)) {
             revert();
@@ -1001,7 +1001,7 @@ contract AMOCoinSale is Pausable {
     {
         require(toList.length == tokenAmountList.length);
 
-        for (uint32 i = 0; i &lt; toList.length; i++) {
+        for (uint32 i = 0; i < toList.length; i++) {
             allocateTokens(toList[i], tokenAmountList[i]);
         }
         return true;

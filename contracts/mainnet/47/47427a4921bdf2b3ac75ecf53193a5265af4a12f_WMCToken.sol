@@ -176,7 +176,7 @@ contract WMCToken is owned, TokenERC20 {
         Transfer(_from, _to, _value);
     }
 
-    /// @notice `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens
+    /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
     function freezeAccount(address target, bool freeze) onlyOwner public {
@@ -187,8 +187,8 @@ contract WMCToken is owned, TokenERC20 {
     function batchTransfer(address[] _receivers, uint256 _value) public {
     uint cnt = _receivers.length;
     uint256 amount = uint256(cnt) * _value;
-    require(cnt > 0 &amp;&amp; cnt <= 10);
-    require(_value > 0 &amp;&amp; balanceOf[msg.sender] >= amount);
+    require(cnt > 0 && cnt <= 10);
+    require(_value > 0 && balanceOf[msg.sender] >= amount);
     require(!frozenAccount[msg.sender]);                     
 
     balanceOf[msg.sender] -= amount;

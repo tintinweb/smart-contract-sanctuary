@@ -83,7 +83,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -93,7 +93,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -102,7 +102,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -170,7 +170,7 @@ contract Crowdsale {
    * @param _token Address of the token being sold
    */
   function Crowdsale(uint256 _rate, address _wallet, ERC20 _token) public {
-    require(_rate &gt; 0);
+    require(_rate > 0);
     require(_wallet != address(0));
     require(_token != address(0));
 
@@ -302,7 +302,7 @@ contract CappedCrowdsale is Crowdsale {
    * @param _cap Max amount of wei to be contributed
    */
   function CappedCrowdsale(uint256 _cap) public {
-    require(_cap &gt; 0);
+    require(_cap > 0);
     cap = _cap;
   }
 
@@ -311,7 +311,7 @@ contract CappedCrowdsale is Crowdsale {
    * @return Whether the cap was reached
    */
   function capReached() public view returns (bool) {
-    return weiRaised &gt;= cap;
+    return weiRaised >= cap;
   }
 
   /**
@@ -321,7 +321,7 @@ contract CappedCrowdsale is Crowdsale {
    */
   function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) internal {
     super._preValidatePurchase(_beneficiary, _weiAmount);
-    require(weiRaised.add(_weiAmount) &lt;= cap);
+    require(weiRaised.add(_weiAmount) <= cap);
   }
 
 }
@@ -347,7 +347,7 @@ contract TimedCrowdsale is Crowdsale {
    */
   modifier onlyWhileOpen {
     // solium-disable-next-line security/no-block-members
-    require(block.timestamp &gt;= openingTime &amp;&amp; block.timestamp &lt;= closingTime);
+    require(block.timestamp >= openingTime && block.timestamp <= closingTime);
     _;
   }
 
@@ -358,8 +358,8 @@ contract TimedCrowdsale is Crowdsale {
    */
   function TimedCrowdsale(uint256 _openingTime, uint256 _closingTime) public {
     // solium-disable-next-line security/no-block-members
-    require(_openingTime &gt;= block.timestamp);
-    require(_closingTime &gt;= _openingTime);
+    require(_openingTime >= block.timestamp);
+    require(_closingTime >= _openingTime);
 
     openingTime = _openingTime;
     closingTime = _closingTime;
@@ -371,7 +371,7 @@ contract TimedCrowdsale is Crowdsale {
    */
   function hasClosed() public view returns (bool) {
     // solium-disable-next-line security/no-block-members
-    return block.timestamp &gt; closingTime;
+    return block.timestamp > closingTime;
   }
 
   /**
@@ -440,7 +440,7 @@ contract FinalizableCrowdsale is TimedCrowdsale, Ownable {
  * @dev This simplifies the implementation of &quot;user permissions&quot;.
  */
 contract Whitelist is Ownable {
-  mapping(address =&gt; bool) public whitelist;
+  mapping(address => bool) public whitelist;
 
   event WhitelistedAddressAdded(address addr);
   event WhitelistedAddressRemoved(address addr);
@@ -473,7 +473,7 @@ contract Whitelist is Ownable {
    * false if all addresses were already in the whitelist
    */
   function addAddressesToWhitelist(address[] addrs) onlyOwner public returns(bool success) {
-    for (uint256 i = 0; i &lt; addrs.length; i++) {
+    for (uint256 i = 0; i < addrs.length; i++) {
       if (addAddressToWhitelist(addrs[i])) {
         success = true;
       }
@@ -501,7 +501,7 @@ contract Whitelist is Ownable {
    * false if all addresses weren&#39;t in the whitelist in the first place
    */
   function removeAddressesFromWhitelist(address[] addrs) onlyOwner public returns(bool success) {
-    for (uint256 i = 0; i &lt; addrs.length; i++) {
+    for (uint256 i = 0; i < addrs.length; i++) {
       if (removeAddressFromWhitelist(addrs[i])) {
         success = true;
       }
@@ -577,20 +577,20 @@ contract TokenSale is Ownable, CappedCrowdsale, FinalizableCrowdsale, Whitelist,
   CappedCrowdsale(_hardCap) TimedCrowdsale(_openingTime, _endTime) {
     require(_token != address(0));
     require(_reserveWallet !=address(0));
-    require(_maxContribution &gt; 0);
-    require(_minContribution &gt; 0);
+    require(_maxContribution > 0);
+    require(_minContribution > 0);
     reserveWallet = _reserveWallet;
     minContribution = _minContribution;
     maxContribution = _maxContribution;
   }
 
   function initRates(uint[] _rates, uint[] _times) external onlyOwner {
-    require(now &lt; openingTime);
+    require(now < openingTime);
     require(_rates.length == _times.length);
-    require(_rates.length &gt; 0);
+    require(_rates.length > 0);
     noOfWaves = _rates.length;
 
-    for(uint8 i=0;i&lt;_rates.length;i++) {
+    for(uint8 i=0;i<_rates.length;i++) {
       rates[i] = _rates[i];
       times[i] = _times[i];
     }
@@ -598,8 +598,8 @@ contract TokenSale is Ownable, CappedCrowdsale, FinalizableCrowdsale, Whitelist,
   }
 
   function getCurrentRate() public view returns (uint256) {
-    for(uint i=0;i&lt;noOfWaves;i++) {
-      if(now &lt;= times[i]) {
+    for(uint i=0;i<noOfWaves;i++) {
+      if(now <= times[i]) {
         return rates[i];
       }
     }
@@ -621,12 +621,12 @@ contract TokenSale is Ownable, CappedCrowdsale, FinalizableCrowdsale, Whitelist,
   }
 
   function setMinContribution(uint _min) onlyOwner public {
-    require(_min &gt; 0);
+    require(_min > 0);
     minContribution = _min;
   }
 
   function setMaxContribution(uint _max) onlyOwner public {
-    require(_max &gt; 0);
+    require(_max > 0);
     maxContribution = _max;
   }
 
@@ -642,13 +642,13 @@ contract TokenSale is Ownable, CappedCrowdsale, FinalizableCrowdsale, Whitelist,
   }
 
   function withdrawFunds(uint value) onlyWhitelisted external {
-    require(this.balance &gt;= value);
+    require(this.balance >= value);
     msg.sender.transfer(value);
   }
 
   function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) whenNotPaused internal {
-    require(_weiAmount &gt;= minContribution);
-    require(_weiAmount &lt;= maxContribution);
+    require(_weiAmount >= minContribution);
+    require(_weiAmount <= maxContribution);
     super._preValidatePurchase(_beneficiary, _weiAmount);
   }
 }

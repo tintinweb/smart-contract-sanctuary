@@ -603,7 +603,7 @@ contract SeeleCrowdSale is Pausable {
         for (uint i = 0; i < users.length; i++) {
             address receipient = users[i];
             bool visitFlag = vistFlagList[receipient];
-            if( openTag == true &amp;&amp; visitFlag == false){
+            if( openTag == true && visitFlag == false){
                 uint token = oldSeeleToken.lockedBalances(receipient);
                 if( token > 0){
                     seeleToken.mint(receipient, token,true);
@@ -636,7 +636,7 @@ contract SeeleCrowdSale is Pausable {
 
     /// @return true if sale not ended, false otherwise.
     function saleNotEnd() constant internal returns (bool) {
-        return now < endTime &amp;&amp; openSoldTokens < MAX_OPEN_SOLD;
+        return now < endTime && openSoldTokens < MAX_OPEN_SOLD;
     }
 
     /**
@@ -671,12 +671,12 @@ contract SeeleCrowdSale is Pausable {
         require(inWhiteListTag == true);
 
         uint stage = STAGE_3;
-        if ( startTime <= now &amp;&amp; now < startTime + STAGE_1_TIME ) {
+        if ( startTime <= now && now < startTime + STAGE_1_TIME ) {
             stage = STAGE_1;
             require(msg.value <= MAX_STAGE_1_LIMIT);
             uint fund1 = firstStageFund[receipient];
             require (fund1 < MAX_STAGE_1_LIMIT );
-        }else if ( startTime + STAGE_1_TIME <= now &amp;&amp; now < startTime + STAGE_2_TIME ) {
+        }else if ( startTime + STAGE_1_TIME <= now && now < startTime + STAGE_2_TIME ) {
             stage = STAGE_2;
             require(msg.value <= MAX_STAGE_2_LIMIT);
             uint fund2 = secondStageFund[receipient];

@@ -430,7 +430,7 @@ contract StagedCrowdsale is Ownable {
   function currentMilestone(uint start) public view returns(uint) {
     uint previousDate = start;
     for(uint i=0; i < milestones.length; i++) {
-      if(now >= previousDate &amp;&amp; now < previousDate + milestones[i].period * 1 days) {
+      if(now >= previousDate && now < previousDate + milestones[i].period * 1 days) {
         return i;
       }
       previousDate = previousDate.add(milestones[i].period * 1 days);
@@ -470,7 +470,7 @@ contract MintableToken is AddressesFilterFeature, StandardToken {
   modifier notLocked(address _from, uint _value) {
     if(!(_from == owner || _from == saleAgent || allowedAddresses[_from])) {
       require(mintingFinished);
-      if((vestingPercent <= percentRate) &amp;&amp; (vestingPercent != 0)) {
+      if((vestingPercent <= percentRate) && (vestingPercent != 0)) {
         uint minLockedBalance = initialBalances[_from].mul(vestingPercent).div(percentRate);
         require(minLockedBalance <= balances[_from].sub(_value));
       }
@@ -489,7 +489,7 @@ contract MintableToken is AddressesFilterFeature, StandardToken {
   }
 
   function mint(address _to, uint256 _amount) public returns (bool) {
-    require((msg.sender == saleAgent || msg.sender == owner) &amp;&amp; !mintingFinished);
+    require((msg.sender == saleAgent || msg.sender == owner) && !mintingFinished);
     
     totalSupply = totalSupply.add(_amount);
     balances[_to] = balances[_to].add(_amount);
@@ -506,7 +506,7 @@ contract MintableToken is AddressesFilterFeature, StandardToken {
    * @return True if the operation was successful.
    */
   function finishMinting() public returns (bool) {
-    require((msg.sender == saleAgent || msg.sender == owner) &amp;&amp; !mintingFinished);
+    require((msg.sender == saleAgent || msg.sender == owner) && !mintingFinished);
     mintingFinished = true;
     MintFinished();
     return true;
@@ -549,7 +549,7 @@ contract Token is MintableToken {
   }
 
   function processCallback(bool result, address from, address to, uint value) internal returns(bool) {
-    if (result &amp;&amp; registeredCallbacks[to]) {
+    if (result && registeredCallbacks[to]) {
       ReceivingContractCallback targetCallback = ReceivingContractCallback(to);
       targetCallback.tokenFallback(from, value);
     }
@@ -649,7 +649,7 @@ contract CommonSale is PercentRateFeature, InvestedProvider, WalletProvider, Ret
   }
 
   function fallback() internal minInvestLimited(msg.value) returns(uint) {
-    require(now >= start &amp;&amp; now < endSaleDate());
+    require(now >= start && now < endSaleDate());
     transferToWallet(msg.value);
     updateInvested(msg.value);
     return mintTokensByETH(msg.sender, msg.value);

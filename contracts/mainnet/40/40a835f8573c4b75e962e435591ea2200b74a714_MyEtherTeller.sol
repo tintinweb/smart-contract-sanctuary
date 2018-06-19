@@ -63,7 +63,7 @@ pragma solidity ^0.4.16;
         function setEscrowFee(uint fee) {
 
             //Allowed fee range: 0.1% to 10%, in increments of 0.1%
-            require (fee >= 1 &amp;&amp; fee <= 100);
+            require (fee >= 1 && fee <= 100);
             escrowFee[msg.sender] = fee;
         }
 
@@ -74,7 +74,7 @@ pragma solidity ^0.4.16;
         
         function newEscrow(address sellerAddress, address escrowAddress, bytes32 notes) payable returns (bool) {
 
-            require(msg.value > 0 &amp;&amp; msg.sender != escrowAddress);
+            require(msg.value > 0 && msg.sender != escrowAddress);
         
             //Store escrow details in memory
             EscrowStruct memory currentEscrow;
@@ -245,8 +245,8 @@ pragma solidity ^0.4.16;
         //Even if EscrowEscalation is raised, buyer can still approve fund release at any time
         function buyerFundRelease(uint ID)
         {
-            require(ID < buyerDatabase[msg.sender].length &amp;&amp; 
-            buyerDatabase[msg.sender][ID].release_approval == false &amp;&amp;
+            require(ID < buyerDatabase[msg.sender].length && 
+            buyerDatabase[msg.sender][ID].release_approval == false &&
             buyerDatabase[msg.sender][ID].refund_approval == false);
             
             //Set release approval to true. Ensure approval for each transaction can only be called once.
@@ -272,7 +272,7 @@ pragma solidity ^0.4.16;
             uint buyerID = sellerDatabase[msg.sender][ID].buyer_nounce;
 
             require(
-            buyerDatabase[buyerAddress][buyerID].release_approval == false &amp;&amp;
+            buyerDatabase[buyerAddress][buyerID].release_approval == false &&
             buyerDatabase[buyerAddress][buyerID].refund_approval == false); 
 
             address escrow_agent = buyerDatabase[buyerAddress][buyerID].escrow_agent;
@@ -313,8 +313,8 @@ pragma solidity ^0.4.16;
                 buyerID = sellerDatabase[msg.sender][ID].buyer_nounce;
             }
 
-            require(buyerDatabase[buyerAddress][buyerID].escrow_intervention == false  &amp;&amp;
-            buyerDatabase[buyerAddress][buyerID].release_approval == false &amp;&amp;
+            require(buyerDatabase[buyerAddress][buyerID].escrow_intervention == false  &&
+            buyerDatabase[buyerAddress][buyerID].release_approval == false &&
             buyerDatabase[buyerAddress][buyerID].refund_approval == false);
 
             //Activate the ability for Escrow Agent to intervent in this transaction
@@ -338,8 +338,8 @@ pragma solidity ^0.4.16;
             
 
             require(
-            buyerDatabase[buyerAddress][buyerID].release_approval == false &amp;&amp;
-            buyerDatabase[buyerAddress][buyerID].escrow_intervention == true &amp;&amp;
+            buyerDatabase[buyerAddress][buyerID].release_approval == false &&
+            buyerDatabase[buyerAddress][buyerID].escrow_intervention == true &&
             buyerDatabase[buyerAddress][buyerID].refund_approval == false);
             
             uint escrow_fee = buyerDatabase[buyerAddress][buyerID].escrow_fee;

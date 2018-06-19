@@ -85,9 +85,9 @@ contract MultiSigWallet {
 
     modifier validRequirement(uint ownerCount, uint _required) {
         require(ownerCount <= MAX_OWNER_COUNT
-            &amp;&amp; _required <= ownerCount
-            &amp;&amp; _required != 0
-            &amp;&amp; ownerCount != 0);
+            && _required <= ownerCount
+            && _required != 0
+            && ownerCount != 0);
         _;
     }
 
@@ -110,7 +110,7 @@ contract MultiSigWallet {
         validRequirement(_owners.length, _required)
     {
         for (uint i=0; i<_owners.length; i++) {
-            require(!isOwner[_owners[i]] &amp;&amp; _owners[i] != 0);
+            require(!isOwner[_owners[i]] && _owners[i] != 0);
             isOwner[_owners[i]] = true;
         }
         owners = _owners;
@@ -328,8 +328,8 @@ contract MultiSigWallet {
         returns (uint count)
     {
         for (uint i=0; i<transactionCount; i++)
-            if (   pending &amp;&amp; !transactions[i].executed
-                || executed &amp;&amp; transactions[i].executed)
+            if (   pending && !transactions[i].executed
+                || executed && transactions[i].executed)
                 count += 1;
     }
 
@@ -379,8 +379,8 @@ contract MultiSigWallet {
         uint count = 0;
         uint i;
         for (i=0; i<transactionCount; i++)
-            if (   pending &amp;&amp; !transactions[i].executed
-                || executed &amp;&amp; transactions[i].executed)
+            if (   pending && !transactions[i].executed
+                || executed && transactions[i].executed)
             {
                 transactionIdsTemp[count] = i;
                 count += 1;

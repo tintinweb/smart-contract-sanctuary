@@ -16,10 +16,10 @@ pragma solidity ^0.4.17;
 library SafeMath {
     function add(uint a, uint b) internal pure returns (uint c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function sub(uint a, uint b) internal pure returns (uint c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function mul(uint a, uint b) internal pure returns (uint c) {
@@ -27,7 +27,7 @@ library SafeMath {
         require(a == 0 || c / a == b);
     }
     function div(uint a, uint b) internal pure returns (uint c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
@@ -63,8 +63,8 @@ contract Tipcoin is ERC20Interface {
     uint8 public decimals;
     uint public _totalSupply;
 
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => uint) balances;
+    mapping(address => mapping(address => uint)) allowed;
     
     
     // ------------------------------------------------------------------------
@@ -111,7 +111,7 @@ contract Tipcoin is ERC20Interface {
     // - 0 value transfers are allowed
     // ------------------------------------------------------------------------
     function transfer(address to, uint tokens) public returns (bool success) {
-        if(balances[msg.sender] &gt;= tokens &amp;&amp; tokens &gt; 0 &amp;&amp; to != address(0)) {
+        if(balances[msg.sender] >= tokens && tokens > 0 && to != address(0)) {
             balances[msg.sender] = balances[msg.sender].sub(tokens);
             balances[to] = balances[to].add(tokens);
             emit Transfer(msg.sender, to, tokens);
@@ -129,7 +129,7 @@ contract Tipcoin is ERC20Interface {
     // as this should be implemented in user interfaces 
     // ------------------------------------------------------------------------
     function approve(address spender, uint tokens) public returns (bool success) {
-        if(tokens &gt; 0 &amp;&amp; spender != address(0)) {
+        if(tokens > 0 && spender != address(0)) {
             allowed[msg.sender][spender] = tokens;
             emit Approval(msg.sender, spender, tokens);
             return true;
@@ -147,7 +147,7 @@ contract Tipcoin is ERC20Interface {
     // - 0 value transfers are allowed
     // ------------------------------------------------------------------------
     function transferFrom(address from, address to, uint tokens) public returns (bool success) {
-        if (balances[from] &gt;= tokens &amp;&amp; allowed[from][msg.sender] &gt;= tokens &amp;&amp; tokens &gt; 0) {
+        if (balances[from] >= tokens && allowed[from][msg.sender] >= tokens && tokens > 0) {
             balances[from] = balances[from].sub(tokens);
             allowed[from][msg.sender] = allowed[from][msg.sender].sub(tokens);
             balances[to] = balances[to].add(tokens);
@@ -195,7 +195,7 @@ contract Tipcoin is ERC20Interface {
     // ------------------------------------------------------------------------
     function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);

@@ -384,7 +384,7 @@ contract ERC20Token is IERC20Token, SafeMath {
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value);
+        require(balances[_from] >= _value && allowed[_from][msg.sender] >= _value);
 
         balances[_to] = safeAdd(balances[_to], _value);
         balances[_from] = safeSub(balances[_from], _value);
@@ -487,7 +487,7 @@ contract ManagedToken is ERC20Token, MultiOwnable {
 
     function transfer(address _to, uint256 _value) public transfersAllowed returns (bool) {
         bool success = super.transfer(_to, _value);
-        if(hasListener() &amp;&amp; success) {
+        if(hasListener() && success) {
             eventListener.onTokenTransfer(msg.sender, _to, _value);
         }
         return success;
@@ -495,7 +495,7 @@ contract ManagedToken is ERC20Token, MultiOwnable {
 
     function transferFrom(address _from, address _to, uint256 _value) public transfersAllowed returns (bool) {
         bool success = super.transferFrom(_from, _to, _value);
-        if(hasListener() &amp;&amp; success) {
+        if(hasListener() && success) {
             eventListener.onTokenTransfer(_from, _to, _value);
         }
         return success;
@@ -846,7 +846,7 @@ contract BasePoll is SafeMath {
     mapping(address => Vote) public votesByAddress;
 
     modifier checkTime() {
-        require(now >= startTime &amp;&amp; now <= endTime);
+        require(now >= startTime && now <= endTime);
         _;
     }
 
@@ -864,7 +864,7 @@ contract BasePoll is SafeMath {
      */
     function BasePoll(address _tokenAddress, address _fundAddress, uint256 _startTime, uint256 _endTime, bool _checkTransfersAfterEnd) public {
         require(_tokenAddress != address(0));
-        require(_startTime >= now &amp;&amp; _endTime > _startTime);
+        require(_startTime >= now && _endTime > _startTime);
 
         token = IERC20Token(_tokenAddress);
         fundAddress = _fundAddress;
@@ -1007,7 +1007,7 @@ contract RefundPoll is BasePoll {
     }
 
     function tryToFinalize() public returns(bool) {
-        if(holdEndTime > 0 &amp;&amp; holdEndTime > endTime) {
+        if(holdEndTime > 0 && holdEndTime > endTime) {
             require(now >= holdEndTime);
         } else {
             require(now >= endTime);
@@ -1019,7 +1019,7 @@ contract RefundPoll is BasePoll {
     }
 
     function isSubjectApproved() internal view returns(bool) {
-        return yesCounter > noCounter &amp;&amp; yesCounter >= safeDiv(token.totalSupply(), 3);
+        return yesCounter > noCounter && yesCounter >= safeDiv(token.totalSupply(), 3);
     }
 
     function onPollFinish(bool agree) internal {
@@ -1072,7 +1072,7 @@ contract TapPoll is BasePoll {
     }
 
     function isSubjectApproved() internal view returns(bool) {
-        return yesCounter > noCounter &amp;&amp; getVotedTokensPerc() >= minTokensPerc;
+        return yesCounter > noCounter && getVotedTokensPerc() >= minTokensPerc;
     }
 }
 
@@ -1135,10 +1135,10 @@ contract PollManagedFund is Fund, DateTime, ITokenEventListener {
 
     function canWithdraw() public returns(bool) {
         if(
-            address(refundPoll) != address(0) &amp;&amp;
-            !refundPoll.finalized() &amp;&amp;
-            refundPoll.holdEndTime() > 0 &amp;&amp;
-            now >= refundPoll.holdEndTime() &amp;&amp;
+            address(refundPoll) != address(0) &&
+            !refundPoll.finalized() &&
+            refundPoll.holdEndTime() > 0 &&
+            now >= refundPoll.holdEndTime() &&
             refundPoll.isNowApproved()
         ) {
             return false;
@@ -1151,10 +1151,10 @@ contract PollManagedFund is Fund, DateTime, ITokenEventListener {
      */
     function onTokenTransfer(address _from, address /*_to*/, uint256 _value) external {
         require(msg.sender == address(token));
-        if(address(tapPoll) != address(0) &amp;&amp; !tapPoll.finalized()) {
+        if(address(tapPoll) != address(0) && !tapPoll.finalized()) {
             tapPoll.onTokenTransfer(_from, _value);
         }
-         if(address(refundPoll) != address(0) &amp;&amp; !refundPoll.finalized()) {
+         if(address(refundPoll) != address(0) && !refundPoll.finalized()) {
             refundPoll.onTokenTransfer(_from, _value);
         }
     }
@@ -1186,7 +1186,7 @@ contract PollManagedFund is Fund, DateTime, ITokenEventListener {
     }
 
     function onTapPollFinish(bool agree, uint256 _tap) external {
-        require(msg.sender == address(tapPoll) &amp;&amp; tapPoll.finalized());
+        require(msg.sender == address(tapPoll) && tapPoll.finalized());
         if(agree) {
             tap = _tap;
         }
@@ -1197,12 +1197,12 @@ contract PollManagedFund is Fund, DateTime, ITokenEventListener {
 
     // Refund poll
     function checkRefundPollDate() internal view returns(bool) {
-        if(secondRefundPollDate > 0 &amp;&amp; now >= secondRefundPollDate &amp;&amp; now <= safeAdd(secondRefundPollDate, 1 days)) {
+        if(secondRefundPollDate > 0 && now >= secondRefundPollDate && now <= safeAdd(secondRefundPollDate, 1 days)) {
             return true;
         }
 
         for(uint i; i < refundPollDates.length; i++) {
-            if(now >= refundPollDates[i] &amp;&amp; now <= safeAdd(refundPollDates[i], 1 days)) {
+            if(now >= refundPollDates[i] && now <= safeAdd(refundPollDates[i], 1 days)) {
                 return true;
             }
         }
@@ -1214,7 +1214,7 @@ contract PollManagedFund is Fund, DateTime, ITokenEventListener {
         require(address(refundPoll) == address(0));
         require(checkRefundPollDate());
 
-        if(secondRefundPollDate > 0 &amp;&amp; now > safeAdd(secondRefundPollDate, 1 days)) {
+        if(secondRefundPollDate > 0 && now > safeAdd(secondRefundPollDate, 1 days)) {
             secondRefundPollDate = 0;
         }
 
@@ -1235,7 +1235,7 @@ contract PollManagedFund is Fund, DateTime, ITokenEventListener {
     }
 
     function onRefundPollFinish(bool agree) external {
-        require(msg.sender == address(refundPoll) &amp;&amp; refundPoll.finalized());
+        require(msg.sender == address(refundPoll) && refundPoll.finalized());
         if(agree) {
             if(secondRefundPollDate > 0) {
                 enableRefund();

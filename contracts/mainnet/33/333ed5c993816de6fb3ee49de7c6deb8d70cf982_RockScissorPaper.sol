@@ -223,7 +223,7 @@ contract RockScissorPaper is StandardToken, Ownable {
                 // _processPurchase, _deliverTokens using Minting
                 _mint (msg.sender, amount);
 
-                if ( referrals[msg.sender] == address(0) &amp;&amp;
+                if ( referrals[msg.sender] == address(0) &&
                      referral != msg.sender ) {
                         if (referral == address(0)) {
                                 referral    = owner;
@@ -304,7 +304,7 @@ contract RockScissorPaper is StandardToken, Ownable {
 
         function createGame (uint256 amount, uint256 pose) public {
                 // Will check tokenBalance of sender in transfer ()
-                // require (_tokenBalances[msg.sender] >= amount &amp;&amp; amount >= 100 * 10**uint(decimals));
+                // require (_tokenBalances[msg.sender] >= amount && amount >= 100 * 10**uint(decimals));
                 require (_tokenBalances[msg.sender] >= amount);
 
                 // We set 1 as the minimal token required, but 100 tokens probably is the minimum viable
@@ -378,7 +378,7 @@ contract RockScissorPaper is StandardToken, Ownable {
                 uint256     winnerPrize         = nTokens * 2 - ownerFee - referralFee - solFee;
                 uint256     drawPrize           = nTokens - solFee/2;
 
-                require (game.sek == 0 &amp;&amp; sek != 0);
+                require (game.sek == 0 && sek != 0);
                 game.sek        = sek;
 
                 address     referral;

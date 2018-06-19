@@ -13,37 +13,37 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 
   function max64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
   function max256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
 }
@@ -60,7 +60,7 @@ library SafeMath {
 contract ERC23BasicToken {
     using SafeMath for uint256;
     uint256 public totalSupply;
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Transfer(address indexed from, address indexed to, uint256 value, bytes data);
 
@@ -122,7 +122,7 @@ contract ERC23BasicToken {
               //retrieve the size of the code on target address, this needs assembly
               length := extcodesize(_addr)
           }
-          if(length&gt;0) {
+          if(length>0) {
               return true;
           }
           else {
@@ -135,14 +135,14 @@ contract ERC23BasicToken {
  // Standard ERC23 token, backward compatible with ERC20 standards.
  // Based on code by open-zeppelin: https://github.com/OpenZeppelin/zeppelin-solidity.git
 contract ERC23StandardToken is ERC23BasicToken {
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => mapping (address => uint256)) allowed;
     event Approval (address indexed owner, address indexed spender, uint256 value);
 
     function transferFrom(address _from, address _to, uint256 _value) {
         var _allowance = allowed[_from][msg.sender];
 
         // Check is not needed because sub(_allowance, _value) will already throw if this condition is not met
-        // if (_value &gt; _allowance) throw;
+        // if (_value > _allowance) throw;
 
         balances[_to] = balances[_to].add(_value);
         balances[_from] = balances[_from].sub(_value);
@@ -156,7 +156,7 @@ contract ERC23StandardToken is ERC23BasicToken {
         //  allowance to zero by calling `approve(_spender, 0)` if it is not
         //  already 0 to mitigate the race condition described here:
         //  https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-        if ((_value != 0) &amp;&amp; (allowed[msg.sender][_spender] != 0)) throw;
+        if ((_value != 0) && (allowed[msg.sender][_spender] != 0)) throw;
 
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);

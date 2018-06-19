@@ -103,7 +103,7 @@ contract ERC20Token is IERC20Token, Utils {
         @param _decimals    decimal points, for display purposes
     */
     function ERC20Token(string _name, string _symbol, uint8 _decimals) {
-        require(bytes(_name).length > 0 &amp;&amp; bytes(_symbol).length > 0); // validate input
+        require(bytes(_name).length > 0 && bytes(_symbol).length > 0); // validate input
 
         name = _name;
         symbol = _symbol;
@@ -467,7 +467,7 @@ contract KickcityAbstractCrowdsale is Owned, SmartTokenController {
   uint256 public saleEndTime;
 
   modifier duringSale() {
-    assert(now >= saleStartTime &amp;&amp; now < saleEndTime);
+    assert(now >= saleStartTime && now < saleEndTime);
     _;
   }
 

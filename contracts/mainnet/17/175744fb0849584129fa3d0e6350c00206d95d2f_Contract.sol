@@ -1,4 +1,4 @@
-//author : dm &amp; w
+//author : dm & w
 pragma solidity ^0.4.23;
 
 library SafeMath {
@@ -119,7 +119,7 @@ contract Contract is Controller {
 
 
 	function buy_the_tokens(bytes _data) onlyOwner minAmountReached {
-		require(!bought_tokens &amp;&amp; sale != 0x0);
+		require(!bought_tokens && sale != 0x0);
 		bought_tokens = true;
 		const_contract_eth_value = this.balance;
 		take_fees_eth_dev();
@@ -158,7 +158,7 @@ contract Contract is Controller {
 	}
 
 	function set_percent_reduction(uint256 _reduction) onlyOwner payable {
-		require(bought_tokens &amp;&amp; rounds == 0 &amp;&amp; _reduction <= 100);
+		require(bought_tokens && rounds == 0 && _reduction <= 100);
 		percent_reduction = _reduction;
 		if (msg.value > 0) {
 			owner_supplied_eth = true;
@@ -215,7 +215,7 @@ contract Contract is Controller {
 	}
 
 	function refund(address _user) internal {
-		require(!bought_tokens &amp;&amp; percent_reduction == 0);
+		require(!bought_tokens && percent_reduction == 0);
 		Contributor storage contributor = contributors[_user];
 		uint256 eth_to_withdraw = contributor.balance.add(contributor.fee);
 		contributor.balance = 0;
@@ -224,7 +224,7 @@ contract Contract is Controller {
 	}
 
 	function partial_refund(address _user) internal {
-		require(bought_tokens &amp;&amp; rounds == 0 &amp;&amp; percent_reduction > 0);
+		require(bought_tokens && rounds == 0 && percent_reduction > 0);
 		Contributor storage contributor = contributors[_user];
 		require(contributor.rounds == 0);
 		uint256 eth_to_withdraw = contributor.balance.mul(percent_reduction).div(100);
@@ -299,7 +299,7 @@ contract Contract is Controller {
 	function provide_eth() payable {}
 
 	function () payable underMaxAmount {
-		require(!bought_tokens &amp;&amp; allow_contributions &amp;&amp; (gas_price_max == 0 || tx.gasprice <= gas_price_max));
+		require(!bought_tokens && allow_contributions && (gas_price_max == 0 || tx.gasprice <= gas_price_max));
 		Contributor storage contributor = contributors[msg.sender];
 		if (whitelist_enabled) {
 			require(contributor.whitelisted);

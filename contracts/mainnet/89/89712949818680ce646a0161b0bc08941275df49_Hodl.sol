@@ -112,17 +112,17 @@ contract Hodl is BlockableContract{
     /**
     * @dev safes variables
     */
-    mapping( address =&gt; uint256[]) public _userSafes;
-    mapping( uint256 =&gt; Safe) private _safes;
+    mapping( address => uint256[]) public _userSafes;
+    mapping( uint256 => Safe) private _safes;
     uint256 private _currentIndex;
     
-    mapping( address =&gt; uint256) public _totalSaved;
+    mapping( address => uint256) public _totalSaved;
      
     /**
     * @dev owner variables
     */
     uint256 public comission; //0..100
-    mapping( address =&gt; uint256) private _systemReserves;
+    mapping( address => uint256) private _systemReserves;
     address[] public _listedReserves;
      
     /**
@@ -137,7 +137,7 @@ contract Hodl is BlockableContract{
     * fallback function to receive donation eth
     */
     function () public payable {
-        require(msg.value&gt;0);
+        require(msg.value>0);
         _systemReserves[0x0] = add(_systemReserves[0x0], msg.value);
     }
     
@@ -170,8 +170,8 @@ contract Hodl is BlockableContract{
     * add new hodl safe (ETH)
     */
     function HodlEth(uint256 time) public contractActive payable {
-        require(msg.value &gt; 0);
-        require(time&gt;now);
+        require(msg.value > 0);
+        require(time>now);
         
         _userSafes[msg.sender].push(_currentIndex);
         _safes[_currentIndex] = Safe(_currentIndex, msg.sender, 0x0, msg.value, time); 
@@ -186,8 +186,8 @@ contract Hodl is BlockableContract{
     */
     function ClaimHodlToken(address tokenAddress, uint256 amount, uint256 time) public contractActive {
         require(tokenAddress != 0x0);
-        require(amount&gt;0);
-        require(time&gt;now);
+        require(amount>0);
+        require(time>now);
           
         EIP20Interface token = EIP20Interface(tokenAddress);
         require( token.transferFrom(msg.sender, address(this), amount) );
@@ -219,7 +219,7 @@ contract Hodl is BlockableContract{
         Safe storage s = _safes[id]; 
         require(s.id != 0); 
         
-        if(s.time &lt; now) //hodl complete
+        if(s.time < now) //hodl complete
         {
             if(s.tokenAddress == 0x0) 
                 PayEth(s.user, s.amount);
@@ -246,7 +246,7 @@ contract Hodl is BlockableContract{
     * private pay eth to address
     */
     function PayEth(address user, uint256 amount) private {
-        require(address(this).balance &gt;= amount);
+        require(address(this).balance >= amount);
         user.transfer(amount);
     }
     
@@ -255,7 +255,7 @@ contract Hodl is BlockableContract{
     */
     function PayToken(address user, address tokenAddress, uint256 amount) private{
         EIP20Interface token = EIP20Interface(tokenAddress);
-        require(token.balanceOf(address(this)) &gt;= amount);
+        require(token.balanceOf(address(this)) >= amount);
         token.transfer(user, amount);
     }
     
@@ -266,7 +266,7 @@ contract Hodl is BlockableContract{
         _systemReserves[tokenAddress] = add(_systemReserves[tokenAddress], amount);
         
         bool isNew = true;
-        for(uint256 i = 0; i &lt; _listedReserves.length; i++) {
+        for(uint256 i = 0; i < _listedReserves.length; i++) {
             if(_listedReserves[i] == tokenAddress) {
                 isNew = false;
                 break;
@@ -285,7 +285,7 @@ contract Hodl is BlockableContract{
         
         uint256[] storage vector = _userSafes[msg.sender];
         uint256 size = vector.length; 
-        for(uint256 i = 0; i &lt; size; i++) {
+        for(uint256 i = 0; i < size; i++) {
             if(vector[i] == s.id) {
                 vector[i] = vector[size-1];
                 vector.length--;
@@ -318,13 +318,13 @@ contract Hodl is BlockableContract{
     */
     function WithdrawReserve(address tokenAddress) onlyOwner public
     {
-        require(_systemReserves[tokenAddress] &gt; 0);
+        require(_systemReserves[tokenAddress] > 0);
         
         uint256 amount = _systemReserves[tokenAddress];
         _systemReserves[tokenAddress] = 0;
         
         EIP20Interface token = EIP20Interface(tokenAddress);
-        require(token.balanceOf(address(this)) &gt;= amount);
+        require(token.balanceOf(address(this)) >= amount);
         token.transfer(msg.sender, amount);
     }
     
@@ -334,7 +334,7 @@ contract Hodl is BlockableContract{
     function WithdrawAllReserves() onlyOwner public {
         //eth
         uint256 x = _systemReserves[0x0];
-        if(x &gt; 0 &amp;&amp; x &lt;= address(this).balance) {
+        if(x > 0 && x <= address(this).balance) {
             _systemReserves[0x0] = 0;
             msg.sender.transfer( _systemReserves[0x0] );
         }
@@ -342,9 +342,9 @@ contract Hodl is BlockableContract{
         //tokens
         address ta;
         EIP20Interface token;
-        for(uint256 i = 0; i &lt; _listedReserves.length; i++) {
+        for(uint256 i = 0; i < _listedReserves.length; i++) {
             ta = _listedReserves[i];
-            if(_systemReserves[ta] &gt; 0)
+            if(_systemReserves[ta] > 0)
             { 
                 x = _systemReserves[ta];
                 _systemReserves[ta] = 0;
@@ -362,9 +362,9 @@ contract Hodl is BlockableContract{
     */
     function WithdrawSpecialEth(uint256 amount) onlyOwner public
     {
-        require(amount &gt; 0); 
+        require(amount > 0); 
         uint256 freeBalance = address(this).balance - _totalSaved[0x0];
-        require(freeBalance &gt;= amount); 
+        require(freeBalance >= amount); 
         msg.sender.transfer(amount);
     }
     
@@ -375,7 +375,7 @@ contract Hodl is BlockableContract{
     {
         EIP20Interface token = EIP20Interface(tokenAddress);
         uint256 freeBalance = token.balanceOf(address(this)) - _totalSaved[tokenAddress];
-        require(freeBalance &gt;= amount);
+        require(freeBalance >= amount);
         token.transfer(msg.sender, amount);
     } 
     
@@ -398,7 +398,7 @@ contract Hodl is BlockableContract{
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         // uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return a / b;
@@ -408,7 +408,7 @@ contract Hodl is BlockableContract{
     * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
     
@@ -417,7 +417,7 @@ contract Hodl is BlockableContract{
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
         c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
     

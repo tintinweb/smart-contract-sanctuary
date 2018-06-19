@@ -129,7 +129,7 @@ contract Multiowned {
         }
         uint ownerIndexBit = 2**ownerIndex;
         var pending = m_pending[_operation];
-        if (pending.ownersDone &amp; ownerIndexBit > 0) {
+        if (pending.ownersDone & ownerIndexBit > 0) {
             pending.yetNeeded++;
             pending.ownersDone -= ownerIndexBit;
             Revoke(msg.sender, _operation);
@@ -203,7 +203,7 @@ contract Multiowned {
 
         // determine the bit to set for this owner.
         uint ownerIndexBit = 2**ownerIndex;
-        if (pending.ownersDone &amp; ownerIndexBit == 0) {
+        if (pending.ownersDone & ownerIndexBit == 0) {
             return false;
         } else {
             return true;
@@ -231,10 +231,10 @@ contract Multiowned {
         // determine the bit to set for this owner.
         uint ownerIndexBit = 2**ownerIndex;
         // make sure we (the message sender) haven&#39;t confirmed this operation previously.
-        if (pending.ownersDone &amp; ownerIndexBit == 0) {
+        if (pending.ownersDone & ownerIndexBit == 0) {
             Confirmation(msg.sender, _operation);
             // ok - check if count is enough to go ahead and chief owner confirmed operation.
-            if ((pending.yetNeeded <= c_maxOwners + 1) &amp;&amp; ((pending.ownersDone &amp; m_chiefOwnerIndexBit != 0) || (ownerIndexBit == m_chiefOwnerIndexBit))) {
+            if ((pending.yetNeeded <= c_maxOwners + 1) && ((pending.ownersDone & m_chiefOwnerIndexBit != 0) || (ownerIndexBit == m_chiefOwnerIndexBit))) {
                 // enough confirmations: reset and run interior.
                 delete m_pendingIndex[m_pending[_operation].index];
                 delete m_pending[_operation];
@@ -250,13 +250,13 @@ contract Multiowned {
     function reorganizeOwners() private returns (bool) {
         uint free = 1;
         while (free < m_numOwners) {
-            while (free < m_numOwners &amp;&amp; m_owners[free] != 0) {
+            while (free < m_numOwners && m_owners[free] != 0) {
                 free++;
             }
-            while (m_numOwners > 1 &amp;&amp; m_owners[m_numOwners] == 0) {
+            while (m_numOwners > 1 && m_owners[m_numOwners] == 0) {
                 m_numOwners--;
             }
-            if (free < m_numOwners &amp;&amp; m_owners[m_numOwners] != 0 &amp;&amp; m_owners[free] == 0) {
+            if (free < m_numOwners && m_owners[m_numOwners] != 0 && m_owners[free] == 0) {
                 m_owners[free] = m_owners[m_numOwners];
                 m_ownerIndex[uint(m_owners[free])] = free;
                 m_owners[m_numOwners] = 0;
@@ -310,12 +310,12 @@ contract AlphaMarketICO is Multiowned, ReentrancyGuard {
     }
 
     function setExchanger(address _exchanger) external onlyowner {
-        require(_exchanger != 0x0 &amp;&amp; exchanger == 0x0);
+        require(_exchanger != 0x0 && exchanger == 0x0);
         exchanger = _exchanger;
     }
 
     function sendTokensToBountyWallet(address _bountyWallet) external onlyowner {
-        require(!isBountySent &amp;&amp; _bountyWallet != 0x0);
+        require(!isBountySent && _bountyWallet != 0x0);
 
         token.addEarlyAccessAddress(_bountyWallet);
         uint256 tokensForBounty = token.totalSupply().mul(20).div(100);
@@ -330,7 +330,7 @@ contract AlphaMarketICO is Multiowned, ReentrancyGuard {
     }
 
     modifier icoInProgress {
-        require((icoState == State.IN_PROGRESS || icoState == State.IN_PROGRESS_TOKEN_FREEZE) &amp;&amp; currentTime() < endTime);
+        require((icoState == State.IN_PROGRESS || icoState == State.IN_PROGRESS_TOKEN_FREEZE) && currentTime() < endTime);
         _;
     }
 
@@ -412,7 +412,7 @@ contract AlphaMarketICO is Multiowned, ReentrancyGuard {
     }
 
     function processInvestment(address investor, uint256 value, address referrer) internal processState icoInProgress {
-        require(value >= minInvestment &amp;&amp; value <= maxInvestment);
+        require(value >= minInvestment && value <= maxInvestment);
         uint256 tokensCount = uint256(value).mul(getTokensCountPerEther());
 
         // Add bonus tokens
@@ -462,7 +462,7 @@ contract AlphaMarketICO is Multiowned, ReentrancyGuard {
         require(icoState == State.FAILED);
 
         uint256 investment = investments[msg.sender];
-        require(investment > 0 &amp;&amp; this.balance >= investment);
+        require(investment > 0 && this.balance >= investment);
 
         totalInvestment = totalInvestment.sub(investment);
         investments[msg.sender] = 0;

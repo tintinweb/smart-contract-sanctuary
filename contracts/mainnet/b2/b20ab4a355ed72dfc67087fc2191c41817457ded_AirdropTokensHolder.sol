@@ -267,7 +267,7 @@ contract MiniMeToken is Controlled {
            require(parentSnapShotBlock < block.number);
 
            // Do not allow transfer to 0x0 or the token contract itself
-           require((_to != 0) &amp;&amp; (_to != address(this)));
+           require((_to != 0) && (_to != address(this)));
 
            // If the amount being transfered is more than the balance of the
            //  account the transfer throws
@@ -1067,16 +1067,16 @@ contract AirdropTokensHolder is Owned {
 
         uint256 finalizedTime = crowdsale.finalizedTime();
 
-        require(finalizedTime > 0 &amp;&amp; getTime() > finalizedTime.add(months(3)));
+        require(finalizedTime > 0 && getTime() > finalizedTime.add(months(3)));
 
         uint256 canExtract = 0;
         if (getTime() <= finalizedTime.add(months(6))) {
             require(collectedTokens < total.percent(25));
             canExtract = total.percent(25);
-        } else if (getTime() > finalizedTime.add(months(6)) &amp;&amp; getTime() <= finalizedTime.add(months(9))) {
+        } else if (getTime() > finalizedTime.add(months(6)) && getTime() <= finalizedTime.add(months(9))) {
             require(collectedTokens < total.percent(50));
             canExtract = total.percent(50);
-        } else if (getTime() > finalizedTime.add(months(9)) &amp;&amp; getTime() <= finalizedTime.add(months(12))) {
+        } else if (getTime() > finalizedTime.add(months(9)) && getTime() <= finalizedTime.add(months(12))) {
             require(collectedTokens < total.percent(75));
             canExtract = total.percent(75);
         } else {

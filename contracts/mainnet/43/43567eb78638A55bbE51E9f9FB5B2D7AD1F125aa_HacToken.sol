@@ -26,20 +26,20 @@ library SafeMath {
 	}
 
 	function div(uint256 a, uint256 b) internal constant returns (uint256) {
-		// assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+		// assert(b > 0); // Solidity automatically throws when dividing by 0
 		uint256 c = a / b;
 		// assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
 		return c;
 	}
 
 	function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-		assert(b &lt;= a);
+		assert(b <= a);
 		return a - b;
 	}
 
 	function add(uint256 a, uint256 b) internal constant returns (uint256) {
 		uint256 c = a + b;
-		assert(c &gt;= a);
+		assert(c >= a);
 		return c;
 	}
 }
@@ -71,7 +71,7 @@ contract HacToken is ERC20Interface, owned{
 	uint256 public freeTokens;
 	uint256 public totalSupply;
 
-	mapping (address =&gt; uint256) public balanceOf;
+	mapping (address => uint256) public balanceOf;
 
 	event TransferFrom(address indexed _from, address indexed _to, uint256 _value); // Triggered when tokens are transferred by owner.
 
@@ -99,7 +99,7 @@ contract HacToken is ERC20Interface, owned{
 	}
 
 	function setTokens(address target, uint256 amount) onlyOwner {
-		if(freeTokens &lt; amount) revert();
+		if(freeTokens < amount) revert();
 
 		balanceOf[target] = SafeMath.add(balanceOf[target], amount);
 		freeTokens = SafeMath.sub(freeTokens, amount);

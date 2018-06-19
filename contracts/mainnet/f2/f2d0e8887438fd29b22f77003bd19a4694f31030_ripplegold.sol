@@ -264,7 +264,7 @@ contract MintableToken is StandardToken, Ownable {
   }
 
   function mint(address _to, uint256 _amount) public returns (bool) {
-    require((msg.sender == saleAgent || msg.sender == owner) &amp;&amp; !mintingFinished);
+    require((msg.sender == saleAgent || msg.sender == owner) && !mintingFinished);
     
     totalSupply = totalSupply.add(_amount);
     balances[_to] = balances[_to].add(_amount);
@@ -277,7 +277,7 @@ contract MintableToken is StandardToken, Ownable {
    * @return True if the operation was successful.
    */
   function finishMinting() public returns (bool) {
-    require((msg.sender == saleAgent || msg.sender == owner) &amp;&amp; !mintingFinished);
+    require((msg.sender == saleAgent || msg.sender == owner) && !mintingFinished);
     mintingFinished = true;
     MintFinished();
     return true;
@@ -344,7 +344,7 @@ contract FreezeTokensWallet is Ownable {
   }
 
   function retrieveTokens(address to) public onlyOwner {
-    require(started &amp;&amp; now >= startUnlock);
+    require(started && now >= startUnlock);
     if (now >= startUnlock + period) {
       token.transfer(to, token.balanceOf(this));
     } else {
@@ -487,7 +487,7 @@ contract CommonSale is InvestedProvider, WalletProvider, PercentRateProvider, Re
   }
 
   function fallback() internal minInvestLimited(msg.value) returns(uint) {
-    require(now >= start &amp;&amp; now < endSaleDate());
+    require(now >= start && now < endSaleDate());
     wallet.transfer(msg.value);
     return mintTokensByETH(msg.sender, msg.value);
   }
@@ -579,7 +579,7 @@ contract StagedCrowdsale is Ownable {
   function currentMilestone(uint start) public view returns(uint) {
     uint previousDate = start;
     for(uint i=0; i < milestones.length; i++) {
-      if(now >= previousDate &amp;&amp; now < previousDate + milestones[i].period * 1 days) {
+      if(now >= previousDate && now < previousDate + milestones[i].period * 1 days) {
         return i;
       }
       previousDate = previousDate.add(milestones[i].period * 1 days);
@@ -712,7 +712,7 @@ contract PreICO is NextSaleAgentFeature, WhiteListFeature {
   }
   
   function fallback() internal minInvestLimited(msg.value) returns(uint) {
-    require(now >= start &amp;&amp; now < endSaleDate());
+    require(now >= start && now < endSaleDate());
     require(whiteList[msg.sender]);
     wallet.transfer(msg.value);
     return mintTokensByETH(msg.sender, msg.value);
@@ -757,7 +757,7 @@ contract ripplegold is MintableToken {
   }
 
   function processCallback(bool result, address from, address to, uint value) internal returns(bool) {
-    if (result &amp;&amp; registeredCallbacks[to]) {
+    if (result && registeredCallbacks[to]) {
       ReceivingContractCallback targetCallback = ReceivingContractCallback(to);
       targetCallback.tokenFallback(from, value);
     }

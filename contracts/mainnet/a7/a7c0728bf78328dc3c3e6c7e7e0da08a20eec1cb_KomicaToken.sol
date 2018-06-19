@@ -20,10 +20,10 @@ pragma solidity ^0.4.18;
 contract SafeMath {
     function safeAdd(uint a, uint b) public pure returns (uint c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function safeSub(uint a, uint b) public pure returns (uint c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function safeMul(uint a, uint b) public pure returns (uint c) {
@@ -31,7 +31,7 @@ contract SafeMath {
         require(a == 0 || c / a == b);
     }
     function safeDiv(uint a, uint b) public pure returns (uint c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
@@ -109,8 +109,8 @@ contract KomicaToken is ERC20Interface, Owned, SafeMath {
     uint public difficulty = 10**32;                 // Difficulty starts reasonably low
 
 
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => uint) balances;
+    mapping(address => mapping(address => uint)) allowed;
 
 
     // ------------------------------------------------------------------------
@@ -228,10 +228,10 @@ contract KomicaToken is ERC20Interface, Owned, SafeMath {
 
     function proofOfWork(uint nonce){
         bytes8 n = bytes8(sha3(nonce, currentChallenge));    // Generate a random hash based on input
-        require(n &gt;= bytes8(difficulty));                   // Check if it&#39;s under the difficulty
+        require(n >= bytes8(difficulty));                   // Check if it&#39;s under the difficulty
 
         uint timeSinceLastProof = (now - timeOfLastProof);  // Calculate time since last reward was given
-        require(timeSinceLastProof &gt;=  5 seconds);         // Rewards cannot be given too quickly
+        require(timeSinceLastProof >=  5 seconds);         // Rewards cannot be given too quickly
         balances[msg.sender] += timeSinceLastProof / 60 seconds;  // The reward to the winner grows by the minute
 
         difficulty = difficulty * 10 minutes / timeSinceLastProof + 1;  // Adjusts the difficulty

@@ -44,8 +44,8 @@ contract ParentToken {
     uint8 public decimals;
     uint256 public totalSupply;
 
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; mapping(address=&gt;uint)) allowance;        
+    mapping(address => uint) balances;
+    mapping(address => mapping(address=>uint)) allowance;        
 
 
 
@@ -69,8 +69,8 @@ contract ParentToken {
    ///@param  value The amount of tokens to be transfered  
        function transfer(address to, uint value) returns (bool success){
         require(
-            balances[msg.sender] &gt;= value 
-            &amp;&amp; value &gt; 0 
+            balances[msg.sender] >= value 
+            && value > 0 
             );
             balances[msg.sender] = balances[msg.sender].sub(value);    
             balances[to] = balances[to].add(value);
@@ -107,9 +107,9 @@ contract ParentToken {
     function transferFrom(address from, address to, uint value) returns (bool success){
         
         require(
-            allowance[from][msg.sender] &gt;= value
-            &amp;&amp;balances[from] &gt;= value
-            &amp;&amp; value &gt; 0
+            allowance[from][msg.sender] >= value
+            &&balances[from] >= value
+            && value > 0
             );
             
             balances[from] = balances[from].sub(value);
@@ -129,31 +129,31 @@ library SafeMath {
     return c;
   }
   function div(uint a, uint b) internal returns (uint) {
-    assert(b &gt; 0);
+    assert(b > 0);
     uint c = a / b;
     assert(a == b * c + a % b);
     return c;
   }
   function sub(uint a, uint b) internal returns (uint) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
   function add(uint a, uint b) internal returns (uint) {
     uint c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
   function max64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
   function min64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
   function max256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
   function min256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
   function assert(bool assertion) internal {
     if (!assertion) {
@@ -177,7 +177,7 @@ contract MLC is owned,ParentToken{
 
     
 
-    mapping (address =&gt; bool) public frozenAccount;
+    mapping (address => bool) public frozenAccount;
 
 
   ///@notice Default function used for any payments made.
@@ -188,7 +188,7 @@ contract MLC is owned,ParentToken{
 
    ///@notice Accept payment and transfer to owner account. 
     function acceptPayment() payable {
-        require(msg.value&gt;0);
+        require(msg.value>0);
         
         owner.transfer(msg.value);
     }
@@ -211,9 +211,9 @@ contract MLC is owned,ParentToken{
    ///@param  value The amount of tokens to be transfered 
         function transfer(address to, uint value) returns (bool success){
         require(
-            balances[msg.sender] &gt;= value 
-            &amp;&amp; value &gt; 0 
-            &amp;&amp; (!frozenAccount[msg.sender]) 										// Allow transfer only if account is not frozen
+            balances[msg.sender] >= value 
+            && value > 0 
+            && (!frozenAccount[msg.sender]) 										// Allow transfer only if account is not frozen
             );
             balances[msg.sender] = balances[msg.sender].sub(value);                 
             balances[to] = balances[to].add(value);                               // Update the balance of beneficiary account
@@ -230,10 +230,10 @@ contract MLC is owned,ParentToken{
         function transferFrom(address from, address to, uint value) returns (bool success){
         
             require(
-            allowance[from][msg.sender] &gt;= value
-            &amp;&amp;balances[from] &gt;= value                                                 //Check if the benefactor has sufficient balance
-            &amp;&amp; value &gt; 0 
-            &amp;&amp; (!frozenAccount[msg.sender])                                           // Allow transfer only if account is not frozen
+            allowance[from][msg.sender] >= value
+            &&balances[from] >= value                                                 //Check if the benefactor has sufficient balance
+            && value > 0 
+            && (!frozenAccount[msg.sender])                                           // Allow transfer only if account is not frozen
             );
             
             balances[from] = balances[from].sub(value);                               // Deduct from the benefactor account
@@ -267,7 +267,7 @@ contract MLC is owned,ParentToken{
    /// @notice Remove tokens from the system irreversibly
     /// @param value The amount of money to burn
     function burn(uint256 value) returns (bool success) {
-        require (balances[msg.sender] &gt; value &amp;&amp; value&gt;0);            // Check if the sender has enough balance
+        require (balances[msg.sender] > value && value>0);            // Check if the sender has enough balance
         balances[msg.sender] = balances[msg.sender].sub(value);       // Deduct from the sender
         currentSupply = currentSupply.sub(value);                     // Update currentSupply
         Burn(msg.sender, value);
@@ -275,8 +275,8 @@ contract MLC is owned,ParentToken{
     }
 
     function burnFrom(address from, uint256 value) returns (bool success) {
-        require(balances[from] &gt;= value);                                         // Check if the targeted balance is enough
-        require(value &lt;= allowance[from][msg.sender]);                            // Check allowance
+        require(balances[from] >= value);                                         // Check if the targeted balance is enough
+        require(value <= allowance[from][msg.sender]);                            // Check allowance
         balances[from] = balances[from].sub(value);                               // Deduct from the targeted balance
         allowance[from][msg.sender] = allowance[from][msg.sender].sub(value);     // Deduct from the sender&#39;s allowance
         currentSupply = currentSupply.sub(value);                                 // Update currentSupply

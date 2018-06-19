@@ -428,14 +428,14 @@ contract CCNCrowdsale is Ownable, Crowdsale, MintableToken {
     }
 
     function getPeriod(uint256 _currentDate) public pure returns (uint) {
-        //1525737600 - May, 08, 2018 00:00:00 &amp;&amp; 1527379199 - May, 26, 2018 23:59:59
-        //1527379200 - May, 27, 2018 00:00:00 &amp;&amp; 1530143999 - Jun, 27, 2018 23:59:59
+        //1525737600 - May, 08, 2018 00:00:00 && 1527379199 - May, 26, 2018 23:59:59
+        //1527379200 - May, 27, 2018 00:00:00 && 1530143999 - Jun, 27, 2018 23:59:59
         //1530489600 - Jul, 02, 2018 00:00:00
 
-        if( 1525737600 <= _currentDate &amp;&amp; _currentDate <= 1527379199){
+        if( 1525737600 <= _currentDate && _currentDate <= 1527379199){
             return 0;
         }
-        if( 1527379200 <= _currentDate &amp;&amp; _currentDate <= 1530143999){
+        if( 1527379200 <= _currentDate && _currentDate <= 1530143999){
             return 1;
         }
         if( 1530489600 <= _currentDate){
@@ -480,7 +480,7 @@ contract CCNCrowdsale is Ownable, Crowdsale, MintableToken {
     */
     function setContractAdmin(address _admin, bool _isAdmin, uint _index) external onlyOwner {
         require(_admin != address(0));
-        require(0 <= _index &amp;&amp; _index < 3);
+        require(0 <= _index && _index < 3);
         contractAdmins[_admin] = _isAdmin;
         if(_isAdmin){
             admins[_index] = _admin;

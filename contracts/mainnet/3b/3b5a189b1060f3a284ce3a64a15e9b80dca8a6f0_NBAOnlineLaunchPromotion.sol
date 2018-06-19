@@ -53,7 +53,7 @@ contract NBAOnlineLaunchPromotion {
         deposits[msg.sender] = SafeMath.add(msg.value, existing);
         
         // Finally store contest details
-        if (msg.value >= 0.01 ether &amp;&amp; !depositorAlreadyStored[msg.sender]) {
+        if (msg.value >= 0.01 ether && !depositorAlreadyStored[msg.sender]) {
             depositors.push(msg.sender);
             depositorAlreadyStored[msg.sender] = true;
         }

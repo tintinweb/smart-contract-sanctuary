@@ -85,7 +85,7 @@ contract PortalToken is ERC20Token {
     }
 
     function doTransfer(address _from, address _to, uint _value) internal returns (bool success) {
-        if (balance[_from] >= _value &amp;&amp; balance[_to] + _value >= balance[_to]) {
+        if (balance[_from] >= _value && balance[_to] + _value >= balance[_to]) {
             balance[_from] -= _value;
             balance[_to] += _value;
             emit Transfer(_from, _to, _value);
@@ -97,7 +97,7 @@ contract PortalToken is ERC20Token {
 
     function approve(address _spender, uint256 _value) public returns (bool success) {
         // https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-        if ( (_value != 0) &amp;&amp; (allowance(msg.sender, _spender) != 0) ) revert();
+        if ( (_value != 0) && (allowance(msg.sender, _spender) != 0) ) revert();
 
         m_allowance[msg.sender][_spender] = _value;
 

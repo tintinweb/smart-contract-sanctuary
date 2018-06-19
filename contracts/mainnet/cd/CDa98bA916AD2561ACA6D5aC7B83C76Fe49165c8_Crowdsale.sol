@@ -22,7 +22,7 @@ contract StandardToken is Token {
     mapping (address => mapping (address => uint256)) allowed;
 
     function transfer(address _to, uint256 _value) returns (bool success) {
-      if (balances[msg.sender] >= _value &amp;&amp; _value > 0) {
+      if (balances[msg.sender] >= _value && _value > 0) {
         balances[msg.sender] -= _value;
         balances[_to] += _value;
         Transfer(msg.sender, _to, _value);
@@ -33,7 +33,7 @@ contract StandardToken is Token {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
-      if (balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value &amp;&amp; _value > 0) {
+      if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0) {
         balances[_to] += _value;
         balances[_from] -= _value;
         allowed[_from][msg.sender] -= _value;
@@ -168,7 +168,7 @@ contract SafeMath {
 
   function safeAdd(uint a, uint b) internal returns (uint) {
     uint c = a + b;
-    assert(c>=a &amp;&amp; c>=b);
+    assert(c>=a && c>=b);
     return c;
   }
 
@@ -266,7 +266,7 @@ contract Crowdsale is StandardToken, Pausable, SafeMath, Utils{
    function getState() constant public returns(State){
    	///once we reach success lock the State
    	if(block.number<fundingStartBlock) return State.Inactive;
-   	else if(block.number>fundingStartBlock &amp;&amp; initialSupply<tokenCreationMax) return State.Funding;
+   	else if(block.number>fundingStartBlock && initialSupply<tokenCreationMax) return State.Funding;
    	else if (initialSupply >= tokenCreationMax) return State.Success;
    	else return State.Failure;
    }

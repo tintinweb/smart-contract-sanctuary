@@ -9,20 +9,20 @@ library SafeMathLib {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &gt; 0);
+        assert(b > 0);
         uint256 c = a / b;
         assert(a == b * c + a % b);
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -92,17 +92,17 @@ contract DateTimeLib {
         secondsAccountedFor += YEAR_IN_SECONDS * (dt.year - ORIGIN_YEAR - buf);
 
         uint secondsInMonth;
-        for (i = 1; i &lt;= 12; i++) {
+        for (i = 1; i <= 12; i++) {
             secondsInMonth = DAY_IN_SECONDS * getDaysInMonth(i, dt.year);
-            if (secondsInMonth + secondsAccountedFor &gt; timestamp) {
+            if (secondsInMonth + secondsAccountedFor > timestamp) {
                 dt.month = i;
                 break;
             }
             secondsAccountedFor += secondsInMonth;
         }
 
-        for (i = 1; i &lt;= getDaysInMonth(dt.month, dt.year); i++) {
-            if (DAY_IN_SECONDS + secondsAccountedFor &gt; timestamp) {
+        for (i = 1; i <= getDaysInMonth(dt.month, dt.year); i++) {
+            if (DAY_IN_SECONDS + secondsAccountedFor > timestamp) {
                 dt.day = i;
                 break;
             }
@@ -125,7 +125,7 @@ contract DateTimeLib {
         secondsAccountedFor += LEAP_YEAR_IN_SECONDS * numLeapYears;
         secondsAccountedFor += YEAR_IN_SECONDS * (year - ORIGIN_YEAR - numLeapYears);
 
-        while (secondsAccountedFor &gt; timestamp) {
+        while (secondsAccountedFor > timestamp) {
             if (isLeapYear(uint16(year - 1))) {
                 secondsAccountedFor -= LEAP_YEAR_IN_SECONDS;
             }
@@ -175,7 +175,7 @@ contract DateTimeLib {
 
     function toTimestamp(uint16 year, uint8 month, uint8 day, uint8 hour, uint8 minute, uint8 second) internal pure returns (uint timestamp) {
         uint16 i;
-        for (i = ORIGIN_YEAR; i &lt; year; i++) {
+        for (i = ORIGIN_YEAR; i < year; i++) {
             if (isLeapYear(i)) {
                 timestamp += LEAP_YEAR_IN_SECONDS;
             }
@@ -203,7 +203,7 @@ contract DateTimeLib {
         monthDayCounts[10] = 30;
         monthDayCounts[11] = 31;
 
-        for (i = 1; i &lt; month; i++) {
+        for (i = 1; i < month; i++) {
             timestamp += DAY_IN_SECONDS * monthDayCounts[i - 1];
         }
 
@@ -233,9 +233,9 @@ contract StandardToken is IERC20,DateTimeLib {
 
     using SafeMathLib for uint256;
 
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
 
-    mapping(address =&gt; mapping(address =&gt; uint256)) allowed;
+    mapping(address => mapping(address => uint256)) allowed;
     
     string public constant symbol = &quot;APB&quot;;
     
@@ -258,7 +258,7 @@ contract StandardToken is IERC20,DateTimeLib {
     }
 
     function transferInternal(address _from, address _to, uint256 _value) internal returns (bool success) {
-        require(_value &gt; 0 &amp;&amp; balances[_from] &gt;= _value);
+        require(_value > 0 && balances[_from] >= _value);
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
         emit Transfer(_from, _to, _value);
@@ -266,7 +266,7 @@ contract StandardToken is IERC20,DateTimeLib {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(_value &gt; 0 &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; balances[_from] &gt;= _value);
+        require(_value > 0 && allowed[_from][msg.sender] >= _value && balances[_from] >= _value);
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
         allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
@@ -295,11 +295,11 @@ contract LockableToken is StandardToken {
     
     function getDeveloperReservedBalanceLimit() internal returns (uint256 balanceLimit) {
         uint time = now;
-        for (uint index = 0; index &lt; developerReservedUnlockTimes.length; index++) {
+        for (uint index = 0; index < developerReservedUnlockTimes.length; index++) {
             if (developerReservedUnlockTimes[index] == 0x0) {
                 continue;
             }
-            if (time &gt; developerReservedUnlockTimes[index]) {
+            if (time > developerReservedUnlockTimes[index]) {
                 developerReservedUnlockTimes[index] = 0x0;
             } else {
                 return developerReservedBalanceLimits[index];
@@ -313,19 +313,19 @@ contract LockableToken is StandardToken {
     }
 
     function transferInternal(address _from, address _to, uint256 _value) internal returns (bool success) {
-        require(_from != 0x0 &amp;&amp; _to != 0x0 &amp;&amp; _value &gt; 0x0);
+        require(_from != 0x0 && _to != 0x0 && _value > 0x0);
         if (_from == developerReservedAddress) {
             uint256 balanceLimit = getDeveloperReservedBalanceLimit();
-            require(balances[_from].sub(balanceLimit) &gt;= _value);
+            require(balances[_from].sub(balanceLimit) >= _value);
         }
         return super.transferInternal(_from, _to, _value);
     }
     
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(_from != 0x0 &amp;&amp; _to != 0x0 &amp;&amp; _value &gt; 0x0);
+        require(_from != 0x0 && _to != 0x0 && _value > 0x0);
         if (_from == developerReservedAddress) {
             uint256 balanceLimit = getDeveloperReservedBalanceLimit();
-            require(balances[_from].sub(balanceLimit) &gt;= _value);
+            require(balances[_from].sub(balanceLimit) >= _value);
         }
         return super.transferFrom(_from, _to, _value);
     }
@@ -343,8 +343,8 @@ contract TradeableToken is LockableToken {
     function buy(address _beneficiary, uint256 _weiAmount) internal {
         require(_beneficiary != 0x0);
         require(publicOfferingAddress != 0x0);
-        require(exchangeRate &gt; 0x0);
-        require(_weiAmount &gt; 0x0);
+        require(exchangeRate > 0x0);
+        require(_weiAmount > 0x0);
 
         uint256 exchangeToken = _weiAmount.mul(exchangeRate);
         exchangeToken = exchangeToken.div(1 * 10 ** 12);
@@ -360,7 +360,7 @@ contract OwnableToken is TradeableToken {
     
     address internal owner = 0x59923219FEC7dd1Bfc4C14076F4a216b90f3AEdC;
     
-    mapping(address =&gt; uint) administrators;
+    mapping(address => uint) administrators;
     
     modifier onlyOwner() {
         require(msg.sender == owner);
@@ -368,7 +368,7 @@ contract OwnableToken is TradeableToken {
     }
     
     modifier onlyAdministrator() {
-        require(msg.sender == owner || administrators[msg.sender] &gt; 0x0);
+        require(msg.sender == owner || administrators[msg.sender] > 0x0);
         _;
     }
     
@@ -380,20 +380,20 @@ contract OwnableToken is TradeableToken {
     
     function addAdministrator(address _adminAddress) onlyOwner public {
         require(_adminAddress != address(0));
-        require(administrators[_adminAddress] &lt;= 0x0);
+        require(administrators[_adminAddress] <= 0x0);
         administrators[_adminAddress] = 0x1;
         emit AddAdministrator(_adminAddress);
     }
     
     function removeAdministrator(address _adminAddress) onlyOwner public {
         require(_adminAddress != address(0));
-        require(administrators[_adminAddress] &gt; 0x0);
+        require(administrators[_adminAddress] > 0x0);
         administrators[_adminAddress] = 0x0;
         emit RemoveAdministrator(_adminAddress);
     }
     
     function setExchangeRate(uint256 _exchangeRate) public onlyAdministrator returns (bool success) {
-        require(_exchangeRate &gt; 0x0);
+        require(_exchangeRate > 0x0);
         uint256 oldExchangeRate = exchangeRate;
         exchangeRate = _exchangeRate;
         emit ExchangeRateChanged(oldExchangeRate, exchangeRate);
@@ -401,14 +401,14 @@ contract OwnableToken is TradeableToken {
     }
     
     function changeUnlockTime(uint _index, uint _unlockTime) public onlyAdministrator returns (bool success) {
-        require(_index &gt;= 0x0 &amp;&amp; _index &lt; developerReservedUnlockTimes.length &amp;&amp; _unlockTime &gt; 0x0);
-        if(_index &gt; 0x0) {
+        require(_index >= 0x0 && _index < developerReservedUnlockTimes.length && _unlockTime > 0x0);
+        if(_index > 0x0) {
             uint beforeUnlockTime = developerReservedUnlockTimes[_index - 1];
-            require(beforeUnlockTime == 0x0 || beforeUnlockTime &lt; _unlockTime);
+            require(beforeUnlockTime == 0x0 || beforeUnlockTime < _unlockTime);
         }
-        if(_index &lt; developerReservedUnlockTimes.length - 1) {
+        if(_index < developerReservedUnlockTimes.length - 1) {
             uint afterUnlockTime = developerReservedUnlockTimes[_index + 1];
-            require(afterUnlockTime == 0x0 || _unlockTime &lt; afterUnlockTime);
+            require(afterUnlockTime == 0x0 || _unlockTime < afterUnlockTime);
         }
         uint oldUnlockTime = developerReservedUnlockTimes[_index];
         developerReservedUnlockTimes[_index] = _unlockTime;
@@ -417,7 +417,7 @@ contract OwnableToken is TradeableToken {
     }
     
     function getDeveloperReservedLockInfo(uint _index) public onlyAdministrator returns (uint, uint256) {
-        require(_index &gt;= 0x0 &amp;&amp; _index &lt; developerReservedUnlockTimes.length &amp;&amp; _index &lt; developerReservedBalanceLimits.length);
+        require(_index >= 0x0 && _index < developerReservedUnlockTimes.length && _index < developerReservedBalanceLimits.length);
         emit LockInfo(developerReservedAddress,_index,developerReservedUnlockTimes[_index],developerReservedBalanceLimits[_index]);
         return (developerReservedUnlockTimes[_index], developerReservedBalanceLimits[_index]);
     }

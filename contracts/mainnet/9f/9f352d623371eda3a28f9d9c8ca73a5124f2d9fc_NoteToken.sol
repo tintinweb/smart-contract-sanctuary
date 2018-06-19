@@ -75,7 +75,7 @@ contract Ownable {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -84,7 +84,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -132,7 +132,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -143,8 +143,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -193,7 +193,7 @@ contract StandardToken is ERC20, BasicToken {
 
   function decreaseApproval (address _spender, uint _subtractedValue) public returns (bool success) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -219,20 +219,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal constant returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal constant returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -249,12 +249,12 @@ contract NoteToken is StandardToken, Ownable {
     address compositionAddress;
 
     modifier beforeEndTime() {
-        require(now &lt; endTime);
+        require(now < endTime);
         _;
     }
 
     modifier afterEndTime() {
-        require(now &gt; endTime);
+        require(now > endTime);
         _;
     }
     event TokensBought(uint256 _num, uint256 _tokensLeft);
@@ -268,8 +268,8 @@ contract NoteToken is StandardToken, Ownable {
     }
 
     function purchaseNotes(uint256 _numNotes) beforeEndTime() external payable {
-        require(_numNotes &lt;= 100);
-        require(_numNotes &lt;= tokensLeft);
+        require(_numNotes <= 100);
+        require(_numNotes <= tokensLeft);
         require(_numNotes == (msg.value / 0.001 ether));
 
         balances[msg.sender] = balances[msg.sender].add(_numNotes);
@@ -279,7 +279,7 @@ contract NoteToken is StandardToken, Ownable {
     }
 
     function returnNotes(uint256 _numNotes) beforeEndTime() external {
-        require(_numNotes &lt;= balances[msg.sender]);
+        require(_numNotes <= balances[msg.sender]);
         
         uint256 refund = _numNotes * 0.001 ether;
         balances[msg.sender] = balances[msg.sender].sub(_numNotes);
@@ -296,7 +296,7 @@ contract NoteToken is StandardToken, Ownable {
 
     function transferToComposition(address _from, uint256 _value) beforeEndTime() public returns (bool) {
         require(msg.sender == compositionAddress);
-        require(_value &lt;= balances[_from]);
+        require(_value <= balances[_from]);
 
         balances[_from] = balances[_from].sub(_value);
         balances[compositionAddress] = balances[compositionAddress].add(_value);

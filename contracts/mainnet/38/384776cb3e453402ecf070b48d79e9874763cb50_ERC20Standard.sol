@@ -23,7 +23,7 @@ pragma solidity ^0.4.11;
 // GNU General Public License for more details.
 // 
 // You should have received a copy of the GNU General Public License
-// along with BattleDrome.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+// along with BattleDrome.  If not, see <http://www.gnu.org/licenses/>.
 //------------------------------------------------------------------------------------------------
 
 contract ERC20Standard {
@@ -34,8 +34,8 @@ contract ERC20Standard {
 	string public symbol;
 	address public owner;
 
-	mapping (address =&gt; uint256) balances;
-	mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+	mapping (address => uint256) balances;
+	mapping (address => mapping (address => uint256)) allowed;
 
   function ERC20Standard(uint256 _totalSupply, string _symbol, string _name, bool _mintable) public {
 		decimals = 18;
@@ -57,14 +57,14 @@ contract ERC20Standard {
 	}
 
 	function transfer(address _recipient, uint256 _value) onlyPayloadSize(2*32) public {
-		require(balances[msg.sender] &gt;= _value &amp;&amp; _value &gt; 0);
+		require(balances[msg.sender] >= _value && _value > 0);
 	    balances[msg.sender] -= _value;
 	    balances[_recipient] += _value;
 	    Transfer(msg.sender, _recipient, _value);        
     }
 
 	function transferFrom(address _from, address _to, uint256 _value) public {
-		require(balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; _value &gt; 0);
+		require(balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0);
         balances[_to] += _value;
         balances[_from] -= _value;
         allowed[_from][msg.sender] -= _value;
@@ -81,7 +81,7 @@ contract ERC20Standard {
 	}
 
 	function mint(uint256 amount) public {
-		assert(amount &gt;= 0);
+		assert(amount >= 0);
 		require(msg.sender == owner);
 		balances[msg.sender] += amount;
 		totalSupply += amount;

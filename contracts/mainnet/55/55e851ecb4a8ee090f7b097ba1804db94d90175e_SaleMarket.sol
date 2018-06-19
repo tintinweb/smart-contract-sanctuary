@@ -241,7 +241,7 @@ contract Market is MarketInterface, Pausable
     uint16 public ownerFee;
 
     // Map from token ID to their corresponding auction.
-    mapping (uint40 =&gt; Auction) public cutieIdToAuction;
+    mapping (uint40 => Auction) public cutieIdToAuction;
 
     event AuctionCreated(uint40 cutieId, uint128 startPrice, uint128 endPrice, uint40 duration, uint128 fee);
     event AuctionSuccessful(uint40 cutieId, uint128 totalPrice, address winner);
@@ -252,7 +252,7 @@ contract Market is MarketInterface, Pausable
 
     modifier canBeStoredIn128Bits(uint256 _value) 
     {
-        require(_value &lt;= 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF);
+        require(_value <= 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF);
         _;
     }
 
@@ -265,7 +265,7 @@ contract Market is MarketInterface, Pausable
     {
         // Require that all auctions have a duration of
         // at least one minute. (Keeps our math from getting hairy!)
-        require(_auction.duration &gt;= 1 minutes);
+        require(_auction.duration >= 1 minutes);
 
         cutieIdToAuction[_cutieId] = _auction;
         
@@ -324,9 +324,9 @@ contract Market is MarketInterface, Pausable
 
         require(_isOnAuction(auction));
 
-        // Check that bid &gt; current price
+        // Check that bid > current price
         uint128 price = _currentPrice(auction);
-        require(_bidAmount &gt;= price);
+        require(_bidAmount >= price);
 
         // Provide a reference to the seller before the auction struct is deleted.
         address seller = auction.seller;
@@ -334,7 +334,7 @@ contract Market is MarketInterface, Pausable
         _removeAuction(_cutieId);
 
         // Transfer proceeds to seller (if there are any!)
-        if (price &gt; 0) {
+        if (price > 0) {
             uint128 fee = _computeFee(price);
             uint128 sellerValue = price - fee;
 
@@ -357,7 +357,7 @@ contract Market is MarketInterface, Pausable
     // @param _auction - Auction to check.
     function _isOnAuction(Auction storage _auction) internal view returns (bool)
     {
-        return (_auction.startedAt &gt; 0);
+        return (_auction.startedAt > 0);
     }
 
     // @dev calculate current price of auction. 
@@ -373,7 +373,7 @@ contract Market is MarketInterface, Pausable
         pure
         returns (uint128)
     {
-        if (_secondsPassed &gt;= _duration) {
+        if (_secondsPassed >= _duration) {
             return _endPrice;
         } else {
             int256 totalPriceChange = int256(_endPrice) - int256(_startPrice);
@@ -392,7 +392,7 @@ contract Market is MarketInterface, Pausable
         uint40 secondsPassed = 0;
 
         uint40 timeNow = uint40(now);
-        if (timeNow &gt; _auction.startedAt) {
+        if (timeNow > _auction.startedAt) {
             secondsPassed = timeNow - _auction.startedAt;
         }
 
@@ -446,7 +446,7 @@ contract Market is MarketInterface, Pausable
     //  @param fee should be between 0-10,000.
     function setup(address _coreContractAddress, uint16 _fee) public onlyOwner
     {
-        require(_fee &lt;= 10000);
+        require(_fee <= 10000);
 
         ownerFee = _fee;
         
@@ -459,7 +459,7 @@ contract Market is MarketInterface, Pausable
     //  @param fee should be between 0-10,000.
     function setFee(uint16 _fee) public onlyOwner
     {
-        require(_fee &lt;= 10000);
+        require(_fee <= 10000);
 
         ownerFee = _fee;
     }
@@ -505,7 +505,7 @@ contract Market is MarketInterface, Pausable
         view
         returns (bool) 
     {
-        return cutieIdToAuction[_cutieId].startedAt &gt; 0;
+        return cutieIdToAuction[_cutieId].startedAt > 0;
     }
 
 /*
@@ -517,7 +517,7 @@ contract Market is MarketInterface, Pausable
     {
         Market old = Market(_oldAddress);
 
-        for (uint40 i = _fromIndex; i &lt;= _toIndex; i++)
+        for (uint40 i = _fromIndex; i <= _toIndex; i++)
         {
             if (coreContract.ownerOf(i) == _oldAddress)
             {

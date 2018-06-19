@@ -70,27 +70,27 @@ contract Presale is Admins {
 
   uint public tokensPerEther;
 
-  mapping (address =&gt; uint) public balanceOf;
+  mapping (address => uint) public balanceOf;
 
-  mapping (uint =&gt; uint) public periodBonuses;
+  mapping (uint => uint) public periodBonuses;
 
   struct amountBonusStruct {
   uint value;
   uint bonus;
   }
 
-  mapping (uint =&gt; amountBonusStruct)  public amountBonuses;
+  mapping (uint => amountBonusStruct)  public amountBonuses;
 
 
   modifier goodDate {
-    require(start &gt; 0);
-    require(start &lt;= now);
-    require((start+duration) &gt; now);
+    require(start > 0);
+    require(start <= now);
+    require((start+duration) > now);
     _;
   }
 
   modifier belowHardCap {
-    require(raised &lt; hardCap);
+    require(raised < hardCap);
     _;
   }
 
@@ -143,13 +143,13 @@ contract Presale is Admins {
 
   function getPeriodBounus() public returns (uint bonus) {
     if (start == 0) {return 0;}
-    else if (start + period &gt; now) {
+    else if (start + period > now) {
       return periodBonuses[0];
-    } else if (start + period * 2 &gt; now) {
+    } else if (start + period * 2 > now) {
       return periodBonuses[1];
-    } else if (start + period * 3 &gt; now) {
+    } else if (start + period * 3 > now) {
       return periodBonuses[2];
-    } else if (start + period * 4 &gt; now) {
+    } else if (start + period * 4 > now) {
       return periodBonuses[3];
     }
     return 0;
@@ -158,13 +158,13 @@ contract Presale is Admins {
   }
 
   function getAmountBounus(uint value) public returns (uint bonus) {
-    if (value &gt;= amountBonuses[3].value) {
+    if (value >= amountBonuses[3].value) {
       return amountBonuses[3].bonus;
-    } else if (value &gt;= amountBonuses[2].value) {
+    } else if (value >= amountBonuses[2].value) {
       return amountBonuses[2].bonus;
-    } else if (value &gt;= amountBonuses[1].value) {
+    } else if (value >= amountBonuses[1].value) {
       return amountBonuses[1].bonus;
-    } else if (value &gt;= amountBonuses[0].value) {
+    } else if (value >= amountBonuses[0].value) {
       return amountBonuses[0].bonus;
     }
     return 0;
@@ -196,7 +196,7 @@ contract Presale is Admins {
 
   function getFunds(uint amount) public onlyAdmins {
     require(benefit != 0x0);
-    require(amount &lt;= this.balance);
+    require(amount <= this.balance);
     Raise(benefit, amount);
     benefit.send(amount);
   }

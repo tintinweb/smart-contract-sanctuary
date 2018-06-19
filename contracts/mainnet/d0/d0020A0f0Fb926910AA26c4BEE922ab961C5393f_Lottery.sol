@@ -27,7 +27,7 @@ contract Lottery is Random {
 		bytes32 participantsHash;
 		uint winnerNum;
 	}
-	mapping (uint32 =&gt; Stage) public stages;
+	mapping (uint32 => Stage) public stages;
 	address public owner;
 
 	event Winner(uint32 _stageNum, uint _winnerNum);
@@ -39,7 +39,7 @@ contract Lottery is Random {
     }
 
 	function randomJackpot(uint32 _stageNum, bytes32 _participantsHash, uint32 _maxNum) external onlyOwner {
-		require(_maxNum &gt; 0);
+		require(_maxNum > 0);
 		uint winnerNum = random(_maxNum);
 		stages[_stageNum] = Stage(_maxNum, _participantsHash, winnerNum);
 		emit Winner(_stageNum, winnerNum);

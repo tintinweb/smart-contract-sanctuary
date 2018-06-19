@@ -119,7 +119,7 @@ contract Moongang {
   // Buy the tokens. Sends ETH to the presale wallet and records the ETH amount held in the contract.
   function buy_the_tokens() onlyOwner minAmountReached underMaxAmount {
     //Avoids burning the funds
-    require(!bought_tokens &amp;&amp; sale != 0x0);
+    require(!bought_tokens && sale != 0x0);
     //Record that the contract has bought the tokens.
     bought_tokens = true;
     //Sends the fee before so the contract_eth_value contains the correct balance
@@ -145,7 +145,7 @@ contract Moongang {
   }
 
   function force_partial_refund(address _to_refund) onlyOwner {
-    require(bought_tokens &amp;&amp; percent_reduction > 0);
+    require(bought_tokens && percent_reduction > 0);
     //Amount to refund is the amount minus the X% of the reduction
     //amount_to_refund = balance*X
     uint256 amount = SafeMath.div(SafeMath.mul(balances[_to_refund], percent_reduction), 100);
@@ -186,7 +186,7 @@ contract Moongang {
   }
 
   function set_percent_reduction(uint256 _reduction) onlyOwner payable {
-    require(bought_tokens &amp;&amp; _reduction <= 100);
+    require(bought_tokens && _reduction <= 100);
     percent_reduction = _reduction;
     if (msg.value > 0) {
       owner_supplied_eth = true;
@@ -240,7 +240,7 @@ contract Moongang {
     Special function to withdraw the bonus tokens after the 6 months lockup.
     bonus_received has to be set to true.
   */
-    require(bought_tokens &amp;&amp; bonus_received);
+    require(bought_tokens && bonus_received);
     uint256 contract_token_balance = token.balanceOf(address(this));
     require(contract_token_balance != 0);
     uint256 tokens_to_withdraw = SafeMath.div(SafeMath.mul(balances_bonus[msg.sender], contract_token_balance), contract_eth_value_bonus);
@@ -251,7 +251,7 @@ contract Moongang {
 
   // Allows any user to get his eth refunded before the purchase is made.
   function refund() {
-    require(!bought_tokens &amp;&amp; allow_refunds &amp;&amp; percent_reduction == 0);
+    require(!bought_tokens && allow_refunds && percent_reduction == 0);
     //balance of contributor = contribution * 0.99
     //so contribution = balance/0.99
     uint256 eth_to_withdraw = SafeMath.div(SafeMath.mul(balances[msg.sender], 100), 99);
@@ -268,7 +268,7 @@ contract Moongang {
   //Allows any user to get a part of his ETH refunded, in proportion
   //to the % reduced of the allocation
   function partial_refund() {
-    require(bought_tokens &amp;&amp; percent_reduction > 0);
+    require(bought_tokens && percent_reduction > 0);
     //Amount to refund is the amount minus the X% of the reduction
     //amount_to_refund = balance*X
     uint256 amount = SafeMath.div(SafeMath.mul(balances[msg.sender], percent_reduction), 100);
@@ -284,7 +284,7 @@ contract Moongang {
 
   // Default function.  Called when a user sends ETH to the contract.
   function () payable underMaxAmount {
-    require(!bought_tokens &amp;&amp; allow_contributions);
+    require(!bought_tokens && allow_contributions);
     //1% fee is taken on the ETH
     uint256 fee = SafeMath.div(msg.value, FEE);
     fees = SafeMath.add(fees, fee);

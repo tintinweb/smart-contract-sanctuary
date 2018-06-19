@@ -17,10 +17,10 @@ pragma solidity ^0.4.17;
 library SafeMath {
     function add(uint a, uint b) internal pure returns (uint c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function sub(uint a, uint b) internal pure returns (uint c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function mul(uint a, uint b) internal pure returns (uint c) {
@@ -28,7 +28,7 @@ library SafeMath {
         require(a == 0 || c / a == b);
     }
     function div(uint a, uint b) internal pure returns (uint c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
@@ -64,8 +64,8 @@ contract HAUZ is ERC20Interface {
     uint8 public decimals;
     uint public _totalSupply;
 
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => uint) balances;
+    mapping(address => mapping(address => uint)) allowed;
     
     
     // ------------------------------------------------------------------------
@@ -113,8 +113,8 @@ contract HAUZ is ERC20Interface {
     // ------------------------------------------------------------------------
     function transfer(address to, uint tokens) public returns (bool success) {
         require(to != address(0));
-        require(tokens &gt; 0);
-        require(balances[msg.sender] &gt;= tokens);
+        require(tokens > 0);
+        require(balances[msg.sender] >= tokens);
         
         balances[msg.sender] = balances[msg.sender].sub(tokens);
         balances[to] = balances[to].add(tokens);
@@ -133,7 +133,7 @@ contract HAUZ is ERC20Interface {
     // ------------------------------------------------------------------------
     function approve(address spender, uint tokens) public returns (bool success) {
         require(spender != address(0));
-        require(tokens &gt; 0);
+        require(tokens > 0);
         
         allowed[msg.sender][spender] = tokens;
         emit Approval(msg.sender, spender, tokens);
@@ -152,9 +152,9 @@ contract HAUZ is ERC20Interface {
     function transferFrom(address from, address to, uint tokens) public returns (bool success) {
         require(from != address(0));
         require(to != address(0));
-        require(tokens &gt; 0);
-        require(balances[from] &gt;= tokens);
-        require(allowed[from][msg.sender] &gt;= tokens);
+        require(tokens > 0);
+        require(balances[from] >= tokens);
+        require(allowed[from][msg.sender] >= tokens);
         
         balances[from] = balances[from].sub(tokens);
         allowed[from][msg.sender] = allowed[from][msg.sender].sub(tokens);
@@ -204,7 +204,7 @@ contract HAUZ is ERC20Interface {
         require(_spender != address(0));
         
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);

@@ -117,10 +117,10 @@ contract UnilotToken is ERC20 {
     address public administrator;
 
     // Balances for each account
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
 
     // Owner of account approves the transfer of an amount to another account
-    mapping(address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping(address => mapping (address => uint256)) allowed;
 
     //Mostly needed for internal use
     uint256 internal totalCoinsAvailable;
@@ -148,22 +148,22 @@ contract UnilotToken is ERC20 {
     }
 
     modifier onlyDuringICO() {
-        require(currentStage &lt; stages.length);
+        require(currentStage < stages.length);
         _;
     }
 
     modifier onlyAfterICO(){
-        require(currentStage &gt;= stages.length);
+        require(currentStage >= stages.length);
         _;
     }
 
     modifier meetTheCap() {
-        require(msg.value &gt;= price); // At least one token
+        require(msg.value >= price); // At least one token
         _;
     }
 
     modifier isFreezedReserve(address _address) {
-        require( ( _address == RESERVE_WALLET ) &amp;&amp; now &gt; (stages[ (stages.length - 1) ].endsAt + 182 days));
+        require( ( _address == RESERVE_WALLET ) && now > (stages[ (stages.length - 1) ].endsAt + 182 days));
         _;
     }
 
@@ -191,7 +191,7 @@ contract UnilotToken is ERC20 {
         uint teamSupply = ( ( _totalSupply * DST_TEAM ) / 100 );
         uint memberAmount = teamSupply / teamWallets.length;
 
-        for(uint i = 0; i &lt; teamWallets.length; i++) {
+        for(uint i = 0; i < teamWallets.length; i++) {
             if ( i == ( teamWallets.length - 1 ) ) {
                 memberAmount = teamSupply;
             }
@@ -296,8 +296,8 @@ contract UnilotToken is ERC20 {
         internal
     {
         while (true) {
-            if ( currentStage &lt; stages.length
-            &amp;&amp; (now &gt;= stages[currentStage].endsAt || getAvailableCoinsForCurrentStage() == 0) ) {
+            if ( currentStage < stages.length
+            && (now >= stages[currentStage].endsAt || getAvailableCoinsForCurrentStage() == 0) ) {
                 currentStage++;
                 uint totalTokensForSale = TOKEN_AMOUNT_PRE_ICO
                                     + TOKEN_AMOUNT_ICO_STAGE1_PRE_SALE1
@@ -306,7 +306,7 @@ contract UnilotToken is ERC20 {
                                     + TOKEN_AMOUNT_ICO_STAGE1_PRE_SALE4
                                     + TOKEN_AMOUNT_ICO_STAGE2;
 
-                if (currentStage &gt;= stages.length) {
+                if (currentStage >= stages.length) {
                     //Burning all unsold tokens and proportionally other for deligation
                     _totalSupply -= ( ( ( stages[(stages.length - 1)].coinsAvailable * DST_BOUNTY ) / 100 )
                                     + ( ( stages[(stages.length - 1)].coinsAvailable * DST_R_N_B_PROGRAM ) / 100 ) );
@@ -320,7 +320,7 @@ contract UnilotToken is ERC20 {
 
                 stages[currentStage].numCoinsStart = totalCoinsAvailable;
 
-                if ( currentStage &gt; 0 ) {
+                if ( currentStage > 0 ) {
                     //Move all left tokens to last stage
                     stages[(stages.length - 1)].coinsAvailable += stages[ (currentStage - 1 ) ].coinsAvailable;
                     StageUpdated(stages[currentStage - 1].name, stages[currentStage].name);
@@ -376,9 +376,9 @@ contract UnilotToken is ERC20 {
         isFreezedReserve(_to)
         returns (bool success)
     {
-        if (balances[msg.sender] &gt;= _amount
-            &amp;&amp; _amount &gt; 0
-            &amp;&amp; balances[_to] + _amount &gt; balances[_to]) {
+        if (balances[msg.sender] >= _amount
+            && _amount > 0
+            && balances[_to] + _amount > balances[_to]) {
             balances[msg.sender] -= _amount;
             balances[_to] += _amount;
             Transfer(msg.sender, _to, _amount);
@@ -407,10 +407,10 @@ contract UnilotToken is ERC20 {
         isFreezedReserve(_to)
         returns (bool success)
     {
-        if (balances[_from] &gt;= _amount
-            &amp;&amp; allowed[_from][msg.sender] &gt;= _amount
-            &amp;&amp; _amount &gt; 0
-            &amp;&amp; balances[_to] + _amount &gt; balances[_to]) {
+        if (balances[_from] >= _amount
+            && allowed[_from][msg.sender] >= _amount
+            && _amount > 0
+            && balances[_to] + _amount > balances[_to]) {
             balances[_from] -= _amount;
             allowed[_from][msg.sender] -= _amount;
             balances[_to] += _amount;
@@ -484,15 +484,15 @@ contract UnilotToken is ERC20 {
         meetTheCap
     {
         _proceedStage();
-        require(currentStage &lt; stages.length);
-        require(stages[currentStage].startsAt &lt;= now &amp;&amp; now &lt; stages[currentStage].endsAt);
-        require(getAvailableCoinsForCurrentStage() &gt; 0);
+        require(currentStage < stages.length);
+        require(stages[currentStage].startsAt <= now && now < stages[currentStage].endsAt);
+        require(getAvailableCoinsForCurrentStage() > 0);
 
         uint requestedAmountOfTokens = ( ( msg.value * accuracy ) / price );
         uint amountToBuy = requestedAmountOfTokens;
         uint refund = 0;
 
-        if ( amountToBuy &gt; getAvailableCoinsForCurrentStage() ) {
+        if ( amountToBuy > getAvailableCoinsForCurrentStage() ) {
             amountToBuy = getAvailableCoinsForCurrentStage();
             refund = ( ( (requestedAmountOfTokens - amountToBuy) / accuracy ) * price );
 
@@ -537,10 +537,10 @@ contract ERC20Contract is ERC20 {
     uint8 public constant decimals = 18;
 
     // Balances for each account
-    mapping(address =&gt; uint96) public balances;
+    mapping(address => uint96) public balances;
 
     // Owner of account approves the transfer of an amount to another account
-    mapping(address =&gt; mapping (address =&gt; uint96)) allowed;
+    mapping(address => mapping (address => uint96)) allowed;
 
     function totalSupply()
         public
@@ -563,9 +563,9 @@ contract ERC20Contract is ERC20 {
         public
         returns (bool success)
     {
-        if (balances[msg.sender] &gt;= _amount
-            &amp;&amp; _amount &gt; 0
-            &amp;&amp; balances[_to] + _amount &gt; balances[_to]) {
+        if (balances[msg.sender] >= _amount
+            && _amount > 0
+            && balances[_to] + _amount > balances[_to]) {
             balances[msg.sender] -= uint96(_amount);
             balances[_to] += uint96(_amount);
             Transfer(msg.sender, _to, _amount);
@@ -591,10 +591,10 @@ contract ERC20Contract is ERC20 {
         public
         returns (bool success)
     {
-        if (balances[_from] &gt;= _amount
-            &amp;&amp; allowed[_from][msg.sender] &gt;= _amount
-            &amp;&amp; _amount &gt; 0
-            &amp;&amp; balances[_to] + _amount &gt; balances[_to]) {
+        if (balances[_from] >= _amount
+            && allowed[_from][msg.sender] >= _amount
+            && _amount > 0
+            && balances[_to] + _amount > balances[_to]) {
             balances[_from] -= uint96(_amount);
             allowed[_from][msg.sender] -= uint96(_amount);
             balances[_to] += uint96(_amount);
@@ -678,7 +678,7 @@ contract UNITv2 is ERC20Contract,Administrated {
     bool public burned = false;
 
     //tokenImport[tokenHolder][sourceToken] = true/false;
-    mapping ( address =&gt; mapping ( address =&gt; bool ) ) public tokenImport;
+    mapping ( address => mapping ( address => bool ) ) public tokenImport;
 
     event TokensImported(address indexed tokenHolder, uint96 amount, address indexed source);
     event TokensDelegated(address indexed tokenHolder, uint96 amount, address indexed source);
@@ -700,8 +700,8 @@ contract UNITv2 is ERC20Contract,Administrated {
             require( stagesManager.isFreezeTimeout() );
         }
         require(unlocked
-                || ( stagesManager != address(0) &amp;&amp; stagesManager.isCanList() )
-                || ( transferWhiteList != address(0) &amp;&amp; ( transferWhiteList.isInList(_from) || transferWhiteList.isInList(_to) ) )
+                || ( stagesManager != address(0) && stagesManager.isCanList() )
+                || ( transferWhiteList != address(0) && ( transferWhiteList.isInList(_from) || transferWhiteList.isInList(_to) ) )
         );
         _;
     }
@@ -729,7 +729,7 @@ contract UNITv2 is ERC20Contract,Administrated {
             ( uint(_totalSupply) * uint8( sourceToken.DST_BOUNTY() ) ) / 100
         );
 
-        //Don&#39;t import bounty and R&amp;B tokens
+        //Don&#39;t import bounty and R&B tokens
         markAsImported(0xdBF98dF5DAd9077f457e1dcf85Aa9420BcA8B761, 0x794EF9c680bDD0bEf48Bef46bA68471e449D67Fb);
         markAsImported(sourceToken, 0x794EF9c680bDD0bEf48Bef46bA68471e449D67Fb);
 
@@ -816,9 +816,9 @@ contract UNITv2 is ERC20Contract,Administrated {
         onlyAdministrator
         isNotBurned
     {
-        require(_tokenHolders.length &lt;= 256);
+        require(_tokenHolders.length <= 256);
 
-        for (uint8 i = 0; i &lt; _tokenHolders.length; i++) {
+        for (uint8 i = 0; i < _tokenHolders.length; i++) {
             importFromSource(_sourceToken, _tokenHolders[i]);
         }
     }
@@ -880,7 +880,7 @@ contract UNITv2 is ERC20Contract,Administrated {
     {
         require(paymentGateways.isInList(msg.sender));
         require(stagesManager.isICO());
-        require(stagesManager.getPool() &gt;= amount);
+        require(stagesManager.getPool() >= amount);
 
         uint88 bonus = stagesManager.calculateBonus(amount);
         stagesManager.delegateFromPool(amount);
@@ -895,7 +895,7 @@ contract UNITv2 is ERC20Contract,Administrated {
         isNotBurned
     {
         require(paymentGateways.isInList(msg.sender) || tx.origin == administrator);
-        require(stagesManager.getBonusPool() &gt;= amount);
+        require(stagesManager.getBonusPool() >= amount);
 
         stagesManager.delegateFromBonus(amount);
 
@@ -909,7 +909,7 @@ contract UNITv2 is ERC20Contract,Administrated {
         isNotBurned
     {
         require(paymentGateways.isInList(msg.sender) || tx.origin == administrator);
-        require(stagesManager.getReferralPool() &gt;= amount);
+        require(stagesManager.getReferralPool() >= amount);
 
         stagesManager.delegateFromReferral(amount);
 
@@ -923,10 +923,10 @@ contract UNITv2 is ERC20Contract,Administrated {
         isNotBurned
     {
         require(paymentGateways.isInList(msg.sender) || tx.origin == administrator);
-        require(tokenHolders.length &lt;= 256);
+        require(tokenHolders.length <= 256);
         require(tokenHolders.length == amounts.length);
 
-        for ( uint8 i = 0; i &lt; tokenHolders.length; i++ ) {
+        for ( uint8 i = 0; i < tokenHolders.length; i++ ) {
             delegateReferalTokens(tokenHolders[i], amounts[i]);
         }
     }

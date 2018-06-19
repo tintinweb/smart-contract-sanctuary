@@ -8,12 +8,12 @@ contract SafeMath {
         return c;
     }
     function safeSub(uint a, uint b) internal pure returns (uint) {
-        require(b &lt;= a);
+        require(b <= a);
         return a - b;
     }
     function safeAdd(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        require(c&gt;=a &amp;&amp; c&gt;=b);
+        require(c>=a && c>=b);
         return c;
     }
 }
@@ -35,12 +35,12 @@ contract Token {
 
 contract StandardToken is Token {
 
-    mapping(address =&gt; uint256) balances;
-    mapping(address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping(address => uint256) balances;
+    mapping(address => mapping (address => uint256)) allowed;
     uint256 public totalSupply;
 
     function transfer(address _to, uint256 _value) public returns (bool success) {
-        if (balances[msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt; balances[_to]) {
+        if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
             balances[msg.sender] -= _value;
             balances[_to] += _value;
             emit Transfer(msg.sender, _to, _value);
@@ -49,7 +49,7 @@ contract StandardToken is Token {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt; balances[_to]) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
             balances[_to] += _value;
             balances[_from] -= _value;
             allowed[_from][msg.sender] -= _value;
@@ -91,7 +91,7 @@ contract ReserveToken is StandardToken, SafeMath {
 
     function destroy(address account, uint amount) public {
         if (msg.sender != minter) revert();
-        if (balances[account] &lt; amount) revert();
+        if (balances[account] < amount) revert();
         balances[account] = safeSub(balances[account], amount);
         totalSupply = safeSub(totalSupply, amount);
     }
@@ -109,7 +109,7 @@ contract AccountLevels {
 
 contract AccountLevelsTest is AccountLevels {
 
-    mapping (address =&gt; uint) public accountLevels;
+    mapping (address => uint) public accountLevels;
 
     function setAccountLevel(address user, uint level) public {
         accountLevels[user] = level;
@@ -130,12 +130,12 @@ contract GenevExch is SafeMath {
     uint public feeMake; //percentage times (1 ether)
     uint public feeTake; //percentage times (1 ether)
     uint public feeRebate; //percentage times (1 ether)
-    mapping (address =&gt; mapping (address =&gt; uint)) public tokens; //mapping of token addresses to mapping of account balances (token=0 means Ether)
-    mapping (address =&gt; mapping (bytes32 =&gt; bool)) public orders; //mapping of user accounts to mapping of order hashes to booleans (true = submitted by user, equivalent to offchain signature)
-    mapping (address =&gt; mapping (bytes32 =&gt; uint)) public orderFills; //mapping of user accounts to mapping of order hashes to uints (amount of order that has been filled)
+    mapping (address => mapping (address => uint)) public tokens; //mapping of token addresses to mapping of account balances (token=0 means Ether)
+    mapping (address => mapping (bytes32 => bool)) public orders; //mapping of user accounts to mapping of order hashes to booleans (true = submitted by user, equivalent to offchain signature)
+    mapping (address => mapping (bytes32 => uint)) public orderFills; //mapping of user accounts to mapping of order hashes to uints (amount of order that has been filled)
 
-    mapping (address =&gt; bool) public whiteListERC20;
-    mapping (address =&gt; bool) public whiteListERC223;
+    mapping (address => bool) public whiteListERC20;
+    mapping (address => bool) public whiteListERC223;
 
     event Order(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user);
     event Cancel(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s);
@@ -189,12 +189,12 @@ contract GenevExch is SafeMath {
     }
 
     function changeFeeTake(uint feeTake_) public onlyAdmin {
-        if (feeTake_ &lt; feeRebate) revert();
+        if (feeTake_ < feeRebate) revert();
         feeTake = feeTake_;
     }
 
     function changeFeeRebate(uint feeRebate_) public onlyAdmin {
-        if (feeRebate_ &gt; feeTake) revert();
+        if (feeRebate_ > feeTake) revert();
         feeRebate = feeRebate_;
     }
 
@@ -236,7 +236,7 @@ contract GenevExch is SafeMath {
     }
 
     function withdraw(uint amount) public { // Withdraw ethers
-        if (tokens[0][msg.sender] &lt; amount) revert();
+        if (tokens[0][msg.sender] < amount) revert();
         tokens[0][msg.sender] = safeSub(tokens[0][msg.sender], amount);
         msg.sender.transfer(amount);
         emit Withdraw(0, msg.sender, amount, tokens[0][msg.sender]);
@@ -244,7 +244,7 @@ contract GenevExch is SafeMath {
 
     function withdrawToken(address token, uint amount) public { // Withdraw tokens
         require(whiteListERC20[token] || whiteListERC223[token]);
-        if (tokens[token][msg.sender] &lt; amount) revert();
+        if (tokens[token][msg.sender] < amount) revert();
         tokens[token][msg.sender] = safeSub(tokens[token][msg.sender], amount);
         require (Token(token).transfer(msg.sender, amount));
         emit Withdraw(token, msg.sender, amount, tokens[token][msg.sender]);
@@ -266,9 +266,9 @@ contract GenevExch is SafeMath {
         //amount is in amountGet terms
         bytes32 hash = sha256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
         if (!(
-            (orders[user][hash] || ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),v,r,s) == user) &amp;&amp;
-            block.number &lt;= expires &amp;&amp;
-            safeAdd(orderFills[user][hash], amount) &lt;= amountGet
+            (orders[user][hash] || ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),v,r,s) == user) &&
+            block.number <= expires &&
+            safeAdd(orderFills[user][hash], amount) <= amountGet
         )) revert();
         tradeBalances(tokenGet, amountGet, tokenGive, amountGive, user, amount);
         orderFills[user][hash] = safeAdd(orderFills[user][hash], amount);
@@ -295,8 +295,8 @@ contract GenevExch is SafeMath {
 
     function testTrade(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s, uint amount, address sender) public constant returns(bool) {
         if (!(
-            tokens[tokenGet][sender] &gt;= amount &amp;&amp;
-            availableVolume(tokenGet, amountGet, tokenGive, amountGive, expires, nonce, user, v, r, s) &gt;= amount
+            tokens[tokenGet][sender] >= amount &&
+            availableVolume(tokenGet, amountGet, tokenGive, amountGive, expires, nonce, user, v, r, s) >= amount
         )) return false;
         return true;
     }
@@ -304,12 +304,12 @@ contract GenevExch is SafeMath {
     function availableVolume(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s) public constant returns(uint) {
         bytes32 hash = sha256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
         if (!(
-            (orders[user][hash] || ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),v,r,s) == user) &amp;&amp;
-            block.number &lt;= expires
+            (orders[user][hash] || ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),v,r,s) == user) &&
+            block.number <= expires
         )) return 0;
         uint available1 = safeSub(amountGet, orderFills[user][hash]);
         uint available2 = safeMul(tokens[tokenGive][user], amountGet) / amountGive;
-        if (available1 &lt; available2) return available1;
+        if (available1 < available2) return available1;
         return available2;
     }
 

@@ -12,7 +12,7 @@ pragma solidity ^0.4.21;
 // GNU General Public License for more details.
 
 // You should have received a copy of the GNU General Public License
-// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 contract DSAuthority {
     function canCall(
@@ -79,30 +79,30 @@ contract DSAuth is DSAuthEvents {
 // GNU General Public License for more details.
 
 // You should have received a copy of the GNU General Public License
-// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 contract DSMath {
     function add(uint x, uint y) internal pure returns (uint z) {
-        require((z = x + y) &gt;= x);
+        require((z = x + y) >= x);
     }
     function sub(uint x, uint y) internal pure returns (uint z) {
-        require((z = x - y) &lt;= x);
+        require((z = x - y) <= x);
     }
     function mul(uint x, uint y) internal pure returns (uint z) {
         require(y == 0 || (z = x * y) / y == x);
     }
 
     function min(uint x, uint y) internal pure returns (uint z) {
-        return x &lt;= y ? x : y;
+        return x <= y ? x : y;
     }
     function max(uint x, uint y) internal pure returns (uint z) {
-        return x &gt;= y ? x : y;
+        return x >= y ? x : y;
     }
     function imin(int x, int y) internal pure returns (int z) {
-        return x &lt;= y ? x : y;
+        return x <= y ? x : y;
     }
     function imax(int x, int y) internal pure returns (int z) {
-        return x &gt;= y ? x : y;
+        return x >= y ? x : y;
     }
 
     uint constant WAD = 10 ** 18;
@@ -160,7 +160,7 @@ contract DSMath {
 // GNU General Public License for more details.
 
 // You should have received a copy of the GNU General Public License
-// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 contract DSNote {
     event LogNote(
@@ -202,7 +202,7 @@ contract DSNote {
 // GNU General Public License for more details.
 
 // You should have received a copy of the GNU General Public License
-// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 contract DSStop is DSNote, DSAuth {
 
@@ -223,7 +223,7 @@ contract DSStop is DSNote, DSAuth {
 
 /// erc20.sol -- API for the ERC20 token standard
 
-// See &lt;https://github.com/ethereum/EIPs/issues/20&gt;.
+// See <https://github.com/ethereum/EIPs/issues/20>.
 
 // This file likely does not meet the threshold of originality
 // required for copyright to apply.  As a result, this is free and
@@ -261,12 +261,12 @@ contract ERC20 is ERC20Events {
 // GNU General Public License for more details.
 
 // You should have received a copy of the GNU General Public License
-// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 contract DSTokenBase is ERC20, DSMath {
     uint256                                            _supply;
-    mapping (address =&gt; uint256)                       _balances;
-    mapping (address =&gt; mapping (address =&gt; uint256))  _approvals;
+    mapping (address => uint256)                       _balances;
+    mapping (address => mapping (address => uint256))  _approvals;
 
     function DSTokenBase(uint supply) public {
         _balances[msg.sender] = supply;
@@ -327,7 +327,7 @@ contract DSTokenBase is ERC20, DSMath {
 // GNU General Public License for more details.
 
 // You should have received a copy of the GNU General Public License
-// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 contract DSToken is DSTokenBase(0), DSStop {
 
@@ -354,7 +354,7 @@ contract DSToken is DSTokenBase(0), DSStop {
         stoppable
         returns (bool)
     {
-        if (src != msg.sender &amp;&amp; _approvals[src][msg.sender] != uint(-1)) {
+        if (src != msg.sender && _approvals[src][msg.sender] != uint(-1)) {
             _approvals[src][msg.sender] = sub(_approvals[src][msg.sender], wad);
         }
 
@@ -388,7 +388,7 @@ contract DSToken is DSTokenBase(0), DSStop {
         Mint(guy, wad);
     }
     function burn(address guy, uint wad) public auth stoppable {
-        if (guy != msg.sender &amp;&amp; _approvals[guy][msg.sender] != uint(-1)) {
+        if (guy != msg.sender && _approvals[guy][msg.sender] != uint(-1)) {
             _approvals[guy][msg.sender] = sub(_approvals[guy][msg.sender], wad);
         }
 
@@ -420,7 +420,7 @@ contract DSToken is DSTokenBase(0), DSStop {
 // GNU General Public License for more details.
 
 // You should have received a copy of the GNU General Public License
-// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 contract DSThing is DSAuth, DSNote, DSMath {
 
@@ -445,7 +445,7 @@ contract DSThing is DSAuth, DSNote, DSMath {
 // GNU General Public License for more details.
 
 // You should have received a copy of the GNU General Public License
-// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 contract DSValue is DSThing {
     bool    has;
@@ -470,7 +470,7 @@ contract DSValue is DSThing {
 
 /// lpc.sol -- really dumb liquidity pool
 
-// Copyright (C) 2017, 2018 Rain &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1a687b737478687f7b715a6873697f6f6a34747f6e">[email&#160;protected]</a>&gt;
+// Copyright (C) 2017, 2018 Rain <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1a687b737478687f7b715a6873697f6f6a34747f6e">[email&#160;protected]</a>>
 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as published by
@@ -483,7 +483,7 @@ contract DSValue is DSThing {
 // GNU Affero General Public License for more details.
 
 // You should have received a copy of the GNU Affero General Public License
-// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 contract SaiLPC is DSThing {
     // This is a simple two token liquidity pool that uses an external
@@ -541,7 +541,7 @@ contract SaiLPC is DSThing {
              : rdiv(lps.totalSupply(), pie());
     }
 
-    // {ref,alt} -&gt; lps
+    // {ref,alt} -> lps
     function pool(ERC20 gem, uint wad) public note auth {
         require(gem == alt || gem == ref);
 
@@ -553,7 +553,7 @@ contract SaiLPC is DSThing {
         gem.transferFrom(msg.sender, this, wad);
     }
 
-    // lps -&gt; {ref,alt}
+    // lps -> {ref,alt}
     function exit(ERC20 gem, uint wad) public note auth {
         require(gem == alt || gem == ref);
 
@@ -567,7 +567,7 @@ contract SaiLPC is DSThing {
         gem.transfer(msg.sender, wad);
     }
 
-    // ref &lt;-&gt; alt
+    // ref <-> alt
     // TODO: meme &#39;swap&#39;?
     // TODO: mem &#39;yen&#39; means to desire. pair with &#39;pay&#39;? or &#39;ney&#39;
     function take(ERC20 gem, uint wad) public note auth {

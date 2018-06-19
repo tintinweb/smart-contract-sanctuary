@@ -104,8 +104,8 @@ contract MoatFund is addressKeeper {
 
     // function called from MoatFund.sol
     function transferToken() public payable {
-        if (msg.sender != owner &amp;&amp;
-            msg.sender != tokenAddress &amp;&amp;
+        if (msg.sender != owner &&
+            msg.sender != tokenAddress &&
             msg.sender != boardAddress) {
                 require(mintBool);
                 require(msg.value >= minInvest);

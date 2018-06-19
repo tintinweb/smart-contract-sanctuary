@@ -208,7 +208,7 @@ contract FructusToken is ERC20Interface, Owned, SafeMath {
     // 1,000 FRT Tokens per 1 ETH
     // ------------------------------------------------------------------------
     function () public payable {
-        require(now >= startDate &amp;&amp; now <= endDate);
+        require(now >= startDate && now <= endDate);
         uint tokens;
         if (now <= bonusEnds) {
             tokens = msg.value * 1500;

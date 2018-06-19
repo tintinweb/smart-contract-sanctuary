@@ -41,7 +41,7 @@ contract ProofOfEtherDelta is ERC20 {
     
     function balanceOfUnclaimedGoo(address player) internal constant returns (uint256) {
         uint256 lastSave = lastGooSaveTime[player];
-        if (lastSave > 0 &amp;&amp; lastSave < block.timestamp) {
+        if (lastSave > 0 && lastSave < block.timestamp) {
             return (1000 * (block.timestamp - lastSave)) / 100;
         }
         return 0;
@@ -58,7 +58,7 @@ contract ProofOfEtherDelta is ERC20 {
     }
     
     function transferFrom(address player, address recipient, uint256 amount) public returns (bool) {
-        require(amount <= allowed[player][msg.sender] &amp;&amp; amount <= gooBalance[player]);
+        require(amount <= allowed[player][msg.sender] && amount <= gooBalance[player]);
         
         gooBalance[player] -= amount;
         gooBalance[recipient] += amount;

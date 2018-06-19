@@ -124,7 +124,7 @@ contract Hive is ERC20 {
     
     // Transfer the balance from owner&#39;s account to another account
     function transfer(address _to, uint256 _value) public returns (bool success) {        
-        if (_to != address(0) &amp;&amp; isFrozenAccount(msg.sender) == false &amp;&amp; balances[msg.sender] >= _value &amp;&amp; _value > 0 &amp;&amp; balances[_to].add(_value) > balances[_to]) {
+        if (_to != address(0) && isFrozenAccount(msg.sender) == false && balances[msg.sender] >= _value && _value > 0 && balances[_to].add(_value) > balances[_to]) {
             balances[msg.sender] = balances[msg.sender].sub(_value);
             balances[_to] = balances[_to].add(_value);
             Transfer(msg.sender, _to, _value);
@@ -141,7 +141,7 @@ contract Hive is ERC20 {
     // deliberately authorized the sender of the message via some mechanism; we propose
     // these standardized APIs for approval:
     function transferFrom(address _from,address _to, uint256 _value) public returns (bool success) {
-        if (_to != address(0) &amp;&amp; isFrozenAccount(_from) == false &amp;&amp; balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value &amp;&amp; _value > 0 &amp;&amp; balances[_to].add(_value) > balances[_to]) {
+        if (_to != address(0) && isFrozenAccount(_from) == false && balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0 && balances[_to].add(_value) > balances[_to]) {
             balances[_from] = balances[_from].sub(_value);
             allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
             balances[_to] = balances[_to].add(_value);
@@ -196,7 +196,7 @@ contract HivePreSale {
     * @dev Reverts if not in crowdsale time range. 
     */
     modifier onlyWhileOpen {
-        require(now >= openingTime &amp;&amp; now <= closingTime &amp;&amp; paused == false);
+        require(now >= openingTime && now <= closingTime && paused == false);
         _;
     }
 

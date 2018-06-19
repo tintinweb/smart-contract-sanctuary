@@ -765,7 +765,7 @@ contract ArtworkUnique {
 		bytes memory bLower = new bytes(bStr.length);
 		for (uint i = 0; i < bStr.length; i++) {
 			// Uppercase character...
-			if ((bStr[i] >= 65) &amp;&amp; (bStr[i] <= 90)) {
+			if ((bStr[i] >= 65) && (bStr[i] <= 90)) {
 				// So we add 32 to make it lowercase
 				bLower[i] = bytes1(int(bStr[i]) + 32);
 			} else {
@@ -979,7 +979,7 @@ contract ArtworkOwnership is ArtworkBase, ArtworkUnique, ERC721 {
     ///  ERC-165 (obviously!) and ERC-721.
     function supportsInterface(bytes4 _interfaceID) external view returns (bool) {
         // DEBUG ONLY
-        //require((InterfaceSignature_ERC165 == 0x01ffc9a7) &amp;&amp; (InterfaceSignature_ERC721 == 0x9a20483d));
+        //require((InterfaceSignature_ERC165 == 0x01ffc9a7) && (InterfaceSignature_ERC721 == 0x9a20483d));
 
         return ((_interfaceID == INTERFACE_SIGNATURE_ERC165) || (_interfaceID == INTERFACE_SIGNATURE_ERC721));
     }

@@ -390,35 +390,35 @@ contract VVDBCrowdsale is Ownable {
 		uint256 purchaserTokenSum = 0;
 		if (currentTime<round1StartTime || currentTime>icoEndTime) return false;
 
-		if (currentTime >= round1StartTime &amp;&amp; currentTime < round2StartTime)
+		if (currentTime >= round1StartTime && currentTime < round2StartTime)
 		{
 			purchaserTokenSum = _tokens + round1Balances[msg.sender];
-			return purchaserTokenSum <= (10000 * (10 ** uint256(18))) &amp;&amp; _tokens <= round1TokensRemaning;
+			return purchaserTokenSum <= (10000 * (10 ** uint256(18))) && _tokens <= round1TokensRemaning;
 
-		} else if (currentTime >= round2StartTime &amp;&amp; currentTime < round3StartTime)
+		} else if (currentTime >= round2StartTime && currentTime < round3StartTime)
 		{
 			purchaserTokenSum = _tokens + round2Balances[msg.sender];
-			return purchaserTokenSum <= (2000 * (10 ** uint256(18))) &amp;&amp; _tokens <= round2TokensRemaning;
+			return purchaserTokenSum <= (2000 * (10 ** uint256(18))) && _tokens <= round2TokensRemaning;
 
-		} else if (currentTime >= round3StartTime &amp;&amp; currentTime < round4StartTime)
+		} else if (currentTime >= round3StartTime && currentTime < round4StartTime)
 		{
 			purchaserTokenSum = _tokens + round3Balances[msg.sender];
-			return purchaserTokenSum <= (2000 * (10 ** uint256(18))) &amp;&amp; _tokens <= round3TokensRemaning;
+			return purchaserTokenSum <= (2000 * (10 ** uint256(18))) && _tokens <= round3TokensRemaning;
 
-		} else if (currentTime >= round4StartTime &amp;&amp; currentTime < round5StartTime)
+		} else if (currentTime >= round4StartTime && currentTime < round5StartTime)
 		{
 			purchaserTokenSum = _tokens + round4Balances[msg.sender];
-			return purchaserTokenSum <= (2000 * (10 ** uint256(18))) &amp;&amp; _tokens <= round4TokensRemaning;
+			return purchaserTokenSum <= (2000 * (10 ** uint256(18))) && _tokens <= round4TokensRemaning;
 
-		} else if (currentTime >= round5StartTime &amp;&amp; currentTime < round6StartTime)
+		} else if (currentTime >= round5StartTime && currentTime < round6StartTime)
 		{
 			purchaserTokenSum = _tokens + round5Balances[msg.sender];
-			return purchaserTokenSum <= (2000 * (10 ** uint256(18))) &amp;&amp; _tokens <= round5TokensRemaning;
+			return purchaserTokenSum <= (2000 * (10 ** uint256(18))) && _tokens <= round5TokensRemaning;
 
-		} else if (currentTime >= round6StartTime &amp;&amp; currentTime < icoEndTime)
+		} else if (currentTime >= round6StartTime && currentTime < icoEndTime)
 		{
 			purchaserTokenSum = _tokens + round6Balances[msg.sender];
-			return purchaserTokenSum <= (2000 * (10 ** uint256(18))) &amp;&amp; _tokens <= round6TokensRemaning;
+			return purchaserTokenSum <= (2000 * (10 ** uint256(18))) && _tokens <= round6TokensRemaning;
 		}
 	}
 	
@@ -426,32 +426,32 @@ contract VVDBCrowdsale is Ownable {
 	{
 		uint256 currentTime = now;
 
-		if (currentTime >= round1StartTime &amp;&amp; currentTime < round2StartTime)
+		if (currentTime >= round1StartTime && currentTime < round2StartTime)
 		{
 			round1Balances[msg.sender] = round1Balances[msg.sender].add(_tokens);
 			round1TokensRemaning = round1TokensRemaning.sub(_tokens);
 
-		} else if (currentTime >= round2StartTime &amp;&amp; currentTime < round3StartTime)
+		} else if (currentTime >= round2StartTime && currentTime < round3StartTime)
 		{
 			round2Balances[msg.sender] = round2Balances[msg.sender].add(_tokens);
 			round2TokensRemaning = round2TokensRemaning.sub(_tokens);
 
-		} else if (currentTime >= round3StartTime &amp;&amp; currentTime < round4StartTime)
+		} else if (currentTime >= round3StartTime && currentTime < round4StartTime)
 		{
 			round3Balances[msg.sender] = round3Balances[msg.sender].add(_tokens);
 			round3TokensRemaning = round3TokensRemaning.sub(_tokens);
 
-		} else if (currentTime >= round4StartTime &amp;&amp; currentTime < round5StartTime)
+		} else if (currentTime >= round4StartTime && currentTime < round5StartTime)
 		{
 			round4Balances[msg.sender] = round4Balances[msg.sender].add(_tokens);
 			round4TokensRemaning = round4TokensRemaning.sub(_tokens);
 
-		} else if (currentTime >= round5StartTime &amp;&amp; currentTime < round6StartTime)
+		} else if (currentTime >= round5StartTime && currentTime < round6StartTime)
 		{
 			round5Balances[msg.sender] = round5Balances[msg.sender].add(_tokens);
 			round5TokensRemaning = round5TokensRemaning.sub(_tokens);
 
-		} else if (currentTime >= round6StartTime &amp;&amp; currentTime < icoEndTime)
+		} else if (currentTime >= round6StartTime && currentTime < icoEndTime)
 		{
 			round6Balances[msg.sender] = round6Balances[msg.sender].add(_tokens);
 			round6TokensRemaning = round6TokensRemaning.sub(_tokens);

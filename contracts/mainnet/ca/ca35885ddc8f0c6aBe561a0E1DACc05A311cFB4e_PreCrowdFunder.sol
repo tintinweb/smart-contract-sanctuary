@@ -105,7 +105,7 @@ contract Token is Controlled {
                return;
            }
 
-           require((_to != 0) &amp;&amp; (_to != address(this)));
+           require((_to != 0) && (_to != address(this)));
 
            uint256 previousBalanceFrom = balanceOfAt(_from, block.number);
 

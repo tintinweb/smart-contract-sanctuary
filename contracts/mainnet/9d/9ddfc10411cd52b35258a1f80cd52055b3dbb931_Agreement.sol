@@ -66,7 +66,7 @@ contract Agreement {
 
 // To sign contract id needs to be valid and contract should assigned to participant and should not be signed already
     function signContract( uint id) public {
-        require(id > 0 &amp;&amp; id <= contractCount);
+        require(id > 0 && id <= contractCount);
         require(contracts[id].participant == msg.sender);
         require(!contracts[id].isSigned);
         contracts[id].isSigned = true;

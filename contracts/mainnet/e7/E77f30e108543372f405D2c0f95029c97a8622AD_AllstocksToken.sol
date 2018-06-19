@@ -254,7 +254,7 @@ contract AllstocksToken is StandardToken {
       require (fundingStartTime == 0);              //run once
       require (fundingEndTime == 0);                //first time 
       require(_fundingStartTime > 0);
-      require(_fundingEndTime > 0 &amp;&amp; _fundingEndTime > _fundingStartTime);
+      require(_fundingEndTime > 0 && _fundingEndTime > _fundingStartTime);
 
       isFinalized = false;                          //controls pre through crowdsale state
       isActive = true;

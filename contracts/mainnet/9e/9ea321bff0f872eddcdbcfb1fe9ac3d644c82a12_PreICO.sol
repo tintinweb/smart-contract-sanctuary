@@ -213,10 +213,10 @@ contract Crowdsale is Ownable {
 
   // @return true if the transaction can buy tokens
   function validPurchase() internal view returns (bool) {
-    bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+    bool withinPeriod = now >= startTime && now <= endTime;
     bool nonZeroPurchase = msg.value != 0;
 
-    return withinPeriod &amp;&amp; nonZeroPurchase;
+    return withinPeriod && nonZeroPurchase;
   }
 
   function finalization() internal {
@@ -250,9 +250,9 @@ contract PreICO is Crowdsale {
   // @return true if investors can buy at the moment
   function validPurchase() internal view returns (bool) {
     //0.1 eth and 1000 eth
-    bool withinRange = msg.value >= minContribution &amp;&amp; msg.value <= maxContribution;
+    bool withinRange = msg.value >= minContribution && msg.value <= maxContribution;
     bool withinCap = weiRaised.add(msg.value) <= cap;
-    return withinRange &amp;&amp; withinCap &amp;&amp; super.validPurchase();
+    return withinRange && withinCap && super.validPurchase();
   }
 
   function changeMinContribution(uint256 _minContribution) public onlyOwner {

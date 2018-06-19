@@ -81,34 +81,34 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
 
 contract PoolOwners is Ownable {
 
-    mapping(uint64 =&gt; address)  private ownerAddresses;
-    mapping(address =&gt; bool)    private whitelist;
+    mapping(uint64 => address)  private ownerAddresses;
+    mapping(address => bool)    private whitelist;
 
-    mapping(address =&gt; uint256) public ownerPercentages;
-    mapping(address =&gt; uint256) public ownerShareTokens;
-    mapping(address =&gt; uint256) public tokenBalance;
+    mapping(address => uint256) public ownerPercentages;
+    mapping(address => uint256) public ownerShareTokens;
+    mapping(address => uint256) public tokenBalance;
 
-    mapping(address =&gt; mapping(address =&gt; uint256)) private balances;
+    mapping(address => mapping(address => uint256)) private balances;
 
     uint64  public totalOwners = 0;
     uint16  public distributionMinimum = 20;
@@ -173,16 +173,16 @@ contract PoolOwners is Ownable {
         require(whitelist[sender]);
 
         // Assert that the contribution is above or equal to the minimum contribution
-        require(msg.value &gt;= minimumContribution);
+        require(msg.value >= minimumContribution);
 
         // Make sure the contribution isn&#39;t above the hard cap
-        require(hardCap &gt;= msg.value);
+        require(hardCap >= msg.value);
 
         // Ensure the amount contributed is cleanly divisible by the minimum contribution
         require((msg.value % minimumContribution) == 0);
 
         // Make sure the contribution doesn&#39;t exceed the hardCap
-        require(hardCap &gt;= SafeMath.add(totalContributed, msg.value));
+        require(hardCap >= SafeMath.add(totalContributed, msg.value));
 
         // Increase the total contributed
         totalContributed = SafeMath.add(totalContributed, msg.value);
@@ -244,10 +244,10 @@ contract PoolOwners is Ownable {
     // Non-Standard token transfer, doesn&#39;t confine to any ERC
     function sendOwnership(address receiver, uint256 amount) public onlyWhitelisted() {
         // Require they have an actual balance
-        require(ownerShareTokens[msg.sender] &gt; 0);
+        require(ownerShareTokens[msg.sender] > 0);
 
         // Require the amount to be equal or less to their shares
-        require(ownerShareTokens[msg.sender] &gt;= amount);
+        require(ownerShareTokens[msg.sender] >= amount);
 
         // Deduct the amount from the owner
         ownerShareTokens[msg.sender] = SafeMath.sub(ownerShareTokens[msg.sender], amount);
@@ -290,7 +290,7 @@ contract PoolOwners is Ownable {
 
         // Has the contract got a balance?
         uint256 currentBalance = erc677.balanceOf(this) - tokenBalance[token];
-        require(currentBalance &gt; ethWei * distributionMinimum);
+        require(currentBalance > ethWei * distributionMinimum);
 
         // Add the current balance on to the total returned
         tokenBalance[token] = SafeMath.add(tokenBalance[token], currentBalance);
@@ -298,11 +298,11 @@ contract PoolOwners is Ownable {
         // Loop through stakers and add the earned shares
         // This is GAS expensive, but unless complex more bug prone logic was added there is no alternative
         // This is due to the percentages needed to be calculated for all at once, or the amounts would differ
-        for (uint64 i = 0; i &lt; totalOwners; i++) {
+        for (uint64 i = 0; i < totalOwners; i++) {
             address owner = ownerAddresses[i];
 
             // If the owner still has a share
-            if (ownerShareTokens[owner] &gt; 0) {
+            if (ownerShareTokens[owner] > 0) {
                 // Calculate and transfer the ownership of shares with a precision of 5, for example: 12.345%
                 balances[owner][token] = SafeMath.add(SafeMath.div(SafeMath.mul(currentBalance, ownerPercentages[owner]), 100000), balances[owner][token]);
             }
@@ -316,10 +316,10 @@ contract PoolOwners is Ownable {
     // Withdraw tokens from the owners balance
     function withdrawTokens(address token, uint256 amount) public {
         // Can&#39;t withdraw nothing
-        require(amount &gt; 0);
+        require(amount > 0);
 
         // Assert they&#39;re withdrawing what is in their balance
-        require(balances[msg.sender][token] &gt;= amount);
+        require(balances[msg.sender][token] >= amount);
 
         // Substitute the amounts
         balances[msg.sender][token] = SafeMath.sub(balances[msg.sender][token], amount);

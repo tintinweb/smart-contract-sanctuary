@@ -86,7 +86,7 @@ contract Claimable is Ownable {
  */
 contract KYCWhitelist is Claimable {
 
-   mapping(address =&gt; bool) public whitelist;
+   mapping(address => bool) public whitelist;
 
   /**
    * @dev Reverts if beneficiary is not whitelisted. Can be used when extending this contract.
@@ -117,7 +117,7 @@ contract KYCWhitelist is Claimable {
    * @param _beneficiaries Addresses to be added to the whitelist
    */
   function addManyToWhitelist(address[] _beneficiaries) external onlyOwner {
-    for (uint256 i = 0; i &lt; _beneficiaries.length; i++) {
+    for (uint256 i = 0; i < _beneficiaries.length; i++) {
       whitelist[_beneficiaries[i]] = true;
     }
   }
@@ -203,7 +203,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -213,7 +213,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -222,7 +222,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -315,12 +315,12 @@ contract PrivatePreSale is Claimable, KYCWhitelist, Pausable {
 
 
   function PrivatePreSale() public {
-    require(TOKENS_PER_ETH &gt; 0);
+    require(TOKENS_PER_ETH > 0);
     require(FUNDS_WALLET != address(0));
     require(TOKEN_WALLET != address(0));
     require(TOKEN_ADDRESS != address(0));
-    require(MAX_TOKENS &gt; 0);
-    require(MIN_TOKEN_INVEST &gt;= 0);
+    require(MAX_TOKENS > 0);
+    require(MIN_TOKEN_INVEST >= 0);
   }
 
   // -----------------------------------------
@@ -332,7 +332,7 @@ contract PrivatePreSale is Claimable, KYCWhitelist, Pausable {
    * @return Whether the cap was reached
    */
   function capReached() public view returns (bool) {
-    return tokensIssued &gt;= MAX_TOKENS;
+    return tokensIssued >= MAX_TOKENS;
   }
 
   /**
@@ -400,16 +400,16 @@ contract PrivatePreSale is Claimable, KYCWhitelist, Pausable {
   function preValidateChecks(address _beneficiary, uint256 _weiAmount, uint256 _tokenAmount) internal view {
     require(_beneficiary != address(0));
     require(_weiAmount != 0);
-    require(now &gt;= START_DATE);
+    require(now >= START_DATE);
     require(!closed);
 
     // KYC Check
     validateWhitelisted(_beneficiary);
 
     // Test Min Investment
-    require(_tokenAmount &gt;= MIN_TOKEN_INVEST);
+    require(_tokenAmount >= MIN_TOKEN_INVEST);
 
     // Test hard cap
-    require(tokensIssued.add(_tokenAmount) &lt;= MAX_TOKENS);
+    require(tokensIssued.add(_tokenAmount) <= MAX_TOKENS);
   }
 }

@@ -38,13 +38,13 @@ contract SafeMath {
   }
 
   function safeSub(uint a, uint b) internal returns (uint) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function safeAdd(uint a, uint b) internal returns (uint) {
     uint c = a + b;
-    assert(c&gt;=a &amp;&amp; c&gt;=b);
+    assert(c>=a && c>=b);
     return c;
   }
 
@@ -65,9 +65,9 @@ contract EthernetCash is owned, SafeMath {
     uint256 public buyPrice 			= 1800000;
 	uint256 public sellPrice 			= 1800000;
    	
-    mapping (address =&gt; uint256) public balanceOf;
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
-	mapping (address =&gt; bool) public frozenAccount;
+    mapping (address => uint256) public balanceOf;
+    mapping (address => mapping (address => uint256)) public allowance;
+	mapping (address => bool) public frozenAccount;
 
     event Transfer(address indexed from, address indexed to, uint256 value);				
     event FundTransfer(address backer, uint amount, bool isContribution);
@@ -91,9 +91,9 @@ contract EthernetCash is owned, SafeMath {
         // Prevent transfer to 0x0 address. Use burn() instead
         require(_to != 0x0);
         // Check if the sender has enough
-        require(balanceOf[_from] &gt;= _value);
+        require(balanceOf[_from] >= _value);
         // Check for overflows
-        require(balanceOf[_to] + _value &gt;= balanceOf[_to]);
+        require(balanceOf[_to] + _value >= balanceOf[_to]);
         // Subtract from the sender
         balanceOf[_from] -= _value;
         // Add the same to the recipient
@@ -124,8 +124,8 @@ contract EthernetCash is owned, SafeMath {
 		
 		//amount = now ;
 		
-        require(balanceOf[creator] &gt;= amount);               				
-        require(msg.value &gt; 0);
+        require(balanceOf[creator] >= amount);               				
+        require(msg.value > 0);
 		amountRaised = safeAdd(amountRaised, msg.value);                    
 		balanceOf[msg.sender] = safeAdd(balanceOf[msg.sender], amount);     
         balanceOf[creator] = safeSub(balanceOf[creator], amount);           
@@ -177,7 +177,7 @@ contract EthernetCash is owned, SafeMath {
         }
     }
 	
-    /// @notice `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens
+    /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
     function freezeAccount(address target, bool freeze) onlyOwner public {
@@ -202,7 +202,7 @@ contract EthernetCash is owned, SafeMath {
      * @param _value the amount of money to burn
      */
     function burn(uint256 _value) public returns (bool success) {
-        require(balanceOf[msg.sender] &gt;= _value);   // Check if the sender has enough
+        require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
         balanceOf[msg.sender] -= _value;            // Subtract from the sender
         totalSupply -= _value;                      // Updates totalSupply
         Burn(msg.sender, _value);
@@ -218,8 +218,8 @@ contract EthernetCash is owned, SafeMath {
      * @param _value the amount of money to burn
      */
     function burnFrom(address _from, uint256 _value) public returns (bool success) {
-        require(balanceOf[_from] &gt;= _value);                // Check if the targeted balance is enough
-        require(_value &lt;= allowance[_from][msg.sender]);    // Check allowance
+        require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+        require(_value <= allowance[_from][msg.sender]);    // Check allowance
         balanceOf[_from] -= _value;                         // Subtract from the targeted balance
         allowance[_from][msg.sender] -= _value;             // Subtract from the sender&#39;s allowance
         totalSupply -= _value;                              // Update totalSupply
@@ -229,23 +229,23 @@ contract EthernetCash is owned, SafeMath {
 	
 	function getBonus(uint _amount) constant private returns (uint256) {
         
-		if(now &gt;= 1524873600 &amp;&amp; now &lt;= 1527551999) { 
+		if(now >= 1524873600 && now <= 1527551999) { 
             return _amount * 50 / 100;
         }
 		
-		if(now &gt;= 1527552000 &amp;&amp; now &lt;= 1530316799) { 
+		if(now >= 1527552000 && now <= 1530316799) { 
             return _amount * 40 / 100;
         }
 		
-		if(now &gt;= 1530316800 &amp;&amp; now &lt;= 1532995199) { 
+		if(now >= 1530316800 && now <= 1532995199) { 
             return _amount * 30 / 100;
         }
 		
-		if(now &gt;= 1532995200 &amp;&amp; now &lt;= 1535759999) { 
+		if(now >= 1532995200 && now <= 1535759999) { 
             return _amount * 20 / 100;
         }
 		
-		if(now &gt;= 1535760000 &amp;&amp; now &lt;= 1538438399) { 
+		if(now >= 1535760000 && now <= 1538438399) { 
             return _amount * 10 / 100;
         }
 		
@@ -255,7 +255,7 @@ contract EthernetCash is owned, SafeMath {
 	/// @notice Sell `amount` tokens to contract
     /// @param amount amount of tokens to be sold
     function sell(uint256 amount) public {
-        require(this.balance &gt;= amount * sellPrice);      // checks if the contract has enough ether to buy
+        require(this.balance >= amount * sellPrice);      // checks if the contract has enough ether to buy
         _transfer(msg.sender, this, amount);              // makes the transfers
         msg.sender.transfer(amount * sellPrice);          // sends ether to the seller. It&#39;s important to do this last to avoid recursion attacks
     }

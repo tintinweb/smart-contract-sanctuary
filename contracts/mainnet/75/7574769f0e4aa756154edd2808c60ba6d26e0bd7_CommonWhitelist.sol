@@ -22,7 +22,7 @@ library SafeMath {
      * @dev Integer division of two numbers, truncating the quotient.
      */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         // uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return a / b;
@@ -32,7 +32,7 @@ library SafeMath {
      * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
      */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -41,7 +41,7 @@ library SafeMath {
      */
     function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
         c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -86,7 +86,7 @@ contract Ownable {
 
 contract MultiOwnable {
 
-    mapping(address =&gt; bool) public isOwner;
+    mapping(address => bool) public isOwner;
     address[] public ownerHistory;
     uint8 public ownerCount;
 
@@ -126,7 +126,7 @@ contract MultiOwnable {
         // This check is neccessary to prevent a situation where all owners 
         // are accidentally removed, because we do not want an ownable contract 
         // to become an orphan.
-        require(ownerCount &gt; 1);
+        require(ownerCount > 1);
 
         require(isOwner[owner]);
         isOwner[owner] = false;
@@ -183,9 +183,9 @@ contract StandardToken is ERC20 {
 
     using SafeMath for uint;
 
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
 
-    mapping(address =&gt; mapping(address =&gt; uint256)) allowed;
+    mapping(address => mapping(address => uint256)) allowed;
 
     function balanceOf(address _owner) public view returns (uint256 balance) {
         return balances[_owner];
@@ -307,11 +307,11 @@ contract CommonToken is StandardToken, MultiOwnable {
     function sell(address _to, uint256 _value) onlyOwner public returns (bool) {
 
         // Check that we are not out of limit and still can sell tokens:
-        if (saleLimit &gt; 0) require(tokensSold.add(_value) &lt;= saleLimit);
+        if (saleLimit > 0) require(tokensSold.add(_value) <= saleLimit);
 
         require(_to != address(0));
-        require(_value &gt; 0);
-        require(_value &lt;= balances[seller]);
+        require(_value > 0);
+        require(_value <= balances[seller]);
 
         balances[seller] = balances[seller].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -332,7 +332,7 @@ contract CommonToken is StandardToken, MultiOwnable {
     }
 
     function burn(uint256 _value) public returns (bool) {
-        require(_value &gt; 0);
+        require(_value > 0);
 
         balances[msg.sender] = balances[msg.sender].sub(_value);
         totalSupply = totalSupply.sub(_value);
@@ -351,7 +351,7 @@ contract CommonToken is StandardToken, MultiOwnable {
 
 contract CommonWhitelist is MultiOwnable {
 
-    mapping(address =&gt; bool) public isAllowed;
+    mapping(address => bool) public isAllowed;
 
     // Historical array of wallet that have bben added to whitelist,
     // even if some addresses have been removed later such wallet still remaining
@@ -377,7 +377,7 @@ contract CommonWhitelist is MultiOwnable {
     }
 
     function addMany(address[] _wallets) public onlyOwner {
-        for (uint i = 0; i &lt; _wallets.length; i++) {
+        for (uint i = 0; i < _wallets.length; i++) {
             add(_wallets[i]);
         }
     }
@@ -390,7 +390,7 @@ contract CommonWhitelist is MultiOwnable {
     }
 
     function removeMany(address[] _wallets) public onlyOwner {
-        for (uint i = 0; i &lt; _wallets.length; i++) {
+        for (uint i = 0; i < _wallets.length; i++) {
             remove(_wallets[i]);
         }
     }
@@ -579,14 +579,14 @@ contract BasicCrowdsale is ICrowdsaleProcessor {
         require(_fundingAddress != address(0));
 
         // start time must not be earlier than current time
-        require(_startTimestamp &gt;= block.timestamp);
+        require(_startTimestamp >= block.timestamp);
 
         // range must be sane
-        require(_endTimestamp &gt; _startTimestamp);
+        require(_endTimestamp > _startTimestamp);
         duration = _endTimestamp - _startTimestamp;
 
         // duration must fit constraints
-        require(duration &gt;= MIN_CROWDSALE_TIME &amp;&amp; duration &lt;= MAX_CROWDSALE_TIME);
+        require(duration >= MIN_CROWDSALE_TIME && duration <= MAX_CROWDSALE_TIME);
 
         startTimestamp = _startTimestamp;
         endTimestamp = _endTimestamp;
@@ -606,13 +606,13 @@ contract BasicCrowdsale is ICrowdsaleProcessor {
     {
         return (
         // it was started
-        started &amp;&amp;
+        started &&
 
         // crowdsale period has finished
-        block.timestamp &gt;= endTimestamp &amp;&amp;
+        block.timestamp >= endTimestamp &&
 
         // but collected ETH is below the required minimum
-        totalCollected &lt; minimalGoal
+        totalCollected < minimalGoal
         );
     }
 
@@ -624,14 +624,14 @@ contract BasicCrowdsale is ICrowdsaleProcessor {
     {
         return (
         // it was started
-        started &amp;&amp;
+        started &&
 
         // hard cap wasn&#39;t reached yet
-        totalCollected &lt; hardCap &amp;&amp;
+        totalCollected < hardCap &&
 
         // and current time is within the crowdfunding period
-        block.timestamp &gt;= startTimestamp &amp;&amp;
-        block.timestamp &lt; endTimestamp
+        block.timestamp >= startTimestamp &&
+        block.timestamp < endTimestamp
         );
     }
 
@@ -643,10 +643,10 @@ contract BasicCrowdsale is ICrowdsaleProcessor {
     {
         return (
         // either the hard cap is collected
-        totalCollected &gt;= hardCap ||
+        totalCollected >= hardCap ||
 
         // ...or the crowdfunding period is over, but the minimum has been reached
-        (block.timestamp &gt;= endTimestamp &amp;&amp; totalCollected &gt;= minimalGoal)
+        (block.timestamp >= endTimestamp && totalCollected >= minimalGoal)
         );
     }
 }
@@ -813,7 +813,7 @@ contract Bridge is BasicCrowdsale {
     {
         return (
         // we remove timelines
-        started &amp;&amp; !completed
+        started && !completed
         );
     }
 
@@ -913,9 +913,9 @@ contract CommonTokensale is Connector, Pausable {
     uint public totalWeiRefunded; // Total amount of wei refunded if min (soft) cap is not reached.
 
     // This mapping stores info on how many ETH (wei) have been sent to this tokensale from specific address.
-    mapping(address =&gt; uint256) public buyerToSentWei;
+    mapping(address => uint256) public buyerToSentWei;
 
-    mapping(bytes32 =&gt; bool) public calledOnce;
+    mapping(bytes32 => bool) public calledOnce;
 
     event ChangeBeneficiaryEvent(address indexed _oldAddress, address indexed _newAddress);
     event ChangeWhitelistEvent(address indexed _oldAddress, address indexed _newAddress);
@@ -992,12 +992,12 @@ contract CommonTokensale is Connector, Pausable {
         if (whitelistEnabled) require(whitelist.isAllowed(_buyer));
 
         require(canAcceptPayment(_amountWei));
-        require(totalWeiReceived &lt; maxCapWei);
+        require(totalWeiReceived < maxCapWei);
 
         uint256 newTotalReceived = totalWeiReceived.add(_amountWei);
 
         // Don&#39;t sell anything above the hard cap
-        if (newTotalReceived &gt; maxCapWei) {
+        if (newTotalReceived > maxCapWei) {
             uint refundWei = newTotalReceived.sub(maxCapWei);
             _amountWei = _amountWei.sub(refundWei);
 
@@ -1053,39 +1053,39 @@ contract CommonTokensale is Connector, Pausable {
     function tokensPerWei(uint _amountWei) public view returns (uint256) {
         // Presale bonuses:
         if (isPreSaleTime()) {
-            if (5 ether &lt;= _amountWei &amp;&amp; _amountWei &lt; 10 ether) return tokensPerWei10;
-            if (_amountWei &lt; 20 ether) return tokensPerWei15;
-            if (20 ether &lt;= _amountWei) return tokensPerWei20;
+            if (5 ether <= _amountWei && _amountWei < 10 ether) return tokensPerWei10;
+            if (_amountWei < 20 ether) return tokensPerWei15;
+            if (20 ether <= _amountWei) return tokensPerWei20;
         }
         // Main sale bonues:
         if (isMainSaleBonusTime()) {
-            if (0.05 ether &lt;= _amountWei &amp;&amp; _amountWei &lt; 10 ether) return tokensPerWei5;
-            if (_amountWei &lt; 20 ether) return tokensPerWei7;
-            if (20 ether &lt;= _amountWei) return tokensPerWei10;
+            if (0.05 ether <= _amountWei && _amountWei < 10 ether) return tokensPerWei5;
+            if (_amountWei < 20 ether) return tokensPerWei7;
+            if (20 ether <= _amountWei) return tokensPerWei10;
         }
         return defaultTokensPerWei;
     }
 
     function canAcceptPayment(uint _amountWei) public view returns (bool) {
-        if (isPreSaleTime()) return _amountWei &gt;= preSaleMinPaymentWei;
-        if (isMainSaleTime()) return _amountWei &gt;= mainSaleMinPaymentWei;
+        if (isPreSaleTime()) return _amountWei >= preSaleMinPaymentWei;
+        if (isMainSaleTime()) return _amountWei >= mainSaleMinPaymentWei;
         return false;
     }
 
     function isPreSaleTime() public view returns (bool) {
-        return startTime &lt;= now &amp;&amp; now &lt;= preSaleEndTime;
+        return startTime <= now && now <= preSaleEndTime;
     }
 
     function isMainSaleBonusTime() public view returns (bool) {
-        return mainSaleStartTime &lt;= now &amp;&amp; now &lt;= mainSaleBonusEndTime;
+        return mainSaleStartTime <= now && now <= mainSaleBonusEndTime;
     }
 
     function isMainSaleTime() public view returns (bool) {
-        return mainSaleStartTime &lt;= now &amp;&amp; now &lt;= endTime;
+        return mainSaleStartTime <= now && now <= endTime;
     }
 
     function isFinishedSuccessfully() public view returns (bool) {
-        return totalWeiReceived &gt;= minCapWei &amp;&amp; now &gt; endTime;
+        return totalWeiReceived >= minCapWei && now > endTime;
     }
 
     /** 
@@ -1093,7 +1093,7 @@ contract CommonTokensale is Connector, Pausable {
      * min cap reached OR refund period expired.
      */
     function canWithdraw() public view returns (bool) {
-        return totalWeiReceived &gt;= minCapWei || now &gt; refundDeadlineTime;
+        return totalWeiReceived >= minCapWei || now > refundDeadlineTime;
     }
 
     /** 
@@ -1103,7 +1103,7 @@ contract CommonTokensale is Connector, Pausable {
     function withdraw(address _to, uint256 _amount) public {
         require(canWithdraw());
         require(msg.sender == beneficiary);
-        require(_amount &lt;= this.balance);
+        require(_amount <= this.balance);
 
         _to.transfer(_amount);
     }
@@ -1117,7 +1117,7 @@ contract CommonTokensale is Connector, Pausable {
      * refund requested during 30 days after tokensale finished.
      */
     function canRefund() public view returns (bool) {
-        return totalWeiReceived &lt; minCapWei &amp;&amp; endTime &lt; now &amp;&amp; now &lt;= refundDeadlineTime;
+        return totalWeiReceived < minCapWei && endTime < now && now <= refundDeadlineTime;
     }
 
     function refund() public {
@@ -1125,7 +1125,7 @@ contract CommonTokensale is Connector, Pausable {
 
         address buyer = msg.sender;
         uint amount = buyerToSentWei[buyer];
-        require(amount &gt; 0);
+        require(amount > 0);
 
         RefundEthEvent(buyer, amount);
         buyerToSentWei[buyer] = 0;
@@ -1154,11 +1154,11 @@ contract CommonTokensale is Connector, Pausable {
 
         (ethReward, tokenReward) = bridge.calculateRewards();
 
-        if (ethReward &gt; 0) {
+        if (ethReward > 0) {
             bridge.transfer(ethReward);
         }
 
-        if (tokenReward &gt; 0) {
+        if (tokenReward > 0) {
             token.sell(bridge, tokenReward);
         }
 
@@ -1168,8 +1168,8 @@ contract CommonTokensale is Connector, Pausable {
 }
 
 
-// &gt;&gt; Start:
-// &gt;&gt; EXAMPLE: How to deploy Token, Whitelist and Tokensale.
+// >> Start:
+// >> EXAMPLE: How to deploy Token, Whitelist and Tokensale.
 
 // token = new CommonToken(
 //     0x123 // TODO Set seller address
@@ -1182,8 +1182,8 @@ contract CommonTokensale is Connector, Pausable {
 // );
 // token.addOwner(tokensale);
 
-// &lt;&lt; EXAMPLE: How to deploy Token, Whitelist and Tokensale.
-// &lt;&lt; End
+// << EXAMPLE: How to deploy Token, Whitelist and Tokensale.
+// << End
 
 
 // TODO After Tokensale deployed, call token.addOwner(address_of_deployed_tokensale)

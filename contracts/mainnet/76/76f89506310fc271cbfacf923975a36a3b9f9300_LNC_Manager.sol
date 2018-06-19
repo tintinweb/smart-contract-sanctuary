@@ -63,7 +63,7 @@ contract Token is ERC20Interface {
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 500000000000000000000000000;
     
-    //AML &amp; KYC
+    //AML & KYC
     mapping (address => bool) public frozenAccount;
     event FrozenFunds(address target, bool frozen);
   
@@ -106,10 +106,10 @@ contract Token is ERC20Interface {
     function transfer(address _to, uint256 _value) public returns (bool success)
     {
         if (_to != 0x0  // Prevent transfer to 0x0 address.
-            &amp;&amp; IsFreezedAccount(msg.sender) == false
-            &amp;&amp; balances[msg.sender] >= _value 
-            &amp;&amp; _value > 0
-            &amp;&amp; balances[_to] + _value > balances[_to]) {
+            && IsFreezedAccount(msg.sender) == false
+            && balances[msg.sender] >= _value 
+            && _value > 0
+            && balances[_to] + _value > balances[_to]) {
             balances[msg.sender] = balances[msg.sender].sub(_value);
             balances[_to] = balances[_to].add(_value);
             Transfer(msg.sender, _to, _value);
@@ -127,11 +127,11 @@ contract Token is ERC20Interface {
     // these standardized APIs for approval:
     function transferFrom(address _from,address _to, uint256 _value) public returns (bool success) {
         if (_to != 0x0  // Prevent transfer to 0x0 address.
-            &amp;&amp; IsFreezedAccount(_from) == false
-            &amp;&amp; balances[_from] >= _value
-            &amp;&amp; allowed[_from][msg.sender] >= _value
-            &amp;&amp; _value > 0
-            &amp;&amp; balances[_to] + _value > balances[_to]) {
+            && IsFreezedAccount(_from) == false
+            && balances[_from] >= _value
+            && allowed[_from][msg.sender] >= _value
+            && _value > 0
+            && balances[_to] + _value > balances[_to]) {
             balances[_from] = balances[_from].sub(_value);
             allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
             balances[_to] = balances[_to].add(_value);
@@ -371,7 +371,7 @@ contract LNC_Manager is Token
         //address[10] memory unfreezedAddress;
         uint256 unfreezedAddress = 0;
         Token T = Token(_tokenAddr);
-        while (i < dests.length &amp;&amp; n < 20) 
+        while (i < dests.length && n < 20) 
         {
             if (T.IsFreezedAccount(dests[i]) == isFreeze)
             {
@@ -393,7 +393,7 @@ contract LNC_Manager is Token
         //address[10] memory unfreezedAddress;
         uint256 unfreezedAddress = 0;
         Token T = Token(_tokenAddr);
-        while (i < dests.length &amp;&amp; n < 20) 
+        while (i < dests.length && n < 20) 
         {
             if (T.IsFreezedAccount(dests[i]) == false)
             {
@@ -418,7 +418,7 @@ contract LNC_Manager is Token
         //address[10] memory unfreezedAddress;
         uint256 unfreezedAddress = 0;
         Token T = Token(_tokenAddr);
-        while (i < dests.length &amp;&amp; n < 20) 
+        while (i < dests.length && n < 20) 
         {
             if (T.IsFreezedAccount(dests[i]) == isFreeze)
             {

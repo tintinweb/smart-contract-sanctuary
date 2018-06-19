@@ -413,7 +413,7 @@ contract FreezableToken is StandardToken {
         uint release;
         uint balance;
         (release, balance) = getFreezing(msg.sender, 0);
-        while (release != 0 &amp;&amp; block.timestamp > release) {
+        while (release != 0 && block.timestamp > release) {
             releaseOnce();
             tokens += balance;
             (release, balance) = getFreezing(msg.sender, 0);
@@ -443,7 +443,7 @@ contract FreezableToken is StandardToken {
         bytes32 nextKey = toKey(_to, next);
         uint parent;
 
-        while (next != 0 &amp;&amp; _until > next) {
+        while (next != 0 && _until > next) {
             parent = next;
             parentKey = nextKey;
 

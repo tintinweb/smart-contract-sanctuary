@@ -275,7 +275,7 @@ contract AOG is StandardToken {
         {
             totalRaised = totalRaised.add(msg.value);
         
-        if(totalRaised >= maxCap || (now >= (startTimestamp + durationSeconds) &amp;&amp; totalRaised >= minCap))
+        if(totalRaised >= maxCap || (now >= (startTimestamp + durationSeconds) && totalRaised >= minCap))
             {
                 PRE_ICO_ON = false;
                 PreIcoMessage = &quot;Finish&quot;;
@@ -289,7 +289,7 @@ contract AOG is StandardToken {
         {
             totalRaisedIco = totalRaisedIco.add(msg.value);
            
-            if(totalRaisedIco >= maxCapIco || (now >= (startTimestampIco + durationSecondsIco) &amp;&amp; totalRaisedIco >= minCapIco))
+            if(totalRaisedIco >= maxCapIco || (now >= (startTimestampIco + durationSecondsIco) && totalRaisedIco >= minCapIco))
             {
                 ICO_ON = false;
                 IcoMessage = &quot;Finish&quot;;
@@ -347,7 +347,7 @@ contract AOG is StandardToken {
             standardRateDaysWise = calculateIcoBonus(weiAmount,1,1); // Rate
             return tokenAmount = weiAmount.mul(standardRateDaysWise);  // Number of coin
              
-         } else if (now >= startTimestampIco + 7 days &amp;&amp; now <= startTimestampIco + 14 days) {
+         } else if (now >= startTimestampIco + 7 days && now <= startTimestampIco + 14 days) {
               
               standardRateDaysWise = calculateIcoBonus(weiAmount,1,2); // Rate 
                
@@ -369,23 +369,23 @@ contract AOG is StandardToken {
      
     // 0.1 to 4.99 eth
     
-        if(userAmount >= 100000000000000000 &amp;&amp; userAmount < 5000000000000000000)
+        if(userAmount >= 100000000000000000 && userAmount < 5000000000000000000)
         {
                 return 7000;
         } 
-        else if(userAmount >= 5000000000000000000 &amp;&amp; userAmount < 15000000000000000000)
+        else if(userAmount >= 5000000000000000000 && userAmount < 15000000000000000000)
         {
                 return 8000;
         }
-        else if(userAmount >= 15000000000000000000 &amp;&amp; userAmount < 30000000000000000000)
+        else if(userAmount >= 15000000000000000000 && userAmount < 30000000000000000000)
         {
                return 9000;
         }
-        else if(userAmount >= 30000000000000000000 &amp;&amp; userAmount < 60000000000000000000)
+        else if(userAmount >= 30000000000000000000 && userAmount < 60000000000000000000)
         {
                 return 10000;
         }
-        else if(userAmount >= 60000000000000000000 &amp;&amp; userAmount < 100000000000000000000)
+        else if(userAmount >= 60000000000000000000 && userAmount < 100000000000000000000)
         {
                return 11250;
         }
@@ -400,7 +400,7 @@ contract AOG is StandardToken {
     {
             // 0.1 to 4.99 eth 
     
-        if(userAmount >= 100000000000000000 &amp;&amp; userAmount < 5000000000000000000)
+        if(userAmount >= 100000000000000000 && userAmount < 5000000000000000000)
         {
                 if(_sno == 1) // 1-7 Days
                 {
@@ -416,7 +416,7 @@ contract AOG is StandardToken {
                 }
             
         } 
-        else if(userAmount >= 5000000000000000000 &amp;&amp; userAmount < 15000000000000000000)
+        else if(userAmount >= 5000000000000000000 && userAmount < 15000000000000000000)
         {
                 if(_sno == 1) // 1-7 Days
                 {
@@ -432,7 +432,7 @@ contract AOG is StandardToken {
                 }
             
         }
-        else if(userAmount >= 15000000000000000000 &amp;&amp; userAmount < 30000000000000000000)
+        else if(userAmount >= 15000000000000000000 && userAmount < 30000000000000000000)
         {
                 if(_sno == 1) // 1-7 Days
                 {
@@ -448,7 +448,7 @@ contract AOG is StandardToken {
                 }
             
         }
-        else if(userAmount >= 30000000000000000000 &amp;&amp; userAmount < 60000000000000000000)
+        else if(userAmount >= 30000000000000000000 && userAmount < 60000000000000000000)
         {
                 if(_sno == 1) // 1-7 Days
                 {
@@ -464,7 +464,7 @@ contract AOG is StandardToken {
                 }
             
         }
-        else if(userAmount >= 60000000000000000000 &amp;&amp; userAmount < 100000000000000000000)
+        else if(userAmount >= 60000000000000000000 && userAmount < 100000000000000000000)
         {
                 if(_sno == 1) // 1-7 Days
                 {

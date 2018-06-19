@@ -46,7 +46,7 @@ contract Ownable {
   */
 contract Whitelist is Ownable {
 
-   mapping (address =&gt; bool) public whitelist;
+   mapping (address => bool) public whitelist;
    event Registered(address indexed _addr);
    event Unregistered(address indexed _addr);
 
@@ -60,14 +60,14 @@ contract Whitelist is Ownable {
    }
 
    function registerAddress(address _addr) public onlyOwner {
-     require(_addr != address(0) &amp;&amp; whitelist[_addr] == false);
+     require(_addr != address(0) && whitelist[_addr] == false);
      whitelist[_addr] = true;
      Registered(_addr);
    }
 
    function registerAddresses(address[] _addrs) public onlyOwner {
-     for(uint256 i = 0; i &lt; _addrs.length; i++) {
-       require(_addrs[i] != address(0) &amp;&amp; whitelist[_addrs[i]] == false);
+     for(uint256 i = 0; i < _addrs.length; i++) {
+       require(_addrs[i] != address(0) && whitelist[_addrs[i]] == false);
        whitelist[_addrs[i]] = true;
        Registered(_addrs[i]);
      }
@@ -79,7 +79,7 @@ contract Whitelist is Ownable {
    }
 
    function unregisterAddresses(address[] _addrs) public onlyOwner {
-     for(uint256 i = 0; i &lt; _addrs.length; i++) {
+     for(uint256 i = 0; i < _addrs.length; i++) {
        require(whitelist[_addrs[i]]);
        whitelist[_addrs[i]] = false;
        Unregistered(_addrs[i]);

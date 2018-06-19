@@ -46,11 +46,11 @@ contract Crowdsale{
     address[10] public wallets = [
 
         // Beneficiary
-        // Receives all the money (when finalizing Round1 &amp; Round2)
+        // Receives all the money (when finalizing Round1 & Round2)
         0xAa951F7c52055B89d3F281c73d557275070cBBfb,
 
         // Accountant
-        // Receives all the tokens for non-ETH investors (when finalizing Round1 &amp; Round2)
+        // Receives all the tokens for non-ETH investors (when finalizing Round1 & Round2)
         0xD29f0aE1621F4Be48C4DF438038E38af546DA498,
 
         // Manager
@@ -164,7 +164,7 @@ contract Crowdsale{
 
     function onlyAdmin(bool forObserver) internal view {
         require(wallets[uint8(Roles.manager)] == msg.sender || wallets[uint8(Roles.beneficiary)] == msg.sender ||
-            forObserver==true &amp;&amp; wallets[uint8(Roles.observer)] == msg.sender);
+            forObserver==true && wallets[uint8(Roles.observer)] == msg.sender);
     }
 
     // Setting of basic parameters, analog of class constructor
@@ -236,7 +236,7 @@ contract Crowdsale{
     function validPurchase() internal view returns (bool) {
 
         // The round started and did not end
-        bool withinPeriod = (now > startTime &amp;&amp; now < endTime.add(renewal));
+        bool withinPeriod = (now > startTime && now < endTime.add(renewal));
 
         // Rate is greater than or equal to the minimum
         bool nonZeroPurchase = msg.value >= minPay;
@@ -245,7 +245,7 @@ contract Crowdsale{
         bool withinCap = msg.value <= hardCap.sub(weiRaised()).add(overLimit);
 
         // round is initialized and no &quot;Pause of trading&quot; is set
-        return withinPeriod &amp;&amp; nonZeroPurchase &amp;&amp; withinCap &amp;&amp; isInitialized &amp;&amp; !isPausedCrowdsale;
+        return withinPeriod && nonZeroPurchase && withinCap && isInitialized && !isPausedCrowdsale;
     }
 
     // Check for the ability to finalize the round. Constant.
@@ -255,21 +255,21 @@ contract Crowdsale{
 
         bool capReached = weiRaised() >= hardCap;
 
-        return (timeReached || capReached) &amp;&amp; isInitialized;
+        return (timeReached || capReached) && isInitialized;
     }
 
     // Finalize. Only available to the Manager and the Beneficiary. If the round failed, then
     // anyone can call the finalization to unlock the return of funds to investors
-    // You must call a function to finalize each round (after the Round1 &amp; after the Round2)
+    // You must call a function to finalize each round (after the Round1 & after the Round2)
     // @ Do I have to use the function      yes
-    // @ When it is possible to call        after end of Round1 &amp; Round2
+    // @ When it is possible to call        after end of Round1 & Round2
     // @ When it is launched automatically  no
     // @ Who can call the function          admins or anybody (if round is failed)
     function finalize() public {
 
         require(wallets[uint8(Roles.manager)] == msg.sender || wallets[uint8(Roles.beneficiary)] == msg.sender || !goalReached());
         require(!isFinalized);
-        require(hasEnded() || ((wallets[uint8(Roles.manager)] == msg.sender || wallets[uint8(Roles.beneficiary)] == msg.sender) &amp;&amp; goalReached()));
+        require(hasEnded() || ((wallets[uint8(Roles.manager)] == msg.sender || wallets[uint8(Roles.beneficiary)] == msg.sender) && goalReached()));
 
         isFinalized = true;
         finalization();
@@ -401,7 +401,7 @@ contract Crowdsale{
     }
 
     function initialization() internal {
-        if (address(vault) != 0x0 &amp;&amp; vault.state() != RefundVault.State.Active){
+        if (address(vault) != 0x0 && vault.state() != RefundVault.State.Active){
             vault.restart();
         }
     }
@@ -457,7 +457,7 @@ contract Crowdsale{
         exchange = _exchange;
         maxAllProfit = _maxAllProfit;
 
-        require(_valueVB.length == _percentVB.length &amp;&amp; _valueVB.length == _freezeTimeVB.length);
+        require(_valueVB.length == _percentVB.length && _valueVB.length == _freezeTimeVB.length);
         bonuses.length = _valueVB.length;
         for(uint256 i = 0; i < _valueVB.length; i++){
             bonuses[i] = Bonus(_valueVB[i],_percentVB[i],_freezeTimeVB[i]);
@@ -523,7 +523,7 @@ contract Crowdsale{
     // @ Who can call the function          admins or anybody
     function tokenUnpause() external {
         require(wallets[uint8(Roles.manager)] == msg.sender
-            || (now > endTime.add(renewal).add(USER_UNPAUSE_TOKEN_TIMEOUT) &amp;&amp; TokenSale == TokenSaleType.round2 &amp;&amp; isFinalized &amp;&amp; goalReached()));
+            || (now > endTime.add(renewal).add(USER_UNPAUSE_TOKEN_TIMEOUT) && TokenSale == TokenSaleType.round2 && isFinalized && goalReached()));
         token.setPause(false);
     }
 
@@ -586,9 +586,9 @@ contract Crowdsale{
     function changeWallet(Roles _role, address _wallet) external
     {
         require(
-            (msg.sender == wallets[uint8(_role)] &amp;&amp; _role != Roles.observer)
+            (msg.sender == wallets[uint8(_role)] && _role != Roles.observer)
             ||
-            (msg.sender == wallets[uint8(Roles.manager)] &amp;&amp; (!isInitialized || _role == Roles.observer) &amp;&amp; _role != Roles.fees )
+            (msg.sender == wallets[uint8(Roles.manager)] && (!isInitialized || _role == Roles.observer) && _role != Roles.fees )
         );
 
         wallets[uint8(_role)] = _wallet;
@@ -639,7 +639,7 @@ contract Crowdsale{
     // @ Who can call the function          admins
     function prolong(uint256 _duration) external {
         onlyAdmin(false);
-        require(now > startTime &amp;&amp; now < endTime.add(renewal) &amp;&amp; isInitialized);
+        require(now > startTime && now < endTime.add(renewal) && isInitialized);
         renewal = renewal.add(_duration);
         require(renewal <= ROUND_PROLONGATE);
 
@@ -665,13 +665,13 @@ contract Crowdsale{
     // @ Do I have to use the function      no
     // @ When it is possible to call        -
     // @ When it is launched automatically  -
-    // @ Who can call the function          beneficiary &amp; manager
+    // @ Who can call the function          beneficiary & manager
     function distructVault() public {
         require(address(vault) != 0x0);
-        if (wallets[uint8(Roles.beneficiary)] == msg.sender &amp;&amp; (now > startTime.add(FORCED_REFUND_TIMEOUT1))) {
+        if (wallets[uint8(Roles.beneficiary)] == msg.sender && (now > startTime.add(FORCED_REFUND_TIMEOUT1))) {
             vault.del(wallets[uint8(Roles.beneficiary)]);
         }
-        if (wallets[uint8(Roles.manager)] == msg.sender &amp;&amp; (now > startTime.add(FORCED_REFUND_TIMEOUT2))) {
+        if (wallets[uint8(Roles.manager)] == msg.sender && (now > startTime.add(FORCED_REFUND_TIMEOUT2))) {
             vault.del(wallets[uint8(Roles.manager)]);
         }
     }
@@ -726,10 +726,10 @@ contract Crowdsale{
     function paymentsInOtherCurrency(uint256 _token, uint256 _value) public {
         //require(wallets[uint8(Roles.observer)] == msg.sender || wallets[uint8(Roles.manager)] == msg.sender);
         onlyAdmin(true);
-        bool withinPeriod = (now >= startTime &amp;&amp; now <= endTime.add(renewal));
+        bool withinPeriod = (now >= startTime && now <= endTime.add(renewal));
 
         bool withinCap = _value.add(ethWeiRaised) <= hardCap.add(overLimit);
-        require(withinPeriod &amp;&amp; withinCap &amp;&amp; isInitialized);
+        require(withinPeriod && withinCap && isInitialized);
 
         nonEthWeiRaised = _value;
         tokenReserved = _token;
@@ -1180,11 +1180,11 @@ contract Pausable is Ownable {
    * @dev called by the owner to pause, triggers stopped state
    */
   function setPause(bool mode) public onlyOwner {
-    if (!paused &amp;&amp; mode) {
+    if (!paused && mode) {
         paused = true;
         emit Pause();
     }
-    if (paused &amp;&amp; !mode) {
+    if (paused && !mode) {
         paused = false;
         emit Unpause();
     }
@@ -1428,7 +1428,7 @@ contract Token is FreezingToken, MintableToken, MigratableToken, BurnableToken {
     function allowBlocking(address _owner, address _contract) contractOnly(_contract) public {
 
 
-        require(_contract != msg.sender &amp;&amp; _contract != owner);
+        require(_contract != msg.sender && _contract != owner);
 
         require(grantedToAllowBlocking[_owner][msg.sender]);
 
@@ -1443,7 +1443,7 @@ contract Token is FreezingToken, MintableToken, MigratableToken, BurnableToken {
     function blockTokens(address _blocking, uint256 _value) whenNotPaused(_blocking) public {
         require(allowedToBlocking[_blocking][msg.sender]);
 
-        require(balanceOf(_blocking) >= freezedTokenOf(_blocking).add(_value) &amp;&amp; _value > 0);
+        require(balanceOf(_blocking) >= freezedTokenOf(_blocking).add(_value) && _value > 0);
 
         balances[_blocking] = balances[_blocking].sub(_value);
         blocked[_blocking][msg.sender] = blocked[_blocking][msg.sender].add(_value);
@@ -1458,7 +1458,7 @@ contract Token is FreezingToken, MintableToken, MigratableToken, BurnableToken {
     // @param _value The blocked token count to unblock
     function unblockTokens(address _blocking, address _unblockTo, uint256 _value) whenNotPaused(_unblockTo) public {
         require(allowedToBlocking[_blocking][msg.sender]);
-        require(blocked[_blocking][msg.sender] >= _value &amp;&amp; _value > 0);
+        require(blocked[_blocking][msg.sender] >= _value && _value > 0);
 
         blocked[_blocking][msg.sender] = blocked[_blocking][msg.sender].sub(_value);
         balances[_unblockTo] = balances[_unblockTo].add(_value);

@@ -286,7 +286,7 @@ contract Poker is RNG{
         
         
         
-        if (flush>0 &amp;&amp; straight>0){
+        if (flush>0 && straight>0){
             // someone has straight flush? 
             // level score 9 
             output[0] = 9;
@@ -295,7 +295,7 @@ contract Poker is RNG{
                 startcard=straight_startcard[i];
                 currcard=5; // track flush, num 5 is standard.    
                 for (rank=0; i<7; i++){
-                    if (Cards[i].suit == flush &amp;&amp; Cards[i].rank <= startcard &amp;&amp; Cards[i].rank>=(startcard-4)){
+                    if (Cards[i].suit == flush && Cards[i].rank <= startcard && Cards[i].rank>=(startcard-4)){
                         currcard--;
                         if (currcard==0){
                             break;
@@ -336,7 +336,7 @@ contract Poker is RNG{
         currcard=0;
         
         for (i=13;i>=1;i--){
-            if (rank == 0 &amp;&amp; CardTracker[i] >= 3){
+            if (rank == 0 && CardTracker[i] >= 3){
                 rank = i;
             }
             else if(CardTracker[i] >= 2){
@@ -352,7 +352,7 @@ contract Poker is RNG{
             }
         }
         
-        if (rank != 0 &amp;&amp; suit != 0){
+        if (rank != 0 && suit != 0){
             output[0] = 7;
             output[1] = rank; // full house tripple high 
             output[2] = suit; // full house tripple low 
@@ -394,14 +394,14 @@ contract Poker is RNG{
             }
         }
         
-        if (suit > 0 &amp;&amp; startcard > 0){
+        if (suit > 0 && startcard > 0){
             // double pair 
             output[0] = 3;
             output[1] = suit;
             output[2] = startcard;
             // get highest card 
             for (i=13;i>=1;i--){
-                if (i!=suit &amp;&amp; i!=startcard &amp;&amp; CardTracker[i]>0){
+                if (i!=suit && i!=startcard && CardTracker[i]>0){
                     output[3]=i;
                     return output;
                 }
@@ -415,7 +415,7 @@ contract Poker is RNG{
             currcard=2;
             // fill 3 other positions with high cards. 
             for (i=13;i>=1;i--){
-                if (i!=suit &amp;&amp; CardTracker[i]>0){
+                if (i!=suit && CardTracker[i]>0){
                     output[currcard]=i;
                     currcard++;
                     if(currcard==5){
@@ -639,7 +639,7 @@ contract Vegas is Poker{
     function _withdraw(string Quote, string Name, bool Emergency) NoContract internal {
         // Setup cards for new game. 
         
-        require(block.timestamp > Timer &amp;&amp; Timer != 0);
+        require(block.timestamp > Timer && Timer != 0);
         Timer=0; // prevent re-entrancy immediately. 
         
         // send from this.balance 
@@ -652,7 +652,7 @@ contract Vegas is Poker{
         
         // pay the last poker winner remaining poker pot.
         bal = sub(sub(available_balance, bal),PokerPayoutValue);
-        if (bal > 0 &amp;&amp; PokerWinner != address(this)){
+        if (bal > 0 && PokerWinner != address(this)){
             // this only happens at start game,  some wei error 
             if (bal > address(this).balance){
                 PokerWinner.transfer(address(this).balance);

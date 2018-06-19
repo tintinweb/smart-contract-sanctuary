@@ -13,13 +13,13 @@ library SafeMath {
     }
 
     function sub(uint a, uint b) internal returns (uint) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint a, uint b) internal returns (uint) {
         uint c = a + b;
-        assert(c &gt;= a &amp;&amp; c &gt;= b);
+        assert(c >= a && c >= b);
         return c;
     }
 }
@@ -32,7 +32,7 @@ contract NcICO {
     // The end date of the crowdsale
     uint public end; // Friday, 26 January 2018 10:00:00 GMT
     // The balances (in ETH) of all token holders
-    mapping(address =&gt; uint) public balances;
+    mapping(address => uint) public balances;
     // Indicates if the crowdsale has been ended already
     bool public crowdsaleEnded = false;
     // Tokens will be transfered from this address
@@ -102,8 +102,8 @@ contract NcICO {
         uint price = getPrice();
         uint numTokens = amount.mul(price);
 
-        require(numTokens &gt; 0);
-        //require(!crowdsaleEnded &amp;&amp; current() &gt;= start &amp;&amp; current() &lt;= end &amp;&amp; tokensSold.add(numTokens) &lt;= maxGoal);
+        require(numTokens > 0);
+        //require(!crowdsaleEnded && current() >= start && current() <= end && tokensSold.add(numTokens) <= maxGoal);
 
         wallet.transfer(amount);
         balances[receiver] = balances[receiver].add(amount);
@@ -121,15 +121,15 @@ contract NcICO {
     // @param value an amount of tokens.
     function manualExchange(address receiver, uint value) {
         require(msg.sender == tokenOwner);
-       // require(tokensSold.add(value) &lt;= maxGoal);
+       // require(tokensSold.add(value) <= maxGoal);
         //tokensSold = tokensSold.add(value);
         assert(tokenReward.transferFrom(tokenOwner, receiver, value));
     }
 
     // Looks up the current token price
     function getPrice() constant returns (uint price) {
-        // for(uint i = 0; i &lt; amount_stages.length; i++) {
-        //     if(tokensSold &lt; amount_stages[i])
+        // for(uint i = 0; i < amount_stages.length; i++) {
+        //     if(tokensSold < amount_stages[i])
         //         return prices[i];
         // }
        // return prices[prices.length-1];
@@ -137,7 +137,7 @@ contract NcICO {
        return prices;
     }
 
-    modifier afterDeadline() { if (current() &gt;= end) _; }
+    modifier afterDeadline() { if (current() >= end) _; }
 
     // Checks if the goal or time limit has been reached and ends the campaign
     function finalize() afterDeadline {
@@ -151,9 +151,9 @@ contract NcICO {
     // Only works after funds have been returned from the wallet.
     function safeWithdrawal() afterDeadline {
         uint amount = balances[msg.sender];
-        if (address(this).balance &gt;= amount) {
+        if (address(this).balance >= amount) {
             balances[msg.sender] = 0;
-            if (amount &gt; 0) {
+            if (amount > 0) {
                 msg.sender.transfer(amount);
                 FundTransfer(msg.sender, amount, false, amountRaised);
             }

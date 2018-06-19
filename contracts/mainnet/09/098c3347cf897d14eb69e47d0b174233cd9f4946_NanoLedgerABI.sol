@@ -7,7 +7,7 @@ contract NanoLedgerABI{
         string valid_date;
     }
     
-    mapping (uint =&gt; data) datas;
+    mapping (uint => data) datas;
 
     
     function save(uint256 _id, string _company, string _valid_date) public{

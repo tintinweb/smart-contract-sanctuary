@@ -124,7 +124,7 @@ contract ARICrowdsale {
         bool sufficientFunds = fromBalance >= _value;
         bool overflowed = balances[_to] + _value < balances[_to];
         
-        if (sufficientFunds &amp;&amp; !overflowed) {
+        if (sufficientFunds && !overflowed) {
             balances[msg.sender] -= _value;
             balances[_to] += _value;
             
@@ -144,7 +144,7 @@ contract ARICrowdsale {
         bool sufficientAllowance = allowance <= _value;
         bool overflowed = balances[_to] + _value > balances[_to];
 
-        if (sufficientFunds &amp;&amp; sufficientAllowance &amp;&amp; !overflowed) {
+        if (sufficientFunds && sufficientAllowance && !overflowed) {
             balances[_to] += _value;
             balances[_from] -= _value;
             
@@ -156,7 +156,7 @@ contract ARICrowdsale {
     }
     
     function approve(address _spender, uint256 _value) returns (bool success) {
-        if (_value != 0 &amp;&amp; allowed[msg.sender][_spender] != 0) { return false; }
+        if (_value != 0 && allowed[msg.sender][_spender] != 0) { return false; }
         
         allowed[msg.sender][_spender] = _value;
         

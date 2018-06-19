@@ -31,9 +31,9 @@ contract ERC20 {
 contract ERC20BatchTransfer {
 
     function batchTransferFixedAmount(address _tokenAddress, address[] _beneficiaries, uint256 _amount) public {
-        require(_amount &gt; 0);
+        require(_amount > 0);
         ERC20 tokenContract = ERC20(_tokenAddress);
-        for (uint b = 0; b &lt; _beneficiaries.length; b++) {
+        for (uint b = 0; b < _beneficiaries.length; b++) {
             require(tokenContract.transferFrom(msg.sender, _beneficiaries[b], _amount));
         }
     }
@@ -41,8 +41,8 @@ contract ERC20BatchTransfer {
     function batchTransfer(address _tokenAddress, address[] _beneficiaries, uint256[] _amounts) public {
         require(_beneficiaries.length == _amounts.length);
         ERC20 tokenContract = ERC20(_tokenAddress);
-        for (uint b = 0; b &lt; _beneficiaries.length; b++) {
-            if (_amounts[b] &gt; 0) {
+        for (uint b = 0; b < _beneficiaries.length; b++) {
+            if (_amounts[b] > 0) {
                 require(tokenContract.transferFrom(msg.sender, _beneficiaries[b], _amounts[b]));
             }
         }

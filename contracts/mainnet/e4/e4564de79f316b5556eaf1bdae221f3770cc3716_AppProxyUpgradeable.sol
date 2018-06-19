@@ -170,7 +170,7 @@ contract PublicResolver {
     function ABI(bytes32 node, uint256 contentTypes) constant returns (uint256 contentType, bytes data) {
         var record = records[node];
         for(contentType = 1; contentType <= contentTypes; contentType <<= 1) {
-            if ((contentType &amp; contentTypes) != 0 &amp;&amp; record.abis[contentType].length > 0) {
+            if ((contentType & contentTypes) != 0 && record.abis[contentType].length > 0) {
                 data = record.abis[contentType];
                 return;
             }
@@ -188,7 +188,7 @@ contract PublicResolver {
      */
     function setABI(bytes32 node, uint256 contentType, bytes data) only_owner(node) {
         // Content types must be powers of 2
-        if (((contentType - 1) &amp; contentType) != 0) throw;
+        if (((contentType - 1) & contentType) != 0) throw;
 
         records[node].abis[contentType] = data;
         ABIChanged(node, contentType);
@@ -1123,12 +1123,12 @@ contract ACL is IACL, AragonApp, ACLHelpers {
 
     function hasPermission(address _who, address _where, bytes32 _what, uint256[] memory _how) public view returns (bool) {
         bytes32 whoParams = permissions[permissionHash(_who, _where, _what)];
-        if (whoParams != bytes32(0) &amp;&amp; evalParams(whoParams, _who, _where, _what, _how)) {
+        if (whoParams != bytes32(0) && evalParams(whoParams, _who, _where, _what, _how)) {
             return true;
         }
 
         bytes32 anyParams = permissions[permissionHash(ANY_ENTITY, _where, _what)];
-        if (anyParams != bytes32(0) &amp;&amp; evalParams(anyParams, ANY_ENTITY, _where, _what, _how)) {
+        if (anyParams != bytes32(0) && evalParams(anyParams, ANY_ENTITY, _where, _what, _how)) {
             return true;
         }
 
@@ -1253,18 +1253,18 @@ contract ACL is IACL, AragonApp, ACLHelpers {
             return !r1;
         }
 
-        if (r1 &amp;&amp; Op(_param.op) == Op.OR) {
+        if (r1 && Op(_param.op) == Op.OR) {
             return true;
         }
 
-        if (!r1 &amp;&amp; Op(_param.op) == Op.AND) {
+        if (!r1 && Op(_param.op) == Op.AND) {
             return false;
         }
 
         bool r2 = evalParam(_paramsHash, v2, _who, _where, _what, _how);
 
         if (Op(_param.op) == Op.XOR) {
-            return (r1 &amp;&amp; !r2) || (!r1 &amp;&amp; r2);
+            return (r1 && !r2) || (!r1 && r2);
         }
 
         return r2; // both or and and depend on result of r2 after checks

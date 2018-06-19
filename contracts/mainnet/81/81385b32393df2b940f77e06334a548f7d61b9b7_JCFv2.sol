@@ -23,7 +23,7 @@ contract SafeMath {
 	* @dev Integer division of two numbers, truncating the quotient.
 	*/
 	function safeDiv(uint256 a, uint256 b) internal pure returns (uint256) {
-	// assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+	// assert(b > 0); // Solidity automatically throws when dividing by 0
 	// uint256 c = a / b;
 	// assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
 		return a / b;
@@ -33,7 +33,7 @@ contract SafeMath {
 	* @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
 	*/
 	function safeSub(uint256 a, uint256 b) internal pure returns (uint256) {
-		assert(b &lt;= a);
+		assert(b <= a);
 		return a - b;
 	}
 
@@ -42,16 +42,16 @@ contract SafeMath {
 	*/
 	function safeAdd(uint256 a, uint256 b) internal pure returns (uint256) {
 		uint256 c = a + b;
-		assert(c &gt;= a);
+		assert(c >= a);
 		return c;
 	}
 
 
 	// mitigate short address attack
 	// thanks to https://github.com/numerai/contract/blob/c182465f82e50ced8dacb3977ec374a892f5fa8c/contracts/Safe.sol#L30-L34.
-	// TODO: doublecheck implication of &gt;= compared to ==
+	// TODO: doublecheck implication of >= compared to ==
 	modifier onlyPayloadSize(uint numWords) {
-		assert(msg.data.length &gt;= numWords * 32 + 4);
+		assert(msg.data.length >= numWords * 32 + 4);
 		_;
 	}
 }
@@ -71,9 +71,9 @@ contract StandardToken is Token, SafeMath {
 
 	uint256 public totalSupply;
 
-	mapping (address =&gt; uint256) public index;
-	mapping (uint256 =&gt; Info) public infos;
-	mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+	mapping (address => uint256) public index;
+	mapping (uint256 => Info) public infos;
+	mapping (address => mapping (address => uint256)) allowed;
 
 	struct Info {
 		uint256 tokenBalances;
@@ -83,7 +83,7 @@ contract StandardToken is Token, SafeMath {
 	// TODO: update tests to expect throw
 	function transfer(address _to, uint256 _value) public onlyPayloadSize(2) returns (bool success) {
 		require(_to != address(0));
-		require(infos[index[msg.sender]].tokenBalances &gt;= _value &amp;&amp; _value &gt; 0);
+		require(infos[index[msg.sender]].tokenBalances >= _value && _value > 0);
 		infos[index[msg.sender]].tokenBalances = safeSub(infos[index[msg.sender]].tokenBalances, _value);
 		infos[index[_to]].tokenBalances = safeAdd(infos[index[_to]].tokenBalances, _value);
 		emit Transfer(msg.sender, _to, _value);
@@ -94,7 +94,7 @@ contract StandardToken is Token, SafeMath {
 	// TODO: update tests to expect throw
 	function transferFrom(address _from, address _to, uint256 _value) public onlyPayloadSize(3) returns (bool success) {
 		require(_to != address(0));
-		require(infos[index[_from]].tokenBalances &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; _value &gt; 0);
+		require(infos[index[_from]].tokenBalances >= _value && allowed[_from][msg.sender] >= _value && _value > 0);
 		infos[index[_from]].tokenBalances = safeSub(infos[index[_from]].tokenBalances, _value);
 		infos[index[_to]].tokenBalances = safeAdd(infos[index[_to]].tokenBalances, _value);
 		allowed[_from][msg.sender] = safeSub(allowed[_from][msg.sender], _value);
@@ -160,10 +160,10 @@ contract JCFv2 is StandardToken {
 	uint256 public totalHolder;
 
 	// map participant address to a withdrawal request
-	mapping (address =&gt; Withdrawal) public withdrawals;
+	mapping (address => Withdrawal) public withdrawals;
 
 	// maps addresses
-	mapping (address =&gt; bool) public whitelist;
+	mapping (address => bool) public whitelist;
 
 	// TYPES
 
@@ -228,9 +228,9 @@ contract JCFv2 is StandardToken {
 	}
 
 	function withdraw_to(address participant, uint256 withdrawValue, uint256 amountTokensToWithdraw, uint256 requestTime) public onlyFundWallet {
-		require(amountTokensToWithdraw &gt; 0);
-		require(withdrawValue &gt; 0);
-		require(balanceOf(participant) &gt;= amountTokensToWithdraw);
+		require(amountTokensToWithdraw > 0);
+		require(withdrawValue > 0);
+		require(balanceOf(participant) >= amountTokensToWithdraw);
 		require(withdrawals[participant].tokens == 0);
 
 		infos[index[participant]].tokenBalances = safeSub(infos[index[participant]].tokenBalances, amountTokensToWithdraw);
@@ -239,7 +239,7 @@ contract JCFv2 is StandardToken {
 
 		emit WithdrawRequest(participant, amountTokensToWithdraw, requestTime);
 
-		if (address(this).balance &gt;= withdrawValue) {
+		if (address(this).balance >= withdrawValue) {
 			enact_withdrawal_greater_equal(participant, withdrawValue, amountTokensToWithdraw);
 		} else {
 			enact_withdrawal_less(participant, withdrawValue, amountTokensToWithdraw);
@@ -247,7 +247,7 @@ contract JCFv2 is StandardToken {
 	}
 
 	function enact_withdrawal_greater_equal(address participant, uint256 withdrawValue, uint256 tokens) private {
-		assert(address(this).balance &gt;= withdrawValue);
+		assert(address(this).balance >= withdrawValue);
 		infos[index[fundWallet]].tokenBalances = safeAdd(infos[index[fundWallet]].tokenBalances, tokens);
 
 		participant.transfer(withdrawValue);
@@ -256,7 +256,7 @@ contract JCFv2 is StandardToken {
 	}
 
 	function enact_withdrawal_less(address participant, uint256 withdrawValue, uint256 tokens) private {
-		assert(address(this).balance &lt; withdrawValue);
+		assert(address(this).balance < withdrawValue);
 		infos[index[participant]].tokenBalances = safeAdd(infos[index[participant]].tokenBalances, tokens);
 
 		withdrawals[participant].tokens = 0;
@@ -264,12 +264,12 @@ contract JCFv2 is StandardToken {
 	}
 
 	function addLiquidity() external onlyManagingWallets payable {
-		require(msg.value &gt; 0);
+		require(msg.value > 0);
 		emit AddLiquidity(msg.value);
 	}
 
 	function removeLiquidity(uint256 amount) external onlyManagingWallets {
-		require(amount &lt;= address(this).balance);
+		require(amount <= address(this).balance);
 		fundWallet.transfer(amount);
 		emit RemoveLiquidity(amount);
 	}
@@ -292,12 +292,12 @@ contract JCFv2 is StandardToken {
 	}
 
 	function enableTrading() external onlyFundWallet {
-		// require(block.number &gt; fundingEndBlock);
+		// require(block.number > fundingEndBlock);
 		tradeable = true;
 	}
 
 	function disableTrading() external onlyFundWallet {
-		// require(block.number &gt; fundingEndBlock);
+		// require(block.number > fundingEndBlock);
 		tradeable = false;
 	}
 
@@ -309,7 +309,7 @@ contract JCFv2 is StandardToken {
 	}
 
 	function transfer(address _to, uint256 _value) public isTradeable returns (bool success) {
-		if (index[_to] &gt; 0) {
+		if (index[_to] > 0) {
 			// do nothing
 		} else {
 			// store token holder infos
@@ -322,7 +322,7 @@ contract JCFv2 is StandardToken {
 	}
 
 	function transferFrom(address _from, address _to, uint256 _value) public isTradeable returns (bool success) {
-		if (index[_to] &gt; 0) {
+		if (index[_to] > 0) {
 			// do nothing
 		} else {
 			// store token holder infos
@@ -334,8 +334,8 @@ contract JCFv2 is StandardToken {
 	}
 
 	function burn(address _who, uint256 _value) external only_if_controlWallet {
-		require(_value &lt;= infos[index[_who]].tokenBalances);
-		// no need to require value &lt;= totalSupply, since that would imply the
+		require(_value <= infos[index[_who]].tokenBalances);
+		// no need to require value <= totalSupply, since that would imply the
 		// sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 		infos[index[_who]].tokenBalances = safeSub(infos[index[_who]].tokenBalances, _value);
 

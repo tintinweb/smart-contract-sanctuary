@@ -189,7 +189,7 @@ contract Oracle is Ownable {
 contract RpSafeMath {
     function safeAdd(uint256 x, uint256 y) internal pure returns(uint256) {
       uint256 z = x + y;
-      require((z >= x) &amp;&amp; (z >= y));
+      require((z >= x) && (z >= y));
       return z;
     }
 
@@ -316,7 +316,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
             uint256 loanId;
 
             for (loanId = 0; loanId <= totalLoans; loanId++) {
-                if (loans[loanId].lender == _owner &amp;&amp; loans[loanId].status == Status.lent) {
+                if (loans[loanId].lender == _owner && loans[loanId].status == Status.lent) {
                     if (resultIndex == _index) {
                         return loanId;
                     }
@@ -351,7 +351,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
             uint256 loanId;
 
             for (loanId = 0; loanId <= totalLoans; loanId++) {
-                if (loans[loanId].lender == _owner &amp;&amp; loans[loanId].status == Status.lent) {
+                if (loans[loanId].lender == _owner && loans[loanId].status == Status.lent) {
                     result[resultIndex] = loanId;
                     resultIndex++;
                 }
@@ -606,7 +606,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
     */
     function cosign(uint index, uint256 cost) external returns (bool) {
         Loan storage loan = loans[index];
-        require(loan.status == Status.lent &amp;&amp; (loan.dueTime - loan.duesIn) == block.timestamp);
+        require(loan.status == Status.lent && (loan.dueTime - loan.duesIn) == block.timestamp);
         require(loan.cosigner != address(0));
         require(loan.cosigner == address(uint256(msg.sender) + 2));
         loan.cosigner = msg.sender;
@@ -628,7 +628,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
     function destroy(uint index) public returns (bool) {
         Loan storage loan = loans[index];
         require(loan.status != Status.destroyed);
-        require(msg.sender == loan.lender || (msg.sender == loan.borrower &amp;&amp; loan.status == Status.initial));
+        require(msg.sender == loan.lender || (msg.sender == loan.borrower && loan.status == Status.initial));
         DestroyedBy(index, msg.sender);
 
         // ERC721, remove loan from circulation
@@ -656,7 +656,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
     function transfer(address to, uint256 index) public returns (bool) {
         Loan storage loan = loans[index];
         
-        require(loan.status != Status.destroyed &amp;&amp; loan.status != Status.paid);
+        require(loan.status != Status.destroyed && loan.status != Status.paid);
         require(msg.sender == loan.lender || msg.sender == loan.approvedTransfer || operators[loan.lender][msg.sender]);
         require(to != address(0));
         loan.lender = to;

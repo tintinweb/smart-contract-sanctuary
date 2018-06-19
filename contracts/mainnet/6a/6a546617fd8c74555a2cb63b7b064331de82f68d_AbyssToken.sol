@@ -133,7 +133,7 @@ contract ERC20Token is IERC20Token, SafeMath {
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value);
+        require(balances[_from] >= _value && allowed[_from][msg.sender] >= _value);
 
         balances[_to] = safeAdd(balances[_to], _value);
         balances[_from] = safeSub(balances[_from], _value);
@@ -236,7 +236,7 @@ contract ManagedToken is ERC20Token, MultiOwnable {
 
     function transfer(address _to, uint256 _value) public transfersAllowed returns (bool) {
         bool success = super.transfer(_to, _value);
-        if(hasListener() &amp;&amp; success) {
+        if(hasListener() && success) {
             eventListener.onTokenTransfer(msg.sender, _to, _value);
         }
         return success;
@@ -244,7 +244,7 @@ contract ManagedToken is ERC20Token, MultiOwnable {
 
     function transferFrom(address _from, address _to, uint256 _value) public transfersAllowed returns (bool) {
         bool success = super.transferFrom(_from, _to, _value);
-        if(hasListener() &amp;&amp; success) {
+        if(hasListener() && success) {
             eventListener.onTokenTransfer(_from, _to, _value);
         }
         return success;
@@ -357,7 +357,7 @@ contract TransferLimitedToken is ManagedToken {
      * @param _to To address
      */
     modifier canTransfer(address _from, address _to)  {
-        require(now >= limitEndDate || !isLimitEnabled || (!limitedWallets[_from] &amp;&amp; !limitedWallets[_to]));
+        require(now >= limitEndDate || !isLimitEnabled || (!limitedWallets[_from] && !limitedWallets[_to]));
         _;
     }
 

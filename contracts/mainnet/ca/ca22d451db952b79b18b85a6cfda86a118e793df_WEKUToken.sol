@@ -209,7 +209,7 @@ contract WEKUToken is Owned, TokenERC20 {
         emit Transfer(this, target, mintedAmount);
     }
 
-    /// @notice `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens
+    /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
     function freezeAccount(address target, bool freeze) onlyOwner public {
@@ -261,9 +261,9 @@ contract WEKUToken is Owned, TokenERC20 {
         bool flag  = true;
 
         uint _tenPercent = _teamTotal / 10;    
-        if(_currentTime <= _deployedTime + 1 days &amp;&amp; _amount + _teamWithrawed >= _tenPercent * 4) 
+        if(_currentTime <= _deployedTime + 1 days && _amount + _teamWithrawed >= _tenPercent * 4) 
             flag = false;
-        else if(_currentTime <= _deployedTime + 365 days &amp;&amp; _amount + _teamWithrawed >= _tenPercent * 7) 
+        else if(_currentTime <= _deployedTime + 365 days && _amount + _teamWithrawed >= _tenPercent * 7) 
             flag = false; 
 
         return flag;

@@ -108,15 +108,15 @@ contract DSMath {
      */
 
     function add(uint256 x, uint256 y) constant internal returns (uint256 z) {
-        assert((z = x + y) &gt;= x);
+        assert((z = x + y) >= x);
     }
 
     function sub(uint256 x, uint256 y) constant internal returns (uint256 z) {
-        assert((z = x - y) &lt;= x);
+        assert((z = x - y) <= x);
     }
 
     function mul(uint256 x, uint256 y) constant internal returns (uint256 z) {
-        assert((z = x * y) &gt;= x);
+        assert((z = x * y) >= x);
     }
 
     function div(uint256 x, uint256 y) constant internal returns (uint256 z) {
@@ -124,10 +124,10 @@ contract DSMath {
     }
 
     function min(uint256 x, uint256 y) constant internal returns (uint256 z) {
-        return x &lt;= y ? x : y;
+        return x <= y ? x : y;
     }
     function max(uint256 x, uint256 y) constant internal returns (uint256 z) {
-        return x &gt;= y ? x : y;
+        return x >= y ? x : y;
     }
 
     /*
@@ -136,15 +136,15 @@ contract DSMath {
 
 
     function hadd(uint128 x, uint128 y) constant internal returns (uint128 z) {
-        assert((z = x + y) &gt;= x);
+        assert((z = x + y) >= x);
     }
 
     function hsub(uint128 x, uint128 y) constant internal returns (uint128 z) {
-        assert((z = x - y) &lt;= x);
+        assert((z = x - y) <= x);
     }
 
     function hmul(uint128 x, uint128 y) constant internal returns (uint128 z) {
-        assert((z = x * y) &gt;= x);
+        assert((z = x * y) >= x);
     }
 
     function hdiv(uint128 x, uint128 y) constant internal returns (uint128 z) {
@@ -152,10 +152,10 @@ contract DSMath {
     }
 
     function hmin(uint128 x, uint128 y) constant internal returns (uint128 z) {
-        return x &lt;= y ? x : y;
+        return x <= y ? x : y;
     }
     function hmax(uint128 x, uint128 y) constant internal returns (uint128 z) {
-        return x &gt;= y ? x : y;
+        return x >= y ? x : y;
     }
 
 
@@ -164,10 +164,10 @@ contract DSMath {
      */
 
     function imin(int256 x, int256 y) constant internal returns (int256 z) {
-        return x &lt;= y ? x : y;
+        return x <= y ? x : y;
     }
     function imax(int256 x, int256 y) constant internal returns (int256 z) {
-        return x &gt;= y ? x : y;
+        return x >= y ? x : y;
     }
 
     /*
@@ -276,8 +276,8 @@ contract ERC20 {
 
 contract DSTokenBase is ERC20, DSMath {
     uint256                                            _supply;
-    mapping (address =&gt; uint256)                       _balances;
-    mapping (address =&gt; mapping (address =&gt; uint256))  _approvals;
+    mapping (address => uint256)                       _balances;
+    mapping (address => mapping (address => uint256))  _approvals;
     
     function DSTokenBase(uint256 supply) {
         _balances[msg.sender] = supply;
@@ -295,7 +295,7 @@ contract DSTokenBase is ERC20, DSMath {
     }
     
     function transfer(address dst, uint wad) returns (bool) {
-        assert(_balances[msg.sender] &gt;= wad);
+        assert(_balances[msg.sender] >= wad);
         
         _balances[msg.sender] = sub(_balances[msg.sender], wad);
         _balances[dst] = add(_balances[dst], wad);
@@ -306,8 +306,8 @@ contract DSTokenBase is ERC20, DSMath {
     }
     
     function transferFrom(address src, address dst, uint wad) returns (bool) {
-        assert(_balances[src] &gt;= wad);
-        assert(_approvals[src][msg.sender] &gt;= wad);
+        assert(_balances[src] >= wad);
+        assert(_approvals[src][msg.sender] >= wad);
         
         _approvals[src][msg.sender] = sub(_approvals[src][msg.sender], wad);
         _balances[src] = sub(_balances[src], wad);

@@ -11,20 +11,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -69,9 +69,9 @@ contract BGXCrowdsale is Ownable{
     address[] public bounty;
     address[] public team;
 
-    mapping( address =&gt; uint256 ) adviserAmount;
-    mapping( address =&gt; uint256 ) bountyAmount;
-    mapping( address =&gt; uint256 ) teamAmount;
+    mapping( address => uint256 ) adviserAmount;
+    mapping( address => uint256 ) bountyAmount;
+    mapping( address => uint256 ) teamAmount;
 
     uint256 public presaleDateStart      = 1524571200;
     uint256 public presaleDateFinish     = 1526385600;
@@ -117,7 +117,7 @@ contract BGXCrowdsale is Ownable{
 
     modifier overSoftcap {
         require(
-            totalBGX &gt;= softcap
+            totalBGX >= softcap
         );
         _;
     }
@@ -137,8 +137,8 @@ contract BGXCrowdsale is Ownable{
     }
 
     address[]                     public investors;
-    mapping( address =&gt; uint256 ) public investorBalance;
-    mapping( address =&gt; bool )    public inBlackList;
+    mapping( address => uint256 ) public investorBalance;
+    mapping( address => bool )    public inBlackList;
 
 
 
@@ -174,19 +174,19 @@ contract BGXCrowdsale is Ownable{
         if( state == CrowdsaleStates.Pause || paused ) return CrowdsaleStates.Pause;
         if( state == CrowdsaleStates.Finish ) return CrowdsaleStates.Finish;
 
-        if( totalBGX &gt;= hardcap ) return CrowdsaleStates.OverHardcap;
+        if( totalBGX >= hardcap ) return CrowdsaleStates.OverHardcap;
 
 
-        if( now &gt;= presaleDateStart &amp;&amp; now &lt;= presaleDateFinish ){
+        if( now >= presaleDateStart && now <= presaleDateFinish ){
 
-            if( totalBGX &gt;= presaleHardcap ) return CrowdsaleStates.Pause;
+            if( totalBGX >= presaleHardcap ) return CrowdsaleStates.Pause;
             return CrowdsaleStates.Presale;
 
         }
 
-        if( now &gt;= saleDateStart &amp;&amp; now &lt;= saleDateFinish ){
+        if( now >= saleDateStart && now <= saleDateFinish ){
 
-            if( totalBGX &gt;= hardcap ) {
+            if( totalBGX >= hardcap ) {
                 _startCounter();
                 return CrowdsaleStates.OverHardcap;
             }
@@ -194,7 +194,7 @@ contract BGXCrowdsale is Ownable{
 
         }
 
-        if( now &gt; saleDateFinish ) {
+        if( now > saleDateFinish ) {
             _startCounter();
             return CrowdsaleStates.Finish;
         }
@@ -205,7 +205,7 @@ contract BGXCrowdsale is Ownable{
 
     function _startCounter() internal
     {
-        if (distributionDate &lt;= 0) {
+        if (distributionDate <= 0) {
             distributionDate = now + 2 days;
         }
     }
@@ -226,10 +226,10 @@ contract BGXCrowdsale is Ownable{
 
     function send(address _addr, uint _amount) public onlyOwner activeState onlyPayloadSize(2 * 32) returns( bool )
     {
-        require( address(0) != _addr &amp;&amp; _amount &gt;= minimal &amp;&amp; !inBlackList[_addr] );
+        require( address(0) != _addr && _amount >= minimal && !inBlackList[_addr] );
 
-        if( getState() == CrowdsaleStates.Presale ) require( totalBGX.add( _amount ) &lt;= presaleHardcap );
-        if( getState() == CrowdsaleStates.Sale )    require( totalBGX.add( _amount ) &lt;= hardcap );
+        if( getState() == CrowdsaleStates.Presale ) require( totalBGX.add( _amount ) <= presaleHardcap );
+        if( getState() == CrowdsaleStates.Sale )    require( totalBGX.add( _amount ) <= hardcap );
 
 
         investors.push( _addr );
@@ -250,11 +250,11 @@ contract BGXCrowdsale is Ownable{
 
     function sendNow( uint256 _count ) public onlyOwner overSoftcap  returns( bool )
     {
-        require( sendNowLastCount.add( _count ) &lt;= investors.length );
+        require( sendNowLastCount.add( _count ) <= investors.length );
 
         uint256 to = sendNowLastCount.add( _count );
 
-        for( uint256 i = sendNowLastCount; i &lt;= to - 1; i++ )
+        for( uint256 i = sendNowLastCount; i <= to - 1; i++ )
             if( !inBlackList[investors[i]] ){
                 investorBalance[investors[i]] = 0;
                 bgxTokenInterface.distribute( investors[i], investorBalance[investors[i]] );
@@ -281,44 +281,44 @@ contract BGXCrowdsale is Ownable{
 
     function finish( uint256 _count) public onlyOwner finishOrHardcap overSoftcap returns( bool )
     {
-        require(_count &gt; 0);
-        require(distributionDate &gt; 0 &amp;&amp; distributionDate &lt;= now);
+        require(_count > 0);
+        require(distributionDate > 0 && distributionDate <= now);
         if (finishCurrentLimit == 0) {
             finishCurrentLimit = bountyLimit.add(teamLimit.add(advisersLimit));
         }
         // advisers + bounters total cnt
         uint256 totalCnt = adviser.length.add(bounty.length);
 
-        if (finishLastCount &lt; adviser.length) {
-            for( uint256 i = finishLastCount; i &lt;= adviser.length - 1; i++  ){
+        if (finishLastCount < adviser.length) {
+            for( uint256 i = finishLastCount; i <= adviser.length - 1; i++  ){
                 finishCurrentLimit = finishCurrentLimit.sub( adviserAmount[adviser[i]] );
                 bgxTokenInterface.distribute( adviser[i],adviserAmount[adviser[i]] );
                 finishLastCount++;
                 _count--;
-                if (_count &lt;= 0) {
+                if (_count <= 0) {
                     return true;
                 }
             }
         }
-        if (finishLastCount &lt; totalCnt) {
-            for( i = finishLastCount.sub(adviser.length); i &lt;= bounty.length - 1; i++  ){
+        if (finishLastCount < totalCnt) {
+            for( i = finishLastCount.sub(adviser.length); i <= bounty.length - 1; i++  ){
                 finishCurrentLimit = finishCurrentLimit.sub( bountyAmount[bounty[i]] );
                 bgxTokenInterface.distribute( bounty[i],bountyAmount[bounty[i]] );
                 finishLastCount ++;
                 _count--;
-                if (_count &lt;= 0) {
+                if (_count <= 0) {
                     return true;
                 }
             }
         }
-        if (finishLastCount &gt;= totalCnt &amp;&amp; finishLastCount &lt; totalCnt.add(team.length)) {
-            for( i =  finishLastCount.sub(totalCnt); i &lt;= team.length - 1; i++  ){
+        if (finishLastCount >= totalCnt && finishLastCount < totalCnt.add(team.length)) {
+            for( i =  finishLastCount.sub(totalCnt); i <= team.length - 1; i++  ){
 
                 finishCurrentLimit = finishCurrentLimit.sub( teamAmount[team[i]] );
                 bgxTokenInterface.distribute( team[i],teamAmount[team[i]] );
                 finishLastCount ++;
                 _count--;
-                if (_count &lt;= 0) {
+                if (_count <= 0) {
                     return true;
                 }
             }
@@ -350,8 +350,8 @@ contract BGXCrowdsale is Ownable{
         adviser = _addrs;
         uint256 limit = 0;
 
-        for( uint256 i = 0; i &lt;= adviser.length - 1; i++  ){
-            require( limit.add( _amounts[i] ) &lt;= advisersLimit );
+        for( uint256 i = 0; i <= adviser.length - 1; i++  ){
+            require( limit.add( _amounts[i] ) <= advisersLimit );
             adviserAmount[adviser[i]] = _amounts[i];
             limit.add( _amounts[i] );
         }
@@ -364,8 +364,8 @@ contract BGXCrowdsale is Ownable{
         bounty = _addrs;
         uint256 limit = 0;
 
-        for( uint256 i = 0; i &lt;= bounty.length - 1; i++  ){
-            require( limit.add( _amounts[i] ) &lt;= bountyLimit );
+        for( uint256 i = 0; i <= bounty.length - 1; i++  ){
+            require( limit.add( _amounts[i] ) <= bountyLimit );
             bountyAmount[bounty[i]] = _amounts[i];
             limit.add( _amounts[i] );
         }
@@ -378,8 +378,8 @@ contract BGXCrowdsale is Ownable{
         team = _addrs;
         uint256 limit = 0;
 
-        for( uint256 i = 0; i &lt;= team.length - 1; i++  ){
-            require( limit.add( _amounts[i] ) &lt;= teamLimit );
+        for( uint256 i = 0; i <= team.length - 1; i++  ){
+            require( limit.add( _amounts[i] ) <= teamLimit );
             teamAmount[team[i]] = _amounts[i];
             limit.add( _amounts[i] );
         }

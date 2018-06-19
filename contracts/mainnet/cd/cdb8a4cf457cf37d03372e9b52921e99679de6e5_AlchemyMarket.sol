@@ -120,7 +120,7 @@ contract Manager {
 contract AlchemyBase is Manager {
 
     // Assets of each account
-    mapping (address =&gt; bytes32[8]) assets;
+    mapping (address => bytes32[8]) assets;
 
     // Event
     event Transfer(address from, address to);
@@ -139,22 +139,22 @@ contract AlchemyBase is Manager {
         uint maskedY;
         uint maskedResult;
 
-        for (uint i = 0; i &lt; 31; i++) {
+        for (uint i = 0; i < 31; i++) {
             // Get current mask
-            if (i &gt; 0) {
-                mask = mask &lt;&lt; 8;
+            if (i > 0) {
+                mask = mask << 8;
             }
 
             // Get masked values
-            maskedX = uint(x &amp; mask);
-            maskedY = uint(y &amp; mask);
+            maskedX = uint(x & mask);
+            maskedY = uint(y & mask);
             maskedResult = maskedX + maskedY;
 
             // Prevent overflow
-            require(maskedResult &lt; (2 ** (8 * (i + 1))));
+            require(maskedResult < (2 ** (8 * (i + 1))));
 
             // Clear result digits in masked position
-            result = (result ^ mask) &amp; result;
+            result = (result ^ mask) & result;
 
             // Write to result
             result = result | bytes32(maskedResult);
@@ -172,24 +172,24 @@ contract AlchemyBase is Manager {
         uint maskedY;
         uint maskedResult;
 
-        for (uint i = 0; i &lt; 31; i++) {
+        for (uint i = 0; i < 31; i++) {
             // Get current mask
-            if (i &gt; 0) {
-                mask = mask &lt;&lt; 8;
+            if (i > 0) {
+                mask = mask << 8;
             }
 
             // Get masked values
-            maskedX = uint(x &amp; mask);
-            maskedY = uint(y &amp; mask);
+            maskedX = uint(x & mask);
+            maskedY = uint(y & mask);
 
-            // Ensure x &gt;= y
-            require(maskedX &gt;= maskedY);
+            // Ensure x >= y
+            require(maskedX >= maskedY);
 
             // Calculate result
             maskedResult = maskedX - maskedY;
 
             // Clear result digits in masked position
-            result = (result ^ mask) &amp; result;
+            result = (result ^ mask) & result;
 
             // Write to result
             result = result | bytes32(maskedResult);
@@ -205,7 +205,7 @@ contract AlchemyBase is Manager {
         bytes32[8] memory assetFrom = assets[msg.sender];
         bytes32[8] memory assetTo = assets[to];
 
-        for (uint256 i = 0; i &lt; 8; i++) {
+        for (uint256 i = 0; i < 8; i++) {
             assetFrom[i] = _checkAndSub(assetFrom[i], value[i]);
             assetTo[i] = _checkAndAdd(assetTo[i], value[i]);
         }
@@ -217,7 +217,7 @@ contract AlchemyBase is Manager {
         emit Transfer(msg.sender, to);
     }
 
-    // Withdraw ETH to the owner account. Ownable--&gt;Pausable--&gt;AlchemyBase
+    // Withdraw ETH to the owner account. Ownable-->Pausable-->AlchemyBase
     function withdrawETH() external onlyCAO {
         cfo.transfer(address(this).balance);
     }
@@ -242,7 +242,7 @@ contract AlchemyPatent is AlchemyBase {
     }
 
     // Creator of each kind of asset
-    mapping (uint16 =&gt; Patent) public patents;
+    mapping (uint16 => Patent) public patents;
 
     // patent fee ratio
     // Values 0-10,000 map to 0%-100%
@@ -259,7 +259,7 @@ contract AlchemyPatent is AlchemyBase {
 
     // set the patent fee ratio
     function setPatentFee(uint256 newFeeRatio) external onlyCOO {
-        require(newFeeRatio &lt;= 10000);
+        require(newFeeRatio <= 10000);
         feeRatio = newFeeRatio;
     }
 
@@ -267,10 +267,10 @@ contract AlchemyPatent is AlchemyBase {
     function sellPatent(uint16 assetId, uint256 sellPrice) public whenNotPaused {
         Patent memory patent = patents[assetId];
         require(patent.patentOwner == msg.sender);
-        if (patent.lastPrice &gt; 0) {
-            require(sellPrice &lt;= 2 * patent.lastPrice);
+        if (patent.lastPrice > 0) {
+            require(sellPrice <= 2 * patent.lastPrice);
         } else {
-            require(sellPrice &lt;= 1 ether);
+            require(sellPrice <= 1 ether);
         }
         
         require(!patent.onSale);
@@ -289,7 +289,7 @@ contract AlchemyPatent is AlchemyBase {
         Patent memory patent = patents[assetId];
         require(patent.patentOwner != address(0));  // this is a valid patent
         require(!patent.onSale);
-        require(patent.beginTime + patentValidTime &lt; now);
+        require(patent.beginTime + patentValidTime < now);
 
         patent.onSale = true;
         patent.price = patent.lastPrice;
@@ -305,10 +305,10 @@ contract AlchemyPatent is AlchemyBase {
     function changePatentSale(uint16 assetId, uint256 newPrice) external whenNotPaused {
         Patent memory patent = patents[assetId];
         require(patent.patentOwner == msg.sender);
-        if (patent.lastPrice &gt; 0) {
-            require(newPrice &lt;= 2 * patent.lastPrice);
+        if (patent.lastPrice > 0) {
+            require(newPrice <= 2 * patent.lastPrice);
         } else {
-            require(newPrice &lt;= 1 ether);
+            require(newPrice <= 1 ether);
         }
         require(patent.onSale == true);
 
@@ -326,8 +326,8 @@ contract AlchemyPatent is AlchemyBase {
         require(patent.patentOwner != address(0));  // this is a valid patent
         require(patent.patentOwner != msg.sender);
         require(patent.onSale);
-        require(msg.value &gt;= patent.price);
-        require(now &gt;= patent.sellTime + patentSaleTimeDelay);
+        require(msg.value >= patent.price);
+        require(now >= patent.sellTime + patentSaleTimeDelay);
 
         patent.patentOwner.transfer(patent.price / 10000 * feeRatio);
         patent.patentOwner = msg.sender;
@@ -386,10 +386,10 @@ contract AlchemySynthesize is AlchemyPatent {
     }
 
     // furnace of each account
-    mapping (address =&gt; Furnace) public accountsToFurnace;
+    mapping (address => Furnace) public accountsToFurnace;
 
     // alchemy level of each asset
-    mapping (uint16 =&gt; uint256) public assetLevel;
+    mapping (uint16 => uint256) public assetLevel;
 
     // Pre-paid ether for synthesization, will be returned to user if the synthesization failed (minus gas).
     uint256 public prePaidFee = 1000000 * 3000000000; // (1million gas * 3 gwei)
@@ -414,7 +414,7 @@ contract AlchemySynthesize is AlchemyPatent {
                                           195,
                                           198];  // end of level 8
         uint256 currentLevel = 0;
-        for (uint8 i = 0; i &lt; 198; i ++) {
+        for (uint8 i = 0; i < 198; i ++) {
             if (i == levelSplits[currentLevel]) {
                 currentLevel ++;
             }
@@ -456,7 +456,7 @@ contract AlchemySynthesize is AlchemyPatent {
 
     // _isCooldownReady: check whether cooldown period has been passed
     function _isCooldownReady(address account) internal view returns (bool) {
-        return (accountsToFurnace[account].cooldownEndTime &lt;= now);
+        return (accountsToFurnace[account].cooldownEndTime <= now);
     }
 
     // synthesize: call _isCooldownReady, pending assets, fire SynthesizeStart event
@@ -479,29 +479,29 @@ contract AlchemySynthesize is AlchemyPatent {
         Patent memory _patent;
         uint16 currentAsset;
         
-        for (uint256 i = 0; i &lt; 5; i++) {
+        for (uint256 i = 0; i < 5; i++) {
             currentAsset = inputAssets[i];
-            if (currentAsset &lt; 248) {
+            if (currentAsset < 248) {
                 _asset = asset[currentAsset / 31];
                 pos = currentAsset % 31;
-                mask = bytes32(255) &lt;&lt; (8 * pos);
-                maskedValue = uint256(_asset &amp; mask);
+                mask = bytes32(255) << (8 * pos);
+                maskedValue = uint256(_asset & mask);
 
-                require(maskedValue &gt;= (uint256(1) &lt;&lt; (8*pos)));
-                maskedValue -= (uint256(1) &lt;&lt; (8*pos));
-                _asset = ((_asset ^ mask) &amp; _asset) | bytes32(maskedValue); 
+                require(maskedValue >= (uint256(1) << (8*pos)));
+                maskedValue -= (uint256(1) << (8*pos));
+                _asset = ((_asset ^ mask) & _asset) | bytes32(maskedValue); 
                 asset[currentAsset / 31] = _asset;
                 count += 1;
 
                 // handle patent fee
                 _assetLevel = assetLevel[currentAsset];
-                if (_assetLevel &gt; maxLevel) {
+                if (_assetLevel > maxLevel) {
                     maxLevel = _assetLevel;
                 }
 
-                if (_assetLevel &gt; 0) {
+                if (_assetLevel > 0) {
                     _patent = patents[currentAsset];
-                    if (_patent.patentOwner != address(0) &amp;&amp; _patent.patentOwner != msg.sender &amp;&amp; !_patent.onSale &amp;&amp; (_patent.beginTime + patentValidTime &gt; now)) {
+                    if (_patent.patentOwner != address(0) && _patent.patentOwner != msg.sender && !_patent.onSale && (_patent.beginTime + patentValidTime > now)) {
                         _patent.patentOwner.transfer(pFees[_assetLevel] / 10000 * feeRatio);
                         totalFee += pFees[_assetLevel];
                     }
@@ -509,9 +509,9 @@ contract AlchemySynthesize is AlchemyPatent {
             }
         }
 
-        require(msg.value &gt;= prePaidFee + totalFee); 
+        require(msg.value >= prePaidFee + totalFee); 
 
-        require(count &gt;= 2 &amp;&amp; count &lt;= 5);
+        require(count >= 2 && count <= 5);
 
         // Check whether cooldown has ends
         require(_isCooldownReady(msg.sender));
@@ -536,15 +536,15 @@ contract AlchemySynthesize is AlchemyPatent {
         Patent memory _patent;
         uint16 currentAsset;
         
-        for (uint256 i = 0; i &lt; 5; i++) {
+        for (uint256 i = 0; i < 5; i++) {
             currentAsset = inputAssets[i];
-            if (currentAsset &lt; 248) {
+            if (currentAsset < 248) {
 
                 // handle patent fee
                 _assetLevel = assetLevel[currentAsset];
-                if (_assetLevel &gt; 0) {
+                if (_assetLevel > 0) {
                     _patent = patents[currentAsset];
-                    if (_patent.patentOwner != address(0) &amp;&amp; _patent.patentOwner != account &amp;&amp; !_patent.onSale &amp;&amp; (_patent.beginTime + patentValidTime &gt; now)) {
+                    if (_patent.patentOwner != address(0) && _patent.patentOwner != account && !_patent.onSale && (_patent.beginTime + patentValidTime > now)) {
                         totalFee += pFees[_assetLevel];
                     }
                 }
@@ -576,19 +576,19 @@ contract AlchemySynthesize is AlchemyPatent {
         uint256 j;
         uint256 pos;   
 
-        for (uint256 i = 0; i &lt; 5; i++) {
-            if (resultAssets[i] &lt; 248) {
+        for (uint256 i = 0; i < 5; i++) {
+            if (resultAssets[i] < 248) {
                 j = resultAssets[i] / 31;
                 pos = resultAssets[i] % 31;
-                mask = bytes32(255) &lt;&lt; (8 * pos);
-                maskedValue = uint256(asset[j] &amp; mask);
+                mask = bytes32(255) << (8 * pos);
+                maskedValue = uint256(asset[j] & mask);
 
-                require(maskedValue &lt; (uint256(255) &lt;&lt; (8*pos)));
-                maskedValue += (uint256(1) &lt;&lt; (8*pos));
-                asset[j] = ((asset[j] ^ mask) &amp; asset[j]) | bytes32(maskedValue); 
+                require(maskedValue < (uint256(255) << (8*pos)));
+                maskedValue += (uint256(1) << (8*pos));
+                asset[j] = ((asset[j] ^ mask) & asset[j]) | bytes32(maskedValue); 
 
                 // handle patent
-                if (resultAssets[i] &gt; 3 &amp;&amp; patents[resultAssets[i]].patentOwner == address(0)) {
+                if (resultAssets[i] > 3 && patents[resultAssets[i]].patentOwner == address(0)) {
                     patents[resultAssets[i]] = Patent({patentOwner: account,
                                                        beginTime: now,
                                                        onSale: false,
@@ -633,8 +633,8 @@ contract AlchemyMinting is AlchemySynthesize {
     uint256[4] public zoCreated;
     
     // Limit the number each account can buy every day
-    mapping(address =&gt; bytes32) public accountsBoughtZoAsset;
-    mapping(address =&gt; uint256) public accountsZoLastRefreshTime;
+    mapping(address => bytes32) public accountsBoughtZoAsset;
+    mapping(address => uint256) public accountsZoLastRefreshTime;
 
     // Price of zero order assets
     uint256 public zoPrice = 1 finney;
@@ -659,7 +659,7 @@ contract AlchemyMinting is AlchemySynthesize {
             // This account&#39;s first time to buy zo asset, we do not need to clear accountsBoughtZoAsset
             accountsZoLastRefreshTime[msg.sender] = zoLastRefreshTime;
         } else {
-            if (accountsZoLastRefreshTime[msg.sender] &lt; zoLastRefreshTime) {
+            if (accountsZoLastRefreshTime[msg.sender] < zoLastRefreshTime) {
                 history = bytes32(0);
                 accountsZoLastRefreshTime[msg.sender] = zoLastRefreshTime;
             }
@@ -674,42 +674,42 @@ contract AlchemyMinting is AlchemySynthesize {
 
         bytes32 asset = assets[msg.sender][0];
 
-        for (uint256 i = 0; i &lt; 4; i++) {
-            if (i &gt; 0) {
-                mask = mask &lt;&lt; 8;
+        for (uint256 i = 0; i < 4; i++) {
+            if (i > 0) {
+                mask = mask << 8;
             }
-            maskedValue = uint256(values &amp; mask);
+            maskedValue = uint256(values & mask);
             currentCount = maskedValue / 2 ** (8 * i);
             count += currentCount;
 
             // Check whether this account has bought too many assets
-            maskedResult = uint256(history &amp; mask); 
+            maskedResult = uint256(history & mask); 
             maskedResult += maskedValue;
-            require(maskedResult &lt; (2 ** (8 * (i + 1))));
+            require(maskedResult < (2 ** (8 * (i + 1))));
 
             // Update account bought history
-            history = ((history ^ mask) &amp; history) | bytes32(maskedResult);
+            history = ((history ^ mask) & history) | bytes32(maskedResult);
 
             // Check whether this account will have too many assets
-            maskedResult = uint256(asset &amp; mask);
+            maskedResult = uint256(asset & mask);
             maskedResult += maskedValue;
-            require(maskedResult &lt; (2 ** (8 * (i + 1))));
+            require(maskedResult < (2 ** (8 * (i + 1))));
 
             // Update user asset
-            asset = ((asset ^ mask) &amp; asset) | bytes32(maskedResult);
+            asset = ((asset ^ mask) & asset) | bytes32(maskedResult);
 
             // Check whether we have enough assets to sell
-            require(zoCreated[i] + currentCount &lt;= zoDailyLimit);
+            require(zoCreated[i] + currentCount <= zoDailyLimit);
 
             // Update our creation history
             zoCreated[i] += currentCount;
         }
 
         // Ensure this account buy at least one zo asset
-        require(count &gt; 0);
+        require(count > 0);
 
         // Check whether there are enough money for payment
-        require(msg.value &gt;= count * zoPrice);
+        require(msg.value >= count * zoPrice);
 
         // Write updated user asset
         assets[msg.sender][0] = asset;
@@ -725,9 +725,9 @@ contract AlchemyMinting is AlchemySynthesize {
     // Our daemon will refresh daily limit
     function clearZoDailyLimit() external onlyCOO {
         uint256 nextDay = zoLastRefreshTime + 1 days;
-        if (now &gt; nextDay) {
+        if (now > nextDay) {
             zoLastRefreshTime = nextDay;
-            for (uint256 i = 0; i &lt; 4; i++) {
+            for (uint256 i = 0; i < 4; i++) {
                 zoCreated[i] =0;
             }
         }
@@ -759,10 +759,10 @@ contract AlchemyMarket is AlchemyMinting {
     uint256 public nextSaleId = 1;
 
     // Sale orders list 
-    mapping (uint256 =&gt; SaleOrder) public saleOrderList;
+    mapping (uint256 => SaleOrder) public saleOrderList;
 
     // Sale information of each account
-    mapping (address =&gt; uint256) public accountToSaleNum;
+    mapping (address => uint256) public accountToSaleNum;
 
     // events
     event PutOnSale(address account, uint256 saleId);
@@ -779,29 +779,29 @@ contract AlchemyMarket is AlchemyMinting {
     // Put asset on sale
     function putOnSale(uint256 assetId, uint256 amount, uint256 price) external whenNotPaused {
         // One account can have no more than maxSaleNum sale orders
-        require(accountToSaleNum[msg.sender] &lt; maxSaleNum);
+        require(accountToSaleNum[msg.sender] < maxSaleNum);
 
         // check whether zero order asset is to be sold 
         // which is not allowed
-        require(assetId &gt; 3 &amp;&amp; assetId &lt; 248);
-        require(amount &gt; 0 &amp;&amp; amount &lt; 256);
+        require(assetId > 3 && assetId < 248);
+        require(amount > 0 && amount < 256);
 
         uint256 assetFloor = assetId / 31;
         uint256 assetPos = assetId - 31 * assetFloor;
         bytes32 allAsset = assets[msg.sender][assetFloor];
 
-        bytes32 mask = bytes32(255) &lt;&lt; (8 * assetPos); // 0x11111111
+        bytes32 mask = bytes32(255) << (8 * assetPos); // 0x11111111
         uint256 maskedValue;
         uint256 maskedResult;
-        uint256 addAmount = amount &lt;&lt; (8 * assetPos);
+        uint256 addAmount = amount << (8 * assetPos);
 
         // check whether there are enough unpending assets to sell
-        maskedValue = uint256(allAsset &amp; mask);
-        require(addAmount &lt;= maskedValue);
+        maskedValue = uint256(allAsset & mask);
+        require(addAmount <= maskedValue);
 
         // Remove assets to be sold from owner
         maskedResult = maskedValue - addAmount;
-        allAsset = ((allAsset ^ mask) &amp; allAsset) | bytes32(maskedResult);
+        allAsset = ((allAsset ^ mask) & allAsset) | bytes32(maskedResult);
 
         assets[msg.sender][assetFloor] = allAsset;
 
@@ -832,18 +832,18 @@ contract AlchemyMarket is AlchemyMinting {
         uint256 assetPos = assetId - 31 * assetFloor;
         bytes32 allAsset = assets[msg.sender][assetFloor];
 
-        bytes32 mask = bytes32(255) &lt;&lt; (8 * assetPos); // 0x11111111
+        bytes32 mask = bytes32(255) << (8 * assetPos); // 0x11111111
         uint256 maskedValue;
         uint256 maskedResult;
-        uint256 addAmount = uint256(saleOrderList[saleId].amount) &lt;&lt; (8 * assetPos);
+        uint256 addAmount = uint256(saleOrderList[saleId].amount) << (8 * assetPos);
 
         // check whether this account will have too many assets
-        maskedValue = uint256(allAsset &amp; mask);
-        require(addAmount + maskedValue &lt; 2**(8 * (assetPos + 1)));
+        maskedValue = uint256(allAsset & mask);
+        require(addAmount + maskedValue < 2**(8 * (assetPos + 1)));
 
         // Retransfer asset to be sold from owner
         maskedResult = maskedValue + addAmount;
-        allAsset = ((allAsset ^ mask) &amp; allAsset) | bytes32(maskedResult);
+        allAsset = ((allAsset ^ mask) & allAsset) | bytes32(maskedResult);
 
         assets[msg.sender][assetFloor] = allAsset;
 
@@ -872,10 +872,10 @@ contract AlchemyMarket is AlchemyMinting {
         // Check the sender isn&#39;t the seller
         require(msg.sender != seller);
 
-        require(saleOrderList[saleId].amount &gt;= uint64(amount));
+        require(saleOrderList[saleId].amount >= uint64(amount));
 
         // Check whether pay value is enough
-        require(msg.value / saleOrderList[saleId].desiredPrice &gt;= amount);
+        require(msg.value / saleOrderList[saleId].desiredPrice >= amount);
 
         uint256 totalprice = amount * saleOrderList[saleId].desiredPrice;
 
@@ -885,18 +885,18 @@ contract AlchemyMarket is AlchemyMinting {
         uint256 assetPos = assetId - 31 * assetFloor;
         bytes32 allAsset = assets[msg.sender][assetFloor];
 
-        bytes32 mask = bytes32(255) &lt;&lt; (8 * assetPos); // 0x11111111
+        bytes32 mask = bytes32(255) << (8 * assetPos); // 0x11111111
         uint256 maskedValue;
         uint256 maskedResult;
-        uint256 addAmount = amount &lt;&lt; (8 * assetPos);
+        uint256 addAmount = amount << (8 * assetPos);
 
         // check whether this account will have too many assets
-        maskedValue = uint256(allAsset &amp; mask);
-        require(addAmount + maskedValue &lt; 2**(8 * (assetPos + 1)));
+        maskedValue = uint256(allAsset & mask);
+        require(addAmount + maskedValue < 2**(8 * (assetPos + 1)));
 
         // Transfer assets to buyer
         maskedResult = maskedValue + addAmount;
-        allAsset = ((allAsset ^ mask) &amp; allAsset) | bytes32(maskedResult);
+        allAsset = ((allAsset ^ mask) & allAsset) | bytes32(maskedResult);
 
         assets[msg.sender][assetFloor] = allAsset;
 

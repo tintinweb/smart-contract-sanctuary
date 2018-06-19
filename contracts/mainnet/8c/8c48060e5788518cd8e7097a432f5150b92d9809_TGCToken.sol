@@ -15,7 +15,7 @@ contract Token {
 contract StandardToken is Token {
 
     function transfer(address _to, uint256 _value) returns (bool success) {
-      if (balances[msg.sender] &gt;= _value &amp;&amp; _value &gt; 0) {
+      if (balances[msg.sender] >= _value && _value > 0) {
         balances[msg.sender] -= _value;
         balances[_to] += _value;
         Transfer(msg.sender, _to, _value);
@@ -26,7 +26,7 @@ contract StandardToken is Token {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
-      if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; _value &gt; 0) {
+      if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0) {
         balances[_to] += _value;
         balances[_from] -= _value;
         allowed[_from][msg.sender] -= _value;
@@ -51,13 +51,13 @@ contract StandardToken is Token {
       return allowed[_owner][_spender];
     }
 
-    mapping (address =&gt; uint256) balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) allowed;
 }
 
 contract TGCToken is StandardToken {
 
-	mapping (address =&gt; uint256) public lockAccount;// lock account and lock end date
+	mapping (address => uint256) public lockAccount;// lock account and lock end date
 
 	event LockFunds(address target, uint256 lockenddate);
 
@@ -128,7 +128,7 @@ contract TGCToken is StandardToken {
     }
 
     function approve(address _spender, uint256 _value) returns (bool success) {
-        if(now&lt;lockAccount[msg.sender] ){
+        if(now<lockAccount[msg.sender] ){
             return false;
         }
         allowed[msg.sender][_spender] = _value;
@@ -137,8 +137,8 @@ contract TGCToken is StandardToken {
     }
     
     function transfer(address _to, uint256 _value) returns (bool success) {
-      if (balances[msg.sender] &gt;= _value &amp;&amp; _value &gt; 0) {
-        if(now&lt;lockAccount[msg.sender] ){
+      if (balances[msg.sender] >= _value && _value > 0) {
+        if(now<lockAccount[msg.sender] ){
              return false;
         }
         

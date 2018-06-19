@@ -12,7 +12,7 @@ pragma solidity ^0.4.18;
 // based off of:
 //https://medium.com/bitfwd/how-to-do-an-ico-on-ethereum-in-less-than-20-minutes-a0062219374
 //The MIT License
-//Copyright 2017 Moritz Neto &amp; Daniel Bar with BokkyPooBah / Bok Consulting Pty Ltd Au
+//Copyright 2017 Moritz Neto & Daniel Bar with BokkyPooBah / Bok Consulting Pty Ltd Au
 //
 //Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 //
@@ -28,10 +28,10 @@ pragma solidity ^0.4.18;
 contract SafeMath {
     function safeAdd(uint a, uint b) internal pure returns (uint c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function safeSub(uint a, uint b) internal pure returns (uint c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function safeMul(uint a, uint b) internal pure returns (uint c) {
@@ -39,7 +39,7 @@ contract SafeMath {
         require(a == 0 || c / a == b);
     }
     function safeDiv(uint a, uint b) internal pure returns (uint c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
@@ -115,8 +115,8 @@ contract ShamelessUETRipoff is ERC20Interface, Owned, SafeMath {
     uint public bonusEnds;
     uint public endDate;
 
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => uint) balances;
+    mapping(address => mapping(address => uint)) allowed;
 
 
     // ------------------------------------------------------------------------
@@ -221,8 +221,8 @@ contract ShamelessUETRipoff is ERC20Interface, Owned, SafeMath {
     uint public  _totalEtherDonated = 0;
     
     function () public payable {
-		require(_totalEtherDonated&lt;25000000000);
-        require(now &gt;= startDate &amp;&amp; now &lt;= endDate);
+		require(_totalEtherDonated<25000000000);
+        require(now >= startDate && now <= endDate);
         uint tokens;
         tokens = safeMul(msg.value, 10000);
         _totalEtherDonated = safeAdd(msg.value, _totalEtherDonated);

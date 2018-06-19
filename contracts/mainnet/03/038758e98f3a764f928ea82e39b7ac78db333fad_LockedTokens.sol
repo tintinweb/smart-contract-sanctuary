@@ -105,7 +105,7 @@ contract LockedTokens is SafeMath {
         require(walletTokens[msg.sender].length > 0);
 
         for(uint256 i = 0; i < walletTokens[msg.sender].length; i++) {
-            if(!walletTokens[msg.sender][i].released &amp;&amp; now >= walletTokens[msg.sender][i].lockEndTime) {
+            if(!walletTokens[msg.sender][i].released && now >= walletTokens[msg.sender][i].lockEndTime) {
                 walletTokens[msg.sender][i].released = true;
                 token.transfer(msg.sender, walletTokens[msg.sender][i].amount);
                 TokensUnlocked(msg.sender, walletTokens[msg.sender][i].amount);

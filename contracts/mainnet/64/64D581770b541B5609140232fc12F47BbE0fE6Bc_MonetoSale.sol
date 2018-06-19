@@ -301,12 +301,12 @@ contract MonetoSale {
     }
 
     function () payable public atStage(Stages.Ready) {
-        require((now >= PRE_SALE_START &amp;&amp; now <= PRE_SALE_END) || (now >= SALE_START &amp;&amp; now <= SALE_END));
+        require((now >= PRE_SALE_START && now <= PRE_SALE_END) || (now >= SALE_START && now <= SALE_END));
 
         uint amount = msg.value;
         amountRaised += amount;
 
-        if (now >= SALE_START &amp;&amp; now <= SALE_END) {
+        if (now >= SALE_START && now <= SALE_END) {
             assert(icoBuyers[msg.sender] + msg.value >= msg.value);
             icoBuyers[msg.sender] += amount;
         }
@@ -316,10 +316,10 @@ contract MonetoSale {
         uint allTokens = tokenAmount + getBonus(tokenAmount);
         tokenSold += allTokens;
 
-        if (now >= PRE_SALE_START &amp;&amp; now <= PRE_SALE_END) {
+        if (now >= PRE_SALE_START && now <= PRE_SALE_END) {
             require(tokenSold <= PRE_SALE_MAX_CAP);
         }
-        if (now >= SALE_START &amp;&amp; now <= SALE_END) {
+        if (now >= SALE_START && now <= SALE_END) {
             require(tokenSold <= SALE_MAX_CAP);
         }
 
@@ -377,34 +377,34 @@ contract MonetoSale {
     }
 
     function getBonus(uint amount) public view returns (uint) {
-        if (now >= PRE_SALE_START &amp;&amp; now <= PRE_SALE_END) {
+        if (now >= PRE_SALE_START && now <= PRE_SALE_END) {
             uint w = now - PRE_SALE_START;
             if (w <= 1 weeks) {
                 return amount * PRE_SALE_1WEEK_BONUS/100;
             }
-            if (w > 1 weeks &amp;&amp; w <= 2 weeks) {
+            if (w > 1 weeks && w <= 2 weeks) {
                 return amount * PRE_SALE_2WEEK_BONUS/100;
             }
-            if (w > 2 weeks &amp;&amp; w <= 3 weeks) {
+            if (w > 2 weeks && w <= 3 weeks) {
                 return amount * PRE_SALE_3WEEK_BONUS/100;
             }
-            if (w > 3 weeks &amp;&amp; w <= 4 weeks) {
+            if (w > 3 weeks && w <= 4 weeks) {
                 return amount * PRE_SALE_4WEEK_BONUS/100;
             }
             return 0;
         }
-        if (now >= SALE_START &amp;&amp; now <= SALE_END) {
+        if (now >= SALE_START && now <= SALE_END) {
             uint w2 = now - SALE_START;
             if (w2 <= 1 weeks) {
                 return amount * SALE_1WEEK_BONUS/100;
             }
-            if (w2 > 1 weeks &amp;&amp; w2 <= 2 weeks) {
+            if (w2 > 1 weeks && w2 <= 2 weeks) {
                 return amount * SALE_2WEEK_BONUS/100;
             }
-            if (w2 > 2 weeks &amp;&amp; w2 <= 3 weeks) {
+            if (w2 > 2 weeks && w2 <= 3 weeks) {
                 return amount * SALE_3WEEK_BONUS/100;
             }
-            if (w2 > 3 weeks &amp;&amp; w2 <= 4 weeks) {
+            if (w2 > 3 weeks && w2 <= 4 weeks) {
                 return amount * SALE_4WEEK_BONUS/100;
             }
             return 0;
@@ -413,20 +413,20 @@ contract MonetoSale {
     }
 
     function getPrice() public view returns (uint) {
-        if (now >= PRE_SALE_START &amp;&amp; now <= PRE_SALE_END) {
+        if (now >= PRE_SALE_START && now <= PRE_SALE_END) {
             return PRE_SALE_PRICE;
         }
-        if (now >= SALE_START &amp;&amp; now <= SALE_END) {
+        if (now >= SALE_START && now <= SALE_END) {
             return SALE_PRICE;
         }
         return 0;
     }
 
     function getMinimumAmount() public view returns (uint) {
-        if (now >= PRE_SALE_START &amp;&amp; now <= PRE_SALE_END) {
+        if (now >= PRE_SALE_START && now <= PRE_SALE_END) {
             return PRE_SALE_MIN_BUY;
         }
-        if (now >= SALE_START &amp;&amp; now <= SALE_END) {
+        if (now >= SALE_START && now <= SALE_END) {
             return SALE_MIN_BUY;
         }
         return 0;

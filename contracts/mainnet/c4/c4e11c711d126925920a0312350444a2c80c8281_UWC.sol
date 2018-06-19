@@ -122,7 +122,7 @@ contract AdvancedToken is BasicToken, ERC20 {
      * @param _amount The amount of tokens to transfer.
      * */
     function transferFrom(address _from, address _to, uint256 _amount) public returns (bool) {
-        require(allowances[_from][msg.sender] >= _amount &amp;&amp; balances[_from] >= _amount);
+        require(allowances[_from][msg.sender] >= _amount && balances[_from] >= _amount);
         allowances[_from][msg.sender] = allowances[_from][msg.sender].sub(_amount);
         balances[_from] = balances[_from].sub(_amount);
         balances[_to] = balances[_to].add(_amount);
@@ -195,7 +195,7 @@ contract BurnableToken is AdvancedToken {
      * @param _value The amount of token to be burned.
      */
     function burn(uint256 _value) public {
-        require(_value > 0 &amp;&amp; _value <= balances[msg.sender]);
+        require(_value > 0 && _value <= balances[msg.sender]);
         balances[msg.sender] = balances[msg.sender].sub(_value);
         totalSupply = totalSupply.sub(_value);
         Burn(msg.sender, _value);

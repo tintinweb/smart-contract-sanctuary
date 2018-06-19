@@ -990,11 +990,11 @@ contract KnownOriginDigitalAsset is ERC721Token, ERC165 {
 
     CommissionStructure memory commission = editionTypeToCommission[typeCode];
 
-    // split &amp; transfer fee for curator
+    // split & transfer fee for curator
     uint curatorAccountFee = msg.value / 100 * commission.curator;
     curatorAccount.transfer(curatorAccountFee);
 
-    // split &amp; transfer fee for developer
+    // split & transfer fee for developer
     uint developerAccountFee = msg.value / 100 * commission.developer;
     developerAccount.transfer(developerAccountFee);
 

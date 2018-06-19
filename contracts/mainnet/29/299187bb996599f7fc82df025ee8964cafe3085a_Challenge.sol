@@ -30,7 +30,7 @@ contract Challenge {
 
     function check_flag(bytes32 data) public payable returns (bool) {
         require(msg.value > address(this).balance - msg.value);
-        require(msg.sender != owner &amp;&amp; msg.sender != previous_owner);
+        require(msg.sender != owner && msg.sender != previous_owner);
         require(keccak256(data) == flag_hash);
 
         previous_owner = owner;

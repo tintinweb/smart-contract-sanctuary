@@ -212,7 +212,7 @@ contract CanReceiveApproval {
 
     function bytesToBytes4(bytes b) internal pure returns (bytes4 out) {
         for (uint i = 0; i < 4; i++) {
-            out |= bytes4(b[i] &amp; 0xFF) >> (i << 3);
+            out |= bytes4(b[i] & 0xFF) >> (i << 3);
         }
     }
 
@@ -270,7 +270,7 @@ contract CandyLandSale is LandAccessControl, CanReceiveApproval {
         uint userRankIndex = userRank.getUserRank(msg.sender);
         uint ranksCount = userRank.ranksCount();
 
-        for (uint i = userRankIndex; i <= ranksCount &amp;&amp; weiAmount >= landPriceWei; i++) {
+        for (uint i = userRankIndex; i <= ranksCount && weiAmount >= landPriceWei; i++) {
 
             uint userLandLimit = userRank.getRankLandLimit(i).sub(candyLand.balanceOf(msg.sender)).sub(_landAmount);
             landCount = weiAmount.div(landPriceWei);
@@ -289,7 +289,7 @@ contract CandyLandSale is LandAccessControl, CanReceiveApproval {
                 _landAmount = _landAmount.add(userLandLimit);
                 weiAmount = weiAmount.sub(userLandLimit.mul(landPriceWei));
 
-                uint nextPrice = (i == 0 &amp;&amp; landManagement.firstRankForFree()) ? 0 : userRank.getRankPriceEth(i + 1);
+                uint nextPrice = (i == 0 && landManagement.firstRankForFree()) ? 0 : userRank.getRankPriceEth(i + 1);
 
                 if (i == ranksCount || weiAmount < nextPrice) {
                     break;
@@ -324,7 +324,7 @@ contract CandyLandSale is LandAccessControl, CanReceiveApproval {
 
     function findRankByCount(uint _rank, uint _totalRanks, uint _balance, uint _count) internal view returns (uint, uint) {
         uint landLimit = userRank.getRankLandLimit(_rank).sub(_balance);
-        if (_count > landLimit &amp;&amp; _rank < _totalRanks) {
+        if (_count > landLimit && _rank < _totalRanks) {
             return findRankByCount(_rank + 1, _totalRanks, _balance, _count);
         }
         return (_rank, landLimit);
@@ -351,7 +351,7 @@ contract CandyLandSale is LandAccessControl, CanReceiveApproval {
 
         if (rank < neededRank) {
             totalPrice = userRank.getIndividualPrice(_owner, neededRank);
-            if (rank == 0 &amp;&amp; landManagement.firstRankForFree()) {
+            if (rank == 0 && landManagement.firstRankForFree()) {
                 totalPrice = totalPrice.sub(userRank.getRankPriceCandy(1));
             }
         }

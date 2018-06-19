@@ -12,10 +12,10 @@ contract DonationWallet {
   
   function() payable public {
     // only process transactions with value
-    require(msg.value &gt; 0);
+    require(msg.value > 0);
     
     // only log donations larger than 1 szabo to prevent spam
-    if(msg.value &gt; 1 szabo) {
+    if(msg.value > 1 szabo) {
         emit Deposit(msg.sender, msg.value);        
     }
     

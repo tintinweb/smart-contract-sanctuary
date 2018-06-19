@@ -95,7 +95,7 @@ contract TripCash is Ownable {
      *  Modifier for checking ICO period
      */
     modifier saleIsOn() {
-        require((now > startTime &amp;&amp; now < endTime)||(now > startPreICO &amp;&amp; now < endPreICO));
+        require((now > startTime && now < endTime)||(now > startPreICO && now < endPreICO));
         _;
     }
 

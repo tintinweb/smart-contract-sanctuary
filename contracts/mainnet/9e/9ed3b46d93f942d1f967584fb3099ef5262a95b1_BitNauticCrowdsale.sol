@@ -47,8 +47,8 @@ contract BitNauticWhitelist is Ownable {
         usdPerEth = _usdPerEth;
     }
 
-    mapping(address =&gt; bool) public AMLWhitelisted;
-    mapping(address =&gt; uint256) public contributionCap;
+    mapping(address => bool) public AMLWhitelisted;
+    mapping(address => uint256) public contributionCap;
 
     /**
      * @dev add an address to the whitelist
@@ -56,7 +56,7 @@ contract BitNauticWhitelist is Ownable {
      * @return true if the address was added to the whitelist, false if the address was already in the whitelist
      */
     function setKYCLevel(address addr, uint8 level) onlyOwner public returns (bool) {
-        if (level &gt;= 3) {
+        if (level >= 3) {
             contributionCap[addr] = 50000 ether; // crowdsale hard cap
         } else if (level == 2) {
             contributionCap[addr] = SafeMath.div(500000 * 10 ** 18, usdPerEth); // KYC Tier 2 - 500k USD
@@ -78,7 +78,7 @@ contract BitNauticWhitelist is Ownable {
     function setKYCLevelsBulk(address[] addrs, uint8[] levels) onlyOwner external returns (bool success) {
         require(addrs.length == levels.length);
 
-        for (uint256 i = 0; i &lt; addrs.length; i++) {
+        for (uint256 i = 0; i < addrs.length; i++) {
             assert(setKYCLevel(addrs[i], levels[i]));
         }
 
@@ -94,7 +94,7 @@ contract BitNauticWhitelist is Ownable {
     function setAMLWhitelistedBulk(address[] addrs, bool[] whitelisted) onlyOwner external returns (bool) {
         require(addrs.length == whitelisted.length);
 
-        for (uint256 i = 0; i &lt; addrs.length; i++) {
+        for (uint256 i = 0; i < addrs.length; i++) {
             assert(setAMLWhitelisted(addrs[i], whitelisted[i]));
         }
 
@@ -159,7 +159,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         // uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return a / b;
@@ -169,7 +169,7 @@ library SafeMath {
     * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -178,7 +178,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
         c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -213,7 +213,7 @@ contract Crowdsale is Ownable, Pausable {
 
     // BitNautic Crowdsale constructor
     constructor(MintableToken _token, uint256 _publicSupply, uint256 _startTime, uint256 _endTime, address _wallet) public {
-        require(_endTime &gt;= _startTime);
+        require(_endTime >= _startTime);
         require(_wallet != 0x0);
 
         // BitNautic token creation
@@ -244,7 +244,7 @@ contract Crowdsale is Ownable, Pausable {
 
         // minimum investment should be 0.05 ETH
         uint256 lowerPurchaseLimit = 0.05 ether;
-        require(msg.value &gt;= lowerPurchaseLimit);
+        require(msg.value >= lowerPurchaseLimit);
 
         assert(_tokenPurchased(msg.sender, beneficiary, msg.value));
 
@@ -267,15 +267,15 @@ contract Crowdsale is Ownable, Pausable {
 
     // @return true if the transaction can buy tokens
     function validPurchase() internal constant returns (bool) {
-        bool withinPeriod = ICOStartTime &lt;= now &amp;&amp; now &lt;= ICOEndTime;
+        bool withinPeriod = ICOStartTime <= now && now <= ICOEndTime;
         bool nonZeroPurchase = msg.value != 0;
 
-        return withinPeriod &amp;&amp; nonZeroPurchase;
+        return withinPeriod && nonZeroPurchase;
     }
 
     // @return true if crowdsale event has ended
     function hasEnded() public constant returns (bool) {
-        return now &gt; ICOEndTime;
+        return now > ICOEndTime;
     }
 
     bool public checkBurnTokens = false;
@@ -303,21 +303,21 @@ contract CappedCrowdsale is Crowdsale {
   uint256 internal cap;
 
   constructor(uint256 _cap) public {
-    require(_cap &gt; 0);
+    require(_cap > 0);
     cap = _cap;
   }
 
   // overriding Crowdsale#validPurchase to add extra cap logic
   // @return true if investors can buy at the moment
   function validPurchase() internal constant returns (bool) {
-    bool withinCap = weiRaised.add(msg.value) &lt;= cap;
-    return super.validPurchase() &amp;&amp; withinCap;
+    bool withinCap = weiRaised.add(msg.value) <= cap;
+    return super.validPurchase() && withinCap;
   }
 
   // overriding Crowdsale#hasEnded to add cap logic
   // @return true if crowdsale event has ended
   function hasEnded() public constant returns (bool) {
-    bool capReached = weiRaised &gt;= cap;
+    bool capReached = weiRaised >= cap;
     return super.hasEnded() || capReached;
   }
 
@@ -359,7 +359,7 @@ contract RefundVault is Ownable {
 
   enum State { Active, Refunding, Closed }
 
-  mapping (address =&gt; uint256) public deposited;
+  mapping (address => uint256) public deposited;
   address public wallet;
   State public state;
 
@@ -410,7 +410,7 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
     RefundVault private vault;
 
     constructor(uint256 _goal) public {
-        require(_goal &gt; 0);
+        require(_goal > 0);
         vault = new RefundVault(wallet);
         goal = _goal;
     }
@@ -441,7 +441,7 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
     }
 
     function goalReached() public returns (bool) {
-        if (weiRaised &gt;= goal) {
+        if (weiRaised >= goal) {
             _goalReached = true;
         }
 
@@ -496,9 +496,9 @@ contract BitNauticCrowdsale is CappedCrowdsale, RefundableCrowdsale {
     uint256 public founderSupply =  2000000 * 10 ** 18; // 4% of token cap
 
     // amount of tokens each address will receive at the end of the crowdsale
-    mapping (address =&gt; uint256) public creditOf;
+    mapping (address => uint256) public creditOf;
 
-    mapping (address =&gt; uint256) public weiInvestedBy;
+    mapping (address => uint256) public weiInvestedBy;
 
     BitNauticWhitelist public whitelist;
 
@@ -513,13 +513,13 @@ contract BitNauticCrowdsale is CappedCrowdsale, RefundableCrowdsale {
     }
 
     function _tokenPurchased(address buyer, address beneficiary, uint256 weiAmount) internal returns (bool) {
-        require(SafeMath.add(weiInvestedBy[buyer], weiAmount) &lt;= whitelist.contributionCap(buyer));
+        require(SafeMath.add(weiInvestedBy[buyer], weiAmount) <= whitelist.contributionCap(buyer));
 
         uint256 tokens = SafeMath.mul(weiAmount, tokenBaseRate);
 
         tokens = tokens.add(SafeMath.mul(tokens, getCurrentBonus()).div(100));
 
-        require(publicSupply &gt;= tokens);
+        require(publicSupply >= tokens);
 
         publicSupply = publicSupply.sub(tokens);
 
@@ -534,7 +534,7 @@ contract BitNauticCrowdsale is CappedCrowdsale, RefundableCrowdsale {
     address constant public privateSaleWallet = 0x5A01D561AE864006c6B733f21f8D4311d1E1B42a;
 
     function goalReached() public returns (bool) {
-        if (weiRaised + privateSaleWallet.balance &gt;= goal) {
+        if (weiRaised + privateSaleWallet.balance >= goal) {
             _goalReached = true;
         }
 
@@ -542,15 +542,15 @@ contract BitNauticCrowdsale is CappedCrowdsale, RefundableCrowdsale {
     }
 
     function getCurrentBonus() public view returns (uint256) {
-        if (now &lt; mainICOStartTime) {
+        if (now < mainICOStartTime) {
             return preICOBonus;
-        } else if (now &lt; mainICOFirstWeekEndTime) {
+        } else if (now < mainICOFirstWeekEndTime) {
             return firstWeekBonus;
-        } else if (now &lt; mainICOSecondWeekEndTime) {
+        } else if (now < mainICOSecondWeekEndTime) {
             return secondWeekBonus;
-        } else if (now &lt; mainICOThirdWeekEndTime) {
+        } else if (now < mainICOThirdWeekEndTime) {
             return thirdWeekBonus;
-        } else if (now &lt; mainICOFourthWeekEndTime) {
+        } else if (now < mainICOFourthWeekEndTime) {
             return fourthWeekBonus;
         } else {
             return 0;
@@ -562,8 +562,8 @@ contract BitNauticCrowdsale is CappedCrowdsale, RefundableCrowdsale {
     }
 
     function grantInvestorTokens(address investor) public returns (bool) {
-        require(creditOf[investor] &gt; 0);
-        require(now &gt; mainICOEndTime &amp;&amp; whitelist.AMLWhitelisted(investor));
+        require(creditOf[investor] > 0);
+        require(now > mainICOEndTime && whitelist.AMLWhitelisted(investor));
         require(goalReached());
 
         assert(token.mint(investor, creditOf[investor]));
@@ -573,11 +573,11 @@ contract BitNauticCrowdsale is CappedCrowdsale, RefundableCrowdsale {
     }
 
     function grantInvestorsTokens(address[] investors) public returns (bool) {
-        require(now &gt; mainICOEndTime);
+        require(now > mainICOEndTime);
         require(goalReached());
 
-        for (uint256 i = 0; i &lt; investors.length; i++) {
-            if (creditOf[investors[i]] &gt; 0 &amp;&amp; whitelist.AMLWhitelisted(investors[i])) {
+        for (uint256 i = 0; i < investors.length; i++) {
+            if (creditOf[investors[i]] > 0 && whitelist.AMLWhitelisted(investors[i])) {
                 token.mint(investors[i], creditOf[investors[i]]);
                 creditOf[investors[i]] = 0;
             }
@@ -587,13 +587,13 @@ contract BitNauticCrowdsale is CappedCrowdsale, RefundableCrowdsale {
     }
 
     function bountyDrop(address[] recipients, uint256[] values) onlyOwner public returns (bool) {
-        require(now &gt; mainICOEndTime);
+        require(now > mainICOEndTime);
         require(goalReached());
         require(recipients.length == values.length);
 
-        for (uint256 i = 0; i &lt; recipients.length; i++) {
+        for (uint256 i = 0; i < recipients.length; i++) {
             values[i] = SafeMath.mul(values[i], 1 ether);
-            if (bountySupply &gt;= values[i]) {
+            if (bountySupply >= values[i]) {
                 return false;
             }
             bountySupply = SafeMath.sub(bountySupply, values[i]);
@@ -609,7 +609,7 @@ contract BitNauticCrowdsale is CappedCrowdsale, RefundableCrowdsale {
     uint256 public reserveTimeLock = mainICOEndTime;
 
     function grantAdvisorTokens(address advisorAddress) onlyOwner public {
-        require((advisorSupply &gt; 0) &amp;&amp; (advisorTimeLock &lt; now));
+        require((advisorSupply > 0) && (advisorTimeLock < now));
         require(goalReached());
 
         token.mint(advisorAddress, advisorSupply);
@@ -619,7 +619,7 @@ contract BitNauticCrowdsale is CappedCrowdsale, RefundableCrowdsale {
     uint256 public teamVestingCounter = 0; // months of vesting
 
     function grantTeamTokens(address teamAddress) onlyOwner public {
-        require((teamVestingCounter &lt; 12) &amp;&amp; (teamTimeLock &lt; now));
+        require((teamVestingCounter < 12) && (teamTimeLock < now));
         require(goalReached());
 
         teamTimeLock = SafeMath.add(teamTimeLock, 4 weeks);
@@ -628,7 +628,7 @@ contract BitNauticCrowdsale is CappedCrowdsale, RefundableCrowdsale {
     }
 
     function grantFounderTokens(address founderAddress) onlyOwner public {
-        require((founderSupply &gt; 0) &amp;&amp; (founderTimeLock &lt; now));
+        require((founderSupply > 0) && (founderTimeLock < now));
         require(goalReached());
 
         token.mint(founderAddress, founderSupply);
@@ -636,7 +636,7 @@ contract BitNauticCrowdsale is CappedCrowdsale, RefundableCrowdsale {
     }
 
     function grantReserveTokens(address beneficiary) onlyOwner public {
-        require((reserveSupply &gt; 0) &amp;&amp; (now &gt; reserveTimeLock));
+        require((reserveSupply > 0) && (now > reserveTimeLock));
         require(goalReached());
 
         token.mint(beneficiary, reserveSupply);
@@ -658,7 +658,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -694,7 +694,7 @@ contract ERC20 is ERC20Basic {
 }
 
 contract StandardToken is ERC20, BasicToken {
-  mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+  mapping (address => mapping (address => uint256)) allowed;
 
   /**
    * @dev Transfer tokens from one address to another
@@ -708,7 +708,7 @@ contract StandardToken is ERC20, BasicToken {
     uint256 _allowance = allowed[_from][msg.sender];
 
     // Check is not needed because sub(_allowance, _value) will already throw if this condition is not met
-    // require (_value &lt;= _allowance);
+    // require (_value <= _allowance);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -757,7 +757,7 @@ contract StandardToken is ERC20, BasicToken {
 
   function decreaseApproval (address _spender, uint _subtractedValue) public returns (bool success) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -812,7 +812,7 @@ contract CappedToken is MintableToken {
   uint256 public cap;
 
   constructor(uint256 _cap) public {
-    require(_cap &gt; 0);
+    require(_cap > 0);
     cap = _cap;
   }
 
@@ -823,7 +823,7 @@ contract CappedToken is MintableToken {
    * @return A boolean that indicates if the operation was successful.
    */
   function mint(address _to, uint256 _amount) onlyOwner canMint public returns (bool) {
-    require(totalSupply.add(_amount) &lt;= cap);
+    require(totalSupply.add(_amount) <= cap);
 
     return super.mint(_to, _amount);
   }

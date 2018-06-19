@@ -6,10 +6,10 @@ contract TronToken {
     string   public symbol ;          //  token symbol
     uint256  public decimals ;        //  token digit
 
-    mapping (address =&gt; uint256) public balanceOf;
-    mapping (address =&gt; bool) public frozenAccount;
-    mapping (address =&gt; uint256) public frozenBalance; 
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => uint256) public balanceOf;
+    mapping (address => bool) public frozenAccount;
+    mapping (address => uint256) public frozenBalance; 
+    mapping (address => mapping (address => uint256)) public allowance;
 
     uint256 public totalSupply = 0;
     bool public stopped = false;      //  stopflag: true is stoped,false is not stoped
@@ -64,8 +64,8 @@ contract TronToken {
     /* send coins */
     function transfer(address _to, uint256 _value) public isRunning validAddress returns (bool success) {
         require(!frozenAccount[msg.sender]);
-        require(balanceOf[msg.sender] - frozenBalance[msg.sender] &gt;= _value);
-        require(balanceOf[_to] + _value &gt;= balanceOf[_to]);
+        require(balanceOf[msg.sender] - frozenBalance[msg.sender] >= _value);
+        require(balanceOf[_to] + _value >= balanceOf[_to]);
         balanceOf[msg.sender] -= _value;
         balanceOf[_to] += _value;
         Transfer(msg.sender, _to, _value);
@@ -93,7 +93,7 @@ contract TronToken {
     }
     /* burn coins */
     function burn(uint256 _value) public {
-        require(balanceOf[msg.sender] &gt;= _value);
+        require(balanceOf[msg.sender] >= _value);
         balanceOf[msg.sender] -= _value;
         balanceOf[0x0] += _value;
         Transfer(msg.sender, 0x0, _value);
@@ -107,9 +107,9 @@ contract TronToken {
     /* A contract attempts to get the coins */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         require(!frozenAccount[msg.sender]);
-        require(balanceOf[_from] - frozenBalance[_from] &gt;= _value);
-        require(balanceOf[_to] + _value &gt;= balanceOf[_to]);
-        require(allowance[_from][msg.sender] &gt;= _value) ;     // Check allowance
+        require(balanceOf[_from] - frozenBalance[_from] >= _value);
+        require(balanceOf[_to] + _value >= balanceOf[_to]);
+        require(allowance[_from][msg.sender] >= _value) ;     // Check allowance
         balanceOf[_from] -= _value;                           // Subtract from the sender
         balanceOf[_to] += _value;                             // Add the same to the recipient
         allowance[_from][msg.sender] -= _value; 

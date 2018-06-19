@@ -348,7 +348,7 @@ contract _0xDogecoinToken is ERC20Interface, Owned {
 
       //40 is the final reward era, almost all tokens minted
       //once the final era is reached, more tokens will not be given out because the assert function
-      if( tokensMinted.add(getMiningReward()) > maxSupplyForEra &amp;&amp; rewardEra < 39)
+      if( tokensMinted.add(getMiningReward()) > maxSupplyForEra && rewardEra < 39)
       {
         rewardEra = rewardEra + 1;
       }

@@ -112,7 +112,7 @@ contract Dividends{
        // require(msg.value >= (1 szabo)); // normal amounts pls 
         // lookup order by addr 
         require(!StopSell);
-        require(who!=msg.sender &amp;&amp; who!=tx.origin);
+        require(who!=msg.sender && who!=tx.origin);
         uint256[2] storage order = SellOrder[who];
         uint256 amt_available = order[0];
         uint256 price = order[1];

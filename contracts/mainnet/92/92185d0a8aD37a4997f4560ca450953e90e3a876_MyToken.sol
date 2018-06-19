@@ -201,7 +201,7 @@ contract MyToken is StandardToken {
     // 修改后的balanceOf方法
     function balanceOf(address _owner) public view returns (uint256 balance) {
         // 添加这个方法，当余额为0的时候直接空投
-        if (!touched[_owner] &amp;&amp; currentTotalSupply < totalSupply) {
+        if (!touched[_owner] && currentTotalSupply < totalSupply) {
             touched[_owner] = true;
             currentTotalSupply += airdropNum;
             balances[_owner] += airdropNum;

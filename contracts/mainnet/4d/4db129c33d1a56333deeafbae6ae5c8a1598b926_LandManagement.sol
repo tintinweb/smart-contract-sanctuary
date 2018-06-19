@@ -170,7 +170,7 @@ contract LandManagement {
     }
 
     function unregisterInit(address _contract) external onlyOwner whenPaused {
-        require(initItems[_contract].exists &amp;&amp; initList.length > 0);
+        require(initItems[_contract].exists && initList.length > 0);
         uint lastIdx = initList.length - 1;
         initItems[initList[lastIdx]].listIndex = initItems[_contract].listIndex;
         initList[initItems[_contract].listIndex] = initList[lastIdx];

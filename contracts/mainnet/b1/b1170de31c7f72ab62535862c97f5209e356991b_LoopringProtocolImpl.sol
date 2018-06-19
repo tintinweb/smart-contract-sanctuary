@@ -907,7 +907,7 @@ contract LoopringProtocolImpl is LoopringProtocol {
                 }
             } else {
                 // Only check the available miner balance when absolutely needed
-                if (!checkedMinerLrcSpendable &amp;&amp; minerLrcSpendable < state.lrcFeeState) {
+                if (!checkedMinerLrcSpendable && minerLrcSpendable < state.lrcFeeState) {
                     checkedMinerLrcSpendable = true;
                     minerLrcSpendable = getSpendable(delegate, _lrcTokenAddress, miner);
                 }
@@ -1098,7 +1098,7 @@ contract LoopringProtocolImpl is LoopringProtocol {
             require(uintArgsList[i][5] > 0); // &quot;order rateAmountS is zero&quot;);
         }
         //Check ring size
-        require(params.ringSize > 1 &amp;&amp; params.ringSize <= MAX_RING_SIZE); // &quot;invalid ring size&quot;);
+        require(params.ringSize > 1 && params.ringSize <= MAX_RING_SIZE); // &quot;invalid ring size&quot;);
         uint sigSize = params.ringSize << 1;
         require(sigSize == params.vList.length);
         require(sigSize == params.rList.length);
@@ -1120,7 +1120,7 @@ contract LoopringProtocolImpl is LoopringProtocol {
     {
         orders = new OrderState[](params.ringSize);
         for (uint i = 0; i < params.ringSize; i++) {
-            bool marginSplitAsFee = (params.feeSelections &amp; (uint16(1) << i)) > 0;
+            bool marginSplitAsFee = (params.feeSelections & (uint16(1) << i)) > 0;
             orders[i] = OrderState(
                 addressList[i][0],
                 addressList[i][1],

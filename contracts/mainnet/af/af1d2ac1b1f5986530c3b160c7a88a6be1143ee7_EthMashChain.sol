@@ -3,10 +3,10 @@ pragma solidity ^0.4.23;
 contract EthMashChain {
 
     address public owner;
-    mapping (address =&gt; uint) public withdrawals;
+    mapping (address => uint) public withdrawals;
 
     int round;
-    mapping (int =&gt; address[3]) public participants;
+    mapping (int => address[3]) public participants;
 
     constructor() public {
         owner = msg.sender;
@@ -31,7 +31,7 @@ contract EthMashChain {
     }
 
     function userWithdraw() public {
-        require(withdrawals[msg.sender] &gt; 0);
+        require(withdrawals[msg.sender] > 0);
         uint amount = withdrawals[msg.sender];
         withdrawals[msg.sender] = 0;
         msg.sender.transfer(amount);

@@ -542,10 +542,10 @@ contract RootsSale is Pausable {
 
   // return true if the transaction can buy tokens
   function validPurchase(uint weiAmount) internal constant returns (bool) {
-      bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+      bool withinPeriod = now >= startTime && now <= endTime;
       bool withinCap = weiRaised.add(weiAmount) <= weiMaximumGoal;
 
-      return withinPeriod &amp;&amp; withinCap;
+      return withinPeriod && withinCap;
   }
 
   // return true if crowdsale event has ended

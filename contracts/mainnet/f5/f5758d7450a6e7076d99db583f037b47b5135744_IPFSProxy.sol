@@ -74,7 +74,7 @@ contract Multimember {
             return;
         uint memberIndexBit = 2**memberIndex;
         var pending = m_pending[_operation];
-        if (pending.membersDone &amp; memberIndexBit > 0) {
+        if (pending.membersDone & memberIndexBit > 0) {
             pending.yetNeeded++;
             pending.membersDone -= memberIndexBit;
             Revoke(msg.sender, _operation);
@@ -147,7 +147,7 @@ contract Multimember {
 
         // determine the bit to set for this member.
         uint memberIndexBit = 2**memberIndex;
-        return !(pending.membersDone &amp; memberIndexBit == 0);
+        return !(pending.membersDone & memberIndexBit == 0);
     }
     
     // INTERNAL METHODS
@@ -172,7 +172,7 @@ contract Multimember {
         // determine the bit to set for this member.
         uint memberIndexBit = 2**memberIndex;
         // make sure we (the message sender) haven&#39;t confirmed this operation previously.
-        if (pending.membersDone &amp; memberIndexBit == 0) {
+        if (pending.membersDone & memberIndexBit == 0) {
             Confirmation(msg.sender, _operation);
             // ok - check if count is enough to go ahead.
             if (pending.yetNeeded <= 1) {
@@ -191,15 +191,15 @@ contract Multimember {
     function reorganizeMembers() private returns (bool) {
         uint free = 1;
         while (free < m_numMembers) {
-            while (free < m_numMembers &amp;&amp; m_members[free] != 0) {
+            while (free < m_numMembers && m_members[free] != 0) {
                 free++;
             } 
 
-            while (m_numMembers > 1 &amp;&amp; m_members[m_numMembers] == 0) {
+            while (m_numMembers > 1 && m_members[m_numMembers] == 0) {
                 m_numMembers--;
             } 
 
-            if (free < m_numMembers &amp;&amp; m_members[m_numMembers] != 0 &amp;&amp; m_members[free] == 0) {
+            if (free < m_numMembers && m_members[m_numMembers] != 0 && m_members[free] == 0) {
                 m_members[free] = m_members[m_numMembers];
                 m_memberIndex[m_members[free]] = free;
                 m_members[m_numMembers] = 0;

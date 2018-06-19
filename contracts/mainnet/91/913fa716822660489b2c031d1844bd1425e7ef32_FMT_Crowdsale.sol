@@ -256,7 +256,7 @@ contract FMT_Crowdsale is Pausable {
     require(_beneficiary != address(0));
     require(_weiAmount >= minInvest);
     require(weiRaised.add(_weiAmount) <= cap);
-    require(now >= openingTime &amp;&amp; now <= closingTime);
+    require(now >= openingTime && now <= closingTime);
   }
 
   /**

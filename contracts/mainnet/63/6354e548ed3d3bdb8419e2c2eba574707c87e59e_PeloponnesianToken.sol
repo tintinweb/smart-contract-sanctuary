@@ -140,7 +140,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         // uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return a / b;
@@ -150,7 +150,7 @@ library SafeMath {
     * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -159,7 +159,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -176,8 +176,8 @@ contract StandardToken is ERC20 {
     using SafeMath for uint256;
 
     uint256 internal _totalSupply;
-    mapping(address =&gt; uint256) internal _balanceOf;
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal _allowance;
+    mapping(address => uint256) internal _balanceOf;
+    mapping (address => mapping (address => uint256)) internal _allowance;
 
     modifier onlyValidAddress(address addr) {
         require(addr != address(0));
@@ -185,12 +185,12 @@ contract StandardToken is ERC20 {
     }
 
     modifier onlySufficientBalance(address from, uint256 value) {
-        require(value &lt;= _balanceOf[from]);
+        require(value <= _balanceOf[from]);
         _;
     }
 
     modifier onlySufficientAllowance(address from, address to, uint256 value) {
-        require(value &lt;= _allowance[from][msg.sender]);
+        require(value <= _allowance[from][msg.sender]);
         _;
     }
 
@@ -281,7 +281,7 @@ contract StandardToken is ERC20 {
      */
     function decreaseApproval(address spender, uint subtractedValue) public returns (bool) {
         uint oldValue = _allowance[msg.sender][spender];
-        if (subtractedValue &gt; oldValue) {
+        if (subtractedValue > oldValue) {
             _allowance[msg.sender][spender] = 0;
         } else {
             _allowance[msg.sender][spender] = oldValue.sub(subtractedValue);

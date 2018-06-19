@@ -20,7 +20,7 @@ contract BasicToken is ERC20Basic {
 
   // internal variables
   uint256 _totalSupply;
-  mapping(address =&gt; uint256) _balances;
+  mapping(address => uint256) _balances;
 
   // events
 
@@ -35,7 +35,7 @@ contract BasicToken is ERC20Basic {
 
   function transfer(address to, uint256 value) public returns (bool) {
     require(to != address(0));
-    require(value &lt;= _balances[msg.sender]);
+    require(value <= _balances[msg.sender]);
 
     _balances[msg.sender] = _balances[msg.sender].sub(value);
     _balances[to] = _balances[to].add(value);
@@ -91,7 +91,7 @@ contract Freezeable is Ownable{
     // public variables
 
     // internal variables
-    mapping(address =&gt; bool) _freezeList;
+    mapping(address => bool) _freezeList;
 
     // events
     event Freezed(address indexed freezedAddr);
@@ -141,15 +141,15 @@ contract StandardToken is ERC20, BasicToken {
   // public variables
 
   // internal variables
-  mapping (address =&gt; mapping (address =&gt; uint256)) _allowances;
+  mapping (address => mapping (address => uint256)) _allowances;
 
   // events
 
   // public functions
   function transferFrom(address from, address to, uint256 value) public returns (bool) {
     require(to != address(0));
-    require(value &lt;= _balances[from]);
-    require(value &lt;= _allowances[from][msg.sender]);
+    require(value <= _balances[from]);
+    require(value <= _allowances[from][msg.sender]);
 
     _balances[from] = _balances[from].sub(value);
     _balances[to] = _balances[to].add(value);
@@ -176,7 +176,7 @@ contract StandardToken is ERC20, BasicToken {
 
   function decreaseApproval(address agent, uint value) public returns (bool) {
     uint allowanceValue = _allowances[msg.sender][agent];
-    if (value &gt; allowanceValue) {
+    if (value > allowanceValue) {
       _allowances[msg.sender][agent] = 0;
     } else {
       _allowances[msg.sender][agent] = allowanceValue.sub(value);
@@ -266,20 +266,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-      // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+      // assert(b > 0); // Solidity automatically throws when dividing by 0
       uint256 c = a / b;
       // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
       return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-      assert(b &lt;= a);
+      assert(b <= a);
       return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
       uint256 c = a + b;
-      assert(c &gt;= a);
+      assert(c >= a);
       return c;
     }
 }

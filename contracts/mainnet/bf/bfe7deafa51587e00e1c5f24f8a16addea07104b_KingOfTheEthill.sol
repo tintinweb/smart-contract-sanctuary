@@ -85,17 +85,17 @@ contract KingOfTheEthill {
   }
   
   function setDevFee (uint256 _n) onlyOwner() public {
-	  require(_n >= 0 &amp;&amp; _n <= 10);
+	  require(_n >= 0 && _n <= 10);
     devFeePercent = _n;
   }
 
   function setRollover (uint256 _n) onlyOwner() public {
-	  require(_n >= 1 &amp;&amp; _n <= 30);
+	  require(_n >= 1 && _n <= 30);
     rolloverPercent = _n;
   }
 
   function setNextBidExpireBlockLength (uint256 _n) onlyOwner() public {
-	  require(_n >= 10 &amp;&amp; _n <= 10000);
+	  require(_n >= 10 && _n <= 10000);
     nextBidExpireBlockLength = _n;
   }
 
@@ -108,10 +108,10 @@ contract KingOfTheEthill {
     require(bytes(_message).length <= maxMessageChars);
     require(msg.value > 0);
     
-    if (_roundNumber == currentRoundNumber &amp;&amp; !roundExpired()) {
+    if (_roundNumber == currentRoundNumber && !roundExpired()) {
       // bid in active round
       require(msg.value > lastBidAmount);
-    }else if (_roundNumber == (currentRoundNumber+1) &amp;&amp; roundExpired()) {
+    }else if (_roundNumber == (currentRoundNumber+1) && roundExpired()) {
       // first bid of new round, process old round
       var lastRoundPotBalance = this.balance.sub(msg.value);
       uint256 devFee = lastRoundPotBalance.mul(devFeePercent).div(100);

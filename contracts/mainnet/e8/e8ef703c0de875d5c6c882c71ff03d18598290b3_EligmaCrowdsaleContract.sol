@@ -125,20 +125,20 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
     }
 
     function checkCrowdsaleState() internal returns (bool) {
-        if (tokensIssued == maxCap &amp;&amp; crowdsaleState != state.crowdsaleEnded) {
+        if (tokensIssued == maxCap && crowdsaleState != state.crowdsaleEnded) {
             crowdsaleState = state.crowdsaleEnded;
             emit CrowdsaleEnded(block.number);
             return true;
         }
 
-        if (block.number >= crowdsaleStartBlock &amp;&amp; block.number <= crowdsaleEndedBlock) {
+        if (block.number >= crowdsaleStartBlock && block.number <= crowdsaleEndedBlock) {
             if (crowdsaleState != state.crowdsale) {
                 crowdsaleState = state.crowdsale;
                 emit CrowdsaleStarted(block.number);
                 return true;
             }
         } else {
-            if (crowdsaleState != state.crowdsaleEnded &amp;&amp; block.number > crowdsaleEndedBlock) {
+            if (crowdsaleState != state.crowdsaleEnded && block.number > crowdsaleEndedBlock) {
                 crowdsaleState = state.crowdsaleEnded;
                 emit CrowdsaleEnded(block.number);
                 return true;
@@ -244,7 +244,7 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
     }
 
     function claimEthIfFailed() public {
-        require(block.number > crowdsaleEndedBlock &amp;&amp; tokensIssued < minCap);
+        require(block.number > crowdsaleEndedBlock && tokensIssued < minCap);
         require(contributorList[msg.sender].contributionAmount > 0);
         require(!hasClaimedEthWhenFail[msg.sender]);
 
@@ -256,7 +256,7 @@ contract Crowdsale is ReentrancyHandlingContract, Owned {
     }
 
     function batchReturnEthIfFailed(uint _numberOfReturns) onlyOwner public {
-        require(block.number > crowdsaleEndedBlock &amp;&amp; tokensIssued < minCap);
+        require(block.number > crowdsaleEndedBlock && tokensIssued < minCap);
         address currentParticipantAddress;
         uint contribution;
         for (uint cnt = 0; cnt < _numberOfReturns; cnt++) {

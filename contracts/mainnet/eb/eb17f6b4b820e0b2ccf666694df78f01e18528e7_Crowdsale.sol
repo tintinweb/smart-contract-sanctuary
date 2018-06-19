@@ -109,7 +109,7 @@ contract Crowdsale is Ownable {
     }
     
         modifier saleIsOn() {
-        require(now > start &amp;&amp; now < start + period * 1 days);
+        require(now > start && now < start + period * 1 days);
         _;
     }
     
@@ -120,9 +120,9 @@ contract Crowdsale is Ownable {
         
 if(now < start + (period * 1 days ).div(2)) 
 {  price = 800;} 
-else if(now >= start + (period * 1 days).div(2) &amp;&amp; now < start + (period * 1 days).div(4).mul(3)) 
+else if(now >= start + (period * 1 days).div(2) && now < start + (period * 1 days).div(4).mul(3)) 
 {  price = 571;} 
-else if(now >= start + (period * 1 days ).div(4).mul(3) &amp;&amp; now < start + (period * 1 days )) 
+else if(now >= start + (period * 1 days ).div(4).mul(3) && now < start + (period * 1 days )) 
 {  price = 500;}
     
     uint tokens = msg.value.mul(price);

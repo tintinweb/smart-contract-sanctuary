@@ -23,7 +23,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -33,7 +33,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -42,7 +42,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -195,16 +195,16 @@ contract ERC721Token is ERC721 {
   uint256 private totalTokens;
 
   // Mapping from token ID to owner
-  mapping (uint256 =&gt; address) private tokenOwner;
+  mapping (uint256 => address) private tokenOwner;
 
   // Mapping from token ID to approved address
-  mapping (uint256 =&gt; address) private tokenApprovals;
+  mapping (uint256 => address) private tokenApprovals;
 
   // Mapping from owner to list of owned token IDs
-  mapping (address =&gt; uint256[]) private ownedTokens;
+  mapping (address => uint256[]) private ownedTokens;
 
   // Mapping from token ID to index of the owner tokens list
-  mapping(uint256 =&gt; uint256) private ownedTokensIndex;
+  mapping(uint256 => uint256) private ownedTokensIndex;
 
   /**
   * @dev Guarantees msg.sender is owner of the given token
@@ -427,7 +427,7 @@ contract ERC20 is ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -445,7 +445,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -475,7 +475,7 @@ contract BasicToken is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -486,8 +486,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -550,7 +550,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -569,7 +569,7 @@ contract StandardToken is ERC20, BasicToken {
 contract AccessDeposit is Claimable {
 
   // Access for adding deposit.
-  mapping(address =&gt; bool) private depositAccess;
+  mapping(address => bool) private depositAccess;
 
   // Modifier for accessibility to add deposit.
   modifier onlyAccessDeposit {
@@ -603,7 +603,7 @@ contract AccessDeposit is Claimable {
 contract AccessDeploy is Claimable {
 
   // Access for deploying heroes.
-  mapping(address =&gt; bool) private deployAccess;
+  mapping(address => bool) private deployAccess;
 
   // Modifier for accessibility to deploy a hero on a location.
   modifier onlyAccessDeploy {
@@ -636,7 +636,7 @@ contract AccessDeploy is Claimable {
 contract AccessMint is Claimable {
 
   // Access for minting new tokens.
-  mapping(address =&gt; bool) private mintAccess;
+  mapping(address => bool) private mintAccess;
 
   // Modifier for accessibility to define new hero types.
   modifier onlyAccessMint {
@@ -706,7 +706,7 @@ contract CryptoSagaCard is ERC721Token, Claimable, AccessMint {
   string public constant symbol = &quot;CARD&quot;;
 
   // Rank of the token.
-  mapping(uint256 =&gt; uint8) public tokenIdToRank;
+  mapping(uint256 => uint8) public tokenIdToRank;
 
   // The number of tokens ever minted.
   uint256 public numberOfTokenId;
@@ -737,7 +737,7 @@ contract CryptoSagaCard is ERC721Token, Claimable, AccessMint {
     onlyAccessMint
     public
   {
-    for (uint256 i = 0; i &lt; _amount; i++) {
+    for (uint256 i = 0; i < _amount; i++) {
       _mint(_beneficiary, numberOfTokenId);
       tokenIdToRank[numberOfTokenId] = _rank;
       numberOfTokenId ++;
@@ -874,13 +874,13 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
   uint256 public requiredGoldIncreaseFactor = 1000000000000000000;
 
   // Existing hero classes.
-  mapping(uint32 =&gt; HeroClass) public heroClasses;
+  mapping(uint32 => HeroClass) public heroClasses;
   // The number of hero classes ever defined.
   uint32 public numberOfHeroClasses;
 
   // Existing hero instances.
   // The key is _tokenId.
-  mapping(uint256 =&gt; HeroInstance) public tokenIdToHeroInstance;
+  mapping(uint256 => HeroInstance) public tokenIdToHeroInstance;
   // The number of tokens ever minted. This works as the serial number.
   uint256 public numberOfTokenIds;
 
@@ -888,7 +888,7 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
   Gold public goldContract;
 
   // Deposit of players (in Gold).
-  mapping(address =&gt; uint256) public addressToGoldDeposit;
+  mapping(address => uint256) public addressToGoldDeposit;
 
   // Random seed.
   uint32 private seed = 0;
@@ -1046,7 +1046,7 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
   {
     var _tokens = tokensOf(_address);
     uint32 _totalBP = 0;
-    for (uint256 i = 0; i &lt; _tokens.length; i ++) {
+    for (uint256 i = 0; i < _tokens.length; i ++) {
       _totalBP += getHeroBP(_tokens[i]);
     }
     return _totalBP;
@@ -1107,10 +1107,10 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
     onlyOwner
     public
   {
-    require(_classRank &lt; 5);
-    require(_classType &lt; 3);
-    require(_aura &lt; 5);
-    require(_minIVForStats[0] &lt;= _maxIVForStats[0] &amp;&amp; _minIVForStats[1] &lt;= _maxIVForStats[1] &amp;&amp; _minIVForStats[2] &lt;= _maxIVForStats[2] &amp;&amp; _minIVForStats[3] &lt;= _maxIVForStats[3] &amp;&amp; _minIVForStats[4] &lt;= _maxIVForStats[4]);
+    require(_classRank < 5);
+    require(_classType < 3);
+    require(_aura < 5);
+    require(_minIVForStats[0] <= _maxIVForStats[0] && _minIVForStats[1] <= _maxIVForStats[1] && _minIVForStats[2] <= _maxIVForStats[2] && _minIVForStats[3] <= _maxIVForStats[3] && _minIVForStats[4] <= _maxIVForStats[4]);
 
     HeroClass memory _heroType = HeroClass({
       className: _className,
@@ -1144,7 +1144,7 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
     returns (uint256)
   {
     require(_owner != address(0));
-    require(_heroClassId &lt; numberOfHeroClasses);
+    require(_heroClassId < numberOfHeroClasses);
 
     // The information of the hero&#39;s class.
     var _heroClassInfo = heroClasses[_heroClassId];
@@ -1155,7 +1155,7 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
     // Build random IVs for this hero instance.
     uint32[5] memory _ivForStats;
     uint32[5] memory _initialStats;
-    for (uint8 i = 0; i &lt; 5; i++) {
+    for (uint8 i = 0; i < 5; i++) {
       _ivForStats[i] = (random(_heroClassInfo.maxIVForStats[i] + 1, _heroClassInfo.minIVForStats[i]));
       _initialStats[i] = _heroClassInfo.baseStats[i] + _ivForStats[i];
     }
@@ -1198,7 +1198,7 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
     var _heroInstance = tokenIdToHeroInstance[_tokenId];
 
     // The character should be avaiable. 
-    require(_heroInstance.availableAt &lt;= now);
+    require(_heroInstance.availableAt <= now);
 
     _heroInstance.lastLocationId = _locationId;
     _heroInstance.availableAt = now + _duration;
@@ -1249,19 +1249,19 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
     var _heroInstance = tokenIdToHeroInstance[_tokenId];
 
     // The character should be avaiable. (Should have already returned from the dungeons, arenas, etc.)
-    require(_heroInstance.availableAt &lt;= now);
+    require(_heroInstance.availableAt <= now);
 
     // The information of the hero&#39;s class.
     var _heroClassInfo = heroClasses[_heroInstance.heroClassId];
 
     // Hero shouldn&#39;t level up exceed its max level.
-    require(_heroInstance.currentLevel &lt; _heroClassInfo.maxLevel);
+    require(_heroInstance.currentLevel < _heroClassInfo.maxLevel);
 
     // Required Exp.
     var requiredExp = getHeroRequiredExpForLevelUp(_tokenId);
 
     // Need to have enough exp.
-    require(_heroInstance.currentExp &gt;= requiredExp);
+    require(_heroInstance.currentExp >= requiredExp);
 
     // Required Gold.
     var requiredGold = getHeroRequiredGoldForLevelUp(_tokenId);
@@ -1270,13 +1270,13 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
     var _ownerOfToken = ownerOf(_tokenId);
 
     // Need to have enough Gold balance.
-    require(addressToGoldDeposit[_ownerOfToken] &gt;= requiredGold);
+    require(addressToGoldDeposit[_ownerOfToken] >= requiredGold);
 
     // Increase Level.
     _heroInstance.currentLevel += 1;
 
     // Increase Stats.
-    for (uint8 i = 0; i &lt; 5; i++) {
+    for (uint8 i = 0; i < 5; i++) {
       _heroInstance.currentStats[i] = _heroClassInfo.baseStats[i] + (_heroInstance.currentLevel - 1) * _heroInstance.ivForStats[i];
     }
     
@@ -1295,7 +1295,7 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
     whenNotPaused
     public
   {
-    require(goldContract.allowance(msg.sender, this) &gt;= _amount);
+    require(goldContract.allowance(msg.sender, this) >= _amount);
 
     // Send msg.sender&#39;s Gold to this contract.
     if (goldContract.transferFrom(msg.sender, this, _amount)) {
@@ -1308,7 +1308,7 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
   function withdrawDeposit(uint256 _amount)
     public
   {
-    require(addressToGoldDeposit[msg.sender] &gt;= _amount);
+    require(addressToGoldDeposit[msg.sender] >= _amount);
 
     // Send deposit of Golds to msg.sender. (Rather minting...)
     if (goldContract.transfer(msg.sender, _amount)) {
@@ -1322,7 +1322,7 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
     private
     returns (uint32)
   {
-    require(_upper &gt; _lower);
+    require(_upper > _lower);
 
     seed = uint32(keccak256(keccak256(block.blockhash(block.number), seed), now));
     return seed % (_upper - _lower) + _lower;
@@ -1355,7 +1355,7 @@ contract CryptoSagaCorrectedHeroStats {
     var (, , _currentLevel, _currentExp, , , _currentStats, _ivs, ) = heroContract.getHeroInfo(_tokenId);
     
     if (_currentLevel != 1) {
-      for (uint8 i = 0; i &lt; 5; i ++) {
+      for (uint8 i = 0; i < 5; i ++) {
         _currentStats[i] += _ivs[i];
       }
     }
@@ -1373,10 +1373,10 @@ contract CryptoSagaCorrectedHeroStats {
 
     uint32 _totalBP = 0;
 
-    for (uint256 i = 0; i &lt; _balance; i ++) {
+    for (uint256 i = 0; i < _balance; i ++) {
       var (, , _currentLevel, , , , _currentStats, _ivs, ) = heroContract.getHeroInfo(heroContract.getTokenIdOfAddressAndIndex(_address, i));
       if (_currentLevel != 1) {
-        for (uint8 j = 0; j &lt; 5; j ++) {
+        for (uint8 j = 0; j < 5; j ++) {
           _currentStats[j] += _ivs[j];
         }
       }
@@ -1393,10 +1393,10 @@ contract CryptoSagaCorrectedHeroStats {
   {
     uint32 _totalBP = 0;
 
-    for (uint256 i = 0; i &lt; _tokens.length; i ++) {
+    for (uint256 i = 0; i < _tokens.length; i ++) {
       var (, , _currentLevel, , , , _currentStats, _ivs, ) = heroContract.getHeroInfo(_tokens[i]);
       if (_currentLevel != 1) {
-        for (uint8 j = 0; j &lt; 5; j ++) {
+        for (uint8 j = 0; j < 5; j ++) {
           _currentStats[j] += _ivs[j];
         }
       }
@@ -1415,7 +1415,7 @@ contract CryptoSagaCorrectedHeroStats {
 contract CryptoSagaDungeonProgress is Claimable, AccessDeploy {
 
   // The progress of the player in dungeons.
-  mapping(address =&gt; uint32[25]) public addressToProgress;
+  mapping(address => uint32[25]) public addressToProgress;
 
   // @dev Get progress.
   function getProgressOfAddressAndId(address _address, uint32 _id)
@@ -1524,16 +1524,16 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
   bool public isTurnDataSaved = true;
 
   // The enemies in this dungeon for the player.
-  mapping(address =&gt; EnemyCombination) public addressToEnemyCombination;
+  mapping(address => EnemyCombination) public addressToEnemyCombination;
 
   // Last game&#39;s play datetime.
-  mapping(address =&gt; uint256) public addressToPlayRecordDateTime;
+  mapping(address => uint256) public addressToPlayRecordDateTime;
 
   // Last game&#39;s record of the player.
-  mapping(address =&gt; PlayRecord) public addressToPlayRecord;
+  mapping(address => PlayRecord) public addressToPlayRecord;
 
   // Additional information on last game&#39;s record of the player.
-  mapping(address =&gt; TurnInfo) public addressToTurnInfo;
+  mapping(address => TurnInfo) public addressToTurnInfo;
 
   // List of the Mobs possibly appear in this dungeon.
   uint32[] public possibleMobClasses;
@@ -1715,24 +1715,24 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
     public
   {
     // Each hero should be different ids.
-    require(_tokenIds[0] == 0 || (_tokenIds[0] != _tokenIds[1] &amp;&amp; _tokenIds[0] != _tokenIds[2] &amp;&amp; _tokenIds[0] != _tokenIds[3]));
-    require(_tokenIds[1] == 0 || (_tokenIds[1] != _tokenIds[0] &amp;&amp; _tokenIds[1] != _tokenIds[2] &amp;&amp; _tokenIds[1] != _tokenIds[3]));
-    require(_tokenIds[2] == 0 || (_tokenIds[2] != _tokenIds[0] &amp;&amp; _tokenIds[2] != _tokenIds[1] &amp;&amp; _tokenIds[2] != _tokenIds[3]));
-    require(_tokenIds[3] == 0 || (_tokenIds[3] != _tokenIds[0] &amp;&amp; _tokenIds[3] != _tokenIds[1] &amp;&amp; _tokenIds[3] != _tokenIds[2]));
+    require(_tokenIds[0] == 0 || (_tokenIds[0] != _tokenIds[1] && _tokenIds[0] != _tokenIds[2] && _tokenIds[0] != _tokenIds[3]));
+    require(_tokenIds[1] == 0 || (_tokenIds[1] != _tokenIds[0] && _tokenIds[1] != _tokenIds[2] && _tokenIds[1] != _tokenIds[3]));
+    require(_tokenIds[2] == 0 || (_tokenIds[2] != _tokenIds[0] && _tokenIds[2] != _tokenIds[1] && _tokenIds[2] != _tokenIds[3]));
+    require(_tokenIds[3] == 0 || (_tokenIds[3] != _tokenIds[0] && _tokenIds[3] != _tokenIds[1] && _tokenIds[3] != _tokenIds[2]));
 
     // Check the previous dungeon&#39;s progress.
     if (requiredProgressOfPreviousDungeon != 0) {
-      require(progressContract.getProgressOfAddressAndId(msg.sender, previousDungeonId) &gt;= requiredProgressOfPreviousDungeon);
+      require(progressContract.getProgressOfAddressAndId(msg.sender, previousDungeonId) >= requiredProgressOfPreviousDungeon);
     }
 
     // 1 is the minimum prgress.
-    require(_tryingProgress &gt; 0);
+    require(_tryingProgress > 0);
 
     // Only up to &#39;progress + 1&#39; is allowed.
-    require(_tryingProgress &lt;= progressContract.getProgressOfAddressAndId(msg.sender, locationId) + 1);
+    require(_tryingProgress <= progressContract.getProgressOfAddressAndId(msg.sender, locationId) + 1);
 
     // Check dungeon availability.
-    require(addressToPlayRecordDateTime[msg.sender] + coolDungeon &lt;= now);
+    require(addressToPlayRecordDateTime[msg.sender] + coolDungeon <= now);
 
     // Check ownership and availability check.
     require(checkOwnershipAndAvailability(msg.sender, _tokenIds));
@@ -1755,7 +1755,7 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
     // The information that can give additional information.
     TurnInfo memory _turnInfo;
 
-    // Step 1: Retrieve Hero information (0 ~ 3) &amp; Enemy information (4 ~ 7).
+    // Step 1: Retrieve Hero information (0 ~ 3) & Enemy information (4 ~ 7).
 
     uint32[5][8] memory _unitStats; // Stats of units for given levels and class ids.
     uint8[2][8] memory _unitTypesAuras; // 0: Types of units for given levels and class ids. 1: Auras of units for given levels and class ids.
@@ -1810,7 +1810,7 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
     _playRecord.unitLevels[7] = _tryingProgress;
 
     // With _tryingProgress, _tmpEnemyBaseStatsAndIVs, we can get the current stats of mobs.
-    for (uint8 i = 0; i &lt; 5; i ++) {
+    for (uint8 i = 0; i < 5; i ++) {
       _unitStats[4][i] = _tmpEnemyBaseStatsAndIVs[0][i] + _playRecord.unitLevels[4] * _tmpEnemyBaseStatsAndIVs[4][i];
       _unitStats[5][i] = _tmpEnemyBaseStatsAndIVs[1][i] + _playRecord.unitLevels[5] * _tmpEnemyBaseStatsAndIVs[5][i];
       _unitStats[6][i] = _tmpEnemyBaseStatsAndIVs[2][i] + _playRecord.unitLevels[6] * _tmpEnemyBaseStatsAndIVs[6][i];
@@ -1821,24 +1821,24 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
     
     // Firstly, we need to assign the unit&#39;s turn order with AGLs of the units.
     uint32[8] memory _unitAGLs;
-    for (i = 0; i &lt; 8; i ++) {
+    for (i = 0; i < 8; i ++) {
       _unitAGLs[i] = _unitStats[i][2];
     }
     _turnInfo.turnOrder = getOrder(_unitAGLs);
     
     // Fight for 24 turns. (8 units x 3 rounds.)
     _turnInfo.turnLength = 24;
-    for (i = 0; i &lt; 24; i ++) {
-      if (_unitStats[4][4] == 0 &amp;&amp; _unitStats[5][4] == 0 &amp;&amp; _unitStats[6][4] == 0 &amp;&amp; _unitStats[7][4] == 0) {
+    for (i = 0; i < 24; i ++) {
+      if (_unitStats[4][4] == 0 && _unitStats[5][4] == 0 && _unitStats[6][4] == 0 && _unitStats[7][4] == 0) {
         _turnInfo.turnLength = i;
         break;
-      } else if (_unitStats[0][4] == 0 &amp;&amp; _unitStats[1][4] == 0 &amp;&amp; _unitStats[2][4] == 0 &amp;&amp; _unitStats[3][4] == 0) {
+      } else if (_unitStats[0][4] == 0 && _unitStats[1][4] == 0 && _unitStats[2][4] == 0 && _unitStats[3][4] == 0) {
         _turnInfo.turnLength = i;
         break;
       }
       
       var _slotId = _turnInfo.turnOrder[(i % 8)];
-      if (_slotId &lt; 4 &amp;&amp; _tokenIds[_slotId] == 0) {
+      if (_slotId < 4 && _tokenIds[_slotId] == 0) {
         // This means the slot is empty.
         // Defender should be default value.
         _turnInfo.defenderList[i] = 127;
@@ -1849,23 +1849,23 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
       } else {
         // 1) Check number of attack targets that are alive.
         uint8 _targetSlotId = 255;
-        if (_slotId &lt; 4) {
-          if (_unitStats[4][4] &gt; 0)
+        if (_slotId < 4) {
+          if (_unitStats[4][4] > 0)
             _targetSlotId = 4;
-          else if (_unitStats[5][4] &gt; 0)
+          else if (_unitStats[5][4] > 0)
             _targetSlotId = 5;
-          else if (_unitStats[6][4] &gt; 0)
+          else if (_unitStats[6][4] > 0)
             _targetSlotId = 6;
-          else if (_unitStats[7][4] &gt; 0)
+          else if (_unitStats[7][4] > 0)
             _targetSlotId = 7;
         } else {
-          if (_unitStats[0][4] &gt; 0)
+          if (_unitStats[0][4] > 0)
             _targetSlotId = 0;
-          else if (_unitStats[1][4] &gt; 0)
+          else if (_unitStats[1][4] > 0)
             _targetSlotId = 1;
-          else if (_unitStats[2][4] &gt; 0)
+          else if (_unitStats[2][4] > 0)
             _targetSlotId = 2;
-          else if (_unitStats[3][4] &gt; 0)
+          else if (_unitStats[3][4] > 0)
             _targetSlotId = 3;
         }
         
@@ -1874,53 +1874,53 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
         
         // Base damage. (Attacker&#39;s ATK * 1.5 - Defender&#39;s DEF).
         uint32 _damage = 10;
-        if ((_unitStats[_slotId][0] * 150 / 100) &gt; _unitStats[_targetSlotId][1])
+        if ((_unitStats[_slotId][0] * 150 / 100) > _unitStats[_targetSlotId][1])
           _damage = max((_unitStats[_slotId][0] * 150 / 100) - _unitStats[_targetSlotId][1], 10);
         else
           _damage = 10;
 
         // Check miss / success.
-        if ((_unitStats[_slotId][3] * 150 / 100) &gt; _unitStats[_targetSlotId][2]) {
-          if (min(max(((_unitStats[_slotId][3] * 150 / 100) - _unitStats[_targetSlotId][2]), 75), 99) &lt;= random(100, 0))
+        if ((_unitStats[_slotId][3] * 150 / 100) > _unitStats[_targetSlotId][2]) {
+          if (min(max(((_unitStats[_slotId][3] * 150 / 100) - _unitStats[_targetSlotId][2]), 75), 99) <= random(100, 0))
             _damage = _damage * 0;
         }
         else {
-          if (75 &lt;= random(100, 0))
+          if (75 <= random(100, 0))
             _damage = _damage * 0;
         }
 
         // Is the attack critical?
-        if (_unitStats[_slotId][3] &gt; _unitStats[_targetSlotId][3]) {
-          if (min(max((_unitStats[_slotId][3] - _unitStats[_targetSlotId][3]), 5), 75) &gt; random(100, 0))
+        if (_unitStats[_slotId][3] > _unitStats[_targetSlotId][3]) {
+          if (min(max((_unitStats[_slotId][3] - _unitStats[_targetSlotId][3]), 5), 75) > random(100, 0))
             _damage = _damage * 150 / 100;
         }
         else {
-          if (5 &gt; random(100, 0))
+          if (5 > random(100, 0))
             _damage = _damage * 150 / 100;
         }
 
         // Is attacker has the advantageous Type?
-        if (_unitTypesAuras[_slotId][0] == 0 &amp;&amp; _unitTypesAuras[_targetSlotId][0] == 1) // Fighter &gt; Rogue
+        if (_unitTypesAuras[_slotId][0] == 0 && _unitTypesAuras[_targetSlotId][0] == 1) // Fighter > Rogue
           _damage = _damage * 125 / 100;
-        else if (_unitTypesAuras[_slotId][0] == 1 &amp;&amp; _unitTypesAuras[_targetSlotId][0] == 2) // Rogue &gt; Mage
+        else if (_unitTypesAuras[_slotId][0] == 1 && _unitTypesAuras[_targetSlotId][0] == 2) // Rogue > Mage
           _damage = _damage * 125 / 100;
-        else if (_unitTypesAuras[_slotId][0] == 2 &amp;&amp; _unitTypesAuras[_targetSlotId][0] == 0) // Mage &gt; Fighter
+        else if (_unitTypesAuras[_slotId][0] == 2 && _unitTypesAuras[_targetSlotId][0] == 0) // Mage > Fighter
           _damage = _damage * 125 / 100;
 
         // Is attacker has the advantageous Aura?
-        if (_unitTypesAuras[_slotId][1] == 0 &amp;&amp; _unitTypesAuras[_targetSlotId][1] == 1) // Water &gt; Fire
+        if (_unitTypesAuras[_slotId][1] == 0 && _unitTypesAuras[_targetSlotId][1] == 1) // Water > Fire
           _damage = _damage * 150 / 100;
-        else if (_unitTypesAuras[_slotId][1] == 1 &amp;&amp; _unitTypesAuras[_targetSlotId][1] == 2) // Fire &gt; Nature
+        else if (_unitTypesAuras[_slotId][1] == 1 && _unitTypesAuras[_targetSlotId][1] == 2) // Fire > Nature
           _damage = _damage * 150 / 100;
-        else if (_unitTypesAuras[_slotId][1] == 2 &amp;&amp; _unitTypesAuras[_targetSlotId][1] == 0) // Nature &gt; Water
+        else if (_unitTypesAuras[_slotId][1] == 2 && _unitTypesAuras[_targetSlotId][1] == 0) // Nature > Water
           _damage = _damage * 150 / 100;
-        else if (_unitTypesAuras[_slotId][1] == 3 &amp;&amp; _unitTypesAuras[_targetSlotId][1] == 4) // Light &gt; Darkness
+        else if (_unitTypesAuras[_slotId][1] == 3 && _unitTypesAuras[_targetSlotId][1] == 4) // Light > Darkness
           _damage = _damage * 150 / 100;
-        else if (_unitTypesAuras[_slotId][1] == 4 &amp;&amp; _unitTypesAuras[_targetSlotId][1] == 3) // Darkness &gt; Light
+        else if (_unitTypesAuras[_slotId][1] == 4 && _unitTypesAuras[_targetSlotId][1] == 3) // Darkness > Light
           _damage = _damage * 150 / 100;
         
         // Apply damage so that reduce hp of defender.
-        if(_unitStats[_targetSlotId][4] &gt; _damage)
+        if(_unitStats[_targetSlotId][4] > _damage)
           _unitStats[_targetSlotId][4] -= _damage;
         else
           _unitStats[_targetSlotId][4] = 0;
@@ -2000,7 +2000,7 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
     private view
     returns(bool)
   {
-    if ((_tokenIds[0] == 0 || heroContract.ownerOf(_tokenIds[0]) == _playerAddress) &amp;&amp; (_tokenIds[1] == 0 || heroContract.ownerOf(_tokenIds[1]) == _playerAddress) &amp;&amp; (_tokenIds[2] == 0 || heroContract.ownerOf(_tokenIds[2]) == _playerAddress) &amp;&amp; (_tokenIds[3] == 0 || heroContract.ownerOf(_tokenIds[3]) == _playerAddress)) {
+    if ((_tokenIds[0] == 0 || heroContract.ownerOf(_tokenIds[0]) == _playerAddress) && (_tokenIds[1] == 0 || heroContract.ownerOf(_tokenIds[1]) == _playerAddress) && (_tokenIds[2] == 0 || heroContract.ownerOf(_tokenIds[2]) == _playerAddress) && (_tokenIds[3] == 0 || heroContract.ownerOf(_tokenIds[3]) == _playerAddress)) {
       
       // Retrieve avail time of heroes.
       uint256[4] memory _heroAvailAts;
@@ -2013,7 +2013,7 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
       if (_tokenIds[3] != 0)
         ( , , , , , _heroAvailAts[3], , , ) = heroContract.getHeroInfo(_tokenIds[3]);
 
-      if (_heroAvailAts[0] &lt;= now &amp;&amp; _heroAvailAts[1] &lt;= now &amp;&amp; _heroAvailAts[2] &lt;= now &amp;&amp; _heroAvailAts[3] &lt;= now) {
+      if (_heroAvailAts[0] <= now && _heroAvailAts[1] <= now && _heroAvailAts[2] <= now && _heroAvailAts[3] <= now) {
         return true;
       } else {
         return false;
@@ -2030,7 +2030,7 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
   {
     EnemyCombination memory _newCombination;
     _newCombination.isPersonalized = true;
-    for (uint8 i = 0; i &lt; 4; i++) {
+    for (uint8 i = 0; i < 4; i++) {
       _newCombination.enemySlotClassIds[i] = possibleMobClasses[random(uint32(possibleMobClasses.length), 0)];
     }
     addressToEnemyCombination[_playerAddress] = _newCombination;
@@ -2079,7 +2079,7 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
     private
     returns (uint32)
   {
-    require(_upper &gt; _lower);
+    require(_upper > _lower);
 
     seed = seed % uint32(1103515245) + 12345;
     return seed % (_upper - _lower) + _lower;
@@ -2091,9 +2091,9 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
     returns (uint8[8])
   {
     uint8[8] memory _order = [uint8(0), 1, 2, 3, 4, 5, 6, 7];
-    for (uint8 i = 0; i &lt; 8; i ++) {
-      for (uint8 j = i + 1; j &lt; 8; j++) {
-        if (_by[i] &lt; _by[j]) {
+    for (uint8 i = 0; i < 8; i ++) {
+      for (uint8 j = i + 1; j < 8; j++) {
+        if (_by[i] < _by[j]) {
           uint32 tmp1 = _by[i];
           _by[i] = _by[j];
           _by[j] = tmp1;
@@ -2111,7 +2111,7 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
     private pure
     returns (uint32)
   {
-    if(_value1 &gt;= _value2)
+    if(_value1 >= _value2)
       return _value1;
     else
       return _value2;
@@ -2122,7 +2122,7 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
     private pure
     returns (uint32)
   {
-    if(_value2 &gt;= _value1)
+    if(_value2 >= _value1)
       return _value1;
     else
       return _value2;
@@ -2135,7 +2135,7 @@ contract CryptoSagaDungeonVer1 is Claimable, Pausable {
   {
     uint32 z = (_value + 1) / 2;
     uint32 y = _value;
-    while (z &lt; y) {
+    while (z < y) {
       y = z;
       z = (_value / z + z) / 2;
     }

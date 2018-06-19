@@ -24,7 +24,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -34,7 +34,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -43,7 +43,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -121,7 +121,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -139,7 +139,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -182,7 +182,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -193,8 +193,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -257,7 +257,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -272,7 +272,7 @@ contract StandardToken is ERC20, BasicToken {
 
 /**
  * @title Mintable token with an end-of-mint mechanism and token cap
- * Based on openzeppelin-solidity MintableToken &amp; CappedToken
+ * Based on openzeppelin-solidity MintableToken & CappedToken
  */
 contract CappedMintableToken is StandardToken, Ownable {
   using SafeMath for uint256;
@@ -300,7 +300,7 @@ contract CappedMintableToken is StandardToken, Ownable {
 	}
 
   function CappedMintableToken(uint256 _cap) public {    
-    require(_cap &gt; 0);
+    require(_cap > 0);
 
     mintEnabled = true;
     transferEnabled = false;
@@ -314,8 +314,8 @@ contract CappedMintableToken is StandardToken, Ownable {
    * @return A boolean that indicates if the operation was successful.
    */
   function mint(address _to, uint256 _amount) onlyOwnerOrCrowdsale canMint public returns (bool) {
-    require(totalSupply_.add(_amount) &lt;= cap);
-    require(_amount &gt; 0);
+    require(totalSupply_.add(_amount) <= cap);
+    require(_amount > 0);
 
     totalSupply_ = totalSupply_.add(_amount);
     balances[_to] = balances[_to].add(_amount);
@@ -362,7 +362,7 @@ contract GMBCTokenBuyable is CappedMintableToken {
 
     uint256 weiAmount = msg.value;
     require(_beneficiary != address(0));
-    require(weiAmount &gt;= minPurchase);
+    require(weiAmount >= minPurchase);
 
     // calculate token amount to be created
     uint256 tokens = getTokenAmount(weiAmount);
@@ -383,7 +383,7 @@ contract GMBCTokenBuyable is CappedMintableToken {
 
 /**
  * @title Contracts that should not own Ether
- * @author Remco Bloemen &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0173646c626e4133">[email&#160;protected]</a>π.com&gt;
+ * @author Remco Bloemen <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0173646c626e4133">[email&#160;protected]</a>π.com>
  * @dev This tries to block incoming ether to prevent accidental loss of Ether. Should Ether end up
  * in the contract, it will allow the owner to reclaim this ether.
  * @notice Ether can still be sent to this contract by:
@@ -444,12 +444,12 @@ contract GMBCToken is GMBCTokenBuyable {
 	 * Sets current bonus (%)
 	 */
 	function setBonus(uint8 _bonus) onlyOwnerOrCrowdsale external {		
-		require(_bonus &gt;= 0 &amp;&amp; _bonus &lt;= 100);
+		require(_bonus >= 0 && _bonus <= 100);
 		bonus = _bonus;
 	}
 
 	function setBasePrice(uint256 _basePrice) onlyOwner external {
-		require(_basePrice &gt; 0);
+		require(_basePrice > 0);
 		basePrice = _basePrice;
 	}
 

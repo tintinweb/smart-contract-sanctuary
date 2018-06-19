@@ -42,7 +42,7 @@ contract ERC20TokenInterface {
 
 contract KycContract is Owned {
     
-    mapping (address =&gt; bool) verifiedAddresses;
+    mapping (address => bool) verifiedAddresses;
     
     function isAddressVerified(address _address) public view returns (bool) {
         return verifiedAddresses[_address];
@@ -61,7 +61,7 @@ contract KycContract is Owned {
     }
     
     function batchAddAddresses(address[] _addresses) public onlyOwner {
-        for (uint cnt = 0; cnt &lt; _addresses.length; cnt++) {
+        for (uint cnt = 0; cnt < _addresses.length; cnt++) {
             assert(!verifiedAddresses[_addresses[cnt]]);
             verifiedAddresses[_addresses[cnt]] = true;
         }

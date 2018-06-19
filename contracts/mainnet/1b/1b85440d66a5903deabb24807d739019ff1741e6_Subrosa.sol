@@ -39,7 +39,7 @@ ________________________________________________________________________________
 Developers:
 
 
-Auditors &amp; advisors:
+Auditors & advisors:
 
 
 

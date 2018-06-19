@@ -11,7 +11,7 @@ pragma solidity ^0.4.18;
 //
 // Enjoy.
 //
-// (c) Created by AmeriTrend Financial, Hollis Enterprises &amp; Ventures and FNTC Sports.
+// (c) Created by AmeriTrend Financial, Hollis Enterprises & Ventures and FNTC Sports.
 // ----------------------------------------------------------------------------
 
 

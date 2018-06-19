@@ -168,7 +168,7 @@ contract CanReceiveApproval {
 
     function bytesToBytes4(bytes b) internal pure returns (bytes4 out) {
         for (uint i = 0; i < 4; i++) {
-            out |= bytes4(b[i] &amp; 0xFF) >> (i << 3);
+            out |= bytes4(b[i] & 0xFF) >> (i << 3);
         }
     }
 
@@ -228,7 +228,7 @@ contract UserRank is LandAccessControl, CanReceiveApproval {
 
     function addRank(uint _landLimit, uint _priceCandy, uint _priceEth, string _title) onlyOwner public  {
         //стоимость добавляемого должна быть не ниже предыдущего
-        require(ranks[ranksCount].priceCandy <= _priceCandy &amp;&amp; ranks[ranksCount].priceEth <= _priceEth);
+        require(ranks[ranksCount].priceCandy <= _priceCandy && ranks[ranksCount].priceEth <= _priceEth);
         ranksCount++;
         Rank storage r = ranks[ranksCount];
 
@@ -241,12 +241,12 @@ contract UserRank is LandAccessControl, CanReceiveApproval {
 
 
     function editRank(uint _index, uint _priceCandy, uint _priceEth) onlyManager public  {
-        require(_index > 0 &amp;&amp; _index <= ranksCount);
+        require(_index > 0 && _index <= ranksCount);
         if (_index > 1) {
-            require(ranks[_index - 1].priceCandy <= _priceCandy &amp;&amp; ranks[_index - 1].priceEth <= _priceEth);
+            require(ranks[_index - 1].priceCandy <= _priceCandy && ranks[_index - 1].priceEth <= _priceEth);
         }
         if (_index < ranksCount) {
-            require(ranks[_index + 1].priceCandy >= _priceCandy &amp;&amp; ranks[_index + 1].priceEth >= _priceEth);
+            require(ranks[_index + 1].priceCandy >= _priceCandy && ranks[_index + 1].priceEth >= _priceEth);
         }
 
         Rank storage r = ranks[_index];

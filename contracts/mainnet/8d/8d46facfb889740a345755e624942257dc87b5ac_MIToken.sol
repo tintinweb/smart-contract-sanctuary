@@ -123,7 +123,7 @@ contract Token is Owner, Mortal {
         require (balances[msg.sender] >= value);
         require (unlockStartTime > now);
         require (unlockInterval > 0);
-        require (unlockPercent > 0 &amp;&amp; unlockPercent <= 100);
+        require (unlockPercent > 0 && unlockPercent <= 100);
 
         uint unlockIntervalSecond = toSecond(unlockIntervalUnit, unlockInterval);
 
@@ -137,7 +137,7 @@ contract Token is Owner, Mortal {
         require (frozenAccount[target].isValue == false);
         require (unlockStartTime > now);
         require (unlockInterval > 0);
-        require (unlockPercent > 0 &amp;&amp; unlockPercent <= 100);
+        require (unlockPercent > 0 && unlockPercent <= 100);
 
         _transfer(msg.sender, target, value);
 

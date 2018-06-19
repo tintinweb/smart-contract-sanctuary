@@ -526,7 +526,7 @@ contract WineryOperations is Commons, Authorized {
         returns (int position)
     {
         bytes32 _mappingID = keccak256(_trackID, _winery);
-        for (uint i = 0; i < wineries[_mappingID].length &amp;&amp; i < OPERATION_SEARCH_MAX; i++) {
+        for (uint i = 0; i < wineries[_mappingID].length && i < OPERATION_SEARCH_MAX; i++) {
             if (keccak256(wineries[_mappingID][i].operationID) == keccak256(_operationID)) {
                 return int(i);
             }

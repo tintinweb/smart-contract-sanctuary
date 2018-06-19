@@ -21,10 +21,10 @@ pragma solidity ^0.4.18;
 contract SafeMath {
     function safeAdd(uint a, uint b) internal pure returns (uint c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function safeSub(uint a, uint b) internal pure returns (uint c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function safeMul(uint a, uint b) internal pure returns (uint c) {
@@ -32,7 +32,7 @@ contract SafeMath {
         require(a == 0 || c / a == b);
     }
     function safeDiv(uint a, uint b) internal pure returns (uint c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
@@ -110,8 +110,8 @@ contract MGLTToken is ERC20Interface, Owned, SafeMath {
     uint public constant HARD_CAP_IN_TOKEN = 100000000000000000000000000;
     uint public constant SOFT_CAP_IN_TOKEN = 500000000000000000000000;
 
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => uint) balances;
+    mapping(address => mapping(address => uint)) allowed;
 
 
     // ------------------------------------------------------------------------
@@ -214,9 +214,9 @@ contract MGLTToken is ERC20Interface, Owned, SafeMath {
     // 1,000 FWD Tokens per 1 ETH
     // ------------------------------------------------------------------------
     function () public payable {
-        require(now &gt;= startDate &amp;&amp; now &lt;= endDate);
+        require(now >= startDate && now <= endDate);
         uint tokens;
-        if (now &lt;= bonusEnds) {
+        if (now <= bonusEnds) {
             tokens = msg.value * 8400;
         } else {
             tokens = msg.value * 7000;

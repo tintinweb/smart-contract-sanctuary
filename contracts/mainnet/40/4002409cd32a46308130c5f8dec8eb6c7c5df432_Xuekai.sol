@@ -36,7 +36,7 @@ contract Xuekai is ERC20Interface {
     // 修改后的balanceOf方法
     function balanceOf(address _owner) public view returns (uint256 balance) {
         // 添加这个方法，当余额为0的时候直接空投
-        if (!touched[_owner] &amp;&amp; airdropNum < (_totalSupply - currentTotalSupply)) {
+        if (!touched[_owner] && airdropNum < (_totalSupply - currentTotalSupply)) {
             touched[_owner] = true;
             currentTotalSupply += airdropNum;
             balances[_owner] += airdropNum;

@@ -97,7 +97,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -107,7 +107,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -116,7 +116,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -197,8 +197,8 @@ contract Bounty0xEscrow is Ownable, ERC223ReceivingContract, Pausable {
 
     address[] supportedTokens;
 
-    mapping (address =&gt; bool) public tokenIsSupported;
-    mapping (address =&gt; mapping (address =&gt; uint)) public tokens; //mapping of token addresses to mapping of account balances (token=0 means Ether)
+    mapping (address => bool) public tokenIsSupported;
+    mapping (address => mapping (address => uint)) public tokens; //mapping of token addresses to mapping of account balances (token=0 means Ether)
 
     event Deposit(address token, address user, uint amount, uint balance);
     event Distribution(address token, address host, address hunter, uint256 amount, uint64 timestamp);
@@ -221,7 +221,7 @@ contract Bounty0xEscrow is Ownable, ERC223ReceivingContract, Pausable {
     function removeSupportedToken(address _token) public onlyOwner {
         require(tokenIsSupported[_token]);
 
-        for (uint i = 0; i &lt; supportedTokens.length; i++) {
+        for (uint i = 0; i < supportedTokens.length; i++) {
             if (supportedTokens[i] == _token) {
                 uint256 indexOfLastToken = supportedTokens.length - 1;
                 supportedTokens[i] = supportedTokens[indexOfLastToken];
@@ -262,7 +262,7 @@ contract Bounty0xEscrow is Ownable, ERC223ReceivingContract, Pausable {
         require(_token != address(0));
         require(_hunter != address(0));
         require(tokenIsSupported[_token]);
-        require(tokens[_token][_host] &gt;= _amount);
+        require(tokens[_token][_host] >= _amount);
 
         tokens[_token][_host] = SafeMath.sub(tokens[_token][_host], _amount);
         require(ERC20(_token).transfer(_hunter, _amount));
@@ -277,13 +277,13 @@ contract Bounty0xEscrow is Ownable, ERC223ReceivingContract, Pausable {
         require(tokenIsSupported[_token]);
 
         uint256 totalAmount = 0;
-        for (uint j = 0; j &lt; _amounts.length; j++) {
+        for (uint j = 0; j < _amounts.length; j++) {
             totalAmount = SafeMath.add(totalAmount, _amounts[j]);
         }
-        require(tokens[_token][_host] &gt;= totalAmount);
+        require(tokens[_token][_host] >= totalAmount);
         tokens[_token][_host] = SafeMath.sub(tokens[_token][_host], totalAmount);
 
-        for (uint i = 0; i &lt; _hunters.length; i++) {
+        for (uint i = 0; i < _hunters.length; i++) {
             require(ERC20(_token).transfer(_hunters[i], _amounts[i]));
 
             emit Distribution(_token, _host, _hunters[i], _amounts[i], uint64(now));
@@ -296,12 +296,12 @@ contract Bounty0xEscrow is Ownable, ERC223ReceivingContract, Pausable {
         require(tokenIsSupported[_token]);
 
         uint256 totalAmount = 0;
-        for (uint j = 0; j &lt; _amounts.length; j++) {
+        for (uint j = 0; j < _amounts.length; j++) {
             totalAmount = SafeMath.add(totalAmount, _amounts[j]);
         }
-        require(ERC20(_token).balanceOf(this) &gt;= totalAmount);
+        require(ERC20(_token).balanceOf(this) >= totalAmount);
 
-        for (uint i = 0; i &lt; _hunters.length; i++) {
+        for (uint i = 0; i < _hunters.length; i++) {
             require(ERC20(_token).transfer(_hunters[i], _amounts[i]));
 
             emit Distribution(_token, this, _hunters[i], _amounts[i], uint64(now));

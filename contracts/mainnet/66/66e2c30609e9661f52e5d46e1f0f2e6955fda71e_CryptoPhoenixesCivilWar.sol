@@ -458,7 +458,7 @@ function purchasePhoenix(uint256 _phoenixID) whenNotPaused gameInProgress public
   }
   
   function useCaptainAbility(uint256 _captainID) whenNotPaused gameInProgress public {
-      require(_captainID > 0 &amp;&amp; _captainID < 3); //either 1 or 2
+      require(_captainID > 0 && _captainID < 3); //either 1 or 2
       Phoenix storage captain = PHOENIXES[_captainID];
       require(msg.sender == captain.currentOwner); //Only owner of captain can use ability
       require(now >= captain.abilityAvailTime); //Ability must be available for use
@@ -497,7 +497,7 @@ function purchasePhoenix(uint256 _phoenixID) whenNotPaused gameInProgress public
       //calculate which pool to take from
       //ids 3-6, 15-18 --> red
       //ids 7-14 --> blue
-      if (_phoenixID >=7 &amp;&amp;  _phoenixID <= 14) {
+      if (_phoenixID >=7 &&  _phoenixID <= 14) {
           require(POOLS[1] > 0); //blue pool
           uint256 payout = POOLS[1].mul(phoenix.currentPower).div(DENOMINATOR); //calculate payout
           POOLS[1] = POOLS[1].sub(payout); //subtract from pool
@@ -578,10 +578,10 @@ function purchasePhoenix(uint256 _phoenixID) whenNotPaused gameInProgress public
       /* 
       Note that captain + phoenixes payout percentages add up to 100%.
       Captain: 24%
-      Phoenix 1 &amp; 5: 4% x 2 = 8%
-      Phoenix 2 &amp; 6: 7% x 2 = 14%
-      Phoenix 3 &amp; 7: 11% x 2 = 22%
-      Phoenix 4 &amp; 8: 16% x 2 = 32%
+      Phoenix 1 & 5: 4% x 2 = 8%
+      Phoenix 2 & 6: 7% x 2 = 14%
+      Phoenix 3 & 7: 11% x 2 = 22%
+      Phoenix 4 & 8: 16% x 2 = 32%
       */
       
       if (_isRed) {

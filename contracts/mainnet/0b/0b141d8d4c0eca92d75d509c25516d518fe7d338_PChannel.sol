@@ -28,7 +28,7 @@ contract Ownable {
 
 library SafeMath {
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b &lt;= a);
+        require(b <= a);
         return a - b;
     }
 }
@@ -63,7 +63,7 @@ contract ERC20 is ERC20Basic {
 contract BasicToken is ERC20Basic {
     using SafeMath for uint256;
 
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
 
     /**
     * @dev transfer token for a specified address
@@ -72,7 +72,7 @@ contract BasicToken is ERC20Basic {
     */
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
 
         // SafeMath.sub will throw if there is not enough balance.
         balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -101,7 +101,7 @@ contract BasicToken is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping (address => mapping (address => uint256)) internal allowed;
 
 
     /**
@@ -112,8 +112,8 @@ contract StandardToken is ERC20, BasicToken {
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] += _value;
@@ -189,7 +189,7 @@ contract MintableToken is StandardToken, Ownable {
      * @param _amount The amount of tokens to burn.
      */
     function burn(address _addr, uint _amount) onlyOwner public {
-        require(_amount &gt; 0 &amp;&amp; balances[_addr] &gt;= _amount &amp;&amp; totalSupply &gt;= _amount);
+        require(_amount > 0 && balances[_addr] >= _amount && totalSupply >= _amount);
         balances[_addr] -= _amount;
         totalSupply -= _amount;
         Burn(_addr, _amount);
@@ -232,20 +232,20 @@ contract WealthBuilderToken is MintableToken {
 
 contract Data is Ownable {
 
-    // node =&gt; its parent
-    mapping (address =&gt; address) private parent;
+    // node => its parent
+    mapping (address => address) private parent;
 
-    // node =&gt; its status
-    mapping (address =&gt; uint8) public statuses;
+    // node => its status
+    mapping (address => uint8) public statuses;
 
-    // node =&gt; sum of all his child deposits in USD cents
-    mapping (address =&gt; uint) public referralDeposits;
+    // node => sum of all his child deposits in USD cents
+    mapping (address => uint) public referralDeposits;
 
-    // client =&gt; balance in wei*10^(-6) available for withdrawal
-    mapping(address =&gt; uint256) private balances;
+    // client => balance in wei*10^(-6) available for withdrawal
+    mapping(address => uint256) private balances;
 
-    // investor =&gt; balance in wei*10^(-6) available for withdrawal
-    mapping(address =&gt; uint256) private investorBalances;
+    // investor => balance in wei*10^(-6) available for withdrawal
+    mapping(address => uint256) private investorBalances;
 
     function parentOf(address _addr) public constant returns (address) {
         return parent[_addr];
@@ -272,7 +272,7 @@ contract Data is Ownable {
     }
 
     function subtrBalance(address _addr, uint256 amount) onlyOwner public {
-        require(balances[_addr] &gt;= amount);
+        require(balances[_addr] >= amount);
         balances[_addr] -= amount;
     }
 
@@ -281,7 +281,7 @@ contract Data is Ownable {
     }
 
     function subtrInvestorBalance(address _addr, uint256 amount) onlyOwner public {
-        require(investorBalances[_addr] &gt;= amount);
+        require(investorBalances[_addr] >= amount);
         investorBalances[_addr] -= amount;
     }
 
@@ -301,11 +301,11 @@ contract Data is Ownable {
 
 contract Declaration {
 
-    // threshold in USD =&gt; status
-    mapping (uint =&gt; uint8) statusThreshold;
+    // threshold in USD => status
+    mapping (uint => uint8) statusThreshold;
 
-    // status =&gt; (depositsNumber =&gt; percentage)
-    mapping (uint8 =&gt; mapping (uint8 =&gt; uint)) feeDistribution;
+    // status => (depositsNumber => percentage)
+    mapping (uint8 => mapping (uint8 => uint)) feeDistribution;
 
     // status thresholds in USD
     uint[8] thresholds = [
@@ -325,7 +325,7 @@ contract Declaration {
 
 
     /**
-     * @dev Set up fee distribution &amp; status thresholds
+     * @dev Set up fee distribution & status thresholds
      */
     function setFeeDistributionsAndStatusThresholds() private {
         // Agent - 0
@@ -362,7 +362,7 @@ contract Declaration {
     private
     {
         statusThreshold[_threshold] = _st;
-        for (uint8 i = 0; i &lt; _percentages.length; i++) {
+        for (uint8 i = 0; i < _percentages.length; i++) {
             feeDistribution[_st][i] = _percentages[i];
         }
     }
@@ -379,20 +379,20 @@ contract Investors is Ownable {
     */
     address[] public investors;
 
-    // investor address =&gt; percentage * 10^(-2)
+    // investor address => percentage * 10^(-2)
     /*
         3026,1500,510,462,453,302,250,250,226,220,150,129,100,100,60,50,50,50,50,50,50,50,50,50,50,40,40,30,27,26,25,25,25,25,25,25,25,25,23,20,19,15,15,15,15,15,14,14,13,13,13,13,12,12,11,11,11,11,11,11,10,10,10,10,10,10,10,10,12,9,9,8,8,8,8,7,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5
         5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,1,6
         6,125,50,5,8,50,23,3,115,14,10,50,5,5
     */
-    mapping (address =&gt; uint) public investorPercentages;
+    mapping (address => uint) public investorPercentages;
 
 
     /**
      * @dev Add investors
      */
     function addInvestors(address[] _investors, uint[] _investorPercentages) onlyOwner public {
-        for (uint i = 0; i &lt; _investors.length; i++) {
+        for (uint i = 0; i < _investors.length; i++) {
             investors.push(_investors[i]);
             investorPercentages[_investors[i]] = _investorPercentages[i];
         }
@@ -414,11 +414,11 @@ contract Investors is Ownable {
      */
     function getInvestorsFee() public constant returns (uint8) {
         //01/01/2020
-        if (now &gt;= 1577836800) {
+        if (now >= 1577836800) {
             return 1;
         }
         //01/01/2019
-        if (now &gt;= 1546300800) {
+        if (now >= 1546300800) {
             return 5;
         }
         return 10;
@@ -449,12 +449,12 @@ contract Referral is Declaration, Ownable {
 
     /**
      * @dev The Referral constructor to set up the first depositer,
-     * reference to system token, data &amp; investors and set ethUsdRate
+     * reference to system token, data & investors and set ethUsdRate
      */
     function Referral(uint _ethUsdRate, address _token, address _data, address _investors) public {
         ethUsdRate = _ethUsdRate;
 
-        // instantiate token &amp; data contracts
+        // instantiate token & data contracts
         token = WealthBuilderToken(_token);
         data = Data(_data);
         investors = Investors(_investors);
@@ -472,7 +472,7 @@ contract Referral is Declaration, Ownable {
         uint amount = msg.value;
 
         // if less then 5 deposits
-        if (depositsCount &lt; 5) {
+        if (depositsCount < 5) {
 
             uint serviceFee;
             uint investorsFee = 0;
@@ -488,10 +488,10 @@ contract Referral is Declaration, Ownable {
 
             uint referralFee = amount * referralFees[depositsCount];
 
-            // distribute deposit fee among users above on the branch &amp; update users&#39; statuses
+            // distribute deposit fee among users above on the branch & update users&#39; statuses
             distribute(data.parentOf(client), 0, depositsCount, amount);
 
-            // update balance &amp; number of deposits of user
+            // update balance & number of deposits of user
             uint active = (amount * 100)
             .sub(referralFee)
             .sub(serviceFee)
@@ -524,7 +524,7 @@ contract Referral is Declaration, Ownable {
         address node = _node;
         uint prevPercentage = _prevPercentage;
 
-        // distribute deposit fee among users above on the branch &amp; update users&#39; statuses
+        // distribute deposit fee among users above on the branch & update users&#39; statuses
         while(node != address(0)) {
             uint8 status = data.statuses(node);
 
@@ -553,10 +553,10 @@ contract Referral is Declaration, Ownable {
     function updateStatus(address _node, uint8 _status) private {
         uint refDep = data.referralDeposits(_node);
 
-        for (uint i = thresholds.length - 1; i &gt; _status; i--) {
+        for (uint i = thresholds.length - 1; i > _status; i--) {
             uint threshold = thresholds[i] * 100;
 
-            if (refDep &gt;= threshold) {
+            if (refDep >= threshold) {
                 data.setStatus(_node, statusThreshold[threshold]);
                 break;
             }
@@ -568,7 +568,7 @@ contract Referral is Declaration, Ownable {
      * @dev Distribute fee between investors
      */
     function distributeInvestorsFee(uint start, uint end) onlyOwner public {
-        for (uint i = start; i &lt; end; i++) {
+        for (uint i = start; i < end; i++) {
             address investor = investors.investors(i);
             uint investorPercentage = investors.investorPercentages(investor);
             data.addInvestorBalance(investor, investorsBalance * investorPercentage);
@@ -641,7 +641,7 @@ contract Referral is Declaration, Ownable {
     function withdraw(address _addr, uint256 _amount, bool investor) public onlyOwner {
         uint amount = investor ? data.investorBalanceOf(_addr)
         : data.balanceOf(_addr);
-        require(amount &gt;= _amount &amp;&amp; this.balance &gt;= _amount);
+        require(amount >= _amount && this.balance >= _amount);
 
         if (investor) {
             data.subtrInvestorBalance(_addr, _amount * 1000000);
@@ -658,7 +658,7 @@ contract Referral is Declaration, Ownable {
      * @param _addr withdrawal address
      */
     function withdrawOwner(address _addr, uint256 _amount) public onlyOwner {
-        require(this.balance &gt;= _amount);
+        require(this.balance >= _amount);
         _addr.transfer(_amount);
     }
 
@@ -704,8 +704,8 @@ contract PChannel is Ownable {
     // max deposit amount in USD cents
     uint private maxDepositAmount = 6250;
 
-    // investor =&gt; number of deposits
-    mapping (address =&gt; uint8) private deposits; 
+    // investor => number of deposits
+    mapping (address => uint8) private deposits; 
     
     function PChannel(address _refProgram) public {
         refProgram = Referral(_refProgram);
@@ -723,7 +723,7 @@ contract PChannel is Ownable {
         uint amount = msg.value;
         uint usdAmount = amount * refProgram.ethUsdRate() / 10**18;
         // check if deposit amount is valid 
-        require(usdAmount &gt;= depositAmount &amp;&amp; usdAmount &lt;= maxDepositAmount);
+        require(usdAmount >= depositAmount && usdAmount <= maxDepositAmount);
         
         refProgram.invest.value(amount)(msg.sender, depositsCount);
         deposits[msg.sender]++;

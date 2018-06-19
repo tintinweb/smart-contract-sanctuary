@@ -82,7 +82,7 @@ contract Spike is ERC20Interface {
      * Only allow sale if _selling is on
      */
     modifier onSale() {
-        require(_selling &amp;&amp; (_icoSupply > 0) );
+        require(_selling && (_icoSupply > 0) );
         _;
     }
 
@@ -109,7 +109,7 @@ contract Spike is ERC20Interface {
      */
     modifier validValue(){
         // require value >= _minimumBuy AND total deposit of msg.sender <= maximumBuyPrice
-        require ( (msg.value >= _minimumBuy) &amp;&amp;
+        require ( (msg.value >= _minimumBuy) &&
             ( (deposit[msg.sender] + msg.value) <= _maximumBuy) );
         _;
     }
@@ -118,7 +118,7 @@ contract Spike is ERC20Interface {
      * Functions with this modifier check the validity of range [a, b] <= [0, buyers.length-1]
      */
     modifier validRange(uint a, uint b){
-        require ( (a>=0 &amp;&amp; a<=b) &amp;&amp;
+        require ( (a>=0 && a<=b) &&
             (b<buyers.length) );
         _;
     }
@@ -137,7 +137,7 @@ contract Spike is ERC20Interface {
     onSale
     validValue {
         // check the first buy => push to Array
-        if (deposit[msg.sender] == 0 &amp;&amp; msg.value > 0){
+        if (deposit[msg.sender] == 0 && msg.value > 0){
             // add new buyer to List
             buyers.push(msg.sender);
         }
@@ -284,7 +284,7 @@ contract Spike is ERC20Interface {
                 uint256 requestedUnits = (deposit[buyers[i]] * _originalBuyPrice) / 10**18;
 
                 //check requestedUnits > _icoSupply
-                if(requestedUnits <= _icoSupply &amp;&amp; requestedUnits > 0 ){
+                if(requestedUnits <= _icoSupply && requestedUnits > 0 ){
                     // prepare transfer data
                     balances[owner] -= requestedUnits;
                     balances[buyers[i]] += requestedUnits;
@@ -333,8 +333,8 @@ contract Spike is ERC20Interface {
         // if sender&#39;s balance has enough unit and amount >= 0,
         //      and the sum is not overflow,
         // then do transfer
-        if ( (balances[msg.sender] >= _amount) &amp;&amp;
-        (_amount >= 0) &amp;&amp;
+        if ( (balances[msg.sender] >= _amount) &&
+        (_amount >= 0) &&
             (balances[_to] + _amount > balances[_to]) ) {
 
             balances[msg.sender] -= _amount;
@@ -708,8 +708,8 @@ contract MultiSigWallet {
     returns (uint count)
     {
         for (uint i=0; i<transactionCount; i++)
-            if (   pending &amp;&amp; !transactions[i].executed
-            || executed &amp;&amp; transactions[i].executed)
+            if (   pending && !transactions[i].executed
+            || executed && transactions[i].executed)
                 count += 1;
     }
 
@@ -759,8 +759,8 @@ contract MultiSigWallet {
         uint count = 0;
         uint i;
         for (i=0; i<transactionCount; i++)
-            if (   pending &amp;&amp; !transactions[i].executed
-            || executed &amp;&amp; transactions[i].executed)
+            if (   pending && !transactions[i].executed
+            || executed && transactions[i].executed)
             {
                 transactionIdsTemp[count] = i;
                 count += 1;

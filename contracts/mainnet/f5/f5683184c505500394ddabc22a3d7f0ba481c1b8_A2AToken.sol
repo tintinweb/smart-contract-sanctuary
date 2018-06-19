@@ -159,7 +159,7 @@ contract A2AToken is Ownable, StandardToken {
 	function transfer(address _to, uint256 _value) public returns (bool) {
 		require(releasedForTransfer);
 		// Cancel transaction if transfer value more then available without vesting amount
-		if ( ( vestingAmount[msg.sender] > 0 ) &amp;&amp; ( block.number < vestingBeforeBlockNumber[msg.sender] ) ) {
+		if ( ( vestingAmount[msg.sender] > 0 ) && ( block.number < vestingBeforeBlockNumber[msg.sender] ) ) {
 			if ( balances[msg.sender] < _value ) revert();
 			if ( balances[msg.sender] <= vestingAmount[msg.sender] ) revert();
 			if ( balances[msg.sender].sub(_value) < vestingAmount[msg.sender] ) revert();

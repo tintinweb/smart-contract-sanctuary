@@ -26,11 +26,11 @@ pragma solidity 		^0.4.8	;
 			uint32	public	constant	decimals =		18			;
 			uint	public		totalSupply =		0			;
 											
-			mapping (address =&gt; uint) balances;								
-			mapping (address =&gt; mapping(address =&gt; uint)) allowed;								
+			mapping (address => uint) balances;								
+			mapping (address => mapping(address => uint)) allowed;								
 											
 			function mint(address _to, uint _value) onlyOwner {								
-				assert(totalSupply + _value &gt;= totalSupply &amp;&amp; balances[_to] + _value &gt;= balances[_to]);							
+				assert(totalSupply + _value >= totalSupply && balances[_to] + _value >= balances[_to]);							
 				balances[_to] += _value;							
 				totalSupply += _value;							
 			}								
@@ -40,7 +40,7 @@ pragma solidity 		^0.4.8	;
 			}								
 											
 			function transfer(address _to, uint _value) returns (bool success) {								
-				if(balances[msg.sender] &gt;= _value &amp;&amp; balances[_to] + _value &gt;= balances[_to]) {							
+				if(balances[msg.sender] >= _value && balances[_to] + _value >= balances[_to]) {							
 					balances[msg.sender] -= _value; 						
 					balances[_to] += _value;						
 					return true;						
@@ -49,9 +49,9 @@ pragma solidity 		^0.4.8	;
 			}								
 											
 			function transferFrom(address _from, address _to, uint _value) returns (bool success) {								
-				if( allowed[_from][msg.sender] &gt;= _value &amp;&amp;							
-					balances[_from] &gt;= _value 						
-					&amp;&amp; balances[_to] + _value &gt;= balances[_to]) {						
+				if( allowed[_from][msg.sender] >= _value &&							
+					balances[_from] >= _value 						
+					&& balances[_to] + _value >= balances[_to]) {						
 					allowed[_from][msg.sender] -= _value;						
 					balances[_from] -= _value;						
 					balances[_to] += _value;						
@@ -168,8 +168,8 @@ pragma solidity 		^0.4.8	;
 //	85	Possible 9.7 &#171; syst&#232;me bancaire&#160;&#187;					&#171; Syst&#232;me d&#39;encaissement sph&#232;re (i = pro)&#160;&#187;				
 //	86	Possible 9.8 &#171; syst&#232;me bancaire&#160;&#187;					&#171; Syst&#232;me d&#39;encaissement sph&#232;re (ii = v)&#160;&#187;				
 //	87	Possible 9.9 &#171; syst&#232;me bancaire&#160;&#187;					&#171; Syst&#232;me d&#39;encaissement sph&#232;re (iii = neutre)&#160;&#187;				
-//	88	Possible 9.10 &#171; syst&#232;me bancaire&#160;&#187;					&#171; Confer &lt;fonctions march&#233;&gt; (*)&#160;&#187;				
-//	89	Possible 10.1 &#171; syst&#232;me financier&#160;&#187;					&#171; Confer &lt;m&#233;tiers post-march&#233;&gt; (**)&#160;&#187;				
+//	88	Possible 9.10 &#171; syst&#232;me bancaire&#160;&#187;					&#171; Confer <fonctions march&#233;> (*)&#160;&#187;				
+//	89	Possible 10.1 &#171; syst&#232;me financier&#160;&#187;					&#171; Confer <m&#233;tiers post-march&#233;> (**)&#160;&#187;				
 //	90	Possible 10.2 &#171; syst&#232;me financier&#160;&#187;					&#171; Configuration sp&#233;cifique Mikola&#239;ev&#160;&#187;				
 //	91	Possible 10.3 &#171; syst&#232;me financier&#160;&#187;					&#171; Configuration sp&#233;cifique Donetsk&#160;&#187;				
 //	92	Possible 10.4 &#171; syst&#232;me financier&#160;&#187;					&#171; Configuration sp&#233;cifique Louhansk&#160;&#187;				
@@ -189,16 +189,16 @@ pragma solidity 		^0.4.8	;
 //	106	Possible 11.8 &#171; syst&#232;me mon&#233;taire&#160;&#187;					&#171; solutions crois&#233;es chiffr&#233;es-fiat&#160;&#187;				
 //	107	Possible 11.9 &#171; syst&#232;me mon&#233;taire&#160;&#187;					&#171; solutions de ponts inter-cha&#238;nes&#160;&#187;				
 //	108	Possible 11.10 &#171; syst&#232;me mon&#233;taire&#160;&#187;					&#171; solutions de sauvegarde inter-cha&#238;nes&#160;&#187;				
-//	109	Possible 12.1 &#171; march&#233; assurantiel&#160;&amp; r&#233;assurantiel &#187;					&#171; Juridique&#160;&#187;				
-//	110	Possible 12.2 &#171; march&#233; assurantiel&#160;&amp; r&#233;assurantiel &#187;					&#171; Responsabilit&#233; envers les tiers&#160;&#187;				
-//	111	Possible 12.3 &#171; march&#233; assurantiel&#160;&amp; r&#233;assurantiel &#187;					&#171; Sanctions&#160;&#187;				
-//	112	Possible 12.4 &#171; march&#233; assurantiel&#160;&amp; r&#233;assurantiel &#187;					&#171; G&#233;opolitique&#160;&#187;				
-//	113	Possible 12.5 &#171; march&#233; assurantiel&#160;&amp; r&#233;assurantiel &#187;					&#171; Expropriations&#160;&#187;				
-//	114	Possible 12.6 &#171; march&#233; assurantiel&#160;&amp; r&#233;assurantiel &#187;					&#171; Compte s&#233;questre&#160;&#187;				
-//	115	Possible 12.7 &#171; march&#233; assurantiel&#160;&amp; r&#233;assurantiel &#187;					&#171; Acc&#232;s r&#233;seau de courtage&#160;&#187;				
-//	116	Possible 12.8 &#171; march&#233; assurantiel&#160;&amp; r&#233;assurantiel &#187;					&#171; Acc&#232;s titrisation&#160;&#187;				
-//	117	Possible 12.9 &#171; march&#233; assurantiel&#160;&amp; r&#233;assurantiel &#187;					&#171; Acc&#232;s syndicats&#160;&#187;				
-//	118	Possible 12.10 &#171; march&#233; assurantiel&#160;&amp; r&#233;assurantiel &#187;					&#171; Acc&#232;s pools mutuels de pair &#224; pair&#160;&#187;				
+//	109	Possible 12.1 &#171; march&#233; assurantiel&#160;& r&#233;assurantiel &#187;					&#171; Juridique&#160;&#187;				
+//	110	Possible 12.2 &#171; march&#233; assurantiel&#160;& r&#233;assurantiel &#187;					&#171; Responsabilit&#233; envers les tiers&#160;&#187;				
+//	111	Possible 12.3 &#171; march&#233; assurantiel&#160;& r&#233;assurantiel &#187;					&#171; Sanctions&#160;&#187;				
+//	112	Possible 12.4 &#171; march&#233; assurantiel&#160;& r&#233;assurantiel &#187;					&#171; G&#233;opolitique&#160;&#187;				
+//	113	Possible 12.5 &#171; march&#233; assurantiel&#160;& r&#233;assurantiel &#187;					&#171; Expropriations&#160;&#187;				
+//	114	Possible 12.6 &#171; march&#233; assurantiel&#160;& r&#233;assurantiel &#187;					&#171; Compte s&#233;questre&#160;&#187;				
+//	115	Possible 12.7 &#171; march&#233; assurantiel&#160;& r&#233;assurantiel &#187;					&#171; Acc&#232;s r&#233;seau de courtage&#160;&#187;				
+//	116	Possible 12.8 &#171; march&#233; assurantiel&#160;& r&#233;assurantiel &#187;					&#171; Acc&#232;s titrisation&#160;&#187;				
+//	117	Possible 12.9 &#171; march&#233; assurantiel&#160;& r&#233;assurantiel &#187;					&#171; Acc&#232;s syndicats&#160;&#187;				
+//	118	Possible 12.10 &#171; march&#233; assurantiel&#160;& r&#233;assurantiel &#187;					&#171; Acc&#232;s pools mutuels de pair &#224; pair&#160;&#187;				
 //	119	Possible 13.1 &#171; instruments financiers &#187;					&#171; Matrice : march&#233; primaire / march&#233; secondaire / pools&#160;&#187;				
 //	120	Possible 13.2 &#171; instruments financiers &#187;					&#171; Sch&#233;ma de march&#233; non-r&#233;gul&#233;&#160;&#187;				
 //	121	Possible 13.3 &#171; instruments financiers &#187;					&#171; Sch&#233;ma de march&#233; non-organis&#233;&#160;&#187;				
@@ -215,7 +215,7 @@ pragma solidity 		^0.4.8	;
 //	132	Possible 13.14 &#171; instruments financiers &#187;					&#171; Coupons&#160;&#187;				
 //	133	Possible 13.15 &#171; instruments financiers &#187;					&#171; Obligations convertibles&#160;&#187;				
 //	134	Possible 13.16 &#171; instruments financiers &#187;					&#171; Obligations synth&#233;tiques&#160;&#187;				
-//	135	Possible 13.17 &#171; instruments financiers &#187;					&#171; Instruments financiers d&#233;riv&#233;s classiques&#160;/ &lt;plain vanilla&gt; &#187;				
+//	135	Possible 13.17 &#171; instruments financiers &#187;					&#171; Instruments financiers d&#233;riv&#233;s classiques&#160;/ <plain vanilla> &#187;				
 //	136	Possible 13.18 &#171; instruments financiers &#187;					&#171; Instruments financiers d&#233;riv&#233;s sur-mesure, n&#233;goci&#233;s de gr&#233; &#224; gr&#233;&#160;&#187;				
 //	137	Possible 13.19 &#171; instruments financiers &#187;					&#171; Produits structur&#233;s&#160;&#187;				
 //	138	Possible 13.20 &#171; instruments financiers &#187;					&#171; Garanties&#160;&#187;				

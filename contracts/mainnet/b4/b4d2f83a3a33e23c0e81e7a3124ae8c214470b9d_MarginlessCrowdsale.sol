@@ -411,7 +411,7 @@ contract EscrowVault is Ownable {
   function withdraw(uint256 _amount) public {
     require(msg.sender == superOwner);
     require(state == State.GoalReached);
-    require (_amount <= this.balance &amp;&amp;  _amount > 0);
+    require (_amount <= this.balance &&  _amount > 0);
     beneficiary.transfer(_amount);
     Withdrawal(_amount);
   }
@@ -542,7 +542,7 @@ contract MarginlessCrowdsale is TokenDeskProxyAware {
         uint256 weiAmount = msg.value;
         uint256 nowTime = getNow();
         // this loop moves stages and ensures correct stage according to date
-        while (currentStage < stages.length &amp;&amp; stages[currentStage].till < nowTime) {
+        while (currentStage < stages.length && stages[currentStage].till < nowTime) {
             // move all unsold tokens to next stage
             uint256 nextStage = currentStage.add(1);
             stages[nextStage].cap = stages[nextStage].cap.add(stages[currentStage].cap);
@@ -564,7 +564,7 @@ contract MarginlessCrowdsale is TokenDeskProxyAware {
 
         TokenPurchase(sender, beneficiary, weiAmount, tokens.sub(excess));
 
-        if (goalReached() &amp;&amp; vault.state() == EscrowVault.State.Active) {
+        if (goalReached() && vault.state() == EscrowVault.State.Active) {
             vault.setGoalReached();
         }
         vault.deposit.value(weiAmount)(sender);
@@ -588,7 +588,7 @@ contract MarginlessCrowdsale is TokenDeskProxyAware {
         uint256 excess = _tokens;
         uint256 tokensToMint = 0;
 
-        while (excess > 0 &amp;&amp; currentStage < stages.length) {
+        while (excess > 0 && currentStage < stages.length) {
             Stage storage stage = stages[currentStage];
             if (excess >= stage.cap) {
                 excess = excess.sub(stage.cap);
@@ -609,11 +609,11 @@ contract MarginlessCrowdsale is TokenDeskProxyAware {
 
     // @return true if the transaction can buy tokens
     function validPurchase() internal view returns (bool) {
-        bool withinPeriod = getNow() >= START_TIME &amp;&amp; getNow() <= icoEndTime;
+        bool withinPeriod = getNow() >= START_TIME && getNow() <= icoEndTime;
         bool nonZeroPurchase = msg.value != 0;
         bool canMint = token.totalSupply() < ICO_TOKENS;
         bool validStage = (currentStage < stages.length);
-        return withinPeriod &amp;&amp; nonZeroPurchase &amp;&amp; canMint &amp;&amp; validStage;
+        return withinPeriod && nonZeroPurchase && canMint && validStage;
     }
 
     // if crowdsale is unsuccessful, investors can claim refunds here
@@ -673,7 +673,7 @@ contract MarginlessCrowdsale is TokenDeskProxyAware {
     }
 
     function mintTokens(address[] _receivers, uint256[] _amounts) external onlyTokenMinterOrOwner {
-        require(_receivers.length > 0 &amp;&amp; _receivers.length <= 100);
+        require(_receivers.length > 0 && _receivers.length <= 100);
         require(_receivers.length == _amounts.length);
         require(!isFinalized);
         for (uint256 i = 0; i < _receivers.length; i++) {
@@ -692,7 +692,7 @@ contract MarginlessCrowdsale is TokenDeskProxyAware {
     }
 
     function setIcoEndTime(uint256 _endTime) public onlyOwner {
-        require(_endTime > START_TIME &amp;&amp; _endTime > getNow());
+        require(_endTime > START_TIME && _endTime > getNow());
         icoEndTime = _endTime;
     }
 

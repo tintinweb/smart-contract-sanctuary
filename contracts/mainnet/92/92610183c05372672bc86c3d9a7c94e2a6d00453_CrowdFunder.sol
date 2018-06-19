@@ -105,7 +105,7 @@ contract Token is Controlled {
                return;
            }
 
-           require((_to != 0) &amp;&amp; (_to != address(this)));
+           require((_to != 0) && (_to != address(this)));
 
            uint256 previousBalanceFrom = balanceOfAt(_from, block.number);
 
@@ -427,16 +427,16 @@ contract CrowdFunder is Controlled, SafeMath {
     }
 
     function updateExchangeRate() public {
-        if (tokensIssued >= 0 &amp;&amp; tokensIssued < (1000000 * 10 ** 9)) {
+        if (tokensIssued >= 0 && tokensIssued < (1000000 * 10 ** 9)) {
             tokenExchangeRate = 1000 * 10 ** 9;
         }
-        if (tokensIssued >= (1000000 * 10 ** 9) &amp;&amp; tokensIssued < (2000000 * 10 ** 9)) {
+        if (tokensIssued >= (1000000 * 10 ** 9) && tokensIssued < (2000000 * 10 ** 9)) {
             tokenExchangeRate = 600 * 10 ** 9;
         }
-        if (tokensIssued >= (2000000 * 10 ** 9) &amp;&amp; tokensIssued < (3500000 * 10 ** 9)) {
+        if (tokensIssued >= (2000000 * 10 ** 9) && tokensIssued < (3500000 * 10 ** 9)) {
             tokenExchangeRate = 500 * 10 ** 9;
         }
-        if (tokensIssued >= (3500000 * 10 ** 9) &amp;&amp; tokensIssued < (6000000 * 10 ** 9)) {
+        if (tokensIssued >= (3500000 * 10 ** 9) && tokensIssued < (6000000 * 10 ** 9)) {
             tokenExchangeRate = 400 * 10 ** 9;
         }
         if (tokensIssued >= (6000000 * 10 ** 9)) {

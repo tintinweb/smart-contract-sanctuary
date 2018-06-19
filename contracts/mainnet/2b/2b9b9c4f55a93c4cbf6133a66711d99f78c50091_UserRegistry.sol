@@ -82,7 +82,7 @@ contract UserRegistry is MultiOwners, UserRegistryInterface {
   }
 
   function hasIdentity(address _who) public constant returns(bool) {
-    return knownAddress(_who) &amp;&amp; identities[_who];
+    return knownAddress(_who) && identities[_who];
   }
 
   function systemAddress(address _where) public constant returns(bool) {

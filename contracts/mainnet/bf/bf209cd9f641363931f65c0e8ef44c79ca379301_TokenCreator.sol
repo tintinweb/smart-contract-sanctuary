@@ -405,7 +405,7 @@ contract Claimable is Ownable {
     /// @dev Allows the current owner to set the pendingOwner address.
     /// @param newOwner The address to transfer ownership to.
     function transferOwnership(address newOwner) onlyOwner public {
-        require(newOwner != 0x0 &amp;&amp; newOwner != owner);
+        require(newOwner != 0x0 && newOwner != owner);
         pendingOwner = newOwner;
     }
     /// @dev Allows the pendingOwner address to finalize the transfer.
@@ -598,9 +598,9 @@ contract TokenCreator {
         )
         public
     {
-        require(tokenRegistry == 0x0 &amp;&amp; _tokenRegistry.isContract());
+        require(tokenRegistry == 0x0 && _tokenRegistry.isContract());
         tokenRegistry = _tokenRegistry;
-        require(tokenTransferDelegate == 0x0 &amp;&amp; _tokenTransferDelegate.isContract());
+        require(tokenTransferDelegate == 0x0 && _tokenTransferDelegate.isContract());
         tokenTransferDelegate = _tokenTransferDelegate;
     }
     /// @dev Deploy an ERC20 token contract, register it with TokenRegistry,

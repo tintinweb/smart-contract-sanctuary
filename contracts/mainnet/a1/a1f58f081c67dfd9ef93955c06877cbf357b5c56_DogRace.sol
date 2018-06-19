@@ -307,12 +307,12 @@ library oraclizeLib {
             iaddr *= 256;
             b1 = uint160(tmp[i]);
             b2 = uint160(tmp[i+1]);
-            if ((b1 >= 97)&amp;&amp;(b1 <= 102)) b1 -= 87;
-            else if ((b1 >= 65)&amp;&amp;(b1 <= 70)) b1 -= 55;
-            else if ((b1 >= 48)&amp;&amp;(b1 <= 57)) b1 -= 48;
-            if ((b2 >= 97)&amp;&amp;(b2 <= 102)) b2 -= 87;
-            else if ((b2 >= 65)&amp;&amp;(b2 <= 70)) b2 -= 55;
-            else if ((b2 >= 48)&amp;&amp;(b2 <= 57)) b2 -= 48;
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 65)&&(b1 <= 70)) b1 -= 55;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 65)&&(b2 <= 70)) b2 -= 55;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
             iaddr += (b1*16+b2);
         }
         return address(iaddr);
@@ -355,7 +355,7 @@ library oraclizeLib {
                 if (h[i] == n[0])
                 {
                     subindex = 1;
-                    while(subindex < n.length &amp;&amp; (i + subindex) < h.length &amp;&amp; h[i + subindex] == n[subindex])
+                    while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
                     {
                         subindex++;
                     }
@@ -421,7 +421,7 @@ library oraclizeLib {
         uint mint = 0;
         bool decimals = false;
         for (uint i=0; i<bresult.length; i++){
-            if ((bresult[i] >= 48)&amp;&amp;(bresult[i] <= 57)){
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
                 if (decimals){
                    if (_b == 0) break;
                     else _b--;
@@ -638,7 +638,7 @@ contract DogRace {
     }
     
     modifier beforeBetting {
-        require(!chronus.betting_open &amp;&amp; !chronus.race_start);
+        require(!chronus.betting_open && !chronus.race_start);
         _;
     }
 
@@ -651,7 +651,7 @@ contract DogRace {
 
     // place a bet
     function place_bet(uint8 dog) external duringBetting payable  {
-        require(msg.value >= min_bet &amp;&amp; msg.value <= max_bet &amp;&amp; dog < dogs_count);
+        require(msg.value >= min_bet && msg.value <= max_bet && dog < dogs_count);
 
         bet_info memory current_bet;
 
@@ -682,7 +682,7 @@ contract DogRace {
         require(!bettors[msg.sender].rewarded);
         
         uint reward = bettor_reward(msg.sender);
-        require(reward > 0 &amp;&amp; this.balance >= reward);
+        require(reward > 0 && this.balance >= reward);
         
         bettors[msg.sender].rewarded = true;
         msg.sender.transfer(reward);
@@ -841,8 +841,8 @@ contract DogRace {
     // in case of any errors in race, enable full refund for the bettors to claim
     function void_race() external onlyOwner {
         require(now > chronus.starting_time + chronus.race_duration);
-        require((chronus.betting_open &amp;&amp; !chronus.race_start)
-            || (chronus.race_start &amp;&amp; !chronus.race_end));
+        require((chronus.betting_open && !chronus.race_start)
+            || (chronus.race_start && !chronus.race_end));
         chronus.betting_open = false;
         chronus.race_voided = true;
         chronus.race_end = true;

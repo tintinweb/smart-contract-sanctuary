@@ -28,20 +28,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -55,7 +55,7 @@ library SafeMath {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -64,7 +64,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -109,7 +109,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -120,8 +120,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -184,7 +184,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -324,9 +324,9 @@ contract Crowdsale {
 
 
   function Crowdsale(uint256 _startTime, uint256 _endTime, uint256 _rate, address _wallet) public {
-    require(_startTime &gt;= now);
-    require(_endTime &gt;= _startTime);
-    require(_rate &gt; 0);
+    require(_startTime >= now);
+    require(_endTime >= _startTime);
+    require(_rate > 0);
     require(_wallet != address(0));
 
     token = createTokenContract();
@@ -375,14 +375,14 @@ contract Crowdsale {
 
   // @return true if the transaction can buy tokens
   function validPurchase() internal view returns (bool) {
-    bool withinPeriod = now &gt;= startTime &amp;&amp; now &lt;= endTime;
+    bool withinPeriod = now >= startTime && now <= endTime;
     bool nonZeroPurchase = msg.value != 0;
-    return withinPeriod &amp;&amp; nonZeroPurchase;
+    return withinPeriod && nonZeroPurchase;
   }
 
   // @return true if crowdsale event has ended
   function hasEnded() public view returns (bool) {
-    return now &gt; endTime;
+    return now > endTime;
   }
 
 
@@ -400,10 +400,10 @@ contract CakCrowdsale is Ownable, Crowdsale {
 
     // allow managers to whitelist and confirm contributions by manager accounts
     // (managers can be set and altered by owner, multiple manager accounts are possible
-    mapping(address =&gt; bool) public isManagers;
+    mapping(address => bool) public isManagers;
 
     // true if address is allowed to invest
-    mapping(address =&gt; bool) public isWhitelisted;
+    mapping(address => bool) public isWhitelisted;
 
     // list of events
     event ChangedInvestorWhitelisting(address indexed investor, bool whitelisted);
@@ -446,7 +446,7 @@ contract CakCrowdsale is Ownable, Crowdsale {
     function batchMintPresaleTokens(address[] _toList, uint256[] _tokenList) external onlyOwner onlyCrowdsaleStage {
         require(_toList.length == _tokenList.length);
 
-        for (uint256 i; i &lt; _toList.length; i = i.add(1)) {
+        for (uint256 i; i < _toList.length; i = i.add(1)) {
             mintPresaleTokens(_toList[i], _tokenList[i]);
         }
     }
@@ -458,9 +458,9 @@ contract CakCrowdsale is Ownable, Crowdsale {
      */
     function mintPresaleTokens(address _beneficiary, uint256 _amount) public onlyOwner onlyCrowdsaleStage {
         require(_beneficiary != address(0));
-        require(_amount &gt; 0);
-        require(totalTokensMinted.add(_amount) &lt;= TOKEN_CAP);
-        require(now &lt; startTime);
+        require(_amount > 0);
+        require(totalTokensMinted.add(_amount) <= TOKEN_CAP);
+        require(now < startTime);
 
         token.mint(_beneficiary, _amount);
         totalTokensMinted = totalTokensMinted.add(_amount);
@@ -475,7 +475,7 @@ contract CakCrowdsale is Ownable, Crowdsale {
         require(_beneficiary != address(0));
         require(isWhitelisted[msg.sender]);
         require(validPurchase());
-        require(msg.value &gt;= rate);  //rate == minimum amount in WEI to purchase 1 CAK token
+        require(msg.value >= rate);  //rate == minimum amount in WEI to purchase 1 CAK token
 
         uint256 weiAmount = msg.value;
         weiRaised = weiRaised.add(weiAmount);
@@ -483,14 +483,14 @@ contract CakCrowdsale is Ownable, Crowdsale {
         // Calculate the amount of tokens
         uint256 tokens = calcCakAmount(weiAmount);
         CakCalcAmount(tokens, weiAmount, rate);
-        require(totalTokensMinted.add(tokens) &lt;= TOKEN_CAP);
+        require(totalTokensMinted.add(tokens) <= TOKEN_CAP);
 
         token.mint(_beneficiary, tokens);
         totalTokensMinted = totalTokensMinted.add(tokens);
         TokenPurchase(msg.sender, _beneficiary, weiAmount, tokens);
 
         uint256 refundAmount = refundLeftOverWei(weiAmount, tokens);
-        if (refundAmount &gt; 0) {
+        if (refundAmount > 0) {
             weiRaised = weiRaised.sub(refundAmount);
             msg.sender.transfer(refundAmount);
             RefundAmount(msg.sender, refundAmount);
@@ -527,7 +527,7 @@ contract CakCrowdsale is Ownable, Crowdsale {
     function batchWhiteListInvestors(address[] _investors) external onlyManager {
         address investor;
 
-        for (uint256 c; c &lt; _investors.length; c = c.add(1)) {
+        for (uint256 c; c < _investors.length; c = c.add(1)) {
             investor = _investors[c]; // gas optimization
             isWhitelisted[investor] = true;
             ChangedInvestorWhitelisting(investor, true);
@@ -570,7 +570,7 @@ contract CakCrowdsale is Ownable, Crowdsale {
     function refundLeftOverWei(uint256 weiReceived, uint256 tokenAmount) internal view returns (uint256) {
         uint256 refundAmount = 0;
         uint256 weiInvested = tokenAmount.mul(rate);
-        if (weiInvested &lt; weiReceived)
+        if (weiInvested < weiReceived)
             refundAmount = weiReceived.sub(weiInvested);
         return refundAmount;
     }
@@ -585,7 +585,7 @@ contract CakCrowdsale is Ownable, Crowdsale {
 
     /**
      * @dev forward Ether to wallet with proper amount subtracting refund, if refund exists
-     * @param refund unint256 the amount refunded to the investor, if &gt; 0 
+     * @param refund unint256 the amount refunded to the investor, if > 0 
      */
     function forwardEther(uint256 refund) internal {
         wallet.transfer(msg.value.sub(refund));

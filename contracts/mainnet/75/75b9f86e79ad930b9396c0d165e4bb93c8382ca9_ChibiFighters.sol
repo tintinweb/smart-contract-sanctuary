@@ -54,7 +54,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -64,7 +64,7 @@ library SafeMath {
     * @dev Substracts two numbers, returns 0 if it would go into minus range.
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        if (b &gt;= a) {
+        if (b >= a) {
             return 0;
         }
         return a - b;
@@ -75,7 +75,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -158,16 +158,16 @@ contract ChibiFighters is ERC721, ContractOwned, CustomEvents {
     uint256 private totalTokens;
 
     // Mapping from token ID to owner
-    mapping (uint256 =&gt; address) private tokenOwner;
+    mapping (uint256 => address) private tokenOwner;
 
     // Mapping from token ID to approved address
-    mapping (uint256 =&gt; address) private tokenApprovals;
+    mapping (uint256 => address) private tokenApprovals;
 
     // Mapping from owner to list of owned token IDs
-    mapping (address =&gt; uint256[]) private ownedTokens;
+    mapping (address => uint256[]) private ownedTokens;
 
     // Mapping from token ID to index of the owner tokens list
-    mapping(uint256 =&gt; uint256) private ownedTokensIndex;
+    mapping(uint256 => uint256) private ownedTokensIndex;
 
     // interfaces for other contracts, so updates are possible
     GeneInterface geneContract;
@@ -384,7 +384,7 @@ contract ChibiFighters is ERC721, ContractOwned, CustomEvents {
      * @param _tokenId ID of the chibi
      */
     function isNecromancer(uint _tokenId) public view returns (bool) {
-        for (uint i=10; i&lt;13; i++) {
+        for (uint i=10; i<13; i++) {
             if (chibies[_tokenId].dna[i] == 1000) {
                 return true;
             }
@@ -397,7 +397,7 @@ contract ChibiFighters is ERC721, ContractOwned, CustomEvents {
     */
     function buyChibiWithFcf(string _name, string _battleRoar, uint8 _region, uint _seed) public returns (bool success) {
         // must own at least 1 FCF, only entire FCF can be swapped for Chibis
-        require(fcfContract.balanceOf(msg.sender) &gt;= 1 * 10 ** 18);
+        require(fcfContract.balanceOf(msg.sender) >= 1 * 10 ** 18);
         require(fcfPaused == false);
         // prevent hack
         uint fcfBefore = fcfContract.balanceOf(address(this));
@@ -419,9 +419,9 @@ contract ChibiFighters is ERC721, ContractOwned, CustomEvents {
     */
     function setChibiForFusion(uint _tokenId, uint _price) public returns (bool success) {
         require(ownerOf(_tokenId) == msg.sender);
-        require(_price &gt;= priceFusionChibi);
-        require(chibies[_tokenId].adult &lt;= now);
-        require(chibies[_tokenId].exhausted &lt;= now);
+        require(_price >= priceFusionChibi);
+        require(chibies[_tokenId].adult <= now);
+        require(chibies[_tokenId].exhausted <= now);
         require(chibies[_tokenId].forFusion == false);
         require(battleContract.isDead(_tokenId) == false);
 
@@ -433,7 +433,7 @@ contract ChibiFighters is ERC721, ContractOwned, CustomEvents {
     }
 
     function cancelChibiForFusion(uint _tokenId) public returns (bool success) {
-        if (ownerOf(_tokenId) != msg.sender &amp;&amp; msg.sender != address(battleRemoveContractAddress)) {
+        if (ownerOf(_tokenId) != msg.sender && msg.sender != address(battleRemoveContractAddress)) {
             revert();
         }
         require(chibies[_tokenId].forFusion == true);
@@ -530,7 +530,7 @@ contract ChibiFighters is ERC721, ContractOwned, CustomEvents {
     function exhaustBattle(uint _tokenId) internal view returns (uint) {
         uint _exhaust = 0;
         
-        for (uint i=10; i&lt;13; i++) {
+        for (uint i=10; i<13; i++) {
             if (chibies[_tokenId].dna[i] == 1) {
                 _exhaust += (exhaustionTime * 3);
             }
@@ -550,9 +550,9 @@ contract ChibiFighters is ERC721, ContractOwned, CustomEvents {
         uint counter = chibies[_tokenId].dna[9];
         // set dna here, that way boni still apply but not infinite fusions possible
         // max value 9999
-        if (chibies[_tokenId].dna[9] &lt; 9999) chibies[_tokenId].dna[9]++;
+        if (chibies[_tokenId].dna[9] < 9999) chibies[_tokenId].dna[9]++;
         
-        for (uint i=10; i&lt;13; i++) {
+        for (uint i=10; i<13; i++) {
             if (chibies[_tokenId].dna[i] == 2) {
                 counter = counter.sub(1);
             }
@@ -612,10 +612,10 @@ contract ChibiFighters is ERC721, ContractOwned, CustomEvents {
         require(fusionPaused == false);
         require(ownerOf(_fatherId) == msg.sender);
         require(ownerOf(_motherId) != msg.sender);
-        require(chibies[_fatherId].adult &lt;= now);
-        require(chibies[_fatherId].exhausted &lt;= now);
-        require(chibies[_motherId].adult &lt;= now);
-        require(chibies[_motherId].exhausted &lt;= now);
+        require(chibies[_fatherId].adult <= now);
+        require(chibies[_fatherId].exhausted <= now);
+        require(chibies[_motherId].adult <= now);
+        require(chibies[_motherId].exhausted <= now);
         require(chibies[_motherId].forFusion == true);
         require(chibies[_motherId].fusionPrice == msg.value);
         // exhaust father and mother
@@ -624,7 +624,7 @@ contract ChibiFighters is ERC721, ContractOwned, CustomEvents {
         chibies[_fatherId].exhausted = now.add(exhaustFusion(_fatherId));
         
         uint _gen = 0;
-        if (chibies[_fatherId].gen &gt;= chibies[_motherId].gen) {
+        if (chibies[_fatherId].gen >= chibies[_motherId].gen) {
             _gen = chibies[_fatherId].gen.add(1);
         } else {
             _gen = chibies[_motherId].gen.add(1);
@@ -793,7 +793,7 @@ contract ChibiFighters is ERC721, ContractOwned, CustomEvents {
         // creates a gen0 Chibi, no father, mother, gen0
         uint16[13] memory dna;
         
-        if (_specialId &gt; 0) {
+        if (_specialId > 0) {
             dna  = geneContract.createGenes(address(this), _seed, _founder, uniqueCounter, _specialId);
         } else {
             dna = geneContract.createGenes(address(this), _seed, _founder, uniqueCounter, 0);
@@ -950,7 +950,7 @@ contract ChibiFighters is ERC721, ContractOwned, CustomEvents {
     * @param amount Amount in WEI to send
     **/
     function weiToOwner(address _address, uint amount) public contract_onlyOwner {
-        require(amount &lt;= address(this).balance);
+        require(amount <= address(this).balance);
         _address.transfer(amount);
     }
     
@@ -994,8 +994,8 @@ contract ChibiFighters is ERC721, ContractOwned, CustomEvents {
         string memory ab = new string(_ba.length + _bb.length);
         bytes memory bab = bytes(ab);
         uint k = 0;
-        for (uint i = 0; i &lt; _ba.length; i++) bab[k++] = _ba[i];
-        for (i = 0; i &lt; _bb.length; i++) bab[k++] = _bb[i];
+        for (uint i = 0; i < _ba.length; i++) bab[k++] = _ba[i];
+        for (i = 0; i < _bb.length; i++) bab[k++] = _bb[i];
         return string(bab);
         }
     }

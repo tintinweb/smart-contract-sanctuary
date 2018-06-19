@@ -72,8 +72,8 @@ contract KEO is ownerYHT,Erc20Token {
 	uint256 public moneyTotal = 60000000;//Total amount of Erc20Token
 	uint256 public moneyFreeze = 20000000; 
 	
-	mapping (address =&gt; uint256) balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+	mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) allowed;
 	
 	/**
      * Constructor function
@@ -99,7 +99,7 @@ contract KEO is ownerYHT,Erc20Token {
 	 */
     function transferFrom(address _from, address _to, uint256 _value)  public returns (bool success){
         
-        require(_value &lt;= allowed[_from][msg.sender]);   // Check allowed
+        require(_value <= allowed[_from][msg.sender]);   // Check allowed
         allowed[_from][msg.sender] -= _value;
         _transfer(_from, _to, _value);
         return true;
@@ -124,9 +124,9 @@ contract KEO is ownerYHT,Erc20Token {
 
 		require(_to != 0x0);
 
-		require(balances[_from] &gt;= _value);
+		require(balances[_from] >= _value);
 
-		require(balances[_to] + _value &gt; balances[_to]);
+		require(balances[_to] + _value > balances[_to]);
 
 		uint previousBalances = balances[_from] + balances[_to];
 
@@ -148,7 +148,7 @@ contract KEO is ownerYHT,Erc20Token {
 	 */
 	event EventUnLockFreeze(address indexed from,uint256 value);
     function unLockFreeze(uint256 _value) onlyOwner public {
-        require(_value &lt;= moneyFreeze);
+        require(_value <= moneyFreeze);
         
 		moneyFreeze -= _value;
 		

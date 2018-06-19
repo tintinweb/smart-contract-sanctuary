@@ -63,7 +63,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -73,7 +73,7 @@ library SafeMath {
     * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -82,7 +82,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -110,7 +110,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
     using SafeMath for uint256;
 
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
 
     uint256 totalSupply_;
 
@@ -128,7 +128,7 @@ contract BasicToken is ERC20Basic {
     */
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
 
         // SafeMath.sub will throw if there is not enough balance.
         balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -172,7 +172,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping (address => mapping (address => uint256)) internal allowed;
 
 
     /**
@@ -183,8 +183,8 @@ contract StandardToken is ERC20, BasicToken {
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -247,7 +247,7 @@ contract StandardToken is ERC20, BasicToken {
      */
     function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -308,7 +308,7 @@ contract TransferableToken is StandardToken,Ownable {
     event UnTransferable();
 
     bool public transferable = false;
-    mapping (address =&gt; bool) public whitelisted;
+    mapping (address => bool) public whitelisted;
 
     /**
         CONSTRUCTOR
@@ -470,7 +470,7 @@ contract KryllToken is TransferableToken {
     uint256 constant public   SECURITY         =   4320000 * DECIMAL_CASES; // Security Reserve
     uint256 constant public   PRESS_MARKETING  =   5040000 * DECIMAL_CASES; // Press release
     uint256 constant public   USER_ACQUISITION =  10080000 * DECIMAL_CASES; // User Acquisition 
-    uint256 constant public   BOUNTY           =    720000 * DECIMAL_CASES; // Bounty (ICO &amp; future)
+    uint256 constant public   BOUNTY           =    720000 * DECIMAL_CASES; // Bounty (ICO & future)
 
     address public sale_address     = 0x29e9535AF275a9010862fCDf55Fe45CD5D24C775;
     address public team_address     = 0xd32E4fb9e8191A97905Fb5Be9Aa27458cD0124C1;
@@ -496,12 +496,12 @@ contract KryllToken is TransferableToken {
     }
 
     /**
-    * @dev compute &amp; distribute the tokens
+    * @dev compute & distribute the tokens
     */
     function distribute() public onlyOwner {
         // Initialisation check
         require(!initialDistributionDone);
-        require(sale_address != 0x0 &amp;&amp; team_address != 0x0 &amp;&amp; advisors_address != 0x0 &amp;&amp; security_address != 0x0 &amp;&amp; press_address != 0x0 &amp;&amp; user_acq_address != 0 &amp;&amp; bounty_address != 0x0);      
+        require(sale_address != 0x0 && team_address != 0x0 && advisors_address != 0x0 && security_address != 0x0 && press_address != 0x0 && user_acq_address != 0 && bounty_address != 0x0);      
 
         // Compute total supply 
         totalSupply_ = SALE.add(TEAM).add(ADVISORS).add(SECURITY).add(PRESS_MARKETING).add(USER_ACQUISITION).add(BOUNTY);
@@ -617,7 +617,7 @@ contract KryllVesting is Ownable {
     * @notice Is vesting started flag.
     */
     function isStarted() public view returns (bool) {
-        return (startTime &gt; 0);
+        return (startTime > 0);
     }
 
 
@@ -637,7 +637,7 @@ contract KryllVesting is Ownable {
         require(beneficiary != address(0));
         
         uint256 unreleased = releasableAmount();
-        require(unreleased &gt; 0);
+        require(unreleased > 0);
 
         released = released.add(unreleased);
         token.transfer(beneficiary, unreleased);
@@ -658,9 +658,9 @@ contract KryllVesting is Ownable {
         uint256 currentBalance = token.balanceOf(this);
         uint256 totalBalance = currentBalance.add(released);
 
-        if (now &lt; cliff) {
+        if (now < cliff) {
             return 0;
-        } else if (now &gt;= startTime.add(VESTING_DURATION)) {
+        } else if (now >= startTime.add(VESTING_DURATION)) {
             return totalBalance;
         } else {
             return totalBalance.mul(now.sub(startTime)).div(VESTING_DURATION);

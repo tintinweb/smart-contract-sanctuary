@@ -3,7 +3,7 @@ pragma solidity ^0.4.19;
 
 
 /// @title Interface for contracts conforming to ERC-721: Non-Fungible Tokens
-/// @author Dieter Shirley &lt;<span class="__cf_email__" data-cfemail="a5c1c0d1c0e5c4ddcccac8dfc0cb8bc6ca">[email&#160;protected]</span>&gt; (https://github.com/dete)
+/// @author Dieter Shirley <<span class="__cf_email__" data-cfemail="a5c1c0d1c0e5c4ddcccac8dfc0cb8bc6ca">[email&#160;protected]</span>> (https://github.com/dete)
 contract CSCERC721 {
   // Required methods
   function balanceOf(address _owner) public view returns (uint256 balance) { 
@@ -53,7 +53,7 @@ contract ERC20 {
 }
 
 contract CSCResourceFactory {
-    mapping(uint16 =&gt; address) public resourceIdToAddress; 
+    mapping(uint16 => address) public resourceIdToAddress; 
 }
 
 
@@ -96,12 +96,12 @@ contract MEAHiddenLogic {
 
 /* Controls state and access rights for contract functions
  * @title Operational Control
- * @author Fazri Zubair &amp; Farhan Khwaja (Lucid Sight, Inc.)
+ * @author Fazri Zubair & Farhan Khwaja (Lucid Sight, Inc.)
  * Inspired and adapted from contract created by OpenZeppelin
  * Ref: https://github.com/OpenZeppelin/zeppelin-solidity/
  */
 contract OperationalControl {
-    // Facilitates access &amp; control for the game.
+    // Facilitates access & control for the game.
     // Roles:
     //  -The Managers (Primary/Secondary): Has universal control of all elements (No ability to withdraw)
     //  -The Banker: The Bank can withdraw funds and adjust fees / prices.
@@ -119,12 +119,12 @@ contract OperationalControl {
     address public bankManager;
 
     // Contracts that require access for gameplay
-    mapping(address =&gt; uint8) public otherManagers;
+    mapping(address => uint8) public otherManagers;
 
     // @dev Keeps track whether the contract is paused. When that is true, most actions are blocked
     bool public paused = false;
 
-    // @dev Keeps track whether the contract erroredOut. When that is true, most actions are blocked &amp; refund can be claimed
+    // @dev Keeps track whether the contract erroredOut. When that is true, most actions are blocked & refund can be claimed
     bool public error = false;
 
     /// @dev Operation modifiers for limiting access
@@ -292,28 +292,28 @@ contract MEAManager is OperationalControl {
     /*** Mappings ***/
 
      /// @dev assetID to ore type to qty collected
-    mapping(uint32 =&gt; mapping(uint8 =&gt; uint32)) public collectedOreAssetMapping;
+    mapping(uint32 => mapping(uint8 => uint32)) public collectedOreAssetMapping;
 
     /// @dev owner address to ore type to qty collected
-    mapping(address =&gt; mapping(uint8 =&gt; uint32)) public collectedOreBalanceMapping;
+    mapping(address => mapping(uint8 => uint32)) public collectedOreBalanceMapping;
 
     /// @dev owner address to ore type to qty collected
-    mapping(address =&gt; mapping(uint8 =&gt; uint32)) public distributedOreBalanceMapping;
+    mapping(address => mapping(uint8 => uint32)) public distributedOreBalanceMapping;
 
     /// @dev assetID to number of MEA trips it has completed
-    mapping(uint32 =&gt; uint32) public assetIdNumberOfTripsMapping;
+    mapping(uint32 => uint32) public assetIdNumberOfTripsMapping;
 
     /// @dev assetID to ore type to qty collected
-    mapping(uint8 =&gt; uint16) public starLightyearDistanceMapping;
+    mapping(uint8 => uint16) public starLightyearDistanceMapping;
 
     /// @dev assetID to last star visited
-    mapping(uint32 =&gt; uint8) public assetIdToStarVisitedMapping;
+    mapping(uint32 => uint8) public assetIdToStarVisitedMapping;
 
     /// @dev assetID to last star visited
-    mapping(uint16 =&gt; address) public resourceERC20Address;
+    mapping(uint16 => address) public resourceERC20Address;
 
     /// @dev assetID to Start Time of Current Trip
-    mapping(uint32 =&gt; uint32) public assetIdCurrentTripStartTimeMapping;
+    mapping(uint32 => uint32) public assetIdCurrentTripStartTimeMapping;
 
 
     /*** Variables ***/
@@ -350,7 +350,7 @@ contract MEAManager is OperationalControl {
     /// @dev Set HiddenLogic
     function setAllResourceERC20Addresses(address _master) public onlyManager {
         CSCResourceFactory factory = CSCResourceFactory(_master);
-        for(uint8 i = 0; i &lt; 12; i++) {
+        for(uint8 i = 0; i < 12; i++) {
             resourceERC20Address[i] = factory.resourceIdToAddress(i);
         }
     }
@@ -379,7 +379,7 @@ contract MEAManager is OperationalControl {
     /// @dev Withdraw Remaining Resource Tokens
     function reclaimResourceDeposits(address _withdrawAddress) public onlyManager {
         require(_withdrawAddress != address(0));
-        for(uint8 ii = 0; ii &lt; 12; ii++) {
+        for(uint8 ii = 0; ii < 12; ii++) {
             if(resourceERC20Address[ii] != 0) {
                 ERC20 resCont = ERC20(resourceERC20Address[ii]);
                 uint256 bal = resCont.balanceOf(this);
@@ -409,7 +409,7 @@ contract MEAManager is OperationalControl {
 
     // function getAllShipStats(uint32[] _shipIds) public view returns(uint32[] results) {
     //     //loop all results
-    //     for(uint i = 0; i &lt; _shipIds.length; i++) {
+    //     for(uint i = 0; i < _shipIds.length; i++) {
     //         results[]];
     //     }
 
@@ -483,10 +483,10 @@ contract MEAManager is OperationalControl {
 
     function withdrawCollectedResources() public {
 
-        for(uint8 ii = 0; ii &lt; 12; ii++) {
+        for(uint8 ii = 0; ii < 12; ii++) {
             require(resourceERC20Address[ii] != address(0));
             uint32 oreOutstanding = collectedOreBalanceMapping[msg.sender][ii] - distributedOreBalanceMapping[msg.sender][ii];
-            if(oreOutstanding &gt; 0) {
+            if(oreOutstanding > 0) {
                 ERC20 resCont = ERC20(resourceERC20Address[ii]);
                 distributedOreBalanceMapping[msg.sender][ii] += oreOutstanding;
                 resCont.transfer(msg.sender, oreOutstanding);
@@ -540,7 +540,7 @@ contract MEAManager is OperationalControl {
         require(shipOwner == msg.sender);
 
         //Check if ship is back at earth
-        require(now &gt; logic.getReturnTime(_assetId));
+        require(now > logic.getReturnTime(_assetId));
         
         //Claims ore and clears
         _claimOreAndClear(uint32(_assetId), starId);
@@ -554,61 +554,61 @@ contract MEAManager is OperationalControl {
         if(collectibleClass == REAPER_INTREPID) {
             oreMax = REAPER_INTREPID_EXTRACTION_BASE + (REAPER_INTREPID_EXTRACTION_BASE * tripCount * aimeIncreasePerTrip / 10000);
             tripSeconds = REAPER_INTREPID_FTL_SPEED * starTripDist / 1000; // 4LPH - 900 seconds per light year
-            if(oreMax &gt; REAPER_INTREPID_MAX_CARGO)
+            if(oreMax > REAPER_INTREPID_MAX_CARGO)
                 oreMax = REAPER_INTREPID_MAX_CARGO;
         }
         else if(collectibleClass == PHOENIX_CORSAIR) {
             oreMax = PHOENIX_CORSAIR_EXTRACTION_BASE + (PHOENIX_CORSAIR_EXTRACTION_BASE * tripCount * aimeIncreasePerTrip / 10000);
             tripSeconds = PHOENIX_CORSAIR_FTL_SPEED * starTripDist / 1000; // 2.5LPH - 1440 seconds per light year
-            if(oreMax &gt; PHOENIX_CORSAIR_MAX_CARGO)
+            if(oreMax > PHOENIX_CORSAIR_MAX_CARGO)
                 oreMax = PHOENIX_CORSAIR_MAX_CARGO;
         }
         else if(collectibleClass == VULCAN_PROMETHEUS) {
             oreMax = VULCAN_PROMETHEUS_EXTRACTION_BASE + (VULCAN_PROMETHEUS_EXTRACTION_BASE * tripCount * aimeIncreasePerTrip / 10000);
             tripSeconds = VULCAN_PROMETHEUS_FTL_SPEED * starTripDist / 1000; // 1.75LPH - 2057 seconds per light year
-            if(oreMax &gt; VULCAN_PROMETHEUS_MAX_CARGO)
+            if(oreMax > VULCAN_PROMETHEUS_MAX_CARGO)
                 oreMax = VULCAN_PROMETHEUS_MAX_CARGO;
         }
         else if(collectibleClass == SIGMA) {
             oreMax = SIGMA_EXTRACTION_BASE + (SIGMA_EXTRACTION_BASE * tripCount * aimeIncreasePerTrip / 10000);
             tripSeconds = SIGMA_FTL_SPEED * starTripDist / 1000; // 0.85LPH - 4235 seconds per light year
-            if(oreMax &gt; SIGMA_MAX_CARGO)
+            if(oreMax > SIGMA_MAX_CARGO)
                 oreMax = SIGMA_MAX_CARGO;
         }
         else if(collectibleClass == HAYATO) { //Hayato
             oreMax = HAYATO_EXTRACTION_BASE + (HAYATO_EXTRACTION_BASE * tripCount * aimeIncreasePerTrip / 10000);
             tripSeconds = HAYATO_FTL_SPEED * starTripDist / 1000; // 10LPH - 360 seconds per light year
-            if(oreMax &gt; HAYATO_MAX_CARGO)
+            if(oreMax > HAYATO_MAX_CARGO)
                 oreMax = HAYATO_MAX_CARGO;
         }
         else if(collectibleClass == CPGPEREGRINE) { //CPG Peregrine
             oreMax = CPGPEREGRINE_EXTRACTION_BASE + (CPGPEREGRINE_EXTRACTION_BASE * tripCount * aimeIncreasePerTrip / 10000);
             tripSeconds = CPGPEREGRINE_FTL_SPEED * starTripDist / 1000; // 5LPH -720 seconds per light year
-            if(oreMax &gt; CPGPEREGRINE_MAX_CARGO)
+            if(oreMax > CPGPEREGRINE_MAX_CARGO)
                 oreMax = CPGPEREGRINE_MAX_CARGO;
         }
         else if(collectibleClass == TACTICALCRUISER) { //TACTICA CRUISER Ships
             oreMax = TACTICALCRUISER_EXTRACTION_BASE + (TACTICALCRUISER_EXTRACTION_BASE * tripCount * aimeIncreasePerTrip / 10000);
             tripSeconds = TACTICALCRUISER_FTL_SPEED * starTripDist / 1000; 
-            if(oreMax &gt; TACTICALCRUISER_MAX_CARGO)
+            if(oreMax > TACTICALCRUISER_MAX_CARGO)
                 oreMax = TACTICALCRUISER_MAX_CARGO;
         }
         else if(collectibleClass == VULCAN_POD) { //TACTICA CRUISER Ships
             oreMax = VULCAN_POD_EXTRACTION_BASE + (VULCAN_POD_EXTRACTION_BASE * tripCount * aimeIncreasePerTrip / 10000);
             tripSeconds = VULCAN_POD_FTL_SPEED * starTripDist / 1000; 
-            if(oreMax &gt; VULCAN_POD_MAX_CARGO)
+            if(oreMax > VULCAN_POD_MAX_CARGO)
                 oreMax = VULCAN_POD_MAX_CARGO;
         }
-        else if(collectibleClass &gt;= DEVCLASS) { //Dev Ships
+        else if(collectibleClass >= DEVCLASS) { //Dev Ships
             oreMax = DEVCLASS_EXTRACTION_BASE + (DEVCLASS_EXTRACTION_BASE * tripCount * aimeIncreasePerTrip / 10000);
             tripSeconds = DEVCLASS_FTL_SPEED * starTripDist / 1000;
-            if(oreMax &gt; DEVCLASS_MAX_CARGO)
+            if(oreMax > DEVCLASS_MAX_CARGO)
                 oreMax = DEVCLASS_MAX_CARGO;
         } else {
-            if(collectibleClass &gt;= OTHERCRUISER) { //Support Other Promo Ships
+            if(collectibleClass >= OTHERCRUISER) { //Support Other Promo Ships
                 oreMax = OTHERCRUISER_EXTRACTION_BASE + (OTHERCRUISER_EXTRACTION_BASE * tripCount * aimeIncreasePerTrip / 10000);
                 tripSeconds = OTHERCRUISER_FTL_SPEED * starTripDist / 1000; 
-                if(oreMax &gt; OTHERCRUISER_MAX_CARGO)
+                if(oreMax > OTHERCRUISER_MAX_CARGO)
                     oreMax = OTHERCRUISER_MAX_CARGO;
             }
         }
@@ -620,7 +620,7 @@ contract MEAManager is OperationalControl {
         uint256 returnTime = logic.startMEAMission(_assetId, oreMax, starId, tripSeconds);
 
         //Confirm trip
-        if(returnTime &gt; 0) {
+        if(returnTime > 0) {
             assetIdNumberOfTripsMapping[uint32(_assetId)] += 1;
             assetIdToStarVisitedMapping[uint32(_assetId)] = starId;
             assetIdCurrentTripStartTimeMapping[uint32(_assetId)] = uint32(now);
@@ -643,16 +643,16 @@ contract MEAManager is OperationalControl {
         uint256[12] memory _ores = logic.getAssetCollectedOreBallancesArray(_assetId);
         bool hasItems = false;
 
-        for(uint8 i = 0; i &lt; 12; i++) {
-            if(_ores[i] &gt; 0) {
+        for(uint8 i = 0; i < 12; i++) {
+            if(_ores[i] > 0) {
                 collectedOreBalanceMapping[msg.sender][i] += uint32(_ores[i]);
                 hasItems = true;
             }
         }
 
         //Doesn&#39;t Let you Travel to empty stars but lets you collect
-        if(hasItems == false &amp;&amp; _starId &gt; 0) {
-            require(logic.getStarTotalSupply(_starId) &gt; 0);
+        if(hasItems == false && _starId > 0) {
+            require(logic.getStarTotalSupply(_starId) > 0);
         }
 
         logic.emptyShipCargo(_assetId);
@@ -664,7 +664,7 @@ contract MEAManager is OperationalControl {
         bool nullbool;
         uint256 collectibleType;
 
-        if(_assetId &lt;= 3000) {
+        if(_assetId <= 3000) {
             CSCERC721 shipData = CSCERC721(cscERC721Address);
             (nulldata, nulldata, collectibleType, collectibleClass, nullbool, owner) = shipData.getCollectibleDetails(_assetId);
         } else {

@@ -9,7 +9,7 @@ contract Store4Less {
   }
   
   // stored[iteration][index] = Pair
-  mapping (uint =&gt; mapping (uint =&gt; Pair)) stored;
+  mapping (uint => mapping (uint => Pair)) stored;
 
   function store(uint32 data) external {
     recursive_store(data, 1);

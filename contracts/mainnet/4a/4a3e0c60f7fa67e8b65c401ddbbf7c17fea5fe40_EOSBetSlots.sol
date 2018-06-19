@@ -508,12 +508,12 @@ contract usingOraclize {
             iaddr *= 256;
             b1 = uint160(tmp[i]);
             b2 = uint160(tmp[i+1]);
-            if ((b1 >= 97)&amp;&amp;(b1 <= 102)) b1 -= 87;
-            else if ((b1 >= 65)&amp;&amp;(b1 <= 70)) b1 -= 55;
-            else if ((b1 >= 48)&amp;&amp;(b1 <= 57)) b1 -= 48;
-            if ((b2 >= 97)&amp;&amp;(b2 <= 102)) b2 -= 87;
-            else if ((b2 >= 65)&amp;&amp;(b2 <= 70)) b2 -= 55;
-            else if ((b2 >= 48)&amp;&amp;(b2 <= 57)) b2 -= 48;
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 65)&&(b1 <= 70)) b1 -= 55;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 65)&&(b2 <= 70)) b2 -= 55;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
             iaddr += (b1*16+b2);
         }
         return address(iaddr);
@@ -552,7 +552,7 @@ contract usingOraclize {
                 if (h[i] == n[0])
                 {
                     subindex = 1;
-                    while(subindex < n.length &amp;&amp; (i + subindex) < h.length &amp;&amp; h[i + subindex] == n[subindex])
+                    while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
                     {
                         subindex++;
                     }
@@ -604,7 +604,7 @@ contract usingOraclize {
         uint mint = 0;
         bool decimals = false;
         for (uint i=0; i<bresult.length; i++){
-            if ((bresult[i] >= 48)&amp;&amp;(bresult[i] <= 57)){
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
                 if (decimals){
                    if (_b == 0) break;
                     else _b--;
@@ -729,7 +729,7 @@ contract usingOraclize {
     }
 
     function oraclize_newRandomDSQuery(uint _delay, uint _nbytes, uint _customGasLimit) internal returns (bytes32){
-        require((_nbytes > 0) &amp;&amp; (_nbytes <= 32));
+        require((_nbytes > 0) && (_nbytes <= 32));
         // Convert from seconds to ledger timer ticks
         _delay *= 10; 
         bytes memory nbytes = new bytes(1);
@@ -845,7 +845,7 @@ contract usingOraclize {
 
     modifier oraclize_randomDS_proofVerify(bytes32 _queryId, string _result, bytes _proof) {
         // Step 1: the prefix has to match &#39;LP\x01&#39; (Ledger Proof version 1)
-        require((_proof[0] == &quot;L&quot;) &amp;&amp; (_proof[1] == &quot;P&quot;) &amp;&amp; (_proof[2] == 1));
+        require((_proof[0] == &quot;L&quot;) && (_proof[1] == &quot;P&quot;) && (_proof[2] == 1));
 
         bool proofVerified = oraclize_randomDS_proofVerify__main(_proof, _queryId, bytes(_result), oraclize_getNetworkName());
         require(proofVerified);
@@ -1004,7 +1004,7 @@ contract usingOraclize {
         if (v < 27)
           v += 27;
 
-        if (v != 27 &amp;&amp; v != 28)
+        if (v != 27 && v != 28)
             return (false, 0);
 
         return safer_ecrecover(hash, v, r, s);
@@ -1174,7 +1174,7 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 		uint256 currentTotalBankroll = SafeMath.sub(getBankroll(), msg.value);
 		uint256 maxInvestmentsAllowed = MAXIMUMINVESTMENTSALLOWED;
 
-		require(currentTotalBankroll < maxInvestmentsAllowed &amp;&amp; msg.value != 0);
+		require(currentTotalBankroll < maxInvestmentsAllowed && msg.value != 0);
 
 		uint256 currentSupplyOfTokens = totalSupply;
 		uint256 contributedEther;
@@ -1242,8 +1242,8 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 		uint256 tokenBalance = balances[msg.sender];
 		// verify that the contributor has enough tokens to cash out this many, and has waited the required time.
 		require(_amountTokens <= tokenBalance 
-			&amp;&amp; contributionTime[msg.sender] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
-			&amp;&amp; _amountTokens > 0);
+			&& contributionTime[msg.sender] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
+			&& _amountTokens > 0);
 
 		// save in memory for cheap access.
 		// again, represents the total balance of the contract before the function was called.
@@ -1308,7 +1308,7 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 
 	function changeWaitTimeUntilWithdrawOrTransfer(uint256 waitTime) public {
 		// waitTime MUST be less than or equal to 10 weeks
-		require (msg.sender == OWNER &amp;&amp; waitTime <= 6048000);
+		require (msg.sender == OWNER && waitTime <= 6048000);
 
 		WAITTIMEUNTILWITHDRAWORTRANSFER = waitTime;
 	}
@@ -1360,9 +1360,9 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 	// and don&#39;t allow transfers to this contract addr, it&#39;ll just kill tokens
 	function transfer(address _to, uint256 _value) public returns (bool success){
 		require(balances[msg.sender] >= _value 
-			&amp;&amp; contributionTime[msg.sender] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
-			&amp;&amp; _to != address(this)
-			&amp;&amp; _to != address(0));
+			&& contributionTime[msg.sender] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
+			&& _to != address(this)
+			&& _to != address(0));
 
 		// safely subtract
 		balances[msg.sender] = SafeMath.sub(balances[msg.sender], _value);
@@ -1377,10 +1377,10 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 	// and don&#39;t allow transfers to the contract addr, it&#39;ll just kill tokens
 	function transferFrom(address _from, address _to, uint _value) public returns(bool){
 		require(allowed[_from][msg.sender] >= _value 
-			&amp;&amp; balances[_from] >= _value 
-			&amp;&amp; contributionTime[_from] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
-			&amp;&amp; _to != address(this)
-			&amp;&amp; _to != address(0));
+			&& balances[_from] >= _value 
+			&& contributionTime[_from] + WAITTIMEUNTILWITHDRAWORTRANSFER <= block.timestamp
+			&& _to != address(this)
+			&& _to != address(0));
 
 		// safely add to _to and subtract from _from, and subtract from allowed balances.
 		balances[_to] = SafeMath.add(balances[_to], _value);
@@ -1560,7 +1560,7 @@ contract EOSBetSlots is usingOraclize, EOSBetGameInterface {
 	// WARNING!!!!! Can only set this function once!
 	function setBankrollerContractOnce(address bankrollAddress) public {
 		// require that BANKROLLER address == 0x0 (address not set yet), and coming from owner.
-		require(msg.sender == OWNER &amp;&amp; BANKROLLER == address(0));
+		require(msg.sender == OWNER && BANKROLLER == address(0));
 
 		// check here to make sure that the bankroll contract is legitimate
 		// just make sure that calling the bankroll contract getBankroll() returns non-zero
@@ -1611,19 +1611,19 @@ contract EOSBetSlots is usingOraclize, EOSBetGameInterface {
 	}
 
 	function setMinBetPerSpin(uint256 minBet) public {
-		require(msg.sender == OWNER &amp;&amp; minBet > 1000);
+		require(msg.sender == OWNER && minBet > 1000);
 
 		MINBET_perSPIN = minBet;
 	}
 
 	function setMinBetPerTx(uint256 minBet) public {
-		require(msg.sender == OWNER &amp;&amp; minBet > 1000);
+		require(msg.sender == OWNER && minBet > 1000);
 
 		MINBET_perTX = minBet;
 	}
 
 	function setMaxwin(uint16 newMaxWinInThousandthPercents) public {
-		require(msg.sender == OWNER &amp;&amp; newMaxWinInThousandthPercents <= 333); // cannot set max win greater than 1/3 of the bankroll (a jackpot is very rare)
+		require(msg.sender == OWNER && newMaxWinInThousandthPercents <= 333); // cannot set max win greater than 1/3 of the bankroll (a jackpot is very rare)
 
 		MAXWIN_inTHOUSANDTHPERCENTS = newMaxWinInThousandthPercents;
 	}
@@ -1641,11 +1641,11 @@ contract EOSBetSlots is usingOraclize, EOSBetGameInterface {
 
 		//require that the query time is too slow, bet has not been paid out, and either contract owner or player is calling this function.
 		require(SafeMath.sub(block.timestamp, data.start) >= ORACLIZEQUERYMAXTIME
-			&amp;&amp; (msg.sender == OWNER || msg.sender == data.player)
-			&amp;&amp; (!data.paidOut)
-			&amp;&amp; data.etherReceived <= LIABILITIES
-			&amp;&amp; data.etherReceived > 0
-			&amp;&amp; REFUNDSACTIVE);
+			&& (msg.sender == OWNER || msg.sender == data.player)
+			&& (!data.paidOut)
+			&& data.etherReceived <= LIABILITIES
+			&& data.etherReceived > 0
+			&& REFUNDSACTIVE);
 
 		// set contract data
 		slotsData[oraclizeQueryId].paidOut = true;
@@ -1667,11 +1667,11 @@ contract EOSBetSlots is usingOraclize, EOSBetGameInterface {
 		// require that the game is unpaused, and that the credits being purchased are greater than 0 and less than the allowed amount, default: 100 spins 
 		// verify that the bet is less than or equal to the bet limit, so we don&#39;t go bankrupt, and that the etherreceived is greater than the minbet.
 		require(!GAMEPAUSED
-			&amp;&amp; msg.value >= MINBET_perTX
-			&amp;&amp; betPerCredit >= MINBET_perSPIN
-			&amp;&amp; credits > 0 
-			&amp;&amp; credits <= 224
-			&amp;&amp; SafeMath.mul(betPerCredit, 5000) <= getMaxWin()); // 5000 is the jackpot payout (max win on a roll)
+			&& msg.value >= MINBET_perTX
+			&& betPerCredit >= MINBET_perSPIN
+			&& credits > 0 
+			&& credits <= 224
+			&& SafeMath.mul(betPerCredit, 5000) <= getMaxWin()); // 5000 is the jackpot payout (max win on a roll)
 
 		// equation for gas to oraclize is:
 		// gas = (some fixed gas amt) + 3270 * credits
@@ -1704,9 +1704,9 @@ contract EOSBetSlots is usingOraclize, EOSBetGameInterface {
 		SlotsGameData memory data = slotsData[_queryId];
 
 		require(msg.sender == oraclize_cbAddress() 
-			&amp;&amp; !data.paidOut 
-			&amp;&amp; data.player != address(0) 
-			&amp;&amp; LIABILITIES >= data.etherReceived);
+			&& !data.paidOut 
+			&& data.player != address(0) 
+			&& LIABILITIES >= data.etherReceived);
 
 		// if the proof has failed, immediately refund the player the original bet.
 		if (oraclize_randomDS_proofVerify__returnCode(_queryId, _result, _proof) != 0){
@@ -1866,31 +1866,31 @@ contract EOSBetSlots is usingOraclize, EOSBetGameInterface {
 	
 	function getDial1Type(uint8 dial1Location) internal pure returns(uint8) {
 	    if (dial1Location == 0) 							        { return 0; }
-		else if (dial1Location >= 1 &amp;&amp; dial1Location <= 7) 			{ return 1; }
+		else if (dial1Location >= 1 && dial1Location <= 7) 			{ return 1; }
 		else if (dial1Location == 8) 						        { return 2; }
-		else if (dial1Location >= 9 &amp;&amp; dial1Location <= 13) 		{ return 3; }
-		else if (dial1Location >= 14 &amp;&amp; dial1Location <= 22) 		{ return 4; }
-		else if (dial1Location >= 23 &amp;&amp; dial1Location <= 31) 		{ return 5; }
+		else if (dial1Location >= 9 && dial1Location <= 13) 		{ return 3; }
+		else if (dial1Location >= 14 && dial1Location <= 22) 		{ return 4; }
+		else if (dial1Location >= 23 && dial1Location <= 31) 		{ return 5; }
 		else 										                { return 6; }
 	}
 	
 	function getDial2Type(uint8 dial2Location) internal pure returns(uint8) {
-	    if (dial2Location >= 0 &amp;&amp; dial2Location <= 2) 				{ return 0; }
+	    if (dial2Location >= 0 && dial2Location <= 2) 				{ return 0; }
 		else if (dial2Location == 3) 						        { return 1; }
-		else if (dial2Location >= 4 &amp;&amp; dial2Location <= 10)			{ return 2; }
-		else if (dial2Location >= 11 &amp;&amp; dial2Location <= 17) 		{ return 3; }
-		else if (dial2Location >= 18 &amp;&amp; dial2Location <= 23) 		{ return 4; }
-		else if (dial2Location >= 24 &amp;&amp; dial2Location <= 31) 		{ return 5; }
+		else if (dial2Location >= 4 && dial2Location <= 10)			{ return 2; }
+		else if (dial2Location >= 11 && dial2Location <= 17) 		{ return 3; }
+		else if (dial2Location >= 18 && dial2Location <= 23) 		{ return 4; }
+		else if (dial2Location >= 24 && dial2Location <= 31) 		{ return 5; }
 		else 										                { return 6; }
 	}
 	
 	function getDial3Type(uint8 dial3Location) internal pure returns(uint8) {
 	    if (dial3Location == 0) 							        { return 0; }
-		else if (dial3Location >= 1 &amp;&amp; dial3Location <= 6)			{ return 1; }
-		else if (dial3Location >= 7 &amp;&amp; dial3Location <= 12) 		{ return 2; }
-		else if (dial3Location >= 13 &amp;&amp; dial3Location <= 18)		{ return 3; }
-		else if (dial3Location >= 19 &amp;&amp; dial3Location <= 25) 		{ return 4; }
-		else if (dial3Location >= 26 &amp;&amp; dial3Location <= 31) 		{ return 5; }
+		else if (dial3Location >= 1 && dial3Location <= 6)			{ return 1; }
+		else if (dial3Location >= 7 && dial3Location <= 12) 		{ return 2; }
+		else if (dial3Location >= 13 && dial3Location <= 18)		{ return 3; }
+		else if (dial3Location >= 19 && dial3Location <= 25) 		{ return 4; }
+		else if (dial3Location >= 26 && dial3Location <= 31) 		{ return 5; }
 		else 										                { return 6; }
 	}
 	
@@ -1908,7 +1908,7 @@ contract EOSBetSlots is usingOraclize, EOSBetGameInterface {
 	// 3x any Ether 					//	70    //
 	// 3x Gold Planet 					//	50    //
 	// 3x Silver Planet					//	25    //
-	// Any Gold P &amp; Silver P &amp; Bronze P //	15    //
+	// Any Gold P & Silver P & Bronze P //	15    //
 	// 3x Bronze Planet					//	10    //
 	// Any 3 planet type				//	3     //
 	// Any 3 gold						//	3     //
@@ -1921,105 +1921,105 @@ contract EOSBetSlots is usingOraclize, EOSBetGameInterface {
 	function determinePayout(uint8 dial1, uint8 dial2, uint8 dial3) internal pure returns(uint256) {
 		if (dial1 == 6 || dial2 == 6 || dial3 == 6){
 			// all blank
-			if (dial1 == 6 &amp;&amp; dial2 == 6 &amp;&amp; dial3 == 6)
+			if (dial1 == 6 && dial2 == 6 && dial3 == 6)
 				return 1;
 		}
 		else if (dial1 == 5){
 			// bronze planet -> silver planet -> gold planet
-			if (dial2 == 4 &amp;&amp; dial3 == 3) 
+			if (dial2 == 4 && dial3 == 3) 
 				return 90;
 
 			// one gold planet, one silver planet, one bronze planet, any order!
 			// note: other order covered above, return 90
-			else if (dial2 == 3 &amp;&amp; dial3 == 4)
+			else if (dial2 == 3 && dial3 == 4)
 				return 15;
 
 			// all bronze planet 
-			else if (dial2 == 5 &amp;&amp; dial3 == 5) 
+			else if (dial2 == 5 && dial3 == 5) 
 				return 10;
 
 			// any three planet type 
-			else if (dial2 >= 3 &amp;&amp; dial2 <= 5 &amp;&amp; dial3 >= 3 &amp;&amp; dial3 <= 5)
+			else if (dial2 >= 3 && dial2 <= 5 && dial3 >= 3 && dial3 <= 5)
 				return 3;
 
 			// any three bronze 
-			else if ((dial2 == 2 || dial2 == 5) &amp;&amp; (dial3 == 2 || dial3 == 5))
+			else if ((dial2 == 2 || dial2 == 5) && (dial3 == 2 || dial3 == 5))
 				return 2;
 		}
 		else if (dial1 == 4){
 			// all silver planet
-			if (dial2 == 4 &amp;&amp; dial3 == 4)
+			if (dial2 == 4 && dial3 == 4)
 				return 25;
 
 			// one gold planet, one silver planet, one bronze planet, any order!
-			else if ((dial2 == 3 &amp;&amp; dial3 == 5) || (dial2 == 5 &amp;&amp; dial3 == 3))
+			else if ((dial2 == 3 && dial3 == 5) || (dial2 == 5 && dial3 == 3))
 				return 15;
 
 			// any three planet type 
-			else if (dial2 >= 3 &amp;&amp; dial2 <= 5 &amp;&amp; dial3 >= 3 &amp;&amp; dial3 <= 5)
+			else if (dial2 >= 3 && dial2 <= 5 && dial3 >= 3 && dial3 <= 5)
 				return 3;
 
 			// any three silver
-			else if ((dial2 == 1 || dial2 == 4) &amp;&amp; (dial3 == 1 || dial3 == 4))
+			else if ((dial2 == 1 || dial2 == 4) && (dial3 == 1 || dial3 == 4))
 				return 2;
 		}
 		else if (dial1 == 3){
 			// all gold planet
-			if (dial2 == 3 &amp;&amp; dial3 == 3)
+			if (dial2 == 3 && dial3 == 3)
 				return 50;
 
 			// one gold planet, one silver planet, one bronze planet, any order!
-			else if ((dial2 == 4 &amp;&amp; dial3 == 5) || (dial2 == 5 &amp;&amp; dial3 == 4))
+			else if ((dial2 == 4 && dial3 == 5) || (dial2 == 5 && dial3 == 4))
 				return 15;
 
 			// any three planet type 
-			else if (dial2 >= 3 &amp;&amp; dial2 <= 5 &amp;&amp; dial3 >= 3 &amp;&amp; dial3 <= 5)
+			else if (dial2 >= 3 && dial2 <= 5 && dial3 >= 3 && dial3 <= 5)
 				return 3;
 
 			// any three gold
-			else if ((dial2 == 0 || dial2 == 3) &amp;&amp; (dial3 == 0 || dial3 == 3))
+			else if ((dial2 == 0 || dial2 == 3) && (dial3 == 0 || dial3 == 3))
 				return 3;
 		}
 		else if (dial1 == 2){
-			if (dial2 == 1 &amp;&amp; dial3 == 0)
+			if (dial2 == 1 && dial3 == 0)
 				return 5000; // jackpot!!!!
 
 			// all bronze ether
-			else if (dial2 == 2 &amp;&amp; dial3 == 2)
+			else if (dial2 == 2 && dial3 == 2)
 				return 250;
 
 			// all some type of ether
-			else if (dial2 >= 0 &amp;&amp; dial2 <= 2 &amp;&amp; dial3 >= 0 &amp;&amp; dial3 <= 2)
+			else if (dial2 >= 0 && dial2 <= 2 && dial3 >= 0 && dial3 <= 2)
 				return 70;
 
 			// any three bronze
-			else if ((dial2 == 2 || dial2 == 5) &amp;&amp; (dial3 == 2 || dial3 == 5))
+			else if ((dial2 == 2 || dial2 == 5) && (dial3 == 2 || dial3 == 5))
 				return 2;
 		}
 		else if (dial1 == 1){
 			// all silver ether 
-			if (dial2 == 1 &amp;&amp; dial3 == 1)
+			if (dial2 == 1 && dial3 == 1)
 				return 250;
 
 			// all some type of ether
-			else if (dial2 >= 0 &amp;&amp; dial2 <= 2 &amp;&amp; dial3 >= 0 &amp;&amp; dial3 <= 2)
+			else if (dial2 >= 0 && dial2 <= 2 && dial3 >= 0 && dial3 <= 2)
 				return 70;
 
 			// any three silver
-			else if ((dial2 == 1 || dial2 == 4) &amp;&amp; (dial3 == 1 || dial3 == 4))
+			else if ((dial2 == 1 || dial2 == 4) && (dial3 == 1 || dial3 == 4))
 				return 3;
 		}
 		else if (dial1 == 0){
 			// all gold ether
-			if (dial2 == 0 &amp;&amp; dial3 == 0)
+			if (dial2 == 0 && dial3 == 0)
 				return 1777;
 
 			// all some type of ether
-			else if (dial2 >= 0 &amp;&amp; dial2 <= 2 &amp;&amp; dial3 >= 0 &amp;&amp; dial3 <= 2)
+			else if (dial2 >= 0 && dial2 <= 2 && dial3 >= 0 && dial3 <= 2)
 				return 70;
 
 			// any three gold
-			else if ((dial2 == 0 || dial2 == 3) &amp;&amp; (dial3 == 0 || dial3 == 3))
+			else if ((dial2 == 0 || dial2 == 3) && (dial3 == 0 || dial3 == 3))
 				return 3;
 		}
 		return 0;

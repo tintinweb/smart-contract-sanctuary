@@ -29,11 +29,11 @@ contract Virtonomi is ERC20Interface {
 
     address public owner;
 
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
 
-    mapping(address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping(address => mapping (address => uint256)) allowed;
 
-    mapping (address =&gt; bool) public frozenAccount;
+    mapping (address => bool) public frozenAccount;
 
     modifier onlyOwner {
         require (msg.sender == owner);
@@ -57,7 +57,7 @@ contract Virtonomi is ERC20Interface {
     }
 
     function transfer(address _to, uint256 _amount) returns (bool success) {
-        if (balances[msg.sender] &gt;= _amount &amp;&amp; _amount &gt; 0 &amp;&amp; balances[_to] + _amount &gt; balances[_to]) {
+        if (balances[msg.sender] >= _amount && _amount > 0 && balances[_to] + _amount > balances[_to]) {
             balances[msg.sender] -= _amount;
             balances[_to] += _amount;
             Transfer(msg.sender, _to, _amount);
@@ -69,7 +69,7 @@ contract Virtonomi is ERC20Interface {
     }
 
     function transferFrom(address _from, address _to, uint256 _amount) returns (bool success) {
-        if (balances[_from] &gt;= _amount &amp;&amp; allowed[_from][msg.sender] &gt;= _amount &amp;&amp; _amount &gt; 0 &amp;&amp; balances[_to] + _amount &gt; balances[_to]) {
+        if (balances[_from] >= _amount && allowed[_from][msg.sender] >= _amount && _amount > 0 && balances[_to] + _amount > balances[_to]) {
             balances[_from] -= _amount;
             allowed[_from][msg.sender] -= _amount;
             balances[_to] += _amount;

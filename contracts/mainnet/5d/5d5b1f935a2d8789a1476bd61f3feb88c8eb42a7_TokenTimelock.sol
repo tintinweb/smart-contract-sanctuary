@@ -80,7 +80,7 @@ contract TokenTimelock is Ownable, Clockmaking {
   uint64 public releaseTime; // timestamp when token claim is enabled
 
   constructor(ERC20Basic _token, uint64 _releaseTime) public {
-    require(_releaseTime &gt; now);
+    require(_releaseTime > now);
     token = _token;
     owner = msg.sender;
     clockmaker = msg.sender;
@@ -91,10 +91,10 @@ contract TokenTimelock is Ownable, Clockmaking {
    * @notice Transfers tokens held by timelock to owner.
    */
   function claim() public onlyOwner {
-    require(now &gt;= releaseTime, &quot;now &gt;= releaseTime&quot;);
+    require(now >= releaseTime, &quot;now >= releaseTime&quot;);
 
     uint256 amount = token.balanceOf(this);
-    require(amount &gt; 0, &quot;amount &gt; 0&quot;);
+    require(amount > 0, &quot;amount > 0&quot;);
 
     token.safeTransfer(owner, amount);
   }

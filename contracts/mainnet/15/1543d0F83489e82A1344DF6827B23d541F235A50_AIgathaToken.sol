@@ -13,20 +13,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -86,8 +86,8 @@ contract TokenERC20 {
   bool public transferable;
 
   // This creates an array with all balances
-  mapping(address =&gt; uint256) public balances;
-  mapping(address =&gt; mapping(address =&gt; uint256)) public allowed;
+  mapping(address => uint256) public balances;
+  mapping(address => mapping(address => uint256)) public allowed;
 
   // This notifies clients about the amount burnt
   event Burn(address indexed from, uint256 value);
@@ -245,7 +245,7 @@ contract AIgathaToken is TokenERC20, Ownable {
    * @param _wallet The address where funds are collected
    * @param _saleCap The token cap in public round
    * @param _totalSupply The total amount of token
-   * @param _threshold The percentage of selling amount need to achieve at least e.g. 40% -&gt; _threshold = 40
+   * @param _threshold The percentage of selling amount need to achieve at least e.g. 40% -> _threshold = 40
    * @param _start The start date in seconds
    * @param _end The end date in seconds
    */
@@ -266,14 +266,14 @@ contract AIgathaToken is TokenERC20, Ownable {
   }
 
   function saleActive() public view returns (bool) {
-    return (now &gt;= startDate &amp;&amp;
-            now &lt;= endDate &amp;&amp; supply() &gt; 0);
+    return (now >= startDate &&
+            now <= endDate && supply() > 0);
   }
 
   function extendSaleTime() onlyOwner public {
     require(!saleActive());
     require(!extended);
-    require((saleCap-supply()) &lt; threshold); //check
+    require((saleCap-supply()) < threshold); //check
     extended = true;
     endDate += 60 days;
   }
@@ -284,10 +284,10 @@ contract AIgathaToken is TokenERC20, Ownable {
    * @return The corresponding rate
    */
   function getRateAt(uint256 at) public view returns (uint256) {
-    if (at &lt; startDate) {
+    if (at < startDate) {
       return 0;
     }
-    else if (at &lt; (startDate + 15 days)) { //check
+    else if (at < (startDate + 15 days)) { //check
       return 10500;
     }
     else {
@@ -308,7 +308,7 @@ contract AIgathaToken is TokenERC20, Ownable {
    * @param amount The amount of token bought
    */
   function push(address buyer, uint256 amount) onlyOwner public {
-    require(balances[wallet] &gt;= amount);
+    require(balances[wallet] >= amount);
     balances[wallet] = balances[wallet].sub(amount);
     balances[buyer] = balances[buyer].add(amount);
     emit PreICOTokenPushed(buyer, amount);
@@ -330,7 +330,7 @@ contract AIgathaToken is TokenERC20, Ownable {
     uint256 amount = weiAmount.mul(actualRate);
 
     // We have enough token to sale
-    require(supply() &gt;= amount);
+    require(supply() >= amount);
 
     // Transfer
     balances[0xbeef] = balances[0xbeef].sub(amount);

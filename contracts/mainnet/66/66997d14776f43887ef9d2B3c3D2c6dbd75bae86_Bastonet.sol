@@ -81,7 +81,7 @@ contract Bastonet is ERC20Basic, Ownable {
 
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value <= balances[msg.sender] &amp;&amp; _value >= fee);
+    require(_value <= balances[msg.sender] && _value >= fee);
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value.sub(fee));

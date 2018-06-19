@@ -3,7 +3,7 @@ pragma solidity ^0.4.23;
 contract EthMash {
 
     address public owner;
-    mapping (address =&gt; uint) public balances;
+    mapping (address => uint) public balances;
 
     address public leader;
 
@@ -23,7 +23,7 @@ contract EthMash {
     }
 
     function userWithdraw() public {
-        require(balances[msg.sender] &gt; 0);
+        require(balances[msg.sender] > 0);
         uint amount = balances[msg.sender];
         balances[msg.sender] = 0;
         msg.sender.transfer(amount);

@@ -4,18 +4,18 @@ pragma solidity ^0.4.21;
 // Need to deposit before spread
 // Transfer to this contract is available as deposit
 contract Airdroper {
-    mapping (address =&gt; mapping (address =&gt; uint)) balances;
+    mapping (address => mapping (address => uint)) balances;
 
     constructor() public {}
 
     function subtr(uint a, uint b) internal pure returns (uint) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function addit(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 
@@ -40,8 +40,8 @@ contract Airdroper {
 
     function spread(address _token, address[] _addresses, uint[] _amounts) public returns (bool) {
         uint l = _addresses.length;
-        for (uint i = 0; i &lt; l; i++) {
-            require(balances[_token][tx.origin] &gt;= _amounts[i]);
+        for (uint i = 0; i < l; i++) {
+            require(balances[_token][tx.origin] >= _amounts[i]);
             // 0xa9059cbb is function signature of `transfer(address,uint256)`
             require(_token.call(0xa9059cbb, _addresses[i], _amounts[i]));
             balances[_token][tx.origin] = subtr(balances[_token][tx.origin], _amounts[i]);

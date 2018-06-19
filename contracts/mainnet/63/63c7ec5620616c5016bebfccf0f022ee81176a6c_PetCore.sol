@@ -45,7 +45,7 @@ contract Ownable {
 
 
 /// @title Interface for contracts conforming to ERC-721: Non-Fungible Tokens
-/// @author Dieter Shirley &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7a1e1f0e1f3a1b02131517001f14541915">[email&#160;protected]</a>&gt; (https://github.com/dete)
+/// @author Dieter Shirley <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7a1e1f0e1f3a1b02131517001f14541915">[email&#160;protected]</a>> (https://github.com/dete)
 contract ERC721 {
     // Required methods
     function totalSupply() public view returns (uint256 total);
@@ -240,7 +240,7 @@ contract PetBase is AccessControl {
 
     /*** STORAGE ***/
 
-    /// @dev An array containing the Pet struct for all pets (cats &amp; dogs) in existence. The ID
+    /// @dev An array containing the Pet struct for all pets (cats & dogs) in existence. The ID
     ///  of each pet is actually an index into this array. Note that ID 0 is a negapet,
     ///  the unPet, the mythical beast that is the parent of all gen0 pets. A bizarre
     ///  creature that is both matron and sire... to itself! Has an invalid genetic code.
@@ -249,16 +249,16 @@ contract PetBase is AccessControl {
 
     /// @dev A mapping from pet IDs to the address that owns them. All pets have
     ///  some valid owner address, even gen0 pets are created with a non-zero owner.
-    mapping (uint256 =&gt; address) public petIndexToOwner;
+    mapping (uint256 => address) public petIndexToOwner;
 
     // @dev A mapping from owner address to count of tokens that address owns.
     //  Used internally inside balanceOf() to resolve ownership count.
-    mapping (address =&gt; uint256) ownershipTokenCount;
+    mapping (address => uint256) ownershipTokenCount;
 
     /// @dev A mapping from KittyIDs to an address that has been approved to call
     ///  transferFrom(). Each Kitty can only have one approved address for transfer
     ///  at any time. A zero value means no approval is outstanding.
-    mapping (uint256 =&gt; address) public petIndexToApproved;
+    mapping (uint256 => address) public petIndexToApproved;
     
     /// @dev The address of the ClockAuction contract that handles sales of Kitties. This
     ///  same contract handles both peer-to-peer sales as well as the gen0 sales which are
@@ -309,7 +309,7 @@ contract PetBase is AccessControl {
 
         // New pet starts with the same cooldown as parent gen/2
         uint16 cooldownIndex = uint16(_generation / 2);
-        if (cooldownIndex &gt; 13) {
+        if (cooldownIndex > 13) {
             cooldownIndex = 13;
         }
 
@@ -404,7 +404,7 @@ contract PetOwnership is PetBase, ERC721 {
     function supportsInterface(bytes4 _interfaceID) external view returns (bool)
     {
         // DEBUG ONLY
-        //require((InterfaceSignature_ERC165 == 0x01ffc9a7) &amp;&amp; (InterfaceSignature_ERC721 == 0x9a20483d));
+        //require((InterfaceSignature_ERC165 == 0x01ffc9a7) && (InterfaceSignature_ERC721 == 0x9a20483d));
 
         return ((_interfaceID == InterfaceSignature_ERC165) || (_interfaceID == InterfaceSignature_ERC721));
     }
@@ -421,14 +421,14 @@ contract PetOwnership is PetBase, ERC721 {
 
     /// @dev Checks if a given address is the current owner of a particular Kitty.
     /// @param _claimant the address we are validating against.
-    /// @param _tokenId kitten id, only valid when &gt; 0
+    /// @param _tokenId kitten id, only valid when > 0
     function _owns(address _claimant, uint256 _tokenId) internal view returns (bool) {
         return petIndexToOwner[_tokenId] == _claimant;
     }
 
     /// @dev Checks if a given address currently has transferApproval for a particular Kitty.
     /// @param _claimant the address we are confirming kitten is approved for.
-    /// @param _tokenId kitten id, only valid when &gt; 0
+    /// @param _tokenId kitten id, only valid when > 0
     function _approvedFor(address _claimant, uint256 _tokenId) internal view returns (bool) {
         return petIndexToApproved[_tokenId] == _claimant;
     }
@@ -571,7 +571,7 @@ contract PetOwnership is PetBase, ERC721 {
             // sequentially up to the totalCat count.
             uint256 catId;
 
-            for (catId = 1; catId &lt;= totalCats; catId++) {
+            for (catId = 1; catId <= totalCats; catId++) {
                 if (petIndexToOwner[catId] == _owner) {
                     result[resultIndex] = catId;
                     resultIndex++;
@@ -582,12 +582,12 @@ contract PetOwnership is PetBase, ERC721 {
         }
     }
 
-    /// @dev Adapted from memcpy() by @arachnid (Nick Johnson &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afceddceccc7c1c6cbefc1c0dbcbc0db81c1cadb">[email&#160;protected]</a>&gt;)
+    /// @dev Adapted from memcpy() by @arachnid (Nick Johnson <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afceddceccc7c1c6cbefc1c0dbcbc0db81c1cadb">[email&#160;protected]</a>>)
     ///  This method is licenced under the Apache License.
     ///  Ref: https://github.com/Arachnid/solidity-stringutils/blob/2f6ca9accb48ae14c66f1437ec50ed19a0616f78/strings.sol
     function _memcpy(uint _dest, uint _src, uint _len) private pure {
         // Copy word-length chunks while possible
-        for(; _len &gt;= 32; _len -= 32) {
+        for(; _len >= 32; _len -= 32) {
             assembly {
                 mstore(_dest, mload(_src))
             }
@@ -604,7 +604,7 @@ contract PetOwnership is PetBase, ERC721 {
         }
     }
 
-    /// @dev Adapted from toString(slice) by @arachnid (Nick Johnson &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="28495a494b4046414c6846475c4c475c06464d5c">[email&#160;protected]</a>&gt;)
+    /// @dev Adapted from toString(slice) by @arachnid (Nick Johnson <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="28495a494b4046414c6846475c4c475c06464d5c">[email&#160;protected]</a>>)
     ///  This method is licenced under the Apache License.
     ///  Ref: https://github.com/Arachnid/solidity-stringutils/blob/2f6ca9accb48ae14c66f1437ec50ed19a0616f78/strings.sol
     function _toString(bytes32[4] _rawBytes, uint256 _stringLength) private pure returns (string) {
@@ -667,7 +667,7 @@ contract ClockAuctionBase {
     uint256 public ownerCut;
 
     // Map from token ID to their corresponding auction.
-    mapping (uint256 =&gt; Auction) tokenIdToAuction;
+    mapping (uint256 => Auction) tokenIdToAuction;
 
     event AuctionCreated(uint256 tokenId, uint256 startingPrice, uint256 endingPrice, uint256 duration);
     event AuctionSuccessful(uint256 tokenId, uint256 totalPrice, address winner);
@@ -705,7 +705,7 @@ contract ClockAuctionBase {
     function _addAuction(uint256 _tokenId, Auction _auction) internal {
         // Require that all auctions have a duration of
         // at least one minute. (Keeps our math from getting hairy!)
-        require(_auction.duration &gt;= 1 minutes);
+        require(_auction.duration >= 1 minutes);
 
         tokenIdToAuction[_tokenId] = _auction;
 
@@ -741,7 +741,7 @@ contract ClockAuctionBase {
 
         // Check that the bid is greater than or equal to the current price
         uint256 price = _currentPrice(auction);
-        require(_bidAmount &gt;= price);
+        require(_bidAmount >= price);
 
         // Grab a reference to the seller before the auction struct
         // gets deleted.
@@ -752,10 +752,10 @@ contract ClockAuctionBase {
         _removeAuction(_tokenId);
 
         // Transfer proceeds to seller (if there are any!)
-        if (price &gt; 0) {
+        if (price > 0) {
             // Calculate the auctioneer&#39;s cut.
             // (NOTE: _computeCut() is guaranteed to return a
-            // value &lt;= price, so this subtraction can&#39;t go negative.)
+            // value <= price, so this subtraction can&#39;t go negative.)
             uint256 auctioneerCut = _computeCut(price);
             uint256 sellerProceeds = price - auctioneerCut;
 
@@ -796,7 +796,7 @@ contract ClockAuctionBase {
     /// @dev Returns true if the NFT is on auction.
     /// @param _auction - Auction to check.
     function _isOnAuction(Auction storage _auction) internal view returns (bool) {
-        return (_auction.startedAt &gt; 0);
+        return (_auction.startedAt > 0);
     }
 
     /// @dev Returns current price of an NFT on auction. Broken into two
@@ -813,7 +813,7 @@ contract ClockAuctionBase {
         // A bit of insurance against negative values (or wraparound).
         // Probably not necessary (since Ethereum guarnatees that the
         // now variable doesn&#39;t ever go backwards).
-        if (now &gt; _auction.startedAt) {
+        if (now > _auction.startedAt) {
             secondsPassed = now - _auction.startedAt;
         }
 
@@ -844,7 +844,7 @@ contract ClockAuctionBase {
         //  time (at 64-bits) and currency (at 128-bits). _duration is
         //  also known to be non-zero (see the require() statement in
         //  _addAuction())
-        if (_secondsPassed &gt;= _duration) {
+        if (_secondsPassed >= _duration) {
             // We&#39;ve reached the end of the dynamic pricing portion
             // of the auction, just return the end price.
             return _endingPrice;
@@ -871,9 +871,9 @@ contract ClockAuctionBase {
     function _computeCut(uint256 _price) internal view returns (uint256) {
         // NOTE: We don&#39;t use SafeMath (or similar) in this function because
         //  all of our entry functions carefully cap the maximum values for
-        //  currency (at 128-bits), and ownerCut &lt;= 10000 (see the require()
+        //  currency (at 128-bits), and ownerCut <= 10000 (see the require()
         //  statement in the ClockAuction constructor). The result of this
-        //  function is always guaranteed to be &lt;= _price.
+        //  function is always guaranteed to be <= _price.
         return _price * ownerCut / 10000;
     }
 
@@ -946,7 +946,7 @@ contract ClockAuction is Pausable, ClockAuctionBase {
     ///  between 0-10,000.
     //function ClockAuction(address _nftAddress, uint256 _cut) public {
     constructor (address _nftAddress, uint256 _cut) public {    
-        require(_cut &lt;= 10000);
+        require(_cut <= 10000);
         ownerCut = _cut;
 
         ERC721 candidateContract = ERC721(_nftAddress);
@@ -1159,7 +1159,7 @@ contract SaleClockAuction is ClockAuction {
 
     function averageGen0SalePrice() external view returns (uint256) {
         uint256 sum = 0;
-        for (uint256 i = 0; i &lt; 5; i++) {
+        for (uint256 i = 0; i < 5; i++) {
             sum += lastGen0SalePrices[i];
         }
         return sum / 5;
@@ -1258,7 +1258,7 @@ contract PetMinting is PetAuction {
         if (petOwner == address(0)) {
             petOwner = cooAddress;
         }
-        require(promoCreatedCount &lt; PROMO_CREATION_LIMIT);
+        require(promoCreatedCount < PROMO_CREATION_LIMIT);
 
         promoCreatedCount++;
         _createPet(0, _genes, petOwner, _grade, _level, _params, _skills);
@@ -1267,7 +1267,7 @@ contract PetMinting is PetAuction {
     /// @dev Creates a new gen0 kitty with the given genes and
     ///  creates an auction for it.
     function createGen0Auction(uint256 _genes, uint256 _grade, uint256 _level, uint256 _params, uint256 _skills) external onlyCOO {
-        require(gen0CreatedCount &lt; GEN0_CREATION_LIMIT);
+        require(gen0CreatedCount < GEN0_CREATION_LIMIT);
 
         uint256 petId = _createPet(0, _genes, address(this), _grade, _level, _params, _skills);
         _approve(petId, saleAuction);
@@ -1418,7 +1418,7 @@ contract PetCore is PetMinting {
     // @dev Allows the CFO to capture the balance available to the contract.
     function withdrawBalanceCut(uint256 amount) external onlyCFO {
         uint256 balance = address(this).balance;
-        require (balance &gt; amount);
+        require (balance > amount);
 
         cfoAddress.transfer(amount);        
     }

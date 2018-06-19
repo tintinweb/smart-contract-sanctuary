@@ -121,8 +121,8 @@ contract GLAU is ERC20 {
     function transfer(address _to, uint256 _amount) onlyPayloadSize(2 * 32) public returns (bool success) {
 
          if (balances[msg.sender] >= _amount
-             &amp;&amp; _amount > 0
-             &amp;&amp; balances[_to] + _amount > balances[_to]) {
+             && _amount > 0
+             && balances[_to] + _amount > balances[_to]) {
              balances[msg.sender] -= _amount;
              balances[_to] += _amount;
              Transfer(msg.sender, _to, _amount);
@@ -135,9 +135,9 @@ contract GLAU is ERC20 {
     function transferFrom(address _from, address _to, uint256 _amount) onlyPayloadSize(3 * 32) public returns (bool success) {
 
          if (balances[_from] >= _amount
-             &amp;&amp; allowed[_from][msg.sender] >= _amount
-             &amp;&amp; _amount > 0
-             &amp;&amp; balances[_to] + _amount > balances[_to]) {
+             && allowed[_from][msg.sender] >= _amount
+             && _amount > 0
+             && balances[_to] + _amount > balances[_to]) {
              balances[_from] -= _amount;
              allowed[_from][msg.sender] -= _amount;
              balances[_to] += _amount;
@@ -150,7 +150,7 @@ contract GLAU is ERC20 {
     
     function approve(address _spender, uint256 _value) public returns (bool success) {
         // mitigates the ERC20 spend/approval race condition
-        if (_value != 0 &amp;&amp; allowed[msg.sender][_spender] != 0) { return false; }
+        if (_value != 0 && allowed[msg.sender][_spender] != 0) { return false; }
         
         allowed[msg.sender][_spender] = _value;
         

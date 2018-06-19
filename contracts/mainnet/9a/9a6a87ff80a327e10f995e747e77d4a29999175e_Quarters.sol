@@ -345,7 +345,7 @@ contract Q2 is Ownable, RoyaltyToken {
     require(msg.value > 0);
 
     Stage memory stage = stages[currentStage];
-    require(block.number >= stage.startBlock &amp;&amp; block.number <= stage.endBlock);
+    require(block.number >= stage.startBlock && block.number <= stage.endBlock);
 
     uint256 tokens = msg.value * stage.exchangeRate;
     require(totalSupply.add(tokens) <= stage.cap);
@@ -359,7 +359,7 @@ contract Q2 is Ownable, RoyaltyToken {
     uint256 _startBlock,
     uint256 _endBlock
   ) public onlyOwner {
-    require(_exchangeRate > 0 &amp;&amp; _cap > 0);
+    require(_exchangeRate > 0 && _cap > 0);
     require(_startBlock > block.number);
     require(_startBlock < _endBlock);
 
@@ -523,22 +523,22 @@ contract Quarters is Ownable, StandardToken {
   function adjustWithdrawRate(uint32 mega2, uint32 megaRate2, uint32 large2, uint32 largeRate2, uint32 medium2, uint32 mediumRate2, uint32 small2, uint32 smallRate2, uint32 microRate2) onlyOwner public {
     // the values (mega, large, medium, small) are multiples, e.g., 20x, 100x, 10000x
     // the rates (megaRate, etc.) are percentage points, e.g., 150 is 150% of the remaining etherPool
-    if (mega2 > 0 &amp;&amp; megaRate2 > 0) {
+    if (mega2 > 0 && megaRate2 > 0) {
       mega = mega2;
       megaRate = megaRate2;
     }
 
-    if (large2 > 0 &amp;&amp; largeRate2 > 0) {
+    if (large2 > 0 && largeRate2 > 0) {
       large = large2;
       largeRate = largeRate2;
     }
 
-    if (medium2 > 0 &amp;&amp; mediumRate2 > 0) {
+    if (medium2 > 0 && mediumRate2 > 0) {
       medium = medium2;
       mediumRate = mediumRate2;
     }
 
-    if (small2 > 0 &amp;&amp; smallRate2 > 0){
+    if (small2 > 0 && smallRate2 > 0){
       small = small2;
       smallRate = smallRate2;
     }
@@ -552,7 +552,7 @@ contract Quarters is Ownable, StandardToken {
    * adjust tranche for next cycle
    */
   function adjustNextTranche (uint8 numerator, uint8 denominator) onlyOwner public {
-    require(numerator > 0 &amp;&amp; denominator > 0);
+    require(numerator > 0 && denominator > 0);
     trancheNumerator = numerator;
     trancheDenominator = denominator;
   }
@@ -801,9 +801,9 @@ contract Quarters is Ownable, StandardToken {
   }
 
   function getRate (uint256 value) view public returns (uint32) {
-    if (value * mega > tranche) {  // size &amp; rate for mega developer
+    if (value * mega > tranche) {  // size & rate for mega developer
       return megaRate;
-    } else if (value * large > tranche) {   // size &amp; rate for large developer
+    } else if (value * large > tranche) {   // size & rate for large developer
       return largeRate;
     } else if (value * medium > tranche) {  // size and rate for medium developer
       return mediumRate;

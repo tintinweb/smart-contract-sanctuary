@@ -770,12 +770,12 @@ contract usingOraclize {
             iaddr *= 256;
             b1 = uint160(tmp[i]);
             b2 = uint160(tmp[i+1]);
-            if ((b1 >= 97)&amp;&amp;(b1 <= 102)) b1 -= 87;
-            else if ((b1 >= 65)&amp;&amp;(b1 <= 70)) b1 -= 55;
-            else if ((b1 >= 48)&amp;&amp;(b1 <= 57)) b1 -= 48;
-            if ((b2 >= 97)&amp;&amp;(b2 <= 102)) b2 -= 87;
-            else if ((b2 >= 65)&amp;&amp;(b2 <= 70)) b2 -= 55;
-            else if ((b2 >= 48)&amp;&amp;(b2 <= 57)) b2 -= 48;
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 65)&&(b1 <= 70)) b1 -= 55;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 65)&&(b2 <= 70)) b2 -= 55;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
             iaddr += (b1*16+b2);
         }
         return address(iaddr);
@@ -814,7 +814,7 @@ contract usingOraclize {
                 if (h[i] == n[0])
                 {
                     subindex = 1;
-                    while(subindex < n.length &amp;&amp; (i + subindex) < h.length &amp;&amp; h[i + subindex] == n[subindex])
+                    while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
                     {
                         subindex++;
                     }
@@ -866,7 +866,7 @@ contract usingOraclize {
         uint mint = 0;
         bool decimals = false;
         for (uint i=0; i<bresult.length; i++){
-            if ((bresult[i] >= 48)&amp;&amp;(bresult[i] <= 57)){
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
                 if (decimals){
                    if (_b == 0) break;
                     else _b--;
@@ -929,7 +929,7 @@ contract usingOraclize {
     }
 
     function oraclize_newRandomDSQuery(uint _delay, uint _nbytes, uint _customGasLimit) internal returns (bytes32){
-        require((_nbytes > 0) &amp;&amp; (_nbytes <= 32));
+        require((_nbytes > 0) && (_nbytes <= 32));
         // Convert from seconds to ledger timer ticks
         _delay *= 10;
         bytes memory nbytes = new bytes(1);
@@ -1045,7 +1045,7 @@ contract usingOraclize {
 
     modifier oraclize_randomDS_proofVerify(bytes32 _queryId, string _result, bytes _proof) {
         // Step 1: the prefix has to match &#39;LP\x01&#39; (Ledger Proof version 1)
-        require((_proof[0] == &quot;L&quot;) &amp;&amp; (_proof[1] == &quot;P&quot;) &amp;&amp; (_proof[2] == 1));
+        require((_proof[0] == &quot;L&quot;) && (_proof[1] == &quot;P&quot;) && (_proof[2] == 1));
 
         bool proofVerified = oraclize_randomDS_proofVerify__main(_proof, _queryId, bytes(_result), oraclize_getNetworkName());
         require(proofVerified);
@@ -1204,7 +1204,7 @@ contract usingOraclize {
         if (v < 27)
           v += 27;
 
-        if (v != 27 &amp;&amp; v != 28)
+        if (v != 27 && v != 28)
             return (false, 0);
 
         return safer_ecrecover(hash, v, r, s);
@@ -1213,7 +1213,7 @@ contract usingOraclize {
 }
 // </ORACLIZE_API>
 /*
- * @title String &amp; slice utility library for Solidity contracts.
+ * @title String & slice utility library for Solidity contracts.
  * @author Nick Johnson <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4120332022292f2825012f2e35252e356f2f2435">[email&#160;protected]</a>>
  *
  * @dev Functionality in this library is largely implemented using an
@@ -1294,23 +1294,23 @@ library strings {
         uint ret;
         if (self == 0)
             return 0;
-        if (self &amp; 0xffffffffffffffffffffffffffffffff == 0) {
+        if (self & 0xffffffffffffffffffffffffffffffff == 0) {
             ret += 16;
             self = bytes32(uint(self) / 0x100000000000000000000000000000000);
         }
-        if (self &amp; 0xffffffffffffffff == 0) {
+        if (self & 0xffffffffffffffff == 0) {
             ret += 8;
             self = bytes32(uint(self) / 0x10000000000000000);
         }
-        if (self &amp; 0xffffffff == 0) {
+        if (self & 0xffffffff == 0) {
             ret += 4;
             self = bytes32(uint(self) / 0x100000000);
         }
-        if (self &amp; 0xffff == 0) {
+        if (self & 0xffff == 0) {
             ret += 2;
             self = bytes32(uint(self) / 0x10000);
         }
-        if (self &amp; 0xff == 0) {
+        if (self & 0xff == 0) {
             ret += 1;
         }
         return 32 - ret;
@@ -1423,7 +1423,7 @@ library strings {
             if (a != b) {
                 // Mask out irrelevant bytes and check again
                 uint256 mask = ~(2 ** (8 * (32 - shortest + idx)) - 1);
-                uint256 diff = (a &amp; mask) - (b &amp; mask);
+                uint256 diff = (a & mask) - (b & mask);
                 if (diff != 0)
                     return int(diff);
             }
@@ -1517,13 +1517,13 @@ library strings {
             ret = b;
             length = 1;
         } else if(b < 0xE0) {
-            ret = b &amp; 0x1F;
+            ret = b & 0x1F;
             length = 2;
         } else if(b < 0xF0) {
-            ret = b &amp; 0x0F;
+            ret = b & 0x0F;
             length = 3;
         } else {
-            ret = b &amp; 0x07;
+            ret = b & 0x07;
             length = 4;
         }
 
@@ -1534,12 +1534,12 @@ library strings {
 
         for (uint i = 1; i < length; i++) {
             divisor = divisor / 256;
-            b = (word / divisor) &amp; 0xFF;
-            if (b &amp; 0xC0 != 0x80) {
+            b = (word / divisor) & 0xFF;
+            if (b & 0xC0 != 0x80) {
                 // Invalid UTF-8 sequence
                 return 0;
             }
-            ret = (ret * 64) | (b &amp; 0x3F);
+            ret = (ret * 64) | (b & 0x3F);
         }
 
         return ret;
@@ -2151,7 +2151,7 @@ contract NP is owned, SisterToken, usingOraclize {
         result = 0;
         for (i = 0; i < b.length; i++) {
             uint256 c = uint256(b[i]);
-            if (c >= 48 &amp;&amp; c <= 57) {
+            if (c >= 48 && c <= 57) {
                 result = result * 10 + (c - 48);
             }
         }

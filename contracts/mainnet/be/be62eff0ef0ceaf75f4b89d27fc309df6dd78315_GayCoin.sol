@@ -87,7 +87,7 @@ contract GayCoin {
 
     function safeAdd(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        require(c>=a &amp;&amp; c>=b);
+        require(c>=a && c>=b);
         return c;
     }
 
@@ -164,7 +164,7 @@ contract GayCoin {
         onlyOwnerIfBlocked
         returns (bool success) 
     {
-        if (balances[msg.sender] >= _value &amp;&amp; balances[_to] + _value > balances[_to]) {
+        if (balances[msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
             balances[msg.sender] -= _value;
             balances[_to] += _value;
             Transfer(msg.sender, _to, _value);
@@ -177,7 +177,7 @@ contract GayCoin {
         onlyOwnerIfBlocked
         returns (bool success)
     {
-        if (balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value &amp;&amp; balances[_to] + _value > balances[_to]) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && balances[_to] + _value > balances[_to]) {
             balances[_to] += _value;
             balances[_from] -= _value;
             allowed[_from][msg.sender] -= _value;

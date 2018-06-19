@@ -87,7 +87,7 @@ contract Crowdsale {
             }
         }
 
-        if (fundingGoalReached &amp;&amp; beneficiary == msg.sender) {
+        if (fundingGoalReached && beneficiary == msg.sender) {
             if (beneficiary.send(amountRaised)) {
                 emit FundTransfer(beneficiary, amountRaised, false);
             } else {

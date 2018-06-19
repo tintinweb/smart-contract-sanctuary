@@ -17,7 +17,7 @@ contract Countout {
     uint8 private randomCount;
     
     address[] public sevenWinnerAddresses;      
-    mapping (address =&gt; uint128) public addressToBalance;
+    mapping (address => uint128) public addressToBalance;
 
     event Count(address from, uint8 count);
     event Hit(address from, uint8 count);
@@ -44,12 +44,12 @@ contract Countout {
     }
 
     function ownerWithdraw() public onlyOwner {
-        require (block.timestamp &gt; lastTransactionTime + 7 days); 
+        require (block.timestamp > lastTransactionTime + 7 days); 
 
-        if (round_after &lt; 77 &amp;&amp; sevenWinnerAddresses.length &gt; 0){
+        if (round_after < 77 && sevenWinnerAddresses.length > 0){
             uint128 sevensWinnerBack = (ownerBank + sumPrice) / uint8(sevenWinnerAddresses.length) - 0.0000007 ether;
             uint8 i;
-            for (i = 0; i &lt; sevenWinnerAddresses.length; i++){
+            for (i = 0; i < sevenWinnerAddresses.length; i++){
                 addressToBalance[sevenWinnerAddresses[i]]  = addressToBalance[sevenWinnerAddresses[i]] + sevensWinnerBack;
             }         
                
@@ -61,7 +61,7 @@ contract Countout {
     }
 
     function sevenWinnerWithdraw() public {
-        require(addressToBalance[msg.sender] &gt; 0);
+        require(addressToBalance[msg.sender] > 0);
         msg.sender.transfer(addressToBalance[msg.sender]);
         addressToBalance[msg.sender] = 0;
     }    
@@ -76,7 +76,7 @@ contract Countout {
             ownerBank = ownerBank + _cut;    
         }
         uint8 i;
-        for (i = 0; i &lt; sevenWinnerAddresses.length; i++){
+        for (i = 0; i < sevenWinnerAddresses.length; i++){
             addressToBalance[sevenWinnerAddresses[i]]  = addressToBalance[sevenWinnerAddresses[i]] + _cut;
             _processing = _processing - _cut;
         }
@@ -96,11 +96,11 @@ contract Countout {
 
         randomCount = uint8(block.blockhash(block.number-randomCount))%10 + 1;
 
-        if(randomCount &gt;= 7){
+        if(randomCount >= 7){
             randomCount = uint8(block.blockhash(block.number-randomCount-randomCount))%10 + 1;  
         }
         
-        if (sevenWinnerAddresses.length &lt; 7 &amp;&amp; randomCount == 7){
+        if (sevenWinnerAddresses.length < 7 && randomCount == 7){
             randomCount++;
         }         
 
@@ -112,7 +112,7 @@ contract Countout {
     }
 
     function countUp(address _referralAddress) public payable {
-        require (block.timestamp &lt; lastTransactionTime + 7 days);    
+        require (block.timestamp < lastTransactionTime + 7 days);    
         require (msg.value == nextPrice); 
 
         uint128 _price = uint128(msg.value);
@@ -123,7 +123,7 @@ contract Countout {
 
         _processing = _payFee(_price, _referralAddress);     
         
-        if (currentCount &gt; 1) {
+        if (currentCount > 1) {
             lastCountAddress.transfer(_processing);
         } else {
             sumPrice = sumPrice + _processing;
@@ -135,11 +135,11 @@ contract Countout {
 
         } else {
             if (currentCount == 7) {
-                if (sevenWinnerAddresses.length &lt; 7){
+                if (sevenWinnerAddresses.length < 7){
                     sevenWinnerAddresses.push(msg.sender);
                 } else {
 
-                    if (sumPrice &lt;= bonusPrice) {
+                    if (sumPrice <= bonusPrice) {
                         msg.sender.transfer(sumPrice);
                         sumPrice = 0;
                     } else {

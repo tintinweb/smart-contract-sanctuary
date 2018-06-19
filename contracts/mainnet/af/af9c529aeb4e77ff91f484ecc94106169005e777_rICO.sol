@@ -55,7 +55,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         // uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return a / b;
@@ -65,7 +65,7 @@ library SafeMath {
     * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -74,7 +74,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -87,7 +87,7 @@ library SafeMath {
 contract BasicToken is ERC20Basic {
     using SafeMath for uint256;
 
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
 
     uint256 totalSupply_;
 
@@ -105,7 +105,7 @@ contract BasicToken is ERC20Basic {
     */
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
 
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -134,7 +134,7 @@ contract BasicToken is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-    mapping(address =&gt; mapping(address =&gt; uint256)) internal allowed;
+    mapping(address => mapping(address => uint256)) internal allowed;
 
     /**
      * @dev Transfer tokens from one address to another
@@ -144,8 +144,8 @@ contract StandardToken is ERC20, BasicToken {
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -208,7 +208,7 @@ contract StandardToken is ERC20, BasicToken {
      */
     function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -314,8 +314,8 @@ contract BurnableToken is BasicToken {
     event Burn(address indexed burner, uint256 value);
 
     function _burn(address _burner, uint256 _value) internal {
-        require(_value &lt;= balances[_burner]);
-        // no need to require value &lt;= totalSupply, since that would imply the
+        require(_value <= balances[_burner]);
+        // no need to require value <= totalSupply, since that would imply the
         // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
         balances[_burner] = balances[_burner].sub(_value);
@@ -330,7 +330,7 @@ contract BurnableToken is BasicToken {
 contract DividendPayoutToken is BurnableToken, MintableToken {
 
     // Dividends already claimed by investor
-    mapping(address =&gt; uint256) public dividendPayments;
+    mapping(address => uint256) public dividendPayments;
     // Total dividends claimed by all investors
     uint256 public totalDividendPayments;
 
@@ -456,8 +456,8 @@ contract PreSale is Ownable, ReentrancyGuard {
     uint256 public softCap; // in wei
     uint256 public hardCap; // in wei
 
-    // investors =&gt; amount of money
-    mapping(address =&gt; uint) public balances;
+    // investors => amount of money
+    mapping(address => uint) public balances;
 
     // Amount of wei raised
     uint256 public weiRaised;
@@ -504,24 +504,24 @@ contract PreSale is Ownable, ReentrancyGuard {
 
     // @return true if the transaction can buy tokens
     modifier saleIsOn() {
-        bool withinPeriod = now &gt;= startTime &amp;&amp; now &lt;= endTime;
+        bool withinPeriod = now >= startTime && now <= endTime;
         require(withinPeriod);
         _;
     }
 
     modifier isUnderHardCap() {
-        require(weiRaised &lt; hardCap);
+        require(weiRaised < hardCap);
         _;
     }
 
     modifier refundAllowed() {
-        require(weiRaised &lt; softCap &amp;&amp; now &gt; endTime);
+        require(weiRaised < softCap && now > endTime);
         _;
     }
 
     // @return true if PreSale event has ended
     function hasEnded() public view returns (bool) {
-        return now &gt; endTime;
+        return now > endTime;
     }
 
     // Refund ether to the investors (invoke from only token)
@@ -550,10 +550,10 @@ contract PreSale is Ownable, ReentrancyGuard {
 
     // Success finish of PreSale
     function finishPreSale() public onlyOwner {
-        require(weiRaised &gt;= softCap);
-        require(weiRaised &gt;= hardCap || now &gt; endTime);
+        require(weiRaised >= softCap);
+        require(weiRaised >= hardCap || now > endTime);
 
-        if (now &lt; endTime) {
+        if (now < endTime) {
             endTime = now;
         }
 
@@ -563,14 +563,14 @@ contract PreSale is Ownable, ReentrancyGuard {
 
     // Change owner of token after end of PreSale if Soft Cap has not raised
     function changeTokenOwner() public onlyOwner {
-        require(now &gt; endTime &amp;&amp; weiRaised &lt; softCap);
+        require(now > endTime && weiRaised < softCap);
         token.transferOwnership(owner);
     }
 
     // low level token purchase function
     function buyTokens(address _beneficiary) saleIsOn isUnderHardCap nonReentrant public payable {
         require(_beneficiary != address(0));
-        require(msg.value &gt;= minimumInvest);
+        require(msg.value >= minimumInvest);
 
         uint256 weiAmount = msg.value;
         uint256 tokens = getTokenAmount(weiAmount);
@@ -619,9 +619,9 @@ contract rICO is Ownable, ReentrancyGuard {
     uint256 public softCap; // in wei
     uint256 public hardCap; // in wei
 
-    // investors =&gt; amount of money
-    mapping(address =&gt; uint) public balances;
-    mapping(address =&gt; uint) public balancesInToken;
+    // investors => amount of money
+    mapping(address => uint) public balances;
+    mapping(address => uint) public balancesInToken;
 
     // Amount of wei raised
     uint256 public weiRaised;
@@ -674,32 +674,32 @@ contract rICO is Ownable, ReentrancyGuard {
 
     // @return true if the transaction can buy tokens
     modifier saleIsOn() {
-        bool withinPeriod = now &gt;= startTime &amp;&amp; now &lt;= endCrowdSaleTime;
+        bool withinPeriod = now >= startTime && now <= endCrowdSaleTime;
         require(withinPeriod);
         _;
     }
 
     modifier isUnderHardCap() {
-        require(weiRaised.add(preSale.weiRaised()) &lt; hardCap);
+        require(weiRaised.add(preSale.weiRaised()) < hardCap);
         _;
     }
 
     // @return true if CrowdSale event has ended
     function hasEnded() public view returns (bool) {
-        return now &gt; endRefundableTime;
+        return now > endRefundableTime;
     }
 
     // Get bonus percent
     function getBonusPercent() internal view returns(uint256) {
         uint256 collectedWei = weiRaised.add(preSale.weiRaised());
 
-        if (collectedWei &lt; 1500 * 0.000001 ether) {
+        if (collectedWei < 1500 * 0.000001 ether) {
             return 20;
         }
-        if (collectedWei &lt; 5000 * 0.000001 ether) {
+        if (collectedWei < 5000 * 0.000001 ether) {
             return 10;
         }
-        if (collectedWei &lt; 10000 * 0.000001 ether) {
+        if (collectedWei < 10000 * 0.000001 ether) {
             return 5;
         }
 
@@ -714,11 +714,11 @@ contract rICO is Ownable, ReentrancyGuard {
     // Update of reservedWei for withdraw
     function updateReservedWei() public {
         
-        require(weiRaised.add(preSale.weiRaised()) &gt;= softCap &amp;&amp; now &gt; endCrowdSaleTime);
+        require(weiRaised.add(preSale.weiRaised()) >= softCap && now > endCrowdSaleTime);
 
         uint256 curWei;
 
-        if (!firstStageRefund &amp;&amp; now &gt; endCrowdSaleTime) {
+        if (!firstStageRefund && now > endCrowdSaleTime) {
             curWei = 500 * 0.000001 ether;
 
             reservedWei = curWei;
@@ -727,7 +727,7 @@ contract rICO is Ownable, ReentrancyGuard {
             firstStageRefund = true;
         }
 
-        if (!secondStageRefund &amp;&amp; now &gt; endCrowdSaleTime + 99 * 1 minutes) {
+        if (!secondStageRefund && now > endCrowdSaleTime + 99 * 1 minutes) {
             curWei = restWei.mul(30).div(100);
 
             reservedWei = reservedWei.add(curWei);
@@ -736,7 +736,7 @@ contract rICO is Ownable, ReentrancyGuard {
             secondStageRefund = true;
         }
 
-        if (!finalStageRefund &amp;&amp; now &gt; endRefundableTime) {
+        if (!finalStageRefund && now > endRefundableTime) {
             reservedWei = reservedWei.add(restWei);
             restWei = 0;
 
@@ -748,18 +748,18 @@ contract rICO is Ownable, ReentrancyGuard {
     // Refund ether to the investors (invoke from only token)
     function refund(address _to) public {
         require(msg.sender == tokenContractAddress);
-        require(weiRaised.add(preSale.weiRaised()) &lt; softCap &amp;&amp; now &gt; endCrowdSaleTime
-        || weiRaised.add(preSale.weiRaised()) &gt;= softCap &amp;&amp; now &gt; endCrowdSaleTime &amp;&amp; now &lt;= endRefundableTime);
+        require(weiRaised.add(preSale.weiRaised()) < softCap && now > endCrowdSaleTime
+        || weiRaised.add(preSale.weiRaised()) >= softCap && now > endCrowdSaleTime && now <= endRefundableTime);
 
 
         // unsuccessful end of CrowdSale
-        if (weiRaised.add(preSale.weiRaised()) &lt; softCap &amp;&amp; now &gt; endCrowdSaleTime) {
+        if (weiRaised.add(preSale.weiRaised()) < softCap && now > endCrowdSaleTime) {
             refundAll(_to);
             return;
         }
 
         // successful end of CrowdSale
-        if (weiRaised.add(preSale.weiRaised()) &gt;= softCap &amp;&amp; now &gt; endCrowdSaleTime &amp;&amp; now &lt;= endRefundableTime) {
+        if (weiRaised.add(preSale.weiRaised()) >= softCap && now > endCrowdSaleTime && now <= endRefundableTime) {
             refundPart(_to);
             return;
         }
@@ -817,7 +817,7 @@ contract rICO is Ownable, ReentrancyGuard {
 
     // Success finish of CrowdSale
     function finishCrowdSale() public onlyOwner {
-        require(now &gt; endRefundableTime);
+        require(now > endRefundableTime);
 
         // withdrawal all eth from contract
         updateReservedWei();
@@ -833,7 +833,7 @@ contract rICO is Ownable, ReentrancyGuard {
 
     // Change owner of token after end of CrowdSale if Soft Cap has not raised
     function changeTokenOwner() public onlyOwner {
-        require(now &gt; endRefundableTime &amp;&amp; weiRaised.add(preSale.weiRaised()) &lt; softCap);
+        require(now > endRefundableTime && weiRaised.add(preSale.weiRaised()) < softCap);
         token.transferOwnership(owner);
     }
 
@@ -841,7 +841,7 @@ contract rICO is Ownable, ReentrancyGuard {
     function buyTokens(address _beneficiary) saleIsOn isUnderHardCap nonReentrant public payable {
         
         require(_beneficiary != address(0));
-        require(msg.value &gt;= minimumInvest);
+        require(msg.value >= minimumInvest);
 
         uint256 weiAmount = msg.value;
         uint256 tokens = getTokenAmount(weiAmount);
@@ -856,7 +856,7 @@ contract rICO is Ownable, ReentrancyGuard {
         balancesInToken[_beneficiary] = balancesInToken[_beneficiary].add(tokens);
 
         // update timestamps and begin Refundable stage
-        if (weiRaised &gt;= hardCap) {
+        if (weiRaised >= hardCap) {
             endCrowdSaleTime = now;
             endRefundableTime = endCrowdSaleTime + 130 * 1 minutes;
         }

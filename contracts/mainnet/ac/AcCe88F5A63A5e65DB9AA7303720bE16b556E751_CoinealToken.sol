@@ -24,7 +24,7 @@ contract SafeMath {
 
   function safeAdd(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    require(c>=a &amp;&amp; c>=b);
+    require(c>=a && c>=b);
     return c;
   }
 }

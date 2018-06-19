@@ -8,7 +8,7 @@ pragma solidity ^0.4.23;
 contract Datatrust {
 
     // Mapping from Merkle tree root hashes to their anchored state
-    mapping (bytes32 =&gt; bool) public anchors;
+    mapping (bytes32 => bool) public anchors;
 
     // Event emitted when saving a new anchor
     event NewAnchor(bytes32 merkleRoot);

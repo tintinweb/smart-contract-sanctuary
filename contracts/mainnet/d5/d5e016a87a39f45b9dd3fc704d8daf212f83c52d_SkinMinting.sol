@@ -125,23 +125,23 @@ contract SkinBase is Manager {
     }
 
     // All skins, mapping from skin id to skin apprance
-    mapping (uint256 =&gt; Skin) skins;
+    mapping (uint256 => Skin) skins;
 
     // Mapping from skin id to owner
-    mapping (uint256 =&gt; address) public skinIdToOwner;
+    mapping (uint256 => address) public skinIdToOwner;
 
     // Whether a skin is on sale
-    mapping (uint256 =&gt; bool) public isOnSale;
+    mapping (uint256 => bool) public isOnSale;
 
     // Using 
-    mapping (address =&gt; uint256) public accountsToActiveSkin;
+    mapping (address => uint256) public accountsToActiveSkin;
 
     // Number of all total valid skins
     // skinId 0 should not correspond to any skin, because skin.mixingWithId==0 indicates not mixing
     uint256 public nextSkinId = 1;  
 
     // Number of skins an account owns
-    mapping (address =&gt; uint256) public numSkinOfAccounts;
+    mapping (address => uint256) public numSkinOfAccounts;
 
     event SkinTransfer(address from, address to, uint256 skinId);
     event SetActiveSkin(address account, uint256 skinId);
@@ -150,9 +150,9 @@ contract SkinBase is Manager {
     function skinOfAccountById(address account, uint256 id) external view returns (uint256) {
         uint256 count = 0;
         uint256 numSkinOfAccount = numSkinOfAccounts[account];
-        require(numSkinOfAccount &gt; 0);
-        require(id &lt; numSkinOfAccount);
-        for (uint256 i = 1; i &lt; nextSkinId; i++) {
+        require(numSkinOfAccount > 0);
+        require(id < numSkinOfAccount);
+        for (uint256 i = 1; i < nextSkinId; i++) {
             if (skinIdToOwner[i] == account) {
                 // This skin belongs to current account
                 if (count == id) {
@@ -167,8 +167,8 @@ contract SkinBase is Manager {
 
     // Get skin by id
     function getSkin(uint256 id) public view returns (uint128, uint64, uint64) {
-        require(id &gt; 0);
-        require(id &lt; nextSkinId);
+        require(id > 0);
+        require(id < nextSkinId);
         Skin storage skin = skins[id];
         return (skin.appearance, skin.cooldownEndTime, skin.mixingWithId);
     }
@@ -192,11 +192,11 @@ contract SkinBase is Manager {
     function _isComplete(uint256 id) internal view returns (bool) {
         uint128 _appearance = skins[id].appearance;
         uint128 mask = uint128(65535);
-        uint128 _type = _appearance &amp; mask;
+        uint128 _type = _appearance & mask;
         uint128 maskedValue;
-        for (uint256 i = 1; i &lt; 8; i++) {
-            mask = mask &lt;&lt; 16;
-            maskedValue = (_appearance &amp; mask) &gt;&gt; (16*i);
+        for (uint256 i = 1; i < 8; i++) {
+            mask = mask << 16;
+            maskedValue = (_appearance & mask) >> (16*i);
             if (maskedValue != _type) {
                 return false;
             }
@@ -219,7 +219,7 @@ contract SkinBase is Manager {
         if (activeId == 0) {
             return uint128(0);
         }
-        return (skins[activeId].appearance &amp; uint128(65535));
+        return (skins[activeId].appearance & uint128(65535));
     }
 }
 
@@ -256,12 +256,12 @@ contract SkinMix is SkinBase {
 
     // _isCooldownReady: check whether cooldown period has been passed
     function _isCooldownReady(uint256 skinAId, uint256 skinBId) private view returns (bool) {
-        return (skins[skinAId].cooldownEndTime &lt;= uint64(now)) &amp;&amp; (skins[skinBId].cooldownEndTime &lt;= uint64(now));
+        return (skins[skinAId].cooldownEndTime <= uint64(now)) && (skins[skinBId].cooldownEndTime <= uint64(now));
     }
 
     // _isNotMixing: check whether two skins are in another mixing process
     function _isNotMixing(uint256 skinAId, uint256 skinBId) private view returns (bool) {
-        return (skins[skinAId].mixingWithId == 0) &amp;&amp; (skins[skinBId].mixingWithId == 0);
+        return (skins[skinAId].mixingWithId == 0) && (skins[skinBId].mixingWithId == 0);
     }
 
     // _setCooldownTime: set new cooldown time
@@ -284,13 +284,13 @@ contract SkinMix is SkinBase {
         if ((skinAId == 0) || (skinBId == 0)) {
             return false;
         }
-        if ((skinAId &gt;= nextSkinId) || (skinBId &gt;= nextSkinId)) {
+        if ((skinAId >= nextSkinId) || (skinBId >= nextSkinId)) {
             return false;
         }
         if (accountsToActiveSkin[account] == skinAId || accountsToActiveSkin[account] == skinBId) {
             return false;
         }
-        return (skinIdToOwner[skinAId] == account) &amp;&amp; (skinIdToOwner[skinBId] == account);
+        return (skinIdToOwner[skinAId] == account) && (skinIdToOwner[skinBId] == account);
     }
 
     // _isNotOnSale: whether a skin is not on sale
@@ -306,7 +306,7 @@ contract SkinMix is SkinBase {
         require(_isValidSkin(msg.sender, skinAId, skinBId));
 
         // Check whether skins are neither on sale
-        require(_isNotOnSale(skinAId) &amp;&amp; _isNotOnSale(skinBId));
+        require(_isNotOnSale(skinAId) && _isNotOnSale(skinBId));
 
         // Check cooldown
         require(_isCooldownReady(skinAId, skinBId));
@@ -327,7 +327,7 @@ contract SkinMix is SkinBase {
 
     // Mixing auto
     function mixAuto(uint256 skinAId, uint256 skinBId) public payable whenNotPaused {
-        require(msg.value &gt;= prePaidFee);
+        require(msg.value >= prePaidFee);
 
         mix(skinAId, skinBId);
 
@@ -368,7 +368,7 @@ contract SkinMix is SkinBase {
         // skinIdToOwner[skinBId] = owner;
         delete skinIdToOwner[skinAId];
         delete skinIdToOwner[skinBId];
-        // require(numSkinOfAccounts[account] &gt;= 2);
+        // require(numSkinOfAccounts[account] >= 2);
         numSkinOfAccounts[account] -= 1;
 
         emit MixSuccess(account, nextSkinId - 1, skinAId, skinBId);
@@ -400,7 +400,7 @@ contract SkinMarket is SkinMix {
     uint128 public trCut = 400;
 
     // Sale orders list 
-    mapping (uint256 =&gt; uint256) public desiredPrice;
+    mapping (uint256 => uint256) public desiredPrice;
 
     // events
     event PutOnSale(address account, uint256 skinId);
@@ -425,7 +425,7 @@ contract SkinMarket is SkinMix {
         // Check whether skin is already on sale
         require(isOnSale[skinId] == false);
 
-        require(price &gt; 0); 
+        require(price > 0); 
 
         // Put on sale
         desiredPrice[skinId] = price;
@@ -463,7 +463,7 @@ contract SkinMarket is SkinMix {
 
         uint256 _price = desiredPrice[skinId];
         // Check whether pay value is enough
-        require(msg.value &gt;= _price);
+        require(msg.value >= _price);
 
         // Cut and then send the proceeds to seller
         uint256 sellerProceeds = _price - _computeCut(_price);
@@ -495,16 +495,16 @@ contract SkinMinting is SkinMarket {
     uint256 public skinCreatedNum;
 
     // The summon and bleach numbers of each accounts: will be cleared every day
-    mapping (address =&gt; uint256) public accountToSummonNum;
-    mapping (address =&gt; uint256) public accountToBleachNum;
+    mapping (address => uint256) public accountToSummonNum;
+    mapping (address => uint256) public accountToBleachNum;
 
     // Pay level of each accounts
-    mapping (address =&gt; uint256) public accountToPayLevel;
-    mapping (address =&gt; uint256) public accountLastClearTime;
-    mapping (address =&gt; uint256) public bleachLastClearTime;
+    mapping (address => uint256) public accountToPayLevel;
+    mapping (address => uint256) public accountLastClearTime;
+    mapping (address => uint256) public bleachLastClearTime;
 
     // Free bleach number donated
-    mapping (address =&gt; uint256) public freeBleachNum;
+    mapping (address => uint256) public freeBleachNum;
     bool isBleachAllowed = false;
     bool isRecycleAllowed = false;
 
@@ -560,7 +560,7 @@ contract SkinMinting is SkinMarket {
 
     // Create base skin for sell. Only owner can create
     function createSkin(uint128 specifiedAppearance, uint256 salePrice) external onlyCOO {
-        require(skinCreatedNum &lt; skinCreatedLimit);
+        require(skinCreatedNum < skinCreatedLimit);
 
         // Create specified skin
         // uint128 randomAppearance = mixFormula.randomSkinAppearance();
@@ -598,7 +598,7 @@ contract SkinMinting is SkinMarket {
     //
     function moveData(uint128[] legacyAppearance, address[] legacyOwner, bool[] legacyIsOnSale, uint256[] legacyDesiredPrice) external onlyCOO {
         Skin memory newSkin = Skin({appearance: 0, cooldownEndTime: 0, mixingWithId: 0});
-        for (uint256 i = 0; i &lt; legacyOwner.length; i++) {
+        for (uint256 i = 0; i < legacyOwner.length; i++) {
             newSkin.appearance = legacyAppearance[i];
             newSkin.cooldownEndTime = uint64(now);
             newSkin.mixingWithId = 0;
@@ -613,7 +613,7 @@ contract SkinMinting is SkinMarket {
 
             nextSkinId++;
             numSkinOfAccounts[legacyOwner[i]] += 1;
-            if (numSkinOfAccounts[legacyOwner[i]] &gt; freeBleachNum[legacyOwner[i]]*10 || freeBleachNum[legacyOwner[i]] == 0) {
+            if (numSkinOfAccounts[legacyOwner[i]] > freeBleachNum[legacyOwner[i]]*10 || freeBleachNum[legacyOwner[i]] == 0) {
                 freeBleachNum[legacyOwner[i]] += 1;
             }
             skinCreatedNum += 1;
@@ -627,7 +627,7 @@ contract SkinMinting is SkinMarket {
             // This account&#39;s first time to summon, we do not need to clear summon numbers
             accountLastClearTime[msg.sender] = now;
         } else {
-            if (accountLastClearTime[msg.sender] &lt; levelClearTime &amp;&amp; now &gt; levelClearTime) {
+            if (accountLastClearTime[msg.sender] < levelClearTime && now > levelClearTime) {
                 accountToSummonNum[msg.sender] = 0;
                 accountToPayLevel[msg.sender] = 0;
                 accountLastClearTime[msg.sender] = now;
@@ -636,7 +636,7 @@ contract SkinMinting is SkinMarket {
 
         uint256 payLevel = accountToPayLevel[msg.sender];
         uint256 price = payMultiple[payLevel] * baseSummonPrice;
-        require(msg.value &gt;= price);
+        require(msg.value >= price);
 
         // Create random skin
         uint128 randomAppearance = mixFormula.randomSkinAppearance(nextSkinId, getActiveSkin(msg.sender));
@@ -655,8 +655,8 @@ contract SkinMinting is SkinMarket {
         accountToSummonNum[msg.sender] += 1;
 
         // Handle the paylevel
-        if (payLevel &lt; 5) {
-            if (accountToSummonNum[msg.sender] &gt;= levelSplits[payLevel]) {
+        if (payLevel < 5) {
+            if (accountToSummonNum[msg.sender] >= levelSplits[payLevel]) {
                 accountToPayLevel[msg.sender] = payLevel + 1;
             }
         }
@@ -669,7 +669,7 @@ contract SkinMinting is SkinMarket {
             // This account&#39;s first time to summon, we do not need to clear summon numbers
             accountLastClearTime[msg.sender] = now;
         } else {
-            if (accountLastClearTime[msg.sender] &lt; levelClearTime &amp;&amp; now &gt; levelClearTime) {
+            if (accountLastClearTime[msg.sender] < levelClearTime && now > levelClearTime) {
                 accountToSummonNum[msg.sender] = 0;
                 accountToPayLevel[msg.sender] = 0;
                 accountLastClearTime[msg.sender] = now;
@@ -678,12 +678,12 @@ contract SkinMinting is SkinMarket {
 
         uint256 payLevel = accountToPayLevel[msg.sender];
         uint256 price = payMultiple[payLevel] * baseSummonPrice;
-        require(msg.value &gt;= price*10);
+        require(msg.value >= price*10);
 
         Skin memory newSkin;
         uint128 randomAppearance;
         // Create random skin
-        for (uint256 i = 0; i &lt; 10; i++) {
+        for (uint256 i = 0; i < 10; i++) {
             randomAppearance = mixFormula.randomSkinAppearance(nextSkinId, getActiveSkin(msg.sender));
             newSkin = Skin({appearance: randomAppearance, cooldownEndTime: uint64(now), mixingWithId: 0});
             skins[nextSkinId] = newSkin;
@@ -708,8 +708,8 @@ contract SkinMinting is SkinMarket {
         accountToSummonNum[msg.sender] += 10;
 
         // Handle the paylevel
-        if (payLevel &lt; 5) {
-            if (accountToSummonNum[msg.sender] &gt;= levelSplits[payLevel]) {
+        if (payLevel < 5) {
+            if (accountToSummonNum[msg.sender] >= levelSplits[payLevel]) {
                 accountToPayLevel[msg.sender] = payLevel + 1;
             }
         }
@@ -718,13 +718,13 @@ contract SkinMinting is SkinMarket {
     // Recycle bin
     function recycleSkin(uint256[5] wasteSkins, uint256 preferIndex) external whenNotPaused {
         require(isRecycleAllowed == true);
-        for (uint256 i = 0; i &lt; 5; i++) {
+        for (uint256 i = 0; i < 5; i++) {
             require(skinIdToOwner[wasteSkins[i]] == msg.sender);
             skinIdToOwner[wasteSkins[i]] = address(0);
         }
 
         uint128[5] memory apps;
-        for (i = 0; i &lt; 5; i++) {
+        for (i = 0; i < 5; i++) {
             apps[i] = skins[wasteSkins[i]].appearance;
         }
         // Create random skin
@@ -750,13 +750,13 @@ contract SkinMinting is SkinMarket {
             // This account&#39;s first time to summon, we do not need to clear bleach numbers
             bleachLastClearTime[msg.sender] = now;
         } else {
-            if (bleachLastClearTime[msg.sender] &lt; levelClearTime &amp;&amp; now &gt; levelClearTime) {
+            if (bleachLastClearTime[msg.sender] < levelClearTime && now > levelClearTime) {
                 accountToBleachNum[msg.sender] = 0;
                 bleachLastClearTime[msg.sender] = now;
             }
         }
 
-        require(accountToBleachNum[msg.sender] &lt; bleachDailyLimit);
+        require(accountToBleachNum[msg.sender] < bleachDailyLimit);
         accountToBleachNum[msg.sender] += 1;
 
         // Check whether msg.sender is owner of the skin
@@ -766,9 +766,9 @@ contract SkinMinting is SkinMarket {
         require(isOnSale[skinId] == false);
 
         uint256 bleachNum = 0;
-        for (uint256 i = 0; i &lt; 8; i++) {
-            if ((attributes &amp; (uint128(1) &lt;&lt; i)) &gt; 0) {
-                if (freeBleachNum[msg.sender] &gt; 0) {
+        for (uint256 i = 0; i < 8; i++) {
+            if ((attributes & (uint128(1) << i)) > 0) {
+                if (freeBleachNum[msg.sender] > 0) {
                     freeBleachNum[msg.sender]--;
                 } else {
                     bleachNum++;
@@ -776,7 +776,7 @@ contract SkinMinting is SkinMarket {
             }
         }
         // Check whether there is enough money
-        require(msg.value &gt;= bleachNum * bleachPrice);
+        require(msg.value >= bleachNum * bleachPrice);
 
         Skin storage originSkin = skins[skinId];
         // Check whether this skin is in mixing
@@ -792,7 +792,7 @@ contract SkinMinting is SkinMarket {
     // Our daemon will clear daily summon numbers
     function clearSummonNum() external onlyCOO {
         uint256 nextDay = levelClearTime + 1 days;
-        if (now &gt; nextDay) {
+        if (now > nextDay) {
             levelClearTime = nextDay;
         }
     }

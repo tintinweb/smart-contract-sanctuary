@@ -86,9 +86,9 @@ contract DragonKing is mortal {
 	/** the id of the oldest character */
 	uint32 public oldest;
 	/** the character belonging to a given id */
-	mapping(uint32 =&gt; Character) characters;
+	mapping(uint32 => Character) characters;
 	/** teleported knights **/
-	mapping(uint32 =&gt; bool) teleported;
+	mapping(uint32 => bool) teleported;
 	/** the cost of each character type */
 	uint128[] public costs;
 	/** the value of each character type (cost - fee), so it&#39;s not necessary to compute it each time*/
@@ -107,18 +107,18 @@ contract DragonKing is mortal {
 	/** The maximum of characters allowed in the game */
 	uint16 public maxCharacters;
 	/** number of characters per type */
-	mapping(uint8 =&gt; uint16) public numCharactersXType;
+	mapping(uint8 => uint16) public numCharactersXType;
 
 
 	/** the amount of time that should pass since last eruption **/
 	uint public eruptionThreshold;
 	/** timestampt of the last eruption event **/
 	uint256 public lastEruptionTimestamp;
-	/** how many characters to kill in %, e.g. 20 will stand for 20%, should be &lt; 100 **/
+	/** how many characters to kill in %, e.g. 20 will stand for 20%, should be < 100 **/
 	uint8 public percentageToKill;
 
 	/** knight cooldown. contains the timestamp of the earliest possible moment to start a fight */
-	mapping(uint32 =&gt; uint) public cooldown;
+	mapping(uint32 => uint) public cooldown;
 	uint256 public constant CooldownThreshold = 1 days;
 
 	/** the teleport token contract used to send knights to the game scene */
@@ -130,7 +130,7 @@ contract DragonKing is mortal {
 	/** the price for protection */
 	uint public protectionPrice;
 	/** tells the number of times a character is protected */
-	mapping(uint32 =&gt; uint8) public protection;
+	mapping(uint32 => uint8) public protection;
 
 	// MODIFIER
 
@@ -152,12 +152,12 @@ contract DragonKing is mortal {
 	/** initializes the contract parameters	 */
 	function DragonKing(address teleportTokenAddress, address neverdieTokenAddress, uint8 eruptionThresholdInHours, uint8 percentageOfCharactersToKill, uint8 characterFee, uint16[] charactersCosts, uint16[] balloonsCosts) public onlyOwner {
 		fee = characterFee;
-		for (uint8 i = 0; i &lt; charactersCosts.length * 2; i++) {
+		for (uint8 i = 0; i < charactersCosts.length * 2; i++) {
 			costs.push(uint128(charactersCosts[i % numDragonTypes]) * 1 finney);
 			values.push(costs[i] - costs[i] / 100 * fee);
 		}
 		uint256 balloonsIndex = charactersCosts.length * 2;
-		for (uint8 j = 0; j &lt; balloonsCosts.length; j++) {
+		for (uint8 j = 0; j < balloonsCosts.length; j++) {
 			costs.push(uint128(balloonsCosts[j]) * 1 finney);
 			values.push(costs[balloonsIndex + j] - costs[balloonsIndex + j] / 100 * fee);
 		}
@@ -178,14 +178,14 @@ contract DragonKing is mortal {
 	function addCharacters(uint8 characterType) payable public {
 		uint8 amount = uint8(msg.value / costs[characterType]);
 		uint16 nchars = numCharacters;
-		if (characterType &gt;= costs.length || msg.value &lt; costs[characterType] || nchars + amount &gt; maxCharacters) revert();
+		if (characterType >= costs.length || msg.value < costs[characterType] || nchars + amount > maxCharacters) revert();
 		uint32 nid = nextId;
 		//if type exists, enough ether was transferred and there are less than maxCharacters characters in the game
-		if (characterType &lt; numDragonTypes) {
+		if (characterType < numDragonTypes) {
 			//dragons enter the game directly
 			if (oldest == 0 || oldest == noKing)
 				oldest = nid;
-			for (uint8 i = 0; i &lt; amount; i++) {
+			for (uint8 i = 0; i < amount; i++) {
 				addCharacter(nid + i, nchars + i);
 				characters[nid + i] = Character(characterType, values[characterType], msg.sender);
 			}
@@ -194,7 +194,7 @@ contract DragonKing is mortal {
 		}
 		else {
 			// to enter game knights should be teleported later
-			for (uint8 j = 0; j &lt; amount; j++) {
+			for (uint8 j = 0; j < amount; j++) {
 				characters[nid + j] = Character(characterType, values[characterType], msg.sender);
 			}
 		}
@@ -210,7 +210,7 @@ contract DragonKing is mortal {
 	 * @param nchars the number of characters currently in the game
 	 */
 	function addCharacter(uint32 nId, uint16 nchars) internal {
-		if (nchars &lt; ids.length)
+		if (nchars < ids.length)
 			ids[nchars] = nId;
 		else
 			ids.push(nId);
@@ -226,10 +226,10 @@ contract DragonKing is mortal {
 		uint32 lastId;
 		uint playerBalance;
 		uint16 nchars = numCharacters;
-		for (uint16 i = 0; i &lt; nchars; i++) {
+		for (uint16 i = 0; i < nchars; i++) {
 			if (characters[ids[i]].owner == msg.sender) {
 				//first delete all characters at the end of the array
-				while (nchars &gt; 0 &amp;&amp; characters[ids[nchars - 1]].owner == msg.sender) {
+				while (nchars > 0 && characters[ids[nchars - 1]].owner == msg.sender) {
 					nchars--;
 					lastId = ids[nchars];
 					numCharactersXType[characters[lastId].characterType]--;
@@ -240,7 +240,7 @@ contract DragonKing is mortal {
 					delete characters[lastId];
 				}
 				//if the last character does not belong to the player, replace the players character by this last one
-				if (nchars &gt; i + 1) {
+				if (nchars > i + 1) {
 					playerBalance += characters[ids[i]].value;
 					removed[count] = ids[i];
 					count++;
@@ -277,8 +277,8 @@ contract DragonKing is mortal {
 	 * */
 
 	function triggerVolcanoEruption() public {
-		require(now &gt;= lastEruptionTimestamp + eruptionThreshold);
-		require(numCharacters&gt;0);
+		require(now >= lastEruptionTimestamp + eruptionThreshold);
+		require(numCharacters>0);
 		lastEruptionTimestamp = now;
 		uint128 pot;
 		uint128 value;
@@ -289,19 +289,19 @@ contract DragonKing is mortal {
 		uint128 neededGas = 80000 + 10000 * uint32(nchars);
 		if(howmany == 0) howmany = 1;//hit at least 1
 		uint32[] memory hitCharacters = new uint32[](howmany);
-		for (uint8 i = 0; i &lt; howmany; i++) {
+		for (uint8 i = 0; i < howmany; i++) {
 			random = uint16(generateRandomNumber(lastEruptionTimestamp + i) % nchars);
 			nextHitId = ids[random];
 			hitCharacters[i] = nextHitId;
 			value = hitCharacter(random, nchars);
-			if (value &gt; 0) {
+			if (value > 0) {
 				nchars--;
 			}
 			pot += value;
 		}
 		uint128 gasCost = uint128(neededGas * tx.gasprice);
 		numCharacters = nchars;
-		if (pot &gt; gasCost){
+		if (pot > gasCost){
 			distribute(pot - gasCost); //distribute the pot minus the oraclize gas costs
 			NewEruption(hitCharacters, pot - gasCost, gasCost);
 		}
@@ -322,19 +322,19 @@ contract DragonKing is mortal {
 		if (knightID != ids[knightIndex])
 			knightID = getCharacterIndex(knightID);
 		Character storage knight = characters[knightID];
-		require(cooldown[knightID] + CooldownThreshold &lt;= now);
+		require(cooldown[knightID] + CooldownThreshold <= now);
 		require(knight.owner == msg.sender);
-		require(knight.characterType &lt; 2*numDragonTypes); // knight is not a balloon
-		require(knight.characterType &gt;= numDragonTypes);
+		require(knight.characterType < 2*numDragonTypes); // knight is not a balloon
+		require(knight.characterType >= numDragonTypes);
 		uint16 dragonIndex = getRandomDragon(knightID);
-		assert(dragonIndex &lt; maxCharacters);
+		assert(dragonIndex < maxCharacters);
 		uint32 dragonID = ids[dragonIndex];
 		Character storage dragon = characters[dragonID];
 		uint16 tieBreaker = uint16(now % 2);
 		uint128 value;
-		if (knight.characterType - numDragonTypes &gt; dragon.characterType || (knight.characterType - numDragonTypes == dragon.characterType &amp;&amp; tieBreaker == 0)) {
+		if (knight.characterType - numDragonTypes > dragon.characterType || (knight.characterType - numDragonTypes == dragon.characterType && tieBreaker == 0)) {
 			value = hitCharacter(dragonIndex, numCharacters);
-			if (value &gt; 0) {
+			if (value > 0) {
 				numCharacters--;
 			}
 			knight.value += value;
@@ -344,7 +344,7 @@ contract DragonKing is mortal {
 		}
 		else {
 			value = hitCharacter(knightIndex, numCharacters);
-			if (value &gt; 0) {
+			if (value > 0) {
 				numCharacters--;
 			}
 			dragon.value += value;
@@ -365,7 +365,7 @@ contract DragonKing is mortal {
 		//if the picked character is a knight or belongs to the sender, look at the character + stepSizes ahead in the array (modulo the total number)
 		//will at some point return to the startingPoint if no character is suited
 		do {
-			if (characters[ids[i]].characterType &lt; numDragonTypes &amp;&amp; characters[ids[i]].owner != msg.sender) return i;
+			if (characters[ids[i]].characterType < numDragonTypes && characters[ids[i]].owner != msg.sender) return i;
 			i = (i + stepSize) % numCharacters;
 		} while (i != randomIndex);
 		return maxCharacters + 1; //there is none
@@ -388,7 +388,7 @@ contract DragonKing is mortal {
 	 * */
 	function hitCharacter(uint16 index, uint16 nchars) internal returns(uint128 characterValue) {
 		uint32 id = ids[index];
-		if (protection[id] &gt; 0) {
+		if (protection[id] > 0) {
 			protection[id]--;
 			return 0;
 		}
@@ -402,8 +402,8 @@ contract DragonKing is mortal {
 	 * */
 	function findOldest() public {
 		uint32 newOldest = noKing;
-		for (uint16 i = 0; i &lt; numCharacters; i++) {
-			if (ids[i] &lt; newOldest &amp;&amp; characters[ids[i]].characterType &lt; numDragonTypes)
+		for (uint16 i = 0; i < numCharacters; i++) {
+			if (ids[i] < newOldest && characters[ids[i]].characterType < numDragonTypes)
 				newOldest = ids[i];
 		}
 		oldest = newOldest;
@@ -428,17 +428,17 @@ contract DragonKing is mortal {
 		uint128 valueSum;
 		uint8 size = 2 * numDragonTypes;
 		uint128[] memory shares = new uint128[](size);
-		for (uint8 v = 0; v &lt; size; v++) {
-			if (numCharactersXType[v] &gt; 0) valueSum += values[v];
+		for (uint8 v = 0; v < size; v++) {
+			if (numCharactersXType[v] > 0) valueSum += values[v];
 		}
-		for (uint8 m = 0; m &lt; size; m++) {
-			if (numCharactersXType[m] &gt; 0)
+		for (uint8 m = 0; m < size; m++) {
+			if (numCharactersXType[m] > 0)
 				shares[m] = amount * values[m] / valueSum / numCharactersXType[m];
 		}
 		uint8 cType;
-		for (uint16 i = 0; i &lt; numCharacters; i++) {
+		for (uint16 i = 0; i < numCharacters; i++) {
 			cType = characters[ids[i]].characterType;
-			if(cType &lt; size)
+			if(cType < size)
 				characters[ids[i]].value += shares[characters[ids[i]].characterType];
 		}
 	}
@@ -451,7 +451,7 @@ contract DragonKing is mortal {
 	 * */
 	function collectFees(uint128 amount) public onlyOwner {
 		uint collectedFees = getFees();
-		if (amount + 100 finney &lt; collectedFees) {
+		if (amount + 100 finney < collectedFees) {
 			owner.transfer(amount);
 		}
 	}
@@ -471,7 +471,7 @@ contract DragonKing is mortal {
 	 * */
 	function stop() public onlyOwner {
 		withdraw();
-		for (uint16 i = 0; i &lt; numCharacters; i++) {
+		for (uint16 i = 0; i < numCharacters; i++) {
 			characters[ids[i]].owner.transfer(characters[ids[i]].value);
 		}
 		kill();
@@ -484,7 +484,7 @@ contract DragonKing is mortal {
 	 * */
 	function sellCharacter(uint32 characterId) public {
 		require(msg.sender == characters[characterId].owner);
-		require(characters[characterId].characterType &lt; 2*numDragonTypes);
+		require(characters[characterId].characterType < 2*numDragonTypes);
 		uint128 val = characters[characterId].value;
 		numCharacters--;
 		replaceCharacter(getCharacterIndex(characterId), numCharacters);
@@ -508,7 +508,7 @@ contract DragonKing is mortal {
 		if (msg.sender == address(teleportToken)) {
 			id = toUint32(callData);
 			price = teleportPrice * (characters[id].characterType/numDragonTypes);//double price in case of balloon
-			require(value &gt;= price);
+			require(value >= price);
 			assert(teleportToken.transferFrom(sender, this, price));
 			teleportKnight(id);
 		}
@@ -524,7 +524,7 @@ contract DragonKing is mortal {
 
 			uint256 lifePrice;
 			uint8 max;
-			if(cType &lt; 2 * numDragonTypes){
+			if(cType < 2 * numDragonTypes){
 				lifePrice = ((cType % numDragonTypes) + 1) * protectionPrice;
 				max = 3;
 			}
@@ -535,7 +535,7 @@ contract DragonKing is mortal {
 
 			price = 0;
 			uint8 i = protection[id];
-			for (i; i &lt; max &amp;&amp; value &gt;= price + lifePrice * (i + 1); i++) {
+			for (i; i < max && value >= price + lifePrice * (i + 1); i++) {
 				price += lifePrice * (i + 1);
 			}
 			assert(neverdieToken.transferFrom(sender, this, price));
@@ -554,7 +554,7 @@ contract DragonKing is mortal {
 		require(teleported[id] == false);
 		teleported[id] = true;
 		Character storage knight = characters[id];
-		require(knight.characterType &gt;= numDragonTypes); //this also makes calls with non-existent ids fail
+		require(knight.characterType >= numDragonTypes); //this also makes calls with non-existent ids fail
 		addCharacter(id, numCharacters);
 		numCharacters++;
 		numCharactersXType[knight.characterType]++;
@@ -589,7 +589,7 @@ contract DragonKing is mortal {
 	 * @return the character id
 	 * */
 	function getCharacterIndex(uint32 characterId) constant public returns(uint16) {
-		for (uint16 i = 0; i &lt; ids.length; i++) {
+		for (uint16 i = 0; i < ids.length; i++) {
 			if (ids[i] == characterId) {
 				return i;
 			}
@@ -603,10 +603,10 @@ contract DragonKing is mortal {
 	 * @return 4 arrays containing the ids, types, values and owners of the characters
 	 * */
 	function get10Characters(uint16 startIndex) constant public returns(uint32[10] characterIds, uint8[10] types, uint128[10] values, address[10] owners) {
-		uint32 endIndex = startIndex + 10 &gt; numCharacters ? numCharacters : startIndex + 10;
+		uint32 endIndex = startIndex + 10 > numCharacters ? numCharacters : startIndex + 10;
 		uint8 j = 0;
 		uint32 id;
-		for (uint16 i = startIndex; i &lt; endIndex; i++) {
+		for (uint16 i = startIndex; i < endIndex; i++) {
 			id = ids[i];
 			characterIds[j] = id;
 			types[j] = characters[id].characterType;
@@ -622,7 +622,7 @@ contract DragonKing is mortal {
 	 * @return the number of dragons
 	 * */
 	function getNumDragons() constant public returns(uint16 numDragons) {
-		for (uint8 i = 0; i &lt; numDragonTypes; i++)
+		for (uint8 i = 0; i < numDragonTypes; i++)
 			numDragons += numCharactersXType[i];
 	}
 
@@ -631,7 +631,7 @@ contract DragonKing is mortal {
 	 * @return the number of knights
 	 * */
 	function getNumKnights() constant public returns(uint16 numKnights) {
-		for (uint8 i = numDragonTypes; i &lt; 2 * numDragonTypes; i++)
+		for (uint8 i = numDragonTypes; i < 2 * numDragonTypes; i++)
 			numKnights += numCharactersXType[i];
 	}
 
@@ -640,7 +640,7 @@ contract DragonKing is mortal {
 	 * */
 	function getFees() constant public returns(uint) {
 		uint reserved = 0;
-		for (uint16 j = 0; j &lt; numCharacters; j++)
+		for (uint16 j = 0; j < numCharacters; j++)
 			reserved += characters[ids[j]].value;
 		return address(this).balance - reserved;
 	}
@@ -653,7 +653,7 @@ contract DragonKing is mortal {
 	 * @param prices the prices in finney
 	 * */
 	function setPrices(uint16[] prices) public onlyOwner {
-		for (uint8 i = 0; i &lt; prices.length * 2; i++) {
+		for (uint8 i = 0; i < prices.length * 2; i++) {
 			costs[i] = uint128(prices[i % numDragonTypes]) * 1 finney;
 			values[i] = costs[i] - costs[i] / 100 * fee;
 		}
@@ -703,7 +703,7 @@ contract DragonKing is mortal {
 	/************* HELPERS ****************/
 
 	/**
-	 * only works for bytes of length &lt; 32
+	 * only works for bytes of length < 32
 	 * @param b the byte input
 	 * @return the uint
 	 * */

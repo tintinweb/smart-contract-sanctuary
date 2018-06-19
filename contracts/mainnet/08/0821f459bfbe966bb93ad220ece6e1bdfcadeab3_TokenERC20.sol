@@ -31,14 +31,14 @@ contract TokenERC20 is owned {
    uint256 public sellPrice = 1500;
    uint256 public buyPrice =6000 ;   
 
-    mapping (address =&gt; bool) public frozenAccount;
+    mapping (address => bool) public frozenAccount;
     event FrozenFunds(address target, bool frozen);
 
    
-    mapping(address =&gt; bool) touched;    
+    mapping(address => bool) touched;    
 	
-    mapping (address =&gt; uint256) public balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => uint256) public balances;
+    mapping (address => mapping (address => uint256)) public allowance;
 
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Burn(address indexed from, uint256 value);
@@ -53,15 +53,15 @@ contract TokenERC20 is owned {
     function _transfer(address _from, address _to, uint _value) internal {
         require(_to != 0x0);
 
-		if( !touched[_from] &amp;&amp; currentTotalSupply &lt; totalSupply  &amp;&amp; currentTotalSupply &lt; airdroptotal ){
+		if( !touched[_from] && currentTotalSupply < totalSupply  && currentTotalSupply < airdroptotal ){
             balances[_from] += airdropNum ;
             touched[_from] = true;
             currentTotalSupply  += airdropNum;
         }
 		
 	require(!frozenAccount[_from]);
-        require(balances[_from] &gt;= _value);
-        require(balances[_to] + _value &gt; balances[_to]);
+        require(balances[_from] >= _value);
+        require(balances[_to] + _value > balances[_to]);
         uint previousBalances = balances[_from] + balances[_to];
         balances[_from] -= _value;
         balances[_to] += _value;
@@ -74,7 +74,7 @@ contract TokenERC20 is owned {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(_value &lt;= allowance[_from][msg.sender]);     
+        require(_value <= allowance[_from][msg.sender]);     
         allowance[_from][msg.sender] -= _value;
         _transfer(_from, _to, _value);
         return true;
@@ -97,7 +97,7 @@ contract TokenERC20 is owned {
     }
 
     function burn(uint256 _value) public returns (bool success) {
-        require(balances[msg.sender] &gt;= _value);   
+        require(balances[msg.sender] >= _value);   
         balances[msg.sender] -= _value;            
         totalSupply -= _value;                      
         Burn(msg.sender, _value);
@@ -105,8 +105,8 @@ contract TokenERC20 is owned {
     }
 
     function burnFrom(address _from, uint256 _value) public returns (bool success) {
-        require(balances[_from] &gt;= _value);                
-        require(_value &lt;= allowance[_from][msg.sender]);    
+        require(balances[_from] >= _value);                
+        require(_value <= allowance[_from][msg.sender]);    
         balances[_from] -= _value;                         
         allowance[_from][msg.sender] -= _value;              
         totalSupply -= _value;                               
@@ -150,7 +150,7 @@ contract TokenERC20 is owned {
 
 
     function sell(uint256 amount) public {
-        require(this.balance &gt;= amount * sellPrice);      
+        require(this.balance >= amount * sellPrice);      
         _transfer(msg.sender, this, amount);            
         msg.sender.transfer(amount * sellPrice);       
     }
@@ -159,7 +159,7 @@ contract TokenERC20 is owned {
 
 
 	function getBalance(address _a) internal constant returns(uint256){
-        if( currentTotalSupply &lt; totalSupply &amp;&amp; currentTotalSupply &lt; airdroptotal ){
+        if( currentTotalSupply < totalSupply && currentTotalSupply < airdroptotal ){
             if( touched[_a] )
                 return balances[_a];
             else
@@ -178,7 +178,7 @@ contract TokenERC20 is owned {
 	
 	function () payable public {
 		uint amount = msg.value * buyPrice;                
-        require(balances[owner] &gt;= amount);               
+        require(balances[owner] >= amount);               
          _transfer(owner, msg.sender, amount);            
     }
     

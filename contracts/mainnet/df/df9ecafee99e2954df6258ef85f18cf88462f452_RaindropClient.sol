@@ -5,7 +5,7 @@ library StringUtils {
     function allLower(string memory _string) internal pure returns (bool) {
         bytes memory bytesString = bytes(_string);
         for (uint i = 0; i < bytesString.length; i++) {
-            if ((bytesString[i] >= 65) &amp;&amp; (bytesString[i] <= 90)) {  // Uppercase characters
+            if ((bytesString[i] >= 65) && (bytesString[i] <= 90)) {  // Uppercase characters
                 return false;
             }
         }

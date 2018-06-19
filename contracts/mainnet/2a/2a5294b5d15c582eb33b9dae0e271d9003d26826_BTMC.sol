@@ -223,9 +223,9 @@ contract BTMC is ERC20,Ownable{
 		notBeforeTime(stepOneStartTime)
 		notAfterTime(endTime)
 	{
-		if(now>=stepOneStartTime&amp;&amp;now<stepTwoStartTime){
+		if(now>=stepOneStartTime&&now<stepTwoStartTime){
 			funding(msg.sender,msg.value,oneStepRate);
-		}else if(now>=stepTwoStartTime&amp;&amp;now<endTime){
+		}else if(now>=stepTwoStartTime&&now<endTime){
 			funding(msg.sender,msg.value,twoStepRate);
 		}else {
 			revert();

@@ -32,7 +32,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -42,7 +42,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -51,7 +51,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -69,8 +69,8 @@ contract PalmCoin is iERC20 {
     // One year lockup is June 1, 2019. Unix Timestamp 1559365200
     uint256 public _releaseTime;
 
-    mapping (address =&gt; uint256) balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => uint256) balances;
+    mapping (address => mapping (address => uint256)) allowed;
 
     constructor(address _owner, uint256 unlockTimestamp) public {
         balances[_owner] = _totalSupply;
@@ -88,7 +88,7 @@ contract PalmCoin is iERC20 {
      * @dev Modifier to make a function callable only when the contract is not Locked.
      */
     modifier whenNotLocked() {
-      require(msg.sender == owner || block.timestamp &gt; _releaseTime);
+      require(msg.sender == owner || block.timestamp > _releaseTime);
       _;
     }
 
@@ -105,7 +105,7 @@ contract PalmCoin is iERC20 {
 
     function setLock(uint256 releaseTime) external onlyOwner {
         // Require release time to be under 1 year, May 1 2019, unix timestamp 1556668800
-        require(releaseTime &lt; 1559365200);
+        require(releaseTime < 1559365200);
         _releaseTime = releaseTime;
         emit LockedUntil(releaseTime);
     }
@@ -120,7 +120,7 @@ contract PalmCoin is iERC20 {
 
     function transfer(address _to, uint256 _value) public whenNotLocked onlyPayloadSize(2 * 32) returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
 
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -130,8 +130,8 @@ contract PalmCoin is iERC20 {
 
     function transferFrom(address _from, address _to, uint256 _value) public whenNotLocked returns (bool success) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -166,7 +166,7 @@ contract PalmCoin is iERC20 {
     */
     function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
           allowed[msg.sender][_spender] = 0;
         } else {
           allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);

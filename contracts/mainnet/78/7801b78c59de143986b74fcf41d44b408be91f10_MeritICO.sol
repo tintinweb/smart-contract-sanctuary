@@ -465,12 +465,12 @@ contract MeritICO is Ownable, Haltable {
 	mapping (address => bool) blacklist;
 
 	modifier saleActive {
-		require(currentStage > Stage.Closed &amp;&amp; currentStage < Stage.Allocating);
+		require(currentStage > Stage.Closed && currentStage < Stage.Allocating);
 		_;
 	}
 
 	modifier saleAllocatable {
-		require(currentStage > Stage.Closed &amp;&amp; currentStage <= Stage.Allocating);
+		require(currentStage > Stage.Closed && currentStage <= Stage.Allocating);
 		_;
 	}
 	

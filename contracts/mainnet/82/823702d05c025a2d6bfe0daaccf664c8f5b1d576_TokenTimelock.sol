@@ -62,7 +62,7 @@ contract TokenTimelock {
   uint256 public releaseTime;
 
   function TokenTimelock(ERC20Basic _token, address _beneficiary, uint256 _releaseTime) public {
-    require(_releaseTime &gt; now);
+    require(_releaseTime > now);
     token = _token;
     beneficiary = _beneficiary;
     releaseTime = _releaseTime;
@@ -72,10 +72,10 @@ contract TokenTimelock {
    * @notice Transfers tokens held by timelock to beneficiary.
    */
   function release() public {
-    require(now &gt;= releaseTime);
+    require(now >= releaseTime);
 
     uint256 amount = token.balanceOf(this);
-    require(amount &gt; 0);
+    require(amount > 0);
 
     token.safeTransfer(beneficiary, amount);
   }

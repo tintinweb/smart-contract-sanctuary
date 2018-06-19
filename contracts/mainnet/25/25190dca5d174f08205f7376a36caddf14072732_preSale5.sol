@@ -285,7 +285,7 @@ contract preSale5 is Ownable {
     }
  
    modifier saleIsOn() {
-    	require(now > start &amp;&amp; now < end);
+    	require(now > start && now < end);
     	_;
     }
 	

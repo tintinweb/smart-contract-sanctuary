@@ -124,20 +124,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -153,7 +153,7 @@ library MathUtils {
      * @param _amount Amount that is supposed to be a percentage
      */
     function validPerc(uint256 _amount) internal pure returns (bool) {
-        return _amount &lt;= PERC_DIVISOR;
+        return _amount <= PERC_DIVISOR;
     }
 
     /*
@@ -437,7 +437,7 @@ contract Minter is Manager, IMinter {
         // Update amount of minted tokens for round
         currentMintedTokens = currentMintedTokens.add(mintAmount);
         // Minted tokens must not exceed mintable tokens
-        require(currentMintedTokens &lt;= currentMintableTokens);
+        require(currentMintedTokens <= currentMintableTokens);
         // Mint new tokens
         livepeerToken().mint(this, mintAmount);
 
@@ -505,17 +505,17 @@ contract Minter is Manager, IMinter {
         uint256 currentBondingRate = 0;
         uint256 totalSupply = livepeerToken().totalSupply();
 
-        if (totalSupply &gt; 0) {
+        if (totalSupply > 0) {
             uint256 totalBonded = bondingManager().getTotalBonded();
             currentBondingRate = MathUtils.percPoints(totalBonded, totalSupply);
         }
 
-        if (currentBondingRate &lt; targetBondingRate) {
+        if (currentBondingRate < targetBondingRate) {
             // Bonding rate is below the target - increase inflation
             inflation = inflation.add(inflationChange);
-        } else if (currentBondingRate &gt; targetBondingRate) {
+        } else if (currentBondingRate > targetBondingRate) {
             // Bonding rate is above the target - decrease inflation
-            if (inflationChange &gt; inflation) {
+            if (inflationChange > inflation) {
                 inflation = 0;
             } else {
                 inflation = inflation.sub(inflationChange);

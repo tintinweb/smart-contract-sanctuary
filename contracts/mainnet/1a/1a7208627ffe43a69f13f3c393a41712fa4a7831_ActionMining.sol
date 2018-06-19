@@ -108,10 +108,10 @@ contract AccessService is AccessAdmin {
         external 
     {
         require(msg.sender == addrFinance || msg.sender == addrAdmin);
-        require(_amount &gt; 0);
+        require(_amount > 0);
         address receiver = _target == address(0) ? addrFinance : _target;
         uint256 balance = this.balance;
-        if (_amount &lt; balance) {
+        if (_amount < balance) {
             receiver.transfer(_amount);
         } else {
             receiver.transfer(this.balance);
@@ -164,7 +164,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
@@ -174,7 +174,7 @@ library SafeMath {
     * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
@@ -183,7 +183,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -212,22 +212,22 @@ contract WarToken is ERC721, AccessAdmin {
     uint256 destroyFashionCount;
 
     /// @dev Equipment token ID vs owner address
-    mapping (uint256 =&gt; address) fashionIdToOwner;
+    mapping (uint256 => address) fashionIdToOwner;
 
     /// @dev Equipments owner by the owner (array)
-    mapping (address =&gt; uint256[]) ownerToFashionArray;
+    mapping (address => uint256[]) ownerToFashionArray;
 
     /// @dev Equipment token ID search in owner array
-    mapping (uint256 =&gt; uint256) fashionIdToOwnerIndex;
+    mapping (uint256 => uint256) fashionIdToOwnerIndex;
 
     /// @dev The authorized address for each WAR
-    mapping (uint256 =&gt; address) fashionIdToApprovals;
+    mapping (uint256 => address) fashionIdToApprovals;
 
     /// @dev The authorized operators for each address
-    mapping (address =&gt; mapping (address =&gt; bool)) operatorToApprovals;
+    mapping (address => mapping (address => bool)) operatorToApprovals;
 
     /// @dev Trust contract
-    mapping (address =&gt; bool) actionContracts;
+    mapping (address => bool) actionContracts;
 
     function setActionContract(address _actionAddr, bool _useful) external onlyAdmin {
         actionContracts[_actionAddr] = _useful;
@@ -263,7 +263,7 @@ contract WarToken is ERC721, AccessAdmin {
     // modifier
     /// @dev Check if token ID is valid
     modifier isValidToken(uint256 _tokenId) {
-        require(_tokenId &gt;= 1 &amp;&amp; _tokenId &lt;= fashionArray.length);
+        require(_tokenId >= 1 && _tokenId <= fashionArray.length);
         require(fashionIdToOwner[_tokenId] != address(0)); 
         _;
     }
@@ -277,7 +277,7 @@ contract WarToken is ERC721, AccessAdmin {
     // ERC721
     function supportsInterface(bytes4 _interfaceId) external view returns(bool) {
         // ERC165 || ERC721 || ERC165^ERC721
-        return (_interfaceId == 0x01ffc9a7 || _interfaceId == 0x80ac58cd || _interfaceId == 0x8153916a) &amp;&amp; (_interfaceId != 0xffffffff);
+        return (_interfaceId == 0x01ffc9a7 || _interfaceId == 0x80ac58cd || _interfaceId == 0x8153916a) && (_interfaceId != 0xffffffff);
     }
         
     function name() public pure returns(string) {
@@ -462,7 +462,7 @@ contract WarToken is ERC721, AccessAdmin {
         require(_owner != address(0));
 
         uint256 newFashionId = fashionArray.length;
-        require(newFashionId &lt; 4294967296);
+        require(newFashionId < 4294967296);
 
         fashionArray.length += 1;
         Fashion storage fs = fashionArray[newFashionId];
@@ -529,19 +529,19 @@ contract WarToken is ERC721, AccessAdmin {
         require(actionContracts[msg.sender]);
 
         Fashion storage fs = fashionArray[_tokenId];
-        if (_idxArray[0] &gt; 0) {
+        if (_idxArray[0] > 0) {
             _changeAttrByIndex(fs, _idxArray[0], _params[0]);
         }
 
-        if (_idxArray[1] &gt; 0) {
+        if (_idxArray[1] > 0) {
             _changeAttrByIndex(fs, _idxArray[1], _params[1]);
         }
 
-        if (_idxArray[2] &gt; 0) {
+        if (_idxArray[2] > 0) {
             _changeAttrByIndex(fs, _idxArray[2], _params[2]);
         }
 
-        if (_idxArray[3] &gt; 0) {
+        if (_idxArray[3] > 0) {
             _changeAttrByIndex(fs, _idxArray[3], _params[3]);
         }
 
@@ -586,7 +586,7 @@ contract WarToken is ERC721, AccessAdmin {
     {
         require(actionContracts[msg.sender]);
 
-        require(_tokenId &gt;= 1 &amp;&amp; _tokenId &lt;= fashionArray.length);
+        require(_tokenId >= 1 && _tokenId <= fashionArray.length);
         address owner = fashionIdToOwner[_tokenId];
         require(owner != address(0));
         require(_to != address(0));
@@ -621,7 +621,7 @@ contract WarToken is ERC721, AccessAdmin {
         uint256 length = fsArray.length;
         tokens = new uint256[](length);
         flags = new uint32[](length);
-        for (uint256 i = 0; i &lt; length; ++i) {
+        for (uint256 i = 0; i < length; ++i) {
             tokens[i] = fsArray[i];
             Fashion storage fs = fashionArray[fsArray[i]];
             flags[i] = uint32(uint32(fs.protoId) * 100 + uint32(fs.quality) * 10 + fs.pos);
@@ -631,11 +631,11 @@ contract WarToken is ERC721, AccessAdmin {
     /// @dev WAR token info returned based on Token ID transfered (64 at most)
     function getFashionsAttrs(uint256[] _tokens) external view returns(uint16[] attrs) {
         uint256 length = _tokens.length;
-        require(length &lt;= 64);
+        require(length <= 64);
         attrs = new uint16[](length * 11);
         uint256 tokenId;
         uint256 index;
-        for (uint256 i = 0; i &lt; length; ++i) {
+        for (uint256 i = 0; i < length; ++i) {
             tokenId = _tokens[i];
             if (fashionIdToOwner[tokenId] != address(0)) {
                 index = i * 11;
@@ -682,7 +682,7 @@ contract ActionMining is Random, AccessService {
     /// @dev mining order array
     MiningOrder[] public ordersArray;
 
-    mapping (uint16 =&gt; uint256) public protoIdToCount;
+    mapping (uint16 => uint256) public protoIdToCount;
 
 
     function ActionMining(address _nftAddr, uint16 _maxProtoId) public {
@@ -716,7 +716,7 @@ contract ActionMining is Random, AccessService {
     }
 
     function setMaxProtoId(uint16 _maxProtoId) external onlyAdmin {
-        require(_maxProtoId &gt; 0 &amp;&amp; _maxProtoId &lt; 10000);
+        require(_maxProtoId > 0 && _maxProtoId < 10000);
         require(_maxProtoId != maxProtoId);
         maxProtoId = _maxProtoId;
     }
@@ -727,8 +727,8 @@ contract ActionMining is Random, AccessService {
     }
 
     function setFashionSuitCount(uint16 _protoId, uint256 _cnt) external onlyAdmin {
-        require(_protoId &gt; 0 &amp;&amp; _protoId &lt;= maxProtoId);
-        require(_cnt &gt; 0 &amp;&amp; _cnt &lt;= 5);
+        require(_protoId > 0 && _protoId <= maxProtoId);
+        require(_cnt > 0 && _cnt <= 5);
         require(protoIdToCount[_protoId] != _cnt);
         protoIdToCount[_protoId] = _cnt;
     }
@@ -738,16 +738,16 @@ contract ActionMining is Random, AccessService {
         // quality
         uint256 rdm = curSeed % 10000;
         uint16 qtyParam;
-        if (rdm &lt; 6900) {
+        if (rdm < 6900) {
             attrs[1] = 1;
             qtyParam = 0;
-        } else if (rdm &lt; 8700) {
+        } else if (rdm < 8700) {
             attrs[1] = 2;
             qtyParam = 1;
-        } else if (rdm &lt; 9600) {
+        } else if (rdm < 9600) {
             attrs[1] = 3;
             qtyParam = 2;
-        } else if (rdm &lt; 9900) {
+        } else if (rdm < 9900) {
             attrs[1] = 4;
             qtyParam = 4;
         } else {
@@ -758,7 +758,7 @@ contract ActionMining is Random, AccessService {
         // protoId
         curSeed /= 10000;
         rdm = ((curSeed % 10000) / (9999 / maxProtoId)) + 1;
-        attrs[0] = uint16(rdm &lt;= maxProtoId ? rdm : maxProtoId);
+        attrs[0] = uint16(rdm <= maxProtoId ? rdm : maxProtoId);
 
         // pos
         curSeed /= 10000;
@@ -767,7 +767,7 @@ contract ActionMining is Random, AccessService {
             tmpVal = 5;
         }
         rdm = ((curSeed % 10000) / (9999 / tmpVal)) + 1;
-        uint16 pos = uint16(rdm &lt;= tmpVal ? rdm : tmpVal);
+        uint16 pos = uint16(rdm <= tmpVal ? rdm : tmpVal);
         attrs[2] = pos;
 
         rdm = attrs[0] % 3;
@@ -845,7 +845,7 @@ contract ActionMining is Random, AccessService {
                 recommenderSended = true;
                 recommender.transfer(rVal);
                 pVal = ethVal.sub(rVal).sub(fVal);
-                if (poolContract != address(0) &amp;&amp; pVal &gt; 0) {
+                if (poolContract != address(0) && pVal > 0) {
                     poolContract.transfer(pVal);
                 }
             } 
@@ -854,7 +854,7 @@ contract ActionMining is Random, AccessService {
             fVal = ethVal.mul(prizePoolPercent).div(100);
             pVal = ethVal.sub(fVal);
             addrFinance.transfer(fVal);
-            if (poolContract != address(0) &amp;&amp; pVal &gt; 0) {
+            if (poolContract != address(0) && pVal > 0) {
                 poolContract.transfer(pVal);
             }
         }
@@ -881,7 +881,7 @@ contract ActionMining is Random, AccessService {
         payable 
         whenNotPaused
     {
-        require(msg.value &gt;= 0.01 ether);
+        require(msg.value >= 0.01 ether);
 
         uint256 seed = _rand();
         uint16[9] memory attrs = _getFashionParam(seed);
@@ -889,7 +889,7 @@ contract ActionMining is Random, AccessService {
         tokenContract.createFashion(msg.sender, attrs, 2);
         _transferHelper(0.01 ether);
 
-        if (msg.value &gt; 0.01 ether) {
+        if (msg.value > 0.01 ether) {
             msg.sender.transfer(msg.value - 0.01 ether);
         }
 
@@ -901,12 +901,12 @@ contract ActionMining is Random, AccessService {
         payable 
         whenNotPaused
     {
-        require(msg.value &gt;= 0.01 ether);
+        require(msg.value >= 0.01 ether);
 
         _addOrder(msg.sender, 1);
         _transferHelper(0.01 ether);
 
-        if (msg.value &gt; 0.01 ether) {
+        if (msg.value > 0.01 ether) {
             msg.sender.transfer(msg.value - 0.01 ether);
         }
     }
@@ -916,12 +916,12 @@ contract ActionMining is Random, AccessService {
         payable 
         whenNotPaused
     {
-        require(msg.value &gt;= 0.03 ether);
+        require(msg.value >= 0.03 ether);
 
         _addOrder(msg.sender, 3);
         _transferHelper(0.03 ether);
 
-        if (msg.value &gt; 0.03 ether) {
+        if (msg.value > 0.03 ether) {
             msg.sender.transfer(msg.value - 0.03 ether);
         }
     }
@@ -931,12 +931,12 @@ contract ActionMining is Random, AccessService {
         payable 
         whenNotPaused
     {
-        require(msg.value &gt;= 0.0475 ether);
+        require(msg.value >= 0.0475 ether);
 
         _addOrder(msg.sender, 5);
         _transferHelper(0.0475 ether);
 
-        if (msg.value &gt; 0.0475 ether) {
+        if (msg.value > 0.0475 ether) {
             msg.sender.transfer(msg.value - 0.0475 ether);
         }
     }
@@ -946,12 +946,12 @@ contract ActionMining is Random, AccessService {
         payable 
         whenNotPaused
     {
-        require(msg.value &gt;= 0.09 ether);
+        require(msg.value >= 0.09 ether);
         
         _addOrder(msg.sender, 10);
         _transferHelper(0.09 ether);
 
-        if (msg.value &gt; 0.09 ether) {
+        if (msg.value > 0.09 ether) {
             msg.sender.transfer(msg.value - 0.09 ether);
         }
     }
@@ -960,17 +960,17 @@ contract ActionMining is Random, AccessService {
         external 
         onlyService
     {
-        require(_orderIndex &gt; 0 &amp;&amp; _orderIndex &lt; ordersArray.length);
+        require(_orderIndex > 0 && _orderIndex < ordersArray.length);
         MiningOrder storage order = ordersArray[_orderIndex];
         require(order.tmResolve == 0);
         address miner = order.miner;
         require(miner != address(0));
         uint64 chestCnt = order.chestCnt;
-        require(chestCnt &gt;= 1 &amp;&amp; chestCnt &lt;= 10);
+        require(chestCnt >= 1 && chestCnt <= 10);
 
         uint256 rdm = _seed;
         uint16[9] memory attrs;
-        for (uint64 i = 0; i &lt; chestCnt; ++i) {
+        for (uint64 i = 0; i < chestCnt; ++i) {
             rdm = _randBySeed(rdm);
             attrs = _getFashionParam(rdm);
             tokenContract.createFashion(miner, attrs, 2);

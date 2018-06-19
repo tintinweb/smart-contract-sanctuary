@@ -7,37 +7,37 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 
     function max64(uint64 a, uint64 b) internal pure returns (uint64) {
-        return a &gt;= b ? a : b;
+        return a >= b ? a : b;
     }
 
     function min64(uint64 a, uint64 b) internal pure returns (uint64) {
-        return a &lt; b ? a : b;
+        return a < b ? a : b;
     }
 
     function max256(uint256 a, uint256 b) internal pure returns (uint256) {
-        return a &gt;= b ? a : b;
+        return a >= b ? a : b;
     }
 
     function min256(uint256 a, uint256 b) internal pure returns (uint256) {
-        return a &lt; b ? a : b;
+        return a < b ? a : b;
     }
 }
 
@@ -92,8 +92,8 @@ contract BatchTransfer is Ownable {
     event TransferToken(address indexed from, address indexed to, uint256 value);
     Token public standardToken;
     // List of admins
-    mapping (address =&gt; bool) public contractAdmins;
-    mapping (address =&gt; bool) public userTransfered;
+    mapping (address => bool) public contractAdmins;
+    mapping (address => bool) public userTransfered;
     uint256 public totalUserTransfered;
 
     function BatchTransfer(address _owner) public {
@@ -126,12 +126,12 @@ contract BatchTransfer is Ownable {
 
     /* Batch token transfer. Used by contract creator to distribute initial tokens to holders */
     function batchTransfer(address[] _recipients, uint256[] _values) external onlyOwnerOrAdmin returns (bool) {
-        require( _recipients.length &gt; 0 &amp;&amp; _recipients.length == _values.length);
+        require( _recipients.length > 0 && _recipients.length == _values.length);
         uint256 total = 0;
-        for(uint i = 0; i &lt; _values.length; i++){
+        for(uint i = 0; i < _values.length; i++){
             total = total.add(_values[i]);
         }
-        for(uint j = 0; j &lt; _recipients.length; j++){
+        for(uint j = 0; j < _recipients.length; j++){
             standardToken.transfer(_recipients[j], _values[j]);
             totalUserTransfered = totalUserTransfered.add(1);
             userTransfered[_recipients[j]] = true;

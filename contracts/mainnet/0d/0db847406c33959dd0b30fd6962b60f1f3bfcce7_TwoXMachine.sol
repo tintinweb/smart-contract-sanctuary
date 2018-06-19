@@ -133,7 +133,7 @@ contract TwoXMachine is Ownable, Pausable {
     contractTotalInvested += msg.value;
     totalInvested[msg.sender] += msg.value;
 
-    while (index < buyIns.length &amp;&amp; value > 0) {
+    while (index < buyIns.length && value > 0) {
       BuyIn storage buyIn = buyIns[index];
 
       if (value < buyIn.value) {

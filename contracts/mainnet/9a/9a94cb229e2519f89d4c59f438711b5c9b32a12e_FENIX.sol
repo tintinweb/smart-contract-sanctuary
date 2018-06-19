@@ -122,14 +122,14 @@ contract FENIX is ERC20
     function () public payable
     {
         require(stage != Stages.ENDED);
-        require(!stopped &amp;&amp; msg.sender != owner);
-        if (stage == Stages.PREICO &amp;&amp; now <= preico_enddate){
+        require(!stopped && msg.sender != owner);
+        if (stage == Stages.PREICO && now <= preico_enddate){
              require((msg.value).mul(priceFactor.mul(100)) >= (pre_minContribution.mul(10 ** 18)));
 
           y();
 
     }
-    else  if (stage == Stages.ICO &amp;&amp; now <= ico_enddate){
+    else  if (stage == Stages.ICO && now <= ico_enddate){
   
           _price_tokn= getCurrentTokenPrice();
        
@@ -149,11 +149,11 @@ contract FENIX is ERC20
         bonusCalculationFactor = (block.timestamp.sub(ico_startdate)).div(3600); //time period in seconds
         if (bonusCalculationFactor== 0) 
             price_tokn = 65;                     //35 % Discount
-        else if (bonusCalculationFactor >= 1 &amp;&amp; bonusCalculationFactor < 24) 
+        else if (bonusCalculationFactor >= 1 && bonusCalculationFactor < 24) 
             price_tokn = 70;                     //30 % Discount
-        else if (bonusCalculationFactor >= 24 &amp;&amp; bonusCalculationFactor < 168) 
+        else if (bonusCalculationFactor >= 24 && bonusCalculationFactor < 168) 
             price_tokn = 80;                      //20 % Discount
-        else if (bonusCalculationFactor >= 168 &amp;&amp; bonusCalculationFactor < 336) 
+        else if (bonusCalculationFactor >= 168 && bonusCalculationFactor < 336) 
             price_tokn = 90;                     //10 % Discount
         else if (bonusCalculationFactor >= 336) 
             price_tokn = 100;                  //0 % Discount
@@ -272,7 +272,7 @@ contract FENIX is ERC20
     // these standardized APIs for approval:
     function transferFrom(address _from, address _to, uint256 _amount)public returns(bool success) {
         require(_to != 0x0);
-        require(balances[_from] >= _amount &amp;&amp; allowed[_from][msg.sender] >= _amount &amp;&amp; _amount >= 0);
+        require(balances[_from] >= _amount && allowed[_from][msg.sender] >= _amount && _amount >= 0);
         balances[_from] = (balances[_from]).sub(_amount);
         allowed[_from][msg.sender] = (allowed[_from][msg.sender]).sub(_amount);
         balances[_to] = (balances[_to]).add(_amount);
@@ -284,7 +284,7 @@ contract FENIX is ERC20
     // If this function is called again it overwrites the current allowance with _value.
     function approve(address _spender, uint256 _amount)public returns(bool success) {
         require(_spender != 0x0);
-        if (!icoRunningStatus &amp;&amp; lockstatus) {
+        if (!icoRunningStatus && lockstatus) {
             require(_amount <= availTokens[msg.sender]);
         }
         allowed[msg.sender][_spender] = _amount;
@@ -293,14 +293,14 @@ contract FENIX is ERC20
     }
 
     function allowance(address _owner, address _spender)public view returns(uint256 remaining) {
-        require(_owner != 0x0 &amp;&amp; _spender != 0x0);
+        require(_owner != 0x0 && _spender != 0x0);
         return allowed[_owner][_spender];
     }
     // Transfer the balance from owner&#39;s account to another account
     function transfer(address _to, uint256 _amount) public returns(bool success) {
        
        if ( msg.sender == owner) {
-            require(balances[owner] >= _amount &amp;&amp; _amount >= 0);
+            require(balances[owner] >= _amount && _amount >= 0);
             balances[owner] = balances[owner].sub(_amount);
             balances[_to] += _amount;
             availTokens[_to] += _amount;
@@ -308,7 +308,7 @@ contract FENIX is ERC20
             return true;
         }
         else
-        if (!icoRunningStatus &amp;&amp; lockstatus &amp;&amp; msg.sender != owner) {
+        if (!icoRunningStatus && lockstatus && msg.sender != owner) {
             require(availTokens[msg.sender] >= _amount);
             availTokens[msg.sender] -= _amount;
             balances[msg.sender] -= _amount;
@@ -320,7 +320,7 @@ contract FENIX is ERC20
 
           else if(!lockstatus)
          {
-           require(balances[msg.sender] >= _amount &amp;&amp; _amount >= 0);
+           require(balances[msg.sender] >= _amount && _amount >= 0);
            balances[msg.sender] = (balances[msg.sender]).sub(_amount);
            balances[_to] = (balances[_to]).add(_amount);
            emit Transfer(msg.sender, _to, _amount);

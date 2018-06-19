@@ -121,7 +121,7 @@ contract Claimable is Ownable {
         onlyOwner
         public
     {
-        require(newOwner != 0x0 &amp;&amp; newOwner != owner);
+        require(newOwner != 0x0 && newOwner != owner);
         pendingOwner = newOwner;
     }
     /// @dev Allows the pendingOwner address to finalize the transfer.

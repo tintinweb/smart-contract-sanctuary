@@ -200,7 +200,7 @@ library TokenLib {
   /// @param _newOwner Address for the new owner
   /// @return True if completed
   function changeOwner(TokenStorage storage self, address _newOwner) public returns (bool) {
-    require((self.owner == msg.sender) &amp;&amp; (_newOwner > 0));
+    require((self.owner == msg.sender) && (_newOwner > 0));
 
     self.owner = _newOwner;
     emit OwnerChange(msg.sender, _newOwner);
@@ -212,7 +212,7 @@ library TokenLib {
   /// @param _amount Number of tokens to mint
   /// @return True if completed
   function mintToken(TokenStorage storage self, uint256 _amount) public returns (bool) {
-    require((self.owner == msg.sender) &amp;&amp; self.stillMinting);
+    require((self.owner == msg.sender) && self.stillMinting);
     uint256 _newAmount;
     bool err;
 

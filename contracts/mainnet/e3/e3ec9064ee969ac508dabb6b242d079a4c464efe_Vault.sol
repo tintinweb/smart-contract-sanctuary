@@ -1,7 +1,7 @@
 pragma solidity ^0.4.20;
 
 contract Vault {
-    mapping (address=&gt;uint256) public eth_stored;
+    mapping (address=>uint256) public eth_stored;
     address public owner;
     address public client_wallet;
     address public primary_wallet;

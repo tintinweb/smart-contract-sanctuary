@@ -291,7 +291,7 @@ contract BancorConverterUpgrader is Owned {
         bool isSet;
         uint16 connectorTokenCount = _isLegacyVersion ? _oldConverter.reserveTokenCount() : _oldConverter.connectorTokenCount();
 
-        for (uint16 i = 0; i &lt; connectorTokenCount; i++) {
+        for (uint16 i = 0; i < connectorTokenCount; i++) {
             address connectorAddress = _isLegacyVersion ? _oldConverter.reserveTokens(i) : _oldConverter.connectorTokens(i);
             (virtualBalance, weight, isVirtualBalanceEnabled, isPurchaseEnabled, isSet) = readConnector(
                 _oldConverter,
@@ -323,11 +323,11 @@ contract BancorConverterUpgrader is Owned {
     */
     function copyQuickBuyPath(IBancorConverter _oldConverter, IBancorConverter _newConverter) private {
         uint256 quickBuyPathLength = _oldConverter.getQuickBuyPathLength();
-        if (quickBuyPathLength &lt;= 0)
+        if (quickBuyPathLength <= 0)
             return;
 
         IERC20Token[] memory path = new IERC20Token[](quickBuyPathLength);
-        for (uint256 i = 0; i &lt; quickBuyPathLength; i++) {
+        for (uint256 i = 0; i < quickBuyPathLength; i++) {
             path[i] = _oldConverter.quickBuyPath(i);
         }
 
@@ -349,7 +349,7 @@ contract BancorConverterUpgrader is Owned {
         uint256 connectorBalance;
         uint16 connectorTokenCount = _isLegacyVersion ? _oldConverter.reserveTokenCount() : _oldConverter.connectorTokenCount();
 
-        for (uint16 i = 0; i &lt; connectorTokenCount; i++) {
+        for (uint16 i = 0; i < connectorTokenCount; i++) {
             address connectorAddress = _isLegacyVersion ? _oldConverter.reserveTokens(i) : _oldConverter.connectorTokens(i);
             IERC20Token connector = IERC20Token(connectorAddress);
             connectorBalance = _isLegacyVersion ? _oldConverter.getReserveBalance(connector) : _oldConverter.getConnectorBalance(connector);

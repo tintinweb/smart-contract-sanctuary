@@ -296,7 +296,7 @@ contract OwnerContract is Ownable {
   
   // Allow contracts to have ownership without taking full custody of the token
   modifier onlyOwner() {
-    if (msg.sender == address(0) || (msg.sender != owner &amp;&amp; !contracts[msg.sender])) {
+    if (msg.sender == address(0) || (msg.sender != owner && !contracts[msg.sender])) {
       revert(); // error for uncontrolled request
     }
     _;

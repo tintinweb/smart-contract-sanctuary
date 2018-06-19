@@ -22,21 +22,21 @@ library Utils {
     uint  constant MAX_DECIMALS = 18;
 
     function calcDstQty(uint srcQty, uint srcDecimals, uint dstDecimals, uint rate) internal pure returns(uint) {
-        if( dstDecimals &gt;= srcDecimals ) {
-            require((dstDecimals-srcDecimals) &lt;= MAX_DECIMALS);
+        if( dstDecimals >= srcDecimals ) {
+            require((dstDecimals-srcDecimals) <= MAX_DECIMALS);
             return (srcQty * rate * (10**(dstDecimals-srcDecimals))) / PRECISION;
         } else {
-            require((srcDecimals-dstDecimals) &lt;= MAX_DECIMALS);
+            require((srcDecimals-dstDecimals) <= MAX_DECIMALS);
             return (srcQty * rate) / (PRECISION * (10**(srcDecimals-dstDecimals)));
         }
     }
 
     // function calcSrcQty(uint dstQty, uint srcDecimals, uint dstDecimals, uint rate) internal pure returns(uint) {
-    //     if( srcDecimals &gt;= dstDecimals ) {
-    //         require((srcDecimals-dstDecimals) &lt;= MAX_DECIMALS);
+    //     if( srcDecimals >= dstDecimals ) {
+    //         require((srcDecimals-dstDecimals) <= MAX_DECIMALS);
     //         return (PRECISION * dstQty * (10**(srcDecimals - dstDecimals))) / rate;
     //     } else {
-    //         require((dstDecimals-srcDecimals) &lt;= MAX_DECIMALS);
+    //         require((dstDecimals-srcDecimals) <= MAX_DECIMALS);
     //         return (PRECISION * dstQty) / (rate * (10**(dstDecimals - srcDecimals)));
     //     }
     // }
@@ -48,7 +48,7 @@ contract Manageable {
     event ProviderUpdated (uint8 name, address hash);
 
     // This is used to hold the addresses of the providers
-    mapping (uint8 =&gt; address) public subContracts;
+    mapping (uint8 => address) public subContracts;
     modifier onlyOwner() {
         // Make sure that this function can&#39;t be used without being overridden
         require(true == false);
@@ -94,7 +94,7 @@ contract Provider is Manageable {
     string public name;
     TypeDefinitions.ProviderType public providerType;
     string public description;
-    mapping(string =&gt; bool) internal properties;
+    mapping(string => bool) internal properties;
     TypeDefinitions.ProviderStatistic public statistics;
 }
 
@@ -108,7 +108,7 @@ contract Provider is Manageable {
  */
 library Roles {
   struct Role {
-    mapping (address =&gt; bool) bearer;
+    mapping (address => bool) bearer;
   }
 
   /**
@@ -169,7 +169,7 @@ library Roles {
 contract RBAC {
   using Roles for Roles.Role;
 
-  mapping (string =&gt; Roles.Role) private roles;
+  mapping (string => Roles.Role) private roles;
 
   event RoleAdded(address addr, string roleName);
   event RoleRemoved(address addr, string roleName);
@@ -294,7 +294,7 @@ contract RBAC {
    */
   // modifier onlyRoles(string[] roleNames) {
   //     bool hasAnyRole = false;
-  //     for (uint8 i = 0; i &lt; roleNames.length; i++) {
+  //     for (uint8 i = 0; i < roleNames.length; i++) {
   //         if (hasRole(msg.sender, roleNames[i])) {
   //             hasAnyRole = true;
   //             break;
@@ -398,7 +398,7 @@ library Converter {
     function bytes32ToString(bytes32 x) internal pure returns (string) {
         bytes memory bytesString = new bytes(32);
         uint charCount = 0;
-        for (uint j = 0; j &lt; 32; j++) {
+        for (uint j = 0; j < 32; j++) {
             byte char = byte(bytes32(uint(x) * 2 ** (8 * j)));
             if (char != 0) {
                 bytesString[charCount] = char;
@@ -407,7 +407,7 @@ library Converter {
         }
 
         bytes memory bytesStringTrimmed = new bytes(charCount);
-        for (j = 0; j &lt; charCount; j++) {
+        for (j = 0; j < charCount; j++) {
             bytesStringTrimmed[j] = bytesString[j];
         }
         return string(bytesStringTrimmed);
@@ -438,7 +438,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -448,7 +448,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -457,7 +457,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -621,8 +621,8 @@ contract OlympusStorage is Manageable, OlympusStorageInterface {
         StorageTypeDefinitions.OrderStatus status;
         bytes32 exchangeId;
     }
-    mapping(uint =&gt; IndexOrder) public orders;
-    mapping(uint =&gt; mapping(address =&gt; uint)) public orderTokenAmounts;
+    mapping(uint => IndexOrder) public orders;
+    mapping(uint => mapping(address => uint)) public orderTokenAmounts;
     uint public orderId = 1000000;
     bytes32 constant private dataKind = &quot;Order&quot;;
     OlympusStorageExtendedInterface internal olympusStorageExtended = OlympusStorageExtendedInterface(address(0xcEb51bD598ABb0caa8d2Da30D4D760f08936547B));
@@ -653,7 +653,7 @@ contract OlympusStorage is Manageable, OlympusStorageInterface {
         orders[indexOrderId].totalTokenAmounts = totalTokenAmounts;
         uint i;
 
-        for (i = 0; i &lt; tokens.length; i++ ) {
+        for (i = 0; i < tokens.length; i++ ) {
             orders[indexOrderId].subStatuses.push(ExchangeAdapterBase.OrderStatus.Pending);
             orders[indexOrderId].dealtPrices.push(0);
             orders[indexOrderId].completedTokenAmounts.push(0);
@@ -730,7 +730,7 @@ contract OlympusStorage is Manageable, OlympusStorageInterface {
         IndexOrder memory order = orders[_orderId];
 
         int index = -1;
-        for(uint i = 0 ; i &lt; order.tokens.length; i++){
+        for(uint i = 0 ; i < order.tokens.length; i++){
             if(order.tokens[i] == _tokenAddress) {
                 index = int(i);
                 break;
@@ -827,7 +827,7 @@ contract StrategyProviderInterface is Provider {
 
     Combo[] public comboHub;
     modifier _checkIndex(uint _index) {
-        require(_index &lt; comboHub.length);
+        require(_index < comboHub.length);
         _;
     }
 
@@ -962,7 +962,7 @@ contract OlympusLabsCore is Manageable {
         )
     {
         uint tokenLength = strategyProvider.getStrategyTokenCount(strategyId);
-        require(index &lt; tokenLength);
+        require(index < tokenLength);
 
         (token, weight) = strategyProvider.getStrategyTokenByIndex(strategyId, index);
     }
@@ -978,7 +978,7 @@ contract OlympusLabsCore is Manageable {
         uint totalLength;
 
         uint tokenLength = strategyProvider.getStrategyTokenCount(strategyId);
-        require(tokenIndex &lt;= totalLength);
+        require(tokenIndex <= totalLength);
         address[] memory tokens;
         uint[] memory weights;
         (,,,,tokens,weights,,,) = strategyProvider.getStrategy(strategyId);
@@ -1018,13 +1018,13 @@ contract OlympusLabsCore is Manageable {
     function buyIndex(uint strategyId, address depositAddress, bool feeIsMOT)
     public onlyAllowed payable returns (uint indexOrderId)
     {
-        require(msg.value &gt; minimumInWei);
-        if(maximumInWei &gt; 0){
-            require(msg.value &lt;= maximumInWei);
+        require(msg.value > minimumInWei);
+        if(maximumInWei > 0){
+            require(msg.value <= maximumInWei);
         }
         uint tokenLength = strategyProvider.getStrategyTokenCount(strategyId);
         // can&#39;t buy an index without tokens.
-        require(tokenLength &gt; 0);
+        require(tokenLength > 0);
         address[] memory tokens = new address[](tokenLength);
         uint[] memory weights = new uint[](tokenLength);
         bytes32 exchangeId;
@@ -1056,10 +1056,10 @@ contract OlympusLabsCore is Manageable {
 
         require(exchangeProvider.startPlaceOrder(indexOrderId, depositAddress));
 
-        for (uint i = 0; i &lt; tokenLength; i ++ ) {
+        for (uint i = 0; i < tokenLength; i ++ ) {
 
             // ignore those tokens with zero weight.
-            if(weights[i] &lt;= 0) {
+            if(weights[i] <= 0) {
                 continue;
             }
             // token has to be supported by exchange provider.
@@ -1127,7 +1127,7 @@ contract OlympusLabsCore is Manageable {
         (orderPartial[2], orderPartial[3], orderPartial[4], exchangeId[0]) = olympusStorage.getIndexOrder2(_orderId);
         address[] memory tokens = new address[](orderPartial[4]);
 
-        for(uint i = 0; i &lt; orderPartial[4]; i++){
+        for(uint i = 0; i < orderPartial[4]; i++){
             tokens[i] = olympusStorage.getIndexToken(_orderId, i);
         }
         return (
@@ -1149,11 +1149,11 @@ contract OlympusLabsCore is Manageable {
 
         ExchangeAdapterBase.OrderStatus status;
 
-        if(completedTokenAmount == 0 &amp;&amp; _completedQuantity &lt; completedTokenAmount){
+        if(completedTokenAmount == 0 && _completedQuantity < completedTokenAmount){
             status = ExchangeAdapterBase.OrderStatus.PartiallyCompleted;
         }
 
-        if(_completedQuantity &gt;= completedTokenAmount){
+        if(_completedQuantity >= completedTokenAmount){
             status = ExchangeAdapterBase.OrderStatus.Completed;
         }
         olympusStorage.updateIndexOrderToken(_orderId, tokenIndex, _totalTokenAmount, _actualPrice, _completedQuantity, status);
@@ -1177,20 +1177,20 @@ contract OlympusLabsCore is Manageable {
     }
 
     function adjustFee(uint _newFeePercentage) public onlyOwner returns (bool success) {
-        require(_newFeePercentage &lt; DENOMINATOR);
+        require(_newFeePercentage < DENOMINATOR);
         feePercentage = _newFeePercentage;
         return true;
     }
 
     function adjustMOTFeeDiscount(uint _newDiscountPercentage) public onlyOwner returns(bool success) {
-        require(_newDiscountPercentage &lt;= 100);
+        require(_newDiscountPercentage <= 100);
         MOTDiscount = _newDiscountPercentage;
         return true;
     }
 
     function adjustTradeRange(uint _minInWei, uint _maxInWei) public onlyOwner returns (bool success) {
-        require(_minInWei &gt; 0);
-        require(_maxInWei &gt; _minInWei);
+        require(_minInWei > 0);
+        require(_maxInWei > _minInWei);
         minimumInWei = _minInWei;
         maximumInWei = _maxInWei;
 
@@ -1212,7 +1212,7 @@ contract OlympusLabsCore is Manageable {
             uint allowance = MOT.allowance(sender,address(this));
             (MOTPrice,) = priceProvider.getRates(address(MOT), feeValueInETH);
             uint amount = (feeValueInETH * MOTPrice) / 10**18;
-            require(allowance &gt;= amount);
+            require(allowance >= amount);
             require(MOT.transferFrom(sender,address(this),amount));
             return totalValue; // Use all sent ETH to buy, because fee is paid in MOT
         } else { // We use ETH as fee, so deduct that from the amount of ETH sent
@@ -1223,7 +1223,7 @@ contract OlympusLabsCore is Manageable {
     function withdrawERC20(address receiveAddress,address _tokenAddress) public onlyOwner returns(bool success)
     {
         uint _balance = ERC20(_tokenAddress).balanceOf(address(this));
-        require(_tokenAddress != 0x0 &amp;&amp; receiveAddress != 0x0 &amp;&amp; _balance != 0);
+        require(_tokenAddress != 0x0 && receiveAddress != 0x0 && _balance != 0);
         require(ERC20(_tokenAddress).transfer(receiveAddress,_balance));
         return true;
     }

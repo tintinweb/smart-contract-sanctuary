@@ -16,13 +16,13 @@ library SafeMath {
     }
     
     function sub(uint a, uint b) internal pure returns (uint) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
     
     function add(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -63,15 +63,15 @@ contract ERC20Token is ERC20 {
     using SafeMath for uint;
     uint public totalToken;
 	bool public frozen;
-    mapping(address =&gt; uint) balances;
-    mapping (address =&gt; mapping (address =&gt; uint)) allowances;
-	mapping (address =&gt; bool) public frozenAccounts;
-	mapping (address =&gt; bool) public certifiedAccounts;
+    mapping(address => uint) balances;
+    mapping (address => mapping (address => uint)) allowances;
+	mapping (address => bool) public frozenAccounts;
+	mapping (address => bool) public certifiedAccounts;
 
     function _transfer(address _from, address _to, uint _value) internal returns (bool success) {
-		require(_from != 0x0 &amp;&amp; _to != 0x0);
-        require(balances[_from] &gt;= _value &amp;&amp; _value &gt; 0);
-        require(balances[_to] + _value &gt; balances[_to]);
+		require(_from != 0x0 && _to != 0x0);
+        require(balances[_from] >= _value && _value > 0);
+        require(balances[_to] + _value > balances[_to]);
 		require(!frozen);
 		require(!frozenAccounts[_from]);                     
         require(!frozenAccounts[_to]);                       
@@ -88,7 +88,7 @@ contract ERC20Token is ERC20 {
     }
 
     function transferFrom(address _from, address _to, uint _value) public returns (bool success) {
-        require(allowances[_from][msg.sender] &gt;= _value);     
+        require(allowances[_from][msg.sender] >= _value);     
 		allowances[_from][msg.sender] = allowances[_from][msg.sender].sub(_value);
         return _transfer(_from, _to, _value);
     }
@@ -120,17 +120,17 @@ contract Lover is ERC20Token, Owned {
 	string public note = &quot;(C) loverchain.com all rights reserved&quot;;
     uint public burnedToken;
 	uint public fee;
-	mapping (address =&gt; string) public keys;
-	mapping (address =&gt; string) public signatures;
-	mapping (address =&gt; string) public identities;
-	mapping (address =&gt; uint) public scores;
-	mapping (address =&gt; uint) public levels;
-    mapping (address =&gt; uint) public stars;
-    mapping (address =&gt; string) public profiles;
-	mapping (address =&gt; string) public properties;
-	mapping (address =&gt; string) public rules;
-    mapping (address =&gt; string) public funds;
-	mapping (address =&gt; uint) public nonces;
+	mapping (address => string) public keys;
+	mapping (address => string) public signatures;
+	mapping (address => string) public identities;
+	mapping (address => uint) public scores;
+	mapping (address => uint) public levels;
+    mapping (address => uint) public stars;
+    mapping (address => string) public profiles;
+	mapping (address => string) public properties;
+	mapping (address => string) public rules;
+    mapping (address => string) public funds;
+	mapping (address => uint) public nonces;
 	event Key(address indexed _user, string indexed _key, uint _timestamp);
 	event Sign(address indexed _user, string indexed _data, uint _timestamp);
 	event Register(address indexed _user, string indexed _identity, address _certifier, uint _timestamp);
@@ -149,8 +149,8 @@ contract Lover is ERC20Token, Owned {
     }
 
     function burn(uint _burntAmount) public returns (bool success) {
-    	require(balances[msg.sender] &gt;= _burntAmount &amp;&amp; _burntAmount &gt; 0);
-		require(totalToken - _burntAmount &gt;= 100000000000000000000000000);
+    	require(balances[msg.sender] >= _burntAmount && _burntAmount > 0);
+		require(totalToken - _burntAmount >= 100000000000000000000000000);
     	balances[msg.sender] = balances[msg.sender].sub(_burntAmount);
     	totalToken = totalToken.sub(_burntAmount);
     	burnedToken = burnedToken.add(_burntAmount);
@@ -160,19 +160,19 @@ contract Lover is ERC20Token, Owned {
 	}
 
     function setKey(string _key) public {
-        require(bytes(_key).length &gt;= 32);
+        require(bytes(_key).length >= 32);
         keys[msg.sender] = _key;
 		emit Key(msg.sender, _key, now);
     }
 
     function sign(string _data) public {
-        require(bytes(_data).length &gt;= 32);
+        require(bytes(_data).length >= 32);
         signatures[msg.sender] = _data;
 		emit Sign(msg.sender, _data, now);
     }
 
 	function register(address _user, string _identity) public {
-		require(bytes(_identity).length &gt; 0);
+		require(bytes(_identity).length > 0);
 		require(certifiedAccounts[msg.sender]);
 		identities[_user] = _identity;
 		emit Register(_user, _identity, msg.sender, now);
@@ -180,13 +180,13 @@ contract Lover is ERC20Token, Owned {
 
     function _save(address _user, uint _score, uint _level, uint _star, string _profile, string _property, address _certifier, uint _nonce, uint _timestamp) internal {
 		require(_nonce == nonces[_user] + 1);  
-	    if(bytes(_profile).length &gt; 16){
+	    if(bytes(_profile).length > 16){
 			profiles[_user] = _profile;
 		}
-	    if(bytes(_property).length &gt; 16){
+	    if(bytes(_property).length > 16){
 		    properties[_user] = _property;
 		}
-		if(_level &gt; levels[_user]){
+		if(_level > levels[_user]){
 			levels[_user] = _level;
 		}
 		scores[_user] = _score;
@@ -201,7 +201,7 @@ contract Lover is ERC20Token, Owned {
     }
 
 	function _assign(address _from, address _to, address _certifier) internal {
-		require(_from != 0x0 &amp;&amp; _to != 0x0);
+		require(_from != 0x0 && _to != 0x0);
 		uint _timestamp = now;
 		uint _nonce = nonces[_from];
 		_save(_to, scores[_from], levels[_from], stars[_from], profiles[_from], properties[_from], _certifier, _nonce, _timestamp);
@@ -274,7 +274,7 @@ contract Lover is ERC20Token, Owned {
         uint[] memory t = _tiles; 
         uint temp = 0;
         uint ran = 0;
-        for (uint i = 0; i &lt; len; i++) {
+        for (uint i = 0; i < len; i++) {
            ran = random(i + 1);
           if (ran != i){
               temp = t[i];

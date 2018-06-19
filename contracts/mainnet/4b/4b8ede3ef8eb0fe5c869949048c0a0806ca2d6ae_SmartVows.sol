@@ -189,19 +189,19 @@ contract SmartVows is Ownable, Util {
     
     // Update partner 1 vows only once
     function updatePartner1_vows(string _partner1_vows) public {
-        require((msg.sender == owner || msg.sender == partner1_address) &amp;&amp; (bytes(partner1_vows).length == 0));
+        require((msg.sender == owner || msg.sender == partner1_address) && (bytes(partner1_vows).length == 0));
         partner1_vows = _partner1_vows;
     }
 
     // Update partner 2 vows only once
     function updatePartner2_vows(string _partner2_vows) public {
-        require((msg.sender == owner || msg.sender == partner2_address) &amp;&amp; (bytes(partner2_vows).length == 0));
+        require((msg.sender == owner || msg.sender == partner2_address) && (bytes(partner2_vows).length == 0));
         partner2_vows = _partner2_vows;
     }
 
     // Update Marriage status only if both partners have previously voted to update the prenup
     function updateMaritalStatus(string _maritalStatus) public {
-        require((msg.sender == owner || msg.sender == partner1_address || msg.sender == partner2_address) &amp;&amp; (partner1_voted_update_marriage_status == true)&amp;&amp;(partner2_voted_update_marriage_status == true));
+        require((msg.sender == owner || msg.sender == partner1_address || msg.sender == partner2_address) && (partner1_voted_update_marriage_status == true)&&(partner2_voted_update_marriage_status == true));
         saveContractEvent(&quot;Marital status updated&quot;, strConcat(&quot;Marital status changed from &quot;, maritalStatus , &quot; to &quot;, _maritalStatus));
         maritalStatus = _maritalStatus;
         partner1_voted_update_marriage_status = false;
@@ -219,7 +219,7 @@ contract SmartVows is Ownable, Util {
             saveContractEvent(&quot;Marriage signed&quot;, &quot;Smart Contract signed by Partner 2&quot;);
         }
         
-        if(partner1_signed &amp;&amp; partner2_signed){// if both signed then make the contract as signed
+        if(partner1_signed && partner2_signed){// if both signed then make the contract as signed
             is_signed = true;
         }
     }
@@ -262,7 +262,7 @@ contract SmartVows is Ownable, Util {
 
     // Update prenup text, but only if both partners have previously agreed to update the prenup
     function updatePrenup(string _prenupAgreement) public{
-        require((msg.sender == owner || msg.sender == partner1_address || msg.sender == partner2_address) &amp;&amp; (partner1_voted_update_prenup == true)&amp;&amp;(partner2_voted_update_prenup == true));
+        require((msg.sender == owner || msg.sender == partner1_address || msg.sender == partner2_address) && (partner1_voted_update_prenup == true)&&(partner2_voted_update_prenup == true));
         prenupAgreement = _prenupAgreement;
         saveContractEvent(&quot;Update - Prenup&quot;, &quot;Prenuptial Agreement Updated&quot;);
         partner1_voted_update_prenup = false;

@@ -2,13 +2,13 @@ pragma solidity ^0.4.21;
 
 contract SafeMath {
     function safeSub(uint a, uint b) pure internal returns (uint) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function safeAdd(uint a, uint b) pure internal returns (uint) {
         uint c = a + b;
-        assert(c &gt;= a &amp;&amp; c &gt;= b);
+        assert(c >= a && c >= b);
         return c;
     }
 }
@@ -27,8 +27,8 @@ contract ERC20 {
 
 
 contract StandardToken is ERC20, SafeMath {
-    mapping (address =&gt; uint) balances;
-    mapping (address =&gt; mapping (address =&gt; uint)) allowed;
+    mapping (address => uint) balances;
+    mapping (address => mapping (address => uint)) allowed;
 
     function transfer(address _to, uint _value) public returns (bool success) {
         balances[msg.sender] = safeSub(balances[msg.sender], _value);

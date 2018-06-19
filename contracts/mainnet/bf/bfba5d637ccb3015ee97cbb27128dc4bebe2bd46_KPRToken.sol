@@ -26,7 +26,7 @@ contract ContractReceiver {
       tkn.sender = _from;
       tkn.value = _value;
       tkn.data = _data;
-      uint32 u = uint32(_data[3]) + (uint32(_data[2]) &lt;&lt; 8) + (uint32(_data[1]) &lt;&lt; 16) + (uint32(_data[0]) &lt;&lt; 24);
+      uint32 u = uint32(_data[3]) + (uint32(_data[2]) << 8) + (uint32(_data[1]) << 16) + (uint32(_data[0]) << 24);
       tkn.sig = bytes4(u);
       
       /* tkn variable is analogue of msg variable of Ether transaction
@@ -48,37 +48,37 @@ library SafeMath {
   }
 
   function div(uint a, uint b) internal returns (uint) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint a, uint b) internal returns (uint) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint a, uint b) internal returns (uint) {
     uint c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 
   function max64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min64(uint64 a, uint64 b) internal constant returns (uint64) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
   function max256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
 
   function min256(uint256 a, uint256 b) internal constant returns (uint256) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 
   function assert(bool assertion) internal {
@@ -110,8 +110,8 @@ contract KPRToken is ERC223 {
     address public owner;
     
     //map the addresses
-    mapping(address =&gt; uint256) balances;
-    mapping(address =&gt; mapping(address =&gt; uint256)) allowed;
+    mapping(address => uint256) balances;
+    mapping(address => mapping(address => uint256)) allowed;
     // 1514764800 : Jan 1 2018
     uint256 phase1starttime = 1525132800; // Phase 1 Start Date May 1 2018
     uint256 phase1endtime = 1527033540;  // Phase 1 End Date May 22 2018
@@ -121,13 +121,13 @@ contract KPRToken is ERC223 {
     //create token function = check
 
     function() payable{
-        require(msg.value &gt; 0);
-        require(buyabletoken &gt; 0);
-        require(now &gt;= phase1starttime &amp;&amp; now &lt;= phase2endtime);
+        require(msg.value > 0);
+        require(buyabletoken > 0);
+        require(now >= phase1starttime && now <= phase2endtime);
         
-        if (now &gt; phase1starttime &amp;&amp; now &lt; phase1endtime){
+        if (now > phase1starttime && now < phase1endtime){
             buyPrice = 3000;
-        } else if(now &gt; phase2starttime &amp;&amp; now &lt; phase2endtime){
+        } else if(now > phase2starttime && now < phase2endtime){
             buyPrice = 2000;
         }
         
@@ -157,8 +157,8 @@ contract KPRToken is ERC223 {
       }
 
       function _burn(address _who, uint256 _value) internal {
-        require(_value &lt;= balances[_who]);
-        // no need to require value &lt;= totalSupply, since that would imply the
+        require(_value <= balances[_who]);
+        // no need to require value <= totalSupply, since that would imply the
         // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
     
         balances[_who] = balances[_who].sub(_value);
@@ -178,7 +178,7 @@ contract KPRToken is ERC223 {
     function transfer(address _to, uint _value, bytes _data, string _custom_fallback) public returns (bool success) {
         
         if (isContract(_to)) {
-            if (balanceOf(msg.sender) &lt; _value)
+            if (balanceOf(msg.sender) < _value)
                 revert();
             balances[msg.sender] = balanceOf(msg.sender).sub(_value);
             balances[_to] = balanceOf(_to).add(_value);
@@ -221,12 +221,12 @@ contract KPRToken is ERC223 {
                 //retrieve the size of the code on target address, this needs assembly
                 length := extcodesize(_addr)
         }
-        return (length&gt;0);
+        return (length>0);
     }
 
     //function that is called when transaction target is an address
     function transferToAddress(address _to, uint _value, bytes _data) private returns (bool success) {
-        if (balanceOf(msg.sender) &lt; _value)
+        if (balanceOf(msg.sender) < _value)
             revert();
         balances[msg.sender] = balanceOf(msg.sender).sub(_value);
         balances[_to] = balanceOf(_to).add(_value);
@@ -236,7 +236,7 @@ contract KPRToken is ERC223 {
     
     //function that is called when transaction target is a contract
     function transferToContract(address _to, uint _value, bytes _data) private returns (bool success) {
-        if (balanceOf(msg.sender) &lt; _value)
+        if (balanceOf(msg.sender) < _value)
             revert();
         balances[msg.sender] = balanceOf(msg.sender).sub(_value);
         balances[_to] = balanceOf(_to).add(_value);

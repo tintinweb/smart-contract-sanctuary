@@ -268,7 +268,7 @@ contract LockedTokens is SafeMath {
         require(walletTokens[msg.sender].length > 0);
 
         for(uint256 i = 0; i < walletTokens[msg.sender].length; i++) {
-            if(!walletTokens[msg.sender][i].released &amp;&amp; now >= walletTokens[msg.sender][i].lockEndTime) {
+            if(!walletTokens[msg.sender][i].released && now >= walletTokens[msg.sender][i].lockEndTime) {
                 walletTokens[msg.sender][i].released = true;
                 token.transfer(msg.sender, walletTokens[msg.sender][i].amount);
                 TokensUnlocked(msg.sender, walletTokens[msg.sender][i].amount);
@@ -352,7 +352,7 @@ contract ERC20Token is IERC20Token, SafeMath {
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value);
+        require(balances[_from] >= _value && allowed[_from][msg.sender] >= _value);
 
         balances[_to] = safeAdd(balances[_to], _value);
         balances[_from] = safeSub(balances[_from], _value);
@@ -455,7 +455,7 @@ contract ManagedToken is ERC20Token, MultiOwnable {
 
     function transfer(address _to, uint256 _value) public transfersAllowed returns (bool) {
         bool success = super.transfer(_to, _value);
-        if(hasListener() &amp;&amp; success) {
+        if(hasListener() && success) {
             eventListener.onTokenTransfer(msg.sender, _to, _value);
         }
         return success;
@@ -463,7 +463,7 @@ contract ManagedToken is ERC20Token, MultiOwnable {
 
     function transferFrom(address _from, address _to, uint256 _value) public transfersAllowed returns (bool) {
         bool success = super.transferFrom(_from, _to, _value);
-        if(hasListener() &amp;&amp; success) {
+        if(hasListener() && success) {
             eventListener.onTokenTransfer(_from, _to, _value);
         }
         return success;
@@ -576,7 +576,7 @@ contract TransferLimitedToken is ManagedToken {
      * @param _to To address
      */
     modifier canTransfer(address _from, address _to)  {
-        require(now >= limitEndDate || !isLimitEnabled || (!limitedWallets[_from] &amp;&amp; !limitedWallets[_to]));
+        require(now >= limitEndDate || !isLimitEnabled || (!limitedWallets[_from] && !limitedWallets[_to]));
         _;
     }
 
@@ -726,7 +726,7 @@ contract TheAbyssDAICO is Ownable, SafeMath, Pausable, ISimpleCrowdsale {
     }
 
     modifier checkTime() {
-        require(now >= SALE_START_TIME &amp;&amp; now <= SALE_END_TIME);
+        require(now >= SALE_START_TIME && now <= SALE_END_TIME);
         _;
     }
 
@@ -774,22 +774,22 @@ contract TheAbyssDAICO is Ownable, SafeMath, Pausable, ISimpleCrowdsale {
      */
     function isValidContribution() internal view returns(bool) {
         uint256 currentUserContribution = safeAdd(msg.value, userTotalContributed[msg.sender]);
-        if(whiteList[msg.sender] &amp;&amp; msg.value >= ETHER_MIN_CONTRIB) {
-            if(now <= MAX_CONTRIB_CHECK_END_TIME &amp;&amp; currentUserContribution > ETHER_MAX_CONTRIB ) {
+        if(whiteList[msg.sender] && msg.value >= ETHER_MIN_CONTRIB) {
+            if(now <= MAX_CONTRIB_CHECK_END_TIME && currentUserContribution > ETHER_MAX_CONTRIB ) {
                     return false;
             }
             return true;
 
         }
-        if(privilegedList[msg.sender] &amp;&amp; msg.value >= ETHER_MIN_CONTRIB_PRIVATE) {
-            if(now <= MAX_CONTRIB_CHECK_END_TIME &amp;&amp; currentUserContribution > ETHER_MAX_CONTRIB_PRIVATE ) {
+        if(privilegedList[msg.sender] && msg.value >= ETHER_MIN_CONTRIB_PRIVATE) {
+            if(now <= MAX_CONTRIB_CHECK_END_TIME && currentUserContribution > ETHER_MAX_CONTRIB_PRIVATE ) {
                     return false;
             }
             return true;
         }
 
-        if(token.limitedWallets(msg.sender) &amp;&amp; msg.value >= ETHER_MIN_CONTRIB_USA) {
-            if(now <= MAX_CONTRIB_CHECK_END_TIME &amp;&amp; currentUserContribution > ETHER_MAX_CONTRIB_USA) {
+        if(token.limitedWallets(msg.sender) && msg.value >= ETHER_MIN_CONTRIB_USA) {
+            if(now <= MAX_CONTRIB_CHECK_END_TIME && currentUserContribution > ETHER_MAX_CONTRIB_USA) {
                     return false;
             }
             return true;
@@ -812,8 +812,8 @@ contract TheAbyssDAICO is Ownable, SafeMath, Pausable, ISimpleCrowdsale {
      * @dev Set token price once before start of crowdsale
      */
     function setTokenPrice(uint256 _tokenPriceNum, uint256 _tokenPriceDenom) public onlyOwner {
-        require(tokenPriceNum == 0 &amp;&amp; tokenPriceDenom == 0);
-        require(_tokenPriceNum > 0 &amp;&amp; _tokenPriceDenom > 0);
+        require(tokenPriceNum == 0 && tokenPriceDenom == 0);
+        require(_tokenPriceNum > 0 && _tokenPriceDenom > 0);
         tokenPriceNum = _tokenPriceNum;
         tokenPriceDenom = _tokenPriceDenom;
     }
@@ -850,7 +850,7 @@ contract TheAbyssDAICO is Ownable, SafeMath, Pausable, ISimpleCrowdsale {
         if(token.limitedWallets(msg.sender)) {
             return false;
         }
-        if(!whiteList[msg.sender] &amp;&amp; !privilegedList[msg.sender]) {
+        if(!whiteList[msg.sender] && !privilegedList[msg.sender]) {
             return false;
         }
         uint256 amount = bnbToken.allowance(msg.sender, address(this));
@@ -1061,8 +1061,8 @@ contract TheAbyssDAICO is Ownable, SafeMath, Pausable, ISimpleCrowdsale {
      */
     function finalizeCrowdsale() public onlyOwner {
         if(
-            (totalEtherContributed >= safeSub(hardCap, 20 ether) &amp;&amp; totalBNBContributed >= safeSub(BNB_HARD_CAP, 10000 ether)) ||
-            (now >= SALE_END_TIME &amp;&amp; totalEtherContributed >= softCap)
+            (totalEtherContributed >= safeSub(hardCap, 20 ether) && totalBNBContributed >= safeSub(BNB_HARD_CAP, 10000 ether)) ||
+            (now >= SALE_END_TIME && totalEtherContributed >= softCap)
         ) {
             fund.onCrowdsaleEnd();
             reservationFund.onCrowdsaleEnd();

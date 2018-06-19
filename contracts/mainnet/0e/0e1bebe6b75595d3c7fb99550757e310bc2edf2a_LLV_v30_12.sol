@@ -248,7 +248,7 @@ pragma solidity 		^0.4.21	;
 //	6	&#171;&#160;LUEBECK_LA_VALETTE&#160;&#187; / &#171;&#160;LLV_gruppe_v30.12&#160;&#187;									
 //	7	Statut									
 //	8	&#171;&#160;D.A.O.&#160;&#187; (Organisation autonome et d&#233;centralis&#233;e)									
-//	9	Propri&#233;taires &amp; responsables implicites									
+//	9	Propri&#233;taires & responsables implicites									
 //	10	Les Utilisateurs du pool									
 //	11	Juridiction (i)									
 //	12	&#171;&#160;Lausanne, Canton de Vaud, Conf&#233;d&#233;ration Helv&#233;tique&#160;&#187;									
@@ -295,7 +295,7 @@ pragma solidity 		^0.4.21	;
 //	53	Entit&#233; responsable du d&#233;ployement initial									
 //	54	Programme d’apprentissage autonome &#171;&#160;EVA&#160;&#187; / &#171;&#160;KYOKO&#160;&#187; / MS (sign)									
 //	55	(*) Environnement technologique protocolaire / sous-couche de type &#171;&#160;Consensus Distribu&#233; et Chiffr&#233;&#160;&#187;									
-//	56	(**) @ Annexes et formulaires&#160;: &lt;&lt;&lt;&lt; --------------------------------- &gt;&gt;&gt;&gt; (confer&#160;: points 43 &#224; 48)									
+//	56	(**) @ Annexes et formulaires&#160;: <<<< --------------------------------- >>>> (confer&#160;: points 43 &#224; 48)									
 //	57	-									
 //	58	-									
 //	59	-									

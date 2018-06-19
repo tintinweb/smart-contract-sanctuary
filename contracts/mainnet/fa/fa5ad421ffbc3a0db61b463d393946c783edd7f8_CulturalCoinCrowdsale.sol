@@ -152,7 +152,7 @@ contract Crowdsale is Ownable, RateSetter {
 
     function Crowdsale(uint256 _startTimeIco, uint256 _endTimeIco, uint32 _ethEurRate, uint32 _btcEthRate, address _wallet, address _tokenAddress, address _whitelistAddress, uint256 _tokensSoldPre, uint256 _contributions, uint256 _weiRaised, uint256 _eurRaised, uint256 _tokensSoldIco) public {
         require(_endTimeIco >= _startTimeIco);
-        require(_ethEurRate > 0 &amp;&amp; _btcEthRate > 0);
+        require(_ethEurRate > 0 && _btcEthRate > 0);
         require(_wallet != address(0));
         require(_tokenAddress != address(0));
         require(_whitelistAddress != address(0));
@@ -190,7 +190,7 @@ contract Crowdsale is Ownable, RateSetter {
     /// @param _ethEurRate ETH to EUR rate
     /// @param _btcEthRate BTC to ETH rate 
     function setRates(uint32 _ethEurRate, uint32 _btcEthRate) public onlyRateSetter {
-        require(_ethEurRate > 0 &amp;&amp; _btcEthRate > 0);
+        require(_ethEurRate > 0 && _btcEthRate > 0);
         ethEurRate = _ethEurRate;
         btcEthRate = _btcEthRate;
         emit RatesChanged(rateSetter, ethEurRate, btcEthRate);
@@ -288,12 +288,12 @@ contract Crowdsale is Ownable, RateSetter {
 
     /// @dev Internal function used for calculating ICO discount percentage depending on phases
     function getIcoDiscountPercentage() internal constant returns (uint8) {
-        if (icoPhase1Start >= now &amp;&amp; now < icoPhase1End) {
+        if (icoPhase1Start >= now && now < icoPhase1End) {
             return icoPhaseDiscountPercentage1;
         }
-        else if (icoPhase2Start >= now &amp;&amp; now < icoPhase2End) {
+        else if (icoPhase2Start >= now && now < icoPhase2End) {
             return icoPhaseDiscountPercentage2;
-        } else if (icoPhase3Start >= now &amp;&amp; now < icoPhase3End) {
+        } else if (icoPhase3Start >= now && now < icoPhase3End) {
             return icoPhaseDiscountPercentage3;
         } else {
             return icoPhaseDiscountPercentage4;
@@ -303,7 +303,7 @@ contract Crowdsale is Ownable, RateSetter {
     /// @dev Internal function used to calculate amount of tokens based on discount percentage
     function getTokenAmount(uint256 weiAmount, uint8 discountPercentage) internal constant returns (uint256) {
         /// Less than 100 to avoid division with zero
-        require(discountPercentage >= 0 &amp;&amp; discountPercentage < 100); 
+        require(discountPercentage >= 0 && discountPercentage < 100); 
         uint256 baseTokenAmount = weiAmount.mul(ethEurRate);
         uint256 denominator = 3 * (100 - discountPercentage);
         uint256 tokenAmount = baseTokenAmount.mul(10000).div(denominator);
@@ -343,7 +343,7 @@ contract Crowdsale is Ownable, RateSetter {
 
     /// @dev Check if ICO is active
     function isIco() public constant returns (bool) {
-        return now >= startTimeIco &amp;&amp; now <= endTimeIco;
+        return now >= startTimeIco && now <= endTimeIco;
     }
 
     /// @dev Check if ICO has ended

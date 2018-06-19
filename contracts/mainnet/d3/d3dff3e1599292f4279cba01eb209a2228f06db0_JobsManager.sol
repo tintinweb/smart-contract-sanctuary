@@ -15,20 +15,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -44,7 +44,7 @@ library MathUtils {
      * @param _amount Amount that is supposed to be a percentage
      */
     function validPerc(uint256 _amount) internal pure returns (bool) {
-        return _amount &lt;= PERC_DIVISOR;
+        return _amount <= PERC_DIVISOR;
     }
 
     /*
@@ -96,13 +96,13 @@ library MerkleProof {
     bytes32 proofElement;
     bytes32 computedHash = _leaf;
 
-    for (uint256 i = 32; i &lt;= _proof.length; i += 32) {
+    for (uint256 i = 32; i <= _proof.length; i += 32) {
       assembly {
         // Load the current element of the proof
         proofElement := mload(add(_proof, i))
       }
 
-      if (computedHash &lt; proofElement) {
+      if (computedHash < proofElement) {
         // Hash(current computed hash + current element of the proof)
         computedHash = keccak256(computedHash, proofElement);
       } else {
@@ -146,12 +146,12 @@ library ECRecovery {
     }
 
     // Version of signature should be 27 or 28, but 0 and 1 are also possible versions
-    if (v &lt; 27) {
+    if (v < 27) {
       v += 27;
     }
 
     // If the version is correct return the signer address
-    if (v != 27 &amp;&amp; v != 28) {
+    if (v != 27 && v != 28) {
       return (address(0));
     } else {
       return ecrecover(hash, v, r, s);
@@ -178,7 +178,7 @@ library JobLib {
      */
     function validTranscodingOptions(string _transcodingOptions) public pure returns (bool) {
         uint256 transcodingOptionsLength = bytes(_transcodingOptions).length;
-        return transcodingOptionsLength &gt; 0 &amp;&amp; transcodingOptionsLength % VIDEO_PROFILE_SIZE == 0;
+        return transcodingOptionsLength > 0 && transcodingOptionsLength % VIDEO_PROFILE_SIZE == 0;
     }
 
     /*
@@ -213,7 +213,7 @@ library JobLib {
         returns (bool)
     {
         // Segment must be in segment range
-        if (_segmentNumber &lt; _segmentRange[0] || _segmentNumber &gt; _segmentRange[1]) {
+        if (_segmentNumber < _segmentRange[0] || _segmentNumber > _segmentRange[1]) {
             return false;
         }
 
@@ -607,8 +607,8 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
         uint256 withdrawBlock;   // Block at which a deposit can be withdrawn
     }
 
-    // Mapping broadcaster address =&gt; broadcaster info
-    mapping (address =&gt; Broadcaster) public broadcasters;
+    // Mapping broadcaster address => broadcaster info
+    mapping (address => Broadcaster) public broadcasters;
 
     // Represents a transcode job
     struct Job {
@@ -636,7 +636,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
         uint256 claimBlock;                                // Block number that claim was submitted
         uint256 endVerificationBlock;                      // End of verification period for this claim
         uint256 endVerificationSlashingBlock;              // End of verification slashing period for this claim
-        mapping (uint256 =&gt; bool) segmentVerifications;    // Mapping segment number =&gt; whether segment was submitted for verification
+        mapping (uint256 => bool) segmentVerifications;    // Mapping segment number => whether segment was submitted for verification
         ClaimStatus status;                                // Status of claim (pending, slashed, complete)
     }
 
@@ -644,7 +644,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
     enum ClaimStatus { Pending, Slashed, Complete }
 
     // Transcode jobs
-    mapping (uint256 =&gt; Job) public jobs;
+    mapping (uint256 => Job) public jobs;
     // Number of jobs created. Also used for sequential identifiers
     uint256 public numJobs;
 
@@ -656,13 +656,13 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
 
     // Check if job exists
     modifier jobExists(uint256 _jobId) {
-        require(_jobId &lt; numJobs);
+        require(_jobId < numJobs);
         _;
     }
 
     // Check if sender provided enough payment for verification
     modifier sufficientPayment() {
-        require(msg.value &gt;= verifier().getPrice());
+        require(msg.value >= verifier().getPrice());
         _;
     }
 
@@ -674,7 +674,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
      */
     function setVerificationRate(uint64 _verificationRate) external onlyControllerOwner {
         // verificationRate cannot be 0
-        require(_verificationRate &gt; 0);
+        require(_verificationRate > 0);
 
         verificationRate = _verificationRate;
 
@@ -689,7 +689,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
         // Verification period + verification slashing period currently cannot be longer than 256 blocks
         // because contracts can only access the last 256 blocks from
         // the current block
-        require(_verificationPeriod.add(verificationSlashingPeriod) &lt;= 256);
+        require(_verificationPeriod.add(verificationSlashingPeriod) <= 256);
 
         verificationPeriod = _verificationPeriod;
 
@@ -704,7 +704,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
         // Verification period + verification slashing period currently cannot be longer than 256 blocks
         // because contracts can only access the last 256 blocks from
         // the current block
-        require(verificationPeriod.add(_verificationSlashingPeriod) &lt;= 256);
+        require(verificationPeriod.add(_verificationSlashingPeriod) <= 256);
 
         verificationSlashingPeriod = _verificationSlashingPeriod;
 
@@ -777,7 +777,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
      */
     function withdraw() external whenSystemNotPaused {
         // Can only withdraw at or after the broadcster&#39;s withdraw block
-        require(broadcasters[msg.sender].withdrawBlock &lt;= roundsManager().blockNum());
+        require(broadcasters[msg.sender].withdrawBlock <= roundsManager().blockNum());
 
         uint256 amount = broadcasters[msg.sender].deposit;
         delete broadcasters[msg.sender];
@@ -800,7 +800,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
         uint256 blockNum = roundsManager().blockNum();
 
         // End block must be in the future
-        require(_endBlock &gt; blockNum);
+        require(_endBlock > blockNum);
         // Transcoding options must be valid
         require(JobLib.validTranscodingOptions(_transcodingOptions));
 
@@ -826,7 +826,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
         // Increment number of created jobs
         numJobs = numJobs.add(1);
 
-        if (_endBlock &gt; broadcasters[msg.sender].withdrawBlock) {
+        if (_endBlock > broadcasters[msg.sender].withdrawBlock) {
             // Set new withdraw block if job end block is greater than current
             // broadcaster withdraw block
             broadcasters[msg.sender].withdrawBlock = _endBlock;
@@ -849,7 +849,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
         // Job cannot be inactive
         require(jobStatus(_jobId) != JobStatus.Inactive);
         // Segment range must be valid
-        require(_segmentRange[1] &gt;= _segmentRange[0]);
+        require(_segmentRange[1] >= _segmentRange[0]);
         // Caller must be registered transcoder
         require(bondingManager().isRegisteredTranscoder(msg.sender));
 
@@ -979,7 +979,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
         uint256 price = verifierContract.getPrice();
 
         // Send payment to verifier if price is greater than zero
-        if (price &gt; 0) {
+        if (price > 0) {
             verifierContract.verify.value(price)(
                 _jobId,
                 _claimId,
@@ -1047,7 +1047,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
         external
         whenSystemNotPaused
     {
-        for (uint256 i = 0; i &lt; _claimIds.length; i++) {
+        for (uint256 i = 0; i < _claimIds.length; i++) {
             distributeFees(_jobId, _claimIds[i]);
         }
     }
@@ -1069,9 +1069,9 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
         uint256 blockNum = roundsManager().blockNum();
         uint256 challengeBlock = claim.claimBlock + 1;
         // Must be after verification period
-        require(blockNum &gt;= claim.endVerificationBlock);
+        require(blockNum >= claim.endVerificationBlock);
         // Must be before end of slashing period
-        require(blockNum &lt; claim.endVerificationSlashingBlock);
+        require(blockNum < claim.endVerificationSlashingBlock);
         // Claim must be pending
         require(claim.status == ClaimStatus.Pending);
         // Segment must be eligible for verification
@@ -1115,9 +1115,9 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
         // Claim 2 must not be slashed
         require(claim2.status != ClaimStatus.Slashed);
         // Segment must be in claim 1 segment range
-        require(_segmentNumber &gt;= claim1.segmentRange[0] &amp;&amp; _segmentNumber &lt;= claim1.segmentRange[1]);
+        require(_segmentNumber >= claim1.segmentRange[0] && _segmentNumber <= claim1.segmentRange[1]);
         // Segment must be in claim 2 segment range
-        require(_segmentNumber &gt;= claim2.segmentRange[0] &amp;&amp; _segmentNumber &lt;= claim2.segmentRange[1]);
+        require(_segmentNumber >= claim2.segmentRange[0] && _segmentNumber <= claim2.segmentRange[1]);
 
         // Slash transcoder and provide finder params
         bondingManager().slashTranscoder(job.transcoderAddress, msg.sender, doubleClaimSegmentSlashAmount, finderFee);
@@ -1148,7 +1148,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
         // Claim must not be complete
         require(claim.status == ClaimStatus.Pending);
         // Slashing period must be over for claim
-        require(claim.endVerificationSlashingBlock &lt;= roundsManager().blockNum());
+        require(claim.endVerificationSlashingBlock <= roundsManager().blockNum());
 
         uint256 fees = JobLib.calcFees(claim.segmentRange[1].sub(claim.segmentRange[0]).add(1), job.transcodingOptions, job.maxPricePerSegment);
         // Deduct fees from escrow
@@ -1167,7 +1167,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
      * @param _jobId Job identifier
      */
     function jobStatus(uint256 _jobId) public view returns (JobStatus) {
-        if (jobs[_jobId].endBlock &lt;= roundsManager().blockNum()) {
+        if (jobs[_jobId].endBlock <= roundsManager().blockNum()) {
             // A job is inactive if the current block is greater than or equal to the job&#39;s end block
             return JobStatus.Inactive;
         } else {

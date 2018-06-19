@@ -21,14 +21,14 @@ library SafeMath
 
 	function sub(uint a, uint b) internal pure returns (uint)
 	{
-		assert(b &lt;= a);
+		assert(b <= a);
 		return a - b;
 	}
 
 	function add(uint a, uint b) internal pure returns (uint)
 	{
 		uint c = a + b;
-		assert(c &gt;= a);
+		assert(c >= a);
 		return c;
 	}
 }
@@ -64,8 +64,8 @@ contract StandardToken is ERC20, ERC223
 	uint8 public decimals;
 	uint public totalSupply;
 
-	mapping (address =&gt; uint) balances;
-	mapping (address =&gt; mapping (address =&gt; uint)) allowed;
+	mapping (address => uint) balances;
+	mapping (address => mapping (address => uint)) allowed;
 
 	function StandardToken(string _name, string _symbol, uint8 _decimals, uint _totalSupply, address _admin) public
 	{
@@ -94,7 +94,7 @@ contract StandardToken is ERC20, ERC223
 	function transfer(address _to, uint _value) public returns (bool)
 	{
 		require(_to != address(0));
-		require(_value &lt;= balances[msg.sender]);
+		require(_value <= balances[msg.sender]);
 		balances[msg.sender] = SafeMath.sub(balances[msg.sender], _value);
 		balances[_to] = SafeMath.add(balances[_to], _value);
 		Transfer(msg.sender, _to, _value);
@@ -104,8 +104,8 @@ contract StandardToken is ERC20, ERC223
 	function transferFrom(address _from, address _to, uint _value) public returns (bool)
 	{
 		require(_to != address(0));
-		require(_value &lt;= balances[_from]);
-		require(_value &lt;= allowed[_from][msg.sender]);
+		require(_value <= balances[_from]);
+		require(_value <= allowed[_from][msg.sender]);
 
 		balances[_from] = SafeMath.sub(balances[_from], _value);
 		balances[_to] = SafeMath.add(balances[_to], _value);
@@ -136,7 +136,7 @@ contract StandardToken is ERC20, ERC223
 	function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool)
 	{
 		uint oldValue = allowed[msg.sender][_spender];
-		if (_subtractedValue &gt; oldValue)
+		if (_subtractedValue > oldValue)
 		{
 			allowed[msg.sender][_spender] = 0;
 		}
@@ -150,7 +150,7 @@ contract StandardToken is ERC20, ERC223
 	
 	function transfer(address _to, uint _value, bytes _data) public
 	{
-		require(_value &gt; 0 );
+		require(_value > 0 );
 		if(isContract(_to))
 		{
 			ERC223ReceivingContract receiver = ERC223ReceivingContract(_to);
@@ -168,6 +168,6 @@ contract StandardToken is ERC20, ERC223
 		{
 			length := extcodesize(_addr)
 		}
-		return (length&gt;0);
+		return (length>0);
 	}
 }

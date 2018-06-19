@@ -512,12 +512,12 @@ contract usingOraclize {
             iaddr *= 256;
             b1 = uint160(tmp[i]);
             b2 = uint160(tmp[i+1]);
-            if ((b1 >= 97)&amp;&amp;(b1 <= 102)) b1 -= 87;
-            else if ((b1 >= 65)&amp;&amp;(b1 <= 70)) b1 -= 55;
-            else if ((b1 >= 48)&amp;&amp;(b1 <= 57)) b1 -= 48;
-            if ((b2 >= 97)&amp;&amp;(b2 <= 102)) b2 -= 87;
-            else if ((b2 >= 65)&amp;&amp;(b2 <= 70)) b2 -= 55;
-            else if ((b2 >= 48)&amp;&amp;(b2 <= 57)) b2 -= 48;
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 65)&&(b1 <= 70)) b1 -= 55;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 65)&&(b2 <= 70)) b2 -= 55;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
             iaddr += (b1*16+b2);
         }
         return address(iaddr);
@@ -556,7 +556,7 @@ contract usingOraclize {
                 if (h[i] == n[0])
                 {
                     subindex = 1;
-                    while(subindex < n.length &amp;&amp; (i + subindex) < h.length &amp;&amp; h[i + subindex] == n[subindex])
+                    while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
                     {
                         subindex++;
                     }
@@ -608,7 +608,7 @@ contract usingOraclize {
         uint mint = 0;
         bool decimals = false;
         for (uint i=0; i<bresult.length; i++){
-            if ((bresult[i] >= 48)&amp;&amp;(bresult[i] <= 57)){
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
                 if (decimals){
                    if (_b == 0) break;
                     else _b--;
@@ -993,7 +993,7 @@ contract usingOraclize {
         if (v < 27)
           v += 27;
 
-        if (v != 27 &amp;&amp; v != 28)
+        if (v != 27 && v != 28)
             return (false, 0);
 
         return safer_ecrecover(hash, v, r, s);
@@ -1134,7 +1134,7 @@ contract Dice5 is usingOraclize {
     }
 
     modifier onlyIfBetSizeIsStillCorrect(bytes32 myid) {
-        if ((((bets[myid].amountBet * ((10000 - edge) - pwin)) / pwin ) <= (maxWin * getBankroll()) / 10000)  &amp;&amp; (bets[myid].amountBet >= minBet) &amp;&amp; (bets[myid].amountBet <= maxBet) ) {
+        if ((((bets[myid].amountBet * ((10000 - edge) - pwin)) / pwin ) <= (maxWin * getBankroll()) / 10000)  && (bets[myid].amountBet >= minBet) && (bets[myid].amountBet <= maxBet) ) {
              _;
         }
         else {
@@ -1146,7 +1146,7 @@ contract Dice5 is usingOraclize {
 
     modifier onlyIfValidRoll(bytes32 myid, string result) {
         uint numberRolled = parseInt(result);
-        if ((numberRolled < 1 || numberRolled > 6) &amp;&amp; bets[myid].numberRolled == 0) {
+        if ((numberRolled < 1 || numberRolled > 6) && bets[myid].numberRolled == 0) {
             bets[myid].numberRolled = INVALID_BET_MARKER;
             safeSend(bets[myid].playerAddress, bets[myid].amountBet);
             return;
@@ -1375,7 +1375,7 @@ contract Dice5 is usingOraclize {
             uint profitOfInvestor = getProfitShare(currentInvestor);
             uint lossesOfInvestor = getLossesShare(currentInvestor);
             //Check for overflow and underflow
-            if ((investors[i].amountInvested + profitOfInvestor >= investors[i].amountInvested) &amp;&amp;
+            if ((investors[i].amountInvested + profitOfInvestor >= investors[i].amountInvested) &&
                 (investors[i].amountInvested + profitOfInvestor >= lossesOfInvestor))  {
                 investors[i].amountInvested += profitOfInvestor - lossesOfInvestor;
                 LOG_InvestorCapitalUpdate(currentInvestor, (int) (profitOfInvestor - lossesOfInvestor));
@@ -1396,7 +1396,7 @@ contract Dice5 is usingOraclize {
         profitDistributed = true;
     }
 
-    // SECTION II: BET &amp; BET PROCESSING
+    // SECTION II: BET & BET PROCESSING
 
     function()
         payable {
@@ -1411,7 +1411,7 @@ contract Dice5 is usingOraclize {
         uint oraclizeFee = OraclizeI(OAR.getAddress()).getPrice(&quot;URL&quot;, ORACLIZE_GAS_LIMIT + safeGas);
         if (oraclizeFee >= msg.value) throw;
         uint betValue = msg.value - oraclizeFee;
-        if ((((betValue * ((10000 - edge) - pwin)) / pwin ) <= (maxWin * getBankroll()) / 10000) &amp;&amp; (betValue >= minBet) &amp;&amp; (betValue <= maxBet)) {
+        if ((((betValue * ((10000 - edge) - pwin)) / pwin ) <= (maxWin * getBankroll()) / 10000) && (betValue >= minBet) && (betValue <= maxBet)) {
             LOG_NewBet(msg.sender, betValue);
             bytes32 myid =
                 oraclize_query(
@@ -1478,7 +1478,7 @@ contract Dice5 is usingOraclize {
         safeSend(houseAddress, houseProfit);
     }
 
-    //SECTION III: INVEST &amp; DIVEST
+    //SECTION III: INVEST & DIVEST
 
     function increaseInvestment()
         payable

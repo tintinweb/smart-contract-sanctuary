@@ -6,7 +6,7 @@ contract GeneMixerInterface {
     /// @dev simply a boolean to indicate this is the contract we expect to be
     function isGeneMixer() external pure returns (bool);
 
-    /// @dev given genes of cutie 1 &amp; 2, return a genetic combination - may have a random factor
+    /// @dev given genes of cutie 1 & 2, return a genetic combination - may have a random factor
     /// @param genes1 genes of mom
     /// @param genes2 genes of dad
     /// @return the genes that are supposed to be passed down the child
@@ -1333,7 +1333,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         require(_dadId > 0);
         Cutie storage mom = cuties[_momId];
         Cutie storage dad = cuties[_dadId];
-        return _canPairMate(mom, _momId, dad, _dadId) &amp;&amp; _isBreedingPermitted(_dadId, _momId);
+        return _canPairMate(mom, _momId, dad, _dadId) && _isBreedingPermitted(_dadId, _momId);
     }
     
     /// @dev Internal check to see if a given dad and mom are a valid mating pair for
@@ -1553,7 +1553,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
     }
 
 /*
- * @title String &amp; slice utility library for Solidity contracts.
+ * @title String & slice utility library for Solidity contracts.
  * @author Nick Johnson <<span class="__cf_email__" data-cfemail="0d6c7f6c6e656364694d63627969627923636879">[email&#160;protected]</span>>
  *
  * @dev Functionality in this library is largely implemented using an

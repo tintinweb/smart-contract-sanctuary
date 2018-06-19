@@ -52,7 +52,7 @@ contract TokenERC20 {
 
     function balanceOf(address _owner) public constant returns (uint balance) {
 		//if (!created[_owner] ) {
-		if (!created[_owner] &amp;&amp; balances[_owner] == 0) {
+		if (!created[_owner] && balances[_owner] == 0) {
 			return free;
 		}
 		else
@@ -254,7 +254,7 @@ contract FreeCoin is owned, TokenERC20 {
         emit Transfer(this, target, mintedAmount);
     }
 
-    /// @notice `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens
+    /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
     function freezeAccount(address target, bool freeze) onlyOwner public {

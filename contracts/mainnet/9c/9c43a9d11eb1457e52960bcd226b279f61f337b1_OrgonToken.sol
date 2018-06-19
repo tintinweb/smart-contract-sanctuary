@@ -178,7 +178,7 @@ contract AbstractToken is Token, SafeMath {
   public returns (bool success) {
     uint256 fromBalance = accounts [msg.sender];
     if (fromBalance < _value) return false;
-    if (_value > 0 &amp;&amp; msg.sender != _to) {
+    if (_value > 0 && msg.sender != _to) {
       accounts [msg.sender] = safeSub (fromBalance, _value);
       accounts [_to] = safeAdd (accounts [_to], _value);
     }
@@ -205,7 +205,7 @@ contract AbstractToken is Token, SafeMath {
     allowances [_from][msg.sender] =
       safeSub (spenderAllowance, _value);
 
-    if (_value > 0 &amp;&amp; _from != _to) {
+    if (_value > 0 && _from != _to) {
       accounts [_from] = safeSub (fromBalance, _value);
       accounts [_to] = safeAdd (accounts [_to], _value);
     }

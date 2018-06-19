@@ -100,20 +100,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal constant returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal constant returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -151,7 +151,7 @@ contract ERC20 is ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -160,7 +160,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -190,7 +190,7 @@ contract BasicToken is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -201,8 +201,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -251,7 +251,7 @@ contract StandardToken is ERC20, BasicToken {
 
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool success) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -276,9 +276,9 @@ contract BurnableToken is StandardToken {
      * @param _value The amount of token to be burned.
      */
     function burn(uint256 _value) public {
-        require(_value &gt; 0);
-        require(_value &lt;= balances[msg.sender]);
-        // no need to require value &lt;= totalSupply, since that would imply the
+        require(_value > 0);
+        require(_value <= balances[msg.sender]);
+        // no need to require value <= totalSupply, since that would imply the
         // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
         address burner = msg.sender;
@@ -308,7 +308,7 @@ contract BitImageToken is StandardToken, BurnableToken, Ownable {
     bool public released;
     address public saleAgent;
 
-    mapping (address =&gt; uint256) public timelock;
+    mapping (address => uint256) public timelock;
 
     modifier onlySaleAgent() {
         require(msg.sender == saleAgent);
@@ -317,7 +317,7 @@ contract BitImageToken is StandardToken, BurnableToken, Ownable {
 
     modifier whenReleased() {
         if (timelock[msg.sender] != 0) {
-            require(released &amp;&amp; now &gt; timelock[msg.sender]);
+            require(released && now > timelock[msg.sender]);
         } else {
             require(released || msg.sender == saleAgent);
         }
@@ -365,7 +365,7 @@ contract BitImageToken is StandardToken, BurnableToken, Ownable {
      */
     function lock(address _holder, uint256 _releaseTime) public onlySaleAgent {
         require(_holder != address(0));
-        require(_releaseTime &gt; now);
+        require(_releaseTime > now);
         timelock[_holder] = _releaseTime;
         Timelock(_holder, _releaseTime);
     }
@@ -442,8 +442,8 @@ contract BitImageToken is StandardToken, BurnableToken, Ownable {
      * @param _value {uint256} the amount of token to be burned.
      */
     function burnFrom(address _from, uint256 _value) public onlySaleAgent {
-        require(_value &gt; 0);
-        require(_value &lt;= balances[_from]);
+        require(_value > 0);
+        require(_value <= balances[_from]);
         balances[_from] = balances[_from].sub(_value);
         totalSupply = totalSupply.sub(_value);
         Burn(_from, _value);
@@ -521,7 +521,7 @@ contract BitImageTokenSale is Pausable {
         bool refunded;
     }
 
-    mapping (address =&gt; Investor) private investors;
+    mapping (address => Investor) private investors;
     address[] private investorsIndex;
 
     enum State { NEW, PRESALE, CROWDSALE, CLOSED }
@@ -588,12 +588,12 @@ contract BitImageTokenSale is Pausable {
      * @param _startTime {uint256} the UNIX timestamp when to start the sale.
      */
     function start(uint256 _startTime) external onlyOwner whenPaused {
-        require(_startTime &gt;= now);
+        require(_startTime >= now);
         require(token != address(0));
         if (state == State.NEW) {
             state = State.PRESALE;
             period = periodPresale;
-        } else if (state == State.PRESALE &amp;&amp; weiTotalReceived &gt;= softCap) {
+        } else if (state == State.PRESALE && weiTotalReceived >= softCap) {
             state = State.CROWDSALE;
             period = periodCrowdsale;
             bonusAfterPresale = bonus.sub(bonusDicrement);
@@ -609,11 +609,11 @@ contract BitImageTokenSale is Pausable {
      * @dev Finalizes the sale.
      */
     function finalize() external onlyOwner {
-        require(weiTotalReceived &gt;= softCap);
-        require(now &gt; startTime.add(period) || weiTotalReceived &gt;= hardCap);
+        require(weiTotalReceived >= softCap);
+        require(now > startTime.add(period) || weiTotalReceived >= hardCap);
 
         if (state == State.PRESALE) {
-            require(this.balance &gt; 0);
+            require(this.balance > 0);
             walletEtherPresale.transfer(this.balance);
             pause();
         } else if (state == State.CROWDSALE) {
@@ -626,7 +626,7 @@ contract BitImageTokenSale is Pausable {
             token.lock(walletTokenReservation, now + 0.5 years);
             token.lock(walletTokenTeam, now + 1 years);
             uint256 tokenAdvisor = tokenAdvisorsAllocated.div(walletTokenAdvisors.length);
-            for (uint256 i = 0; i &lt; walletTokenAdvisors.length; i++) {
+            for (uint256 i = 0; i < walletTokenAdvisors.length; i++) {
                 require(token.transferFrom(token.owner(), walletTokenAdvisors[i], tokenAdvisor));
                 token.lock(walletTokenAdvisors[i], now + 0.5 years);
             }
@@ -643,14 +643,14 @@ contract BitImageTokenSale is Pausable {
      */
     function refund() external whenNotPaused {
         require(state == State.PRESALE);
-        require(now &gt; startTime.add(period));
-        require(weiTotalReceived &lt; softCap);
+        require(now > startTime.add(period));
+        require(weiTotalReceived < softCap);
 
-        require(this.balance &gt; 0);
+        require(this.balance > 0);
 
         Investor storage investor = investors[msg.sender];
 
-        require(investor.weiContributed &gt; 0);
+        require(investor.weiContributed > 0);
         require(!investor.refunded);
 
         msg.sender.transfer(investor.weiContributed);
@@ -663,14 +663,14 @@ contract BitImageTokenSale is Pausable {
 
     function purchase(address _investor) private whenNotPaused {
         require(state == State.PRESALE || state == State.CROWDSALE);
-        require(now &gt;= startTime &amp;&amp; now &lt;= startTime.add(period));
+        require(now >= startTime && now <= startTime.add(period));
 
         if (state == State.CROWDSALE) {
             uint256 timeFromStart = now.sub(startTime);
-            if (timeFromStart &gt; periodWeek) {
+            if (timeFromStart > periodWeek) {
                 uint256 currentWeek = timeFromStart.div(1 weeks);
                 uint256 bonusWeek = bonusAfterPresale.sub(bonusDicrement.mul(currentWeek));
-                if (bonus &gt; bonusWeek) {
+                if (bonus > bonusWeek) {
                     bonus = bonusWeek;
                 }
                 currentWeek++;
@@ -679,7 +679,7 @@ contract BitImageTokenSale is Pausable {
         }
 
         uint256 weiAmount = msg.value;
-        require(weiAmount &gt;= weiMinInvestment &amp;&amp; weiAmount &lt;= weiMaxInvestment);
+        require(weiAmount >= weiMinInvestment && weiAmount <= weiMaxInvestment);
 
         uint256 tokenAmount = weiAmount.mul(rate);
         uint256 tokenBonusAmount = tokenAmount.mul(bonus).div(100);
@@ -687,7 +687,7 @@ contract BitImageTokenSale is Pausable {
 
         weiTotalReceived = weiTotalReceived.add(weiAmount);
         tokenTotalSold = tokenTotalSold.add(tokenAmount);
-        require(tokenTotalSold &lt;= tokenIcoAllocated);
+        require(tokenTotalSold <= tokenIcoAllocated);
 
         require(token.transferFrom(token.owner(), _investor, tokenAmount));
 
@@ -703,7 +703,7 @@ contract BitImageTokenSale is Pausable {
         }
         TokenPurchase(_investor, weiAmount, tokenAmount);
 
-        if (weiTotalReceived &gt;= goal) {
+        if (weiTotalReceived >= goal) {
             if (state == State.PRESALE) {
                 startTime = now;
                 period = 1 weeks;

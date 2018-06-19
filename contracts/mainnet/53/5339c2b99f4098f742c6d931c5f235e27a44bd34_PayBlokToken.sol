@@ -65,37 +65,37 @@ library SafeMath {
     }
 
     function div(uint a, uint b) internal pure returns (uint) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint a, uint b) internal pure returns (uint) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 
     function max64(uint64 a, uint64 b) internal pure returns (uint64) {
-        return a &gt;= b ? a : b;
+        return a >= b ? a : b;
     }
 
     function min64(uint64 a, uint64 b) internal pure returns (uint64) {
-        return a &lt; b ? a : b;
+        return a < b ? a : b;
     }
 
     function max256(uint256 a, uint256 b) internal pure returns (uint256) {
-        return a &gt;= b ? a : b;
+        return a >= b ? a : b;
     }
 
     function min256(uint256 a, uint256 b) internal pure returns (uint256) {
-        return a &lt; b ? a : b;
+        return a < b ? a : b;
     }
 
     function assert(bool assertion) internal pure {
@@ -108,12 +108,12 @@ contract ERC20Token is ERC20Interface {
 
     uint public totalSupply;
 
-    mapping (address =&gt; uint) public balances;
-    mapping (address =&gt; mapping (address =&gt; uint)) public allowed;
+    mapping (address => uint) public balances;
+    mapping (address => mapping (address => uint)) public allowed;
 
     function transfer(address _to, uint _value) external returns (bool success) {
         // Default assumes totalSupply can&#39;t be over max (2^256 - 1).
-        if (balances[msg.sender] &gt;= _value &amp;&amp; _value &gt; 0) {
+        if (balances[msg.sender] >= _value && _value > 0) {
             balances[msg.sender] -= _value;
             balances[_to] += _value;
             emit Transfer(msg.sender, _to, _value);
@@ -122,7 +122,7 @@ contract ERC20Token is ERC20Interface {
     }
 
     function transferFrom(address _from, address _to, uint _value) external returns (bool success) {
-        if (balances[_from] &gt;= _value &amp;&amp; allowed[_from][msg.sender] &gt;= _value &amp;&amp; _value &gt; 0) {
+        if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value && _value > 0) {
             balances[_to] += _value;
             balances[_from] -= _value;
             allowed[_from][msg.sender] -= _value;
@@ -177,7 +177,7 @@ contract ERC223Token is ERC20Token, ERC223Interface {
 
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
-        if (codeLength &gt; 0) {
+        if (codeLength > 0) {
             ERC223ReceivingContract receiver = ERC223ReceivingContract(_to);
             receiver.tokenFallback(msg.sender, _value, _data);
         }
@@ -267,7 +267,7 @@ contract PayBlokToken is ERC223Token, Ownable {
     }
 
     function _burn(address _who, uint256 _value) internal {
-        require(_value &lt;= balances[_who]);
+        require(_value <= balances[_who]);
 
         balances[_who] = balances[_who].sub(_value);
         totalSupply = totalSupply.sub(_value);

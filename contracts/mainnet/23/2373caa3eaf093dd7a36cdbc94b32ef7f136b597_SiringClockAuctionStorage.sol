@@ -72,7 +72,7 @@ contract ClockAuctionStorage is StorageBase {
     }
 
     // Map from token ID to their corresponding auction.
-    mapping (uint256 =&gt; Auction) tokenIdToAuction;
+    mapping (uint256 => Auction) tokenIdToAuction;
 
     function addAuction(
         uint256 _tokenId,
@@ -120,7 +120,7 @@ contract ClockAuctionStorage is StorageBase {
     }
 
     function isOnAuction(uint256 _tokenId) external view returns (bool) {
-        return (tokenIdToAuction[_tokenId].startedAt &gt; 0);
+        return (tokenIdToAuction[_tokenId].startedAt > 0);
     }
 
     function getSeller(uint256 _tokenId) external view returns (address) {

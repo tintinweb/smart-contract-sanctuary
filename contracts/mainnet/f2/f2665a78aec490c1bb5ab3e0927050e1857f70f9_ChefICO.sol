@@ -52,7 +52,7 @@ Short overview of significant functions:
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -62,7 +62,7 @@ Short overview of significant functions:
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -71,7 +71,7 @@ Short overview of significant functions:
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -95,8 +95,8 @@ contract ChefICO {
     bool public softCapReached = false;
     bool public hardCapReached = false;
 
-    mapping(address =&gt; uint256) public balanceOf;
-    mapping(address =&gt; uint256) public chefBalanceOf;
+    mapping(address => uint256) public balanceOf;
+    mapping(address => uint256) public chefBalanceOf;
 
     event ChefICOSucceed(address indexed recipient, uint totalAmount);
     event ChefICOTransfer(address indexed tokenHolder, uint value, bool isContribution);
@@ -133,13 +133,13 @@ contract ChefICO {
     
     
     modifier afterICOdeadline() { 
-        require(now &gt;= icoEnd );
+        require(now >= icoEnd );
             _; 
         }
         
         
     modifier beforeICOdeadline() { 
-        require(now &lt;= icoEnd );
+        require(now <= icoEnd );
             _; 
         }
     
@@ -147,13 +147,13 @@ contract ChefICO {
     function () public payable beforeICOdeadline {
         uint256 amount = msg.value;
         require(!hardCapReached);
-        require(amount &gt;= minimumInvestment &amp;&amp; balanceOf[msg.sender] &lt; maximumInvestment);
+        require(amount >= minimumInvestment && balanceOf[msg.sender] < maximumInvestment);
         
-        if(hardCap &lt;= totalAmount.add(amount)) {
+        if(hardCap <= totalAmount.add(amount)) {
             hardCapReached = true;
             emit ChefICOSucceed(chefOwner, hardCap);
             
-             if(hardCap &lt; totalAmount.add(amount)) {
+             if(hardCap < totalAmount.add(amount)) {
                 uint256 returnAmount = totalAmount.add(amount).sub(hardCap);
                 msg.sender.transfer(returnAmount);
                 emit ChefICOTransfer(msg.sender, returnAmount, false);
@@ -161,7 +161,7 @@ contract ChefICO {
              }
         }
         
-        if(maximumInvestment &lt; balanceOf[msg.sender].add(amount)) {
+        if(maximumInvestment < balanceOf[msg.sender].add(amount)) {
           uint overMaxAmount = balanceOf[msg.sender].add(amount).sub(maximumInvestment);
           msg.sender.transfer(overMaxAmount);
           emit ChefICOTransfer(msg.sender, overMaxAmount, false);
@@ -171,30 +171,30 @@ contract ChefICO {
         totalAmount = totalAmount.add(amount);
         balanceOf[msg.sender] = balanceOf[msg.sender].add(amount);
                
-        if (amount &gt;= 10 ether) {
-            if (amount &gt;= 150 ether) {
+        if (amount >= 10 ether) {
+            if (amount >= 150 ether) {
                 chefBalanceOf[msg.sender] = chefBalanceOf[msg.sender].add(amount.div(chefPrice).mul(135).div(100));
             }
-            else if (amount &gt;= 70 ether) {
+            else if (amount >= 70 ether) {
                 chefBalanceOf[msg.sender] = chefBalanceOf[msg.sender].add(amount.div(chefPrice).mul(130).div(100));
             }
-            else if (amount &gt;= 25 ether) {
+            else if (amount >= 25 ether) {
                 chefBalanceOf[msg.sender] = chefBalanceOf[msg.sender].add(amount.div(chefPrice).mul(125).div(100));
             }
             else {
                 chefBalanceOf[msg.sender] = chefBalanceOf[msg.sender].add(amount.div(chefPrice).mul(120).div(100));
             }
         }
-        else if (now &lt;= icoStart.add(10 days)) {
+        else if (now <= icoStart.add(10 days)) {
             chefBalanceOf[msg.sender] = chefBalanceOf[msg.sender].add(amount.div(chefPrice).mul(120).div(100));
         }
-        else if (now &lt;= icoStart.add(20 days)) {
+        else if (now <= icoStart.add(20 days)) {
             chefBalanceOf[msg.sender] = chefBalanceOf[msg.sender].add(amount.div(chefPrice).mul(115).div(100));
         }
-        else if (now &lt;= icoStart.add(30 days)) {
+        else if (now <= icoStart.add(30 days)) {
             chefBalanceOf[msg.sender] = chefBalanceOf[msg.sender].add(amount.div(chefPrice).mul(110).div(100));
         }
-        else if (now &lt;= icoStart.add(40 days)) {
+        else if (now <= icoStart.add(40 days)) {
             chefBalanceOf[msg.sender] = chefBalanceOf[msg.sender].add(amount.div(chefPrice).mul(105).div(100));
         }
         else {
@@ -203,7 +203,7 @@ contract ChefICO {
         
         emit ChefICOTransfer(msg.sender, amount, true);
         
-        if (totalAmount &gt;= softCap &amp;&amp; softCapReached == false ){
+        if (totalAmount >= softCap && softCapReached == false ){
         softCapReached = true;
         emit ChefICOSucceed(chefOwner, totalAmount);
         }
@@ -214,7 +214,7 @@ contract ChefICO {
         if (!softCapReached) {
 	    uint256 amount = balanceOf[msg.sender];
             balanceOf[msg.sender] = 0;
-            if (amount &gt; 0) {
+            if (amount > 0) {
                 msg.sender.transfer(amount);
                 emit ChefICOTransfer(msg.sender, amount, false);
             }
@@ -223,7 +223,7 @@ contract ChefICO {
         
     
     function chefOwnerWithdrawal() public onlyOwner {    
-        if ((now &gt;= icoEnd &amp;&amp; softCapReached) || hardCapReached) {
+        if ((now >= icoEnd && softCapReached) || hardCapReached) {
             chefOwner.transfer(totalAmount);
             emit ChefICOTransfer(chefOwner, totalAmount, false);
         }

@@ -88,7 +88,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -98,7 +98,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -107,7 +107,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -120,8 +120,8 @@ contract DiceGameToken is ERC20, Ownable {
     string public constant symbol = &quot;DICE&quot;;
     uint8 public constant decimals = 18;
 
-    mapping (address =&gt; uint256) private balances;
-    mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+    mapping (address => uint256) private balances;
+    mapping (address => mapping (address => uint256)) internal allowed;
 
     event Mint(address indexed to, uint256 amount);
     event MintFinished();
@@ -149,7 +149,7 @@ contract DiceGameToken is ERC20, Ownable {
     */
     function transfer(address _to, uint256 _value) public canTransfer returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
 
         // SafeMath.sub will throw if there is not enough balance.
         balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -175,8 +175,8 @@ contract DiceGameToken is ERC20, Ownable {
     */
     function transferFrom(address _from, address _to, uint256 _value) public canTransfer returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -239,7 +239,7 @@ contract DiceGameToken is ERC20, Ownable {
     */
     function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);

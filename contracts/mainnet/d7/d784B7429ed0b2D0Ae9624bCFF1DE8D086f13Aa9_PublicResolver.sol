@@ -122,7 +122,7 @@ contract PublicResolver {
      */
     function setABI(bytes32 node, uint256 contentType, bytes data) public only_owner(node) {
         // Content types must be powers of 2
-        require(((contentType - 1) &amp; contentType) == 0);
+        require(((contentType - 1) & contentType) == 0);
 
         records[node].abis[contentType] = data;
         emit ABIChanged(node, contentType);
@@ -182,7 +182,7 @@ contract PublicResolver {
     function ABI(bytes32 node, uint256 contentTypes) public view returns (uint256 contentType, bytes data) {
         Record storage record = records[node];
         for (contentType = 1; contentType <= contentTypes; contentType <<= 1) {
-            if ((contentType &amp; contentTypes) != 0 &amp;&amp; record.abis[contentType].length > 0) {
+            if ((contentType & contentTypes) != 0 && record.abis[contentType].length > 0) {
                 data = record.abis[contentType];
                 return;
             }

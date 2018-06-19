@@ -108,7 +108,7 @@ contract GEE {
     }
 
     function changePayRate(uint256 _newRate) public {
-        require(((msg.sender == _owner) || (msg.sender == _dev)) &amp;&amp; (_newRate >= 0));
+        require(((msg.sender == _owner) || (msg.sender == _dev)) && (_newRate >= 0));
         _tokePerEth = _newRate;
     }
 
@@ -169,7 +169,7 @@ contract GEE {
     // enables fee update - must be between 0 and 20 (%)
     function updateFeeAmount(uint _newFee) public {
         require((msg.sender == _dev) || (msg.sender == _owner));
-        require((_newFee >= 0) &amp;&amp; (_newFee <= 20));
+        require((_newFee >= 0) && (_newFee <= 20));
         _fees = _newFee * 100;
     }
 

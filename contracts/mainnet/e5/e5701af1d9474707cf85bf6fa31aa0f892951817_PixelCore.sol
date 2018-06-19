@@ -256,8 +256,8 @@ contract PixelOwnership is PixelBase, ERC721 {
 
     /// @notice Returns the addresses currently assigned ownership of the given pixel area.
     function ownersOfArea(uint256 x, uint256 y, uint256 x2, uint256 y2) external view returns (address[] result) {
-        require(x2 > x &amp;&amp; y2 > y);
-        require(x2 <= WIDTH &amp;&amp; y2 <= HEIGHT);
+        require(x2 > x && y2 > y);
+        require(x2 <= WIDTH && y2 <= HEIGHT);
         result = new address[]((y2 - y) * (x2 - x));
 
         uint256 r = 0;
@@ -368,8 +368,8 @@ contract PixelPainting is PixelOwnership {
 
     // Sets the color of the pixels in an area, left to right and then top to bottom
     function setPixelAreaColor(uint256 x, uint256 y, uint256 x2, uint256 y2, uint32[] _colors) external {
-        require(x2 > x &amp;&amp; y2 > y);
-        require(x2 <= WIDTH &amp;&amp; y2 <= HEIGHT);
+        require(x2 > x && y2 > y);
+        require(x2 <= WIDTH && y2 <= HEIGHT);
         require(_colors.length == (y2 - y) * (x2 - x));
         uint256 r = 0;
         for (uint256 i = y; i < y2; i++) {
@@ -393,8 +393,8 @@ contract PixelPainting is PixelOwnership {
 
     // Returns the colors of the pixels in an area, left to right and then top to bottom
     function getPixelAreaColor(uint256 x, uint256 y, uint256 x2, uint256 y2) external view returns (uint32[] result) {
-        require(x2 > x &amp;&amp; y2 > y);
-        require(x2 <= WIDTH &amp;&amp; y2 <= HEIGHT);
+        require(x2 > x && y2 > y);
+        require(x2 <= WIDTH && y2 <= HEIGHT);
         result = new uint32[]((y2 - y) * (x2 - x));
         uint256 r = 0;
         for (uint256 i = y; i < y2; i++) {
@@ -432,8 +432,8 @@ contract PixelMinting is PixelPainting {
 
     // buy an area of pixels, left to right, top to bottom
     function buyEmptyPixelArea(uint256 x, uint256 y, uint256 x2, uint256 y2) external payable {
-        require(x2 > x &amp;&amp; y2 > y);
-        require(x2 <= WIDTH &amp;&amp; y2 <= HEIGHT);
+        require(x2 > x && y2 > y);
+        require(x2 <= WIDTH && y2 <= HEIGHT);
         require(msg.value == pixelPrice * (x2-x) * (y2-y));
         
         uint256 i;

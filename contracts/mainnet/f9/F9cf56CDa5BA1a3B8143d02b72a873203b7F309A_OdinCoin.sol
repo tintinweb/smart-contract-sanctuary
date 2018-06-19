@@ -17,45 +17,45 @@ library SafeMath {
     return c;
   }
   function safeDiv(uint a, uint b) internal pure returns (uint) {
-    assert(b &gt; 0);
+    assert(b > 0);
     uint c = a / b;
     assert(a == b * c + a % b);
     return c;
   }
   function safeSub(uint a, uint b) internal pure returns (uint) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
   function safeAdd(uint a, uint b) internal pure returns (uint) {
     uint c = a + b;
-    assert(c&gt;=a &amp;&amp; c&gt;=b);
+    assert(c>=a && c>=b);
     return c;
   }
   function max64(uint64 a, uint64 b) internal pure returns (uint64) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
   function min64(uint64 a, uint64 b) internal pure returns (uint64) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
   function max256(uint256 a, uint256 b) internal pure returns (uint256) {
-    return a &gt;= b ? a : b;
+    return a >= b ? a : b;
   }
   function min256(uint256 a, uint256 b) internal pure returns (uint256) {
-    return a &lt; b ? a : b;
+    return a < b ? a : b;
   }
 }
 pragma solidity ^0.4.18;
 contract StandardToken is ERC20 {
   using SafeMath for uint256; 
   modifier onlyPayloadSize(uint size) {
-     require(msg.data.length &gt;= size + 4);
+     require(msg.data.length >= size + 4);
      _;
   }
-  mapping(address =&gt; uint) balances;
-  mapping (address =&gt; mapping (address =&gt; uint)) allowed;
+  mapping(address => uint) balances;
+  mapping (address => mapping (address => uint)) allowed;
   function transfer(address _to, uint _value) onlyPayloadSize(2 * 32) public returns (bool success){
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
     balances[msg.sender] = balances[msg.sender].safeSub(_value);
     balances[_to] = balances[_to].safeAdd(_value);
     Transfer(msg.sender, _to, _value);
@@ -95,7 +95,7 @@ contract StandardToken is ERC20 {
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     require(_spender != address(0));
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.safeSub(_subtractedValue);

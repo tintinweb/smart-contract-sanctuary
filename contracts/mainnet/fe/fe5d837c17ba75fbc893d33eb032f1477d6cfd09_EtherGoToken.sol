@@ -391,12 +391,12 @@ contract DatCrowdPreSale is Ownable {
   // @return true if the transaction can buy tokens
   // check for valid time period, min amount and within cap
   function validPurchase() internal constant returns (bool) {
-    bool withinPeriod = startDate <= now &amp;&amp; endDate >= now;
+    bool withinPeriod = startDate <= now && endDate >= now;
     bool nonZeroPurchase = msg.value != 0;
     bool minAmount = msg.value >= minimumParticipationAmount;
     bool withinCap = weiRaised.add(msg.value) <= cap;
 
-    return withinPeriod &amp;&amp; nonZeroPurchase &amp;&amp; minAmount &amp;&amp; !isFinalized &amp;&amp; withinCap;
+    return withinPeriod && nonZeroPurchase && minAmount && !isFinalized && withinCap;
   }
 
     // @return true if the goal is reached

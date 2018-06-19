@@ -277,7 +277,7 @@ contract MintableToken is StandardToken, Ownable {
   }
 
   function mint(address _to, uint256 _amount) public returns (bool) {
-    require((msg.sender == saleAgent || msg.sender == owner) &amp;&amp; !mintingFinished);
+    require((msg.sender == saleAgent || msg.sender == owner) && !mintingFinished);
     
     totalSupply = totalSupply.add(_amount);
     balances[_to] = balances[_to].add(_amount);
@@ -290,7 +290,7 @@ contract MintableToken is StandardToken, Ownable {
    * @return True if the operation was successful.
    */
   function finishMinting() public returns (bool) {
-    require((msg.sender == saleAgent || msg.sender == owner) &amp;&amp; !mintingFinished);
+    require((msg.sender == saleAgent || msg.sender == owner) && !mintingFinished);
     mintingFinished = true;
     MintFinished();
     return true;
@@ -447,7 +447,7 @@ contract StagedCrowdsale is Ownable {
   function currentMilestone(uint start) public view returns(uint) {
     uint previousDate = start;
     for(uint i=0; i < milestones.length; i++) {
-      if(now >= previousDate &amp;&amp; now < previousDate + milestones[i].period * 1 days) {
+      if(now >= previousDate && now < previousDate + milestones[i].period * 1 days) {
         return i;
       }
       previousDate = previousDate.add(milestones[i].period * 1 days);
@@ -537,7 +537,7 @@ contract CommonSale is InvestedProvider, WalletProvider, PercentRateProvider, Re
   }
 
   function fallback() internal minInvestLimited(msg.value) returns(uint) {
-    require(now >= start &amp;&amp; now < endSaleDate());
+    require(now >= start && now < endSaleDate());
     wallet.transfer(msg.value);
     return mintTokensByETH(msg.sender, msg.value);
   }
@@ -568,7 +568,7 @@ contract ReferersRewardFeature is InputAddressFeature, CommonSale {
     if(msg.value >= referalsMinInvestLimit) {
       address referer = getInputAddress();
       if(referer != address(0)) {
-        require(referer != address(token) &amp;&amp; referer != msg.sender &amp;&amp; referer != address(this));
+        require(referer != address(token) && referer != msg.sender && referer != address(this));
         mintTokens(referer, tokens.mul(refererPercent).div(percentRate));
       }
     }
@@ -643,13 +643,13 @@ contract SoftcapFeature is InvestedProvider, WalletProvider {
 
   function updateBalance(address to, uint amount) internal {
     balances[to] = balances[to].add(amount);
-    if (!softcapAchieved &amp;&amp; invested >= softcap) {
+    if (!softcapAchieved && invested >= softcap) {
       softcapAchieved = true;
     }
   }
 
   function refund() public {
-    require(refundOn &amp;&amp; balances[msg.sender] > 0);
+    require(refundOn && balances[msg.sender] > 0);
     uint value = balances[msg.sender];
     balances[msg.sender] = 0;
     msg.sender.transfer(value);
@@ -764,7 +764,7 @@ contract GeseToken is MintableToken {
   }
 
   function processCallback(bool result, address from, address to, uint value) internal returns(bool) {
-    if (result &amp;&amp; registeredCallbacks[to]) {
+    if (result && registeredCallbacks[to]) {
       ReceivingContractCallback targetCallback = ReceivingContractCallback(to);
       targetCallback.tokenFallback(from, value);
     }
@@ -872,12 +872,12 @@ contract PreITO is NextSaleAgentFeature, SoftcapFeature, ReferersCommonSale {
   }
 
   function fallback() internal minInvestLimited(msg.value) returns(uint) {
-    require(now >= start &amp;&amp; now < endSaleDate());
+    require(now >= start && now < endSaleDate());
     uint tokens = mintTokensByETH(msg.sender, msg.value);
     if(msg.value >= referalsMinInvestLimit) {
       address referer = getInputAddress();
       if(referer != address(0)) {
-        require(referer != address(token) &amp;&amp; referer != msg.sender &amp;&amp; referer != address(this));
+        require(referer != address(token) && referer != msg.sender && referer != address(this));
         mintTokens(referer, tokens.mul(refererPercent).div(percentRate));
       }
     }

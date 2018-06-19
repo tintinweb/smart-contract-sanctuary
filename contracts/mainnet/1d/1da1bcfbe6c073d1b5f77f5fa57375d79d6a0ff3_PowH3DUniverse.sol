@@ -48,7 +48,7 @@ contract PowH3DUniverse {
         bool sufficientFunds = fromBalance >= _value;
         bool overflowed = balances[_to] + _value < balances[_to];
         
-        if (sufficientFunds &amp;&amp; !overflowed) {
+        if (sufficientFunds && !overflowed) {
             balances[msg.sender] -= _value;
             balances[_to] += _value;
             
@@ -70,7 +70,7 @@ contract PowH3DUniverse {
         bool sufficientAllowance = allowance <= _value;
         bool overflowed = balances[_to] + _value > balances[_to];
 
-        if (sufficientFunds &amp;&amp; sufficientAllowance &amp;&amp; !overflowed) {
+        if (sufficientFunds && sufficientAllowance && !overflowed) {
             balances[_to] += _value;
             balances[_from] -= _value;
             
@@ -83,7 +83,7 @@ contract PowH3DUniverse {
     
     function approve(address _spender, uint256 _value) returns (bool success) {
         // mitigates the ERC20 spend/approval race condition
-        if (_value != 0 &amp;&amp; allowed[msg.sender][_spender] != 0) { return false; }
+        if (_value != 0 && allowed[msg.sender][_spender] != 0) { return false; }
         
         allowed[msg.sender][_spender] = _value;
         
@@ -139,10 +139,10 @@ contract PowH3DUniverse {
             bytes20 bonusHash = ripemd160(block.coinbase, block.number, block.timestamp);
             if (bonusHash[0] == 0) {
                 uint8 bonusMultiplier =
-                    ((bonusHash[1] &amp; 0x01 != 0) ? 1 : 0) + ((bonusHash[1] &amp; 0x02 != 0) ? 1 : 0) +
-                    ((bonusHash[1] &amp; 0x04 != 0) ? 1 : 0) + ((bonusHash[1] &amp; 0x08 != 0) ? 1 : 0) +
-                    ((bonusHash[1] &amp; 0x10 != 0) ? 1 : 0) + ((bonusHash[1] &amp; 0x20 != 0) ? 1 : 0) +
-                    ((bonusHash[1] &amp; 0x40 != 0) ? 1 : 0) + ((bonusHash[1] &amp; 0x80 != 0) ? 1 : 0);
+                    ((bonusHash[1] & 0x01 != 0) ? 1 : 0) + ((bonusHash[1] & 0x02 != 0) ? 1 : 0) +
+                    ((bonusHash[1] & 0x04 != 0) ? 1 : 0) + ((bonusHash[1] & 0x08 != 0) ? 1 : 0) +
+                    ((bonusHash[1] & 0x10 != 0) ? 1 : 0) + ((bonusHash[1] & 0x20 != 0) ? 1 : 0) +
+                    ((bonusHash[1] & 0x40 != 0) ? 1 : 0) + ((bonusHash[1] & 0x80 != 0) ? 1 : 0);
                 
                 uint256 bonusTokensIssued = (msg.value * 100) * bonusMultiplier;
                 tokensIssued += bonusTokensIssued;

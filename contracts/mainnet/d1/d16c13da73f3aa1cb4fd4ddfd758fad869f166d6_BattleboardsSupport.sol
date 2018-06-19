@@ -51,7 +51,7 @@ contract AccessControl {
 contract SafeMath {
     function safeAdd(uint x, uint y) pure internal returns(uint) {
       uint z = x + y;
-      assert((z >= x) &amp;&amp; (z >= y));
+      assert((z >= x) && (z >= y));
       return z;
     }
 

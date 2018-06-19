@@ -26,8 +26,8 @@ contract TokenERC20 is owned {
     uint8 public decimals = 18;  // 18 是建议的默认值
     uint256 public totalSupply;
 
-    mapping (address =&gt; uint256) public balanceOf;  
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => uint256) public balanceOf;  
+    mapping (address => mapping (address => uint256)) public allowance;
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Burn(address indexed from, uint256 value);
     
@@ -36,7 +36,7 @@ contract TokenERC20 is owned {
     uint minBalanceForAccounts;  
    
     event FrozenFunds(address target, bool frozen);
-    mapping (address =&gt; bool) public frozenAccount;
+    mapping (address => bool) public frozenAccount;
 
     function TokenERC20(uint256 initialSupply, string tokenName, string tokenSymbol) public {
         totalSupply = initialSupply * 10 ** uint256(decimals);
@@ -48,8 +48,8 @@ contract TokenERC20 is owned {
 
     function _transfer(address _from, address _to, uint _value) internal {
         require(_to != 0x0);
-        require(balanceOf[_from] &gt;= _value);
-        require(balanceOf[_to] + _value &gt; balanceOf[_to]);
+        require(balanceOf[_from] >= _value);
+        require(balanceOf[_to] + _value > balanceOf[_to]);
         uint previousBalances = balanceOf[_from] + balanceOf[_to];
         balanceOf[_from] -= _value;
         balanceOf[_to] += _value;
@@ -62,7 +62,7 @@ contract TokenERC20 is owned {
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
-        require(_value &lt;= allowance[_from][msg.sender]);     // Check allowance
+        require(_value <= allowance[_from][msg.sender]);     // Check allowance
         allowance[_from][msg.sender] -= _value;
         _transfer(_from, _to, _value);
         return true;
@@ -83,7 +83,7 @@ contract TokenERC20 is owned {
     }
 
     function burn(uint256 _value) public returns (bool success) {
-        require(balanceOf[msg.sender] &gt;= _value);
+        require(balanceOf[msg.sender] >= _value);
         balanceOf[msg.sender] -= _value;
         totalSupply -= _value;
         Burn(msg.sender, _value);
@@ -91,8 +91,8 @@ contract TokenERC20 is owned {
     }
 
     function burnFrom(address _from, uint256 _value) public returns (bool success) {
-        require(balanceOf[_from] &gt;= _value);
-        require(_value &lt;= allowance[_from][msg.sender]);
+        require(balanceOf[_from] >= _value);
+        require(_value <= allowance[_from][msg.sender]);
         balanceOf[_from] -= _value;
         allowance[_from][msg.sender] -= _value;
         totalSupply -= _value;
@@ -121,7 +121,7 @@ contract TokenERC20 is owned {
        
      function buy() returns (uint amount){
             amount = msg.value / buyPrice;                     // calculates the amount
-            if (balanceOf[this] &lt; amount) throw;               // checks if it has enough to sell
+            if (balanceOf[this] < amount) throw;               // checks if it has enough to sell
             balanceOf[msg.sender] += amount;                   // adds the amount to buyer&#39;s balance
             balanceOf[this] -= amount;                         // subtracts amount from seller&#39;s balance
             Transfer(this, msg.sender, amount);                // execute an event reflecting the change
@@ -129,7 +129,7 @@ contract TokenERC20 is owned {
         }
        
         function sell(uint amount) returns (uint revenue){
-            if (balanceOf[msg.sender] &lt; amount ) throw;        // checks if the sender has enough to sell
+            if (balanceOf[msg.sender] < amount ) throw;        // checks if the sender has enough to sell
             balanceOf[this] += amount;                         // adds the amount to owner&#39;s balance
             balanceOf[msg.sender] -= amount;                   // subtracts the amount from seller&#39;s balance
             revenue = amount * sellPrice;                      // calculate the revenue

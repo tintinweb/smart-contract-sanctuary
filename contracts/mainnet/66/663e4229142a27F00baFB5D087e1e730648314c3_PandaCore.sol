@@ -53,7 +53,7 @@ contract Ownable {
 }
 
 /// @title Interface for contracts conforming to ERC-721: Non-Fungible Tokens
-/// @author Dieter Shirley &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="492d2c3d2c092831202624332c27672a26">[email&#160;protected]</a>&gt; (https://github.com/dete)
+/// @author Dieter Shirley <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="492d2c3d2c092831202624332c27672a26">[email&#160;protected]</a>> (https://github.com/dete)
 contract ERC721 {
     // Required methods
     function totalSupply() public view returns (uint256 total);
@@ -81,7 +81,7 @@ contract GeneScienceInterface {
     /// @dev simply a boolean to indicate this is the contract we expect to be
     function isGeneScience() public pure returns (bool);
 
-    /// @dev given genes of kitten 1 &amp; 2, return a genetic combination - may have a random factor
+    /// @dev given genes of kitten 1 & 2, return a genetic combination - may have a random factor
     /// @param genes1 genes of mom
     /// @param genes2 genes of sire
     /// @return the genes that are supposed to be passed down the child
@@ -320,21 +320,21 @@ contract PandaBase is PandaAccessControl {
 
     /// @dev A mapping from cat IDs to the address that owns them. All cats have
     ///  some valid owner address, even gen0 cats are created with a non-zero owner.
-    mapping (uint256 =&gt; address) public pandaIndexToOwner;
+    mapping (uint256 => address) public pandaIndexToOwner;
 
     // @dev A mapping from owner address to count of tokens that address owns.
     //  Used internally inside balanceOf() to resolve ownership count.
-    mapping (address =&gt; uint256) ownershipTokenCount;
+    mapping (address => uint256) ownershipTokenCount;
 
     /// @dev A mapping from PandaIDs to an address that has been approved to call
     ///  transferFrom(). Each Panda can only have one approved address for transfer
     ///  at any time. A zero value means no approval is outstanding.
-    mapping (uint256 =&gt; address) public pandaIndexToApproved;
+    mapping (uint256 => address) public pandaIndexToApproved;
 
     /// @dev A mapping from PandaIDs to an address that has been approved to use
     ///  this Panda for siring via breedWith(). Each Panda can only have one approved
     ///  address for siring at any time. A zero value means no approval is outstanding.
-    mapping (uint256 =&gt; address) public sireAllowedToAddress;
+    mapping (uint256 => address) public sireAllowedToAddress;
 
     /// @dev The address of the ClockAuction contract that handles sales of Pandas. This
     ///  same contract handles both peer-to-peer sales as well as the gen0 sales which are
@@ -356,8 +356,8 @@ contract PandaBase is PandaAccessControl {
 
 
     // wizz panda total
-    mapping (uint256 =&gt; uint256) public wizzPandaQuota;
-    mapping (uint256 =&gt; uint256) public wizzPandaCount;
+    mapping (uint256 => uint256) public wizzPandaQuota;
+    mapping (uint256 => uint256) public wizzPandaCount;
 
     
     /// wizz panda control
@@ -429,23 +429,23 @@ contract PandaBase is PandaAccessControl {
         // New panda starts with the same cooldown as parent gen/2
         uint16 cooldownIndex = 0;
         // when contract creation, geneScience ref is null 
-        if (pandas.length&gt;0){
+        if (pandas.length>0){
             uint16 pureDegree = uint16(geneScience.getPureFromGene(_genes));
             if (pureDegree==0) {
                 pureDegree = 1;
             }
             cooldownIndex = 1000/pureDegree;
-            if (cooldownIndex%10 &lt; 5){
+            if (cooldownIndex%10 < 5){
                 cooldownIndex = cooldownIndex/10;
             }else{
                 cooldownIndex = cooldownIndex/10 + 1;
             }
             cooldownIndex = cooldownIndex - 1;
-            if (cooldownIndex &gt; 8) {
+            if (cooldownIndex > 8) {
                 cooldownIndex = 8;
             }
             uint256 _tp = geneScience.getWizzType(_genes);
-            if (_tp&gt;0 &amp;&amp; wizzPandaQuota[_tp]&lt;=wizzPandaCount[_tp]) {
+            if (_tp>0 && wizzPandaQuota[_tp]<=wizzPandaCount[_tp]) {
                 _genes = geneScience.clearWizzType(_genes);
                 _tp = 0;
             }
@@ -455,12 +455,12 @@ contract PandaBase is PandaAccessControl {
             }
 
             // increase wizz counter
-            if (_tp&gt;0){
+            if (_tp>0){
                 wizzPandaCount[_tp] = wizzPandaCount[_tp] + 1;
             }
-            // all gen0&amp;gen1 except gensis
-            if (_generation &lt;= 1 &amp;&amp; _tp != 1){
-                require(gen0CreatedCount&lt;GEN0_TOTAL_COUNT);
+            // all gen0&gen1 except gensis
+            if (_generation <= 1 && _tp != 1){
+                require(gen0CreatedCount<GEN0_TOTAL_COUNT);
                 gen0CreatedCount++;
             }
         }
@@ -499,7 +499,7 @@ contract PandaBase is PandaAccessControl {
 
     // Any C-level can fix how many seconds per blocks are currently observed.
     function setSecondsPerBlock(uint256 secs) external onlyCLevel {
-        require(secs &lt; cooldowns[0]);
+        require(secs < cooldowns[0]);
         secondsPerBlock = secs;
     }
 }
@@ -562,7 +562,7 @@ contract PandaOwnership is PandaBase, ERC721 {
     function supportsInterface(bytes4 _interfaceID) external view returns (bool)
     {
         // DEBUG ONLY
-        //require((InterfaceSignature_ERC165 == 0x01ffc9a7) &amp;&amp; (InterfaceSignature_ERC721 == 0x9a20483d));
+        //require((InterfaceSignature_ERC165 == 0x01ffc9a7) && (InterfaceSignature_ERC721 == 0x9a20483d));
 
         return ((_interfaceID == InterfaceSignature_ERC165) || (_interfaceID == InterfaceSignature_ERC721));
     }
@@ -573,14 +573,14 @@ contract PandaOwnership is PandaBase, ERC721 {
 
     /// @dev Checks if a given address is the current owner of a particular Panda.
     /// @param _claimant the address we are validating against.
-    /// @param _tokenId kitten id, only valid when &gt; 0
+    /// @param _tokenId kitten id, only valid when > 0
     function _owns(address _claimant, uint256 _tokenId) internal view returns (bool) {
         return pandaIndexToOwner[_tokenId] == _claimant;
     }
 
     /// @dev Checks if a given address currently has transferApproval for a particular Panda.
     /// @param _claimant the address we are confirming kitten is approved for.
-    /// @param _tokenId kitten id, only valid when &gt; 0
+    /// @param _tokenId kitten id, only valid when > 0
     function _approvedFor(address _claimant, uint256 _tokenId) internal view returns (bool) {
         return pandaIndexToApproved[_tokenId] == _claimant;
     }
@@ -724,7 +724,7 @@ contract PandaOwnership is PandaBase, ERC721 {
             // sequentially up to the totalCat count.
             uint256 catId;
 
-            for (catId = 1; catId &lt;= totalCats; catId++) {
+            for (catId = 1; catId <= totalCats; catId++) {
                 if (pandaIndexToOwner[catId] == _owner) {
                     result[resultIndex] = catId;
                     resultIndex++;
@@ -735,12 +735,12 @@ contract PandaOwnership is PandaBase, ERC721 {
         }
     }
 
-    /// @dev Adapted from memcpy() by @arachnid (Nick Johnson &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aecfdccfcdc6c0c7caeec0c1dacac1da80c0cbda">[email&#160;protected]</a>&gt;)
+    /// @dev Adapted from memcpy() by @arachnid (Nick Johnson <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aecfdccfcdc6c0c7caeec0c1dacac1da80c0cbda">[email&#160;protected]</a>>)
     ///  This method is licenced under the Apache License.
     ///  Ref: https://github.com/Arachnid/solidity-stringutils/blob/2f6ca9accb48ae14c66f1437ec50ed19a0616f78/strings.sol
     function _memcpy(uint _dest, uint _src, uint _len) private view {
         // Copy word-length chunks while possible
-        for(; _len &gt;= 32; _len -= 32) {
+        for(; _len >= 32; _len -= 32) {
             assembly {
                 mstore(_dest, mload(_src))
             }
@@ -757,7 +757,7 @@ contract PandaOwnership is PandaBase, ERC721 {
         }
     }
 
-    /// @dev Adapted from toString(slice) by @arachnid (Nick Johnson &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d6b7a4b7b5beb8bfb296b8b9a2b2b9a2f8b8b3a2">[email&#160;protected]</a>&gt;)
+    /// @dev Adapted from toString(slice) by @arachnid (Nick Johnson <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d6b7a4b7b5beb8bfb296b8b9a2b2b9a2f8b8b3a2">[email&#160;protected]</a>>)
     ///  This method is licenced under the Apache License.
     ///  Ref: https://github.com/Arachnid/solidity-stringutils/blob/2f6ca9accb48ae14c66f1437ec50ed19a0616f78/strings.sol
     function _toString(bytes32[4] _rawBytes, uint256 _stringLength) private view returns (string) {
@@ -801,7 +801,7 @@ contract PandaBreeding is PandaOwnership {
     // Keeps track of number of pregnant pandas.
     uint256 public pregnantPandas;
 
-    mapping(uint256 =&gt; address) childOwner;
+    mapping(uint256 => address) childOwner;
 
 
     /// @dev Update the address of the genetic contract, can only be called by the CEO.
@@ -823,7 +823,7 @@ contract PandaBreeding is PandaOwnership {
         // In addition to checking the cooldownEndBlock, we also need to check to see if
         // the cat has a pending birth; there can be some period of time between the end
         // of the pregnacy timer and the birth event.
-        return (_kit.siringWithId == 0) &amp;&amp; (_kit.cooldownEndBlock &lt;= uint64(block.number));
+        return (_kit.siringWithId == 0) && (_kit.cooldownEndBlock <= uint64(block.number));
     }
 
     /// @dev Check if a sire has authorized breeding with this matron. True if both sire
@@ -849,7 +849,7 @@ contract PandaBreeding is PandaOwnership {
         // Increment the breeding count, clamping it at 13, which is the length of the
         // cooldowns array. We could check the array size dynamically, but hard-coding
         // this as a constant saves gas. Yay, Solidity!
-        if (_kitten.cooldownIndex &lt; 8 &amp;&amp; geneScience.getWizzType(_kitten.genes) != 1) {
+        if (_kitten.cooldownIndex < 8 && geneScience.getWizzType(_kitten.genes) != 1) {
             _kitten.cooldownIndex += 1;
         }
     }
@@ -875,7 +875,7 @@ contract PandaBreeding is PandaOwnership {
     /// @dev Checks to see if a given Panda is pregnant and (if so) if the gestation
     ///  period has passed.
     function _isReadyToGiveBirth(Panda _matron) private view returns(bool) {
-        return (_matron.siringWithId != 0) &amp;&amp; (_matron.cooldownEndBlock &lt;= uint64(block.number));
+        return (_matron.siringWithId != 0) && (_matron.cooldownEndBlock <= uint64(block.number));
     }
 
     /// @notice Checks that a given kitten is able to breed (i.e. it is not pregnant or
@@ -885,7 +885,7 @@ contract PandaBreeding is PandaOwnership {
     public
     view
     returns(bool) {
-        require(_pandaId &gt; 0);
+        require(_pandaId > 0);
         Panda storage kit = pandas[_pandaId];
         return _isReadyToBreed(kit);
     }
@@ -896,7 +896,7 @@ contract PandaBreeding is PandaOwnership {
     public
     view
     returns(bool) {
-        require(_pandaId &gt; 0);
+        require(_pandaId > 0);
         // A panda is pregnant if and only if this field is set
         return pandas[_pandaId].siringWithId != 0;
     }
@@ -973,11 +973,11 @@ contract PandaBreeding is PandaOwnership {
     external
     view
     returns(bool) {
-        require(_matronId &gt; 0);
-        require(_sireId &gt; 0);
+        require(_matronId > 0);
+        require(_sireId > 0);
         Panda storage matron = pandas[_matronId];
         Panda storage sire = pandas[_sireId];
-        return _isValidMatingPair(matron, _matronId, sire, _sireId) &amp;&amp;
+        return _isValidMatingPair(matron, _matronId, sire, _sireId) &&
             _isSiringPermitted(_sireId, _matronId);
     }
 
@@ -1029,7 +1029,7 @@ contract PandaBreeding is PandaOwnership {
     payable
     whenNotPaused {
         // Checks for payment.
-        require(msg.value &gt;= autoBirthFee);
+        require(msg.value >= autoBirthFee);
 
         // Caller must own the matron.
         require(_owns(msg.sender, _matronId));
@@ -1102,7 +1102,7 @@ contract PandaBreeding is PandaOwnership {
 
         // Determine the higher generation number of the two parents
         uint16 parentGen = matron.generation;
-        if (sire.generation &gt; matron.generation) {
+        if (sire.generation > matron.generation) {
             parentGen = sire.generation;
         }
 
@@ -1114,15 +1114,15 @@ contract PandaBreeding is PandaOwnership {
 
         // birth failed
         uint256 probability = (geneScience.getPureFromGene(matron.genes) + geneScience.getPureFromGene(sire.genes)) / 2 + _factors[0];
-        if (probability &gt;= (parentGen + 1) * _factors[1]) {
+        if (probability >= (parentGen + 1) * _factors[1]) {
             probability = probability - (parentGen + 1) * _factors[1];
         } else {
             probability = 0;
         }
-        if (parentGen == 0 &amp;&amp; gen0CreatedCount == GEN0_TOTAL_COUNT) {
+        if (parentGen == 0 && gen0CreatedCount == GEN0_TOTAL_COUNT) {
             probability = 0;
         }
-        if (uint256(keccak256(block.blockhash(block.number - 2), now)) % 100 &lt; probability) {
+        if (uint256(keccak256(block.blockhash(block.number - 2), now)) % 100 < probability) {
             // Make the new kitten!
             address owner = childOwner[_matronId];
             kittenId = _createPanda(_matronId, matron.siringWithId, parentGen + 1, childGenes, owner);
@@ -1185,7 +1185,7 @@ contract ClockAuctionBase {
     uint256 public ownerCut;
 
     // Map from token ID to their corresponding auction.
-    mapping (uint256 =&gt; Auction) tokenIdToAuction;
+    mapping (uint256 => Auction) tokenIdToAuction;
 
     event AuctionCreated(uint256 tokenId, uint256 startingPrice, uint256 endingPrice, uint256 duration);
     event AuctionSuccessful(uint256 tokenId, uint256 totalPrice, address winner);
@@ -1223,7 +1223,7 @@ contract ClockAuctionBase {
     function _addAuction(uint256 _tokenId, Auction _auction) internal {
         // Require that all auctions have a duration of
         // at least one minute. (Keeps our math from getting hairy!)
-        require(_auction.duration &gt;= 1 minutes);
+        require(_auction.duration >= 1 minutes);
 
         tokenIdToAuction[_tokenId] = _auction;
 
@@ -1259,7 +1259,7 @@ contract ClockAuctionBase {
 
         // Check that the bid is greater than or equal to the current price
         uint256 price = _currentPrice(auction);
-        require(_bidAmount &gt;= price);
+        require(_bidAmount >= price);
 
         // Grab a reference to the seller before the auction struct
         // gets deleted.
@@ -1270,10 +1270,10 @@ contract ClockAuctionBase {
         _removeAuction(_tokenId);
 
         // Transfer proceeds to seller (if there are any!)
-        if (price &gt; 0) {
+        if (price > 0) {
             // Calculate the auctioneer&#39;s cut.
             // (NOTE: _computeCut() is guaranteed to return a
-            // value &lt;= price, so this subtraction can&#39;t go negative.)
+            // value <= price, so this subtraction can&#39;t go negative.)
             uint256 auctioneerCut = _computeCut(price);
             uint256 sellerProceeds = price - auctioneerCut;
 
@@ -1316,7 +1316,7 @@ contract ClockAuctionBase {
     /// @dev Returns true if the NFT is on auction.
     /// @param _auction - Auction to check.
     function _isOnAuction(Auction storage _auction) internal view returns (bool) {
-        return (_auction.startedAt &gt; 0);
+        return (_auction.startedAt > 0);
     }
 
     /// @dev Returns current price of an NFT on auction. Broken into two
@@ -1333,7 +1333,7 @@ contract ClockAuctionBase {
         // A bit of insurance against negative values (or wraparound).
         // Probably not necessary (since Ethereum guarnatees that the
         // now variable doesn&#39;t ever go backwards).
-        if (now &gt; _auction.startedAt) {
+        if (now > _auction.startedAt) {
             secondsPassed = now - _auction.startedAt;
         }
 
@@ -1364,7 +1364,7 @@ contract ClockAuctionBase {
         //  time (at 64-bits) and currency (at 128-bits). _duration is
         //  also known to be non-zero (see the require() statement in
         //  _addAuction())
-        if (_secondsPassed &gt;= _duration) {
+        if (_secondsPassed >= _duration) {
             // We&#39;ve reached the end of the dynamic pricing portion
             // of the auction, just return the end price.
             return _endingPrice;
@@ -1391,9 +1391,9 @@ contract ClockAuctionBase {
     function _computeCut(uint256 _price) internal view returns (uint256) {
         // NOTE: We don&#39;t use SafeMath (or similar) in this function because
         //  all of our entry functions carefully cap the maximum values for
-        //  currency (at 128-bits), and ownerCut &lt;= 10000 (see the require()
+        //  currency (at 128-bits), and ownerCut <= 10000 (see the require()
         //  statement in the ClockAuction constructor). The result of this
-        //  function is always guaranteed to be &lt;= _price.
+        //  function is always guaranteed to be <= _price.
         return _price * ownerCut / 10000;
     }
 
@@ -1465,7 +1465,7 @@ contract ClockAuction is Pausable, ClockAuctionBase {
     /// @param _cut - percent cut the owner takes on each auction, must be
     ///  between 0-10,000.
     function ClockAuction(address _nftAddress, uint256 _cut) public {
-        require(_cut &lt;= 10000);
+        require(_cut <= 10000);
         ownerCut = _cut;
 
         ERC721 candidateContract = ERC721(_nftAddress);
@@ -1799,13 +1799,13 @@ contract SaleClockAuction is ClockAuction {
     {
         bytes32 bHash = keccak256(block.blockhash(block.number),block.blockhash(block.number-1));
         uint256 PandaIndex;
-        if (bHash[25] &gt; 0xC8) {
-            require(uint256(RarePanda.length) &gt;= RarePandaIndex);
+        if (bHash[25] > 0xC8) {
+            require(uint256(RarePanda.length) >= RarePandaIndex);
             PandaIndex = RarePandaIndex;
             RarePandaIndex ++;
 
         } else{
-            require(uint256(CommonPanda.length) &gt;= CommonPandaIndex);
+            require(uint256(CommonPanda.length) >= CommonPandaIndex);
             PandaIndex = CommonPandaIndex;
             CommonPandaIndex ++;
         }
@@ -1819,7 +1819,7 @@ contract SaleClockAuction is ClockAuction {
 
     function averageGen0SalePrice() external view returns (uint256) {
         uint256 sum = 0;
-        for (uint256 i = 0; i &lt; 5; i++) {
+        for (uint256 i = 0; i < 5; i++) {
             sum += lastGen0SalePrices[i];
         }
         return sum / 5;
@@ -1840,11 +1840,11 @@ contract SaleClockAuctionERC20 is ClockAuction {
     //  right auction in our setSaleAuctionAddress() call.
     bool public isSaleClockAuctionERC20 = true;
 
-    mapping (uint256 =&gt; address) public tokenIdToErc20Address;
+    mapping (uint256 => address) public tokenIdToErc20Address;
 
-    mapping (address =&gt; uint256) public erc20ContractsSwitcher;
+    mapping (address => uint256) public erc20ContractsSwitcher;
 
-    mapping (address =&gt; uint256) public balances;
+    mapping (address => uint256) public balances;
     
     // Delegate constructor
     function SaleClockAuctionERC20(address _nftAddr, uint256 _cut) public
@@ -1881,7 +1881,7 @@ contract SaleClockAuctionERC20 is ClockAuction {
 
         require(msg.sender == address(nonFungibleContract));
 
-        require (erc20ContractsSwitcher[_erc20Address] &gt; 0);
+        require (erc20ContractsSwitcher[_erc20Address] > 0);
         
         _escrow(_seller, _tokenId);
         Auction memory auction = Auction(
@@ -1903,7 +1903,7 @@ contract SaleClockAuctionERC20 is ClockAuction {
     function _addAuctionERC20(uint256 _tokenId, Auction _auction, address _erc20address) internal {
         // Require that all auctions have a duration of
         // at least one minute. (Keeps our math from getting hairy!)
-        require(_auction.duration &gt;= 1 minutes);
+        require(_auction.duration >= 1 minutes);
 
         tokenIdToAuction[_tokenId] = _auction;
 
@@ -1948,7 +1948,7 @@ contract SaleClockAuctionERC20 is ClockAuction {
     }
 
     function withdrawERC20Balance(address _erc20Address, address _to) external returns(bool res)  {
-        require (balances[_erc20Address] &gt; 0);
+        require (balances[_erc20Address] > 0);
         require(msg.sender == address(nonFungibleContract));
         ERC20(_erc20Address).transfer(_to, balances[_erc20Address]);
     }
@@ -1969,12 +1969,12 @@ contract SaleClockAuctionERC20 is ClockAuction {
         require(_isOnAuction(auction));
 
 
-        require (_erc20Address != address(0) &amp;&amp; _erc20Address == tokenIdToErc20Address[_tokenId]);
+        require (_erc20Address != address(0) && _erc20Address == tokenIdToErc20Address[_tokenId]);
         
 
         // Check that the bid is greater than or equal to the current price
         uint256 price = _currentPrice(auction);
-        require(_bidAmount &gt;= price);
+        require(_bidAmount >= price);
 
         // Grab a reference to the seller before the auction struct
         // gets deleted.
@@ -1985,17 +1985,17 @@ contract SaleClockAuctionERC20 is ClockAuction {
         _removeAuction(_tokenId);
 
         // Transfer proceeds to seller (if there are any!)
-        if (price &gt; 0) {
+        if (price > 0) {
             // Calculate the auctioneer&#39;s cut.
             // (NOTE: _computeCut() is guaranteed to return a
-            // value &lt;= price, so this subtraction can&#39;t go negative.)
+            // value <= price, so this subtraction can&#39;t go negative.)
             uint256 auctioneerCut = _computeCut(price);
             uint256 sellerProceeds = price - auctioneerCut;
 
             // Send Erc20 Token to seller should call Erc20 contract
             // Reference to contract
             require(ERC20(_erc20Address).transferFrom(_buyerAddress,seller,sellerProceeds));
-            if (auctioneerCut &gt; 0){
+            if (auctioneerCut > 0){
                 require(ERC20(_erc20Address).transferFrom(_buyerAddress,address(this),auctioneerCut));
                 balances[_erc20Address] += auctioneerCut;
             }
@@ -2170,7 +2170,7 @@ contract PandaAuction is PandaBreeding {
 
         // Define the current price of the auction.
         uint256 currentPrice = siringAuction.getCurrentPrice(_sireId);
-        require(msg.value &gt;= currentPrice + autoBirthFee);
+        require(msg.value >= currentPrice + autoBirthFee);
 
         // Siring auction will throw if the bid fails.
         siringAuction.bid.value(msg.value - autoBirthFee)(_sireId);
@@ -2235,7 +2235,7 @@ contract PandaMinting is PandaAuction {
         onlyCOO
         whenNotPaused
     {
-        require(msg.value &gt;= OPEN_PACKAGE_PRICE);
+        require(msg.value >= OPEN_PACKAGE_PRICE);
         uint256 kittenId = _createPanda(0, 0, _generation, _genes, saleAuction);
         saleAuction.createPanda(kittenId,_type);
     }
@@ -2250,7 +2250,7 @@ contract PandaMinting is PandaAuction {
     /// @dev Creates a new gen0 panda with the given genes and
     ///  creates an auction for it.
     //function createGen0Auction(uint256[2] _genes) external onlyCOO {
-    //    require(gen0CreatedCount &lt; GEN0_CREATION_LIMIT);
+    //    require(gen0CreatedCount < GEN0_CREATION_LIMIT);
     //
     //    uint256 pandaId = _createPanda(0, 0, 0, _genes, address(this));
     //    _approve(pandaId, saleAuction);
@@ -2292,7 +2292,7 @@ contract PandaMinting is PandaAuction {
         uint256 nextPrice = avePrice + (avePrice / 2);
 
         // We never auction for less than starting price
-        if (nextPrice &lt; GEN0_STARTING_PRICE) {
+        if (nextPrice < GEN0_STARTING_PRICE) {
             nextPrice = GEN0_STARTING_PRICE;
         }
 
@@ -2422,7 +2422,7 @@ contract PandaCore is PandaMinting {
 
         // if this variable is 0 then it&#39;s not gestating
         isGestating = (kit.siringWithId != 0);
-        isReady = (kit.cooldownEndBlock &lt;= block.number);
+        isReady = (kit.cooldownEndBlock <= block.number);
         cooldownIndex = uint256(kit.cooldownIndex);
         nextActionAt = uint256(kit.cooldownEndBlock);
         siringWithId = uint256(kit.siringWithId);
@@ -2454,7 +2454,7 @@ contract PandaCore is PandaMinting {
         // Subtract all the currently pregnant kittens we have, plus 1 of margin.
         uint256 subtractFees = (pregnantPandas + 1) * autoBirthFee;
 
-        if (balance &gt; subtractFees) {
+        if (balance > subtractFees) {
             cfoAddress.send(balance - subtractFees);
         }
     }

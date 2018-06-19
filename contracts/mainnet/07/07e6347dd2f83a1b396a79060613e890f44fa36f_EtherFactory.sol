@@ -21,7 +21,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -31,7 +31,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -40,7 +40,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -95,7 +95,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -113,7 +113,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -124,7 +124,7 @@ contract BasicToken is ERC20Basic {
   
   function transferFromContract(address _to, uint256 _value) internal returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[address(this)]);
+    require(_value <= balances[address(this)]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[address(this)] = balances[address(this)].sub(_value);
@@ -153,8 +153,8 @@ contract BurnableToken is BasicToken {
    * @param _value The amount of token to be burned.
    */
   function burn(uint256 _value) internal {
-    require(_value &lt;= balances[msg.sender]);
-    // no need to require value &lt;= totalSupply, since that would imply the
+    require(_value <= balances[msg.sender]);
+    // no need to require value <= totalSupply, since that would imply the
     // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
     address burner = msg.sender;
@@ -197,16 +197,16 @@ contract EFToken is MintableToken, BurnableToken, Ownable {
   
   uint256 internal presellStart = now;
   
-  mapping(uint256 =&gt; address) internal InviterAddress; 
-  mapping(address =&gt; uint256) public InviterToID; 
+  mapping(uint256 => address) internal InviterAddress; 
+  mapping(address => uint256) public InviterToID; 
  
   uint256 private InviterID = 0;
   
   function sellTokens(uint256 _value) public gameStarted {
   
-    require (balances[msg.sender] &gt;= _value &amp;&amp; _value &gt; 0);
+    require (balances[msg.sender] >= _value && _value > 0);
 	uint256 balance = address(this).balance;
-	require (balance &gt; 0);
+	require (balance > 0);
 	
     uint256 total = totalSupply();
 	uint256 sellRate = uint256( balance.div( total ) );
@@ -219,15 +219,15 @@ contract EFToken is MintableToken, BurnableToken, Ownable {
   function buyTokens() public gameStarted payable {
     
 	uint256 eth = msg.value;
-    require ( msg.value&gt;0 );
+    require ( msg.value>0 );
 	uint256 tokensAmount = balances[address(this)];
 	uint256 balance = uint256(SafeMath.sub(address(this).balance,msg.value));
-	if (balance &lt; 0.1 ether)
+	if (balance < 0.1 ether)
 		balance = 0.1 ether;
     uint256 total = totalSupply();
 	uint256 sellRate = uint256( balance.div( total ) );
 	uint256 eftValue = uint256(eth.div(sellRate));
-	require ( eftValue &lt;= tokensAmount &amp;&amp; eftValue &gt; 0 );
+	require ( eftValue <= tokensAmount && eftValue > 0 );
 	
 	transferFromContract(msg.sender, eftValue);
 
@@ -237,7 +237,7 @@ contract EFToken is MintableToken, BurnableToken, Ownable {
   } 
 
   function inviterReg() public {
-	require (msg.sender != address(0) &amp;&amp; InviterToID[msg.sender] == 0);
+	require (msg.sender != address(0) && InviterToID[msg.sender] == 0);
 	
 	InviterID++;
 	InviterAddress[InviterID] = msg.sender;
@@ -259,7 +259,7 @@ contract EFToken is MintableToken, BurnableToken, Ownable {
   
   //modifiers
   modifier gameStarted() {
-    require(now - presellStart &gt;= 604800); // 604800 sec = one  week
+    require(now - presellStart >= 604800); // 604800 sec = one  week
     _;
   }
     
@@ -267,32 +267,32 @@ contract EFToken is MintableToken, BurnableToken, Ownable {
 
 contract EtherFactory is EFToken {
 
-  //FactoryID -&gt; workers qualification (depends on factory level) -&gt; workers amount
-  mapping(uint256 =&gt; mapping(uint8 =&gt; uint256)) internal FactoryPersonal; 
+  //FactoryID -> workers qualification (depends on factory level) -> workers amount
+  mapping(uint256 => mapping(uint8 => uint256)) internal FactoryPersonal; 
   
-  //FactoryID -&gt; owner address
-  mapping(uint256 =&gt; address) internal FactoryOwner; 
+  //FactoryID -> owner address
+  mapping(uint256 => address) internal FactoryOwner; 
   
-  //FactoryID -&gt; start work date (timestamp). For profit calculate;
-  mapping(uint256 =&gt; uint256) internal FactoryWorkStart; 
+  //FactoryID -> start work date (timestamp). For profit calculate;
+  mapping(uint256 => uint256) internal FactoryWorkStart; 
   
-  //FactoryID -&gt; factory level;
-  mapping(uint256 =&gt; uint8) internal FactoryLevel; 
+  //FactoryID -> factory level;
+  mapping(uint256 => uint8) internal FactoryLevel; 
   
-   //FactoryID -&gt; factory eth price;
-  mapping(uint256 =&gt; uint256) internal FactoryPrice; 
+   //FactoryID -> factory eth price;
+  mapping(uint256 => uint256) internal FactoryPrice; 
 
-   //FactoryID -&gt; factory name;
-  mapping(uint256 =&gt; string) internal FactoryName; 
+   //FactoryID -> factory name;
+  mapping(uint256 => string) internal FactoryName; 
   
-  //Worker -&gt; qualification
-  mapping(address =&gt; uint8) internal WorkerQualification; 
+  //Worker -> qualification
+  mapping(address => uint8) internal WorkerQualification; 
   
-  //Worker -&gt; FactoryID
-  mapping(address =&gt; uint256) internal WorkerFactory; 
+  //Worker -> FactoryID
+  mapping(address => uint256) internal WorkerFactory; 
   
-  //Worker -&gt; start work date (timestamp). For profit calculate;
-  mapping(address =&gt; uint256) internal WorkerWorkStart;   
+  //Worker -> start work date (timestamp). For profit calculate;
+  mapping(address => uint256) internal WorkerWorkStart;   
   
   uint256 FactoryID = 0;
   
@@ -300,7 +300,7 @@ contract EtherFactory is EFToken {
   
   function setFactoryName(uint256 _FactoryID, string _Name) public {
 	require (FactoryOwner[_FactoryID] == msg.sender);	
-	require(bytes(_Name).length &lt;= 50);
+	require(bytes(_Name).length <= 50);
 	FactoryName[_FactoryID] = _Name; 
   }
   
@@ -309,14 +309,14 @@ contract EtherFactory is EFToken {
 	
 	//Factory profit equal to the earnings of all workers.
 	uint256 profitMinutes = uint256(SafeMath.div(SafeMath.sub(now, FactoryWorkStart[_FactoryID]), 60));
-	if (profitMinutes &gt; 0) {
+	if (profitMinutes > 0) {
 		uint256 profit = 0;
 		
-		for (uint8 level=1; level&lt;=FactoryLevel[_FactoryID]; level++) {
+		for (uint8 level=1; level<=FactoryLevel[_FactoryID]; level++) {
 		   profit += SafeMath.mul(SafeMath.mul(uint256(level),profitMinutes), FactoryPersonal[_FactoryID][level]);
 		}
 		
-		if (profit &gt; 0) {
+		if (profit > 0) {
 			mint(_FactoryOwner,profit);
 			FactoryWorkStart[_FactoryID] = now;
 		}
@@ -326,7 +326,7 @@ contract EtherFactory is EFToken {
 
   function buildFactory(uint8 _level, uint256 _inviterID) public payable {
   
-    require (_level&gt;0 &amp;&amp; _level&lt;=100);
+    require (_level>0 && _level<=100);
 	
     uint256 buildCost = uint256(_level).mul( getFactoryPrice() );
 	require (msg.value == buildCost);
@@ -345,7 +345,7 @@ contract EtherFactory is EFToken {
 	uint256 fee = uint256(SafeMath.div(msg.value, 20)); 
 	
 	if ( Inviter != address(0)) {
-		//bounty for invite -&gt; 5% from payment
+		//bounty for invite -> 5% from payment
 		Inviter.transfer(fee); 
 	} else {
 	    //no inviter, dev fee - 10%
@@ -359,7 +359,7 @@ contract EtherFactory is EFToken {
   function upgradeFactory(uint256 _FactoryID) public payable {
   
     require (FactoryOwner[_FactoryID] == msg.sender);
-	require (FactoryLevel[_FactoryID] &lt; 100);
+	require (FactoryLevel[_FactoryID] < 100);
 	
 	require (msg.value == getFactoryPrice() );
 
@@ -379,10 +379,10 @@ contract EtherFactory is EFToken {
   
     address factoryOwner = FactoryOwner[_FactoryID];
 	
-    require ( factoryOwner != address(0) &amp;&amp; factoryOwner != msg.sender &amp;&amp; msg.sender != address(0) );
+    require ( factoryOwner != address(0) && factoryOwner != msg.sender && msg.sender != address(0) );
 
     uint256 factoryPrice = FactoryPrice[_FactoryID];
-    require(msg.value &gt;= factoryPrice);
+    require(msg.value >= factoryPrice);
 	
 	//new owner
 	FactoryOwner[_FactoryID] = msg.sender;
@@ -401,7 +401,7 @@ contract EtherFactory is EFToken {
 	owner.transfer(fee); 
 	
 	//return excess pay
-    if (msg.value &gt; factoryPrice) { 
+    if (msg.value > factoryPrice) { 
 		msg.sender.transfer(msg.value - factoryPrice);
 	}
   }   
@@ -411,7 +411,7 @@ contract EtherFactory is EFToken {
 	uint256 eftTOethRATE = 200000000000;
 	
 	require (FactoryOwner[_FactoryID] == msg.sender);
-	require (balances[msg.sender] &gt;= _tokens &amp;&amp; _tokens&gt;0);
+	require (balances[msg.sender] >= _tokens && _tokens>0);
 	
 	FactoryPrice[_FactoryID] = FactoryPrice[_FactoryID] + _tokens*eftTOethRATE;
 	burn(_tokens);
@@ -431,13 +431,13 @@ contract EtherFactory is EFToken {
 
 	uint8 qualification = WorkerQualification[msg.sender];
 		
-	require (FactoryLevel[_FactoryID] &gt;= qualification);
+	require (FactoryLevel[_FactoryID] >= qualification);
 	
 	//100 is limit for each worker qualificationon on the factory
-	require (FactoryPersonal[_FactoryID][qualification] &lt; 100);
+	require (FactoryPersonal[_FactoryID][qualification] < 100);
 	
 	//reset factory and worker profit timer
-	if (WorkerFactory[msg.sender]&gt;0) {
+	if (WorkerFactory[msg.sender]>0) {
 		getFactoryProfit(_FactoryID, FactoryOwner[_FactoryID]);
 		getWorkerProfit();
 	} else {
@@ -445,7 +445,7 @@ contract EtherFactory is EFToken {
 	}
 	
 	//previous factory lost worker
-	if (WorkerFactory[msg.sender] &gt; 0 ) {
+	if (WorkerFactory[msg.sender] > 0 ) {
 	   FactoryPersonal[WorkerFactory[msg.sender]][qualification]--;
 	}
 	
@@ -459,16 +459,16 @@ contract EtherFactory is EFToken {
   } 
   
   function getWorkerProfit() public gameStarted {
-	require (WorkerFactory[msg.sender] &gt; 0);
+	require (WorkerFactory[msg.sender] > 0);
 	
 	//Worker with qualification &quot;ONE&quot; earn 1 token per minute, &quot;TWO&quot; earn 2 tokens, etc...
 	uint256 profitMinutes = uint256(SafeMath.div(SafeMath.sub(now, WorkerWorkStart[msg.sender]), 60));
-	if (profitMinutes &gt; 0) {
+	if (profitMinutes > 0) {
 		uint8 qualification = WorkerQualification[msg.sender];
 		
 		uint256 profitEFT = SafeMath.mul(uint256(qualification),profitMinutes);
 		
-		require (profitEFT &gt; 0);
+		require (profitEFT > 0);
 		
 		mint(msg.sender,profitEFT);
 		
@@ -479,12 +479,12 @@ contract EtherFactory is EFToken {
   
   function upgradeQualificationByTokens() public gameStarted {
 	
-	require (WorkerQualification[msg.sender]&lt;100);
+	require (WorkerQualification[msg.sender]<100);
 	
     uint256 upgradeCost = 10000;
-	require (balances[msg.sender] &gt;= upgradeCost);
+	require (balances[msg.sender] >= upgradeCost);
 	
-	if (WorkerFactory[msg.sender] &gt; 0)
+	if (WorkerFactory[msg.sender] > 0)
 		getWorkerProfit();
     
 	uint8 oldQualification = WorkerQualification[msg.sender];
@@ -496,11 +496,11 @@ contract EtherFactory is EFToken {
 	else 
 		WorkerQualification[msg.sender]++;
 	
-	if (WorkerFactoryID &gt; 0) {
+	if (WorkerFactoryID > 0) {
 		getFactoryProfit(WorkerFactoryID, FactoryOwner[WorkerFactoryID]);
 		FactoryPersonal[WorkerFactoryID][oldQualification]--;
 	
-		if (FactoryLevel[WorkerFactoryID] &gt;= oldQualification+1) {
+		if (FactoryLevel[WorkerFactoryID] >= oldQualification+1) {
 			FactoryPersonal[WorkerFactoryID][oldQualification+1]++;
 		} else {
 			//will unemployed
@@ -515,7 +515,7 @@ contract EtherFactory is EFToken {
   
   function upgradeQualificationByEther(uint256 _inviterID) public payable {
 	
-	require (WorkerQualification[msg.sender]&lt;100);
+	require (WorkerQualification[msg.sender]<100);
 	
 	//0.001 ether or 0.00075 presell
 	require ( msg.value == SafeMath.div(getFactoryPrice(),100) );
@@ -525,7 +525,7 @@ contract EtherFactory is EFToken {
 	address Inviter = InviterAddress[_inviterID];
 
 	if ( Inviter != address(0)) {
-		//bounty for invite -&gt; 5% from payment
+		//bounty for invite -> 5% from payment
 		Inviter.transfer(fee); 
 	} else {
 	    //no inviter, dev fee - 10%
@@ -535,7 +535,7 @@ contract EtherFactory is EFToken {
 	// dev fee
 	owner.transfer(fee); 
 	
-	if (WorkerFactory[msg.sender] &gt; 0)
+	if (WorkerFactory[msg.sender] > 0)
 		getWorkerProfit();
     
 	uint8 oldQualification = WorkerQualification[msg.sender];
@@ -549,11 +549,11 @@ contract EtherFactory is EFToken {
 	
 	
 	
-	if (WorkerFactoryID &gt; 0) {
+	if (WorkerFactoryID > 0) {
 		getFactoryProfit(WorkerFactoryID, FactoryOwner[WorkerFactoryID]);
 		FactoryPersonal[WorkerFactoryID][oldQualification]--;
 	
-		if (FactoryLevel[WorkerFactoryID] &gt;= oldQualification+1) {
+		if (FactoryLevel[WorkerFactoryID] >= oldQualification+1) {
 			FactoryPersonal[WorkerFactoryID][oldQualification+1]++;
 		} else {
 			//will unemployed
@@ -565,7 +565,7 @@ contract EtherFactory is EFToken {
   }  
   
   function getFactoryPrice() internal view returns (uint256 price) {
-	if (now - presellStart &gt;= 604800)
+	if (now - presellStart >= 604800)
 		price = 0.1 ether;
 	else 
 		price = 0.075 ether;
@@ -582,7 +582,7 @@ contract EtherFactory is EFToken {
 	owner = new address[](FactoryID);
 	level = new uint8[](FactoryID);
 
-	for (uint256 index=1; index&lt;=FactoryID; index++) {
+	for (uint256 index=1; index<=FactoryID; index++) {
 		price[index-1] = FactoryPrice[index];
 		profitMinutes[index-1] = uint256(SafeMath.div(now - FactoryWorkStart[index],60));
 		owner[index-1] = FactoryOwner[index];
@@ -596,7 +596,7 @@ contract EtherFactory is EFToken {
 	factoryName = FactoryName[_FactoryID];
 	
 	workers = new uint256[](factoryLevel+1);
-	for (uint8 qualification=1; qualification&lt;=factoryLevel; qualification++)
+	for (uint8 qualification=1; qualification<=factoryLevel; qualification++)
 		workers[qualification] = FactoryPersonal[_FactoryID][qualification];
 	
   }  

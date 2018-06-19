@@ -219,7 +219,7 @@ contract TokenMacroansyPower is TokenERC20Interface, SafeMath {
         if(msg.sender != owner){
 	        bool sucsSlrLmt = _chkSellerLmts( msg.sender, _value);    
 	        bool sucsByrLmt = _chkBuyerLmts( _to, _value);
-	        require(sucsSlrLmt == true &amp;&amp; sucsByrLmt == true);
+	        require(sucsSlrLmt == true && sucsByrLmt == true);
         }
         //
         uint valtmp = _value;    
@@ -254,7 +254,7 @@ contract TokenMacroansyPower is TokenERC20Interface, SafeMath {
         if(msg.sender != owner){
 	        bool sucsSlrLmt = _chkSellerLmts( msg.sender, _value);          
 	        bool sucsByrLmt = _chkBuyerLmts( _spender, _value);
-	        require(sucsSlrLmt == true &amp;&amp; sucsByrLmt == true);
+	        require(sucsSlrLmt == true && sucsByrLmt == true);
         }
         //
         uint valtmp = _value;
@@ -333,7 +333,7 @@ contract TokenMacroansyPower is TokenERC20Interface, SafeMath {
 
 	function buyCoinsCrowdSale(address buyer, uint payment, address crowdSaleContr) public returns(bool success, uint retPayment) { 
 		
-		require(crowdSaleOpen == true &amp;&amp; crowdSaleContr == _getCsAddr());
+		require(crowdSaleOpen == true && crowdSaleContr == _getCsAddr());
 
 		success = false;
 		(success , retPayment) = _buyCoins( buyer, payment);
@@ -426,7 +426,7 @@ contract TokenMacroansyPower is TokenERC20Interface, SafeMath {
       ICO ico = ICO( _getIcoAddr() );
       uint seriesCapFactor = ico.getSCF();
       
-	      if( amountTkns <= balanceOf[seller]  &amp;&amp;  balanceOf[seller] <=  safeDiv(allowedIndividualShare*seriesCapFactor,10**18) ){
+	      if( amountTkns <= balanceOf[seller]  &&  balanceOf[seller] <=  safeDiv(allowedIndividualShare*seriesCapFactor,10**18) ){
 	        success = true;
 	      }
 
@@ -462,7 +462,7 @@ contract TokenMacroansyPower is TokenERC20Interface, SafeMath {
        ICO ico = ICO( _getIcoAddr() );
        bool sucs2 = false;
        if( buyer.balance >=  safeAdd( safeMul(amountTkns , priceOfr) , ico.getMinBal() )  )  sucs2 = true;
-       if( sucs1 == true &amp;&amp; sucs2 == true)  success = true;   
+       if( sucs1 == true && sucs2 == true)  success = true;   
 
        return success;
     }
@@ -478,7 +478,7 @@ contract TokenMacroansyPower is TokenERC20Interface, SafeMath {
         bool successByrlAFinl;
         (successByrlAFinl) = _chkBuyerLmtsAndFinl( buyer, amountTkns, priceOfr);
         
-        require( successSlrl == true &amp;&amp; successByrlAFinl == true);
+        require( successSlrl == true && successByrlAFinl == true);
 
         return true;
     }
@@ -599,7 +599,7 @@ contract TokenMacroansyPower is TokenERC20Interface, SafeMath {
 
 		// calc tokens that can be bought         
         uint tknsBuyAppr = 0;    
-        if( amountTkns > 2 &amp;&amp;  payment >=  (2 * priceOfr) &amp;&amp;  payment <= (amountTkns * priceOfr) ) {
+        if( amountTkns > 2 &&  payment >=  (2 * priceOfr) &&  payment <= (amountTkns * priceOfr) ) {
 
         	tknsBuyAppr = safeDiv( payment , priceOfr );
         }
@@ -635,7 +635,7 @@ contract TokenMacroansyPower is TokenERC20Interface, SafeMath {
 		// calc tokens that can be bought         
         uint tknsBuyAppr = 0;  // this var as used as the indicator to update buyerbkg and seller update for ok or no txn.
 
-        if( amountTkns > 2 &amp;&amp;  msg.value >=  (2 * priceOfr) &amp;&amp;  msg.value <= (amountTkns * priceOfr) ) {
+        if( amountTkns > 2 &&  msg.value >=  (2 * priceOfr) &&  msg.value <= (amountTkns * priceOfr) ) {
 
         	tknsBuyAppr = safeDiv( msg.value , priceOfr );
         }
@@ -664,7 +664,7 @@ contract TokenMacroansyPower is TokenERC20Interface, SafeMath {
         	require( emUpdateSuccess == true );
         
         //
-        if(sucsBkgChk == true &amp;&amp; tknsBuyAppr > 0){
+        if(sucsBkgChk == true && tknsBuyAppr > 0){
       
 	       // token transfer in this token contract
 
@@ -737,7 +737,7 @@ contract TokenMacroansyPower is TokenERC20Interface, SafeMath {
 				}
 				function endOfRewardsConfirmed(bool isEndNow) public onlyOwner{
 
-					if(isEndOk == true &amp;&amp; isEndNow == true) selfdestruct(owner);
+					if(isEndOk == true && isEndNow == true) selfdestruct(owner);
 				}
 */			
 //_______________________________________________________

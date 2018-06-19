@@ -371,9 +371,9 @@ contract Crowdsale {
 
   // @return true if the transaction can buy tokens
   function validPurchase() internal view returns (bool) {
-    bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+    bool withinPeriod = now >= startTime && now <= endTime;
     bool nonZeroPurchase = msg.value != 0;
-    return withinPeriod &amp;&amp; nonZeroPurchase;
+    return withinPeriod && nonZeroPurchase;
   }
 
   // @return true if crowdsale event has ended
@@ -428,7 +428,7 @@ contract CappedCrowdsale is Crowdsale {
   // @return true if investors can buy at the moment
   function validPurchase() internal view returns (bool) {
     bool withinCap = weiRaised.add(msg.value) <= cap;
-    return super.validPurchase() &amp;&amp; withinCap;
+    return super.validPurchase() && withinCap;
   }
 
   // overriding Crowdsale#hasEnded to add cap logic

@@ -24,7 +24,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -34,7 +34,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -43,7 +43,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -161,7 +161,7 @@ contract Marketplace is Ownable {
         Currency priceCurrency;
         uint minimumSubscriptionSeconds;
         ProductState state;
-        mapping(address =&gt; TimeBasedSubscription) subscriptions;
+        mapping(address => TimeBasedSubscription) subscriptions;
         address newOwnerCandidate;  // Two phase hand-over to minimize the chance that the product ownership is lost to a non-existent address.
     }
 
@@ -186,7 +186,7 @@ contract Marketplace is Ownable {
 
     ////////////////// Product management /////////////////
 
-    mapping (bytes32 =&gt; Product) public products;
+    mapping (bytes32 => Product) public products;
     function getProduct(bytes32 id) public view returns (string name, address owner, address beneficiary, uint pricePerSecond, Currency currency, uint minimumSubscriptionSeconds, ProductState state) {
         return (
             products[id].name,
@@ -209,7 +209,7 @@ contract Marketplace is Ownable {
 
     function createProduct(bytes32 id, string name, address beneficiary, uint pricePerSecond, Currency currency, uint minimumSubscriptionSeconds) public whenNotHalted {
         require(id != 0x0, &quot;error_nullProductId&quot;);
-        require(pricePerSecond &gt; 0, &quot;error_freeProductsNotSupported&quot;);
+        require(pricePerSecond > 0, &quot;error_freeProductsNotSupported&quot;);
         Product storage p = products[id];
         require(p.id == 0x0, &quot;error_alreadyExists&quot;);
         products[id] = Product(id, name, msg.sender, beneficiary, pricePerSecond, currency, minimumSubscriptionSeconds, ProductState.Deployed, 0);
@@ -237,7 +237,7 @@ contract Marketplace is Ownable {
     }
 
     function updateProduct(bytes32 productId, string name, address beneficiary, uint pricePerSecond, Currency currency, uint minimumSubscriptionSeconds) public onlyProductOwner(productId) {
-        require(pricePerSecond &gt; 0, &quot;error_freeProductsNotSupported&quot;);
+        require(pricePerSecond > 0, &quot;error_freeProductsNotSupported&quot;);
         Product storage p = products[productId]; 
         p.name = name;
         p.beneficiary = beneficiary;
@@ -318,18 +318,18 @@ contract Marketplace is Ownable {
         Product storage p = products[productId];
         require(p.id != 0x0, &quot;error_notFound&quot;);
         TimeBasedSubscription storage s = p.subscriptions[subscriber];
-        return (s.endTimestamp &gt;= block.timestamp, p, s);
+        return (s.endTimestamp >= block.timestamp, p, s);
     }
     
     function _addSubscription(Product storage p, address subscriber, uint addSeconds, TimeBasedSubscription storage oldSub) internal {
         uint endTimestamp;
-        if (oldSub.endTimestamp &gt; block.timestamp) {
-            require(addSeconds &gt; 0, &quot;error_topUpTooSmall&quot;);
+        if (oldSub.endTimestamp > block.timestamp) {
+            require(addSeconds > 0, &quot;error_topUpTooSmall&quot;);
             endTimestamp = oldSub.endTimestamp.add(addSeconds);
             oldSub.endTimestamp = endTimestamp;  
             emit SubscriptionExtended(p.id, subscriber, endTimestamp);
         } else {
-            require(addSeconds &gt;= p.minimumSubscriptionSeconds, &quot;error_newSubscriptionTooSmall&quot;);
+            require(addSeconds >= p.minimumSubscriptionSeconds, &quot;error_newSubscriptionTooSmall&quot;);
             endTimestamp = block.timestamp.add(addSeconds);
             TimeBasedSubscription memory newSub = TimeBasedSubscription(endTimestamp);
             p.subscriptions[subscriber] = newSub;
@@ -357,7 +357,7 @@ contract Marketplace is Ownable {
     */
     function updateExchangeRates(uint timestamp, uint dataUsd) public {
         require(msg.sender == currencyUpdateAgent, &quot;error_notPermitted&quot;);
-        require(dataUsd &gt; 0);
+        require(dataUsd > 0);
         dataPerUsd = dataUsd;
         emit ExchangeRatesUpdated(timestamp, dataUsd);
     }

@@ -285,7 +285,7 @@ contract MyToken is StandardToken, Freezable {
     /**
 * Public variables of the token
 * The following variables are OPTIONAL vanities. One does not have to include them.
-* They allow one to customise the token contract &amp; in no way influences the core functionality.
+* They allow one to customise the token contract & in no way influences the core functionality.
 * Some wallets/interfaces might not even bother to look at this information.
 */
     string public name;

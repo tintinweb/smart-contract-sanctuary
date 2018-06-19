@@ -544,12 +544,12 @@ contract usingOraclize {
             iaddr *= 256;
             b1 = uint160(tmp[i]);
             b2 = uint160(tmp[i+1]);
-            if ((b1 >= 97)&amp;&amp;(b1 <= 102)) b1 -= 87;
-            else if ((b1 >= 65)&amp;&amp;(b1 <= 70)) b1 -= 55;
-            else if ((b1 >= 48)&amp;&amp;(b1 <= 57)) b1 -= 48;
-            if ((b2 >= 97)&amp;&amp;(b2 <= 102)) b2 -= 87;
-            else if ((b2 >= 65)&amp;&amp;(b2 <= 70)) b2 -= 55;
-            else if ((b2 >= 48)&amp;&amp;(b2 <= 57)) b2 -= 48;
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 65)&&(b1 <= 70)) b1 -= 55;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 65)&&(b2 <= 70)) b2 -= 55;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
             iaddr += (b1*16+b2);
         }
         return address(iaddr);
@@ -588,7 +588,7 @@ contract usingOraclize {
                 if (h[i] == n[0])
                 {
                     subindex = 1;
-                    while(subindex < n.length &amp;&amp; (i + subindex) < h.length &amp;&amp; h[i + subindex] == n[subindex])
+                    while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
                     {
                         subindex++;
                     }
@@ -640,7 +640,7 @@ contract usingOraclize {
         uint mint = 0;
         bool decimals = false;
         for (uint i=0; i<bresult.length; i++){
-            if ((bresult[i] >= 48)&amp;&amp;(bresult[i] <= 57)){
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
                 if (decimals){
                    if (_b == 0) break;
                     else _b--;
@@ -1015,7 +1015,7 @@ contract usingOraclize {
         if (v < 27)
           v += 27;
 
-        if (v != 27 &amp;&amp; v != 28)
+        if (v != 27 && v != 28)
             return (false, 0);
 
         return safer_ecrecover(hash, v, r, s);
@@ -1086,7 +1086,7 @@ contract nbagame is usingOraclize {
   // payout related functions when winning team
   // is determined
   modifier canPerformPayout() {
-    if (winningTeam != TeamType.None &amp;&amp; !payoutCompleted &amp;&amp; now > BETTING_CLOSES) _;
+    if (winningTeam != TeamType.None && !payoutCompleted && now > BETTING_CLOSES) _;
   }
 
   // Modifier to only allow the execution of
@@ -1181,7 +1181,7 @@ contract nbagame is usingOraclize {
   
   // Returns true if betting is allowed within time frame
   function canBet() public constant returns(bool) {
-    return (now >= BETTING_OPENS &amp;&amp; now < BETTING_CLOSES);
+    return (now >= BETTING_OPENS && now < BETTING_CLOSES);
   }
   
   // Trigger immediate payout as creator (costs small amount of additional gas)
@@ -1196,7 +1196,7 @@ contract nbagame is usingOraclize {
     require(msg.value >= MINIMUM_BET);
 
     // Add bettor to bettor list if they are not on it
-    if (bettorInfo[msg.sender].amountsBet[0] == 0 &amp;&amp; bettorInfo[msg.sender].amountsBet[1] == 0)
+    if (bettorInfo[msg.sender].amountsBet[0] == 0 && bettorInfo[msg.sender].amountsBet[1] == 0)
       bettors.push(msg.sender);
 
 	// Commission Staging

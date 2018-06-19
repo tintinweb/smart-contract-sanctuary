@@ -268,8 +268,8 @@ contract VikkyToken is ERC20 {
         require( icoEtherContributed[msg.sender].add(msg.value) <= MAX_CONTRIBUTION );
 
         // check dates for presale or ICO
-        if (ts > DATE_PRESALE_START &amp;&amp; ts < DATE_PRESALE_END) isPresale = true;  
-        if (ts > DATE_ICO_START &amp;&amp; ts < DATE_ICO_END) isIco = true;
+        if (ts > DATE_PRESALE_START && ts < DATE_PRESALE_END) isPresale = true;  
+        if (ts > DATE_ICO_START && ts < DATE_ICO_END) isIco = true;
         require( isPresale || isIco );
 
         // presale cap in Ether
@@ -362,7 +362,7 @@ contract VikkyToken is ERC20 {
     
     function approve(address _spender, uint256 _value) public returns (bool success) {
         // mitigates the ERC20 spend/approval race condition
-        if (_value != 0 &amp;&amp; allowed[msg.sender][_spender] != 0) { return false; }
+        if (_value != 0 && allowed[msg.sender][_spender] != 0) { return false; }
         allowed[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
         return true;
@@ -412,7 +412,7 @@ contract VikkyToken is ERC20 {
         uint amount; // refund amount
 
         // ico is finished and was not successful
-        require( atNow() > DATE_ICO_END &amp;&amp; !icoThresholdReached() );
+        require( atNow() > DATE_ICO_END && !icoThresholdReached() );
 
         // check if refund has already been claimed
         require( !refundClaimed[_participant] );

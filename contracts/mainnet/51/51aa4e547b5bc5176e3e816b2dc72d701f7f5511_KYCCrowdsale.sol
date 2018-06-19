@@ -23,7 +23,7 @@ library BytesDeserializer {
     bytes32 out;
 
     for (uint i = 0; i < 32; i++) {
-      out |= bytes32(b[offset + i] &amp; 0xFF) >> (i * 8);
+      out |= bytes32(b[offset + i] & 0xFF) >> (i * 8);
     }
     return out;
   }
@@ -35,7 +35,7 @@ library BytesDeserializer {
     bytes32 out;
 
     for (uint i = 0; i < 20; i++) {
-      out |= bytes32(b[offset + i] &amp; 0xFF) >> ((i+12) * 8);
+      out |= bytes32(b[offset + i] & 0xFF) >> ((i+12) * 8);
     }
     return address(uint(out));
   }
@@ -47,7 +47,7 @@ library BytesDeserializer {
     bytes16 out;
 
     for (uint i = 0; i < 16; i++) {
-      out |= bytes16(b[offset + i] &amp; 0xFF) >> (i * 8);
+      out |= bytes16(b[offset + i] & 0xFF) >> (i * 8);
     }
     return out;
   }
@@ -59,7 +59,7 @@ library BytesDeserializer {
     bytes4 out;
 
     for (uint i = 0; i < 4; i++) {
-      out |= bytes4(b[offset + i] &amp; 0xFF) >> (i * 8);
+      out |= bytes4(b[offset + i] & 0xFF) >> (i * 8);
     }
     return out;
   }
@@ -71,7 +71,7 @@ library BytesDeserializer {
     bytes2 out;
 
     for (uint i = 0; i < 2; i++) {
-      out |= bytes2(b[offset + i] &amp; 0xFF) >> (i * 8);
+      out |= bytes2(b[offset + i] & 0xFF) >> (i * 8);
     }
     return out;
   }
@@ -701,9 +701,9 @@ contract Crowdsale is Stoppable {
   // Receives tokens to send as variable for custom stage implementation
   // Has an unused variable _tokens which is necessary for capped sale implementation
   function validPurchase(uint256 _tokens) internal view returns (bool) {
-    bool withinPeriod = now >= startTime &amp;&amp; now <= endTime;
+    bool withinPeriod = now >= startTime && now <= endTime;
     bool nonZeroPurchase = msg.value != 0;
-    return withinPeriod &amp;&amp; nonZeroPurchase;
+    return withinPeriod && nonZeroPurchase;
   }
 
   // @return true if crowdsale event has ended
@@ -734,7 +734,7 @@ contract CappedCrowdsale is Crowdsale {
     Crowdsale(_startTime, _endTime, _rate, _wallet, _token)
       public {
 
-    require(_hardCap > 0 &amp;&amp; _softCap > 0 &amp;&amp; _softCap < _hardCap);
+    require(_hardCap > 0 && _softCap > 0 && _softCap < _hardCap);
 
     softCap = _softCap;
     hardCap = _hardCap;
@@ -747,7 +747,7 @@ contract CappedCrowdsale is Crowdsale {
   // @return true if investors can buy at the moment
   function validPurchase(uint256 _tokens) internal view returns (bool) {
     bool withinCap = tokensSent.add(_tokens) <= hardCap;
-    return super.validPurchase(_tokens) &amp;&amp; withinCap;
+    return super.validPurchase(_tokens) && withinCap;
   }
   
   // overriding Crowdsale#hasEnded to add cap logic
@@ -1031,11 +1031,11 @@ contract PickCrowdsale is CappedCrowdsale {
     bool isValid = false;
     uint8 stage = getStage();
 
-    if(stages.checkMinimum(stage, _tokens) &amp;&amp; stages.checkCap(stage, _tokens)){
+    if(stages.checkMinimum(stage, _tokens) && stages.checkCap(stage, _tokens)){
       isValid = true;
     }
 
-    return super.validPurchase(_tokens) &amp;&amp; isValid;
+    return super.validPurchase(_tokens) && isValid;
   }
 
   // Override crowdsale finalizeSale function to log balance change plus tokens sold in that stage
@@ -1074,7 +1074,7 @@ contract PickCrowdsale is CappedCrowdsale {
   // Allows participants to withdraw their balance
   function unsuccessfulWithdrawal() external {
       require(balanceOf[msg.sender] > 0);
-      require(hasEnded() &amp;&amp; tokensSent < softCap || hasHalted());
+      require(hasEnded() && tokensSent < softCap || hasHalted());
       uint256 withdrawalAmount;
 
       withdrawalAmount = balanceOf[msg.sender];
@@ -1156,7 +1156,7 @@ contract KYCCrowdsale is KYCPayloadDeserializer, PickCrowdsale {
   * Reclaims the users tokens and burns them
   * Blacklists the user to prevent them from buying any more tokens
   *
-  * Stage 1, 2, 3, &amp; 4 are all collected from the database prior to calling this function
+  * Stage 1, 2, 3, & 4 are all collected from the database prior to calling this function
   * It allows us to calculate how many tokens need to be taken from each individual stage
   */
   function refundParticipant(address participant, uint256 _stage1, uint256 _stage2, uint256 _stage3, uint256 _stage4) external onlyOwner {
@@ -1214,7 +1214,7 @@ contract KYCCrowdsale is KYCPayloadDeserializer, PickCrowdsale {
     } else {
       onBlackList = false;
     }
-    return super.validPurchase(_tokens) &amp;&amp; !onBlackList;
+    return super.validPurchase(_tokens) && !onBlackList;
   }
 
   // This is necessary for the blacklisted user to pull his ether from the contract upon being refunded

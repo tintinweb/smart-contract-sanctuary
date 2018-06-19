@@ -14,20 +14,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &gt; 0);
+        assert(b > 0);
         uint256 c = a / b;
         assert(a == b * c + a % b);
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -56,7 +56,7 @@ contract TokenERC20 is Ownable {
     uint256 public totalSupply = 100000000*DEC;
     uint256 public avaliableSupply;
 
-    mapping (address =&gt; uint256) public balanceOf;
+    mapping (address => uint256) public balanceOf;
 
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Burn(address indexed from, uint256 value);
@@ -70,8 +70,8 @@ contract TokenERC20 is Ownable {
 
     function _transfer(address _from, address _to, uint256 _value) internal {
         require(_to != 0x0);
-        require(balanceOf[_from] &gt;= _value);
-        require(balanceOf[_to] + _value &gt; balanceOf[_to]);
+        require(balanceOf[_from] >= _value);
+        require(balanceOf[_to] + _value > balanceOf[_to]);
         uint previousBalances = balanceOf[_from] + balanceOf[_to];
         balanceOf[_from] -= _value;
         balanceOf[_to] += _value;
@@ -88,7 +88,7 @@ contract TokenERC20 is Ownable {
     }
 
     function _burn(address _who, uint256 _value) internal {
-        require(_value &lt;= balanceOf[_who]);
+        require(_value <= balanceOf[_who]);
         balanceOf[_who] = balanceOf[_who].sub(_value);
         totalSupply = totalSupply.sub(_value);
         emit Burn(_who, _value);

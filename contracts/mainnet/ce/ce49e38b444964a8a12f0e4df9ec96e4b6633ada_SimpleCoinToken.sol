@@ -195,7 +195,7 @@ contract BurnableToken is StandardToken, Ownable {
    * @param _value The amount of token to be burned.
    */
   function burn(uint _value) public {
-    require(_value > 0 &amp;&amp;  msg.sender == owner);
+    require(_value > 0 &&  msg.sender == owner);
     address burner = msg.sender;
     balances[burner] = balances[burner].sub(_value);
     totalSupply = totalSupply.sub(_value);

@@ -208,7 +208,7 @@ contract Functional
 		uint mint = 0;
 		bool decimals = false;
 		for (uint i=0; i<bresult.length; i++){
-			if ((bresult[i] >= 48)&amp;&amp;(bresult[i] <= 57)){
+			if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
 				if (decimals){
 				   if (_b == 0) break;
 					else _b--;
@@ -323,14 +323,14 @@ contract NBAONLINE is Functional,Owned,ERC721{
     }
     
     function parseTicket(uint256	packed)public pure returns(uint8 payout,uint256 idLottery,uint256 combination,uint256 dateBuy){
-		payout = uint8((packed >> (12*8)) &amp; 0xFF);
-		idLottery   = uint256((packed >> (8*8)) &amp; 0xFFFFFFFF);
-		combination = uint256((packed >> (4*8)) &amp; 0xFFFFFFFF);
-		dateBuy     = uint256(packed &amp; 0xFFFFFFFF);
+		payout = uint8((packed >> (12*8)) & 0xFF);
+		idLottery   = uint256((packed >> (8*8)) & 0xFFFFFFFF);
+		combination = uint256((packed >> (4*8)) & 0xFFFFFFFF);
+		dateBuy     = uint256(packed & 0xFFFFFFFF);
     }
     
     function updateTicketStatus(uint256	packed,uint8 newStatus)public pure returns(uint256 npacked){
-		uint8 payout = uint8((packed >> (12*8)) &amp; 0xFF);
+		uint8 payout = uint8((packed >> (12*8)) & 0xFF);
 		npacked = packed + (uint256(newStatus-payout)<< 12*8);
     }
     function buyTicket(uint256 _id, uint8 _choose)payable external{
@@ -339,7 +339,7 @@ contract NBAONLINE is Functional,Owned,ERC721{
         require( timenow() < curGame.dateStopBuy );
         require(msg.value >= min_amount);
         require(msg.value <= max_amount);
-        require(_choose < 30&amp;&amp;_choose >= 0);
+        require(_choose < 30&&_choose >= 0);
         uint256 dev = calculateDevCut(msg.value);
         uint256 deposit = msg.value.sub(dev);
         curGame.totalPot = curGame.totalPot.add(deposit);
@@ -362,19 +362,19 @@ contract NBAONLINE is Functional,Owned,ERC721{
         //confirm ownership
         require(tokenIndexToOwner[_tid] == msg.sender);
         Token storage _token = tokens[_tid];
-        uint256 gameId   = uint256((_token.option >> (8*8)) &amp; 0xFFFFFFFF);
+        uint256 gameId   = uint256((_token.option >> (8*8)) & 0xFFFFFFFF);
         Game storage curGame = games[gameId];
         //confirm game status
         require(curGame.status == STATUS.PLAYING);
         //confirm game time 
         require( timenow() < curGame.dateStopBuy );
-        uint8 ticketStatus = uint8((_token.option >> (12*8)) &amp; 0xFF);
+        uint8 ticketStatus = uint8((_token.option >> (12*8)) & 0xFF);
         //confirm ticket status
         require(ticketStatus == 0);
         uint256 refundFee = _token.price;
         //confirm ticket price
         require(refundFee > 0);
-        uint8 _choose = uint8((_token.option >> (4*8)) &amp; 0xFFFFFFFF);
+        uint8 _choose = uint8((_token.option >> (4*8)) & 0xFFFFFFFF);
         curGame.totalPot = curGame.totalPot.sub(refundFee);
         curGame.potDetail[_choose] = curGame.potDetail[_choose].sub(refundFee);
         _token.option = updateTicketStatus(_token.option,3);
@@ -387,7 +387,7 @@ contract NBAONLINE is Functional,Owned,ERC721{
         
         uint256 _totalWinnersDeposit = 0;
         for(uint256 i=0; i< _result.length; i++){
-            require(_result[i]<30&amp;&amp;_result[i]>=0);
+            require(_result[i]<30&&_result[i]>=0);
             curGame.result[_result[i]] = 1;
             _totalWinnersDeposit = _totalWinnersDeposit.add(curGame.potDetail[_result[i]]);
         }
@@ -403,15 +403,15 @@ contract NBAONLINE is Functional,Owned,ERC721{
     function getWinningPrize(uint256 _tid)payable external{
         require(tokenIndexToOwner[_tid] == msg.sender);
         Token storage _token = tokens[_tid];
-        uint8 _choose = uint8((_token.option >> (4*8)) &amp; 0xFFFFFFFF);
-        uint256 gameId   = uint256((_token.option >> (8*8)) &amp; 0xFFFFFFFF);
+        uint8 _choose = uint8((_token.option >> (4*8)) & 0xFFFFFFFF);
+        uint256 gameId   = uint256((_token.option >> (8*8)) & 0xFFFFFFFF);
         Game storage curGame = games[gameId];
         //confirm game status
         require(curGame.status == STATUS.PAYING);
         require(curGame.result[_choose] == 1);
         require(curGame.totalWinnersDeposit > 0);
         require(curGame.totalPot > 0);
-        uint8 ticketStatus = uint8((_token.option >> (12*8)) &amp; 0xFF);
+        uint8 ticketStatus = uint8((_token.option >> (12*8)) & 0xFF);
         //confirm ticket status
         require(ticketStatus == 0);
         uint256 paybase = _token.price;
@@ -430,13 +430,13 @@ contract NBAONLINE is Functional,Owned,ERC721{
         //confirm ownership
         require(tokenIndexToOwner[_tid] == msg.sender);
         Token storage _token = tokens[_tid];
-        uint256 gameId   = uint256((_token.option >> (8*8)) &amp; 0xFFFFFFFF);
+        uint256 gameId   = uint256((_token.option >> (8*8)) & 0xFFFFFFFF);
         Game storage curGame = games[gameId];
         //confirm game status
         require(curGame.status == STATUS.REFUNDING);
         require(curGame.totalWinnersDeposit == 0);
         require(curGame.totalPot > 0);
-        uint8 ticketStatus = uint8((_token.option >> (12*8)) &amp; 0xFF);
+        uint8 ticketStatus = uint8((_token.option >> (12*8)) & 0xFF);
         //confirm ticket status
         require(ticketStatus == 0);
         uint256 refundFee = _token.price;
@@ -468,7 +468,7 @@ contract NBAONLINE is Functional,Owned,ERC721{
         _dateStopBuy = curGame.dateStopBuy;
         _name = curGame.name;
         _gameStatus = uint8(curGame.status);
-        if ( curGame.status == STATUS.PLAYING &amp;&amp; timenow() > _dateStopBuy ) _gameStatus = uint8(STATUS.PROCESSING);
+        if ( curGame.status == STATUS.PLAYING && timenow() > _dateStopBuy ) _gameStatus = uint8(STATUS.PROCESSING);
     }
     function getAllGames(bool onlyPlaying,uint256 from, uint256 to)public view returns(string gameInfoList){
         gameInfoList = &quot;&quot;;
@@ -481,12 +481,12 @@ contract NBAONLINE is Functional,Owned,ERC721{
             if(counter > to){
                 break;
             }
-            if((onlyPlaying&amp;&amp;games[gameIdList[i]].status == STATUS.PLAYING &amp;&amp; timenow() < games[gameIdList[i]].dateStopBuy)||onlyPlaying==false){
+            if((onlyPlaying&&games[gameIdList[i]].status == STATUS.PLAYING && timenow() < games[gameIdList[i]].dateStopBuy)||onlyPlaying==false){
                 gameInfoList = strConcat(gameInfoList,&quot;|&quot;,uint2str(games[gameIdList[i]].id));
                 gameInfoList = strConcat(gameInfoList,&quot;,&quot;,games[gameIdList[i]].name);
                 gameInfoList = strConcat(gameInfoList,&quot;,&quot;,uint2str(games[gameIdList[i]].totalPot));
                 gameInfoList = strConcat(gameInfoList,&quot;,&quot;,uint2str(games[gameIdList[i]].dateStopBuy));
-                if(games[gameIdList[i]].status == STATUS.PLAYING &amp;&amp; timenow() > games[gameIdList[i]].dateStopBuy){
+                if(games[gameIdList[i]].status == STATUS.PLAYING && timenow() > games[gameIdList[i]].dateStopBuy){
                     gameInfoList = strConcat(gameInfoList,&quot;,&quot;,uint2str(uint(STATUS.PROCESSING)));
                 }else{
                     gameInfoList = strConcat(gameInfoList,&quot;,&quot;,uint2str(uint(games[gameIdList[i]].status)));
@@ -511,13 +511,13 @@ contract NBAONLINE is Functional,Owned,ERC721{
                     }
                     
                     Token memory _token = tokens[i];
-                    uint256 gameId = uint256((_token.option >> (8*8)) &amp; 0xFFFFFFFF);
-                    uint256 tStatus = uint256((_token.option >> (12*8)) &amp; 0xFF);
-                    uint256 dateBuy = uint256(_token.option &amp; 0xFFFFFFFF);
-                    uint256 _choose = uint256((_token.option >> (4*8)) &amp; 0xFFFFFFFF);
+                    uint256 gameId = uint256((_token.option >> (8*8)) & 0xFFFFFFFF);
+                    uint256 tStatus = uint256((_token.option >> (12*8)) & 0xFF);
+                    uint256 dateBuy = uint256(_token.option & 0xFFFFFFFF);
+                    uint256 _choose = uint256((_token.option >> (4*8)) & 0xFFFFFFFF);
                     uint256 otherpick = getNumbersOfPick(gameId,uint8(_choose));
                     Game storage curGame = games[gameId];
-                    if((active&amp;&amp;(tStatus == 0&amp;&amp;(curGame.status == STATUS.PLAYING||(curGame.result[uint8(_choose)] == 1&amp;&amp;curGame.status == STATUS.PAYING)||curGame.status == STATUS.REFUNDING)))||active == false){
+                    if((active&&(tStatus == 0&&(curGame.status == STATUS.PLAYING||(curGame.result[uint8(_choose)] == 1&&curGame.status == STATUS.PAYING)||curGame.status == STATUS.REFUNDING)))||active == false){
                         info = strConcat(info,&quot;|&quot;,uint2str(i));
                         info = strConcat(info,&quot;,&quot;,uint2str(gameId));
                         info = strConcat(info,&quot;,&quot;,uint2str(_token.price));
@@ -525,7 +525,7 @@ contract NBAONLINE is Functional,Owned,ERC721{
                         info = strConcat(info,&quot;,&quot;,uint2str(_choose));
                         info = strConcat(info,&quot;,&quot;,uint2str(otherpick));
                         info = strConcat(info,&quot;,&quot;,uint2str(tStatus));
-                        if(curGame.status == STATUS.PLAYING &amp;&amp; timenow() > curGame.dateStopBuy){
+                        if(curGame.status == STATUS.PLAYING && timenow() > curGame.dateStopBuy){
                             info = strConcat(info,&quot;,&quot;,uint2str(uint(STATUS.PROCESSING)));
                         }else{
                             info = strConcat(info,&quot;,&quot;,uint2str(uint(curGame.status)));
@@ -546,7 +546,7 @@ contract NBAONLINE is Functional,Owned,ERC721{
                                 info = strConcat(info,&quot;,&quot;,uint2str(_token.price.mul(curGame.totalPot).div(curGame.potDetail[uint8(_choose)])));
                             }
                         }
-                        if(curGame.status == STATUS.PAYING&amp;&amp;curGame.result[uint8(_choose)] == 1){
+                        if(curGame.status == STATUS.PAYING&&curGame.result[uint8(_choose)] == 1){
                             info = strConcat(info,&quot;,&quot;,uint2str(1));
                         }else {
                             info = strConcat(info,&quot;,&quot;,uint2str(0));
@@ -560,16 +560,16 @@ contract NBAONLINE is Functional,Owned,ERC721{
     }
 
     function getNumbersOfPick(uint256 _gid, uint8 _pick)public view returns(uint256 num){
-        require(_pick < 30&amp;&amp;_pick >= 0);
+        require(_pick < 30&&_pick >= 0);
         Game storage curGame = games[_gid];
         num = 0;
         for(uint256 i=0; i<totalSupply; i++){
             uint256 data = tokens[i].option;
-            uint256 _gameId = uint256((data >> (8*8)) &amp; 0xFFFFFFFF);
+            uint256 _gameId = uint256((data >> (8*8)) & 0xFFFFFFFF);
             if(curGame.id == _gameId){
-                uint8 _choose = uint8((data >> (4*8)) &amp; 0xFFFFFFFF);
-                uint8 tStatus = uint8((data >> (12*8)) &amp; 0xFF);
-                if(_pick == _choose&amp;&amp;tStatus!=3){
+                uint8 _choose = uint8((data >> (4*8)) & 0xFFFFFFFF);
+                uint8 tStatus = uint8((data >> (12*8)) & 0xFF);
+                if(_pick == _choose&&tStatus!=3){
                     num++;
                 }
             }

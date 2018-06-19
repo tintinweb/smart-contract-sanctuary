@@ -94,9 +94,9 @@ contract AddressBook {
      * Only owner of master wallet can add additional wallet.
      */
     function linkToMasterWalletInternal(address _masterWallet, address _linkedWallet) internal {
-        require(_masterWallet != _linkedWallet &amp;&amp; _linkedWallet != address(0));
+        require(_masterWallet != _linkedWallet && _linkedWallet != address(0));
         require(isMasterWallet(_masterWallet));
-        require(!isLinkedWallet(_linkedWallet) &amp;&amp; !isMasterWallet(_linkedWallet));
+        require(!isLinkedWallet(_linkedWallet) && !isMasterWallet(_linkedWallet));
         AddressRelations storage rel = masterToSlaves[_masterWallet];
         require(rel.slaves.values.length < maxLinkedWalletCount);    
         rel.slaves.values.push(_linkedWallet);
@@ -106,7 +106,7 @@ contract AddressBook {
     }
  
     function unLinkFromMasterWalletInternal(address _masterWallet, address _linkedWallet) internal {
-        require(_masterWallet != _linkedWallet &amp;&amp; _linkedWallet != address(0));
+        require(_masterWallet != _linkedWallet && _linkedWallet != address(0));
         require(_masterWallet == getMasterWallet(_linkedWallet));
         SlaveDictionary storage slaves = masterToSlaves[_masterWallet].slaves;
         uint indexToDelete = slaves.keys[_linkedWallet];
@@ -141,7 +141,7 @@ contract AddressBook {
         }
         else {
             // Cannt change linked address with existed master and linked to another master
-            require(!isMasterWallet(_new) &amp;&amp; !isLinkedWallet(_new));
+            require(!isMasterWallet(_new) && !isLinkedWallet(_new));
             changeLinkedAddress(_old, _new);
         }
     }
@@ -210,7 +210,7 @@ contract CryptaurDepository is owned, AddressBook {
     }
 
     modifier notFreezed {
-        require(!freezedAll &amp;&amp; !freezed[msg.sender]);
+        require(!freezedAll && !freezed[msg.sender]);
         _;
     }
 
@@ -359,7 +359,7 @@ contract CryptaurDepository is owned, AddressBook {
     function pay2(address _seller, uint _amount, address _opinionLeader) public notFreezed {
         address dapp = getOrAddMasterWallet(msg.sender);
         address seller = getOrAddMasterWallet(_seller);
-        require(!freezed[dapp] &amp;&amp; !freezed[seller]);
+        require(!freezed[dapp] && !freezed[seller]);
         payInternal(dapp, seller, _amount, _opinionLeader);
         available[seller][dapp] = add(available[seller][dapp], _amount);
     }
@@ -367,7 +367,7 @@ contract CryptaurDepository is owned, AddressBook {
     function pay(address _seller, uint _amount, address _opinionLeader) public notFreezed {
         address buyer = getOrAddMasterWallet(msg.sender);
         address seller = getOrAddMasterWallet(_seller);
-        require(!freezed[buyer] &amp;&amp; !freezed[seller]);
+        require(!freezed[buyer] && !freezed[seller]);
         payInternal(buyer, seller, _amount, _opinionLeader);
     }
     
@@ -378,7 +378,7 @@ contract CryptaurDepository is owned, AddressBook {
     function payInternal(address _buyer, address _seller, uint _amount, address _opinionLeader) internal {    
         require(balances[_buyer] >= _amount);
         uint fee;
-        if (cryptaurRewards != 0 &amp;&amp; cryptaurReserveFund != 0) {
+        if (cryptaurRewards != 0 && cryptaurReserveFund != 0) {
             fee = CryptaurRewards(cryptaurRewards).payment(_buyer, _seller, _amount, _opinionLeader);
         }
         balances[_buyer] = sub(balances[_buyer], _amount);
@@ -395,7 +395,7 @@ contract CryptaurDepository is owned, AddressBook {
         require(balanceOf2Internal(buyerMasterWallet, msg.sender) >= _amount);
         require(!freezed[buyerMasterWallet]);
         uint fee;
-        if (cryptaurRewards != 0 &amp;&amp; cryptaurReserveFund != 0) {
+        if (cryptaurRewards != 0 && cryptaurReserveFund != 0) {
             fee = CryptaurRewards(cryptaurRewards).payment(buyerMasterWallet, msg.sender, _amount, _opinionLeader);
         }
         balances[buyerMasterWallet] = sub(balances[buyerMasterWallet], _amount);

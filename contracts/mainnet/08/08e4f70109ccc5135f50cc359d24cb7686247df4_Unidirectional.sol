@@ -88,7 +88,7 @@ library ECRecovery {
     }
 
     // If the version is correct return the signer address
-    if (v != 27 &amp;&amp; v != 28) {
+    if (v != 27 && v != 28) {
       return (address(0));
     } else {
       return ecrecover(hash, v, r, s);
@@ -148,7 +148,7 @@ contract Unidirectional {
     function canDeposit(bytes32 channelId, address origin) public view returns(bool) {
         PaymentChannel memory channel = channels[channelId];
         bool isSender = channel.sender == origin;
-        return isOpen(channelId) &amp;&amp; isSender;
+        return isOpen(channelId) && isSender;
     }
 
     /// @notice Add more money to the contract.
@@ -168,7 +168,7 @@ contract Unidirectional {
     function canStartSettling(bytes32 channelId, address origin) public view returns(bool) {
         PaymentChannel memory channel = channels[channelId];
         bool isSender = channel.sender == origin;
-        return isOpen(channelId) &amp;&amp; isSender;
+        return isOpen(channelId) && isSender;
     }
 
     /// @notice Sender initiates settling of the contract.
@@ -188,8 +188,8 @@ contract Unidirectional {
     /// @param channelId Identifier of the channel.
     function canSettle(bytes32 channelId) public view returns(bool) {
         PaymentChannel memory channel = channels[channelId];
-        bool isWaitingOver = isSettling(channelId) &amp;&amp; block.number >= channel.settlingUntil;
-        return isSettling(channelId) &amp;&amp; isWaitingOver;
+        bool isWaitingOver = isSettling(channelId) && block.number >= channel.settlingUntil;
+        return isSettling(channelId) && isWaitingOver;
     }
 
     /// @notice Move the money to sender, and close the channel.
@@ -216,7 +216,7 @@ contract Unidirectional {
         bytes32 hash = recoveryPaymentDigest(channelId, payment);
         bool isSigned = channel.sender == ECRecovery.recover(hash, signature);
 
-        return isReceiver &amp;&amp; isSigned;
+        return isReceiver && isSigned;
     }
 
     /// @notice Claim the funds, and close the channel.
@@ -267,7 +267,7 @@ contract Unidirectional {
     /// @notice Check if the channel is open: present and not settling.
     /// @param channelId Identifier of the channel.
     function isOpen(bytes32 channelId) public view returns(bool) {
-        return isPresent(channelId) &amp;&amp; !isSettling(channelId);
+        return isPresent(channelId) && !isSettling(channelId);
     }
 
     /*** PAYMENT DIGEST ***/

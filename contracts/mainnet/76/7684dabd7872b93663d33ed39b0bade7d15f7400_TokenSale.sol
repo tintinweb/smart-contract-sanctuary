@@ -38,7 +38,7 @@ contract TokenSale {
         uint256 scaledAmount = safeMultiply(numberOfTokens,
             uint256(10) ** tokenContract.decimals());
 
-        require(tokenContract.balanceOf(this) &gt;= scaledAmount);
+        require(tokenContract.balanceOf(this) >= scaledAmount);
 
         emit Sold(msg.sender, numberOfTokens);
         tokensSold += numberOfTokens;

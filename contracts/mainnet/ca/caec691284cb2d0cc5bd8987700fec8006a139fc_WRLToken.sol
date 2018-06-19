@@ -293,7 +293,7 @@ contract WRLToken is BurnableToken {
       uint256 finalTokenValue = currentValue.add(_tokens);
       uint256 toBeBurned;
       
-      if(now >= stage0Start &amp;&amp; now < stage0End) {
+      if(now >= stage0Start && now < stage0End) {
           if(finalTokenValue <= stage0Cap) {
               rate = stage0Rate;
               currentStage = 0;
@@ -303,7 +303,7 @@ contract WRLToken is BurnableToken {
               currentStage = 0;
           }
       }
-      else if(now >= stage1Start &amp;&amp; now < stage1End) {
+      else if(now >= stage1Start && now < stage1End) {
           if(currentValue < stage0Cap) {
               toBeBurned = stage0Cap.sub(currentValue);
               transferToRef(burnAndRef, toBeBurned);
@@ -330,7 +330,7 @@ contract WRLToken is BurnableToken {
               }
           }
       }
-      else if(now >= stage2Start &amp;&amp; now < stage2End) {
+      else if(now >= stage2Start && now < stage2End) {
           if(currentValue < stage1Cap) {
               toBeBurned = stage1Cap.sub(currentValue);
               transferToRef(burnAndRef, toBeBurned);
@@ -357,7 +357,7 @@ contract WRLToken is BurnableToken {
               }
           }
       }
-      else if(now >= stage3Start &amp;&amp; now < stage3End) {
+      else if(now >= stage3Start && now < stage3End) {
           if(currentValue < stage2Cap) {
               toBeBurned = stage2Cap.sub(currentValue);
               transferToRef(burnAndRef, toBeBurned);
@@ -426,7 +426,7 @@ contract TimedCrowdsale {
    * @dev Reverts if not in crowdsale time range. 
    */
   modifier onlyWhileOpen {
-    require(now >= openingTime &amp;&amp; now <= closingTime);
+    require(now >= openingTime && now <= closingTime);
     _;
   }
 
@@ -452,7 +452,7 @@ contract TimedCrowdsale {
   }
   
   function isOpen() public view returns (bool) {
-    return ((now > openingTime) &amp;&amp; (now < closingTime));
+    return ((now > openingTime) && (now < closingTime));
   }
   
   /**

@@ -98,26 +98,26 @@ contract DSStop is DSNote, DSAuth {
 
 contract DSMath {
     function add(uint x, uint y) internal pure returns (uint z) {
-        require((z = x + y) &gt;= x);
+        require((z = x + y) >= x);
     }
     function sub(uint x, uint y) internal pure returns (uint z) {
-        require((z = x - y) &lt;= x);
+        require((z = x - y) <= x);
     }
     function mul(uint x, uint y) internal pure returns (uint z) {
         require(y == 0 || (z = x * y) / y == x);
     }
 
     function min(uint x, uint y) internal pure returns (uint z) {
-        return x &lt;= y ? x : y;
+        return x <= y ? x : y;
     }
     function max(uint x, uint y) internal pure returns (uint z) {
-        return x &gt;= y ? x : y;
+        return x >= y ? x : y;
     }
     function imin(int x, int y) internal pure returns (int z) {
-        return x &lt;= y ? x : y;
+        return x <= y ? x : y;
     }
     function imax(int x, int y) internal pure returns (int z) {
-        return x &gt;= y ? x : y;
+        return x >= y ? x : y;
     }
 
     uint constant WAD = 10 ** 18;
@@ -183,8 +183,8 @@ contract ERC20 is ERC20Events {
 
 contract DSTokenBase is ERC20, DSMath {
     uint256                                            _supply;
-    mapping (address =&gt; uint256)                       _balances;
-    mapping (address =&gt; mapping (address =&gt; uint256))  _approvals;
+    mapping (address => uint256)                       _balances;
+    mapping (address => mapping (address => uint256))  _approvals;
 
     constructor(uint256 supply) public {
         _balances[msg.sender] = supply;
@@ -209,10 +209,10 @@ contract DSTokenBase is ERC20, DSMath {
         public
         returns (bool)
     {
-        require(_balances[src] &gt;= wad);
+        require(_balances[src] >= wad);
 
         if (src != msg.sender) {
-            require(_approvals[src][msg.sender] &gt;= wad);
+            require(_approvals[src][msg.sender] >= wad);
             _approvals[src][msg.sender] = sub(_approvals[src][msg.sender], wad);
         }
 
@@ -255,10 +255,10 @@ contract CARSToken is DSTokenBase(10000000000), DSStop {
         stoppable
         returns (bool)
     {   
-        require(_balances[src] &gt;= wad);
+        require(_balances[src] >= wad);
 
-        if (src != msg.sender &amp;&amp; _approvals[src][msg.sender] != uint(-1)) {
-            require(_approvals[src][msg.sender] &gt;= wad);
+        if (src != msg.sender && _approvals[src][msg.sender] != uint(-1)) {
+            require(_approvals[src][msg.sender] >= wad);
             _approvals[src][msg.sender] = sub(_approvals[src][msg.sender], wad);
         }
 

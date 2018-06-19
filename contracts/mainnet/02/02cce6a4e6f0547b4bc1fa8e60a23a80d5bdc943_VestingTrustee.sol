@@ -127,7 +127,7 @@ contract BasicToken is ERC20 {
     /// @param _value uint256 The amount of tokens to be spent.
     function approve(address _spender, uint256 _value) public returns (bool) {
         // https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-        if ((_value != 0) &amp;&amp; (allowed[msg.sender][_spender] != 0)) {
+        if ((_value != 0) && (allowed[msg.sender][_spender] != 0)) {
             revert();
         }
 
@@ -326,10 +326,10 @@ contract VestingTrustee is Ownable {
         require(grants[_to].value == 0);
 
         // Require for time ranges to be consistent and valid.
-        require(_start <= _cliff &amp;&amp; _cliff <= _end);
+        require(_start <= _cliff && _cliff <= _end);
 
         // Require installment length to be valid and no longer than (end - start).
-        require(_installmentLength > 0 &amp;&amp; _installmentLength <= _end.sub(_start));
+        require(_installmentLength > 0 && _installmentLength <= _end.sub(_start));
 
         // Grant must not exceed the total amount of tokens currently available for vesting.
         require(totalVesting.add(_value) <= kin.balanceOf(address(this)));
@@ -522,7 +522,7 @@ contract KinTokenSale is Ownable, TokenHolder {
 
     /// @dev Reverts if called when not during sale.
     modifier onlyDuringSale() {
-        require(!saleEnded() &amp;&amp; now >= startTime);
+        require(!saleEnded() && now >= startTime);
 
         _;
     }

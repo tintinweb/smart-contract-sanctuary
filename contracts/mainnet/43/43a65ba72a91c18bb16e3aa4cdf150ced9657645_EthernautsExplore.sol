@@ -601,14 +601,14 @@ contract EthernautsStorage is EthernautsAccessControl {
     /// @param _tokenId The UniqueId of the asset of interest.
     /// @param _attributes see Asset Struct description
     function hasAllAttrs(uint256 _tokenId, bytes2 _attributes) public view returns (bool) {
-        return assets[_tokenId].attributes &amp; _attributes == _attributes;
+        return assets[_tokenId].attributes & _attributes == _attributes;
     }
 
     /// @notice Check if asset has any attribute passed by parameter
     /// @param _tokenId The UniqueId of the asset of interest.
     /// @param _attributes see Asset Struct description
     function hasAnyAttrs(uint256 _tokenId, bytes2 _attributes) public view returns (bool) {
-        return assets[_tokenId].attributes &amp; _attributes != 0x0;
+        return assets[_tokenId].attributes & _attributes != 0x0;
     }
 
     /// @notice Check if asset is in the state passed by parameter
@@ -668,12 +668,12 @@ contract EthernautsStorage is EthernautsAccessControl {
             bytes2 hasAttributes  = bytes2(_withAttributes);
             Asset memory asset;
 
-            for (uint256 tokenId = start; tokenId < totalAssets &amp;&amp; resultIndex < count; tokenId++) {
+            for (uint256 tokenId = start; tokenId < totalAssets && resultIndex < count; tokenId++) {
                 asset = assets[tokenId];
                 if (
-                    (asset.state != uint8(AssetState.Used)) &amp;&amp;
-                    (assetIndexToOwner[tokenId] == _owner || _owner == address(0)) &amp;&amp;
-                    (asset.attributes &amp; hasAttributes == hasAttributes)
+                    (asset.state != uint8(AssetState.Used)) &&
+                    (assetIndexToOwner[tokenId] == _owner || _owner == address(0)) &&
+                    (asset.attributes & hasAttributes == hasAttributes)
                 ) {
                     result[resultIndex][0] = tokenId;
                     result[resultIndex][1] = asset.ID;
@@ -1087,7 +1087,7 @@ contract EthernautsExplore is EthernautsLogic {
         uint256[3][] memory tokens = new uint256[3][](explorers.length < 50 ? explorers.length : 50);
         uint256 index = 0;
 
-        for(uint256 i = 0; i < explorers.length &amp;&amp; index < 50; i++) {
+        for(uint256 i = 0; i < explorers.length && index < 50; i++) {
             if (explorers[i] != 0) {
                 tokens[index][0] = explorers[i];
                 tokens[index][1] = tokenIndexToSector[explorers[i]];
@@ -1255,7 +1255,7 @@ contract EthernautsExplore is EthernautsLogic {
 
         /// create objects returned from exploration
         uint256 i = 0;
-        for (i = 0; i < 10 &amp;&amp; _IDs[i] > 0; i++) {
+        for (i = 0; i < 10 && _IDs[i] > 0; i++) {
             _buildAsset(
                 _sectorTokenId,
                 owner,

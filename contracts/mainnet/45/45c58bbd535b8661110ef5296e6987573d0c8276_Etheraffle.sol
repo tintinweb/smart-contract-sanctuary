@@ -5,7 +5,7 @@
  *      ##########################################
  *      ##########################################
  *      ###                                    ###
- *      ###          &#119823;&#119845;&#119834;&#119858; &amp; &#119830;&#119842;&#119847; &#119812;&#119853;&#119841;&#119838;&#119851;          ###
+ *      ###          &#119823;&#119845;&#119834;&#119858; & &#119830;&#119842;&#119847; &#119812;&#119853;&#119841;&#119838;&#119851;          ###
  *      ###                 at                 ###
  *      ###          &#119812;&#119827;&#119815;&#119812;&#119825;&#119808;&#119813;&#119813;&#119819;&#119812;.&#119810;&#119822;&#119820;          ###
  *      ###                                    ###
@@ -16,7 +16,7 @@
  *      players, sustainable &#119812;&#119827;&#119815; &#119837;&#119842;&#119855;&#119842;&#119837;&#119838;&#119847;&#119837;&#119852; to &#119819;&#119822;&#119827; token 
  *      holders, and &#119845;&#119842;&#119839;&#119838;-&#119836;&#119841;&#119834;&#119847;&#119840;&#119842;&#119847;&#119840; &#119839;&#119854;&#119847;&#119837;&#119842;&#119847;&#119840; to charities.
  *
- *      Learn more &amp; get involved at &#119838;&#119853;&#119841;&#119838;&#119851;&#119834;&#119839;&#119839;&#119845;&#119838;.&#119836;&#119848;&#119846;/&#119816;&#119810;&#119822; to become a
+ *      Learn more & get involved at &#119838;&#119853;&#119841;&#119838;&#119851;&#119834;&#119839;&#119839;&#119845;&#119838;.&#119836;&#119848;&#119846;/&#119816;&#119810;&#119822; to become a
  *      &#119819;&#119822;&#119827; token holder today! Holding &#119819;&#119822;&#119827; tokens automatically  
  *      makes you a part of the decentralized, autonomous organisation  
  *      that &#119822;&#119830;&#119821;&#119826; Etheraffle. Take your place in this decentralized, 
@@ -32,7 +32,7 @@
 pragma solidity^0.4.21;
 
 /*
- * @title String &amp; slice utility library for Solidity contracts.
+ * @title String & slice utility library for Solidity contracts.
  * @author Nick Johnson <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bedfccdfddd6d0d7dafed0d1cadad1ca90d0dbca">[email&#160;protected]</a>>
  *
  * @dev Functionality in this library is largely implemented using an
@@ -116,23 +116,23 @@ library strings {
         uint ret;
         if (self == 0)
             return 0;
-        if (self &amp; 0xffffffffffffffffffffffffffffffff == 0) {
+        if (self & 0xffffffffffffffffffffffffffffffff == 0) {
             ret += 16;
             self = bytes32(uint(self) / 0x100000000000000000000000000000000);
         }
-        if (self &amp; 0xffffffffffffffff == 0) {
+        if (self & 0xffffffffffffffff == 0) {
             ret += 8;
             self = bytes32(uint(self) / 0x10000000000000000);
         }
-        if (self &amp; 0xffffffff == 0) {
+        if (self & 0xffffffff == 0) {
             ret += 4;
             self = bytes32(uint(self) / 0x100000000);
         }
-        if (self &amp; 0xffff == 0) {
+        if (self & 0xffff == 0) {
             ret += 2;
             self = bytes32(uint(self) / 0x10000);
         }
-        if (self &amp; 0xff == 0) {
+        if (self & 0xff == 0) {
             ret += 1;
         }
         return 32 - ret;
@@ -245,7 +245,7 @@ library strings {
             if (a != b) {
                 // Mask out irrelevant bytes and check again
                 uint mask = ~(2 ** (8 * (32 - shortest + idx)) - 1);
-                var diff = (a &amp; mask) - (b &amp; mask);
+                var diff = (a & mask) - (b & mask);
                 if (diff != 0)
                     return int(diff);
             }
@@ -339,13 +339,13 @@ library strings {
             ret = b;
             length = 1;
         } else if(b < 0xE0) {
-            ret = b &amp; 0x1F;
+            ret = b & 0x1F;
             length = 2;
         } else if(b < 0xF0) {
-            ret = b &amp; 0x0F;
+            ret = b & 0x0F;
             length = 3;
         } else {
-            ret = b &amp; 0x07;
+            ret = b & 0x07;
             length = 4;
         }
 
@@ -356,12 +356,12 @@ library strings {
 
         for (uint i = 1; i < length; i++) {
             divisor = divisor / 256;
-            b = (word / divisor) &amp; 0xFF;
-            if (b &amp; 0xC0 != 0x80) {
+            b = (word / divisor) & 0xFF;
+            if (b & 0xC0 != 0x80) {
                 // Invalid UTF-8 sequence
                 return 0;
             }
-            ret = (ret * 64) | (b &amp; 0x3F);
+            ret = (ret * 64) | (b & 0x3F);
         }
 
         return ret;
@@ -1286,12 +1286,12 @@ contract usingOraclize {
             iaddr *= 256;
             b1 = uint160(tmp[i]);
             b2 = uint160(tmp[i+1]);
-            if ((b1 >= 97)&amp;&amp;(b1 <= 102)) b1 -= 87;
-            else if ((b1 >= 65)&amp;&amp;(b1 <= 70)) b1 -= 55;
-            else if ((b1 >= 48)&amp;&amp;(b1 <= 57)) b1 -= 48;
-            if ((b2 >= 97)&amp;&amp;(b2 <= 102)) b2 -= 87;
-            else if ((b2 >= 65)&amp;&amp;(b2 <= 70)) b2 -= 55;
-            else if ((b2 >= 48)&amp;&amp;(b2 <= 57)) b2 -= 48;
+            if ((b1 >= 97)&&(b1 <= 102)) b1 -= 87;
+            else if ((b1 >= 65)&&(b1 <= 70)) b1 -= 55;
+            else if ((b1 >= 48)&&(b1 <= 57)) b1 -= 48;
+            if ((b2 >= 97)&&(b2 <= 102)) b2 -= 87;
+            else if ((b2 >= 65)&&(b2 <= 70)) b2 -= 55;
+            else if ((b2 >= 48)&&(b2 <= 57)) b2 -= 48;
             iaddr += (b1*16+b2);
         }
         return address(iaddr);
@@ -1330,7 +1330,7 @@ contract usingOraclize {
                 if (h[i] == n[0])
                 {
                     subindex = 1;
-                    while(subindex < n.length &amp;&amp; (i + subindex) < h.length &amp;&amp; h[i + subindex] == n[subindex])
+                    while(subindex < n.length && (i + subindex) < h.length && h[i + subindex] == n[subindex])
                     {
                         subindex++;
                     }
@@ -1382,7 +1382,7 @@ contract usingOraclize {
         uint mint = 0;
         bool decimals = false;
         for (uint i=0; i<bresult.length; i++){
-            if ((bresult[i] >= 48)&amp;&amp;(bresult[i] <= 57)){
+            if ((bresult[i] >= 48)&&(bresult[i] <= 57)){
                 if (decimals){
                    if (_b == 0) break;
                     else _b--;
@@ -1785,7 +1785,7 @@ contract usingOraclize {
         if (v < 27)
           v += 27;
 
-        if (v != 27 &amp;&amp; v != 28)
+        if (v != 27 && v != 28)
             return (false, 0);
 
         return safer_ecrecover(hash, v, r, s);
@@ -1888,7 +1888,7 @@ contract Etheraffle is usingOraclize {
     event LogTicketBought(uint indexed forRaffle, uint indexed entryNumber, address indexed theEntrant, uint[] chosenNumbers, uint personalEntryNumber, uint tktCost, uint atTime, uint affiliateID);
     event LogPrizePoolsUpdated(uint newMainPrizePool, uint indexed forRaffle, uint unclaimedPrizePool, uint threeMatchWinAmt, uint fourMatchWinAmt, uint fiveMatchWinAmt, uint sixMatchwinAmt, uint atTime);
     /**
-     * @dev   Constructor - sets the Etheraffle contract address &amp;
+     * @dev   Constructor - sets the Etheraffle contract address &
      *        the disbursal contract address for investors, calls
      *        the newRaffle() function with sets the current
      *        raffle ID global var plus sets up the first raffle&#39;s
@@ -1997,7 +1997,7 @@ contract Etheraffle is usingOraclize {
      *        array to be of length 6, requires the timestamp of the current
      *        raffle struct to have been set, and for this time this function
      *        is call to be before the end of the raffle. Then requires that
-     *        the chosen numbers are ordered lowest to highest &amp; bound between
+     *        the chosen numbers are ordered lowest to highest & bound between
      *        1 and 49. Function increments the total number of entries in the
      *        current raffle&#39;s struct, increments the prize pool accordingly
      *        and pushes the chosen number array into the entries map and then
@@ -2019,15 +2019,15 @@ contract Etheraffle is usingOraclize {
     {
         require
         (
-            _cNums.length == 6 &amp;&amp;
-            raffle[week].timeStamp > 0 &amp;&amp;
-            now < raffle[week].timeStamp + rafEnd &amp;&amp;
-            0         < _cNums[0] &amp;&amp;
-            _cNums[0] < _cNums[1] &amp;&amp;
-            _cNums[1] < _cNums[2] &amp;&amp;
-            _cNums[2] < _cNums[3] &amp;&amp;
-            _cNums[3] < _cNums[4] &amp;&amp;
-            _cNums[4] < _cNums[5] &amp;&amp;
+            _cNums.length == 6 &&
+            raffle[week].timeStamp > 0 &&
+            now < raffle[week].timeStamp + rafEnd &&
+            0         < _cNums[0] &&
+            _cNums[0] < _cNums[1] &&
+            _cNums[1] < _cNums[2] &&
+            _cNums[2] < _cNums[3] &&
+            _cNums[3] < _cNums[4] &&
+            _cNums[4] < _cNums[5] &&
             _cNums[5] <= 49
         );
         raffle[week].numEntries++;
@@ -2046,18 +2046,18 @@ contract Etheraffle is usingOraclize {
     function withdrawWinnings(uint _week, uint _entryNum) onlyIfNotPaused external {
         require
         (
-            raffle[_week].timeStamp > 0 &amp;&amp;
-            now - raffle[_week].timeStamp > WEEKDUR - (WEEKDUR / 7) &amp;&amp;
-            now - raffle[_week].timeStamp < wdrawBfr &amp;&amp;
-            raffle[_week].wdrawOpen == true &amp;&amp;
+            raffle[_week].timeStamp > 0 &&
+            now - raffle[_week].timeStamp > WEEKDUR - (WEEKDUR / 7) &&
+            now - raffle[_week].timeStamp < wdrawBfr &&
+            raffle[_week].wdrawOpen == true &&
             raffle[_week].entries[msg.sender][_entryNum - 1].length == 6
         );
         uint matches = getMatches(_week, msg.sender, _entryNum);
         if (matches == 2) return winFreeGo(_week, _entryNum);
         require
         (
-            matches >= 3 &amp;&amp;
-            raffle[_week].winAmts[matches - 3] > 0 &amp;&amp;
+            matches >= 3 &&
+            raffle[_week].winAmts[matches - 3] > 0 &&
             raffle[_week].winAmts[matches - 3] <= this.balance
         );
         raffle[_week].entries[msg.sender][_entryNum - 1].push(1);
@@ -2383,7 +2383,7 @@ contract Etheraffle is usingOraclize {
      * @param _week         The week number of the raffle to set the payouts for.
      * @param _numMatches   Number of matches. Comma-separated STRING of 4
      *                      integers long, consisting of the number of 3 match
-     *                      winners, 4 match winners, 5 &amp; 6 match winners in
+     *                      winners, 4 match winners, 5 & 6 match winners in
      *                      that order.
      */
     function setPayouts(uint _week, string _numMatches) onlyEtheraffle external {
@@ -2506,7 +2506,7 @@ contract Etheraffle is usingOraclize {
      * @param _newAddr   The new contract address.
      */
     function upgradeContract(address _newAddr) onlyEtheraffle external {
-        require(upgraded == 0 &amp;&amp; upgradeAddr == address(0));
+        require(upgraded == 0 && upgradeAddr == address(0));
         uint amt    = prizePool;
         upgradeAddr = _newAddr;
         upgraded    = now;

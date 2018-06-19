@@ -160,17 +160,17 @@ contract GlobexSciICO is Ownable {
             return 25;
         }
 
-        if (currentDate > startDate + week1 &amp;&amp; currentDate < startDate + week2) {
+        if (currentDate > startDate + week1 && currentDate < startDate + week2) {
             return 20;
         }
 
-        if (currentDate > startDate + week2 &amp;&amp; currentDate < startDate + week3) {
+        if (currentDate > startDate + week2 && currentDate < startDate + week3) {
             return 15;
         }
-        if (currentDate > startDate + week3 &amp;&amp; currentDate < startDate + week4) {
+        if (currentDate > startDate + week3 && currentDate < startDate + week4) {
             return 10;
         }
-        if (currentDate > startDate + week4 &amp;&amp; currentDate < startDate + week5) {
+        if (currentDate > startDate + week4 && currentDate < startDate + week5) {
             return 5;
         }
         return 0; 
@@ -233,7 +233,7 @@ contract GlobexSciICO is Ownable {
     bool minAmount = msg.value >= minimumParticipationAmount;
     bool withinCap = weiRaised.add(msg.value) <= cap;
 
-    return withinPeriod &amp;&amp; nonZeroPurchase &amp;&amp; minAmount &amp;&amp; !isFinalized &amp;&amp; withinCap;
+    return withinPeriod && nonZeroPurchase && minAmount && !isFinalized && withinCap;
   }
 
     // @return true if the goal is reached

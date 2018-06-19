@@ -36,7 +36,7 @@ contract FXNOW is IERC20{
     function transfer(address _to, uint256 _value) returns (bool success){
         require(
                 balances[msg.sender] >= _value
-                &amp;&amp; _value > 0 
+                && _value > 0 
             );
             balances[msg.sender] -= _value;
             balances[_to] += _value;
@@ -47,8 +47,8 @@ contract FXNOW is IERC20{
     function transferFrom(address _from, address _to, uint256 _value) returns (bool success){
         require(
                 allowed[_from][msg.sender] >= _value
-                &amp;&amp; balances[_from] >= _value
-                &amp;&amp; _value > 0 
+                && balances[_from] >= _value
+                && _value > 0 
             );
             balances[_from] -= _value;
             balances[_to] += _value;

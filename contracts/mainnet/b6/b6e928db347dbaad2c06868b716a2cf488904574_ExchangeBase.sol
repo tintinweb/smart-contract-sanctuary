@@ -79,7 +79,7 @@ contract ExchangeBase is Acceptable {
 
     Exchange[] exchanges;
 
-    mapping(uint256 =&gt; Exchange) tokenIdToExchange;
+    mapping(uint256 => Exchange) tokenIdToExchange;
 
     event ExchangeCreated(
         uint256 indexed id,
@@ -105,10 +105,10 @@ contract ExchangeBase is Acceptable {
         uint256 _createdAt
     ) public onlyAcceptable returns(uint256) {
         require(!isOnExchange(_ownerTokenId));
-        require(_ownerTokenWeight &gt; 0);
-        require(_weight &gt; 0);
-        require(_createdAt &gt; 0);
-        require(_weight &lt;= 1384277343750);
+        require(_ownerTokenWeight > 0);
+        require(_weight > 0);
+        require(_createdAt > 0);
+        require(_weight <= 1384277343750);
 
         Exchange memory _exchange = Exchange({
             owner: _owner,
@@ -174,10 +174,10 @@ contract ExchangeBase is Acceptable {
     }
 
     function isOnExchange(uint256 _tokenId) public view returns(bool) {
-        return tokenIdToExchange[_tokenId].createdAt &gt; 0;
+        return tokenIdToExchange[_tokenId].createdAt > 0;
     }
 
     function isOnExchangeById(uint256 _id) public view returns(bool) {
-        return (_id &lt; exchanges.length) &amp;&amp; (exchanges[_id].createdAt &gt; 0);
+        return (_id < exchanges.length) && (exchanges[_id].createdAt > 0);
     }
 }

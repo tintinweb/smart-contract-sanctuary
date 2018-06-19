@@ -12,7 +12,7 @@
 */
 pragma solidity 0.4.21;
 /// @title Utility Functions for address
-/// @author Daniel Wang - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fd999c93949891bd9192928d8f94939ad3928f9a">[email&#160;protected]</a>&gt;
+/// @author Daniel Wang - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fd999c93949891bd9192928d8f94939ad3928f9a">[email&#160;protected]</a>>
 library AddressUtil {
     function isContract(
         address addr
@@ -26,7 +26,7 @@ library AddressUtil {
         } else {
             uint size;
             assembly { size := extcodesize(addr) }
-            return size &gt; 0;
+            return size > 0;
         }
     }
 }
@@ -121,7 +121,7 @@ contract Claimable is Ownable {
         onlyOwner
         public
     {
-        require(newOwner != 0x0 &amp;&amp; newOwner != owner);
+        require(newOwner != 0x0 && newOwner != owner);
         pendingOwner = newOwner;
     }
     /// @dev Allows the pendingOwner address to finalize the transfer.
@@ -148,8 +148,8 @@ contract Claimable is Ownable {
 */
 /// @title Token Register Contract
 /// @dev This contract maintains a list of tokens the Protocol supports.
-/// @author Kongliang Zhong - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9cf7f3f2fbf0f5fdf2fbdcf0f3f3eceef5f2fbb2f3eefb">[email&#160;protected]</a>&gt;,
-/// @author Daniel Wang - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fe9a9f90979b92be9291918e8c979099d0918c99">[email&#160;protected]</a>&gt;.
+/// @author Kongliang Zhong - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9cf7f3f2fbf0f5fdf2fbdcf0f3f3eceef5f2fbb2f3eefb">[email&#160;protected]</a>>,
+/// @author Daniel Wang - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fe9a9f90979b92be9291918e8c979099d0918c99">[email&#160;protected]</a>>.
 contract TokenRegistry {
     event TokenRegistered(
         address indexed addr,
@@ -202,15 +202,15 @@ contract TokenRegistry {
         returns (address[] addressList);
 }
 /// @title An Implementation of TokenRegistry.
-/// @author Kongliang Zhong - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="385357565f545159565f78545757484a51565f16574a5f">[email&#160;protected]</a>&gt;,
-/// @author Daniel Wang - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2145404f48444d614d4e4e5153484f460f4e5346">[email&#160;protected]</a>&gt;.
+/// @author Kongliang Zhong - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="385357565f545159565f78545757484a51565f16574a5f">[email&#160;protected]</a>>,
+/// @author Daniel Wang - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2145404f48444d614d4e4e5153484f460f4e5346">[email&#160;protected]</a>>.
 contract TokenRegistryImpl is TokenRegistry, Claimable {
     using AddressUtil for address;
     address[] public addresses;
-    mapping (address =&gt; TokenInfo) addressMap;
-    mapping (string =&gt; address) symbolMap;
+    mapping (address => TokenInfo) addressMap;
+    mapping (string => address) symbolMap;
     struct TokenInfo {
-        uint   pos;      // 0 mens unregistered; if &gt; 0, pos + 1 is the
+        uint   pos;      // 0 mens unregistered; if > 0, pos + 1 is the
                          // token&#39;s position in `addresses`.
         string symbol;   // Symbol of the token
     }
@@ -262,7 +262,7 @@ contract TokenRegistryImpl is TokenRegistry, Claimable {
         view
         returns (bool)
     {
-        for (uint i = 0; i &lt; addressList.length; i++) {
+        for (uint i = 0; i < addressList.length; i++) {
             if (addressMap[addressList[i]].pos == 0) {
                 return false;
             }
@@ -305,15 +305,15 @@ contract TokenRegistryImpl is TokenRegistry, Claimable {
         returns (address[] addressList)
     {
         uint num = addresses.length;
-        if (start &gt;= num) {
+        if (start >= num) {
             return;
         }
         uint end = start + count;
-        if (end &gt; num) {
+        if (end > num) {
             end = num;
         }
         addressList = new address[](end - start);
-        for (uint i = start; i &lt; end; i++) {
+        for (uint i = start; i < end; i++) {
             addressList[i - start] = addresses[i];
         }
     }
@@ -324,7 +324,7 @@ contract TokenRegistryImpl is TokenRegistry, Claimable {
         internal
     {
         require(0x0 != addr);
-        require(bytes(symbol).length &gt; 0);
+        require(bytes(symbol).length > 0);
         require(0x0 == symbolMap[symbol]);
         require(0 == addressMap[addr].pos);
         addresses.push(addr);

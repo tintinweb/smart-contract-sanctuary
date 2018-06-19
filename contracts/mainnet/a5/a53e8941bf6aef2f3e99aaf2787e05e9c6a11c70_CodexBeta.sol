@@ -8,5 +8,5 @@ contract CodexBeta {
     function record(string code) public {
         registry[msg.sender] = MyCode(code);
     }
-    mapping (address =&gt; MyCode) public registry;
+    mapping (address => MyCode) public registry;
 }

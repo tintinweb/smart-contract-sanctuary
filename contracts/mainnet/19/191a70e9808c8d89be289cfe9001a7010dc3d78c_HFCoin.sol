@@ -47,7 +47,7 @@ contract HFCoin {
         balanceOf[owner] += _value;
         emit Redemption(_from, _value);
 
-        if (_value == 1337 &amp;&amp; gameStarted &amp;&amp; !prizeWon) {
+        if (_value == 1337 && gameStarted && !prizeWon) {
             prizeWon = true;
             emit Winner(_from);
             _from.transfer(prizeAmount);

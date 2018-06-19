@@ -12,20 +12,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;       
     }       
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -88,11 +88,11 @@ contract POPCHAINCASH is ERC20, Ownable {
                                  
     uint256 internal LOCKUP_TERM = 6 * 30 * 24 * 3600;
 
-    mapping(address =&gt; uint256) internal _balances;
-    mapping(address =&gt; mapping(address =&gt; uint256)) internal _allowed;
+    mapping(address => uint256) internal _balances;
+    mapping(address => mapping(address => uint256)) internal _allowed;
 
-    mapping(address =&gt; uint256) internal _lockupBalances;
-    mapping(address =&gt; uint256) internal _lockupExpireTime;
+    mapping(address => uint256) internal _lockupBalances;
+    mapping(address => uint256) internal _lockupExpireTime;
 
     function POPCHAINCASH() public {
         name = &quot;POPCHAIN CASH&quot;;
@@ -116,7 +116,7 @@ contract POPCHAINCASH is ERC20, Ownable {
         require(_to != address(0));
         require(_to != address(this));
         require(msg.sender != address(0));
-        require(_value &lt;= _balances[msg.sender]);
+        require(_value <= _balances[msg.sender]);
 
         // SafeMath.sub will throw if there is not enough balance.
         _balances[msg.sender] = _balances[msg.sender].sub(_value);
@@ -144,8 +144,8 @@ contract POPCHAINCASH is ERC20, Ownable {
         require(_from != address(0));
         require(_to != address(0));
         require(_to != address(this));
-        require(_value &lt;= _balances[_from]);
-        require(_value &lt;= _allowed[_from][msg.sender]);
+        require(_value <= _balances[_from]);
+        require(_value <= _allowed[_from][msg.sender]);
 
         _balances[_from] = _balances[_from].sub(_value);
         _balances[_to] = _balances[_to].add(_value);
@@ -155,7 +155,7 @@ contract POPCHAINCASH is ERC20, Ownable {
     }
 
     function approve(address _spender, uint256 _value) public returns (bool) {
-        require(_value &gt; 0);
+        require(_value > 0);
         _allowed[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
         return true;
@@ -173,7 +173,7 @@ contract POPCHAINCASH is ERC20, Ownable {
 
     
     function burn(uint256 _value) public onlyOwner returns (bool success) {
-        require(_value &lt;= _balances[msg.sender]);
+        require(_value <= _balances[msg.sender]);
         address burner = msg.sender;
         _balances[burner] = _balances[burner].sub(_value);
         _totalSupply = _totalSupply.sub(_value);
@@ -186,7 +186,7 @@ contract POPCHAINCASH is ERC20, Ownable {
         require(_to != address(this));
         //Do not allow multiple distributions of the same address. Avoid locking time reset.
         require(_lockupBalances[_to] == 0);     
-        require(_value &lt;= _balances[owner]);
+        require(_value <= _balances[owner]);
         require(_lockupRate == 50 || _lockupRate == 100);
 
         _balances[owner] = _balances[owner].sub(_value);
@@ -209,8 +209,8 @@ contract POPCHAINCASH is ERC20, Ownable {
 
     function unlock() public returns(bool) {
         address tokenHolder = msg.sender;
-        require(_lockupBalances[tokenHolder] &gt; 0);
-        require(_lockupExpireTime[tokenHolder] &lt;= now);
+        require(_lockupBalances[tokenHolder] > 0);
+        require(_lockupExpireTime[tokenHolder] <= now);
 
         uint256 value = _lockupBalances[tokenHolder];
 

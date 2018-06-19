@@ -17,13 +17,13 @@ library SafeMath {
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -106,7 +106,7 @@ contract BasicToken is Controlled{
     using SafeMath for uint256;
     
     uint256       _supply;
-    mapping (address =&gt; uint256)    _balances;
+    mapping (address => uint256)    _balances;
     
     event Transfer( address indexed from, address indexed to, uint256 value);
 
@@ -125,7 +125,7 @@ contract BasicToken is Controlled{
      * @param _value The amount to be transferred.
      */
     function transfer(address _to, uint256 _value) public whenNotPaused returns (bool) {
-        require(_balances[msg.sender] &gt;= _value &amp;&amp; _value &gt; 0);
+        require(_balances[msg.sender] >= _value && _value > 0);
         
         _balances[msg.sender] =_balances[msg.sender].sub(_value);
         _balances[_to] =_balances[_to].add(_value);
@@ -191,14 +191,14 @@ contract AicToken is BasicToken {
         require (self.length==7);
         
         addressArray = new address[](self.length);
-        for (uint i = 0; i &lt; self.length; i++){
+        for (uint i = 0; i < self.length; i++){
            addressArray[i]=self[i]; 
         }
     
     }
 
     function transfer(address _to, uint256 _value) public returns (bool) {
-        require (now &gt;= unlockTimeMap[0].unlockTime);
+        require (now >= unlockTimeMap[0].unlockTime);
 
         return super.transfer(_to, _value);
     }
@@ -209,14 +209,14 @@ contract AicToken is BasicToken {
     function unlock(uint256 _index) onlyOwner public {
          
         require (addressArray.length == 7);
-        require(_index &gt;= 0 &amp;&amp; _index &lt; unlockTimeMap.length);
-        require(now &gt;= unlockTimeMap[_index].unlockTime &amp;&amp; unlockTimeMap[_index].locked);
+        require(_index >= 0 && _index < unlockTimeMap.length);
+        require(now >= unlockTimeMap[_index].unlockTime && unlockTimeMap[_index].locked);
 
-        for (uint _addressIndex = 0; _addressIndex &lt; addressArray.length; _addressIndex++) {
+        for (uint _addressIndex = 0; _addressIndex < addressArray.length; _addressIndex++) {
             
           uint256 unlockCount = unlockCountArray[_addressIndex][_index].mul(10**18);
 
-          require(_balances[0x01] &gt;= unlockCount);
+          require(_balances[0x01] >= unlockCount);
 
           _balances[addressArray[_addressIndex]] = _balances[addressArray[_addressIndex]].add(unlockCount);
           _balances[0x01] = _balances[0x01].sub(unlockCount);

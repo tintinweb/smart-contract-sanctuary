@@ -23,10 +23,10 @@ contract SmartCityCrowdsale {
     }
 
     /// Crowdsale participants
-    mapping (address =&gt; Account) public buyins;
+    mapping (address => Account) public buyins;
 
     /// Balances of Fixed Price sale participants.
-    mapping(address =&gt; uint256) public purchases;
+    mapping(address => uint256) public purchases;
 
     /// Total amount of ether received.
     uint256 public totalReceived = 0;
@@ -148,7 +148,7 @@ contract SmartCityCrowdsale {
     // Modifiers
     
     /// Ensure the sale is ended.
-    modifier when_ended { require (now &gt;= endTime); _; }
+    modifier when_ended { require (now >= endTime); _; }
 
     /// Ensure sale is not paused.
     modifier when_not_halted { require (!paused); _; }
@@ -163,16 +163,16 @@ contract SmartCityCrowdsale {
     modifier when_active { require (!campaignEnded); _;}
 
     /// Ensure phase 1 is in progress
-    modifier only_in_phase_1 { require (now &gt;= startTime &amp;&amp; now &lt; firstPhaseEndTime); _; }
+    modifier only_in_phase_1 { require (now >= startTime && now < firstPhaseEndTime); _; }
     
     /// Ensure phase 1 is over
-    modifier after_phase_1 { require (now &gt;= firstPhaseEndTime); _; }
+    modifier after_phase_1 { require (now >= firstPhaseEndTime); _; }
 
     /// Ensure phase 2 is in progress
-    modifier only_in_phase_2 { require (now &gt;= secondPhaseStartTime &amp;&amp; now &lt; endTime); _; }
+    modifier only_in_phase_2 { require (now >= secondPhaseStartTime && now < endTime); _; }
 
     /// Ensure the value sent is above threshold.
-    modifier reject_dust { require ( msg.value &gt;= DUST_LIMIT ); _; }
+    modifier reject_dust { require ( msg.value >= DUST_LIMIT ); _; }
 
     // Constructor
 
@@ -206,7 +206,7 @@ contract SmartCityCrowdsale {
         when_not_halted
         when_active
     {
-        if (now &gt;= startTime &amp;&amp; now &lt; firstPhaseEndTime) { // phase 1 is ongoing
+        if (now >= startTime && now < firstPhaseEndTime) { // phase 1 is ongoing
             _buyin(msg.sender, msg.value);
         }
         else {
@@ -245,14 +245,14 @@ contract SmartCityCrowdsale {
     function _buyin(address _receiver, uint256 _value)
         internal
     {
-        if (currentBonus &gt; 0) {
+        if (currentBonus > 0) {
             uint256 daysSinceStart = (now.sub(startTime)).div(86400); // # of days
 
-            if (daysSinceStart &lt; BONUS_DURATION &amp;&amp;
+            if (daysSinceStart < BONUS_DURATION &&
                 BONUS_DURATION.sub(daysSinceStart) != currentBonus) {
                 currentBonus = BONUS_DURATION.sub(daysSinceStart);
             }
-            if (daysSinceStart &gt;= BONUS_DURATION) {
+            if (daysSinceStart >= BONUS_DURATION) {
                 currentBonus = 0;
             }
         }
@@ -289,7 +289,7 @@ contract SmartCityCrowdsale {
     {
         uint256 res = (FACTOR.mul(240000).div(DIVISOR.mul(totalAccounted.div(tokenCapPhaseOne)).add(FACTOR.mul(4).div(100)))).add(startTime).sub(4848);
 
-        if (res &gt;= firstPhaseEndTime) {
+        if (res >= firstPhaseEndTime) {
             return firstPhaseEndTime;
         }
         else {
@@ -318,7 +318,7 @@ contract SmartCityCrowdsale {
         returns (uint256 tokens)
     {
         uint256 _currentCap = totalAccounted.div(currentPrice());
-        if (_currentCap &gt;= tokenCapPhaseOne) {
+        if (_currentCap >= tokenCapPhaseOne) {
             return 0;
         }
         return tokenCapPhaseOne.sub(_currentCap);
@@ -351,7 +351,7 @@ contract SmartCityCrowdsale {
 
         uint256 available = tokensAvailable();
         uint256 tokens = accounted.div(price);
-        refund = (tokens &gt; available);
+        refund = (tokens > available);
     }
 
     /// Returns bonus for given amount
@@ -381,7 +381,7 @@ contract SmartCityCrowdsale {
             PhaseOneEnded(auctionEndPrice);
 
             // check if second phase should be engaged
-            if (totalAccounted &gt;= FUNDING_GOAL ) {
+            if (totalAccounted >= FUNDING_GOAL ) {
                 // funding goal is reached: phase 2 is not engaged, all auction participants receive additional bonus, campaign is ended
                 auctionSuccessBonus = SUCCESS_BONUS;
                 endTime = firstPhaseEndTime;
@@ -392,7 +392,7 @@ contract SmartCityCrowdsale {
                 Ended(true);
             }
             
-            else if (auctionEndPrice &gt;= TOKEN_MIN_PRICE_THRESHOLD) {
+            else if (auctionEndPrice >= TOKEN_MIN_PRICE_THRESHOLD) {
                 // funding goal is not reached, auctionEndPrice is above or equal to threshold value: engage phase 2
                 fixedPrice = auctionEndPrice.add(auctionEndPrice.mul(SECOND_PHASE_PRICE_FACTOR).div(100));
                 secondPhaseStartTime = now;
@@ -400,7 +400,7 @@ contract SmartCityCrowdsale {
 
                 PhaseTwoStared(fixedPrice);
             }
-            else if (auctionEndPrice &lt; TOKEN_MIN_PRICE_THRESHOLD &amp;&amp; auctionEndPrice &gt; 0){
+            else if (auctionEndPrice < TOKEN_MIN_PRICE_THRESHOLD && auctionEndPrice > 0){
                 // funding goal is not reached, auctionEndPrice is below threshold value: phase 2 is not engaged, campaign is ended
                 endTime = firstPhaseEndTime;
                 campaignEnded = true;
@@ -458,9 +458,9 @@ contract SmartCityCrowdsale {
     {
         uint256 tokensCnt = getTokens(_receiver, _value); 
 
-        require(tokensCnt &gt; 0);
-        require(tokensPurchased.add(tokensCnt) &lt;= tokenCapPhaseTwo); // should not exceed available tokens
-        require(_value &lt;= maxTokenPurchase(_receiver)); // should not go above target
+        require(tokensCnt > 0);
+        require(tokensPurchased.add(tokensCnt) <= tokenCapPhaseTwo); // should not exceed available tokens
+        require(_value <= maxTokenPurchase(_receiver)); // should not go above target
 
         purchases[_receiver] = purchases[_receiver].add(_value);
         totalReceived = totalReceived.add(_value);
@@ -473,7 +473,7 @@ contract SmartCityCrowdsale {
         wallet.transfer(_value);
 
         // check if we&#39;ve reached the target
-        if (totalAccounted &gt;= FUNDING_GOAL) {
+        if (totalAccounted >= FUNDING_GOAL) {
             endTime = now;
             campaignEnded = true;
             
@@ -492,7 +492,7 @@ contract SmartCityCrowdsale {
         returns(uint256 tokensCnt)
     {
         // auction participants have better price in second phase
-        if (buyins[_receiver].received &gt; 0) {
+        if (buyins[_receiver].received > 0) {
             tokensCnt = _value.div(auctionEndPrice);
         }
         else {
@@ -513,14 +513,14 @@ contract SmartCityCrowdsale {
         uint256 fundingGoalOffset = FUNDING_GOAL.sub(totalReceived);
         uint256 maxInvestment;
         
-        if (buyins[_receiver].received &gt; 0) {
+        if (buyins[_receiver].received > 0) {
             maxInvestment = availableTokens.mul(auctionEndPrice);
         }
         else {
             maxInvestment = availableTokens.mul(fixedPrice);
         }
 
-        if (maxInvestment &gt; fundingGoalOffset) {
+        if (maxInvestment > fundingGoalOffset) {
             return fundingGoalOffset;
         }
         else {
@@ -569,7 +569,7 @@ contract SmartCityCrowdsale {
             total = buyins[_receiver].accounted;
             tokens = total.div(auctionEndPrice);
             
-            if (auctionSuccessBonus &gt; 0) {
+            if (auctionSuccessBonus > 0) {
                 bonus = tokens.mul(auctionSuccessBonus).div(100);
             }
             totalFinalised = totalFinalised.add(total);
@@ -610,10 +610,10 @@ contract SmartCityCrowdsale {
     function drain() public only_owner { wallet.transfer(this.balance); }
     
     /// Returns true if the campaign is in progress.
-    function isActive() public constant returns (bool) { return now &gt;= startTime &amp;&amp; now &lt; endTime; }
+    function isActive() public constant returns (bool) { return now >= startTime && now < endTime; }
 
     /// Returns true if all purchases are finished.
-    function allFinalised() public constant returns (bool) { return now &gt;= endTime &amp;&amp; totalAccounted == totalFinalised; }
+    function allFinalised() public constant returns (bool) { return now >= endTime && totalAccounted == totalFinalised; }
 }
 
 /**
@@ -646,7 +646,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -655,7 +655,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }

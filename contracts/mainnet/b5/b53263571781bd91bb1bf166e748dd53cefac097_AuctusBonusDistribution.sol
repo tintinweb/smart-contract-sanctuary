@@ -62,7 +62,7 @@ contract AuctusBonusDistribution is ContractReceiver {
 	}
 
 	function setAuthorization(address _address, bool _authorized) isAuthorized public {
-		require(_address != address(0) &amp;&amp; _address != msg.sender);
+		require(_address != address(0) && _address != msg.sender);
 		authorized[_address] = _authorized;
 	}
 

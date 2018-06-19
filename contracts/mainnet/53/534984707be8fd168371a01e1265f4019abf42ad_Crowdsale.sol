@@ -401,8 +401,8 @@ contract Crowdsale is Ownable {
 
     require(beneficiary != address(0));
     //minimum/maximum amount in ETH
-    require(weiAmount >= minNumbPerSubscr &amp;&amp; weiAmount <= maxNumbPerSubscr);
-    if (now >= startICO &amp;&amp; now <= endICO &amp;&amp; totalICO < hardCap){
+    require(weiAmount >= minNumbPerSubscr && weiAmount <= maxNumbPerSubscr);
+    if (now >= startICO && now <= endICO && totalICO < hardCap){
       tokens = weiAmount.mul(rate);
       if (hardCap.sub(totalICO) < tokens){
         tokens = hardCap.sub(totalICO);
@@ -444,7 +444,7 @@ contract Crowdsale is Ownable {
     return token.GetPermissionsList(_address);
   }
   function refund() public{
-    require(activeBalance < softcap &amp;&amp; now > endICO);
+    require(activeBalance < softcap && now > endICO);
     require(balancesSoftCap[msg.sender] > 0);
     uint value = balancesSoftCap[msg.sender];
     balancesSoftCap[msg.sender] = 0;
@@ -483,7 +483,7 @@ contract Crowdsale is Ownable {
   }
 
   function transferToMultisig() public onlyOwner {
-    require(activeBalance >= softcap &amp;&amp; now > endICO14);
+    require(activeBalance >= softcap && now > endICO14);
       wallet.transfer(activeBalance);
       activeBalance = 0;
   }

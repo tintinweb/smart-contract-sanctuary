@@ -213,7 +213,7 @@ library Helpers {
 		_b++;
 		bool decimals = false;
 		for (uint i = 0; i < bresult.length; i++) {
-			if ((bresult[i] >= 48) &amp;&amp; (bresult[i] <= 57)) {
+			if ((bresult[i] >= 48) && (bresult[i] <= 57)) {
 				if (decimals) {
 					if (_b == 0) {
 						break;
@@ -307,7 +307,7 @@ contract OracleBase is Ownable, usingOraclize, OracleI {
      * @param priceInWei New gas price.
      */
     function setGasPrice(uint256 priceInWei) public onlyOwner {
-        require((priceInWei >= MIN_GAS_PRICE) &amp;&amp; (priceInWei <= MAX_GAS_PRICE));
+        require((priceInWei >= MIN_GAS_PRICE) && (priceInWei <= MAX_GAS_PRICE));
         gasPrice = priceInWei;
         oraclize_setCustomGasPrice(gasPrice);
     }
@@ -317,7 +317,7 @@ contract OracleBase is Ownable, usingOraclize, OracleI {
      * @param _gasLimit New gas limit.
      */
     function setGasLimit(uint256 _gasLimit) public onlyOwner {
-        require((_gasLimit >= MIN_GAS_LIMIT) &amp;&amp; (_gasLimit <= MAX_GAS_LIMIT));
+        require((_gasLimit >= MIN_GAS_LIMIT) && (_gasLimit <= MAX_GAS_LIMIT));
         gasLimit = _gasLimit;
     }
 
@@ -366,7 +366,7 @@ contract OracleBase is Ownable, usingOraclize, OracleI {
     * @param proof The oraclize proof bytes.
     */
     function __callback(bytes32 myid, string result, bytes proof) public {
-        require(validIds[myid] &amp;&amp; msg.sender == oraclize_cbAddress());
+        require(validIds[myid] && msg.sender == oraclize_cbAddress());
 
         rate = Helpers.parseIntRound(result, 3); // save it in storage as 1/1000 of $
         delete validIds[myid];

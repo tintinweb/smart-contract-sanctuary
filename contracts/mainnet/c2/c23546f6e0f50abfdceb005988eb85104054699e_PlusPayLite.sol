@@ -47,13 +47,13 @@ contract SafeMath {
 
         c = a + b;
 
-        require(c &gt;= a);
+        require(c >= a);
 
     }
 
     function safeSub(uint a, uint b) public pure returns (uint c) {
 
-        require(b &lt;= a);
+        require(b <= a);
 
         c = a - b;
 
@@ -69,7 +69,7 @@ contract SafeMath {
 
     function safeDiv(uint a, uint b) public pure returns (uint c) {
 
-        require(b &gt; 0);
+        require(b > 0);
 
         c = a / b;
 
@@ -229,9 +229,9 @@ contract PlusPayLite is ERC20Interface, Owned, SafeMath {
 
 
 
-    mapping(address =&gt; uint) balances;
+    mapping(address => uint) balances;
 
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => mapping(address => uint)) allowed;
 
 
 

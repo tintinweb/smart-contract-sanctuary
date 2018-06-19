@@ -7,8 +7,8 @@ contract TycoonPresale {
     bool public isPresaleEnd;
     uint256 private constant price = 0.0666 ether;
     uint8 private constant maxNumbersPerPlayer = 10;
-    mapping (address =&gt; mapping (uint8 =&gt; bool)) private doihave;
-    mapping (address =&gt; uint8[]) private last; // [choumode][idx1][idx2][...]
+    mapping (address => mapping (uint8 => bool)) private doihave;
+    mapping (address => uint8[]) private last; // [choumode][idx1][idx2][...]
     uint256 private constant FACTOR = 1157920892373161954235709850086879078532699846656405640394575840079131296399;
     uint256 private constant MAGICNUMBER = 6666666666666666666666666666666666666666666666666666666666666666666666666666;
     struct Level {
@@ -57,15 +57,15 @@ contract TycoonPresale {
     function Chou(uint8 seChou) public payable {
         require(!isPresaleEnd);
         require(_goodAddress(msg.sender));
-        require(seChou &gt; 0 &amp;&amp; seChou &lt; 6);
+        require(seChou > 0 && seChou < 6);
         uint8 owndCount = 0;
         if (last[msg.sender].length != 0){
             owndCount = last[msg.sender][0];
         }
-        require(owndCount + seChou &lt;= maxNumbersPerPlayer);
-        require(msg.value &gt;= (price * seChou));
+        require(owndCount + seChou <= maxNumbersPerPlayer);
+        require(msg.value >= (price * seChou));
 
-        if (last[msg.sender].length &lt; 2){
+        if (last[msg.sender].length < 2){
             last[msg.sender].push(seChou);
             last[msg.sender].push(seChou);
         }else{
@@ -74,7 +74,7 @@ contract TycoonPresale {
         }
 
         uint256 zhaoling = msg.value - (price * seChou);
-        assert(zhaoling &lt;= msg.value); // safe math
+        assert(zhaoling <= msg.value); // safe math
         // multi-chou
         for (uint _seChouidx = 0; _seChouidx != seChou; _seChouidx++){
             uint randN = _rand(_seChouidx + MAGICNUMBER); // only generate once for saving gas
@@ -89,7 +89,7 @@ contract TycoonPresale {
                     }
                 }
                 if (!levelPass){
-                    if (randN % 100 &gt;= levels[idx].passProb) { // this level right, and the last chosenIdx is chosenIdx
+                    if (randN % 100 >= levels[idx].passProb) { // this level right, and the last chosenIdx is chosenIdx
                         _own(chosenIdx);
                         break;
                     }

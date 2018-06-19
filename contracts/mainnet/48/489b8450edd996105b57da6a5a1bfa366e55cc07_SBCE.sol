@@ -20,8 +20,8 @@ contract SBCE {
 	bool public airdropConjured;
 
 	/* This creates an array with all balances */
-	mapping (address =&gt; uint256) public balances;
-	mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+	mapping (address => uint256) public balances;
+	mapping (address => mapping (address => uint256)) internal allowed;
 
 	/* This generates a public event on the blockchain that will notify clients */
 	event Transfer(address indexed from, address indexed to, uint256 value);	
@@ -50,10 +50,10 @@ contract SBCE {
 	/* Send coins */
 	function transfer(address _to, uint256 _value) public returns (bool) {
 		require(_to != address(0));
-    	require(balances[msg.sender] &gt;=_value);
+    	require(balances[msg.sender] >=_value);
 		
-		require(balances[msg.sender] &gt;= _value);
-		require(balances[_to] + _value &gt;= balances[_to]);
+		require(balances[msg.sender] >= _value);
+		require(balances[_to] + _value >= balances[_to]);
 
 		balances[msg.sender] -= _value;					 
 		balances[_to] += _value;					
@@ -64,12 +64,12 @@ contract SBCE {
 	/*This pulls the allowed tokens amount from address to another*/
 	function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
 		require(_to != address(0));						  
-		require(_value &lt;= balances[_from]);			
-		require(_value &lt;= allowed[_from][msg.sender]);
+		require(_value <= balances[_from]);			
+		require(_value <= allowed[_from][msg.sender]);
 
-		require(balances[msg.sender] &gt;= _value);
-		require(balances[_to] + _value &gt;= balances[_to]);		
-		require(allowed[_from][msg.sender] &gt;= _value);						// Check allowance
+		require(balances[msg.sender] >= _value);
+		require(balances[_to] + _value >= balances[_to]);		
+		require(allowed[_from][msg.sender] >= _value);						// Check allowance
 
 		balances[_from] -= _value;						   					// Subtract from the sender
 		balances[_to] += _value;							 				// Add the same to the recipient
@@ -97,7 +97,7 @@ contract SBCE {
 
 	/* This function is used to increase the amount of tokens allowed to spend by spender.*/
 	function increaseApproval(address _spender, uint _addedValue) public returns (bool) {
-    	require(allowed[msg.sender][_spender] + _addedValue &gt;= allowed[msg.sender][_spender]);
+    	require(allowed[msg.sender][_spender] + _addedValue >= allowed[msg.sender][_spender]);
 		allowed[msg.sender][_spender] = allowed[msg.sender][_spender] + _addedValue;
     	emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
     	return true;
@@ -106,7 +106,7 @@ contract SBCE {
 	/* This function is used to decrease the amount of tokens allowed to spend by spender.*/
 	function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
 		uint oldValue = allowed[msg.sender][_spender];
-		if (_subtractedValue &gt; oldValue) {
+		if (_subtractedValue > oldValue) {
 			allowed[msg.sender][_spender] = 0;
 		} 
 		else {
@@ -117,7 +117,7 @@ contract SBCE {
   	}
 
 	function burn(uint256 _value) public returns (bool) {		
-		require(balances[msg.sender] &gt;= _value ); 								// value &gt; totalSupply is impossible because it means that sender balance is greater than totalSupply.				
+		require(balances[msg.sender] >= _value ); 								// value > totalSupply is impossible because it means that sender balance is greater than totalSupply.				
 		balances[msg.sender] -= _value;					  						// Subtract from the sender
 		totalSupply_ -= _value;													// Updates totalSupply
 		emit Burn(msg.sender, _value);											// Fires the event about token burn
@@ -125,8 +125,8 @@ contract SBCE {
 	}
 
 	function burnFrom(address _from, uint256 _value) public returns (bool) {
-		require(balances[_from] &gt;= _value );									// Check if the sender has enough
-		require(allowed[_from][msg.sender] &gt;= _value);							// Check allowance
+		require(balances[_from] >= _value );									// Check if the sender has enough
+		require(allowed[_from][msg.sender] >= _value);							// Check allowance
 		balances[_from] -= _value;						  						// Subtract from the sender
 		totalSupply_ -= _value;							   						// Updates totalSupply
 		emit Burn(_from, _value);												// Fires the event about token burn
@@ -145,7 +145,7 @@ contract SBCE {
 	}
 
 	function conjureAirdrop() public onlyOwner {			
-		require(totalSupply_ + airdropAmount &gt;= balances[airdrop]);
+		require(totalSupply_ + airdropAmount >= balances[airdrop]);
 		require(airdrop != address(0));
 		balances[airdrop] += airdropAmount;
 		totalSupply_ += airdropAmount;		

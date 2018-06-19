@@ -12,20 +12,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal constant returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal constant returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -60,7 +60,7 @@ contract ERC20 is ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -69,7 +69,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -141,7 +141,7 @@ contract Ownable {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -152,8 +152,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -202,7 +202,7 @@ contract StandardToken is ERC20, BasicToken {
 
   function decreaseApproval (address _spender, uint _subtractedValue) public returns (bool success) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -391,12 +391,12 @@ contract UAPCrowdsale is Ownable {
   function UAPCrowdsale(uint256 _mainSaleStartTime, uint256 _mainSaleEndTime, uint256 _rate, address _wallet, address _tokenWallet) public {
 
     // can&#39;t start main sale in the past
-    require(_mainSaleStartTime &gt;= now);
+    require(_mainSaleStartTime >= now);
 
     // the end of main sale can&#39;t happen before it&#39;s start
-    require(_mainSaleStartTime &lt; _mainSaleEndTime);
+    require(_mainSaleStartTime < _mainSaleEndTime);
 
-    require(_rate &gt; 0);
+    require(_rate > 0);
     require(_wallet != 0x0);
     require(_tokenWallet != 0x0);
 
@@ -429,14 +429,14 @@ contract UAPCrowdsale is Ownable {
     require(beneficiary != 0x0);
     require(msg.value != 0);
 
-    require(now &gt;= mainSaleStartTime &amp;&amp; now &lt;= mainSaleEndTime);
+    require(now >= mainSaleStartTime && now <= mainSaleEndTime);
 
     uint256 weiAmount = msg.value;
 
     // calculate token amount to be created
     uint256 tokens = weiAmount.mul(rate);
     
-    require(tokens &lt;= tokensToSell);
+    require(tokens <= tokensToSell);
 
     // update state
     weiRaised = weiRaised.add(weiAmount);
@@ -463,7 +463,7 @@ contract UAPCrowdsale is Ownable {
   // set new dates for main-sale (emergency case)
   function setMainSaleDates(uint256 _mainSaleStartTime, uint256 _mainSaleEndTime) public onlyOwner returns (bool) {
     require(!isFinalised);
-    require(_mainSaleStartTime &lt; _mainSaleEndTime);
+    require(_mainSaleStartTime < _mainSaleEndTime);
     mainSaleStartTime = _mainSaleStartTime;
     mainSaleEndTime = _mainSaleEndTime;
     return true;
@@ -471,7 +471,7 @@ contract UAPCrowdsale is Ownable {
   
   // set new Rate  
   function setRate(uint256 _rate) public onlyOwner returns(bool){
-      require(_rate &gt; 0);
+      require(_rate > 0);
       rate = _rate;
       return true;
   }
@@ -493,7 +493,7 @@ contract UAPCrowdsale is Ownable {
 
   // @return true if main sale event has ended
   function mainSaleHasEnded() external constant returns (bool) {
-    return now &gt; mainSaleEndTime;
+    return now > mainSaleEndTime;
   }
 
   // Send ether to the fund collection wallet

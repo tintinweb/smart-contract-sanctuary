@@ -48,20 +48,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -143,7 +143,7 @@ contract ApolloSeptemBaseCrowdsale {
     //transfer used for special contribuitions
     function specialTransfer(address _to, uint _amount) internal returns(bool){
         require(_to != address(0));
-        require(_amount &gt; 0);
+        require(_amount > 0);
       
         // calculate token to be substracted
         uint256 tokens = _amount * (10 ** 18);
@@ -156,7 +156,7 @@ contract ApolloSeptemBaseCrowdsale {
 
     // @return true if crowdsale event has ended
     function hasEnded() public constant returns (bool) {
-        return now &gt; endTime;
+        return now > endTime;
     }
 
     // send ether to the fund collection wallet
@@ -166,22 +166,22 @@ contract ApolloSeptemBaseCrowdsale {
 
     // @return true if the transaction can buy tokens
     function validPurchase() internal view returns (bool) {
-        bool withinPeriod = now &gt;= startTime &amp;&amp; now &lt;= endTime;
+        bool withinPeriod = now >= startTime && now <= endTime;
         bool nonZeroPurchase = msg.value != 0;
 		
-        return withinPeriod &amp;&amp; nonZeroPurchase &amp;&amp; isWithinICOTimeLimit();
+        return withinPeriod && nonZeroPurchase && isWithinICOTimeLimit();
     }
     
     function isWithinICOTimeLimit() internal view returns (bool) {
-        return now &lt;= endTime;
+        return now <= endTime;
     }
 	
     function isWithinICOLimit(uint256 _tokens) internal view returns (bool) {			
-        return tokenReward.balanceOf(this).sub(_tokens) &gt;= 0;
+        return tokenReward.balanceOf(this).sub(_tokens) >= 0;
     }
 
     function isWithinTokenAllocLimit(uint256 _tokens) internal view returns (bool) {
-        return (isWithinICOTimeLimit() &amp;&amp; isWithinICOLimit(_tokens));
+        return (isWithinICOTimeLimit() && isWithinICOLimit(_tokens));
     }
 	
     function sendAllToOwner(address beneficiary) internal returns(bool){
@@ -210,15 +210,15 @@ contract ApolloSeptemCappedCrowdsale is ApolloSeptemBaseCrowdsale{
     // overriding ApolloSeptemBaseCrowdsale#validPurchase to add extra cap logic
     // @return true if investors can buy at the moment
     function validPurchase() internal view returns (bool) {
-        bool withinCap = weiRaised.add(msg.value) &lt;= HARD_CAP;
+        bool withinCap = weiRaised.add(msg.value) <= HARD_CAP;
 
-        return super.validPurchase() &amp;&amp; withinCap;
+        return super.validPurchase() && withinCap;
     }
 
     // overriding Crowdsale#hasEnded to add cap logic
     // @return true if crowdsale event has ended
     function hasEnded() public constant returns (bool) {
-        bool capReached = weiRaised &gt;= HARD_CAP;
+        bool capReached = weiRaised >= HARD_CAP;
         return super.hasEnded() || capReached;
     }
 }

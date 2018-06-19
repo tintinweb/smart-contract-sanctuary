@@ -72,7 +72,7 @@ contract ClockAuctionStorage is StorageBase {
     }
 
     // Map from token ID to their corresponding auction.
-    mapping (uint256 =&gt; Auction) tokenIdToAuction;
+    mapping (uint256 => Auction) tokenIdToAuction;
 
     function addAuction(
         uint256 _tokenId,
@@ -120,7 +120,7 @@ contract ClockAuctionStorage is StorageBase {
     }
 
     function isOnAuction(uint256 _tokenId) external view returns (bool) {
-        return (tokenIdToAuction[_tokenId].startedAt &gt; 0);
+        return (tokenIdToAuction[_tokenId].startedAt > 0);
     }
 
     function getSeller(uint256 _tokenId) external view returns (address) {
@@ -146,7 +146,7 @@ contract SaleClockAuctionStorage is ClockAuctionStorage {
     uint256 public systemOnSaleCount;
 
     // map of on sale token ids from system
-    mapping (uint256 =&gt; bool) systemOnSaleTokens;
+    mapping (uint256 => bool) systemOnSaleTokens;
 
     function removeAuction(uint256 _tokenId) public onlyOwner {
         // first remove auction from state variable
@@ -156,7 +156,7 @@ contract SaleClockAuctionStorage is ClockAuctionStorage {
         if (systemOnSaleTokens[_tokenId]) {
             delete systemOnSaleTokens[_tokenId];
             
-            if (systemOnSaleCount &gt; 0) {
+            if (systemOnSaleCount > 0) {
                 systemOnSaleCount--;
             }
         }
@@ -178,8 +178,8 @@ contract SaleClockAuctionStorage is ClockAuctionStorage {
         if (totalSoldCount == 0) return 0;
         
         uint256 sum = 0;
-        uint256 len = (totalSoldCount &lt; 3 ? totalSoldCount : 3);
-        for (uint256 i = 0; i &lt; len; i++) {
+        uint256 len = (totalSoldCount < 3 ? totalSoldCount : 3);
+        for (uint256 i = 0; i < len; i++) {
             sum += lastSoldPrices[i];
         }
         return sum / len;
@@ -332,7 +332,7 @@ contract ClockAuction is LogicBase {
     }
 
     function setOwnerCut(uint256 _cut) public onlyOwner {
-        require(_cut &lt;= 10000);
+        require(_cut <= 10000);
         ownerCut = _cut;
     }
 
@@ -341,7 +341,7 @@ contract ClockAuction is LogicBase {
     }
 
     function getMinPrice() public view returns (uint256) {
-        // return ownerCut &gt; 0 ? (minCutValue / ownerCut * 10000) : 0;
+        // return ownerCut > 0 ? (minCutValue / ownerCut * 10000) : 0;
         // use minCutValue directly, when the price == minCutValue seller will get no profit
         return minCutValue;
     }
@@ -349,7 +349,7 @@ contract ClockAuction is LogicBase {
     // Only auction from none system user need to verify the price
     // System auction can set any price
     function isValidPrice(uint256 _startingPrice, uint256 _endingPrice) public view returns (bool) {
-        return (_startingPrice &lt; _endingPrice ? _startingPrice : _endingPrice) &gt;= getMinPrice();
+        return (_startingPrice < _endingPrice ? _startingPrice : _endingPrice) >= getMinPrice();
     }
 
     function createAuction(
@@ -373,7 +373,7 @@ contract ClockAuction is LogicBase {
         nonFungibleContract.transferFrom(_seller, address(clockAuctionStorage), _tokenId);
 
         // Require that all auctions have a duration of at least one minute.
-        require(_duration &gt;= 1 minutes);
+        require(_duration >= 1 minutes);
 
         clockAuctionStorage.addAuction(
             _tokenId,
@@ -436,7 +436,7 @@ contract ClockAuction is LogicBase {
 
         // Check that the bid is greater than or equal to the current price
         uint256 price = _currentPrice(_tokenId);
-        require(_bidAmount &gt;= price);
+        require(_bidAmount >= price);
 
         address seller = clockAuctionStorage.getSeller(_tokenId);
         uint256 sellerProceeds = 0;
@@ -445,7 +445,7 @@ contract ClockAuction is LogicBase {
         clockAuctionStorage.removeAuction(_tokenId);
 
         // Transfer proceeds to seller (if there are any!)
-        if (price &gt; 0) {
+        if (price > 0) {
             // Calculate the auctioneer&#39;s cut, so this subtraction can&#39;t go negative
             uint256 auctioneerCut = _computeCut(price);
             sellerProceeds = price - auctioneerCut;
@@ -476,7 +476,7 @@ contract ClockAuction is LogicBase {
         uint64 startedAt;
         (seller, startingPrice, endingPrice, duration, startedAt) = clockAuctionStorage.getAuction(_tokenId);
 
-        if (now &gt; startedAt) {
+        if (now > startedAt) {
             secondsPassed = now - startedAt;
         }
 
@@ -498,7 +498,7 @@ contract ClockAuction is LogicBase {
         pure
         returns (uint256)
     {
-        if (_secondsPassed &gt;= _duration) {
+        if (_secondsPassed >= _duration) {
             return _endingPrice;
         } else {
             // this delta can be negative.
@@ -518,8 +518,8 @@ contract ClockAuction is LogicBase {
 
     function _computeCut(uint256 _price) internal view returns (uint256) {
         uint256 cutValue = _price * ownerCut / 10000;
-        if (_price &lt; minCutValue) return cutValue;
-        if (cutValue &gt; minCutValue) return cutValue;
+        if (_price < minCutValue) return cutValue;
+        if (cutValue > minCutValue) return cutValue;
         return minCutValue;
     }
 }
@@ -602,7 +602,7 @@ contract SaleClockAuction is ClockAuction {
 
         uint256 nextPrice = avePrice + (avePrice / 2);
 
-        if (nextPrice &lt; systemStartingPriceMin) {
+        if (nextPrice < systemStartingPriceMin) {
             nextPrice = systemStartingPriceMin;
         }
 

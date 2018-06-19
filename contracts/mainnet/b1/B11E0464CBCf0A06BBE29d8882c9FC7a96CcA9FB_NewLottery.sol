@@ -43,7 +43,7 @@ contract NewLottery is Owned {
         ticketPrice = 0.101 * 10**18;
         minimumBounty = 1 ether;
         totalBounty = msg.value;
-        if (totalBounty &lt;= minimumBounty)
+        if (totalBounty <= minimumBounty)
             return;
 
         owner = msg.sender;
@@ -91,7 +91,7 @@ contract NewLottery is Owned {
     function AddTicket() public payable
     {
         require(msg.value == ticketPrice);
-        require(numtickets &lt; maxTickets);
+        require(numtickets < maxTickets);
 
         //update bif
         lastTicketTime = now;
@@ -123,11 +123,11 @@ contract NewLottery is Owned {
         totalBounty = 0;
 
         //change max tickets to give unpredictability
-        if(_direction == 0 &amp;&amp; maxTickets &lt; 20) maxTickets += 1;
-        if(_direction == 1 &amp;&amp; maxTickets &gt; 10) maxTickets -= 1;
+        if(_direction == 0 && maxTickets < 20) maxTickets += 1;
+        if(_direction == 1 && maxTickets > 10) maxTickets -= 1;
 
-        if(_direction == 0 &amp;&amp; maxTickets == 20) _direction = 1;
-        if(_direction == 1 &amp;&amp; maxTickets == 10) _direction = 0;
+        if(_direction == 0 && maxTickets == 20) _direction = 1;
+        if(_direction == 1 && maxTickets == 10) _direction = 0;
 
         //give real money
         owner.transfer(ownerTax);

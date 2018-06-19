@@ -90,7 +90,7 @@ contract ERC20Token is IERC20Token {
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
-        require(balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value);
+        require(balances[_from] >= _value && allowed[_from][msg.sender] >= _value);
 
         balances[_to] = balances[_to].add(_value);
         balances[_from] = balances[_from].sub(_value);

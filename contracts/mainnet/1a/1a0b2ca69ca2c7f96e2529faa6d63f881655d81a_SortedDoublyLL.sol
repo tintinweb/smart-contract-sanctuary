@@ -15,20 +15,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -37,7 +37,7 @@ library SafeMath {
  * @title A sorted doubly linked list with nodes sorted in descending order. Optionally accepts insert position hints
  *
  * Given a new node with a `key`, a hint is of the form `(prevId, nextId)` s.t. `prevId` and `nextId` are adjacent in the list.
- * `prevId` is a node with a key &gt;= `key` and `nextId` is a node with a key &lt;= `key`. If the sender provides a hint that is a valid insert position
+ * `prevId` is a node with a key >= `key` and `nextId` is a node with a key <= `key`. If the sender provides a hint that is a valid insert position
  * the insert operation is a constant time storage write. However, the provided hint in a given transaction might be a valid insert position, but if other transactions are included first, when
  * the given transaction is executed the provided hint may no longer be a valid insert position. For example, one of the nodes referenced might be removed or their keys may
  * be updated such that the the pair of nodes in the hint no longer represent a valid insert position. If one of the nodes in the hint becomes invalid, we still try to use the other
@@ -60,7 +60,7 @@ library SortedDoublyLL {
         address tail;                        // Tail of the list. Also the node in the list with the smallest key
         uint256 maxSize;                     // Maximum size of the list
         uint256 size;                        // Current size of the list
-        mapping (address =&gt; Node) nodes;     // Track the corresponding ids for each node in the list
+        mapping (address => Node) nodes;     // Track the corresponding ids for each node in the list
     }
 
     /*
@@ -69,7 +69,7 @@ library SortedDoublyLL {
      */
     function setMaxSize(Data storage self, uint256 _size) public {
         // New max size must be greater than old max size
-        require(_size &gt; self.maxSize);
+        require(_size > self.maxSize);
 
         self.maxSize = _size;
     }
@@ -89,7 +89,7 @@ library SortedDoublyLL {
         // Node id must not be null
         require(_id != address(0));
         // Key must be non-zero
-        require(_key &gt; 0);
+        require(_key > 0);
 
         address prevId = _prevId;
         address nextId = _nextId;
@@ -102,7 +102,7 @@ library SortedDoublyLL {
 
         self.nodes[_id].key = _key;
 
-        if (prevId == address(0) &amp;&amp; nextId == address(0)) {
+        if (prevId == address(0) && nextId == address(0)) {
             // Insert as head and tail
             self.head = _id;
             self.tail = _id;
@@ -135,7 +135,7 @@ library SortedDoublyLL {
         // List must contain the node
         require(contains(self, _id));
 
-        if (self.size &gt; 1) {
+        if (self.size > 1) {
             // List contains more than a single node
             if (_id == self.head) {
                 // The removed node is the head
@@ -181,7 +181,7 @@ library SortedDoublyLL {
         // Remove node from the list
         remove(self, _id);
 
-        if (_newKey &gt; 0) {
+        if (_newKey > 0) {
             // Insert node if it has a non-zero key
             insert(self, _id, _newKey, _prevId, _nextId);
         }
@@ -193,7 +193,7 @@ library SortedDoublyLL {
      */
     function contains(Data storage self, address _id) public view returns (bool) {
         // List only contains non-zero keys, so if key is non-zero the node exists
-        return self.nodes[_id].key &gt; 0;
+        return self.nodes[_id].key > 0;
     }
 
     /*
@@ -269,18 +269,18 @@ library SortedDoublyLL {
      * @param _nextId Id of next node for the insert position
      */
     function validInsertPosition(Data storage self, uint256 _key, address _prevId, address _nextId) public view returns (bool) {
-        if (_prevId == address(0) &amp;&amp; _nextId == address(0)) {
+        if (_prevId == address(0) && _nextId == address(0)) {
             // `(null, null)` is a valid insert position if the list is empty
             return isEmpty(self);
         } else if (_prevId == address(0)) {
             // `(null, _nextId)` is a valid insert position if `_nextId` is the head of the list
-            return self.head == _nextId &amp;&amp; _key &gt;= self.nodes[_nextId].key;
+            return self.head == _nextId && _key >= self.nodes[_nextId].key;
         } else if (_nextId == address(0)) {
             // `(_prevId, null)` is a valid insert position if `_prevId` is the tail of the list
-            return self.tail == _prevId &amp;&amp; _key &lt;= self.nodes[_prevId].key;
+            return self.tail == _prevId && _key <= self.nodes[_prevId].key;
         } else {
             // `(_prevId, _nextId)` is a valid insert position if they are adjacent nodes and `_key` falls between the two nodes&#39; keys
-            return self.nodes[_prevId].nextId == _nextId &amp;&amp; self.nodes[_prevId].key &gt;= _key &amp;&amp; _key &gt;= self.nodes[_nextId].key;
+            return self.nodes[_prevId].nextId == _nextId && self.nodes[_prevId].key >= _key && _key >= self.nodes[_nextId].key;
         }
     }
 
@@ -291,7 +291,7 @@ library SortedDoublyLL {
      */
     function descendList(Data storage self, uint256 _key, address _startId) private view returns (address, address) {
         // If `_startId` is the head, check if the insert position is before the head
-        if (self.head == _startId &amp;&amp; _key &gt;= self.nodes[_startId].key) {
+        if (self.head == _startId && _key >= self.nodes[_startId].key) {
             return (address(0), _startId);
         }
 
@@ -299,7 +299,7 @@ library SortedDoublyLL {
         address nextId = self.nodes[prevId].nextId;
 
         // Descend the list until we reach the end or until we find a valid insert position
-        while (prevId != address(0) &amp;&amp; !validInsertPosition(self, _key, prevId, nextId)) {
+        while (prevId != address(0) && !validInsertPosition(self, _key, prevId, nextId)) {
             prevId = self.nodes[prevId].nextId;
             nextId = self.nodes[prevId].nextId;
         }
@@ -314,7 +314,7 @@ library SortedDoublyLL {
      */
     function ascendList(Data storage self, uint256 _key, address _startId) private view returns (address, address) {
         // If `_startId` is the tail, check if the insert position is after the tail
-        if (self.tail == _startId &amp;&amp; _key &lt;= self.nodes[_startId].key) {
+        if (self.tail == _startId && _key <= self.nodes[_startId].key) {
             return (_startId, address(0));
         }
 
@@ -322,7 +322,7 @@ library SortedDoublyLL {
         address prevId = self.nodes[nextId].prevId;
 
         // Ascend the list until we reach the end or until we find a valid insertion point
-        while (nextId != address(0) &amp;&amp; !validInsertPosition(self, _key, prevId, nextId)) {
+        while (nextId != address(0) && !validInsertPosition(self, _key, prevId, nextId)) {
             nextId = self.nodes[nextId].prevId;
             prevId = self.nodes[nextId].prevId;
         }
@@ -341,20 +341,20 @@ library SortedDoublyLL {
         address nextId = _nextId;
 
         if (prevId != address(0)) {
-            if (!contains(self, prevId) || _key &gt; self.nodes[prevId].key) {
+            if (!contains(self, prevId) || _key > self.nodes[prevId].key) {
                 // `prevId` does not exist anymore or now has a smaller key than the given key
                 prevId = address(0);
             }
         }
 
         if (nextId != address(0)) {
-            if (!contains(self, nextId) || _key &lt; self.nodes[nextId].key) {
+            if (!contains(self, nextId) || _key < self.nodes[nextId].key) {
                 // `nextId` does not exist anymore or now has a larger key than the given key
                 nextId = address(0);
             }
         }
 
-        if (prevId == address(0) &amp;&amp; nextId == address(0)) {
+        if (prevId == address(0) && nextId == address(0)) {
             // No hint - descend list starting from head
             return descendList(self, _key, self.head);
         } else if (prevId == address(0)) {

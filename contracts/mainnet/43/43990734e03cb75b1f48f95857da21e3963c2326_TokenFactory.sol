@@ -32,14 +32,14 @@ library StringUtil {
             result := mload(add(str, 32))
         }
     }
-    /// check length >= min &amp;&amp; <= max
+    /// check length >= min && <= max
     function checkStringLength(string name, uint min, uint max)
         internal
         pure
         returns (bool)
     {
         bytes memory temp = bytes(name);
-        return temp.length >= min &amp;&amp; temp.length <= max;
+        return temp.length >= min && temp.length <= max;
     }
 }
 /*
@@ -438,7 +438,7 @@ contract Claimable is Ownable {
     /// @dev Allows the current owner to set the pendingOwner address.
     /// @param newOwner The address to transfer ownership to.
     function transferOwnership(address newOwner) onlyOwner public {
-        require(newOwner != 0x0 &amp;&amp; newOwner != owner);
+        require(newOwner != 0x0 && newOwner != owner);
         pendingOwner = newOwner;
     }
     /// @dev Allows the pendingOwner address to finalize the transfer.
@@ -627,7 +627,7 @@ contract TokenFactory {
     function initialize(address _tokenRegistry)
         public
     {
-        require(tokenRegistry == 0x0 &amp;&amp; _tokenRegistry.isContract());
+        require(tokenRegistry == 0x0 && _tokenRegistry.isContract());
         tokenRegistry = _tokenRegistry;
     }
     /// @dev Deploy an ERC20 token contract, register it with TokenRegistry,

@@ -21,12 +21,12 @@ contract TwoXJackpot {
     uint256 gameTotalBacklog;  // Total Amount waiting to payout
     uint256 index;             // The current BuyIn queue index
 
-    mapping (address =&gt; uint256) totalInvested; // Total invested for a given address
-    mapping (address =&gt; uint256) totalValue;    // Total value for a given address
-    mapping (address =&gt; uint256) totalPaidOut;  // Total paid out for a given address
+    mapping (address => uint256) totalInvested; // Total invested for a given address
+    mapping (address => uint256) totalValue;    // Total value for a given address
+    mapping (address => uint256) totalPaidOut;  // Total paid out for a given address
   }
 
-  mapping (uint256 =&gt; Game) public games;  // Map game index to the game
+  mapping (uint256 => Game) public games;  // Map game index to the game
   uint256 public gameIndex;    // The current Game Index
 
   // Timestamp of the last action.
@@ -65,8 +65,8 @@ contract TwoXJackpot {
   }
 
   modifier isStarted() {
-      require(now &gt;= gameStartTime); // Check game started
-      require(now &gt;= roundStartTime); // Check round started
+      require(now >= gameStartTime); // Check game started
+      require(now >= roundStartTime); // Check round started
       _;
   }
 
@@ -89,7 +89,7 @@ contract TwoXJackpot {
 
   // Change the start time for fair launch
   function changeStartTime(uint256 _time) public onlyContractOwner {
-    require(now &lt; _time); // only allow changing it to something in the future
+    require(now < _time); // only allow changing it to something in the future
     gameStartTime = _time;
     lastAction = gameStartTime; // Don&#39;t forget to update last action too :)
   }
@@ -113,11 +113,11 @@ contract TwoXJackpot {
 
   function purchase() public payable isStarted  {
     // Check if the game is still running
-    if (now &gt; lastAction + timeBeforeJackpot &amp;&amp;
+    if (now > lastAction + timeBeforeJackpot &&
       jackpotLastQualified != 0x0) {
       claim();
       // Next game/round will start, return back money to user
-      if (msg.value &gt; 0) {
+      if (msg.value > 0) {
         msg.sender.transfer(msg.value);
       }
       return;
@@ -125,14 +125,14 @@ contract TwoXJackpot {
 
     // Check if JackPot is less then 1 ETH, then
     // use predefined minimum and maximum buy in values
-    if (jackpotBalance &lt;= 1 ether) {
-      require(msg.value &gt;= minMinBuyETH); // &gt;= 0.02 ETH
-      require(msg.value &lt;= minMaxBuyETH); // &lt;= 0.5 ETH
+    if (jackpotBalance <= 1 ether) {
+      require(msg.value >= minMinBuyETH); // >= 0.02 ETH
+      require(msg.value <= minMaxBuyETH); // <= 0.5 ETH
     } else {
       uint256 purchaseMin = SafeMath.mul(msg.value, minBuy);
       uint256 purchaseMax = SafeMath.mul(msg.value, maxBuy);
-      require(purchaseMin &gt;= jackpotBalance);
-      require(purchaseMax &lt;= jackpotBalance);
+      require(purchaseMin >= jackpotBalance);
+      require(purchaseMax <= jackpotBalance);
     }
 
     uint256 valueAfterTax = SafeMath.div(SafeMath.mul(msg.value, buyFee), 100);     // Take a 10% fee for Jackpot, example on 1ETH Buy:  0.9 = (1.0 * 90) / 100
@@ -161,12 +161,12 @@ contract TwoXJackpot {
     //Emit a deposit event.
     emit Purchase(msg.value, msg.sender);
 
-    while (games[gameIndex].index &lt; games[gameIndex].buyIns.length
-            &amp;&amp; valueAfterTax &gt; 0) {
+    while (games[gameIndex].index < games[gameIndex].buyIns.length
+            && valueAfterTax > 0) {
 
       BuyIn storage buyIn = games[gameIndex].buyIns[games[gameIndex].index];
 
-      if (valueAfterTax &lt; buyIn.value) {
+      if (valueAfterTax < buyIn.value) {
         buyIn.owner.transfer(valueAfterTax);
 
         // Update game information
@@ -198,7 +198,7 @@ contract TwoXJackpot {
 
   // Claim the Jackpot
   function claim() public payable isStarted {
-    require(now &gt; lastAction + timeBeforeJackpot);
+    require(now > lastAction + timeBeforeJackpot);
     require(jackpotLastQualified != 0x0); // make sure last jackpotLastQualified is not 0x0
 
     // Each game has 4 Jackpot payouts, increasing in payout percentage.
@@ -335,7 +335,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -345,7 +345,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -354,7 +354,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }

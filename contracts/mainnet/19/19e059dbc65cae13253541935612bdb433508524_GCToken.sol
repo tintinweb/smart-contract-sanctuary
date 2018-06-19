@@ -46,7 +46,7 @@ contract Ownable {
 
 /**
  * @title Contracts that should not own Ether
- * @author Remco Bloemen &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="582a3d353b37186a">[email&#160;protected]</a>╧&#199;.com&gt;
+ * @author Remco Bloemen <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="582a3d353b37186a">[email&#160;protected]</a>╧&#199;.com>
  * @dev This tries to block incoming ether to prevent accidental loss of Ether. Should Ether end up
  * in the contract, it will allow the owner to reclaim this ether.
  * @notice Ether can still be send to this contract by:
@@ -105,7 +105,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
@@ -115,7 +115,7 @@ library SafeMath {
   * @dev Substracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -124,7 +124,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -152,7 +152,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -170,7 +170,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
 
     // SafeMath.sub will throw if there is not enough balance.
     balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -214,7 +214,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -225,8 +225,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
 
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
@@ -289,7 +289,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -345,7 +345,7 @@ contract GCToken is StandardToken, HasNoEther {
     uint public icoEndTime = 1540339199; // initial ico end date 23-Oct-2018(Subject to change)
 
     modifier canMint() {
-        require(totalSupply_ &lt; CAPPED_SUPPLY);
+        require(totalSupply_ < CAPPED_SUPPLY);
         _;
     }
 
@@ -358,24 +358,24 @@ contract GCToken is StandardToken, HasNoEther {
     function claimCompanyReserve () external {
         require(!companyClaimed);
         require(msg.sender == COMPANY_ACCOUNT);        
-        require(now &gt;= icoEndTime.add(COMPANY_RESERVE_FOR));
+        require(now >= icoEndTime.add(COMPANY_RESERVE_FOR));
         mint(COMPANY_ACCOUNT, COMPANY_RESERVE);
         companyClaimed = true;
     }
 
     function claimTeamToken() external {
         require(msg.sender == TEAM_ACCOUNT);
-        require(now &gt;= icoEndTime.add(TEAM_CAN_CLAIM_AFTER));
-        require(teamReserve[20] &gt; 0);
+        require(now >= icoEndTime.add(TEAM_CAN_CLAIM_AFTER));
+        require(teamReserve[20] > 0);
 
         // store time check for each claim stage
         uint claimableTime = icoEndTime.add(TEAM_CAN_CLAIM_AFTER);
         uint totalClaimable;
 
-        for(uint i = 0; i &lt; 21; i++){
-            if(teamReserve[i] &gt; 0){
+        for(uint i = 0; i < 21; i++){
+            if(teamReserve[i] > 0){
                 // each month can claim the next stage starts from TEAM_CAN_CLAIM_AFTER
-                if(claimableTime.add(i.mul(CLAIM_STAGE)) &lt; now){
+                if(claimableTime.add(i.mul(CLAIM_STAGE)) < now){
                     totalClaimable = totalClaimable.add(teamReserve[i]);
                     teamReserve[i] = 0;
                 }else{
@@ -383,7 +383,7 @@ contract GCToken is StandardToken, HasNoEther {
                 }
             }
         }
-        if(totalClaimable &gt; 0){
+        if(totalClaimable > 0){
             mint(TEAM_ACCOUNT, totalClaimable);
         }
     }
@@ -396,7 +396,7 @@ contract GCToken is StandardToken, HasNoEther {
     * @return A boolean that indicates if the operation was successful.
     */
     function mint(address _to, uint256 _amount) canMint internal returns (bool) {
-        require(totalSupply_.add(_amount) &lt;= CAPPED_SUPPLY);
+        require(totalSupply_.add(_amount) <= CAPPED_SUPPLY);
         totalSupply_ = totalSupply_.add(_amount);
         balances[_to] = balances[_to].add(_amount);
         emit Mint (_to, _amount);
@@ -408,7 +408,7 @@ contract GCToken is StandardToken, HasNoEther {
      * @param _icoEndTime Expected ICO end time
      */
     function setIcoEndTime(uint _icoEndTime) public onlyOwner {
-        require(_icoEndTime &gt;= now);
+        require(_icoEndTime >= now);
         icoEndTime = _icoEndTime;
     }
 }

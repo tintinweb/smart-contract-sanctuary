@@ -12,20 +12,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 
@@ -138,10 +138,10 @@ contract STC is Token, Owned {
     }
 
     // Balances for each account
-    mapping(address =&gt; Account) accounts;
+    mapping(address => Account) accounts;
 
     // Owner of account approves the transfer of an amount to another account
-    mapping(address =&gt; mapping(address =&gt; uint256)) allowed;
+    mapping(address => mapping(address => uint256)) allowed;
 
 
 	// 
@@ -182,7 +182,7 @@ contract STC is Token, Owned {
         require(isSealed());
 		
         // according to FFC&#39;s total supply, never overflow here
-        if ( accounts[msg.sender].balance &gt;= _amount &amp;&amp; _amount &gt; 0) {            
+        if ( accounts[msg.sender].balance >= _amount && _amount > 0) {            
             accounts[msg.sender].balance -= uint112(_amount);
             accounts[_to].balance = _amount.add(accounts[_to].balance).toUINT112();
             emit Transfer(msg.sender, _to, _amount);
@@ -206,9 +206,9 @@ contract STC is Token, Owned {
         require(isSealed());
 
         // according to FFC&#39;s total supply, never overflow here
-        if (accounts[_from].balance &gt;= _amount
-            &amp;&amp; allowed[_from][msg.sender] &gt;= _amount
-            &amp;&amp; _amount &gt; 0) {
+        if (accounts[_from].balance >= _amount
+            && allowed[_from][msg.sender] >= _amount
+            && _amount > 0) {
             accounts[_from].balance -= uint112(_amount);
             allowed[_from][msg.sender] -= _amount;
             accounts[_to].balance = _amount.add(accounts[_to].balance).toUINT112();

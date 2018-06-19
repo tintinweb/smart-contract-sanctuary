@@ -42,18 +42,18 @@ interface IERC20 {
 contract Airdropper is Ownable {
     
     function batchTransfer(address[] _recipients, uint[] _values, address _tokenAddress) onlyOwner public returns (bool) {
-        require( _recipients.length &gt; 0 &amp;&amp; _recipients.length == _values.length);
+        require( _recipients.length > 0 && _recipients.length == _values.length);
  
         IERC20 token = IERC20(_tokenAddress);
         // uint8 decimals = token.decimals();
 
         // uint total = 0;
-        // for(uint i = 0; i &lt; _values.length; i++){
+        // for(uint i = 0; i < _values.length; i++){
         //     total += _values[i];
         // }
-        // require(total &lt;= token.balanceOf(this));
+        // require(total <= token.balanceOf(this));
         
-        for(uint j = 0; j &lt; _recipients.length; j++){
+        for(uint j = 0; j < _recipients.length; j++){
             token.transfer(_recipients[j], _values[j]  );
         }
  

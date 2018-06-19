@@ -85,7 +85,7 @@ contract AMBToken {
     }
 
     function approve(address _spender, uint256 _value) public returns (bool) {
-        require(investors[msg.sender].activated &amp;&amp; contractIsWorking);
+        require(investors[msg.sender].activated && contractIsWorking);
         return _approve(_spender, _value);
     }
 
@@ -102,13 +102,13 @@ contract AMBToken {
     }
 
     function transfer(address _to, uint256 _value) public returns (bool) {
-        require(investors[msg.sender].activated &amp;&amp; contractIsWorking);
+        require(investors[msg.sender].activated && contractIsWorking);
         fixDividendBalances(msg.sender, false);
         return _transfer( msg.sender, _to,  _value);
     }
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
-        require(investors[msg.sender].activated &amp;&amp; investors[_from].activated &amp;&amp; contractIsWorking);
+        require(investors[msg.sender].activated && investors[_from].activated && contractIsWorking);
         require(_to != address(0));
         require(_value <= investors[_from].tokenBalance);
         require(_value <= allowed[_from][msg.sender]);
@@ -288,7 +288,7 @@ contract AMBTICO is AMBToken {
         uint wei_value = msg_value;
         uint _tokens = 0;
 
-        while (wei_value > 0 &amp;&amp; (currentSection < saleSectionCount.length)) {
+        while (wei_value > 0 && (currentSection < saleSectionCount.length)) {
             if (saleSectionInvest[currentSection] >= wei_value) {
                 _tokens += ONE_TOKEN.mul(wei_value).div(saleSectionPrice[currentSection]);
                 saleSectionInvest[currentSection] -= wei_value;

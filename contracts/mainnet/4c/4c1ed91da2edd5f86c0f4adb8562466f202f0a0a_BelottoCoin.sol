@@ -31,10 +31,10 @@ contract Owned {
 library SafeMath {
     function add(uint a, uint b) internal pure returns (uint c) {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function sub(uint a, uint b) internal pure returns (uint c) {
-        require(b &lt;= a);
+        require(b <= a);
         c = a - b;
     }
     function mul(uint a, uint b) internal pure returns (uint c) {
@@ -42,7 +42,7 @@ library SafeMath {
         require(a == 0 || c / a == b);
     }
     function div(uint a, uint b) internal pure returns (uint c) {
-        require(b &gt; 0);
+        require(b > 0);
         c = a / b;
     }
 }
@@ -69,8 +69,8 @@ contract BelottoCoin is ERC20Interface, Owned{
     string public name;
     uint8 public decimals;
     uint public _totalSupply;
-    mapping(address =&gt; uint) balances;
-    mapping(address =&gt; mapping(address =&gt; uint)) allowed;
+    mapping(address => uint) balances;
+    mapping(address => mapping(address => uint)) allowed;
 
     // ------------------------------------------------------------------------
     // Constructor
@@ -108,8 +108,8 @@ contract BelottoCoin is ERC20Interface, Owned{
     function transfer(address to, uint tokens) public returns (bool success) {
         // prevent transfer to 0x0, use burn instead
         require(to != 0x0);
-        require(balances[msg.sender] &gt;= tokens );
-        require(balances[to] + tokens &gt;= balances[to]);
+        require(balances[msg.sender] >= tokens );
+        require(balances[to] + tokens >= balances[to]);
         balances[msg.sender] = balances[msg.sender].sub(tokens);
         balances[to] = balances[to].add(tokens);
         emit Transfer(msg.sender,to,tokens);
@@ -136,8 +136,8 @@ contract BelottoCoin is ERC20Interface, Owned{
     // - 0 value transfers are allowed
     // ------------------------------------------------------------------------
     function transferFrom(address from, address to, uint tokens) public returns (bool success){
-        require(tokens &lt;= allowed[from][msg.sender]); //check allowance
-        require(balances[from] &gt;= tokens);
+        require(tokens <= allowed[from][msg.sender]); //check allowance
+        require(balances[from] >= tokens);
         balances[from] = balances[from].sub(tokens);
         balances[to] = balances[to].add(tokens);
         allowed[from][msg.sender] = allowed[from][msg.sender].sub(tokens);
@@ -155,7 +155,7 @@ contract BelottoCoin is ERC20Interface, Owned{
     event Burn(address indexed burner, uint256 value);
 
     function burn(uint256 _value) public {
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
         address burner = msg.sender;
         balances[burner] = balances[burner].sub(_value);
         Burn(burner, _value);

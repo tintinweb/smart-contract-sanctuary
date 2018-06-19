@@ -630,7 +630,7 @@ contract DmlContribution is Ownable {
         require(!isContract(msg.sender));        
         require( tx.gasprice <= 99000000000 wei );
 
-        if( now < startTime &amp;&amp; now >= earlyWhitelistBeginTime)
+        if( now < startTime && now >= earlyWhitelistBeginTime)
         {
             if (whitelisted[receipient].level >= 2)
             {
@@ -726,14 +726,14 @@ contract DmlContribution is Ownable {
 
     /// @return true if sale not ended, false otherwise.
     function saleNotEnd() constant returns (bool) {
-        return now < endTime &amp;&amp; openSoldTokens < MAX_PUBLIC_SOLD;
+        return now < endTime && openSoldTokens < MAX_PUBLIC_SOLD;
     }
 
     /// CONSTANT METHODS
     /// @dev Get current exchange rate
     function priceRate() public constant returns (uint) {
         // Two price tiers
-        if (earlyWhitelistBeginTime <= now &amp;&amp; now < startTime)
+        if (earlyWhitelistBeginTime <= now && now < startTime)
         {
             if (whitelisted[msg.sender].level >= 2)
             {
@@ -744,7 +744,7 @@ contract DmlContribution is Ownable {
                 return PRICE_RATE_FIRST;
             }
         }
-        if (startTime <= now &amp;&amp; now < endTime)
+        if (startTime <= now && now < endTime)
         {
             return PRICE_RATE_FIRST;
         }

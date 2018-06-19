@@ -9,7 +9,7 @@ contract GeneMixerInterface {
     /// @dev simply a boolean to indicate this is the contract we expect to be
     function isGeneMixer() external pure returns (bool);
 
-    /// @dev given genes of cutie 1 &amp; 2, return a genetic combination - may have a random factor
+    /// @dev given genes of cutie 1 & 2, return a genetic combination - may have a random factor
     /// @param genes1 genes of mom
     /// @param genes2 genes of dad
     /// @return the genes that are supposed to be passed down the child
@@ -236,21 +236,21 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
 
     /// @dev A mapping from cutie IDs to the address that owns them. All cuties have
     ///  some valid owner address, even gen0 cuties are created with a non-zero owner.
-    mapping (uint40 =&gt; address) public cutieIndexToOwner;
+    mapping (uint40 => address) public cutieIndexToOwner;
 
     // @dev A mapping from owner address to count of tokens that address owns.
     //  Used internally inside balanceOf() to resolve ownership count.
-    mapping (address =&gt; uint256) ownershipTokenCount;
+    mapping (address => uint256) ownershipTokenCount;
 
     /// @dev A mapping from CutieIDs to an address that has been approved to call
     ///  transferFrom(). A Cutie can have one approved address for transfer
     ///  at any time. A zero value means that there is no outstanding approval.
-    mapping (uint40 =&gt; address) public cutieIndexToApproved;
+    mapping (uint40 => address) public cutieIndexToApproved;
 
     /// @dev A mapping from CutieIDs to an address that has been approved to use
     ///  this Cutie for breeding via breedWith(). A Cutie can have one approved
     ///  address for breeding at any time. A zero value means that there is no outstanding approval.
-    mapping (uint40 =&gt; address) public sireAllowedToAddress;
+    mapping (uint40 => address) public sireAllowedToAddress;
 
 
     /// @dev The address of the Market contract used to sell cuties. This
@@ -267,7 +267,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
     // Modifiers to check that inputs can be safely stored with a certain
     // number of bits.
     modifier canBeStoredIn40Bits(uint256 _value) {
-        require(_value &lt;= 0xFFFFFFFFFF);
+        require(_value <= 0xFFFFFFFFFF);
         _;
     }    
 
@@ -291,7 +291,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
 
     /// @dev Checks if a given address is the current owner of a certain Cutie.
     /// @param _claimant the address we are validating against.
-    /// @param _cutieId cutie id, only valid when &gt; 0
+    /// @param _cutieId cutie id, only valid when > 0
     function _isOwner(address _claimant, uint40 _cutieId) internal view returns (bool)
     {
         return cutieIndexToOwner[_cutieId] == _claimant;
@@ -299,7 +299,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
 
     /// @dev Checks if a given address currently has transferApproval for a certain Cutie.
     /// @param _claimant the address we are confirming the cutie is approved for.
-    /// @param _cutieId cutie id, only valid when &gt; 0
+    /// @param _cutieId cutie id, only valid when > 0
     function _approvedFor(address _claimant, uint40 _cutieId) internal view returns (bool)
     {
         return cutieIndexToApproved[_cutieId] == _claimant;
@@ -360,7 +360,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
     ///  operator, or the approved address for this NFT. Throws if `_from` is
     ///  not the current owner. Throws if `_to` is the zero address. Throws if
     ///  `_tokenId` is not a valid NFT. When transfer is complete, this function
-    ///  checks if `_to` is a smart contract (code size &gt; 0). If so, it calls
+    ///  checks if `_to` is a smart contract (code size > 0). If so, it calls
     ///  `onERC721Received` on `_to` and throws if the return value is not
     ///  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`.
     /// @param _from The current owner of the NFT
@@ -451,7 +451,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         returns (uint256 cutieId)
     {
         uint40 count = 0;
-        for (uint40 i = 1; i &lt;= _totalSupply(); ++i) {
+        for (uint40 i = 1; i <= _totalSupply(); ++i) {
             if (cutieIndexToOwner[i] == _owner) {
                 if (count == _index) {
                     return i;
@@ -464,7 +464,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
     }
 
     /// @notice Enumerate valid NFTs
-    /// @dev Throws if `_index` &gt;= `totalSupply()`.
+    /// @dev Throws if `_index` >= `totalSupply()`.
     /// @param _index A counter less than `totalSupply()`
     /// @return The token identifier for the `_index`th NFT,
     ///  (sort order not specified)
@@ -477,7 +477,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
     ///  transferFrom() for all cuties, owned by owner.
     ///  Only one approved address is permitted for each account for transfer
     ///  at any time. A zero value means there is no outstanding approval.
-    mapping (address =&gt; address) public addressToApprovedAll;
+    mapping (address => address) public addressToApprovedAll;
 
     /// @notice Enable or disable approval for a third party (&quot;operator&quot;) to manage
     ///  all your asset.
@@ -505,7 +505,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         external view canBeStoredIn40Bits(_tokenId) 
         returns (address)
     {
-        require(_tokenId &lt;= _totalSupply());
+        require(_tokenId <= _totalSupply());
 
         if (cutieIndexToApproved[uint40(_tokenId)] != address(0))
         {
@@ -583,7 +583,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         uint256 newCutieId256 = cuties.push(_cutie) - 1;
 
         // Check if id can fit into 40 bits
-        require(newCutieId256 &lt;= 0xFFFFFFFFFF);
+        require(newCutieId256 <= 0xFFFFFFFFFF);
 
         uint40 newCutieId = uint40(newCutieId256);
 
@@ -719,9 +719,9 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
     }
 
 
-    mapping(address =&gt; PluginInterface) public plugins;
+    mapping(address => PluginInterface) public plugins;
     PluginInterface[] public pluginsArray;
-    mapping(uint40 =&gt; address) public usedSignes;
+    mapping(uint40 => address) public usedSignes;
     uint40 public minSignId;
 
     event GenesChanged(uint40 indexed cutieId, uint256 oldValue, uint256 newValue);
@@ -753,7 +753,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         delete plugins[_address];
 
         uint256 kindex = 0;
-        while (kindex &lt; pluginsArray.length)
+        while (kindex < pluginsArray.length)
         {
             if (address(pluginsArray[kindex]) == _address)
             {
@@ -782,7 +782,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         // If _cutieId is 0, then cutie is not used on this feature.
         require(_cutieId == 0 || _isOwner(msg.sender, _cutieId));
         require(address(plugins[_pluginAddress]) != address(0));
-        if (_cutieId &gt; 0)
+        if (_cutieId > 0)
         {
             _approve(_cutieId, _pluginAddress);
         }
@@ -1002,9 +1002,9 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         require(address(plugins[_pluginAddress]) != address(0));    
 
         require (usedSignes[_signId] == address(0));
-        require (_signId &gt;= minSignId);
+        require (_signId >= minSignId);
         // value can also be zero for free calls
-        require (_value &lt;= msg.value);
+        require (_value <= msg.value);
 
         require (isValidSignature(_pluginAddress, _signId, _cutieId, _value, _parameter, _v, _r, _s));
         
@@ -1027,7 +1027,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         public
         onlyOperator
     {
-        require (_newMinSignId &gt; minSignId);
+        require (_newMinSignId > minSignId);
         minSignId = _newMinSignId;
         emit MinSignSet(minSignId);
     }
@@ -1080,7 +1080,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
 
         BlockchainCutiesCore old = BlockchainCutiesCore(_oldAddress);
 
-        for (uint40 i = _fromIndex; i &lt;= _toIndex; i++)
+        for (uint40 i = _fromIndex; i <= _toIndex; i++)
         {
             uint256 genes;
             uint40 birthTime;
@@ -1115,7 +1115,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         MarketInterface oldSaleMarket = MarketInterface(saleAddress);
         MarketInterface oldBreedingMarket = MarketInterface(breedingAddress);
 
-        for (uint40 i = _fromIndex; i &lt;= _toIndex; i++)
+        for (uint40 i = _fromIndex; i <= _toIndex; i++)
         {
             address owner = old.ownerOf(i);
 
@@ -1150,7 +1150,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
     ///  creates an auction for it.
     function createGen0Auction(uint256 _genes, uint128 startPrice, uint128 endPrice, uint40 duration) public onlyOperator
     {
-        require(gen0CutieCreatedCount &lt; gen0Limit);
+        require(gen0CutieCreatedCount < gen0Limit);
         uint40 cutieId = _createCutie(0, 0, 0, 0, _genes, address(this), uint40(now));
         _approve(cutieId, saleMarket);
 
@@ -1167,7 +1167,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
 
     function createPromoCutie(uint256 _genes, address _owner) public onlyOperator
     {
-        require(promoCutieCreatedCount &lt; promoLimit);
+        require(promoCutieCreatedCount < promoLimit);
         if (_owner == address(0)) {
              _owner = operatorAddress;
         }
@@ -1239,7 +1239,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         require(_canMateViaMarketplace(_momId, _dadId));
         // Take breeding fee
         uint256 fee = getBreedingFee(_momId, _dadId);
-        require(msg.value &gt;= fee);
+        require(msg.value >= fee);
 
         // breeding auction will throw if the bid fails.
         breedingMarket.bid.value(msg.value - fee)(_dadId);
@@ -1308,7 +1308,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
     ///  current cooldown is finished (for dads)
     function _canBreed(Cutie _cutie) internal view returns (bool)
     {
-        return _cutie.cooldownEndTime &lt;= now;
+        return _cutie.cooldownEndTime <= now;
     }
 
     /// @notice Grants approval to another user to sire with one of your Cuties.
@@ -1333,7 +1333,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         emit CooldownEndTimeChanged(_cutieId, oldValue, _cutie.cooldownEndTime);
 
         // Increment the breeding count.
-        if (_cutie.cooldownIndex + 1 &lt; config.getCooldownIndexCount()) {
+        if (_cutie.cooldownIndex + 1 < config.getCooldownIndexCount()) {
             uint16 oldValue2 = _cutie.cooldownIndex;
             _cutie.cooldownIndex++;
             emit CooldownIndexChanged(_cutieId, oldValue2, _cutie.cooldownIndex);
@@ -1348,7 +1348,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         view
         returns (bool)
     {
-        require(_cutieId &gt; 0);
+        require(_cutieId > 0);
         Cutie storage cutie = cuties[_cutieId];
         return _canBreed(cutie);
     }
@@ -1423,11 +1423,11 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         view
         returns(bool)
     {
-        require(_momId &gt; 0);
-        require(_dadId &gt; 0);
+        require(_momId > 0);
+        require(_dadId > 0);
         Cutie storage mom = cuties[_momId];
         Cutie storage dad = cuties[_dadId];
-        return _canPairMate(mom, _momId, dad, _dadId) &amp;&amp; _isBreedingPermitted(_dadId, _momId);
+        return _canPairMate(mom, _momId, dad, _dadId) && _isBreedingPermitted(_dadId, _momId);
     }
     
     /// @dev Internal check to see if a given dad and mom are a valid mating pair for
@@ -1482,7 +1482,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         require(_isBreedingPermitted(_dadId, _momId));
 
         // Check breeding fee
-        require(getBreedingFee(_momId, _dadId) &lt;= msg.value);
+        require(getBreedingFee(_momId, _dadId) <= msg.value);
 
         // Grab a reference to the potential mom
         Cutie storage mom = cuties[_momId];
@@ -1540,7 +1540,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         return cutieId;
     }
 
-    mapping(address =&gt; uint40) isTutorialPetUsed;
+    mapping(address => uint40) isTutorialPetUsed;
 
     /// @dev Completes a breeding tutorial cutie (non existing in blockchain)
     ///  with auction by bidding. Immediately breeds with dad on auction.
@@ -1557,7 +1557,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
 
         // Take breeding fee
         uint256 fee = getBreedingFee(0, _dadId);
-        require(msg.value &gt;= fee);
+        require(msg.value >= fee);
 
         // breeding auction will throw if the bid fails.
         breedingMarket.bid.value(msg.value - fee)(_dadId);
@@ -1626,7 +1626,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
 
         saleMarket.withdrawEthFromBalance();
         breedingMarket.withdrawEthFromBalance();
-        for (uint32 i = 0; i &lt; pluginsArray.length; ++i)        
+        for (uint32 i = 0; i < pluginsArray.length; ++i)        
         {
             pluginsArray[i].withdraw();
         }
@@ -1660,8 +1660,8 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
     }
 
 /*
- * @title String &amp; slice utility library for Solidity contracts.
- * @author Nick Johnson &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9afbe8fbf9f2f4f3fedaf4f5eefef5eeb4f4ffee">[email&#160;protected]</a>&gt;
+ * @title String & slice utility library for Solidity contracts.
+ * @author Nick Johnson <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9afbe8fbf9f2f4f3fedaf4f5eefef5eeb4f4ffee">[email&#160;protected]</a>>
  *
  * @dev Functionality in this library is largely implemented using an
  *      abstraction called a &#39;slice&#39;. A slice represents a part of a string -
@@ -1718,7 +1718,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
     function memcpy(uint dest, uint src, uint len) private pure
     {
         // Copy word-length chunks while possible
-        for(; len &gt;= 32; len -= 32) {
+        for(; len >= 32; len -= 32) {
             assembly {
                 mstore(dest, mload(src))
             }
@@ -1776,7 +1776,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
 
             r = concat(toSlice(c), toSlice(r));
         }
-        while (a &gt; 0);
+        while (a > 0);
         result = r;
     }
 }

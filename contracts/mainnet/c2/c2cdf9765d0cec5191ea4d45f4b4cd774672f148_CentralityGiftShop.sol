@@ -23,13 +23,13 @@ contract SafeMath {
     }
 
     function safeSub(uint a, uint b) pure internal returns (uint) {
-        sAssert(b &lt;= a);
+        sAssert(b <= a);
         return a - b;
     }
 
     function safeAdd(uint a, uint b) pure internal returns (uint) {
         uint c = a + b;
-        sAssert(c&gt;=a &amp;&amp; c&gt;=b);
+        sAssert(c>=a && c>=b);
         return c;
     }
 
@@ -49,7 +49,7 @@ contract ArrayUtil {
         bool found = false;
         uint index = 0;
 
-        for (uint i = 0; i &lt; array.length; i++) {
+        for (uint i = 0; i < array.length; i++) {
             if (array[i] == value) {
                 found = true;
                 index = i;
@@ -73,12 +73,12 @@ contract ArrayUtil {
       internal
       returns(bytes32[])
     {
-        if (index &gt;= array.length) return;
+        if (index >= array.length) return;
 
         bytes32[] memory arrayNew = new bytes32[](array.length - 1);
 
-        for (uint i = 0; i &lt; arrayNew.length; i++) {
-            if(i != index &amp;&amp; i &lt; index){
+        for (uint i = 0; i < arrayNew.length; i++) {
+            if(i != index && i < index){
                 arrayNew[i] = array[i];
             } else {
                 arrayNew[i] = array[i+1];
@@ -109,15 +109,15 @@ contract CentralityGiftShop is SafeMath, ArrayUtil {
     }
 
     // Instance variables
-    mapping(bytes32 =&gt; Inventory) public stock;
-    mapping(bytes32 =&gt; uint) public stockPrice;
-    mapping(bytes32 =&gt; uint) public stockAvailableQuantity;
+    mapping(bytes32 => Inventory) public stock;
+    mapping(bytes32 => uint) public stockPrice;
+    mapping(bytes32 => uint) public stockAvailableQuantity;
     bytes32[] public stocks;
 
     address public owner;
     address public paymentContractAddress;
 
-    mapping(address =&gt; Order[]) orders;
+    mapping(address => Order[]) orders;
 
     // Modifier
     modifier onlyOwner() {
@@ -149,7 +149,7 @@ contract CentralityGiftShop is SafeMath, ArrayUtil {
         require(paymentContractAddress != 0x0);
 
         uint balance = ERC20(paymentContractAddress).balanceOf(this);
-        require(balance &gt; 0);
+        require(balance > 0);
 
         if (!ERC20(paymentContractAddress).transfer(msg.sender, balance)) {
             revert();
@@ -196,10 +196,10 @@ contract CentralityGiftShop is SafeMath, ArrayUtil {
         uint price = stockPrice[inventoryId];
 
         // Check if the order is sane
-        require(price &gt; 0);
-        require(quantity &gt; 0);
-        require(stockPrice[inventoryId] &gt; 0);
-        require(safeSub(stockAvailableQuantity[inventoryId], quantity) &gt;= 0);
+        require(price > 0);
+        require(quantity > 0);
+        require(stockPrice[inventoryId] > 0);
+        require(safeSub(stockAvailableQuantity[inventoryId], quantity) >= 0);
 
         //Place Order
         Inventory storage inventory = stock[inventoryId];
@@ -249,14 +249,14 @@ contract CentralityGiftShop is SafeMath, ArrayUtil {
         uint price = stockPrice[inventoryId];
 
         // Check if the order is sane
-        require(price &gt; 0);
-        require(quantity &gt; 0);
-        require(stockPrice[inventoryId] &gt; 0);
-        require(safeSub(stockAvailableQuantity[inventoryId], quantity) &gt;= 0);
+        require(price > 0);
+        require(quantity > 0);
+        require(stockPrice[inventoryId] > 0);
+        require(safeSub(stockAvailableQuantity[inventoryId], quantity) >= 0);
 
         // Check cost
         uint cost = safeMul(price, quantity);
-        require(cost &gt; 0);
+        require(cost > 0);
 
         if (!ERC20(paymentContractAddress).transferFrom(msg.sender, this, cost)) {
             revert();

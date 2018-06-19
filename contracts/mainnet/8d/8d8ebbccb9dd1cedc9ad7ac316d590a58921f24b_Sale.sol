@@ -14,20 +14,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -47,9 +47,9 @@ contract GRAD {
 
     address owner;
 
-    mapping(address =&gt; uint256) balances;
+    mapping(address => uint256) balances;
 
-    mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+    mapping (address => mapping (address => uint256)) allowed;
 
     event Approval(address indexed tokenOwner, address indexed spender, uint256 value);
 
@@ -85,7 +85,7 @@ contract GRAD {
     var _allowance = allowed[_from][msg.sender];
 
     // Check is not needed because sub(_allowance, _value) will already throw if this condition is not met
-    // require (_value &lt;= _allowance);
+    // require (_value <= _allowance);
 
     balances[_to] = balances[_to].add(_value);
     balances[_from] = balances[_from].sub(_value);
@@ -231,8 +231,8 @@ contract Sale is Ownable{
 
 
   function Sale(uint256 _startBlock, uint256 _rate, address _wallet) public {
-    require(_startBlock &gt;= block.number);
-    require(_rate &gt; 0);
+    require(_startBlock >= block.number);
+    require(_rate > 0);
     require(_wallet != 0x0);
 
     owner = msg.sender;
@@ -287,11 +287,11 @@ contract Sale is Ownable{
     // 7% over 10 eth
     // 5% over 5 eth
     // 3 over 2.5 eth
-    if (weiAmount &gt;= 1e18 * 10) {
+    if (weiAmount >= 1e18 * 10) {
       return (weiAmount.mul(7)).div(100);
-    } else if (weiAmount &gt;= 1e18 * 5) {
+    } else if (weiAmount >= 1e18 * 5) {
       return (weiAmount.mul(5)).div(100);
-    } else if (weiAmount &gt;= 1e17 * 25) {
+    } else if (weiAmount >= 1e17 * 25) {
       return (weiAmount.mul(3)).div(100);
     } else {
       return 0;
@@ -302,10 +302,10 @@ contract Sale is Ownable{
   // @return true if the transaction can buy tokens
   function validPurchase() internal constant returns (bool) {
     uint256 current = block.number;
-    bool withinPeriod = current &gt;= startBlock;
+    bool withinPeriod = current >= startBlock;
     bool withinSaleRunning = isSaleActive;
     bool nonZeroPurchase = msg.value != 0;
-    return withinPeriod &amp;&amp; nonZeroPurchase &amp;&amp; withinSaleRunning;
+    return withinPeriod && nonZeroPurchase && withinSaleRunning;
   }
 
 

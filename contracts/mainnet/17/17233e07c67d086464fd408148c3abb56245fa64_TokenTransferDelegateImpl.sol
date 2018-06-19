@@ -12,7 +12,7 @@
 */
 pragma solidity 0.4.21;
 /// @title Utility Functions for uint
-/// @author Daniel Wang - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="93f7f2fdfaf6ffd3fffcfce3e1fafdf4bdfce1f4">[email&#160;protected]</a>&gt;
+/// @author Daniel Wang - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="93f7f2fdfaf6ffd3fffcfce3e1fafdf4bdfce1f4">[email&#160;protected]</a>>
 library MathUint {
     function mul(
         uint a,
@@ -33,7 +33,7 @@ library MathUint {
         pure
         returns (uint)
     {
-        require(b &lt;= a);
+        require(b <= a);
         return a - b;
     }
     function add(
@@ -45,7 +45,7 @@ library MathUint {
         returns (uint c)
     {
         c = a + b;
-        require(c &gt;= a);
+        require(c >= a);
     }
     function tolerantSub(
         uint a,
@@ -55,7 +55,7 @@ library MathUint {
         pure
         returns (uint c)
     {
-        return (a &gt;= b) ? a - b : 0;
+        return (a >= b) ? a - b : 0;
     }
     /// @dev calculate the square of Coefficient of Variation (CV)
     /// https://en.wikipedia.org/wiki/Coefficient_of_variation
@@ -68,10 +68,10 @@ library MathUint {
         returns (uint)
     {
         uint len = arr.length;
-        require(len &gt; 1);
-        require(scale &gt; 0);
+        require(len > 1);
+        require(scale > 0);
         uint avg = 0;
-        for (uint i = 0; i &lt; len; i++) {
+        for (uint i = 0; i < len; i++) {
             avg = add(avg, arr[i]);
         }
         avg = avg / len;
@@ -81,9 +81,9 @@ library MathUint {
         uint cvs = 0;
         uint s;
         uint item;
-        for (i = 0; i &lt; len; i++) {
+        for (i = 0; i < len; i++) {
             item = arr[i];
-            s = item &gt; avg ? item - avg : avg - item;
+            s = item > avg ? item - avg : avg - item;
             cvs = add(cvs, mul(s, s));
         }
         return ((mul(mul(cvs, scale), scale) / avg) / avg) / (len - 1);
@@ -180,7 +180,7 @@ contract Claimable is Ownable {
         onlyOwner
         public
     {
-        require(newOwner != 0x0 &amp;&amp; newOwner != owner);
+        require(newOwner != 0x0 && newOwner != owner);
         pendingOwner = newOwner;
     }
     /// @dev Allows the pendingOwner address to finalize the transfer.
@@ -207,7 +207,7 @@ contract Claimable is Ownable {
 */
 /// @title ERC20 Token Interface
 /// @dev see https://github.com/ethereum/EIPs/issues/20
-/// @author Daniel Wang - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5135303f38343d113d3e3e2123383f367f3e2336">[email&#160;protected]</a>&gt;
+/// @author Daniel Wang - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5135303f38343d113d3e3e2123383f367f3e2336">[email&#160;protected]</a>>
 contract ERC20 {
     function balanceOf(
         address who
@@ -257,7 +257,7 @@ contract ERC20 {
 /// @title TokenTransferDelegate
 /// @dev Acts as a middle man to transfer ERC20 tokens on behalf of different
 /// versions of Loopring protocol to avoid ERC20 re-authorization.
-/// @author Daniel Wang - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="680c0906010d0428040707181a01060f46071a0f">[email&#160;protected]</a>&gt;.
+/// @author Daniel Wang - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="680c0906010d0428040707181a01060f46071a0f">[email&#160;protected]</a>>.
 contract TokenTransferDelegate {
     event AddressAuthorized(
         address indexed addr,
@@ -269,13 +269,13 @@ contract TokenTransferDelegate {
     );
     // The following map is used to keep trace of order fill and cancellation
     // history.
-    mapping (bytes32 =&gt; uint) public cancelledOrFilled;
+    mapping (bytes32 => uint) public cancelledOrFilled;
     // This map is used to keep trace of order&#39;s cancellation history.
-    mapping (bytes32 =&gt; uint) public cancelled;
+    mapping (bytes32 => uint) public cancelled;
     // A map from address to its cutoff timestamp.
-    mapping (address =&gt; uint) public cutoffs;
+    mapping (address => uint) public cutoffs;
     // A map from address to its trading-pair cutoff timestamp.
-    mapping (address =&gt; mapping (bytes20 =&gt; uint)) public tradingPairCutoffs;
+    mapping (address => mapping (bytes20 => uint)) public tradingPairCutoffs;
     /// @dev Add a Loopring protocol address.
     /// @param addr A loopring protocol address.
     function authorizeAddress(
@@ -338,8 +338,8 @@ contract TokenTransferDelegate {
     function kill() external;
 }
 /// @title An Implementation of TokenTransferDelegate.
-/// @author Daniel Wang - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="492d2827202c2509252626393b20272e67263b2e">[email&#160;protected]</a>&gt;.
-/// @author Kongliang Zhong - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e78c8889808b8e868980a78b888897958e8980c9889580">[email&#160;protected]</a>&gt;.
+/// @author Daniel Wang - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="492d2827202c2509252626393b20272e67263b2e">[email&#160;protected]</a>>.
+/// @author Kongliang Zhong - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e78c8889808b8e868980a78b888897958e8980c9889580">[email&#160;protected]</a>>.
 contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
     using MathUint for uint;
     bool public suspended = false;
@@ -348,7 +348,7 @@ contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
         uint32  index;
         bool    authorized;
     }
-    mapping(address =&gt; AddressInfo) public addressInfos;
+    mapping(address => AddressInfo) public addressInfos;
     address private latestAddress;
     modifier onlyAuthorized()
     {
@@ -420,7 +420,7 @@ contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
         address addr = latestAddress;
         AddressInfo memory addrInfo;
         uint count = 0;
-        while (addr != 0x0 &amp;&amp; count &lt; max) {
+        while (addr != 0x0 && count < max) {
             addrInfo = addressInfos[addr];
             if (addrInfo.index == 0) {
                 break;
@@ -441,7 +441,7 @@ contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
         notSuspended
         external
     {
-        if (value &gt; 0 &amp;&amp; from != to &amp;&amp; to != 0x0) {
+        if (value > 0 && from != to && to != 0x0) {
             require(
                 ERC20(token).transferFrom(from, to, value)
             );
@@ -460,16 +460,16 @@ contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
     {
         uint len = batch.length;
         require(len % 7 == 0);
-        require(walletSplitPercentage &gt; 0 &amp;&amp; walletSplitPercentage &lt; 100);
+        require(walletSplitPercentage > 0 && walletSplitPercentage < 100);
         ERC20 lrc = ERC20(lrcTokenAddress);
         address prevOwner = address(batch[len - 7]);
-        for (uint i = 0; i &lt; len; i += 7) {
+        for (uint i = 0; i < len; i += 7) {
             address owner = address(batch[i]);
             // Pay token to previous order, or to miner as previous order&#39;s
             // margin split or/and this order&#39;s margin split.
             ERC20 token = ERC20(address(batch[i + 1]));
             // Here batch[i + 2] has been checked not to be 0.
-            if (batch[i + 2] != 0x0 &amp;&amp; owner != prevOwner) {
+            if (batch[i + 2] != 0x0 && owner != prevOwner) {
                 require(
                     token.transferFrom(
                         owner,
@@ -480,7 +480,7 @@ contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
             }
             // Miner pays LRx fee to order owner
             uint lrcReward = uint(batch[i + 4]);
-            if (lrcReward != 0 &amp;&amp; miner != owner) {
+            if (lrcReward != 0 && miner != owner) {
                 require(
                     lrc.transferFrom(
                         miner,
@@ -534,7 +534,7 @@ contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
         }
         uint walletFee = (walletFeeRecipient == 0x0) ? 0 : fee.mul(walletSplitPercentage) / 100;
         uint minerFee = fee.sub(walletFee);
-        if (walletFee &gt; 0 &amp;&amp; walletFeeRecipient != owner) {
+        if (walletFee > 0 && walletFeeRecipient != owner) {
             require(
                 token.transferFrom(
                     owner,
@@ -543,7 +543,7 @@ contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
                 )
             );
         }
-        if (minerFee &gt; 0 &amp;&amp; feeRecipient != 0x0 &amp;&amp; feeRecipient != owner) {
+        if (minerFee > 0 && feeRecipient != 0x0 && feeRecipient != owner) {
             require(
                 token.transferFrom(
                     owner,
@@ -573,7 +573,7 @@ contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
         public
     {
         require(batch.length % 2 == 0);
-        for (uint i = 0; i &lt; batch.length / 2; i++) {
+        for (uint i = 0; i < batch.length / 2; i++) {
             cancelledOrFilled[batch[i * 2]] = cancelledOrFilled[batch[i * 2]]
                 .add(uint(batch[i * 2 + 1]));
         }
@@ -599,9 +599,9 @@ contract TokenTransferDelegateImpl is TokenTransferDelegate, Claimable {
         uint len = owners.length;
         require(len == tradingPairs.length);
         require(len == validSince.length);
-        for(uint i = 0; i &lt; len; i++) {
-            require(validSince[i] &gt; tradingPairCutoffs[owners[i]][tradingPairs[i]]);  // order trading pair is cut off
-            require(validSince[i] &gt; cutoffs[owners[i]]);                              // order is cut off
+        for(uint i = 0; i < len; i++) {
+            require(validSince[i] > tradingPairCutoffs[owners[i]][tradingPairs[i]]);  // order trading pair is cut off
+            require(validSince[i] > cutoffs[owners[i]]);                              // order is cut off
         }
     }
     function suspend()

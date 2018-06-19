@@ -15,20 +15,20 @@ library SafeMath {
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+        // assert(b > 0); // Solidity automatically throws when dividing by 0
         uint256 c = a / b;
         // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        assert(b &lt;= a);
+        assert(b <= a);
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        assert(c &gt;= a);
+        assert(c >= a);
         return c;
     }
 }
@@ -53,13 +53,13 @@ library MerkleProof {
     bytes32 proofElement;
     bytes32 computedHash = _leaf;
 
-    for (uint256 i = 32; i &lt;= _proof.length; i += 32) {
+    for (uint256 i = 32; i <= _proof.length; i += 32) {
       assembly {
         // Load the current element of the proof
         proofElement := mload(add(_proof, i))
       }
 
-      if (computedHash &lt; proofElement) {
+      if (computedHash < proofElement) {
         // Hash(current computed hash + current element of the proof)
         computedHash = keccak256(computedHash, proofElement);
       } else {
@@ -103,12 +103,12 @@ library ECRecovery {
     }
 
     // Version of signature should be 27 or 28, but 0 and 1 are also possible versions
-    if (v &lt; 27) {
+    if (v < 27) {
       v += 27;
     }
 
     // If the version is correct return the signer address
-    if (v != 27 &amp;&amp; v != 28) {
+    if (v != 27 && v != 28) {
       return (address(0));
     } else {
       return ecrecover(hash, v, r, s);
@@ -135,7 +135,7 @@ library JobLib {
      */
     function validTranscodingOptions(string _transcodingOptions) public pure returns (bool) {
         uint256 transcodingOptionsLength = bytes(_transcodingOptions).length;
-        return transcodingOptionsLength &gt; 0 &amp;&amp; transcodingOptionsLength % VIDEO_PROFILE_SIZE == 0;
+        return transcodingOptionsLength > 0 && transcodingOptionsLength % VIDEO_PROFILE_SIZE == 0;
     }
 
     /*
@@ -170,7 +170,7 @@ library JobLib {
         returns (bool)
     {
         // Segment must be in segment range
-        if (_segmentNumber &lt; _segmentRange[0] || _segmentNumber &gt; _segmentRange[1]) {
+        if (_segmentNumber < _segmentRange[0] || _segmentNumber > _segmentRange[1]) {
             return false;
         }
 

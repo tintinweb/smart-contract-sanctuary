@@ -38,7 +38,7 @@ contract Delegable is Ownable {
     */
     modifier onlyDelegate() {
         DelegateLog memory delegateLog = delegates[msg.sender];
-        require(delegateLog.started != 0 &amp;&amp; delegateLog.ended == 0);
+        require(delegateLog.started != 0 && delegateLog.ended == 0);
         _;
     }
     
@@ -52,7 +52,7 @@ contract Delegable is Ownable {
     */
     function wasDelegate(address _address, uint256 timestamp) public view returns (bool) {
         DelegateLog memory delegateLog = delegates[_address];
-        return timestamp >= delegateLog.started &amp;&amp; delegateLog.started != 0 &amp;&amp; (delegateLog.ended == 0 || timestamp < delegateLog.ended);
+        return timestamp >= delegateLog.started && delegateLog.started != 0 && (delegateLog.ended == 0 || timestamp < delegateLog.ended);
     }
 
     /**
@@ -64,7 +64,7 @@ contract Delegable is Ownable {
     */
     function isDelegate(address _address) public view returns (bool) {
         DelegateLog memory delegateLog = delegates[_address];
-        return delegateLog.started != 0 &amp;&amp; delegateLog.ended == 0;
+        return delegateLog.started != 0 && delegateLog.ended == 0;
     }
 
     /**
@@ -86,7 +86,7 @@ contract Delegable is Ownable {
     */
     function removeDelegate(address _address) public onlyOwner returns (bool) {
         DelegateLog storage delegateLog = delegates[_address];
-        require(delegateLog.started != 0 &amp;&amp; delegateLog.ended == 0);
+        require(delegateLog.started != 0 && delegateLog.ended == 0);
         delegateLog.ended = block.timestamp;
         return true;
     }
@@ -279,7 +279,7 @@ contract RipioOracle is Oracle, Delegable {
 
         uint256 expirationTime = block.timestamp - expiration;
 
-        if (cache[currency].timestamp >= timestamp &amp;&amp; cache[currency].timestamp >= expirationTime) {
+        if (cache[currency].timestamp >= timestamp && cache[currency].timestamp >= expirationTime) {
             return (cache[currency].rate, cache[currency].decimals);
         } else {
             require(timestamp >= expirationTime);

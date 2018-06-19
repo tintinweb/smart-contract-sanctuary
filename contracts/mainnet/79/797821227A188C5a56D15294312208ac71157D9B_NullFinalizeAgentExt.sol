@@ -147,7 +147,7 @@ contract Haltable is Ownable {
   }
 
   modifier stopNonOwnersInEmergency {
-    if (halted &amp;&amp; msg.sender != owner) throw;
+    if (halted && msg.sender != owner) throw;
     _;
   }
 
@@ -497,7 +497,7 @@ contract CrowdsaleExt is Haltable {
     }
 
     if(isWhiteListed) {
-      if(tokenAmount < earlyParticipantWhitelist[receiver].minCap &amp;&amp; tokenAmountOf[receiver] == 0) {
+      if(tokenAmount < earlyParticipantWhitelist[receiver].minCap && tokenAmountOf[receiver] == 0) {
         // tokenAmount < minCap for investor
         throw;
       }
@@ -509,7 +509,7 @@ contract CrowdsaleExt is Haltable {
 
       updateInheritedEarlyParticipantWhitelist(receiver, tokenAmount);
     } else {
-      if(tokenAmount < token.minCap() &amp;&amp; tokenAmountOf[receiver] == 0) {
+      if(tokenAmount < token.minCap() && tokenAmountOf[receiver] == 0) {
         throw;
       }
     }
@@ -575,7 +575,7 @@ contract CrowdsaleExt is Haltable {
 
   function canDistributeReservedTokens() public constant returns(bool) {
     CrowdsaleExt lastTierCntrct = CrowdsaleExt(getLastTier());
-    if ((lastTierCntrct.getState() == State.Success) &amp;&amp; !lastTierCntrct.halted() &amp;&amp; !lastTierCntrct.finalized() &amp;&amp; !lastTierCntrct.areReservedTokensDistributed()) return true;
+    if ((lastTierCntrct.getState() == State.Success) && !lastTierCntrct.halted() && !lastTierCntrct.finalized() && !lastTierCntrct.areReservedTokensDistributed()) return true;
     return false;
   }
 
@@ -648,7 +648,7 @@ contract CrowdsaleExt is Haltable {
 
   function updateInheritedEarlyParticipantWhitelist(address reciever, uint tokensBought) private {
     if (!isWhiteListed) throw;
-    if (tokensBought < earlyParticipantWhitelist[reciever].minCap &amp;&amp; tokenAmountOf[reciever] == 0) throw;
+    if (tokensBought < earlyParticipantWhitelist[reciever].minCap && tokenAmountOf[reciever] == 0) throw;
 
     uint8 tierPosition = getTierPosition(this);
 
@@ -663,8 +663,8 @@ contract CrowdsaleExt is Haltable {
     assert(addr != address(0));
     assert(now <= endsAt);
     assert(isTierJoined(msg.sender));
-    if (tokensBought < earlyParticipantWhitelist[addr].minCap &amp;&amp; tokenAmountOf[addr] == 0) throw;
-    //if (addr != msg.sender &amp;&amp; contractAddr != msg.sender) throw;
+    if (tokensBought < earlyParticipantWhitelist[addr].minCap && tokenAmountOf[addr] == 0) throw;
+    //if (addr != msg.sender && contractAddr != msg.sender) throw;
     uint newMaxCap = earlyParticipantWhitelist[addr].maxCap;
     newMaxCap = newMaxCap.minus(tokensBought);
     earlyParticipantWhitelist[addr] = WhiteListData({status:earlyParticipantWhitelist[addr].status, minCap:0, maxCap:newMaxCap});
@@ -840,7 +840,7 @@ contract CrowdsaleExt is Haltable {
     else if (!finalizeAgent.isSane()) return State.Preparing;
     else if (!pricingStrategy.isSane(address(this))) return State.Preparing;
     else if (block.timestamp < startsAt) return State.PreFunding;
-    else if (block.timestamp <= endsAt &amp;&amp; !isCrowdsaleFull()) return State.Funding;
+    else if (block.timestamp <= endsAt && !isCrowdsaleFull()) return State.Funding;
     else if (isMinimumGoalReached()) return State.Success;
     else return State.Failure;
   }

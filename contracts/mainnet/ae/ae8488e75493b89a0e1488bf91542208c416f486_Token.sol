@@ -416,7 +416,7 @@ contract BuzFinancialStrategy is IFinancialStrategy, Ownable{
 
         }
 
-        if (common1>0 &amp;&amp; common1<=free) {
+        if (common1>0 && common1<=free) {
     
             for (user=0; user<percent.length; user++) {
 
@@ -431,7 +431,7 @@ contract BuzFinancialStrategy is IFinancialStrategy, Ownable{
             }
         } 
 
-        if (common2>0 &amp;&amp; common1>free) {
+        if (common2>0 && common1>free) {
         
             for (user=0; user<percent.length; user++) {
                 
@@ -471,7 +471,7 @@ contract BuzFinancialStrategy is IFinancialStrategy, Ownable{
     // Call from Crowdsale:
     function getPartnerCash(uint8 _user, bool _isAdmin, address _msgsender, bool _calc, uint256 _weiTotalRaised) external onlyOwner {
 
-        require(_user<percent.length &amp;&amp; _user<wallets.length);
+        require(_user<percent.length && _user<wallets.length);
 
         if (!_isAdmin) {
             for (uint8 i=0; i<wallets.length; i++) {
@@ -612,11 +612,11 @@ contract Crowdsale is ICrowdsale{
         wallets = [
 
         // Beneficiary
-        // Receives all the money (when finalizing Round1 &amp; Round2)
+        // Receives all the money (when finalizing Round1 & Round2)
         0x55d36E21b7ee114dA69a9d79D37a894d80d8Ed09,
 
         // Accountant
-        // Receives all the tokens for non-ETH investors (when finalizing Round1 &amp; Round2)
+        // Receives all the tokens for non-ETH investors (when finalizing Round1 & Round2)
         0xaebC3c0a722A30981F8d19BDA33eFA51a89E4C6C,
 
         // Manager
@@ -645,7 +645,7 @@ contract Crowdsale is ICrowdsale{
 
     function onlyAdmin(bool forObserver) internal view {
         require(wallets[uint8(Roles.manager)] == msg.sender || wallets[uint8(Roles.beneficiary)] == msg.sender ||
-        forObserver==true &amp;&amp; wallets[uint8(Roles.observer)] == msg.sender);
+        forObserver==true && wallets[uint8(Roles.observer)] == msg.sender);
     }
 
     // Setting the current rate ETH/USD         
@@ -731,7 +731,7 @@ contract Crowdsale is ICrowdsale{
     function validPurchase() internal view returns (bool) {
 
         // The round started and did not end
-        bool withinPeriod = (now > startTime &amp;&amp; now < endTime.add(renewal));
+        bool withinPeriod = (now > startTime && now < endTime.add(renewal));
 
         // Rate is greater than or equal to the minimum
         bool nonZeroPurchase = msg.value >= minPay;
@@ -740,7 +740,7 @@ contract Crowdsale is ICrowdsale{
         bool withinCap = msg.value <= hardCap.sub(weiRaised()).add(overLimit);
 
         // round is initialized and no &quot;Pause of trading&quot; is set
-        return withinPeriod &amp;&amp; nonZeroPurchase &amp;&amp; withinCap &amp;&amp; isInitialized &amp;&amp; !isPausedCrowdsale;
+        return withinPeriod && nonZeroPurchase && withinCap && isInitialized && !isPausedCrowdsale;
     }
 
     // Check for the ability to finalize the round. Constant.
@@ -750,21 +750,21 @@ contract Crowdsale is ICrowdsale{
 
         bool capReached = weiRaised() >= hardCap;
 
-        return (timeReached || capReached) &amp;&amp; isInitialized;
+        return (timeReached || capReached) && isInitialized;
     }
 
     // Finalize. Only available to the Manager and the Beneficiary. If the round failed, then
     // anyone can call the finalization to unlock the return of funds to investors
-    // You must call a function to finalize each round (after the Round1 &amp; after the Round2)
+    // You must call a function to finalize each round (after the Round1 & after the Round2)
     // @ Do I have to use the function      yes
-    // @ When it is possible to call        after end of Round1 &amp; Round2
+    // @ When it is possible to call        after end of Round1 & Round2
     // @ When it is launched automatically  no
     // @ Who can call the function          admins or anybody (if round is failed)
     function finalize() public {
 
         require(wallets[uint8(Roles.manager)] == msg.sender || wallets[uint8(Roles.beneficiary)] == msg.sender || !goalReached());
         require(!isFinalized);
-        require(hasEnded() || ((wallets[uint8(Roles.manager)] == msg.sender || wallets[uint8(Roles.beneficiary)] == msg.sender) &amp;&amp; goalReached()));
+        require(hasEnded() || ((wallets[uint8(Roles.manager)] == msg.sender || wallets[uint8(Roles.beneficiary)] == msg.sender) && goalReached()));
 
         isFinalized = true;
         finalization();
@@ -986,7 +986,7 @@ contract Crowdsale is ICrowdsale{
 
         maxAllProfit = _maxAllProfit;
 
-        require(_valueVB.length == _percentVB.length &amp;&amp; _valueVB.length == _freezeTimeVB.length);
+        require(_valueVB.length == _percentVB.length && _valueVB.length == _freezeTimeVB.length);
         bonuses.length = _valueVB.length;
         for(uint256 i = 0; i < _valueVB.length; i++){
             bonuses[i] = Bonus(_valueVB[i],_percentVB[i],_freezeTimeVB[i]);
@@ -1044,7 +1044,7 @@ contract Crowdsale is ICrowdsale{
     // transferring the specified number of tokens to the Accountant&#39;s wallet. Available to the Manager.
     // Use only if this is provided by the script and white paper. In the normal scenario, it
     // does not call and the funds are raised normally. We recommend that you delete this
-    // function entirely, so as not to confuse the auditors. Initialize &amp; Finalize not needed.
+    // function entirely, so as not to confuse the auditors. Initialize & Finalize not needed.
     // ** QUINTILIONS **  10^18 / 1**18 / 1e18
     // @ Do I have to use the function      no, see your scenario
     // @ When it is possible to call        after Round0 and before Round2
@@ -1052,7 +1052,7 @@ contract Crowdsale is ICrowdsale{
     // @ Who can call the function          admins
     //    function fastTokenSale(uint256 _totalSupply) external {
     //      onlyAdmin(false);
-    //        require(TokenSale == TokenSaleType.round1 &amp;&amp; !isInitialized);
+    //        require(TokenSale == TokenSaleType.round1 && !isInitialized);
     //        token.mint(wallets[uint8(Roles.accountant)], _totalSupply);
     //        TokenSale = TokenSaleType.round2;
     //    }
@@ -1070,7 +1070,7 @@ contract Crowdsale is ICrowdsale{
     function tokenUnpause() external {
 
         require(wallets[uint8(Roles.manager)] == msg.sender
-        || (now > endTime.add(renewal).add(USER_UNPAUSE_TOKEN_TIMEOUT) &amp;&amp; TokenSale == TokenSaleType.round2 &amp;&amp; isFinalized &amp;&amp; goalReached()));
+        || (now > endTime.add(renewal).add(USER_UNPAUSE_TOKEN_TIMEOUT) && TokenSale == TokenSaleType.round2 && isFinalized && goalReached()));
         token.setPause(false);
     }
 
@@ -1133,9 +1133,9 @@ contract Crowdsale is ICrowdsale{
     function changeWallet(Roles _role, address _wallet) external
     {
         require(
-            (msg.sender == wallets[uint8(_role)] /*&amp;&amp; _role != Roles.observer*/)
+            (msg.sender == wallets[uint8(_role)] /*&& _role != Roles.observer*/)
             ||
-            (msg.sender == wallets[uint8(Roles.manager)] &amp;&amp; (!isInitialized || _role == Roles.observer))
+            (msg.sender == wallets[uint8(Roles.manager)] && (!isInitialized || _role == Roles.observer))
         );
 
         wallets[uint8(_role)] = _wallet;
@@ -1184,7 +1184,7 @@ contract Crowdsale is ICrowdsale{
     // @ Who can call the function          admins
     function prolongate(uint256 _duration) external {
         onlyAdmin(false);
-        require(now > startTime &amp;&amp; now < endTime.add(renewal) &amp;&amp; isInitialized);
+        require(now > startTime && now < endTime.add(renewal) && isInitialized);
         renewal = renewal.add(_duration);
         require(renewal <= ROUND_PROLONGATE);
 
@@ -1210,13 +1210,13 @@ contract Crowdsale is ICrowdsale{
     // @ Do I have to use the function      no
     // @ When it is possible to call        -
     // @ When it is launched automatically  -
-    // @ Who can call the function          beneficiary &amp; manager
+    // @ Who can call the function          beneficiary & manager
     function distructVault(bool mode) public {
         if(mode){
-            if (wallets[uint8(Roles.beneficiary)] == msg.sender &amp;&amp; (now > startTime.add(FORCED_REFUND_TIMEOUT1))) {
+            if (wallets[uint8(Roles.beneficiary)] == msg.sender && (now > startTime.add(FORCED_REFUND_TIMEOUT1))) {
                 financialStrategy.setup(wallets[uint8(Roles.beneficiary)], weiRaised(), 0, 0);
             }
-            if (wallets[uint8(Roles.manager)] == msg.sender &amp;&amp; (now > startTime.add(FORCED_REFUND_TIMEOUT2))) {
+            if (wallets[uint8(Roles.manager)] == msg.sender && (now > startTime.add(FORCED_REFUND_TIMEOUT2))) {
                 financialStrategy.setup(wallets[uint8(Roles.manager)], weiRaised(), 0, 0);
             }
         } else {
@@ -1279,10 +1279,10 @@ contract Crowdsale is ICrowdsale{
 
         require(wallets[uint8(Roles.observer)] == msg.sender || wallets[uint8(Roles.manager)] == msg.sender);
         //onlyAdmin(true);
-        bool withinPeriod = (now >= startTime &amp;&amp; now <= endTime.add(renewal));
+        bool withinPeriod = (now >= startTime && now <= endTime.add(renewal));
 
         bool withinCap = _value.add(ethWeiRaised) <= hardCap.add(overLimit);
-        require(withinPeriod &amp;&amp; withinCap &amp;&amp; isInitialized);
+        require(withinPeriod && withinCap && isInitialized);
 
         nonEthWeiRaised = _value;
         tokenReserved = _token;
@@ -1446,11 +1446,11 @@ contract Pausable is Ownable {
      */
     function setPause(bool mode) onlyOwner public {
 
-        if (!paused &amp;&amp; mode) {
+        if (!paused && mode) {
             paused = true;
             emit Pause();
         }
-        if (paused &amp;&amp; !mode) {
+        if (paused && !mode) {
             paused = false;
             emit Unpause();
         }
@@ -1499,7 +1499,7 @@ contract FreezingToken is PausableToken {
 
     function masFreezedTokens(address[] _beneficiary, uint256[] _amount, uint256[] _when) public {
         onlyAdmin();
-        require(_beneficiary.length == _amount.length &amp;&amp; _beneficiary.length == _when.length);
+        require(_beneficiary.length == _amount.length && _beneficiary.length == _when.length);
         for(uint16 i = 0; i < _beneficiary.length; i++){
             freeze storage _freeze = freezedTokens[_beneficiary[i]];
             _freeze.amount = _amount[i];

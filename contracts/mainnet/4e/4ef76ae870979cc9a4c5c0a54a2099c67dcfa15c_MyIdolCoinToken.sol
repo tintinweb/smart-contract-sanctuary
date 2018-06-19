@@ -22,7 +22,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -32,7 +32,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
@@ -41,7 +41,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -91,19 +91,19 @@ contract Ownable {
  */
 contract Account is Ownable {
 
-  mapping (address =&gt; bool) public frozenAccounts;
+  mapping (address => bool) public frozenAccounts;
   
   event FrozenFunds(address indexed target, bool frozen);
   
  
   function freezeAccounts(address[] targets, bool isFrozen) onlyOwner public {
-    require(targets.length &gt; 0);
+    require(targets.length > 0);
 
-    for (uint i = 0; i &lt; targets.length; i++) {
+    for (uint i = 0; i < targets.length; i++) {
       require(targets[i] != 0x0);
     }
 
-    for (i = 0; i &lt; targets.length; i++) {
+    for (i = 0; i < targets.length; i++) {
       frozenAccounts[targets[i]] = isFrozen;
       FrozenFunds(targets[i], isFrozen);
     }
@@ -125,7 +125,7 @@ contract Platform is Ownable{
   uint256 public changeTotalAmount;
   uint256 public numAccountsInfo;
   bool public changePlatformFlag;
-  mapping (uint256 =&gt; accountInfo) public AccountInfoList;
+  mapping (uint256 => accountInfo) public AccountInfoList;
 
   /**
    * @dev Flag for platform change processing. Flag state change.
@@ -201,7 +201,7 @@ contract ERC20 is ERC20Basic {
 contract BasicToken is ERC20Basic, Platform, Account {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   uint256 totalSupply_;
 
@@ -219,7 +219,7 @@ contract BasicToken is ERC20Basic, Platform, Account {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
     require(frozenAccounts[msg.sender] == false);
     require(frozenAccounts[_to] == false);
     
@@ -251,7 +251,7 @@ contract BasicToken is ERC20Basic, Platform, Account {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
 
 
   /**
@@ -262,8 +262,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
     require(frozenAccounts[_from] == false);
     require(frozenAccounts[_to] == false);
     
@@ -331,7 +331,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -350,12 +350,12 @@ contract Airdrop is Ownable, BasicToken{
   using SafeMath for uint256;
   
   function distributeAmount(address[] addresses, uint256 amount) onlyOwner public returns (bool) {
-    require(amount &gt; 0 &amp;&amp; addresses.length &gt; 0);
+    require(amount > 0 && addresses.length > 0);
 
     uint256 totalAmount = amount.mul(addresses.length);
-    require(balances[msg.sender] &gt;= totalAmount);
+    require(balances[msg.sender] >= totalAmount);
     
-    for (uint i = 0; i &lt; addresses.length; i++) {
+    for (uint i = 0; i < addresses.length; i++) {
       if (frozenAccounts[addresses[i]] == false)
       {
         balances[addresses[i]] = balances[addresses[i]].add(amount);
@@ -380,8 +380,8 @@ contract BurnableToken is BasicToken {
    * @param _value The amount of token to be burned.
    */
   function burn(uint256 _value) public {
-    require(_value &lt;= balances[msg.sender]);
-    // no need to require value &lt;= totalSupply, since that would imply the
+    require(_value <= balances[msg.sender]);
+    // no need to require value <= totalSupply, since that would imply the
     // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
     address burner = msg.sender;

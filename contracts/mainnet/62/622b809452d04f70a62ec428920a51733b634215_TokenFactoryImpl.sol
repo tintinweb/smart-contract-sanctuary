@@ -32,14 +32,14 @@ library StringUtil {
             result := mload(add(str, 32))
         }
     }
-    /// check length >= min &amp;&amp; <= max
+    /// check length >= min && <= max
     function checkStringLength(string name, uint min, uint max)
         internal
         pure
         returns (bool)
     {
         bytes memory temp = bytes(name);
-        return temp.length >= min &amp;&amp; temp.length <= max;
+        return temp.length >= min && temp.length <= max;
     }
 }
 /*
@@ -433,19 +433,19 @@ contract ERC20Token is ERC20 {
         pure
     {
         bytes memory s = bytes(_symbol);
-        require(s.length >= 3 &amp;&amp; s.length <= 8);
+        require(s.length >= 3 && s.length <= 8);
         for (uint i = 0; i < s.length; i++) {
             require(
                 s[i] == 0x2E ||  // &quot;.&quot;
                 s[i] == 0x5F ||  // &quot;_&quot;
-                s[i] >= 0x41 &amp;&amp; s[i] <= 0x5A ||  // [A-Z]
-                s[i] >= 0x61 &amp;&amp; s[i] <= 0x7A     // [a-z]
+                s[i] >= 0x41 && s[i] <= 0x5A ||  // [A-Z]
+                s[i] >= 0x61 && s[i] <= 0x7A     // [a-z]
             );
         }
         bytes memory n = bytes(_name);
-        require(n.length >= s.length &amp;&amp; n.length <= 128);
+        require(n.length >= s.length && n.length <= 128);
         for (i = 0; i < n.length; i++) {
-            require(n[i] >= 0x20 &amp;&amp; n[i] <= 0x7E);
+            require(n[i] >= 0x20 && n[i] <= 0x7E);
         }
     }
 }
@@ -577,7 +577,7 @@ contract TokenFactoryImpl is TokenFactory {
         )
         public
     {
-        require(tokenRegistry == 0x0 &amp;&amp; _tokenRegistry.isContract());
+        require(tokenRegistry == 0x0 && _tokenRegistry.isContract());
         tokenRegistry = _tokenRegistry;
     }
     function createToken(

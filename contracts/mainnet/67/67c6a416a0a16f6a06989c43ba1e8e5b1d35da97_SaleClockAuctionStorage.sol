@@ -72,7 +72,7 @@ contract ClockAuctionStorage is StorageBase {
     }
 
     // Map from token ID to their corresponding auction.
-    mapping (uint256 =&gt; Auction) tokenIdToAuction;
+    mapping (uint256 => Auction) tokenIdToAuction;
 
     function addAuction(
         uint256 _tokenId,
@@ -120,7 +120,7 @@ contract ClockAuctionStorage is StorageBase {
     }
 
     function isOnAuction(uint256 _tokenId) external view returns (bool) {
-        return (tokenIdToAuction[_tokenId].startedAt &gt; 0);
+        return (tokenIdToAuction[_tokenId].startedAt > 0);
     }
 
     function getSeller(uint256 _tokenId) external view returns (address) {
@@ -146,7 +146,7 @@ contract SaleClockAuctionStorage is ClockAuctionStorage {
     uint256 public systemOnSaleCount;
 
     // map of on sale token ids from system
-    mapping (uint256 =&gt; bool) systemOnSaleTokens;
+    mapping (uint256 => bool) systemOnSaleTokens;
 
     function removeAuction(uint256 _tokenId) public onlyOwner {
         // first remove auction from state variable
@@ -156,7 +156,7 @@ contract SaleClockAuctionStorage is ClockAuctionStorage {
         if (systemOnSaleTokens[_tokenId]) {
             delete systemOnSaleTokens[_tokenId];
             
-            if (systemOnSaleCount &gt; 0) {
+            if (systemOnSaleCount > 0) {
                 systemOnSaleCount--;
             }
         }
@@ -178,8 +178,8 @@ contract SaleClockAuctionStorage is ClockAuctionStorage {
         if (totalSoldCount == 0) return 0;
         
         uint256 sum = 0;
-        uint256 len = (totalSoldCount &lt; 3 ? totalSoldCount : 3);
-        for (uint256 i = 0; i &lt; len; i++) {
+        uint256 len = (totalSoldCount < 3 ? totalSoldCount : 3);
+        for (uint256 i = 0; i < len; i++) {
             sum += lastSoldPrices[i];
         }
         return sum / len;

@@ -75,20 +75,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -168,9 +168,9 @@ contract PlayHallToken is ERC223, Contactable {
 
     bool public isActivated = false;
 
-    mapping (address =&gt; uint) balances;
-    mapping (address =&gt; mapping (address =&gt; uint)) internal allowed;
-    mapping (address =&gt; bool) public freezedList;
+    mapping (address => uint) balances;
+    mapping (address => mapping (address => uint)) internal allowed;
+    mapping (address => bool) public freezedList;
     
     // address, who is allowed to issue new tokens (presale and sale contracts)
     address public minter;
@@ -217,7 +217,7 @@ contract PlayHallToken is ERC223, Contactable {
     */
     function transfer(address _to, uint _value, bytes _data) public whenActivated returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[msg.sender]);
+        require(_value <= balances[msg.sender]);
         require(!freezedList[msg.sender]);
 
         // SafeMath.sub will throw if there is not enough balance.
@@ -263,8 +263,8 @@ contract PlayHallToken is ERC223, Contactable {
      */
     function transferFrom(address _from, address _to, uint _value, bytes _data) public whenActivated returns (bool) {
         require(_to != address(0));
-        require(_value &lt;= balances[_from]);
-        require(_value &lt;= allowed[_from][msg.sender]);
+        require(_value <= balances[_from]);
+        require(_value <= allowed[_from][msg.sender]);
         require(!freezedList[_from]);
 
         balances[_from] = balances[_from].sub(_value);
@@ -336,7 +336,7 @@ contract PlayHallToken is ERC223, Contactable {
      */
     function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
         uint oldValue = allowed[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowed[msg.sender][_spender] = 0;
         } else {
             allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -401,7 +401,7 @@ contract PlayHallToken is ERC223, Contactable {
               //retrieve the size of the code on target address, this needs assembly
               length := extcodesize(_addr)
         }
-        return (length&gt;0);
+        return (length>0);
     }
 }
 
@@ -494,13 +494,13 @@ contract SaleBase is Pausable, Contactable {
     uint public weiRefunded;
 
     // how much ETH each address has bought to this crowdsale
-    mapping (address =&gt; uint) public boughtAmountOf;
+    mapping (address => uint) public boughtAmountOf;
 
     // whether a buyer already bought some tokens
-    mapping (address =&gt; bool) public isBuyer;
+    mapping (address => bool) public isBuyer;
 
     // whether a buyer bought tokens through other currencies
-    mapping (address =&gt; bool) public isExternalBuyer;
+    mapping (address => bool) public isExternalBuyer;
 
     address public admin;
 
@@ -534,12 +534,12 @@ contract SaleBase is Pausable, Contactable {
         address _admin
     ) public
     {
-        require(_startTime &gt;= now);
-        require(_endTime &gt;= _startTime);
+        require(_startTime >= now);
+        require(_endTime >= _startTime);
         require(_pricingStrategy.isPricingStrategy());
         require(address(_token) != 0x0);
         require(_wallet != 0x0);
-        require(_weiMaximumGoal &gt; 0);
+        require(_weiMaximumGoal > 0);
         require(_admin != 0x0);
 
         startTime = _startTime;
@@ -569,7 +569,7 @@ contract SaleBase is Pausable, Contactable {
         uint weiAmount = msg.value;
 
         require(beneficiary != 0x0);
-        require(weiAmount &gt;= weiMinimumAmount);
+        require(weiAmount >= weiMinimumAmount);
         require(validPurchase(msg.value));
     
         // calculate token amount to be created
@@ -599,16 +599,16 @@ contract SaleBase is Pausable, Contactable {
 
     // return true if the transaction can buy tokens
     function validPurchase(uint weiAmount) internal constant returns (bool) {
-        bool withinPeriod = now &gt;= startTime &amp;&amp; now &lt;= endTime;
-        bool withinCap = weiRaised.add(weiAmount) &lt;= weiMaximumGoal;
+        bool withinPeriod = now >= startTime && now <= endTime;
+        bool withinCap = weiRaised.add(weiAmount) <= weiMaximumGoal;
 
-        return withinPeriod &amp;&amp; withinCap;
+        return withinPeriod && withinCap;
     }
 
     // return true if crowdsale event has ended
     function hasEnded() public constant returns (bool) {
-        bool capReached = weiRaised &gt;= weiMaximumGoal;
-        bool afterEndTime = now &gt; endTime;
+        bool capReached = weiRaised >= weiMaximumGoal;
+        bool afterEndTime = now > endTime;
         
         return capReached || afterEndTime;
     }
@@ -620,7 +620,7 @@ contract SaleBase is Pausable, Contactable {
 
     // return true if the crowdsale has raised enough money to be a successful.
     function isMinimumGoalReached() public constant returns (bool) {
-        return weiRaised &gt;= weiMinimumGoal;
+        return weiRaised >= weiMinimumGoal;
     }
     
     // allows to update tokens rate for owner
@@ -636,7 +636,7 @@ contract SaleBase is Pausable, Contactable {
     */
     function loadRefund() external payable {
         require(msg.sender == wallet);
-        require(msg.value &gt; 0);
+        require(msg.value > 0);
         require(!isMinimumGoalReached());
         
         loadedRefund = loadedRefund.add(msg.value);
@@ -651,10 +651,10 @@ contract SaleBase is Pausable, Contactable {
     * and not through this contract.
     */
     function refund() external {
-        require(!isMinimumGoalReached() &amp;&amp; loadedRefund &gt; 0);
+        require(!isMinimumGoalReached() && loadedRefund > 0);
         require(!isExternalBuyer[msg.sender]);
         uint weiValue = boughtAmountOf[msg.sender];
-        require(weiValue &gt; 0);
+        require(weiValue > 0);
         
         boughtAmountOf[msg.sender] = 0;
         weiRefunded = weiRefunded.add(weiValue);
@@ -673,7 +673,7 @@ contract SaleBase is Pausable, Contactable {
         require(beneficiaries.length == tokenAmounts.length);
         require(tokenAmounts.length == weiAmounts.length);
 
-        for (uint i = 0; i &lt; beneficiaries.length; i++) {
+        for (uint i = 0; i < beneficiaries.length; i++) {
             registerPayment(beneficiaries[i], tokenAmounts[i], weiAmounts[i]);
         }
     }

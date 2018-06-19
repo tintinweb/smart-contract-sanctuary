@@ -21,12 +21,12 @@ contract SafeMath {
 
     function safeAdd(uint256 x, uint256 y) internal returns(uint256) {
       uint256 z = x + y;
-      assert((z &gt;= x) &amp;&amp; (z &gt;= y));
+      assert((z >= x) && (z >= y));
       return z;
     }
 
     function safeSubtract(uint256 x, uint256 y) internal returns(uint256) {
-      assert(x &gt;= y);
+      assert(x >= y);
       uint256 z = x - y;
       return z;
     }
@@ -45,13 +45,13 @@ contract StandardToken is ERC20, SafeMath {
    * @dev Fix for the ERC20 short address attack.
    */
   modifier onlyPayloadSize(uint size) {
-     require(msg.data.length &gt;= size + 4) ;
+     require(msg.data.length >= size + 4) ;
      _;
   }
 
 
-  mapping(address =&gt; uint) balances;
-  mapping (address =&gt; mapping (address =&gt; uint)) allowed;
+  mapping(address => uint) balances;
+  mapping (address => mapping (address => uint)) allowed;
 
   function transfer(address _to, uint _value) onlyPayloadSize(2 * 32)  returns (bool success){
     balances[msg.sender] = safeSubtract(balances[msg.sender], _value);
@@ -64,7 +64,7 @@ contract StandardToken is ERC20, SafeMath {
     var _allowance = allowed[_from][msg.sender];
 
     // Check is not needed because safeSub(_allowance, _value) will already throw if this condition is not met
-    // if (_value &gt; _allowance) throw;
+    // if (_value > _allowance) throw;
 
     balances[_to] = safeAdd(balances[_to], _value);
     balances[_from] = safeSubtract(balances[_from], _value);
@@ -208,7 +208,7 @@ contract IndorseToken is SafeMath, StandardToken, Pausable {
 }
 
 contract INDInflationVesting {
-  mapping (address =&gt; uint256) public allocations;
+  mapping (address => uint256) public allocations;
   uint256 public unlockDate;
   uint256 public entitled;
   address public IND = 0xf8e386EDa857484f5a12e4B5DAa9984E06E73705;
@@ -221,7 +221,7 @@ contract INDInflationVesting {
   }
 
   function unlock() external {
-    require (now &gt; unlockDate);
+    require (now > unlockDate);
     uint256 entitled = allocations[msg.sender];
     allocations[msg.sender] = 0;
     require(IndorseToken(IND).transfer(msg.sender, entitled * exponent));

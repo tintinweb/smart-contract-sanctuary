@@ -71,17 +71,17 @@ library DateTime {
                 secondsAccountedFor += YEAR_IN_SECONDS * (dt.year - ORIGIN_YEAR - buf);
                 // Month
                 uint secondsInMonth;
-                for (i = 1; i &lt;= 12; i++) {
+                for (i = 1; i <= 12; i++) {
                         secondsInMonth = DAY_IN_SECONDS * getDaysInMonth(i, dt.year);
-                        if (secondsInMonth + secondsAccountedFor &gt; timestamp) {
+                        if (secondsInMonth + secondsAccountedFor > timestamp) {
                                 dt.month = i;
                                 break;
                         }
                         secondsAccountedFor += secondsInMonth;
                 }
                 // Day
-                for (i = 1; i &lt;= getDaysInMonth(dt.month, dt.year); i++) {
-                        if (DAY_IN_SECONDS + secondsAccountedFor &gt; timestamp) {
+                for (i = 1; i <= getDaysInMonth(dt.month, dt.year); i++) {
+                        if (DAY_IN_SECONDS + secondsAccountedFor > timestamp) {
                                 dt.day = i;
                                 break;
                         }
@@ -105,7 +105,7 @@ library DateTime {
                 numLeapYears = leapYearsBefore(year) - leapYearsBefore(ORIGIN_YEAR);
                 secondsAccountedFor += LEAP_YEAR_IN_SECONDS * numLeapYears;
                 secondsAccountedFor += YEAR_IN_SECONDS * (year - ORIGIN_YEAR - numLeapYears);
-                while (secondsAccountedFor &gt; timestamp) {
+                while (secondsAccountedFor > timestamp) {
                         if (isLeapYear(uint16(year - 1))) {
                                 secondsAccountedFor -= LEAP_YEAR_IN_SECONDS;
                         }
@@ -137,7 +137,7 @@ library DateTime {
         function toTimestamp(uint16 year, uint8 month, uint8 day, uint8 hour, uint8 minute, uint8 second) internal pure returns (uint timestamp) {
                 uint16 i;
                 // Year
-                for (i = ORIGIN_YEAR; i &lt; year; i++) {
+                for (i = ORIGIN_YEAR; i < year; i++) {
                         if (isLeapYear(i)) {
                                 timestamp += LEAP_YEAR_IN_SECONDS;
                         }
@@ -164,7 +164,7 @@ library DateTime {
                 monthDayCounts[9] = 31;
                 monthDayCounts[10] = 30;
                 monthDayCounts[11] = 31;
-                for (i = 1; i &lt; month; i++) {
+                for (i = 1; i < month; i++) {
                         timestamp += DAY_IN_SECONDS * monthDayCounts[i - 1];
                 }
                 // Day
@@ -260,7 +260,7 @@ library SafeMath {
   * @dev Integer division of two numbers, truncating the quotient.
   */
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     // uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return a / b;
@@ -269,7 +269,7 @@ library SafeMath {
   * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
   */
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
   /**
@@ -277,7 +277,7 @@ library SafeMath {
   */
   function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
     c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -287,7 +287,7 @@ library SafeMath {
  */
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
   uint256 totalSupply_;
   /**
   * @dev total number of tokens in existence
@@ -302,7 +302,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[msg.sender]);
+    require(_value <= balances[msg.sender]);
     balances[msg.sender] = balances[msg.sender].sub(_value);
     balances[_to] = balances[_to].add(_value);
     emit Transfer(msg.sender, _to, _value);
@@ -335,7 +335,7 @@ contract ERC20 is ERC20Basic {
  * @dev Based on code by FirstBlood: https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol
  */
 contract StandardToken is ERC20, BasicToken {
-  mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+  mapping (address => mapping (address => uint256)) internal allowed;
   /**
    * @dev Transfer tokens from one address to another
    * @param _from address The address which you want to send tokens from
@@ -344,8 +344,8 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
-    require(_value &lt;= balances[_from]);
-    require(_value &lt;= allowed[_from][msg.sender]);
+    require(_value <= balances[_from]);
+    require(_value <= allowed[_from][msg.sender]);
     balances[_from] = balances[_from].sub(_value);
     balances[_to] = balances[_to].add(_value);
     allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
@@ -403,7 +403,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool) {
     uint oldValue = allowed[msg.sender][_spender];
-    if (_subtractedValue &gt; oldValue) {
+    if (_subtractedValue > oldValue) {
       allowed[msg.sender][_spender] = 0;
     } else {
       allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -414,7 +414,7 @@ contract StandardToken is ERC20, BasicToken {
 }
 /**
  * @title Helps contracts guard agains reentrancy attacks.
- * @author Remco Bloemen &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="54263139373b1466">[email&#160;protected]</a>π.com&gt;
+ * @author Remco Bloemen <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="54263139373b1466">[email&#160;protected]</a>π.com>
  * @notice If you mark a function `nonReentrant`, you should also
  * mark it `external`.
  */
@@ -449,8 +449,8 @@ contract StandardBurnableToken is StandardToken {
      * @param _value The amount of token to be burned.
      */
     function burn(uint256 _value) public returns (bool) {
-        require(_value &lt;= balances[msg.sender]);
-        // no need to require value &lt;= totalSupply, since that would imply the
+        require(_value <= balances[msg.sender]);
+        // no need to require value <= totalSupply, since that would imply the
         // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
         address burner = msg.sender;
         balances[burner] = balances[burner].sub(_value);
@@ -480,7 +480,7 @@ contract Frozenable is Operational, StandardBurnableToken, ReentrancyGuard {
         uint256 unfreezeIndex;
     }
     uint256 public frozenBalance;
-    mapping (uint256 =&gt; FrozenRecord) public frozenRecords;
+    mapping (uint256 => FrozenRecord) public frozenRecords;
     uint256 mulDecimals = 100000000; // match decimals
     event SystemFreeze(address indexed owner, uint256 value, uint256 unfreezeIndex);
     event Unfreeze(address indexed owner, uint256 value, uint256 unfreezeTime);
@@ -496,7 +496,7 @@ contract Frozenable is Operational, StandardBurnableToken, ReentrancyGuard {
     // unfreeze frozen amount
     // everyone can call this function to unfreeze balance
     function unfreeze(uint256 timestamp) public returns (uint256 unfreezeAmount) {
-        require(timestamp &lt;= block.timestamp);
+        require(timestamp <= block.timestamp);
         uint256 unfreezeIndex = uint256(timestamp.parseTimestamp().year) * 10000 + uint256(timestamp.parseTimestamp().month) * 100 + uint256(timestamp.parseTimestamp().day);
         frozenBalance = frozenBalance.sub(frozenRecords[unfreezeIndex].value);
         balances[owner] = balances[owner].add(frozenRecords[unfreezeIndex].value);
@@ -517,7 +517,7 @@ contract Releaseable is Frozenable {
         uint256 amount; // release amount
         uint256 releaseIndex; // release time
     }
-    mapping (uint256 =&gt; ReleaseRecord) public releaseRecords;
+    mapping (uint256 => ReleaseRecord) public releaseRecords;
     function Releaseable(
                     address _operator, uint256 _initialSupply
                 ) Frozenable(_operator) public {
@@ -527,11 +527,11 @@ contract Releaseable is Frozenable {
         totalSupply_ = mulDecimals.mul(369280000);
     }
     function release(uint256 timestamp, uint256 sysAmount) public onlyOperator returns(uint256 _actualRelease) {
-        require(timestamp &gt;= createTime &amp;&amp; timestamp &lt;= block.timestamp);
+        require(timestamp >= createTime && timestamp <= block.timestamp);
         require(!checkIsReleaseRecordExist(timestamp));
         updateReleaseAmount(timestamp);
-        require(sysAmount &lt;= releaseAmountPerDay.mul(4).div(5));
-        require(totalSupply_ &gt;= releasedSupply.add(releaseAmountPerDay));
+        require(sysAmount <= releaseAmountPerDay.mul(4).div(5));
+        require(totalSupply_ >= releasedSupply.add(releaseAmountPerDay));
         balances[owner] = balances[owner].add(releaseAmountPerDay);
         releasedSupply = releasedSupply.add(releaseAmountPerDay);
         uint256 _releaseIndex = uint256(timestamp.parseTimestamp().year) * 10000 + uint256(timestamp.parseTimestamp().month) * 100 + uint256(timestamp.parseTimestamp().day);
@@ -556,10 +556,10 @@ contract Releaseable is Frozenable {
     function updateReleaseAmount(uint256 timestamp) internal {
         uint256 timeElapse = timestamp.sub(createTime);
         uint256 cycles = timeElapse.div(180 days);
-        if (cycles &gt; 0) {
-            if (cycles &lt;= 10) {
+        if (cycles > 0) {
+            if (cycles <= 10) {
                 releaseAmountPerDay = standardReleaseAmount;
-                for (uint index = 0; index &lt; cycles; index++) {
+                for (uint index = 0; index < cycles; index++) {
                     releaseAmountPerDay = releaseAmountPerDay.div(2);
                 }
             } else {

@@ -346,7 +346,7 @@ contract CYC is StandardToken, BurnableToken, Ownable {
 
     /* Batch token transfer. Used by contract creator to distribute initial tokens to holders */
     function batchTransfer(address[] _recipients, uint[] _values) onlyOwner public returns (bool) {
-        require( _recipients.length > 0 &amp;&amp; _recipients.length == _values.length);
+        require( _recipients.length > 0 && _recipients.length == _values.length);
 
         uint total = 0;
         for(uint i = 0; i < _values.length; i++){

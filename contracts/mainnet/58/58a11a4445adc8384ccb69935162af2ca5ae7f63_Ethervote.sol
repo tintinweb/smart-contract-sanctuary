@@ -29,7 +29,7 @@ contract Ethervote {
         bool hasBetBefore;
     }
     
-    mapping(address =&gt; Player) players;
+    mapping(address => Player) players;
     
     
     constructor() public {
@@ -38,7 +38,7 @@ contract Ethervote {
     
     function bet(bool bettingLeft) public payable {
         
-        require(block.number &lt; expiryBlock);
+        require(block.number < expiryBlock);
         
         if(!players[msg.sender].hasBetBefore){
             playerAddresses.push(msg.sender);
@@ -48,9 +48,9 @@ contract Ethervote {
             uint amountSent = msg.value;
             
             if(bettingLeft){
-                require(amountSent &gt;= leftSharePrice);
+                require(amountSent >= leftSharePrice);
                 
-                while(amountSent &gt;= leftSharePrice){
+                while(amountSent >= leftSharePrice){
                     players[msg.sender].leftShares++;
                     leftVotes++;
                     thePot += leftSharePrice;
@@ -58,27 +58,27 @@ contract Ethervote {
                     
                     if((leftVotes % 15) == 0){//if the number of left votes is a multiple of 15
                         leftSharePrice += leftSharePriceRateOfIncrease;
-                        if(leftVotes &lt;= 45){//increase the rate at first, then decrease it to zero.
+                        if(leftVotes <= 45){//increase the rate at first, then decrease it to zero.
                             leftSharePriceRateOfIncrease += 1 finney;
-                        }else if(leftVotes &gt; 45){
-                            if(leftSharePriceRateOfIncrease &gt; 1 finney){
+                        }else if(leftVotes > 45){
+                            if(leftSharePriceRateOfIncrease > 1 finney){
                                 leftSharePriceRateOfIncrease -= 1 finney;
-                            }else if(leftSharePriceRateOfIncrease &lt;= 1 finney){
+                            }else if(leftSharePriceRateOfIncrease <= 1 finney){
                                 leftSharePriceRateOfIncrease = 0 finney;
                             }
                         }
                     }
                     
                 }
-                if(amountSent &gt; 0){
+                if(amountSent > 0){
                     players[msg.sender].excessEther += amountSent;
                 }
                 
             }
             else{//betting for the right option
-                require(amountSent &gt;= rightSharePrice);
+                require(amountSent >= rightSharePrice);
                 
-                while(amountSent &gt;= rightSharePrice){
+                while(amountSent >= rightSharePrice){
                     players[msg.sender].rightShares++;
                     rightVotes++;
                     thePot += rightSharePrice;
@@ -86,19 +86,19 @@ contract Ethervote {
                     
                     if((rightVotes % 15) == 0){//if the number of right votes is a multiple of 15
                         rightSharePrice += rightSharePriceRateOfIncrease;
-                        if(rightVotes &lt;= 45){//increase the rate at first, then decrease it to zero.
+                        if(rightVotes <= 45){//increase the rate at first, then decrease it to zero.
                             rightSharePriceRateOfIncrease += 1 finney;
-                        }else if(rightVotes &gt; 45){
-                            if(rightSharePriceRateOfIncrease &gt; 1 finney){
+                        }else if(rightVotes > 45){
+                            if(rightSharePriceRateOfIncrease > 1 finney){
                                 rightSharePriceRateOfIncrease -= 1 finney;
-                            }else if(rightSharePriceRateOfIncrease &lt;= 1 finney){
+                            }else if(rightSharePriceRateOfIncrease <= 1 finney){
                                 rightSharePriceRateOfIncrease = 0 finney;
                             }
                         }
                     }
                     
                 }
-                if(amountSent &gt; 0){
+                if(amountSent > 0){
                     if(msg.sender.send(amountSent) == false)players[msg.sender].excessEther += amountSent;
                 }
             }
@@ -106,7 +106,7 @@ contract Ethervote {
     
     
     function settleBet() public {
-        require(block.number &gt;= expiryBlock);
+        require(block.number >= expiryBlock);
         require(betIsSettled == false);
 
         uint winRewardOne = thePot * 2;
@@ -120,20 +120,20 @@ contract Ethervote {
         uint winReward = thePot * 17;
         winReward = winReward / 20;
         
-        if(leftVotes &gt; rightVotes){
+        if(leftVotes > rightVotes){
             winReward = winReward / leftVotes;
-            for(uint i=0;i&lt;playerAddresses.length;i++){
-                if(players[playerAddresses[i]].leftShares &gt; 0){
+            for(uint i=0;i<playerAddresses.length;i++){
+                if(players[playerAddresses[i]].leftShares > 0){
                     if(playerAddresses[i].send(players[playerAddresses[i]].leftShares * winReward) == false){
                         //if the send fails
                         players[playerAddresses[i]].excessEther = players[playerAddresses[i]].leftShares * winReward;
                     }
                 }
             }
-        }else if(rightVotes &gt; leftVotes){
+        }else if(rightVotes > leftVotes){
             winReward = winReward / rightVotes;
-            for(uint u=0;u&lt;playerAddresses.length;u++){
-                if(players[playerAddresses[u]].rightShares &gt; 0){
+            for(uint u=0;u<playerAddresses.length;u++){
+                if(players[playerAddresses[u]].rightShares > 0){
                     if(playerAddresses[u].send(players[playerAddresses[u]].rightShares * winReward) == false){
                         //if the send fails
                         players[playerAddresses[u]].excessEther = players[playerAddresses[u]].rightShares * winReward;
@@ -142,8 +142,8 @@ contract Ethervote {
             }
         }else if(rightVotes == leftVotes){//split it in a tie
             uint rightWinReward = (winReward / rightVotes) / 2;
-            for(uint q=0;q&lt;playerAddresses.length;q++){
-                if(players[playerAddresses[q]].rightShares &gt; 0){
+            for(uint q=0;q<playerAddresses.length;q++){
+                if(players[playerAddresses[q]].rightShares > 0){
                     if(playerAddresses[q].send(players[playerAddresses[q]].rightShares * rightWinReward) == false){
                         //if the send fails
                         players[playerAddresses[q]].excessEther = players[playerAddresses[q]].rightShares * rightWinReward;
@@ -152,8 +152,8 @@ contract Ethervote {
             }
 
             uint leftWinReward = winReward / leftVotes;
-            for(uint l=0;l&lt;playerAddresses.length;l++){
-                if(players[playerAddresses[l]].leftShares &gt; 0){
+            for(uint l=0;l<playerAddresses.length;l++){
+                if(players[playerAddresses[l]].leftShares > 0){
                     if(playerAddresses[l].send(players[playerAddresses[l]].leftShares * leftWinReward) == false){
                         //if the send fails
                         players[playerAddresses[l]].excessEther = players[playerAddresses[l]].leftShares * leftWinReward;
@@ -168,7 +168,7 @@ contract Ethervote {
     
     
     function retrieveExcessEther() public {
-        assert(players[msg.sender].excessEther &gt; 0);
+        assert(players[msg.sender].excessEther > 0);
         if(msg.sender.send(players[msg.sender].excessEther)){
             players[msg.sender].excessEther = 0;
         }

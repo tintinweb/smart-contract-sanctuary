@@ -15,20 +15,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal constant returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal constant returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -36,7 +36,7 @@ library SafeMath {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -70,7 +70,7 @@ contract ERC20 is ERC20Basic {
 
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+  mapping (address => mapping (address => uint256)) allowed;
 
 
   /**
@@ -83,7 +83,7 @@ contract StandardToken is ERC20, BasicToken {
     var _allowance = allowed[_from][msg.sender];
 
     // Check is not needed because sub(_allowance, _value) will already throw if this condition is not met
-    // require (_value &lt;= _allowance);
+    // require (_value <= _allowance);
 
     balances[_to] = balances[_to].add(_value);
     balances[_from] = balances[_from].sub(_value);
@@ -202,7 +202,7 @@ contract VanilCoin is MintableToken {
   	uint public releaseTime = 1507420800;
   
 	modifier canTransfer(address _sender, uint256 _value) {
-		require(_value &lt;= transferableTokens(_sender, now));
+		require(_value <= transferableTokens(_sender, now));
 	   	_;
 	}
 	
@@ -218,7 +218,7 @@ contract VanilCoin is MintableToken {
 		
 		uint256 result = 0;
 				
-		if(time &gt; releaseTime){
+		if(time > releaseTime){
 			result = balanceOf(holder);
 		}
 		
@@ -248,7 +248,7 @@ contract ETH888CrowdsaleS2 {
 	// amount of raised money in wei
 	uint256 public weiRaised;
 	
-	mapping(uint8 =&gt; uint64) public rates;
+	mapping(uint8 => uint64) public rates;
 	// week 2, 5 May 2018, 000:00:00 GMT
 	uint public timeTier1 = 1525478400;
 	// week 3, 12 May 2018, 000:00:00 GMT
@@ -267,7 +267,7 @@ contract ETH888CrowdsaleS2 {
 
 	function ETH888CrowdsaleS2(address _wallet, address _vanilAddress) {
 		
-		require(_wallet != 0x0 &amp;&amp; _vanilAddress != 0x0);
+		require(_wallet != 0x0 && _vanilAddress != 0x0);
 		
 		// 28 April 2018, 00:00:00 GMT: 1524873600
 		startTimestamp = 1524873600;
@@ -292,13 +292,13 @@ contract ETH888CrowdsaleS2 {
 	
 	// low level token purchase function
 	function buyTokens(address beneficiary) payable {
-		require(beneficiary != 0x0 &amp;&amp; validPurchase() &amp;&amp; validAmount());
+		require(beneficiary != 0x0 && validPurchase() && validAmount());
 
-		if(now &lt; timeTier1)
+		if(now < timeTier1)
 			rate = rates[0];
-		else if(now &lt; timeTier2)
+		else if(now < timeTier2)
 			rate = rates[1];
-		else if(now &lt; timeTier3)
+		else if(now < timeTier3)
 			rate = rates[2];
 		else
 			rate = rates[3];
@@ -335,23 +335,23 @@ contract ETH888CrowdsaleS2 {
 		uint256 weiAmount = msg.value;
 		uint256 tokens = weiAmount.mul(rate);
 
-		return (vanilCoin.balanceOf(this) &gt;= tokens);
+		return (vanilCoin.balanceOf(this) >= tokens);
 	}
 
 	// @return true if investors can buy at the moment
 	function validPurchase() internal constant returns (bool) {
 		
 		uint current = now;
-		bool withinPeriod = current &gt;= startTimestamp &amp;&amp; current &lt;= endTimestamp;
+		bool withinPeriod = current >= startTimestamp && current <= endTimestamp;
 		bool nonZeroPurchase = msg.value != 0;
 		
-		return withinPeriod &amp;&amp; nonZeroPurchase &amp;&amp; msg.value &gt;= 1000 szabo;
+		return withinPeriod && nonZeroPurchase && msg.value >= 1000 szabo;
 	}
 
 	// @return true if crowdsale event has ended
 	function hasEnded() public constant returns (bool) {
 		
-		return now &gt; endTimestamp;
+		return now > endTimestamp;
 	}
 	
 }

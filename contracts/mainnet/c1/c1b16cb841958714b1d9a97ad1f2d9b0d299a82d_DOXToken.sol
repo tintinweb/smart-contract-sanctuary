@@ -348,7 +348,7 @@ function UpdateSellAgentSiteReg(address new_address) onlyOwner {
 
   
    modifier isSelling() {
-    require( ((now>START_PRESALE_TIMESTAMP&amp;&amp;now<END_PRESALE_TIMESTAMP ) ||(now>START_PREICO_TIMESTAMP&amp;&amp;now<END_PREICO_TIMESTAMP ) ||(now>START_ICO_TIMESTAMP&amp;&amp;now<END_ICO_TIMESTAMP ) ) );
+    require( ((now>START_PRESALE_TIMESTAMP&&now<END_PRESALE_TIMESTAMP ) ||(now>START_PREICO_TIMESTAMP&&now<END_PREICO_TIMESTAMP ) ||(now>START_ICO_TIMESTAMP&&now<END_ICO_TIMESTAMP ) ) );
      require(balances[owner]>0 );
     
     
@@ -373,7 +373,7 @@ function UpdateSellAgentSiteReg(address new_address) onlyOwner {
      uint tokens = exchangeRate.mul(5000).mul(msg.value).div(1 ether);
      uint newBalance=exchangeRate.mul(msg.value+owner.balance).div(1 ether);
 
-if (now>START_PRESALE_TIMESTAMP&amp;&amp;now<END_PRESALE_TIMESTAMP)
+if (now>START_PRESALE_TIMESTAMP&&now<END_PRESALE_TIMESTAMP)
 {
     require(newBalance<PRESALE_HARDCAP);
     
@@ -382,16 +382,16 @@ if (now>START_PRESALE_TIMESTAMP&amp;&amp;now<END_PRESALE_TIMESTAMP)
        
 } else 
 
-if (now>START_PREICO_TIMESTAMP&amp;&amp;now<END_PREICO_TIMESTAMP)
+if (now>START_PREICO_TIMESTAMP&&now<END_PREICO_TIMESTAMP)
 {
     require(newBalance<PREICO_HARDCAP);
     
       uint bonusTokens = 0;
         if(now < START_PREICO_TIMESTAMP + (PREICO_PERIOD * 1 days).div(4)) {
           bonusTokens = tokens.mul(3).div(10);
-        } else if(now >= START_PREICO_TIMESTAMP + (PREICO_PERIOD * 1 days).div(4) &amp;&amp; now < START_PREICO_TIMESTAMP + (PREICO_PERIOD * 1 days).div(4).mul(2)) {
+        } else if(now >= START_PREICO_TIMESTAMP + (PREICO_PERIOD * 1 days).div(4) && now < START_PREICO_TIMESTAMP + (PREICO_PERIOD * 1 days).div(4).mul(2)) {
           bonusTokens = tokens.div(4);
-        } else if(now >= START_PREICO_TIMESTAMP + (PREICO_PERIOD * 1 days).div(4).mul(2) &amp;&amp; now < START_PREICO_TIMESTAMP + (PREICO_PERIOD * 1 days).div(4).mul(3)) {
+        } else if(now >= START_PREICO_TIMESTAMP + (PREICO_PERIOD * 1 days).div(4).mul(2) && now < START_PREICO_TIMESTAMP + (PREICO_PERIOD * 1 days).div(4).mul(3)) {
           bonusTokens = tokens.div(5);
         } else
         {
@@ -404,16 +404,16 @@ if (now>START_PREICO_TIMESTAMP&amp;&amp;now<END_PREICO_TIMESTAMP)
        
 } else 
      
-     if (now>START_ICO_TIMESTAMP&amp;&amp;now<END_ICO_TIMESTAMP)
+     if (now>START_ICO_TIMESTAMP&&now<END_ICO_TIMESTAMP)
 {
     require(newBalance<ICO_HARDCAP);
     
       uint bonusTokensICO = 0;
         if(now < START_ICO_TIMESTAMP + (ICO_PERIOD * 1 days).div(4)) {
           bonusTokensICO = tokens.div(8);
-        } else if(now >= START_ICO_TIMESTAMP + (ICO_PERIOD * 1 days).div(4) &amp;&amp; now < START_ICO_TIMESTAMP + (ICO_PERIOD * 1 days).div(4).mul(2)) {
+        } else if(now >= START_ICO_TIMESTAMP + (ICO_PERIOD * 1 days).div(4) && now < START_ICO_TIMESTAMP + (ICO_PERIOD * 1 days).div(4).mul(2)) {
           bonusTokensICO = tokens.mul(2).div(15);
-        } else if(now >= START_ICO_TIMESTAMP + (ICO_PERIOD * 1 days).div(4).mul(2) &amp;&amp; now < START_ICO_TIMESTAMP + (ICO_PERIOD * 1 days).div(4).mul(3)) {
+        } else if(now >= START_ICO_TIMESTAMP + (ICO_PERIOD * 1 days).div(4).mul(2) && now < START_ICO_TIMESTAMP + (ICO_PERIOD * 1 days).div(4).mul(3)) {
           bonusTokensICO = tokens.div(40);
         } else
         {
@@ -444,7 +444,7 @@ if (now>START_PREICO_TIMESTAMP&amp;&amp;now<END_PREICO_TIMESTAMP)
   }
     function PayForServiceCHL(uint256 _value)  external    {
      
-      require(balances[msg.sender]>=_value&amp;&amp;_value>0);
+      require(balances[msg.sender]>=_value&&_value>0);
       
       balances[msg.sender] = balances[msg.sender].sub(_value);
       balances[addressPayForService] = balances[addressPayForService].add(_value);
@@ -452,7 +452,7 @@ if (now>START_PREICO_TIMESTAMP&amp;&amp;now<END_PREICO_TIMESTAMP)
       
   }
   function BurnTokensFrom(address _from, uint256 _value) external onlyOwner  {
-    require (balances[_from] >= _value&amp;&amp;_value>0);                
+    require (balances[_from] >= _value&&_value>0);                
    
     balances[_from]  = balances[_from].sub(_value);
     totalSupply =totalSupply.sub(_value);

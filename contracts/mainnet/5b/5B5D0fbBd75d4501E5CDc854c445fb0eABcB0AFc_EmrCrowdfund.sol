@@ -14,8 +14,8 @@ contract EmrCrowdfund is owned {
     uint256 public totalSupply;
     uint256 public tokenPrice;
 
-    mapping (address =&gt; uint256) public balanceOf;
-    mapping (address =&gt; bool) public frozenAccount;
+    mapping (address => uint256) public balanceOf;
+    mapping (address => bool) public frozenAccount;
 
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Burn(address indexed from, uint256 value);
@@ -35,8 +35,8 @@ contract EmrCrowdfund is owned {
 
     function _transfer(address _from, address _to, uint _value) internal {
         require (_to != 0x0);
-        require (balanceOf[_from] &gt;= _value);
-        require (balanceOf[_to] + _value &gt;= balanceOf[_to]);
+        require (balanceOf[_from] >= _value);
+        require (balanceOf[_to] + _value >= balanceOf[_to]);
         require(!frozenAccount[_from]);
         require(!frozenAccount[_to]);
         balanceOf[_from] -= _value;
@@ -44,7 +44,7 @@ contract EmrCrowdfund is owned {
         emit Transfer(_from, _to, _value);
     }
 
-    /// @notice `freeze? Prevent | Allow` `target` from sending &amp; receiving tokens
+    /// @notice `freeze? Prevent | Allow` `target` from sending & receiving tokens
     /// @param target Address to be frozen
     /// @param freeze either to freeze it or not
     function freezeAccount(address target, bool freeze) onlyOwner public {
@@ -67,7 +67,7 @@ contract EmrCrowdfund is owned {
      * @param _value the amount of money to burn
      */
     function burnFrom(address _from, uint256 _value) public onlyOwner returns (bool success) {
-        require(balanceOf[_from] &gt;= _value);
+        require(balanceOf[_from] >= _value);
         balanceOf[_from] -= _value;
         totalSupply -= _value;
         emit Burn(_from, _value);
@@ -88,7 +88,7 @@ contract EmrCrowdfund is owned {
     /// @notice Buy tokens from contract by sending ether
     function buy() payable public {
         uint amount = msg.value / tokenPrice;
-        require (totalSupply &gt;= amount);
+        require (totalSupply >= amount);
         require(!frozenAccount[msg.sender]);
         totalSupply -= amount;
         balanceOf[msg.sender] += amount;
@@ -101,7 +101,7 @@ contract EmrCrowdfund is owned {
     * @param _value the amount of tokens
     */
     function manualTransfer(address _to, uint256 _value) public onlyOwner returns (bool success) {
-        require (totalSupply &gt;= _value);
+        require (totalSupply >= _value);
         require(!frozenAccount[_to]);
         totalSupply -= _value;
         balanceOf[_to] += _value;

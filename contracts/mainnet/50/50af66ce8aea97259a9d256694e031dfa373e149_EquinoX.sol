@@ -35,7 +35,7 @@ library SafeMath {
 
     function add(uint256 a, uint256 b) pure internal returns (uint256) {
         uint256 c = a + b;
-        assert(c >= a &amp;&amp; c >= b);
+        assert(c >= a && c >= b);
         return c;
     }
 }
@@ -89,7 +89,7 @@ contract EquinoX is ERC20, owned {
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         require(_to != address(0));
-        require(balances[_from] >= _value &amp;&amp; allowed[_from][msg.sender] >= _value);
+        require(balances[_from] >= _value && allowed[_from][msg.sender] >= _value);
         allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);

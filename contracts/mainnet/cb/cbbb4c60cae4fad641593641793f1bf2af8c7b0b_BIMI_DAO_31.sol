@@ -248,7 +248,7 @@ pragma solidity 		^0.4.21	;
 //	6	&#171;&#160;BIMI DAO&#160;&#187; G&#233;n&#233;ration 3.1.										
 //	7	Statut										
 //	8	&#171;&#160;D.A.O.&#160;&#187; (Organisation autonome et d&#233;centralis&#233;e)										
-//	9	Propri&#233;taires &amp; responsables implicites										
+//	9	Propri&#233;taires & responsables implicites										
 //	10	Les Utilisateurs du pool										
 //	11	Juridiction (i)										
 //	12	Ville de Timisoara, Judet de Banat, Roumanie										
@@ -295,7 +295,7 @@ pragma solidity 		^0.4.21	;
 //	53	Entit&#233; responsable du d&#233;ployement initial										
 //	54	Programme d’apprentissage autonome &#171;&#160;KYOKO&#160;&#187; / MS (sign)										
 //	55	(*) Environnement technologique protocolaire / sous-couche de type &#171;&#160;Consensus Distribu&#233; et Chiffr&#233;&#160;&#187;										
-//	56	(**) @ Annexes et formulaires&#160;: &lt;&lt;&lt;&lt; 0x2761266eCB115A6d0B7cD77908D26A3A35418b28 &gt;&gt;&gt;&gt;										
+//	56	(**) @ Annexes et formulaires&#160;: <<<< 0x2761266eCB115A6d0B7cD77908D26A3A35418b28 >>>>										
 												
 												
 												
@@ -337,8 +337,8 @@ pragma solidity 		^0.4.21	;
 //	35	Assurance-vie mixte, capitalisation et mutualisation										
 //	36	Couverture contre r&#232;glement d’assurance-vie										
 //	37	Constitution d’un capital en vue de donations										
-//	38	Couverture I &amp; T sur donations										
-//	39	Couverture sur &#233;volution I &amp; T sur donations, approche mutuailste										
+//	38	Couverture I & T sur donations										
+//	39	Couverture sur &#233;volution I & T sur donations, approche mutuailste										
 //	40	Frais d’obs&#232;que / Location / Entretien des places et / ou des strctures										
 //	41	Garantie d’&#233;tablissement, groupe UE										
 //	42	Garantie d’&#233;tablissement, non-groupe UE										
@@ -367,8 +367,8 @@ pragma solidity 		^0.4.21	;
 //	65	Perte partielle ou totale de revenu										
 //	66	Enfants + soins sp&#233;cifiques &#224; domicile - (confer annexe **)										
 //	67	Garantie de revenus / Compl&#233;mentaire revenus										
-//	68	Couverture pour incapacit&#233; de paiement / dont I &amp; T (approche mutualiste)										
-//	69	Financement pour paiement / dont I &amp; T (approche capitalisation)										
+//	68	Couverture pour incapacit&#233; de paiement / dont I & T (approche mutualiste)										
+//	69	Financement pour paiement / dont I & T (approche capitalisation)										
 //	70	Garantie d’acc&#232;s &#224; la propri&#233;t&#233; et / ou acquisition fonci&#232;re										
 //	71	Garantie d’apport / de financement / couverture de taux										
 //	72	Garantie relative au prix d’acquisition / dont &#171;&#160;&#224; terme&#160;&#187;										
@@ -482,7 +482,7 @@ pragma solidity 		^0.4.21	;
 //	75	&#171; Adresse / Pool ID de 100 Utilisateurs / 400 Utilisateurs.75&#160;&#187;					&#171; 9P8not516F2491KL6xXF3e93sX0H4290goXAo5LPjYqi65Ic7824nHG1F7S98T4W&#160;&#187;					
 //	76						&#171; &#160;&#187;					
 //	77	TOTAL INTERMEDIAIRE = 75 Pools de 100 Utilisateurs &#171;&#160;payeurs de primes&#160;&#187;, &#171;&#160;payeurs partiels&#160;&#187;, &#171;&#160;preneurs d’assurances subventionn&#233;es&#160;&#187;.										
-//	78	Soit 75 Pools de 400 Utilisateurs &#171;&#160;assur&#233;s&#160;&#187;, &#171;&#160;b&#233;n&#233;ficiaires&#160;&#187;. Portefeuille KY&amp;C=K&#160;: 7’500 U.										
+//	78	Soit 75 Pools de 400 Utilisateurs &#171;&#160;assur&#233;s&#160;&#187;, &#171;&#160;b&#233;n&#233;ficiaires&#160;&#187;. Portefeuille KY&C=K&#160;: 7’500 U.										
 												
 												
 												
@@ -564,7 +564,7 @@ pragma solidity 		^0.4.21	;
 //	75	&#171; Adresse / Pool ID de 100 Utilisateurs / 400 Utilisateurs.75&#160;&#187;					&#171; jW75P4g63l8crcGMUJa1MbovPBice7KTOhZh8jvdaL7vMqJIvu9J00DjauNPwFQQ&#160;&#187;					
 //	76						0					
 //	77	TOTAL INTERMEDIAIRE = 75 Pools de 100 Utilisateurs &#171;&#160;payeurs de primes&#160;&#187;, &#171;&#160;payeurs partiels&#160;&#187;, &#171;&#160;preneurs d’assurances subventionn&#233;es&#160;&#187;.										
-//	78	Soit 75 Pools de 400 Utilisateurs &#171;&#160;assur&#233;s&#160;&#187;, &#171;&#160;b&#233;n&#233;ficiaires&#160;&#187;. Portefeuille KY&amp;C=Y&#160;: 7’500 U.										
+//	78	Soit 75 Pools de 400 Utilisateurs &#171;&#160;assur&#233;s&#160;&#187;, &#171;&#160;b&#233;n&#233;ficiaires&#160;&#187;. Portefeuille KY&C=Y&#160;: 7’500 U.										
 												
 												
 												

@@ -3,13 +3,13 @@ pragma solidity 0.4.21;
 library SafeMath {
     //internals
     function sub(uint a, uint b) internal pure returns (uint) {
-        require(b &lt;= a);
+        require(b <= a);
         return a - b;
     }
 
     function add(uint a, uint b) internal pure returns (uint) {
         uint c = a + b;
-        require(c&gt;=a &amp;&amp; c&gt;=b);
+        require(c>=a && c>=b);
         return c;
     }
 }
@@ -34,9 +34,9 @@ contract SimpleToken is Owned {
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
     // This creates a mapping with all balances
-    mapping (address =&gt; uint256) public balanceOf;
+    mapping (address => uint256) public balanceOf;
     // Another array with spending allowances
-    mapping (address =&gt; mapping (address =&gt; uint256)) public allowance;
+    mapping (address => mapping (address => uint256)) public allowance;
     // The total supply of the token
     uint256 public totalSupply;
 
@@ -78,7 +78,7 @@ contract SimpleToken is Owned {
     
     function decreaseApproval(address _spender, uint _subtractedValue) public returns (bool success) {
         uint oldValue = allowance[msg.sender][_spender];
-        if (_subtractedValue &gt; oldValue) {
+        if (_subtractedValue > oldValue) {
             allowance[msg.sender][_spender] = 0;
         } else {
             allowance[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -90,7 +90,7 @@ contract SimpleToken is Owned {
 }
 
 /// @title Multisignature Mintable Token - Allows minting of Tokens by a 2-2-Multisignature
-/// @author Henning Kopp - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="99f2f6e9e9d9fbf5f6faf2faf1f8f0f7b4fbfcebf8edecf7feb7fdfc">[email&#160;protected]</a>&gt;
+/// @author Henning Kopp - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="99f2f6e9e9d9fbf5f6faf2faf1f8f0f7b4fbfcebf8edecf7feb7fdfc">[email&#160;protected]</a>>
 contract MultiSigMint is SimpleToken {
 
     // Address change event
@@ -123,7 +123,7 @@ contract MultiSigMint is SimpleToken {
      * tokenamount is the amount of tokens to be minted.
      */
     function proposeMinting(uint256 _tokenamount) external onlyOwner returns (bool) {
-        require(_tokenamount &gt; 0);
+        require(_tokenamount > 0);
         proposedMintAmnt = _tokenamount;
         return true;
     }
@@ -149,7 +149,7 @@ contract MultiSigMint is SimpleToken {
      * tokenamount is the amount of tokens to be burned.
      */
     function proposeBurning(uint256 _tokenamount) external onlyOwner returns (bool) {
-        require(_tokenamount &gt; 0);
+        require(_tokenamount > 0);
         proposedBurnAmnt = _tokenamount;
         return true;
     }
@@ -178,7 +178,7 @@ contract MultiSigMint is SimpleToken {
         proposeOwner = _newAddress;
     }
     function confirmNewOwner(address _newAddress) external onlyNotary returns (bool) {
-        if (proposeOwner == _newAddress &amp;&amp; _newAddress != 0x0 &amp;&amp; _newAddress != notary) {
+        if (proposeOwner == _newAddress && _newAddress != 0x0 && _newAddress != notary) {
             proposeOwner = 0x0;
             emit newOwner(owner, _newAddress);
             owner = _newAddress;
@@ -196,7 +196,7 @@ contract MultiSigMint is SimpleToken {
         proposeNotary = _newAddress;
     }
     function confirmNewNotary(address _newAddress) external onlyNotary returns (bool) {
-        if (proposeNotary == _newAddress &amp;&amp; _newAddress != 0x0 &amp;&amp; _newAddress != owner) {
+        if (proposeNotary == _newAddress && _newAddress != 0x0 && _newAddress != owner) {
             proposeNotary = 0x0;
             emit newNotary(notary, _newAddress);
             notary = _newAddress;
@@ -209,7 +209,7 @@ contract MultiSigMint is SimpleToken {
 }
 
 /// @title Contract with fixed parameters for deployment
-/// @author Henning Kopp - &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f34302f2f1f3d33303c343c373e3631723d3a2d3e2b2a3138713b3a">[email&#160;protected]</a>&gt;
+/// @author Henning Kopp - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f34302f2f1f3d33303c343c373e3631723d3a2d3e2b2a3138713b3a">[email&#160;protected]</a>>
 contract GoldToken is MultiSigMint {
     function GoldToken(address _notary) public MultiSigMint(_notary) {}
 }

@@ -100,7 +100,7 @@ contract ACAToken is ERC20 {
         require(_to != address(0x0));
         require(_to != address(this));
 
-        if ( _from != owner &amp;&amp; _from != admin ) {
+        if ( _from != owner && _from != admin ) {
             require(transferable);
             require (!transferLocked[_from]);
         }
@@ -162,7 +162,7 @@ contract ACAToken is ERC20 {
     }
 
     function transferAllowed(address _target) public view returns (bool) {
-        return (transferable &amp;&amp; transferLocked[_target] == false);
+        return (transferable && transferLocked[_target] == false);
     }
 
     // token related

@@ -15,20 +15,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal pure returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal pure returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -57,7 +57,7 @@ contract Moderated {
     }
 
     modifier onlyPayloadSize(uint numWords) {
-        assert(msg.data.length &gt;= numWords * 32 + 4);
+        assert(msg.data.length >= numWords * 32 + 4);
         _;
     }
 
@@ -90,7 +90,7 @@ contract Moderated {
     function isContract(address _addr) internal view returns (bool) {
         uint256 size;
         assembly { size := extcodesize(_addr) }
-        return (size &gt; 0);
+        return (size > 0);
     }
 }
 
@@ -122,8 +122,8 @@ contract Touch is Moderated {
 
         uint256 public maximumTokenIssue = 1000000000 * 10**18;
 
-		mapping(address =&gt; uint256) internal balances;
-		mapping (address =&gt; mapping (address =&gt; uint256)) internal allowed;
+		mapping(address => uint256) internal balances;
+		mapping (address => mapping (address => uint256)) internal allowed;
 
 		uint256 internal totalSupply_;
 
@@ -153,16 +153,16 @@ contract Touch is Moderated {
 		* @param _value uint256 the amount of tokens to be transferred
 		*/
 		function transferFrom(address _from, address _to, uint256 _value) public ifUnrestricted onlyPayloadSize(3) returns (bool) {
-		    require(_value &lt;= allowed[_from][msg.sender]);
+		    require(_value <= allowed[_from][msg.sender]);
 		    allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
 		    return _transfer(_from, _to, _value);
 		}
 
 		function _transfer(address _from, address _to, uint256 _value) internal returns (bool) {
 			// Do not allow transfers to 0x0 or to this contract
-			require(_to != address(0x0) &amp;&amp; _to != address(this));
+			require(_to != address(0x0) && _to != address(this));
 			// Do not allow transfer of value greater than sender&#39;s current balance
-			require(_value &lt;= balances[_from]);
+			require(_value <= balances[_from]);
 			// Update balance of sending address
 			balances[_from] = balances[_from].sub(_value);
 			// Update balance of receiving address
@@ -220,7 +220,7 @@ contract Touch is Moderated {
 		* @param _addedValue The amount of tokens to increase the allowance by.
 		*/
 		function increaseApproval(address _spender, uint256 _addedValue) public ifUnrestricted onlyPayloadSize(2) returns (bool) {
-			require(_addedValue &gt; 0);
+			require(_addedValue > 0);
 			allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
 			Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
 			return true;
@@ -238,8 +238,8 @@ contract Touch is Moderated {
 		*/
 		function decreaseApproval(address _spender, uint256 _subtractedValue) public ifUnrestricted onlyPayloadSize(2) returns (bool) {
 			uint256 oldValue = allowed[msg.sender][_spender];
-			require(_subtractedValue &gt; 0);
-			if (_subtractedValue &gt; oldValue) {
+			require(_subtractedValue > 0);
+			if (_subtractedValue > oldValue) {
 				allowed[msg.sender][_spender] = 0;
 			} else {
 				allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
@@ -314,7 +314,7 @@ contract CrowdSale is Moderated {
 
     // checks that crowd sale is live
     modifier onlyWhileActive {
-        require(now &gt;= startDate &amp;&amp; now &lt;= endDate &amp;&amp; active);
+        require(now >= startDate && now <= endDate && active);
         _;
     }
 
@@ -322,7 +322,7 @@ contract CrowdSale is Moderated {
                         uint256 start,
                         uint256 end) public {
         require(_tokenAddr != address(0x0));
-        require(now &lt; start &amp;&amp; start &lt; end);
+        require(now < start && start < end);
         // the Touch token contract
         tokenContract = Touch(_tokenAddr);
 
@@ -339,7 +339,7 @@ contract CrowdSale is Moderated {
 
 	function buyTokens(address _purchaser) public payable ifUnrestricted onlyWhileActive returns (bool) {
 	    require(!targetReached());
-	    require(msg.value &gt; purchaseThreshold);
+	    require(msg.value > purchaseThreshold);
 	   // etherVault.transfer(msg.value);
 	   splitPayment();
 
@@ -355,9 +355,9 @@ contract CrowdSale is Moderated {
 	    uint256 excess;
 	    uint256 numTokens;
 	    uint256 excessTokens;
-        if(etherRaised &lt; 5572 ether) {
+        if(etherRaised < 5572 ether) {
             etherRaised = etherRaised.add(weiAmount);
-            if(etherRaised &gt; 5572 ether) {
+            if(etherRaised > 5572 ether) {
                 excess = etherRaised.sub(5572 ether);
                 numTokens = weiAmount.sub(excess).mul(5608);
                 etherRaised = etherRaised.sub(excess);
@@ -366,9 +366,9 @@ contract CrowdSale is Moderated {
             } else {
                 return weiAmount.mul(5608);
             }
-        } else if(etherRaised &lt; 11144 ether) {
+        } else if(etherRaised < 11144 ether) {
             etherRaised = etherRaised.add(weiAmount);
-            if(etherRaised &gt; 11144 ether) {
+            if(etherRaised > 11144 ether) {
                 excess = etherRaised.sub(11144 ether);
                 numTokens = weiAmount.sub(excess).mul(4807);
                 etherRaised = etherRaised.sub(excess);
@@ -377,9 +377,9 @@ contract CrowdSale is Moderated {
             } else {
                 return weiAmount.mul(4807);
             }
-        } else if(etherRaised &lt; 16716 ether) {
+        } else if(etherRaised < 16716 ether) {
             etherRaised = etherRaised.add(weiAmount);
-            if(etherRaised &gt; 16716 ether) {
+            if(etherRaised > 16716 ether) {
                 excess = etherRaised.sub(16716 ether);
                 numTokens = weiAmount.sub(excess).mul(4206);
                 etherRaised = etherRaised.sub(excess);
@@ -388,9 +388,9 @@ contract CrowdSale is Moderated {
             } else {
                 return weiAmount.mul(4206);
             }
-        } else if(etherRaised &lt; 22289 ether) {
+        } else if(etherRaised < 22289 ether) {
             etherRaised = etherRaised.add(weiAmount);
-            if(etherRaised &gt; 22289 ether) {
+            if(etherRaised > 22289 ether) {
                 excess = etherRaised.sub(22289 ether);
                 numTokens = weiAmount.sub(excess).mul(3738);
                 etherRaised = etherRaised.sub(excess);
@@ -439,12 +439,12 @@ contract CrowdSale is Moderated {
 
 	// checks if end date of crowdsale is passed
     function hasEnded() internal view returns (bool) {
-        return (now &gt; endDate);
+        return (now > endDate);
     }
 
     // checks if crowdsale target is reached
     function targetReached() internal view returns (bool) {
-        return (etherRaised &gt;= crowdsaleTarget);
+        return (etherRaised >= crowdsaleTarget);
     }
     function splitPayment() internal {
         recipient1.transfer(msg.value * percentageRecipient1 / 100);

@@ -14,20 +14,20 @@ library SafeMath {
   }
 
   function div(uint256 a, uint256 b) internal constant returns (uint256) {
-    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // assert(b > 0); // Solidity automatically throws when dividing by 0
     uint256 c = a / b;
     // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
     return c;
   }
 
   function sub(uint256 a, uint256 b) internal constant returns (uint256) {
-    assert(b &lt;= a);
+    assert(b <= a);
     return a - b;
   }
 
   function add(uint256 a, uint256 b) internal constant returns (uint256) {
     uint256 c = a + b;
-    assert(c &gt;= a);
+    assert(c >= a);
     return c;
   }
 }
@@ -55,7 +55,7 @@ contract ERC20Basic {
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address =&gt; uint256) balances;
+  mapping(address => uint256) balances;
 
   /**
   * @dev transfer token for a specified address
@@ -102,8 +102,8 @@ contract BurnableToken is BasicToken {
     {
         address from = msg.sender;
 
-        require(_amount &gt; 0);
-        require(_amount &lt;= balances[from]);
+        require(_amount > 0);
+        require(_amount <= balances[from]);
 
         totalSupply = totalSupply.sub(_amount);
         balances[from] = balances[from].sub(_amount);
@@ -138,7 +138,7 @@ contract ERC20 is ERC20Basic {
  */
 contract StandardToken is ERC20, BasicToken {
 
-  mapping (address =&gt; mapping (address =&gt; uint256)) allowed;
+  mapping (address => mapping (address => uint256)) allowed;
 
 
   /**
@@ -151,7 +151,7 @@ contract StandardToken is ERC20, BasicToken {
     var _allowance = allowed[_from][msg.sender];
 
     // Check is not needed because sub(_allowance, _value) will already throw if this condition is not met
-    // require (_value &lt;= _allowance);
+    // require (_value <= _allowance);
 
     balances[_to] = balances[_to].add(_value);
     balances[_from] = balances[_from].sub(_value);
@@ -246,7 +246,7 @@ contract TokenWithApproveAndCallMethod is StandardToken {
 // Audit, refactoring and improvements by github.com/Eenae
 
 // @authors:
-// Gav Wood &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="75123510011d1110035b161a18">[email&#160;protected]</a>&gt;
+// Gav Wood <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="75123510011d1110035b161a18">[email&#160;protected]</a>>
 // inheritable &quot;property&quot; contract that enables methods to be protected by requiring the acquiescence of either a
 // single, or, crucially, each of a number of, designated owners.
 // usage:
@@ -309,12 +309,12 @@ contract multiowned {
     }
 
     modifier validNumOwners(uint _numOwners) {
-        require(_numOwners &gt; 0 &amp;&amp; _numOwners &lt;= c_maxOwners);
+        require(_numOwners > 0 && _numOwners <= c_maxOwners);
         _;
     }
 
     modifier multiOwnedValidRequirement(uint _required, uint _numOwners) {
-        require(_required &gt; 0 &amp;&amp; _required &lt;= _numOwners);
+        require(_required > 0 && _required <= _numOwners);
         _;
     }
 
@@ -342,16 +342,16 @@ contract multiowned {
         validNumOwners(_owners.length)
         multiOwnedValidRequirement(_required, _owners.length)
     {
-        assert(c_maxOwners &lt;= 255);
+        assert(c_maxOwners <= 255);
 
         m_numOwners = _owners.length;
         m_multiOwnedRequired = _required;
 
-        for (uint i = 0; i &lt; _owners.length; ++i)
+        for (uint i = 0; i < _owners.length; ++i)
         {
             address owner = _owners[i];
             // invalid and duplicate addresses are not allowed
-            require(0 != owner &amp;&amp; !isOwner(owner) /* not isOwner yet! */);
+            require(0 != owner && !isOwner(owner) /* not isOwner yet! */);
 
             uint currentOwnerIndex = checkOwnerIndex(i + 1 /* first slot is unused */);
             m_owners[currentOwnerIndex] = owner;
@@ -449,7 +449,7 @@ contract multiowned {
     /// @return memory array of owners
     function getOwners() public constant returns (address[]) {
         address[] memory result = new address[](m_numOwners);
-        for (uint i = 0; i &lt; m_numOwners; i++)
+        for (uint i = 0; i < m_numOwners; i++)
             result[i] = getOwner(i);
 
         return result;
@@ -459,7 +459,7 @@ contract multiowned {
     /// @param _addr address to check
     /// @return true if it&#39;s an owner
     function isOwner(address _addr) public constant returns (bool) {
-        return m_ownerIndex[_addr] &gt; 0;
+        return m_ownerIndex[_addr] > 0;
     }
 
     /// @notice Tests ownership of the current caller.
@@ -479,7 +479,7 @@ contract multiowned {
     {
         uint ownerIndexBit = makeOwnerBitmapBit(msg.sender);
         var pending = m_multiOwnedPending[_operation];
-        require(pending.ownersDone &amp; ownerIndexBit &gt; 0);
+        require(pending.ownersDone & ownerIndexBit > 0);
 
         assertOperationIsConsistent(_operation);
 
@@ -500,7 +500,7 @@ contract multiowned {
         ownerExists(_owner)
         returns (bool)
     {
-        return !(m_multiOwnedPending[_operation].ownersDone &amp; makeOwnerBitmapBit(_owner) == 0);
+        return !(m_multiOwnedPending[_operation].ownersDone & makeOwnerBitmapBit(_owner) == 0);
     }
 
     // INTERNAL METHODS
@@ -533,9 +533,9 @@ contract multiowned {
         // determine the bit to set for this owner.
         uint ownerIndexBit = makeOwnerBitmapBit(msg.sender);
         // make sure we (the message sender) haven&#39;t confirmed this operation previously.
-        if (pending.ownersDone &amp; ownerIndexBit == 0) {
+        if (pending.ownersDone & ownerIndexBit == 0) {
             // ok - check if count is enough to go ahead.
-            assert(pending.yetNeeded &gt; 0);
+            assert(pending.yetNeeded > 0);
             if (pending.yetNeeded == 1) {
                 // enough confirmations: reset and run interior.
                 delete m_multiOwnedPendingIndex[m_multiOwnedPending[_operation].index];
@@ -558,16 +558,16 @@ contract multiowned {
     // TODO given that its called after each removal, it could be simplified.
     function reorganizeOwners() private {
         uint free = 1;
-        while (free &lt; m_numOwners)
+        while (free < m_numOwners)
         {
             // iterating to the first free slot from the beginning
-            while (free &lt; m_numOwners &amp;&amp; m_owners[free] != 0) free++;
+            while (free < m_numOwners && m_owners[free] != 0) free++;
 
             // iterating to the first occupied slot from the end
-            while (m_numOwners &gt; 1 &amp;&amp; m_owners[m_numOwners] == 0) m_numOwners--;
+            while (m_numOwners > 1 && m_owners[m_numOwners] == 0) m_numOwners--;
 
             // swap, if possible, so free slot is located at the end after the swap
-            if (free &lt; m_numOwners &amp;&amp; m_owners[m_numOwners] != 0 &amp;&amp; m_owners[free] == 0)
+            if (free < m_numOwners && m_owners[m_numOwners] != 0 && m_owners[free] == 0)
             {
                 // owners between swapped slots should&#39;t be renumbered - that saves a lot of gas
                 m_owners[free] = m_owners[m_numOwners];
@@ -580,7 +580,7 @@ contract multiowned {
     function clearPending() private onlyowner {
         uint length = m_multiOwnedPendingIndex.length;
         // TODO block gas limit
-        for (uint i = 0; i &lt; length; ++i) {
+        for (uint i = 0; i < length; ++i) {
             if (m_multiOwnedPendingIndex[i] != 0)
                 delete m_multiOwnedPending[m_multiOwnedPendingIndex[i]];
         }
@@ -588,7 +588,7 @@ contract multiowned {
     }
 
     function checkOwnerIndex(uint ownerIndex) private pure returns (uint) {
-        assert(0 != ownerIndex &amp;&amp; ownerIndex &lt;= c_maxOwners);
+        assert(0 != ownerIndex && ownerIndex <= c_maxOwners);
         return ownerIndex;
     }
 
@@ -603,17 +603,17 @@ contract multiowned {
 
 
     function assertOwnersAreConsistent() private constant {
-        assert(m_numOwners &gt; 0);
-        assert(m_numOwners &lt;= c_maxOwners);
+        assert(m_numOwners > 0);
+        assert(m_numOwners <= c_maxOwners);
         assert(m_owners[0] == 0);
-        assert(0 != m_multiOwnedRequired &amp;&amp; m_multiOwnedRequired &lt;= m_numOwners);
+        assert(0 != m_multiOwnedRequired && m_multiOwnedRequired <= m_numOwners);
     }
 
     function assertOperationIsConsistent(bytes32 _operation) private constant {
         var pending = m_multiOwnedPending[_operation];
         assert(0 != pending.yetNeeded);
         assert(m_multiOwnedPendingIndex[pending.index] == _operation);
-        assert(pending.yetNeeded &lt;= m_multiOwnedRequired);
+        assert(pending.yetNeeded <= m_multiOwnedRequired);
     }
 
 
@@ -630,15 +630,15 @@ contract multiowned {
 
     // list of owners (addresses),
     // slot 0 is unused so there are no owner which index is 0.
-    // TODO could we save space at the end of the array for the common case of &lt;10 owners? and should we?
+    // TODO could we save space at the end of the array for the common case of <10 owners? and should we?
     address[256] internal m_owners;
 
-    // index on the list of owners to allow reverse lookup: owner address =&gt; index in m_owners
-    mapping(address =&gt; uint) internal m_ownerIndex;
+    // index on the list of owners to allow reverse lookup: owner address => index in m_owners
+    mapping(address => uint) internal m_ownerIndex;
 
 
     // the ongoing operations.
-    mapping(bytes32 =&gt; MultiOwnedOperationPendingState) internal m_multiOwnedPending;
+    mapping(bytes32 => MultiOwnedOperationPendingState) internal m_multiOwnedPending;
     bytes32[] internal m_multiOwnedPendingIndex;
 }
 
@@ -836,7 +836,7 @@ contract BoomstarterToken is ArgumentsChecker, multiowned, BurnableToken, Standa
     // FIELDS
 
     /// @notice set of sale accounts which can freeze tokens
-    mapping (address =&gt; bool) public m_sales;
+    mapping (address => bool) public m_sales;
 
     /// @notice allows privileged functions (token sale phase)
     bool public m_allowPrivileged = true;

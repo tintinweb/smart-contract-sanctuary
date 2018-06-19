@@ -67,7 +67,7 @@ contract TrustedDocument {
     string public baseUrl;
 
     // Map of signed documents
-    mapping(uint =&gt; Document) private documents;
+    mapping(uint => Document) private documents;
 
     // Event for confirmation of adding new document
     event EventDocumentAdded(uint indexed documentId);
@@ -200,9 +200,9 @@ contract TrustedDocument {
     function getFirstDocumentIdStartingAtValidFrom(uint _unixTimeFrom) public view
     returns (uint) 
     {
-        for (uint i = 0; i &lt; documentsCount; i++) {
+        for (uint i = 0; i < documentsCount; i++) {
             Document memory doc = documents[i];
-            if (doc.validFrom&gt;=_unixTimeFrom) {
+            if (doc.validFrom>=_unixTimeFrom) {
                 return i;
             }
         }
@@ -216,20 +216,20 @@ contract TrustedDocument {
         firstID = 0;
         lastId = 0;
         //
-        for (uint i = 0; i &lt; documentsCount; i++) {
+        for (uint i = 0; i < documentsCount; i++) {
             Document memory doc = documents[i];
             if (firstID==0) {
-                if (doc.validFrom&gt;=_unixTimeStarting) {
+                if (doc.validFrom>=_unixTimeStarting) {
                     firstID = i;
                 }
             } else {
-                if (doc.validFrom&lt;=_unixTimeEnding) {
+                if (doc.validFrom<=_unixTimeEnding) {
                     lastId = i;
                 }
             }
         }
         //
-        if ((firstID&gt;0)&amp;&amp;(lastId==0)&amp;&amp;(_unixTimeStarting&lt;_unixTimeEnding)) {
+        if ((firstID>0)&&(lastId==0)&&(_unixTimeStarting<_unixTimeEnding)) {
             lastId = documentsCount;
         }
     }
@@ -239,7 +239,7 @@ contract TrustedDocument {
     returns (uint) 
     {
         bytes32 documentContentSHA256Keccak256 = keccak256(_documentContentSHA256);
-        for (uint i = 0; i &lt; documentsCount; i++) {
+        for (uint i = 0; i < documentsCount; i++) {
             Document memory doc = documents[i];
             if (keccak256(doc.documentContentSHA256)==documentContentSHA256Keccak256) {
                 return i;
@@ -253,7 +253,7 @@ contract TrustedDocument {
     returns (uint) 
     {
         bytes32 IPFSdirectoryHashSHA256Keccak256 = keccak256(_IPFSdirectoryHash);
-        for (uint i = 0; i &lt; documentsCount; i++) {
+        for (uint i = 0; i < documentsCount; i++) {
             Document memory doc = documents[i];
             if (keccak256(doc.IPFSdirectoryHash)==IPFSdirectoryHashSHA256Keccak256) {
                 return i;
@@ -267,7 +267,7 @@ contract TrustedDocument {
     returns (uint) 
     {
         bytes32 fileNameKeccak256 = keccak256(_fileName);
-        for (uint i = 0; i &lt; documentsCount; i++) {
+        for (uint i = 0; i < documentsCount; i++) {
             Document memory doc = documents[i];
             if (keccak256(doc.fileName)==fileNameKeccak256) {
                 return i;

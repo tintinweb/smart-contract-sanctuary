@@ -119,7 +119,7 @@ contract VestingContractABX
     uint current_balance_all = 0;
     for (uint i = 0; i < accounts.length; i++)
       current_balance_all += account_data[accounts[i]].current_balance;
-    require(getBalance() > current_balance_all &amp;&amp; value <= getBalance() - current_balance_all);
+    require(getBalance() > current_balance_all && value <= getBalance() - current_balance_all);
     if (abx_token.transfer(to, value))
       emit OwnerTransfer(to, value);
   }
@@ -155,8 +155,8 @@ contract VestingContractABX
   {
     updateCurrentPeriod();
     require(value <= abx_token.balanceOf(this) 
-      &amp;&amp; value <= account_data[msg.sender].current_balance 
-      &amp;&amp; account_data[msg.sender].current_transferred + value <= account_data[msg.sender].current_limit);
+      && value <= account_data[msg.sender].current_balance 
+      && account_data[msg.sender].current_transferred + value <= account_data[msg.sender].current_limit);
 
     if (abx_token.transfer(to, value)) 
     {
