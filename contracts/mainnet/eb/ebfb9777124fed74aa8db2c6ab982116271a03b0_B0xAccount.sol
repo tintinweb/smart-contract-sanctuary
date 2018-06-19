@@ -1,0 +1,193 @@
+pragma solidity ^0.4.23;
+
+/**
+ * @title SafeMath
+ * @dev Math operations with safety checks that throw on error
+ */
+library SafeMath {
+
+  /**
+  * @dev Multiplies two numbers, throws on overflow.
+  */
+  function mul(uint256 a, uint256 b) internal pure returns (uint256 c) {
+    if (a == 0) {
+      return 0;
+    }
+    c = a * b;
+    assert(c / a == b);
+    return c;
+  }
+
+  /**
+  * @dev Integer division of two numbers, truncating the quotient.
+  */
+  function div(uint256 a, uint256 b) internal pure returns (uint256) {
+    // assert(b &gt; 0); // Solidity automatically throws when dividing by 0
+    // uint256 c = a / b;
+    // assert(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
+    return a / b;
+  }
+
+  /**
+  * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
+  */
+  function sub(uint256 a, uint256 b) internal pure returns (uint256) {
+    assert(b &lt;= a);
+    return a - b;
+  }
+
+  /**
+  * @dev Adds two numbers, throws on overflow.
+  */
+  function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
+    c = a + b;
+    assert(c &gt;= a);
+    return c;
+  }
+}
+
+/**
+ * @title Ownable
+ * @dev The Ownable contract has an owner address, and provides basic authorization control
+ * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ */
+contract Ownable {
+  address public owner;
+
+
+  event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+
+
+  /**
+   * @dev The Ownable constructor sets the original `owner` of the contract to the sender
+   * account.
+   */
+  function Ownable() public {
+    owner = msg.sender;
+  }
+
+  /**
+   * @dev Throws if called by any account other than the owner.
+   */
+  modifier onlyOwner() {
+    require(msg.sender == owner);
+    _;
+  }
+
+  /**
+   * @dev Allows the current owner to transfer control of the contract to a newOwner.
+   * @param newOwner The address to transfer ownership to.
+   */
+  function transferOwnership(address newOwner) public onlyOwner {
+    require(newOwner != address(0));
+    emit OwnershipTransferred(owner, newOwner);
+    owner = newOwner;
+  }
+
+}
+
+contract B0xAccount is Ownable {
+    using SafeMath for uint;
+
+	mapping (address =&gt; Withdraw[]) public withdrawals;
+
+    address public receiver1;
+    address public receiver2;
+
+    uint public numerator = 3;
+    uint public denominator = 7;
+
+    struct Withdraw {
+        uint amount;
+        uint blockNumber;
+        uint blockTimestamp;
+    }
+
+    function() 
+        public
+        payable
+    {
+        require(msg.value &gt; 0);
+        uint toSend = msg.value.mul(numerator).div(denominator);
+        require(receiver1.send(toSend));
+        require(receiver2.send(toSend));
+    }
+
+    constructor(
+        address _receiver1,
+        address _receiver2)
+        public
+    {
+        receiver1 = _receiver1;
+        receiver2 = _receiver2;
+    }
+
+    function deposit()
+        public
+        payable
+        returns(bool)
+    {}
+
+    function withdraw(
+        uint _value)
+        public
+        returns(bool)
+    {
+        require(
+            msg.sender == receiver1 
+            || msg.sender == receiver2);
+
+        uint amount = _value;
+        if (amount &gt; address(this).balance) {
+            amount = address(this).balance;
+        }
+
+        withdrawals[msg.sender].push(Withdraw({
+            amount: amount,
+            blockNumber: block.number,
+            blockTimestamp: block.timestamp
+        }));
+
+        return (msg.sender.send(amount));
+    }
+
+    function setReceiver1(
+        address _receiver
+    )
+        public
+        onlyOwner
+    {
+        require(_receiver != address(0) &amp;&amp; _receiver != receiver1);
+        receiver1 = _receiver;
+    }
+
+    function setReceiver2(
+        address _receiver
+    )
+        public
+        onlyOwner
+    {
+        require(_receiver != address(0) &amp;&amp; _receiver != receiver2);
+        receiver2 = _receiver;
+    }
+
+    function setNumeratorDenominator(
+        uint _numerator,
+        uint _denominator
+    )
+        public
+        onlyOwner
+    {
+        require(_numerator &gt; 0 &amp;&amp; (_numerator*2) &lt;= _denominator);
+        numerator = _numerator;
+        denominator = _denominator;
+    }
+
+    function getBalance()
+        public
+        view
+        returns (uint)
+    {
+        return address(this).balance;
+    }
+}
