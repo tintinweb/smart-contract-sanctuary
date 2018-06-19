@@ -20,8 +20,7 @@ Scripts for dumping smart contracts from public sources (etherscan.io, etherchai
 
 ## Contribute
 
-Feel free to contribute smart contract sources or scripts for dumping sources.
-I will keep this repository updated every now and then.
+Feel free to contribute smart contract sources, scripts for dumping sources or your analysis results with us.
 
 ### Want
 
