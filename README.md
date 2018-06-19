@@ -1,7 +1,5 @@
 # smart-contract-sanctuary
-🐦🌴🌴🌴🦕 That place where ethereum smart contracts feel home.
-
-A place to store solidity contract sources. Not deduplicated yet.
+🐦🌴🌴🌴🦕 A home for ethereum smart contracts. 🏠
 
 
 | Folder       | Description   |
