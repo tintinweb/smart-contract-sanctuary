@@ -1,6 +1,8 @@
 # smart-contract-sanctuary
 🐦🌴🌴🌴🦕 A home for ethereum smart contracts. 🏠
 
+This repo autosubmits contracts to [4byte.directory](https://www.4byte.directory/). Feel free to contribute sources.
+
 
 | Folder       | Description   |
 | ------------ | ------------- |
