@@ -20,7 +20,7 @@ class EtherScanIoApi(object):
     """
 
     def __init__(self, proxies={}):
-        self.session = UserAgent(baseurl="https://etherscan.io", retry=5, retrydelay=8, proxies=proxies)
+        self.session = UserAgent(baseurl="https://www.etherscan.io", retry=5, retrydelay=8, proxies=proxies)
 
     def get_contracts(self, start=0, end=None):
         page = start
@@ -103,7 +103,7 @@ class EtherScanIoApi(object):
 if __name__=="__main__":
     output_directory = "../contracts/mainnet/"
     overwrite = False
-    amount = 100000
+    amount = 1000000
 
     e = EtherScanIoApi()
     for nr,c in enumerate(e.get_contracts()):

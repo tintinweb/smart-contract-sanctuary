@@ -201,6 +201,8 @@ def build_function_sig_db(input_path, output_db):
     for k,v in hash_sigs.items():
         hash_sigs_json_serializable[k.hex()]=list(v)
 
+    print("%d unique function sigatures"% len(hash_sigs_json_serializable))
+
     with open(output_db, 'w') as f:
         json.dump(hash_sigs_json_serializable, f)
 

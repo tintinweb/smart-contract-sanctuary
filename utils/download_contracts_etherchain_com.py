@@ -52,7 +52,7 @@ def main():
     download_contract_sources(sys.argv[1] if len(sys.argv)>1 else "../contracts/mainnet/",
                               start=0, amount=1000,
                               overwrite=False,
-                              nr_of_transactions_to_include=5)
+                              nr_of_transactions_to_include=0)
 
 if __name__ == "__main__":
     main()
