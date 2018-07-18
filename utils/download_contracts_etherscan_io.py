@@ -19,8 +19,9 @@ class EtherScanIoApi(object):
     Base EtherScan.io Api implementation
     """
 
-    def __init__(self, proxies={}):
-        self.session = UserAgent(baseurl="https://www.etherscan.io", retry=5, retrydelay=8, proxies=proxies)
+    def __init__(self, baseurl=None, proxies={}):
+        baseurl = baseurl or "https://www.etherscan.io"
+        self.session = UserAgent(baseurl=baseurl, retry=5, retrydelay=8, proxies=proxies)
 
     def get_contracts(self, start=0, end=None):
         page = start
@@ -101,11 +102,17 @@ class EtherScanIoApi(object):
 
 
 if __name__=="__main__":
-    output_directory = "../contracts/mainnet/"
+    import sys
+    if "ropsten" in sys.argv:
+        prefix="ropsten"
+    else:
+        prefix="mainnet"
+
+    output_directory = "../contracts/%s/"%prefix
     overwrite = False
     amount = 1000000
 
-    e = EtherScanIoApi()
+    e = EtherScanIoApi(baseurl="https://%s.etherscan.io"%("ropsten" if prefix=="ropsten" else "www"))
     for nr,c in enumerate(e.get_contracts()):
         with open(os.path.join(output_directory,"contracts.json"),'a') as f:
             f.write("%s\n"%c)
