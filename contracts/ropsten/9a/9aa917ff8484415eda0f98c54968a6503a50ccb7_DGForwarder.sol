@@ -1,0 +1,111 @@
+pragma solidity ^0.4.24;
+
+interface DGInterfaceForForwarder {
+    function deposit(address _addr) external payable returns (bool);
+    function migrationReceiver_setup() external returns (bool);
+}
+
+contract DGForwarder {
+    string public name = &quot;DGForwarder&quot;;
+    DGInterfaceForForwarder private currentCorpBank_;
+    address private newCorpBank_;
+    bool needsBank_ = true;
+    
+    constructor() 
+        public
+    {
+        //constructor does nothing.
+    }
+    
+    function()
+        public
+        payable
+    {
+        // done so that if any one tries to dump eth into this contract, we can
+        // just forward it to corp bank.
+        currentCorpBank_.deposit.value(address(this).balance)(address(currentCorpBank_));
+    }
+    
+    function deposit()
+        public 
+        payable
+        returns(bool)
+    {
+        require(msg.value > 0, &quot;Forwarder Deposit failed - zero deposits not allowed&quot;);
+        require(needsBank_ == false, &quot;Forwarder Deposit failed - no registered bank&quot;);
+        if (currentCorpBank_.deposit.value(msg.value)(msg.sender) == true)
+            return(true);
+        else
+            return(false);
+    }
+//==============================================================================
+//     _ _ . _  _ _ _|_. _  _   .
+//    | | ||(_|| (_| | |(_)| |  .
+//===========_|=================================================================    
+    function status()
+        public
+        view
+        returns(address, address, bool)
+    {
+        return(address(currentCorpBank_), address(newCorpBank_), needsBank_);
+    }
+
+    function startMigration(address _newCorpBank)
+        external
+        returns(bool)
+    {
+        // make sure this is coming from current corp bank
+        require(msg.sender == address(currentCorpBank_), &quot;Forwarder startMigration failed - msg.sender must be current corp bank&quot;);
+        
+        // communicate with the new corp bank and make sure it has the forwarder 
+        // registered 
+        if(DGInterfaceForForwarder(_newCorpBank).migrationReceiver_setup() == true)
+        {
+            // save our new corp bank address
+            newCorpBank_ = _newCorpBank;
+            return (true);
+        } else 
+            return (false);
+    }
+    
+    function cancelMigration()
+        external
+        returns(bool)
+    {
+        // make sure this is coming from the current corp bank (also lets us know 
+        // that current corp bank has not been killed)
+        require(msg.sender == address(currentCorpBank_), &quot;Forwarder cancelMigration failed - msg.sender must be current corp bank&quot;);
+        
+        // erase stored new corp bank address;
+        newCorpBank_ = address(0x0);
+        
+        return (true);
+    }
+    
+    function finishMigration()
+        external
+        returns(bool)
+    {
+        // make sure its coming from new corp bank
+        require(msg.sender == newCorpBank_, &quot;Forwarder finishMigration failed - msg.sender must be new corp bank&quot;);
+
+        // update corp bank address        
+        currentCorpBank_ = (DGInterfaceForForwarder(newCorpBank_));
+        
+        // erase new corp bank address
+        newCorpBank_ = address(0x0);
+        
+        return (true);
+    }
+//==============================================================================
+//    . _ ._|_. _ |   _ _ _|_    _   .
+//    || || | |(_||  _\(/_ | |_||_)  .  (this only runs once ever)
+//==============================|===============================================
+    function setup(address _firstCorpBank)
+        external
+    {
+        require(needsBank_ == true, &quot;Forwarder setup failed - corp bank already registered&quot;);
+        currentCorpBank_ = DGInterfaceForForwarder(_firstCorpBank);
+        needsBank_ = false;
+    }
+}
