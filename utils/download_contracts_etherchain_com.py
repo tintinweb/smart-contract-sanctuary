@@ -26,19 +26,27 @@ def download_contract_sources(output_directory, start=0, amount=100, batch=50, n
     for c in (_ for _ in iter_contracts(start=start, length=batch) if _.source and _.source.strip()):
         # only contracts with source
         logger.debug("got contract: %s"%c)
-        dst = os.path.join(output_directory, c["address"].replace("0x","")[:2])  # index by 1st byte
+        dst = os.path.join(output_directory, c["address"].replace("0x", "")[:2])  # index by 1st byte
+
+        if any([c["address"].lower() in fname for fname in os.listdir(dst)]):
+            print("[%d/%d] skipping, already exists --> %s (%-20s) -> %s" % (
+            nr, amount, c["address"], c["name"], "xx"))
+            continue
         if not os.path.isdir(dst):
             os.makedirs(dst)
-        fpath = os.path.join(dst, "%s_%s"%(c["address"].replace("0x",""), str(c['name']).replace("\\","_").replace("/","_")))
-        if not overwrite and os.path.exists(fpath):
-            print("[%d/%d] skipping, already exists --> %s (%-20s) -> %s" % (nr, amount, c["address"], c["name"], fpath))
+        contract_name = c['name']
+        if not contract_name:
+            contract_name = c.compiler_settings["Contract Name"]
+        fpath = os.path.join(dst, "%s_%s.sol"%(c["address"].replace("0x",""), str(contract_name).replace("\\","_").replace("/","_")))
+        if not overwrite and (os.path.exists(fpath) or any([c["address"].lower() in fname for fname in os.listdir(dst)])):
+            print("[%d/%d] skipping, already exists --> %s (%-20s) -> %s" % (nr, amount, c["address"], contract_name, fpath))
             continue
         if nr_of_transactions_to_include:
             logger.debug("retrieving transactions")
         with open(fpath,"w") as f:
             f.write(c.describe_contract(nr_of_transactions_to_include=nr_of_transactions_to_include))
 
-        print("[%d/%d] dumped --> %s (%-20s) -> %s" % (nr, amount, c["address"], c["name"], fpath))
+        print("[%d/%d] dumped --> %s (%-20s) -> %s" % (nr, amount, c["address"], contract_name, fpath))
 
         nr += 1
         if nr >= amount:
