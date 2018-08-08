@@ -184,8 +184,8 @@ contract _0xDogecoin is ERC20Interface, Owned, EIP918Interface {
     // ------------------------------------------------------------------------
     function _0xDogecoin() public onlyOwner{
 
-        symbol = &quot;0xDoge&quot;;
-        name = &quot;0xDogecoin&quot;;
+        symbol = "0xDoge";
+        name = "0xDogecoin";
         decimals = 8;
         _totalSupply = 1000000000 * 10**uint(decimals);
 

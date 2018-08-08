@@ -264,8 +264,8 @@ contract BLTToken is StandardToken, Ownable, PriceUpdate, Pausable, SalePausable
 	mapping(address => uint256) balances;
 	uint256 public totalSupply;
     uint256 public totalCap = 100000000000000000000000000;
-    string 	public constant name = &quot;BitLifeAndTrust&quot;;
-	string 	public constant symbol = &quot;BLT&quot;;
+    string 	public constant name = "BitLifeAndTrust";
+	string 	public constant symbol = "BLT";
 	uint256	public constant decimals = 18;
 	//uint256 public price = 400;  moved to price setting contract
     

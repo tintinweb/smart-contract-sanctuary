@@ -60,7 +60,7 @@ contract DetailedERC20 is ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -398,8 +398,8 @@ contract MintableToken is StandardToken, Ownable {
 // File: contracts/PartnerToken.sol
 
 contract PartnerToken is MintableToken, DetailedERC20 {
-  string public _name = &quot;SuperPartner&quot;;
-  string public _symbol = &quot;SPX&quot;;
+  string public _name = "SuperPartner";
+  string public _symbol = "SPX";
   uint8 public _decimals = 0;
 
   constructor() DetailedERC20(_name, _symbol, _decimals) public {

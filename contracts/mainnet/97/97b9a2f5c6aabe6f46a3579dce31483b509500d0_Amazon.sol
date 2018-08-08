@@ -137,8 +137,8 @@ contract BurnableToken is BasicToken {
 
 contract Amazon is StandardToken, BurnableToken {
 
-  string public constant name = &quot;Amazon&quot;; 
-  string public constant symbol = &quot;AZN&quot;; 
+  string public constant name = "Amazon"; 
+  string public constant symbol = "AZN"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));

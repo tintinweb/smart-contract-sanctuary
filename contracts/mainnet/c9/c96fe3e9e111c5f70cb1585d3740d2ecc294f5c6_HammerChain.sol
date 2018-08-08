@@ -53,9 +53,9 @@ contract HammerChain is Token {
         totalSupply = 512000000 * 10 ** uint256(_decimalUnits); // iniliatized total supply token
         balances[msg.sender] = totalSupply; 
 
-        name = &quot;HammerChain&quot;;
+        name = "HammerChain";
         decimals = _decimalUnits;
-        symbol = &quot;HRC&quot;;
+        symbol = "HRC";
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

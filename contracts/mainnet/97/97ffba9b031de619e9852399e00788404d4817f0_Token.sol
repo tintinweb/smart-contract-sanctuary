@@ -91,8 +91,8 @@ contract Token is ERC20Interface, Owned {
 
 
     function Token() public {
-        symbol = &quot;Redwood Chain&quot;;
-        name = &quot;ROD&quot;;
+        symbol = "Redwood Chain";
+        name = "ROD";
         decimals = 4;
         _totalSupply = 130000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

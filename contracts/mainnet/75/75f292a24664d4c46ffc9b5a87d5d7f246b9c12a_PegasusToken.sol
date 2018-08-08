@@ -113,8 +113,8 @@ contract PegasusToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PegasusToken() public {
-        symbol = &quot;PGT&quot;;
-        name = &quot;Pegasus Token&quot;;
+        symbol = "PGT";
+        name = "Pegasus Token";
         decimals = 0;
         _totalSupply = 1000000000000;
         balances[0xd1CCF700c5c71bF1998D16327BF885F5b555d6f6] = _totalSupply;

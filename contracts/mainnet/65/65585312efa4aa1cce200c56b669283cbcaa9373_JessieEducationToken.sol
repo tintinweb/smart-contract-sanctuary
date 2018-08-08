@@ -175,8 +175,8 @@ contract TokenBase {
 contract JessieEducationToken is owned, TokenBase {
     
     // Public variables of the token
-    string public tokenName = &quot;Jessie Education Token&quot;;
-    string public tokenSymbol = &quot;JET&quot;;
+    string public tokenName = "Jessie Education Token";
+    string public tokenSymbol = "JET";
     uint256 public initialSupply = 600000000;
 
     mapping (address => bool) public frozenAccount;

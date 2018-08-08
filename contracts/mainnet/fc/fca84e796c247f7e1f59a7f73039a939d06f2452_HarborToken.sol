@@ -306,7 +306,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -362,8 +362,8 @@ pragma solidity ^0.4.24;
 contract HarborToken is StandardToken, Ownable, Congress {
 
   //define HarborToken
-  string public constant name = &quot;HarborToken&quot;;
-  string public constant symbol = &quot;HBR&quot;;
+  string public constant name = "HarborToken";
+  string public constant symbol = "HBR";
   uint8 public constant decimals = 18;
 
    /** List of agents that are allowed to create new tokens */

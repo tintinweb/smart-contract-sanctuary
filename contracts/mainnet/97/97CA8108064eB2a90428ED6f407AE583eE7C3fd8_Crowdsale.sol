@@ -31,7 +31,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -438,8 +438,8 @@ contract UpgradeableToken is StandardToken {
  */
 contract MatryxToken is MintableToken, UpgradeableToken{
 
-  string public name = &quot;MatryxToken&quot;;
-  string public symbol = &quot;MTX&quot;;
+  string public name = "MatryxToken";
+  string public symbol = "MTX";
   uint public decimals = 18;
 
   // supply upgrade owner as the contract creation account

@@ -3,9 +3,9 @@ pragma solidity ^0.4.18;
 
 contract SimpleTokenCoin {
     
-    string public constant name = &quot;ADVERTISING TOKEN&quot;;
+    string public constant name = "ADVERTISING TOKEN";
     
-    string public constant symbol = &quot;ADT&quot;;
+    string public constant symbol = "ADT";
     
     uint32 public constant decimals = 18;
     

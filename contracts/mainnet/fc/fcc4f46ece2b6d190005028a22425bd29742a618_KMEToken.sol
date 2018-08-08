@@ -191,8 +191,8 @@ contract SafeStandardToken is ERC20, SafeBasicToken {
 }
 
 contract KMEToken is SafeStandardToken{
-  string public constant name = &quot;KME Token&quot;;
-  string public constant symbol = &quot;KME&quot;;
+  string public constant name = "KME Token";
+  string public constant symbol = "KME";
   uint256 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 84000000 * (10 ** uint256(decimals));
 

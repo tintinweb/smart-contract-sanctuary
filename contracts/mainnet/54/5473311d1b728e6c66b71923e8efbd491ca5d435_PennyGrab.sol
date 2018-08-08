@@ -122,8 +122,8 @@ contract StandardToken is ERC20, SafeMath {
 
 }contract PennyGrab is Ownable, StandardToken {
 
-    string public name = &quot;PennyGrab&quot;;          
-    string public symbol = &quot;BID&quot;;              
+    string public name = "PennyGrab";          
+    string public symbol = "BID";              
     uint public decimals = 18;                  
 
     uint public totalSupply = 100000000000000000000000000;  

@@ -16,7 +16,7 @@ contract Ownable {
 /**
  * @title OwnableImpl
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract OwnableImpl is Ownable {
     address public owner;
@@ -334,8 +334,8 @@ contract PausableToken is Pausable, TokenImpl {
 }
 
 contract ZenomeToken is OwnableImpl, PausableToken, MintableTokenImpl, BurnableTokenImpl {
-	string public constant name = &quot;Zenome&quot;;
-	string public constant symbol = &quot;sZNA&quot;;
+	string public constant name = "Zenome";
+	string public constant symbol = "sZNA";
 	uint8 public constant decimals = 18;
 
 	function burn(uint256 _value) public whenNotPaused {

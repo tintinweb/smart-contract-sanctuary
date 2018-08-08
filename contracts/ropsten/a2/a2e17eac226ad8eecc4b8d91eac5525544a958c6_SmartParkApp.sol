@@ -113,8 +113,8 @@ contract SmartParkApp is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SmartParkApp() public {
-        symbol = &quot;SPAT&quot;;
-        name = &quot;SmartParkApp Token&quot;;
+        symbol = "SPAT";
+        name = "SmartParkApp Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x73C48Eb6c3A3d735c9ec13ED1cB4523702c382e8] = _totalSupply;

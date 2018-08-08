@@ -116,8 +116,8 @@ contract ERC20Token is ERC20 {
 
 contract ABOX is ERC20Token, Owned {
 
-    string  public constant name = &quot;ABOX Token&quot;;
-    string  public constant symbol = &quot;ABOX&quot;;
+    string  public constant name = "ABOX Token";
+    string  public constant symbol = "ABOX";
     uint256 public constant decimals = 18;
     uint256 public tokenDestroyed;
 	event Burn(address indexed _from, uint256 _tokenDestroyed, uint256 _timestamp);

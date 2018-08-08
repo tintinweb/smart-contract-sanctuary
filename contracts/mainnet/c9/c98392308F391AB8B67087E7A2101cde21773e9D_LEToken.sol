@@ -48,8 +48,8 @@ contract LEToken is IERC20{
    uint256  totalContribution = 0;		
    uint256  totalBonus = 0;						
       
-   string public symbol = &quot;LET&quot;;
-   string public constant name = &quot;Lucky Ethereum Token&quot;; 
+   string public symbol = "LET";
+   string public constant name = "Lucky Ethereum Token"; 
    uint256 public constant decimals = 18; 
    
    uint256 public constant RATE = 25000; 

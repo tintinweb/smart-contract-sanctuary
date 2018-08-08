@@ -36,8 +36,8 @@ contract ERC20Token {
 */
 contract MCToken is ERC20Token {
 
-    string private _name = &quot;Master Coin&quot;;
-    string private _symbol = &quot;MC&quot;;
+    string private _name = "Master Coin";
+    string private _symbol = "MC";
     uint8 private _decimals = 3;
 
     uint256 private _totalSupply = 210000000 * (10 ** uint256(_decimals));

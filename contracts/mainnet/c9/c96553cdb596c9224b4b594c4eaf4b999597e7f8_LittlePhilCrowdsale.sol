@@ -98,7 +98,7 @@ library SafeERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -435,8 +435,8 @@ contract PausableToken is StandardToken, Pausable {
 
 
 contract LittlePhilCoin is MintableToken, PausableToken {
-    string public name = &quot;Little Phil Coin&quot;;
-    string public symbol = &quot;LPC&quot;;
+    string public name = "Little Phil Coin";
+    string public symbol = "LPC";
     uint8 public decimals = 18;
 
     constructor () public {
@@ -1003,57 +1003,57 @@ contract TieredCrowdsale is TokenCappedCrowdsale, Ownable {
     function createSalesTierConfigMap() private {
 
         tierConfigs [keccak256(SaleState.Initial)] = TierConfig({
-            stateName: &quot;Initial&quot;,
+            stateName: "Initial",
             tierRatePercentage:0,
             hardCap: 0
         });
         tierConfigs [keccak256(SaleState.PrivateSale)] = TierConfig({
-            stateName: &quot;PrivateSale&quot;,
+            stateName: "PrivateSale",
             tierRatePercentage:100,
             hardCap: SafeMath.mul(400000000, (10 ** 18))
         });
         tierConfigs [keccak256(SaleState.FinalisedPrivateSale)] = TierConfig({
-            stateName: &quot;FinalisedPrivateSale&quot;,
+            stateName: "FinalisedPrivateSale",
             tierRatePercentage:0,
             hardCap: 0
         });
         tierConfigs [keccak256(SaleState.PreSale)] = TierConfig({
-            stateName: &quot;PreSale&quot;,
+            stateName: "PreSale",
             tierRatePercentage:140,
             hardCap: SafeMath.mul(180000000, (10 ** 18))
         });
         tierConfigs [keccak256(SaleState.FinalisedPreSale)] = TierConfig({
-            stateName: &quot;FinalisedPreSale&quot;,
+            stateName: "FinalisedPreSale",
             tierRatePercentage:0,
             hardCap: 0
         });
         tierConfigs [keccak256(SaleState.PublicSaleTier1)] = TierConfig({
-            stateName: &quot;PublicSaleTier1&quot;,
+            stateName: "PublicSaleTier1",
             tierRatePercentage:130,
             hardCap: SafeMath.mul(265000000, (10 ** 18))
         });
         tierConfigs [keccak256(SaleState.PublicSaleTier2)] = TierConfig({
-            stateName: &quot;PublicSaleTier2&quot;,
+            stateName: "PublicSaleTier2",
             tierRatePercentage:120,
             hardCap: SafeMath.mul(330000000, (10 ** 18))
         });
         tierConfigs [keccak256(SaleState.PublicSaleTier3)] = TierConfig({
-            stateName: &quot;PublicSaleTier3&quot;,
+            stateName: "PublicSaleTier3",
             tierRatePercentage:110,
             hardCap: SafeMath.mul(375000000, (10 ** 18))
         });
         tierConfigs [keccak256(SaleState.PublicSaleTier4)] = TierConfig({
-            stateName: &quot;PublicSaleTier4&quot;,
+            stateName: "PublicSaleTier4",
             tierRatePercentage:100,
             hardCap: SafeMath.mul(400000000, (10 ** 18))
         });
         tierConfigs [keccak256(SaleState.FinalisedPublicSale)] = TierConfig({
-            stateName: &quot;FinalisedPublicSale&quot;,
+            stateName: "FinalisedPublicSale",
             tierRatePercentage:0,
             hardCap: 0
         });
         tierConfigs [keccak256(SaleState.Closed)] = TierConfig({
-            stateName: &quot;Closed&quot;,
+            stateName: "Closed",
             tierRatePercentage:0,
             hardCap: SafeMath.mul(400000000, (10 ** 18))
         });

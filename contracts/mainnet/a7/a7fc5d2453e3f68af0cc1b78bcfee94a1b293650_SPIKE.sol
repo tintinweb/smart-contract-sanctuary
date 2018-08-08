@@ -71,8 +71,8 @@ contract BasicSPIKE is ERC223 {
     using SafeMath for uint256;
     
     uint256 public constant decimals = 10;
-    string public constant symbol = &quot;SPIKE&quot;;
-    string public constant name = &quot;Spiking&quot;;
+    string public constant symbol = "SPIKE";
+    string public constant name = "Spiking";
     uint256 public _totalSupply = 5 * 10 ** 19; // total supply is 5*10^19 unit, equivalent to 5 Billion SPIKE
 
     // Owner of this contract
@@ -212,7 +212,7 @@ contract BasicSPIKE is ERC223 {
          
     // Send _value amount of tokens from address _from to address _to
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-    // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
     // fees in sub-currencies; the command should fail unless the _from account has
     // deliberately authorized the sender of the message via some mechanism; we propose
     // these standardized APIs for approval:

@@ -191,8 +191,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract UBOToken is StandardToken {
 
-    string public constant name = &quot;UBSexone&quot;;
-    string public constant symbol = &quot;UBO&quot;;
+    string public constant name = "UBSexone";
+    string public constant symbol = "UBO";
     uint8 public constant decimals =0;
     uint256 public constant INITIAL_SUPPLY = 1 * 50000000 * (10**uint256(decimals));
     uint256 public weiRaised;

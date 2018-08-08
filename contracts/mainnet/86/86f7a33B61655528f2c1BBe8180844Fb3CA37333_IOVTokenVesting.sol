@@ -136,7 +136,7 @@ contract DSMath {
         z = add(mul(x, RAY), y / 2) / y;
     }
 
-    // This famous algorithm is called &quot;exponentiation by squaring&quot;
+    // This famous algorithm is called "exponentiation by squaring"
     // and calculates x^n with x as fixed-point and n as regular unsigned.
     //
     // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -358,7 +358,7 @@ contract IOVToken is IOVTokenBase(10*10**9*10**8), ContractLock(1527782400) {
     }
 
     // Optional token name
-    string   public  name = &quot;CarLive Chain&quot;;
+    string   public  name = "CarLive Chain";
 
     function setName(string name_) public auth {
         name = name_;

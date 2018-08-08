@@ -100,8 +100,8 @@ contract SOSRcoinToken is ERC20,Ownable {
  function SOSRcoinToken( ) public {
    totalSupply = 50000000*(10**18);         
    balanceOf[msg.sender] = totalSupply ; 
-   name = &quot;SOSRcoin&quot;; 
-   symbol =&quot;SOSR&quot;; 
+   name = "SOSRcoin"; 
+   symbol ="SOSR"; 
    walletArr.push(0x72BA86a847Ead7b69c3e92F88eb2Aa21C3Aa1C58); 
    walletArr.push(0x39DE3fa8976572819b0012B11b506E100a765453);
    touched[owner] = true;

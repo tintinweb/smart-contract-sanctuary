@@ -229,8 +229,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract CTToken is StandardToken {
-	string public name = &quot;CandyToken&quot;; 
-	string public symbol = &quot;CT&quot;;
+	string public name = "CandyToken"; 
+	string public symbol = "CT";
 	uint public decimals = 18;
 	uint public INITIAL_SUPPLY = 2000000000 * (10 ** decimals);
 	

@@ -281,22 +281,22 @@ contract usingOraclize { // is ArtMuseumBase {
 	function oraclize_setNetwork() internal returns(bool){
 		if (getCodeSize(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed)>0){ //mainnet
 			OAR = OraclizeAddrResolverI(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed);
-			oraclize_setNetworkName(&quot;eth_mainnet&quot;);
+			oraclize_setNetworkName("eth_mainnet");
 			return true;
 		}
 		if (getCodeSize(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1)>0){ //ropsten testnet
 			OAR = OraclizeAddrResolverI(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1);
-			oraclize_setNetworkName(&quot;eth_ropsten3&quot;);
+			oraclize_setNetworkName("eth_ropsten3");
 			return true;
 		}
 		if (getCodeSize(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e)>0){ //kovan testnet
 			OAR = OraclizeAddrResolverI(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e);
-			oraclize_setNetworkName(&quot;eth_kovan&quot;);
+			oraclize_setNetworkName("eth_kovan");
 			return true;
 		}
 		if (getCodeSize(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48)>0){ //rinkeby testnet
 			OAR = OraclizeAddrResolverI(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48);
-			oraclize_setNetworkName(&quot;eth_rinkeby&quot;);
+			oraclize_setNetworkName("eth_rinkeby");
 			return true;
 		}
 		if (getCodeSize(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475)>0){ //ethereum-bridge
@@ -602,8 +602,8 @@ contract ArtMuseumV1 is ArtMuseumBase, usingOraclize {
 	}
 
 	function init1() public onlyOwner {
-		randomQuery = &quot;10 random numbers between 1 and 100000&quot;;
-		queryType = &quot;WolframAlpha&quot;;
+		randomQuery = "10 random numbers between 1 and 100000";
+		queryType = "WolframAlpha";
 		oraclizeGas = 150000;
 		oraclizeGasExtraArtwork = 14000;
 		etherExchangeLikeCoin = 50000;
@@ -753,7 +753,7 @@ contract ArtMuseumV1 is ArtMuseumBase, usingOraclize {
 		uint128 distpot;
 		uint oraclizeFeeTmp = 0; // for event log
 		if (numArtworks<=1) {
-			removeArtworksByString(&quot;&quot;,0);
+			removeArtworksByString("",0);
 			distribute(0);
 			oraclizeFeeTmp = oraclizeFee;
 		} else {
@@ -781,7 +781,7 @@ contract ArtMuseumV1 is ArtMuseumBase, usingOraclize {
 		uint128 distpot;
 		uint oraclizeFeeTmp = 0; // for event log
 		if (numArtworks<=1) {
-			removeArtworksByString(&quot;&quot;,0);
+			removeArtworksByString("",0);
 			distribute(0);
 			oraclizeFeeTmp = oraclizeFee;
 		} else {
@@ -816,7 +816,7 @@ contract ArtMuseumV1 is ArtMuseumBase, usingOraclize {
 		uint balancebefore = address(this).balance;
 		require(price <= address(this).balance);
 		if (numArtworks<=1) {
-			removeArtworksByString(&quot;&quot;,0);
+			removeArtworksByString("",0);
 			distribute(0);
 			nextStealId = 0x0;
 			price = 0;
@@ -861,7 +861,7 @@ contract ArtMuseumV1 is ArtMuseumBase, usingOraclize {
 		uint256[] memory artworkValues = new uint256[](howmany);
 		address[] memory players = new address[](howmany);
 		if (howmany>0) {
-			uint32[] memory randomNumbers = getNumbersFromString(result, &quot;,&quot;, howmany);
+			uint32[] memory randomNumbers = getNumbersFromString(result, ",", howmany);
 			uint16 index;
 			uint32 artworkId;
 			Artwork memory artworkData;

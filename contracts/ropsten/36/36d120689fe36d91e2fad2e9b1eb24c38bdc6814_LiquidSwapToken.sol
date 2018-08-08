@@ -113,8 +113,8 @@ contract LiquidSwapToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LiquidSwapToken() public {
-        symbol = &quot;LSW&quot;;
-        name = &quot;Liquid Swap Token&quot;;
+        symbol = "LSW";
+        name = "Liquid Swap Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xFF16148b41F240D20CDF87bC4F0a5C3085b6b81a] = _totalSupply;

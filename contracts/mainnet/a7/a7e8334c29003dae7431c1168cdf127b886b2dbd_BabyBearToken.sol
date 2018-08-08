@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract BabyBearToken {
     // Public variables of the token
-    string public name = &quot;BabyBearToken&quot;;
-    string public symbol = &quot;BBEAR&quot;;
+    string public name = "BabyBearToken";
+    string public symbol = "BBEAR";
     uint8 public decimals = 18;
     uint256 public totalSupply;
     uint256 public supplyMultiplier = 1000000000;

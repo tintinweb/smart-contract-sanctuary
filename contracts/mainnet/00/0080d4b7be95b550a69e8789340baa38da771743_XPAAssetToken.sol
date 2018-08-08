@@ -369,7 +369,7 @@ contract XPAAssetToken is StandardToken, Authorization {
 }
 
 contract TokenFactory is Authorization {
-    string public version = &quot;0.5.0&quot;;
+    string public version = "0.5.0";
 
     event eNominatingExchange(address);
     event eNominatingXPAAssets(address);

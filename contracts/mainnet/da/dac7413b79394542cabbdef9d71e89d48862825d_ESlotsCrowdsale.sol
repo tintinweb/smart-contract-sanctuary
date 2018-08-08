@@ -116,8 +116,8 @@ contract ERC20 is ERC20Basic {
 
 contract ESlotsICOToken is ERC20, DividendContract {
 
-    string public constant name = &quot;Ethereum Slot Machine Token&quot;;
-    string public constant symbol = &quot;EST&quot;;
+    string public constant name = "Ethereum Slot Machine Token";
+    string public constant symbol = "EST";
     uint8 public constant decimals = 18;
 
     function maxTokensToSale() public view returns (uint256);
@@ -146,7 +146,7 @@ contract ESlotsICOTokenDeployed {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;

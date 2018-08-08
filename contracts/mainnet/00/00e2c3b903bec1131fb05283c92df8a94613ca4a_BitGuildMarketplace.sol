@@ -5,8 +5,8 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 
 contract BitGuildToken {
     // Public variables of the token
-    string public name = &quot;BitGuild PLAT&quot;;
-    string public symbol = &quot;PLAT&quot;;
+    string public name = "BitGuild PLAT";
+    string public symbol = "PLAT";
     uint8 public decimals = 18;
     uint256 public totalSupply = 10000000000 * 10 ** uint256(decimals); // 10 billion tokens;
 
@@ -181,7 +181,7 @@ contract BitGuildAccessAdmin {
     modifier onlyOperator() {
         require(
             isOperator[msg.sender] || msg.sender == owner,
-            &quot;Permission denied. Must be an operator or the owner.&quot;
+            "Permission denied. Must be an operator or the owner."
         );
         _;
     }
@@ -193,7 +193,7 @@ contract BitGuildAccessAdmin {
     function transferOwnership(address _newOwner) public onlyOwner {
         require(
             _newOwner != address(0),
-            &quot;Invalid new owner address.&quot;
+            "Invalid new owner address."
         );
         emit OwnershipTransferred(owner, _newOwner);
         owner = _newOwner;
@@ -206,19 +206,19 @@ contract BitGuildAccessAdmin {
     function addOperator(address _newOperator) public onlyOwner {
         require(
             _newOperator != address(0),
-            &quot;Invalid new operator address.&quot;
+            "Invalid new operator address."
         );
 
         // Make sure no dups
         require(
             !isOperator[_newOperator],
-            &quot;New operator exists.&quot;
+            "New operator exists."
         );
 
         // Only allow so many ops
         require(
             operators.length < MAX_OPS,
-            &quot;Overflow.&quot;
+            "Overflow."
         );
 
         operators.push(_newOperator);
@@ -235,13 +235,13 @@ contract BitGuildAccessAdmin {
         // Make sure operators array is not empty
         require(
             operators.length > 0,
-            &quot;No operator.&quot;
+            "No operator."
         );
 
         // Make sure the operator exists
         require(
             isOperator[_operator],
-            &quot;Not an operator.&quot;
+            "Not an operator."
         );
 
         // Manual array manipulation:
@@ -284,7 +284,7 @@ contract BitGuildWhitelist is BitGuildAccessAdmin {
     modifier onlyWhitelisted(address _address) {
         require(
             isWhitelisted[_address],
-            &quot;Address is not on the whitelist.&quot;
+            "Address is not on the whitelist."
         );
         _;
     }
@@ -301,13 +301,13 @@ contract BitGuildWhitelist is BitGuildAccessAdmin {
     function addToWhitelist(address _newAddr) public onlyOperator {
         require(
             _newAddr != address(0),
-            &quot;Invalid new address.&quot;
+            "Invalid new address."
         );
 
         // Make sure no dups
         require(
             !isWhitelisted[_newAddr],
-            &quot;Address is already whitelisted.&quot;
+            "Address is already whitelisted."
         );
 
         isWhitelisted[_newAddr] = true;
@@ -322,13 +322,13 @@ contract BitGuildWhitelist is BitGuildAccessAdmin {
     function removeFromWhitelist(address _addr) public onlyOperator {
         require(
             _addr != address(0),
-            &quot;Invalid address.&quot;
+            "Invalid address."
         );
 
         // Make sure the address is in whitelist
         require(
             isWhitelisted[_addr],
-            &quot;Address not in whitelist.&quot;
+            "Address not in whitelist."
         );
 
         isWhitelisted[_addr] = false;
@@ -382,7 +382,7 @@ contract BitGuildFeeProvider is BitGuildAccessAdmin {
      * @param _newFee New fee in percent x 100 (to support decimals)
      */
     function updateFee(uint _newFee) public onlyOperator {
-        require(_newFee >= 0 && _newFee <= 10000, &quot;Invalid percent fee.&quot;);
+        require(_newFee >= 0 && _newFee <= 10000, "Invalid percent fee.");
 
         uint oldPercentFee = defaultPercentFee;
         defaultPercentFee = _newFee;
@@ -396,7 +396,7 @@ contract BitGuildFeeProvider is BitGuildAccessAdmin {
      *                enter zero for default, 10000 for No Fee
      */
     function updateCustomFee(uint _newFee, address _currency, address _buyer, address _seller, address _token) public onlyOperator {
-        require(_newFee >= 0 && _newFee <= 10000, &quot;Invalid percent fee.&quot;);
+        require(_newFee >= 0 && _newFee <= 10000, "Invalid percent fee.");
 
         bytes32 key = _getHash(_currency, _buyer, _seller, _token);
         uint oldPercentFee = customFee[key];
@@ -415,7 +415,7 @@ contract BitGuildFeeProvider is BitGuildAccessAdmin {
     }
 
     function _getFee(uint _price, uint _percentFee) internal view returns(uint percent, uint fee) {
-        require(_price >= 0, &quot;Invalid price.&quot;);
+        require(_price >= 0, "Invalid price.");
 
         percent = _percentFee;
 
@@ -490,7 +490,7 @@ interface ERC721 /* is ERC165 */ {
     ///  `_tokenId` is not a valid NFT. When transfer is complete, this function
     ///  checks if `_to` is a smart contract (code size > 0). If so, it calls
     ///  `onERC721Received` on `_to` and throws if the return value is not
-    ///  `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`.
+    ///  `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`.
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -499,7 +499,7 @@ interface ERC721 /* is ERC165 */ {
 
     /// @notice Transfers the ownership of an NFT from one address to another address
     /// @dev This works identically to the other function with an extra data parameter,
-    ///  except this function just sets data to &quot;&quot;.
+    ///  except this function just sets data to "".
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -525,7 +525,7 @@ interface ERC721 /* is ERC165 */ {
     /// @param _tokenId The NFT to approve
     function approve(address _approved, uint256 _tokenId) external;
 
-    /// @notice Enable or disable approval for a third party (&quot;operator&quot;) to manage
+    /// @notice Enable or disable approval for a third party ("operator") to manage
     ///  all of `msg.sender`&#39;s assets
     /// @dev Emits the ApprovalForAll event. The contract MUST allow
     ///  multiple operators per owner.
@@ -559,9 +559,9 @@ interface ERC721TokenReceiver {
  */
 contract BitGuildMarketplace is BitGuildAccessAdmin {
     // Callback values from zepellin ERC721Receiver.sol
-    // Old ver: bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;)) = 0xf0b9e5ba;
+    // Old ver: bytes4(keccak256("onERC721Received(address,uint256,bytes)")) = 0xf0b9e5ba;
     bytes4 constant ERC721_RECEIVED_OLD = 0xf0b9e5ba;
-    // New ver w/ operator: bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;)) = 0xf0b9e5ba;
+    // New ver w/ operator: bytes4(keccak256("onERC721Received(address,address,uint256,bytes)")) = 0xf0b9e5ba;
     bytes4 constant ERC721_RECEIVED = 0x150b7a02;
 
     // BitGuild Contracts
@@ -594,7 +594,7 @@ contract BitGuildMarketplace is BitGuildAccessAdmin {
     event LogItemExtended(address _contract, uint _tokenId, uint _modifiedAt, uint _expiry);
 
     modifier onlyWhitelisted(address _contract) {
-        require(Whitelist.isWhitelisted(_contract), &quot;Contract not in whitelist.&quot;);
+        require(Whitelist.isWhitelisted(_contract), "Contract not in whitelist.");
         _;
     }
 
@@ -639,8 +639,8 @@ contract BitGuildMarketplace is BitGuildAccessAdmin {
         bytes32 key = _getHashKey(_contract, _tokenId);
         address seller = listings[key].seller;
 
-        require(seller == msg.sender, &quot;Only seller can extend listing.&quot;);
-        require(listings[key].expiry > 0, &quot;Item not listed.&quot;);
+        require(seller == msg.sender, "Only seller can extend listing.");
+        require(listings[key].expiry > 0, "Item not listed.");
 
         listings[key].expiry = now + defaultExpiry;
 
@@ -656,7 +656,7 @@ contract BitGuildMarketplace is BitGuildAccessAdmin {
         bytes32 key = _getHashKey(_contract, _tokenId);
         address seller = listings[key].seller;
 
-        require(seller == msg.sender, &quot;Only seller can withdraw listing.&quot;);
+        require(seller == msg.sender, "Only seller can withdraw listing.");
 
         // Transfer item back to the seller
         ERC721 gameToken = ERC721(_contract);
@@ -685,9 +685,9 @@ contract BitGuildMarketplace is BitGuildAccessAdmin {
     // @param _PLAT      BitGuild token address
     // @param _extraData address _gameContract, uint _tokenId
     function receiveApproval(address _buyer, uint _value, BitGuildToken _PLAT, bytes _extraData) public {
-        require(_extraData.length > 0, &quot;No extraData provided.&quot;);
+        require(_extraData.length > 0, "No extraData provided.");
         // We check msg.sender with our known PLAT address instead of the _PLAT param
-        require(msg.sender == address(PLAT), &quot;Unauthorized PLAT contract address.&quot;);
+        require(msg.sender == address(PLAT), "Unauthorized PLAT contract address.");
 
         address token;
         uint tokenId;
@@ -701,19 +701,19 @@ contract BitGuildMarketplace is BitGuildAccessAdmin {
     // ===========================================
     // @dev Update fee provider contract
     function updateFeeProvider(address _newAddr) public onlyOperator {
-        require(_newAddr != address(0), &quot;Invalid contract address.&quot;);
+        require(_newAddr != address(0), "Invalid contract address.");
         FeeProvider = BitGuildFeeProvider(_newAddr);
     }
 
     // @dev Update whitelist contract
     function updateWhitelist(address _newAddr) public onlyOperator {
-        require(_newAddr != address(0), &quot;Invalid contract address.&quot;);
+        require(_newAddr != address(0), "Invalid contract address.");
         Whitelist = BitGuildWhitelist(_newAddr);
     }
 
     // @dev Update expiry date
     function updateExpiry(uint _days) public onlyOperator {
-        require(_days > 0, &quot;Invalid number of days.&quot;);
+        require(_days > 0, "Invalid number of days.");
         defaultExpiry = _days * 1 days;
     }
 
@@ -759,7 +759,7 @@ contract BitGuildMarketplace is BitGuildAccessAdmin {
         (currencyUint, price) = _decodePriceData(_extraData);
         Currency currency = Currency(currencyUint);
 
-        require(price > 0, &quot;Invalid price.&quot;);
+        require(price > 0, "Invalid price.");
 
         _newListing(_seller, _contract, _tokenId, price, currency);
     }
@@ -772,16 +772,16 @@ contract BitGuildMarketplace is BitGuildAccessAdmin {
 
         address currencyAddress = _currency == Currency.PLAT ? address(PLAT) : address(0);
 
-        require(currency == _currency, &quot;Wrong currency.&quot;);
-        require(_price > 0 && _price == listings[key].price, &quot;Invalid price.&quot;);
-        require(listings[key].expiry > now, &quot;Item expired.&quot;);
+        require(currency == _currency, "Wrong currency.");
+        require(_price > 0 && _price == listings[key].price, "Invalid price.");
+        require(listings[key].expiry > now, "Item expired.");
 
         ERC721 gameToken = ERC721(_token);
-        require(gameToken.ownerOf(_tokenId) == address(this), &quot;Item is not available.&quot;);
+        require(gameToken.ownerOf(_tokenId) == address(this), "Item is not available.");
 
         if (_currency == Currency.PLAT) {
             // Transfer PLAT to marketplace contract
-            require(PLAT.transferFrom(_buyer, address(this), _price), &quot;PLAT payment transfer failed.&quot;);
+            require(PLAT.transferFrom(_buyer, address(this), _price), "PLAT payment transfer failed.");
         }
 
         // Transfer item token to buyer
@@ -793,7 +793,7 @@ contract BitGuildMarketplace is BitGuildAccessAdmin {
         if (_currency == Currency.PLAT) {
             PLAT.transfer(seller, _price - fee);
         } else {
-            require(seller.send(_price - fee) == true, &quot;Transfer to seller failed.&quot;);
+            require(seller.send(_price - fee) == true, "Transfer to seller failed.");
         }
 
         // Emit event

@@ -27,7 +27,7 @@ contract ERC721 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -257,8 +257,8 @@ contract ChemistryBase is Ownable {
 contract ElementTokenImpl is ChemistryBase, ERC721 {
 
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant name = &quot;CryptoChemistry&quot;;
-    string public constant symbol = &quot;CC&quot;;
+    string public constant name = "CryptoChemistry";
+    string public constant symbol = "CC";
 
     bytes4 constant InterfaceSignature_ERC165 =
         bytes4(keccak256(&#39;supportsInterface(bytes4)&#39;));
@@ -527,7 +527,7 @@ contract ChemistryCore is ContractOfSale {
         owner = msg.sender;
         authorized[msg.sender] = true;
         
-        _createElement(&quot;0&quot;, 2 ** 255);//philosophers stone is priceless
+        _createElement("0", 2 ** 255);//philosophers stone is priceless
     }
     
     function addElement(bytes32 _symbol) external onlyAuthorized() {

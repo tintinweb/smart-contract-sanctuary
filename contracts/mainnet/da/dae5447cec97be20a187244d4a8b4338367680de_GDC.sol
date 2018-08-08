@@ -56,8 +56,8 @@ contract Token is ERC20 {
 contract GDC is Token{
     
     constructor() public{
-        symbol = &quot;GDC&quot;;
-        name = &quot;GOLDENCOIN&quot;;
+        symbol = "GDC";
+        name = "GOLDENCOIN";
         decimals = 4;
         totalSupply = 2000000000000;
         owner = msg.sender;

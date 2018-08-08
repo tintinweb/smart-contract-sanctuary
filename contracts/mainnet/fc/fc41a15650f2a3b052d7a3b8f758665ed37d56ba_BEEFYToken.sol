@@ -179,8 +179,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract BEEFYToken is StandardToken {
 
-    string public name = &quot;Bank4YOU&quot;;
-    string public symbol = &quot;BEEFY&quot;;
+    string public name = "Bank4YOU";
+    string public symbol = "BEEFY";
     uint256 public constant decimals = 10;
 
     uint256 public constant INITIAL_SUPPLY = 300 * (10 ** 6) * (10 ** uint256(decimals)); 

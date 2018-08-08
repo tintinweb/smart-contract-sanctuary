@@ -97,8 +97,8 @@ contract ERC200T is ERC200Interface, Pausable{
 
   constructor() public {
       totalSupply = 21000000000000;
-      name = &quot;KKKMToken&quot;;
-      symbol = &quot;KKKM&quot;;
+      name = "KKKMToken";
+      symbol = "KKKM";
       decimals = 3;
       owner=msg.sender;
       balanceOf[msg.sender] = totalSupply;

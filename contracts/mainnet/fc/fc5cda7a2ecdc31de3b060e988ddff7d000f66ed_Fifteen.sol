@@ -1,4 +1,4 @@
-// Puzzle &quot;Fifteen&quot;. 
+// Puzzle "Fifteen". 
 // Numbers can be moved by puzzle owner to the empty place.
 // The winner must put the numbers (1-4) in the first row in the correct order.
 //

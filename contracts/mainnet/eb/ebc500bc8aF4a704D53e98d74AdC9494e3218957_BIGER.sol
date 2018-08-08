@@ -595,9 +595,9 @@ contract BIGER is MiniMeToken, Blocked {
     _tokenFactory,
     0x0,                  // no parent token
     0,                    // no snapshot block number from parent
-    &quot;BIGER&quot;,        // Token name
+    "BIGER",        // Token name
     18,                   // Decimals
-    &quot;BIGER&quot;,                // Symbol
+    "BIGER",                // Symbol
     true                 // Enable transfers
   ) public {}
 

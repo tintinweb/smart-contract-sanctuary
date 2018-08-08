@@ -37,8 +37,8 @@ contract VisperNetwork is ERC20 {
     
     uint256 public totalSupply = 100000000 * 10**18;
 
-    function name() public constant returns (string) { return &quot;Visper Network&quot;; }
-    function symbol() public constant returns (string) { return &quot;VSN&quot;; }
+    function name() public constant returns (string) { return "Visper Network"; }
+    function symbol() public constant returns (string) { return "VSN"; }
     function decimals() public constant returns (uint8) { return 18; }
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);

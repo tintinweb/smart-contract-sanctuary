@@ -23,8 +23,8 @@ contract ToperCoin {
     function ToperCoin() {
         balanceOf[msg.sender] =  2100000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  2100000 * 1000000000000000000;                        // Update total supply
-        name = &quot;ToperCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TOC&quot;;                               // Set the symbol for display purposes
+        name = "ToperCoin";                                   // Set the name for display purposes
+        symbol = "TOC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract KNTTToken is StandardToken {
-  string public name    = &quot;KnightCommentToken&quot;;
-  string public symbol  = &quot;KNTT&quot;;
+  string public name    = "KnightCommentToken";
+  string public symbol  = "KNTT";
   uint8 public decimals = 18;
 
   // one billion in initial supply

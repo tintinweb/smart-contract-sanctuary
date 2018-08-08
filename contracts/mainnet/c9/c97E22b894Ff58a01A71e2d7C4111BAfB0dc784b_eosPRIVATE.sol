@@ -58,8 +58,8 @@ mapping (address => uint256) balances;
 mapping (address => mapping (address => uint256)) allowed;
 mapping (address => bool) public blacklist;
 
-string public constant name = &quot;eosPRIVATE&quot;;
-string public constant symbol = &quot;eosP&quot;;
+string public constant name = "eosPRIVATE";
+string public constant symbol = "eosP";
 uint public constant decimals = 8;
 
 uint256 public totalSupply = 50000000e8;

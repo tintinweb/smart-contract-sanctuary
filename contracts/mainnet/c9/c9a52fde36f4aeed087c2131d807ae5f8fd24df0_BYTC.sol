@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract BYTC is StandardToken, Ownable {
 
-    string public constant name = &quot;佰优乐购&quot;;
-    string public constant symbol = &quot;BYTC&quot;;
+    string public constant name = "佰优乐购";
+    string public constant symbol = "BYTC";
     uint256 public constant decimals = 8;
 
     function BYTC() public {

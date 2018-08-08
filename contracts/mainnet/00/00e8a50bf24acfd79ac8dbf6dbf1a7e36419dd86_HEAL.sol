@@ -28,8 +28,8 @@ contract HEAL {
     ) public {
         totalSupply = 100000000000000000000000000000;                       // Total supply with the decimal amount
         balanceOf[msg.sender] = 100000000000000000000000000000;             // All initial tokens
-        name = &quot;Healio&quot;;                                                    // The name for display purposes
-        symbol = &quot;HEAL&quot;;                                                    // The symbol for display purposes
+        name = "Healio";                                                    // The name for display purposes
+        symbol = "HEAL";                                                    // The symbol for display purposes
     }
 
     /**

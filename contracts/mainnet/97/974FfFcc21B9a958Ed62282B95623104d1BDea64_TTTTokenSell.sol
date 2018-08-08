@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -89,7 +89,7 @@ contract Ownable {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * @dev This simplifies the implementation of &quot;user permissions&quot;.
+ * @dev This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable {
   mapping(address => bool) public whitelist;
@@ -232,8 +232,8 @@ contract ERC20 is ERC20Basic {
 contract TTTToken is ERC20, Ownable {
 	using SafeMath for uint;
 
-	string public constant name = &quot;The Tip Token&quot;;
-	string public constant symbol = &quot;TTT&quot;;
+	string public constant name = "The Tip Token";
+	string public constant symbol = "TTT";
 
 	uint8 public decimals = 18;
 

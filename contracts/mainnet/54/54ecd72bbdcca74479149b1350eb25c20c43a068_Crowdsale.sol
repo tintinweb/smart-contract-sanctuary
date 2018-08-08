@@ -119,7 +119,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -369,10 +369,10 @@ contract PausableToken is StandardToken, Pausable {
 
 
 contract Token is MintableToken, PausableToken {
-  string public constant name = &quot;TCCX Token&quot;;
-  string public constant symbol = &quot;TCCX&quot;;
+  string public constant name = "TCCX Token";
+  string public constant symbol = "TCCX";
   uint8 public constant decimals = 18;
-  string public constant version = &quot;H0.1&quot;; //human 0.1 standard. Just an arbitrary versioning scheme.
+  string public constant version = "H0.1"; //human 0.1 standard. Just an arbitrary versioning scheme.
 }
 
 contract Crowdsale is Ownable {

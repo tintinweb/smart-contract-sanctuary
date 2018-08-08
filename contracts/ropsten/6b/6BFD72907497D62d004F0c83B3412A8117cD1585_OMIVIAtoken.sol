@@ -113,8 +113,8 @@ contract OMIVIAtoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OMIVIAToken() public {
-        symbol = &quot;OMIVIA&quot;;
-        name = &quot; OMIVIA Token&quot;;
+        symbol = "OMIVIA";
+        name = " OMIVIA Token";
         decimals = 8;
         _totalSupply = 10000000000000000;
         balances[0x5C8340bc5e86B16920e33A99ed2C643d5a69909d] = _totalSupply;

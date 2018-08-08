@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract GXCH is StandardToken, Ownable {
 
-    string public constant name = &quot;星河链&quot;;
-    string public constant symbol = &quot;GXCH&quot;;
+    string public constant name = "星河链";
+    string public constant symbol = "GXCH";
     uint256 public constant decimals = 8;
 
     function GXCH() public {

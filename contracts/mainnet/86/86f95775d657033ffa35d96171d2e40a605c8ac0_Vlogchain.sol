@@ -58,8 +58,8 @@ contract Vlogchain is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Vlogchain&quot;;
-    string public constant symbol = &quot;VLG&quot;;
+    string public constant name = "Vlogchain";
+    string public constant symbol = "VLG";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 2000000000e8;

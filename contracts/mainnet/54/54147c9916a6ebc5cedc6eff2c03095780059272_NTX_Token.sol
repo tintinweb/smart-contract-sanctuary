@@ -200,7 +200,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -237,8 +237,8 @@ contract Ownable {
 }
 
 contract NTX_Token is Ownable, StandardToken {
-    string public name = &quot;Nakamotox Coin&quot;;
-    string public symbol = &quot;NTX&quot;;
+    string public name = "Nakamotox Coin";
+    string public symbol = "NTX";
     uint8 public decimals = 18;
 
     constructor() public Ownable() StandardToken() {

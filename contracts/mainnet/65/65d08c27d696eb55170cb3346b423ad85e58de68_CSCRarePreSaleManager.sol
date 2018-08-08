@@ -345,8 +345,8 @@ contract CSCCollectibleBase is ERC721, OperationalControl, StringHelpers {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;CSCRareCollectiblePreSale&quot;;
-  string public constant SYMBOL = &quot;CSCR&quot;;
+  string public constant NAME = "CSCRareCollectiblePreSale";
+  string public constant SYMBOL = "CSCR";
   bytes4 constant InterfaceSignature_ERC165 = bytes4(keccak256(&#39;supportsInterface(bytes4)&#39;));
   bytes4 constant InterfaceSignature_ERC721 =
         bytes4(keccak256(&#39;name()&#39;)) ^
@@ -979,7 +979,7 @@ contract CSCRarePreSaleManager is CSCCollectibleSale {
 
     bytes32[6] memory attributes = [bytes32(999), bytes32(999), bytes32(999), bytes32(999), bytes32(999), bytes32(999)];
     //Fill in index 0 to null requests
-    RarePreSaleItem memory _Obj = RarePreSaleItem(stringToBytes32(&quot;Dummy&quot;), 0, address(this), true);
+    RarePreSaleItem memory _Obj = RarePreSaleItem(stringToBytes32("Dummy"), 0, address(this), true);
     allPreSaleItems.push(_Obj);
   } 
 }

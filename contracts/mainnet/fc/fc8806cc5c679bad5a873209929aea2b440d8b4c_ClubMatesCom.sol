@@ -212,7 +212,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -322,8 +322,8 @@ contract ClubMatesCom is StandardToken, Claimable {
       uint256 _initialSupply)
   public 
   {
-      name           = &quot;ClubMatesCom_TEST&quot;;
-      symbol         = &quot;CMC&quot;;
+      name           = "ClubMatesCom_TEST";
+      symbol         = "CMC";
       decimals       = 18;
       accICO         = _accICO;
       accBonusTokens = _accBonusTokens;

@@ -28,8 +28,8 @@ contract DAX {
     ) public {
         totalSupply = 200000000000000000000000000;                       // Total supply with the decimal amount
         balanceOf[msg.sender] = 200000000000000000000000000;             // All initial tokens
-        name = &quot;DAX Coin&quot;;                                               // The name for display purposes
-        symbol = &quot;DAX&quot;;                                                  // The symbol for display purposes
+        name = "DAX Coin";                                               // The name for display purposes
+        symbol = "DAX";                                                  // The symbol for display purposes
     }
 
     /**

@@ -21,9 +21,9 @@ contract PooCoin {
     function PooCoin() {
 
          initialSupply = 77000000000000000000000000;
-         name =&quot;PooCoin&quot;;
+         name ="PooCoin";
         decimals = 18;
-         symbol = &quot;POO&quot;;
+         symbol = "POO";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

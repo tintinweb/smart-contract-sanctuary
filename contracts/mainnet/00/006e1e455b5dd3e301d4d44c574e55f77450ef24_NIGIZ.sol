@@ -150,8 +150,8 @@ contract TheLiquidToken is StandardToken, Ownable {
 }
     
 contract NIGIZ is TheLiquidToken {
-  string public constant name = &quot;NIGIZ&quot;;
-      string public constant symbol = &quot;NGZ&quot;;
+  string public constant name = "NIGIZ";
+      string public constant symbol = "NGZ";
   uint public constant decimals = 18;
   uint256 public initialSupply = 7777777000000000000000000;
     

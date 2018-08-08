@@ -204,8 +204,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract OG is Ownable , StandardToken {
 ////////////////////////////////
-  string public constant name = &quot;OnlyGame Token&quot;;
-  string public constant symbol = &quot;OG&quot;;
+  string public constant name = "OnlyGame Token";
+  string public constant symbol = "OG";
   uint8 public constant decimals = 18;
   uint256 public constant totalsum =  1000000000 * 10 ** uint256(decimals);
   ////////////////////////////////

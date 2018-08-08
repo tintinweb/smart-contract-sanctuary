@@ -48,8 +48,8 @@ contract CryptoWorldCupToken is ERC721 {
   // ********************************************************************************************************
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;CryptoWorldCup&quot;;
-  string public constant SYMBOL = &quot;CryptoWorldCupToken&quot;;
+  string public constant NAME = "CryptoWorldCup";
+  string public constant SYMBOL = "CryptoWorldCupToken";
 
   //@dev network fee address
   address private netFee = 0x5e02f153d571C1FBB6851928975079812DF4c8cd;
@@ -246,7 +246,7 @@ contract CryptoWorldCupToken is ERC721 {
      price: newPrice,
      pictureUrl: _pictureUrl,
      flagUrl: _flagUrl,
-     position: &quot;&quot;,
+     position: "",
      age: 0,
      offensive: 0,
      defensive: 0,

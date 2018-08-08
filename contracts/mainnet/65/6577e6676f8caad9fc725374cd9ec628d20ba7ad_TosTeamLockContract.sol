@@ -94,7 +94,7 @@ contract TosTeamLockContract {
     using SafeERC20 for TOSERC20;
     using SafeMath for uint;
 
-    string public constant name = &quot;TosTeamLockContract&quot;;
+    string public constant name = "TosTeamLockContract";
 
     uint256 public constant RELEASE_TIME                   = 1623254400;  //2021/6/10 0:0:0;
 

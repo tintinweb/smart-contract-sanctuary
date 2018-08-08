@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -204,8 +204,8 @@ contract BurnableToken is BasicToken {
 
 contract PVBToken is  BurnableToken, DetailedERC20 {
     uint8 constant DECIMALS = 18;
-    string constant NAME = &quot;Points Value Bank&quot;;
-    string constant SYM = &quot;PVB&quot;;
+    string constant NAME = "Points Value Bank";
+    string constant SYM = "PVB";
     uint256 constant MAXPVB = 5 * 10**8 * 10**18;
     function PVBToken() DetailedERC20 (MAXPVB,NAME, SYM, DECIMALS) public {}
 }

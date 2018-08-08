@@ -99,8 +99,8 @@ contract DACCToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DACCToken() public {
-        symbol = &quot;DACC&quot;;
-        name = &quot;Decentralized Accessible Content Chain&quot;;
+        symbol = "DACC";
+        name = "Decentralized Accessible Content Chain";
         decimals = 6;
         _totalSupply = 30000000000000000;
         balances[0xaf892edC9515Ba62151d44219eA2149A86B86F93] = _totalSupply;

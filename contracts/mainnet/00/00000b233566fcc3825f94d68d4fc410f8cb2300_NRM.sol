@@ -112,8 +112,8 @@ contract NRM is ERC20Interface, Owned {
     // Contract init. Set symbol, name, decimals and initial fixed supply
     // ------------------------------------------------------------------------
     function NRM() public {
-        symbol = &quot;NRM&quot;;
-        name = &quot;Neuromachine&quot;;
+        symbol = "NRM";
+        name = "Neuromachine";
         decimals = 18;
         _totalSupply = 4958333333 * 10**uint(decimals);
         balances[owner] = _totalSupply;

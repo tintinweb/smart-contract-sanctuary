@@ -277,7 +277,7 @@ contract ParsecShipPricing {
   {
     require(
       _initialPrice <= TOTAL_PARSEC_CREDIT_SUPPLY,
-      &quot;Initial ship price must not be greater than total Parsec Credit.&quot;
+      "Initial ship price must not be greater than total Parsec Credit."
     );
 
     if (_minutesPassed >> _multipliers.length > 0) {
@@ -316,7 +316,7 @@ interface TokenRecipient {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -527,7 +527,7 @@ library AddressUtils {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -542,7 +542,7 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(address _from, uint256 _tokenId, bytes _data) public returns(bytes4);
 }
@@ -557,7 +557,7 @@ contract ERC721BasicToken is ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
@@ -695,7 +695,7 @@ contract ERC721BasicToken is ERC721Basic {
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -711,14 +711,14 @@ contract ERC721BasicToken is ERC721Basic {
     canTransfer(_tokenId)
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -1023,7 +1023,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
 
 // solium-disable-next-line lbrace
 contract ParsecShipAuction is
-  ERC721Token(&quot;Parsec Initial Ship&quot;, &quot;PIS&quot;),
+  ERC721Token("Parsec Initial Ship", "PIS"),
   ParsecShipInfo,
   ParsecShipPricing,
   ParsecReferralTracking,
@@ -1112,8 +1112,8 @@ contract ParsecShipAuction is
   }
 
   function concludeFirstAuction() external {
-    require(getLastAuctionedShipId() >= 1, &quot;The first auction must have ended.&quot;);
-    require(!firstAuctionConcluded, &quot;The first auction must not have been concluded.&quot;);
+    require(getLastAuctionedShipId() >= 1, "The first auction must have ended.");
+    require(!firstAuctionConcluded, "The first auction must not have been concluded.");
 
     firstAuctionConcluded = true;
 
@@ -1182,9 +1182,9 @@ contract ParsecShipAuction is
   }
 
   function getShipPrice(uint256 _shipId, uint256 _minutesPassed) public view returns (uint256 /* _price */) {
-    require(_shipId >= 2, &quot;Ship ID must be greater than or equal to 2.&quot;);
-    require(_shipId <= TOTAL_SHIP, &quot;Ship ID must be smaller than or equal to total number of ship.&quot;);
-    require(_shipId == getLastAuctionedShipId().add(1), &quot;Can only get price of the ship which is being auctioned.&quot;);
+    require(_shipId >= 2, "Ship ID must be greater than or equal to 2.");
+    require(_shipId <= TOTAL_SHIP, "Ship ID must be smaller than or equal to total number of ship.");
+    require(_shipId == getLastAuctionedShipId().add(1), "Can only get price of the ship which is being auctioned.");
 
     uint256 _initialPrice = getLastAuctionsWinningBid();
 
@@ -1202,10 +1202,10 @@ contract ParsecShipAuction is
   }
 
   function _bidFirstShip(uint256 _value, address _bidder, address _referrer) internal {
-    require(now >= firstAuctionsStartDate, &quot;Auction of the first ship is not started yet.&quot;);
-    require(now < getFirstAuctionsEndDate(), &quot;Auction of the first ship has ended.&quot;);
+    require(now >= firstAuctionsStartDate, "Auction of the first ship is not started yet.");
+    require(now < getFirstAuctionsEndDate(), "Auction of the first ship has ended.");
 
-    require(_value >= firstAuctionsHighestBid.add(FIRST_AUCTIONS_MINIMUM_RAISE), &quot;Not enough Parsec Credit.&quot;);
+    require(_value >= firstAuctionsHighestBid.add(FIRST_AUCTIONS_MINIMUM_RAISE), "Not enough Parsec Credit.");
 
     _updateReferrerFor(_bidder, _referrer);
     _receiveFrom(_bidder, _value);
@@ -1239,7 +1239,7 @@ contract ParsecShipAuction is
     internal
   {
     uint256 _price = getShipPrice(_shipId);
-    require(_value >= _price, &quot;Not enough Parsec Credit.&quot;);
+    require(_value >= _price, "Not enough Parsec Credit.");
 
     _updateReferrerFor(_bidder, _referrer);
 
@@ -1274,10 +1274,10 @@ contract ParsecShipAuction is
     // because Parsec Credit contract is trustable and there are no callbacks involved.
     // solium-disable-next-line security/no-low-level-calls
     require(address(parsecCreditContract).call(
-      bytes4(keccak256(&quot;transfer(address,uint256)&quot;)),
+      bytes4(keccak256("transfer(address,uint256)")),
       _to,
       _value
-    ), &quot;Parsec Credit transfer failed.&quot;);
+    ), "Parsec Credit transfer failed.");
   }
 }
 
@@ -1443,7 +1443,7 @@ contract ParsecInitialShip is
   }
 
   function reclaimParsecCredit() external onlyOwner {
-    require(firstAuctionConcluded, &quot;The first auction must have been concluded.&quot;);
+    require(firstAuctionConcluded, "The first auction must have been concluded.");
     _sendTo(owner, parsecCreditContract.balanceOf(this));
   }
 }

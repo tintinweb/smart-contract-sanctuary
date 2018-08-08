@@ -4,8 +4,8 @@ pragma solidity 		^0.4.21	;
 										
 		mapping (address => uint256) public balanceOf;								
 										
-		string	public		name =	&quot;	RE_Portfolio_VIII_883		&quot;	;
-		string	public		symbol =	&quot;	RE883VIII		&quot;	;
+		string	public		name =	"	RE_Portfolio_VIII_883		"	;
+		string	public		symbol =	"	RE883VIII		"	;
 		uint8	public		decimals =		18			;
 										
 		uint256 public totalSupply =		1334895047129150000000000000					;	

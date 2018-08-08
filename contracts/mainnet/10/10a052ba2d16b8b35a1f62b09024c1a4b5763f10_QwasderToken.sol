@@ -50,7 +50,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization
- *      control functions, this simplifies the implementation of &quot;user permissions&quot;.
+ *      control functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -149,8 +149,8 @@ contract QwasderToken is ERC20Basic, Ownable {
     /**
      * DetailedERC20 data.
      */
-    string public name     = &quot;Qwasder&quot;;
-    string public symbol   = &quot;QWS&quot;;
+    string public name     = "Qwasder";
+    string public symbol   = "QWS";
     uint8  public decimals = 18;
 
     /**

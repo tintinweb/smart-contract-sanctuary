@@ -21,8 +21,8 @@ pragma solidity 		^0.4.8	;
 											
 	contract	PLAY_X4				is	Ownable	{			
 											
-		string	public	constant	name =	&quot;	PLAY_X4		&quot;	;	
-		string	public	constant	symbol =	&quot;	PLAYX4		&quot;	;	
+		string	public	constant	name =	"	PLAY_X4		"	;	
+		string	public	constant	symbol =	"	PLAYX4		"	;	
 		uint32	public	constant	decimals =		18			;	
 		uint	public		totalSupply =		10000000000000000000000000			;	
 											
@@ -80,7 +80,7 @@ pragma solidity 		^0.4.8	;
 	// IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 											
 											
-		string	inData_1	=	&quot;	FIFA WORLD CUP 2018			&quot;	;	
+		string	inData_1	=	"	FIFA WORLD CUP 2018			"	;	
 											
 		function	setData_1	(	string	newData_1	)	public	onlyOwner	{	
 			inData_1	=	newData_1	;					
@@ -95,7 +95,7 @@ pragma solidity 		^0.4.8	;
 	// IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 											
 											
-		string	inData_2	=	&quot;	Match : 16.06.2018 21:00 (Bern Time)			&quot;	;	
+		string	inData_2	=	"	Match : 16.06.2018 21:00 (Bern Time)			"	;	
 											
 		function	setData_2	(	string	newData_2	)	public	onlyOwner	{	
 			inData_2	=	newData_2	;					
@@ -110,7 +110,7 @@ pragma solidity 		^0.4.8	;
 	// IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 											
 											
-		string	inData_3	=	&quot;	CROATIA - NIGERIA			&quot;	;	
+		string	inData_3	=	"	CROATIA - NIGERIA			"	;	
 											
 		function	setData_3	(	string	newData_3	)	public	onlyOwner	{	
 			inData_3	=	newData_3	;					
@@ -125,7 +125,7 @@ pragma solidity 		^0.4.8	;
 	// IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 											
 											
-		string	inData_4	=	&quot;	COTES [2.2676 ; 4.2113 ; 3.1099]			&quot;	;	
+		string	inData_4	=	"	COTES [2.2676 ; 4.2113 ; 3.1099]			"	;	
 											
 		function	setData_4	(	string	newData_4	)	public	onlyOwner	{	
 			inData_4	=	newData_4	;					
@@ -140,7 +140,7 @@ pragma solidity 		^0.4.8	;
 	// IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 											
 											
-		string	inData_5	=	&quot;	X			&quot;	;	
+		string	inData_5	=	"	X			"	;	
 											
 		function	setData_5	(	string	newData_5	)	public	onlyOwner	{	
 			inData_5	=	newData_5	;					

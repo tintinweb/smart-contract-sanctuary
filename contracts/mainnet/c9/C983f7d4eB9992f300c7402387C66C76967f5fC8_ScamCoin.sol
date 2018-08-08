@@ -95,8 +95,8 @@ contract Ownable {
 }
 
 contract ScamCoin is StandardToken, Ownable {
-    string public name = &quot;ScamCoin&quot;;		
-  string public symbol = &quot;SCAM&quot;;		
+    string public name = "ScamCoin";		
+  string public symbol = "SCAM";		
   uint256 public decimals = 18;	
   uint256 public INITIAL_SUPPLY = 200000000 * (10 ** uint256(decimals));
   function ScamCoin()  public {

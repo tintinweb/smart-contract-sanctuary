@@ -141,7 +141,7 @@ contract ERC20 is Owned {
 //    therefore there is no separate error state or counter for that in this Token Contract.
 //
 // 2 - A call originated from the user (isContract(msg.sender)==false) should throw an exception on error,
-//     but it should return &quot;false&quot; on error if called from other contract (isContract(msg.sender)==true).
+//     but it should return "false" on error if called from other contract (isContract(msg.sender)==true).
 //     Reason: thrown exception are easier to see in wallets, returned boolean values are easier to evaluate in the code of the calling contract.
 //
 // 3 - Service providers are responsible for firing events in case of offer changes;
@@ -222,7 +222,7 @@ contract XRateProvider {
     //@dev fraction numbers are restricted to uint16 to prevent overflow in calculations;
     function getRate() public returns (uint32 /*nominator*/, uint32 /*denominator*/);
 
-    //@dev provides a code for another currency, f.e. &quot;ETH&quot; or &quot;USD&quot;
+    //@dev provides a code for another currency, f.e. "ETH" or "USD"
     function getCode() public returns (string);
 }
 
@@ -233,8 +233,8 @@ contract SubscriptionBase {
     enum SubState   {NOT_EXIST, BEFORE_START, PAID, CHARGEABLE, ON_HOLD, CANCELED, EXPIRED, FINALIZED}
     enum OfferState {NOT_EXIST, BEFORE_START, ACTIVE, SOLD_OUT, ON_HOLD, EXPIRED}
 
-    string[] internal SUB_STATES   = [&quot;NOT_EXIST&quot;, &quot;BEFORE_START&quot;, &quot;PAID&quot;, &quot;CHARGEABLE&quot;, &quot;ON_HOLD&quot;, &quot;CANCELED&quot;, &quot;EXPIRED&quot;, &quot;FINALIZED&quot; ];
-    string[] internal OFFER_STATES = [&quot;NOT_EXIST&quot;, &quot;BEFORE_START&quot;, &quot;ACTIVE&quot;, &quot;SOLD_OUT&quot;, &quot;ON_HOLD&quot;, &quot;EXPIRED&quot;];
+    string[] internal SUB_STATES   = ["NOT_EXIST", "BEFORE_START", "PAID", "CHARGEABLE", "ON_HOLD", "CANCELED", "EXPIRED", "FINALIZED" ];
+    string[] internal OFFER_STATES = ["NOT_EXIST", "BEFORE_START", "ACTIVE", "SOLD_OUT", "ON_HOLD", "EXPIRED"];
 
     //@dev subscription and subscription offer use the same structure. Offer is technically a template for subscription.
     struct Subscription {
@@ -358,7 +358,7 @@ contract ERC20ModuleSupport {
 //@dev implementation
 contract SubscriptionModuleImpl is SubscriptionModule, Owned  {
 
-    string public constant VERSION = &quot;0.1.0&quot;;
+    string public constant VERSION = "0.1.0";
 
     // *************************************************
     // *              contract states                  *
@@ -626,7 +626,7 @@ contract SubscriptionModuleImpl is SubscriptionModule, Owned  {
     ///@dev subscription uses SAN token for payment, but an exact amount to be paid or deposit is calculated using exchange rate from external xrateProvider (previosly registered on platform).
     ///    This allows to create a subscription bound to another token or even fiat currency.
     ///@param _pricePerHour - subscription price per hour in SAN
-    ///@param _xrateProviderId - id of external exchange rate provider from subscription currency to SAN; &quot;0&quot; means subscription is priced in SAN natively.
+    ///@param _xrateProviderId - id of external exchange rate provider from subscription currency to SAN; "0" means subscription is priced in SAN natively.
     ///@param _chargePeriod - time period to charge; subscription can&#39;t be charged more often than this period. Time units are native ethereum time, returning by `now`, i.e. seconds.
     ///@param _expireOn - offer can&#39;t be accepted after this time.
     ///@param _offerLimit - how many subscription are available to created from this offer; there is no magic number for unlimited offer -- use big number instead.
@@ -764,7 +764,7 @@ contract SubscriptionModuleImpl is SubscriptionModule, Owned  {
             //supress re-throwing of exceptions; reserve enough gas to finish this function
             gasReserve = max(gasReserve,10000);  //reserve minimum 10000 gas
             assert (msg.gas > gasReserve);       //sanity check
-            if (_to.call.gas(msg.gas-gasReserve)(bytes4(sha3(&quot;onSubCanceled(uint256,address)&quot;)), subId, msg.sender)) {     // <=== possible reentrancy
+            if (_to.call.gas(msg.gas-gasReserve)(bytes4(sha3("onSubCanceled(uint256,address)")), subId, msg.sender)) {     // <=== possible reentrancy
                 //do nothing. it is notification only.
                 //Later: is it possible to evaluate return value here? If is better to return the subscription deposit here.
             }

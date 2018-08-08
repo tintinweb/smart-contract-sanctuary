@@ -48,8 +48,8 @@ using SafeMath for uint256;
 
 uint public _totalSupply = 0;
 
-string public constant symbol = &quot;SENSE&quot;;
-string public constant name = &quot;Sense&quot;;
+string public constant symbol = "SENSE";
+string public constant name = "Sense";
 uint8 public constant decimals = 18;
 
 // 1 ETH = 1000 Simple

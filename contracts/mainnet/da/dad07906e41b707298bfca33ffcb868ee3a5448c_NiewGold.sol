@@ -198,8 +198,8 @@ contract StandardToken is ERC223, SafeMath {
  */
 contract NiewGold is StandardToken {
 
-    string public name = &quot;Niew Gold&quot;;
-    string public symbol = &quot;NIEW&quot;;
+    string public name = "Niew Gold";
+    string public symbol = "NIEW";
     
 	
 	address public coinMaster;

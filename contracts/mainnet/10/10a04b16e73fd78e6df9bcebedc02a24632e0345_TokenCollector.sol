@@ -273,7 +273,7 @@ contract Ownable {
 }
 
 contract Whitelist is Ownable, RBAC {
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if operator is not whitelisted.
@@ -368,7 +368,7 @@ contract TokenCollector is Whitelist {
         uint256 balance = token.balanceOf(msg.sender);
         require(
             token.allowance(msg.sender, address(this)) >= balance,
-            &quot;You should send all of your money.&quot;
+            "You should send all of your money."
         );
         token.safeTransferFrom(msg.sender, receiver, balance);
     }
@@ -584,8 +584,8 @@ contract ABL is StandardToken, OwnableToken {
     uint256 public constant DEVELOPERS = 178550000;   // developer
 
     // Token Information
-    string public constant name = &quot;Airbloc&quot;;
-    string public constant symbol = &quot;ABL&quot;;
+    string public constant name = "Airbloc";
+    string public constant symbol = "ABL";
     uint256 public constant decimals = 18;
     uint256 public totalSupply = SUM.mul(10 ** uint256(decimals));
 

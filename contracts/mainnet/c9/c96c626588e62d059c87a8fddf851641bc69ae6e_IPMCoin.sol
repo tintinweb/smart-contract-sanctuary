@@ -185,7 +185,7 @@ contract IPMCoin is owned, TokenERC20 {
     event FrozenFunds(address target, bool frozen);
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    function IPMCoin() TokenERC20(INIT_SUPPLY, &quot;IPMChain&quot;, &quot;IPM&quot;) public {}
+    function IPMCoin() TokenERC20(INIT_SUPPLY, "IPMChain", "IPM") public {}
 
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {

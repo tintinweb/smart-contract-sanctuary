@@ -22,8 +22,8 @@ contract WDNA{
     function WDNA() public{
         balanceOf[msg.sender] = 12500000000 * (10**18); // Give the creator all initial tokens
         totalSupply = 12500000000 * (10**18);          // Update total supply
-        name = &quot;Public of World Gene Chain&quot;;            // Set the name for display purposes
-        symbol = &quot;WDNA&quot;;                               // Set the symbol for display purposes
+        name = "Public of World Gene Chain";            // Set the name for display purposes
+        symbol = "WDNA";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

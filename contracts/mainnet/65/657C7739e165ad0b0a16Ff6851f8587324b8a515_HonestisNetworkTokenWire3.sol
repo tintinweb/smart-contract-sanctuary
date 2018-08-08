@@ -134,8 +134,8 @@ contract StandardToken is ERC20, SafeMath {
 //  Honestis Network Token 
 contract HonestisNetworkTokenWire3{
 
-    string public name = &quot;Honestis.Network Token Version 1&quot;;
-    string public symbol = &quot;HNT&quot;;
+    string public name = "Honestis.Network Token Version 1";
+    string public symbol = "HNT";
     uint8 public constant decimals = 18;  // 18 decimal places, the same as ETC/ETH/HEE.
     // The funding cap in weis.
 // was not reached about 93% was sold    uint256 public constant tokenCreationCap = 66200 * 1000 * ether ;

@@ -73,8 +73,8 @@ contract BenCoin is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
 
     constructor() public {
-        symbol = &quot;BEN&quot;;
-        name = &quot;BenCoin&quot;;
+        symbol = "BEN";
+        name = "BenCoin";
         decimals = 0;
         _totalSupply = 6 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -106,9 +106,9 @@ contract BTHB is StandardToken {
     function BTHB() {
         balances[msg.sender] = 10000000000000000000000000000;               
         totalSupply = 10000000000000000000000000000;                        
-        name = &quot;BTHB&quot;; 
+        name = "BTHB"; 
         decimals = 18;                                               
-        symbol = &quot;BTHB&quot;;                                             
+        symbol = "BTHB";                                             
         unitsOneEthCanBuy = 1500;                                      
         fundsWallet = msg.sender;                                    
     }
@@ -133,7 +133,7 @@ contract BTHB is StandardToken {
         Approval(msg.sender, _spender, _value);
 
         
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

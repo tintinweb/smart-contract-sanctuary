@@ -113,8 +113,8 @@ contract FirstSaudiToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FirstSaudiToken() public {
-        symbol = &quot;1SA&quot;;
-        name = &quot;FirstSaudiToken&quot;;
+        symbol = "1SA";
+        name = "FirstSaudiToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x591b18E81FDFBad60e48f7aF7505FF1Fc90BbadE] = _totalSupply;

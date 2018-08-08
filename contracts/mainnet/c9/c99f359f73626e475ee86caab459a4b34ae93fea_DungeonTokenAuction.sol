@@ -3,7 +3,7 @@ pragma solidity ^0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -353,10 +353,10 @@ contract EDStructs {
     /**
      * @dev The main Dungeon struct. Every dungeon in the game is represented by this structure.
      * A dungeon is consists of an unlimited number of floors for your heroes to challenge,
-     * the power level of a dungeon is encoded in the floorGenes. Some dungeons are in fact more &quot;challenging&quot; than others,
+     * the power level of a dungeon is encoded in the floorGenes. Some dungeons are in fact more "challenging" than others,
      * the secret formula for that is left for user to find out.
      *
-     * Each dungeon also has a &quot;training area&quot;, heroes can perform trainings and upgrade their stat,
+     * Each dungeon also has a "training area", heroes can perform trainings and upgrade their stat,
      * and some dungeons are more effective in the training, which is also a secret formula!
      *
      * When player challenge or do training in a dungeon, the fee will be collected as the dungeon rewards,
@@ -376,7 +376,7 @@ contract EDStructs {
         uint8 status;
 
         // The dungeon&#39;s difficulty, the higher the difficulty,
-        // normally, the &quot;rarer&quot; the seedGenes, the higher the diffculty,
+        // normally, the "rarer" the seedGenes, the higher the diffculty,
         // and the higher the contribution fee it is to challenge, train, and transport to the dungeon,
         // the formula for the contribution fee is in DungeonChallenge and DungeonTraining contracts.
         // A dungeon&#39;s difficulty never change.
@@ -448,12 +448,12 @@ contract DungeonTokenInterface is ERC721, EDStructs {
     /**
      * @dev Name of token.
      */
-    string public constant name = &quot;Dungeon&quot;;
+    string public constant name = "Dungeon";
 
     /**
      * @dev Symbol of token.
      */
-    string public constant symbol = &quot;DUNG&quot;;
+    string public constant symbol = "DUNG";
 
     /**
      * @dev An array containing the Dungeon struct, which contains all the dungeons in existance.

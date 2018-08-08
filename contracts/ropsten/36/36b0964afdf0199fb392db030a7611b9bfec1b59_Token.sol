@@ -187,8 +187,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Token is StandardToken {
 
-    string public name    = &quot;SZU_turbo&quot;;
-    string public symbol  = &quot;TUB&quot;;
+    string public name    = "SZU_turbo";
+    string public symbol  = "TUB";
     uint8 public decimals = 8;
 
     uint256 public constant INITIAL_SUPPLY = 2000000000;

@@ -6,7 +6,7 @@ pragma solidity ^0.4.21;
 
 /**
  * ERC-20 standard token interface, as defined
- * <a href=&quot;http://github.com/ethereum/EIPs/issues/20&quot;>here</a>.
+ * <a href="http://github.com/ethereum/EIPs/issues/20">here</a>.
  */
 contract Token {
   /**
@@ -343,7 +343,7 @@ contract PonderAirdropToken is AbstractToken {
    * @return name of this token
    */
   function name () public pure returns (string result) {
-    return &quot;Ponder Airdrop Token&quot;;
+    return "Ponder Airdrop Token";
   }
 
   /**
@@ -352,7 +352,7 @@ contract PonderAirdropToken is AbstractToken {
    * @return symbol of this token
    */
   function symbol () public pure returns (string result) {
-    return &quot;PONA&quot;;
+    return "PONA";
   }
 
   /**

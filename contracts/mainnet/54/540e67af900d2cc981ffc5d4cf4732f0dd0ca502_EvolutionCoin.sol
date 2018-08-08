@@ -32,8 +32,8 @@ contract EvolutionCoin {
     ) public {
         totalSupply = 8000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;EvolutionCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ELC&quot;;                               // Set the symbol for display purposes
+        name = "EvolutionCoin";                                   // Set the name for display purposes
+        symbol = "ELC";                               // Set the symbol for display purposes
     }
 
     /**

@@ -49,8 +49,8 @@ contract ERC223 {
 contract FintechnicsPublic is ERC223 {
     using SafeMath256 for uint256;
 
-    string public constant name = &quot;Fintechnics Public&quot;;
-    string public constant symbol = &quot;FINTP&quot;;
+    string public constant name = "Fintechnics Public";
+    string public constant symbol = "FINTP";
     uint256 public constant decimals = 18;
     uint256 public totalSupply = 150000000 * 10**decimals;
     address public owner = address(0);

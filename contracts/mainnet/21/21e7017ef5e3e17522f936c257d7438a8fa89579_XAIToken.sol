@@ -86,9 +86,9 @@ contract StandardXAIToken is BasicXAIToken {
 
 contract XAIToken is StandardXAIToken {
 
-    string public name = &quot;AVALANCHE TOKEN&quot;;
+    string public name = "AVALANCHE TOKEN";
     uint8 public decimals = 18;
-    string public symbol = &quot;XAIT&quot;;
+    string public symbol = "XAIT";
     string public version = &#39;XAIT 0.1&#39;;
     address public mintableAddress;
     address public creator;
@@ -133,7 +133,7 @@ contract XAIToken is StandardXAIToken {
         allowed[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
 
-        require(_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 

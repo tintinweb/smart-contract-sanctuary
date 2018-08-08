@@ -73,8 +73,8 @@ contract TrueToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;TrueToken&quot;;
-    string public constant symbol = &quot;TRU&quot;;
+    string public constant name = "TrueToken";
+    string public constant symbol = "TRU";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 20000000000e18;

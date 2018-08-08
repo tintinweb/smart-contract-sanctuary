@@ -3,7 +3,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -26,7 +26,7 @@ contract Ownable {
    * @dev Throws if called by any account other than the owner.
    */
   modifier onlyOwner() {
-    require(msg.sender == owner, &quot;Only the owner may call this method.&quot;);
+    require(msg.sender == owner, "Only the owner may call this method.");
     _;
   }
 
@@ -43,7 +43,7 @@ contract Ownable {
    * @param _newOwner The address to transfer ownership to.
    */
   function _transferOwnership(address _newOwner) internal {
-    require(_newOwner != address(0), &quot;Invalid owner address&quot;);
+    require(_newOwner != address(0), "Invalid owner address");
     emit OwnershipTransferred(owner, _newOwner);
     owner = _newOwner;
   }
@@ -95,9 +95,9 @@ contract ReviewThisPlease is Ownable
         onlyOwner public 
     {
         require(_minForNewTopic > 0, 
-            &quot;The _minForNewTopic should be > 0.&quot;);
+            "The _minForNewTopic should be > 0.");
         require(_minForExistingTopic > 0, 
-            &quot;The _minForExistingTopic should be > 0.&quot;);
+            "The _minForExistingTopic should be > 0.");
         
         minForNewTopic = _minForNewTopic;
         minForExistingTopic = _minForExistingTopic;
@@ -140,16 +140,16 @@ contract ReviewThisPlease is Ownable
     function requestTopic(string topic) public payable
     {
         require(bytes(topic).length > 0, 
-            &quot;Please specify a topic.&quot;);
+            "Please specify a topic.");
         require(bytes(topic).length <= 500, 
-            &quot;The topic is too long (max 500 characters).&quot;);
+            "The topic is too long (max 500 characters).");
             
         SupporterList storage supporterList = topicToSupporterList[topic];
         
         if(supporterList.length == 0)
         { // New topic
             require(msg.value >= minForNewTopic, 
-                &quot;Please send at least &#39;minForNewTopic&#39; to request a new topic.&quot;);
+                "Please send at least &#39;minForNewTopic&#39; to request a new topic.");
           
             allTopics.idToTopic[allTopics.length++] = topic;
             emit NewTopic(topic, msg.sender, msg.value);
@@ -157,7 +157,7 @@ contract ReviewThisPlease is Ownable
         else
         { // Existing topic
             require(msg.value >= minForExistingTopic, 
-                &quot;Please send at least &#39;minForExistingTopic&#39; to add support to an existing topic.&quot;);
+                "Please send at least &#39;minForExistingTopic&#39; to add support to an existing topic.");
         
             emit ContributeToTopic(topic, msg.sender, msg.value);
         }

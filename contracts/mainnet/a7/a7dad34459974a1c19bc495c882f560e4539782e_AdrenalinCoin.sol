@@ -4,8 +4,8 @@ interface  tokenRecipient { function receiveApproval (address _from, uint256 _va
 
 contract AdrenalinCoin {
     // Public variables of the token
-    string public name = &quot;AdrenalinCoin&quot;;
-    string public symbol = &quot;ADR&quot;;
+    string public name = "AdrenalinCoin";
+    string public symbol = "ADR";
     uint8 public decimals = 6;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply;
@@ -32,8 +32,8 @@ contract AdrenalinCoin {
     ) public {
         totalSupply = 20000000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = 20000000000000;                // Give the creator all initial tokens
-        name = &quot;AdrenalinCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ADR&quot;;                               // Set the symbol for display purposes
+        name = "AdrenalinCoin";                                   // Set the name for display purposes
+        symbol = "ADR";                               // Set the symbol for display purposes
     }
 
     /**

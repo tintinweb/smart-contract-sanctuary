@@ -207,8 +207,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract KEOS  is StandardToken {
 
-  string public constant name = &quot;KEOSToken&quot;;
-  string public constant symbol = &quot;KEOS&quot;;
+  string public constant name = "KEOSToken";
+  string public constant symbol = "KEOS";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY =  1500000000* (10 ** uint256(decimals));

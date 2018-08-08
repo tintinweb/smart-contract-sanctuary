@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
  * @title Ownable
  *
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -28,7 +28,7 @@ contract Ownable {
      * @dev Throws if called by any account other than the owner.
      */
     modifier onlyOwner() {
-        require(msg.sender == owner, &quot;You&#39;re not the owner!&quot;);
+        require(msg.sender == owner, "You&#39;re not the owner!");
         _;
     }
 
@@ -38,7 +38,7 @@ contract Ownable {
      * the smart contract.
      */
     modifier onlyAnyOwners() {
-        require(allOwnersMap[msg.sender] == 1, &quot;You&#39;re not the owner or never were the owner!&quot;);
+        require(allOwnersMap[msg.sender] == 1, "You&#39;re not the owner or never were the owner!");
         _;
     }
 
@@ -83,7 +83,7 @@ contract Suicidable is Ownable {
      * @dev Throws if called the contract has not yet suicided
      */
     modifier hasNotSuicided() {
-        require(hasSuicided == false, &quot;Contract has suicided!&quot;);
+        require(hasSuicided == false, "Contract has suicided!");
         _;
     }
 
@@ -146,10 +146,10 @@ contract Migratable is Suicidable {
      * @dev Approves a migration and suicides the entire smart contract
      */
     function approveMigration(uint gasCostInGwei) public onlyOwner hasNotSuicided {
-        require(hasRequestedForMigration, &quot;please make a migration request&quot;);
-        require(requestedForMigrationAt + 604800 < now, &quot;migration is timelocked for 7 days&quot;);
-        require(gasCostInGwei > 0, &quot;gas cost must be more than 0&quot;);
-        require(gasCostInGwei < 20, &quot;gas cost can&#39;t be more than 20&quot;);
+        require(hasRequestedForMigration, "please make a migration request");
+        require(requestedForMigrationAt + 604800 < now, "migration is timelocked for 7 days");
+        require(gasCostInGwei > 0, "gas cost must be more than 0");
+        require(gasCostInGwei < 20, "gas cost can&#39;t be more than 20");
 
         // Figure out how much ether to send
         uint gasLimit = 21000;
@@ -157,7 +157,7 @@ contract Migratable is Suicidable {
         uint gasCost = gasLimit * gasPrice;
         uint etherToSend = address(this).balance - gasCost;
 
-        require(etherToSend > 0, &quot;not enough balance in smart contract&quot;);
+        require(etherToSend > 0, "not enough balance in smart contract");
 
         // Send the funds to the new smart contract
         emit MigrateFundsApproved(msg.sender, etherToSend);
@@ -261,8 +261,8 @@ contract Bitwords is Migratable {
      * @param cut   the amount of cut that Bitwords takes.
      */
     function setBitwordsCut (uint cut) hasNotSuicided onlyOwner public {
-        require(cut <= 30, &quot;cut cannot be more than 30%&quot;);
-        require(cut >= 0, &quot;cut should be greater than 0%&quot;);
+        require(cut <= 30, "cut cannot be more than 30%");
+        require(cut >= 0, "cut should be greater than 0%");
         bitwordsCutOutof100 = cut;
 
         emit BitwordsCutChanged(msg.sender, cut);
@@ -274,7 +274,7 @@ contract Bitwords is Migratable {
      * @param newTimelock   the new timelock
      */
     function setRefundTimelock (uint newTimelock) hasNotSuicided onlyOwner public {
-        require(newTimelock >= 0, &quot;timelock has to be greater than 0&quot;);
+        require(newTimelock >= 0, "timelock has to be greater than 0");
         refundRequestTimelock = newTimelock;
 
         emit TimelockChanged(msg.sender, newTimelock);
@@ -291,7 +291,7 @@ contract Bitwords is Migratable {
     bool private inProcessRefunds = false;
     function processRefunds () onlyAnyOwners public {
         // prevent reentry bug
-        require(!inProcessRefunds, &quot;prevent reentry bug&quot;);
+        require(!inProcessRefunds, "prevent reentry bug");
         inProcessRefunds = true;
 
         for (uint j = lastProccessedIndex; j < refundQueue.length; j++) {
@@ -347,8 +347,8 @@ contract Bitwords is Migratable {
      * @param cut          How much cut should be taken from this publisher
      */
     function setPublisherCut (address publisher, uint cut) hasNotSuicided onlyOwner public {
-        require(cut <= 30, &quot;cut cannot be more than 30%&quot;);
-        require(cut >= 0, &quot;cut should be greater than 0%&quot;);
+        require(cut <= 30, "cut cannot be more than 30%");
+        require(cut >= 0, "cut should be greater than 0%");
 
         bitwordsCutOverride[publisher] = cut;
         emit SetPublisherCut(publisher, cut);
@@ -365,7 +365,7 @@ contract Bitwords is Migratable {
     bool private inChargeAdvertisers = false;
     function chargeAdvertisers (address[] advertisers, uint[] costs, address[] publishers, uint[] publishersToCredit) hasNotSuicided onlyOwner public {
         // Prevent re-entry bug
-        require(!inChargeAdvertisers, &quot;avoid rentry bug&quot;);
+        require(!inChargeAdvertisers, "avoid rentry bug");
         inChargeAdvertisers = true;
 
         uint creditArrayIndex = 0;
@@ -423,12 +423,12 @@ contract Bitwords is Migratable {
     function refundAdvertiser (address advertiser, uint amount) onlyAnyOwners public {
         // Ensure that the advertiser has enough balance to refund the smart
         // contract
-        require(amount > 0, &quot;Amount should be greater than 0&quot;);
-        require(advertiserBalances[advertiser] > 0, &quot;Advertiser has no balance&quot;);
-        require(advertiserBalances[advertiser] >= amount, &quot;Insufficient balance to refund&quot;);
+        require(amount > 0, "Amount should be greater than 0");
+        require(advertiserBalances[advertiser] > 0, "Advertiser has no balance");
+        require(advertiserBalances[advertiser] >= amount, "Insufficient balance to refund");
 
         // Prevent re-entry bug
-        require(!inRefundAdvertiser, &quot;avoid rentry bug&quot;);
+        require(!inRefundAdvertiser, "avoid rentry bug");
         inRefundAdvertiser = true;
 
         // deduct balance and send the ether
@@ -445,8 +445,8 @@ contract Bitwords is Migratable {
      * Called by Bitwords to invalidate a refund sent by an advertiser.
      */
     function invalidateAdvertiserRefund (uint refundIndex) hasNotSuicided onlyOwner public {
-        require(refundIndex >= 0, &quot;index should be greater than 0&quot;);
-        require(refundQueue.length >=  refundIndex, &quot;index is out of bounds&quot;);
+        require(refundIndex >= 0, "index should be greater than 0");
+        require(refundQueue.length >=  refundIndex, "index is out of bounds");
         refundQueue[refundIndex].amount = 0;
 
         emit RefundAdvertiserCancelled(refundQueue[refundIndex].advertiser);
@@ -460,9 +460,9 @@ contract Bitwords is Migratable {
     function requestForRefund (uint amount) public {
         // Make sure that advertisers are requesting a refund for how much ever
         // ether they have.
-        require(amount > 0, &quot;Amount should be greater than 0&quot;);
-        require(advertiserBalances[msg.sender] > 0, &quot;You have no balance&quot;);
-        require(advertiserBalances[msg.sender] >= amount, &quot;Insufficient balance to refund&quot;);
+        require(amount > 0, "Amount should be greater than 0");
+        require(advertiserBalances[msg.sender] > 0, "You have no balance");
+        require(advertiserBalances[msg.sender] >= amount, "Insufficient balance to refund");
 
         // push the refund request in a refundQueue so that it can be processed
         // later.
@@ -486,28 +486,28 @@ contract Bitwords is Migratable {
     mapping(address => bool) private inProcessMyRefund;
     function processMyRefund () public {
         // Check if a refund request even exists for this advertiser?
-        require(advertiserRefundRequestsIndex[msg.sender] >= 0, &quot;no refund request found&quot;);
+        require(advertiserRefundRequestsIndex[msg.sender] >= 0, "no refund request found");
 
         // Get the refund request details
         uint refundRequestIndex = advertiserRefundRequestsIndex[msg.sender];
 
         // Check if the refund has been proccessed
-        require(refundQueue[refundRequestIndex].amount > 0, &quot;refund already proccessed&quot;);
+        require(refundQueue[refundRequestIndex].amount > 0, "refund already proccessed");
 
         // Check if the advertiser has enough balance to request for this refund?
         require(
             advertiserBalances[msg.sender] >= refundQueue[refundRequestIndex].amount,
-            &quot;advertiser balance is low; refund amount is invalid.&quot;
+            "advertiser balance is low; refund amount is invalid."
         );
 
         // Check the timelock
         require(
             now > refundQueue[refundRequestIndex].processAfter,
-            &quot;timelock for this request has not passed&quot;
+            "timelock for this request has not passed"
         );
 
         // Prevent reentry bug
-        require(!inProcessMyRefund[msg.sender], &quot;prevent re-entry bug&quot;);
+        require(!inProcessMyRefund[msg.sender], "prevent re-entry bug");
         inProcessMyRefund[msg.sender] = true;
 
         // Send the amount

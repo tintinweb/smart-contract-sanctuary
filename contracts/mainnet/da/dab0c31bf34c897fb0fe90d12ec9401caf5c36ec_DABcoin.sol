@@ -10,8 +10,8 @@ contract DABcoin {
 
     uint256 public totalSupply = 100000;
 
-    function name() constant returns (string) { return &quot;DABcoin&quot;; }
-    function symbol() constant returns (string) { return &quot;DAB&quot;; }
+    function name() constant returns (string) { return "DABcoin"; }
+    function symbol() constant returns (string) { return "DAB"; }
     function decimals() constant returns (uint8) { return 0; }
 
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

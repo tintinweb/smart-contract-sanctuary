@@ -297,8 +297,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 }
 
 contract WgdToken is StandardBurnableToken {
-  string public constant name = &quot;webGold&quot;;
-  string public constant symbol = &quot;WGD&quot;;
+  string public constant name = "webGold";
+  string public constant symbol = "WGD";
   uint8 public constant decimals = 18;
 
   constructor(uint _total) public {

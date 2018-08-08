@@ -112,8 +112,8 @@ contract StandardToken is BasicToken, ERC20 {
 contract SmartBillions is StandardToken {
 
     // metadata
-    string public constant name = &quot;SmartBillions Token&quot;;
-    string public constant symbol = &quot;PLAY&quot;;
+    string public constant name = "SmartBillions Token";
+    string public constant symbol = "PLAY";
     uint public constant decimals = 0;
 
     // contract state

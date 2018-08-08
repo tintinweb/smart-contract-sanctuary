@@ -123,7 +123,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -259,8 +259,8 @@ contract StandardToken is ERC20, BasicToken {
 contract InvestorToken is StandardToken, Ownable {
     using SafeMath for uint;
 
-    string public name = &quot;Investor Token T77&quot;;
-    string public symbol = &quot;T77&quot;;
+    string public name = "Investor Token T77";
+    string public symbol = "T77";
     uint public decimals = 2;
     uint public constant INITIAL_SUPPLY = 1000000000 * 10**2;
     mapping (address => bool) public distributors;
@@ -292,7 +292,7 @@ contract InvestorToken is StandardToken, Ownable {
         distributors[distributor] = state;
     }
 
-	/* buyout mode is set to flag &quot;status&quot; value, true/false */
+	/* buyout mode is set to flag "status" value, true/false */
     function setByuoutActive(bool status) public onlyOwner {
         byuoutActive = status;
     }
@@ -302,7 +302,7 @@ contract InvestorToken is StandardToken, Ownable {
         byuoutCount = count;
     }
 
-	/* set Token base-part prise in &quot;wei&quot; */
+	/* set Token base-part prise in "wei" */
     function setPriceForBasePart(uint newPriceForBasePart) public onlyOwner {
         priceForBasePart = newPriceForBasePart;
     }

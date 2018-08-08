@@ -191,8 +191,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract SimpleToken is StandardToken {
 
-  string public constant name = &quot;SimpleToken&quot;;
-  string public constant symbol = &quot;SIM&quot;;
+  string public constant name = "SimpleToken";
+  string public constant symbol = "SIM";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 10**25;

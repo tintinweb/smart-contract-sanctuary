@@ -79,7 +79,7 @@ contract Pausable is GuidedByRoles {
         require(rightAndRoles.onlyRoles(msg.sender,3));
     }
 
-    // Add a wallet ignoring the &quot;Exchange pause&quot;. Available to the owner of the contract.
+    // Add a wallet ignoring the "Exchange pause". Available to the owner of the contract.
     function setUnpausedWallet(address _wallet, bool mode) public {
         onlyAdmin();
         unpausedWallet[_wallet] = mode;
@@ -448,7 +448,7 @@ contract FreezingToken is PausableToken {
 
 contract Token is IToken, FreezingToken, MintableToken, MigratableToken, BurnableToken{
     function Token(ICreator _creator) GuidedByRoles(_creator.rightAndRoles()) public {}
-    string public constant name = &quot;Imigize&quot;;
-    string public constant symbol = &quot;IMGZ&quot;;
+    string public constant name = "Imigize";
+    string public constant symbol = "IMGZ";
     uint8 public constant decimals = 18;
 }

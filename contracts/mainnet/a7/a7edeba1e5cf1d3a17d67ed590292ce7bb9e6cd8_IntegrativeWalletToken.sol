@@ -178,8 +178,8 @@ contract IntegrativeWalletToken is ERC20Token {
     // ------------------------------------------------------------------------
     // Token information
     // ------------------------------------------------------------------------
-    string public constant symbol = &quot;IWT&quot;;
-    string public constant name = &quot;Integrative Wallet&quot;;
+    string public constant symbol = "IWT";
+    string public constant name = "Integrative Wallet";
     uint8 public constant decimals = 18;
 
     // Do not use `now` here
@@ -201,7 +201,7 @@ contract IntegrativeWalletToken is ERC20Token {
         multisig  = _multisig;
     }
 
-    // > new Date(&quot;2017-06-29T13:00:00&quot;).getTime()/1000
+    // > new Date("2017-06-29T13:00:00").getTime()/1000
     // 1498741200
 
     uint256 public totalEthers;

@@ -352,8 +352,8 @@ contract MoreAI is BurnableToken, UpgradeableToken {
   event UpdatedTokenInformation(string newName, string newSymbol);
 
   function MoreAI()  UpgradeableToken(msg.sender) {
-    name = &quot;MoreAI&quot;;
-    symbol = &quot;MO&quot;;
+    name = "MoreAI";
+    symbol = "MO";
     totalSupply = 1000000000000000000000000000;
     decimals = 18;
 

@@ -241,8 +241,8 @@ contract StandardToken is BasicToken, ERC20 {
  */
 contract AhooleeToken is StandardToken {
 
-  string public name = &quot;Ahoolee Token&quot;;
-  string public symbol = &quot;AHT&quot;;
+  string public name = "Ahoolee Token";
+  string public symbol = "AHT";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 100000000 * 1 ether;
 
@@ -260,7 +260,7 @@ contract AhooleeToken is StandardToken {
 contract AhooleeTokenPreSale is Haltable {
     using SafeMath for uint;
 
-    string public name = &quot;Ahoolee Token PreSale&quot;;
+    string public name = "Ahoolee Token PreSale";
 
     AhooleeToken public token;
     address public beneficiary;

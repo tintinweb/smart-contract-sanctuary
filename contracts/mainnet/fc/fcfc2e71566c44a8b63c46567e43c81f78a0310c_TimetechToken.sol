@@ -4,8 +4,8 @@ contract TimetechToken {
   using SafeMath for uint;
   using SafeERC20 for TimetechToken;
 
-  string public name = &quot;timetech&quot;;
-  string public constant symbol = &quot;TTEC&quot;;
+  string public name = "timetech";
+  string public constant symbol = "TTEC";
   uint8 public constant decimals = 18;
   uint public constant decimalsFactor = 10 ** uint(decimals);
   uint public cap = 8290000000 * decimalsFactor;

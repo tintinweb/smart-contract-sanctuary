@@ -266,8 +266,8 @@ contract PunchToken is StandardToken {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;PUN&quot;;
-        name = &quot;Punch Token&quot;;
+        symbol = "PUN";
+        name = "Punch Token";
         decimals = 18;
         totalSupply_ = 60000000000000000000000000000;
         balances[0xC3F6110EbA4d001bAB48E05dbC48166d1624402b] = totalSupply_;

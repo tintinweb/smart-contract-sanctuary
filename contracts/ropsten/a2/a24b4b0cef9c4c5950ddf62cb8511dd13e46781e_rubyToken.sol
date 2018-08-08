@@ -116,8 +116,8 @@ contract rubyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function rubyToken() public {
-        symbol = &quot;Ruby&quot;;
-        name = &quot;Ruby Token&quot;;
+        symbol = "Ruby";
+        name = "Ruby Token";
         decimals = 1;
         bonusEnds = now;
         endDate = now + 1 weeks;

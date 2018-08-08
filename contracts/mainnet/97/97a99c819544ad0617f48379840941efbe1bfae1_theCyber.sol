@@ -79,10 +79,10 @@ contract theCyber {
   // member so that other new members can be added.
   function theCyber() public {
     // Log the addition of the first member (contract creator).
-    NewMember(0, &quot;&quot;, msg.sender);
+    NewMember(0, "", msg.sender);
 
     // Set up the member: status, name, key, member since & inactive since.
-    members_[0] = Member(true, bytes32(&quot;&quot;), &quot;&quot;, uint64(now), 0);
+    members_[0] = Member(true, bytes32(""), "", uint64(now), 0);
     
     // Set up the address associated with the member.
     memberToAddress_[0] = msg.sender;
@@ -110,7 +110,7 @@ contract theCyber {
     NewMember(_memberId, _memberName, _memberAddress);
 
     // Set up the member: status, name, `member since` & `inactive since`.
-    members_[_memberId] = Member(true, _memberName, &quot;&quot;, uint64(now), 0);
+    members_[_memberId] = Member(true, _memberName, "", uint64(now), 0);
     
     // Set up the address associated with the member id.
     memberToAddress_[_memberId] = _memberAddress;
@@ -160,8 +160,8 @@ contract theCyber {
     // Reset fields on the membership.
     members_[addressToMember_[msg.sender]].memberSince = uint64(now);
     members_[addressToMember_[msg.sender]].inactiveSince = 0;
-    members_[addressToMember_[msg.sender]].name = bytes32(&quot;&quot;);
-    members_[addressToMember_[msg.sender]].pubkey = &quot;&quot;;
+    members_[addressToMember_[msg.sender]].name = bytes32("");
+    members_[addressToMember_[msg.sender]].pubkey = "";
     
     // Replace the address associated with the member id.
     memberToAddress_[addressToMember_[msg.sender]] = _newMemberAddress;

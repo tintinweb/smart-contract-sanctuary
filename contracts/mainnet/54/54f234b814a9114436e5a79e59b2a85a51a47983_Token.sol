@@ -69,8 +69,8 @@ contract Owned {
 contract Token is ERC20Interface, Owned {
     using SafeMath for uint;
 
-    string public name = &quot;Bitcoin to the moon&quot;;   
-    string public symbol = &quot;BTTM&quot;;   
+    string public name = "Bitcoin to the moon";   
+    string public symbol = "BTTM";   
     uint8 public decimals = 18;    
     uint public _totalSupply;   
 
@@ -80,8 +80,8 @@ contract Token is ERC20Interface, Owned {
 
 
     constructor() public {   
-        name = &quot;Bitcoin to the moon&quot;;
-        symbol = &quot;BTTM&quot;;
+        name = "Bitcoin to the moon";
+        symbol = "BTTM";
         decimals = 18;
         _totalSupply = 21000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

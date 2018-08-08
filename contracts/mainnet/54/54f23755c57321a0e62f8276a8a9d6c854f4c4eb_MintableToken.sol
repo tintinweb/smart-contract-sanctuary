@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -348,8 +348,8 @@ contract MintableToken is Ownable, PausableToken  {
   event Mint(address indexed to, uint256 amount);
   event MintFinished();
   
-  string public constant name = &quot;Mindmap&quot;;
-  string public constant symbol = &quot;MIND&quot;;
+  string public constant name = "Mindmap";
+  string public constant symbol = "MIND";
   uint8 public constant decimals = 18;  // 18 is the most common number of decimal places
   
   bool public mintingFinished = false;

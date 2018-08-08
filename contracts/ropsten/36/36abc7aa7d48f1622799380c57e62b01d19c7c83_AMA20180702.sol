@@ -23,7 +23,7 @@ contract AMA20180702 {
     }
     
     function addAuthByCode(string amaCode, string phoneNumber) external returns(string) {
-        require(compareStrings(byCode[amaCode], &quot;&quot;));
+        require(compareStrings(byCode[amaCode], ""));
         byCode[amaCode] = phoneNumber;
         addAuthByPhone(amaCode, phoneNumber);
         return byCode[amaCode];
@@ -34,11 +34,11 @@ contract AMA20180702 {
     }
     
     function addAuthByPhone(string amaCode, string phoneNumber) internal {
-        if (compareStrings(byPhone[phoneNumber], &quot;&quot;)) {
+        if (compareStrings(byPhone[phoneNumber], "")) {
             byPhone[phoneNumber] = amaCode;
         }
         else {
-            byPhone[phoneNumber] = strConcat(byPhone[phoneNumber], &quot; | &quot;, amaCode);
+            byPhone[phoneNumber] = strConcat(byPhone[phoneNumber], " | ", amaCode);
         }
     }
     
@@ -68,14 +68,14 @@ contract AMA20180702 {
     }
     
     function strConcat(string _a, string _b, string _c, string _d) internal pure returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
     
     function strConcat(string _a, string _b, string _c) internal pure returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
     
     function strConcat(string _a, string _b) internal pure returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 }

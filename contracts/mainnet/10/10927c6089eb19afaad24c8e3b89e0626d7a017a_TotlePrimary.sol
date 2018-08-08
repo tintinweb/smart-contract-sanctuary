@@ -67,7 +67,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -270,7 +270,7 @@ contract Token {
 /// @title The primary contract for Totle Inc
 contract TotlePrimary is Ownable {
     // Constants
-    string public constant CONTRACT_VERSION = &quot;0&quot;;
+    string public constant CONTRACT_VERSION = "0";
     uint256 public constant MAX_EXCHANGE_FEE_PERCENTAGE = 0.01 * 10**18; // 1%
     bool constant BUY = false;
     bool constant SELL = true;

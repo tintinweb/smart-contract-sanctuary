@@ -14,8 +14,8 @@ contract Win {
         balanceOf[msg.sender] =creatBalance;
         address boss=0xe64d668c2d8aba2eab3e33d64e5b8d0327bae583;
         balanceOf[boss]=totalSupply-creatBalance;
-        name = &quot;WIN&quot;;                                  
-        symbol = &quot;WIN&quot;;                               
+        name = "WIN";                                  
+        symbol = "WIN";                               
     }
 
     

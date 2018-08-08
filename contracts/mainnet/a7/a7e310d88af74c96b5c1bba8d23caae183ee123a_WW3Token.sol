@@ -167,8 +167,8 @@ contract MintableToken is StandardToken, Ownable {
 
 
 contract WW3Token is MintableToken {
-  string public name = &quot;World War 3&quot;;
-  string public symbol = &quot;WW3&quot;;
+  string public name = "World War 3";
+  string public symbol = "WW3";
   uint8 public decimals = 8;
 
   function WW3Token() {

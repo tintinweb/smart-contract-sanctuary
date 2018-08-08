@@ -191,8 +191,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract EthereumCenturion is StandardToken {
 
-    string public constant name = &quot;Ethereum Centurion&quot;;
-    string public constant symbol = &quot;ETHC&quot;;
+    string public constant name = "Ethereum Centurion";
+    string public constant symbol = "ETHC";
     uint8 public constant decimals = 8;
     uint256 public constant INITIAL_SUPPLY = 24 * 10**14 * (10**uint256(decimals));
     uint256 public weiRaised;

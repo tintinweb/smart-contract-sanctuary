@@ -101,8 +101,8 @@ contract BasicToken is EIP20Interface {
 }
 
 contract AICoinToken is BasicToken {
-  string public constant name = &quot;AICoinToken&quot;;
-  string public constant symbol = &quot;AI&quot;;
+  string public constant name = "AICoinToken";
+  string public constant symbol = "AI";
   uint8 public constant decimals = 18;
   uint256 public totalSupply = 100*10**26;
 

@@ -86,8 +86,8 @@ contract CryptoDrinks is ERC721, Ownable {
   event TokenSold(uint256 tokenId, uint256 oldPrice, uint256 newPrice, address prevOwner, address winner, string name);
   event Transfer(address from, address to, uint256 tokenId);
 
-  string public constant NAME = &quot;CryptoDrinks&quot;;
-  string public constant SYMBOL = &quot;DrinksToken&quot;;
+  string public constant NAME = "CryptoDrinks";
+  string public constant SYMBOL = "DrinksToken";
 
   uint256 private startingPrice = 0.02 ether;
   
@@ -128,16 +128,16 @@ contract CryptoDrinks is ERC721, Ownable {
 	 
      require (totalDrinks < 1);
 	 
- 	 _createDrink(&quot;Barmen&quot;, address(this), 1 ether);
- 	 _createDrink(&quot;Vodka&quot;, address(this), startingPrice);
-	 _createDrink(&quot;Wine&quot;, address(this), startingPrice);
-	 _createDrink(&quot;Cognac&quot;, address(this), startingPrice);
-	 _createDrink(&quot;Martini&quot;, address(this), startingPrice);
-	 _createDrink(&quot;Beer&quot;, address(this), startingPrice);
-	 _createDrink(&quot;Tequila&quot;, address(this), startingPrice);
-	 _createDrink(&quot;Whiskey&quot;, address(this), startingPrice);
-	 _createDrink(&quot;Baileys&quot;, address(this), startingPrice);
-	 _createDrink(&quot;Champagne&quot;, address(this), startingPrice);
+ 	 _createDrink("Barmen", address(this), 1 ether);
+ 	 _createDrink("Vodka", address(this), startingPrice);
+	 _createDrink("Wine", address(this), startingPrice);
+	 _createDrink("Cognac", address(this), startingPrice);
+	 _createDrink("Martini", address(this), startingPrice);
+	 _createDrink("Beer", address(this), startingPrice);
+	 _createDrink("Tequila", address(this), startingPrice);
+	 _createDrink("Whiskey", address(this), startingPrice);
+	 _createDrink("Baileys", address(this), startingPrice);
+	 _createDrink("Champagne", address(this), startingPrice);
   }
   
   function getDrink(uint256 _tokenId) public view returns (string drinkName, uint256 sellingPrice, address owner) {

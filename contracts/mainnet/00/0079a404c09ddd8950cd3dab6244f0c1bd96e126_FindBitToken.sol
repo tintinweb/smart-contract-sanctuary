@@ -186,8 +186,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract FindBitToken is PausableToken {
-    string public name = &quot;FindBit.io Token&quot;;
-    string public symbol = &quot;FBIT&quot;;
+    string public name = "FindBit.io Token";
+    string public symbol = "FBIT";
     uint8  public decimals = 18;
 
     struct Schedule {

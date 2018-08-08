@@ -5,7 +5,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -529,7 +529,7 @@ contract StandardToken is ERC20, BasicToken {
 
 contract PausableToken is StandardToken, Pausable, RBAC {
 
-    string public constant ROLE_ADMINISTRATOR = &quot;administrator&quot;;
+    string public constant ROLE_ADMINISTRATOR = "administrator";
 
     modifier whenNotPausedOrAuthorized() {
         require(!paused || hasRole(msg.sender, ROLE_ADMINISTRATOR));
@@ -650,7 +650,7 @@ contract BlockFollowToken is DetailedERC20, PausableToken, BurnableToken {
 
     uint256 public initialTotalSupply;
 
-    constructor() public DetailedERC20(&quot;BlockFollow Network&quot;, &quot;BFN&quot;, 8)
+    constructor() public DetailedERC20("BlockFollow Network", "BFN", 8)
     {
         initialTotalSupply = 210e6 * (uint256(10) ** decimals);
         totalSupply_ = initialTotalSupply;

@@ -268,7 +268,7 @@ contract LuckyNumberImp is LuckyNumber, Mortal, Random {
         // 
         // TIME LIMITATION:
         // blocks older than (currentBlock - 256) 
-        // &quot;expire&quot; and read the same hash as most recent valid block
+        // "expire" and read the same hash as most recent valid block
         // 
         uint256 luckyNumber = getRand(luckyBlock, pendingNumbers[_requestor].max);
 

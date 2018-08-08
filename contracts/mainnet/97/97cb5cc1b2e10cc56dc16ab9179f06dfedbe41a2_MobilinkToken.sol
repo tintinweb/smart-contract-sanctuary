@@ -134,8 +134,8 @@ library SafeMath {
 }
 
 contract MobilinkTokenConfig {
-    string public constant NAME = &quot;MobilinkToken&quot;;
-    string public constant SYMBOL = &quot;MOLK&quot;;
+    string public constant NAME = "MobilinkToken";
+    string public constant SYMBOL = "MOLK";
     uint8 public constant DECIMALS = 18;
     uint public constant DECIMALSFACTOR = 10 ** uint(DECIMALS);
     uint public constant INITIAL_SUPPLY = 9000000000 * DECIMALSFACTOR;

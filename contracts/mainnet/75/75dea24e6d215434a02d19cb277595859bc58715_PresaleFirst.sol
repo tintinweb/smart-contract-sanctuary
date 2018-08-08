@@ -255,8 +255,8 @@ contract ABL is StandardToken, OwnableToken {
     uint256 public constant DEVELOPERS = 178550000;   // developer
 
     // Token Information
-    string public constant name = &quot;Airbloc&quot;;
-    string public constant symbol = &quot;ABL&quot;;
+    string public constant name = "Airbloc";
+    string public constant symbol = "ABL";
     uint256 public constant decimals = 18;
     uint256 public totalSupply = SUM.mul(10 ** uint256(decimals));
 
@@ -335,7 +335,7 @@ contract ABL is StandardToken, OwnableToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -421,7 +421,7 @@ contract Pausable is Ownable {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * @dev This simplifies the implementation of &quot;user permissions&quot;.
+ * @dev This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable {
   mapping(address => bool) public whitelist;

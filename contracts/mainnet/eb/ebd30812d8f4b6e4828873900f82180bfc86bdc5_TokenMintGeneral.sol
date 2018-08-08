@@ -64,8 +64,8 @@ contract Owned {
 }
 
 contract TokenMintGeneral is ERC20Interface, Owned, SafeMath {
-    string public symbol = &quot;BitCat&quot;;
-    string public name = &quot;BitCat&quot;;
+    string public symbol = "BitCat";
+    string public name = "BitCat";
     uint8 public decimals = 18;
     uint public _totalSupply = 210000000000 * 10 ** uint(decimals);
 

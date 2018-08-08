@@ -97,7 +97,7 @@ contract AbstractCon {
 contract EXOTokenSale is Ownable {
     using SafeMath for uint256;
 
-    string public constant name = &quot;EXO_TOKEN_SALE&quot;;
+    string public constant name = "EXO_TOKEN_SALE";
 
     ///////////////////////
     // DATA STRUCTURES  ///

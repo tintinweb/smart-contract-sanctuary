@@ -27,8 +27,8 @@ contract TripCash is Ownable {
     uint256 public totalSupply = 5000000000 * 1 ether;
 
 
-    string public constant name = &quot;TripCash&quot;;
-    string public constant symbol = &quot;TASH&quot;;
+    string public constant name = "TripCash";
+    string public constant symbol = "TASH";
     uint8 public constant decimals = 18;
 
     mapping (address => uint256) public balances; //Addresses map

@@ -98,10 +98,10 @@ contract StandardToken is Token {
 
 contract GameICO is StandardToken, SafeMath {
     // Descriptive properties
-    string public constant name = &quot;Game.com Token&quot;;
-    string public constant symbol = &quot;GTC&quot;;
+    string public constant name = "Game.com Token";
+    string public constant symbol = "GTC";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     // Account for ether proceed.
     address public etherProceedsAccount = 0x0;

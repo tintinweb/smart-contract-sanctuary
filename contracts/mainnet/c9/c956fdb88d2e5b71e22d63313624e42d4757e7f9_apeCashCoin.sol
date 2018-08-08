@@ -145,8 +145,8 @@ contract apeCashCoin is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public payable {
-        symbol = &quot;APEc&quot;;
-        name = &quot;ApeCash Coin&quot;;
+        symbol = "APEc";
+        name = "ApeCash Coin";
         decimals = 18;
         _totalSupply = 250000000000000000000000000;
         balances[owner] = _totalSupply;

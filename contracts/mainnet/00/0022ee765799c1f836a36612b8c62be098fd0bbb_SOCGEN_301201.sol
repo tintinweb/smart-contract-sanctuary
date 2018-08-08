@@ -4,8 +4,8 @@ contract	SOCGEN_301201				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	SOCGEN_301201		&quot;	;
-	string	public		symbol =	&quot;	SOCGI		&quot;	;
+	string	public		name =	"	SOCGEN_301201		"	;
+	string	public		symbol =	"	SOCGI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10780817168445100000000000					;	

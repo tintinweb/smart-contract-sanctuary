@@ -113,8 +113,8 @@ contract PPKToken is UnboundedRegularToken {
 
     uint public totalSupply = 100*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;PPKToken&quot;;
-    string constant public symbol = &quot;PPK&quot;;
+    string constant public name = "PPKToken";
+    string constant public symbol = "PPK";
 
     function PPKToken() {
         balances[msg.sender] = totalSupply;

@@ -106,7 +106,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -514,8 +514,8 @@ contract UpgradableToken is PlatformToken {
 contract GenbbyToken is UpgradableToken {
 
     string public contactInformation;
-    string public name = &quot;Genbby Token&quot;;
-    string public symbol = &quot;GG&quot;;
+    string public name = "Genbby Token";
+    string public symbol = "GG";
     uint256 public constant decimals = 18;
     uint256 public constant factor = 10 ** decimals;
 

@@ -247,9 +247,9 @@ contract WhiteRhino is ERC20Interface, Owned, SafeMath {
 
     function WhiteRhino() public {
 
-        symbol = &quot;RHI&quot;;
+        symbol = "RHI";
 
-        name = &quot;White Rhino&quot;;
+        name = "White Rhino";
 
         decimals = 18;
 

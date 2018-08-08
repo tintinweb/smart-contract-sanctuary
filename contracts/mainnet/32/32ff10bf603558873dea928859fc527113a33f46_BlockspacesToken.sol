@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -330,10 +330,10 @@ contract BlockspacesToken is MintableToken {
   function BlockspacesToken() {
     // constructor
 
-    name = &quot;Blockspaces Token&quot;;
-    symbol = &quot;BST&quot;;
+    name = "Blockspaces Token";
+    symbol = "BST";
     decimals = 18;
-    version = &quot;0.1&quot;;
+    version = "0.1";
 
     totalSupply_ = 10000000000000000000000000;
 

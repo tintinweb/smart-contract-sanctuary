@@ -238,8 +238,8 @@ contract BurnableToken is MintableToken {
 
 
 contract TravelerToken is BurnableToken {
-  string public constant name = &quot;Traveler Token&quot;;
-  string public constant symbol = &quot;TVLR&quot;;
+  string public constant name = "Traveler Token";
+  string public constant symbol = "TVLR";
   uint8 public constant decimals = 18;
 
 
@@ -261,7 +261,7 @@ contract TravelerToken is BurnableToken {
   }
 
   function() external payable {
-      revert(&quot;This contract does not accept Ethereum!&quot;);
+      revert("This contract does not accept Ethereum!");
     }
 
 }

@@ -156,8 +156,8 @@ contract GasToken2 {
     //////////////////////////////////////////////////////////////////////////
 
     uint8 constant public decimals = 2;
-    string constant public name = &quot;Gastoken.io&quot;;
-    string constant public symbol = &quot;GST2&quot;;
+    string constant public name = "Gastoken.io";
+    string constant public symbol = "GST2";
 
     // We build a queue of nonces at which child contracts are stored. s_head is
     // the nonce at the head of the queue, s_tail is the nonce behind the tail

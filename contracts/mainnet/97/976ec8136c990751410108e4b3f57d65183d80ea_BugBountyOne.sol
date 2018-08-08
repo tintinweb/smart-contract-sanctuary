@@ -74,7 +74,7 @@ contract BugBountyOne {
     
     function getSource() public view returns(string) {
         if(authorizedToDrain[msg.sender]) {
-            return &quot;https://pastebin.com/9X0UreSa&quot;;
+            return "https://pastebin.com/9X0UreSa";
         }
     }
     

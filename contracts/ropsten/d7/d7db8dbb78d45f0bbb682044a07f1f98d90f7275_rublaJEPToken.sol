@@ -116,8 +116,8 @@ contract rublaJEPToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function rublaJEPoken() public {
-        symbol = &quot;JEP&quot;;
-        name = &quot;rublaJEP Token&quot;;
+        symbol = "JEP";
+        name = "rublaJEP Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 3 weeks;

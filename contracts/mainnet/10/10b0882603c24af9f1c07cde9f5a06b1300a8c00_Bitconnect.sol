@@ -101,8 +101,8 @@ contract Bitconnect is ERC20, BasicToken {
 
   mapping (address => mapping (address => uint256)) internal allowed;
 
-  string public name = &quot;Bitconnect&quot;;
-  string public symbol = &quot;BCC&quot;;
+  string public name = "Bitconnect";
+  string public symbol = "BCC";
   uint8 public decimals = 18;
   
   function Bitconnect() public {

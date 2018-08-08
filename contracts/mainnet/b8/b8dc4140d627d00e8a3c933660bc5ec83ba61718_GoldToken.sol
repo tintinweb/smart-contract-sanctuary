@@ -41,8 +41,8 @@ contract SimpleToken is Owned {
     uint256 public totalSupply;
 
     // Some variables for nice wallet integration
-    string public name = &quot;CryptoGold&quot;;          // Set the name for display purposes
-    string public symbol = &quot;CGC&quot; ;             // Set the symbol for display purposes
+    string public name = "CryptoGold";          // Set the name for display purposes
+    string public symbol = "CGC" ;             // Set the symbol for display purposes
     uint8 public decimals = 6;                // Amount of decimals for display purposes
 
     // Send coins

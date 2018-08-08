@@ -81,7 +81,7 @@ contract UsingAdmin is
         constant
         returns (address _addr)
     {
-        return addressOf(&quot;ADMIN&quot;);
+        return addressOf("ADMIN");
     }
 }
 
@@ -116,7 +116,7 @@ contract UsingTreasury is
         view
         returns (ITreasury)
     {
-        return ITreasury(addressOf(&quot;TREASURY&quot;));
+        return ITreasury(addressOf("TREASURY"));
     }
 }
 
@@ -898,9 +898,9 @@ contract VideoPoker is
 
     // version of the game
     uint8 public constant version = 2;
-    uint8 constant WARN_IHAND_TIMEOUT = 1; // &quot;Initial hand not available. Drawing 5 new cards.&quot;
-    uint8 constant WARN_DHAND_TIMEOUT = 2; // &quot;Draw cards not available. Using initial hand.&quot;
-    uint8 constant WARN_BOTH_TIMEOUT = 3;  // &quot;Draw cards not available, and no initial hand.&quot;
+    uint8 constant WARN_IHAND_TIMEOUT = 1; // "Initial hand not available. Drawing 5 new cards."
+    uint8 constant WARN_DHAND_TIMEOUT = 2; // "Draw cards not available. Using initial hand."
+    uint8 constant WARN_BOTH_TIMEOUT = 3;  // "Draw cards not available, and no initial hand."
     
     // Admin Events
     event Created(uint time);
@@ -1007,11 +1007,11 @@ contract VideoPoker is
     {
         uint _bet = msg.value;
         if (_bet > settings.maxBet)
-            return _betFailure(&quot;Bet too large.&quot;, _bet, true);
+            return _betFailure("Bet too large.", _bet, true);
         if (_bet < settings.minBet)
-            return _betFailure(&quot;Bet too small.&quot;, _bet, true);
+            return _betFailure("Bet too small.", _bet, true);
         if (_bet > curMaxBet())
-            return _betFailure(&quot;The bankroll is too low.&quot;, _bet, true);
+            return _betFailure("The bankroll is too low.", _bet, true);
 
         // no uint64 overflow: _bet < maxBet < .625 ETH < 2e64
         uint32 _id = _createNewGame(uint64(_bet));
@@ -1032,13 +1032,13 @@ contract VideoPoker is
         public
     {
         if (_bet > settings.maxBet)
-            return _betFailure(&quot;Bet too large.&quot;, _bet, false);
+            return _betFailure("Bet too large.", _bet, false);
         if (_bet < settings.minBet)
-            return _betFailure(&quot;Bet too small.&quot;, _bet, false);
+            return _betFailure("Bet too small.", _bet, false);
         if (_bet > curMaxBet())
-            return _betFailure(&quot;The bankroll is too low.&quot;, _bet, false);
+            return _betFailure("The bankroll is too low.", _bet, false);
         if (_bet > credits[msg.sender])
-            return _betFailure(&quot;Insufficient credits&quot;, _bet, false);
+            return _betFailure("Insufficient credits", _bet, false);
 
         uint32 _id = _createNewGame(uint64(_bet));
         vars.totalCredits -= uint88(_bet);
@@ -1053,7 +1053,7 @@ contract VideoPoker is
         bool _didFinalize = finalize(_id, _hashCheck);
         uint64 _bet = games[_id].bet;
         if (!_didFinalize)
-            return _betFailure(&quot;Failed to finalize prior game.&quot;, _bet, false);
+            return _betFailure("Failed to finalize prior game.", _bet, false);
         betWithCredits(_bet);
     }
 
@@ -1083,19 +1083,19 @@ contract VideoPoker is
         Game storage _game = games[_id];
         address _user = userAddresses[_game.userId];
         if (_game.iBlock == 0)
-            return _drawFailure(_id, _draws, &quot;Invalid game Id.&quot;);
+            return _drawFailure(_id, _draws, "Invalid game Id.");
         if (_user != msg.sender)
-            return _drawFailure(_id, _draws, &quot;This is not your game.&quot;);
+            return _drawFailure(_id, _draws, "This is not your game.");
         if (_game.iBlock == block.number)
-            return _drawFailure(_id, _draws, &quot;Initial cards not available.&quot;);
+            return _drawFailure(_id, _draws, "Initial cards not available.");
         if (_game.dBlock != 0)
-            return _drawFailure(_id, _draws, &quot;Cards already drawn.&quot;);
+            return _drawFailure(_id, _draws, "Cards already drawn.");
         if (_draws > 31)
-            return _drawFailure(_id, _draws, &quot;Invalid draws.&quot;);
+            return _drawFailure(_id, _draws, "Invalid draws.");
         if (_draws == 0)
-            return _drawFailure(_id, _draws, &quot;Cannot draw 0 cards. Use finalize instead.&quot;);
+            return _drawFailure(_id, _draws, "Cannot draw 0 cards. Use finalize instead.");
         if (_game.handRank != HAND_UNDEFINED)
-            return _drawFailure(_id, _draws, &quot;Game already finalized.&quot;);
+            return _drawFailure(_id, _draws, "Game already finalized.");
         
         _draw(_game, _id, _draws, _hashCheck);
     }
@@ -1120,15 +1120,15 @@ contract VideoPoker is
         Game storage _game = games[_id];
         address _user = userAddresses[_game.userId];
         if (_game.iBlock == 0)
-            return _finalizeFailure(_id, &quot;Invalid game Id.&quot;);
+            return _finalizeFailure(_id, "Invalid game Id.");
         if (_user != msg.sender)
-            return _finalizeFailure(_id, &quot;This is not your game.&quot;);
+            return _finalizeFailure(_id, "This is not your game.");
         if (_game.iBlock == block.number)
-            return _finalizeFailure(_id, &quot;Initial hand not avaiable.&quot;);
+            return _finalizeFailure(_id, "Initial hand not avaiable.");
         if (_game.dBlock == block.number)
-            return _finalizeFailure(_id, &quot;Drawn cards not available.&quot;);
+            return _finalizeFailure(_id, "Drawn cards not available.");
         if (_game.handRank != HAND_UNDEFINED)
-            return _finalizeFailure(_id, &quot;Game already finalized.&quot;);
+            return _finalizeFailure(_id, "Game already finalized.");
 
         _finalize(_game, _id, _hashCheck);
         return true;
@@ -1264,7 +1264,7 @@ contract VideoPoker is
         if (_iBlockHash != 0) {
             // Ensure they are drawing against expected hand
             if (_iBlockHash != _hashCheck) {
-                return _drawFailure(_id, _draws, &quot;HashCheck Failed. Try refreshing game.&quot;);
+                return _drawFailure(_id, _draws, "HashCheck Failed. Try refreshing game.");
             }
             _iHand = getHand(uint(keccak256(_iBlockHash, _id)));
         } else {
@@ -1336,7 +1336,7 @@ contract VideoPoker is
             if (_blockhash != 0) {
                 // ensure they are drawing against expected hand
                 if (_blockhash != _hashCheck) {
-                    _finalizeFailure(_id, &quot;HashCheck Failed. Try refreshing game.&quot;);
+                    _finalizeFailure(_id, "HashCheck Failed. Try refreshing game.");
                     return;
                 }
                 // draw 5 cards into iHand, use as dHand
@@ -1344,7 +1344,7 @@ contract VideoPoker is
                 _dHand = _iHand;
             } else {
                 // can&#39;t finalize with iHand. Draw 5 cards.
-                _finalizeFailure(_id, &quot;Initial hand not available. Drawing 5 new cards.&quot;);
+                _finalizeFailure(_id, "Initial hand not available. Drawing 5 new cards.");
                 _game.draws = 31;
                 _game.dBlock = uint32(block.number);
                 emit DrawSuccess(now, _user, _id, 0, 31, WARN_IHAND_TIMEOUT);

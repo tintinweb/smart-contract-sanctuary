@@ -98,9 +98,9 @@ contract EventDefinitions {
 
 contract Token is Finalizable, TokenReceivable, SafeMath, EventDefinitions, Pausable {
 	// Set these appropriately before you deploy
-	string constant public name = &quot;AirToken&quot;;
+	string constant public name = "AirToken";
 	uint8 constant public decimals = 8;
-	string constant public symbol = &quot;AIR&quot;;
+	string constant public symbol = "AIR";
 	Controller public controller;
 	string public motd;
 	address public atFundDeposit;
@@ -108,7 +108,7 @@ contract Token is Finalizable, TokenReceivable, SafeMath, EventDefinitions, Paus
 
 	// functions below this line are onlyOwner
 
-	// set &quot;message of the day&quot;
+	// set "message of the day"
 	function setMotd(string _m) onlyOwner {
 		motd = _m;
 		Motd(_m);

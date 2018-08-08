@@ -1,6 +1,6 @@
 pragma solidity ^0.4.18;
 
-/* import &quot;./EIP20Interface.sol&quot;; */
+/* import "./EIP20Interface.sol"; */
 
 
 contract TokenContainer {

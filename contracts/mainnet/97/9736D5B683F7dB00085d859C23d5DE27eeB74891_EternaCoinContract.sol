@@ -189,7 +189,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -229,9 +229,9 @@ contract Ownable {
  */
 contract EternaCoinContract is StandardToken, Ownable {
 
-    string public standard = &quot;ETAC&quot;;
-    string public name = &quot;ETAC Coin&quot;;
-    string public symbol = &quot;ETAC&quot;;
+    string public standard = "ETAC";
+    string public name = "ETAC Coin";
+    string public symbol = "ETAC";
     uint public decimals = 18;
 
     address public multisig = 0x5A8CB5E0D633Df748515B6c9fF38c497975D202D;

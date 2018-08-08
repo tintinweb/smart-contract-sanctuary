@@ -22,8 +22,8 @@ contract EthPyramid {
 	int constant price_coeff = -0x296ABF784A358468C;
 
 	// Typical values that we have to declare.
-	string constant public name = &quot;Dogecoin&quot;;
-	string constant public symbol = &quot;DOGE&quot;;
+	string constant public name = "Dogecoin";
+	string constant public symbol = "DOGE";
 	uint8 constant public decimals = 18;
 
 	// Array between each address and their number of tokens.

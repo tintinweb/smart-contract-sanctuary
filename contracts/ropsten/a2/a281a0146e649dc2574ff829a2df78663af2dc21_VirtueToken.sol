@@ -113,8 +113,8 @@ contract VirtueToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function VirtueToken() public {
-        symbol = &quot;Virtue&quot;;
-        name = &quot;Virtue Token&quot;;
+        symbol = "Virtue";
+        name = "Virtue Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xF536ae30D2308BaEBEe42b302A0036049c61d7e6] = _totalSupply;

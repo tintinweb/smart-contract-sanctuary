@@ -17,8 +17,8 @@ contract FlipToken {
     
     //~ Setup
     string public standard = &#39;FLIP&#39;;
-    string public name = &quot;Flip&quot;;
-    string public symbol = &quot;FLIP&quot;;
+    string public name = "Flip";
+    string public symbol = "FLIP";
     uint8 public decimals = 0;
     uint256 public totalSupply = 15000000;
 

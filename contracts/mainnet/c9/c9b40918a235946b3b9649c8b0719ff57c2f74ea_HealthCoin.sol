@@ -55,8 +55,8 @@ contract ERC20 {
 
 contract HealthCoin is ERC20{
 	uint initialSupply = 500000;
-	string public constant name = &quot;HealthCoin&quot;;
-	string public constant symbol = &quot;HLC&quot;;
+	string public constant name = "HealthCoin";
+	string public constant symbol = "HLC";
 	uint USDExchangeRate = 300;
 	uint price = 30;
 	address HealthCoinAddress;

@@ -230,8 +230,8 @@ contract EpietherToken is MintableToken {
   event TokensBurned(address initiatior, address indexed _partner, uint256 _tokens);
  
     function EpietherToken() public {
-        name = &quot;Epiether&quot;;
-        symbol = &quot;EPT&quot;;
+        name = "Epiether";
+        symbol = "EPT";
         decimals = 18;
         totalSupply = 342e24;
         founder = 0xD394bEB1D5059D4Cd21f3797Ef9b189dC524b22f;

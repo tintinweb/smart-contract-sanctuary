@@ -58,8 +58,8 @@ contract ZenAD is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;HYDRO RAIBLOCK&quot;;
-    string public constant symbol = &quot;HYDROB&quot;;
+    string public constant name = "HYDRO RAIBLOCK";
+    string public constant symbol = "HYDROB";
     uint public constant decimals = 18;
 
     uint256 public totalSupply = 10000000000e18;

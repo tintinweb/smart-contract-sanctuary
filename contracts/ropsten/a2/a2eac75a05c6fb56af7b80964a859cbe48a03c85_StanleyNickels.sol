@@ -113,8 +113,8 @@ contract StanleyNickels is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function StanleyNickels() public {
-        symbol = &quot;DUNDIE&quot;;
-        name = &quot;Stanley Nickels&quot;;
+        symbol = "DUNDIE";
+        name = "Stanley Nickels";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x780478a7aA9bDC8684d556B813F80384220b8fE6] = _totalSupply;

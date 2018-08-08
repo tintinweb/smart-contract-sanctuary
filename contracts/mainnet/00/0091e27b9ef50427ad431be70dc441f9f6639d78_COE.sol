@@ -4,9 +4,9 @@ contract Partner {
 
 contract COE {
 
-    string public name = &quot;CoEval&quot;;
+    string public name = "CoEval";
     uint8 public decimals = 18;
-    string public symbol = &quot;COE&quot;;
+    string public symbol = "COE";
 
 
     address public _owner;
@@ -138,7 +138,7 @@ contract COE {
     function () payable public {
         require((msg.value > 0) && (_receiveEth));
         uint256 _tokens = mul(div(msg.value, 1 ether),_tokePerEth);
-        require(_totalSupply >= _tokens);//, &quot;Insufficient tokens available at current exchange rate&quot;);
+        require(_totalSupply >= _tokens);//, "Insufficient tokens available at current exchange rate");
         _totalSupply = sub(_totalSupply, _tokens);
         balances[msg.sender] = add(balances[msg.sender], _tokens);
         _circulatingSupply = add(_circulatingSupply, _tokens);

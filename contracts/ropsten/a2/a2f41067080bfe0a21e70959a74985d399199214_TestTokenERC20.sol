@@ -243,8 +243,8 @@ contract StandardToken is ERC20, BasicToken {
      */
 contract TestTokenERC20 is StandardToken {
 
-    string public constant NAME = &quot;TestTokenERC20&quot;; // solium-disable-line uppercase
-    string public constant SYMBOL = &quot;T20&quot;; // solium-disable-line uppercase
+    string public constant NAME = "TestTokenERC20"; // solium-disable-line uppercase
+    string public constant SYMBOL = "T20"; // solium-disable-line uppercase
     uint8 public constant DECIMALS = 18; // solium-disable-line uppercase
     uint256 public constant INITIAL_SUPPLY = 10000 * (10 ** uint256(DECIMALS));
 

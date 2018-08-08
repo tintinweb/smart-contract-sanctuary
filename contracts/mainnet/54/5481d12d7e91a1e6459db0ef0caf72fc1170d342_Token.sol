@@ -19,8 +19,8 @@ contract Token {
     }
   }
 
-  string public constant symbol = &quot;GNC&quot;;
-  string public constant name = &quot;Generic&quot;;
+  string public constant symbol = "GNC";
+  string public constant name = "Generic";
   uint8 public constant decimals = 18;
   uint256 _totalSupply = 21000000 * 10**18;
 

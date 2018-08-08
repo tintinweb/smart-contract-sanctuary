@@ -126,8 +126,8 @@ contract DiipCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DiipCoin() public {
-        symbol = &quot;DIIP&quot;;
-        name = &quot;DiipCoin&quot;;
+        symbol = "DIIP";
+        name = "DiipCoin";
         decimals = 0;
         _totalSupply = 100000000;
         balances[0xeB086DF649c34bFb1E074B272fB8139095648eFF] = _totalSupply;

@@ -161,8 +161,8 @@ contract TrueFlipToken is StandardToken, SafeMath, Owned {
     /*
      * Token meta data
      */
-    string constant public name = &quot;TrueFlip&quot;;
-    string constant public symbol = &quot;TFL&quot;;
+    string constant public name = "TrueFlip";
+    string constant public symbol = "TFL";
     uint8 constant public decimals = 8;
 
     // 1 050 000 TFL tokens were minted during PreICO

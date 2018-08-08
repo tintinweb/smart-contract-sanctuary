@@ -125,9 +125,9 @@ contract coinCreation is StandardToken {
     function MUC() public {
         balances[msg.sender] = 1000000;               // Give the creator all initial tokens (100000 for example)
         totalSupply = 1000000;                        // Update total supply (100000 for example)
-        name = &quot;My Universal Coin&quot;;                                   // Set the name for display purposes
+        name = "My Universal Coin";                                   // Set the name for display purposes
         decimals = 2;                            // Amount of decimals for display purposes
-        symbol = &quot;MUC&quot;;                               // Set the symbol for display purposes
+        symbol = "MUC";                               // Set the symbol for display purposes
     }
 
     /* Approves and then calls the receiving contract */
@@ -138,7 +138,7 @@ contract coinCreation is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) {}
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) {}
         return true;
     }
 }

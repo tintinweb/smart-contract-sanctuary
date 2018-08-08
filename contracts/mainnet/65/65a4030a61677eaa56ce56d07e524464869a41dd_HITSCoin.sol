@@ -99,9 +99,9 @@ contract HITSCoin is StandardToken {
         ) {
         balances[msg.sender] = 100000000000 * 1000000000000;   // Give the creator all initial tokens, 12 zero is 12 Decimals
         totalSupply = 100000000000 * 1000000000000;            // Update total supply, , 12 zero is 12 Decimals
-        name = &quot;BROWSER COIN&quot;;                                // Token Name
+        name = "BROWSER COIN";                                // Token Name
         decimals = 12;                                      // Amount of decimals for display purposes
-        symbol = &quot;HITS&quot;;                                    // Token Symbol
+        symbol = "HITS";                                    // Token Symbol
     }
 
     /* Approves and then calls the receiving contract */
@@ -109,7 +109,7 @@ contract HITSCoin is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

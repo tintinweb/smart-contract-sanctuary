@@ -42,8 +42,8 @@ contract TeikhosBounty {
     }
 
     // Proof-of-public-key in format 2xbytes32, to support xor operator and ecrecover r, s v format
-    bytes32 public proof_of_public_key1 = hex&quot;7b5f8ddd34df50d24e492bbee1a888122c1579e898eaeb6e0673156a1b97c24b&quot;;
-    bytes32 public proof_of_public_key2 = hex&quot;26d64a34756bd684766dce3e6a8e8695a14a2b16d001559f4ae3a0849ac127fe&quot;;
+    bytes32 public proof_of_public_key1 = hex"7b5f8ddd34df50d24e492bbee1a888122c1579e898eaeb6e0673156a1b97c24b";
+    bytes32 public proof_of_public_key2 = hex"26d64a34756bd684766dce3e6a8e8695a14a2b16d001559f4ae3a0849ac127fe";
 
     function commit(bytes _signature) public inState(State.Commit) {
         require(commitment[msg.sender].timestamp == 0);
@@ -103,7 +103,7 @@ contract TeikhosBounty {
         bytes32 s = proof_of_public_key2 ^ hash2;
 
         // Get msgHash for use with ecrecover
-        bytes32 msgHash = keccak256(&quot;\x19Ethereum Signed Message:\n64&quot;, _publicKey);
+        bytes32 msgHash = keccak256("\x19Ethereum Signed Message:\n64", _publicKey);
 
         // Get address from public key
         address signer = address(keccak256(_publicKey));
@@ -159,7 +159,7 @@ contract TeikhosBounty {
         }   
    }
    
-   // Make it possible to send ETH to the contract with &quot;payable&quot; on the fallback function
+   // Make it possible to send ETH to the contract with "payable" on the fallback function
    
     function() public payable {}
 

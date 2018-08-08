@@ -123,8 +123,8 @@ contract StandardToken is ERC20 {
 }
 
 contract Presalezillion is StandardToken {
-  string public constant name = &quot;Presalezillion&quot;;
-  string public constant symbol = &quot;Zylion&quot;;
+  string public constant name = "Presalezillion";
+  string public constant symbol = "Zylion";
   uint8 public constant decimals = 0;
 
   function Presalezillion() public {

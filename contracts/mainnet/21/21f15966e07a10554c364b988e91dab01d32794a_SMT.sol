@@ -175,9 +175,9 @@ contract SMT is StandardToken {
         revert();
     }
 
-    string public name = &quot;SmartMesh Token&quot;;                   //fancy name
+    string public name = "SmartMesh Token";                   //fancy name
     uint8 public decimals = 18;                //How many decimals to show. ie. There could 1000 base units with 3 decimals. Meaning 0.980 SBX = 980 base units. It&#39;s like comparing 1 wei to 1 ether.
-    string public symbol = &quot;SMT&quot;;                 //An identifier
+    string public symbol = "SMT";                 //An identifier
     string public version = &#39;v0.1&#39;;       //SMT 0.1 standard. Just an arbitrary versioning scheme.
     uint256 public allocateEndTime;
 

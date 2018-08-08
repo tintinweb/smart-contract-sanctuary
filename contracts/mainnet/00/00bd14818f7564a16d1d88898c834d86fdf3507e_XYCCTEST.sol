@@ -82,8 +82,8 @@ contract XYCCTEST is frozen{
     function XYCCTEST() public {
         totalSupply = 1000000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;                
-        name = &quot;llltest&quot;;                                   
-        symbol = &quot;lllt&quot;;                               
+        name = "llltest";                                   
+        symbol = "lllt";                               
     }
 
     function _transfer(address _from, address _to, uint _value) internal isFrozen(_from) isFrozen(_to){

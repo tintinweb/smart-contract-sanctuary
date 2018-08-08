@@ -26,8 +26,8 @@ contract CHCTokenERC20 {
     function CHCTokenERC20() public {
         totalSupply =10000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = 10000000000000000;                // Give the creator all initial tokens
-        name = &quot;CHCToken&quot;;                                   // Set the name for display purposes
-        symbol = &quot;CHC&quot;;                               // Set the symbol for display purposes
+        name = "CHCToken";                                   // Set the name for display purposes
+        symbol = "CHC";                               // Set the symbol for display purposes
      }
 
     /**

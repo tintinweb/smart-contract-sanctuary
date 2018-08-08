@@ -31,7 +31,7 @@ library SafeMath {
 contract BaseGame {
     using SafeMath for uint256;
     string public officialGameUrl;
-    string public gameName = &quot;GameSicBo&quot;;
+    string public gameName = "GameSicBo";
     uint public gameType = 1003;
 
     mapping (address => uint256) public userEtherOf;

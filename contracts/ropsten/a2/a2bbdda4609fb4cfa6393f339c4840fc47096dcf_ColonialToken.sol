@@ -114,8 +114,8 @@ contract ColonialToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;COLT&quot;;
-        name = &quot;Colonial Token&quot;;
+        symbol = "COLT";
+        name = "Colonial Token";
         decimals = 18;
         _totalSupply = 900000000 * 10**uint(decimals);
         balances[0x2d886bc6162459fca547003a69bb43d3a67ca912] = _totalSupply;

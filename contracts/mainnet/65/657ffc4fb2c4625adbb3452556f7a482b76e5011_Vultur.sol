@@ -192,8 +192,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Vultur is StandardToken {
 
-  string public constant name = &quot;VULTUR&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;VLTR&quot;; // solium-disable-line uppercase
+  string public constant name = "VULTUR"; // solium-disable-line uppercase
+  string public constant symbol = "VLTR"; // solium-disable-line uppercase
   uint8 public constant decimals = 2; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));

@@ -16,8 +16,8 @@ contract ERC20Interface {
 // FinderHyper
 // YOU get a FinderHyper, and YOU get a FinderHyper, and YOU get a FinderHyper!
 contract FinderHyper is ERC20Interface {
-    string public constant symbol = &quot;FH&quot;;
-    string public constant name = &quot;Finder Hyper&quot;;
+    string public constant symbol = "FH";
+    string public constant name = "Finder Hyper";
     uint8 public constant decimals = 2;
 
     uint256 _totalSupply = 0;

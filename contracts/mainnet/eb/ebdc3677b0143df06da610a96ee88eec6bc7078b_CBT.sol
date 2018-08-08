@@ -152,7 +152,7 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract CBT is StandardToken {
 
-    string public name = &quot;ContractBet&quot;;
+    string public name = "ContractBet";
     string public symbol = &#39;CBT&#39;;
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 5000000000 * 1 ether;

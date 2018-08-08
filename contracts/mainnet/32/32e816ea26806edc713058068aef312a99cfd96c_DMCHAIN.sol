@@ -32,8 +32,8 @@ contract DMCHAIN {
     ) public {
         totalSupply = 1000000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;DMCHAIN&quot;;                                   // Set the name for display purposes
-        symbol = &quot;DMC&quot;;                               // Set the symbol for display purposes
+        name = "DMCHAIN";                                   // Set the name for display purposes
+        symbol = "DMC";                               // Set the symbol for display purposes
     }
 
     /**

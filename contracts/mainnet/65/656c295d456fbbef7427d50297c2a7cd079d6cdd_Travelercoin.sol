@@ -18,9 +18,9 @@ contract Travelercoin {
     function Travelercoin() {
 
          initialSupply = 200000000;
-         name =&quot;Travelercoin&quot;;
+         name ="Travelercoin";
         decimals = 18;
-         symbol = &quot;TRVL&quot;;
+         symbol = "TRVL";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

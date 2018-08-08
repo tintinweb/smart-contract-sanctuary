@@ -338,8 +338,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract ACNN is MintableToken, BurnableToken {
-    string public name = &quot;ACNN&quot;;
-    string public symbol = &quot;ACNN&quot;;
+    string public name = "ACNN";
+    string public symbol = "ACNN";
     uint256 public decimals = 18;
     uint256 public maxSupply = 552018 * (10 ** decimals);
 

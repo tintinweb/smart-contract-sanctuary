@@ -86,7 +86,7 @@ contract Exchange is DSAuth {
     uint public settlementFee = 20 ether;
     uint public feesCollected = 0;
 
-    string precisionError = &quot;Precision&quot;;
+    string precisionError = "Precision";
 
     constructor(address daiAddress) public {
         require(daiAddress != 0x0);
@@ -716,7 +716,7 @@ contract Exchange is DSAuth {
         uint8 v
     ) private returns (address) {
         bytes32 h = keccak256(action, expiration, nonce, price, size, strike, validUntil, this);
-        address maker = ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, h), v, r, s);
+        address maker = ecrecover(keccak256("\x19Ethereum Signed Message:\n32", h), v, r, s);
         _validateOrder(amount, expiration, h, maker, price, validUntil, size, strike);
         return maker;
     }

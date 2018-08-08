@@ -116,13 +116,13 @@ contract NRB_Users is NRB_Common {
 // --------------------------------------------------------------------------------
     function NRB_Users() public {
         userlength = 1;
-        name = &quot;NRB_Users&quot;;
+        name = "NRB_Users";
     }
 
     // User Registration ------------------------------------------
     function registerUserOnToken(address _token, address _user, uint _value, uint _flc, string _json) public onlyWhitelisted() returns (uint) {
-        Debug(&quot;USER.registerUserOnToken() _token,_user,msg.sender&quot;,_token,_user, msg.sender);
-        Debug(&quot;USER.registerUserOnToken() _valu, msg.value&quot;,_value,msg.value);
+        Debug("USER.registerUserOnToken() _token,_user,msg.sender",_token,_user, msg.sender);
+        Debug("USER.registerUserOnToken() _valu, msg.value",_value,msg.value);
 
         uint _time = block.timestamp;
         uint _userid = 0;
@@ -153,7 +153,7 @@ contract NRB_Users is NRB_Common {
         }
 
         accounts[_user][_token].time = _time;
-        if (keccak256(_json) != keccak256(&quot;NO-JSON&quot;)) {
+        if (keccak256(_json) != keccak256("NO-JSON")) {
             accounts[_user][_token].json = _json;
         }
 

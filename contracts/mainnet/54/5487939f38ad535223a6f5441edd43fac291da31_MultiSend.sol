@@ -273,8 +273,8 @@ contract Peculium is BurnableToken,Ownable { // Our token is a standard ERC20 To
 	using SafeERC20 for ERC20Basic; 
 
     	/* Public variables of the token for ERC20 compliance */
-	string public name = &quot;Peculium&quot;; //token name 
-    	string public symbol = &quot;PCL&quot;; // token symbol
+	string public name = "Peculium"; //token name 
+    	string public symbol = "PCL"; // token symbol
     	uint256 public decimals = 8; // token number of decimal
     	
     	/* Public variables specific for Peculium */
@@ -347,7 +347,7 @@ contract Peculium is BurnableToken,Ownable { // Our token is a standard ERC20 To
 		allowed[msg.sender][_spender] = _value;
 		Approval(msg.sender, _spender, _value);
 
-		require(_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+		require(_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         	return true;
     }
 
@@ -372,8 +372,8 @@ contract PeculiumOld is BurnableToken,Ownable { // Our token is a standard ERC20
 	using SafeERC20 for ERC20Basic; 
 
     	/* Public variables of the token for ERC20 compliance */
-	string public name = &quot;Peculium&quot;; //token name 
-    	string public symbol = &quot;PCL&quot;; // token symbol
+	string public name = "Peculium"; //token name 
+    	string public symbol = "PCL"; // token symbol
     	uint256 public decimals = 8; // token number of decimal
     	
     	/* Public variables specific for Peculium */
@@ -446,7 +446,7 @@ contract PeculiumOld is BurnableToken,Ownable { // Our token is a standard ERC20
 		allowed[msg.sender][_spender] = _value;
 		Approval(msg.sender, _spender, _value);
 
-		require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+		require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         	return true;
     }
 

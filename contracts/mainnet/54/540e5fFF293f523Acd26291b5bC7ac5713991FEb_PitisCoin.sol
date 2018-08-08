@@ -22,8 +22,8 @@ contract ERC20Interface {
 
 // contract
 contract PitisCoin is ERC20Interface {
-    string public constant symbol = &quot;PTS&quot;;
-    string public constant name = &quot;PitisCoin&quot;;
+    string public constant symbol = "PTS";
+    string public constant name = "PitisCoin";
     uint8 public constant decimals = 8;
     uint256 _totalSupply = 100000000000000000;
 

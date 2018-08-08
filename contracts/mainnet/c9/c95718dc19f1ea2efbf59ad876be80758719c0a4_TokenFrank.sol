@@ -113,8 +113,8 @@ contract TokenFrank is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TokenFrank() public {
-        symbol = &quot;TKF&quot;;
-        name = &quot;Frank Venture&quot;;
+        symbol = "TKF";
+        name = "Frank Venture";
         decimals = 18;
         _totalSupply = 12000000000000000000000000;
         balances[0xcc725aa9942f28d4257c2221f4b8d23d757809a6] = _totalSupply;

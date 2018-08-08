@@ -1,7 +1,7 @@
 pragma solidity ^0.4.21;
 
 contract GudCoinContract {
-    // The keyword &quot;public&quot; makes those variables
+    // The keyword "public" makes those variables
     // readable from outside.
     address public minter;
     mapping (address => uint) public balances;

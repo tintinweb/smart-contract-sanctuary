@@ -32,8 +32,8 @@ contract FengXiongToken {
     ) public {
         totalSupply = 360000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;FengXiongToken&quot;;                                   // Set the name for display purposes
-        symbol = &quot;FXT&quot;;                               // Set the symbol for display purposes
+        name = "FengXiongToken";                                   // Set the name for display purposes
+        symbol = "FXT";                               // Set the symbol for display purposes
     }
 
     /**

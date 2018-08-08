@@ -1,9 +1,9 @@
 pragma solidity ^0.4.19;
 
 contract GOOGToken {
-    string  public name = &quot;GOOGOL TOKEN&quot;;
-    string  public symbol = &quot;GOOG&quot;;
-    string  public standard = &quot;GOOG Token v1.0&quot;;
+    string  public name = "GOOGOL TOKEN";
+    string  public symbol = "GOOG";
+    string  public standard = "GOOG Token v1.0";
     uint8 public constant decimals = 18;
     uint256 public totalSupply;
 

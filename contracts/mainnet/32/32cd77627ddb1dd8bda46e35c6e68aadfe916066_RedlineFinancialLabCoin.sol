@@ -113,8 +113,8 @@ contract RedlineFinancialLabCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RedlineFinancialLabCoin() public {
-        symbol = &quot;REDLINE&quot;;
-        name = &quot;Redline Financial Lab Coin&quot;;
+        symbol = "REDLINE";
+        name = "Redline Financial Lab Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x116312c3471C2e7C34C52782D0399eBE601f3F30] = _totalSupply;

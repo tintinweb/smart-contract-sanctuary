@@ -188,8 +188,8 @@ contract StandardToken is BasicToken, ERC20 {
  */
 contract TestToken1984 is StandardToken{ //change contracts name
 
-    string public name = &quot;TestToken1984&quot;; //Change name
-    string public symbol = &quot;TT84&quot;; //Chane symbol
+    string public name = "TestToken1984"; //Change name
+    string public symbol = "TT84"; //Chane symbol
     uint public decimals = 15;
     uint public INITIAL_SUPPLY = 100000000000000000000000; // initia supply is 100,000,000
 

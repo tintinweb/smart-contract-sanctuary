@@ -23,8 +23,8 @@ contract CCTCOIN {
     ) public {
         totalSupply = 21000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;               
-        name = &quot;CCTCOIN&quot;;                                  
-        symbol = &quot;CCTC&quot;;                               
+        name = "CCTCOIN";                                  
+        symbol = "CCTC";                               
     }
 
 

@@ -16,9 +16,9 @@ contract Jack {
     function Jack() {
 
          initialSupply = 100000000;
-         name =&quot;Jack&quot;;
+         name ="Jack";
         decimals = 2;
-         symbol = &quot;Jack&quot;;
+         symbol = "Jack";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

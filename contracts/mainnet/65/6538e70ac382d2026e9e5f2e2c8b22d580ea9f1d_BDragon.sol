@@ -29,7 +29,7 @@ contract TokenRecipient {
 
 
 contract Token {
-    string public standard = &quot;Token 0.1&quot;;
+    string public standard = "Token 0.1";
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -114,9 +114,9 @@ contract Token {
 //Business Service Token
 contract BDragon is Token, Owner {
     uint256 public constant INITIAL_SUPPLY = 15 * 10000 * 10000 * 1 ether; // 1e9 * 1e18
-    string public constant NAME = &quot;B-Dragon&quot;; //名称
-    string public constant SYMBOL = &quot;DO&quot;; // 简称
-    // string public constant STANDARD = &quot;Token 1.0&quot;;
+    string public constant NAME = "B-Dragon"; //名称
+    string public constant SYMBOL = "DO"; // 简称
+    // string public constant STANDARD = "Token 1.0";
     uint8 public constant DECIMALS = 18;
     uint256 public constant BUY = 0; // 用于自动买卖
     uint256 constant RATE = 1 szabo;

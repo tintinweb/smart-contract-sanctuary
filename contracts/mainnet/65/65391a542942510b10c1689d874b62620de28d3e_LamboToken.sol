@@ -48,8 +48,8 @@ contract LamboToken is IERC20 {
     
     uint public _totalSupply = 0;
     
-    string public constant symbol = &quot;LAMBO&quot;;
-    string public constant name = &quot;Lambo Token&quot;;
+    string public constant symbol = "LAMBO";
+    string public constant name = "Lambo Token";
     uint8 public constant decimals = 18;
     
     uint256 public constant RATE = 500;

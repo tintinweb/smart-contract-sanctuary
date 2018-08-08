@@ -84,8 +84,8 @@ contract Token is TokenBase {
     constructor() public {
         totalSupply = initialSupply;
         balanceOf[msg.sender] = initialSupply;
-        name = &quot;CDCC&quot;;
-        symbol = &quot;CDCC&quot;;
+        name = "CDCC";
+        symbol = "CDCC";
     }
 
     function releaseReserve(uint value) onlyOwner public {

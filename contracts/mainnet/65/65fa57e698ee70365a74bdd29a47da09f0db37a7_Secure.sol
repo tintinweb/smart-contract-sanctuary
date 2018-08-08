@@ -91,8 +91,8 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 
 contract Token is Ownable {
     // Public variables of the token
-    string public name = &quot;VoxelX GRAY&quot;;
-    string public symbol = &quot;GRAY&quot;;
+    string public name = "VoxelX GRAY";
+    string public symbol = "GRAY";
     uint8 public decimals = 18;
     uint256 public totalSupply = 10000000000 * 10 ** uint256(decimals); // 10 billion tokens;
 

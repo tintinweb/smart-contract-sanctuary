@@ -113,8 +113,8 @@ contract SmartToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SmartToken() public {
-        symbol = &quot;SMARTTOKENS&quot;;
-        name = &quot;Smart Token&quot;;
+        symbol = "SMARTTOKENS";
+        name = "Smart Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xb7710726f14E238aAfb93aDc00A0A7B5755109c1] = _totalSupply;

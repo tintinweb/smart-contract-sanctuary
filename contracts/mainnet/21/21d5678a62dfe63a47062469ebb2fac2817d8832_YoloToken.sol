@@ -93,9 +93,9 @@ interface tokenRecipient {
 contract YoloToken is Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;YoloCash&quot;;           //The Token&#39;s name: e.g. DigixDAO Tokens
+    string public name = "YoloCash";           //The Token&#39;s name: e.g. DigixDAO Tokens
     uint8 public decimals = 8;             //Number of decimals of the smallest unit
-    string public symbol = &quot;YLC&quot;;         //An identifier: e.g. REP
+    string public symbol = "YLC";         //An identifier: e.g. REP
     uint public totalSupply;
     address public raindropAddress = 0x0;
 

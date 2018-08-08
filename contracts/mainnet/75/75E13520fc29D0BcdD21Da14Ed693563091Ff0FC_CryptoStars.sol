@@ -1,11 +1,11 @@
 pragma solidity ^0.4.8;
 
-//import &quot;./ConvertLib.sol&quot;;
+//import "./ConvertLib.sol";
 
 contract CryptoStars {
 
     address owner;
-    string public standard = &quot;STRZ&quot;;     
+    string public standard = "STRZ";     
     string public name;                     
     string public symbol;  
     uint8 public decimals;                         //Zero for this type of token
@@ -73,8 +73,8 @@ contract CryptoStars {
         totalSupply = 119614;                        // Update total supply
         starsRemainingToAssign = totalSupply;
         numberOfStarsToReserve = 1000;
-        name = &quot;CRYPTOSTARS&quot;;                        // Set the name for display purposes
-        symbol = &quot;STRZ&quot;;                             // Set the symbol for display purposes
+        name = "CRYPTOSTARS";                        // Set the name for display purposes
+        symbol = "STRZ";                             // Set the symbol for display purposes
         decimals = 0;                                // Amount of decimals for display purposes
         initialPrice = 99000000000000000;          // Initial price when tokens are first sold 0.099 ETH
         transferPrice = 10000000000000000;          //Set min transfer price to 0.01 ETH
@@ -82,27 +82,27 @@ contract CryptoStars {
         MaxStarIndexAvailable = 12000;               //Max Available Star Index for range of current offer group
 
         //Sol - 0
-        starIndexToSTRZMasterName[0] = &quot;Sol&quot;;
+        starIndexToSTRZMasterName[0] = "Sol";
         starIndexToAddress[0] = owner;
         Assign(owner, 0, starIndexToSTRZName[0], starIndexToSTRZMasterName[0]);
 
         //Odyssey 2001
-        starIndexToSTRZMasterName[2001] = &quot;Odyssey&quot;;
+        starIndexToSTRZMasterName[2001] = "Odyssey";
         starIndexToAddress[2001] = owner;
         Assign(owner, 2001, starIndexToSTRZName[2001], starIndexToSTRZMasterName[2001]);
 
         //Delta Velorum - 119006
-        starIndexToSTRZMasterName[119006] = &quot;Delta Velorum&quot;;
+        starIndexToSTRZMasterName[119006] = "Delta Velorum";
         starIndexToAddress[119006] = owner;
         Assign(owner, 119006, starIndexToSTRZName[119006], starIndexToSTRZMasterName[119006]);
 
         //Gamma Camelopardalis - 119088
-        starIndexToSTRZMasterName[119088] = &quot;Gamma Camelopardalis&quot;;
+        starIndexToSTRZMasterName[119088] = "Gamma Camelopardalis";
         starIndexToAddress[119088] = owner;
         Assign(owner, 119088, starIndexToSTRZName[119088], starIndexToSTRZMasterName[119088]);
 
         //Capella - 119514
-        starIndexToSTRZMasterName[119514] = &quot;Capella&quot;;
+        starIndexToSTRZMasterName[119514] = "Capella";
         starIndexToAddress[119514] = owner;
         Assign(owner, 119514, starIndexToSTRZName[119514], starIndexToSTRZMasterName[119514]);
 

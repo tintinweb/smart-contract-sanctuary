@@ -80,8 +80,8 @@ contract ICHAINToken is ERC20,Ownable {
     event FundTransfer(address fundWallet, uint256 amount);
   
 	function ICHAINToken() public {  	
-		name=&quot;ICHAIN&quot;;
-		symbol=&quot;IAA&quot;;
+		name="ICHAIN";
+		symbol="IAA";
 		totalSupply = 10000000000*(10**decimals);
 		balanceOf[msg.sender] = totalSupply;	
         walletArr.push(0xBf3EFFCa4B5f4833A07B5a064F8f5509698CF6C6);

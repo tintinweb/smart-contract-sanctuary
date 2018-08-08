@@ -113,8 +113,8 @@ contract BitQ is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitQ() public {
-        symbol = &quot;BITQ&quot;;
-        name = &quot;BitQuarium&quot;;
+        symbol = "BITQ";
+        name = "BitQuarium";
         decimals = 2;
         _totalSupply = 300000000;
         balances[0x74205dece41e14DCE4fD94da4Dcfb255f3A69059] = _totalSupply;

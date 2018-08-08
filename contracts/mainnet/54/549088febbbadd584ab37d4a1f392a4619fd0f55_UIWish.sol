@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -313,10 +313,10 @@ library SafeMath {
 contract UIWish is StandardToken, BurnableToken, Ownable {
 
     // Constants
-    string  public constant name = &quot;UIWish&quot;;
-    string  public constant symbol = &quot;UI&quot;;
+    string  public constant name = "UIWish";
+    string  public constant symbol = "UI";
     uint8   public constant decimals = 18;
-    string  public website = &quot;www.ui-wish.com&quot;; 
+    string  public website = "www.ui-wish.com"; 
     uint256 public constant INITIAL_SUPPLY      =  24680000 * (10 ** uint256(decimals));
     uint256 public constant CROWDSALE_ALLOWANCE =  12340000 * (10 ** uint256(decimals));
     uint256 public constant ADMIN_ALLOWANCE     =  12340000 * (10 ** uint256(decimals));

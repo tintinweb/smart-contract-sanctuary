@@ -3,8 +3,8 @@ pragma solidity ^0.4.11;
 /// @title Artcoin (ART) - democratizing culture.
 contract Artcoin {
 
-    string public constant name = &quot;Artcoin&quot;;
-    string public constant symbol = &quot;ART&quot;;
+    string public constant name = "Artcoin";
+    string public constant symbol = "ART";
     uint8 public constant decimals = 18;
 
     uint256 public authorizedSupply;

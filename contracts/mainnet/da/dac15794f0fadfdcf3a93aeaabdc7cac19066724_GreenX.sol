@@ -69,8 +69,8 @@ library SafeMath {
 contract GreenX is Owner {
     using SafeMath for uint256;
 
-    string public constant name = &quot;GREENX&quot;;
-    string public constant symbol = &quot;GEX&quot;;
+    string public constant name = "GREENX";
+    string public constant symbol = "GEX";
     uint public constant decimals = 18;
     uint256 constant public totalSupply = 375000000 * 10 ** 18; // 375 mil tokens will be supplied
   

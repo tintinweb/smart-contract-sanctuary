@@ -182,8 +182,8 @@ contract ERC23StandardToken is ERC23BasicToken {
 // Based in part on code by Open-Zeppelin: https://github.com/OpenZeppelin/zeppelin-solidity.git
 // Based in part on code by FirstBlood: https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol
 contract Profit1000 is ERC23StandardToken {
-    string public constant name = &quot;Profit 1000 Token&quot;;
-    string public constant symbol = &quot;1000&quot;;
+    string public constant name = "Profit 1000 Token";
+    string public constant symbol = "1000";
     uint256 public constant decimals = 18;
     address public multisig=address(0x871D9225C237049c2FB82A32647511128741A616); //multisig wallet, to which all contributions will be sent
     address public foundation; //owner address

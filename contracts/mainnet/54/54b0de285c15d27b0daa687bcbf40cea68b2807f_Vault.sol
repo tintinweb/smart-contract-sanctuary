@@ -154,7 +154,7 @@ contract Vault is Ownable, VaultInterface {
 
     function Vault(ERC820 registry) public {
         // required by ERC777 standard.
-        registry.setInterfaceImplementer(address(this), keccak256(&quot;ERC777TokensRecipient&quot;), address(this));
+        registry.setInterfaceImplementer(address(this), keccak256("ERC777TokensRecipient"), address(this));
     }
 
     /// @dev Deposits a specific token.

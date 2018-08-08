@@ -391,15 +391,15 @@ contract GameChannelBase is Destroyable, ConflictResolutionManager {
         maxStake = _maxStake;
 
         typeHash = keccak256(
-            &quot;uint32 Round Id&quot;,
-            &quot;uint8 Game Type&quot;,
-            &quot;uint16 Number&quot;,
-            &quot;uint Value (Wei)&quot;,
-            &quot;int Current Balance (Wei)&quot;,
-            &quot;bytes32 Server Hash&quot;,
-            &quot;bytes32 Player Hash&quot;,
-            &quot;uint Game Id&quot;,
-            &quot;address Contract Address&quot;
+            "uint32 Round Id",
+            "uint8 Game Type",
+            "uint16 Number",
+            "uint Value (Wei)",
+            "int Current Balance (Wei)",
+            "bytes32 Server Hash",
+            "bytes32 Player Hash",
+            "uint Game Id",
+            "address Contract Address"
         );
     }
 

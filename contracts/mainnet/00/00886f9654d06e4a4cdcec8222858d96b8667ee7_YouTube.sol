@@ -113,8 +113,8 @@ contract YouTube is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function YouTube() public {
-        symbol = &quot;YT&quot;;
-        name = &quot;YouTube &quot;;
+        symbol = "YT";
+        name = "YouTube ";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x2d57365a7ab22425f09D49bB0baFB0426EB8dDF9] = _totalSupply;

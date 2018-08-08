@@ -112,8 +112,8 @@ contract Ownable {
 
 
 contract RAM_Token is StdToken,Ownable{
-    string public name=&quot;RAM Token&quot;;
-    string public symbol=&quot;RAM&quot;;
+    string public name="RAM Token";
+    string public symbol="RAM";
     uint public decimals = 18;
     uint256 TokenValue;
     uint256 public minToken=1000;

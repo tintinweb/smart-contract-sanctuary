@@ -91,9 +91,9 @@ contract SafeMath {
  */
 contract CL is ERC223, SafeMath {
 
-    string public name = &quot;TCoin&quot;;
+    string public name = "TCoin";
 
-    string public symbol = &quot;TCoin&quot;;
+    string public symbol = "TCoin";
 
     uint8 public decimals = 8;
 

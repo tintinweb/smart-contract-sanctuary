@@ -139,8 +139,8 @@ contract StandardToken is BasicToken, ERC20 {
 
 contract StierBitToken is StandardToken {
 
-  string public name = &quot;Stier Bit Token&quot;;
-  string public symbol = &quot;SBT&quot;;
+  string public name = "Stier Bit Token";
+  string public symbol = "SBT";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 16000000000000000000000000000;
   

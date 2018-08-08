@@ -454,7 +454,7 @@ contract PoolManager {
 				return;
 		}
 		
-		//&quot;Clear&quot; poolsDone array (just reset the length, instances will be override)
+		//"Clear" poolsDone array (just reset the length, instances will be override)
 		poolsDone.length = 0;
 	}
 	

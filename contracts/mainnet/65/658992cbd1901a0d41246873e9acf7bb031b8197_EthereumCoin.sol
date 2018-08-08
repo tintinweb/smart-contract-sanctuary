@@ -215,8 +215,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract EthereumCoin is StandardToken{
-  string public name = &quot;EthereumCoin&quot;;
-  string public symbol = &quot;ETH&quot;;
+  string public name = "EthereumCoin";
+  string public symbol = "ETH";
   uint8 public decimals =18;
   uint256 public INITIAL_SUPPLY = 100000000*10**18;
   //初始化

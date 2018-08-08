@@ -209,8 +209,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract GBCToken is StandardToken {
-  string public name = &quot;GBC Token&quot;;
-  string public symbol = &quot;GBC&quot;;
+  string public name = "GBC Token";
+  string public symbol = "GBC";
   uint public decimals = 18;
   uint constant INITIAL_SUPPLY = 2000000000;
 

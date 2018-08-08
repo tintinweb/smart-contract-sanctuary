@@ -3,14 +3,14 @@ pragma solidity ^0.4.24;
 
   Copyright 2018 InterValue Foundation.
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
   http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -133,7 +133,7 @@ contract BasicToken is ERC20Basic {
       if (transferable) {
           _;
       } else {
-          LiquidityAlarm(&quot;The liquidity of INVE is switched off&quot;);
+          LiquidityAlarm("The liquidity of INVE is switched off");
           throw;
       }
   }
@@ -165,7 +165,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint _value) onlyPayloadSize(2 * 32) unFrozenAccount onlyTransferable {
     if (frozenAccount[_to]) {
-        InvalidAccount(_to, &quot;The receiver account is frozen&quot;);
+        InvalidAccount(_to, "The receiver account is frozen");
     } else {
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -278,8 +278,8 @@ contract StandardToken is BasicToken {
 /// @title InterValue Protocol Token.
 /// For more information about this token, please visit http://inve.one
 contract INVEToken is StandardToken {
-    string public name = &quot;InterValue&quot;;
-    string public symbol = &quot;INVE&quot;;
+    string public name = "InterValue";
+    string public symbol = "INVE";
     uint public decimals = 18;
 
     /**

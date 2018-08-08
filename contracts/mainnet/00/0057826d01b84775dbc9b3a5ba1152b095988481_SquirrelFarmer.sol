@@ -3,7 +3,7 @@ pragma solidity ^0.4.20; // solhint-disable-line
 // similar as squirrelfarmer, with three changes:
 // A. one third of your squirrels die when you sell eggs
 // B. you can transfer ownership of the devfee through sacrificing squirrels
-// C. the &quot;free&quot; 300 squirrels cost 0.001 eth (in line with the mining fee)
+// C. the "free" 300 squirrels cost 0.001 eth (in line with the mining fee)
 
 // bots should have a harder time, and whales can compete for the devfee
 

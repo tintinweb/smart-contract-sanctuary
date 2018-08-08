@@ -173,7 +173,7 @@ contract CryptoSurprise
         owner = msg.sender;
         
         bagTypes.push(BagType({
-            name: &quot;Blue&quot;,
+            name: "Blue",
             
             startPrice: 0.04 ether,
             priceMultiplierPerBuy: 1300000, // 130%
@@ -187,7 +187,7 @@ contract CryptoSurprise
             currentSupply: 0
         }));
 		bagTypes.push(BagType({
-            name: &quot;Red&quot;,
+            name: "Red",
             
             startPrice: 0.03 ether,
             priceMultiplierPerBuy: 1330000, // 133%
@@ -201,7 +201,7 @@ contract CryptoSurprise
             currentSupply: 0
         }));
 		bagTypes.push(BagType({
-            name: &quot;Green&quot;,
+            name: "Green",
             
             startPrice: 0.02 ether,
             priceMultiplierPerBuy: 1360000, // 136%
@@ -215,7 +215,7 @@ contract CryptoSurprise
             currentSupply: 0
         }));
 		bagTypes.push(BagType({
-            name: &quot;Black&quot;,
+            name: "Black",
             
             startPrice: 0.1 ether,
             priceMultiplierPerBuy: 1450000, // 145%
@@ -229,7 +229,7 @@ contract CryptoSurprise
             currentSupply: 0
         }));
 		bagTypes.push(BagType({
-            name: &quot;Pink&quot;,
+            name: "Pink",
             
             startPrice: 1 ether,
             priceMultiplierPerBuy: 1500000, // 150%
@@ -243,7 +243,7 @@ contract CryptoSurprise
             currentSupply: 0
         }));
 		bagTypes.push(BagType({
-            name: &quot;White&quot;,
+            name: "White",
             
             startPrice: 10 ether,
             priceMultiplierPerBuy: 1500000, // 150%
@@ -367,12 +367,12 @@ contract CryptoSurprise
     
     function name() external pure returns (string)
     {
-        return &quot;Bags&quot;;
+        return "Bags";
     }
     
     function symbol() external pure returns (string)
     {
-        return &quot;BAG&quot;;
+        return "BAG";
     }
     
     function totalSupply() external view returns (uint256)

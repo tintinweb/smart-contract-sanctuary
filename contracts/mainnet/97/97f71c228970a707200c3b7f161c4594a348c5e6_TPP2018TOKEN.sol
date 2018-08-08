@@ -44,8 +44,8 @@ contract TPP2018TOKEN  {
     function TPP2018TOKEN () public{
         balances[msg.sender] = 8600000000;               // Give the creator all initial tokens 
         totalSupply = 8600000000;  
-        name = &quot;TPP TOKEN&quot;;      
+        name = "TPP TOKEN";      
         decimals = 2;           
-        symbol = &quot;TPPT&quot;; 
+        symbol = "TPPT"; 
     }
 }

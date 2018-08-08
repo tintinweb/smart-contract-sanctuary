@@ -117,19 +117,19 @@ contract CampaignContract {
 	}
 
 	modifier hasKYCInfo(address addr) {
-		require(contributionKYC[addr].phone != &quot;&quot;);
-		require(contributionKYC[addr].name != &quot;&quot;);
+		require(contributionKYC[addr].phone != "");
+		require(contributionKYC[addr].name != "");
 		_;
 	}
 	
 	function verifyKYC(bytes32 phone, bytes32 name, bytes32 occupation, bytes32 addrOne, bytes32 addrTwo) external {
-		require(contributionKYC[msg.sender].phone == &quot;&quot;);
-		require(contributionKYC[msg.sender].name == &quot;&quot;);
-		require(phone != &quot;&quot;);
-		require(name != &quot;&quot;);
-		require(occupation != &quot;&quot;);
-		require(addrOne != &quot;&quot;);
-		require(addrTwo != &quot;&quot;);
+		require(contributionKYC[msg.sender].phone == "");
+		require(contributionKYC[msg.sender].name == "");
+		require(phone != "");
+		require(name != "");
+		require(occupation != "");
+		require(addrOne != "");
+		require(addrTwo != "");
 	
 		contributionKYC[msg.sender].phone = phone;
 		contributionKYC[msg.sender].name = name;
@@ -202,11 +202,11 @@ contract CampaignContract {
 		//Someone having their KYC reset must have withdrawn their attempts.
 		require(amountAttempted[addr] == 0);
 	
-		contributionKYC[addr].phone = &quot;&quot;;
-		contributionKYC[addr].name = &quot;&quot;;
-		contributionKYC[addr].occupation = &quot;&quot;;
-		contributionKYC[addr].addressOne = &quot;&quot;;
-		contributionKYC[addr].addressTwo = &quot;&quot;;
+		contributionKYC[addr].phone = "";
+		contributionKYC[addr].name = "";
+		contributionKYC[addr].occupation = "";
+		contributionKYC[addr].addressOne = "";
+		contributionKYC[addr].addressTwo = "";
 	
 		emit KYCReset(msg.sender, addr);
 	}

@@ -264,8 +264,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract EthereumEra is PausableToken {
-    string public name = &quot;Ethereum Era&quot;;
-    string public symbol = &quot;ETE&quot;;
+    string public name = "Ethereum Era";
+    string public symbol = "ETE";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 65000000000000000000000000;
 

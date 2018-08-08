@@ -128,8 +128,8 @@ contract BellaBluToken is ERC20Interface, Owned, SafeMath {
     // how deep on decimal. bonus? runs how long?
     // ------------------------------------------------------------------------
     function BellaBluToken() public {
-        symbol = &quot;BBCAT&quot;;
-        name = &quot;BellaBlu Token&quot;;
+        symbol = "BBCAT";
+        name = "BellaBlu Token";
         decimals = 18;
         bonusEnds = now + 8 weeks;
         endDate = now + 16 weeks;

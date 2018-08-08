@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract YIKANGJIAYAOHUITOKEN {
 
-    string public name = &quot;YIKANGJIAYAOHUITOKEN&quot;;
-    string public symbol = &quot;YKT&quot;;
+    string public name = "YIKANGJIAYAOHUITOKEN";
+    string public symbol = "YKT";
     uint256 public decimals = 6;
 
     mapping (address => uint256) public balanceOf;

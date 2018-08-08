@@ -127,8 +127,8 @@ contract Ownable {
 
 contract BNIToken is StandardToken, Ownable
 {
-    string public name = &quot;BNI&quot;;
-    string public symbol = &quot;BNI&quot;;
+    string public name = "BNI";
+    string public symbol = "BNI";
 
     uint public decimals = 2;
 

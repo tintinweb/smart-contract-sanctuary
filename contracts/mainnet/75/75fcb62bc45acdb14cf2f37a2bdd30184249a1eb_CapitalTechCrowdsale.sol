@@ -107,33 +107,33 @@ contract Crowdsale {
     uint256 tokenPrice = fiat_contract.USD(0);
     if(startTime.add(15 days) >= block.timestamp) {
         tokenPrice = tokenPrice.mul(200).div(10 ** 8);
-		if(!compareStages(stage, &quot;pre&quot;)){
-			stage = &quot;pre&quot;;
+		if(!compareStages(stage, "pre")){
+			stage = "pre";
 		}
     } else if(startTime.add(45 days) >= block.timestamp) {
         tokenPrice = tokenPrice.mul(300).div(10 ** 8);		
-		if(!compareStages(stage, &quot;main_first&quot;)){
-			stage = &quot;main_first&quot;;
+		if(!compareStages(stage, "main_first")){
+			stage = "main_first";
 		}
     } else if(startTime.add(52 days) >= block.timestamp) {
         tokenPrice = tokenPrice.mul(330).div(10 ** 8);		
-		if(!compareStages(stage, &quot;main_second&quot;)){
-			stage = &quot;main_second&quot;;
+		if(!compareStages(stage, "main_second")){
+			stage = "main_second";
 		}
     } else if(startTime.add(59 days) >= block.timestamp) {
         tokenPrice = tokenPrice.mul(360).div(10 ** 8);
-		if(!compareStages(stage, &quot;main_third&quot;)){
-			stage = &quot;main_third&quot;;
+		if(!compareStages(stage, "main_third")){
+			stage = "main_third";
 		}
     } else if(startTime.add(66 days) >= block.timestamp) {
         tokenPrice = tokenPrice.mul(400).div(10 ** 8);
-		if(!compareStages(stage, &quot;main_fourth&quot;)){
-			stage = &quot;main_fourth&quot;;
+		if(!compareStages(stage, "main_fourth")){
+			stage = "main_fourth";
 		}
     } else {
         tokenPrice = tokenPrice.mul(150).div(10 ** 8);
-		if(!compareStages(stage, &quot;private&quot;)){
-			stage = &quot;private&quot;;
+		if(!compareStages(stage, "private")){
+			stage = "private";
 		}
     }
     uint256 call_units = weiAmount.div(tokenPrice).mul(10 ** 10);
@@ -161,7 +161,7 @@ contract FinalizableCrowdsale is Crowdsale, Ownable {
     require(hasEnded());
     finalization();
     emit Finalized();
-	stage = &quot;ended&quot;;
+	stage = "ended";
     sale_state = false;
   }
   function finalization() internal ;
@@ -179,7 +179,7 @@ contract CapitalTechCrowdsale is FinalizableCrowdsale {
 	sale_period = 75 days;
     endTime = block.timestamp.add(sale_period);    
     sale_state = true;
-	stage = &quot;private&quot;;
+	stage = "private";
 	softCap = 2231250000000000000000000;
 	maxContributionPerAddress = 1500 ether;	
 	minInvestment = 0.01 ether;

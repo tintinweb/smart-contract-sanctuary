@@ -204,7 +204,7 @@ contract Mineable is StandardToken, HasOwner {
 }
 
 contract CBGToken is Mineable, Burnable {
-  string public name = &quot;CBG Token&quot;;
-  string public symbol = &quot;CBG&quot;;
+  string public name = "CBG Token";
+  string public symbol = "CBG";
   uint8 public decimals = 3;
 }

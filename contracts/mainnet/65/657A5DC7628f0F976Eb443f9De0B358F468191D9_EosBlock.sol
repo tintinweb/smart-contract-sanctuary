@@ -2,8 +2,8 @@ pragma solidity 0.4.21;
 
 contract EosBlock {
 
-    string public symbol=&quot;EOSB&quot;;
-    string public name=&quot;EOS Block&quot; ;
+    string public symbol="EOSB";
+    string public name="EOS Block" ;
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 0;	
 	uint256 _FreeQDA = 20000;

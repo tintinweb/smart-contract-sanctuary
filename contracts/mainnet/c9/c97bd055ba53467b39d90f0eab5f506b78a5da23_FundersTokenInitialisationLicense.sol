@@ -1,5 +1,5 @@
 pragma solidity ^0.4.23;
-pragma experimental &quot;v0.5.0&quot;;
+pragma experimental "v0.5.0";
 pragma experimental ABIEncoderV2;
 
 library AddressExtension {
@@ -510,8 +510,8 @@ contract AbstractVoucher {
 contract FundersTokenInitialisationLicense is AbstractToken, AbstractVoucher, Authorizable {
 
   uint256 public totalSupply;
-  string public constant name = &quot;FundersToken Initialisation License&quot;;
-  string public constant symbol = &quot;FIL&quot;;
+  string public constant name = "FundersToken Initialisation License";
+  string public constant symbol = "FIL";
   bool public constant isConsumable = true;
 
   constructor(

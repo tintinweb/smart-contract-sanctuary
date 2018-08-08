@@ -259,7 +259,7 @@ contract VoltToken is BasicToken, VoltOwned {
     event Burn(address indexed target, uint256 value);
 
     function VoltToken () public BasicToken (
-        &quot;VOLT&quot;, &quot;ACDC&quot;, 18, 4000000000
+        "VOLT", "ACDC", 18, 4000000000
     ) VoltOwned(
         msg.sender
     ) {

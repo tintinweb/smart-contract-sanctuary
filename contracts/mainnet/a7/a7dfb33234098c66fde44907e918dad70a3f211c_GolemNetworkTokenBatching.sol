@@ -299,8 +299,8 @@ contract TokenProxy is StandardToken, BurnableToken {
 
 contract GolemNetworkTokenBatching is TokenProxy {
 
-    string public constant name = &quot;Golem Network Token Batching&quot;;
-    string public constant symbol = &quot;GNTB&quot;;
+    string public constant name = "Golem Network Token Batching";
+    string public constant symbol = "GNTB";
     uint8 public constant decimals = 18;
 
 
