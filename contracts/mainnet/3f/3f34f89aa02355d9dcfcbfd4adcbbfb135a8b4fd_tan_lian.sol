@@ -100,9 +100,9 @@ contract tan_lian is StandardToken {
         balances[msg.sender] = 50000000000000000;               // Give the creator all initial tokens
         free_balances[msg.sender] = 50000000000000000;
         totalSupply = 50000000000000000;                        // Update total supply
-        name = &quot;tan lian&quot;;                                   // Set the name for display purposes
+        name = "tan lian";                                   // Set the name for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
-        symbol = &quot;CBN&quot;;                               // Set the symbol for display purposes
+        symbol = "CBN";                               // Set the symbol for display purposes
     }
     
     function transferFreeze(address _to, uint256 _value) returns (bool success) {

@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract MYYG is StandardToken, Ownable {
 
-    string public constant name = &quot;麦芽易购&quot;;
-    string public constant symbol = &quot;MYYG&quot;;
+    string public constant name = "麦芽易购";
+    string public constant symbol = "MYYG";
     uint256 public constant decimals = 8;
 
     function MYYG() public {

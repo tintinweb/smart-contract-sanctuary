@@ -162,8 +162,8 @@ contract VICOXToken is StandardToken {
     creator = _creator;
     balances[msg.sender] = initialSupply * 10**decimals;     
     totalSupply = initialSupply * 10**decimals;                        
-    name = &quot;VICO Exchange Token&quot;;                                  		
-    symbol = &quot;VICOX&quot;;
+    name = "VICO Exchange Token";                                  		
+    symbol = "VICOX";
     Transfer(0x0, msg.sender, totalSupply);
        
   }

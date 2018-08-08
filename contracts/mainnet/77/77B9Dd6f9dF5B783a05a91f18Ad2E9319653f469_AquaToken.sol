@@ -135,8 +135,8 @@ contract BurnableToken is BasicToken {
 }
 
 contract AquaToken is BurnableToken, StandardToken {
-    string public name = &quot;AquaToken&quot;;
-    string public symbol = &quot;AQAU&quot;;
+    string public name = "AquaToken";
+    string public symbol = "AQAU";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 100000000 * 1 ether;
 

@@ -113,8 +113,8 @@ contract Omnidollar is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Omnidollar() public {
-        symbol = &quot;OMN&quot;;
-        name = &quot;Omnidollar&quot;;
+        symbol = "OMN";
+        name = "Omnidollar";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0xDf8E8CEa5FeBfB72f3dDCE0CbAfaD0F27f1b871d] = _totalSupply;

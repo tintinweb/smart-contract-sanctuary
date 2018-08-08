@@ -113,8 +113,8 @@ contract AVMToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AVMToken() public {
-        symbol = &quot;AVM&quot;;
-        name = &quot;AVM Tokens&quot;;
+        symbol = "AVM";
+        name = "AVM Tokens";
         decimals = 18;
         _totalSupply = 24000000000000000000000000;
         balances[0x6804eb5708eD497D69c31e541A9d2C6b920e28D3] = _totalSupply;

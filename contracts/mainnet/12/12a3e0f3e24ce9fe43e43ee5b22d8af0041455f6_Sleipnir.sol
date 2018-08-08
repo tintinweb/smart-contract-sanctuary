@@ -105,8 +105,8 @@ contract Sleipnir is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Sleipnir() public {
-        symbol = &quot;SLP&quot;;
-        name = &quot;Sleipnir&quot;;
+        symbol = "SLP";
+        name = "Sleipnir";
         decimals = 6;
         _totalSupply = 1000000000000;
         balances[0xa015fE2a1947B23AD454E699F8CbbDa419671F5e] = _totalSupply;

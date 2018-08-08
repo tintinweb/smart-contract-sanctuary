@@ -77,8 +77,8 @@ contract Ignite is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Ignite&quot;;
-    string public constant symbol = &quot;IGT&quot;;
+    string public constant name = "Ignite";
+    string public constant symbol = "IGT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 800000000e8;

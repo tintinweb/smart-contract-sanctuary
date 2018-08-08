@@ -105,8 +105,8 @@ contract Criptolira is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Criptolira() public {
-        symbol = &quot;CLI&quot;;
-        name = &quot;Criptolira&quot;;
+        symbol = "CLI";
+        name = "Criptolira";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000000;
         balances[0xeaBB4013f179E42c41468DB81eB1Bd420Da6cC47] = _totalSupply;

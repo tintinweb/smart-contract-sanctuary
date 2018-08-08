@@ -113,8 +113,8 @@ contract STEM is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function STEM() public {
-        symbol = &quot;STEM&quot;;
-        name = &quot;STEM Token&quot;;
+        symbol = "STEM";
+        name = "STEM Token";
         decimals = 18;
         _totalSupply =  500000000000000000000000000000;
         balances[0xbdEe61489a517f27fff3B5A0Fa4a5714dC2327D5] = _totalSupply;

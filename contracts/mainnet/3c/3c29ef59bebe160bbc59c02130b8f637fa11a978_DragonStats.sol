@@ -147,8 +147,8 @@ contract RBACWithAdmin is RBAC {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
-  string public constant ROLE_PAUSE_ADMIN = &quot;pauseAdmin&quot;;
+  string public constant ROLE_ADMIN = "admin";
+  string public constant ROLE_PAUSE_ADMIN = "pauseAdmin";
 
   /**
    * @dev modifier to scope access to admins
@@ -231,19 +231,19 @@ contract DragonStats is RBACWithAdmin {
     mapping(uint256 => dragonStat) public dragonStats;
 
 
-    function setBirthBlock(uint256 _dragonID) external onlyRole(&quot;MainContract&quot;) {
+    function setBirthBlock(uint256 _dragonID) external onlyRole("MainContract") {
         require(birthBlock[_dragonID] == 0);
         birthBlock[_dragonID] = block.number;
     }
     
-    function setDeathBlock(uint256 _dragonID) external onlyRole(&quot;MainContract&quot;) {
+    function setDeathBlock(uint256 _dragonID) external onlyRole("MainContract") {
         require(deathBlock[_dragonID] == 0);
         deathBlock[_dragonID] = block.number;
     }
     
     function setParents(uint256 _dragonID, uint256 _parentOne, uint256 _parentTwo) 
         external 
-        onlyRole(&quot;MainContract&quot;) 
+        onlyRole("MainContract") 
     {
         
         require(birthBlock[_dragonID] == 0);
@@ -259,7 +259,7 @@ contract DragonStats is RBACWithAdmin {
     
     function setLastAction(uint256 _dragonID, uint256 _lastActionDragonID, uint8 _lastActionID) 
         external 
-        onlyRole(&quot;ActionContract&quot;) 
+        onlyRole("ActionContract") 
     {
         lastActions[_dragonID].lastActionID = _lastActionID;
         if (_lastActionDragonID > UINT248_MAX) {
@@ -269,41 +269,41 @@ contract DragonStats is RBACWithAdmin {
         }
     }
     
-    function incFightWin(uint256 _dragonID) external onlyRole(&quot;FightContract&quot;) {
+    function incFightWin(uint256 _dragonID) external onlyRole("FightContract") {
         dragonStats[_dragonID].fightWin++;
     }
     
-    function incFightLose(uint256 _dragonID) external onlyRole(&quot;FightContract&quot;) {
+    function incFightLose(uint256 _dragonID) external onlyRole("FightContract") {
         dragonStats[_dragonID].fightLose++;
     }
     
-    function incFightToDeathWin(uint256 _dragonID) external onlyRole(&quot;DeathContract&quot;) {
+    function incFightToDeathWin(uint256 _dragonID) external onlyRole("DeathContract") {
         dragonStats[_dragonID].fightToDeathWin++;
     }
     
-    function incChildren(uint256 _dragonID) external onlyRole(&quot;MainContract&quot;) {
+    function incChildren(uint256 _dragonID) external onlyRole("MainContract") {
         dragonStats[_dragonID].children++;
     }
     
     function addMutagenFace(uint256 _dragonID, uint256 _mutagenCount) 
         external 
-        onlyRole(&quot;MutagenFaceContract&quot;) 
+        onlyRole("MutagenFaceContract") 
     {
         dragonStats[_dragonID].mutagenFace = dragonStats[_dragonID].mutagenFace + uint32(_mutagenCount);
     }
     
     function addMutagenFight(uint256 _dragonID, uint256 _mutagenCount) 
         external 
-        onlyRole(&quot;MutagenFightContract&quot;) 
+        onlyRole("MutagenFightContract") 
     {
         dragonStats[_dragonID].mutagenFight = dragonStats[_dragonID].mutagenFight + uint32(_mutagenCount);
     }
     
-    function incGenLabFace(uint256 _dragonID) external onlyRole(&quot;GenLabContract&quot;) {
+    function incGenLabFace(uint256 _dragonID) external onlyRole("GenLabContract") {
         dragonStats[_dragonID].genLabFace++;
     }
     
-    function incGenLabFight(uint256 _dragonID) external onlyRole(&quot;GenLabContract&quot;) {
+    function incGenLabFight(uint256 _dragonID) external onlyRole("GenLabContract") {
         dragonStats[_dragonID].genLabFight++;
     }
     

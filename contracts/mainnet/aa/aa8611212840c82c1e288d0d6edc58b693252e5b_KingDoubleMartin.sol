@@ -32,8 +32,8 @@ contract KingDoubleMartin {
     ) public {
         totalSupply = 1000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot; KingDoubleMartin&quot;;                                   // Set the name for display purposes
-        symbol = &quot; KDM&quot;;                               // Set the symbol for display purposes
+        name = " KingDoubleMartin";                                   // Set the name for display purposes
+        symbol = " KDM";                               // Set the symbol for display purposes
     }
 
     /**

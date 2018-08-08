@@ -394,7 +394,7 @@ contract CryptoTorch is Pausable, ReentrancyGuard {
     /**
      * Payments made directly to this contract are treated as direct Donations to the Special Olympics.
      *  - Note: payments made directly to the contract do not receive tokens.  Tokens
-     *    are only available via &quot;takeTheTorch()&quot; or through the Dapp at https://cryptotorch.io
+     *    are only available via "takeTheTorch()" or through the Dapp at https://cryptotorch.io
      */
     function() payable public {
         if (msg.value > 0 && donationsReceiver_ != 0x0) {

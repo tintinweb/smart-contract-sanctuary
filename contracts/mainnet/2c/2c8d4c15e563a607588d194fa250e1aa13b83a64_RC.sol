@@ -34,7 +34,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 	address public owner;
@@ -48,17 +48,17 @@ contract Ownable {
 	}
 
 	modifier onlyOwner() {
-		require(msg.sender == owner, &quot;msg.sender == owner&quot;);
+		require(msg.sender == owner, "msg.sender == owner");
 		_;
 	}
 
 	function transferOwnership(address _newOwner) public onlyOwner {
-		require(address(0) != _newOwner, &quot;address(0) != _newOwner&quot;);
+		require(address(0) != _newOwner, "address(0) != _newOwner");
 		newOwner = _newOwner;
 	}
 
 	function acceptOwnership() public {
-		require(msg.sender == newOwner, &quot;msg.sender == newOwner&quot;);
+		require(msg.sender == newOwner, "msg.sender == newOwner");
 		emit OwnershipTransferred(owner, msg.sender);
 		owner = msg.sender;
 		newOwner = address(0);
@@ -90,9 +90,9 @@ contract RC {
     uint256 public oneTokenInFiatWei;
 
     constructor(address _tokenSaleContract, uint256 _oneTokenInFiatWei, uint256 _remainingTokens, uint256 _etherMinimum, uint256 _startTime , uint256 _endTime) public {
-        require ( _tokenSaleContract != 0, &quot;Token Sale Contract can not be 0&quot; );
-        require ( _oneTokenInFiatWei != 0, &quot;Token price can no be 0&quot; );
-        require( _remainingTokens != 0, &quot;Remaining tokens can no be 0&quot;);
+        require ( _tokenSaleContract != 0, "Token Sale Contract can not be 0" );
+        require ( _oneTokenInFiatWei != 0, "Token price can no be 0" );
+        require( _remainingTokens != 0, "Remaining tokens can no be 0");
        
         
         
@@ -120,7 +120,7 @@ contract RC {
     }
     
     modifier onlyTokenSaleOwner() {
-        require(msg.sender == tokenSaleContract.owner(), &quot;msg.sender == tokenSaleContract.owner()&quot; );
+        require(msg.sender == tokenSaleContract.owner(), "msg.sender == tokenSaleContract.owner()" );
         _;
     }
     
@@ -165,10 +165,10 @@ contract RC {
     event BuyRC(address indexed buyer, bytes trackID, uint256 value, uint256 soldToken, uint256 valueTokenInUsdWei );
 	
     function () public payable {
-        require( now > startTime, &quot;now > startTime&quot; );
-        require( now < endTime, &quot;now < endTime&quot; );
-        require( msg.value >= etherMinimum, &quot;msg.value >= etherMinimum&quot;); 
-        require( remainingTokens > 0, &quot;remainingTokens > 0&quot; );
+        require( now > startTime, "now > startTime" );
+        require( now < endTime, "now < endTime" );
+        require( msg.value >= etherMinimum, "msg.value >= etherMinimum"); 
+        require( remainingTokens > 0, "remainingTokens > 0" );
         
         uint256 tokenAmount = tokenSaleContract.buyFromRC.value(msg.value)(msg.sender, oneTokenInFiatWei, remainingTokens);
         
@@ -205,26 +205,26 @@ contract DaicoCoinCrowd is Ownable {
     }
     
     function tokenValueInEther(uint256 _oneTokenInFiatWei) public view returns(uint256 tknValue) {
-        uint256 oneEtherPrice = rateContract.readRate(&quot;eur&quot;);
+        uint256 oneEtherPrice = rateContract.readRate("eur");
         tknValue = _oneTokenInFiatWei.mul(10 ** uint256(decimals)).div(oneEtherPrice);
         return tknValue;
     } 
     
     modifier isBuyable() {
-        require( wallet != address(0), &quot;wallet != address(0)&quot; );
-        require( now > startTime, &quot;now > startTime&quot; ); // check if started
-        require( now < endTime, &quot;now < endTime&quot;); // check if ended
-        require( msg.value > 0, &quot;msg.value > 0&quot; );
+        require( wallet != address(0), "wallet != address(0)" );
+        require( now > startTime, "now > startTime" ); // check if started
+        require( now < endTime, "now < endTime"); // check if ended
+        require( msg.value > 0, "msg.value > 0" );
 		
 		uint256 remainingTokens = tokenContract.balanceOf(this);
-        require( remainingTokens > 0, &quot;remainingTokens > 0&quot; ); // Check if there are any remaining tokens 
+        require( remainingTokens > 0, "remainingTokens > 0" ); // Check if there are any remaining tokens 
         _;
     }
     
     event Buy(address buyer, uint256 value, address indexed ambassador);
     
     modifier onlyRC() {
-        require( rc[msg.sender], &quot;rc[msg.sender]&quot; ); //check if is an authorized rcContract
+        require( rc[msg.sender], "rc[msg.sender]" ); //check if is an authorized rcContract
         _;
     }
     
@@ -317,8 +317,8 @@ contract MilestoneSystem {
     mapping(uint8 => uint256) public tokenDistrusted;
     
     constructor(address _tokenAddress, uint256[] _time, uint256[] _funds, uint256 _oneTokenInEur, uint256 _activeSupply) public {
-        require( _time.length != 0, &quot;_time.length != 0&quot; );
-        require( _time.length == _funds.length, &quot;_time.length == _funds.length&quot; );
+        require( _time.length != 0, "_time.length != 0" );
+        require( _time.length == _funds.length, "_time.length == _funds.length" );
         
         tokenContract = tokenInterface(_tokenAddress);
         tokenSaleContract = DaicoCoinCrowd(msg.sender);
@@ -331,7 +331,7 @@ contract MilestoneSystem {
     }
     
     modifier onlyTokenSaleOwner() {
-        require(msg.sender == tokenSaleContract.owner(), &quot;msg.sender == tokenSaleContract.owner()&quot; );
+        require(msg.sender == tokenSaleContract.owner(), "msg.sender == tokenSaleContract.owner()" );
         _;
     }
     
@@ -339,7 +339,7 @@ contract MilestoneSystem {
     event Locked();
     
     function distrust(address _from, uint _value, bytes _data) public {
-        require(msg.sender == address(tokenContract), &quot;msg.sender == address(tokenContract)&quot;);
+        require(msg.sender == address(tokenContract), "msg.sender == address(tokenContract)");
         
         if ( !locked ) {
             
@@ -351,7 +351,7 @@ contract MilestoneSystem {
             require( 
                 ( now > startTimeMilestone && now < endTimeMilestone ) || 
                 ( now > startTimeProjectDeath && unclaimedFunds ), 
-                &quot;( now > startTimeMilestone && now < endTimeMilestone ) || ( now > startTimeProjectDeath && unclaimedFunds )&quot; 
+                "( now > startTimeMilestone && now < endTimeMilestone ) || ( now > startTimeProjectDeath && unclaimedFunds )" 
             );
         } else {
             require( locked && now < endTimeToReturnTokens ); //a timeframePost to deposit all tokens and then claim the refundMe method
@@ -374,8 +374,8 @@ contract MilestoneSystem {
     }
 	
 	function receiveApproval( address _from, uint _value, bytes _data) public {
-	    require(msg.sender == address(tokenContract), &quot;msg.sender == address(tokenContract)&quot;);
-		require(msg.sender.call(bytes4(keccak256(&quot;transferFrom(address,address,uint256)&quot;)), _from, this, _value));
+	    require(msg.sender == address(tokenContract), "msg.sender == address(tokenContract)");
+		require(msg.sender.call(bytes4(keccak256("transferFrom(address,address,uint256)")), _from, this, _value));
         distrust( _from, _value, _data);
     }
     
@@ -383,7 +383,7 @@ contract MilestoneSystem {
     event Unlocked();
     
     function trust(uint8 _step) public {
-        require( balance[msg.sender][_step] > 0 , &quot;balance[msg.sender] > 0&quot;);
+        require( balance[msg.sender][_step] > 0 , "balance[msg.sender] > 0");
         
         uint256 amount = balance[msg.sender][_step];
         balance[msg.sender][_step] = 0;
@@ -403,14 +403,14 @@ contract MilestoneSystem {
     event Refund(address sender, uint256 money);
     
     function refundMe() public {
-        require(locked, &quot;locked&quot;);
-        require( now > endTimeToReturnTokens, &quot;now > endTimeToReturnTokens&quot; );
+        require(locked, "locked");
+        require( now > endTimeToReturnTokens, "now > endTimeToReturnTokens" );
         
         uint256 ethTot = address(this).balance;
-        require( ethTot > 0 , &quot;ethTot > 0&quot;);
+        require( ethTot > 0 , "ethTot > 0");
         
         uint256 tknAmount = balance[msg.sender][step];
-        require( tknAmount > 0 , &quot;tknAmount > 0&quot;);
+        require( tknAmount > 0 , "tknAmount > 0");
         
         balance[msg.sender][step] = 0;
         
@@ -435,10 +435,10 @@ contract MilestoneSystem {
     }
     
     function OwnerWithdraw() public onlyTokenSaleOwner {
-        require(!locked, &quot;!locked&quot;);
+        require(!locked, "!locked");
         
-        require(now > time[step], &quot;now > time[step]&quot;);
-        require(funds[step] > 0, &quot;funds[step] > 0&quot;);
+        require(now > time[step], "now > time[step]");
+        require(funds[step] > 0, "funds[step] > 0");
         
         uint256 amountApplied = funds[step];
         funds[step] = 0;
@@ -455,11 +455,11 @@ contract MilestoneSystem {
     }
     
     function OwnerWithdrawTokens(address _tokenContract, address to, uint256 value) public onlyTokenSaleOwner returns (bool) { //for airdrop reason to distribute to CoinCrowd Token Holder
-        require( _tokenContract != address(tokenContract), &quot;_tokenContract != address(tokenContract)&quot;); // the owner can withdraw tokens except CoinCrowd Tokens
+        require( _tokenContract != address(tokenContract), "_tokenContract != address(tokenContract)"); // the owner can withdraw tokens except CoinCrowd Tokens
         return tokenInterface(_tokenContract).transfer(to, value);
     }
     
     function () public payable {
-        require(msg.sender == address(tokenSaleContract), &quot;msg.sender == address(tokenSaleContract)&quot;);
+        require(msg.sender == address(tokenSaleContract), "msg.sender == address(tokenSaleContract)");
     }
 }

@@ -192,9 +192,9 @@ contract PAIStandardToken is StandardToken,Ownable{
       address _posAddr
       ) {
       totalSupply = 2100000000000000000000000000;       // Update total supply
-      name = &quot;PCHAIN&quot;;                  // Set the name for display purposes
+      name = "PCHAIN";                  // Set the name for display purposes
       decimals = 18;           // Amount of decimals for display purposes
-      symbol = &quot;PAI&quot;;              // Set the symbol for display purposes
+      symbol = "PAI";              // Set the symbol for display purposes
       wallet = _wallet;                   // Set ETH wallet address
       start = _s;                         // Set start time for crowsale
       end = _e;                           // Set Crowd sale first phase end time

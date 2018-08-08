@@ -2,8 +2,8 @@ pragma solidity ^0.4.18;
 
 contract BossContract {
 
-    string public name = &quot;Boss&quot;;
-    string public symbol = &quot;BOSS&quot;;
+    string public name = "Boss";
+    string public symbol = "BOSS";
     uint8 public decimals = 8;
     uint256 public initialSupply = 200000000;
     uint256 public totalSupply;

@@ -26,7 +26,7 @@ contract ERC20 {
 /**
  * @title Ownable
  * The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   /* Current Owner */
@@ -399,10 +399,10 @@ contract Coin is JcashUpgradeableToken, ReleasableToken {
   event UpdatedTokenInformation(string newName, string newSymbol);
 
   /* name of the token */
-  string public name = &quot;JCASH&quot;;
+  string public name = "JCASH";
 
   /* symbol of the token */
-  string public symbol = &quot;JCASH&quot;;
+  string public symbol = "JCASH";
 
   /* token decimals to handle fractions */
   uint public decimals = 18;

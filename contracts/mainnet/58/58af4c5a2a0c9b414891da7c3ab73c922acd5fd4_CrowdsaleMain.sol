@@ -110,8 +110,8 @@ contract Ownable {
 
 
 contract TTC is StandardToken, Ownable {
-  string public constant name = &quot;TTC&quot;;
-  string public constant symbol = &quot;TTC&quot;;
+  string public constant name = "TTC";
+  string public constant symbol = "TTC";
   uint public constant decimals = 18;
 
 

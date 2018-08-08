@@ -238,7 +238,7 @@ contract ParameterizedToken is CappedToken {
 
 contract TigerCashToken is ParameterizedToken {
 
-    function TigerCashToken() public ParameterizedToken(&quot;TigerCash&quot;, &quot;TCH&quot;, 18, 1050000000) {
+    function TigerCashToken() public ParameterizedToken("TigerCash", "TCH", 18, 1050000000) {
     }
 
 }

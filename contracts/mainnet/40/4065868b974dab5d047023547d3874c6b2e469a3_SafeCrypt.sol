@@ -233,7 +233,7 @@ contract BurnableToken is StandardToken {
 }
 
 contract SafeCrypt is CappedToken, BurnableToken {
-    constructor() CappedToken(1535714285000000000000000000) StandardToken(&quot;SafeCrypt&quot;, &quot;SFC&quot;, 18) public {
+    constructor() CappedToken(1535714285000000000000000000) StandardToken("SafeCrypt", "SFC", 18) public {
         
     }
 }

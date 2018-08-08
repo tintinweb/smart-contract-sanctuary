@@ -4,8 +4,8 @@ contract	Hypo_Renten				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	Hypo_Renten		&quot;	;
-	string	public		symbol =	&quot;	Hypo_Re		&quot;	;
+	string	public		name =	"	Hypo_Renten		"	;
+	string	public		symbol =	"	Hypo_Re		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		1000000000000000000000000000					;	

@@ -16,9 +16,9 @@ contract TransformCoin {
     function TransformCoin() {
 
          initialSupply = 10000000000000000000000000;
-         name =&quot;TransformCoin&quot;;
+         name ="TransformCoin";
         decimals = 18;
-         symbol = &quot;TFG1&quot;;
+         symbol = "TFG1";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

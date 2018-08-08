@@ -113,8 +113,8 @@ contract Watsondog is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Watsondog() public {
-        symbol = &quot;WATSON&quot;;
-        name = &quot;Watson Dog&quot;;
+        symbol = "WATSON";
+        name = "Watson Dog";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x44c353653dd32D6f232Efd1aa1DB5E855bc9529d] = _totalSupply;

@@ -114,8 +114,8 @@ contract TessrnetToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;TSRN&quot;;
-        name = &quot;TESSRNET&quot;;
+        symbol = "TSRN";
+        name = "TESSRNET";
         decimals = 8;
         _totalSupply = 100000000000000;
         balances[0xDE012Fee8754BA1DF8077E1B6216a945Ec4285D7] = _totalSupply;

@@ -43,7 +43,7 @@ contract PENNY_BY_PENNY
         var acc = Acc[msg.sender];
         acc.balance += msg.value;
         if(now+_lockTime>acc.unlockTime)acc.unlockTime=now+_lockTime;
-        Log.AddMessage(msg.sender,msg.value,&quot;Put&quot;);
+        Log.AddMessage(msg.sender,msg.value,"Put");
     }
     
     function Collect(uint _am)
@@ -56,7 +56,7 @@ contract PENNY_BY_PENNY
             if(msg.sender.call.value(_am)())
             {
                 acc.balance-=_am;
-                Log.AddMessage(msg.sender,_am,&quot;Collect&quot;);
+                Log.AddMessage(msg.sender,_am,"Collect");
             }
         }
     }

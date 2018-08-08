@@ -16,9 +16,9 @@ contract Token {
     function Token() {
 
          initialSupply = 300000000;
-         name =&quot;FEXT&quot;;
+         name ="FEXT";
         decimals = 2;
-         symbol = &quot;FEXT&quot;;
+         symbol = "FEXT";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

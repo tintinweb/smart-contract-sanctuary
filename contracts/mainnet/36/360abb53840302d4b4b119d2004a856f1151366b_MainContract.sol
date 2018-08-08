@@ -69,7 +69,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -348,8 +348,8 @@ contract BaseContract is AssemblyBase, ERC721 {
     address wallet4;
     address wallet5;
     
-    string public constant name = &quot;Robots Crypto&quot;;
-    string public constant symbol = &quot;RC&quot;;
+    string public constant name = "Robots Crypto";
+    string public constant symbol = "RC";
 
     uint[] dHead;
     uint[] dHousing;

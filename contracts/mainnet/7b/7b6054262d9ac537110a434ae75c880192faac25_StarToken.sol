@@ -120,11 +120,11 @@ contract StandardToken is Token {
 
 contract StarToken is Owned, StandardToken {
 
-    string public standard = &quot;Token 0.1&quot;;
+    string public standard = "Token 0.1";
 
-    string public name = &quot;StarLight&quot;;        
+    string public name = "StarLight";        
     
-    string public symbol = &quot;STAR&quot;;
+    string public symbol = "STAR";
 
     uint8 public decimals = 8;
    

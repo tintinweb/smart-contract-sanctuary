@@ -35,8 +35,8 @@ contract Crowdsale is Token {
 
     // Public and other variables of the token
     address public owner;
-    string public name = &quot;crowdsalenetworkplatform&quot;;
-    string public symbol = &quot;CSNP&quot;;
+    string public name = "crowdsalenetworkplatform";
+    string public symbol = "CSNP";
     uint8 public decimals = 18;
     uint256 public totalSupply = 50000000 * 10 ** uint256(decimals);
     

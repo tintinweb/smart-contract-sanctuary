@@ -58,7 +58,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -108,8 +108,8 @@ contract BethereumERC223 is ERC223Interface {
     using SafeMath for uint256;
 
     /* Contract Constants */
-    string public constant _name = &quot;Bethereum&quot;;
-    string public constant _symbol = &quot;BETHER&quot;;
+    string public constant _name = "Bethereum";
+    string public constant _symbol = "BETHER";
     uint8 public constant _decimals = 18;
 
     /* Contract Variables */

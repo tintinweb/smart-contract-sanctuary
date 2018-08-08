@@ -227,8 +227,8 @@ contract RBACWithAdmin is RBAC {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
-  string public constant ROLE_PAUSE_ADMIN = &quot;pauseAdmin&quot;;
+  string public constant ROLE_ADMIN = "admin";
+  string public constant ROLE_PAUSE_ADMIN = "pauseAdmin";
 
   /**
    * @dev modifier to scope access to admins
@@ -403,7 +403,7 @@ contract CrowdSaleDragonETH is Pausable, ReentrancyGuard {
         
     }
 
-    function sendBonusEgg(address _to, uint256 _count) external onlyRole(&quot;BountyAgent&quot;) {
+    function sendBonusEgg(address _to, uint256 _count) external onlyRole("BountyAgent") {
         for(uint256 i = 1; i <= _count; i += 1) {
             DragonsETH(mainContract).createDragon(_to, block.number + timeToBorn, 0, 0, 0, 0);
             soldDragons++;

@@ -111,8 +111,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;BCAC&quot;;
-        name = &quot;BCAChain Initial Token&quot;;
+        symbol = "BCAC";
+        name = "BCAChain Initial Token";
         decimals = 18;
         _totalSupply = 2200000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

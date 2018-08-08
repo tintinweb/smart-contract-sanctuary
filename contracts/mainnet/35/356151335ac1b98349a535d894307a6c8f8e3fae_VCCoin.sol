@@ -20,8 +20,8 @@ contract VCCoin  {
 
     mapping (address => mapping (address => uint256)) allowed;
 
-    string public name = &quot;VC Coin&quot;;
-    string public symbol = &quot;VCC&quot;;
+    string public name = "VC Coin";
+    string public symbol = "VCC";
     uint public decimals = 18;
 
 

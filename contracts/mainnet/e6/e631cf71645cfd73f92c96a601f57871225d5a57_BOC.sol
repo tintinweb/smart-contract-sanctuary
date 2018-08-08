@@ -28,8 +28,8 @@ contract BOC {
     ) public {
         totalSupply = 5000000000000000;                                 // Update total supply with the decimal amount
         balanceOf[msg.sender] = 5000000000000000;                       // Give the creator all initial tokens
-        name = &quot;BetOnCoin&quot;;                                      // Set the name for display purposes
-        symbol = &quot;BOC&quot;;                                          // Set the symbol for display purposes
+        name = "BetOnCoin";                                      // Set the name for display purposes
+        symbol = "BOC";                                          // Set the symbol for display purposes
     }
 
     /**

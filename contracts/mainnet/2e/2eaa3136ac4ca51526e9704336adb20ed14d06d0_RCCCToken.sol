@@ -11,8 +11,8 @@ pragma solidity ^0.4.11;
  * https://github.com/ethereum/EIPs/issues/20
  */
 contract RCCCToken  {
-    string public constant name = &quot;RCCC Token&quot;;
-    string public constant symbol = &quot;RCCC&quot;;
+    string public constant name = "RCCC Token";
+    string public constant symbol = "RCCC";
     uint public constant decimals = 18;
     uint256 _totalSupply    = 500000000 * 10**decimals;
 

@@ -104,8 +104,8 @@ contract FantomToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FantomToken() public {
-        symbol = &quot;FTM&quot;;
-        name = &quot;Fantom Foundation Token&quot;;
+        symbol = "FTM";
+        name = "Fantom Foundation Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

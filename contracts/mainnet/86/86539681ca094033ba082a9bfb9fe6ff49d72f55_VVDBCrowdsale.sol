@@ -15,7 +15,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 	address public owner;
@@ -248,8 +248,8 @@ contract StandardToken is ERC20, BasicToken {
 	}
 }
 contract VVDB is StandardToken {
-	string public constant name = &quot;Voorgedraaide van de Blue&quot;;
-	string public constant symbol = &quot;VVDB&quot;;
+	string public constant name = "Voorgedraaide van de Blue";
+	string public constant symbol = "VVDB";
 	uint256 public constant decimals = 18;
 	uint256 public constant initialSupply = 100000000 * (10 ** uint256(decimals));
 	

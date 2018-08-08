@@ -4,8 +4,8 @@ contract	CASINO_301201				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	CASINO_301201		&quot;	;
-	string	public		symbol =	&quot;	CASII		&quot;	;
+	string	public		name =	"	CASINO_301201		"	;
+	string	public		symbol =	"	CASII		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10990099143654100000000000					;	

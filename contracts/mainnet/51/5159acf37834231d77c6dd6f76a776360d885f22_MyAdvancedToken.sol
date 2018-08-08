@@ -273,4 +273,4 @@ contract MyAdvancedToken is owned, TokenERC20 {
     }
 }
 
-//contract MAT is MyAdvancedToken(1500000000, &quot;MAT&quot;, &quot;MAT&quot;) {}
+//contract MAT is MyAdvancedToken(1500000000, "MAT", "MAT") {}

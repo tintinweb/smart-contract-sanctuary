@@ -153,8 +153,8 @@ contract Token is ERC20, BasicToken {
  * @dev Simple ERC20 Token with standard token functions.
  */
 contract CTGToken is Token {
-  string public constant NAME = &quot;CoinTruth Gold&quot;;
-  string public constant SYMBOL = &quot;CTG&quot;;
+  string public constant NAME = "CoinTruth Gold";
+  string public constant SYMBOL = "CTG";
   uint256 public constant DECIMALS = 18;
 
   uint256 public constant INITIAL_SUPPLY = 1000000000 * 10**18;

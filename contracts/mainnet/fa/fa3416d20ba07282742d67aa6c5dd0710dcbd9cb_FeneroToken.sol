@@ -109,8 +109,8 @@ contract FeneroToken is ERC20, Ownable {
     mapping(address => mapping(address => uint256)) internal allowed;
 
     function FeneroToken() public {
-        name = &quot;Fenero&quot;;
-        symbol = &quot;FEN&quot;;
+        name = "Fenero";
+        symbol = "FEN";
         decimals = 18;        
         initialSupply = 1000000000000;
         totalSupply_ = initialSupply * 10 ** uint(decimals);

@@ -159,8 +159,8 @@ contract msc is Ownable, StandardToken {
     uint8 public constant TOKEN_DECIMALS = 18;  // decimals
 
     // Public variables of the token
-    string public name = &quot;Global Mobile Industry Service Ecosystem&quot;;
-    string public symbol = &quot;MSC&quot;;
+    string public name = "Global Mobile Industry Service Ecosystem";
+    string public symbol = "MSC";
     uint8 public decimals = TOKEN_DECIMALS; // 18 decimals is the strongly suggested default, avoid changing it
 
 

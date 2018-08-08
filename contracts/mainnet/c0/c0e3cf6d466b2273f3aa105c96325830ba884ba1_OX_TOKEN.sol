@@ -20,8 +20,8 @@ contract owned {
 
 contract OX_TOKEN is owned {
 
-  string public constant name = &quot;OX&quot;;
-  string public constant symbol = &quot;FIXED&quot;;
+  string public constant name = "OX";
+  string public constant symbol = "FIXED";
 
   event Transfer( address indexed _from,
                   address indexed _to,

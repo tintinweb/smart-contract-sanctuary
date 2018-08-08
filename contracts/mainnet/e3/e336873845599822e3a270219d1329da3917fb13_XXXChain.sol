@@ -23,8 +23,8 @@ contract XXXChain{
     function XXXChain() {
         balanceOf[msg.sender] =  100000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  100000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;XXXChain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;XXXC&quot;;                               // Set the symbol for display purposes
+        name = "XXXChain";                                   // Set the name for display purposes
+        symbol = "XXXC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

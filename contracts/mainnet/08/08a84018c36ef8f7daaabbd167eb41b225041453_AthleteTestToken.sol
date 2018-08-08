@@ -39,8 +39,8 @@ contract ERC721 {
 
 contract AthleteTestToken is ERC721 {
     /****  CONSTANTS ****/
-    string public constant NAME = &quot;CryptoFantasy&quot;;
-    string public constant SYMBOL = &quot;Athlete&quot;;
+    string public constant NAME = "CryptoFantasy";
+    string public constant SYMBOL = "Athlete";
 
     uint256 private constant initPrice = 0.001 ether;
     uint256 private constant PROMO_CREATION_LIMIT = 50000;

@@ -129,8 +129,8 @@ contract EPSBets is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EPSBets() public {
-        symbol = &quot;EPSBETC&quot;;
-        name = &quot;EPS BETS Token&quot;;
+        symbol = "EPSBETC";
+        name = "EPS BETS Token";
         decimals = 18;
         _totalSupply = 10000000;
         balances[owner] = _totalSupply;

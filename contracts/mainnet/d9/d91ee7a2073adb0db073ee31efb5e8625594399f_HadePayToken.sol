@@ -266,8 +266,8 @@ contract HadePayToken is StandardToken {
      */
 
     // name of the token
-    string public name = &quot;HadePay&quot;;
-    string public symbol = &quot;HPAY&quot;;
+    string public name = "HadePay";
+    string public symbol = "HPAY";
 
     // token supply and precision
     uint8 public decimals = 18;

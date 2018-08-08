@@ -26,7 +26,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -831,13 +831,13 @@ contract BondingManager is ManagerProxyTarget, IBondingManager {
 
     // Check if sender is JobsManager
     modifier onlyJobsManager() {
-        require(msg.sender == controller.getContract(keccak256(&quot;JobsManager&quot;)));
+        require(msg.sender == controller.getContract(keccak256("JobsManager")));
         _;
     }
 
     // Check if sender is RoundsManager
     modifier onlyRoundsManager() {
-        require(msg.sender == controller.getContract(keccak256(&quot;RoundsManager&quot;)));
+        require(msg.sender == controller.getContract(keccak256("RoundsManager")));
         _;
     }
 
@@ -866,7 +866,7 @@ contract BondingManager is ManagerProxyTarget, IBondingManager {
     function setUnbondingPeriod(uint64 _unbondingPeriod) external onlyControllerOwner {
         unbondingPeriod = _unbondingPeriod;
 
-        ParameterUpdate(&quot;unbondingPeriod&quot;);
+        ParameterUpdate("unbondingPeriod");
     }
 
     /**
@@ -879,7 +879,7 @@ contract BondingManager is ManagerProxyTarget, IBondingManager {
 
         transcoderPool.setMaxSize(_numTranscoders);
 
-        ParameterUpdate(&quot;numTranscoders&quot;);
+        ParameterUpdate("numTranscoders");
     }
 
     /**
@@ -892,7 +892,7 @@ contract BondingManager is ManagerProxyTarget, IBondingManager {
 
         numActiveTranscoders = _numActiveTranscoders;
 
-        ParameterUpdate(&quot;numActiveTranscoders&quot;);
+        ParameterUpdate("numActiveTranscoders");
     }
 
     /**
@@ -902,7 +902,7 @@ contract BondingManager is ManagerProxyTarget, IBondingManager {
     function setMaxEarningsClaimsRounds(uint256 _maxEarningsClaimsRounds) external onlyControllerOwner {
         maxEarningsClaimsRounds = _maxEarningsClaimsRounds;
 
-        ParameterUpdate(&quot;maxEarningsClaimsRounds&quot;);
+        ParameterUpdate("maxEarningsClaimsRounds");
     }
 
     /**
@@ -1686,20 +1686,20 @@ contract BondingManager is ManagerProxyTarget, IBondingManager {
      * @dev Return LivepeerToken interface
      */
     function livepeerToken() internal view returns (ILivepeerToken) {
-        return ILivepeerToken(controller.getContract(keccak256(&quot;LivepeerToken&quot;)));
+        return ILivepeerToken(controller.getContract(keccak256("LivepeerToken")));
     }
 
     /**
      * @dev Return Minter interface
      */
     function minter() internal view returns (IMinter) {
-        return IMinter(controller.getContract(keccak256(&quot;Minter&quot;)));
+        return IMinter(controller.getContract(keccak256("Minter")));
     }
 
     /**
      * @dev Return RoundsManager interface
      */
     function roundsManager() internal view returns (IRoundsManager) {
-        return IRoundsManager(controller.getContract(keccak256(&quot;RoundsManager&quot;)));
+        return IRoundsManager(controller.getContract(keccak256("RoundsManager")));
     }
 }

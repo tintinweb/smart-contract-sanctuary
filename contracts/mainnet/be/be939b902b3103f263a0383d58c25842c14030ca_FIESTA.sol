@@ -113,8 +113,8 @@ contract FIESTA is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FIESTA() public {
-        symbol = &quot;FSTA&quot;;
-        name = &quot;FIESTA&quot;;
+        symbol = "FSTA";
+        name = "FIESTA";
         decimals = 18;
         _totalSupply = 375000000000000000000000000;
         balances[0xbaEF34B50bB8537837c0EB4fd09DD10a87Fe0626] = _totalSupply;

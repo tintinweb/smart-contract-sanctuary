@@ -28,8 +28,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply =  300000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;C universal token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;CNUT&quot;;                               // Set the symbol for display purposes
+        name = "C universal token";                                   // Set the name for display purposes
+        symbol = "CNUT";                               // Set the symbol for display purposes
     }
 
     /**

@@ -87,10 +87,10 @@ contract StandardToken is Token {
 contract BiSaiToken is StandardToken, SafeMath {
  
     // metadata
-    string  public constant name = &quot;BiSaiCoin&quot;;
-    string  public constant symbol = &quot;BSC&quot;;
+    string  public constant name = "BiSaiCoin";
+    string  public constant symbol = "BSC";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
  
     // contracts
     address public ethFundDeposit;          // ETH存放地址

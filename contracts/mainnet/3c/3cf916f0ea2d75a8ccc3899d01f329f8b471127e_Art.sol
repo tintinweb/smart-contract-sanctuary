@@ -106,21 +106,21 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract Art is StandardToken {
-    string public name = &quot;Northern Turquoise&quot;;
-    string public symbol = &quot;NT&quot;;
+    string public name = "Northern Turquoise";
+    string public symbol = "NT";
     uint256 public decimals = 18;
     uint256 public totalSupply = 1 ether;
 
     // Struct
     address public artist = msg.sender;
-    string public artistName = &quot;Zhang Ji&quot;;
-    string public artistEmail= &quot;six@beslab.xyz&quot;;
-    string public Explain= &quot;A liquid information poetry.&quot;;
-    string public Hash= &quot;39a6e92df56f29f0c9c961d2483df06b&quot;; //Art Hash
-    string public Description = &quot;A romanticized documentary for the true experience of different understandings of value that carried by objects through different ages, background and crew, etc.&quot;;
-    string public Copyright = &quot;Token holder has full copyright of this art piece including its interpretation, commercial use, ownership transfer, derivatives production, etc. &quot;;
+    string public artistName = "Zhang Ji";
+    string public artistEmail= "six@beslab.xyz";
+    string public Explain= "A liquid information poetry.";
+    string public Hash= "39a6e92df56f29f0c9c961d2483df06b"; //Art Hash
+    string public Description = "A romanticized documentary for the true experience of different understandings of value that carried by objects through different ages, background and crew, etc.";
+    string public Copyright = "Token holder has full copyright of this art piece including its interpretation, commercial use, ownership transfer, derivatives production, etc. ";
     uint256 public transferLimit = 1 ether;
-    string public artUrlList = &quot;https://www.dropbox.com/s/0v99yw0i7w8qwz6/northern%20turquoise.cryptoart?dl=0,https://drive.google.com/file/d/1CzezHZfrKDKvQkWdd_b5He5dQQD68EX8/view?usp=sharing&quot;;
+    string public artUrlList = "https://www.dropbox.com/s/0v99yw0i7w8qwz6/northern%20turquoise.cryptoart?dl=0,https://drive.google.com/file/d/1CzezHZfrKDKvQkWdd_b5He5dQQD68EX8/view?usp=sharing";
 
     constructor() public {
         totalSupply_ = totalSupply;
@@ -130,7 +130,7 @@ contract Art is StandardToken {
 
     event TransferOwner(address newOwner, address lastOwner);
     modifier onlyArtist() {
-        require(msg.sender == artist, &quot;Only artist can do this.&quot;);
+        require(msg.sender == artist, "Only artist can do this.");
         _;
     }
 
@@ -154,7 +154,7 @@ contract Art is StandardToken {
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(_to != address(0));
         require(_value <= balances[msg.sender]);
-        require(_value == transferLimit, &quot;Art only one.&quot;);
+        require(_value == transferLimit, "Art only one.");
 
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);

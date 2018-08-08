@@ -3,7 +3,7 @@
 
     (Test Version 2.0)
   
-    Portions of this code fall under the following license from &quot;OpenZepplin&quot;
+    Portions of this code fall under the following license from "OpenZepplin"
 
     The MIT License (MIT)
 
@@ -11,7 +11,7 @@
 
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the
-    &quot;Software&quot;), to deal in the Software without restriction, including
+    "Software"), to deal in the Software without restriction, including
     without limitation the rights to use, copy, modify, merge, publish,
     distribute, sublicense, and/or sell copies of the Software, and to
     permit persons to whom the Software is furnished to do so, subject to
@@ -20,7 +20,7 @@
     The above copyright notice and this permission notice shall be included
     in all copies or substantial portions of the Software.
 
-    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
     OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
     MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
     IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -168,8 +168,8 @@ contract BurnableToken is BasicToken {
 }
 
 contract AquaToken is BurnableToken, StandardToken {
-    string public name = &quot;AquaToken&quot;;
-    string public symbol = &quot;AQAU&quot;;
+    string public name = "AquaToken";
+    string public symbol = "AQAU";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 100000000 * 1 ether;
     address public owner;

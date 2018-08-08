@@ -73,7 +73,7 @@ interface IERC721Base /* is IERC165  */ {
   ///  `_tokenId` is not a valid NFT. When transfer is complete, this function
   ///  checks if `_to` is a smart contract (code size > 0). If so, it calls
   ///  `onERC721Received` on `_to` and throws if the return value is not
-  ///  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`.
+  ///  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`.
   /// @param _from The current owner of the NFT
   /// @param _to The new owner
   /// @param _tokenId The NFT to transfer
@@ -109,7 +109,7 @@ interface IERC721Base /* is IERC165  */ {
   /// @param _tokenId The NFT to approve
   function approve(address _approved, uint256 _tokenId) external payable;
 
-  /// @notice Enable or disable approval for a third party (&quot;operator&quot;) to manage
+  /// @notice Enable or disable approval for a third party ("operator") to manage
   ///  all your asset.
   /// @dev Emits the ApprovalForAll event
   /// @param _operator Address to add to the set of authorized operators.
@@ -170,7 +170,7 @@ interface IERC721TokenReceiver {
   /// @param _from The sending address
   /// @param _tokenId The NFT identifier which is being transfered
   /// @param _data Additional data with no specified format
-  /// @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  /// @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   ///  unless throwing
 	function onERC721Received(address _from, uint256 _tokenId, bytes _data) external returns (bytes4);
 }
@@ -635,11 +635,11 @@ contract AxieERC721BaseEnumerable is ERC165, IERC721Base, IERC721Enumerable, Axi
   }
 
   function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable {
-    _transferFrom(_from, _to, _tokenId, &quot;&quot;, true);
+    _transferFrom(_from, _to, _tokenId, "", true);
   }
 
   function transferFrom(address _from, address _to, uint256 _tokenId) external payable {
-    _transferFrom(_from, _to, _tokenId, &quot;&quot;, false);
+    _transferFrom(_from, _to, _tokenId, "", false);
   }
 
   // solium-enable arg-overflow
@@ -710,27 +710,27 @@ interface IERC721Metadata /* is IERC721Base */ {
 
   /// @notice A distinct Uniform Resource Identifier (URI) for a given asset.
   /// @dev Throws if `_tokenId` is not a valid NFT. URIs are defined in RFC
-  ///  3986. The URI may point to a JSON file that conforms to the &quot;ERC721
-  ///  Metadata JSON Schema&quot;.
+  ///  3986. The URI may point to a JSON file that conforms to the "ERC721
+  ///  Metadata JSON Schema".
   function tokenURI(uint256 _tokenId) external view returns (string);
 }
 
 // File: contracts/core/erc721/AxieERC721Metadata.sol
 
 contract AxieERC721Metadata is AxieERC721BaseEnumerable, IERC721Metadata {
-  string public tokenURIPrefix = &quot;https://axieinfinity.com/erc/721/axies/&quot;;
-  string public tokenURISuffix = &quot;.json&quot;;
+  string public tokenURIPrefix = "https://axieinfinity.com/erc/721/axies/";
+  string public tokenURISuffix = ".json";
 
   function AxieERC721Metadata() internal {
     supportedInterfaces[0x5b5e139f] = true; // ERC-721 Metadata
   }
 
   function name() external pure returns (string) {
-    return &quot;Axie&quot;;
+    return "Axie";
   }
 
   function symbol() external pure returns (string) {
-    return &quot;AXIE&quot;;
+    return "AXIE";
   }
 
   function setTokenURIAffixes(string _prefix, string _suffix) external onlyCEO {

@@ -94,8 +94,8 @@ contract QUIGToken is ERC20Interface, Contactable {
     mapping(address => mapping(address => uint)) allowed;
     
     constructor() public {
-        symbol = &quot;QUIG&quot;;
-        name = &quot;QUIG Token&quot;;
+        symbol = "QUIG";
+        name = "QUIG Token";
         decimals = 18;
         _totalSupply = 536870912 * uint256(10 ** 18);
         balances[owner] = _totalSupply;

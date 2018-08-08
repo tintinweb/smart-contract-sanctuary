@@ -63,15 +63,15 @@ contract ChainclubToken is StandardToken {
     function ChainclubToken() {
         balances[msg.sender] = 0.21 ether; 
         totalSupply = 0.21 ether;         
-        name = &quot;Chainclub Ecosystem Network&quot;;                   
+        name = "Chainclub Ecosystem Network";                   
         decimals = 8;           
-        symbol = &quot;CEN&quot;;             
+        symbol = "CEN";             
     }
 
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 

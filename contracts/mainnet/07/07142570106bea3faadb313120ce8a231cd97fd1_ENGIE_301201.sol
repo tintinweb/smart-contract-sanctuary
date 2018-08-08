@@ -4,8 +4,8 @@ contract	ENGIE_301201				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	ENGIE_301201		&quot;	;
-	string	public		symbol =	&quot;	ENGI		&quot;	;
+	string	public		name =	"	ENGIE_301201		"	;
+	string	public		symbol =	"	ENGI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10944322675975200000000000					;	

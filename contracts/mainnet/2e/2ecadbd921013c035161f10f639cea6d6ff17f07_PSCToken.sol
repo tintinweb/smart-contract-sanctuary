@@ -126,8 +126,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract PSCToken is StandardToken {
 
-  string public constant name = &quot;Primas Community Token&quot;;
-  string public constant symbol = &quot;PSC&quot;; 
+  string public constant name = "Primas Community Token";
+  string public constant symbol = "PSC"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 100000000 * 100 * (10 ** uint256(decimals));

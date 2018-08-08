@@ -49,8 +49,8 @@ contract UbiRewardToken is ERC20 {
 
   using SafeMath for uint256;
 
-  string public name = &quot;UbiTok.io Reward Token&quot;;
-  string public symbol = &quot;UBI&quot;;
+  string public name = "UbiTok.io Reward Token";
+  string public symbol = "UBI";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 12000000 ether;
 

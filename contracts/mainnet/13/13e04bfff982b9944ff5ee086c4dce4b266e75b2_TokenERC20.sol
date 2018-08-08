@@ -40,8 +40,8 @@ contract TokenERC20   {
 	
     using SafeMath for uint256;
     
-    string public constant name       = &quot;CROD&quot;;
-    string public constant symbol     = &quot;CROD&quot;;
+    string public constant name       = "CROD";
+    string public constant symbol     = "CROD";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply;
  

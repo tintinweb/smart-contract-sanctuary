@@ -72,7 +72,7 @@ contract admined{
 	}
 }
 
-contract MyToken is Token(&quot;TLT&quot;,&quot;Talent Agency Coin&quot;,8,50000000),ERC20,ERC223,admined
+contract MyToken is Token("TLT","Talent Agency Coin",8,50000000),ERC20,ERC223,admined
 {   
     uint256 public sellPrice;
     uint256 public buyPrice;

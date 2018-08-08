@@ -113,8 +113,8 @@ contract realDEXToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function realDEXToken() public {
-        symbol = &quot;rDEX&quot;;
-        name = &quot;realDEX Token&quot;;
+        symbol = "rDEX";
+        name = "realDEX Token";
         decimals = 8;
         _totalSupply = 250000000000000;
         balances[0x2c9ec6f1466C868a913C4565475fF48d2A861c47] = _totalSupply;

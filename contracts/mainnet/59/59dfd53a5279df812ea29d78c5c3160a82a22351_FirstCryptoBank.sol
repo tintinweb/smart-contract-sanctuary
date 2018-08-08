@@ -50,8 +50,8 @@ contract TokenERC20 {
         name = tokenName;                                
         symbol = tokenSymbol;  
         
-        name = &quot;FirstCryptoBank&quot;;                                
-        symbol = &quot;FCB&quot;;
+        name = "FirstCryptoBank";                                
+        symbol = "FCB";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

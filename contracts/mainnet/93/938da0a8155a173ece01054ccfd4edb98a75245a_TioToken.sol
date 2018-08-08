@@ -150,8 +150,8 @@ contract StandardToken is ERC20, BasicToken {
   }
 }
 contract TioToken is StandardToken {
-	string public name = &quot;TioTest&quot;;
-  string public symbol = &quot;TIOTEST&quot;;
+	string public name = "TioTest";
+  string public symbol = "TIOTEST";
   uint256 public decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 17100000;
   /**

@@ -50,8 +50,8 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 
 contract BitGuildToken {
     // Public variables of the token
-    string public name = &quot;BitGuild PLAT&quot;;
-    string public symbol = &quot;PLAT&quot;;
+    string public name = "BitGuild PLAT";
+    string public symbol = "PLAT";
     uint8 public decimals = 18;
     uint256 public totalSupply = 10000000000 * 10 ** uint256(decimals); // 10 billion tokens;
 

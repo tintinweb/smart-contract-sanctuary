@@ -113,8 +113,8 @@ contract BIFAToken is UnboundedRegularToken {
 
     uint public totalSupply = 1*10**13;
     uint8 constant public decimals = 4;
-    string constant public name = &quot;BIFA&quot;;
-    string constant public symbol = &quot;BFB&quot;;
+    string constant public name = "BIFA";
+    string constant public symbol = "BFB";
 
     function BIFAToken() {
         balances[msg.sender] = totalSupply;

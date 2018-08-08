@@ -141,7 +141,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -336,8 +336,8 @@ contract MintableToken is StandardToken, Ownable {
 // File: contracts/TraceToToken.sol
 
 contract TraceToToken is MintableToken, BurnableToken {
-    string  public  constant name = &quot;traceto.io&quot;;
-    string  public  constant symbol = &quot;T2T&quot;;
+    string  public  constant name = "traceto.io";
+    string  public  constant symbol = "T2T";
     uint    public  constant decimals = 18;
     uint    public  allowTransferTime;
 

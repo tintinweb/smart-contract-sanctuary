@@ -22,8 +22,8 @@ contract	Ownable		{
 									
 contract	Algo_Exchange_Index_I				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	ALGOEXINDEX		&quot;	;
-	string	public	constant	symbol =	&quot;	AEII		&quot;	;
+	string	public	constant	name =	"	ALGOEXINDEX		"	;
+	string	public	constant	symbol =	"	AEII		"	;
 	uint32	public	constant	decimals =		8			;
 	uint	public		totalSupply =		0			;
 									

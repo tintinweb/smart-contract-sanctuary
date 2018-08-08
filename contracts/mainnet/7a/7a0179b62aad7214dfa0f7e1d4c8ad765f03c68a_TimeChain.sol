@@ -113,8 +113,8 @@ contract TimeChain is UnboundedRegularToken {
 
     uint public totalSupply = 610*10**13;
     uint8 constant public decimals = 9;
-    string constant public name = &quot;TimeChain&quot;;
-    string constant public symbol = &quot;TIM&quot;;
+    string constant public name = "TimeChain";
+    string constant public symbol = "TIM";
 
     function TimeChain() {
         balances[msg.sender] = totalSupply;

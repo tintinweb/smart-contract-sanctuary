@@ -176,7 +176,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -247,8 +247,8 @@ contract InvestorsFeature is Ownable, StandardToken {
 contract ECHARGE is Ownable, StandardToken, InvestorsFeature  {
     
 
-  string public constant name = &quot;ECHARGE&quot;;
-  string public constant symbol = &quot;ECHG&quot;;
+  string public constant name = "ECHARGE";
+  string public constant symbol = "ECHG";
   uint8 public constant decimals = 18;
   
   uint256 public constant INITIAL_SUPPLY = (2000 * (10**6)) * (10 ** uint256(decimals));

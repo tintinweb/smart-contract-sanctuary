@@ -267,8 +267,8 @@ contract CMCTInterface is ERC20 {
 }
 
 contract CMCT is CMCTInterface, StandardToken, CanReclaimToken {
-  string public name = &quot;Crowd Machine Compute Token&quot;;
-  string public symbol = &quot;CMCT&quot;;
+  string public name = "Crowd Machine Compute Token";
+  string public symbol = "CMCT";
   uint8  public decimals = 8;
   uint256 public INITIAL_SUPPLY = uint(2000000000) * (10 ** uint256(decimals));
 

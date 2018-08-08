@@ -124,7 +124,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -183,8 +183,8 @@ contract C3Coin is ERC223, Ownable {
     using SafeMath for uint;
 
 
-    string public name = &quot;C3coin&quot;;
-    string public symbol = &quot;CCC&quot;;
+    string public name = "C3coin";
+    string public symbol = "CCC";
     uint8 public decimals = 18;
     uint256 public totalSupply = 10e10 * 1e18;
 
@@ -236,7 +236,7 @@ contract C3Coin is ERC223, Ownable {
      * @param _value Number of tokens to send
      */
     function transfer(address _to, uint _value) public returns (bool success) {
-        bytes memory empty = hex&quot;00000000&quot;;
+        bytes memory empty = hex"00000000";
         if (isContract(_to)) {
             return transferToContract(_to, _value, empty);
         } else {

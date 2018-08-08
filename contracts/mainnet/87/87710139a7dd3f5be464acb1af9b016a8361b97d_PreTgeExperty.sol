@@ -1,8 +1,8 @@
 pragma solidity ^0.4.11;
 
-// import &quot;browser/ERC223BasicToken.sol&quot;;
+// import "browser/ERC223BasicToken.sol";
 
-// import &quot;browser/SafeMath.sol&quot;;
+// import "browser/SafeMath.sol";
 
 /**
  * Math operations with safety checks
@@ -128,8 +128,8 @@ contract ERC223BasicToken is ERC223Basic {
 contract PreTgeExperty is ERC223BasicToken {
 
   // token constants
-  string public constant name = &quot;Pre-TGE Experty Token&quot;;
-  string public constant symbol = &quot;PEXY&quot;;
+  string public constant name = "Pre-TGE Experty Token";
+  string public constant symbol = "PEXY";
   uint8 public constant decimals = 18;
 
   // pre-tge variables

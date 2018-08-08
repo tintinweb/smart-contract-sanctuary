@@ -123,8 +123,8 @@ contract StandardToken is ERC20 {
 }
 
 contract Zillion is StandardToken {
-  string public constant name = &quot;Zillion&quot;;
-  string public constant symbol = &quot;ZION&quot;;
+  string public constant name = "Zillion";
+  string public constant symbol = "ZION";
   uint8 public constant decimals = 6;
 
   function Zillion() public {

@@ -83,8 +83,8 @@ contract AdviserCasperToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function AdviserCasperToken() public {
-        symbol = &quot;ACST&quot;;
-        name = &quot;Adviser Csper Token&quot;;
+        symbol = "ACST";
+        name = "Adviser Csper Token";
         decimals = 18;
         _totalSupply = 440000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

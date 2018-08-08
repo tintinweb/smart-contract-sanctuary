@@ -176,8 +176,8 @@ contract Ownable {
 
 contract LinkToken is StandardToken, Ownable {
 
-    string public   name =           &quot;Link Platform&quot;;    // Name of the Token
-    string public   symbol =         &quot;LNK&quot;;              // ERC20 compliant Token code
+    string public   name =           "Link Platform";    // Name of the Token
+    string public   symbol =         "LNK";              // ERC20 compliant Token code
     uint public     decimals =       18;                 // Token has 18 digit precision
     uint public     totalSupply;    			         // Total supply
 

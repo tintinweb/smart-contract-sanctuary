@@ -175,8 +175,8 @@ contract standardToken is ERC20Token {
 contract OpticalNetwork is standardToken, Owned {
     using SafeMath for uint;
     
-    string public name=&quot;Optical Network&quot;;
-    string public symbol=&quot;OPTC&quot;;
+    string public name="Optical Network";
+    string public symbol="OPTC";
     uint256 public decimals=18;
     uint256 public totalSupply = 0;
     uint256 public topTotalSupply = 36*10**8*10**decimals;

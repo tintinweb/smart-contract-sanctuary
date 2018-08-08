@@ -5,7 +5,7 @@ pragma solidity 0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -54,14 +54,14 @@ contract Whitelist is Ownable {
     function addToWhitelist(address[] _addresses) public onlyOwner {
         for (uint256 i = 0; i < _addresses.length; i++) {
             allowedAddresses[_addresses[i]] = true;
-            WhitelistUpdated(now, &quot;Added&quot;, _addresses[i]);
+            WhitelistUpdated(now, "Added", _addresses[i]);
         }
     }
 
     function removeFromWhitelist(address[] _addresses) public onlyOwner {
         for (uint256 i = 0; i < _addresses.length; i++) {
             allowedAddresses[_addresses[i]] = false;
-            WhitelistUpdated(now, &quot;Removed&quot;, _addresses[i]);
+            WhitelistUpdated(now, "Removed", _addresses[i]);
         }
     }
 

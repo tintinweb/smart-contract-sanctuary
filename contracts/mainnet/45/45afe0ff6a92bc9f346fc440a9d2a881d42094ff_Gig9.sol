@@ -354,8 +354,8 @@ Pausable,
 Destructible {
     
     function Gig9()public {
-        _name = &quot;GIG9&quot;;
-        _symbol = &quot;GIG&quot;;
+        _name = "GIG9";
+        _symbol = "GIG";
         _decimals = 8;
         _totalSupply = 268000000 * (10 ** _decimals);
         owner = msg.sender;

@@ -204,8 +204,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract TTMToken is PausableToken {
 
-  string public constant name = &quot;TO THE MOON&quot;;
-  string public constant symbol = &quot;TTM&quot;;
+  string public constant name = "TO THE MOON";
+  string public constant symbol = "TTM";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));

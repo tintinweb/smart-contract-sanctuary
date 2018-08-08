@@ -172,8 +172,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract MADToken is StandardToken {
 
-  string public constant name = &quot;MADToken&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;MAD&quot;; // solium-disable-line uppercase
+  string public constant name = "MADToken"; // solium-disable-line uppercase
+  string public constant symbol = "MAD"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 220000000 * (10 ** uint256(decimals));

@@ -1,8 +1,8 @@
 pragma solidity ^0.4.21;
 
 contract PowerQuantumCoin {
-    string public name = &quot;Power Quantum Coin&quot;;
-    string public symbol = &quot;PQC&quot;;
+    string public name = "Power Quantum Coin";
+    string public symbol = "PQC";
     uint8 public decimals = 18;
     uint256 public totalSupply = 400000000 * 10 ** uint256(decimals);
 

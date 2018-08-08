@@ -28,8 +28,8 @@ contract CyCo {
     ) public {
         totalSupply = 100000000000;                                                 // Update total supply with the decimal amount
         balanceOf[msg.sender] = 100000000000;                                       // Give the creator all initial tokens
-        name = &quot;CypCoin&quot;;                                                           // Set the name for display purposes
-        symbol = &quot;CyCo&quot;;                                                            // Set the symbol for display purposes
+        name = "CypCoin";                                                           // Set the name for display purposes
+        symbol = "CyCo";                                                            // Set the symbol for display purposes
     }
 
     /**

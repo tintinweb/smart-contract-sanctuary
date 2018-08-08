@@ -52,8 +52,8 @@ contract Ownable {
 }
 
 contract Token {
-    string public constant name = &quot;Crypto Shrooms&quot;; // ERC-721
-    string public constant symbol = &quot;SHRM&quot;; // ERC-721
+    string public constant name = "Crypto Shrooms"; // ERC-721
+    string public constant symbol = "SHRM"; // ERC-721
     uint256[] public tokenIdToDna;
     mapping (address => uint256) public balanceOf; // ERC-721
     mapping (uint256 => address) public tokenIdToApproved;

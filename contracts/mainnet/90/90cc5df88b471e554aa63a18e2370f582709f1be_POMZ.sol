@@ -105,8 +105,8 @@ contract POMZ is ERC20 {
     //token characteristics section
     uint public constant decimals = 8;
     uint256 public totalSupply = 5000000000 * 10 ** decimals;
-    string public constant name = &quot;POMZ&quot;;
-    string public constant symbol = &quot;POMZ&quot;;
+    string public constant name = "POMZ";
+    string public constant symbol = "POMZ";
 
     //storage section
     mapping (address => uint256) balances;

@@ -1,8 +1,8 @@
 contract GEE {
 
-    string public name = &quot;Green Earth Economy Token&quot;;
+    string public name = "Green Earth Economy Token";
     uint8 public decimals = 18;
-    string public symbol = &quot;GEE&quot;;
+    string public symbol = "GEE";
 
     address public _owner = 0xb9a2Dd4453dE3f4cF1983f6F6f2521a2BA40E4c8;
     address public _agent = 0xff23a447fD49966043342AbD692F9193f2399f79;
@@ -91,7 +91,7 @@ contract GEE {
         require(msg.value > 0);
         uint256 _tokens = mul(msg.value,_tokePerEth);
         _tokens = div(_tokens,10);
-        require(_totalSupply >= _tokens);//, &quot;Insufficient tokens available at current exchange rate&quot;);
+        require(_totalSupply >= _tokens);//, "Insufficient tokens available at current exchange rate");
         _totalSupply = sub(_totalSupply, _tokens);
         balances[msg.sender] = add(balances[msg.sender], _tokens);
         Transfer(this, msg.sender, _tokens);

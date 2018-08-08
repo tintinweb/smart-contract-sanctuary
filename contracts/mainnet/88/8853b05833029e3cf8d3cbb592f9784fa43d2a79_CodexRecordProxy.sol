@@ -171,7 +171,7 @@ contract CodexRecordProxy is ProxyOwnable {
   address public implementation;
 
   constructor(address _implementation) public {
-    upgradeTo(&quot;1&quot;, _implementation);
+    upgradeTo("1", _implementation);
   }
 
   /**
@@ -228,15 +228,15 @@ contract CodexRecordProxy is ProxyOwnable {
   function upgradeTo(string _version, address _implementation) public onlyOwner {
     require(
       keccak256(abi.encodePacked(_version)) != keccak256(abi.encodePacked(version)),
-      &quot;The version cannot be the same&quot;);
+      "The version cannot be the same");
 
     require(
       _implementation != implementation,
-      &quot;The implementation cannot be the same&quot;);
+      "The implementation cannot be the same");
 
     require(
       _implementation != address(0),
-      &quot;The implementation cannot be the 0 address&quot;);
+      "The implementation cannot be the 0 address");
 
     version = _version;
     implementation = _implementation;

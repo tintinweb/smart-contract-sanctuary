@@ -81,8 +81,8 @@ contract GeoGems is ERC20 {
   }
 
   function GeoGems(address _vaultAddress) public {
-        name = &quot;Geo Gems&quot;;
-        symbol = &quot;GG&quot;;
+        name = "Geo Gems";
+        symbol = "GG";
         decimals = 2;
         totalSupply_ = 5000000000000 * (10 ** uint256(decimals));
         vaultAddress = _vaultAddress; 

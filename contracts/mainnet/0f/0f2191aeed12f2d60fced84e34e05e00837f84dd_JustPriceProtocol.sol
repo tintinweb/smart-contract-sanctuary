@@ -5,9 +5,9 @@
  */
 pragma solidity ^0.4.20;
 
-//import &quot;./SafeMath.sol&quot;;
-//import &quot;./OrgonToken.sol&quot;;
-//import &quot;./OrisSpace.sol&quot;;
+//import "./SafeMath.sol";
+//import "./OrgonToken.sol";
+//import "./OrisSpace.sol";
 contract SafeMath {
   uint256 constant private MAX_UINT256 =
     0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
@@ -187,27 +187,27 @@ contract JustPriceProtocol is SafeMath {
   uint256 internal constant SALE_START_TIME = 1524117600;
 
   /**
-   * &quot;Reserve&quot; stage deadline (2018-07-08 00:00:00 UTC)
+   * "Reserve" stage deadline (2018-07-08 00:00:00 UTC)
    */
   uint256 internal constant RESERVE_DEADLINE = 1531008000;
 
   /**
-   * Maximum amount to be collected during &quot;reserve&quot; stage.
+   * Maximum amount to be collected during "reserve" stage.
    */
   uint256 internal constant RESERVE_MAX_AMOUNT = 72500 ether;
 
   /**
-   * Minimum amount to be collected during &quot;reserve&quot; stage.
+   * Minimum amount to be collected during "reserve" stage.
    */
   uint256 internal constant RESERVE_MIN_AMOUNT = 30000 ether;
 
   /**
-   * Maximum number of tokens to be sold during &quot;reserve&quot; stage.
+   * Maximum number of tokens to be sold during "reserve" stage.
    */
   uint256 internal constant RESERVE_MAX_TOKENS = 82881476.72e9;
 
   /**
-   * ORNG/ETH ratio after &quot;reserve&quot; stage in Wei per ORGN unit.
+   * ORNG/ETH ratio after "reserve" stage in Wei per ORGN unit.
    */
   uint256 internal constant RESERVE_RATIO = 72500 ether / 725000000e9;
 
@@ -292,24 +292,24 @@ contract JustPriceProtocol is SafeMath {
   uint256 internal constant RESERVE_PRICE_8 = 0.00098 ether / 1e9;
 
   /**
-   * &quot;Growth&quot; stage ends once this many tokens were issued.
+   * "Growth" stage ends once this many tokens were issued.
    */
   uint256 internal constant GROWTH_MAX_TOKENS = 1000000000e9;
 
   /**
-   * Maximum duration of &quot;growth&quot; stage.
+   * Maximum duration of "growth" stage.
    */
   uint256 internal constant GROWTH_MAX_DURATION = 285 days;
 
   /**
-   * Numerator of fraction of tokens bought at &quot;reserve&quot; stage to be delivered
-   * before &quot;growth&quot; stage start.
+   * Numerator of fraction of tokens bought at "reserve" stage to be delivered
+   * before "growth" stage start.
    */
   uint256 internal constant GROWTH_MIN_DELIVERED_NUMERATOR = 75;
 
   /**
-   * Denominator of fraction of tokens bought at &quot;reserve&quot; stage to be delivered
-   * before &quot;growth&quot; stage start.
+   * Denominator of fraction of tokens bought at "reserve" stage to be delivered
+   * before "growth" stage start.
    */
   uint256 internal constant GROWTH_MIN_DELIVERED_DENOMINATIOR = 100;
 
@@ -331,7 +331,7 @@ contract JustPriceProtocol is SafeMath {
   uint256 internal constant FEE_DENOMINATOR = 20000;
 
   /**
-   * Delay after start of &quot;growth&quot; stage before fee may be changed.
+   * Delay after start of "growth" stage before fee may be changed.
    */
   uint256 internal constant FEE_CHANGE_DELAY = 650 days;
 
@@ -418,7 +418,7 @@ contract JustPriceProtocol is SafeMath {
   }
 
   /**
-   * Deliver tokens sold during &quot;reserve&quot; stage to corresponding investors.
+   * Deliver tokens sold during "reserve" stage to corresponding investors.
    *
    * @param _investors addresses of investors to deliver tokens to
    */
@@ -455,7 +455,7 @@ contract JustPriceProtocol is SafeMath {
   }
 
   /**
-   * Refund investors who bought tokens during &quot;reserve&quot; stage.
+   * Refund investors who bought tokens during "reserve" stage.
    *
    * @param _investors addresses of investors to refund
    */
@@ -622,7 +622,7 @@ contract JustPriceProtocol is SafeMath {
   }
 
   /**
-   * Buy tokens during &quot;reserve&quot; stage.
+   * Buy tokens during "reserve" stage.
    */
   function buyTokensReserve () internal {
     require (stage == Stage.RESERVE);
@@ -793,7 +793,7 @@ contract JustPriceProtocol is SafeMath {
   }
 
   /**
-   * Buy tokens during &quot;growth&quot; or &quot;life&quot; stage.
+   * Buy tokens during "growth" or "life" stage.
    */
   function buyTokensGrowthLife () internal {
     require (stage == Stage.GROWTH || stage == Stage.LIFE);
@@ -850,7 +850,7 @@ contract JustPriceProtocol is SafeMath {
     Stage currentStage = getStage (currentTime ());
     if (stage != currentStage) {
       if (currentStage == Stage.BEFORE_GROWTH) {
-        // &quot;Reserve&quot; stage deadline reached and minimum amount collected
+        // "Reserve" stage deadline reached and minimum amount collected
         uint256 tokensToBurn =
           safeSub (
             safeAdd (
@@ -978,19 +978,19 @@ contract JustPriceProtocol is SafeMath {
    *  |   GROWTH   |                         | REFUND |
    *  +------------+                         +--------+
    *         |
-   *         | 1,500,000,000 tokens issued or 365 days passed since start of &quot;GROWTH&quot; stage
+   *         | 1,500,000,000 tokens issued or 365 days passed since start of "GROWTH" stage
    *         V
    *     +------+
    *     | LIFE |
    *     +------+
    */
   enum Stage {
-    BEFORE_RESERVE, // Before start of &quot;Reserve&quot; stage
-    RESERVE, // &quot;Reserve&quot; stage
-    BEFORE_GROWTH, // Between &quot;Reserve&quot; and &quot;Growth&quot; stages
-    GROWTH, // &quot;Grows&quot; stage
-    LIFE, // &quot;Life&quot; stage
-    REFUND // &quot;Refund&quot; stage
+    BEFORE_RESERVE, // Before start of "Reserve" stage
+    RESERVE, // "Reserve" stage
+    BEFORE_GROWTH, // Between "Reserve" and "Growth" stages
+    GROWTH, // "Grows" stage
+    LIFE, // "Life" stage
+    REFUND // "Refund" stage
   }
 
   /**
@@ -1019,23 +1019,23 @@ contract JustPriceProtocol is SafeMath {
   uint256 internal reserveAmount;
 
   /**
-   * Number of tokens sold during &quot;reserve&quot; stage.
+   * Number of tokens sold during "reserve" stage.
    */
   uint256 internal reserveTokensSold;
 
   /**
-   * Number of tokens sold during &quot;reserve&quot; stage that were already delivered to
+   * Number of tokens sold during "reserve" stage that were already delivered to
    * investors.
    */
   uint256 internal reserveTokensDelivered;
 
   /**
-   * &quot;Growth&quot; stage deadline.
+   * "Growth" stage deadline.
    */
   uint256 internal growthDeadline;
 
   /**
-   * Mapping from address of a person who bought some tokens during &quot;reserve&quot;
+   * Mapping from address of a person who bought some tokens during "reserve"
    * stage to information about how many tokens he bought to how much ether
    * invested.
    */
@@ -1081,7 +1081,7 @@ contract JustPriceProtocol is SafeMath {
 
   /**
    * Encapsulates information about a person who bought some tokens during
-   * &quot;reserve&quot; stage.
+   * "reserve" stage.
    */
   struct Investor {
     /**
@@ -1096,7 +1096,7 @@ contract JustPriceProtocol is SafeMath {
   }
 
   /**
-   * Logged when investor invested some ether during &quot;reserve&quot; stage.
+   * Logged when investor invested some ether during "reserve" stage.
    *
    * @param investor address of investor
    * @param value amount of ether invested
@@ -1105,7 +1105,7 @@ contract JustPriceProtocol is SafeMath {
   event Investment (address indexed investor, uint256 value, uint256 amount);
 
   /**
-   * Logged when tokens bought at &quot;reserve&quot; stage were delivered to investor.
+   * Logged when tokens bought at "reserve" stage were delivered to investor.
    *
    * @param investor address of investor whom tokens were delivered to
    * @param amount number of tokens delivered

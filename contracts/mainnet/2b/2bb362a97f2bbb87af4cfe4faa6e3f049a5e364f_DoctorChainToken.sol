@@ -71,8 +71,8 @@ contract DoctorChainToken is ERC20,Ownable {
 	mapping (address => mapping (address => uint256)) allowed;
 	event FundTransfer(address fundWallet, uint256 amount);
 	function DoctorChainToken( ) public {
-		name=&quot;DoctorChain&quot;;
-		symbol=&quot;DCH&quot;;
+		name="DoctorChain";
+		symbol="DCH";
 		totalSupply = 1000000000*(10**decimals);
 		balanceOf[msg.sender] = totalSupply;
 		walletArr.push(0x5Db3F5FD3081Eb6ADdc873ac79B6A7139422d168);

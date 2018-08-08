@@ -58,8 +58,8 @@ contract Bitgram is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Bitgram&quot;;
-    string public constant symbol = &quot;BGR&quot;;
+    string public constant name = "Bitgram";
+    string public constant symbol = "BGR";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 700000000e8;

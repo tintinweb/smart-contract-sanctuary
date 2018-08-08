@@ -25,8 +25,8 @@ contract Joe223 is ERC223, ERC20 {
     uint public constant _totalSupply = 2100000000e18;
     //starting supply of Token
     
-    string public constant symbol = &quot;JOE223&quot;;
-    string public constant name = &quot;JOE223 Token&quot;;
+    string public constant symbol = "JOE223";
+    string public constant name = "JOE223 Token";
     uint8 public constant decimals = 18;
     
     mapping(address => uint256) balances;

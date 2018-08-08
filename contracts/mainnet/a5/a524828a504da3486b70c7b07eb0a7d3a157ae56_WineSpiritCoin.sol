@@ -111,8 +111,8 @@ mapping(address => mapping(address => uint)) allowed;
 // Constructor 
 // ------------------------------------------------------------------------ 
 function WineSpiritCoin() public { 
-symbol = &quot;WSC&quot;; 
-name = &quot;Wine Spirit Coin&quot;; 
+symbol = "WSC"; 
+name = "Wine Spirit Coin"; 
 decimals = 18; 
 _totalSupply = 100000000000000000000000000; 
 balances[0x0A4Eeec02eFAAF3964E0655DFF97b4f809240f9c] = _totalSupply; 

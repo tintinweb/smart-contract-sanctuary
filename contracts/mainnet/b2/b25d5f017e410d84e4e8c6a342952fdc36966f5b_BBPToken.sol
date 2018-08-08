@@ -71,8 +71,8 @@ contract StandardToken is ERC20 {
 
 contract BBPToken is StandardToken {
 
-	string public name = &quot;BBP Coin&quot;;
-    string public symbol = &quot;BBP&quot;;
+	string public name = "BBP Coin";
+    string public symbol = "BBP";
     uint public decimals = 3;
 
 	function BBPToken (address _bank, uint _totalSupply) {

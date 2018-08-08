@@ -17,9 +17,9 @@ contract Myastheniagravis {
     function Myastheniagravis() {
 
          initialSupply = 1000000;
-         name =&quot;Mysthenia Gravis&quot;;
+         name ="Mysthenia Gravis";
         decimals = 2;
-         symbol = &quot;MSG&quot;;
+         symbol = "MSG";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

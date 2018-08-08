@@ -113,8 +113,8 @@ contract IPcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IPcoin() public {
-        symbol = &quot;IPCO&quot;;
-        name = &quot;IPcoin&quot;;
+        symbol = "IPCO";
+        name = "IPcoin";
         decimals = 18;
         _totalSupply = 80000000000000000000000000;
         balances[0x06C37Ceb3d3890d41DA8b53123bbEDF599C1C738] = _totalSupply;

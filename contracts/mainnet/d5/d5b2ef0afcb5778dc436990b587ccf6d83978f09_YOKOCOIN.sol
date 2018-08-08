@@ -108,8 +108,8 @@ contract ERC223 {
 contract YOKOCOIN is ERC223, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;YOKOCOIN&quot;;
-    string public symbol = &quot;YOKO&quot;;
+    string public name = "YOKOCOIN";
+    string public symbol = "YOKO";
     uint8 public decimals = 16;
     uint256 public totalSupply;
     bool public mintingStopped = false;

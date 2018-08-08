@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -284,11 +284,11 @@ contract MikadoToken is StandardToken, BurnableToken, Ownable {
     event Release();
     event AddressLocked(address indexed _address, uint256 _time);
 
-    string public constant name = &quot;Mikado Token&quot;;
+    string public constant name = "Mikado Token";
 
-    string public constant symbol = &quot;MKT&quot;;
+    string public constant symbol = "MKT";
 
-    string public constant standard = &quot;ERC20&quot;;
+    string public constant standard = "ERC20";
 
     uint256 public constant decimals = 8;
 

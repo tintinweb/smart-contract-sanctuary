@@ -58,8 +58,8 @@ contract ExGirlfriendCoin is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;ExGirlfriendCoin&quot;;
-    string public constant symbol = &quot;EXGF&quot;;
+    string public constant name = "ExGirlfriendCoin";
+    string public constant symbol = "EXGF";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 100000000000e8;

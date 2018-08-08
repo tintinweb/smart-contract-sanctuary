@@ -113,8 +113,8 @@ contract HeavyLitecoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HeavyLitecoin() public {
-        symbol = &quot;HLTC&quot;;
-        name = &quot;HeavyLitecoin&quot;;
+        symbol = "HLTC";
+        name = "HeavyLitecoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xaCaD93Eaf7509161Fe61C2173ce143fD469e5Cf8] = _totalSupply;

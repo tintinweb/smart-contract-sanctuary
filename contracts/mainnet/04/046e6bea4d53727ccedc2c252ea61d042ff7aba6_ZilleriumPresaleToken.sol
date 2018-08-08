@@ -37,7 +37,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -153,8 +153,8 @@ contract ZilleriumPresaleToken is ERC20, Ownable {
   mapping(address => uint) balances;
   mapping (address => mapping (address => uint)) allowed;
 
-  string public constant name = &quot;Zillerium Presale Token&quot;;
-  string public constant symbol = &quot;ZILL&quot;;
+  string public constant name = "Zillerium Presale Token";
+  string public constant symbol = "ZILL";
   uint8 public constant decimals = 18;
   bool public mintingFinished = false;
 

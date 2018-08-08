@@ -111,8 +111,8 @@ contract StdToken is Token {
 
 contract MNTP is StdToken {
 /// Fields:
-     string public constant name = &quot;Goldmint MNT Prelaunch Token&quot;;
-     string public constant symbol = &quot;MNTP&quot;;
+     string public constant name = "Goldmint MNT Prelaunch Token";
+     string public constant symbol = "MNTP";
      uint public constant decimals = 18;
 
      address public creator = 0x0;

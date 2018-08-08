@@ -139,8 +139,8 @@ contract bjTest is Ownable {
         if (b < 10){ return byte(uint8(b) + 0x30); } else {
             return byte(uint8(b) + 0x57); }
     }
-    string[] public arrint = [&quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;,&quot;9&quot;];
-    string[] public arrstr = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;,&quot;f&quot;];
+    string[] public arrint = ["0","1","2","3","4","5","6","7","8","9"];
+    string[] public arrstr = ["a","b","c","d","e","f"];
     uint256 public randomA;
     uint256 public randomB;
     uint256 public randomC;

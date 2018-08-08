@@ -20,7 +20,7 @@ pragma solidity 0.4.21;
  * schools, and other community members about the application of blockchain
  * technology. For further information: modular.network
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -143,7 +143,7 @@ library DirectCrowdsaleLib {
         }
 
         self.tokensPerEth = self.tokenPrice[self.milestoneTimes[self.currentMilestone]];
-        emit LogTokenPriceChange(self.tokensPerEth,&quot;Token Price has changed!&quot;);
+        emit LogTokenPriceChange(self.tokensPerEth,"Token Price has changed!");
     }
 
   	uint256 _numTokens; //number of tokens that will be purchased
@@ -173,7 +173,7 @@ library DirectCrowdsaleLib {
     (err,_newBalance) = self.ownerBalance.plus(_amount);
     require(!err);
 
-    self.ownerBalance = _newBalance;   // &quot;deposit&quot; the amount
+    self.ownerBalance = _newBalance;   // "deposit" the amount
 
     // can&#39;t overflow because it will be under the cap
 	  self.withdrawTokensMap[msg.sender] += _numTokens;
@@ -214,7 +214,7 @@ library DirectCrowdsaleLib {
     if (crowdsaleActive(self) && nonZeroPurchase) {
       return true;
     } else {
-      emit LogErrorMsg(msg.value, &quot;Invalid Purchase! Check start time and amount of ether.&quot;);
+      emit LogErrorMsg(msg.value, "Invalid Purchase! Check start time and amount of ether.");
       return false;
     }
   }
@@ -226,13 +226,13 @@ library DirectCrowdsaleLib {
     bool ok;
 
     if (self.withdrawTokensMap[msg.sender] == 0) {
-      emit LogErrorMsg(0, &quot;Sender has no tokens to withdraw!&quot;);
+      emit LogErrorMsg(0, "Sender has no tokens to withdraw!");
       return false;
     }
 
     if (msg.sender == self.owner) {
       if(!crowdsaleEnded(self)){
-        emit LogErrorMsg(0, &quot;Owner cannot withdraw extra tokens until after the sale!&quot;);
+        emit LogErrorMsg(0, "Owner cannot withdraw extra tokens until after the sale!");
         return false;
       } else {
         if(self.percentBurn > 0){
@@ -257,7 +257,7 @@ library DirectCrowdsaleLib {
   /// @return true if wei was withdrawn
   function withdrawLeftoverWei(DirectCrowdsaleStorage storage self) public returns (bool) {
     if (self.leftoverWei[msg.sender] == 0) {
-      emit LogErrorMsg(0, &quot;Sender has no extra wei to withdraw!&quot;);
+      emit LogErrorMsg(0, "Sender has no extra wei to withdraw!");
       return false;
     }
 
@@ -273,7 +273,7 @@ library DirectCrowdsaleLib {
   /// @return true if owner withdrew eth
   function withdrawOwnerEth(DirectCrowdsaleStorage storage self) public returns (bool) {
     if ((!crowdsaleEnded(self)) && (self.token.balanceOf(this)>0)) {
-      emit LogErrorMsg(0, &quot;Cannot withdraw owner ether until after the sale!&quot;);
+      emit LogErrorMsg(0, "Cannot withdraw owner ether until after the sale!");
       return false;
     }
 
@@ -283,7 +283,7 @@ library DirectCrowdsaleLib {
     uint256 amount = self.ownerBalance;
     self.ownerBalance = 0;
     self.owner.transfer(amount);
-    emit LogOwnerEthWithdrawn(msg.sender,amount,&quot;Crowdsale owner has withdrawn all funds!&quot;);
+    emit LogOwnerEthWithdrawn(msg.sender,amount,"Crowdsale owner has withdrawn all funds!");
 
     return true;
   }
@@ -509,7 +509,7 @@ pragma solidity 0.4.21;
  * about the application of blockchain technology.
  * For further information: modular.network
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY

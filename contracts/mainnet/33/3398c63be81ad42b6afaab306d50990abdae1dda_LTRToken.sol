@@ -151,9 +151,9 @@ contract LTRToken is StandardToken {
 
     //Ham khoitao token
     function LTRToken() {
-        name = &quot;LTR Token - Lottery Services Global&quot;;        // Ten cua token
+        name = "LTR Token - Lottery Services Global";        // Ten cua token
         decimals = 18;                     // Token khong co phan thapphan (so nguyen thoi)
-        symbol = &quot;LTR&quot;;                   // Ma token
+        symbol = "LTR";                   // Ma token
         balances[msg.sender] = 100000000000 * (10 ** uint256(decimals));      // Nguoi phathanh se namgiu toanbo token  
 		totalSupply = 100000000000 * (10 ** uint256(decimals));               // Tong cung token 100000000000 * (10 ** uint256(decimals))
     }

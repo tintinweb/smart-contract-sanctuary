@@ -253,7 +253,7 @@ contract TokenERC20 is ERC20, Ownable{
 
 contract PowerToken is TokenERC20 {
 
-    function PowerToken() TokenERC20(100000000, &quot;ZhouLei Token&quot;, &quot;ZLT&quot;, 18) public {
+    function PowerToken() TokenERC20(100000000, "ZhouLei Token", "ZLT", 18) public {
 
     }
 }

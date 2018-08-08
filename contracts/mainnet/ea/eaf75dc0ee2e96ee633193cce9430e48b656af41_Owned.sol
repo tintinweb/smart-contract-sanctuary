@@ -21,8 +21,8 @@ contract Owned {
 
 contract TNCN is Owned {
 
-    string public name=&quot;CHULIAN CHINA&quot;;
-    string public symbol=&quot;TNCN&quot;;
+    string public name="CHULIAN CHINA";
+    string public symbol="TNCN";
     uint8  public decimals=18;
     uint256 public totalSupply;
     uint256 public sellPrice;

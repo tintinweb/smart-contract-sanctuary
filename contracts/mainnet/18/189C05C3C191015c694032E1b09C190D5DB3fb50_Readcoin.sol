@@ -240,9 +240,9 @@ contract UpgradeableToken is StandardToken {
 
 contract Readcoin is StandardToken, UpgradeableToken {
     using SafeMath for uint256;
-  string public constant standard = &quot;ERC20&quot;;
-  string public constant name = &quot;Readcoin&quot;;
-  string public constant symbol = &quot;RCN&quot;;
+  string public constant standard = "ERC20";
+  string public constant name = "Readcoin";
+  string public constant symbol = "RCN";
   uint256 public constant decimals = 8;
 
   uint256 public constant INITIAL_SUPPLY = 80000000000000000;

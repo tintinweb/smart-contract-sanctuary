@@ -79,8 +79,8 @@ contract MDOT is StandardToken {
     They allow one to customise the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
-    string public name = &quot;Maolulu Polkadot&quot;;   // Fancy name: eg: Maolulu Polkadot
-    string public symbol = &quot;MDOT&quot;; // An identifier: eg MDOT
+    string public name = "Maolulu Polkadot";   // Fancy name: eg: Maolulu Polkadot
+    string public symbol = "MDOT"; // An identifier: eg MDOT
     uint public decimals = 8;      // Unit precision
 
     constructor() public {

@@ -249,7 +249,7 @@ ICO Gap
 */
 
 contract Token is CappedToken, BurnableToken {
-    function Token() CappedToken(100000000 * 1 ether) StandardToken(&quot;GAP Token&quot;, &quot;GAP&quot;, 18) public {
+    function Token() CappedToken(100000000 * 1 ether) StandardToken("GAP Token", "GAP", 18) public {
         
     }
     

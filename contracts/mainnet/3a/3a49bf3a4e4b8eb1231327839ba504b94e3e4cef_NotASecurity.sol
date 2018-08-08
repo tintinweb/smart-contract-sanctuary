@@ -4,8 +4,8 @@ contract NotASecurity {
   uint public totalSupply;
 
   uint public decimals = 18;
-  string public symbol = &quot;NOT&quot;;
-  string public name = &quot;NotASecurity&quot;;
+  string public symbol = "NOT";
+  string public name = "NotASecurity";
 
   mapping (address => uint) public balanceOf;
   mapping (address => mapping (address => uint)) internal allowed;

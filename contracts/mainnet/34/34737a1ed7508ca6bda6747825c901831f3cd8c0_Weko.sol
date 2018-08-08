@@ -31,8 +31,8 @@ contract Weko {
 
      function Weko() public {
         director = msg.sender;
-        name = &quot;Weko&quot;;
-        symbol = &quot;WEKO&quot;;
+        name = "Weko";
+        symbol = "WEKO";
         decimals = 8;
         saleClosed = true;
         directorLock = false;

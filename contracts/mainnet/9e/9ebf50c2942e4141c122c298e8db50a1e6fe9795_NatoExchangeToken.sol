@@ -113,8 +113,8 @@ contract NatoExchangeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NatoExchangeToken() public {
-        symbol = &quot;NATO&quot;;
-        name = &quot;Nato Exchange Token&quot;;
+        symbol = "NATO";
+        name = "Nato Exchange Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x0df08d237e65a3C6Cb1aff5fdeBd903E521e8be9] = _totalSupply;

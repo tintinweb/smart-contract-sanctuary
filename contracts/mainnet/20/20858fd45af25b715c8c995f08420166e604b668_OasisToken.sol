@@ -125,8 +125,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract OasisToken is StandardToken {
 
-  string public constant name = &quot;OasisToken&quot;;
-  string public constant symbol = &quot;OASIS&quot;;
+  string public constant name = "OasisToken";
+  string public constant symbol = "OASIS";
   uint8 public constant decimals = 3;
 
   uint256 public constant INITIAL_SUPPLY = 1000000000 * (10 ** uint256(decimals));

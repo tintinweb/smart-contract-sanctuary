@@ -392,7 +392,7 @@ contract e2pEscrow is Stoppable, SafeMath {
 			   bytes32 _s)
     public pure returns(bool success)
   {
-    bytes32 prefixedHash = keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, _recipient);
+    bytes32 prefixedHash = keccak256("\x19Ethereum Signed Message:\n32", _recipient);
     address retAddr = ecrecover(prefixedHash, _v, _r, _s);
     return retAddr == _transitAddress;
   }

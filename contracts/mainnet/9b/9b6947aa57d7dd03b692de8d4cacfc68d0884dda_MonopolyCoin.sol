@@ -182,7 +182,7 @@ contract StandardToken is ERC20, BurnableToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -263,9 +263,9 @@ contract MintableToken is StandardToken, Ownable {
 
 contract MonopolyCoin is MintableToken {
     
-    string public constant name = &quot;Monopoly&quot;;
+    string public constant name = "Monopoly";
     
-    string public constant symbol = &quot;MNP&quot;; 
+    string public constant symbol = "MNP"; 
     
     uint32 public constant decimals = 18; 
     

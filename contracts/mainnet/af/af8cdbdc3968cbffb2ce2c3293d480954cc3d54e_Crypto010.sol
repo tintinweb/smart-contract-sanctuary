@@ -72,9 +72,9 @@ contract Crypto010 is EIP20Interface {
     function Crypto010() public {
         balances[msg.sender] = 20000000000 * 10 ** 18;               // Give the creator all initial tokens
         totalSupply = 20000000000 * 10 ** 18;                        // Update total supply
-        name = &quot;Crypto 010 Token&quot;;                                   // Set the name for display purposes
+        name = "Crypto 010 Token";                                   // Set the name for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
-        symbol = &quot;010&quot;;                               // Set the symbol for display purposes
+        symbol = "010";                               // Set the symbol for display purposes
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

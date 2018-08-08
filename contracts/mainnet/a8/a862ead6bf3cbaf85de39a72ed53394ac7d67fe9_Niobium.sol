@@ -15,9 +15,9 @@ contract Niobium {
     function Niobium() {
 
          initialSupply = 26000000000000000000000000;
-         name =&quot;Niobium&quot;;
+         name ="Niobium";
         decimals = 18;
-         symbol = &quot;NBC&quot;;
+         symbol = "NBC";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;               // Update total supply

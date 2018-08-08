@@ -428,7 +428,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -567,8 +567,8 @@ pragma solidity ^0.4.21;
  * @dev Constructor of StoToken that instantiates a new PausableToken
  */
 contract StoToken is PausableToken, ERC827Token {
-    string public constant name = &quot;Stone Coin&quot;;
-    string public constant symbol = &quot;STO&quot;;
+    string public constant name = "Stone Coin";
+    string public constant symbol = "STO";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_BALANCE = 10**9 * 10**uint256(decimals);     // 1 billion STO tokens
 

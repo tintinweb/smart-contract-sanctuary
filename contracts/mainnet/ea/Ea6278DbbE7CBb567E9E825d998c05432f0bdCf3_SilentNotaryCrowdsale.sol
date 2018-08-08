@@ -108,8 +108,8 @@ contract Killable is Ownable {
 }
  /// @title SilentNotaryToken contract - standard ERC20 token with Short Hand Attack and approve() race condition mitigation.
 contract SilentNotaryToken is SafeMath, ERC20, Killable {
-  string constant public name = &quot;Silent Notary Token&quot;;
-  string constant public symbol = &quot;SNTR&quot;;
+  string constant public name = "Silent Notary Token";
+  string constant public symbol = "SNTR";
   uint constant public decimals = 4;
   /// Buyout price
   uint constant public buyOutPrice = 200 finney;

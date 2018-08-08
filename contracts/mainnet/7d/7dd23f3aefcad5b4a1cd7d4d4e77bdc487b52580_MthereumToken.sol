@@ -72,8 +72,8 @@ contract MthereumToken is ERC20Interface, Owned, SafeMath {
 
 
      function MthereumToken() public {
-        symbol = &quot;MTE&quot;;
-        name = &quot;Mthereum&quot;;
+        symbol = "MTE";
+        name = "Mthereum";
         decimals = 8;
         _totalSupply = 10000000000000000;
         balances[0x7aF7ff854a80ba5dd8aB247208918c58A319B904] = _totalSupply;

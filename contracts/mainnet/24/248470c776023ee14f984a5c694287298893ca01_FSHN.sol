@@ -109,8 +109,8 @@ contract FSHN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FSHN() public {
-        symbol = &quot;FSHN&quot;;
-        name = &quot;FSHN&quot;;
+        symbol = "FSHN";
+        name = "FSHN";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x0efcEe011a87CC59392C7666dFA34bC3b159e292] = _totalSupply;

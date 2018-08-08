@@ -101,8 +101,8 @@ contract UbexToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function UbexToken() public {
-        symbol = &quot;UBEX&quot;;
-        name = &quot;Ubex Token&quot;;
+        symbol = "UBEX";
+        name = "Ubex Token";
         decimals = 18;
         _totalSupply = 4000000000000000000000000000;
         balances[0x17BB6EF5e6868f52b7f00CaAaEa63fa8cF367A79] = _totalSupply;

@@ -141,8 +141,8 @@ contract StandardToken is Token {
 
  contract EternalChainToken is StandardToken, SafeMath {
 	 
-    string public constant symbol =&quot;ECC&quot;;
-    string public constant name = &quot;Eternal Chain Token&quot;;
+    string public constant symbol ="ECC";
+    string public constant name = "Eternal Chain Token";
     uint256 public constant decimals = 18;
 	
 	

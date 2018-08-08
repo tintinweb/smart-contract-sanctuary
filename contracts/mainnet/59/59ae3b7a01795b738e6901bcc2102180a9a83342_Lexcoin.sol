@@ -113,8 +113,8 @@ contract Lexcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Lexcoin() public {
-        symbol = &quot;LXC&quot;;
-        name = &quot;0 Lexcoin&quot;;
+        symbol = "LXC";
+        name = "0 Lexcoin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x36Ad5f6227505BeF01a7bf5b4Ce939f71B023ab5] = _totalSupply;

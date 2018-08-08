@@ -114,8 +114,8 @@ contract EWBToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EWBToken() public {
-        symbol = &quot;EWB&quot;;
-        name = &quot;鑫龙鑫&quot;;
+        symbol = "EWB";
+        name = "鑫龙鑫";
         decimals = 2;
         _totalSupply = 20000000000;
         balances[0x01bc604ae9d945f29432eded391513ba587aeda1] = _totalSupply;

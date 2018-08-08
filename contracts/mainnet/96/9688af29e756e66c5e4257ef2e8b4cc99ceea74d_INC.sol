@@ -228,9 +228,9 @@ pragma solidity ^0.4.18;
 
 	    function INC() public {
 
-	        symbol = &quot;INC&quot;;
+	        symbol = "INC";
 
-	        name = &quot; InterNetworkCrypto&quot;;
+	        name = " InterNetworkCrypto";
 
 	        decimals = 18;
 

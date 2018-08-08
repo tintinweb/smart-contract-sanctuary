@@ -70,7 +70,7 @@ library SafeMath {
 
  * @dev The Ownable contract has an owner address, and provides basic authorization control
 
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
 
  */
 
@@ -490,9 +490,9 @@ contract SAATCoin is BurnableToken, Ownable {
 
 
 
-    string public constant name = &quot;SAAT&quot;;
+    string public constant name = "SAAT";
 
-    string public constant symbol = &quot;SAAT&quot;;
+    string public constant symbol = "SAAT";
 
     uint public constant decimals = 8;
 

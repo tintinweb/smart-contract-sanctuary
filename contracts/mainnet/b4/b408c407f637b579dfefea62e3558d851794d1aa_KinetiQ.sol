@@ -113,8 +113,8 @@ contract KinetiQ is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KinetiQ () public {
-        symbol = &quot;KNTQ&quot;;
-        name = &quot;KinetiQ&quot;;
+        symbol = "KNTQ";
+        name = "KinetiQ";
         decimals = 18;
         _totalSupply = 20000000000000000000000000;
         balances[0xBD2F3643e105adD25A3440748771DC856F163A13] = _totalSupply;

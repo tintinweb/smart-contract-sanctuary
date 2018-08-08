@@ -58,8 +58,8 @@ contract CryptonewsIndonesia is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;cryptonews.co.id&quot;;
-    string public constant symbol = &quot;CTN&quot;;
+    string public constant name = "cryptonews.co.id";
+    string public constant symbol = "CTN";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 200000000000000000000000000;

@@ -58,8 +58,8 @@ contract KentraToken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;KentraToken&quot;;
-    string public constant symbol = &quot;KEN&quot;;
+    string public constant name = "KentraToken";
+    string public constant symbol = "KEN";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 2000000000e8;

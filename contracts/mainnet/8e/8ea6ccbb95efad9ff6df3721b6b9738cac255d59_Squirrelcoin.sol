@@ -301,8 +301,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract Squirrelcoin is StandardToken, ERC223BasicToken {
-  string  constant public name = &quot;Squirrelcoin&quot;;
-  string  constant public symbol = &quot;NTS&quot;;
+  string  constant public name = "Squirrelcoin";
+  string  constant public symbol = "NTS";
   uint8   constant public decimals = 18;
 
   // 10 billion (10,000,000,000)

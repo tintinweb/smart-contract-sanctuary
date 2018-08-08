@@ -112,8 +112,8 @@ contract Citizen is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Citizen() public {
-        symbol = &quot;CIT&quot;;
-        name = &quot;Citizen&quot;;
+        symbol = "CIT";
+        name = "Citizen";
         decimals = 18;
         _totalSupply = 21000000000000000000000000000;
         balances[0xFe905C1CC0395240317F4e5A6ff22823f9B1DD3c] = _totalSupply;

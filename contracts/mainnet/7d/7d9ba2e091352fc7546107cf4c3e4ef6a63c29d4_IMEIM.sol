@@ -115,8 +115,8 @@ contract ERC20Token is ERC20 {
 
 contract IMEIM is ERC20Token, Owned {
 
-    string  public constant name = &quot;IME.IM Token&quot;;
-    string  public constant symbol = &quot;IME&quot;;
+    string  public constant name = "IME.IM Token";
+    string  public constant symbol = "IME";
     uint256 public constant decimals = 18;
     uint256 public tokenDestroyed;
 	event Burn(address indexed _from, uint256 _tokenDestroyed, uint256 _timestamp);

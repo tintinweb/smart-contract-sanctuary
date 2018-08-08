@@ -237,8 +237,8 @@ contract StandardToken is ERC20, BasicToken {
  */
   contract HailGocang is StandardToken {
 
-string public constant name = &quot;Hail Gocang&quot;;
-string public constant symbol = &quot;CANG&quot;;
+string public constant name = "Hail Gocang";
+string public constant symbol = "CANG";
 uint8 public constant decimals = 18;
 
 uint256 public constant INITIAL_SUPPLY = 66666666 * (10 ** uint256(decimals));

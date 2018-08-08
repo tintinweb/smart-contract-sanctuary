@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract MT is StandardToken, Ownable {
 
-    string public constant name = &quot;Sauce wine alliance candy（酱酒联盟糖果）&quot;;
-    string public constant symbol = &quot;MT&quot;;
+    string public constant name = "Sauce wine alliance candy（酱酒联盟糖果）";
+    string public constant symbol = "MT";
     uint256 public constant decimals = 8;
 
     function MT() public {

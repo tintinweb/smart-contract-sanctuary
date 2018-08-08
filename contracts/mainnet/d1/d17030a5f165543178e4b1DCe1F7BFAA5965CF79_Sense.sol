@@ -116,8 +116,8 @@ contract Sense is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Sense() public {
-        symbol = &quot;SENSE&quot;;
-        name = &quot;Sense&quot;;
+        symbol = "SENSE";
+        name = "Sense";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xf66Fe609FBB953C976100B2aCbe687F4023Bc267] = _totalSupply;

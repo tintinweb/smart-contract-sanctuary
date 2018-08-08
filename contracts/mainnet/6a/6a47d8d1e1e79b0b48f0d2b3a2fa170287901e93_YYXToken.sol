@@ -111,8 +111,8 @@ contract YYXToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function YYXToken() public {
-        symbol = &quot;YYX&quot;;
-        name = &quot;YYX Token&quot;;
+        symbol = "YYX";
+        name = "YYX Token";
         decimals = 18;
         _totalSupply = 136000000000000000000000000;
         balances[0x2d23135F74d5cbbD3105c5dE6E782e73A62f2F18] = _totalSupply;

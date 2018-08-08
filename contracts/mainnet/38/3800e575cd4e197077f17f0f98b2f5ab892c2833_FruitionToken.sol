@@ -73,8 +73,8 @@ contract FruitionToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;FruitionToken&quot;;
-    string public constant symbol = &quot;FTT&quot;;
+    string public constant name = "FruitionToken";
+    string public constant symbol = "FTT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 5000000000e8;

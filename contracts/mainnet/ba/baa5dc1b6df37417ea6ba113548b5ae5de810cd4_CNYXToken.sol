@@ -366,7 +366,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -516,8 +516,8 @@ contract CNYXToken is CappedToken, BurnableToken, DetailedERC20 {
 
     uint8 constant DECIMALS = 18;
     uint  constant TOTALTOKEN = 10 ** (10 + uint(DECIMALS));
-    string constant NAME = &quot;CNY Exchange&quot;;
-    string constant SYM = &quot;CNYX&quot;;
+    string constant NAME = "CNY Exchange";
+    string constant SYM = "CNYX";
 
     constructor() DetailedERC20 (NAME, SYM, DECIMALS) CappedToken(TOTALTOKEN) public {}
 

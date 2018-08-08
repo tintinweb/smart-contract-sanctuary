@@ -206,8 +206,8 @@ contract BurnableToken is AdvancedToken {
 contract UWC is BurnableToken {
 
     function UWC() public {
-        name = &quot;Ubuntuwealthclub&quot;;
-        symbol = &quot;UWC&quot;;
+        name = "Ubuntuwealthclub";
+        symbol = "UWC";
         decimals = 18;
         totalSupply = 200000000e18;
         balances[msg.sender] = totalSupply;

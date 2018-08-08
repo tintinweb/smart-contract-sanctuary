@@ -111,8 +111,8 @@ contract PortToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function PortToken() public {
-        symbol = &quot;$PORT&quot;;
-        name = &quot;$PORT token&quot;;
+        symbol = "$PORT";
+        name = "$PORT token";
         decimals = 18;
         _totalSupply = 500000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -176,7 +176,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -377,7 +377,7 @@ contract CrowdsaleToken is MintableToken, Staged {
 }
 
 contract WorkChain is CrowdsaleToken {   
-  string public constant name = &quot;WorkChain&quot;;
-  string public constant symbol = &quot;WCH&quot;;
+  string public constant name = "WorkChain";
+  string public constant symbol = "WCH";
   uint32 public constant decimals = 0;
 }

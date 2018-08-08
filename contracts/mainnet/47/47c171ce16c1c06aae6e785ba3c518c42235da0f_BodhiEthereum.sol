@@ -239,8 +239,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract BodhiEthereum is MintableToken {
     // Token configurations
-    string public constant name = &quot;Bodhi Ethereum&quot;;
-    string public constant symbol = &quot;BOE&quot;;
+    string public constant name = "Bodhi Ethereum";
+    string public constant symbol = "BOE";
     uint256 public constant decimals = 8;
 
     constructor() Ownable(msg.sender) public {

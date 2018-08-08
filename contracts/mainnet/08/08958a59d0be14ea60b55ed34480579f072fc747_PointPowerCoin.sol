@@ -107,8 +107,8 @@ contract PointPowerCoin is ERC20, Ownable, Pausable {
     mapping(address => mapping(address => uint256)) internal allowed;
 
     function PointPowerCoin() public {
-        name = &quot;PointPowerCoin&quot;;
-        symbol = &quot;PWR&quot;;
+        name = "PointPowerCoin";
+        symbol = "PWR";
         decimals = 18;
         initialSupply = 50000000000;
         totalSupply_ = initialSupply * 10 ** uint(decimals);

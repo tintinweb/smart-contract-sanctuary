@@ -204,7 +204,7 @@ contract RetailLoyaltySystemBase is ERC20 {
 
 contract RetailLoyaltySystemToken is RetailLoyaltySystemBase {
 
-    function RetailLoyaltySystemToken() RetailLoyaltySystemBase(500000000, &quot;RST Token&quot;, &quot;RST&quot;, 18) public {
+    function RetailLoyaltySystemToken() RetailLoyaltySystemBase(500000000, "RST Token", "RST", 18) public {
 
     }
 }

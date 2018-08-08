@@ -113,8 +113,8 @@ contract DHANACOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DHANACOIN() public {
-        symbol = &quot;DHX&quot;;
-        name = &quot;DHANA COIN&quot;;
+        symbol = "DHX";
+        name = "DHANA COIN";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xa8ec2e3E55f3ed24350fB5e2BE515ca2C61EDa86] = _totalSupply;

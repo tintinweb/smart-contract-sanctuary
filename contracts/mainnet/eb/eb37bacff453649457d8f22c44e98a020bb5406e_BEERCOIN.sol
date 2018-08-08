@@ -109,8 +109,8 @@ contract BEERCOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BEERCOIN() public {
-        symbol = &quot;BRCN&quot;;
-        name = &quot;BEERCOIN&quot;;
+        symbol = "BRCN";
+        name = "BEERCOIN";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x00Df73B35c49BDAf16Aa3Fbd431ce33a3646dFeC] = _totalSupply;

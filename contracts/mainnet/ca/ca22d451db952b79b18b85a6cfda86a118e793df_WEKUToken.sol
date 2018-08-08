@@ -162,8 +162,8 @@ contract TokenERC20 {
 
 contract WEKUToken is Owned, TokenERC20 {
     
-    string public constant TOKEN_SYMBOL  = &quot;WEKU&quot;; 
-    string public constant TOKEN_NAME    = &quot;WEKU Token&quot;;  
+    string public constant TOKEN_SYMBOL  = "WEKU"; 
+    string public constant TOKEN_NAME    = "WEKU Token";  
     uint public constant INITIAL_SUPPLLY = 4 * 10 ** 8; 
 
     uint256 deployedTime;   // the time this constract is deployed.
@@ -219,7 +219,7 @@ contract WEKUToken is Owned, TokenERC20 {
     }
 
     /// @notice batch assign tokens to users registered in airdrops
-    /// @param earlyBirds address[] format in wallet: [&quot;address1&quot;, &quot;address2&quot;, ...]
+    /// @param earlyBirds address[] format in wallet: ["address1", "address2", ...]
     /// @param amount without decimal amount: 10**18
     function assignToEarlyBirds(address[] earlyBirds, uint256 amount) onlyOwner public {
         require(amount > 0);

@@ -175,10 +175,10 @@ contract IcoToken is SafeMath, StandardToken, Pausable {
 
   function IcoToken() {
 
-    name = &quot;ZION Token&quot;;
-    symbol = &quot;ZION&quot;;
+    name = "ZION Token";
+    symbol = "ZION";
     decimals = 18;
-    version = &quot;1.0&quot;;
+    version = "1.0";
     developer_BSR = 0xAEf46875Eb00Ce14B5830b8de2e05aB79dC625d9;
     developer_EKN = 0x1dEB6F7f7F2c4807cE287A8627681044547AB00A;
 
@@ -255,9 +255,9 @@ contract IcoContract is SafeMath, Pausable {
   {
     ethFundDeposit = _ethFundDeposit;         //ETH deposit Address
     tokenAddress = _tokenAddress;             //ERC20 Token address
-    tokenCreationCap = _tokenCreationCap;     //&quot;100000000000000000000000000&quot;, // 100.000.000 Token
-    tokenExchangeRate = _tokenExchangeRate;   //&quot;5000&quot;, // Rate: 1 ETH = 5000 Token
-    fundingStartTime = _fundingStartTime;     //&quot;1519862400&quot;, // StartTime 01/03/2018 (unixtimestamp.com)
+    tokenCreationCap = _tokenCreationCap;     //"100000000000000000000000000", // 100.000.000 Token
+    tokenExchangeRate = _tokenExchangeRate;   //"5000", // Rate: 1 ETH = 5000 Token
+    fundingStartTime = _fundingStartTime;     //"1519862400", // StartTime 01/03/2018 (unixtimestamp.com)
     ico = IcoToken(tokenAddress);
     isFinalized = false;
 

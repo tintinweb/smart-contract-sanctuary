@@ -139,9 +139,9 @@ contract BlockworqCredit is ERC20Interface, Owned {
 
     constructor() public {
 
-        symbol = &quot;BWC&quot;;
+        symbol = "BWC";
 
-        name = &quot;Blockworq Credit&quot;;
+        name = "Blockworq Credit";
 
         decimals = 9;
 

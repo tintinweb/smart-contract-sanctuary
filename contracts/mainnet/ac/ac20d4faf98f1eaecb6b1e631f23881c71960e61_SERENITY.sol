@@ -62,8 +62,8 @@ contract SERENITY is ERC20 {
     
     uint256 public totalSupply = 2000000000 * 10**8;
 
-    function name() public constant returns (string) { return &quot;SERENITY&quot;; }
-    function symbol() public constant returns (string) { return &quot;SRNT&quot;; }
+    function name() public constant returns (string) { return "SERENITY"; }
+    function symbol() public constant returns (string) { return "SRNT"; }
     function decimals() public constant returns (uint8) { return 8; }
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);

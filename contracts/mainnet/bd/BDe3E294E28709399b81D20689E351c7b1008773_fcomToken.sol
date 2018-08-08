@@ -116,8 +116,8 @@ contract fcomToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function fcomToken() public {
-        symbol = &quot;FCOM&quot;;
-        name = &quot;FCOM Token&quot;;
+        symbol = "FCOM";
+        name = "FCOM Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

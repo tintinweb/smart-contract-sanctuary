@@ -469,7 +469,7 @@ contract ZethrBankroll {
     
     // Legit sweaty palms when writing this
     // AUDIT AUDIT AUDIT
-    // Should withdraw &quot;amount&quot; to whitelisted contracts only!
+    // Should withdraw "amount" to whitelisted contracts only!
     // Should block withdraws greater than MAX_WITHDRAW_PCT_TX of balance.
     function contractWithdraw(uint amount) public 
         onlyWhiteListedContract

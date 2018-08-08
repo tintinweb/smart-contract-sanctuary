@@ -113,8 +113,8 @@ contract QuarkChain is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function QuarkChain() public {
-        symbol = &quot;QKC&quot;;
-        name = &quot;QuarkChain&quot;;
+        symbol = "QKC";
+        name = "QuarkChain";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x8907a6757AfcA5276Cfca544671e9AAA98AbE2be] = _totalSupply;

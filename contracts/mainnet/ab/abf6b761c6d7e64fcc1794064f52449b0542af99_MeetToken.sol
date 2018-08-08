@@ -64,8 +64,8 @@ contract MeetTokenBase {
 }
 
 contract MeetToken is MeetTokenBase {
-    string  public  symbol = &quot;MEET&quot;;
-    string  public name = &quot;MeetOne Coin&quot;;
+    string  public  symbol = "MEET";
+    string  public name = "MeetOne Coin";
     uint256  public  decimals = 18; 
     address public owner;
 

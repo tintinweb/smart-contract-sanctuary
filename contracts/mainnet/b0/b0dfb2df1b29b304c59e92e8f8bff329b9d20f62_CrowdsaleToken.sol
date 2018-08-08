@@ -76,7 +76,7 @@ contract ERC165Query {
         bytes4 erc165ID = ERC165ID;
 
         assembly {
-                let x := mload(0x40)               // Find empty storage location using &quot;free memory pointer&quot;
+                let x := mload(0x40)               // Find empty storage location using "free memory pointer"
                 mstore(x, erc165ID)                // Place signature at begining of empty storage
                 mstore(add(x, 0x04), _interfaceId) // Place first argument directly next to signature
 
@@ -437,8 +437,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract CrowdsaleToken is ReleasableToken, MintableToken {
 
-  string public name = &quot;KINWA Token&quot;;
-  string public symbol = &quot;KINWA&quot;;
+  string public name = "KINWA Token";
+  string public symbol = "KINWA";
   uint public decimals = 8;
     
   function CrowdsaleToken() public {

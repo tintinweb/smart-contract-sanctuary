@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	FederalGrid_20210416_i				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	FederalGrid_20210416_i		&quot;	;
-	string	public	constant	symbol =	&quot;	FEDGRI		&quot;	;
+	string	public	constant	name =	"	FederalGrid_20210416_i		"	;
+	string	public	constant	symbol =	"	FEDGRI		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

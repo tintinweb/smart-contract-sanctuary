@@ -109,8 +109,8 @@ contract NCO is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NCO() public {
-        symbol = &quot;NCO&quot;;
-        name = &quot;NoneCoin&quot;;
+        symbol = "NCO";
+        name = "NoneCoin";
         decimals = 18;
         _totalSupply = 30000000000000000000000000;
         balances[0x8f2117470c93c025E0D547e42329BA321E485401] = _totalSupply;

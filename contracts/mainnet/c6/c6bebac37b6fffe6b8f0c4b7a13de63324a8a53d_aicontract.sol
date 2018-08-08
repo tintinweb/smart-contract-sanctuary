@@ -113,8 +113,8 @@ contract aicontract is UnboundedRegularToken {
 
     uint public totalSupply = 100000000000000000;
     uint8 constant public decimals = 8;
-    string constant public name = &quot;aicn&quot;;
-    string constant public symbol = &quot;aicn&quot;;
+    string constant public name = "aicn";
+    string constant public symbol = "aicn";
 
     function aicontract() {
         balances[msg.sender] = totalSupply;

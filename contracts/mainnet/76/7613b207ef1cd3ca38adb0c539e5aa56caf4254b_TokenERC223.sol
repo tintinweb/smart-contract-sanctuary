@@ -87,8 +87,8 @@ contract TokenERC223 is Owned{
 
     // Public variables of the token
 
-    string  public name=&quot;Littafi Token&quot;;
-    string  public symbol=&quot;LITT&quot;;
+    string  public name="Littafi Token";
+    string  public symbol="LITT";
     uint8   public decimals = 18;// 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply=1000000000; //1,000,000,000 tokens
     address[] public littHolders;
@@ -300,7 +300,7 @@ contract TokenERC223 is Owned{
     function destroyContract() public onlyOwner {
        selfdestruct(owner);
        transferOwnership(0x0);
-       emit LogContractDestroyed(this, &quot;Contract has been destroyed&quot;);
+       emit LogContractDestroyed(this, "Contract has been destroyed");
    }
    
     function getEthRate(uint256 _value) private pure returns(uint256){

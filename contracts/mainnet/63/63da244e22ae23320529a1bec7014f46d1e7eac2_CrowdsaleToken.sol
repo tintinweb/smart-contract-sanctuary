@@ -234,8 +234,8 @@ contract CrowdsaleToken is StandardToken {
     
     address public owner;
     
-    string public constant symbol = &quot;DHX&quot;;
-    string public constant name = &quot;Diamond Horse Mining Co-Op&quot;;
+    string public constant symbol = "DHX";
+    string public constant name = "Diamond Horse Mining Co-Op";
     uint8 public constant decimals = 18;
     
     

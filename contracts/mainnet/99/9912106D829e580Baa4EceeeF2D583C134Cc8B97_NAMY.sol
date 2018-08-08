@@ -237,9 +237,9 @@ contract StandardToken is IERC20,DateTimeLib {
 
     mapping(address => mapping(address => uint256)) allowed;
     
-    string public constant symbol = &quot;NAMY&quot;;
+    string public constant symbol = "NAMY";
     
-    string public constant name = &quot;NamyChain Token&quot;;
+    string public constant name = "NamyChain Token";
     
     uint _totalSupply = 1000000000 * 10 ** 8;
     

@@ -48,9 +48,9 @@ library SafeMath {
 contract HelloToken {
     using SafeMath for uint256;
     // Public variables of the token
-    string public constant name    = &quot;Hello Token&quot;;  //The Token&#39;s name
+    string public constant name    = "Hello Token";  //The Token&#39;s name
     uint8 public constant decimals = 18;               //Number of decimals of the smallest unit
-    string public constant symbol  = &quot;HelloT&quot;;            //An identifier    
+    string public constant symbol  = "HelloT";            //An identifier    
     // 18 decimals is the strongly suggested default, avoid changing it
     
     // packed to 256bit to save gas usage.

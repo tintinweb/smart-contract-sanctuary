@@ -165,8 +165,8 @@ contract FootballerBase is FootballerAccessControl {
 
 contract FootballerOwnership is FootballerBase, ERC721 {
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant name = &quot;CyptoWorldCup&quot;;
-  string public constant symbol = &quot;CWC&quot;;
+  string public constant name = "CyptoWorldCup";
+  string public constant symbol = "CWC";
 
 
   function implementsERC721() public pure returns (bool) {

@@ -110,9 +110,9 @@ contract SicBo is Owned {
         
         require(local_.Time != 0 && !local_.isPlay);
         
-        uint dice1 = uint(keccak256(&quot;Pig World ia a Awesome game place&quot;, local_.SecretKey_P, secretKey_D)) % 6 + 1;
-        uint dice2 = uint(keccak256(secretKey_D, &quot;So you will like us so much!!!!&quot;, local_.SecretKey_P)) % 6 + 1;
-        uint dice3 = uint(keccak256(local_.SecretKey_P, secretKey_D, &quot;Don&#39;t think this is unfair&quot;, &quot;Our game are always provably fair...&quot;)) % 6 + 1;
+        uint dice1 = uint(keccak256("Pig World ia a Awesome game place", local_.SecretKey_P, secretKey_D)) % 6 + 1;
+        uint dice2 = uint(keccak256(secretKey_D, "So you will like us so much!!!!", local_.SecretKey_P)) % 6 + 1;
+        uint dice3 = uint(keccak256(local_.SecretKey_P, secretKey_D, "Don&#39;t think this is unfair", "Our game are always provably fair...")) % 6 + 1;
     
         uint amount = 0;
         uint total = dice1 + dice2 + dice3;

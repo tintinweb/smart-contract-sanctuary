@@ -72,8 +72,8 @@ contract GoWalletToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;GoWalletToken&quot;;
-    string public constant symbol = &quot;GWT&quot;;
+    string public constant name = "GoWalletToken";
+    string public constant symbol = "GWT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000e8;

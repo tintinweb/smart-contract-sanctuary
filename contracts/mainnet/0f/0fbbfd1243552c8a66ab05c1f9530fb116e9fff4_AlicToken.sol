@@ -99,8 +99,8 @@ contract AlicToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AlicToken() public {
-        symbol = &quot;ALIC&quot;;
-        name = &quot;Alicoin&quot;;
+        symbol = "ALIC";
+        name = "Alicoin";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0xCD4a930885E031Bd49BA51DC9293D05FC232C23C] = _totalSupply;

@@ -113,8 +113,8 @@ contract BitShopperToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitShopperToken() public {
-        symbol = &quot;BST&quot;;
-        name = &quot;Bit Shopper Token&quot;;
+        symbol = "BST";
+        name = "Bit Shopper Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xefA69F23B6B500f4a510Cb652403E24FBAb6e21E] = _totalSupply;

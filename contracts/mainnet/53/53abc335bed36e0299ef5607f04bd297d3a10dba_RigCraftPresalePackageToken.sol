@@ -100,8 +100,8 @@ contract RigCraftPresalePackageToken is ERC721Basic, Administration, ERC721Metad
     RigCraftPresalePackageManager private presaleHandler;
     string URIBase;
     
-    string public constant name = &quot;RigCraftPresalePackage&quot;;
-    string public constant symbol = &quot;RCPT&quot;;
+    string public constant name = "RigCraftPresalePackage";
+    string public constant symbol = "RCPT";
     
     function SetPresaleHandler(address addr) external onlyOwner
     {
@@ -201,7 +201,7 @@ contract RigCraftPresalePackageToken is ERC721Basic, Administration, ERC721Metad
     isActive
     isOpen
     {
-        safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+        safeTransferFrom(_from, _to, _tokenId, "");
     }
 
     function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes _data)
@@ -282,7 +282,7 @@ contract RigCraftPresalePackageToken is ERC721Basic, Administration, ERC721Metad
     
     function uint2str(uint256 i) internal pure returns (string)
     {
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint length;
         while (j != 0){

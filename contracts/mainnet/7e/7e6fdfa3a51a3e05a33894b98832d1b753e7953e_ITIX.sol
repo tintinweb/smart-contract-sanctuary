@@ -140,7 +140,7 @@ contract StandardToken is ERC20, BasicToken {
  
 /*
 The Ownable contract has an owner address, and provides basic authorization control
- functions, this simplifies the implementation of &quot;user permissions&quot;.
+ functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -200,8 +200,8 @@ contract TheLiquidToken is StandardToken, Ownable {
 }
     
 contract ITIX is TheLiquidToken {
-  string public constant name = &quot;iTicket&quot;;
-      string public constant symbol = &quot;ITIX&quot;;
+  string public constant name = "iTicket";
+      string public constant symbol = "ITIX";
   uint public constant decimals = 0;
   uint256 public initialSupply = 100000000;
     

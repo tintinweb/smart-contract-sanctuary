@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract UNPC is StandardToken, Ownable {
 
-    string public constant name = &quot;优乐宝&quot;;
-    string public constant symbol = &quot;UNPC&quot;;
+    string public constant name = "优乐宝";
+    string public constant symbol = "UNPC";
     uint256 public constant decimals = 8;
 
     function UNPC() public {

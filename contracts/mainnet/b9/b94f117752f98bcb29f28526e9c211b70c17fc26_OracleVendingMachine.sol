@@ -401,7 +401,7 @@ contract OracleVendingMachine {
     require(oracleProposed[msg.sender][taker][index].fee >  0);
     require(oracleDeployed[msg.sender][taker][index] == address(0));
     proposal memory oracleProposal = oracleProposed[msg.sender][taker][index];
-    oracleProposed[msg.sender][taker][index].hash = &quot;&quot;;
+    oracleProposed[msg.sender][taker][index].hash = "";
     oracleProposed[msg.sender][taker][index].fee = 0;
     oracleProposed[msg.sender][taker][index].oracleMasterCopy = address(0);
 

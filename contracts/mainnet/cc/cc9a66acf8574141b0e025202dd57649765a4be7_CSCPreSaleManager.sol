@@ -344,8 +344,8 @@ contract CSCPreSaleItemBase is ERC721, OperationalControl, StringHelpers {
     /*** CONSTANTS ***/
     
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant NAME = &quot;CSCPreSaleFactory&quot;;
-    string public constant SYMBOL = &quot;CSCPF&quot;;
+    string public constant NAME = "CSCPreSaleFactory";
+    string public constant SYMBOL = "CSCPF";
     bytes4 constant InterfaceSignature_ERC165 = bytes4(keccak256(&#39;supportsInterface(bytes4)&#39;));
     bytes4 constant InterfaceSignature_ERC721 =
         bytes4(keccak256(&#39;name()&#39;)) ^
@@ -430,7 +430,7 @@ contract CSCPreSaleItemBase is ERC721, OperationalControl, StringHelpers {
     function setMaxLimit(string _collectibleName, uint256 _collectibleType, uint256 _collectibleClass, uint256 _maxLimit) external onlyManager whenNotPaused {
         require(_maxLimit > 0);
         require(_collectibleType >= 0 && _collectibleClass >= 0);
-        require(stringToBytes32(_collectibleName) != stringToBytes32(&quot;&quot;));
+        require(stringToBytes32(_collectibleName) != stringToBytes32(""));
 
         require(!preSaleItemTypeToClassToMaxLimitSet[_collectibleType][_collectibleClass]);
         preSaleItemTypeToClassToMaxLimit[_collectibleType][_collectibleClass] = _maxLimit;
@@ -804,7 +804,7 @@ contract CSCPreSaleManager is CSCPreSaleItemBase {
         CSCPreSaleInit = true;
         
         //Fill in index 0 to null requests
-        CSCPreSaleItem memory _Obj = CSCPreSaleItem(0, stringToBytes32(&quot;DummyAsset&quot;), 0, 0, address(this), true);
+        CSCPreSaleItem memory _Obj = CSCPreSaleItem(0, stringToBytes32("DummyAsset"), 0, 0, address(this), true);
         allPreSaleItems.push(_Obj);
     }
 

@@ -32,8 +32,8 @@ contract ECT7 {
     ) public {
         totalSupply = 100000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;ECT7&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ECT7&quot;;                               // Set the symbol for display purposes
+        name = "ECT7";                                   // Set the name for display purposes
+        symbol = "ECT7";                               // Set the symbol for display purposes
     }
 
     /**

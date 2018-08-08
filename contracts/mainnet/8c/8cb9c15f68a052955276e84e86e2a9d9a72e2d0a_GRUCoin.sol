@@ -111,8 +111,8 @@ contract GRUCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GRUCoin() public {
-        symbol = &quot;GRU&quot;;
-        name = &quot;GRUCoin&quot;;
+        symbol = "GRU";
+        name = "GRUCoin";
         decimals = 18;
         _totalSupply = 200000000000000000000000000;
         balances[0x0009a899437cFfdBA5eE7cF5Ab0cA8Ce278589aB] = _totalSupply;

@@ -29,7 +29,7 @@ contract LegalDocument {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -338,8 +338,8 @@ contract MintableToken is StandardToken, Ownable {
 contract P4RTYToken is MintableToken {
 
     // solium-disable-next-line uppercase
-    string public constant name = &quot;P4RTY&quot;;
-    string public constant symbol = &quot;P4RTY&quot;; // solium-disable-line uppercase
+    string public constant name = "P4RTY";
+    string public constant symbol = "P4RTY"; // solium-disable-line uppercase
     uint8 public constant decimals = 18; // solium-disable-line uppercase
     address public legalContract;
 

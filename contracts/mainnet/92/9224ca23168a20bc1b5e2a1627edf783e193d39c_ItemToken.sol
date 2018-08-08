@@ -208,11 +208,11 @@ contract ItemToken {
   }
 
   function name() public pure returns (string _name) {
-    return &quot;CryptoLeaders.app&quot;;
+    return "CryptoLeaders.app";
   }
 
   function symbol() public pure returns (string _symbol) {
-    return &quot;CLS&quot;;
+    return "CLS";
   }
 
   function totalSupply() public view returns (uint256 _totalSupply) {

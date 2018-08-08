@@ -273,10 +273,10 @@ contract ApodTokenContract is ERC20Token {
     * @dev Intialises token and all the necesary variable
     */
    function ApodTokenContract() public {
-        name = &quot;Airpod token&quot;;
-        symbol = &quot;APOD&quot;;
+        name = "Airpod token";
+        symbol = "APOD";
         decimals = 18;
         mintingContract = 0xE7c79DEB6A9b74F691D5F882B7C588BbA5db1A20; // TO-DO: Set contract that can mint tokens
-        lockFromSelf(0, &quot;Lock before crowdsale starts&quot;);
+        lockFromSelf(0, "Lock before crowdsale starts");
     }
 }

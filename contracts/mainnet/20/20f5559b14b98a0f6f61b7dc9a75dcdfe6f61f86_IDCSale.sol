@@ -205,8 +205,8 @@ contract IDCToken is BurnableToken, Pausable, Saleable {
   event TokenRelease(address caller, uint256 time);
 
   constructor(address _team, address _sale, address _mine) public {
-    name = &quot;IDC Token&quot;;
-    symbol = &quot;IT&quot;;
+    name = "IDC Token";
+    symbol = "IT";
     decimals = 18;
     totalSupply = 3*10**9*10**uint256(decimals); //3 billion        
     

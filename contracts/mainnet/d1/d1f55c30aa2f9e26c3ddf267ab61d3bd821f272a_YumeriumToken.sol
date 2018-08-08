@@ -44,9 +44,9 @@ contract TokenERC20 {
 
     // Public variables of the token
 
-    string public name = &quot;Yumerium Token&quot;;
+    string public name = "Yumerium Token";
 
-    string public symbol = &quot;YUM&quot;;
+    string public symbol = "YUM";
 
     uint8 public decimals = 8;
 

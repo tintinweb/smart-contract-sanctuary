@@ -113,8 +113,8 @@ contract GrowGuildToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GrowGuildToken() public {
-        symbol = &quot;GGCT&quot;;
-        name = &quot;Grow Guild Token&quot;;
+        symbol = "GGCT";
+        name = "Grow Guild Token";
         decimals = 18;
         _totalSupply = 8000000000000000000000000;
         balances[0xbAd0a38eE437201B62Bcc64599CF380699b90cBE] = _totalSupply;

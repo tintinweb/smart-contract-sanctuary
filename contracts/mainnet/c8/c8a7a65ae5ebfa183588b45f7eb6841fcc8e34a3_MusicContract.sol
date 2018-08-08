@@ -290,7 +290,7 @@ contract MusicContract {
         //doing musician payout
         token.mint(wallet,musicObj.musician,musicianPayout);
         musicObj.amountToBePaid = musicObj.amountToBePaid.sub(musicianPayout);
-        //logString(&quot;musician payout done&quot;);
+        //logString("musician payout done");
         
         //catering for system payout - not doing manual transfer as all the tokens are already in the wallet
         musicObj.amountToBePaid = musicObj.amountToBePaid.sub(systemPayout);
@@ -348,10 +348,10 @@ contract MusicContract {
     {
         require(musicList[musId].musicId == musId);
         require(musicList[musId].isUnlocked == false);
-        //logString(&quot;music found&quot;);
+        //logString("music found");
         voter = Voter({publicKey: voterPublicKey, amountEarned : 0});
         musicVoterList[musId].push(voter);
-        //logString(&quot;voter added&quot;);
+        //logString("voter added");
     }
     function unlockVoterMusic(uint musId) public
     {

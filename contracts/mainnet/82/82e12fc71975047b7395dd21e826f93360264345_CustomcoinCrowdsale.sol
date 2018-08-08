@@ -381,7 +381,7 @@ contract Customcoin is PausableToken {
 
     /**
         @dev mass transfer
-        @param _holders addresses of the owners to be notified [&quot;address_1&quot;, &quot;address_2&quot;, ..]
+        @param _holders addresses of the owners to be notified ["address_1", "address_2", ..]
      */
     function massTransfer(address [] _holders, uint256 [] _payments)
         public
@@ -402,10 +402,10 @@ contract Customcoin is PausableToken {
     */
     function Customcoin() public
     {
-        name = &quot;Customcoin&quot;;
-        symbol = &quot;CSTM&quot;;
+        name = "Customcoin";
+        symbol = "CSTM";
         decimals = 18;
-        version = &quot;1.3&quot;;
+        version = "1.3";
         issue(this, 1e7 * 1e18);
     }
 
@@ -671,7 +671,7 @@ contract CustomcoinCrowdsale is Ownable, SafeMath, Helper {
 
         if (saleIsOn() == true) {
             address(tokenAddress).transfer(msg.value); // transfer to the general contract
-            paymentManager(&quot;eth&quot;, msg.sender, toString(tx.origin), msg.value, msg.value);
+            paymentManager("eth", msg.sender, toString(tx.origin), msg.value, msg.value);
             receivedETH = add(receivedETH, msg.value);
         } else {
             revert();

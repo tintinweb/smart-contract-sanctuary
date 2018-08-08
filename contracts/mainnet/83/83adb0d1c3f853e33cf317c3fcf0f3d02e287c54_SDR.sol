@@ -50,10 +50,10 @@ contract SDR {
         initialSupply = 9000000000;
         totalSupply = initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Self Drive Rental&quot;;                                   // Set the name for display purposes
-        tokenName = &quot;Seld Drive Rental&quot;;                                   // Set the name for display purposes
-        tokenSymbol = &quot;SDR&quot;;                               // Set the symbol for display purposes
-        symbol = &quot;SDR&quot;;
+        name = "Self Drive Rental";                                   // Set the name for display purposes
+        tokenName = "Seld Drive Rental";                                   // Set the name for display purposes
+        tokenSymbol = "SDR";                               // Set the symbol for display purposes
+        symbol = "SDR";
         
     }
 

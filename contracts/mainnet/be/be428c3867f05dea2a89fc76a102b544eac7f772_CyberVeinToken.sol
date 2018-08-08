@@ -112,8 +112,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 contract CyberVeinToken is StandardToken {
 
-  string public constant name = &quot;CyberVeinToken&quot;;
-  string public constant symbol = &quot;CVT&quot;;
+  string public constant name = "CyberVeinToken";
+  string public constant symbol = "CVT";
   uint8 public constant decimals = 18;
 
   uint256 public constant TOTAL_SUPPLY = 2 ** 31 * (10 ** uint256(decimals));

@@ -3,7 +3,7 @@ pragma solidity 0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -382,7 +382,7 @@ contract RequestCore is Administrable {
     uint96 public numRequests; 
     
     // Mapping of all the Requests. The key is the request ID.
-    // not anymore public to avoid &quot;UnimplementedFeatureError: Only in-memory reference type can be stored.&quot;
+    // not anymore public to avoid "UnimplementedFeatureError: Only in-memory reference type can be stored."
     // https://github.com/ethereum/solidity/issues/3577
     mapping(bytes32 => Request) requests;
 
@@ -446,7 +446,7 @@ contract RequestCore is Administrable {
         // Declare the new request
         Created(requestId, mainPayee, _payer, _creator, _data);
         
-        // Store and declare the sub payees (needed in internal function to avoid &quot;stack too deep&quot;)
+        // Store and declare the sub payees (needed in internal function to avoid "stack too deep")
         initSubPayees(requestId, _payees, _expectedAmounts);
 
         return requestId;
@@ -1143,7 +1143,7 @@ contract RequestEthereum is RequestEthereumCollect {
      * @return Returns the id of the request
      */
     function broadcastSignedRequestAsPayer(
-        bytes       _requestData, // gather data to avoid &quot;stack too deep&quot;
+        bytes       _requestData, // gather data to avoid "stack too deep"
         address[]   _payeesPaymentAddress,
         uint256[]   _payeeAmounts,
         uint256[]   _additionals,
@@ -1614,7 +1614,7 @@ contract RequestEthereum is RequestEthereumCollect {
         returns (bool)
     {
         return signer == ecrecover(
-            keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),
+            keccak256("\x19Ethereum Signed Message:\n32", hash),
             v,
             r,
             s
@@ -1653,7 +1653,7 @@ contract RequestEthereum is RequestEthereumCollect {
     {
         bytes32 hash = getRequestHash(_requestData, _payeesPaymentAddress, _expirationDate);
 
-        // extract &quot;v, r, s&quot; from the signature
+        // extract "v, r, s" from the signature
         uint8 v = uint8(_signature[64]);
         v = v < 27 ? v.add(27) : v;
         bytes32 r = extractBytes32(_signature, 0);

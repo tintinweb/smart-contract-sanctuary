@@ -4,8 +4,8 @@ interface DVCRecipient { function receiveApproval(address _from, uint256 _value,
 
 contract DVCToken {
     // Public variables of the token
-    string public name = &quot;DivinumCoin&quot;;
-    string public symbol = &quot;DVC&quot;;
+    string public name = "DivinumCoin";
+    string public symbol = "DVC";
     uint8 public decimals = 8;
     uint256 public initialSupply = 100000000;
     // 18 decimals is the strongly suggested default, avoid changing it

@@ -32,8 +32,8 @@ contract LTCoin {
     ) public {
         totalSupply = 10000000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;LTCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;LTC&quot;;                               // Set the symbol for display purposes
+        name = "LTCoin";                                   // Set the name for display purposes
+        symbol = "LTC";                               // Set the symbol for display purposes
     }
 
     /**

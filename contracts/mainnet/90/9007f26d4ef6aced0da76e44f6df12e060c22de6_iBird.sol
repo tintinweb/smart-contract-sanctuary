@@ -72,8 +72,8 @@ contract iBird is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;iBird&quot;;
-    string public constant symbol = &quot;IBI&quot;;
+    string public constant name = "iBird";
+    string public constant symbol = "IBI";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 30000000000e8;

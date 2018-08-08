@@ -81,8 +81,8 @@ contract MannaCoin is ERC20Interface, Owned{
     // Constructor
     // ------------------------------------------------------------------------
     function MannaCoin(address _owner,address _wallet) public{
-        symbol = &quot;MAN&quot;;
-        name = &quot;MANNA TOKEN&quot;;
+        symbol = "MAN";
+        name = "MANNA TOKEN";
         decimals = 18;
         rate = 600;
         wallet = _wallet;

@@ -16,8 +16,8 @@ interface ERC20 {
 
 contract Goo is ERC20 {
     
-    string public constant name  = &quot;ProofOfDev&quot;;
-    string public constant symbol = &quot;DevToken&quot;;
+    string public constant name  = "ProofOfDev";
+    string public constant symbol = "DevToken";
     uint8 public constant decimals = 0;
     uint256 private roughSupply;
     

@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -670,8 +670,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract Gold is StandardToken, Claimable, AccessMint {
 
-  string public constant name = &quot;Gold&quot;;
-  string public constant symbol = &quot;G&quot;;
+  string public constant name = "Gold";
+  string public constant symbol = "G";
   uint8 public constant decimals = 18;
 
   // Event that is fired when minted.
@@ -704,8 +704,8 @@ contract Gold is StandardToken, Claimable, AccessMint {
  */
 contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessDeploy, AccessDeposit {
 
-  string public constant name = &quot;CryptoSaga Hero&quot;;
-  string public constant symbol = &quot;HERO&quot;;
+  string public constant name = "CryptoSaga Hero";
+  string public constant symbol = "HERO";
   
   struct HeroClass {
     // ex) Soldier, Knight, Fighter...
@@ -994,11 +994,11 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
 
     // Initial heroes.
     // Name, Rank, Race, Age, Type, Max Level, Aura, Stats.
-    defineType(&quot;Archangel&quot;, 4, 1, 13540, 0, 99, 3, [uint32(74), 75, 57, 99, 95], [uint32(8), 6, 8, 5, 5], [uint32(8), 10, 10, 6, 6]);
-    defineType(&quot;Shadowalker&quot;, 3, 4, 134, 1, 75, 4, [uint32(45), 35, 60, 80, 40], [uint32(3), 2, 10, 4, 5], [uint32(5), 5, 10, 7, 5]);
-    defineType(&quot;Pyromancer&quot;, 2, 0, 14, 2, 50, 1, [uint32(50), 28, 17, 40, 35], [uint32(5), 3, 2, 3, 3], [uint32(8), 4, 3, 4, 5]);
-    defineType(&quot;Magician&quot;, 1, 3, 224, 2, 30, 0, [uint32(35), 15, 25, 25, 30], [uint32(3), 1, 2, 2, 2], [uint32(5), 2, 3, 3, 3]);
-    defineType(&quot;Farmer&quot;, 0, 0, 59, 0, 15, 2, [uint32(10), 22, 8, 15, 25], [uint32(1), 2, 1, 1, 2], [uint32(1), 3, 1, 2, 3]);
+    defineType("Archangel", 4, 1, 13540, 0, 99, 3, [uint32(74), 75, 57, 99, 95], [uint32(8), 6, 8, 5, 5], [uint32(8), 10, 10, 6, 6]);
+    defineType("Shadowalker", 3, 4, 134, 1, 75, 4, [uint32(45), 35, 60, 80, 40], [uint32(3), 2, 10, 4, 5], [uint32(5), 5, 10, 7, 5]);
+    defineType("Pyromancer", 2, 0, 14, 2, 50, 1, [uint32(50), 28, 17, 40, 35], [uint32(5), 3, 2, 3, 3], [uint32(8), 4, 3, 4, 5]);
+    defineType("Magician", 1, 3, 224, 2, 30, 0, [uint32(35), 15, 25, 25, 30], [uint32(3), 1, 2, 2, 2], [uint32(5), 2, 3, 3, 3]);
+    defineType("Farmer", 0, 0, 59, 0, 15, 2, [uint32(10), 22, 8, 15, 25], [uint32(1), 2, 1, 1, 2], [uint32(1), 3, 1, 2, 3]);
   }
 
   // @dev Define a new hero type (class).
@@ -1062,7 +1062,7 @@ contract CryptoSagaHero is ERC721Token, Claimable, Pausable, AccessMint, AccessD
     // Temporary hero instance.
     HeroInstance memory _heroInstance = HeroInstance({
       heroClassId: _heroClassId,
-      heroName: &quot;&quot;,
+      heroName: "",
       currentLevel: 1,
       currentExp: 0,
       lastLocationId: 0,

@@ -113,8 +113,8 @@ contract PEPEso is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PEPEso() public {
-        symbol = &quot;PEPE&quot;;
-        name = &quot;PEPEso&quot;;
+        symbol = "PEPE";
+        name = "PEPEso";
         decimals = 0;
         _totalSupply = 246675000000000000000000;
         balances[0xC18Fe0a2B3E0eFE79CF16ba411e26116D812d7d3] = _totalSupply;

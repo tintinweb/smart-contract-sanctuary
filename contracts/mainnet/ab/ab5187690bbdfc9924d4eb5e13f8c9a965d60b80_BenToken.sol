@@ -1,8 +1,8 @@
 pragma solidity ^0.4.20;
 
 contract BenToken {
-    string public name=&quot;BenToken&quot;;
-    string public symbol=&quot;BenCoin&quot;;
+    string public name="BenToken";
+    string public symbol="BenCoin";
     uint8 public decimals=8;
 
     /* This creates an array with all balances */

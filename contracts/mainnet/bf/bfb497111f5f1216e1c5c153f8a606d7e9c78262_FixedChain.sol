@@ -220,8 +220,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract FixedChain is StandardToken {
-  string constant public name = &quot;Fixed Chain&quot;;
-  string constant public symbol = &quot;FIC&quot;;
+  string constant public name = "Fixed Chain";
+  string constant public symbol = "FIC";
   uint8 constant public decimals = 18;
   uint public totalSupply = 500000000000000000000000000;
 

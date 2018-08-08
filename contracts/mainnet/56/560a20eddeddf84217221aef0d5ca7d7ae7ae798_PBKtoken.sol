@@ -140,7 +140,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -488,8 +488,8 @@ contract TokenTimelock {
 // File: contracts/PBKtoken.sol
 
 contract PBKtoken is MintableToken, PausableToken, BurnableToken {
-  string public name = &quot;PlasmaBank token&quot;; 
-  string public symbol = &quot;PBK&quot;;
+  string public name = "PlasmaBank token"; 
+  string public symbol = "PBK";
   uint public decimals = 2;
 
   /// @dev whether an address is permitted to perform burn operations.

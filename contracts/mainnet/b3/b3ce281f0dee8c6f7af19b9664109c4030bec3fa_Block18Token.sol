@@ -160,8 +160,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract Block18Token is StandardToken, Ownable {
-    string  public  constant name = &quot;Block18&quot;;
-    string  public  constant symbol = &quot;18C&quot;;
+    string  public  constant name = "Block18";
+    string  public  constant symbol = "18C";
     uint    public  constant decimals = 18;
 
     bool public transferEnabled = true;

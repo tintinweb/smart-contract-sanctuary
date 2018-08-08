@@ -71,8 +71,8 @@ contract TokenICOGAT is StandarTokentokenGAT{
 	address owner = msg.sender;
 	
 	//Token Metadata
-	function name() constant returns (string) { return &quot;General Advertising Token&quot;; }
-	function symbol() constant returns (string) { return &quot;GAT&quot;; }
+	function name() constant returns (string) { return "General Advertising Token"; }
+	function symbol() constant returns (string) { return "GAT"; }
 	uint256 public constant decimals = 18;
 	
     //ICO Parameters
@@ -176,7 +176,7 @@ contract TokenICOGAT is StandarTokentokenGAT{
 	
 	/* 
      * When tokenSaleMin is not reach:
-     * 1) donors call the &quot;refund&quot; function of the GATCrowdFundingToken contract 
+     * 1) donors call the "refund" function of the GATCrowdFundingToken contract 
 	 */
 	function refund() public {
 	if(purchasingAllowed){revert();} // only refund after ico end

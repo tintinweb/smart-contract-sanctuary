@@ -113,8 +113,8 @@ contract VictorieumToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function VictorieumToken() public {
-        symbol = &quot;VTM&quot;;
-        name = &quot;Victorieum Token&quot;;
+        symbol = "VTM";
+        name = "Victorieum Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x465bab83076E2d7962Ea70e9543B861a3dE4440B] = _totalSupply;

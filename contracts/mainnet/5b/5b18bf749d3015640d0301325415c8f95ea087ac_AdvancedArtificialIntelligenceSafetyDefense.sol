@@ -23,8 +23,8 @@ contract AdvancedArtificialIntelligenceSafetyDefense{
     function AdvancedArtificialIntelligenceSafetyDefense() {
         balanceOf[msg.sender] =  960000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  960000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;AdvancedArtificialIntelligenceSafetyDefense&quot;;                                   // Set the name for display purposes
-        symbol = &quot;AISD&quot;;                               // Set the symbol for display purposes
+        name = "AdvancedArtificialIntelligenceSafetyDefense";                                   // Set the name for display purposes
+        symbol = "AISD";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

@@ -109,8 +109,8 @@ contract ELOT is ERC20Interface, Owned {
   function ELOT()
     public
   {
-    symbol = &quot;ELOT&quot;;
-    name = &quot;ELOT COIN&quot;;
+    symbol = "ELOT";
+    name = "ELOT COIN";
     decimals = 0;
     _totalSupply = 5000000000 ;
     balances[owner] = _totalSupply;
@@ -242,7 +242,7 @@ contract LOTTERY{
     function LOTTERY() payable public{
        owner  = msg.sender; 
    }
-   //&quot;0xff63212fa36420c22c6dac761a3f60d29fc1f32378a6451b291fdb540b152600&quot;,&quot;0xAfC28904Fc9fFbA207181e60a183716af4e5bce2&quot;
+   //"0xff63212fa36420c22c6dac761a3f60d29fc1f32378a6451b291fdb540b152600","0xAfC28904Fc9fFbA207181e60a183716af4e5bce2"
     function retrieve(bytes32 _id,address _tokenAddress)
     payable
     public

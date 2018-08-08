@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -631,13 +631,13 @@ contract RBAC {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * @dev This simplifies the implementation of &quot;user permissions&quot;.
+ * @dev This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable, RBAC {
   event WhitelistedAddressAdded(address addr);
   event WhitelistedAddressRemoved(address addr);
 
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if called by any account that&#39;s not whitelisted.

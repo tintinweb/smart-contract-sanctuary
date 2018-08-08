@@ -106,8 +106,8 @@ contract BETA is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BETA() public {
-        symbol = &quot;BETA&quot;;
-        name = &quot;Crypto Smart Beta&quot;;
+        symbol = "BETA";
+        name = "Crypto Smart Beta";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0xF7f522563d76C20fD88BE26771c880bF57BF7902] = _totalSupply;

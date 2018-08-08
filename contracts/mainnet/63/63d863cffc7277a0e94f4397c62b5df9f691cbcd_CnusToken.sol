@@ -154,7 +154,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -348,8 +348,8 @@ contract MintableToken is StandardToken, Ownable {
 contract CnusToken is MintableToken, LockableToken, BurnableToken {
     using SafeMath for uint256;
 
-    string public name = &quot;CoinUs&quot;;
-    string public symbol = &quot;CNUS&quot;;
+    string public name = "CoinUs";
+    string public symbol = "CNUS";
     uint256 public decimals = 18;
 
     // global token transfer lock

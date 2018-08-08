@@ -113,8 +113,8 @@ contract Fortune is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Fortune() public {
-        symbol = &quot;FTU&quot;;
-        name = &quot;Fortune Token&quot;;
+        symbol = "FTU";
+        name = "Fortune Token";
         decimals = 0;
         _totalSupply = 50000000000;
         balances[0x6b3CfF064bfdBFd8a12A364d6E3cB4865806a115] = _totalSupply;

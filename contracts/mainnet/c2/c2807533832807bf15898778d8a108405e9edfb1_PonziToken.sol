@@ -90,9 +90,9 @@ contract PonziToken is ERC20, ERC677Token {
   // we need returns string representation of state
   // because enums are not supported by the ABI, they are just supported by Solidity.
   // see: http://solidity.readthedocs.io/en/develop/frequently-asked-questions.html#if-i-return-an-enum-i-only-get-integer-values-in-web3-js-how-to-get-the-named-values
-  string private constant PRE_SALE_STR = &quot;PreSale&quot;;
-  string private constant SALE_STR = &quot;Sale&quot;;
-  string private constant PUBLIC_USE_STR = &quot;PublicUse&quot;;
+  string private constant PRE_SALE_STR = "PreSale";
+  string private constant SALE_STR = "Sale";
+  string private constant PUBLIC_USE_STR = "PublicUse";
   State private m_state;
 
   uint256 private constant DURATION_TO_ACCESS_FOR_OWNER = 144 days;
@@ -166,8 +166,8 @@ contract PonziToken is ERC20, ERC677Token {
     m_bank = msg.sender;
     m_state = State.PreSale;
     m_decimals = 8;
-    m_name = &quot;Ponzi&quot;;
-    m_symbol = &quot;PT&quot;;
+    m_name = "Ponzi";
+    m_symbol = "PT";
   }
 
   /**

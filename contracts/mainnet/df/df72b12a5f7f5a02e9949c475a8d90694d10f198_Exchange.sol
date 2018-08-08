@@ -135,7 +135,7 @@ contract Wallet is LoggingErrors {
   /**
    * Storage
    */
-  // Vars included in wallet logic &quot;lib&quot;, the order must match between Wallet and Logic
+  // Vars included in wallet logic "lib", the order must match between Wallet and Logic
   address public owner_;
   address public exchange_;
   mapping(address => uint256) public tokenBalances_;

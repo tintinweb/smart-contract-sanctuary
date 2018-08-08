@@ -250,8 +250,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract MIKScoin is StandardToken {
 
-    string public constant name = &quot;MIKScoin&quot;;
-    string public constant symbol = &quot;MIKS&quot;;
+    string public constant name = "MIKScoin";
+    string public constant symbol = "MIKS";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 50 * (10 ** uint256(8)) * (10 ** uint256(decimals));

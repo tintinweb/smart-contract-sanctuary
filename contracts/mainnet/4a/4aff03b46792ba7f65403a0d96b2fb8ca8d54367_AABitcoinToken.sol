@@ -140,8 +140,8 @@ contract AABitcoinToken is ERC20Interface, Owned {
         public 
         onlyOwner()
     {
-        symbol = &quot;SKO&quot;;
-        name = &quot;Skorch Token&quot;;
+        symbol = "SKO";
+        name = "Skorch Token";
         decimals = 8;
         // uncomment this to test 
         //balances[msg.sender] = (20000) * (10 ** uint(decimals)); // change 20000 to some lower number than 20000 

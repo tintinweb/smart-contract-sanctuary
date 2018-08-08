@@ -102,8 +102,8 @@ contract AllbesticoContract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AllbesticoContract() public {
-        symbol = &quot;ALLBI&quot;;
-        name = &quot;Allbestico&quot;;
+        symbol = "ALLBI";
+        name = "Allbestico";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0xed0b26224d4629264b02f994dcc4375da3e6f9e4] = _totalSupply; //MEW address here

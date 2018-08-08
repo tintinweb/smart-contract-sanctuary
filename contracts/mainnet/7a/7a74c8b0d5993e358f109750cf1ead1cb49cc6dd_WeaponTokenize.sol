@@ -121,21 +121,21 @@ contract WeaponTokenize {
     /*  update game proprietary data */
     function updateGameProprietaryData (uint _id, string _gameData) public onlyAuthorizedOwner returns(bool res) {
       gameDataOf[_id] = _gameData;
-      emit WeaponUpdated(_id, _gameData, &quot;&quot;, &quot;&quot;);
+      emit WeaponUpdated(_id, _gameData, "", "");
       return true;
     }
 
     /* update public data */
     function updatePublicData (uint _id,  string _publicData) public onlyAuthorizedOwner returns(bool res) {
       publicDataOf[_id] = _publicData;
-      emit WeaponUpdated(_id, &quot;&quot;, _publicData, &quot;&quot;);
+      emit WeaponUpdated(_id, "", _publicData, "");
       return true;
     }
 
     /* update owner proprietary data */
     function updateOwnerProprietaryData (uint _id, string _ownerData) public onlyAuthorizedOwner returns(bool res) {
       ownerDataOf[_id] = _ownerData;
-      emit WeaponUpdated(_id, &quot;&quot;, &quot;&quot;, _ownerData);
+      emit WeaponUpdated(_id, "", "", _ownerData);
       return true;
     }
 

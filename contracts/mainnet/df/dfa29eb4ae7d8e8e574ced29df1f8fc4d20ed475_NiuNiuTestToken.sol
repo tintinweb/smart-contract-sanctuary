@@ -178,7 +178,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -285,8 +285,8 @@ contract PausableToken is StandardToken, Pausable {
 contract NiuNiuTestToken is PausableToken {
 
 	// ERC20 variables
-	string public name = &quot;NiuNiuTestToken&quot;;
-	string public symbol = &quot;NNTT&quot;;
+	string public name = "NiuNiuTestToken";
+	string public symbol = "NNTT";
 	uint32 public decimals = 18;
 	uint32 public batchLimit = 1000;
 

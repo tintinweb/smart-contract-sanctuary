@@ -197,8 +197,8 @@ contract PGGamePlatform is ERC223, ERC20Basic {
   
   
   function PGGamePlatform() public{
-      name = &quot;PG Game Platform&quot;;
-      symbol = &quot;PGG&quot;;
+      name = "PG Game Platform";
+      symbol = "PGG";
       decimals = 4;
       totalSupply = 10000000000 * 10 ** uint(decimals);
       balances[msg.sender] = totalSupply;

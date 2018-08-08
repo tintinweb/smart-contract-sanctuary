@@ -113,8 +113,8 @@ contract AndhraToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AndhraToken() public {
-        symbol = &quot;ANDHRA&quot;;
-        name = &quot;ANDHRA Token&quot;;
+        symbol = "ANDHRA";
+        name = "ANDHRA Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000000;
         balances[0x3878c8700b65afcc237f0cf29dc7eae7fa236192] = _totalSupply;

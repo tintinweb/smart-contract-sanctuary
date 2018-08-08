@@ -366,7 +366,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -514,8 +514,8 @@ contract ChaoExToken is CappedToken, BurnableToken, DetailedERC20 {
 
     uint8 constant DECIMALS = 18;
     uint  constant TOTALTOKEN = 5 * 10 ** (8 + uint(DECIMALS));
-    string constant NAME = &quot;CHAOEX&quot;;
-    string constant SYM = &quot;CHEX&quot;;
+    string constant NAME = "CHAOEX";
+    string constant SYM = "CHEX";
 
     constructor() DetailedERC20 (NAME, SYM, DECIMALS) CappedToken(TOTALTOKEN) public {}
 

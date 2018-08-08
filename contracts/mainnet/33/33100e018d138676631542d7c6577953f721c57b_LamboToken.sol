@@ -18,8 +18,8 @@ contract LamboToken {
 
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;Lambo Token&quot;; }
-    function symbol() constant returns (string) { return &quot;LAMBO&quot;; }
+    function name() constant returns (string) { return "Lambo Token"; }
+    function symbol() constant returns (string) { return "LAMBO"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

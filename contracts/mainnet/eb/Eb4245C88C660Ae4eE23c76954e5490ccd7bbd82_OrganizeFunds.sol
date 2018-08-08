@@ -75,7 +75,7 @@ contract OrganizeFunds {
     totalFundsDistributed = 0;
     totalFundsWithdrawn = 0;
     activityCount = 0;
-    MessageEvent(&quot;ok: all accts reset&quot;);
+    MessageEvent("ok: all accts reset");
   }
 
 
@@ -85,7 +85,7 @@ contract OrganizeFunds {
   //
   function setWitdrawGas(uint256 _withdrawGas) public ownerOnly unlockedOnly {
     withdrawGas = _withdrawGas;
-    MessageEventI(&quot;ok: withdraw gas set&quot;, withdrawGas);
+    MessageEventI("ok: withdraw gas set", withdrawGas);
   }
 
 
@@ -94,7 +94,7 @@ contract OrganizeFunds {
   //
   function addAccount(address _addr, uint256 _pctx10) public ownerOnly unlockedOnly {
     if (activityCount >= MAX_ACCOUNTS) {
-      MessageEvent(&quot;err: max accounts&quot;);
+      MessageEvent("err: max accounts");
       return;
     }
     activityAccounts[activityCount].addr = _addr;
@@ -102,7 +102,7 @@ contract OrganizeFunds {
     activityAccounts[activityCount].credited = 0;
     activityAccounts[activityCount].balance = 0;
     ++activityCount;
-    MessageEvent(&quot;ok: acct added&quot;);
+    MessageEvent("ok: acct added");
   }
 
 
@@ -140,7 +140,7 @@ contract OrganizeFunds {
   //
   function () payable {
     totalFundsReceived += msg.value;
-    MessageEventI(&quot;ok: received&quot;, msg.value);
+    MessageEventI("ok: received", msg.value);
   }
 
 
@@ -169,7 +169,7 @@ contract OrganizeFunds {
       activityAccounts[i].balance += acctDist;
       totalFundsDistributed += acctDist;
     }
-    MessageEvent(&quot;ok: distributed funds&quot;);
+    MessageEvent("ok: distributed funds");
   }
 
 
@@ -189,7 +189,7 @@ contract OrganizeFunds {
             //put back funds in case of err
             activityAccounts[i].balance = amount;
             totalFundsWithdrawn -= amount;
-            MessageEvent(&quot;err: error sending funds&quot;);
+            MessageEvent("err: error sending funds");
             return;
           }
         }

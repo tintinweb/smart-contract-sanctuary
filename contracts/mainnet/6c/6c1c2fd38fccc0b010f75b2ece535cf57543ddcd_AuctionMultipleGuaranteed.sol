@@ -1,7 +1,7 @@
 pragma solidity ^0.4.23;
 
 // If you are reading this...
-// This is a &quot;backup&quot; - deploying to the same address on mainnet and testnet
+// This is a "backup" - deploying to the same address on mainnet and testnet
 // Just in case someone accidentally sends Ether into ether
 // Here is the Ropsten (testnet, monopoly money) address: https://ropsten.etherscan.io/address/0x6c1c2fd38fccc0b010f75b2ece535cf57543ddcd#code
 // Learning stuff, heavily investing in skills and education
@@ -36,9 +36,9 @@ contract Auction {
   event Refund(address indexed bidder, uint value, uint timestamp);
 
   
-  modifier onlyOwner { require(owner == msg.sender, &quot;only owner&quot;); _; }
-  modifier onlyWinner { require(winner == msg.sender, &quot;only winner&quot;); _; }
-  modifier ended { require(now > timestampEnd, &quot;not ended yet&quot;); _; }
+  modifier onlyOwner { require(owner == msg.sender, "only owner"); _; }
+  modifier onlyWinner { require(winner == msg.sender, "only winner"); _; }
+  modifier ended { require(now > timestampEnd, "not ended yet"); _; }
 
 
   function setDescription(string _description) public onlyOwner() {
@@ -51,7 +51,7 @@ contract Auction {
   }
 
   constructor(uint _price, string _description, uint _timestampEnd, address _beneficiary) public {
-    require(_timestampEnd > now, &quot;end of the auction must be in the future&quot;);
+    require(_timestampEnd > now, "end of the auction must be in the future");
     owner = msg.sender;
     price = _price;
     description = _description;
@@ -69,7 +69,7 @@ contract Auction {
   }
 
   function bid() public payable {
-    require(now < timestampEnd, &quot;auction has ended&quot;); // sending ether only allowed before the end
+    require(now < timestampEnd, "auction has ended"); // sending ether only allowed before the end
 
     if (bids[msg.sender] > 0) { // First we add the bid to an existing bid
       bids[msg.sender] += msg.value;
@@ -79,9 +79,9 @@ contract Auction {
     }
 
     if (initialPrice) {
-      require(bids[msg.sender] >= price, &quot;bid too low, minimum is the initial price&quot;);
+      require(bids[msg.sender] >= price, "bid too low, minimum is the initial price");
     } else {
-      require(bids[msg.sender] >= (price * 5 / 4), &quot;bid too low, minimum 25% increment&quot;);
+      require(bids[msg.sender] >= (price * 5 / 4), "bid too low, minimum 25% increment");
     }
     
     if (now > timestampEnd - increaseTimeIfBidBeforeEnd) {
@@ -95,16 +95,16 @@ contract Auction {
   }
 
   function finalize() public ended() onlyOwner() {
-    require(finalized == false, &quot;can withdraw only once&quot;);
-    require(initialPrice == false, &quot;can withdraw only if there were bids&quot;);
+    require(finalized == false, "can withdraw only once");
+    require(initialPrice == false, "can withdraw only if there were bids");
 
     finalized = true;
     beneficiary.transfer(price);
   }
 
   function refund(address addr) private {
-    require(addr != winner, &quot;winner cannot refund&quot;);
-    require(bids[addr] > 0, &quot;refunds only allowed if you sent something&quot;);
+    require(addr != winner, "winner cannot refund");
+    require(bids[addr] > 0, "refunds only allowed if you sent something");
 
     uint refundValue = bids[addr];
     bids[addr] = 0; // reentrancy fix, setting to zero first
@@ -125,8 +125,8 @@ contract Auction {
 
 // File: contracts/AuctionMultiple.sol
 
-// 1, &quot;something&quot;, 1539659548, &quot;0xca35b7d915458ef540ade6068dfe2f44e8fa733c&quot;, 3
-// 1, &quot;something&quot;, 1539659548, &quot;0x315f80C7cAaCBE7Fb1c14E65A634db89A33A9637&quot;, 3
+// 1, "something", 1539659548, "0xca35b7d915458ef540ade6068dfe2f44e8fa733c", 3
+// 1, "something", 1539659548, "0x315f80C7cAaCBE7Fb1c14E65A634db89A33A9637", 3
 
 contract AuctionMultiple is Auction {
 
@@ -151,7 +151,7 @@ contract AuctionMultiple is Auction {
   event LogAddress(address addr);
   
   constructor(uint _price, string _description, uint _timestampEnd, address _beneficiary, uint _howMany) Auction(_price, _description, _timestampEnd, _beneficiary) public {
-    require(_howMany > 1, &quot;This auction is suited to multiple items. With 1 item only - use different code. Or remove this &#39;require&#39; - you&#39;ve been warned&quot;);
+    require(_howMany > 1, "This auction is suited to multiple items. With 1 item only - use different code. Or remove this &#39;require&#39; - you&#39;ve been warned");
     howMany = _howMany;
 
     bids[HEAD] = Bid({
@@ -169,7 +169,7 @@ contract AuctionMultiple is Auction {
   }
 
   function bid() public payable {
-    require(now < timestampEnd, &quot;cannot bid after the auction ends&quot;);
+    require(now < timestampEnd, "cannot bid after the auction ends");
 
     uint myBidId = contributors[msg.sender];
     uint insertionBidId;
@@ -192,8 +192,8 @@ contract AuctionMultiple is Auction {
       } 
 
     } else { // bid from this guy does not exist, create a new one
-      require(msg.value >= price, &quot;Not much sense sending less than the price, likely an error&quot;); // but it is OK to bid below the cut off bid, some guys may withdraw
-      require(lastBidID < LIMIT, &quot;Due to blockGas limit we limit number of people in the auction to 4000 - round arbitrary number - check test gasLimit folder for more info&quot;);
+      require(msg.value >= price, "Not much sense sending less than the price, likely an error"); // but it is OK to bid below the cut off bid, some guys may withdraw
+      require(lastBidID < LIMIT, "Due to blockGas limit we limit number of people in the auction to 4000 - round arbitrary number - check test gasLimit folder for more info");
 
       lastBidID++;
 
@@ -218,9 +218,9 @@ contract AuctionMultiple is Auction {
 
   function refund(address addr) private {
     uint bidId = contributors[addr];
-    require(bidId > 0, &quot;the guy with this address does not exist, makes no sense to witdraw&quot;);
+    require(bidId > 0, "the guy with this address does not exist, makes no sense to witdraw");
     uint position = getPosition(addr);
-    require(position > howMany, &quot;only the non-winning bids can be withdrawn&quot;);
+    require(position > howMany, "only the non-winning bids can be withdrawn");
 
     Bid memory thisBid = bids[ bidId ];
     bids[ thisBid.prev ].next = thisBid.next;
@@ -235,7 +235,7 @@ contract AuctionMultiple is Auction {
   }
 
   function finalize() public ended() onlyOwner() {
-    require(finalized == false, &quot;auction already finalized, can withdraw only once&quot;);
+    require(finalized == false, "auction already finalized, can withdraw only once");
     finalized = true;
 
     uint sumContributions = 0;
@@ -253,7 +253,7 @@ contract AuctionMultiple is Auction {
   // This is to simplify the case of increasing bids (can go upwards, cannot go lower)
   // NOTE: blockSize gas limit in case of so many bids (wishful thinking)
   function searchInsertionPoint(uint _contribution, uint _startSearch) view public returns (uint) {
-    require(_contribution > bids[_startSearch].value, &quot;your contribution and _startSearch does not make sense, it will search in a wrong direction&quot;);
+    require(_contribution > bids[_startSearch].value, "your contribution and _startSearch does not make sense, it will search in a wrong direction");
 
     Bid memory lowerBid = bids[_startSearch];
     Bid memory higherBid;
@@ -271,7 +271,7 @@ contract AuctionMultiple is Auction {
 
   function getPosition(address addr) view public returns(uint) {
     uint bidId = contributors[addr];
-    require(bidId != 0, &quot;cannot ask for a position of a guy who is not on the list&quot;);
+    require(bidId != 0, "cannot ask for a position of a guy who is not on the list");
     uint position = 1;
 
     Bid memory currentBid = bids[HEAD];
@@ -291,10 +291,10 @@ contract AuctionMultiple is Auction {
 
 // File: contracts/AuctionMultipleGuaranteed.sol
 
-// 100000000000000000, &quot;membership in Casa Crypto&quot;, 1546300799, &quot;0x8855Ef4b740Fc23D822dC8e1cb44782e52c07e87&quot;, 20, 5, 5000000000000000000
-// 100000000000000000, &quot;membership in Casa Crypto&quot;, 1546300799, &quot;0x85A363699C6864248a6FfCA66e4a1A5cCf9f5567&quot;, 2, 1, 5000000000000000000
+// 100000000000000000, "membership in Casa Crypto", 1546300799, "0x8855Ef4b740Fc23D822dC8e1cb44782e52c07e87", 20, 5, 5000000000000000000
+// 100000000000000000, "membership in Casa Crypto", 1546300799, "0x85A363699C6864248a6FfCA66e4a1A5cCf9f5567", 2, 1, 5000000000000000000
 
-// For instance: effering limited &quot;Early Bird&quot; tickets that are guaranteed
+// For instance: effering limited "Early Bird" tickets that are guaranteed
 contract AuctionMultipleGuaranteed is AuctionMultiple {
 
   uint public howManyGuaranteed; // after guaranteed slots are used, we decrease the number of slots available (in the parent contract)
@@ -306,16 +306,16 @@ contract AuctionMultipleGuaranteed is AuctionMultiple {
   event GuaranteedBid(address indexed bidder, uint value, uint timestamp);
   
   constructor(uint _price, string _description, uint _timestampEnd, address _beneficiary, uint _howMany, uint _howManyGuaranteed, uint _priceGuaranteed) AuctionMultiple(_price, _description, _timestampEnd, _beneficiary, _howMany) public {
-    require(_howMany >= _howManyGuaranteed, &quot;The number of guaranteed items should be less or equal than total items. If equal = fixed price sell, kind of OK with me&quot;);
-    require(_priceGuaranteed > 0, &quot;Guranteed price must be greated than zero&quot;);
+    require(_howMany >= _howManyGuaranteed, "The number of guaranteed items should be less or equal than total items. If equal = fixed price sell, kind of OK with me");
+    require(_priceGuaranteed > 0, "Guranteed price must be greated than zero");
 
     howManyGuaranteed = _howManyGuaranteed;
     priceGuaranteed = _priceGuaranteed;
   }
 
   function bid() public payable {
-    require(now < timestampEnd, &quot;cannot bid after the auction ends&quot;);
-    require(guaranteedContributions[msg.sender] == 0, &quot;already a guranteed contributor, cannot more than once&quot;);
+    require(now < timestampEnd, "cannot bid after the auction ends");
+    require(guaranteedContributions[msg.sender] == 0, "already a guranteed contributor, cannot more than once");
 
     if (msg.value >= priceGuaranteed && howManyGuaranteed > 0) {
       guaranteedContributors.push(msg.sender);
@@ -329,7 +329,7 @@ contract AuctionMultipleGuaranteed is AuctionMultiple {
   }
 
   function finalize() public ended() onlyOwner() {
-    require(finalized == false, &quot;auction already finalized, can withdraw only once&quot;);
+    require(finalized == false, "auction already finalized, can withdraw only once");
     finalized = true;
 
     uint sumContributions = 0;

@@ -8,8 +8,8 @@ contract RootCoin {
     mapping(address => mapping (address => uint256)) allowed;
     uint256 _totalSupply = 250000000000;
     address public owner;
-    string public constant name = &quot;Root Blockchain&quot;;
-    string public constant symbol = &quot;RBC&quot;;
+    string public constant name = "Root Blockchain";
+    string public constant symbol = "RBC";
     uint8 public constant decimals = 2;
 
     function RootCoin(){

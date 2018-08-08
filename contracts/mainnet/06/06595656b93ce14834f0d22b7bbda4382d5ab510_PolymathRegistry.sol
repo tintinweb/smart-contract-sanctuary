@@ -49,7 +49,7 @@ contract Pausable {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -150,7 +150,7 @@ contract PolymathRegistry is ReclaimTokens {
      */
     function getAddress(string _nameKey) view public returns(address) {
         bytes32 key = keccak256(bytes(_nameKey));
-        require(storedAddresses[key] != address(0), &quot;Invalid address key&quot;);
+        require(storedAddresses[key] != address(0), "Invalid address key");
         return storedAddresses[key];
     }
 

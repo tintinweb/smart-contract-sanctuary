@@ -1,13 +1,13 @@
 pragma solidity ^0.4.24;
 
-// import &quot;./interface/DiviesInterface.sol&quot;;
+// import "./interface/DiviesInterface.sol";
 
 interface DiviesInterface {
     function deposit() external payable;
 }
 
 
-// import &quot;./library/SafeMath.sol&quot;;
+// import "./library/SafeMath.sol";
 /**
  * @title SafeMath v0.1.9
  * @dev Math operations with safety checks that throw on error
@@ -32,7 +32,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -54,7 +54,7 @@ library SafeMath {
         pure
         returns (uint256) 
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -67,7 +67,7 @@ library SafeMath {
         returns (uint256 c) 
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
     
@@ -122,7 +122,7 @@ library SafeMath {
 }
 
 
-//import &quot;./library/UintCompressor.sol&quot;;
+//import "./library/UintCompressor.sol";
 library UintCompressor {
     using SafeMath for *;
     
@@ -132,8 +132,8 @@ library UintCompressor {
         returns(uint256)
     {
         // check conditions 
-        require(_end < 77 && _start < 77, &quot;start/end must be less than 77&quot;);
-        require(_end >= _start, &quot;end must be >= start&quot;);
+        require(_end < 77 && _start < 77, "start/end must be less than 77");
+        require(_end >= _start, "end must be >= start");
         
         // format our start/end points
         _end = exponent(_end).mul(10);
@@ -155,8 +155,8 @@ library UintCompressor {
 	    returns(uint256)
     {
         // check conditions
-        require(_end < 77 && _start < 77, &quot;start/end must be less than 77&quot;);
-        require(_end >= _start, &quot;end must be >= start&quot;);
+        require(_end < 77 && _start < 77, "start/end must be less than 77");
+        require(_end >= _start, "end must be >= start");
         
         // format our start/end points
         _end = exponent(_end).mul(10);
@@ -176,7 +176,7 @@ library UintCompressor {
 }
 
 
-//import &quot;./interface/HourglassInterface.sol&quot;;
+//import "./interface/HourglassInterface.sol";
 interface HourglassInterface {
     function() payable external;
     function buy(address _playerAddress) payable external returns(uint256);
@@ -217,7 +217,7 @@ contract Divies {
         uint256 _codeLength;
         
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
         _;
     }
     
@@ -274,7 +274,7 @@ contract Divies {
         isHuman()
     {
         // make sure _percent is within boundaries
-        require(_percent > 0 && _percent < 100, &quot;please pick a percent between 1 and 99&quot;);
+        require(_percent > 0 && _percent < 100, "please pick a percent between 1 and 99");
         
         // data setup
         address _pusher = msg.sender;
@@ -282,7 +282,7 @@ contract Divies {
         uint256 _mnPayout;
         uint256 _compressedData;
         
-        // limit pushers greed (use &quot;if&quot; instead of require for level 42 top kek)
+        // limit pushers greed (use "if" instead of require for level 42 top kek)
         if (
             pushers_[_pusher].tracker <= pusherTracker_.sub(100) && // pusher is greedy: wait your turn
             pushers_[_pusher].time.add(1 hours) < now               // pusher is greedy: its not even been 1 hour
@@ -323,7 +323,7 @@ contract Divies {
             _compressedData = _compressedData.insert(1, 47, 47);
         }
         
-        // update pushers timestamp  (do outside of &quot;if&quot; for super saiyan level top kek)
+        // update pushers timestamp  (do outside of "if" for super saiyan level top kek)
         pushers_[_pusher].time = now;
     
         // prep event compression data 

@@ -5,7 +5,7 @@ pragma solidity 0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -626,8 +626,8 @@ contract SDAToken is SDAMintableToken, SDABurnableToken, SDAMigratableToken {
     uint8 public decimals;
 
     function SDAToken() public {
-        name = &quot;Secondary Data Attestation Token&quot;;
-        symbol = &quot;SEDA&quot;;
+        name = "Secondary Data Attestation Token";
+        symbol = "SEDA";
         decimals = 18;
 
         totalSupply_ = 1000000000 * 10 ** uint(decimals);

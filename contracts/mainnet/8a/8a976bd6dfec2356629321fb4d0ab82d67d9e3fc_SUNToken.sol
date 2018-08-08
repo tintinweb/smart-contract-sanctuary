@@ -461,7 +461,7 @@ contract SUNToken is ERC827Token, DetailedERC20, BurnableToken, CappedToken {
 
     function SUNToken() public
         CappedToken(5000000000 * (10**18))
-        DetailedERC20(&quot;BitSun&quot;, &quot;SUN&quot;, 18) {
+        DetailedERC20("BitSun", "SUN", 18) {
     }
 
     /**

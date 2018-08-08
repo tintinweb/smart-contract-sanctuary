@@ -98,8 +98,8 @@ contract Owned {
 contract TORUE is ERC223Interface,ERC20Interface,Owned {
     using SafeMath for uint;
     
-    string public name = &quot;torue&quot;;
-    string public symbol = &quot;TRE&quot;;
+    string public name = "torue";
+    string public symbol = "TRE";
     uint8 public decimals = 6;
     uint256 public totalSupply = 100e8 * 1e6;
 

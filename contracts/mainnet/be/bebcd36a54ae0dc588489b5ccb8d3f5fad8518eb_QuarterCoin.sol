@@ -110,8 +110,8 @@ contract QuarterCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function QuarterCoin() public {
-        symbol = &quot;25CENT&quot;;
-        name = &quot;QuarterCoin&quot;;
+        symbol = "25CENT";
+        name = "QuarterCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xCD0ee931c372CbcEbBF92cB9621a3a91c6ceA588] = _totalSupply;

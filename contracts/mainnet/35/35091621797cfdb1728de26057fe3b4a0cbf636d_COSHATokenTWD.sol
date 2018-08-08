@@ -30,8 +30,8 @@ contract COSHATokenTWD {
         totalSupply = initialSupply * 5 * 10 ** (10 + uint256(decimals));  // Update total supply with the decimal amount
         initialSupply = totalSupply;
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;COSHATokenTWD&quot;;                                   // Set the name for display purposes
-        symbol = &quot;C-TWD&quot;;                               // Set the symbol for display purposes
+        name = "COSHATokenTWD";                                   // Set the name for display purposes
+        symbol = "C-TWD";                               // Set the symbol for display purposes
         tokenName = name;
         tokenSymbol = symbol;
         

@@ -38,17 +38,17 @@ contract Ownable {
 	}
 
 	modifier onlyOwner() {
-		require(msg.sender == owner, &quot;msg.sender == owner&quot;);
+		require(msg.sender == owner, "msg.sender == owner");
 		_;
 	}
 
 	function transferOwnership(address _newOwner) public onlyOwner {
-		require(address(0) != _newOwner, &quot;address(0) != _newOwner&quot;);
+		require(address(0) != _newOwner, "address(0) != _newOwner");
 		newOwner = _newOwner;
 	}
 
 	function acceptOwnership() public {
-		require(msg.sender == newOwner, &quot;msg.sender == newOwner&quot;);
+		require(msg.sender == newOwner, "msg.sender == newOwner");
 		emit OwnershipTransferred(owner, msg.sender);
 		owner = msg.sender;
 		newOwner = address(0);
@@ -108,7 +108,7 @@ contract AtomaxKyc {
     function buyTokensFor(address _buyerAddress, bytes32 _buyerId, uint _maxAmount, uint8 _v, bytes32 _r, bytes32 _s, uint8 _bv, bytes32 _br, bytes32 _bs) public payable returns (bool) {
         bytes32 hash = hasher ( _buyerAddress,  _buyerId,  _maxAmount );
         address signer = ecrecover(hash, _bv, _br, _bs);
-        require ( signer == _buyerAddress, &quot;signer == _buyerAddress &quot; );
+        require ( signer == _buyerAddress, "signer == _buyerAddress " );
         
         return buyImplementation(_buyerAddress, _buyerId, _maxAmount, _v, _r, _s);
     }
@@ -122,7 +122,7 @@ contract AtomaxKyc {
         bytes32 hash = hasher ( _buyerAddress,  _buyerId,  _maxAmount );
         address signer = ecrecover(hash, _v, _r, _s);
 		
-		require( isKycSigner[signer], &quot;isKycSigner[signer]&quot;);
+		require( isKycSigner[signer], "isKycSigner[signer]");
         
 		uint256 totalPayed = alreadyPayed[_buyerId].add(msg.value);
 		require(totalPayed <= _maxAmount);
@@ -134,7 +134,7 @@ contract AtomaxKyc {
     }
     
     function hasher (address _buyerAddress, bytes32 _buyerId, uint256 _maxAmount) public view returns ( bytes32 hash ) {
-        hash = keccak256(abi.encodePacked(&quot;Atomax authorization:&quot;, this, _buyerAddress, _buyerId, _maxAmount));
+        hash = keccak256(abi.encodePacked("Atomax authorization:", this, _buyerAddress, _buyerId, _maxAmount));
     }
 }
 
@@ -156,11 +156,11 @@ contract RC_KYC is AtomaxKycInterface, AtomaxKyc {
 	mapping(address => uint256) public tokenUser; // address => token amount owned
 	
     constructor(address _tokenSaleContract, uint256 _tokenPrice, uint256 _remainingTokens, uint256 _etherMinimum, uint256 _startTime , uint256 _endTime) public {
-        require ( _tokenSaleContract != address(0), &quot;_tokenSaleContract != address(0)&quot; );
-        require ( _tokenPrice != 0, &quot;_tokenPrice != 0&quot; );
-        require ( _remainingTokens != 0, &quot;_remainingTokens != 0&quot; );  
-        require ( _startTime != 0, &quot;_startTime != 0&quot; );
-        require ( _endTime != 0, &quot;_endTime != 0&quot; );
+        require ( _tokenSaleContract != address(0), "_tokenSaleContract != address(0)" );
+        require ( _tokenPrice != 0, "_tokenPrice != 0" );
+        require ( _remainingTokens != 0, "_remainingTokens != 0" );  
+        require ( _startTime != 0, "_startTime != 0" );
+        require ( _endTime != 0, "_endTime != 0" );
         
         tokenSaleContract = TokedoDaico(_tokenSaleContract);
         
@@ -228,10 +228,10 @@ contract RC_KYC is AtomaxKycInterface, AtomaxKyc {
 	event TakeEther(address buyer, uint256 value, uint256 soldToken, uint256 tokenPrice );
 	
 	function takeEther(address _buyer) internal {
-	    require( now > startTime, &quot;now > startTime&quot; );
-		require( now < endTime, &quot;now < endTime&quot;);
-        require( msg.value >= etherMinimum, &quot;msg.value >= etherMinimum&quot;); 
-        require( remainingTokens > 0, &quot;remainingTokens > 0&quot; );
+	    require( now > startTime, "now > startTime" );
+		require( now < endTime, "now < endTime");
+        require( msg.value >= etherMinimum, "msg.value >= etherMinimum"); 
+        require( remainingTokens > 0, "remainingTokens > 0" );
         
         uint256 oneToken = 10 ** uint256(tokenSaleContract.decimals());
         uint256 tokenAmount = msg.value.mul( oneToken ).div( tokenPrice );
@@ -262,7 +262,7 @@ contract RC_KYC is AtomaxKycInterface, AtomaxKyc {
 	}
 	
 	function giveToken(address _buyer) internal {
-	    require( pendingTokenUser[_buyer] > 0, &quot;pendingTokenUser[_buyer] > 0&quot; );
+	    require( pendingTokenUser[_buyer] > 0, "pendingTokenUser[_buyer] > 0" );
 
 		tokenUser[_buyer] = tokenUser[_buyer].add(pendingTokenUser[_buyer]);
 	
@@ -270,7 +270,7 @@ contract RC_KYC is AtomaxKycInterface, AtomaxKyc {
 		soldTokens = soldTokens.add(pendingTokenUser[_buyer]);
 		pendingTokenUser[_buyer] = 0;
 		
-		require( address(tokenSaleContract).call.value( etherUser[_buyer] )( bytes4( keccak256(&quot;forwardEther()&quot;) ) ) );
+		require( address(tokenSaleContract).call.value( etherUser[_buyer] )( bytes4( keccak256("forwardEther()") ) ) );
 		etherUser[_buyer] = 0;
 	}
 
@@ -308,12 +308,12 @@ contract TokedoDaico is Ownable {
     }
     
     modifier onlyRC() {
-        require( rc[msg.sender], &quot;rc[msg.sender]&quot; ); //check if is an authorized rcContract
+        require( rc[msg.sender], "rc[msg.sender]" ); //check if is an authorized rcContract
         _;
     }
     
     function forwardEther() onlyRC payable public returns(bool) {
-        require(milestoneSystem.call.value(msg.value)(), &quot;wallet.call.value(msg.value)()&quot;);
+        require(milestoneSystem.call.value(msg.value)(), "wallet.call.value(msg.value)()");
         return true;
     }
     
@@ -365,9 +365,9 @@ contract MilestoneSystem {
     mapping(uint8 => uint256) public tokenDistrusted;
     
     constructor(address _wallet, address _tokenAddress, uint256[] _time, uint256[] _funds, uint256 _tokenPrice, uint256 _activeSupply) public {
-        require( _wallet != address(0), &quot;_wallet != address(0)&quot; );
-        require( _time.length != 0, &quot;_time.length != 0&quot; );
-        require( _time.length == _funds.length, &quot;_time.length == _funds.length&quot; );
+        require( _wallet != address(0), "_wallet != address(0)" );
+        require( _time.length != 0, "_time.length != 0" );
+        require( _time.length == _funds.length, "_time.length == _funds.length" );
         
         wallet = _wallet;
         
@@ -382,7 +382,7 @@ contract MilestoneSystem {
     }
     
     modifier onlyTokenSaleOwner() {
-        require(msg.sender == tokenSaleContract.owner(), &quot;msg.sender == tokenSaleContract.owner()&quot; );
+        require(msg.sender == tokenSaleContract.owner(), "msg.sender == tokenSaleContract.owner()" );
         _;
     }
     
@@ -390,7 +390,7 @@ contract MilestoneSystem {
     event Locked();
     
     function distrust(address _from, uint _value, bytes _data) public {
-        require(msg.sender == address(tokenContract), &quot;msg.sender == address(tokenContract)&quot;);
+        require(msg.sender == address(tokenContract), "msg.sender == address(tokenContract)");
         
         if ( !locked ) {
             
@@ -402,7 +402,7 @@ contract MilestoneSystem {
             require( 
                 ( now > startTimeMilestone && now < endTimeMilestone ) || 
                 ( now > startTimeProjectDeath && unclaimedFunds ), 
-                &quot;( now > startTimeMilestone && now < endTimeMilestone ) || ( now > startTimeProjectDeath && unclaimedFunds )&quot; 
+                "( now > startTimeMilestone && now < endTimeMilestone ) || ( now > startTimeProjectDeath && unclaimedFunds )" 
             );
         } else {
             require( locked && now < endTimeToReturnTokens ); //a timeframePost to deposit all tokens and then claim the refundMe method
@@ -425,8 +425,8 @@ contract MilestoneSystem {
     }
 	
 	function receiveApproval( address _from, uint _value, bytes _data) public {
-	    require(msg.sender == address(tokenContract), &quot;msg.sender == address(tokenContract)&quot;);
-		require(msg.sender.call(bytes4(keccak256(&quot;transferFrom(address,address,uint256)&quot;)), _from, this, _value));
+	    require(msg.sender == address(tokenContract), "msg.sender == address(tokenContract)");
+		require(msg.sender.call(bytes4(keccak256("transferFrom(address,address,uint256)")), _from, this, _value));
         distrust( _from, _value, _data);
     }
     
@@ -434,7 +434,7 @@ contract MilestoneSystem {
     event Unlocked();
     
     function trust(uint8 _step) public {
-        require( balance[msg.sender][_step] > 0 , &quot;balance[msg.sender] > 0&quot;);
+        require( balance[msg.sender][_step] > 0 , "balance[msg.sender] > 0");
         
         uint256 amount = balance[msg.sender][_step];
         balance[msg.sender][_step] = 0;
@@ -454,14 +454,14 @@ contract MilestoneSystem {
     event Refund(address sender, uint256 money);
     
     function refundMe() public {
-        require(locked, &quot;locked&quot;);
-        require( now > endTimeToReturnTokens, &quot;now > endTimeToReturnTokens&quot; );
+        require(locked, "locked");
+        require( now > endTimeToReturnTokens, "now > endTimeToReturnTokens" );
         
         uint256 ethTot = address(this).balance;
-        require( ethTot > 0 , &quot;ethTot > 0&quot;);
+        require( ethTot > 0 , "ethTot > 0");
         
         uint256 tknAmount = balance[msg.sender][step];
-        require( tknAmount > 0 , &quot;tknAmount > 0&quot;);
+        require( tknAmount > 0 , "tknAmount > 0");
         
         balance[msg.sender][step] = 0;
         
@@ -480,10 +480,10 @@ contract MilestoneSystem {
     }
     
     function ownerWithdraw() public onlyTokenSaleOwner {
-        require(!locked, &quot;!locked&quot;);
+        require(!locked, "!locked");
         
-        require(now > time[step], &quot;now > time[step]&quot;);
-        require(funds[step] > 0, &quot;funds[step] > 0&quot;);
+        require(now > time[step], "now > time[step]");
+        require(funds[step] > 0, "funds[step] > 0");
         
         uint256 amountApplied = funds[step];
         funds[step] = 0;
@@ -500,21 +500,21 @@ contract MilestoneSystem {
     }
     
     function ownerWithdrawTokens(address _tokenContract, address to, uint256 value) public onlyTokenSaleOwner returns (bool) { //for airdrop reason to distribute to Tokedo Token Holder
-        require( _tokenContract != address(tokenContract), &quot;_tokenContract != address(tokenContract)&quot;); // the owner can withdraw tokens except Tokedo Tokens
+        require( _tokenContract != address(tokenContract), "_tokenContract != address(tokenContract)"); // the owner can withdraw tokens except Tokedo Tokens
         return tokenInterface(_tokenContract).transfer(to, value);
     }
     
     function setWallet(address _wallet) public onlyTokenSaleOwner returns(bool) {
-        require( _wallet != address(0), &quot;_wallet != address(0)&quot; );
+        require( _wallet != address(0), "_wallet != address(0)" );
         wallet = _wallet;
 		return true;
     }
     
     function () public payable {
-        require(msg.sender == address(tokenSaleContract), &quot;msg.sender == address(tokenSaleContract)&quot;);
+        require(msg.sender == address(tokenSaleContract), "msg.sender == address(tokenSaleContract)");
         
         if( etherReceived < funds[0]  ) {
-            require( wallet != address(0), &quot;wallet != address(0)&quot; );
+            require( wallet != address(0), "wallet != address(0)" );
             wallet.transfer(msg.value);
         }
         

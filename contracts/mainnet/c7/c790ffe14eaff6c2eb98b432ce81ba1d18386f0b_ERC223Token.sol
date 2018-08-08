@@ -71,8 +71,8 @@ contract ERC223Token is ERC223Interface {
 
   mapping(address => uint256) balances;
 
-  string public name    = &quot;Billionaire Maker&quot;;
-  string public symbol  = &quot;BMX&quot;;
+  string public name    = "Billionaire Maker";
+  string public symbol  = "BMX";
   uint8 public decimals = 9;
   uint256 public totalSupply;
   

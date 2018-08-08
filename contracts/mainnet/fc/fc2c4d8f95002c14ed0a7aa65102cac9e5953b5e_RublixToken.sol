@@ -47,7 +47,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -205,8 +205,8 @@ contract RublixToken is StandardToken {
     creator=_creator;
     balances[msg.sender] = initialSupply * 10**decimals;     
     totalSupply = initialSupply * 10**decimals;                        
-    name = &quot;Rublix&quot;;                                  		
-    symbol = &quot;RBLX&quot;;
+    name = "Rublix";                                  		
+    symbol = "RBLX";
     Transfer(0x0, msg.sender, totalSupply);
        
   }

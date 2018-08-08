@@ -36,8 +36,8 @@ contract AllInOne {
 		balanceOf[msg.sender] = intialSupply;
 		totalSupply = intialSupply;
 		decimal = 2;
-		symbol = &quot;AIO&quot;;
-		name = &quot;AllInOne&quot;;
+		symbol = "AIO";
+		name = "AllInOne";
 	}
 
 	function transfer(address _to, uint256 _value){

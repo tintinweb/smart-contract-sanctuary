@@ -29,8 +29,8 @@ library SafeMath{
 
 contract BioXToken {
 	using SafeMath for uint256;
-    string public constant name         = &quot;BIOX&quot;;
-    string public constant symbol       = &quot;BIOX&quot;;
+    string public constant name         = "BIOX";
+    string public constant symbol       = "BIOX";
     uint public constant decimals       = 18;
     
     uint256 bioxEthRate                  = 10 ** decimals;
@@ -251,7 +251,7 @@ contract BioXToken {
         balances[investor].balance = balances[investor].balance.add(amount);
         emit Transfer(owner, investor, amount);
     }
-	//Use &quot;&quot; for adding whitelists.
+	//Use "" for adding whitelists.
     function addWhiteListMulti(address[] _addrs) public onlyOwner {
         require(_addrs.length <=  255);
 

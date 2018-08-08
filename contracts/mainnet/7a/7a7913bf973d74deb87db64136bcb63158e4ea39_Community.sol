@@ -22,7 +22,7 @@ contract Community is owned {
 
   event Receipt( address indexed sender, uint value );
 
-  string  public name_; // &quot;IT&quot;, &quot;KO&quot;, ...
+  string  public name_; // "IT", "KO", ...
   address public manager_;
   uint    public bonus_;
   uint    public start_;

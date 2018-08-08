@@ -33,7 +33,7 @@ library SmartWalletLib {
     /*
      *  Members
      */
-    string constant VERSION = &quot;0.1&quot;;
+    string constant VERSION = "0.1";
    
 
     /*

@@ -174,8 +174,8 @@ contract DSTokenBase is EIP20Interface, DSMath {
 }
 
  contract FUXEToken is DSTokenBase, DSStop {
-       string   public  name = &quot;FUXECoin&quot;;
-       string   public  symbol = &quot;FUX&quot;;
+       string   public  name = "FUXECoin";
+       string   public  symbol = "FUX";
        uint256  public  decimals = 18; // standard token precision. override to customize
 
      function FUXEToken() public {

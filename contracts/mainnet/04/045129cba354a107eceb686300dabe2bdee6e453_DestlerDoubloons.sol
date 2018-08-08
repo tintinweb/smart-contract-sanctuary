@@ -121,9 +121,9 @@ contract DestlerDoubloons is StandardToken {
         totalSupply = 1500000;                        // Update total supply (1500000 for example)
         balances[msg.sender] = totalSupply;               // Give the creator all initial tokens (100000 for example)
         circulatingSupply = 0;
-        name = &quot;Destler Doubloons&quot;;                                   // Set the name for display purposes
+        name = "Destler Doubloons";                                   // Set the name for display purposes
         decimals = 0;                            // Amount of decimals for display purposes
-        symbol = &quot;DEST&quot;;                               // Set the symbol for display purposes
+        symbol = "DEST";                               // Set the symbol for display purposes
         starting_giveaway = 50000;
         next_giveaway = 0;
         owner = msg.sender;
@@ -159,7 +159,7 @@ contract DestlerDoubloons is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 

@@ -167,9 +167,9 @@ contract StandardToken is ERC20{
 contract XRT is StandardToken, OnlyOwner{
   uint8 public constant decimals = 18;
     uint256 private constant multiplier = 10**26;
-    string public constant name = &quot;XRT Token&quot;;
-    string public constant symbol = &quot;XRT&quot;;
-    string public version = &quot;X1.1&quot;;
+    string public constant name = "XRT Token";
+    string public constant symbol = "XRT";
+    string public version = "X1.1";
     uint256 private maxSupply = multiplier;
     uint256 public totalSupply = (50*maxSupply)/100;
     uint256 private approvalCount =0;

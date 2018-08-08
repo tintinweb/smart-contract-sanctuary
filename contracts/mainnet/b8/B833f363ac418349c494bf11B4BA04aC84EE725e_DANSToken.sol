@@ -491,8 +491,8 @@ contract VestedToken is StandardToken, LimitedTransferToken {
 
 contract DANSToken is VestedToken {
   //FIELDS
-  string public name = &quot;DAN-Service coin&quot;;
-  string public symbol = &quot;DANS&quot;;
+  string public name = "DAN-Service coin";
+  string public symbol = "DANS";
   uint public decimals = 4;
   
   //CONSTANTS

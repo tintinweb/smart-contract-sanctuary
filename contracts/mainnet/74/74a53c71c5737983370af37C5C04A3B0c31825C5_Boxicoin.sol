@@ -16,9 +16,9 @@ contract Boxicoin {
     function Boxicoin() {
 
          initialSupply = 10000000000;
-        name =&quot;BOXICOIN&quot;;
+        name ="BOXICOIN";
         decimals = 2;
-        symbol = &quot;BXC&quot;;
+        symbol = "BXC";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

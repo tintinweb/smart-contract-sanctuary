@@ -34,8 +34,8 @@
 
    //继承接口后的实例
    contract BanliangCoin is ERC20Interface {
-      string public constant symbol = &quot;BLC&quot;; //单位
-      string public constant name = &quot;BanliangCoin Token&quot;; //名称
+      string public constant symbol = "BLC"; //单位
+      string public constant name = "BanliangCoin Token"; //名称
       uint8 public constant decimals = 18; //小数点后的位数
       uint256 _totalSupply = 10000000000 * 10 ** uint256(decimals); //发行总量
 

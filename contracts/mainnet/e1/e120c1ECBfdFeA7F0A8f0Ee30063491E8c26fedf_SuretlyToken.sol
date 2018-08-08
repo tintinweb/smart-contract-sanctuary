@@ -5,8 +5,8 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 contract SuretlyToken {
 
   string public constant standard = &#39;Token 0.1&#39;;
-  string public constant name = &quot;Suretly&quot;;
-  string public constant symbol = &quot;SUR&quot;;
+  string public constant name = "Suretly";
+  string public constant symbol = "SUR";
   uint8 public constant decimals = 8;
   uint256 public totalSupply = 237614 * 100000000;
 

@@ -79,7 +79,7 @@ contract RBAC {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
+  string public constant ROLE_ADMIN = "admin";
 
   /**
    * @dev constructor. Sets msg.sender as admin by default
@@ -214,7 +214,7 @@ contract RBAC {
 contract CourseCertification is RBAC {
     mapping (string => address[]) private associations;
 
-    string public constant ROLE_MANAGER = &quot;manager&quot;;
+    string public constant ROLE_MANAGER = "manager";
 
     modifier onlyAdminOrManager()
     {

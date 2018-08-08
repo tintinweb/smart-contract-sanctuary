@@ -28,8 +28,8 @@ contract BTSC {
     ) public {
         totalSupply = 1000000000000000000000000000;                           // Total supply with the decimal amount
         balanceOf[msg.sender] = 1000000000000000000000000000;                 // All initial tokens
-        name = &quot;BitStemCells&quot;;                                                // The name for display purposes
-        symbol = &quot;BTSC&quot;;                                                      // The symbol for display purposes
+        name = "BitStemCells";                                                // The name for display purposes
+        symbol = "BTSC";                                                      // The symbol for display purposes
     }
 
     /**

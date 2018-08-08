@@ -72,8 +72,8 @@ contract PolarisUniversalToken is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     function PolarisUniversalToken() public {
-        symbol = &quot;XPU&quot;;
-        name = &quot;Polaris Universal&quot;;
+        symbol = "XPU";
+        name = "Polaris Universal";
         decimals = 18;
         _totalSupply = 23000000;
         _totalSupply = _totalSupply.mul(10 ** uint(decimals));

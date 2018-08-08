@@ -85,10 +85,10 @@ contract StandardToken is Token {
 contract WMToken is StandardToken, SafeMath {
  
 
-    string  public constant name = &quot;WMCoin&quot;;
-    string  public constant symbol = &quot;WMC&quot;;
+    string  public constant name = "WMCoin";
+    string  public constant symbol = "WMC";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
 
     address public ethFundDeposit;          // ETH存放地址
     address public newContractAddr;         // token更新地址

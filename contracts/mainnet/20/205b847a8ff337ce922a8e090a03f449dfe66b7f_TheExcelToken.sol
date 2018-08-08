@@ -110,8 +110,8 @@ contract TheExcelToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TheExcelToken() public {
-        symbol = &quot;EXCLT&quot;;
-        name = &quot;The Excel Token&quot;;
+        symbol = "EXCLT";
+        name = "The Excel Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xD6a0faD6e36ded1505f0395AeA9650efb0f65CdC] = _totalSupply;

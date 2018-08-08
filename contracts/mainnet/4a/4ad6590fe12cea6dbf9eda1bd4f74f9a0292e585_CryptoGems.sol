@@ -9,8 +9,8 @@ contract CryptoGems {
 	event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
 	uint256 constant private MAX_UINT256 = 2**256 - 1;
-	string public name = &quot;CryptoGem&quot;;
-	string public symbol = &quot;GEM&quot;;
+	string public name = "CryptoGem";
+	string public symbol = "GEM";
 	uint public decimals = 4;
 	uint256 public totalSupply = 0;
 
@@ -135,7 +135,7 @@ contract CryptoGems {
 		uint64 nonce = 1;
 		Miner memory _miner = Miner({
 			id: 0,
-			name: &quot;&quot;,
+			name: "",
 			workDuration:  uint64(keccak256(miners.length, msg.sender, nonce++))%(3000-2000)+2000,
 			sleepDuration: uint64(keccak256(miners.length, msg.sender, nonce))%(2200-1800)+1800,
 			difficulty: uint64(keccak256(miners.length, msg.sender, nonce))%(130-100)+100,

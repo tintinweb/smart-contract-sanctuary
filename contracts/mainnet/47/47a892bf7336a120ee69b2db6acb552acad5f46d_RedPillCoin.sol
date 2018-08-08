@@ -15,9 +15,9 @@ contract RedPillCoin {
     function RedPillCoin() {
 
          initialSupply = 20000000000000000;
-         name =&quot;RedPillCoin&quot;;
+         name ="RedPillCoin";
         decimals = 8;
-         symbol = &quot;RDPC&quot;;
+         symbol = "RDPC";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

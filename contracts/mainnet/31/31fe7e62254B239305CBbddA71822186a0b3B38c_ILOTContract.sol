@@ -45,17 +45,17 @@ interface tokenRecipient { function receiveApproval(address _from, uint _value, 
 
 contract ILOTContract {
 
-    string public name = &quot;ILOT Interest-Paying Lottery Token&quot;;
-    string public symbol = &quot;ILOT&quot;;
+    string public name = "ILOT Interest-Paying Lottery Token";
+    string public symbol = "ILOT";
     
     /*
         We&#39;ve hardcoded our official website into the blockchain!
         Please do not send ETH to scams/clones/copies. 
         The website indicated below is the only official ILOT website.
     */
-    string public site_url = &quot;https://ILOT.io/&quot;;
+    string public site_url = "https://ILOT.io/";
 
-    bytes32 private current_jackpot_hash = &quot;FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF&quot;;
+    bytes32 private current_jackpot_hash = "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF";
     uint8 public decimals = 18;
     uint public totalSupply = 0; // No pre-minted amount.
     uint public interestRate = 15; // 1.5% fixed monthly interest = 15 / 1000

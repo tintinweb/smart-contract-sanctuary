@@ -149,7 +149,7 @@ contract DSMath {
         z = add(mul(x, RAY), y / 2) / y;
     }
 
-    // This famous algorithm is called &quot;exponentiation by squaring&quot;
+    // This famous algorithm is called "exponentiation by squaring"
     // and calculates x^n with x as fixed-point and n as regular unsigned.
     //
     // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -301,7 +301,7 @@ contract DSToken is DSTokenBase(0), DSStop {
     }
 
     // Optional token name
-    bytes32   public  name = &quot;&quot;;
+    bytes32   public  name = "";
 
     function setName(bytes32 name_) public auth {
         name = name_;
@@ -383,10 +383,10 @@ contract ERC223 {
     event ReceivingContractTokenFallbackFailed(address indexed from, address indexed to, uint amount);
 }
 
-contract OMT is DSToken(&quot;OMT&quot;), ERC223, Controlled {
+contract OMT is DSToken("OMT"), ERC223, Controlled {
 
     function OMT() {
-        setName(&quot;OTCMAKER Token&quot;);
+        setName("OTCMAKER Token");
     }
 
     /// @notice Send `_amount` tokens to `_to` from `_from` on the condition it
@@ -408,21 +408,21 @@ contract OMT is DSToken(&quot;OMT&quot;), ERC223, Controlled {
         if (success && isContract(_to))
         {
             // ERC20 backward compatiability
-            if(!_to.call(bytes4(keccak256(&quot;tokenFallback(address,uint256)&quot;)), _from, _amount)) {
+            if(!_to.call(bytes4(keccak256("tokenFallback(address,uint256)")), _from, _amount)) {
                 // do nothing when error in call in case that the _to contract is not inherited from ERC223ReceivingContract
                 // revert();
                 // bytes memory empty;
 
                 ReceivingContractTokenFallbackFailed(_from, _to, _amount);
 
-                // Even the fallback failed if there is such one, the transfer will not be revert since &quot;revert()&quot; is not called.
+                // Even the fallback failed if there is such one, the transfer will not be revert since "revert()" is not called.
             }
         }
     }
 
     /*
      * ERC 223
-     * Added support for the ERC 223 &quot;tokenFallback&quot; method in a &quot;transfer&quot; function with a payload.
+     * Added support for the ERC 223 "tokenFallback" method in a "transfer" function with a payload.
      */
     function transferFrom(address _from, address _to, uint256 _amount, bytes _data)
         public
@@ -448,7 +448,7 @@ contract OMT is DSToken(&quot;OMT&quot;), ERC223, Controlled {
 
     /*
      * ERC 223
-     * Added support for the ERC 223 &quot;tokenFallback&quot; method in a &quot;transfer&quot; function with a payload.
+     * Added support for the ERC 223 "tokenFallback" method in a "transfer" function with a payload.
      * https://github.com/ethereum/EIPs/issues/223
      * function transfer(address _to, uint256 _value, bytes _data) public returns (bool success);
      */
@@ -471,7 +471,7 @@ contract OMT is DSToken(&quot;OMT&quot;), ERC223, Controlled {
 
     /*
      * ERC 223
-     * Added support for the ERC 223 &quot;tokenFallback&quot; method in a &quot;transfer&quot; function with a payload.
+     * Added support for the ERC 223 "tokenFallback" method in a "transfer" function with a payload.
      */
     function transferFrom(address _from, address _to, uint256 _amount, bytes _data, string _custom_fallback)
         public
@@ -497,7 +497,7 @@ contract OMT is DSToken(&quot;OMT&quot;), ERC223, Controlled {
 
     /*
      * ERC 223
-     * Added support for the ERC 223 &quot;tokenFallback&quot; method in a &quot;transfer&quot; function with a payload.
+     * Added support for the ERC 223 "tokenFallback" method in a "transfer" function with a payload.
      */
     function transfer(
         address _to, 

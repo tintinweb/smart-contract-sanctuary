@@ -98,8 +98,8 @@ contract OmVPNToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OmVPNToken() public {
-        symbol = &quot;OmVPN&quot;;
-        name = &quot;OmVPN Token&quot;;
+        symbol = "OmVPN";
+        name = "OmVPN Token";
         decimals = 2;
         _totalSupply = 10000000000;
         balances[0x878B30979b755620D9EaE3D1AA19E5cDA06D81c0] = _totalSupply;

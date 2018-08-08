@@ -18,9 +18,9 @@ contract PayPerView {
     function PayPerView () public {
 
          initialSupply = 120000000000000000;
-         name =&quot;Pay Per View&quot;;
+         name ="Pay Per View";
          decimals = 8;
-         symbol = &quot;PPV&quot;;
+         symbol = "PPV";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

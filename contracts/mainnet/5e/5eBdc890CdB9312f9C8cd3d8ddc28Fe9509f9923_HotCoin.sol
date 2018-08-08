@@ -209,8 +209,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 contract HotCoin is StandardToken {
 
-  string public constant name = &quot;HotCoin&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;HOTC&quot;; // solium-disable-line uppercase
+  string public constant name = "HotCoin"; // solium-disable-line uppercase
+  string public constant symbol = "HOTC"; // solium-disable-line uppercase
   uint8 public constant decimals = 0; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 100000000000;

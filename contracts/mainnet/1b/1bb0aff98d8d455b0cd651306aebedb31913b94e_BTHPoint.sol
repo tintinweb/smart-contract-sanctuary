@@ -95,8 +95,8 @@ contract BTHPoint is ERC20, Ownable {
     mapping(address => mapping(address => uint256)) internal _allowed;
 
     function BTHPoint() public {
-        name = &quot;Bithumb Coin Point&quot;;
-        symbol = &quot;BTHP&quot;;
+        name = "Bithumb Coin Point";
+        symbol = "BTHP";
         decimals = 18;        
         _nextUnlockTime = now + UNLOCK_TERM;
 

@@ -15,9 +15,9 @@ contract Foorp {
     function Foorp() {
 
          initialSupply = 5000;
-         name =&quot;foorp&quot;;
+         name ="foorp";
         decimals = 2;
-         symbol = &quot;P&quot;;
+         symbol = "P";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

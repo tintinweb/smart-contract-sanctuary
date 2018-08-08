@@ -189,7 +189,7 @@ contract MintableToken is StandardToken, Ownable {
     }
 }
 contract ZapToken is MintableToken {
-    string public name = &quot;ZAP TOKEN&quot;;
-    string public symbol = &quot;ZAP&quot;;
+    string public name = "ZAP TOKEN";
+    string public symbol = "ZAP";
     uint256 public decimals = 18;
 }

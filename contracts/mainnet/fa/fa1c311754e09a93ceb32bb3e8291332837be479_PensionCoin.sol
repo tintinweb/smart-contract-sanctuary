@@ -77,8 +77,8 @@ contract PensionCoin is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Pension Coin&quot;;
-    string public constant symbol = &quot;PCoin&quot;;
+    string public constant name = "Pension Coin";
+    string public constant symbol = "PCoin";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 300000000e8;

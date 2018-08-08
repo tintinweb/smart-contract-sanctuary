@@ -219,7 +219,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -336,7 +336,7 @@ contract Utils {
 */
 contract ISmartToken {
 
-    string public version = &quot;0.3&quot;;
+    string public version = "0.3";
 
     // =================================================================================================================
     //                                      Members
@@ -367,9 +367,9 @@ contract ISmartToken {
 
 contract SmartToken is ISmartToken, Utils, Ownable, MintableToken {
 
-    string public standard = &quot;Token 0.1&quot;;
-    string public name = &quot;&quot;;
-    string public symbol = &quot;&quot;;
+    string public standard = "Token 0.1";
+    string public name = "";
+    string public symbol = "";
     uint8 public decimals = 0;
     bool public transfersEnabled = false;
     bool public destroyEnabled = false;
@@ -439,12 +439,12 @@ contract SwytchToken is SmartToken {
     /**
     * @dev Contract Name
     */
-    string public name = &quot;Swytch Energy Token&quot;;
+    string public name = "Swytch Energy Token";
 
     /**
     * @dev Contract Symbol
     */
-    string public symbol = &quot;SET&quot;;
+    string public symbol = "SET";
 
     /**
     * @dev Number of decimals

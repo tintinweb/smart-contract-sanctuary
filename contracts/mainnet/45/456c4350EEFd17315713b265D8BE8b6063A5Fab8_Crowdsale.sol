@@ -185,8 +185,8 @@ contract StandardToken is BasicToken, ERC20 {
   }
 }
 contract SggCoin is StandardToken, Ownable {
-  string public constant name = &quot;SggCoin&quot;;
-  string public constant symbol = &quot;SGG&quot;;
+  string public constant name = "SggCoin";
+  string public constant symbol = "SGG";
   uint public constant decimals = 6;
 
 
@@ -398,9 +398,9 @@ contract Crowdsale is Pausable, PullPayment {
 
 	/*
   	 * When MIN_CAP is not reach:
-  	 * 1) backer call the &quot;approve&quot; function of the SggCoin token contract with the amount of all SggCoins they got in order to be refund
-  	 * 2) backer call the &quot;refund&quot; function of the Crowdsale contract with the same amount of SggCoins
-   	 * 3) backer call the &quot;withdrawPayments&quot; function of the Crowdsale contract to get a refund in ETH
+  	 * 1) backer call the "approve" function of the SggCoin token contract with the amount of all SggCoins they got in order to be refund
+  	 * 2) backer call the "refund" function of the Crowdsale contract with the same amount of SggCoins
+   	 * 3) backer call the "withdrawPayments" function of the Crowdsale contract to get a refund in ETH
    	 */
 	function refund(uint _value) minCapNotReached public {
 

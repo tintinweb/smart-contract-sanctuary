@@ -146,8 +146,8 @@ contract Owned {
 contract TRNDToken is ERC223Interface, Owned {
     using SafeMath for uint;
     
-    string public constant symbol=&quot;TRND&quot;; 
-    string public constant name=&quot;trend42&quot;; 
+    string public constant symbol="TRND"; 
+    string public constant name="trend42"; 
     uint8 public constant decimals=2;
 
     //totalsupplyoftoken 

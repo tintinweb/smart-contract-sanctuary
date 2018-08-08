@@ -3,7 +3,7 @@ pragma solidity ^0.4.18; // solhint-disable-line
 // similar as shrimpfarmer, with below changes:
 // A. one fifth of your owls die when you sell eggs
 // B. you can transfer ownership of the devfee through sacrificing owls
-// C. the &quot;free&quot; 300 owls cost 0.001 eth (in line with the mining fee)
+// C. the "free" 300 owls cost 0.001 eth (in line with the mining fee)
 // D. Inflation has been reduced by 20% (More Earnings!)
 // bots should have a harder time, and whales can compete for the devfee
 

@@ -3,7 +3,7 @@ pragma solidity ^0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -129,11 +129,11 @@ contract zombieCreator is Ownable {
        bytes32 dna;
 
        if(i == 0){
-         dna = keccak256(block.blockhash(block.number-1), block.difficulty, block.coinbase, now, msg.sender, &quot;CryptoDeads DNA Seed&quot;);
+         dna = keccak256(block.blockhash(block.number-1), block.difficulty, block.coinbase, now, msg.sender, "CryptoDeads DNA Seed");
        } else if(i == 1){
-         dna = keccak256(msg.sender, now, block.blockhash(block.number-1), &quot;CryptoDeads DNA Seed&quot;, block.coinbase, block.difficulty);
+         dna = keccak256(msg.sender, now, block.blockhash(block.number-1), "CryptoDeads DNA Seed", block.coinbase, block.difficulty);
        } else {
-         dna = keccak256(&quot;CryptoDeads DNA Seed&quot;, now, block.difficulty, block.coinbase, block.blockhash(block.number-1), msg.sender);
+         dna = keccak256("CryptoDeads DNA Seed", now, block.difficulty, block.coinbase, block.blockhash(block.number-1), msg.sender);
        }
 
        uint star = uint(dna) % 1000 +1;
@@ -164,11 +164,11 @@ contract zombieCreator is Ownable {
        bytes32 dna;
        
        if(i == 0){
-         dna = keccak256(block.blockhash(block.number-1), block.difficulty, block.coinbase, now, msg.sender, &quot;CryptoDeads DNA Seed&quot;);
+         dna = keccak256(block.blockhash(block.number-1), block.difficulty, block.coinbase, now, msg.sender, "CryptoDeads DNA Seed");
        } else if(i == 1){
-         dna = keccak256(msg.sender, now, block.blockhash(block.number-1), &quot;CryptoDeads DNA Seed&quot;, block.coinbase, block.difficulty);
+         dna = keccak256(msg.sender, now, block.blockhash(block.number-1), "CryptoDeads DNA Seed", block.coinbase, block.difficulty);
        } else {
-         dna = keccak256(&quot;CryptoDeads DNA Seed&quot;, now, block.difficulty, block.coinbase, block.blockhash(block.number-1), msg.sender);
+         dna = keccak256("CryptoDeads DNA Seed", now, block.difficulty, block.coinbase, block.blockhash(block.number-1), msg.sender);
        }
 
        uint star = uint(dna) % 1000 +1;
@@ -206,7 +206,7 @@ contract zombieCreator is Ownable {
       roletype = uint(keccak256(msg.sender ,block.blockhash(block.number-1), block.coinbase, now, block.difficulty)) % 3 + 1;
     }
     
-    bytes32 dna = keccak256(block.blockhash(block.number-1), block.difficulty, block.coinbase, now, msg.sender, &quot;CryptoDeads DNA Seed&quot;);
+    bytes32 dna = keccak256(block.blockhash(block.number-1), block.difficulty, block.coinbase, now, msg.sender, "CryptoDeads DNA Seed");
     
     c.createZombie(star,dna,uint16(roletype),true,msg.sender);
     isGetFreeZombie[msg.sender] = true;
@@ -222,11 +222,11 @@ contract zombieCreator is Ownable {
        bytes32 dna;
        
        if(i == 0){
-         dna = keccak256(block.blockhash(block.number-1), block.difficulty, block.coinbase, now, msg.sender, &quot;CryptoDeads DNA Seed&quot;);
+         dna = keccak256(block.blockhash(block.number-1), block.difficulty, block.coinbase, now, msg.sender, "CryptoDeads DNA Seed");
        } else if(i == 1){
-         dna = keccak256(msg.sender, now, block.blockhash(block.number-1), &quot;CryptoDeads DNA Seed&quot;, block.coinbase, block.difficulty);
+         dna = keccak256(msg.sender, now, block.blockhash(block.number-1), "CryptoDeads DNA Seed", block.coinbase, block.difficulty);
        } else {
-         dna = keccak256(&quot;CryptoDeads DNA Seed&quot;, now, block.difficulty, block.coinbase, block.blockhash(block.number-1), msg.sender);
+         dna = keccak256("CryptoDeads DNA Seed", now, block.difficulty, block.coinbase, block.blockhash(block.number-1), msg.sender);
        }
 
        uint star = uint(dna) % 1000 + 1;

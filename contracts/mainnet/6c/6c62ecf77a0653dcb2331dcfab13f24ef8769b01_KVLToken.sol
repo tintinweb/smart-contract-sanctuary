@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract KVLToken is StandardToken {
 
-  string public constant name = &quot; KEVIN LI&quot;;
-  string public constant symbol = &quot;KVL&quot;;
+  string public constant name = " KEVIN LI";
+  string public constant symbol = "KVL";
   uint8 public constant decimals = 18;
 
 

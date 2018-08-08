@@ -82,8 +82,8 @@ contract pokerbox is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;pokerbox&quot;;
-    string public constant symbol = &quot;PEX&quot;;
+    string public constant name = "pokerbox";
+    string public constant symbol = "PEX";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 30000000000e18;

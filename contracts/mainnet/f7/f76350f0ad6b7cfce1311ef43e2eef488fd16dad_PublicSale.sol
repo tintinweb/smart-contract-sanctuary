@@ -60,7 +60,7 @@ contract Pausable is Ownable {
 /**
  * @title OwnableImpl
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract OwnableImpl is Ownable {
     address public owner;
@@ -246,7 +246,7 @@ contract EtherReceiver {
 
 contract EtherReceiveAdapter is EtherReceiver, ReceiveAdapter {
     function () payable public {
-        receiveWithData(&quot;&quot;);
+        receiveWithData("");
     }
 
     function receiveWithData(bytes _data) payable public {
@@ -503,7 +503,7 @@ contract Whitelist is Secured {
 		return whitelist[addr];
 	}
 
-	function setWhitelist(address addr, bool allow) only(&quot;operator&quot;) public {
+	function setWhitelist(address addr, bool allow) only("operator") public {
 		setWhitelistInternal(addr, allow);
 	}
 

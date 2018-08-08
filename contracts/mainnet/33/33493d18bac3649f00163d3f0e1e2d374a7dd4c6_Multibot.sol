@@ -14,8 +14,8 @@ contract ERC20Interface {
 contract Multibot is ERC20Interface {
     address public owner;
 
-    string public constant symbol = &quot;MBT&quot;;
-    string public constant name = &quot;Multibot&quot;;
+    string public constant symbol = "MBT";
+    string public constant name = "Multibot";
     uint8 public constant decimals = 8;
     uint256 initialSupply = 2500000000000000;
     

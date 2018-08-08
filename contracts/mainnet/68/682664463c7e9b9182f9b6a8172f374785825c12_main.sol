@@ -7,7 +7,7 @@
  *
  * Expercoin, Inc. can be reached via support@expercoin.com and expercoin.com website.
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE
  * SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
@@ -24,10 +24,10 @@ contract References {
 
 contract AuthorizedList {
 
-    bytes32 constant PRESIDENT = keccak256(&quot;Republics President!&quot;);
-    bytes32 constant STAFF_MEMBER = keccak256(&quot;Staff Member.&quot;);
-    bytes32 constant AIR_DROP = keccak256(&quot;Airdrop Permission.&quot;);
-    bytes32 constant INTERNAL = keccak256(&quot;Internal Authorization.&quot;);
+    bytes32 constant PRESIDENT = keccak256("Republics President!");
+    bytes32 constant STAFF_MEMBER = keccak256("Staff Member.");
+    bytes32 constant AIR_DROP = keccak256("Airdrop Permission.");
+    bytes32 constant INTERNAL = keccak256("Internal Authorization.");
     mapping (address => mapping(bytes32 => bool)) authorized;
 
 }
@@ -48,7 +48,7 @@ contract Authorized is AuthorizedList {
     /// @param _authorization key for specific authorization
     modifier ifAuthorized(address _address, bytes32 _authorization) {
 
-       require(authorized[_address][_authorization] || authorized[_address][PRESIDENT], &quot;Not authorized to access!&quot;);
+       require(authorized[_address][_authorization] || authorized[_address][PRESIDENT], "Not authorized to access!");
        _;
 
     }
@@ -68,7 +68,7 @@ contract Authorized is AuthorizedList {
     function toggleAuthorization(address _address, bytes32 _authorization) public ifAuthorized(msg.sender, PRESIDENT) {
 
        /// Prevent inadvertent self locking out, cannot change own authority
-       require(_address != msg.sender, &quot;Cannot change own permissions.&quot;);
+       require(_address != msg.sender, "Cannot change own permissions.");
 
        /// No need for lower level authorization to linger
        if (_authorization == PRESIDENT && !authorized[_address][PRESIDENT])
@@ -87,8 +87,8 @@ contract main is References, AuthorizedList, Authorized {
 
   function main(address _logic, address _storage) public Authorized() {
 
-     require(_logic != address(0), &quot;main: Unexpectedly logic address is 0x0.&quot;);
-     require(_storage != address(0), &quot;main: Unexpectedly storage address is 0x0.&quot;);
+     require(_logic != address(0), "main: Unexpectedly logic address is 0x0.");
+     require(_storage != address(0), "main: Unexpectedly storage address is 0x0.");
      references[bytes32(0)] = _logic;
      references[bytes32(1)] = _storage;
 
@@ -99,7 +99,7 @@ contract main is References, AuthorizedList, Authorized {
   /// @param _key bytes32 key location
   function setReference(address _address, bytes32 _key) external ifAuthorized(msg.sender, PRESIDENT) {
 
-     require(_address != address(0), &quot;setReference: Unexpectedly _address is 0x0&quot;);
+     require(_address != address(0), "setReference: Unexpectedly _address is 0x0");
 
      if (_key == bytes32(0)) emit LogicUpgrade(references[bytes32(0)], _address);
      else emit StorageUpgrade(references[_key], _address);

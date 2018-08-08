@@ -13,8 +13,8 @@ contract ERC20Interface {
 
 contract ATCToken is ERC20Interface{
     string public standard = &#39;Token 1.0&#39;;
-    string public constant name=&quot;ATC&quot;;
-    string public constant symbol=&quot;ATC&quot;;
+    string public constant name="ATC";
+    string public constant symbol="ATC";
     uint8 public constant decimals=10;
     uint256 constant _totalSupply=3000000000000000000;
     mapping(address => mapping (address => uint256)) allowed;

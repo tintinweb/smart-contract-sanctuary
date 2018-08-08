@@ -113,8 +113,8 @@ contract EMBCToken is UnboundedRegularToken {
 
     uint public totalSupply = 100*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;Exchange Merge BlockChain&quot;;
-    string constant public symbol = &quot;EMBC&quot;;
+    string constant public name = "Exchange Merge BlockChain";
+    string constant public symbol = "EMBC";
 
     function EMBCToken() {
         balances[msg.sender] = totalSupply;

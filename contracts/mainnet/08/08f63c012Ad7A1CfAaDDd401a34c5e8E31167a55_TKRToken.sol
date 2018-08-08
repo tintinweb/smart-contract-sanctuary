@@ -33,7 +33,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control 
- * functions, this simplifies the implementation of &quot;user permissions&quot;. 
+ * functions, this simplifies the implementation of "user permissions". 
  */
 contract Ownable {
     address public owner;
@@ -182,8 +182,8 @@ contract StandardToken is ERC20, BasicToken {
 contract TKRToken is StandardToken {
     event Destroy(address indexed _from, address indexed _to, uint256 _value);
 
-    string public name = &quot;TKRToken&quot;;
-    string public symbol = &quot;TKR&quot;;
+    string public name = "TKRToken";
+    string public symbol = "TKR";
     uint256 public decimals = 18;
     uint256 public initialSupply = 65500000 * 10 ** 18;
 

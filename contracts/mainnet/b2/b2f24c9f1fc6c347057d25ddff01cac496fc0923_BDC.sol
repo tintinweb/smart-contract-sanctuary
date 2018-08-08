@@ -288,8 +288,8 @@ contract ERC223Token is ERC223Interface, StandardToken {
 }
 
 contract BDC is ERC223Token, Ownable {
-    string public name = &quot;BitDigitalCoin&quot;;
-    string public symbol = &quot;BDC&quot;;
+    string public name = "BitDigitalCoin";
+    string public symbol = "BDC";
     uint256 public decimals = 18;
 
     using SafeMath for uint;

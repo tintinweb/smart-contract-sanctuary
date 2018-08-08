@@ -315,9 +315,9 @@ contract MEGA is admined,IERC20Token { //Standar definition of an ERC20Token
 	address public feeWallet;
 	uint256 public rate = 6850;
 	//token related
-	string public name = &quot;MEGAINVEST v4&quot;;
+	string public name = "MEGAINVEST v4";
     uint8 public decimals = 18;
-    string public symbol = &quot;MEG4&quot;;
+    string public symbol = "MEG4";
     string public version = &#39;2&#39;;
 
 	constructor(address _feeWallet) public {

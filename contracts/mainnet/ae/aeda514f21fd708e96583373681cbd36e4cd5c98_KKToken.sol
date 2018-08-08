@@ -8,8 +8,8 @@ contract KKToken {
   mapping (address => mapping (address => uint256)) allowed;
   
   //这4个状态变量会自动创建对应public函数
-  string public name = &quot; Kunkun Token&quot;;
-  string public symbol = &quot;KKT&quot;;
+  string public name = " Kunkun Token";
+  string public symbol = "KKT";
   uint8 public decimals = 18;  //建议的默认值
   uint256 public totalSupply;
 

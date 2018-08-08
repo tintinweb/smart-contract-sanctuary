@@ -113,8 +113,8 @@ contract BBNToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BBNToken() public {
-        symbol = &quot;BBN&quot;;
-        name = &quot;BBNToken&quot;;
+        symbol = "BBN";
+        name = "BBNToken";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x807AC972A4ce08CFA88dB2Ab08F830239A046C18] = _totalSupply;

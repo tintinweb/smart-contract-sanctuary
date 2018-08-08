@@ -45,8 +45,8 @@ interface IERC20 {
 contract MithrilSword is IERC20 {
     /* Public variables of the token */
     string public standard = &#39;Token 0.1&#39;;
-    string public constant name = &quot;Mithril Sword&quot;;
-    string public constant symbol = &quot;MSWD&quot;;
+    string public constant name = "Mithril Sword";
+    string public constant symbol = "MSWD";
     uint8 public constant decimals = 2;
     uint256 public initialSupply;
     uint256 public totalSupply;

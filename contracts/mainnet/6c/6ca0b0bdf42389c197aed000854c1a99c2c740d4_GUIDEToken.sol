@@ -1,7 +1,7 @@
 contract GUIDEToken {
 
-    string public name = &quot;GUIDE TOKEN&quot;;          //  token name
-    string public symbol = &quot;GUIDE&quot;;           //  token symbol
+    string public name = "GUIDE TOKEN";          //  token name
+    string public symbol = "GUIDE";           //  token symbol
     uint256 public decimals = 8;            //  token digit
 
     mapping (address => uint256) public balanceOf;

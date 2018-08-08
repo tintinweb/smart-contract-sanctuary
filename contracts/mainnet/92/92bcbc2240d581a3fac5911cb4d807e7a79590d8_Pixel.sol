@@ -14,9 +14,9 @@ contract Pixel {
         uint16 index;
         //bytes32[10] image_data;
     }
-    string public standard = &quot;IPO 0.9&quot;;
-    string public constant name = &quot;Initial Pixel Offering&quot;;
-    string public constant symbol = &quot;IPO&quot;;
+    string public standard = "IPO 0.9";
+    string public constant name = "Initial Pixel Offering";
+    string public constant symbol = "IPO";
     uint8 public constant decimals = 0;
     mapping (address => uint256) public balanceOf;
     mapping (address => uint256) public ethBalance;
@@ -91,7 +91,7 @@ contract Pixel {
     }
 
     /* Get the index to access a section object from its section identifier */
-    /// Get Section index based on its upper left x,y coordinates or &quot;identifier&quot;
+    /// Get Section index based on its upper left x,y coordinates or "identifier"
     /// coordinates
     /// This is a helper function
     function getSectionIndexFromIdentifier (
@@ -105,7 +105,7 @@ contract Pixel {
     }
 
     /* Get x,y section_identifier from a section index */
-    /// Get Section upper left x,y coordinates or &quot;identifier&quot; coordinates
+    /// Get Section upper left x,y coordinates or "identifier" coordinates
     /// based on its index number
     /// This is a helper function
     function getIdentifierFromSectionIndex(
@@ -137,7 +137,7 @@ contract Pixel {
         // Has the user set the section as for_sale
         if(s.for_sale)
         {
-            // Has the owner set a &quot;sell only to&quot; address?
+            // Has the owner set a "sell only to" address?
             if(s.sell_only_to == 0x0) return true;
             if(s.sell_only_to == msg.sender) return true;
             return false;
@@ -615,7 +615,7 @@ contract Pixel {
         // section.image_data[8] = _row_eight;
         // section.image_data[9] = _row_nine;
         section.image_id = 0;
-        section.md5 = &quot;&quot;;
+        section.md5 = "";
         section.last_update = block.timestamp;
         NewImage(_section_index);
     }
@@ -644,7 +644,7 @@ contract Pixel {
             // can call this function again as part of the receiving call
             // before `send` returns.
             ethBalance[msg.sender] = 0;
-            WithdrawEvent(&quot;Reset Sender&quot;);
+            WithdrawEvent("Reset Sender");
             msg.sender.transfer(amount);
         }
         return true;

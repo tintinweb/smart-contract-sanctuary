@@ -133,11 +133,11 @@ contract CryptoCupToken is ERC721 {
     
     /*****------- PUBLIC FUNCTIONS -------******/
     function name() public pure returns (string) {
-        return &quot;CryptoCup&quot;;
+        return "CryptoCup";
     }
   
     function symbol() public pure returns (string) {
-        return &quot;CryptoCupToken&quot;;
+        return "CryptoCupToken";
     }
     
     function implementsERC721() public pure returns (bool) {
@@ -197,38 +197,38 @@ contract CryptoCupToken is ERC721 {
     }
     
     function createTeams() public onlyContractModifier {
-        _createTeam(&quot;Russia&quot;, &quot;RUS&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Saudi Arabia&quot;, &quot;KSA&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Egypt&quot;, &quot;EGY&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Uruguay&quot;, &quot;URU&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Portugal&quot;, &quot;POR&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Spain&quot;, &quot;SPA&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Morocco&quot;, &quot;MOR&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Iran&quot;, &quot;IRN&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;France&quot;, &quot;FRA&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Australia&quot;, &quot;AUS&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Peru&quot;, &quot;PER&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Denmark&quot;, &quot;DEN&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Argentina&quot;, &quot;ARG&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Iceland&quot;, &quot;ICE&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Croatia&quot;, &quot;CRO&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Nigeria&quot;, &quot;NGA&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Brazil&quot;, &quot;BRZ&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Switzerland&quot;, &quot;SWI&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Costa Rica&quot;, &quot;CRC&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Serbia&quot;, &quot;SER&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Germany&quot;, &quot;GER&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Mexico&quot;, &quot;MEX&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Sweden&quot;, &quot;SWE&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;South Korea&quot;, &quot;KOR&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Belgium&quot;, &quot;BEL&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Panama&quot;, &quot;PAN&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Tunisia&quot;, &quot;TUN&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;England&quot;, &quot;ENG&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Poland&quot;, &quot;POL&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Senegal&quot;, &quot;SEN&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Colombia&quot;, &quot;COL&quot;, startingPrice, developerAddress);
-        _createTeam(&quot;Japan&quot;, &quot;JPN&quot;, startingPrice, developerAddress);
+        _createTeam("Russia", "RUS", startingPrice, developerAddress);
+        _createTeam("Saudi Arabia", "KSA", startingPrice, developerAddress);
+        _createTeam("Egypt", "EGY", startingPrice, developerAddress);
+        _createTeam("Uruguay", "URU", startingPrice, developerAddress);
+        _createTeam("Portugal", "POR", startingPrice, developerAddress);
+        _createTeam("Spain", "SPA", startingPrice, developerAddress);
+        _createTeam("Morocco", "MOR", startingPrice, developerAddress);
+        _createTeam("Iran", "IRN", startingPrice, developerAddress);
+        _createTeam("France", "FRA", startingPrice, developerAddress);
+        _createTeam("Australia", "AUS", startingPrice, developerAddress);
+        _createTeam("Peru", "PER", startingPrice, developerAddress);
+        _createTeam("Denmark", "DEN", startingPrice, developerAddress);
+        _createTeam("Argentina", "ARG", startingPrice, developerAddress);
+        _createTeam("Iceland", "ICE", startingPrice, developerAddress);
+        _createTeam("Croatia", "CRO", startingPrice, developerAddress);
+        _createTeam("Nigeria", "NGA", startingPrice, developerAddress);
+        _createTeam("Brazil", "BRZ", startingPrice, developerAddress);
+        _createTeam("Switzerland", "SWI", startingPrice, developerAddress);
+        _createTeam("Costa Rica", "CRC", startingPrice, developerAddress);
+        _createTeam("Serbia", "SER", startingPrice, developerAddress);
+        _createTeam("Germany", "GER", startingPrice, developerAddress);
+        _createTeam("Mexico", "MEX", startingPrice, developerAddress);
+        _createTeam("Sweden", "SWE", startingPrice, developerAddress);
+        _createTeam("South Korea", "KOR", startingPrice, developerAddress);
+        _createTeam("Belgium", "BEL", startingPrice, developerAddress);
+        _createTeam("Panama", "PAN", startingPrice, developerAddress);
+        _createTeam("Tunisia", "TUN", startingPrice, developerAddress);
+        _createTeam("England", "ENG", startingPrice, developerAddress);
+        _createTeam("Poland", "POL", startingPrice, developerAddress);
+        _createTeam("Senegal", "SEN", startingPrice, developerAddress);
+        _createTeam("Colombia", "COL", startingPrice, developerAddress);
+        _createTeam("Japan", "JPN", startingPrice, developerAddress);
     }
     
     function createTeam(string name, string code) public onlyContractModifier {
@@ -248,10 +248,10 @@ contract CryptoCupToken is ERC721 {
         require(team.numPayouts == 0);
         
         team.owner.transfer(prizes.LastSixteenWinner);
-        emit PrizePaid(&quot;Last Sixteen&quot;, _tokenId, team.owner, prizes.LastSixteenWinner, uint256(now));
+        emit PrizePaid("Last Sixteen", _tokenId, team.owner, prizes.LastSixteenWinner, uint256(now));
 
         team.payouts[team.numPayouts++] = Payout({
-            stage: &quot;Last Sixteen&quot;,
+            stage: "Last Sixteen",
             amount: prizes.LastSixteenWinner,
             to: team.owner,
             when: uint256(now)
@@ -272,12 +272,12 @@ contract CryptoCupToken is ERC721 {
         Team storage team = teams[_tokenId];
         require(team.numPayouts == 1);
         Payout storage payout = team.payouts[0];
-        require(_compareStrings(payout.stage, &quot;Last Sixteen&quot;));
+        require(_compareStrings(payout.stage, "Last Sixteen"));
 
         team.owner.transfer(prizes.QuarterFinalWinner);
-        emit PrizePaid(&quot;Quarter Final&quot;, _tokenId, team.owner, prizes.QuarterFinalWinner, uint256(now));
+        emit PrizePaid("Quarter Final", _tokenId, team.owner, prizes.QuarterFinalWinner, uint256(now));
         team.payouts[team.numPayouts++] = Payout({
-            stage: &quot;Quarter Final&quot;,
+            stage: "Quarter Final",
             amount: prizes.QuarterFinalWinner,
             to: team.owner,
             when: uint256(now)
@@ -298,12 +298,12 @@ contract CryptoCupToken is ERC721 {
         Team storage team = teams[_tokenId];
         require(team.numPayouts == 2);
         Payout storage payout = team.payouts[1];
-        require(_compareStrings(payout.stage, &quot;Quarter Final&quot;));
+        require(_compareStrings(payout.stage, "Quarter Final"));
         
         team.owner.transfer(prizes.SemiFinalWinner);
-        emit PrizePaid(&quot;Semi Final&quot;, _tokenId, team.owner, prizes.SemiFinalWinner, uint256(now));
+        emit PrizePaid("Semi Final", _tokenId, team.owner, prizes.SemiFinalWinner, uint256(now));
         team.payouts[team.numPayouts++] = Payout({
-            stage: &quot;Semi Final&quot;,
+            stage: "Semi Final",
             amount: prizes.SemiFinalWinner,
             to: team.owner,
             when: uint256(now)
@@ -317,12 +317,12 @@ contract CryptoCupToken is ERC721 {
         Team storage team = teams[_tokenId];
         require(team.numPayouts == 3);
         Payout storage payout = team.payouts[2];
-        require(_compareStrings(payout.stage, &quot;Semi Final&quot;));
+        require(_compareStrings(payout.stage, "Semi Final"));
 
         team.owner.transfer(prizes.TournamentWinner);
-        emit PrizePaid(&quot;Final&quot;, _tokenId, team.owner, prizes.TournamentWinner, uint256(now));
+        emit PrizePaid("Final", _tokenId, team.owner, prizes.TournamentWinner, uint256(now));
         team.payouts[team.numPayouts++] = Payout({
-            stage: &quot;Final&quot;,
+            stage: "Final",
             amount: prizes.TournamentWinner,
             to: team.owner,
             when: uint256(now)

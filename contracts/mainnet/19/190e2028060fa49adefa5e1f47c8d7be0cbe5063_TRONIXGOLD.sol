@@ -116,8 +116,8 @@ contract TRONIXGOLD is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TRONIXGOLD() public {
-        symbol = &quot;TRXG&quot;;
-        name = &quot;TRONIX GOLD&quot;;
+        symbol = "TRXG";
+        name = "TRONIX GOLD";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0x95a96a9fab04Fdf71f37807246408973b30d29e1] = _totalSupply;

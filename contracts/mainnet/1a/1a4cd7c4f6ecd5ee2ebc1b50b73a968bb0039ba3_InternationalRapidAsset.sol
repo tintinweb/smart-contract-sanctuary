@@ -65,9 +65,9 @@ contract InternationalRapidAsset is StandardToken {
     function InternationalRapidAsset() {
         balances[msg.sender] = 10000000000000000000000000;               
         totalSupply = 10000000000000000000000000;                        
-        name = &quot;InternationalRapidAsset&quot;;                                   
+        name = "InternationalRapidAsset";                                   
         decimals = 18;                                               
-        symbol = &quot;IRA&quot;;                                             
+        symbol = "IRA";                                             
         unitsOneEthCanBuy = 5800;                                      
         fundsWallet = msg.sender;                                    
     }
@@ -89,7 +89,7 @@ contract InternationalRapidAsset is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

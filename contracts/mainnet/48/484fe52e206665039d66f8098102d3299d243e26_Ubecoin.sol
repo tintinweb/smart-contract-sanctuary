@@ -163,7 +163,7 @@ contract StandardToken {
 
 contract UbecoinICO is owned {
     using SafeMath for uint256;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
     address private WITHDRAW_WALLET;
     uint256 public totalSold = 0;
     uint256 public soldOnStage = 0;
@@ -315,10 +315,10 @@ contract UbecoinICO is owned {
 contract Ubecoin is StandardToken {
       event Burn(address indexed burner, uint256 value);
 
-      string public constant name = &quot;Ubecoin&quot;;
-      string public constant symbol = &quot;UBE&quot;;
+      string public constant name = "Ubecoin";
+      string public constant symbol = "UBE";
       uint8 public constant decimals = 18;
-      string public version = &quot;1.0&quot;;
+      string public version = "1.0";
       uint256 public totalSupply  = 3000000000 * 1 ether;
       mapping(address=>uint256) premineOf;
       address[] private premineWallets = [

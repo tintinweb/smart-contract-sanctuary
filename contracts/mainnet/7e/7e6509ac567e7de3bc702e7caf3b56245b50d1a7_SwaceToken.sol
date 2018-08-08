@@ -587,7 +587,7 @@ contract SwaceToken is
     address _advBtyWallet
   )
     public
-    DetailedERC20(&quot;Swace&quot;, &quot;SWA&quot;, 18)
+    DetailedERC20("Swace", "SWA", 18)
     CappedToken(TOTAL_SUPPLY)
   {
     // solium-disable-next-line security/no-block-members

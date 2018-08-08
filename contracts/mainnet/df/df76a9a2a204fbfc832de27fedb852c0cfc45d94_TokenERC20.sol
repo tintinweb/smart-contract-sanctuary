@@ -28,8 +28,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 100000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;expime&quot;;                                   // Set the name for display purposes
-        symbol = &quot;EXM&quot;;                               // Set the symbol for display purposes
+        name = "expime";                                   // Set the name for display purposes
+        symbol = "EXM";                               // Set the symbol for display purposes
     }
 
     /**

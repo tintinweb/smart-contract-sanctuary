@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract CerradoToken {
 
-    string public name = &quot;Cerrado&quot;;
-    string public symbol = &quot;CBR&quot;;
+    string public name = "Cerrado";
+    string public symbol = "CBR";
     uint8 public decimals = 18;
     uint256 private supply = 100000000;
     uint256 public totalSupply = 0;

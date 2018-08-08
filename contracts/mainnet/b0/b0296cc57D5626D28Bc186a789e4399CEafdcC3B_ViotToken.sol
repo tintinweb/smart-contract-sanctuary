@@ -122,8 +122,8 @@ contract StandardToken is ERC20, SafeMath {
 }
 
 contract ViotToken is Ownable, StandardToken {
-    string public name = &quot;VIOT Token&quot;;
-    string public symbol = &quot;VIOT&quot;;
+    string public name = "VIOT Token";
+    string public symbol = "VIOT";
     uint public decimals = 18;                  // token has 18 digit precision
     uint public totalSupply = 1 * (10**9) * (10**18);  // 1 Billion Tokens
 

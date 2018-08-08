@@ -89,12 +89,12 @@ contract BAIC is BasicToken {
         require(false);
     }
 
-    string public constant name = &quot;BAIC&quot;;
-    string public constant symbol = &quot;BAIC&quot;;
+    string public constant name = "BAIC";
+    string public constant symbol = "BAIC";
     uint256 private constant _INITIAL_SUPPLY = 21000000000;
     uint8 public decimals = 18;
     uint256 public totalSupply;
-    string public version = &quot;BAIC 1.0&quot;;
+    string public version = "BAIC 1.0";
 
     constructor() public {
         // init

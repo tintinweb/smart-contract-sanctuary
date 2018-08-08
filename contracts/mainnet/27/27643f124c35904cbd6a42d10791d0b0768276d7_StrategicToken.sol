@@ -98,8 +98,8 @@ contract StrategicToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function StrategicToken() public {
-        symbol = &quot;STR&quot;;
-        name = &quot;Strategic Token&quot;;
+        symbol = "STR";
+        name = "Strategic Token";
         decimals = 18;
         _totalSupply = 170000000000000000000000000;
         balances[0xaF8aF568Aed371cB31043AC44EDb28CED7265051] = _totalSupply;

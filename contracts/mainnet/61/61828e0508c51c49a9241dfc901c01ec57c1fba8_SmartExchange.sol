@@ -120,8 +120,8 @@ contract SmartExchange is ERC20, ERC223 {
     mapping (address => mapping (address => uint256)) internal allowed;
 
     function SmartExchange (string name, string symbol, uint8 decimals, uint256 totalSupply) public {
-        _symbol = &quot;SDE&quot;;
-        _name = &quot;Smart Exchange&quot;;
+        _symbol = "SDE";
+        _name = "Smart Exchange";
         _decimals = 18;
         _totalSupply = 28000000 * 1e18;
         balances[msg.sender] = 28000000 * 1e18;

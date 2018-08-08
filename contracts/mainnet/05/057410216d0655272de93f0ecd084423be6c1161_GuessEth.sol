@@ -172,7 +172,7 @@ contract GuessEth is Ownable,GuessEthEvents{
         uint256 _codeLength;
     
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
         _;
     }
     
@@ -340,7 +340,7 @@ contract GuessEth is Ownable,GuessEthEvents{
     
     
     function invest() isHuman payable public returns(uint){
-        require(msg.value >= 1 ether,&quot;Minima amoun:1 ether&quot;);
+        require(msg.value >= 1 ether,"Minima amoun:1 ether");
         
         Sponsors[msg.sender] = Sponsors[msg.sender].add(msg.value);
         balanceOfSPS = balanceOfSPS.add(msg.value);

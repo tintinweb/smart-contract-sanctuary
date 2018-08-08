@@ -58,8 +58,8 @@ contract PUMPHODL is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;PUMPHODL&quot;;
-    string public constant symbol = &quot;PHOD&quot;;
+    string public constant name = "PUMPHODL";
+    string public constant symbol = "PHOD";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000e8;

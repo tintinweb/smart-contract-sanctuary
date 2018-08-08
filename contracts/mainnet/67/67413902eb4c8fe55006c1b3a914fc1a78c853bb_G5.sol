@@ -185,8 +185,8 @@ contract G5 is StandardToken {
     uint256 floor;
     uint256 lastUpdate;
     
-    string public name = &quot;G5&quot;;
-    string public symbol = &quot;G5&quot;;
+    string public name = "G5";
+    string public symbol = "G5";
     uint8 public decimals = 8;
     
     function updateCeiling() private {

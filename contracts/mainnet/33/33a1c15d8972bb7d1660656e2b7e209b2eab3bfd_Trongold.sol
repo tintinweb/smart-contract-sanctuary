@@ -16,9 +16,9 @@ contract  Trongold {
     function Trongold() {
 
          initialSupply = 100000000000;
-         name =&quot;Trongold&quot;;
+         name ="Trongold";
         decimals = 0;
-         symbol = &quot;TRXG&quot;;
+         symbol = "TRXG";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

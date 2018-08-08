@@ -2,8 +2,8 @@ pragma solidity ^0.4.13;
 
 contract proverka6 {
 
-	string public symbol = &quot;PRV6&quot;;
-	string public name = &quot;proverka6&quot;;
+	string public symbol = "PRV6";
+	string public name = "proverka6";
 	uint8 public constant decimals = 12;
 	uint256 public totalSupply = 1000000000000;
 

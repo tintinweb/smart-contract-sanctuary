@@ -254,7 +254,7 @@ contract ApproveAndCallReceiver {
 
 /// @dev The actual token contract, the default controller is the msg.sender
 ///  that deploys the contract, so usually this token will be deployed by a
-///  token controller contract, which Giveth will call a &quot;Campaign&quot;
+///  token controller contract, which Giveth will call a "Campaign"
 contract MiniMeToken is MiniMeTokenI {
 
     /// @dev `Checkpoint` is the structure that attaches a block number to a

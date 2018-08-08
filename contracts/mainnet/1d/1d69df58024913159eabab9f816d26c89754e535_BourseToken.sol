@@ -116,8 +116,8 @@ contract BourseToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BourseToken() public {
-        symbol = &quot;BST&quot;;
-        name = &quot;Bourse Token&quot;;
+        symbol = "BST";
+        name = "Bourse Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

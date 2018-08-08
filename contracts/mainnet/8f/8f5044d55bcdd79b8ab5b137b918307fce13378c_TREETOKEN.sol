@@ -146,7 +146,7 @@ contract StandardToken is ERC20, BasicToken {
  
 /*
 The Ownable contract has an owner address, and provides basic authorization control
- functions, this simplifies the implementation of &quot;user permissions&quot;.
+ functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -202,8 +202,8 @@ contract TheLiquidToken is StandardToken, Ownable {
 }
     
 contract TREETOKEN is TheLiquidToken {
-  string public constant name = &quot;TREE TOKEN&quot;;
-  string public constant symbol = &quot;TREE&quot;;
+  string public constant name = "TREE TOKEN";
+  string public constant symbol = "TREE";
   uint public constant decimals = 2;
   uint256 public initialSupply;
     

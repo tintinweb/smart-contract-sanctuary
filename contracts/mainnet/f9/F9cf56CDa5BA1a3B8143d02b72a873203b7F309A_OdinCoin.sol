@@ -106,8 +106,8 @@ contract StandardToken is ERC20 {
 }
 pragma solidity ^0.4.18;
 contract OdinCoin is StandardToken {
-    string public constant name = &quot;ODIN TOKEN&quot;;
-    string public constant symbol = &quot;ODIN&quot;;
+    string public constant name = "ODIN TOKEN";
+    string public constant symbol = "ODIN";
     uint8 public constant decimals = 0;
     uint256 public constant totalSupply = 200000000;
 

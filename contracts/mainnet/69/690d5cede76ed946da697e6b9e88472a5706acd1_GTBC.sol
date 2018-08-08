@@ -97,8 +97,8 @@ contract GTBC is Owned, SafeMath, Pausable, EIP20Interface {
     event Unfreeze(address indexed from, uint256 value);
 
     constructor() public {
-        name = &quot;Global Token Bet Coin &quot;;
-        symbol = &quot;GTBC&quot;;
+        name = "Global Token Bet Coin ";
+        symbol = "GTBC";
         decimals = 18;
         totalSupply = 1000000000 * 10 ** uint256(decimals);
         balances[msg.sender] = totalSupply;

@@ -292,8 +292,8 @@ contract Owned {
 }
 
 contract DepoToken is StandardToken, BurnableToken, Owned {
-    string public constant name = &quot;Depository Network Token&quot;;
-    string public constant symbol = &quot;DEPO&quot;;
+    string public constant name = "Depository Network Token";
+    string public constant symbol = "DEPO";
     uint8 public constant decimals = 18;
 
     /// Maximum tokens to be allocated (3 billion DEPO)

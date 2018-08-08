@@ -137,8 +137,8 @@ contract JointToken is ERC20Token {
 
 
     function JointToken() public {
-        name = &quot;JOINT&quot;;
-        symbol = &quot;JOINT&quot;;
+        name = "JOINT";
+        symbol = "JOINT";
         decimals = 18;
 
         decimalPlace = 10**uint256(decimals);

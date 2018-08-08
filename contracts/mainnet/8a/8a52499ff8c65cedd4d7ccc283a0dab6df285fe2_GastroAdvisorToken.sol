@@ -349,7 +349,7 @@ contract RBAC {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -598,7 +598,7 @@ contract RBACMintableToken is MintableToken, RBAC {
   /**
    * A constant role name for indicating minters.
    */
-  string public constant ROLE_MINTER = &quot;minter&quot;;
+  string public constant ROLE_MINTER = "minter";
 
   /**
    * @dev override the Mintable token modifier to add role based logic
@@ -852,7 +852,7 @@ contract GastroAdvisorToken is DetailedERC20, ERC827Token, RBACMintableToken, Bu
   }
 
   constructor()
-  DetailedERC20(&quot;GastroAdvisorToken&quot;, &quot;FORK&quot;, 18)
+  DetailedERC20("GastroAdvisorToken", "FORK", 18)
   public
   {}
 

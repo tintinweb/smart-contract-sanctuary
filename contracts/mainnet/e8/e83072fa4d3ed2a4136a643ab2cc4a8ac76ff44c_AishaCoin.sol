@@ -113,8 +113,8 @@ contract AishaCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AishaCoin() public {
-        symbol = &quot;Aisha&quot;;
-        name = &quot;AishaCoin&quot;;
+        symbol = "Aisha";
+        name = "AishaCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa8dd829777CfABa5747d9060a7f8Ff42bd2180f1] = _totalSupply;

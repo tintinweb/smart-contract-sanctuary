@@ -135,8 +135,8 @@ contract BurnableToken is BasicToken {
 
 contract OctusToken is StandardToken, BurnableToken {
 
-  string public constant name = &quot;Octus&quot;; 
-  string public constant symbol = &quot;OCT&quot;; 
+  string public constant name = "Octus"; 
+  string public constant symbol = "OCT"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 2500000 * (10 ** uint256(decimals));

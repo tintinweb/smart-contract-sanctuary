@@ -48,8 +48,8 @@ contract MOEToken is ERC20 {
 
     mapping (address => mapping (address => uint256)) allowed;
 
-    string public name = &quot;MOE&#39;s game art foundation&quot;;
-    string public constant symbol = &quot;MOE&quot;;
+    string public name = "MOE&#39;s game art foundation";
+    string public constant symbol = "MOE";
     uint public constant decimals = 18;
     bool public stopped;
     

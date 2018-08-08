@@ -58,8 +58,8 @@ owner = newOwner;
 contract Dominant is ERC20, Ownable {
 using SafeMath for uint256;
 
-string public constant name = &quot;Dominant&quot;;
-string public constant symbol = &quot;DMNT&quot;;
+string public constant name = "Dominant";
+string public constant symbol = "DMNT";
 uint8 public constant decimals = 18;
 uint256 public constant initial_supply = 21000000000 * (10 ** uint256(decimals));
 

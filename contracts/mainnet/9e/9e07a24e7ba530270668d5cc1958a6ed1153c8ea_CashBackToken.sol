@@ -118,8 +118,8 @@ contract CashBackToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CashBackToken() public {
-        symbol = &quot;CABC&quot;;
-        name = &quot;Cashback coin&quot;;
+        symbol = "CABC";
+        name = "Cashback coin";
         decimals = 8;
         _totalSupply = 2100000000000000;
         balances[0x5b5547d79ca5163145d41d374f0c7fcfabe8cba1] = _totalSupply;

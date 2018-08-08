@@ -2,8 +2,8 @@ pragma solidity ^0.4.16;
 
 contract TokenERC20 {
     // Public variables of the token
-    string public name = &quot;Grinta Coin&quot;;
-    string public symbol = &quot;GRIT&quot;;
+    string public name = "Grinta Coin";
+    string public symbol = "GRIT";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 1000000;

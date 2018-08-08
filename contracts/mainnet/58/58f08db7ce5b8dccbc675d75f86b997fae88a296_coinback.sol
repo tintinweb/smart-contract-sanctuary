@@ -209,15 +209,15 @@ contract usingOraclize {
     }
 
     function strConcat(string _a, string _b, string _c, string _d) internal returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
 
     function strConcat(string _a, string _b, string _c) internal returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
 
     function strConcat(string _a, string _b) internal returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 
     // parseInt
@@ -461,7 +461,7 @@ contract coinback is owned,usingOraclize {
 
     function closeThisTurn() private{
 
-        bytes32 oid = oraclize_query(&quot;URL&quot;,&quot;https://www.random.org/integers/?num=1&min=1&max=1000000&col=1&base=10&format=plain&rnd=new&quot;,oraclizeGas);
+        bytes32 oid = oraclize_query("URL","https://www.random.org/integers/?num=1&min=1&max=1000000&col=1&base=10&format=plain&rnd=new",oraclizeGas);
     }
 
     function closeTurnByHand(uint256 no) onlyOwner{

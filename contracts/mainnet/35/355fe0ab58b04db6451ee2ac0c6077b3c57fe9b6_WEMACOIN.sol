@@ -113,8 +113,8 @@ contract WEMACOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WEMACOIN() public {
-        symbol = &quot;WMC&quot;;
-        name = &quot;WEMACOIN&quot;;
+        symbol = "WMC";
+        name = "WEMACOIN";
         decimals = 18;
         _totalSupply = 900000000000000000000000000;
         balances[0x390435245F2f95f7443eBb045357DA743E9A65a4] = _totalSupply;

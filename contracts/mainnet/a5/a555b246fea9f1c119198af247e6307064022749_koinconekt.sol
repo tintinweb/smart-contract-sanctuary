@@ -113,8 +113,8 @@ contract koinconekt is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KOINCONEKT() public {
-        symbol = &quot;KCK&quot;;
-        name = &quot;KOINCONEKT&quot;;
+        symbol = "KCK";
+        name = "KOINCONEKT";
         decimals = 18;
         _totalSupply = 50000000000000000000000000;
         balances[0x2892774C7D9eC77c881cd8829E4ED5c6A49c7e41] = _totalSupply;

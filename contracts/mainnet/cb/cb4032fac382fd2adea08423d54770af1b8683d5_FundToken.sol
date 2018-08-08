@@ -73,10 +73,10 @@ contract FundToken is StandardToken {
     function FundToken() {
         balances[msg.sender] = 80000000000000000000000000;
         totalSupply = 80000000000000000000000000;
-        name = &quot;FundToken&quot;;
-        webAddress = &quot;www.fundfantasy.io&quot;; // This is official website of FundFantasy.
+        name = "FundToken";
+        webAddress = "www.fundfantasy.io"; // This is official website of FundFantasy.
 		decimals = 18;
-        symbol = &quot;FUNDZ&quot;;
+        symbol = "FUNDZ";
         unitsOneEthCanBuy = 6000; // ICO member will automatically get FundToken after sending ETH to contract address. Do not send ETH from exchanger. Use MEW, Metamask, Mist, etc.
         fundsWallet = msg.sender;
     }
@@ -98,7 +98,7 @@ contract FundToken is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

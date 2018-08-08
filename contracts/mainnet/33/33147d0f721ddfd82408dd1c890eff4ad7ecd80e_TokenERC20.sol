@@ -62,8 +62,8 @@ contract TokenERC20 is Ownable {
 	
     using SafeMath for uint256;
     
-    string public constant name       = &quot;Ethereum Ecology&quot;;
-    string public constant symbol     = &quot;ETH.E&quot;;
+    string public constant name       = "Ethereum Ecology";
+    string public constant symbol     = "ETH.E";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply;
     uint256 public currentTotalSupply = 0;

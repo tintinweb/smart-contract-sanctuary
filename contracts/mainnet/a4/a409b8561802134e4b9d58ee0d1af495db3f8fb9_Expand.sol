@@ -35,7 +35,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -114,8 +114,8 @@ contract PoSTokenStandard {
 contract Expand is ERC20,PoSTokenStandard,Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;Expand&quot;;
-    string public symbol = &quot;EDT&quot;;
+    string public name = "Expand";
+    string public symbol = "EDT";
     uint public decimals = 18;
 
     uint public chainStartTime; //chain start time

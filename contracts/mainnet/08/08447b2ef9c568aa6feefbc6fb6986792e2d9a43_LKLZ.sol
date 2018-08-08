@@ -89,8 +89,8 @@ contract LKLZ is StandardToken {
     function LKLZ() {
         balances[msg.sender] = 510000000000000000;               // Give the creator all initial tokens
         totalSupply = 510000000000000000;                        // Update total supply
-        name = &quot;LKLZ&quot;;                                   // Set the name for display purposes
+        name = "LKLZ";                                   // Set the name for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
-        symbol = &quot;LKLZ&quot;;                               // Set the symbol for display purposes
+        symbol = "LKLZ";                               // Set the symbol for display purposes
     }
 }

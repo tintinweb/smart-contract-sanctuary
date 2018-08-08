@@ -150,8 +150,8 @@ contract StandardToken is BasicToken, ERC20 {
 
 contract SimpleToken is StandardToken {
 
-  string public name = &quot;Retcoin&quot;;
-  string public symbol = &quot;RET&quot;;
+  string public name = "Retcoin";
+  string public symbol = "RET";
   uint public decimals = 3;
   uint public INITIAL_SUPPLY = 100000000000;
 

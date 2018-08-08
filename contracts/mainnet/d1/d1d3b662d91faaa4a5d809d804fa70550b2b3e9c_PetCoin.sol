@@ -295,8 +295,8 @@ contract PetCoin is StandardToken, Owned {
   using SafeMath for uint256;
 
   // Token metadata
-  string public constant name = &quot;Petcoin&quot;;
-  string public constant symbol = &quot;PETC&quot;;
+  string public constant name = "Petcoin";
+  string public constant symbol = "PETC";
   uint256 public constant decimals = 18;
 
   // Token supply breakdown

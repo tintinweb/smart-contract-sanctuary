@@ -73,8 +73,8 @@ contract Bilibit is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Bilibit&quot;;
-    string public constant symbol = &quot;BLB&quot;;
+    string public constant name = "Bilibit";
+    string public constant symbol = "BLB";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 5000000000e8;

@@ -64,8 +64,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract NINECOINTOKEN is StandardToken 
 {
-    string public name = &quot;NINECOINTOKEN&quot;;
-    string public symbol = &quot;NCB&quot;;
+    string public name = "NINECOINTOKEN";
+    string public symbol = "NCB";
     uint public decimals = 18;
     uint public totalSupply = 2 * 100 * 1000 * 1000 ether;
 

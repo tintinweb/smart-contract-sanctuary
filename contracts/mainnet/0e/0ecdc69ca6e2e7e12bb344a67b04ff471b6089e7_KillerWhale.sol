@@ -178,9 +178,9 @@ contract KillerWhale is StandardToken { // CHANGE THIS. Update the contract name
     // This is a constructor function 
     // which means the following function name has to match the contract name declared above
     function KillerWhale() {
-        name = &quot;KillerWhale&quot;;                                          // Set the name for display purposes (CHANGE THIS)
+        name = "KillerWhale";                                          // Set the name for display purposes (CHANGE THIS)
         decimals = 18;                                               // Amount of decimals for display purposes (CHANGE THIS)
-        symbol = &quot;KWT&quot;;                                             // Set the symbol for display purposes (CHANGE THIS)
+        symbol = "KWT";                                             // Set the symbol for display purposes (CHANGE THIS)
         unitsOneEthCanBuy = 100;                                      // Set the price of your token for the ICO (CHANGE THIS)
         fundsWallet = 0x3f17dE50F2D1CA4209c2028677B328E34581d4Dc;                                    // The owner of the contract gets ETH
         totalSupply = 88000000 * 10 ** uint256(decimals);                        // Update total supply (1000 for example) (CHANGE THIS)
@@ -215,7 +215,7 @@ contract KillerWhale is StandardToken { // CHANGE THIS. Update the contract name
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { revert(); }
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { revert(); }
         return true;
     }
 }

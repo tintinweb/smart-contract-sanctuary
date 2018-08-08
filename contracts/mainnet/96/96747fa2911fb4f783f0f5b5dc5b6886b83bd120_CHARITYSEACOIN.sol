@@ -113,8 +113,8 @@ contract CHARITYSEACOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CHARITYSEACOIN() public {
-        symbol = &quot;CHRTY&quot;;
-        name = &quot;CHARITY SEA COIN&quot;;
+        symbol = "CHRTY";
+        name = "CHARITY SEA COIN";
         decimals = 18;
         _totalSupply = 90000000000000000000000000;
         balances[0xec2C6Cf5F919e538975E6C58dFA315b803223Ce2] = _totalSupply;

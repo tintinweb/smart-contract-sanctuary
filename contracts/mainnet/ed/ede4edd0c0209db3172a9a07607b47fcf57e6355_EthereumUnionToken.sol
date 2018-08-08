@@ -118,8 +118,8 @@ contract EthereumUnionToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EthereumUnionToken() public {
-        symbol = &quot;ETU&quot;;
-        name = &quot;Ethereum Union&quot;;
+        symbol = "ETU";
+        name = "Ethereum Union";
         decimals = 5;
         _totalSupply = 12500000000000;
         balances[0xfb58a9af395755a4e95805d76bae231feb01a192] = _totalSupply;

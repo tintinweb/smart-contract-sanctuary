@@ -42,8 +42,8 @@ library SafeMath {
 contract NGTToken is owned {
     using SafeMath for uint256;
 
-    string public constant name = &quot;NextGenToken&quot;;
-    string public constant symbol = &quot;NGT&quot;;
+    string public constant name = "NextGenToken";
+    string public constant symbol = "NGT";
     uint8 public constant decimals = 18;
 
     uint256 public totalSupply;

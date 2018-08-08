@@ -201,6 +201,6 @@ library Lib {
     assembly {
       size := extcodesize(addr)
     }
-    return (size > 1); // testing returned size &quot;1&quot; for non-contract accounts, so we&#39;re using that.
+    return (size > 1); // testing returned size "1" for non-contract accounts, so we&#39;re using that.
   }
 }

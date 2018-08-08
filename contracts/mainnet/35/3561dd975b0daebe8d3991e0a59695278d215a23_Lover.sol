@@ -114,10 +114,10 @@ contract ERC20Token is ERC20 {
 }
 
 contract Lover is ERC20Token, Owned {
-	string public name = &quot;Lover&quot;;
-    string public symbol = &quot;LOV&quot;;
+	string public name = "Lover";
+    string public symbol = "LOV";
     uint public constant decimals = 18;
-	string public note = &quot;(C) loverchain.com all rights reserved&quot;;
+	string public note = "(C) loverchain.com all rights reserved";
     uint public burnedToken;
 	uint public fee;
 	mapping (address => string) public keys;
@@ -205,8 +205,8 @@ contract Lover is ERC20Token, Owned {
 		uint _timestamp = now;
 		uint _nonce = nonces[_from];
 		_save(_to, scores[_from], levels[_from], stars[_from], profiles[_from], properties[_from], _certifier, _nonce, _timestamp);
-        profiles[_from] = &quot;&quot;;
-        properties[_from] = &quot;&quot;;
+        profiles[_from] = "";
+        properties[_from] = "";
 		scores[_from] = 0; 
 		levels[_from] = 0;
 		stars[_from] = 0;

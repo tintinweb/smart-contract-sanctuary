@@ -191,25 +191,25 @@ contract UberDelta is SafeMath, OwnerManager, Helper {
   bool public contractLocked;
   
   bytes32 signedTradeHash = keccak256(
-    &quot;address contractAddress&quot;,
-    &quot;address takerTokenAddress&quot;,
-    &quot;uint256 takerTokenAmount&quot;,
-    &quot;address makerTokenAddress&quot;,
-    &quot;uint256 makerTokenAmount&quot;,
-    &quot;uint256 tradeExpires&quot;,
-    &quot;uint256 salt&quot;,
-    &quot;address maker&quot;,
-    &quot;address restrictedTo&quot;
+    "address contractAddress",
+    "address takerTokenAddress",
+    "uint256 takerTokenAmount",
+    "address makerTokenAddress",
+    "uint256 makerTokenAmount",
+    "uint256 tradeExpires",
+    "uint256 salt",
+    "address maker",
+    "address restrictedTo"
   );
   
   bytes32 signedWithdrawHash = keccak256(
-    &quot;address contractAddress&quot;,
-    &quot;uint256 amount&quot;,
-    &quot;uint256 fee&quot;,
-    &quot;uint256 withdrawExpires&quot;,
-    &quot;uint256 salt&quot;,
-    &quot;address maker&quot;,
-    &quot;address restrictedTo&quot;
+    "address contractAddress",
+    "uint256 amount",
+    "uint256 fee",
+    "uint256 withdrawExpires",
+    "uint256 salt",
+    "address maker",
+    "address restrictedTo"
   );
 
 
@@ -610,7 +610,7 @@ contract UberDelta is SafeMath, OwnerManager, Helper {
   function tokenFallback(
     address _from,  // user calling the function
     uint256 _value, // the number of tokens
-    bytes _sendTo     // &quot;deposit to other user&quot; if exactly 20 bytes sent
+    bytes _sendTo     // "deposit to other user" if exactly 20 bytes sent
     
   )
     external
@@ -689,7 +689,7 @@ contract UberDelta is SafeMath, OwnerManager, Helper {
   
   // In order to see the ERC20 total balance, we&#39;re calling an external contract,
   // and this contract claims to be ERC20, but we don&#39;t know what&#39;s really there.
-  // We can&#39;t rely on the EVM or solidity to enforce &quot;view&quot;, so even though a
+  // We can&#39;t rely on the EVM or solidity to enforce "view", so even though a
   // normal token can rely on itself to be non-malicious, we can&#39;t.
   // We have no idea what potentially evil tokens we&#39;ll be interacting with.
   // The call to check the reported balance needs to go after the state changes,
@@ -705,7 +705,7 @@ contract UberDelta is SafeMath, OwnerManager, Helper {
   //  5) Report back to this function exactly the amount we had in globalBalance.
   // (which, by then is true, since they were stolen).
   // Now we&#39;re always going to see 0 extra tokens, and our users have had their tokens perminantly lost.
-  // bonus: this is why there is no &quot;sweep all&quot; function.
+  // bonus: this is why there is no "sweep all" function.
     
   // Detect ERC20 tokens that have been sent to the contract without a deposit (lost tokens),
   // which are not included in globalBalance[..]
@@ -1675,7 +1675,7 @@ contract UberDelta is SafeMath, OwnerManager, Helper {
 
     a: if an american option is executed, and the collateral&#39;s movement
        makes it later out of the money, the value of the option would
-       need to be calculated by including the &quot;pre-executed&quot; amount.
+       need to be calculated by including the "pre-executed" amount.
        * 
        This would prevent an external actor performing weird arb trades
        (write a billion tickets, collapse a billion tickets, profit!).

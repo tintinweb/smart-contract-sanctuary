@@ -16,8 +16,8 @@ contract TheBittrip {
     ) public {
         totalSupply = 250000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;    
-        name = &quot;The Bittrip&quot;;                     
-        symbol = &quot;BTT&quot;;                     
+        name = "The Bittrip";                     
+        symbol = "BTT";                     
     }
     function _transfer(address _from, address _to, uint _value) internal {
         require(_to != 0x0);

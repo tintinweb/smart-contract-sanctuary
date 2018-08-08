@@ -56,8 +56,8 @@ contract ERC20 {
 
 contract Webpuddg is ERC20, owned {
     using SafeMath for uint256;
-    string public name = &quot;Webpuddg&quot;;
-    string public symbol = &quot;WBPDD&quot;;
+    string public name = "Webpuddg";
+    string public symbol = "WBPDD";
     uint8 public decimals = 18;
     uint256 public totalSupply;
 

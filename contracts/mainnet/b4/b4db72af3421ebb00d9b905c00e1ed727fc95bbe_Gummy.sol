@@ -109,8 +109,8 @@ contract Gummy is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Gummy() public {
-        symbol = &quot;GUMMY&quot;;
-        name = &quot;Gummy&quot;;
+        symbol = "GUMMY";
+        name = "Gummy";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x9d966aBcC94760dec6B556dBE6eB1196F58be4BB] = _totalSupply;

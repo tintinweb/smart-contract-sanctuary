@@ -82,7 +82,7 @@ contract TrustedDocument {
     // Constructor
     function TrustedDocument() public {
         owner = msg.sender;
-        baseUrl = &quot;_&quot;;
+        baseUrl = "_";
     }
 
     // Enables to transfer ownership. Works even after

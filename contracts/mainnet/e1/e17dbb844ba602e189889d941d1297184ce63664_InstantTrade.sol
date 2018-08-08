@@ -221,7 +221,7 @@ contract TokenStore is SafeMath, Ownable {
       uint _expires, uint _nonce, address _user, uint8 _v, bytes32 _r, bytes32 _s, uint _amount) {
     bytes32 hash = sha256(this, _tokenGet, _amountGet, _tokenGive, _amountGive, _expires, _nonce);
     // Check order signatures and expiration, also check if not fulfilled yet
-		if (ecrecover(sha3(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), _v, _r, _s) != _user ||
+		if (ecrecover(sha3("\x19Ethereum Signed Message:\n32", hash), _v, _r, _s) != _user ||
       block.number > _expires ||
       safeAdd(orderFills[_user][hash], _amount) > _amountGet) {
       revert();
@@ -275,7 +275,7 @@ contract TokenStore is SafeMath, Ownable {
   function availableVolume(address _tokenGet, uint _amountGet, address _tokenGive, uint _amountGive, uint _expires,
       uint _nonce, address _user, uint8 _v, bytes32 _r, bytes32 _s) constant returns(uint) {
     bytes32 hash = sha256(this, _tokenGet, _amountGet, _tokenGive, _amountGive, _expires, _nonce);
-    if (ecrecover(sha3(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), _v, _r, _s) != _user ||
+    if (ecrecover(sha3("\x19Ethereum Signed Message:\n32", hash), _v, _r, _s) != _user ||
       block.number > _expires) {
       return 0;
     }
@@ -294,7 +294,7 @@ contract TokenStore is SafeMath, Ownable {
   function cancelOrder(address _tokenGet, uint _amountGet, address _tokenGive, uint _amountGive, uint _expires,
       uint _nonce, uint8 _v, bytes32 _r, bytes32 _s) {
     bytes32 hash = sha256(this, _tokenGet, _amountGet, _tokenGive, _amountGive, _expires, _nonce);
-    if (!(ecrecover(sha3(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), _v, _r, _s) == msg.sender)) {
+    if (!(ecrecover(sha3("\x19Ethereum Signed Message:\n32", hash), _v, _r, _s) == msg.sender)) {
       revert();
     }
     orderFills[msg.sender][hash] = _amountGet;

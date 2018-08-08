@@ -65,8 +65,8 @@ contract PrimebankCoin is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Primebank Coin&quot;;
-    string public constant symbol = &quot;PMC&quot;;
+    string public constant name = "Primebank Coin";
+    string public constant symbol = "PMC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000e8;

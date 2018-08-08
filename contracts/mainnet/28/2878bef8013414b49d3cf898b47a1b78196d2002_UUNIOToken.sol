@@ -152,8 +152,8 @@ contract UUNIOToken is StandardToken, Ownable {
     
     using Math for uint;
 
-    string constant public name     = &quot;UUNIO Token&quot;;
-    string constant public symbol   = &quot;UUNIO&quot;;
+    string constant public name     = "UUNIO Token";
+    string constant public symbol   = "UUNIO";
     uint8 constant public decimals  = 8;
     uint256 constant INITIAL_SUPPLY = 900000000e8;
 

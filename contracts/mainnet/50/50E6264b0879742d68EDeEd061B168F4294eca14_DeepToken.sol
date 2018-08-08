@@ -62,8 +62,8 @@ contract DeepToken is SafeMath{
   	function DeepToken() {
 	    totalSupply = 100*(10**8)*(10**18);
 		balanceOf[msg.sender] = 100*(10**8)*(10**18);              // Give the creator all initial tokens
-		name = &quot;DeepToken&quot;;                                   // Set the name for display purposes
-		symbol = &quot;DPT&quot;;                               // Set the symbol for display purposes
+		name = "DeepToken";                                   // Set the name for display purposes
+		symbol = "DPT";                               // Set the symbol for display purposes
 		decimals = 18;                            // Amount of decimals for display purposes
 	}
 

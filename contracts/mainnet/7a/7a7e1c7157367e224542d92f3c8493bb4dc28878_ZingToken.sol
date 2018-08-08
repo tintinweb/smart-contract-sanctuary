@@ -169,6 +169,6 @@ contract ParameterizedToken is CappedToken {
     }
 }
 contract ZingToken is ParameterizedToken {
-    function ZingToken() public ParameterizedToken(&quot;Zing Token&quot;, &quot;ZING&quot;, 8, 110000000) {
+    function ZingToken() public ParameterizedToken("Zing Token", "ZING", 8, 110000000) {
     }
 }

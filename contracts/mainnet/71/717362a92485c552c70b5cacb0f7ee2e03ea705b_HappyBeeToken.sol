@@ -113,8 +113,8 @@ contract HappyBeeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HappyBeeToken() public {
-        symbol = &quot;HBEE&quot;;
-        name = &quot;Happy Bee Token&quot;;
+        symbol = "HBEE";
+        name = "Happy Bee Token";
         decimals = 18;
 		_totalSupply = 5000000000000000000000000;        
         balances[0x3A26dE9Ac4F3Bbb586F9dA30E0eA0abcE205EA77] = _totalSupply;

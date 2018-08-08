@@ -70,9 +70,9 @@ contract NICTO is EIP20Interface {
         ) public {
         totalSupply = 21*10**9*10**8;               //NICTO total Supply
         balances[msg.sender] = totalSupply;         //Allocate NICTO to contract deployer
-        name = &quot;Nictobit&quot;;
+        name = "Nictobit";
         decimals = 8;                               //Amount of decimals for display purposes
-        symbol = &quot;NICTO&quot;;
+        symbol = "NICTO";
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -334,8 +334,8 @@ contract BasketToken is StandardToken, Pausable {
     using SafeMath for uint256;
     using AddressArrayUtils for address[];
 
-    string constant public name = &quot;ERC20 TWENTY&quot;;
-    string constant public symbol = &quot;ETW&quot;;
+    string constant public name = "ERC20 TWENTY";
+    string constant public symbol = "ETW";
     uint8 constant public decimals = 18;
     struct TokenInfo {
         address addr;

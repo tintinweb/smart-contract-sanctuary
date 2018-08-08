@@ -5,7 +5,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 	
@@ -421,7 +421,7 @@ contract ERC223Token is ERC223, StandardToken {
 	/**
 	 * @dev Transfer the specified amount of tokens to the specified address.
 	 *      This function works the same with the previous one
-	 *      but doesn&quot;t contain `_data` param.
+	 *      but doesn"t contain `_data` param.
 	 *      Added due to backwards compatibility reasons.
 	 *
 	 * @param _to    Receiver address

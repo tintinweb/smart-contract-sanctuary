@@ -113,8 +113,8 @@ contract InvestCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function InvestCoin() public {
-        symbol = &quot;IC&quot;;
-        name = &quot;IC&quot;;
+        symbol = "IC";
+        name = "IC";
         decimals = 8;
         _totalSupply = 4500000000000000;
         balances[0xdA7919982634FcA6E1442c6c706405B389867F13] = _totalSupply;

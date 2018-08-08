@@ -806,8 +806,8 @@ contract EDUCrowdsale is AllowanceCrowdsale, CappedCrowdsale, TimedCrowdsale, Ow
 contract EDUToken is BurnableToken, KYCToken, ERC827Token {
     using SafeMath for uint256;
 
-    string public constant name = &quot;EDU Token&quot;;
-    string public constant symbol = &quot;EDU&quot;;
+    string public constant name = "EDU Token";
+    string public constant symbol = "EDU";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 48000000 * (10 ** uint256(decimals));

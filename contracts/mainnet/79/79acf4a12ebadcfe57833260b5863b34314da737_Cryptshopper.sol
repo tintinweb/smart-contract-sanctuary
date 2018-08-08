@@ -110,8 +110,8 @@ contract Cryptshopper is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Cryptshopper() public {
-        symbol = &quot;CRT&quot;;
-        name = &quot;Cryptshopper&quot;;
+        symbol = "CRT";
+        name = "Cryptshopper";
         decimals = 18;
         _totalSupply = 42000000000000000000000000;
         balances[0x4b1f2c8c70ed47Bbb7Db5dA9F9Ee1B8966114d73] = _totalSupply;

@@ -124,8 +124,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 contract ThriveToken is StandardToken {
 
-    string public constant name = &quot;ThriveToken&quot;;
-    string public constant symbol = &quot;THRT&quot;;
+    string public constant name = "ThriveToken";
+    string public constant symbol = "THRT";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 280000000 * (10 ** uint256(decimals));

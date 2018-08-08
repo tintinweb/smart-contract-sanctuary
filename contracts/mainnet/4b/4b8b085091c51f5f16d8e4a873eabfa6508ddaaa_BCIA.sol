@@ -23,8 +23,8 @@ contract BCIA {
     function BCIA() {
         balanceOf[msg.sender] = 200000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply = 200000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;BCIA&quot;;                                   // Set the name for display purposes
-        symbol = &quot;BCIA&quot;;                               // Set the symbol for display purposes
+        name = "BCIA";                                   // Set the name for display purposes
+        symbol = "BCIA";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

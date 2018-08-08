@@ -216,7 +216,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -307,8 +307,8 @@ contract MintableToken is StandardToken, Ownable {
  * Detailed
  */
 contract baxianchain is MintableToken,BurnableToken {
-    string public name = &quot;baxianchain&quot;;
-    string public symbol = &quot;BAAC&quot;;
+    string public name = "baxianchain";
+    string public symbol = "BAAC";
     uint256 public decimals = 8;
     uint256 public INITIAL_SUPPLY = 3000000000 * (10 ** uint256(decimals));
 

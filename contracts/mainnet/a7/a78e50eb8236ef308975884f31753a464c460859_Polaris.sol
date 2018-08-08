@@ -98,8 +98,8 @@ contract Polaris is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Polaris() public {
-        symbol = &quot;POLX&quot;;
-        name = &quot;Polaris Token&quot;;
+        symbol = "POLX";
+        name = "Polaris Token";
         decimals = 18;
         _totalSupply = 20000000000000000000000000000;
         balances[0x1FfD6692df202687E734045398Ce6cAe31C61E61] = _totalSupply;

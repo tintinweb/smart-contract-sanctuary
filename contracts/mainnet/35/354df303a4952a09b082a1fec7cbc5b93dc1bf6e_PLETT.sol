@@ -18,8 +18,8 @@ contract PLETT {
 
     event Burn(address indexed from, uint256 value);
     uint256 initialSupply=120000000;
-        string tokenName = &quot;PLETT Token&quot;;
-        string tokenSymbol = &quot;PLETT&quot;;
+        string tokenName = "PLETT Token";
+        string tokenSymbol = "PLETT";
 
     constructor(
         

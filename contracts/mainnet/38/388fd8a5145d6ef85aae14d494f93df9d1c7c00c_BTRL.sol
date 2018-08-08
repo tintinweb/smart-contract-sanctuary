@@ -146,8 +146,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract BTRL is StandardToken {
-    string public constant name = &quot;Bitcoin Regular&quot;;
-    string public constant symbol = &quot;BTRL&quot;;
+    string public constant name = "Bitcoin Regular";
+    string public constant symbol = "BTRL";
     uint256 public constant decimals = 8;
     uint256 public constant INITIAL_SUPPLY = 21000000 * 10**8;
     function BTRL() 

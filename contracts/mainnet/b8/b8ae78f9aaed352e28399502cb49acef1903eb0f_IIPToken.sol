@@ -122,9 +122,9 @@ contract StandardToken is ERC20Token {
 }
 contract IIPToken is StandardToken, Owned {
     // metadata
-    string public constant name = &quot;Innovation & Intellectual Property&quot;;
-    string public constant symbol = &quot;IIP&quot;;
-    string public version = &quot;1.0&quot;;
+    string public constant name = "Innovation & Intellectual Property";
+    string public constant symbol = "IIP";
+    string public version = "1.0";
     uint256 public constant decimals = 8;
     bool public disabled = false;
     uint256 public constant MILLION = (10**6 * 10**decimals);

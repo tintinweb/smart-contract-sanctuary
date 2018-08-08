@@ -169,9 +169,9 @@ contract TokenVestingContract is Owned {
     
     function release() public returns(uint256 transferedAmount) {
         checkForReceivedTokens();
-        require(msg.sender == beneficiary);//, &quot;Funds may be released only to beneficiary&quot;);
+        require(msg.sender == beneficiary);//, "Funds may be released only to beneficiary");
         uint256 amountToTransfer = getReleasableFunds();
-        require(amountToTransfer > 0);//, &quot;Out of funds&quot;);
+        require(amountToTransfer > 0);//, "Out of funds");
         // internal accounting
         alreadyReleasedAmount = alreadyReleasedAmount.add(amountToTransfer);
         internalBalance = internalBalance.sub(amountToTransfer);

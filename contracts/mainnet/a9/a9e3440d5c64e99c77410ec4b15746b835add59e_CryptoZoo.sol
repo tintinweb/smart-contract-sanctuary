@@ -383,7 +383,7 @@ contract CryptoStorage is StorageBase {
 
     function CryptoStorage() public {
         // placeholder to make the first available monster to have a tokenId starts from 1
-        createMonster(0, 0, 0, 0, 0, &quot;&quot;);
+        createMonster(0, 0, 0, 0, 0, "");
     }
 
     function createMonster(
@@ -1074,12 +1074,12 @@ contract ZooAccessControl is HasNoContracts {
 contract Zoo721 is ZooAccessControl, ERC721 {
 
     // ERC721 Required
-    string public constant name = &quot;Giftomon&quot;;
+    string public constant name = "Giftomon";
     // ERC721 Required
-    string public constant symbol = &quot;GTOM&quot;;
+    string public constant symbol = "GTOM";
 
     bytes4 constant InterfaceSignature_ERC165 =
-        bytes4(keccak256(&quot;supportsInterface(bytes4)&quot;));
+        bytes4(keccak256("supportsInterface(bytes4)"));
 
     bytes4 constant InterfaceSignature_ERC721 =
         bytes4(keccak256(&#39;name()&#39;)) ^

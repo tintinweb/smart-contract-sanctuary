@@ -93,8 +93,8 @@ contract KpopArena {
   address public author;
   address public coauthor;
 
-  string public constant NAME = &quot;KpopArena&quot;;
-  string public constant SYMBOL = &quot;KpopArena&quot;;
+  string public constant NAME = "KpopArena";
+  string public constant SYMBOL = "KpopArena";
 
   address public KPOP_CELEB_CONTRACT_ADDRESS = 0x0;
   address public KPOP_ITEM_CONTRACT_ADDRESS = 0x0;
@@ -285,22 +285,22 @@ contract KpopArena {
 
   function traitIdxToName(uint _idx) public pure returns (string) {
     if (_idx == 0) {
-      return &quot;rap&quot;;
+      return "rap";
     }
     if (_idx == 1) {
-      return &quot;vocal&quot;;
+      return "vocal";
     }
     if (_idx == 2) {
-      return &quot;dance&quot;;
+      return "dance";
     }
     if (_idx == 3) {
-      return &quot;charm&quot;;
+      return "charm";
     }
     if (_idx == 4) {
-      return &quot;acting&quot;;
+      return "acting";
     }
     if (_idx == 5) {
-      return &quot;producing&quot;;
+      return "producing";
     }
   }
 

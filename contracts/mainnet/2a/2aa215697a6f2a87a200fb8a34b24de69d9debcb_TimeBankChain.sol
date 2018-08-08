@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract TimeBankChain is StandardToken {
 
-  string public constant name = &quot;TimeBank Chain&quot;;
-  string public constant symbol = &quot;TBKC&quot;;
+  string public constant name = "TimeBank Chain";
+  string public constant symbol = "TBKC";
   uint8 public constant decimals = 18;
 
 

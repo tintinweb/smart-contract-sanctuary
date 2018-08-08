@@ -245,8 +245,8 @@ contract PausableToken is StandardToken, Pausable {
 contract MSTCOIN is PausableToken {
     
     function MSTCOIN() public {
-        name = &quot;MSTCOIN&quot;;
-        symbol = &quot;MSTCOIN&quot;;
+        name = "MSTCOIN";
+        symbol = "MSTCOIN";
         decimals = 6;
         totalSupply = 500000000e6;
         balances[founderAddress] = totalSupply;

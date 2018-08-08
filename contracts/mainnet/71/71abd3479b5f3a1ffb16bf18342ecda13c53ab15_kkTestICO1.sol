@@ -79,8 +79,8 @@ contract kkTestCoin1 is ERC20, SafeMath{
 	function allowance(address _owner, address _spender) constant returns (uint256 remaining) {
 	    return allowed[_owner][_spender];
 	}
-	string 	public name = &quot;kkTestCoin2&quot;;
-	string 	public symbol = &quot;KTC2&quot;;
+	string 	public name = "kkTestCoin2";
+	string 	public symbol = "KTC2";
 	uint 	public decimals = 0;
 	uint 	public INITIAL_SUPPLY = 30000000;
 
@@ -169,8 +169,8 @@ contract kkTestICO1 is ERC20, SafeMath{
 
 
 
-	string 	public name = &quot;kkTestCoin1&quot;;
-	string 	public symbol = &quot;KTC1&quot;;
+	string 	public name = "kkTestCoin1";
+	string 	public symbol = "KTC1";
 	uint 	public decimals = 0;
 	uint256 public INITIAL_SUPPLY = 25000000;
 	uint256 public price;

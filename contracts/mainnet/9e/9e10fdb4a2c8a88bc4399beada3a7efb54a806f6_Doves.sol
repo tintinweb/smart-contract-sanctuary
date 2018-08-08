@@ -113,8 +113,8 @@ contract Doves is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Doves() public {
-        symbol = &quot;DOVE&quot;;
-        name = &quot;Doves&quot;;
+        symbol = "DOVE";
+        name = "Doves";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xDf4943c61042919Bd45312d033Bd697A1E0A6397] = _totalSupply;

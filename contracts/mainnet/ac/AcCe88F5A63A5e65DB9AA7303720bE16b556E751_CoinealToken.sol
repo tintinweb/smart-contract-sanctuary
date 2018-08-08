@@ -57,8 +57,8 @@ contract CoinealToken is SafeMath{
     function CoinealToken() public {
 	    totalSupply = 10*10**27; // Update total supply
         balanceOf[msg.sender] = totalSupply;              // Give the creator all initial tokens
-        name = &quot;Coineal Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;NEAL&quot;;                               // Set the symbol for display purposes
+        name = "Coineal Token";                                   // Set the name for display purposes
+        symbol = "NEAL";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

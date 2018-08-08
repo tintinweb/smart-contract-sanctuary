@@ -54,7 +54,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -162,8 +162,8 @@ contract Pausable is Ownable {
 
 contract HBToken is Pausable {
 
-  string public name = &quot;HB&quot;;
-  string public symbol = &quot;HB&quot;;
+  string public name = "HB";
+  string public symbol = "HB";
   uint8 public decimals = 18;
 
   mapping(address => uint256) internal balances;

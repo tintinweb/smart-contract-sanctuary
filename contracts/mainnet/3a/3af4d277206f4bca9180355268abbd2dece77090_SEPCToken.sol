@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -126,8 +126,8 @@ contract SEPCToken is ERC20Interface, Ownable{
     // Constructor
     // ------------------------------------------------------------------------
     function SEPCToken() public {
-        symbol = &quot;SEPC&quot;;
-        name = &quot;SEPC&quot;;
+        symbol = "SEPC";
+        name = "SEPC";
         decimals = 18;
         angelMaxAmount = 54000000 * 10**uint(decimals);
         firstMaxAmount = 56000000 * 10**uint(decimals);

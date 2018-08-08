@@ -98,9 +98,9 @@ contract Rozium is StandardToken {
     function Rozium() {
         balances[msg.sender] = 150000000000000000000000000;              
         totalSupply = 150000000000000000000000000;                      
-        name = &quot;Rozium&quot;;                                   
+        name = "Rozium";                                   
         decimals = 18;                                               
-        symbol = &quot;RZM&quot;;                                            
+        symbol = "RZM";                                            
         unitsOneEthCanBuy = 27000;                                      
         fundsWallet = msg.sender;                                    
     }
@@ -127,7 +127,7 @@ contract Rozium is StandardToken {
         Approval(msg.sender, _spender, _value);
 
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

@@ -48,8 +48,8 @@ contract KitFutureToken {
     using SafeMath for uint256;
     event Transfer(address indexed from, address indexed to, uint256 value);
     
-    string public constant name = &quot;Karma Future Token&quot;;
-    string public constant symbol = &quot;KIT-FUTURE&quot;;
+    string public constant name = "Karma Future Token";
+    string public constant symbol = "KIT-FUTURE";
     uint8 public constant decimals = 18;
     
     function KitFutureToken() public {

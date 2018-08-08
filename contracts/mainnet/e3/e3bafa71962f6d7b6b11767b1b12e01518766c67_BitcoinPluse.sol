@@ -109,8 +109,8 @@ contract BitcoinPluse is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitcoinPluse() public {
-        symbol = &quot;BTP&quot;;
-        name = &quot;BitcoinPluse&quot;;
+        symbol = "BTP";
+        name = "BitcoinPluse";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x8Db656ccE982B5A382A72f744Af68164471bB388] = _totalSupply;

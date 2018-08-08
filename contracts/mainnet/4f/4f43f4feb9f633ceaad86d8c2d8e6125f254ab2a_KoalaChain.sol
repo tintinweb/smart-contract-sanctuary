@@ -89,8 +89,8 @@ contract KoalaChain is StandardToken {
     function KoalaChain() {
         balances[msg.sender] = 1500000000000;               // Give the creator all initial tokens
         totalSupply = 1500000000000;                        // Update total supply
-        name = &quot;KoalaChain&quot;;                                   // Set the name for display purposes
+        name = "KoalaChain";                                   // Set the name for display purposes
         decimals = 4;                            // Amount of decimals for display purposes
-        symbol = &quot;KCL&quot;;                               // Set the symbol for display purposes
+        symbol = "KCL";                               // Set the symbol for display purposes
     }
 }

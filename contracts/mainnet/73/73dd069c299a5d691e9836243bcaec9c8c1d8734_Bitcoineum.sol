@@ -785,8 +785,8 @@ contract ERC20Mineable is StandardToken, ReentrancyGuard  {
 
 contract Bitcoineum is ERC20Mineable, Transmutable {
 
- string public constant name = &quot;Bitcoineum&quot;;
- string public constant symbol = &quot;BTE&quot;;
+ string public constant name = "Bitcoineum";
+ string public constant symbol = "BTE";
  uint256 public constant decimals = 8;
  uint256 public constant INITIAL_SUPPLY = 0;
 

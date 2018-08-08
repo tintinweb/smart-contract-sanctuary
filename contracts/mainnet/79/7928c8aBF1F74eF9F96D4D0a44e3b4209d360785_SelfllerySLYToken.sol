@@ -250,7 +250,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -310,8 +310,8 @@ contract SelfllerySLYToken is StandardToken, Ownable {
     using SafeMath for uint256;
 
     uint256 constant internal TOKEN_TOTAL_SUPPLY = 50000000000;
-    string constant internal TOKEN_NAME = &quot;SELFLLERY token&quot;;
-    string constant internal TOKEN_SYMBOL = &quot;SLY&quot;;
+    string constant internal TOKEN_NAME = "SELFLLERY token";
+    string constant internal TOKEN_SYMBOL = "SLY";
     uint8 constant internal TOKEN_DECIMALS = 18;
 
     /// Token name

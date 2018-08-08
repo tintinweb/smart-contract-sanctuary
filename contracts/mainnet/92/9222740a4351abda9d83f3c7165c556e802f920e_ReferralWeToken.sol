@@ -170,8 +170,8 @@ contract ReferralWeToken is BurnableToken {
   }
 
   function ReferralWeToken(address _owner, uint _totalSupply) public {
-    name = &quot;refwttoken&quot;;
-    symbol = &quot;RefWT&quot;;
+    name = "refwttoken";
+    symbol = "RefWT";
     decimals = 0;
     totalSupply = _totalSupply;
 

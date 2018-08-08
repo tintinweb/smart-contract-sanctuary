@@ -127,8 +127,8 @@ contract StandardToken is ERC20 {
 }
 
 contract BNETToken is StandardToken {
-  string public constant name = &quot;B.NETWORK&quot;;
-  string public constant symbol = &quot;BNET&quot;;
+  string public constant name = "B.NETWORK";
+  string public constant symbol = "BNET";
   uint8 public constant decimals = 18;
 
   constructor() public {

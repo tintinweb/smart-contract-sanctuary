@@ -44,8 +44,8 @@ contract OysterShell {
      */
     function OysterShell() public {
         director = msg.sender;
-        name = &quot;Oyster Shell&quot;;
-        symbol = &quot;SHL&quot;;
+        name = "Oyster Shell";
+        symbol = "SHL";
         decimals = 18;
         directorLock = false;
         totalSupply = 98592692 * 10 ** uint256(decimals);

@@ -132,8 +132,8 @@ contract Ownable {
 
 
 contract SwapToken is StandardToken {
-  string public name = &quot;SWAP&quot;;
-  string public symbol = &quot;SWAP&quot;;
+  string public name = "SWAP";
+  string public symbol = "SWAP";
   uint8 public decimals = 4;
 
   function SwapToken() {

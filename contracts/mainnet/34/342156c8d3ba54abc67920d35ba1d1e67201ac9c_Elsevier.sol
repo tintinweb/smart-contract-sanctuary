@@ -58,8 +58,8 @@ contract Elsevier is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Elsevier&quot;;
-    string public constant symbol = &quot;ELV&quot;;
+    string public constant name = "Elsevier";
+    string public constant symbol = "ELV";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 2000000000e8;

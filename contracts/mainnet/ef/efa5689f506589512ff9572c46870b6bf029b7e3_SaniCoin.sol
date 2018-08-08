@@ -113,8 +113,8 @@ contract SaniCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SaniCoin() public {
-        symbol = &quot;SANI&quot;;
-        name = &quot;SaniCoin&quot;;
+        symbol = "SANI";
+        name = "SaniCoin";
         decimals = 2;
         _totalSupply = 84400000000;
         balances[0x9A4DD38e77c945D8Cdd6A4E321Ba970E790D8aC2] = _totalSupply;

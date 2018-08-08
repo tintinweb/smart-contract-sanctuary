@@ -70,8 +70,8 @@ contract StandardToken is Token {
 
 contract XiaoshiToken is StandardToken {
 
-    string constant public name = &quot;Xiaoshi Token&quot;;
-    string constant public symbol = &quot;XSH&quot;;
+    string constant public name = "Xiaoshi Token";
+    string constant public symbol = "XSH";
     uint8 constant public decimals = 18;
 
     function XiaoshiToken()

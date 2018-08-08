@@ -109,8 +109,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract THRD is StandardToken {
-	string public name = &quot;THRD Coin&quot;; 
-	string public symbol = &quot;THRD&quot;;
+	string public name = "THRD Coin"; 
+	string public symbol = "THRD";
 	uint public decimals = 2;
 	uint public INITIAL_SUPPLY = 20000000000;
 

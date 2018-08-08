@@ -113,8 +113,8 @@ contract MemoLandCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MemoLandCoin() public {
-        symbol = &quot;MML&quot;;
-        name = &quot;Memo Land Coin&quot;;
+        symbol = "MML";
+        name = "Memo Land Coin";
         decimals = 5;
         _totalSupply = 117000000000000;
         balances[0x859FfAA045424384657Edf37DCF52828292F6476] = _totalSupply;

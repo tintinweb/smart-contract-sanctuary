@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract HDC is StandardToken, Ownable {
 
-    string public constant name = &quot;红豆链(HongDou chain)&quot;;
-    string public constant symbol = &quot;HDC&quot;;
+    string public constant name = "红豆链(HongDou chain)";
+    string public constant symbol = "HDC";
     uint256 public constant decimals = 8;
 
     function HDC() public {

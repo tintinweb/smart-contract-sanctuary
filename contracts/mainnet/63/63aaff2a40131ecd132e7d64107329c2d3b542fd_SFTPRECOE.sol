@@ -2,9 +2,9 @@ pragma solidity ^0.4.21;
 
 contract SFTPRECOE {
 
-    string public name = &quot;Smart First Time PRECOE 28 Way Distributor&quot;;
+    string public name = "Smart First Time PRECOE 28 Way Distributor";
     uint8 public decimals = 18;
-    string public symbol = &quot;SFTPRECOE&quot;;
+    string public symbol = "SFTPRECOE";
 
     address gp = 0xe118291aa3aee8ab850846d18c8a97d2430015cc;
     address mp = 0x448468d5591C724f5310027B859135d5F6434286;

@@ -129,8 +129,8 @@ contract BitEyeToken is ERC20Token, Ownable {
   bool public distributed = false;
 
   function BitEyeToken() public {
-    name = &quot;BitEye Token&quot;;
-    symbol = &quot;BEY&quot;;
+    name = "BitEye Token";
+    symbol = "BEY";
     decimals = 18;
     totalSupply = 1000000000 * 1e18;
   }

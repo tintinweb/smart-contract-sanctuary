@@ -153,8 +153,8 @@ contract TheLiquidToken is StandardToken, Ownable {
 }
     
 contract ANV is TheLiquidToken {
-  string public constant name = &quot;ANUVYS&quot;;
-      string public constant symbol = &quot;ANV&quot;;
+  string public constant name = "ANUVYS";
+      string public constant symbol = "ANV";
   uint public constant decimals = 18;
   uint256 public initialSupply = 26000000000000000000000000000;
     

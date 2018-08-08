@@ -326,7 +326,7 @@ contract SetInterface {
  * @author Felix Feng
  * @dev Implementation of the basic {Set} token.
  */
-contract SetToken is StandardToken, DetailedERC20(&quot;Stable Set&quot;, &quot;STBL&quot;, 18), SetInterface {
+contract SetToken is StandardToken, DetailedERC20("Stable Set", "STBL", 18), SetInterface {
   using SafeMath for uint256;
   using AddressArrayUtils for address[];
 
@@ -371,7 +371,7 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Stable Set&quot;, &quot;
     // Check that the sender has sufficient components
     // Since the component length is defined ahead of time, this is not
     // an unbounded loop
-    require(balances[msg.sender] >= quantity, &quot;User does not have sufficient balance&quot;);
+    require(balances[msg.sender] >= quantity, "User does not have sufficient balance");
     _;
   }
 
@@ -400,13 +400,13 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Stable Set&quot;, &quot;
     isNonZero(_naturalUnit)
     public {
     // There must be component present
-    require(_components.length > 0, &quot;Component length needs to be great than 0&quot;);
+    require(_components.length > 0, "Component length needs to be great than 0");
 
     // There must be an array of units
-    require(_units.length > 0, &quot;Units must be greater than 0&quot;);
+    require(_units.length > 0, "Units must be greater than 0");
 
     // The number of components must equal the number of units
-    require(_components.length == _units.length, &quot;Component and unit lengths must be the same&quot;);
+    require(_components.length == _units.length, "Component and unit lengths must be the same");
 
     naturalUnit = _naturalUnit;
 
@@ -418,11 +418,11 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Stable Set&quot;, &quot;
     for (uint16 i = 0; i < _units.length; i++) {
       // Check that all units are non-zero. Negative numbers will underflow
       uint currentUnits = _units[i];
-      require(currentUnits > 0, &quot;Unit declarations must be non-zero&quot;);
+      require(currentUnits > 0, "Unit declarations must be non-zero");
 
       // Check that all addresses are non-zero
       address currentComponent = _components[i];
-      require(currentComponent != address(0), &quot;Components must have non-zero address&quot;);
+      require(currentComponent != address(0), "Components must have non-zero address");
 
       // Check the component has not already been added
       require(!tokenIsComponent(currentComponent));
@@ -535,7 +535,7 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Stable Set&quot;, &quot;
   {
     // Excluded tokens should be less than the number of components
     // Otherwise, use the normal redeem function
-    require(_componentsToExclude > 0, &quot;Excluded components must be non-zero&quot;);
+    require(_componentsToExclude > 0, "Excluded components must be non-zero");
 
     burn(_quantity);
 
@@ -576,7 +576,7 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Stable Set&quot;, &quot;
     public
     returns (bool success)
   {
-    require(_componentsToRedeem > 0, &quot;Components to redeem must be non-zero&quot;);
+    require(_componentsToRedeem > 0, "Components to redeem must be non-zero");
 
     for (uint16 i = 0; i < components.length; i++) {
       if (_componentsToRedeem & bytes32(2 ** i) > 0) {

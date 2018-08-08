@@ -312,10 +312,10 @@ contract VersionedToken is owned {
      *
      * In our case this it is ELTTokenImpl.sol
      * e.g.
-     *    import &quot;ELTToken.sol&quot;
+     *    import "ELTToken.sol"
      *
      * Please note: IMPORTANT
-     * do not implement any function called &quot;update()&quot; otherwise it will break the Versioning system
+     * do not implement any function called "update()" otherwise it will break the Versioning system
      */
     function VersionedToken(address initialImplementation) public {
         upgradableContractAddress = initialImplementation;

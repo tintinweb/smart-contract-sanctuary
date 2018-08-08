@@ -75,8 +75,8 @@ contract StandardToken is ERC20 {
 }
 
 contract CEC is StandardToken,Ownable {
-    string public constant name =&quot;17CE&quot;;//name of name
-    string public constant symbol = &quot;CEC&quot;;//symbol of token
+    string public constant name ="17CE";//name of name
+    string public constant symbol = "CEC";//symbol of token
     uint8 public constant decimals = 18;
     uint public  constant intial_supply = 100 * (10 ** 6) * (10 ** uint(decimals));//initial 1 hundred million tokens
     uint public reservedteamtoken = intial_supply * 3 / 10; //reserved for team 30%

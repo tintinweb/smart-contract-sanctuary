@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -44,9 +44,9 @@ contract BattleToken is Ownable {
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowed;
     uint256 public totalSupply;
-    string public name = &quot;https://cryptobots.me/cbtb - CryptoBotsBattle&quot;;
+    string public name = "https://cryptobots.me/cbtb - CryptoBotsBattle";
     uint8 public decimals = 0;
-    string public symbol = &quot;CBTB&quot;;
+    string public symbol = "CBTB";
 
     address public fights;
 

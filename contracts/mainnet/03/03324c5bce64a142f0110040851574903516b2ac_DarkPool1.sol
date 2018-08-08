@@ -31,10 +31,10 @@ contract DarkPool is Ownable {
     event Withdraw(address indexed beneficiary, uint value);
 
     function () external payable whenActive {
-        require(whitelisted(msg.sender), &quot;for hodl owners only&quot;);
+        require(whitelisted(msg.sender), "for hodl owners only");
         raised += msg.value;
         balances[msg.sender] += msg.value;
-        require(raised <= cap, &quot;raised too much ether&quot;);
+        require(raised <= cap, "raised too much ether");
         emit Deposit(msg.sender, msg.value);
     }
     

@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -167,7 +167,7 @@ contract RBAC {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
+  string public constant ROLE_ADMIN = "admin";
 
   /**
    * @dev constructor. Sets msg.sender as admin by default
@@ -520,7 +520,7 @@ contract StandardToken is ERC20, BasicToken {
 
 contract PausableToken is StandardToken, Pausable, RBAC {
 
-    string public constant ROLE_ADMINISTRATOR = &quot;administrator&quot;;
+    string public constant ROLE_ADMINISTRATOR = "administrator";
 
     modifier whenNotPausedOrAuthorized() {
         require(!paused || hasRole(msg.sender, ROLE_ADMINISTRATOR));
@@ -588,8 +588,8 @@ contract PausableToken is StandardToken, Pausable, RBAC {
 // File: contracts/CurrentToken.sol
 
 contract CurrentToken is PausableToken {
-    string constant public name = &quot;CurrentCoin&quot;;
-    string constant public symbol = &quot;CUR&quot;;
+    string constant public name = "CurrentCoin";
+    string constant public symbol = "CUR";
     uint8 constant public decimals = 18;
 
     uint256 constant public INITIAL_TOTAL_SUPPLY = 1e11 * (uint256(10) ** decimals);

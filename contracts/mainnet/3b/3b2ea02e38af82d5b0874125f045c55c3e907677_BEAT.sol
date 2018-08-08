@@ -94,8 +94,8 @@ contract BEAT is ERC20, Owned, SafeMath {
         Constructor to create BEAT token.
     */
     function BEAT() public {
-        symbol = &quot;BEAT&quot;;
-        name = &quot;BEAT&quot;;
+        symbol = "BEAT";
+        name = "BEAT";
         decimals = 8;
         _totalSupply = 100000000000000000;
         Owner = msg.sender;

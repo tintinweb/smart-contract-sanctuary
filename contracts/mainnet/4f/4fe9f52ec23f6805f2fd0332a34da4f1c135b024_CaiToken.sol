@@ -212,7 +212,7 @@ contract TokenERC20 is ERC20 {
 }
 
 
-contract CaiToken is TokenERC20(21000000000, &quot;Cai Token&quot;, &quot;CAI&quot;, 18) {
+contract CaiToken is TokenERC20(21000000000, "Cai Token", "CAI", 18) {
 
     constructor() public {
 

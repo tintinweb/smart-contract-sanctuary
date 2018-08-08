@@ -113,8 +113,8 @@ contract BOOCOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BOOCOIN() public {
-        symbol = &quot;BOO&quot;;
-        name = &quot;Booyah Coin&quot;;
+        symbol = "BOO";
+        name = "Booyah Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xf96b970fC8F510169bfF98Ac740707C82b8533d6] = _totalSupply;

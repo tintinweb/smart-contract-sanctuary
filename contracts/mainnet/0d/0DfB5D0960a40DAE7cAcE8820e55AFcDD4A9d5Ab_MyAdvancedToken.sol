@@ -31,8 +31,8 @@ contract token {
     function token() {
     balanceOf[msg.sender] = 10000000000000000; // 给创建者所有初始令牌
     totalSupply = 10000000000000000; // 更新总量
-    name = &quot;BBC&quot;; // 设置显示的名称
-    symbol =  &quot;฿&quot;; // 为显示设置符号
+    name = "BBC"; // 设置显示的名称
+    symbol =  "฿"; // 为显示设置符号
     decimals = 8; // 显示的小数量
     }
     /* Internal transfer, only can be called by this contract */

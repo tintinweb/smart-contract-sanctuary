@@ -51,7 +51,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -318,8 +318,8 @@ contract BJLToken is BurnableToken, MintableToken, PausableToken {
   uint8 public decimals;
 
   function BJLToken() public {
-    name = &quot;Black Jack Laity&quot;;
-    symbol = &quot;BJL&quot;;
+    name = "Black Jack Laity";
+    symbol = "BJL";
     decimals = 18;
     totalSupply = 10000000000 * 10 ** uint256(decimals);
 

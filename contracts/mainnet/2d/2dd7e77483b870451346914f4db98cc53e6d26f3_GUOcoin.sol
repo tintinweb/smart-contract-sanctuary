@@ -104,8 +104,8 @@ contract GUOcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GUOcoin() public {
-        symbol = &quot;GUO&quot;;
-        name = &quot;GUOcoin&quot;;
+        symbol = "GUO";
+        name = "GUOcoin";
         decimals = 18;
         _totalSupply = 2100000000000000000000000000;
         balances[0xFe905C1CC0395240317F4e5A6ff22823f9B1DD3c] = _totalSupply;

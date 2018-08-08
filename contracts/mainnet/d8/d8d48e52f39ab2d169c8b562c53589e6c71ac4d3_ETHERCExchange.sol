@@ -51,7 +51,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -214,7 +214,7 @@ contract ETHERCExchange is Ownable {
         uint256 executionGasLimit = msg.gas;
         bytes32 orderHash = getOrderHash(_tokenGet, _amountGet, _tokenGive, _amountGive, _expires, _nonce, _maker);
 
-        if (ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, orderHash), _v, _r, _s) != _maker ||
+        if (ecrecover(keccak256("\x19Ethereum Signed Message:\n32", orderHash), _v, _r, _s) != _maker ||
             cancelledOrders[orderHash] ||
             block.number > _expires ||
             orderFills[orderHash].add(_amountTrade) > _amountGet
@@ -274,7 +274,7 @@ contract ETHERCExchange is Ownable {
     function availableVolume(address _tokenGet, uint256 _amountGet, address _tokenGive, uint256 _amountGive, uint256 _expires, uint256 _nonce, address _maker, uint8 _v, bytes32 _r, bytes32 _s) public view returns (uint256) {
         bytes32 orderHash = getOrderHash(_tokenGet, _amountGet, _tokenGive, _amountGive, _expires, _nonce, _maker);
 
-        if (ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, orderHash), _v, _r, _s) != _maker ||
+        if (ecrecover(keccak256("\x19Ethereum Signed Message:\n32", orderHash), _v, _r, _s) != _maker ||
             cancelledOrders[orderHash] ||
             block.number > _expires ||
             _amountGet <= orderFills[orderHash]
@@ -294,7 +294,7 @@ contract ETHERCExchange is Ownable {
 
     function cancelOrder(address _tokenGet, uint256 _amountGet, address _tokenGive, uint256 _amountGive, uint256 _expires, uint256 _nonce, uint8 _v, bytes32 _r, bytes32 _s) public {
         bytes32 orderHash = getOrderHash(_tokenGet, _amountGet, _tokenGive, _amountGive, _expires, _nonce, msg.sender);
-        if (ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, orderHash), _v, _r, _s) != msg.sender) revert();
+        if (ecrecover(keccak256("\x19Ethereum Signed Message:\n32", orderHash), _v, _r, _s) != msg.sender) revert();
 
         cancelledOrders[orderHash] = true;
         Cancel(_tokenGet, _amountGet, _tokenGive, _amountGive, _expires, _nonce, msg.sender, _v, _r, _s, orderHash, orderFills[orderHash]);

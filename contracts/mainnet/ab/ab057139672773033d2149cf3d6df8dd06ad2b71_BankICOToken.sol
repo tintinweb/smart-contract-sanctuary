@@ -216,8 +216,8 @@ contract BankICOToken is StandardToken {
   uint8 public decimals;
 
   constructor(address _owner) public {
-    name = &quot;BankICO&quot;;
-    symbol = &quot;BANK&quot;;
+    name = "BankICO";
+    symbol = "BANK";
     decimals = 18;
     totalSupply_ = 100000000000000000000000000;
     balances[_owner] = totalSupply_;

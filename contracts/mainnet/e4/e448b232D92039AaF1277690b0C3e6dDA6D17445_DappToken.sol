@@ -1,9 +1,9 @@
 pragma solidity ^0.4.2;
 
 contract DappToken {
-    string  public name = &quot;ZToken&quot;;
-    string  public symbol = &quot;ZT&quot;;
-    string  public standard = &quot;ZToken v1.0&quot;;
+    string  public name = "ZToken";
+    string  public symbol = "ZT";
+    string  public standard = "ZToken v1.0";
     uint8 public decimals = 5;
     uint256 public totalSupply;
 

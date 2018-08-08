@@ -26,7 +26,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -298,8 +298,8 @@ contract ILivepeerToken is ERC20, Ownable {
 }
 
 contract LivepeerToken is ILivepeerToken, VariableSupplyToken {
-    string public name = &quot;Livepeer Token&quot;;
+    string public name = "Livepeer Token";
     uint8 public decimals = 18;
-    string public symbol = &quot;LPT&quot;;
-    string public version = &quot;0.1&quot;;
+    string public symbol = "LPT";
+    string public version = "0.1";
 }

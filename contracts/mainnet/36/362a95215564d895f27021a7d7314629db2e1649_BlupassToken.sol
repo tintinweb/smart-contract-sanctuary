@@ -71,8 +71,8 @@ contract BlupassToken is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     function BlupassToken() public {
-        symbol = &quot;BLU&quot;;
-        name = &quot;Bl&#252;pass&quot;;
+        symbol = "BLU";
+        name = "Bl&#252;pass";
         decimals = 18;
         _totalSupply = 6000000000 * 10**uint(decimals);
         balances[0x0567cB7c5A688401Aab87093058754E096C4d37E] = _totalSupply;

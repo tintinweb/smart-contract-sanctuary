@@ -176,8 +176,8 @@ contract DaoCasinoToken is ERC20Token {
     // ------------------------------------------------------------------------
     // Token information
     // ------------------------------------------------------------------------
-    string public constant symbol = &quot;BET&quot;;
-    string public constant name = &quot;Dao.Casino&quot;;
+    string public constant symbol = "BET";
+    string public constant name = "Dao.Casino";
     uint8 public constant decimals = 18;
 
     // Do not use `now` here
@@ -198,7 +198,7 @@ contract DaoCasinoToken is ERC20Token {
         multisig  = _multisig;
     }
 
-    // > new Date(&quot;2017-06-29T13:00:00&quot;).getTime()/1000
+    // > new Date("2017-06-29T13:00:00").getTime()/1000
     // 1498741200
 
     uint256 public totalEthers;

@@ -92,7 +92,7 @@ contract ERC721 is ERC721Basic, ERC721Enumerable, ERC721Metadata {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -107,7 +107,7 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(
     address _from,
@@ -205,7 +205,7 @@ contract ERC721BasicToken is ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
@@ -357,7 +357,7 @@ contract ERC721BasicToken is ERC721Basic {
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -373,14 +373,14 @@ contract ERC721BasicToken is ERC721Basic {
     canTransfer(_tokenId)
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -705,7 +705,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -772,7 +772,7 @@ contract CryptoArte is ERC721Token, Ownable {
     // Token id to painting image file hash mapping
     mapping (uint256 => uint256) public tokenIdToHash;
 
-    constructor() ERC721Token(&quot;CryptoArte&quot;, &quot;CARTE&quot;) public { }
+    constructor() ERC721Token("CryptoArte", "CARTE") public { }
 
     /**
     * @dev Mints a token to an address with a tokenURI and tokenHash.
@@ -847,7 +847,7 @@ contract CryptoArte is ERC721Token, Ownable {
     * @param _i uint256 the uint to convert
     */
     function uint256Tostr(uint256 _i) internal pure returns (string) {
-        if (_i == 0) return &quot;0&quot;;
+        if (_i == 0) return "0";
         uint256 j = _i;
         uint256 len;
         while (j != 0) {

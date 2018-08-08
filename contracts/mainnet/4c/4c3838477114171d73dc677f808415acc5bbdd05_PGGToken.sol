@@ -270,7 +270,7 @@ contract BurnableToken is BasicToken {
 }
 
 contract PGGToken is BurnableToken, MintableToken {
-    string public name = &quot;PGG Token&quot;;
-    string public symbol = &quot;PGG&quot;;
+    string public name = "PGG Token";
+    string public symbol = "PGG";
     uint public decimals = 18;
 }

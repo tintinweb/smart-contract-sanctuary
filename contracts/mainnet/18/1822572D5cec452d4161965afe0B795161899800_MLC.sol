@@ -171,8 +171,8 @@ contract MLC is owned,ParentToken{
      /* Public variables of the token */
     string public standard = &#39;Token 0.1&#39;;  
     uint256 public currentSupply= 2400000000000000;
-    string public constant symbol = &quot;MLC&quot;;
-    string public constant tokenName = &quot;Melania&quot;;
+    string public constant symbol = "MLC";
+    string public constant tokenName = "Melania";
     uint8 public constant decimals = 8;
 
     

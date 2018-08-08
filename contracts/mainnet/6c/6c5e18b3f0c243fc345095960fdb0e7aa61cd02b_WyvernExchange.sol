@@ -600,7 +600,7 @@ contract ExchangeCore is ReentrancyGuarded, Ownable {
         pure
         returns (bytes32)
     {
-        return keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hashOrder(order));
+        return keccak256("\x19Ethereum Signed Message:\n32", hashOrder(order));
     }
 
     /**
@@ -1379,11 +1379,11 @@ contract Exchange is ExchangeCore {
 
 contract WyvernExchange is Exchange {
 
-    string public constant name = &quot;Project Wyvern Exchange&quot;;
+    string public constant name = "Project Wyvern Exchange";
 
-    string public constant version = &quot;2&quot;;
+    string public constant version = "2";
 
-    string public constant codename = &quot;Bakunawa&quot;;
+    string public constant codename = "Bakunawa";
 
     /**
      * @dev Initialize a WyvernExchange instance

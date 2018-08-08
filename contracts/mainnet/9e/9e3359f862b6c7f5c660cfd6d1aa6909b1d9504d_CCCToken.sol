@@ -221,8 +221,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/CCCToken.sol
 
 contract CCCToken is StandardToken {
-    string public name = &quot;Container Crypto Coin&quot;;
-    string public symbol = &quot;CCC&quot;;
+    string public name = "Container Crypto Coin";
+    string public symbol = "CCC";
     uint8 public decimals = 18;
 
     uint256 public INITIAL_SUPPLY = 50000000 * (uint256(10) ** decimals);

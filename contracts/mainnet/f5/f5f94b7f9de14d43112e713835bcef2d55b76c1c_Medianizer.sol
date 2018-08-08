@@ -129,7 +129,7 @@ contract DSMath {
         z = add(mul(x, RAY), y / 2) / y;
     }
 
-    // This famous algorithm is called &quot;exponentiation by squaring&quot;
+    // This famous algorithm is called "exponentiation by squaring"
     // and calculates x^n with x as fixed-point and n as regular unsigned.
     //
     // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -295,7 +295,7 @@ contract DSValue is DSThing {
 
 /* pragma solidity ^0.4.23; */
 
-/* import &quot;ds-value/value.sol&quot;; */
+/* import "ds-value/value.sol"; */
 
 contract Medianizer is DSThing {
     event LogValue(bytes32 val);

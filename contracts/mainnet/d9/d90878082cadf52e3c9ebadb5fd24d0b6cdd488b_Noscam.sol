@@ -28,8 +28,8 @@ contract Noscam {
     function Noscam() public {
       totalSupply = 75000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Noscam&quot;;                                   // Set the name for display purposes
-        symbol = &quot;NSC&quot;;                               // Set the symbol for display purposes
+        name = "Noscam";                                   // Set the name for display purposes
+        symbol = "NSC";                               // Set the symbol for display purposes
     }
 
     /**

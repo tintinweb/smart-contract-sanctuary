@@ -109,8 +109,8 @@ contract HIPHOP is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HIPHOP() public {
-        symbol = &quot;HOP&quot;;
-        name = &quot;HIPHOP&quot;;
+        symbol = "HOP";
+        name = "HIPHOP";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xcbf0dad842dfed9322639a977d24bcbebfa1559e] = _totalSupply;

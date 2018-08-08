@@ -46,8 +46,8 @@ contract PokemonPow is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;CryptoKotakuPokemonPow&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;PokemonPow&quot;; // solhint-disable-line
+  string public constant NAME = "CryptoKotakuPokemonPow"; // solhint-disable-line
+  string public constant SYMBOL = "PokemonPow"; // solhint-disable-line
 
   uint256 private startingPrice = 0.005 ether;
   uint256 private firstStepLimit =  0.05 ether;

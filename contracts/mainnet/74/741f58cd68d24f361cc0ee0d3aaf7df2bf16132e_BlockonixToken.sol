@@ -50,7 +50,7 @@ library SafeMathLib {
 /**
  * @title Ownable
  * @notice The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -154,8 +154,8 @@ contract BlockonixToken is IERC20, Ownable, Vestable, HasAddresses, VestingPerio
 
     uint256 public burntTokens;
 
-    string public constant name = &quot;Blockonix&quot;;    // Blockonix
-    string public constant symbol = &quot;BDT&quot;;  // BDT
+    string public constant name = "Blockonix";    // Blockonix
+    string public constant symbol = "BDT";  // BDT
     uint8 public constant decimals = 18;            
 
     mapping (address => uint256) public balances;

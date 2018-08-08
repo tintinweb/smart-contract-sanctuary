@@ -70,8 +70,8 @@ contract TokenERC20 {
     constructor() public {
         totalSupply = 200000000 *10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;               
-        name = &quot;Coin Trade Base&quot;;                                  
-        symbol = &quot;CTB&quot;;                           
+        name = "Coin Trade Base";                                  
+        symbol = "CTB";                           
     }
 
     /**

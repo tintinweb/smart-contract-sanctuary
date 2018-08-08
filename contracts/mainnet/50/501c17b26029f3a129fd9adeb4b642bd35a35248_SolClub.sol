@@ -7,7 +7,7 @@ pragma solidity ^0.4.18;
 
   * `require` is used in these libraries for the following reasons:
   *   - overflows should not be checked in contract function bodies; DRY
-  *   - &quot;valid&quot; user input can cause overflows, which should not assert()
+  *   - "valid" user input can cause overflows, which should not assert()
   */
 library SafeMath {
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
@@ -112,13 +112,13 @@ contract DetailedERC20 is ERC20 {
   * - owner cut is determined at beginning of new period.
   * - member has 1 month to withdraw their dividend from the previous month.
   * - if member does not withdraw their dividend, their share will be given to owner.
-  * - mod can place a member on a 1 month &quot;timeout&quot;, whereby they won&#39;t be eligible for a dividend.
+  * - mod can place a member on a 1 month "timeout", whereby they won&#39;t be eligible for a dividend.
 
   * Eg: 10 eth is sent to the contract in January, owner cut is 30%. 
   * There are 70 token holders on Jan 31. At any time in February, each token holder can withdraw .1 eth for their January 
-  * dividend (unless they were given a &quot;timeout&quot; in January).
+  * dividend (unless they were given a "timeout" in January).
   */
-contract SolClub is Ownable, DetailedERC20(&quot;SolClub&quot;, &quot;SOL&quot;, 0) {
+contract SolClub is Ownable, DetailedERC20("SolClub", "SOL", 0) {
   // SafeMath libs are responsible for checking overflow.
   using SafeMath for uint256;
   using SafeMath64 for uint64;
@@ -205,7 +205,7 @@ contract SolClub is Ownable, DetailedERC20(&quot;SolClub&quot;, &quot;SOL&quot;,
     PeriodEnd(currentPeriod-1, this.balance, existingMembers);
   }
 
-  // Places member is a &quot;banished&quot; state whereby they are no longer a member,
+  // Places member is a "banished" state whereby they are no longer a member,
   // but their username remains active (preventing re-registration)
   function removeMember(address _addr, bytes32 _reason) public onlyOwner {
     require(members[_addr].birthPeriod != 0);
@@ -218,7 +218,7 @@ contract SolClub is Ownable, DetailedERC20(&quot;SolClub&quot;, &quot;SOL&quot;,
       numMembers--;
     }
 
-    // &quot;Burns&quot; username, so user can&#39;t recreate.
+    // "Burns" username, so user can&#39;t recreate.
     usernames[m.username] = address(0x1);
 
     delete members[_addr];

@@ -46,8 +46,8 @@ contract BCBcyCoin is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;
 
-    string public constant name = &quot;BCB Candy&quot;;
-    string public constant symbol = &quot;BCBcy&quot;;
+    string public constant name = "BCB Candy";
+    string public constant symbol = "BCBcy";
     uint public constant decimals = 8;
     uint256 public totalSupply = 1700000000e8;
 
@@ -133,7 +133,7 @@ contract BCBcyCoin is ERC20 {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
         
-        require(_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 }

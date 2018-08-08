@@ -31,7 +31,7 @@ interface NokuPricingPlan {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -527,8 +527,8 @@ contract NokuCustomERC20 is Ownable, DetailedERC20, MintableToken, BurnableToken
     // The fee percentage for Custom token transfer or zero if transfer is free of charge
     uint256 public transferFeePercentage;
 
-    bytes32 public constant CUSTOM_ERC20_BURN_SERVICE_NAME = &quot;NokuCustomERC20.burn&quot;;
-    bytes32 public constant CUSTOM_ERC20_MINT_SERVICE_NAME = &quot;NokuCustomERC20.mint&quot;;
+    bytes32 public constant CUSTOM_ERC20_BURN_SERVICE_NAME = "NokuCustomERC20.burn";
+    bytes32 public constant CUSTOM_ERC20_MINT_SERVICE_NAME = "NokuCustomERC20.mint";
 
     /**
     * @dev Modifier to make a function callable only by service provider i.e. Noku.

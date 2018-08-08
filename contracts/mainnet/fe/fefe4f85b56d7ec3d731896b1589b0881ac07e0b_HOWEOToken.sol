@@ -15,8 +15,8 @@ contract HOWEOToken {
     function HOWEOToken() public {
         totalSupply = 300000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;HOWEO&quot;;
-        symbol = &quot;XVN&quot;;
+        name = "HOWEO";
+        symbol = "XVN";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

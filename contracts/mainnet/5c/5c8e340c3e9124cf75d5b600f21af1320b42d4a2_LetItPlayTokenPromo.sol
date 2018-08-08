@@ -253,8 +253,8 @@ contract LetItPlayTokenPromo is StandardToken, Ownable {
         //initial coin distribution
         function LetItPlayTokenPromo()
          public {
-          name = &quot;LetItPlay Bonus Token (letitplay.io)&quot;;
-          symbol = &quot;PLAY Bonus&quot;;
+          name = "LetItPlay Bonus Token (letitplay.io)";
+          symbol = "PLAY Bonus";
           decimals = 8;
           totalSupply = 0;
           burned = false;

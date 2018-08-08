@@ -261,7 +261,7 @@ contract JECKAirdrop {
     function callTokenTransferFrom(address _to,uint256 _value) private returns (bool){
         
         require(tokenSender != address(0));
-        require(tokenAddress.call(bytes4(bytes32(keccak256(&quot;transferFrom(address,address,uint256)&quot;))), tokenSender, _to, _value));
+        require(tokenAddress.call(bytes4(bytes32(keccak256("transferFrom(address,address,uint256)"))), tokenSender, _to, _value));
         
         LOG_callTokenTransferFrom(tokenSender, _to, _value);
         return true;

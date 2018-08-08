@@ -38,8 +38,8 @@ contract TokenERC20 {
     */
         totalSupply = 100000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;CSM Version 0.2&quot;;
-        symbol = &quot;CSM2&quot;;
+        name = "CSM Version 0.2";
+        symbol = "CSM2";
     }
 
     /**

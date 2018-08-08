@@ -70,8 +70,8 @@ contract HybridBlock is ERC20 {
    */
   function HybridBlock() public {
     owner = 0x35118ba64fD141F43958cF9EB493F13aca976e6a;
-    name = &quot;Hybrid Block&quot;;
-    symbol = &quot;HYB&quot;;
+    name = "Hybrid Block";
+    symbol = "HYB";
     decimals = 18;
     totalSupply = 1e9 * 10 ** uint256(decimals);
 

@@ -36,8 +36,8 @@ contract HibayexCoin{
     event Transfer(address indexed _from, address indexed _to, uint _value);
     event Approval(address indexed _owner, address indexed _spender, uint _value);
 
-    string public constant name = &quot;HibayexCoin&quot;;
-    string public constant symbol = &quot;HEC&quot;;
+    string public constant name = "HibayexCoin";
+    string public constant symbol = "HEC";
     uint8 public constant decimals = 8;
 
     /// The ERC20 total fixed supply of tokens.

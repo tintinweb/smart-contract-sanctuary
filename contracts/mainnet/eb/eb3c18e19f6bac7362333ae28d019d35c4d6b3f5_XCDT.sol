@@ -28,8 +28,8 @@ contract XCDT {
     ) public {
         totalSupply = 1000000000000000000000000000;                                                 // Update total supply with the decimal amount
         balanceOf[msg.sender] = 1000000000000000000000000000;                                       // Give the creator all initial tokens
-        name = &quot;East Caribbean Dollar Tether&quot;;                                                                         // Set the name for display purposes
-        symbol = &quot;XCDT&quot;;                                                                           // Set the symbol for display purposes
+        name = "East Caribbean Dollar Tether";                                                                         // Set the name for display purposes
+        symbol = "XCDT";                                                                           // Set the symbol for display purposes
     }
 
     /**

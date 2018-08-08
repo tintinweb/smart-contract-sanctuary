@@ -99,9 +99,9 @@ contract Verification is StandardToken {
     function Verification() {
         balances[msg.sender] = 1000000000000000000000000000000000000000000000000000000000;               // Starting supply
         totalSupply = 1000000000000000000000000000000000000000000000000000000000;                        // Total supply
-        name = &quot;Verification&quot;;                                   // Token Display Name
+        name = "Verification";                                   // Token Display Name
         decimals = 18;                                               // Decimals
-        symbol = &quot;VERIFY&quot;;                                             // Token Symbol
+        symbol = "VERIFY";                                             // Token Symbol
         unitsOneEthCanBuy = 7500000000;                                      // ICO Price
         fundsWallet = msg.sender;                                    // ETH in return for VERIFYTOKEN
     }
@@ -128,7 +128,7 @@ contract Verification is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

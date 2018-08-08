@@ -264,8 +264,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract PTCToken is PausableToken {
-    string public name = &quot;PTCoin&quot;;
-    string public symbol = &quot;PTC&quot;;
+    string public name = "PTCoin";
+    string public symbol = "PTC";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 8000000000000000000000000000;
 

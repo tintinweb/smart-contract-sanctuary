@@ -205,8 +205,8 @@ contract OxToken is StandardToken, LimitedTransferToken, Ownable {
   event OwnerTokensAllocated(uint _amount);
   event SaleStarted(uint _saleEndTime);
 
-  string public name = &quot;OxToken&quot;;
-  string public symbol = &quot;OX&quot;;
+  string public name = "OxToken";
+  string public symbol = "OX";
 
   uint public decimals = 3;
   uint public multiplier = 10**decimals;

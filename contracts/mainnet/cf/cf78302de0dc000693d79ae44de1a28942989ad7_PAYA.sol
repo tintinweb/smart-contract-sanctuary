@@ -180,7 +180,7 @@ contract StandardToken is BasicToken, ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -372,8 +372,8 @@ contract TokenTimelock {
 contract PAYA is PausableToken, PayaToken {
   using SafeMath for uint256;
 
-  string public name = &quot;PAYA&quot;;
-  string public symbol = &quot;PAYA&quot;;
+  string public name = "PAYA";
+  string public symbol = "PAYA";
   uint public decimals = 9;
   string public version = &#39;H1.0&#39;;  
   function () {
@@ -407,7 +407,7 @@ contract PAYA is PausableToken, PayaToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

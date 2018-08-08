@@ -114,8 +114,8 @@ contract SuperCoinViewToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SuperCoinViewToken() public {
-        symbol = &quot;SCVT&quot;;
-        name = &quot;Super CoinView Token&quot;;
+        symbol = "SCVT";
+        name = "Super CoinView Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x37efd6a702E171218380cf6B1f898A07632A7d60] = _totalSupply;

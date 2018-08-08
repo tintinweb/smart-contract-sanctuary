@@ -2,8 +2,8 @@ pragma solidity ^0.4.24;
 
 contract PWGLToken {
 
-    string public name = &quot;PW.GL&quot;;      //  token name
-    string public symbol = &quot;PWG&quot;;           //  token symbol
+    string public name = "PW.GL";      //  token name
+    string public symbol = "PWG";           //  token symbol
     uint256 public decimals = 8;            //  token digit
 
     mapping (address => uint256) public balanceOf;

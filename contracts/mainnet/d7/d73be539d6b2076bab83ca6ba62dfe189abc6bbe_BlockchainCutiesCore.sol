@@ -117,7 +117,7 @@ interface ERC721TokenReceiver {
     /// @param _from The sending address 
     /// @param _tokenId The NFT identifier which is being transfered
     /// @param data Additional data with no specified format
-    /// @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+    /// @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
     ///  unless throwing
     function onERC721Received(address _from, uint256 _tokenId, bytes data) external returns(bytes4);
 }
@@ -158,13 +158,13 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
     /// @notice A descriptive name for a collection of NFTs in this contract
     function name() external pure returns (string _name) 
     {
-        return &quot;BlockchainCuties&quot;; 
+        return "BlockchainCuties"; 
     }
 
     /// @notice An abbreviated name for NFTs in this contract
     function symbol() external pure returns (string _symbol)
     {
-        return &quot;BC&quot;;
+        return "BC";
     }
     
     /// @notice Query if a contract implements an interface
@@ -218,8 +218,8 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         // of being cutie mom or cutie dad.
         uint16 cooldownIndex;
 
-        // The &quot;generation number&quot; of the cutie. Cutioes minted by the contract
-        // for sale are called &quot;gen0&quot; with generation number of 0. All other cuties&#39; 
+        // The "generation number" of the cutie. Cutioes minted by the contract
+        // for sale are called "gen0" with generation number of 0. All other cuties&#39; 
         // generation number is the larger of their parents&#39; two generation
         // numbers, plus one (i.e. max(mom.generation, dad.generation) + 1)
         uint16 generation;
@@ -362,7 +362,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
     ///  `_tokenId` is not a valid NFT. When transfer is complete, this function
     ///  checks if `_to` is a smart contract (code size > 0). If so, it calls
     ///  `onERC721Received` on `_to` and throws if the return value is not
-    ///  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`.
+    ///  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`.
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -386,7 +386,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
 
     /// @notice Transfers the ownership of an NFT from one address to another address
     /// @dev This works identically to the other function with an extra data parameter,
-    ///  except this function just sets data to &quot;&quot;
+    ///  except this function just sets data to ""
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -479,7 +479,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
     ///  at any time. A zero value means there is no outstanding approval.
     mapping (address => address) public addressToApprovedAll;
 
-    /// @notice Enable or disable approval for a third party (&quot;operator&quot;) to manage
+    /// @notice Enable or disable approval for a third party ("operator") to manage
     ///  all your asset.
     /// @dev Emits the ApprovalForAll event
     /// @param _operator Address to add to the set of authorized operators.
@@ -642,7 +642,7 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
     }
 
     /// @dev For transferring a cutie owned by this contract to the specified address.
-    ///  Used to rescue lost cuties. (There is no &quot;proper&quot; flow where this contract
+    ///  Used to rescue lost cuties. (There is no "proper" flow where this contract
     ///  should be the owner of any Cutie. This function exists for us to reassign
     ///  the ownership of Cuties that users may have accidentally sent to our address.)
     /// @param _cutieId - ID of cutie
@@ -698,13 +698,13 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
         paused = true;
     }
 
-    string public metadataUrlPrefix = &quot;https://blockchaincuties.co/cutie/&quot;;
-    string public metadataUrlSuffix = &quot;.svg&quot;;
+    string public metadataUrlPrefix = "https://blockchaincuties.co/cutie/";
+    string public metadataUrlSuffix = ".svg";
 
     /// @notice A distinct Uniform Resource Identifier (URI) for a given asset.
     /// @dev Throws if `_tokenId` is not a valid NFT. URIs are defined in RFC
-    ///  3986. The URI may point to a JSON file that conforms to the &quot;ERC721
-    ///  Metadata JSON Schema&quot;.
+    ///  3986. The URI may point to a JSON file that conforms to the "ERC721
+    ///  Metadata JSON Schema".
     function tokenURI(uint256 _tokenId) external view returns (string infoUrl)
     {
         return 
@@ -1672,11 +1672,11 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -1755,24 +1755,24 @@ contract BlockchainCutiesCore /*is ERC721, CutieCoreInterface*/
 
     function uintToString(uint256 a) internal pure returns (string result)
     {
-        string memory r = &quot;&quot;;
+        string memory r = "";
         do
         {
             uint b = a % 10;
             a /= 10;
 
-            string memory c = &quot;&quot;;
+            string memory c = "";
 
-            if (b == 0) c = &quot;0&quot;;
-            else if (b == 1) c = &quot;1&quot;;
-            else if (b == 2) c = &quot;2&quot;;
-            else if (b == 3) c = &quot;3&quot;;
-            else if (b == 4) c = &quot;4&quot;;
-            else if (b == 5) c = &quot;5&quot;;
-            else if (b == 6) c = &quot;6&quot;;
-            else if (b == 7) c = &quot;7&quot;;
-            else if (b == 8) c = &quot;8&quot;;
-            else if (b == 9) c = &quot;9&quot;;
+            if (b == 0) c = "0";
+            else if (b == 1) c = "1";
+            else if (b == 2) c = "2";
+            else if (b == 3) c = "3";
+            else if (b == 4) c = "4";
+            else if (b == 5) c = "5";
+            else if (b == 6) c = "6";
+            else if (b == 7) c = "7";
+            else if (b == 8) c = "8";
+            else if (b == 9) c = "9";
 
             r = concat(toSlice(c), toSlice(r));
         }

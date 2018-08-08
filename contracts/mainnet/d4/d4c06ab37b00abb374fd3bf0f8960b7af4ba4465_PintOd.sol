@@ -113,8 +113,8 @@ contract PintOd is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PintOd() public {
-        symbol = &quot;PinO&quot;;
-        name = &quot;Pint Od&quot;;
+        symbol = "PinO";
+        name = "Pint Od";
         decimals = 2;
         _totalSupply = 10000000000;
         balances[0xc997167104BabbDc49a5F46eCe1F32D76CA54980] = _totalSupply;

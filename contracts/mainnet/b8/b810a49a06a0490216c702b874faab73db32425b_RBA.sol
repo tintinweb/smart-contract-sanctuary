@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract RBA is StandardToken, Ownable {
 
-    string public constant name = &quot;Resource Business Association&quot;;
-    string public constant symbol = &quot;RBA&quot;;
+    string public constant name = "Resource Business Association";
+    string public constant symbol = "RBA";
     uint256 public constant decimals = 8;
 
     function RBA() public {

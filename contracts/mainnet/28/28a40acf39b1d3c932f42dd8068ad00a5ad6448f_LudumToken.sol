@@ -110,8 +110,8 @@ contract LudumToken is StandardToken {
 
     using SafeMath for uint;
 
-	string public constant name = &quot;Ludum&quot;; // Ludum tokens name
-    string public constant symbol = &quot;LDM&quot;; // Ludum tokens ticker
+	string public constant name = "Ludum"; // Ludum tokens name
+    string public constant symbol = "LDM"; // Ludum tokens ticker
     uint8 public constant decimals = 18; // Ludum tokens decimals
 	uint public constant maximumSupply =  100000000000000000000000000; // Maximum 100M Ludum tokens can be created
 

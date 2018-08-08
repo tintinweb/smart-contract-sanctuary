@@ -15,9 +15,9 @@ contract F2UPhone {
     function F2UPhone() {
 
          initialSupply = 90000000;
-         name =&quot;F2UPhone&quot;;
+         name ="F2UPhone";
         decimals = 6;
-         symbol = &quot;F2U&quot;;
+         symbol = "F2U";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

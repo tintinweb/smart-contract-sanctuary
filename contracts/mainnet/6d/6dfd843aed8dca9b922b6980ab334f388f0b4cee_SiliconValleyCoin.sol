@@ -109,8 +109,8 @@ contract SiliconValleyCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SiliconValleyCoin() public {
-        symbol = &quot;SLVC&quot;;
-        name = &quot;SiliconValleyCoin&quot;;
+        symbol = "SLVC";
+        name = "SiliconValleyCoin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xAf2f52FCD805A0F59dDd0A070A5a1e222b0d43F6] = _totalSupply;

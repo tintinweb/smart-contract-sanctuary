@@ -288,7 +288,7 @@ contract CapManager is Withdrawable {
 
     //@dev  getContributorRemainingCap returns remaining cap for a contributor
     //      Assuming that contributor has passed KYC process = is allowed to participate.
-    //      If contributor hasn&quot;t participated - it will return full cap according to IEO stage (capped / open / close).
+    //      If contributor hasn"t participated - it will return full cap according to IEO stage (capped / open / close).
     //      If contributor already participated. when IEO in capped stage, will return contributor cap less previous
     //        participation. if open contribute stage will return max cap.
     //        notice the participation amount will still be blocked by token balance of this contract.

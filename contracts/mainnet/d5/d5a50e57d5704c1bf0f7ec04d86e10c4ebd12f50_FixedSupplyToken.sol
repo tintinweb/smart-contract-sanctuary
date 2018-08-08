@@ -84,8 +84,8 @@ contract FixedSupplyToken is ERC20Interface {
     }
 
     constructor() public {
-        symbol = &quot;CARPWOV2&quot;;
-        name = &quot;CarblockPWOTokenV2&quot;;
+        symbol = "CARPWOV2";
+        name = "CarblockPWOTokenV2";
         decimals = 18;
         totalSupply = 1800000000 * 10**uint(decimals);
         balances[msg.sender] = totalSupply;

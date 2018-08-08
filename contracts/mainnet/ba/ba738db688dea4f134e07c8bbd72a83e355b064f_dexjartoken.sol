@@ -70,8 +70,8 @@ contract dexjartoken is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
 function dexjartoken() public {
-        symbol = &quot;DEXT&quot;;
-        name = &quot;DexJar Token&quot;;
+        symbol = "DEXT";
+        name = "DexJar Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0xAbB082211930DA475879BF315AFaDDD55913C6a8] = _totalSupply;

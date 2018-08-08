@@ -227,8 +227,8 @@ contract MintableToken is StandardToken, Ownable {
  */
 contract SwordToken is MintableToken {
 
-    string public constant name = &quot;Sword Coin&quot;; 
-    string public constant symbol = &quot;SWDC&quot;;
+    string public constant name = "Sword Coin"; 
+    string public constant symbol = "SWDC";
     uint8 public constant decimals = 18;
 
     function getTotalSupply() view public returns (uint256) {

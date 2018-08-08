@@ -110,8 +110,8 @@ contract TeleGrams is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TeleGrams() public {
-        symbol = &quot;TON&quot;;
-        name = &quot;Grams&quot;;
+        symbol = "TON";
+        name = "Grams";
         decimals = 18;
         _totalSupply = 5000000000000000000000000000;
         balances[0x07Bc71A379d86f9aAA0f8b4d6373cC1AEeb59c88] = _totalSupply;

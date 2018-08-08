@@ -112,8 +112,8 @@ contract PrinceberkToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;PBX&quot;;
-        name = &quot;Princeberk Token&quot;;
+        symbol = "PBX";
+        name = "Princeberk Token";
         decimals = 2;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -16,9 +16,9 @@ contract SwissTrustToken {
     function SwissTrustToken() {
 
          initialSupply = 5000000;
-         name =&quot;SwissTrustToken&quot;;
+         name ="SwissTrustToken";
         decimals = 2;
-         symbol = &quot;STT&quot;;
+         symbol = "STT";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

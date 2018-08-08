@@ -1,4 +1,4 @@
-//A BurnablePayment is instantiated with one &quot;opening agent&quot; (Payer or Worker), a title, an initial deposit, a commitThreshold, and an autoreleaseInterval.
+//A BurnablePayment is instantiated with one "opening agent" (Payer or Worker), a title, an initial deposit, a commitThreshold, and an autoreleaseInterval.
 //If the opening agent is the payer:
 //    The contract starts in the PayerOpened state.
 //    Payer is expected to request some service via the title and additional statements.

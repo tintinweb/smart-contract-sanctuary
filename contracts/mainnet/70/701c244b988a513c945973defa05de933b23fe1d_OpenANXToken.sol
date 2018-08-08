@@ -147,8 +147,8 @@ contract OpenANXTokenConfig {
     // ------------------------------------------------------------------------
     // Token symbol(), name() and decimals()
     // ------------------------------------------------------------------------
-    string public constant SYMBOL = &quot;OAX&quot;;
-    string public constant NAME = &quot;openANX Token&quot;;
+    string public constant SYMBOL = "OAX";
+    string public constant NAME = "openANX Token";
     uint8 public constant DECIMALS = 18;
 
 

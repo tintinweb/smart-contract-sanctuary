@@ -2,7 +2,7 @@ pragma solidity ^0.4.14;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -66,17 +66,17 @@ contract ERC721Metadata {
     /// @dev Given a token Id, returns a byte array that is supposed to be converted into string.
     function getMetadata(uint256 _tokenId, string) public pure returns (bytes32[4] buffer, uint256 count) {
         if (_tokenId == 1) {
-            buffer[0] = &quot;Hello World! :D&quot;;
+            buffer[0] = "Hello World! :D";
             count = 15;
         } else if (_tokenId == 2) {
-            buffer[0] = &quot;I would definitely choose a medi&quot;;
-            buffer[1] = &quot;um length string.&quot;;
+            buffer[0] = "I would definitely choose a medi";
+            buffer[1] = "um length string.";
             count = 49;
         } else if (_tokenId == 3) {
-            buffer[0] = &quot;Lorem ipsum dolor sit amet, mi e&quot;;
-            buffer[1] = &quot;st accumsan dapibus augue lorem,&quot;;
-            buffer[2] = &quot; tristique vestibulum id, libero&quot;;
-            buffer[3] = &quot; suscipit varius sapien aliquam.&quot;;
+            buffer[0] = "Lorem ipsum dolor sit amet, mi e";
+            buffer[1] = "st accumsan dapibus augue lorem,";
+            buffer[2] = " tristique vestibulum id, libero";
+            buffer[3] = " suscipit varius sapien aliquam.";
             count = 128;
         }
     }
@@ -753,7 +753,7 @@ contract ArtworkUnique {
     //Creates a unique key based on the artwork name, author, and series
     function getUniqueKey(string name, string author, uint32 _version)  internal pure returns(bytes32) {
         string memory version = _uintToString(_version);
-        string memory main = _strConcat(name, author, version, &quot;$%)&quot;);
+        string memory main = _strConcat(name, author, version, "$%)");
         string memory lowercased = _toLower(main);
         return keccak256(lowercased);
     }
@@ -804,7 +804,7 @@ contract ArtworkUnique {
     ///https://github.com/pipermerriam/ethereum-string-utils
     function _uintToBytes(uint v) private pure returns (bytes32 ret) {
         if (v == 0) {
-            ret = &quot;0&quot;;
+            ret = "0";
         } else {
             while (v > 0) {
                 ret = bytes32(uint(ret) / (2 ** 8));
@@ -840,26 +840,26 @@ contract ArtworkUnique {
 contract ArtworkOwnership is ArtworkBase, ArtworkUnique, ERC721 {
 
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant NAME = &quot;CryptoArtworks&quot;;
-    string public constant SYMBOL = &quot;CA&quot;;
+    string public constant NAME = "CryptoArtworks";
+    string public constant SYMBOL = "CA";
 
     // The contract that will return artwork metadata
     ERC721Metadata public erc721Metadata;
 
     bytes4 private constant INTERFACE_SIGNATURE_ERC165 =
-    bytes4(keccak256(&quot;supportsInterface(bytes4)&quot;));
+    bytes4(keccak256("supportsInterface(bytes4)"));
 
     bytes4 private constant INTERFACE_SIGNATURE_ERC721 =
-        bytes4(keccak256(&quot;name()&quot;)) ^
-        bytes4(keccak256(&quot;symbol()&quot;)) ^
-        bytes4(keccak256(&quot;totalSupply()&quot;)) ^
-        bytes4(keccak256(&quot;balanceOf(address)&quot;)) ^
-        bytes4(keccak256(&quot;ownerOf(uint256)&quot;)) ^
-        bytes4(keccak256(&quot;approve(address,uint256)&quot;)) ^
-        bytes4(keccak256(&quot;transfer(address,uint256)&quot;)) ^
-        bytes4(keccak256(&quot;transferFrom(address,address,uint256)&quot;)) ^
-        bytes4(keccak256(&quot;tokensOfOwner(address)&quot;)) ^
-    bytes4(keccak256(&quot;tokenMetadata(uint256,string)&quot;));
+        bytes4(keccak256("name()")) ^
+        bytes4(keccak256("symbol()")) ^
+        bytes4(keccak256("totalSupply()")) ^
+        bytes4(keccak256("balanceOf(address)")) ^
+        bytes4(keccak256("ownerOf(uint256)")) ^
+        bytes4(keccak256("approve(address,uint256)")) ^
+        bytes4(keccak256("transfer(address,uint256)")) ^
+        bytes4(keccak256("transferFrom(address,address,uint256)")) ^
+        bytes4(keccak256("tokensOfOwner(address)")) ^
+    bytes4(keccak256("tokenMetadata(uint256,string)"));
 
     /// @notice Grant another address the right to transfer a specific Artwork via
     ///  transferFrom(). This is the preferred flow for transfering NFTs to contracts.
@@ -1233,13 +1233,13 @@ contract ArtworkMinting is ArtworkAuction {
  * The contractName contract does this and that...
  */
 contract ArtworkQuestions is ArtworkMinting {
-    string private constant QUESTION  = &quot;What is the value? Nothing is &quot;;
-    string public constant MAIN_QUESTION = &quot;What is a masterpiece? &quot;;
+    string private constant QUESTION  = "What is the value? Nothing is ";
+    string public constant MAIN_QUESTION = "What is a masterpiece? ";
     
     function getQuestion() public view returns (string) {
         uint256 value = saleAuction.getValue();
         string memory auctionValue = _uintToString(value);
-        return _strConcat(QUESTION, auctionValue, &quot;&quot;, &quot;&quot;);
+        return _strConcat(QUESTION, auctionValue, "", "");
     }
 }
 
@@ -1278,7 +1278,7 @@ contract ArtworkCore is ArtworkQuestions {
     //             through this facet of the core contract.
     //
     //      - ArtworkMinting: This final facet contains the functionality we use for creating new arts.
-    //             We can make up to 5000 &quot;promo&quot; arts that can be given away (especially important when
+    //             We can make up to 5000 "promo" arts that can be given away (especially important when
     //             the community is new), and all others can only be created and then immediately put up
     //             for auction via an algorithmically determined starting price. Regardless of how they
     //             are created, there is a hard limit of 450k arts.
@@ -1298,7 +1298,7 @@ contract ArtworkCore is ArtworkQuestions {
         cooAddress = msg.sender;
 
         // start with the art
-        _createArtwork(&quot;none&quot;, &quot;none&quot;, 0, address(0));
+        _createArtwork("none", "none", 0, address(0));
     }
 
     /// @notice No tipping!

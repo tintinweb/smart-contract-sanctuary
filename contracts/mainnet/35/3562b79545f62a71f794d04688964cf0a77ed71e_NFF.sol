@@ -28,8 +28,8 @@ contract NFF {
     function NFF() public {
         totalSupply = 2000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;NFF&quot;;                                   // Set the name for display purposes
-        symbol = &quot;NFF&quot;;                               // Set the symbol for display purposes
+        name = "NFF";                                   // Set the name for display purposes
+        symbol = "NFF";                               // Set the symbol for display purposes
     }
 
     /**

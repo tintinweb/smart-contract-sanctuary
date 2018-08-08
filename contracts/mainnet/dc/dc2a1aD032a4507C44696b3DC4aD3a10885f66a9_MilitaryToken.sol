@@ -247,8 +247,8 @@ contract BurnableToken is BasicToken {
 }
 
 contract MilitaryToken is BurnableToken, StandardToken {
-    string public name = &quot;MilitaryToken&quot;;
-    string public symbol = &quot;MILs&quot;;
+    string public name = "MilitaryToken";
+    string public symbol = "MILs";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 400000000 * 1 ether;
 

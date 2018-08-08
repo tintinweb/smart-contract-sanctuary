@@ -96,8 +96,8 @@ contract SuomenMarkka is ERC20Interface, Owned, SafeMath {
 
 
     function SuomenMarkka() public {
-        symbol = &quot;FIM&quot;;
-        name = &quot;SuomenMarkka&quot;;
+        symbol = "FIM";
+        name = "SuomenMarkka";
         decimals = 2;
         _totalSupply = 1000000000000;
         balances[0x9bcb2b841Ef87d7238f4D3b1D0B2af7cef6D0604] = _totalSupply;

@@ -33,7 +33,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -114,8 +114,8 @@ contract TradCoin is Ownable, AbstractERC20 {
 
     constructor(address _distributor) public {
         require (_distributor != address(0x0));
-        name = &quot;TradCoin&quot;;
-        symbol = &quot;TRADCoin&quot;;
+        name = "TradCoin";
+        symbol = "TRADCoin";
         decimals = 18 ;
         totalSupply = 300e6 * 10**18;    // 300 million tokens
         owner = msg.sender;

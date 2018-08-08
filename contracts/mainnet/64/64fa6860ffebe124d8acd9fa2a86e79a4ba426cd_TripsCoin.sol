@@ -237,8 +237,8 @@ contract StandardToken is ERC20, BasicToken {
 contract TripsCoin is StandardToken, Ownable {
     using SafeMath for uint;
 
-    string constant public symbol = &quot;TIC&quot;;
-    string constant public name = &quot;TripsCoin&quot;;
+    string constant public symbol = "TIC";
+    string constant public name = "TripsCoin";
 
     uint8 constant public decimals = 18;
 

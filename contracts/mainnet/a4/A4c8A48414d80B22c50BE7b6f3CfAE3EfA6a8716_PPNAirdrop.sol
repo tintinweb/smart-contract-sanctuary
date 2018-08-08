@@ -396,8 +396,8 @@ contract PolicyPalNetworkToken is StandardToken, BurnableToken, Ownable {
     /**
     * @dev Token Contract Constants
     */
-    string    public constant name     = &quot;PolicyPal Network Token&quot;;
-    string    public constant symbol   = &quot;PAL&quot;;
+    string    public constant name     = "PolicyPal Network Token";
+    string    public constant symbol   = "PAL";
     uint8     public constant decimals = 18;
 
     /**
@@ -477,7 +477,7 @@ contract PolicyPalNetworkToken is StandardToken, BurnableToken, Ownable {
     * @param _to - Address to transfer to
     * @param _value - Value to transfer
     * @return bool - Result of transfer
-    * &quot;Overloaded&quot; Function of ERC20Basic&#39;s transfer
+    * "Overloaded" Function of ERC20Basic&#39;s transfer
     *
     */
     function transfer(address _to, uint256 _value) public
@@ -495,7 +495,7 @@ contract PolicyPalNetworkToken is StandardToken, BurnableToken, Ownable {
     * @param _value - Value to transfer
     * @return bool - Result of transferFrom
     *
-    * &quot;Overloaded&quot; Function of ERC20&#39;s transferFrom
+    * "Overloaded" Function of ERC20&#39;s transferFrom
     * Added with modifiers,
     *    1. onlyWhenTransferAllowed
     *    2. isValidDestination
@@ -512,7 +512,7 @@ contract PolicyPalNetworkToken is StandardToken, BurnableToken, Ownable {
     /**
     * @dev Token Contract burn
     * @param _value - Value to burn
-    * &quot;Overloaded&quot; Function of BurnableToken&#39;s burn
+    * "Overloaded" Function of BurnableToken&#39;s burn
     */
     function burn(uint256 _value)
         public

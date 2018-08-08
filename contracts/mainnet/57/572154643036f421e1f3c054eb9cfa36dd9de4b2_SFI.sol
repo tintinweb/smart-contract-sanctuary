@@ -28,8 +28,8 @@ contract SFI {
     function SFI() public {
         totalSupply = 100000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Speed for Influence Racing Team Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;SFI&quot;;                               // Set the symbol for display purposes
+        name = "Speed for Influence Racing Team Token";                                   // Set the name for display purposes
+        symbol = "SFI";                               // Set the symbol for display purposes
     }
 
     /**

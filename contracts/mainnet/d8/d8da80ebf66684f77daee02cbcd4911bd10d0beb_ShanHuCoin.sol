@@ -23,8 +23,8 @@ contract ShanHuCoin {
     function ShanHuCoin() {
         balanceOf[msg.sender] = 11000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply = 11000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;ShanHuCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;SHC&quot;;                               // Set the symbol for display purposes
+        name = "ShanHuCoin";                                   // Set the name for display purposes
+        symbol = "SHC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

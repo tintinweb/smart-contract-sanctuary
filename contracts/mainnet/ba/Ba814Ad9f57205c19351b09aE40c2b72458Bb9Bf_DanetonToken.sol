@@ -108,8 +108,8 @@ contract DanetonToken is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
     // Token parameters
     // ------------------------------------------------------------------------
-    string public constant symbol = &quot;DNE&quot;;
-    string public constant name = &quot;Daneton&quot;;
+    string public constant symbol = "DNE";
+    string public constant name = "Daneton";
     uint8 public constant decimals = 18;
 
     uint public constant totalSupply = 10 * 10**9 * 10**18;

@@ -293,8 +293,8 @@ library SafeMath {
 
 
 contract SencTokenConfig {
-    string public constant NAME = &quot;Sentinel Chain Token&quot;;
-    string public constant SYMBOL = &quot;SENC&quot;;
+    string public constant NAME = "Sentinel Chain Token";
+    string public constant SYMBOL = "SENC";
     uint8 public constant DECIMALS = 18;
     uint public constant DECIMALSFACTOR = 10 ** uint(DECIMALS);
     uint public constant TOTALSUPPLY = 500000000 * DECIMALSFACTOR;

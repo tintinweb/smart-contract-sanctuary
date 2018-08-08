@@ -251,8 +251,8 @@ pragma solidity ^0.4.21;
 contract ARTIDToken is StandardToken {
     using SafeMath for uint256;
     
-    string public constant name = &quot;ARTIDToken&quot;;
-    string public constant symbol = &quot;ARTID&quot;;
+    string public constant name = "ARTIDToken";
+    string public constant symbol = "ARTID";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 120e6 * 1e18;
     uint256 public constant Wallet_Initial_Supply = 12e6 * 1e18;

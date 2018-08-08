@@ -51,7 +51,7 @@ contract ControllerInterface {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -119,14 +119,14 @@ contract Nutz is Ownable, ERC20 {
 
   event Sell(address indexed seller, uint256 value);
 
-  string public name = &quot;Acebusters Nutz&quot;;
+  string public name = "Acebusters Nutz";
   // acebusters units:
   // 10^12 - Nutz   (NTZ)
   // 10^9 - Jonyz
   // 10^6 - Helcz
   // 10^3 - Pascalz
   // 10^0 - Babz
-  string public symbol = &quot;NTZ&quot;;
+  string public symbol = "NTZ";
   uint256 public decimals = 12;
 
   // returns balances of active holders

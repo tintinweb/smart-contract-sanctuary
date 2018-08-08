@@ -103,8 +103,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract SimpleToken is StandardToken {
 
-  string public name = &quot;SimpleToken&quot;;
-  string public symbol = &quot;SIM&quot;;
+  string public name = "SimpleToken";
+  string public symbol = "SIM";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 10000;
 
@@ -204,11 +204,11 @@ library Math {
 contract RexToken is StandardToken, Ownable {
 
   function version() constant returns (bytes32) {
-      return &quot;0.1.2-debug&quot;;
+      return "0.1.2-debug";
   }
 
-  string public constant name = &quot;REX - Real Estate tokens&quot;;
-  string public constant symbol = &quot;REX&quot;;
+  string public constant name = "REX - Real Estate tokens";
+  string public constant symbol = "REX";
   uint256 public constant decimals = 18;
 
   uint256 constant BASE_RATE = 700;

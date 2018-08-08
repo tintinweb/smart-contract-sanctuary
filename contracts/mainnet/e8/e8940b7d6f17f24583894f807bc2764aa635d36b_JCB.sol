@@ -237,9 +237,9 @@ contract StandardToken is IERC20,DateTimeLib {
 
     mapping(address => mapping(address => uint256)) allowed;
     
-    string public constant symbol = &quot;JCB&quot;;
+    string public constant symbol = "JCB";
     
-    string public constant name = &quot;JoinCoin&quot;;
+    string public constant name = "JoinCoin";
     
     uint _totalSupply = 1000000000 * 10 ** 8;
     

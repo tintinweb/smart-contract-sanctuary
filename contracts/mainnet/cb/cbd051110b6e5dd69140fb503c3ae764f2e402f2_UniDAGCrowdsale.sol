@@ -139,8 +139,8 @@ contract StandardToken is ERC20, BurnableToken {
 
 contract UniDAG is StandardToken{
 
-  string public constant name = &quot;UniDAG&quot;;
-  string public constant symbol = &quot;UDAG&quot;;
+  string public constant name = "UniDAG";
+  string public constant symbol = "UDAG";
   uint8 public constant decimals = 18;
   address public owner;
   address public CrowdsaleContract;

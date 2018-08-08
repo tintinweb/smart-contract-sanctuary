@@ -53,8 +53,8 @@ contract TPOMZ is ERC20 {
 
     uint public constant decimals = 8;                                 // Decimals count
     uint256 public totalSupply = 5000000000 * 10 ** decimals;          // Total supply
-	string public constant name = &quot;TPOMZ&quot;;                             // Coin name
-    string public constant symbol = &quot;TPOMZ&quot;;                           // Coin symbol
+	string public constant name = "TPOMZ";                             // Coin name
+    string public constant symbol = "TPOMZ";                           // Coin symbol
 
 	function TPOMZ() {                                                 // Constructor
 		balances[msg.sender] = totalSupply;                            // Give the creator all initial tokens

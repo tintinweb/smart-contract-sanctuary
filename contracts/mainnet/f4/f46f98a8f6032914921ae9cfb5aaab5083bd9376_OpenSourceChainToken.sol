@@ -101,10 +101,10 @@ contract StandardToken is Token ,SafeMath{
 
 contract OpenSourceChainToken is StandardToken  {
     // metadata
-    string  public constant name = &quot;OpenSourceChain Token&quot;;
-    string  public constant symbol = &quot;OSCH&quot;;                                
+    string  public constant name = "OpenSourceChain Token";
+    string  public constant symbol = "OSCH";                                
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
     uint256 public tokenExchangeRate = 800000;                              // 800000 OSCH tokens per 1 ETH
     
     address public owner; //owner

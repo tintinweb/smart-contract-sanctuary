@@ -168,8 +168,8 @@ contract _KiwiToken is ERC20Interface, Owned, EIP918Interface {
     // ------------------------------------------------------------------------
     function _KiwiToken() public onlyOwner{
 
-        symbol = &quot;KIWI&quot;;
-        name = &quot;KIWI Token&quot;;
+        symbol = "KIWI";
+        name = "KIWI Token";
         decimals = 8;
         _totalSupply = 7000000000 * 10**uint(decimals);
 

@@ -31,8 +31,8 @@ event Approval(address indexed _owner, address indexed _spender, uint256 _value)
 }
  
 contract FixedSupplyToken is ERC20Interface {
-string public constant symbol = &quot;STM&quot;;
-string public constant name = &quot;Stimus Token&quot;;
+string public constant symbol = "STM";
+string public constant name = "Stimus Token";
 uint8 public constant decimals = 4;
 uint256 _totalSupply = 1000000000000;
 
@@ -84,7 +84,7 @@ return false;
 
 // Send _value amount of tokens from address _from to address _to
 // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-// tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+// tokens on your behalf, for example to "deposit" to a contract address and/or to charge
 // fees in sub-currencies; the command should fail unless the _from account has
 // deliberately authorized the sender of the message via some mechanism; we propose
 // these standardized APIs for approval:

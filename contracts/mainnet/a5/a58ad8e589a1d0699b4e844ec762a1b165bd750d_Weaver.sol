@@ -119,10 +119,10 @@ contract StandardToken is ERC20, SafeMath {
 }
 
 contract Weaver is StandardToken {
-  string public constant name = &quot;Weaver&quot;;
-  string public constant symbol = &quot;WVR&quot;;
+  string public constant name = "Weaver";
+  string public constant symbol = "WVR";
   uint256 public constant decimals = 18;
-  string public version = &quot;1.0&quot;;
+  string public version = "1.0";
 
   uint256 public constant total = 2000000 * (10 ** uint256(decimals));
 

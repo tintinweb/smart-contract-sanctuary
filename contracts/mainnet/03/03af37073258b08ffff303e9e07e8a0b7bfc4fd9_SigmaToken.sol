@@ -653,7 +653,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint len = self._len * (parts.length - 1);
         for(uint i = 0; i < parts.length; i++)
@@ -728,22 +728,22 @@ contract usingOraclize {
     function oraclize_setNetwork(uint8 networkID) internal returns(bool){
         if (getCodeSize(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed)>0){ //mainnet
             OAR = OraclizeAddrResolverI(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed);
-            oraclize_setNetworkName(&quot;eth_mainnet&quot;);
+            oraclize_setNetworkName("eth_mainnet");
             return true;
         }
         if (getCodeSize(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1)>0){ //ropsten testnet
             OAR = OraclizeAddrResolverI(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1);
-            oraclize_setNetworkName(&quot;eth_ropsten3&quot;);
+            oraclize_setNetworkName("eth_ropsten3");
             return true;
         }
         if (getCodeSize(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e)>0){ //kovan testnet
             OAR = OraclizeAddrResolverI(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e);
-            oraclize_setNetworkName(&quot;eth_kovan&quot;);
+            oraclize_setNetworkName("eth_kovan");
             return true;
         }
         if (getCodeSize(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48)>0){ //rinkeby testnet
             OAR = OraclizeAddrResolverI(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48);
-            oraclize_setNetworkName(&quot;eth_rinkeby&quot;);
+            oraclize_setNetworkName("eth_rinkeby");
             return true;
         }
         if (getCodeSize(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475)>0){ //ethereum-bridge
@@ -1258,15 +1258,15 @@ contract usingOraclize {
     }
 
     function strConcat(string _a, string _b, string _c, string _d) internal returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
 
     function strConcat(string _a, string _b, string _c) internal returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
 
     function strConcat(string _a, string _b) internal returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 
     // parseInt
@@ -1294,7 +1294,7 @@ contract usingOraclize {
     }
 
     function uint2str(uint i) internal returns (string){
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint len;
         while (j != 0){
@@ -1418,7 +1418,7 @@ contract usingOraclize {
             mstore(add(sessionKeyHash, 0x20), sessionKeyHash_bytes32)
         }
         bytes[3] memory args = [unonce, nbytes, sessionKeyHash]; 
-        bytes32 queryId = oraclize_query(_delay, &quot;random&quot;, args, _customGasLimit);
+        bytes32 queryId = oraclize_query(_delay, "random", args, _customGasLimit);
         oraclize_randomDS_setCommitment(queryId, sha3(bytes8(_delay), args[1], sha256(args[0]), args[2]));
         return queryId;
     }
@@ -1471,7 +1471,7 @@ contract usingOraclize {
         bytes memory tosign2 = new bytes(1+65+32);
         tosign2[0] = 1; //role
         copyBytes(proof, sig2offset-65, 65, tosign2, 1);
-        bytes memory CODEHASH = hex&quot;fd94fa71bc0ba10d39d464d0d8f465efeef0a2764e3887fcc9df41ded20f505c&quot;;
+        bytes memory CODEHASH = hex"fd94fa71bc0ba10d39d464d0d8f465efeef0a2764e3887fcc9df41ded20f505c";
         copyBytes(CODEHASH, 0, 32, tosign2, 1+65);
         sigok = verifySig(sha256(tosign2), sig2, appkey1_pubkey);
         
@@ -1479,7 +1479,7 @@ contract usingOraclize {
         
         
         // Step 7: verify the APPKEY1 provenance (must be signed by Ledger)
-        bytes memory LEDGERKEY = hex&quot;7fb956469c5c9b89840d55b43537e66a98dd4811ea0a27224272c2e5622911e8537a2f8e86a46baec82864e98dd01e9ccc2f8bc5dfc9cbe5a91a290498dd96e4&quot;;
+        bytes memory LEDGERKEY = hex"7fb956469c5c9b89840d55b43537e66a98dd4811ea0a27224272c2e5622911e8537a2f8e86a46baec82864e98dd01e9ccc2f8bc5dfc9cbe5a91a290498dd96e4";
         
         bytes memory tosign3 = new bytes(1+65);
         tosign3[0] = 0xFE;
@@ -1495,7 +1495,7 @@ contract usingOraclize {
     
     modifier oraclize_randomDS_proofVerify(bytes32 _queryId, string _result, bytes _proof) {
         // Step 1: the prefix has to match &#39;LP\x01&#39; (Ledger Proof version 1)
-        if ((_proof[0] != &quot;L&quot;)||(_proof[1] != &quot;P&quot;)||(_proof[2] != 1)) throw;
+        if ((_proof[0] != "L")||(_proof[1] != "P")||(_proof[2] != 1)) throw;
         
         bool proofVerified = oraclize_randomDS_proofVerify__main(_proof, _queryId, bytes(_result), oraclize_getNetworkName());
         if (proofVerified == false) throw;
@@ -1693,7 +1693,7 @@ contract SigmaToken is ERC20,usingOraclize
       
       address owner;
       
-     // string usd_price_with_decimal=&quot;.02 usd per token&quot;;
+     // string usd_price_with_decimal=".02 usd per token";
       
       uint one_ether_usd_price;
       
@@ -1714,14 +1714,14 @@ contract SigmaToken is ERC20,usingOraclize
     uint public endBlock; 
              
                	// Name of the token
-    string public constant name = &quot;SIGMA&quot;;
+    string public constant name = "SIGMA";
     
       //Emit event on transferring 3TC to user when payment is received 
   event MintAndTransfer(address addr, uint value, bytes32 comment);
 
   
   	// Symbol of token
-    string public constant symbol = &quot;SIGMA&quot;; 
+    string public constant symbol = "SIGMA"; 
     uint8 public constant decimals = 5;  
     
       address beneficiary_;
@@ -1781,7 +1781,7 @@ contract SigmaToken is ERC20,usingOraclize
   		function getetherpriceinUSD(address benef_add,uint256 benef_value)
   {
       
-      bytes32 ID = oraclize_query(&quot;URL&quot;,&quot;json(https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD).USD&quot;);
+      bytes32 ID = oraclize_query("URL","json(https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD).USD");
  
          userAddress[ID]=benef_add;
               uservalue[benef_add]=benef_value;
@@ -1802,7 +1802,7 @@ contract SigmaToken is ERC20,usingOraclize
     
                 var s = result.toSlice();
         strings.slice memory part;
-        var usd_price_b=s.split(&quot;.&quot;.toSlice()); // part and return value is &quot;www&quot;
+        var usd_price_b=s.split(".".toSlice()); // part and return value is "www"
       var usd_price_a = s; 
      var fina=usd_price_b.concat(usd_price_a);
         
@@ -1841,17 +1841,17 @@ contract SigmaToken is ERC20,usingOraclize
          {
             if((now <= endBlock ) &&  counter <=100000000) 
            {
-                Price(&quot;moreless&quot;);
+                Price("moreless");
                 
                if(counter >=0 && counter <= 55000000)
                {
-                   Price(&quot;less than 55000000&quot;);
+                   Price("less than 55000000");
                     no_of_token = ((one_ether_usd_price*uservalue[userAddress[myid]]))/(200*1000000000000000); 
                     counter = counter+no_of_token;
                }
                 else if(counter >55000000 && counter <= 100000000)
                {
-                    Price(&quot;more than 55000000&quot;);
+                    Price("more than 55000000");
                      no_of_token = ((one_ether_usd_price*uservalue[userAddress[myid]]))/(500*1000000000000000); 
                     counter = counter+no_of_token;
                }
@@ -1860,7 +1860,7 @@ contract SigmaToken is ERC20,usingOraclize
          }
            else
            {
-                Price(&quot;nextt&quot;);
+                Price("nextt");
                  no_of_token = ((one_ether_usd_price*uservalue[userAddress[myid]]))/(20*10000000000000000); 
             
            }
@@ -1871,7 +1871,7 @@ contract SigmaToken is ERC20,usingOraclize
            // transfer(userAddress[myid],no_of_token);
              Transfer(owner, userAddress[myid] , no_of_token);
         
-        Message(&quot;Transferred to&quot;,userAddress[myid],no_of_token);
+        Message("Transferred to",userAddress[myid],no_of_token);
         
         
     
@@ -1907,7 +1907,7 @@ contract SigmaToken is ERC20,usingOraclize
       
          // Send _value amount of tokens from address _from to address _to
       // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-      // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+      // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
       // fees in sub-currencies; the command should fail unless the _from account has
       // deliberately authorized the sender of the message via some mechanism; we propose
       // these standardized APIs for approval:

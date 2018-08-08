@@ -169,14 +169,14 @@ contract Token is ERC20, Lockable
 
     //------ TOKEN SPECIFICATION
 
-    string public constant      name     = &quot;Playrs&quot;;
-    string public constant      symbol   = &quot;PLAYR&quot;;
+    string public constant      name     = "Playrs";
+    string public constant      symbol   = "PLAYR";
 
     uint256 public constant     decimals = 4;      // Handle the coin as FIAT (2 decimals). ETH Handles 18 decimal places
 
     uint256 public constant     initSupply = 126000000 * 10**decimals;        // 10**18 max
 
-    string private constant     supplyReserveMode=&quot;quantity&quot;;        // &quot;quantity&quot; or &quot;percent&quot;
+    string private constant     supplyReserveMode="quantity";        // "quantity" or "percent"
     uint256 public constant     supplyReserveVal = 26000000 * 10**decimals;          // if quantity => (val * 10**decimals)   if percent => val;
 
     uint256 public              icoSalesSupply   = 0;                   // Needed when burning tokens
@@ -215,11 +215,11 @@ contract Token is ERC20, Lockable
 
         icoSalesSupply = totalSupply;   
 
-        if (StringLib.same(supplyReserveMode, &quot;quantity&quot;))
+        if (StringLib.same(supplyReserveMode, "quantity"))
         {
             icoSalesSupply = totalSupply.sub(supplyReserveVal);
         }
-        else if (StringLib.same(supplyReserveMode, &quot;percent&quot;))
+        else if (StringLib.same(supplyReserveMode, "percent"))
         {
             icoSalesSupply = totalSupply.mul(supplyReserveVal).div(100);
         }

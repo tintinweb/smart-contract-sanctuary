@@ -110,7 +110,7 @@ contract ERC20Token is ERC20Interface {
     **/
     function transfer(address recipient, uint256 amount) public returns (bool) {
         require(recipient != address(0) && recipient != address(this));
-        require(amount <= balances[msg.sender], &quot;insufficient funds&quot;);
+        require(amount <= balances[msg.sender], "insufficient funds");
 
         balances[msg.sender] = balances[msg.sender].sub(amount);
         balances[recipient] = balances[recipient].add(amount);
@@ -129,7 +129,7 @@ contract ERC20Token is ERC20Interface {
     **/
     function transferFrom(address from, address to, uint256 amount) public returns (bool) {
         require(to != address(0) && to != address(this));
-        require(amount <= balances[from] && amount <= allowed[from][msg.sender], &quot;insufficient funds&quot;);
+        require(amount <= balances[from] && amount <= allowed[from][msg.sender], "insufficient funds");
 
         balances[from] = balances[from].sub(amount);
         balances[to] = balances[to].add(amount);
@@ -164,7 +164,7 @@ contract ERC20Token is ERC20Interface {
 /**
  * @title Ownable
  * The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
 **/
 contract Ownable {
     address public owner;
@@ -200,7 +200,7 @@ contract BurnableToken is Ownable, ERC20Token {
      * @return true if burning is successfull, error otherwise.
     **/
     function burn(uint256 amount) public onlyOwner returns (bool) {
-        require(amount <= balances[owner], &quot;amount should be less than available balance&quot;);
+        require(amount <= balances[owner], "amount should be less than available balance");
 
         balances[owner] = balances[owner].sub(amount);
         _totalSupply = _totalSupply.sub(amount);
@@ -281,8 +281,8 @@ contract PausableToken is Ownable, ERC20Token {
 **/
 contract BloxiaToken is Ownable, ERC20Token, PausableToken, BurnableToken {
 
-    string public constant name = &quot;Bloxia&quot;;
-    string public constant symbol = &quot;BLOX&quot;;
+    string public constant name = "Bloxia";
+    string public constant symbol = "BLOX";
     uint8 public constant decimals = 18;
 
     uint256 constant initial_supply = 500000000 * (10 ** uint256(decimals)); // 500 Million

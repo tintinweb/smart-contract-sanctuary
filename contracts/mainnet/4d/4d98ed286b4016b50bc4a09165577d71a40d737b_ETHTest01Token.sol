@@ -12,8 +12,8 @@ contract ETHTest01Token{
     mapping (address => mapping (address => uint256)) allowed;
     constructor() public {
         owner = 0xF48be01754b8FC91a48D193D0194bBd4f8e2DB6b;          // Set owner of contract
-        name = &quot;ETHTest01&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ETHTest01&quot;;                                           // Set the symbol for display purposes
+        name = "ETHTest01";                                   // Set the name for display purposes
+        symbol = "ETHTest01";                                           // Set the symbol for display purposes
         decimals = 18;                                            // Amount of decimals for display purposes
         totalSupply = 10000000000000000000000000000;               // Total supply
         balances[owner] = totalSupply;

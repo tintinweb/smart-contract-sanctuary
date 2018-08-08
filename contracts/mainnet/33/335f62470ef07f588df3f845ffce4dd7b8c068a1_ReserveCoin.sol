@@ -21,7 +21,7 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 
 contract token {
     /* Public variables of the token */
-    string public standard = &quot;RESERVECOIN 0.1&quot;;
+    string public standard = "RESERVECOIN 0.1";
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -106,8 +106,8 @@ contract ReserveCoin is owned, token {
     /* Initializes contract with initial supply tokens to the creator of the contract */
     uint256 public constant initialSupply = 85000000 * 10**7;
     uint8 public constant decimalUnits = 7;
-    string public tokenName = &quot;RESERVECOIN&quot;;
-    string public tokenSymbol = &quot;RSC&quot;;
+    string public tokenName = "RESERVECOIN";
+    string public tokenSymbol = "RSC";
     function ReserveCoin() token (initialSupply, tokenName, decimalUnits, tokenSymbol) {}
      /* Send coins */
     function transfer(address _to, uint256 _value) {

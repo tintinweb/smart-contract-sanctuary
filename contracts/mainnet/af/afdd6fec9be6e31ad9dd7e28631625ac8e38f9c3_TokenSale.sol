@@ -138,7 +138,7 @@ contract Haltable is Ownable {
 contract TokenSale is Haltable {
     using SafeMath for uint;
 
-    string public name = &quot;TokenSale Contract&quot;;
+    string public name = "TokenSale Contract";
 
     // Constants
     EIP20Interface public token;

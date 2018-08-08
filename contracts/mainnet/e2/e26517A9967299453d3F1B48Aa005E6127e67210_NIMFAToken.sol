@@ -212,10 +212,10 @@ contract NIMFAToken is StandardToken {
 	event CreatedNIMFA(address indexed _creator, uint256 _amountOfNIMFA);
 	
 	// Token data
-	string public constant name = &quot;NIMFA Token&quot;;
-	string public constant symbol = &quot;NIMFA&quot;;
+	string public constant name = "NIMFA Token";
+	string public constant symbol = "NIMFA";
 	uint256 public constant decimals = 18; 
-	string public version = &quot;1.0&quot;;
+	string public version = "1.0";
 	
 	// Addresses and contracts
 	address public executor;

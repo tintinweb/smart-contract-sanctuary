@@ -57,8 +57,8 @@ contract CoinhiToken is SafeMath{
     function CoinhiToken() public {
 	    totalSupply = 4*10**27; // Update total supply
         balanceOf[msg.sender] = totalSupply;              // Give the creator all initial tokens
-        name = &quot;Coinhi Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;HI&quot;;                               // Set the symbol for display purposes
+        name = "Coinhi Token";                                   // Set the name for display purposes
+        symbol = "HI";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

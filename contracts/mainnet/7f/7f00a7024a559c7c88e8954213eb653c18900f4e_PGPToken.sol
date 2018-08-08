@@ -220,9 +220,9 @@ contract PGPToken is ERC20Interface, Owned, SafeMath {
 
     function PGPToken() public {
 
-        symbol = &quot;PGP&quot;;
+        symbol = "PGP";
 
-        name = &quot;Pretty Good Privacy&quot;;
+        name = "Pretty Good Privacy";
 
         decimals = 18;
 

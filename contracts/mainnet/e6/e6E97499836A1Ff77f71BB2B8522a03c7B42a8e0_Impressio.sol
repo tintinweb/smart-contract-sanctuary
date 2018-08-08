@@ -86,8 +86,8 @@ contract Impressio is Pausable, SafeMath {
 
   
   
-  string public constant name = &quot;Impressio&quot;;
-  string public constant symbol = &quot;IMPR&quot;;
+  string public constant name = "Impressio";
+  string public constant symbol = "IMPR";
   uint8 public constant decimals = 18;
   
   // custom properties

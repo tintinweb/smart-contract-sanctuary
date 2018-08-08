@@ -2,10 +2,10 @@ pragma solidity ^0.4.18;
 
 contract Notifier {
   function name() public view returns (string) {
-    return &quot;Notifier&quot;;
+    return "Notifier";
   }
   function symbol() public view returns (string){
-     return &quot;NT&quot;;  
+     return "NT";  
   }
   function decimals() view returns (uint8 ){
       return  8;

@@ -26,7 +26,7 @@ Copyright (c) 2016 Oraclize LTD
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
+of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -39,7 +39,7 @@ all copies or substantial portions of the Software.
 
 
 
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -107,22 +107,22 @@ contract usingOraclize {
   function oraclize_setNetwork() internal returns(bool){
     if (getCodeSize(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed)>0){ //mainnet
       OAR = OraclizeAddrResolverI(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed);
-      oraclize_setNetworkName(&quot;eth_mainnet&quot;);
+      oraclize_setNetworkName("eth_mainnet");
       return true;
     }
     if (getCodeSize(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1)>0){ //ropsten testnet
       OAR = OraclizeAddrResolverI(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1);
-      oraclize_setNetworkName(&quot;eth_ropsten3&quot;);
+      oraclize_setNetworkName("eth_ropsten3");
       return true;
     }
     if (getCodeSize(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e)>0){ //kovan testnet
       OAR = OraclizeAddrResolverI(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e);
-      oraclize_setNetworkName(&quot;eth_kovan&quot;);
+      oraclize_setNetworkName("eth_kovan");
       return true;
     }
     if (getCodeSize(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48)>0){ //rinkeby testnet
       OAR = OraclizeAddrResolverI(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48);
-      oraclize_setNetworkName(&quot;eth_rinkeby&quot;);
+      oraclize_setNetworkName("eth_rinkeby");
       return true;
     }
     if (getCodeSize(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475)>0){ //ethereum-bridge
@@ -218,7 +218,7 @@ contract usingOraclize {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -692,12 +692,12 @@ contract ETHPriceProvider is OraclizeC {
   }
 
   function update(uint delay) private {
-    if (oraclize_getPrice(&quot;URL&quot;) > this.balance) {
+    if (oraclize_getPrice("URL") > this.balance) {
       //stop if we don&#39;t have enough funds anymore
       state = State.Stopped;
-      LogOraclizeQuery(&quot;Oraclize query was NOT sent&quot;, this.balance,block.timestamp);
+      LogOraclizeQuery("Oraclize query was NOT sent", this.balance,block.timestamp);
     } else {
-      bytes32 queryId = oraclize_query(delay, &quot;URL&quot;, url, gasLimit);
+      bytes32 queryId = oraclize_query(delay, "URL", url, gasLimit);
       validIds[queryId] = true;
     }
   }
@@ -710,7 +710,7 @@ contract ETHPriceProvider is OraclizeC {
 
 contract ConvertQuote is ETHPriceProvider {
   //Encrypted Query
-  function ConvertQuote(uint _currentPrice) ETHPriceProvider(&quot;BIa/Nnj1+ipZBrrLIgpTsI6ukQTlTJMd1c0iC7zvxx+nZzq9ODgBSmCLo3Zc0sYZwD8mlruAi5DblQvt2cGsfVeCyqaxu+1lWD325kgN6o0LxrOUW9OQWn2COB3TzcRL51Q+ZLBsT955S1OJbOqsfQ4gg/l2awe2EFVuO3WTprvwKhAa8tjl2iPYU/AJ83TVP9Kpz+ugTJumlz2Y6SPBGMNcvBoRq3MlnrR2h/XdqPbh3S2bxjbSTLwyZzu2DAgVtybPO1oJETY=&quot;) payable public {
+  function ConvertQuote(uint _currentPrice) ETHPriceProvider("BIa/Nnj1+ipZBrrLIgpTsI6ukQTlTJMd1c0iC7zvxx+nZzq9ODgBSmCLo3Zc0sYZwD8mlruAi5DblQvt2cGsfVeCyqaxu+1lWD325kgN6o0LxrOUW9OQWn2COB3TzcRL51Q+ZLBsT955S1OJbOqsfQ4gg/l2awe2EFVuO3WTprvwKhAa8tjl2iPYU/AJ83TVP9Kpz+ugTJumlz2Y6SPBGMNcvBoRq3MlnrR2h/XdqPbh3S2bxjbSTLwyZzu2DAgVtybPO1oJETY=") payable public {
     currentPrice = _currentPrice;
   }
 
@@ -784,8 +784,8 @@ contract ERC223Interface {
 contract UnityToken is ERC223Interface {
   using SafeMath for uint;
 
-  string public constant name = &quot;Unity Token&quot;;
-  string public constant symbol = &quot;UNT&quot;;
+  string public constant name = "Unity Token";
+  string public constant symbol = "UNT";
   uint8 public constant decimals = 18;
 
 

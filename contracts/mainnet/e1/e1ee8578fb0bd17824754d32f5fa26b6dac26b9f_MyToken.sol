@@ -39,8 +39,8 @@ library SafeMath {
  }
   
  contract MyToken is ERC20Interface {
-      string public constant symbol = &quot;FOD&quot;; 
-      string public constant name = &quot;fodcreate&quot;;   
+      string public constant symbol = "FOD"; 
+      string public constant name = "fodcreate";   
       uint8 public constant decimals = 18;
       uint256 _totalSupply = 2000000000000000000000000000; 
      

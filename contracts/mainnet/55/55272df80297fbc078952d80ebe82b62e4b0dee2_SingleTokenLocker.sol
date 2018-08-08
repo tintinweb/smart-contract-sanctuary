@@ -1,7 +1,7 @@
 pragma solidity ^0.4.13;
 
 contract StandardContract {
-    // allows usage of &quot;require&quot; as a modifier
+    // allows usage of "require" as a modifier
     modifier requires(bool b) {
         require(b);
         _;
@@ -198,16 +198,16 @@ contract HasNoEther is Ownable {
  *  - The owner creates a token locker for a particular ERC20 token type
  *  - The owner approves the locker up to some number of tokens: token.approve(tokenLockerAddress, tokenAmount)
  *    - Alternately, the owner can send tokens to the locker.  When locking tokens, the locker checks its balance first
- *  - The owner calls &quot;lockup&quot; with a particular recipient, amount, and unlock time.  The recipient will be allowed
+ *  - The owner calls "lockup" with a particular recipient, amount, and unlock time.  The recipient will be allowed
  *    to collect the tokens once the lockup period is ended.
- *  - The recipient calls &quot;confirm&quot; which confirms that the recipient&#39;s address is correct and is controlled by the
- *    intended recipient (e.g. not an exchange address).  The assumption is that if the recipient can call &quot;confirm&quot;
- *    they have demonstrated that they will also be able to call &quot;collect&quot; when the tokens are ready.
- *  - Once the lock expires, the recipient calls &quot;collect&quot; and the tokens are transferred from the locker to the
+ *  - The recipient calls "confirm" which confirms that the recipient&#39;s address is correct and is controlled by the
+ *    intended recipient (e.g. not an exchange address).  The assumption is that if the recipient can call "confirm"
+ *    they have demonstrated that they will also be able to call "collect" when the tokens are ready.
+ *  - Once the lock expires, the recipient calls "collect" and the tokens are transferred from the locker to the
  *    recipient.
  *
  * An owner can lockup his/her own tokens in order to demonstrate the they will not be moved until a particular time.
- * In this case, no separate &quot;confirm&quot; step is needed (confirm happens automatically)
+ * In this case, no separate "confirm" step is needed (confirm happens automatically)
  *
  * The following diagram shows the actual balance of the token locker and how it is tracked internally
  *

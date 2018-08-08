@@ -15,8 +15,8 @@ contract ClearCoin is IERC20 {
 
   uint public constant _totalSupply = 100000000000000000;
 
-  string public constant symbol =&quot;XCLR&quot;;
-  string public constant name = &quot;ClearCoin&quot;;
+  string public constant symbol ="XCLR";
+  string public constant name = "ClearCoin";
   uint8 public constant decimals = 8;
 
   mapping(address => uint256) balances;

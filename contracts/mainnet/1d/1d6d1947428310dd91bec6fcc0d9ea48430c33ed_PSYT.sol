@@ -23,9 +23,9 @@ contract PSYT {
     function PSYT() {
         balanceOf[msg.sender] =  10000000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  10000000000 * 1000000000000000000;                        // Update total supply
-        standard = &quot;ERC20&quot;;
-        name = &quot;PSYT&quot;;                                   // Set the name for display purposes
-        symbol = &quot;PSYT&quot;;                               // Set the symbol for display purposes
+        standard = "ERC20";
+        name = "PSYT";                                   // Set the name for display purposes
+        symbol = "PSYT";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

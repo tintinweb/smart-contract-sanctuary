@@ -113,8 +113,8 @@ contract KANYE is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KANYE() public {
-        symbol = &quot;KANYE&quot;;
-        name = &quot;KANYE&quot;;
+        symbol = "KANYE";
+        name = "KANYE";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x432a39e0884a0bAA16e2b304b344E47f8CCe8B87] = _totalSupply;

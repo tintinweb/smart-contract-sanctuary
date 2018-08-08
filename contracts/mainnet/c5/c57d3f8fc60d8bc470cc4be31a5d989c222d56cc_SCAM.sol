@@ -36,8 +36,8 @@ contract owned {
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 
 contract SCAMERC20 {
-    string public name = &quot;SCAM&quot;;
-    string public symbol = &quot;BEWARE:THIS IS A SCAM CONTRACT&quot;;
+    string public name = "SCAM";
+    string public symbol = "BEWARE:THIS IS A SCAM CONTRACT";
     uint8 public decimals = 18;
     uint256 public totalSupply = 1000000000;
 
@@ -125,7 +125,7 @@ contract SCAM is owned, SCAMERC20 {
 
     mapping (address => bool) public frozenAccount;
 
-    event FrozenFunds(address target, bool frozen); //notifico il &quot;congelamento&quot;
+    event FrozenFunds(address target, bool frozen); //notifico il "congelamento"
 
     function SCAM(
     ) SCAMERC20() public {}

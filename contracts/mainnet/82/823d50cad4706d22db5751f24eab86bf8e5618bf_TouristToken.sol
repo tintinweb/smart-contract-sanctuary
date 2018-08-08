@@ -73,8 +73,8 @@ contract TouristToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;TouristToken&quot;;
-    string public constant symbol = &quot;TOTO&quot;;
+    string public constant name = "TouristToken";
+    string public constant symbol = "TOTO";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 20000000000e8;

@@ -114,8 +114,8 @@ contract one is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;ONE&quot;;
-        name = &quot;one&quot;;
+        symbol = "ONE";
+        name = "one";
         decimals = 18;
         _totalSupply = 300000000 * 10**uint(decimals);
         balances[0xa5CecC3EeA916a74db3DB813CE404842Fa36ba4a] = _totalSupply;

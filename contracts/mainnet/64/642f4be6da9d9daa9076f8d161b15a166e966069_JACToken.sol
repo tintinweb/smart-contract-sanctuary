@@ -243,7 +243,7 @@ contract ParameterizedToken is CappedToken {
 
 contract JACToken is ParameterizedToken {
 
-    function JACToken() public ParameterizedToken(&quot;Joint admissions coin&quot;, &quot;JAC&quot;, 8, 21000000000) {
+    function JACToken() public ParameterizedToken("Joint admissions coin", "JAC", 8, 21000000000) {
     }
 
 }

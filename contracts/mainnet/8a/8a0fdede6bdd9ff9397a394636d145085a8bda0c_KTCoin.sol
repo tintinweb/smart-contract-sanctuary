@@ -66,9 +66,9 @@ contract StandardToken is Token {
 }
 
 contract KTCoin is StandardToken {
-    string  public constant name = &quot;7Star Exchange Kangaroo Token&quot;;
-    string  public constant symbol = &quot;KT&quot;;
-    string  public version = &quot;1.0&quot;;
+    string  public constant name = "7Star Exchange Kangaroo Token";
+    string  public constant symbol = "KT";
+    string  public version = "1.0";
 
     constructor() public {
 		totalSupply = formatDecimals(3000000000);

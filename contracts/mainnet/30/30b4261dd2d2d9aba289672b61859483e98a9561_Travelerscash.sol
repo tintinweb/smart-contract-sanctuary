@@ -15,9 +15,9 @@ contract Travelerscash {
     function Travelerscash() {
 
          initialSupply = 250000000;
-         name =&quot;Travelerscash&quot;;
+         name ="Travelerscash";
         decimals = 2;
-         symbol = &quot;TVC&quot;;
+         symbol = "TVC";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

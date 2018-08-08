@@ -297,8 +297,8 @@ contract FCT is StandardToken, MultiOwnable {
 
     uint256 public constant TOTAL_CAP = 2200000000;
 
-    string public constant name = &quot;FirmaChain Token&quot;;
-    string public constant symbol = &quot;FCT&quot;;
+    string public constant name = "FirmaChain Token";
+    string public constant symbol = "FCT";
     uint256 public constant decimals = 18;
 
     bool isTransferable = false;

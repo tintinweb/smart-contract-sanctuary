@@ -87,8 +87,8 @@ contract TTC is SafeMath,owned{
         
         totalSupply = 10000000000 *10**uint256(decimals);                        // Update total supply
         balanceOf[msg.sender] = totalSupply; 
-        name = &quot;TongTong Test&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TTT&quot;;                               // Set the symbol for display purposes
+        name = "TongTong Test";                                   // Set the name for display purposes
+        symbol = "TTT";                               // Set the symbol for display purposes
                                   // Amount of decimals for display purposes
 		soldToken=0;
     }

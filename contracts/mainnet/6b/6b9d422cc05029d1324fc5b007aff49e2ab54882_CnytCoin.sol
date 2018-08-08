@@ -321,8 +321,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract CnytCoin is PausableToken, MintableToken, BurnableToken {
-  string public name = &quot;CNYT&quot;;
-  string public symbol = &quot;CNYT&quot;;
+  string public name = "CNYT";
+  string public symbol = "CNYT";
   uint public decimals = 6;
   uint public INITIAL_SUPPLY = 10000 * 100000000 * (10 ** decimals);
 

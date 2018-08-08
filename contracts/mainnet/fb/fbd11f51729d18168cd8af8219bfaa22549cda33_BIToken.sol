@@ -32,10 +32,10 @@ library SafeMath {
 contract BIToken {
 
     ///Public variables of the token
-    string public constant name = &quot;Basic Integration Token&quot;;
+    string public constant name = "Basic Integration Token";
     uint8 public constant decimals = 18;
-    string public constant symbol=&quot;BINTO&quot;;
-    string public constant version = &quot;1.0&quot;;
+    string public constant symbol="BINTO";
+    string public constant version = "1.0";
     using SafeMath for uint256;
     address public ownerAccount;
     uint256 public totalSupply;

@@ -278,7 +278,7 @@ contract DetailedERC20 is ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -401,8 +401,8 @@ contract BurnableToken is BasicToken {
 contract BZUToken is ERC20Token, BurnableToken {
 
     bool public active = true;
-    string  _name = &quot;BZU Token&quot;;
-    string _symbol = &quot;BZU&quot;;
+    string  _name = "BZU Token";
+    string _symbol = "BZU";
     uint8 _decimals = 18;
     address _funder = address(0xC9AD62F26Aa7F79c095281Cab10446ec9Bc7A5E5);
     uint256 _initToken = 1000000000;

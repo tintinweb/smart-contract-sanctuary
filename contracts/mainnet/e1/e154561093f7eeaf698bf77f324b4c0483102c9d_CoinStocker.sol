@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -329,7 +329,7 @@ contract CoinStocker is DetailedERC20, StandardToken, BurnableToken, Ownable  {
 
     uint public rate = 20000;
 
-    function CoinStocker() DetailedERC20(&quot;CoinStocker&quot;, &quot;CSR&quot;, 18) Ownable public {
+    function CoinStocker() DetailedERC20("CoinStocker", "CSR", 18) Ownable public {
       balances[this] = 1000000000 * 10 ** 18;
       totalSupply_ =  1000000000 * 10 ** 18;
     }

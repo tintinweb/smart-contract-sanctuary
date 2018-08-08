@@ -53,7 +53,7 @@ contract EnterRentToken is Crowdsale {
     
     string  public standard    = &#39;Token 1.3&#39;;
     string  public name        = &#39;Enter Rent Token&#39;;
-    string  public symbol      = &quot;ERT&quot;;
+    string  public symbol      = "ERT";
     uint8   public decimals    = 18;
 
     function EnterRentToken() payable Crowdsale() {}

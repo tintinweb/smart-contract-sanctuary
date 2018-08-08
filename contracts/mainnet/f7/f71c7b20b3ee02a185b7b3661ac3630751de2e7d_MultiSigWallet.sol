@@ -2,7 +2,7 @@ pragma solidity ^0.4.18;
 
 // File: contracts/MultiSigWallet.sol
 
-//import &quot;../lib/MultiSigWallet/contracts/MultiSigWallet.sol&quot;;
+//import "../lib/MultiSigWallet/contracts/MultiSigWallet.sol";
 
 
 /// @title Multisignature wallet - Allows multiple parties to agree on transactions before execution.

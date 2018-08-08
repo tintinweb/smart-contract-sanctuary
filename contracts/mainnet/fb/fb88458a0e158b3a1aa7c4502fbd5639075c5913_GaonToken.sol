@@ -113,8 +113,8 @@ contract GaonToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GaonToken() public {
-        symbol = &quot;GHC&quot;;
-        name = &quot;Gaon Token&quot;;
+        symbol = "GHC";
+        name = "Gaon Token";
         decimals = 18;
         _totalSupply = 20000000000000000000000000000;
         balances[0x22957E8B525e18eeec320daa6557B545e848d060] = _totalSupply;

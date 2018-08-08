@@ -62,8 +62,8 @@ contract AKAIITO is ERC20 {
     
     uint256 public totalSupply = 2000000000 * 10**8;
 
-    function name() public constant returns (string) { return &quot;AKAIITO&quot;; }
-    function symbol() public constant returns (string) { return &quot;AIC&quot;; }
+    function name() public constant returns (string) { return "AKAIITO"; }
+    function symbol() public constant returns (string) { return "AIC"; }
     function decimals() public constant returns (uint8) { return 8; }
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);

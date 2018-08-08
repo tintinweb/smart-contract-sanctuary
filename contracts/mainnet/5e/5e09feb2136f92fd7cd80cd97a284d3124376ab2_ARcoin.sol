@@ -109,8 +109,8 @@ contract ARcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ARcoin() public {
-        symbol = &quot;ARCI&quot;;
-        name = &quot;ARcoin&quot;;
+        symbol = "ARCI";
+        name = "ARcoin";
         decimals = 18;
         _totalSupply = 500000000000000000000000000;
         balances[0x3c82e50e81617a26d4c44cea61229557a8278952] = _totalSupply;

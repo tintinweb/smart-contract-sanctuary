@@ -116,8 +116,8 @@ contract PardiICO is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PardiICO() public {
-        symbol = &quot;RDI&quot;;
-        name = &quot;Pardi&quot;;
+        symbol = "RDI";
+        name = "Pardi";
         decimals = 8;
         bonusEnds = now + 2 days;
         endDate = now + 15 days;

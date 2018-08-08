@@ -241,8 +241,8 @@ contract Ownable {
  * @title Showcoin token
  */
 contract Showcoin is Ownable, StandardToken {
-    string public constant name = &quot;Showcoin&quot;;
-    string public constant symbol = &quot;SHC&quot;;
+    string public constant name = "Showcoin";
+    string public constant symbol = "SHC";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 69000000 * (10 ** uint256(decimals));

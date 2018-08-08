@@ -2,8 +2,8 @@ pragma solidity ^0.4.24;
 
 contract SoftCoin {
 
-    string public name = &quot;Softcoin&quot;;      //  token name
-    string public symbol = &quot;SFT&quot;;           //  token symbol
+    string public name = "Softcoin";      //  token name
+    string public symbol = "SFT";           //  token symbol
     uint256 public decimals = 2;            //  token digit
 
     mapping (address => uint256) public balanceOf;

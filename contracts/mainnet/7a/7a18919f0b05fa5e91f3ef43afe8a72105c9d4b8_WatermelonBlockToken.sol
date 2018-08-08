@@ -28,9 +28,9 @@ contract WatermelonBlockToken {
     using SafeMath for uint;
 
     // Public variables of the token
-    string constant public standard = &quot;ERC20&quot;;
-    string constant public name = &quot;WatermelonBlock tokens&quot;;
-    string constant public symbol = &quot;WMB&quot;;
+    string constant public standard = "ERC20";
+    string constant public name = "WatermelonBlock tokens";
+    string constant public symbol = "WMB";
     uint8 constant public decimals = 6;
 
     uint _totalSupply = 400000000e6; // Total supply of 400 million WatermelonBlock tokens

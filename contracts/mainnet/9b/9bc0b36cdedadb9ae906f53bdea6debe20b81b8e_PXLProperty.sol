@@ -68,8 +68,8 @@ contract StandardToken is Token {
 */
 contract PXLProperty is StandardToken {
     /* ERC-20 MetaData */
-    string public constant name = &quot;PixelPropertyToken&quot;;
-    string public constant symbol = &quot;PXL&quot;;
+    string public constant name = "PixelPropertyToken";
+    string public constant symbol = "PXL";
     uint256 public constant decimals = 0;
     
     /* Access Level Constants */
@@ -105,7 +105,7 @@ contract PXLProperty is StandardToken {
     struct Property {
         uint8 flag;
         bool isInPrivateMode; //Whether in private mode for owner-only use or free-use mode to be shared
-        address owner; //Who owns the Property. If its zero (0), then no owner and known as a &quot;system-Property&quot;
+        address owner; //Who owns the Property. If its zero (0), then no owner and known as a "system-Property"
         address lastUpdater; //Who last changed the color of the Property
         uint256[5] colors; //10x10 rgb pixel colors per property. colors[0] is the top row, colors[9] is the bottom row
         uint256 salePrice; //PXL price the owner has the Property on sale for. If zero, then its not for sale.

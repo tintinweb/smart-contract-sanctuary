@@ -33,7 +33,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -281,8 +281,8 @@ contract AssetToken is Pausable, StandardToken {
 
   uint256 public purchasableTokens = 0;
 
-  string public name = &quot;Asset Token&quot;;
-  string public symbol = &quot;AST&quot;;
+  string public name = "Asset Token";
+  string public symbol = "AST";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 1000000000 * 10**18;
 

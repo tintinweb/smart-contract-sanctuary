@@ -114,8 +114,8 @@ contract YUBToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function YUBToken() public {
-        symbol = &quot;YUB&quot;;
-        name = &quot;香港盛恒&quot;;
+        symbol = "YUB";
+        name = "香港盛恒";
         decimals = 2;
         _totalSupply = 50000000000;
         balances[0x01bc604ae9d945f29432eded391513ba587aeda1] = _totalSupply;

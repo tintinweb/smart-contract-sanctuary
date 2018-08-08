@@ -122,8 +122,8 @@ contract StandardToken is BasicToken {
 
 contract blockToken is StandardToken {
   // public variables
-  string public name = &quot;499block&quot;;
-  string public symbol = &quot;499&quot;;
+  string public name = "499block";
+  string public symbol = "499";
   uint8 public decimals = 6;
 
   // internal variables

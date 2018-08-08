@@ -95,8 +95,8 @@ contract GOG is owned {
     constructor() public {
         totalSupply = 10000000000000000;               // GOG&#39;s total supply is 10 billion with 6 decimals
         balances[msg.sender] = totalSupply;          // Give the creator all initial tokens
-        name = &quot;GoGlobe Token&quot;;                       // Token name is GoGlobe Token
-        symbol = &quot;GOG&quot;;                               // token symbol is GOG
+        name = "GoGlobe Token";                       // Token name is GoGlobe Token
+        symbol = "GOG";                               // token symbol is GOG
     }
 
     /**

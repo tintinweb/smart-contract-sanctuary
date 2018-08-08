@@ -200,8 +200,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract TempusToken is StandardToken {
-    string public name = &quot;Tempus&quot;;
-    string public symbol = &quot;TPS&quot;;
+    string public name = "Tempus";
+    string public symbol = "TPS";
     uint8 public decimals = 8;
     uint256 public cap = 100000000000000000;
     mapping(address => bool) public owners;

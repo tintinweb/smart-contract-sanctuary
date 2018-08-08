@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract SBToken {
 
-    string public name = &quot;SB&quot;;      //  token name
-    string public symbol = &quot;SB&quot;;          //  token symbol
+    string public name = "SB";      //  token name
+    string public symbol = "SB";          //  token symbol
     uint256 public decimals = 8;          //  token digit
 
     mapping (address => uint256) public balanceOf;

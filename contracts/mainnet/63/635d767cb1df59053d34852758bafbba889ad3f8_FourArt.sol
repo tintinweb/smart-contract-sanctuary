@@ -164,8 +164,8 @@ contract Owned {
 }
 
 contract FourArt is StandardToken, Owned {
-    string public constant name = &quot;4ArtCoin&quot;;
-    string public constant symbol = &quot;4Art&quot;;
+    string public constant name = "4ArtCoin";
+    string public constant symbol = "4Art";
     uint8 public constant decimals = 18;
     uint256 public sellPrice = 0; // eth
     uint256 public buyPrice = 0; // eth

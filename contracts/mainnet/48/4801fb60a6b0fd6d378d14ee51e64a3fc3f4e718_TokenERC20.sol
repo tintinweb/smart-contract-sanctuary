@@ -28,8 +28,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 600000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Fintechstar Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;FST&quot;;                               // Set the symbol for display purposes
+        name = "Fintechstar Token";                                   // Set the name for display purposes
+        symbol = "FST";                               // Set the symbol for display purposes
     }
 
     /**

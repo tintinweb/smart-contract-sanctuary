@@ -2,7 +2,7 @@
 // Multi-sig, daily-limited account proxy/wallet.
 // @authors:
 // Gav Wood <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d5b295b0a1bdb1b0a3fbb6bab8">[email&#160;protected]</a>>
-// inheritable &quot;property&quot; contract that enables methods to be protected by requiring the acquiescence of either a
+// inheritable "property" contract that enables methods to be protected by requiring the acquiescence of either a
 // single, or, crucially, each of a number of, designated owners.
 // usage:
 // use modifiers onlyowner (just own owned) or onlymanyowners(hash), whereby the same hash must be provided by
@@ -49,7 +49,7 @@ contract multiowned {
 
     // METHODS
 
-    // constructor is given number of sigs required to do protected &quot;onlymanyowners&quot; transactions
+    // constructor is given number of sigs required to do protected "onlymanyowners" transactions
     // as well as the selection of addresses capable of confirming them.
     function multiowned(address[] _owners, uint _required) {
         m_numOwners = _owners.length + 1;
@@ -222,7 +222,7 @@ contract multiowned {
     bytes32[] m_pendingIndex;
 }
 
-// inheritable &quot;property&quot; contract that enables methods to be protected by placing a linear limit (specifiable)
+// inheritable "property" contract that enables methods to be protected by placing a linear limit (specifiable)
 // on a particular resource per calendar day. is multiowned to allow the limit to be altered. resource that method
 // uses is specified in the modifier.
 contract daylimit is multiowned {

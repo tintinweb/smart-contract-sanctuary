@@ -191,7 +191,7 @@ contract Ownable {
     }
 
     function prefixedHash(bytes32 hash) pure public returns (bytes32) {
-        return keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash);
+        return keccak256("\x19Ethereum Signed Message:\n32", hash);
     }
 
     function replaceAdmin (address _old, address _new) internal returns (bool) {
@@ -337,8 +337,8 @@ contract CollectableToken is PausableToken {
     }
 }
 contract BixtrimToken is CollectableToken, OwnedToken {
-    string public constant name = &quot;BixtrimToken&quot;;
-    string public constant symbol = &quot;BXM&quot;;
+    string public constant name = "BixtrimToken";
+    string public constant symbol = "BXM";
     uint256 public constant decimals = 0;
 
     constructor (uint256 _total, address _owner, address[4] _admins) public OwnedToken(_owner, _admins) {

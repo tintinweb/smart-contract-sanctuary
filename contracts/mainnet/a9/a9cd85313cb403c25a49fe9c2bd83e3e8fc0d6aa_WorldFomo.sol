@@ -2,47 +2,47 @@ pragma solidity ^0.4.24;
 /**
 *                                        ,   ,
 *                                        $,  $,     ,
-*                                        &quot;ss.$ss. .s&#39;
+*                                        "ss.$ss. .s&#39;
 *                                ,     .ss$$$$$$$$$$s,
 *                                $. s$$$$$$$$$$$$$$`$$Ss
-*                                &quot;$$$$$$$$$$$$$$$$$$o$$$       ,
+*                                "$$$$$$$$$$$$$$$$$$o$$$       ,
 *                               s$$$$$$$$$$$$$$$$$$$$$$$$s,  ,s
-*                              s$$$$$$$$$&quot;$$$$$$&quot;&quot;&quot;&quot;$$$$$$&quot;$$$$$,
-*                              s$$$$$$$$$$s&quot;&quot;$$$$ssssss&quot;$$$$$$$$&quot;
-*                             s$$$$$$$$$$&#39;         `&quot;&quot;&quot;ss&quot;$&quot;$s&quot;&quot;
-*                             s$$$$$$$$$$,              `&quot;&quot;&quot;&quot;&quot;$  .s$$s
+*                              s$$$$$$$$$"$$$$$$""""$$$$$$"$$$$$,
+*                              s$$$$$$$$$$s""$$$$ssssss"$$$$$$$$"
+*                             s$$$$$$$$$$&#39;         `"""ss"$"$s""
+*                             s$$$$$$$$$$,              `"""""$  .s$$s
 *                             s$$$$$$$$$$$$s,...               `s$$&#39;  `
-*                         `ssss$$$$$$$$$$$$$$$$$$$$####s.     .$$&quot;$.   , s-
-*                           `&quot;&quot;&quot;&quot;$$$$$$$$$$$$$$$$$$$$#####$$$$$$&quot;     $.$&#39;
-* 祝你成功                        &quot;$$$$$$$$$$$$$$$$$$$$$####s&quot;&quot;     .$$$|
-*   福    喜喜                        &quot;$$$$$$$$$$$$$$$$$$$$$$$$##s    .$$&quot; $
-*                                   $$&quot;&quot;$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&quot;   `
-*                                  $$&quot;  &quot;$&quot;$$$$$$$$$$$$$$$$$$$$S&quot;&quot;&quot;&quot;&#39;
-*                             ,   ,&quot;     &#39;  $$$$$$$$$$$$$$$$####s
-*                             $.          .s$$$$$$$$$$$$$$$$$####&quot;
-*                 ,           &quot;$s.   ..ssS$$$$$$$$$$$$$$$$$$$####&quot;
-*                 $           .$$$S$$$$$$$$$$$$$$$$$$$$$$$$#####&quot;
-*                 Ss     ..sS$$$$$$$$$$$$$$$$$$$$$$$$$$$######&quot;&quot;
-*                  &quot;$$sS$$$$$$$$$$$$$$$$$$$$$$$$$$$########&quot;
-*           ,      s$$$$$$$$$$$$$$$$$$$$$$$$#########&quot;&quot;&#39;
-*           $    s$$$$$$$$$$$$$$$$$$$$$#######&quot;&quot;&#39;      s&#39;         ,
-*           $$..$$$$$$$$$$$$$$$$$$######&quot;&#39;       ....,$$....    ,$
-*            &quot;$$$$$$$$$$$$$$$######&quot;&#39; ,     .sS$$$$$$$$$$$$$$$$s$$
-*              $$$$$$$$$$$$#####&quot;     $, .s$$$$$$$$$$$$$$$$$$$$$$$$s.
+*                         `ssss$$$$$$$$$$$$$$$$$$$$####s.     .$$"$.   , s-
+*                           `""""$$$$$$$$$$$$$$$$$$$$#####$$$$$$"     $.$&#39;
+* 祝你成功                        "$$$$$$$$$$$$$$$$$$$$$####s""     .$$$|
+*   福    喜喜                        "$$$$$$$$$$$$$$$$$$$$$$$$##s    .$$" $
+*                                   $$""$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"   `
+*                                  $$"  "$"$$$$$$$$$$$$$$$$$$$$S""""&#39;
+*                             ,   ,"     &#39;  $$$$$$$$$$$$$$$$####s
+*                             $.          .s$$$$$$$$$$$$$$$$$####"
+*                 ,           "$s.   ..ssS$$$$$$$$$$$$$$$$$$$####"
+*                 $           .$$$S$$$$$$$$$$$$$$$$$$$$$$$$#####"
+*                 Ss     ..sS$$$$$$$$$$$$$$$$$$$$$$$$$$$######""
+*                  "$$sS$$$$$$$$$$$$$$$$$$$$$$$$$$$########"
+*           ,      s$$$$$$$$$$$$$$$$$$$$$$$$#########""&#39;
+*           $    s$$$$$$$$$$$$$$$$$$$$$#######""&#39;      s&#39;         ,
+*           $$..$$$$$$$$$$$$$$$$$$######"&#39;       ....,$$....    ,$
+*            "$$$$$$$$$$$$$$$######"&#39; ,     .sS$$$$$$$$$$$$$$$$s$$
+*              $$$$$$$$$$$$#####"     $, .s$$$$$$$$$$$$$$$$$$$$$$$$s.
 *   )          $$$$$$$$$$$#####&#39;      `$$$$$$$$$###########$$$$$$$$$$$.
-*  ((          $$$$$$$$$$$#####       $$$$$$$$###&quot;       &quot;####$$$$$$$$$$
-*  ) \         $$$$$$$$$$$$####.     $$$$$$###&quot;             &quot;###$$$$$$$$$   s&#39;
-* (   )        $$$$$$$$$$$$$####.   $$$$$###&quot;                ####$$$$$$$$s$$&#39;
-* )  ( (       $$&quot;$$$$$$$$$$$#####.$$$$$###&#39;                .###$$$$$$$$$$&quot;
-* (  )  )   _,$&quot;   $$$$$$$$$$$$######.$$##&#39;                .###$$$$$$$$$$
-* ) (  ( \.         &quot;$$$$$$$$$$$$$#######,,,.          ..####$$$$$$$$$$$&quot;
-*(   )$ )  )        ,$$$$$$$$$$$$$$$$$$####################$$$$$$$$$$$&quot;
-*(   ($$  ( \     _sS&quot;  `&quot;$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$S$$,
-* )  )$$$s ) )  .      .   `$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$&quot;&#39;  `$$
-*  (   $$$Ss/  .$,    .$,,s$$$$$$##S$$$$$$$$$$$$$$$$$$$$$$$$S&quot;&quot;        &#39;
-*    \)_$$$$$$$$$$$$$$$$$$$$$$$##&quot;  $$        `$$.        `$$.
-*        `&quot;S$$$$$$$$$$$$$$$$$#&quot;      $          `$          `$
-*            `&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&#39;         &#39;           &#39;           &#39;
+*  ((          $$$$$$$$$$$#####       $$$$$$$$###"       "####$$$$$$$$$$
+*  ) \         $$$$$$$$$$$$####.     $$$$$$###"             "###$$$$$$$$$   s&#39;
+* (   )        $$$$$$$$$$$$$####.   $$$$$###"                ####$$$$$$$$s$$&#39;
+* )  ( (       $$"$$$$$$$$$$$#####.$$$$$###&#39;                .###$$$$$$$$$$"
+* (  )  )   _,$"   $$$$$$$$$$$$######.$$##&#39;                .###$$$$$$$$$$
+* ) (  ( \.         "$$$$$$$$$$$$$#######,,,.          ..####$$$$$$$$$$$"
+*(   )$ )  )        ,$$$$$$$$$$$$$$$$$$####################$$$$$$$$$$$"
+*(   ($$  ( \     _sS"  `"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$S$$,
+* )  )$$$s ) )  .      .   `$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"&#39;  `$$
+*  (   $$$Ss/  .$,    .$,,s$$$$$$##S$$$$$$$$$$$$$$$$$$$$$$$$S""        &#39;
+*    \)_$$$$$$$$$$$$$$$$$$$$$$$##"  $$        `$$.        `$$.
+*        `"S$$$$$$$$$$$$$$$$$#"      $          `$          `$
+*            `"""""""""""""&#39;         &#39;           &#39;           &#39;
 */
 contract F3Devents {
     // 只要玩家注册了名字就会被解雇
@@ -176,8 +176,8 @@ contract WorldFomo is modularShort {
 //    (_(_)| |~|~|(_||_|| (_||_)|(/__\  .  (游戏设置)
 //=================_|===========================================================
     address private admin = msg.sender;
-    string constant public name = &quot;WorldFomo&quot;;
-    string constant public symbol = &quot;WF&quot;;
+    string constant public name = "WorldFomo";
+    string constant public symbol = "WF";
     uint256 private rndExtra_ = 15 seconds;     // 第一个ICO的长度
     uint256 private rndGap_ = 30 minutes;         // ICO阶段的长度，EOS设定为1年。
     uint256 constant private rndInit_ = 30 minutes;                // 圆计时器从此开始
@@ -245,7 +245,7 @@ contract WorldFomo is modularShort {
      *
      */
     modifier isActivated() {
-        require(activated_ == true, &quot;its not ready yet.  check ?eta in discord&quot;);
+        require(activated_ == true, "its not ready yet.  check ?eta in discord");
         _;
     }
 
@@ -253,7 +253,7 @@ contract WorldFomo is modularShort {
      * @dev 防止合同与fomo3d交互
      */
     modifier isHuman() {
-        require(msg.sender == tx.origin, &quot;sorry humans only - FOR REAL THIS TIME&quot;);
+        require(msg.sender == tx.origin, "sorry humans only - FOR REAL THIS TIME");
         _;
     }
 
@@ -261,8 +261,8 @@ contract WorldFomo is modularShort {
      * @dev 设置传入tx的边界
      */
     modifier isWithinLimits(uint256 _eth) {
-        require(_eth >= 1000000000, &quot;pocket lint: not a valid currency&quot;);
-        require(_eth <= 100000000000000000000000, &quot;no vitalik, no&quot;);
+        require(_eth >= 1000000000, "pocket lint: not a valid currency");
+        require(_eth <= 100000000000000000000000, "no vitalik, no");
         _;
     }
 
@@ -1113,7 +1113,7 @@ contract WorldFomo is modularShort {
     function receivePlayerInfo(uint256 _pID, address _addr, bytes32 _name, uint256 _laff)
         external
     {
-        require (msg.sender == address(PlayerBook), &quot;your not playerNames contract... hmmm..&quot;);
+        require (msg.sender == address(PlayerBook), "your not playerNames contract... hmmm..");
         if (pIDxAddr_[_addr] != _pID)
             pIDxAddr_[_addr] = _pID;
         if (pIDxName_[_name] != _pID)
@@ -1134,7 +1134,7 @@ contract WorldFomo is modularShort {
     function receivePlayerNameList(uint256 _pID, bytes32 _name)
         external
     {
-        require (msg.sender == address(PlayerBook), &quot;your not playerNames contract... hmmm..&quot;);
+        require (msg.sender == address(PlayerBook), "your not playerNames contract... hmmm..");
         if(plyrNames_[_pID][_name] == false)
             plyrNames_[_pID][_name] = true;
     }
@@ -1160,7 +1160,7 @@ contract WorldFomo is modularShort {
             pIDxAddr_[msg.sender] = _pID;
             plyr_[_pID].addr = msg.sender;
 
-            if (_name != &quot;&quot;)
+            if (_name != "")
             {
                 pIDxName_[_name] = _pID;
                 plyr_[_pID].name = _name;
@@ -1521,11 +1521,11 @@ contract WorldFomo is modularShort {
         public
     {
         // 只有团队才能激活
-        require(msg.sender == admin, &quot;only admin can activate&quot;);
+        require(msg.sender == admin, "only admin can activate");
 
 
         // 只能跑一次
-        require(activated_ == false, &quot;FOMO Free already activated&quot;);
+        require(activated_ == false, "FOMO Free already activated");
 
         // 激活合同
         activated_ = true;
@@ -1709,14 +1709,14 @@ library NameFilter {
         uint256 _length = _temp.length;
 
         //对不起限于32个字符
-        require (_length <= 32 && _length > 0, &quot;string must be between 1 and 32 characters&quot;);
+        require (_length <= 32 && _length > 0, "string must be between 1 and 32 characters");
         // 确保它不以空格开头或以空格结尾
-        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, &quot;string cannot start or end with space&quot;);
+        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, "string cannot start or end with space");
         // 确保前两个字符不是0x
         if (_temp[0] == 0x30)
         {
-            require(_temp[1] != 0x78, &quot;string cannot start with 0x&quot;);
-            require(_temp[1] != 0x58, &quot;string cannot start with 0X&quot;);
+            require(_temp[1] != 0x78, "string cannot start with 0x");
+            require(_temp[1] != 0x58, "string cannot start with 0X");
         }
 
         // 创建一个bool来跟踪我们是否有非数字字符
@@ -1743,11 +1743,11 @@ library NameFilter {
                     (_temp[i] > 0x60 && _temp[i] < 0x7b) ||
                     // 或0-9
                     (_temp[i] > 0x2f && _temp[i] < 0x3a),
-                    &quot;string contains invalid characters&quot;
+                    "string contains invalid characters"
                 );
                 // 确保连续两行不是空格
                 if (_temp[i] == 0x20)
-                    require( _temp[i+1] != 0x20, &quot;string cannot contain consecutive spaces&quot;);
+                    require( _temp[i+1] != 0x20, "string cannot contain consecutive spaces");
 
                 // 看看我们是否有一个数字以外的字符
                 if (_hasNonNumber == false && (_temp[i] < 0x30 || _temp[i] > 0x39))
@@ -1755,7 +1755,7 @@ library NameFilter {
             }
         }
 
-        require(_hasNonNumber == true, &quot;string cannot be only numbers&quot;);
+        require(_hasNonNumber == true, "string cannot be only numbers");
 
         bytes32 _ret;
         assembly {
@@ -1788,7 +1788,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -1800,7 +1800,7 @@ library SafeMath {
         pure
         returns (uint256)
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -1813,7 +1813,7 @@ library SafeMath {
         returns (uint256 c)
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
 

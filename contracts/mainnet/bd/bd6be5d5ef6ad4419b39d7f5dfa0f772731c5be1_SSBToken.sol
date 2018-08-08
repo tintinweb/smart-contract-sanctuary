@@ -193,7 +193,7 @@ contract HumanStandardToken is StandardToken {
 
 }
 
-contract SSBToken is HumanStandardToken(10000000000000000000000000000,&quot;SSB&quot;,18,&quot;SSB&quot;){
+contract SSBToken is HumanStandardToken(10000000000000000000000000000,"SSB",18,"SSB"){
     function () public {
         //if ether is sent to this address, send it back.
         throw;

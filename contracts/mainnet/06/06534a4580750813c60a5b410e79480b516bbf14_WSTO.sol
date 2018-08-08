@@ -110,8 +110,8 @@ contract WSTO is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WSTO() public {
-        symbol = &quot;WSTO&quot;;
-        name = &quot;WealthStoreCoin&quot;;
+        symbol = "WSTO";
+        name = "WealthStoreCoin";
         decimals = 18;
         _totalSupply = 2000000000000000000000000000;
         balances[0x925E25F1a968b5E14B900335fB4C17D3f6E043E0] = _totalSupply;

@@ -238,8 +238,8 @@ contract MFToken is Ownable, MintableToken {
   //event TokenPreSaleTransfer(address indexed purchaser, address indexed beneficiary, uint256 amount);
   address constant singleOwner = 0xF754Ca20C1cBD8Ef2a0F22c21D6087076B1e175b;
   // Token details
-  string public constant name = &quot;Mankind&quot;;
-  string public constant symbol = &quot;MF&quot;;
+  string public constant name = "Mankind";
+  string public constant symbol = "MF";
 
   // 18 decimal places, the same as ETH.
   uint8 public constant decimals = 18;

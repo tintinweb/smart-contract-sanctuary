@@ -113,8 +113,8 @@ contract JKToken is UnboundedRegularToken {
 
     uint public totalSupply = 50*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;JackyToken&quot;;
-    string constant public symbol = &quot;JT&quot;;
+    string constant public name = "JackyToken";
+    string constant public symbol = "JT";
 
     function JKToken() {
         balances[msg.sender] = totalSupply;

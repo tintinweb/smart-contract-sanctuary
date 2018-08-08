@@ -207,9 +207,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract TrumpCoins is StandardToken {
     
-    string public name = &quot;Trump Coins&quot;;
-    string public symbol = &quot;TRUMP&quot;;
-    string public version = &quot;1.0&quot;;
+    string public name = "Trump Coins";
+    string public symbol = "TRUMP";
+    string public version = "1.0";
     uint8 public decimals = 18;
     
     uint256 INITIAL_SUPPLY = 20000000000e18;

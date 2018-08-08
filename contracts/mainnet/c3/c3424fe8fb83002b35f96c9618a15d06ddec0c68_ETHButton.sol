@@ -165,7 +165,7 @@ contract ETHButton {
             // don&#39;t try to hack the system with invalid addresses...
             if(!refAddr.send(fee))
             {
-                // if I write &quot;totalPot&quot; here everybody will exploit 
+                // if I write "totalPot" here everybody will exploit 
                 // the referal system with invalid address
                 devFund += fee;
             } else

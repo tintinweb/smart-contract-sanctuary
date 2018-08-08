@@ -90,8 +90,8 @@ contract StandardToken is ERC20, SafeMath {
 }
 
 contract SyloToken is Ownable, StandardToken {
-    string public name = &quot;Sylo&quot;;
-    string public symbol = &quot;SYLO&quot;;
+    string public name = "Sylo";
+    string public symbol = "SYLO";
     uint public decimals = 18;
 
     uint public totalSupply = 10000000000 ether;

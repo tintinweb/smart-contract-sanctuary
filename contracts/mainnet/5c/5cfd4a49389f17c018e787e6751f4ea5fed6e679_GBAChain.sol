@@ -160,8 +160,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract GBAChain is StandardToken, Ownable {
-    string  public  constant name = &quot;GBA Chain&quot;;
-    string  public  constant symbol = &quot;GBA&quot;;
+    string  public  constant name = "GBA Chain";
+    string  public  constant symbol = "GBA";
     uint    public  constant decimals = 18;
 
     bool public transferEnabled = true;

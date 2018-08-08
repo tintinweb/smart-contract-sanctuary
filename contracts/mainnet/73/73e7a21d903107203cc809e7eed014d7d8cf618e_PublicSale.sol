@@ -208,7 +208,7 @@ contract PublicSale is Pausable {
         require(whitelist != address(0));
 
         List = Whitelist(whitelist);
-        emit Change(whitelist, &quot;whitelist&quot;);
+        emit Change(whitelist, "whitelist");
     }
 
     function setWallet(address newWallet)
@@ -218,7 +218,7 @@ contract PublicSale is Pausable {
         require(newWallet != address(0));
 
         wallet = newWallet;
-        emit Change(newWallet, &quot;wallet&quot;);
+        emit Change(newWallet, "wallet");
     }
 
 //  sale controller
@@ -430,7 +430,7 @@ contract Whitelist is Ownable, RBAC {
   event WhitelistedAddressAdded(address addr);
   event WhitelistedAddressRemoved(address addr);
 
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if called by any account that&#39;s not whitelisted.

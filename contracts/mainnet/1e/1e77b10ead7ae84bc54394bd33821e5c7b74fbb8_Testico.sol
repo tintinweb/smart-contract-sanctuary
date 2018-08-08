@@ -14,8 +14,8 @@ contract ERC20Interface {
 contract Testico is ERC20Interface {
     address public owner;
 
-    string public constant symbol = &quot;TMB&quot;;
-    string public constant name = &quot;Test ICO&quot;;
+    string public constant symbol = "TMB";
+    string public constant name = "Test ICO";
     uint8 public constant decimals = 8;
     uint256 initialSupply = 2500000000000000;
     

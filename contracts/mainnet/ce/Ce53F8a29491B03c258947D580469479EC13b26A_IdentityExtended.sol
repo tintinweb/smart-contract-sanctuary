@@ -37,7 +37,7 @@ contract IdentityBase{
      */   
     function setMyIdentity(bytes32 _biometricData, string _name, string _surname) public returns(bool){
     
-		if(identities[msg.sender].biometricData == &quot;&quot;){
+		if(identities[msg.sender].biometricData == ""){
 			
 			Data storage identity = identities[msg.sender];
 			identity.biometricData = _biometricData;
@@ -114,8 +114,8 @@ contract IdentityExtended is IdentityBase{
 contract B2Lab_TokenPlus{
 
 	//Token Data
-	string constant public tokenName = &quot;NFT B2LAB&quot;;
-	string constant public tokenSymbol = &quot;B2L&quot;;
+	string constant public tokenName = "NFT B2LAB";
+	string constant public tokenSymbol = "B2L";
 	address public contractOwner;
 	uint256 constant public totalTokens = 1000000;
 	uint256 public issuedTokens = 0;
@@ -169,7 +169,7 @@ contract B2Lab_TokenPlus{
 		
     }
     
-    //Check if &quot;address _a&quot; is an identity in the IdentityEthAddress Contract
+    //Check if "address _a" is an identity in the IdentityEthAddress Contract
 	modifier checkIsIdentity(address _a){
        
         IdentityBase i = IdentityBase(identityEthAddress);

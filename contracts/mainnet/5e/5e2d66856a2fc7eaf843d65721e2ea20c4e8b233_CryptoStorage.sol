@@ -72,7 +72,7 @@ contract CryptoStorage is StorageBase {
 
     function CryptoStorage() public {
         // placeholder to make the first available monster to have a tokenId starts from 1
-        createMonster(0, 0, 0, 0, 0, &quot;&quot;);
+        createMonster(0, 0, 0, 0, 0, "");
     }
 
     function createMonster(

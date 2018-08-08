@@ -114,8 +114,8 @@ pragma solidity ^0.4.18;
         // Constructor
         // ------------------------------------------------------------------------
         function ADZbuzzCommunityToken() public {
-            symbol = &quot;ACT395207&quot;;
-            name = &quot;ADZbuzz Bufferapp.com Community Token&quot;;
+            symbol = "ACT395207";
+            name = "ADZbuzz Bufferapp.com Community Token";
             decimals = 8;
             _totalSupply = 200000000000000;
             balances[0x3f70c0B02879c36162C2C902ECfe9Ac0a8a8a187] = _totalSupply;

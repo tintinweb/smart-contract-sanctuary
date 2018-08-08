@@ -109,9 +109,9 @@ contract CryptoGOToken is StandardToken { // CHANGE THIS. Update the contract na
     function CryptoGOToken() {
         balances[msg.sender] = 1000000000000000000000000000;               // Give the creator all initial tokens. This is set to 1000 for example. If you want your initial tokens to be X and your decimal is 5, set this value to X * 100000. (CHANGE THIS)
         totalSupply = 1000000000000000000000000000;                        // Update total supply (1000 for example) (CHANGE THIS)
-        name = &quot;CryptoGO&quot;;                                   // Set the name for display purposes (CHANGE THIS)
+        name = "CryptoGO";                                   // Set the name for display purposes (CHANGE THIS)
         decimals = 18;                                               // Amount of decimals for display purposes (CHANGE THIS)
-        symbol = &quot;CGO&quot;;                                             // Set the symbol for display purposes (CHANGE THIS)
+        symbol = "CGO";                                             // Set the symbol for display purposes (CHANGE THIS)
         unitsOneEthCanBuy = 10000;                                      // Set the price of your token for the ICO (CHANGE THIS)
         fundsWallet = msg.sender;                                    // The owner of the contract gets ETH
     }
@@ -136,7 +136,7 @@ contract CryptoGOToken is StandardToken { // CHANGE THIS. Update the contract na
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

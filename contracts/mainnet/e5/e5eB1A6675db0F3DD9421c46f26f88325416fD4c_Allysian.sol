@@ -100,8 +100,8 @@ contract Allysian is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function Allysian() public {
-        symbol = &quot;ALN&quot;;
-        name = &quot;Allysian Token&quot;;
+        symbol = "ALN";
+        name = "Allysian Token";
         decimals = 8;
         _maxSupply = 1000000000 * 10**uint(decimals); //1 billion
         _circulatingSupply = 10000000 * 10**uint(decimals); //10 million

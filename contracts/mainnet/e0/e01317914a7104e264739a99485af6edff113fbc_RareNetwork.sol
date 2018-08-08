@@ -266,8 +266,8 @@ contract RareNetwork is Owned {
 
   address owner;
 
-  string public standard = &quot;RareNetwork 1.0&quot;;
-  string public name = &quot;Rare Network&quot;;
+  string public standard = "RareNetwork 1.0";
+  string public name = "Rare Network";
   uint public decimals = 0;
   address[] public RareAssets;
 

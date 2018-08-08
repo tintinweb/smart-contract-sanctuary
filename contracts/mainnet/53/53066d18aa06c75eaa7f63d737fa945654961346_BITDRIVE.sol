@@ -203,8 +203,8 @@ contract BITDRIVE is BTDStandardToken {
     
     uint256 constant public decimals = 8;
     uint256 public totalSupply = 100 * (10**7) * 10**8 ; // 1 Billion tokens, 8 decimal places, 
-    string constant public name = &quot;BitDrive&quot;;
-    string constant public symbol = &quot;BTD&quot;;
+    string constant public name = "BitDrive";
+    string constant public symbol = "BTD";
     
     function BITDRIVE(){
         balances[msg.sender] = totalSupply;               // Give the creator all initial tokens
@@ -218,7 +218,7 @@ contract BITDRIVE is BTDStandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 }

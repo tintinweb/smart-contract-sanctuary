@@ -31,7 +31,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -92,7 +92,7 @@ contract PoSTokenStandard {
     uint256 public stakeStartTime;
     uint256 public stakeMinAge;
     uint256 public stakeMaxAge;
-   //Maximumcoin - Modified the correct technical term &quot;mint&quot; to a well know term &quot;mine&quot; for marketing purposes
+   //Maximumcoin - Modified the correct technical term "mint" to a well know term "mine" for marketing purposes
     function mine() returns (bool);
     function coinAge(address who) constant returns (uint256);
     function annualInterest() constant returns (uint256);
@@ -102,8 +102,8 @@ contract PoSTokenStandard {
 contract Maximumcoin is ERC20,PoSTokenStandard,Ownable {
     using SafeMath for uint256;
 //Maximumcoin - Changed name of contract
-    string public name = &quot;Maximum-coin&quot;;
-    string public symbol = &quot;xMUM&quot;;
+    string public name = "Maximum-coin";
+    string public symbol = "xMUM";
     uint public decimals = 18;
 
     uint public chainStartTime; //chain start time
@@ -223,7 +223,7 @@ contract Maximumcoin is ERC20,PoSTokenStandard,Ownable {
     function allowance(address _owner, address _spender) constant returns (uint256 remaining) {
         return allowed[_owner][_spender];
     }
-//Maximumcoin - Modified the correct technical term &quot;mint&quot; to a well know term &quot;mine&quot; for marketing purposes.
+//Maximumcoin - Modified the correct technical term "mint" to a well know term "mine" for marketing purposes.
     function mine() canPoSMint returns (bool) {
         if(balances[msg.sender] <= 0) return false;
         if(transferIns[msg.sender].length <= 0) return false;

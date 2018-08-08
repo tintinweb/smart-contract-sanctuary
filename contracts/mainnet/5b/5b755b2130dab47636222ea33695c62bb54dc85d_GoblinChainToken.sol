@@ -64,8 +64,8 @@ contract GoblinChainToken is ERC20Interface{
     // Constructor
     // ------------------------------------------------------------------------
     function GoblinChainToken() public {
-        symbol = &quot;GOBC&quot;;
-        name = &quot;Goblin Chain&quot;;
+        symbol = "GOBC";
+        name = "Goblin Chain";
         decimals = 18;
         _totalSupply = 7000000000 * 10**uint(decimals);
         balances[msg.sender] = _totalSupply;

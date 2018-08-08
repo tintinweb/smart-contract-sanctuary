@@ -142,8 +142,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract vBitcoin is MintableToken {
-	string public constant name = &quot;Virtual Bitcoin&quot;;
-	string public constant symbol = &quot;vBTC&quot;;
+	string public constant name = "Virtual Bitcoin";
+	string public constant symbol = "vBTC";
 	uint32 public constant decimals = 18;
 	
     uint public start = 1529934560;

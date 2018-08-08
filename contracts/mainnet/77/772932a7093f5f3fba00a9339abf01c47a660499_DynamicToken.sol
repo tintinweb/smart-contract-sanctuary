@@ -60,8 +60,8 @@ contract DynamicToken is TokenInterface {
     isMaxSupplyLocked = false;
     isLockedOpen = false;
     isContractOwnerLocked = false;
-    name = &quot;Vevue Pre&quot;;
-    symbol = &quot;VEVP&quot;;
+    name = "Vevue Pre";
+    symbol = "VEVP";
   }
 
   // restrict usage to only the owner

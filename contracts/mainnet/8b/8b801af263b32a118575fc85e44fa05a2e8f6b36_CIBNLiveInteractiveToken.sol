@@ -54,8 +54,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 500000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;CIBN Live Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;CIBN&quot;;                               // Set the symbol for display purposes
+        name = "CIBN Live Token";                                   // Set the name for display purposes
+        symbol = "CIBN";                               // Set the symbol for display purposes
     }
 
     /**
@@ -199,8 +199,8 @@ contract CIBNLiveInteractiveToken is owned, TokenERC20 {
 		owner = msg.sender;
 		totalSupply = 50000000000000000000000000;
 		balanceOf[owner]=totalSupply;
-		tokenName=&quot;CIBN Live Token&quot;;
-		tokenSymbol=&quot;CIBN&quot;;
+		tokenName="CIBN Live Token";
+		tokenSymbol="CIBN";
 	}
 
 

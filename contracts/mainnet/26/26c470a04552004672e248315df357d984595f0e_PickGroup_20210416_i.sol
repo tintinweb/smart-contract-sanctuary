@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	PickGroup_20210416_i				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	PickGroup_20210416_i		&quot;	;
-	string	public	constant	symbol =	&quot;	PICKI		&quot;	;
+	string	public	constant	name =	"	PickGroup_20210416_i		"	;
+	string	public	constant	symbol =	"	PICKI		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

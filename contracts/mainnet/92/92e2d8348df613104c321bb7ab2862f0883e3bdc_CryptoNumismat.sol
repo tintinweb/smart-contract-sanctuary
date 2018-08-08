@@ -28,8 +28,8 @@ contract CryptoNumismat
         admins[owner] = true;
         
         totalSupply = 1000;                         // Update total supply
-        name = &quot;cryptonumismat&quot;;                    // Set the name for display purposes
-        symbol = &quot;$&quot;;                               // Set the symbol for display purposes
+        name = "cryptonumismat";                    // Set the name for display purposes
+        symbol = "$";                               // Set the symbol for display purposes
         decimals = 0;                               // Amount of decimals for display purposes
     }
     

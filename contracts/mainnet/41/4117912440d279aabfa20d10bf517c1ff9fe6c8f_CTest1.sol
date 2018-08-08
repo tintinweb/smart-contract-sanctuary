@@ -149,8 +149,8 @@ contract CTest1 is StandardToken {
     address public Founder3 = 0x0d19C131400e73c71bBB2bC1666dBa8Fe22d242D;
 
   
-    function name() constant returns (string) { return &quot;CTest1 Token&quot;; }
-    function symbol() constant returns (string) { return &quot;CTest1&quot;; }
+    function name() constant returns (string) { return "CTest1 Token"; }
+    function symbol() constant returns (string) { return "CTest1"; }
     function decimals() constant returns (uint) { return 18; }
     
     

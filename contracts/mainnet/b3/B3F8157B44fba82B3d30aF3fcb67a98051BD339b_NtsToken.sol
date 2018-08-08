@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -325,8 +325,8 @@ contract PausableToken is StandardToken, Pausable {
  * @dev Implementation of Nts Token based on the basic standard token.
  */
 contract NtsToken is PausableToken {
-    string public name = &quot;EOSnineties&quot;;
-    string public symbol = &quot;NTS&quot;;
+    string public name = "EOSnineties";
+    string public symbol = "NTS";
     string public version = &#39;1.0.0&#39;;
     uint8 public decimals = 6;
     uint public INITIAL_SUPPLY = 1000000000 * 1000000;

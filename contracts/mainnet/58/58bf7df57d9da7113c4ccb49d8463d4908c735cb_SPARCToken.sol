@@ -3,8 +3,8 @@ pragma solidity ^0.4.8;
 //Kings Distributed Systems
 //ERC20 Compliant SPARC Token
 contract SPARCToken {
-    string public constant name     = &quot;Science Power and Research Coin&quot;;
-    string public constant symbol   = &quot;SPARC&quot;;
+    string public constant name     = "Science Power and Research Coin";
+    string public constant symbol   = "SPARC";
     uint8  public constant decimals = 18;
 
     uint256 public totalSupply      = 0;

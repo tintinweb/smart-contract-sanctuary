@@ -9,9 +9,9 @@ pragma solidity ^0.4.18;
 // Total supply: 100000000
 // Decimals    : 18
 //
-// &quot;O Thou in Whom we live and move and have our being, 
+// "O Thou in Whom we live and move and have our being, 
 // the Power that can make all things new,
-// turn to spiritual purposes the money in the world.&quot;
+// turn to spiritual purposes the money in the world."
 //
 // ----------------------------------------------------------------------------
 // Safe maths
@@ -111,8 +111,8 @@ contract LVXToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LVXToken() public {
-        symbol = &quot;LVX&quot;;
-        name = &quot;LVX Token&quot;;
+        symbol = "LVX";
+        name = "LVX Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x2f183dE02815Ffe569656F432EE7392D352b814D] = _totalSupply;

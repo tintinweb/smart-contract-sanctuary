@@ -149,7 +149,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -236,10 +236,10 @@ contract Pausable is Ownable {
  
 contract SlotTicket is StandardToken, Ownable {
 
-  string public name = &quot;Slot Ticket&quot;;
+  string public name = "Slot Ticket";
   uint8 public decimals = 0;
-  string public symbol = &quot;SLOT&quot;;
-  string public version = &quot;0.1&quot;;
+  string public symbol = "SLOT";
+  string public version = "0.1";
 
   event Mint(address indexed to, uint256 amount);
 

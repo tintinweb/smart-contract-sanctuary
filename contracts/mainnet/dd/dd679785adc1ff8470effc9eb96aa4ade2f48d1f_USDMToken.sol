@@ -228,8 +228,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract USDMToken is StandardToken {
 
-    string public constant name = &quot;Universal System Denominated in Marble&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;USDM&quot;; // solium-disable-line uppercase
+    string public constant name = "Universal System Denominated in Marble"; // solium-disable-line uppercase
+    string public constant symbol = "USDM"; // solium-disable-line uppercase
     uint8 public constant decimals = 18; // solium-disable-line uppercase
 
     uint256 public constant INITIAL_SUPPLY = 200000000 * (10 ** uint256(decimals));

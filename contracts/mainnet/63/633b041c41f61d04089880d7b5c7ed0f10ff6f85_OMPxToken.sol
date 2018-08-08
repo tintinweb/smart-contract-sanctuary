@@ -302,6 +302,6 @@ contract OMPxToken is BurnableToken, MintableToken{
     uint32 public constant decimals = 18;
     uint256 public constant initialSupply = 1e24;
 
-    string public constant name = &quot;OMPx Token&quot;;
-    string public constant symbol = &quot;OMPX&quot;;
+    string public constant name = "OMPx Token";
+    string public constant symbol = "OMPX";
 }

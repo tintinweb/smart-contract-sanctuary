@@ -238,8 +238,8 @@ contract StandardToken is ERC20, BasicToken{
     This create Sancoj token and give all amount to creator.
 */
 contract SancojTokenContract is StandardToken,Ownable {
-    string public constant symbol = &quot;SANC&quot;;   
-    string public constant name = &quot;Sancoj&quot;;
+    string public constant symbol = "SANC";   
+    string public constant name = "Sancoj";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 100000000000 * (10 ** uint256(decimals));
     /**

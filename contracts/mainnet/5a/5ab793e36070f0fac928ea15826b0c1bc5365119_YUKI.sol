@@ -231,8 +231,8 @@ contract ERC223 {
 contract YUKI is ERC223, Ownable, Pausable {
     using SafeMath for uint256;
 
-    string public name = &quot;YUKI&quot;;
-    string public symbol = &quot;YUKI&quot;;
+    string public name = "YUKI";
+    string public symbol = "YUKI";
     uint8 public decimals = 8;
     uint256 public totalSupply = 20e9 * 1e8;
     uint256 public codeSize = 0;

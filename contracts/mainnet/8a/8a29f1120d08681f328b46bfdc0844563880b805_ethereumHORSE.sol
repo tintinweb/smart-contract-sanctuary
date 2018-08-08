@@ -4,8 +4,8 @@ interface tokenRecipientsnsd{ function receiveApproval(address _from, uint256 _v
 
 contract ethereumHORSE{
     
-        string public name = &quot;ethereum HORSE&quot;;
-        string public symbol = &quot;ETHS&quot;;
+        string public name = "ethereum HORSE";
+        string public symbol = "ETHS";
         uint8 public  decimals = 18;
         uint256 public totalSupply=17000000000000000000000000;
         mapping (address => uint256) public balanceOf;

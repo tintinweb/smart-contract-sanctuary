@@ -133,8 +133,8 @@ contract Ownable {
 
 contract BTB is StandardToken ,Ownable {
 
-  string public constant name = &quot;Betrabit&quot;;
-  string public constant symbol = &quot;BTB&quot;;
+  string public constant name = "Betrabit";
+  string public constant symbol = "BTB";
   uint256 public constant decimals = 18;
   
   uint256 public constant INITIAL_SUPPLY = 100000000 * 10 ** uint256(decimals);

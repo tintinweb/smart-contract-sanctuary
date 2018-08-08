@@ -16,9 +16,9 @@ contract Puttu {
     function Puttu() {
 
          initialSupply = 999999999000000000000000000;
-         name =&quot;Puttu&quot;;
+         name ="Puttu";
         decimals = 18;
-         symbol = &quot;PUTTU&quot;;
+         symbol = "PUTTU";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

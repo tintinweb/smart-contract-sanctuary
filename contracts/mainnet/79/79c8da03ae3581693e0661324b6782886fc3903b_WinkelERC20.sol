@@ -34,8 +34,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 contract WinkelERC20 {
     using SafeMath for uint256;
     // Public variables of the token
-    string public name = &quot;Winkel&quot;;
-    string public symbol = &quot;WTS&quot;;
+    string public name = "Winkel";
+    string public symbol = "WTS";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 100000000 * 10 ** uint256(decimals);

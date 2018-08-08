@@ -4,8 +4,8 @@ contract	VOC_ethchf_48013527701_20181215				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	VOC_ethchf_48013527701_20181215		&quot;	;
-	string	public		symbol =	&quot;	VECQIV		&quot;	;
+	string	public		name =	"	VOC_ethchf_48013527701_20181215		"	;
+	string	public		symbol =	"	VECQIV		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		330000000000000000000000000					;	

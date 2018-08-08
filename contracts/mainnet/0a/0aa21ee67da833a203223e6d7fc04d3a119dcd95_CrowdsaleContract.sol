@@ -238,8 +238,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract TokenContract is MintableToken {
-  string public name         = &quot;Navalcoin&quot;;  // change token name here
-  string public symbol       = &quot;NAC&quot;;         // change token symbol
+  string public name         = "Navalcoin";  // change token name here
+  string public symbol       = "NAC";         // change token symbol
   uint8 public decimals      = 18;             
 }
 
@@ -551,7 +551,7 @@ contract CrowdsaleContract is CappedCrowdsale, RefundableCrowdsale {
     uint256 mintAfterPurchase = msg.value.mul(rate);
       if ((token.totalSupply() + mintAfterPurchase > totalTokensForSale)) {
         msg.sender.transfer(msg.value); // Refund them
-        EthRefunded(&quot;sale Limit Hit&quot;);
+        EthRefunded("sale Limit Hit");
         return;
       }
 
@@ -559,7 +559,7 @@ contract CrowdsaleContract is CappedCrowdsale, RefundableCrowdsale {
   }
 
   function forwardFunds() internal {
-      EthTransferred(&quot;Pushing funds to smartEscrow&quot;);
+      EthTransferred("Pushing funds to smartEscrow");
       super.forwardFunds();
       
   }

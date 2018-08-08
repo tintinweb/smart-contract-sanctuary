@@ -272,8 +272,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract SkychainToken is PausableToken, BurnableToken {
 
-    string public constant name = &quot;Skychain Global Token&quot;;
-    string public constant symbol = &quot;SKCH&quot;;
+    string public constant name = "Skychain Global Token";
+    string public constant symbol = "SKCH";
     uint8 public constant decimals = 6;
     uint256 public constant INITIAL_SUPPLY = 36000000000000;
     

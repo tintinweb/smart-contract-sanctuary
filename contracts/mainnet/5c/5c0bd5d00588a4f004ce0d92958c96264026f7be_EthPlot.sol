@@ -157,7 +157,7 @@ contract EthPlot is Ownable {
     constructor() public payable {
         // Initialize the contract with a single block which the admin owns
         ownership.push(PlotOwnership(0, 0, GRID_WIDTH, GRID_HEIGHT, owner));
-        data[0] = PlotData(&quot;Qmb51AikiN8p6JsEcCZgrV4d7C6d6uZnCmfmaT15VooUyv/img.svg&quot;, &quot;https://www.ethplot.com/&quot;);
+        data[0] = PlotData("Qmb51AikiN8p6JsEcCZgrV4d7C6d6uZnCmfmaT15VooUyv/img.svg", "https://www.ethplot.com/");
         plotIdToPrice[0] = INITIAL_PLOT_PRICE;
     }
 

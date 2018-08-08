@@ -99,8 +99,8 @@ contract SmzdmToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SmzdmToken() public {
-        symbol = &quot;SMZDM&quot;;
-        name = &quot;SMZDM Token&quot;;
+        symbol = "SMZDM";
+        name = "SMZDM Token";
         decimals = 8;
         _totalSupply = 2100000000000000;
         balances[0x05a7d45097dB1B84510f63A1689863094CECf0D2] = _totalSupply;

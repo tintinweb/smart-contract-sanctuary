@@ -109,8 +109,8 @@ contract REAL is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function REAL() public {
-        symbol = &quot;REAL&quot;;
-        name = &quot;REAL&quot;;
+        symbol = "REAL";
+        name = "REAL";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xca059be0f73280f6218792c9220875b1caaf5c8a] = _totalSupply;

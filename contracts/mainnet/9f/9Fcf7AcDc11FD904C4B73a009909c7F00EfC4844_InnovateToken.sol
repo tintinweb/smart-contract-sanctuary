@@ -129,8 +129,8 @@ contract InnovateToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function InnovateToken() public {
-        symbol = &quot;INO8&quot;;
-        name = &quot;InnovateToken&quot;;
+        symbol = "INO8";
+        name = "InnovateToken";
         decimals = 18;
         _totalSupply = 250000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

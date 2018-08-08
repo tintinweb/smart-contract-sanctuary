@@ -57,7 +57,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -267,8 +267,8 @@ contract StandardToken is ERC20, BasicToken, Pausable {
  */
 contract BbeCoin is StandardToken {
 
-    string public constant name = &quot;BbeCoin&quot;;
-    string public constant symbol = &quot;BBE&quot;;
+    string public constant name = "BbeCoin";
+    string public constant symbol = "BBE";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 12 * (10 ** 8) * (10 ** uint256(decimals));

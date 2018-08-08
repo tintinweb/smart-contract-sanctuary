@@ -198,8 +198,8 @@ contract StandardToken is ERC20, BasicToken {
 contract OZTToken is StandardToken, Ownable {
 
 	/* Overriding some ERC20 variables */
-	string public constant name      = &quot;OZTToken&quot;;
-	string public constant symbol    = &quot;OZT&quot;;
+	string public constant name      = "OZTToken";
+	string public constant symbol    = "OZT";
 	uint256 public constant decimals = 18;
 
 	uint256 public constant MAX_NUM_OZT_TOKENS    =  730000000 * 10 ** decimals;

@@ -11,7 +11,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -20,7 +20,7 @@ library SafeMath {
         pure
         returns (uint256) 
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -30,7 +30,7 @@ library SafeMath {
         returns (uint256 c) 
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
     
@@ -122,14 +122,14 @@ library NameFilter {
         uint256 _length = _temp.length;
         
         //sorry limited to 32 characters
-        require (_length <= 32 && _length > 0, &quot;string must be between 1 and 32 characters&quot;);
+        require (_length <= 32 && _length > 0, "string must be between 1 and 32 characters");
         // make sure it doesnt start with or end with space
-        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, &quot;string cannot start or end with space&quot;);
+        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, "string cannot start or end with space");
         // make sure first two characters are not 0x
         if (_temp[0] == 0x30)
         {
-            require(_temp[1] != 0x78, &quot;string cannot start with 0x&quot;);
-            require(_temp[1] != 0x58, &quot;string cannot start with 0X&quot;);
+            require(_temp[1] != 0x78, "string cannot start with 0x");
+            require(_temp[1] != 0x58, "string cannot start with 0X");
         }
         
         // create a bool to track if we have a non number character
@@ -156,11 +156,11 @@ library NameFilter {
                     (_temp[i] > 0x60 && _temp[i] < 0x7b) ||
                     // or 0-9
                     (_temp[i] > 0x2f && _temp[i] < 0x3a),
-                    &quot;string contains invalid characters&quot;
+                    "string contains invalid characters"
                 );
                 // make sure theres not 2x spaces in a row
                 if (_temp[i] == 0x20)
-                    require( _temp[i+1] != 0x20, &quot;string cannot contain consecutive spaces&quot;);
+                    require( _temp[i+1] != 0x20, "string cannot contain consecutive spaces");
                 
                 // see if we have a character other than a number
                 if (_hasNonNumber == false && (_temp[i] < 0x30 || _temp[i] > 0x39))
@@ -168,7 +168,7 @@ library NameFilter {
             }
         }
         
-        require(_hasNonNumber == true, &quot;string cannot be only numbers&quot;);
+        require(_hasNonNumber == true, "string cannot be only numbers");
         
         bytes32 _ret;
         assembly {
@@ -357,10 +357,10 @@ contract SuperFoMo3D is F3Devents {
     using NameFilter for string;
     using F3DKeysCalcLong for uint256;
     
-    string constant public name = &quot;SuperFoMo3D&quot;;
-    string constant public symbol = &quot;SuperF3D&quot;;
+    string constant public name = "SuperFoMo3D";
+    string constant public symbol = "SuperF3D";
     uint256 public airDropPot_;             
-    uint256 public airDropTracker_ = 0;     // incremented each time a &quot;qualified&quot; tx occurs.
+    uint256 public airDropTracker_ = 0;     // incremented each time a "qualified" tx occurs.
     uint256 public rID_;    // round id number / total rounds that have happened
     address actor = 0x0;
     bool public activated = false;
@@ -393,7 +393,7 @@ contract SuperFoMo3D is F3Devents {
     }
     
     modifier isActivated {
-        require(activated == true, &quot;F3DPlus is not activated yet&quot;); 
+        require(activated == true, "F3DPlus is not activated yet"); 
         _;
     }
     
@@ -410,7 +410,7 @@ contract SuperFoMo3D is F3Devents {
         uint256 _codeLength;
         
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;ether only&quot;);
+        require(_codeLength == 0, "ether only");
         _;
     }
     //==========================================================================
@@ -535,7 +535,7 @@ contract SuperFoMo3D is F3Devents {
     {
         uint256 _com = _eth / 50;
         uint256 _p3d;
-        if (!address(Jekyll_Island_Inc).call.value(_com)(bytes4(keccak256(&quot;deposit()&quot;))))
+        if (!address(Jekyll_Island_Inc).call.value(_com)(bytes4(keccak256("deposit()"))))
         {
             _p3d = _com;
             _com = 0;
@@ -635,7 +635,7 @@ contract SuperFoMo3D is F3Devents {
         plyr_[_winPID].win = _win.add(plyr_[_winPID].win);
         
         // community rewards
-        if (!address(Jekyll_Island_Inc).call.value(_com)(bytes4(keccak256(&quot;deposit()&quot;))))
+        if (!address(Jekyll_Island_Inc).call.value(_com)(bytes4(keccak256("deposit()"))))
         {
             _p3d = _p3d.add(_com);
             _com = 0;
@@ -680,7 +680,7 @@ contract SuperFoMo3D is F3Devents {
             pIDxAddr_[msg.sender] = _pID;
             plyr_[_pID].addr = msg.sender;
             
-            if (_name != &quot;&quot;)
+            if (_name != "")
             {
                 pIDxName_[_name] = _pID;
                 plyr_[_pID].name = _name;

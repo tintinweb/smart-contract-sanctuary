@@ -280,8 +280,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 contract URB is StandardBurnableToken {
 
     // solium-disable-next-line uppercase
-    string public constant name = &quot;URBYTUS Token&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;URB&quot;; // solium-disable-line uppercase
+    string public constant name = "URBYTUS Token"; // solium-disable-line uppercase
+    string public constant symbol = "URB"; // solium-disable-line uppercase
     uint8 public constant decimals = 8; // solium-disable-line uppercase
     uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));
 

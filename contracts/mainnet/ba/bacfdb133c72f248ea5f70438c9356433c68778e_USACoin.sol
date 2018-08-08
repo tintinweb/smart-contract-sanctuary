@@ -113,8 +113,8 @@ contract USACoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function USACoin() public {
-        symbol = &quot;USA&quot;;
-        name = &quot;United States of America Coin&quot;;
+        symbol = "USA";
+        name = "United States of America Coin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x116312c3471C2e7C34C52782D0399eBE601f3F30] = _totalSupply;

@@ -160,9 +160,9 @@ contract AXNETToken is ERC20Interface, Owned {
 
     function AXNETToken() public {
 
-        symbol = &quot;AXN&quot;;
+        symbol = "AXN";
 
-        name = &quot;AXNET&quot;;
+        name = "AXNET";
 
         decimals = 18;
 

@@ -83,7 +83,7 @@ contract TVRefCrowdsale is Ownable {
         uint256 amount = (msg.value * TVCrowdsaleContract.currentRate()) * refPercentage / 100;
         if ((exceptAddresses[refAddress] || balance >= TVThreshold) && allowance >= amount) {
             bool successful = TVContract.transferFrom(holder, refAddress, amount);
-            if (!successful) revert(&quot;Transfer refTVs failed.&quot;);
+            if (!successful) revert("Transfer refTVs failed.");
             emit TransferRefTVs(holder, msg.sender, refAddress, amount, TVThreshold, balance);
             return true;
         }

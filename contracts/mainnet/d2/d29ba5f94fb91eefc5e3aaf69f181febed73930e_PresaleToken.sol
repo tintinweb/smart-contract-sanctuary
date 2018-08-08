@@ -9,8 +9,8 @@ pragma solidity ^0.4.4;
 contract PresaleToken
 {
 /// Fields:
-    string public constant name = &quot;IMMLA Presale Token&quot;;
-    string public constant symbol = &quot;IML&quot;;
+    string public constant name = "IMMLA Presale Token";
+    string public constant symbol = "IML";
     uint public constant decimals = 18;
     uint public constant PRICE = 5200;  // per 1 Ether
 

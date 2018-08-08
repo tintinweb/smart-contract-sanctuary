@@ -113,8 +113,8 @@ contract KUISToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function KUISToken() public {
-        symbol = &quot;KUIS&quot;;
-        name = &quot;KUIS&quot;;
+        symbol = "KUIS";
+        name = "KUIS";
         decimals = 8;
         _totalSupply = 950000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

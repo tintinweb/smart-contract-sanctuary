@@ -112,8 +112,8 @@ contract UnlimitedAllowanceToken is StandardToken {
 contract DariaRotkoToken is UnlimitedAllowanceToken {
     uint8 constant public decimals = 18;
     uint public totalSupply = 10**24; // 1 billion tokens, 18 decimal places
-    string constant public name = &quot;drcoin&quot;;
-    string constant public symbol = &quot;DRC&quot;;
+    string constant public name = "drcoin";
+    string constant public symbol = "DRC";
 
     function DariaRotkoToken() {
         balances[msg.sender] = totalSupply;

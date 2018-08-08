@@ -136,8 +136,8 @@ contract CryptoTorchToken is ERC20, Ownable {
     // Token Configurations
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //
-    string internal name_ = &quot;Cryptolympic Torch-Run Kilometers&quot;;
-    string internal symbol_ = &quot;KMS&quot;;
+    string internal name_ = "Cryptolympic Torch-Run Kilometers";
+    string internal symbol_ = "KMS";
     uint256 constant internal dividendFee_ = 5;
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;
     uint256 constant internal tokenPriceIncremental_ = 0.00000001 ether;

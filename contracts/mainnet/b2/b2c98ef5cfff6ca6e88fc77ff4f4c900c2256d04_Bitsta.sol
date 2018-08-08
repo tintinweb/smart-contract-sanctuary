@@ -46,9 +46,9 @@ contract Bitsta is EIP20Interface {
     They allow one to customise the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
-    string constant public name = &quot;Bitsta Token&quot;;
+    string constant public name = "Bitsta Token";
     uint256 constant public decimals = 18;
-    string constant public symbol = &quot;BXE&quot;;
+    string constant public symbol = "BXE";
     uint256 public totalSupply;
 
     function Bitsta( ) public {

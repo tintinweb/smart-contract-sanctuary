@@ -45,8 +45,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 21000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] =  totalSupply;             // Give the creator all initial tokens
-        name = &quot;COSS Exchange Liquidity Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;CELT&quot;;                               // Set the symbol for display purposes
+        name = "COSS Exchange Liquidity Token";                                   // Set the name for display purposes
+        symbol = "CELT";                               // Set the symbol for display purposes
         _transfer(msg.sender, this, 10000000 * 10 ** uint256(decimals));
     }
 

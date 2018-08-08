@@ -353,8 +353,8 @@ contract MintableToken is StandardToken, MultiOwnable {
  */
 contract HUMToken is MintableToken, BurnableToken {
 
-  string public constant name = &quot;HUMToken&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;HUM&quot;; // solium-disable-line uppercase
+  string public constant name = "HUMToken"; // solium-disable-line uppercase
+  string public constant symbol = "HUM"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase, // 18 decimals is the strongly suggested default, avoid changing it
 
   uint256 public constant INITIAL_SUPPLY = 2500 * 1000 * 1000 * (10 ** uint256(decimals)); // 2,500,000,000 HUM

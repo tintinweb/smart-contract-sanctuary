@@ -18,7 +18,7 @@ pragma solidity ^0.4.11;
  * about the application of blockchain technology.
  * For further information: majoolr.io, openzeppelin.org
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -45,7 +45,7 @@ library BasicMathLib {
       allGood:
     }
     if (err)
-      Err(&quot;times func overflow&quot;);
+      Err("times func overflow");
   }
 
   /// @dev Divides two numbers but checks for 0 in the divisor first.
@@ -62,7 +62,7 @@ library BasicMathLib {
       return(mload(0x40),0x40)
       e:
     }
-    Err(&quot;tried to divide by zero&quot;);
+    Err("tried to divide by zero");
     return (true, 0);
   }
 
@@ -81,7 +81,7 @@ library BasicMathLib {
       allGood:
     }
     if (err)
-      Err(&quot;plus func overflow&quot;);
+      Err("plus func overflow");
   }
 
   /// @dev Subtracts two numbers and checks for underflow before returning.
@@ -99,6 +99,6 @@ library BasicMathLib {
       allGood:
     }
     if (err)
-      Err(&quot;minus func underflow&quot;);
+      Err("minus func underflow");
   }
 }

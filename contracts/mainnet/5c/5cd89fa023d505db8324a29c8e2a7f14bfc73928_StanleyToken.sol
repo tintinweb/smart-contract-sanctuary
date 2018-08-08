@@ -113,8 +113,8 @@ contract StanleyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function StanleyToken() public {
-        symbol = &quot;STAN&quot;;
-        name = &quot;Stanley Token&quot;;
+        symbol = "STAN";
+        name = "Stanley Token";
         decimals = 5;
         _totalSupply = 100000000000000000;
         balances[0x20DA526afeC131a054dC5229BCAFFDCFd537D30A] = _totalSupply;

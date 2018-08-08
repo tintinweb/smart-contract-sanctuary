@@ -278,8 +278,8 @@ contract DunkPayToken is TokenERC20 {
         buyPrice = 1000;
         sellPrice = 1000;
         
-        name = &quot;DunkPay Token&quot;;
-        symbol = &quot;DNK&quot;;
+        name = "DunkPay Token";
+        symbol = "DNK";
         totalSupply = buyPrice * 10000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = buyPrice * 5100 * 10 ** uint256(decimals);              
         balanceOf[this] = totalSupply - balanceOf[msg.sender];

@@ -99,9 +99,9 @@ contract ContortedCoin is StandardToken {
         ) {
         balances[msg.sender] = 21000000 * 1000000000000000000;   // Give the creator all initial tokens, 18 zero is 18 Decimals
         totalSupply = 21000000 * 1000000000000000000;            // Update total supply, , 18 zero is 18 Decimals
-        name = &quot;Contorted&quot;;                                // Token Name
+        name = "Contorted";                                // Token Name
         decimals = 18;                                      // Amount of decimals for display purposes
-        symbol = &quot;CED&quot;;                                    // Token Symbol
+        symbol = "CED";                                    // Token Symbol
     }
 
     /* Approves and then calls the receiving contract */
@@ -109,7 +109,7 @@ contract ContortedCoin is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

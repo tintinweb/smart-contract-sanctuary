@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -204,8 +204,8 @@ contract BurnableToken is BasicToken {
 
 contract DGAMEToken is  BurnableToken, DetailedERC20 {
     uint8 constant DECIMALS = 18;
-    string constant NAME = &quot;DGAMEToken&quot;;
-    string constant SYM = &quot;DGAME&quot;;
+    string constant NAME = "DGAMEToken";
+    string constant SYM = "DGAME";
     uint256 constant MAXDGAME = 100 * 10**8 * 10**18;
     function DGAMEToken() DetailedERC20 (MAXDGAME,NAME, SYM, DECIMALS) public {}
 }

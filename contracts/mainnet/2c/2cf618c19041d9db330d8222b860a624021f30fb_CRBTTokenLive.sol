@@ -200,9 +200,9 @@ contract CRBTTokenLive is ERC20Interface, Owned {
 
     function CRBTTokenLive() public {
 
-        symbol = &quot;CRBT&quot;;
+        symbol = "CRBT";
 
-        name = &quot;CRUISEBIT&quot;;
+        name = "CRUISEBIT";
 
         decimals = 18;
 

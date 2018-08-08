@@ -47,7 +47,7 @@ contract ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -171,8 +171,8 @@ contract StandardToken is ERC20 {
 contract SEXNTestToken is StandardToken, Ownable {
   using SafeMath for uint256;
 
-  string public constant name = &quot;Sex Test Chain&quot;;
-  string public constant symbol = &quot;ST&quot;;
+  string public constant name = "Sex Test Chain";
+  string public constant symbol = "ST";
   uint8 public constant decimals = 18;
 
   struct lockInfo {

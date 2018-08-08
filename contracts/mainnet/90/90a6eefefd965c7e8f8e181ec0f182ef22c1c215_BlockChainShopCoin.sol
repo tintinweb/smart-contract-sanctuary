@@ -52,8 +52,8 @@ contract BlockChainShopCoin is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
 	
     uint256 public totalSupply = 1000000000000000000;
-	string public constant name = &quot;BlockChainShopCoin&quot;;
-    string public constant symbol = &quot;BCSC&quot;;
+	string public constant name = "BlockChainShopCoin";
+    string public constant symbol = "BCSC";
     uint public constant decimals = 8;
 	
 	function BlockChainShopCoin(){

@@ -161,8 +161,8 @@ contract MintableToken is StandardToken, Ownable {
 
 
 contract DdosToken is MintableToken {
-  string public name = &quot;DDOS&quot;;
-  string public symbol = &quot;DDOS&quot;;
+  string public name = "DDOS";
+  string public symbol = "DDOS";
   uint8 public decimals = 0;
 
   function DdosToken() {

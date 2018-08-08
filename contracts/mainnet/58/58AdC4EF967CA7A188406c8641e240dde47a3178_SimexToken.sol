@@ -228,8 +228,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract SimexToken is MintableToken {
 
-	string public constant name = &quot;SimexToken&quot;;
-	string public constant symbol = &quot;SMX&quot;;
+	string public constant name = "SimexToken";
+	string public constant symbol = "SMX";
 	uint8 public constant decimals = 0;
 
 }

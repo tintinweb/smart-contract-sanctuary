@@ -149,8 +149,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract KToken is StandardToken {
 
-  string public name = &quot;KToken&quot;;
-  string public symbol = &quot;KTC&quot;;
+  string public name = "KToken";
+  string public symbol = "KTC";
   uint256 public decimals = 2;
   uint256 public INITIAL_SUPPLY = 10000;
 

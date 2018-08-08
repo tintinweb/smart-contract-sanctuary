@@ -160,8 +160,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract KOToken is StandardToken, Ownable {
-    string  public  constant name = &quot;K.O Token&quot;;
-    string  public  constant symbol = &quot;KOT&quot;;
+    string  public  constant name = "K.O Token";
+    string  public  constant symbol = "KOT";
     uint    public  constant decimals = 18;
 
     bool public transferEnabled = true;

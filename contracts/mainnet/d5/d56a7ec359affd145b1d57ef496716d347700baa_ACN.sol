@@ -28,8 +28,8 @@ contract ACN {
     ) public {
         totalSupply = 10000000000000000000000000;                                  // Total supply with the decimal amount
         balanceOf[msg.sender] = 10000000000000000000000000;                        // All initial tokens
-        name = &quot;ACH COIN&quot;;                                             // The name for display purposes
-        symbol = &quot;ACN&quot;;                                              // The symbol for display purposes
+        name = "ACH COIN";                                             // The name for display purposes
+        symbol = "ACN";                                              // The symbol for display purposes
     }
 
     /**

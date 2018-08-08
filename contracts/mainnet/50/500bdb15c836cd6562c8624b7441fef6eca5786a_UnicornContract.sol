@@ -736,12 +736,12 @@ contract UnicornCoinMarket is UnicornMarket {
     * @param v part of signature for the order hash as signed by user
     * @param r part of signature for the order hash as signed by user
     * @param s part of signature for the order hash as signed by user
-    * @param amount uint amount in terms of tokenGet that will be &quot;buy&quot; in the trade
+    * @param amount uint amount in terms of tokenGet that will be "buy" in the trade
     */
     function trade(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s, uint amount) external {
         bytes32 hash = sha256(balances, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
         require(
-            ecrecover(keccak256(keccak256(&quot;bytes32 Order hash&quot;), keccak256(hash)), v, r, s) == user &&
+            ecrecover(keccak256(keccak256("bytes32 Order hash"), keccak256(hash)), v, r, s) == user &&
             block.number <= expires &&
             orderFills[user][hash].add(amount) <= amountGet
         );
@@ -762,7 +762,7 @@ contract UnicornCoinMarket is UnicornMarket {
     * @param tokenGive Ethereum contract address of the token to give
     * @param amountGive uint amount of tokens being given
     * @param user Ethereum address of the user who placed the order
-    * @param amount uint amount in terms of tokenGet that will be &quot;buy&quot; in the trade
+    * @param amount uint amount in terms of tokenGet that will be "buy" in the trade
     */
     function tradeBalances(address tokenGet, uint amountGet, address tokenGive, uint amountGive, address user, uint amount) private returns(uint amount2){
 

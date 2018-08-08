@@ -157,8 +157,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract MPKToken is StandardToken {
 
-  string public constant name = &quot;微通链&quot;;
-  string public constant symbol = &quot;MPK&quot;;
+  string public constant name = "微通链";
+  string public constant symbol = "MPK";
   uint256 public constant decimals = 18;
 
   /**

@@ -200,9 +200,9 @@ contract EROSCOIN is EroStandardToken {
     
     uint256 constant public decimals = 8; //How many decimals to show. ie. There could 1000 base units with 3 decimals. Meaning 0.980 TTC = 980 base units. It&#39;s like comparing 1 wei to 1 ether.
     uint256 public totalSupply = 240 * (10**7) * 10**8 ; // 2.4 billion tokens, 8 decimal places
-    string constant public name = &quot;EROSCOIN&quot;; //fancy name: eg EROSCOIN Alpha
-    string constant public symbol = &quot;ERO&quot;; //An identifier: eg ERO
-    string constant public version = &quot;v1.1.3&quot;;       //Version 0.1.6 standard. Just an arbitrary versioning scheme.
+    string constant public name = "EROSCOIN"; //fancy name: eg EROSCOIN Alpha
+    string constant public symbol = "ERO"; //An identifier: eg ERO
+    string constant public version = "v1.1.3";       //Version 0.1.6 standard. Just an arbitrary versioning scheme.
     
     function EROSCOIN(){
         balances[msg.sender] = totalSupply;               // Give the creator all initial tokens
@@ -216,7 +216,7 @@ contract EROSCOIN is EroStandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 }

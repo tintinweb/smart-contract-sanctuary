@@ -125,10 +125,10 @@ contract PrimasToken is RBAC {
     event Inflate (uint256 incentivesPoolValue);
 
     constructor() public {
-        name = &quot;Primas Token&quot;;
+        name = "Primas Token";
         decimals = 18;
-        symbol = &quot;PST&quot;;
-        version = &quot;V2.0&quot;;
+        symbol = "PST";
+        version = "V2.0";
         initialAmount = 100000000 * 10 ** decimals;
         balances[msg.sender] = initialAmount;
         totalSupply = initialAmount;
@@ -139,7 +139,7 @@ contract PrimasToken is RBAC {
         emit Transfer(address(0), msg.sender, initialAmount);
     }
 
-    function inflate() public onlyRole(&quot;InflationOperator&quot;) returns (uint256)  {
+    function inflate() public onlyRole("InflationOperator") returns (uint256)  {
         uint256 currentTime = block.timestamp;
         uint256 currentDayStart = currentTime / 1 days;
         uint256 inflationAmount;
@@ -163,7 +163,7 @@ contract PrimasToken is RBAC {
         return incentivesPool;
     }
 
-    function incentivesIn(address[] _users, uint256[] _values) public onlyRole(&quot;IncentivesCollector&quot;) returns (bool success) {
+    function incentivesIn(address[] _users, uint256[] _values) public onlyRole("IncentivesCollector") returns (bool success) {
         require(_users.length == _values.length);
         for (uint256 i = 0; i < _users.length; i++) {
             incentivesPool = incentivesPool.add(_values[i]);
@@ -174,7 +174,7 @@ contract PrimasToken is RBAC {
         return true;
     }
 
-    function incentivesOut(address[] _users, uint256[] _values) public onlyRole(&quot;IncentivesDistributor&quot;) returns (bool success) {
+    function incentivesOut(address[] _users, uint256[] _values) public onlyRole("IncentivesDistributor") returns (bool success) {
         require(_users.length == _values.length);
         for (uint256 i = 0; i < _users.length; i++) {
             incentivesPool = incentivesPool.sub(_values[i]);
@@ -184,13 +184,13 @@ contract PrimasToken is RBAC {
         return true;
     }
 
-    function tokenLock(address _userAddress, uint256 _amount) public onlyRole(&quot;Locker&quot;) {
+    function tokenLock(address _userAddress, uint256 _amount) public onlyRole("Locker") {
         require(balanceOf(_userAddress) >= _amount);
         userLockedTokens[_userAddress] = userLockedTokens[_userAddress].add(_amount);
         emit Lock(_userAddress, _amount);
     }
 
-    function tokenUnlock(address _userAddress, uint256 _amount, address _to, uint256 _toAmount) public onlyRole(&quot;Unlocker&quot;) {
+    function tokenUnlock(address _userAddress, uint256 _amount, address _to, uint256 _toAmount) public onlyRole("Unlocker") {
         require(_amount >= _toAmount);
         require(userLockedTokens[_userAddress] >= _amount);
         userLockedTokens[_userAddress] = userLockedTokens[_userAddress].sub(_amount);
@@ -202,7 +202,7 @@ contract PrimasToken is RBAC {
         }
     }
 
-    function transferAndLock(address _userAddress, address _to, uint256 _amount) public onlyRole(&quot;Locker&quot;)  {
+    function transferAndLock(address _userAddress, address _to, uint256 _amount) public onlyRole("Locker")  {
         require(balanceOf(_userAddress) >= _amount);
         balances[_userAddress] = balances[_userAddress].sub(_amount);
         balances[_to] = balances[_to].add(_amount);

@@ -257,11 +257,11 @@ contract ItemToken {
   }
 
   function name() public pure returns (string _name) {
-    return &quot;Tokenimals&quot;;
+    return "Tokenimals";
   }
 
   function symbol() public pure returns (string _symbol) {
-    return &quot;TKS&quot;;
+    return "TKS";
   }
 
   function totalSupply() public view returns (uint256 _totalSupply) {

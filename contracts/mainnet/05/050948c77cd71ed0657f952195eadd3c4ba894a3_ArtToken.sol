@@ -127,8 +127,8 @@ contract StandardToken is ERC20 {
 }
 
 contract ArtToken is StandardToken {
-  string public constant name = &quot;Art Coin&quot;;
-  string public constant symbol = &quot;ARTC&quot;;
+  string public constant name = "Art Coin";
+  string public constant symbol = "ARTC";
   uint8 public constant decimals = 18;
 
   function ArtToken() public {

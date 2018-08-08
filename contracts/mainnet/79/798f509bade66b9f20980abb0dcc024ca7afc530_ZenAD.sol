@@ -58,8 +58,8 @@ contract ZenAD is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Zen AD Token&quot;;
-    string public constant symbol = &quot;ZENAD&quot;;
+    string public constant name = "Zen AD Token";
+    string public constant symbol = "ZENAD";
     uint public constant decimals = 18;
 
     uint256 public totalSupply = 1000000000e18;

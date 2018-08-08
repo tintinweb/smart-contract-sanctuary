@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract LTS is StandardToken, Ownable {
 
-    string public constant name = &quot;I love the sauce（我爱酱小白）&quot;;
-    string public constant symbol = &quot;LTS&quot;;
+    string public constant name = "I love the sauce（我爱酱小白）";
+    string public constant symbol = "LTS";
     uint256 public constant decimals = 8;
 
     function LTS() public {

@@ -58,8 +58,8 @@ contract Bitcash is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Bitcash&quot;;
-    string public constant symbol = &quot;BTN&quot;;
+    string public constant name = "Bitcash";
+    string public constant symbol = "BTN";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 100000000e8;

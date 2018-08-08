@@ -14,7 +14,7 @@ contract ERC20Interface {
 /**
  * @title Ownable
  * The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -39,8 +39,8 @@ contract Ownable {
 }
 
 contract RAcoinToken is Ownable, ERC20Interface {
-    string public constant symbol = &quot;RAC&quot;;
-    string public constant name = &quot;RAcoinToken&quot;;
+    string public constant symbol = "RAC";
+    string public constant name = "RAcoinToken";
     uint private _totalSupply;
     uint public constant decimals = 18;
     uint private unmintedTokens = 20000000000*uint(10)**decimals; 

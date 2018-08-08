@@ -28,8 +28,8 @@ event BroadcastApproval(address indexed _owner, address indexed _spender, uint _
 
 /*MINT TOKEN*/
 function TOC() public {
-name = &quot;TOC&quot;;
-symbol = &quot;TOC&quot;;
+name = "TOC";
+symbol = "TOC";
 decimals = 18;
 /*one billion base units*/
 totalSupply = 10**27;

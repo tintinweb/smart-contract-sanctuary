@@ -19,9 +19,9 @@ contract Goldencloudtoken {
     function Goldencloudtoken() {
 
          initialSupply = 5000000000;
-         name =&quot;Goldencloudtoken&quot;;
+         name ="Goldencloudtoken";
         decimals = 2;
-         symbol = &quot;GCT&quot;;
+         symbol = "GCT";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

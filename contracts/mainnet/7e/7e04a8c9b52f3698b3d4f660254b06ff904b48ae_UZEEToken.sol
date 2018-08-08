@@ -102,8 +102,8 @@ contract UZEEToken is Common,ERC20 {
     mapping(address => uint256) balances;
     uint256 totalSupply_;
 
-    string public name = &quot;UZEEChain&quot;;
-    string public symbol = &quot;UZEE&quot;;
+    string public name = "UZEEChain";
+    string public symbol = "UZEE";
     uint256 public decimals = 18;
 
     constructor() public {

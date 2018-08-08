@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract BugisContract {
     
-    string public name = &quot;Bugis&quot;;
-    string public symbol = &quot;BGS&quot;;
+    string public name = "Bugis";
+    string public symbol = "BGS";
     uint8 public decimals = 18;
     
     uint256 public initialSupply = 600000;

@@ -3,7 +3,7 @@ pragma solidity ^0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -220,10 +220,10 @@ contract EDStructs {
     /**
      * @dev The main Dungeon struct. Every dungeon in the game is represented by this structure.
      * A dungeon is consists of an unlimited number of floors for your heroes to challenge, 
-     * the power level of a dungeon is encoded in the floorGenes. Some dungeons are in fact more &quot;challenging&quot; than others,
+     * the power level of a dungeon is encoded in the floorGenes. Some dungeons are in fact more "challenging" than others,
      * the secret formula for that is left for user to find out.
      * 
-     * Each dungeon also has a &quot;training area&quot;, heroes can perform trainings and upgrade their stat,
+     * Each dungeon also has a "training area", heroes can perform trainings and upgrade their stat,
      * and some dungeons are more effective in the training, which is also a secret formula!
      * 
      * When player challenge or do training in a dungeon, the fee will be collected as the dungeon rewards,
@@ -243,7 +243,7 @@ contract EDStructs {
         uint8 status;
         
         // The dungeon&#39;s difficulty, the higher the difficulty, 
-        // normally, the &quot;rarer&quot; the seedGenes, the higher the diffculty,
+        // normally, the "rarer" the seedGenes, the higher the diffculty,
         // and the higher the contribution fee it is to challenge, train, and transport to the dungeon,
         // the formula for the contribution fee is in DungeonChallenge and DungeonTraining contracts.
         // A dungeon&#39;s difficulty never change.
@@ -350,12 +350,12 @@ contract DungeonTokenInterface is ERC721, EDStructs {
     /**
      * @dev Name of token.
      */
-    string public constant name = &quot;Dungeon&quot;;
+    string public constant name = "Dungeon";
     
     /**
      * @dev Symbol of token.
      */
-    string public constant symbol = &quot;DUNG&quot;;
+    string public constant symbol = "DUNG";
     
     /**
      * @dev An array containing the Dungeon struct, which contains all the dungeons in existance.
@@ -397,12 +397,12 @@ contract HeroTokenInterface is ERC721, EDStructs {
     /**
      * @dev Name of token.
      */
-    string public constant name = &quot;Hero&quot;;
+    string public constant name = "Hero";
     
     /**
      * @dev Symbol of token.
      */
-    string public constant symbol = &quot;HERO&quot;;
+    string public constant symbol = "HERO";
 
     /**
      * @dev An array containing the Hero struct, which contains all the heroes in existance.
@@ -944,7 +944,7 @@ contract EDTransportation is EDBase {
         uint difficulty;
         (,, difficulty,,,,,,) = dungeonTokenContract.dungeons(_destinationDungeonId);
         
-        // Disallow weaker user to transport to &quot;difficult&quot; dungeon.
+        // Disallow weaker user to transport to "difficult" dungeon.
         uint top5HeroesPower = calculateTop5HeroesPower(msg.sender, _destinationDungeonId);
         require(top5HeroesPower >= difficulty * 12);
         
@@ -1013,7 +1013,7 @@ contract EDTransportation is EDBase {
     /// @dev Throws if player did recruit first hero yet.
     modifier playerAllowedToTransport() {
         // Note that we check playerToFirstHeroRecruited instead of heroTokenContract.balanceOf
-        // in order to prevent &quot;capacity attack&quot;.
+        // in order to prevent "capacity attack".
         require(playerToFirstHeroRecruited[msg.sender]);
         _;
     }
@@ -1164,7 +1164,7 @@ contract EDChallenge is EDTransportation {
         // Calculate the new floor gene.
         uint floorPower = getDungeonPower(floorGenes);
         
-        // Call the external closed source secret function that determines the resulting floor &quot;genes&quot;.
+        // Call the external closed source secret function that determines the resulting floor "genes".
         uint newFloorGenes = challengeFormulaContract.calculateResult(floorGenes, seedGenes);
         uint newFloorPower = getDungeonPower(newFloorGenes);
         
@@ -1380,7 +1380,7 @@ contract EDTraining is EDChallenge {
         // Train the hero multiple times according to _trainingTimes, 
         // each time if the resulting power is larger, update new hero power.
         for (uint i = 0; i < _trainingTimes; i++) {
-            // Call the external closed source secret function that determines the resulting hero &quot;genes&quot;.
+            // Call the external closed source secret function that determines the resulting hero "genes".
             uint tmpHeroGenes = trainingFormulaContract.calculateResult(newHeroGenes, _floorGenes, _equipmentIndex);
             
             uint tmpHeroPower;
@@ -1562,7 +1562,7 @@ contract EDCoreVersion1 is Destructible, EDTraining {
     ) {
         require(_id < dungeonTokenContract.totalSupply());
         
-        // Didn&#39;t get the &quot;floorCreationTime&quot; because of Stack Too Deep error.
+        // Didn&#39;t get the "floorCreationTime" because of Stack Too Deep error.
         (creationTime, status, difficulty, capacity,,,,,) = dungeonTokenContract.dungeons(_id);
         
         // Dungeon is ready to be challenged (not in preparation mode).
@@ -1584,7 +1584,7 @@ contract EDCoreVersion1 is Destructible, EDTraining {
     ) {
         require(_id < dungeonTokenContract.totalSupply());
         
-        // Didn&#39;t get the &quot;floorCreationTime&quot; because of Stack Too Deep error.
+        // Didn&#39;t get the "floorCreationTime" because of Stack Too Deep error.
         (,,,, floorNumber, floorCreationTime, rewards, seedGenes, floorGenes) = dungeonTokenContract.dungeons(_id);
     }
 

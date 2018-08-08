@@ -183,8 +183,8 @@ contract Ownable {
 }
 
 contract DGD is StandardToken, Ownable {
-  string public constant name = &quot;DGD&quot;;
-  string public constant symbol = &quot;DGD&quot;;
+  string public constant name = "DGD";
+  string public constant symbol = "DGD";
   uint8 public constant decimals = 18;
   
   uint256 public DGDIssued;
@@ -223,7 +223,7 @@ contract DGD is StandardToken, Ownable {
     totalSupply = 1000000 * (10 ** uint256(decimals)); 
     balances[msg.sender] = totalSupply;  
     DGDIssued = totalSupply;
-    DGDTalk = &quot;DGD&quot;;
+    DGDTalk = "DGD";
     
   }
  

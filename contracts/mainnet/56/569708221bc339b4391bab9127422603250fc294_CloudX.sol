@@ -99,9 +99,9 @@ contract CloudX is StandardToken {
         ) {
         balances[msg.sender] = 16000000 * 1000000000;   // Give the creator all initial tokens, 9 zero is 9 Decimals
         totalSupply = 16000000 * 1000000000;            // Update total supply, , 9 zero is 9 Decimals
-        name = &quot;CloudX&quot;;                          // Token Name
+        name = "CloudX";                          // Token Name
         decimals = 9;                                      // Amount of decimals for display purposes
-        symbol = &quot;CLOX&quot;;                                    // Token Symbol
+        symbol = "CLOX";                                    // Token Symbol
     }
 
     /* Approves and then calls the receiving contract */
@@ -109,7 +109,7 @@ contract CloudX is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

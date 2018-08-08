@@ -111,8 +111,8 @@ contract GerritCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GerritCoin() public {
-        symbol = &quot;G&#162;&quot;;
-        name = &quot;Gerrit Coin&quot;;
+        symbol = "G&#162;";
+        name = "Gerrit Coin";
         decimals = 1;
         _totalSupply = 1000000000;
         balances[0x14d45c2fB482a78Ce0AF9D8F1C7a0c18af9357D5] = _totalSupply;

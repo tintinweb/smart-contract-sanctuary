@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -147,7 +147,7 @@ contract Marketplace is Ownable {
     }
 
     enum Currency {
-        DATA,                       // data atoms or &quot;wei&quot; (10^-18 DATA)
+        DATA,                       // data atoms or "wei" (10^-18 DATA)
         USD                         // nanodollars (10^-9 USD)
     }
 
@@ -209,15 +209,15 @@ contract Marketplace is Ownable {
     // also checks that p exists: p.owner == 0 for non-existent products    
     modifier onlyProductOwner(bytes32 productId) {
         Product storage p = products[productId];
-        require(p.owner == msg.sender || owner == msg.sender); //, &quot;Only product owner may call this function&quot;);
+        require(p.owner == msg.sender || owner == msg.sender); //, "Only product owner may call this function");
         _;
     }
 
     function createProduct(bytes32 id, string name, address beneficiary, uint pricePerSecond, Currency currency, uint minimumSubscriptionSeconds) public whenNotHalted {
-        require(id != 0); //, &quot;Product ID can&#39;t be empty/null&quot;);
-        require(pricePerSecond > 0); //, &quot;Free streams go through different channel&quot;);
+        require(id != 0); //, "Product ID can&#39;t be empty/null");
+        require(pricePerSecond > 0); //, "Free streams go through different channel");
         Product storage p = products[id];
-        require(p.id == 0); //, &quot;Product with this ID already exists&quot;);        
+        require(p.id == 0); //, "Product with this ID already exists");        
         products[id] = Product(id, name, msg.sender, beneficiary, pricePerSecond, currency, minimumSubscriptionSeconds, ProductState.Deployed, 0);
         emit ProductCreated(msg.sender, id, name, beneficiary, pricePerSecond, currency, minimumSubscriptionSeconds);
     }
@@ -243,7 +243,7 @@ contract Marketplace is Ownable {
     }
 
     function updateProduct(bytes32 productId, string name, address beneficiary, uint pricePerSecond, Currency currency, uint minimumSubscriptionSeconds) public onlyProductOwner(productId) {
-        require(pricePerSecond > 0); //, &quot;Free streams go through different channel&quot;);
+        require(pricePerSecond > 0); //, "Free streams go through different channel");
         Product storage p = products[productId]; 
         p.name = name;
         p.beneficiary = beneficiary;
@@ -284,11 +284,11 @@ contract Marketplace is Ownable {
         Product storage product;
         TimeBasedSubscription storage sub;
         (, product, sub) = _getSubscription(productId, msg.sender);
-        require(product.state == ProductState.Deployed); //, &quot;Product has been deleted&quot;);        
+        require(product.state == ProductState.Deployed); //, "Product has been deleted");        
         _addSubscription(product, msg.sender, subscriptionSeconds, sub);
 
         uint price = _toDatacoin(product.pricePerSecond.mul(subscriptionSeconds), product.priceCurrency);
-        require(datacoin.transferFrom(msg.sender, product.beneficiary, price));  //, &quot;Not enough DATAcoin allowance&quot;);
+        require(datacoin.transferFrom(msg.sender, product.beneficiary, price));  //, "Not enough DATAcoin allowance");
     }
 
     /**
@@ -307,7 +307,7 @@ contract Marketplace is Ownable {
         Product storage product;
         TimeBasedSubscription storage sub;
         (isValid, product, sub) = _getSubscription(productId, msg.sender);
-        require(isValid);   //, &quot;Only valid subscriptions can be transferred&quot;);
+        require(isValid);   //, "Only valid subscriptions can be transferred");
         uint secondsLeft = sub.endTimestamp.sub(block.timestamp);
         uint datacoinLeft = secondsLeft.mul(product.pricePerSecond);
         TimeBasedSubscription storage newSub = product.subscriptions[newSubscriber];
@@ -318,7 +318,7 @@ contract Marketplace is Ownable {
 
     function _getSubscription(bytes32 productId, address subscriber) internal constant returns (bool subIsValid, Product storage, TimeBasedSubscription storage) {
         Product storage p = products[productId];
-        require(p.id != 0); //, &quot;Product doesn&#39;t exist&quot;);
+        require(p.id != 0); //, "Product doesn&#39;t exist");
         TimeBasedSubscription storage s = p.subscriptions[subscriber];
         return (s.endTimestamp >= block.timestamp, p, s);
     }
@@ -326,12 +326,12 @@ contract Marketplace is Ownable {
     function _addSubscription(Product storage p, address subscriber, uint addSeconds, TimeBasedSubscription storage oldSub) internal {
         uint endTimestamp;
         if (oldSub.endTimestamp > block.timestamp) {
-            require(addSeconds > 0); //, &quot;Must top up worth at least one second&quot;);
+            require(addSeconds > 0); //, "Must top up worth at least one second");
             endTimestamp = oldSub.endTimestamp.add(addSeconds);
             oldSub.endTimestamp = endTimestamp;  
             emit SubscriptionExtended(p.id, subscriber, endTimestamp);
         } else {
-            require(addSeconds >= p.minimumSubscriptionSeconds); //, &quot;More ether required to meet the minimum subscription period&quot;);
+            require(addSeconds >= p.minimumSubscriptionSeconds); //, "More ether required to meet the minimum subscription period");
             endTimestamp = block.timestamp.add(addSeconds);
             TimeBasedSubscription memory newSub = TimeBasedSubscription(endTimestamp);
             p.subscriptions[subscriber] = newSub;

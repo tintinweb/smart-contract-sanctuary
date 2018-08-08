@@ -32,8 +32,8 @@ contract Jubicoin {
     ) public {
         totalSupply = 50000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Jubicoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;JBC&quot;;                               // Set the symbol for display purposes
+        name = "Jubicoin";                                   // Set the name for display purposes
+        symbol = "JBC";                               // Set the symbol for display purposes
     }
 
     /**

@@ -143,8 +143,8 @@ contract Ownable {
 
 contract YODCToken is StandardToken, Ownable {
 
-  string public constant name = &quot;YODCOIN&quot;;
-  string public constant symbol = &quot;YODC&quot;;
+  string public constant name = "YODCOIN";
+  string public constant symbol = "YODC";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 1 * (10 ** 10) * (10 ** uint256(decimals));

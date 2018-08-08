@@ -156,7 +156,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -242,8 +242,8 @@ contract Pausable is Ownable {
 
 contract Hgt is StandardToken, Pausable {
 
-    string public name = &quot;HelloGold Token&quot;;
-    string public symbol = &quot;HGT&quot;;
+    string public name = "HelloGold Token";
+    string public symbol = "HGT";
     uint256 public decimals = 18;
 
 }
@@ -357,7 +357,7 @@ contract HelloGoldRound1Point5 is Ownable {
     function upgradeOnePointZeroBalances() internal {
     // 1
         if (upgraded[msg.sender]) {
-            log0(&quot;account already upgraded&quot;);
+            log0("account already upgraded");
             return;
         }
     // 2
@@ -376,7 +376,7 @@ contract HelloGoldRound1Point5 is Ownable {
             hgt.transferFrom(reserves,msg.sender,diff);
             hgtSold = hgtSold.add(diff);
             upgradeHGT[msg.sender] = upgradeHGT[msg.sender].add(diff);
-            log0(&quot;upgraded R1 to 20%&quot;);
+            log0("upgraded R1 to 20%");
         }
         upgraded[msg.sender] = true;
     }

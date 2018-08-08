@@ -125,14 +125,14 @@ contract owned {
 
 contract Fish  is owned, StandardToken {
 
-  string public constant TermsOfUSe = &quot;https://github.com/_______________________&quot;;
+  string public constant TermsOfUSe = "https://github.com/_______________________";
 
   /*
    * State variables
    */
 
-  string public constant symbol = &quot;FSH&quot;;
-  string public constant name = &quot;Fish&quot;;
+  string public constant symbol = "FSH";
+  string public constant name = "Fish";
   uint8 public constant decimals = 3;
 
   /*

@@ -109,8 +109,8 @@ contract XXXcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function XXXcoin() public {
-        symbol = &quot;XCN&quot;;
-        name = &quot;XXXcoin&quot;;
+        symbol = "XCN";
+        name = "XXXcoin";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x608b187a78b546f8c3246bd97a6b6a56d2403ae4] = _totalSupply;

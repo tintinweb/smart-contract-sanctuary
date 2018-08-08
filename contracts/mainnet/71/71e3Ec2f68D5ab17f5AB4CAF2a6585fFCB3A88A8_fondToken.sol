@@ -116,8 +116,8 @@ contract fondToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function fondToken() public {
-        symbol = &quot;FND&quot;;
-        name = &quot;fond Token&quot;;
+        symbol = "FND";
+        name = "fond Token";
         decimals = 18;
         bonusEnds = now + 7 weeks;
         endDate = now + 16 weeks;

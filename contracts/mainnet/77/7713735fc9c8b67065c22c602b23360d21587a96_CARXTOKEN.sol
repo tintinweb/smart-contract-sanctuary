@@ -122,8 +122,8 @@ contract ERC223 {
 contract CARXTOKEN is ERC223, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;CARX TOKEN&quot;;
-    string public symbol = &quot;CARX&quot;;
+    string public name = "CARX TOKEN";
+    string public symbol = "CARX";
     uint8 public decimals = 18;
     uint256 public totalSupply = 2e9 * 1e18;
     bool public mintingFinished = false;

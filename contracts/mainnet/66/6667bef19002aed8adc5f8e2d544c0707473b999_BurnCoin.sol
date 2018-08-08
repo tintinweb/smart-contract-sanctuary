@@ -190,9 +190,9 @@ contract BurnCoin is Ownable, Destructible, Contactable, MintableToken {
 
     uint256 constant maxavailable = 10000000000000000000000;
 
-    string public name = &quot;BurnCoin&quot;;
+    string public name = "BurnCoin";
 
-    string public symbol = &quot;BRN&quot;;
+    string public symbol = "BRN";
     uint public decimals = 18;
     uint public ownerstake = 5001000000000000000000;
     address public owner;
@@ -218,7 +218,7 @@ contract BurnCoin is Ownable, Destructible, Contactable, MintableToken {
       owner = msg.sender;
       totalSupply = maxavailable;
       balances[owner] = maxavailable;
-      contactInformation = &quot;BurnCoin (BRN) : Burn Fiat. Make Coin.&quot;;
+      contactInformation = "BurnCoin (BRN) : Burn Fiat. Make Coin.";
   }
 
   function unlock() onlyOwner 

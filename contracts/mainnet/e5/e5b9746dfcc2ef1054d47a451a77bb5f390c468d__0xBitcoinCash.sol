@@ -281,9 +281,9 @@ contract _0xBitcoinCash is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;0xBCH&quot;;
+        symbol = "0xBCH";
 
-        name = &quot;0xBitcoinCash&quot;;
+        name = "0xBitcoinCash";
 
         decimals = 8;
 

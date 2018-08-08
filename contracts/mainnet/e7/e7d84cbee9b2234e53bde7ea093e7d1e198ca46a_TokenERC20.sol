@@ -62,8 +62,8 @@ contract TokenERC20 is Ownable {
 	
     using SafeMath for uint256;
     
-    string public constant name       = &quot;IOGENESIS&quot;;
-    string public constant symbol     = &quot;IOG&quot;;
+    string public constant name       = "IOGENESIS";
+    string public constant symbol     = "IOG";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply;
 	address public airdropadd         = 0xBfB92c13455c4ab69A2619614164c45Cb4BEC09C;

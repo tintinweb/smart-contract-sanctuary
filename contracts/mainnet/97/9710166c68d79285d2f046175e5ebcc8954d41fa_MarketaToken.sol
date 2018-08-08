@@ -259,9 +259,9 @@ contract StandardToken is ERC20, BasicToken {
  * Tokens are ERC20 with a fixed supply. All tokens allocated at deployment.
  */
 contract MarketaToken is StandardToken {
-  string public constant standard = &quot;ERC20&quot;; // solium-disable-line uppercase
-  string public constant name = &quot;Marketa Token&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;MKTA&quot;; // solium-disable-line uppercase
+  string public constant standard = "ERC20"; // solium-disable-line uppercase
+  string public constant name = "Marketa Token"; // solium-disable-line uppercase
+  string public constant symbol = "MKTA"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
   uint256 public constant INITIAL_SUPPLY = 800000000 * (10 ** uint256(decimals)); // Total supply = 800,000,000 (800 million)
   address public constant marketaWallet = 0xD886074033BC9E70249cb366Fad0Bb64C773d298; // Initial wallet with total supply. Checksummed address

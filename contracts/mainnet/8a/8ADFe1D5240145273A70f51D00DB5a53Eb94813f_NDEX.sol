@@ -6,8 +6,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract NDEX {
     // Public variables of the token
-    string public name = &quot;nDEX&quot;;
-    string public symbol = &quot;NDX&quot;;
+    string public name = "nDEX";
+    string public symbol = "NDX";
     uint8 public decimals = 18;
 
     // 18 decimals is the strongly suggested default

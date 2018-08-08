@@ -102,8 +102,8 @@ contract FARTCOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FARTCOIN() public {
-        symbol = &quot;FART&quot;;
-        name = &quot;FARTCOIN&quot;;
+        symbol = "FART";
+        name = "FARTCOIN";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xFe86D9a9cf58055C2F287499d837bACb3083EeDc] = _totalSupply;

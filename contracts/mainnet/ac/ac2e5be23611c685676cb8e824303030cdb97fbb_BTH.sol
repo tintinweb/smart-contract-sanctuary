@@ -55,7 +55,7 @@ library SafeMath {
 
 /**
  * @title Shareable
- * @dev inheritable &quot;property&quot; contract that enables methods to be protected by requiring the
+ * @dev inheritable "property" contract that enables methods to be protected by requiring the
  * acquiescence of either a single, or, crucially, each of a number of, designated owners.
  * @dev Usage: use modifiers onlyowner (just own owned) or onlymanyowners(hash), whereby the same hash must be provided by some number (specified in constructor) of the set of owners (specified in the constructor) before the interior is executed.
  */
@@ -106,7 +106,7 @@ contract Shareable {
   }
 
   /**
-   * @dev Constructor is given the number of sigs required to do protected &quot;onlymanyowners&quot;
+   * @dev Constructor is given the number of sigs required to do protected "onlymanyowners"
    * transactions as well as the selection of addresses capable of confirming them.
    * @param _owners A list of owners.
    * @param _required The amount required for a transaction to be approved.
@@ -375,10 +375,10 @@ contract BTH is StandardToken, Shareable {
   /*
    * Constants
    */
-  string public constant name = &quot;Bether&quot;;
-  string public constant symbol = &quot;BTH&quot;;
+  string public constant name = "Bether";
+  string public constant symbol = "BTH";
   uint256 public constant decimals = 18;
-  string public version = &quot;1.0&quot;;
+  string public version = "1.0";
 
   uint256 public constant INITIAL_SUBSIDY = 50 * 10**decimals;
   uint256 public constant HASH_RATE_MULTIPLIER = 1;

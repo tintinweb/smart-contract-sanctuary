@@ -113,8 +113,8 @@ contract LSCKcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LSCKcoin() public {
-        symbol = &quot;LSCK&quot;;
-        name = &quot;LSCKcoin&quot;;
+        symbol = "LSCK";
+        name = "LSCKcoin";
         decimals = 8;
         _totalSupply = 2100000000000000;
         balances[0x60f71Dd71aEa773657d75b2884e93c6bCbbADF65] = _totalSupply;

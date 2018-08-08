@@ -527,8 +527,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract medibitToken is PausableToken {
-  string constant public name = &quot;MEDIBIT&quot;;
-  string constant public symbol = &quot;MEDIBIT&quot;;
+  string constant public name = "MEDIBIT";
+  string constant public symbol = "MEDIBIT";
   uint256 constant public decimals = 18;
   uint256 constant TOKEN_UNIT = 10 ** uint256(decimals);
   uint256 constant INITIAL_SUPPLY = 50000000000 * TOKEN_UNIT;

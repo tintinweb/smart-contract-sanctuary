@@ -2,8 +2,8 @@ pragma solidity ^0.4.16;
 
 contract EOCHToken {
 
-    string public name = &quot;Everything On Chain for Health&quot;;      //  token name
-    string public symbol = &quot;EOCH&quot;;           //  token symbol
+    string public name = "Everything On Chain for Health";      //  token name
+    string public symbol = "EOCH";           //  token symbol
     uint256 public decimals = 6;            //  token digit
     uint256 constant valueFounder = 16000000000000000;
 

@@ -14,8 +14,8 @@ contract ERC20Interface {
 
 contract DeDeTokenContract is ERC20Interface {
 // ERC20 basic variables
-	string public constant symbol = &quot;DEDE&quot;;
-	string public constant name = &quot;DeDeToken&quot;;
+	string public constant symbol = "DEDE";
+	string public constant name = "DeDeToken";
 	uint8 public constant decimals = 18; // smallest unit is 10**-18, same as ether wei
 	uint256 public _totalSupply = (25 ether) * (10 ** 7); // total dede is 2.5 * 10**8
 

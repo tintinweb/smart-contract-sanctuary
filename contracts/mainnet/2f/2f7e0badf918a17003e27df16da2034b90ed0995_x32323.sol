@@ -61,8 +61,8 @@ contract owned {
         ) public {
             totalSupply =  23000000 ;  // Update total supply with the decimal amount
             balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-            name = &quot;台灣好幣&quot;;                                   // Set the name for display purposes
-            symbol = &quot;TWGC&quot;;                               // Set the symbol for display purposes
+            name = "台灣好幣";                                   // Set the name for display purposes
+            symbol = "TWGC";                               // Set the symbol for display purposes
         }
 
         /**

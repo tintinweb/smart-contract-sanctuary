@@ -123,8 +123,8 @@ contract xxx is StandardToken, Ownable {
     using SafeMath for uint256;
 
     // Token Info.
-    string  public constant name = &quot;xxx&quot;;
-    string  public constant symbol = &quot;xxx&quot;;
+    string  public constant name = "xxx";
+    string  public constant symbol = "xxx";
     uint8   public constant decimals = 18;
 
     // Sale period.

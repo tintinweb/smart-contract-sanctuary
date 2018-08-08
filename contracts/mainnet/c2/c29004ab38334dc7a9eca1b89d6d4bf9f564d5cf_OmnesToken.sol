@@ -2,8 +2,8 @@ pragma solidity ^0.4.24;
 
 contract OmnesToken {
 
-    string public name = &quot;Omnes Coin&quot;;      //  token name
-    string public symbol = &quot;OMNES&quot;;        //  token symbol
+    string public name = "Omnes Coin";      //  token name
+    string public symbol = "OMNES";        //  token symbol
     uint256 public decimals = 18;          //  token digit
 
     mapping (address => uint256) public balanceOf;

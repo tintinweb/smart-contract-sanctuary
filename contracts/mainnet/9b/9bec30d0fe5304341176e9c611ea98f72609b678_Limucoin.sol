@@ -113,8 +113,8 @@ contract Limucoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;LIM&quot;;
-        name = &quot;Limucoin&quot;;
+        symbol = "LIM";
+        name = "Limucoin";
         decimals = 18;
         _totalSupply = 100000000000;
         balances[0xA49DEc780DdC333a62eD0673Ce6756aE162809A7] = _totalSupply;

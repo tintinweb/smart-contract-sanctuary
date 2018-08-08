@@ -109,8 +109,8 @@ contract Coretab is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;CRT&quot;;
-        name = &quot;CORETAB&quot;;
+        symbol = "CRT";
+        name = "CORETAB";
         decimals = 18;
         _totalSupply = 300000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

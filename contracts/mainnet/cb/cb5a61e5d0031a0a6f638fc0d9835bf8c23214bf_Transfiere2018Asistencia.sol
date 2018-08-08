@@ -46,11 +46,11 @@ contract Transfiere2018Asistencia {
     function checkCode(string _codigo) public view returns (string, string) {
         for (uint i = 0; i < availableOrgs.length; i++) {
             if (keccak256(availableOrgs[i].codigo) == keccak256(_codigo)) {
-                return (_codigo,&quot;El c&#243;digo es v&#225;lido.&quot;);
+                return (_codigo,"El c&#243;digo es v&#225;lido.");
             }
         }
     
-        return (_codigo,&quot;El c&#243;digo no existe.&quot;);
+        return (_codigo,"El c&#243;digo no existe.");
     }
     
     function destroy() public {

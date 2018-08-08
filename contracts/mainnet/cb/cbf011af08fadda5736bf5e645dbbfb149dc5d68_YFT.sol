@@ -184,8 +184,8 @@ contract StandardToken is ERC20, BasicToken {
   }
 }
 contract YFT is StandardToken {
-    string  public name = &quot;Yi Fa Temple Token&quot;;
-    string  public symbol = &quot;YFT&quot;;
+    string  public name = "Yi Fa Temple Token";
+    string  public symbol = "YFT";
     uint8   public decimals = 18;
     uint    public totalSupply = 10 ** 26;
     function ()

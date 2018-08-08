@@ -34,10 +34,10 @@ pragma solidity ^0.4.18;
  */
 contract EosPizzaSliceConfig {
     // The name of the token.
-    string constant NAME = &quot;EOS.Pizza&quot;;
+    string constant NAME = "EOS.Pizza";
 
     // The symbol of the token.
-    string constant SYMBOL = &quot;EPS&quot;;
+    string constant SYMBOL = "EPS";
 
     // The number of decimals for the token.
     uint8 constant DECIMALS = 18;  // Same as ethers.
@@ -284,14 +284,14 @@ contract Freezable is HasOwner {
   }
 
   /**
-   * @dev Allows the owner to &quot;freeze&quot; the contract.
+   * @dev Allows the owner to "freeze" the contract.
    */
   function freeze() onlyOwner public {
     frozen = true;
   }
 
   /**
-   * @dev Allows the owner to &quot;unfreeze&quot; the contract.
+   * @dev Allows the owner to "unfreeze" the contract.
    */
   function unfreeze() onlyOwner public {
     frozen = false;

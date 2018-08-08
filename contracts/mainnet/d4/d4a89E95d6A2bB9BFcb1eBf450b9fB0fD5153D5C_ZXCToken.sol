@@ -35,7 +35,7 @@ library SafeMath {
 /**
 * @title Ownable
 * @dev The Ownable contract has an owner address, and provides basic authorization control 
-* functions, this simplifies the implementation of &quot;user permissions&quot;. 
+* functions, this simplifies the implementation of "user permissions". 
 */ 
 contract Ownable {
     address public owner;
@@ -171,8 +171,8 @@ contract ZXCToken is StandardToken, Ownable {
     using SafeMath for uint256;
 
     // Token Information
-    string  public constant NAME = &quot;0XCoin&quot;;
-    string  public constant SYMBOL = &quot;0XC&quot;;
+    string  public constant NAME = "0XCoin";
+    string  public constant SYMBOL = "0XC";
     uint8   public constant DECIMALS = 18;
 
     // Sale period1.

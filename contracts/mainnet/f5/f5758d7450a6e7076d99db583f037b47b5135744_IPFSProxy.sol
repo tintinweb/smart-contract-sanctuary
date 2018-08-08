@@ -53,7 +53,7 @@ contract Multimember {
 
     // METHODS
 
-    // constructor is given number of sigs required to do protected &quot;onlymanymembers&quot; transactions
+    // constructor is given number of sigs required to do protected "onlymanymembers" transactions
     // as well as the selection of addresses capable of confirming them.
     function Multimember(address[] _members, uint _required) public {
         m_numMembers = _members.length + 1;

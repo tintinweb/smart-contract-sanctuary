@@ -115,8 +115,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function FixedSupplyToken() public {
-        symbol = &quot;BDEN&quot;;
-        name = &quot;Bagden&quot;;
+        symbol = "BDEN";
+        name = "Bagden";
         decimals = 8;
         _totalSupply = 38400000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

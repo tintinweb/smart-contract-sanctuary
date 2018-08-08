@@ -113,8 +113,8 @@ contract FABIToken is UnboundedRegularToken {
 
     uint public totalSupply = 1*10**13;
     uint8 constant public decimals = 4;
-    string constant public name = &quot;FABI&quot;;
-    string constant public symbol = &quot;FB&quot;;
+    string constant public name = "FABI";
+    string constant public symbol = "FB";
 
     function FABIToken() {
         balances[msg.sender] = totalSupply;

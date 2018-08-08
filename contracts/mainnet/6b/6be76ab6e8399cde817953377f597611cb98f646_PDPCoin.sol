@@ -148,8 +148,8 @@ contract StandardToken is ERC20, BasicToken {
 contract PDPCoin is StandardToken {
   using SafeMath for uint256;
 
-  string public name = &quot;PDPCoin&quot;;
-  string public symbol = &quot;PDP&quot;;
+  string public name = "PDPCoin";
+  string public symbol = "PDP";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 500000000 * 1 ether;
 

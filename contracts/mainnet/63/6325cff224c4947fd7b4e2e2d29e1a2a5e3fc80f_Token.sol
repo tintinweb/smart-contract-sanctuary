@@ -98,9 +98,9 @@ contract EventDefinitions {
 
 contract Token is Finalizable, TokenReceivable, SafeMath, EventDefinitions, Pausable {
 	// Set these appropriately before you deploy
-	string constant public name = &quot;AirToken&quot;;
+	string constant public name = "AirToken";
 	uint8 constant public decimals = 8;
-	string constant public symbol = &quot;FOX&quot;;
+	string constant public symbol = "FOX";
 	Controller public controller;
 	string public motd;
 	address public atFundDeposit;
@@ -108,7 +108,7 @@ contract Token is Finalizable, TokenReceivable, SafeMath, EventDefinitions, Paus
 
 	// functions below this line are onlyOwner
 
-	// set &quot;message of the day&quot;
+	// set "message of the day"
 	function setMotd(string _m) onlyOwner {
 		motd = _m;
 		Motd(_m);
@@ -196,9 +196,9 @@ contract Token is Finalizable, TokenReceivable, SafeMath, EventDefinitions, Paus
 	// won&#39;t receive the AirTokens.
 	//
 	// Example for US number (country code 1):  16175551234
-	// web3.fromAscii(&quot;16175555555&quot;, 32);
+	// web3.fromAscii("16175555555", 32);
 	// Example for UK number (country code 44): 442055551234
-	// web3.fromAscii(&quot;442055551234&quot;, 32);
+	// web3.fromAscii("442055551234", 32);
 	function transferToInternalLedger(uint256 _value, bytes32 _mdn) external returns (bool success) {
 		require(atFundDeposit != 0);
 		if (transfer(atFundDeposit, _value)) {

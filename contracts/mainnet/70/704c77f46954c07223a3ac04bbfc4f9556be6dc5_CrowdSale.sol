@@ -116,8 +116,8 @@ contract Token {
 contract Touch is Moderated {
 	using SafeMath for uint256;
 
-		string public name = &quot;Touch. Token&quot;;
-		string public symbol = &quot;TST&quot;;
+		string public name = "Touch. Token";
+		string public symbol = "TST";
 		uint8 public decimals = 18;
 
         uint256 public maximumTokenIssue = 1000000000 * 10**18;

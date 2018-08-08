@@ -113,8 +113,8 @@ contract Mobilla is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;MBB&quot;;
-        name = &quot;Mobilla&quot;;
+        symbol = "MBB";
+        name = "Mobilla";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xdb4ff87f187cd2560cfaae170a05d2024194df02] = _totalSupply;

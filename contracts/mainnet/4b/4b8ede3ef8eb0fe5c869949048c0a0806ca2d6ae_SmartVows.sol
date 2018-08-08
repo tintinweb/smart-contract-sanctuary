@@ -52,15 +52,15 @@ contract Util{
     }
 
     function strConcat(string _a, string _b, string _c, string _d) internal pure returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
 
     function strConcat(string _a, string _b, string _c) internal pure returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
 
     function strConcat(string _a, string _b) internal pure returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 
 }
@@ -163,7 +163,7 @@ contract SmartVows is Ownable, Util {
         marriageLicenceImageIPFShash=_marriageLicenceImageIPFShash;
 
         //Record contract creation in events
-        saveContractEvent(&quot;Blockchain marriage smart contract created&quot;,&quot;Marriage smart contract added to the blockchain&quot;);
+        saveContractEvent("Blockchain marriage smart contract created","Marriage smart contract added to the blockchain");
         
     }
 
@@ -202,7 +202,7 @@ contract SmartVows is Ownable, Util {
     // Update Marriage status only if both partners have previously voted to update the prenup
     function updateMaritalStatus(string _maritalStatus) public {
         require((msg.sender == owner || msg.sender == partner1_address || msg.sender == partner2_address) && (partner1_voted_update_marriage_status == true)&&(partner2_voted_update_marriage_status == true));
-        saveContractEvent(&quot;Marital status updated&quot;, strConcat(&quot;Marital status changed from &quot;, maritalStatus , &quot; to &quot;, _maritalStatus));
+        saveContractEvent("Marital status updated", strConcat("Marital status changed from ", maritalStatus , " to ", _maritalStatus));
         maritalStatus = _maritalStatus;
         partner1_voted_update_marriage_status = false;
         partner2_voted_update_marriage_status = false;
@@ -213,10 +213,10 @@ contract SmartVows is Ownable, Util {
         require(msg.sender == partner1_address || msg.sender == partner2_address);
         if(msg.sender == partner1_address){
             partner1_signed = true;
-            saveContractEvent(&quot;Marriage signed&quot;, &quot;Smart Contract signed by Partner 1&quot;);
+            saveContractEvent("Marriage signed", "Smart Contract signed by Partner 1");
         }else {
             partner2_signed = true;
-            saveContractEvent(&quot;Marriage signed&quot;, &quot;Smart Contract signed by Partner 2&quot;);
+            saveContractEvent("Marriage signed", "Smart Contract signed by Partner 2");
         }
         
         if(partner1_signed && partner2_signed){// if both signed then make the contract as signed
@@ -228,11 +228,11 @@ contract SmartVows is Ownable, Util {
         function voteToUpdateMaritalStatus() public {
         if(msg.sender == partner1_address){
             partner1_voted_update_marriage_status = true;
-            saveContractEvent(&quot;Vote - Change Marital Status&quot;, &quot;Partner 1 voted to updated Marital Status&quot;);
+            saveContractEvent("Vote - Change Marital Status", "Partner 1 voted to updated Marital Status");
         }
         if(msg.sender == partner2_address){
             partner2_voted_update_marriage_status = true;
-            saveContractEvent(&quot;Vote - Change Marital Status&quot;, &quot;Partner 2 voted to updated Marital Status&quot;);
+            saveContractEvent("Vote - Change Marital Status", "Partner 2 voted to updated Marital Status");
         }
     }
     
@@ -240,11 +240,11 @@ contract SmartVows is Ownable, Util {
     function voteToUpdatePrenup() public {
         if(msg.sender == partner1_address){
             partner1_voted_update_prenup = true;
-            saveContractEvent(&quot;Vote - Update Prenup&quot;, &quot;Partner 1 voted to updated Prenuptial Aggreement&quot;);
+            saveContractEvent("Vote - Update Prenup", "Partner 1 voted to updated Prenuptial Aggreement");
         }
         if(msg.sender == partner2_address){
             partner2_voted_update_prenup = true;
-            saveContractEvent(&quot;Vote - Update Prenup&quot;, &quot;Partner 2 voted to updated Prenuptial Aggreement&quot;);
+            saveContractEvent("Vote - Update Prenup", "Partner 2 voted to updated Prenuptial Aggreement");
         }
     }
 
@@ -264,7 +264,7 @@ contract SmartVows is Ownable, Util {
     function updatePrenup(string _prenupAgreement) public{
         require((msg.sender == owner || msg.sender == partner1_address || msg.sender == partner2_address) && (partner1_voted_update_prenup == true)&&(partner2_voted_update_prenup == true));
         prenupAgreement = _prenupAgreement;
-        saveContractEvent(&quot;Update - Prenup&quot;, &quot;Prenuptial Agreement Updated&quot;);
+        saveContractEvent("Update - Prenup", "Prenuptial Agreement Updated");
         partner1_voted_update_prenup = false;
         partner2_voted_update_prenup = false;
     }
@@ -273,14 +273,14 @@ contract SmartVows is Ownable, Util {
     function updatePartner1_will(string _partner1_will) public {
         require(msg.sender == partner1_address);
         partner1_will = _partner1_will;
-        saveContractEvent(&quot;Update - Will&quot;, &quot;Partner 1 Will Updated&quot;);
+        saveContractEvent("Update - Will", "Partner 1 Will Updated");
     }
   
     // Update partner 2 will, only partner 2 can update
     function updatePartner2_will(string _partner2_will) public {
         require(msg.sender == partner2_address);
         partner2_will = _partner2_will;
-        saveContractEvent(&quot;Update - Will&quot;, &quot;Partner 2 Will Updated&quot;);
+        saveContractEvent("Update - Will", "Partner 2 Will Updated");
     }
     
 }

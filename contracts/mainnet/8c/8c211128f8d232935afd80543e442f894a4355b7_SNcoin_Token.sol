@@ -80,8 +80,8 @@ contract ApproveAndCallFallBack {
 // initial fixed supply
 // ----------------------------------------------------------------------------
 contract SNcoin_Token is ERC20Interface, Owned {
-    string public constant symbol = &quot;SNcoin&quot;;
-    string public constant name = &quot;scientificcoin&quot;;
+    string public constant symbol = "SNcoin";
+    string public constant name = "scientificcoin";
     uint8 public constant decimals = 18;
     uint private constant _totalSupply = 100000000 * 10**uint(decimals);
 

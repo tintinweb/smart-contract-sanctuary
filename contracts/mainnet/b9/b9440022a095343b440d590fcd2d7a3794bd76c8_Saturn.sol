@@ -162,8 +162,8 @@ contract ERC223Token is ERC223 {
 }
 
 contract Saturn is ERC223Token {
-  string public name = &quot;Saturn DAO Token&quot;;
-  string public symbol = &quot;SATURN&quot;;
+  string public name = "Saturn DAO Token";
+  string public symbol = "SATURN";
   uint public decimals = 4;
   uint public totalSupply = 1000000000 * 10**4;
 

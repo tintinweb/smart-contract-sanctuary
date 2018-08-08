@@ -705,7 +705,7 @@ contract BW {
         bwService.attackTile(msg.sender, _tileId, _attackAmount, _useBattleValue, _autoFortify);
     }
     
-    // Move &quot;army&quot; = block value from one block to an adjacent block. Moving ALL value equates giving up ownership of the source tile.
+    // Move "army" = block value from one block to an adjacent block. Moving ALL value equates giving up ownership of the source tile.
     function moveBlockValue(uint8 _xSource, uint8 _ySource, uint8 _xDest, uint8 _yDest, uint _moveAmount) public isNotPaused isNotContractCaller {
         bwService.moveBlockValue(msg.sender, _xSource, _ySource, _xDest, _yDest, _moveAmount);
     }

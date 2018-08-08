@@ -129,8 +129,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract HPCToken is StandardToken, Ownable {
-  string public constant name = &quot;Hash Power Token&quot;;
-  string public constant symbol = &quot;HPC&quot;;
+  string public constant name = "Hash Power Token";
+  string public constant symbol = "HPC";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));

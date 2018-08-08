@@ -29,7 +29,7 @@ contract TokenRecipient {
 
 
 contract Token {
-    string public standard = &quot;UGV Chain 1.0&quot;;
+    string public standard = "UGV Chain 1.0";
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -114,9 +114,9 @@ contract Token {
 //Business UGVCToken 
 contract UGVCToken is Token, Owner {
     uint256 public constant INITIAL_SUPPLY = 15 * 10000 * 10000 * 1 ether; // 1e9 * 1e18
-    string public constant NAME = &quot;UGV Chain&quot;; //名称
-    string public constant SYMBOL = &quot;UGVC&quot;; // 简称
-    // string public constant STANDARD = &quot;UGV Chain 1.0&quot;;
+    string public constant NAME = "UGV Chain"; //名称
+    string public constant SYMBOL = "UGVC"; // 简称
+    // string public constant STANDARD = "UGV Chain 1.0";
     uint8 public constant DECIMALS = 18;
     uint256 public constant BUY = 0; // 用于自动买卖
     uint256 constant RATE = 1 szabo;

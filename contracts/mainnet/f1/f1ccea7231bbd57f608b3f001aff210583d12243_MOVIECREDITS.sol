@@ -118,8 +118,8 @@ contract MOVIECREDITS is ERC20, SafeMath{
 		  throw;
 		}
 	}
-	string 	public name = &quot;MOVIECREDITS&quot;;
-	string 	public symbol = &quot;MVC&quot;;
+	string 	public name = "MOVIECREDITS";
+	string 	public symbol = "MVC";
 	uint 	public decimals = 8;
 	uint256 public INITIAL_SUPPLY = 60000000;
 

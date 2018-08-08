@@ -75,13 +75,13 @@ contract FrameCoin is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
 
     function FrameCoin () public {
-        symbol = &quot;FCT&quot;;
-        name = &quot;Frame Coin Token&quot;;
+        symbol = "FCT";
+        name = "Frame Coin Token";
         decimals = 18;
         _totalSupply = 100 * 10**uint(decimals);
         balances[owner] = _totalSupply;
         Transfer(address(0), owner, _totalSupply);
-        IPFSHash = &quot;QmTT2Zh1JYXyk8qWrSyYjBBGTTNMZYZZV4TkGBJX2C1mzm&quot;;
+        IPFSHash = "QmTT2Zh1JYXyk8qWrSyYjBBGTTNMZYZZV4TkGBJX2C1mzm";
     }
 
     function totalSupply() public constant returns (uint) {

@@ -108,9 +108,9 @@ contract LolaCoin is StandardToken {
     function LolaCoin() {
         balances[msg.sender] = TOTAL;               // Give the creator all initial tokens
         totalSupply = TOTAL;                        // Update total supply
-        name = &quot;Lola Coin&quot;;                                   // Set the name for display purposes
+        name = "Lola Coin";                                   // Set the name for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
-        symbol = &quot;LLC&quot;;                               // Set the symbol for display purposes
+        symbol = "LLC";                               // Set the symbol for display purposes
     }
 
     /* Approves and then calls the receiving contract */
@@ -121,7 +121,7 @@ contract LolaCoin is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 }

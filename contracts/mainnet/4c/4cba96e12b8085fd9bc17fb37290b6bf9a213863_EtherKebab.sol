@@ -2,7 +2,7 @@ pragma solidity ^0.4.18;
 
 // similar as other games, with two changes:
 // A. half of your kebabs expiry date is over when you sell them so they are thrown away
-// B. the &quot;free&quot; 150 initial cost 0.001 eth (in line with the mining fee)
+// B. the "free" 150 initial cost 0.001 eth (in line with the mining fee)
 
 // bots should have a harder time
 

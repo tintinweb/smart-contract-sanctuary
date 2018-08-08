@@ -145,8 +145,8 @@ contract EtherPush is SafeMath {
   mapping (address => mapping (address => uint))            public tokens;
   mapping (uint => mapping (address => Order))              public orders;
 
-  string  public constant  name = &quot;EtherPush&quot;;
-  string  public constant  version = &quot;20170913&quot;;
+  string  public constant  name = "EtherPush";
+  string  public constant  version = "20170913";
 
   bool    public           running = true;
 

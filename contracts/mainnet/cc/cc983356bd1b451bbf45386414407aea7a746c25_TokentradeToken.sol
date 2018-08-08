@@ -101,8 +101,8 @@ contract TokentradeToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;TTRADE&quot;;
-        name = &quot;Tokentrade token&quot;;
+        symbol = "TTRADE";
+        name = "Tokentrade token";
         decimals = 18;
         _totalSupply = 100000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

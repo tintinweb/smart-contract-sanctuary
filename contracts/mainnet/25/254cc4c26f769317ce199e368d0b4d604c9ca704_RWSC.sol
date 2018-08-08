@@ -184,8 +184,8 @@ contract SendTokensContract is Ownable,BasicToken {
 
 contract RWSC is StandardToken,SendTokensContract {
 
-  string public constant name = &quot;Real-World Smart Contract&quot;;
-  string public constant symbol = &quot;RWSC&quot;;
+  string public constant name = "Real-World Smart Contract";
+  string public constant symbol = "RWSC";
   uint256 public constant decimals = 18;
   
   uint256 public constant INITIAL_SUPPLY = 888888888 * 10 ** uint256(decimals);

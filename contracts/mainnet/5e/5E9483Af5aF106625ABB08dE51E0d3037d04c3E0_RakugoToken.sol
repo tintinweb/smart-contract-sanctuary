@@ -311,8 +311,8 @@ contract RakugoToken is MintableToken, LimitedTransferToken {
 
     event Burn(address indexed burner, uint indexed value);
 
-    string public constant symbol = &quot;RKT&quot;;
-    string public constant name = &quot;Rakugo Seed Token&quot;;
+    string public constant symbol = "RKT";
+    string public constant name = "Rakugo Seed Token";
     uint8 public constant decimals = 18;
 
     function transferableTokens(address holder, uint64 time) constant public returns (uint256) {//transfers still happening soon

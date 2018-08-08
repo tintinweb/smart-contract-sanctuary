@@ -6,7 +6,7 @@ pragma solidity ^0.4.11;
 
 /**
  * ERC-20 standard token interface, as defined
- * <a href=&quot;http://github.com/ethereum/EIPs/issues/20&quot;>here</a>.
+ * <a href="http://github.com/ethereum/EIPs/issues/20">here</a>.
  */
 contract ERC20Interface {
   /**
@@ -207,8 +207,8 @@ contract ExpandT is ERC20Interface, SafeMath, Owned {
 
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;
-    string public constant name = &quot;ExpandT&quot;;
-    string public constant symbol = &quot;EXT&quot;;
+    string public constant name = "ExpandT";
+    string public constant symbol = "EXT";
     uint8 public constant decimals = 8;
     string public version = &#39;0.0.2&#39;;
 

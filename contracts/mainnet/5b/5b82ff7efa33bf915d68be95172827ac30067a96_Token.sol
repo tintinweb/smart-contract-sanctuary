@@ -234,7 +234,7 @@ contract BurnableToken is StandardToken {
     ADGEX Limited
 */
 contract Token is MintableToken, BurnableToken, Withdrawable {
-    function Token() StandardToken(&quot;ADGEX Limited&quot;, &quot;AGE&quot;, 18) public {
+    function Token() StandardToken("ADGEX Limited", "AGE", 18) public {
         
     }
 }

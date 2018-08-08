@@ -252,8 +252,8 @@ contract StandardToken is ERC20, BasicToken {
 contract EscobarcoinToken is StandardToken {
     using SafeMath for uint256;
 
-    string public name = &quot;EscobarcoinToken&quot;;
-    string public symbol = &quot;ESCO&quot;;
+    string public name = "EscobarcoinToken";
+    string public symbol = "ESCO";
     uint256 public decimals = 18;
 
     uint256 public totalSupply = 250000000 * (uint256(10) ** decimals);

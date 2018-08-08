@@ -19,9 +19,9 @@ contract FSM {
     function FSM() {
 
          initialSupply = 8000000000;
-         name =&quot;Flying Spaghetti Monster&quot;;
+         name ="Flying Spaghetti Monster";
         decimals = 0;
-         symbol = &quot;FSM&quot;;
+         symbol = "FSM";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

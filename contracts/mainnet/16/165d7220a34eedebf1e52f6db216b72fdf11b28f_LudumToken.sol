@@ -118,8 +118,8 @@ contract LudumToken is StandardToken {
 
     using SafeMath for uint;
 
-	string public constant name = &quot;Ludum&quot;; // Ludum tokens name
-    string public constant symbol = &quot;LDM&quot;; // Ludum tokens ticker
+	string public constant name = "Ludum"; // Ludum tokens name
+    string public constant symbol = "LDM"; // Ludum tokens ticker
     uint public constant decimals = 18; // Ludum tokens decimals
 	uint public constant maximumSupply =  100000000000000000000000000; // Maximum 100M Ludum tokens can be created
 
@@ -158,10 +158,10 @@ contract LudumToken is StandardToken {
     function LudumToken()
     {
         isFinalized = false;
-	    ethDepositAddress = &quot;0xD8E4FB6cC1BD2a8eF6E086152877E7ba540B5d9b&quot;;
-	    teamFundAddress = &quot;0xB6FCB6EF9b46B4ea0AC403e74b53e3962f6fc41d&quot;;
-	    operationsFundAddress = &quot;0x81B9c43a410C86620fbd85509c29E8C93995A8A9&quot;;
-	    marketingFundAddress = &quot;0x057CCb6A9061Aa61aEAE047fdCddeCb6511A0865&quot;;
+	    ethDepositAddress = "0xD8E4FB6cC1BD2a8eF6E086152877E7ba540B5d9b";
+	    teamFundAddress = "0xB6FCB6EF9b46B4ea0AC403e74b53e3962f6fc41d";
+	    operationsFundAddress = "0x81B9c43a410C86620fbd85509c29E8C93995A8A9";
+	    marketingFundAddress = "0x057CCb6A9061Aa61aEAE047fdCddeCb6511A0865";
     }
 
 

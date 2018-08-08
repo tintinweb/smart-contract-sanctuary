@@ -150,8 +150,8 @@ contract NewToken is BasicToken, ERC20 {
 
 contract SimpleToken is NewToken {
 
-  string public name = &quot;CadetCoin&quot;;
-  string public symbol = &quot;CADET&quot;;
+  string public name = "CadetCoin";
+  string public symbol = "CADET";
   uint public decimals = 8;
   uint public INITIAL_SUPPLY = 15000000000000000;
 

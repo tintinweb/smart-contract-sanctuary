@@ -113,8 +113,8 @@ contract Stakefasttoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Stakefasttoken() public {
-        symbol = &quot;SFT&quot;;
-        name = &quot;Stakefast Token&quot;;
+        symbol = "SFT";
+        name = "Stakefast Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000;
         balances[0x7660B6Fd6929BCbCFC2406080bCb2Ae80dcDeEbC] = _totalSupply;

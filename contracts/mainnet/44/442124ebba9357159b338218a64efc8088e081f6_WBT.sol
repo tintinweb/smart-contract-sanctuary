@@ -113,8 +113,8 @@ contract WBT is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function WBT() public {
-        symbol = &quot;WBT&quot;;
-        name = &quot;Webrypto&quot;;
+        symbol = "WBT";
+        name = "Webrypto";
         decimals = 18;
         _totalSupply = 100000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

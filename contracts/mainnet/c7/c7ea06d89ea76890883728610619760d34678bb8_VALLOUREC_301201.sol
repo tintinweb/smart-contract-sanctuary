@@ -4,8 +4,8 @@ contract	VALLOUREC_301201				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	VALLOUREC_301201		&quot;	;
-	string	public		symbol =	&quot;	VALLI		&quot;	;
+	string	public		name =	"	VALLOUREC_301201		"	;
+	string	public		symbol =	"	VALLI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10157658407984500000000000					;	

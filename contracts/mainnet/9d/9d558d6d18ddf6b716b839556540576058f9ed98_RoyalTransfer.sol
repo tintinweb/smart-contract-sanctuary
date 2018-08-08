@@ -207,9 +207,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract RoyalTransfer is StandardToken {
     
-    string public name = &quot;Royal Transfer of Wealth Coin&quot;;
-    string public symbol = &quot;RTWC&quot;;
-    string public version = &quot;1.0&quot;;
+    string public name = "Royal Transfer of Wealth Coin";
+    string public symbol = "RTWC";
+    string public version = "1.0";
     uint8 public decimals = 8;
     
     uint256 INITIAL_SUPPLY = 200000000e8;

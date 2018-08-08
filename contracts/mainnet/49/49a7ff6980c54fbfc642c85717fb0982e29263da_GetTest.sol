@@ -1,6 +1,6 @@
 contract GetTest{
     uint a = 1;
-    string b = &quot;b&quot;;
+    string b = "b";
     address c;
     constructor() public {
         c = msg.sender;

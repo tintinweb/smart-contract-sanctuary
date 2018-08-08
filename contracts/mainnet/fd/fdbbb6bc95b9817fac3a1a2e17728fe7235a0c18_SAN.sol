@@ -143,8 +143,8 @@ contract SubscriptionModule {
 
 contract SAN is Owned, ERC20 {
 
-    string public constant name     = &quot;SANtiment TEST token&quot;;
-    string public constant symbol   = &quot;SAN.TEST.MAX.4&quot;;
+    string public constant name     = "SANtiment TEST token";
+    string public constant symbol   = "SAN.TEST.MAX.4";
     uint8  public constant decimals = 18;
 
     address CROWDSALE_MINTER = 0xc58F14AF29eC15bBbf2734fE7f4FE8Bc4448D38F;
@@ -187,7 +187,7 @@ contract SAN is Owned, ERC20 {
         if (address(subModule) > 0) subModule.attachToken(this);
     }
 
-    ///@notice set platform fee denominated in 1/10000 of SAN token. Thus &quot;1&quot; means 0.01% of SAN token.
+    ///@notice set platform fee denominated in 1/10000 of SAN token. Thus "1" means 0.01% of SAN token.
     function setPlatformFeePer10000(uint newFee)
     external
     only(owner) {

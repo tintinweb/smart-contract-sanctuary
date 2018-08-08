@@ -22,8 +22,8 @@ contract TestChain{
     function TestChain() {
         balanceOf[msg.sender] =  1200000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  1200000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;TestChain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TESTC&quot;;                               // Set the symbol for display purposes
+        name = "TestChain";                                   // Set the name for display purposes
+        symbol = "TESTC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

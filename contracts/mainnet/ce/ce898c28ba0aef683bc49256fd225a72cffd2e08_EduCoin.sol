@@ -112,8 +112,8 @@ contract EduCoin is StandardToken {
         require(false);
     }
 
-    string public constant name = &quot;Hcancan&quot;;   
-    string public constant symbol = &quot;HC&quot;;
+    string public constant name = "Hcancan";   
+    string public constant symbol = "HC";
     uint256 private constant _INITIAL_SUPPLY = 15*10**27;
     uint8 public decimals = 18;         
     uint256 public totalSupply;            

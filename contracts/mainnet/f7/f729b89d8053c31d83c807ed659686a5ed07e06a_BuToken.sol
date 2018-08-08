@@ -127,8 +127,8 @@ contract BuToken is ERC20Token {
   uint8 public decimals;
 
   function BuToken() public {
-    name = &quot;BUY Payment Token&quot;;
-    symbol = &quot;BUY&quot;;
+    name = "BUY Payment Token";
+    symbol = "BUY";
     decimals = 0;  
     balances[msg.sender] = 10**9;
     totalSupply_ = 10**9;

@@ -429,8 +429,8 @@ contract Contactable is Ownable {
 
 contract BetlyCoin is StandardToken, Ownable, BurnableToken {
 
-  string public constant name = &quot;BetlyCoin&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;BETLY&quot;; // solium-disable-line uppercase
+  string public constant name = "BetlyCoin"; // solium-disable-line uppercase
+  string public constant symbol = "BETLY"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));

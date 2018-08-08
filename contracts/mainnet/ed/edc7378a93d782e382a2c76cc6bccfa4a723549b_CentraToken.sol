@@ -36,8 +36,8 @@ pragma solidity ^0.4.11;
   }  
    
   contract CentraToken is ERC20Interface {
-      string public constant symbol = &quot;Centra&quot;;
-      string public constant name = &quot;Centra token&quot;;
+      string public constant symbol = "Centra";
+      string public constant name = "Centra token";
       uint8 public constant decimals = 18; 
            
       uint256 public constant maxTokens = 100000000*10**18; 
@@ -124,7 +124,7 @@ pragma solidity ^0.4.11;
    
       // Send _value amount of tokens from address _from to address _to
       // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-      // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+      // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
       // fees in sub-currencies; the command should fail unless the _from account has
       // deliberately authorized the sender of the message via some mechanism; we propose
       // these standardized APIs for approval:

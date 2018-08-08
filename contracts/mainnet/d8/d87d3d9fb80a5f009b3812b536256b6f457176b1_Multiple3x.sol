@@ -50,8 +50,8 @@ contract Ownable {
 
 /**
  *  Main contract: 
- *  *) You can refund eth*3 only between &quot;refundTime&quot; and &quot;ownerTime&quot;.
- *  *) The creator can only get the contract balance after &quot;ownerTime&quot;.  
+ *  *) You can refund eth*3 only between "refundTime" and "ownerTime".
+ *  *) The creator can only get the contract balance after "ownerTime".  
  *  *) IMPORTANT! If the contract balance is less (you eth*3) then you get only half of the balance.
  *  *) For 3x refund you must pay a fee 0.1 Eth.
 */

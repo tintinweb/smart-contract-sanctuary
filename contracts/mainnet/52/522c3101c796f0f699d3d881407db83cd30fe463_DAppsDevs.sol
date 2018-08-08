@@ -3,10 +3,10 @@ pragma solidity ^0.4.23;
 contract DAppsDevs {
     address public owner;
 
-    string public constant companyName = &quot;DApps Devs LLC&quot;;
-    string public constant companySite = &quot;dappsdevs.io, dappsdevs.com&quot;;
-    string public constant phoneNumber  = &quot;+1-302-481-9195&quot;;
-    string public constant email = &quot;info@dappsdevs.com&quot;;
+    string public constant companyName = "DApps Devs LLC";
+    string public constant companySite = "dappsdevs.io, dappsdevs.com";
+    string public constant phoneNumber  = "+1-302-481-9195";
+    string public constant email = "info@dappsdevs.com";
 
     mapping(bytes32 => string) public additionalInfo;
 

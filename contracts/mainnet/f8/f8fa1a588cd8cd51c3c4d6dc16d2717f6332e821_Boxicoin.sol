@@ -122,8 +122,8 @@ contract Approve is newToken, ERC20 {
 }
 
 contract Boxicoin is Approve, Ownable {
-  string public constant name = &quot;BOXIcoin&quot;;
-  string public constant symbol = &quot;BXc&quot;;
+  string public constant name = "BOXIcoin";
+  string public constant symbol = "BXc";
   uint public constant decimals = 2;
   uint256 public initialSupply;
     

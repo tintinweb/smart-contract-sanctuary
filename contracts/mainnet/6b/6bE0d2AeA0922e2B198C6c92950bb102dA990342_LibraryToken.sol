@@ -110,8 +110,8 @@ contract LibraryToken is ERC721 {
   /**
     * @notice Name and symbol of the non-fungible token, as defined in ERC721.
     */
-  string public constant NAME = &quot;CryptoLibraries&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;CL&quot;; // solhint-disable-line
+  string public constant NAME = "CryptoLibraries"; // solhint-disable-line
+  string public constant SYMBOL = "CL"; // solhint-disable-line
 
   /**
     * @dev Increase tiers to deterine how much price have to be changed

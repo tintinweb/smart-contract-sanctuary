@@ -118,7 +118,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -316,8 +316,8 @@ contract MintableToken is StandardToken, Ownable {
 // File: contracts/SilcToken.sol
 
 contract SilcToken is MintableToken, BurnableToken {
-	string public name = &quot;SILC&quot;;
-	string public symbol = &quot;SILC&quot;;
+	string public name = "SILC";
+	string public symbol = "SILC";
 	uint8 public decimals = 18;
 
 	function burn(address burner, uint256 _value) public onlyOwner {

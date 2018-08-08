@@ -141,8 +141,8 @@ contract BurnableToken is StandardToken, Ownable
 
 contract OSCoinToken is BurnableToken 
 {
-	string public constant name = &quot;OSCoin&quot;;   
-	string public constant symbol = &quot;OSC&quot;;    
+	string public constant name = "OSCoin";   
+	string public constant symbol = "OSC";    
 	uint32 public constant decimals = 18;
 
 	uint256 public INITIAL_SUPPLY = 2000000 * 1 ether;

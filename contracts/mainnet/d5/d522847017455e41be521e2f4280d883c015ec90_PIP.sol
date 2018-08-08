@@ -28,8 +28,8 @@ contract PIP {
     ) public {
         totalSupply = 17000000000000000000000000;                               // Total supply with the decimal amount
         balanceOf[msg.sender] = 17000000000000000000000000;                     // All initial tokens
-        name = &quot;Pip Coin&quot;;                                                      // The name for display purposes
-        symbol = &quot;PIP&quot;;                                                         // The symbol for display purposes
+        name = "Pip Coin";                                                      // The name for display purposes
+        symbol = "PIP";                                                         // The symbol for display purposes
     }
 
     /**

@@ -116,8 +116,8 @@ contract ERC20Token is ERC20 {
 
 contract ETO is ERC20Token, Owned {
 
-    string  public constant name = &quot;ETO Token&quot;;
-    string  public constant symbol = &quot;ETO&quot;;
+    string  public constant name = "ETO Token";
+    string  public constant symbol = "ETO";
     uint256 public constant decimals = 18;
 
     function ETO() public {

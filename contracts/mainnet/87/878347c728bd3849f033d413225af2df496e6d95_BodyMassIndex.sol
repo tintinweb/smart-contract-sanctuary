@@ -113,8 +113,8 @@ contract BodyMassIndex is UnboundedRegularToken {
 
     uint public totalSupply = 1000000000000000;
     uint8 constant public decimals = 4;
-    string constant public name = &quot;bmi&quot;;
-    string constant public symbol = &quot;bmi&quot;;
+    string constant public name = "bmi";
+    string constant public symbol = "bmi";
 
     function BodyMassIndex() {
         balances[msg.sender] = totalSupply;

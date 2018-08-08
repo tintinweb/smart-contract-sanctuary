@@ -116,8 +116,8 @@ contract GoodDayToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GoodDayToken() public {
-        symbol = &quot;GDY&quot;;
-        name = &quot;GoodDay Token&quot;;
+        symbol = "GDY";
+        name = "GoodDay Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 12 weeks;

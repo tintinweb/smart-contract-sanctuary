@@ -6,9 +6,9 @@ contract Medikia  {
 
  
 
-    string public name = &quot;Medikia&quot;;      //  (token name)
+    string public name = "Medikia";      //  (token name)
 
-    string public symbol = &quot;MDK&quot;;           //  (token symbol)
+    string public symbol = "MDK";           //  (token symbol)
 
     uint256 public decimals = 8;            //   (token digit)
 

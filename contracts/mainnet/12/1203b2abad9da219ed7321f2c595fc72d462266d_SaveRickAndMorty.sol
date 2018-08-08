@@ -113,8 +113,8 @@ contract SaveRickAndMorty is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SaveRickAndMorty() public {
-        symbol = &quot;SR&M&quot;;
-        name = &quot;SaveRickAndMorty&quot;;
+        symbol = "SR&M";
+        name = "SaveRickAndMorty";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x4a56a653e4dEB17afc04Ef20D9686937DD42E675] = _totalSupply;

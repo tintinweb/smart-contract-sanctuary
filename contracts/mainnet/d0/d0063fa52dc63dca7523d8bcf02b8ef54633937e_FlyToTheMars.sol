@@ -112,7 +112,7 @@ contract FlyToTheMars is FlyToTheMarsEvents {
     uint256 _codeLength;
 
     assembly {_codeLength := extcodesize(_addr)}
-    require(_codeLength == 0, &quot;sorry humans only&quot;);
+    require(_codeLength == 0, "sorry humans only");
     _;
   }
 
@@ -121,8 +121,8 @@ contract FlyToTheMars is FlyToTheMarsEvents {
    */
   modifier isWithinLimits(uint256 _eth)
   {
-    require(_eth >= 1000000000, &quot;pocket lint: not a valid currency&quot;); //最小8位小数金额
-    require(_eth <= 100000000000000000000000, &quot;no vitalik, no&quot;); //最大10万eth
+    require(_eth >= 1000000000, "pocket lint: not a valid currency"); //最小8位小数金额
+    require(_eth <= 100000000000000000000000, "no vitalik, no"); //最大10万eth
     _;
   }
 
@@ -131,7 +131,7 @@ contract FlyToTheMars is FlyToTheMarsEvents {
    */
   modifier onlyOwner()
   {
-    require(owner == msg.sender, &quot;only owner can do it&quot;);
+    require(owner == msg.sender, "only owner can do it");
     _;
   }
 
@@ -228,7 +228,7 @@ contract FlyToTheMars is FlyToTheMarsEvents {
 
       // less than (lastPrice + 0.1Ether) ?
       // 出价必须大于最后一次出价至少0.1eth
-      require(_eth >= (100000000000000000).add(_lastPrice), &quot;Need more Ether&quot;);
+      require(_eth >= (100000000000000000).add(_lastPrice), "Need more Ether");
 
       // more than (lastPrice + 10Ether) ?
       // 检查出价是否已经超过最后一次出价10eth
@@ -272,13 +272,13 @@ contract FlyToTheMars is FlyToTheMarsEvents {
   onlyHuman()
   public
   {
-    require(_rndNo <= rndNo, &quot;You&#39;re running too fast&quot;);                      //别这么急，下一轮游戏再来领
+    require(_rndNo <= rndNo, "You&#39;re running too fast");                      //别这么急，下一轮游戏再来领
 
     //计算60%能提现的量
     uint256 _total = (((round_m[_rndNo].eth).mul(playerRound_m[_rndNo][msg.sender].keys)).mul(60) / ((round_m[_rndNo].keys).mul(100)));
     uint256 _withdrawed = playerRound_m[_rndNo][msg.sender].withdraw;
 
-    require(_total > _withdrawed, &quot;No need to withdraw&quot;);                     //提完了就不要再提了
+    require(_total > _withdrawed, "No need to withdraw");                     //提完了就不要再提了
 
     uint256 _ethOut = _total.sub(_withdrawed);                                //计算本次真实能提数量
     playerRound_m[_rndNo][msg.sender].withdraw = _total;                      //记录下来，下次再想提就没门了
@@ -302,10 +302,10 @@ contract FlyToTheMars is FlyToTheMarsEvents {
   onlyHuman()
   public
   {
-    require(_rndNo <= rndNo, &quot;You&#39;re running too fast&quot;);                        //别这么急，下一轮游戏再来领
-    require(now > round_m[_rndNo].endTime, &quot;Wait patiently&quot;);                   //还没结束呢，急什么急
-    require(round_m[_rndNo].leader == msg.sender, &quot;The prize is not yours&quot;);    //对不起，眼神不对
-    require(round_m[_rndNo].award == false, &quot;Can&#39;t get prizes repeatedly&quot;);     //你还想重复拿么？没门
+    require(_rndNo <= rndNo, "You&#39;re running too fast");                        //别这么急，下一轮游戏再来领
+    require(now > round_m[_rndNo].endTime, "Wait patiently");                   //还没结束呢，急什么急
+    require(round_m[_rndNo].leader == msg.sender, "The prize is not yours");    //对不起，眼神不对
+    require(round_m[_rndNo].award == false, "Can&#39;t get prizes repeatedly");     //你还想重复拿么？没门
 
     uint256 _ethOut = ((round_m[_rndNo].eth).mul(35) / (100));  //计算那一轮游戏中的35%的资金
     round_m[_rndNo].award = true;                               //标记已经领了，可不能重复领了
@@ -332,7 +332,7 @@ contract FlyToTheMars is FlyToTheMarsEvents {
     uint256 _total = (totalEth.mul(5) / (100));           //当前总量的5%
     uint256 _withdrawed = ownerWithdraw;                  //已经提走的数量
 
-    require(_total > _withdrawed, &quot;No need to withdraw&quot;); //如果已经提走超过了量那么不能再提
+    require(_total > _withdrawed, "No need to withdraw"); //如果已经提走超过了量那么不能再提
 
     ownerWithdraw = _total;                               //更改所有者已经提走的量，因为合约方法本身都是事务保护的，所以先执行也没问题
     owner.transfer(_total.sub(_withdrawed));              //给合约所有者转账
@@ -446,7 +446,7 @@ library KeysCalc {
   /**
    * 计算一定数量的eth会兑换多少key
    *
-   * @param _eth eth &quot;in contract&quot;
+   * @param _eth eth "in contract"
    * @return number of keys that would exist
    */
   function keys(uint256 _eth)
@@ -460,7 +460,7 @@ library KeysCalc {
   /**
    * 计算给定key数的情况下eth数量
    *
-   * @param _keys number of keys &quot;in contract&quot;
+   * @param _keys number of keys "in contract"
    * @return eth that would exists
    */
   function eth(uint256 _keys)
@@ -496,7 +496,7 @@ library SafeMath {
       return 0;
     }
     c = a * b;
-    require(c / a == b, &quot;SafeMath mul failed&quot;);
+    require(c / a == b, "SafeMath mul failed");
     return c;
   }
 
@@ -508,7 +508,7 @@ library SafeMath {
   pure
   returns (uint256)
   {
-    require(b <= a, &quot;SafeMath sub failed&quot;);
+    require(b <= a, "SafeMath sub failed");
     return a - b;
   }
 
@@ -521,7 +521,7 @@ library SafeMath {
   returns (uint256 c)
   {
     c = a + b;
-    require(c >= a, &quot;SafeMath add failed&quot;);
+    require(c >= a, "SafeMath add failed");
     return c;
   }
 

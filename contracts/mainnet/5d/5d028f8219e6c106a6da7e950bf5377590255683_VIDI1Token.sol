@@ -62,7 +62,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -110,8 +110,8 @@ contract Ownable {
 contract VIDI1Token is Ownable, ERC20Basic {
   using SafeMath for uint256;
 
-  string public constant name     = &quot;Vidion private-round token&quot;;
-  string public constant symbol   = &quot;VIDI1&quot;;
+  string public constant name     = "Vidion private-round token";
+  string public constant symbol   = "VIDI1";
   uint8  public constant decimals = 18;
 
   bool public mintingFinished = false;

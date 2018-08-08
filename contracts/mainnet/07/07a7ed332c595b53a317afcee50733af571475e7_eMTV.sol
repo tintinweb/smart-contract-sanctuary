@@ -190,10 +190,10 @@ contract ERC20 is ERC20Basic {
 
 contract eMTV is BasicToken, BurnableToken, ERC20 {
 
-  string public constant name = &quot;eMTV: Multiversum ERC20 Token&quot;;
-  string public constant symbol = &quot;eMTV&quot;;
+  string public constant name = "eMTV: Multiversum ERC20 Token";
+  string public constant symbol = "eMTV";
   uint8 public constant decimals = 18;
-  string public constant version = &quot;1.0&quot;;
+  string public constant version = "1.0";
 
   uint256 constant INITIAL_SUPPLY_EMTV = 141000000;
 

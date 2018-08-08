@@ -72,7 +72,7 @@ contract admined{
 	}
 }
 
-contract MyToken is Token(&quot;TANT&quot;,&quot;Talent Token&quot;,18,50000000000000000000000000),ERC20,ERC223,admined
+contract MyToken is Token("TANT","Talent Token",18,50000000000000000000000000),ERC20,ERC223,admined
 {   
     uint256 public sellPrice;
     uint256 public buyPrice;

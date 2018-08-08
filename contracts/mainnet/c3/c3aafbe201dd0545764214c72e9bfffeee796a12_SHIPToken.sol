@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -294,10 +294,10 @@ library SafeMath {
 contract SHIPToken is StandardToken, BurnableToken, Ownable {
 
     // Constants
-    string  public constant name = &quot;SHIP Token&quot;;
-    string  public constant symbol = &quot;SHIP&quot;;
+    string  public constant name = "SHIP Token";
+    string  public constant symbol = "SHIP";
     uint8   public constant decimals = 18;
-    string  public constant website = &quot;https://shipowner.io&quot;; 
+    string  public constant website = "https://shipowner.io"; 
     uint256 public constant INITIAL_SUPPLY      =  1500000000 * (10 ** uint256(decimals));
     uint256 public constant CROWDSALE_ALLOWANCE =   825000000 * (10 ** uint256(decimals));
     uint256 public constant TEAM_ALLOWANCE      =   225000000 * (10 ** uint256(decimals));

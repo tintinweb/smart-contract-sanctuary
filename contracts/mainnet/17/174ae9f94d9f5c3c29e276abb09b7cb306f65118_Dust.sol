@@ -77,8 +77,8 @@ contract Ownable {
 contract Dust is Ownable {
     using SafeMath for uint;
 
-    string public name = &quot;Dust&quot;;
-    string public symbol = &quot;DST&quot;;
+    string public name = "Dust";
+    string public symbol = "DST";
     uint8 public decimals = 0;
 
     uint public totalSupply = 2000000000;

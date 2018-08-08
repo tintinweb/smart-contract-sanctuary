@@ -113,8 +113,8 @@ contract BitPropertyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitPropertyToken() public {
-        symbol = &quot;BPS&quot;;
-        name = &quot;BitProperty Token&quot;;
+        symbol = "BPS";
+        name = "BitProperty Token";
         decimals = 2;
         _totalSupply = 8000000000;
         balances[0x6CE0f5360982b6cd3c71764E9c2d5723cd3577ed] = _totalSupply;

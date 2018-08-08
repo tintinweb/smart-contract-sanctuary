@@ -136,7 +136,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -217,9 +217,9 @@ contract MintableToken is StandardToken, Ownable {
 // Token Contract
 contract GWTToken is MintableToken {
     
-    string public constant name = &quot;Global Wind Token&quot;;
+    string public constant name = "Global Wind Token";
     
-    string public constant symbol = &quot;GWT&quot;;
+    string public constant symbol = "GWT";
     
     uint32 public constant decimals = 18; 
 

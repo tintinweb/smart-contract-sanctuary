@@ -217,8 +217,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract SimpleSafeToken is StandardToken {
 
-  string public constant name = &quot;FTB ERC20 Standard Token&quot;; 
-  string public constant symbol = &quot;FTB&quot;; 
+  string public constant name = "FTB ERC20 Standard Token"; 
+  string public constant symbol = "FTB"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 150000000 * (10 ** uint256(decimals));

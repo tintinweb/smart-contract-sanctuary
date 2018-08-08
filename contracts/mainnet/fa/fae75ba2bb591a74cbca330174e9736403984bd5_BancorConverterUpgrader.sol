@@ -175,9 +175,9 @@ contract Owned is IOwned {
     Can be used in conjunction with the contract registry to get contract addresses
 */
 contract ContractIds {
-    bytes32 public constant BANCOR_NETWORK = &quot;BancorNetwork&quot;;
-    bytes32 public constant BANCOR_FORMULA = &quot;BancorFormula&quot;;
-    bytes32 public constant CONTRACT_FEATURES = &quot;ContractFeatures&quot;;
+    bytes32 public constant BANCOR_NETWORK = "BancorNetwork";
+    bytes32 public constant BANCOR_FORMULA = "BancorFormula";
+    bytes32 public constant CONTRACT_FEATURES = "ContractFeatures";
 }
 
 /**
@@ -249,7 +249,7 @@ contract BancorConverterUpgrader is Owned, ContractIds, FeatureIds {
     */
     function upgrade(IBancorConverterExtended _oldConverter, bytes32 _version) public {
         bool formerVersions = false;
-        if (_version == &quot;0.4&quot;)
+        if (_version == "0.4")
             formerVersions = true;
         acceptConverterOwnership(_oldConverter);
         IBancorConverterExtended newConverter = createConverter(_oldConverter);

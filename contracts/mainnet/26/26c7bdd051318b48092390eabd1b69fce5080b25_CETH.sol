@@ -58,8 +58,8 @@ contract CETH is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Claim Everything&quot;;
-    string public constant symbol = &quot;CETH&quot;;
+    string public constant name = "Claim Everything";
+    string public constant symbol = "CETH";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 500000000e18;

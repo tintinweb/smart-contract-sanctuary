@@ -100,8 +100,8 @@ contract ValueCyberToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ValueCyberToken() public {
-        symbol = &quot;VCT&quot;;
-        name = &quot;ValueCyberToken&quot;;
+        symbol = "VCT";
+        name = "ValueCyberToken";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x5f20Fc8e1Dd8F82899e413fEFA021Fb59ef24A8A] = _totalSupply;

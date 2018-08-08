@@ -6,7 +6,7 @@
 
 pragma solidity ^0.4.15;
 
-// import &quot;./Crowdsale.sol&quot;;
+// import "./Crowdsale.sol";
 /**
  * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net
  *
@@ -51,7 +51,7 @@ library SafeMath {
     return c;
   }
 }
-// import &quot;./Haltable.sol&quot;;
+// import "./Haltable.sol";
 /**
  * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net
  *
@@ -60,14 +60,14 @@ library SafeMath {
 
 // pragma solidity ^0.4.15;
 
-// import &quot;zeppelin-solidity/contracts/ownership/Ownable.sol&quot;;
+// import "zeppelin-solidity/contracts/ownership/Ownable.sol";
 // pragma solidity ^0.4.18;
 
 
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -145,7 +145,7 @@ contract Haltable is Ownable {
 
 }
 
-// import &quot;./PricingStrategy.sol&quot;;
+// import "./PricingStrategy.sol";
 /**
  * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net
  *
@@ -154,7 +154,7 @@ contract Haltable is Ownable {
 
 // pragma solidity ^0.4.15;
 
-// import &quot;zeppelin-solidity/contracts/ownership/Ownable.sol&quot;;
+// import "zeppelin-solidity/contracts/ownership/Ownable.sol";
 
 /**
  * Interface for defining crowdsale pricing.
@@ -197,7 +197,7 @@ contract PricingStrategy is Ownable {
   function calculatePrice(uint value, uint weiRaised, uint tokensSold, address msgSender, uint decimals) public constant returns (uint tokenAmount);
 }
 
-// import &quot;./FinalizeAgent.sol&quot;;
+// import "./FinalizeAgent.sol";
 /**
  * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net
  *
@@ -231,7 +231,7 @@ contract FinalizeAgent {
 
 }
 
-// import &quot;./FractionalERC20.sol&quot;;
+// import "./FractionalERC20.sol";
 /**
  * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net
  *
@@ -240,7 +240,7 @@ contract FinalizeAgent {
 
 // pragma solidity ^0.4.15;
 
-// import &quot;zeppelin-solidity/contracts/token/ERC20.sol&quot;;
+// import "zeppelin-solidity/contracts/token/ERC20.sol";
 // pragma solidity ^0.4.18;
 
 
@@ -877,7 +877,7 @@ contract Crowdsale is Haltable {
   function assignTokens(address receiver, uint tokenAmount) private;
 }
 
-// import &quot;./ReleasableToken.sol&quot;;
+// import "./ReleasableToken.sol";
 /**
  * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net
  *
@@ -886,8 +886,8 @@ contract Crowdsale is Haltable {
 
 // pragma solidity ^0.4.15;
 
-// import &quot;zeppelin-solidity/contracts/ownership/Ownable.sol&quot;;
-// import &quot;zeppelin-solidity/contracts/token/ERC20.sol&quot;;
+// import "zeppelin-solidity/contracts/ownership/Ownable.sol";
+// import "zeppelin-solidity/contracts/token/ERC20.sol";
 
 
 /**

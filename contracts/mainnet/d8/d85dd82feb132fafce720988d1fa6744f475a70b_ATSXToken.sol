@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract ATSXToken {
 
-    string public name = &quot;ATSX&quot;;      //  token name
-    string public symbol = &quot;ATSX&quot;;           //  token symbol
+    string public name = "ATSX";      //  token name
+    string public symbol = "ATSX";           //  token symbol
     uint256 public decimals = 18;            //  token digit
 
     mapping (address => uint256) public balanceOf;

@@ -88,9 +88,9 @@ contract Hellob is ERC20Interface, OwnerHelper
     
     function Hellob() public
     {
-        name = &quot;DANCLE&quot;;
+        name = "DANCLE";
         decimals = 18;
-        symbol = &quot;DNCL&quot;;
+        symbol = "DNCL";
         owner = msg.sender;
         
         totalSupply = 2000000000 * E18; // totalSupply

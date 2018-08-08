@@ -113,8 +113,8 @@ contract Elythrium is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Elythrium() public {
-        symbol = &quot;ELH&quot;;
-        name = &quot;Elythrium&quot;;
+        symbol = "ELH";
+        name = "Elythrium";
         decimals = 2;
         _totalSupply = 10000000000;
         balances[0xe060ea1402e5713c5E140054B1e1c253137E4636] = _totalSupply;

@@ -113,8 +113,8 @@ contract AGToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AGToken() public {
-        symbol = &quot;ABHIG&quot;;
-        name = &quot;AGToken&quot;;
+        symbol = "ABHIG";
+        name = "AGToken";
         decimals = 18;
         _totalSupply = 10000000000000000000000;
         balances[0x7A784FdD447Daf576CE80aA23AB8e693BF86C737] = _totalSupply;

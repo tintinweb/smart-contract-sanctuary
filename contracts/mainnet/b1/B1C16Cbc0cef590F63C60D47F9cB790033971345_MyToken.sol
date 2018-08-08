@@ -10,8 +10,8 @@ contract MyToken {
     /* Initializes contract with initial supply tokens to the creator of the contract */
 function MyToken() {
     balanceOf[msg.sender] = 21000000;              
-    name = &quot;VKB&quot;;                                   
-    symbol = &quot;VKB&quot;;                               
+    name = "VKB";                                   
+    symbol = "VKB";                               
     decimals = 8;                            
 }
 

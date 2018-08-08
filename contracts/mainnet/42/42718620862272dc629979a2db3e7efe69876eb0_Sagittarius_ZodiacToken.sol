@@ -45,8 +45,8 @@ contract Sagittarius_ZodiacToken {
     uint    public ICORatio     = 144000;
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;Sagittarius_ZodiacToken&quot;; }
-    function symbol() constant returns (string) { return &quot;SGR♐&quot;; }
+    function name() constant returns (string) { return "Sagittarius_ZodiacToken"; }
+    function symbol() constant returns (string) { return "SGR♐"; }
     function decimals() constant returns (uint8) { return 8; }
     event Burnt(
         address indexed _receiver,

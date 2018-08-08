@@ -34,8 +34,8 @@ contract Dogetoken {
     uint256 public totalSupply = 0;
 
     // Name of the Token
-    function name() constant returns (string) { return &quot;Dogetoken&quot;; }
-    function symbol() constant returns (string) { return &quot;DGT&quot;; }
+    function name() constant returns (string) { return "Dogetoken"; }
+    function symbol() constant returns (string) { return "DGT"; }
     function decimals() constant returns (uint8) { return 18; }
 
     // Return the balance of a specific address.

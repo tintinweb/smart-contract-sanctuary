@@ -11,11 +11,11 @@ contract VilijavisShares {
     address owner = msg.sender;
 
     function name() constant returns (string) { 
-        return &quot;Vilijavis Shares&quot;;
+        return "Vilijavis Shares";
     }
     
     function symbol() constant returns (string) { 
-        return &quot;VLJ&quot;;
+        return "VLJ";
     }
     
     function decimals() constant returns (uint8) {

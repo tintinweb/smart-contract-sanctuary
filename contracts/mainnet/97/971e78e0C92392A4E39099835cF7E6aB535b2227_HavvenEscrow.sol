@@ -692,7 +692,7 @@ contract Court is Owned, SafeDecimalMath {
         uint fractionInFavour = safeDiv_dec(yeas, totalVotes);
 
         // We require the result to be strictly greater than the requirement
-        // to enforce a majority being &quot;50% + 1&quot;, and so on.
+        // to enforce a majority being "50% + 1", and so on.
         return participation > requiredParticipation &&
                fractionInFavour > requiredMajority;
     }
@@ -1278,7 +1278,7 @@ contract EtherNomin is ExternStateProxyFeeToken {
                         address _beneficiary,
                         uint initialEtherPrice,
                         address _owner, TokenState initialState)
-        ExternStateProxyFeeToken(&quot;Ether-Backed USD Nomins&quot;, &quot;eUSD&quot;,
+        ExternStateProxyFeeToken("Ether-Backed USD Nomins", "eUSD",
                                  15 * UNIT / 10000, // nomin transfers incur a 15 bp fee
                                  _havven, // the havven contract is the fee authority
                                  initialState,
@@ -2442,7 +2442,7 @@ contract Havven is ExternStateProxyToken, SelfDestructible {
     /* ========== CONSTRUCTOR ========== */
 
     function Havven(TokenState initialState, address _owner)
-        ExternStateProxyToken(&quot;Havven&quot;, &quot;HAV&quot;, 1e8 * UNIT, address(this), initialState, _owner)
+        ExternStateProxyToken("Havven", "HAV", 1e8 * UNIT, address(this), initialState, _owner)
         SelfDestructible(_owner, _owner)
         // Owned is initialised in ExternStateProxyToken
         public
@@ -2495,7 +2495,7 @@ contract Havven is ExternStateProxyToken, SelfDestructible {
         returns (bool)
     {
 
-        // Use &quot;this&quot; in order that the havven account is the sender.
+        // Use "this" in order that the havven account is the sender.
         // That this is an explicit transfer also initialises fee entitlement information.
         return _transfer(this, account, value);
     }
@@ -2851,7 +2851,7 @@ MIT License
 Copyright (c) 2018 Havven
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
+of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -2860,7 +2860,7 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER

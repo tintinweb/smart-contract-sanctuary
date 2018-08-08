@@ -16,9 +16,9 @@ contract ETG {
     function ETG() {
 
          initialSupply = 5000000;
-         name =&quot;Electroneum Gold&quot;;
+         name ="Electroneum Gold";
         decimals = 8;
-         symbol = &quot;ETG&quot;;
+         symbol = "ETG";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

@@ -109,8 +109,8 @@ contract DRONECOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DRONECOIN() public {
-        symbol = &quot;DRN&quot;;
-        name = &quot;DRONECOIN&quot;;
+        symbol = "DRN";
+        name = "DRONECOIN";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xE7949D06528F14BEC16feA70FFF0f653262a8881] = _totalSupply;

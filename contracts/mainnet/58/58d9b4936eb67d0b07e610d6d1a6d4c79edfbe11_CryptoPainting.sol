@@ -243,11 +243,11 @@ contract CryptoPainting is ERC721{
   /* ERC721 */
 
   function name() public view returns (string name) {
-    return &quot;Cryptopainting.top&quot;;
+    return "Cryptopainting.top";
   }
 
   function symbol() public view returns (string symbol) {
-    return &quot;CTP&quot;;
+    return "CTP";
   }
 
   function totalSupply() public view returns (uint256 _totalSupply) {

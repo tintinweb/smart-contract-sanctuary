@@ -258,13 +258,13 @@ contract iGniter is SafeMath {
 
     function name() constant returns (string _name)
     {
-        name = &quot;iGniter&quot;;
+        name = "iGniter";
         return name;
     }
 
     function symbol() constant returns (bytes32 _symbol)
     {
-        symbol = &quot;INR&quot;;
+        symbol = "INR";
         return symbol;
     }
 

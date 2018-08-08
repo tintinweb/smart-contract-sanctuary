@@ -169,14 +169,14 @@ contract Token is ERC20, Lockable
 
     //------ TOKEN SPECIFICATION
 
-    string public constant      name     = &quot;TESTGVINE1&quot;;
-    string public constant      symbol   = &quot;TESTGVINE1&quot;;
+    string public constant      name     = "TESTGVINE1";
+    string public constant      symbol   = "TESTGVINE1";
 
     uint256 public constant     decimals = 18;      // Handle the coin as FIAT (2 decimals). ETH Handles 18 decimal places
 
     uint256 public constant     initSupply = 825000000 * 10**decimals;        // 10**18 max
 
-    string private constant     supplyReserveMode=&quot;percent&quot;;        // &quot;quantity&quot; or &quot;percent&quot;
+    string private constant     supplyReserveMode="percent";        // "quantity" or "percent"
     uint256 public constant     supplyReserveVal = 58;          // if quantity => (val * 10**decimals)   if percent => val;
 
     uint256 public              icoSalesSupply   = 0;                   // Needed when burning tokens
@@ -215,11 +215,11 @@ contract Token is ERC20, Lockable
 
         icoSalesSupply = totalSupply;   
 
-        if (StringLib.same(supplyReserveMode, &quot;quantity&quot;))
+        if (StringLib.same(supplyReserveMode, "quantity"))
         {
             icoSalesSupply = totalSupply.sub(supplyReserveVal);
         }
-        else if (StringLib.same(supplyReserveMode, &quot;percent&quot;))
+        else if (StringLib.same(supplyReserveMode, "percent"))
         {
             icoSalesSupply = totalSupply.mul(supplyReserveVal).div(100);
         }

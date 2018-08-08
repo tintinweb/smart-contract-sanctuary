@@ -48,8 +48,8 @@ library SafeMath {
 contract Healthureum is ERC20
 {
     using SafeMath for uint256;
-   string public constant symbol = &quot;HHEM&quot;;
-     string public constant name = &quot;Healthureum&quot;;
+   string public constant symbol = "HHEM";
+     string public constant name = "Healthureum";
      uint public constant decimals = 18;
      uint256 _totalSupply = 150000000 * 10 ** 18; // 150 Million Total Supply including 18 decimal
      
@@ -104,7 +104,7 @@ contract Healthureum is ERC20
          
     // Send _value amount of tokens from address _from to address _to
      // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-     // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+     // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
      // fees in sub-currencies; the command should fail unless the _from account has
      // deliberately authorized the sender of the message via some mechanism; we propose
      // these standardized APIs for approval:

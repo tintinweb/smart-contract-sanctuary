@@ -2,8 +2,8 @@ pragma solidity ^0.4.13;
 
 contract MyToken {
     
-    string public name = &quot;MyToken&quot;;
-    string public symbol = &quot;MY&quot;;
+    string public name = "MyToken";
+    string public symbol = "MY";
     uint8 public deicmals = 18;
     
     /* This creates an array with all balances */

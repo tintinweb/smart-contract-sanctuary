@@ -102,8 +102,8 @@ contract FEELCOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FEELCOIN() public {
-        symbol = &quot;FEEL&quot;;
-        name = &quot;FEELCOIN&quot;;
+        symbol = "FEEL";
+        name = "FEELCOIN";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xAD19FaF937Ca10b63bC059C0b2EF855a54151647] = _totalSupply;

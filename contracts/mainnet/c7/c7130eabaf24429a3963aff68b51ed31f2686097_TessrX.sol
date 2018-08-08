@@ -108,8 +108,8 @@ contract TessrX is ERC20Interface, Owned, SafeMath {
 // --- Constructor
 // ------------------------------------------------------------------------
     function TessrX() public {
-        symbol = &quot;TSRX&quot;;
-        name = &quot;TessrX&quot;;
+        symbol = "TSRX";
+        name = "TessrX";
         decimals = 18;
         _totalSupply = 400000000000000000000000000;
         startDate = now;

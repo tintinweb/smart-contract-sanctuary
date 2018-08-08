@@ -57,8 +57,8 @@ contract SDToken is StandardToken {
 
     uint8 constant public decimals = 18;
     uint public totalSupply = 2*(10**9)*(10**18);
-    string constant public name = &quot;SixDomainToken&quot;;
-    string constant public symbol = &quot;SDT&quot;;
+    string constant public name = "SixDomainToken";
+    string constant public symbol = "SDT";
 
     function SDToken() {
         balances[msg.sender] = totalSupply;

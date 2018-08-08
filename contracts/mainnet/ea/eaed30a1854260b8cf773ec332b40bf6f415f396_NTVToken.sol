@@ -33,7 +33,7 @@ library Base {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -265,7 +265,7 @@ library StringUtils {
  */
 contract NTVUToken is BasicToken, Ownable, Auction {
     string public name;
-    string public symbol = &quot;FOT&quot;;
+    string public symbol = "FOT";
 
     uint8 public number = 0;
     uint8 public decimals = 0;
@@ -316,7 +316,7 @@ contract NTVUToken is BasicToken, Ownable, Auction {
         number = _number;
 
         if (_number + 1 < 10) {
-            symbol = StringUtils.concat(symbol, StringUtils.concat(&quot;0&quot;, StringUtils.uintToString(_number + 1)));
+            symbol = StringUtils.concat(symbol, StringUtils.concat("0", StringUtils.uintToString(_number + 1)));
         } else {
             symbol = StringUtils.concat(symbol, StringUtils.uintToString(_number + 1));
         }
@@ -544,7 +544,7 @@ contract NTVToken is Ownable {
     uint8 public totalTimeRange; // 当前已经释放的总的时段数
     mapping(uint => address) internal timeRanges; // 每个时段的合约地址，编号从0开始
 
-    string public defaultText = &quot;浪花有意千里雪，桃花无言一队春。&quot;; // 忘记审核使用的默认文本
+    string public defaultText = "浪花有意千里雪，桃花无言一队春。"; // 忘记审核使用的默认文本
 
     mapping(uint8 => Base.NTVUConfig) internal dayConfigs; // 每天时段配置
     mapping(uint8 => Base.NTVUConfig) internal specialConfigs; // 特殊时段配置
@@ -740,7 +740,7 @@ contract NTVToken is Ownable {
             var (b1, b2, b3, len) = ntvuToken.getShowTextBytes96();
             return StringUtils.fromBytes96(b1, b2, b3, len);
         } else {
-            return &quot;&quot;; // 当前不是播放时段，返回空文本
+            return ""; // 当前不是播放时段，返回空文本
         }
     }
 

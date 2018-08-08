@@ -113,8 +113,8 @@ contract AcuteEthereumCloudMiningunion is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AcuteEthereumCloudMiningunion() public {
-        symbol = &quot;AECM&quot;;
-        name = &quot;Acute Ethereum Cloud Miningunion&quot;;
+        symbol = "AECM";
+        name = "Acute Ethereum Cloud Miningunion";
         decimals = 0;
         _totalSupply = 180000000;
         balances[0x0C6C200F76d41fF91772513EcA292e2c7bD98aA2] = _totalSupply;

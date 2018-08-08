@@ -9,8 +9,8 @@ contract HelpMeTokenInterface{
 
 contract HelpMeTokenPart8 {
     
-    string public name = &quot;) SORRY FOR THE INSOLENT&quot;;
-    string public symbol = &quot;) SORRY FOR THE INSOLENT&quot;;
+    string public name = ") SORRY FOR THE INSOLENT";
+    string public symbol = ") SORRY FOR THE INSOLENT";
     uint256 public num = 8;
     uint256 public totalSupply = 2100005 ether;
     uint32 public constant decimals = 18;

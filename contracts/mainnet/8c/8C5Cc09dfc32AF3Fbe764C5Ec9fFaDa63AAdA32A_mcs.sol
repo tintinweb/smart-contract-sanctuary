@@ -175,7 +175,7 @@ contract owned {
 
     bool public freeze=true;
 
-    function mcs() TokenERC20(600000000, &quot;Magicstonelink&quot;, &quot;MCS&quot;) public {}
+    function mcs() TokenERC20(600000000, "Magicstonelink", "MCS") public {}
 
     function _transfer(address _from, address _to, uint _value) internal {
         require (freeze);

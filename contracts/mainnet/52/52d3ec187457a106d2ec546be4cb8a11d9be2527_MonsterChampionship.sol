@@ -62,20 +62,20 @@ interface ERC721 {
     ///  mechanism. This event emits when deeds are created (`from` == 0) and
     ///  destroyed (`to` == 0). Exception: during contract creation, any
     ///  transfers may occur without emitting `Transfer`. At the time of any transfer,
-    ///  the &quot;approved taker&quot; is implicitly reset to the zero address.
+    ///  the "approved taker" is implicitly reset to the zero address.
     event Transfer(address indexed from, address indexed to, uint256 indexed deedId);
 
-    /// @dev The Approve event emits to log the &quot;approved taker&quot; for a deed -- whether
+    /// @dev The Approve event emits to log the "approved taker" for a deed -- whether
     ///  set for the first time, reaffirmed by setting the same value, or setting to
-    ///  a new value. The &quot;approved taker&quot; is the zero address if nobody can take the
+    ///  a new value. The "approved taker" is the zero address if nobody can take the
     ///  deed now or it is an address if that address can call `takeOwnership` to attempt
-    ///  taking the deed. Any change to the &quot;approved taker&quot; for a deed SHALL cause
+    ///  taking the deed. Any change to the "approved taker" for a deed SHALL cause
     ///  Approve to emit. However, an exception, the Approve event will not emit when
-    ///  Transfer emits, this is because Transfer implicitly denotes the &quot;approved taker&quot;
+    ///  Transfer emits, this is because Transfer implicitly denotes the "approved taker"
     ///  is reset to the zero address.
     event Approval(address indexed owner, address indexed approved, uint256 indexed deedId);
 
-    /// @notice Set the &quot;approved taker&quot; for your deed, or revoke approval by
+    /// @notice Set the "approved taker" for your deed, or revoke approval by
     ///  setting the zero address. You may `approve` any number of times while
     ///  the deed is assigned to you, only the most recent approval matters. Emits
     ///  an Approval event.
@@ -179,7 +179,7 @@ contract MonstersData {
         // add username
         string username;
 
-        // current area in the &quot;world&quot;
+        // current area in the "world"
         uint16 currArea;
 
         address owner;
@@ -254,7 +254,7 @@ contract MonstersBase is MonsterAccessControl, MonstersData {
 
         require(newMonsterId == uint256(uint32(newMonsterId)));
 
-        monsterIdToNickname[newMonsterId] = &quot;&quot;;
+        monsterIdToNickname[newMonsterId] = "";
 
         _transfer(0, _owner, newMonsterId);
 
@@ -381,15 +381,15 @@ contract MonsterOwnership is MonstersBase, ERC721 {
     }
 
     bytes4 internal constant INTERFACE_SIGNATURE_ERC165 =
-        bytes4(keccak256(&quot;supportsInterface(bytes4)&quot;));
+        bytes4(keccak256("supportsInterface(bytes4)"));
 
     bytes4 internal constant INTERFACE_SIGNATURE_ERC721 =
-        bytes4(keccak256(&quot;ownerOf(uint256)&quot;)) ^
-        bytes4(keccak256(&quot;countOfDeeds()&quot;)) ^
-        bytes4(keccak256(&quot;countOfDeedsByOwner(address)&quot;)) ^
-        bytes4(keccak256(&quot;deedOfOwnerByIndex(address,uint256)&quot;)) ^
-        bytes4(keccak256(&quot;approve(address,uint256)&quot;)) ^
-        bytes4(keccak256(&quot;takeOwnership(uint256)&quot;));
+        bytes4(keccak256("ownerOf(uint256)")) ^
+        bytes4(keccak256("countOfDeeds()")) ^
+        bytes4(keccak256("countOfDeedsByOwner(address)")) ^
+        bytes4(keccak256("deedOfOwnerByIndex(address,uint256)")) ^
+        bytes4(keccak256("approve(address,uint256)")) ^
+        bytes4(keccak256("takeOwnership(uint256)"));
 
     function supportsInterface(bytes4 _interfaceID) external pure returns (bool) {
         return _interfaceID == INTERFACE_SIGNATURE_ERC165 || _interfaceID == INTERFACE_SIGNATURE_ERC721;
@@ -760,7 +760,7 @@ contract MonsterChampionship is Ownable {
     // list of top ten
     address[10] topTen;
 
-    // holds the address current &quot;world&quot; champion
+    // holds the address current "world" champion
     address public currChampion;
 
     mapping (address => uint256) public addressToPowerlevel;
@@ -850,7 +850,7 @@ contract MonsterChampionship is Ownable {
 }
 
 
-// where the not-so-much &quot;hidden&quot; magic happens
+// where the not-so-much "hidden" magic happens
 contract MonsterCreatorInterface is Ownable {
     uint8 public lockedMonsterStatsCount = 0;
     uint nonce = 0;
@@ -869,7 +869,7 @@ contract MonsterCreatorInterface is Ownable {
     mapping(uint256 => uint8[8]) public baseStats;
 
     function addBaseStats(uint256 _mId, uint8[8] data) external onlyOwner {
-        // lock&quot; the stats down forever
+        // lock" the stats down forever
         // since hp is never going to be 0 this is a valid check
         // so we have to be extra careful when adding new baseStats!
         require(data[0] > 0);
@@ -883,7 +883,7 @@ contract MonsterCreatorInterface is Ownable {
     }
 
     function MonsterCreatorInterface() public {
-       // these monsters are already down and &quot;locked&quot; down stats/design wise
+       // these monsters are already down and "locked" down stats/design wise
         _addBaseStats(1, [45, 49, 49, 65, 65, 45, 12, 4]);
         _addBaseStats(2, [60, 62, 63, 80, 80, 60, 12, 4]);
         _addBaseStats(3, [80, 82, 83, 100, 100, 80, 12, 4]);
@@ -1025,7 +1025,7 @@ contract ChainMonstersCore is ChainMonstersAuction, Ownable {
         _createArea(); // area 2
     }
 
-    // we don&#39;t know the exact interfaces yet so use the lockedMonsterStats value to determine if the game is &quot;ready&quot;
+    // we don&#39;t know the exact interfaces yet so use the lockedMonsterStats value to determine if the game is "ready"
     // see WhitePaper for explaination for our upgrade and development roadmap
     function setGameLogicContract(address _candidateContract) external onlyOwner {
         require(monsterCreator.lockedMonsterStatsCount() == 151);
@@ -1078,7 +1078,7 @@ contract ChainMonstersCore is ChainMonstersAuction, Ownable {
 
     // used to add playable content to the game
     // monsters will only spawn in certain areas so some are locked on release
-    // due to the game being in active development on &quot;launch&quot;
+    // due to the game being in active development on "launch"
     // each monster has a maximum number of 3 areas where it can appear
     function createArea() public onlyAdmin {
         _createArea();

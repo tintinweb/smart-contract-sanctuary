@@ -114,8 +114,8 @@ contract CoinViewToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CoinViewToken() public {
-        symbol = &quot;CVT&quot;;
-        name = &quot;CoinView Token&quot;;
+        symbol = "CVT";
+        name = "CoinView Token";
         decimals = 18;
         _totalSupply = 200000000000000000000000000;
         balances[0x37efd6a702e171218380cf6b1f898a07632a7d60] = _totalSupply;

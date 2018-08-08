@@ -254,7 +254,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -528,8 +528,8 @@ contract GreengoldBlockchainToken is PausableToken, MintableToken, BurnableToken
      */
     constructor() public {
         // Init contract variables
-        name = &quot;Greengold Blockchain&quot;;
-        symbol = &quot;GGBC&quot;;
+        name = "Greengold Blockchain";
+        symbol = "GGBC";
         decimals = 18;
         // 1 ether equal 10^18(decimals)
         totalSupply_ = 200 * 10000 * 10000 * 1 ether;

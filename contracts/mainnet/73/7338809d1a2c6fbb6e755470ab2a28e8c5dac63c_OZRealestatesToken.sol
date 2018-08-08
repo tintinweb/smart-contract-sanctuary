@@ -30,8 +30,8 @@ pragma solidity ^0.4.13;
 contract OZRealestatesTokenConfig
 {
     // ERC20 trade name and symbol
-    string public           name            = &quot;OZRealestates&quot;;
-    string public           symbol          = &quot;OZR&quot;;
+    string public           name            = "OZRealestates";
+    string public           symbol          = "OZR";
 
     // Owner has power to abort, discount addresses, sweep successful funds,
     // change owner, sweep alien tokens.

@@ -72,8 +72,8 @@ contract FortaToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Forta Token&quot;;
-    string public constant symbol = &quot;FRT&quot;;
+    string public constant name = "Forta Token";
+    string public constant symbol = "FRT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 12000000000e8;

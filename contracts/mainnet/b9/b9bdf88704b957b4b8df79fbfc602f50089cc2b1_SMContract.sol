@@ -16,8 +16,8 @@ contract SMContract {
     uint256 constant public price = 100;
     uint256 constant public maxAmount = 1000000000000000000000;
 
-    function name() constant returns (string) { return &quot;Surprise Motherfucker&quot;; }
-    function symbol() constant returns (string) { return &quot;SM&quot;; }
+    function name() constant returns (string) { return "Surprise Motherfucker"; }
+    function symbol() constant returns (string) { return "SM"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -119,8 +119,8 @@ contract GlobalSharingEconomyCoin is Pausable, ERC20 {
   mapping (address => mapping (address => uint256)) internal allowed;
 
   constructor() public {
-    name = &quot;GlobalSharingEconomyCoin&quot;;
-    symbol = &quot;GSE&quot;;
+    name = "GlobalSharingEconomyCoin";
+    symbol = "GSE";
     decimals = 8;
     totalSupply = 10000000000 * 10 ** uint256(decimals);
     balances[msg.sender] = totalSupply;

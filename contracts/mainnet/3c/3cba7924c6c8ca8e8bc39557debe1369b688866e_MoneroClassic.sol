@@ -27,8 +27,8 @@ contract MoneroClassic {
     ) public {
         totalSupply = 60000000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;               
-        name = &quot;Monero Classic&quot;;                                  
-        symbol = &quot;XMRC&quot;;                             
+        name = "Monero Classic";                                  
+        symbol = "XMRC";                             
     }
 
     /**

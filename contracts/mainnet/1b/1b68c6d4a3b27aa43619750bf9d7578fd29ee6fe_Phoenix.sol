@@ -82,10 +82,10 @@ contract StandardToken is Token {
 contract Phoenix is StandardToken, SafeMath {
 
     // metadata
-    string public constant name = &quot;Phoenix&quot;;
-    string public constant symbol = &quot;PHX&quot;;
+    string public constant name = "Phoenix";
+    string public constant symbol = "PHX";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     // contracts
     address public ethFundDeposit;      // deposit address for ETH for Phoenix

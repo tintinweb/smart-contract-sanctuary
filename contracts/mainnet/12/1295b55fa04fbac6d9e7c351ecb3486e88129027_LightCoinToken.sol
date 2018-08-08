@@ -304,7 +304,7 @@ contract BaseERC20 {
    * @title Ownable 
    * @dev The Ownable contract has an owner address, and provides basic authorization control 
    * functions, this simplifies the implementation of 
-   &quot;user permissions&quot;. 
+   "user permissions". 
 */ 
 
 contract Ownable { 
@@ -406,8 +406,8 @@ contract LightCoinToken is BaseERC20, BaseSafeMath, Pausable {
 		owner = 0x55ae8974743DB03761356D703A9cfc0F24045ebb;
 		lockOwner = 0x07d4C8CC52BB7c4AB46A1A65DCEEdC1ab29aBDd6;
 		startTime = 1515686400;
-        name = &quot;Lightcoin&quot;;
-        symbol = &quot;Light&quot;;
+        name = "Lightcoin";
+        symbol = "Light";
         decimals = 8;
         ///totalSupply = 21000000000000000000;
         totalSupply = 2.1e19;

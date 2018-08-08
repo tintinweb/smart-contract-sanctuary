@@ -203,8 +203,8 @@ contract RxEALTokenContract is StandardToken {
   /* ********** Token Predefined Information ********** */
 
   // Predefine token info
-  string public constant name = &quot;RxEAL&quot;;
-  string public constant symbol = &quot;RXL&quot;;
+  string public constant name = "RxEAL";
+  string public constant symbol = "RXL";
   uint256 public constant decimals = 18;
 
   /* ********** Defined Variables ********** */

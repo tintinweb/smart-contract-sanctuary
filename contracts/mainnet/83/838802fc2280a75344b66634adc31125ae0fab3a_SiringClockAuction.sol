@@ -339,20 +339,20 @@ contract DogBase is DogAccessControl {
 
 contract DogOwnership is DogBase, ERC721 {
 
-    string public constant name = &quot;HelloDog&quot;;
-    string public constant symbol = &quot;HD&quot;;
+    string public constant name = "HelloDog";
+    string public constant symbol = "HD";
 
-    bytes4 constant InterfaceSignature_ERC165 = bytes4(keccak256(&quot;supportsInterface(bytes4)&quot;));
+    bytes4 constant InterfaceSignature_ERC165 = bytes4(keccak256("supportsInterface(bytes4)"));
 
     bytes4 constant InterfaceSignature_ERC721 =
-        bytes4(keccak256(&quot;name()&quot;)) ^
-        bytes4(keccak256(&quot;symbol()&quot;)) ^
-        bytes4(keccak256(&quot;totalSupply()&quot;)) ^
-        bytes4(keccak256(&quot;balanceOf(address)&quot;)) ^
-        bytes4(keccak256(&quot;ownerOf(uint256)&quot;)) ^
-        bytes4(keccak256(&quot;approve(address,uint256)&quot;)) ^
-        bytes4(keccak256(&quot;transfer(address,uint256)&quot;)) ^
-    bytes4(keccak256(&quot;transferFrom(address,address,uint256)&quot;));
+        bytes4(keccak256("name()")) ^
+        bytes4(keccak256("symbol()")) ^
+        bytes4(keccak256("totalSupply()")) ^
+        bytes4(keccak256("balanceOf(address)")) ^
+        bytes4(keccak256("ownerOf(uint256)")) ^
+        bytes4(keccak256("approve(address,uint256)")) ^
+        bytes4(keccak256("transfer(address,uint256)")) ^
+    bytes4(keccak256("transferFrom(address,address,uint256)"));
 
     function supportsInterface(bytes4 _interfaceID) external view returns (bool)
     {
@@ -881,14 +881,14 @@ contract Pausable is Ownable {
 contract ClockAuction is Pausable, ClockAuctionBase {
 
     bytes4 constant InterfaceSignature_ERC721 =
-        bytes4(keccak256(&quot;name()&quot;)) ^
-        bytes4(keccak256(&quot;symbol()&quot;)) ^
-        bytes4(keccak256(&quot;totalSupply()&quot;)) ^
-        bytes4(keccak256(&quot;balanceOf(address)&quot;)) ^
-        bytes4(keccak256(&quot;ownerOf(uint256)&quot;)) ^
-        bytes4(keccak256(&quot;approve(address,uint256)&quot;)) ^
-        bytes4(keccak256(&quot;transfer(address,uint256)&quot;)) ^
-    bytes4(keccak256(&quot;transferFrom(address,address,uint256)&quot;));
+        bytes4(keccak256("name()")) ^
+        bytes4(keccak256("symbol()")) ^
+        bytes4(keccak256("totalSupply()")) ^
+        bytes4(keccak256("balanceOf(address)")) ^
+        bytes4(keccak256("ownerOf(uint256)")) ^
+        bytes4(keccak256("approve(address,uint256)")) ^
+        bytes4(keccak256("transfer(address,uint256)")) ^
+    bytes4(keccak256("transferFrom(address,address,uint256)"));
 
     function ClockAuction(address _nftAddress, uint256 _cut) public {
         require(_cut <= 10000);

@@ -113,8 +113,8 @@ contract PingPaid is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PingPaid() public {
-        symbol = &quot;PPD&quot;;
-        name = &quot;PingPaid&quot;;
+        symbol = "PPD";
+        name = "PingPaid";
         decimals = 18;
         _totalSupply = 75000000000000000000000000;
         balances[0x524e04cf512C44D4aFc49739db174128Cc4AaecD] = _totalSupply;

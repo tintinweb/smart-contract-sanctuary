@@ -20,9 +20,9 @@ contract ASSC{
     function ASSC() public {
         balances[msg.sender] = 1000000000000;               // Give the creator all initial tokens
         totalSupply = 1000000000000;                        // Update total supply
-        name = &quot;assetchain&quot;;                                   // Set the name for display purposes
+        name = "assetchain";                                   // Set the name for display purposes
         decimals =4;                            // Amount of decimals for display purposes
-        symbol = &quot;ASSC&quot;;                               // Set the symbol for display purposes
+        symbol = "ASSC";                               // Set the symbol for display purposes
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

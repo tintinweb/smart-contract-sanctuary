@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract KaliToken {
     // Public variables of the token
-    string public name = &quot;KALI TOKEN&quot;;
-    string public symbol = &quot;KAL&quot;;
+    string public name = "KALI TOKEN";
+    string public symbol = "KAL";
     uint8 public decimals = 0;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

@@ -212,11 +212,11 @@ contract DecenterHackathon {
     // Public function that returns user type for the given address
     function getUserType(address _address) constant returns (string) {
         if(_address == administrator) {
-            return &quot;administrator&quot;;
+            return "administrator";
         } else if(bytes(juryMembers[_address].name).length > 0) {
-            return &quot;jury&quot;;
+            return "jury";
         } else {
-            return &quot;other&quot;;
+            return "other";
         }
     }
 

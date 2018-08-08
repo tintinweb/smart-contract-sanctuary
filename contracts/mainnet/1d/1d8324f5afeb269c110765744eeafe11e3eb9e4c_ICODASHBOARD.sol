@@ -216,8 +216,8 @@ contract ICODASHBOARD is StandardToken {
   uint8 public decimals;
 
   constructor (address _address) public {
-    name = &quot;ICO DASHBOARD&quot;;
-    symbol = &quot;ICODASH&quot;;
+    name = "ICO DASHBOARD";
+    symbol = "ICODASH";
     decimals = 18;
     totalSupply_ = 100000000000000000000000000;
     balances[_address] = totalSupply_;

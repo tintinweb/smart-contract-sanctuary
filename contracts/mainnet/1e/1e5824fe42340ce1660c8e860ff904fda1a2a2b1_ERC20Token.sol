@@ -183,9 +183,9 @@ contract ERC20Token is ERC20Interface, Owned {
 
     function ERC20Token() public {
 
-        symbol = &quot;DBD&quot;;
+        symbol = "DBD";
 
-        name = &quot;Dubai Exchange Dollar&quot;;
+        name = "Dubai Exchange Dollar";
 
         decimals = 18;
 

@@ -76,8 +76,8 @@ contract CBITToken is Ownable, ERC20 {
     using SafeMath for uint256;
 
     // Token properties
-    string public name = &quot;CAMBITUS&quot;;
-    string public symbol = &quot;CBIT&quot;;
+    string public name = "CAMBITUS";
+    string public symbol = "CBIT";
     uint256 public decimals = 18;
 
     uint256 public _totalSupply = 250000000e18;

@@ -109,8 +109,8 @@ contract DigiberyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DigiberyToken() public {
-        symbol = &quot;DCM&quot;;
-        name = &quot;Digital Content Market&quot;;
+        symbol = "DCM";
+        name = "Digital Content Market";
         decimals = 18;
         _totalSupply = 125000000000000000000000000;
         balances[0x97c47782c7918eD78a247F2CE7A476A22A41Cd19] = _totalSupply;

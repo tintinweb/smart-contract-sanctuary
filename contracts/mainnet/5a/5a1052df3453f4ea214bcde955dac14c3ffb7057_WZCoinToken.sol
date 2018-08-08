@@ -115,8 +115,8 @@ contract StandardToken is ERC20 {
 contract WZCoinToken is StandardToken {
     uint public totalSupply = 100*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;WZCoin Token&quot;;
-    string constant public symbol = &quot;WZC&quot;;
+    string constant public name = "WZCoin Token";
+    string constant public symbol = "WZC";
 
     function FCoinToken() public {
         balances[msg.sender] = totalSupply;

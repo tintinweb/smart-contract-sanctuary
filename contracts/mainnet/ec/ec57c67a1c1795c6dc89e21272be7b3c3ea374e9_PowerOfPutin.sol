@@ -112,8 +112,8 @@ contract PowerOfPutin is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Power of Vladimir Putin&quot;;
-    string public constant symbol = &quot;PowerOfPutin&quot;;
+    string public constant name = "Power of Vladimir Putin";
+    string public constant symbol = "PowerOfPutin";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 80000000e8;

@@ -123,8 +123,8 @@ contract OSTest5Token is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;OST&quot;;
-        name = &quot;OST Token&quot;;
+        symbol = "OST";
+        name = "OST Token";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[0x92361FD0098223891CAd7324001975e98387b66e] = _totalSupply;

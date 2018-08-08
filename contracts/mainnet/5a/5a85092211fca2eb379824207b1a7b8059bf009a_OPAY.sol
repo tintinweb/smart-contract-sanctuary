@@ -65,8 +65,8 @@ contract StandardToken is ERC20, SafeMath {
 
 
 contract OPAY is StandardToken {
-    string public name = &quot;OPAY&quot;;
-    string public symbol = &quot;OPAY&quot;;
+    string public name = "OPAY";
+    string public symbol = "OPAY";
     uint public decimals = 18;
     uint public totalSupply = 100 * 1000 * 1000 ether;
 

@@ -3,7 +3,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -329,8 +329,8 @@ contract BitImageToken is StandardToken, BurnableToken, Ownable {
      * @dev Constructor instantiates token supply and allocates balanace to the owner.
      */
     function BitImageToken() public {
-        name = &quot;Bitimage Token&quot;;
-        symbol = &quot;BIM&quot;;
+        name = "Bitimage Token";
+        symbol = "BIM";
         decimals = 18;
         released = false;
         totalSupply = 10000000000 ether;

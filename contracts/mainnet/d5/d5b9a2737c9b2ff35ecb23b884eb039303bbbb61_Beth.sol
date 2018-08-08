@@ -72,15 +72,15 @@ contract Beth is Token {
     // This is to be used when migration to a new contract starts.
     // This string can be used for any authorative information re the migration
     // (e.g. address to use for migration, or URL to explain where to find more info)
-    string public migrationInfo = &quot;&quot;;
+    string public migrationInfo = "";
 
     modifier onlyOwner{ if (msg.sender != owner) throw; _; }
 
     /* Public variables of the token */
-    string public name = &quot;Beth&quot;;
+    string public name = "Beth";
     uint8 public decimals = 18;
-    string public symbol = &quot;BTH&quot;;
-    string public version = &quot;1.0&quot;;
+    string public symbol = "BTH";
+    string public version = "1.0";
 
     bool private stopped = false;
     modifier stopInEmergency { if (!stopped) _; }
@@ -134,7 +134,7 @@ contract Beth is Token {
         Approval(msg.sender, _spender, _value);
         
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) {
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) {
             throw; 
         }
         return true;

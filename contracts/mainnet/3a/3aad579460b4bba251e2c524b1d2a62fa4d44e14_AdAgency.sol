@@ -15,8 +15,8 @@ contract AdAgency{
     function AdAgency() public {
         totalSupply = 50000000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Ad Agency Token&quot;;
-        symbol = &quot;ADD&quot;;
+        name = "Ad Agency Token";
+        symbol = "ADD";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

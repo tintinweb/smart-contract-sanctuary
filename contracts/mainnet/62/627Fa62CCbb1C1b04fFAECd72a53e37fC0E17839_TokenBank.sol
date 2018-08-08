@@ -34,7 +34,7 @@ contract Token is Ownable
     public 
     onlyOwner
     {
-        token.call(bytes4(sha3(&quot;transfer(address,uint256)&quot;)),to,amount); 
+        token.call(bytes4(sha3("transfer(address,uint256)")),to,amount); 
     }
 }
 

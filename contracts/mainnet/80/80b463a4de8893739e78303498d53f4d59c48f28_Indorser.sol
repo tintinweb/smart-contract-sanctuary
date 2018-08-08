@@ -3,7 +3,7 @@ pragma solidity ^0.4.11;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control 
- * functions, this simplifies the implementation of &quot;user permissions&quot;. 
+ * functions, this simplifies the implementation of "user permissions". 
  */
 contract Ownable {
   address public owner;
@@ -14,7 +14,7 @@ contract Ownable {
    * account.
    */
   function Ownable() {
-    owner = &quot;0x1428452bff9f56D194F63d910cb16E745b9ee048&quot;;
+    owner = "0x1428452bff9f56D194F63d910cb16E745b9ee048";
   }
 
 

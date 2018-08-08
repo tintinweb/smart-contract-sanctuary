@@ -63,7 +63,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 
 contract Ownable {
@@ -228,8 +228,8 @@ contract Veen is ERC20Token, Pausable, ERC223{
 
     using SafeMath for uint;
 
-    string public constant name = &quot;Veen&quot;;
-    string public constant symbol = &quot;VEEN&quot;;
+    string public constant name = "Veen";
+    string public constant symbol = "VEEN";
     uint8 public constant decimals = 18;
     uint private _tokenSupply;
     uint private _totalSupply;

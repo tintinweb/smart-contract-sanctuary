@@ -1,8 +1,8 @@
 pragma solidity ^0.4.19;
 
 contract SURT {
-	string public constant name = &quot;SURT token&quot;;
-	string public constant symbol = &quot;SURT&quot;;	
+	string public constant name = "SURT token";
+	string public constant symbol = "SURT";	
 	uint8 public constant decimals = 2;
 	address public owner;
 	uint256 public totalSupply_;

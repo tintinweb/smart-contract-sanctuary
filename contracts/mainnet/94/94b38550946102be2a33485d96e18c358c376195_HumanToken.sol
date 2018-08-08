@@ -67,8 +67,8 @@ contract ERC20 {
  */
 contract HumanToken is ERC20 {
     using SafeMath for uint;
-    string public name = &quot;Human&quot;;
-    string public symbol = &quot;Human&quot;;
+    string public name = "Human";
+    string public symbol = "Human";
     uint public decimals = 18;
     uint public voteCost = 10**18;
 

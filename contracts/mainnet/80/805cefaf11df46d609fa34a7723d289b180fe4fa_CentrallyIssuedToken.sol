@@ -187,7 +187,7 @@ contract NTRYStandardToken is ERC20, ErrorHandler {
    */
   modifier onlyOwner() {
     if (msg.sender != owner) {
-      doThrow(&quot;Only Owner!&quot;);
+      doThrow("Only Owner!");
     }
     _;
   }
@@ -199,21 +199,21 @@ contract NTRYStandardToken is ERC20, ErrorHandler {
    */
   modifier onlyPayloadSize(uint size) {
      if(msg.data.length < size + 4) {
-       doThrow(&quot;Short address attack!&quot;);
+       doThrow("Short address attack!");
      }
      _;
   }
 
   modifier stopInEmergency {
     if (emergency){
-        doThrow(&quot;Emergency state!&quot;);
+        doThrow("Emergency state!");
     }
     _;
   }
   
   function transfer(address _to, uint _value) stopInEmergency onlyPayloadSize(2 * 32) returns (bool success) {
     // Check if frozen //
-    if (frozenAccount[msg.sender]) doThrow(&quot;Account freezed!&quot;);  
+    if (frozenAccount[msg.sender]) doThrow("Account freezed!");  
                   
     balances[msg.sender] = balances[msg.sender].sub( _value);
     balances[_to] = balances[_to].add(_value);
@@ -223,7 +223,7 @@ contract NTRYStandardToken is ERC20, ErrorHandler {
 
   function transferFrom(address _from, address _to, uint _value) stopInEmergency returns (bool success) {
     // Check if frozen //
-    if (frozenAccount[_from]) doThrow(&quot;Account freezed!&quot;);
+    if (frozenAccount[_from]) doThrow("Account freezed!");
 
     uint _allowance = allowed[_from][msg.sender];
 
@@ -244,7 +244,7 @@ contract NTRYStandardToken is ERC20, ErrorHandler {
     //  allowance to zero by calling `approve(_spender, 0)` if it is not
     //  already 0 to mitigate the race condition described here:
     //  https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-    if ((_value != 0) && (allowed[msg.sender][_spender] != 0)) doThrow(&quot;Allowance race condition!&quot;);
+    if ((_value != 0) && (allowed[msg.sender][_spender] != 0)) doThrow("Allowance race condition!");
 
     allowed[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);
@@ -387,11 +387,11 @@ contract UpgradeableToken is NTRYStandardToken {
 
       UpgradeState state = getUpgradeState();
       if(!(state == UpgradeState.ReadyToUpgrade || state == UpgradeState.Upgrading)) {
-        doThrow(&quot;Called in a bad state!&quot;);
+        doThrow("Called in a bad state!");
       }
 
       // Validate input value.
-      if (value == 0) doThrow(&quot;Value to upgrade is zero!&quot;);
+      if (value == 0) doThrow("Value to upgrade is zero!");
 
       balances[msg.sender] = balances[msg.sender].sub(value);
 
@@ -411,21 +411,21 @@ contract UpgradeableToken is NTRYStandardToken {
 
       if(!canUpgrade()) {
         // The token is not yet in a state that we could think upgrading
-        doThrow(&quot;Token state is not feasible for upgrading yet!&quot;);
+        doThrow("Token state is not feasible for upgrading yet!");
       }
 
-      if (agent == 0x0) doThrow(&quot;Invalid address!&quot;);
+      if (agent == 0x0) doThrow("Invalid address!");
       // Only a master can designate the next agent
-      if (msg.sender != upgradeMaster) doThrow(&quot;Only upgrade master!&quot;);
+      if (msg.sender != upgradeMaster) doThrow("Only upgrade master!");
       // Upgrade has already begun for an agent
-      if (getUpgradeState() == UpgradeState.Upgrading) doThrow(&quot;Upgrade started already!&quot;);
+      if (getUpgradeState() == UpgradeState.Upgrading) doThrow("Upgrade started already!");
 
       upgradeAgent = UpgradeAgent(agent);
 
       // Bad interface
-      if(!upgradeAgent.isUpgradeAgent()) doThrow(&quot;Bad interface!&quot;);
+      if(!upgradeAgent.isUpgradeAgent()) doThrow("Bad interface!");
       // Make sure that token supplies match in source and target
-      if (upgradeAgent.originalSupply() != totalSupply) doThrow(&quot;Total supply source is not equall to target!&quot;);
+      if (upgradeAgent.originalSupply() != totalSupply) doThrow("Total supply source is not equall to target!");
 
       UpgradeAgentSet(upgradeAgent);
   }
@@ -446,8 +446,8 @@ contract UpgradeableToken is NTRYStandardToken {
    * This allows us to set a new owner for the upgrade mechanism.
    */
   function setUpgradeMaster(address master) public {
-      if (master == 0x0) doThrow(&quot;Invalid address of upgrade master!&quot;);
-      if (msg.sender != upgradeMaster) doThrow(&quot;Only upgrade master!&quot;);
+      if (master == 0x0) doThrow("Invalid address of upgrade master!");
+      if (msg.sender != upgradeMaster) doThrow("Only upgrade master!");
       upgradeMaster = master;
   }
 
@@ -497,8 +497,8 @@ contract CentrallyIssuedToken is BurnableToken, UpgradeableToken {
   uint public decimals;
 
   function CentrallyIssuedToken() UpgradeableToken(owner) {
-    name = &quot;Notary Platform Token&quot;;
-    symbol = &quot;NTRY&quot;;
+    name = "Notary Platform Token";
+    symbol = "NTRY";
     decimals = 18;
     owner = 0x1538EF80213cde339A333Ee420a85c21905b1b2D;
 
@@ -535,10 +535,10 @@ contract CentrallyIssuedToken is BurnableToken, UpgradeableToken {
 
   function withDraw() public {
       if(now < unlockedAt){ 
-          doThrow(&quot;Allocations are freezed!&quot;);
+          doThrow("Allocations are freezed!");
       }
       if (allocations[msg.sender] == 0){
-          doThrow(&quot;No allocation found!&quot;);
+          doThrow("No allocation found!");
       }
       balances[owner] -= allocations[msg.sender];
       balances[msg.sender] += allocations[msg.sender];

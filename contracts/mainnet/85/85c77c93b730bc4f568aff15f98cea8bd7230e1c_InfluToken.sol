@@ -113,8 +113,8 @@ contract InfluToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function InfluToken() public {
-        symbol = &quot;intos&quot;;
-        name = &quot;Influ Token&quot;;
+        symbol = "intos";
+        name = "Influ Token";
         decimals = 8;
         _totalSupply = 150000000000000000;
         balances[0x6F3D70BAe7Cb77F064B7bD1773D5c1fB38F67cbE] = _totalSupply;

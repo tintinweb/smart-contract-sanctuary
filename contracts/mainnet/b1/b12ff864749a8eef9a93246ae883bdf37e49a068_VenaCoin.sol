@@ -80,8 +80,8 @@ contract VenaCoin is ERC20Interface, Owned{
     // Constructor
     // ------------------------------------------------------------------------
     function VenaCoin() public{
-        symbol = &quot;VenaCoin&quot;;
-        name = &quot;VENA&quot;;
+        symbol = "VenaCoin";
+        name = "VENA";
         decimals = 18;
         _totalSupply = totalSupply();
         balances[owner] = _totalSupply;

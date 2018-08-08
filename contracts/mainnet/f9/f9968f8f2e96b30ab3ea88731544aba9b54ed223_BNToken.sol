@@ -235,8 +235,8 @@ contract BNToken is StandardToken, Pausable {
 
     using SafeMath for uint256;
 
-    string  public name = &quot;BN&quot;;
-    string  public symbol = &quot;BN&quot;;
+    string  public name = "BN";
+    string  public symbol = "BN";
     uint256 constant public decimals = 18;
     uint256 constant dec = 10**decimals;
     uint256 public initialSupply = 50000*dec;

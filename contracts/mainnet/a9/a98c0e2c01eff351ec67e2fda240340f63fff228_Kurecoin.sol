@@ -6,9 +6,9 @@ contract Kurecoin  {
 
  
 
-    string public name = &quot;Kurecoin&quot;;      //  (token name)
+    string public name = "Kurecoin";      //  (token name)
 
-    string public symbol = &quot;KRC&quot;;           //  (token symbol)
+    string public symbol = "KRC";           //  (token symbol)
 
     uint256 public decimals = 18;            //   (token digit)
 

@@ -32,8 +32,8 @@ library SafeMath {
 contract CloverCoin {
   using SafeMath for uint256;
 
-  string public name = &quot;CloverCoin&quot;;
-  string public symbol = &quot;CVC&quot;;
+  string public name = "CloverCoin";
+  string public symbol = "CVC";
   uint public decimals = 18;
   uint256 public totalSupply;
   uint256 public commission;

@@ -113,8 +113,8 @@ contract SMGC is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function SMGC() public {
-        symbol = &quot;SMGC&quot;;
-        name = &quot;Smigg Coin&quot;;
+        symbol = "SMGC";
+        name = "Smigg Coin";
         decimals = 18;
         _totalSupply = 19000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

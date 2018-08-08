@@ -126,7 +126,7 @@ contract StandardToken is Token {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        string memory signature = &quot;receiveApproval(address,uint256,address,bytes)&quot;;
+        string memory signature = "receiveApproval(address,uint256,address,bytes)";
 
         if (!_spender.call(bytes4(bytes32(sha3(signature))), msg.sender, _value, this, _extraData)) {
             throw;
@@ -150,10 +150,10 @@ contract LATPToken is StandardToken, SafeMath {
     address     public founder;
     address     public minter;
 
-    string      public name             =       &quot;LATO PreICO&quot;;
+    string      public name             =       "LATO PreICO";
     uint8       public decimals         =       6;
-    string      public symbol           =       &quot;LATP&quot;;
-    string      public version          =       &quot;0.7.1&quot;;
+    string      public symbol           =       "LATP";
+    string      public version          =       "0.7.1";
     uint        public maxTotalSupply   =       100000 * 1000000;
 
 

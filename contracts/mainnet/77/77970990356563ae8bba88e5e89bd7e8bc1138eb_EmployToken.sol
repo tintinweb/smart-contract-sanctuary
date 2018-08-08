@@ -271,7 +271,7 @@ contract EmployToken is StandardToken, DetailedERC20 {
     constructor(string _name, string _symbol, uint8 _decimals, address _owner) public
     DetailedERC20(_name, _symbol, _decimals) {
 
-        require(_owner != address(0), &quot;Owner address should not be 0x&quot;);
+        require(_owner != address(0), "Owner address should not be 0x");
         totalSupply_ = 2100000000 * 10 ** uint256(decimals);   // Total Supply of the ERC20 token is 210 Million
         balances[_owner] = totalSupply_;
         emit Transfer(address(0), _owner, totalSupply_);

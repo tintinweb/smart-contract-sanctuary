@@ -47,7 +47,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -203,8 +203,8 @@ contract CloutToken is StandardToken {
     creator=_creator;
     balances[msg.sender] = initialSupply * 10**decimals;
     totalSupply = initialSupply * 10**decimals;
-    name = &quot;Clout Cash Credits&quot;;
-    symbol = &quot;CCC&quot;;
+    name = "Clout Cash Credits";
+    symbol = "CCC";
     Transfer(0x0, msg.sender, totalSupply);
 
   }

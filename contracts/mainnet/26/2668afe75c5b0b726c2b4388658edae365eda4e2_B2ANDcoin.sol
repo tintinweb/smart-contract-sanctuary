@@ -32,8 +32,8 @@ contract B2ANDcoin is Ownable {
     ) public {
         totalSupply = 100000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;               
-        name = &quot;B2ANDcoin&quot;;                                
-        symbol = &quot;B2C&quot;;                  
+        name = "B2ANDcoin";                                
+        symbol = "B2C";                  
     }
     function _transfer(address _from, address _to, uint _value) internal {
         require(_to != 0x0);

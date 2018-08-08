@@ -32,8 +32,8 @@ contract Warh {
     ) public {
         totalSupply = 100000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Warh&quot;;                                   // Set the name for display purposes
-        symbol = &quot;Warh&quot;;                               // Set the symbol for display purposes
+        name = "Warh";                                   // Set the name for display purposes
+        symbol = "Warh";                               // Set the symbol for display purposes
     }
 
     /**

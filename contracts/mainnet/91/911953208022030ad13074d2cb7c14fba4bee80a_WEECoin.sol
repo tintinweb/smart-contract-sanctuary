@@ -72,10 +72,10 @@ contract StandardToken is ERC20Token {
 
 contract WEECoin is StandardToken, WeeMath {
 
-    string public constant name = &quot;WEE Token&quot;;
-    string public constant symbol = &quot;WEE&quot;;
+    string public constant name = "WEE Token";
+    string public constant symbol = "WEE";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 	
     address public WEEFundWallet;      
     address public account1Address;      

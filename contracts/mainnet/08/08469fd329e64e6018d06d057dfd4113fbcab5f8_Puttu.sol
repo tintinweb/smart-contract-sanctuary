@@ -71,9 +71,9 @@ contract Puttu is StandardToken {
         ) {
         balances[msg.sender] = 1000000000000000000000000000;               // 12 Million Total Supply
         totalSupply = 1000000000000000000000000000;                     
-        name = &quot;Puttu&quot;;                                   
+        name = "Puttu";                                   
         decimals = 18;                            
-        symbol = &quot;PUTTU&quot;;                              
+        symbol = "PUTTU";                              
     }
 
     
@@ -81,7 +81,7 @@ contract Puttu is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

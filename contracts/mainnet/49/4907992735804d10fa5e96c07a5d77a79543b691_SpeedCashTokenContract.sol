@@ -185,7 +185,7 @@ contract SpeedCashTokenContract is owned, TokenERC20 {
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
     function SpeedCashTokenContract(
-    ) TokenERC20(476918, &quot;SpeedCashLite&quot;, &quot;SCSL&quot;) public {}
+    ) TokenERC20(476918, "SpeedCashLite", "SCSL") public {}
 
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {

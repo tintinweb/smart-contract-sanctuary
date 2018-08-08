@@ -113,8 +113,8 @@ contract GGCT is UnboundedRegularToken {
 
     uint public totalSupply = 7.5*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;GG Carbon Token&quot;;
-    string constant public symbol = &quot;GGCT&quot;;
+    string constant public name = "GG Carbon Token";
+    string constant public symbol = "GGCT";
 
     function GGCT() {
         balances[msg.sender] = totalSupply;

@@ -94,7 +94,7 @@ contract CrowdsaleFront is Ownable{
     function buyTokens(address beneficiary, address _parent, uint256 _top) public payable returns(bool){
       bool ret;
       uint256 tokens;
-      (ret, tokens) = Crowdsale(commons.get(&quot;Crowdsale&quot;)).buyTokens.value(msg.value)(beneficiary, beneficiary, _parent, _top);
+      (ret, tokens) = Crowdsale(commons.get("Crowdsale")).buyTokens.value(msg.value)(beneficiary, beneficiary, _parent, _top);
       userAmounts[beneficiary] = userAmounts[beneficiary].add(tokens);
       require(ret);
     }
@@ -106,13 +106,13 @@ contract CrowdsaleFront is Ownable{
       return rewardPayed[_user];
     }
     function rewardPay(address _user, uint256 amount) public {
-      require(msg.sender == commons.get(&quot;Crowdsale&quot;));
+      require(msg.sender == commons.get("Crowdsale"));
       rewardPayed[_user] = rewardPayed[_user].add(amount);
     }
 
     // @return true if crowdsale event has ended
     function hasEnded() public view returns (bool){
-        return Crowdsale(commons.get(&quot;Crowdsale&quot;)).hasEnded();
+        return Crowdsale(commons.get("Crowdsale")).hasEnded();
     }
 
 }
@@ -128,8 +128,8 @@ contract InterestHolder is Ownable{
   event ReceiveBalanceUpdateUserType(address _addr,address _user,uint256 _type);
   function receiveBalanceUpdate(address _user) external returns (bool) {
     emit ReceiveBalanceUpdate(msg.sender, _user);
-    Token token = Token(commons.get(&quot;Token&quot;));
-    User user = User(commons.get(&quot;User&quot;));
+    Token token = Token(commons.get("Token"));
+    User user = User(commons.get("User"));
     if (msg.sender == address(token)){
       uint256 _type;
       (,,_type) = user.getUserInfo(_user);
@@ -144,8 +144,8 @@ contract InterestHolder is Ownable{
   }
   event ProcessLx(address _addr,address _user, uint256 _type,uint256 lastBalance, uint256 iAmount, uint256 lastTime);
   function process(address _user, uint256 _type) internal{
-    Token token = Token(commons.get(&quot;Token&quot;));
-    User user = User(commons.get(&quot;User&quot;));
+    Token token = Token(commons.get("Token"));
+    User user = User(commons.get("User"));
     uint256 _value = compute(_user, _type);
     uint256 balance = token.balanceOf(_user);
     user.setInterestor(_user,balance.add(_value),now);
@@ -157,7 +157,7 @@ contract InterestHolder is Ownable{
   event GetLx(address _addr,address _user,uint256 _type);
 
   function compute(address _user, uint256 _type) internal view returns (uint256) {
-    User user = User(commons.get(&quot;User&quot;));
+    User user = User(commons.get("User"));
     uint256 lastBalance = 0;
     uint256 lastTime = 0;
     bool exist;
@@ -174,7 +174,7 @@ contract InterestHolder is Ownable{
     return _value;
   }
   function getLx() external returns (uint256) {
-    User user = User(commons.get(&quot;User&quot;));
+    User user = User(commons.get("User"));
     uint256 _type;
     (,,_type) = user.getUserInfo(msg.sender);
     emit GetLx(msg.sender, msg.sender, _type);
@@ -196,7 +196,7 @@ contract TokenHolder is Ownable{
   mapping (address => uint256) lockedAmount;
   event ReceiveLockedAmount(address _addr, address _user, uint256 _amount);
   function receiveLockedAmount(address _user, uint256 _amount) external returns (bool) {
-    address cds = commons.get(&quot;Crowdsale&quot;);
+    address cds = commons.get("Crowdsale");
     if (msg.sender == address(cds)){
       lockedAmount[_user] = lockedAmount[_user].add(_amount);
       emit ReceiveLockedAmount(msg.sender, _user, _amount);
@@ -221,7 +221,7 @@ contract TokenHolder is Ownable{
   }
 
   function withDrawable() public view returns (bool) {
-    User user = User(commons.get(&quot;User&quot;));
+    User user = User(commons.get("User"));
     uint256 _type;
     (,,_type) = user.getUserInfo(msg.sender);
     return !locked && (_type > 0) && lockedAmount[msg.sender] > 0;
@@ -229,8 +229,8 @@ contract TokenHolder is Ownable{
 
   function withDraw() external {
     assert(!locked);//用户必须是种子钱包
-    BwinToken token = BwinToken(commons.get(&quot;BwinToken&quot;));
-    User user = User(commons.get(&quot;User&quot;));
+    BwinToken token = BwinToken(commons.get("BwinToken"));
+    User user = User(commons.get("User"));
     uint256 _type;
     (,,_type) = user.getUserInfo(msg.sender);
     assert(_type > 0);
@@ -278,8 +278,8 @@ contract EtherHolder is Destructible{
   event ReceiveFunds(address _addr, address _user, uint256 _value, uint256 _amount);
   function receiveFunds(address _user, uint256 _amount) external payable returns (bool) {
     emit ReceiveFunds(msg.sender, _user, msg.value, _amount);
-    Crowdsale cds = Crowdsale(commons.get(&quot;Crowdsale&quot;));
-    User user = User(commons.get(&quot;User&quot;));
+    Crowdsale cds = Crowdsale(commons.get("Crowdsale"));
+    User user = User(commons.get("User"));
     assert(msg.value == _amount);
     if (msg.sender == address(cds)){
         address _topWallet;
@@ -310,7 +310,7 @@ contract EtherHolder is Destructible{
   function processShares(uint256 _amount) internal returns(uint256,uint256,bool){
       uint256 _sended = 0;
       uint256 _sharePercent = 0;
-      User user = User(commons.get(&quot;User&quot;));
+      User user = User(commons.get("User"));
       for(uint i=0;i<user.getShareHolderCount();i++){
         address _wallet;
         uint256 _percent;
@@ -422,7 +422,7 @@ contract RBAC {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
+  string public constant ROLE_ADMIN = "admin";
 
   /**
    * @dev constructor. Sets msg.sender as admin by default
@@ -619,7 +619,7 @@ contract User is RBAC ,Destructible{
     event SetUserType(address caller, address _user, uint _type);
     event RemoveUser(address caller, uint _index);
 
-    function setInterestor(address _user, uint256 _balance, uint256 _lastTime) public onlyRole(&quot;INTEREST_HOLDER&quot;){
+    function setInterestor(address _user, uint256 _balance, uint256 _lastTime) public onlyRole("INTEREST_HOLDER"){
         balanceForInterests[_user] = UserBalance(_user,_balance,_lastTime,true);
         emit SetInterestor(msg.sender,_user,_balance,_lastTime);
     }
@@ -759,24 +759,24 @@ contract BwinToken is ERC20, Pausable, Destructible{
     function setCommons(address _addr) public onlyOwner {
         commons = BwinCommons(_addr);
     }
-    string public constant name = &quot;FFgame Coin&quot;;
-    string public constant symbol = &quot;FFC&quot;;
+    string public constant name = "FFgame Coin";
+    string public constant symbol = "FFC";
     uint8 public constant decimals = 18;
     event Transfer(address indexed from, address indexed to, uint256 value);
     function BwinToken() public {
       addRole(msg.sender, ROLE_ADMIN);
     }
     function totalSupply() public view returns (uint256){
-      Token t = Token(commons.get(&quot;Token&quot;));
+      Token t = Token(commons.get("Token"));
       return t.totalSupply();
     }
     function balanceOf(address who) public view returns (uint256){
-      Token t = Token(commons.get(&quot;Token&quot;));
+      Token t = Token(commons.get("Token"));
       return t.balanceOf(who);
     }
     function transfer(address to, uint256 value) public returns (bool){
       bytes memory empty;
-      Token t = Token(commons.get(&quot;Token&quot;));
+      Token t = Token(commons.get("Token"));
       if(t.transfer(msg.sender, to, value,empty)){
           emit Transfer(msg.sender, to, value);
           return true;
@@ -786,11 +786,11 @@ contract BwinToken is ERC20, Pausable, Destructible{
 
 
     function allowance(address owner, address spender) public view returns (uint256){
-      Token t = Token(commons.get(&quot;Token&quot;));
+      Token t = Token(commons.get("Token"));
       return t.allowance(owner, spender);
     }
     function transferFrom(address from, address to, uint256 value) public returns (bool){
-      Token t = Token(commons.get(&quot;Token&quot;));
+      Token t = Token(commons.get("Token"));
       if(t._transferFrom(msg.sender, from, to, value)){
           emit Transfer(from, to, value);
           return true;
@@ -798,7 +798,7 @@ contract BwinToken is ERC20, Pausable, Destructible{
       return false;
     }
     function approve(address spender, uint256 value) public returns (bool){
-      Token t = Token(commons.get(&quot;Token&quot;));
+      Token t = Token(commons.get("Token"));
       if (t._approve(msg.sender, spender, value)){
           emit Approval(msg.sender, spender, value);
           return true;
@@ -807,7 +807,7 @@ contract BwinToken is ERC20, Pausable, Destructible{
     }
 
     function increaseApproval(address _spender, uint _addedValue) public whenNotPaused returns (bool success) {
-      Token t = Token(commons.get(&quot;Token&quot;));
+      Token t = Token(commons.get("Token"));
       if(t._increaseApproval(msg.sender, _spender, _addedValue)){
           emit Approval(msg.sender, _spender, _addedValue);
           return true;
@@ -816,7 +816,7 @@ contract BwinToken is ERC20, Pausable, Destructible{
     }
 
     function decreaseApproval(address _spender, uint _subtractedValue) public whenNotPaused returns (bool success) {
-      Token t = Token(commons.get(&quot;Token&quot;));
+      Token t = Token(commons.get("Token"));
       if (t._decreaseApproval(msg.sender,_spender, _subtractedValue)){
           emit Approval(msg.sender, _spender, _subtractedValue);
           return true;
@@ -845,16 +845,16 @@ contract Token is RBAC, Pausable{
     }
 
     function totalSupply() public view returns (uint256) {
-      TokenData td = TokenData(commons.get(&quot;TokenData&quot;));
+      TokenData td = TokenData(commons.get("TokenData"));
       return td.totalSupply();
     }
     function balanceOf(address _owner) public view returns (uint256) {
-      TokenData td = TokenData(commons.get(&quot;TokenData&quot;));
+      TokenData td = TokenData(commons.get("TokenData"));
       return td.balanceOf(_owner);
     }
-    function _transferFrom(address _sender, address _from, address _to, uint256 _value) external whenNotPaused onlyRole(&quot;FRONT_TOKEN_USER&quot;) returns (bool) {
-      InterestHolder ih = InterestHolder(commons.get(&quot;InterestHolder&quot;));
-      TokenData td = TokenData(commons.get(&quot;TokenData&quot;));
+    function _transferFrom(address _sender, address _from, address _to, uint256 _value) external whenNotPaused onlyRole("FRONT_TOKEN_USER") returns (bool) {
+      InterestHolder ih = InterestHolder(commons.get("InterestHolder"));
+      TokenData td = TokenData(commons.get("TokenData"));
       uint256 _balanceFrom = balanceOf(_from);
       uint256 _balanceTo = balanceOf(_to);
       uint256 _allow = allowance(_from, _sender);
@@ -875,21 +875,21 @@ contract Token is RBAC, Pausable{
     }
 
     function allowance(address _owner, address _spender) public view returns (uint256) {
-      TokenData td = TokenData(commons.get(&quot;TokenData&quot;));
+      TokenData td = TokenData(commons.get("TokenData"));
       return td.allowance(_owner,_spender);
     }
-    function _approve(address _sender, address _spender, uint256 _value) public onlyRole(&quot;FRONT_TOKEN_USER&quot;)  whenNotPaused returns (bool) {
-      TokenData td = TokenData(commons.get(&quot;TokenData&quot;));
+    function _approve(address _sender, address _spender, uint256 _value) public onlyRole("FRONT_TOKEN_USER")  whenNotPaused returns (bool) {
+      TokenData td = TokenData(commons.get("TokenData"));
       return td.setAllowance(_sender, _spender, _value);
     }
-    function _increaseApproval(address _sender, address _spender, uint _addedValue) public onlyRole(&quot;FRONT_TOKEN_USER&quot;) whenNotPaused returns (bool) {
-      TokenData td = TokenData(commons.get(&quot;TokenData&quot;));
+    function _increaseApproval(address _sender, address _spender, uint _addedValue) public onlyRole("FRONT_TOKEN_USER") whenNotPaused returns (bool) {
+      TokenData td = TokenData(commons.get("TokenData"));
       td.setAllowance(_sender, _spender, allowance(_sender, _spender).add(_addedValue));
       emit TokenApproval(_sender, _spender, allowance(_sender, _spender));
       return true;
     }
-    function _decreaseApproval(address _sender, address _spender, uint _subtractedValue) public onlyRole(&quot;FRONT_TOKEN_USER&quot;) whenNotPaused returns (bool) {
-      TokenData td = TokenData(commons.get(&quot;TokenData&quot;));
+    function _decreaseApproval(address _sender, address _spender, uint _subtractedValue) public onlyRole("FRONT_TOKEN_USER") whenNotPaused returns (bool) {
+      TokenData td = TokenData(commons.get("TokenData"));
       uint oldValue = allowance(_sender, _spender);
       if (_subtractedValue > oldValue) {
           td.setAllowance(_sender, _spender, 0);
@@ -903,11 +903,11 @@ contract Token is RBAC, Pausable{
     }
 
     function unlockAmount(address _to, uint256 _amount) external onlyAdmin returns (bool){
-      TokenData td = TokenData(commons.get(&quot;TokenData&quot;));
+      TokenData td = TokenData(commons.get("TokenData"));
       require(td.totalSupply().add(_amount) <= td.TotalCapacity());
-      uint256 unlockedAmount = td.valueOf(&quot;unlockedAmount&quot;);
+      uint256 unlockedAmount = td.valueOf("unlockedAmount");
       if(_mint(_to, _amount)){
-          td.setValue(&quot;unlockedAmount&quot;,unlockedAmount.add(_amount));
+          td.setValue("unlockedAmount",unlockedAmount.add(_amount));
           emit MintForUnlock(_to, _amount);
           return true;
       }
@@ -915,43 +915,43 @@ contract Token is RBAC, Pausable{
     }
 
     function _mint(address _to, uint256 _amount) internal returns (bool) {
-      TokenData td = TokenData(commons.get(&quot;TokenData&quot;));
-      InterestHolder ih = InterestHolder(commons.get(&quot;InterestHolder&quot;));
+      TokenData td = TokenData(commons.get("TokenData"));
+      InterestHolder ih = InterestHolder(commons.get("InterestHolder"));
       require(_to != address(0));
       require(_amount > 0);
-      uint256 totalMinted = td.valueOf(&quot;totalMinted&quot;);
+      uint256 totalMinted = td.valueOf("totalMinted");
       td.setTotal(td.totalSupply().add(_amount));
       td.setBalance(_to,balanceOf(_to).add(_amount));
-      td.setValue(&quot;totalMinted&quot;,totalMinted.add(_amount));
+      td.setValue("totalMinted",totalMinted.add(_amount));
       if(address(ih) != address(0)){
         ih.receiveBalanceUpdate(_to);
       }
       return true;
     }
 
-    function mintForSale(address _to, uint256 _amount) external onlyRole(&quot;TOKEN_SALE&quot;) whenNotPaused returns (bool) {
-      TokenData td = TokenData(commons.get(&quot;TokenData&quot;));
+    function mintForSale(address _to, uint256 _amount) external onlyRole("TOKEN_SALE") whenNotPaused returns (bool) {
+      TokenData td = TokenData(commons.get("TokenData"));
       require(td.totalSupply().add(_amount) <= td.TotalCapacity());
-      uint256 saledAmount = td.valueOf(&quot;saledAmount&quot;);
+      uint256 saledAmount = td.valueOf("saledAmount");
       if(_mint(_to, _amount)){
-          td.setValue(&quot;saledAmount&quot;,saledAmount.add(_amount));
+          td.setValue("saledAmount",saledAmount.add(_amount));
           emit MintForSale(_to, _amount);
           return true;
       }
       return false;
     }
-    function mintForWorker(address _to, uint256 _amount) external onlyRole(&quot;TOKEN_WORKER&quot;) whenNotPaused returns (bool) {
-      TokenData td = TokenData(commons.get(&quot;TokenData&quot;));
+    function mintForWorker(address _to, uint256 _amount) external onlyRole("TOKEN_WORKER") whenNotPaused returns (bool) {
+      TokenData td = TokenData(commons.get("TokenData"));
       require(td.totalSupply().add(_amount) <= td.TotalCapacity());
-      uint256 minedAmount = td.valueOf(&quot;minedAmount&quot;);
+      uint256 minedAmount = td.valueOf("minedAmount");
       if(_mint(_to, _amount)){
-        td.setValue(&quot;minedAmount&quot;,minedAmount.add(_amount));
+        td.setValue("minedAmount",minedAmount.add(_amount));
         emit MintForWorker(_to, _amount);
         return true;
       }
       return false;
     }
-    function transfer(address _from, address _to, uint _value, bytes _data) external whenNotPaused onlyRole(&quot;FRONT_TOKEN_USER&quot;)  returns (bool success) {
+    function transfer(address _from, address _to, uint _value, bytes _data) external whenNotPaused onlyRole("FRONT_TOKEN_USER")  returns (bool success) {
 
         if (isContract(_to)) {
             return transferToContract(_from, _to, _value, _data);
@@ -969,8 +969,8 @@ contract Token is RBAC, Pausable{
         return (length > 0);
     }
     function _transfer(address _from, address _to, uint256 _value) internal returns (bool) {
-      TokenData td = TokenData(commons.get(&quot;TokenData&quot;));
-      InterestHolder ih = InterestHolder(commons.get(&quot;InterestHolder&quot;));
+      TokenData td = TokenData(commons.get("TokenData"));
+      InterestHolder ih = InterestHolder(commons.get("InterestHolder"));
       require(_to != address(0));
       require(_value <= balanceOf(_from));
       td.setBalance(_from,balanceOf(_from).sub(_value));
@@ -1033,20 +1033,20 @@ contract TokenData is RBAC, Pausable{
   function setCommons(address _addr) public onlyAdmin {
       commons = BwinCommons(_addr);
   }
-  function setTotal(uint256 _total) public onlyRole(&quot;TOKEN_DATA_USER&quot;) {
+  function setTotal(uint256 _total) public onlyRole("TOKEN_DATA_USER") {
       totalSupply_ = _total;
       emit SetTotalSupply(msg.sender, _total);
   }
   event SetValue(address _addr, string name, uint256 _value);
 
-  function setValue(string name, uint256 _value) external onlyRole(&quot;TOKEN_DATA_USER&quot;) {
+  function setValue(string name, uint256 _value) external onlyRole("TOKEN_DATA_USER") {
       values[name] = _value;
       emit SetValue(msg.sender, name, _value);
   }
 
   event SetTotalCapacity(address _addr, uint256 _total);
 
-  function setTotalCapacity(uint256 _total) external onlyRole(&quot;TOKEN_DATA_USER&quot;) {
+  function setTotalCapacity(uint256 _total) external onlyRole("TOKEN_DATA_USER") {
       totalCapacity_ = _total;
       emit SetTotalCapacity(msg.sender, _total);
   }
@@ -1076,10 +1076,10 @@ contract TokenData is RBAC, Pausable{
 
 
 
-  function setBalance(address _addr, uint256 _value) external whenNotPaused onlyRole(&quot;TOKEN_DATA_USER&quot;) returns (bool) {
+  function setBalance(address _addr, uint256 _value) external whenNotPaused onlyRole("TOKEN_DATA_USER") returns (bool) {
     return _setBalance(_addr, _value);
   }
-  function setAllowance(address _from, address _to, uint256 _value) external whenNotPaused onlyRole(&quot;TOKEN_DATA_USER&quot;) returns (bool) {
+  function setAllowance(address _from, address _to, uint256 _value) external whenNotPaused onlyRole("TOKEN_DATA_USER") returns (bool) {
     return _setAllowance(_from, _to, _value);
   }
 
@@ -1125,7 +1125,7 @@ contract Crowdsale is Ownable, Pausable{
       return (now > endTime || saledAmount >= saleCapacity);
   }
   modifier onlyFront() {
-      require(msg.sender == address(commons.get(&quot;CrowdsaleFront&quot;)));
+      require(msg.sender == address(commons.get("CrowdsaleFront")));
       _;
   }
   function validPurchase() internal view returns (bool) {

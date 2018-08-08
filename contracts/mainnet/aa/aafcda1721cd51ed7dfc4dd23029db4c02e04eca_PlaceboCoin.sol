@@ -16,8 +16,8 @@ contract PlaceboCoin {
     uint256 public totalContribution = 0;
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;Placebo Coin&quot;; }
-    function symbol() constant returns (string) { return &quot;PCB&quot;; }
+    function name() constant returns (string) { return "Placebo Coin"; }
+    function symbol() constant returns (string) { return "PCB"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

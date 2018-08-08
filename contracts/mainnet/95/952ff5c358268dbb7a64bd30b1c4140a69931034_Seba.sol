@@ -92,8 +92,8 @@ contract BasicTokenERC20 {
 
 contract Seba is BasicTokenERC20 {    
 
-    string public constant name = &quot;SebaToken&quot;; 
-    string public constant symbol = &quot;SEBA&quot;;
+    string public constant name = "SebaToken"; 
+    string public constant symbol = "SEBA";
     uint public decimals = 18; 
     uint256 public milion = 1000000;
     bool public takeToken = false;

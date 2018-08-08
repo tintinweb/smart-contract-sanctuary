@@ -114,8 +114,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;VAAC&quot;;
-        name = &quot;Visa Application Chain&quot;;
+        symbol = "VAAC";
+        name = "Visa Application Chain";
         decimals = 18;
         _totalSupply = 210000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

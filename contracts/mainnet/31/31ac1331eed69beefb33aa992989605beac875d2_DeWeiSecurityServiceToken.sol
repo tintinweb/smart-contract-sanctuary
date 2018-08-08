@@ -54,8 +54,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 10000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;De Wei Security Service Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;DWT&quot;;                               // Set the symbol for display purposes
+        name = "De Wei Security Service Token";                                   // Set the name for display purposes
+        symbol = "DWT";                               // Set the symbol for display purposes
     }
 
     /**
@@ -199,8 +199,8 @@ contract DeWeiSecurityServiceToken is owned, TokenERC20 {
 		owner = msg.sender;
 		totalSupply = 10000000000000000000000000000;
 		balanceOf[owner]=totalSupply;
-		tokenName=&quot;De Wei Security Service Token&quot;;
-		tokenSymbol=&quot;DWT&quot;;
+		tokenName="De Wei Security Service Token";
+		tokenSymbol="DWT";
 	}
 
 

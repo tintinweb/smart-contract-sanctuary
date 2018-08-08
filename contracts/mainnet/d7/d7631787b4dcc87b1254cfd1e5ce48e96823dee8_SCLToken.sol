@@ -229,13 +229,13 @@ contract StandardToken is Token {
 contract SCLToken is Owned, StandardToken {
 
     // Ethereum token standaard
-    string public standard = &quot;Token 0.1&quot;;
+    string public standard = "Token 0.1";
 
     // Full name
-    string public name = &quot;SOCIAL&quot;;        
+    string public name = "SOCIAL";        
     
     // Symbol
-    string public symbol = &quot;SCL&quot;;
+    string public symbol = "SCL";
 
     // No decimal points
     uint8 public decimals = 8;

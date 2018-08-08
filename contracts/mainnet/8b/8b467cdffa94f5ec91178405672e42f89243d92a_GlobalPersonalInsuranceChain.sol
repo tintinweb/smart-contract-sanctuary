@@ -64,8 +64,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract GlobalPersonalInsuranceChain is StandardToken 
 {
-    string public name = &quot;GlobalPersonalInsuranceChain&quot;;
-    string public symbol = &quot;GPC&quot;;
+    string public name = "GlobalPersonalInsuranceChain";
+    string public symbol = "GPC";
     uint public decimals = 18;
     uint public totalSupply = 10 * 1000 * 1000 * 1000 ether;
 

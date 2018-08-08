@@ -258,7 +258,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -375,8 +375,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract MXAContract is PausableToken {
-    string public constant name = &quot;MXAContract&quot;;
-    string public constant symbol = &quot;MXCA&quot;;
+    string public constant name = "MXAContract";
+    string public constant symbol = "MXCA";
     uint8 public constant decimals = 18;
     
     address public ico = address(0xc5f35d49b25fBC5fd15cc08a8ED2425b973A9115);

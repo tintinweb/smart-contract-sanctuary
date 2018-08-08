@@ -492,8 +492,8 @@ contract VestedToken is StandardToken, LimitedTransferToken {
 
 contract BTN is VestedToken {
   //FIELDS
-  string public name = &quot;BETNetwork&quot;;
-  string public symbol = &quot;BTN&quot;;
+  string public name = "BETNetwork";
+  string public symbol = "BTN";
   uint public decimals = 4;
 
   uint public constant STAGE_PRESALE_ETHRaised = 3500*1 ether; // Stage 1 Ether 10000

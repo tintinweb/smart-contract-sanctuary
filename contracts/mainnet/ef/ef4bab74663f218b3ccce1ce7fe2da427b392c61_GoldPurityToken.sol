@@ -133,8 +133,8 @@ contract BurnableToken is BasicToken {
 
 contract GoldPurityToken is StandardToken, BurnableToken {
 
-  string public constant name = &quot;Gold Purity Token&quot;; 
-  string public constant symbol = &quot;GPT&quot;; 
+  string public constant name = "Gold Purity Token"; 
+  string public constant symbol = "GPT"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 999999 * (10 ** uint256(decimals));

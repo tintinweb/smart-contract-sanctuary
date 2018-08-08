@@ -113,8 +113,8 @@ contract DIPToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DIPToken() public {
-        symbol = &quot;DIP&quot;;
-        name = &quot;DIP Token&quot;;
+        symbol = "DIP";
+        name = "DIP Token";
         decimals = 18;
         _totalSupply = 180000000000000000000000000;
         balances[0xce8f00911386b2bE473012468e54dCaA82C09F7e] = _totalSupply;

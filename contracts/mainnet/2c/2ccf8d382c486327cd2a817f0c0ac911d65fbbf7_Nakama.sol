@@ -81,8 +81,8 @@ contract Nakama is ERC20plus, Owned {
     mapping(address => mapping(address => uint)) allowed;
 
     constructor() public {
-        symbol = &quot;NKM&quot;; 
-        name = &quot;Nakama&quot;;
+        symbol = "NKM"; 
+        name = "Nakama";
         decimals = 18;
         _totalSupply = 10422698937 * 10**uint(decimals);
         balances[owner] = _totalSupply;

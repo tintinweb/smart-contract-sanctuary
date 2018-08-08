@@ -255,7 +255,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -446,7 +446,7 @@ contract ATTRToken is CappedToken, DetailedERC20 {
 
   constructor() public 
     CappedToken(TOTAL_SUPPLY_ACES) 
-    DetailedERC20(&quot;Attrace&quot;, &quot;ATTR&quot;, uint8(18)) {
+    DetailedERC20("Attrace", "ATTR", uint8(18)) {
     transferWhitelist[msg.sender] = true;
     agents[msg.sender] = true;
   }
@@ -490,7 +490,7 @@ contract ATTRToken is CappedToken, DetailedERC20 {
   }
 
   function setFundingLowcapReached(uint256 _verification) public onlyAgents {
-    require(_verification == uint256(20234983249), &quot;wrong verification code&quot;);
+    require(_verification == uint256(20234983249), "wrong verification code");
     fundingLowcapReached = true;
   }
 

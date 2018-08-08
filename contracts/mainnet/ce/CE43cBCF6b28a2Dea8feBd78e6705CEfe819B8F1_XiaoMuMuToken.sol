@@ -113,8 +113,8 @@ contract XiaoMuMuToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function XiaoMuMuToken() public {
-        symbol = &quot;XMM&quot;;
-        name = &quot;Xiao MuMu Token&quot;;
+        symbol = "XMM";
+        name = "Xiao MuMu Token";
         decimals = 18;
         _totalSupply = 520000000000000000000;
         balances[0xf3Ed7F68772E33110DbFeBA6F155Dc61DF84d629] = _totalSupply;

@@ -113,8 +113,8 @@ contract dhopakcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function dhopakcoin() public {
-        symbol = &quot;DPC&quot;;
-        name = &quot;dhopakcoin&quot;;
+        symbol = "DPC";
+        name = "dhopakcoin";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0xFfB2072781894F9b9a48c7a8A9e6C42885d4a7d5] = _totalSupply;

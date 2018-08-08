@@ -23,8 +23,8 @@ contract GlobalChain {
     function GlobalChain() {
         balanceOf[msg.sender] = 100000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply = 100000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;GlobalChain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GC&quot;;                               // Set the symbol for display purposes
+        name = "GlobalChain";                                   // Set the name for display purposes
+        symbol = "GC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

@@ -18,8 +18,8 @@ contract BB {
     uint256 public totalSupply;
     uint256 public buyPrice; // finney/BB
     uint256 public sellPrice; // finney/BB
-    string public name = &quot;BB&quot;;
-    string public symbol = &quot;BB&quot;;
+    string public name = "BB";
+    string public symbol = "BB";
     mapping (address => mapping (address => uint256)) public allowance;
     uint256 bonus = 560000000000000000000;
     address owner;

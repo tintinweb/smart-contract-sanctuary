@@ -125,8 +125,8 @@ contract OPSToken is ERC20Token {
 
     
     function OPSToken() public {
-        name = &quot;OPS&quot;;
-        symbol = &quot;OPS&quot;;
+        name = "OPS";
+        symbol = "OPS";
         decimals = 18;
 
         decimalPlace = 10**uint256(decimals);

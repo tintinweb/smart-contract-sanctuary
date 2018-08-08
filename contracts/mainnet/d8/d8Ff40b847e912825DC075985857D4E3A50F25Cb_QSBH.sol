@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract QSBH is StandardToken {
 
-  string public constant name = &quot;求是币&quot;; // 求是币
-  string public constant symbol = &quot;QSBH&quot;;
+  string public constant name = "求是币"; // 求是币
+  string public constant symbol = "QSBH";
   uint8 public constant decimals = 18;
 
 

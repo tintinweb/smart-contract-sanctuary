@@ -5,9 +5,9 @@ pragma solidity ^0.4.24;
 //                         ,ad88888I888888888888888ba,
 //                       ,88888888I88888888888888888888a,
 //                     ,d888888888I8888888888888888888888b,
-//                    d88888PP&quot;&quot;&quot;&quot; &quot;&quot;YY88888888888888888888b,
-//                  ,d88&quot;&#39;__,,--------,,,,.;ZZZY8888888888888,
-//                 ,8IIl&#39;&quot;                ;;l&quot;ZZZIII8888888888,
+//                    d88888PP"""" ""YY88888888888888888888b,
+//                  ,d88"&#39;__,,--------,,,,.;ZZZY8888888888888,
+//                 ,8IIl&#39;"                ;;l"ZZZIII8888888888,
 //                ,I88l;&#39;                  ;lZZZZZ888III8888888,
 //              ,II88Zl;.                  ;llZZZZZ888888I888888,
 //             ,II888Zl;.                .;;;;;lllZZZ888888I8888b
@@ -16,19 +16,19 @@ pragma solidity ^0.4.24;
 //            II88888Z; _,aaa,      .,aaaaa,__.l;llZZZ88888888I888
 //            II88888IZZZZZZZZZ,  .ZZZZZZZZZZZZZZ;llZZ88888888I888,
 //            II88888IZZ<&#39;(@@>Z|  |ZZZ<&#39;(@@>ZZZZ;;llZZ888888888I88I
-//           ,II88888;   `&quot;&quot;&quot; ;|  |ZZ; `&quot;&quot;&quot;     ;;llZ8888888888I888
+//           ,II88888;   `""" ;|  |ZZ; `"""     ;;llZ8888888888I888
 //           II888888l            `;;          .;llZZ8888888888I888,
 //          ,II888888Z;           ;;;        .;;llZZZ8888888888I888I
 //          III888888Zl;    ..,   `;;       ,;;lllZZZ88888888888I888
 //          II88888888Z;;...;(_    _)      ,;;;llZZZZ88888888888I888,
 //          II88888888Zl;;;;;&#39; `--&#39;Z;.   .,;;;;llZZZZ88888888888I888b
-//          ]I888888888Z;;;;&#39;   &quot;;llllll;..;;;lllZZZZ88888888888I8888,
-//          II888888888Zl.;;&quot;Y88bd888P&quot;;;,..;lllZZZZZ88888888888I8888I
-//          II8888888888Zl;.; `&quot;PPP&quot;;;;,..;lllZZZZZZZ88888888888I88888
+//          ]I888888888Z;;;;&#39;   ";llllll;..;;;lllZZZZ88888888888I8888,
+//          II888888888Zl.;;"Y88bd888P";;,..;lllZZZZZ88888888888I8888I
+//          II8888888888Zl;.; `"PPP";;;,..;lllZZZZZZZ88888888888I88888
 //          II888888888888Zl;;. `;;;l;;;;lllZZZZZZZZW88888888888I88888
 //          `II8888888888888Zl;.    ,;;lllZZZZZZZZWMZ88888888888I88888
 //           II8888888888888888ZbaalllZZZZZZZZZWWMZZZ8888888888I888888,
-//           `II88888888888888888b&quot;WWZZZZZWWWMMZZZZZZI888888888I888888b
+//           `II88888888888888888b"WWZZZZZWWWMMZZZZZZI888888888I888888b
 //            `II88888888888888888;ZZMMMMMMZZZZZZZZllI888888888I8888888
 //             `II8888888888888888 `;lZZZZZZZZZZZlllll888888888I8888888,
 //              II8888888888888888, `;lllZZZZllllll;;.Y88888888I8888888b,
@@ -42,7 +42,7 @@ pragma solidity ^0.4.24;
 //       ,ad888888888888I                              8888888I8888ZZZZZZZZZZZZZ
 //     ,d888888888888888&#39;                              888888IZZZZZZZZZZZZZZZZZZ
 //   ,d888888888888P&#39;8P&#39;                               Y888ZZZZZZZZZZZZZZZZZZZZZ
-//  ,8888888888888,  &quot;                                 ,ZZZZZZZZZZZZZZZZZZZZZZZZ
+//  ,8888888888888,  "                                 ,ZZZZZZZZZZZZZZZZZZZZZZZZ
 // d888888888888888,                                ,ZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 // 888888888888888888a,      _                    ,ZZZZZZZZZZZZZZZZZZZZ888888888
 // 888888888888888888888ba,_d&#39;                  ,ZZZZZZZZZZZZZZZZZ88888888888888
@@ -440,7 +440,7 @@ contract WinnerWinner is Core, Internal, ExternalView {
     endTime = startTime + maxTime;
     addressOfCaptain = addressOfOwner;
 
-    _registerReferral(&quot;owner&quot;, addressOfOwner);
+    _registerReferral("owner", addressOfOwner);
 
     emit Started(startTime);
   }

@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract YOBTC is StandardToken {
 
-  string public constant name = &quot;Yobtc Token&quot;;
-  string public constant symbol = &quot;YOBTC&quot;;
+  string public constant name = "Yobtc Token";
+  string public constant symbol = "YOBTC";
   uint8 public constant decimals = 18;
 
 

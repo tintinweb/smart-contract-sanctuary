@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -196,8 +196,8 @@ contract WarshipMain is WarshipAccess{
 
     //----erc721 interface
     bool public implementsERC721 = true;
-    string public constant name = &quot;EtherWarship&quot;;
-    string public constant symbol = &quot;SHIP&quot;;
+    string public constant name = "EtherWarship";
+    string public constant symbol = "SHIP";
     event Transfer(address indexed from, address indexed to, uint256 indexed tokenId); 
     event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);
     function balanceOf(address _owner) public view returns (uint256 _balance){
@@ -369,7 +369,7 @@ contract WarshipMain is WarshipAccess{
         ShipIdToStatus[newshipId] = 1;
         //transfer 0 to owner
         _transfer(0, _owner, newshipId);
-        //&quot;Where is the counter?Repeat that.Where is the counter?Everyone want to know it.----Troll XI&quot;
+        //"Where is the counter?Repeat that.Where is the counter?Everyone want to know it.----Troll XI"
        
         
 

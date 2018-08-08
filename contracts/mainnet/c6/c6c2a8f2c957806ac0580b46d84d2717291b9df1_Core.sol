@@ -104,8 +104,8 @@ contract Core is Owned {
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
     event OrderPaid(uint256 indexed _orderID, uint256 _value);
 
-    string public name = &quot;CoinMarketAlert&quot;;
-    string public symbol = &quot;CMA&quot;;
+    string public name = "CoinMarketAlert";
+    string public symbol = "CMA";
     uint256 public decimals = 18;
     mapping(uint256 => bool) public OrdersPaid;
     mapping(address => mapping(address => uint256)) public Allowance;

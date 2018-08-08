@@ -128,8 +128,8 @@ contract StandardToken is ERC20 {
 
 contract BigToken is StandardToken {
   address public owner;
-  string public constant name = &quot;BigONE&quot;;
-  string public constant symbol = &quot;BIG&quot;;
+  string public constant name = "BigONE";
+  string public constant symbol = "BIG";
   uint8 public constant decimals = 18;
   bool public frozen = true;
 

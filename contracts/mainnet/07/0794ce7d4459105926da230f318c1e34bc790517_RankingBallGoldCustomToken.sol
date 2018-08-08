@@ -77,7 +77,7 @@ contract ApproveAndCallFallBack {
 
 /// @dev The actual token contract, the default controller is the msg.sender
 ///  that deploys the contract, so usually this token will be deployed by a
-///  token controller contract, which Giveth will call a &quot;Campaign&quot;
+///  token controller contract, which Giveth will call a "Campaign"
 contract MiniMeToken is Controlled {
 
     string public name;                //The Token&#39;s name: e.g. DigixDAO Tokens
@@ -640,9 +640,9 @@ contract RankingBallGoldToken is MiniMeToken, BurnableMiniMeToken {
         _tokenFactory,
         0x0,                     // no parent token
         0,                       // no snapshot block number from parent
-        &quot;RankingBall Gold&quot;,  // Token name
+        "RankingBall Gold",  // Token name
         18,                      // Decimals
-        &quot;RBG&quot;,                   // Symbol
+        "RBG",                   // Symbol
         true                     // Enable transfers
       ) {} 
 }
@@ -720,7 +720,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -899,9 +899,9 @@ contract POSController is Ownable, TokenController {
   }
 
   function generateTokens(address _to, uint256 _value) internal returns (bool) {
-    if (POSTokenI(token).supportsInterface(bytes4(keccak256(&quot;mint(address,uint256)&quot;)))) {
+    if (POSTokenI(token).supportsInterface(bytes4(keccak256("mint(address,uint256)")))) {
       return MintableTokenI(token).mint(_to, _value);
-    } else if (POSTokenI(token).supportsInterface(bytes4(keccak256(&quot;generateTokens(address,uint256)&quot;)))) {
+    } else if (POSTokenI(token).supportsInterface(bytes4(keccak256("generateTokens(address,uint256)")))) {
       return MiniMeTokenI(token).generateTokens(_to, _value);
     }
 
@@ -1237,7 +1237,7 @@ contract TokenControllerBridge is ERC20, Ownable {
 ///  compatible with POSController.
 contract POSMintableTokenAPI is POSTokenI, TokenControllerBridge {
   function supportsInterface(bytes4 interfaceID) public view returns (bool) {
-    return interfaceID == bytes4(keccak256(&quot;mint(address,uint256)&quot;)); // TODO: use bytes4 literal
+    return interfaceID == bytes4(keccak256("mint(address,uint256)")); // TODO: use bytes4 literal
   }
 
   function transferOwnershipTo(address _to) public {
@@ -1251,7 +1251,7 @@ contract POSMintableTokenAPI is POSTokenI, TokenControllerBridge {
 ///  compatible with POSController.
 contract POSMiniMeTokenAPI is POSTokenI, Controlled {
   function supportsInterface(bytes4 interfaceID) public view returns (bool) {
-    return interfaceID == bytes4(keccak256(&quot;generateTokens(address,uint256)&quot;)); // TODO: use bytes4 literal
+    return interfaceID == bytes4(keccak256("generateTokens(address,uint256)")); // TODO: use bytes4 literal
   }
 
   function transferOwnershipTo(address _to) public {

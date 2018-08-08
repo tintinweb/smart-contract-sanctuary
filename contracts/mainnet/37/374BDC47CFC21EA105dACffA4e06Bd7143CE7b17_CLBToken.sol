@@ -32,8 +32,8 @@ contract BasicToken is ERC20 {
 
     uint256 public totalSupply = 10*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;CLBToken&quot;;
-    string constant public symbol = &quot;CLB&quot;;
+    string constant public name = "CLBToken";
+    string constant public symbol = "CLB";
 
 	mapping(address => uint256) balances;
 	mapping (address => mapping (address => uint256)) internal allowed;
@@ -158,7 +158,7 @@ contract BasicToken is ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 	address public owner;

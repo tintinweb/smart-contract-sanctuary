@@ -113,8 +113,8 @@ contract HypeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HypeToken() public {
-        symbol = &quot;HYPE&quot;;
-        name = &quot;Hype Token&quot;;
+        symbol = "HYPE";
+        name = "Hype Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xCbE8c09BD495764673F0FD4e465F073ba5e8d6Bb] = _totalSupply;

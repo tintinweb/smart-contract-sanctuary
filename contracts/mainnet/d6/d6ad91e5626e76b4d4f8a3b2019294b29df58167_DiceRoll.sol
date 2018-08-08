@@ -182,7 +182,7 @@ contract DiceRoll is SafeMath {
         jackpot += increaseAmount;
         jackpotContract.transfer(increaseAmount);
         if(msg.value >= minJackpotBet){
-            bool result = jackpotContract.call(bytes4(keccak256(&quot;addPlayer(address)&quot;)),msg.sender);
+            bool result = jackpotContract.call(bytes4(keccak256("addPlayer(address)")),msg.sender);
             require(result);
         }
         

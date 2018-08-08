@@ -113,8 +113,8 @@ contract WillCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WillCoin() public {
-        symbol = &quot;WC&quot;;
-        name = &quot;WillCoin&quot;;
+        symbol = "WC";
+        name = "WillCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000;
         balances[0xd2357B607d5613Eba112064c8B95E3009fA5d834] = _totalSupply;

@@ -14,8 +14,8 @@ contract ERC20Interface {
 contract BTFM is ERC20Interface {
     uint256 public constant decimals = 5;
 
-    string public constant symbol = &quot;BTFM&quot;;
-    string public constant name = &quot;BiTing&quot;;
+    string public constant symbol = "BTFM";
+    string public constant name = "BiTing";
 
     uint256 public _totalSupply = 10 ** 16; 
 
@@ -131,7 +131,7 @@ contract BTFM is ERC20Interface {
 
     // Send _value amount of tokens from address _from to address _to
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-    // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
     // fees in sub-currencies; the command should fail unless the _from account has
     // deliberately authorized the sender of the message via some mechanism; we propose
     // these standardized APIs for approval:

@@ -101,8 +101,8 @@ contract Leaderboard {
         require(leader.amount > 0);
         
         // Reset urls
-        if (url) leader.url = &quot;&quot;;
-        if (img_url) leader.img_url = &quot;&quot;;
+        if (url) leader.url = "";
+        if (img_url) leader.img_url = "";
     }
     
     

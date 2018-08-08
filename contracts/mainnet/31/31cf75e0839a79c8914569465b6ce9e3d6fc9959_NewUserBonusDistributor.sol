@@ -268,8 +268,8 @@ contract ERC721 {
     event Approval(address owner, address approved, uint256 cardId);
 
     // Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant name = &quot;EtherGen&quot;;
-    string public constant symbol = &quot;ETG&quot;;
+    string public constant name = "EtherGen";
+    string public constant symbol = "ETG";
 
     // Optional methods
     function tokensOfOwner(address player) external view returns (uint64[] cardIds);

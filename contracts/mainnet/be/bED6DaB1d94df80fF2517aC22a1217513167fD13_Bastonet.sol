@@ -65,8 +65,8 @@ contract Bastonet is ERC20Basic, Ownable {
 
   mapping(address => uint256) balances;
 
-    string public symbol = &quot;BSN&quot;;
-    string public name = &quot;Bastonet&quot;;
+    string public symbol = "BSN";
+    string public name = "Bastonet";
     uint8 public decimals = 18;
     uint256 private totalSupply_ = 5*(10**27);
     uint256 public fee = 5*(10**18);

@@ -113,8 +113,8 @@ contract BitcoinPower is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitcoinPower() public {
-        symbol = &quot;BTCP&quot;;
-        name = &quot;BitcoinPower &quot;;
+        symbol = "BTCP";
+        name = "BitcoinPower ";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0x2d57365a7ab22425f09D49bB0baFB0426EB8dDF9] = _totalSupply;

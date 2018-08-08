@@ -92,8 +92,8 @@ contract ERC20Token is ERC20, SafeMath {
 contract Wolk is ERC20Token {
 
     // TOKEN INFO
-    string  public constant name = &quot;Wolk Protocol Token&quot;;
-    string  public constant symbol = &quot;WOLK&quot;;
+    string  public constant name = "Wolk Protocol Token";
+    string  public constant symbol = "WOLK";
     uint256 public constant decimals = 18;
 
     // RESERVE
@@ -548,7 +548,7 @@ contract BancorFormula is SafeMath {
         The values in this method been generated via the following python snippet: 
 
         def calculateFactorials():
-            “”&quot;Method to print out the factorials for fixedExp”“”
+            “”"Method to print out the factorials for fixedExp”“”
 
             ni = []
             ni.append( 295232799039604140847618609643520000000) # 34!

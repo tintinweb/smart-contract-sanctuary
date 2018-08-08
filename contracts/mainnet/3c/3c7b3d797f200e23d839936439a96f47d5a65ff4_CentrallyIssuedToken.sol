@@ -6,7 +6,7 @@
 
 pragma solidity ^0.4.6;
 
-// import &quot;./UpgradeableToken.sol&quot;;
+// import "./UpgradeableToken.sol";
 /**
  * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net
  *
@@ -15,7 +15,7 @@ pragma solidity ^0.4.6;
 
 // pragma solidity ^0.4.15;
 
-// import &quot;zeppelin-solidity/contracts/token/ERC20.sol&quot;;
+// import "zeppelin-solidity/contracts/token/ERC20.sol";
 // pragma solidity ^0.4.18;
 
 
@@ -57,7 +57,7 @@ contract ERC20 is ERC20Basic {
 
 
 // import &#39;zeppelin-solidity/contracts/token/ERC20.sol&#39;;
-// import &quot;zeppelin-solidity/contracts/math/SafeMath.sol&quot;;
+// import "zeppelin-solidity/contracts/math/SafeMath.sol";
 // pragma solidity ^0.4.18;
 
 
@@ -158,7 +158,7 @@ contract StandardToken is ERC20 {
 
 }
 
-// import &quot;./UpgradeAgent.sol&quot;;
+// import "./UpgradeAgent.sol";
 /**
  * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net
  *
@@ -312,7 +312,7 @@ contract UpgradeableToken is StandardToken {
 
 }
 
-// import &quot;./ReleasableToken.sol&quot;;
+// import "./ReleasableToken.sol";
 /**
  * This smart contract code is Copyright 2017 TokenMarket Ltd. For more information see https://tokenmarket.net
  *
@@ -321,14 +321,14 @@ contract UpgradeableToken is StandardToken {
 
 // pragma solidity ^0.4.15;
 
-// import &quot;zeppelin-solidity/contracts/ownership/Ownable.sol&quot;;
+// import "zeppelin-solidity/contracts/ownership/Ownable.sol";
 // pragma solidity ^0.4.18;
 
 
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -366,7 +366,7 @@ contract Ownable {
   }
 
 }
-// import &quot;zeppelin-solidity/contracts/token/ERC20.sol&quot;;
+// import "zeppelin-solidity/contracts/token/ERC20.sol";
 
 
 /**
@@ -453,7 +453,7 @@ contract ReleasableToken is ERC20, Ownable {
 
 }
 
-// import &quot;./PausableToken.sol&quot;;
+// import "./PausableToken.sol";
 // pragma solidity ^0.4.15;
 
 // import &#39;./StandardToken.sol&#39;;
@@ -461,7 +461,7 @@ contract ReleasableToken is ERC20, Ownable {
 // pragma solidity ^0.4.18;
 
 
-// import &quot;../ownership/Ownable.sol&quot;;
+// import "../ownership/Ownable.sol";
 
 
 /**

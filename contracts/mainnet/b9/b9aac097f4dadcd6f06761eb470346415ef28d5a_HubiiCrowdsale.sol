@@ -4,7 +4,7 @@ pragma solidity ^0.4.13;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control 
- * functions, this simplifies the implementation of &quot;user permissions&quot;. 
+ * functions, this simplifies the implementation of "user permissions". 
  */
 contract Ownable {
   address public owner;
@@ -1278,8 +1278,8 @@ contract HubiiCrowdsale is Crowdsale {
     uint private constant token_initial_supply = 0;
     uint8 private constant token_decimals = 15;
     bool private constant token_mintable = true;
-    string private constant token_name = &quot;Hubiits&quot;;
-    string private constant token_symbol = &quot;HBT&quot;;
+    string private constant token_name = "Hubiits";
+    string private constant token_symbol = "HBT";
     uint private constant token_in_wei = 10 ** 15;
     // The fraction of 10,000 out of the total target tokens that is used to mint bonus tokens. These are allocated to the team&#39;s multisig wallet.
     uint private constant bonus_base_points = 3000;

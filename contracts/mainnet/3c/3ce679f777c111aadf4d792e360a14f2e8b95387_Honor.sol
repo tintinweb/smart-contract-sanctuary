@@ -96,8 +96,8 @@ contract Honor is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;HNR&quot;; // v8
-        name = &quot;Honor&quot;;
+        symbol = "HNR"; // v8
+        name = "Honor";
         decimals = 8;
         _totalSupply = 25000000000000000;
         balances[msg.sender] = _totalSupply;

@@ -20,9 +20,9 @@ contract UDCC{
     function UDCC() public {
         balances[msg.sender] = 2680000000000;               // Give the creator all initial tokens
         totalSupply = 26000000000000;                        // Update total supply
-        name = &quot;UDCC&quot;;                                   // Set the name for display purposes
+        name = "UDCC";                                   // Set the name for display purposes
         decimals =4;                            // Amount of decimals for display purposes
-        symbol = &quot;UDCC&quot;;                               // Set the symbol for display purposes
+        symbol = "UDCC";                               // Set the symbol for display purposes
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

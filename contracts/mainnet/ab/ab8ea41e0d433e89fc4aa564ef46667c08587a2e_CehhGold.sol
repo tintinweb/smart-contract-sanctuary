@@ -175,7 +175,7 @@ contract ERC891 is ERC20 {
 
     function claimWithSignature(bytes _sig) public {
         bytes32 hash = bytes32(keccak256(abi.encodePacked(
-            &quot;\x19Ethereum Signed Message:\n32&quot;,
+            "\x19Ethereum Signed Message:\n32",
             keccak256(abi.encodePacked(msg.sender))
         )));
         
@@ -188,8 +188,8 @@ contract ERC891 is ERC20 {
 }
 
 contract CehhGold is ERC891 {
-    string  public constant name        = &quot;CehhGold&quot;;
-    string  public constant symbol      = &quot;CEHH+&quot;;
+    string  public constant name        = "CehhGold";
+    string  public constant symbol      = "CEHH+";
     uint    public constant decimals    = 18;
     uint    public version              = 0;
 }

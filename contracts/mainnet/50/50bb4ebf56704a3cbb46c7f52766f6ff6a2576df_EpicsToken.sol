@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -66,7 +66,7 @@ contract Ownable {
 /**
  * @title Adminable
  * @dev The adminable contract has an admin address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Adminable is Ownable {
     address public admin;
@@ -85,7 +85,7 @@ contract Adminable is Ownable {
      * @dev Throws if called by any account other than the admin.
      */
     modifier onlyAdmin() {
-        require(msg.sender == admin, &quot;Only admin is allowed to execute this method.&quot;);
+        require(msg.sender == admin, "Only admin is allowed to execute this method.");
         _;
     }
 
@@ -276,7 +276,7 @@ library SafeMath {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -291,7 +291,7 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(
     address _from,
@@ -312,7 +312,7 @@ contract ERC721BasicToken is ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
@@ -464,7 +464,7 @@ contract ERC721BasicToken is ERC721Basic {
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -480,14 +480,14 @@ contract ERC721BasicToken is ERC721Basic {
     canTransfer(_tokenId)
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -812,7 +812,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
 
 // File: contracts/EpicsToken.sol
 
-contract EpicsToken is ERC721Token(&quot;Epics.gg Token&quot;, &quot;EPICS TOKEN&quot;), Ownable, Adminable {
+contract EpicsToken is ERC721Token("Epics.gg Token", "EPICS TOKEN"), Ownable, Adminable {
     event TokenLock(string uuid);    // Single token trade locked
     event TokenUnlock(string uuid);  // Single token trade unlocked
     event UserVerified(string userToken, address userAddress);  // User sends this to verify their eth account
@@ -838,7 +838,7 @@ contract EpicsToken is ERC721Token(&quot;Epics.gg Token&quot;, &quot;EPICS TOKEN
     * @dev Gets the owner of the specified token UUID
     */
     function ownerOfUUID(string _uuid) public view returns (address) {
-        require(uuidExists[_uuid] == true, &quot;UUID does not exist.&quot;); // Enable these when Truffle updates solc to 0.4.23
+        require(uuidExists[_uuid] == true, "UUID does not exist."); // Enable these when Truffle updates solc to 0.4.23
         uint256 _tokenId = uuidToTokenId[_uuid];
         return ownerOf(_tokenId);
     }
@@ -847,7 +847,7 @@ contract EpicsToken is ERC721Token(&quot;Epics.gg Token&quot;, &quot;EPICS TOKEN
     * @dev Gets the token id for the specified UUID
     */
     function tokenIdOfUUID(string _uuid) public view returns (uint256) {
-        require(uuidExists[_uuid] == true, &quot;UUID does not exist.&quot;);
+        require(uuidExists[_uuid] == true, "UUID does not exist.");
         return uuidToTokenId[_uuid];
     }
 
@@ -855,14 +855,14 @@ contract EpicsToken is ERC721Token(&quot;Epics.gg Token&quot;, &quot;EPICS TOKEN
     *  Returns the token data associated with a token id
     */
     function getToken(uint256 _tokenId) public view returns (string uuid, string properties) {
-        require(exists(_tokenId), &quot;Token does not exist.&quot;);
+        require(exists(_tokenId), "Token does not exist.");
         Token memory token = tokens[_tokenId];
         uuid = token.uuid;
         properties = token.properties;
     }
 
     function isTokenLocked(uint256 _tokenId) public view returns (bool) {
-        require(exists(_tokenId), &quot;Token does not exist.&quot;);
+        require(exists(_tokenId), "Token does not exist.");
         return lockedTokens[_tokenId];
     }
 
@@ -882,7 +882,7 @@ contract EpicsToken is ERC721Token(&quot;Epics.gg Token&quot;, &quot;EPICS TOKEN
     * @dev Lock all trading of tokens.
     */
     function lockTrading() public onlyAdmin {
-        require(tradingLocked == false, &quot;Trading already locked.&quot;);
+        require(tradingLocked == false, "Trading already locked.");
         tradingLocked = true;
         emit TradingLock();
     }
@@ -891,7 +891,7 @@ contract EpicsToken is ERC721Token(&quot;Epics.gg Token&quot;, &quot;EPICS TOKEN
     * @dev Unlock trading. If there were some tokens individually locked, this will not unlock them.
     */
     function unlockTrading() public onlyAdmin {
-        require(tradingLocked == true, &quot;Trading already unlocked.&quot;);
+        require(tradingLocked == true, "Trading already unlocked.");
         tradingLocked = false;
         emit TradingUnlock();
     }
@@ -903,7 +903,7 @@ contract EpicsToken is ERC721Token(&quot;Epics.gg Token&quot;, &quot;EPICS TOKEN
     * @dev Create a token and give to address.
     */
     function createToken(string _uuid, string _properties, address _to) public onlyAdmin {
-        require(uuidExists[_uuid] == false, &quot;UUID already exists.&quot;);
+        require(uuidExists[_uuid] == false, "UUID already exists.");
         Token memory _token = Token({uuid: _uuid, properties: _properties});
         uint256 _tokenId = tokens.push(_token) - 1;
         uuidToTokenId[_uuid] = _tokenId;
@@ -917,15 +917,15 @@ contract EpicsToken is ERC721Token(&quot;Epics.gg Token&quot;, &quot;EPICS TOKEN
     * Update a token (such as it&#39;s treatment or designation or skin)
     */
     function updateToken(string _uuid, string _properties) public onlyAdmin {
-        require(uuidExists[_uuid] == true, &quot;UUID does not exist.&quot;);
+        require(uuidExists[_uuid] == true, "UUID does not exist.");
         uint256 _tokenId = uuidToTokenId[_uuid];
         Token memory _token = Token({uuid: _uuid, properties: _properties});
         tokens[_tokenId] = _token;
     }
 
     function destroyToken(uint256 _tokenId) public onlyAdmin {
-        require(exists(_tokenId), &quot;Token does not exist.&quot;);
-        require(lockedTokens[_tokenId] == true, &quot;Token must be locked before being destroyed.&quot;);
+        require(exists(_tokenId), "Token does not exist.");
+        require(lockedTokens[_tokenId] == true, "Token must be locked before being destroyed.");
         Token memory _token = tokens[_tokenId];
         delete uuidExists[_token.uuid];
         delete uuidToTokenId[_token.uuid];
@@ -938,9 +938,9 @@ contract EpicsToken is ERC721Token(&quot;Epics.gg Token&quot;, &quot;EPICS TOKEN
     * @dev Lock a token to prevent it from being traded.
     */
     function lockToken(address _owner, uint256 _tokenId) public onlyAdmin {
-        require(exists(_tokenId), &quot;Token does not exist.&quot;);
-        require(lockedTokens[_tokenId] == false, &quot;Token is already locked.&quot;);
-        require(ownerOf(_tokenId) == _owner, &quot;The owner has changed since it was suppose to be locked.&quot;);
+        require(exists(_tokenId), "Token does not exist.");
+        require(lockedTokens[_tokenId] == false, "Token is already locked.");
+        require(ownerOf(_tokenId) == _owner, "The owner has changed since it was suppose to be locked.");
         lockedTokens[_tokenId] = true;
         Token memory _token = tokens[_tokenId];
         emit TokenLock(_token.uuid);
@@ -950,9 +950,9 @@ contract EpicsToken is ERC721Token(&quot;Epics.gg Token&quot;, &quot;EPICS TOKEN
     * @dev Unlock a token so it can be traded.
     */
     function unlockToken(address _owner, uint256 _tokenId) public onlyAdmin {
-        require(exists(_tokenId), &quot;Token does not exist.&quot;);
-        require(lockedTokens[_tokenId] == true, &quot;Token is already unlocked.&quot;);
-        require(ownerOf(_tokenId) == _owner, &quot;The owner has changed since it was suppose to be locked.&quot;);
+        require(exists(_tokenId), "Token does not exist.");
+        require(lockedTokens[_tokenId] == true, "Token is already unlocked.");
+        require(ownerOf(_tokenId) == _owner, "The owner has changed since it was suppose to be locked.");
         lockedTokens[_tokenId] = false;
         Token memory _token = tokens[_tokenId];
         emit TokenUnlock(_token.uuid);
@@ -963,8 +963,8 @@ contract EpicsToken is ERC721Token(&quot;Epics.gg Token&quot;, &quot;EPICS TOKEN
     * Tokens must be locked by admin for this.
     */
     function setOwner(address _to, uint256 _tokenId) public onlyAdmin {
-        require(exists(_tokenId), &quot;Token does not exist.&quot;);
-        require(lockedTokens[_tokenId] == true || tradingLocked == true, &quot;Token must be locked before owner is changed.&quot;);
+        require(exists(_tokenId), "Token does not exist.");
+        require(lockedTokens[_tokenId] == true || tradingLocked == true, "Token must be locked before owner is changed.");
         address _owner = ownerOf(_tokenId);
         clearApproval(_owner, _tokenId);
         removeTokenFrom(_owner, _tokenId);
@@ -978,17 +978,17 @@ contract EpicsToken is ERC721Token(&quot;Epics.gg Token&quot;, &quot;EPICS TOKEN
     // These are wrapper functions to enable locked tokens, locked trading
 
     function transferFrom(address _from, address _to, uint256 _tokenId) public {
-        require(tradingLocked == false && lockedTokens[_tokenId] == false, &quot;Token must be unlocked to be transferred.&quot;);
+        require(tradingLocked == false && lockedTokens[_tokenId] == false, "Token must be unlocked to be transferred.");
         super.transferFrom(_from, _to, _tokenId);
     }
 
     function approve(address _to, uint256 _tokenId) public {
-        require(tradingLocked == false && lockedTokens[_tokenId] == false, &quot;Token must be unlocked to be approved.&quot;);
+        require(tradingLocked == false && lockedTokens[_tokenId] == false, "Token must be unlocked to be approved.");
         super.approve(_to, _tokenId);
     }
 
     function setApprovalForAll(address _operator, bool _approved) public {
-        require(tradingLocked == false, &quot;Token must be unlocked to be approved for all.&quot;);
+        require(tradingLocked == false, "Token must be unlocked to be approved for all.");
         super.setApprovalForAll(_operator, _approved);
     }
 }

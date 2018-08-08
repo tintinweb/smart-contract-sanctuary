@@ -32,8 +32,8 @@ contract GameChainCoin {
     ) public {
         totalSupply = 900000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;GameChainCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GCC&quot;;                               // Set the symbol for display purposes
+        name = "GameChainCoin";                                   // Set the name for display purposes
+        symbol = "GCC";                               // Set the symbol for display purposes
     }
 
     /**

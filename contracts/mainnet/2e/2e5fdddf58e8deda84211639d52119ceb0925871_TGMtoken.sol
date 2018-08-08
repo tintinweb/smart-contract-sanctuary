@@ -110,8 +110,8 @@ contract TGMtoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TGMtoken() public {
-        symbol = &quot;TGM&quot;;
-        name = &quot;TGM token&quot;;
+        symbol = "TGM";
+        name = "TGM token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xED18F9E612b0A90Fafb31cDd2c18a45E5E1b2081] = _totalSupply;

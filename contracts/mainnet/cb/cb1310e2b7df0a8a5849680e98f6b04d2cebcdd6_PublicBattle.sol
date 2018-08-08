@@ -412,18 +412,18 @@ return battleCD[_pokemonId] - now;
 }
 
 function initialPokemonInfo() public onlyContractCreator{
-addPokemonDetails(&quot;PikaChu&quot; ,1, 300);
-addPokemonDetails(&quot;Ninetales&quot;,1,505);
-addPokemonDetails(&quot;Charizard&quot; ,2, 534);
-addPokemonDetails(&quot;Eevee&quot;,0,325);
-addPokemonDetails(&quot;Jigglypuff&quot; ,0, 270);
-addPokemonDetails(&quot;Pidgeot&quot;,2,469);
-addPokemonDetails(&quot;Aerodactyl&quot; ,2, 515);
-addPokemonDetails(&quot;Bulbasaur&quot;,0,318);
-addPokemonDetails(&quot;Abra&quot; ,0, 310);
-addPokemonDetails(&quot;Gengar&quot;,2,500);
-addPokemonDetails(&quot;Hoothoot&quot; ,0, 262);
-addPokemonDetails(&quot;Goldeen&quot;,0,320);
+addPokemonDetails("PikaChu" ,1, 300);
+addPokemonDetails("Ninetales",1,505);
+addPokemonDetails("Charizard" ,2, 534);
+addPokemonDetails("Eevee",0,325);
+addPokemonDetails("Jigglypuff" ,0, 270);
+addPokemonDetails("Pidgeot",2,469);
+addPokemonDetails("Aerodactyl" ,2, 515);
+addPokemonDetails("Bulbasaur",0,318);
+addPokemonDetails("Abra" ,0, 310);
+addPokemonDetails("Gengar",2,500);
+addPokemonDetails("Hoothoot" ,0, 262);
+addPokemonDetails("Goldeen",0,320);
 
 }
 

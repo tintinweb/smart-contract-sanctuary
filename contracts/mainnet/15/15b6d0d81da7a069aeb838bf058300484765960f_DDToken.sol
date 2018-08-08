@@ -215,8 +215,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract DDToken is StandardToken {
 
-  string public constant name = &quot;DDToken&quot;;
-  string public constant symbol = &quot;DD&quot;;
+  string public constant name = "DDToken";
+  string public constant symbol = "DD";
   uint8 public constant decimals = 8;
 
   uint256 public constant INITIAL_SUPPLY = 200000000 * (10 ** uint256(decimals));

@@ -113,8 +113,8 @@ contract EDToken is UnboundedRegularToken {
 
     uint public totalSupply = 10000000000000000000000000;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;EDToken&quot;;
-    string constant public symbol = &quot;ED&quot;;
+    string constant public name = "EDToken";
+    string constant public symbol = "ED";
 
     function EDToken() {
         balances[msg.sender] = totalSupply;

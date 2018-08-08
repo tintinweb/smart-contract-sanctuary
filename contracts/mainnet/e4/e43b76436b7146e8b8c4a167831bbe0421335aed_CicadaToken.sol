@@ -1,5 +1,5 @@
 contract CicadaToken {
-    /* Public variables of the Cicada token. Not made by the &quot;official&quot; Cicada 3301... or is it? 
+    /* Public variables of the Cicada token. Not made by the "official" Cicada 3301... or is it? 
         No, probably not, you&#39;re paranoid. Or am I? What if we&#39;re all Cicada? No, you&#39;re delusional.
         This is insanity, or maybe it&#39;s genius?
         
@@ -65,9 +65,9 @@ contract CicadaToken {
     function Token() {
 
          initialSupply = 3301000000000;
-         name =&quot;CICADA&quot;;
+         name ="CICADA";
          decimals = 9;
-         symbol = &quot;3301&quot;;
+         symbol = "3301";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                // Update total supply

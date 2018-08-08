@@ -103,8 +103,8 @@ contract BurnableToken is BasicToken {
   }
 }
 contract PXGToken is StandardToken, BurnableToken {
-  string public constant name = &quot;PlayGame&quot;; 
-  string public constant symbol = &quot;PXG&quot;; 
+  string public constant name = "PlayGame"; 
+  string public constant symbol = "PXG"; 
   uint8 public constant decimals = 18; 
   uint256 public constant INITIAL_SUPPLY = 1000000000 * (10 ** uint256(decimals));
   function PXGToken() public {

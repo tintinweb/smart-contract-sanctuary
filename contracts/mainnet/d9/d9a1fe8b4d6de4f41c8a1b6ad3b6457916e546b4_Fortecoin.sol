@@ -111,8 +111,8 @@ contract Fortecoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Fortecoin() public {
-        symbol = &quot;FOTC&quot;;
-        name = &quot;Fortecoin&quot;;
+        symbol = "FOTC";
+        name = "Fortecoin";
         decimals = 18;
         _totalSupply = 6000000000000000000000000000;
         balances[0x06562693dfB2EF3EFb13A3Ea4B937AF09B86143d] = _totalSupply;

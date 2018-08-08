@@ -235,8 +235,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract WTBNToken is StandardToken {
 
-  string public constant name =  &quot;Whos The Boss Now&quot;;
-  string public constant symbol = &quot;WTBN&quot;;
+  string public constant name =  "Whos The Boss Now";
+  string public constant symbol = "WTBN";
   uint256 public constant decimals = 18;
   uint256 public totalSupply = 10000000 * 1 ether;
   

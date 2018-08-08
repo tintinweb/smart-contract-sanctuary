@@ -1,10 +1,10 @@
 // Copyright (C) 2017  MixBytes, LLC
 
-// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).
+// Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
 
 // Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
 
 // Code taken from https://github.com/ethereum/dapp-bin/blob/master/wallet/wallet.sol
@@ -12,7 +12,7 @@
 
 // @authors:
 // Gav Wood <g@ethdev.com>
-// inheritable &quot;property&quot; contract that enables methods to be protected by requiring the acquiescence of either a
+// inheritable "property" contract that enables methods to be protected by requiring the acquiescence of either a
 // single, or, crucially, each of a number of, designated owners.
 // usage:
 // use modifiers onlyowner (just own owned) or onlymanyowners(hash), whereby the same hash must be provided by
@@ -100,7 +100,7 @@ contract multiowned {
 
 	// METHODS
 
-    // constructor is given number of sigs required to do protected &quot;onlymanyowners&quot; transactions
+    // constructor is given number of sigs required to do protected "onlymanyowners" transactions
     // as well as the selection of addresses capable of confirming them (msg.sender is not added to the owners!).
     address[] _owners;
     function multiowned() public

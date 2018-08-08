@@ -106,8 +106,8 @@ contract BetcoinICO is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function BetcoinICO() public {
-        symbol = &quot;BETC&quot;;
-        name = &quot;Betcoin&quot;;
+        symbol = "BETC";
+        name = "Betcoin";
         decimals = 18;
         _totalSupply = 125500000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

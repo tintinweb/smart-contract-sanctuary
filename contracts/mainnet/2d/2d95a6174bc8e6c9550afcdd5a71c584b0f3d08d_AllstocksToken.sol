@@ -126,8 +126,8 @@ contract Pausable is Owned {
 contract StandardToken is ERC20Interface, Pausable {
     using SafeMath for uint256;
 
-    string public constant symbol = &quot;AST-NET&quot;;
-    string public constant name = &quot;AllStocks Token&quot;;
+    string public constant symbol = "AST-NET";
+    string public constant name = "AllStocks Token";
     uint256 public constant decimals = 18;
     uint256 public _totalSupply = 0;
 
@@ -274,7 +274,7 @@ contract MintableToken is StandardToken {
 
 // note introduced onlyPayloadSize in StandardToken.sol to protect against short address attacks
 contract AllstocksToken is MintableToken {
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
     uint256 public constant INITIAL_SUPPLY = 225 * (10**5) * 10**decimals;     // 22.5m reserved for Allstocks use  
 
     // constructor

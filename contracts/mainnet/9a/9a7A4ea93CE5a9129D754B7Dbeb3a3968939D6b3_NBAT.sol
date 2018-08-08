@@ -79,10 +79,10 @@ contract StandardToken is Token {
 
 contract NBAT is StandardToken, SafeMath {
 
-    string public constant name = &quot;NBA001&quot;;
-    string public constant symbol = &quot;NBA001&quot;;
+    string public constant name = "NBA001";
+    string public constant symbol = "NBA001";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     address public GDCAcc01;
     address public GDCAcc02;

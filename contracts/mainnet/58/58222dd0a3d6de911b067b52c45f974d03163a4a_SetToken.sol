@@ -298,7 +298,7 @@ contract Set {
  * @author Felix Feng
  * @dev Implementation of the basic {Set} token.
  */
-contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&quot;, &quot;DEX&quot;, 18), Set {
+contract SetToken is StandardToken, DetailedERC20("Decentralized Exchange", "DEX", 18), Set {
   using SafeMathUint256 for uint256;
 
   ///////////////////////////////////////////////////////////
@@ -345,7 +345,7 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
     // Check that the sender has sufficient components
     // Since the component length is defined ahead of time, this is not
     // an unbounded loop
-    require(balances[msg.sender] >= quantity, &quot;User does not have sufficient balance&quot;);
+    require(balances[msg.sender] >= quantity, "User does not have sufficient balance");
     _;
   }
 
@@ -372,13 +372,13 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
    */
   constructor(address[] _components, uint[] _units, uint _naturalUnit) public {
     // There must be component present
-    require(_components.length > 0, &quot;Component length needs to be great than 0&quot;);
+    require(_components.length > 0, "Component length needs to be great than 0");
 
     // There must be an array of units
-    require(_units.length > 0, &quot;Units must be greater than 0&quot;);
+    require(_units.length > 0, "Units must be greater than 0");
 
     // The number of components must equal the number of units
-    require(_components.length == _units.length, &quot;Component and unit lengths must be the same&quot;);
+    require(_components.length == _units.length, "Component and unit lengths must be the same");
 
     require(_naturalUnit > 0);
     naturalUnit = _naturalUnit;
@@ -391,11 +391,11 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
     for (uint i = 0; i < _units.length; i++) {
       // Check that all units are non-zero. Negative numbers will underflow
       uint currentUnits = _units[i];
-      require(currentUnits > 0, &quot;Unit declarations must be non-zero&quot;);
+      require(currentUnits > 0, "Unit declarations must be non-zero");
 
       // Check that all addresses are non-zero
       address currentComponent = _components[i];
-      require(currentComponent != address(0), &quot;Components must have non-zero address&quot;);
+      require(currentComponent != address(0), "Components must have non-zero address");
 
       // add component to isComponent mapping
       isComponent[currentComponent] = true;
@@ -499,9 +499,9 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
     // Otherwise, use the normal redeem function
     require(
       excludedComponents.length < components.length,
-      &quot;Excluded component length must be less than component length&quot;
+      "Excluded component length must be less than component length"
     );
-    require(excludedComponents.length > 0, &quot;Excluded components must be non-zero&quot;);
+    require(excludedComponents.length > 0, "Excluded components must be non-zero");
 
     burn(quantity);
 
@@ -564,9 +564,9 @@ contract SetToken is StandardToken, DetailedERC20(&quot;Decentralized Exchange&q
     public
     returns (bool success)
   {
-    require(quantities.length > 0, &quot;Quantities must be non-zero&quot;);
-    require(componentsToRedeem.length > 0, &quot;Components redeemed must be non-zero&quot;);
-    require(quantities.length == componentsToRedeem.length, &quot;Lengths must be the same&quot;);
+    require(quantities.length > 0, "Quantities must be non-zero");
+    require(componentsToRedeem.length > 0, "Components redeemed must be non-zero");
+    require(quantities.length == componentsToRedeem.length, "Lengths must be the same");
 
     for (uint i = 0; i < quantities.length; i++) {
       address currentComponent = componentsToRedeem[i];

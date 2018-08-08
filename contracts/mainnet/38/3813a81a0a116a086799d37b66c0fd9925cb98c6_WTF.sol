@@ -58,8 +58,8 @@ contract WTF is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;ⓌⓉⒻⓉⓄⓀⒺⓃ&quot;;
-    string public constant symbol = &quot;ⓌⓉⒻ&quot;;
+    string public constant name = "ⓌⓉⒻⓉⓄⓀⒺⓃ";
+    string public constant symbol = "ⓌⓉⒻ";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000e8;

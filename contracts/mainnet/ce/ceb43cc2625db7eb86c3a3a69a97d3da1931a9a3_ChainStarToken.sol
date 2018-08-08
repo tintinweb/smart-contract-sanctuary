@@ -204,7 +204,7 @@ contract ChainStarBase is ERC20 {
 
 contract ChainStarToken is ChainStarBase {
 
-    function ChainStarToken() ChainStarBase(1000000000, &quot;CST Token&quot;, &quot;CST&quot;, 18) public {
+    function ChainStarToken() ChainStarBase(1000000000, "CST Token", "CST", 18) public {
 
     }
 }

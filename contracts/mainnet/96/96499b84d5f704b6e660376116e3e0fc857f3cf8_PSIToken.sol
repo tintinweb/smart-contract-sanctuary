@@ -126,8 +126,8 @@ contract UpgradeAgent {
 
 contract PSIToken is StandardToken {
     address public owner;
-    string public constant name = &quot;Protostarr&quot;; // Protostarr
-    string public constant symbol = &quot;PSR&quot;; // PSR
+    string public constant name = "Protostarr"; // Protostarr
+    string public constant symbol = "PSR"; // PSR
     uint256 public constant decimals = 4;
     
     // Address for founder&#39;s PSI token and ETH deposits

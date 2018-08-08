@@ -149,8 +149,8 @@ contract BancorFormula is SafeMath {
 
     /**
         calculateBestPrecision 
-        Predicts the highest precision which can be used in order to compute &quot;base^exp&quot; without exceeding 256 bits in any of the intermediate computations.
-        Instead of calculating &quot;base ^ exp&quot;, we calculate &quot;e ^ (ln(base) * exp)&quot;.
+        Predicts the highest precision which can be used in order to compute "base^exp" without exceeding 256 bits in any of the intermediate computations.
+        Instead of calculating "base ^ exp", we calculate "e ^ (ln(base) * exp)".
         The value of ln(base) is represented with an integer slightly smaller than ln(base) * 2 ^ precision.
         The larger the precision is, the more accurately this value represents the real value.
         However, function fixedExpUnsafe(x), which calculates e ^ x, is limited to a maximum value of x.
@@ -158,7 +158,7 @@ contract BancorFormula is SafeMath {
         Hence before calling the &#39;power&#39; function, we need to estimate an upper-bound for ln(base) * exponent.
         Of course, we should later assert that the value passed to fixedExpUnsafe is not larger than MAX_FIXED_EXP(precision).
         Due to this assertion (made in function fixedExp), functions calculateBestPrecision and fixedExp are tightly coupled.
-        Note that the outcome of this function only affects the accuracy of the computation of &quot;base ^ exp&quot;.
+        Note that the outcome of this function only affects the accuracy of the computation of "base ^ exp".
         Therefore, we do not need to assert that no intermediate result exceeds 256 bits (nor in this function, neither in any of the functions down the calling tree).
     */
     function calculateBestPrecision(uint256 _baseN, uint256 _baseD, uint256 _expN, uint256 _expD) constant returns (uint8) {
@@ -215,11 +215,11 @@ contract BancorFormula is SafeMath {
 
     /**
         lnUpperBound32 
-        Takes a rational number &quot;baseN / baseD&quot; as input.
+        Takes a rational number "baseN / baseD" as input.
         Returns an integer upper-bound of the natural logarithm of the input scaled by 2^32.
-        We do this by calculating &quot;UpperBound(log2(baseN / baseD)) * Ceiling(ln(2) * 2^32)&quot;.
-        We calculate &quot;UpperBound(log2(baseN / baseD))&quot; as &quot;Floor(log2((_baseN - 1) / _baseD)) + 1&quot;.
-        For small values of &quot;baseN / baseD&quot;, this sometimes yields a bad upper-bound approximation.
+        We do this by calculating "UpperBound(log2(baseN / baseD)) * Ceiling(ln(2) * 2^32)".
+        We calculate "UpperBound(log2(baseN / baseD))" as "Floor(log2((_baseN - 1) / _baseD)) + 1".
+        For small values of "baseN / baseD", this sometimes yields a bad upper-bound approximation.
         We therefore cover these cases (and a few more) manually.
         Complexity is O(log(input bit-length)).
     */
@@ -349,7 +349,7 @@ contract BancorFormula is SafeMath {
         - precision = [32, 34, 36, ..., 62]
         - MaxFixedExp(precision) = MAX_FIXED_EXP_32 * 3.61 ^ (precision / 2 - 16)
         Since we cannot use non-integers, we do MAX_FIXED_EXP_32 * 361 ^ (precision / 2 - 16) / 100 ^ (precision / 2 - 16).
-        But there is a better approximation, because this &quot;1.9&quot; factor in fact extends beyond a single decimal digit.
+        But there is a better approximation, because this "1.9" factor in fact extends beyond a single decimal digit.
         So instead, we use 0xeb5ec5975959c565 / 0x4000000000000000, which yields maximum values quite close to real ones:
         maxExpArray = {
             -------------------,-------------------,-------------------,-------------------,
@@ -396,14 +396,14 @@ contract BancorFormula is SafeMath {
         The values in this method been generated via the following python snippet: 
 
         def calculateFactorials():
-            &quot;&quot;&quot;Method to print out the factorials for fixedExp&quot;&quot;&quot;
+            """Method to print out the factorials for fixedExp"""
 
             ni = []
             ni.append(295232799039604140847618609643520000000) # 34!
             ITERATIONS = 34
             for n in range(1, ITERATIONS, 1) :
                 ni.append(math.floor(ni[n - 1] / n))
-            print( &quot;\n        &quot;.join([&quot;xi = (xi * _x) >> _precision;\n        res += xi * %s;&quot; % hex(int(x)) for x in ni]))
+            print( "\n        ".join(["xi = (xi * _x) >> _precision;\n        res += xi * %s;" % hex(int(x)) for x in ni]))
 
     */
     function fixedExpUnsafe(uint256 _x, uint8 _precision) constant returns (uint256) {

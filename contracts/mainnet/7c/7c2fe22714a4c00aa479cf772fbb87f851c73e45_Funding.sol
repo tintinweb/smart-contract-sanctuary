@@ -211,7 +211,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -254,8 +254,8 @@ contract Ownable {
 
 
 contract Funding is StandardToken, Ownable {
-	string public name = &quot;HolographicPictureCoin&quot;;
-	string public symbol = &quot;HPC&quot;;
+	string public name = "HolographicPictureCoin";
+	string public symbol = "HPC";
 	event HPCCoinReady(address reciever, uint256 value);
 	function () public payable {}
 	function Funding(address _reciever, uint256 _balance) public {

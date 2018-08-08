@@ -85,8 +85,8 @@ contract StandardToken is Token {
 
 contract Mondo is SafeMath, StandardToken {
 
-    string public constant name = &quot;Mondo Token&quot;;
-    string public constant symbol = &quot;MND&quot;;
+    string public constant name = "Mondo Token";
+    string public constant symbol = "MND";
     uint256 public constant decimals = 18;
     
     uint256 private constant tokenCreationCapPreICO02 =  5000000*10**decimals;

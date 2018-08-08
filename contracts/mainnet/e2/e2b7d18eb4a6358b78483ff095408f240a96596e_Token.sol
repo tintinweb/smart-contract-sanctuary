@@ -97,16 +97,16 @@ contract EventDefinitions {
 
 contract Token is Finalizable, TokenReceivable, SafeMath, EventDefinitions, Pausable {
 	// Set these appropriately before you deploy
-	string constant public name = &quot;Mock1&quot;;
+	string constant public name = "Mock1";
 	uint8 constant public decimals = 2;
-	string constant public symbol = &quot;MACH1&quot;;
+	string constant public symbol = "MACH1";
 	Controller public controller;
 	string public motd;
 	event Motd(string message);
 
 	// functions below this line are onlyOwner
 
-	// set &quot;message of the day&quot;
+	// set "message of the day"
 	function setMotd(string _m) onlyOwner {
 		motd = _m;
 		Motd(_m);

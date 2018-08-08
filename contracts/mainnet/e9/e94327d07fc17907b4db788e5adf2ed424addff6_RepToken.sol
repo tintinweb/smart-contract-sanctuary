@@ -154,7 +154,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -283,8 +283,8 @@ contract RepToken is Initializable, PausableToken {
   ERC20Basic public legacyRepContract;
   uint256 public targetSupply;
 
-  string public constant name = &quot;Reputation&quot;;
-  string public constant symbol = &quot;REP&quot;;
+  string public constant name = "Reputation";
+  string public constant symbol = "REP";
   uint256 public constant decimals = 18;
 
   event Migrated(address indexed holder, uint256 amount);

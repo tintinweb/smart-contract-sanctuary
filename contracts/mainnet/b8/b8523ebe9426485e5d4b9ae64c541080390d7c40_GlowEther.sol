@@ -89,8 +89,8 @@ contract GlowEther is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GlowEther() public {
-        symbol = &quot;GTH&quot;;
-        name = &quot;GlowEther&quot;;
+        symbol = "GTH";
+        name = "GlowEther";
         decimals = 18;
         _totalSupply = 15000000000000000000000000;
         balances[0x1b9266B9dA4d0a72A45c13666D8aA307135eF37B] = _totalSupply;

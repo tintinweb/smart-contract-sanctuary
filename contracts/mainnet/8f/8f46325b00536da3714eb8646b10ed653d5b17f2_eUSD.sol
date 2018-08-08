@@ -29,7 +29,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -155,8 +155,8 @@ contract Oracle {
 contract eUSD is Ownable, ERC20 {
     using SafeMath for uint256;
 
-    string public name = &quot;ETHUSD&quot;;
-    string public symbol = &quot;EUSD&quot;;
+    string public name = "ETHUSD";
+    string public symbol = "EUSD";
     uint8 public decimals = 18;
 
     uint256 totalSupply_;

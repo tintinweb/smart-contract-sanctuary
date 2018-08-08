@@ -68,8 +68,8 @@ contract CAIDToken is Ownable { //ERC - 20 token contract
   // Triggered whenever approve(address _spender, uint256 _value) is called.
   event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
-  string public constant symbol = &quot;CAID&quot;;
-  string public constant name = &quot;ClearAid&quot;; //CHANGE IT
+  string public constant symbol = "CAID";
+  string public constant name = "ClearAid"; //CHANGE IT
   uint8 public constant decimals = 8;
   uint256 _totalSupply = 100000000*(uint(10).pow(decimals));
 

@@ -78,9 +78,9 @@ library Util {
 
 contract CanYaDao {
 
-    bytes32 private constant BADGE_ADMIN = &quot;Admin&quot;;
-    bytes32 private constant BADGE_MOD = &quot;Mod&quot;;
-    bytes32 public currentBadge = &quot;Pioneer&quot;;
+    bytes32 private constant BADGE_ADMIN = "Admin";
+    bytes32 private constant BADGE_MOD = "Mod";
+    bytes32 public currentBadge = "Pioneer";
 
     Util.List private _admins;
     Util.List private _mods;

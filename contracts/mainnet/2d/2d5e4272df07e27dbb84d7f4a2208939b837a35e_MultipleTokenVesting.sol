@@ -5,7 +5,7 @@ pragma solidity 0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -309,8 +309,8 @@ contract MintableToken is StandardToken, Ownable {
 // File: contracts/ZerochainToken.sol
 
 contract ZerochainToken is MintableToken {
-    string public constant name = &quot;0chain&quot;;
-    string public constant symbol = &quot;ZCN&quot;;
+    string public constant name = "0chain";
+    string public constant symbol = "ZCN";
     uint8 public constant decimals = 10;
 }
 
@@ -439,7 +439,7 @@ contract RBAC {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
+  string public constant ROLE_ADMIN = "admin";
 
   /**
    * @dev constructor. Sets msg.sender as admin by default
@@ -599,7 +599,7 @@ contract MultipleTokenVesting is Pausable, RBAC {
     bool public canIssueIndividual = true;
 
     uint256 public constant AIRDROP_AMOUNT = 10 * (10 ** 10);
-    string public constant UTILITY_ROLE = &quot;utility&quot;;
+    string public constant UTILITY_ROLE = "utility";
     address public utilityAccount;
     uint256 public hardCap;
 

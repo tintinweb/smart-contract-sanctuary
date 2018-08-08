@@ -76,8 +76,8 @@ contract GSCP is ERC20
     using SafeMath for uint256;
    
     uint256 constant public TOKEN_DECIMALS = 10 ** 18;
-    string public constant name            = &quot;Genesis Supply Chain Platform&quot;;
-    string public constant symbol          = &quot;GSCP&quot;;
+    string public constant name            = "Genesis Supply Chain Platform";
+    string public constant symbol          = "GSCP";
     uint256 public totalTokenSupply        = 999999999 * TOKEN_DECIMALS;
     uint8 public constant decimals         = 18;
     address public owner;

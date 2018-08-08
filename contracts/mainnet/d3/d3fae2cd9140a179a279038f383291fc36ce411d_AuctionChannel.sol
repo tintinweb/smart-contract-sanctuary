@@ -54,7 +54,7 @@ library ECRecovery {
 
     /**
     * toEthSignedMessageHash
-    * @dev prefix a bytes32 value with &quot;\x19Ethereum Signed Message:&quot;
+    * @dev prefix a bytes32 value with "\x19Ethereum Signed Message:"
     * and hash the result
     */
     function toEthSignedMessageHash(bytes32 hash)
@@ -65,7 +65,7 @@ library ECRecovery {
         // 32 is the length in bytes of hash,
         // enforced by the type signature above
         return keccak256(
-            abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, hash)
+            abi.encodePacked("\x19Ethereum Signed Message:\n32", hash)
         );
     }
 }
@@ -130,7 +130,7 @@ contract AuctionChannel {
     {
         bytes32 _fingerprint = keccak256(
             abi.encodePacked(
-                &quot;openingAuctionChannel&quot;,
+                "openingAuctionChannel",
                 _auctioneer,
                 _assistant,
                 _challengePeriod,
@@ -178,7 +178,7 @@ contract AuctionChannel {
 
         bytes32 _fingerprint = keccak256(
             abi.encodePacked(
-                &quot;auctionBid&quot;,
+                "auctionBid",
                 _isAskBid,
                 _bidder,
                 _bidValue,

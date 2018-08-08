@@ -13,8 +13,8 @@ pragma solidity 0.4.18;
 
 contract GoWalletToken {
 
-    string public symbol = &quot;GWT&quot;;
-    string public name = &quot;GoWalletToken&quot;;
+    string public symbol = "GWT";
+    string public name = "GoWalletToken";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 1000000000;	
 	uint256 _FreeGWT = 250;

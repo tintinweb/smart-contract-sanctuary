@@ -132,8 +132,8 @@ contract StandardToken is Token {
 
 contract CalorieCoin is owned, StandardToken {
 
-    string constant public name = &quot;CalorieCoin&quot;;
-    string constant public symbol = &quot;CAL&quot;;
+    string constant public name = "CalorieCoin";
+    string constant public symbol = "CAL";
     uint8 constant public decimals = 18;
     uint constant multiplier = 1000000000000000000;
 

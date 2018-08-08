@@ -99,9 +99,9 @@ contract ETHMCoin is StandardToken {
         ) {
         balances[msg.sender] = 100000000 * 1000000000000000000;   // Give the creator all initial tokens, 18 zero is 18 Decimals
         totalSupply = 100000000 * 1000000000000000000;            // Update total supply, , 18 zero is 18 Decimals
-        name = &quot;ETHMOON&quot;;                                // Token Name
+        name = "ETHMOON";                                // Token Name
         decimals = 18;                                      // Amount of decimals for display purposes
-        symbol = &quot;ETHM&quot;;                                    // Token Symbol
+        symbol = "ETHM";                                    // Token Symbol
     }
 
     /* Approves and then calls the receiving contract */
@@ -109,7 +109,7 @@ contract ETHMCoin is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

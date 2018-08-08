@@ -34,7 +34,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -245,8 +245,8 @@ contract BurnableToken is StandardToken {
 
 contract StarCoin is BurnableToken, Ownable {
 
-    string public constant name = &quot;StarCoin&quot;;
-    string public constant symbol = &quot;STAR&quot;;
+    string public constant name = "StarCoin";
+    string public constant symbol = "STAR";
     uint public constant decimals = 8;
     // there is no problem in using * here instead of .mul()
     uint256 public constant initialSupply = 100000000000 * (10 ** uint256(decimals));

@@ -185,9 +185,9 @@ contract BurnableToken is StandardToken {
 
 contract CoinmakeToken is BurnableToken, HasNoEther {
 
-    string public constant name = &quot;Coinmake Token&quot;;
+    string public constant name = "Coinmake Token";
 
-    string public constant symbol = &quot;CT&quot;;
+    string public constant symbol = "CT";
 
     uint8 public constant decimals = 18;
 

@@ -2,8 +2,8 @@ pragma solidity ^0.4.18;
 
 contract IstriumICO {
 
-    string public name = &quot;Istrium&quot;;      //  token name
-    string public symbol = &quot;ISM&quot;;           //  token symbol
+    string public name = "Istrium";      //  token name
+    string public symbol = "ISM";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

@@ -5,9 +5,9 @@ contract BLINKToken {
   mapping(address => uint256) balances;
   uint256 public decimals = 18;
   bool public mintingFinished = false;
-  string public name = &quot;BLOCKMASON LINK TOKEN&quot;;
+  string public name = "BLOCKMASON LINK TOKEN";
   address public owner;
-  string public symbol = &quot;BLINK&quot;;
+  string public symbol = "BLINK";
   uint256 public totalSupply;
 
   event Approval(address indexed tokenholder, address indexed spender, uint256 value);

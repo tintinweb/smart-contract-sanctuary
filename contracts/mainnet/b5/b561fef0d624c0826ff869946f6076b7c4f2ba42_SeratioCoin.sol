@@ -252,9 +252,9 @@ contract StartableMintableToken is Startable, MintableToken {
 
 contract SeratioCoin is StartableMintableToken {
     // Name of the token
-    string constant public name = &quot;SeratioCoin&quot;;
+    string constant public name = "SeratioCoin";
     // Token abbreviation
-    string constant public symbol = &quot;SER&quot;;
+    string constant public symbol = "SER";
     // Decimal places
     uint8 constant public decimals = 7;
     // Zeros after the point

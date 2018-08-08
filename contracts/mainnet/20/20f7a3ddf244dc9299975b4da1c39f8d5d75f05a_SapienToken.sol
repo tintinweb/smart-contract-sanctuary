@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -102,7 +102,7 @@ contract OwnClaimRenounceable is Claimable {
 
 /** The interface for a token contract to notify a controller of every transfers. */
 contract TokenController {
-    bytes4 public constant INTERFACE = bytes4(keccak256(&quot;TokenController&quot;));
+    bytes4 public constant INTERFACE = bytes4(keccak256("TokenController"));
 
     function allowTransfer(address _sender, address _from, address _to, uint256 _value, bytes _purpose) public returns (bool);
 }
@@ -357,7 +357,7 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract Controlled is OwnClaimRenounceable {
 
-    bytes4 public constant TOKEN_CONTROLLER_INTERFACE = bytes4(keccak256(&quot;TokenController&quot;));
+    bytes4 public constant TOKEN_CONTROLLER_INTERFACE = bytes4(keccak256("TokenController"));
     TokenController public controller;
 
     function Controlled() public {}
@@ -400,7 +400,7 @@ contract ControlledToken is StandardToken, Controlled {
     /** @dev ERC20 transfer with controller callback */
     function transfer(address _to, uint256 _value)
         public
-        controllerCallback(msg.sender, _to, _value, hex&quot;&quot;)
+        controllerCallback(msg.sender, _to, _value, hex"")
         returns (bool)
     {
         return super.transfer(_to, _value);
@@ -409,7 +409,7 @@ contract ControlledToken is StandardToken, Controlled {
     /** @dev ERC20 transferFrom with controller callback */
     function transferFrom(address _from, address _to, uint256 _value)
         public
-        controllerCallback(_from, _to, _value, hex&quot;&quot;)
+        controllerCallback(_from, _to, _value, hex"")
         returns (bool)
     {
         return super.transferFrom(_from, _to, _value);
@@ -473,10 +473,10 @@ contract BatchToken is ControlledToken {
  */
 contract SapienToken is BatchToken {
 
-    string public constant name = &quot;Sapien Network&quot;;
-    string public constant symbol = &quot;SPN&quot;;
+    string public constant name = "Sapien Network";
+    string public constant symbol = "SPN";
     uint256 public constant decimals = 6;
-    string public constant website = &quot;https://sapien.network&quot;;
+    string public constant website = "https://sapien.network";
 
     /**
     * @dev The maximum supply that can be minted, in microSPN.

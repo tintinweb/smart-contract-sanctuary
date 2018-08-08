@@ -515,7 +515,7 @@ library Order {
         require(_outcome < _market.getNumberOfOutcomes());
         require(_price < _market.getNumTicks());
 
-        IOrders _orders = IOrders(_controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(_controller.lookup("Orders"));
         IAugur _augur = _controller.getAugur();
 
         return Data({
@@ -536,7 +536,7 @@ library Order {
     }
 
     //
-    // &quot;public&quot; functions
+    // "public" functions
     //
 
     function getOrderId(Order.Data _orderData) internal view returns (bytes32) {
@@ -736,7 +736,7 @@ contract Orders is DelegationTarget, IOrders {
     function insertOrderIntoList(Order.Data storage _order, bytes32 _betterOrderId, bytes32 _worseOrderId) private returns (bool) {
         bytes32 _bestOrderId = bestOrder[getBestOrderWorstOrderHash(_order.market, _order.outcome, _order.orderType)];
         bytes32 _worstOrderId = worstOrder[getBestOrderWorstOrderHash(_order.market, _order.outcome, _order.orderType)];
-        IOrdersFetcher _ordersFetcher = IOrdersFetcher(controller.lookup(&quot;OrdersFetcher&quot;));
+        IOrdersFetcher _ordersFetcher = IOrdersFetcher(controller.lookup("OrdersFetcher"));
         (_betterOrderId, _worseOrderId) = _ordersFetcher.findBoundingOrders(_order.orderType, _order.price, _bestOrderId, _worstOrderId, _betterOrderId, _worseOrderId);
         if (_order.orderType == Order.Types.Bid) {
             _bestOrderId = updateBestBidOrder(_order.id, _order.market, _order.price, _order.outcome);

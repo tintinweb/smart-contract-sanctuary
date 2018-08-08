@@ -93,7 +93,7 @@ contract SnipCoin is StandardToken {
     string public tokenSymbol;          // Token identifier
     uint public totalEthReceivedInWei; // The total amount of Ether received during the sale in WEI
     uint public totalUsdReceived; // The total amount of Ether received during the sale in USD terms
-    string public version = &quot;1.0&quot;; // Code version
+    string public version = "1.0"; // Code version
     address public saleWalletAddress;  // The wallet address where the Ether from the sale will be stored
     address public ownerAddress; // Address of the contract owner.
 
@@ -130,9 +130,9 @@ contract SnipCoin is StandardToken {
         totalSupply = 10000000000;                                      // In total, 10 billion tokens
         balances[msg.sender] = totalSupply * DECIMALS_MULTIPLIER;        // Initially give owner all of the tokens 
         
-        tokenName = &quot;SnipCoin&quot;;                              // Name of token
+        tokenName = "SnipCoin";                              // Name of token
         decimals = 18;                                       // Amount of decimals for display purposes
-        tokenSymbol = &quot;SNP&quot;;                                      // Set the symbol for display purposes
+        tokenSymbol = "SNP";                                      // Set the symbol for display purposes
     }
 
     function sendCoin(address receiver, uint amount) returns(bool sufficient)

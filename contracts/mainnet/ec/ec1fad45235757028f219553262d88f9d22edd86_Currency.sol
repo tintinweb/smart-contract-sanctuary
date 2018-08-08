@@ -109,8 +109,8 @@ contract TheLiquidToken is StandardToken, Ownable {
 }
     
 contract Currency is TheLiquidToken {
-  string public constant name = &quot;Currency.io&quot;;
-  string public constant symbol = &quot;cio&quot;;
+  string public constant name = "Currency.io";
+  string public constant symbol = "cio";
   uint public constant decimals = 2;
   uint256 public initialSupply;
     

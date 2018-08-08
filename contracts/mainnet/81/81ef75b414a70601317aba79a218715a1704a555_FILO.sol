@@ -134,8 +134,8 @@ contract FILO is ERC20, BasicToken {
         decimals = 8;
         totalSupply_ = 1000000000 * 10 ** uint(decimals);   
         balances[msg.sender] = totalSupply_;               
-        name = &quot;FILO&quot;;                                  
-        symbol = &quot;FILO&quot;;    
+        name = "FILO";                                  
+        symbol = "FILO";    
         Transfer(0, msg.sender, totalSupply_);
    }
    /**

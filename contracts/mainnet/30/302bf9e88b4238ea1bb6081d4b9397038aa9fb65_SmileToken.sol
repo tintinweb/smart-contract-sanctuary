@@ -147,8 +147,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract SmileToken is StandardToken {
 
-  string public name = &quot;SMILECOIN&quot;;
-  string public symbol = &quot;SMILECOIN&quot;;
+  string public name = "SMILECOIN";
+  string public symbol = "SMILECOIN";
   uint256 public decimals = 3;
   uint256 public INITIAL_SUPPLY = 10001;
 

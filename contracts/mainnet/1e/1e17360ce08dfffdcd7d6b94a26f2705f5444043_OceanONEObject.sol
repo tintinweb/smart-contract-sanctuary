@@ -127,8 +127,8 @@ contract StandardToken is ERC20 {
 }
 
 contract OceanONEObject is StandardToken {
-  string public constant name = &quot;Ocean ONE Object&quot;;
-  string public constant symbol = &quot;OOO&quot;;
+  string public constant name = "Ocean ONE Object";
+  string public constant symbol = "OOO";
   uint8 public constant decimals = 4;
 
   constructor() public {

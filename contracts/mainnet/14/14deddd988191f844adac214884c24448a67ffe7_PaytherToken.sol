@@ -113,8 +113,8 @@ contract PaytherToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PaytherToken() public {
-        symbol = &quot;PYT&quot;;
-        name = &quot;Payther Token&quot;;
+        symbol = "PYT";
+        name = "Payther Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x3EA19c19E3d98af9dE024a2A52Fb50BcdF2f93eF] = _totalSupply;

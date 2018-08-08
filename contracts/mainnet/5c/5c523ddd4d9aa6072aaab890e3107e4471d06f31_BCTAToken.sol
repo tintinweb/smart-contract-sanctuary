@@ -72,8 +72,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 contract BCTAToken is owned {
     using SafeMath for uint256;
     
-    string public name = &quot;BCTA Token&quot;;
-    string public symbol = &quot;BCTA&quot;;
+    string public name = "BCTA Token";
+    string public symbol = "BCTA";
     uint8 public decimals = 3;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 5000000000000000;

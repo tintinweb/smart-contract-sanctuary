@@ -1,8 +1,8 @@
 pragma solidity ^0.4.13;
  
 contract Dexer {
-    string public symbol = &quot;DEX&quot;;
-    string public name = &quot; Dexer &quot;;
+    string public symbol = "DEX";
+    string public name = " Dexer ";
     uint8 public constant decimals = 2;
     uint256 _totalSupply = 300000000;
     address owner = 0x35a887e7327cb08e7a510D71a873b09d5055709D;

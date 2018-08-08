@@ -198,11 +198,11 @@ contract MaecenasToken is Token {
 
   /* Initializes contract */
   function MaecenasToken() {
-    standard = &quot;Maecenas token v1.0&quot;;
-    name = &quot;Maecenas ART Token&quot;;
-    symbol = &quot;ART&quot;;
+    standard = "Maecenas token v1.0";
+    name = "Maecenas ART Token";
+    symbol = "ART";
     decimals = 18;
     crowdsaleContractAddress = 0x9B60874D7bc4e4fBDd142e0F5a12002e4F7715a6; 
-    lockFromSelf(4366494, &quot;Lock before crowdsale starts&quot;);
+    lockFromSelf(4366494, "Lock before crowdsale starts");
   }
 }

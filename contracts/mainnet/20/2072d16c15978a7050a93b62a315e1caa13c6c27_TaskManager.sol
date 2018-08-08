@@ -78,7 +78,7 @@ contract UsingAdmin is
         constant
         returns (address _addr)
     {
-        return addressOf(&quot;ADMIN&quot;);
+        return addressOf("ADMIN");
     }
 }
 
@@ -119,7 +119,7 @@ contract UsingMonarchyController is
         view
         returns (IMonarchyController)
     {
-        return IMonarchyController(addressOf(&quot;MONARCHY_CONTROLLER&quot;));
+        return IMonarchyController(addressOf("MONARCHY_CONTROLLER"));
     }
 }
 
@@ -155,7 +155,7 @@ contract UsingTreasury is
         view
         returns (ITreasury)
     {
-        return ITreasury(addressOf(&quot;TREASURY&quot;));
+        return ITreasury(addressOf("TREASURY"));
     }
 }
 
@@ -832,13 +832,13 @@ contract TaskManager is
         _profits = _tr.profitsSendable();
         // quit if no profits to send.
         if (_profits == 0) {
-            _taskError(&quot;No profits to send.&quot;);
+            _taskError("No profits to send.");
             return;
         }
         // call .issueDividend(), use return value to compute _reward
         _profits = _tr.issueDividend();
         if (_profits == 0) {
-            _taskError(&quot;No profits were sent.&quot;);
+            _taskError("No profits were sent.");
             return;
         } else {
             emit IssueDividendSuccess(now, address(_tr), _profits);
@@ -875,7 +875,7 @@ contract TaskManager is
 
         // Quit if no profits. Otherwise compute profits.
         if (_newTrBalance <= _oldTrBalance) {
-            _taskError(&quot;No profits were sent.&quot;);
+            _taskError("No profits were sent.");
             return;
         } else {
             _profits = _newTrBalance - _oldTrBalance;
@@ -911,14 +911,14 @@ contract TaskManager is
         // Don&#39;t bother trying if it&#39;s not startable
         IMonarchyController _mc = getMonarchyController();
         if (!_mc.getIsStartable(_index)){
-            _taskError(&quot;Game is not currently startable.&quot;);
+            _taskError("Game is not currently startable.");
             return;
         }
 
         // Try to start the game. This may fail.
         address _game = _mc.startDefinedGame(_index);
         if (_game == address(0)) {
-            _taskError(&quot;MonarchyConroller.startDefinedGame() failed.&quot;);
+            _taskError("MonarchyConroller.startDefinedGame() failed.");
             return;
         } else {
             emit MonarchyGameStarted(now, _game, _mc.getInitialPrize(_index));   
@@ -951,7 +951,7 @@ contract TaskManager is
         emit MonarchyGamesRefreshed(now, _numGamesEnded, _feesCollected);
 
         if (_numGamesEnded == 0) {
-            _taskError(&quot;No games ended.&quot;);
+            _taskError("No games ended.");
         } else {
             _sendReward(_numGamesEnded * monarchyEndReward);   
         }
@@ -983,7 +983,7 @@ contract TaskManager is
         // Limit the reward to balance or dailyLimitRemaining
         uint _amount = _cappedReward(_reward);
         if (_reward > 0 && _amount == 0) {
-            emit RewardFailure(now, msg.sender, _amount, &quot;Not enough funds, or daily limit reached.&quot;);
+            emit RewardFailure(now, msg.sender, _amount, "Not enough funds, or daily limit reached.");
             return;
         }
 
@@ -993,7 +993,7 @@ contract TaskManager is
             totalRewarded += _amount;
             emit RewardSuccess(now, msg.sender, _amount);
         } else {
-            emit RewardFailure(now, msg.sender, _amount, &quot;Reward rejected by recipient (out of gas, or revert).&quot;);
+            emit RewardFailure(now, msg.sender, _amount, "Reward rejected by recipient (out of gas, or revert).");
         }
     }
 

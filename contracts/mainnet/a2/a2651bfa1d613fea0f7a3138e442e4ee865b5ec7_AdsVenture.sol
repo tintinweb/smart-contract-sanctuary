@@ -25,9 +25,9 @@ contract AdsVenture is Owned{
 
 	function AdsVenture(){
 	    users[msg.sender].balance = totalSupply;
-        TokenName = &quot;Ads Venture&quot;;
+        TokenName = "Ads Venture";
         decimals = 18;
-        symbol = &quot;ADVC&quot;;
+        symbol = "ADVC";
 	}
 	mapping (address => User) users;
 	address[] public userAccounts;

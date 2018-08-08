@@ -140,8 +140,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract SIGToken is MintableToken {
 
-	string public constant name = &quot;Saxinvest Group Coin&quot;;
-	string public constant symbol = &quot;SIG&quot;;
+	string public constant name = "Saxinvest Group Coin";
+	string public constant symbol = "SIG";
 	uint32 public constant decimals = 18;
 
 	function SIGToken(uint256 _freezeTransferTime) public {

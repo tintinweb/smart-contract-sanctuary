@@ -65,7 +65,7 @@ interface IERC721Base /* is IERC165  */ {
   ///  `_tokenId` is not a valid NFT. When transfer is complete, this function
   ///  checks if `_to` is a smart contract (code size > 0). If so, it calls
   ///  `onERC721Received` on `_to` and throws if the return value is not
-  ///  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`.
+  ///  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`.
   /// @param _from The current owner of the NFT
   /// @param _to The new owner
   /// @param _tokenId The NFT to transfer
@@ -101,7 +101,7 @@ interface IERC721Base /* is IERC165  */ {
   /// @param _tokenId The NFT to approve
   function approve(address _approved, uint256 _tokenId) external payable;
 
-  /// @notice Enable or disable approval for a third party (&quot;operator&quot;) to manage
+  /// @notice Enable or disable approval for a third party ("operator") to manage
   ///  all your asset.
   /// @dev Emits the ApprovalForAll event
   /// @param _operator Address to add to the set of authorized operators.
@@ -126,7 +126,7 @@ interface IERC721Base /* is IERC165  */ {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;

@@ -219,8 +219,8 @@ contract Ownable {
 
 contract GlobalCoin is Ownable, StandardToken{
     uint256 public decimals = 8;
-    string public name = &quot;GlobalCoin&quot;;
-    string public symbol = &quot;GBC&quot;;
+    string public name = "GlobalCoin";
+    string public symbol = "GBC";
     uint public totalSupply = 1000000000000000;//decimals is 8, so total 1000,0000 e8
     address public dividendAddress = 0x5f21a710b79f9dc41642e68092d487307b34e8ab;//dividend address
     address public burnAddress = 0x58af44aeddf2100a9d0257cbaa670cd3b32b7b3e; //destory address

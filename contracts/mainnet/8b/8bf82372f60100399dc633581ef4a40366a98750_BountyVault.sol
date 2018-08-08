@@ -80,7 +80,7 @@ contract ApproveAndCallFallBack {
 
 /// @dev The actual token contract, the default controller is the msg.sender
 ///  that deploys the contract, so usually this token will be deployed by a
-///  token controller contract, which Giveth will call a &quot;Campaign&quot;
+///  token controller contract, which Giveth will call a "Campaign"
 contract MiniMeToken is Controlled {
 
     string public name;                //The Token&#39;s name: e.g. DigixDAO Tokens
@@ -616,9 +616,9 @@ contract DTXToken is MiniMeToken {
     _tokenFactory,
     0x0,                    // no parent token
     0,                      // no snapshot block number from parent
-    &quot;DaTa eXchange Token&quot;, // Token name
+    "DaTa eXchange Token", // Token name
     18,                     // Decimals
-    &quot;DTX&quot;,                 // Symbol
+    "DTX",                 // Symbol
     true                   // Enable transfers
     )
   {}
@@ -630,7 +630,7 @@ contract DTXToken is MiniMeToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -761,9 +761,9 @@ contract BountyVault is Ownable {
   /// @dev Withdraws the tokens
   function withdrawTokens() public {
     uint256 amount = balances[msg.sender];
-    require(amount > 0, &quot;You have no tokens left&quot;);
+    require(amount > 0, "You have no tokens left");
     balances[msg.sender] = 0;
-    require(tokenContract.transfer(msg.sender, amount), &quot;Token transfer failed&quot;);
+    require(tokenContract.transfer(msg.sender, amount), "Token transfer failed");
   }
 
   /// @dev utility function to allow the owner to allocate tokens

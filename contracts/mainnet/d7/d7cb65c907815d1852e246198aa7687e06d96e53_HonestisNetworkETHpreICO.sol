@@ -8,8 +8,8 @@ contract MigrationAgent {
 
 // title preICO honestis networkToken (H.N Token) - crowdfunding code for preICO honestis networkToken PreICO
 contract HonestisNetworkETHpreICO {
-    string public constant name = &quot;preICO seed for Honestis.Network on ETH&quot;;
-    string public constant symbol = &quot;HNT&quot;;
+    string public constant name = "preICO seed for Honestis.Network on ETH";
+    string public constant symbol = "HNT";
     uint8 public constant decimals = 18;  // 18 decimal places, the same as ETC/ETH.
 
     uint256 public constant tokenCreationRate = 1000;

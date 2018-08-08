@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -128,8 +128,8 @@ contract PoSTokenStandard {
 contract BITTOToken is ERC20,PoSTokenStandard,Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;BITTO Token&quot;;
-    string public symbol = &quot;BITTO&quot;;
+    string public name = "BITTO Token";
+    string public symbol = "BITTO";
     uint public decimals = 18;
 
     uint public chainStartTime; //chain start time

@@ -100,8 +100,8 @@ contract EPay is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EPay() public {
-        symbol = &quot;EPAY&quot;;
-        name = &quot;EPay&quot;;
+        symbol = "EPAY";
+        name = "EPay";
         decimals = 18;
         _totalSupply = 98000000000000000000000000;
         balances[0x8286CB48cACCC1781C3c1875c85e0d9130eD6152] = _totalSupply;

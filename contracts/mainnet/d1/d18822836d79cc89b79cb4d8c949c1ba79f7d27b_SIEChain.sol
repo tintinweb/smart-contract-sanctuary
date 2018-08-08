@@ -282,8 +282,8 @@ contract SIEChain is ModToken {
    uint256 _initialAmount = 1000000000;
     uint8 constant public decimals = 8;
     uint public totalSupply = _initialAmount * 10 ** uint256(decimals);
-    string constant public name = &quot;SIE Chain&quot;;
-    string constant public symbol = &quot;SIE&quot;;
+    string constant public name = "SIE Chain";
+    string constant public symbol = "SIE";
     
   function SIEChain() public {
         balances[msg.sender] = totalSupply;

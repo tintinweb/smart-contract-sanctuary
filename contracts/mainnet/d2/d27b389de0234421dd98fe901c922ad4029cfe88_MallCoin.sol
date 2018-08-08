@@ -114,8 +114,8 @@ contract MallCoin is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;MALL&quot;;
-        name = &quot;Mall Coin&quot;;
+        symbol = "MALL";
+        name = "Mall Coin";
         decimals = 18;
         _totalSupply = 100000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

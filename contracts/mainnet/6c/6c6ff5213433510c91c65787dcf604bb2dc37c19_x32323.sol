@@ -51,8 +51,8 @@ contract x32323 is owned{
     balanceOf[msg.sender] = initialSupply;
     totalSupply = initialSupply;
 	initialized[msg.sender] = true;
-        name = &quot;測試12&quot;;
-        symbol = &quot;測試12&quot;;         
+        name = "測試12";
+        symbol = "測試12";         
     }
 
     function initialize(address _address) internal returns (bool success) {

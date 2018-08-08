@@ -98,8 +98,8 @@ contract VaultbankToken is ERC20, Regulated, Nonpayable {
   mapping(address => mapping(address => uint)) allowed;
 
   function VaultbankToken() public {
-    symbol = &quot;VB&quot;;
-    name = &quot;Vaultbank Token&quot;;
+    symbol = "VB";
+    name = "Vaultbank Token";
     decimals = 8;
     _totalSupply = 45624002 * 10**uint(decimals);
     balances[owner] = _totalSupply;

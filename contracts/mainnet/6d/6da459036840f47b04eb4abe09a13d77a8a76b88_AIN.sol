@@ -113,8 +113,8 @@ contract AIN is UnboundedRegularToken {
 
     uint public totalSupply = 1*10**27;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;Artificial Intelligence Network&quot;;
-    string constant public symbol = &quot;AIN&quot;;
+    string constant public name = "Artificial Intelligence Network";
+    string constant public symbol = "AIN";
 
     function AIN() {
         balances[msg.sender] = totalSupply;

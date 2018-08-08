@@ -108,7 +108,7 @@ contract NRB_Main is NRB_Common {
 
     function NRB_Main() public {
         _init = false;
-        name = &quot;NRB_Main&quot;;
+        name = "NRB_Main";
     }
 
     function init(address _tokens, address _users, address _flc) public {

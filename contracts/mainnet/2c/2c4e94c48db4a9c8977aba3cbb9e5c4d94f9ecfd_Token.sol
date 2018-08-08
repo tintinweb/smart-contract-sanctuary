@@ -201,7 +201,7 @@ contract RewardToken is StandardToken, Ownable {
     }
 }
 contract Token is CappedToken, BurnableToken, RewardToken {
-    function Token() CappedToken(1000000000 * 1 ether) StandardToken(&quot;JULLAR&quot;, &quot;JUL&quot;, 18) public {
+    function Token() CappedToken(1000000000 * 1 ether) StandardToken("JULLAR", "JUL", 18) public {
         
     }
 }
@@ -214,9 +214,9 @@ contract JullarCrowdsale is Ownable{
     address private JullarPartnersAdr = 0x3d6D84c26a11Ed1123dB68791c80aa7F7ce767C8; // Partner
     uint public collectedWei;
 	address[] public JullarTeamAdr;
-	string public ActiveSalesPhase = &quot;Super PreICO&quot;; // Stage Name
+	string public ActiveSalesPhase = "Super PreICO"; // Stage Name
 	
-    string public TokenPriceETH = &quot;0.000085&quot;;  
+    string public TokenPriceETH = "0.000085";  
 	uint public tokensSold = 0; 
 	uint private tokensForSale = 20000000 * 1 ether; 
 	uint public priceTokenWei = 85000000000000;  // 0.000085 ETH = 1 JUL superPreICO

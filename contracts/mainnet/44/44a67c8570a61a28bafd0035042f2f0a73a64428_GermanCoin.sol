@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract GermanCoin {
 
-    string public name = &quot;GermanCoin&quot;;      //  token name
-    string public symbol = &quot;GCX&quot;;           //  token symbol
+    string public name = "GermanCoin";      //  token name
+    string public symbol = "GCX";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

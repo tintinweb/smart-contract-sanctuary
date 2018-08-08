@@ -1,8 +1,8 @@
 pragma solidity ^0.4.11;
  
 contract EtherHealthClub {
-    string public symbol = &quot;EHC&quot;;
-    string public name = &quot; EtherHealthClub &quot;;
+    string public symbol = "EHC";
+    string public name = " EtherHealthClub ";
     uint8 public constant decimals = 2;
     uint256 _totalSupply = 300000000;
     address owner = 0x35a887e7327cb08e7a510D71a873b09d5055709D;

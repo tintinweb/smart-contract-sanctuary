@@ -264,8 +264,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract FLUXBlockToken is PausableToken {
-    string public name = &quot;FLUXToken&quot;;
-    string public symbol = &quot;FLUX&quot;;
+    string public name = "FLUXToken";
+    string public symbol = "FLUX";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 100000000000000000000000000;
 

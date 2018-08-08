@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -251,8 +251,8 @@ contract StandardToken is ERC20, BurnableToken {
 
 contract BittechToken is StandardToken {
 
-  string constant public name = &quot;Bittech Token&quot;;
-  string constant public symbol = &quot;BTECH&quot;;
+  string constant public name = "Bittech Token";
+  string constant public symbol = "BTECH";
   uint256 constant public decimals = 18;
 
   address constant public bountyWallet = 0x8E8d4cdADbc027b192DfF91c77382521B419E5A2;

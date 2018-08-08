@@ -251,11 +251,11 @@ contract CryptoWuxiaVoting is ERC721{
   /* ERC721 */
 
   function name() public view returns (string name) {
-    return &quot;Ethwuxia.pro&quot;;
+    return "Ethwuxia.pro";
   }
 
   function symbol() public view returns (string symbol) {
-    return &quot;EWX&quot;;
+    return "EWX";
   }
 
   function totalSupply() public view returns (uint256 _totalSupply) {

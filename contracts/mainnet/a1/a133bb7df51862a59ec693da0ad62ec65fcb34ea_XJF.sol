@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract XJF is StandardToken, Ownable {
 
-    string public constant name = &quot;XJF(鑫积分)&quot;;
-    string public constant symbol = &quot;XJF&quot;;
+    string public constant name = "XJF(鑫积分)";
+    string public constant symbol = "XJF";
     uint256 public constant decimals = 8;
 
     function XJF() public {

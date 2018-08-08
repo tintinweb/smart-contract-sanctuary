@@ -17,9 +17,9 @@ contract UNEK {
     function UNEK() {
 
          initialSupply = 15000000;
-         name =&quot;UNEAK&quot;;
+         name ="UNEAK";
         decimals = 0;
-         symbol = &quot;UNEAK&quot;;
+         symbol = "UNEAK";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

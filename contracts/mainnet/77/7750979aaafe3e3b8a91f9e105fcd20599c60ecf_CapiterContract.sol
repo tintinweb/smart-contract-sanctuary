@@ -23,8 +23,8 @@ contract CapiterContract {
     function CapiterContract() {
         balanceOf[msg.sender] =  100000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  100000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;Capiter&quot;;                                   // Set the name for display purposes
-        symbol = &quot;CPC&quot;;                               // Set the symbol for display purposes
+        name = "Capiter";                                   // Set the name for display purposes
+        symbol = "CPC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

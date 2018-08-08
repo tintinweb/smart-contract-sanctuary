@@ -64,8 +64,8 @@ contract UEXCloudToken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;UEX Cloud&quot;;
-    string public constant symbol = &quot;UEX&quot;;
+    string public constant name = "UEX Cloud";
+    string public constant symbol = "UEX";
     uint public constant decimals = 8;
     uint256 public totalSupply = 10000000000e8;
     uint256 public totalDistributed = 200000000e8;

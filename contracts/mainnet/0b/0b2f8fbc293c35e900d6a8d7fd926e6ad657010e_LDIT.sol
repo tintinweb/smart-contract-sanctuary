@@ -60,8 +60,8 @@ contract LDIT is owned{
        
     ) public {
       initialSupply = 100000000000;
-      tokenName = &quot;Lead IT&quot;;
-      tokenSymbol = &quot;LDIT&quot;;
+      tokenName = "Lead IT";
+      tokenSymbol = "LDIT";
         totalSupply = initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
         name = tokenName;                                   // Set the name for display purposes

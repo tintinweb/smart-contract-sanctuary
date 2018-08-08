@@ -6,8 +6,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract SicoinCo2 {
     // Public variables of the token
-    string public name = &quot;Sicoinco2&quot;;
-    string public symbol = &quot;Co2&quot;;
+    string public name = "Sicoinco2";
+    string public symbol = "Co2";
     uint8 public decimals = 7;
     // 7 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 1000000000000000;
@@ -34,8 +34,8 @@ contract SicoinCo2 {
     ) public {
         totalSupply = initialSupply = 1000000000000000; uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply = 1000000000000000;                // Give the creator all initial tokens
-        name = tokenName = &quot;SICOINCO2&quot;;                      // Set the name for display purposes
-        symbol = tokenSymbol = &quot;CO2&quot;;                               // Set the symbol for display purposes
+        name = tokenName = "SICOINCO2";                      // Set the name for display purposes
+        symbol = tokenSymbol = "CO2";                               // Set the symbol for display purposes
     }
 
     /**

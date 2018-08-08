@@ -72,8 +72,8 @@ contract ZipflaxToken is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     function ZipflaxToken() public {
-        symbol = &quot;ZIX&quot;;
-        name = &quot;Zipflax&quot;;
+        symbol = "ZIX";
+        name = "Zipflax";
         decimals = 8;
         _totalSupply = 280000000;
         _totalSupply = _totalSupply.mul(10 ** uint(decimals));

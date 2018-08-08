@@ -31,7 +31,7 @@ library SafeMath {
 /**
  * @title owned
  * @dev The owned contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract owned {
     address public owner;
@@ -138,8 +138,8 @@ contract BasicToken is Controlled{
 }
 
 contract AicToken is BasicToken {
-    string  constant public symbol = &quot;AIC&quot;;
-    string  constant public name = &quot;AicBlock&quot;;
+    string  constant public symbol = "AIC";
+    string  constant public name = "AicBlock";
     uint256 constant public decimals = 18;
     uint256 public lockedCounts = 0;
 

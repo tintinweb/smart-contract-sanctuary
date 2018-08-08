@@ -153,8 +153,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract TNPC is StandardToken 
 {
-    string  public constant name           = &quot;The New Public Coin&quot;;
-    string  public constant symbol         = &quot;TNPC&quot;;
+    string  public constant name           = "The New Public Coin";
+    string  public constant symbol         = "TNPC";
     uint256 public constant decimals       = 8;
     uint256 public constant INITIAL_SUPPLY = 70000000 * 10**8;
     function TNPC() 

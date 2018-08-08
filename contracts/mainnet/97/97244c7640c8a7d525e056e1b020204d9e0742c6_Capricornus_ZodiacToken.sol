@@ -45,8 +45,8 @@ contract Capricornus_ZodiacToken {
     uint    public ICORatio     = 144000;
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;Capricornus_ZodiacToken&quot;; }
-    function symbol() constant returns (string) { return &quot;CAP♑&quot;; }
+    function name() constant returns (string) { return "Capricornus_ZodiacToken"; }
+    function symbol() constant returns (string) { return "CAP♑"; }
     function decimals() constant returns (uint8) { return 8; }
     event Burnt(
         address indexed _receiver,

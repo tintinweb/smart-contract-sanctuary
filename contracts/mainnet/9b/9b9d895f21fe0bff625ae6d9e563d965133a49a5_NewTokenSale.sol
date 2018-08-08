@@ -4,7 +4,7 @@ pragma solidity ^0.4.11;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -96,10 +96,10 @@ contract Token {
 
 /*  ERC 20 token */
 contract GACToken is Token,Ownable,Sales {
-    string public constant name = &quot;Gladage Care Token&quot;;
-    string public constant symbol = &quot;GAC&quot;;
+    string public constant name = "Gladage Care Token";
+    string public constant symbol = "GAC";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
     uint public valueToBeSent = 1;
 
     bool public finalizedICO = false;
@@ -329,14 +329,14 @@ contract Pausable is Ownable {
 
 // Copyright 2016 rain <https://keybase.io/rain>
 //
-// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+// Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
 //      http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
@@ -714,12 +714,12 @@ contract PricingStrategy is Ownable{
 
     function totalDiscount(Sales.ICOSaleState state,uint256 contribution,string types) returns (uint256,uint256){
         uint256 valueInUSD;
-        if(keccak256(types)==keccak256(&quot;ethereum&quot;)){
+        if(keccak256(types)==keccak256("ethereum")){
             if(ETHUSD==0) throw;
             valueInUSD = (ETHUSD*contribution)/1000000000000000000;
             logval(valueInUSD);
 
-        }else if(keccak256(types)==keccak256(&quot;bitcoin&quot;)){
+        }else if(keccak256(types)==keccak256("bitcoin")){
             if(BTCUSD==0) throw;
             valueInUSD = (BTCUSD*contribution)/100000000;
             logval(valueInUSD);
@@ -861,7 +861,7 @@ contract NewTokenSale is Ownable,Pausable, Utils,Sales{
         ICOSaleState currentState = getStateFunding();
         require(currentState!=ICOSaleState.Failed);
         require(currentState!=ICOSaleState.Success);
-        var (discount,usd) = pricingstrategy.totalDiscount(currentState,msg.value,&quot;ethereum&quot;);
+        var (discount,usd) = pricingstrategy.totalDiscount(currentState,msg.value,"ethereum");
         uint256 tokens = usd*tokensPerUSD;
         uint256 totalTokens = SafeMath.add(tokens,SafeMath.div(SafeMath.mul(tokens,discount),100));
         if(currentState==ICOSaleState.PrivateSale){
@@ -908,7 +908,7 @@ contract NewTokenSale is Ownable,Pausable, Utils,Sales{
         ICOSaleState currentState = getStateFunding();
         require(currentState!=ICOSaleState.Failed);
         require(currentState!=ICOSaleState.Success);
-        var (discount,usd) = pricingstrategy.totalDiscount(state,value,&quot;bitcoin&quot;);
+        var (discount,usd) = pricingstrategy.totalDiscount(state,value,"bitcoin");
         uint256 tokens = usd*tokensPerUSD;
         uint256 totalTokens = SafeMath.add(tokens,SafeMath.div(SafeMath.mul(tokens,discount),100));
         if(currentState==ICOSaleState.PrivateSale){

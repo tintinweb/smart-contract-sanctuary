@@ -2,7 +2,7 @@ pragma solidity ^0.4.15;
 
 /// @title Ownable
 /// @dev The Ownable contract has an owner address, and provides basic authorization control functions, this simplifies
-/// and the implementation of &quot;user permissions&quot;.
+/// and the implementation of "user permissions".
 contract Ownable {
     address public owner;
     address public newOwnerCandidate;
@@ -200,8 +200,8 @@ contract TokenHolder is Ownable {
 contract KinToken is Ownable, BasicToken, TokenHolder {
     using SafeMath for uint256;
 
-    string public constant name = &quot;Kin&quot;;
-    string public constant symbol = &quot;KIN&quot;;
+    string public constant name = "Kin";
+    string public constant symbol = "KIN";
 
     // Using same decimal value as ETH (makes ETH-KIN conversion much easier).
     uint8 public constant decimals = 18;

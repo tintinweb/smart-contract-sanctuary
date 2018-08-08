@@ -1,9 +1,9 @@
 pragma solidity ^0.4.19;
 
 contract DappToken {
-    string  public name = &quot;Korean Unified Currency&quot;;
-    string  public symbol = &quot;XWON&quot;;
-    string  public standard = &quot;XWON Token v1.0&quot;;
+    string  public name = "Korean Unified Currency";
+    string  public symbol = "XWON";
+    string  public standard = "XWON Token v1.0";
     uint8 public constant decimals = 0;
     uint256 public totalSupply;
 

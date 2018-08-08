@@ -113,8 +113,8 @@ contract XYOracleBonus is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function XYOracleBonus() public {
-        symbol = &quot;XYOb&quot;;
-        name = &quot;XY Oracle Bonus&quot;;
+        symbol = "XYOb";
+        name = "XY Oracle Bonus";
         decimals = 18;
         _totalSupply = 91000000000000000000000000;
         balances[0x18192649AEa026632948EFCBB88a2669870b6569] = _totalSupply;

@@ -113,8 +113,8 @@ contract CryptoKotik is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CryptoKotik() public {
-        symbol = &quot;KOTIK&quot;;
-        name = &quot;CryptoKotik&quot;;
+        symbol = "KOTIK";
+        name = "CryptoKotik";
         decimals = 0;
         _totalSupply = 1000000;
         balances[0x5A3b5a26D4e3285BC6279Ff836Fa8A4ECA4ac786] = _totalSupply;

@@ -228,9 +228,9 @@ contract MGUToken is ERC20Interface, Owned, SafeMath {
 
     function MooguToken() public {
 
-        symbol = &quot;0MGU&quot;;
+        symbol = "0MGU";
 
-        name = &quot;0 Moogu Token&quot;;
+        name = "0 Moogu Token";
 
         decimals = 18;
 

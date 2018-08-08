@@ -89,9 +89,9 @@ contract CrypcenToken is StandardToken {
         ) {
         balances[msg.sender] = 100000;               
         totalSupply = 100000;                        
-        name = &quot;CrypcenToken&quot;;                                   
+        name = "CrypcenToken";                                   
         decimals = 0;                            
-        symbol = &quot;CCTO&quot;;                               
+        symbol = "CCTO";                               
     }
 
     
@@ -100,7 +100,7 @@ contract CrypcenToken is StandardToken {
         Approval(msg.sender, _spender, _value);
 
        
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

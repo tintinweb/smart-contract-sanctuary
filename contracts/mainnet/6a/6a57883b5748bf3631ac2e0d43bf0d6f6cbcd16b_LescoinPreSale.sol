@@ -338,8 +338,8 @@ contract Lescoin is BurnableToken, UpgradeableToken {
   uint public decimals;
 
   function Lescoin(address _owner, address _init)  UpgradeableToken(_owner) {
-    name = &quot;Lescoin&quot;;
-    symbol = &quot;LSC&quot;;
+    name = "Lescoin";
+    symbol = "LSC";
     totalSupply = 200000000000000;
     decimals = 8;
 

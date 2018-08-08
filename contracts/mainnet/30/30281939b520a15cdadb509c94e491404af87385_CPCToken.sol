@@ -15,8 +15,8 @@ contract CPCToken {
     function CPCToken() public {
         totalSupply = 1000000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Cryptonia Poker Chips&quot;;
-        symbol = &quot;CPC&quot;;
+        name = "Cryptonia Poker Chips";
+        symbol = "CPC";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

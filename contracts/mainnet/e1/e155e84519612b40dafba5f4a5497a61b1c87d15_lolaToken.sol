@@ -116,8 +116,8 @@ contract lolaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function lolaToken() public {
-        symbol = &quot;LOLA&quot;;
-        name = &quot;lola Token&quot;;
+        symbol = "LOLA";
+        name = "lola Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 2 weeks;

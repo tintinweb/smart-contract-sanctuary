@@ -585,8 +585,8 @@ contract SaddleBasis is  SaddleShopOwner {
 
 contract SaddleOwnership is SaddleBasis{
 
-  string public constant  name = &quot;CryptoSaddle&quot;;
-    string public constant symbol = &quot;CSD&quot;;
+  string public constant  name = "CryptoSaddle";
+    string public constant symbol = "CSD";
      uint8 public constant decimals = 0; 
 
     function SaddleForSale(uint256 _tokenId, uint256 price) external { 

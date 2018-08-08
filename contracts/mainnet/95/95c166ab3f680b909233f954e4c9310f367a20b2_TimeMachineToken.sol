@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract TimeMachineToken is StandardToken {
 
-  string public constant name = &quot; Time Machine&quot;;
-  string public constant symbol = &quot;TMM&quot;;
+  string public constant name = " Time Machine";
+  string public constant symbol = "TMM";
   uint8 public constant decimals = 18;
 
 

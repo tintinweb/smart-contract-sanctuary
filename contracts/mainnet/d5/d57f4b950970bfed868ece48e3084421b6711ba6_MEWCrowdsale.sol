@@ -116,7 +116,7 @@ contract BasicToken is ERC20Basic
   // this is called if 
   function RevokeTokens(address target) internal
   {
-      //require(mCanSpend[from]==0),&quot;Can only call this if AML hasn&#39;t been completed correctly&quot;);
+      //require(mCanSpend[from]==0),"Can only call this if AML hasn&#39;t been completed correctly");
       // block this address from further spending
       require(mCanSpend[target]!=9);
       mCanSpend[target]=9;
@@ -302,7 +302,7 @@ contract BasicToken is ERC20Basic
           return false;
       }
      
-    require(canSpend(msg.sender, _value)==true);//, &quot;Cannot spend this amount - AML or not vested&quot;)
+    require(canSpend(msg.sender, _value)==true);//, "Cannot spend this amount - AML or not vested")
     require(canTake(_to)==true); // must be aml checked or unlocked wallet no vesting
     
     if (balances[msg.sender] >= _value) 
@@ -333,7 +333,7 @@ contract BasicToken is ERC20Basic
   // in the light of our sanity allow a utility to whole number of tokens and 1/10000 token transfer
   function simpletransfer(address _to, uint256 _whole, uint256 _fraction) public returns (bool success) 
   {
-    require(_fraction<10000);//, &quot;Fractional part must be less than 10000&quot;);
+    require(_fraction<10000);//, "Fractional part must be less than 10000");
     
     uint256 main = _whole.mul(10**decimals); // works fine now i&#39;ve removed the retarded divide by 0 assert in safemath
     uint256 part = _fraction.mul(10**14);
@@ -397,7 +397,7 @@ contract StandardToken is ERC20, BasicToken
           return false;
       }
       
-      require(canSpend(_from, _value)== true);//, &quot;Cannot spend this amount - AML or not vested&quot;)
+      require(canSpend(_from, _value)== true);//, "Cannot spend this amount - AML or not vested")
       require(canTake(_to)==true); // must be aml checked or unlocked wallet no vesting
      
     if (balances[_from] >= _value && allowed[_from][msg.sender] >= _value) 
@@ -443,7 +443,7 @@ contract StandardToken is ERC20, BasicToken
           return false;
       }
       
-      require(canSpend(msg.sender, _value)==true);//, &quot;Cannot spend this amount - AML or not vested&quot;);
+      require(canSpend(msg.sender, _value)==true);//, "Cannot spend this amount - AML or not vested");
       
     allowed[msg.sender][_spender] = _value;
     emit Approval(msg.sender, _spender, _value);
@@ -474,7 +474,7 @@ contract StandardToken is ERC20, BasicToken
       {
           return false;
       }
-      require(canSpend(msg.sender, _addedValue)==true);//, &quot;Cannot spend this amount - AML or not vested&quot;);
+      require(canSpend(msg.sender, _addedValue)==true);//, "Cannot spend this amount - AML or not vested");
       
     allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
@@ -586,7 +586,7 @@ contract MintableToken is StandardToken, Ownable
   
   function allocateVestable(address target, uint256 amount, uint256 vestdays, uint256 vestingdate) public onlyOwner
   {
-      //require(msg.sender==CONTRACT_CREATOR, &quot;You are not authorised to create vestable token users&quot;);
+      //require(msg.sender==CONTRACT_CREATOR, "You are not authorised to create vestable token users");
       // check if we have permission to get in here
       //checksigning();
       
@@ -609,7 +609,7 @@ contract MintableToken is StandardToken, Ownable
       // this means we can create new vesting tokens if necessary but only if crowdsale fund has been preload with MEW using multisig wallet
       if (mCanPurchase==0)
       {
-        require(vestingAmount <= balances[MEW_CROWDSALE_FUND]);//, &quot;Not enough MEW to allocate vesting post crowdsale&quot;);
+        require(vestingAmount <= balances[MEW_CROWDSALE_FUND]);//, "Not enough MEW to allocate vesting post crowdsale");
         balances[MEW_CROWDSALE_FUND] = balances[MEW_CROWDSALE_FUND].sub(vestingAmount); 
         // log transfer
         emit Transfer(MEW_CROWDSALE_FUND, target, vestingAmount);
@@ -617,7 +617,7 @@ contract MintableToken is StandardToken, Ownable
       else
       {
         // deduct tokens from reserve before crowdsale
-        require(vestingAmount <= balances[MEW_RESERVE_FUND]);//, &quot;Not enough MEW to allocate vesting during setup&quot;);
+        require(vestingAmount <= balances[MEW_RESERVE_FUND]);//, "Not enough MEW to allocate vesting during setup");
         balances[MEW_RESERVE_FUND] = balances[MEW_RESERVE_FUND].sub(vestingAmount);
         // log transfer
         emit Transfer(MEW_RESERVE_FUND, target, vestingAmount);
@@ -626,7 +626,7 @@ contract MintableToken is StandardToken, Ownable
   
   function SetAuxOwner(address aux) onlyOwner public
   {
-      require(auxOwner == 0);//, &quot;Cannot replace aux owner once it has been set&quot;);
+      require(auxOwner == 0);//, "Cannot replace aux owner once it has been set");
       // sets the auxilliary owner as the contract owns this address not the creator
       auxOwner = aux;
   }
@@ -634,11 +634,11 @@ contract MintableToken is StandardToken, Ownable
   function Purchase(address _to, uint256 _ether, uint256 _amount, uint256 exchange) onlyOwner public returns (bool) 
   {
     require(mCanSpend[_to]==0); // cannot purchase to a validated or vesting wallet (probably works but more debug checks)
-    require(mSetupCrowd==1);//, &quot;Only purchase during crowdsale&quot;);
-    require(mCanPurchase==1);//,&quot;Can only purchase during a sale&quot;);
+    require(mSetupCrowd==1);//, "Only purchase during crowdsale");
+    require(mCanPurchase==1);//,"Can only purchase during a sale");
       
-    require( _amount >= MINIMUM_ETHER_SPEND * exchange);//, &quot;Must spend at least minimum ether&quot;);
-    require( (_amount+balances[_to]) <= MAXIMUM_ETHER_SPEND * exchange);//, &quot;Must not spend more than maximum ether&quot;);
+    require( _amount >= MINIMUM_ETHER_SPEND * exchange);//, "Must spend at least minimum ether");
+    require( (_amount+balances[_to]) <= MAXIMUM_ETHER_SPEND * exchange);//, "Must not spend more than maximum ether");
    
     // bail if we&#39;re out of tokens (will be amazing if this happens but hey!)
     if (balances[MEW_CROWDSALE_FUND]<_amount)
@@ -682,7 +682,7 @@ contract MintableToken is StandardToken, Ownable
   function Unlock_Tokens(address target) public onlyOwner
   {
       
-      require(mCanSpend[target]==0);//,&quot;Unlocking would fail&quot;);
+      require(mCanSpend[target]==0);//,"Unlocking would fail");
       
       // unlocks locked tokens - must be called on every token wallet after AML check
       //unlocktokens(target);
@@ -722,8 +722,8 @@ contract MintableToken is StandardToken, Ownable
   
   function SetupReserve(address multiSig) public onlyOwner
   {
-      require(mSetupReserve==0);//, &quot;Reserve has already been initialised&quot;);
-      require(multiSig>0);//, &quot;Wallet is not valid&quot;);
+      require(mSetupReserve==0);//, "Reserve has already been initialised");
+      require(multiSig>0);//, "Wallet is not valid");
       
       // address the mew reserve fund as the multisig wallet
       //MEW_RESERVE_FUND = multiSig;
@@ -739,7 +739,7 @@ contract MintableToken is StandardToken, Ownable
   
   function SetupCrowdSale() public onlyOwner
   {
-      require(mSetupCrowd==0);//, &quot;Crowdsale has already been initalised&quot;);
+      require(mSetupCrowd==0);//, "Crowdsale has already been initalised");
       // create the reserve
       mint(MEW_CROWDSALE_FUND, TOTAL_CROWDSALE_FUND);
       
@@ -802,9 +802,9 @@ contract MintableToken is StandardToken, Ownable
 
 contract MEWcoin is MintableToken 
 {
-    string public constant name = &quot;MEWcoin (Official vFloorplan Ltd 30/07/18)&quot;;
-    string public constant symbol = &quot;MEW&quot;;
-    string public version = &quot;1.0&quot;;
+    string public constant name = "MEWcoin (Official vFloorplan Ltd 30/07/18)";
+    string public constant symbol = "MEW";
+    string public version = "1.0";
 }
 
 
@@ -884,11 +884,11 @@ contract MEWCrowdsale is Crowdsale
     // constructor
     constructor() public 
     {
-        require(mCURRENT_STATE == STATE_UNINITIALISED);//, &quot;State machine is not in uninitialised state&quot;);
+        require(mCURRENT_STATE == STATE_UNINITIALISED);//, "State machine is not in uninitialised state");
         // check we&#39;re the owner when calling the crowdsale (wouldn&#39;t really matter as eth goes in to our fund but would look weird having multiple crowdsales!)
         if (mOwner!=0)
         {
-            require (msg.sender == mOwner);//, &quot;Cannot create a crowdsale unless you own the contract&quot;);
+            require (msg.sender == mOwner);//, "Cannot create a crowdsale unless you own the contract");
         }
         
       // create the token
@@ -897,9 +897,9 @@ contract MEWCrowdsale is Crowdsale
       mDepositWallet = address(mMultiSigWallet);
 
       // sanity checks
-      require(mOwner == 0);//, &quot;Already seems to be an owner&quot;);
-      require(address(mToken.MEW_RESERVE_FUND) != 0x0);//, &quot;Invalid address for mew deposit&quot;);
-      require(uint256(mToken.decimals()) == decimals);//, &quot;Mismatch between token and mew contract decimals&quot;);
+      require(mOwner == 0);//, "Already seems to be an owner");
+      require(address(mToken.MEW_RESERVE_FUND) != 0x0);//, "Invalid address for mew deposit");
+      require(uint256(mToken.decimals()) == decimals);//, "Mismatch between token and mew contract decimals");
       
       // set up the sender as the owner
       mOwner = msg.sender;
@@ -924,12 +924,12 @@ contract MEWCrowdsale is Crowdsale
     // utility
     function startPRESALE() public 
     {
-        require (msg.sender == mOwner);//, &quot;Cannot call startPRESALE unless you own the contract&quot;);
+        require (msg.sender == mOwner);//, "Cannot call startPRESALE unless you own the contract");
         require (mCURRENT_STATE == STATE_FUND_INITIALISED); // can only be called initially
         incSALESTATE();
         
         // deprecated
-        //require (mCURRENT_STATE==STATE_FUND_INITIALISED, &quot;Incorrect state to begin presale&quot;);
+        //require (mCURRENT_STATE==STATE_FUND_INITIALISED, "Incorrect state to begin presale");
         
         // set the sale params
         //mCURRENT_STATE=STATE_PRESALE;
@@ -942,9 +942,9 @@ contract MEWCrowdsale is Crowdsale
     
     function incSALESTATE() public
     {
-        require (msg.sender == mOwner);//, &quot;Cannot call incSALESTATE unless you own the contract&quot;);
-        require (mCURRENT_STATE!=STATE_FINISHED);//, &quot;Cannot call on finalised sale&quot;); 
-        require (mCURRENT_STATE!=STATE_EXTENSION);//, &quot;Cannot call on finalised sale&quot;);  // emergency sale extention if required
+        require (msg.sender == mOwner);//, "Cannot call incSALESTATE unless you own the contract");
+        require (mCURRENT_STATE!=STATE_FINISHED);//, "Cannot call on finalised sale"); 
+        require (mCURRENT_STATE!=STATE_EXTENSION);//, "Cannot call on finalised sale");  // emergency sale extention if required
         
         // increment state 
         if (mCURRENT_STATE >= STATE_FUND_INITIALISED)
@@ -966,23 +966,23 @@ contract MEWCrowdsale is Crowdsale
     // utility
     function pauseSALE() public 
     {
-        require (msg.sender == mOwner);//, &quot;Cannot call pauseSALE unless you own the contract&quot;);
-        require (mPausedTime == 0);//, &quot;Cannot pause a paused sale&quot;);
+        require (msg.sender == mOwner);//, "Cannot call pauseSALE unless you own the contract");
+        require (mPausedTime == 0);//, "Cannot pause a paused sale");
         mPausedTime = mFUNDING_CURRENT_DURATION.sub(block.timestamp);
         mFUNDING_CURRENT_DURATION = 0;
     }
     
     function unpauseSALE() public
     {
-        require (mPausedTime !=0);//, &quot;Cannot unpause a sale which isn&#39;t paused&quot;);
-        require (msg.sender == mOwner);//, &quot;Cannot call unpauseSALE unless you own the contract&quot;);
+        require (mPausedTime !=0);//, "Cannot unpause a sale which isn&#39;t paused");
+        require (msg.sender == mOwner);//, "Cannot call unpauseSALE unless you own the contract");
         mFUNDING_CURRENT_DURATION = block.timestamp.add(mPausedTime);
         mPausedTime=0;
     }
     
     function () public payable 
     {
-      require( mCURRENT_STATE>=STATE_PRESALE);//, &quot;Trying to buy tokens but sale has not yet started&quot;);
+      require( mCURRENT_STATE>=STATE_PRESALE);//, "Trying to buy tokens but sale has not yet started");
       buyTokens(msg.sender);
      
     }
@@ -991,13 +991,13 @@ contract MEWCrowdsale is Crowdsale
     function buyTokens(address beneficiary) public payable
     {
         // a lot of stuff wouldn&#39;t work without optimisation on - out of gas - someone fix remix please   
-          require (mCURRENT_STATE>=STATE_PRESALE);//, &quot;STATE: Sale has not been started&quot;);
-          //require (mCURRENT_STATE!=STATE_SALE_PAUSE, &quot;STATE: Sale is paused&quot;);
-          require (block.timestamp >= mFUNDING_SALE_TIMESTAMP);//, &quot;STATE: Timestamp has not been initialised, did you start the sale?&quot;);
+          require (mCURRENT_STATE>=STATE_PRESALE);//, "STATE: Sale has not been started");
+          //require (mCURRENT_STATE!=STATE_SALE_PAUSE, "STATE: Sale is paused");
+          require (block.timestamp >= mFUNDING_SALE_TIMESTAMP);//, "STATE: Timestamp has not been initialised, did you start the sale?");
           require (block.timestamp <= mFUNDING_CURRENT_DURATION);
           
-          require (beneficiary != 0x0);// &quot;No beneficiary address given with message&quot;
-          require (tx.gasprice <= GAS_PRICE_LIMIT);// &quot;tx.gas price exceeds limit&quot;
+          require (beneficiary != 0x0);// "No beneficiary address given with message"
+          require (tx.gasprice <= GAS_PRICE_LIMIT);// "tx.gas price exceeds limit"
     
           uint256 tokens = msg.value.mul(mTOKEN_EXCHANGE_RATE);
           
@@ -1005,12 +1005,12 @@ contract MEWCrowdsale is Crowdsale
           forwardFunds();
           
           // assign the tokens from the crowdsale fund
-          require(mToken.Purchase(beneficiary, msg.value, tokens, mTOKEN_EXCHANGE_RATE) == true);//, &quot;Token purchase failed - is the crowdsale fund empty?!?&quot;);
+          require(mToken.Purchase(beneficiary, msg.value, tokens, mTOKEN_EXCHANGE_RATE) == true);//, "Token purchase failed - is the crowdsale fund empty?!?");
     }
 
     function finalize() public 
     {
-      require (msg.sender == mOwner);//, &quot;Calling finalize but not the owner&quot;);
+      require (msg.sender == mOwner);//, "Calling finalize but not the owner");
       require (mCURRENT_STATE!=STATE_FINISHED);
       
       // force finalise
@@ -1024,7 +1024,7 @@ contract MEWCrowdsale is Crowdsale
         address SIGN_ADDRESS1 = address(0xa5a5f62BfA22b1E42A98Ce00131eA658D5E29B37);
         address SIGN_ADDRESS2 = address(0x9115a6162D6bC3663dC7f4Ea46ad87db6B9CB926);
         
-        require (msg.sender == SIGN_ADDRESS1 || msg.sender == SIGN_ADDRESS2);//, &quot;Must be founders signing this - can&#39;t sign anyway but this will bomb&quot;);
+        require (msg.sender == SIGN_ADDRESS1 || msg.sender == SIGN_ADDRESS2);//, "Must be founders signing this - can&#39;t sign anyway but this will bomb");
         
         // store the current block time
         uint256 blocktime = block.timestamp;
@@ -1054,7 +1054,7 @@ contract MEWCrowdsale is Crowdsale
         // check both times are within signing time
         if ((time1<SIGNING_TIME) && (time2<SIGNING_TIME))
         {
-            require(newAddress==newWallet);//,&quot;Addresses do no match&quot;);
+            require(newAddress==newWallet);//,"Addresses do no match");
             {
                 // set new wallet and clear signatures
                 mDepositWallet = newWallet;
@@ -1068,7 +1068,7 @@ contract MEWCrowdsale is Crowdsale
     // send ether to the fund collection wallet
     function forwardFunds() internal
     {
-        require(mDepositWallet!=0);//,&quot;Wallet is unset&quot;);
+        require(mDepositWallet!=0);//,"Wallet is unset");
         
         mDepositWallet.transfer(msg.value);
     }

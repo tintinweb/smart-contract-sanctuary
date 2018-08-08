@@ -151,8 +151,8 @@ contract NewToken is BasicToken, ERC20 {
 
 contract THETOKEN is NewToken {
 
-  string public name = &quot;SpineCoin&quot;;
-  string public symbol = &quot;SPN&quot;;
+  string public name = "SpineCoin";
+  string public symbol = "SPN";
   uint public decimals = 8;
   uint public INITIAL_SUPPLY = 30000000000000000;
 

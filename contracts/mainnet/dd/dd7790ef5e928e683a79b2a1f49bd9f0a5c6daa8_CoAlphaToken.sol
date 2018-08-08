@@ -255,8 +255,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract CoAlphaToken is StandardToken, Ownable {
-    string public name = &quot;CoAlphaToken&quot;;
-    string public symbol = &quot;CAL&quot;;
+    string public name = "CoAlphaToken";
+    string public symbol = "CAL";
     uint8 public decimals = 2;
     uint public initialSupply = 2000000000*(10**uint256(decimals));
 

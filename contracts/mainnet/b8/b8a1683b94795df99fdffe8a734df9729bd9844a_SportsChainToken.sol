@@ -113,8 +113,8 @@ contract SportsChainToken is UnboundedRegularToken {
 
     uint public totalSupply = 20*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;SportsChain Token&quot;;
-    string constant public symbol = &quot;SCT&quot;;
+    string constant public name = "SportsChain Token";
+    string constant public symbol = "SCT";
 
     function SportsChainToken() {
         balances[msg.sender] = totalSupply;

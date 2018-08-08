@@ -181,9 +181,9 @@ contract BBTCToken is StandardToken, Owned {
     /* Constants */
 
     // Token Name
-    string public constant name = &quot;BloxOffice token&quot;;
+    string public constant name = "BloxOffice token";
     // Ticker Symbol
-    string public constant symbol = &quot;BBTC&quot;;
+    string public constant symbol = "BBTC";
     // Decimals
     uint8 public constant decimals = 18;
 

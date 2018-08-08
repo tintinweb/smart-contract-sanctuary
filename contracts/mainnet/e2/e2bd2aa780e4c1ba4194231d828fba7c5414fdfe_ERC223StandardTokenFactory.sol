@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -92,9 +92,9 @@ contract Ownable {
 
 // File: contracts/MainFabric.sol
 
-//import &quot;./tokens/ERC20StandardToken.sol&quot;;
-//import &quot;./tokens/ERC20MintableToken.sol&quot;;
-//import &quot;./crowdsale/RefundCrowdsale.sol&quot;;
+//import "./tokens/ERC20StandardToken.sol";
+//import "./tokens/ERC20MintableToken.sol";
+//import "./crowdsale/RefundCrowdsale.sol";
 
 contract MainFabric is Ownable {
 
@@ -538,8 +538,8 @@ contract ERC223 is StandardToken {
 
 contract ERC223StandardToken is StandardToken, ERC223 {
 
-    string public name = &quot;&quot;;
-    string public symbol = &quot;&quot;;
+    string public name = "";
+    string public symbol = "";
     uint8 public decimals = 18;
 
     function ERC223StandardToken(string _name, string _symbol, uint8 _decimals, address _owner, uint256 _totalSupply) public {
@@ -597,31 +597,31 @@ contract ERC223StandardTokenFactory is BaseFactory {
         require(_mainFactory != 0x0);
         mainFabricAddress = _mainFactory;
 
-        title = &quot;ERC223StandardToken&quot;;
+        title = "ERC223StandardToken";
 
         params.push(Parameter({
-            title: &quot;Token name&quot;,
-            paramType: &quot;string&quot;
+            title: "Token name",
+            paramType: "string"
             }));
 
         params.push(Parameter({
-            title: &quot;Token symbol&quot;,
-            paramType: &quot;string&quot;
+            title: "Token symbol",
+            paramType: "string"
             }));
 
         params.push(Parameter({
-            title: &quot;Decimals&quot;,
-            paramType: &quot;string&quot;
+            title: "Decimals",
+            paramType: "string"
             }));
 
         params.push(Parameter({
-            title: &quot;Token owner&quot;,
-            paramType: &quot;string&quot;
+            title: "Token owner",
+            paramType: "string"
             }));
 
         params.push(Parameter({
-            title: &quot;Total supply&quot;,
-            paramType: &quot;string&quot;
+            title: "Total supply",
+            paramType: "string"
             }));
     }
 

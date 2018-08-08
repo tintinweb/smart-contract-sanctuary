@@ -60,8 +60,8 @@ contract MTTT_Token is SafeMath, Owned {
     mapping(address => uint) balances;
     
     //address public owner    = msg.sender;
-    string public name    = &quot;MelobnBIT223&quot;;
-    string public symbol  = &quot;MTTT&quot;;
+    string public name    = "MelobnBIT223";
+    string public symbol  = "MTTT";
     uint8 public decimals = 8;
     uint256 public totalSupply;
     

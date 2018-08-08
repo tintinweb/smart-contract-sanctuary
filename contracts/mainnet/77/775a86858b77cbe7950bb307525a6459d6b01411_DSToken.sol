@@ -98,7 +98,7 @@ contract DSMath {
         z = add(mul(x, RAY), y / 2) / y;
     }
 
-    // This famous algorithm is called &quot;exponentiation by squaring&quot;
+    // This famous algorithm is called "exponentiation by squaring"
     // and calculates x^n with x as fixed-point and n as regular unsigned.
     //
     // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -351,7 +351,7 @@ contract DSToken is DSTokenBase(0), DSStop {
     }
 
     // Optional token name
-    bytes32   public  name = &quot;&quot;;
+    bytes32   public  name = "";
 
     function setName(bytes32 name_) public auth {
         name = name_;

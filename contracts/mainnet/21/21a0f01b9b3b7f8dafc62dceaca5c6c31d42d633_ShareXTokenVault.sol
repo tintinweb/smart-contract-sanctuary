@@ -47,7 +47,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -133,8 +133,8 @@ contract ShareXERC20 is Ownable{
 		decimals=8;															//Assignment of Token&#39;s decimals
 		totalSupply = 1000000000 * 10 ** uint256(decimals);  				//Assignment of Token&#39;s total supply with decimals
         balanceOf[owner] = totalSupply;                						//Assignment of Token&#39;s creator initial tokens
-        name = &quot;ShareX&quot;;                                   					//Set the name of Token
-        symbol = &quot;SEXC&quot;;                               						//Set the symbol of  Token
+        name = "ShareX";                                   					//Set the name of Token
+        symbol = "SEXC";                               						//Set the symbol of  Token
         
     }
 	//===================Contract Initialization Sequence definition end===================

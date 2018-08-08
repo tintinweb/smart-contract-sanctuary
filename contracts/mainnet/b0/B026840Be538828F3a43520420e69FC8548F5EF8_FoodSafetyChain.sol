@@ -65,8 +65,8 @@ contract StandardToken is ERC20, SafeMath {
 
 
 contract FoodSafetyChain is StandardToken {
-    string public name = &quot;FoodSafetyChain&quot;;
-    string public symbol = &quot;FSC&quot;;
+    string public name = "FoodSafetyChain";
+    string public symbol = "FSC";
     uint public decimals = 18;
     uint public totalSupply = 2100 * 1000 * 1000 ether;
 

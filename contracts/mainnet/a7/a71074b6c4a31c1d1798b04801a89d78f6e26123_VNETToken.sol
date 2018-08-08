@@ -29,7 +29,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -388,10 +388,10 @@ contract VNETToken is Ownable, AbstractToken {
      * @dev Constructor
      */
     constructor() public {
-        name = &quot;VNET Token&quot;;
-        symbol = &quot;VNET&quot;;
+        name = "VNET Token";
+        symbol = "VNET";
         decimals = 6;
-        value = &quot;1 Token = 100 GByte client newtwork traffic flow&quot;;
+        value = "1 Token = 100 GByte client newtwork traffic flow";
 
         // 35 Billion Total
         cap = 35000000000 * (10 ** decimals);

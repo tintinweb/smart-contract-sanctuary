@@ -17,9 +17,9 @@ contract RpctCoin {
     function Rpct() {
 
          initialSupply = 28000000;
-         name =&quot;RpctCoin&quot;;
+         name ="RpctCoin";
         decimals = 2;
-         symbol = &quot;Rpct&quot;;
+         symbol = "Rpct";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

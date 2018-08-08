@@ -650,7 +650,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint length = self._len * (parts.length - 1);
         for(uint i = 0; i < parts.length; i++)
@@ -685,8 +685,8 @@ contract Satoshi {
   
 
   function Satoshi() public {
-    whatSatoshiSays = &quot;My name is Satoshi Nakamoto, creator of Bitcoin!&quot;;    
-    name = &quot;Satoshi Nakamoto&quot;;
+    whatSatoshiSays = "My name is Satoshi Nakamoto, creator of Bitcoin!";    
+    name = "Satoshi Nakamoto";
     satoshiMood = MoodState.happy;
     currentPrice = 1000000000000000; // includes the fee 
     currentOwner = msg.sender;

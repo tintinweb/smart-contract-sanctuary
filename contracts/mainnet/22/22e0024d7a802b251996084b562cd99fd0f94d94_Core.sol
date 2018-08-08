@@ -62,8 +62,8 @@ contract Core is Owned {
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
-    string public name = &quot;TestAbbrev&quot;;
-    string public symbol = &quot;TEST&quot;;
+    string public name = "TestAbbrev";
+    string public symbol = "TEST";
     uint256 public decimals = 18;
 
     function Core() public {

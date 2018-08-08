@@ -113,8 +113,8 @@ contract CHESSToken is UnboundedRegularToken {
 
     uint public totalSupply = 10**27;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;CHESS TOKEN&quot;;
-    string constant public symbol = &quot;ZES&quot;;
+    string constant public name = "CHESS TOKEN";
+    string constant public symbol = "ZES";
 
     function CHESSToken() {
         balances[msg.sender] = totalSupply;

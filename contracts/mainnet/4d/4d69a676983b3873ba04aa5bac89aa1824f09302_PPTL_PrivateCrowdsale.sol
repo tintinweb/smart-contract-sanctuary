@@ -276,9 +276,9 @@ contract BurnableToken is MintableToken {
 contract PPToken is BurnableToken{
     using SafeMath for uint256;
     
-    string public constant name = &quot;PayPortalToken&quot;;
+    string public constant name = "PayPortalToken";
     
-    string public constant symbol = &quot;PPTL&quot;;
+    string public constant symbol = "PPTL";
     
     uint32 public constant decimals = 18;
     

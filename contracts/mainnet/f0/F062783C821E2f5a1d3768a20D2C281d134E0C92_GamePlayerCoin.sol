@@ -182,8 +182,8 @@ contract ERC23StandardToken is ERC23BasicToken {
 // Based in part on code by Open-Zeppelin: https://github.com/OpenZeppelin/zeppelin-solidity.git
 // Based in part on code by FirstBlood: https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol
 contract GamePlayerCoin is ERC23StandardToken {
-    string public constant name = &quot;Game Player Coin&quot;;
-    string public constant symbol = &quot;GPC&quot;;
+    string public constant name = "Game Player Coin";
+    string public constant symbol = "GPC";
     uint256 public constant decimals = 18;
     address public multisig=address(0x003f69f85bb97E221795f4c2708EA004C73378Fa); //multisig wallet, to which all contributions will be sent
     address public foundation; //owner address

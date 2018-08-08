@@ -299,8 +299,8 @@ contract NDT2Token is BurnableToken, StandardToken,Pausable {
     {
         totalSupply_ = 10000000000 ether;//代币总量,单位eth
         balances[msg.sender] = totalSupply_;               //为创建者提供所有初始令牌
-        name = &quot;NDT2Token&quot;;             //为显示目的设置交易名称
-        symbol = &quot;NDT2&quot;;                               //为显示目的设置交易符号简称
+        name = "NDT2Token";             //为显示目的设置交易名称
+        symbol = "NDT2";                               //为显示目的设置交易符号简称
     }
 
 //@dev从目标地址和减量津贴中焚烧特定数量的标记

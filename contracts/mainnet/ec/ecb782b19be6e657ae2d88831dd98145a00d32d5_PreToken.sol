@@ -8,30 +8,30 @@ pragma solidity 0.4.24;
 library SafeMath {
     function mul(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a * b;
-        require(a == 0 || c / a == b, &quot;mul overflow&quot;);
+        require(a == 0 || c / a == b, "mul overflow");
         return c;
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b > 0, &quot;div by 0&quot;); // Solidity automatically throws for div by 0 but require to emit reason
+        require(b > 0, "div by 0"); // Solidity automatically throws for div by 0 but require to emit reason
         uint256 c = a / b;
         // require(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b <= a, &quot;sub underflow&quot;);
+        require(b <= a, "sub underflow");
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        require(c >= a, &quot;add overflow&quot;);
+        require(c >= a, "add overflow");
         return c;
     }
 
     function roundedDiv(uint a, uint b) internal pure returns (uint256) {
-        require(b > 0, &quot;div by 0&quot;); // Solidity automatically throws for div by 0 but require to emit reason
+        require(b > 0, "div by 0"); // Solidity automatically throws for div by 0 but require to emit reason
         uint256 z = a / b;
         if (a % b >= b / 2) {
             z++;  // no need for safe add b/c it can happen only if we divided the input
@@ -46,7 +46,7 @@ library SafeMath {
 
     deployment works as:
            1. contract deployer account deploys contracts
-           2. constructor grants &quot;PermissionGranter&quot; permission to deployer account
+           2. constructor grants "PermissionGranter" permission to deployer account
            3. deployer account executes initial setup (no multiSig)
            4. deployer account grants PermissionGranter permission for the MultiSig contract
                 (e.g. StabilityBoardProxy or PreTokenProxy)
@@ -62,26 +62,26 @@ contract Restricted {
     event PermissionRevoked(address indexed agent, bytes32 revokedPermission);
 
     modifier restrict(bytes32 requiredPermission) {
-        require(permissions[msg.sender][requiredPermission], &quot;msg.sender must have permission&quot;);
+        require(permissions[msg.sender][requiredPermission], "msg.sender must have permission");
         _;
     }
 
     constructor(address permissionGranterContract) public {
-        require(permissionGranterContract != address(0), &quot;permissionGranterContract must be set&quot;);
-        permissions[permissionGranterContract][&quot;PermissionGranter&quot;] = true;
-        emit PermissionGranted(permissionGranterContract, &quot;PermissionGranter&quot;);
+        require(permissionGranterContract != address(0), "permissionGranterContract must be set");
+        permissions[permissionGranterContract]["PermissionGranter"] = true;
+        emit PermissionGranted(permissionGranterContract, "PermissionGranter");
     }
 
     function grantPermission(address agent, bytes32 requiredPermission) public {
-        require(permissions[msg.sender][&quot;PermissionGranter&quot;],
-            &quot;msg.sender must have PermissionGranter permission&quot;);
+        require(permissions[msg.sender]["PermissionGranter"],
+            "msg.sender must have PermissionGranter permission");
         permissions[agent][requiredPermission] = true;
         emit PermissionGranted(agent, requiredPermission);
     }
 
     function grantMultiplePermissions(address agent, bytes32[] requiredPermissions) public {
-        require(permissions[msg.sender][&quot;PermissionGranter&quot;],
-            &quot;msg.sender must have PermissionGranter permission&quot;);
+        require(permissions[msg.sender]["PermissionGranter"],
+            "msg.sender must have PermissionGranter permission");
         uint256 length = requiredPermissions.length;
         for (uint256 i = 0; i < length; i++) {
             grantPermission(agent, requiredPermissions[i]);
@@ -89,8 +89,8 @@ contract Restricted {
     }
 
     function revokePermission(address agent, bytes32 requiredPermission) public {
-        require(permissions[msg.sender][&quot;PermissionGranter&quot;],
-            &quot;msg.sender must have PermissionGranter permission&quot;);
+        require(permissions[msg.sender]["PermissionGranter"],
+            "msg.sender must have PermissionGranter permission");
         permissions[agent][requiredPermission] = false;
         emit PermissionRevoked(agent, requiredPermission);
     }
@@ -137,8 +137,8 @@ contract PreToken is Restricted {
 
     uint public constant CHUNK_SIZE = 100;
 
-    string constant public name = &quot;Augmint pretokens&quot;; // solhint-disable-line const-name-snakecase
-    string constant public symbol = &quot;APRE&quot;; // solhint-disable-line const-name-snakecase
+    string constant public name = "Augmint pretokens"; // solhint-disable-line const-name-snakecase
+    string constant public symbol = "APRE"; // solhint-disable-line const-name-snakecase
     uint8 constant public decimals = 0; // solhint-disable-line const-name-snakecase
 
     uint public totalSupply;
@@ -166,12 +166,12 @@ contract PreToken is Restricted {
     constructor(address permissionGranterContract) public Restricted(permissionGranterContract) {} // solhint-disable-line no-empty-blocks
 
     function addAgreement(address owner, bytes32 agreementHash, uint32 discount, uint32 valuationCap)
-    external restrict(&quot;PreTokenSigner&quot;) {
-        require(owner != address(0), &quot;owner must not be 0x0&quot;);
-        require(agreementOwners[owner] == 0x0, &quot;owner must not have an aggrement yet&quot;);
-        require(agreementHash != 0x0, &quot;agreementHash must not be 0x0&quot;);
-        require(discount > 0, &quot;discount must be > 0&quot;);
-        require(agreements[agreementHash].discount == 0, &quot;agreement must not exist yet&quot;);
+    external restrict("PreTokenSigner") {
+        require(owner != address(0), "owner must not be 0x0");
+        require(agreementOwners[owner] == 0x0, "owner must not have an aggrement yet");
+        require(agreementHash != 0x0, "agreementHash must not be 0x0");
+        require(discount > 0, "discount must be > 0");
+        require(agreements[agreementHash].discount == 0, "agreement must not exist yet");
 
         agreements[agreementHash] = Agreement(owner, 0, discount, valuationCap);
         agreementOwners[owner] = agreementHash;
@@ -180,9 +180,9 @@ contract PreToken is Restricted {
         emit NewAgreement(owner, agreementHash, discount, valuationCap);
     }
 
-    function issueTo(bytes32 agreementHash, uint amount) external restrict(&quot;PreTokenSigner&quot;) {
+    function issueTo(bytes32 agreementHash, uint amount) external restrict("PreTokenSigner") {
         Agreement storage agreement = agreements[agreementHash];
-        require(agreement.discount > 0, &quot;agreement must exist&quot;);
+        require(agreement.discount > 0, "agreement must exist");
 
         agreement.balance = agreement.balance.add(amount);
         totalSupply = totalSupply.add(amount);
@@ -192,11 +192,11 @@ contract PreToken is Restricted {
 
     /* Restricted function to allow pretoken signers to fix incorrect issuance */
     function burnFrom(bytes32 agreementHash, uint amount)
-    public restrict(&quot;PreTokenSigner&quot;) returns (bool) {
+    public restrict("PreTokenSigner") returns (bool) {
         Agreement storage agreement = agreements[agreementHash];
-        require(agreement.discount > 0, &quot;agreement must exist&quot;); // this is redundant b/c of next requires but be explicit
-        require(amount > 0, &quot;burn amount must be > 0&quot;);
-        require(agreement.balance >= amount, &quot;must not burn more than balance&quot;); // .sub would revert anyways but emit reason
+        require(agreement.discount > 0, "agreement must exist"); // this is redundant b/c of next requires but be explicit
+        require(amount > 0, "burn amount must be > 0");
+        require(agreement.balance >= amount, "must not burn more than balance"); // .sub would revert anyways but emit reason
 
         agreement.balance = agreement.balance.sub(amount);
         totalSupply = totalSupply.sub(amount);
@@ -212,14 +212,14 @@ contract PreToken is Restricted {
     /* function to transfer agreement ownership to other wallet by owner
         it&#39;s in ERC20 form so owners can use standard ERC20 wallet just need to pass full balance as value */
     function transfer(address to, uint amount) public returns (bool) { // solhint-disable-line no-simple-event-func-name
-        require(amount == agreements[agreementOwners[msg.sender]].balance, &quot;must transfer full balance&quot;);
+        require(amount == agreements[agreementOwners[msg.sender]].balance, "must transfer full balance");
         _transfer(msg.sender, to);
         return true;
     }
 
     /* Restricted function to allow pretoken signers to fix if pretoken owner lost keys */
     function transferAgreement(bytes32 agreementHash, address to)
-    public restrict(&quot;PreTokenSigner&quot;) returns (bool) {
+    public restrict("PreTokenSigner") returns (bool) {
         _transfer(agreements[agreementHash].owner, to);
         return true;
     }
@@ -227,9 +227,9 @@ contract PreToken is Restricted {
     /* private function used by transferAgreement & transfer */
     function _transfer(address from, address to) private {
         Agreement storage agreement = agreements[agreementOwners[from]];
-        require(agreementOwners[from] != 0x0, &quot;from agreement must exists&quot;);
-        require(agreementOwners[to] == 0, &quot;to must not have an agreement&quot;);
-        require(to != 0x0, &quot;must not transfer to 0x0&quot;);
+        require(agreementOwners[from] != 0x0, "from agreement must exists");
+        require(agreementOwners[to] == 0, "to must not have an agreement");
+        require(to != 0x0, "must not transfer to 0x0");
 
         agreement.owner = to;
 

@@ -34,8 +34,8 @@ contract ERC20Interface {
 
 contract ExcreteumToken is ERC20Interface {
     
-    string public constant symbol = &quot;SHET&quot;;
-    string public constant name = &quot;Excreteum&quot;;
+    string public constant symbol = "SHET";
+    string public constant name = "Excreteum";
     uint8 public constant decimals = 8;
     uint256 _totalSupply = 12000000000000000;
 

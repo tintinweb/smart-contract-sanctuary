@@ -207,7 +207,7 @@ contract Token is TokenI {
     }
 
     function _freeze(address _user, uint256 _value, uint8 _step) moreThanZero(_value) private returns (bool success) {
-        //info256(&quot;balanceOf[_user]&quot;, balanceOf[_user]);
+        //info256("balanceOf[_user]", balanceOf[_user]);
         require(balanceOf[_user] >= _value);
         balanceOf[_user] = balanceOf[_user].sub(_value);
         freezeOf[_step][lastFreezeSeq[_step]] = FreezeInfo({user:_user, amount:_value});

@@ -46,8 +46,8 @@ contract ERC20TokenInterface {
 
 contract DickheadCash is ERC20TokenInterface {
 
-    string public constant name = &quot;DickheadCash&quot;;
-    string public constant symbol = &quot;DICK&quot;;
+    string public constant name = "DickheadCash";
+    string public constant symbol = "DICK";
     uint256 public constant decimals = 0;
     uint256 public totalTokens = 1 * (10 ** decimals);
     uint8 public constant MAX_TRANSFERS = 7;

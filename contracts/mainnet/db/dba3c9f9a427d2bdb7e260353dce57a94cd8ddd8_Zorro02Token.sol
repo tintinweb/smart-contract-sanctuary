@@ -227,8 +227,8 @@ contract Zorro02Token is ERC20Token {
 
     // basic token data
 
-    string public constant name = &quot;Zorro02&quot;;
-    string public constant symbol = &quot;ZORRO02&quot;;
+    string public constant name = "Zorro02";
+    string public constant symbol = "ZORRO02";
     uint8 public constant decimals = 18;
     string public constant GITHUB_LINK = &#39;htp://github.com/..&#39;;
 

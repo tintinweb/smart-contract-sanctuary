@@ -53,13 +53,13 @@ pragma solidity ^0.4.13;
 }
   
  contract MidnightCoin is ERC20, Owned {
-     string public constant symbol = &quot;MNC&quot;;
-     string public constant name = &quot;Midnight Coin&quot;;
+     string public constant symbol = "MNC";
+     string public constant name = "Midnight Coin";
      uint8 public constant decimals = 18;
      uint256 _totalSupply = 100000000000000000000;
      uint public constant FREEZE_PERIOD = 1 years;
      uint public crowdSaleStartTimestamp;
-     string public lastLoveLetter = &quot;&quot;;
+     string public lastLoveLetter = "";
      
      // Balances for each account
      mapping(address => uint256) balances;
@@ -100,7 +100,7 @@ pragma solidity ^0.4.13;
   
      // Send _value amount of tokens from address _from to address _to
      // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-     // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+     // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
      // fees in sub-currencies; the command should fail unless the _from account has
      // deliberately authorized the sender of the message via some mechanism; we propose
      // these standardized APIs for approval:
@@ -163,7 +163,7 @@ pragma solidity ^0.4.13;
      }
      
      function() payable{
-        buyMNC(&quot;Hi! I am anonymous holder&quot;);
+        buyMNC("Hi! I am anonymous holder");
      }
      
  }

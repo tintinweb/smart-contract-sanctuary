@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -74,7 +74,7 @@ contract Contactable is Ownable{
  */
 contract MonethaUsersClaimStorage is Contactable {
 
-    string constant VERSION = &quot;0.1&quot;;
+    string constant VERSION = "0.1";
     
     // claimedTokens stores tokens claimed by the user.
     mapping (address => uint256) public claimedTokens;
@@ -154,7 +154,7 @@ contract MonethaUsersClaimStorage is Contactable {
  */
 contract MonethaUsersClaimHandler is Contactable {
 
-    string constant VERSION = &quot;0.1&quot;;
+    string constant VERSION = "0.1";
     
     MonethaUsersClaimStorage public storageContract;
 

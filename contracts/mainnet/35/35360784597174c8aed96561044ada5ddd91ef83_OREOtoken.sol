@@ -3,8 +3,8 @@ pragma solidity ^0.4.20;
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 
 contract OREOtoken {
-    string public name = &quot;OREO&quot;;
-    string public symbol = &quot;OREO&quot;;
+    string public name = "OREO";
+    string public symbol = "OREO";
     uint8 public decimals = 18;  // decimals 可以有的小数点个数，最小的代币单位。18 是建议的默认值
     uint256 public totalSupply = 1000000000000000000000000000;
 

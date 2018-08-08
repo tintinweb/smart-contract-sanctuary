@@ -52,8 +52,8 @@ contract BwinCoin is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
 	
     uint256 public totalSupply = 100000000;
-	string public constant name = &quot;BwinCoin&quot;;
-    string public constant symbol = &quot;BWIN&quot;;
+	string public constant name = "BwinCoin";
+    string public constant symbol = "BWIN";
     uint public constant decimals = 8;
 	
 	function BwinCoin(){

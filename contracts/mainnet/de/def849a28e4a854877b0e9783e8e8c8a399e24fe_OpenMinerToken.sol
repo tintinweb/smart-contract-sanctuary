@@ -259,8 +259,8 @@ contract OpenMinerToken is StandardToken, BurnableToken, Ownable {
 
     using SafeMath for uint;
 
-    string public name = &quot;Open Miner Token&quot;;
-    string public symbol = &quot;OMT&quot;;
+    string public name = "Open Miner Token";
+    string public symbol = "OMT";
     uint8 public decimals = 18; 
     uint public INITIAL_SUPPLY = 1000000000e18;
 

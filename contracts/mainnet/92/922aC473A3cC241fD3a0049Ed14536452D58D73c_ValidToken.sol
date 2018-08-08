@@ -45,8 +45,8 @@ contract ERC677Receiver {
  */
 contract ValidToken is ERC677, ERC20 {
     // token metadata
-    string public constant name = &quot;VALID&quot;;
-    string public constant symbol = &quot;VLD&quot;;
+    string public constant name = "VALID";
+    string public constant symbol = "VLD";
     uint8 public constant decimals = 18;
 
     // total supply and maximum amount of tokens

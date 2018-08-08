@@ -196,7 +196,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  **/
 contract Ownable {
     address public owner;
@@ -711,13 +711,13 @@ contract CrowdsaleToken is PausableToken, Configurable {
         require(eventRate > 0);
         require(minAmount > 0);
         
-        if(compareStrings(eventType, &quot;private&quot;)){
+        if(compareStrings(eventType, "private")){
             privateEventTokens = tokenCap;
             privateRate = eventRate;
             privateEventActive = isActive;
             privateMin = minAmount;
         }
-        else if(compareStrings(eventType, &quot;public&quot;)){
+        else if(compareStrings(eventType, "public")){
             publicEventTokens = tokenCap;
             publicRate = eventRate;
             publicEventActive = isActive;
@@ -739,10 +739,10 @@ contract CrowdsaleToken is PausableToken, Configurable {
      **/
     function setEventActive (bool isActive, string eventType) public onlyOwner {
         // Turn private event on/off
-        if(compareStrings(eventType, &quot;private&quot;))
+        if(compareStrings(eventType, "private"))
             privateEventActive = isActive;
         // Turn public event on or off
-        else if(compareStrings(eventType, &quot;public&quot;))
+        else if(compareStrings(eventType, "public"))
             publicEventActive = isActive;
         else
             require(1==2);
@@ -754,10 +754,10 @@ contract CrowdsaleToken is PausableToken, Configurable {
     function setMinMax (uint256 minMax, string eventType) public onlyOwner {
         require(minMax >= 0);
         // Set new maxAmmount
-        if(compareStrings(eventType, &quot;max&quot;))
+        if(compareStrings(eventType, "max"))
             maxAmmount = minMax;
         // Set new min to Contribute
-        else if(compareStrings(eventType,&quot;min&quot;))
+        else if(compareStrings(eventType,"min"))
             minContribute = minMax;
         else
             require(1==2);
@@ -771,10 +771,10 @@ contract CrowdsaleToken is PausableToken, Configurable {
      **/
     function setDiscountMember(address _address, string memberType, bool isActiveMember) public onlyOwner {
         // Set discount sale member    
-        if(compareStrings(memberType, &quot;preSale&quot;))
+        if(compareStrings(memberType, "preSale"))
             saleDiscountList[_address] = isActiveMember;
         // Set private event member
-        else if(compareStrings(memberType,&quot;privateEvent&quot;))
+        else if(compareStrings(memberType,"privateEvent"))
             customPrivateSale[_address] = isActiveMember;
         else
             require(1==2);
@@ -787,10 +787,10 @@ contract CrowdsaleToken is PausableToken, Configurable {
      **/
     function isMemberOf(address _address, string memberType) public view returns (bool){
         // Set discount sale member    
-        if(compareStrings(memberType, &quot;preSale&quot;))
+        if(compareStrings(memberType, "preSale"))
             return saleDiscountList[_address];
         // Set private event member
-        else if(compareStrings(memberType,&quot;privateEvent&quot;))
+        else if(compareStrings(memberType,"privateEvent"))
             return customPrivateSale[_address];
         else
             require(1==2);
@@ -848,15 +848,15 @@ contract CrowdsaleToken is PausableToken, Configurable {
      **/
     function currentBonus() public view returns (string) {
         if(totalSupply_.sub(companyReserve) < preSaleFirstCap)
-            return &quot;300% Bonus!&quot;;
+            return "300% Bonus!";
         else if((totalSupply_.sub(companyReserve) < preSaleSecondCap) && (totalSupply_.sub(companyReserve) > preSaleFirstCap))
-            return &quot;100% Bonus!&quot;;
+            return "100% Bonus!";
         else if((totalSupply_.sub(companyReserve) < preSaleThirdCap) && (totalSupply_.sub(companyReserve) > preSaleSecondCap))
-            return &quot;54% Bonus!&quot;;
+            return "54% Bonus!";
         else if((totalSupply_.sub(companyReserve) < preSaleFourthCap) && (totalSupply_.sub(companyReserve) > preSaleThirdCap))
-            return &quot;25% Bonus!&quot;;
+            return "25% Bonus!";
         else
-            return &quot;No Bonus... Sorry...#BOTB&quot;;
+            return "No Bonus... Sorry...#BOTB";
     }
 }
 
@@ -865,7 +865,7 @@ contract CrowdsaleToken is PausableToken, Configurable {
  * @dev Contract to create the Kimera Token
  **/
 contract KimeraToken is CrowdsaleToken {
-    string public constant name = &quot;KIMERACoin&quot;;
-    string public constant symbol = &quot;KIMERA&quot;;
+    string public constant name = "KIMERACoin";
+    string public constant symbol = "KIMERA";
     uint32 public constant decimals = 18;
 }

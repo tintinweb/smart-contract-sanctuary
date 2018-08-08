@@ -57,8 +57,8 @@ contract Deluxo is ERC20Interface {
      
      using SafeMath for uint256;
      
-     string public constant symbol = &quot;DLUX&quot;;
-     string public constant name = &quot;Deluxo&quot;;
+     string public constant symbol = "DLUX";
+     string public constant name = "Deluxo";
      uint8 public constant decimals = 18;
      uint256 public _totalSupply = 4700000000000000000000000;
      

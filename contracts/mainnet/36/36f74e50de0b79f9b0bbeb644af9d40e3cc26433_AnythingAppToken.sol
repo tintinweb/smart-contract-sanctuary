@@ -3,7 +3,7 @@ pragma solidity ^0.4.11;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -282,8 +282,8 @@ contract ERC223ReceivingContract {
  */
 contract AnythingAppToken is Burnable, Ownable {
 
-  string public constant name = &quot;AnythingApp Token&quot;;
-  string public constant symbol = &quot;ANY&quot;;
+  string public constant name = "AnythingApp Token";
+  string public constant symbol = "ANY";
   uint8 public constant decimals = 18;
   uint public constant INITIAL_SUPPLY = 400000000 * 1 ether;
 
@@ -476,7 +476,7 @@ contract PriceReceiver {
 contract AnythingAppTokenPreSale is Haltable, PriceReceiver {
   using SafeMath for uint;
 
-  string public constant name = &quot;AnythingAppTokenPreSale&quot;;
+  string public constant name = "AnythingAppTokenPreSale";
 
   AnythingAppToken public token;
   InvestorWhiteList public investorWhiteList;

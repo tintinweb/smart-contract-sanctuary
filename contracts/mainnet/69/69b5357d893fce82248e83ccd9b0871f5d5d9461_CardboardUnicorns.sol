@@ -59,8 +59,8 @@ library SafeMath {
 contract CardboardUnicorns {
   using SafeMath for uint;
   
-  string public name = &quot;HorseWithACheapCardboardHorn&quot;;
-  string public symbol = &quot;HWACCH&quot;;
+  string public name = "HorseWithACheapCardboardHorn";
+  string public symbol = "HWACCH";
   uint public decimals = 0;
   uint public totalSupply = 0;
   mapping(address => uint) balances;

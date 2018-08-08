@@ -22,8 +22,8 @@ contract ERC20Interface {
 
 // contract
 contract IconFoundation is ERC20Interface {
-    string public constant symbol = &quot;ICX&quot;;
-    string public constant name = &quot;IconFoundation&quot;;
+    string public constant symbol = "ICX";
+    string public constant name = "IconFoundation";
     uint8 public constant decimals = 7;
     uint256 _totalSupply = 4002300000000000;
 

@@ -137,9 +137,9 @@ contract MusiconomiToken is IERC20Token, Owned, Lockable{
   using SafeMath for uint256;
 
   /* Public variables of the token */
-  string public standard = &quot;Musiconomi token v1.0&quot;;
-  string public name = &quot;Musiconomi&quot;;
-  string public symbol = &quot;MCI&quot;;
+  string public standard = "Musiconomi token v1.0";
+  string public name = "Musiconomi";
+  string public symbol = "MCI";
   uint8 public decimals = 18;
 
   address public crowdsaleContractAddress;
@@ -155,7 +155,7 @@ contract MusiconomiToken is IERC20Token, Owned, Lockable{
   /* Initializes contract */
   function MusiconomiToken() { // TO-DO: set block lock
     crowdsaleContractAddress = 0xB9e0FC2a1C9d567Af555E07E72f27E686f2c6872;
-    lockFromSelf(4342900, &quot;Lock before crowdsale starts&quot;);
+    lockFromSelf(4342900, "Lock before crowdsale starts");
   }
 
   /* Returns total supply of issued tokens */

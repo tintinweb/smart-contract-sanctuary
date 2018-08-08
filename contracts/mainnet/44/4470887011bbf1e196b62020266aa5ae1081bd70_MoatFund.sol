@@ -13,7 +13,7 @@ interface AddressRegistry {
 contract Registry {
     address public RegistryAddress;
     modifier onlyAdmin() {
-        require(msg.sender == getAddress(&quot;admin&quot;));
+        require(msg.sender == getAddress("admin"));
         _;
     }
     function getAddress(string AddressName) internal view returns(address) {
@@ -78,10 +78,10 @@ contract Deposit is Registry {
             require(block.timestamp < ClaimingTimeLimit);
             ethRaised += ethVal;
             uint256 claimTokens = ethVal / claimRate;
-            address tokenAddress = getAddress(&quot;unit&quot;);
+            address tokenAddress = getAddress("unit");
             token tokenTransfer = token(tokenAddress);
             tokenTransfer.transfer(msg.sender, claimTokens);
-            if (isCharged) {getAddress(&quot;team&quot;).transfer(ethVal / 20);}
+            if (isCharged) {getAddress("team").transfer(ethVal / 20);}
         } else {
             msg.sender.transfer(ethVal);
         }
@@ -113,7 +113,7 @@ contract Redeem is Deposit {
     // allow MTU transfer
     function DepositMTU(uint256 NoOfTokens) paused public {
         require(block.timestamp > RedeemingTimeLimit);
-        address tokenAddress = getAddress(&quot;unit&quot;);
+        address tokenAddress = getAddress("unit");
         token tokenFunction = token(tokenAddress);
         tokenFunction.transferFrom(msg.sender, address(this), NoOfTokens);
         unRedeemedMTU += NoOfTokens;
@@ -125,7 +125,7 @@ contract Redeem is Deposit {
     function RedeemMTU(bool redeem) paused public {
         uint256 AppliedUnits = Redeemer[msg.sender];
         require(AppliedUnits > 0);
-        address tokenAddress = getAddress(&quot;unit&quot;);
+        address tokenAddress = getAddress("unit");
         token tokenFunction = token(tokenAddress);
         if (redeem) {
             require(block.timestamp < RedeemingTimeLimit);
@@ -164,23 +164,23 @@ contract MoatFund is Redeem {
 
     function SendEtherToBoard(uint256 weiAmt) onlyAdmin public {
         require(address(this).balance > unClaimedEther);        
-        getAddress(&quot;board&quot;).transfer(weiAmt);
+        getAddress("board").transfer(weiAmt);
     }
 
     function SendEtherToAsset(uint256 weiAmt) onlyAdmin public {
         require(address(this).balance > unClaimedEther);
-        getAddress(&quot;asset&quot;).transfer(weiAmt);
+        getAddress("asset").transfer(weiAmt);
     }
 
     function SendEtherToDex(uint256 weiAmt) onlyAdmin public {
         require(address(this).balance > unClaimedEther);        
-        getAddress(&quot;dex&quot;).transfer(weiAmt);
+        getAddress("dex").transfer(weiAmt);
     }
 
     function SendERC20ToAsset(address tokenAddress) onlyAdmin public {
         token tokenFunctions = token(tokenAddress);
         uint256 tokenBal = tokenFunctions.balanceOf(address(this));
-        tokenFunctions.transfer(getAddress(&quot;asset&quot;), tokenBal);
+        tokenFunctions.transfer(getAddress("asset"), tokenBal);
     }
 
 }

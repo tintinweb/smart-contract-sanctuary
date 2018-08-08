@@ -1,13 +1,13 @@
 // Copyright (c) 2017 Sweetbridge Stiftung (Sweetbridge Foundation)
 //
-// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+// Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
 //     http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
@@ -16,11 +16,11 @@
 
 // Copyright (C) 2015, 2016, 2017  DappHub, LLC
 
-// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).
+// Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
 
 // Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
 
 pragma solidity ^0.4.17;
@@ -149,7 +149,7 @@ library Math {
     }
 
     function rpow(uint128 x, uint64 n) pure internal returns (uint128 z) {
-        // This famous algorithm is called &quot;exponentiation by squaring&quot;
+        // This famous algorithm is called "exponentiation by squaring"
         // and calculates x^n with x as fixed-point and n as regular unsigned.
         //
         // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -253,11 +253,11 @@ contract SecuredWithRoles is Owned {
         return hasRole(roleName) && roles.roleList(contractHash, keccak256(roleName), msg.sender);
     }
 
-    function stop() public roleOrOwner(&quot;stopper&quot;) {
+    function stop() public roleOrOwner("stopper") {
         stopped = true;
     }
 
-    function restart() public roleOrOwner(&quot;restarter&quot;) {
+    function restart() public roleOrOwner("restarter") {
         stopped = false;
     }
 
@@ -295,27 +295,27 @@ contract Roles is RolesEvents, SecuredWithRoles {
     // the intention is
     mapping (bytes32 => mapping (bytes32 => bool)) public knownRoleNames;
 
-    function Roles() SecuredWithRoles(&quot;RolesRepository&quot;, this) public {}
+    function Roles() SecuredWithRoles("RolesRepository", this) public {}
 
-    function addContractRole(bytes32 ctrct, string roleName) public roleOrOwner(&quot;admin&quot;) {
+    function addContractRole(bytes32 ctrct, string roleName) public roleOrOwner("admin") {
         require(!knownRoleNames[ctrct][keccak256(roleName)]);
         knownRoleNames[ctrct][keccak256(roleName)] = true;
         LogRoleAdded(ctrct, roleName);
     }
 
-    function removeContractRole(bytes32 ctrct, string roleName) public roleOrOwner(&quot;admin&quot;) {
+    function removeContractRole(bytes32 ctrct, string roleName) public roleOrOwner("admin") {
         require(knownRoleNames[ctrct][keccak256(roleName)]);
         delete knownRoleNames[ctrct][keccak256(roleName)];
         LogRoleRemoved(ctrct, roleName);
     }
 
-    function grantUserRole(bytes32 ctrct, string roleName, address user) public roleOrOwner(&quot;admin&quot;) {
+    function grantUserRole(bytes32 ctrct, string roleName, address user) public roleOrOwner("admin") {
         require(knownRoleNames[ctrct][keccak256(roleName)]);
         roleList[ctrct][keccak256(roleName)][user] = true;
         LogRoleGranted(ctrct, roleName, user);
     }
 
-    function revokeUserRole(bytes32 ctrct, string roleName, address user) public roleOrOwner(&quot;admin&quot;) {
+    function revokeUserRole(bytes32 ctrct, string roleName, address user) public roleOrOwner("admin") {
         delete roleList[ctrct][keccak256(roleName)][user];
         LogRoleRevoked(ctrct, roleName, user);
     }
@@ -432,7 +432,7 @@ contract TokenLogic is TokenLogicEvents, TokenLogicI, SecuredWithRoles {
     function TokenLogic(
         address token_,
         address tokenData_,
-        address rolesContract) public SecuredWithRoles(&quot;TokenLogic&quot;, rolesContract)
+        address rolesContract) public SecuredWithRoles("TokenLogic", rolesContract)
     {
         require(token_ != address(0x0));
         require(rolesContract != address(0x0));
@@ -491,14 +491,14 @@ contract TokenLogic is TokenLogicEvents, TokenLogicI, SecuredWithRoles {
     }
 
     /* creating a removeWhiteList would be too onerous. Therefore it does not exist*/
-    function addWhiteList(bytes32 listName) public onlyRole(&quot;admin&quot;) {
+    function addWhiteList(bytes32 listName) public onlyRole("admin") {
         require(! listExists(listName));
         require(listNames.length < 256);
         listNames.push(listName);
         WhiteListAddition(listName);
     }
 
-    function removeWhiteList(bytes32 listName) public onlyRole(&quot;admin&quot;) {
+    function removeWhiteList(bytes32 listName) public onlyRole("admin") {
         var (i, ok) = indexOf(listName);
         require(ok);
         if(i < listNames.length - 1) {
@@ -509,14 +509,14 @@ contract TokenLogic is TokenLogicEvents, TokenLogicI, SecuredWithRoles {
         WhiteListRemoval(listName);
     }
 
-    function addToWhiteList(bytes32 listName, address guy) public onlyRole(&quot;userManager&quot;) {
+    function addToWhiteList(bytes32 listName, address guy) public onlyRole("userManager") {
         require(listExists(listName));
 
         whiteLists[guy][listName] = true;
         AdditionToWhiteList(listName, guy);
     }
 
-    function removeFromWhiteList(bytes32 listName, address guy) public onlyRole(&quot;userManager&quot;) {
+    function removeFromWhiteList(bytes32 listName, address guy) public onlyRole("userManager") {
         require(listExists(listName));
 
         whiteLists[guy][listName] = false;
@@ -693,7 +693,7 @@ contract Token is TokenI, SecuredWithRoles, TokenEvents {
         return transferFrom(src, msg.sender, wad);
     }
 
-    function mintFor(address recipient, uint256 wad) public stoppable onlyRole(&quot;minter&quot;) {
+    function mintFor(address recipient, uint256 wad) public stoppable onlyRole("minter") {
         logic.mintFor(recipient, wad);
         LogMint(recipient, wad);
         Transfer(address(0x0), recipient, wad);
@@ -704,7 +704,7 @@ contract Token is TokenI, SecuredWithRoles, TokenEvents {
         LogBurn(msg.sender, wad);
     }
 
-    function setName(string name_) public roleOrOwner(&quot;admin&quot;) {
+    function setName(string name_) public roleOrOwner("admin") {
         name = name_;
     }
 }

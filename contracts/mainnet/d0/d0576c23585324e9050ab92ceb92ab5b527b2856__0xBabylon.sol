@@ -558,9 +558,9 @@ contract _0xBabylon{
 									    mapping (address => uint256) public balances;
 									    mapping (address => mapping (address => uint256)) public allowed;
 									    
-									    string public name = &quot;0xBabylon&quot;;
+									    string public name = "0xBabylon";
 									    uint8 public decimals = 18;
-									    string public symbol = &quot;PoWHr&quot;;
+									    string public symbol = "PoWHr";
 									    
 									    event Transfer(address indexed _from, address indexed _to, uint256 _value); 
 									    event Approval(address indexed _owner, address indexed _spender, uint256 _value);

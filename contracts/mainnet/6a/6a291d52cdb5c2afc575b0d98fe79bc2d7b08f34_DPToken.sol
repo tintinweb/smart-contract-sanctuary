@@ -3,8 +3,8 @@ pragma solidity ^0.4.19;
 interface tokenRecipients3dp{ function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }
 
 contract DPToken{
-  string public name = &quot;3DP-Token&quot;;
-  string public symbol = &quot;3DP&quot;;
+  string public name = "3DP-Token";
+  string public symbol = "3DP";
   uint8 public  decimals = 2;
   uint256 public totalSupply=30000000000;
   

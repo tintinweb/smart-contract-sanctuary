@@ -58,8 +58,8 @@ contract Ektcoin is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Ektcoin&quot;;
-    string public constant symbol = &quot;EKT&quot;;
+    string public constant name = "Ektcoin";
+    string public constant symbol = "EKT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000e8;

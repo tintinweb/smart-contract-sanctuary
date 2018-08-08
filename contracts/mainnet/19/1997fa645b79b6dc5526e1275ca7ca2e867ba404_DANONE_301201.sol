@@ -4,8 +4,8 @@ contract	DANONE_301201				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	DANONE_301201		&quot;	;
-	string	public		symbol =	&quot;	DANOI		&quot;	;
+	string	public		name =	"	DANONE_301201		"	;
+	string	public		symbol =	"	DANOI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10690063181257200000000000					;	

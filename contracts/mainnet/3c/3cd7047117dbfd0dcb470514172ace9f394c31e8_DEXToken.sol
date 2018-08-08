@@ -63,8 +63,8 @@ contract DEXToken is ERC20 {
     
     uint256 public totalSupply = 100000000 * 10**8;
 
-    function name() public constant returns (string) { return &quot;DEX Token&quot;; }
-    function symbol() public constant returns (string) { return &quot;DEXT&quot;; }
+    function name() public constant returns (string) { return "DEX Token"; }
+    function symbol() public constant returns (string) { return "DEXT"; }
     function decimals() public constant returns (uint8) { return 8; }
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);

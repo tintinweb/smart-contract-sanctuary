@@ -223,7 +223,7 @@ contract RewardToken is StandardToken, Ownable {
 }
 
 contract Token is CappedToken, BurnableToken, RewardToken {
-    function Token() CappedToken(10 * 1 ether) StandardToken(&quot;scammmttq.io&quot;, &quot;scammmtqt.io&quot;, 18) public {
+    function Token() CappedToken(10 * 1 ether) StandardToken("scammmttq.io", "scammmtqt.io", 18) public {
         
     }
 }

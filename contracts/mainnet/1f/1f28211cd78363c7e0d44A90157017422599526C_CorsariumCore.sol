@@ -71,8 +71,8 @@ interface ERC721Metadata /* is ERC721 */ {
 
     /// @notice A distinct Uniform Resource Identifier (URI) for a given asset.
     /// @dev Throws if `_tokenId` is not a valid NFT. URIs are defined in RFC
-    ///  3986. The URI may point to a JSON file that conforms to the &quot;ERC721
-    ///  Metadata JSON Schema&quot;.
+    ///  3986. The URI may point to a JSON file that conforms to the "ERC721
+    ///  Metadata JSON Schema".
     function tokenURI(uint256 _tokenId) external view returns (string);
 }
 
@@ -157,7 +157,7 @@ interface ERC721 /* is ERC165 */ {
     ///  `_tokenId` is not a valid NFT. When transfer is complete, this function
     ///  checks if `_to` is a smart contract (code size > 0). If so, it calls
     ///  `onERC721Received` on `_to` and throws if the return value is not
-    ///  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`.
+    ///  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`.
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -166,7 +166,7 @@ interface ERC721 /* is ERC165 */ {
 	
     /// @notice Transfers the ownership of an NFT from one address to another address
     /// @dev This works identically to the other function with an extra data parameter,
-    ///  except this function just sets data to &quot;&quot;
+    ///  except this function just sets data to ""
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -192,7 +192,7 @@ interface ERC721 /* is ERC165 */ {
     /// @param _tokenId The NFT to approve
     function approve(address _approved, uint256 _tokenId) external payable;
 
-    /// @notice Enable or disable approval for a third party (&quot;operator&quot;) to manage
+    /// @notice Enable or disable approval for a third party ("operator") to manage
     ///  all your assets.
     /// @dev Throws unless `msg.sender` is the current NFT owner.
     /// @dev Emits the ApprovalForAll event
@@ -385,7 +385,7 @@ contract CardOwnership is CardBase {
     ///  `_tokenId` is not a valid NFT. When transfer is complete, this function
     ///  checks if `_to` is a smart contract (code size > 0). If so, it calls
     ///  `onERC721Received` on `_to` and throws if the return value is not
-    ///  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`.
+    ///  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`.
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -403,7 +403,7 @@ contract CardOwnership is CardBase {
         if (isContract(_to)) {
             bytes4 value = ERC721TokenReceiver(_to).onERC721Received(_from, _tokenId, data);
 
-            if (value != bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))) {
+            if (value != bytes4(keccak256("onERC721Received(address,uint256,bytes)"))) {
                 revert();
             }
         }
@@ -411,7 +411,7 @@ contract CardOwnership is CardBase {
 	
     /// @notice Transfers the ownership of an NFT from one address to another address
     /// @dev This works identically to the other function with an extra data parameter,
-    ///  except this function just sets data to &quot;&quot;
+    ///  except this function just sets data to ""
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -426,9 +426,9 @@ contract CardOwnership is CardBase {
         Transfer(_from, _to, _tokenId);
 
         if (isContract(_to)) {
-            bytes4 value = ERC721TokenReceiver(_to).onERC721Received(_from, _tokenId, &quot;&quot;);
+            bytes4 value = ERC721TokenReceiver(_to).onERC721Received(_from, _tokenId, "");
 
-            if (value != bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))) {
+            if (value != bytes4(keccak256("onERC721Received(address,uint256,bytes)"))) {
                 revert();
             }
         }
@@ -471,7 +471,7 @@ contract CardOwnership is CardBase {
         }
     }
 
-    /// @notice Enable or disable approval for a third party (&quot;operator&quot;) to manage
+    /// @notice Enable or disable approval for a third party ("operator") to manage
     ///  all your assets.
     /// @dev Throws unless `msg.sender` is the current NFT owner.
     /// @dev Emits the ApprovalForAll event
@@ -499,20 +499,20 @@ contract CardOwnership is CardBase {
 
     /// @notice A descriptive name for a collection of NFTs in this contract
     function name() external pure returns (string _name) {
-        return &quot;Dark Winds First Edition Cards&quot;;
+        return "Dark Winds First Edition Cards";
     }
 
     /// @notice An abbreviated name for NFTs in this contract
     function symbol() external pure returns (string _symbol) {
-        return &quot;DW1ST&quot;;
+        return "DW1ST";
     }
 
     /// @notice A distinct Uniform Resource Identifier (URI) for a given asset.
     /// @dev Throws if `_tokenId` is not a valid NFT. URIs are defined in RFC
-    ///  3986. The URI may point to a JSON file that conforms to the &quot;ERC721
-    ///  Metadata JSON Schema&quot;.
+    ///  3986. The URI may point to a JSON file that conforms to the "ERC721
+    ///  Metadata JSON Schema".
     function tokenURI(uint256 _tokenId) external view returns (string _tokenURI) {
-        _tokenURI = &quot;https://corsarium.playdarkwinds.com/cards/00000.json&quot;; //37 36 35 34 33
+        _tokenURI = "https://corsarium.playdarkwinds.com/cards/00000.json"; //37 36 35 34 33
         bytes memory tokenUriBytes = bytes(_tokenURI);
         tokenUriBytes[33] = byte(48 + (tokenToCardIndex[_tokenId] / 10000) % 10);
         tokenUriBytes[34] = byte(48 + (tokenToCardIndex[_tokenId] / 1000) % 10);
@@ -650,7 +650,7 @@ interface ERC721TokenReceiver {
     /// @param _from The sending address 
     /// @param _tokenId The NFT identifier which is being transfered
     /// @param data Additional data with no specified format
-    /// @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+    /// @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
     ///  unless throwing
 	function onERC721Received(address _from, uint256 _tokenId, bytes data) external returns(bytes4);
 }

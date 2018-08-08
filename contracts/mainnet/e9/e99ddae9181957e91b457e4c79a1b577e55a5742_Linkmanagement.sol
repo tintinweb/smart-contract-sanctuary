@@ -66,8 +66,8 @@ contract Linkmanagement is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Link Managenent Chain Token&quot;;
-    string public constant symbol = &quot;LMM&quot;;
+    string public constant name = "Link Managenent Chain Token";
+    string public constant symbol = "LMM";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 2000000000e8;

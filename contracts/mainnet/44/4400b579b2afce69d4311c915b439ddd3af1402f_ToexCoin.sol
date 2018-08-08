@@ -119,10 +119,10 @@ contract StandardToken is ERC20, SafeMath {
 }
 
 contract ToexCoin is StandardToken {
-  string public constant name = &quot;ToexCoin&quot;;
-  string public constant symbol = &quot;TOEX&quot;;
+  string public constant name = "ToexCoin";
+  string public constant symbol = "TOEX";
   uint256 public constant decimals = 18;
-  string public version = &quot;1.0&quot;;
+  string public version = "1.0";
 
   uint256 public constant total = 25 * (10**7) * 10**decimals;   // 20 *10^7 TOEX total
 

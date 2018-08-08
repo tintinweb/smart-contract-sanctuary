@@ -7,31 +7,31 @@ pragma solidity ^0.4.20;
                  _.&#39; :  `._
              .-.&#39;`.  ;   .&#39;`.-.
     __      / : ___\ ;  /___ ; \      __
-  ,&#39;_ &quot;&quot;--.:__;&quot;.-.&quot;;: :&quot;.-.&quot;:__;.--&quot;&quot; _`,
-  :&#39; `.t&quot;&quot;--.. &#39;<@.`;_  &#39;,@>` ..--&quot;&quot;j.&#39; `;
+  ,&#39;_ ""--.:__;".-.";: :".-.":__;.--"" _`,
+  :&#39; `.t""--.. &#39;<@.`;_  &#39;,@>` ..--""j.&#39; `;
        `:-.._J &#39;-.-&#39;L__ `-- &#39; L_..-;&#39;
-         &quot;-.__ ;  .-&quot;  &quot;-.  : __.-&quot;
+         "-.__ ;  .-"  "-.  : __.-"
              L &#39; /.------.\ &#39; J
-              &quot;-.   &quot;--&quot;   .-&quot;
-             __.l&quot;-:_JL_;-&quot;;.__
-          .-j/&#39;.;  ;&quot;&quot;&quot;&quot;  / .&#39;\&quot;-.
-        .&#39; /:`. &quot;-.:     .-&quot; .&#39;;  `.
-     .-&quot;  / ;  &quot;-. &quot;-..-&quot; .-&quot;  :    &quot;-.
-  .+&quot;-.  : :      &quot;-.__.-&quot;      ;-._   \
-  ; \  `.; ;                    : : &quot;+. ;
+              "-.   "--"   .-"
+             __.l"-:_JL_;-";.__
+          .-j/&#39;.;  ;""""  / .&#39;\"-.
+        .&#39; /:`. "-.:     .-" .&#39;;  `.
+     .-"  / ;  "-. "-..-" .-"  :    "-.
+  .+"-.  : :      "-.__.-"      ;-._   \
+  ; \  `.; ;                    : : "+. ;
   :  ;   ; ;                    : ;  : \:
- : `.&quot;-; ;  ;                  :  ;   ,/;
-  ;    -: ;  :                ;  : .-&quot;&#39;  :
-  :\     \  : ;             : \.-&quot;      :
+ : `."-; ;  ;                  :  ;   ,/;
+  ;    -: ;  :                ;  : .-"&#39;  :
+  :\     \  : ;             : \.-"      :
    ;`.    \  ; :            ;.&#39;_..--  / ;
-   :  &quot;-.  &quot;-:  ;          :/.&quot;      .&#39;  :
-     \       .-`.\        /t-&quot;&quot;  &quot;:-+.   :
-      `.  .-&quot;    `l    __/ /`. :  ; ; \  ;
-        \   .-&quot; .-&quot;-.-&quot;  .&#39; .&#39;j \  /   ;/
-         \ / .-&quot;   /.     .&#39;.&#39; ;_:&#39;    ;
-          :-&quot;&quot;-.`./-.&#39;     /    `.___.&#39;
+   :  "-.  "-:  ;          :/."      .&#39;  :
+     \       .-`.\        /t-""  ":-+.   :
+      `.  .-"    `l    __/ /`. :  ; ; \  ;
+        \   .-" .-"-.-"  .&#39; .&#39;j \  /   ;/
+         \ / .-"   /.     .&#39;.&#39; ;_:&#39;    ;
+          :-""-.`./-.&#39;     /    `.___.&#39;
                 \ `t  ._  /      :F_P:
-                 &quot;-.t-._:&#39;
+                 "-.t-._:&#39;
 * ====================================*
 * On twitter, you follow. https://twitter.com/CryptoYoda1338
 * https://www.pocy.io/
@@ -140,8 +140,8 @@ contract POCY {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;POCY&quot;;
-    string public symbol = &quot;POCY&quot;;
+    string public name = "POCY";
+    string public symbol = "POCY";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 50; // May the dividends be with you.
     uint256 constant internal tokenPriceInitial_ = 0.000000001 ether;
@@ -230,7 +230,7 @@ contract POCY {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
  
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
  
         // fire event
@@ -562,7 +562,7 @@ contract POCY {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
  
         // is the user referred by a masternode?

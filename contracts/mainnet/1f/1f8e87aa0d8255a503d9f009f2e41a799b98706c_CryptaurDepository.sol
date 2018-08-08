@@ -351,7 +351,7 @@ contract CryptaurDepository is owned, AddressBook {
     }
     /**
      * @dev Function pay wrapper auto share balance.
-     * When dapp pay to the client, increase its balance at first. Then share &quot;_amount&quot;
+     * When dapp pay to the client, increase its balance at first. Then share "_amount"
      * of client balance to dapp for the further purchases.
      * 
      * Only dapp wallet should use this function.

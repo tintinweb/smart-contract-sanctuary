@@ -111,8 +111,8 @@ contract PDAToken is StandardToken {
         require(false);
     }
 
-    string public constant name = &quot;PDACoin&quot;;   
-    string public constant symbol = &quot;PDA&quot;;
+    string public constant name = "PDACoin";   
+    string public constant symbol = "PDA";
     uint256 private constant _INITIAL_SUPPLY = 15*(10**26);
     uint8 public decimals = 18;  
     uint256 public totalSupply;            

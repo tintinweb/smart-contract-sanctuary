@@ -17,8 +17,8 @@ interface ERC20 {
 
 contract Goo is ERC20 {
     
-    string public constant name  = &quot;IdleEth&quot;;
-    string public constant symbol = &quot;Goo&quot;;
+    string public constant name  = "IdleEth";
+    string public constant symbol = "Goo";
     uint8 public constant decimals = 0;
     uint256 private roughSupply;
     uint256 public totalGooProduction;
@@ -239,7 +239,7 @@ contract Goo is ERC20 {
         uint256 previousProduction = getGooProduction(player);
         uint256 newProduction = SafeMath.sub(previousProduction, decrease);
         
-        if (newProduction == 0) { // Special case which tangles with &quot;inactive day&quot; snapshots (claiming divs)
+        if (newProduction == 0) { // Special case which tangles with "inactive day" snapshots (claiming divs)
             gooProductionZeroedSnapshots[player][allocatedGooResearchSnapshots.length] = true;
             delete gooProductionSnapshots[player][allocatedGooResearchSnapshots.length]; // 0
         } else {

@@ -113,8 +113,8 @@ contract TEACHToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TEACHTokenToken() public {
-        symbol = &quot;TEACH&quot; ;
-        name = &quot;TeachCoin Token&quot;;
+        symbol = "TEACH" ;
+        name = "TeachCoin Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000;
         balances[0x1c9068Dbd5b4904006F1D5637c47FE18489953e6] = _totalSupply;

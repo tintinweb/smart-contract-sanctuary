@@ -135,8 +135,8 @@ contract BurnableToken is BasicToken {
 
 contract Shopdex is StandardToken, BurnableToken {
 
-  string public constant name = &quot;Shopdex&quot;; 
-  string public constant symbol = &quot;SDX&quot;; 
+  string public constant name = "Shopdex"; 
+  string public constant symbol = "SDX"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 18000000000 * (10 ** uint256(decimals));

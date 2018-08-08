@@ -215,7 +215,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -298,8 +298,8 @@ contract MintableToken is StandardToken, Ownable {
 
 
 contract DongriToken is StandardToken {
-  string public name = &quot;DongriToken&quot;;
-  string public symbol = &quot;DON&quot;;
+  string public name = "DongriToken";
+  string public symbol = "DON";
   uint public decimals = 18;
 
   function DongriToken(uint initialSupply) public {

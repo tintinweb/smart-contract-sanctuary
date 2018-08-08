@@ -103,8 +103,8 @@ contract UK is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function UK() public {
-        symbol = &quot;UK&quot;;
-        name = &quot;UK&quot;;
+        symbol = "UK";
+        name = "UK";
         decimals = 18;
         _totalSupply = 65000000000000000000000000;
         balances[0x8cfEb58EDD85343420b891042F41822C862408FA] = _totalSupply;

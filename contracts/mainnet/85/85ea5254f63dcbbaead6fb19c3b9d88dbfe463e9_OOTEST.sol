@@ -115,8 +115,8 @@ contract ERC20Token is ERC20 {
  */
 contract OOTEST is ERC20Token, Owned {
 
-  string  public constant name     = &quot;OO Token&quot;;
-  string  public constant symbol   = &quot;OO&quot;;
+  string  public constant name     = "OO Token";
+  string  public constant symbol   = "OO";
   uint256 public constant decimals = 18;
 
   uint256 public constant initialToken      = 500000000 * (10 ** decimals);

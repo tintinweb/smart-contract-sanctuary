@@ -175,8 +175,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract TelonToken is StandardToken
 {
-    string public constant name = &quot;TELON&quot;;
-    string public constant symbol = &quot;TELON&quot;;
+    string public constant name = "TELON";
+    string public constant symbol = "TELON";
     uint8 public constant decimals = 18;
     
     function TelonToken() public 

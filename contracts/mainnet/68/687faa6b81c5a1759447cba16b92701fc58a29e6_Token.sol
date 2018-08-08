@@ -326,7 +326,7 @@ contract Manageable is Ownable {
     Papusha Token
 */
 contract Token is CappedToken, BurnableToken, Withdrawable {
-    constructor() CappedToken(100000000e18) StandardToken(&quot;Papusha Rocket Token&quot;, &quot;PRT&quot;, 18) public {
+    constructor() CappedToken(100000000e18) StandardToken("Papusha Rocket Token", "PRT", 18) public {
         
     }
 }

@@ -34,8 +34,8 @@ contract ERC20Interface {
 }
 
 contract DACContract is ERC20Interface, Owned {
-	string public constant symbol = &quot;DAC&quot;;
-	string public constant name = &quot;Davinci coin&quot;;
+	string public constant symbol = "DAC";
+	string public constant name = "Davinci coin";
 	uint8 public constant decimals = 18;
 	uint256 public constant totalSupply = 8800000000000000000000000000;
 

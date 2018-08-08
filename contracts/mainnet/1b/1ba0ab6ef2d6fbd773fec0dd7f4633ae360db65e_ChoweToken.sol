@@ -107,8 +107,8 @@ contract ChoweToken is ERC20Interface, Owned {
   // Constructor
   // ------------------------------------------------------------------------
   constructor() public {
-    symbol = &quot;Chowe&quot;;
-    name = &quot;Chowe Fermi-Dirac Token&quot;;
+    symbol = "Chowe";
+    name = "Chowe Fermi-Dirac Token";
     decimals = 0;
     _totalSupply = 1;
     balances[msg.sender] = 1;

@@ -9,8 +9,8 @@ contract HelpMeTokenInterface{
 
 contract HelpMeTokenPart4 {
     
-    string public name = &quot;) HELP ME LEAVE THIS COUNTRY&quot;;
-    string public symbol = &quot;) HELP ME LEAVE THIS COUNTRY&quot;;
+    string public name = ") HELP ME LEAVE THIS COUNTRY";
+    string public symbol = ") HELP ME LEAVE THIS COUNTRY";
     uint256 public num = 4;
     uint256 public totalSupply = 2100005 ether;
     uint32 public constant decimals = 18;

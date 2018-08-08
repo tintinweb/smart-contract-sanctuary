@@ -259,8 +259,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract STT is StandardToken {
 
-    string public name = &quot;StarambaToken&quot;;
-    string public symbol = &quot;STT&quot;;
+    string public name = "StarambaToken";
+    string public symbol = "STT";
     uint8 public decimals = 18;
     uint256 public INITIAL_SUPPLY = 1000000000e18;
     

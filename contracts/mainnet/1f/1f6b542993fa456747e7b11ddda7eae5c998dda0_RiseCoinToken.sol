@@ -257,8 +257,8 @@ contract StandardToken is ERC20, BasicToken {
 contract RiseCoinToken is StandardToken, BurnableToken, Ownable {
     using SafeMath for uint;
 
-    string constant public symbol = &quot;RSCT&quot;;
-    string constant public name = &quot;RiseCoinToken&quot;;
+    string constant public symbol = "RSCT";
+    string constant public name = "RiseCoinToken";
 
     uint8 constant public decimals = 18;
     uint256 INITIAL_SUPPLY = 500000000e18;

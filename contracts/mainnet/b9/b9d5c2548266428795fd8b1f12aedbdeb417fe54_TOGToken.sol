@@ -97,8 +97,8 @@ contract TOGToken is ERC20Interface, Owned, SafeMath {
 
 
     function Constructor() public {
-        symbol = &quot;TOG&quot;;
-        name = &quot;Tool of God Token&quot;;
+        symbol = "TOG";
+        name = "Tool of God Token";
         decimals = 8;               // decimals 可以有的小数点个数，最小的代币单位。
         _totalSupply = 1000000000;   // 总共发行10亿枚
         _frozeAmount =  400000000;   // 冻结4亿枚

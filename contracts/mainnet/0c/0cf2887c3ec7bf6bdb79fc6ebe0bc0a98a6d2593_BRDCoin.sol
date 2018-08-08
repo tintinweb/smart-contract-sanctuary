@@ -122,8 +122,8 @@ contract Brandingcoin1 is newToken, ERC20 {
 }
 
 contract BRDCoin is Brandingcoin1, Ownable {
-  string public constant name = &quot;Branding Coin 1&quot;;
-  string public constant symbol = &quot;BRD1&quot;;
+  string public constant name = "Branding Coin 1";
+  string public constant symbol = "BRD1";
   uint public constant decimals = 2;
   uint256 public initialSupply;
     

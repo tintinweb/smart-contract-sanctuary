@@ -32,10 +32,10 @@ pragma solidity ^0.4.17;
 contract TestyTestConfig
 {
     // ERC20 token name
-    string  public constant name            = &quot;TESTY&quot;;
+    string  public constant name            = "TESTY";
 
     // ERC20 trading symbol
-    string  public constant symbol          = &quot;TST&quot;;
+    string  public constant symbol          = "TST";
 
     // Contract owner at time of deployment.
     address public constant OWNER           = 0x8579A678Fc76cAe308ca280B58E2b8f2ddD41913;

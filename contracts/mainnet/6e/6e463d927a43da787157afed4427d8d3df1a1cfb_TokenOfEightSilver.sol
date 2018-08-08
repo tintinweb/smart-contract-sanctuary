@@ -76,8 +76,8 @@ contract TokenOfEightSilver is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Token Of Eight Silver&quot;;
-    string public constant symbol = &quot;T-E-S&quot;;
+    string public constant name = "Token Of Eight Silver";
+    string public constant symbol = "T-E-S";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 999000000e8;

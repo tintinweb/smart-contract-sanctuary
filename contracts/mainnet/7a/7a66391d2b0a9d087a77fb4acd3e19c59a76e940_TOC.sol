@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract TOC is StandardToken, Ownable {
 
-    string public constant name = &quot;Tourism Chain&quot;;
-    string public constant symbol = &quot;TOC&quot;;
+    string public constant name = "Tourism Chain";
+    string public constant symbol = "TOC";
     uint256 public constant decimals = 8;
 
     function TOC() public {

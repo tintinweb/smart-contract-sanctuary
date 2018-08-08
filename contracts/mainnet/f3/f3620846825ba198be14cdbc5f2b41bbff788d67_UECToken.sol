@@ -87,10 +87,10 @@ mapping (address => mapping (address => uint256)) allowed;
 contract UECToken is StandardToken, SafeMath {
 
 // metadata
-string  public constant name = &quot;User Experience&quot;;
-string  public constant symbol = &quot;UEC&quot;;
+string  public constant name = "User Experience";
+string  public constant symbol = "UEC";
 uint256 public constant decimals = 18;
-string  public version = &quot;1.0&quot;;
+string  public version = "1.0";
 
 // contracts
 address public ethFundDeposit;          // ETH存放地址

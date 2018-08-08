@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -338,8 +338,8 @@ contract CappedToken is MintableToken {
 // File: contracts/SelfieYoGoldToken/SGTCoin.sol
 
 contract SGTCoin is CappedToken {
-    string public constant name = &quot;SelfieYo Gold Token&quot;;
-    string public constant symbol = &quot;SGT&quot;;
+    string public constant name = "SelfieYo Gold Token";
+    string public constant symbol = "SGT";
     uint8 public constant decimals = 18;
 
     // solhint-disable-next-line no-empty-blocks

@@ -117,8 +117,8 @@ contract KomicaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KomicaToken() public {
-        symbol = &quot;KOMICA&quot;;
-        name = &quot;Komica Token&quot;;
+        symbol = "KOMICA";
+        name = "Komica Token";
         decimals = 18;
         _totalSupply = 188300000000000000000000000000;
         balances[0x006bdc1a30995Fd5a318B48c78F01A4ecFeA209E] = _totalSupply;

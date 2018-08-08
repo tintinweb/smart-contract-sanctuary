@@ -113,8 +113,8 @@ contract SpeedJump is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SpeedJump() public {
-        symbol = &quot;SPEED&quot;;
-        name = &quot;SpeedJump&quot;;
+        symbol = "SPEED";
+        name = "SpeedJump";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x0d411702D06251eb3A06200d60585F4AD63f1F7D] = _totalSupply;

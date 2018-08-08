@@ -24,9 +24,9 @@ contract CoinEGGToken is Token {
         totalSupply = 10000000000*(10**18);
         balances[msg.sender] = totalSupply;
         
-        name = &quot;CoinEGGToken&quot;;
+        name = "CoinEGGToken";
         decimals = 18;
-        symbol = &quot;ET&quot;;
+        symbol = "ET";
     }
     
     function transfer(address _to, uint256 _value) public returns (bool success) {

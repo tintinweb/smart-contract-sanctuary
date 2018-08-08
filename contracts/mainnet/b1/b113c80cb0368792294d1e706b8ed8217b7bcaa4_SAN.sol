@@ -8,7 +8,7 @@ pragma solidity ^0.4.11;
 // YOU ARE STRONGLY ENCOURAGED TO STUDY THIS SMART CONTRACT CAREFULLY IN ORDER TO UNDERSTAND POSSIBLE EDGE CASES AND RISKS.
 // DON&#39;T USE THIS SMART CONTRACT IF YOU HAVE SUBSTANTIAL DOUBTS OR IF YOU DON&#39;T KNOW WHAT YOU ARE DOING.
 //
-// THIS SOFTWARE IS PROVIDED &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+// THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
 // AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
 // INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
 // OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
@@ -162,8 +162,8 @@ contract SubscriptionModule {
 
 contract SAN is Owned, ERC20 {
 
-    string public constant name     = &quot;SANtiment network token&quot;;
-    string public constant symbol   = &quot;SAN&quot;;
+    string public constant name     = "SANtiment network token";
+    string public constant symbol   = "SAN";
     uint8  public constant decimals = 15;
 
     address CROWDSALE_MINTER = 0xDa2Cf810c5718135247628689D84F94c61B41d6A;
@@ -206,7 +206,7 @@ contract SAN is Owned, ERC20 {
         if (address(subModule) > 0) subModule.attachToken(this);
     }
 
-    ///@notice set platform fee denominated in 1/10000 of SAN token. Thus &quot;1&quot; means 0.01% of SAN token.
+    ///@notice set platform fee denominated in 1/10000 of SAN token. Thus "1" means 0.01% of SAN token.
     function setPlatformFeePer10000(uint newFee)
     external
     only(owner) {

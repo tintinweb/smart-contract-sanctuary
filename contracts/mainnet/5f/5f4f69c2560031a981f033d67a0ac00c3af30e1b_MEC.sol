@@ -55,9 +55,9 @@ contract MEC is StandardToken {
     function MEC() {
         balances[msg.sender] = 50000000000000000000000000;               
         totalSupply = 50000000000000000000000000;                        
-        name = &quot;PALLET&quot;;                                   
+        name = "PALLET";                                   
         decimals = 18;                                               
-        symbol = &quot;MEC&quot;;                                            
+        symbol = "MEC";                                            
         unitsOneEthCanBuy = 20;                                      
         fundsWallet = msg.sender;                                   
     }
@@ -77,7 +77,7 @@ contract MEC is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { 
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { 
         throw; }
         return true;
     }

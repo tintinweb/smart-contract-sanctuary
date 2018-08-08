@@ -117,9 +117,9 @@ contract EGYPT is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EGYPT() public {
-    name = &quot;EGYPT&quot;;                                                    // Set the name for display purposes (CHANGE THIS)
+    name = "EGYPT";                                                    // Set the name for display purposes (CHANGE THIS)
     decimals = 18;                                                      // Amount of decimals for display purposes (CHANGE THIS)
-    symbol = &quot;EGY&quot;;                                                    // Set the symbol for display purposes (CHANGE THIS)
+    symbol = "EGY";                                                    // Set the symbol for display purposes (CHANGE THIS)
     _totalSupply = 1000000000000000000000000000;                          // Update total supply (1000 for example) (CHANGE THIS)
     balances[0xb7251F6b13D411B0D22e18075e5CD584c7814137] = _totalSupply; // Give the creator all initial tokens. This is set to 1000 for example. If you want your initial tokens to be X and your decimal is 5, set this value to X * 100000. (CHANGE THIS)
     Transfer(address(0), 0xb7251F6b13D411B0D22e18075e5CD584c7814137, _totalSupply);

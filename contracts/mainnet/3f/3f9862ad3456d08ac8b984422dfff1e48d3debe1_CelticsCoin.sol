@@ -113,8 +113,8 @@ contract CelticsCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CelticsCoin() public {
-        symbol = &quot;CELTICS&quot;;
-        name = &quot;Boston Celtics Coin&quot;;
+        symbol = "CELTICS";
+        name = "Boston Celtics Coin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x116312c3471C2e7C34C52782D0399eBE601f3F30] = _totalSupply;

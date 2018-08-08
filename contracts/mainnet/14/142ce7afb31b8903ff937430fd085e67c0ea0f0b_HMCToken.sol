@@ -147,8 +147,8 @@ contract PausableFrozenToken is StandardToken, Frozen {
 }
 
 contract HMCToken is PausableFrozenToken {
-    string public name = &quot;HMC&quot;;
-    string public symbol = &quot;HMC&quot;;
+    string public name = "HMC";
+    string public symbol = "HMC";
     uint8 public decimals = 18;
 
     function HMCToken() {

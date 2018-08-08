@@ -69,8 +69,8 @@ contract Ownable {
 contract Stelz is ERC20, Ownable {
   using SafeMath for uint256;
 
-  string public constant name = &quot;STELZ&quot;;
-  string public constant symbol = &quot;STELZ&quot;;
+  string public constant name = "STELZ";
+  string public constant symbol = "STELZ";
   uint8 public constant decimals = 5;
   uint256 public constant initial_supply = 300000000 * (10 ** uint256(decimals));
 

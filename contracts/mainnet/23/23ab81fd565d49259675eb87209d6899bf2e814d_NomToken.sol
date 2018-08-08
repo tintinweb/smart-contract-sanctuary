@@ -214,8 +214,8 @@ contract NomToken is StandardToken {
 
 	address public owner;
 	
-	string public constant name = &quot;NOM Token&quot;; 
-	string public constant symbol = &quot;NOM&quot;;
+	string public constant name = "NOM Token"; 
+	string public constant symbol = "NOM";
 	uint8 public constant decimals = 18;	
 	
 	uint256 public constant totalTokens = 5650000000 * (10 ** uint256(decimals));

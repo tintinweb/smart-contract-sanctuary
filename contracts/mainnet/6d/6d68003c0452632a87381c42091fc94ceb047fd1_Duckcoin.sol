@@ -344,8 +344,8 @@ contract FinalizableToken is ERC20Token, OpsManaged, Finalizable {
 
 contract TokenConfig {
 
-    string  public constant TOKEN_SYMBOL      = &quot;DUCK&quot;;
-    string  public constant TOKEN_NAME        = &quot;Duckcoin&quot;;
+    string  public constant TOKEN_SYMBOL      = "DUCK";
+    string  public constant TOKEN_NAME        = "Duckcoin";
     uint8   public constant TOKEN_DECIMALS    = 18;
 
     uint256 public constant DECIMALSFACTOR    = 10**uint256(TOKEN_DECIMALS);

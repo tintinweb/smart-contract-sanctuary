@@ -153,7 +153,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
 * @title Ownable
 * @dev The Ownable contract has an owner address, and provides basic authorization control
-* functions, this simplifies the implementation of &quot;user permissions&quot;.
+* functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
     address public owner;
@@ -357,9 +357,9 @@ library SafeMath {
 * `StandardToken` functions.
 */
 contract SimpleToken is StandardToken {
-    string public constant name = &quot;SimpleToken&quot;;
+    string public constant name = "SimpleToken";
     // solium-disable-line uppercase
-    string public constant symbol = &quot;SIM&quot;;
+    string public constant symbol = "SIM";
     // solium-disable-line uppercase
     uint8 public constant decimals = 18;
     // solium-disable-line uppercase
@@ -391,7 +391,7 @@ contract BiometricLockable is Ownable {
     */
     function bioLock() external {
         uint rightNow = now;
-        bytes32 sha = keccak256(&quot;bioLock&quot;, msg.sender, rightNow);
+        bytes32 sha = keccak256("bioLock", msg.sender, rightNow);
         biometricLock[msg.sender] = true;
         biometricNow[sha] = rightNow;
         BiometricLocked(msg.sender, sha);
@@ -402,7 +402,7 @@ contract BiometricLockable is Ownable {
     function bioUnlock(bytes32 sha, uint8 v, bytes32 r, bytes32 s) external {
         require(biometricLock[msg.sender]);
         require(!biometricCompleted[sha]);
-        bytes32 bioLockSha = keccak256(&quot;bioLock&quot;, msg.sender, biometricNow[sha]);
+        bytes32 bioLockSha = keccak256("bioLock", msg.sender, biometricNow[sha]);
         require(sha == bioLockSha);
         require(verify(sha, v, r, s) == true);
         biometricLock[msg.sender] = false;
@@ -459,7 +459,7 @@ contract BiometricToken is Ownable, MintableToken, BiometricLockable {
             require(_to != address(0));
             require(_value > 0);
             uint rightNow = now;
-            bytes32 sha = keccak256(&quot;transfer&quot;, msg.sender, _to, _value, rightNow);
+            bytes32 sha = keccak256("transfer", msg.sender, _to, _value, rightNow);
             biometricFrom[sha] = msg.sender;
             biometricTo[sha] = _to;
             biometricAmount[sha] = _value;
@@ -480,7 +480,7 @@ contract BiometricToken is Ownable, MintableToken, BiometricLockable {
             require(_from != address(0));
             require(_value > 0);
             uint rightNow = now;
-            bytes32 sha = keccak256(&quot;transferFrom&quot;, _from, _to, _value, rightNow);
+            bytes32 sha = keccak256("transferFrom", _from, _to, _value, rightNow);
             biometricAllowee[sha] = msg.sender;
             biometricFrom[sha] = _from;
             biometricTo[sha] = _to;
@@ -497,7 +497,7 @@ contract BiometricToken is Ownable, MintableToken, BiometricLockable {
     function approve(address _spender, uint256 _value) public returns (bool) {
         if (isBiometricLocked(msg.sender)) {
             uint rightNow = now;
-            bytes32 sha = keccak256(&quot;approve&quot;, msg.sender, _spender, _value, rightNow);
+            bytes32 sha = keccak256("approve", msg.sender, _spender, _value, rightNow);
             biometricFrom[sha] = msg.sender;
             biometricTo[sha] = _spender;
             biometricAmount[sha] = _value;
@@ -514,7 +514,7 @@ contract BiometricToken is Ownable, MintableToken, BiometricLockable {
         if (isBiometricLocked(msg.sender)) {
             uint newValue = allowed[msg.sender][_spender].add(_addedValue);
             uint rightNow = now;
-            bytes32 sha = keccak256(&quot;increaseApproval&quot;, msg.sender, _spender, newValue, rightNow);
+            bytes32 sha = keccak256("increaseApproval", msg.sender, _spender, newValue, rightNow);
             biometricFrom[sha] = msg.sender;
             biometricTo[sha] = _spender;
             biometricAmount[sha] = newValue;
@@ -538,7 +538,7 @@ contract BiometricToken is Ownable, MintableToken, BiometricLockable {
                 newValue = oldValue.sub(_subtractedValue);
             }
             uint rightNow = now;
-            bytes32 sha = keccak256(&quot;decreaseApproval&quot;, msg.sender, _spender, newValue, rightNow);
+            bytes32 sha = keccak256("decreaseApproval", msg.sender, _spender, newValue, rightNow);
             biometricFrom[sha] = msg.sender;
             biometricTo[sha] = _spender;
             biometricAmount[sha] = newValue;
@@ -556,8 +556,8 @@ contract BiometricToken is Ownable, MintableToken, BiometricLockable {
     function releaseTransfer(bytes32 sha, uint8 v, bytes32 r, bytes32 s) public returns (bool){
         require(msg.sender == biometricFrom[sha]);
         require(!biometricCompleted[sha]);
-        bytes32 transferFromSha = keccak256(&quot;transferFrom&quot;, biometricFrom[sha], biometricTo[sha], biometricAmount[sha], biometricNow[sha]);
-        bytes32 transferSha = keccak256(&quot;transfer&quot;, biometricFrom[sha], biometricTo[sha], biometricAmount[sha], biometricNow[sha]);
+        bytes32 transferFromSha = keccak256("transferFrom", biometricFrom[sha], biometricTo[sha], biometricAmount[sha], biometricNow[sha]);
+        bytes32 transferSha = keccak256("transfer", biometricFrom[sha], biometricTo[sha], biometricAmount[sha], biometricNow[sha]);
         require(sha == transferSha || sha == transferFromSha);
         require(verify(sha, v, r, s) == true);
         if (transferFromSha == sha) {
@@ -594,9 +594,9 @@ contract BiometricToken is Ownable, MintableToken, BiometricLockable {
     function releaseApprove(bytes32 sha, uint8 v, bytes32 r, bytes32 s) public returns (bool){
         require(msg.sender == biometricFrom[sha]);
         require(!biometricCompleted[sha]);
-        bytes32 approveSha = keccak256(&quot;approve&quot;, biometricFrom[sha], biometricTo[sha], biometricAmount[sha], biometricNow[sha]);
-        bytes32 increaseApprovalSha = keccak256(&quot;increaseApproval&quot;, biometricFrom[sha], biometricTo[sha], biometricAmount[sha], biometricNow[sha]);
-        bytes32 decreaseApprovalSha = keccak256(&quot;decreaseApproval&quot;, biometricFrom[sha], biometricTo[sha], biometricAmount[sha], biometricNow[sha]);
+        bytes32 approveSha = keccak256("approve", biometricFrom[sha], biometricTo[sha], biometricAmount[sha], biometricNow[sha]);
+        bytes32 increaseApprovalSha = keccak256("increaseApproval", biometricFrom[sha], biometricTo[sha], biometricAmount[sha], biometricNow[sha]);
+        bytes32 decreaseApprovalSha = keccak256("decreaseApproval", biometricFrom[sha], biometricTo[sha], biometricAmount[sha], biometricNow[sha]);
         require(approveSha == sha || increaseApprovalSha == sha || decreaseApprovalSha == sha);
         require(verify(sha, v, r, s) == true);
         super.approve(biometricTo[sha], biometricAmount[sha]);
@@ -717,7 +717,7 @@ contract CompliantToken is BiometricToken {
 }
 
 contract RISENCoin is CompliantToken, PausableToken {
-    string public name = &quot;RISEN&quot;;
-    string public symbol = &quot;RSN&quot;;
+    string public name = "RISEN";
+    string public symbol = "RSN";
     uint8 public decimals = 18;
 }

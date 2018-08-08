@@ -192,7 +192,7 @@ contract MintableToken is StandardToken, MultiOwnable {
 }
 
 contract MingoToken is MintableToken {
-    string public constant name = &quot;Mingo Token&quot;;
-    string public constant symbol = &quot;MGT&quot;;
+    string public constant name = "Mingo Token";
+    string public constant symbol = "MGT";
     uint8 public constant decimals = 0;
 }

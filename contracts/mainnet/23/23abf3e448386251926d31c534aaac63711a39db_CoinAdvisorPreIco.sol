@@ -97,7 +97,7 @@ contract BurnableCADVToken is ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -351,13 +351,13 @@ contract CoinAdvisorPreIco is Ownable, ControlledCrowdSale {
     
     function currentState() public view returns (string) {
         if (state == State.Active) {
-            return &quot;Active&quot;;
+            return "Active";
         }
         if (state == State.Completed) {
-            return &quot;Completed&quot;;
+            return "Completed";
         }
         if (state == State.Refunding) {
-            return &quot;Refunding&quot;;
+            return "Refunding";
         }
     }
     

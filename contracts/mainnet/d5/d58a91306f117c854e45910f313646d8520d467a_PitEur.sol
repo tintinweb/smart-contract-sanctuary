@@ -27,7 +27,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;
+ * functions, this simplifies the implementation of "user permissions"
  */
 contract Ownable {
   address public owner;
@@ -86,8 +86,8 @@ contract PitEur is Ownable, ERC20 {
   uint8 private _decimals = 18;
   uint256 private decimalMultiplier = 10**(uint256(_decimals));
 
-  string private _name = &quot;PIT-EUR&quot;;
-  string private _symbol = &quot;PIT-EUR&quot;;
+  string private _name = "PIT-EUR";
+  string private _symbol = "PIT-EUR";
   uint256 private _totalSupply = 100000000 * decimalMultiplier;
 
   bool public tradable = true;

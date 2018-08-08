@@ -49,7 +49,7 @@ contract SafeMath {
 
 /**
  * ERC-20 standard token interface, as defined
- * <a href=&quot;http://github.com/ethereum/EIPs/issues/20&quot;>here</a>.
+ * <a href="http://github.com/ethereum/EIPs/issues/20">here</a>.
  */
 contract Token {
   
@@ -228,8 +228,8 @@ contract BTSMToken is AbstractToken {
     return tokenCount;
   }
 
-  string constant public name = &quot;Bitsmo Coin&quot;;
-  string constant public symbol = &quot;BTSM&quot;;
+  string constant public name = "Bitsmo Coin";
+  string constant public symbol = "BTSM";
   uint8 constant public decimals = 3;
   
   /**

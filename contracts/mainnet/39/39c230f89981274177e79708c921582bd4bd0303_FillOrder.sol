@@ -115,13 +115,13 @@ contract CashAutoConverter is Controlled {
 
     function ethToCash() private returns (bool) {
         if (msg.value > 0) {
-            ICash(controller.lookup(&quot;Cash&quot;)).depositEtherFor.value(msg.value)(msg.sender);
+            ICash(controller.lookup("Cash")).depositEtherFor.value(msg.value)(msg.sender);
         }
         return true;
     }
 
     function cashToEth() private returns (bool) {
-        ICash _cash = ICash(controller.lookup(&quot;Cash&quot;));
+        ICash _cash = ICash(controller.lookup("Cash"));
         uint256 _tokenBalance = _cash.balanceOf(msg.sender);
         if (_tokenBalance > 0) {
             IAugur augur = controller.getAugur();
@@ -469,7 +469,7 @@ library Trade {
     }
 
     //
-    // &quot;public&quot; functions
+    // "public" functions
     //
 
     function tradeMakerSharesForFillerShares(Data _data) internal returns (uint256, uint256) {
@@ -652,13 +652,13 @@ library Trade {
     //
 
     function getContracts(IController _controller, bytes32 _orderId) private view returns (Contracts memory) {
-        IOrders _orders = IOrders(_controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(_controller.lookup("Orders"));
         IMarket _market = _orders.getMarket(_orderId);
         uint256 _outcome = _orders.getOutcome(_orderId);
         return Contracts({
             orders: _orders,
             market: _market,
-            completeSets: ICompleteSets(_controller.lookup(&quot;CompleteSets&quot;)),
+            completeSets: ICompleteSets(_controller.lookup("CompleteSets")),
             denominationToken: _market.getDenominationToken(),
             longShareToken: _market.getShareToken(_outcome),
             shortShareTokens: getShortShareTokens(_market, _outcome),
@@ -769,7 +769,7 @@ contract FillOrder is CashAutoConverter, ReentrancyGuard, IFillOrder {
     // CONSIDER: Do we want the API to be in terms of shares as it is now, or would the desired amount of ETH to place be preferable? Would both be useful?
     function publicFillOrder(bytes32 _orderId, uint256 _amountFillerWants, bytes32 _tradeGroupId) external payable convertToAndFromCash onlyInGoodTimes returns (uint256) {
         uint256 _result = this.fillOrder(msg.sender, _orderId, _amountFillerWants, _tradeGroupId);
-        IMarket _market = IOrders(controller.lookup(&quot;Orders&quot;)).getMarket(_orderId);
+        IMarket _market = IOrders(controller.lookup("Orders")).getMarket(_orderId);
         _market.assertBalances();
         return _result;
     }
@@ -881,7 +881,7 @@ library Order {
         require(_outcome < _market.getNumberOfOutcomes());
         require(_price < _market.getNumTicks());
 
-        IOrders _orders = IOrders(_controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(_controller.lookup("Orders"));
         IAugur _augur = _controller.getAugur();
 
         return Data({
@@ -902,7 +902,7 @@ library Order {
     }
 
     //
-    // &quot;public&quot; functions
+    // "public" functions
     //
 
     function getOrderId(Order.Data _orderData) internal view returns (bytes32) {

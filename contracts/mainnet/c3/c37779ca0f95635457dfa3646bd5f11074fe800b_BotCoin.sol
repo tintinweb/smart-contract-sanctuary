@@ -237,7 +237,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -452,8 +452,8 @@ contract HasNoTokens is CanReclaimToken {
 
 contract BotCoin is StandardToken, BurnableToken, PausableToken, HasNoEther, HasNoTokens {
 
-  string public constant name = &quot;BotCoin&quot;;
-  string public constant symbol = &quot;BOT&quot;;
+  string public constant name = "BotCoin";
+  string public constant symbol = "BOT";
   uint8 public constant decimals = 9;
 
   uint256 public constant INITIAL_SUPPLY = 3625000000 * (10 ** uint256(decimals));

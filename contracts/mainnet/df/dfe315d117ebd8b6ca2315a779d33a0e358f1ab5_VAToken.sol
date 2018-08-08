@@ -147,7 +147,7 @@ contract VAToken is owned, TokenERC20 {
     event Withdrawal(address beneficiary, uint256 amount);
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    function VAToken() TokenERC20(500000000, &quot;REEX&quot;, &quot;REEX&quot;) public {
+    function VAToken() TokenERC20(500000000, "REEX", "REEX") public {
         beneficiary = msg.sender;
     }
 

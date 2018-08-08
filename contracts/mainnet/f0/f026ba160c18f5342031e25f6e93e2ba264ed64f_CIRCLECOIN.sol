@@ -113,8 +113,8 @@ contract CIRCLECOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CIRCLECOIN() public {
-        symbol = &quot;XCCT&quot;;
-        name = &quot;CIRCLE COIN&quot;;
+        symbol = "XCCT";
+        name = "CIRCLE COIN";
         decimals = 16;
         _totalSupply = 1000000000000000000000000;
         balances[0x63D8a091d446949ce806f5B9a45Cf8b254896ee5] = _totalSupply;

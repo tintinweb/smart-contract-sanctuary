@@ -103,7 +103,7 @@ contract AetherAccessControl {
         _;
     }
 
-    /// @dev Called by any &quot;C-level&quot; role to pause the contract. Used only when
+    /// @dev Called by any "C-level" role to pause the contract. Used only when
     ///  a bug or exploit is detected and we need to limit damage.
     function pause() public onlyCLevel whenNotPaused {
         paused = true;
@@ -379,7 +379,7 @@ contract AetherBase is AetherAccessControl {
             _property.z,
             _property.dx,
             _property.dz,
-            &quot;&quot;
+            ""
         );
 
         // This will assign ownership, and also emit the Transfer event as
@@ -514,8 +514,8 @@ contract ERC721 {
 contract AetherOwnership is AetherBase, ERC721 {
 
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public name = &quot;Aether&quot;;
-    string public symbol = &quot;AETH&quot;;
+    string public name = "Aether";
+    string public symbol = "AETH";
 
     function implementsERC721() public pure returns (bool)
     {
@@ -550,7 +550,7 @@ contract AetherOwnership is AetherBase, ERC721 {
     }
 
     /// @dev Transfers a property owned by this contract to the specified address.
-    ///  Used to rescue lost properties. (There is no &quot;proper&quot; flow where this contract
+    ///  Used to rescue lost properties. (There is no "proper" flow where this contract
     ///  should be the owner of any Property. This function exists for us to reassign
     ///  the ownership of Properties that users may have accidentally sent to our address.)
     /// @param _propertyId - ID of property
@@ -942,7 +942,7 @@ contract ClockAuctionBase {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;

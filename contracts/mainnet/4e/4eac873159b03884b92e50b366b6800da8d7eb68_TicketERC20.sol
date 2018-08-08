@@ -43,8 +43,8 @@ contract TicketERC20 is ERC20Interface, Mortal {
     mapping (address=>mapping (address=>uint)) ownerAllowances;
 
     constructor() public {
-        myName = &quot;XiboquinhaCoins-teste-01&quot;;
-        mySymbol = &quot;XBCT01&quot;;
+        myName = "XiboquinhaCoins-teste-01";
+        mySymbol = "XBCT01";
         myTotalSupply = 1000000;
         decimals = 0;
         balances[msg.sender] = myTotalSupply;

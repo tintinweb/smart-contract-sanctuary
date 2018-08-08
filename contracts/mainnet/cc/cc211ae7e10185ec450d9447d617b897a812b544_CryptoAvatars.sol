@@ -4,7 +4,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -49,7 +49,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * @dev This simplifies the implementation of &quot;user permissions&quot;.
+ * @dev This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable {
   mapping(address => bool) public whitelist;
@@ -188,7 +188,7 @@ pragma solidity ^0.4.18;
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba; 
@@ -203,7 +203,7 @@ contract ERC721Receiver {
    * @param _from The sending address 
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(address _from, uint256 _tokenId, bytes _data) public returns(bytes4);
 }
@@ -290,7 +290,7 @@ contract ERC721BasicToken is ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
   
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba; 
 
@@ -429,7 +429,7 @@ contract ERC721BasicToken is ERC721Basic {
   * @dev Safely transfers the ownership of a given token ID to another address
   * @dev If the target address is a contract, it must implement `onERC721Received`,
   *  which is called upon a safe transfer, and return the magic value
-  *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+  *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
   *  the transfer is reverted.
   * @dev Requires the msg sender to be the owner, approved, or operator
   * @param _from current owner of the token
@@ -437,14 +437,14 @@ contract ERC721BasicToken is ERC721Basic {
   * @param _tokenId uint256 ID of the token to be transferred
   */
   function safeTransferFrom(address _from, address _to, uint256 _tokenId) public canTransfer(_tokenId) {
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
   * @dev Safely transfers the ownership of a given token ID to another address
   * @dev If the target address is a contract, it must implement `onERC721Received`,
   *  which is called upon a safe transfer, and return the magic value
-  *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+  *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
   *  the transfer is reverted.
   * @dev Requires the msg sender to be the owner, approved, or operator
   * @param _from current owner of the token
@@ -735,7 +735,7 @@ pragma solidity ^0.4.21;
 
 /**
  * @title ERC721 Token for Crypto Avatars
- * @dev Allows to create and &quot;evolve&quot; Crypto Avatars.
+ * @dev Allows to create and "evolve" Crypto Avatars.
  * Avatars can be created and modified only by a whitelisted account,
  * Contract owner can be superseded by the contract supervisor in case of emergency.
  * @author Guerrilla Crypto
@@ -774,7 +774,7 @@ contract CryptoAvatars is ERC721Token, Whitelist {
 
     /// @dev Create token with name and symbol and set the supervisor
     constructor(address _supervisor)
-    ERC721Token(&quot;CryptoAvatars&quot;, &quot;AVA&quot;) public
+    ERC721Token("CryptoAvatars", "AVA") public
     {
         // set the supervisor
         supervisor = _supervisor;

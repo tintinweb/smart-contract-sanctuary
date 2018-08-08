@@ -57,8 +57,8 @@ contract Owned {
 contract CasperToken is ERC20Interface, Owned {
     using SafeMath for uint;
 
-    string public constant name = &quot;Csper Token&quot;;
-    string public constant symbol = &quot;CST&quot;;
+    string public constant name = "Csper Token";
+    string public constant symbol = "CST";
     uint8 public constant decimals = 18;
 
     uint constant public cstToMicro = uint(10) ** decimals;

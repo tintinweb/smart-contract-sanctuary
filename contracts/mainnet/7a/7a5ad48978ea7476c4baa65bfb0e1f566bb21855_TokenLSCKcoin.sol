@@ -4,8 +4,8 @@ interface LSCKcoin{ function receiveApproval(address _from, uint256 _value, addr
 
 contract TokenLSCKcoin {
     // Public variables of the token
-    string public name=&quot;LSCKcoin&quot;;
-    string public symbol=&quot;LSCK&quot;;
+    string public name="LSCKcoin";
+    string public symbol="LSCK";
     uint8 public decimals = 8;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply;

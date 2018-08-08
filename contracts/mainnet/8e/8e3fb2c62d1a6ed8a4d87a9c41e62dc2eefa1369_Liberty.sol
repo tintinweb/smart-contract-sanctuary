@@ -116,8 +116,8 @@ contract Liberty is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Liberty() public {
-        symbol = &quot;LIB&quot;;
-        name = &quot;Liberty&quot;;
+        symbol = "LIB";
+        name = "Liberty";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x8fA938b44B607D31daB9c36662be321d2a9Bb23F] = _totalSupply;

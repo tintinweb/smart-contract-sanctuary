@@ -113,8 +113,8 @@ contract TokenBank is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TokenBank() public {
-        symbol = &quot;TKB&quot;;
-        name = &quot;Token Bank&quot;;
+        symbol = "TKB";
+        name = "Token Bank";
         decimals = 8;
         _totalSupply = 100000000000000000;
         balances[0x6C3E2DcD5EDE4037d8EA404081385ff788c0C7B7] = _totalSupply;

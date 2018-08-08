@@ -1,12 +1,12 @@
 /*
   8888888 .d8888b.   .d88888b.   .d8888b.  888                     888                 888      
-    888  d88P  Y88b d88P&quot; &quot;Y88b d88P  Y88b 888                     888                 888      
+    888  d88P  Y88b d88P" "Y88b d88P  Y88b 888                     888                 888      
     888  888    888 888     888 Y88b.      888                     888                 888      
-    888  888        888     888  &quot;Y888b.   888888  8888b.  888d888 888888      .d8888b 88888b.  
-    888  888        888     888     &quot;Y88b. 888        &quot;88b 888P&quot;   888        d88P&quot;    888 &quot;88b 
-    888  888    888 888     888       &quot;888 888    .d888888 888     888        888      888  888 
+    888  888        888     888  "Y888b.   888888  8888b.  888d888 888888      .d8888b 88888b.  
+    888  888        888     888     "Y88b. 888        "88b 888P"   888        d88P"    888 "88b 
+    888  888    888 888     888       "888 888    .d888888 888     888        888      888  888 
     888  Y88b  d88P Y88b. .d88P Y88b  d88P Y88b.  888  888 888     Y88b.  d8b Y88b.    888  888 
-  8888888 &quot;Y8888P&quot;   &quot;Y88888P&quot;   &quot;Y8888P&quot;   &quot;Y888 &quot;Y888888 888      &quot;Y888 Y8P  &quot;Y8888P 888  888 
+  8888888 "Y8888P"   "Y88888P"   "Y8888P"   "Y888 "Y888888 888      "Y888 Y8P  "Y8888P 888  888 
 
   Rocket startup for your ICO
 
@@ -20,9 +20,9 @@ pragma solidity ^0.4.21;
 
 contract ICOStartPromo {
 
-  string public url = &quot;https://icostart.ch/token-sale&quot;;
-  string public name = &quot;icostart.ch/promo&quot;;
-  string public symbol = &quot;ICHP&quot;;
+  string public url = "https://icostart.ch/token-sale";
+  string public name = "icostart.ch/promo";
+  string public symbol = "ICHP";
   uint8 public decimals = 18;
   uint256 public totalSupply = 1000000 ether;
 

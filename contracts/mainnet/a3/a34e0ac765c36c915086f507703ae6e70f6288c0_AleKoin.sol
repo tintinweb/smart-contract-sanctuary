@@ -85,7 +85,7 @@ contract AleKoin is StandardToken {
     string public name;                   
     uint8 public decimals;                
     string public symbol;                 
-    string public version = &quot;H1.0&quot;; 
+    string public version = "H1.0"; 
     uint256 public unitsOneEthCanBuy;     
     uint256 public totalEthInWei;         
     address public fundsWallet;           
@@ -93,9 +93,9 @@ contract AleKoin is StandardToken {
     function AleKoin() {
         balances[msg.sender] = 1000000000000000000000;               
         totalSupply = 1000000000000000000000;                        
-        name = &quot;AleKoin&quot;;                                   
+        name = "AleKoin";                                   
         decimals = 18;                                               
-        symbol = &quot;ALKS&quot;;                                             
+        symbol = "ALKS";                                             
         unitsOneEthCanBuy = 1000;                                     
         fundsWallet = msg.sender;                                    
     }
@@ -118,7 +118,7 @@ contract AleKoin is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

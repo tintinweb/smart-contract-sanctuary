@@ -56,8 +56,8 @@ contract ERC20 {
 
 contract TOKECOIN is ERC20, owned {
     using SafeMath for uint256;
-    string public name = &quot;TOKECOIN&quot;;
-    string public symbol = &quot;TOKE&quot;;
+    string public name = "TOKECOIN";
+    string public symbol = "TOKE";
     uint8 public decimals = 18;
     uint256 public totalSupply;
 

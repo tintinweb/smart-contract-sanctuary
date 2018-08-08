@@ -116,8 +116,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Token is StandardToken{
 	
-	string public constant name = &quot;Fintech Sequence Rule Smart Contract&quot;; 
-	string public constant symbol = &quot;FSRT&quot;; 
+	string public constant name = "Fintech Sequence Rule Smart Contract"; 
+	string public constant symbol = "FSRT"; 
 	uint8 public constant decimals = 18; 
 
 	uint256 public constant INITIAL_SUPPLY = 2100000000 * (10 ** uint256(decimals));

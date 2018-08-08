@@ -7,8 +7,8 @@ pragma solidity ^0.4.16;
  * @dev The WBC ERC-223 Token Contract
  */
 contract WeBetCrypto {
-    string public name = &quot;We Bet Crypto&quot;;
-    string public symbol = &quot;WBC&quot;;
+    string public name = "We Bet Crypto";
+    string public symbol = "WBC";
 	
     address public selfAddress;
     address public admin;
@@ -143,7 +143,7 @@ contract WeBetCrypto {
     /**
      * @notice Check the name of the token ~ ERC-20 Standard
      * @return {
-					&quot;_name&quot;: &quot;The token name&quot;
+					"_name": "The token name"
 				}
      */
     function name() external constant returns (string _name) {
@@ -153,7 +153,7 @@ contract WeBetCrypto {
 	/**
      * @notice Check the symbol of the token ~ ERC-20 Standard
      * @return {
-					&quot;_symbol&quot;: &quot;The token symbol&quot;
+					"_symbol": "The token symbol"
 				}
      */
     function symbol() external constant returns (string _symbol) {
@@ -163,7 +163,7 @@ contract WeBetCrypto {
     /**
      * @notice Check the decimals of the token ~ ERC-20 Standard
      * @return {
-					&quot;_decimals&quot;: &quot;The token decimals&quot;
+					"_decimals": "The token decimals"
 				}
      */
     function decimals() external constant returns (uint8 _decimals) {
@@ -173,7 +173,7 @@ contract WeBetCrypto {
     /**
      * @notice Check the total supply of the token ~ ERC-20 Standard
      * @return {
-					&quot;_totalSupply&quot;: &quot;Total supply of tokens&quot;
+					"_totalSupply": "Total supply of tokens"
 				}
      */
     function totalSupply() external constant returns (uint256 _totalSupply) {
@@ -184,7 +184,7 @@ contract WeBetCrypto {
      * @notice Query the available balance of an address ~ ERC-20 Standard
 	 * @param _owner The address whose balance we wish to retrieve
      * @return {
-					&quot;balance&quot;: &quot;Balance of the address&quot;
+					"balance": "Balance of the address"
 				}
      */
     function balanceOf(address _owner) external constant returns (uint256 balance) {
@@ -196,7 +196,7 @@ contract WeBetCrypto {
 	 * @param _owner The address who owns the tokens
 	 * @param _spender The address who can withdraw the tokens
 	 * @return {
-					&quot;remaining&quot;: &quot;Remaining withdrawal amount&quot;
+					"remaining": "Remaining withdrawal amount"
 				}
      */
     function allowance(address _owner, address _spender) external constant returns (uint256 remaining) {
@@ -261,7 +261,7 @@ contract WeBetCrypto {
 	 * @param _to The address you wish to send the tokens to
 	 * @param _value The amount of tokens you wish to send
 	 * @return {
-					&quot;success&quot;: &quot;Transaction success&quot;
+					"success": "Transaction success"
 				}
      */
     function transfer(address _to, uint256 _value) external isRunning requireThaw returns (bool success){
@@ -279,7 +279,7 @@ contract WeBetCrypto {
 	 * @notice Check whether address is a contract ~ ERC-223 Proposed Standard
 	 * @param _address The address to check
 	 * @return {
-					&quot;is_contract&quot;: &quot;Result of query&quot;
+					"is_contract": "Result of query"
 				}
      */
     function isContract(address _address) internal returns (bool is_contract) {
@@ -297,7 +297,7 @@ contract WeBetCrypto {
 	 * @param _value The amount of tokens to transfer
 	 * @param _data Any extra embedded data of the transaction
 	 * @return {
-					&quot;success&quot;: &quot;Transaction success&quot;
+					"success": "Transaction success"
 				}
      */
     function transfer(address _to, uint256 _value, bytes _data) external isRunning requireThaw returns (bool success){
@@ -316,7 +316,7 @@ contract WeBetCrypto {
 	 * @param _value The amount of tokens to transfer
 	 * @param _data Any extra embedded data of the transaction
 	 * @return {
-					&quot;success&quot;: &quot;Transaction success&quot;
+					"success": "Transaction success"
 				}
      */
     function transferToAddress(address _to, uint256 _value, bytes _data) internal returns (bool success) {
@@ -333,7 +333,7 @@ contract WeBetCrypto {
 	 * @param _value The amount of tokens to transfer
 	 * @param _data Any extra embedded data of the transaction
 	 * @return {
-					&quot;success&quot;: &quot;Transaction success&quot;
+					"success": "Transaction success"
 				}
      */
     function transferToContract(address _to, uint256 _value, bytes _data) internal returns (bool success) {
@@ -351,7 +351,7 @@ contract WeBetCrypto {
 	 * @param _value The amount of tokens to transfer
 	 * @param _data Any extra embedded data of the transaction
 	 * @return {
-					&quot;success&quot;: &quot;Transaction success&quot;
+					"success": "Transaction success"
 				}
      */
     function transferToSelf(uint256 _value, bytes _data) internal returns (bool success) {
@@ -376,7 +376,7 @@ contract WeBetCrypto {
 	 * @param _allower The holder of the balance
 	 * @param _allowee The recipient of the balance
 	 * @return {
-					&quot;remaining&quot;: &quot;Cooldown remaining in seconds&quot;
+					"remaining": "Cooldown remaining in seconds"
 				}
      */
 	function checkCooldown(address _allower, address _allowee) external constant returns (uint256 remaining) {
@@ -391,7 +391,7 @@ contract WeBetCrypto {
 	 * @notice Check how much Casino withdrawal balance remains for address
 	 * @param _owner The address to check
 	 * @return {
-					&quot;remaining&quot;: &quot;Withdrawal balance remaining&quot;
+					"remaining": "Withdrawal balance remaining"
 				}
      */
     function checkMonthlyLimit(address _owner) external constant returns (uint256 remaining) {
@@ -479,7 +479,7 @@ contract WeBetCrypto {
 	        100 and offsetting that in the calculations the price is used in.
 	        For example 50 means each token costs 0.50$.
 	 * @return {
-					&quot;price&quot;: &quot;Price of a single WBC Token&quot;
+					"price": "Price of a single WBC Token"
 				}
      */
 	function getPricePerToken() public constant returns (uint256 price) {
@@ -505,7 +505,7 @@ contract WeBetCrypto {
 			hourly price updates.
 	 * @param _value The amount of Wei to convert
 	 * @return {
-					&quot;tokenAmount&quot;: &quot;Amount of WBC Tokens input is worth&quot;
+					"tokenAmount": "Amount of WBC Tokens input is worth"
 				}
      */
 	function calculateTokenAmount(uint256 _value) internal returns (uint256 tokenAmount) {

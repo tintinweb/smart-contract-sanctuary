@@ -5,9 +5,9 @@ contract Neulaut {
     uint256 public totalSupply = 10**26;
     uint256 public fee = 10**16; // 0.01 NUA
     address owner = 0x1E79E69BFC1aB996c6111952B388412aA248c926;
-    string public name = &quot;Neulaut&quot;;
+    string public name = "Neulaut";
     uint8 public decimals = 18;
-    string public symbol = &quot;NUA&quot;;
+    string public symbol = "NUA";
     mapping (address => uint256) balances;
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
 

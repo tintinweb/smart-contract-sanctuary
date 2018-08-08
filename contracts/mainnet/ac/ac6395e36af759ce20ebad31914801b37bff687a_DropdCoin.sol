@@ -186,9 +186,9 @@ contract ERC20Token is admined, ERC20TokenInterface { //Standar definition of an
 }
 
 contract DropdCoin is admined, ERC20Token {
-    string public name = &quot;Dropd Coin&quot;;
-    string public symbol = &quot;DPD&quot;;
-    string public version = &quot;1.0&quot;;
+    string public name = "Dropd Coin";
+    string public symbol = "DPD";
+    string public version = "1.0";
     uint8 public decimals = 18;
 
     function DropdCoin() public {

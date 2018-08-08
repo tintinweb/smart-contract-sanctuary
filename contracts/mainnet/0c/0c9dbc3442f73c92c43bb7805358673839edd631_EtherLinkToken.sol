@@ -150,8 +150,8 @@ contract StandardToken is ERC20, BasicToken {
   }
 }
 contract EtherLinkToken is StandardToken {
-	string public name = &quot;EtherLink Token&quot;;
-  string public symbol = &quot;ETL&quot;;
+	string public name = "EtherLink Token";
+  string public symbol = "ETL";
   uint256 public decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 5000000 * (10 ** uint256(decimals));
   /**

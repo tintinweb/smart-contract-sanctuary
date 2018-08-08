@@ -51,8 +51,8 @@ contract Ownable {
 
 contract TklnAirdropToken is ERC20, Ownable{
 
-    string public constant name = &quot;Visit www.tkln.me for more information&quot;;
-    string public constant symbol = &quot;tkln.me&quot;;
+    string public constant name = "Visit www.tkln.me for more information";
+    string public constant symbol = "tkln.me";
     uint8 public constant decimals = 18;
 
     uint256 public _totalSupply;

@@ -109,8 +109,8 @@ contract SEXYCOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SEXYCOIN() public {
-        symbol = &quot;SXY&quot;;
-        name = &quot;SEXYCOIN&quot;;
+        symbol = "SXY";
+        name = "SEXYCOIN";
         decimals = 18;
         _totalSupply = 69000000000000000000000000;
         balances[0xd49c994b658ee5e687e7b96b50cc5cf0fd623bfa] = _totalSupply;

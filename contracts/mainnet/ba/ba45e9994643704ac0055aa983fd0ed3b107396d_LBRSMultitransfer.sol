@@ -103,7 +103,7 @@ interface ExchangerI {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -414,8 +414,8 @@ contract Claimable is Ownable {
  * @dev ERC20 token contract.
  */
 contract LibreCash is MintableToken, BurnableToken, Claimable  {
-    string public constant name = &quot;LibreCash&quot;;
-    string public constant symbol = &quot;Libre&quot;;
+    string public constant name = "LibreCash";
+    string public constant symbol = "Libre";
     uint32 public constant decimals = 18;
 }
 
@@ -736,8 +736,8 @@ contract ComplexExchanger is ExchangerI {
 
 
 contract LibertyToken is StandardToken, BurnableToken {
-  string public name = &quot;LibreBank&quot;;
-  string public symbol = &quot;LBRS&quot;;
+  string public name = "LibreBank";
+  string public symbol = "LBRS";
   uint256 public decimals = 18;
 
 function LibertyToken() public {

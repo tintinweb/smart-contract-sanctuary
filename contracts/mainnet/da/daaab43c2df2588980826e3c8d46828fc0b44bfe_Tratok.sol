@@ -7,10 +7,10 @@ As the majority of functions are simple addition and subtraction of existing bal
 This has the added advantage of reducing gas costs and ensuring that transaction fees remain low.
 The smart contract has been made publically available, keeping with the team&#39;s philosophy of transparency.
 
-@version &quot;1.0&quot;
-@developer &quot;Tratok Team&quot;
-@date &quot;12 February 2017&quot;
-@thoughts &quot;207 lines that can change the travel and tourism industry!. Good luck!&quot;
+@version "1.0"
+@developer "Tratok Team"
+@date "12 February 2017"
+@thoughts "207 lines that can change the travel and tourism industry!. Good luck!"
 */
 
 /*
@@ -54,7 +54,7 @@ contract ERC20 {
 
     /*	
        The transfer function which takes the address of the recipient and the amount of Tratok needed to be sent and complete the transfer
-       @param _to The address of the recipient (usually a &quot;service provider&quot;) who will receive the Tratok.
+       @param _to The address of the recipient (usually a "service provider") who will receive the Tratok.
        @param _value The amount of Tratok that needs to be transferred.
        @return Returns a boolean value to verify the transaction has succeeded or failed.
       */
@@ -185,9 +185,9 @@ contract Tratok is StandardToken {
         //we will create 100 Billion Coins and send them to the creating wallet.
         balances[msg.sender] = 10000000000000000;
         totalSupply = 10000000000000000;
-        name = &quot;Tratok&quot;;
+        name = "Tratok";
         decimals = 5;
-        symbol = &quot;TRAT&quot;;
+        symbol = "TRAT";
     }
 
     /*
@@ -198,8 +198,8 @@ contract Tratok is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        //If the call fails, result to &quot;vanilla&quot; approval.
-        if (!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) {
+        //If the call fails, result to "vanilla" approval.
+        if (!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) {
             throw;
         }
         return true;

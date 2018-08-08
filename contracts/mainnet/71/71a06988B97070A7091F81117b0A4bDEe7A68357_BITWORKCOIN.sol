@@ -113,8 +113,8 @@ contract BITWORKCOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BITWORKCOIN() public {
-        symbol = &quot;BWORK&quot;;
-        name = &quot;BITWORKCOIN&quot;;
+        symbol = "BWORK";
+        name = "BITWORKCOIN";
         decimals = 9;
         _totalSupply = 1000000000000000000;
         balances[0x503dCFb25379C33c0Ac7c0107b1A9e9e51Dac07f] = _totalSupply;

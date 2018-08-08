@@ -113,8 +113,8 @@ contract ISBToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ISBToken() public {
-        symbol = &quot;ISB&quot;;
-        name = &quot;ISB Token&quot;;
+        symbol = "ISB";
+        name = "ISB Token";
         decimals = 9;
         _totalSupply = 100000000000000000;
         balances[0x116312c3471C2e7C34C52782D0399eBE601f3F30] = _totalSupply;

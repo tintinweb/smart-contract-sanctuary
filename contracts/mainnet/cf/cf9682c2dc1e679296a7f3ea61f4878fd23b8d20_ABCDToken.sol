@@ -258,8 +258,8 @@ contract PausableToken is StandardToken, Pausable {
  * @dev Initialize contract basic information
  */
 contract ABCDToken is PausableToken {
-    string public name = &quot;ABCD&quot;;
-    string public symbol = &quot;AAA&quot;;
+    string public name = "ABCD";
+    string public symbol = "AAA";
     uint public decimals = 0;
     uint public INITIAL_SUPPLY = 1000000000;
 

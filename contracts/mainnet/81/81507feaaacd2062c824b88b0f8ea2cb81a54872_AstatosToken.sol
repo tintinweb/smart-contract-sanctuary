@@ -191,8 +191,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract AstatosToken is StandardToken {
 
-    string public constant name = &quot;Astatos Token&quot;;
-    string public constant symbol = &quot;ASTT&quot;;
+    string public constant name = "Astatos Token";
+    string public constant symbol = "ASTT";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 700 * 10**6 * (10**uint256(decimals));
     uint256 public weiRaised;

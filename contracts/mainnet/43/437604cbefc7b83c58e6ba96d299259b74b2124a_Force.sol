@@ -126,8 +126,8 @@ contract hasHolders {
 
 contract Force is Ownable, hasHolders {
     using SafeMath for uint;
-    string public name = &quot;Force&quot;;
-    string public symbol = &quot;4TH&quot;;
+    string public name = "Force";
+    string public symbol = "4TH";
     uint8 public decimals = 0;
     uint public totalSupply = 100000000;
 

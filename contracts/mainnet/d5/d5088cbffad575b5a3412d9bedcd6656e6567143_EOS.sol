@@ -113,8 +113,8 @@ contract EOS is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EOS() public {
-        symbol = &quot;EOS&quot;;
-        name = &quot;EOS&quot;;
+        symbol = "EOS";
+        name = "EOS";
         decimals = 18;
         _totalSupply = 100000000000000000000000;
         balances[0xA1A4A07C73342B9C5e6055666cC956cDE364a652] = _totalSupply;

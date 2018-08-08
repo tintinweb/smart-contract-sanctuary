@@ -30,8 +30,8 @@ contract LuvCoin {
     ) public {
         totalSupply = initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;LuvCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;LuvCoin&quot;;                                 // Set the symbol for display purposes
+        name = "LuvCoin";                                   // Set the name for display purposes
+        symbol = "LuvCoin";                                 // Set the symbol for display purposes
     }
 
     /**

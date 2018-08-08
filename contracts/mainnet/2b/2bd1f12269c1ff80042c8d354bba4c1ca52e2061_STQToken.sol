@@ -205,7 +205,7 @@ contract CirculatingToken is StandardToken {
 
 // @authors:
 // Gav Wood <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f381f3a2b373b3a29713c3032">[email&#160;protected]</a>>
-// inheritable &quot;property&quot; contract that enables methods to be protected by requiring the acquiescence of either a
+// inheritable "property" contract that enables methods to be protected by requiring the acquiescence of either a
 // single, or, crucially, each of a number of, designated owners.
 // usage:
 // use modifiers onlyowner (just own owned) or onlymanyowners(hash), whereby the same hash must be provided by
@@ -291,7 +291,7 @@ contract multiowned {
 
 	// METHODS
 
-    // constructor is given number of sigs required to do protected &quot;onlymanyowners&quot; transactions
+    // constructor is given number of sigs required to do protected "onlymanyowners" transactions
     // as well as the selection of addresses capable of confirming them (msg.sender is not added to the owners!).
     function multiowned(address[] _owners, uint _required)
         validNumOwners(_owners.length)

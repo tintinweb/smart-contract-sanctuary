@@ -133,8 +133,8 @@ contract BurnableToken is BasicToken {
 
 contract tokenesia is StandardToken, BurnableToken {
 
-  string public constant name = &quot;tokenesia&quot;; 
-  string public constant symbol = &quot;TNA&quot;; 
+  string public constant name = "tokenesia"; 
+  string public constant symbol = "TNA"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 200000000 * (10 ** uint256(decimals));

@@ -41,9 +41,9 @@ pragma solidity ^0.4.21;
 
 contract Token is Controlled {
 
-    string public name = &quot;ShineCoin&quot;;
+    string public name = "ShineCoin";
     uint8 public decimals = 9;
-    string public symbol = &quot;SHINE&quot;;
+    string public symbol = "SHINE";
 
     struct  Checkpoint {
         uint128 fromBlock;

@@ -326,9 +326,9 @@ contract BurnableToken is StandardToken {
 
 contract Token is CappedToken, BurnableToken {
 
-    string public URL = &quot;http://smartcontract.ru&quot;;
+    string public URL = "http://smartcontract.ru";
 
-    function Token() CappedToken(100000000 * 1 ether) StandardToken(&quot;SMARTCONTRACT.RU&quot;, &quot;SMART&quot;, 18) public {
+    function Token() CappedToken(100000000 * 1 ether) StandardToken("SMARTCONTRACT.RU", "SMART", 18) public {
         
     }
     

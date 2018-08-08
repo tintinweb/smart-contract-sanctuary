@@ -113,8 +113,8 @@ contract AICQ is UnboundedRegularToken {
 
     uint public totalSupply = 1*10**27;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;AI链&quot;;
-    string constant public symbol = &quot;AICQ&quot;;
+    string constant public name = "AI链";
+    string constant public symbol = "AICQ";
 
     function AICQ() {
         balances[msg.sender] = totalSupply;

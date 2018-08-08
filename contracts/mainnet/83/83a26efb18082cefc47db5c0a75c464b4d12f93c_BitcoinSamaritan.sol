@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract BitcoinSamaritan {
     // Public variables of the token
-    string public name = &quot;Bitcoin Samaritan&quot;;
-    string public symbol = &quot;BTS&quot;;
+    string public name = "Bitcoin Samaritan";
+    string public symbol = "BTS";
     uint8 public decimals = 0;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

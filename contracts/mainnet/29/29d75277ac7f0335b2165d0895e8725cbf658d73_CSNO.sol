@@ -157,8 +157,8 @@ contract Ownable {
 }
 
 contract CSNO is StandardToken, Ownable {
-  string public constant name = &quot;BitDice&quot;;
-  string public constant symbol = &quot;CSNO&quot;;
+  string public constant name = "BitDice";
+  string public constant symbol = "CSNO";
   uint8 public constant decimals = 8;
   uint256 public constant INITIAL_SUPPLY = 100000000 * 10 ** uint256(decimals); // 100.000.000 Tokens
 

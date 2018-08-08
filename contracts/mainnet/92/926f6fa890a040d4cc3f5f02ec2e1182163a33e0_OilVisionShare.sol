@@ -123,7 +123,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -259,10 +259,10 @@ contract StandardToken is ERC20, BasicToken {
 contract OilVisionShare is StandardToken, Ownable {
     using SafeMath for uint;
 
-    string public name = &quot;Oil Vision Share&quot;;
-    string public symbol = &quot;OVS&quot;;
+    string public name = "Oil Vision Share";
+    string public symbol = "OVS";
 	
-    string public constant description = &quot;http://oil.vision The oil.vision Project is an investment platform managed by the Japanese company eKen. We invest in the oil industry around the world. In our project we use both traditional investments in yen and modern investments in cryptocurrency.&quot;;
+    string public constant description = "http://oil.vision The oil.vision Project is an investment platform managed by the Japanese company eKen. We invest in the oil industry around the world. In our project we use both traditional investments in yen and modern investments in cryptocurrency.";
 	
     uint public decimals = 2;
 	uint public constant INITIAL_SUPPLY = 1000000000 * 10**2 ;
@@ -308,7 +308,7 @@ contract OilVisionShare is StandardToken, Ownable {
     }
 	
 	
-	/* buyout mode is set to flag &quot;status&quot; value, true/false */
+	/* buyout mode is set to flag "status" value, true/false */
     function setByuoutActive(bool status) public onlyOwner {
         byuoutActive = status;
     }
@@ -318,7 +318,7 @@ contract OilVisionShare is StandardToken, Ownable {
         byuoutCount = count;
     }
 
-	/* set Token base-part prise in &quot;wei&quot; */
+	/* set Token base-part prise in "wei" */
     function setPriceForBasePart(uint newPriceForBasePart) public onlyOwner {
         priceForBasePart = newPriceForBasePart;
     }

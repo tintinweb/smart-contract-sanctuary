@@ -126,8 +126,8 @@ contract Pausable is Ownable {
 }
 
 contract DinoToken is StandardToken, Pausable {
-    string public constant name = &quot;DINO Token&quot;;
-    string public constant symbol = &quot;DINO&quot;;
+    string public constant name = "DINO Token";
+    string public constant symbol = "DINO";
     uint8  public constant decimals = 18;
 
     address public  tokenSaleContract;

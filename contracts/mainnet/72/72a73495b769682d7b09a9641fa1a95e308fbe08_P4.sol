@@ -84,7 +84,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -126,7 +126,7 @@ contract Ownable {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * @dev This simplifies the implementation of &quot;user permissions&quot;.
+ * @dev This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable {
   mapping(address => bool) public whitelist;
@@ -392,7 +392,7 @@ contract P4 is Whitelist {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
 
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_customerAddress, _dividends);
 
         // fire event
@@ -410,7 +410,7 @@ contract P4 is Whitelist {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
 
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         ReinvestProxy reinvestProxy =  ReinvestProxy(msg.sender);
         reinvestProxy.reinvestFor.value(_dividends)(_customerAddress);
 
@@ -645,7 +645,7 @@ contract P4 is Whitelist {
 
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && SafeMath.add(_amountOfTokens, tokenSupply_) > tokenSupply_);
 
         //Apply maintenance fee as a referral

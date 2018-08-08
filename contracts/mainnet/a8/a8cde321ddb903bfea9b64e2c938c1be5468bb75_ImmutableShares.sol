@@ -31,8 +31,8 @@ pragma solidity ^0.4.11;
    
   contract ImmutableShares is ERC20Interface {
       
-     string public constant symbol = &quot;CSH&quot;;
-      string public constant name = &quot;Cryptex Shares&quot;;
+     string public constant symbol = "CSH";
+      string public constant name = "Cryptex Shares";
       uint8 public constant decimals = 0;
       uint256 _totalSupply = 53000000;
       uint256 public totalSupply;
@@ -142,7 +142,7 @@ if((balances[msg.sender] > 0) && (IsContract)){
    
       // Send _value amount of tokens from address _from to address _to
       // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-      // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+      // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
       // fees in sub-currencies; the command should fail unless the _from account has
       // deliberately authorized the sender of the message via some mechanism; we propose
       // these standardized APIs for approval:

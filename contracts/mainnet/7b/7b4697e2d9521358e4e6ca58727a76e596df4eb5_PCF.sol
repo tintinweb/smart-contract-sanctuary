@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract PCF is StandardToken, Ownable {
 
-    string public constant name = &quot;PCF&quot;;
-    string public constant symbol = &quot;PCF&quot;;
+    string public constant name = "PCF";
+    string public constant symbol = "PCF";
     uint256 public constant decimals = 8;
 
     function PCF() public {

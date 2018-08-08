@@ -193,8 +193,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract JFDToken is StandardToken {
 
-  string public constant name = &quot;NihaomaCoin&quot;;
-  string public constant symbol = &quot;JFD&quot;;
+  string public constant name = "NihaomaCoin";
+  string public constant symbol = "JFD";
   uint8 public constant decimals = 18; // only two deciminals, token cannot be divided past 1/100th
 
   uint256 public constant INITIAL_SUPPLY =  50000000000000000000000000; // 50 million + 18 decimals

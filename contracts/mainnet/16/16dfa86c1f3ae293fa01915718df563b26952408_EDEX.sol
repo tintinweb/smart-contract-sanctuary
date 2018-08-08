@@ -112,8 +112,8 @@ contract EDEX is StandardToken{
 
     // public variables of the token
 
-    string public name = &quot;Equadex&quot;;
-    string public symbol = &quot;EDEX&quot;;
+    string public name = "Equadex";
+    string public symbol = "EDEX";
     uint256 public decimals = 18;
     
     // reachable if max amount raised

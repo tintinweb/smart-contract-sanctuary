@@ -114,8 +114,8 @@ contract CoinTel is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function CoinTel() public {
-        symbol = &quot;CoinTel&quot;;
-        name = &quot;CoinTel&quot;;
+        symbol = "CoinTel";
+        name = "CoinTel";
         decimals = 18;
         _totalSupply = 150000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

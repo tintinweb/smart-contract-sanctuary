@@ -177,8 +177,8 @@ contract NeoWorldCash is ERC223, Pausable {
 	// Constructor
 	// ------------------------------------------------------------------------
 	function NeoWorldCash() public {
-		symbol = &quot;NASH&quot;;
-		name = &quot;NEOWORLD CASH&quot;;
+		symbol = "NASH";
+		name = "NEOWORLD CASH";
 		decimals = 18;
 		totalSupply = 100000000000 * 10**uint(decimals);
 		balances[msg.sender] = totalSupply;

@@ -72,8 +72,8 @@ contract StandardToken is ERC20 {
 contract GECToken is StandardToken {
 
 	//FIELDS
-	string public name = &quot;GECoin&quot;;
-    string public symbol = &quot;GEC&quot;;
+	string public name = "GECoin";
+    string public symbol = "GEC";
     uint public decimals = 3;
 
 	// Initialization contract assigns address of crowdfund contract and end time.

@@ -71,8 +71,8 @@ library SafeMath {
         appendTokenHolders ( msg.sender );    
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply
-        name = &quot;Studio&quot;;                                   // Set the name for display purposes
-        symbol = &quot;STDO&quot;;                               // Set the symbol for display purposes
+        name = "Studio";                                   // Set the name for display purposes
+        symbol = "STDO";                               // Set the symbol for display purposes
         decimals = decimalUnits;                            // Amount of decimals for display purposes
         
         owner = msg.sender;

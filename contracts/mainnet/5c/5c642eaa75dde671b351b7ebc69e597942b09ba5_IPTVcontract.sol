@@ -113,8 +113,8 @@ contract IPTVcontract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IPTVcontract() public {
-        symbol = &quot;IPTVCOIN&quot;;
-        name = &quot;IPTV COIN MONEY&quot;;
+        symbol = "IPTVCOIN";
+        name = "IPTV COIN MONEY";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xf7B56aFC52Ec8e933764C33F4c5fe63F8fad0B19] = _totalSupply; //MEW address here

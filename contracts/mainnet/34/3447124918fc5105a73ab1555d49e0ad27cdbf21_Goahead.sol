@@ -102,8 +102,8 @@ contract Goahead is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Goahead() public {
-        symbol = &quot;GOC&quot;;
-        name = &quot;Goahead&quot;;
+        symbol = "GOC";
+        name = "Goahead";
         decimals = 18;
         _totalSupply = 	20000000000000000000000000;
         balances[0x4aAE790ff3e1fbAd04a174Abb6a38Dc91461ae09] = _totalSupply;

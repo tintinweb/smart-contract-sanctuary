@@ -32,8 +32,8 @@ contract TD is SafeMath {
 
     mapping(address => uint) balances;
   
-    string public name    = &quot;Tdex Token&quot;;
-    string public symbol  = &quot;TD&quot;;
+    string public name    = "Tdex Token";
+    string public symbol  = "TD";
     uint8 public decimals = 10;
     uint256 public totalSupply;
 	address owner;

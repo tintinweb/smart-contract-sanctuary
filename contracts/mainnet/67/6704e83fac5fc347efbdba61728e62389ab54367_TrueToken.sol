@@ -302,8 +302,8 @@ contract TrueToken is Standard223Token {
     uint256 public INITIAL_SUPPLY = 25000000;   // 25 million
 
     function TrueToken() public {
-        name = &quot;TRUE&quot;;
-        symbol = &quot;TRUE&quot;;
+        name = "TRUE";
+        symbol = "TRUE";
         decimals = 18;
 
         totalSupply_ = INITIAL_SUPPLY * 10 ** uint256(decimals);

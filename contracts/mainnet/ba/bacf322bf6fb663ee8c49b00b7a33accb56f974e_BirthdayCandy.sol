@@ -58,8 +58,8 @@ contract BirthdayCandy is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;BirthdayCandy&quot;;
-    string public constant symbol = &quot;BDAY&quot;;
+    string public constant name = "BirthdayCandy";
+    string public constant symbol = "BDAY";
     uint public constant decimals = 4;
     
     uint256 public totalSupply = 1200000000e4;

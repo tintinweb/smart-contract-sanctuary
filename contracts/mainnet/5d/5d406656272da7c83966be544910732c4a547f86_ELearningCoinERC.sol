@@ -37,8 +37,8 @@ contract ELearningCoinERC is owned {
     function ELearningCoinERC() public {
         totalSupply = 10000000 * 10 ** uint256(decimals); 
         balanceOf[msg.sender] = totalSupply;              
-        name = &quot;eLearningCoin&quot;;                                 
-        symbol = &quot;ELRC&quot;;                            
+        name = "eLearningCoin";                                 
+        symbol = "ELRC";                            
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

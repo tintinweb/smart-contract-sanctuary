@@ -40,14 +40,14 @@ contract PHXFlip is PHXReceivingContract {
 	
 	function tokenFallback(address _from, uint _value, bytes _data) public {
 	  // Note that msg.sender is the Token Contract Address
-	  // and &quot;_from&quot; is the sender of the tokens
+	  // and "_from" is the sender of the tokens
 	  require(_humanSender(_from)); // Check that this is a non-contract sender
 	  require(_phxToken(msg.sender));
 	  
 	  uint _possibleWinnings = 2 * _value;
 	  // This doesn&#39;t require the PHX Balance to be greater than double the bet
 	  // So check the contract&#39;s PHX Balance before wagering!
-	  if(_prand(2) == 1) { // i.e. if it&#39;s &quot;heads&quot;
+	  if(_prand(2) == 1) { // i.e. if it&#39;s "heads"
 	      if(PHXTKN.balanceOf(this) >= _possibleWinnings) {
 	          PHXTKN.transfer(_from, _possibleWinnings);
 	      } else {
@@ -59,8 +59,8 @@ contract PHXFlip is PHXReceivingContract {
     }
     
     // This is a supercheap psuedo-random number generator
-    // that relies on the fact that &quot;who&quot; will mine and &quot;when&quot; they will
-    // mine is random.  This is obviously vulnerable to &quot;inside the block&quot;
+    // that relies on the fact that "who" will mine and "when" they will
+    // mine is random.  This is obviously vulnerable to "inside the block"
     // attacks where someone writes a contract mined in the same block
     // and calls this contract from it -- but we don&#39;t accept transactions
     // from foreign contracts, lessening that risk
@@ -72,15 +72,15 @@ contract PHXFlip is PHXReceivingContract {
     }
     
     function _phxToken(address _tokenContract) private pure returns (bool) {
-        return _tokenContract == PHXTKNADDR; // Returns &quot;true&quot; of this is the PHX Token Contract
+        return _tokenContract == PHXTKNADDR; // Returns "true" of this is the PHX Token Contract
     }
     
-    // Determine if the &quot;_from&quot; address is a contract
+    // Determine if the "_from" address is a contract
     function _humanSender(address _from) private view returns (bool) {
       uint codeLength;
       assembly {
           codeLength := extcodesize(_from)
       }
-      return (codeLength == 0); // If this is &quot;true&quot; sender is most likely  a Wallet
+      return (codeLength == 0); // If this is "true" sender is most likely  a Wallet
     }
 }

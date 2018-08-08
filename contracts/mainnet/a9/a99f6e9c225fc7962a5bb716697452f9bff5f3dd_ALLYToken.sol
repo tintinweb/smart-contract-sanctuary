@@ -55,8 +55,8 @@ contract Token {
 contract ALLYToken is Token {
 
     /* total tokens */
-    string  public name = &quot;ALLY&quot;;
-    string  public symbol = &quot;ALLY&quot;;
+    string  public name = "ALLY";
+    string  public symbol = "ALLY";
     uint8   public decimals = 18;
     uint256 public totalSupply = 990000000 * 10 ** uint256(decimals);
     address public owner;
@@ -90,7 +90,7 @@ contract ALLYToken is Token {
     }
 
     /**
-     * transfer value token to &quot;_to&quot;
+     * transfer value token to "_to"
      */
     function _transfer(address _from, address _to, uint256 _value) internal {
        require(_value > 0x0);

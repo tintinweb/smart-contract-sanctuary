@@ -28,7 +28,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -220,8 +220,8 @@ contract preDGZToken is StandardToken {
     using SafeMath for uint256;
 
     /*/ Public variables of the token /*/
-    string public constant name = &quot;Dogezer preDGZ Token&quot;;
-    string public constant symbol = &quot;preDGZ&quot;;
+    string public constant name = "Dogezer preDGZ Token";
+    string public constant symbol = "preDGZ";
     uint8 public decimals = 8;
     uint256 public totalSupply = 200000000000000;
 
@@ -236,7 +236,7 @@ contract preDGZToken is StandardToken {
 
 contract DogezerPreICOCrowdsale is Haltable{
     using SafeMath for uint;
-    string public name = &quot;Dogezer preITO&quot;;
+    string public name = "Dogezer preITO";
 
     address public beneficiary;
     uint public startTime;

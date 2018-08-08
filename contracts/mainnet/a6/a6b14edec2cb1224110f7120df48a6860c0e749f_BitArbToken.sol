@@ -113,8 +113,8 @@ contract BitArbToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitArbToken() public {
-        symbol = &quot;BRB&quot;;
-        name = &quot;BitArb Token&quot;;
+        symbol = "BRB";
+        name = "BitArb Token";
         decimals = 8;
         _totalSupply = 10000000000000000;
         balances[0xf18427432A91C83Ea7eA027CdB6559867b193dF8] = _totalSupply;

@@ -223,8 +223,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract RedBUX is StandardToken {
 
-    string public name = &quot;RedBUX&quot;;
-    string public symbol = &quot;RDBX&quot;;
+    string public name = "RedBUX";
+    string public symbol = "RDBX";
     uint8 public decimals = 18;
     uint256 public INITIAL_SUPPLY = 20000000000e18; //20b RedBUX Token with 18 Decimals
 

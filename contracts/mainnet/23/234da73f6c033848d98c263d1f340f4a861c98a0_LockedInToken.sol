@@ -84,8 +84,8 @@ contract LockedInToken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;LockedInToken&quot;;
-    string public constant symbol = &quot;LIT&quot;;
+    string public constant name = "LockedInToken";
+    string public constant symbol = "LIT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 80000000e8;

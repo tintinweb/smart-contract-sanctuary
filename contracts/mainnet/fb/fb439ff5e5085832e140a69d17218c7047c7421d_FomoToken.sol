@@ -48,8 +48,8 @@ contract FomoToken is IERC20{
     using SafeMath for uint256;
     
     uint public constant _totalSupply = 7500000000000;
-    string public constant symbol = &quot;FOMO&quot;;
-    string public constant name = &quot;Fomo Token&quot;;
+    string public constant symbol = "FOMO";
+    string public constant name = "Fomo Token";
     uint8 public constant decimals = 4;
     
     mapping(address => uint256) balances;

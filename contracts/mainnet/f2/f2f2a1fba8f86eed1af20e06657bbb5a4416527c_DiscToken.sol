@@ -113,8 +113,8 @@ contract DiscToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DiscToken() public {
-        symbol = &quot;DISC&quot;;
-        name = &quot;Disc Token&quot;;
+        symbol = "DISC";
+        name = "Disc Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x385C03042276635b92a347D666d7A2e19862Bb98] = _totalSupply;

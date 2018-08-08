@@ -42,11 +42,11 @@ contract ApproveAndCallFallBack {
 contract BTTSTokenInterface is ERC20Interface {
     uint public constant bttsVersion = 110;
 
-    bytes public constant signingPrefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
-    bytes4 public constant signedTransferSig = &quot;\x75\x32\xea\xac&quot;;
-    bytes4 public constant signedApproveSig = &quot;\xe9\xaf\xa7\xa1&quot;;
-    bytes4 public constant signedTransferFromSig = &quot;\x34\x4b\xcc\x7d&quot;;
-    bytes4 public constant signedApproveAndCallSig = &quot;\xf1\x6f\x9b\x53&quot;;
+    bytes public constant signingPrefix = "\x19Ethereum Signed Message:\n32";
+    bytes4 public constant signedTransferSig = "\x75\x32\xea\xac";
+    bytes4 public constant signedApproveSig = "\xe9\xaf\xa7\xa1";
+    bytes4 public constant signedTransferFromSig = "\x34\x4b\xcc\x7d";
+    bytes4 public constant signedApproveAndCallSig = "\xf1\x6f\x9b\x53";
 
     event OwnershipTransferred(address indexed from, address indexed to);
     event MinterUpdated(address from, address to);
@@ -133,11 +133,11 @@ library BTTSLib {
     // Constants
     // ------------------------------------------------------------------------
     uint public constant bttsVersion = 110;
-    bytes public constant signingPrefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
-    bytes4 public constant signedTransferSig = &quot;\x75\x32\xea\xac&quot;;
-    bytes4 public constant signedApproveSig = &quot;\xe9\xaf\xa7\xa1&quot;;
-    bytes4 public constant signedTransferFromSig = &quot;\x34\x4b\xcc\x7d&quot;;
-    bytes4 public constant signedApproveAndCallSig = &quot;\xf1\x6f\x9b\x53&quot;;
+    bytes public constant signingPrefix = "\x19Ethereum Signed Message:\n32";
+    bytes4 public constant signedTransferSig = "\x75\x32\xea\xac";
+    bytes4 public constant signedApproveSig = "\xe9\xaf\xa7\xa1";
+    bytes4 public constant signedTransferFromSig = "\x34\x4b\xcc\x7d";
+    bytes4 public constant signedApproveAndCallSig = "\xf1\x6f\x9b\x53";
 
     // ------------------------------------------------------------------------
     // Event
@@ -300,27 +300,27 @@ library BTTSLib {
     // ------------------------------------------------------------------------
     function getCheckResultMessage(Data storage /*self*/, BTTSTokenInterface.CheckResult result) public pure returns (string) {
         if (result == BTTSTokenInterface.CheckResult.Success) {
-            return &quot;Success&quot;;
+            return "Success";
         } else if (result == BTTSTokenInterface.CheckResult.NotTransferable) {
-            return &quot;Tokens not transferable yet&quot;;
+            return "Tokens not transferable yet";
         } else if (result == BTTSTokenInterface.CheckResult.AccountLocked) {
-            return &quot;Account locked&quot;;
+            return "Account locked";
         } else if (result == BTTSTokenInterface.CheckResult.SignerMismatch) {
-            return &quot;Mismatch in signing account&quot;;
+            return "Mismatch in signing account";
         } else if (result == BTTSTokenInterface.CheckResult.InvalidNonce) {
-            return &quot;Invalid nonce&quot;;
+            return "Invalid nonce";
         } else if (result == BTTSTokenInterface.CheckResult.InsufficientApprovedTokens) {
-            return &quot;Insufficient approved tokens&quot;;
+            return "Insufficient approved tokens";
         } else if (result == BTTSTokenInterface.CheckResult.InsufficientApprovedTokensForFees) {
-            return &quot;Insufficient approved tokens for fees&quot;;
+            return "Insufficient approved tokens for fees";
         } else if (result == BTTSTokenInterface.CheckResult.InsufficientTokens) {
-            return &quot;Insufficient tokens&quot;;
+            return "Insufficient tokens";
         } else if (result == BTTSTokenInterface.CheckResult.InsufficientTokensForFees) {
-            return &quot;Insufficient tokens for fees&quot;;
+            return "Insufficient tokens for fees";
         } else if (result == BTTSTokenInterface.CheckResult.OverflowError) {
-            return &quot;Overflow error&quot;;
+            return "Overflow error";
         } else {
-            return &quot;Unknown error&quot;;
+            return "Unknown error";
         }
     }
 
@@ -749,8 +749,8 @@ contract BTTSTokenFactory is Owned {
     //
     // For example, deploying a BTTSToken contract with `initialSupply` of
     // 1,000.000000000000000000 tokens:
-    //   symbol         &quot;ME&quot;
-    //   name           &quot;My Token&quot;
+    //   symbol         "ME"
+    //   name           "My Token"
     //   decimals       18
     //   initialSupply  10000000000000000000000 = 1,000.000000000000000000
     //                  tokens

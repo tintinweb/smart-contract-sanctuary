@@ -108,8 +108,8 @@ contract ERC223 {
 contract YOKOCHOCOIN is ERC223, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;Yokocho coin&quot;;
-    string public symbol = &quot;YOKOCHO&quot;;
+    string public name = "Yokocho coin";
+    string public symbol = "YOKOCHO";
     uint8 public decimals = 16;
     uint256 public totalSupply;
 

@@ -210,13 +210,13 @@ contract StandardToken is Token {
 contract ZTToken is Owned, StandardToken {
 
     // Ethereum token standard
-    string public standard = &quot;Token 0.2&quot;;
+    string public standard = "Token 0.2";
 
     // Full name
-    string public name = &quot;ZeroTraffic&quot;;        
+    string public name = "ZeroTraffic";        
     
     // Symbol
-    string public symbol = &quot;ZTT&quot;;
+    string public symbol = "ZTT";
 
     // No decimal points
     uint8 public decimals = 8;

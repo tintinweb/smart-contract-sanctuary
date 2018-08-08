@@ -23,8 +23,8 @@ contract Kin {
     function Kin() {
         balanceOf[msg.sender] = 512195121951 ether;              // Give the creator all initial tokens
         totalSupply = 512195121951 ether;                        // Update total supply
-        name = &quot;KIN&quot;;                                   // Set the name for display purposes
-        symbol = &quot;KIN&quot;;                               // Set the symbol for display purposes
+        name = "KIN";                                   // Set the name for display purposes
+        symbol = "KIN";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

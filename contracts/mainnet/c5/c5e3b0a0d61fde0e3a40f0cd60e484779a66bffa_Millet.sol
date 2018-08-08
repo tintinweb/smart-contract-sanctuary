@@ -116,8 +116,8 @@ contract ERC20Token is ERC20 {
 
 contract Millet is ERC20Token, Owned {
 
-    string  public constant name = &quot;Alxa Millet Token&quot;;
-    string  public constant symbol = &quot;Millet&quot;;
+    string  public constant name = "Alxa Millet Token";
+    string  public constant symbol = "Millet";
     uint256 public constant decimals = 18;
     uint256 public tokenDestroyed;
 	event Burn(address indexed _from, uint256 _tokenDestroyed, uint256 _timestamp);

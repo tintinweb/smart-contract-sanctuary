@@ -265,9 +265,9 @@ contract _0xLitecoinToken is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;0xLTC&quot;;
+        symbol = "0xLTC";
 
-        name = &quot;0xLitecoin Token&quot;;
+        name = "0xLitecoin Token";
 
         decimals = 8;
 

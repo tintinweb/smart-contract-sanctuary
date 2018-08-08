@@ -16,8 +16,8 @@ contract RIPAC {
   
   uint256 public _totalSupply = 500000000000;
     uint256 public totalSupply = 500000000000;
-    string public constant symbol = &quot;RIPAC&quot;;
-    string public constant name = &quot; Representative Initiatives PAC &quot;;
+    string public constant symbol = "RIPAC";
+    string public constant name = " Representative Initiatives PAC ";
     uint8 public constant decimals = 2;
     
 
@@ -50,8 +50,8 @@ contract RIPAC {
   function totalSupply() constant returns (uint256 theTotalSupply) {
     // Because our function signature
     // states that the returning variable
-    // is &quot;theTotalSupply&quot;, we&#39;ll just set that variable
-    // to the value of the instance variable &quot;_totalSupply&quot;
+    // is "theTotalSupply", we&#39;ll just set that variable
+    // to the value of the instance variable "_totalSupply"
     // and return it
     theTotalSupply = _totalSupply;
     return theTotalSupply;
@@ -63,7 +63,7 @@ contract RIPAC {
   
   function approve(address _spender, uint256 _amount) returns (bool success) {
     allowed[msg.sender][_spender] = _amount;
-    // Fire the event &quot;Approval&quot; to execute any logic
+    // Fire the event "Approval" to execute any logic
     // that was listening to it
     Approval(msg.sender, _spender, _amount);
     return true;

@@ -113,8 +113,8 @@ contract Bionic is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Bionic() public {
-        symbol = &quot;BNC&quot;;
-        name = &quot;Bionic&quot;;
+        symbol = "BNC";
+        name = "Bionic";
         decimals = 8;
         _totalSupply = 100000000000000000;
         balances[0xdD2A5B646bb936CbC279CBE462E31eab2C309452] = _totalSupply;

@@ -5,7 +5,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -314,8 +314,8 @@ contract TokenSaleLockTransfer is StandardToken, Ownable {
 // File: contracts\SEADToken.sol
 
 contract SEADToken is TokenSaleLockTransfer {
-  string public name = &quot;SEADEX coin&quot;;
-  string public symbol = &quot;SEAD&quot;;
+  string public name = "SEADEX coin";
+  string public symbol = "SEAD";
   uint256 public decimals = 18;
 
   // Init supply and set tokenSaleContract ==================================

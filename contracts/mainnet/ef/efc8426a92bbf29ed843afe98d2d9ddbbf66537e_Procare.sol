@@ -16,9 +16,9 @@ contract Procare {
     function Procare() {
 
          initialSupply = 1000000;
-         name =&quot;procare&quot;;
+         name ="procare";
         decimals = 2;
-         symbol = &quot;PRC&quot;;
+         symbol = "PRC";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

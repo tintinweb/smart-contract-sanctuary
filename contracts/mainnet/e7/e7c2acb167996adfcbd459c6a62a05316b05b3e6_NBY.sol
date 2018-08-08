@@ -20,9 +20,9 @@ contract NBY{
     function NBY() public {
         balances[msg.sender] = 6300000000000;               // Give the creator all initial tokens
         totalSupply = 6300000000000;                        // Update total supply
-        name = &quot;networkbankyardn&quot;;                                   // Set the name for display purposes
+        name = "networkbankyardn";                                   // Set the name for display purposes
         decimals =4;                            // Amount of decimals for display purposes
-        symbol = &quot;NBY&quot;;                               // Set the symbol for display purposes
+        symbol = "NBY";                               // Set the symbol for display purposes
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

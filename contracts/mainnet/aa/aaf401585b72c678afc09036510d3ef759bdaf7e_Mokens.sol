@@ -15,7 +15,7 @@ interface ERC721TokenReceiver {
     /// @param _from The sending address
     /// @param _tokenId The NFT identifier which is being transfered
     /// @param _data Additional data with no specified format
-    /// @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+    /// @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
     function onERC721Received(address _operator, address _from, uint256 _tokenId, bytes _data) external returns (bytes4);
 }
 
@@ -73,8 +73,8 @@ contract AbstractMokens {
     uint256 internal mokensLength = 0;
 
     // tokenId => token API URL
-    string public defaultURIStart = &quot;https://api.mokens.io/moken/&quot;;
-    string public defaultURIEnd = &quot;.json&quot;;
+    string public defaultURIStart = "https://api.mokens.io/moken/";
+    string public defaultURIEnd = ".json";
 
     // the block number Mokens is deployed in
     uint256 public blockNum;
@@ -170,7 +170,7 @@ contract AbstractMokens {
     }
 
     modifier onlyOwner() {
-        require(msg.sender == owner, &quot;Must be the contract owner.&quot;);
+        require(msg.sender == owner, "Must be the contract owner.");
         _;
     }
 
@@ -195,7 +195,7 @@ contract AbstractMokens {
     // Case 9: Token owner is ERC721 token owned by user
     function rootOwnerOf(uint256 _tokenId) public view returns (bytes32 rootOwner) {
         address rootOwnerAddress = address(mokens[_tokenId].data);
-        require(rootOwnerAddress != address(0), &quot;tokenId not found.&quot;);
+        require(rootOwnerAddress != address(0), "tokenId not found.");
         uint256 parentTokenId;
         bool isParent;
 
@@ -263,7 +263,7 @@ contract AbstractMokens {
             else {
                 // token owner is ERC721
                 address childContract = rootOwnerAddress;
-                //0x6352211e == &quot;ownerOf(uint256)&quot;
+                //0x6352211e == "ownerOf(uint256)"
                 calldata = abi.encodeWithSelector(0x6352211e, parentTokenId);
                 assembly {
                     callSuccess := staticcall(gas, rootOwnerAddress, add(calldata, 0x20), mload(calldata), calldata, 0x20)
@@ -271,7 +271,7 @@ contract AbstractMokens {
                         rootOwnerAddress := mload(calldata)
                     }
                 }
-                require(callSuccess, &quot;Call to ownerOf failed&quot;);
+                require(callSuccess, "Call to ownerOf failed");
 
                 // 0xed81cdda == rootOwnerOfChild(address,uint256)
                 calldata = abi.encodeWithSelector(0xed81cdda, childContract, parentTokenId);
@@ -300,7 +300,7 @@ contract AbstractMokens {
         uint256 tokenId;
         if (_childContract != address(0)) {
             tokenId = childTokenOwner[_childContract][_childTokenId];
-            require(tokenId != 0, &quot;Child token does not exist&quot;);
+            require(tokenId != 0, "Child token does not exist");
             tokenId--;
         }
         else {
@@ -324,9 +324,9 @@ contract AbstractMokens {
                 }
             }
             if(callSuccess == true) {
-                require(tokenOwner >> 224 != ERC998_MAGIC_VALUE, &quot;Token is child of top down composable&quot;);
+                require(tokenOwner >> 224 != ERC998_MAGIC_VALUE, "Token is child of top down composable");
             }
-            require(tokenOwnerToOperators[_from][msg.sender] || approvedAddress == msg.sender, &quot;msg.sender not _from/operator/approved.&quot;);
+            require(tokenOwnerToOperators[_from][msg.sender] || approvedAddress == msg.sender, "msg.sender not _from/operator/approved.");
         }
         if (approvedAddress != address(0)) {
             delete rootOwnerAndTokenIdToApprovedAddress[_from][_tokenId];
@@ -353,7 +353,7 @@ contract AbstractMokens {
         //adding the tokenId
         uint256 ownedTokensIndex = ownedTokens[_to].length;
         // prevents 16 bit overflow
-        require(ownedTokensIndex < MAX_OWNER_MOKENS, &quot;A token owner address cannot possess more than 65,536 mokens.&quot;);
+        require(ownedTokensIndex < MAX_OWNER_MOKENS, "A token owner address cannot possess more than 65,536 mokens.");
         mokens[_tokenId].data = data & 0xffffffffffffffffffff00000000000000000000000000000000000000000000 | ownedTokensIndex << 160 | uint256(_to);
         ownedTokens[_to].push(uint32(_tokenId));
 
@@ -371,8 +371,8 @@ contract Mokens is AbstractMokens {
         delegate = _delegate;
         blockNum = block.number;
         owner = msg.sender;
-        bytes32 startingEra = &quot;Genesis&quot;;
-        bytes memory calldata = abi.encodeWithSignature(&quot;startNextEra(bytes32)&quot;, startingEra);
+        bytes32 startingEra = "Genesis";
+        bytes memory calldata = abi.encodeWithSignature("startNextEra(bytes32)", startingEra);
         bool callSuccess;
         assembly {
             callSuccess := delegatecall(gas, _delegate, add(calldata, 0x20), mload(calldata), 0, 0)
@@ -421,19 +421,19 @@ contract Mokens is AbstractMokens {
     /* ERC721Impl  & ERC998 Authentication ****************************************/
 
     function balanceOf(address _tokenOwner) external view returns (uint256 totalMokensOwned) {
-        require(_tokenOwner != address(0), &quot;Moken owner cannot be the 0 address.&quot;);
+        require(_tokenOwner != address(0), "Moken owner cannot be the 0 address.");
         return ownedTokens[_tokenOwner].length;
     }
 
     function ownerOf(uint256 _tokenId) external view returns (address tokenOwner) {
         tokenOwner = address(mokens[_tokenId].data);
-        require(tokenOwner != address(0), &quot;The tokenId does not exist.&quot;);
+        require(tokenOwner != address(0), "The tokenId does not exist.");
         return tokenOwner;
     }
 
     function approve(address _approved, uint256 _tokenId) external {
         address rootOwner = address(rootOwnerOf(_tokenId));
-        require(rootOwner == msg.sender || tokenOwnerToOperators[rootOwner][msg.sender], &quot;Must be rootOwner or operator.&quot;);
+        require(rootOwner == msg.sender || tokenOwnerToOperators[rootOwner][msg.sender], "Must be rootOwner or operator.");
         rootOwnerAndTokenIdToApprovedAddress[rootOwner][_tokenId] = _approved;
         emit Approval(rootOwner, _approved, _tokenId);
     }
@@ -445,7 +445,7 @@ contract Mokens is AbstractMokens {
 
 
     function setApprovalForAll(address _operator, bool _approved) external {
-        require(_operator != address(0), &quot;Operator cannot be 0 address.&quot;);
+        require(_operator != address(0), "Operator cannot be 0 address.");
         tokenOwnerToOperators[msg.sender][_operator] = _approved;
         emit ApprovalForAll(msg.sender, _operator, _approved);
     }
@@ -455,42 +455,42 @@ contract Mokens is AbstractMokens {
     }
 
     function transferFrom(address _from, address _to, uint256 _tokenId) external {
-        require(_from != address(0), &quot;_from cannot be the 0 address.&quot;);
-        require(_to != address(0), &quot;_to cannot be the 0 address.&quot;);
+        require(_from != address(0), "_from cannot be the 0 address.");
+        require(_to != address(0), "_to cannot be the 0 address.");
         uint256 data = mokens[_tokenId].data;
-        require(address(data) == _from, &quot;The tokenId is not owned by _from.&quot;);
-        require(_to != address(this), &quot;Cannot transfer to this contract.&quot;);
-        require(mokens[_tokenId].parentTokenId == 0, &quot;Cannot transfer from an address when owned by a token.&quot;);
+        require(address(data) == _from, "The tokenId is not owned by _from.");
+        require(_to != address(this), "Cannot transfer to this contract.");
+        require(mokens[_tokenId].parentTokenId == 0, "Cannot transfer from an address when owned by a token.");
         childApproved(_from, _tokenId);
         _transferFrom(data, _to, _tokenId);
     }
 
     function safeTransferFrom(address _from, address _to, uint256 _tokenId) external {
-        require(_from != address(0), &quot;_from cannot be the 0 address.&quot;);
-        require(_to != address(0), &quot;_to cannot be the 0 address.&quot;);
+        require(_from != address(0), "_from cannot be the 0 address.");
+        require(_to != address(0), "_to cannot be the 0 address.");
         uint256 data = mokens[_tokenId].data;
-        require(address(data) == _from, &quot;The tokenId is not owned by _from.&quot;);
-        require(mokens[_tokenId].parentTokenId == 0, &quot;Cannot transfer from an address when owned by a token.&quot;);
+        require(address(data) == _from, "The tokenId is not owned by _from.");
+        require(mokens[_tokenId].parentTokenId == 0, "Cannot transfer from an address when owned by a token.");
         childApproved(_from, _tokenId);
         _transferFrom(data, _to, _tokenId);
         if (isContract(_to)) {
-            bytes4 retval = ERC721TokenReceiver(_to).onERC721Received(msg.sender, _from, _tokenId, &quot;&quot;);
-            require(retval == ERC721_RECEIVED_NEW, &quot;_to contract cannot receive ERC721 tokens.&quot;);
+            bytes4 retval = ERC721TokenReceiver(_to).onERC721Received(msg.sender, _from, _tokenId, "");
+            require(retval == ERC721_RECEIVED_NEW, "_to contract cannot receive ERC721 tokens.");
         }
 
     }
 
     function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes _data) external {
-        require(_from != address(0), &quot;_from cannot be the 0 address.&quot;);
-        require(_to != address(0), &quot;_to cannot be the 0 address.&quot;);
+        require(_from != address(0), "_from cannot be the 0 address.");
+        require(_to != address(0), "_to cannot be the 0 address.");
         uint256 data = mokens[_tokenId].data;
-        require(address(data) == _from, &quot;The tokenId is not owned by _from.&quot;);
-        require(mokens[_tokenId].parentTokenId == 0, &quot;Cannot transfer from an address when owned by a token.&quot;);
+        require(address(data) == _from, "The tokenId is not owned by _from.");
+        require(mokens[_tokenId].parentTokenId == 0, "Cannot transfer from an address when owned by a token.");
         childApproved(_from, _tokenId);
         _transferFrom(data, _to, _tokenId);
 
         if (_to == address(this)) {
-            require(_data.length > 0, &quot;_data must contain the uint256 tokenId to transfer the token to.&quot;);
+            require(_data.length > 0, "_data must contain the uint256 tokenId to transfer the token to.");
             uint256 toTokenId;
             assembly {toTokenId := calldataload(164)}
             if (_data.length < 32) {
@@ -501,7 +501,7 @@ contract Mokens is AbstractMokens {
         else {
             if (isContract(_to)) {
                 bytes4 retval = ERC721TokenReceiver(_to).onERC721Received(msg.sender, _from, _tokenId, _data);
-                require(retval == ERC721_RECEIVED_NEW, &quot;_to contract cannot receive ERC721 tokens.&quot;);
+                require(retval == ERC721_RECEIVED_NEW, "_to contract cannot receive ERC721 tokens.");
             }
         }
 
@@ -520,7 +520,7 @@ contract Mokens is AbstractMokens {
     }
 
     function tokenOfOwnerByIndex(address _tokenOwner, uint256 _index) external view returns (uint256 tokenId) {
-        require(_index < ownedTokens[_tokenOwner].length, &quot;_tokenOwner does not own a moken at this index.&quot;);
+        require(_index < ownedTokens[_tokenOwner].length, "_tokenOwner does not own a moken at this index.");
         return ownedTokens[_tokenOwner][_index];
     }
 
@@ -529,7 +529,7 @@ contract Mokens is AbstractMokens {
     }
 
     function tokenByIndex(uint256 _index) external view returns (uint256 tokenId) {
-        require(_index < mokensLength, &quot;A tokenId at index does not exist.&quot;);
+        require(_index < mokensLength, "A tokenId at index does not exist.");
         return _index;
     }
     /******************************************************************************/
@@ -538,11 +538,11 @@ contract Mokens is AbstractMokens {
     /* ERC721MetadataImpl **************************************************/
 
     function name() external pure returns (string) {
-        return &quot;Mokens&quot;;
+        return "Mokens";
     }
 
     function symbol() external pure returns (string) {
-        return &quot;MKN&quot;;
+        return "MKN";
     }
 
     /******************************************************************************/
@@ -552,14 +552,14 @@ contract Mokens is AbstractMokens {
 
 
     function eraByIndex(uint256 _index) external view returns (bytes32 era) {
-        require(_index < eraLength, &quot;No era at this index.&quot;);
+        require(_index < eraLength, "No era at this index.");
         return eras[_index];
     }
 
 
     function eraByName(bytes32 _eraName) external view returns (uint256 indexOfEra) {
         uint256 index = eraIndex[_eraName];
-        require(index != 0, &quot;No era exists with this name.&quot;);
+        require(index != 0, "No era exists with this name.");
         return index - 1;
     }
 
@@ -610,11 +610,11 @@ contract Mokens is AbstractMokens {
 
     function mint(address _tokenOwner, string _mokenName, bytes32 _linkHash) external payable returns (uint256 tokenId) {
 
-        require(_tokenOwner != address(0), &quot;Owner cannot be the 0 address.&quot;);
+        require(_tokenOwner != address(0), "Owner cannot be the 0 address.");
 
         tokenId = mokensLength++;
         // prevents 32 bit overflow
-        require(tokenId < MAX_MOKENS, &quot;Only 4,294,967,296 mokens can be created.&quot;);
+        require(tokenId < MAX_MOKENS, "Only 4,294,967,296 mokens can be created.");
         uint256 mintStepPrice_ = mintStepPrice;
         uint256 mintPriceBuffer_ = mintPriceBuffer;
 
@@ -622,17 +622,17 @@ contract Mokens is AbstractMokens {
         uint256 currentMintPrice = (tokenId * mintStepPrice_) - mintPriceOffset;
         uint256 pricePaid = currentMintPrice;
         if (msg.value < currentMintPrice) {
-            require(mintPriceBuffer_ > currentMintPrice || msg.value > currentMintPrice - mintPriceBuffer_, &quot;Paid ether is lower than mint price.&quot;);
+            require(mintPriceBuffer_ > currentMintPrice || msg.value > currentMintPrice - mintPriceBuffer_, "Paid ether is lower than mint price.");
             pricePaid = msg.value;
         }
 
         string memory lowerMokenName = validateAndLower(_mokenName);
-        require(tokenByName_[lowerMokenName] == 0, &quot;Moken name already exists.&quot;);
+        require(tokenByName_[lowerMokenName] == 0, "Moken name already exists.");
 
         uint256 eraIndex_ = eraLength - 1;
         uint256 ownedTokensIndex = ownedTokens[_tokenOwner].length;
         // prevents 16 bit overflow
-        require(ownedTokensIndex < MAX_OWNER_MOKENS, &quot;An single owner address cannot possess more than 65,536 mokens.&quot;);
+        require(ownedTokensIndex < MAX_OWNER_MOKENS, "An single owner address cannot possess more than 65,536 mokens.");
 
         // adding the current era index, ownedTokenIndex and owner address to data
         // this saves gas for each mint.
@@ -648,7 +648,7 @@ contract Mokens is AbstractMokens {
 
         //emit events
         emit Transfer(address(0), _tokenOwner, tokenId);
-        emit Mint(this, _tokenOwner, eras[eraIndex_], _mokenName, bytes32(data), tokenId, &quot;Ether&quot;, pricePaid);
+        emit Mint(this, _tokenOwner, eras[eraIndex_], _mokenName, bytes32(data), tokenId, "Ether", pricePaid);
         emit MintPriceChange(currentMintPrice + mintStepPrice_);
 
         //send minter the change if any
@@ -668,7 +668,7 @@ contract Mokens is AbstractMokens {
     }
 
     function mintContractByIndex(uint256 index) external view returns (address contract_) {
-        require(index < mintContracts.length, &quot;Contract index does not exist.&quot;);
+        require(index < mintContracts.length, "Contract index does not exist.");
         return mintContracts[index];
     }
 
@@ -676,21 +676,21 @@ contract Mokens is AbstractMokens {
     // enables the ability to accept other currency/tokens for payment.
     function contractMint(address _tokenOwner, string _mokenName, bytes32 _linkHash, bytes32 _currencyName, uint256 _pricePaid) external returns (uint256 tokenId) {
 
-        require(_tokenOwner != address(0), &quot;Token owner cannot be the 0 address.&quot;);
-        require(isMintContract(msg.sender), &quot;Not an approved mint contract.&quot;);
+        require(_tokenOwner != address(0), "Token owner cannot be the 0 address.");
+        require(isMintContract(msg.sender), "Not an approved mint contract.");
 
         tokenId = mokensLength++;
         uint256 mokensLength_ = tokenId + 1;
         // prevents 32 bit overflow
-        require(tokenId < MAX_MOKENS, &quot;Only 4,294,967,296 mokens can be created.&quot;);
+        require(tokenId < MAX_MOKENS, "Only 4,294,967,296 mokens can be created.");
 
         string memory lowerMokenName = validateAndLower(_mokenName);
-        require(tokenByName_[lowerMokenName] == 0, &quot;Moken name already exists.&quot;);
+        require(tokenByName_[lowerMokenName] == 0, "Moken name already exists.");
 
         uint256 eraIndex_ = eraLength - 1;
         uint256 ownedTokensIndex = ownedTokens[_tokenOwner].length;
         // prevents 16 bit overflow
-        require(ownedTokensIndex < MAX_OWNER_MOKENS, &quot;An single token owner address cannot possess more than 65,536 mokens.&quot;);
+        require(ownedTokensIndex < MAX_OWNER_MOKENS, "An single token owner address cannot possess more than 65,536 mokens.");
 
         // adding the current era index, ownedTokenIndex and owner address to data
         // this saves gas for each mint.
@@ -765,13 +765,13 @@ contract Mokens is AbstractMokens {
 
     function mokenId(string _mokenName) external view returns (uint256 tokenId) {
         tokenId = tokenByName_[validateAndLower(_mokenName)];
-        require(tokenId != 0, &quot;No moken exists with this name.&quot;);
+        require(tokenId != 0, "No moken exists with this name.");
         return tokenId - 1;
     }
 
     function mokenData(uint256 _tokenId) external view returns (bytes32 data) {
         data = bytes32(mokens[_tokenId].data);
-        require(data != 0, &quot;The tokenId does not exist.&quot;);
+        require(data != 0, "The tokenId does not exist.");
         return data;
     }
 
@@ -785,14 +785,14 @@ contract Mokens is AbstractMokens {
 
     function mokenEra(uint256 _tokenId) external view returns (bytes32 era) {
         uint256 data = mokens[_tokenId].data;
-        require(data != 0, &quot;The tokenId does not exist.&quot;);
+        require(data != 0, "The tokenId does not exist.");
         return eraFromMokenData(data);
     }
 
     function moken(uint256 _tokenId) external view
     returns (string memory mokenName, bytes32 era, bytes32 data, address tokenOwner) {
         data = bytes32(mokens[_tokenId].data);
-        require(data != 0, &quot;The tokenId does not exist.&quot;);
+        require(data != 0, "The tokenId does not exist.");
         return (
         mokens[_tokenId].name,
         eraFromMokenData(data),
@@ -804,9 +804,9 @@ contract Mokens is AbstractMokens {
     function mokenBytes32(uint256 _tokenId) external view
     returns (bytes32 mokenNameBytes32, bytes32 era, bytes32 data, address tokenOwner) {
         data = bytes32(mokens[_tokenId].data);
-        require(data != 0, &quot;The tokenId does not exist.&quot;);
+        require(data != 0, "The tokenId does not exist.");
         bytes memory mokenNameBytes = bytes(mokens[_tokenId].name);
-        require(mokenNameBytes.length != 0, &quot;The tokenId does not exist.&quot;);
+        require(mokenNameBytes.length != 0, "The tokenId does not exist.");
         assembly {
             mokenNameBytes32 := mload(add(mokenNameBytes, 32))
         }
@@ -822,7 +822,7 @@ contract Mokens is AbstractMokens {
     function mokenNoName(uint256 _tokenId) external view
     returns (bytes32 era, bytes32 data, address tokenOwner) {
         data = bytes32(mokens[_tokenId].data);
-        require(data != 0, &quot;The tokenId does not exist.&quot;);
+        require(data != 0, "The tokenId does not exist.");
         return (
         eraFromMokenData(data),
         data,
@@ -832,13 +832,13 @@ contract Mokens is AbstractMokens {
 
     function mokenName(uint256 _tokenId) external view returns (string memory mokenName_) {
         mokenName_ = mokens[_tokenId].name;
-        require(bytes(mokenName_).length != 0, &quot;The tokenId does not exist.&quot;);
+        require(bytes(mokenName_).length != 0, "The tokenId does not exist.");
         return mokenName_;
     }
 
     function mokenNameBytes32(uint256 _tokenId) external view returns (bytes32 mokenNameBytes32_) {
         bytes memory mokenNameBytes = bytes(mokens[_tokenId].name);
-        require(mokenNameBytes.length != 0, &quot;The tokenId does not exist.&quot;);
+        require(mokenNameBytes.length != 0, "The tokenId does not exist.");
         assembly {
             mokenNameBytes32_ := mload(add(mokenNameBytes, 32))
         }
@@ -865,8 +865,8 @@ contract Mokens is AbstractMokens {
     //ERC721 top down
 
     function receiveChild(address _from, uint256 _toTokenId, address _childContract, uint256 _childTokenId) internal {
-        require(address(mokens[_toTokenId].data) != address(0), &quot;_tokenId does not exist.&quot;);
-        require(childTokenOwner[_childContract][_childTokenId] == 0, &quot;Child token already received.&quot;);
+        require(address(mokens[_toTokenId].data) != address(0), "_tokenId does not exist.");
+        require(childTokenOwner[_childContract][_childTokenId] == 0, "Child token already received.");
         uint256 childTokensLength = childTokens[_toTokenId][_childContract].length;
         if (childTokensLength == 0) {
             childContractIndex[_toTokenId][_childContract] = childContracts[_toTokenId].length;
@@ -883,12 +883,12 @@ contract Mokens is AbstractMokens {
         receiveChild(_from, _toTokenId, _childContract, _childTokenId);
         require(_from == msg.sender ||
         ERC721(_childContract).getApproved(_childTokenId) == msg.sender ||
-        ERC721(_childContract).isApprovedForAll(_from, msg.sender), &quot;msg.sender is not owner/operator/approved for child token.&quot;);
+        ERC721(_childContract).isApprovedForAll(_from, msg.sender), "msg.sender is not owner/operator/approved for child token.");
         ERC721(_childContract).transferFrom(_from, this, _childTokenId);
     }
 
     function onERC721Received(address _from, uint256 _childTokenId, bytes _data) external returns (bytes4) {
-        require(_data.length > 0, &quot;_data must contain the uint256 tokenId to transfer the child token to.&quot;);
+        require(_data.length > 0, "_data must contain the uint256 tokenId to transfer the child token to.");
         // convert up to 32 bytes of_data to uint256, owner nft tokenId passed as uint in bytes
         uint256 toTokenId;
         assembly {toTokenId := calldataload(132)}
@@ -896,13 +896,13 @@ contract Mokens is AbstractMokens {
             toTokenId = toTokenId >> 256 - _data.length * 8;
         }
         receiveChild(_from, toTokenId, msg.sender, _childTokenId);
-        require(ERC721(msg.sender).ownerOf(_childTokenId) != address(0), &quot;Child token not owned.&quot;);
+        require(ERC721(msg.sender).ownerOf(_childTokenId) != address(0), "Child token not owned.");
         return ERC721_RECEIVED_OLD;
     }
 
 
     function onERC721Received(address _operator, address _from, uint256 _childTokenId, bytes _data) external returns (bytes4) {
-        require(_data.length > 0, &quot;_data must contain the uint256 tokenId to transfer the child token to.&quot;);
+        require(_data.length > 0, "_data must contain the uint256 tokenId to transfer the child token to.");
         // convert up to 32 bytes of_data to uint256, owner nft tokenId passed as uint in bytes
         uint256 toTokenId;
         assembly {toTokenId := calldataload(164)}
@@ -910,13 +910,13 @@ contract Mokens is AbstractMokens {
             toTokenId = toTokenId >> 256 - _data.length * 8;
         }
         receiveChild(_from, toTokenId, msg.sender, _childTokenId);
-        require(ERC721(msg.sender).ownerOf(_childTokenId) != address(0), &quot;Child token not owned.&quot;);
+        require(ERC721(msg.sender).ownerOf(_childTokenId) != address(0), "Child token not owned.");
         return ERC721_RECEIVED_NEW;
     }
 
     function ownerOfChild(address _childContract, uint256 _childTokenId) external view returns (bytes32 parentTokenOwner, uint256 parentTokenId) {
         parentTokenId = childTokenOwner[_childContract][_childTokenId];
-        require(parentTokenId != 0, &quot;ERC721 token is not a child in this contract.&quot;);
+        require(parentTokenId != 0, "ERC721 token is not a child in this contract.");
         parentTokenId--;
         return (ERC998_MAGIC_VALUE << 224 | bytes32(address(mokens[parentTokenId].data)), parentTokenId);
     }
@@ -930,7 +930,7 @@ contract Mokens is AbstractMokens {
     }
 
     function childContractByIndex(uint256 _tokenId, uint256 _index) external view returns (address childContract) {
-        require(_index < childContracts[_tokenId].length, &quot;Contract address does not exist for this token and index.&quot;);
+        require(_index < childContracts[_tokenId].length, "Contract address does not exist for this token and index.");
         return childContracts[_tokenId][_index];
     }
 
@@ -939,7 +939,7 @@ contract Mokens is AbstractMokens {
     }
 
     function childTokenByIndex(uint256 _tokenId, address _childContract, uint256 _index) external view returns (uint256 childTokenId) {
-        require(_index < childTokens[_tokenId][_childContract].length, &quot;Token does not own a child token at contract address and index.&quot;);
+        require(_index < childTokens[_tokenId][_childContract].length, "Token does not own a child token at contract address and index.");
         return childTokens[_tokenId][_childContract][_index];
     }
 
@@ -951,7 +951,7 @@ contract Mokens is AbstractMokens {
     }
 
     function erc20ContractByIndex(uint256 _tokenId, uint256 _index) external view returns (address) {
-        require(_index < erc20Contracts[_tokenId].length, &quot;Contract address does not exist for this token and index.&quot;);
+        require(_index < erc20Contracts[_tokenId].length, "Contract address does not exist for this token and index.");
         return erc20Contracts[_tokenId][_index];
     }
 
@@ -964,7 +964,7 @@ contract Mokens is AbstractMokens {
 
     function tokenOwnerOf(uint256 _tokenId) external view returns (bytes32 tokenOwner, uint256 parentTokenId, bool isParent) {
         address tokenOwnerAddress = address(mokens[_tokenId].data);
-        require(tokenOwnerAddress != address(0), &quot;tokenId not found.&quot;);
+        require(tokenOwnerAddress != address(0), "tokenId not found.");
         parentTokenId = mokens[_tokenId].parentTokenId;
         isParent = parentTokenId > 0;
         if (isParent) {
@@ -979,7 +979,7 @@ contract Mokens is AbstractMokens {
     }
 
     function childTokenByIndex(address _parentContract, uint256 _parentTokenId, uint256 _index) public view returns (uint256) {
-        require(parentToChildTokenIds[_parentContract][_parentTokenId].length > _index, &quot;Child not found at index.&quot;);
+        require(parentToChildTokenIds[_parentContract][_parentTokenId].length > _index, "Child not found at index.");
         return parentToChildTokenIds[_parentContract][_parentTokenId][_index];
     }
 }

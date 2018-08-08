@@ -175,8 +175,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract InternationalModelChain is StandardToken {
     using SafeMath for uint256;
-    string public name = &quot;InternationalModelChain&quot;;
-    string public symbol = &quot;IMC&quot;;
+    string public name = "InternationalModelChain";
+    string public symbol = "IMC";
     uint public decimals = 6;
 
     address public address1 = 0x4327bb9182756E4Bc372DAf81906cb6F50282B5D;

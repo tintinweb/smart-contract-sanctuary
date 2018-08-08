@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -319,19 +319,19 @@ contract Atonomi is Pausable, TokenDestructible {
     ///
     /// @notice only manufacturers can call, otherwise throw
     modifier onlyManufacturer() {
-        require(network[msg.sender].isManufacturer, &quot;must be a manufacturer&quot;);
+        require(network[msg.sender].isManufacturer, "must be a manufacturer");
         _;
     }
 
     /// @notice only IRNAdmins or Owner can call, otherwise throw
     modifier onlyIRNorOwner() {
-        require(msg.sender == owner || network[msg.sender].isIRNAdmin, &quot;must be owner or an irn admin&quot;);
+        require(msg.sender == owner || network[msg.sender].isIRNAdmin, "must be owner or an irn admin");
         _;
     }
 
     /// @notice only IRN Nodes can call, otherwise throw
     modifier onlyIRNNode() {
-        require(network[msg.sender].isIRNNode, &quot;must be an irn node&quot;);
+        require(network[msg.sender].isIRNNode, "must be an irn node");
         _;
     }
 
@@ -341,8 +341,8 @@ contract Atonomi is Pausable, TokenDestructible {
     constructor (
         address _token,
         address _settings) public {
-        require(_token != address(0), &quot;token address cannot be 0x0&quot;);
-        require(_settings != address(0), &quot;settings address cannot be 0x0&quot;);
+        require(_token != address(0), "token address cannot be 0x0");
+        require(_settings != address(0), "settings address cannot be 0x0");
         token = ERC20Interface(_token);
         settings = SettingsInterface(_settings);
     }
@@ -490,7 +490,7 @@ contract Atonomi is Pausable, TokenDestructible {
             d.manufacturerId,
             _deviceType);
         _depositTokens(msg.sender, registrationFee);
-        require(token.transferFrom(msg.sender, address(this), registrationFee), &quot;transferFrom failed&quot;);
+        require(token.transferFrom(msg.sender, address(this), registrationFee), "transferFrom failed");
         return true;
     }
 
@@ -506,9 +506,9 @@ contract Atonomi is Pausable, TokenDestructible {
         Device memory d = _activateDevice(_deviceId);
         emit DeviceActivated(msg.sender, activationFee, _deviceId, d.manufacturerId, d.deviceType);
         address manufacturer = manufacturerRewards[d.manufacturerId];
-        require(manufacturer != address(this), &quot;manufacturer is unknown&quot;);
+        require(manufacturer != address(this), "manufacturer is unknown");
         _depositTokens(manufacturer, activationFee);
-        require(token.transferFrom(msg.sender, address(this), activationFee), &quot;transferFrom failed&quot;);
+        require(token.transferFrom(msg.sender, address(this), activationFee), "transferFrom failed");
         return true;
     }
 
@@ -539,7 +539,7 @@ contract Atonomi is Pausable, TokenDestructible {
 
         uint256 fee = registrationFee.add(activationFee);
         _depositTokens(msg.sender, fee);
-        require(token.transferFrom(msg.sender, address(this), fee), &quot;transferFrom failed&quot;);
+        require(token.transferFrom(msg.sender, address(this), fee), "transferFrom failed");
         return true;
     }
 
@@ -562,8 +562,8 @@ contract Atonomi is Pausable, TokenDestructible {
         Device memory d = _updateReputationScore(_deviceId, _reputationScore);
 
         address _manufacturerWallet = manufacturerRewards[d.manufacturerId];
-        require(_manufacturerWallet != address(0), &quot;_manufacturerWallet cannot be 0x0&quot;);
-        require(_manufacturerWallet != msg.sender, &quot;manufacturers cannot collect the full reward&quot;);
+        require(_manufacturerWallet != address(0), "_manufacturerWallet cannot be 0x0");
+        require(_manufacturerWallet != msg.sender, "manufacturers cannot collect the full reward");
 
         uint256 irnReward;
         uint256 manufacturerReward;
@@ -634,14 +634,14 @@ contract Atonomi is Pausable, TokenDestructible {
         bytes32[] _devicePublicKeys)
         public onlyManufacturer whenNotPaused returns (bool)
     {
-        require(_deviceIdHashes.length > 0, &quot;at least one device is required&quot;);
+        require(_deviceIdHashes.length > 0, "at least one device is required");
         require(
             _deviceIdHashes.length == _deviceTypes.length,
-            &quot;device type array needs to be same size as devices&quot;
+            "device type array needs to be same size as devices"
         );
         require(
             _deviceIdHashes.length == _devicePublicKeys.length,
-            &quot;device public key array needs to be same size as devices&quot;
+            "device public key array needs to be same size as devices"
         );
 
         uint256 runningBalance = 0;
@@ -657,7 +657,7 @@ contract Atonomi is Pausable, TokenDestructible {
         }
 
         _depositTokens(msg.sender, runningBalance);
-        require(token.transferFrom(msg.sender, address(this), runningBalance), &quot;transferFrom failed&quot;);
+        require(token.transferFrom(msg.sender, address(this), runningBalance), "transferFrom failed");
         return true;
     }
 
@@ -681,10 +681,10 @@ contract Atonomi is Pausable, TokenDestructible {
         public onlyIRNorOwner returns(bool)
     {
         NetworkMember storage m = network[_member];
-        require(!m.isIRNAdmin, &quot;already an irn admin&quot;);
-        require(!m.isManufacturer, &quot;already a manufacturer&quot;);
-        require(!m.isIRNNode, &quot;already an irn node&quot;);
-        require(m.memberId == 0, &quot;already assigned a member id&quot;);
+        require(!m.isIRNAdmin, "already an irn admin");
+        require(!m.isManufacturer, "already a manufacturer");
+        require(!m.isIRNNode, "already an irn node");
+        require(m.memberId == 0, "already assigned a member id");
 
         m.isIRNAdmin = _isIRNAdmin;
         m.isManufacturer = _isManufacturer;
@@ -692,10 +692,10 @@ contract Atonomi is Pausable, TokenDestructible {
         m.memberId = _memberId;
 
         if (m.isManufacturer) {
-            require(_memberId != 0, &quot;manufacturer id is required&quot;);
+            require(_memberId != 0, "manufacturer id is required");
 
             // keep lookup for rewards in sync
-            require(manufacturerRewards[m.memberId] == address(0), &quot;manufacturer is already assigned&quot;);
+            require(manufacturerRewards[m.memberId] == address(0), "manufacturer is already assigned");
             manufacturerRewards[m.memberId] = _member;
 
             // set reputation reward if token pool doesnt exist
@@ -739,16 +739,16 @@ contract Atonomi is Pausable, TokenDestructible {
     /// @return true if successful, otherwise false
     /// @dev msg.sender is expected to be original manufacturer account
     function changeManufacturerWallet(address _new) public onlyManufacturer returns (bool) {
-        require(_new != address(0), &quot;new address cannot be 0x0&quot;);
+        require(_new != address(0), "new address cannot be 0x0");
 
         NetworkMember memory old = network[msg.sender];
-        require(old.isManufacturer && old.memberId != 0, &quot;must be a manufacturer&quot;);
+        require(old.isManufacturer && old.memberId != 0, "must be a manufacturer");
 
         // copy permissions
-        require(!network[_new].isIRNAdmin, &quot;already an irn admin&quot;);
-        require(!network[_new].isManufacturer, &quot;already a manufacturer&quot;);
-        require(!network[_new].isIRNNode, &quot;already an irn node&quot;);
-        require(network[_new].memberId == 0, &quot;memberId already exists&quot;);
+        require(!network[_new].isIRNAdmin, "already an irn admin");
+        require(!network[_new].isManufacturer, "already a manufacturer");
+        require(!network[_new].isIRNNode, "already an irn node");
+        require(network[_new].memberId == 0, "memberId already exists");
         network[_new] = NetworkMember(
             old.isIRNAdmin,
             old.isManufacturer,
@@ -757,7 +757,7 @@ contract Atonomi is Pausable, TokenDestructible {
         );
 
         // transfer balance from old pool to the new pool
-        require(pools[_new].balance == 0 && pools[_new].rewardAmount == 0, &quot;new token pool already exists&quot;);
+        require(pools[_new].balance == 0 && pools[_new].rewardAmount == 0, "new token pool already exists");
         pools[_new].balance = pools[msg.sender].balance;
         pools[_new].rewardAmount = pools[msg.sender].rewardAmount;
         delete pools[msg.sender];
@@ -777,10 +777,10 @@ contract Atonomi is Pausable, TokenDestructible {
     /// @return true if successful, otherwise false
     /// @dev msg.sender expected to be manufacturer
     function setTokenPoolReward(uint256 newReward) public onlyManufacturer returns (bool) {
-        require(newReward != 0, &quot;newReward is required&quot;);
+        require(newReward != 0, "newReward is required");
 
         TokenPool storage p = pools[msg.sender];
-        require(p.rewardAmount != newReward, &quot;newReward should be different&quot;);
+        require(p.rewardAmount != newReward, "newReward should be different");
 
         p.rewardAmount = newReward;
         emit TokenPoolRewardUpdated(msg.sender, newReward);
@@ -791,8 +791,8 @@ contract Atonomi is Pausable, TokenDestructible {
     /// @param manufacturerId of the manufacturer to receive the tokens
     /// @param amount of tokens to deposit
     function depositTokens(bytes32 manufacturerId, uint256 amount) public returns (bool) {
-        require(manufacturerId != 0, &quot;manufacturerId is required&quot;);
-        require(amount > 0, &quot;amount is required&quot;);
+        require(manufacturerId != 0, "manufacturerId is required");
+        require(amount > 0, "amount is required");
 
         address manufacturer = manufacturerRewards[manufacturerId];
         require(manufacturer != address(0));
@@ -809,12 +809,12 @@ contract Atonomi is Pausable, TokenDestructible {
     /// @dev owner has ability to pause this operation
     function withdrawTokens() public whenNotPaused returns (bool) {
         uint256 amount = rewards[msg.sender];
-        require(amount > 0, &quot;amount is zero&quot;);
+        require(amount > 0, "amount is zero");
 
         rewards[msg.sender] = 0;
         emit TokensWithdrawn(msg.sender, amount);
 
-        require(token.transfer(msg.sender, amount), &quot;token transfer failed&quot;);
+        require(token.transfer(msg.sender, amount), "token transfer failed");
         return true;
     }
 
@@ -826,10 +826,10 @@ contract Atonomi is Pausable, TokenDestructible {
     function setDefaultReputationForManufacturer(
         bytes32 _manufacturerId,
         bytes32 _newDefaultScore) public onlyOwner returns (bool) {
-        require(_manufacturerId != 0, &quot;_manufacturerId is required&quot;);
+        require(_manufacturerId != 0, "_manufacturerId is required");
         require(
             _newDefaultScore != defaultManufacturerReputations[_manufacturerId],
-            &quot;_newDefaultScore should be different&quot;
+            "_newDefaultScore should be different"
         );
 
         defaultManufacturerReputations[_manufacturerId] = _newDefaultScore;
@@ -847,7 +847,7 @@ contract Atonomi is Pausable, TokenDestructible {
 
     /// @dev track balances of any rewards going out of the token pool
     function _distributeRewards(address _manufacturer, address _owner, uint256 _amount) internal {
-        require(_amount > 0, &quot;_amount is required&quot;);
+        require(_amount > 0, "_amount is required");
         pools[_manufacturer].balance = pools[_manufacturer].balance.sub(_amount);
         rewards[_owner] = rewards[_owner].add(_amount);
     }
@@ -859,17 +859,17 @@ contract Atonomi is Pausable, TokenDestructible {
         bytes32 _deviceIdHash,
         bytes32 _deviceType,
         bytes32 _devicePublicKey) internal returns (Device) {
-        require(_manufacturer != address(0), &quot;manufacturer is required&quot;);
-        require(_deviceIdHash != 0, &quot;device id hash is required&quot;);
-        require(_deviceType != 0, &quot;device type is required&quot;);
-        require(_devicePublicKey != 0, &quot;device public key is required&quot;);
+        require(_manufacturer != address(0), "manufacturer is required");
+        require(_deviceIdHash != 0, "device id hash is required");
+        require(_deviceType != 0, "device type is required");
+        require(_devicePublicKey != 0, "device public key is required");
 
         Device storage d = devices[_deviceIdHash];
-        require(!d.registered, &quot;device is already registered&quot;);
-        require(!d.activated, &quot;device is already activated&quot;);
+        require(!d.registered, "device is already registered");
+        require(!d.activated, "device is already activated");
 
         bytes32 manufacturerId = network[_manufacturer].memberId;
-        require(manufacturerId != 0, &quot;manufacturer id is unknown&quot;);
+        require(manufacturerId != 0, "manufacturer id is unknown");
 
         d.manufacturerId = manufacturerId;
         d.deviceType = _deviceType;
@@ -885,9 +885,9 @@ contract Atonomi is Pausable, TokenDestructible {
     function _activateDevice(bytes32 _deviceId) internal returns (Device) {
         bytes32 deviceIdHash = keccak256(_deviceId);
         Device storage d = devices[deviceIdHash];
-        require(d.registered, &quot;not registered&quot;);
-        require(!d.activated, &quot;already activated&quot;);
-        require(d.manufacturerId != 0, &quot;no manufacturer id was found&quot;);
+        require(d.registered, "not registered");
+        require(!d.activated, "already activated");
+        require(d.manufacturerId != 0, "no manufacturer id was found");
 
         d.activated = true;
         return d;
@@ -896,12 +896,12 @@ contract Atonomi is Pausable, TokenDestructible {
     /// @dev ensure a device is validated for a new reputation score
     /// @dev updates device registry
     function _updateReputationScore(bytes32 _deviceId, bytes32 _reputationScore) internal returns (Device) {
-        require(_deviceId != 0, &quot;device id is empty&quot;);
+        require(_deviceId != 0, "device id is empty");
 
         Device storage d = devices[keccak256(_deviceId)];
-        require(d.registered, &quot;not registered&quot;);
-        require(d.activated, &quot;not activated&quot;);
-        require(d.reputationScore != _reputationScore, &quot;new score needs to be different&quot;);
+        require(d.registered, "not registered");
+        require(d.activated, "not activated");
+        require(d.reputationScore != _reputationScore, "new score needs to be different");
 
         d.reputationScore = _reputationScore;
         return d;

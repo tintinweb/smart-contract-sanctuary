@@ -52,7 +52,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -206,8 +206,8 @@ contract BurnableToken is BasicToken {
 
 contract GIRLToken is BurnableToken, DetailedERC20 {
     uint8 constant DECIMALS = 18;
-    string constant NAME = &quot;GIRL&quot;;
-    string constant SYM = &quot;GIRL&quot;;
+    string constant NAME = "GIRL";
+    string constant SYM = "GIRL";
     uint256 constant MAXGIRLTOKEN = 100 * 10 ** 8 * 10 ** 18;
 
     function GIRLToken() DetailedERC20(MAXGIRLTOKEN, NAME, SYM, DECIMALS) public {}

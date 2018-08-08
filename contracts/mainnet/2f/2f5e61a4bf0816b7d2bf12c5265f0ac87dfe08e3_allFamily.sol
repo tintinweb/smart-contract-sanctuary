@@ -66,8 +66,8 @@ contract allFamily {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;all Family&quot;;
-    string public constant symbol = &quot;FML&quot;;
+    string public constant name = "all Family";
+    string public constant symbol = "FML";
     uint public constant decimals = 8;
 
     uint256 public totalSupply = 1000000e8;

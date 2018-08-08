@@ -77,8 +77,8 @@ contract OSPN is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Osphere Network Token&quot;;
-    string public constant symbol = &quot;OSPN&quot;;
+    string public constant name = "Osphere Network Token";
+    string public constant symbol = "OSPN";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 30000000000e8;

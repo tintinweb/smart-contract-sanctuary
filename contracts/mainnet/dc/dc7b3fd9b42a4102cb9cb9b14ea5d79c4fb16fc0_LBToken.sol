@@ -71,8 +71,8 @@ contract StandardToken is ERC20 {
 
 contract LBToken is StandardToken {
 
-	string public name = &quot;LB Coin&quot;;
-    string public symbol = &quot;LB&quot;;
+	string public name = "LB Coin";
+    string public symbol = "LB";
     uint public decimals = 18;
 
 	function LBToken (address _bank, uint _totalSupply) {

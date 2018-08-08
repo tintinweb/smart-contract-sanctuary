@@ -6,10 +6,10 @@ pragma solidity 0.4.20;
 * https://discord.gg/Ne2PTnS
 *
 * -> Quotes
-* &quot;Real, sustainable community change requires the initiative and engagement of community members.&quot; - Helene D. Gayle
-* &quot;Every successful individual knows that his or her achievement depends on a community of persons working together.&quot; - Paul Ryan
-* &quot;Empathy is the starting point for creating a community and taking action. It&#39;s the impetus for creating change.&quot; - Max Carver
-* &quot;WTF Moon!&quot; - AppX Matthew 
+* "Real, sustainable community change requires the initiative and engagement of community members." - Helene D. Gayle
+* "Every successful individual knows that his or her achievement depends on a community of persons working together." - Paul Ryan
+* "Empathy is the starting point for creating a community and taking action. It&#39;s the impetus for creating change." - Max Carver
+* "WTF Moon!" - AppX Matthew 
 *
 * Finally, a Community Funding Project for PoWTF!
 *
@@ -37,7 +37,7 @@ pragma solidity 0.4.20;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     

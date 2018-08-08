@@ -6,7 +6,7 @@
  * 3) Configurable - optional, means there is function parameter to decide how much to send to each recipient
  * 4) Value or Token - value means ether, token means ERC20 or ERC721
  * 5) Multi - optional, means there are multiple recipients
- * 6) Send or Transfer - using send or transfer in case of ether, or transferFrom in case of ERC20/ERC721 (no &quot;Send&quot; possible in this case)
+ * 6) Send or Transfer - using send or transfer in case of ether, or transferFrom in case of ERC20/ERC721 (no "Send" possible in this case)
  * 7) Unsafe or NoCheck - optional, means that value returned from send or transferFrom is not checked
  */
 

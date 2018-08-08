@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract TPS is StandardToken, Ownable {
 
-    string public constant name = &quot;Tadpoles protocol&quot;;
-    string public constant symbol = &quot;TPS&quot;;
+    string public constant name = "Tadpoles protocol";
+    string public constant symbol = "TPS";
     uint256 public constant decimals = 8;
 
     function TPS() public {

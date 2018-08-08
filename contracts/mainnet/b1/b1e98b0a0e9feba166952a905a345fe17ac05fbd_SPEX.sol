@@ -113,8 +113,8 @@ contract SPEX is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function SPEX() public {
-        symbol = &quot;SPEX&quot;;
-        name = &quot;ShareProfitEx&quot;;
+        symbol = "SPEX";
+        name = "ShareProfitEx";
         decimals = 18;
         _totalSupply = 200000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

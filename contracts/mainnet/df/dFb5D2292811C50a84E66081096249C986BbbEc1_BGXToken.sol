@@ -138,8 +138,8 @@ contract BGXToken is Ownable, StandardToken{
 
     function BGXToken() public
     {
-        name                    = &quot;BGX Token&quot;;
-        symbol                  = &quot;BGX&quot;;
+        name                    = "BGX Token";
+        symbol                  = "BGX";
         decimals                = 18;
         totalSupply             = 1000000000 ether;
         balances[address(this)] = totalSupply;

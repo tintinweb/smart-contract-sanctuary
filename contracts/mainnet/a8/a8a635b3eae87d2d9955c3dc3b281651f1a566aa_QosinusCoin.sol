@@ -113,8 +113,8 @@ contract QosinusCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function QosinusCoin() public {
-        symbol = &quot;QOX&quot;;
-        name = &quot;Qosinus Coin&quot;;
+        symbol = "QOX";
+        name = "Qosinus Coin";
         decimals = 2;
         _totalSupply = 10000000000;
         balances[0x293Be5F3f665c6E86F89cdf188e26c059B67C77E] = _totalSupply;

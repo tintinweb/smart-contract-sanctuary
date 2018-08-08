@@ -50,8 +50,8 @@ contract Hodl is IERC20 {
     
     uint public _totalSupply = 0;
     
-    string public constant symbol = &quot;HODL&quot;;
-    string public constant name = &quot;Hodl&quot;;
+    string public constant symbol = "HODL";
+    string public constant name = "Hodl";
     uint8 public constant decimals = 18;
     
     uint256 public constant RATE = 500;

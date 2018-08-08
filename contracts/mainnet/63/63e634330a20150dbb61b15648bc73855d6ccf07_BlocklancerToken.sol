@@ -41,8 +41,8 @@ contract ERC20Interface {
 
 /// Blocklancer Token (LNC) - crowdfunding code for Blocklancer Project
 contract BlocklancerToken is ERC20Interface {
-    string public constant name = &quot;Lancer Token&quot;;
-    string public constant symbol = &quot;LNC&quot;;
+    string public constant name = "Lancer Token";
+    string public constant symbol = "LNC";
     uint8 public constant decimals = 18;  // 18 decimal places, the same as ETH.
     
     mapping(address => mapping (address => uint256)) allowed;
@@ -324,7 +324,7 @@ contract BlocklancerToken is ERC20Interface {
 	
     // Send _value amount of tokens from address _from to address _to
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-     // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+     // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
      // fees in sub-currencies; the command should fail unless the _from account has
      // deliberately authorized the sender of the message via some mechanism; we propose
      // these standardized APIs for approval:

@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -338,9 +338,9 @@ contract Object is BuildingStatus {
   }
 
   function setProperty(string property, string typeArg, uint intVal, string strVal) public onlyObserver {
-    string memory set = &quot;set&quot;;
-    string memory s = &quot;(&quot;;
-    string memory s2 = &quot;)&quot;;
+    string memory set = "set";
+    string memory s = "(";
+    string memory s2 = ")";
     bytes memory _ba = bytes(set);
     bytes memory _bb = bytes(property);
     bytes memory _t = bytes(typeArg);

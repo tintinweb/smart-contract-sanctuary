@@ -28,9 +28,9 @@ contract Fosha {
     
     using SafeMath for uint256; 
 
-    string constant public standard = &quot;ERC20&quot;;
-    string constant public symbol = &quot;FOSHA&quot;;
-    string constant public name = &quot;Fosha&quot;;
+    string constant public standard = "ERC20";
+    string constant public symbol = "FOSHA";
+    string constant public name = "Fosha";
     uint8 constant public decimals = 18;
 
     uint256 constant public initialSupply = 78000000 * 1 ether;

@@ -23,8 +23,8 @@ contract Movieum {
     function Movieum() {
         balanceOf[msg.sender] =  66000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  66000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;Movieum&quot;;                                   // Set the name for display purposes
-        symbol = &quot;MVT&quot;;                               // Set the symbol for display purposes
+        name = "Movieum";                                   // Set the name for display purposes
+        symbol = "MVT";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

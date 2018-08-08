@@ -41,9 +41,9 @@ contract XataToken is ForeignTokenProvider {
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
-    function name() public pure returns (string) {return &quot;Sobirayu na Xatu&quot;;}
+    function name() public pure returns (string) {return "Sobirayu na Xatu";}
 
-    function symbol() public pure returns (string) {return &quot;XATA&quot;;}
+    function symbol() public pure returns (string) {return "XATA";}
 
     function decimals() public pure returns (uint32) {return 18;}
 

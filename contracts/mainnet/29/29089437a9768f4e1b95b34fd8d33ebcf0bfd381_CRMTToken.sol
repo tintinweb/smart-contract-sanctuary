@@ -211,8 +211,8 @@ contract CRMTToken is StandardToken {
     event Burn(address indexed burner, uint256 value);
     event Mint(address indexed to, uint256 amount);
 
-    string public name = &quot;Crypto Millionaire Token&quot;;
-    string public symbol = &quot;CRMT&quot;;
+    string public name = "Crypto Millionaire Token";
+    string public symbol = "CRMT";
     uint public decimals = 0;
     address public owner = 0xe7f7d6cbcdc1fe78f938bfaca6ea49604cb58d33;
 

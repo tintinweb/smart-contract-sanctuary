@@ -113,8 +113,8 @@ contract WAMToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function WAMToken() public {
-        symbol = &quot;WAM&quot;;
-        name = &quot;WAM&quot;;
+        symbol = "WAM";
+        name = "WAM";
         decimals = 18;
         _totalSupply = 4000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

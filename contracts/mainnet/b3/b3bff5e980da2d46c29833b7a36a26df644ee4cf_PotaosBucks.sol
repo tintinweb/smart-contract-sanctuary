@@ -113,8 +113,8 @@ contract PotaosBucks is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PotaosBucks() public {
-        symbol = &quot;PTB&quot;;
-        name = &quot;Potaos Bucks&quot;;
+        symbol = "PTB";
+        name = "Potaos Bucks";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x63f3e25496282318A356Cd50f7fAdD71E6A6aD25] = _totalSupply;

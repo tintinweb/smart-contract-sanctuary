@@ -20,7 +20,7 @@ contract GenesisProtected {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable is GenesisProtected {
     address public owner;
@@ -238,9 +238,9 @@ contract Token is Ownable, ERC20Interface, Enums {
     using SafeMath for uint;
 
     // Token full name
-    string private constant NAME = &quot;EnvisionX EXCHAIN Token&quot;;
+    string private constant NAME = "EnvisionX EXCHAIN Token";
     // Token symbol name
-    string private constant SYMBOL = &quot;EXT&quot;;
+    string private constant SYMBOL = "EXT";
     // Token max fraction, in decimal signs after the point
     uint8 private constant DECIMALS = 18;
 

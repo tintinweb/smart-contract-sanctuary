@@ -44,7 +44,7 @@ interface token {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -374,7 +374,7 @@ contract ControlledAccess is Ownable {
     {
         bytes32 hash = keccak256(this, _add);
         return signer == ecrecover(
-            keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),
+            keccak256("\x19Ethereum Signed Message:\n32", hash),
             _v,
             _r,
             _s
@@ -532,30 +532,30 @@ contract ElepigCrowdsale is CappedCrowdsale, RefundableCrowdsale, ControlledAcce
         // if Pre-ICO sale limit is reached, refund sender
         if ((stage == CrowdsaleStage.PreICO) && (totalTokensPreICO + tokensThatWillBeMintedAfterPurchase > totalTokensForSaleDuringPreICO)) {
             msg.sender.transfer(msg.value); // Refund them
-            emit EthRefunded(&quot;PreICO Limit Hit&quot;);
+            emit EthRefunded("PreICO Limit Hit");
             return;
         } 
         if ((stage == CrowdsaleStage.ICO1) && (totalTokensICO1 + tokensThatWillBeMintedAfterPurchase > totalTokensForSaleDuringICO1)) {
             msg.sender.transfer(msg.value); // Refund them
-            emit EthRefunded(&quot;ICO1 Limit Hit&quot;);
+            emit EthRefunded("ICO1 Limit Hit");
             return;
 
         }         
         if ((stage == CrowdsaleStage.ICO2) && (totalTokensICO2 + tokensThatWillBeMintedAfterPurchase > totalTokensForSaleDuringICO2)) {
             msg.sender.transfer(msg.value); // Refund them
-            emit EthRefunded(&quot;ICO2 Limit Hit&quot;);
+            emit EthRefunded("ICO2 Limit Hit");
             return;
 
         }  
         if ((stage == CrowdsaleStage.ICO3) && (totalTokensICO3 + tokensThatWillBeMintedAfterPurchase > totalTokensForSaleDuringICO3)) {
             msg.sender.transfer(msg.value); // Refund them
-            emit EthRefunded(&quot;ICO3 Limit Hit&quot;);
+            emit EthRefunded("ICO3 Limit Hit");
             return;        
         } 
 
         if ((stage == CrowdsaleStage.ICO4) && (totalTokensICO4 + tokensThatWillBeMintedAfterPurchase > totalTokensForSaleDuringICO4)) {
             msg.sender.transfer(msg.value); // Refund them
-            emit EthRefunded(&quot;ICO4 Limit Hit&quot;);
+            emit EthRefunded("ICO4 Limit Hit");
             return;
         } else {                
             // calculate token amount to be created
@@ -600,9 +600,9 @@ contract ElepigCrowdsale is CappedCrowdsale, RefundableCrowdsale, ControlledAcce
         // if Wei raised greater than softcap, send to wallet else put in refund vault
         if (goalReached()) {
             wallet.transfer(msg.value);
-            emit EthTransferred(&quot;forwarding funds to wallet&quot;);
+            emit EthTransferred("forwarding funds to wallet");
         } else  {
-            emit EthTransferred(&quot;forwarding funds to refundable vault&quot;);
+            emit EthTransferred("forwarding funds to refundable vault");
             super.forwardFunds();
         }
     }

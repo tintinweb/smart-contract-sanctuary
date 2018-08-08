@@ -130,32 +130,32 @@ contract game is owned{
     function mora(uint8 orig) internal returns(string _mora){
         // 0 => 布   1 => 剪刀   2 => 石頭
             if (orig == 0){
-                return &quot;paper&quot;;
+                return "paper";
             }
             else if (orig == 1){
-                return &quot;scissors&quot;;
+                return "scissors";
             }
             else if (orig == 2){
-                return &quot;stone&quot;;
+                return "stone";
             }
             else {
-                return &quot;error&quot;;
+                return "error";
             }
         }
         
     function win(uint8 _result) internal returns(string result){
         // 0 => 輸   1 => 平手   2 => 贏
         if (_result == 0){
-                return &quot;lose!!&quot;;
+                return "lose!!";
             }
             else if (_result == 1){
-                return &quot;draw~~&quot;;
+                return "draw~~";
             }
             else if (_result == 2){
-                return &quot;win!!!&quot;;
+                return "win!!!";
             }
             else {
-                return &quot;error&quot;;
+                return "error";
             }
     }
     

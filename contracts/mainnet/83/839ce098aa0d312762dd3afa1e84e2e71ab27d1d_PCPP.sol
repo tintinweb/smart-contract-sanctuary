@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract PCPP is StandardToken, Ownable {
 
-    string public constant name = &quot;PCPP&quot;;
-    string public constant symbol = &quot;PCPP&quot;;
+    string public constant name = "PCPP";
+    string public constant symbol = "PCPP";
     uint256 public constant decimals = 8;
 
     function PCPP() public {

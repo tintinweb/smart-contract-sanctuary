@@ -317,11 +317,11 @@ contract CryptocupToken is AccessControlLayer, ERC721 {
 
     //ERC721 INTERFACE
     function name() public view returns (string){
-      return &quot;Cryptocup&quot;;
+      return "Cryptocup";
     }
 
     function symbol() public view returns (string){
-      return &quot;CC&quot;;
+      return "CC";
     }
 
     

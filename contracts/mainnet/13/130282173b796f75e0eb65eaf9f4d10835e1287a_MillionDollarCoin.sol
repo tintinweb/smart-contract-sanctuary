@@ -8,8 +8,8 @@ contract MillionDollarCoin {
   mapping (address => uint256) balances;
   mapping (address => mapping (address => uint256)) allowed;
 
-  string public constant name = &quot;Million Dollar Coin&quot;;
-  string public constant symbol = &quot;$1M&quot;;
+  string public constant name = "Million Dollar Coin";
+  string public constant symbol = "$1M";
   uint8 public constant decimals = 18;
   
   uint256 public totalContribution = 0;

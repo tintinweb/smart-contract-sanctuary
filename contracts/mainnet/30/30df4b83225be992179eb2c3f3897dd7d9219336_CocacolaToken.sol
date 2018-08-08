@@ -90,8 +90,8 @@ contract CocacolaToken is ERC20, Pausable {
     mapping(address => mapping(address => uint256)) internal allowed;
 
     function CocacolaToken() public {
-        name = &quot;COCACOLA&quot;;
-        symbol = &quot;COLA&quot;;
+        name = "COCACOLA";
+        symbol = "COLA";
         decimals = 18;
         initialSupply = 10000000000;
         totalSupply_ = initialSupply * 10 ** uint(decimals);

@@ -72,8 +72,8 @@ return approach[_owner][_spender];
 }
 //***************************** CONSTRUCTOR CONTRACT ***************************
 constructor() public {
-symbol = &quot;VEST&quot;;
-name = &quot;Vestchain&quot;;
+symbol = "VEST";
+name = "Vestchain";
 decimals = 8;
 totalSupply = 884800000000000000;
 holders[msg.sender] = totalSupply;

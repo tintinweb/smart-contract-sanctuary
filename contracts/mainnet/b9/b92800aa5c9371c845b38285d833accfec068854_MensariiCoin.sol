@@ -239,7 +239,7 @@ contract DisableSelfTransfer is StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -566,8 +566,8 @@ contract MintableContractOwnerToken is PausableToken, MintableToken, BurnableTok
 // File: contracts/MensariiCoin.sol
 
 contract MensariiCoin is MintableContractOwnerToken {
-  string public name = &quot;Mensarii Coin&quot;;
-  string public symbol = &quot;MII&quot;;
+  string public name = "Mensarii Coin";
+  string public symbol = "MII";
   uint8 public decimals = 18;
 
   function MensariiCoin() public {

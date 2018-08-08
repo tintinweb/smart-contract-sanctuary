@@ -113,8 +113,8 @@ contract Dancoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Dancoin() public {
-        symbol = &quot;DANCOIN&quot;;
-        name = &quot;Dancoin&quot;;
+        symbol = "DANCOIN";
+        name = "Dancoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xDbDF3C3Fa2ec570CbE84Fd1a181Ebc49Efca40b7] = _totalSupply;

@@ -62,8 +62,8 @@ contract gametoken is owned{
     ) public {
     totalSupply = 2000000 * 10 ** uint256(decimals);
     balances[msg.sender] = totalSupply ;
-        name = &quot;geamtest&quot;;
-        symbol = &quot;GMTC&quot;;         
+        name = "geamtest";
+        symbol = "GMTC";         
     }
 
 

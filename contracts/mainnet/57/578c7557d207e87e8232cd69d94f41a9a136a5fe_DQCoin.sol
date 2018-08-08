@@ -48,8 +48,8 @@ contract DQCoin is ERC20 {
 
     mapping (address => mapping (address => uint256)) allowed;
 
-    string public name = &quot;DaQianCoin&quot;;
-    string public constant symbol = &quot;DQC&quot;;
+    string public name = "DaQianCoin";
+    string public constant symbol = "DQC";
     uint public constant decimals = 18;
     bool public stopped;
     

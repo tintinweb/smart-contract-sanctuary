@@ -220,8 +220,8 @@ contract Ownable {
 
 contract GlobalCoin is Ownable, StandardToken{
     uint256 public decimals = 8;
-    string public name = &quot;GBCToken&quot;;
-    string public symbol = &quot;GBC&quot;;
+    string public name = "GBCToken";
+    string public symbol = "GBC";
     uint public totalSupply = 1000000000000000;//1后面15个0 ,发行1000，0000 ，后面是00000000,对应小数点后8个0
     address public dividendAddress = 0x1D33776a090a2F321FF596C0C011F2f414f3A527;//分红地址
     address public burnAddress = 0x0000000000000000000000000000000000000000; //销毁GBC地址

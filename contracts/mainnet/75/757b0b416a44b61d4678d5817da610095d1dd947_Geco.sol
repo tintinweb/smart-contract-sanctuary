@@ -283,15 +283,15 @@ contract Geco is StandardToken {
     string public name;
     uint8 public decimals; 
     string public symbol;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
     uint totalEthInWei;
 
     constructor() public{
         decimals = 18;     // Amount of decimals for display purposes
         totalSupply = 100000000 * 10 ** uint256(decimals);    // Give the creator all initial tokens
         balances[msg.sender] = totalSupply;     // Update total supply
-        name = &quot;GreenEminer&quot;;    // Set the name for display purposes
-        symbol = &quot;GECO&quot;;    // Set the symbol for display purposes
+        name = "GreenEminer";    // Set the name for display purposes
+        symbol = "GECO";    // Set the symbol for display purposes
 
         //add owner to the addresses array
         addAddress(msg.sender);
@@ -303,7 +303,7 @@ contract Geco is StandardToken {
     returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { revert(); }
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { revert(); }
         return true;
     }
 

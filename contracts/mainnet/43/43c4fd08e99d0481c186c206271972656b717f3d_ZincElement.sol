@@ -23,8 +23,8 @@ contract ZincElement{
     function ZincElement() {
         balanceOf[msg.sender] =  2100000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  2100000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;ZincElement&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ZNE&quot;;                               // Set the symbol for display purposes
+        name = "ZincElement";                                   // Set the name for display purposes
+        symbol = "ZNE";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

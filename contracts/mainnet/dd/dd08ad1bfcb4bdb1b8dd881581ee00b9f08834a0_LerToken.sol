@@ -110,8 +110,8 @@ contract LerToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LerToken() public {
-        symbol = &quot;LER&quot;;
-        name = &quot;LER Coin&quot;;
+        symbol = "LER";
+        name = "LER Coin";
         decimals = 18;
         _totalSupply = 3000000000000000000000000000;
         balances[0x2A7566f25B8ec8A96487dc2a453013d01c682CdB] = _totalSupply;

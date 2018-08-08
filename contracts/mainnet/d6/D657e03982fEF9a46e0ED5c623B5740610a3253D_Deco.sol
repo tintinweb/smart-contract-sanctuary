@@ -46,8 +46,8 @@ contract Deco is ERC20ERC223 {
 
   using SafeMath for uint256;
 
-  string public constant name = &quot;Deco&quot;;
-  string public constant symbol = &quot;DEC&quot;;
+  string public constant name = "Deco";
+  string public constant symbol = "DEC";
   uint8 public constant decimals = 18;
   
   uint256 public constant totalSupply = 6*10**26; // 600,000,000. 000,000,000,000,000,000 units
@@ -85,7 +85,7 @@ contract Deco is ERC20ERC223 {
   // Transfers
 
   function transfer(address _to, uint256 _value) onlyPayloadSize(2 * 32) returns (bool) {
-    performTransfer(msg.sender, _to, _value, &quot;&quot;);
+    performTransfer(msg.sender, _to, _value, "");
     Transfer(msg.sender, _to, _value);
     return true;
   }
@@ -99,7 +99,7 @@ contract Deco is ERC20ERC223 {
   function transferFrom(address _from, address _to, uint256 _value) onlyPayloadSize(3 * 32) returns (bool) {
     require(hasApproval(_from, msg.sender));
     uint256 _allowed = accounts[_from].allowed[msg.sender];    
-    performTransfer(_from, _to, _value, &quot;&quot;);    
+    performTransfer(_from, _to, _value, "");    
     accounts[_from].allowed[msg.sender] = _allowed.sub(_value);
     Transfer(_from, _to, _value);
     return true;

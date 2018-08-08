@@ -117,8 +117,8 @@ contract BBCPrimeEx is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BBCPrimeEx() public {
-        symbol = &quot;PREX&quot;;
-        name = &quot;BBC Prime Exchange EQ&quot;;
+        symbol = "PREX";
+        name = "BBC Prime Exchange EQ";
         decimals = 8;
         _totalSupply = 4500000000000000;
         balances[0x344b2901938B7b13a8997e68eF6BD50Be3F240e0] = _totalSupply;

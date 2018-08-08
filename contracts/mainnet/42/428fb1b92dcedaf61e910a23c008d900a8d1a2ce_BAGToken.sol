@@ -100,8 +100,8 @@ contract BAGToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function BAGToken() public {
-        symbol = &quot;BAG&quot;;
-        name = &quot;Bagholder&quot;;
+        symbol = "BAG";
+        name = "Bagholder";
         decimals = 8;
         _totalSupply = 10000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

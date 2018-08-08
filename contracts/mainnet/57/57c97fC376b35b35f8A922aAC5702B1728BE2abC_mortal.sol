@@ -150,8 +150,8 @@ contract NewToken is BasicToken, ERC20 {
 
 contract SimpleToken is NewToken {
 
-  string public name = &quot;TesterrCoin&quot;;
-  string public symbol = &quot;TST&quot;;
+  string public name = "TesterrCoin";
+  string public symbol = "TST";
   uint public decimals = 0;
   uint public INITIAL_SUPPLY = 21000000;
 

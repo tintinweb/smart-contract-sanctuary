@@ -224,8 +224,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract KexToken is StandardToken {
 
-    string public constant name = &quot;Kcash Exchange Token&quot;;
-    string public constant symbol = &quot;KEX&quot;; 
+    string public constant name = "Kcash Exchange Token";
+    string public constant symbol = "KEX"; 
     uint8 public constant decimals = 18; 
 
     uint256 public constant INITIAL_SUPPLY = (100 ** 9) * (10 ** uint256(decimals));

@@ -187,8 +187,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Token is StandardToken {
 
-    string public name    = &quot;ChainManIdentification&quot;;
-    string public symbol  = &quot;CMI&quot;;
+    string public name    = "ChainManIdentification";
+    string public symbol  = "CMI";
     uint8 public decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 610321;

@@ -4,8 +4,8 @@ contract DemocracyVote {
     // Track how many tokens are owned by each address.
     mapping (address => uint256) public balanceOf;
 
-    string public name = &quot;Democracy Vote&quot;;
-    string public symbol = &quot;DEVO&quot;;
+    string public name = "Democracy Vote";
+    string public symbol = "DEVO";
     uint8 public decimals = 8;
 
     uint256 public totalSupply = 99000000 * (uint256(10) ** decimals);

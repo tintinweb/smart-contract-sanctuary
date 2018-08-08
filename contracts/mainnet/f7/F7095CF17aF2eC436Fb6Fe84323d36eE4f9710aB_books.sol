@@ -98,8 +98,8 @@ contract books is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function books() public {
-        symbol = &quot;book&quot;;
-        name = &quot;books&quot;;
+        symbol = "book";
+        name = "books";
         decimals = 6;
         _totalSupply = 1000000000000;
         balances[0xE15902055f380BbB907705054800c3f5Bf2Cf72B] = _totalSupply;

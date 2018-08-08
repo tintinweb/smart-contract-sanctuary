@@ -125,8 +125,8 @@ contract BiQToken is BasicToken {
 
   using SafeMath for uint256;
 
-  string public name = &quot;BurstIQ Token&quot;;              //name of the token
-  string public symbol = &quot;BiQ&quot;;                      // symbol of the token
+  string public name = "BurstIQ Token";              //name of the token
+  string public symbol = "BiQ";                      // symbol of the token
   uint8 public decimals = 18;                        // decimals
   uint256 public totalSupply = 1000000000 * 10**18;  // total supply of BiQ Tokens
 

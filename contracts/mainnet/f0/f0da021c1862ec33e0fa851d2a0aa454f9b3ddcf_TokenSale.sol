@@ -137,11 +137,11 @@ contract BNNToken is AbstractToken {
      }
      
     function name () constant returns (string result) {
-		return &quot;BananCoin&quot;;
+		return "BananCoin";
 	}
 	
 	function symbol () constant returns (string result) {
-		return &quot;BNN&quot;;
+		return "BNN";
 	}
 	
 	function decimals () constant returns (uint result) {

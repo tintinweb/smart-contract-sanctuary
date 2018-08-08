@@ -71,8 +71,8 @@ contract Boldman is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function Boldman() public {
-        symbol = &quot;BOLD&quot;;
-        name = &quot;Boldman&quot;;
+        symbol = "BOLD";
+        name = "Boldman";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x05838CE2017732CE956885D3c47054A5517E2461] = _totalSupply;

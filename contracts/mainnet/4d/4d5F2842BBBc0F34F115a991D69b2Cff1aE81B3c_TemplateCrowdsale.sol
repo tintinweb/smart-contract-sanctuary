@@ -206,7 +206,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -794,8 +794,8 @@ contract Consts {
     uint8 constant TOKEN_DECIMALS_UINT8 = 18;
     uint constant TOKEN_DECIMAL_MULTIPLIER = 10 ** TOKEN_DECIMALS;
 
-    string constant TOKEN_NAME = &quot;Delphi Technologies Token&quot;;
-    string constant TOKEN_SYMBOL = &quot;DTT&quot;;
+    string constant TOKEN_NAME = "Delphi Technologies Token";
+    string constant TOKEN_SYMBOL = "DTT";
     bool constant PAUSED = true;
     address constant TARGET_USER = 0xc9060fcf7bD238A359DEA06b6421c7F06E88Dc2b;
     

@@ -108,7 +108,7 @@ contract Token is Pausable, ERC20 {
   bool manualUnlock;
   address public crowdsaleAddress = 0;
 
-  function Token() ERC20(&quot;HIKICK&quot;, &quot;KICK1&quot;, 18) public {
+  function Token() ERC20("HIKICK", "KICK1", 18) public {
     manualUnlock = false;
     unlocktime = 1525017600;
     totalSupply = 10000 * 10 ** uint(decimals);

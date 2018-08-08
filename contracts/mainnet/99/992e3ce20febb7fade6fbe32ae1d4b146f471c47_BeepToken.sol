@@ -217,7 +217,7 @@ contract RBACWithAdmin is RBAC {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
+  string public constant ROLE_ADMIN = "admin";
 
   /**
    * @dev modifier to scope access to admins
@@ -266,7 +266,7 @@ contract RBACWithAdmin is RBAC {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -825,14 +825,14 @@ contract ERC865Token is ERC865, StandardToken, Ownable {
 
 contract BeepToken is ERC865Token, RBAC{
 
-    string public constant name = &quot;Beepnow Token&quot;;
-    string public constant symbol = &quot;BPN&quot;;
+    string public constant name = "Beepnow Token";
+    string public constant symbol = "BPN";
     uint8 public constant decimals = 0;
     
     /* Mapping of whitelisted users */
     mapping (address => bool) transfersBlacklist;
-    string constant ROLE_ADMIN = &quot;admin&quot;;
-    string constant ROLE_DELEGATE = &quot;delegate&quot;;
+    string constant ROLE_ADMIN = "admin";
+    string constant ROLE_DELEGATE = "delegate";
 
     bytes4 internal constant transferSig = 0x48664c16;
 

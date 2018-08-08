@@ -5,8 +5,8 @@ contract ECNcoin {
     
     uint public constant _totalsupply = 33333333;
     
-    string public constant symbol = &quot;ECNC&quot;;
-    string public constant name = &quot;ECN coin&quot;;
+    string public constant symbol = "ECNC";
+    string public constant name = "ECN coin";
     uint8 public constant desimls = 8;
     
     mapping(address => uint256) balances;

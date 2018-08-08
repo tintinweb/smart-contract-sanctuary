@@ -19,7 +19,7 @@ pragma solidity 0.4.13;
  * members about the application of blockchain technology. For further
  * information: majoolr.io, consensys.net, paritytech.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -123,13 +123,13 @@ library WalletMainLib {
     uint _txLen = self.transactionInfo[_id].length;
 
     if(_txLen == 0 || _number >= _txLen){
-      LogErrMsg(&quot;Tx not initiated&quot;);
+      LogErrMsg("Tx not initiated");
       LogTransactionFailed(_id, msg.sender);
       return false;
     }
 
     if(self.transactionInfo[_id][_number].success){
-      LogErrMsg(&quot;Transaction already complete&quot;);
+      LogErrMsg("Transaction already complete");
       LogTransactionFailed(_id, msg.sender);
       return false;
     }
@@ -139,7 +139,7 @@ library WalletMainLib {
     uint index;
     (found, index) = self.transactionInfo[_id][_number].confirmedOwners.indexOf(uint(msg.sender), false);
     if(found){
-      LogErrMsg(&quot;Owner already confirmed&quot;);
+      LogErrMsg("Owner already confirmed");
       LogTransactionFailed(_id, msg.sender);
       return false;
     }
@@ -209,7 +209,7 @@ library WalletMainLib {
 
     (err, res) = self.currentSpend[0][1].plus(_value);
     if(err){
-      LogErrMsg(&quot;Overflow eth spend&quot;);
+      LogErrMsg("Overflow eth spend");
       return 0;
     }
 
@@ -224,7 +224,7 @@ library WalletMainLib {
 
       (err, res) = self.currentSpend[_to][1].plus(_amount);
       if(err){
-        LogErrMsg(&quot;Overflow token spend&quot;);
+        LogErrMsg("Overflow token spend");
         return 0;
       }
       if(res >= self.majorThreshold[_to])
@@ -268,7 +268,7 @@ library WalletMainLib {
                    bytes _data)
                    returns (bool,bytes32)
   {
-    bytes32 _id = sha3(&quot;serveTx&quot;,_to,_value,_txData);
+    bytes32 _id = sha3("serveTx",_to,_value,_txData);
     uint _number = self.transactionInfo[_id].length;
     uint _required = self.requiredMajor;
 
@@ -358,7 +358,7 @@ library WalletMainLib {
     bool ret;
 
     if(_number == 0){
-      LogErrMsg(&quot;Tx not initiated&quot;);
+      LogErrMsg("Tx not initiated");
       LogTransactionFailed(_id, msg.sender);
       return false;
     }
@@ -398,14 +398,14 @@ library WalletMainLib {
     uint _number = self.transactionInfo[_id].length;
 
     if(_number == 0){
-      LogErrMsg(&quot;Tx not initiated&quot;);
+      LogErrMsg("Tx not initiated");
       LogTransactionFailed(_id, msg.sender);
       return false;
     }
 
     _number--;
     if(self.transactionInfo[_id][_number].success){
-      LogErrMsg(&quot;Transaction already complete&quot;);
+      LogErrMsg("Transaction already complete");
       LogTransactionFailed(_id, msg.sender);
       return false;
     }
@@ -415,7 +415,7 @@ library WalletMainLib {
     uint index;
     (found, index) = self.transactionInfo[_id][_number].confirmedOwners.indexOf(uint(msg.sender), false);
     if(!found){
-      LogErrMsg(&quot;Owner has not confirmed tx&quot;);
+      LogErrMsg("Owner has not confirmed tx");
       LogTransactionFailed(_id, msg.sender);
       return false;
     }
@@ -452,7 +452,7 @@ pragma solidity ^0.4.13;
  * community members about the application of blockchain technology.
  * For further information: majoolr.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -657,7 +657,7 @@ pragma solidity ^0.4.13;
  * about the application of blockchain technology.
  * For further information: majoolr.io, openzeppelin.org
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -685,7 +685,7 @@ library BasicMathLib {
       }
     }
     if (err)
-      Err(&quot;times func overflow&quot;);
+      Err("times func overflow");
   }
 
   /// @dev Divides two numbers but checks for 0 in the divisor first.
@@ -703,7 +703,7 @@ library BasicMathLib {
         return(mload(0x40),0x40)
       }
     }
-    Err(&quot;tried to divide by zero&quot;);
+    Err("tried to divide by zero");
     return (true, 0);
   }
 
@@ -723,7 +723,7 @@ library BasicMathLib {
       }
     }
     if (err)
-      Err(&quot;plus func overflow&quot;);
+      Err("plus func overflow");
   }
 
   /// @dev Subtracts two numbers and checks for underflow before returning.
@@ -742,6 +742,6 @@ library BasicMathLib {
       }
     }
     if (err)
-      Err(&quot;minus func underflow&quot;);
+      Err("minus func underflow");
   }
 }

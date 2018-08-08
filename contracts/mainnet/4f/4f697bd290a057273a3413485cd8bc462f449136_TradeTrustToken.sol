@@ -150,8 +150,8 @@ contract StandardToken is ERC20, BasicToken {
   }
 }
 contract TradeTrustToken is StandardToken {
-  string public name = &quot;TradeTrust&quot;;
-  string public symbol = &quot;TRT&quot;;
+  string public name = "TradeTrust";
+  string public symbol = "TRT";
   uint256 public decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 6500000 * (10 ** uint256(18));
 

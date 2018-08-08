@@ -27,9 +27,9 @@ library SafeMath {
 contract Moneda {
     using SafeMath for uint256;
     
-    string constant public standard = &quot;ERC20&quot;;
-    string constant public name = &quot;Moneda Token&quot;;
-    string constant public symbol = &quot;MND&quot;;
+    string constant public standard = "ERC20";
+    string constant public name = "Moneda Token";
+    string constant public symbol = "MND";
     uint8 constant public decimals = 18;
     
     uint256 private _totalSupply = 400000000e18; // Total supply tokens 400mil

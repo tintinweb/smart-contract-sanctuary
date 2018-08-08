@@ -1003,9 +1003,9 @@ contract District0xNetworkToken is MiniMeToken, VestedToken {
             _tokenFactory,
             0x0,                        // no parent token
             0,                          // no snapshot block number from parent
-            &quot;district0x Network Token&quot;, // Token name
+            "district0x Network Token", // Token name
             18,                         // Decimals
-            &quot;DNT&quot;,                      // Symbol
+            "DNT",                      // Symbol
             true                        // Enable transfers
             )
     {

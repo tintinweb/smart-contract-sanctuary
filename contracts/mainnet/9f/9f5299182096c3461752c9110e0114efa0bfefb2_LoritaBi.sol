@@ -114,8 +114,8 @@ contract LoritaBi is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LoritaBi() public {
-        symbol = &quot;LOBI&quot;;
-        name = &quot;Lorita Bi&quot;;
+        symbol = "LOBI";
+        name = "Lorita Bi";
         decimals = 8;
         _totalSupply = 1000000000000000000;
         balances[0x37efd6a702e171218380cf6b1f898a07632a7d60] = _totalSupply;

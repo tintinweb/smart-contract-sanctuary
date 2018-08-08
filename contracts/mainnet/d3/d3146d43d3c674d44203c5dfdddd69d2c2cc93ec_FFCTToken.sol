@@ -157,8 +157,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract FFCTToken is StandardToken {
 
-  string public constant name = &quot;FFC 记账&quot;;
-  string public constant symbol = &quot;FFCT&quot;;
+  string public constant name = "FFC 记账";
+  string public constant symbol = "FFCT";
   uint256 public constant decimals = 18;
 
   /**

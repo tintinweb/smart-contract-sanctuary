@@ -64,8 +64,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract CCTOKEN is StandardToken 
 {
-    string public name = &quot;CCTOKEN&quot;;
-    string public symbol = &quot;CCTOKEN&quot;;
+    string public name = "CCTOKEN";
+    string public symbol = "CCTOKEN";
     uint public decimals = 18;
     uint public totalSupply = 300 * 1000 * 1000 ether;
 

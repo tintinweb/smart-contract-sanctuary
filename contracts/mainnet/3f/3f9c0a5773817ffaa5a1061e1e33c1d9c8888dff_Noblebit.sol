@@ -58,8 +58,8 @@ contract Noblebit is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Noblebit&quot;;
-    string public constant symbol = &quot;NBT&quot;;
+    string public constant name = "Noblebit";
+    string public constant symbol = "NBT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 200000000e8;

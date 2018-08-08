@@ -265,9 +265,9 @@ contract Yiha is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;YIHA&quot;;
+        symbol = "YIHA";
 
-        name = &quot;Yiha&quot;;
+        name = "Yiha";
 
         decimals = 8;
 

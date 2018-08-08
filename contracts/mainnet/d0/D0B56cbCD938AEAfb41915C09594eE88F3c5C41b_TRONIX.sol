@@ -16,8 +16,8 @@ contract TRONIX {
 	function TRONIX() {
 	    totalSupply = 1000*(10**8)*(10**18);
 		balanceOf[msg.sender] = 1000*(10**8)*(10**18);              // Give the creator all initial tokens
-		name = &quot;TRONIX&quot;;                                   // Set the name for display purposes
-		symbol = &quot;TRX&quot;;                               // Set the symbol for display purposes
+		name = "TRONIX";                                   // Set the name for display purposes
+		symbol = "TRX";                               // Set the symbol for display purposes
 		decimals = 18;                            // Amount of decimals for display purposes
 	}
 

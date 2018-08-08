@@ -60,8 +60,8 @@ contract SDD_Erc223Token is SafeMath, Owned {
     mapping(address => uint) balances;
     
     //address public owner    = msg.sender;
-    string public name    = &quot;SDD Erc223&quot;;
-    string public symbol  = &quot;SDD&quot;;
+    string public name    = "SDD Erc223";
+    string public symbol  = "SDD";
     uint8 public decimals = 8;
     uint256 public totalSupply;
     

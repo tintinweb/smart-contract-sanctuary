@@ -114,8 +114,8 @@ contract USDXCoin is Ownable, StandardToken {
     function USDXCoin() public {
     totalSupply = 10 * (10**6) * (10**6);
         balances[msg.sender] = totalSupply;
-        name = &quot;USDX&quot;;
-        symbol = &quot;USDX&quot;;
+        name = "USDX";
+        symbol = "USDX";
         decimals = 6;
     }
 

@@ -113,8 +113,8 @@ contract IndoCrypt is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IndoCrypt() public {
-        symbol = &quot;INDC&quot;;
-        name = &quot;IndoCrypt&quot;;
+        symbol = "INDC";
+        name = "IndoCrypt";
         decimals = 2;
         _totalSupply = 7860000000;
         balances[0xc997167104BabbDc49a5F46eCe1F32D76CA54980] = _totalSupply;

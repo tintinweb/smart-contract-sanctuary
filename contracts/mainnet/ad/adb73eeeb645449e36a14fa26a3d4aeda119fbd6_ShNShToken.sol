@@ -113,8 +113,8 @@ contract ShNShToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ShNShToken() public {
-        symbol = &quot;ShNSh&quot;;
-        name = &quot;Sh N Sh Token&quot;;
+        symbol = "ShNSh";
+        name = "Sh N Sh Token";
         decimals = 4;
         _totalSupply = 1000000000000;
         balances[0xcfD192fD40A4eF88339A9Dd7e91BC2eF3E5098ED] = _totalSupply;

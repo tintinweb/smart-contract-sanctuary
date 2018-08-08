@@ -115,8 +115,8 @@ contract ERC20Token is ERC20 {
  */
 contract MockBITO is ERC20Token, Owned {
 
-    string  public constant name     = &quot;Mock BITO&quot;;
-    string  public constant symbol   = &quot;MBITO&quot;;
+    string  public constant name     = "Mock BITO";
+    string  public constant symbol   = "MBITO";
     uint256 public constant decimals = 18;
 
     uint256 public constant initialToken = 500000000 * (10 ** decimals);

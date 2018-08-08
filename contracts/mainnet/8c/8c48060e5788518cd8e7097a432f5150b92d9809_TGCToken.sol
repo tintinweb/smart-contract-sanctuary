@@ -63,10 +63,10 @@ contract TGCToken is StandardToken {
 
 
     // metadata
-    string public constant name = &quot;Time Game Coin&quot;;
-    string public constant symbol = &quot;TGC&quot;;
+    string public constant name = "Time Game Coin";
+    string public constant symbol = "TGC";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     uint256 public constant PRIVATEPLACEMENT = 25000000 * 10**decimals;  //  BASE INVEST
     uint256 public constant AMOUNT_BASETEAM = 50000000 * 10**decimals;   // BASE TEAM

@@ -137,8 +137,8 @@ contract BurnableToken is BasicToken {
 
 contract MizuCoin is StandardToken, BurnableToken {
 
-  string public constant name = &quot;MizuCoin&quot;; 
-  string public constant symbol = &quot;MZU&quot;; 
+  string public constant name = "MizuCoin"; 
+  string public constant symbol = "MZU"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 2500000000 * (10 ** uint256(decimals));

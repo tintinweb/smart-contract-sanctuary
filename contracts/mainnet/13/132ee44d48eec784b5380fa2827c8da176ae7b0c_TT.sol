@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract TT is StandardToken {
 
-  string public constant name = &quot;Btt Token&quot;;
-  string public constant symbol = &quot;TT&quot;;
+  string public constant name = "Btt Token";
+  string public constant symbol = "TT";
   uint8 public constant decimals = 18;
 
 

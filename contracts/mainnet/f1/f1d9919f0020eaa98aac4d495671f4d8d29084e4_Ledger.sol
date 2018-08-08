@@ -94,9 +94,9 @@ contract EventDefinitions {
 }
 
 contract Token is Finalizable, TokenReceivable, SafeMath, EventDefinitions, Pausable {
-	string constant public name = &quot;DOC Token&quot;;
+	string constant public name = "DOC Token";
 	uint8 constant public decimals = 18;
-	string constant public symbol = &quot;DOC&quot;;
+	string constant public symbol = "DOC";
 	Controller public controller;
 	string public motd;
 	event Motd(string message);

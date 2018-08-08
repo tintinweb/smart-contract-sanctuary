@@ -379,8 +379,8 @@ contract BITToken is MintableToken, PausableToken {
     event BITTransfer(address indexed _from, address indexed _to, uint256 _value, bytes32 data);
 
     uint256 public constant decimals = 18;
-    string public constant name = &quot;TempToken&quot;;
-    string public constant symbol = &quot;TEMP&quot;;
+    string public constant name = "TempToken";
+    string public constant symbol = "TEMP";
 
     /**
      * This function creates vesting fund for `_beneficiary` and mints

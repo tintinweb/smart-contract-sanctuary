@@ -172,7 +172,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -262,8 +262,8 @@ contract OmmerToken is StandardToken, Ownable {
 
     // Constants for the ERC20 interface
     //
-    string public constant name = &quot;ommer&quot;;
-    string public constant symbol = &quot;OMR&quot;;
+    string public constant name = "ommer";
+    string public constant symbol = "OMR";
     uint256 public constant decimals = 18;
     // Our supply is 100 million OMR
     uint256 public constant INITIAL_SUPPLY = 1 * (10 ** 8) * (10 ** decimals);

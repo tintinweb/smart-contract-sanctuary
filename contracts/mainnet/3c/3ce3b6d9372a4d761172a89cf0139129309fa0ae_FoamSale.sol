@@ -63,7 +63,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -484,7 +484,7 @@ library ECRecovery {
 
   /**
    * toEthSignedMessageHash
-   * @dev prefix a bytes32 value with &quot;\x19Ethereum Signed Message:&quot;
+   * @dev prefix a bytes32 value with "\x19Ethereum Signed Message:"
    * @dev and hash the result
    */
   function toEthSignedMessageHash(bytes32 hash)
@@ -495,7 +495,7 @@ library ECRecovery {
     // 32 is the length in bytes of hash,
     // enforced by the type signature above
     return keccak256(
-      &quot;\x19Ethereum Signed Message:\n32&quot;,
+      "\x19Ethereum Signed Message:\n32",
       hash
     );
   }
@@ -1046,10 +1046,10 @@ contract Sale is SaleI, Ownable, Whitelistable, TimedStateMachine, TokenControll
     using SafeERC20 for Token;
 
     // State machine states
-    bytes32 private constant SETUP = &quot;setup&quot;;
-    bytes32 private constant FREEZE = &quot;freeze&quot;;
-    bytes32 private constant SALE_IN_PROGRESS = &quot;saleInProgress&quot;;
-    bytes32 private constant SALE_ENDED = &quot;saleEnded&quot;;
+    bytes32 private constant SETUP = "setup";
+    bytes32 private constant FREEZE = "freeze";
+    bytes32 private constant SALE_IN_PROGRESS = "saleInProgress";
+    bytes32 private constant SALE_ENDED = "saleEnded";
     // solium-disable-next-line arg-overflow
     bytes32[] public states = [SETUP, FREEZE, SALE_IN_PROGRESS, SALE_ENDED];
 
@@ -1383,8 +1383,8 @@ contract FoamSale is Sale {
             25000 ether, // Vault disbursement Wei
             0, // Vault disbursement duration (0 means transfer everything right away)
             1532803878, // Start time
-            &quot;FOAM Token&quot;, // Token name
-            &quot;FOAM&quot;, // Token symbol
+            "FOAM Token", // Token name
+            "FOAM", // Token symbol
             18, // Token decimals
             EthPriceFeedI(0x54bF24e1070784D7F0760095932b47CE55eb3A91) // Eth price feed
         )

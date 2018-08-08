@@ -210,8 +210,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract HelixexToken is StandardToken {
-  string public name = &quot;HelixexToken&quot;; 
-  string public symbol = &quot;HEXO&quot;;
+  string public name = "HelixexToken"; 
+  string public symbol = "HEXO";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 60000000 * (10 ** decimals);
   uint256 public totalSupply;

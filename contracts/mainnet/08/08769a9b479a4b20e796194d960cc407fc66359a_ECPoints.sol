@@ -265,7 +265,7 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -303,8 +303,8 @@ contract Ownable {
 }
 
 contract ECPoints is StandardBurnableToken, Ownable {
-  string public name = &quot;ECTokens&quot;;
-  string public symbol = &quot;ECT&quot;;
+  string public name = "ECTokens";
+  string public symbol = "ECT";
   uint8 public decimals = 8;
   uint256 public INITIAL_SUPPLY = 2000000000;
 

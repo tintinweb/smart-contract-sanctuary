@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract SZETOKEN {
 
-    string public name = &quot;SzechuanSauceCoin&quot;;      //  token name
-    string public symbol = &quot;SZE&quot;;           //  token symbol
+    string public name = "SzechuanSauceCoin";      //  token name
+    string public symbol = "SZE";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

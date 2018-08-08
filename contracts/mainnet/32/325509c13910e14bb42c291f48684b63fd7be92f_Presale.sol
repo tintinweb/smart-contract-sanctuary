@@ -3,7 +3,7 @@ pragma solidity ^0.4.10;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -286,8 +286,8 @@ contract BurnableToken is BasicToken {
 
 contract StockusToken is BurnableToken {
 
-    string public constant name = &quot;Stockus Token&quot;;
-    string public constant symbol = &quot;STT&quot;;
+    string public constant name = "Stockus Token";
+    string public constant symbol = "STT";
     uint32 public constant decimals = 2;
     uint256 public INITIAL_SUPPLY = 15000000 * 100;
     bool public isSale;

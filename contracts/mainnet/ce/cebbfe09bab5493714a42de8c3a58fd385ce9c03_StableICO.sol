@@ -103,8 +103,8 @@ contract ERC223Token_STA is ERC223, SafeMath, Ownable {
         decimals = 8;
         multiplier = 10**uint256(decimals);
         maxSupply = 10000000000;                             // Maximum possible supply == 100 STA
-        name = &quot;STABLE STA Token&quot;;                           // Set the name for display purposes
-        symbol = &quot;STA&quot;;                                      // Set the symbol for display purposes
+        name = "STABLE STA Token";                           // Set the name for display purposes
+        symbol = "STA";                                      // Set the symbol for display purposes
         icoEndBlock = 4230150;  // INIT                      // last block number for ICO
         totalSupply = 0;                                     // Update total supply
         // balances[msg.sender] = totalSupply;               // Give the creator all initial tokens
@@ -259,9 +259,9 @@ contract ERC223Token_STB is ERC223, SafeMath, Ownable {
     function ERC223Token_STB() {
         totalSupply = 0;                                     // Update total supply
         maxSupply = 1000000000000;                           // Maximum possible supply of STB == 100M STB
-        name = &quot;STABLE STB Token&quot;;                           // Set the name for display purposes
+        name = "STABLE STB Token";                           // Set the name for display purposes
         decimals = 4;                                        // Amount of decimals for display purposes
-        symbol = &quot;STB&quot;;                                      // Set the symbol for display purposes
+        symbol = "STB";                                      // Set the symbol for display purposes
         icoEndBlock = 4230150;  // INIT                      // last block number of ICO  // INIT PARAM             
         //balances[msg.sender] = totalSupply;                // Give the creator all initial tokens       
     }
@@ -604,7 +604,7 @@ contract StableICO is Ownable, SafeMath {
     }    
     
     
-    /* backup functions to be executed &quot;manually&quot; - in case of a critical ethereum platform failure 
+    /* backup functions to be executed "manually" - in case of a critical ethereum platform failure 
       during automatic function execution */
     function backup_finishIcoVars() public onlyOwner {
         if (block.number <= icoEndBlock || isIcoFinished) throw;

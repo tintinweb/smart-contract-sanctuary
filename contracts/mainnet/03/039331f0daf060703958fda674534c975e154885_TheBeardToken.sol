@@ -71,8 +71,8 @@ contract TheBeardToken is Ownable, ERC20 {
     using SafeMath for uint256;
 
     // Token properties
-    string public name = &quot;TheBeardToken&quot;;               //Token name
-    string public symbol = &quot;BEARD&quot;;                     //Token symbol
+    string public name = "TheBeardToken";               //Token name
+    string public symbol = "BEARD";                     //Token symbol
     uint256 public decimals = 18;
 
     uint256 public _totalSupply = 1000000000e18;

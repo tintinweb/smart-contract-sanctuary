@@ -294,11 +294,11 @@ contract ETH10K {
   }
 
   function name() public pure returns (string _name) {
-    return &quot;ETH10K.io&quot;;
+    return "ETH10K.io";
   }
 
   function symbol() public pure returns (string _symbol) {
-    return &quot;block&quot;;
+    return "block";
   }
   
   function totalSupply() public view returns (uint256 _totalSupply) {

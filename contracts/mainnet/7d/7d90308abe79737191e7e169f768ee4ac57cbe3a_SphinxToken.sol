@@ -246,7 +246,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -413,8 +413,8 @@ contract PausableToken is StandardToken, Pausable {
 
 
 contract SphinxToken is PausableToken {
-  string public constant name = &quot;SphinxToken&quot;;
-  string public constant symbol = &quot;SPX&quot;;
+  string public constant name = "SphinxToken";
+  string public constant symbol = "SPX";
   uint8 public constant decimals = 18;
   uint256 public constant totalSupply = 10000000000000000000000000000;
 

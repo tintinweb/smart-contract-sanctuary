@@ -113,8 +113,8 @@ contract BitMix is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitMix() public {
-        symbol = &quot;BIM&quot;;
-        name = &quot;BitMix&quot;;
+        symbol = "BIM";
+        name = "BitMix";
         decimals = 18;
         _totalSupply = 250000000000000000000000000;
         balances[0x988Ce847268588431b4Dd052AFB5b110d946Ec02] = _totalSupply;

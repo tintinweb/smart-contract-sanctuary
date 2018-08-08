@@ -8,7 +8,7 @@ pragma solidity 0.4.24;
  * https://github.com/OpenZeppelin/openzeppelin-solidity/
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -233,7 +233,7 @@ contract IndTokenPayment is Ownable, ReentrancyGuard {
     //Minimum tokens per 1 ETH to convert
     uint256 public minConversionRate;
     IContractRegistry public bancorRegistry;
-    bytes32 public constant BANCOR_NETWORK = &quot;BancorNetwork&quot;;
+    bytes32 public constant BANCOR_NETWORK = "BancorNetwork";
     
     event conversionSucceded(address from,uint256 fromTokenVal,address dest,uint256 minReturn,uint256 destTokenVal);    
     event conversionMin(uint256 min);

@@ -114,8 +114,8 @@ contract AFDTToken is TokenERC20, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;AFDT&quot;;
-        name = &quot;AFDChain&quot;;
+        symbol = "AFDT";
+        name = "AFDChain";
         decimals = 8;
         _totalSupply = 2100000000 * 10**uint(decimals);
         owner = 0xDAd085eB10FefC2c2ddac7dc9d22c7DBf1A78480;

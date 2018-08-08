@@ -37,8 +37,8 @@ contract Smile is ERC20 {
     
     uint256 public totalSupply = 100000000 * 10**3;
 
-    function name() public constant returns (string) { return &quot;SMILE&quot;; }
-    function symbol() public constant returns (string) { return &quot;SML&quot;; }
+    function name() public constant returns (string) { return "SMILE"; }
+    function symbol() public constant returns (string) { return "SML"; }
     function decimals() public constant returns (uint8) { return 3; }
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);

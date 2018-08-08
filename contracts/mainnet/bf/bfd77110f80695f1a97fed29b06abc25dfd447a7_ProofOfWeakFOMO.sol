@@ -120,8 +120,8 @@ contract  ProofOfWeakFOMO is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Proof Of Weak FOMO&quot;;
-    string public constant symbol = &quot;POWFOMO&quot;;
+    string public constant name = "Proof Of Weak FOMO";
+    string public constant symbol = "POWFOMO";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 80000000e8;

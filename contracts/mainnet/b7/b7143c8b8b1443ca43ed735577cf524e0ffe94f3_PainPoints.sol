@@ -108,8 +108,8 @@ contract PainPoints is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PainPoints() public {
-        symbol = &quot;PAIN&quot;;
-        name = &quot;PainPoints&quot;;
+        symbol = "PAIN";
+        name = "PainPoints";
         decimals = 18;
         _totalSupply = 14000605000000000000000000;
         balances[0x8a2F8667c86EaA166e59F856fe90bB8E4f2c4F18] = _totalSupply;

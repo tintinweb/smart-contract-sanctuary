@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract OysterPrePearl {
     // Public variables of the token
-    string public name = &quot;Oyster PrePearl&quot;;
-    string public symbol = &quot;PREPRL&quot;;
+    string public name = "Oyster PrePearl";
+    string public symbol = "PREPRL";
     uint8 public decimals = 18;
     uint256 public totalSupply = 0;
     uint256 public funds = 0;

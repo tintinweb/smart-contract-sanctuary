@@ -113,8 +113,8 @@ contract PaylessMinisplit is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PaylessMinisplit() public {
-        symbol = &quot;PAYSPLIT&quot;;
-        name = &quot;Payless Minisplit&quot;;
+        symbol = "PAYSPLIT";
+        name = "Payless Minisplit";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x6A1aaF0FB4126e58cD4D6c838537A2E4Afcd3026] = _totalSupply;

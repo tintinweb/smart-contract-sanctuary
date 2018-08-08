@@ -115,8 +115,8 @@ contract SolarNA is StandardToken {
     /*
      *  Token meta data
      */
-    string constant public name = &quot;SolarNA Token&quot;;
-    string constant public symbol = &quot;SOLA&quot;;
+    string constant public name = "SolarNA Token";
+    string constant public symbol = "SOLA";
     uint8 constant public decimals = 3;
     address public owner;
     uint remaining;

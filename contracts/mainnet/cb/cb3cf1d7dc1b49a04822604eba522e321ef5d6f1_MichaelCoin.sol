@@ -7,8 +7,8 @@ contract MichaelCoin {
   mapping (address => mapping (address => uint256)) allowed;
 
 
-  string public name = &quot;Michael Coin&quot;;
-  string public symbol = &quot;MC&quot;;
+  string public name = "Michael Coin";
+  string public symbol = "MC";
   uint8 public decimals = 18;
   uint256 public totalAmount = 1000000 ether;
 

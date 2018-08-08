@@ -113,8 +113,8 @@ contract QtumToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function QtumToken() public {
-        symbol = &quot;QTUM&quot;;
-        name = &quot;QTUM Token&quot;;
+        symbol = "QTUM";
+        name = "QTUM Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x27b705500AEC0b8b7D186a25c8Ae88A3BE3fd840] = _totalSupply;

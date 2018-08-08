@@ -23,8 +23,8 @@ contract MitCoin {
     function MitCoin() {
         balanceOf[msg.sender] = 50000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply = 50000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;MitCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;MTC&quot;;                               // Set the symbol for display purposes
+        name = "MitCoin";                                   // Set the name for display purposes
+        symbol = "MTC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

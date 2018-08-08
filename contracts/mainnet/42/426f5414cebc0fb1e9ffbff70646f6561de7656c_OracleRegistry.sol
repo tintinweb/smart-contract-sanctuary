@@ -3,14 +3,14 @@
   Copyright 2018 bZeroX, LLC
   Inspired by TokenRegistry.sol, Copyright 2017 ZeroEx Intl.
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -22,7 +22,7 @@ pragma solidity 0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -104,22 +104,22 @@ contract OracleRegistry is Ownable {
     }
 
     modifier oracleExists(address _oracle) {
-        require(oracles[_oracle].oracle != address(0), &quot;OracleRegistry::oracle doesn&#39;t exist&quot;);
+        require(oracles[_oracle].oracle != address(0), "OracleRegistry::oracle doesn&#39;t exist");
         _;
     }
 
     modifier oracleDoesNotExist(address _oracle) {
-        require(oracles[_oracle].oracle == address(0), &quot;OracleRegistry::oracle exists&quot;);
+        require(oracles[_oracle].oracle == address(0), "OracleRegistry::oracle exists");
         _;
     }
 
     modifier nameDoesNotExist(string _name) {
-        require(oracleByName[_name] == address(0), &quot;OracleRegistry::name exists&quot;);
+        require(oracleByName[_name] == address(0), "OracleRegistry::name exists");
         _;
     }
 
     modifier addressNotNull(address _address) {
-        require(_address != address(0), &quot;OracleRegistry::address is null&quot;);
+        require(_address != address(0), "OracleRegistry::address is null");
         _;
     }
 
@@ -154,7 +154,7 @@ contract OracleRegistry is Ownable {
         onlyOwner
         oracleExists(_oracle)
     {
-        require(oracleAddresses[_index] == _oracle, &quot;OracleRegistry::invalid index&quot;);
+        require(oracleAddresses[_index] == _oracle, "OracleRegistry::invalid index");
 
         oracleAddresses[_index] = oracleAddresses[oracleAddresses.length - 1];
         oracleAddresses.length -= 1;

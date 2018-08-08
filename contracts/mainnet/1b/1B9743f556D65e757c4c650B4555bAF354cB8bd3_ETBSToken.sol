@@ -95,7 +95,7 @@ contract ApproveAndCallFallBack {
 
 /// @dev The actual token contract, the default controller is the msg.sender
 ///  that deploys the contract, so usually this token will be deployed by a
-///  token controller contract, which Giveth will call a &quot;Campaign&quot;
+///  token controller contract, which Giveth will call a "Campaign"
 contract MiniMeToken is Controlled, Ownable {
 
     string public name;                //The Token&#39;s name: e.g. DigixDAO Tokens
@@ -627,9 +627,9 @@ contract ETBSToken is MiniMeToken {
         _tokenFactory,
         0x0,                     // no parent token
         0,                       // no snapshot block number from parent
-        &quot;EthBits ETBS Token&quot;,  // Token name
+        "EthBits ETBS Token",  // Token name
         12,                       // Decimals
-        &quot;ETBS&quot;,                   // Symbol
+        "ETBS",                   // Symbol
         false                    // Enable transfers
       )
     {}

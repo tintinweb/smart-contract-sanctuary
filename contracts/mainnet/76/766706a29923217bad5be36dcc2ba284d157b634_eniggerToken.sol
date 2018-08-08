@@ -128,8 +128,8 @@ contract StandardToken is ERC20, SafeMath {
 /// wuz kangz n shiet
 contract eniggerToken is Ownable, StandardToken {
 
-    string public name = &quot;eNiggers&quot;;            // name of the token
-    string public symbol = &quot;NGR&quot;;               // ERC20 compliant 4 digit token code
+    string public name = "eNiggers";            // name of the token
+    string public symbol = "NGR";               // ERC20 compliant 4 digit token code
     uint public decimals = 18;                  // token has 18 digit precision
 
     uint public totalSupply = 6000000 ether;  // total supply of 6 Million Tokens

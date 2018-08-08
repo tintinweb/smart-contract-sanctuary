@@ -189,8 +189,8 @@ library SafeMath {
 
 
 contract TradeBitToken is StandardToken {
-    string public name = &quot;TradeBit Token&quot;;
-    string public symbol = &quot;TBT&quot;;
+    string public name = "TradeBit Token";
+    string public symbol = "TBT";
     uint public decimals = 18;
 
     /**

@@ -74,8 +74,8 @@ contract IApplyPreICO {
 
 contract PreICOToken is ERC20Token {
 
-  string public constant name = &quot;REGA Risk Sharing preICO Token&quot;;
-  string public constant symbol = &quot;RST-P&quot;;
+  string public constant name = "REGA Risk Sharing preICO Token";
+  string public constant symbol = "RST-P";
   uint8 public constant decimals = 10;
 
   address public board;

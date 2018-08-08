@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -456,8 +456,8 @@ contract ERC721Token is ERC721 {
 
 contract PineappleArcadeTrophy is ERC721Token, Pausable {
     /// @notice Name and Symbol are part of the ERC721 standard
-    string public constant name = &quot;PineappleArcadeTrophy&quot;;
-    string public constant symbol = &quot;DEGEN&quot;;
+    string public constant name = "PineappleArcadeTrophy";
+    string public constant symbol = "DEGEN";
 
     Marketplace public marketplace;
     uint256 public maxTrophies;

@@ -235,7 +235,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -464,9 +464,9 @@ contract MintableBurnableERC827Token is ERC827, MintableBurnableToken {
 
 contract Pycoin is MintableBurnableERC827Token{
     // Name of the token
-    string constant public name = &quot;Pycoin&quot;;
+    string constant public name = "Pycoin";
     // Token abbreviation
-    string constant public symbol = &quot;Pyc&quot;;
+    string constant public symbol = "Pyc";
     // Decimal places
     uint8 constant public decimals = 18;
 }

@@ -191,8 +191,8 @@ contract SafeStandardToken is ERC20, SafeBasicToken {
 }
 
 contract PotoToken is SafeStandardToken{
-  string public constant name = &quot;POTO Token&quot;;
-  string public constant symbol = &quot;POTO&quot;;
+  string public constant name = "POTO Token";
+  string public constant symbol = "POTO";
   uint256 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));
 

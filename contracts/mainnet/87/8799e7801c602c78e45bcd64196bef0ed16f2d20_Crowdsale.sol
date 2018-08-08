@@ -183,8 +183,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract CRYPTToken is StandardToken {
-    string public constant name = &quot;CRYPT Test Token&quot;;
-    string public constant symbol = &quot;CRTT&quot;;
+    string public constant name = "CRYPT Test Token";
+    string public constant symbol = "CRTT";
     uint32 public constant decimals = 18;
     uint256 public INITIAL_SUPPLY = 50000 * 1 ether;
     address public CrowdsaleAddress;
@@ -206,7 +206,7 @@ contract CRYPTToken is StandardToken {
      // Override
     function transfer(address _to, uint256 _value) public returns(bool){
         if (msg.sender != CrowdsaleAddress){
-            require(!lockTransfers, &quot;Transfers are prohibited in ICO and Crowdsale period&quot;);
+            require(!lockTransfers, "Transfers are prohibited in ICO and Crowdsale period");
         }
         return super.transfer(_to,_value);
     }
@@ -214,7 +214,7 @@ contract CRYPTToken is StandardToken {
      // Override
     function transferFrom(address _from, address _to, uint256 _value) public returns(bool){
         if (msg.sender != CrowdsaleAddress){
-            require(!lockTransfers, &quot;Transfers are prohibited in ICO and Crowdsale period&quot;);
+            require(!lockTransfers, "Transfers are prohibited in ICO and Crowdsale period");
         }
         return super.transferFrom(_from,_to,_value);
     }
@@ -376,7 +376,7 @@ contract Crowdsale is Ownable {
         uint256 value = _value;
         require (value >= 1);
         value = value.mul(1 ether);
-        require (now >= preSaleStartTime + 1 days, &quot;only after 1 year&quot;);
+        require (now >= preSaleStartTime + 1 days, "only after 1 year");
         token.acceptTokens(address(holdAddress1), value); 
         return true;
     } 
@@ -388,7 +388,7 @@ contract Crowdsale is Ownable {
         uint256 value = _value;
         require (value >= 1);
         value = value.mul(1 ether);
-        require (now >= preSaleStartTime + 1 days, &quot;only after 40 days&quot;);
+        require (now >= preSaleStartTime + 1 days, "only after 40 days");
         token.acceptTokens(address(holdAddress2), value);    
         return true;
     } 
@@ -400,7 +400,7 @@ contract Crowdsale is Ownable {
         uint256 value = _value;
         require (value >= 1);
         value = value.mul(1 ether);
-        require (now >= preSaleStartTime + 1 days, &quot;only after 40 days&quot;);
+        require (now >= preSaleStartTime + 1 days, "only after 40 days");
         token.acceptTokens(address(holdAddress3), value);    
         return true;
     } 
@@ -464,14 +464,14 @@ contract Crowdsale is Ownable {
 
     function startPreICO() public onlyOwner onlyInState(State.PreSale) {
         // PreSale minimum 10 days
-        require (now >= preSaleStartTime + 1 days, &quot;Mimimum period Pre-Sale is 10 days&quot;);
+        require (now >= preSaleStartTime + 1 days, "Mimimum period Pre-Sale is 10 days");
         setState(State.PreICO);
         preICOStartTime = uint64(now);
     }
      
     function startCrowdSale() public onlyOwner onlyInState(State.PreICO) {
         // Pre-ICO minimum 15 days
-        require (now >= preICOStartTime + 1 days, &quot;Mimimum period Pre-ICO is 15 days&quot;);
+        require (now >= preICOStartTime + 1 days, "Mimimum period Pre-ICO is 15 days");
         setState(State.CrowdSale);
         crowdSaleStartTime = uint64(now);
     }
@@ -480,10 +480,10 @@ contract Crowdsale is Ownable {
         // CrowdSale minimum 30 days
         // Attention - function not have reverse!
 
-        require (now >= crowdSaleStartTime + 1 days, &quot;Mimimum period CrowdSale is 30 days&quot;);
+        require (now >= crowdSaleStartTime + 1 days, "Mimimum period CrowdSale is 30 days");
         // test coftcap
         if (soldTokens < TOKEN_SOFT_CAP) {
-            // softcap don&quot;t accessable - refunding
+            // softcap don"t accessable - refunding
             setState(State.Refunding);
         } else {
             // All right! CrowdSale is passed. WithdrawProfit is accessable
@@ -520,12 +520,12 @@ contract Crowdsale is Ownable {
 
  
     function saleTokens() internal {
-        require(currentState != State.Init, &quot;Contract is init, do not accept ether.&quot;); 
-        require(currentState != State.Refunding, &quot;Contract is refunding, do not accept ether.&quot;);
+        require(currentState != State.Init, "Contract is init, do not accept ether."); 
+        require(currentState != State.Refunding, "Contract is refunding, do not accept ether.");
         //calculation length of periods, pauses, auto set next stage
         if (currentState == State.PreSale) {
             if ((uint64(now) > preSaleStartTime + 1 days) && (uint64(now) <= preSaleStartTime + 2 days)){
-                require (false, &quot;It is pause after PreSale stage - contract do not accept ether&quot;);
+                require (false, "It is pause after PreSale stage - contract do not accept ether");
             }
             if (uint64(now) > preSaleStartTime + 2 days){
                 setState(State.PreICO);
@@ -535,7 +535,7 @@ contract Crowdsale is Ownable {
 
         if (currentState == State.PreICO) {
             if ((uint64(now) > preICOStartTime + 1 days) && (uint64(now) <= preICOStartTime + 2 days)){
-                require (false, &quot;It is pause after PreICO stage - contract do not accept ether&quot;);
+                require (false, "It is pause after PreICO stage - contract do not accept ether");
             }
             if (uint64(now) > preICOStartTime + 2 days){
                 setState(State.CrowdSale);
@@ -545,12 +545,12 @@ contract Crowdsale is Ownable {
         
         if (currentState == State.CrowdSale) {
             if ((uint64(now) > crowdSaleStartTime + 1 days) && (uint64(now) <= crowdSaleStartTime + 2 days)){
-                require (false, &quot;It is pause after CrowdSale stage - contract do not accept ether&quot;);
+                require (false, "It is pause after CrowdSale stage - contract do not accept ether");
             }
             if (uint64(now) > crowdSaleStartTime + 2 days){
                 // autofinish CrowdSale stage
                 if (soldTokens < TOKEN_SOFT_CAP) {
-                    // softcap don&quot;t accessable - refunding
+                    // softcap don"t accessable - refunding
                     setState(State.Refunding);
                 } else {
                     // All right! CrowdSale is passed. WithdrawProfit is accessable
@@ -561,13 +561,13 @@ contract Crowdsale is Ownable {
         }        
         
         if (currentState == State.PreSale) {
-            require (RPESALE_TOKEN_SUPPLY_LIMIT > soldTokens, &quot;HardCap of Pre-Sale is passed.&quot;); 
-            require (msg.value >= 1 ether / 10, &quot;Minimum 20 ether for transaction all Pre-Sale period&quot;);
+            require (RPESALE_TOKEN_SUPPLY_LIMIT > soldTokens, "HardCap of Pre-Sale is passed."); 
+            require (msg.value >= 1 ether / 10, "Minimum 20 ether for transaction all Pre-Sale period");
         }
         if (currentState == State.PreICO) {
-            require (RPEICO_TOKEN_SUPPLY_LIMIT > soldTokens, &quot;HardCap of Pre-ICO is passed.&quot;);
+            require (RPEICO_TOKEN_SUPPLY_LIMIT > soldTokens, "HardCap of Pre-ICO is passed.");
             if (now < preICOStartTime + 1 days){
-                require (msg.value <= 1 ether / 10, &quot;Maximum is 20 ether for transaction in first day of Pre-ICO&quot;);
+                require (msg.value <= 1 ether / 10, "Maximum is 20 ether for transaction in first day of Pre-ICO");
             }
         }
         crowdsaleBalances[msg.sender] = crowdsaleBalances[msg.sender].add(msg.value);
@@ -578,7 +578,7 @@ contract Crowdsale is Ownable {
     }
  
     function refund() public payable{
-        require(currentState == State.Refunding, &quot;Only for Refunding stage.&quot;);
+        require(currentState == State.Refunding, "Only for Refunding stage.");
         // refund ether to investors
         uint value = crowdsaleBalances[msg.sender]; 
         crowdsaleBalances[msg.sender] = 0; 
@@ -588,7 +588,7 @@ contract Crowdsale is Ownable {
     
     function withdrawProfit (address _to, uint256 _value) public onlyOwner payable {
     // withdrawProfit - only if coftcap passed
-        require (currentState == State.WorkTime, &quot;Contract is not at WorkTime stage. Access denied.&quot;);
+        require (currentState == State.WorkTime, "Contract is not at WorkTime stage. Access denied.");
         require (myAddress.balance >= _value);
         require(_to != address(0));
         _to.transfer(_value);

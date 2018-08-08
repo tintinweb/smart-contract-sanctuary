@@ -90,11 +90,11 @@ contract TokenERC20 {
 
  
 
-    string public name = &quot;Yumerium Token&quot;;
+    string public name = "Yumerium Token";
 
  
 
-    string public symbol = &quot;YUM&quot;;
+    string public symbol = "YUM";
 
  
 

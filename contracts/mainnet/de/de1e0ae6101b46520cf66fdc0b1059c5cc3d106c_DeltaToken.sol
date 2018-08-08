@@ -72,8 +72,8 @@ contract DeltaToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;DeltaChain Token&quot;;
-    string public constant symbol = &quot;DELTA&quot;;
+    string public constant name = "DeltaChain Token";
+    string public constant symbol = "DELTA";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 25000000000e8;

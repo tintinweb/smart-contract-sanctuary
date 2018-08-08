@@ -115,8 +115,8 @@ contract ERC20Token is ERC20 {
  */
 contract DOUTEST is ERC20Token, Owned {
 
-  string  public constant name     = &quot;DOU Token&quot;;
-  string  public constant symbol   = &quot;DOU&quot;;
+  string  public constant name     = "DOU Token";
+  string  public constant symbol   = "DOU";
   uint256 public constant decimals = 18;
 
   uint256 public constant initialToken      = 500000000 * (10 ** decimals);

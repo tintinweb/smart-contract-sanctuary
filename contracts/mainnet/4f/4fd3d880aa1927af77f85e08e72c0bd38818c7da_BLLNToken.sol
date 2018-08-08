@@ -73,7 +73,7 @@ library SafeMath {
 /**
 * @title Ownable
 * @dev The Ownable contract has an owner address, and provides basic authorization control
-* functions, this simplifies the implementation of &quot;user permissions&quot;.
+* functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
     address public owner;
@@ -310,8 +310,8 @@ interface BLLNDividendInterface {
 }
 
 contract BLLNToken is MintableToken, CanReclaimToken {
-    string public constant name = &quot;Billion Token&quot;;
-    string public constant symbol = &quot;BLLN&quot;;
+    string public constant name = "Billion Token";
+    string public constant symbol = "BLLN";
     uint32 public constant decimals = 0;
     uint256 public constant maxTotalSupply = 250*(10**6);
     BLLNDividendInterface public dividend;

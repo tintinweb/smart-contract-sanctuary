@@ -109,8 +109,8 @@ contract DIGTREX is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DIGTREX() public {
-        symbol = &quot;DGT&quot;;
-        name = &quot;DIGTREX Token&quot;;
+        symbol = "DGT";
+        name = "DIGTREX Token";
         decimals = 18;
         _totalSupply = 250000000000000000000000000;
         balances[0x97c47782c7918eD78a247F2CE7A476A22A41Cd19] = _totalSupply;

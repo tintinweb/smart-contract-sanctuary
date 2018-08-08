@@ -238,7 +238,7 @@ contract ParameterizedToken is CappedToken {
 
 contract KUYCToken is ParameterizedToken {
 
-    function KUYCToken() public ParameterizedToken(&quot;KUYC&quot;, &quot;KUYC&quot;, 18, 1000000000) {
+    function KUYCToken() public ParameterizedToken("KUYC", "KUYC", 18, 1000000000) {
     }
 
 }

@@ -19,9 +19,9 @@ contract GameXChange {
     function GameXChange() {
 
          initialSupply = 1000000000;
-         name =&quot;Game X Change&quot;;
+         name ="Game X Change";
         decimals = 4;
-         symbol = &quot;GAMEX&quot;;
+         symbol = "GAMEX";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

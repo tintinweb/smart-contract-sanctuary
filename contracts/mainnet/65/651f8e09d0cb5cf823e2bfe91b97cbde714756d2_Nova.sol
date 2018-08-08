@@ -65,10 +65,10 @@ contract ERC20Standard {
 contract Nova is ERC20Standard {
 	function Nova() {
 		totalSupply = 100000000*10**8;
-		name = &quot;Real estate blockchain for professionals&quot;;
+		name = "Real estate blockchain for professionals";
 		decimals = 8;
-		symbol = &quot;NOV&quot;;
-		version = &quot;1.0&quot;;
+		symbol = "NOV";
+		version = "1.0";
 		balances[msg.sender] = totalSupply;
 	}
 }

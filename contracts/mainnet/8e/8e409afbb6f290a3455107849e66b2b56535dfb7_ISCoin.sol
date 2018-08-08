@@ -175,7 +175,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -674,8 +674,8 @@ contract StopableCrowdsale is Crowdsale, Claimable{
 contract ISCoin is PausableToken, MintableToken, BurnableToken, StopableCrowdsale {
     using SafeMath for uint256;
 
-    string public name = &quot;Imperial Star Coin&quot;;
-    string public symbol = &quot;ISC&quot;;
+    string public name = "Imperial Star Coin";
+    string public symbol = "ISC";
     uint8 public decimals = 18;
 
     mapping (address => address[] ) public balancesLocked;

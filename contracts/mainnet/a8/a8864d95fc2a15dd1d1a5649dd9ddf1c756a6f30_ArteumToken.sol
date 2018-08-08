@@ -114,8 +114,8 @@ contract ArteumToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function ArteumToken() public {
-        symbol = &quot;ARU&quot;;
-        name = &quot;Arteum&quot;;
+        symbol = "ARU";
+        name = "Arteum";
         decimals = 18;
         _totalSupply = 100000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

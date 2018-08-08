@@ -23,8 +23,8 @@ contract OChain {
     function OChain() {
         balanceOf[msg.sender] = 100000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply = 100000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;OChain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;OC&quot;;                               // Set the symbol for display purposes
+        name = "OChain";                                   // Set the name for display purposes
+        symbol = "OC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

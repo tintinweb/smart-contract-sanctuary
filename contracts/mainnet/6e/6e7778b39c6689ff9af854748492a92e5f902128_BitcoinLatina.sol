@@ -237,8 +237,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract BitcoinLatina is StandardToken {
 
-string public constant name = &quot;BitcoinLatina&quot;;
-string public constant symbol = &quot;BTCL&quot;;
+string public constant name = "BitcoinLatina";
+string public constant symbol = "BTCL";
 uint8 public constant decimals = 18;
 
 uint256 public constant INITIAL_SUPPLY = 250000000 * (10 ** uint256(decimals));

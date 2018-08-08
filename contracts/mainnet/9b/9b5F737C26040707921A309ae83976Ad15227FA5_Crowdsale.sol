@@ -180,8 +180,8 @@ contract StandardToken is BasicToken, ERC20 {
  *  OrenCoin token contract. Implements
  */
 contract OrenCoin is StandardToken, Ownable {
-  string public constant name = &quot;OrenCoin&quot;;
-  string public constant symbol = &quot;OREN&quot;;
+  string public constant name = "OrenCoin";
+  string public constant symbol = "OREN";
   uint public constant decimals = 8;
   // Constructor
   function OrenCoin() {
@@ -364,9 +364,9 @@ contract Crowdsale is Pausable, PullPayment {
     }
     /* 
      * When MIN_CAP is not reach:
-     * 1) backer call the &quot;approve&quot; function of the OrenCoin token contract with the amount of all OrenCoins they got in order to be refund
-     * 2) backer call the &quot;refund&quot; function of the Crowdsale contract with the same amount of OrenCoins
-     * 3) backer call the &quot;withdrawPayments&quot; function of the Crowdsale contract to get a refund in ETH
+     * 1) backer call the "approve" function of the OrenCoin token contract with the amount of all OrenCoins they got in order to be refund
+     * 2) backer call the "refund" function of the Crowdsale contract with the same amount of OrenCoins
+     * 3) backer call the "withdrawPayments" function of the Crowdsale contract to get a refund in ETH
      */
     function refund(uint _value) minCapNotReached public {
         

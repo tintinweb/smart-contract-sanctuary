@@ -237,9 +237,9 @@ contract StandardToken is IERC20,DateTimeLib {
 
     mapping(address => mapping(address => uint256)) allowed;
     
-    string public constant symbol = &quot;APB&quot;;
+    string public constant symbol = "APB";
     
-    string public constant name = &quot;AmpereX Bank&quot;;
+    string public constant name = "AmpereX Bank";
     
     uint _totalSupply = 10000000000 * 10 ** 6;
     

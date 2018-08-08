@@ -105,7 +105,7 @@ contract IController {
 
 contract MarketFactory {
     function createMarket(IController _controller, IUniverse _universe, uint256 _endTime, uint256 _feePerEthInWei, ICash _denominationToken, address _designatedReporterAddress, address _sender, uint256 _numOutcomes, uint256 _numTicks) public payable returns (IMarket _market) {
-        Delegator _delegator = new Delegator(_controller, &quot;Market&quot;);
+        Delegator _delegator = new Delegator(_controller, "Market");
         _market = IMarket(_delegator);
         IReputationToken _reputationToken = _universe.getReputationToken();
         require(_reputationToken.transfer(_market, _reputationToken.balanceOf(this)));
@@ -136,7 +136,7 @@ contract Delegator is DelegationTarget {
         assembly {
             //0x40 is the address where the next free memory slot is stored in Solidity
             let _calldataMemoryOffset := mload(0x40)
-            // new &quot;memory end&quot; including padding. The bitwise operations here ensure we get rounded up to the nearest 32 byte boundary
+            // new "memory end" including padding. The bitwise operations here ensure we get rounded up to the nearest 32 byte boundary
             let _size := and(add(calldatasize, 0x1f), not(0x1f))
             // Update the pointer at 0x40 to point at new free memory location so any theoretical allocation doesn&#39;t stomp our memory in this call
             mstore(0x40, add(_calldataMemoryOffset, _size))
@@ -503,7 +503,7 @@ library Order {
         require(_outcome < _market.getNumberOfOutcomes());
         require(_price < _market.getNumTicks());
 
-        IOrders _orders = IOrders(_controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(_controller.lookup("Orders"));
         IAugur _augur = _controller.getAugur();
 
         return Data({
@@ -524,7 +524,7 @@ library Order {
     }
 
     //
-    // &quot;public&quot; functions
+    // "public" functions
     //
 
     function getOrderId(Order.Data _orderData) internal view returns (bytes32) {

@@ -113,8 +113,8 @@ contract PureChainToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PureChainToken() public {
-        symbol = &quot;PCT&quot;;
-        name = &quot;Pure Chain Token&quot;;
+        symbol = "PCT";
+        name = "Pure Chain Token";
         decimals = 18;
         _totalSupply = 180000000000000000000000000000000;
         balances[0x86a04D6922f1d9996EA0BDaBaCCe90Dc8E6De9bd] = _totalSupply;

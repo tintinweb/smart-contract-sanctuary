@@ -59,9 +59,9 @@ library SafeMath {
 
 contract RYANTOKEN is ERC20,Ownable{
 	using SafeMath for uint256;
-	string public constant name=&quot;瑞安币&quot;;
-	string public symbol=&quot;RYAN&quot;;
-	string public constant version = &quot;1.0&quot;;
+	string public constant name="瑞安币";
+	string public symbol="RYAN";
+	string public constant version = "1.0";
 	uint256 public constant decimals = 18;
 	uint256 public totalSupply;
 	uint256 public constant MAX_SUPPLY=300000000*10**decimals;

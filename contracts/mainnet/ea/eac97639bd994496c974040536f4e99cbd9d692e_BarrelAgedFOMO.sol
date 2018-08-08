@@ -117,9 +117,9 @@ contract BarrelAgedFOMO {
     */
 
     //first step of any good idea is a name 
-    string public constant name = &quot;Barrel Aged FOMO&quot;;
+    string public constant name = "Barrel Aged FOMO";
     //and of course after a name, we need a code name.
-    string public constant symbol = &quot;BARF&quot;;
+    string public constant symbol = "BARF";
     //Then determine brewing capacity
     uint256 public totalSupply = 1000;
     //get all of that&#39;s devil&#39;s cut

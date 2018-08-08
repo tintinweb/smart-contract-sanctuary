@@ -28,7 +28,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address internal contractOwner;
@@ -314,9 +314,9 @@ contract ChampFactory is Pausable{
     }
 
 
-    /// @notice Change &quot;CreateChampFee&quot;. If ETH price will grow up it can expensive to create new champ.
-    /// @param _fee New &quot;CreateChampFee&quot;
-    /// @dev Only owner of contract can change &quot;CreateChampFee&quot;
+    /// @notice Change "CreateChampFee". If ETH price will grow up it can expensive to create new champ.
+    /// @param _fee New "CreateChampFee"
+    /// @dev Only owner of contract can change "CreateChampFee"
     function setCreateChampFee(uint256 _fee) external onlyOwner {
         createChampFee = _fee;
     }
@@ -604,9 +604,9 @@ contract Items is ChampFactory {
 
     }
 
-    /// @notice Change &quot;lootboxFee&quot;. 
-    /// @param _fee New &quot;lootboxFee&quot;
-    /// @dev Only owner of contract can change &quot;lootboxFee&quot;
+    /// @notice Change "lootboxFee". 
+    /// @param _fee New "lootboxFee"
+    /// @dev Only owner of contract can change "lootboxFee"
     function setLootboxFee(uint _fee) external onlyOwner {
         lootboxFee = _fee;
     }

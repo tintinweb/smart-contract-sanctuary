@@ -128,8 +128,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract CrowdsaleToken is StandardToken {
  
-  string public constant name = &quot;HolyEthereumCoin&quot;;
-  string public constant symbol = &quot;HEC&quot;;
+  string public constant name = "HolyEthereumCoin";
+  string public constant symbol = "HEC";
   uint public constant decimals = 3;
   // replace with your fund collection multisig address 
   address public constant multisig = 0x04867292A47c5837759dfe13BC70bD30aA01050D; 

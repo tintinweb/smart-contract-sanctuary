@@ -76,8 +76,8 @@ contract NeedsCoin is ERC20Interface, Owned, SafeMath {
 
 
     function NeedsCoin() public {
-        symbol = &quot;NCC&quot;;
-        name = &quot;NeedsCoin&quot;;
+        symbol = "NCC";
+        name = "NeedsCoin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x4C6b77c3a88ffb4993902ECF3cCE6044bd9178Ee] = _totalSupply;

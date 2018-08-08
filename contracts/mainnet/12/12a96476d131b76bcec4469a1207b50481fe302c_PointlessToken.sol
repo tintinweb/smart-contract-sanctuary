@@ -167,8 +167,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract PointlessToken is StandardToken, Ownable {
 
-  string public constant name = &quot;The Pointless Coin&quot;; 
-  string public constant symbol = &quot;PNTL&quot;; 
+  string public constant name = "The Pointless Coin"; 
+  string public constant symbol = "PNTL"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 1000000 * (10 ** uint256(decimals));

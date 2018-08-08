@@ -152,8 +152,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract PASS is StandardToken {
-    string public constant name = &quot;Pure Asset&quot;;
-    string public constant symbol = &quot;PASS&quot;;
+    string public constant name = "Pure Asset";
+    string public constant symbol = "PASS";
     uint256 public constant decimals = 5;
     uint256 public constant INITIAL_SUPPLY = 695000000 * 10**5;
     function PASS() 

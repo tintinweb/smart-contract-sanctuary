@@ -98,9 +98,9 @@ contract MANHATTANPROXY5THAVE is StandardToken {
         ) {
         totalSupply = 10000;                        
         balances[msg.sender] = 10000;               
-        name = &quot;MP5THAV&quot;;                                             
+        name = "MP5THAV";                                             
         decimals = 0;                            
-        symbol = &quot;MP5THAV&quot;;                               
+        symbol = "MP5THAV";                               
     }
 
     /* Approves and then calls the receiving contract */
@@ -109,7 +109,7 @@ contract MANHATTANPROXY5THAVE is StandardToken {
         Approval(msg.sender, _spender, _value);
 
         
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

@@ -63,8 +63,8 @@ contract NIMBUS is ERC20 {
     
     uint256 public totalSupply = 3500000000 * 10**8;
 
-    function name() public constant returns (string) { return &quot;NIMBUS&quot;; }
-    function symbol() public constant returns (string) { return &quot;NIM&quot;; }
+    function name() public constant returns (string) { return "NIMBUS"; }
+    function symbol() public constant returns (string) { return "NIM"; }
     function decimals() public constant returns (uint8) { return 8; }
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);

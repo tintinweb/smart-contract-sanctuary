@@ -233,7 +233,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -418,8 +418,8 @@ contract PausableToken is StandardToken, Pausable {
  * @dev This is a standard ERC20 token
  */
 contract INCXToken is BurnableToken, PausableToken, MintableToken {
-  string public constant name = &quot;INCX Coin&quot;;
-  string public constant symbol = &quot;INCX&quot;;
+  string public constant name = "INCX Coin";
+  string public constant symbol = "INCX";
   uint64 public constant decimals = 18;
   uint256 public constant maxLimit = 1000000000 * 10**uint(decimals);
 

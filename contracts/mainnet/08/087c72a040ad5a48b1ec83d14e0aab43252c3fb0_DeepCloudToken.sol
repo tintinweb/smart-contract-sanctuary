@@ -219,8 +219,8 @@ contract StandardToken is ERC20, BasicToken {
 contract DeepCloudToken is StandardToken { //ERC - 20 token contract
   using SafeMath for uint;
 
-  string public constant symbol = &quot;DEEP&quot;;
-  string public constant name = &quot;DeepCloud&quot;;
+  string public constant symbol = "DEEP";
+  string public constant name = "DeepCloud";
 
   uint8 public constant decimals = 18;
   uint256 totalSupply_ = 200000000 ether;

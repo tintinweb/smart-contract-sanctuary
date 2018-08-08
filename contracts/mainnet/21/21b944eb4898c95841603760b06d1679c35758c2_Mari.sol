@@ -40,10 +40,10 @@ contract ERC20 {
 contract Mari is ERC20, SafeMath
 {
     // Name of the token
-    string public constant name = &quot;Mari&quot;;
+    string public constant name = "Mari";
 
     // Symbol of token
-    string public constant symbol = &quot;MAR&quot;;
+    string public constant symbol = "MAR";
 
     uint8 public constant decimals = 18;
     uint public totalsupply = 2000000 * 10 ** 18; //

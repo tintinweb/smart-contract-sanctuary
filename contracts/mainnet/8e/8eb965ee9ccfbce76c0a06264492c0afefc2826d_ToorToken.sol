@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -145,9 +145,9 @@ contract ToorToken is ERC20Basic, Ownable {
     event Approval(address indexed owner, address indexed spender, uint256 value);
 
     function ToorToken() public {
-        name = &quot;ToorCoin&quot;;
+        name = "ToorCoin";
         decimals = 18;
-        symbol = &quot;TOOR&quot;;
+        symbol = "TOOR";
 
         // Setup the token staking reward percentage per year
         rateMultiplier = 10**9;

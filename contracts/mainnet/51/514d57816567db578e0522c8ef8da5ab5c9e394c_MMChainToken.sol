@@ -212,8 +212,8 @@ contract standardToken is ERC20Token, limitedFactor {
 contract MMChainToken is standardToken,Owned {
     using SafeMath for uint;
 
-    string constant public name=&quot;MONEY MONSTER&quot;;
-    string constant public symbol=&quot;MM&quot;;
+    string constant public name="MONEY MONSTER";
+    string constant public symbol="MM";
     uint256 constant public decimals=6;
     
     bool public ICOStart;

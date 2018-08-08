@@ -15,8 +15,8 @@ contract SealToken {
     function SealToken() public {
         totalSupply = 1200000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Seal&quot;;
-        symbol = &quot;Seal&quot;;
+        name = "Seal";
+        symbol = "Seal";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

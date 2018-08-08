@@ -184,8 +184,8 @@ contract StandardToken is ERC20, BasicToken {
   }
 }
 contract ViteToken is StandardToken {
-    string  public name = &quot;ViteToken&quot;;
-    string  public symbol = &quot;VITE&quot;;
+    string  public name = "ViteToken";
+    string  public symbol = "VITE";
     uint8   public decimals = 18;
     uint    public totalSupply = 10 ** 27;
     function ()

@@ -18,8 +18,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract TokenMomos is owned{
 
-    string public name = &quot;Momocoin&quot;;
-    string public symbol = &quot;MOMO&quot;;
+    string public name = "Momocoin";
+    string public symbol = "MOMO";
     uint8 public decimals = 18;
 
     mapping (address => uint256) public balanceOf;

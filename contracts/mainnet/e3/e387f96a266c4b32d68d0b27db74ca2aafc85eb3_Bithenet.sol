@@ -180,8 +180,8 @@ contract Bithenet is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Bithenet() public {
-        symbol = &quot;BTN&quot;;
-        name = &quot;Bithenet&quot;;
+        symbol = "BTN";
+        name = "Bithenet";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0x04922f44D030f352aE336C125cf785BF49628056] = _totalSupply;

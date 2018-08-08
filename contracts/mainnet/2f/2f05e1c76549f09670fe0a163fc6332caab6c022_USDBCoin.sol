@@ -114,8 +114,8 @@ contract USDBCoin is Ownable, StandardToken {
     function USDBCoin() public {
     totalSupply = 10 * (10**6) * (10**6);
         balances[msg.sender] = totalSupply;
-        name = &quot;USDB&quot;;
-        symbol = &quot;USDB&quot;;
+        name = "USDB";
+        symbol = "USDB";
         decimals = 6;
     }
 

@@ -167,11 +167,11 @@ contract WarToken is ERC721, AccessAdmin {
     }
         
     function name() public pure returns(string) {
-        return &quot;WAR Token&quot;;
+        return "WAR Token";
     }
 
     function symbol() public pure returns(string) {
-        return &quot;WAR&quot;;
+        return "WAR";
     }
 
     /// @dev Search for token quantity address
@@ -209,7 +209,7 @@ contract WarToken is ERC721, AccessAdmin {
         external
         whenNotPaused
     {
-        _safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+        _safeTransferFrom(_from, _to, _tokenId, "");
     }
 
     /// @dev Transfer ownership of an WAR, &#39;_to&#39; must be a vaild address, or the WAR will lost
@@ -245,7 +245,7 @@ contract WarToken is ERC721, AccessAdmin {
         Approval(owner, _approved, _tokenId);
     }
 
-    /// @dev Enable or disable approval for a third party (&quot;operator&quot;) to manage all your asset.
+    /// @dev Enable or disable approval for a third party ("operator") to manage all your asset.
     /// @param _operator Address to add to the set of authorized operators.
     /// @param _approved True if the operators is approved, false to revoke approval
     function setApprovalForAll(address _operator, bool _approved) 
@@ -329,7 +329,7 @@ contract WarToken is ERC721, AccessAdmin {
             return;
         }
         bytes4 retval = ERC721TokenReceiver(_to).onERC721Received(_from, _tokenId, data);
-        // bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;)) = 0xf0b9e5ba;
+        // bytes4(keccak256("onERC721Received(address,uint256,bytes)")) = 0xf0b9e5ba;
         require(retval == 0xf0b9e5ba);
     }
 

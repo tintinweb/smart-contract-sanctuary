@@ -16,9 +16,9 @@ contract GREENBIT{
     function GREENBIT() {
 
          initialSupply = 3333333333;
-         name =&quot;greenbit&quot;;
+         name ="greenbit";
         decimals = 18;
-         symbol = &quot;GBit&quot;;
+         symbol = "GBit";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

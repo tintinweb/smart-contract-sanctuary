@@ -72,8 +72,8 @@ contract VixCoin is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;VIX Coin&quot;;
-    string public constant symbol = &quot;VIX&quot;;
+    string public constant name = "VIX Coin";
+    string public constant symbol = "VIX";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 37000000000e8;

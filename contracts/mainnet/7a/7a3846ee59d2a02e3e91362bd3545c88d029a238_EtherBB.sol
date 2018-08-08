@@ -185,8 +185,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract EtherBB is StandardToken {
 
-  string public constant name = &quot;ETHERBB&quot;;
-  string public constant symbol = &quot;BB&quot;;
+  string public constant name = "ETHERBB";
+  string public constant symbol = "BB";
   uint8 public constant decimals = 9;
 
   uint256 public constant INITIAL_SUPPLY = 1000000000000000000;

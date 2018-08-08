@@ -53,7 +53,7 @@ contract IOU {
       Time-sensitive ETH protection is only applicable if the contract
       doesn&#39;t have adequate tokens for the buyer.
 
-      The &quot;adequacy&quot; check prevents the seller and/or third party attacker
+      The "adequacy" check prevents the seller and/or third party attacker
       from locking down buyers&#39; ETH. i.e. The attacker sends 1 token into our
       contract to falsely signal that the contract has been filled and is ready
       for token distribution. If we simply check for a >0 token balance, we risk

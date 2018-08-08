@@ -183,9 +183,9 @@ contract ERC20Token is ERC20Interface, Owned {
 
     function ERC20Token() public {
 
-        symbol = &quot;DIPS&quot;;
+        symbol = "DIPS";
 
-        name = &quot;Decentralized Intellectual Property System&quot;;
+        name = "Decentralized Intellectual Property System";
 
         decimals = 18;
 

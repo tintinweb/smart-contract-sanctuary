@@ -41,8 +41,8 @@ contract ERC20 is ERC20Basic {
 contract BlocVehicle is ERC20 {
 
       using SafeMath for uint;
-      string public constant name = &quot;BlocVehicle&quot;;
-      string public constant symbol = &quot;VCL&quot;;
+      string public constant name = "BlocVehicle";
+      string public constant symbol = "VCL";
       uint256 public constant decimals = 18;
       uint256 _totalSupply = 1000000000 * (10 ** decimals);
 

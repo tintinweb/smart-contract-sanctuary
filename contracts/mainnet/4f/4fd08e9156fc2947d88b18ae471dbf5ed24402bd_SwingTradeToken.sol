@@ -113,8 +113,8 @@ contract SwingTradeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SwingTradeToken() public {
-        symbol = &quot;WMB3&quot;;
-        name = &quot;SwingTrade Token&quot;;
+        symbol = "WMB3";
+        name = "SwingTrade Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000000;
         balances[0x6Fd4cE0d9b5162a9B9A416e4af7d1FecE3b9e27c] = _totalSupply;

@@ -113,8 +113,8 @@ contract MichaelCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MichaelCoin() public {
-        symbol = &quot;MMC&quot;;
-        name = &quot;Michael Coin&quot;;
+        symbol = "MMC";
+        name = "Michael Coin";
         decimals = 0;
         _totalSupply = 100;
         balances[0xD67dc8F225D649B908EA5c6f0886FDd25cc4bC25] = _totalSupply;

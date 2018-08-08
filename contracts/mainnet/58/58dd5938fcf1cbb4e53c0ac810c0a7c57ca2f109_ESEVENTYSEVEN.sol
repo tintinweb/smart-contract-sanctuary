@@ -3,8 +3,8 @@ contract ESEVENTYSEVEN {
     
     uint public constant _totalSupply = 300000000000000000000000000;
     
-    string public constant symbol = &quot;ESS&quot;;
-    string public constant name = &quot;E SEVENTY SEVEN&quot;;
+    string public constant symbol = "ESS";
+    string public constant name = "E SEVENTY SEVEN";
     uint8 public constant decimals = 18;
     
     mapping(address => uint256) balances;

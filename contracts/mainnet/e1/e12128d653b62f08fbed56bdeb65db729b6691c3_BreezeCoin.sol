@@ -338,11 +338,11 @@ contract BreezeCoin is StandardToken, Ownable {
 
 
 
-    string public constant name = &quot;BreezeCoin&quot;;
+    string public constant name = "BreezeCoin";
 
 
 
-    string public constant symbol = &quot;BRZC&quot;;
+    string public constant symbol = "BRZC";
 
 
 

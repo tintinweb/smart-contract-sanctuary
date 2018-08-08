@@ -72,8 +72,8 @@ contract VormaToken is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function VormaToken() public {
-        symbol = &quot;VOC&quot;;
-        name = &quot;VORMACOIN&quot;;
+        symbol = "VOC";
+        name = "VORMACOIN";
         decimals = 18;
         _totalSupply = 30000000000000000000000000;
         balances[0xc73e847d6d13468E3c3D37AA84de4feae9039d6C] = _totalSupply;

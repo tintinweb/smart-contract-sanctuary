@@ -2,8 +2,8 @@ pragma solidity ^0.4.4;
 
 contract CountryCoin {
 
-    string public constant name = &quot;CountryCoin&quot;;
-    string public constant symbol = &quot;CCN&quot;;
+    string public constant name = "CountryCoin";
+    string public constant symbol = "CCN";
     uint public constant decimals = 8;
     uint public totalSupply;
 

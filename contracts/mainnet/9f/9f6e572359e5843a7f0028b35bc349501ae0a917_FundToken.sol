@@ -115,8 +115,8 @@ contract FundToken is UnboundedRegularToken {
 
     uint public totalSupply = 3*10**10;
     uint8 constant public decimals = 2;
-    string constant public name = &quot;Chain Capital Fund Token&quot;;
-    string constant public symbol = &quot;FUND&quot;;
+    string constant public name = "Chain Capital Fund Token";
+    string constant public symbol = "FUND";
 
     function FundToken() {
         balances[msg.sender] = totalSupply;

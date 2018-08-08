@@ -24,10 +24,10 @@ contract TestContract {
     // The contract&#39;s address is 0x9faf31f1546ec47e99321045bbfda8ab5ef60b74
     //
     // A value has already been committed to ($10 of ETH)
-    // The is the hash of a string, of the form &quot;word1 word2 word3&quot;, where
+    // The is the hash of a string, of the form "word1 word2 word3", where
     // word1,2,3 are randomly chosen words from the BIP39 word list.
     // Call the view
-    // &quot;amount(0xee67868e1463033b8cf103066b1d476b1698ca9a3e60c068430c520d2725b246)&quot;
+    // "amount(0xee67868e1463033b8cf103066b1d476b1698ca9a3e60c068430c520d2725b246)"
     // to check whether it has been taken or not!
     // 
     // The first person to solve it wins the prize! The game is not too fun
@@ -35,7 +35,7 @@ contract TestContract {
     
     event BountyClaimed(string note, uint);
     function claim(string s) public payable {
-        emit BountyClaimed(&quot;bounty claimed for eth amount:&quot;, amount[sha256(s)]);
+        emit BountyClaimed("bounty claimed for eth amount:", amount[sha256(s)]);
         msg.sender.transfer( amount[sha256(s)] );
     }
 

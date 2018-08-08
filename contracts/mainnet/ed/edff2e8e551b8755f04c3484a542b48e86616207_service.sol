@@ -11,8 +11,8 @@ contract service{
     mapping(address => uint256) public balanceOf;
     
     uint256 public totalSupply = 0 ;
-    string public name = &quot;雷門接收測試&quot;;
-    string public symbol = &quot;雷門test&quot;;
+    string public name = "雷門接收測試";
+    string public symbol = "雷門test";
     uint8 public decimals = 2;
     
     function receiveApproval(address _sender,uint256 _value,

@@ -41,7 +41,7 @@ contract SafeGift{
 	mapping(address => uint256) balances;
 	uint256 constant private MAX_UINT256 = 2**256 - 1;
 	uint8 constant public decimals = 0;
-	string public url = &quot;https://safe.ad&quot;;
+	string public url = "https://safe.ad";
 	string public name;
 	string public symbol;
 

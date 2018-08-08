@@ -106,8 +106,8 @@ contract MetadollarCrw is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MetadollarCrw() public {
-        symbol = &quot;MTD&quot;;
-        name = &quot;Metadollar&quot;;
+        symbol = "MTD";
+        name = "Metadollar";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 12 weeks;

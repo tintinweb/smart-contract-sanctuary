@@ -28,7 +28,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -454,9 +454,9 @@ contract KYCToken is ERC20BasicToken, ERC20, PropertyStorage {
     mapping(address => mapping(address => uint256)) internal allowed;
 
     uint256 public totalSupply = 42000000000000000000000000;
-    string public name = &quot;KYC.Legal token&quot;;
+    string public name = "KYC.Legal token";
     uint8 public decimals = 18;
-    string public symbol = &quot;KYC&quot;;
+    string public symbol = "KYC";
 
     function balanceOf(address _owner) view public returns (uint256 balance) {
         return balances[_owner];

@@ -113,8 +113,8 @@ contract MosaiCoinContract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MosaiCoinContract() public {
-        symbol = &quot;MOSC&quot;;
-        name = &quot;Mosaic Collective&quot;;
+        symbol = "MOSC";
+        name = "Mosaic Collective";
         decimals = 18;
         _totalSupply = 5000000000000000000000000;
         balances[0x8a4a8591ED37709EC1552b6DA4a86c4Ad61643cD] = _totalSupply; //MEW address here

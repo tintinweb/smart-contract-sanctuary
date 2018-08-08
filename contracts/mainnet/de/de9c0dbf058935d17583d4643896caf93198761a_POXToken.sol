@@ -115,8 +115,8 @@ contract POXToken {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;POXToken&quot;;
-    string public symbol = &quot;POX&quot;;
+    string public name = "POXToken";
+    string public symbol = "POX";
     uint8 constant public decimals = 18;
     uint8 constant internal buyFee_ = 10;
     uint8 constant internal sellFee_ = 5;
@@ -227,7 +227,7 @@ contract POXToken {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
         
         // fire event

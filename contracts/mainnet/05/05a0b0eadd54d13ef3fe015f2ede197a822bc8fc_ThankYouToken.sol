@@ -147,14 +147,14 @@ contract ThankYouToken is ERC20 {
     }
 
 
-    string public thankYou  = &quot;ThankYou!&quot;;
+    string public thankYou  = "ThankYou!";
     string public name;
     string public symbol;
     uint256 public decimals = 18;
 
     function ThankYouToken(uint256 _initialSupply) {
-        name = &quot;ThankYou! Token&quot;;
-        symbol = &quot;TYT&quot;;
+        name = "ThankYou! Token";
+        symbol = "TYT";
         totalSupply = _initialSupply;
         balances[msg.sender] = _initialSupply;
     }

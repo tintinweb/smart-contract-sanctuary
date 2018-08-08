@@ -20,8 +20,8 @@ pragma solidity ^0.4.8;
   }
 
    contract NewOSToken is ToutiaoERC20 {
-      string public constant symbol = &quot;NEWOS&quot;; 
-      string public constant name = &quot;NewOS Token&quot;; 
+      string public constant symbol = "NEWOS"; 
+      string public constant name = "NewOS Token"; 
       uint8 public constant decimals = 8; 
       uint256 _totalSupply = 10000000000e8; 
 

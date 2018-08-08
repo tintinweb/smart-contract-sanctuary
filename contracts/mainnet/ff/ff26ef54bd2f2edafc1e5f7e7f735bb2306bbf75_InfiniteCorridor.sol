@@ -111,8 +111,8 @@ contract InfiniteCorridor is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function InfiniteCorridor() public {
-        symbol = &quot;INFCOR&quot;;
-        name = &quot;Infinite Corridor&quot;;
+        symbol = "INFCOR";
+        name = "Infinite Corridor";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x1E37f08D1EcB2E98330f20F90fFF0A0b45A85Fea] = _totalSupply;

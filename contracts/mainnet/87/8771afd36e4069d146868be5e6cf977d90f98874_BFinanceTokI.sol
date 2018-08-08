@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	BFinanceTokI				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	BFinanceTokI		&quot;	;
-	string	public	constant	symbol =	&quot;	BFTI		&quot;	;
+	string	public	constant	name =	"	BFinanceTokI		"	;
+	string	public	constant	symbol =	"	BFTI		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

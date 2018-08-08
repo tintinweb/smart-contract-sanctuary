@@ -99,7 +99,7 @@ contract OwnerBase {
         _;
     }
 
-    /// @dev Called by any &quot;C-level&quot; role to pause the contract. Used only when
+    /// @dev Called by any "C-level" role to pause the contract. Used only when
     ///  a bug or exploit is detected and we need to limit damage.
     function pause() external onlyCOO whenNotPaused {
         paused = true;
@@ -963,7 +963,7 @@ contract RabbitAuction is RabbitMinting {
 	/// @dev werify wether the message is form coo or not.
 	function verify(string text, uint8 v, bytes32 r, bytes32 s) public pure returns (address) {		
 		bytes32 hash = keccak256(text);
-		bytes memory prefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
+		bytes memory prefix = "\x19Ethereum Signed Message:\n32";
 		bytes32 prefixedHash = keccak256(prefix, hash);
 		address tmp = ecrecover(prefixedHash, v, r, s);
 		return tmp;

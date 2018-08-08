@@ -4,8 +4,8 @@ contract	ETHLEI_268145				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	ETHLEI_2681.45		&quot;	;
-	string	public		symbol =	&quot;	ETHLEI_2681.45		&quot;	;
+	string	public		name =	"	ETHLEI_2681.45		"	;
+	string	public		symbol =	"	ETHLEI_2681.45		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		200000000000000000000					;	

@@ -64,8 +64,8 @@ contract AllNewsCash is SafeMath{
 
         balanceOf[msg.sender] = 50000000000000000000000000000;              // Give the creator all initial tokens
         totalSupply = 50000000000000000000000000000;                        // Update total supply
-        name = &quot;AllNewsCash&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ANC&quot;;                               // Set the symbol for display purposes
+        name = "AllNewsCash";                                   // Set the name for display purposes
+        symbol = "ANC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
 	owner = msg.sender;
     }

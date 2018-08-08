@@ -2,7 +2,7 @@ pragma solidity ^ 0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -304,9 +304,9 @@ contract StandardToken is ERC20,BurnableToken {
     }
 }
 contract SMRTCoin is StandardToken {
-    string public constant name = &quot;SMRT&quot;;
+    string public constant name = "SMRT";
     uint public constant decimals = 18;
-    string public constant symbol = &quot;SMRT&quot;;
+    string public constant symbol = "SMRT";
     using SafeMath for uint256; uint256 public weiRaised = 0; address depositWalletAddress; 
     event Buy(address _from, uint256 _ethInWei, string userId); 
     

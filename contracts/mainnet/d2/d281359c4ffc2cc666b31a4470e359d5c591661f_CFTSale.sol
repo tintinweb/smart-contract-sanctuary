@@ -14,7 +14,7 @@ contract ERC20Basic {
 }
 
 
-//import &quot;../node_modules/zeppelin-solidity/contracts/lifecycle/Pausable.sol&quot;;
+//import "../node_modules/zeppelin-solidity/contracts/lifecycle/Pausable.sol";
 
 
 
@@ -292,10 +292,10 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 
 contract CFTToken is StandardBurnableToken {
     // Constants
-    string  public constant name = &quot;Crypto Financial Token&quot;;
-    string  public constant symbol = &quot;CFT&quot;;
+    string  public constant name = "Crypto Financial Token";
+    string  public constant symbol = "CFT";
     uint8   public constant decimals = 18;
-    string  public website = &quot;www.cftoken.io&quot;; 
+    string  public website = "www.cftoken.io"; 
     uint256 public constant INITIAL_SUPPLY      =  9000000000 * (10 ** uint256(decimals));
     uint256 public constant CROWDSALE_ALLOWANCE =  6000000000 * (10 ** uint256(decimals));
     uint256 public constant ADMIN_ALLOWANCE     =  3000000000 * (10 ** uint256(decimals));

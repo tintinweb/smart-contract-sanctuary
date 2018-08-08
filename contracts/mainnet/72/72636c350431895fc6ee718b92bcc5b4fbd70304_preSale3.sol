@@ -152,7 +152,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -243,9 +243,9 @@ contract MintableToken is StandardToken, Ownable {
  
 contract AgroTechFarmToken is MintableToken {
     
-    string public constant name = &quot;Agro Tech Farm&quot;;
+    string public constant name = "Agro Tech Farm";
     
-    string public constant symbol = &quot;ATF&quot;;
+    string public constant symbol = "ATF";
     
     uint32 public constant decimals = 18;
 }
@@ -259,7 +259,7 @@ contract preSale3 is Ownable {
     using SafeMath for uint;        
     AgroTechFarmToken public token;
     bool public preSale3Finished = false;
-    string public constant name = &quot;ATF Token&quot;;
+    string public constant name = "ATF Token";
     address public multisig;
     address public preSale = 0x02Dcc61022771015b1408323D29C790066CBe2e4;
     address public preSale1 = 0xfafbb19945fc2d79828e4c5813a619d5683074ba;

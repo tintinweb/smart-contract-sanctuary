@@ -119,7 +119,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -337,9 +337,9 @@ contract KnowHowChain is PausableToken {
     }
 
     
-    string public name = &quot;KnowHowChain&quot;;
+    string public name = "KnowHowChain";
     uint8 public decimals = 8;
-    string public symbol = &quot;KHC&quot;;
+    string public symbol = "KHC";
     string public version = &#39;1.0.0&#39;;
     uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));
 

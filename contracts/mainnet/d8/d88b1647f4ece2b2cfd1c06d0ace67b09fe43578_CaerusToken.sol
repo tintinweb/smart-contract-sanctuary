@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -600,7 +600,7 @@ contract CaerusToken is RateToken, PausableToken, DetailedERC20 {
     event VestedTokenCreated(address indexed beneficiary, uint256 duration, uint256 tokens);
     event TokensSpent(address indexed tokensHolder, uint256 tokens);
 
-    function CaerusToken(address _transferAddress, uint _initialRate) public RateToken(_initialRate) DetailedERC20(&quot;Caerus Token&quot;, &quot;CAER&quot;, 18) {
+    function CaerusToken(address _transferAddress, uint _initialRate) public RateToken(_initialRate) DetailedERC20("Caerus Token", "CAER", 18) {
         totalSupply_ = 73000000 * 10 ** 18;
         transferAddress = _transferAddress;
         balances[owner] = totalSupply_;

@@ -171,11 +171,11 @@ contract LICERIOToken is MintableToken {
 	}
 	
 	function name () constant returns (string result) {
-		return &quot;LICERIO TOKEN&quot;;
+		return "LICERIO TOKEN";
 	}
 	
 	function symbol () constant returns (string result) {
-		return &quot;LCR&quot;;
+		return "LCR";
 	}
 	
 	function decimals () constant returns (uint result) {
@@ -290,7 +290,7 @@ contract TokenSale is Ownable {
 	
 	function buyLCRTokens() public salesRunning minAmount payable {
        
-          uint rate = exchangeRate.getRate(&quot;ETH&quot;);
+          uint rate = exchangeRate.getRate("ETH");
     	  uint tokens = rate.mul(msg.value).div(1 ether);
 	
           token.mint(msg.sender, tokens);

@@ -45,8 +45,8 @@ contract GameItemNew is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;CryptoKotakuGameItemNew&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;GameItemNew&quot;; // solhint-disable-line
+  string public constant NAME = "CryptoKotakuGameItemNew"; // solhint-disable-line
+  string public constant SYMBOL = "GameItemNew"; // solhint-disable-line
 
   uint256 private startingPrice = 0.005 ether;
 

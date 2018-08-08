@@ -103,8 +103,8 @@ contract SCPS1Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SCPS1Token() public {
-        symbol = &quot;SCPS1&quot;;
-        name = &quot;SCPS1 Token&quot;;
+        symbol = "SCPS1";
+        name = "SCPS1 Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000;
         balances[0x5024981e5DD878798B36710e597A023237D77A88] = _totalSupply;

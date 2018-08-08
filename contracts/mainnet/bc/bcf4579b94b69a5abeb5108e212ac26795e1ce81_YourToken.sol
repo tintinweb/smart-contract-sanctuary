@@ -216,8 +216,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract YourToken is StandardToken{
 
-  string public constant name = &quot;YourToken&quot;;
-  string public constant symbol = &quot;YT&quot;;
+  string public constant name = "YourToken";
+  string public constant symbol = "YT";
   uint8 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 210000000 * (10 ** uint256(decimals));
 

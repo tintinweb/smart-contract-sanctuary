@@ -163,8 +163,8 @@ contract BurnableToken is StandardToken {
 
 contract EarthToken is BurnableToken {
 
-    string public name = &quot;Earth Token&quot;;
-    string public symbol = &quot;EARTH&quot;;
+    string public name = "Earth Token";
+    string public symbol = "EARTH";
     uint public decimals = 8;
     uint public INITIAL_SUPPLY = 100000000000000000;
 

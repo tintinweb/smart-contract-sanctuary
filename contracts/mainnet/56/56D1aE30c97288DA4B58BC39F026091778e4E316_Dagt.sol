@@ -326,9 +326,9 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract Dagt is MintableToken, PausableToken {
-    string public constant version = &quot;1.1&quot;;
-    string public constant name = &quot;DAGT Crypto Platform&quot;;
-    string public constant symbol = &quot;DAGT&quot;;
+    string public constant version = "1.1";
+    string public constant name = "DAGT Crypto Platform";
+    string public constant symbol = "DAGT";
     uint8 public constant decimals = 18;
 
     event MintMasterTransferred(address indexed previousMaster, address indexed newMaster);

@@ -130,7 +130,7 @@ contract Authorization {
 }
 
 contract FundAccount is Authorization, SafeMath {
-    string public version = &quot;0.5.0&quot;;
+    string public version = "0.5.0";
 
     address public tokenFactory = 0x001393F1fb2E243Ee68Efe172eBb6831772633A926;
     address public xpaExchange = 0x008ea74569c1b9bbb13780114b6b5e93396910070a;

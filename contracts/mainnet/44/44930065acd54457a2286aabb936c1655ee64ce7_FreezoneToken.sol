@@ -495,8 +495,8 @@ contract VestedToken is StandardToken, LimitedTransferToken {
 }
 
 contract FreezoneToken is VestedToken {
-    string public name = &quot;Free Crypto Economic Zone&quot;;
-    string public symbol = &quot;FRZ&quot;;
+    string public name = "Free Crypto Economic Zone";
+    string public symbol = "FRZ";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 1000000000 * (10 ** decimals);
     

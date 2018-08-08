@@ -85,11 +85,11 @@ contract CryptoThreeKingdoms is ERC721{
   /* ERC721 */
 
   function name() public view returns (string _name) {
-    return &quot;cryptosanguo.pro&quot;;
+    return "cryptosanguo.pro";
   }
 
   function symbol() public view returns (string _symbol) {
-    return &quot;CSG&quot;;
+    return "CSG";
   }
 
   function totalSupply() public view returns (uint256 _totalSupply) {

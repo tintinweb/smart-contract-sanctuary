@@ -22,10 +22,10 @@ contract ERC20 is ERC20Token {
 contract MDL is ERC20 {
     
     function name() public constant returns (string) { 
-        return &quot;MDL Talent Hub&quot;; 
+        return "MDL Talent Hub"; 
     }
     function symbol() public constant returns (string) { 
-        return &quot;MDL&quot;; 
+        return "MDL"; 
     }
     function decimals() public constant returns (uint8) { 
         return 8; 
@@ -65,7 +65,7 @@ contract MDL is ERC20 {
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
     

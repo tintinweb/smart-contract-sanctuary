@@ -114,8 +114,8 @@ contract ERC20 is Owned {
 }
 contract Token is ERC20 {
     using SafeMath for uint;
-    string public name = &quot;PATRON&quot;;
-    string public symbol = &quot;PAT&quot;;
+    string public name = "PATRON";
+    string public symbol = "PAT";
     uint8 public decimals = 18;
     address public crowdsaleMinter;
     modifier onlyCrowdsaleMinter(){

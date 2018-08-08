@@ -4,8 +4,8 @@ contract	BNP_PARIBAS_301201				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	BNP_PARIBAS_301201		&quot;	;
-	string	public		symbol =	&quot;	BNPI		&quot;	;
+	string	public		name =	"	BNP_PARIBAS_301201		"	;
+	string	public		symbol =	"	BNPI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10525334267564900000000000					;	

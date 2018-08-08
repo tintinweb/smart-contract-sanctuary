@@ -64,8 +64,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract DLK is StandardToken 
 {
-    string public name = &quot;DLK&quot;;
-    string public symbol = &quot;DLK&quot;;
+    string public name = "DLK";
+    string public symbol = "DLK";
     uint public decimals = 18;
     uint public totalSupply =  10 * 1000 * 1000 * 1000 ether;
 

@@ -133,8 +133,8 @@ contract BurnableToken is BasicToken {
 
 contract Batiktoken is StandardToken, BurnableToken {
 
-  string public constant name = &quot;BATIK&quot;; 
-  string public constant symbol = &quot;BTK&quot;; 
+  string public constant name = "BATIK"; 
+  string public constant symbol = "BTK"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 2000000000 * (10 ** uint256(decimals));

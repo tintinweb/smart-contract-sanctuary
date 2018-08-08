@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract LAB is StandardToken, Ownable {
 
-    string public constant name = &quot;场景应用区块链&quot;;
-    string public constant symbol = &quot;LAB&quot;;
+    string public constant name = "场景应用区块链";
+    string public constant symbol = "LAB";
     uint256 public constant decimals = 8;
 
     function LAB() public {

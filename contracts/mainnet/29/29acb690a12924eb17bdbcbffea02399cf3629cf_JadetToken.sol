@@ -129,8 +129,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract JadetToken is StandardToken, Ownable {
-  string public constant name = &quot;JADET Token&quot;;
-  string public constant symbol = &quot;JADE&quot;;
+  string public constant name = "JADET Token";
+  string public constant symbol = "JADE";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));

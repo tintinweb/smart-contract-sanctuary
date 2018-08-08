@@ -29,8 +29,8 @@ library SafeMath {
 
 contract TrueTogetherToken {
 
-    string public constant name = &quot;TRUE Together Token&quot;;
-    string public constant symbol = &quot;TTR&quot;;
+    string public constant name = "TRUE Together Token";
+    string public constant symbol = "TTR";
     uint256 public constant decimals = 18;
     uint256 _totalSupply = 100000000 * 10 ** decimals;
     address public founder = 0x0;

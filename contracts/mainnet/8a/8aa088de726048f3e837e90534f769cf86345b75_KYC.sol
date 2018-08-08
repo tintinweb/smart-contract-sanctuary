@@ -28,8 +28,8 @@ contract KYC {
     ) public {
         totalSupply = 275000000000000000000000000;                       // Total supply with the decimal amount
         balanceOf[msg.sender] = 275000000000000000000000000;             // All initial tokens
-        name = &quot;KeyChain&quot;;                                               // The name for display purposes
-        symbol = &quot;KYC&quot;;                                                  // The symbol for display purposes
+        name = "KeyChain";                                               // The name for display purposes
+        symbol = "KYC";                                                  // The symbol for display purposes
     }
 
     /**

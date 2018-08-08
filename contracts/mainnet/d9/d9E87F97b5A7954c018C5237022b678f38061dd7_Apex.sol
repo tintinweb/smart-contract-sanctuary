@@ -183,8 +183,8 @@ contract Ownable {
 }
 
 contract Apex is StandardToken, Ownable {
-  string public constant name = &quot;Apex&quot;;
-  string public constant symbol = &quot;Apex&quot;;
+  string public constant name = "Apex";
+  string public constant symbol = "Apex";
   uint8 public constant decimals = 18;
   
   uint256 public ApexIssued;
@@ -223,7 +223,7 @@ contract Apex is StandardToken, Ownable {
     totalSupply = 5000000000 * (1 ** uint256(decimals)); 
     balances[msg.sender] = totalSupply;  
     ApexIssued = totalSupply;
-    ApexTalk = &quot;Apex&quot;;
+    ApexTalk = "Apex";
     
   }
  

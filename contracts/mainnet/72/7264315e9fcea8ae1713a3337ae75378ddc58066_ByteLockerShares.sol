@@ -70,8 +70,8 @@ contract ByteLockerShares is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function ByteLockerShares() public {
-        symbol = &quot;BLOS&quot;;
-        name = &quot;ByteLocker Shares&quot;;
+        symbol = "BLOS";
+        name = "ByteLocker Shares";
         decimals = 8;
         _totalSupply = 10000000000000000;
         balances[0x02115b009A79B0550C8f8cde95cE5D627Ec088fd] = _totalSupply;

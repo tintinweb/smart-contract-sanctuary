@@ -1,6 +1,6 @@
 contract TradeBox {
-    string public symbol = &quot;TBox&quot;;
-    string public name = &quot;Trade Box&quot;;
+    string public symbol = "TBox";
+    string public name = "Trade Box";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 0;
     uint256 _MaxDistribPublicSupply = 0;

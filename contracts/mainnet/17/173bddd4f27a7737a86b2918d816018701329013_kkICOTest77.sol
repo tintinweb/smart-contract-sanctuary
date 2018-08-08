@@ -21,8 +21,8 @@ contract kkICOTest77 {
 	
 	
 	function kkICOTest77() {			//This function gives the total supply to the contract
-        name = &quot;kkTEST77&quot;;
-        symbol = &quot;kkTST77&quot;;
+        name = "kkTEST77";
+        symbol = "kkTST77";
         
         decimals = 0;
         INITIAL_SUPPLY = 30000000;

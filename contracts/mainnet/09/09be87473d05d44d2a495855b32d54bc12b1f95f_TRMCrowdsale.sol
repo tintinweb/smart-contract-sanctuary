@@ -179,7 +179,7 @@ contract TRMCrowdsale is Owned {
             multisig.transfer(msg.value);
         } else {
             manager.transfer(msg.value);
-            Print(&quot;Tokens will be released manually&quot;, msg.sender);
+            Print("Tokens will be released manually", msg.sender);
         }
 
 

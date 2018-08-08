@@ -16,9 +16,9 @@ contract SACoin {
     function SACoin() {
 
          initialSupply = 50000000;
-         name =&quot;sacoin&quot;;
+         name ="sacoin";
         decimals = 0;
-         symbol = &quot;S&quot;;
+         symbol = "S";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

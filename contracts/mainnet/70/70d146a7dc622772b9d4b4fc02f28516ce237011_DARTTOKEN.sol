@@ -58,8 +58,8 @@ contract DARTTOKEN is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;DARTTOKEN&quot;;
-    string public constant symbol = &quot;DART&quot;;
+    string public constant name = "DARTTOKEN";
+    string public constant symbol = "DART";
     uint public constant decimals = 4;
     
     uint256 public totalSupply = 100000000e4;

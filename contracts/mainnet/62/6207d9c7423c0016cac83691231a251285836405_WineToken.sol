@@ -15,8 +15,8 @@ contract WineToken {
     function SGEToken() public {
         totalSupply = 100000000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Wine Token&quot;;
-        symbol = &quot;Wine&quot;;
+        name = "Wine Token";
+        symbol = "Wine";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

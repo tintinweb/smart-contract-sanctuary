@@ -115,8 +115,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Orocoin is StandardToken
 {
-  string public name = &quot;Orocoin&quot;;
-  string public symbol = &quot;ORO&quot;;
+  string public name = "Orocoin";
+  string public symbol = "ORO";
   uint public decimals = 6;
   uint public INITIAL_SUPPLY = 100000000 * (10 ** decimals);
 

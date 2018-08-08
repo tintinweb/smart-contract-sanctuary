@@ -139,8 +139,8 @@ contract Owned
 contract x888 is StandardToken, Owned
 {
     using SafeMath for uint256;
-    string public name = &quot;Meta Exchange x888&quot;;
-    string public symbol = &quot;X888&quot;;
+    string public name = "Meta Exchange x888";
+    string public symbol = "X888";
     uint8 public constant decimals = 6;
     
     uint256 version = 10020010001;

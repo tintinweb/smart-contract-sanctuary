@@ -243,9 +243,9 @@ contract BurnableToken is StandardToken {
 
 contract Token is CappedToken, BurnableToken {
 
-    string public URL = &quot;https://prover.io&quot;;
+    string public URL = "https://prover.io";
 
-    function Token() CappedToken(100000000 * 1 ether) StandardToken(&quot;PROVER.IO additional 5% discount&quot;, &quot;BONUS&quot;, 18) public {
+    function Token() CappedToken(100000000 * 1 ether) StandardToken("PROVER.IO additional 5% discount", "BONUS", 18) public {
         
     }
     

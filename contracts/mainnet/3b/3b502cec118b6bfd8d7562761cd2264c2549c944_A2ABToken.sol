@@ -149,8 +149,8 @@ contract A2ABToken is Ownable, StandardToken {
 	uint256 public totalSupply;
 		
 	function A2ABToken() public {
-		name = &quot;A2A(B) STeX Exchange Token&quot;;
-		symbol = &quot;A2A(B)&quot;;
+		name = "A2A(B) STeX Exchange Token";
+		symbol = "A2A(B)";
 		decimals = 8;
 	}
 			

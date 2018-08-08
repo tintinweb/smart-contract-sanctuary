@@ -49,7 +49,7 @@ contract SafeMath {
 
 /**
  * ERC-20 standard token interface, as defined
- * <a href=&quot;http://github.com/ethereum/EIPs/issues/20&quot;>here</a>.
+ * <a href="http://github.com/ethereum/EIPs/issues/20">here</a>.
  */
 contract Token {
   
@@ -228,8 +228,8 @@ contract MKYCToken is AbstractToken {
     return tokenCount;
   }
 
-  string constant public name = &quot;My Cayman Condos&quot;;
-  string constant public symbol = &quot;MKYC&quot;;
+  string constant public name = "My Cayman Condos";
+  string constant public symbol = "MKYC";
   uint8 constant public decimals = 18;
   
   /**

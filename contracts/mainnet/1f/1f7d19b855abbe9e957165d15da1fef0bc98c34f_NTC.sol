@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract NTC is StandardToken, Ownable {
 
-    string public constant name = &quot;NTC&quot;;
-    string public constant symbol = &quot;NTC&quot;;
+    string public constant name = "NTC";
+    string public constant symbol = "NTC";
     uint256 public constant decimals = 8;
 
     function NTC() public {

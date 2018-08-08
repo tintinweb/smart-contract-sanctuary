@@ -61,9 +61,9 @@ contract IERC20Token {
 contract Hedge is IERC20Token, owned{
 
         /* Public variables of the token */
-        string public standard = &quot;Hedge v1.0&quot;;
-        string public name = &quot;Hedge&quot;;
-        string public symbol = &quot;HGD&quot;;
+        string public standard = "Hedge v1.0";
+        string public name = "Hedge";
+        string public symbol = "HGD";
         uint8 public decimals = 18;
         uint256 public initialSupply = 50000000 * 10 ** 18;
         uint256 public tokenFrozenUntilBlock;

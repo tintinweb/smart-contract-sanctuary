@@ -209,8 +209,8 @@ contract ShareToken is ERC20Token, WhiteListManager {
 
     using SafeMath for uint256;
 
-    string public constant name = &quot;ShareToken&quot;;
-    string public constant symbol = &quot;SHR&quot;;
+    string public constant name = "ShareToken";
+    string public constant symbol = "SHR";
     uint8  public constant decimals = 2;
 
     address public icoContract;

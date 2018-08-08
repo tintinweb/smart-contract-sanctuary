@@ -40,7 +40,7 @@ contract owned {
     }
 
     modifier onlyOwner {
-        require(msg.sender == owner , &quot;Unauthorized Access&quot;);
+        require(msg.sender == owner , "Unauthorized Access");
         _;
     }
 
@@ -246,7 +246,7 @@ contract ERC20BackedERC223 is ERC223Token{
         return true;
     }
    function increaseApproval(address _spender, uint _addedValue) whenNotPaused public returns (bool success) {
-    require(balances[msg.sender] >= allowed[msg.sender][_spender].add(_addedValue), &quot;Callers balance not enough&quot;);
+    require(balances[msg.sender] >= allowed[msg.sender][_spender].add(_addedValue), "Callers balance not enough");
     allowed[msg.sender][_spender] = allowed[msg.sender][_spender].add(_addedValue);
     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
     return true;
@@ -254,7 +254,7 @@ contract ERC20BackedERC223 is ERC223Token{
 
   function decreaseApproval(address _spender, uint _subtractedValue) whenNotPaused public returns (bool success) {
     uint oldValue = allowed[msg.sender][_spender];
-    require((_subtractedValue != 0) && (oldValue > _subtractedValue) , &quot;The amount to be decreased is incorrect&quot;);
+    require((_subtractedValue != 0) && (oldValue > _subtractedValue) , "The amount to be decreased is incorrect");
     allowed[msg.sender][_spender] = oldValue.sub(_subtractedValue);
     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
     return true;
@@ -282,7 +282,7 @@ contract burnableERC223 is ERC20BackedERC223{
      * @param _value the amount of money to burn
      */
     function burn(uint256 _value) onlyOwner public returns (bool success) {
-        require(balances[msg.sender] >= _value, &quot;Sender doesn&#39;t have enough balance&quot;);   // Check if the sender has enough
+        require(balances[msg.sender] >= _value, "Sender doesn&#39;t have enough balance");   // Check if the sender has enough
         balances[msg.sender] = balances[msg.sender].sub(_value);            // Subtract from the sender
         _CAP = _CAP.sub(_value);                      // Updates totalSupply
         _totalBurnedTokens = _totalBurnedTokens.add(_value);
@@ -300,7 +300,7 @@ contract burnableERC223 is ERC20BackedERC223{
      * @param _value the amount of money to burn
      */
     function burnFrom(address _from, uint256 _value) onlyOwner public returns (bool success) {
-        require(balances[_from] >= _value , &quot;target balance is not enough&quot;);                // Check if the targeted balance is enough
+        require(balances[_from] >= _value , "target balance is not enough");                // Check if the targeted balance is enough
         require(_value <= allowed[_from][msg.sender]);    // Check allowance
         balances[_from] = balances[_from].sub(_value);                         // Subtract from the targeted balance
         allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);             // Subtract from the sender&#39;s allowance
@@ -334,7 +334,7 @@ contract mintableERC223 is burnableERC223{
       bytes memory empty;
       uint256 availableMinedSupply;
       availableMinedSupply =  (_totalMinedSupply.sub(_totalBurnedTokens)).add(_amount);
-    require(_CAP >= availableMinedSupply , &quot;All tokens minted, Cap reached&quot;);
+    require(_CAP >= availableMinedSupply , "All tokens minted, Cap reached");
     _totalMinedSupply = _totalMinedSupply.add(_amount);
     if(_CAP <= _totalMinedSupply.sub(_totalBurnedTokens))
     mintingFinished = true;
@@ -398,9 +398,9 @@ contract CyBitInternal is mintableERC223{
  constructor() public
  {
      decimals = 8;
-     name = &quot;CyBit-Internal-Token&quot;;                                    // Set the name for display purposes
-     symbol = &quot;iCBT&quot;;                                   // Set the symbol for display purposes
-     version = &quot;V1.0&quot;;                                  //Version.
+     name = "CyBit-Internal-Token";                                    // Set the name for display purposes
+     symbol = "iCBT";                                   // Set the symbol for display purposes
+     version = "V1.0";                                  //Version.
      
      totalsupply = 5000000000;                         //Total Tokens
      _CAP = totalsupply.mul(10 ** decimals);

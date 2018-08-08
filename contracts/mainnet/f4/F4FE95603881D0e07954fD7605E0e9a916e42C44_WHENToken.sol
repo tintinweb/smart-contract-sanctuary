@@ -16,8 +16,8 @@ contract WHENToken {
     string public name;
     string public symbol;
     uint public decimals = 18;
-    string public sign = &quot;￦&quot;;
-    string public logoPng = &quot;https://github.com/WhenHub/WHEN/raw/master/assets/when-token-icon.png&quot;;
+    string public sign = "￦";
+    string public logoPng = "https://github.com/WhenHub/WHEN/raw/master/assets/when-token-icon.png";
 
 
     /* Each registered user on WhenHub Interface Network has a record in this contract */
@@ -139,7 +139,7 @@ contract WHENToken {
 
 
     /**
-    * @dev Modifier that requires the &quot;operational&quot; boolean variable to be &quot;true&quot;
+    * @dev Modifier that requires the "operational" boolean variable to be "true"
     *      This is used on all state changing functions to pause the contract in 
     *      the event there is an issue that needs to be fixed
     */
@@ -150,7 +150,7 @@ contract WHENToken {
     }
 
     /**
-    * @dev Modifier that requires the &quot;ContractOwner&quot; account to be the function caller
+    * @dev Modifier that requires the "ContractOwner" account to be the function caller
     */
     modifier requireContractOwner()
     {
@@ -159,7 +159,7 @@ contract WHENToken {
     }
 
     /**
-    * @dev Modifier that requires the &quot;PlatformManager&quot; account to be the function caller
+    * @dev Modifier that requires the "PlatformManager" account to be the function caller
     */
     modifier requirePlatformManager()
     {
@@ -461,7 +461,7 @@ contract WHENToken {
     *
     * Since seed tokens can be used to pay for Interface transactions
     * this balance indicates what the user can afford to spend for such
-    * &quot;internal&quot; transactions ignoring distinction between paid and signup tokens
+    * "internal" transactions ignoring distinction between paid and signup tokens
     *
     * @param account The address to query the balance of.
     * @return An uint256 representing the spendable amount owned by the passed address.
@@ -1376,7 +1376,7 @@ Copyright (c) 2016 Smart Contract Solutions, Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
-&quot;Software&quot;), to deal in the Software without restriction, including
+"Software"), to deal in the Software without restriction, including
 without limitation the rights to use, copy, modify, merge, publish,
 distribute, sublicense, and/or sell copies of the Software, and to
 permit persons to whom the Software is furnished to do so, subject to
@@ -1385,7 +1385,7 @@ the following conditions:
 The above copyright notice and this permission notice shall be included
 in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY

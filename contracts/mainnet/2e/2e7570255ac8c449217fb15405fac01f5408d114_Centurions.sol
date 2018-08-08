@@ -68,8 +68,8 @@ contract CryptoRomeControl is Ownable {
 contract Centurions is ERC721, CryptoRomeControl {
 
     // Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant name = &quot;CryptoRomeCenturion&quot;;
-    string public constant symbol = &quot;CROMEC&quot;;
+    string public constant name = "CryptoRomeCenturion";
+    string public constant symbol = "CROMEC";
 
     struct Centurion {
         uint256 level;

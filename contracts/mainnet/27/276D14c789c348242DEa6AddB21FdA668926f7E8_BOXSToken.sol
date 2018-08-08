@@ -87,10 +87,10 @@ contract StandardToken is Token {
 contract BOXSToken is StandardToken,SafeMath {
 
     // metadata
-    string public constant name = &quot;boxs.io&quot;;
-    string public constant symbol = &quot;BOXS&quot;;
+    string public constant name = "boxs.io";
+    string public constant symbol = "BOXS";
     uint256 public constant decimals = 8;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
     
     // total cap
     uint256 public constant tokenCreationCap = 100 * (10**8) * 10**decimals;

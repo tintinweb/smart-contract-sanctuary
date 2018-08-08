@@ -107,8 +107,8 @@ contract MetadollarOption is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MetadollarOption() public {
-        symbol = &quot;MTDO&quot;;
-        name = &quot;Metadollar Option&quot;;
+        symbol = "MTDO";
+        name = "Metadollar Option";
         decimals = 0;
         _totalSupply = 1000000;
         balances[0xeaBB4013f179E42c41468DB81eB1Bd420Da6cC47] = _totalSupply;

@@ -28,8 +28,8 @@ contract EBIT {
     ) public {
         totalSupply = 1000000000000000000000000000;                             // Update total supply with the decimal amount
         balanceOf[msg.sender] = 1000000000000000000000000000;                   // Give the creator all initial tokens
-        name = &quot;EbitSpace&quot;;                                                     // Set the name for display purposes
-        symbol = &quot;EBIT&quot;;                                                        // Set the symbol for display purposes
+        name = "EbitSpace";                                                     // Set the name for display purposes
+        symbol = "EBIT";                                                        // Set the symbol for display purposes
     }
 
     /**

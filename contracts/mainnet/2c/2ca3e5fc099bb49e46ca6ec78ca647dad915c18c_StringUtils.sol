@@ -33,7 +33,7 @@ library StringUtils {
   	bytes memory n = bytes(_needle);
    	if(h.length < 1 || n.length < 1 || (n.length > h.length)) 
       return -1;
-    else if(h.length > (2**128 -1)) // since we have to be able to return -1 (if the char isn&#39;t found or input error), this function must return an &quot;int&quot; type with a max length of (2^128 - 1)
+    else if(h.length > (2**128 -1)) // since we have to be able to return -1 (if the char isn&#39;t found or input error), this function must return an "int" type with a max length of (2^128 - 1)
       return -1;									
     else {
       uint subindex = 0;

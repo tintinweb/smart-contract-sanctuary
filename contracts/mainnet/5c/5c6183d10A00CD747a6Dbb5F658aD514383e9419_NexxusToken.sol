@@ -49,9 +49,9 @@ contract NexxusToken is StandardToken {
 
     function () {throw;}
 
-    string public name = &quot;Nexxus&quot;;
+    string public name = "Nexxus";
     uint8 public decimals = 8;
-    string public symbol = &quot;NXX&quot;;
+    string public symbol = "NXX";
     address public owner;
 
     function NexxusToken() {
@@ -62,7 +62,7 @@ contract NexxusToken is StandardToken {
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 	function mintToken(uint256 _amount) {

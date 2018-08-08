@@ -180,7 +180,7 @@ contract StandardToken is BasicToken, ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -372,8 +372,8 @@ contract TokenTimelock {
 contract SUNCOIN is PausableToken, SunToken {
   using SafeMath for uint256;
 
-  string public name = &quot;SUNCOIN&quot;;
-  string public symbol = &quot;SUN&quot;;
+  string public name = "SUNCOIN";
+  string public symbol = "SUN";
   uint public decimals = 9;
   string public version = &#39;H1.0&#39;;  
   
@@ -404,7 +404,7 @@ contract SUNCOIN is PausableToken, SunToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

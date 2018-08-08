@@ -199,8 +199,8 @@ contract AdsharesToken is StandardToken {
     using SafeMath for uint;
 
     // metadata
-    string public constant name = &quot;Adshares Token&quot;;
-    string public constant symbol = &quot;ADST&quot;;
+    string public constant name = "Adshares Token";
+    string public constant symbol = "ADST";
     uint public constant decimals = 0;
     
     // crowdsale parameters

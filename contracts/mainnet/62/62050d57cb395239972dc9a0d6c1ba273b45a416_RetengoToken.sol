@@ -73,8 +73,8 @@ contract RetengoToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Retengo&quot;;
-    string public constant symbol = &quot;REG&quot;;
+    string public constant name = "Retengo";
+    string public constant symbol = "REG";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 5000000000e8;

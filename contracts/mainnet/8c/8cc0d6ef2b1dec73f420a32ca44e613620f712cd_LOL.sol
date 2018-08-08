@@ -2,8 +2,8 @@ pragma solidity ^0.4.6;
 
 contract LOL {
 
-  string public name = &quot;LOL Token&quot;;
-  string public symbol = &quot;LOL&quot;;
+  string public name = "LOL Token";
+  string public symbol = "LOL";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 2000000000000000000000000;
 

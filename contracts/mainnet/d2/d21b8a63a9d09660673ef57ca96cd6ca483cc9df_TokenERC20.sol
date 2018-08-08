@@ -48,8 +48,8 @@ contract Ownable {
 contract TokenERC20 is Ownable {
     using SafeMath for uint;
 
-    string public name = &quot;Your Open Direct Sales Ecosystem&quot;;
-    string public symbol = &quot;YODSE&quot;;
+    string public name = "Your Open Direct Sales Ecosystem";
+    string public symbol = "YODSE";
     uint256 public decimals = 18;
     uint256 DEC = 10 ** uint256(decimals);
     address public owner;

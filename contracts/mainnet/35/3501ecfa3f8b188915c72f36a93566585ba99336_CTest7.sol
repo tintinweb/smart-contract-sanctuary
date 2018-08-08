@@ -147,8 +147,8 @@ contract CTest7 is StandardToken {
     
 	uint256 public tokenAmount;
   
-    string public constant name = &quot;CTest7 Token&quot;;
-    string public constant symbol = &quot;CTest7&quot;;
+    string public constant name = "CTest7 Token";
+    string public constant symbol = "CTest7";
     uint8 public constant decimals = 18;  // 18 decimal places, the same as ETH.
 	
 

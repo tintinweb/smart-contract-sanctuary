@@ -167,8 +167,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract KyberNetworkCrystal is StandardToken, Ownable {
-    string  public  constant name = &quot;Kyber Network Crystal&quot;;
-    string  public  constant symbol = &quot;KNC&quot;;
+    string  public  constant name = "Kyber Network Crystal";
+    string  public  constant symbol = "KNC";
     uint    public  constant decimals = 18;
 
     uint    public  saleStartTime;

@@ -5,13 +5,13 @@ pragma solidity ^0.4.20;
 * ====================================                       *
 *                                                            *
 * 88888888ba     ,ad8888ba,    88888888ba    ad88888ba       *
-* 88      &quot;8b   d8&quot;&#39;    `&quot;8b   88      &quot;8b  d8&quot;     &quot;8b      *
+* 88      "8b   d8"&#39;    `"8b   88      "8b  d8"     "8b      *
 * 88      ,8P  d8&#39;        `8b  88      ,8P  Y8,              *  
 * 88aaaaaa8P&#39;  88          88  88aaaaaa8P&#39;  `Y8aaaaa,        *
-* 88&quot;&quot;&quot;&quot;&quot;&quot;&#39;    88          88  88&quot;&quot;&quot;&quot;&quot;&quot;8b,    `&quot;&quot;&quot;&quot;&quot;8b,      *
+* 88""""""&#39;    88          88  88""""""8b,    `"""""8b,      *
 * 88           Y8,        ,8P  88      `8b          `8b      *
 * 88            Y8a.    .a8P   88      a8P  Y8a     a8P      *
-* 88             `&quot;Y8888Y&quot;&#39;    88888888P&quot;    &quot;Y88888P&quot;       *
+* 88             `"Y8888Y"&#39;    88888888P"    "Y88888P"       *
 *                                                            *
 *                                                            *
 *                                                            *
@@ -122,8 +122,8 @@ contract POBS {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;ProofOfBlueSkies&quot;;
-    string public symbol = &quot;POBS&quot;;
+    string public name = "ProofOfBlueSkies";
+    string public symbol = "POBS";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 11;
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;
@@ -225,7 +225,7 @@ contract POBS {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
         
         // fire event
@@ -569,7 +569,7 @@ contract POBS {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
         
         // is the user referred by a masternode?

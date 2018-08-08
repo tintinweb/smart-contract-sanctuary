@@ -113,8 +113,8 @@ contract BitcoinSinhalaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitcoinSinhalaToken() public {
-        symbol = &quot;BTSN&quot;;
-        name = &quot;BitcoinSinhalaToken&quot;;
+        symbol = "BTSN";
+        name = "BitcoinSinhalaToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x02aa9DD336BDE673e2fB1BE4e814E1ae5F9Dba4a] = _totalSupply;

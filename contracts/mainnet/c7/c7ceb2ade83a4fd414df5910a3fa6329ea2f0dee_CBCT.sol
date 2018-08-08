@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract CBCT is StandardToken, Ownable {
 
-    string public constant name = &quot;基金链&quot;;
-    string public constant symbol = &quot;CBCT&quot;;
+    string public constant name = "基金链";
+    string public constant symbol = "CBCT";
     uint256 public constant decimals = 8;
 
     function CBCT() public {

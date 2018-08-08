@@ -62,9 +62,9 @@ contract TokenERC20
   function TokenERC20() public
   {
     //토큰 이름 초기화
-    name = &quot;GMB&quot;;
+    name = "GMB";
     //토큰 심볼(단위) 초기화
-    symbol = &quot;MAS&quot;;
+    symbol = "MAS";
     //소수점 자리 초기화
     decimals = 18;
     //wei 단위를 편하게 하기 위한 변수
@@ -74,7 +74,7 @@ contract TokenERC20
     //토큰 발행 갯수 초기화
     totalSupply =  _decimals * 10000000000; //1백억개
     //토큰 상태 초기화
-    status = &quot;Private&quot;;
+    status = "Private";
     //타임스탬프 초기화 (시작시간) 2018.1.1 00:00:00 (Gmt+9)
     start_token_time = 1514732400;
     //타임스탬프 초기화 (종료시간)  2018.12.31 23:59:59 (Gmt+9)
@@ -243,7 +243,7 @@ contract TokenERC20
     //owner를 변경해준다
     owner = to_owner;
     //이벤트 기록을 남김
-    emit change_Owner(&quot;Owner_change&quot;);
+    emit change_Owner("Owner_change");
     return true;
   }
   //*transferLock변경*// 0일때만 lock 풀림

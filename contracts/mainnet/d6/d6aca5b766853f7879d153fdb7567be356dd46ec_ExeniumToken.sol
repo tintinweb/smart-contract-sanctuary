@@ -501,7 +501,7 @@ contract FrozenToken is ERC20Token, ITokenRecipient {
     authLevel(Level.ADMIN)
     public 
     {
-        PropsChanged(msg.sender, &quot;freezeEnabled&quot;, freezeEnabled, _freezeEnabled);
+        PropsChanged(msg.sender, "freezeEnabled", freezeEnabled, _freezeEnabled);
         freezeEnabled = _freezeEnabled;
     }
 
@@ -509,7 +509,7 @@ contract FrozenToken is ERC20Token, ITokenRecipient {
     authLevel(Level.ADMIN)
     public 
     {
-        PropsChanged(msg.sender, &quot;autoFreeze&quot;, autoFreeze, _autoFreeze);
+        PropsChanged(msg.sender, "autoFreeze", autoFreeze, _autoFreeze);
         autoFreeze = _autoFreeze;
     }
 
@@ -643,13 +643,13 @@ contract FrozenToken is ERC20Token, ITokenRecipient {
 }
 
 contract ExeniumToken is FrozenToken {
-    string public name = &quot;Exenium Token&quot;;
-    string public symbol = &quot;XNT&quot;;
+    string public name = "Exenium Token";
+    string public symbol = "XNT";
     uint8 public decimals = 8;
 
-    string public version = &quot;0.1&quot;;
-    string public publisher = &quot;https://www.exenium.io&quot;;
-    string public description = &quot;This is an official Exenium Token (XNT)&quot;;
+    string public version = "0.1";
+    string public publisher = "https://www.exenium.io";
+    string public description = "This is an official Exenium Token (XNT)";
 
     bool public acceptAdminWithdraw = false;
     bool public acceptDonate = true;
@@ -733,7 +733,7 @@ contract ExeniumToken is FrozenToken {
     public
     returns (bool success)
     {
-        PropsChanged(msg.sender, &quot;acceptAdminWithdraw&quot;, acceptAdminWithdraw, _accept);
+        PropsChanged(msg.sender, "acceptAdminWithdraw", acceptAdminWithdraw, _accept);
         acceptAdminWithdraw = _accept;
         return true;
     }
@@ -759,7 +759,7 @@ contract ExeniumToken is FrozenToken {
     public
     returns (bool success)
     {
-        PropsChanged(msg.sender, &quot;acceptDonate&quot;, acceptDonate, _accept);
+        PropsChanged(msg.sender, "acceptDonate", acceptDonate, _accept);
         acceptDonate = _accept;
         return true;
     }

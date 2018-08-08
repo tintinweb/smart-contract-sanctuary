@@ -1,7 +1,7 @@
 pragma solidity ^0.4.9;
 
-// import &quot;./receiver_interface.sol&quot;;
-// import &quot;./erc223_interface.sol&quot;;
+// import "./receiver_interface.sol";
+// import "./erc223_interface.sol";
 
  contract ContractReceiver {
      

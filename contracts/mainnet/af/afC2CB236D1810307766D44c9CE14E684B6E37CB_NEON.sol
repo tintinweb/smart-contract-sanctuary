@@ -16,9 +16,9 @@ contract NEON {
     function NEON() {
 
          initialSupply = 250000000000;
-         name =&quot;NEONT&quot;;
+         name ="NEONT";
         decimals = 2;
-         symbol = &quot;NEON&quot;;
+         symbol = "NEON";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

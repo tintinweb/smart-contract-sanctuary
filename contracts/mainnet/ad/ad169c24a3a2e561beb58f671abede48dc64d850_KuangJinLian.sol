@@ -23,8 +23,8 @@ contract KuangJinLian{
     function KuangJinLian() {
         balanceOf[msg.sender] =  1200000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  1200000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;KuangJinLian&quot;;                                   // Set the name for display purposes
-        symbol = &quot;KJL&quot;;                               // Set the symbol for display purposes
+        name = "KuangJinLian";                                   // Set the name for display purposes
+        symbol = "KJL";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

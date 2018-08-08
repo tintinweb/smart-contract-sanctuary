@@ -173,7 +173,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -283,7 +283,7 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract KimeraToken is MintableToken, BurnableToken {
-    string public name = &quot;Kimera&quot;;
-    string public symbol = &quot;Kimera&quot;;
+    string public name = "Kimera";
+    string public symbol = "Kimera";
     uint256 public decimals = 18;
 }

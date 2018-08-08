@@ -69,8 +69,8 @@ contract Owned {
 contract Token is ERC20Interface, Owned {
     using SafeMath for uint;
 
-    string public name = &quot;CARcoin&quot;;   
-    string public symbol = &quot;CAR&quot;;   
+    string public name = "CARcoin";   
+    string public symbol = "CAR";   
     uint8 public decimals = 18;    
     uint public _totalSupply;   
 
@@ -80,8 +80,8 @@ contract Token is ERC20Interface, Owned {
 
 
     constructor() public {   
-        name = &quot;CARcoin&quot;;
-        symbol = &quot;CAR&quot;;
+        name = "CARcoin";
+        symbol = "CAR";
         decimals = 18;
         _totalSupply = 15000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

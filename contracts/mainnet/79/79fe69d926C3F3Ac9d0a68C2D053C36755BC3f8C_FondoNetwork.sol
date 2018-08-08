@@ -131,8 +131,8 @@ contract TokenERC20 {
 }
 
 contract FondoNetwork is owned, TokenERC20 {
-    string public name = &quot;Fondo Network&quot;;
-    string public symbol = &quot;FDC&quot;;
+    string public name = "Fondo Network";
+    string public symbol = "FDC";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 200000000;
 

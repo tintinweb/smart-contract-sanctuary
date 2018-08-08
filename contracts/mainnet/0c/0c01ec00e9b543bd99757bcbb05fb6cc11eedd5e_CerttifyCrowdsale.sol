@@ -89,8 +89,8 @@ contract CerttifyToken is StandardToken {
     event Burn(address indexed burner, uint256 value, string message);
     event IssueCert(bytes32 indexed id, address certIssuer, uint256 value, bytes cert);
 
-    string public name = &quot;Certtify Token&quot;;
-    string public symbol = &quot;CTF&quot;;
+    string public name = "Certtify Token";
+    string public symbol = "CTF";
     uint8 public decimals = 18;
 
     address public deployer;
@@ -131,7 +131,7 @@ contract CerttifyToken is StandardToken {
 
     function issueCert(uint256 _value, bytes _cert) external afterLockup() {
         if (_value > 0) { 
-            burn(_value, &quot;&quot;);
+            burn(_value, "");
         }
         emit IssueCert(keccak256(block.number, msg.sender, _value, _cert), msg.sender, _value, _cert);
     }
@@ -370,7 +370,7 @@ contract CerttifyCrowdsale is Ownable {
         icoEnded = true;
         uint256 tokenLeft = MAX_SUPPLY_DECIMAL.sub(tokenSold).sub(MAX_ALLOWED_BOUNTY).sub(founderWithdrawableTotal);
         if (tokenLeft != 0) {
-            token.burn(tokenLeft, &quot;ICO_BURN_TOKEN_UNSOLD&quot;);
+            token.burn(tokenLeft, "ICO_BURN_TOKEN_UNSOLD");
         }
         token.unlock();
     }

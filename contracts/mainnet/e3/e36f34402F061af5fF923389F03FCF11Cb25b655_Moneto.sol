@@ -7,7 +7,7 @@ contract BaseToken {
      * https://github.com/ethereum/EIPs/blob/f90864a3d2b2b45c4decf95efd26b3f0c276051a/EIPS/eip-20-token-standard.md
      * https://github.com/ethereum/EIPs/issues/20
      *
-     *  Added support for the ERC 223 &quot;tokenFallback&quot; method in a &quot;transfer&quot; function with a payload.
+     *  Added support for the ERC 223 "tokenFallback" method in a "transfer" function with a payload.
      *  https://github.com/ethereum/EIPs/issues/223
      */
 
@@ -198,8 +198,8 @@ contract StandardToken is BaseToken {
 
 contract Moneto is StandardToken {
   
-  string public name = &quot;Moneto&quot;;
-  string public symbol = &quot;MTO&quot;;
+  string public name = "Moneto";
+  string public symbol = "MTO";
   uint8 public decimals = 18;
 
   function Moneto(address saleAddress) public {

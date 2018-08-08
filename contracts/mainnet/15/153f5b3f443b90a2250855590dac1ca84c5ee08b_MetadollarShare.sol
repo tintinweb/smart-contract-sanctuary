@@ -107,8 +107,8 @@ contract MetadollarShare is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MetadollarShare() public {
-        symbol = &quot;MTDS&quot;;
-        name = &quot;Metadollar Share&quot;;
+        symbol = "MTDS";
+        name = "Metadollar Share";
         decimals = 0;
         _totalSupply = 1000000;
         balances[0xeaBB4013f179E42c41468DB81eB1Bd420Da6cC47] = _totalSupply;

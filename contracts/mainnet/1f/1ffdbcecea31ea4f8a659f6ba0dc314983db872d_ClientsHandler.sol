@@ -3,7 +3,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -236,9 +236,9 @@ contract ClientsHandler is ManageableContract, Converter {
         setCRManager(owner);
     }
 
-    string name = &quot;Clients Handler&quot;;
-    string descibe = &quot;Clients data storage, contain methods for their obtaining and auditing&quot;;
-    string version = &quot;0.28&quot;;
+    string name = "Clients Handler";
+    string descibe = "Clients data storage, contain methods for their obtaining and auditing";
+    string version = "0.28";
     
     // @dev defaul validtor values
     uint256 dml = 3;
@@ -437,11 +437,11 @@ contract ClientsHandler is ManageableContract, Converter {
         string memory t = bytes32ToString(uintToBytes(block.timestamp));
         string memory w = bytes32ToString(addressToBytes(who));
         
-        string memory s1 = &quot; &quot;.toSlice().concat(d.toSlice());  
+        string memory s1 = " ".toSlice().concat(d.toSlice());  
         string memory sb1 = string(bh.toSlice().concat(s1.toSlice()));
-        string memory s2 = &quot; &quot;.toSlice().concat(sb1.toSlice());
+        string memory s2 = " ".toSlice().concat(sb1.toSlice());
         string memory sb2 = string(t.toSlice().concat(s2.toSlice()));
-        string memory s3 = &quot; &quot;.toSlice().concat(sb2.toSlice());
+        string memory s3 = " ".toSlice().concat(sb2.toSlice());
         string memory sb3 = string(w.toSlice().concat(s3.toSlice()));
         
         return keccak256(sb3);

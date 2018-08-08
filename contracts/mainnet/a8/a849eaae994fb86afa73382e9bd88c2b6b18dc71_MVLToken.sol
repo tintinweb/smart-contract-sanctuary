@@ -280,8 +280,8 @@ contract MVLToken is BurnableToken, DetailedERC20, ERC20Token, TokenLock {
   // events
   event Approval(address indexed owner, address indexed spender, uint256 value);
 
-  string public constant symbol = &quot;MVL&quot;;
-  string public constant name = &quot;Mass Vehicle Ledger Token&quot;;
+  string public constant symbol = "MVL";
+  string public constant name = "Mass Vehicle Ledger Token";
   uint8 public constant decimals = 18;
   uint256 public constant TOTAL_SUPPLY = 3*(10**10)*(10**uint256(decimals));
 

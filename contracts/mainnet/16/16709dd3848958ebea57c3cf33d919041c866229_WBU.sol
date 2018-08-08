@@ -116,8 +116,8 @@ contract ERC20Token is ERC20 {
 
 contract WBU is ERC20Token, Owned {
 
-    string  public constant name = &quot;Worldwide Blockchain Univercity&quot;;
-    string  public constant symbol = &quot;WBU&quot;;
+    string  public constant name = "Worldwide Blockchain Univercity";
+    string  public constant symbol = "WBU";
     uint256 public constant decimals = 18;
 
     function WBU() public {

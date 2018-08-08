@@ -130,11 +130,11 @@ contract Doftcoin is BasicToken, owned, doftManaged {
         decimals = 18;
         _totalSupply = 5000000 * (10 ** decimals);  // Update total supply
         miningStorage = _totalSupply / 2;
-        name = &quot;Doftcoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;DFC&quot;;                               // Set the symbol for display purposes
+        name = "Doftcoin";                                   // Set the name for display purposes
+        symbol = "DFC";                               // Set the symbol for display purposes
 
         balanceOf[msg.sender] = _totalSupply;              // Give the creator all initial tokens
-	version = &quot;1.0&quot;;
+	version = "1.0";
     }
 
     /// @notice Create `_mintedAmount` tokens and send it to `_target`

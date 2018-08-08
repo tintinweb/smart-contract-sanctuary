@@ -522,7 +522,7 @@ contract Edgecoin is SafeMath, DateTime, EdgeSmartToken {
             emit Transfer(owner, recipient, tokensToBuy);
         }
         else  {
-            revert(&quot;Edgecoin ICO has ended.&quot;);
+            revert("Edgecoin ICO has ended.");
         }
     }
 }

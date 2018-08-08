@@ -103,9 +103,9 @@ contract StoneToken is StandardToken {
     They allow one to customise the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
-    string public name = &quot;StoneToken&quot;;                   //fancy name: eg Simon Bucks
+    string public name = "StoneToken";                   //fancy name: eg Simon Bucks
     uint8 public decimals = 18;                //How many decimals to show. ie. There could 1000 base units with 3 decimals. Meaning 0.980 SBX = 980 base units. It&#39;s like comparing 1 wei to 1 ether.
-    string public symbol = &quot;STK&quot;;                 //An identifier: eg SBX
+    string public symbol = "STK";                 //An identifier: eg SBX
     string public version = &#39;H1.0&#39;;       //human 0.1 standard. Just an arbitrary versioning scheme.
 
 //
@@ -118,9 +118,9 @@ contract StoneToken is StandardToken {
         ) {
         balances[msg.sender] = 110000000000000000000000000;               // Give the creator all initial tokens (100000 for example)
         totalSupply = 110000000000000000000000000;                        // Update total supply (100000 for example)
-        name = &quot;StoneToken&quot;;                                   // Set the name for display purposes
+        name = "StoneToken";                                   // Set the name for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
-        symbol = &quot;STK&quot;;                               // Set the symbol for display purposes
+        symbol = "STK";                               // Set the symbol for display purposes
     }
 
     /* Approves and then calls the receiving contract */
@@ -131,7 +131,7 @@ contract StoneToken is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

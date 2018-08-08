@@ -40,8 +40,8 @@ contract PhilcoinToken {
     uint256 public tokenRemainCap = 0;
 
 
-    function name() constant returns (string) { return &quot;Philcoin Token&quot;; }
-    function symbol() constant returns (string) { return &quot;PHT&quot;; }
+    function name() constant returns (string) { return "Philcoin Token"; }
+    function symbol() constant returns (string) { return "PHT"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

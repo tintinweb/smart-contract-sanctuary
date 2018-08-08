@@ -42,8 +42,8 @@ contract StarzToken is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;CryptoStarz&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;StarzToken&quot;; // solhint-disable-line
+  string public constant NAME = "CryptoStarz"; // solhint-disable-line
+  string public constant SYMBOL = "StarzToken"; // solhint-disable-line
 
   uint256 private startingPrice = 0.01 ether;
   uint256 private constant PROMO_CREATION_LIMIT = 5000;

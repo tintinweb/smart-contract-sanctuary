@@ -96,10 +96,10 @@ contract FAMEToken is ERC20Standard {
 
 	function FAMEToken() {
 		totalSupply = 2100000 szabo;			//Total Supply (including all decimal places!)
-		name = &quot;Fame&quot;;							//Pretty Name
+		name = "Fame";							//Pretty Name
 		decimals = 12;							//Decimal places (with 12 decimal places 1 szabo = 1 token in uint256)
-		symbol = &quot;FAM&quot;;							//Ticker Symbol (3 characters, upper case)
-		version = &quot;FAME1.0&quot;;					//Version Code
+		symbol = "FAM";							//Ticker Symbol (3 characters, upper case)
+		version = "FAME1.0";					//Version Code
 		balances[msg.sender] = totalSupply;		//Assign all balance to creator initially for distribution from there.
 	}
 

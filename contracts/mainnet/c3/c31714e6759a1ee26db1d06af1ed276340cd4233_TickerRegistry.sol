@@ -181,7 +181,7 @@ contract Pausable {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -270,7 +270,7 @@ contract PolymathRegistry is ReclaimTokens {
      */
     function getAddress(string _nameKey) view public returns(address) {
         bytes32 key = keccak256(bytes(_nameKey));
-        require(storedAddresses[key] != address(0), &quot;Invalid address key&quot;);
+        require(storedAddresses[key] != address(0), "Invalid address key");
         return storedAddresses[key];
     }
 
@@ -302,10 +302,10 @@ contract RegistryUpdater is Ownable {
     }
 
     function updateFromRegistry() onlyOwner public {
-        moduleRegistry = PolymathRegistry(polymathRegistry).getAddress(&quot;ModuleRegistry&quot;);
-        securityTokenRegistry = PolymathRegistry(polymathRegistry).getAddress(&quot;SecurityTokenRegistry&quot;);
-        tickerRegistry = PolymathRegistry(polymathRegistry).getAddress(&quot;TickerRegistry&quot;);
-        polyToken = PolymathRegistry(polymathRegistry).getAddress(&quot;PolyToken&quot;);
+        moduleRegistry = PolymathRegistry(polymathRegistry).getAddress("ModuleRegistry");
+        securityTokenRegistry = PolymathRegistry(polymathRegistry).getAddress("SecurityTokenRegistry");
+        tickerRegistry = PolymathRegistry(polymathRegistry).getAddress("TickerRegistry");
+        polyToken = PolymathRegistry(polymathRegistry).getAddress("PolyToken");
     }
 
 }
@@ -360,12 +360,12 @@ contract TickerRegistry is ITickerRegistry, Util, Pausable, RegistryUpdater, Rec
      * @param _swarmHash Off-chain details of the issuer and token
      */
     function registerTicker(address _owner, string _symbol, string _tokenName, bytes32 _swarmHash) public whenNotPaused {
-        require(_owner != address(0), &quot;Owner should not be 0x&quot;);
-        require(bytes(_symbol).length > 0 && bytes(_symbol).length <= 10, &quot;Ticker length should always between 0 & 10&quot;);
+        require(_owner != address(0), "Owner should not be 0x");
+        require(bytes(_symbol).length > 0 && bytes(_symbol).length <= 10, "Ticker length should always between 0 & 10");
         if(registrationFee > 0)
-            require(ERC20(polyToken).transferFrom(msg.sender, this, registrationFee), &quot;Failed transferFrom because of sufficent Allowance is not provided&quot;);
+            require(ERC20(polyToken).transferFrom(msg.sender, this, registrationFee), "Failed transferFrom because of sufficent Allowance is not provided");
         string memory symbol = upper(_symbol);
-        require(expiryCheck(symbol), &quot;Ticker is already reserved&quot;);
+        require(expiryCheck(symbol), "Ticker is already reserved");
         registeredSymbols[symbol] = SymbolDetails(_owner, now, _tokenName, _swarmHash, false);
         emit LogRegisterTicker (_owner, symbol, _tokenName, _swarmHash, now);
     }
@@ -375,7 +375,7 @@ contract TickerRegistry is ITickerRegistry, Util, Pausable, RegistryUpdater, Rec
      * @param _newExpiry new time period for token symbol expiry
      */
     function changeExpiryLimit(uint256 _newExpiry) public onlyOwner {
-        require(_newExpiry >= 1 days, &quot;Expiry should greater than or equal to 1 day&quot;);
+        require(_newExpiry >= 1 days, "Expiry should greater than or equal to 1 day");
         uint256 _oldExpiry = expiryLimit;
         expiryLimit = _newExpiry;
         emit LogChangeExpiryLimit(_oldExpiry, _newExpiry);
@@ -390,10 +390,10 @@ contract TickerRegistry is ITickerRegistry, Util, Pausable, RegistryUpdater, Rec
      */
     function checkValidity(string _symbol, address _owner, string _tokenName) public returns(bool) {
         string memory symbol = upper(_symbol);
-        require(msg.sender == securityTokenRegistry, &quot;msg.sender should be SecurityTokenRegistry contract&quot;);
-        require(registeredSymbols[symbol].status != true, &quot;Symbol status should not equal to true&quot;);
-        require(registeredSymbols[symbol].owner == _owner, &quot;Owner of the symbol should matched with the requested issuer address&quot;);
-        require(registeredSymbols[symbol].timestamp.add(expiryLimit) >= now, &quot;Ticker should not be expired&quot;);
+        require(msg.sender == securityTokenRegistry, "msg.sender should be SecurityTokenRegistry contract");
+        require(registeredSymbols[symbol].status != true, "Symbol status should not equal to true");
+        require(registeredSymbols[symbol].owner == _owner, "Owner of the symbol should matched with the requested issuer address");
+        require(registeredSymbols[symbol].timestamp.add(expiryLimit) >= now, "Ticker should not be expired");
         registeredSymbols[symbol].tokenName = _tokenName;
         registeredSymbols[symbol].status = true;
         return true;
@@ -409,7 +409,7 @@ contract TickerRegistry is ITickerRegistry, Util, Pausable, RegistryUpdater, Rec
      */
      function isReserved(string _symbol, address _owner, string _tokenName, bytes32 _swarmHash) public returns(bool) {
         string memory symbol = upper(_symbol);
-        require(msg.sender == securityTokenRegistry, &quot;msg.sender should be SecurityTokenRegistry contract&quot;);
+        require(msg.sender == securityTokenRegistry, "msg.sender should be SecurityTokenRegistry contract");
         if (registeredSymbols[symbol].owner == _owner && !expiryCheck(_symbol)) {
             registeredSymbols[symbol].status = true;
             return false;
@@ -443,7 +443,7 @@ contract TickerRegistry is ITickerRegistry, Util, Pausable, RegistryUpdater, Rec
                 registeredSymbols[symbol].status
             );
         }else
-            return (address(0), uint256(0), &quot;&quot;, bytes32(0), false);
+            return (address(0), uint256(0), "", bytes32(0), false);
     }
 
     /**
@@ -454,7 +454,7 @@ contract TickerRegistry is ITickerRegistry, Util, Pausable, RegistryUpdater, Rec
     function expiryCheck(string _symbol) internal returns(bool) {
         if (registeredSymbols[_symbol].owner != address(0)) {
             if (now > registeredSymbols[_symbol].timestamp.add(expiryLimit) && registeredSymbols[_symbol].status != true) {
-                registeredSymbols[_symbol] = SymbolDetails(address(0), uint256(0), &quot;&quot;, bytes32(0), false);
+                registeredSymbols[_symbol] = SymbolDetails(address(0), uint256(0), "", bytes32(0), false);
                 return true;
             }else
                 return false;

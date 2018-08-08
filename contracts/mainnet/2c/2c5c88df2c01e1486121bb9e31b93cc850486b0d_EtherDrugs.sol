@@ -35,8 +35,8 @@ contract EtherDrugs is ERC721 {
   }
 
   /*** CONSTANTS ***/
-  string public constant NAME = &quot;EtherDrugs&quot;;
-  string public constant SYMBOL = &quot;DRUG&quot;;
+  string public constant NAME = "EtherDrugs";
+  string public constant SYMBOL = "DRUG";
   
   bool public gameOpen = false;
 

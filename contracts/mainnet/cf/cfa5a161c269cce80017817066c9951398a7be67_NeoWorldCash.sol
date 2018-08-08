@@ -134,12 +134,12 @@ contract NeoWorldCash is ERC223, Owned {
 	// Constructor
 	// ------------------------------------------------------------------------
 	function NeoWorldCash() public {
-		symbol = &quot;NASH&quot;;
-		name = &quot;NEOWORLD CASH&quot;;
+		symbol = "NASH";
+		name = "NEOWORLD CASH";
 		decimals = 18;
 		totalSupply = 100000000000 * 10**uint(decimals);
 		balances[msg.sender] = totalSupply;
-		emit Transfer(address(0), msg.sender, totalSupply, &quot;&quot;);
+		emit Transfer(address(0), msg.sender, totalSupply, "");
 	}
 	
 	

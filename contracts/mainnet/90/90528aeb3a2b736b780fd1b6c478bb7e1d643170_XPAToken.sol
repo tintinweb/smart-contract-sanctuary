@@ -113,10 +113,10 @@ contract StandardToken is SafeMath, Token {
 contract XPAToken is StandardToken {
 
     // metadata
-    string public constant name = &quot;XPlay Token&quot;;
-    string public constant symbol = &quot;XPA&quot;;
+    string public constant name = "XPlay Token";
+    string public constant symbol = "XPA";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     // contracts
     address public ethFundDeposit;      // deposit address of ETH for XPlay Ltd.

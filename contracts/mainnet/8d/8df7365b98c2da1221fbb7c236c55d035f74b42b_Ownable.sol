@@ -60,8 +60,8 @@ contract XiaoMuBiaoERC20 is Ownable{
 		decimals=7;															//Assignment of Token&#39;s decimals
 		totalSupply = 500000000000 * 10 ** uint256(decimals);  				//Assignment of Token&#39;s total supply with decimals
         balanceOf[owner] = totalSupply;                					//Assignment of Token&#39;s creator initial tokens
-        name = &quot;XiaoMuBiao&quot;;                                   					//Set the name of Token
-        symbol = &quot;XMB&quot;;                               					//Set the symbol of  Token
+        name = "XiaoMuBiao";                                   					//Set the name of Token
+        symbol = "XMB";                               					//Set the symbol of  Token
         
     }
 	//===================Contract Initialization Sequence definition end===================

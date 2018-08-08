@@ -191,8 +191,8 @@ contract SafeStandardToken is ERC20, SafeBasicToken {
 }
 
 contract BITToken is SafeStandardToken{
-  string public constant name = &quot;BIT Token&quot;;
-  string public constant symbol = &quot;BIT&quot;;
+  string public constant name = "BIT Token";
+  string public constant symbol = "BIT";
   uint256 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 21000000 * (10 ** uint256(decimals));
 

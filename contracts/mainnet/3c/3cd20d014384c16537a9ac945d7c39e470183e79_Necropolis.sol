@@ -147,8 +147,8 @@ contract RBACWithAdmin is RBAC {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
-  string public constant ROLE_PAUSE_ADMIN = &quot;pauseAdmin&quot;;
+  string public constant ROLE_ADMIN = "admin";
+  string public constant ROLE_PAUSE_ADMIN = "pauseAdmin";
 
   /**
    * @dev modifier to scope access to admins
@@ -225,7 +225,7 @@ contract Necropolis is RBACWithAdmin {
         uint256 _deathReason
     ) 
         external 
-        onlyRole(&quot;MainContract&quot;) 
+        onlyRole("MainContract") 
     {
         Dragon memory _dragon = Dragon({
             lastDragonOwner: _lastDragonOwner,

@@ -18,8 +18,8 @@ contract Ownable {
 }
 
 contract TUDOR is Ownable {
-  string public constant name = &quot;TUDOR&quot;;
-  string public constant symbol = &quot;TDR&quot;;
+  string public constant name = "TUDOR";
+  string public constant symbol = "TDR";
   uint8 public constant decimals = 18;
   uint256 public totalSupply;
   mapping(address => uint256) balances;

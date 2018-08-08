@@ -102,8 +102,8 @@ contract PartialCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PartialCoin() public {
-        symbol = &quot;PRTL&quot;;
-        name = &quot;Partial Coin&quot;;
+        symbol = "PRTL";
+        name = "Partial Coin";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0xd24640b2908018922C138AF47067b6bBc5560875] = _totalSupply;

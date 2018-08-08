@@ -3,7 +3,7 @@ pragma solidity ^0.4.20; // solhint-disable-line
 // similar as bullsfarmer, with three changes:
 // A. one third of your bullss die when you sell eggs
 // B. you can transfer ownership of the devfee through sacrificing bullss
-// C. the &quot;free&quot; 300 bullss cost 0.001 eth (in line with the mining fee)
+// C. the "free" 300 bullss cost 0.001 eth (in line with the mining fee)
 
 // bots should have a harder time, and whales can compete for the devfee
 

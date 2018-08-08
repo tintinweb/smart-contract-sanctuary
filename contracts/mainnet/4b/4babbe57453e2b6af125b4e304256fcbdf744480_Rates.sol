@@ -8,30 +8,30 @@ pragma solidity 0.4.24;
 library SafeMath {
     function mul(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a * b;
-        require(a == 0 || c / a == b, &quot;mul overflow&quot;);
+        require(a == 0 || c / a == b, "mul overflow");
         return c;
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b > 0, &quot;div by 0&quot;); // Solidity automatically throws for div by 0 but require to emit reason
+        require(b > 0, "div by 0"); // Solidity automatically throws for div by 0 but require to emit reason
         uint256 c = a / b;
         // require(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b <= a, &quot;sub underflow&quot;);
+        require(b <= a, "sub underflow");
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        require(c >= a, &quot;add overflow&quot;);
+        require(c >= a, "add overflow");
         return c;
     }
 
     function roundedDiv(uint a, uint b) internal pure returns (uint256) {
-        require(b > 0, &quot;div by 0&quot;); // Solidity automatically throws for div by 0 but require to emit reason
+        require(b > 0, "div by 0"); // Solidity automatically throws for div by 0 but require to emit reason
         uint256 z = a / b;
         if (a % b >= b / 2) {
             z++;  // no need for safe add b/c it can happen only if we divided the input
@@ -46,7 +46,7 @@ library SafeMath {
 
     deployment works as:
            1. contract deployer account deploys contracts
-           2. constructor grants &quot;PermissionGranter&quot; permission to deployer account
+           2. constructor grants "PermissionGranter" permission to deployer account
            3. deployer account executes initial setup (no multiSig)
            4. deployer account grants PermissionGranter permission for the MultiSig contract
                 (e.g. StabilityBoardProxy or PreTokenProxy)
@@ -62,26 +62,26 @@ contract Restricted {
     event PermissionRevoked(address indexed agent, bytes32 revokedPermission);
 
     modifier restrict(bytes32 requiredPermission) {
-        require(permissions[msg.sender][requiredPermission], &quot;msg.sender must have permission&quot;);
+        require(permissions[msg.sender][requiredPermission], "msg.sender must have permission");
         _;
     }
 
     constructor(address permissionGranterContract) public {
-        require(permissionGranterContract != address(0), &quot;permissionGranterContract must be set&quot;);
-        permissions[permissionGranterContract][&quot;PermissionGranter&quot;] = true;
-        emit PermissionGranted(permissionGranterContract, &quot;PermissionGranter&quot;);
+        require(permissionGranterContract != address(0), "permissionGranterContract must be set");
+        permissions[permissionGranterContract]["PermissionGranter"] = true;
+        emit PermissionGranted(permissionGranterContract, "PermissionGranter");
     }
 
     function grantPermission(address agent, bytes32 requiredPermission) public {
-        require(permissions[msg.sender][&quot;PermissionGranter&quot;],
-            &quot;msg.sender must have PermissionGranter permission&quot;);
+        require(permissions[msg.sender]["PermissionGranter"],
+            "msg.sender must have PermissionGranter permission");
         permissions[agent][requiredPermission] = true;
         emit PermissionGranted(agent, requiredPermission);
     }
 
     function grantMultiplePermissions(address agent, bytes32[] requiredPermissions) public {
-        require(permissions[msg.sender][&quot;PermissionGranter&quot;],
-            &quot;msg.sender must have PermissionGranter permission&quot;);
+        require(permissions[msg.sender]["PermissionGranter"],
+            "msg.sender must have PermissionGranter permission");
         uint256 length = requiredPermissions.length;
         for (uint256 i = 0; i < length; i++) {
             grantPermission(agent, requiredPermissions[i]);
@@ -89,8 +89,8 @@ contract Restricted {
     }
 
     function revokePermission(address agent, bytes32 requiredPermission) public {
-        require(permissions[msg.sender][&quot;PermissionGranter&quot;],
-            &quot;msg.sender must have PermissionGranter permission&quot;);
+        require(permissions[msg.sender]["PermissionGranter"],
+            "msg.sender must have PermissionGranter permission");
         permissions[agent][requiredPermission] = false;
         emit PermissionRevoked(agent, requiredPermission);
     }
@@ -126,13 +126,13 @@ contract Rates is Restricted {
 
     constructor(address permissionGranterContract) public Restricted(permissionGranterContract) {} // solhint-disable-line no-empty-blocks
 
-    function setRate(bytes32 symbol, uint newRate) external restrict(&quot;RatesFeeder&quot;) {
+    function setRate(bytes32 symbol, uint newRate) external restrict("RatesFeeder") {
         rates[symbol] = RateInfo(newRate, now);
         emit RateChanged(symbol, newRate);
     }
 
-    function setMultipleRates(bytes32[] symbols, uint[] newRates) external restrict(&quot;RatesFeeder&quot;) {
-        require(symbols.length == newRates.length, &quot;symobls and newRates lengths must be equal&quot;);
+    function setMultipleRates(bytes32[] symbols, uint[] newRates) external restrict("RatesFeeder") {
+        require(symbols.length == newRates.length, "symobls and newRates lengths must be equal");
         for (uint256 i = 0; i < symbols.length; i++) {
             rates[symbols[i]] = RateInfo(newRates[i], now);
             emit RateChanged(symbols[i], newRates[i]);
@@ -140,13 +140,13 @@ contract Rates is Restricted {
     }
 
     function convertFromWei(bytes32 bSymbol, uint weiValue) external view returns(uint value) {
-        require(rates[bSymbol].rate > 0, &quot;rates[bSymbol] must be > 0&quot;);
+        require(rates[bSymbol].rate > 0, "rates[bSymbol] must be > 0");
         return weiValue.mul(rates[bSymbol].rate).roundedDiv(1000000000000000000);
     }
 
     function convertToWei(bytes32 bSymbol, uint value) external view returns(uint weiValue) {
         // next line would revert with div by zero but require to emit reason
-        require(rates[bSymbol].rate > 0, &quot;rates[bSymbol] must be > 0&quot;);
+        require(rates[bSymbol].rate > 0, "rates[bSymbol] must be > 0");
         /* TODO: can we make this not loosing max scale? */
         return value.mul(1000000000000000000).roundedDiv(rates[bSymbol].rate);
     }

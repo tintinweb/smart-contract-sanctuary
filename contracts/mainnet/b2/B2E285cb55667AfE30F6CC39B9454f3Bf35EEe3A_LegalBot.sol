@@ -104,8 +104,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract LegalBot is StandardToken {
 
-  string public constant name = &quot;LegalBot&quot;;
-  string public constant symbol = &quot;LBOT&quot;;
+  string public constant name = "LegalBot";
+  string public constant symbol = "LBOT";
   uint256 public constant decimals = 18;
   address public owner;
   

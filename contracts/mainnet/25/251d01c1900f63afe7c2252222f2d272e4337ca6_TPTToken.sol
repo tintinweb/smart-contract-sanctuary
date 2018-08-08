@@ -74,8 +74,8 @@ contract Owned {
 contract TPTToken is ERC20Interface, Owned {
     using SafeMath for uint;
 
-    string public name = &quot;Today Portfolio Token&quot;;
-    string public symbol = &quot;TPT&quot;;
+    string public name = "Today Portfolio Token";
+    string public symbol = "TPT";
     uint8 public decimals = 18;
     uint256 public _totalSupply = 88000000;
     bool public locked = false;

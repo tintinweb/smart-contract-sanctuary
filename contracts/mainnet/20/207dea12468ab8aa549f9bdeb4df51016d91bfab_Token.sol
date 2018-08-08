@@ -34,8 +34,8 @@ contract Token {
 
     address public owner = msg.sender;
 
-    string public name = &quot;\&quot;VRCC\&quot; project utility token&quot;;
-    string public symbol = &quot;VRCC&quot;;
+    string public name = "\"VRCC\" project utility token";
+    string public symbol = "VRCC";
 
     bool public upgradable = false;
     bool public upgraderSet = false;

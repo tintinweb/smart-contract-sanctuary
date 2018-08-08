@@ -102,8 +102,8 @@ contract StephenHawking is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function StephenHawking() public {
-        symbol = &quot;HAWK&quot;;
-        name = &quot;StephenHawking&quot;;
+        symbol = "HAWK";
+        name = "StephenHawking";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xFe86D9a9cf58055C2F287499d837bACb3083EeDc] = _totalSupply;

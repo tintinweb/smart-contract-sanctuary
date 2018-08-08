@@ -112,8 +112,8 @@ contract NetworkSocietyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NetworkSocietyToken() public {
-        symbol = &quot;NST&quot;;
-        name = &quot;Network Society Token&quot;;
+        symbol = "NST";
+        name = "Network Society Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xd8EEe7e8d8f5eB80888588782FdB8b0e0e551495] = _totalSupply;

@@ -127,8 +127,8 @@ contract StandardToken is ERC20 {
 }
 
 contract EOSpace is StandardToken {
-  string public constant name = &quot;EOSpace&quot;;
-  string public constant symbol = &quot;EOP&quot;;
+  string public constant name = "EOSpace";
+  string public constant symbol = "EOP";
   uint8 public constant decimals = 18;
   mapping(address => bool) public claimed;
   event Claim(address indexed from);

@@ -1,13 +1,13 @@
 // Copyright (c) 2017 Sweetbridge Inc.
 //
-// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+// Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
 //     http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
@@ -79,11 +79,11 @@ contract SecuredWithRoles is Owned {
         return hasRole(roleName) && roles.roleList(contractHash, keccak256(roleName), msg.sender);
     }
 
-    function stop() public roleOrOwner(&quot;stopper&quot;) {
+    function stop() public roleOrOwner("stopper") {
         stopped = true;
     }
 
-    function restart() public roleOrOwner(&quot;restarter&quot;) {
+    function restart() public roleOrOwner("restarter") {
         stopped = false;
     }
 
@@ -121,27 +121,27 @@ contract Roles is RolesEvents, SecuredWithRoles {
     // the intention is
     mapping (bytes32 => mapping (bytes32 => bool)) public knownRoleNames;
 
-    function Roles() SecuredWithRoles(&quot;RolesRepository&quot;, this) public {}
+    function Roles() SecuredWithRoles("RolesRepository", this) public {}
 
-    function addContractRole(bytes32 ctrct, string roleName) public roleOrOwner(&quot;admin&quot;) {
+    function addContractRole(bytes32 ctrct, string roleName) public roleOrOwner("admin") {
         require(!knownRoleNames[ctrct][keccak256(roleName)]);
         knownRoleNames[ctrct][keccak256(roleName)] = true;
         LogRoleAdded(ctrct, roleName);
     }
 
-    function removeContractRole(bytes32 ctrct, string roleName) public roleOrOwner(&quot;admin&quot;) {
+    function removeContractRole(bytes32 ctrct, string roleName) public roleOrOwner("admin") {
         require(knownRoleNames[ctrct][keccak256(roleName)]);
         delete knownRoleNames[ctrct][keccak256(roleName)];
         LogRoleRemoved(ctrct, roleName);
     }
 
-    function grantUserRole(bytes32 ctrct, string roleName, address user) public roleOrOwner(&quot;admin&quot;) {
+    function grantUserRole(bytes32 ctrct, string roleName, address user) public roleOrOwner("admin") {
         require(knownRoleNames[ctrct][keccak256(roleName)]);
         roleList[ctrct][keccak256(roleName)][user] = true;
         LogRoleGranted(ctrct, roleName, user);
     }
 
-    function revokeUserRole(bytes32 ctrct, string roleName, address user) public roleOrOwner(&quot;admin&quot;) {
+    function revokeUserRole(bytes32 ctrct, string roleName, address user) public roleOrOwner("admin") {
         delete roleList[ctrct][keccak256(roleName)][user];
         LogRoleRevoked(ctrct, roleName, user);
     }

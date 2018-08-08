@@ -7,8 +7,8 @@ pragma solidity ^ 0.4.19;
 contract GdprConfig {
 
     // Token settings
-    string public constant TOKEN_NAME = &quot;GDPR Cash&quot;;
-    string public constant TOKEN_SYMBOL = &quot;GDPR&quot;;
+    string public constant TOKEN_NAME = "GDPR Cash";
+    string public constant TOKEN_SYMBOL = "GDPR";
     uint8 public constant TOKEN_DECIMALS = 18;
 
     // Smallest value of the GDPR
@@ -51,7 +51,7 @@ contract GdprConfig {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;

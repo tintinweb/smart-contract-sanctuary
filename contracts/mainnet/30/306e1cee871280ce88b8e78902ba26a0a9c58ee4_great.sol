@@ -39,8 +39,8 @@ contract great {
 	
     using SafeMath for uint256;
     
-    string public constant name       = &quot;CCTT&quot;;
-    string public constant symbol     = &quot;CCTT&quot;;
+    string public constant name       = "CCTT";
+    string public constant symbol     = "CCTT";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply;
  

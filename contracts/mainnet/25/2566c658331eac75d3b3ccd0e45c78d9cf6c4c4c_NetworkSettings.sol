@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -124,11 +124,11 @@ contract NetworkSettings is Ownable {
         uint256 _defaultReputationReward,
         uint256 _reputationIRNNodeShare,
         uint256 _blockThreshold) public {
-        require(_activationFee > 0, &quot;activation fee must be greater than 0&quot;);
-        require(_registrationFee > 0, &quot;registration fee must be greater than 0&quot;);
-        require(_defaultReputationReward > 0, &quot;default reputation reward must be greater than 0&quot;);
-        require(_reputationIRNNodeShare > 0, &quot;new share must be larger than zero&quot;);
-        require(_reputationIRNNodeShare < 100, &quot;new share must be less than 100&quot;);
+        require(_activationFee > 0, "activation fee must be greater than 0");
+        require(_registrationFee > 0, "registration fee must be greater than 0");
+        require(_defaultReputationReward > 0, "default reputation reward must be greater than 0");
+        require(_reputationIRNNodeShare > 0, "new share must be larger than zero");
+        require(_reputationIRNNodeShare < 100, "new share must be less than 100");
 
         activationFee = _activationFee;
         registrationFee = _registrationFee;
@@ -141,8 +141,8 @@ contract NetworkSettings is Ownable {
     /// @param _registrationFee new fee for registrations in ATMI tokens
     /// @return true if successful, otherwise false
     function setRegistrationFee(uint256 _registrationFee) public onlyOwner returns (bool) {
-        require(_registrationFee > 0, &quot;new registration fee must be greater than zero&quot;);
-        require(_registrationFee != registrationFee, &quot;new registration fee must be different&quot;);
+        require(_registrationFee > 0, "new registration fee must be greater than zero");
+        require(_registrationFee != registrationFee, "new registration fee must be different");
         registrationFee = _registrationFee;
         emit RegistrationFeeUpdated(msg.sender, _registrationFee);
         return true;
@@ -152,8 +152,8 @@ contract NetworkSettings is Ownable {
     /// @param _activationFee new fee for activations in ATMI tokens
     /// @return true if successful, otherwise false
     function setActivationFee(uint256 _activationFee) public onlyOwner returns (bool) {
-        require(_activationFee > 0, &quot;new activation fee must be greater than zero&quot;);
-        require(_activationFee != activationFee, &quot;new activation fee must be different&quot;);
+        require(_activationFee > 0, "new activation fee must be greater than zero");
+        require(_activationFee != activationFee, "new activation fee must be different");
         activationFee = _activationFee;
         emit ActivationFeeUpdated(msg.sender, _activationFee);
         return true;
@@ -163,8 +163,8 @@ contract NetworkSettings is Ownable {
     /// @param _defaultReputationReward new reward for reputation score changes in ATMI tokens
     /// @return true if successful, otherwise false
     function setDefaultReputationReward(uint256 _defaultReputationReward) public onlyOwner returns (bool) {
-        require(_defaultReputationReward > 0, &quot;new reputation reward must be greater than zero&quot;);
-        require(_defaultReputationReward != defaultReputationReward, &quot;new reputation reward must be different&quot;);
+        require(_defaultReputationReward > 0, "new reputation reward must be greater than zero");
+        require(_defaultReputationReward != defaultReputationReward, "new reputation reward must be different");
         defaultReputationReward = _defaultReputationReward;
         emit DefaultReputationRewardUpdated(msg.sender, _defaultReputationReward);
         return true;
@@ -174,9 +174,9 @@ contract NetworkSettings is Ownable {
     /// @param _reputationIRNNodeShare new percentage of the reputation reward allotted to author
     /// @return true if successful, otherwise false
     function setReputationIRNNodeShare(uint256 _reputationIRNNodeShare) public onlyOwner returns (bool) {
-        require(_reputationIRNNodeShare > 0, &quot;new share must be larger than zero&quot;);
-        require(_reputationIRNNodeShare < 100, &quot;new share must be less than to 100&quot;);
-        require(reputationIRNNodeShare != _reputationIRNNodeShare, &quot;new share must be different&quot;);
+        require(_reputationIRNNodeShare > 0, "new share must be larger than zero");
+        require(_reputationIRNNodeShare < 100, "new share must be less than to 100");
+        require(reputationIRNNodeShare != _reputationIRNNodeShare, "new share must be different");
         reputationIRNNodeShare = _reputationIRNNodeShare;
         emit ReputationIRNNodeShareUpdated(msg.sender, _reputationIRNNodeShare);
         return true;
@@ -186,7 +186,7 @@ contract NetworkSettings is Ownable {
     /// @param _newBlockThreshold new value for all token pools
     /// @return true if successful, otherwise false
     function setRewardBlockThreshold(uint _newBlockThreshold) public onlyOwner returns (bool) {
-        require(_newBlockThreshold != blockThreshold, &quot;must be different&quot;);
+        require(_newBlockThreshold != blockThreshold, "must be different");
         blockThreshold = _newBlockThreshold;
         emit RewardBlockThresholdChanged(msg.sender, _newBlockThreshold);
         return true;

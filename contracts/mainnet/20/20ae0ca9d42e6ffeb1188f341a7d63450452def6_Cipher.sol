@@ -14,8 +14,8 @@ contract ERC20Interface {
  }
   
  contract Cipher is ERC20Interface {
-    string public constant symbol = &quot;CPR&quot;;
-    string public constant name = &quot;Cipher&quot;;
+    string public constant symbol = "CPR";
+    string public constant name = "Cipher";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 1080000000000000000000000000;
     address public owner;

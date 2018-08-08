@@ -102,9 +102,9 @@ contract EntrepreneurShop is StandardToken {
         ) {
         balances[msg.sender] = 3000000000000000;               
         totalSupply = 3000000000000000;                        
-        name = &quot;Entrepreneur Shop&quot;;                                   
+        name = "Entrepreneur Shop";                                   
         decimals = 8;                            
-        symbol = &quot;ESO&quot;;                               
+        symbol = "ESO";                               
     }
 
     
@@ -113,7 +113,7 @@ contract EntrepreneurShop is StandardToken {
         Approval(msg.sender, _spender, _value);
 
         
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

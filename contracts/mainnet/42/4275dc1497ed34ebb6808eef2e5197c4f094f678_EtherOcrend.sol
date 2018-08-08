@@ -113,8 +113,8 @@ contract EtherOcrend is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EtherOcrend() public {
-        symbol = &quot;ETH0&quot;;
-        name = &quot;EtherOcrend&quot;;
+        symbol = "ETH0";
+        name = "EtherOcrend";
         decimals = 4;
         _totalSupply = 100000000000000000000000000;
         balances[0x5b1dF553f6BD9A3CFcD2a85e4627805268E84c39] = _totalSupply;

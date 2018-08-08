@@ -201,8 +201,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Jancok is StandardToken {
 
-    string  public name     = &quot;Frederico BC&quot;;
-    string  public symbol   = &quot;FBC&quot;;
+    string  public name     = "Frederico BC";
+    string  public symbol   = "FBC";
     uint8 public decimals = 18;
 
 

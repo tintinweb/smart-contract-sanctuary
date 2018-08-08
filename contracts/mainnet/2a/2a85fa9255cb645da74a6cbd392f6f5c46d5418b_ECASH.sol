@@ -109,8 +109,8 @@ contract ECASH is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ECASH() public {
-        symbol = &quot;ECASH&quot;;
-        name = &quot;ECASH&quot;;
+        symbol = "ECASH";
+        name = "ECASH";
         decimals = 18;
         _totalSupply = 500000000000000000000000000;
         balances[0x361d8a4bBC7bb053214956B4076dECE7C064bDF7] = _totalSupply;

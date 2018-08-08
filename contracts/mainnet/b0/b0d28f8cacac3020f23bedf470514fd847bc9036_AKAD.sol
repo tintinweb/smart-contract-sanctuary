@@ -77,8 +77,8 @@ contract AKAD is ERC20 {
 
     uint public constant decimals = 8;                                 // Decimals count
     uint256 public totalSupply = 5000000000 * 10 ** decimals;          // Total supply
-	string public constant name = &quot;AKAD&quot;;                             // Coin name
-    string public constant symbol = &quot;AKAD&quot;;                           // Coin symbol
+	string public constant name = "AKAD";                             // Coin name
+    string public constant symbol = "AKAD";                           // Coin symbol
 
 	constructor() public {                                             // Constructor
 		balances[msg.sender] = totalSupply;                            // Give the creator all initial tokens

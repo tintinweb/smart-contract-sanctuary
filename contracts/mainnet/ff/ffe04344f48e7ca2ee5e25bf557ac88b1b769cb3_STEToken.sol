@@ -157,8 +157,8 @@ contract STEToken is Ownable, StandardToken {
 	uint256 public maxLockPeriod;
 
 	function STEToken() public {
-		name = &quot;STeX Exchange Token&quot;;
-		symbol = &quot;STE&quot;;
+		name = "STeX Exchange Token";
+		symbol = "STE";
 		decimals = 8;
 		allowTransfer = false;
 		maxLockPeriod = 4600000;

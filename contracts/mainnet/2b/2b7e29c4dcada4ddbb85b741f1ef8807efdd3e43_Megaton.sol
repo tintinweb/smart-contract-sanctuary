@@ -107,8 +107,8 @@ contract Megaton is ERC20, Ownable, Pausable {
     mapping(address => mapping(address => uint256)) internal allowed;
 
     function Megaton() public {
-        name = &quot;Megaton&quot;;
-        symbol = &quot;MGT&quot;;
+        name = "Megaton";
+        symbol = "MGT";
         decimals = 18;
         initialSupply = 100000000000;
         totalSupply_ = initialSupply * 10 ** uint(decimals);

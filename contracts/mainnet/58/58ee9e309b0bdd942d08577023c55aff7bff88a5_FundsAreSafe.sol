@@ -273,7 +273,7 @@ contract Ownable {
 }
 
 contract Whitelist is Ownable, RBAC {
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if operator is not whitelisted.
@@ -358,7 +358,7 @@ contract FundsAreSafe is Whitelist {
 
     ABL token;
     mapping(address => uint256) book;
-    string public constant ROLE_DISTRIBUTOR = &quot;distributor&quot;;
+    string public constant ROLE_DISTRIBUTOR = "distributor";
 
     constructor(ABL _token) public {
         token = _token;
@@ -376,7 +376,7 @@ contract FundsAreSafe is Whitelist {
         uint256 balance = token.balanceOf(msg.sender);
         require(
             token.allowance(msg.sender, address(this)) >= balance,
-            &quot;You should send all of your money.&quot;
+            "You should send all of your money."
         );
         token.safeTransferFrom(msg.sender, address(this), balance);
         book[msg.sender] = balance;
@@ -389,11 +389,11 @@ contract FundsAreSafe is Whitelist {
     ) internal {
         require(
             hasRole(msg.sender, ROLE_DISTRIBUTOR) || msg.sender == owner,
-            &quot;Only distributor/owner can do this.&quot;
+            "Only distributor/owner can do this."
         );
         require(
             _ratio >= 0 && _ratio <= 10,
-            &quot;Ratio should be in range (1~10)&quot;
+            "Ratio should be in range (1~10)"
         );
         uint256 amount = book[_sender].div(10).mul(_ratio);
         token.safeTransfer(_receiver, amount);
@@ -618,8 +618,8 @@ contract ABL is StandardToken, OwnableToken {
     uint256 public constant DEVELOPERS = 178550000;   // developer
 
     // Token Information
-    string public constant name = &quot;Airbloc&quot;;
-    string public constant symbol = &quot;ABL&quot;;
+    string public constant name = "Airbloc";
+    string public constant symbol = "ABL";
     uint256 public constant decimals = 18;
     uint256 public totalSupply = SUM.mul(10 ** uint256(decimals));
 

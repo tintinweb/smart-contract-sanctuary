@@ -11,7 +11,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -51,9 +51,9 @@ contract Ownable {
 
 contract SlammerTime is Ownable{
 
-  string public constant purpose = &quot;ETHDenver&quot;;
-  string public constant contact = &quot;https://cryptogs.io&quot;;
-  string public constant author = &quot;Austin Thomas Griffith | <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e1f0b0d0a17103e1d11101d0b0c0c1b101d1b501711">[email&#160;protected]</a>&quot;;
+  string public constant purpose = "ETHDenver";
+  string public constant contact = "https://cryptogs.io";
+  string public constant author = "Austin Thomas Griffith | <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e1f0b0d0a17103e1d11101d0b0c0c1b101d1b501711">[email&#160;protected]</a>";
 
   address public cryptogs;
 

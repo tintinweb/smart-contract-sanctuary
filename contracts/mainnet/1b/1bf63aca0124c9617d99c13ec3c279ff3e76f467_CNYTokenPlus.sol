@@ -174,7 +174,7 @@ contract StandardToken is BasicToken, ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -282,8 +282,8 @@ contract CNYTokenPlus is PausableToken {
       revert();
   }
 
-  string public name = &quot;CNYTokenPlus&quot;;
-  string public symbol = &quot;CNYt⁺&quot;;
+  string public name = "CNYTokenPlus";
+  string public symbol = "CNYt⁺";
   uint8 public decimals = 18;
   uint public totalSupply = 100000000000000000000000000;
   string public version = &#39;CNYt⁺ 2.0&#39;;
@@ -336,7 +336,7 @@ contract CNYTokenPlus is PausableToken {
 
       uint256 nonce = nonces[_from];
       bytes32 hash = keccak256(_from,_to,_value,_fee,nonce);
-      bytes memory prefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
+      bytes memory prefix = "\x19Ethereum Signed Message:\n32";
       bytes32 prefixedHash = keccak256(prefix, hash);
       require(_from == ecrecover(prefixedHash,_v,_r,_s));
 

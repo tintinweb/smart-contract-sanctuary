@@ -77,8 +77,8 @@ contract ReiDoCoinToken is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
 
     function ReiDoCoinToken() public {
-        symbol = &quot;RDCT&quot;;
-        name = &quot;RDCToken&quot;;
+        symbol = "RDCT";
+        name = "RDCToken";
         decimals = 8;
         _totalSupply = 15000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

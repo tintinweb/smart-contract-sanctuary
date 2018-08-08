@@ -12,7 +12,7 @@ contract ZEROtoken { address owner = msg.sender;
 
  uint256 public totalSupply = 0;
 
- function name() constant returns (string) { return &quot;ZERO token&quot;; } function symbol() constant returns (string) { return &quot;ZERO&quot;; } function decimals() constant returns (uint8) { return 18; } function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; } function transfer(address _to, uint256 _value) returns (bool success) { if(msg.data.length < (2 * 32) + 4) { return; }
+ function name() constant returns (string) { return "ZERO token"; } function symbol() constant returns (string) { return "ZERO"; } function decimals() constant returns (uint8) { return 18; } function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; } function transfer(address _to, uint256 _value) returns (bool success) { if(msg.data.length < (2 * 32) + 4) { return; }
 
  if (_value == 0) { return false; }
 

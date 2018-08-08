@@ -3,8 +3,8 @@ pragma solidity ^0.4.8;
 //Kings Distributed Systems
 //ERC20 Compliant DCC Token
 contract DCCToken {
-    string public constant name     = &quot;Distributed Compute Credits&quot;;
-    string public constant symbol   = &quot;DCC&quot;;
+    string public constant name     = "Distributed Compute Credits";
+    string public constant symbol   = "DCC";
     uint8  public constant decimals = 18;
 
     uint256 public totalSupply      = 0;

@@ -181,8 +181,8 @@ contract StandardToken is BasicToken, ERC20 {
  */
 contract CRYPTOBULL is StandardToken {
 
-    string public name = &quot;CRYPTOBULL&quot;;
-    string public symbol = &quot;CBG&quot;;
+    string public name = "CRYPTOBULL";
+    string public symbol = "CBG";
     uint public decimals = 8;
     uint public INITIAL_SUPPLY = 8000000000000000; // Initial supply is 80,000,000 CBG
 

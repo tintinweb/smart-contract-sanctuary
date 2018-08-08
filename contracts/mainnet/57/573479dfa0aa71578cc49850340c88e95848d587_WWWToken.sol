@@ -114,8 +114,8 @@ pragma solidity ^0.4.21;
      // Constructor
      // ------------------------------------------------------------------------
      function WWWToken() public {
-         symbol = &quot;WWW&quot;;
-         name = &quot;WinWinWin&quot;;
+         symbol = "WWW";
+         name = "WinWinWin";
          decimals = 18;
          _totalSupply = 2000000000 * 10**uint(decimals);
          balances[owner] = _totalSupply;

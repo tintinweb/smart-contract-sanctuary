@@ -275,9 +275,9 @@ contract ClearToken is StandardToken {
 
     uint256 public soldTokens;
 
-    string public constant name = &quot;CLEAR Token&quot;;
+    string public constant name = "CLEAR Token";
 
-    string public constant symbol = &quot;CLEAR&quot;;
+    string public constant symbol = "CLEAR";
 
     uint8 public constant decimals = 18;
 
@@ -373,7 +373,7 @@ contract ClearToken is StandardToken {
 
     //this is the main funding function, it updates the balances of tokens during the ICO.
     //no particular incentive schemes have been implemented here
-    //it is only accessible during the &quot;ICO&quot; phase.
+    //it is only accessible during the "ICO" phase.
     function() payable
     public
     requireState(States.Ico)

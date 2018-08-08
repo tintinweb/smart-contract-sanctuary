@@ -151,10 +151,10 @@ contract YupieToken is StandardToken {
 
 	
 	// TOKEN DATA
-	string public constant name = &quot;YUPIE&quot;;
-	string public constant symbol = &quot;YUP&quot;;
+	string public constant name = "YUPIE";
+	string public constant symbol = "YUP";
 	uint256 public constant decimals = 18;
-	string public version = &quot;1.0&quot;;
+	string public version = "1.0";
 
 	// YUPIE TOKEN PURCHASE LIMITS
 	uint256 public maxPresaleSupply; 														// MAX TOTAL DURING PRESALE (0.8% of MAXTOTALSUPPLY)

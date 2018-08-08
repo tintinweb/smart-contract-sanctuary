@@ -58,8 +58,8 @@ contract CoinvestToken is SafeMath {
     mapping(address => mapping (address => uint256)) allowed;
   
 
-    string public constant symbol = &quot;COIN&quot;;
-    string public constant name = &quot;Coinvest COIN Token&quot;;
+    string public constant symbol = "COIN";
+    string public constant name = "Coinvest COIN Token";
     
     uint8 public constant decimals = 18;
     uint256 public totalSupply = 107142857 * (10 ** 18);

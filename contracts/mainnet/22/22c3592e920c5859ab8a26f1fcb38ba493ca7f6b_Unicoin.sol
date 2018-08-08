@@ -116,8 +116,8 @@ contract Unicoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Unicoin() public {
-        symbol = &quot;UNC&quot;;
-        name = &quot;Unicoin&quot;;
+        symbol = "UNC";
+        name = "Unicoin";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         endDate = now + 12 weeks;

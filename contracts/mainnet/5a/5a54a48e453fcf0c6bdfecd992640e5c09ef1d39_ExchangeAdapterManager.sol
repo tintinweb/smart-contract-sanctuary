@@ -109,7 +109,7 @@ contract KyberNetworkInterface {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -301,7 +301,7 @@ contract ExchangeAdapterManager is OlympusExchangeAdapterManagerInterface {
 
     function supportsTradingPair(address _srcAddress, address _destAddress, bytes32 _exchangeId) external view returns (bool) {
         OlympusExchangeAdapterInterface adapter;
-        if(_exchangeId != &quot;&quot;){
+        if(_exchangeId != ""){
             adapter = exchangeAdapters[id];
             if(!adapter.isEnabled()){
                 return false;

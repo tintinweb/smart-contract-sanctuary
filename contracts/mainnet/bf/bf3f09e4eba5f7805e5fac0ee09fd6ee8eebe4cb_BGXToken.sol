@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract BGXToken {
     // 以下参数测试时会临时修改，在正式发布时需要修正为正式参数 ======>
-    string public name = &quot;BIT GAME EXCHANGE&quot;;
-    string public symbol = &quot;BGX&quot;;
+    string public name = "BIT GAME EXCHANGE";
+    string public symbol = "BGX";
 
     address ethFundAddress = 0x7C235ac7b006d829990384018B0E98fDf0bA5EF7; // 以太坊轉存地址
     address icoAddress = 0xC817a2afe8F6ba1a697dAaA1df834e18Be9403e7; // ICO地址

@@ -110,8 +110,8 @@ contract CanToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CanToken() public {
-        symbol = &quot;CAN&quot;;
-        name = &quot;CAN Coin&quot;;
+        symbol = "CAN";
+        name = "CAN Coin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x2A7566f25B8ec8A96487dc2a453013d01c682CdB] = _totalSupply;

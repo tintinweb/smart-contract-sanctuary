@@ -26,14 +26,14 @@ pragma solidity 0.4.18;
 
 
 contract KernelConstants {
-    bytes32 constant public CORE_NAMESPACE = keccak256(&quot;core&quot;);
-    bytes32 constant public APP_BASES_NAMESPACE = keccak256(&quot;base&quot;);
-    bytes32 constant public APP_ADDR_NAMESPACE = keccak256(&quot;app&quot;);
+    bytes32 constant public CORE_NAMESPACE = keccak256("core");
+    bytes32 constant public APP_BASES_NAMESPACE = keccak256("base");
+    bytes32 constant public APP_ADDR_NAMESPACE = keccak256("app");
 
-    bytes32 constant public KERNEL_APP_ID = keccak256(&quot;kernel.aragonpm.eth&quot;);
+    bytes32 constant public KERNEL_APP_ID = keccak256("kernel.aragonpm.eth");
     bytes32 constant public KERNEL_APP = keccak256(CORE_NAMESPACE, KERNEL_APP_ID);
 
-    bytes32 constant public ACL_APP_ID = keccak256(&quot;acl.aragonpm.eth&quot;);
+    bytes32 constant public ACL_APP_ID = keccak256("acl.aragonpm.eth");
     bytes32 constant public ACL_APP = keccak256(APP_ADDR_NAMESPACE, ACL_APP_ID);
 }
 
@@ -380,7 +380,7 @@ pragma solidity 0.4.18;
 
 
 contract Kernel is IKernel, KernelStorage, Initializable, AppProxyFactory, ACLSyntaxSugar {
-    bytes32 constant public APP_MANAGER_ROLE = keccak256(&quot;APP_MANAGER_ROLE&quot;);
+    bytes32 constant public APP_MANAGER_ROLE = keccak256("APP_MANAGER_ROLE");
 
     /**
     * @dev Initialize can only be called once. It saves the block number in which it was initialized.

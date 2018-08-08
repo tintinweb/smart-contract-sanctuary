@@ -35,7 +35,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -241,9 +241,9 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract VeraCoin is StandardToken {
 
-    string public name = &quot;VeraCoin&quot;;
+    string public name = "VeraCoin";
 
-    string public symbol = &quot;Vera&quot;;
+    string public symbol = "Vera";
 
     uint256 public decimals = 18;
 
@@ -262,7 +262,7 @@ contract VeraCoin is StandardToken {
 contract VeraCoinPreSale is Haltable {
     using SafeMath for uint;
 
-    string public name = &quot;VeraCoin PreSale&quot;;
+    string public name = "VeraCoin PreSale";
 
     VeraCoin public token;
 

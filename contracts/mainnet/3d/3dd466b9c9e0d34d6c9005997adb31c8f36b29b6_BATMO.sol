@@ -124,8 +124,8 @@ contract BATMO is FOMOEvents {
     OBOK public ObokContract;
     address private admin = msg.sender;
     address private admin2;
-    string constant public name = &quot;BATMO&quot;;
-    string constant public symbol = &quot;BATMO&quot;;
+    string constant public name = "BATMO";
+    string constant public symbol = "BATMO";
     uint256 private rndExtra_ = 1 minutes;     // length of the very first ICO
     uint256 private rndGap_ = 1 minutes;         // length of ICO phase, set to 1 year for EOS.
     uint256 constant private rndInit_ = 2 hours;                // round timer starts at this
@@ -1072,7 +1072,7 @@ contract BATMO is FOMOEvents {
             pIDxAddr_[msg.sender] = _pID;
             plyr_[_pID].addr = msg.sender;
 
-            if (_name != &quot;&quot;)
+            if (_name != "")
             {
                 pIDxName_[_name] = _pID;
                 plyr_[_pID].name = _name;
@@ -1317,9 +1317,9 @@ contract BATMO is FOMOEvents {
             tracker based on profit per share for each round, that increases in
             relevant proportion to the increase in share supply.
 
-            the player will have an additional mask that basically says &quot;based
+            the player will have an additional mask that basically says "based
             on the rounds mask, my shares, and how much i&#39;ve already withdrawn,
-            how much is still owed to me?&quot;
+            how much is still owed to me?"
         */
 
         // calc profit per key & round mask based on this buy:  (dust goes to pot)
@@ -1396,11 +1396,11 @@ contract BATMO is FOMOEvents {
         public
     {
         // only team just can activate
-        require(msg.sender == admin, &quot;only admin can activate&quot;);
+        require(msg.sender == admin, "only admin can activate");
 
 
         // can only be ran once
-        require(activated_ == false, &quot;FOMO Short already activated&quot;);
+        require(activated_ == false, "FOMO Short already activated");
 
         // activate the contract
         activated_ = true;
@@ -1504,7 +1504,7 @@ library KeysCalc {
 
     /**
      * @dev calculates how many keys would exist with given an amount of eth
-     * @param _eth eth &quot;in contract&quot;
+     * @param _eth eth "in contract"
      * @return number of keys that would exist
      */
     function keys(uint256 _eth)
@@ -1517,7 +1517,7 @@ library KeysCalc {
 
     /**
      * @dev calculates how much eth would be in contract given a number of keys
-     * @param _keys number of keys &quot;in contract&quot;
+     * @param _keys number of keys "in contract"
      * @return eth that would exists
      */
     function eth(uint256 _keys)
@@ -1650,7 +1650,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -1662,7 +1662,7 @@ library SafeMath {
         pure
         returns (uint256)
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -1675,7 +1675,7 @@ library SafeMath {
         returns (uint256 c)
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
 

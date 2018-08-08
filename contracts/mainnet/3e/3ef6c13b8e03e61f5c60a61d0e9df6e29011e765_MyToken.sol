@@ -62,7 +62,7 @@ contract Admined{
     }
 }
 
-contract MyToken is Admined, ERC20,Token(&quot;TTL&quot;,&quot;Talent Token&quot;,18,50000000000000000000000000)
+contract MyToken is Admined, ERC20,Token("TTL","Talent Token",18,50000000000000000000000000)
 {
    	mapping(address =>uint) private _balanceOf;
     mapping(address => mapping(address => uint)) private _allowances;

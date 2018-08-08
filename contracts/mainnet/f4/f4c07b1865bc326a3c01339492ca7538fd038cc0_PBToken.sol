@@ -311,8 +311,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract PBToken is PausableToken, HasNoEther {
-  string public name = &quot;Primalbase Token&quot;;
-  string public symbol = &quot;PBT&quot;;
+  string public name = "Primalbase Token";
+  string public symbol = "PBT";
   uint256 public decimals = 4;
   string public version = &#39;v1.0.0&#39;;
   uint256 public INITIAL_SUPPLY = 1250 * (10 ** uint256(decimals));

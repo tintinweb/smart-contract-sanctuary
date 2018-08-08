@@ -66,8 +66,8 @@ contract Poppy {
         uint256 tokens
     );
 
-    string public name = &quot;Poppy&quot;;
-    string public symbol = &quot;XPY&quot;;
+    string public name = "Poppy";
+    string public symbol = "XPY";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 100;
     uint256 constant internal tokenPriceInitial_ = 0.00000001 ether;

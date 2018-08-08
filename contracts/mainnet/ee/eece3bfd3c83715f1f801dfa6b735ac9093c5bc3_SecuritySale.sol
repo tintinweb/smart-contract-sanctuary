@@ -8,10 +8,10 @@ contract ERC20Basic {
 }
 
 contract IInvestorList {
-    string public constant ROLE_REGD = &quot;regd&quot;;
-    string public constant ROLE_REGCF = &quot;regcf&quot;;
-    string public constant ROLE_REGS = &quot;regs&quot;;
-    string public constant ROLE_UNKNOWN = &quot;unknown&quot;;
+    string public constant ROLE_REGD = "regd";
+    string public constant ROLE_REGCF = "regcf";
+    string public constant ROLE_REGS = "regs";
+    string public constant ROLE_UNKNOWN = "unknown";
 
     function inList(address addr) public view returns (bool);
     function addAddress(address addr, string role) public;
@@ -165,7 +165,7 @@ contract InvestorList is Ownable, IInvestorList {
         // removeRole(addr, ROLE_WHITELISTED);
         require(inList(addr));
         string memory role = investorList[addr];
-        investorList[addr] = &quot;&quot;;
+        investorList[addr] = "";
         emit AddressRemoved(addr, role);
     }
 

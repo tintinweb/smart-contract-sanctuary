@@ -55,7 +55,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -167,7 +167,7 @@ contract HolderBase is Ownable {
 
     for(uint8 i = 0; i < _addrs.length; i++) {
       if (_addrs[i] != address(0)) {
-        // address will be 0x00 in case of &quot;crowdsale&quot;.
+        // address will be 0x00 in case of "crowdsale".
         holders.push(Holder(_addrs[i], _ratios[i]));
       }
 
@@ -185,10 +185,10 @@ contract HolderBase is Ownable {
    * function of RefundVault contract.
    */
   function distribute() internal {
-    require(!distributed, &quot;Already distributed&quot;);
+    require(!distributed, "Already distributed");
     uint256 balance = this.balance;
 
-    require(balance > 0, &quot;No ether to distribute&quot;);
+    require(balance > 0, "No ether to distribute");
     distributed = true;
 
     for (uint8 i = 0; i < holders.length; i++) {
@@ -204,7 +204,7 @@ contract HolderBase is Ownable {
    * @dev Distribute ERC20 token to `holder`s according to ratio.
    */
   function distributeToken(ERC20Basic _token, uint256 _targetTotalSupply) internal {
-    require(!distributed, &quot;Already distributed&quot;);
+    require(!distributed, "Already distributed");
     distributed = true;
 
     for (uint8 i = 0; i < holders.length; i++) {

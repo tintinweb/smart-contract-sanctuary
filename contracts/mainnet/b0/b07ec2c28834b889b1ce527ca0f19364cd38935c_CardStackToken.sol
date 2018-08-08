@@ -116,107 +116,107 @@ library CstLibrary {
   using SafeMath for uint256;
 
   function getTokenName(address _storage) public view returns(bytes32) {
-    return ExternalStorage(_storage).getBytes32Value(&quot;cstTokenName&quot;);
+    return ExternalStorage(_storage).getBytes32Value("cstTokenName");
   }
 
   function setTokenName(address _storage, bytes32 tokenName) public {
-    ExternalStorage(_storage).setBytes32Value(&quot;cstTokenName&quot;, tokenName);
+    ExternalStorage(_storage).setBytes32Value("cstTokenName", tokenName);
   }
 
   function getTokenSymbol(address _storage) public view returns(bytes32) {
-    return ExternalStorage(_storage).getBytes32Value(&quot;cstTokenSymbol&quot;);
+    return ExternalStorage(_storage).getBytes32Value("cstTokenSymbol");
   }
 
   function setTokenSymbol(address _storage, bytes32 tokenName) public {
-    ExternalStorage(_storage).setBytes32Value(&quot;cstTokenSymbol&quot;, tokenName);
+    ExternalStorage(_storage).setBytes32Value("cstTokenSymbol", tokenName);
   }
 
   function getBuyPrice(address _storage) public view returns(uint256) {
-    return ExternalStorage(_storage).getUIntValue(&quot;cstBuyPrice&quot;);
+    return ExternalStorage(_storage).getUIntValue("cstBuyPrice");
   }
 
   function setBuyPrice(address _storage, uint256 value) public {
-    ExternalStorage(_storage).setUIntValue(&quot;cstBuyPrice&quot;, value);
+    ExternalStorage(_storage).setUIntValue("cstBuyPrice", value);
   }
 
   function getCirculationCap(address _storage) public view returns(uint256) {
-    return ExternalStorage(_storage).getUIntValue(&quot;cstCirculationCap&quot;);
+    return ExternalStorage(_storage).getUIntValue("cstCirculationCap");
   }
 
   function setCirculationCap(address _storage, uint256 value) public {
-    ExternalStorage(_storage).setUIntValue(&quot;cstCirculationCap&quot;, value);
+    ExternalStorage(_storage).setUIntValue("cstCirculationCap", value);
   }
 
   function getBalanceLimit(address _storage) public view returns(uint256) {
-    return ExternalStorage(_storage).getUIntValue(&quot;cstBalanceLimit&quot;);
+    return ExternalStorage(_storage).getUIntValue("cstBalanceLimit");
   }
 
   function setBalanceLimit(address _storage, uint256 value) public {
-    ExternalStorage(_storage).setUIntValue(&quot;cstBalanceLimit&quot;, value);
+    ExternalStorage(_storage).setUIntValue("cstBalanceLimit", value);
   }
 
   function getFoundation(address _storage) public view returns(address) {
-    return ExternalStorage(_storage).getAddressValue(&quot;cstFoundation&quot;);
+    return ExternalStorage(_storage).getAddressValue("cstFoundation");
   }
 
   function setFoundation(address _storage, address value) public {
-    ExternalStorage(_storage).setAddressValue(&quot;cstFoundation&quot;, value);
+    ExternalStorage(_storage).setAddressValue("cstFoundation", value);
   }
 
   function getAllowance(address _storage, address account, address spender) public view returns (uint256) {
-    return ExternalStorage(_storage).getMultiLedgerValue(&quot;cstAllowance&quot;, account, spender);
+    return ExternalStorage(_storage).getMultiLedgerValue("cstAllowance", account, spender);
   }
 
   function setAllowance(address _storage, address account, address spender, uint256 allowance) public {
-    ExternalStorage(_storage).setMultiLedgerValue(&quot;cstAllowance&quot;, account, spender, allowance);
+    ExternalStorage(_storage).setMultiLedgerValue("cstAllowance", account, spender, allowance);
   }
 
   function getCustomBuyerLimit(address _storage, address buyer) public view returns (uint256) {
-    return ExternalStorage(_storage).getLedgerValue(&quot;cstCustomBuyerLimit&quot;, buyer);
+    return ExternalStorage(_storage).getLedgerValue("cstCustomBuyerLimit", buyer);
   }
 
   function setCustomBuyerLimit(address _storage, address buyer, uint256 value) public {
-    ExternalStorage(_storage).setLedgerValue(&quot;cstCustomBuyerLimit&quot;, buyer, value);
+    ExternalStorage(_storage).setLedgerValue("cstCustomBuyerLimit", buyer, value);
   }
 
   function getCustomBuyerForIndex(address _storage, uint256 index) public view returns (address) {
-    return ExternalStorage(_storage).ledgerEntryForIndex(keccak256(&quot;cstCustomBuyerLimit&quot;), index);
+    return ExternalStorage(_storage).ledgerEntryForIndex(keccak256("cstCustomBuyerLimit"), index);
   }
 
   function getCustomBuyerMappingCount(address _storage) public view returns(uint256) {
-    return ExternalStorage(_storage).getLedgerCount(&quot;cstCustomBuyerLimit&quot;);
+    return ExternalStorage(_storage).getLedgerCount("cstCustomBuyerLimit");
   }
 
   function getApprovedBuyer(address _storage, address buyer) public view returns (bool) {
-    return ExternalStorage(_storage).getBooleanMapValue(&quot;cstApprovedBuyer&quot;, buyer);
+    return ExternalStorage(_storage).getBooleanMapValue("cstApprovedBuyer", buyer);
   }
 
   function setApprovedBuyer(address _storage, address buyer, bool value) public {
-    ExternalStorage(_storage).setBooleanMapValue(&quot;cstApprovedBuyer&quot;, buyer, value);
+    ExternalStorage(_storage).setBooleanMapValue("cstApprovedBuyer", buyer, value);
   }
 
   function getApprovedBuyerForIndex(address _storage, uint256 index) public view returns (address) {
-    return ExternalStorage(_storage).booleanMapEntryForIndex(keccak256(&quot;cstApprovedBuyer&quot;), index);
+    return ExternalStorage(_storage).booleanMapEntryForIndex(keccak256("cstApprovedBuyer"), index);
   }
 
   function getApprovedBuyerMappingCount(address _storage) public view returns(uint256) {
-    return ExternalStorage(_storage).getBooleanMapCount(&quot;cstApprovedBuyer&quot;);
+    return ExternalStorage(_storage).getBooleanMapCount("cstApprovedBuyer");
   }
 
   function getTotalUnvestedAndUnreleasedTokens(address _storage) public view returns(uint256) {
-    return ExternalStorage(_storage).getUIntValue(&quot;cstUnvestedAndUnreleasedTokens&quot;);
+    return ExternalStorage(_storage).getUIntValue("cstUnvestedAndUnreleasedTokens");
   }
 
   function setTotalUnvestedAndUnreleasedTokens(address _storage, uint256 value) public {
-    ExternalStorage(_storage).setUIntValue(&quot;cstUnvestedAndUnreleasedTokens&quot;, value);
+    ExternalStorage(_storage).setUIntValue("cstUnvestedAndUnreleasedTokens", value);
   }
 
   function vestingMappingSize(address _storage) public view returns(uint256) {
-    return ExternalStorage(_storage).getLedgerCount(&quot;cstFullyVestedAmount&quot;);
+    return ExternalStorage(_storage).getLedgerCount("cstFullyVestedAmount");
   }
 
   function vestingBeneficiaryForIndex(address _storage, uint256 index) public view returns(address) {
-    return ExternalStorage(_storage).ledgerEntryForIndex(keccak256(&quot;cstFullyVestedAmount&quot;), index);
+    return ExternalStorage(_storage).ledgerEntryForIndex(keccak256("cstFullyVestedAmount"), index);
   }
 
   function releasableAmount(address _storage, address beneficiary) public view returns (uint256) {
@@ -346,11 +346,11 @@ library CstLibrary {
     uint256 totalUnvestedAndUnreleasedAmount = getTotalUnvestedAndUnreleasedTokens(_storage);
     setTotalUnvestedAndUnreleasedTokens(_storage, totalUnvestedAndUnreleasedAmount.add(fullyVestedAmount));
 
-    ExternalStorage(_storage).setLedgerValue(&quot;cstVestingStart&quot;, beneficiary, startDate);
-    ExternalStorage(_storage).setLedgerValue(&quot;cstVestingCliff&quot;, beneficiary, cliffDate);
-    ExternalStorage(_storage).setLedgerValue(&quot;cstVestingDuration&quot;, beneficiary, duration);
-    ExternalStorage(_storage).setLedgerValue(&quot;cstFullyVestedAmount&quot;, beneficiary, fullyVestedAmount);
-    ExternalStorage(_storage).setBooleanMapValue(&quot;cstVestingRevocable&quot;, beneficiary, isRevocable);
+    ExternalStorage(_storage).setLedgerValue("cstVestingStart", beneficiary, startDate);
+    ExternalStorage(_storage).setLedgerValue("cstVestingCliff", beneficiary, cliffDate);
+    ExternalStorage(_storage).setLedgerValue("cstVestingDuration", beneficiary, duration);
+    ExternalStorage(_storage).setLedgerValue("cstFullyVestedAmount", beneficiary, fullyVestedAmount);
+    ExternalStorage(_storage).setBooleanMapValue("cstVestingRevocable", beneficiary, isRevocable);
 
     setVestingRevokeDate(_storage, beneficiary, 0);
     setVestingReleasedAmount(_storage, beneficiary, 0);
@@ -367,47 +367,47 @@ library CstLibrary {
   }
 
   function getVestingStart(address _storage, address beneficiary) public view returns(uint256) {
-    return ExternalStorage(_storage).getLedgerValue(&quot;cstVestingStart&quot;, beneficiary);
+    return ExternalStorage(_storage).getLedgerValue("cstVestingStart", beneficiary);
   }
 
   function getVestingCliff(address _storage, address beneficiary) public view returns(uint256) {
-    return ExternalStorage(_storage).getLedgerValue(&quot;cstVestingCliff&quot;, beneficiary);
+    return ExternalStorage(_storage).getLedgerValue("cstVestingCliff", beneficiary);
   }
 
   function getVestingDuration(address _storage, address beneficiary) public view returns(uint256) {
-    return ExternalStorage(_storage).getLedgerValue(&quot;cstVestingDuration&quot;, beneficiary);
+    return ExternalStorage(_storage).getLedgerValue("cstVestingDuration", beneficiary);
   }
 
   function getFullyVestedAmount(address _storage, address beneficiary) public view returns(uint256) {
-    return ExternalStorage(_storage).getLedgerValue(&quot;cstFullyVestedAmount&quot;, beneficiary);
+    return ExternalStorage(_storage).getLedgerValue("cstFullyVestedAmount", beneficiary);
   }
 
   function getVestingRevocable(address _storage, address beneficiary) public view returns(bool) {
-    return ExternalStorage(_storage).getBooleanMapValue(&quot;cstVestingRevocable&quot;, beneficiary);
+    return ExternalStorage(_storage).getBooleanMapValue("cstVestingRevocable", beneficiary);
   }
 
   function setVestingReleasedAmount(address _storage, address beneficiary, uint256 value) public {
-    ExternalStorage(_storage).setLedgerValue(&quot;cstVestingReleasedAmount&quot;, beneficiary, value);
+    ExternalStorage(_storage).setLedgerValue("cstVestingReleasedAmount", beneficiary, value);
   }
 
   function getVestingReleasedAmount(address _storage, address beneficiary) public view returns(uint256) {
-    return ExternalStorage(_storage).getLedgerValue(&quot;cstVestingReleasedAmount&quot;, beneficiary);
+    return ExternalStorage(_storage).getLedgerValue("cstVestingReleasedAmount", beneficiary);
   }
 
   function setVestingRevokeDate(address _storage, address beneficiary, uint256 value) public {
-    ExternalStorage(_storage).setLedgerValue(&quot;cstVestingRevokeDate&quot;, beneficiary, value);
+    ExternalStorage(_storage).setLedgerValue("cstVestingRevokeDate", beneficiary, value);
   }
 
   function getVestingRevokeDate(address _storage, address beneficiary) public view returns(uint256) {
-    return ExternalStorage(_storage).getLedgerValue(&quot;cstVestingRevokeDate&quot;, beneficiary);
+    return ExternalStorage(_storage).getLedgerValue("cstVestingRevokeDate", beneficiary);
   }
 
   function getRewardsContractHash(address _storage) public view returns (bytes32) {
-    return ExternalStorage(_storage).getBytes32Value(&quot;cstRewardsContractHash&quot;);
+    return ExternalStorage(_storage).getBytes32Value("cstRewardsContractHash");
   }
 
   function setRewardsContractHash(address _storage, bytes32 rewardsContractHash) public {
-    ExternalStorage(_storage).setBytes32Value(&quot;cstRewardsContractHash&quot;, rewardsContractHash);
+    ExternalStorage(_storage).setBytes32Value("cstRewardsContractHash", rewardsContractHash);
   }
 
 }
@@ -885,7 +885,7 @@ contract CardStackToken is ERC20,
 
   constructor(address _registry, string _storageName, string _ledgerName) public payable {
     isTokenContract = true;
-    version = &quot;2&quot;;
+    version = "2";
     require(_registry != address(0));
     storageName = _storageName;
     ledgerName = _ledgerName;
@@ -1141,7 +1141,7 @@ contract CardStackToken is ERC20,
 
   function grantVestedTokens(address beneficiary,
                              uint256 fullyVestedAmount,
-                             uint256 startDate, // 0 indicates start &quot;now&quot;
+                             uint256 startDate, // 0 indicates start "now"
                              uint256 cliffSec,
                              uint256 durationSec,
                              bool isRevocable) public onlySuperAdmins unlessUpgraded returns(bool) {
@@ -1331,7 +1331,7 @@ contract Registry is administratable, upgradeable {
 
   bytes4 constant INTERFACE_META_ID = 0x01ffc9a7;
   bytes4 constant ADDR_INTERFACE_ID = 0x3b3b57de;
-  bytes32 constant BARE_DOMAIN_NAMEHASH = 0x794941fae74d6435d1b29ee1c08cc39941ba78470872e6afd0693c7eeb63025c; // namehash for &quot;cardstack.eth&quot;
+  bytes32 constant BARE_DOMAIN_NAMEHASH = 0x794941fae74d6435d1b29ee1c08cc39941ba78470872e6afd0693c7eeb63025c; // namehash for "cardstack.eth"
 
   mapping(bytes32 => address) public storageForHash;
   mapping(bytes32 => address) public contractForHash;
@@ -1430,7 +1430,7 @@ contract Registry is administratable, upgradeable {
     uint256 remainingContractBalance;
     // we need https://github.com/ethereum/EIPs/issues/165
     // to be able to see if a contract is ERC20 or not...
-    if (hash == keccak256(&quot;cst&quot;)) {
+    if (hash == keccak256("cst")) {
       remainingContractBalance = ERC20(predecessor).balanceOf(predecessor);
     }
 

@@ -109,8 +109,8 @@ contract CountryJackpot is ERC721, Ownable{
     event Transfer(address from, address to, uint256 tokenId);
 
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant NAME = &quot;EtherCup2018&quot;; // solhint-disable-line
-    string public constant SYMBOL = &quot;EthCup&quot;; // solhint-disable-line
+    string public constant NAME = "EtherCup2018"; // solhint-disable-line
+    string public constant SYMBOL = "EthCup"; // solhint-disable-line
 
     //starting price for country token
     uint256 private startingPrice = 0.01 ether;

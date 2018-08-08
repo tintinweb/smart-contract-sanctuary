@@ -114,8 +114,8 @@ contract ExtremeSetupToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function ExtremeSetupToken() public {
-        symbol = &quot;EST&quot;;
-        name = &quot;ExtremeSetup Token&quot;;
+        symbol = "EST";
+        name = "ExtremeSetup Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

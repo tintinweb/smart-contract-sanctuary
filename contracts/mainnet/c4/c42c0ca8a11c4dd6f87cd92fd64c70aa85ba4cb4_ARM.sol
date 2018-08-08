@@ -28,8 +28,8 @@ contract ARM {
     ) public {
         totalSupply = 100000000000000000000000000;                              // Total supply with the decimal amount
         balanceOf[msg.sender] = 100000000000000000000000000;                    // All initial tokens
-        name = &quot;ARM 袋鼠链&quot;;                                                    // The name for display purposes
-        symbol = &quot;ARM&quot;;                                                         // The symbol for display purposes
+        name = "ARM 袋鼠链";                                                    // The name for display purposes
+        symbol = "ARM";                                                         // The symbol for display purposes
     }
 
     /**

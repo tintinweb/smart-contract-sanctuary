@@ -15,8 +15,8 @@ contract BrickToken {
     uint256 public totalContribution = 0;
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;BrickToken&quot;; }
-    function symbol() constant returns (string) { return &quot;BRICK&quot;; }
+    function name() constant returns (string) { return "BrickToken"; }
+    function symbol() constant returns (string) { return "BRICK"; }
     function decimals() constant returns (uint8) { return 18; }
 
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

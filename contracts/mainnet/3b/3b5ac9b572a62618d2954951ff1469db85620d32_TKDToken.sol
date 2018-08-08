@@ -105,8 +105,8 @@ contract TKDToken is ERC20StandardToken {
     uint256 private constant TOTAL_MARKETING_AMOUNT = 2000000 * DECIMALS_AMOUNT;
  
     //TOKEN INFORMATION
-    string public name = &quot;TKDToken&quot;;                   
-    string public symbol =&quot;TKD&quot;;
+    string public name = "TKDToken";                   
+    string public symbol ="TKD";
  
     uint8 public decimals =  18;
     address public fundsWallet;
@@ -166,7 +166,7 @@ contract TKDToken is ERC20StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { assert(false); }
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { assert(false); }
         return true;
     }
 }

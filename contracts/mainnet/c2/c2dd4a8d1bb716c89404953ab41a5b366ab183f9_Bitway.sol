@@ -7,7 +7,7 @@ pragma solidity ^0.4.24;
 // Max supply  : 21m
 // Decimals    : 18
 //
-// Bitway &quot;BTWX&quot;
+// Bitway "BTWX"
 // ----------------------------------------------------------------------------
 //
 // ----------------------------------------------------------------------------
@@ -53,8 +53,8 @@ contract Bitway is ERC20 {
     
     using SafeMath for uint;
 
-    string public name = &quot;Bitway&quot;;
-    string public symbol = &quot;BTWX&quot;;
+    string public name = "Bitway";
+    string public symbol = "BTWX";
     uint public totalSupply = 0;
     uint8 public decimals = 18;
     uint public RATE = 1000;

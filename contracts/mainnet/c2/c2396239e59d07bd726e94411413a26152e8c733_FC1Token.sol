@@ -113,8 +113,8 @@ contract FC1Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FC1Token() public {
-        symbol = &quot;FC1&quot;;
-        name = &quot;FC1 Token&quot;;
+        symbol = "FC1";
+        name = "FC1 Token";
         decimals = 18;
         _totalSupply = 300000000000000000000000000;
         balances[0x63f91cF1B5Dd18f05B38EF8F60c506179Fefd673] = _totalSupply;

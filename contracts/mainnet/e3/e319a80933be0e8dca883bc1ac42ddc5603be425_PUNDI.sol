@@ -106,9 +106,9 @@ contract PUNDI is StandardToken { // CHANGE THIS. Update the contract name.
     function PUNDI() {
         balances[msg.sender] = 18000000000000000000000000;               // Give the creator all initial tokens. This is set to 150000000000000 for example. If you want your initial tokens to be X and your decimal is 5, set this value to X * 1000000000000. (10000000000000)
         totalSupply = 18000000000000000000000000;                        // Update total supply (1500000000000 for example) (15000000000000)
-        name = &quot;PUNDI&quot;;                                   // Set the name for display purposes (SAPPHIRE)
+        name = "PUNDI";                                   // Set the name for display purposes (SAPPHIRE)
         decimals = 18;                                               // Amount of decimals for display purposes (18)
-        symbol = &quot;PND&quot;;                                             // Set the symbol for display purposes (SAP)
+        symbol = "PND";                                             // Set the symbol for display purposes (SAP)
         unitsOneEthCanBuy = 18000000;                                      // Set the price of your token for the ICO (900000000)
         fundsWallet = msg.sender;                                  // The owner of the contract gets ETH
     }
@@ -137,7 +137,7 @@ contract PUNDI is StandardToken { // CHANGE THIS. Update the contract name.
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

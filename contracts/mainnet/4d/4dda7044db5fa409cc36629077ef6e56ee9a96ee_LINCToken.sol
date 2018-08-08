@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -331,7 +331,7 @@ contract CappedToken is MintableToken {
 
 contract ParameterizedToken is CappedToken {
     //1.3 update add minter/delete minter address validation
-    string public version = &quot;1.3&quot;;
+    string public version = "1.3";
 
     string public name;
 
@@ -349,7 +349,7 @@ contract ParameterizedToken is CappedToken {
 
 contract LINCToken is ParameterizedToken {
 
-    function LINCToken() public ParameterizedToken(&quot;linkcloud&quot;, &quot;LINC&quot;, 18, 1000000000) {
+    function LINCToken() public ParameterizedToken("linkcloud", "LINC", 18, 1000000000) {
     }
 
 }

@@ -237,8 +237,8 @@ contract StandardToken is ERC20, BasicToken {
 contract ArthToken is StandardToken, Ownable {
     using SafeMath for uint;
 
-    string constant public symbol = &quot;ARTH&quot;;
-    string constant public name = &quot;Arth Token&quot;;
+    string constant public symbol = "ARTH";
+    string constant public name = "Arth Token";
 
     uint8 constant public decimals = 18;
     uint256 INITIAL_SUPPLY = 2500000000e18;

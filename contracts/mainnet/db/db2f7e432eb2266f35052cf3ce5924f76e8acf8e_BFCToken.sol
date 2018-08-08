@@ -107,8 +107,8 @@ contract BFCToken is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;BFC&quot;;
-        name = &quot;BLOCKFREELANCER&quot;;
+        symbol = "BFC";
+        name = "BLOCKFREELANCER";
         decimals = 18;
         _totalSupply = 100000000 * 10**uint256(decimals);
         balances[owner] = _totalSupply;

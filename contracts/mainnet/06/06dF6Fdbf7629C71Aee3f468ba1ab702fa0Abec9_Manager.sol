@@ -3,7 +3,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -239,13 +239,13 @@ contract Custody {
       require(msg.sender == address(manager));
 
       if (manager.isDailySettlementOnGoing()) {
-        require(_recipient == address(manager), &quot;Only manager can do this when the settlement is ongoing&quot;);
+        require(_recipient == address(manager), "Only manager can do this when the settlement is ongoing");
       } else {
         require(_recipient == owner);
       }
 
     } else {
-      require(msg.sender == owner, &quot;Only owner can do this when exchange is dead&quot;);
+      require(msg.sender == owner, "Only owner can do this when exchange is dead");
     }
     _;
   }
@@ -263,7 +263,7 @@ contract Custody {
   }
 
   function transferOwnership(address newOwner) public {
-    require(msg.sender == owner, &quot;Only the owner can transfer ownership&quot;);
+    require(msg.sender == owner, "Only the owner can transfer ownership");
     require(newOwner != address(0));
 
     emit OwnershipTransferred(owner, newOwner);
@@ -401,17 +401,17 @@ paused = false;
 }
 
 modifier onlyAllowedInPhase(SettlementPhase _phase) {
-require(currentSettlementPhase == _phase, &quot;Not allowed in this phase&quot;);
+require(currentSettlementPhase == _phase, "Not allowed in this phase");
 _;
 }
 
 modifier onlyOwner() {
-require(ownerAccountsMap[msg.sender] == true, &quot;Only an owner can perform this action&quot;);
+require(ownerAccountsMap[msg.sender] == true, "Only an owner can perform this action");
 _;
 }
 
 modifier onlyExchange() {
-require(exchangeAccountsMap[msg.sender] == true, &quot;Only an exchange can perform this action&quot;);
+require(exchangeAccountsMap[msg.sender] == true, "Only an exchange can perform this action");
 _;
 }
 
@@ -508,8 +508,8 @@ custody.transferToken(_tokenAddress, _recipient,_amount);
 /// @dev scope storage variables to 0.
 function startSettlementPreparation() external whenNotPaused onlyExchangeOrOwner
 onlyAllowedInPhase(SettlementPhase.FINISHED) {
-require(now > earliestNextSettlementTimestamp, &quot;A settlement can happen once per day&quot;);
-require(gweiBBDPriceInWei > 0, &quot;BBD Price cannot be 0 during settlement&quot;);
+require(now > earliestNextSettlementTimestamp, "A settlement can happen once per day");
+require(gweiBBDPriceInWei > 0, "BBD Price cannot be 0 during settlement");
 
 lastSettlementStartedTimestamp = now;
 totalFeeFlows = 0;

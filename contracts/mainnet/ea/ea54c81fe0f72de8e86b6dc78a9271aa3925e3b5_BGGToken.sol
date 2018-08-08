@@ -83,8 +83,8 @@ contract BGGToken is RegularToken {
 
     uint public totalSupply = 10**28;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;BGGToken&quot;;
-    string constant public symbol = &quot;BGG&quot;;
+    string constant public name = "BGGToken";
+    string constant public symbol = "BGG";
 
     function BGGToken() {
         balances[msg.sender] = totalSupply;

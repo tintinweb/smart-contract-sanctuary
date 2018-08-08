@@ -116,8 +116,8 @@ contract ERC20Token is ERC20 {
 
 contract IRE is ERC20Token, Owned {
 
-    string  public constant name = &quot;IRE Token&quot;;
-    string  public constant symbol = &quot;IRE&quot;;
+    string  public constant name = "IRE Token";
+    string  public constant symbol = "IRE";
     uint256 public constant decimals = 18;
     uint256 public tokenDestroyed;
 	event Burn(address indexed _from, uint256 _tokenDestroyed, uint256 _timestamp);

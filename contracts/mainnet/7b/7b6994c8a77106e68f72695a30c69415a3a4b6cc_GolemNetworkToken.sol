@@ -3,8 +3,8 @@ pragma solidity ^0.4.4;
 
 /// @title Golem Network Token (GNT) - crowdfunding code for Golem Project
 contract GolemNetworkToken {
-    string public constant name = &quot;BobbieCoin&quot;;
-    string public constant symbol = &quot;BOBBIE&quot;;
+    string public constant name = "BobbieCoin";
+    string public constant symbol = "BOBBIE";
     uint8 public constant decimals = 18;  // 18 decimal places, the same as ETH.
 
     uint256 public constant tokenCreationRate = 1000000000;

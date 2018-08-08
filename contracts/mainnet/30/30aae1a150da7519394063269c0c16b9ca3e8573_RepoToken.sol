@@ -113,8 +113,8 @@ contract RepoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RepoToken() public {
-        symbol = &quot;REPO&quot;;
-        name = &quot;Repo Utility Token&quot;;
+        symbol = "REPO";
+        name = "Repo Utility Token";
         decimals = 18;
         _totalSupply = 480000000000000000000000000;
         balances[0x294658373ADBDBe836e2E841BB1996ceA9e56Fe3] = _totalSupply;

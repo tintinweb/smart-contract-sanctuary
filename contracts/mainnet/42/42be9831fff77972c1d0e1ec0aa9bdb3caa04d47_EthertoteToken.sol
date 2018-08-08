@@ -140,12 +140,12 @@ contract EthertoteToken {
     // set the following values prior to deployment
     // --------------------------------------------------------------------
     
-        name = &quot;Ethertote&quot;;                                   // Set the name
-        symbol = &quot;TOTE&quot;;                                 // Set the symbol
+        name = "Ethertote";                                   // Set the name
+        symbol = "TOTE";                                 // Set the symbol
         decimals = 0;                                       // Set the decimals
         _totalSupply = 10000000 * 10**uint(decimals);       // 10,000,000 tokens
         
-        version = &quot;Ethertote Token contract - version 1.0&quot;;
+        version = "Ethertote Token contract - version 1.0";
     
     //---------------------------------------------------------------------
 

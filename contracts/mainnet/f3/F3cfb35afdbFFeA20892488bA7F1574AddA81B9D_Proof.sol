@@ -4,7 +4,7 @@ pragma solidity ^0.4.21;
 * One Proof (Proof)
 * https://oneproof.net
 * 
-* Instead of having many small &quot;proof of&quot; smart contracts here you can
+* Instead of having many small "proof of" smart contracts here you can
 * re-brand a unique website and use this same smart contract address.
 * This would benefit all those holding because of the increased volume.
 * 
@@ -116,8 +116,8 @@ contract Proof {
     =            CONFIGURABLES            =
     =====================================*/
 
-    string public name = &quot;One Proof&quot;;
-    string public symbol = &quot;Proof&quot;;
+    string public name = "One Proof";
+    string public symbol = "Proof";
     uint8 constant public decimals = 18;
 
     /// @dev 5% rewards for token purchase
@@ -179,7 +179,7 @@ contract Proof {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
 
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
 
         // fire event
@@ -426,7 +426,7 @@ contract Proof {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && SafeMath.add(_amountOfTokens, tokenSupply_) > tokenSupply_);
 
         // is the user referred by a masternode?

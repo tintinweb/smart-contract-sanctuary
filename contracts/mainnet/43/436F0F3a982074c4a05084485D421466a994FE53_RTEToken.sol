@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -374,8 +374,8 @@ contract WhitelistedPausableToken is StandardToken, Pausable {
  * Pausable
  */
 contract RTEToken is WhitelistedPausableToken {
-  string public constant name = &quot;Rate3&quot;;
-  string public constant symbol = &quot;RTE&quot;;
+  string public constant name = "Rate3";
+  string public constant symbol = "RTE";
   uint8 public constant decimals = 18;
 
   // 1 billion initial supply of RTE tokens

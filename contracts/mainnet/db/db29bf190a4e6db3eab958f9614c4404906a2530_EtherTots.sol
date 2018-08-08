@@ -40,8 +40,8 @@ contract EtherTots is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;EtherTots&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;TotToken&quot;; // solhint-disable-line
+  string public constant NAME = "EtherTots"; // solhint-disable-line
+  string public constant SYMBOL = "TotToken"; // solhint-disable-line
 
   uint256 private startingPrice = 0.001 ether;
   uint256 private firstStepLimit =  0.053613 ether;

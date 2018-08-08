@@ -190,8 +190,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract WylSistContract is StandardToken{
-  string public name = &quot;万业链&quot;;//name
-  string public symbol = &quot;WYL&quot;;//symbol
+  string public name = "万业链";//name
+  string public symbol = "WYL";//symbol
   uint8 public decimals = 18;//
   uint256 public TOTAL_SUPPLY = 450000000*(1000000000000000000);//TOTAL_SUPPLY
   uint256 public totalSupply;	

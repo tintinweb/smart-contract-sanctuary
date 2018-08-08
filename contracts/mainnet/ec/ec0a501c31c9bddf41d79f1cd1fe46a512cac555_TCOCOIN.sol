@@ -91,8 +91,8 @@ contract ERC223 {
 contract TCOCOIN is ERC223, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;TCOCOIN&quot;;
-    string public symbol = &quot;TCO&quot;;
+    string public name = "TCOCOIN";
+    string public symbol = "TCO";
     uint8 public decimals = 6;
     uint256 public totalSupply = 50e9 * 1e6;
     uint256 public distributeAmount = 0;

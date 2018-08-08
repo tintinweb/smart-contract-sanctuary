@@ -191,7 +191,7 @@ contract RGEToken is EIP20 {
 
     function newCampaign(uint32 _issuance, uint256 _value) public {
         transfer(factory,_value);
-        require(factory.call(bytes4(keccak256(&quot;createCampaign(address,uint32,uint256)&quot;)),msg.sender,_issuance,_value));
+        require(factory.call(bytes4(keccak256("createCampaign(address,uint32,uint256)")),msg.sender,_issuance,_value));
     }
 
     event Burn(address indexed burner, uint256 value);

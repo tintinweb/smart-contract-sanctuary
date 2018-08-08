@@ -115,8 +115,8 @@ contract StandardToken is MyToken, ERC20 {
 }
 
 contract BRI is StandardToken, Ownable {
-  string public constant name = &quot;Briant Coin&quot;;
-  string public constant symbol = &quot;BRI&quot;;
+  string public constant name = "Briant Coin";
+  string public constant symbol = "BRI";
   uint public constant decimals = 2;
   // Constructor
   function BRI () {

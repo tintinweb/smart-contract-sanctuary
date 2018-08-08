@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract ALD is StandardToken, Ownable {
 
-    string public constant name = &quot;阿拉丁&quot;;
-    string public constant symbol = &quot;ALD&quot;;
+    string public constant name = "阿拉丁";
+    string public constant symbol = "ALD";
     uint256 public constant decimals = 8;
 
     function ALD() public {

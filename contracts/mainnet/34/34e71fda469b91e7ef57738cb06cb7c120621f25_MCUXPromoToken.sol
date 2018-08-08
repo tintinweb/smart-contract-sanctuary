@@ -62,7 +62,7 @@ contract SafeMath {
 
 /**
  * ERC-20 standard token interface, as defined
- * <a href=&quot;https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md&quot;>here</a>.
+ * <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md">here</a>.
  */
 contract Token {
   /**
@@ -309,7 +309,7 @@ contract AbstractVirtualToken is AbstractToken {
     0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
 
   /**
-   * Mask used to extract &quot;materialized&quot; flag of an account (2^255).
+   * Mask used to extract "materialized" flag of an account (2^255).
    */
   uint256 constant MATERIALIZED_FLAG_MASK =
     0x8000000000000000000000000000000000000000000000000000000000000000;
@@ -460,7 +460,7 @@ contract MCUXPromoToken is AbstractVirtualToken {
    * @return name of this token
    */
   function name () public pure returns (string) {
-    return &quot;MediChain Promo Token &quot;;
+    return "MediChain Promo Token ";
   }
 
   /**
@@ -469,7 +469,7 @@ contract MCUXPromoToken is AbstractVirtualToken {
    * @return symbol of this token
    */
   function symbol () public pure returns (string) {
-    return &quot;MCUX&quot;;
+    return "MCUX";
   }
 
   /**

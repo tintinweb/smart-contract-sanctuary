@@ -113,8 +113,8 @@ contract CCECOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CCECOIN() public {
-        symbol = &quot;CCE&quot;;
-        name = &quot;CCECOIN&quot;;
+        symbol = "CCE";
+        name = "CCECOIN";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xeE0fE0037C11685025d07864781338fbbb2e3159] = _totalSupply;

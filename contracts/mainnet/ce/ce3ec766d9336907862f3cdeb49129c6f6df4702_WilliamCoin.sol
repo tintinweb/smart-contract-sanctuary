@@ -113,8 +113,8 @@ contract WilliamCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WilliamCoin() public {
-        symbol = &quot;WILLY&quot;;
-        name = &quot;William 好朋友 Foundation Coin&quot;;
+        symbol = "WILLY";
+        name = "William 好朋友 Foundation Coin";
         decimals = 10;
         _totalSupply = 1000000000000000000;
         balances[0x116312c3471C2e7C34C52782D0399eBE601f3F30] = _totalSupply;

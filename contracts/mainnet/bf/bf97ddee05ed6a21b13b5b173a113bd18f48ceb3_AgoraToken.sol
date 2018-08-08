@@ -14,8 +14,8 @@ contract ERC20Interface {
 
 contract AgoraToken is ERC20Interface {
   address contractOwner;
-  string public constant name = &quot;Agora&quot;;
-  string public constant symbol = &quot;AGO&quot;;
+  string public constant name = "Agora";
+  string public constant symbol = "AGO";
   uint8 public constant decimals = 0;
 
   struct BalanceSnapshot {

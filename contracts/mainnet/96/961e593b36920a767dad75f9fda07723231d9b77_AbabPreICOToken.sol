@@ -173,8 +173,8 @@ contract AbabPreICOToken is ERC20Token {
     // ------------------------------------------------------------------------
     // Token information
     // ------------------------------------------------------------------------
-    string public constant symbol   = &quot;pAA&quot;;
-    string public constant name     = &quot;AbabPreICOToken&quot;;
+    string public constant symbol   = "pAA";
+    string public constant name     = "AbabPreICOToken";
     uint8  public constant decimals = 18;
 
     uint256 public STARTDATE;  

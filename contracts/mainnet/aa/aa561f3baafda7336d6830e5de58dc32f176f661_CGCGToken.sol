@@ -97,8 +97,8 @@ contract CGCGToken is StandardToken {
 
     uint8 constant public decimals = 10;
     uint public totalSupply = 3 * (10**19); // 3 billion tokens, 10 decimal places
-    string constant public name = &quot;CHANGE GROW CHANCE GAME&quot;;
-    string constant public symbol = &quot;CGCG&quot;;
+    string constant public name = "CHANGE GROW CHANCE GAME";
+    string constant public symbol = "CGCG";
 
     function CGCGToken() {
         balances[msg.sender] = totalSupply;

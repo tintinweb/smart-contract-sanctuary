@@ -15,8 +15,8 @@ contract ABEToken {
     constructor() public {
         totalSupply = 50000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;ABE TOKEN&quot;;
-        symbol = &quot;ABE&quot;;
+        name = "ABE TOKEN";
+        symbol = "ABE";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

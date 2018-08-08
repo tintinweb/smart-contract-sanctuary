@@ -112,8 +112,8 @@ contract EstateX is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EstateX() public {
-        symbol = &quot;statX&quot;;
-        name = &quot;EstateX&quot;;
+        symbol = "statX";
+        name = "EstateX";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x11F9Bc2eFF6171387F3Ac05D8039319dc3Fe15E7] = _totalSupply;

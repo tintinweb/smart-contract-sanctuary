@@ -23,7 +23,7 @@ contract owned {
   }
 }
 
-// &quot;extern&quot; declare functions from token contract
+// "extern" declare functions from token contract
 interface HashBux {
   function transfer(address to, uint256 value);
   function balanceOf( address owner ) constant returns (uint);

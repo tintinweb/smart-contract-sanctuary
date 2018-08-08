@@ -280,8 +280,8 @@ contract Cherrio is StandardToken, BurnableToken, Ownable, Pausable {
     using SafeMath for uint256;
 
     // Metadata
-    string  public constant name = &quot;CHERR.IO&quot;;
-    string  public constant symbol = &quot;CHR&quot;;
+    string  public constant name = "CHERR.IO";
+    string  public constant symbol = "CHR";
     uint8   public constant decimals = 18;
 
     // Token supplies

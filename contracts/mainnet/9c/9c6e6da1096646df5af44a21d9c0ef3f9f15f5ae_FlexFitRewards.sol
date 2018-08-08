@@ -100,8 +100,8 @@ contract Owned {
 // token transfers
 // ----------------------------------------------------------------------------
 contract FlexFitRewards is ERC20Interface, Owned, SafeMath {
-    string public symbol = &quot;FLEX&quot;;
-    string public  name = &quot;FlexFitRewards&quot;;
+    string public symbol = "FLEX";
+    string public  name = "FlexFitRewards";
     uint8 public decimals = 18;
     uint public _totalSupply = 800000000000000000000000000;
 
@@ -113,8 +113,8 @@ contract FlexFitRewards is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FlexFitRewards() public {
-        symbol = &quot;FLEX&quot;;
-        name = &quot;FlexFitRewards&quot;;
+        symbol = "FLEX";
+        name = "FlexFitRewards";
         decimals = 18;
         _totalSupply = 800000000000000000000000000;
         balances[0x8cc5A8233AC37780a07CE32654853ceDf26acc69] = _totalSupply;

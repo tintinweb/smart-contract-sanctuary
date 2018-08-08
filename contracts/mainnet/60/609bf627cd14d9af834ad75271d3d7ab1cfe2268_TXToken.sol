@@ -184,8 +184,8 @@ contract StandardToken is ERC20, BasicToken {
   }
 }
 contract TXToken is StandardToken {
-    string  public name = &quot;TangXuToken&quot;;
-    string  public symbol = &quot;TXT&quot;;
+    string  public name = "TangXuToken";
+    string  public symbol = "TXT";
     uint8   public decimals = 18;
     uint    public totalSupply = 10 ** 27;
     function ()

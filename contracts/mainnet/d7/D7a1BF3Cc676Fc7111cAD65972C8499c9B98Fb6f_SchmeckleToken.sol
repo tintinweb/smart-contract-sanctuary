@@ -24,8 +24,8 @@ contract SchmeckleToken {
         uint initialSupply = 28000000000000000000000000;
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply
-        name = &quot;Schmeckle Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;SHM&quot;;                               // Set the symbol for display purposes
+        name = "Schmeckle Token";                                   // Set the name for display purposes
+        symbol = "SHM";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

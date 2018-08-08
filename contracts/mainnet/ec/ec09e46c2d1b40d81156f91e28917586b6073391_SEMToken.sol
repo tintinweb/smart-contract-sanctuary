@@ -238,8 +238,8 @@ contract StandardBurnableToken is BurnableToken {
 }
 
 contract SEMToken is StandardBurnableToken {
-    string public constant name = &quot;SEMToken&quot;;
-    string public constant symbol = &quot;SEMT&quot;;
+    string public constant name = "SEMToken";
+    string public constant symbol = "SEMT";
     uint8 public constant decimals = 0;
 
     uint256 public constant INITIAL_SUPPLY = 200000000 * (10 ** uint256(decimals));

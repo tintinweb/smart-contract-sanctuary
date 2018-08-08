@@ -5,7 +5,7 @@
     Version 1.0
     
     Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the &quot;Software&quot;), to deal
+    of this software and associated documentation files (the "Software"), to deal
     in the Software without restriction, including without limitation the rights
     to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
     copies of the Software, and to permit persons to whom the Software is
@@ -14,7 +14,7 @@
     The above copyright notice and this permission notice shall be included in
     all copies or substantial portions of the Software.
 
-    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -78,7 +78,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -182,8 +182,8 @@ contract PRODToken is ERC20, Pausable {
 
   using SafeMath for uint256;
     
-  string public name = &quot;Productivist&quot;;      //  token name
-  string public symbol = &quot;PROD&quot;;           //  token symbol
+  string public name = "Productivist";      //  token name
+  string public symbol = "PROD";           //  token symbol
   uint256 public decimals = 8;            //  token digit
 
 

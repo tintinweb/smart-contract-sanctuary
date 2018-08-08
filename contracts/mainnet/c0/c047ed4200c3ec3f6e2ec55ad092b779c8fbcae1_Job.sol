@@ -124,7 +124,7 @@ contract Job {
         description = _description;
         escrowAdmin = _escrowAdmin;
 
-        pushMilestone(0, &quot;&quot;, &quot;&quot;, 0, false);
+        pushMilestone(0, "", "", 0, false);
     }
 
     function addGeneralMilestone(string _title, string _description, uint64 _deadline) onlyCustomer external{

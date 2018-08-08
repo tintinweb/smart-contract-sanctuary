@@ -91,8 +91,8 @@ contract Token is ERC20Interface, Owned {
 
 
     function Token() public {
-        symbol = &quot;TCOH&quot;;
-        name = &quot;TCOH&quot;;
+        symbol = "TCOH";
+        name = "TCOH";
         decimals = 4;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

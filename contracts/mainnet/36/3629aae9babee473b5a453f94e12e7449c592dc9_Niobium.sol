@@ -136,8 +136,8 @@ contract StandardToken is ERC20, SafeMath {
 /// @author Fernando Mauro Barrueco~ FMB~ <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0ded9dfd3dfd9def0d9d3dcdfc5d49ed3dfdd">[email&#160;protected]</a>>
 contract NiobiumToken is Ownable, StandardToken {
 
-    string public name = &quot; Niobium&quot;;          // name of the token
-    string public symbol = &quot;NBC&quot;;              // ERC20 compliant 4 digit token code
+    string public name = " Niobium";          // name of the token
+    string public symbol = "NBC";              // ERC20 compliant 4 digit token code
     uint public decimals = 18;                  // token has 18 digit precision
 
     uint public totalSupply = 26000000 ether;  // total supply of 26 Million Tokens

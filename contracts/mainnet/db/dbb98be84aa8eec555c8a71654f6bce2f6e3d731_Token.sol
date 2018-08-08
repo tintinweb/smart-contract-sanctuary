@@ -53,11 +53,11 @@ contract    ERC20
 
     //------ TOKEN SPECIFICATION
 
-    string  public  constant    name       = &quot;BQT Official Token&quot;;
-    string  public  constant    symbol     = &quot;BQT&quot;;
+    string  public  constant    name       = "BQT Official Token";
+    string  public  constant    symbol     = "BQT";
     uint256 public  constant    decimals   = 18;      // Handle the coin as FIAT (2 decimals). ETH Handles 18 decimal places
     uint256 public  constant    initSupply = 800000000 * 10**decimals;        // 10**18 max
-    uint256 public  constant    supplyReserveVal = 600000000 * 10**decimals;          // if quantity => the ##MACRO## addrs &quot;* 10**decimals&quot; 
+    uint256 public  constant    supplyReserveVal = 600000000 * 10**decimals;          // if quantity => the ##MACRO## addrs "* 10**decimals" 
 
     //-----
 

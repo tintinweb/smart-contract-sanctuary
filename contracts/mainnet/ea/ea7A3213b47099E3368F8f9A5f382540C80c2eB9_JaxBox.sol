@@ -35,8 +35,8 @@ contract JaxBox
       owner =  msg.sender;                      // Set owner of contract
       balanceOf[owner] = totalSupply;           // Give the creator all initial tokens
       totalSupply = totalSupply;                // Update total supply
-      name = &quot;JaxBox&quot;;                     // Set the name for display purposes
-      symbol = &quot;JBC&quot;;                       // Set the symbol for display purposes
+      name = "JaxBox";                     // Set the name for display purposes
+      symbol = "JBC";                       // Set the symbol for display purposes
       decimals = 18;                            // Amount of decimals for display purposes
       remaining = totalSupply;
       ethRate = 300;

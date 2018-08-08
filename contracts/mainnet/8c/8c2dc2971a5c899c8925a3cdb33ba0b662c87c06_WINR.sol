@@ -28,8 +28,8 @@ contract WINR {
     ) public {
         totalSupply = 100000000000000000000000000;                                                 // Update total supply with the decimal amount
         balanceOf[msg.sender] = 100000000000000000000000000;                                       // Give the creator all initial tokens
-        name = &quot;Exacta&quot;;                                                                      // Set the name for display purposes
-        symbol = &quot;WINR&quot;;                                                                            // Set the symbol for display purposes
+        name = "Exacta";                                                                      // Set the name for display purposes
+        symbol = "WINR";                                                                            // Set the symbol for display purposes
     }
 
     /**

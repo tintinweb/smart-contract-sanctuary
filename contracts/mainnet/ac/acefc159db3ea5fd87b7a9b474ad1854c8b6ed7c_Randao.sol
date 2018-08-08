@@ -40,9 +40,9 @@ contract Randao {
 
     modifier moreThanZero(uint256 _deposit) { if (_deposit <= 0) revert(); _; }
 
-    modifier notBeBlank(bytes32 _s) { if (_s == &quot;&quot;) revert(); _; }
+    modifier notBeBlank(bytes32 _s) { if (_s == "") revert(); _; }
 
-    modifier beBlank(bytes32 _s) { if (_s != &quot;&quot;) revert(); _; }
+    modifier beBlank(bytes32 _s) { if (_s != "") revert(); _; }
 
     modifier beFalse(bool _t) { if (_t) revert(); _; }
 

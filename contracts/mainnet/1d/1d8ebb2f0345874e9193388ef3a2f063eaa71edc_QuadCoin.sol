@@ -113,8 +113,8 @@ contract QuadCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function QuadCoin() public {
-        symbol = &quot;QUAD&quot;;
-        name = &quot;Quad&quot;;
+        symbol = "QUAD";
+        name = "Quad";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000000000;
         balances[0x8E38343A2fFcC3dC60b623128E506E1DF5713b62] = _totalSupply;

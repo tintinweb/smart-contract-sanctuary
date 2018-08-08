@@ -27,9 +27,9 @@ contract Diamond {
 
                 balanceOf[msg.sender] = totalSupply;
 
-                name = &quot;Diamond&quot;; 
+                name = "Diamond"; 
 
-                symbol = &quot;Dio&quot;;
+                symbol = "Dio";
 
         }
 

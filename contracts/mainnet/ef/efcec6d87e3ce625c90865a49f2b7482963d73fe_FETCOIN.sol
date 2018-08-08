@@ -130,8 +130,8 @@ contract FETCOIN is ERC223, Pausable {
         uint256 locktime;
     }
 
-    string public name = &quot;fetish coin&quot;;
-    string public symbol = &quot;FET&quot;;
+    string public name = "fetish coin";
+    string public symbol = "FET";
     uint8 public decimals = 6;
     uint256 public totalSupply = 10e10 * 1e6;
 

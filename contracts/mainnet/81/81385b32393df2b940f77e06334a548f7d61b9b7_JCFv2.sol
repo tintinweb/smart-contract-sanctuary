@@ -136,10 +136,10 @@ contract JCFv2 is StandardToken {
 
 	// FIELDS
 
-	string public name = &quot;JCFv2&quot;;
-	string public symbol = &quot;JCFv2&quot;;
+	string public name = "JCFv2";
+	string public symbol = "JCFv2";
 	uint256 public decimals = 18;
-	string public version = &quot;2.0&quot;;
+	string public version = "2.0";
 
 	uint256 public tokenCap = 1048576000000 * 10**18;
 

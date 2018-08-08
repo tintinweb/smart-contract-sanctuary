@@ -3,7 +3,7 @@ pragma solidity ^0.4.11;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -338,8 +338,8 @@ contract Burnable is StandardToken {
  */
 contract MyPizzaPieToken is Burnable, Ownable {
 
-  string public constant name = &quot;MyPizzaPie Token&quot;;
-  string public constant symbol = &quot;PZA&quot;;
+  string public constant name = "MyPizzaPie Token";
+  string public constant symbol = "PZA";
   uint8 public constant decimals = 18;
   uint public constant INITIAL_SUPPLY = 81192000 * 1 ether;
 
@@ -487,7 +487,7 @@ contract PriceReceiver {
 contract MyPizzaPieTokenPreSale is Haltable, PriceReceiver {
   using SafeMath for uint;
 
-  string public constant name = &quot;MyPizzaPie Token PreSale&quot;;
+  string public constant name = "MyPizzaPie Token PreSale";
   uint public VOLUME_70 = 2000 ether;
   uint public VOLUME_60 = 1000 ether;
   uint public VOLUME_50 = 100 ether;

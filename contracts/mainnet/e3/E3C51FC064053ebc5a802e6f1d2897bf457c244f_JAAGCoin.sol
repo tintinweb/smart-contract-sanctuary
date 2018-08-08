@@ -95,8 +95,8 @@ contract JAAGCoin is IERC20, Ownable {
     uint public MAXUM_SUPPLY = 250000000000000000000000000;
     uint256 public _currentSupply = 0;
 
-    string public constant symbol = &quot;JAAG&quot;;
-    string public constant name = &quot;JAAGCoin&quot;;
+    string public constant symbol = "JAAG";
+    string public constant name = "JAAGCoin";
     uint8 public constant decimals = 18;
 
     // 1 ether = 500 BC

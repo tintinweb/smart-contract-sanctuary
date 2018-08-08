@@ -116,8 +116,8 @@ contract SISKTechnologyGroupToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SISKTechnologyGroupToken() public {
-        symbol = &quot;STG&quot;;
-        name = &quot;SISK Technology Group Token&quot;;
+        symbol = "STG";
+        name = "SISK Technology Group Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 52 weeks;

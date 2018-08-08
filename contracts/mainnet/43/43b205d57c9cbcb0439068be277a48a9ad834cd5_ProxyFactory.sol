@@ -12,7 +12,7 @@ contract Proxy {
     constructor(address _masterCopy)
         public
     {
-        require(_masterCopy != 0, &quot;Invalid master copy address provided&quot;);
+        require(_masterCopy != 0, "Invalid master copy address provided");
         masterCopy = _masterCopy;
     }
 

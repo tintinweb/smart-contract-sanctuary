@@ -108,8 +108,8 @@ contract AOIS is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AOIS() public {
-        symbol = &quot;AOS&quot;;
-        name = &quot;AOIS&quot;;
+        symbol = "AOS";
+        name = "AOIS";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x63712fcfd3cb3ac7547333d7e2b84d64ba7e123f] = _totalSupply;

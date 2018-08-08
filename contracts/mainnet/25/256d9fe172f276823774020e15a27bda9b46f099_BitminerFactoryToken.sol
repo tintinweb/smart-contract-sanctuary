@@ -324,8 +324,8 @@ contract BitminerFactoryToken is MintableToken, BurnableToken {
     using SafeMath for uint256;
     
     // NOT IN CAPITALIZED SNAKE_CASE TO BE RECONIZED FROM METAMASK
-    string public constant name = &quot;Bitminer Factory Token&quot;;
-    string public constant symbol = &quot;BMF&quot;;
+    string public constant name = "Bitminer Factory Token";
+    string public constant symbol = "BMF";
     uint8 public constant decimals = 18;
     
     uint256 public cap;

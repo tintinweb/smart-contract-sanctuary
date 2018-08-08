@@ -110,8 +110,8 @@ contract ADDOCoin is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function ADDOCoin() public {
-        symbol = &quot;ADDO&quot;;
-        name = &quot;ADDO Coin&quot;;
+        symbol = "ADDO";
+        name = "ADDO Coin";
         decimals = 18;
         _totalSupply = 100000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -113,8 +113,8 @@ contract Booko is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Booko() public {
-        symbol = &quot;BOO&quot;;
-        name = &quot;Booko Token&quot;;
+        symbol = "BOO";
+        name = "Booko Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xF616c383626212200B27a68e69975b3eD7DFf1c9] = _totalSupply;

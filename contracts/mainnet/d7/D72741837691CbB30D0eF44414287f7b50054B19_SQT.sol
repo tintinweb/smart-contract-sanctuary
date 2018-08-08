@@ -20,9 +20,9 @@ contract SQT{
     function SQT() public {
         balances[msg.sender] = 60000000000;               // Give the creator all initial tokens
         totalSupply = 60000000000;                        // Update total supply
-        name = &quot;suppertoken&quot;;                                   // Set the name for display purposes
+        name = "suppertoken";                                   // Set the name for display purposes
         decimals =4;                            // Amount of decimals for display purposes
-        symbol = &quot;SQT&quot;;                               // Set the symbol for display purposes
+        symbol = "SQT";                               // Set the symbol for display purposes
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

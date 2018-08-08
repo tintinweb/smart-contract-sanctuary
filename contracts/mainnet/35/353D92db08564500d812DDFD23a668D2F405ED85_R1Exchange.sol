@@ -210,7 +210,7 @@ contract R1Exchange is SafeMath, Ownable {
         bytes32 hash = keccak256(user, token, amount, nonce);
         require(!withdrawn[hash]);
         withdrawn[hash] = true;
-        require(ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), v, r, s) == user);
+        require(ecrecover(keccak256("\x19Ethereum Signed Message:\n32", hash), v, r, s) == user);
         tokenList[token][user] = safeSub(tokenList[token][user], amount);
         tokenList[token][feeAccount] = safeAdd(tokenList[token][feeAccount], fee);
         amount = safeSub(amount, fee);
@@ -314,8 +314,8 @@ contract R1Exchange is SafeMath, Ownable {
         require(takerOrder.baseToken == takerOrder.tokenBuy || takerOrder.baseToken == takerOrder.tokenSell);
         makerOrder.orderHash = getOrderHash(makerOrder.tokenBuy, makerOrder.amountBuy, makerOrder.tokenSell, makerOrder.amountSell, makerOrder.baseToken, makerOrder.expires, makerOrder.nonce, makerOrder.feeToken);
         takerOrder.orderHash = getOrderHash(takerOrder.tokenBuy, takerOrder.amountBuy, takerOrder.tokenSell, takerOrder.amountSell, takerOrder.baseToken, takerOrder.expires, takerOrder.nonce, takerOrder.feeToken);
-        require(ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, makerOrder.orderHash), v[0], r[0], s[0]) == makerOrder.user);
-        require(ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, takerOrder.orderHash), v[1], r[1], s[1]) == takerOrder.user);
+        require(ecrecover(keccak256("\x19Ethereum Signed Message:\n32", makerOrder.orderHash), v[0], r[0], s[0]) == makerOrder.user);
+        require(ecrecover(keccak256("\x19Ethereum Signed Message:\n32", takerOrder.orderHash), v[1], r[1], s[1]) == takerOrder.user);
         balance(makerOrder, takerOrder, addresses[10], tradeAmount);
     }
     function balance(Order makerOrder, Order takerOrder, address feeAccount, uint256 tradeAmount) internal {

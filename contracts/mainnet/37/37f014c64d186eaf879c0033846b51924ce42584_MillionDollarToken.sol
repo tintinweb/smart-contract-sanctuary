@@ -17,8 +17,8 @@ contract MillionDollarToken {
     
     //~ Setup
     string public standard = &#39;MillionDollarToken&#39;;
-    string public name = &quot;MillionDollarToken&quot;;
-    string public symbol = &quot;MDT&quot;;
+    string public name = "MillionDollarToken";
+    string public symbol = "MDT";
     uint8 public decimals = 0;
     uint256 public totalSupply = 1000;
 

@@ -1,4 +1,4 @@
-pragma experimental &quot;v0.5.0&quot;;
+pragma experimental "v0.5.0";
 
 ////////////////////
 //   HOURLY PAY   //
@@ -68,7 +68,7 @@ pragma experimental &quot;v0.5.0&quot;;
 //      - clientWithdraw(amount) - withdraws (amount), not locked in earnings.
 //     Can be invoked only if Employee isn&#39;t hired or has been fired.
 //
-// 10. Client and Contract Ownership can be made &quot;Public&quot;/&quot;None&quot; by calling:
+// 10. Client and Contract Ownership can be made "Public"/"None" by calling:
 //      - releaseOwnership()
 //     It simply sets the Owner (Client) to 0x0, so no one is in control of the contract anymore.
 //     That way the contract can be used on projects as Hourly-Wage Donations.
@@ -96,7 +96,7 @@ contract HourlyPay {
     uint public workedTodayInSeconds = 0;  // How many seconds worked today
     uint public currentDayTS;
     uint public lastPaydayTS;
-    string public contractName = &quot;Hourly Pay Contract&quot;;
+    string public contractName = "Hourly Pay Contract";
 
     ////////////////////////////////
     // Contract Limits and maximums

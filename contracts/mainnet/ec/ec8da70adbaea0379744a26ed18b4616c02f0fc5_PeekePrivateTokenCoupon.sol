@@ -29,8 +29,8 @@ contract PeekePrivateTokenCoupon is ERC223 {
 
     mapping(address => uint) balances;
 
-    string public name    = &quot;Peeke Private Coupon&quot;;
-    string public symbol  = &quot;PPC-PKE&quot;;
+    string public name    = "Peeke Private Coupon";
+    string public symbol  = "PPC-PKE";
     uint8 public decimals = 18;
     uint256 public totalSupply = 155000000 * (10**18);
 

@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract MCCPP is StandardToken, Ownable {
 
-    string public constant name = &quot;MCC Private Placement&quot;;
-    string public constant symbol = &quot;MCCPP&quot;;
+    string public constant name = "MCC Private Placement";
+    string public constant symbol = "MCCPP";
     uint256 public constant decimals = 8;
 
     function MCCPP() public {

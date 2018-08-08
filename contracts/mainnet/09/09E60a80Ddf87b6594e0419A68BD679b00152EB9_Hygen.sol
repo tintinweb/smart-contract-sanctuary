@@ -113,8 +113,8 @@ contract Hygen is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Hygen() public {
-        symbol = &quot;H2&quot;;
-        name = &quot;Hygen&quot;;
+        symbol = "H2";
+        name = "Hygen";
         decimals = 18;
         _totalSupply = 800000000*10**18;
         balances[0xe11f6164055327fCaDaf527B2d0864cAD0743e06] = _totalSupply;

@@ -116,8 +116,8 @@ contract ERC20Token is ERC20 {
 
 contract ETUex is ERC20Token, Owned {
 
-    string  public constant name = &quot;ETU Exchange&quot;;
-    string  public constant symbol = &quot;ETUex&quot;;
+    string  public constant name = "ETU Exchange";
+    string  public constant symbol = "ETUex";
     uint256 public constant decimals = 18;
     uint256 public tokenDestroyed;
 	event Burn(address indexed _from, uint256 _tokenDestroyed, uint256 _timestamp);

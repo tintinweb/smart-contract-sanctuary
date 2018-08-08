@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract AECloudToken is StandardToken {
-  string public name    = &quot;AE Cloud Token&quot;;
-  string public symbol  = &quot;AEC&quot;;
+  string public name    = "AE Cloud Token";
+  string public symbol  = "AEC";
   uint8 public decimals = 18;
 
   // one billion in initial supply

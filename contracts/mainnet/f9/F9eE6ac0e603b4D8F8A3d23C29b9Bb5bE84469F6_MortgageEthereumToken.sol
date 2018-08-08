@@ -18,8 +18,8 @@ contract MortgageEthereumToken {
 
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;Mortgage Ethereum Token&quot;; }
-    function symbol() constant returns (string) { return &quot;THX&quot;; }
+    function name() constant returns (string) { return "Mortgage Ethereum Token"; }
+    function symbol() constant returns (string) { return "THX"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

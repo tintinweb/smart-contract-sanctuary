@@ -102,8 +102,8 @@ contract EOSCToken is ERC20Interface, Owned, SafeMath {
         decimals = 18;                                          // Amount of decimals for display purposes
         balances[msg.sender] = 1000000000 * 10**uint(decimals); // Give the creator all initial tokens (100000 for example)
         _totalSupply = 1000000000 * 10**uint(decimals);         // Total supply (there are 1 billion tokens going to 18DP)
-        name = &quot;EOS Classic ERC20 Tokens&quot;;                      // Set the name for display purposes
-        symbol = &quot;EOSC&quot;;                                        // Set the symbol for display purposes
+        name = "EOS Classic ERC20 Tokens";                      // Set the name for display purposes
+        symbol = "EOSC";                                        // Set the symbol for display purposes
     }
 
 

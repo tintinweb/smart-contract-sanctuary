@@ -114,8 +114,8 @@ contract IVNToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;IVN&quot;;
-        name = &quot;IVN Token&quot;;
+        symbol = "IVN";
+        name = "IVN Token";
         decimals = 18;
         totalSupply = 969 * 10 ** 26;
         ownerAddress = 0xc9af6248b04d25468f289f9a280cd2d7a646858e;

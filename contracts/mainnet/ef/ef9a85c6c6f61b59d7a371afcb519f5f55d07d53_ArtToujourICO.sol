@@ -13,7 +13,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address internal owner;
@@ -694,8 +694,8 @@ contract ArtToujourToken is MintableToken {
    *  @uint8 decimals - Token Decimals
    *  @uint256 _totalSupply - Token Total Supply
   */
-  string public constant name = &quot;ARISTON&quot;;
-  string public constant symbol = &quot;ARTZ&quot;;
+  string public constant name = "ARISTON";
+  string public constant symbol = "ARTZ";
   uint8 public constant decimals = 18;
   uint256 public constant _totalSupply = 700000000 * 1 ether;
   

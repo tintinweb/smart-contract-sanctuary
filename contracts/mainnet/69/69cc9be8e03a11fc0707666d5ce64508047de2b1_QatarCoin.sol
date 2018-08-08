@@ -5,8 +5,8 @@ contract QatarCoin{
     
     uint public constant _totalsupply = 95000000;
     
-    string public constant symbol = &quot;QTA&quot;;
-    string public constant name = &quot;Qatar Coin&quot;;
+    string public constant symbol = "QTA";
+    string public constant name = "Qatar Coin";
     uint8 public constant decimls = 18;
     
     mapping(address => uint256) balances;

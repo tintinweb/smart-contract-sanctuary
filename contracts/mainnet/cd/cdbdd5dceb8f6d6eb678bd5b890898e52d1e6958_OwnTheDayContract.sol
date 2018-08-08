@@ -54,7 +54,7 @@ library SafeMath {
 /**
 * @title Ownable
 * @dev The Ownable contract has an owner address, and provides basic authorization control
-* functions, this simplifies the implementation of &quot;user permissions&quot;.
+* functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
     address public owner;
@@ -249,11 +249,11 @@ contract OwnTheDayContract is ERC721, Pausable, ReentrancyGuard {
     }
 
     function name() public pure returns (string _name) {
-        return &quot;OwnTheDay.io Days&quot;;
+        return "OwnTheDay.io Days";
     }
 
     function symbol() public pure returns (string _symbol) {
-        return &quot;DAYS&quot;;
+        return "DAYS";
     }
 
     /// @dev Creates the initial day tokens available (this is the minting process)

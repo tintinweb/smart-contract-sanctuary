@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract LBCToken {
 
-    string public name = &quot;Luxe Block Chain&quot;;      //  token name
-    string public symbol = &quot;LBC&quot;;           //  token symbol
+    string public name = "Luxe Block Chain";      //  token name
+    string public symbol = "LBC";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

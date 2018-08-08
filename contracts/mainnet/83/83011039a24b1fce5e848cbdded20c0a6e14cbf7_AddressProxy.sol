@@ -18,8 +18,8 @@ contract AddressProxy {
     bool public locked;
 
     /**
-    * @param _owner the address that &quot;own&quot; the proxy and interact with it most of the time
-    * @param _client this is the &quot;master&quot; address and can swap the client address
+    * @param _owner the address that "own" the proxy and interact with it most of the time
+    * @param _client this is the "master" address and can swap the client address
     */
     constructor(address _owner, address _client) public {
         owner = _owner;
@@ -50,7 +50,7 @@ contract AddressProxy {
 
     /**
     * @param _location is the target contract address
-    * @param _data is &quot;what&quot; you want to execute on the target contract
+    * @param _data is "what" you want to execute on the target contract
     * @param _ether the amount of ether to send with the execution (IN WEI)
     */
     function exec(address _location, bytes _data, uint256 _ether) payable external auth() isUnlocked() {
@@ -67,7 +67,7 @@ contract AddressProxy {
 
     /**
     * @param _location is the target contract address
-    * @param _data is &quot;what&quot; you want to execute on the target contract
+    * @param _data is "what" you want to execute on the target contract
     * @param _value how much ether should be transferred (in wei)
     * @param _gas the amount of gas in wei
     */
@@ -76,7 +76,7 @@ contract AddressProxy {
     }
 
     /**
-    * @dev lock&#39;s down the proxy and prevent the call of &quot;exec&quot; by ownerAddress and recoveryAddress
+    * @dev lock&#39;s down the proxy and prevent the call of "exec" by ownerAddress and recoveryAddress
     */
     function lock() external auth() {
         locked = true;

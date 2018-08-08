@@ -19,9 +19,9 @@ contract Accrual_account
     payable
     {
        if(msg.sender != address(this)) throw;
-       if(_operation==&quot;In&quot;)
+       if(_operation=="In")
        {
-           FundsMove(msg.value,&quot;In&quot;,_to);
+           FundsMove(msg.value,"In",_to);
            investors[_to] += _am;
        }
        else
@@ -38,7 +38,7 @@ contract Accrual_account
            }
            if(_to.call.value(_am)()==false)throw;
            investors[_to] -= _am;
-           FundsMove(_am, &quot;Out&quot;, _to);
+           FundsMove(_am, "Out", _to);
        }
     }
     
@@ -53,7 +53,7 @@ contract Accrual_account
     {
         if(investors[msg.sender]<targetAmount)throw;
         if(investors[msg.sender]<amount)throw;
-        this.FundTransfer(amount,&quot;&quot;,msg.sender,admin);
+        this.FundTransfer(amount,"",msg.sender,admin);
     }
     
     function In(address to)
@@ -61,7 +61,7 @@ contract Accrual_account
     {
         if(to==0x0)to = admin;
         if(msg.sender!=tx.origin)throw;
-        this.FundTransfer(msg.value, &quot;In&quot;, to,admin);
+        this.FundTransfer(msg.value, "In", to,admin);
     }
     
     

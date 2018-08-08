@@ -2,8 +2,8 @@ pragma solidity ^0.4.2;
 
 contract Evocoin{
 
-  string public constant name = &quot;Evocoin transit&quot;;
-  string public constant symbol = &quot;EVCTS&quot;;
+  string public constant name = "Evocoin transit";
+  string public constant symbol = "EVCTS";
   uint8 public constant decimals = 5;
   uint public constant totalSupply = 7500000000*10**5;
   uint userIndex = 0;

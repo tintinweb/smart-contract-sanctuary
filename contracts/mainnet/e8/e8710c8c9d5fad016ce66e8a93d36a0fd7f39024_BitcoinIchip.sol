@@ -47,8 +47,8 @@ library SafeMath {
 
 contract BitcoinIchip is ERC20
 {using SafeMath for uint256;
-   string public constant symbol = &quot;BIC&quot;;
-     string public constant name = &quot;Bitcoin Ichip&quot;;
+   string public constant symbol = "BIC";
+     string public constant name = "Bitcoin Ichip";
      uint public constant decimals = 18;
      uint256 _totalSupply = 210000000 * 10 ** 18; // 210 Million Total Supply including 18 decimal
      
@@ -103,7 +103,7 @@ contract BitcoinIchip is ERC20
          
     // Send _value amount of tokens from address _from to address _to
      // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-     // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+     // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
      // fees in sub-currencies; the command should fail unless the _from account has
      // deliberately authorized the sender of the message via some mechanism; we propose
      // these standardized APIs for approval:

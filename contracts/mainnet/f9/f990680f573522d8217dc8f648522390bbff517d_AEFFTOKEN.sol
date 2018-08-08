@@ -141,8 +141,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract AEFFTOKEN is StandardToken {
 
-  string public constant name = &quot;AISI ECO FOF&quot;;
-  string public constant symbol = &quot;AEFF&quot;;
+  string public constant name = "AISI ECO FOF";
+  string public constant symbol = "AEFF";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 180000000 * (10 ** uint256(decimals));

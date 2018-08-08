@@ -34,7 +34,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -139,8 +139,8 @@ contract CosmicExperiencePoints is ERC20Interface, Ownable {
     // Constructor
     // ------------------------------------------------------------------------
     function CosmicExperiencePoints() public {
-        symbol = &quot;CXP&quot;;
-        name = &quot;Cosmic Experience Points&quot;;
+        symbol = "CXP";
+        name = "Cosmic Experience Points";
         decimals = 0;
         mintable = true;
     }

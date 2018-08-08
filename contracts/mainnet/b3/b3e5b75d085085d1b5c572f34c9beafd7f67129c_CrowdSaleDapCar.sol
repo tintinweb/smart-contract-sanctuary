@@ -305,9 +305,9 @@ contract IAirDropToken {
 }
 
 contract CrowdSaleDapCar is Authorizable {
-    string public version = &quot;0.1&quot;;
-    string public publisher = &quot;https://www.dapcar.io&quot;;
-    string public description = &quot;This is an official CrowdSale DapCar (DAPX)&quot;;
+    string public version = "0.1";
+    string public publisher = "https://www.dapcar.io";
+    string public description = "This is an official CrowdSale DapCar (DAPX)";
 
     address public walletWithdraw;
     IDapCarToken public dapCarToken;
@@ -497,7 +497,7 @@ contract CrowdSaleDapCar is Authorizable {
     public
     returns (bool success)
     {
-        PropsChanged(msg.sender, &quot;crowdSaleEnabled&quot;, crowdSaleEnabled, _value);
+        PropsChanged(msg.sender, "crowdSaleEnabled", crowdSaleEnabled, _value);
         crowdSaleEnabled = _value;
         return true;
     }
@@ -507,7 +507,7 @@ contract CrowdSaleDapCar is Authorizable {
     public
     returns (bool success)
     {
-        PropsChanged(msg.sender, &quot;airDropTokenEnabled&quot;, airDropTokenEnabled, _value);
+        PropsChanged(msg.sender, "airDropTokenEnabled", airDropTokenEnabled, _value);
         airDropTokenEnabled = _value;
         return true;
     }
@@ -517,7 +517,7 @@ contract CrowdSaleDapCar is Authorizable {
     public
     returns (bool success)
     {
-        PropsChanged(msg.sender, &quot;airDropTokenDestroy&quot;, airDropTokenDestroy, _value);
+        PropsChanged(msg.sender, "airDropTokenDestroy", airDropTokenDestroy, _value);
         airDropTokenDestroy = _value;
         return true;
     }
@@ -527,7 +527,7 @@ contract CrowdSaleDapCar is Authorizable {
     public
     returns (bool success)
     {
-        PropsChanged(msg.sender, &quot;amountBonusEnabled&quot;, amountBonusEnabled, _value);
+        PropsChanged(msg.sender, "amountBonusEnabled", amountBonusEnabled, _value);
         amountBonusEnabled = _value;
         return true;
     }
@@ -537,7 +537,7 @@ contract CrowdSaleDapCar is Authorizable {
     public
     returns (bool success)
     {
-        PropsChanged(msg.sender, &quot;couponBonusEnabled&quot;, couponBonusEnabled, _value);
+        PropsChanged(msg.sender, "couponBonusEnabled", couponBonusEnabled, _value);
         couponBonusEnabled = _value;
         return true;
     }
@@ -628,7 +628,7 @@ contract CrowdSaleDapCar is Authorizable {
 
         rates[period].enabled = _enabled;
         rates[period].updated = uint64(now);
-        RatePropsChanged(msg.sender, period, &quot;enabled&quot;, _enabled);
+        RatePropsChanged(msg.sender, period, "enabled", _enabled);
         return true;
     }
 
@@ -673,7 +673,7 @@ contract CrowdSaleDapCar is Authorizable {
 
         investors[_wallet].enabled = _enabled;
         investors[_wallet].updated = uint64(now);
-        InvestorPropsChanged(msg.sender, _wallet, &quot;enabled&quot;, _enabled);
+        InvestorPropsChanged(msg.sender, _wallet, "enabled", _enabled);
         return true;
     }
 
@@ -688,7 +688,7 @@ contract CrowdSaleDapCar is Authorizable {
 
         investors[_wallet].preSaleEnabled = _preSaleEnabled;
         investors[_wallet].updated = uint64(now);
-        InvestorPropsChanged(msg.sender, _wallet, &quot;preSaleEnabled&quot;, _preSaleEnabled);
+        InvestorPropsChanged(msg.sender, _wallet, "preSaleEnabled", _preSaleEnabled);
         return true;
     }
 

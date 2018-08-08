@@ -67,7 +67,7 @@ contract CryptoPoliceProxy is Ownable
     }
 
     function transferAllowance(address destination, uint amount) public returns (bool) {
-        require(allowanceProxyAccess[msg.sender], &quot;Sender must have allowance proxy access&quot;);
+        require(allowanceProxyAccess[msg.sender], "Sender must have allowance proxy access");
         return ERC20Allowance(token).transferFrom(owner, destination, amount);
     }
 
@@ -95,8 +95,8 @@ contract CryptoPoliceProxy is Ownable
     }
 
     modifier grantCrowdsale {
-        require(crowdsale != 0x0, &quot;Crowdsale not set&quot;);
-        require(msg.sender == crowdsale, &quot;Sender must be crowdsale&quot;);
+        require(crowdsale != 0x0, "Crowdsale not set");
+        require(msg.sender == crowdsale, "Sender must be crowdsale");
         _;
     }
 

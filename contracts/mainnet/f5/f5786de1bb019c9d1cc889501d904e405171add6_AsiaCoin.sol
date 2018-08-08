@@ -114,8 +114,8 @@ contract AsiaCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AsiaCoin() public {
-        symbol = &quot;ACOIN&quot;;
-        name = &quot;AsiaCoin&quot;;
+        symbol = "ACOIN";
+        name = "AsiaCoin";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 7 weeks;

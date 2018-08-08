@@ -435,7 +435,7 @@ contract theCyberGatekeeperTwo {
       (,,,,memberAddress) = theCyberInterface(THECYBERADDRESS_).getMemberInformation(i + 1);
       if (memberAddress == address(0)) {
         // If it is not owned, add the entrant as a new member of theCyber.
-        theCyberInterface(THECYBERADDRESS_).newMember(i + 1, bytes32(&quot;&quot;), entrants[i]);
+        theCyberInterface(THECYBERADDRESS_).newMember(i + 1, bytes32(""), entrants[i]);
       }
       // Move on to the next entrant / member id.
       i++;

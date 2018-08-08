@@ -3,7 +3,7 @@ pragma solidity ^0.4.11;
  * The MIT License (MIT)
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
@@ -12,7 +12,7 @@ pragma solidity ^0.4.11;
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -190,7 +190,7 @@ contract HumanStandardToken is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if (!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) {revert();}
+        if (!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) {revert();}
         return true;
     }
 }
@@ -303,10 +303,10 @@ contract CapitalMiningToken is HumanStandardToken {
 contract Aequitas is CapitalMiningToken {
     // Constructor
     function Aequitas() CapitalMiningToken(
-            &quot;Aequitas&quot;,             // name
+            "Aequitas",             // name
             8,                      // decimals
-            &quot;AQT&quot;,                  // symbol
-            &quot;0.1&quot;,                  // version
+            "AQT",                  // symbol
+            "0.1",                  // version
             0,                      // initialAmount
             0,                      // simulatedBlockNumber
             2,                      // rewardScarcityFactor

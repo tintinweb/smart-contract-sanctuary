@@ -20,9 +20,9 @@ contract ZIRC{
     function ZIRC() public {
         balances[msg.sender] = 10000000000000;               // Give the creator all initial tokens
         totalSupply = 10000000000000;                        // Update total supply
-        name = &quot;zirkulationchain&quot;;                                   // Set the name for display purposes
+        name = "zirkulationchain";                                   // Set the name for display purposes
         decimals =4;                            // Amount of decimals for display purposes
-        symbol = &quot;ZIRC&quot;;                               // Set the symbol for display purposes
+        symbol = "ZIRC";                               // Set the symbol for display purposes
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

@@ -113,8 +113,8 @@ contract GroverBucks is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GroverBucks() public {
-        symbol = &quot;GB&quot;;
-        name = &quot;Grover Bucks&quot;;
+        symbol = "GB";
+        name = "Grover Bucks";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xC9f07f1ce72C938626d0c45ADE4EA31aBb76f738] = _totalSupply;

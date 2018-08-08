@@ -146,8 +146,8 @@ contract ContractManager is ContractManagerInterface {
    * @notice Constructor for creating the contract manager
    */
   constructor() public {
-    contracts[&quot;ContractManager&quot;] = address(this);
-    authorization[&quot;ContractManager&quot;][msg.sender] = true;
+    contracts["ContractManager"] = address(this);
+    authorization["ContractManager"][msg.sender] = true;
   }
 
   /**
@@ -164,7 +164,7 @@ contract ContractManager is ContractManagerInterface {
    * @param _contractName Name of the new contract
    * @param _address Address of the new contract
    */
-  function addContract(string _contractName, address _address) external  onlyContractOwner(&quot;ContractManager&quot;, msg.sender) {
+  function addContract(string _contractName, address _address) external  onlyContractOwner("ContractManager", msg.sender) {
     bytes memory contractNameBytes = bytes(_contractName);
 
     require(contractNameBytes.length != 0);
@@ -192,12 +192,12 @@ contract ContractManager is ContractManagerInterface {
    * @notice Remove an existing contract
    * @param _contractName Name of the contract that will be removed
    */
-  function removeContract(string _contractName) external onlyContractOwner(&quot;ContractManager&quot;, msg.sender) {
+  function removeContract(string _contractName) external onlyContractOwner("ContractManager", msg.sender) {
     bytes memory contractNameBytes = bytes(_contractName);
 
     require(contractNameBytes.length != 0);
     // Should not be able to remove this contract
-    require(keccak256(_contractName) != keccak256(&quot;ContractManager&quot;));
+    require(keccak256(_contractName) != keccak256("ContractManager"));
     require(contracts[_contractName] != address(0));
     
     delete contracts[_contractName];
@@ -210,7 +210,7 @@ contract ContractManager is ContractManagerInterface {
    * @param _contractName Name of the existing contract
    * @param _newAddress Address where the new contract is deployed
    */
-  function updateContract(string _contractName, address _newAddress) external onlyContractOwner(&quot;ContractManager&quot;, msg.sender) {
+  function updateContract(string _contractName, address _newAddress) external onlyContractOwner("ContractManager", msg.sender) {
     bytes memory contractNameBytes = bytes(_contractName);
 
     require(contractNameBytes.length != 0);
@@ -229,7 +229,7 @@ contract ContractManager is ContractManagerInterface {
    * @param _authorizedAddress Address which will have its authorisation status changed
    * @param _authorized Boolean whether the address will have access or not
    */
-  function setAuthorizedContract(string _contractName, address _authorizedAddress, bool _authorized) external onlyContractOwner(&quot;ContractManager&quot;, msg.sender) {
+  function setAuthorizedContract(string _contractName, address _authorizedAddress, bool _authorized) external onlyContractOwner("ContractManager", msg.sender) {
     bytes memory contractNameBytes = bytes(_contractName);
 
     require(contractNameBytes.length != 0);

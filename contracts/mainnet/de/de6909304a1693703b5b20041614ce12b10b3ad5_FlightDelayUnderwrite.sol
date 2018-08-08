@@ -13,11 +13,11 @@
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -690,7 +690,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint len = self._len * (parts.length - 1);
         for(uint i = 0; i < parts.length; i++)
@@ -921,31 +921,31 @@ contract FlightDelayConstants {
     // DEFINITIONS FOR ROPSTEN AND MAINNET
     string constant ORACLIZE_RATINGS_BASE_URL =
         // ratings api is v1, see https://developer.flightstats.com/api-docs/ratings/v1
-        &quot;[URL] json(https://api.flightstats.com/flex/ratings/rest/v1/json/flight/&quot;;
+        "[URL] json(https://api.flightstats.com/flex/ratings/rest/v1/json/flight/";
     string constant ORACLIZE_RATINGS_QUERY =
-        &quot;?${[decrypt] BCGB+KxK9Hi0+HSuAjqUImcDiycjuUNPi8ibBGo6KFP/m9gOK6xtJbyi5lbPxPfDypCywVtTwe13VZbu02337Lw0mhTFO0OkUltmxGxi2mWgDBwN+VZdiXjtStOwuNYnhj8hjm71ppPGCVKXExvl1z3qDXkSbMMYZNBG+JNVFP7/YWhSZCXW}).ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]&quot;;
+        "?${[decrypt] BCGB+KxK9Hi0+HSuAjqUImcDiycjuUNPi8ibBGo6KFP/m9gOK6xtJbyi5lbPxPfDypCywVtTwe13VZbu02337Lw0mhTFO0OkUltmxGxi2mWgDBwN+VZdiXjtStOwuNYnhj8hjm71ppPGCVKXExvl1z3qDXkSbMMYZNBG+JNVFP7/YWhSZCXW}).ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]";
     string constant ORACLIZE_STATUS_BASE_URL =
         // flight status api is v2, see https://developer.flightstats.com/api-docs/flightstatus/v2/flight
-        &quot;[URL] json(https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/&quot;;
+        "[URL] json(https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/";
     string constant ORACLIZE_STATUS_QUERY =
         // pattern:
-        &quot;?${[decrypt] BKc9+sMSvpu/p3qUjdu0QrHliQpNylhoQmHqL/8mQ/jKfsf7wdIiwwdMizp5u6LoP8rIvGhRfEcjK1SgotQDGFqws/5+9S9D5OXdEPXnkEsjQZJsyu8uhRRWg/0QSSP6LYP2ONUQc92QncGJbPCDxOcf3lGiNRrhznHfjFW7n+lwz4mVxN76}&utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
+        "?${[decrypt] BKc9+sMSvpu/p3qUjdu0QrHliQpNylhoQmHqL/8mQ/jKfsf7wdIiwwdMizp5u6LoP8rIvGhRfEcjK1SgotQDGFqws/5+9S9D5OXdEPXnkEsjQZJsyu8uhRRWg/0QSSP6LYP2ONUQc92QncGJbPCDxOcf3lGiNRrhznHfjFW7n+lwz4mVxN76}&utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]";
 // <-- prod-mode
 
 // --> test-mode
 //        // DEFINITIONS FOR LOCAL TESTNET
 //        string constant ORACLIZE_RATINGS_BASE_URL =
 //            // ratings api is v1, see https://developer.flightstats.com/api-docs/ratings/v1
-//            &quot;[URL] json(https://api-test.etherisc.com/flex/ratings/rest/v1/json/flight/&quot;;
+//            "[URL] json(https://api-test.etherisc.com/flex/ratings/rest/v1/json/flight/";
 //        string constant ORACLIZE_RATINGS_QUERY =
 //            // for testrpc:
-//            &quot;).ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]&quot;;
+//            ").ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]";
 //        string constant ORACLIZE_STATUS_BASE_URL =
 //            // flight status api is v2, see https://developer.flightstats.com/api-docs/flightstatus/v2/flight
-//            &quot;[URL] json(https://api-test.etherisc.com/flex/flightstatus/rest/v2/json/flight/status/&quot;;
+//            "[URL] json(https://api-test.etherisc.com/flex/flightstatus/rest/v2/json/flight/status/";
 //        string constant ORACLIZE_STATUS_QUERY =
 //            // for testrpc:
-//            &quot;?utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
+//            "?utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]";
 // <-- test-mode
 }
 
@@ -1276,7 +1276,7 @@ Copyright (c) 2016 Oraclize LTD
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
+of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -1289,7 +1289,7 @@ all copies or substantial portions of the Software.
 
 
 
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -1352,22 +1352,22 @@ contract usingOraclize {
     function oraclize_setNetwork(uint8 networkID) internal returns(bool){
         if (getCodeSize(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed)>0){ //mainnet
             OAR = OraclizeAddrResolverI(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed);
-            oraclize_setNetworkName(&quot;eth_mainnet&quot;);
+            oraclize_setNetworkName("eth_mainnet");
             return true;
         }
         if (getCodeSize(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1)>0){ //ropsten testnet
             OAR = OraclizeAddrResolverI(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1);
-            oraclize_setNetworkName(&quot;eth_ropsten3&quot;);
+            oraclize_setNetworkName("eth_ropsten3");
             return true;
         }
         if (getCodeSize(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e)>0){ //kovan testnet
             OAR = OraclizeAddrResolverI(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e);
-            oraclize_setNetworkName(&quot;eth_kovan&quot;);
+            oraclize_setNetworkName("eth_kovan");
             return true;
         }
         if (getCodeSize(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48)>0){ //rinkeby testnet
             OAR = OraclizeAddrResolverI(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48);
-            oraclize_setNetworkName(&quot;eth_rinkeby&quot;);
+            oraclize_setNetworkName("eth_rinkeby");
             return true;
         }
         if (getCodeSize(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475)>0){ //ethereum-bridge
@@ -1882,15 +1882,15 @@ contract usingOraclize {
     }
 
     function strConcat(string _a, string _b, string _c, string _d) internal returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
 
     function strConcat(string _a, string _b, string _c) internal returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
 
     function strConcat(string _a, string _b) internal returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 
     // parseInt
@@ -1918,7 +1918,7 @@ contract usingOraclize {
     }
 
     function uint2str(uint i) internal returns (string){
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint len;
         while (j != 0){
@@ -2042,7 +2042,7 @@ contract usingOraclize {
             mstore(add(sessionKeyHash, 0x20), sessionKeyHash_bytes32)
         }
         bytes[3] memory args = [unonce, nbytes, sessionKeyHash];
-        bytes32 queryId = oraclize_query(_delay, &quot;random&quot;, args, _customGasLimit);
+        bytes32 queryId = oraclize_query(_delay, "random", args, _customGasLimit);
         oraclize_randomDS_setCommitment(queryId, sha3(bytes8(_delay), args[1], sha256(args[0]), args[2]));
         return queryId;
     }
@@ -2095,7 +2095,7 @@ contract usingOraclize {
         bytes memory tosign2 = new bytes(1+65+32);
         tosign2[0] = 1; //role
         copyBytes(proof, sig2offset-65, 65, tosign2, 1);
-        bytes memory CODEHASH = hex&quot;fd94fa71bc0ba10d39d464d0d8f465efeef0a2764e3887fcc9df41ded20f505c&quot;;
+        bytes memory CODEHASH = hex"fd94fa71bc0ba10d39d464d0d8f465efeef0a2764e3887fcc9df41ded20f505c";
         copyBytes(CODEHASH, 0, 32, tosign2, 1+65);
         sigok = verifySig(sha256(tosign2), sig2, appkey1_pubkey);
 
@@ -2103,7 +2103,7 @@ contract usingOraclize {
 
 
         // Step 7: verify the APPKEY1 provenance (must be signed by Ledger)
-        bytes memory LEDGERKEY = hex&quot;7fb956469c5c9b89840d55b43537e66a98dd4811ea0a27224272c2e5622911e8537a2f8e86a46baec82864e98dd01e9ccc2f8bc5dfc9cbe5a91a290498dd96e4&quot;;
+        bytes memory LEDGERKEY = hex"7fb956469c5c9b89840d55b43537e66a98dd4811ea0a27224272c2e5622911e8537a2f8e86a46baec82864e98dd01e9ccc2f8bc5dfc9cbe5a91a290498dd96e4";
 
         bytes memory tosign3 = new bytes(1+65);
         tosign3[0] = 0xFE;
@@ -2119,7 +2119,7 @@ contract usingOraclize {
 
     modifier oraclize_randomDS_proofVerify(bytes32 _queryId, string _result, bytes _proof) {
         // Step 1: the prefix has to match &#39;LP\x01&#39; (Ledger Proof version 1)
-        if ((_proof[0] != &quot;L&quot;)||(_proof[1] != &quot;P&quot;)||(_proof[2] != 1)) throw;
+        if ((_proof[0] != "L")||(_proof[1] != "P")||(_proof[2] != 1)) throw;
 
         bool proofVerified = oraclize_randomDS_proofVerify__main(_proof, _queryId, bytes(_result), oraclize_getNetworkName());
         if (proofVerified == false) throw;
@@ -2129,7 +2129,7 @@ contract usingOraclize {
 
     function oraclize_randomDS_proofVerify__returnCode(bytes32 _queryId, string _result, bytes _proof) internal returns (uint8){
         // Step 1: the prefix has to match &#39;LP\x01&#39; (Ledger Proof version 1)
-        if ((_proof[0] != &quot;L&quot;)||(_proof[1] != &quot;P&quot;)||(_proof[2] != 1)) return 1;
+        if ((_proof[0] != "L")||(_proof[1] != "P")||(_proof[2] != 1)) return 1;
 
         bool proofVerified = oraclize_randomDS_proofVerify__main(_proof, _queryId, bytes(_result), oraclize_getNetworkName());
         if (proofVerified == false) return 2;
@@ -2521,14 +2521,14 @@ contract FlightDelayUnderwrite is FlightDelayControlledContract, FlightDelayCons
     }
 
     function setContracts() public onlyController {
-        FD_AC = FlightDelayAccessControllerInterface(getContract(&quot;FD.AccessController&quot;));
-        FD_DB = FlightDelayDatabaseInterface(getContract(&quot;FD.Database&quot;));
-        FD_LG = FlightDelayLedgerInterface(getContract(&quot;FD.Ledger&quot;));
-        FD_PY = FlightDelayPayoutInterface(getContract(&quot;FD.Payout&quot;));
+        FD_AC = FlightDelayAccessControllerInterface(getContract("FD.AccessController"));
+        FD_DB = FlightDelayDatabaseInterface(getContract("FD.Database"));
+        FD_LG = FlightDelayLedgerInterface(getContract("FD.Ledger"));
+        FD_PY = FlightDelayPayoutInterface(getContract("FD.Payout"));
 
-        FD_AC.setPermissionById(101, &quot;FD.NewPolicy&quot;);
-        FD_AC.setPermissionById(102, &quot;FD.Funder&quot;);
-        FD_AC.setPermissionById(103, &quot;FD.Owner&quot;);
+        FD_AC.setPermissionById(101, "FD.NewPolicy");
+        FD_AC.setPermissionById(102, "FD.Funder");
+        FD_AC.setPermissionById(103, "FD.Owner");
     }
 
     /*
@@ -2551,12 +2551,12 @@ contract FlightDelayUnderwrite is FlightDelayControlledContract, FlightDelayCons
         );
 
 // --> debug-mode
-//            LogUint(&quot;_policyId&quot;, _policyId);
-//            LogBytes32Str(&quot;_carrierFlightNumber&quot;,_carrierFlightNumber);
-//            LogString(&quot;oraclizeUrl&quot;, oraclizeUrl);
+//            LogUint("_policyId", _policyId);
+//            LogBytes32Str("_carrierFlightNumber",_carrierFlightNumber);
+//            LogString("oraclizeUrl", oraclizeUrl);
 // <-- debug-mode
 
-        bytes32 queryId = oraclize_query(&quot;nested&quot;, oraclizeUrl, ORACLIZE_GAS);
+        bytes32 queryId = oraclize_query("nested", oraclizeUrl, ORACLIZE_GAS);
 
         // call oraclize to get Flight Stats; this will also call underwrite()
         FD_DB.createOraclizeCallback(
@@ -2577,36 +2577,36 @@ contract FlightDelayUnderwrite is FlightDelayControlledContract, FlightDelayCons
         var slResult = _result.toSlice();
 
         // we expect result to contain 8 values, something like
-        // &quot;[61, 10, 4, 3, 0, 0, \&quot;CUN\&quot;, \&quot;SFO\&quot;]&quot; ->
+        // "[61, 10, 4, 3, 0, 0, \"CUN\", \"SFO\"]" ->
         // [&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]
         if (bytes(_result).length == 0) {
-            decline(policyId, &quot;Declined (empty result)&quot;, _proof);
+            decline(policyId, "Declined (empty result)", _proof);
         } else {
             // now slice the string using
             // https://github.com/Arachnid/solidity-stringutils
-            if (slResult.count(&quot;, &quot;.toSlice()) != 7) {
+            if (slResult.count(", ".toSlice()) != 7) {
                 // check if result contains 8 values
-                decline(policyId, &quot;Declined (invalid result)&quot;, _proof);
+                decline(policyId, "Declined (invalid result)", _proof);
             } else {
-                slResult.beyond(&quot;[&quot;.toSlice()).until(&quot;]&quot;.toSlice());
+                slResult.beyond("[".toSlice()).until("]".toSlice());
 
-                uint observations = parseInt(slResult.split(&quot;, &quot;.toSlice()).toString());
+                uint observations = parseInt(slResult.split(", ".toSlice()).toString());
 
                 // decline on < minObservations observations,
                 // can&#39;t calculate reasonable probabibilities
                 if (observations <= MIN_OBSERVATIONS) {
-                    decline(policyId, &quot;Declined (too few observations)&quot;, _proof);
+                    decline(policyId, "Declined (too few observations)", _proof);
                 } else {
                     uint[6] memory statistics;
                     // calculate statistics (scaled by 10000; 1% => 100)
                     statistics[0] = observations;
                     for (uint i = 1; i <= 5; i++) {
-                        statistics[i] = parseInt(slResult.split(&quot;, &quot;.toSlice()).toString()) * 10000/observations;
+                        statistics[i] = parseInt(slResult.split(", ".toSlice()).toString()) * 10000/observations;
                     }
 
                     underwrite(policyId, statistics, _proof);
 
-//                    var origin = slResult.split(&quot;, &quot;.toSlice());
+//                    var origin = slResult.split(", ".toSlice());
 //                    for (uint j = 0; j < FD_DB.countOrigins(); j++) {
 //                        if (b32toString(FD_DB.getOriginByIndex(j)).toSlice().equals(origin)) {
 //                            underwrite(policyId, statistics, _proof);
@@ -2614,7 +2614,7 @@ contract FlightDelayUnderwrite is FlightDelayControlledContract, FlightDelayCons
 //                        }
 //                    }
 //
-//                    var destination = slResult.split(&quot;, &quot;.toSlice());
+//                    var destination = slResult.split(", ".toSlice());
 //                    for (uint k = 0; k < FD_DB.countDestinations(); k++) {
 //                        if (b32toString(FD_DB.getDestinationByIndex(k)).toSlice().equals(destination)) {
 //                           underwrite(policyId, statistics, _proof);
@@ -2622,14 +2622,14 @@ contract FlightDelayUnderwrite is FlightDelayControlledContract, FlightDelayCons
 //                        }
 //                    }
 //
-//                    decline(policyId, &quot;Not acceptable airport&quot;, _proof);
+//                    decline(policyId, "Not acceptable airport", _proof);
                 }
             }
         }
     } // __callback
 
     function externalDecline(uint _policyId, bytes32 _reason) public {
-        require(msg.sender == FD_CI.getContract(&quot;FD.CustomersAdmin&quot;));
+        require(msg.sender == FD_CI.getContract("FD.CustomersAdmin"));
 
         LogPolicyDeclined(_policyId, _reason);
 
@@ -2640,7 +2640,7 @@ contract FlightDelayUnderwrite is FlightDelayControlledContract, FlightDelayCons
             _reason
         );
 
-        FD_DB.setWeight(_policyId, 0, &quot;&quot;);
+        FD_DB.setWeight(_policyId, 0, "");
 
         var (customer, premium) = FD_DB.getCustomerPremium(_policyId);
 
@@ -2649,7 +2649,7 @@ contract FlightDelayUnderwrite is FlightDelayControlledContract, FlightDelayCons
                 _policyId,
                 policyState.SendFailed,
                 now,
-                &quot;decline: Send failed.&quot;
+                "decline: Send failed."
             );
         }
     }
@@ -2674,7 +2674,7 @@ contract FlightDelayUnderwrite is FlightDelayControlledContract, FlightDelayCons
                 _policyId,
                 policyState.SendFailed,
                 now,
-                &quot;decline: Send failed.&quot;
+                "decline: Send failed."
             );
         }
     }
@@ -2709,7 +2709,7 @@ contract FlightDelayUnderwrite is FlightDelayControlledContract, FlightDelayCons
             _policyId,
             policyState.Accepted,
             now,
-            &quot;Policy underwritten by oracle&quot;
+            "Policy underwritten by oracle"
         );
 
         LogPolicyAccepted(

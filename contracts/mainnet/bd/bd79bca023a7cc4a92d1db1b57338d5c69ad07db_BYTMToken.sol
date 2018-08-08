@@ -23,7 +23,7 @@ contract ERC20 {
  * @title OwnableMintable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
  * @dev Added mintOwner address how controls the minting
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract OwnableMintable {
   address public owner;
@@ -131,7 +131,7 @@ library SafeMath {
   }
 
   function uint2str(uint i) internal pure returns (string){
-      if (i == 0) return &quot;0&quot;;
+      if (i == 0) return "0";
       uint j = i;
       uint length;
       while (j != 0){
@@ -163,8 +163,8 @@ contract BYTMToken is ERC20, OwnableMintable {
   using SafeMath for uint256;
 
 
-  string public constant name = &quot;Bytemine&quot;;  // The Token&#39;s name
-  string public constant symbol = &quot;BYTM&quot;;    // Identifier 
+  string public constant name = "Bytemine";  // The Token&#39;s name
+  string public constant symbol = "BYTM";    // Identifier 
   uint8 public constant decimals = 18;      // Number of decimals 
 
   //Hardcap is 1,000,000,000 + 18 decimals

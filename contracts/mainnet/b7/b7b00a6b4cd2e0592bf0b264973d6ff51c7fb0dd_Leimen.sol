@@ -37,8 +37,8 @@ contract Leimen is owned{
     function Leimen() public {
 	    totalSupply = 1000000000 * 100 ;
     	balanceOf[msg.sender] = totalSupply ;
-        name = &quot;Leimen coin&quot;;
-        symbol = &quot;Leim&quot;;         
+        name = "Leimen coin";
+        symbol = "Leim";         
     }
     
 //管理權限//

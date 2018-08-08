@@ -113,8 +113,8 @@ contract ISBParentsCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ISBParentsCoin() public {
-        symbol = &quot;ISB&quot;;
-        name = &quot;Parents‘ Foundation for International School of Beijing Coin&quot;;
+        symbol = "ISB";
+        name = "Parents‘ Foundation for International School of Beijing Coin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x116312c3471C2e7C34C52782D0399eBE601f3F30] = _totalSupply;

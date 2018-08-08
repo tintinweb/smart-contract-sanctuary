@@ -99,9 +99,9 @@ contract DMCTCoin is StandardToken {
         ) {
         balances[msg.sender] = 500000000 * 10000000000;   // Give the creator all initial tokens, 10 zero is 10 Decimals
         totalSupply = 500000000 * 10000000000;            // Update total supply, , 10 zero is 10 Decimals
-        name = &quot;Digital miners&quot;;                                // Token Name
+        name = "Digital miners";                                // Token Name
         decimals = 10;                                      // Amount of decimals for display purposes
-        symbol = &quot;DMCT&quot;;                                    // Token Symbol
+        symbol = "DMCT";                                    // Token Symbol
     }
 
     /* Approves and then calls the receiving contract */
@@ -109,7 +109,7 @@ contract DMCTCoin is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

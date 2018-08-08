@@ -96,8 +96,8 @@ using SafeMath for uint;
 // Constructor
 // ------------------------------------------------------------------------
 function AQUAOIN() public {
-symbol = &quot;AQN&quot;;
-name = &quot;AQUAOIN&quot;;
+symbol = "AQN";
+name = "AQUAOIN";
 decimals = 18;
 _totalSupply = 40000000 * 10**uint(decimals);
  balances[owner] = _totalSupply;

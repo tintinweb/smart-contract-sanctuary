@@ -391,7 +391,7 @@ contract MultiMerkleMine {
 
 		require(
 			block.number >= mine.callerAllocationStartBlock(),
-			&quot;caller allocation period has not started&quot;
+			"caller allocation period has not started"
 		);
 		
 		uint256 initialBalance = token.balanceOf(this);
@@ -408,7 +408,7 @@ contract MultiMerkleMine {
 
 			require(
 				proofSize % 32 == 0,
-				&quot;proof size must be a multiple of 32&quot;
+				"proof size must be a multiple of 32"
 			);
 
 			proofs[j] = BytesUtil.substr(_merkleProofs, i + 32, proofSize);
@@ -419,7 +419,7 @@ contract MultiMerkleMine {
 
 		require(
 			_recipients.length == j,
-			&quot;number of recipients != number of proofs&quot;
+			"number of recipients != number of proofs"
 		);
 
 		for (uint256 k = 0; k < _recipients.length; k++) {

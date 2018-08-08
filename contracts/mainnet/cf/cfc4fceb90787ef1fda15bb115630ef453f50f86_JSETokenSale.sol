@@ -64,7 +64,7 @@ contract ERC223ReceivingContract {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -568,8 +568,8 @@ contract JSEToken is ERC223, BurnableToken, Ownable, MintableToken, OperatorMana
     
     event Finalized();
 
-    string public name = &quot;JSE Token&quot;;
-    string public symbol = &quot;JSE&quot;;
+    string public name = "JSE Token";
+    string public symbol = "JSE";
     uint public decimals = 18;
     uint public initialSupply = 10000000000 * (10 ** decimals); //10,000,000,000 aka 10 billion
 

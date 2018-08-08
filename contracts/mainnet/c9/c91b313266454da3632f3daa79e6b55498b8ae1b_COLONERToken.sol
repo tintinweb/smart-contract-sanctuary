@@ -126,8 +126,8 @@ contract COLONERToken is UnboundedRegularToken {
 
     uint public totalSupply = 9*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;COLONERToken&quot;;
-    string constant public symbol = &quot;COLT&quot;;
+    string constant public name = "COLONERToken";
+    string constant public symbol = "COLT";
 
     function COLONERToken() {
         balances[msg.sender] = totalSupply;

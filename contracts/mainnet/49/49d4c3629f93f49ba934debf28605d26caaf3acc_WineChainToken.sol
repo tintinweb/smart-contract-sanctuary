@@ -175,8 +175,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract WineChainToken is StandardToken {
     using SafeMath for uint256;
-    string public name=&quot;WineChain&quot;;
-    string public symbol=&quot;WID&quot;;
+    string public name="WineChain";
+    string public symbol="WID";
     uint8 public decimals = 8;
     uint256 public totalSupply;
 

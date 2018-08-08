@@ -40,8 +40,8 @@ contract EtherGames is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;EtherGames&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;GameToken&quot;; // solhint-disable-line
+  string public constant NAME = "EtherGames"; // solhint-disable-line
+  string public constant SYMBOL = "GameToken"; // solhint-disable-line
 
   uint256 private startingPrice = 0.001 ether;
   uint256 private firstStepLimit =  0.053613 ether;

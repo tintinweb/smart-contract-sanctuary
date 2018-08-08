@@ -161,8 +161,8 @@ contract Token is ERC20, BasicToken {
  * @dev Simple ERC20 Token with standard token functions.
  */
 contract JLCToken is Token {
-  string public constant name = &quot;JLC Token&quot;;
-  string public constant symbol = &quot;JLC&quot;;
+  string public constant name = "JLC Token";
+  string public constant symbol = "JLC";
   uint256 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 2000000000 * 10**18;

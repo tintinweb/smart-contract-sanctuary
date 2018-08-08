@@ -24,9 +24,9 @@ contract SimpleToken is ERC20Interface{
     mapping (address => mapping ( address => uint)) public approvals;
     
     function Simpletoken() public{
-        name = &quot;GangnamToken&quot;;
+        name = "GangnamToken";
         decimals = 18;
-        symbol = &quot;GNX&quot;;
+        symbol = "GNX";
         totalSupply = 10000000000 * E18;
         owner = msg.sender;
         balanceOf[msg.sender] = totalSupply;

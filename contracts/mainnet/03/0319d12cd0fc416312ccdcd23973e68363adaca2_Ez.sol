@@ -116,8 +116,8 @@ contract Ez is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Ez() public {
-        symbol = &quot;Ez&quot;;
-        name = &quot;Ez Token&quot;;
+        symbol = "Ez";
+        name = "Ez Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 3 weeks;

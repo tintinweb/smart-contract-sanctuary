@@ -208,7 +208,7 @@ contract ERC721Basic {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -223,7 +223,7 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(
     address _from,
@@ -242,7 +242,7 @@ contract ERC721BasicToken is ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
@@ -394,7 +394,7 @@ contract ERC721BasicToken is ERC721Basic {
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -410,14 +410,14 @@ contract ERC721BasicToken is ERC721Basic {
     canTransfer(_tokenId)
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -728,7 +728,7 @@ contract DatesNFT is ERC721Token, Ownable {
     using SafeMath for uint256;
 
     constructor () public
-    ERC721Token(&quot;Crypto Dates&quot;, &quot;CD&quot;)
+    ERC721Token("Crypto Dates", "CD")
     { }
     
     uint256 public price;
@@ -746,7 +746,7 @@ contract DatesNFT is ERC721Token, Ownable {
         price = newPrice;
     }
 
-    string public tokenURIPrefix = &quot;https://api.cryptodate.io/date/&quot;;
+    string public tokenURIPrefix = "https://api.cryptodate.io/date/";
 
     function updateTokenURIPrefix(string newPrefix) external onlyOwner {
         tokenURIPrefix = newPrefix;
@@ -766,7 +766,7 @@ contract DatesNFT is ERC721Token, Ownable {
     }
   
     function uint2str(uint i) internal pure returns (string) {
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint length;
         while (j != 0){

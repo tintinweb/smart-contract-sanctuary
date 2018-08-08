@@ -107,8 +107,8 @@ contract WebFreeToken is ERC20Interface, Owned {
 
 
     constructor() public {
-        symbol = &quot;FREE&quot;;
-        name = &quot;Webfree&quot;;
+        symbol = "FREE";
+        name = "Webfree";
         decimals = 18;
         uint dec = 10**uint(decimals);
         

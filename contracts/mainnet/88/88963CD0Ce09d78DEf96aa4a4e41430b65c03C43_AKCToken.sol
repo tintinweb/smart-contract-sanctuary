@@ -13,8 +13,8 @@ contract ERC20Interface {
 
 contract AKCToken is ERC20Interface{
     string public standard = &#39;Token 1.0&#39;;
-    string public constant name=&quot;Artwork File&quot;;
-    string public constant symbol=&quot;AKC&quot;;
+    string public constant name="Artwork File";
+    string public constant symbol="AKC";
     uint8 public constant decimals=9;
     uint256 constant _totalSupply=1000000000000000000;
     mapping(address => mapping (address => uint256)) allowed;

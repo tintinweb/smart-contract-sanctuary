@@ -153,7 +153,7 @@ contract Augur is Controlled, IAugur {
     }
 
     function createUniverse(IUniverse _parentUniverse, bytes32 _parentPayoutDistributionHash, uint256[] _parentPayoutNumerators, bool _parentInvalid) private returns (IUniverse) {
-        UniverseFactory _universeFactory = UniverseFactory(controller.lookup(&quot;UniverseFactory&quot;));
+        UniverseFactory _universeFactory = UniverseFactory(controller.lookup("UniverseFactory"));
         IUniverse _newUniverse = _universeFactory.createUniverse(controller, _parentUniverse, _parentPayoutDistributionHash);
         universes[_newUniverse] = true;
         UniverseCreated(_parentUniverse, _newUniverse, _parentPayoutNumerators, _parentInvalid);
@@ -433,7 +433,7 @@ contract Augur is Controlled, IAugur {
     }
 
     function logTimestampSet(uint256 _newTimestamp) public returns (bool) {
-        require(msg.sender == controller.lookup(&quot;Time&quot;));
+        require(msg.sender == controller.lookup("Time"));
         TimestampSet(_newTimestamp);
         return true;
     }
@@ -480,7 +480,7 @@ contract IController {
 
 contract UniverseFactory {
     function createUniverse(IController _controller, IUniverse _parentUniverse, bytes32 _parentPayoutDistributionHash) public returns (IUniverse) {
-        Delegator _delegator = new Delegator(_controller, &quot;Universe&quot;);
+        Delegator _delegator = new Delegator(_controller, "Universe");
         IUniverse _universe = IUniverse(_delegator);
         _universe.initialize(_parentUniverse, _parentPayoutDistributionHash);
         return _universe;
@@ -509,7 +509,7 @@ contract Delegator is DelegationTarget {
         assembly {
             //0x40 is the address where the next free memory slot is stored in Solidity
             let _calldataMemoryOffset := mload(0x40)
-            // new &quot;memory end&quot; including padding. The bitwise operations here ensure we get rounded up to the nearest 32 byte boundary
+            // new "memory end" including padding. The bitwise operations here ensure we get rounded up to the nearest 32 byte boundary
             let _size := and(add(calldatasize, 0x1f), not(0x1f))
             // Update the pointer at 0x40 to point at new free memory location so any theoretical allocation doesn&#39;t stomp our memory in this call
             mstore(0x40, add(_calldataMemoryOffset, _size))
@@ -887,7 +887,7 @@ library Order {
         require(_outcome < _market.getNumberOfOutcomes());
         require(_price < _market.getNumTicks());
 
-        IOrders _orders = IOrders(_controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(_controller.lookup("Orders"));
         IAugur _augur = _controller.getAugur();
 
         return Data({
@@ -908,7 +908,7 @@ library Order {
     }
 
     //
-    // &quot;public&quot; functions
+    // "public" functions
     //
 
     function getOrderId(Order.Data _orderData) internal view returns (bytes32) {

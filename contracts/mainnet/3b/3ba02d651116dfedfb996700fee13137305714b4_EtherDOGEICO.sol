@@ -1,7 +1,7 @@
 contract EtherDOGEICO {
     
-    function name() constant returns (string) { return &quot;EtherDOGE&quot;; }
-    function symbol() constant returns (string) { return &quot;eDOGE&quot;; }
+    function name() constant returns (string) { return "EtherDOGE"; }
+    function symbol() constant returns (string) { return "eDOGE"; }
     function decimals() constant returns (uint8) { return 4; }
 	
 

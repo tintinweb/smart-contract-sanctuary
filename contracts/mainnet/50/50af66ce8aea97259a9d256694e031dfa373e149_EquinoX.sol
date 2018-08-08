@@ -56,8 +56,8 @@ contract ERC20 {
 
 contract EquinoX is ERC20, owned {
     using SafeMath for uint256;
-    string public name = &quot;EquinoX&quot;;
-    string public symbol = &quot;EX&quot;;
+    string public name = "EquinoX";
+    string public symbol = "EX";
     uint8 public decimals = 18;
     uint256 public totalSupply;
 

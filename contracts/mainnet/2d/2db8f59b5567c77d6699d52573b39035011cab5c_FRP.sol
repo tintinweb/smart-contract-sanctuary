@@ -15,9 +15,9 @@ contract FRP {
     function FRP() {
 
          initialSupply = 90000000000;
-         name =&quot;FRP&quot;;
+         name ="FRP";
         decimals = 6;
-         symbol = &quot;FRP&quot;;
+         symbol = "FRP";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

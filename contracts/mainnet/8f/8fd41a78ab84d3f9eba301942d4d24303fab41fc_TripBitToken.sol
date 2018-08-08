@@ -112,8 +112,8 @@ pragma solidity ^0.4.18;
     }
     contract TripBitToken is StandardToken {
     
-      string public constant name = &quot;TripBit&quot;; // solium-disable-line uppercase
-      string public constant symbol = &quot;TBT&quot;; // solium-disable-line uppercase
+      string public constant name = "TripBit"; // solium-disable-line uppercase
+      string public constant symbol = "TBT"; // solium-disable-line uppercase
       uint8 public constant decimals = 18; // solium-disable-line uppercase
       uint256 public constant INITIAL_SUPPLY = 700000000 * (10 ** uint256(decimals));
     

@@ -24,9 +24,9 @@ contract Westy_Coin {
         uint256 treasurySupply = 30000000;
         uint256 venerationSupply = 3000000;
         
-        var tokenName = &quot;Sample28&quot;;
+        var tokenName = "Sample28";
         var decimalUnits = 18;
-        var tokenSymbol = &quot;SMP&quot;;
+        var tokenSymbol = "SMP";
         secondsBetweenMints = 1200;//63072000;
         
         name = tokenName;

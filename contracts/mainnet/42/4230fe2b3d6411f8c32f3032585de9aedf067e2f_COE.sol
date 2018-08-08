@@ -8,9 +8,9 @@ contract Target {
 
 contract COE {
 
-    string public name = &quot;Coeval by Monkey Capital&quot;;
+    string public name = "Coeval by Monkey Capital";
     uint8 public decimals = 18;
-    string public symbol = &quot;COE&quot;;
+    string public symbol = "COE";
 
     address public owner;
     address public devFeesAddr = 0x36Bdc3B60dC5491fbc7d74a05709E94d5b554321;

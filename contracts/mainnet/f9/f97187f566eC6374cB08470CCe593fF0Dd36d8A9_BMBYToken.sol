@@ -5,7 +5,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -312,7 +312,7 @@ library SafeMath {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 internal constant ERC721_RECEIVED = 0x150b7a02;
@@ -328,7 +328,7 @@ contract ERC721Receiver {
    * @param _from The address which previously owned the token
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`
    */
   function onERC721Received(
     address _operator,
@@ -371,7 +371,7 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 private constant ERC721_RECEIVED = 0x150b7a02;
 
@@ -529,7 +529,7 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
    * @dev Safely transfers the ownership of a given token ID to another address
    * If the target address is a contract, it must implement `onERC721Received`,
    * which is called upon a safe transfer, and return the magic value
-   * `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`; otherwise,
+   * `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`; otherwise,
    * the transfer is reverted.
    *
    * Requires the msg sender to be the owner, approved, or operator
@@ -546,14 +546,14 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
     canTransfer(_tokenId)
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * If the target address is a contract, it must implement `onERC721Received`,
    * which is called upon a safe transfer, and return the magic value
-   * `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`; otherwise,
+   * `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`; otherwise,
    * the transfer is reverted.
    * Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -898,7 +898,7 @@ contract ERC721Token is SupportsInterfaceWithLookup, ERC721BasicToken, ERC721 {
 
 // File: contracts\BMBYToken.sol
 
-contract BMBYToken is ERC721Token(&quot;BMBY&quot;, &quot;BMBY&quot;), Ownable {
+contract BMBYToken is ERC721Token("BMBY", "BMBY"), Ownable {
 
     struct BMBYTokenInfo {
         uint64 timestamp;
@@ -940,7 +940,7 @@ contract BMBYToken is ERC721Token(&quot;BMBY&quot;, &quot;BMBY&quot;), Ownable {
 
     constructor() public {
         ceoAddress = msg.sender;
-        baseURI = &quot;https://bmby.co/api/tokens/&quot;;
+        baseURI = "https://bmby.co/api/tokens/";
 
         creationFee = 0.03 ether;
         initialTokenValue = 0.06 ether;
@@ -1166,7 +1166,7 @@ contract BMBYToken is ERC721Token(&quot;BMBY&quot;, &quot;BMBY&quot;), Ownable {
 
     function toString(uint256 v) private pure returns (string) {
         if (v == 0) {
-            return &quot;0&quot;;
+            return "0";
         }
         else {
             uint maxlength = 100;

@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract TestToken5 {
 
-    string public name = &quot;TestToken5&quot;;      //  token name
-    string public symbol = &quot;TT5&quot;;           //  token symbol
+    string public name = "TestToken5";      //  token name
+    string public symbol = "TT5";           //  token symbol
     uint public decimals = 6;               //  token digit
 
     mapping (address => uint256) public balanceOf;

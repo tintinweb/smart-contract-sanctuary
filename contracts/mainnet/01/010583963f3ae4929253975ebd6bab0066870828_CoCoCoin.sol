@@ -121,8 +121,8 @@ contract StandardToken is newToken, ERC20 {
 }
 
 contract CoCoCoin is StandardToken, Ownable {
-  string public constant name = &quot;Contra Coin&quot;;
-  string public constant symbol = &quot;CoCo&quot;;
+  string public constant name = "Contra Coin";
+  string public constant symbol = "CoCo";
   uint public constant decimals = 4;
   uint256 public initialSupply;
     

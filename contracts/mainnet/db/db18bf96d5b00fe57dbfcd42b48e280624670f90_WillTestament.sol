@@ -107,8 +107,8 @@ contract WillTestament is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WillTestament() public {
-        symbol = &quot;WILL&quot;;
-        name = &quot;WILL Testament&quot;;
+        symbol = "WILL";
+        name = "WILL Testament";
         decimals = 18;
         _totalSupply = 7795482309000000000000000000;
         balances[0x9Ffc7727A6895d6beEc409249486a422a1648416] = _totalSupply;

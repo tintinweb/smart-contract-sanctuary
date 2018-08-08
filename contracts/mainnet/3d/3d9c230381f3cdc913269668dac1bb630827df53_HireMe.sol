@@ -4,7 +4,7 @@ pragma solidity 0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -122,7 +122,7 @@ contract HireMe is Ownable {
 
     // SHA256 checksum of https://github.com/weijiekoh/hireme/blob/master/AUTHOR.asc
     // See the bottom of this file for the contents of AUTHOR.asc
-    string public constant AUTHORSIGHASH = &quot;8c8b82a2d83a33cb0f45f5f6b22b45c1955f08fc54e7ab4d9e76fb76843c4918&quot;;
+    string public constant AUTHORSIGHASH = "8c8b82a2d83a33cb0f45f5f6b22b45c1955f08fc54e7ab4d9e76fb76843c4918";
 
     // Whether the donate() function has been called
     bool public donated = false;

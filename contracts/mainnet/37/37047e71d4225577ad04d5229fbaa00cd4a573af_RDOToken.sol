@@ -198,8 +198,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract RDOToken is StandardToken {
-    string public name = &quot;RDO roken&quot;;
-    string public symbol = &quot;RDO&quot;;
+    string public name = "RDO roken";
+    string public symbol = "RDO";
     uint256 public decimals = 8;
     address owner;
     address crowdsale;

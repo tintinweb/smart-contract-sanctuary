@@ -32,8 +32,8 @@ contract FutureXestate {
     ) public {
         totalSupply = 1800000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;FutureXestate&quot;;                                   // Set the name for display purposes
-        symbol = &quot;FXT&quot;;                               // Set the symbol for display purposes
+        name = "FutureXestate";                                   // Set the name for display purposes
+        symbol = "FXT";                               // Set the symbol for display purposes
     }
 
     /**

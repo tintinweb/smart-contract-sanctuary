@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract ADSToken {
 
-    string public name = &quot;ADS&quot;;      //  token name
-    string public symbol = &quot;ADS&quot;;           //  token symbol
+    string public name = "ADS";      //  token name
+    string public symbol = "ADS";           //  token symbol
     uint256 public decimals = 18;            //  token digit
 
     mapping (address => uint256) public balanceOf;

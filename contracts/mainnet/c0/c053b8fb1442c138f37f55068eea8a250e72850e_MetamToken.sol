@@ -42,8 +42,8 @@ contract MetamToken is ERC20Interface{
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;MTMX&quot;;
-        name = &quot;Metam&quot;;
+        symbol = "MTMX";
+        name = "Metam";
         decimals = 4;
         _totalSupply = 1000000000000;
         balances[0x5A86f0cafD4ef3ba4f0344C138afcC84bd1ED222] = _totalSupply;

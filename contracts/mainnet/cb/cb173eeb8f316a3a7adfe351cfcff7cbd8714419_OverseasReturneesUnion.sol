@@ -113,8 +113,8 @@ contract OverseasReturneesUnion is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OverseasReturneesUnion() public {
-        symbol = &quot;ORU&quot;;
-        name = &quot;Overseas Returnees Union&quot;;
+        symbol = "ORU";
+        name = "Overseas Returnees Union";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0xff60947022E9e3510974646C530445B51540292D] = _totalSupply;

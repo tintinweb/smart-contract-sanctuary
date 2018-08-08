@@ -131,8 +131,8 @@ contract StandardToken is BasicToken, ERC20
 
 contract BrokerNekoNetwork is StandardToken
 {
-    string public name = &quot;BrokerNekoNetwork&quot;;
-    string public symbol = &quot;BNN&quot;;
+    string public name = "BrokerNekoNetwork";
+    string public symbol = "BNN";
     uint public decimals = 8 ;
 
    

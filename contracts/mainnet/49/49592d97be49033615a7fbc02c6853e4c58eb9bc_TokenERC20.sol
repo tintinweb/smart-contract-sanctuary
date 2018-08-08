@@ -29,8 +29,8 @@ contract TokenERC20 {
     ) public {
         totalSupply =  100000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name =&quot;Love Wine Coin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;LOVC&quot;;                               // Set the symbol for display purposes
+        name ="Love Wine Coin";                                   // Set the name for display purposes
+        symbol = "LOVC";                               // Set the symbol for display purposes
     }
 
     /**

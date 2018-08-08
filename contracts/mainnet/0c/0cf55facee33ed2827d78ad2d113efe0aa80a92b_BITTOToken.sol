@@ -110,8 +110,8 @@ contract PoSTokenStandard {
 contract BITTOToken is ERC20,PoSTokenStandard,Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;BITTO&quot;;
-    string public symbol = &quot;BITTO&quot;;
+    string public name = "BITTO";
+    string public symbol = "BITTO";
     uint public decimals = 18;
 
     uint public chainStartTime; //chain start time

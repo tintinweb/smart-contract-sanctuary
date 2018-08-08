@@ -59,7 +59,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -372,8 +372,8 @@ contract PausableToken is StandardToken, Pausable {
 
 
 contract ABBCToken is BurnableToken, PausableToken {
-    string public name = &quot;Artificial Intelligence Block Chain Bus Coin&quot;;
-    string public symbol = &quot;ABBC&quot;;
+    string public name = "Artificial Intelligence Block Chain Bus Coin";
+    string public symbol = "ABBC";
     uint256 public decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 1000 * 1000 * 1000 * (10 ** uint256(decimals));
 

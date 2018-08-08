@@ -143,13 +143,13 @@ contract Marcellocoin is ERC20Interface, Whitelist{
     // ------------------------------------------------------------------------
 
     function Marcellocoin() public {
-        symbol = &quot;MARCI&quot;;
-        name = &quot;Marcellocoin is the future&quot;;
+        symbol = "MARCI";
+        name = "Marcellocoin is the future";
         decimals = 10;
         _totalSupply = 500000000 * 10**uint256(decimals);
         balances[owner] = _totalSupply;
         
-        enableRegulator(owner, &quot;Marcellocoin Owner&quot;);
+        enableRegulator(owner, "Marcellocoin Owner");
         enableAddress(owner);
         emit Transfer(address(0), owner, _totalSupply);
     }

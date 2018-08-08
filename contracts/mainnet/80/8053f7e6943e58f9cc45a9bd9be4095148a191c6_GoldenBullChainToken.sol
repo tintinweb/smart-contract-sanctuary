@@ -65,8 +65,8 @@ contract StandardToken is ERC20, SafeMath {
 
 
 contract GoldenBullChainToken is StandardToken {
-    string public name = &quot;GoldenBullChainToken&quot;;
-    string public symbol = &quot;GBC&quot;;
+    string public name = "GoldenBullChainToken";
+    string public symbol = "GBC";
     uint public decimals = 18;
     uint public totalSupply = 120 * 1000 * 1000 ether;
 

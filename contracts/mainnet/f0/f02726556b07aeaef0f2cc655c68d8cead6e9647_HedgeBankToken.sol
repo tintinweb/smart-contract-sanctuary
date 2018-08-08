@@ -74,8 +74,8 @@ contract HedgeBankToken is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
 
     constructor() public {
-        symbol = &quot;HEB&quot;;
-        name = &quot;HedgeBank Token&quot;;
+        symbol = "HEB";
+        name = "HedgeBank Token";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         stopped = false;

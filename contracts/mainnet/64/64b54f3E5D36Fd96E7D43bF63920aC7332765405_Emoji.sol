@@ -21,8 +21,8 @@ contract Emoji {
     /* Initializes contract with initial supply tokens to the creator of the contract */
     function Emoji () {
         totalSupply = 600600600600600600600600600;                        // Update total supply
-        name = &quot;Emoji&quot;;                                   // Set the name for display purposes
-        symbol = &quot;:)&quot;;                               // Set the symbol for display purposes
+        name = "Emoji";                                   // Set the name for display purposes
+        symbol = ":)";                               // Set the symbol for display purposes
         decimals = 3;                            // Amount of decimals for display purposes
         balanceOf[msg.sender] = totalSupply;              // Give the creator all initial tokens
     }

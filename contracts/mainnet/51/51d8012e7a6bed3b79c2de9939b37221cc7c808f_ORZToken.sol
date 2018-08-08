@@ -82,8 +82,8 @@ contract ORZToken is StandardToken {
 
     uint8 constant public decimals = 8;
     uint public totalSupply = 21*(10**14); // 21 million tokens, 8 decimal places
-    string constant public name = &quot;ORZ&quot;;
-    string constant public symbol = &quot;ORZ&quot;;
+    string constant public name = "ORZ";
+    string constant public symbol = "ORZ";
 
     function ORZToken() {
         balances[msg.sender] = totalSupply;

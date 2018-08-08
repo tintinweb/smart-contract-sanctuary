@@ -51,8 +51,8 @@ contract SafeBoxCoin is ERC20 {
     mapping (address => mapping (address => uint256)) internal allowed;
 
     function SafeBoxCoin() public {
-        _symbol = &quot;SBC&quot;;
-        _name = &quot;SafeBoxCoin&quot;;
+        _symbol = "SBC";
+        _name = "SafeBoxCoin";
         _decimals = 18;
         _totalSupply = 252000000;
         balances[msg.sender] = _totalSupply;

@@ -436,8 +436,8 @@ contract MintableToken is StandardToken, Manageable {
 contract MythexToken is MintableToken {
   using Maths for uint256;
 
-  string public constant name     = &quot;Mythex&quot;;
-  string public constant symbol   = &quot;MX&quot;;
+  string public constant name     = "Mythex";
+  string public constant symbol   = "MX";
   uint8  public constant decimals = 0;
 
   event Burn(address indexed burner, uint256 value);

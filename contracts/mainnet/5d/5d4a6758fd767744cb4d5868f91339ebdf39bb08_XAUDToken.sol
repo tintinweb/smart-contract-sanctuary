@@ -110,8 +110,8 @@ contract XAUDToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function XAUDToken() public {
-        symbol = &quot;XAUD&quot;;
-        name = &quot;Australian Tether&quot;;
+        symbol = "XAUD";
+        name = "Australian Tether";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0xfE89c02a36eD8d113a4cfe258e82524F95140892] = _totalSupply;

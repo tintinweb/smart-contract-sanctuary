@@ -113,8 +113,8 @@ contract TomocoinTokens is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TomocoinTokens() public {
-        symbol = &quot;TMC&quot;;
-        name = &quot;Tomocoin Token&quot;;
+        symbol = "TMC";
+        name = "Tomocoin Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5dDD9bb4d5640cE37c76dDac8B3bbD35D84416A6] = _totalSupply;

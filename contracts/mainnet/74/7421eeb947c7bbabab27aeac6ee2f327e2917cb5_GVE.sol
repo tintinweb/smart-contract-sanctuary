@@ -160,8 +160,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract GVE is StandardToken, Ownable {
-    string  public  constant name = &quot;Globalvillage ecosystem&quot;;
-    string  public  constant symbol = &quot;GVE&quot;;
+    string  public  constant name = "Globalvillage ecosystem";
+    string  public  constant symbol = "GVE";
     uint    public  constant decimals = 18;
 
     bool public transferEnabled = true;

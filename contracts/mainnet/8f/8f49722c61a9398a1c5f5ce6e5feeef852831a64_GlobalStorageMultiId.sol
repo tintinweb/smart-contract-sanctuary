@@ -46,7 +46,7 @@ contract GlobalStorageMultiId {
         require(msg.value >= regPrice);
 
         if ( users[_id] != 0x0 ) {
-            Error(&quot;ID already exists&quot;);
+            Error("ID already exists");
             msg.sender.send(msg.value);
             return false;
         }
@@ -81,7 +81,7 @@ contract GlobalStorageMultiId {
             dataUint[_id][_key] = _data;
             return true;
         } else {
-            Error(&quot;Data exists&quot;);
+            Error("Data exists");
             return false;
         }
     }
@@ -98,7 +98,7 @@ contract GlobalStorageMultiId {
             dataString[_id][_key] = _data;
             return true;
         } else {
-            Error(&quot;Data exists&quot;);
+            Error("Data exists");
             return false;
         }
     }
@@ -114,7 +114,7 @@ contract GlobalStorageMultiId {
             dataAddress[_id][_key] = _data;
             return true;
         } else {
-            Error(&quot;Data exists&quot;);
+            Error("Data exists");
             return false;
         }
     }
@@ -130,7 +130,7 @@ contract GlobalStorageMultiId {
             dataBytes32[_id][_key] = _data;
             return true;
         } else {
-            Error(&quot;Data exists&quot;);
+            Error("Data exists");
             return false;
         }
     }

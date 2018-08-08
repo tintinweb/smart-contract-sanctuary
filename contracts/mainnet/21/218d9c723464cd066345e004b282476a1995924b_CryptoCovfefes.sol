@@ -69,8 +69,8 @@ contract ERC721 {
 contract CryptoCovfefes is ERC721 {
     /*** CONSTANTS ***/
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant NAME = &quot;CryptoCovfefes&quot;;
-    string public constant SYMBOL = &quot;Covfefe Token&quot;;
+    string public constant NAME = "CryptoCovfefes";
+    string public constant SYMBOL = "Covfefe Token";
     
     uint private constant startingPrice = 0.001 ether;
     

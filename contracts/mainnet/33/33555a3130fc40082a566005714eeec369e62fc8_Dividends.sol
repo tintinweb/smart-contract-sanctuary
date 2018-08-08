@@ -9,8 +9,8 @@ pragma solidity ^0.4.21;
 
 contract Dividends {
 
-    string public name = &quot;Ethopolis Shares&quot;;      //  token name
-    string public symbol = &quot;EPS&quot;;           //  token symbol
+    string public name = "Ethopolis Shares";      //  token name
+    string public symbol = "EPS";           //  token symbol
     uint256 public decimals = 18;            //  token digit
 
     mapping (address => uint256) public balanceOf;
@@ -178,7 +178,7 @@ contract Dividends {
     }
     
     // if dosend is set to false then the calling function MUST send the fees 
-    // subxtra is to handle the &quot;high LastBalanceWithdrawn bug&quot; 
+    // subxtra is to handle the "high LastBalanceWithdrawn bug" 
     // this bug was caused because the Buyer actually gets a too high LastBalanceWithdrawn;
     // this is a minor bug and could be fixed by adding these funds to the contract (which is usually not a large amount)
     // if the contract gets a lot of divs live then that should not be an issue because any new withdrawal will set it to a right value 
@@ -253,7 +253,7 @@ contract Dividends {
             amount_buyable = maxamount;
         }
         //10000000000000000000,14999999999999
-        //&quot;0xca35b7d915458ef540ade6068dfe2f44e8fa733c&quot;,10000000000000000000,14999999999999
+        //"0xca35b7d915458ef540ade6068dfe2f44e8fa733c",10000000000000000000,14999999999999
         uint256 total_payment = mul(amount_buyable, price) / (uint256(10 ** decimals));
         
         // Let&#39;s buy tokens and actually pay, okay?

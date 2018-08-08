@@ -193,7 +193,7 @@ contract HumanStandardToken is StandardToken {
 
 }
 
-contract GTBToken is HumanStandardToken(3000000000000000000000000000,&quot;GTB&quot;,18,&quot;GTB&quot;){
+contract GTBToken is HumanStandardToken(3000000000000000000000000000,"GTB",18,"GTB"){
  function () public {
         //if ether is sent to this address, send it back.
         throw;

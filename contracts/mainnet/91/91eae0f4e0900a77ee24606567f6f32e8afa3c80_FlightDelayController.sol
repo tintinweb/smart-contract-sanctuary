@@ -180,31 +180,31 @@ contract FlightDelayConstants {
     // DEFINITIONS FOR ROPSTEN AND MAINNET
     string constant ORACLIZE_RATINGS_BASE_URL =
         // ratings api is v1, see https://developer.flightstats.com/api-docs/ratings/v1
-        &quot;[URL] json(https://api.flightstats.com/flex/ratings/rest/v1/json/flight/&quot;;
+        "[URL] json(https://api.flightstats.com/flex/ratings/rest/v1/json/flight/";
     string constant ORACLIZE_RATINGS_QUERY =
-        &quot;?${[decrypt] BJoM0BfTe82RtghrzzCbNA7b9E9tQIX8LtM+pRRh22RfQ5QhnVAv6Kk4SyaMwQKczC7YtinJ/Xm6PZMgKnWN7+/pFUfI2YcxaAW0vYuXJF4zCTxPYXa6j4shhce60AMBeKoZZsgn6Og+olgSpgpfi4MwkmmytwdCLHqat3gGUPklBhM1HR0x}).ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]&quot;;
+        "?${[decrypt] BJoM0BfTe82RtghrzzCbNA7b9E9tQIX8LtM+pRRh22RfQ5QhnVAv6Kk4SyaMwQKczC7YtinJ/Xm6PZMgKnWN7+/pFUfI2YcxaAW0vYuXJF4zCTxPYXa6j4shhce60AMBeKoZZsgn6Og+olgSpgpfi4MwkmmytwdCLHqat3gGUPklBhM1HR0x}).ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]";
     string constant ORACLIZE_STATUS_BASE_URL =
         // flight status api is v2, see https://developer.flightstats.com/api-docs/flightstatus/v2/flight
-        &quot;[URL] json(https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/&quot;;
+        "[URL] json(https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/";
     string constant ORACLIZE_STATUS_QUERY =
         // pattern:
-        &quot;?${[decrypt] BA3YyqF4iMQszBawvgG82bqX3fw7JoWA1thFsboUECR/L8JkBCgvaThg1LcUWbIntosEKs/kvqyzOtvdQfMgjYPV0c6hsq/gKQkmJYILZmLY4SgBebH8g0qbfrrjxF5gEbfCi2qoR6PSxcQzKIjgd4HvAaumlQd4CkJLmY463ymqNN9B8/PL}&utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
+        "?${[decrypt] BA3YyqF4iMQszBawvgG82bqX3fw7JoWA1thFsboUECR/L8JkBCgvaThg1LcUWbIntosEKs/kvqyzOtvdQfMgjYPV0c6hsq/gKQkmJYILZmLY4SgBebH8g0qbfrrjxF5gEbfCi2qoR6PSxcQzKIjgd4HvAaumlQd4CkJLmY463ymqNN9B8/PL}&utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]";
 // <-- prod-mode
 
 // --> test-mode
 //        // DEFINITIONS FOR LOCAL TESTNET
 //        string constant ORACLIZE_RATINGS_BASE_URL =
 //            // ratings api is v1, see https://developer.flightstats.com/api-docs/ratings/v1
-//            &quot;[URL] json(https://api-test.etherisc.com/flex/ratings/rest/v1/json/flight/&quot;;
+//            "[URL] json(https://api-test.etherisc.com/flex/ratings/rest/v1/json/flight/";
 //        string constant ORACLIZE_RATINGS_QUERY =
 //            // for testrpc:
-//            &quot;).ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]&quot;;
+//            ").ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]";
 //        string constant ORACLIZE_STATUS_BASE_URL =
 //            // flight status api is v2, see https://developer.flightstats.com/api-docs/flightstatus/v2/flight
-//            &quot;[URL] json(https://api-test.etherisc.com/flex/flightstatus/rest/v2/json/flight/status/&quot;;
+//            "[URL] json(https://api-test.etherisc.com/flex/flightstatus/rest/v2/json/flight/status/";
 //        string constant ORACLIZE_STATUS_QUERY =
 //            // for testrpc:
-//            &quot;?utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
+//            "?utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]";
 // <-- test-mode
 }
 
@@ -419,7 +419,7 @@ pragma solidity ^0.4.11;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Owned {
 
@@ -472,8 +472,8 @@ contract FlightDelayController is Owned, FlightDelayConstants {
     * Constructor.
     */
     function FlightDelayController() public {
-        registerContract(owner, &quot;FD.Owner&quot;, false);
-        registerContract(address(this), &quot;FD.Controller&quot;, false);
+        registerContract(owner, "FD.Owner", false);
+        registerContract(address(this), "FD.Controller", false);
     }
 
     /**
@@ -483,7 +483,7 @@ contract FlightDelayController is Owned, FlightDelayConstants {
     function transferOwnership(address _newOwner) public onlyOwner {
         require(_newOwner != address(0));
         owner = _newOwner;
-        setContract(_newOwner, &quot;FD.Owner&quot;, false);
+        setContract(_newOwner, "FD.Owner", false);
     }
 
     /**

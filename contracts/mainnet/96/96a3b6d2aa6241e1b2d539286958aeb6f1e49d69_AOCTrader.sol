@@ -3,7 +3,7 @@ pragma solidity ^0.4.19;
 // Axie AOC sell contract. Not affiliated with the game developers. Use at your own risk.
 //
 // BUYERS: to protect against scams:
-// 1) check the price by clicking on &quot;Read smart contract&quot; in etherscan. Two prices are published
+// 1) check the price by clicking on "Read smart contract" in etherscan. Two prices are published
 //     a) price for 1 AOC in wei (1 wei = 10^-18 ETH), and b) number of AOC you get for 1 ETH
 // 2) Make sure you use high enough gas price that your TX confirms within 1 hour, to avoid the scam
 //    detailed below*

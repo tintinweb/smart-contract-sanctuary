@@ -300,7 +300,7 @@ contract BurnableToken is StandardToken {
     ICO CRYPTOCEAN
 */
 contract Token is CappedToken, BurnableToken, Withdrawable {
-    function Token() CappedToken(10000000000 * 1 ether) StandardToken(&quot;CRON&quot;, &quot;CRON&quot;, 18) public {
+    function Token() CappedToken(10000000000 * 1 ether) StandardToken("CRON", "CRON", 18) public {
         
     }
 }

@@ -342,7 +342,7 @@ contract IST20 is StandardToken, DetailedERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -570,7 +570,7 @@ contract IModule {
 
     address public securityToken;
 
-    bytes32 public constant FEE_ADMIN = &quot;FEE_ADMIN&quot;;
+    bytes32 public constant FEE_ADMIN = "FEE_ADMIN";
 
     ERC20 public polyToken;
 
@@ -594,22 +594,22 @@ contract IModule {
     modifier withPerm(bytes32 _perm) {
         bool isOwner = msg.sender == ISecurityToken(securityToken).owner();
         bool isFactory = msg.sender == factory;
-        require(isOwner||isFactory||ISecurityToken(securityToken).checkPermission(msg.sender, address(this), _perm), &quot;Permission check failed&quot;);
+        require(isOwner||isFactory||ISecurityToken(securityToken).checkPermission(msg.sender, address(this), _perm), "Permission check failed");
         _;
     }
 
     modifier onlyOwner {
-        require(msg.sender == ISecurityToken(securityToken).owner(), &quot;Sender is not owner&quot;);
+        require(msg.sender == ISecurityToken(securityToken).owner(), "Sender is not owner");
         _;
     }
 
     modifier onlyFactory {
-        require(msg.sender == factory, &quot;Sender is not factory&quot;);
+        require(msg.sender == factory, "Sender is not factory");
         _;
     }
 
     modifier onlyFactoryOwner {
-        require(msg.sender == IModuleFactory(factory).owner(), &quot;Sender is not factory owner&quot;);
+        require(msg.sender == IModuleFactory(factory).owner(), "Sender is not factory owner");
         _;
     }
 
@@ -622,7 +622,7 @@ contract IModule {
      * @notice used to withdraw the fee by the factory owner
      */
     function takeFee(uint256 _amount) public withPerm(FEE_ADMIN) returns(bool) {
-        require(polyToken.transferFrom(address(this), IModuleFactory(factory).owner(), _amount), &quot;Unable to take fee&quot;);
+        require(polyToken.transferFrom(address(this), IModuleFactory(factory).owner(), _amount), "Unable to take fee");
         return true;
     }
 }
@@ -664,7 +664,7 @@ contract PercentageTransferManager is ITransferManager {
     using SafeMath for uint256;
 
     // Permission key for modifying the whitelist
-    bytes32 public constant WHITELIST = &quot;WHITELIST&quot;;
+    bytes32 public constant WHITELIST = "WHITELIST";
 
     // Maximum percentage that any holder can have, multiplied by 10**16 - e.g. 20% is 20 * 10**16
     uint256 public maxHolderPercentage;
@@ -719,7 +719,7 @@ contract PercentageTransferManager is ITransferManager {
      * @notice This function returns the signature of configure function
      */
     function getInitFunction() public pure returns (bytes4) {
-        return bytes4(keccak256(&quot;configure(uint256)&quot;));
+        return bytes4(keccak256("configure(uint256)"));
     }
 
     /**
@@ -747,7 +747,7 @@ contract PercentageTransferManager is ITransferManager {
     * @param _valids Array of boolean value to decide whether or not the address it to be added or removed from the whitelist
     */
     function modifyWhitelistMulti(address[] _investors, bool[] _valids) public withPerm(WHITELIST) {
-        require(_investors.length == _valids.length, &quot;Input array length mis-match&quot;);
+        require(_investors.length == _valids.length, "Input array length mis-match");
         for (uint i = 0; i < _investors.length; i++) {
             modifyWhitelist(_investors[i], _valids[i]);
         }
@@ -786,10 +786,10 @@ contract PercentageTransferManagerFactory is IModuleFactory {
      */
     function deploy(bytes _data) external returns(address) {
         if(setupCost > 0)
-            require(polyToken.transferFrom(msg.sender, owner, setupCost), &quot;Failed transferFrom because of sufficent Allowance is not provided&quot;);
+            require(polyToken.transferFrom(msg.sender, owner, setupCost), "Failed transferFrom because of sufficent Allowance is not provided");
         PercentageTransferManager percentageTransferManager = new PercentageTransferManager(msg.sender, address(polyToken));
-        require(getSig(_data) == percentageTransferManager.getInitFunction(), &quot;Provided data is not valid&quot;);
-        require(address(percentageTransferManager).call(_data), &quot;Un-successfull call&quot;);
+        require(getSig(_data) == percentageTransferManager.getInitFunction(), "Provided data is not valid");
+        require(address(percentageTransferManager).call(_data), "Un-successfull call");
         emit LogGenerateModuleFromFactory(address(percentageTransferManager), getName(), address(this), msg.sender, now);
         return address(percentageTransferManager);
 
@@ -807,28 +807,28 @@ contract PercentageTransferManagerFactory is IModuleFactory {
      * @notice Get the name of the Module
      */
     function getName() public view returns(bytes32) {
-        return &quot;PercentageTransferManager&quot;;
+        return "PercentageTransferManager";
     }
 
     /**
      * @notice Get the description of the Module
      */
     function getDescription() public view returns(string) {
-        return &quot;Restrict the number of investors&quot;;
+        return "Restrict the number of investors";
     }
 
     /**
      * @notice Get the title of the Module
      */
     function getTitle() public view returns(string) {
-        return &quot;Percentage Transfer Manager&quot;;
+        return "Percentage Transfer Manager";
     }
 
     /**
      * @notice Get the Instructions that helped to used the module
      */
     function getInstructions() public view returns(string) {
-        return &quot;Allows an issuer to restrict the total number of non-zero token holders&quot;;
+        return "Allows an issuer to restrict the total number of non-zero token holders";
     }
 
     /**
@@ -836,8 +836,8 @@ contract PercentageTransferManagerFactory is IModuleFactory {
      */
     function getTags() public view returns(bytes32[]) {
          bytes32[] memory availableTags = new bytes32[](2);
-        availableTags[0] = &quot;Percentage&quot;;
-        availableTags[1] = &quot;Transfer Restriction&quot;;
+        availableTags[0] = "Percentage";
+        availableTags[1] = "Transfer Restriction";
         return availableTags;
     }
 }

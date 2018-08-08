@@ -119,10 +119,10 @@ contract StandardToken is ERC20, SafeMath {
 }
 
 contract pooja is StandardToken {
-  string public constant name = &quot;pooja&quot;;
-  string public constant symbol = &quot;poo&quot;;
+  string public constant name = "pooja";
+  string public constant symbol = "poo";
   uint256 public constant decimals = 18;
-  string public version = &quot;1.0&quot;;
+  string public version = "1.0";
 
   uint256 public constant total = 25 * (10**7) * 10**decimals;   // 20 *10^7 poo total
 

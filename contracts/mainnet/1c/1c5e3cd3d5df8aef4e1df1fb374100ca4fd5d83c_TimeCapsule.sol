@@ -113,8 +113,8 @@ contract TimeCapsule is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TimeCapsule() public {
-        symbol = &quot;TCAP&quot;;
-        name = &quot;TimeCapsuleToken&quot;;
+        symbol = "TCAP";
+        name = "TimeCapsuleToken";
         decimals = 18;
         _totalSupply = 150000000000000000000000000;
         balances[0x75412DB93725447E6A3a9fC0486d8749C7Cefd10] = _totalSupply;

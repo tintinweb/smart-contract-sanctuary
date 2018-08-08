@@ -1,6 +1,6 @@
 pragma solidity ^0.4.21;
 
-//import &quot;./zeppelin/StandardToken.sol&quot;;
+//import "./zeppelin/StandardToken.sol";
 
 /**
  * @title SafeMath
@@ -50,12 +50,12 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -326,9 +326,9 @@ contract VortixTokenUSD is StandardToken, Ownable {
   // FIELDS
 
   // Standard fields used to describe the token
-  string public name = &quot;VortixTokenUSD&quot;;
-  string public symbol = &quot;VTX&quot;;
-  string public version = &quot;H0.1&quot;;
+  string public name = "VortixTokenUSD";
+  string public symbol = "VTX";
+  string public version = "H0.1";
   uint8 public decimals = 8;
 
   // At the start of the token existence token is not transferable

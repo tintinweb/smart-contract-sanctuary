@@ -44,7 +44,7 @@ interface ERC721TokenReceiver {
     /// @param _from The sending address
     /// @param _tokenId The NFT identifier which is being transfered
     /// @param _data Additional data with no specified format
-    /// @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+    /// @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
     ///  unless throwing
   function onERC721Received(address _from, uint256 _tokenId, bytes _data) external returns(bytes4);
 }
@@ -98,7 +98,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -165,19 +165,19 @@ library Strings {
     }
 
     function strConcat(string _a, string _b, string _c, string _d) internal pure returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
 
     function strConcat(string _a, string _b, string _c) internal pure returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
 
     function strConcat(string _a, string _b) internal pure returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 
     function uint2str(uint i) internal pure returns (string) {
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint len;
         while (j != 0){
@@ -206,16 +206,16 @@ interface ERC721Metadata /* is ERC721 */ {
 
     /// @notice A distinct Uniform Resource Identifier (URI) for a given asset.
     /// @dev Throws if `_tokenId` is not a valid NFT. URIs are defined in RFC
-    ///  3986. The URI may point to a JSON file that conforms to the &quot;ERC721
-    ///  Metadata JSON Schema&quot;.
+    ///  3986. The URI may point to a JSON file that conforms to the "ERC721
+    ///  Metadata JSON Schema".
     function tokenURI(uint256 _tokenId) external view returns (string);
 }
 contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   using SafeMath for uint256;
 
-  string public constant NAME = &quot;EtherLoot&quot;;
-  string public constant SYMBOL = &quot;ETLT&quot;;
-  string public tokenMetadataBaseURI = &quot;http://api.etherloot.moonshadowgames.com/tokenmetadata/&quot;;
+  string public constant NAME = "EtherLoot";
+  string public constant SYMBOL = "ETLT";
+  string public tokenMetadataBaseURI = "http://api.etherloot.moonshadowgames.com/tokenmetadata/";
 
   struct AddressAndTokenIndex {
     address owner;
@@ -277,7 +277,7 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   * @param _tokenId uint256 ID of the token to validate its ownership belongs to msg.sender
   */
   modifier onlyOwnerOf(uint256 _tokenId) {
-    require(ownerOf(_tokenId) == msg.sender, &quot;not owner&quot;);
+    require(ownerOf(_tokenId) == msg.sender, "not owner");
     _;
   }
 
@@ -287,7 +287,7 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   * @return uint256 representing the amount owned by the passed address
   */
   function balanceOf(address _owner) public view returns (uint256) {
-    require(_owner != address(0), &quot;null owner&quot;);
+    require(_owner != address(0), "null owner");
     return ownedTokens[_owner].length;
   }
 
@@ -313,7 +313,7 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
     view
     returns (uint256 _tokenId)
   {
-    require(_index < balanceOf(_owner), &quot;invalid index&quot;);
+    require(_index < balanceOf(_owner), "invalid index");
     return ownedTokens[_owner][_index];
   }
 
@@ -324,7 +324,7 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   */
   function ownerOf(uint256 _tokenId) public view returns (address) {
     address _owner = tokenOwnerAndTokensIndex[_tokenId].owner;
-    require(_owner != address(0), &quot;invalid owner&quot;);
+    require(_owner != address(0), "invalid owner");
     return _owner;
   }
 
@@ -398,7 +398,7 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
     onlyOwnerOf(_tokenId)
   {
     address _owner = ownerOf(_tokenId);
-    require(_to != _owner, &quot;already owns&quot;);
+    require(_to != _owner, "already owns");
     if (getApproved(_tokenId) != 0 || _to != 0) {
       tokenApprovals[_tokenId] = _to;
       emit Approval(_owner, _to, _tokenId);
@@ -406,7 +406,7 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   }
 
   /**
-  * @notice Enable or disable approval for a third party (&quot;operator&quot;) to manage all your assets
+  * @notice Enable or disable approval for a third party ("operator") to manage all your assets
   * @dev Emits the ApprovalForAll event
   * @param _to Address to add to the set of authorized operators.
   * @param _approved True if the operators is approved, false to revoke approval
@@ -428,8 +428,8 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   function approveAll(address _to)
     public
   {
-    require(_to != msg.sender, &quot;cant approve yourself&quot;);
-    require(_to != address(0), &quot;invalid owner&quot;);
+    require(_to != msg.sender, "cant approve yourself");
+    require(_to != address(0), "invalid owner");
     operatorApprovals[msg.sender][_to] = true;
     emit ApprovalForAll(msg.sender, _to, true);
   }
@@ -444,7 +444,7 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   function disapproveAll(address _to)
     public
   {
-    require(_to != msg.sender, &quot;cant unapprove yourself&quot;);
+    require(_to != msg.sender, "cant unapprove yourself");
     delete operatorApprovals[msg.sender][_to];
     emit ApprovalForAll(msg.sender, _to, false);
   }
@@ -456,7 +456,7 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   function takeOwnership(uint256 _tokenId)
    external
   {
-    require(isSenderApprovedFor(_tokenId), &quot;not approved&quot;);
+    require(isSenderApprovedFor(_tokenId), "not approved");
     _clearApprovalAndTransfer(ownerOf(_tokenId), msg.sender, _tokenId);
   }
 
@@ -476,8 +476,8 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   {
     address tokenOwner = ownerOf(_tokenId);
     require(isSenderApprovedFor(_tokenId) || 
-      (approvedContractAddresses[msg.sender] && tokenOwner == tx.origin), &quot;not an approved sender&quot;);
-    require(tokenOwner == _from, &quot;wrong owner&quot;);
+      (approvedContractAddresses[msg.sender] && tokenOwner == tx.origin), "not an approved sender");
+    require(tokenOwner == _from, "wrong owner");
     _clearApprovalAndTransfer(ownerOf(_tokenId), _to, _tokenId);
   }
 
@@ -489,7 +489,7 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   * `_tokenId` is not a valid NFT. When transfer is complete, this function
   * checks if `_to` is a smart contract (code size > 0). If so, it calls
   * `onERC721Received` on `_to` and throws if the return value is not
-  * `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`.
+  * `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`.
   * @param _from The current owner of the NFT
   * @param _to The new owner
   * @param _tokenId The NFT to transfer
@@ -503,20 +503,20 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   )
     public
   {
-    require(_to != address(0), &quot;invalid target address&quot;);
+    require(_to != address(0), "invalid target address");
     transferFrom(_from, _to, _tokenId);
     if (_isContract(_to)) {
       bytes4 tokenReceiverResponse = ERC721TokenReceiver(_to).onERC721Received.gas(50000)(
         _from, _tokenId, _data
       );
-      require(tokenReceiverResponse == bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;)), &quot;invalid receiver respononse&quot;);
+      require(tokenReceiverResponse == bytes4(keccak256("onERC721Received(address,uint256,bytes)")), "invalid receiver respononse");
     }
   }
 
   /*
    * @notice Transfers the ownership of an NFT from one address to another address
    * @dev This works identically to the other function with an extra data parameter,
-   *  except this function just sets data to &quot;&quot;
+   *  except this function just sets data to ""
    * @param _from The current owner of the NFT
    * @param _to The new owner
    * @param _tokenId The NFT to transfer
@@ -528,7 +528,7 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   )
     external
   {
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
@@ -566,7 +566,7 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   function mint(address _to, uint256 _tokenId) public {
     require(
       approvedContractAddresses[msg.sender] ||
-      msg.sender == owner, &quot;minter not approved&quot;
+      msg.sender == owner, "minter not approved"
     );
     _mint(_to, _tokenId);
   }
@@ -577,8 +577,8 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   * @param _tokenId uint256 ID of the token to be minted by the msg.sender
   */
   function _mint(address _to, uint256 _tokenId) internal {
-    require(_to != address(0), &quot;invalid target address&quot;);
-    require(tokenOwnerAndTokensIndex[_tokenId].owner == address(0), &quot;token already exists&quot;);
+    require(_to != address(0), "invalid target address");
+    require(tokenOwnerAndTokensIndex[_tokenId].owner == address(0), "token already exists");
     _addToken(_to, _tokenId);
     emit Transfer(0x0, _to, _tokenId);
   }
@@ -590,9 +590,9 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   * @param _tokenId uint256 ID of the token to be transferred
   */
   function _clearApprovalAndTransfer(address _from, address _to, uint256 _tokenId) internal {
-    require(_to != address(0), &quot;invalid target address&quot;);
-    require(_to != ownerOf(_tokenId), &quot;already owns&quot;);
-    require(ownerOf(_tokenId) == _from, &quot;wrong owner&quot;);
+    require(_to != address(0), "invalid target address");
+    require(_to != ownerOf(_tokenId), "already owns");
+    require(ownerOf(_tokenId) == _from, "wrong owner");
 
     _clearApproval(_from, _tokenId);
     _removeToken(_from, _tokenId);
@@ -605,7 +605,7 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   * @param _tokenId uint256 ID of the token to be transferred
   */
   function _clearApproval(address _owner, uint256 _tokenId) private {
-    require(ownerOf(_tokenId) == _owner, &quot;wrong owner&quot;);
+    require(ownerOf(_tokenId) == _owner, "wrong owner");
     if (tokenApprovals[_tokenId] != 0) {
       tokenApprovals[_tokenId] = 0;
       emit Approval(_owner, 0, _tokenId);
@@ -622,7 +622,7 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
     ownedTokens[_to].push(_tokenId);
 
     // I don&#39;t expect anyone to own 4 billion tokens, but just in case...
-    require(newTokenIndex == uint256(uint32(newTokenIndex)), &quot;overflow&quot;);
+    require(newTokenIndex == uint256(uint32(newTokenIndex)), "overflow");
 
     tokenOwnerAndTokensIndex[_tokenId] = AddressAndTokenIndex({owner: _to, tokenIndex: uint32(newTokenIndex)});
   }
@@ -633,7 +633,7 @@ contract ERC721SlimToken is Ownable, ERC721, ERC165, ERC721Metadata {
   * @param _tokenId uint256 ID of the token to be removed from the tokens list of the given address
   */
   function _removeToken(address _from, uint256 _tokenId) private {
-    require(ownerOf(_tokenId) == _from, &quot;wrong owner&quot;);
+    require(ownerOf(_tokenId) == _from, "wrong owner");
 
     uint256 tokenIndex = tokenOwnerAndTokensIndex[_tokenId].tokenIndex;
     uint256 lastTokenIndex = ownedTokens[_from].length.sub(1);
@@ -964,7 +964,7 @@ contract CryptoBoss is ContractAccessControl {
 
     }
 
-    require(winnerIndex < numParticipants, &quot;error in binary search&quot;);
+    require(winnerIndex < numParticipants, "error in binary search");
 
     winnerAddress = encounter.participants[winnerIndex];
   }
@@ -1050,10 +1050,10 @@ contract CryptoBoss is ContractAccessControl {
 
   // constant lookup table
 
-  bytes10 constant elementsAvailableForCommon =     hex&quot;01020408100102040810&quot;;   // Each byte has 1 bit set
-  bytes10 constant elementsAvailableForRare =       hex&quot;030506090A0C11121418&quot;;   // Each byte has 2 bits set
-  bytes10 constant elementsAvailableForEpic =       hex&quot;070B0D0E131516191A1C&quot;;   // 3 bits
-  bytes10 constant elementsAvailableForLegendary =  hex&quot;0F171B1D1E0F171B1D1E&quot;;   // 4 bits
+  bytes10 constant elementsAvailableForCommon =     hex"01020408100102040810";   // Each byte has 1 bit set
+  bytes10 constant elementsAvailableForRare =       hex"030506090A0C11121418";   // Each byte has 2 bits set
+  bytes10 constant elementsAvailableForEpic =       hex"070B0D0E131516191A1C";   // 3 bits
+  bytes10 constant elementsAvailableForLegendary =  hex"0F171B1D1E0F171B1D1E";   // 4 bits
 
   // rarity 0: common (1 element)
   // rarity 1: rare (2 elements)
@@ -1125,7 +1125,7 @@ contract CryptoBoss is ContractAccessControl {
     rarity = Math.min256(rarity, getWeaponRarityFromTokenId(sacrificeTokenId2));
     rarity = Math.min256(rarity, getWeaponRarityFromTokenId(sacrificeTokenId3));
     rarity = Math.min256(rarity, getWeaponRarityFromTokenId(sacrificeTokenId4)) + 1;
-    require(rarity < 5, &quot;cant forge an ultimate weapon&quot;);
+    require(rarity < 5, "cant forge an ultimate weapon");
     return uint8(rarity);
   }
 
@@ -1133,16 +1133,16 @@ contract CryptoBoss is ContractAccessControl {
     uint sacrificeTokenId1, uint sacrificeTokenId2, uint sacrificeTokenId3, uint sacrificeTokenId4) public whenNotPaused payable {
     require(msg.value >= participateFee);  // half goes to dev, half goes to ether pot
 
-    require(encounterId == block.number / encounterBlockDuration, &quot;a new encounter is available&quot;);
+    require(encounterId == block.number / encounterBlockDuration, "a new encounter is available");
 
     Encounter storage encounter = encountersById[encounterId];
 
-    require(encounter.participantData[msg.sender].damage == 0, &quot;you are already participating&quot;);
+    require(encounter.participantData[msg.sender].damage == 0, "you are already participating");
 
     uint damage = 1;
     // weaponTokenId of zero means they are using their fists
     if (weaponTokenId != 0) {
-      require(tokenContract.ownerOf(weaponTokenId) == msg.sender, &quot;you dont own that weapon&quot;);
+      require(tokenContract.ownerOf(weaponTokenId) == msg.sender, "you dont own that weapon");
       damage = weaponTokenIdToDamageForEncounter(weaponTokenId, encounterId);
     }
 
@@ -1187,11 +1187,11 @@ contract CryptoBoss is ContractAccessControl {
     uint lootTokenId;
     uint consolationPrizeTokenId;
     (winnerAddress, lootTokenId, consolationPrizeTokenId, , ,,) = getEncounterResults(encounterId, player);
-    require(winnerAddress == player, &quot;player is not the winner&quot;);
+    require(winnerAddress == player, "player is not the winner");
 
     ParticipantData storage participantData = encountersById[encounterId].participantData[player];
 
-    require(!participantData.lootClaimed, &quot;loot already claimed&quot;);
+    require(!participantData.lootClaimed, "loot already claimed");
 
     participantData.lootClaimed = true;
     tokenContract.mint(player, lootTokenId);
@@ -1199,7 +1199,7 @@ contract CryptoBoss is ContractAccessControl {
     // The winner also gets a consolation prize
     // It&#39;s possible he called claimConsolationPrizeLoot first, so allow that
 
-    require(consolationPrizeTokenId != 0, &quot;consolation prize invalid&quot;);
+    require(consolationPrizeTokenId != 0, "consolation prize invalid");
 
     if (!participantData.consolationPrizeClaimed) {
         participantData.consolationPrizeClaimed = true;
@@ -1237,10 +1237,10 @@ contract CryptoBoss is ContractAccessControl {
 
   function claimConsolationPrizeLoot(uint encounterId, address player) public whenNotPaused {
     uint lootTokenId = getConsolationPrizeTokenId(encounterId, player);
-    require(lootTokenId != 0, &quot;player didnt participate&quot;);
+    require(lootTokenId != 0, "player didnt participate");
 
     ParticipantData storage participantData = encountersById[encounterId].participantData[player];
-    require(!participantData.consolationPrizeClaimed, &quot;consolation prize already claimed&quot;);
+    require(!participantData.consolationPrizeClaimed, "consolation prize already claimed");
 
     participantData.consolationPrizeClaimed = true;
     tokenContract.mint(player, lootTokenId);

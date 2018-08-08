@@ -294,7 +294,7 @@ contract Ownable {
   }
 
   contract InspiriumToken is MintableToken {
-    string public name = &quot;INSPIRIUM&quot;;
-    string public symbol = &quot;INSPIRIUM&quot;;
+    string public name = "INSPIRIUM";
+    string public symbol = "INSPIRIUM";
     uint8 public decimals = 0;
   }

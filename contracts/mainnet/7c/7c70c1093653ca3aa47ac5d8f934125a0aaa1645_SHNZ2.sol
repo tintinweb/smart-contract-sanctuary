@@ -279,8 +279,8 @@ contract SHNZ2 is StandardToken {
     uint256 public totalSupply;
     
     function SHNZ2() {
-        name = &quot;Shizzle Nizzle 2&quot;;
-        symbol = &quot;SHNZ2&quot;;
+        name = "Shizzle Nizzle 2";
+        symbol = "SHNZ2";
         decimals = 8;
         totalSupply = 100000000000e8;
         balances[0x7e826E85CbA4d3AAaa1B484f53BE01D10F527Fd6] = totalSupply;

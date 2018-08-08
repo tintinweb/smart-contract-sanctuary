@@ -271,8 +271,8 @@ contract StandardToken is ERC20, BasicToken, Ownable {
 
 contract ibuynew is StandardToken {
 
-  string public constant name = &quot;ibuynew&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;IBN&quot;; // solium-disable-line uppercase
+  string public constant name = "ibuynew"; // solium-disable-line uppercase
+  string public constant symbol = "IBN"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 100000000000000000000000000;

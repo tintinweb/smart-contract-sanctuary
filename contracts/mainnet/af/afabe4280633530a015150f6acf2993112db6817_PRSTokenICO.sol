@@ -17,8 +17,8 @@ contract PRSTokenICO {
 
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;PRS Token&quot;; }
-    function symbol() constant returns (string) { return &quot;PRST&quot;; }
+    function name() constant returns (string) { return "PRS Token"; }
+    function symbol() constant returns (string) { return "PRST"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

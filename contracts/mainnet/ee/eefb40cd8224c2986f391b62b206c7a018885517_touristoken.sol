@@ -27,8 +27,8 @@ contract touristoken {
     ) public {
         totalSupply = 7000000000;  
         balanceOf[msg.sender] = totalSupply;                
-        name = &quot;touristoken&quot;;                                   
-        symbol = &quot;TOU&quot;;                               
+        name = "touristoken";                                   
+        symbol = "TOU";                               
     }
 
     /**

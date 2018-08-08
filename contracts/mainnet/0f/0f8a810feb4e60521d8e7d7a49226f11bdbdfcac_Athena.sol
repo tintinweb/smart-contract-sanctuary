@@ -113,8 +113,8 @@ contract Athena is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Athena() public {
-        symbol = &quot;ATH&quot;;
-        name = &quot;Athena&quot;;
+        symbol = "ATH";
+        name = "Athena";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x4AdEA04025aCdB241E1fe821fF59104788B20dc1] = _totalSupply;

@@ -70,7 +70,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -320,8 +320,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract ParkresToken is StandardToken {
 
-  string public constant name = &quot;ParkresToken&quot;;
-  string public constant symbol = &quot;PARK&quot;;
+  string public constant name = "ParkresToken";
+  string public constant symbol = "PARK";
   uint256 public constant decimals = 8;
 
   uint256 public constant INITIAL_SUPPLY = 200000000 * 10**8;

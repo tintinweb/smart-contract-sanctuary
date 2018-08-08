@@ -21,7 +21,7 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 
 contract token {
     /* Public variables of the token */
-    string public standard = &quot;DestiNeed 1.0&quot;;
+    string public standard = "DestiNeed 1.0";
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -106,8 +106,8 @@ contract DestiNeedToken is owned, token {
     /* Initializes contract with initial supply tokens to the creator of the contract */
     uint256 public constant initialSupply = 950000000 * 10**18;
     uint8 public constant decimalUnits = 18;
-    string public tokenName = &quot;DestiNeed&quot;;
-    string public tokenSymbol = &quot;DSN&quot;;
+    string public tokenName = "DestiNeed";
+    string public tokenSymbol = "DSN";
     function DestiNeedToken() token (initialSupply, tokenName, decimalUnits, tokenSymbol) {}
      /* Send coins */
     function transfer(address _to, uint256 _value) {

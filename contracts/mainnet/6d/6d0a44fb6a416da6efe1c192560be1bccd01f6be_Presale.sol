@@ -3,7 +3,7 @@ pragma solidity ^0.4.19;
 /**
  * https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/ownership/Ownable.sol
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  * license: MIT
  */
 contract OwnableSimple {
@@ -610,7 +610,7 @@ contract Presale is OwnableSimple, RandomApi, ERC721 {
         require(_tokenId < totalSupply());
 
         strings.slice memory tokenIdSlice = _uintToBytes(_tokenId).toSliceB32();
-        return &quot;/http/etherwaifu.com/presale/artwork/&quot;.toSlice().concat(tokenIdSlice);
+        return "/http/etherwaifu.com/presale/artwork/".toSlice().concat(tokenIdSlice);
     }
 
     // Author: pipermerriam
@@ -734,7 +734,7 @@ contract Presale is OwnableSimple, RandomApi, ERC721 {
     }
 
     function tokenMetadata(uint256 _tokenId) external view returns (string infoUrl) {
-        return _tokenMetadata(_tokenId, &quot;http&quot;);
+        return _tokenMetadata(_tokenId, "http");
     }
 
     // ERC-165 Standard interface detection (required)

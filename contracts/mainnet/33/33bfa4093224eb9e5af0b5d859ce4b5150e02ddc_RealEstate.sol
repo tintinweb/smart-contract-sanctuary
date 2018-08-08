@@ -15,8 +15,8 @@ contract RealEstate{
     function RealEstate() public {
         totalSupply = 100000000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Real Estate Token&quot;;
-        symbol = &quot;RET&quot;;
+        name = "Real Estate Token";
+        symbol = "RET";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

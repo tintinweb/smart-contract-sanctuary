@@ -18,8 +18,8 @@ contract BlockpassToken {
   uint256 public totalSupply = 0;
   uint256 public startingBlock = block.number;
 
-  function name() constant returns (string) { return &quot;Blockpass Token&quot;; }
-  function symbol() constant returns (string) { return &quot;BPT&quot;; }
+  function name() constant returns (string) { return "Blockpass Token"; }
+  function symbol() constant returns (string) { return "BPT"; }
   function decimals() constant returns (uint8) { return 18; }
 
   function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

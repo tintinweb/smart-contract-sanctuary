@@ -94,8 +94,8 @@ contract ERC223BasicToken is ERC223Basic {
 
 contract Doge2Token is ERC223BasicToken {
 
-  string public name = &quot;Doge2 Token&quot;;
-  string public symbol = &quot;DOGE2&quot;;
+  string public name = "Doge2 Token";
+  string public symbol = "DOGE2";
   uint256 public decimals = 8;
   uint256 public INITIAL_SUPPLY = 200000000000000;
   

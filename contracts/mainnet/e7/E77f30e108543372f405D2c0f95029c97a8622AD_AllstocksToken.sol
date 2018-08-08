@@ -100,8 +100,8 @@ contract Owned {
 contract StandardToken is ERC20Interface, Owned {
     using SafeMath for uint256;
 
-    string public constant symbol = &quot;ast&quot;;
-    string public constant name = &quot;AllStocks Token&quot;;
+    string public constant symbol = "ast";
+    string public constant name = "AllStocks Token";
     uint256 public constant decimals = 18;
     uint256 public _totalSupply;
 
@@ -214,7 +214,7 @@ contract StandardToken is ERC20Interface, Owned {
 // note introduced onlyPayloadSize in StandardToken.sol to protect against short address attacks
 
 contract AllstocksToken is StandardToken {
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     // contracts
     address public ethFundDeposit;        // deposit address for ETH for Allstocks Fund

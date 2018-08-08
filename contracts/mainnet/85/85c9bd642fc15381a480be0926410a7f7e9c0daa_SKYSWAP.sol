@@ -113,8 +113,8 @@ contract SKYSWAP is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SKYSWAP() public {
-        symbol = &quot;SKS&quot;;
-        name = &quot;SKYSWAP&quot;;
+        symbol = "SKS";
+        name = "SKYSWAP";
         decimals = 2;
         _totalSupply = 6000000000;
         balances[0x05Deeae8D57238896882f26421dC71f50e2EaC99] = _totalSupply;

@@ -3,7 +3,7 @@ pragma solidity ^0.4.24;
 /**
 * @title Ownable
 * @dev The Ownable contract has an owner address, and provides basic authorization control
-* functions, this simplifies the implementation of &quot;user permissions&quot;.
+* functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
     address public owner;
@@ -93,9 +93,9 @@ interface tokenRecipient {
 contract Gamblr is Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;Gamblr&quot;;
+    string public name = "Gamblr";
     uint8 public decimals = 3;
-    string public symbol = &quot;GMBL&quot;;
+    string public symbol = "GMBL";
     uint public totalSupply = 10000000000;
 
     mapping (address => uint256) public balances;

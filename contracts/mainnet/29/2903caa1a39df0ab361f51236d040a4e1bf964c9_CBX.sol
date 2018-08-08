@@ -28,8 +28,8 @@ contract CBX {
     ) public {
         totalSupply = 25000000000;                                                 // Update total supply with the decimal amount
         balanceOf[msg.sender] = 25000000000;                                       // Give the creator all initial tokens
-        name = &quot;CHUBEX&quot;;                                                           // Set the name for display purposes
-        symbol = &quot;CBX&quot;;                                                            // Set the symbol for display purposes
+        name = "CHUBEX";                                                           // Set the name for display purposes
+        symbol = "CBX";                                                            // Set the symbol for display purposes
     }
 
     /**

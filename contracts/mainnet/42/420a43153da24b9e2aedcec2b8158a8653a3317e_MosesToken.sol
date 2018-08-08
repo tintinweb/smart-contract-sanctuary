@@ -250,8 +250,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract MosesToken is PausableToken {
-    string public name = &quot;Moses&quot;;
-    string public symbol = &quot;MOS&quot;;
+    string public name = "Moses";
+    string public symbol = "MOS";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 1000000000000000000000000000;
 

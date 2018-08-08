@@ -215,7 +215,7 @@ contract TGCTokenBase is ERC20 {
 
 contract TGCToken is TGCTokenBase {
 
-    function TGCToken() TGCTokenBase(100000000000, &quot;TGCToken&quot;, &quot;TGC&quot;, 18) public {
+    function TGCToken() TGCTokenBase(100000000000, "TGCToken", "TGC", 18) public {
 
     }
 }

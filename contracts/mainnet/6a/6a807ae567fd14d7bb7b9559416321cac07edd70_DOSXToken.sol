@@ -113,8 +113,8 @@ contract DOSXToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DOSXToken() public {
-        symbol = &quot;DOSX&quot;;
-        name = &quot;DOSXToken&quot;;
+        symbol = "DOSX";
+        name = "DOSXToken";
         decimals = 18;
         _totalSupply = 12000000000000000000000000;
         balances[0xF58a749AB4929b462F33b8A07f1e3b568ed8eC43] = _totalSupply;

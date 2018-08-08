@@ -84,8 +84,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
 
     function FixedSupplyToken() public {
-        symbol = &quot;CLZ&quot;;
-        name = &quot;CASINOLIZE&quot;;
+        symbol = "CLZ";
+        name = "CASINOLIZE";
         decimals = 8;
         _totalSupply = 21000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

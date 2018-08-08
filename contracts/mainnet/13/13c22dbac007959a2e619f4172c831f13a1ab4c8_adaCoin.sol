@@ -48,8 +48,8 @@ contract adaCoin is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;ada&quot;;
-    string public constant symbol = &quot;ada&quot;;
+    string public constant name = "ada";
+    string public constant symbol = "ada";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 45000000000e8;
@@ -263,7 +263,7 @@ contract adaCoin is ERC20 {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
         
-        require(_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 

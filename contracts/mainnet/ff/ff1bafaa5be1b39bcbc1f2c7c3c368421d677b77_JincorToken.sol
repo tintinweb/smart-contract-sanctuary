@@ -35,7 +35,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -272,8 +272,8 @@ contract Burnable is StandardToken {
  */
 contract JincorToken is Burnable, Ownable {
 
-  string public name = &quot;Jincor Token&quot;;
-  string public symbol = &quot;JCR&quot;;
+  string public name = "Jincor Token";
+  string public symbol = "JCR";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 35000000 * 1 ether;
 

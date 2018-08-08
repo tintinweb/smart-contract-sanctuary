@@ -101,8 +101,8 @@ contract Interface {
 contract Registrar {
 
 	// Patron token ERC20 public variables
-	string public constant symbol = &quot;ART&quot;;
-	string public constant name = &quot;Patron - Ethart Network Token&quot;;
+	string public constant symbol = "ART";
+	string public constant name = "Patron - Ethart Network Token";
 	uint8 public constant decimals = 18;
 	uint256 _totalPatronSupply;
 
@@ -147,7 +147,7 @@ contract Registrar {
 
 	// Send _value amount of tokens from address _from to address _to
 	// The transferFrom method is used for a withdraw workflow, allowing contracts to send
- 	// tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+ 	// tokens on your behalf, for example to "deposit" to a contract address and/or to charge
  	// fees in sub-currencies; the command should fail unless the _from account has
  	// deliberately authorized the sender of the message via some mechanism; we propose
  	// these standardized APIs for approval:
@@ -438,7 +438,7 @@ contract Registrar {
 			if (!approvedContracts[msg.sender]) {throw;}						// use donate () for donations and you will get donationMultiplier * your donation in Patron tokens. Yay!
 		}
 
-	// Semi uinversal call function for unforseen future Ethart network contract types and use cases. String format: &quot;<functionName>(address,address,uint256,uint256,bool,string,bytes32)&quot;
+	// Semi uinversal call function for unforseen future Ethart network contract types and use cases. String format: "<functionName>(address,address,uint256,uint256,bool,string,bytes32)"
 	function callContractFunctionByAddress(address _contract, string functionNameAndTypes, address _address1, address _address2, uint256 _value1, uint256 _value2, bool _bool, string _string, bytes32 _bytes32) onlyBy (owner)
 	{
 		if(!_contract.call(bytes4(sha3(functionNameAndTypes)),_address1, _address2, _value1, _value2, _bool, _string, _bytes32)) {throw;}

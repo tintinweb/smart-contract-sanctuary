@@ -115,8 +115,8 @@ contract JellyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;JLY&quot;;
-        name = &quot;Jelly Token&quot;;
+        symbol = "JLY";
+        name = "Jelly Token";
         decimals = 18;
         _totalSupply = 1000000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

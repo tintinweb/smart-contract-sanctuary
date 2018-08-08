@@ -157,7 +157,7 @@ contract Storage {
             owner: owner,
             gid: gid, zIndex: zIndex, box: box, inbox: inbox,
             stype: stype, color: color,
-            price: price, sell: 0, deleted: false, name: &quot;&quot;, message: &quot;&quot;
+            price: price, sell: 0, deleted: false, name: "", message: ""
         });
         uint256 starId = stars.push(_star) - 1;
         placeStar(gid, zIndex, box, starId);
@@ -185,7 +185,7 @@ contract Storage {
     function setStarDeleted(uint256 starId) internal {
         stars[starId].deleted = true;
         setStarSellPrice(starId, 0);
-        setStarNameMessage(starId, &quot;&quot;, &quot;&quot;);
+        setStarNameMessage(starId, "", "");
         setStarNewOwner(starId, address(0));
 
         Star storage _star = stars[starId];
@@ -399,7 +399,7 @@ contract Stars is Control, Validation {
     function Stars() public {
         // Add star with zero index
         uint256 starId = addStar(address(0), 0, 0, 0, 0, 0, 0, 0);
-        setStarNameMessage(starId, &quot;Universe&quot;, &quot;Big Bang!&quot;);
+        setStarNameMessage(starId, "Universe", "Big Bang!");
     }
 
 

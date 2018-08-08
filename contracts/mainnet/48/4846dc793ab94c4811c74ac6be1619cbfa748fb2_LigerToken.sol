@@ -252,8 +252,8 @@ contract Owned {
 }
 
 contract LigerToken is BurnableToken {
-    string public constant name = &quot;LIGER&quot;;
-    string public constant symbol = &quot;LIC&quot;;
+    string public constant name = "LIGER";
+    string public constant symbol = "LIC";
     uint8 public constant decimals = 18;
 
     /// Maximum tokens to be allocated (2.7 billion LIC)

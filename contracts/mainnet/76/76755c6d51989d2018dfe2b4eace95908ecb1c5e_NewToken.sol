@@ -90,10 +90,10 @@ contract ERC20Standard {
 contract NewToken is ERC20Standard {
 	function NewToken() {
 		totalSupply = 10000000000000000000000000;
-		name = &quot;Crypto Chance Token&quot;;
+		name = "Crypto Chance Token";
 		decimals = 18;
-		symbol = &quot;CCHT&quot;;
-		version = &quot;1.0&quot;;
+		symbol = "CCHT";
+		version = "1.0";
 		balances[msg.sender] = totalSupply;
 		Transfer(0x0, msg.sender, totalSupply);
 	}

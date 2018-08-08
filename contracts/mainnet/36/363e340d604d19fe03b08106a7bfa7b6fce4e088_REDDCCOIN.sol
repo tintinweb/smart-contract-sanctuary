@@ -23,8 +23,8 @@ contract  REDDCCOIN{
     function REDDCCOIN() {
         balanceOf[msg.sender] =  210000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  210000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;RED DEER COIN&quot;;                                   // Set the name for display purposes
-        symbol = &quot;REDDC&quot;;                               // Set the symbol for display purposes
+        name = "RED DEER COIN";                                   // Set the name for display purposes
+        symbol = "REDDC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

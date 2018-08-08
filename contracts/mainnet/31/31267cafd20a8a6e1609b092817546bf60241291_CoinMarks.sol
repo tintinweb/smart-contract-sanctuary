@@ -66,8 +66,8 @@ contract CoinMarks is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Coin Marks&quot;;
-    string public constant symbol = &quot;COIN&quot;;
+    string public constant name = "Coin Marks";
+    string public constant symbol = "COIN";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000e8;

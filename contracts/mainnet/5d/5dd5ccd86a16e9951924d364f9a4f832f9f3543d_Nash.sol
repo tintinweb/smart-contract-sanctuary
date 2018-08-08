@@ -100,8 +100,8 @@ contract Nash is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;NASH&quot;;
-        name = &quot;Nash Network&quot;;
+        symbol = "NASH";
+        name = "Nash Network";
         decimals = 18;
         _totalSupply = 100000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

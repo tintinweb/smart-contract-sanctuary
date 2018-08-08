@@ -33,7 +33,7 @@ contract ReentrancyGuard {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -86,7 +86,7 @@ contract BitcoineumInterface {
 
 contract SharkPool is Ownable, ReentrancyGuard {
 
-    string constant public pool_name = &quot;SharkPool 200&quot;;
+    string constant public pool_name = "SharkPool 200";
 
     // Percentage of BTE pool takes for operations
     uint256 public pool_percentage = 5;

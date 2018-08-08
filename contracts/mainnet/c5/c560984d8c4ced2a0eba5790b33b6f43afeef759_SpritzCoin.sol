@@ -254,8 +254,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract SpritzCoin is BurnableToken, StandardToken
 {
-  string constant public name = &quot;SpritzCoin&quot;;
-  string constant public symbol = &quot;SPRTZ&quot;;
+  string constant public name = "SpritzCoin";
+  string constant public symbol = "SPRTZ";
   uint256 constant public decimals = 18;
   uint256 constant public initialSupply = 36500000000 ether;
 

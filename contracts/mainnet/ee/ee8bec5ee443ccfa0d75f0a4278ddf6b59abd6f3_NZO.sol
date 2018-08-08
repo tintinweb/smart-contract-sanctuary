@@ -124,8 +124,8 @@ contract NZO is ERC20Interface, Owned {
 	// Starting cost: 0.10 USD for 1 token.
 	// ------------------------------------------------------------------------
 	constructor() public {
-		symbol                = &quot;NZO&quot;;
-		name                  = &quot;Non-Zero&quot;;
+		symbol                = "NZO";
+		name                  = "Non-Zero";
 		decimals              = 18;
 		_totalSupply          = 900000000 * 10**uint(decimals);
 		releasedSupply        = 0;
@@ -173,7 +173,7 @@ contract NZO is ERC20Interface, Owned {
 	}
 
 	// ------------------------------------------------------------------------
-	// Increase total supply (&quot;issue&quot; new tokens)
+	// Increase total supply ("issue" new tokens)
 	// ------------------------------------------------------------------------
 	function increaseTotalSupply(uint tokens) public onlyOwner returns (bool success) {
 		require(!supplyLocked);

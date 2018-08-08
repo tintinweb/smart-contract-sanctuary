@@ -204,7 +204,7 @@ contract CATContract is Ownable, Pausable {
 	// Limits all transactions to a small amount to avoid financial risk with early code
 	uint public ethPerTransactionLimit = 0.1 ether;
 	string public contractName;
-	string public versionIdent = &quot;0.1.0&quot;;
+	string public versionIdent = "0.1.0";
 
 	event ContractDeployed(address indexed byWho);
 	event ContractFeeChanged(uint oldFee, uint newFee);
@@ -341,7 +341,7 @@ contract SecurityDeposit is CATContract {
     }
 
     // Chain constructor to pass along CAT payment address, and contract name
-    function SecurityDeposit(address _catPaymentCollector) CATContract(_catPaymentCollector, &quot;Security Deposit&quot;) {}
+    function SecurityDeposit(address _catPaymentCollector) CATContract(_catPaymentCollector, "Security Deposit") {}
     
     function createNewSecurityDeposit(string _ownerNote, string _depositPurpose, uint _depositAmount) external blockCatEntryPoint whenNotPaused returns (uint currentId) {
         // Deposit can&#39;t be greater than maximum allowed for each user

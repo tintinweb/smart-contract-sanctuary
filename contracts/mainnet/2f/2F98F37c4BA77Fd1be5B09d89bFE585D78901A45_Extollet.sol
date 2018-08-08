@@ -71,8 +71,8 @@ contract SofiaToken is ERC20Interface,Controlled {
      * @param _totalSupply Total supply of tokens
      */
     constructor(uint _totalSupply) public {
-      symbol = &quot;SFX&quot;;
-      name = &quot;Sofia Token&quot;;
+      symbol = "SFX";
+      name = "Sofia Token";
       decimals = 18;
       totalSupply = _totalSupply  * (1 ether);
       balances[msg.sender] = totalSupply; //transfer all Tokens to contract creator
@@ -231,7 +231,7 @@ contract Extollet is Controlled {
       totalCollected = 0;
       totalTokensSold = 0;
       tokenContract = SofiaToken(_tokenAddress); //The Deployed Token Contract
-      name = &quot;Extollet&quot;;
+      name = "Extollet";
       }
 
   /*

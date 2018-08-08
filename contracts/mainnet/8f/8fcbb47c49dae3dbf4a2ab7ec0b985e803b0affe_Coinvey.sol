@@ -107,8 +107,8 @@ contract Coinvey is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;CAWA&quot;;
-        name = &quot;Coin Awards&quot;;
+        symbol = "CAWA";
+        name = "Coin Awards";
         decimals = 18;
         _totalSupply = 8 * 10 ** 25;
         balances[msg.sender] = 0.8 * 10 ** 25; // Team Reserve

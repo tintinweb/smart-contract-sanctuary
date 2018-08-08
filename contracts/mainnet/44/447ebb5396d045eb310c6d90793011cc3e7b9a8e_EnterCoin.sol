@@ -113,8 +113,8 @@ contract EnterCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EnterCoin() public {
-        symbol = &quot;ENTRC&quot;;
-        name = &quot;EnterCoin&quot;;
+        symbol = "ENTRC";
+        name = "EnterCoin";
         decimals = 8;
         _totalSupply = 10000000000000000;
         balances[0xceFa641734Fd5d409fBE973a89E333d3B2a6F660] = _totalSupply;

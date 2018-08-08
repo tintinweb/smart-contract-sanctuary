@@ -124,8 +124,8 @@ contract Ethernational is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Ethernational() public {
-        symbol = &quot;EIT&quot;;
-        name = &quot;Ethernational&quot;;
+        symbol = "EIT";
+        name = "Ethernational";
         decimals = 18;
         bonus1Ends = now + 1 weeks;
         bonus2Ends = now + 2 weeks;

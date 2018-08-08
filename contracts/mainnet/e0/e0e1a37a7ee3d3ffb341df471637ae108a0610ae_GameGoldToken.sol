@@ -35,7 +35,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 
 
@@ -116,8 +116,8 @@ contract GameGoldTokenStandard {
 contract GameGoldToken is ERC20,GameGoldTokenStandard,Ownable {
     using SafeMath for uint256;
 
-    string constant name = &quot;Game Gold Token&quot;;
-    string constant symbol = &quot;GGT&quot;;
+    string constant name = "Game Gold Token";
+    string constant symbol = "GGT";
     uint constant decimals = 18;
 
     uint public chainStartTime; //chain start time

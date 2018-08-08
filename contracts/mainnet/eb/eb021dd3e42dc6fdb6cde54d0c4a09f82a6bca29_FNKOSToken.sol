@@ -6,8 +6,8 @@ pragma solidity ^0.4.18;
 // Telegram community: https://t.me/fnkofficial
 //
 contract FNKOSToken {   
-    string public constant name         = &quot;FNKOSToken&quot;;
-    string public constant symbol       = &quot;FNKOS&quot;;
+    string public constant name         = "FNKOSToken";
+    string public constant symbol       = "FNKOS";
     uint public constant decimals       = 18;
     
     uint256 fnkEthRate                  = 10 ** decimals;

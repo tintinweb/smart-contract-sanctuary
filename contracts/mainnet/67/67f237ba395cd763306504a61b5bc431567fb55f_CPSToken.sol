@@ -109,8 +109,8 @@ contract CPSToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CPSToken() public {
-        symbol = &quot;CPS&quot;;
-        name = &quot;CryptoSuite Token&quot;;
+        symbol = "CPS";
+        name = "CryptoSuite Token";
         decimals = 18;
         _totalSupply = 1250000000000000000000000000;
         balances[0x83d9675D2C603f3F3Be7CE0379b7e74FD75a923f] = _totalSupply;

@@ -19,9 +19,9 @@ contract Token{
 
 contract LDXCToken is Token {
 
-    string public constant name = &quot;Little Dragon Xia Coin&quot;;                   
+    string public constant name = "Little Dragon Xia Coin";                   
     uint8 public constant decimals = 2; 
-    string public constant symbol = &quot;LDXC&quot;;
+    string public constant symbol = "LDXC";
 
     function LDXCToken(uint256 _initialAmount) public {
         totalSupply = _initialAmount * 10 ** uint256(decimals); 

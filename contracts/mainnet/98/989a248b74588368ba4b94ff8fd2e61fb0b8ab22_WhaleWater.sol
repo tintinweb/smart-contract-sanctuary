@@ -112,9 +112,9 @@ contract WhaleWater {
     */
 
     //first step of any good idea is a name 
-    string public constant name = &quot;Whale Water&quot;;
+    string public constant name = "Whale Water";
     //and of course after a name, we need a code name.
-    string public constant symbol = &quot;IPA&quot;;
+    string public constant symbol = "IPA";
     //Then determine brewing capacity
     uint256 public totalSupply = 501;
     //and keep them to a whole amount... no need for a hundreth of a whale

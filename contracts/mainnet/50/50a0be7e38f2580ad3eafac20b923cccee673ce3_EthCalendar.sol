@@ -31,31 +31,31 @@ contract EthCalendar {
 
     // Ensures sender is the contract owner
     modifier onlyContractOwner() {
-        require(msg.sender == contractOwner, &quot;sender must be contract owner&quot;);
+        require(msg.sender == contractOwner, "sender must be contract owner");
         _;
     }
 
     // Ensures dayid is in valid range
     modifier onlyValidDay (uint16 dayId) {
-        require(dayId >= 0 && dayId <= 365, &quot;day id must be between 0 and 365&quot;);
+        require(dayId >= 0 && dayId <= 365, "day id must be between 0 and 365");
         _;
     }
 
     // Ensures sender is the owner of a specific day
     modifier onlyDayOwner(uint16 dayId) {
-        require(msg.sender == dayStructs[dayId].owner, &quot;sender must be owner of day&quot;);
+        require(msg.sender == dayStructs[dayId].owner, "sender must be owner of day");
         _;
     }
 
     // Ensures sender is not the owner of a specific day
     modifier notDayOwner(uint16 dayId) {
-        require(msg.sender != dayStructs[dayId].owner, &quot;sender can&#39;t be owner of day&quot;);
+        require(msg.sender != dayStructs[dayId].owner, "sender can&#39;t be owner of day");
         _;
     }
 
     // Ensures message is of a valid length
     modifier onlyValidMessage(string message) {
-        require(bytes(message).length > 0, &quot;message has to be set&quot;);
+        require(bytes(message).length > 0, "message has to be set");
         _;
     }
 
@@ -64,7 +64,7 @@ contract EthCalendar {
     // Into baseprice the buyprice needs to be passed. This could be either msg.value or a stored value from previous tx.
     modifier onlyValidSellprice(uint256 sellprice, uint256 baseprice) {
         // Set the moving maximum to twice the paid amount
-        require(sellprice > 0 && sellprice <= baseprice * 2, &quot;new sell price must be lower than or equal to twice the paid price&quot;);
+        require(sellprice > 0 && sellprice <= baseprice * 2, "new sell price must be lower than or equal to twice the paid price");
         _;
     }
 
@@ -72,7 +72,7 @@ contract EthCalendar {
     modifier onlySufficientPayment(uint16 dayId) {
         // The current price needs to be covered by the sent amount.
         // It is possible to pay more than needed.
-        require(msg.value >= getCurrentPrice(dayId), &quot;tx value must be greater than or equal to price of day&quot;);
+        require(msg.value >= getCurrentPrice(dayId), "tx value must be greater than or equal to price of day");
         _;
     }
 

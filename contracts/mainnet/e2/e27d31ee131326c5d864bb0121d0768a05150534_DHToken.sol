@@ -80,8 +80,8 @@ contract DHToken is UnboundedRegularToken {
 
     uint public constant totalSupply = 525*10**25;
     uint8 public constant decimals = 18;
-    string public constant name = &quot;DHToken&quot;;
-    string public constant symbol = &quot;DHT&quot;;
+    string public constant name = "DHToken";
+    string public constant symbol = "DHT";
 
     constructor() public {
         balances[msg.sender] = totalSupply;

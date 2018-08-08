@@ -42,7 +42,7 @@ interface ERC721 /* is ERC165 */ {
     ///  `_tokenId` is not a valid NFT. When transfer is complete, this function
     ///  checks if `_to` is a smart contract (code size > 0). If so, it calls
     ///  `onERC721Received` on `_to` and throws if the return value is not
-    ///  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`.
+    ///  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`.
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -51,7 +51,7 @@ interface ERC721 /* is ERC165 */ {
 
     /// @notice Transfers the ownership of an NFT from one address to another address
     /// @dev This works identically to the other function with an extra data parameter,
-    ///  except this function just sets data to &quot;&quot;
+    ///  except this function just sets data to ""
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -77,7 +77,7 @@ interface ERC721 /* is ERC165 */ {
     /// @param _tokenId The NFT to approve
     function approve(address _approved, uint256 _tokenId) external;
 
-    /// @notice Enable or disable approval for a third party (&quot;operator&quot;) to manage
+    /// @notice Enable or disable approval for a third party ("operator") to manage
     ///  all your assets.
     /// @dev Throws unless `msg.sender` is the current NFT owner.
     /// @dev Emits the ApprovalForAll event
@@ -136,8 +136,8 @@ interface ERC721Metadata /* is ERC721 */ {
 
     /// @notice A distinct Uniform Resource Identifier (URI) for a given asset.
     /// @dev Throws if `_tokenId` is not a valid NFT. URIs are defined in RFC
-    ///  3986. The URI may point to a JSON file that conforms to the &quot;ERC721
-    ///  Metadata JSON Schema&quot;.
+    ///  3986. The URI may point to a JSON file that conforms to the "ERC721
+    ///  Metadata JSON Schema".
     function tokenURI(uint256 _tokenId) external view returns (string);
 }
 
@@ -152,7 +152,7 @@ interface ERC721TokenReceiver {
     /// @param _from The sending address 
     /// @param _tokenId The NFT identifier which is being transferred
     /// @param data Additional data with no specified format
-    /// @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+    /// @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
     ///  unless throwing
     function onERC721Received(address _from, uint256 _tokenId, bytes data) external returns(bytes4);
 }
@@ -412,7 +412,7 @@ interface PartialOwnership {
 /**
  * Ethergotchi Ownership Contract
  *
- * This contract governs the &quot;non-fungible tokens&quot; (NFTs) that represent the
+ * This contract governs the "non-fungible tokens" (NFTs) that represent the
  * various Ethergotchi owned by players within Aethia.
  *
  * The NFTs are implemented according to the standard described in EIP-721 as
@@ -439,7 +439,7 @@ contract EthergotchiOwnershipV2 is
     // with the enumeration methods described in the ERC721Enumerable interface.
     mapping(address => uint256[]) private tokenIdsByOwner;
 
-    // Mapping that keeps track of a token&quot;s position in an owner&quot;s list of
+    // Mapping that keeps track of a token"s position in an owner"s list of
     // tokens. This allows for constant time look-ups within the list, instead
     // of needing to iterate the list of tokens.
     mapping(uint256 => uint256) private ownerTokenIndexByTokenId;
@@ -464,7 +464,7 @@ contract EthergotchiOwnershipV2 is
     // implements the `supportsInterface` method to check whether other types
     // of standard interfaces are supported.
     bytes4 private constant INTERFACE_SIGNATURE_ERC165 = bytes4(
-        keccak256(&quot;supportsInterface(bytes4)&quot;)
+        keccak256("supportsInterface(bytes4)")
     );
 
     // The ERC-165 identifier of the ERC-721 interface. This contract
@@ -472,15 +472,15 @@ contract EthergotchiOwnershipV2 is
     // this identifier to supply the correct answer to a call to
     // `supportsInterface`.
     bytes4 private constant INTERFACE_SIGNATURE_ERC721 = bytes4(
-        keccak256(&quot;balanceOf(address)&quot;) ^
-        keccak256(&quot;ownerOf(uint256)&quot;) ^
-        keccak256(&quot;safeTransferFrom(address,address,uint256,bytes)&quot;) ^
-        keccak256(&quot;safeTransferFrom(address,address,uint256)&quot;) ^
-        keccak256(&quot;transferFrom(address,address,uint256)&quot;) ^
-        keccak256(&quot;approve(address,uint256)&quot;) ^
-        keccak256(&quot;setApprovalForAll(address,bool)&quot;) ^
-        keccak256(&quot;getApproved(uint256)&quot;) ^
-        keccak256(&quot;isApprovedForAll(address,address)&quot;)
+        keccak256("balanceOf(address)") ^
+        keccak256("ownerOf(uint256)") ^
+        keccak256("safeTransferFrom(address,address,uint256,bytes)") ^
+        keccak256("safeTransferFrom(address,address,uint256)") ^
+        keccak256("transferFrom(address,address,uint256)") ^
+        keccak256("approve(address,uint256)") ^
+        keccak256("setApprovalForAll(address,bool)") ^
+        keccak256("getApproved(uint256)") ^
+        keccak256("isApprovedForAll(address,address)")
     );
 
     // The ERC-165 identifier of the ERC-721 Enumerable interface. This
@@ -488,18 +488,18 @@ contract EthergotchiOwnershipV2 is
     // uses this identifier to supply the correct answer to a call to
     // `supportsInterface`.
     bytes4 private constant INTERFACE_SIGNATURE_ERC721_ENUMERABLE = bytes4(
-        keccak256(&quot;totalSupply()&quot;) ^
-        keccak256(&quot;tokenByIndex(uint256)&quot;) ^
-        keccak256(&quot;tokenOfOwnerByIndex(address,uint256)&quot;)
+        keccak256("totalSupply()") ^
+        keccak256("tokenByIndex(uint256)") ^
+        keccak256("tokenOfOwnerByIndex(address,uint256)")
     );
 
     // The ERC-165 identifier of the ERC-721 Metadata interface. This contract
     // implements all methods of the ERC-721 Metadata interface, and uses the
     // identifier to supply the correct answer to a `supportsInterface` call.
     bytes4 private constant INTERFACE_SIGNATURE_ERC721_METADATA = bytes4(
-        keccak256(&quot;name()&quot;) ^
-        keccak256(&quot;symbol()&quot;) ^
-        keccak256(&quot;tokenURI(uint256)&quot;)
+        keccak256("name()") ^
+        keccak256("symbol()") ^
+        keccak256("tokenURI(uint256)")
     );
 
     // The ERC-165 identifier of the ERC-721 Token Receiver interface. This
@@ -507,7 +507,7 @@ contract EthergotchiOwnershipV2 is
     // response given by the receiving contracts, if the `safeTransferFrom`
     // method is used.
     bytes4 private constant INTERFACE_SIGNATURE_ERC721_TOKEN_RECEIVER = bytes4(
-        keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;)
+        keccak256("onERC721Received(address,uint256,bytes)")
     );
 
     event Transfer(
@@ -570,9 +570,9 @@ contract EthergotchiOwnershipV2 is
             operators[tokenOwner][msg.sender]
         );
 
-        // Check against accidental transfers to the common &quot;wrong&quot; addresses.
+        // Check against accidental transfers to the common "wrong" addresses.
         // This includes the zero address, this ownership contract address, and
-        // &quot;non-transfers&quot; where the same address is filled in for both `_from`
+        // "non-transfers" where the same address is filled in for both `_from`
         // and `_to`.
         require(
             _to != address(0) &&
@@ -661,7 +661,7 @@ contract EthergotchiOwnershipV2 is
      *
      * Technically more interfaces are supported, as some interfaces may be
      * subsets of the supported interfaces. This check is only to be used to
-     * verify whether &quot;standard interfaces&quot; are supported.
+     * verify whether "standard interfaces" are supported.
      */
     function supportsInterface(
         bytes4 interfaceID
@@ -687,7 +687,7 @@ contract EthergotchiOwnershipV2 is
      * differently by their owners.
      */
     function name() external pure returns (string) {
-        return &quot;Ethergotchi&quot;;
+        return "Ethergotchi";
     }
 
     /**
@@ -699,7 +699,7 @@ contract EthergotchiOwnershipV2 is
      * in the `PHOENIX` patch of Aethia to prevent confusion with older tokens.
      */
     function symbol() external pure returns (string) {
-        return &quot;ETHERGOTCHI&quot;;
+        return "ETHERGOTCHI";
     }
 
     /**
@@ -725,7 +725,7 @@ contract EthergotchiOwnershipV2 is
         bytes32 tokenIdBytes = Tools.uint256ToBytes32(_tokenId);
 
         return Tools.concatenate(
-            &quot;https://aethia.co/ethergotchi/&quot;,
+            "https://aethia.co/ethergotchi/",
             Tools.bytes32ToString(tokenIdBytes)
         );
     }
@@ -762,7 +762,7 @@ contract EthergotchiOwnershipV2 is
      * Parameters
      * ----------
      * _tokenId : uint256
-     *     The identifier of the token of which to get the owner&quot;s address.
+     *     The identifier of the token of which to get the owner"s address.
      *
      * Returns
      * -------
@@ -836,7 +836,7 @@ contract EthergotchiOwnershipV2 is
      * ------
      * This method does exactly the same as calling the `safeTransferFrom`
      * method with the `data` parameter set to an empty bytes value:
-     *  `safeTransferFrom(_from, _to, _tokenId, &quot;&quot;)`
+     *  `safeTransferFrom(_from, _to, _tokenId, "")`
      */
     function safeTransferFrom(
         address _from,
@@ -848,7 +848,7 @@ contract EthergotchiOwnershipV2 is
     {
         // Call the internal `_safeTransferFrom` method to avoid duplicating
         // the transfer code.
-        _safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+        _safeTransferFrom(_from, _to, _tokenId, "");
     }
 
     /**
@@ -1048,12 +1048,12 @@ contract EthergotchiOwnershipV2 is
      * _owner : address
      *     The address of the owner of which to get the token of.
      * _index : uint256
-     *     The index of the token in the given owner&quot;s list of token.
+     *     The index of the token in the given owner"s list of token.
      *
      * Returns
      * -------
      * uint256
-     *     The identifier of the token at given index of an owner&quot;s list of
+     *     The identifier of the token at given index of an owner"s list of
      *     tokens.
      */
     function tokenOfOwnerByIndex(
@@ -1086,7 +1086,7 @@ contract EthergotchiOwnershipV2 is
      * ------
      * This method works as long as the `Serenity` update of Ethereum has not
      * been deployed. At the time of writing, contracts cannot set their code
-     * size to zero, nor can &quot;normal&quot; addresses set their code size to anything
+     * size to zero, nor can "normal" addresses set their code size to anything
      * non-zero. With `Serenity` the idea will be that each and every address
      * is an contract, effectively rendering this method.
      */
@@ -1131,7 +1131,7 @@ contract EthergotchiOwnershipV2 is
         onlyValidTransfers(_from, _to, _tokenId)
     {
         // Call the method that performs the actual transfer. All common cases
-        // of &quot;wrong&quot; transfers have already been checked at this point. The
+        // of "wrong" transfers have already been checked at this point. The
         // internal transfer method does no checking.
         _transfer(_to, _tokenId);
 
@@ -1140,12 +1140,12 @@ contract EthergotchiOwnershipV2 is
         if (_isContract(_to)) {
 
             // Assume the receiving party has implemented ERC721TokenReceiver,
-            // as otherwise the &quot;unsafe&quot; `transferFrom` method should have been
+            // as otherwise the "unsafe" `transferFrom` method should have been
             // called instead.
             ERC721TokenReceiver _receiver = ERC721TokenReceiver(_to);
 
             // The response returned by `onERC721Received` of the receiving
-            // contract&quot;s `on *must* be equal to the magic number defined by
+            // contract"s `on *must* be equal to the magic number defined by
             // the ERC-165 signature of `ERC721TokenReceiver`. If this is not
             // the case, the transaction will be reverted.
             require(
@@ -1192,7 +1192,7 @@ contract EthergotchiOwnershipV2 is
 
             // To keep the list of tokens without gaps, and thus reducing the
             // gas cost associated with interacting with the list, the last
-            // token in the owner&quot;s list of tokens is moved to fill the gap
+            // token in the owner"s list of tokens is moved to fill the gap
             // created by removing the token.
             uint256 tokenIndexToMove = tokenIdsByOwner[_from].length - 1;
 
@@ -1212,7 +1212,7 @@ contract EthergotchiOwnershipV2 is
 
         // Add the token to the list of tokens owned by `_to`. Items are always
         // added to the very end of the list. This makes the token index of the
-        // new token within the owner&quot;s list of tokens equal to the length of
+        // new token within the owner"s list of tokens equal to the length of
         // the list minus one as Solidity is a zero-based language. This token
         // index is then set for this token identifier.
         tokenIdsByOwner[_to].push(_tokenId);
@@ -1220,7 +1220,7 @@ contract EthergotchiOwnershipV2 is
 
         // Set the direct ownership information of the token to the new owner
         // after all other ownership-related mappings have been updated to make
-        // sure the &quot;side&quot; data is correct.
+        // sure the "side" data is correct.
         ownerByTokenId[_tokenId] = _to;
 
         // Remove the approved address of this token. It may be the case there
@@ -1255,7 +1255,7 @@ contract EthergotchiOwnershipV2 is
         ownerByTokenId[_tokenId] = _owner;
         tokenIdsByOwner[_owner].push(_tokenId);
 
-        // Update the mapping that keeps track of a token&quot;s index within the
+        // Update the mapping that keeps track of a token"s index within the
         // list of tokens owned by each owner. At the time of addition a token
         // is always added to the end of the list, and will thus always equal
         // the number of tokens already in the list, minus one, because the

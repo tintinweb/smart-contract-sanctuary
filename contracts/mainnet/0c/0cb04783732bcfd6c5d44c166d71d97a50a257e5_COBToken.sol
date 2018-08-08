@@ -191,7 +191,7 @@
         event FrozenFunds(address target, bool frozen);
     
         /* Initializes contract with initial supply tokens to the creator of the contract */
-        function COBToken() TokenERC20(500000000, &quot;COB Token&quot;, &quot;COB&quot;) public {
+        function COBToken() TokenERC20(500000000, "COB Token", "COB") public {
             buyPrice = 0;
             sellPrice = 0;
         }
@@ -255,7 +255,7 @@
         
     
         function version() pure public returns(string) {
-            return &quot;Version 1.1&quot;;
+            return "Version 1.1";
         }
         
         function () public payable { }

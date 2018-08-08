@@ -113,8 +113,8 @@ contract OTTToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function OTTToken() public {
-        symbol = &quot;OTT&quot;;
-        name = &quot;OT Token&quot;;
+        symbol = "OTT";
+        name = "OT Token";
         decimals = 8;
         _totalSupply = 800000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

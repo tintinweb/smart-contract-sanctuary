@@ -33,7 +33,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 	address public owner;
@@ -171,8 +171,8 @@ contract ATLToken is StandardToken {
   // The address that will receive the commission for each transaction to or from the owner
 	address public tokenCommissionReceiver = 0xEa8867Ce34CC66318D4A055f43Cac6a88966C43f; 
 	
-	string public name = &quot;ATON&quot;;
-	string public symbol = &quot;ATL&quot;;
+	string public name = "ATON";
+	string public symbol = "ATL";
 	
 	function ATLToken() public {
 		balances[msg.sender] = totalSupply;

@@ -113,8 +113,8 @@ contract MYRN is UnboundedRegularToken {
 
     uint public totalSupply = 3.8*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;MYRN&quot;;
-    string constant public symbol = &quot;MYRN&quot;;
+    string constant public name = "MYRN";
+    string constant public symbol = "MYRN";
 
     function MYRN() {
         balances[msg.sender] = totalSupply;

@@ -113,8 +113,8 @@ contract WELTCOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WELTCOIN() public {
-        symbol = &quot;WCN&quot;;
-        name = &quot;WELT COIN&quot;;
+        symbol = "WCN";
+        name = "WELT COIN";
         decimals = 8;
         _totalSupply = 100000000000000000000;
         balances[0x7f278332a149436adf6F440B4F27492366AA7e5d] = _totalSupply;

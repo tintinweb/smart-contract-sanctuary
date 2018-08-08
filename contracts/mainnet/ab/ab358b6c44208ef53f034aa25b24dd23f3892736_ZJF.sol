@@ -79,10 +79,10 @@ contract StandardToken is Token {
 
 contract ZJF is StandardToken, SafeMath {
 
-    string public constant name = &quot;ZJFTest1&quot;;
-    string public constant symbol = &quot;ZJFTest1&quot;;
+    string public constant name = "ZJFTest1";
+    string public constant symbol = "ZJFTest1";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     address public ZJFTokenDeposit;
 

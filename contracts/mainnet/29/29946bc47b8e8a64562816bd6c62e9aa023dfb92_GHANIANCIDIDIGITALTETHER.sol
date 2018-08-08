@@ -23,8 +23,8 @@ contract GHANIANCIDIDIGITALTETHER {
     ) public {
         totalSupply = 2000000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;               
-        name = &quot;GHANIAN CIDI DIGITAL TETHER&quot;;                                  
-        symbol = &quot;GDT&quot;;                               
+        name = "GHANIAN CIDI DIGITAL TETHER";                                  
+        symbol = "GDT";                               
     }
 
 

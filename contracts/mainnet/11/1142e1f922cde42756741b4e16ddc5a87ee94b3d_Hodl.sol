@@ -204,7 +204,7 @@ contract CATContract is Ownable, Pausable {
 	// Limits all transactions to a small amount to avoid financial risk with early code
 	uint public ethPerTransactionLimit = 0.1 ether;
 	string public contractName;
-	string public versionIdent = &quot;0.1.0&quot;;
+	string public versionIdent = "0.1.0";
 
 	event ContractDeployed(address indexed byWho);
 	event ContractFeeChanged(uint oldFee, uint newFee);
@@ -335,7 +335,7 @@ contract Hodl is CATContract {
     }
 
     // Chain constructor
-    function Hodl(address _catPaymentCollector) CATContract(_catPaymentCollector, &quot;Hodl&quot;) {}
+    function Hodl(address _catPaymentCollector) CATContract(_catPaymentCollector, "Hodl") {}
 
     function createNewHodl(uint _endTime) external payable blockCatEntryPoint limitTransactionValue whenNotPaused returns (uint currentId) {
         // Cannot hodl in the past

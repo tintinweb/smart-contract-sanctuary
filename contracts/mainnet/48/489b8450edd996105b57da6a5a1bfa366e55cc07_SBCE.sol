@@ -9,8 +9,8 @@ pragma solidity ^0.4.21;
 
 contract SBCE {
 	/* Public variables of the token */	
-	string public constant name = &quot;SBC token&quot;;
-	string public constant symbol = &quot;SBCE&quot;;	
+	string public constant name = "SBC token";
+	string public constant symbol = "SBCE";	
 	uint8 public constant decimals = 8;
 	address public owner;
 	uint256 public totalSupply_;

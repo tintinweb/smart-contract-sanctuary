@@ -183,8 +183,8 @@ contract Ownable {
 }
 
 contract Qbase is StandardToken, Ownable {
-  string public constant name = &quot;QBASE&quot;;
-  string public constant symbol = &quot;QBE&quot;;
+  string public constant name = "QBASE";
+  string public constant symbol = "QBE";
   uint8 public constant decimals = 18;
   
   uint256 public QbaseIssued;
@@ -223,7 +223,7 @@ contract Qbase is StandardToken, Ownable {
     totalSupply = 200000000 * (10 ** uint256(decimals)); 
     balances[msg.sender] = totalSupply;  
     QbaseIssued = totalSupply;
-    QbaseTalk = &quot;Qbase&quot;;
+    QbaseTalk = "Qbase";
     
   }
  

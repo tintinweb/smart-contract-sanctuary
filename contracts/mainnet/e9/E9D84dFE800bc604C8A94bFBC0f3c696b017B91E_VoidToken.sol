@@ -138,8 +138,8 @@ contract MintableToken is BasicToken, Ownable {
 
 
 contract VoidToken is Ownable, MintableToken {
-  string public constant name = &quot;VOID TOKEN&quot;;
-  string public constant symbol = &quot;VOID&quot;;
+  string public constant name = "VOID TOKEN";
+  string public constant symbol = "VOID";
   uint256 public constant decimals = 8;
   uint256 public constant fixed_value = 100 * (10 ** uint256(decimals));
   uint256 public totalAirDropped = 0;

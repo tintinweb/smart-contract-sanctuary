@@ -9,8 +9,8 @@ contract HelpMeTokenInterface{
 
 contract HelpMeTokenPart6 {
     
-    string public name = &quot;) AND THIS LETTER WILL BE LOST&quot;;
-    string public symbol = &quot;) AND THIS LETTER WILL BE LOST&quot;;
+    string public name = ") AND THIS LETTER WILL BE LOST";
+    string public symbol = ") AND THIS LETTER WILL BE LOST";
     uint256 public num = 6;
     uint256 public totalSupply = 2100005 ether;
     uint32 public constant decimals = 18;

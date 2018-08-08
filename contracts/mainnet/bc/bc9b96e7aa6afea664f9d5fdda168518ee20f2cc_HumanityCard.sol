@@ -55,8 +55,8 @@ contract HumanityCard is ERC721 {
     ///////////////////////////////////////////////////////////////
     /// Constants
 
-    string constant NAME = &quot;HumanityCards&quot;;
-    string constant SYMBOL = &quot;HCX&quot;;
+    string constant NAME = "HumanityCards";
+    string constant SYMBOL = "HCX";
 
     ///////////////////////////////////////////////////////////////
     /// Attributes

@@ -75,27 +75,27 @@ contract HorseFutures {
         uint256 totalWinningTokens = 0;
         uint256 ownedWinningTokens = 0;
 
-        bool btcWin = raceContract.winner_horse(bytes32(&quot;BTC&quot;));
-        bool ltcWin = raceContract.winner_horse(bytes32(&quot;LTC&quot;));
-        bool ethWin = raceContract.winner_horse(bytes32(&quot;ETH&quot;));
+        bool btcWin = raceContract.winner_horse(bytes32("BTC"));
+        bool ltcWin = raceContract.winner_horse(bytes32("LTC"));
+        bool ethWin = raceContract.winner_horse(bytes32("ETH"));
 
         if(btcWin)
         {
-            totalWinningTokens += TotalTokensCoinRace[race][bytes32(&quot;BTC&quot;)];
-            ownedWinningTokens += ClaimTokens[msg.sender][race][bytes32(&quot;BTC&quot;)];
-            ClaimTokens[msg.sender][race][bytes32(&quot;BTC&quot;)] = 0;
+            totalWinningTokens += TotalTokensCoinRace[race][bytes32("BTC")];
+            ownedWinningTokens += ClaimTokens[msg.sender][race][bytes32("BTC")];
+            ClaimTokens[msg.sender][race][bytes32("BTC")] = 0;
         } 
         if(ltcWin)
         {
-            totalWinningTokens += TotalTokensCoinRace[race][bytes32(&quot;LTC&quot;)];
-            ownedWinningTokens += ClaimTokens[msg.sender][race][bytes32(&quot;LTC&quot;)];
-            ClaimTokens[msg.sender][race][bytes32(&quot;LTC&quot;)] = 0;
+            totalWinningTokens += TotalTokensCoinRace[race][bytes32("LTC")];
+            ownedWinningTokens += ClaimTokens[msg.sender][race][bytes32("LTC")];
+            ClaimTokens[msg.sender][race][bytes32("LTC")] = 0;
         } 
         if(ethWin)
         {
-            totalWinningTokens += TotalTokensCoinRace[race][bytes32(&quot;ETH&quot;)];
-            ownedWinningTokens += ClaimTokens[msg.sender][race][bytes32(&quot;ETH&quot;)];
-            ClaimTokens[msg.sender][race][bytes32(&quot;ETH&quot;)] = 0;
+            totalWinningTokens += TotalTokensCoinRace[race][bytes32("ETH")];
+            ownedWinningTokens += ClaimTokens[msg.sender][race][bytes32("ETH")];
+            ClaimTokens[msg.sender][race][bytes32("ETH")] = 0;
         }
 
         uint256 claimerCut = toDistributeRace[race] / totalWinningTokens * ownedWinningTokens;
@@ -240,7 +240,7 @@ contract HorseFutures {
     }
 
     modifier _validHorse(bytes32 horse) {
-        require(horse == bytes32(&quot;BTC&quot;) || horse == bytes32(&quot;ETH&quot;) || horse == bytes32(&quot;LTC&quot;));
+        require(horse == bytes32("BTC") || horse == bytes32("ETH") || horse == bytes32("LTC"));
         _;
     }
     

@@ -191,8 +191,8 @@ contract SafeStandardToken is ERC20, SafeBasicToken {
 }
 
 contract POOToken is SafeStandardToken{
-  string public constant name = &quot;POO Token&quot;;
-  string public constant symbol = &quot;POO&quot;;
+  string public constant name = "POO Token";
+  string public constant symbol = "POO";
   uint256 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 1000000000 * (10 ** uint256(decimals));
 

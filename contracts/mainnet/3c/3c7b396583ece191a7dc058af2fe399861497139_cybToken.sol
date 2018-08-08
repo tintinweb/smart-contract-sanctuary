@@ -105,8 +105,8 @@ contract cybToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function cybToken() public {
-        symbol = &quot;CYB&quot;;
-        name = &quot;cyb Token&quot;;
+        symbol = "CYB";
+        name = "cyb Token";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 16 weeks;

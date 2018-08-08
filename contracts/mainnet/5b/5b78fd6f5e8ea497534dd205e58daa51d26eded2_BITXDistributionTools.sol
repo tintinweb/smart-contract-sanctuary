@@ -15,7 +15,7 @@ contract ERC20Basic {
 /**
  * @title MultiOwnable
  * @dev The MultiOwnable contract has owners addresses and provides basic authorization control
- * functions, this simplifies the implementation of &quot;users permissions&quot;.
+ * functions, this simplifies the implementation of "users permissions".
  */
 contract MultiOwnable {
   address public manager; // address used to set owners
@@ -64,7 +64,7 @@ contract MultiOwnable {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;

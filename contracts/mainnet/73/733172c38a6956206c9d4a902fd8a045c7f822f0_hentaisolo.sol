@@ -50,8 +50,8 @@ contract hentaisolo is owned {
 	using SafeMath for uint256;
 	
     // Public variables of the token
-    string public name = &quot;hentaisolo&quot;;
-    string public symbol = &quot;HAO&quot;;
+    string public name = "hentaisolo";
+    string public symbol = "HAO";
     uint8 public decimals = 0;
     uint256 public totalSupply = 5000000;
 

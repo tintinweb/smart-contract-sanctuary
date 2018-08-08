@@ -3,7 +3,7 @@
 
 // -----------------------------------------------------------------------------
 // The following contract allows unsold tokens as part of the token sale
-// to be permantnely locked (&quot;burned&quot;) so that nobody is able to retrieve them
+// to be permantnely locked ("burned") so that nobody is able to retrieve them
 
 // This is achieved by passing ownership of the contract to a null address (0x0)
 // using the constructor function when the contract is deployed onto the blockchain

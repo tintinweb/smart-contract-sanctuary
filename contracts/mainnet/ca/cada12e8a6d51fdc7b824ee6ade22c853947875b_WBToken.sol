@@ -113,8 +113,8 @@ contract WBToken is UnboundedRegularToken {
 
     uint public totalSupply = 5*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;WilliamToken&quot;;
-    string constant public symbol = &quot;WB&quot;;
+    string constant public name = "WilliamToken";
+    string constant public symbol = "WB";
 
      constructor() {
         balances[msg.sender] = totalSupply;

@@ -5,7 +5,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -199,7 +199,7 @@ library SafeMath {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -214,7 +214,7 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(address _from, uint256 _tokenId, bytes _data) public returns(bytes4);
 }
@@ -229,7 +229,7 @@ contract ERC721BasicToken is ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
@@ -367,7 +367,7 @@ contract ERC721BasicToken is ERC721Basic {
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -383,14 +383,14 @@ contract ERC721BasicToken is ERC721Basic {
     canTransfer(_tokenId)
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -706,11 +706,11 @@ contract ERC721Token is ERC721, ERC721BasicToken {
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -1389,7 +1389,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal pure returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint length = self._len * (parts.length - 1);
         for(uint i = 0; i < parts.length; i++)
@@ -1463,10 +1463,10 @@ contract Twicoin is ERC721Token, Ownable {
 
     function verify(uint _tokenId, uint _price, string _len, uint8 v, bytes32 r, bytes32 s) private view returns (bool) {
 
-        string memory header = &quot;\x19Ethereum Signed Message:\n&quot;;
+        string memory header = "\x19Ethereum Signed Message:\n";
         header = header.toSlice().concat(_len.toSlice());
         
-        string memory message = uintToBytes(_tokenId).toSliceB32().concat(&quot; &quot;.toSlice());
+        string memory message = uintToBytes(_tokenId).toSliceB32().concat(" ".toSlice());
         message = message.toSlice().concat(uintToBytes(_price).toSliceB32());
         
         bytes32 check = keccak256(header, message);

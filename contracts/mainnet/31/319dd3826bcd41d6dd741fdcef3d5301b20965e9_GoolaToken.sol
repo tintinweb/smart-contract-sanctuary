@@ -55,8 +55,8 @@ contract IERC20Token {
 
 
 contract StandardERC20Token is IERC20Token, Utils {
-    string public name = &quot;&quot;;
-    string public symbol = &quot;&quot;;
+    string public name = "";
+    string public symbol = "";
     uint8 public decimals = 0;
     uint256 public totalSupply = 0;
     mapping (address => uint256) public balanceOf;
@@ -212,7 +212,7 @@ contract GoolaToken is StandardERC20Token, Owned,GoolaStop {
     uint256 internal maxTranches = 16;       
 
     function GoolaToken( address _ecosystemAddress, address _backupAddress, address _goolaTeamAddress)
-    StandardERC20Token(&quot;Goola token&quot;, &quot;GOOLA&quot;, 18) public
+    StandardERC20Token("Goola token", "GOOLA", 18) public
      {
         goolaTeamAddress = _goolaTeamAddress;
         ecosystemAddress = _ecosystemAddress;

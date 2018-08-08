@@ -30,8 +30,8 @@ contract CoinBundleToken {
   function CoinBundleToken() public {
     owner = msg.sender;
     totalSupply = 0;
-    name = &quot;CoinBundle Token&quot;;
-    symbol = &quot;BNDL&quot;;
+    name = "CoinBundle Token";
+    symbol = "BNDL";
   }
 
   function transfer(address _to, uint256 _value) public returns (bool) {

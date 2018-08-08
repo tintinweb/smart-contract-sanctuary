@@ -15,9 +15,9 @@ contract NAMO {
     function NAMO() {
 
          initialSupply = 500000000;
-         name =&quot;NAMO&quot;;
+         name ="NAMO";
         decimals = 5;
-         symbol = &quot;NAMO&quot;;
+         symbol = "NAMO";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

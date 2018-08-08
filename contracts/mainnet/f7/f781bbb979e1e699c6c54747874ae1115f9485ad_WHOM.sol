@@ -28,8 +28,8 @@ contract WHOM {
     ) public {
         totalSupply = 1000000000000000000000000000;                             // Update total supply with the decimal amount
         balanceOf[msg.sender] = 1000000000000000000000000000;                   // Give the creator all initial tokens
-        name = &quot;WhoMe&quot;;                                                         // Set the name for display purposes
-        symbol = &quot;WHOM&quot;;                                                        // Set the symbol for display purposes
+        name = "WhoMe";                                                         // Set the name for display purposes
+        symbol = "WHOM";                                                        // Set the symbol for display purposes
     }
 
     /**

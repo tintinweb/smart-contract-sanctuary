@@ -134,8 +134,8 @@ contract BMTToken is ERC20, BasicToken {
         decimals = 3;
         totalSupply_ = 100000000	 * 10 ** uint(decimals);   
         balances[0x03e914a2bd0db2c5a38fc4584f869d768e002600] = totalSupply_;               
-        name = &quot;BMTToken&quot;;                                  
-        symbol = &quot;pcc&quot;;    
+        name = "BMTToken";                                  
+        symbol = "pcc";    
         Transfer(0, 0x03e914a2bd0db2c5a38fc4584f869d768e002600 , totalSupply_);
    }
    /**

@@ -45,7 +45,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
  contract Ownable {
   address public owner;
@@ -70,8 +70,8 @@ contract SteakToken is Ownable {
 
   using SafeMath for uint256;
 
-  string public name = &quot;Steak Token&quot;;
-  string public symbol = &quot;BOV&quot;;
+  string public name = "Steak Token";
+  string public symbol = "BOV";
   uint public decimals = 18;
   uint public totalSupply;      // Total BOV in circulation.
 
@@ -553,7 +553,7 @@ contract Steak is AuctionCrowdsale {
 
     uint prize = initialPrizeBov;
 
-    prize = prize >> halvings; // Halve the initial prize &quot;halvings&quot;-number of times.
+    prize = prize >> halvings; // Halve the initial prize "halvings"-number of times.
     return prize;
   }
 

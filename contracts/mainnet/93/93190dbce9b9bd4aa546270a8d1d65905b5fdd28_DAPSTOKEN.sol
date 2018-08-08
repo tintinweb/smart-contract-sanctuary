@@ -113,8 +113,8 @@ contract DAPSTOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DAPSTOKEN() public {
-        symbol = &quot;DAPS&quot;;
-        name = &quot;DAPSTOKEN&quot;;
+        symbol = "DAPS";
+        name = "DAPSTOKEN";
         decimals = 18;
         _totalSupply = 60000000000000000000000000000;
         balances[0x63c60Ef583ccE49909c1dd54ec7f812aC3A69847] = _totalSupply;

@@ -4,8 +4,8 @@ contract	BAZAN__20230515				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	BAZAN__20230515		&quot;	;
-	string	public		symbol =	&quot;	BAZANI		&quot;	;
+	string	public		name =	"	BAZAN__20230515		"	;
+	string	public		symbol =	"	BAZANI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		15649075219292400000000000					;	

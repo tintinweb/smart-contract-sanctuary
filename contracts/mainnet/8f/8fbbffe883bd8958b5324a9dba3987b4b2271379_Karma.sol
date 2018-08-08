@@ -85,8 +85,8 @@ contract StandardToken is Token {
 
 contract Karma is SafeMath, StandardToken {
 
-    string public constant name = &quot;Karma PreSale Token&quot;;
-    string public constant symbol = &quot;KRMP&quot;;
+    string public constant name = "Karma PreSale Token";
+    string public constant symbol = "KRMP";
     uint256 public constant decimals = 18;
     uint256 public constant tokenCreationCap =  5000*10**decimals;
 

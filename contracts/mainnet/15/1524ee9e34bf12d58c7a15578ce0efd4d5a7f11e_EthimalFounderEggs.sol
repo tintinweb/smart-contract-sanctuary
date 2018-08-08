@@ -111,8 +111,8 @@ contract EthimalFounderEggs is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EthimalFounderEggs() public {
-        symbol = &quot;EGG&quot;;
-        name = &quot;Ethimal Founder Egg&quot;;
+        symbol = "EGG";
+        name = "Ethimal Founder Egg";
         decimals = 18;
         startDate = now;
         endDate = now + 20 weeks;

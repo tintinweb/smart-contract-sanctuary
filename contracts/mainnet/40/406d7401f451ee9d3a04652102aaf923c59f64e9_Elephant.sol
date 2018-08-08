@@ -9,22 +9,22 @@ pragma solidity ^0.4.20;
 *  *
 *  *
 *  *
-          ___.-~&quot;~-._   __....__
-                .&#39;    `    \ ~&quot;~        ``-.
+          ___.-~"~-._   __....__
+                .&#39;    `    \ ~"~        ``-.
                /` _      )  `\              `\
               /`  a)    /     |               `\
              :`        /      |                 \
         <`-._|`  .-.  (      /   .            `;\\
          `-. `--&#39;_.&#39;-.;\___/&#39;   .      .       | \\
       _     /:--`     |        /     /        .&#39;  \\
-     (&quot;\   /`/        |       &#39;     &#39;         /    :`;
+     ("\   /`/        |       &#39;     &#39;         /    :`;
      `\&#39;\_/`/         .\     /`~`=-.:        /     ``
        `._.&#39;          /`\    |      `\      /(
                      /  /\   |        `Y   /  \
                jgs  J  /  Y  |         |  /`\  \
                    /  |   |  |         |  |  |  |
-                  &quot;---&quot;  /___|        /___|  /__|
-                         &#39;&quot;&quot;&quot;         &#39;&quot;&quot;&quot;  &#39;&quot;&quot;&quot; 
+                  "---"  /___|        /___|  /__|
+                         &#39;"""         &#39;"""  &#39;""" 
 * ==========================*
 * -> What?
 * This source code is a copy of POWH3D
@@ -133,8 +133,8 @@ contract Elephant {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;ELE&quot;;
-    string public symbol = &quot;ELE&quot;;
+    string public name = "ELE";
+    string public symbol = "ELE";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 100;
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;
@@ -242,7 +242,7 @@ contract Elephant {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
         
         // fire event
@@ -586,7 +586,7 @@ contract Elephant {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
         
         // is the user referred by a masternode?

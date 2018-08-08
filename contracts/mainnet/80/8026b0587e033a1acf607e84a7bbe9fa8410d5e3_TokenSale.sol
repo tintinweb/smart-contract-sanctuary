@@ -136,11 +136,11 @@ contract RebateCoin is AbstractToken {
      }
      
     function name () constant returns (string result) {
-		return &quot;Rebate Coin&quot;;
+		return "Rebate Coin";
 	}
 	
 	function symbol () constant returns (string result) {
-		return &quot;RBC&quot;;
+		return "RBC";
 	}
 	
 	function decimals () constant returns (uint result) {

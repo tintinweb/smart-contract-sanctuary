@@ -70,8 +70,8 @@ contract MineableToken is owned {
     decimals = uint8(18); // audit recommended 18 decimals
     supplyCap = 833333333 * 10**uint256(decimals);
 
-    name = &quot;ORST&quot;;
-    symbol = &quot;ORS&quot;;
+    name = "ORST";
+    symbol = "ORS";
   }
 
   function mine( uint256 qty ) public onlyOwner {

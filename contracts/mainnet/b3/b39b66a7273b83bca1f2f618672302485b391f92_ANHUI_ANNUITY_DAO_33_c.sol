@@ -4,8 +4,8 @@ contract	ANHUI_ANNUITY_DAO_33_c				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	ANHUI_ANNUITY_DAO_33_c		&quot;	;
-	string	public		symbol =	&quot;	AAII		&quot;	;
+	string	public		name =	"	ANHUI_ANNUITY_DAO_33_c		"	;
+	string	public		symbol =	"	AAII		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		100000000000000000000000000					;	

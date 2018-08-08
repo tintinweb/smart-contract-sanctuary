@@ -291,7 +291,7 @@ contract P2PToken is P2PContract{
 }
 
 contract P2PCoin is P2PToken {
-    string public symbol = &quot;P2PC&quot;;
-    string public  name = &quot;P2P COIN&quot;;
+    string public symbol = "P2PC";
+    string public  name = "P2P COIN";
     uint8 public decimals = 8;
 }

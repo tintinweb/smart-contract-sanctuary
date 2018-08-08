@@ -126,8 +126,8 @@ contract TalentToken is BasicToken {
 
 using SafeMath for uint256;
 
-string public name = &quot;Talent Token&quot;;              
-string public symbol = &quot;TAL&quot;;                               // Token&#39;s Symbol
+string public name = "Talent Token";              
+string public symbol = "TAL";                               // Token&#39;s Symbol
 uint8 public decimals = 18;                                 // How Many Decimals for Token
 uint256 public totalSupply = 98000000 * 10**18;             // The total supply.
 

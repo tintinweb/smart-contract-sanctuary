@@ -1,8 +1,8 @@
 pragma solidity ^0.4.21;
 
 contract BlackSeaCoin {
-    string public name = &quot;Black Sea Coin&quot;;
-    string public symbol = &quot;BSC&quot;;
+    string public name = "Black Sea Coin";
+    string public symbol = "BSC";
     uint8 public decimals = 18;
     uint256 public totalSupply = 1000000000 * 10 ** uint256(decimals);
 

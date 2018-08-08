@@ -290,7 +290,7 @@ contract Crowdsale {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -566,8 +566,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 
 
 contract ExposureToken is StandardBurnableToken {
-    string public constant name = &quot;Exposure&quot;;
-    string public constant symbol = &quot;EXPO&quot;;
+    string public constant name = "Exposure";
+    string public constant symbol = "EXPO";
     uint8 public constant decimals = 18;
 
     constructor() public 

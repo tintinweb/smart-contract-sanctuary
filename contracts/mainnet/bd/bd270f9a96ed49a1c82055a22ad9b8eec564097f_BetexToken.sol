@@ -50,7 +50,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -394,8 +394,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract BetexToken is StandardToken, NoOwner {
 
-    string public constant name = &quot;Betex Token&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;BETEX&quot;; // solium-disable-line uppercase
+    string public constant name = "Betex Token"; // solium-disable-line uppercase
+    string public constant symbol = "BETEX"; // solium-disable-line uppercase
     uint8 public constant decimals = 18; // solium-disable-line uppercase
 
     // transfer unlock time (except team and broker recipients)

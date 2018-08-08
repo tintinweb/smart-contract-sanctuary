@@ -66,7 +66,7 @@ contract Proxy {
         require(_impl != address(0));
         assembly {
             /*
-                0x40 is the &quot;free memory slot&quot;, meaning a pointer to next slot of empty memory. mload(0x40)
+                0x40 is the "free memory slot", meaning a pointer to next slot of empty memory. mload(0x40)
                 loads the data in the free memory slot, so `ptr` is a pointer to the next slot of empty
                 memory. It&#39;s needed because we&#39;re going to write the return data of delegatecall to the
                 free memory slot.

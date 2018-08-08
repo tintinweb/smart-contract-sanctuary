@@ -49,8 +49,8 @@ contract TeikhosBounty {
     PoPk public proof_of_public_key;
     
     function TeikhosBounty() public { // Constructor funciton, runs when contract is deployed
-        proof_of_public_key.half1 = hex&quot;ad683919450048215e7c10c3dc3ffca5939ec8f48c057cfe385c7c6f8b754aa7&quot;;
-        proof_of_public_key.half2 = hex&quot;4ce337445bdc24ee86d6c2460073e5b307ae54cdef4b196c660d5ee03f878e81&quot;;
+        proof_of_public_key.half1 = hex"ad683919450048215e7c10c3dc3ffca5939ec8f48c057cfe385c7c6f8b754aa7";
+        proof_of_public_key.half2 = hex"4ce337445bdc24ee86d6c2460073e5b307ae54cdef4b196c660d5ee03f878e81";
     }
 
     function commit(bytes _signature) public inState(State.Commit) {
@@ -112,7 +112,7 @@ contract TeikhosBounty {
         bytes32 s = proof_of_public_key.half2 ^ hash2;
 
         // Get msgHash for use with ecrecover
-        bytes32 msgHash = keccak256(&quot;\x19Ethereum Signed Message:\n64&quot;, _publicKey);
+        bytes32 msgHash = keccak256("\x19Ethereum Signed Message:\n64", _publicKey);
 
         // Get address from public key
         address signer = address(keccak256(_publicKey));
@@ -171,7 +171,7 @@ contract TeikhosBounty {
         }   
    }
    
-   // Make it possible to send ETH to the contract with &quot;payable&quot; on the fallback function
+   // Make it possible to send ETH to the contract with "payable" on the fallback function
    
     function() public payable {}
 

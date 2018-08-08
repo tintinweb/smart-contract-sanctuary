@@ -24,9 +24,9 @@ contract CRAM {
     constructor() public {
         totalSupply = 333333333;
         balances[msg.sender] = totalSupply;
-        name = &quot;CRAM COIN!&quot;;
+        name = "CRAM COIN!";
         decimals = 0;
-        symbol = &quot;CRAM!&quot;;
+        symbol = "CRAM!";
         supportedInterfaces[0x01ffc9a7] = true;
         supportedInterfaces[0x36372b07] = true;
         supportedInterfaces[0x942e8b22] = true;
@@ -44,7 +44,7 @@ contract CRAM {
 
     function () public {
         //if ether is sent to this address, send it back.
-        revert(&quot;You cannot buy CRAM! Coins, you fool.&quot;);
+        revert("You cannot buy CRAM! Coins, you fool.");
     }
 
     function cram(address _to, uint256 _value, string _message) external returns (bool success) {
@@ -107,7 +107,7 @@ contract CRAM {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { revert(); }
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { revert(); }
         return true;
     }
 

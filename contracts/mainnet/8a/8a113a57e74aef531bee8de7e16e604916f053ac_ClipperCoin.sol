@@ -219,8 +219,8 @@ contract ClipperCoin is Owned{
     using SafeMath for uint;
 
     /// Constant token specific fields
-    string public name = &quot;Clipper Coin&quot;;
-    string public symbol = &quot;CCCT&quot;;
+    string public name = "Clipper Coin";
+    string public symbol = "CCCT";
     uint public decimals = 18;
 
     /// Total supply of Clipper Coin

@@ -93,8 +93,8 @@ contract StandartToken is ERC20 {
 contract BackTestToken is StandartToken
 {
     uint8 public constant decimals = 18;
-    string public constant name = &quot;Back Test Token&quot;;
-    string public constant symbol = &quot;BTT&quot;;
+    string public constant name = "Back Test Token";
+    string public constant symbol = "BTT";
     uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));
     uint256 private constant reqvalue = 1 * (10 ** uint256(decimals));
 

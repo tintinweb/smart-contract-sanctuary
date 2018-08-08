@@ -111,8 +111,8 @@ contract SecureDoc is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;SDO&quot;;
-        name = &quot;SecureDoc Token&quot;;
+        symbol = "SDO";
+        name = "SecureDoc Token";
         decimals = 18;
         bonusEnds = now + 120 days;
     }

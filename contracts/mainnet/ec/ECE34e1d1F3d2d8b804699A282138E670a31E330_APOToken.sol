@@ -273,7 +273,7 @@ contract MintableToken is StandardToken, Ownable {
 
 
 contract APOToken is MintableToken {
-    string public name = &quot;Advanced Parimutuel Options&quot;;
-    string public symbol = &quot;APO&quot;;
+    string public name = "Advanced Parimutuel Options";
+    string public symbol = "APO";
     uint8 public decimals = 18;
 }

@@ -28,7 +28,7 @@ library SafeMath {
 /**
 * @title Ownable
 * @dev The Ownable contract has an owner address, and provides basic authorization control
-* functions, this simplifies the implementation of &quot;user permissions&quot;.
+* functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
     address public owner;
@@ -341,8 +341,8 @@ contract ReleasableToken is ERC20, Ownable {
 * in the constructor.
 */
 contract Moolyacoin is StandardToken, Ownable, ReleasableToken{
-    string  public  constant name = &quot;moolyacoin&quot;;
-    string  public  constant symbol = &quot;moolya&quot;;
+    string  public  constant name = "moolyacoin";
+    string  public  constant symbol = "moolya";
     uint8   public  constant decimals = 18;
         
     constructor(uint _value) public{

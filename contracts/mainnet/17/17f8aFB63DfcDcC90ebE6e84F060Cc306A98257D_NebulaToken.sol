@@ -364,8 +364,8 @@ contract TokenVesting is Ownable {
 }
 contract NebulaToken is CappedToken{
     using SafeMath for uint256;
-    string public constant name = &quot;Nebula AI Token&quot;;
-    string public constant symbol = &quot;NBAI&quot;;
+    string public constant name = "Nebula AI Token";
+    string public constant symbol = "NBAI";
     uint8 public constant decimals = 18;
 
     bool public pvt_plmt_set;

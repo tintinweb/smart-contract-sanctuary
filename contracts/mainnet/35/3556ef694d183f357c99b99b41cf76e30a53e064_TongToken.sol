@@ -147,8 +147,8 @@ contract ERC20StandardToken is ERC20Standard {
 contract TongToken is ERC20StandardToken, Ownable {
 
     // token information
-    string public constant name = &quot;Tong Token&quot;;
-    string public constant symbol = &quot;Tong&quot;;
+    string public constant name = "Tong Token";
+    string public constant symbol = "Tong";
     uint256 public constant decimals = 18;
     uint TotalTokenSupply=2100*(10**8)* (10**decimals);
 

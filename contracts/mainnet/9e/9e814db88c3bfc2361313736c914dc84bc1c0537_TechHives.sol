@@ -416,8 +416,8 @@ contract EtherCassette is ICassette {
 contract TechHives is ERC20Sec, EtherCassette, MultiOwnable {
   using SafeMath for uint;
   uint constant DECIMAL_MULTIPLIER = 10 ** 18;
-  string public name = &quot;TechHives&quot;;
-  string public symbol = &quot;THV&quot;;
+  string public name = "TechHives";
+  string public symbol = "THV";
   uint8 public decimals = 18;
 
   uint mintSupply_;

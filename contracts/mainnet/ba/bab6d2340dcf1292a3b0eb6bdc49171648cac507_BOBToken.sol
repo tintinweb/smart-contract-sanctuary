@@ -229,8 +229,8 @@ contract PausableToken is StandardToken, Pausable {
  * @title BOB Token contract - ERC20 compatible token contract.
  */
 contract BOBToken is PausableToken, MintableToken {
-    string public name = &quot;BOB Token&quot;;
-    string public symbol = &quot;BOB&quot;;
+    string public name = "BOB Token";
+    string public symbol = "BOB";
     uint8 public decimals = 18;
 
     /**
@@ -249,15 +249,15 @@ contract BOBToken is PausableToken, MintableToken {
         uint256 holderBalance = balanceOf(holderAddress);
 
         if (1000000e18 <= holderBalance) {
-            return &quot;Platinum&quot;;
+            return "Platinum";
         } else if (700000e18 <= holderBalance) {
-            return &quot;Gold&quot;;
+            return "Gold";
         } else if (300000e18 <= holderBalance) {
-            return &quot;Titanium&quot;;
+            return "Titanium";
         } else if (0 == holderBalance) {
-            return &quot;Non-possession&quot;;
+            return "Non-possession";
         }
 
-        return &quot;Free&quot;;
+        return "Free";
     }
 }

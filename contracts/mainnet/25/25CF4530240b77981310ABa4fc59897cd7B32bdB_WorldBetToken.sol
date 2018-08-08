@@ -2,10 +2,10 @@ pragma solidity ^0.4.18;
 
 contract WorldBetToken {
     /* Token name */
-    string public name = &quot;World Bet Lottery Tickets&quot;;
+    string public name = "World Bet Lottery Tickets";
 
     /* Token Symbol */
-    string public symbol = &quot;WBT&quot;;
+    string public symbol = "WBT";
 
     /* Token digit*/
     uint public decimals = 0;

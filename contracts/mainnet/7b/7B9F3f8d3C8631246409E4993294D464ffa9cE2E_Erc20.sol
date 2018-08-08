@@ -30,7 +30,7 @@ library SafeMathLib {
 /**
  * @title Ownable
  * @notice The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -74,8 +74,8 @@ contract Erc20 is IERC20, Ownable {
     
     uint256 public constant totalTokenSupply = 100000000 * 10**18;
 
-    string public name = &quot;Dontoshi Token&quot;;
-    string public symbol = &quot;DTD&quot;;
+    string public name = "Dontoshi Token";
+    string public symbol = "DTD";
     uint8 public constant decimals = 18;
     
     mapping (address => uint256) public balances;

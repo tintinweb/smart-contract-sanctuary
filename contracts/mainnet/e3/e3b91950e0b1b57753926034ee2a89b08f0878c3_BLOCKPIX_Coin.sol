@@ -213,8 +213,8 @@ contract BLOCKPIX_Coin is StandardToken
 {
     using SafeMath for uint256;
     
-    string public constant name = &quot;BLOCKPIX Coin&quot;;
-    string public constant symbol = &quot;BPX&quot;;
+    string public constant name = "BLOCKPIX Coin";
+    string public constant symbol = "BPX";
     uint256 public constant decimals = 18;
     
     uint256 public constant BPX_per_ETH = 10000;

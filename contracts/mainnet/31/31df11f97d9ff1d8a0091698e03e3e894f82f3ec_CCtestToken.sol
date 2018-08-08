@@ -105,8 +105,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 
 contract CCtestToken is StandardToken {
-	string public constant symbol = &quot;CCtest&quot;;
-	string public constant name = &quot;Coffee College&quot;;
+	string public constant symbol = "CCtest";
+	string public constant name = "Coffee College";
 	uint8 public constant decimals = 18;
 	address public target;
 	

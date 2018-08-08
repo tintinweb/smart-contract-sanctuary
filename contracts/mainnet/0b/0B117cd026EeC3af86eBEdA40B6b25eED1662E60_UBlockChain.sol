@@ -49,8 +49,8 @@ contract UBlockChain is ERC20 {
     mapping (address => bool) public frozenAccount;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;UBlockChain&quot;;
-    string public constant symbol = &quot;UBCoin&quot;;
+    string public constant name = "UBlockChain";
+    string public constant symbol = "UBCoin";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 32000000000e18;

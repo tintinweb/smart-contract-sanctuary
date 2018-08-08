@@ -7,11 +7,11 @@ pragma solidity ^0.4.15;
 - Tradable when issued to the public for consideration, after the ICO closes.
 - Dividends of 4% per annum are payable as increased territory size
 - Deputy Mayor crypto-currency governance role.
-- Democratic governance applies to traffic congestion. All crowd funders who own ZTT coins are &quot;Deputy Mayors&quot; of their district below and may democratically advise ZeroTraffic on congested areas in their district on a regular basis. District maybe re-centered.
+- Democratic governance applies to traffic congestion. All crowd funders who own ZTT coins are "Deputy Mayors" of their district below and may democratically advise ZeroTraffic on congested areas in their district on a regular basis. District maybe re-centered.
 - Coins are optionally retractable and redeemable by ZeroTraffic, individually from each owner any time after 5 years after IOD. Once an owner is exchanged, the market price average for the last 5 days shall be used to compute payment.
 - At least 1250 ZTTs&#39; are required to fill the role of Deputy Mayor.
 - Price per each non-exclusive circle of radius 1/2 km, around any ZTT coin owner specified GPS point, for a map of traffic standstill congestion management advice = (1250 ZTT). Additional size regions are priced for a R&#39; km radius at (R&#39;/R)**2 *price for 1/2km radius in ZTT coin.
-- To be exempt from securities laws, there is no share ownership to ZTT coin holders, right to dividends, proceeds from sales. The parties agree that the Howey test is not met: &quot;investment of money from an expectation of profits arising from a common enterprise depending solely on the efforts of a promoter or third party&quot;. Proceeds will fund initial and continuing development and business development, depending on level of funds raised, for several years.
+- To be exempt from securities laws, there is no share ownership to ZTT coin holders, right to dividends, proceeds from sales. The parties agree that the Howey test is not met: "investment of money from an expectation of profits arising from a common enterprise depending solely on the efforts of a promoter or third party". Proceeds will fund initial and continuing development and business development, depending on level of funds raised, for several years.
 - Funds raised in ICO are refundable if minimum isn&#39;t met during ICO and presale, however funds raised during the PreICO are not subject to refund on minimum raise.
 */
 

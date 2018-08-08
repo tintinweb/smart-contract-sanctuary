@@ -217,8 +217,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract SVIP is StandardToken {
 
-  string public constant name = &quot;Bithank Super Very Important Person&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;SVIP&quot;; // solium-disable-line uppercase
+  string public constant name = "Bithank Super Very Important Person"; // solium-disable-line uppercase
+  string public constant symbol = "SVIP"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = (10 ** 4 * 100) * (10 ** uint256(decimals));

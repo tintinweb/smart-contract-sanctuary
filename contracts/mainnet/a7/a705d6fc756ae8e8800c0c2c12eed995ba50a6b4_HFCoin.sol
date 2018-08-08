@@ -58,8 +58,8 @@ contract HFCoin is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;HF Coin&quot;;
-    string public constant symbol = &quot;HF&quot;;
+    string public constant name = "HF Coin";
+    string public constant symbol = "HF";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 600000000e18;

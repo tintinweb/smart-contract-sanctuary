@@ -55,8 +55,8 @@ pragma solidity ^0.4.11;
     uint registredTo;
     uint256 loadedRefund;
     uint256 _supply = 10000000000;
-    string _name = &quot;ZIBER TEST TOKEN&quot;;
-    string _symbol = &quot;ZBRX&quot;;
+    string _name = "ZIBER TEST TOKEN";
+    string _symbol = "ZBRX";
     uint8 _decimals = 2;
 
     // The ZBR Token address and sale address are the same.

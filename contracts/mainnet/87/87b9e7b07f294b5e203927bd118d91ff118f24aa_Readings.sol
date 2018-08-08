@@ -38,14 +38,14 @@ contract Readings {
     function addMeter(uint32 meterId, string serialNumber, string meterType) public onlyOwner {
         require(enabled && meterId > 0);
         meters[keccak256(serialNumber)] = 
-            MeterInfo({meterId: meterId, serialNumber:serialNumber, meterType:meterType, latestReading:&quot;&quot;});
+            MeterInfo({meterId: meterId, serialNumber:serialNumber, meterType:meterType, latestReading:""});
     }
     
     function getMeter(string serialNumber) public view onlyOwner returns(string, uint32, string, string, string, string) {
         bytes32 serialK = keccak256(serialNumber);
         require(enabled && meters[serialK].meterId > 0);
         
-        return (&quot;Id:&quot;, meters[serialK].meterId, &quot;Серийный номер:&quot;, meters[serialK].serialNumber, &quot;Тип счетчика:&quot;, meters[serialK].meterType);
+        return ("Id:", meters[serialK].meterId, "Серийный номер:", meters[serialK].serialNumber, "Тип счетчика:", meters[serialK].meterType);
     }
     
     function saveReading(string serialNumber, string reading) public onlyOwner {
@@ -59,9 +59,9 @@ contract Readings {
         require(enabled && meters[serialK].meterId > 0);
         
         return (
-            &quot;Тип счетчика:&quot;, meters[serialK].meterType,
-            &quot;Серийный номер:&quot;, meters[serialK].serialNumber,
-            &quot;Показания:&quot;, meters[serialK].latestReading
+            "Тип счетчика:", meters[serialK].meterType,
+            "Серийный номер:", meters[serialK].serialNumber,
+            "Показания:", meters[serialK].latestReading
         );
     }
 }

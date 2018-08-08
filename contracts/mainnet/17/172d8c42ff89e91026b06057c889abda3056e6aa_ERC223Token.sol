@@ -84,8 +84,8 @@ contract ERC223Token is ERC223Interface {
 	
 	
 	
-	 string public name = &quot;COOPAY COIN&quot;;
-     string public symbol = &quot;COO&quot;;
+	 string public name = "COOPAY COIN";
+     string public symbol = "COO";
      uint8 public decimals = 18;
      uint256 public totalSupply = 265200000 * (10**18);
 	

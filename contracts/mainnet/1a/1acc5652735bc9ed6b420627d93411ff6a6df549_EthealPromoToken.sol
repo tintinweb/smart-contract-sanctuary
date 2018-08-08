@@ -18,7 +18,7 @@ contract ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -141,7 +141,7 @@ library SafeMath {
 
 /**
  * ERC-20 standard token interface, as defined
- * <a href=&quot;http://github.com/ethereum/EIPs/issues/20&quot;>here</a>.
+ * <a href="http://github.com/ethereum/EIPs/issues/20">here</a>.
  */
 contract Token {
     /**
@@ -360,7 +360,7 @@ contract AbstractVirtualToken is AbstractToken {
     uint256 constant BALANCE_MASK = 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
 
     /**
-     * Mask used to extract &quot;materialized&quot; flag of an account (2^255).
+     * Mask used to extract "materialized" flag of an account (2^255).
      */
     uint256 constant MATERIALIZED_FLAG_MASK = 0x8000000000000000000000000000000000000000000000000000000000000000;
 
@@ -511,12 +511,12 @@ contract EthealPromoToken is HasNoTokens, AbstractVirtualToken {
 
     /// @notice Get name of this token.
     function name() public pure returns (string result) {
-        return &quot;An Etheal Promo&quot;;
+        return "An Etheal Promo";
     }
 
     /// @notice Get symbol of this token.
     function symbol() public pure returns (string result) {
-        return &quot;HEALP&quot;;
+        return "HEALP";
     }
 
     /// @notice Get number of decimals for this token.

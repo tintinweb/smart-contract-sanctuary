@@ -25,7 +25,7 @@ contract ProofOfReadToken {
     string ipfsGateway;
 
     /* ERC20 fields */
-    string public standard = &quot;Token 0.1&quot;;
+    string public standard = "Token 0.1";
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -51,7 +51,7 @@ contract ProofOfReadToken {
         name = tokenName;
         symbol = tokenSymbol;
         decimals = decimalUnits;
-        ipfsGateway = &quot;http://ipfs.io/ipfs/&quot;;
+        ipfsGateway = "http://ipfs.io/ipfs/";
         proofOfSms = ParityProofOfSMSInterface(0x9ae98746EB8a0aeEe5fF2b6B15875313a986f103);
     }
     

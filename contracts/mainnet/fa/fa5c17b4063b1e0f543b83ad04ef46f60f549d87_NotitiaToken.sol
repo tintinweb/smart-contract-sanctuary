@@ -113,8 +113,8 @@ contract NotitiaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NotitiaToken() public {
-        symbol = &quot;Notitia&quot;;
-        name = &quot;Notitia Token&quot;;
+        symbol = "Notitia";
+        name = "Notitia Token";
         decimals = 27;
         _totalSupply = 100000000000000000000000000000;
         balances[0xF4B1875B5c394Bfa127161bf189224198a016ef8] = _totalSupply;

@@ -45,8 +45,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 110000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[tokenHolderAddress] = 42900000 * 10 ** uint256(decimals);                // Give the creator all initial tokens
-        name = &quot;BitChord&quot;;                                   // Set the name for display purposes
-        symbol = &quot;BCD&quot;;                               // Set the symbol for display purposes
+        name = "BitChord";                                   // Set the name for display purposes
+        symbol = "BCD";                               // Set the symbol for display purposes
         emit Transfer(address(this), tokenHolderAddress, 42900000 * 10 ** uint256(decimals));
     }
 

@@ -11,8 +11,8 @@ contract CoinEt // @eachvar
     mapping(address => uint256) balances;
     
     // solidity 会自动为 public 变量添加方法，有了下边这些变量，就能获得代币的基本信息了
-    string public name = &quot;ETIMChain&quot;; // @eachvar
-    string public symbol = &quot;ET&quot;; // @eachvar
+    string public name = "ETIMChain"; // @eachvar
+    string public symbol = "ET"; // @eachvar
     uint8 public decimals = 18; // @eachvar
     uint256 initSupply = 3000000000; // @eachvar
     uint256 public totalSupply = 0; // @eachvar

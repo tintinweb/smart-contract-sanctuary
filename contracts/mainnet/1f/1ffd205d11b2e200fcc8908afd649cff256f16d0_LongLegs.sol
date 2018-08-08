@@ -87,8 +87,8 @@ contract ERC223 {
 contract LongLegs is ERC223, Ownable {
   using SafeMath for uint256;
 
-  string public name = &quot;LongLegs&quot;;
-  string public symbol = &quot;XLL&quot;;
+  string public name = "LongLegs";
+  string public symbol = "XLL";
   uint8 public decimals = 7;
   uint256 public initialSupply = 3e10 * 1e7;
   uint256 public totalSupply;

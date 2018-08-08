@@ -100,8 +100,8 @@ contract GouBi is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function GouBi() public {
-        symbol = &quot;DOG&quot;;
-        name = &quot;GOUBI&quot;;
+        symbol = "DOG";
+        name = "GOUBI";
         decimals = 18;
         _totalSupply = 10000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

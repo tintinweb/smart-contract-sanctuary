@@ -308,8 +308,8 @@ contract MintableToken is StandardToken {
 
 contract LATINOToken is MintableToken 
 {
-  string public constant name = &quot;Latino Token&quot;;
-  string public constant symbol = &quot;LATINO&quot;;
+  string public constant name = "Latino Token";
+  string public constant symbol = "LATINO";
 
  function LATINOToken() { totalSupply = 0 ; } // initializes to 0 the total token supply 
 }

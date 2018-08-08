@@ -166,8 +166,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract FRPToken is StandardToken {
 
-  string public constant name = &quot;FRPToken&quot;;
-  string public constant symbol = &quot;FRP$&quot;;
+  string public constant name = "FRPToken";
+  string public constant symbol = "FRP$";
   uint8 public constant decimals = 9;
 
   uint256 public constant INITIAL_SUPPLY = 90000000000000000000;

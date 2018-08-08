@@ -269,7 +269,7 @@ contract BurnableToken is StandardToken {
 }
 
 contract Token is CappedToken, BurnableToken, Withdrawable {
-    function Token() CappedToken(2000000000 * 1 ether) StandardToken(&quot;GEX&quot;, &quot;GEX&quot;, 18) public {
+    function Token() CappedToken(2000000000 * 1 ether) StandardToken("GEX", "GEX", 18) public {
         
     }
 }

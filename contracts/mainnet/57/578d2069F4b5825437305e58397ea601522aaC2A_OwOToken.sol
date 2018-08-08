@@ -30,8 +30,8 @@ contract OwOToken {
 
     using SafeMath for uint256;
 
-    string public constant symbol = &quot;OWO&quot;;
-    string public constant name = &quot;OwO.World Token&quot;;
+    string public constant symbol = "OWO";
+    string public constant name = "OwO.World Token";
     uint public constant decimals = 18;
     address public _multiSigWallet;  // The address to hold the funds donated
     address public owner;

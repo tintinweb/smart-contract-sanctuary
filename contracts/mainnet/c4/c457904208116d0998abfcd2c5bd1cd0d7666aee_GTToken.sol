@@ -100,8 +100,8 @@ contract GTToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;GT&quot;;
-        name = &quot;Game Token&quot;;
+        symbol = "GT";
+        name = "Game Token";
         decimals = 8;
         _totalSupply = 10000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

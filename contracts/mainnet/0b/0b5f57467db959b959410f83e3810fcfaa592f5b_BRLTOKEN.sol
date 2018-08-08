@@ -184,8 +184,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract BRLTOKEN is StandardToken {
 
-  string public constant name = &quot;Brazilian Real&quot;;
-  string public constant symbol = &quot;BRL&quot;;
+  string public constant name = "Brazilian Real";
+  string public constant symbol = "BRL";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 10000;

@@ -25,7 +25,7 @@ pragma solidity ^0.4.11;
  * about the application of blockchain technology.
  * For further information: majoolr.io, aragon.one
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -67,7 +67,7 @@ library ERC20Lib {
 
     (err,balance) = self.balances[msg.sender].minus(_value);
     if(err) {
-      ErrorMsg(&quot;Balance too low for transfer&quot;);
+      ErrorMsg("Balance too low for transfer");
       return false;
     }
     self.balances[msg.sender] = balance;
@@ -95,13 +95,13 @@ library ERC20Lib {
 
     (err,balanceOwner) = self.balances[_from].minus(_value);
     if(err) {
-      ErrorMsg(&quot;Balance too low for transfer&quot;);
+      ErrorMsg("Balance too low for transfer");
       return false;
     }
 
     (err,balanceSpender) = _allowance.minus(_value);
     if(err) {
-      ErrorMsg(&quot;Transfer exceeds allowance&quot;);
+      ErrorMsg("Transfer exceeds allowance");
       return false;
     }
     self.balances[_from] = balanceOwner;
@@ -161,7 +161,7 @@ pragma solidity ^0.4.11;
  * about the application of blockchain technology.
  * For further information: majoolr.io, openzeppelin.org
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -188,7 +188,7 @@ library BasicMathLib {
       allGood:
     }
     if (err)
-      Err(&quot;times func overflow&quot;);
+      Err("times func overflow");
   }
 
   /// @dev Divides two numbers but checks for 0 in the divisor first.
@@ -205,7 +205,7 @@ library BasicMathLib {
       return(mload(0x40),0x40)
       e:
     }
-    Err(&quot;tried to divide by zero&quot;);
+    Err("tried to divide by zero");
     return (true, 0);
   }
 
@@ -224,7 +224,7 @@ library BasicMathLib {
       allGood:
     }
     if (err)
-      Err(&quot;plus func overflow&quot;);
+      Err("plus func overflow");
   }
 
   /// @dev Subtracts two numbers and checks for underflow before returning.
@@ -242,6 +242,6 @@ library BasicMathLib {
       allGood:
     }
     if (err)
-      Err(&quot;minus func underflow&quot;);
+      Err("minus func underflow");
   }
 }

@@ -19,8 +19,8 @@ contract ERC20Interface {
 }
 
 contract StcToken is ERC20Interface {
-	string public constant symbol = &quot;STC&quot;;
-	string public constant name = &quot;StarChainToken&quot;;
+	string public constant symbol = "STC";
+	string public constant name = "StarChainToken";
 	uint8 public constant decimals = 8;
 	uint256 _totalSupply = 1000000000*100000000;
 	mapping(address => uint256) balances;

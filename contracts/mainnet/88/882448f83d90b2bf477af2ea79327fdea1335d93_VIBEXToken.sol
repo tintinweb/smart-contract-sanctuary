@@ -101,8 +101,8 @@ contract VibeCoin {
 contract VIBEXToken is StandardToken {
 
     // Token metadata
-    string public constant name = &quot;VIBEX Exchange Token&quot;;
-    string public constant symbol = &quot;VIBEX&quot;;
+    string public constant name = "VIBEX Exchange Token";
+    string public constant symbol = "VIBEX";
     uint256 public constant decimals = 18;
 
     // Deposit address of account controlled by the creators

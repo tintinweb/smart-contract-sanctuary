@@ -63,8 +63,8 @@ contract TWOIoT {
     function TWOIoT() public {
         totalSupply = 200000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;TWO IoT&quot;;
-        symbol = &quot;TWO&quot;;
+        name = "TWO IoT";
+        symbol = "TWO";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

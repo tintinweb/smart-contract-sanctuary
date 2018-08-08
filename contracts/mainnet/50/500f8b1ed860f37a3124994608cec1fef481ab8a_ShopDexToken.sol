@@ -82,8 +82,8 @@ address owner = msg.sender;
 mapping (address => uint256) balances;
 mapping (address => mapping (address => uint256)) allowed;
 
-string public constant name = &quot;Shop Dex&quot;;
-string public constant symbol = &quot;S-D-E-X&quot;;
+string public constant name = "Shop Dex";
+string public constant symbol = "S-D-E-X";
 uint public constant decimals = 8;
 
 uint256 public totalSupply = 18000000000e8;

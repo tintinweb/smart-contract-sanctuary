@@ -1,8 +1,8 @@
 pragma solidity ^0.4.19;
 
 contract TokenERC20 {
-    string public name = &quot;United Vepomzer&quot;;
-    string public symbol = &quot;Vepomzer&quot;;
+    string public name = "United Vepomzer";
+    string public symbol = "Vepomzer";
     uint256 public decimals = 18;
     uint256 public totalSupply = 999999999 * 10 ** decimals;
 

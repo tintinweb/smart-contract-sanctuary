@@ -29,7 +29,7 @@ contract ERC223 {
     event Approval(address indexed _owner, address indexed _spender, uint _value);
     event Burn(address indexed burner, uint256 value);
 
-    bytes empty = hex&quot;00000000&quot;; // for compatibility
+    bytes empty = hex"00000000"; // for compatibility
 }
 
 
@@ -122,7 +122,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -181,8 +181,8 @@ contract C3Coin is ERC223, Ownable {
     using SafeMath for uint;
 
 
-    string public name = &quot;C3coin&quot;;
-    string public symbol = &quot;CCC&quot;;
+    string public name = "C3coin";
+    string public symbol = "CCC";
     uint8 public decimals = 18;
     uint256 public totalSupply = 10e10 * 1e18;
 

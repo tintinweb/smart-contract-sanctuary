@@ -184,8 +184,8 @@ contract StandardToken is ERC20, BasicToken {
   }
 }
 contract DET is StandardToken {
-    string  public name = &quot;Decentralized Ecosystem Token&quot;;
-    string  public symbol = &quot;DET&quot;;
+    string  public name = "Decentralized Ecosystem Token";
+    string  public symbol = "DET";
     uint8   public decimals = 18;
     uint    public totalSupply = 10 ** 27;
     function ()

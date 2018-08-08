@@ -41,8 +41,8 @@ contract OysterShell {
      */
     function OysterShell() public {
         director = msg.sender;
-        name = &quot;Oyster Shell TEST&quot;;
-        symbol = &quot;PRESHL&quot;;
+        name = "Oyster Shell TEST";
+        symbol = "PRESHL";
         decimals = 18;
         directorLock = false;
         totalSupply = 98592692;

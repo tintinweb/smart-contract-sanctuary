@@ -63,8 +63,8 @@ contract ERC223 is ERC20 {
 
 contract BankeraToken is ERC223, SafeMath {
 
-	string public constant name = &quot;Banker Token&quot;;     // Set the name for display purposes
-	string public constant symbol = &quot;BNK&quot;;      // Set the symbol for display purposes
+	string public constant name = "Banker Token";     // Set the name for display purposes
+	string public constant symbol = "BNK";      // Set the symbol for display purposes
 	uint8 public constant decimals = 8;         // Amount of decimals for display purposes
 	uint256 private issued = 0;   				// tokens count issued to addresses
 	uint256 private totalTokens = 25000000000 * 100000000; //25,000,000,000.0000 0000 BNK

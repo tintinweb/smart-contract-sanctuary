@@ -56,8 +56,8 @@ contract NitroCoin is Ownable{
     
     using SafeMath for uint256;
     
-    string public constant name       = &quot;NitroCoin&quot;;
-    string public constant symbol     = &quot;NRC&quot;;
+    string public constant name       = "NitroCoin";
+    string public constant symbol     = "NRC";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply        = 25000000 ether;
     uint256 public currentTotalSupply = 0;

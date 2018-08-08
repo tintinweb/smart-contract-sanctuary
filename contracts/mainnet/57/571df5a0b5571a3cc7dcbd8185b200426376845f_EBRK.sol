@@ -28,8 +28,8 @@ contract EBRK {
     ) public {
         totalSupply = 100000000000000000000000000;                          // Total supply with the decimal amount
         balanceOf[msg.sender] = 100000000000000000000000000;                // All initial tokens
-        name = &quot;Token EBRK&quot;;                                                // The name for display purposes
-        symbol = &quot;EBRK&quot;;                                                    // The symbol for display purposes
+        name = "Token EBRK";                                                // The name for display purposes
+        symbol = "EBRK";                                                    // The symbol for display purposes
     }
 
     /**

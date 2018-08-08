@@ -14,7 +14,7 @@ contract ERC20Basic {
 }
 
 
-//import &quot;../node_modules/zeppelin-solidity/contracts/lifecycle/Pausable.sol&quot;;
+//import "../node_modules/zeppelin-solidity/contracts/lifecycle/Pausable.sol";
 
 
 
@@ -292,11 +292,11 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 
 contract RYCToken is StandardBurnableToken {
     // Constants
-    string  public constant name = &quot;Ramon Y Cayal&quot;;
-    string  public constant symbol = &quot;RYC&quot;;
+    string  public constant name = "Ramon Y Cayal";
+    string  public constant symbol = "RYC";
     uint8   public constant decimals = 18;
     address public owner;
-    string  public website = &quot;www.ramonycayal.io&quot;; 
+    string  public website = "www.ramonycayal.io"; 
     uint256 public constant INITIAL_SUPPLY      =  5000000000 * (10 ** uint256(decimals));
     uint256 public constant CROWDSALE_ALLOWANCE =  4000000000 * (10 ** uint256(decimals));
     uint256 public constant ADMIN_ALLOWANCE     =  1000000000 * (10 ** uint256(decimals));

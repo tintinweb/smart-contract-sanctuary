@@ -195,8 +195,8 @@ contract Burnable is StandardToken {
 
 contract SangusToken is Burnable, Ownable {
 
-  string public name = &quot;Sangus Rating Token&quot;;
-  string public symbol = &quot;SRT&quot;;
+  string public name = "Sangus Rating Token";
+  string public symbol = "SRT";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 20000000 * 1 ether;
 

@@ -109,8 +109,8 @@ contract RRcoinToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function RRcoinToken() public {
-        symbol = &quot;RR&quot;;
-        name = &quot;RRcoin&quot;;
+        symbol = "RR";
+        name = "RRcoin";
         decimals = 18;
         _totalSupply = 3000000 * 10**uint(decimals);
         balances[0x6801c3f0BdCA16E0B3206b8c804e94F5d01cA835] = _totalSupply;

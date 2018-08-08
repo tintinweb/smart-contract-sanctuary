@@ -125,8 +125,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract VAPEbits is Ownable, StandardToken {
 
-    string public name = &quot;VAPEbits&quot;;          
-    string public symbol = &quot;VAPE&quot;;              
+    string public name = "VAPEbits";          
+    string public symbol = "VAPE";              
     uint public decimals = 18;                  
 
     uint public totalSupply = 80000000000000000000000000;  

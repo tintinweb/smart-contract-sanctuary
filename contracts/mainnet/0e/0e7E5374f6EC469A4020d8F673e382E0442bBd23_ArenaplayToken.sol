@@ -230,11 +230,11 @@ contract ArenaplayToken is ERC20Token {
     // Token information
     // ------------------------------------------------------------------------
     // BK Next 3 lines Ok. Using uint8 for decimals instead of uint256
-    string public constant symbol = &quot;APY&quot;;
-    string public constant name = &quot;Arenaplay.io&quot;;
+    string public constant symbol = "APY";
+    string public constant name = "Arenaplay.io";
     uint8 public constant decimals = 18;
 
-    // > new Date(&quot;2017-06-29T13:00:00&quot;).getTime()/1000
+    // > new Date("2017-06-29T13:00:00").getTime()/1000
     // 1498741200
     // Do not use `now` here
     // BK NOTE - This contract uses the date/time instead of blocks to determine

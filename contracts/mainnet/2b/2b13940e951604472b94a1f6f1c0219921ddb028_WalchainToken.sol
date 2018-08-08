@@ -113,12 +113,12 @@ contract WalchainToken is StandardToken {
     string public name;                   //fancy name: eg Simon Bucks
     uint8 public decimals;                //How many decimals to show. ie. There could 1000 base units with 3 decimals. Meaning 0.980 SBX = 980 base units. It&#39;s like comparing 1 wei to 1 ether.
     string public symbol;                 //An identifier: eg SBX
-    string public version = &quot;W0.1&quot;;       //human 0.1 standard. Just an arbitrary versioning scheme.
+    string public version = "W0.1";       //human 0.1 standard. Just an arbitrary versioning scheme.
     function WalchainToken() {
         balances[msg.sender] = 600000000000;               // Give the creator all initial tokens
         totalSupply = 600000000000;                        // Update total supply
-        name = &quot;WalChain Token&quot;;                                   // Set the name for display purposes
+        name = "WalChain Token";                                   // Set the name for display purposes
         decimals = 4;                            // Amount of decimals for display purposes
-        symbol = &quot;WAL&quot;;                               // Set the symbol for display purposes
+        symbol = "WAL";                               // Set the symbol for display purposes
     }
 }

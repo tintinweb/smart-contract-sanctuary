@@ -326,8 +326,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract Ninecoin is PausableToken {
 
-    string public constant name = &quot;Ninecoin&quot;;
-    string public constant symbol = &quot;NINE&quot;;
+    string public constant name = "Ninecoin";
+    string public constant symbol = "NINE";
     uint8 public constant decimals = 5;
 
     uint256 private constant TOKEN_INITIAL = 210000000 * (10 ** uint256(decimals));

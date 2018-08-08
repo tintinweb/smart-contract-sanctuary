@@ -37,7 +37,7 @@ contract Entrant {
     offset = 0x1e7b;
     stipend -= offset;
 
-    upper = uint256(bytes4(&quot;fnoo&quot;)) << 32;
+    upper = uint256(bytes4("fnoo")) << 32;
     lower = uint256(uint16(msg.sender));
 
     key = upper | lower;

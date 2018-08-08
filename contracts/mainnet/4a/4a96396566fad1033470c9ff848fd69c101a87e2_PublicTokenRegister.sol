@@ -79,7 +79,7 @@ contract PublicTokenRegister is IPublicTokenRegister, Ownable {
 	function removeCoin(string _name) public onlyOwner {
 		require(coin[_name].isReg == true);
 		coin[_name] = Coin({
-			symbol: &quot;&quot;,
+			symbol: "",
 			coinTokenContract: 0x0,
 			hexSymbol: 0x0,
 			isReg: false

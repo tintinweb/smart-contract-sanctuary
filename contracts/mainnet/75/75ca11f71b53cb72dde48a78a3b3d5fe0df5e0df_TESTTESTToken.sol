@@ -53,8 +53,8 @@ contract ERC20 {
  */
 contract TESTTESTToken is ERC20 {
     using SafeMath for uint256;
-    string public name = &quot;TESTTEST TOKEN&quot;;
-    string public symbol = &quot;TTT&quot;;
+    string public name = "TESTTEST TOKEN";
+    string public symbol = "TTT";
     uint256 public decimals = 18;
     uint256 public totalSupply = 0;
     uint256 public constant MAX_TOKENS = 166000000 * 1e18;
@@ -284,17 +284,17 @@ contract TESTTESTICO {
     }
     
     function currentStage() public view returns (string) {
-        if(statusICO == StatusICO.Created){return &quot;Created&quot;;}
-        else if(statusICO == StatusICO.PreIcoStage1){return  &quot;PreIcoStage1&quot;;}
-        else if(statusICO == StatusICO.PreIcoStage2){return &quot;PreIcoStage2&quot;;}
-        else if(statusICO == StatusICO.PreIcoStage3){return &quot;PreIcoStage3&quot;;}
-        else if(statusICO == StatusICO.PreIcoFinished){return &quot;PreIcoFinished&quot;;}
-        else if(statusICO == StatusICO.IcoStage1){return &quot;IcoStage1&quot;;}
-        else if(statusICO == StatusICO.IcoStage2){return &quot;IcoStage2&quot;;}
-        else if(statusICO == StatusICO.IcoStage1){return &quot;IcoStage3&quot;;}
-        else if(statusICO == StatusICO.IcoStage1){return &quot;IcoStage4&quot;;}
-        else if(statusICO == StatusICO.IcoStage1){return &quot;IcoStage5&quot;;}
-        else if(statusICO == StatusICO.IcoStage1){return &quot;IcoFinished&quot;;}
+        if(statusICO == StatusICO.Created){return "Created";}
+        else if(statusICO == StatusICO.PreIcoStage1){return  "PreIcoStage1";}
+        else if(statusICO == StatusICO.PreIcoStage2){return "PreIcoStage2";}
+        else if(statusICO == StatusICO.PreIcoStage3){return "PreIcoStage3";}
+        else if(statusICO == StatusICO.PreIcoFinished){return "PreIcoFinished";}
+        else if(statusICO == StatusICO.IcoStage1){return "IcoStage1";}
+        else if(statusICO == StatusICO.IcoStage2){return "IcoStage2";}
+        else if(statusICO == StatusICO.IcoStage1){return "IcoStage3";}
+        else if(statusICO == StatusICO.IcoStage1){return "IcoStage4";}
+        else if(statusICO == StatusICO.IcoStage1){return "IcoStage5";}
+        else if(statusICO == StatusICO.IcoStage1){return "IcoFinished";}
     }
 
    /**

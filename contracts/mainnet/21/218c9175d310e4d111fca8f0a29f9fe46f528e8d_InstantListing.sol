@@ -5,7 +5,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -283,7 +283,7 @@ contract InstantListing is Ownable {
     // Round number
     uint256 public round;
 
-    // Flag to mark if &quot;listing-by-rank&quot; is already executed
+    // Flag to mark if "listing-by-rank" is already executed
     bool public ranked;
 
     // The address of beneficiary.

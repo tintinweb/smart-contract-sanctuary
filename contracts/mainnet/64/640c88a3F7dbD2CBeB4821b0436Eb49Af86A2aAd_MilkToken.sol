@@ -345,8 +345,8 @@ contract BurnableToken is BasicToken, Ownable, Pausable {
 
 
 contract MilkToken is CappedToken, BurnableToken, PausableToken {
-  string public constant name = &quot;PURCOW MILK TOKEN&quot;;
-  string public constant symbol = &quot;MILK&quot;;
+  string public constant name = "PURCOW MILK TOKEN";
+  string public constant symbol = "MILK";
   uint256 public constant decimals = 18;
   uint256 public constant UNIT = 10 ** 8;
 

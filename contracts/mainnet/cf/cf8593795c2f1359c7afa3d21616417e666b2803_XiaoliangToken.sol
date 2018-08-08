@@ -67,9 +67,9 @@ contract XiaoliangToken is EIP20Interface {
     constructor () public {
         totalSupply = 21 * (10**8) * (10**8);                        // Update total supply
         balances[msg.sender] = totalSupply;
-        name = &quot;XiaoliangToken&quot;;                                   // Set the name for display purposes
+        name = "XiaoliangToken";                                   // Set the name for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
-        symbol = &quot;XLT&quot;;                               // Set the symbol for display purposes
+        symbol = "XLT";                               // Set the symbol for display purposes
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

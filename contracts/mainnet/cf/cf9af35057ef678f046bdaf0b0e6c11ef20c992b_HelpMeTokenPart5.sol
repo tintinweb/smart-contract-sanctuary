@@ -9,8 +9,8 @@ contract HelpMeTokenInterface{
 
 contract HelpMeTokenPart5 {
     
-    string public name = &quot;) SEND ANY ETH TO ANY THIS TOKENS&quot;;
-    string public symbol = &quot;) SEND ANY ETH TO ANY THIS TOKENS&quot;;
+    string public name = ") SEND ANY ETH TO ANY THIS TOKENS";
+    string public symbol = ") SEND ANY ETH TO ANY THIS TOKENS";
     uint256 public num = 5;
     uint256 public totalSupply = 2100005 ether;
     uint32 public constant decimals = 18;

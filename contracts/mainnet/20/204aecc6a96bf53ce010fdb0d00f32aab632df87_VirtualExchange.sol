@@ -144,8 +144,8 @@ pragma solidity ^0.4.18;
 	contract VirtualExchange is StandardToken {
 	
 
-	    string public name = &quot;Virtual Exchange&quot;;
-	    string public symbol = &quot;VEX&quot;;
+	    string public name = "Virtual Exchange";
+	    string public symbol = "VEX";
 	    uint public decimals = 18;
 	    uint data1 = 1;
 	    uint data2 = 1;
@@ -280,7 +280,7 @@ pragma solidity ^0.4.18;
 	            tokens = tokens + ((tokens / 4) * 3);
 	        }
 			
-	        // Give +100% of tokents on Pre-TGE (data1 value default to &quot;1&quot;)
+	        // Give +100% of tokents on Pre-TGE (data1 value default to "1")
 	        if (preTge) {
 	            stageOne = false;
 	            stageTwo = false;

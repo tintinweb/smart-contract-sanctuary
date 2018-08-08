@@ -320,7 +320,7 @@ contract BurnableToken is StandardToken {
 */
 
 contract Token is CappedToken, BurnableToken, Withdrawable {
-    function Token() CappedToken(34000000 * 1 ether) StandardToken(&quot;Wind Energy Mining&quot;, &quot;WEM&quot;, 18) public {
+    function Token() CappedToken(34000000 * 1 ether) StandardToken("Wind Energy Mining", "WEM", 18) public {
         
     }
 }

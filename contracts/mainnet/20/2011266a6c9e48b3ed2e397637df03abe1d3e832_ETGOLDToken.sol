@@ -15,8 +15,8 @@ contract ETGOLDToken {
     function ETGOLDToken() public {
         totalSupply = 24000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Gold Ethereum&quot;;
-        symbol = &quot;ETGOLD&quot;;
+        name = "Gold Ethereum";
+        symbol = "ETGOLD";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

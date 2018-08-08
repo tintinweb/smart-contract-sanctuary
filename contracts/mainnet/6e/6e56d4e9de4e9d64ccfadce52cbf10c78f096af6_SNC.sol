@@ -34,7 +34,7 @@ contract SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -137,8 +137,8 @@ contract SNC is SafeMath, Pausable {
     /* Initializes contract with initial supply tokens to the creator of the contract */
     function SNC() public {
         totalSupply = (10**8) * (10**8);
-        name = &quot;Snow Coin&quot;;                                 // Set the name for display purposes
-        symbol = &quot;SNC&quot;;                                     // Set the symbol for display purposes
+        name = "Snow Coin";                                 // Set the name for display purposes
+        symbol = "SNC";                                     // Set the symbol for display purposes
         decimals = 8;                                       // Amount of decimals for display purposes
         owner = msg.sender;
         balanceOf[owner] = totalSupply;                     // Give the creator all tokens

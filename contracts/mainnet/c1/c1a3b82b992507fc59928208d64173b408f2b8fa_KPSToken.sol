@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -326,7 +326,7 @@ contract MintableToken is StandardToken, Ownable {
  * It is meant to be used in a crowdsale contract.
  */
 contract KPSToken is MintableToken {
-  string public constant name = &quot;KampongSom&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;KPS&quot;; // solium-disable-line uppercase
+  string public constant name = "KampongSom"; // solium-disable-line uppercase
+  string public constant symbol = "KPS"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 }

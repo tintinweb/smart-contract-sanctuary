@@ -231,8 +231,8 @@ contract DXC is MintableToken {
     event TokenCreation(address _address);
     event SetAdditionalOwners(address[] oldOwners, address[] newOwners);
 
-    string public constant name = &quot;Daox Coin&quot;;
-    string public constant symbol = &quot;DXC&quot;;
+    string public constant name = "Daox Coin";
+    string public constant symbol = "DXC";
     uint public constant decimals = 18;
 
     /**
@@ -243,7 +243,7 @@ contract DXC is MintableToken {
     */
     function contributeTo(address _to, uint256 _amount) public {
         super.transfer(_to, _amount);
-        require(_to.call(bytes4(keccak256(&quot;handleDXCPayment(address,uint256)&quot;)), msg.sender, _amount));
+        require(_to.call(bytes4(keccak256("handleDXCPayment(address,uint256)")), msg.sender, _amount));
     }
 
     /**

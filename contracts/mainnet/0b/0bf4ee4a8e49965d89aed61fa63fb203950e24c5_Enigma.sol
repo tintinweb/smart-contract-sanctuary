@@ -23,8 +23,8 @@ contract Enigma {
     function Enigma() {
         balanceOf[msg.sender] = 150000000 ether;              // Give the creator all initial tokens
         totalSupply = 150000000 ether;                        // Update total supply
-        name = &quot;Enigma&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ENG&quot;;                               // Set the symbol for display purposes
+        name = "Enigma";                                   // Set the name for display purposes
+        symbol = "ENG";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

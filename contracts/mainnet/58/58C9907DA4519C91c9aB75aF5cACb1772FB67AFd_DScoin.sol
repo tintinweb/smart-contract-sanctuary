@@ -32,8 +32,8 @@ contract DScoin {
     ) public {
         totalSupply = 1000000000000000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;DScoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;DSC&quot;;                               // Set the symbol for display purposes
+        name = "DScoin";                                   // Set the name for display purposes
+        symbol = "DSC";                               // Set the symbol for display purposes
     }
 
     /**

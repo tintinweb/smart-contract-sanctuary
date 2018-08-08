@@ -113,8 +113,8 @@ contract GJMI is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GJMI() public {
-        symbol = &quot;GJMI&quot;;
-        name = &quot;GJMI&quot;;
+        symbol = "GJMI";
+        name = "GJMI";
         decimals = 18;
         _totalSupply = 1500000000000000000000000;
         balances[0x0fEF1510638a88b324f36e7F24fD8C278cFCa8D3] = _totalSupply;

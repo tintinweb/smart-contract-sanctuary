@@ -231,9 +231,9 @@ contract FreeToken is ERC20Interface, Owned {
 
     function FreeToken() public {
 
-        symbol = &quot;FREE&quot;;
+        symbol = "FREE";
 
-        name = &quot;Free Coin&quot;;
+        name = "Free Coin";
 
         decimals = 18;
 

@@ -207,8 +207,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract WLCoin  is StandardToken {
 
-  string public constant name = &quot;WLCoin&quot;;
-  string public constant symbol = &quot;WAGS&quot;;
+  string public constant name = "WLCoin";
+  string public constant symbol = "WAGS";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 20000000000 * (10 ** uint256(decimals));

@@ -279,8 +279,8 @@ contract RBACWithAdmin is RBAC {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
-  string public constant ROLE_PAUSE_ADMIN = &quot;pauseAdmin&quot;;
+  string public constant ROLE_ADMIN = "admin";
+  string public constant ROLE_PAUSE_ADMIN = "pauseAdmin";
 
   /**
    * @dev modifier to scope access to admins
@@ -370,7 +370,7 @@ contract ERC721BasicToken is ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
@@ -512,7 +512,7 @@ contract ERC721BasicToken is ERC721Basic {
   * @dev Safely transfers the ownership of a given token ID to another address
   * @dev If the target address is a contract, it must implement `onERC721Received`,
   *  which is called upon a safe transfer, and return the magic value
-  *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+  *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
   *  the transfer is reverted.
   * @dev Requires the msg sender to be the owner, approved, or operator
   * @param _from current owner of the token
@@ -528,14 +528,14 @@ contract ERC721BasicToken is ERC721Basic {
     payable
     canTransfer(_tokenId)
   {
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
   * @dev Safely transfers the ownership of a given token ID to another address
   * @dev If the target address is a contract, it must implement `onERC721Received`,
   *  which is called upon a safe transfer, and return the magic value
-  *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+  *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
   *  the transfer is reverted.
   * @dev Requires the msg sender to be the owner, approved, or operator
   * @param _from current owner of the token
@@ -658,7 +658,7 @@ contract ERC721BasicToken is ERC721Basic {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -673,7 +673,7 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(address _from, uint256 _tokenId, bytes _data) public returns(bytes4);
 }
@@ -741,14 +741,14 @@ contract ERC721Token is ERC721, ERC721BasicToken {
   * @dev Throws if the token ID does not exist. May return an empty string.
   * @param _tokenId uint256 ID of the token to query
   */
-   bytes constant firstPartURI = &quot;https://www.dragonseth.com/image/&quot;;
+   bytes constant firstPartURI = "https://www.dragonseth.com/image/";
     
     function tokenURI(uint256  _tokenId) external view returns (string) {
         require(exists(_tokenId));
         bytes memory tmpBytes = new bytes(96);
         uint256 i = 0;
         uint256 tokenId = _tokenId;
-        // for same use case need &quot;if (tokenId == 0)&quot; 
+        // for same use case need "if (tokenId == 0)" 
         while (tokenId != 0) {
             uint256 remainderDiv = tokenId % 10;
             tokenId = tokenId / 10;
@@ -1043,7 +1043,7 @@ contract ReentrancyGuard {
 }
 
 
-contract DragonsETH is ERC721Token(&quot;DragonsETH.com Dragon&quot;, &quot;DragonsETH&quot;), DragonsETH_GC, ReentrancyGuard {
+contract DragonsETH is ERC721Token("DragonsETH.com Dragon", "DragonsETH"), DragonsETH_GC, ReentrancyGuard {
     uint256 public totalDragons;
     uint256 public liveDragons;
     struct Dragon {
@@ -1160,7 +1160,7 @@ contract DragonsETH is ERC721Token(&quot;DragonsETH.com Dragon&quot;, &quot;Drag
         uint240 _gen2
     ) 
         external 
-        onlyRole(&quot;CreateContract&quot;) 
+        onlyRole("CreateContract") 
     {
         totalDragons++;
         liveDragons++;
@@ -1188,7 +1188,7 @@ contract DragonsETH is ERC721Token(&quot;DragonsETH.com Dragon&quot;, &quot;Drag
         dragonsStatsContract.setBirthBlock(totalDragons);
     }
     
-    function changeDragonGen(uint256 _dragonID, uint256 _gen, uint8 _which) external onlyRole(&quot;ChangeContract&quot;) {
+    function changeDragonGen(uint256 _dragonID, uint256 _gen, uint8 _which) external onlyRole("ChangeContract") {
         require(dragons[_dragonID].stage >= 2); // dragon not dead and not egg
         if (_which == 0) {
             dragons[_dragonID].gen1 = _gen;
@@ -1231,7 +1231,7 @@ contract DragonsETH is ERC721Token(&quot;DragonsETH.com Dragon&quot;, &quot;Drag
     function killDragonDeathContract(address _lastOwner, uint256 _dragonID, uint256 _deathReason) 
         external 
         canTransfer(_dragonID) 
-        onlyRole(&quot;DeathContract&quot;) 
+        onlyRole("DeathContract") 
     {
         checkDragonStatus(_dragonID, 2);
         dragons[_dragonID].stage = 0;
@@ -1295,11 +1295,11 @@ contract DragonsETH is ERC721Token(&quot;DragonsETH.com Dragon&quot;, &quot;Drag
         );
     }
     
-    function setCurrentAction(uint256 _dragonID, uint8 _currentAction) external onlyRole(&quot;ActionContract&quot;) {
+    function setCurrentAction(uint256 _dragonID, uint8 _currentAction) external onlyRole("ActionContract") {
         dragons[_dragonID].currentAction = _currentAction;
     }
     
-    function setTime2Rest(uint256 _dragonID, uint256 _addNextBlock2Action) external onlyRole(&quot;ActionContract&quot;) {
+    function setTime2Rest(uint256 _dragonID, uint256 _addNextBlock2Action) external onlyRole("ActionContract") {
         dragons[_dragonID].nextBlock2Action = block.number + _addNextBlock2Action;
     }
 }

@@ -61,8 +61,8 @@ contract TokenERC20 is Ownable {
 	
     using SafeMath for uint256;
     
-    string public constant name       = &quot;通链&quot;;
-    string public constant symbol     = &quot;TC&quot;;
+    string public constant name       = "通链";
+    string public constant symbol     = "TC";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply;
 

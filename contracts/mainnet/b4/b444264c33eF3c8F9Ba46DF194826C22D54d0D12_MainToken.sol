@@ -206,7 +206,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -604,8 +604,8 @@ contract Consts {
     uint8 constant TOKEN_DECIMALS_UINT8 = 18;
     uint constant TOKEN_DECIMAL_MULTIPLIER = 10 ** TOKEN_DECIMALS;
 
-    string constant TOKEN_NAME = &quot;securix.io&quot;;
-    string constant TOKEN_SYMBOL = &quot;SRXIO&quot;;
+    string constant TOKEN_NAME = "securix.io";
+    string constant TOKEN_SYMBOL = "SRXIO";
     bool constant PAUSED = false;
     address constant TARGET_USER = 0x59f66832EfdAd39AF88A5aF420E7E546C5838D5b;
     

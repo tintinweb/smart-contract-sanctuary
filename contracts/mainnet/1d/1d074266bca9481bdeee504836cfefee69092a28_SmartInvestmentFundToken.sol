@@ -1,5 +1,5 @@
 pragma solidity ^0.4.21;
-pragma experimental &quot;v0.5.0&quot;;
+pragma experimental "v0.5.0";
 
 /**
  * @title SafeMath
@@ -41,10 +41,10 @@ contract SmartInvestmentFundToken {
     mapping(address => mapping (address => uint256)) allowed;
 
     /* The name of the contract */
-    string public name = &quot;Smart Investment Fund Token v2&quot;;
+    string public name = "Smart Investment Fund Token v2";
 
     /* The symbol for the contract */
-    string public symbol = &quot;XSFT&quot;;
+    string public symbol = "XSFT";
 
     /* How many DPs are in use in this contract */
     uint8 public decimals = 6;

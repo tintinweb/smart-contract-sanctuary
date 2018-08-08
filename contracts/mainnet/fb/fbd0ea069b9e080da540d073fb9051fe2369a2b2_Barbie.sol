@@ -73,7 +73,7 @@ contract Barbie is StandardToken {
     string public name;                
     uint8 public decimals;           
     string public symbol;                
-    string public version = &quot;1.0&quot;; 
+    string public version = "1.0"; 
     uint256 public unitsOneEthCanBuy;    
     uint256 public totalEthInWei;         
     address public fundsWallet;           
@@ -82,9 +82,9 @@ contract Barbie is StandardToken {
     function Barbie() {
         balances[msg.sender] = 14000000000000000000000000000;               
         totalSupply = 14000000000000000000000000000;                        
-        name = &quot;Barbie&quot;;                                              
+        name = "Barbie";                                              
         decimals = 18;                                               
-        symbol = &quot;BARBIE&quot;;                                            
+        symbol = "BARBIE";                                            
                                             
         fundsWallet = msg.sender;                                   
                           
@@ -93,7 +93,7 @@ contract Barbie is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if (!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) {throw;}
+        if (!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) {throw;}
         return true;
     }
 }

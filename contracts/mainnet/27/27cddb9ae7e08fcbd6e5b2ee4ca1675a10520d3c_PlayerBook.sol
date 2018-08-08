@@ -44,12 +44,12 @@ contract PlayerBook {
          // No keys are purchased with this method, it&#39;s simply locking our addresses,
         // PID&#39;s and names for referral codes.
         plyr_[1].addr = 0x7e474fe5Cfb720804860215f407111183cbc2f85;
-        plyr_[1].name = &quot;kenny&quot;;
+        plyr_[1].name = "kenny";
         plyr_[1].names = 1;
         pIDxAddr_[0x7e474fe5Cfb720804860215f407111183cbc2f85] = 1;
-        pIDxName_[&quot;kenny&quot;] = 1;
-        plyrNames_[1][&quot;kenny&quot;] = true;
-        plyrNameList_[1][1] = &quot;kenny&quot;;
+        pIDxName_["kenny"] = 1;
+        plyrNames_[1]["kenny"] = true;
+        plyrNameList_[1][1] = "kenny";
     }
    
 //==============================================================================
@@ -236,7 +236,7 @@ contract PlayerBook {
         // manage affiliate residuals
         // if no affiliate code was given or player tried to use their own, lolz
         uint256 _affID;
-        if (_affCode != &quot;&quot; && _affCode != _name)
+        if (_affCode != "" && _affCode != _name)
         {
             // get affiliate ID from aff Code 
             _affID = pIDxName_[_affCode];
@@ -479,7 +479,7 @@ contract PlayerBook {
         // manage affiliate residuals
         // if no affiliate code was given or player tried to use their own
         uint256 _affID;
-        if (_affCode != &quot;&quot; && _affCode != _name)
+        if (_affCode != "" && _affCode != _name)
         {
             // get affiliate ID from aff Code 
             _affID = pIDxName_[_affCode];
@@ -624,7 +624,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -636,7 +636,7 @@ library SafeMath {
         pure
         returns (uint256) 
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -649,7 +649,7 @@ library SafeMath {
         returns (uint256 c) 
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
     

@@ -261,7 +261,7 @@ contract FreeDiceCoin is StandardToken {
 
     // region{Constructor}
     // note : [(final)totalSupply] >> claimAmount * 10 ** decimals
-    // example : args << &quot;The Kh Token No.X&quot;, &quot;KHTX&quot;, &quot;10000000000&quot;, &quot;18&quot;
+    // example : args << "The Kh Token No.X", "KHTX", "10000000000", "18"
     function FreeDiceCoin() public {
     	name = &#39;FreeDice.io&#39;;
     	symbol = &#39;FDC(FreeDice)&#39;;

@@ -49,8 +49,8 @@ contract NukTestToken is ERC20 {
 	using SafeMath for uint256;	
 	address public owner;	
 
-	string public constant name = &quot;NukTest&quot;; 
-  	string public constant symbol = &quot;Nkt&quot;; 
+	string public constant name = "NukTest"; 
+  	string public constant symbol = "Nkt"; 
   	uint8 public constant decimals = 0; 
 
   	uint256 public constant INITIAL_SUPPLY = 20000000000;

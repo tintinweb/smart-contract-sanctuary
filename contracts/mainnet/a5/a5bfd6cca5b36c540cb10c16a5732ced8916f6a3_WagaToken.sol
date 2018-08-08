@@ -189,9 +189,9 @@ contract StandardToken is BasicToken, ERC20 {
 */
 contract WagaToken is StandardToken {
 
-    string public constant LOVEYOUFOREVER = &quot;LIANGZAI&quot;;
-    string public constant NAME = &quot;WagaToken&quot;;
-    string public constant SYMBOL = &quot;WGT&quot;;
+    string public constant LOVEYOUFOREVER = "LIANGZAI";
+    string public constant NAME = "WagaToken";
+    string public constant SYMBOL = "WGT";
     uint public constant DECIMALS = 18;
 
     /// Emitted when a function is invocated by unauthorized addresses.

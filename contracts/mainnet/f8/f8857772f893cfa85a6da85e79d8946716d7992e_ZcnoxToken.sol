@@ -131,8 +131,8 @@ contract ZcnoxToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZcnoxToken() public {
-        symbol = &quot;ZNC&quot;;
-        name = &quot;Zcnox&quot;;
+        symbol = "ZNC";
+        name = "Zcnox";
         decimals = 18;
         _totalSupply = 20000000e18;
         

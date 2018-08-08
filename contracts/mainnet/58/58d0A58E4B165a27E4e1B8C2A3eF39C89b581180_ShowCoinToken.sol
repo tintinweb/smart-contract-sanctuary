@@ -16,8 +16,8 @@ contract ShowCoinToken{
         owner = 0xd32c3c303BD6bd65066C1373720b5442A414f9CC;          // Set owner of contract
         lockOwner = 0xC9BA6e5Eda033c66D34ab64d02d14590963Ce0c2;
         startTime = 1514649600;
-        name = &quot;ShowCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;Show&quot;;                                           // Set the symbol for display purposes
+        name = "ShowCoin";                                   // Set the name for display purposes
+        symbol = "Show";                                           // Set the symbol for display purposes
         decimals = 18;                                            // Amount of decimals for display purposes
         totalSupply = 10000000000000000000000000000;               // Total supply
         balances[owner] = totalSupply * 90 /100 ;

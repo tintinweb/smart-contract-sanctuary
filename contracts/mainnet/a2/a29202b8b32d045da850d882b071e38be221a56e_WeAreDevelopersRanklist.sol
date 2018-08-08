@@ -5,7 +5,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -76,20 +76,20 @@ contract WeAreDevelopersRanklist is Ownable {
     mapping (uint8 => Winner) winnerByRank;
 
     constructor() public {
-        setWinner(&quot;no permission to publish&quot;, 1);
-        setWinner(&quot;Emanuel Schmoczer&quot;, 2);
-        setWinner(&quot;no permission to publish&quot;, 3);
-        setWinner(&quot;Thomas Boigner&quot;, 4);
-        setWinner(&quot;no permission to publish&quot;, 5);
-        setWinner(&quot;no permission to publish&quot;, 6);
-        setWinner(&quot;Magomed Arsaev&quot;, 7);
-        setWinner(&quot;Elsa Heer&quot;, 8);
-        setWinner(&quot;no permission to publish&quot;, 9);
-        setWinner(&quot;no permission to publish&quot;, 10);
+        setWinner("no permission to publish", 1);
+        setWinner("Emanuel Schmoczer", 2);
+        setWinner("no permission to publish", 3);
+        setWinner("Thomas Boigner", 4);
+        setWinner("no permission to publish", 5);
+        setWinner("no permission to publish", 6);
+        setWinner("Magomed Arsaev", 7);
+        setWinner("Elsa Heer", 8);
+        setWinner("no permission to publish", 9);
+        setWinner("no permission to publish", 10);
     }
 
     function getDescription() public pure returns(string) {
-        return &quot;This is the wall of fame of developers participating in the CONDA developer challange at WeAreDevelopers 2018&quot;;
+        return "This is the wall of fame of developers participating in the CONDA developer challange at WeAreDevelopers 2018";
     }
     
     function setWinner(string _fullName, uint8 _rank) public onlyOwner {

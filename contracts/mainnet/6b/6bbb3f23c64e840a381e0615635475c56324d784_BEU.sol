@@ -31,8 +31,8 @@ library SafeMath {
 
 contract BEU {
     using SafeMath for uint256;
-    string public name = &quot;BitEDU&quot;;
-    string public symbol = &quot;BEU&quot;;
+    string public name = "BitEDU";
+    string public symbol = "BEU";
     uint8 public decimals = 18;
     uint256 public totalSupply = 2000000000000000000000000000;
     address public owner;

@@ -171,7 +171,7 @@ contract ERC23StandardToken is ERC23BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -240,8 +240,8 @@ contract MintableToken is ERC23StandardToken, Ownable {
 }
 
 contract BIGLUV is MintableToken { 
-  string public name=&quot;BIGLUV&quot;;
-  string public symbol=&quot;BLV&quot;;
+  string public name="BIGLUV";
+  string public symbol="BLV";
   uint8 public decimals=18;
 
 }

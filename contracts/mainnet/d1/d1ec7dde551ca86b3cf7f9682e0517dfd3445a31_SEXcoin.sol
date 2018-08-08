@@ -123,8 +123,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract SEXcoin is StandardToken {
-    string public name = &quot;SEXcoin&quot;;
-    string public symbol = &quot;SEX&quot;;
+    string public name = "SEXcoin";
+    string public symbol = "SEX";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 1000000000000000000000000*10**18;
     function SEXcoin(){

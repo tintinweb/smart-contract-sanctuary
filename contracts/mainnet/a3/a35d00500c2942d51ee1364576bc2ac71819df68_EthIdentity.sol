@@ -121,14 +121,14 @@ contract EthIdentity is IEthIdentity {
         
         // Returns and do nothing except emitting event if the proof already exists
         if (existed == true) {
-            EventNotification(msg.sender, ERROR_EVENT, &quot;Proof already exist&quot;);
+            EventNotification(msg.sender, ERROR_EVENT, "Proof already exist");
             return false;
         }
         
         // Add new proof
         proofList[_attribute] = _source;
         
-        EventNotification(msg.sender, INFO_EVENT, &quot;New proof added&quot;);
+        EventNotification(msg.sender, INFO_EVENT, "New proof added");
         return true;
     }
     
@@ -146,20 +146,20 @@ contract EthIdentity is IEthIdentity {
         
         // Return and do nothing except emitting event if the proof does not exist
         if (existed == false) {
-            EventNotification(msg.sender, ERROR_EVENT, &quot;Proof not found&quot;);
+            EventNotification(msg.sender, ERROR_EVENT, "Proof not found");
             return false;
         }
         
         // Return and do nothing except emitting event if the source is not correct
         if (proofList[_attribute] != _source) {
-            EventNotification(msg.sender, ERROR_EVENT, &quot;Incorrect source&quot;);
+            EventNotification(msg.sender, ERROR_EVENT, "Incorrect source");
             return false;
         }
         
         // Delete existing proof
         delete proofList[_attribute];
         
-        EventNotification(msg.sender, INFO_EVENT, &quot;Proof removed&quot;);
+        EventNotification(msg.sender, INFO_EVENT, "Proof removed");
         return true;
     }
     
@@ -215,7 +215,7 @@ contract EthIdentity is IEthIdentity {
      */
     function setIdentityName(bytes32 _newName) public onlyBy(owner) returns(bool) {
         identityName = _newName;
-        EventNotification(msg.sender, INFO_EVENT, &quot;Set owner name&quot;);
+        EventNotification(msg.sender, INFO_EVENT, "Set owner name");
         return true;
     }
     
@@ -224,7 +224,7 @@ contract EthIdentity is IEthIdentity {
      */
     function setOwner(address _newOwner) public onlyBy(override) returns(bool) {
         owner = _newOwner;
-        EventNotification(msg.sender, INFO_EVENT, &quot;Set new owner&quot;);
+        EventNotification(msg.sender, INFO_EVENT, "Set new owner");
         return true;
     }
 
@@ -233,7 +233,7 @@ contract EthIdentity is IEthIdentity {
      */
     function setOverride(address _newOverride) public onlyBy(override) returns(bool) {
         override = _newOverride;
-        EventNotification(msg.sender, INFO_EVENT, &quot;Set new override&quot;);
+        EventNotification(msg.sender, INFO_EVENT, "Set new override");
         return true;
     }
     

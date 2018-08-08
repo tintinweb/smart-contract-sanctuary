@@ -27,7 +27,7 @@ contract Receiver {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -305,9 +305,9 @@ contract MintableToken is StandardToken, Ownable {
  */
 contract TrustaBitToken is MintableToken, FallbackToken {
 
-  string public constant name = &quot;TrustaBits&quot;;
+  string public constant name = "TrustaBits";
 
-  string public constant symbol = &quot;TAB&quot;;
+  string public constant symbol = "TAB";
 
   uint256 public constant decimals = 18;
 

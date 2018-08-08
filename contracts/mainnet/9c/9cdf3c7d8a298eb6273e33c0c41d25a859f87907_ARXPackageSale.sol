@@ -99,7 +99,7 @@ contract ARXPackageSale is owned, safeMath {
   uint256 public amountRaisedInWei;                               // amount raised in Wei
 
   // loop control, ICO startup and limiters
-  string  public CurrentStatus                     = &quot;&quot;;          // current packagesale status
+  string  public CurrentStatus                     = "";          // current packagesale status
   uint256 public fundingStartBlock;                               // packagesale start block#
   uint256 public fundingEndBlock;                                 // packagesale end block#
 
@@ -115,7 +115,7 @@ contract ARXPackageSale is owned, safeMath {
   // default function, map admin
   function ARXPackageSale() onlyOwner {
     admin = msg.sender;
-    CurrentStatus = &quot;packagesale deployed to chain&quot;;
+    CurrentStatus = "packagesale deployed to chain";
   }
 
   // total number of tokens initially simplified from wei
@@ -152,13 +152,13 @@ contract ARXPackageSale is owned, safeMath {
           // configure packagesale
           ispackagesaleSetup                      = true;
           ispackagesaleClosed                     = false;
-          CurrentStatus                           = &quot;packagesale is activated&quot;;
+          CurrentStatus                           = "packagesale is activated";
 
-          return &quot;packagesale is setup&quot;;
+          return "packagesale is setup";
       } else if (msg.sender != admin) {
-          return &quot;not authorized&quot;;
+          return "not authorized";
       } else  {
-          return &quot;campaign cannot be changed&quot;;
+          return "campaign cannot be changed";
       }
     }
 
@@ -208,7 +208,7 @@ contract ARXPackageSale is owned, safeMath {
 
     function updateStatus() onlyOwner {
       require((block.number >= fundingEndBlock) || (amountRaisedInWei >= EthCapInWei));
-      CurrentStatus = &quot;packagesale is closed&quot;;
+      CurrentStatus = "packagesale is closed";
     }
 
     function withdrawRemainingTokens(uint256 _amountToPull) onlyOwner {

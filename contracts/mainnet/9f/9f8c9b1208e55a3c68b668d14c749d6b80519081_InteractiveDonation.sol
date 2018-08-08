@@ -10,7 +10,7 @@ contract InteractiveDonation{
     
     event Quote(address Sent, string Text, uint256 AmtDonate);
 
-    string public DonatedBanner = &quot;&quot;;
+    string public DonatedBanner = "";
     
 
     
@@ -22,7 +22,7 @@ contract InteractiveDonation{
     
     function Withdraw() public {
         if (msg.sender != Donated){
-            emit Quote(msg.sender, &quot;OMG CHEATER ATTEMPTING TO WITHDRAW&quot;, 0);
+            emit Quote(msg.sender, "OMG CHEATER ATTEMPTING TO WITHDRAW", 0);
             return;
         }
         address contr = this;

@@ -114,8 +114,8 @@ contract PotbelleezToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;PBZ&quot;;
-        name = &quot;Potbelleez&quot;;
+        symbol = "PBZ";
+        name = "Potbelleez";
         decimals = 18;
         _totalSupply = 10000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

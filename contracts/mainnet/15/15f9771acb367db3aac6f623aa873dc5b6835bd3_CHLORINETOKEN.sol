@@ -116,8 +116,8 @@ contract CHLORINETOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CHLORINETOKEN() public {
-        symbol = &quot;CLTN&quot;;
-        name = &quot;CHLORINE TOKEN&quot;;
+        symbol = "CLTN";
+        name = "CHLORINE TOKEN";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 8 weeks;

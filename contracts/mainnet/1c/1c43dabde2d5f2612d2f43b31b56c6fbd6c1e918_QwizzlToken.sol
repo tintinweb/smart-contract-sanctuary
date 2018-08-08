@@ -272,8 +272,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract QwizzlToken is PausableToken, BurnableToken {
 
-    string public constant name = &quot;Qwizzl Token&quot;;
-    string public constant symbol = &quot;QWIZ&quot;;
+    string public constant name = "Qwizzl Token";
+    string public constant symbol = "QWIZ";
     uint8 public constant decimals = 6;
     uint256 public constant INITIAL_SUPPLY = 36000000000000;
     

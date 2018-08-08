@@ -116,8 +116,8 @@ contract Caps is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Caps() public {
-        symbol = &quot;CAPS&quot;;
-        name = &quot;Caps&quot;;
+        symbol = "CAPS";
+        name = "Caps";
         decimals = 18;
         bonusEnds = now + 6 weeks;
         endDate = now + 261 weeks;

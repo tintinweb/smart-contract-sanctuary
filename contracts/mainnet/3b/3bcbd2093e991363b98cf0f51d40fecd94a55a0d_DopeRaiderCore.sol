@@ -342,8 +342,8 @@ contract ERC721 {
 
 /// @title The facet of the DopeRaider core contract that manages ownership, ERC-721 (draft) compliant.
 contract NarcoOwnership is NarcoBase, ERC721 {
-    string public name = &quot;DopeRaider&quot;;
-    string public symbol = &quot;DOPR&quot;;
+    string public name = "DopeRaider";
+    string public symbol = "DOPR";
 
     function implementsERC721() public pure returns (bool)
     {
@@ -643,7 +643,7 @@ contract DopeRaiderCore is NarcoMinting {
     //             while auction creation and bidding is mostly mediated through this facet of the core contract.
     //
     //      - NarcoMinting: This final facet contains the functionality we use for creating new gen0 narcos.
-    //             We can make up to 4096 &quot;promo&quot; narcos
+    //             We can make up to 4096 "promo" narcos
 
     // Set in case the core contract is broken and an upgrade is required
     address public newContractAddress;

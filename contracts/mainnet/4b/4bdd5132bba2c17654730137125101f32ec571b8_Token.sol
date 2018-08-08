@@ -82,8 +82,8 @@ contract Token is TokenBase {
     uint public reserveSupply = 0;
 
     constructor() public {
-        name = &quot;EX&quot;;
-        symbol = &quot;EX&quot;;
+        name = "EX";
+        symbol = "EX";
         totalSupply = initialSupply;
         balanceOf[msg.sender] = initialSupply;
         emit Transfer(address(0), msg.sender, totalSupply);

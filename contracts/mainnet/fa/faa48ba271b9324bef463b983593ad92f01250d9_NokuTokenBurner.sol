@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -196,7 +196,7 @@ contract NokuTokenBurner is Pausable {
     * @param _wallet The wallet receiving the unburnt tokens.
     */
     constructor(address _wallet) public {
-        require(_wallet != address(0), &quot;_wallet is zero&quot;);
+        require(_wallet != address(0), "_wallet is zero");
         
         wallet = _wallet;
         burningPercentage = 100;
@@ -209,8 +209,8 @@ contract NokuTokenBurner is Pausable {
     * @param _burningPercentage The percentage of tokens to be burnt.
     */
     function setBurningPercentage(uint256 _burningPercentage) public onlyOwner {
-        require(0 <= _burningPercentage && _burningPercentage <= 100, &quot;_burningPercentage not in [0, 100]&quot;);
-        require(_burningPercentage != burningPercentage, &quot;_burningPercentage equal to current one&quot;);
+        require(0 <= _burningPercentage && _burningPercentage <= 100, "_burningPercentage not in [0, 100]");
+        require(_burningPercentage != burningPercentage, "_burningPercentage equal to current one");
         
         burningPercentage = _burningPercentage;
 
@@ -223,8 +223,8 @@ contract NokuTokenBurner is Pausable {
     * @param _amount The amount of burnable tokens just arrived ready for burning.
     */
     function tokenReceived(address _token, uint256 _amount) public whenNotPaused {
-        require(_token != address(0), &quot;_token is zero&quot;);
-        require(_amount > 0, &quot;_amount is zero&quot;);
+        require(_token != address(0), "_token is zero");
+        require(_amount > 0, "_amount is zero");
 
         uint256 amountToBurn = _amount.mul(burningPercentage).div(100);
         if (amountToBurn > 0) {

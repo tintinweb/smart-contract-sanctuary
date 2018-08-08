@@ -29,7 +29,7 @@ contract BaseGame {
 	function canSetBanker() view public returns (bool _result);
     function setBanker(address _banker, uint256 _beginTime, uint256 _endTime) public returns(bool _result);
     
-    string public gameName = &quot;NO.1&quot;;
+    string public gameName = "NO.1";
     uint public gameType = 1004;
     string public officialGameUrl;
 

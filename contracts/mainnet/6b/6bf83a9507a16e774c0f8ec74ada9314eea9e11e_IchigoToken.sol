@@ -113,8 +113,8 @@ contract IchigoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IchigoToken() public {
-        symbol = &quot;ICH&quot;;
-        name = &quot;Ichigo&quot;;
+        symbol = "ICH";
+        name = "Ichigo";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x58237c011DaA0abe2D6e1fda1a014427eFC2D7FB] = _totalSupply;

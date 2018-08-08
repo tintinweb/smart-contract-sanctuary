@@ -113,8 +113,8 @@ contract GoinbitToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GoinbitToken() public {
-        symbol = &quot;GBT&quot;;
-        name = &quot;Goinbit.com Token&quot;;
+        symbol = "GBT";
+        name = "Goinbit.com Token";
         decimals = 18;
         _totalSupply = 618000000000000000000000000;
         balances[0x22030462f67e318e812358c1b7ee1a46f737b856] = _totalSupply;

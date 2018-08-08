@@ -82,8 +82,8 @@ contract VeChainX is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;VeChainX&quot;;
-    string public constant symbol = &quot;VENX&quot;;
+    string public constant name = "VeChainX";
+    string public constant symbol = "VENX";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 1000000000e18;

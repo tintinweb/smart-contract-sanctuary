@@ -2,8 +2,8 @@ pragma solidity ^0.4.24;
 
 contract DACToken {
 
-    string public name = &quot;Decentralized Accessible Content&quot;;
-    string public symbol = &quot;DAC&quot;;
+    string public name = "Decentralized Accessible Content";
+    string public symbol = "DAC";
     uint256 public decimals = 6;
 
     mapping (address => uint256) public balanceOf;

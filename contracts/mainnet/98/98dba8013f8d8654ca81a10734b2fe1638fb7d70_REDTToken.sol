@@ -113,8 +113,8 @@ library SafeMath {
 }
 
 contract REDTTokenConfig {
-    string public constant NAME = &quot;Real Estate Doc Token&quot;;
-    string public constant SYMBOL = &quot;REDT&quot;;
+    string public constant NAME = "Real Estate Doc Token";
+    string public constant SYMBOL = "REDT";
     uint8 public constant DECIMALS = 18;
     uint public constant DECIMALSFACTOR = 10 ** uint(DECIMALS);
     uint public constant TOTALSUPPLY = 1000000000 * DECIMALSFACTOR;

@@ -117,7 +117,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -190,8 +190,8 @@ contract HiGold is StandardToken, Ownable {
 
     /*** CONSTANTS ***/
     // ERC20
-    string public name = &quot;HiGold Community Token&quot;;
-    string public symbol = &quot;HIG&quot;;
+    string public name = "HiGold Community Token";
+    string public symbol = "HIG";
     uint256 public decimals = 18;
 
     /*** STORAGE ***/

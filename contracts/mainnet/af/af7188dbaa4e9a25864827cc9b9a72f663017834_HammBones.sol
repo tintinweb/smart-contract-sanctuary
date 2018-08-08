@@ -113,8 +113,8 @@ contract HammBones is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HammBones() public {
-        symbol = &quot;HAMM&quot;;
-        name = &quot;HammBones&quot;;
+        symbol = "HAMM";
+        name = "HammBones";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0xcE599E08b3cAd353960143c01F6012cbf90C9DA8] = _totalSupply;

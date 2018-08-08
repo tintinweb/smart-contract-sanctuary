@@ -12,8 +12,8 @@ interface ERC20 {
     event Approval(address indexed _owner, address indexed _spender, uint _value);
 }
 contract Unity3d is ERC20 {
-    string public constant symbol = &quot;U3D&quot;;
-    string public constant name = &quot;unity3d&quot;;
+    string public constant symbol = "U3D";
+    string public constant name = "unity3d";
     uint8 public constant decimals = 1;
 
     uint private constant __totalSupply = 12800000;

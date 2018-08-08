@@ -46,7 +46,7 @@ contract WeduToken is ERC20Interface {
     /**
      * @dev Modifier, Only owner can execute the function
      */
-    modifier onlyOwner() { require(owner == msg.sender, &quot;Not a owner&quot;); _;}
+    modifier onlyOwner() { require(owner == msg.sender, "Not a owner"); _;}
 
     /**
      * @dev Event, called when the number of token changed
@@ -57,8 +57,8 @@ contract WeduToken is ERC20Interface {
      * @dev Constructor, Initialize the name, symbol, etc.
      */
     constructor() public {
-        TOKEN_NAME = &quot;Educo-op&quot;;
-        TOKEN_SYMBOL = &quot;WEDU&quot;;
+        TOKEN_NAME = "Educo-op";
+        TOKEN_SYMBOL = "WEDU";
 
         DECIMAL = 18;
         WEDU_UNIT = 1000000000000000000;
@@ -91,7 +91,7 @@ contract WeduToken is ERC20Interface {
      */
     function lockBalance(address _who, uint _value) public onlyOwner {
         // Check the unlocked balance of a user
-        require(_value <= balanceValue[_who].unlocked, &quot;Unsufficient balance&quot;);
+        require(_value <= balanceValue[_who].unlocked, "Unsufficient balance");
 
         uint totalBalanceValue = balanceValue[_who].locked + balanceValue[_who].unlocked;
 
@@ -108,7 +108,7 @@ contract WeduToken is ERC20Interface {
      */
     function unlockBalance(address _who, uint _value) public onlyOwner {
         // Check the locked balance of a user
-        require(_value <= balanceValue[_who].locked, &quot;Unsufficient balance&quot;);
+        require(_value <= balanceValue[_who].locked, "Unsufficient balance");
 
         uint totalBalanceValue = balanceValue[_who].locked + balanceValue[_who].unlocked;
 
@@ -127,17 +127,17 @@ contract WeduToken is ERC20Interface {
      */
     function _transfer(address _from, address _to, uint _value) internal returns (bool){
         // Check the address
-        require(_from != address(0), &quot;Address is wrong&quot;);
-        require(_from != owner, &quot;Owner uses the privateTransfer&quot;);
-        require(_to != address(0), &quot;Address is wrong&quot;);
+        require(_from != address(0), "Address is wrong");
+        require(_from != owner, "Owner uses the privateTransfer");
+        require(_to != address(0), "Address is wrong");
 
         // Check a user included in blacklist
-        require(!blackList[_from], &quot;Sender in blacklist&quot;);
-        require(!blackList[_to], &quot;Receiver in blacklist&quot;);
+        require(!blackList[_from], "Sender in blacklist");
+        require(!blackList[_to], "Receiver in blacklist");
 
         // Check the unlocked balance of a user
-        require(_value <= balanceValue[_from].unlocked, &quot;Unsufficient balance&quot;);
-        require(balanceValue[_to].unlocked <= balanceValue[_to].unlocked + _value, &quot;Overflow&quot;);
+        require(_value <= balanceValue[_from].unlocked, "Unsufficient balance");
+        require(balanceValue[_to].unlocked <= balanceValue[_to].unlocked + _value, "Overflow");
 
         uint previousBalances = balanceValue[_from].unlocked + balanceValue[_to].unlocked;
 
@@ -162,11 +162,11 @@ contract WeduToken is ERC20Interface {
      */
     function privateTransfer(address _to, uint _value) public onlyOwner returns (bool) {
         // Check the address
-        require(_to != address(0), &quot;Address is wrong&quot;);
+        require(_to != address(0), "Address is wrong");
 
         // Account balance validation
-        require(_value <= balanceValue[owner].unlocked, &quot;Unsufficient balance&quot;);
-        require(balanceValue[_to].unlocked <= balanceValue[_to].unlocked + _value, &quot;Overflow&quot;);
+        require(_value <= balanceValue[owner].unlocked, "Unsufficient balance");
+        require(balanceValue[_to].unlocked <= balanceValue[_to].unlocked + _value, "Overflow");
 
         uint previousBalances = balanceValue[owner].unlocked + balanceValue[_to].locked;
 
@@ -188,15 +188,15 @@ contract WeduToken is ERC20Interface {
      */
     function multipleTransfer(address[] _tos, uint _nums, uint _submitBalance) public onlyOwner returns (bool){
         // Check the input parameters
-        require(_tos.length == _nums, &quot;Number of users who receives the token is not match&quot;);
-        require(_submitBalance < 100000000 * WEDU_UNIT, &quot;Too high submit balance&quot;);
-        require(_nums < 100, &quot;Two high number of users&quot;);
-        require(_nums*_submitBalance <= balanceValue[owner].unlocked, &quot;Unsufficient balance&quot;);
+        require(_tos.length == _nums, "Number of users who receives the token is not match");
+        require(_submitBalance < 100000000 * WEDU_UNIT, "Too high submit balance");
+        require(_nums < 100, "Two high number of users");
+        require(_nums*_submitBalance <= balanceValue[owner].unlocked, "Unsufficient balance");
 
         balanceValue[owner].unlocked -= (_nums*_submitBalance);
         uint8 numIndex;
         for(numIndex=0; numIndex < _nums; numIndex++){
-            require(balanceValue[_tos[numIndex]].unlocked == 0, &quot;Already user has token&quot;);
+            require(balanceValue[_tos[numIndex]].unlocked == 0, "Already user has token");
             require(_tos[numIndex] != address(0));
             balanceValue[_tos[numIndex]].unlocked = _submitBalance;
 
@@ -214,8 +214,8 @@ contract WeduToken is ERC20Interface {
      */
     function transferFrom(address _from, address _to, uint _value) public returns (bool){
         // Check the unlocked balance and allowed balance of a user
-        require(allowed[_from][msg.sender] <= balanceValue[_from].unlocked, &quot;Unsufficient allowed balance&quot;);
-        require(_value <= allowed[_from][msg.sender], &quot;Unsufficient balance&quot;);
+        require(allowed[_from][msg.sender] <= balanceValue[_from].unlocked, "Unsufficient allowed balance");
+        require(_value <= allowed[_from][msg.sender], "Unsufficient balance");
 
         allowed[_from][msg.sender] -= _value;
         return _transfer(_from, _to, _value);
@@ -229,16 +229,16 @@ contract WeduToken is ERC20Interface {
      */
     function approve(address _spender, uint _value) public returns (bool){
         // Check the address
-        require(msg.sender != owner, &quot;Owner uses the privateTransfer&quot;);
-        require(_spender != address(0), &quot;Address is wrong&quot;);
-        require(_value <= balanceValue[msg.sender].unlocked, &quot;Unsufficient balance&quot;);
+        require(msg.sender != owner, "Owner uses the privateTransfer");
+        require(_spender != address(0), "Address is wrong");
+        require(_value <= balanceValue[msg.sender].unlocked, "Unsufficient balance");
 
         // Check a user included in blacklist
-        require(!blackList[msg.sender], &quot;Sender in blacklist&quot;);
-        require(!blackList[_spender], &quot;Receiver in blacklist&quot;);
+        require(!blackList[msg.sender], "Sender in blacklist");
+        require(!blackList[_spender], "Receiver in blacklist");
 
         // Is really first Approve??
-        require(allowed[msg.sender][_spender] == 0, &quot;Already allowed token exists&quot;);
+        require(allowed[msg.sender][_spender] == 0, "Already allowed token exists");
 
         allowed[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
@@ -265,15 +265,15 @@ contract WeduToken is ERC20Interface {
      */
     function increaseApproval(address _spender, uint _addedValue) public returns (bool){
         // Check the address
-        require(_spender != address(0), &quot;Address is wrong&quot;);
-        require(allowed[msg.sender][_spender] > 0, &quot;Not approved until yet&quot;);
+        require(_spender != address(0), "Address is wrong");
+        require(allowed[msg.sender][_spender] > 0, "Not approved until yet");
 
         // Check a user included in blacklist
-        require(!blackList[msg.sender], &quot;Sender in blacklist&quot;);
-        require(!blackList[_spender], &quot;Receiver in blacklist&quot;);
+        require(!blackList[msg.sender], "Sender in blacklist");
+        require(!blackList[_spender], "Receiver in blacklist");
 
         uint oldValue = allowed[msg.sender][_spender];
-        require(_addedValue + oldValue <= balanceValue[msg.sender].unlocked, &quot;Unsufficient balance&quot;);
+        require(_addedValue + oldValue <= balanceValue[msg.sender].unlocked, "Unsufficient balance");
 
         allowed[msg.sender][_spender] = _addedValue + oldValue;
         emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
@@ -288,12 +288,12 @@ contract WeduToken is ERC20Interface {
      */
     function decreaseApproval(address _spender, uint _substractedValue) public returns (bool){
         // Check the address
-        require(_spender != address(0), &quot;Address is wrong&quot;);
-        require(allowed[msg.sender][_spender] > 0, &quot;Not approved until yet&quot;);
+        require(_spender != address(0), "Address is wrong");
+        require(allowed[msg.sender][_spender] > 0, "Not approved until yet");
 
         // Check a user included in blacklist
-        require(!blackList[msg.sender], &quot;Sender in blacklist&quot;);
-        require(!blackList[_spender], &quot;Receiver in blacklist&quot;);
+        require(!blackList[msg.sender], "Sender in blacklist");
+        require(!blackList[_spender], "Receiver in blacklist");
 
         uint oldValue = allowed[msg.sender][_spender];
         if (_substractedValue > oldValue){
@@ -310,7 +310,7 @@ contract WeduToken is ERC20Interface {
      * @param _who A user who will be blocked
      */
     function addBlackList(address _who) public onlyOwner {
-        require(!blackList[_who], &quot;Already, sender in blacklist&quot;);
+        require(!blackList[_who], "Already, sender in blacklist");
         blackList[_who] = true;
     }
 
@@ -319,7 +319,7 @@ contract WeduToken is ERC20Interface {
      * @param _who A user who will be unblocked
      */
     function removalBlackList(address _who) public onlyOwner {
-        require(blackList[_who], &quot;Sender does not included in blacklist&quot;);
+        require(blackList[_who], "Sender does not included in blacklist");
         blackList[_who] = false;
     }
 
@@ -329,7 +329,7 @@ contract WeduToken is ERC20Interface {
      * @return True when the amount of total WEDU token successfully increases
      */
     function tokenIssue(uint _value) public onlyOwner returns (bool) {
-        require(totalSupplyValue <= totalSupplyValue + _value, &quot;Overflow&quot;);
+        require(totalSupplyValue <= totalSupplyValue + _value, "Overflow");
         uint oldTokenNum = totalSupplyValue;
 
         totalSupplyValue += _value;
@@ -345,7 +345,7 @@ contract WeduToken is ERC20Interface {
      * @return True when the amount of total WEDU token successfully decreases
      */
     function tokenBurn(uint _value) public onlyOwner returns (bool) {
-        require(_value <= balanceValue[owner].unlocked, &quot;Unsufficient balance&quot;);
+        require(_value <= balanceValue[owner].unlocked, "Unsufficient balance");
         uint oldTokenNum = totalSupplyValue;
 
         totalSupplyValue -= _value;

@@ -89,8 +89,8 @@ contract NXE_Coin is StandardToken {
     function NXE_Coin() {
         balances[msg.sender] = 300000000000000000;               // Give the creator all initial tokens
         totalSupply = 300000000000000000;                        // Update total supply
-        name = &quot;Next eCommerce Chain&quot;;                                   // Set the name for display purposes
+        name = "Next eCommerce Chain";                                   // Set the name for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
-        symbol = &quot;NXE&quot;;                               // Set the symbol for display purposes
+        symbol = "NXE";                               // Set the symbol for display purposes
     }
 }

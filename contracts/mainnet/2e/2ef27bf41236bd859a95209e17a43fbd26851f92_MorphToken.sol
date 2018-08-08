@@ -181,7 +181,7 @@ contract MorphToken is Owned, ERC20 {
      */
 	function MorphToken() 
 
-	ERC20 (tokenSupply,&quot;MORPH&quot;,&quot;MORPH&quot;) public
+	ERC20 (tokenSupply,"MORPH","MORPH") public
     {
 		owner = msg.sender;
 	}

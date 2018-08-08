@@ -4,8 +4,8 @@ contract	NESTLE_301201				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	NESTLE_301201		&quot;	;
-	string	public		symbol =	&quot;	NESTI		&quot;	;
+	string	public		name =	"	NESTLE_301201		"	;
+	string	public		symbol =	"	NESTI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10813876628517800000000000					;	

@@ -113,8 +113,8 @@ contract bmi is UnboundedRegularToken {
 
     uint public totalSupply = 10000000000000000000;
     uint8 constant public decimals = 4;
-    string constant public name = &quot;bmi&quot;;
-    string constant public symbol = &quot;bmi&quot;;
+    string constant public name = "bmi";
+    string constant public symbol = "bmi";
 
     function bmi() {
         balances[msg.sender] = totalSupply;

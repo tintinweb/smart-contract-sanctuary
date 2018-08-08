@@ -3,7 +3,7 @@ pragma solidity ^0.4.20; // solhint-disable-line
 // similar as falconfarmer, with three changes:
 // A. one third of your falcons die when you sell eggs
 // B. you can transfer ownership of the devfee through sacrificing falcons
-// C. the &quot;free&quot; 300 falcons cost 0.001 eth (in line with the mining fee)
+// C. the "free" 300 falcons cost 0.001 eth (in line with the mining fee)
 
 // bots should have a harder time, and whales can compete for the devfee
 

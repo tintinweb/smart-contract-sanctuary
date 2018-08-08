@@ -58,8 +58,8 @@ contract MovieCoin is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;MovieCoin&quot;;
-    string public constant symbol = &quot;Oscar&quot;;
+    string public constant name = "MovieCoin";
+    string public constant symbol = "Oscar";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 100000000e18;

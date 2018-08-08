@@ -21,8 +21,8 @@ pragma solidity 		^0.4.8	;
 											
 		contract	YUZHURALZOLOTO_FORM_01				is	Ownable	{		
 											
-			string	public	constant	name =	&quot;	YUZHURALZOLOTO_FORM_01		&quot;	;
-			string	public	constant	symbol =	&quot;	UZU_01		&quot;	;
+			string	public	constant	name =	"	YUZHURALZOLOTO_FORM_01		"	;
+			string	public	constant	symbol =	"	UZU_01		"	;
 			uint32	public	constant	decimals =		18			;
 			uint	public		totalSupply =		0			;
 											

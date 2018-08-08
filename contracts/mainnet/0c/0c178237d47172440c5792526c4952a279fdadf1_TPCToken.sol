@@ -131,8 +131,8 @@ contract TPCToken is ERC20, Lockable {
     mapping( address => uint ) _balances;
     mapping( address => mapping( address => uint ) ) _approvals;
     uint _supply;
-    string public constant name = &quot;TPC Token&quot;;
-    string public constant symbol = &quot;TPC&quot;;
+    string public constant name = "TPC Token";
+    string public constant symbol = "TPC";
     uint8 public constant decimals = 18;  // 18 decimal places, the same as ETH.
 
     event TokenBurned(address burnAddress, uint amountOfTokens);

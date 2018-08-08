@@ -538,8 +538,8 @@ contract ICash is ERC20 {
 
 contract Cash is DelegationTarget, ITyped, VariableSupplyToken, ICash {
 
-    string constant public name = &quot;Cash&quot;;
-    string constant public symbol = &quot;CASH&quot;;
+    string constant public name = "Cash";
+    string constant public symbol = "CASH";
     uint8 constant public decimals = 18;
 
     function depositEther() external payable onlyInGoodTimes returns(bool) {
@@ -584,7 +584,7 @@ contract Cash is DelegationTarget, ITyped, VariableSupplyToken, ICash {
     }
 
     function getTypeName() public view returns (bytes32) {
-        return &quot;Cash&quot;;
+        return "Cash";
     }
 
     function onMint(address, uint256) internal returns (bool) {
@@ -678,7 +678,7 @@ library Order {
         require(_outcome < _market.getNumberOfOutcomes());
         require(_price < _market.getNumTicks());
 
-        IOrders _orders = IOrders(_controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(_controller.lookup("Orders"));
         IAugur _augur = _controller.getAugur();
 
         return Data({
@@ -699,7 +699,7 @@ library Order {
     }
 
     //
-    // &quot;public&quot; functions
+    // "public" functions
     //
 
     function getOrderId(Order.Data _orderData) internal view returns (bytes32) {

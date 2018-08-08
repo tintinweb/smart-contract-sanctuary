@@ -19,9 +19,9 @@ contract ICOBank {
     function ICOBank() {
 
          initialSupply = 777000000;
-         name =&quot;ICOBank&quot;;
+         name ="ICOBank";
         decimals = 0;
-         symbol = &quot;ICOX&quot;;
+         symbol = "ICOX";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

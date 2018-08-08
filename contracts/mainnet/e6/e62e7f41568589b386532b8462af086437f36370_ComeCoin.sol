@@ -1,8 +1,8 @@
 pragma solidity ^0.4.24;
 
 contract ComeCoin {
-    string public name = &quot;Come Coin&quot;;
-    string public symbol = &quot;CC&quot;;
+    string public name = "Come Coin";
+    string public symbol = "CC";
     uint8 public decimals = 18;
     uint256 public totalSupply = 1000000000 * 10 ** uint256(decimals);
 

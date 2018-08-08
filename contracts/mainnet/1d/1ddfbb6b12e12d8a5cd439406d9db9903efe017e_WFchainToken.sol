@@ -100,8 +100,8 @@ pragma solidity ^0.4.24;
      // Constructor
      // ------------------------------------------------------------------------
      constructor() public {
-         symbol = &quot;WFCT&quot;;
-         name = &quot;WFchain Token&quot;;
+         symbol = "WFCT";
+         name = "WFchain Token";
          decimals = 8;
          _totalSupply = 10000000000 * 10**uint(decimals);
          balances[0xfd76e9d8b164f92fdd7dee579cf8ab94c7bf79c0] =  _totalSupply.mul(65).div(100);

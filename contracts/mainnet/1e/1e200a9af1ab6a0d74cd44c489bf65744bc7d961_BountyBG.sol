@@ -87,7 +87,7 @@ contract BountyBG {
 
         for (i = 0; i < _users.length; i++) {
             _users[i].transfer(_rewards[i]);
-            RewardStatus(&quot;Reward sent&quot;, bounty.id, _users[i], _rewards[i]);
+            RewardStatus("Reward sent", bounty.id, _users[i], _rewards[i]);
             /* if (_users[i].send(_rewards[i])) {
                 bounty.remainingBounty -= _rewards[i];
                 RewardStatus(&#39;Reward sent&#39;, bounty.id, _users[i], _rewards[i]);

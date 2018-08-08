@@ -9,8 +9,8 @@ pragma solidity ^0.4.4;
 contract PresaleToken
 {
 /// Fields:
-    string public constant name = &quot;SquarEx Private Round SQEX Token&quot;;
-    string public constant symbol = &quot;SQEX&quot;;
+    string public constant name = "SquarEx Private Round SQEX Token";
+    string public constant symbol = "SQEX";
     uint public constant decimals = 18;
     uint public constant PRICE = 1700;  // per 1 Ether
 

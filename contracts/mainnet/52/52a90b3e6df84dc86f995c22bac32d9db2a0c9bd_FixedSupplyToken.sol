@@ -100,8 +100,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;MHCC&quot;;
-        name = &quot;Medical Health Care Coin&quot;;
+        symbol = "MHCC";
+        name = "Medical Health Care Coin";
         decimals = 18;
         _totalSupply = 2700000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

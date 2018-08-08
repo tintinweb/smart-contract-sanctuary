@@ -83,7 +83,7 @@ contract EtherZaarFactory {
     bytes public ERC20ByteCode;
 
     function EtherZaarFactory() public {
-        address verifiedToken = createERC20(100, &quot;Verification Tokens&quot;, 0, &quot;EtherZaar&quot;);
+        address verifiedToken = createERC20(100, "Verification Tokens", 0, "EtherZaar");
         ERC20ByteCode = codeAt(verifiedToken);
     }
 

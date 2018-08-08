@@ -2,7 +2,7 @@ pragma solidity ^0.4.18;
  
 //Never Mind :P
 /* @dev The Ownable contract has an owner address, and provides basic authorization control
-* functions, this simplifies the implementation of &quot;user permissions&quot;.
+* functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
   address public owner;
@@ -184,8 +184,8 @@ function isContract(address _addr) private returns (bool is_contract) {
 
 contract NVT is BasicToken, Ownable {
 
-  string public constant name = &quot;NiceVotingToken&quot;;
-  string public constant symbol = &quot;NVT&quot;;
+  string public constant name = "NiceVotingToken";
+  string public constant symbol = "NVT";
   uint8 public constant decimals = 2;
 
   uint256 public constant TOTAL_SUPPLY = 100 * 10 ** 10; //10 billion tokens

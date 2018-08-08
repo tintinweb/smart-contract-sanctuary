@@ -198,8 +198,8 @@ contract StandardToken is ERC223, SafeMath {
  */
 contract RabbitCoin is StandardToken {
 
-    string public name = &quot;BetOnMatch&quot;;
-    string public symbol = &quot;BOM&quot;;
+    string public name = "BetOnMatch";
+    string public symbol = "BOM";
     
     
     address public coinMaster;

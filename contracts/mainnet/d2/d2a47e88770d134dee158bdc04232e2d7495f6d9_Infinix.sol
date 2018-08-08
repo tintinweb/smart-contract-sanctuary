@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract Infinix {
     // Public variables of the token
-    string public name = &quot;Infinix&quot;;
-    string public symbol = &quot;INF&quot;;
+    string public name = "Infinix";
+    string public symbol = "INF";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

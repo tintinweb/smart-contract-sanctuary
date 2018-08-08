@@ -113,8 +113,8 @@ contract SteriliumToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SteriliumToken() public {
-        symbol = &quot;STR&quot;;
-        name = &quot;Sterilium Token&quot;;
+        symbol = "STR";
+        name = "Sterilium Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa01fda3f7C04C5A6A22DD08d2ED24c7387B29F15] = _totalSupply;

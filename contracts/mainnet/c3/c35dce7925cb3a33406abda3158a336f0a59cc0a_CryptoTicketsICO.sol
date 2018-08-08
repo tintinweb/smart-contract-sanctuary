@@ -302,8 +302,8 @@ contract CryptoTicketsICO {
 contract TKT  is ERC20 {
     using SafeMath for uint;
 
-    string public name = &quot;CryptoTickets COIN&quot;;
-    string public symbol = &quot;TKT&quot;;
+    string public name = "CryptoTickets COIN";
+    string public symbol = "TKT";
     uint public decimals = 18;
 
     address public ico;

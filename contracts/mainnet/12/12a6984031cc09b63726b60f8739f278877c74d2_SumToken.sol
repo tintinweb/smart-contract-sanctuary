@@ -113,8 +113,8 @@ contract SumToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SumToken() public {
-        symbol = &quot;SUM&quot;;
-        name = &quot;SumToken&quot;;
+        symbol = "SUM";
+        name = "SumToken";
         decimals = 6;
         _totalSupply = 100000000000000;
         balances[0x0dB8Bccc3Ecb27B83D679a942c175d4407995b0b] = _totalSupply;

@@ -13,8 +13,8 @@ contract ERC20Interface {
 }
 
 contract Xuekai is ERC20Interface {
-    string public  name = &quot;xuekai&quot;;
-    string public  symbol = &quot;XK&quot;;
+    string public  name = "xuekai";
+    string public  symbol = "XK";
     uint8 public  decimals = 2;
 
     uint public _totalSupply = 1000000;

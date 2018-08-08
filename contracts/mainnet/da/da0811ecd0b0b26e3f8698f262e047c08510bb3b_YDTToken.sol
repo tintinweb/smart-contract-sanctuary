@@ -213,8 +213,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract YDTToken is PausableToken {
-    string public name = &quot;YDT Token&quot;;
-    string public symbol = &quot;YDT&quot;;
+    string public name = "YDT Token";
+    string public symbol = "YDT";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 10500000000000000000000000000;
 

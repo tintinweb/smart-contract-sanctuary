@@ -110,8 +110,8 @@ contract TheGambler is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TheGambler() public {
-        symbol = &quot;TGMR&quot;;
-        name = &quot;TheGambler&quot;;
+        symbol = "TGMR";
+        name = "TheGambler";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x4b1f2c8c70ed47Bbb7Db5dA9F9Ee1B8966114d73] = _totalSupply;

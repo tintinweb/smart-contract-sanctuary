@@ -147,9 +147,9 @@ contract StandardToken is BasicToken {
 }
 
 contract Nomid is StandardToken {
-	string public constant name = &quot;NOMIDMAN&quot;;
+	string public constant name = "NOMIDMAN";
 	uint public constant decimals = 18;
-	string public constant symbol = &quot;MANO&quot;;
+	string public constant symbol = "MANO";
 
 	function Nomid() public {
 		totalSupply=901000000 *(10**decimals);

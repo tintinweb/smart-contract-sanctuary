@@ -30,8 +30,8 @@ contract COSHATokenHKD {
         totalSupply = initialSupply * 1 * 10 ** (10 + uint256(decimals));  // Update total supply with the decimal amount
         initialSupply = totalSupply;
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;COSHATokenHKD&quot;;                                   // Set the name for display purposes
-        symbol = &quot;C-HKD&quot;;                               // Set the symbol for display purposes
+        name = "COSHATokenHKD";                                   // Set the name for display purposes
+        symbol = "C-HKD";                               // Set the symbol for display purposes
         tokenName = name;
         tokenSymbol = symbol;
         

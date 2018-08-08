@@ -2,8 +2,8 @@ pragma solidity ^0.4.6;
 
 contract JLL {
 
-  string public name = &quot;JLL&quot;;
-  string public symbol = &quot;JLL&quot;;
+  string public name = "JLL";
+  string public symbol = "JLL";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 200000000000000000000000000000;
 

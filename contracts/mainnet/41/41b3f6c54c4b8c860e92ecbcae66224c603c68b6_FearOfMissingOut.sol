@@ -113,8 +113,8 @@ contract FearOfMissingOut is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FearOfMissingOut() public {
-        symbol = &quot;FOMO&quot;;
-        name = &quot;Fear of Missing Out Token&quot;;
+        symbol = "FOMO";
+        name = "Fear of Missing Out Token";
         decimals = 18;
         _totalSupply = 50000000000000000000000000;
         balances[0xc9FCD301aFf32128bb6539d9b861A86012915339] = _totalSupply;

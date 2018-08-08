@@ -128,8 +128,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract TokenContract is Ownable, StandardToken {
-    string public constant name = &quot;MTE Token&quot;;
-    string public constant symbol = &quot;MTE&quot;;
+    string public constant name = "MTE Token";
+    string public constant symbol = "MTE";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 80000000 * (10 ** uint256(decimals));
 

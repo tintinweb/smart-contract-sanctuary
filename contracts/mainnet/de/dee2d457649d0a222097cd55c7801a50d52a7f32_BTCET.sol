@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -271,8 +271,8 @@ contract BTCET is StandardToken {
     uint256 public totalSupply;
 
     function BTCET() public {
-        name = &quot;Bitcoin Eternity&quot;;
-        symbol = &quot;BTCET&quot;;
+        name = "Bitcoin Eternity";
+        symbol = "BTCET";
         decimals = 8;
         totalSupply = 21000000e8;
         balances[owner] = totalSupply;

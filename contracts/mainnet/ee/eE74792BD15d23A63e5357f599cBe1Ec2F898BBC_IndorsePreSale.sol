@@ -23,7 +23,7 @@ contract SafeMath {
 
 contract IndorsePreSale is SafeMath{
     // Fund deposit address
-    address public ethFundDeposit = &quot;0x1c82ee5b828455F870eb2998f2c9b6Cc2d52a5F6&quot;;                              
+    address public ethFundDeposit = "0x1c82ee5b828455F870eb2998f2c9b6Cc2d52a5F6";                              
     address public owner;                                       // Owner of the pre sale contract
     mapping (address => uint256) public whiteList;
 

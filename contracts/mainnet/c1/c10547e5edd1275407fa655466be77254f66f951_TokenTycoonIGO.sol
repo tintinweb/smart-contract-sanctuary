@@ -91,8 +91,8 @@ interface tokenRecipient {
 contract TokenTycoonIGO is AccessService {
     uint8 public decimals = 18;
     uint256 public totalSupply = 850 * (10 ** uint256(decimals));
-    string public name = &quot;Token Tycoon Coin&quot;;
-    string public symbol = &quot;TTC&quot;;
+    string public name = "Token Tycoon Coin";
+    string public symbol = "TTC";
     bytes32 private emptyHash;
 
     mapping (address => uint256) balances;
@@ -111,7 +111,7 @@ contract TokenTycoonIGO is AccessService {
         addrFinance = msg.sender;
 
         balances[this] = totalSupply;
-        emptyHash = keccak256(&quot;&quot;);
+        emptyHash = keccak256("");
     }
 
     function() external payable {

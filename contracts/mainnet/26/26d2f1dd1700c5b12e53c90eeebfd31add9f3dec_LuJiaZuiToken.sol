@@ -120,8 +120,8 @@ contract LuJiaZuiToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LuJiaZuiToken() public {
-        symbol = &quot;LUJZ&quot;;
-        name = &quot;LuJiaZui Token&quot;;
+        symbol = "LUJZ";
+        name = "LuJiaZui Token";
         decimals = 8;
         _totalSupply = 10000000000000000000;
         balances[0x1a892eB799a6f33d8aa6654f5fDa026C7Db62Abc] = _totalSupply;

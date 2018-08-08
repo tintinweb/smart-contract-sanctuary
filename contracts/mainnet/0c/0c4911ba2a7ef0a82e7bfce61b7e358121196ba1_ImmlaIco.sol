@@ -127,8 +127,8 @@ contract ImmlaToken is StandardToken, SafeMath {
     /*
      * Token meta data
      */
-    string public constant name = &quot;IMMLA&quot;;
-    string public constant symbol = &quot;IML&quot;;
+    string public constant name = "IMMLA";
+    string public constant symbol = "IML";
     uint public constant decimals = 18;
     uint public constant supplyLimit = 550688955000000000000000000;
     
@@ -524,13 +524,13 @@ contract ImmlaIco is SafeMath {
         buyTokens(msg.sender);
     }
     
-    /// @dev Burn tokens from accounts only in state &quot;not migrated&quot;. Only manager can do it
+    /// @dev Burn tokens from accounts only in state "not migrated". Only manager can do it
     /// @param _from Address of account 
     function burnTokens(address _from, uint _value) onlyManager notMigrated {
         immlaToken.burnTokens(_from, _value);
     }
     
-    /// @dev Set state &quot;migrated&quot;. Only manager can do it 
+    /// @dev Set state "migrated". Only manager can do it 
     function setStateMigrated() onlyManager {
         migrated = true;
     }

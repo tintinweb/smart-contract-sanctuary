@@ -4,8 +4,8 @@ contract	ALONY_HETZ_20230515				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	ALONY_HETZ_20230515		&quot;	;
-	string	public		symbol =	&quot;	ALONI		&quot;	;
+	string	public		name =	"	ALONY_HETZ_20230515		"	;
+	string	public		symbol =	"	ALONI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		15815873703135800000000000					;	

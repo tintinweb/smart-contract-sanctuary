@@ -107,9 +107,9 @@ contract ERC20Token is StandardToken {
         ) {
         balances[msg.sender] = 5000000000000;               
         totalSupply = 5000000000000;                        
-        name = &quot;Penta&quot;;                                   
+        name = "Penta";                                   
         decimals = 4;                            
-        symbol = &quot;PEN&quot;;                               
+        symbol = "PEN";                               
     }
  
     
@@ -118,7 +118,7 @@ contract ERC20Token is StandardToken {
         Approval(msg.sender, _spender, _value);
  
         
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

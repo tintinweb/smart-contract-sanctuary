@@ -118,8 +118,8 @@ contract StdToken is Token {
 contract EthLendToken is StdToken
 {
 /// Fields:
-    string public constant name = &quot;EthLend Token&quot;;
-    string public constant symbol = &quot;LEND&quot;;
+    string public constant name = "EthLend Token";
+    string public constant symbol = "LEND";
     uint public constant decimals = 18;
 
     // this includes DEVELOPERS_BONUS

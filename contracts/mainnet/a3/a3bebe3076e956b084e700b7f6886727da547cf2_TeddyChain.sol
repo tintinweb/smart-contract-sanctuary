@@ -89,8 +89,8 @@ contract TeddyChain is StandardToken {
     function TeddyChain() {
         balances[msg.sender] = 1200000000000;               // Give the creator all initial tokens
         totalSupply = 1200000000000;                        // Update total supply
-        name = &quot;Teddy Chain&quot;;                                   // Set the name for display purposes
+        name = "Teddy Chain";                                   // Set the name for display purposes
         decimals = 4;                            // Amount of decimals for display purposes
-        symbol = &quot;TDCC&quot;;                               // Set the symbol for display purposes
+        symbol = "TDCC";                               // Set the symbol for display purposes
     }
 }

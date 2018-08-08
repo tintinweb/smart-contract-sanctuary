@@ -15,8 +15,8 @@ contract NHSToken {
     function NHSToken() public {
         totalSupply = 50000000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Nail Hair Spa&quot;;
-        symbol = &quot;NHS&quot;;
+        name = "Nail Hair Spa";
+        symbol = "NHS";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

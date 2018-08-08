@@ -94,8 +94,8 @@ contract VitaToken is ERC20Interface, SafeMath {
     mapping(address => uint) rewards;
     mapping(address => mapping(address => uint)) allowed;
     function VitaToken() public {
-        symbol = &quot;VTA&quot;;
-        name = &quot;Vita Token&quot;;
+        symbol = "VTA";
+        name = "Vita Token";
         //Razones para usar la cantidad estandar de decimales:
         //Todos los envios de dinero se hacen con wei, que es 1 seguido de 18 ceros
         //Seguir el estandar facilita los calculos, especialmente en el crowdsale

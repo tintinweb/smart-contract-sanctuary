@@ -51,8 +51,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 10000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;One Exchange Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;1X&quot;;                               // Set the symbol for display purposes
+        name = "One Exchange Token";                                   // Set the name for display purposes
+        symbol = "1X";                               // Set the symbol for display purposes
     }
 
     /**
@@ -197,8 +197,8 @@ contract OneExchangeToken is owned, TokenERC20 {
 		owner = msg.sender;
 		totalSupply = 10000000000000000000000000000;
 		balanceOf[owner]=totalSupply;
-		tokenName=&quot;One Exchange Token&quot;;
-		tokenSymbol=&quot;1X&quot;;
+		tokenName="One Exchange Token";
+		tokenSymbol="1X";
 	}
 
 

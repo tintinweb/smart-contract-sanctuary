@@ -129,8 +129,8 @@ contract token is owned, ERC20
 		totalSupply = 166000;  																		// Update total supply
 		totalSupply = totalSupply.multiply(10 ** 18);
 		balanceOf[msg.sender] = totalSupply;              											// Give the creator all initial tokens
-		name = &quot;Global Academy Place&quot;;               										// Set the name for display purposes
-		symbol = &quot;GAP&quot;;                                											// Set the symbol for display purposes
+		name = "Global Academy Place";               										// Set the name for display purposes
+		symbol = "GAP";                                											// Set the symbol for display purposes
 		decimals = 18;                            													// Amount of decimals for display purposes
 	}
 	
@@ -202,10 +202,10 @@ contract token is owned, ERC20
 contract ICOToken is token
 {
 	// Public variables
-	string public firstLevelPrice = &quot;Token 0.0100 ETH per Token&quot;;
-	string public secondLevelPrice = &quot;Token 0.0125 ETH per Token&quot;;
-	string public thirdLevelPrice = &quot;Token 0.0166 ETH per Token&quot;;
-	string public CapLevelPrice = &quot;Token 0.0250 ETH per Token&quot;;
+	string public firstLevelPrice = "Token 0.0100 ETH per Token";
+	string public secondLevelPrice = "Token 0.0125 ETH per Token";
+	string public thirdLevelPrice = "Token 0.0166 ETH per Token";
+	string public CapLevelPrice = "Token 0.0250 ETH per Token";
 	uint256 public _firstLevelEth;
 	uint256 public _secondLevelEth;
 	uint256 public _thirdLevelEth;
@@ -381,7 +381,7 @@ contract ICOToken is token
 contract GAP is ICOToken
 {	
 	// Public variables
-	string public maximumBuyBack = &quot;Token 0.05 ETH per Token&quot;;										// Max price in ETH for buy back
+	string public maximumBuyBack = "Token 0.05 ETH per Token";										// Max price in ETH for buy back
 	uint256 public KilledTillNow;
 	uint256 public sellPrice;
 	uint256 public mustToSellCourses;

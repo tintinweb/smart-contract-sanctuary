@@ -3,7 +3,7 @@ pragma solidity 0.4.14;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control 
- * functions, this simplifies the implementation of &quot;user permissions&quot;. 
+ * functions, this simplifies the implementation of "user permissions". 
  */
 contract Ownable {
   address public owner;
@@ -230,8 +230,8 @@ contract StandardToken is BasicToken, ERC20 {
  */
  
 contract LuckyToken is StandardToken, Ownable{
-  string public name = &quot;Lucky888Coin&quot;;
-  string public symbol = &quot;LKY&quot;;
+  string public name = "Lucky888Coin";
+  string public symbol = "LKY";
   uint public decimals = 18;
 
   event TokenBurned(uint256 value);

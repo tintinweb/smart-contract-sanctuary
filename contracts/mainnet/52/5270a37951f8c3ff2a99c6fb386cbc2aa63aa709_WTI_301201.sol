@@ -4,8 +4,8 @@ contract	WTI_301201				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	WTI_301201		&quot;	;
-	string	public		symbol =	&quot;	WTII		&quot;	;
+	string	public		name =	"	WTI_301201		"	;
+	string	public		symbol =	"	WTII		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		11134262607820500000000000					;	

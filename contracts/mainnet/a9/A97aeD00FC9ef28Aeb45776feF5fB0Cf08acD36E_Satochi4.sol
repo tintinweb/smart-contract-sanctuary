@@ -113,8 +113,8 @@ contract Satochi4 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Satochi4() public {
-        symbol = &quot;chi4&quot;;
-        name = &quot;Satochi 4 Token&quot;;
+        symbol = "chi4";
+        name = "Satochi 4 Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0x5c89AC486F41c1fAA41A0889063FaF57A010e344] = _totalSupply;

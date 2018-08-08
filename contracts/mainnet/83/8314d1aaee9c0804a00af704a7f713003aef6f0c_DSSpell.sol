@@ -2,7 +2,7 @@
 pragma solidity ^0.4.23;
 
 ////// lib/ds-exec/src/exec.sol
-// exec.sol - base contract used by anything that wants to do &quot;untyped&quot; calls
+// exec.sol - base contract used by anything that wants to do "untyped" calls
 
 // Copyright (C) 2017  DappHub, LLC
 

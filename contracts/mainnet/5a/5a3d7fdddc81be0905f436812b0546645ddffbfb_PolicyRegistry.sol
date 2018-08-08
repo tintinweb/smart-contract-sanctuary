@@ -323,7 +323,7 @@ contract Policy is Ownable, EmergencySafe, Upgradeable{
 
     if (((cancellations[brokerEtherAddress] && (cancellations[clientEtherAddress] || cancellations[owner]))
         || (cancellations[clientEtherAddress] && cancellations[owner]))){
-      policyInfo.status = &quot;REVOKED&quot;;
+      policyInfo.status = "REVOKED";
       allowedToUpgrade = true;
     }
   }
@@ -371,7 +371,7 @@ contract PolicyRegistry is Ownable, EmergencySafe, Upgradeable{
 
     policies.push(policy);
 
-    IXTPayment.transferIXT(_clientEtherAddress, owner, &quot;create_insurance&quot;);
+    IXTPayment.transferIXT(_clientEtherAddress, owner, "create_insurance");
     emit PolicyCreated(policy, msg.sender);
   }
 

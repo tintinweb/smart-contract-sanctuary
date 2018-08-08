@@ -10,7 +10,7 @@ contract HelloWorld {
     }
     
     function salutaAndonio() public pure returns(bytes32 hw) {
-        hw = &quot;HelloWorld&quot;;
+        hw = "HelloWorld";
     }
     
     function killMe() public onlyOwner {

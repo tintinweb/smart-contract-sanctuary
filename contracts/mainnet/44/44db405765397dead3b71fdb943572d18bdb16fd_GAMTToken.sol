@@ -20,8 +20,8 @@ contract owned {
 
 
 contract GAMTToken is owned{
-    string public constant name = &quot;ga-me.io token&quot;;
-    string public constant symbol = &quot;GAMT&quot;;
+    string public constant name = "ga-me.io token";
+    string public constant symbol = "GAMT";
     uint8 public constant decimals = 18;  // 18 是建议的默认值
     uint256 public totalSupply;
     uint256 amountRaised = 0;

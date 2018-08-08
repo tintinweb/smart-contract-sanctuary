@@ -108,13 +108,13 @@ contract Greedy is Owned {
     //Buy some greedy heart
     function buyHeart(address referred) public payable {
         
-        require(msg.value >= 1000000000, &quot;pocket lint: not a valid currency&quot;);
-        require(msg.value <= 100000000000000000000000, &quot;no vitalik, no&quot;);
+        require(msg.value >= 1000000000, "pocket lint: not a valid currency");
+        require(msg.value <= 100000000000000000000000, "no vitalik, no");
         
         address _addr = msg.sender;
         uint256 _codeLength;
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
 
         //bought at least 1 whole key
         uint256 _hearts = (RoundETH[Round]).keysRec(msg.value);
@@ -269,7 +269,7 @@ library GreedyHeartCalcLong {
 
     /**
      * @dev calculates how many keys would exist with given an amount of eth
-     * @param _eth eth &quot;in contract&quot;
+     * @param _eth eth "in contract"
      * @return number of keys that would exist
      */
     function keys(uint256 _eth) 
@@ -282,7 +282,7 @@ library GreedyHeartCalcLong {
     
     /**
      * @dev calculates how much eth would be in contract given a number of keys
-     * @param _keys number of keys &quot;in contract&quot; 
+     * @param _keys number of keys "in contract" 
      * @return eth that would exists
      */
     function eth(uint256 _keys) 
@@ -318,7 +318,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -330,7 +330,7 @@ library SafeMath {
         pure
         returns (uint256) 
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -343,7 +343,7 @@ library SafeMath {
         returns (uint256 c) 
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
     

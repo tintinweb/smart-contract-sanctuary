@@ -26,8 +26,8 @@ contract GteChainERC20 {
     function GteChainERC20() public {
         totalSupply =100000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = 100000000000000000;        // Give the creator all initial tokens
-        name = &quot;GoodTreasure&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GTE&quot;;                               // Set the symbol for display purposes
+        name = "GoodTreasure";                                   // Set the name for display purposes
+        symbol = "GTE";                               // Set the symbol for display purposes
      }
 
     /**

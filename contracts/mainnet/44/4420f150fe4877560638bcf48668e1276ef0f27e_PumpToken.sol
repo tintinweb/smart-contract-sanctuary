@@ -113,8 +113,8 @@ contract PumpToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PumpToken() public {
-        symbol = &quot;PMP&quot;;
-        name = &quot;Pump Token&quot;;
+        symbol = "PMP";
+        name = "Pump Token";
         decimals = 18;
         _totalSupply = 900000000000000000000000000;
         balances[0x8f02d39cdce7C61CEb7722bE2cfbd9a71a58b4B6] = _totalSupply;

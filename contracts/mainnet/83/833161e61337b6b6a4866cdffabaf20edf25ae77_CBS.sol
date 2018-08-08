@@ -306,7 +306,7 @@ contract CBS is StandardToken, CanReclaimToken {
 
     string public symbol;
     string public name;
-    string public version = &quot;2.0&quot;;
+    string public version = "2.0";
 
     uint8 public decimals;
     uint256 INITIAL_SUPPLY;

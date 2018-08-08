@@ -64,8 +64,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract VitalKey is StandardToken 
 {
-    string public name = &quot;VitalKey&quot;;
-    string public symbol = &quot;VKC&quot;;
+    string public name = "VitalKey";
+    string public symbol = "VKC";
     uint public decimals = 18;
     uint public totalSupply = 10 * 1000 * 1000 * 1000 ether;
 

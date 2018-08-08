@@ -224,7 +224,7 @@ contract EtheremonRankBattle is BasicAccessControl, EtheremonEnum {
         for (i = 0; i < starterClasses.length; i+=1) {
             classId = starterClasses[i];
             seed = getRandom(uint(block.blockhash(block.number - i)));
-            objId = data.addMonsterObj(classId, msg.sender, &quot;..name me...&quot;);
+            objId = data.addMonsterObj(classId, msg.sender, "..name me...");
             for (j = 0; j < 6; j += 1) {
                 seed = seed ^ (i + j);
                 value = uint8(seed % 32) + data.getElementInArrayType(ArrayType.STAT_START, uint64(classId), j);

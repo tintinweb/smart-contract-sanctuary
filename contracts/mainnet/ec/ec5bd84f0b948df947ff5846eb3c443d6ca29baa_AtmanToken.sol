@@ -120,8 +120,8 @@ contract AtmanToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AtmanToken() public {
-        symbol = &quot;ATMA&quot;;
-        name = &quot;Atman Token v0.01&quot;;
+        symbol = "ATMA";
+        name = "Atman Token v0.01";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000000;
         balances[0xC369B30c8eC960260631E20081A32e4c61E5Ea9d] = _totalSupply;

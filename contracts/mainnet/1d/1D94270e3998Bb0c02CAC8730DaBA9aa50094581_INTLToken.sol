@@ -84,8 +84,8 @@ contract INTLToken is ERC20Interface, Owned {
 
 
     function INTLToken() public {
-        symbol = &quot;INTL&quot;;
-        name = &quot;INTLToken&quot;;
+        symbol = "INTL";
+        name = "INTLToken";
         decimals = 18;
         _totalSupply = 55000000000000000000000000;
         balances[msg.sender] = _totalSupply;

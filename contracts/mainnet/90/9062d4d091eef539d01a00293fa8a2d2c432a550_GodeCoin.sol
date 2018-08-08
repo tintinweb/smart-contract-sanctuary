@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract GodeCoin {
 
-    string public name = &quot;GodeCoin&quot;;      //  token name
-    string public symbol = &quot;GODE&quot;;           //  token symbol
+    string public name = "GodeCoin";      //  token name
+    string public symbol = "GODE";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

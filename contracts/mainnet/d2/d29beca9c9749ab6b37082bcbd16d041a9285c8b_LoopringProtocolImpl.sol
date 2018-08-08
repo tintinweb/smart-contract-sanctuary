@@ -1,11 +1,11 @@
 /*
   Copyright 2017 Loopring Project Ltd (Loopring Foundation).
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
   http://www.apache.org/licenses/LICENSE-2.0
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -91,12 +91,12 @@ library MathUint {
 }
 /*
   Copyright 2017 Loopring Project Ltd (Loopring Foundation).
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
   http://www.apache.org/licenses/LICENSE-2.0
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -122,24 +122,24 @@ library AddressUtil {
 }
 /*
   Copyright 2017 Loopring Project Ltd (Loopring Foundation).
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
   http://www.apache.org/licenses/LICENSE-2.0
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
 */
 /*
   Copyright 2017 Loopring Project Ltd (Loopring Foundation).
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
   http://www.apache.org/licenses/LICENSE-2.0
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -183,12 +183,12 @@ contract ERC20 {
 }
 /*
   Copyright 2017 Loopring Project Ltd (Loopring Foundation).
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
   http://www.apache.org/licenses/LICENSE-2.0
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -304,12 +304,12 @@ contract LoopringProtocol {
 }
 /*
   Copyright 2017 Loopring Project Ltd (Loopring Foundation).
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
   http://www.apache.org/licenses/LICENSE-2.0
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -376,12 +376,12 @@ contract TokenRegistry {
 }
 /*
   Copyright 2017 Loopring Project Ltd (Loopring Foundation).
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
   http://www.apache.org/licenses/LICENSE-2.0
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -564,7 +564,7 @@ contract LoopringProtocolImpl is LoopringProtocol {
         external
     {
         uint cancelAmount = orderValues[5];
-        require(cancelAmount > 0); // &quot;amount to cancel is zero&quot;);
+        require(cancelAmount > 0); // "amount to cancel is zero");
         OrderState memory order = OrderState(
             addresses[0],
             addresses[1],
@@ -588,7 +588,7 @@ contract LoopringProtocolImpl is LoopringProtocol {
             0,
             0
         );
-        require(msg.sender == order.owner); // &quot;cancelOrder not submitted by order owner&quot;);
+        require(msg.sender == order.owner); // "cancelOrder not submitted by order owner");
         bytes32 orderHash = calculateOrderHash(order);
         verifySignature(
             order.owner,
@@ -613,7 +613,7 @@ contract LoopringProtocolImpl is LoopringProtocol {
         bytes20 tokenPair = bytes20(token1) ^ bytes20(token2);
         TokenTransferDelegate delegate = TokenTransferDelegate(delegateAddress);
         require(delegate.tradingPairCutoffs(msg.sender, tokenPair) < t);
-        // &quot;attempted to set cutoff to a smaller value&quot;
+        // "attempted to set cutoff to a smaller value"
         delegate.setTradingPairCutoffs(tokenPair, t);
         emit OrdersCancelled(
             msg.sender,
@@ -629,7 +629,7 @@ contract LoopringProtocolImpl is LoopringProtocol {
     {
         uint t = (cutoff == 0 || cutoff >= block.timestamp) ? block.timestamp : cutoff;
         TokenTransferDelegate delegate = TokenTransferDelegate(delegateAddress);
-        require(delegate.cutoffs(msg.sender) < t); // &quot;attempted to set cutoff to a smaller value&quot;
+        require(delegate.cutoffs(msg.sender) < t); // "attempted to set cutoff to a smaller value"
         delegate.setCutoffs(t);
         emit AllOrdersCancelled(msg.sender, t);
     }
@@ -647,7 +647,7 @@ contract LoopringProtocolImpl is LoopringProtocol {
         public
     {
         // Check if the highest bit of ringIndex is &#39;1&#39;.
-        require((ringIndex >> 63) == 0); // &quot;attempted to re-ent submitRing function&quot;);
+        require((ringIndex >> 63) == 0); // "attempted to re-ent submitRing function");
         // Set the highest bit of ringIndex to &#39;1&#39;.
         uint64 _ringIndex = ringIndex;
         ringIndex |= (1 << 63);
@@ -696,7 +696,7 @@ contract LoopringProtocolImpl is LoopringProtocol {
         for (uint i = 0; i < ringSize - 1; i++) {
             address tokenS = orders[i].tokenS;
             for (uint j = i + 1; j < ringSize; j++) {
-                require(tokenS != orders[j].tokenS); // &quot;found sub-ring&quot;);
+                require(tokenS != orders[j].tokenS); // "found sub-ring");
             }
         }
     }
@@ -736,7 +736,7 @@ contract LoopringProtocolImpl is LoopringProtocol {
         // Test all token addresses at once
         require(
             TokenRegistry(tokenRegistryAddress).areAllTokensRegistered(tokens)
-        ); // &quot;token not registered&quot;);
+        ); // "token not registered");
     }
     function handleRing(
         uint64       _ringIndex,
@@ -855,12 +855,12 @@ contract LoopringProtocolImpl is LoopringProtocol {
         for (uint i = 0; i < ringSize; i++) {
             uint s1b0 = orders[i].rateS.mul(orders[i].amountB);
             uint s0b1 = orders[i].amountS.mul(orders[i].rateB);
-            require(s1b0 <= s0b1); // &quot;miner supplied exchange rate provides invalid discount&quot;);
+            require(s1b0 <= s0b1); // "miner supplied exchange rate provides invalid discount");
             rateRatios[i] = _rateRatioScale.mul(s1b0) / s0b1;
         }
         uint cvs = MathUint.cvsquare(rateRatios, _rateRatioScale);
         require(cvs <= rateRatioCVSThreshold);
-        // &quot;miner supplied exchange rate is not evenly discounted&quot;);
+        // "miner supplied exchange rate is not evenly discounted");
     }
     /// @dev Calculate each order&#39;s fee or LRC reward.
     function calculateRingFees(
@@ -1066,10 +1066,10 @@ contract LoopringProtocolImpl is LoopringProtocol {
                 state.lrcFee = amount.mul(state.lrcFee) / state.amountS;
                 state.amountS = amount;
             }
-            require(state.amountS > 0); // &quot;amountS is zero&quot;);
-            require(state.amountB > 0); // &quot;amountB is zero&quot;);
+            require(state.amountS > 0); // "amountS is zero");
+            require(state.amountB > 0); // "amountB is zero");
             uint availableAmountS = getSpendable(delegate, state.tokenS, state.owner);
-            require(availableAmountS > 0); // &quot;order spendable amountS is zero&quot;);
+            require(availableAmountS > 0); // "order spendable amountS is zero");
             state.fillAmountS = (
                 state.amountS < availableAmountS ?
                 state.amountS : availableAmountS
@@ -1113,10 +1113,10 @@ contract LoopringProtocolImpl is LoopringProtocol {
         require(params.ringSize == buyNoMoreThanAmountBList.length);
         // Validate ring-mining related arguments.
         for (uint i = 0; i < params.ringSize; i++) {
-            require(uintArgsList[i][5] > 0); // &quot;order rateAmountS is zero&quot;);
+            require(uintArgsList[i][5] > 0); // "order rateAmountS is zero");
         }
         //Check ring size
-        require(params.ringSize > 1 && params.ringSize <= MAX_RING_SIZE); // &quot;invalid ring size&quot;);
+        require(params.ringSize > 1 && params.ringSize <= MAX_RING_SIZE); // "invalid ring size");
         uint sigSize = params.ringSize << 1;
         require(sigSize == params.vList.length);
         require(sigSize == params.rList.length);
@@ -1250,12 +1250,12 @@ contract LoopringProtocolImpl is LoopringProtocol {
     {
         require(
             signer == ecrecover(
-                keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),
+                keccak256("\x19Ethereum Signed Message:\n32", hash),
                 v,
                 r,
                 s
             )
-        ); // &quot;invalid signature&quot;);
+        ); // "invalid signature");
     }
     function getTradingPairCutoffs(
         address orderOwner,

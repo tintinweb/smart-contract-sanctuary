@@ -57,7 +57,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -487,8 +487,8 @@ contract MintableToken is StandardToken, Ownable {
 contract MNY is StandardToken, MintableToken, BurnableToken {
   using SafeMath for uint256;
 
-  string public constant name = &quot;MNY by Monkey Capital&quot;;
-  string public constant symbol = &quot;MNY&quot;;
+  string public constant name = "MNY by Monkey Capital";
+  string public constant symbol = "MNY";
   uint8 public constant decimals = 18;
   uint public constant SWAP_CAP = 21000000 * (10 ** uint256(decimals));
   uint public cycleMintSupply = 0;

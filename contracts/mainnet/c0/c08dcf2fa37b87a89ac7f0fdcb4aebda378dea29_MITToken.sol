@@ -65,8 +65,8 @@ contract MITToken is SafeMath{
   constructor () public {
         totalSupply = 10000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Mundellian Infrastructure Technology&quot;;                                   // Set the name for display purposes
-        symbol = &quot;MIT&quot;;                               // Set the symbol for display purposes
+        name = "Mundellian Infrastructure Technology";                                   // Set the name for display purposes
+        symbol = "MIT";                               // Set the symbol for display purposes
         
          owner = msg.sender;
     }

@@ -101,7 +101,7 @@ library BBLib {
 
     // ** Modifiers -- note, these are functions here to allow use as a lib
     function requireBallotClosed(DB storage db) internal view {
-        require(now > BPackedUtils.packedToEndTime(db.packed), &quot;!b-closed&quot;);
+        require(now > BPackedUtils.packedToEndTime(db.packed), "!b-closed");
     }
 
     function requireBallotOpen(DB storage db) internal view {
@@ -109,16 +109,16 @@ library BBLib {
         uint64 startTs;
         uint64 endTs;
         (, startTs, endTs) = BPackedUtils.unpackAll(db.packed);
-        require(_n >= startTs && _n < endTs, &quot;!b-open&quot;);
-        require(db.deprecated == false, &quot;b-deprecated&quot;);
+        require(_n >= startTs && _n < endTs, "!b-open");
+        require(db.deprecated == false, "b-deprecated");
     }
 
     function requireBallotOwner(DB storage db) internal view {
-        require(msg.sender == db.ballotOwner, &quot;!b-owner&quot;);
+        require(msg.sender == db.ballotOwner, "!b-owner");
     }
 
     function requireTesting(DB storage db) internal view {
-        require(isTesting(BPackedUtils.packedToSubmissionBits(db.packed)), &quot;!testing&quot;);
+        require(isTesting(BPackedUtils.packedToSubmissionBits(db.packed)), "!testing");
     }
 
     /* Library meta */
@@ -132,10 +132,10 @@ library BBLib {
 
     /* Functions */
 
-    // &quot;Constructor&quot; function - init core params on deploy
+    // "Constructor" function - init core params on deploy
     // timestampts are uint64s to give us plenty of room for millennia
     function init(DB storage db, bytes32 _specHash, uint256 _packed, IxIface ix, address ballotOwner, bytes16 extraData) external {
-        require(db.specHash == bytes32(0), &quot;b-exists&quot;);
+        require(db.specHash == bytes32(0), "b-exists");
 
         db.index = ix;
         db.ballotOwner = ballotOwner;
@@ -149,23 +149,23 @@ library BBLib {
         if (_testing) {
             emit TestingEnabled();
         } else {
-            require(endTs > now, &quot;bad-end-time&quot;);
+            require(endTs > now, "bad-end-time");
 
             // 0x1ff2 is 0001111111110010 in binary
             // by ANDing with subBits we make sure that only bits in positions 0,2,3,13,14,15
             // can be used. these correspond to the option flags at the top, and ETH ballots
             // that are enc&#39;d or plaintext.
-            require(sb & 0x1ff2 == 0, &quot;bad-sb&quot;);
+            require(sb & 0x1ff2 == 0, "bad-sb");
 
             // if we give bad submission bits (e.g. all 0s) then refuse to deploy ballot
             bool okaySubmissionBits = 1 == (isEthNoEnc(sb) ? 1 : 0) + (isEthWithEnc(sb) ? 1 : 0);
-            require(okaySubmissionBits, &quot;!valid-sb&quot;);
+            require(okaySubmissionBits, "!valid-sb");
 
             // take the max of the start time provided and the blocks timestamp to avoid a DoS against recent token holders
             // (which someone might be able to do if they could set the timestamp in the past)
             startTs = startTs > now ? startTs : uint64(now);
         }
-        require(_specHash != bytes32(0), &quot;null-specHash&quot;);
+        require(_specHash != bytes32(0), "null-specHash");
         db.specHash = _specHash;
 
         db.packed = BPackedUtils.pack(sb, startTs, endTs);
@@ -270,7 +270,7 @@ library BBLib {
         // we want the replay protection sequence number to be STRICTLY MORE than what
         // is stored in the mapping. This means we can set sequence to MAX_UINT32 to disable
         // any future votes.
-        require(db.sequenceNumber[voter] < sequence, &quot;bad-sequence-n&quot;);
+        require(db.sequenceNumber[voter] < sequence, "bad-sequence-n");
         db.sequenceNumber[voter] = sequence;
     }
 

@@ -198,9 +198,9 @@ contract DeepToken is StandardToken {
     Paused // for contract upgrades
     }
 
-    string public constant name = &quot;DeepToken&quot;;
+    string public constant name = "DeepToken";
 
-    string public constant symbol = &quot;DTA&quot;;
+    string public constant symbol = "DTA";
 
     uint8 public constant decimals = 18;
 
@@ -297,7 +297,7 @@ contract DeepToken is StandardToken {
 
     //this is the main funding function, it updates the balances of DeepTokens during the ICO.
     //no particular incentive schemes have been implemented here
-    //it is only accessible during the &quot;ICO&quot; phase.
+    //it is only accessible during the "ICO" phase.
     function() payable
     requireState(States.Ico)
     {

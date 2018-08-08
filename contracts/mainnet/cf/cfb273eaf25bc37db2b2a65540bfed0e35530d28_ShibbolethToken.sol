@@ -124,7 +124,7 @@ contract ShibbolethToken is StandardToken {
     string public symbol;
     address public issuer;
 
-    function version() constant returns(string) { return &quot;S0.1&quot;; }
+    function version() constant returns(string) { return "S0.1"; }
     function decimals() constant returns(uint8) { return 0; }
     function name(bytes32 node) constant returns(string) { return name; }
     

@@ -113,8 +113,8 @@ contract AutoBusinessFinance is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AutoBusinessFinance() public {
-        symbol = &quot;ABF&quot;;
-        name = &quot;Auto-business & Finance&quot;;
+        symbol = "ABF";
+        name = "Auto-business & Finance";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0xff60947022E9e3510974646C530445B51540292D] = _totalSupply;

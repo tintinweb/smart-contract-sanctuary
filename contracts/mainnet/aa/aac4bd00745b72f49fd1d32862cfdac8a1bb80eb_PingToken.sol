@@ -6,8 +6,8 @@ contract PingToken {
 uint256 public pings;
   uint256 public totalSupply;
   
-  string public constant name = &quot;PingToken&quot;;
-  string public constant symbol = &quot;PING&quot;;
+  string public constant name = "PingToken";
+  string public constant symbol = "PING";
   uint8 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals)); // 100M
   

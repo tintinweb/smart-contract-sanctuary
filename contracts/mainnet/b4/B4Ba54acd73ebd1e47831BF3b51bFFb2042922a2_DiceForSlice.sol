@@ -25,7 +25,7 @@ pragma solidity ^0.4.16;
 
 /**
  * @title Math
- * @dev Math operations with safety checks that throw on error. Added: random and &quot;float&quot; divide for numbers
+ * @dev Math operations with safety checks that throw on error. Added: random and "float" divide for numbers
  */
 library Math {
     function mul(uint256 a, uint256 b) internal pure returns (uint256) {

@@ -129,8 +129,8 @@ contract AndreisToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AndreisToken() public {
-        symbol = &quot;ANDRS&quot;;
-        name = &quot;AndreisToken&quot;;
+        symbol = "ANDRS";
+        name = "AndreisToken";
         decimals = 18;
         _totalSupply = 250000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

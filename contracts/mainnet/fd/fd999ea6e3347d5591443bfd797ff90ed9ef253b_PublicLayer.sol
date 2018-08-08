@@ -58,8 +58,8 @@ contract PublicLayer is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Public Layer&quot;;
-    string public constant symbol = &quot;PULA&quot;;
+    string public constant name = "Public Layer";
+    string public constant symbol = "PULA";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 80000000e8;

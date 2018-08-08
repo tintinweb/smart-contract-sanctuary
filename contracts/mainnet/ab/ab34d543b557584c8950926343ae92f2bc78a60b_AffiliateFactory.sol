@@ -62,8 +62,8 @@ pragma solidity ^0.4.21;
   }
 
   contract WETH9 {
-      string public name     = &quot;Wrapped Ether&quot;;
-      string public symbol   = &quot;WETH&quot;;
+      string public name     = "Wrapped Ether";
+      string public symbol   = "WETH";
       uint8  public decimals = 18;
 
       event  Approval(address indexed src, address indexed guy, uint wad);
@@ -188,7 +188,7 @@ pragma solidity ^0.4.21;
   /**
    * @title Ownable
    * @dev The Ownable contract has an owner address, and provides basic authorization control
-   * functions, this simplifies the implementation of &quot;user permissions&quot;.
+   * functions, this simplifies the implementation of "user permissions".
    */
   contract Ownable {
     address public owner;
@@ -314,7 +314,7 @@ pragma solidity ^0.4.21;
           returns (address proxyContract)
       {
           assembly {
-              let contractCode := mload(0x40) // Find empty storage location using &quot;free memory pointer&quot;
+              let contractCode := mload(0x40) // Find empty storage location using "free memory pointer"
 
               mstore(add(contractCode, 0x0b), _target) // Add target address, with a 11 bytes [i.e. 23 - (32 - 20)] offset to later accomodate first part of the bytecode
               mstore(sub(contractCode, 0x09), 0x000000000000000000603160008181600b9039f3600080808080368092803773) // First part of the bytecode, shifted left by 9 bytes, overwrites left padding of target address

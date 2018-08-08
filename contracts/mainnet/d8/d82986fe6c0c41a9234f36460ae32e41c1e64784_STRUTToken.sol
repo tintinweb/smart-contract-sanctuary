@@ -116,8 +116,8 @@ contract STRUTToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function STRUTToken() public {
-        symbol = &quot;STRUT&quot;;
-        name = &quot;STRUT Concepts&quot;;
+        symbol = "STRUT";
+        name = "STRUT Concepts";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         endDate = now + 15 weeks;

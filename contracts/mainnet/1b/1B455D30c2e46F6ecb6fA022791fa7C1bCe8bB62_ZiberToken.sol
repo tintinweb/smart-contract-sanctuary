@@ -78,8 +78,8 @@ contract ZiberToken {
         
         /* Unless you add other functions these variables will never change */
         balanceOf[msg.sender] = _supply;
-        name = &quot;ZIBER CW Tokens&quot;;     
-        symbol = &quot;ZBR&quot;;
+        name = "ZIBER CW Tokens";     
+        symbol = "ZBR";
         
         /* If you want a divisible token then add the amount of decimals the base unit has  */
         decimals = 2;

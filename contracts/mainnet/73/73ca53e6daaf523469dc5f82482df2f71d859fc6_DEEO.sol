@@ -113,8 +113,8 @@ contract DEEO is UnboundedRegularToken {
 
     uint public totalSupply = 10*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;DEEO&quot;;
-    string constant public symbol = &quot;DEEO&quot;;
+    string constant public name = "DEEO";
+    string constant public symbol = "DEEO";
 
     function DEEO() {
         balances[msg.sender] = totalSupply;

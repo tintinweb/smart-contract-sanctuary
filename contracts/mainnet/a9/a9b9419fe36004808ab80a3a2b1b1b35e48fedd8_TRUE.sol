@@ -222,9 +222,9 @@ contract StandardToken is ERC20, BasicToken {
 //========= main ==================
 
 contract TRUE is StandardToken {
-  string public constant name    = &quot;True Chain&quot;;  //The Token&#39;s name
+  string public constant name    = "True Chain";  //The Token&#39;s name
   uint8 public constant decimals = 18;              //Number of decimals of the smallest unit
-  string public constant symbol  = &quot;TRUE&quot;;           //An identifier
+  string public constant symbol  = "TRUE";           //An identifier
 
   function TRUE() public {
     totalSupply_ = 1 * (10 ** 8 ) * (10 ** 18); // 100 million TRUE, decimals set to 18

@@ -111,8 +111,8 @@ mapping(address => mapping(address => uint)) allowed;
 // Constructor
 // ------------------------------------------------------------------------
 function InGRedientToken() public {
-    symbol = &quot;IGR&quot;;
-    name = &quot;InGRedientToken&quot;;
+    symbol = "IGR";
+    name = "InGRedientToken";
     decimals = 3; //kg is the reference unit but grams is often also used
     _totalSupply = 1000000000000000000000 * 10**uint(decimals);
     balances[owner] = _totalSupply;

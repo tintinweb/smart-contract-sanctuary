@@ -16,8 +16,8 @@ contract LamboCoin {
     uint256 public totalSupply = 0;
 	uint256 public maxSupply = 0;
 
-    function name() constant returns (string) { return &quot;LamboCoin&quot;; }
-    function symbol() constant returns (string) { return &quot;LBC&quot;; }
+    function name() constant returns (string) { return "LamboCoin"; }
+    function symbol() constant returns (string) { return "LBC"; }
     function decimals() constant returns (uint8) { return 18; }
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }
 

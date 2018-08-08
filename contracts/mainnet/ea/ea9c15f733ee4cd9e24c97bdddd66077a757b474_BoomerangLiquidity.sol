@@ -99,7 +99,7 @@ contract BoomerangLiquidity is Owned {
 
     
     function withdraw() public {
-        flmContract.call(bytes4(keccak256(&quot;withdraw()&quot;)));
+        flmContract.call(bytes4(keccak256("withdraw()")));
     }
     
     function donate() payable public {

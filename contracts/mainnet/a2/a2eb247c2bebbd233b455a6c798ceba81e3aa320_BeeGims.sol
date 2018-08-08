@@ -139,11 +139,11 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 
 
 contract BeeGims is StandardToken {
-  string public constant name = &quot;BeeGims&quot;;
-  string public constant symbol = &quot;BEES&quot;;
+  string public constant name = "BeeGims";
+  string public constant symbol = "BEES";
   uint public constant decimals = 6;               //  6 decimals
   uint public totalSupply = 600000000000000;       // = 600 000 000 tokens total supply * 1 000 000 (6 decimals) = 600 000 000 000 000
-  string public version = &quot;1.0&quot;;
+  string public version = "1.0";
 
   // Constructor
 

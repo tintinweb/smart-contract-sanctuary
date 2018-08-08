@@ -113,8 +113,8 @@ contract KungfuToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KungfuToken() public {
-        symbol = &quot;KFC&quot;;
-        name = &quot;Kungfu Token&quot;;
+        symbol = "KFC";
+        name = "Kungfu Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x28117c6e52351d60a9188b65c1700184b42ea11b] = _totalSupply;

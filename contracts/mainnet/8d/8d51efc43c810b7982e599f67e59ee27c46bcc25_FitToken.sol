@@ -28,8 +28,8 @@ owner = msg.sender;
 decimals = 18;
 _totalSupply = 400000000 * (10**decimals);
 balances[owner] = _totalSupply;
-symbol = &quot;FIT&quot;;
-name = &quot;FIT TOKEN&quot;;
+symbol = "FIT";
+name = "FIT TOKEN";
 }
 
 

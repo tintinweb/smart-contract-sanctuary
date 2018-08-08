@@ -69,8 +69,8 @@ contract KpopItem is ERC721 {
   address public coauthor;
   address public manufacturer;
 
-  string public constant NAME = &quot;KpopItem&quot;;
-  string public constant SYMBOL = &quot;KpopItem&quot;;
+  string public constant NAME = "KpopItem";
+  string public constant SYMBOL = "KpopItem";
 
   uint public GROWTH_BUMP = 0.4 ether;
   uint public MIN_STARTING_PRICE = 0.001 ether;

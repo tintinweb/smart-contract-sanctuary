@@ -243,8 +243,8 @@ contract StandardToken is ERC20, BasicToken {
      */
 contract EthanToken is StandardToken {
 
-    string public constant NAME = &quot;Ethan Token&quot;; // solium-disable-line uppercase
-    string public constant SYMBOL = &quot;ETHAN&quot;; // solium-disable-line uppercase
+    string public constant NAME = "Ethan Token"; // solium-disable-line uppercase
+    string public constant SYMBOL = "ETHAN"; // solium-disable-line uppercase
     uint8 public constant DECIMALS = 18; // solium-disable-line uppercase
     uint256 public constant INITIAL_SUPPLY = 10000 * (10 ** uint256(DECIMALS));
 

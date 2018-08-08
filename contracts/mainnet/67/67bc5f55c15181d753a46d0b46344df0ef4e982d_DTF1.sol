@@ -116,8 +116,8 @@ contract DTF1 is ERC20, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;DTF1&quot;;
-        name = &quot;Decentralized Token Fund&quot;;
+        symbol = "DTF1";
+        name = "Decentralized Token Fund";
         decimals = 18;
         _totalSupply = 0;
         balances[owner] = _totalSupply;

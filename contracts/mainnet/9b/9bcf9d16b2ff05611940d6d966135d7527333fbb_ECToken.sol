@@ -202,9 +202,9 @@ contract ECToken is EroStandardToken {
     
     uint256 constant public decimals = 8; //How many decimals to show.
     uint256 public totalSupply = 24 * (10**7) * 10**8 ; // 240 million tokens, 8 decimal places
-    string constant public name = &quot;ECToken&quot;; //fancy name: eg EROSCOIN
-    string constant public symbol = &quot;EC&quot;; //An identifier: eg ERO
-    string constant public version = &quot;v1.1.5&quot;;       //Version 1.1.5 standard. Just an arbitrary versioning scheme.
+    string constant public name = "ECToken"; //fancy name: eg EROSCOIN
+    string constant public symbol = "EC"; //An identifier: eg ERO
+    string constant public version = "v1.1.5";       //Version 1.1.5 standard. Just an arbitrary versioning scheme.
     
     function ECToken(){
         balances[msg.sender] = totalSupply;               // Give the creator all initial tokens
@@ -218,7 +218,7 @@ contract ECToken is EroStandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 }

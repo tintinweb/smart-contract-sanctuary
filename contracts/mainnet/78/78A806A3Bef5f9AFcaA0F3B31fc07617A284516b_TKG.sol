@@ -519,8 +519,8 @@ contract AlanPlusToken is StandardToken
 pragma solidity ^0.4.22;
 contract TKG is AlanPlusToken 
 {
-    string public constant name = &quot;Token Guardian&quot;;
-    string public constant symbol = &quot;TKGN&quot;;
+    string public constant name = "Token Guardian";
+    string public constant symbol = "TKGN";
     uint8 public constant decimals = 18;
     uint256 private constant INITIAL_SUPPLY = 590000000 * (10 ** uint256(decimals));
     function () public payable 

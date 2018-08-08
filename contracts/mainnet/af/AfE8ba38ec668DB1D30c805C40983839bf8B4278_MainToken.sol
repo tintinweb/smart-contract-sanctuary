@@ -431,8 +431,8 @@ contract Consts {
     uint8 public constant TOKEN_DECIMALS_UINT8 = 2;
     uint public constant TOKEN_DECIMAL_MULTIPLIER = 10 ** TOKEN_DECIMALS;
 
-    string public constant TOKEN_NAME = &quot;Wechain Network&quot;;
-    string public constant TOKEN_SYMBOL = &quot;WCN&quot;;
+    string public constant TOKEN_NAME = "Wechain Network";
+    string public constant TOKEN_SYMBOL = "WCN";
     bool public constant PAUSED = false;
     address public constant TARGET_USER = 0x031e4bd2fa0bbdccf4d97b66abacb190c06aa3fc;
     

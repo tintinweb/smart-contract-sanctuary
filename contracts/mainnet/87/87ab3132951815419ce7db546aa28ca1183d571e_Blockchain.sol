@@ -113,8 +113,8 @@ contract Blockchain is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Blockchain() public {
-        symbol = &quot;BC&quot;;
-        name = &quot;Blockchain &quot;;
+        symbol = "BC";
+        name = "Blockchain ";
         decimals = 18;
         _totalSupply = 3000000000000000000000000000;
         balances[0x2d57365a7ab22425f09D49bB0baFB0426EB8dDF9] = _totalSupply;

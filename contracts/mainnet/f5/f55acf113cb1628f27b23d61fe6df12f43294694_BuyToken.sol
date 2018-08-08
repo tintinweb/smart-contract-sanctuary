@@ -152,8 +152,8 @@ contract StandardToken is newToken, ERC20 {
 }
 
 contract Order is StandardToken, Ownable {
-  string public constant name = &quot;Order&quot;;
-  string public constant symbol = &quot;ETH&quot;;
+  string public constant name = "Order";
+  string public constant symbol = "ETH";
   uint public constant decimals = 3;
   uint256 public initialSupply;
     

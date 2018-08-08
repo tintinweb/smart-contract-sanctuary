@@ -500,8 +500,8 @@ contract BurnableToken is BurnableTokenInterface, MintableToken {
  * @notice Token contract for the fida token
  */
 contract FidaToken is BurnableToken {
-  string public name = &quot;fida&quot;;
-  string public symbol = &quot;fida&quot;;
+  string public name = "fida";
+  string public symbol = "fida";
   uint8 public decimals = 18;
   
   /**

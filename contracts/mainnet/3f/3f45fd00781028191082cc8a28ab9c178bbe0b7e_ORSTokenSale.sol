@@ -88,7 +88,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -169,7 +169,7 @@ contract KYCBase {
         private returns (bool)
     {
         // check the signature
-        bytes32 hash = sha256(&quot;Eidoo icoengine authorization&quot;, this, buyerAddress, buyerId, maxAmount);
+        bytes32 hash = sha256("Eidoo icoengine authorization", this, buyerAddress, buyerId, maxAmount);
         address signer = ecrecover(hash, v, r, s);
         if (!isKycSigner[signer]) {
             revert();
@@ -565,8 +565,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 /// @author Sicos et al.
 contract ORSToken is CappedToken, StandardBurnableToken, PausableToken {
 
-    string public name = &quot;ORS Token&quot;;
-    string public symbol = &quot;ORS&quot;;
+    string public name = "ORS Token";
+    string public symbol = "ORS";
     uint8 public decimals = 18;
 
     /// @dev Constructor
@@ -753,7 +753,7 @@ contract ORSTokenSale is KYCBase, ICOEngineInterface, Ownable {
     /// @return True iff mainsale is finished
     function ended() public view returns (bool) {
         // Note: Even though we allow token holders to burn their tokens immediately after purchase, this won&#39;t
-        //       affect the early end via &quot;sold out&quot; as mainsaleRemaining is independent of token.totalSupply.
+        //       affect the early end via "sold out" as mainsaleRemaining is independent of token.totalSupply.
         return now > closingTime || mainsaleRemaining == 0;
     }
 
@@ -788,7 +788,7 @@ contract ORSTokenSale is KYCBase, ICOEngineInterface, Ownable {
     }
 
     // return the price as number of tokens released for each ether
-    /// @dev Price (as required by Eidoo&#39;s ICOEngineInterface); actually the inverse of a &quot;price&quot;
+    /// @dev Price (as required by Eidoo&#39;s ICOEngineInterface); actually the inverse of a "price"
     /// @return Rate in integral token units per wei
     function price() public view returns (uint) {
         return rate;

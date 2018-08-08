@@ -4,11 +4,11 @@ pragma solidity ^0.4.11;
 
 // Copyright (C) 2017  DappHub, LLC
 
-// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).
+// Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
 
 // Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
 
 contract DSAuthority {
@@ -221,7 +221,7 @@ contract DSMath {
     }
 
     function rpow(uint128 x, uint64 n) constant internal returns (uint128 z) {
-        // This famous algorithm is called &quot;exponentiation by squaring&quot;
+        // This famous algorithm is called "exponentiation by squaring"
         // and calculates x^n with x as fixed-point and n as regular unsigned.
         //
         // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -317,13 +317,13 @@ contract Poker is DSCache {
 
     function poke(address med, bytes32 wut) auth {
         super.poke(wut);
-        assert(med.call(bytes4(sha3(&quot;poke()&quot;))));
+        assert(med.call(bytes4(sha3("poke()"))));
         //Medianizer(med).poke();
     }
 
     function prod(address med, bytes32 wut, uint128 zzz) auth {
         super.prod(wut, zzz);
-        assert(med.call(bytes4(sha3(&quot;poke()&quot;))));
+        assert(med.call(bytes4(sha3("poke()"))));
         //Medianizer(med).poke();
     }
 }

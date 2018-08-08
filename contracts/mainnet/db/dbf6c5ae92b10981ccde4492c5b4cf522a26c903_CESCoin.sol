@@ -3,8 +3,8 @@ pragma solidity ^0.4.19;
 interface tokenRecipientsces{ function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }
 
 contract CESCoin{
-  string public name = &quot;CES COIN&quot;;
-  string public symbol = &quot;CES&quot;;
+  string public name = "CES COIN";
+  string public symbol = "CES";
   uint8 public  decimals = 2;
   uint256 public totalSupply=600000000000;
   

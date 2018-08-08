@@ -113,8 +113,8 @@ contract OrbusToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OrbusToken() public {
-        symbol = &quot;ORB&quot;;
-        name = &quot;Orbus Token&quot;;
+        symbol = "ORB";
+        name = "Orbus Token";
         decimals = 18;
         _totalSupply = 160000000000000000000000000;
         balances[0xE5c73E90d22Bf659B2A62E248356c4E1a503224c] = _totalSupply;

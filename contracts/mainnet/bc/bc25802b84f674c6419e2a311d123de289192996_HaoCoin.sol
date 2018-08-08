@@ -52,8 +52,8 @@ contract HaoCoin is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
 	
     uint256 public totalSupply = 1000000000000000000;
-	string public constant name = &quot;HaoCoin&quot;;
-    string public constant symbol = &quot;HACO&quot;;
+	string public constant name = "HaoCoin";
+    string public constant symbol = "HACO";
     uint public constant decimals = 8;
 	
 	function HaoCoin(){

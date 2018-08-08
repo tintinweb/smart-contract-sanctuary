@@ -156,8 +156,8 @@ contract YunKaiCoin is StandardToken {
   string public  name;
   uint8 constant public decimals = 18;
   function YunKaiCoin() public {
-    symbol = &quot;YKC&quot;;
-    name = &quot;Yun Kai Coin&quot;;
+    symbol = "YKC";
+    name = "Yun Kai Coin";
     totalSupply_ = 3330 * 10000 * 10**uint(decimals);
     balances[msg.sender].amount = totalSupply_;
   }

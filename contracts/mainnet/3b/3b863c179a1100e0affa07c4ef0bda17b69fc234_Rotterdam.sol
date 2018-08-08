@@ -15,9 +15,9 @@ contract Rotterdam {
     function Rotterdam () {
 
          initialSupply = 5400000;
-         name =&quot;Rotterdan City Coin&quot;;
+         name ="Rotterdan City Coin";
         decimals = 0;
-         symbol = &quot;RCC&quot;;
+         symbol = "RCC";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

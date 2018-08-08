@@ -114,8 +114,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract MATOU is StandardToken {
-  string public name    = &quot;MATOU Token&quot;;
-  string public symbol  = &quot;MTB&quot;;
+  string public name    = "MATOU Token";
+  string public symbol  = "MTB";
   uint8 public decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 1000000000;
   event Burn(address indexed _from, uint256 _tokenDestroyed, uint256 _timestamp);

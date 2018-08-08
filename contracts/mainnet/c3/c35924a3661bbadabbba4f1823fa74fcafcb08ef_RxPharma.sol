@@ -15,8 +15,8 @@ contract RxPharma{
     function RxPharma() public {
         totalSupply = 50000000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Rx Pharma Token&quot;;
-        symbol = &quot;RXP&quot;;
+        name = "Rx Pharma Token";
+        symbol = "RXP";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

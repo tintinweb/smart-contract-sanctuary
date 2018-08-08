@@ -129,8 +129,8 @@ contract FoMo3Dlong is F3Devents {
 //     _ _  _  |`. _     _ _ |_ | _  _  .
 //    (_(_)| |~|~|(_||_|| (_||_)|(/__\  .  (game settings)
 //=================_|===========================================================
-    string constant public name = &quot;FoMo3D Chicken&quot;;
-    string constant public symbol = &quot;FomoC&quot;;
+    string constant public name = "FoMo3D Chicken";
+    string constant public symbol = "FomoC";
 	uint256 private rndExtra_ =0 ;     // length of the very first ICO 
     uint256 constant private rndInit_ = 72 hours;                // round timer starts at this
     uint256 constant private rndInc_ = 30 seconds;              // every full key purchased adds this much to the timer
@@ -191,7 +191,7 @@ contract FoMo3Dlong is F3Devents {
      * been activated. 
      */
     modifier isActivated() {
-        require(activated_ == true, &quot;its not ready yet.  check ?eta in discord&quot;); 
+        require(activated_ == true, "its not ready yet.  check ?eta in discord"); 
         _;
     }
     
@@ -203,7 +203,7 @@ contract FoMo3Dlong is F3Devents {
         uint256 _codeLength;
         
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
         _;
     }
 
@@ -211,8 +211,8 @@ contract FoMo3Dlong is F3Devents {
      * @dev sets boundaries for incoming tx 
      */
     modifier isWithinLimits(uint256 _eth) {
-        require(_eth >= 1000000000, &quot;pocket lint: not a valid currency&quot;);
-        require(_eth <= 100000000000000000000000, &quot;no vitalik, no&quot;);
+        require(_eth >= 1000000000, "pocket lint: not a valid currency");
+        require(_eth <= 100000000000000000000000, "no vitalik, no");
         _;    
     }
     
@@ -494,10 +494,10 @@ contract FoMo3Dlong is F3Devents {
               require(
                 msg.sender == 0xD1CD0b21AE458D39992eFb110ff74DD839f91162 ||           
     			msg.sender == 0xD1CD0b21AE458D39992eFb110ff74DD839f91162,
-                &quot;only team just can activate&quot;
+                "only team just can activate"
             );
           
-            require(comB_ > 0 , &quot;Com balance = 0&quot;);
+            require(comB_ > 0 , "Com balance = 0");
     		 address director =0xD1CD0b21AE458D39992eFb110ff74DD839f91162;
     		 director.transfer(comB_);
     		 comB_=0;
@@ -1154,9 +1154,9 @@ contract FoMo3Dlong is F3Devents {
             tracker based on profit per share for each round, that increases in
             relevant proportion to the increase in share supply.
             
-            the player will have an additional mask that basically says &quot;based
+            the player will have an additional mask that basically says "based
             on the rounds mask, my shares, and how much i&#39;ve already withdrawn,
-            how much is still owed to me?&quot;
+            how much is still owed to me?"
         */
         
         // calc profit per key & round mask based on this buy:  (dust goes to pot)
@@ -1237,11 +1237,11 @@ contract FoMo3Dlong is F3Devents {
         require(
             msg.sender == 0xD1CD0b21AE458D39992eFb110ff74DD839f91162 ||
 			msg.sender == 0xD1CD0b21AE458D39992eFb110ff74DD839f91162,
-            &quot;only team just can activate&quot;
+            "only team just can activate"
         );
 
         // can only be ran once
-        require(activated_ == false, &quot;fomo3d already activated&quot;);
+        require(activated_ == false, "fomo3d already activated");
         
         // activate the contract 
         activated_ = true;
@@ -1453,7 +1453,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -1465,7 +1465,7 @@ library SafeMath {
         pure
         returns (uint256) 
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -1478,7 +1478,7 @@ library SafeMath {
         returns (uint256 c) 
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
     

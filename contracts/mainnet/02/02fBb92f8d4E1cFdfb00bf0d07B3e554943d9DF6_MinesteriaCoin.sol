@@ -178,8 +178,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 
 contract MinesteriaCoin is StandardBurnableToken {
 
-  string public constant name = &quot;Minesteria coin&quot;;
-  string public constant symbol = &quot;MINE&quot;; 
+  string public constant name = "Minesteria coin";
+  string public constant symbol = "MINE"; 
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 1000000000000 * (10 ** uint256(decimals));

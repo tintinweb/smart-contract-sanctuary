@@ -250,7 +250,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -414,8 +414,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract OwnData is PausableToken {
-string public name = &quot;OwnData&quot;;
-string public symbol = &quot;OWN&quot;;
+string public name = "OwnData";
+string public symbol = "OWN";
 uint8 public decimals = 8;
 uint public INITIAL_SUPPLY = 110000000000 * 10 ** uint(decimals);
 

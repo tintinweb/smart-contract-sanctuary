@@ -59,10 +59,10 @@ contract StandardToken is Token {
 contract WBSToken is StandardToken{
 
     // metadata
-    string public constant name = &quot;Wisdom Beauty Star&quot;;
-    string public constant symbol = &quot;WBS&quot;;
+    string public constant name = "Wisdom Beauty Star";
+    string public constant symbol = "WBS";
     uint256 public constant decimals = 8;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
     
     // total
     uint256 public constant tokenCreationCap = 10 * (10**8) * 10**decimals;

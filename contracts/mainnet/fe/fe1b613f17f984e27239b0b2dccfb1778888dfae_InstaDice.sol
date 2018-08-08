@@ -349,7 +349,7 @@ contract UsingTreasury is
         view
         returns (ITreasury)
     {
-        return ITreasury(addressOf(&quot;TREASURY&quot;));
+        return ITreasury(addressOf("TREASURY"));
     }
 }
 
@@ -589,7 +589,7 @@ contract UsingAdmin is
         constant
         returns (address _addr)
     {
-        return addressOf(&quot;ADMIN&quot;);
+        return addressOf("ADMIN");
     }
 }
 
@@ -603,7 +603,7 @@ a number, and if the roll is less than or equal to that number,
 they will win a payout that is inversely proportional to the
 number they chose (lower numbers pay out more).
 
-When a roll is &quot;finalized&quot;, it means the result was determined
+When a roll is "finalized", it means the result was determined
 and the payout paid to the user if they won. Each time somebody 
 rolls, their previous roll is finalized. Roll results are based
 on blockhash, and since only the last 256 blockhashes are 
@@ -741,7 +741,7 @@ contract InstaDice is
         // Ensure one bet per block.
         User memory _user = users[msg.sender];
         if (_user.r_block == uint32(block.number)){
-            _errorAndRefund(&quot;Only one bet per block allowed.&quot;, msg.value, _number);
+            _errorAndRefund("Only one bet per block allowed.", msg.value, _number);
             return false;
         }
         // Finalize last roll, if there is one.
@@ -784,12 +784,12 @@ contract InstaDice is
         User storage _user = users[msg.sender];
         // Error if on same block.
         if (_user.r_block == uint32(block.number)){
-            emit PayoutError(now, &quot;Cannot payout roll on the same block&quot;);
+            emit PayoutError(now, "Cannot payout roll on the same block");
             return false;
         }
         // Error if nothing to payout.
         if (_user.r_block == 0){
-            emit PayoutError(now, &quot;No roll to pay out.&quot;);
+            emit PayoutError(now, "No roll to pay out.");
             return false;
         }
 
@@ -818,23 +818,23 @@ contract InstaDice is
     {
         Settings memory _settings = settings;
         if (_number < _settings.minNumber) {
-            _errorAndRefund(&quot;Roll number too small.&quot;, msg.value, _number);
+            _errorAndRefund("Roll number too small.", msg.value, _number);
             return false;
         }
         if (_number > _settings.maxNumber){
-            _errorAndRefund(&quot;Roll number too large.&quot;, msg.value, _number);
+            _errorAndRefund("Roll number too large.", msg.value, _number);
             return false;
         }
         if (msg.value < _settings.minBet){
-            _errorAndRefund(&quot;Bet too small.&quot;, msg.value, _number);
+            _errorAndRefund("Bet too small.", msg.value, _number);
             return false;
         }
         if (msg.value > _settings.maxBet){
-            _errorAndRefund(&quot;Bet too large.&quot;, msg.value, _number);
+            _errorAndRefund("Bet too large.", msg.value, _number);
             return false;
         }
         if (msg.value > curMaxBet()){
-            _errorAndRefund(&quot;May be unable to payout on a win.&quot;, msg.value, _number);
+            _errorAndRefund("May be unable to payout on a win.", msg.value, _number);
             return false;
         }
         return true;

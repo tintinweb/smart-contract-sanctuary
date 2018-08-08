@@ -16,9 +16,9 @@ contract clyckterium {
     function clyckterium() {
 
          initialSupply = 100000000;
-         name =&quot;clyckterium&quot;;
+         name ="clyckterium";
         decimals = 0;
-         symbol = &quot;cly&quot;;
+         symbol = "cly";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

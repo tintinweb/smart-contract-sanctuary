@@ -4,8 +4,8 @@ contract	DEUTSCHE_BANK_301201				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	DEUTSCHE_BANK_301201		&quot;	;
-	string	public		symbol =	&quot;	DEBI		&quot;	;
+	string	public		name =	"	DEUTSCHE_BANK_301201		"	;
+	string	public		symbol =	"	DEBI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10746091807253500000000000					;	

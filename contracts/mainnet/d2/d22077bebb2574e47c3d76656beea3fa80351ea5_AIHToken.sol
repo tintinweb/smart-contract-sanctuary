@@ -169,9 +169,9 @@ contract TokenERC20 {
 contract AIHToken is owned, TokenERC20 {
 
     /// The full name of the AIH token.
-    string public constant name = &quot;Artificial Intelligence Health&quot;;
+    string public constant name = "Artificial Intelligence Health";
     /// Symbol of the AIH token.
-    string public constant symbol = &quot;AIH&quot;;
+    string public constant symbol = "AIH";
     /// 18 decimals is the strongly suggested default, avoid changing it.
     uint8 public constant decimals = 18;
 

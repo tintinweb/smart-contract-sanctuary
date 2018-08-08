@@ -110,8 +110,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     }
 
     constructor() public {
-        symbol = &quot;CARPWO&quot;;
-        name = &quot;CarblockPWOToken&quot;;
+        symbol = "CARPWO";
+        name = "CarblockPWOToken";
         decimals = 18;
         totalSupply = 1800000000 * 10**uint(decimals);
         balances[owner] = totalSupply;

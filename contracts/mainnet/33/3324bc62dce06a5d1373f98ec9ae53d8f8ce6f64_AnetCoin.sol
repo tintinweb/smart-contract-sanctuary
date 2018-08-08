@@ -52,7 +52,7 @@ contract Token {
     event Transfer(address indexed _from, address indexed _to, uint _value);
 }
 
-contract AnetCoin is Token(&quot;ANET&quot;, &quot;ANET&quot;, 0, 500000000), ERC20, ERC223 {
+contract AnetCoin is Token("ANET", "ANET", 0, 500000000), ERC20, ERC223 {
 
     function AnetCoin() public {
         _balanceOf[msg.sender] = _totalSupply;

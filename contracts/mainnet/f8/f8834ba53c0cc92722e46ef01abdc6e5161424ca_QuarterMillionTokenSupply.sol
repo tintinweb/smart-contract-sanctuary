@@ -1,5 +1,5 @@
 pragma solidity ^0.4.23;
-pragma experimental &quot;v0.5.0&quot;;
+pragma experimental "v0.5.0";
 pragma experimental ABIEncoderV2;
 
 library AddressExtension {
@@ -510,8 +510,8 @@ contract AbstractVoucher {
 contract QuarterMillionTokenSupply is AbstractToken, AbstractVoucher, Authorizable {
 
   uint256 public totalSupply;
-  string public constant name = &quot;Quarter-million Token Supply&quot;;
-  string public constant symbol = &quot;QTS&quot;;
+  string public constant name = "Quarter-million Token Supply";
+  string public constant symbol = "QTS";
   bool public constant isConsumable = true;
 
   constructor(

@@ -13,8 +13,8 @@ contract ERC20Interface {
 
 contract UBCToken is ERC20Interface{
     string public standard = &#39;Token 1.0&#39;;
-    string public constant name=&quot;Ubiquitous Business Credit&quot;;
-    string public constant symbol=&quot;UBC&quot;;
+    string public constant name="Ubiquitous Business Credit";
+    string public constant symbol="UBC";
     uint8 public constant decimals=4;
     uint256 public constant _totalSupply=10000000000000;
     mapping(address => mapping (address => uint256)) allowed;

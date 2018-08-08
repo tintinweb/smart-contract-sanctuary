@@ -58,8 +58,8 @@ contract KellerWilliams is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;KellerWilliams&quot;;
-    string public constant symbol = &quot;KWC&quot;;
+    string public constant name = "KellerWilliams";
+    string public constant symbol = "KWC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 2000000000e8;

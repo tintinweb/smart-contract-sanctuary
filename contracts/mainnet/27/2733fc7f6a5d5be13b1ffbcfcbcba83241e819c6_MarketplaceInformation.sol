@@ -49,55 +49,55 @@ contract DigixConstants {
   uint256 constant STATE_ADMIN_FAILURE = 11;
 
   /// interactive contracts
-  bytes32 constant CONTRACT_INTERACTIVE_ASSETS_EXPLORER = &quot;i:asset:explorer&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_DIGIX_DIRECTORY = &quot;i:directory&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE = &quot;i:mp&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_ADMIN = &quot;i:mpadmin&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_POPADMIN = &quot;i:popadmin&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_PRODUCTS_LIST = &quot;i:products&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_TOKEN = &quot;i:token&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_BULK_WRAPPER = &quot;i:bulk-wrapper&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_CONFIG = &quot;i:token:config&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_INFORMATION = &quot;i:token:information&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_INFORMATION = &quot;i:mp:information&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_IDENTITY = &quot;i:identity&quot;;
+  bytes32 constant CONTRACT_INTERACTIVE_ASSETS_EXPLORER = "i:asset:explorer";
+  bytes32 constant CONTRACT_INTERACTIVE_DIGIX_DIRECTORY = "i:directory";
+  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE = "i:mp";
+  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_ADMIN = "i:mpadmin";
+  bytes32 constant CONTRACT_INTERACTIVE_POPADMIN = "i:popadmin";
+  bytes32 constant CONTRACT_INTERACTIVE_PRODUCTS_LIST = "i:products";
+  bytes32 constant CONTRACT_INTERACTIVE_TOKEN = "i:token";
+  bytes32 constant CONTRACT_INTERACTIVE_BULK_WRAPPER = "i:bulk-wrapper";
+  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_CONFIG = "i:token:config";
+  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_INFORMATION = "i:token:information";
+  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_INFORMATION = "i:mp:information";
+  bytes32 constant CONTRACT_INTERACTIVE_IDENTITY = "i:identity";
 
   /// controller contracts
-  bytes32 constant CONTRACT_CONTROLLER_ASSETS = &quot;c:asset&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_ASSETS_RECAST = &quot;c:asset:recast&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_ASSETS_EXPLORER = &quot;c:explorer&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_DIGIX_DIRECTORY = &quot;c:directory&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE = &quot;c:mp&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE_ADMIN = &quot;c:mpadmin&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_PRODUCTS_LIST = &quot;c:products&quot;;
+  bytes32 constant CONTRACT_CONTROLLER_ASSETS = "c:asset";
+  bytes32 constant CONTRACT_CONTROLLER_ASSETS_RECAST = "c:asset:recast";
+  bytes32 constant CONTRACT_CONTROLLER_ASSETS_EXPLORER = "c:explorer";
+  bytes32 constant CONTRACT_CONTROLLER_DIGIX_DIRECTORY = "c:directory";
+  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE = "c:mp";
+  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE_ADMIN = "c:mpadmin";
+  bytes32 constant CONTRACT_CONTROLLER_PRODUCTS_LIST = "c:products";
 
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_APPROVAL = &quot;c:token:approval&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_CONFIG = &quot;c:token:config&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_INFO = &quot;c:token:info&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_TRANSFER = &quot;c:token:transfer&quot;;
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_APPROVAL = "c:token:approval";
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_CONFIG = "c:token:config";
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_INFO = "c:token:info";
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_TRANSFER = "c:token:transfer";
 
-  bytes32 constant CONTRACT_CONTROLLER_JOB_ID = &quot;c:jobid&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_IDENTITY = &quot;c:identity&quot;;
+  bytes32 constant CONTRACT_CONTROLLER_JOB_ID = "c:jobid";
+  bytes32 constant CONTRACT_CONTROLLER_IDENTITY = "c:identity";
 
   /// storage contracts
-  bytes32 constant CONTRACT_STORAGE_ASSETS = &quot;s:asset&quot;;
-  bytes32 constant CONTRACT_STORAGE_ASSET_EVENTS = &quot;s:asset:events&quot;;
-  bytes32 constant CONTRACT_STORAGE_DIGIX_DIRECTORY = &quot;s:directory&quot;;
-  bytes32 constant CONTRACT_STORAGE_MARKETPLACE = &quot;s:mp&quot;;
-  bytes32 constant CONTRACT_STORAGE_PRODUCTS_LIST = &quot;s:products&quot;;
-  bytes32 constant CONTRACT_STORAGE_GOLD_TOKEN = &quot;s:goldtoken&quot;;
-  bytes32 constant CONTRACT_STORAGE_JOB_ID = &quot;s:jobid&quot;;
-  bytes32 constant CONTRACT_STORAGE_IDENTITY = &quot;s:identity&quot;;
+  bytes32 constant CONTRACT_STORAGE_ASSETS = "s:asset";
+  bytes32 constant CONTRACT_STORAGE_ASSET_EVENTS = "s:asset:events";
+  bytes32 constant CONTRACT_STORAGE_DIGIX_DIRECTORY = "s:directory";
+  bytes32 constant CONTRACT_STORAGE_MARKETPLACE = "s:mp";
+  bytes32 constant CONTRACT_STORAGE_PRODUCTS_LIST = "s:products";
+  bytes32 constant CONTRACT_STORAGE_GOLD_TOKEN = "s:goldtoken";
+  bytes32 constant CONTRACT_STORAGE_JOB_ID = "s:jobid";
+  bytes32 constant CONTRACT_STORAGE_IDENTITY = "s:identity";
 
   /// service contracts
-  bytes32 constant CONTRACT_SERVICE_TOKEN_DEMURRAGE = &quot;sv:tdemurrage&quot;;
-  bytes32 constant CONTRACT_SERVICE_MARKETPLACE = &quot;sv:mp&quot;;
-  bytes32 constant CONTRACT_SERVICE_DIRECTORY = &quot;sv:directory&quot;;
+  bytes32 constant CONTRACT_SERVICE_TOKEN_DEMURRAGE = "sv:tdemurrage";
+  bytes32 constant CONTRACT_SERVICE_MARKETPLACE = "sv:mp";
+  bytes32 constant CONTRACT_SERVICE_DIRECTORY = "sv:directory";
 
   /// fees distributors
-  bytes32 constant CONTRACT_DEMURRAGE_FEES_DISTRIBUTOR = &quot;fees:distributor:demurrage&quot;;
-  bytes32 constant CONTRACT_RECAST_FEES_DISTRIBUTOR = &quot;fees:distributor:recast&quot;;
-  bytes32 constant CONTRACT_TRANSFER_FEES_DISTRIBUTOR = &quot;fees:distributor:transfer&quot;;
+  bytes32 constant CONTRACT_DEMURRAGE_FEES_DISTRIBUTOR = "fees:distributor:demurrage";
+  bytes32 constant CONTRACT_RECAST_FEES_DISTRIBUTOR = "fees:distributor:recast";
+  bytes32 constant CONTRACT_TRANSFER_FEES_DISTRIBUTOR = "fees:distributor:transfer";
 }
 
 contract ContractResolver {
@@ -354,12 +354,12 @@ contract MarketplaceInformation is MarketplaceCommon {
   /// @dev show user&#39;s current marketplace information and configuration, as well as some global configurations
   /// @param _user the user&#39;s ethereum address
   /// @return {
-  ///   &quot;_user_daily_dgx_limit&quot;: &quot;the amount of DGX that the user can purchase at any given day&quot;,
-  ///   &quot;_user_id_expiration&quot;: &quot;if KYC approved this will be a non-zero value as Unix timestamp when the submitted ID will expire&quot;,
-  ///   &quot;_user_total_purchased_today&quot;: &quot;The amount of tokens that the user has purchased in the last 24 hours&quot;,
-  ///   &quot;_config_maximum_block_drift&quot;: &quot;The number of ethereum blocks for which a pricefeed is valid for&quot;
-  ///   &quot;_config_minimum_purchase_dgx_ng&quot;: &quot;The minimum amount of DGX that has to be purchased in one order&quot;,
-  ///   &quot;_config_payment_collector&quot;: &quot;Ethereum address of the collector which collects marketplace ether sent by buyers to buy DGX&quot;
+  ///   "_user_daily_dgx_limit": "the amount of DGX that the user can purchase at any given day",
+  ///   "_user_id_expiration": "if KYC approved this will be a non-zero value as Unix timestamp when the submitted ID will expire",
+  ///   "_user_total_purchased_today": "The amount of tokens that the user has purchased in the last 24 hours",
+  ///   "_config_maximum_block_drift": "The number of ethereum blocks for which a pricefeed is valid for"
+  ///   "_config_minimum_purchase_dgx_ng": "The minimum amount of DGX that has to be purchased in one order",
+  ///   "_config_payment_collector": "Ethereum address of the collector which collects marketplace ether sent by buyers to buy DGX"
   /// }
   function getUserInfoAndConfig(address _user)
            public
@@ -379,10 +379,10 @@ contract MarketplaceInformation is MarketplaceCommon {
 
   /// @dev get global marketplace configuration
   /// @return {
-  ///     &quot;_global_daily_dgx_ng_limit,&quot;: &quot;the default max amount of DGX in nanograms the user can purchase daily&quot;,
-  ///     &quot;_minimum_purchase_dgx_ng&quot;: &quot;The minimum DGX nanograms that can be purchased&quot;,
-  ///     &quot;_maximum_block_drift&quot;: &quot;The number of blocks a pricefeed is valid for&quot;,
-  ///     &quot;_payment_collector&quot;: &quot;The ETH address where the payment should be sent to&quot;
+  ///     "_global_daily_dgx_ng_limit,": "the default max amount of DGX in nanograms the user can purchase daily",
+  ///     "_minimum_purchase_dgx_ng": "The minimum DGX nanograms that can be purchased",
+  ///     "_maximum_block_drift": "The number of blocks a pricefeed is valid for",
+  ///     "_payment_collector": "The ETH address where the payment should be sent to"
   /// }
   function getConfig()
            public
@@ -396,7 +396,7 @@ contract MarketplaceInformation is MarketplaceCommon {
   /// @dev show the user&#39;s daily limit on DGX purchase
   /// @param _user the user&#39;s ethereum address
   /// @return {
-  ///   &quot;_maximum_purchase_amount_ng&quot;: &quot;The amount in DGX nanograms that the user can purchase daily&quot;
+  ///   "_maximum_purchase_amount_ng": "The amount in DGX nanograms that the user can purchase daily"
   /// }
   function userMaximumPurchaseAmountNg(address _user)
            public
@@ -408,7 +408,7 @@ contract MarketplaceInformation is MarketplaceCommon {
 
   /// @dev show how many nanograms of DGX is in the Marketplace&#39;s inventory
   /// @return {
-  ///   &quot;_available_ng&quot;: &quot;The amount in DGX nanograms in the inventory&quot;
+  ///   "_available_ng": "The amount in DGX nanograms in the inventory"
   /// }
   function availableDgxNg()
            public
@@ -442,10 +442,10 @@ contract MarketplaceInformation is MarketplaceCommon {
   /// @dev read the purchase details at an index from all purchases
   /// @param _index the index of the purchase in all purchases (index starts from 0)
   /// @return {
-  ///   &quot;_recipient&quot;: &quot;DGX was purchases to this Ethereum address&quot;,
-  ///   &quot;_timestamp&quot;: &quot;the time at which the purchase was made&quot;,
-  ///   &quot;_amount&quot;: &quot;the amount of DGX nanograms purchased in this purchase&quot;,
-  ///   &quot;_price&quot;: &quot;the price paid by purchaser in web per dgx milligram&quot;
+  ///   "_recipient": "DGX was purchases to this Ethereum address",
+  ///   "_timestamp": "the time at which the purchase was made",
+  ///   "_amount": "the amount of DGX nanograms purchased in this purchase",
+  ///   "_price": "the price paid by purchaser in web per dgx milligram"
   /// }
   function readPurchaseAtIndex(uint256 _index)
            public
@@ -458,10 +458,10 @@ contract MarketplaceInformation is MarketplaceCommon {
   /// @dev read the purchase details by a user at an index from all the user&#39;s purchases
   /// @param _index the index of the purchase in all purchases by this user (index starts from 0)
   /// @return {
-  ///   &quot;_recipient&quot;: &quot;DGX was purchases to this Ethereum address&quot;,
-  ///   &quot;_timestamp&quot;: &quot;the time at which the purchase was made&quot;,
-  ///   &quot;_amount&quot;: &quot;the amount of DGX nanograms purchased in this purchase&quot;,
-  ///   &quot;_price&quot;: &quot;the price paid by purchaser in web per dgx milligram&quot;
+  ///   "_recipient": "DGX was purchases to this Ethereum address",
+  ///   "_timestamp": "the time at which the purchase was made",
+  ///   "_amount": "the amount of DGX nanograms purchased in this purchase",
+  ///   "_price": "the price paid by purchaser in web per dgx milligram"
   /// }
   function readUserPurchaseAtIndex(address _user, uint256 _index)
            public
@@ -494,12 +494,12 @@ contract MarketplaceInformation is MarketplaceCommon {
 
   /// @dev read the marketplace configurations
   /// @return {
-  ///   &quot;_global_default_user_daily_limit,&quot;: &quot;Default maximum number of DGX nanograms that a user can purchase per day&quot;,
-  ///   &quot;_minimum_purchase_dgx_ng&quot;: &quot;minimum number of DGX nanograms that has to be purchased in a single purchase&quot;,
-  ///   &quot;_maximum_block_drift&quot;: &quot;the number of ethereum blocks for which the pricefeed is valid for&quot;,
-  ///   &quot;_payment_collector&quot;: &quot;the ethereum address that will receive the eth paid for a purchase&quot;,
-  ///   &quot;_max_dgx_available_daily&quot;: &quot;maximum number of DGX nanograms that are available for purchase on marketplace in a day&quot;,
-  ///   &quot;_price_floor_wei_per_dgx_mg&quot;: &quot;the price floor, minimum price, below which a purchase is invalid&quot;
+  ///   "_global_default_user_daily_limit,": "Default maximum number of DGX nanograms that a user can purchase per day",
+  ///   "_minimum_purchase_dgx_ng": "minimum number of DGX nanograms that has to be purchased in a single purchase",
+  ///   "_maximum_block_drift": "the number of ethereum blocks for which the pricefeed is valid for",
+  ///   "_payment_collector": "the ethereum address that will receive the eth paid for a purchase",
+  ///   "_max_dgx_available_daily": "maximum number of DGX nanograms that are available for purchase on marketplace in a day",
+  ///   "_price_floor_wei_per_dgx_mg": "the price floor, minimum price, below which a purchase is invalid"
   function readMarketplaceConfigs()
            public
            constant

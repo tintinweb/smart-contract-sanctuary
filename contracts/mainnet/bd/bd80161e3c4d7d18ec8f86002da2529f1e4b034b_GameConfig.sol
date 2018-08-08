@@ -64,7 +64,7 @@ contract GameConfig {
   // Constructor 
   function GameConfig() public {
     owner = msg.sender;
-    versionNo = &quot;20180523&quot;;
+    versionNo = "20180523";
   }
   modifier onlyOwner() {
     require(msg.sender == owner);

@@ -113,8 +113,8 @@ contract QRToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function QRToken() public {
-        symbol = &quot;QR&quot;;
-        name = &quot;Initiative Q Reserve Token&quot;;
+        symbol = "QR";
+        name = "Initiative Q Reserve Token";
         decimals = 18;
         _totalSupply = 2000000000000000000000000000000000;
         balances[0x352aAff068CA9bF8aBa1DAEEbD59a4571BF42af8] = 1560000000000000000000000000000000; // General

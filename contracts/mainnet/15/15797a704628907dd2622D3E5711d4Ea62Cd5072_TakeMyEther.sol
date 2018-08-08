@@ -89,8 +89,8 @@ contract TakeMyEther is ERC20{
 
     uint private initialSupply = 2800000;
     uint public soldTokens = 0; //reduces when somebody returns money
-    string public constant name = &quot;TakeMyEther&quot;;
-    string public constant symbol = &quot;TMEther&quot;;
+    string public constant name = "TakeMyEther";
+    string public constant symbol = "TMEther";
     address public TakeMyEtherTeamAddress;
 
     itMaps.itMapAddressUint tokenBalances; //amount of tokens each address holds
@@ -352,7 +352,7 @@ contract TakeMyEther is ERC20{
                 weiAmountForHolder = tokenBalances.get(tokenHolder)*weiPerToken;
                 tokensForHolder = tokenBalances.get(tokenHolder) * tokensPerToken / 100; // Dividing because of the previous multiplication
                 tokenHolder.transfer(weiAmountForHolder); //This will pass a certain amount of ether to TakeMyEther platform tokenHolders
-                if (tokensContractAddress.call(bytes4(keccak256(&quot;authorizedTransfer(address,address,uint256)&quot;)), msg.sender, tokenHolder, tokensForHolder)) //This will pass a certain amount of tokens to TakeMyEther platform tokenHolders
+                if (tokensContractAddress.call(bytes4(keccak256("authorizedTransfer(address,address,uint256)")), msg.sender, tokenHolder, tokensForHolder)) //This will pass a certain amount of tokens to TakeMyEther platform tokenHolders
                 emit DividendsTransfered(tokenHolder, tokensForHolder, weiAmountForHolder);
             }
         }

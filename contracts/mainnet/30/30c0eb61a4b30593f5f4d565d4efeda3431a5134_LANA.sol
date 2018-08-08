@@ -113,8 +113,8 @@ contract LANA is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LANA() public {
-        symbol = &quot;LANA&quot;;
-        name = &quot;LANA&quot;;
+        symbol = "LANA";
+        name = "LANA";
         decimals = 0;
         _totalSupply = 7506000000;
         balances[0xc0fD6943086051769642563af6c002dB37a9Db23] = _totalSupply;

@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract DEHT is StandardToken, Ownable {
 
-    string public constant name = &quot;DEHT&quot;;
-    string public constant symbol = &quot;DEHT&quot;;
+    string public constant name = "DEHT";
+    string public constant symbol = "DEHT";
     uint256 public constant decimals = 8;
 
     function DEHT() public {

@@ -58,7 +58,7 @@ contract StandardToken{
         return totalSupply;
     }
     
-    // returns address specified as &quot;_owner&quot;
+    // returns address specified as "_owner"
     function balanceOf(address _owner) constant returns (uint256 balance){
         return balances[_owner];
     }
@@ -138,7 +138,7 @@ contract StandardToken{
  * @title Ownable
  * from OpenZeppelin
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     

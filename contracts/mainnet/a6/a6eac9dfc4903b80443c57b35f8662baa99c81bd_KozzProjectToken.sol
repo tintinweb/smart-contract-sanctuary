@@ -73,8 +73,8 @@ contract KozzProjectToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;KozzProject&quot;;
-    string public constant symbol = &quot;KOZZ&quot;;
+    string public constant name = "KozzProject";
+    string public constant symbol = "KOZZ";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 20000000000e18;

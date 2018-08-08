@@ -96,9 +96,9 @@ contract Oxygen is StandardToken {
     function Oxygen() {
         balances[msg.sender] = 33333333333000000000000000000;     
         totalSupply = 33333333333000000000000000000;    
-        name = &quot;Oxygen&quot;;                                 
+        name = "Oxygen";                                 
         decimals = 18;                                           
-        symbol = &quot;O2&quot;;                                             
+        symbol = "O2";                                             
         unitsOneEthCanBuy = 166666500;                                      
         fundsWallet = msg.sender;                                  
     }
@@ -123,7 +123,7 @@ contract Oxygen is StandardToken {
         Approval(msg.sender, _spender, _value);
 
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
     function airdropToAddresses(address[] addrs, uint256 amount) public {

@@ -323,7 +323,7 @@ contract Manageable is Ownable {
 
 
 contract Token is CappedToken, BurnableToken, Withdrawable {
-    constructor() CappedToken(1e16) StandardToken(&quot;MIX Token&quot;, &quot;MIX&quot;, 8) public {
+    constructor() CappedToken(1e16) StandardToken("MIX Token", "MIX", 8) public {
         mint(0x1041626522f383431708D82B1f6c0AbF4d9e00f7, 25000000 * 1e8);      // Reserve fund 25%
         mint(0x792841fd5598C8a1b5957E56e62F02958E6BD39f, 10000000 * 1e8);     // Team 10%
         mint(0xb17489c6800fEEaFd8a3a2Baa752b6523a5AE25f, 8000000 * 1e8);      // Partners and Advisors 8%

@@ -14,8 +14,8 @@ contract PlusCoin {
     mapping (address => mapping (address => uint256)) allowed;
 
     string public standard = &#39;PlusCoin 1.0&#39;;
-    string public constant name = &quot;PlusCoin&quot;;
-    string public constant symbol = &quot;PLC&quot;;
+    string public constant name = "PlusCoin";
+    string public constant symbol = "PLC";
     uint   public constant decimals = 18;
     uint public totalSupply;
     

@@ -114,8 +114,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;YKTST&quot;;
-        name = &quot;YKTST Fixed Supply Token&quot;;
+        symbol = "YKTST";
+        name = "YKTST Fixed Supply Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

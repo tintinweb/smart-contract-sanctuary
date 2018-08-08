@@ -4,8 +4,8 @@ contract	RusalCdsTok20221212IV				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	RusalCdsTok20221212IIV		&quot;	;
-	string	public		symbol =	&quot;	RUSTOKIV		&quot;	;
+	string	public		name =	"	RusalCdsTok20221212IIV		"	;
+	string	public		symbol =	"	RUSTOKIV		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		289393720156273000000000000					;	

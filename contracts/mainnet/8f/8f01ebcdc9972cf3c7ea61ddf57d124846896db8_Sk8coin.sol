@@ -114,8 +114,8 @@ contract Sk8coin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Sk8coin() public {
-        symbol = &quot;SKATE&quot;;
-        name = &quot;Sk8coin&quot;;
+        symbol = "SKATE";
+        name = "Sk8coin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x1d0c614d3f5927014ca1472f9064daab90ca6507] = _totalSupply;

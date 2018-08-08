@@ -64,8 +64,8 @@ contract BidaCoin is SafeMath{
         ) {
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply
-        name = &quot;BidaCoin&quot;;                                  // Set the name for display purposes
-        symbol = &quot;BDB&quot;;                                     // Set the symbol for display purposes
+        name = "BidaCoin";                                  // Set the name for display purposes
+        symbol = "BDB";                                     // Set the symbol for display purposes
         decimals = 18;                                      // Amount of decimals for display purposes
 		owner = msg.sender;
     }

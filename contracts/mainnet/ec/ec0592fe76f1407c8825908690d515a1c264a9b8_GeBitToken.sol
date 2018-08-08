@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract GeBitToken is StandardToken {
 
-  string public constant name = &quot;GeBit Token&quot;;
-  string public constant symbol = &quot;GBTT&quot;;
+  string public constant name = "GeBit Token";
+  string public constant symbol = "GBTT";
   uint8 public constant decimals = 18;
 
 

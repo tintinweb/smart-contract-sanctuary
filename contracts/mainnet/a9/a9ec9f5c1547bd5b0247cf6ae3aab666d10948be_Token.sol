@@ -108,7 +108,7 @@ contract Token is Pausable, ERC20 {
   bool manualUnlock;
   address public crowdsaleAddress = 0;
 
-  function Token() ERC20(&quot;SpherePay&quot;, &quot;SAY&quot;, 18) public {
+  function Token() ERC20("SpherePay", "SAY", 18) public {
     manualUnlock = false;
     unlocktime = 1525017600;
     totalSupply = 10000000000 * 10 ** uint(decimals);

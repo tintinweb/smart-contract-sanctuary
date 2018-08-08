@@ -304,7 +304,7 @@ contract BurnableToken is StandardToken {
 contract Token is CappedToken, BurnableToken, Withdrawable {
     uint public mintingFinishedTime;
 
-    function Token() CappedToken(2000000000 ether) StandardToken(&quot;Exit Factory Token&quot;, &quot;EXIT&quot;, 18) public {
+    function Token() CappedToken(2000000000 ether) StandardToken("Exit Factory Token", "EXIT", 18) public {
         
     }
 

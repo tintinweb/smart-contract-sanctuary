@@ -179,7 +179,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -222,9 +222,9 @@ contract Ownable {
 contract IPST is StandardToken,Ownable{
 
 	//the base info of the token
-	string public constant name=&quot;Inter-Planetary System Token&quot;;
-	string public constant symbol=&quot;IPST&quot;;
-	string public constant version = &quot;1.0&quot;;
+	string public constant name="Inter-Planetary System Token";
+	string public constant symbol="IPST";
+	string public constant version = "1.0";
 	uint256 public constant decimals = 18;
 
 	uint256 public constant MAX_SUPPLY=10000000000*10**decimals;

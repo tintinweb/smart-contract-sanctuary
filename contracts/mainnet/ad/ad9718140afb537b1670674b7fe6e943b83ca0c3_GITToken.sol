@@ -113,8 +113,8 @@ contract GITToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GITToken() public {
-        symbol = &quot;GIT&quot;;
-        name = &quot;GIT TOKEN&quot;;
+        symbol = "GIT";
+        name = "GIT TOKEN";
         decimals = 2;
         _totalSupply = 10000000000;
         balances[0x712f0EAA88233650d904d9791467FAF13c728080] = _totalSupply;

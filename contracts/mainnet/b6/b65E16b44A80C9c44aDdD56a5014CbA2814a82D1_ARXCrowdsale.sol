@@ -92,7 +92,7 @@ contract ARXCrowdsale is owned, safeMath {
   uint256 public fundingMaxCapInWei;                          //
 
   // loop control, ICO startup and limiters
-  string  public CurrentStatus                    = &quot;&quot;;        // current crowdsale status
+  string  public CurrentStatus                    = "";        // current crowdsale status
   uint256 public fundingStartBlock;                           // crowdsale start block#
   uint256 public fundingEndBlock;                             // crowdsale end block#
   bool    public isCrowdSaleClosed               = false;     // crowdsale completion boolean
@@ -110,7 +110,7 @@ contract ARXCrowdsale is owned, safeMath {
   // default function, map admin
   function ARXCrowdsale() public onlyOwner {
     admin = msg.sender;
-    CurrentStatus = &quot;Crowdsale deployed to chain&quot;;
+    CurrentStatus = "Crowdsale deployed to chain";
   }
 
   // total number of tokens initially
@@ -146,12 +146,12 @@ contract ARXCrowdsale is owned, safeMath {
       // configure crowdsale
       isCrowdSaleSetup                        = true;
       isCrowdSaleClosed                       = false;
-      CurrentStatus                           = &quot;Crowdsale is setup&quot;;
-      return &quot;Crowdsale is setup&quot;;
+      CurrentStatus                           = "Crowdsale is setup";
+      return "Crowdsale is setup";
     } else if (msg.sender != admin) {
-      return &quot;not authorised&quot;;
+      return "not authorised";
     } else  {
-      return &quot;campaign cannot be changed&quot;;
+      return "campaign cannot be changed";
     }
   }
 
@@ -214,27 +214,27 @@ contract ARXCrowdsale is owned, safeMath {
     if ((amountRaisedInWei < fundingMinCapInWei) && (block.number <= fundingEndBlock && block.number >= fundingStartBlock)) { // ICO in progress, under softcap
       areFundsReleasedToBeneficiary = false;
       isCrowdSaleClosed = false;
-      CurrentStatus = &quot;In progress (Eth < Softcap)&quot;;
+      CurrentStatus = "In progress (Eth < Softcap)";
     } else if ((amountRaisedInWei < fundingMinCapInWei) && (block.number < fundingStartBlock)) { // ICO has not started
       areFundsReleasedToBeneficiary = false;
       isCrowdSaleClosed = false;
-      CurrentStatus = &quot;Crowdsale is setup&quot;;
+      CurrentStatus = "Crowdsale is setup";
     } else if ((amountRaisedInWei < fundingMinCapInWei) && (block.number > fundingEndBlock)) { // ICO ended, under softcap
       areFundsReleasedToBeneficiary = false;
       isCrowdSaleClosed = true;
-      CurrentStatus = &quot;Unsuccessful (Eth < Softcap)&quot;;
+      CurrentStatus = "Unsuccessful (Eth < Softcap)";
     } else if ((amountRaisedInWei >= fundingMinCapInWei) && (tokensRemaining == 0)) { // ICO ended, all tokens bought!
       areFundsReleasedToBeneficiary = true;
       isCrowdSaleClosed = true;
-      CurrentStatus = &quot;Successful (ARX >= Hardcap)!&quot;;
+      CurrentStatus = "Successful (ARX >= Hardcap)!";
     } else if ((amountRaisedInWei >= fundingMinCapInWei) && (block.number > fundingEndBlock) && (tokensRemaining > 0)) { // ICO ended, over softcap!
       areFundsReleasedToBeneficiary = true;
       isCrowdSaleClosed = true;
-      CurrentStatus = &quot;Successful (Eth >= Softcap)!&quot;;
+      CurrentStatus = "Successful (Eth >= Softcap)!";
     } else if ((amountRaisedInWei >= fundingMinCapInWei) && (tokensRemaining > 0) && (block.number <= fundingEndBlock)) { // ICO in progress, over softcap!
       areFundsReleasedToBeneficiary = true;
       isCrowdSaleClosed = false;
-      CurrentStatus = &quot;In progress (Eth >= Softcap)!&quot;;
+      CurrentStatus = "In progress (Eth >= Softcap)!";
     }
   }
 

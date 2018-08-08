@@ -114,8 +114,8 @@ contract TCCCoin is Ownable, StandardToken {
     function TCCCoin() public {
     totalSupply = 100 * (10**6) * (10**6);
         balances[msg.sender] = totalSupply;
-        name = &quot;TCC&quot;;
-        symbol = &quot;TCC&quot;;
+        name = "TCC";
+        symbol = "TCC";
         decimals = 6;
     }
 

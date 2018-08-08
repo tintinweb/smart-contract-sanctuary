@@ -28,8 +28,8 @@ contract GIH {
     function SFI() public {
         totalSupply = 50000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Global Investor Hub&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GIH&quot;;                               // Set the symbol for display purposes
+        name = "Global Investor Hub";                                   // Set the name for display purposes
+        symbol = "GIH";                               // Set the symbol for display purposes
     }
 
     /**

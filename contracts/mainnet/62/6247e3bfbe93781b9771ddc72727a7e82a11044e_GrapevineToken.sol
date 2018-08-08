@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -376,7 +376,7 @@ contract StandardToken is ERC20, BasicToken {
  **/
 contract GrapevineToken is DetailedERC20, BurnableToken, StandardToken, Ownable {
 
-  constructor() DetailedERC20(&quot;TESTGVINE&quot;, &quot;TESTGVINE&quot;, 18) public {
+  constructor() DetailedERC20("TESTGVINE", "TESTGVINE", 18) public {
     totalSupply_ = 825000000 * (10 ** uint256(decimals)); // Update total supply with the decimal amount
     balances[msg.sender] = totalSupply_;
     emit Transfer(address(0), msg.sender, totalSupply_);

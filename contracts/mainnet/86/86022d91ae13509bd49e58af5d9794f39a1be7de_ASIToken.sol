@@ -32,8 +32,8 @@ library SafeMath {
 
 contract ASIToken {
     using SafeMath for uint256;
-    string public name = &quot;ASICoin&quot;;
-    string public symbol = &quot;ASI&quot;;
+    string public name = "ASICoin";
+    string public symbol = "ASI";
     uint8 public decimals = 18;
     uint256 public totalSupply = 12 * 10 ** 8 * 10 ** 18;
 

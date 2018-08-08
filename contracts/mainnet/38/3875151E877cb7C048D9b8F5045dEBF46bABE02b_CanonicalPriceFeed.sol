@@ -319,7 +319,7 @@ contract DSMath {
         z = add(mul(x, RAY), y / 2) / y;
     }
 
-    // This famous algorithm is called &quot;exponentiation by squaring&quot;
+    // This famous algorithm is called "exponentiation by squaring"
     // and calculates x^n with x as fixed-point and n as regular unsigned.
     //
     // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -361,7 +361,7 @@ interface AssetInterface {
      * https://github.com/ethereum/EIPs/blob/f90864a3d2b2b45c4decf95efd26b3f0c276051a/EIPS/eip-20-token-standard.md
      * https://github.com/ethereum/EIPs/issues/20
      *
-     *  Added support for the ERC 223 &quot;tokenFallback&quot; method in a &quot;transfer&quot; function with a payload.
+     *  Added support for the ERC 223 "tokenFallback" method in a "transfer" function with a payload.
      *  https://github.com/ethereum/EIPs/issues/223
      */
 
@@ -767,8 +767,8 @@ contract SimplePriceFeed is SimplePriceFeedInterface, DSThing, DBC {
     @dev Asset has been registered
     @param ofAsset Asset for which price should be returned
     @return {
-      &quot;price&quot;: &quot;Price formatting: mul(exchangePrice, 10 ** decimal), to avoid floating numbers&quot;,
-      &quot;timestamp&quot;: &quot;When the asset&#39;s price was updated&quot;
+      "price": "Price formatting: mul(exchangePrice, 10 ** decimal), to avoid floating numbers",
+      "timestamp": "When the asset&#39;s price was updated"
     }
     */
     function getPrice(address ofAsset)
@@ -784,8 +784,8 @@ contract SimplePriceFeed is SimplePriceFeedInterface, DSThing, DBC {
     @dev Convention for price formatting: mul(price, 10 ** decimal), to avoid floating numbers
     @param ofAssets Assets for which prices should be returned
     @return {
-        &quot;prices&quot;:       &quot;Array of prices&quot;,
-        &quot;timestamps&quot;:   &quot;Array of timestamps&quot;,
+        "prices":       "Array of prices",
+        "timestamps":   "Array of timestamps",
     }
     */
     function getPrices(address[] ofAssets)
@@ -908,7 +908,7 @@ contract OperatorStaking is DBC {
     uint public numStakers; // Current number of stakers (Needed because of array holes)
     AssetInterface public stakingToken;
 
-    // TODO: consider renaming &quot;operator&quot; depending on how this is implemented
+    // TODO: consider renaming "operator" depending on how this is implemented
     //  (i.e. is pricefeed staking itself?)
     function OperatorStaking(
         AssetInterface _stakingToken,
@@ -1212,7 +1212,7 @@ contract CanonicalPriceFeed is OperatorStaking, SimplePriceFeed, CanonicalRegist
         stakedAmounts[user] = 0;
         stakeToWithdraw[user] = 0;
         updateStakerRanking(user);
-        emit StakeBurned(user, totalToBurn, &quot;&quot;);
+        emit StakeBurned(user, totalToBurn, "");
     }
 
     // PUBLIC METHODS
@@ -1388,9 +1388,9 @@ contract CanonicalPriceFeed is OperatorStaking, SimplePriceFeed, CanonicalRegist
     @dev Existing price ofAssets quoted in QUOTE_ASSET (convention)
     @param ofAsset Asset for which inverted price should be return
     @return {
-        &quot;isRecent&quot;: &quot;Whether the price is fresh, given VALIDITY interval&quot;,
-        &quot;invertedPrice&quot;: &quot;Price based (instead of quoted) against QUOTE_ASSET&quot;,
-        &quot;assetDecimals&quot;: &quot;Decimal places for this asset&quot;
+        "isRecent": "Whether the price is fresh, given VALIDITY interval",
+        "invertedPrice": "Price based (instead of quoted) against QUOTE_ASSET",
+        "assetDecimals": "Decimal places for this asset"
     }
     */
     function getInvertedPriceInfo(address ofAsset)
@@ -1418,9 +1418,9 @@ contract CanonicalPriceFeed is OperatorStaking, SimplePriceFeed, CanonicalRegist
     @param ofBase Address of base asset
     @param ofQuote Address of quote asset
     @return {
-        &quot;isRecent&quot;: &quot;Whether the price is fresh, given VALIDITY interval&quot;,
-        &quot;referencePrice&quot;: &quot;Reference price&quot;,
-        &quot;decimal&quot;: &quot;Decimal places for this asset&quot;
+        "isRecent": "Whether the price is fresh, given VALIDITY interval",
+        "referencePrice": "Reference price",
+        "decimal": "Decimal places for this asset"
     }
     */
     function getReferencePriceInfo(address ofBase, address ofQuote)

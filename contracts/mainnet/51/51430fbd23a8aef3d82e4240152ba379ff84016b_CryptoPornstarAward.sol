@@ -50,8 +50,8 @@ contract PornSceneToken is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;CryptoPornScenes&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;PornSceneToken&quot;; // solhint-disable-line
+  string public constant NAME = "CryptoPornScenes"; // solhint-disable-line
+  string public constant SYMBOL = "PornSceneToken"; // solhint-disable-line
 
   uint256 private startingPrice = 0.001 ether;
   uint256 private constant PROMO_CREATION_LIMIT = 10000;

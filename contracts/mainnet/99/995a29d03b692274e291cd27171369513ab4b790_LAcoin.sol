@@ -109,8 +109,8 @@ contract LAcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LAcoin() public {
-        symbol = &quot;LAX&quot;;
-        name = &quot;LAcoin&quot;;
+        symbol = "LAX";
+        name = "LAcoin";
         decimals = 18;
         _totalSupply = 9021000000000000000000000000;
         balances[0xfc14Fa16B81B39Ae475BF7eb6F812a3C4f04a5F7] = _totalSupply;

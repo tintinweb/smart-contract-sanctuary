@@ -245,7 +245,7 @@ contract BitSTDLogic {
     /**
      *Passing tokens from other addresses
       *
-      * sends the value token to &quot;to&quot;, representing &quot;from&quot;
+      * sends the value token to "to", representing "from"
       *
       * @param _from sender&#39;s address
       * @param _to recipient&#39;s address
@@ -262,7 +262,7 @@ contract BitSTDLogic {
      /**
 * set allowances for other addresses
 *
-* allow the &quot;spender&quot; to spend only the &quot;value&quot; card in your name
+* allow the "spender" to spend only the "value" card in your name
 *
 * @param _spender authorized address
 * @param _value they can spend the most money
@@ -275,7 +275,7 @@ contract BitSTDLogic {
     /**
      * Grant and notify other addresses
        *
-       * allow &quot;spender&quot; to only mark &quot;value&quot; in your name and then write the contract on it.
+       * allow "spender" to only mark "value" in your name and then write the contract on it.
        *
        * @param _spender authorized address
        * @param _value they can spend the most money
@@ -292,7 +292,7 @@ contract BitSTDLogic {
      /**
      * Destroy the tokens,
        *
-       * delete &quot;value&quot; tokens from the system
+       * delete "value" tokens from the system
        *
        * param _value the amount of money to burn
      */
@@ -307,7 +307,7 @@ contract BitSTDLogic {
     /**
      * Destroy tokens from other accounts
        *
-       * delete &quot;value&quot; tokens from &quot;from&quot; in the system.
+       * delete "value" tokens from "from" in the system.
        *
        * @param _from the address of the sender
        * param _value the amount of money to burn
@@ -334,7 +334,7 @@ contract BitSTDLogic {
 
     }
 
-    //Notice freezes the account to prevent &quot;target&quot; from sending and receiving tokens
+    //Notice freezes the account to prevent "target" from sending and receiving tokens
       // @param target address is frozen
       // @param freezes or does not freeze
     function freezeAccount(address target, bool freeze) onlyOwner public returns (bool) {

@@ -360,7 +360,7 @@ contract DivvyUp is ERC20Interface, Owned, DivvyUpInterface {
         address customerAddress = msg.sender;
         payoutsTo[customerAddress] += (int256) (dividends * magnitude);
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot; if we have dividends
+        // dispatch a buy order with the virtualized "withdrawn dividends" if we have dividends
         uint256 tokens = purchaseTokens(dividends);
         
         // fire event

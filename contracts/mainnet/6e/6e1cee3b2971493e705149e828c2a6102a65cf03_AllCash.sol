@@ -68,8 +68,8 @@ contract AllCash is SafeMath{
         string tokenSymbol;
         balanceOf[msg.sender] = 50000000000000000000000000000;              // Give the creator all initial tokens
         totalSupply = 50000000000000000000000000000;                        // Update total supply
-        name = &quot;AllCash&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ALL&quot;;                               // Set the symbol for display purposes
+        name = "AllCash";                                   // Set the name for display purposes
+        symbol = "ALL";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
 		owner = msg.sender;
     }

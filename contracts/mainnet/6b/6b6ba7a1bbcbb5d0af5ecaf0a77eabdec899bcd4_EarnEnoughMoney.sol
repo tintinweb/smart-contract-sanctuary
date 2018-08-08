@@ -70,8 +70,8 @@ contract EarnEnoughMoney is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;EarnEnoughMoney&quot;;
-    string public constant symbol = &quot;EEM&quot;;
+    string public constant name = "EarnEnoughMoney";
+    string public constant symbol = "EEM";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1680000000e8;

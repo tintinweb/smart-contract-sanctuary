@@ -109,8 +109,8 @@ contract FITN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FITN() public {
-        symbol = &quot;FITN&quot;;
-        name = &quot;FITN&quot;;
+        symbol = "FITN";
+        name = "FITN";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x74196ea111be9c4f5630d627a5d3167b80bc2948] = _totalSupply;

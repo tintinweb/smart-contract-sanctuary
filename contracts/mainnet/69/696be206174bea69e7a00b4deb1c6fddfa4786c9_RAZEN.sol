@@ -113,8 +113,8 @@ contract RAZEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RAZEN() public {
-        symbol = &quot;RZN&quot;;
-        name = &quot;RAZEN&quot;;
+        symbol = "RZN";
+        name = "RAZEN";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xd8fa9C65623129Fa4abAf44B7e21655d1eF835ce] = _totalSupply;

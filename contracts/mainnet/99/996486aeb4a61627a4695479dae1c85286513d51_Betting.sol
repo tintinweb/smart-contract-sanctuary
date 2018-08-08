@@ -35,7 +35,7 @@ contract Betting{
     address house_takeout = 0xf783A81F046448c38f3c863885D9e99D10209779;
 
     uint public winnerPoolTotal;
-    string public constant version = &quot;0.2.3&quot;;
+    string public constant version = "0.2.3";
 
     struct chronus_info {
         bool  betting_open; // boolean: check if betting is open
@@ -93,9 +93,9 @@ contract Betting{
         
         owner = msg.sender;
         
-        horses.BTC = bytes32(&quot;BTC&quot;);
-        horses.ETH = bytes32(&quot;ETH&quot;);
-        horses.LTC = bytes32(&quot;LTC&quot;);
+        horses.BTC = bytes32("BTC");
+        horses.ETH = bytes32("ETH");
+        horses.LTC = bytes32("LTC");
         
     }
 
@@ -137,7 +137,7 @@ contract Betting{
         chronus.betting_open = false;
         if (isPrePrice) {
             if (now >= chronus.starting_time+chronus.betting_duration+ 60 minutes) {
-                emit RefundEnabled(&quot;Late start price&quot;);
+                emit RefundEnabled("Late start price");
                 forceVoidRace();
             } else {
                 coinIndex[coin_pointer].pre = result;
@@ -145,7 +145,7 @@ contract Betting{
         } else if (!isPrePrice){
             if (coinIndex[coin_pointer].pre > 0 ){
                 if (now >= chronus.starting_time+chronus.race_duration+ 60 minutes) {
-                    emit RefundEnabled(&quot;Late end price&quot;);
+                    emit RefundEnabled("Late end price");
                     forceVoidRace();
                 } else {
                     coinIndex[coin_pointer].post = result;
@@ -156,7 +156,7 @@ contract Betting{
                     }
                 }
             } else {
-                emit RefundEnabled(&quot;End price came before start price&quot;);
+                emit RefundEnabled("End price came before start price");
                 forceVoidRace();
             }
         }
@@ -201,7 +201,7 @@ contract Betting{
 
         total_reward = (coinIndex[horses.BTC].total) + (coinIndex[horses.ETH].total) + (coinIndex[horses.LTC].total);
         if (total_bettors <= 1) {
-            emit RefundEnabled(&quot;Not enough participants&quot;);
+            emit RefundEnabled("Not enough participants");
             forceVoidRace();
         } else {
             uint house_fee = total_reward.mul(5).div(100);

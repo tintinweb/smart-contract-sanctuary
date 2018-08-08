@@ -127,8 +127,8 @@ contract Ownable {
 
 contract ZUE is StandardToken, Ownable
 {
-    string public name = &quot;ZUE&quot;;
-    string public symbol = &quot;ZUEN&quot;;
+    string public name = "ZUE";
+    string public symbol = "ZUEN";
 
     uint public decimals = 18;
 

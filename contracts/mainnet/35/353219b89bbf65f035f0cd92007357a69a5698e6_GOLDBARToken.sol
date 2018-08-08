@@ -110,8 +110,8 @@ contract GOLDBARToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GOLDBARToken() public {
-        symbol = &quot;GBT&quot;;
-        name = &quot;GOLDBAR Token&quot;;
+        symbol = "GBT";
+        name = "GOLDBAR Token";
         decimals = 18;
         endDate = now + 7 weeks;
 

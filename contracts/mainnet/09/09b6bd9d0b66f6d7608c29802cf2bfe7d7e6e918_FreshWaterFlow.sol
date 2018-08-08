@@ -113,8 +113,8 @@ contract FreshWaterFlow is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FreshWaterFlow() public {
-        symbol = &quot;FWF&quot;;
-        name = &quot;Fresh Water Flow&quot;;
+        symbol = "FWF";
+        name = "Fresh Water Flow";
         decimals = 18;
         _totalSupply = 1500000000000;
         balances[0xd821C73d82E6221655637361949AE2f88aCE3Ba7] = _totalSupply;

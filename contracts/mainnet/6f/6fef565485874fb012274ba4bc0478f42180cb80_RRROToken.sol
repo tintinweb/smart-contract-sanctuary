@@ -325,7 +325,7 @@ contract TokenERC20 is ERC20, Ownable{
 
 contract RRROToken is TokenERC20 {
 
-    function RRROToken() TokenERC20(15000000000, &quot;RRROToken&quot;, &quot;RRRO&quot;, 18) public {
+    function RRROToken() TokenERC20(15000000000, "RRROToken", "RRRO", 18) public {
 
     }
 }

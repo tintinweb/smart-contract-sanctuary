@@ -21,7 +21,7 @@ contract MultiSigStub {
     }
     
     function MultiSigStub(address[] _owners, uint256 _required) {
-        //bytes4 sig = bytes4(sha3(&quot;constructor(address[],uint256)&quot;));
+        //bytes4 sig = bytes4(sha3("constructor(address[],uint256)"));
         bytes4 sig = 0x36756a23;
         uint argarraysize = (2 + _owners.length);
         uint argsize = (1 + argarraysize) * 32;

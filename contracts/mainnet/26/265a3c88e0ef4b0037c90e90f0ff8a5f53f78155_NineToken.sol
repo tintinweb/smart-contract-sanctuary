@@ -221,8 +221,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract NineToken is StandardToken{
-  string public name = &quot;Nine Coin&quot;;
-  string public symbol = &quot;NINE&quot;;
+  string public name = "Nine Coin";
+  string public symbol = "NINE";
   uint8 public decimals = 10;
 
   constructor(address _wallet) public {

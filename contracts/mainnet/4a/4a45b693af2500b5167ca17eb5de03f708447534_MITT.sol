@@ -221,7 +221,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -334,8 +334,8 @@ contract PausableToken is StandardToken, Pausable {
 
 
 contract MITT is  PausableToken{
-  string public constant name = &quot;InterstellarMeteorologicalTradeToken&quot;;
-  string public constant symbol = &quot;IMTT&quot;;
+  string public constant name = "InterstellarMeteorologicalTradeToken";
+  string public constant symbol = "IMTT";
   uint8 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 2000000000 * (10 ** uint256(decimals));
 

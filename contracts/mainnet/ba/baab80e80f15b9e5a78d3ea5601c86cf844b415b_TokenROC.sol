@@ -18,9 +18,9 @@ contract TokenROC {
     function TokenROC() {
 
          initialSupply = 200000000;
-         name =&quot;Recycled Oil Coin&quot;;
+         name ="Recycled Oil Coin";
         decimals = 2;
-         symbol = &quot;ROC&quot;;
+         symbol = "ROC";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

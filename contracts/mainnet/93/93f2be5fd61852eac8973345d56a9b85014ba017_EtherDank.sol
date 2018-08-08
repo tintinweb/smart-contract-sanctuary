@@ -66,8 +66,8 @@ contract EtherDank is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;EtherDank.com&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;Dank&quot;; // solhint-disable-line
+  string public constant NAME = "EtherDank.com"; // solhint-disable-line
+  string public constant SYMBOL = "Dank"; // solhint-disable-line
 
   uint256 private startingPrice = 0.00420 ether;
   uint256 private firstStepLimit =  0.042000 ether;

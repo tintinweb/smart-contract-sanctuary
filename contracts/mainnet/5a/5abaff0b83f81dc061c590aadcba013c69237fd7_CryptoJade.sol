@@ -113,8 +113,8 @@ contract CryptoJade is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CryptoJade() public {
-        symbol = &quot;JADE&quot;;
-        name = &quot;Jade Token&quot;;
+        symbol = "JADE";
+        name = "Jade Token";
         decimals = 18;
         _totalSupply = 125000000000000000000000000;
         balances[0x5E77C4cf41618A897759b3A2A32665C85BC2aF21] = _totalSupply; //MEW address here

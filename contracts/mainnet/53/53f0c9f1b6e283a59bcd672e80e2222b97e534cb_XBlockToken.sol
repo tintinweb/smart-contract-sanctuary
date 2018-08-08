@@ -251,8 +251,8 @@ contract PausableToken is StandardToken, Pausable {
  * @dev Initialize contract basic information
  */
 contract XBlockToken is PausableToken {
-    string public name = &quot;XBlock&quot;;
-    string public symbol = &quot;IX&quot;;
+    string public name = "XBlock";
+    string public symbol = "IX";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 5000000000000000000000000000;
 

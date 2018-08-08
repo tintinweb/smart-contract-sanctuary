@@ -58,8 +58,8 @@ contract Anatomia is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Anatomia&quot;;
-    string public constant symbol = &quot;ATOM&quot;;
+    string public constant name = "Anatomia";
+    string public constant symbol = "ATOM";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 2000000000e8;

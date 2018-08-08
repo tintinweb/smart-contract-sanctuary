@@ -375,8 +375,8 @@ contract CYC is Token {
   constructor()
     public
   {
-    tokenName = &quot;ChangeYourCoin&quot;;
-    tokenSymbol = &quot;CYC&quot;;
+    tokenName = "ChangeYourCoin";
+    tokenSymbol = "CYC";
     tokenDecimals = 0;
     tokenTotalSupply = 15000000;
     balances[msg.sender] = tokenTotalSupply;

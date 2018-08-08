@@ -37,8 +37,8 @@ pragma solidity ^0.4.13;
 contract VentanaTokenConfig
 {
     // ERC20 trade name and symbol
-    string public           name            = &quot;Ventana&quot;;
-    string public           symbol          = &quot;VNT&quot;;
+    string public           name            = "Ventana";
+    string public           symbol          = "VNT";
 
     // Owner has power to abort, discount addresses, sweep successful funds,
     // change owner, sweep alien tokens.

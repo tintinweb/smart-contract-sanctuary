@@ -28,8 +28,8 @@ contract FML {
     function FML() public {
         totalSupply = 2100000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;FormulA&quot;;                                   // Set the name for display purposes
-        symbol = &quot;FML&quot;;                               // Set the symbol for display purposes
+        name = "FormulA";                                   // Set the name for display purposes
+        symbol = "FML";                               // Set the symbol for display purposes
     }
 
     /**

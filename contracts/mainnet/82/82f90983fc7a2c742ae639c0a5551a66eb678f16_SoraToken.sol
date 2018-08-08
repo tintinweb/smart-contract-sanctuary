@@ -81,8 +81,8 @@ contract SafeMath {
 
 
 contract SoraToken is ERC20_Interface, Ownable, SafeMath {
-    string  public constant symbol         = &quot;XOR&quot;;
-    string  public constant name           = &quot;Sora&quot;;
+    string  public constant symbol         = "XOR";
+    string  public constant name           = "Sora";
     uint8   public constant decimals       = 18;
     uint256 internal constant _totalSupply = 161803398874989484820458683437;
 

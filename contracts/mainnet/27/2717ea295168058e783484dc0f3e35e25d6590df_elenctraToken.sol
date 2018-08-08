@@ -116,8 +116,8 @@ contract elenctraToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function elenctraToken() public {
-        symbol = &quot;ELT&quot;;
-        name = &quot;elenctra Token&quot;;
+        symbol = "ELT";
+        name = "elenctra Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 15 weeks;

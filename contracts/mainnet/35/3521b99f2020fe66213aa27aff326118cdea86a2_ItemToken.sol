@@ -233,11 +233,11 @@ contract ItemToken {
   }
 
   function name() public pure returns (string _name) {
-    return &quot;Totalgame.io Teams&quot;;
+    return "Totalgame.io Teams";
   }
 
   function symbol() public pure returns (string _symbol) {
-    return &quot;TGT&quot;;
+    return "TGT";
   }
 
   function totalSupply() public view returns (uint256 _totalSupply) {

@@ -123,7 +123,7 @@ contract Owned {
 
     /// @dev `owner` is the only address that can call a function with this
     /// modifier; the function body is inserted where the special symbol
-    /// &quot;_;&quot; in the definition of a modifier appears.
+    /// "_;" in the definition of a modifier appears.
         /// modifier
     modifier onlyOwner() {
         require (msg.sender == owner);
@@ -251,8 +251,8 @@ contract FoolToken is StandardToken, Escapable {
     /*
      * Token meta data
      */
-    string constant public name = &quot;FoolToken&quot;;
-    string constant public symbol = &quot;FOOL&quot;;
+    string constant public name = "FoolToken";
+    string constant public symbol = "FOOL";
     uint8 constant public decimals = 18;
     bool public alive = true;
     Campaign public beneficiary; // expected to be a Giveth campaign

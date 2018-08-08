@@ -35,7 +35,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -340,8 +340,8 @@ contract ReleasableToken is ERC20, Ownable {
  * @dev Contract for the EventChain token.
  */
 contract EventChain is ReleasableToken, MintableToken {
-    string public name = &quot;EventChain&quot;;
-    string public symbol = &quot;EVC&quot;;
+    string public name = "EventChain";
+    string public symbol = "EVC";
     uint8 public decimals = 18;
     
     function EventChain() {
@@ -471,17 +471,17 @@ contract EventChainCrowdsale is Haltable {
 
     function currentStateToString() constant returns (string) {
         if (currentState == State.Preparing) {
-            return &quot;Preparing&quot;;
+            return "Preparing";
         } else if (currentState == State.Prepared) {
-            return &quot;Prepared&quot;;
+            return "Prepared";
         } else if (currentState == State.Presale) {
-            return &quot;Presale&quot;;
+            return "Presale";
         } else if (currentState == State.Phase1) {
-            return &quot;Phase 1&quot;;
+            return "Phase 1";
         } else if (currentState == State.Phase2) {
-            return &quot;Phase 2&quot;;
+            return "Phase 2";
         } else {
-            return &quot;Closed&quot;;
+            return "Closed";
         }
     }
 

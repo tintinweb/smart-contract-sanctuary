@@ -3,10 +3,10 @@ pragma solidity ^0.4.14;
 contract  eTimesChain {
     
     /* Public variables of the token */
-    string public name = &quot; eTimesChain &quot;;
+    string public name = " eTimesChain ";
     uint256 public decimals = 2;
     uint256 public totalSupply;
-    string public symbol = &quot;ETN&quot;;
+    string public symbol = "ETN";
     event Mint(address indexed owner,uint amount);
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);

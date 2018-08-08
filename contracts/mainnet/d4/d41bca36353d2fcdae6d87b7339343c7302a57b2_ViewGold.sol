@@ -192,8 +192,8 @@ contract StandardToken is ERC223, SafeMath {
  */
 contract ViewGold is StandardToken {
 
-    string public name = &quot;View Gold&quot;;
-    string public symbol = &quot;VIEW&quot;;
+    string public name = "View Gold";
+    string public symbol = "VIEW";
     
     
     address coinMaster;

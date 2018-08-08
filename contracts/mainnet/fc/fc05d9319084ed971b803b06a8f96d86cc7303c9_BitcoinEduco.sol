@@ -237,8 +237,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract BitcoinEduco is StandardToken {
 
-string public constant name = &quot;BitcoinEduco&quot;;
-string public constant symbol = &quot;BEDU&quot;;
+string public constant name = "BitcoinEduco";
+string public constant symbol = "BEDU";
 uint8 public constant decimals = 18;
 
 uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));

@@ -520,8 +520,8 @@ contract ForgeConnection {
 
 contract HorseShoeOwnership is HorseShoeBasis{
 
-  string public constant  name = &quot;CryptoHorseShoe&quot;;
-    string public constant symbol = &quot;CHS&quot;;
+  string public constant  name = "CryptoHorseShoe";
+    string public constant symbol = "CHS";
      uint8 public constant decimals = 0; 
 
     function horseShoeForSale(uint256 _tokenId, uint256 price) external {

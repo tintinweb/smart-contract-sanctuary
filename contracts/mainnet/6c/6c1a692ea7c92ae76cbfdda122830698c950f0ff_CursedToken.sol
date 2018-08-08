@@ -15,8 +15,8 @@ contract ApproveAndCallFallBack {
 }
 
 contract CursedToken is ERC20 {
-    string public symbol = &quot;CCB&quot;;
-    string public name = &quot;Cursed Cornbread&quot;;
+    string public symbol = "CCB";
+    string public name = "Cursed Cornbread";
     uint8 public decimals = 0;
     uint public totalSupply = 0;
     address public owner = 0x55516b579E56C1287f0700eddDa352C2d2c5b3b6;

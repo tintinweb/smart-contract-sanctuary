@@ -188,8 +188,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract Token is StandardToken {
-  string public constant name = &quot;8 decimal token&quot;;
-  string public constant symbol = &quot;DEC8&quot;;
+  string public constant name = "8 decimal token";
+  string public constant symbol = "DEC8";
   uint8 public constant decimals = 8;
 
   function Token() public {

@@ -51,8 +51,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 42000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;ETHEREUMDIAMOND&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ETD&quot;;                               // Set the symbol for display purposes
+        name = "ETHEREUMDIAMOND";                                   // Set the name for display purposes
+        symbol = "ETD";                               // Set the symbol for display purposes
     }
 
     /**

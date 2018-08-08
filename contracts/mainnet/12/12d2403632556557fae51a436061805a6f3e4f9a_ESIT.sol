@@ -114,8 +114,8 @@ contract ESIT is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ESIT() public {
-        symbol = &quot;ESIT&quot;;
-        name = &quot;EnergySavingInnovationsToken&quot;;
+        symbol = "ESIT";
+        name = "EnergySavingInnovationsToken";
         decimals = 18;
         _totalSupply = 1000000000000000000000000;
         balances[0xF58a749AB4929b462F33b8A07f1e3b568ed8eC43] = _totalSupply;

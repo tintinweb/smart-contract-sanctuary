@@ -132,8 +132,8 @@ contract TokenMacroansyPower is TokenERC20Interface, SafeMath {
         balanceOf[msg.sender] = totalSupplyStart;    
         Transfer(address(0), msg.sender, totalSupplyStart);
         //                 
-        name = &quot;TokenMacroansyPower&quot;;  
-        symbol = &quot;$BEEPower&quot;;
+        name = "TokenMacroansyPower";  
+        symbol = "$BEEPower";
         //  
         allowedIndividualShare = uint(1)*totalSupplyStart/100; 
         allowedPublicShare = uint(20)* totalSupplyStart/100;     

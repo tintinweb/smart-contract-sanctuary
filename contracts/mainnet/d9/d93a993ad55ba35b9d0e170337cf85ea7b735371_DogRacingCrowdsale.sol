@@ -287,8 +287,8 @@ contract ERC223BasicToken is ERC223Basic {
 contract DogRacingToken is ERC223BasicToken {
   using SafeMath for uint256;
 
-  string constant public name = &quot;Dog Racing&quot;;
-  string constant public symbol = &quot;DGR&quot;;
+  string constant public name = "Dog Racing";
+  string constant public symbol = "DGR";
   uint8 constant public decimals = 3;
   uint256 constant public totalSupply 	= 326250000 * 1000;	// Supply is in the smallest units
 

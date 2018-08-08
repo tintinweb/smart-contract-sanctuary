@@ -147,8 +147,8 @@ contract ERC20StandardToken is ERC20Standard {
 contract WEChainCommunity is ERC20StandardToken, Ownable {
 
     // token information
-    string public constant name = &quot;WEChainCommunity&quot;;
-    string public constant symbol = &quot;WECC&quot;;
+    string public constant name = "WEChainCommunity";
+    string public constant symbol = "WECC";
     uint256 public constant decimals = 18;
     uint TotalTokenSupply=60*(10**8)* (10**decimals);
 

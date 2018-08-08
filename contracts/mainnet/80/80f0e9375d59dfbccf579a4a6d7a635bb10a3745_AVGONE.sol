@@ -104,8 +104,8 @@ contract AVGONE is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function AVGONE() public {
-        symbol = &quot;AONE&quot;;
-        name = &quot;AVGONE&quot;;
+        symbol = "AONE";
+        name = "AVGONE";
         decimals = 2;
         _totalSupply = 100000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

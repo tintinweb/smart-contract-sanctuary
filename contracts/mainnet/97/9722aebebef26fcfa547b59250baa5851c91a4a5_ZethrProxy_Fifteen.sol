@@ -20,7 +20,7 @@ contract ZethrProxy_Fifteen {
         uint balanceBefore = zethr.balanceOf(msg.sender);
         
         // Buy tokens with selected div rate
-        zethr.buyAndTransfer.value(msg.value)(_referredBy, msg.sender, &quot;&quot;, divChoice);
+        zethr.buyAndTransfer.value(msg.value)(_referredBy, msg.sender, "", divChoice);
         
         // Query balance after
         uint balanceAfter = zethr.balanceOf(msg.sender);

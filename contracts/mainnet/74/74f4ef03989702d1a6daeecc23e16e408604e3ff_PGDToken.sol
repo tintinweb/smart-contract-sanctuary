@@ -4,7 +4,7 @@ pragma solidity ^0.4.13;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -193,9 +193,9 @@ contract StandardToken is ERC20, BasicToken {
 contract PGDToken is StandardToken,Ownable{
 
 	//the base info of the token
-	string public constant name=&quot;pagoda coin&quot;;
-	string public constant symbol=&quot;PGD&quot;;
-	string public constant version = &quot;1.0&quot;;
+	string public constant name="pagoda coin";
+	string public constant symbol="PGD";
+	string public constant version = "1.0";
 	uint256 public constant decimals = 18;
 
 	uint256 public constant MAX_SUPPLY=200000000*10**decimals;

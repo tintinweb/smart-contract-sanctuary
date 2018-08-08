@@ -56,7 +56,7 @@ contract TokenInfo {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -140,7 +140,7 @@ contract ApproveAndCallReceiver {
 /**
  * @title Controllable
  * @dev The Controllable contract has an controller address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Controllable {
   address public controller;
@@ -413,7 +413,7 @@ contract FirstSale is Crowdsale {
   function getInfo() public view returns(uint256, uint256, string, bool,  uint256, uint256, uint256, 
   bool, uint256, uint256){
     uint256 decimals = 18;
-    string memory symbol = &quot;LED&quot;;
+    string memory symbol = "LED";
     bool transfersEnabled = ledToken.transfersEnabled();
     return (
       TOTAL_TOKENCAP, // Tokencap with the decimal point in place. should be 100.000.000
@@ -987,7 +987,7 @@ contract Presale is Crowdsale {
   function getInfo() public view returns(uint256, uint256, string, bool,  uint256, uint256, uint256, 
   bool, uint256, uint256){
     uint256 decimals = 18;
-    string memory symbol = &quot;LED&quot;;
+    string memory symbol = "LED";
     bool transfersEnabled = ledToken.transfersEnabled();
     return (
       TOTAL_TOKENCAP, // Tokencap with the decimal point in place. should be 100.000.000
@@ -1092,7 +1092,7 @@ contract PrivateSale is Crowdsale {
   function getInfo() public view returns(uint256, uint256, string, bool,  uint256, uint256, uint256, 
   bool, uint256, uint256){
     uint256 decimals = 18;
-    string memory symbol = &quot;LED&quot;;
+    string memory symbol = "LED";
     bool transfersEnabled = ledToken.transfersEnabled();
     return (
       TOTAL_TOKENCAP, // Tokencap with the decimal point in place. should be 100.000.000
@@ -1287,7 +1287,7 @@ contract TokenSale is Crowdsale {
   function getInfo() public view returns(uint256, uint256, string, bool,  uint256, uint256, uint256, 
   bool, uint256, uint256){
     uint256 decimals = 18;
-    string memory symbol = &quot;LED&quot;;
+    string memory symbol = "LED";
     bool transfersEnabled = ledToken.transfersEnabled();
     return (
       TOTAL_TOKENCAP, // Tokencap with the decimal point in place. should be 100.000.000

@@ -16,9 +16,9 @@ contract Livetest {
     function Livetest() {
 
          initialSupply = 500000000;
-         name =&quot;livetest&quot;;
+         name ="livetest";
         decimals = 2;
-         symbol = &quot;LT&quot;;
+         symbol = "LT";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

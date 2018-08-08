@@ -18,7 +18,7 @@ contract	PI_EDIT_2		{
 // 1 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_1	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_1	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_1	(	string	newPI_edit_1	)	public	onlyOwner	{	
 		inPI_edit_1	=	newPI_edit_1	;					
@@ -33,7 +33,7 @@ contract	PI_EDIT_2		{
 // 2 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_2	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_2	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_2	(	string	newPI_edit_2	)	public	onlyOwner	{	
 		inPI_edit_2	=	newPI_edit_2	;					
@@ -48,7 +48,7 @@ contract	PI_EDIT_2		{
 // 3 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_3	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_3	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_3	(	string	newPI_edit_3	)	public	onlyOwner	{	
 		inPI_edit_3	=	newPI_edit_3	;					
@@ -63,7 +63,7 @@ contract	PI_EDIT_2		{
 // 4 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_4	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_4	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_4	(	string	newPI_edit_4	)	public	onlyOwner	{	
 		inPI_edit_4	=	newPI_edit_4	;					
@@ -79,7 +79,7 @@ contract	PI_EDIT_2		{
 // 5 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_5	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_5	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_5	(	string	newPI_edit_5	)	public	onlyOwner	{	
 		inPI_edit_5	=	newPI_edit_5	;					
@@ -94,7 +94,7 @@ contract	PI_EDIT_2		{
 // 6 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_6	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_6	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_6	(	string	newPI_edit_6	)	public	onlyOwner	{	
 		inPI_edit_6	=	newPI_edit_6	;					
@@ -109,7 +109,7 @@ contract	PI_EDIT_2		{
 // 7 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_7	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_7	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_7	(	string	newPI_edit_7	)	public	onlyOwner	{	
 		inPI_edit_7	=	newPI_edit_7	;					
@@ -124,7 +124,7 @@ contract	PI_EDIT_2		{
 // 8 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_8	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_8	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_8	(	string	newPI_edit_8	)	public	onlyOwner	{	
 		inPI_edit_8	=	newPI_edit_8	;					
@@ -139,7 +139,7 @@ contract	PI_EDIT_2		{
 // 9 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_9	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_9	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_9	(	string	newPI_edit_9	)	public	onlyOwner	{	
 		inPI_edit_9	=	newPI_edit_9	;					
@@ -161,7 +161,7 @@ contract	PI_EDIT_2		{
 // 10 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_10	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_10	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_10	(	string	newPI_edit_10	)	public	onlyOwner	{	
 		inPI_edit_10	=	newPI_edit_10	;					
@@ -176,7 +176,7 @@ contract	PI_EDIT_2		{
 // 11 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_11	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_11	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_11	(	string	newPI_edit_11	)	public	onlyOwner	{	
 		inPI_edit_11	=	newPI_edit_11	;					
@@ -191,7 +191,7 @@ contract	PI_EDIT_2		{
 // 12 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_12	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_12	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_12	(	string	newPI_edit_12	)	public	onlyOwner	{	
 		inPI_edit_12	=	newPI_edit_12	;					
@@ -206,7 +206,7 @@ contract	PI_EDIT_2		{
 // 13 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_13	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_13	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_13	(	string	newPI_edit_13	)	public	onlyOwner	{	
 		inPI_edit_13	=	newPI_edit_13	;					
@@ -221,7 +221,7 @@ contract	PI_EDIT_2		{
 // 14 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_14	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_14	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_14	(	string	newPI_edit_14	)	public	onlyOwner	{	
 		inPI_edit_14	=	newPI_edit_14	;					
@@ -243,7 +243,7 @@ contract	PI_EDIT_2		{
 // 15 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_15	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_15	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_15	(	string	newPI_edit_15	)	public	onlyOwner	{	
 		inPI_edit_15	=	newPI_edit_15	;					
@@ -258,7 +258,7 @@ contract	PI_EDIT_2		{
 // 16 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_16	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_16	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_16	(	string	newPI_edit_16	)	public	onlyOwner	{	
 		inPI_edit_16	=	newPI_edit_16	;					
@@ -273,7 +273,7 @@ contract	PI_EDIT_2		{
 // 17 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_17	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_17	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_17	(	string	newPI_edit_17	)	public	onlyOwner	{	
 		inPI_edit_17	=	newPI_edit_17	;					
@@ -288,7 +288,7 @@ contract	PI_EDIT_2		{
 // 18 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_18	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_18	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_18	(	string	newPI_edit_18	)	public	onlyOwner	{	
 		inPI_edit_18	=	newPI_edit_18	;					
@@ -303,7 +303,7 @@ contract	PI_EDIT_2		{
 // 19 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_19	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_19	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_19	(	string	newPI_edit_19	)	public	onlyOwner	{	
 		inPI_edit_19	=	newPI_edit_19	;					
@@ -325,7 +325,7 @@ contract	PI_EDIT_2		{
 // 20 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_20	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_20	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_20	(	string	newPI_edit_20	)	public	onlyOwner	{	
 		inPI_edit_20	=	newPI_edit_20	;					
@@ -340,7 +340,7 @@ contract	PI_EDIT_2		{
 // 21 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_21	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_21	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_21	(	string	newPI_edit_21	)	public	onlyOwner	{	
 		inPI_edit_21	=	newPI_edit_21	;					
@@ -355,7 +355,7 @@ contract	PI_EDIT_2		{
 // 22 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_22	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_22	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_22	(	string	newPI_edit_22	)	public	onlyOwner	{	
 		inPI_edit_22	=	newPI_edit_22	;					
@@ -370,7 +370,7 @@ contract	PI_EDIT_2		{
 // 23 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_23	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_23	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_23	(	string	newPI_edit_23	)	public	onlyOwner	{	
 		inPI_edit_23	=	newPI_edit_23	;					
@@ -385,7 +385,7 @@ contract	PI_EDIT_2		{
 // 24 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_24	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_24	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_24	(	string	newPI_edit_24	)	public	onlyOwner	{	
 		inPI_edit_24	=	newPI_edit_24	;					
@@ -407,7 +407,7 @@ contract	PI_EDIT_2		{
 // 25 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_25	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_25	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_25	(	string	newPI_edit_25	)	public	onlyOwner	{	
 		inPI_edit_25	=	newPI_edit_25	;					
@@ -422,7 +422,7 @@ contract	PI_EDIT_2		{
 // 26 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_26	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_26	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_26	(	string	newPI_edit_26	)	public	onlyOwner	{	
 		inPI_edit_26	=	newPI_edit_26	;					
@@ -437,7 +437,7 @@ contract	PI_EDIT_2		{
 // 27 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_27	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_27	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_27	(	string	newPI_edit_27	)	public	onlyOwner	{	
 		inPI_edit_27	=	newPI_edit_27	;					
@@ -452,7 +452,7 @@ contract	PI_EDIT_2		{
 // 28 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_28	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_28	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_28	(	string	newPI_edit_28	)	public	onlyOwner	{	
 		inPI_edit_28	=	newPI_edit_28	;					
@@ -467,7 +467,7 @@ contract	PI_EDIT_2		{
 // 29 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_29	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_29	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_29	(	string	newPI_edit_29	)	public	onlyOwner	{	
 		inPI_edit_29	=	newPI_edit_29	;					
@@ -489,7 +489,7 @@ contract	PI_EDIT_2		{
 // 30 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_30	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_30	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_30	(	string	newPI_edit_30	)	public	onlyOwner	{	
 		inPI_edit_30	=	newPI_edit_30	;					
@@ -504,7 +504,7 @@ contract	PI_EDIT_2		{
 // 31 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_31	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_31	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_31	(	string	newPI_edit_31	)	public	onlyOwner	{	
 		inPI_edit_31	=	newPI_edit_31	;					
@@ -519,7 +519,7 @@ contract	PI_EDIT_2		{
 // 32 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_32	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_32	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_32	(	string	newPI_edit_32	)	public	onlyOwner	{	
 		inPI_edit_32	=	newPI_edit_32	;					
@@ -534,7 +534,7 @@ contract	PI_EDIT_2		{
 // 33 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_33	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_33	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_33	(	string	newPI_edit_33	)	public	onlyOwner	{	
 		inPI_edit_33	=	newPI_edit_33	;					
@@ -549,7 +549,7 @@ contract	PI_EDIT_2		{
 // 34 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPI_edit_34	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPI_edit_34	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPI_edit_34	(	string	newPI_edit_34	)	public	onlyOwner	{	
 		inPI_edit_34	=	newPI_edit_34	;					

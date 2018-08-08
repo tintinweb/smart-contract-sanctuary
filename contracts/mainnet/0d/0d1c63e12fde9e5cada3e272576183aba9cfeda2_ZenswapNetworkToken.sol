@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract ZenswapNetworkToken {
     // Public variables of the token
-    string public name = &quot;Zenswap Network Token&quot;;
-    string public symbol = &quot;ZNT&quot;;
+    string public name = "Zenswap Network Token";
+    string public symbol = "ZNT";
     uint8 public decimals = 18;
     uint256 public initialSupply = 20000000000000000000000000000;
     uint256 public totalSupply;

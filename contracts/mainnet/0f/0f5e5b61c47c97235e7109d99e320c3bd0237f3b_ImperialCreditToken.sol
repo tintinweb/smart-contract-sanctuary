@@ -113,8 +113,8 @@ contract ImperialCreditToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ImperialCreditToken() public {
-        symbol = &quot;ICT&quot;;
-        name = &quot;Imperial Credit Token&quot;;
+        symbol = "ICT";
+        name = "Imperial Credit Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x64B99Bb5256fab53aB9405ef84BaBa91F1B90277] = _totalSupply;

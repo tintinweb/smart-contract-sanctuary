@@ -172,7 +172,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 	address public owner;
@@ -563,7 +563,7 @@ contract BftToken is DetailedERC20, CappedToken, BurnableToken, PausableToken {
 		uint8 _decimals,
 		CappedCrowdsale _crowdsale
 	)
-		DetailedERC20(&quot;Heze Peony Chain&quot;, &quot;HPC&quot;, _decimals)
+		DetailedERC20("Heze Peony Chain", "HPC", _decimals)
 		CappedToken(_tokenCap) public {
 
 		crowdsale = _crowdsale;

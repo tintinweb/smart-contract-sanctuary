@@ -112,8 +112,8 @@ contract LWRMCCToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;MCC&quot;;
-        name = &quot;LWR MCC ERC20 Token&quot;;
+        symbol = "MCC";
+        name = "LWR MCC ERC20 Token";
         decimals = 18;
         _totalSupply = 5000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

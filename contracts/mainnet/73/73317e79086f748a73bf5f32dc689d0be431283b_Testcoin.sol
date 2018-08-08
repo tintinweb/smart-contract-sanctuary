@@ -142,9 +142,9 @@ contract MintableToken is StandardToken, Ownable {
 
 contract Testcoin is MintableToken {
     
-    string public constant name = &quot;Testcoin Token&quot;;
+    string public constant name = "Testcoin Token";
     
-    string public constant symbol = &quot;TSTC&quot;;
+    string public constant symbol = "TSTC";
     
     uint32 public constant decimals = 18;
     

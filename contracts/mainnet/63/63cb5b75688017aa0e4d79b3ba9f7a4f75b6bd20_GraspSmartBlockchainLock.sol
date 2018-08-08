@@ -158,8 +158,8 @@ contract GraspSmartBlockchainLock is ERC20, BasicToken {
         decimals = 8;                            // Amount of decimals for display purposes
         totalSupply_ =  680000000 * 10 ** uint256(decimals);                        // Update total supply
         balances[0x72A4e7Ea1DDd6E33eA18b3B249E66A2201A7d7f5] = totalSupply_;               // Give the creator all initial tokens
-        name = &quot;Grasp Smart Blockchain Lock&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GSB&quot;;                               // Set the symbol for display purposes
+        name = "Grasp Smart Blockchain Lock";                                   // Set the name for display purposes
+        symbol = "GSB";                               // Set the symbol for display purposes
         owner = 0x72A4e7Ea1DDd6E33eA18b3B249E66A2201A7d7f5;
         Transfer(address(0x0), 0x72A4e7Ea1DDd6E33eA18b3B249E66A2201A7d7f5 , totalSupply_);
 

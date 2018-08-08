@@ -84,9 +84,9 @@ contract UNIT is ERC20,Ownable{
 	using SafeMath for uint256;
 
 	//the base info of the token
-	string public constant name=&quot;Unit Pay&quot;;
-	string public constant symbol=&quot;UNIT&quot;;
-	string public constant version = &quot;1.0&quot;;
+	string public constant name="Unit Pay";
+	string public constant symbol="UNIT";
+	string public constant version = "1.0";
 	uint256 public constant decimals = 18;
 
 	uint256 public constant MAX_PRIVATE_FUNDING_SUPPLY=600000000*10**decimals;

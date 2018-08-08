@@ -113,8 +113,8 @@ contract SOYA is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SOYA() public {
-        symbol = &quot;SOY&quot;;
-        name = &quot;SOYA&quot;;
+        symbol = "SOY";
+        name = "SOYA";
         decimals = 8;
         _totalSupply = 100000000000000;
         balances[0x5b7cFCc549073D86ef66c2F2CEEDbc63DeD9818f] = _totalSupply;

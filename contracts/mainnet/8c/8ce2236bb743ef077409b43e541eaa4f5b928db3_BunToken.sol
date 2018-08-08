@@ -184,8 +184,8 @@ contract StandardToken is BasicToken, ERC20 {
 
 
 contract BunToken is StandardToken {
-    string public constant NAME = &quot;BunToken&quot;;
-    string public constant SYMBOL = &quot;BUN&quot;;
+    string public constant NAME = "BunToken";
+    string public constant SYMBOL = "BUN";
     uint public constant DECIMALS = 18;
 
   

@@ -193,8 +193,8 @@ contract TokenI is ERC20Token, Controlled {
 contract Token is TokenI {
     using SafeMath for uint256;
 
-    string public techProvider = &quot;WeYii Tech&quot;;
-    string public officialSite = &quot;http://www.beautybloc.io&quot;;
+    string public techProvider = "WeYii Tech";
+    string public officialSite = "http://www.beautybloc.io";
 
     address public owner;
 
@@ -359,7 +359,7 @@ contract Token is TokenI {
     
     //只能自己或者 owner 才能冻结账户
     function freeze(address _user, uint256 _value, uint8 _step) moreThanZero(_value) onlyController public returns (bool success) {
-        //info256(&quot;balanceOf[_user]&quot;, balanceOf[_user]);
+        //info256("balanceOf[_user]", balanceOf[_user]);
         require(balanceOf[_user] >= _value);
         balanceOf[_user] = balanceOf[_user] - _value;
         freezeOf[_step][lastFreezeSeq[_step]] = FreezeInfo({user:_user, amount:_value});
@@ -378,10 +378,10 @@ contract Token is TokenI {
         //_end = length of freezeOf[_step]
         uint8 _end = lastFreezeSeq[_step];
         require(_end > 0);
-        //info(&quot;_end&quot;, _end);
+        //info("_end", _end);
         unlockOver = (_end <= 99);
         uint8 _start = (_end > 99) ? _end-100 : 0;
-        //info(&quot;_start&quot;, _start);
+        //info("_start", _start);
         for(; _end>_start; _end--){
             FreezeInfo storage fInfo = freezeOf[_step][_end-1];
             uint256 _amount = fInfo.amount;
@@ -477,7 +477,7 @@ contract KoreaShow is TokenController, Controlled {
     uint256 constant oneDay = 86400;
     uint256 public totalCollected = 0;
     bool    public paused;
-    string  public techProvider = &quot;WeYii Tech&quot;;
+    string  public techProvider = "WeYii Tech";
     Token   public tokenContract;
     bool    public finalized = false;
     bool    public allowChange = true;
@@ -578,7 +578,7 @@ contract KoreaShow is TokenController, Controlled {
     ///  `_owner` assuming the PreTokenSale is still accepting funds
     /// @param _owner The address that will hold the newly created tokens
     function doPayment(address _owner) internal returns(bool success) {
-        //info(&quot;step&quot;, &quot;enter doPayment&quot;);
+        //info("step", "enter doPayment");
         require(msg.value >= 1 ether && msg.value <=3 ether);
         require(endFundingTime > now);
 

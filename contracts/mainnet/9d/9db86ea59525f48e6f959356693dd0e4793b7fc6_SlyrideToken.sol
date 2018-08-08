@@ -327,8 +327,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 
 contract SlyrideToken is StandardBurnableToken {
 
-    string public constant name = &quot;SlyRide&quot;;
-    string public constant symbol = &quot;SLYN&quot;;
+    string public constant name = "SlyRide";
+    string public constant symbol = "SLYN";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 800000000e18; /// 800 000 000 SLYN

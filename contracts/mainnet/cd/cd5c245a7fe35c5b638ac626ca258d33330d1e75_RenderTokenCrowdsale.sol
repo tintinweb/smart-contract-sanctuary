@@ -344,8 +344,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract RenderToken is MintableToken {
 
-  string public constant name = &quot;Render Token&quot;;
-  string public constant symbol = &quot;RNDR&quot;;
+  string public constant name = "Render Token";
+  string public constant symbol = "RNDR";
   uint8 public constant decimals = 18;
 
 }

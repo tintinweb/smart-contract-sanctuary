@@ -52,8 +52,8 @@ contract mAlek {
 
     uint public _totalSupply = 0;
 
-    string public constant symbol = &quot;mAlek&quot;;
-    string public constant name = &quot;mAlek Token&quot;;
+    string public constant symbol = "mAlek";
+    string public constant name = "mAlek Token";
     uint8 public constant decimals = 18;
     uint256 public bonus = 50;
     uint256 public price = 1000;

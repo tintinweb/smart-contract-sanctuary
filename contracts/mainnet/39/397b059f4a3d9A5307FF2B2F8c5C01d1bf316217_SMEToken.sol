@@ -66,10 +66,10 @@ contract SMEToken is StandardToken {
     Funder[] funder_list;
 	
     // metadata
-	string public constant name = &quot;Sumerian Token&quot;;
-    string public constant symbol = &quot;SUMER&quot;;
+	string public constant name = "Sumerian Token";
+    string public constant symbol = "SUMER";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 	
 	uint256 public constant LOCKPERIOD = 730 days;
 	uint256 public constant LOCKAMOUNT1 = 4000000 * 10**decimals;   //LOCK1

@@ -482,8 +482,8 @@ contract AlanPlusToken is StandardToken
 pragma solidity ^0.4.23;
 contract MAYA is AlanPlusToken 
 {
-    string public constant name = &quot;Maya&quot;;
-    string public constant symbol = &quot;MAYA&quot;;
+    string public constant name = "Maya";
+    string public constant symbol = "MAYA";
     uint8 public constant decimals = 18;
     uint256 private constant INITIAL_SUPPLY = 1000000000 * (10 ** uint256(decimals));
     function () public payable 

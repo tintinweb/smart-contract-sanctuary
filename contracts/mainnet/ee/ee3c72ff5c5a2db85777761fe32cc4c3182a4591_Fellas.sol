@@ -121,8 +121,8 @@ contract ERC223 {
 contract Fellas is ERC223, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;Fellas&quot;;
-    string public symbol = &quot;FELLAS&quot;;
+    string public name = "Fellas";
+    string public symbol = "FELLAS";
     uint8 public decimals = 8; 
     uint256 public totalSupply = 50e9 * 1e8;
     bool public mintingStopped = false;

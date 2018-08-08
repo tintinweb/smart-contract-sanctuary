@@ -86,8 +86,8 @@ contract KaraOmToken {
     
     function KaraOmToken () public {
         totalSupply = 690000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
-        name = &quot;KaraOm Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;KOM&quot;;                               // Set the symbol for display purposes
+        name = "KaraOm Token";                                   // Set the name for display purposes
+        symbol = "KOM";                               // Set the symbol for display purposes
         owner = msg.sender;    
         distr(owner, totalDistributed);
     }

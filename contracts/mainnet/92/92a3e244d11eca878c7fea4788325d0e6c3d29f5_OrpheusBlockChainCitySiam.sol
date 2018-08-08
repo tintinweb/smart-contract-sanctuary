@@ -3,8 +3,8 @@ contract OrpheusBlockChainCitySiam {
     
     uint public constant _totalSupply = 300000000000000000000000000;
     
-    string public constant symbol = &quot;OBCS&quot;;
-    string public constant name = &quot;Orpheus Block Chain City Siam&quot;;
+    string public constant symbol = "OBCS";
+    string public constant name = "Orpheus Block Chain City Siam";
     uint8 public constant decimals = 18;
     
     mapping(address => uint256) balances;

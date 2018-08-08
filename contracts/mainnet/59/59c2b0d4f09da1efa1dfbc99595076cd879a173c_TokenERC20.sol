@@ -27,8 +27,8 @@ contract TokenERC20 {
      */
     function TokenERC20() public {
         balanceOf[msg.sender] = 21000000 * 10 ** uint256(decimals);  // Give the creator all initial tokens
-        name = &quot;OMZ Network&quot;;                         // Set the name for display purposes
-        symbol = &quot;OMZ&quot;;                               // Set the symbol for display purposes
+        name = "OMZ Network";                         // Set the name for display purposes
+        symbol = "OMZ";                               // Set the symbol for display purposes
     }
 
     /**

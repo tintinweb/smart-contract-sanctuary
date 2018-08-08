@@ -113,8 +113,8 @@ contract XMPToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function XMPToken() public {
-        symbol = &quot;XMP&quot;;
-        name = &quot;XMP&quot;;
+        symbol = "XMP";
+        name = "XMP";
         decimals = 18;
         _totalSupply = 1200000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

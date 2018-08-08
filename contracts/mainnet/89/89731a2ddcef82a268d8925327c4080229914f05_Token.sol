@@ -187,8 +187,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Token is StandardToken {
 
-    string public name    = &quot;Dylan Token&quot;;
-    string public symbol  = &quot;DT&quot;;
+    string public name    = "Dylan Token";
+    string public symbol  = "DT";
     uint8 public decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 19940512;

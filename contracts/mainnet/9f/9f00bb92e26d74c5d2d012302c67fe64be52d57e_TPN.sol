@@ -113,8 +113,8 @@ contract TPN is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function TPN() public {
-        symbol = &quot;TPN&quot;;
-        name = &quot;Tempus Coin&quot;;
+        symbol = "TPN";
+        name = "Tempus Coin";
         decimals = 18;
         _totalSupply = 500000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

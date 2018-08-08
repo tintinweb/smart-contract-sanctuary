@@ -97,8 +97,8 @@ contract RedBlue is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RedBlue() public {
-        symbol = &quot;RB&quot;;
-        name = &quot;RedBlue&quot;;
+        symbol = "RB";
+        name = "RedBlue";
         decimals = 18;
         _totalSupply = 78000000000000000000000000000;
         balances[msg.sender] = _totalSupply;

@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	EuroSibEnergo_CIP_IX_20181220				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	EuroSibEnergo_CIP_IX_20181220		&quot;	;
-	string	public	constant	symbol =	&quot;	ESECIPIX		&quot;	;
+	string	public	constant	name =	"	EuroSibEnergo_CIP_IX_20181220		"	;
+	string	public	constant	symbol =	"	ESECIPIX		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

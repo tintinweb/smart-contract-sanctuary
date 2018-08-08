@@ -96,8 +96,8 @@ contract Orectic is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;ORE&quot;; // v8
-        name = &quot;Orectic&quot;;
+        symbol = "ORE"; // v8
+        name = "Orectic";
         decimals = 8;
         _totalSupply = 50000000000000000;
         balances[msg.sender] = _totalSupply;

@@ -42,12 +42,12 @@ contract DataCenterBridge {
   function setNetwork() internal returns(bool){
     if (getCodeSize(mainnetAddr) > 0) {
       DAR = DataCenterAddrResolverInterface(mainnetAddr);
-      setNetworkName(&quot;eth_mainnet&quot;);
+      setNetworkName("eth_mainnet");
       return true;
     }
     if (getCodeSize(testnetAddr) > 0) {
       DAR = DataCenterAddrResolverInterface(testnetAddr);
-      setNetworkName(&quot;eth_ropsten&quot;);
+      setNetworkName("eth_ropsten");
       return true;
     }
     return false;
@@ -75,7 +75,7 @@ contract DataCenterBridge {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -170,7 +170,7 @@ contract Bet is Ownable, DataCenterBridge {
 
   /** 
    * @desc
-   * gameId: is a fixed string just like &quot;0021701030&quot;
+   * gameId: is a fixed string just like "0021701030"
    *   the full gameId encode(include football, basketball, esports..) will publish on github
    * leftOdds: need divide 100, if odds is 216 means 2.16
    * middleOdds: need divide 100, if odds is 175 means 1.75

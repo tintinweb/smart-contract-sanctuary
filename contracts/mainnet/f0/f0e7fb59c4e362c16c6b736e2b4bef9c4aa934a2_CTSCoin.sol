@@ -134,8 +134,8 @@ contract EIP20Interface {
 
 contract CTSCoin is EIP20Interface,Ownable,SafeMath,Pausable{
     //// Constant token specific fields
-    string public constant name =&quot;CTSCoin&quot;;
-    string public constant symbol = &quot;CTSC&quot;;
+    string public constant name ="CTSCoin";
+    string public constant symbol = "CTSC";
     uint8 public constant decimals = 18;
     string  public version  = &#39;v0.1&#39;;
     uint256 public constant initialSupply = 500000000;

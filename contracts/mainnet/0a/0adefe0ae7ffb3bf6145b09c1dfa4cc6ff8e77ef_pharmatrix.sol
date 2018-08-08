@@ -39,8 +39,8 @@ contract pharmatrix {
 	
     using SafeMath for uint256;
     
-    string public constant name       = &quot;PHT&quot;;
-    string public constant symbol     = &quot;PHT&quot;;
+    string public constant name       = "PHT";
+    string public constant symbol     = "PHT";
     uint32 public constant decimals   = 0;
     uint256 public totalSupply;
  

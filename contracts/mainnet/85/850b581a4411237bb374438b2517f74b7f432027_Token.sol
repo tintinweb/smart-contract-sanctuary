@@ -91,8 +91,8 @@ contract Token is ERC20Interface, Owned {
 
 
     function Token() public {
-        symbol = &quot;CMRC&quot;;
-        name = &quot;China Meteorite Research Chain&quot;;
+        symbol = "CMRC";
+        name = "China Meteorite Research Chain";
         decimals = 6;
         _totalSupply = 300000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

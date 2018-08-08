@@ -70,8 +70,8 @@ contract CC5Coin is SafeMath{
     function CC5Coin() {
         //balanceOf[msg.sender] = 2100000000000000;              // Give the creator all initial tokens
         totalSupply = 2100000000000000;                        // Update total supply
-        name = &quot;CChips Coin&quot;;                            // Set the name for display purposes
-        symbol = &quot;CC5&quot;;                               // Set the symbol for display purposes
+        name = "CChips Coin";                            // Set the name for display purposes
+        symbol = "CC5";                               // Set the symbol for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
 		owner = msg.sender;
         timeOfLastHalving = now;

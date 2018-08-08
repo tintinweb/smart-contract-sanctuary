@@ -227,8 +227,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract ReDomCoin is StandardToken {
 
-string public constant name = &quot;ReDomCoin&quot;;
-string public constant symbol = &quot;RDo&quot;;
+string public constant name = "ReDomCoin";
+string public constant symbol = "RDo";
 uint8 public constant decimals = 18;
 
 uint256 public constant INITIAL_SUPPLY = 8000000 * (10 ** uint256(decimals));

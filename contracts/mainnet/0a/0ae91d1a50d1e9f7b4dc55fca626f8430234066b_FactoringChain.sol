@@ -175,8 +175,8 @@ contract standardToken is ERC20Token {
 contract FactoringChain is standardToken, Owned {
     using SafeMath for uint;
     
-    string public name=&quot;Factoring Chain&quot;;
-    string public symbol=&quot;ECDS&quot;;
+    string public name="Factoring Chain";
+    string public symbol="ECDS";
     uint256 public decimals=18;
     uint256 public totalSupply = 0;
     uint256 public topTotalSupply = 365*10**8*10**decimals;

@@ -75,11 +75,11 @@ contract Akilos is EIP20Interface, Ownable, SafeMath {
 
     mapping (address => mapping (address => uint256)) public allowed;
 
-    string public name = &quot;Akilos&quot;;
+    string public name = "Akilos";
 
     uint8 public decimals = 18;
 
-    string public symbol = &quot;ALS&quot;;
+    string public symbol = "ALS";
 
     function Akilos() public {
     }

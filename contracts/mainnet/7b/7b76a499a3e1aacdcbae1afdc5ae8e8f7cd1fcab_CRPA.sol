@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -361,8 +361,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 
 contract CRPA is StandardBurnableToken, MintableToken {
 
-  string public constant name = &quot;Cryptopope&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;CRPA&quot;; // solium-disable-line uppercase
+  string public constant name = "Cryptopope"; // solium-disable-line uppercase
+  string public constant symbol = "CRPA"; // solium-disable-line uppercase
   uint8 public constant decimals = 8; // solium-disable-line uppercase
   address public constant tokenOwner = 0xa0dF2cb013506bCCc6898d85261Fb8d446439692;
   uint256 public constant INITIAL_SUPPLY = 50000000 * (10 ** uint256(decimals));

@@ -345,7 +345,7 @@ contract PausableToken is StandardToken, Pausable {
 
 
 contract VARO is PausableToken, MintableToken, BurnableToken {
-    string public constant name = &quot;VARO&quot;;
-    string public constant symbol = &quot;VARO&quot;;
+    string public constant name = "VARO";
+    string public constant symbol = "VARO";
     uint8 public constant decimals = 2;
 }

@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -294,10 +294,10 @@ library SafeMath {
 contract TTCToken is StandardToken, BurnableToken, Ownable {
 
     // Constants
-    string  public constant name = &quot;Tabs Tracking Chain&quot;;
-    string  public constant symbol = &quot;TTC&quot;;
+    string  public constant name = "Tabs Tracking Chain";
+    string  public constant symbol = "TTC";
     uint8   public constant decimals = 18;
-    string  public constant website = &quot;www.ttchain.io&quot;; 
+    string  public constant website = "www.ttchain.io"; 
     uint256 public constant INITIAL_SUPPLY      =  600000000 * (10 ** uint256(decimals));
     uint256 public constant CROWDSALE_ALLOWANCE =  480000000 * (10 ** uint256(decimals));
     uint256 public constant ADMIN_ALLOWANCE     =  120000000 * (10 ** uint256(decimals));

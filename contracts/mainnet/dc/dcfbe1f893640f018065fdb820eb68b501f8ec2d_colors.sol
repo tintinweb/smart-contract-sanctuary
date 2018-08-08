@@ -168,61 +168,61 @@ contract colors {
 	function setColorRed () external payable noColor {
 	    red++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#ff383b&quot;;
+	    myColor[msg.sender] = "#ff383b";
 	}
 	
 	function setColorOrange () external payable noColor {
 	    orange++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#f8ac28&quot;;
+	    myColor[msg.sender] = "#f8ac28";
 	}
 	
 	function setColorYellow () external payable noColor {
 	    yellow++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#ead353&quot;;
+	    myColor[msg.sender] = "#ead353";
 	}
 	
 	function setColorGreen () external payable noColor {
 	    green++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#67d75c&quot;;
+	    myColor[msg.sender] = "#67d75c";
 	}
 	
 	function setColorBlue () external payable noColor {
 	    blue++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#476ef2&quot;;
+	    myColor[msg.sender] = "#476ef2";
 	}
 	
 	function setColorTeal () external payable noColor {
 	    teal++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#86e3db&quot;;
+	    myColor[msg.sender] = "#86e3db";
 	}
 	
 	function setColorPurple () external payable noColor {
 	    purple++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#9b5aea&quot;;
+	    myColor[msg.sender] = "#9b5aea";
 	}
 	
 	function setColorPink () external payable noColor {
 	    pink++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#e96de8&quot;;
+	    myColor[msg.sender] = "#e96de8";
 	}
 	
 	function setColorBlack () external payable noColor {
 	    black++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#212121&quot;;
+	    myColor[msg.sender] = "#212121";
 	}
 	
 	function setColorWhite () external payable noColor {
 	    white++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#cecece&quot;;
+	    myColor[msg.sender] = "#cecece";
 	}
 	
 	modifier hasColor () {
@@ -234,61 +234,61 @@ contract colors {
 	function changeColorRed () external payable hasColor {
 	    red++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#ff383b&quot;;
+	    myColor[msg.sender] = "#ff383b";
 	}
 	
 	function changeColorOrange () external payable hasColor {
 	    orange++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#f8ac28&quot;;
+	    myColor[msg.sender] = "#f8ac28";
 	}
 	
 	function changeColorYellow () external payable hasColor {
 	    yellow++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#ead353&quot;;
+	    myColor[msg.sender] = "#ead353";
 	}
 	
 	function changeColorGreen () external payable hasColor {
 	    green++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#67d75c&quot;;
+	    myColor[msg.sender] = "#67d75c";
 	}
 	
 	function changeColorBlue () external payable hasColor {
 	    blue++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#476ef2&quot;;
+	    myColor[msg.sender] = "#476ef2";
 	}
 	
 	function changeColorTeal () external payable hasColor {
 	    teal++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#86e3db&quot;;
+	    myColor[msg.sender] = "#86e3db";
 	}
 	
 	function changeColorPurple () external payable hasColor {
 	    purple++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#9b5aea&quot;;
+	    myColor[msg.sender] = "#9b5aea";
 	}
 	
 	function changeColorPink () external payable hasColor {
 	    pink++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#e96de8&quot;;
+	    myColor[msg.sender] = "#e96de8";
 	}
 	
 	function changeColorBlack () external payable hasColor {
 	    black++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#212121&quot;;
+	    myColor[msg.sender] = "#212121";
 	}
 	
 	function changeColorWhite () external payable hasColor {
 	    white++;
 	    colorCount[msg.sender]++;
-	    myColor[msg.sender] = &quot;#cecece&quot;;
+	    myColor[msg.sender] = "#cecece";
 	}
 	
 	function myColorIs () public view returns (string) {

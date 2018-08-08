@@ -182,10 +182,10 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract GOENTEST is StandardToken {
 
-    string public constant name = &quot;goentesttoken&quot;;
-    string public constant symbol = &quot;GOENTEST&quot;;
-    // string public constant name = &quot;gttoken&quot;;
-    // string public constant symbol = &quot;GTT&quot;;
+    string public constant name = "goentesttoken";
+    string public constant symbol = "GOENTEST";
+    // string public constant name = "gttoken";
+    // string public constant symbol = "GTT";
     uint public constant decimals = 18; // 18位小数
 
     uint public constant INITIAL_SUPPLY =  10000000000 * (10 ** decimals); // 100000000000000000000000000（100亿）

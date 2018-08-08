@@ -113,8 +113,8 @@ contract AwesomeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AwesomeToken() public {
-        symbol = &quot;AWS&quot;;
-        name = &quot;0 Awesome Token&quot;;
+        symbol = "AWS";
+        name = "0 Awesome Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000000;
         balances[0xC7A42e69AdfFA67C452eE8Ef561910770C44Bf4F] = _totalSupply;

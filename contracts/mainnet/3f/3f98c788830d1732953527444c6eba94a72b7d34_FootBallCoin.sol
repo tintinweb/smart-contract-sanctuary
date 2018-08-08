@@ -23,8 +23,8 @@ contract FootBallCoin{
     function FootBallCoin() {
         balanceOf[msg.sender] =  1300000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  1300000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;FootBallCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;FBA&quot;;                               // Set the symbol for display purposes
+        name = "FootBallCoin";                                   // Set the name for display purposes
+        symbol = "FBA";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

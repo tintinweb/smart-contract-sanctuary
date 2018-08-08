@@ -50,7 +50,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -300,8 +300,8 @@ contract StandardToken is ERC20, BasicToken {
 contract GeneNuggetsToken is Pausable,StandardToken {
   using SafeMath for uint256;
   
-  string public name = &quot;Gene Nuggets&quot;;
-  string public symbol = &quot;GNUS&quot;;
+  string public name = "Gene Nuggets";
+  string public symbol = "GNUS";
    
   //constants
   uint8 public decimals = 6;

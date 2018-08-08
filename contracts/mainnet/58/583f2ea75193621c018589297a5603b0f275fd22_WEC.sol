@@ -103,9 +103,9 @@ contract WEC is StandardToken {
     They allow one to customise the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
-    string public name = &quot;World Entertainment Coin&quot;;                   //
+    string public name = "World Entertainment Coin";                   //
     uint8 public decimals = 2;                //
-    string public symbol = &quot;WEC&quot;;                 //
+    string public symbol = "WEC";                 //
     string public version = &#39;H1.0&#39;;       //
 
 //
@@ -118,9 +118,9 @@ contract WEC is StandardToken {
         ) {
         balances[msg.sender] = 100000000000;               // 
         totalSupply = 100000000000;                        // 
-        name = &quot;World Entertainment Coin&quot;;                                   // 
+        name = "World Entertainment Coin";                                   // 
         decimals = 2;                            // 
-        symbol = &quot;WEC&quot;;                               // 
+        symbol = "WEC";                               // 
     }
 
     /* Approves and then calls the receiving contract */
@@ -131,7 +131,7 @@ contract WEC is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

@@ -259,8 +259,8 @@ return true;
 contract KickSportsManager is StandardToken, BurnableToken, Ownable {
 using SafeMath for uint;
 
-string constant public symbol = &quot;KICK&quot;;
-string constant public name = &quot;KickSportsManager&quot;;
+string constant public symbol = "KICK";
+string constant public name = "KickSportsManager";
 
 uint8 constant public decimals = 18;
 uint256 INITIAL_SUPPLY = 133442442e18;

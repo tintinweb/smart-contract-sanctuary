@@ -15,9 +15,9 @@ contract onGCoin {
     function Token() {
 
          initialSupply = 300000000000000000000000000;
-         name =&quot;onGCoin&quot;;
+         name ="onGCoin";
         decimals = 18;
-         symbol = &quot;onGCOIN&quot;;
+         symbol = "onGCOIN";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

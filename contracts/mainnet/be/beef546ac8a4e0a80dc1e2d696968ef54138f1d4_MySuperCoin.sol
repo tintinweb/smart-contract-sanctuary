@@ -279,7 +279,7 @@ contract MintableToken is StandardToken, Ownable {
 
 contract MySuperCoin is MintableToken {
     
-    string public name = &quot;Ojooo Coin&quot;;
-    string public symbol = &quot;OJX&quot;;
+    string public name = "Ojooo Coin";
+    string public symbol = "OJX";
     uint8 public decimals = 18;
 }

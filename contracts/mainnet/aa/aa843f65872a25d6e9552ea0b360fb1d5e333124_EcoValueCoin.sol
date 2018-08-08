@@ -48,7 +48,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -108,8 +108,8 @@ contract EcoValueCoin is Ownable {
   event WithdrawnERC20Tokens(address indexed _tokenContract, address indexed _owner, uint256 _balance);
   event WithdrawnEther(address indexed _owner, uint256 _balance);
 
-  string public constant name = &quot;Eco Value Coin&quot;;
-  string public constant symbol = &quot;EVC&quot;;
+  string public constant name = "Eco Value Coin";
+  string public constant symbol = "EVC";
   uint256 public constant decimals = 18;
   uint256 public constant initialSupply = 3300000000 * (10 ** decimals);
   uint256 public totalSupply;

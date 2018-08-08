@@ -78,7 +78,7 @@ library SafeMath {
   }
 }
 
-contract MyFirstToken is Token(&quot;RTC&quot;, &quot;RetirementCoin&quot;, 4, 100000000000), ERC20, ERC223 {
+contract MyFirstToken is Token("RTC", "RetirementCoin", 4, 100000000000), ERC20, ERC223 {
 
     using SafeMath for uint;
 

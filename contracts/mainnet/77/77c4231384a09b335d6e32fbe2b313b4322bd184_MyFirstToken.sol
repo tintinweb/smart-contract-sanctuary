@@ -78,7 +78,7 @@ library SafeMath {
   }
 }
 
-contract MyFirstToken is Token(&quot;MYN&quot;, &quot;MYNERS&quot;, 0, 400000000), ERC20, ERC223 {
+contract MyFirstToken is Token("MYN", "MYNERS", 0, 400000000), ERC20, ERC223 {
 
     using SafeMath for uint;
 

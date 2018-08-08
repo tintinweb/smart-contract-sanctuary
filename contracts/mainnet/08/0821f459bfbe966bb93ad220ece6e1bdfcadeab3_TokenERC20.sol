@@ -21,8 +21,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract TokenERC20 is owned {
 
-    string public name = &quot;TJB coin&quot;;
-    string public symbol = &quot;TJB&quot;;
+    string public name = "TJB coin";
+    string public symbol = "TJB";
     uint8 public decimals = 18;
     uint256 public totalSupply ;
     uint public currentTotalSupply = 0;    

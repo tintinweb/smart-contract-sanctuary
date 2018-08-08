@@ -6,7 +6,7 @@ contract EmailRegex {
     function (byte) constant internal returns (State memory) func;
   }
 
-  string public constant regex = &quot;[a-zA-Z0-9._%+-]<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="664d26">[email&#160;protected]</a>[a-zA-Z0-9.-_]+\\.[a-zA-Z]{2,}&quot;;
+  string public constant regex = "[a-zA-Z0-9._%+-]<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="664d26">[email&#160;protected]</a>[a-zA-Z0-9.-_]+\\.[a-zA-Z]{2,}";
 
   function s0(byte c) constant internal returns (State memory) {
     c = c;

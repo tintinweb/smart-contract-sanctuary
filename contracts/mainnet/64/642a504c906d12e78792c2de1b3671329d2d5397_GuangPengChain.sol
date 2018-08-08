@@ -23,8 +23,8 @@ contract GuangPengChain{
     function GuangPengChain() {
         balanceOf[msg.sender] =  100000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  100000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;GuangPengChain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GPC&quot;;                               // Set the symbol for display purposes
+        name = "GuangPengChain";                                   // Set the name for display purposes
+        symbol = "GPC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

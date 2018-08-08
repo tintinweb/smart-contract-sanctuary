@@ -287,8 +287,8 @@ contract StandardToken is ERC20 {
  */
 contract MobarakToken is StandardToken {
 
-  string public constant name = &quot;(Mobarak) مبارك&quot;;
-  string public constant symbol = &quot;MBK&quot;;
+  string public constant name = "(Mobarak) مبارك";
+  string public constant symbol = "MBK";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));

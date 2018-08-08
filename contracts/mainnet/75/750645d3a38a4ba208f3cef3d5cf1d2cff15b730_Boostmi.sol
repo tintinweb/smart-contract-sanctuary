@@ -112,8 +112,8 @@ contract Boostmi is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Boostmi() public {
-        symbol = &quot;BOOSTMI&quot;;
-        name = &quot;Boostmi Token&quot;;
+        symbol = "BOOSTMI";
+        name = "Boostmi Token";
         decimals = 5;
         _totalSupply = 100000000;
         balances[0x3c66CD4F3eFFa557a528F21D540283bfeea780e2] = _totalSupply;

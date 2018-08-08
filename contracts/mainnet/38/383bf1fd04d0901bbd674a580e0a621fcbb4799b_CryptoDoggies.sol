@@ -378,11 +378,11 @@ contract CryptoDoggies is AccessControl, DetailedERC721 {
 	}
 
 	function name() public view returns (string _name) {
-		_name = &quot;CryptoDoggies&quot;;
+		_name = "CryptoDoggies";
 	}
 
 	function symbol() public view returns (string _symbol) {
-		_symbol = &quot;CDT&quot;;
+		_symbol = "CDT";
 	}
 
 	function _owns(address _claimant, uint256 _tokenId) private view returns (bool) {

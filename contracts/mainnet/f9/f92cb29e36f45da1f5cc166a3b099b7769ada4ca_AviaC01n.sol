@@ -20,9 +20,9 @@ contract AviaC01n  {
 	function () { revert(); }
 
 	/// ====== ERC20 optional token descriptors ======
-    string public name = &quot;Avia C01n&quot;;
+    string public name = "Avia C01n";
     uint8 public decimals = 18;
-    string public symbol  = &quot;AC0&quot;;
+    string public symbol  = "AC0";
     string public version = &#39;0.1.0&#39;;
     
 	/// ====== ERC20 implementation starts here =====

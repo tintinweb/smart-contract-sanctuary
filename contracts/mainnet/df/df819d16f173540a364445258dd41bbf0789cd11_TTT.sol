@@ -175,8 +175,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract TTT is StandardToken,Ownable {
 
-  string public constant name = &quot;TTT Chain&quot;;
-  string public constant symbol = &quot;TTT&quot;;
+  string public constant name = "TTT Chain";
+  string public constant symbol = "TTT";
   uint8 public constant decimals = 18;
 
 

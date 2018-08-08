@@ -226,8 +226,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/DIW.sol
 
 contract DIW is StandardToken, BurnableToken {
-  string public constant name = &quot;DIW Token&quot;;
-  string public constant symbol = &quot;DIW&quot;;
+  string public constant name = "DIW Token";
+  string public constant symbol = "DIW";
   uint8 public constant decimals = 18;
 
   function DIW (address _supplier, uint256 _totalSupply) public {

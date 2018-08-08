@@ -1,8 +1,8 @@
 pragma solidity ^0.4.16;
 
 contract BMToken {
-    string  public  name = &quot;BMChain Token&quot;;
-    string  public  symbol = &quot;BMT&quot;;
+    string  public  name = "BMChain Token";
+    string  public  symbol = "BMT";
     uint256  public  decimals = 18;
 
     uint256 _supply = 0;

@@ -15,8 +15,8 @@ contract Altruism {
 
     uint256 public totalSupply = 100000000 ether;
 
-    function name() constant returns (string) { return &quot;Altruism Token&quot;; }
-    function symbol() constant returns (string) { return &quot;ALTR&quot;; }
+    function name() constant returns (string) { return "Altruism Token"; }
+    function symbol() constant returns (string) { return "ALTR"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

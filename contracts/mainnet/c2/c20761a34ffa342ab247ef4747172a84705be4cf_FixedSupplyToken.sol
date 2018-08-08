@@ -104,8 +104,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;AGC&quot;;
-        name = &quot;Agricultural grain Coin&quot;;
+        symbol = "AGC";
+        name = "Agricultural grain Coin";
         decimals = 18;
         _totalSupply = 500000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

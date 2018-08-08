@@ -46,7 +46,7 @@ contract AuctusBountyDistribution is ContractReceiver {
 	}
 
 	modifier isValidMessage(uint256 value, uint256 timelimit, uint8 v, bytes32 r, bytes32 s) {
-		require(owner == ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, keccak256(this, msg.sender, value, timelimit)), v, r, s));
+		require(owner == ecrecover(keccak256("\x19Ethereum Signed Message:\n32", keccak256(this, msg.sender, value, timelimit)), v, r, s));
 		_;
 	}
 

@@ -147,7 +147,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -469,9 +469,9 @@ contract PausableToken is StandardToken, Pausable {
 
 contract COSTToken is PausableToken, BurnableToken {
   
-  string public symbol = &quot;COST&quot;;
+  string public symbol = "COST";
 
-  string public name = &quot;Consensus Token&quot;;
+  string public name = "Consensus Token";
   
   uint8 public decimals = 18;
 

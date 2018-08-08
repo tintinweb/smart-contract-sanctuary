@@ -33,8 +33,8 @@ contract Ownable {
 
 contract ArteufToken is Ownable{
 
-    string public name = &quot;Arteuf&quot;;
-    string public symbol = &quot;ARUF&quot;;
+    string public name = "Arteuf";
+    string public symbol = "ARUF";
     uint256 public decimals = 18;
 
     mapping (address => uint256) public balanceOf;

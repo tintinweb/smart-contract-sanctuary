@@ -225,8 +225,8 @@ library SafeMath {
 contract Hotelium is StandardBurnableToken, Ownable {
     using SafeMath for uint256;
 
-    string public constant name = &quot;Hotelium&quot;;
-    string public constant symbol = &quot;HTL&quot;;
+    string public constant name = "Hotelium";
+    string public constant symbol = "HTL";
     uint8 public constant decimals = 18;
     
     constructor() public {

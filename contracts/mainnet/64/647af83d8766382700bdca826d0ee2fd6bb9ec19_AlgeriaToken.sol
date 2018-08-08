@@ -15,8 +15,8 @@ contract AlgeriaToken is IERC20 {
     
     uint public constant _totalSupply= 10000000000;
     
-    string public constant symbol= &quot;☺ DZT&quot;;
-    string public constant name= &quot;Algeria Token&quot;;
+    string public constant symbol= "☺ DZT";
+    string public constant name= "Algeria Token";
     uint8 public constant decimals = 3;
     mapping(address => uint256) balances;
     mapping(address => mapping(address => uint256)) allowed;

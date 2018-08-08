@@ -57,7 +57,7 @@ contract NamiPool {
         NamiAddr = _namiAddress;
     }
     
-    string public name = &quot;Nami Pool&quot;;
+    string public name = "Nami Pool";
     
     // escrow has exclusive priveleges to call administrative
     // functions on this contract.
@@ -449,8 +449,8 @@ contract NamiCrowdSale {
      *  Constants
     /*/
 
-    string public name = &quot;Nami ICO&quot;;
-    string public  symbol = &quot;NAC&quot;;
+    string public name = "Nami ICO";
+    string public  symbol = "NAC";
     uint   public decimals = 18;
 
     bool public TRANSFERABLE = false; // default not transferable
@@ -1281,7 +1281,7 @@ contract NamiExchange {
     
     mapping(address => OrderBid) public bid;
     mapping(address => OrderAsk) public ask;
-    string public name = &quot;NacExchange&quot;;
+    string public name = "NacExchange";
     
     /// address of Nami token
     address public NamiAddr;

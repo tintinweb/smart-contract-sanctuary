@@ -22,7 +22,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -458,8 +458,8 @@ contract MineableToken is MintableToken {
   /**
   * @dev withdraw reward
   * @return {
-    &quot;uint256 reward&quot;: the new supply
-    &quot;uint256 commitmentValue&quot;: the commitment to be returned
+    "uint256 reward": the new supply
+    "uint256 commitmentValue": the commitment to be returned
     }
   */
   function withdraw() public returns (uint256 reward, uint256 commitmentValue) {
@@ -555,10 +555,10 @@ contract MineableToken is MintableToken {
   * @dev Gets the all fields for the commitment of the specified address.
   * @param _miner The address to query the the commitment Of
   * @return {
-    &quot;uint256 value&quot;: the amount commited.
-    &quot;uint256 onBlockNumber&quot;: block number of commitment.
-    &quot;uint256 atStake&quot;: stake when commited.
-    &quot;int256 onBlockReward&quot;: block reward when commited.
+    "uint256 value": the amount commited.
+    "uint256 onBlockNumber": block number of commitment.
+    "uint256 atStake": stake when commited.
+    "int256 onBlockReward": block reward when commited.
     }
   */
   function getCommitment(address _miner) public view 
@@ -709,12 +709,12 @@ contract MCoinDistribution is Ownable {
   * @dev Return information about the selected window
   * @param window number: [0-totalWindows)
   * @return {
-    &quot;uint256 start&quot;: window start timestamp
-    &quot;uint256 end&quot;: window end timestamp
-    &quot;uint256 remainingTime&quot;: remaining time (sec), zero if ended
-    &quot;uint256 allocation&quot;: number of tokens to be distributed
-    &quot;uint256 totalEth&quot;: total eth commited this window
-    &quot;uint256 number&quot;: # of requested window
+    "uint256 start": window start timestamp
+    "uint256 end": window end timestamp
+    "uint256 remainingTime": remaining time (sec), zero if ended
+    "uint256 allocation": number of tokens to be distributed
+    "uint256 totalEth": total eth commited this window
+    "uint256 number": # of requested window
     }
   */
   function detailsOf(uint256 window) view public 
@@ -742,12 +742,12 @@ contract MCoinDistribution is Ownable {
   /**
   * @dev Return information for the current window
   * @return {
-    &quot;uint256 start&quot;: window start timestamp
-    &quot;uint256 end&quot;: window end timestamp
-    &quot;uint256 remainingTime&quot;: remaining time (sec), zero if ended
-    &quot;uint256 allocation&quot;: number of tokens to be distributed
-    &quot;uint256 totalEth&quot;: total eth commited this window
-    &quot;uint256 number&quot;: # of requested window
+    "uint256 start": window start timestamp
+    "uint256 end": window end timestamp
+    "uint256 remainingTime": remaining time (sec), zero if ended
+    "uint256 allocation": number of tokens to be distributed
+    "uint256 totalEth": total eth commited this window
+    "uint256 number": # of requested window
     }
   */
   function detailsOfWindow() view public

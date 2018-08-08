@@ -3,7 +3,7 @@ pragma solidity ^0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -235,7 +235,7 @@ contract EDCoreInterface {
 }
 
 
-/// @dev Core Contract of &quot;Enter the Coliseum&quot; game of the ED (Ether Dungeon) Platform.
+/// @dev Core Contract of "Enter the Coliseum" game of the ED (Ether Dungeon) Platform.
 contract EDColiseumAlpha is Pausable, ReentrancyGuard, Destructible {
     
     struct Participant {
@@ -292,7 +292,7 @@ contract EDColiseumAlpha is Pausable, ReentrancyGuard, Destructible {
     /// @dev Array of all the participant for the previous tournament.
     Participant[] public previousParticipants;
     
-    /// @dev Array to store the participant index all winners / losers for each &quot;fighting round&quot; of the previous tournament.
+    /// @dev Array to store the participant index all winners / losers for each "fighting round" of the previous tournament.
     uint[maxParticipantCount / 2] public firstRoundWinners;
     uint[maxParticipantCount / 4] public secondRoundWinners;
     uint[maxParticipantCount / 2] public firstRoundLosers;

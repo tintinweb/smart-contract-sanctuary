@@ -18,8 +18,8 @@ contract BRAAI {
 
     event Burn(address indexed from, uint256 value);
     uint256 initialSupply=120000000;
-        string tokenName = &quot;BRAAI&quot;;
-        string tokenSymbol = &quot;BRAAI&quot;;
+        string tokenName = "BRAAI";
+        string tokenSymbol = "BRAAI";
 
     constructor(
         

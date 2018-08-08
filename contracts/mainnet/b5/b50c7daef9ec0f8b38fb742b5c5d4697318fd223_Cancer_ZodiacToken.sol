@@ -45,8 +45,8 @@ contract Cancer_ZodiacToken {
     uint    public ICORatio     = 144000;
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;Cancer_ZodiacToken&quot;; }
-    function symbol() constant returns (string) { return &quot;CNC♋&quot;; }
+    function name() constant returns (string) { return "Cancer_ZodiacToken"; }
+    function symbol() constant returns (string) { return "CNC♋"; }
     function decimals() constant returns (uint8) { return 8; }
     event Burnt(
         address indexed _receiver,

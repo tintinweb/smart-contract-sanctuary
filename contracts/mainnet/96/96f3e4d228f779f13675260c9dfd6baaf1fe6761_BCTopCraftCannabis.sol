@@ -113,8 +113,8 @@ contract BCTopCraftCannabis is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BCTopCraftCannabis() public {
-        symbol = &quot;BCTCC&quot;;
-        name = &quot;BC Top Craft Cannabis&quot;;
+        symbol = "BCTCC";
+        name = "BC Top Craft Cannabis";
         decimals = 4;
         _totalSupply = 1000000000000000;
         balances[0x1f75ffe6B1b151d2a13b5957B96F2721a2b21890] = _totalSupply;

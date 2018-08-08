@@ -155,8 +155,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract GumToken is StandardToken {
 
-  string public constant name = &quot;Gum Wall Token&quot;;
-  string public constant symbol = &quot;GUM&quot;;
+  string public constant name = "Gum Wall Token";
+  string public constant symbol = "GUM";
   uint256 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 18000000 * 10**18;

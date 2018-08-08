@@ -23,8 +23,8 @@ contract SOUTHAFRICANRANDDIGITALTETHER{
     ) public {
         totalSupply = 2000000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;               
-        name = &quot;SOUTH AFRICAN RAND DIGITAL TETHER&quot;;                                  
-        symbol = &quot;SDT&quot;;                               
+        name = "SOUTH AFRICAN RAND DIGITAL TETHER";                                  
+        symbol = "SDT";                               
     }
 
 

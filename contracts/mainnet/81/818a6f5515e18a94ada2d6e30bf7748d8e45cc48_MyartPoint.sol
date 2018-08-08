@@ -108,8 +108,8 @@ contract MyartPoint is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
     function MyartPoint() public {
         halted = false;
-        symbol = &quot;MYT&quot;;
-        name = &quot;Myart Point&quot;;
+        symbol = "MYT";
+        name = "Myart Point";
         decimals = 18;
         _totalSupply = 1210 * 1000 * 1000 * 10**uint(decimals);
 

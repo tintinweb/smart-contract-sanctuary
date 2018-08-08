@@ -126,8 +126,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract ZUKToken is StandardToken {
 
-  string public constant name = &quot;ZUK Token&quot;;
-  string public constant symbol = &quot;ZUK&quot;; 
+  string public constant name = "ZUK Token";
+  string public constant symbol = "ZUK"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 100000000 * 100 * (10 ** uint256(decimals));

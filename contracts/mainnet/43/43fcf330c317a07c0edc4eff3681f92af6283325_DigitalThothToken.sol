@@ -102,8 +102,8 @@ contract DigitalThothToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DigitalThothToken() public {
-        symbol = &quot;DGTH&quot;;
-        name = &quot;DigitalThoth Token&quot;;
+        symbol = "DGTH";
+        name = "DigitalThoth Token";
         decimals = 18;
         balances[0x3814609F5c87B48655e6A5AEDB74F6119bCc2B71] = 160000000e18;
         Transfer(address(0), 0x3814609F5c87B48655e6A5AEDB74F6119bCc2B71, 160000000e18);

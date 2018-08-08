@@ -112,8 +112,8 @@ contract Alexa is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Alexa() public {
-        symbol = &quot;ALX&quot;;
-        name = &quot;ALEXA&quot;;
+        symbol = "ALX";
+        name = "ALEXA";
         decimals = 18;
         _totalSupply = 7000000000000000000000000;
         balances[0xccf84aC1a9D4cEfA60779B2B7361cE2965ac8d52] = _totalSupply;

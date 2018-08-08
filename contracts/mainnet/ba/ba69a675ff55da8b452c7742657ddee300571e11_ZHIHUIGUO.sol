@@ -116,8 +116,8 @@ contract ERC20Token is ERC20 {
 
 contract ZHIHUIGUO is ERC20Token, Owned {
 
-    string  public constant name = &quot;Zhi hui Guo&quot;;
-    string  public constant symbol = &quot;ZHG&quot;;
+    string  public constant name = "Zhi hui Guo";
+    string  public constant symbol = "ZHG";
     uint256 public constant decimals = 6;
     uint256 public tokenDestroyed;
 

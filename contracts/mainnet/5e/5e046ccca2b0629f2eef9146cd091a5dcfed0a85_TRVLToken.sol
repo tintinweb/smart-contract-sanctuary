@@ -50,7 +50,7 @@ library SafeERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -167,7 +167,7 @@ contract Admin is Claimable{
 
     /// @dev Verifies the msg.sender is a member of the admins mapping. Owner is by default an admin.
     modifier onlyAdmin() {
-        require(admins[msg.sender] || msg.sender == owner, &quot;msg.sender is not an admin!&quot;);
+        require(admins[msg.sender] || msg.sender == owner, "msg.sender is not an admin!");
         _;
     }
 
@@ -175,10 +175,10 @@ contract Admin is Claimable{
     /// @dev Requires that the msg.sender is the Owner. Emits an event on success.
     /// @param _admins The list of addresses to add to the admins mapping.
     function addAddressesToAdmins(address[] _admins) external onlyOwner {
-        require(_admins.length > 0, &quot;Cannot add an empty list to admins!&quot;);
+        require(_admins.length > 0, "Cannot add an empty list to admins!");
         for (uint256 i = 0; i < _admins.length; ++i) {
             address user = _admins[i];
-            require(user != address(0), &quot;Cannot add the zero address to admins!&quot;);
+            require(user != address(0), "Cannot add the zero address to admins!");
 
             if (!admins[user]) {
                 admins[user] = true;
@@ -194,7 +194,7 @@ contract Admin is Claimable{
     /// TravelBlock is processing payments. Emits an event on success.
     /// @param _admins The list of addresses to remove from the admins mapping.
     function removeAddressesFromAdmins(address[] _admins) external onlyOwner {
-        require(_admins.length > 0, &quot;Cannot remove an empty list to admins!&quot;);
+        require(_admins.length > 0, "Cannot remove an empty list to admins!");
         for (uint256 i = 0; i < _admins.length; ++i) {
             address user = _admins[i];
 
@@ -218,7 +218,7 @@ contract Whitelist is Admin {
 
     /// @dev Verifies the user is whitelisted.
     modifier isWhitelisted(address _user) {
-        require(whitelist[_user] != false, &quot;User is not whitelisted!&quot;);
+        require(whitelist[_user] != false, "User is not whitelisted!");
         _;
     }
 
@@ -226,10 +226,10 @@ contract Whitelist is Admin {
     /// @dev Requires that the msg.sender is the Admin. Emits an event on success.
     /// @param _users The list of addresses to add to the whitelist.
     function addAddressesToWhitelist(address[] _users) external onlyAdmin {
-        require(_users.length > 0, &quot;Cannot add an empty list to whitelist!&quot;);
+        require(_users.length > 0, "Cannot add an empty list to whitelist!");
         for (uint256 i = 0; i < _users.length; ++i) {
             address user = _users[i];
-            require(user != address(0), &quot;Cannot add the zero address to whitelist!&quot;);
+            require(user != address(0), "Cannot add the zero address to whitelist!");
 
             if (!whitelist[user]) {
                 whitelist[user] = true;
@@ -243,7 +243,7 @@ contract Whitelist is Admin {
     /// @dev Requires that the msg.sender is an Admin. Emits an event on success.
     /// @param _users The list of addresses to remove from the whitelist.
     function removeAddressesFromWhitelist(address[] _users) external onlyAdmin {
-        require(_users.length > 0, &quot;Cannot remove an empty list to whitelist!&quot;);
+        require(_users.length > 0, "Cannot remove an empty list to whitelist!");
         for (uint256 i = 0; i < _users.length; ++i) {
             address user = _users[i];
 
@@ -705,13 +705,13 @@ contract RewardToken is PausableToken, Whitelist, HasNoTokens{
 
     /// @dev Verifies the reward index is valid.
     modifier isValidRewardIndex(uint256 _index) {
-        require(_index < rewardPercentage.length, &quot;The reward percentage index does not exist!&quot;);
+        require(_index < rewardPercentage.length, "The reward percentage index does not exist!");
         _;
     }
 
     /// @dev Verifies the reward percentage is valid.
     modifier isValidRewardPercentage(uint256 _percentage) {
-        require(_percentage <= rewardPercentageDivisor, &quot;Cannot have a reward percentage greater than 100%!&quot;);
+        require(_percentage <= rewardPercentageDivisor, "Cannot have a reward percentage greater than 100%!");
         _;
     }
 
@@ -773,8 +773,8 @@ contract RewardToken is PausableToken, Whitelist, HasNoTokens{
 
 /// @title TRVLToken smart contract
 contract TRVLToken is RewardToken {
-    string public constant name = &quot;TRVL Token&quot;;
-    string public constant symbol = &quot;TRVL&quot;;
+    string public constant name = "TRVL Token";
+    string public constant symbol = "TRVL";
     uint8 public constant decimals = 18;
     uint256 public constant TOTAL_CAP = 600000000 * (10 ** uint256(decimals));
 
@@ -782,14 +782,14 @@ contract TRVLToken is RewardToken {
 
     /// @dev Verifies the user has enough tokens to cover the payment.
     modifier senderHasEnoughTokens(uint256 _regularTokens, uint256 _rewardTokens) {
-        require(rewardBalances[msg.sender] >= _rewardTokens, &quot;User does not have enough reward tokens!&quot;);
-        require(balances[msg.sender] >= _regularTokens, &quot;User does not have enough regular tokens!&quot;);
+        require(rewardBalances[msg.sender] >= _rewardTokens, "User does not have enough reward tokens!");
+        require(balances[msg.sender] >= _regularTokens, "User does not have enough regular tokens!");
         _;
     }
 
     /// @dev Verifies the amount is > 0.
     modifier validAmount(uint256 _amount) {
-        require(_amount > 0, &quot;The amount specified is 0!&quot;);
+        require(_amount > 0, "The amount specified is 0!");
         _;
     }
 

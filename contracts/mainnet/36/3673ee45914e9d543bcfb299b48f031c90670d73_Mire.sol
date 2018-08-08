@@ -40,19 +40,19 @@ contract StandardToken is Token {
     mapping (address => mapping (address => uint256)) allowed;
     uint256 public totalSupply;}
 contract Mire is StandardToken {
-    string public name = &quot;Mire&quot;;                   
+    string public name = "Mire";                   
     uint8 public decimals = 4;                
-    string public symbol = &quot;MIR&quot;;
+    string public symbol = "MIR";
     function Mire () {
         balances[msg.sender] = 4*10**27;               
         totalSupply = 4*10**27;   
-        name = &quot;Mire&quot;;        
+        name = "Mire";        
         decimals = 5;           
-        symbol = &quot;MIR&quot;;     }
+        symbol = "MIR";     }
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

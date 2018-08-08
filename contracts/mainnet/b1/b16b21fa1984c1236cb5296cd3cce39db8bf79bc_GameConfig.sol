@@ -61,7 +61,7 @@ contract GameConfig {
   // Constructor 
   function GameConfig() public {
     owner = msg.sender;
-    versionNo = &quot;20180706&quot;;
+    versionNo = "20180706";
     cardInfo[1] = Card(1, 0, 10, 0, 2, true);
     cardInfo[2] = Card(2, 100, 50, 0, 5, true);
     cardInfo[3] = Card(3, 0, 0, 0.01 ether, 100, true);

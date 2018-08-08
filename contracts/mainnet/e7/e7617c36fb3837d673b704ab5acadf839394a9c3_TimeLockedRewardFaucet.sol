@@ -68,7 +68,7 @@ contract TimeLockedRewardFaucet {
 
 
     enum State {INIT, LOCKED, WITHDRAWAL, CLOSED}
-    string[4] labels = [&quot;INIT&quot;, &quot;LOCKED&quot;, &quot;WITHDRAWAL&quot;, &quot;CLOSED&quot;];
+    string[4] labels = ["INIT", "LOCKED", "WITHDRAWAL", "CLOSED"];
 
     function _state() internal returns(State) {
         if (locked_since == 0)               return State.INIT;

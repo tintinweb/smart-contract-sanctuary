@@ -141,8 +141,8 @@ contract GlobalBTC is owned,ParentToken{
      /* Public variables of the token */
     string public standard = &#39;Token 0.1&#39;;  
     uint256 public currentSupply= 3000000000000000;
-    string public constant symbol = &quot;GBTC&quot;;
-    string public constant tokenName = &quot;GlobalBTC&quot;;
+    string public constant symbol = "GBTC";
+    string public constant tokenName = "GlobalBTC";
     uint8 public constant decimals = 8;
 
     

@@ -110,8 +110,8 @@ contract CPPGToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CPPGToken() public {
-        symbol = &quot;CPPG&quot;;
-        name = &quot;CPPG Token&quot;;
+        symbol = "CPPG";
+        name = "CPPG Token";
         decimals = 0;
         _totalSupply = 100000000000;
         balances[0x8A1221947555321795f29eE63B47cC43Bd252A7A] = _totalSupply;

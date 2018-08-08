@@ -420,7 +420,7 @@ function getStatusForRootHash(bytes32 _rootHash) constant public returns (bool)
 // rootHash examples below, always 32 bytes in the format:
 // 0x12207D5A99F603F231D53A4F39D1521F98D2E8BB279CF29BEBFD0687DC98458E
 // 0x12207D5A99F603F231D53A4F39D1521F98D2E8BB279CF29BEBFD0687DC98458F
-// ipfs address, string: &quot;whatever here&quot;,
+// ipfs address, string: "whatever here",
 
 // JUN-5 v1 contract deployed at https://rinkeby.etherscan.io/address/0xbe2ee825339c25749fb8ff8f6621d304fb2e2be5
 // JUN-5 v1 contract deployed at https://ropsten.etherscan.io/address/0xbe2ee825339c25749fb8ff8f6621d304fb2e2be5

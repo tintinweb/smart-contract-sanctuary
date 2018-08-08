@@ -220,8 +220,8 @@ contract EIP20 is EIP20Interface, LegolasBase {
 contract Legolas is EIP20 {
 
     // Standard ERC20 information
-    string  constant NAME = &quot;LGO Token&quot;;
-    string  constant SYMBOL = &quot;LGO&quot;;
+    string  constant NAME = "LGO Token";
+    string  constant SYMBOL = "LGO";
     uint8   constant DECIMALS = 8;
     uint256 constant UNIT = 10**uint256(DECIMALS);
 

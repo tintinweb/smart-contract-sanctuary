@@ -116,8 +116,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function FixedSupplyToken() public {
-        symbol = &quot;FIXED&quot;;
-        name = &quot;Example Fixed Supply Token&quot;;
+        symbol = "FIXED";
+        name = "Example Fixed Supply Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;
@@ -244,8 +244,8 @@ contract ERC20 {
 contract ExxStandart is ERC20 {
     using SafeMath for uint;
     
-	string  public name        = &quot;Exxcoin&quot;;
-    string  public symbol      = &quot;EXX&quot;;
+	string  public name        = "Exxcoin";
+    string  public symbol      = "EXX";
     uint8   public decimals    = 0;
 
 	mapping (address => mapping (address => uint)) allowed;

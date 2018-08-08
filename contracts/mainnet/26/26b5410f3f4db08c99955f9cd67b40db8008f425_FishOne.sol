@@ -212,7 +212,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -333,8 +333,8 @@ contract FishOne is PausableToken {
   * Some wallets/interfaces might not even bother to look at this information.
   */
 
-  string public name = &quot;FishOne&quot;;
-  string public symbol = &quot;FOT&quot;;
+  string public name = "FishOne";
+  string public symbol = "FOT";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 100 * 10000 * 10000 * (10 ** decimals);
 

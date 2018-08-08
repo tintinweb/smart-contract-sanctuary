@@ -311,9 +311,9 @@ contract TokenParam {
 }
 
 contract AIAISIToken is CappedToken,TokenParam {
-    string public constant name = &quot;AIDOC-AISI&quot;;
+    string public constant name = "AIDOC-AISI";
 
-    string public constant symbol = &quot;AIAISI&quot;;
+    string public constant symbol = "AIAISI";
 
     constructor() public CappedToken(totalSupply) {
         balances[msg.sender] = totalSupply;

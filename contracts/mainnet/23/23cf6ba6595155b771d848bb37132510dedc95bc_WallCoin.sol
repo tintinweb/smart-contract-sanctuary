@@ -23,8 +23,8 @@ contract WallCoin {
     function WallCoin() {
         balanceOf[msg.sender] = 38000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply = 38000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;WallCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;WLC&quot;;                               // Set the symbol for display purposes
+        name = "WallCoin";                                   // Set the name for display purposes
+        symbol = "WLC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

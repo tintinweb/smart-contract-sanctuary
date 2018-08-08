@@ -4,7 +4,7 @@ pragma solidity ^0.4.22;
 
   Copyright 2018 BodyOne Foundation.
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
@@ -98,7 +98,7 @@ contract BasicToken is ERC20Basic {
       if (transferable) {
           _;
       } else {
-          LiquidityAlarm(&quot;The liquidity of BODY is switched off&quot;);
+          LiquidityAlarm("The liquidity of BODY is switched off");
           throw;
       }
   }
@@ -131,7 +131,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint _value) onlyPayloadSize(2 * 32) unFrozenAccount onlyTransferable {
     if (frozenAccount[_to]) {
-        InvalidAccount(_to, &quot;The receiver account is frozen&quot;);
+        InvalidAccount(_to, "The receiver account is frozen");
     } else {
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -238,8 +238,8 @@ contract StandardToken is BasicToken {
 /// @title BodyOne Protocol Token.
 /// For more information about this token, please visit http://www.bodyone.io/
 contract BodyOneToken is StandardToken {
-    string public name = &quot;BodyOne&quot;;
-    string public symbol = &quot;BODY&quot;;
+    string public name = "BodyOne";
+    string public symbol = "BODY";
     uint public decimals = 18;
 
     /**

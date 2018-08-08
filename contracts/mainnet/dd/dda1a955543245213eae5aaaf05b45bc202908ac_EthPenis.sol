@@ -1,7 +1,7 @@
 pragma solidity ^0.4.18;
 
 /*
-  …………………...- *&quot; \ - &quot;::*&#39;\ 
+  …………………...- *" \ - "::*&#39;\ 
 ………………„-^*&#39;&#39; : : „&#39;&#39; : : : :: *„ 
 …………..„-* : : :„„--/ : : : : : : : &#39;\ 
 …………./ : : „-* . .| : : : : : : : : &#39;| 
@@ -59,8 +59,8 @@ contract EthPenis {
 	int constant price_coeff = -0x296ABF784A358468C;
 
 	// Typical values that we have to declare.
-	string constant public name = &quot;EthPenis&quot;;
-	string constant public symbol = &quot;PNS&quot;;
+	string constant public name = "EthPenis";
+	string constant public symbol = "PNS";
 	uint8 constant public decimals = 18;
 
 	// Array between each address and their number of tokens.

@@ -116,8 +116,8 @@ contract PhoneCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PhoneCoin() public {
-        symbol = &quot;PHONE&quot;;
-        name = &quot;PhoneCoin&quot;;
+        symbol = "PHONE";
+        name = "PhoneCoin";
         decimals = 18;
         bonusEnds = now + 6 weeks;
         endDate = now + 12 weeks;

@@ -96,7 +96,7 @@ contract WORLD1Coin is StandardToken {
   string public name;                   
   uint8 public decimals;                
   string public symbol;                 
-  string public version = &quot;H1.0&quot;;  
+  string public version = "H1.0";  
   address public owner;
   bool public tokenIsLocked;
   mapping (address => uint256) lockedUntil;
@@ -105,9 +105,9 @@ contract WORLD1Coin is StandardToken {
     owner = 0x04c63DC704b7F564870961dd2286F75bCb3A98E2;
     totalSupply = 300000000 * 1000000000000000000;
     balances[owner] = totalSupply;                 
-    name = &quot;Worldcoin1&quot;;                                // Token Name
+    name = "Worldcoin1";                                // Token Name
     decimals = 18;                                      // Amount of decimals for display purposes
-    symbol = &quot;WRLD1&quot;;                                    // Token Symbol
+    symbol = "WRLD1";                                    // Token Symbol
   }
 
   /* Approves and then calls the receiving contract */
@@ -115,7 +115,7 @@ contract WORLD1Coin is StandardToken {
     allowed[msg.sender][_spender] = _value;
     emit Approval(msg.sender, _spender, _value);
 
-    if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) {
+    if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) {
       revert();
       }
     return true;

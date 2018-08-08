@@ -119,9 +119,9 @@ contract HashToken is StandardToken {
         totalSupply = 11111111111 * 10**18 ;    			// Don&#39;t mess with the 10**18 portion.  In this case 10**4 = 10*10*10*10 = 10,000.  Alternatively, you can put 10000
 													// If you want 100 million with 18 decimals, then use this code: 10**8 * 10**18
 		balances[msg.sender] =  totalSupply;        // Give the creator all initial tokens (100000 for example)
-        name = &quot;ALCHEMIZE&quot;;            		// Set the name for display purposes
+        name = "ALCHEMIZE";            		// Set the name for display purposes
         decimals = 18;                               // Amount of decimals for display purposes
-        symbol = &quot;ALCH&quot;;                            // Set the symbol for display purposes
+        symbol = "ALCH";                            // Set the symbol for display purposes
     }
 
     /* Approves and then calls the receiving contract */
@@ -132,7 +132,7 @@ contract HashToken is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

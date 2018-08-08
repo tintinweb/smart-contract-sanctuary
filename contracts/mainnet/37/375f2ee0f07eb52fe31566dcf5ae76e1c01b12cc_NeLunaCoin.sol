@@ -98,8 +98,8 @@ contract Owned {
 // token transfers
 // ----------------------------------------------------------------------------
 contract NeLunaCoin is ERC20Interface, Owned, SafeMath {
-    string public constant symbol = &quot;NLC&quot;;
-    string public constant name = &quot;NeLunaCoin&quot;;
+    string public constant symbol = "NLC";
+    string public constant name = "NeLunaCoin";
     uint256 public constant decimals = 18;
     uint public _totalSupply;
 	uint public _devTokens;

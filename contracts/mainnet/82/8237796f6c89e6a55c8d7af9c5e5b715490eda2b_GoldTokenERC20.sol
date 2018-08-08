@@ -37,8 +37,8 @@ contract GoldTokenERC20 is owned {
     function GoldTokenERC20() public {
         totalSupply = 100000000 * 10 ** uint256(decimals); 
         balanceOf[msg.sender] = totalSupply;              
-        name = &quot;GoldToken&quot;;                                 
-        symbol = &quot;GOLD&quot;;                            
+        name = "GoldToken";                                 
+        symbol = "GOLD";                            
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

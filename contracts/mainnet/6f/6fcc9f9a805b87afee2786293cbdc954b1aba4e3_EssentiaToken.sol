@@ -104,8 +104,8 @@ contract EssentiaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EssentiaToken() public {
-        symbol = &quot;ESS&quot;;
-        name = &quot;Essentia Token&quot;;
+        symbol = "ESS";
+        name = "Essentia Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;    

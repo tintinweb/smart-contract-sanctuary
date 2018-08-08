@@ -16,9 +16,9 @@ contract Cloudcoin {
     function Cloudcoin() {
 
          initialSupply =50000000;
-         name =&quot;Cloudcoin&quot;;
+         name ="Cloudcoin";
         decimals = 3;
-         symbol = &quot;CDCN&quot;;
+         symbol = "CDCN";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

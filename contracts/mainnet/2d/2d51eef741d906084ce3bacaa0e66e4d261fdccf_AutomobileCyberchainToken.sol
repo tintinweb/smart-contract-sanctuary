@@ -137,8 +137,8 @@ contract StandardToken is Token {
  */
 contract AutomobileCyberchainToken is StandardToken, SafeMath {
 
-    string public name = &quot;Automobile Cyberchain Token&quot;;
-    string public symbol = &quot;AMCC&quot;;
+    string public name = "Automobile Cyberchain Token";
+    string public symbol = "AMCC";
     uint public decimals = 18;
     uint preSalePrice  = 32000;
     uint crowSalePrice = 20000;

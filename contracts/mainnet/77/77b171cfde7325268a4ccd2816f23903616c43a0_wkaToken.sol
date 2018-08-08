@@ -114,8 +114,8 @@ pragma solidity ^0.4.21;
      // Constructor
      // ------------------------------------------------------------------------
      function wkaToken() public {
-         symbol = &quot;wka&quot;;
-         name = &quot;wka&quot;;
+         symbol = "wka";
+         name = "wka";
          decimals = 18;
          _totalSupply = 10000000000 * 10**uint(decimals);
          balances[owner] = _totalSupply;

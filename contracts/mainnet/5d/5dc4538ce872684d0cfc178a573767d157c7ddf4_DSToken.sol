@@ -222,7 +222,7 @@ contract DSMath {
     }
 
     function rpow(uint128 x, uint64 n) constant internal returns (uint128 z) {
-        // This famous algorithm is called &quot;exponentiation by squaring&quot;
+        // This famous algorithm is called "exponentiation by squaring"
         // and calculates x^n with x as fixed-point and n as regular unsigned.
         //
         // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -330,7 +330,7 @@ contract DSTokenBase is ERC20, DSMath {
 
 contract DSToken is DSTokenBase(0), DSStop {
 
-    string  public  name = &quot;&quot;;
+    string  public  name = "";
     string  public  symbol;
     uint256  public  decimals = 18; // standard token precision. override to customize
 

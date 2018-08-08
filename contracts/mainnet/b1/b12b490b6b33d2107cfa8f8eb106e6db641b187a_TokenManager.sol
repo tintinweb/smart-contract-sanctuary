@@ -297,7 +297,7 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/InfoBurnableToken.sol
 
 contract InfoBurnableToken is BurnableToken, StandardToken {
-    string message = &quot;No sufficient funds&quot;;
+    string message = "No sufficient funds";
     address public manager;
 
     event NoFunds(address _who, string _message);
@@ -342,8 +342,8 @@ contract InfoBurnableToken is BurnableToken, StandardToken {
 contract DecenturionToken is InfoBurnableToken {
     using SafeMath for uint;
 
-    string constant public name = &quot;Decenturion Token&quot;;
-    string constant public symbol = &quot;DCNT&quot;;
+    string constant public name = "Decenturion Token";
+    string constant public symbol = "DCNT";
     uint constant public decimals = 18;
     uint constant public deployerAmount = 20 * (10 ** 6) * (10 ** decimals); // 20 000 000 DCNT
     uint constant public managerAmount = 10 * (10 ** 6) * (10 ** decimals); // 10 000 000 DCNT
@@ -361,7 +361,7 @@ contract DecenturionToken is InfoBurnableToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -452,8 +452,8 @@ contract TokenManager is Ownable, Pausable {
     uint public totalRegistrationBonusAmount = 0;
     uint public emissionTime;
     uint public tokensForBurn = 1*10**18; 
-    string public alreadyRegisteredMessage = &quot;user already registered&quot;;
-    string public nullBonusMessage = &quot;registration bonus = 0&quot;;
+    string public alreadyRegisteredMessage = "user already registered";
+    string public nullBonusMessage = "registration bonus = 0";
 
     mapping (address=>bool) isRegistered;
     mapping (address=>bool) isTokensDistributed;

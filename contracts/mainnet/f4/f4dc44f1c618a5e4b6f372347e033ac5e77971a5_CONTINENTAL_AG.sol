@@ -4,8 +4,8 @@ contract	CONTINENTAL_AG				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	CONTINENTAL_AG		&quot;	;
-	string	public		symbol =	&quot;	CONTI		&quot;	;
+	string	public		name =	"	CONTINENTAL_AG		"	;
+	string	public		symbol =	"	CONTI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10651142832031200000000000					;	

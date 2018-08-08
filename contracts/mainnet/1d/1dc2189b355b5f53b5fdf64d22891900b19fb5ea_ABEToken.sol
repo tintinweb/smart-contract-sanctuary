@@ -53,7 +53,7 @@ library SafeMath {
  /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -320,8 +320,8 @@ contract ABEToken is BurnableToken, StandardToken,Pausable {
     {
         totalSupply_ = 10000000000 ether;//Total amount of tokens
         balances[msg.sender] = totalSupply_;               //Initial tokens for owner
-        name = &quot;ABE&quot;;             //for display
-        symbol = &quot;ABE&quot;;                               //Symbol for display
+        name = "ABE";             //for display
+        symbol = "ABE";                               //Symbol for display
     }
 
 

@@ -111,8 +111,8 @@ contract LalaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LalaToken() public {
-        symbol = &quot;LALA&quot;;
-        name = &quot;LALA Token&quot;;
+        symbol = "LALA";
+        name = "LALA Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x8771d7348d48F1357bfA3C9FD0bD608Cfe658B83] = _totalSupply;

@@ -264,8 +264,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract PabloPlusToken is PausableToken {
-    string public name = &quot;PabloPlus&quot;;
-    string public symbol = &quot;PAB+&quot;;
+    string public name = "PabloPlus";
+    string public symbol = "PAB+";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 186000000000000000000000000000;
 

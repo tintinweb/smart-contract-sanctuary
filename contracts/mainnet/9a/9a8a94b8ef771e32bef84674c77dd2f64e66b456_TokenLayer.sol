@@ -190,11 +190,11 @@ contract TokenLayer is ERC721, Manageable {
     }
 
     function name() public pure returns (string) {
-        return &quot;CryptoCities&quot;;
+        return "CryptoCities";
     }
 
     function symbol() public pure returns (string) {
-        return &quot;SubcontinentToken&quot;;
+        return "SubcontinentToken";
     }
 
     function approve(address _to, uint256 _tokenId, address _from) public onlySystem {

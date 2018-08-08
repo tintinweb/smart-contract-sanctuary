@@ -63,8 +63,8 @@ contract UPEXToken {
         decimals = 18;
         totalSupply_ = 10 * 100000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balances[msg.sender] = totalSupply_;                // Give the creator all initial tokens
-        name = &quot;Upex Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;UPEX&quot;;                               // Set the symbol for display purposes
+        name = "Upex Token";                                   // Set the name for display purposes
+        symbol = "UPEX";                               // Set the symbol for display purposes
     }
 
     /**

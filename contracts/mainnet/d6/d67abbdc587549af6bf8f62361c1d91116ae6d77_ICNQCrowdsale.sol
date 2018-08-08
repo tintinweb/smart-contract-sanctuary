@@ -5,7 +5,7 @@ pragma solidity 0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -357,8 +357,8 @@ contract PausableToken is StandardToken, Pausable {
  * @author Gustavo Guimaraes - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="690e1c1a1d081f060e1c0004081b080c1a290e04080005470a0604">[email&#160;protected]</a>>
  */
 contract ICNQToken is PausableToken, MintableToken {
-    string public constant name = &quot;Iconiq Lab Token&quot;;
-    string public constant symbol = &quot;ICNQ&quot;;
+    string public constant name = "Iconiq Lab Token";
+    string public constant symbol = "ICNQ";
     uint8 public constant decimals = 18;
 }
 
@@ -372,14 +372,14 @@ contract Whitelist is Ownable {
     function addToWhitelist(address[] _addresses) public onlyOwner {
         for (uint256 i = 0; i < _addresses.length; i++) {
             allowedAddresses[_addresses[i]] = true;
-            WhitelistUpdated(now, &quot;Added&quot;, _addresses[i]);
+            WhitelistUpdated(now, "Added", _addresses[i]);
         }
     }
 
     function removeFromWhitelist(address[] _addresses) public onlyOwner {
         for (uint256 i = 0; i < _addresses.length; i++) {
             allowedAddresses[_addresses[i]] = false;
-            WhitelistUpdated(now, &quot;Removed&quot;, _addresses[i]);
+            WhitelistUpdated(now, "Removed", _addresses[i]);
         }
     }
 

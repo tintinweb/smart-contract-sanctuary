@@ -136,9 +136,9 @@ contract GalaxiumCoin is Owned, StandardToken {
     
 
     function GalaxiumCoin() {
-        name = &quot;Galaxium Coin&quot;;                          
+        name = "Galaxium Coin";                          
         decimals = 18; 
-        symbol = &quot;GXM&quot;;
+        symbol = "GXM";
         totalSupply = 50000000 * 10 ** uint256(decimals); 
         owner = msg.sender;
 

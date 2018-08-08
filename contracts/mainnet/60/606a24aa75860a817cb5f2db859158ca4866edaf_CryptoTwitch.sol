@@ -33,8 +33,8 @@ contract CryptoTwitch is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;CryptoTwitch&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;Twitch&quot;; // solhint-disable-line
+  string public constant NAME = "CryptoTwitch"; // solhint-disable-line
+  string public constant SYMBOL = "Twitch"; // solhint-disable-line
 
   uint256 private startingPrice = 0.001 ether;
   uint256 private constant PROMO_CREATION_LIMIT = 5000;

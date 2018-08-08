@@ -243,8 +243,8 @@ contract StandardToken is BasicToken, ERC20 {
 contract EtalonToken is StandardToken, Haltable {
   using SafeMath for uint256;
   
-  string  public name        = &quot;Etalon Token&quot;;
-  string  public symbol      = &quot;ETL&quot;;
+  string  public name        = "Etalon Token";
+  string  public symbol      = "ETL";
   uint256 public decimals    = 0;
   uint256 public INITIAL     = 4000000;
   
@@ -277,7 +277,7 @@ contract EtalonToken is StandardToken, Haltable {
 contract EtalonTokenPresale is Haltable {
   using SafeMath for uint256;
 
-  string public name = &quot;Etalon Token Presale&quot;;
+  string public name = "Etalon Token Presale";
 
   EtalonToken public token;
   address public beneficiary;

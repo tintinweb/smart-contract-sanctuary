@@ -133,8 +133,8 @@ pragma solidity ^0.4.18;
 	contract RealstateOceanProject1 is StandardToken {
 	
 
-	    string public name = &quot;Realstate Ocean Project 1&quot;;
-	    string public symbol = &quot;RSO-P1&quot;;
+	    string public name = "Realstate Ocean Project 1";
+	    string public symbol = "RSO-P1";
 	    uint public decimals = 18;
 	    uint EthPrice = 385;
 	 

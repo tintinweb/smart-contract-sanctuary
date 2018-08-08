@@ -281,9 +281,9 @@ contract MintableToken is StandardToken, Ownable {
 
 contract SingleTokenCoin is MintableToken {
     
-    string public constant name = &quot;Start mining&quot;;
+    string public constant name = "Start mining";
     
-    string public constant symbol = &quot;STM&quot;;
+    string public constant symbol = "STM";
     
     uint32 public constant decimals = 2;
     
@@ -368,9 +368,9 @@ contract Crowdsale is Ownable {
 
     address[] private privilegedWalletsCount;
 
-    bytes32 private g = &quot;granted&quot;;
+    bytes32 private g = "granted";
 
-    bytes32 private r = &quot;revorked&quot;;
+    bytes32 private r = "revorked";
 
     uint256 private soldTokens;
     uint256 private mincup;
@@ -865,7 +865,7 @@ contract Crowdsale is Ownable {
             wrapper.transfer(msg.value);
         }
       
-      wrapper.update(&quot;URL&quot;, &quot;json(https://api.kraken.com/0/public/Ticker?pair=ETHUSD).result.XETHZUSD.c.0&quot;);
+      wrapper.update("URL", "json(https://api.kraken.com/0/public/Ticker?pair=ETHUSD).result.XETHZUSD.c.0");
     }
 
     function getQueryPrice(string datasource) constant returns(uint256) {

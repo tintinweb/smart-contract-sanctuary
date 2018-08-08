@@ -180,17 +180,17 @@ contract CATToken is StandardToken {
 	using SafeMath for uint256;
 	
 	// keccak256 hash of hidden cap
-	string public constant HIDDEN_CAP = &quot;0xd22f19d54193ff5e08e7ba88c8e52ec1b9fc8d4e0cf177e1be8a764fa5b375fa&quot;;
+	string public constant HIDDEN_CAP = "0xd22f19d54193ff5e08e7ba88c8e52ec1b9fc8d4e0cf177e1be8a764fa5b375fa";
 	
 	// Events
 	event CreatedCAT(address indexed _creator, uint256 _amountOfCAT);
 	event CATRefundedForWei(address indexed _refunder, uint256 _amountOfWei);
 	
 	// Token data
-	string public constant name = &quot;BlockCAT Token&quot;;
-	string public constant symbol = &quot;CAT&quot;;
+	string public constant name = "BlockCAT Token";
+	string public constant symbol = "CAT";
 	uint256 public constant decimals = 18;  // Since our decimals equals the number of wei per ether, we needn&#39;t multiply sent values when converting between CAT and ETH.
-	string public version = &quot;1.0&quot;;
+	string public version = "1.0";
 	
 	// Addresses and contracts
 	address public executor;

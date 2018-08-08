@@ -113,8 +113,8 @@ contract CFToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CFToken() public {
-        symbol = &quot;CFH&quot;;
-        name = &quot;CloudFish Token&quot;;
+        symbol = "CFH";
+        name = "CloudFish Token";
         decimals = 18;
         _totalSupply = 320000000000000000000000000;
         balances[0xc53f16C6371be8a0E0cE02715d1c00CB34D07B83] = _totalSupply;

@@ -1,8 +1,8 @@
 pragma solidity ^0.4.13;
 
 contract AML {
-  string public constant name = &quot;AML Token&quot;;
-  string public constant symbol = &quot;AML&quot;;
+  string public constant name = "AML Token";
+  string public constant symbol = "AML";
   uint8 public constant decimals = 18;
   
   uint256 public totalSupply;

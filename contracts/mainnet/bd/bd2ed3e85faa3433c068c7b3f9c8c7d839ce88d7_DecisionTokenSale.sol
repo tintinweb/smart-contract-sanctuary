@@ -34,7 +34,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -331,13 +331,13 @@ contract DecisionToken is MintableToken, Claimable {
   using SafeMath for uint256;
 
   // Name to appear in ERC20 wallets
-  string public constant name = &quot;Decision Token&quot;;
+  string public constant name = "Decision Token";
 
   // Symbol for the Decision Token to appear in ERC20 wallets
-  string public constant symbol = &quot;HST&quot;;
+  string public constant symbol = "HST";
 
   // Version of the source contract
-  string public constant version = &quot;1.0&quot;;
+  string public constant version = "1.0";
 
   // Number of decimals for token display
   uint8 public constant decimals = 18;

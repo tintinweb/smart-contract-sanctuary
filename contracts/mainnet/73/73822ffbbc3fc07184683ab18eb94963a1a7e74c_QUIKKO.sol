@@ -109,8 +109,8 @@ contract QUIKKO is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function QUIKKO() public {
-        symbol = &quot;QKK&quot;;
-        name = &quot;QUIKKO&quot;;
+        symbol = "QKK";
+        name = "QUIKKO";
         decimals = 18;
         _totalSupply = 5000000000000000000000000000;
         balances[0x81fe0fb97f63de1c3decdedcb6a5df2e3e12b1a1] = _totalSupply;

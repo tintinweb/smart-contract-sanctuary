@@ -63,8 +63,8 @@ contract InfluToken {
     function InfluToken() public {
         totalSupply = 1500000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Influ Token&quot;;
-        symbol = &quot;INTO&quot;;
+        name = "Influ Token";
+        symbol = "INTO";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

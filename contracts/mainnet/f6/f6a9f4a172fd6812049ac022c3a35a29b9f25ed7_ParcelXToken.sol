@@ -82,7 +82,7 @@ contract MultiOwnable {
 
     mapping (bytes32 => uint) internal m_pendings;
 
-    // constructor is given number of sigs required to do protected &quot;multiOwner&quot; transactions
+    // constructor is given number of sigs required to do protected "multiOwner" transactions
     // as well as the selection of addresses capable of confirming them.
     function MultiOwnable (address[] _otherOwners, uint _multiRequires) internal {
         require(0 < _multiRequires && _multiRequires <= _otherOwners.length + 1);
@@ -194,8 +194,8 @@ contract ParcelXToken is ERC20, MultiOwnable, Pausable, Buyable, Convertible {
 
     using SafeMath for uint256;
   
-    string public constant name = &quot;TestGPX-name&quot;;
-    string public constant symbol = &quot;TestGPX-symbol&quot;;
+    string public constant name = "TestGPX-name";
+    string public constant symbol = "TestGPX-symbol";
     uint8 public constant decimals = 18;
     uint256 public constant TOTAL_SUPPLY = uint256(1000000000) * (uint256(10) ** decimals);  // 10,0000,0000
 

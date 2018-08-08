@@ -5,7 +5,7 @@ pragma solidity 0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -357,7 +357,7 @@ contract PausableToken is StandardToken, Pausable {
  * @author Gustavo Guimaraes - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="771002040316011810021e1a160516120437101a161e1b5914181a">[email&#160;protected]</a>>
  */
 contract ICNQToken is PausableToken, MintableToken {
-    string public constant name = &quot;Iconiq Lab Token&quot;;
-    string public constant symbol = &quot;ICNQ&quot;;
+    string public constant name = "Iconiq Lab Token";
+    string public constant symbol = "ICNQ";
     uint8 public constant decimals = 18;
 }

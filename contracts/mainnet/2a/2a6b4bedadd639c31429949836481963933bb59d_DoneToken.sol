@@ -70,8 +70,8 @@ contract DoneToken is owned, DSSafeAddSub {
 
     /* vars */
     string public standard = &#39;Token 1.0&#39;;
-    string public name = &quot;DONE&quot;;
-    string public symbol = &quot;DET&quot;;
+    string public name = "DONE";
+    string public symbol = "DET";
     uint8 public decimals = 16;
     uint public totalSupply = 150000000000000000000000; 
 

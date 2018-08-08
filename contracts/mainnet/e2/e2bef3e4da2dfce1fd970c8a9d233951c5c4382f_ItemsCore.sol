@@ -21,7 +21,7 @@ contract ERC721 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -216,8 +216,8 @@ contract ItemsBase is Pausable {
 contract ItemsOwnership is ItemsBase, ERC721 {
 
     /// @notice ERC721で定義されている、置き換え不可能なトークンの名前と記号。
-    string public constant name = &quot;CryptoFeatherItems&quot;;
-    string public constant symbol = &quot;CCHI&quot;;
+    string public constant name = "CryptoFeatherItems";
+    string public constant symbol = "CCHI";
 
     bytes4 constant InterfaceSignature_ERC165 = 
     bytes4(keccak256(&#39;supportsInterface(bytes4)&#39;));

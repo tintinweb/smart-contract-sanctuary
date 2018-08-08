@@ -161,8 +161,8 @@ contract BurnableToken is StandardToken {
 }
 
 contract OKFToken is BurnableToken, Ownable {
-    string public name = &quot;KickingOff Cinema Token&quot;;
-    string public symbol = &quot;OKF&quot;;
+    string public name = "KickingOff Cinema Token";
+    string public symbol = "OKF";
     uint256 public decimals = 18;
     
     uint256 public INITIAL_SUPPLY = 11000000 * 1 ether;                                // Amount tokens

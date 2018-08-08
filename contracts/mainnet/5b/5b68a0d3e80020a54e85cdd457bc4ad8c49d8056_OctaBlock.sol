@@ -73,8 +73,8 @@ contract OctaBlock is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;OctaBlock&quot;;
-    string public constant symbol = &quot;OTB&quot;;
+    string public constant name = "OctaBlock";
+    string public constant symbol = "OTB";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 500000000e8;

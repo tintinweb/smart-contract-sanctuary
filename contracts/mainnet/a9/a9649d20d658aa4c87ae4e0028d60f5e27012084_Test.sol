@@ -184,8 +184,8 @@ contract Ownable {
 
 contract Test is StandardToken, Ownable {
 
-  string public constant name = &quot;Chill Coin&quot;;
-  string public constant symbol = &quot;CHILL&quot;;
+  string public constant name = "Chill Coin";
+  string public constant symbol = "CHILL";
   uint8 public constant decimals = 18;
   
   uint256 public TestIssued;
@@ -228,7 +228,7 @@ contract Test is StandardToken, Ownable {
   function Test() {
     totalSupply = 100000000 * (10 ** uint256(decimals)); 
     TestIssued = totalSupply;
-    TestTalk = &quot;Test&quot;;
+    TestTalk = "Test";
     balances[msg.sender] = totalSupply;
   }
   function createTokens() payable {

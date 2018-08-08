@@ -120,8 +120,8 @@ contract ETokenPromo is StandardToken, Ownable {
   event Mint(address indexed to, uint256 amount);
   event MintFinished();
 
-  string public name = &quot;ENDO.network Promo Token&quot;;
-  string public symbol = &quot;ETP&quot;;
+  string public name = "ENDO.network Promo Token";
+  string public symbol = "ETP";
   uint256 public decimals = 18;
 
   bool public mintingFinished = false;

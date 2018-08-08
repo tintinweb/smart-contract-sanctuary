@@ -43,8 +43,8 @@ contract CelebrityToken is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;CryptoCelebrities&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;CelebrityToken&quot;; // solhint-disable-line
+  string public constant NAME = "CryptoCelebrities"; // solhint-disable-line
+  string public constant SYMBOL = "CelebrityToken"; // solhint-disable-line
 
   uint256 private startingPrice = 0.001 ether;
   uint256 private constant PROMO_CREATION_LIMIT = 5000;
@@ -469,8 +469,8 @@ contract CelebrityBreederToken is ERC721 {
   CelebrityToken private CelGen0=CelebrityToken(0xbb5Ed1EdeB5149AF3ab43ea9c7a6963b3C1374F7); //@Artyom Pointing to original CC
   CelebrityBreederToken private CelBetta=CelebrityBreederToken(0xdab64dc4a02225f76fccce35ab9ba53b3735c684); //@Artyom Pointing to betta 
  
-  string public constant NAME = &quot;CryptoCelebrityBreederCards&quot;; 
-  string public constant SYMBOL = &quot;CeleBreedCard&quot;; 
+  string public constant NAME = "CryptoCelebrityBreederCards"; 
+  string public constant SYMBOL = "CeleBreedCard"; 
 
   uint256 public breedingFee = 0.01 ether;
   uint256 public initialTraining = 0.00001 ether;

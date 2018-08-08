@@ -113,8 +113,8 @@ contract GameBit is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GameBit() public {
-        symbol = &quot;GBT&quot;;
-        name = &quot;GameBit&quot;;
+        symbol = "GBT";
+        name = "GameBit";
         decimals = 0;
         _totalSupply = 30000000;
         balances[0x27bbc5596cdb8c5b704dddf546a5b692921c9baa] = _totalSupply;

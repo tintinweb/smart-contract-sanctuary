@@ -113,8 +113,8 @@ contract TOZToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function TOZToken() public {
-        symbol = &quot;TOZ&quot;;
-        name = &quot;Tourisz token&quot;;
+        symbol = "TOZ";
+        name = "Tourisz token";
         decimals = 10;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -80,7 +80,7 @@ contract ApproveAndCallFallBack {
 
 /// @dev The actual token contract, the default controller is the msg.sender
 ///  that deploys the contract, so usually this token will be deployed by a
-///  token controller contract, which Giveth will call a &quot;Campaign&quot;
+///  token controller contract, which Giveth will call a "Campaign"
 contract MiniMeToken is Controlled {
 
     string public name;                //The Token&#39;s name: e.g. DigixDAO Tokens
@@ -617,9 +617,9 @@ contract SEED is MiniMeToken {
       0x00,          // _tokenFactory,
       0x00,          // _parentToken,
       0,             // _parentSnapShotBlock,
-      &quot;SEED&quot;,        // _tokenName,
+      "SEED",        // _tokenName,
       18,            // _decimalUnits,
-      &quot;SEED&quot;,        // _tokenSymbol,
+      "SEED",        // _tokenSymbol,
       false          // _transfersEnabled
     )
     public
@@ -631,7 +631,7 @@ contract SEED is MiniMeToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -673,7 +673,7 @@ contract Ownable {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * @dev This simplifies the implementation of &quot;user permissions&quot;.
+ * @dev This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable {
   mapping(address => bool) public whitelist;

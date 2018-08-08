@@ -120,7 +120,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -308,8 +308,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 
 contract CardiumToken is StandardToken, BurnableToken, Ownable, Pausable {
-    string public constant symbol = &quot;CAD&quot;;
-    string public constant name = &quot;Cardium Token&quot;;
+    string public constant symbol = "CAD";
+    string public constant name = "Cardium Token";
     uint8 public constant decimals = 2;
     uint256 public constant INITIAL_SUPPLY = 475372000000 * (10 ** uint256(decimals));
 

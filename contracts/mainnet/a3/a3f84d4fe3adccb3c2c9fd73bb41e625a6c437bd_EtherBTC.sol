@@ -15,9 +15,9 @@ contract EtherBTC {
     function EtherBTC() {
 
          initialSupply = 21000000;
-         name =&quot;etherbtc&quot;;
+         name ="etherbtc";
         decimals = 8;
-         symbol = &quot;ethb&quot;;
+         symbol = "ethb";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

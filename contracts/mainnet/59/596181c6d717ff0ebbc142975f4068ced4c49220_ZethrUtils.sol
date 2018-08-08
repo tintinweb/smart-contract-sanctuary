@@ -101,7 +101,7 @@ contract ZethrUtils {
 
     if (tokensToSellAtVariablePrice != 0) {
 
-      /* Note: Unlike the sister function in ethereumToTokens, we don&#39;t have to calculate any &quot;virtual&quot; token count.
+      /* Note: Unlike the sister function in ethereumToTokens, we don&#39;t have to calculate any "virtual" token count.
          This is because in sells, we sell the variable price tokens **first**, and then we sell the ICO-price tokens.
          Thus there isn&#39;t any weird stuff going on with the token supply.
 
@@ -124,7 +124,7 @@ contract ZethrUtils {
   view
   returns(uint)
   {
-    require (_tokens >= MIN_TOKEN_SELL_AMOUNT, &quot;Tried to sell too few tokens.&quot;);
+    require (_tokens >= MIN_TOKEN_SELL_AMOUNT, "Tried to sell too few tokens.");
 
     /*
      *  i = investment, p = price, t = number of tokens

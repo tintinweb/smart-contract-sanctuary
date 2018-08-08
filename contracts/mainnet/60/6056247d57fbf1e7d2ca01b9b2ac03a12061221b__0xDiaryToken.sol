@@ -284,9 +284,9 @@ contract _0xDiaryToken is ERC20Interface, Owned {
     function _0xDiaryToken() public onlyOwner{
 
 
-        symbol = &quot;0xDIARY&quot;;
+        symbol = "0xDIARY";
 
-        name = &quot;The 0xDiary Token&quot;;
+        name = "The 0xDiary Token";
 
         decimals = 8;
 

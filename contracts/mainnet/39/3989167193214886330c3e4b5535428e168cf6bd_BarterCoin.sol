@@ -109,8 +109,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract BarterCoin is StandardToken {
-	string public name = &quot;BARTER COIN&quot;; 
-	string public symbol = &quot;BART&quot;;
+	string public name = "BARTER COIN"; 
+	string public symbol = "BART";
 	uint public decimals = 2;
 	uint public INITIAL_SUPPLY = 100000000000;
 

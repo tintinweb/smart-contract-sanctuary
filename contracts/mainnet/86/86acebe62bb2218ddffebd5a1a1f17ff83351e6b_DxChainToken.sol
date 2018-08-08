@@ -104,8 +104,8 @@ contract DxChainToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DxChainToken() public {
-        symbol = &quot;DX&quot;;
-        name = &quot;DxChain Token&quot;;
+        symbol = "DX";
+        name = "DxChain Token";
         decimals = 18;
 		_totalSupply = 100000000000000000000000000000;
         bonusEnds = now + 1 weeks;

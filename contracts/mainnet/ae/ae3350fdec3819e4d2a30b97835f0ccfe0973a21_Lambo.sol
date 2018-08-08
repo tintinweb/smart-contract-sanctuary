@@ -2,8 +2,8 @@ pragma solidity ^0.4.21;
 
 contract Lambo {
 
-    string public name = &quot;Lambo&quot;;      //  token name
-    string public symbol = &quot;LAMBO&quot;;           //  token symbol
+    string public name = "Lambo";      //  token name
+    string public symbol = "LAMBO";           //  token symbol
     uint256 public decimals = 18;            //  token digit
 
     mapping (address => uint256) public balanceOf;

@@ -159,8 +159,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract LumoToken is MintableToken {
 
-    string public constant name = &quot;Lumo&quot;;
-    string public constant symbol = &quot;LUMO&quot;;
+    string public constant name = "Lumo";
+    string public constant symbol = "LUMO";
     uint8 public constant decimals = 18;
 
     function getTotalSupply() public returns (uint256) {

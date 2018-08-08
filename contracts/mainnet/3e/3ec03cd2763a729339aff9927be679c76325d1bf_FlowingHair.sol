@@ -79,8 +79,8 @@ contract FlowingHair is ERC20Interface, Owned {
 
 
     function FlowingHair() public {
-        symbol = &quot;FGH&quot;;
-        name = &quot;Flowing Hair&quot;;
+        symbol = "FGH";
+        name = "Flowing Hair";
         decimals = 18;
         _totalSupply = 240000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -60,8 +60,8 @@ contract SiaCashCoin is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;SiaCashCoin&quot;;
-    string public constant symbol = &quot;SCC&quot;;
+    string public constant name = "SiaCashCoin";
+    string public constant symbol = "SCC";
     uint public constant decimals = 18;
     
 uint256 public totalSupply = 30000000000e18;

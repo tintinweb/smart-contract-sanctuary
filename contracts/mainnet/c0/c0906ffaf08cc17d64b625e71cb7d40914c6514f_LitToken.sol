@@ -218,7 +218,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -328,8 +328,8 @@ contract CappedToken is MintableToken {
 }
 
 contract LitToken is CappedToken {
-    string public name = &quot;LIT&quot;;
-    string public symbol = &quot;LIT&quot;;
+    string public name = "LIT";
+    string public symbol = "LIT";
     uint8 public constant decimals = 18;
 
     uint256 public constant decimalFactor = 10 ** uint256(decimals);

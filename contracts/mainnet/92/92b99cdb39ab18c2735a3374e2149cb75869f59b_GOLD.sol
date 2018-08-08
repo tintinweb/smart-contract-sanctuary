@@ -119,8 +119,8 @@ contract StdToken is Token {
 
 contract GOLD is StdToken {
 /// Fields:
-     string public constant name = &quot;Goldmint GOLD Token&quot;;
-     string public constant symbol = &quot;GOLD&quot;;
+     string public constant name = "Goldmint GOLD Token";
+     string public constant symbol = "GOLD";
      uint public constant decimals = 18;
 
      address public creator = 0x0;

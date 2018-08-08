@@ -106,8 +106,8 @@ contract GCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GCoin() public {
-        symbol = &quot;GCT&quot;;
-        name = &quot;GCoin&quot;;
+        symbol = "GCT";
+        name = "GCoin";
         decimals = 18;
         _totalSupply = 250000000000000000000000000;
         balances[0x0F34FE701C8D9C8CD504914F7E3b3b68BdC88A56] = _totalSupply;

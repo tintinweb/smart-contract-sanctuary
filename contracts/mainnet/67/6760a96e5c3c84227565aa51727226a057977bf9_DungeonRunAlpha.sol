@@ -3,7 +3,7 @@ pragma solidity 0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -205,7 +205,7 @@ contract EDCoreInterface {
 
 
 /**
- * @title Core Contract of &quot;Dungeon Run&quot; event game of the ED (Ether Dungeon) Platform.
+ * @title Core Contract of "Dungeon Run" event game of the ED (Ether Dungeon) Platform.
  * @dev Dungeon Run is a single-player game mode added to the Ether Dungeon platform.
  *  The objective of Dungeon Run is to defeat as many monsters as possible.
  */

@@ -263,8 +263,8 @@ contract FreeLimitPool is BasicToken, Ownable {
     uint256 public nfsPoolCount;
 
     function nfsPoolTransfer(address _to, uint256 _value) public onlyOwner returns (bool) {
-        require(nfsPoolLeft >= _value, &quot;Value more than tokens left&quot;);
-        require(_to != address(0), &quot;Not allowed send to trash tokens&quot;);
+        require(nfsPoolLeft >= _value, "Value more than tokens left");
+        require(_to != address(0), "Not allowed send to trash tokens");
 
         nfsPoolLeft -= _value;
         balances[_to] = balances[_to].add(_value);
@@ -290,8 +290,8 @@ contract TwoPhases is FreeLimitPool {
     uint256 public sPeriodSoldTokensLimit;
 
     function() public payable {
-        require(0.0001 ether <= msg.value, &quot;min limit eth 0.0001&quot;);
-        require(sPeriodEndDate >= now, &quot;Sell tokens all periods ended&quot;);
+        require(0.0001 ether <= msg.value, "min limit eth 0.0001");
+        require(sPeriodEndDate >= now, "Sell tokens all periods ended");
         uint256 tokensCount;
         uint256 ethUsdRate = oracle.getEthUsdRate();
         bool isSecondPeriodNow = now >= sPerDate;
@@ -312,8 +312,8 @@ contract TwoPhases is FreeLimitPool {
                 tokensCount += weiLeft * ethUsdRate / tokenSecondPeriodPrice;
             }
         }
-        require(tokensCount > 0, &quot;tokens count must be positive&quot;);
-        require((soldTokensCount + tokensCount) <= (totalSupply_ - nfsPoolCount), &quot;tokens limit&quot;);
+        require(tokensCount > 0, "tokens count must be positive");
+        require((soldTokensCount + tokensCount) <= (totalSupply_ - nfsPoolCount), "tokens limit");
 
         balances[msg.sender] += tokensCount;
         soldTokensCount += tokensCount;
@@ -337,7 +337,7 @@ contract Exchangeable is StandardToken, Ownable {
     uint256 public transfersAllowDate;
 
     function transfer(address _to, uint256 _value) public returns (bool) {
-        require(transfersAllowDate <= now, &quot;Function cannot be called at this time.&quot;);
+        require(transfersAllowDate <= now, "Function cannot be called at this time.");
 
         return BasicToken.transfer(_to, _value);
     }
@@ -367,8 +367,8 @@ contract JokerToken is Exchangeable, TwoPhases {
     uint8 public decimals;
 
     constructor() public {
-        name = &quot;Joker.buzz token&quot;;
-        symbol = &quot;JOKER&quot;;
+        name = "Joker.buzz token";
+        symbol = "JOKER";
         decimals = 18;
         totalSupply_ = 20000000 * (uint256(10) ** decimals);
         // in us cents
@@ -389,21 +389,21 @@ contract JokerToken is Exchangeable, TwoPhases {
         bool isSecondPeriodNow = now >= sPerDate;
         bool isSecondPeriodTokensLimitReached = soldTokensCount >= (totalSupply_ - sPeriodSoldTokensLimit - nfsPoolCount);
         if (transfersAllowDate <= now) {
-            return &quot;Last third phase, you can transfer tokens between users, but can&#39;t buy more tokens.&quot;;
+            return "Last third phase, you can transfer tokens between users, but can&#39;t buy more tokens.";
         }
         if (sPeriodEndDate < now) {
-            return &quot;Second phase ended, You can not buy more tokens.&quot;;
+            return "Second phase ended, You can not buy more tokens.";
         }
         if (isSecondPeriodNow && isSecondPeriodTokensLimitReached) {
-            return &quot;Second phase by time and solded tokens&quot;;
+            return "Second phase by time and solded tokens";
         }
         if (isSecondPeriodNow) {
-            return &quot;Second phase by time&quot;;
+            return "Second phase by time";
         }
         if (isSecondPeriodTokensLimitReached) {
-            return &quot;Second phase by solded tokens&quot;;
+            return "Second phase by solded tokens";
         }
-        return &quot;First phase&quot;;
+        return "First phase";
     }
 
     function getIsSecondPhaseByTime() public view returns (bool) {

@@ -2,8 +2,8 @@ pragma solidity ^0.4.18;
 
 contract LinkyexToken {
 
-    string public name = &quot;Linkyex Token&quot;;      //  token name
-    string public symbol = &quot;LT&quot;;           //  token symbol
+    string public name = "Linkyex Token";      //  token name
+    string public symbol = "LT";           //  token symbol
     uint256 public decimals = 8;            //  token digit
 
     mapping (address => uint256) public balanceOf;

@@ -71,10 +71,10 @@ contract Klein is ERC20, owned, SafeMath {
     mapping (address => mapping (address => mapping (uint256 => bool))) specificAllowed;
     
                                                                     // The Swarm address of the artwork is saved here for reference and posterity
-    string public constant zonesSwarmAddress = &quot;0a52f265d8d60a89de41a65069fa472ac3b130c269b4788811220b6546784920&quot;;
+    string public constant zonesSwarmAddress = "0a52f265d8d60a89de41a65069fa472ac3b130c269b4788811220b6546784920";
     address public constant theRiver = 0x8aDE9bCdA847852DE70badA69BBc9358C1c7B747;                      // ROPSTEN REVIVAL address
-    string public constant name = &quot;Digital Zone of Immaterial Pictorial Sensibility&quot;;
-    string public constant symbol = &quot;IKB&quot;;
+    string public constant name = "Digital Zone of Immaterial Pictorial Sensibility";
+    string public constant symbol = "IKB";
     uint256 public constant decimals = 0;
     uint256 public maxSupplyPossible;
     uint256 public initialPrice = 10**17;                              // should equal 0.1 ETH

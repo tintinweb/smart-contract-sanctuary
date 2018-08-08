@@ -72,8 +72,8 @@ contract BitcoinDiamondToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Bitcoin Diamond Token&quot;;
-    string public constant symbol = &quot;BDT&quot;;
+    string public constant name = "Bitcoin Diamond Token";
+    string public constant symbol = "BDT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 20000000000e8;

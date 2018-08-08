@@ -113,8 +113,8 @@ contract StuckOnStupidToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function StuckOnStupidToken() public {
-        symbol = &quot;SOS&quot;;
-        name = &quot;StuckOnStupidToken&quot;;
+        symbol = "SOS";
+        name = "StuckOnStupidToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x1CFEfC5697A521Ed3B7a4d023c28dd33c3E74b8E] = _totalSupply;

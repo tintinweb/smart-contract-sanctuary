@@ -78,8 +78,8 @@ contract CryptoCurrencyToken is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function CryptoCurrencyToken() public {
-        symbol = &quot;CCT&quot;;
-        name = &quot;CryptoCurrencyToken&quot;;
+        symbol = "CCT";
+        name = "CryptoCurrencyToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[owner] = _totalSupply;

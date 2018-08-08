@@ -72,7 +72,7 @@ pragma solidity 0.4.24;
 /**
  * @title OpenZeppelin Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -145,11 +145,11 @@ contract ZironexERC20 is Ownable {
   mapping (address => mapping (address => uint256)) internal allowed;
 
   /* Public variables for the ERC20 token */
-  string public constant standard = &quot;ERC20 Zironex&quot;;
+  string public constant standard = "ERC20 Zironex";
   uint8 public constant decimals = 18; // hardcoded to be a constant
   uint256 public totalSupply = 10000000000000000000000000;
-  string public name = &quot;Ziron&quot;;
-  string public symbol = &quot;ZNX&quot;;
+  string public name = "Ziron";
+  string public symbol = "ZNX";
 
   event Transfer(address indexed from, address indexed to, uint256 value);
   event Approval(address indexed owner, address indexed spender, uint256 value);

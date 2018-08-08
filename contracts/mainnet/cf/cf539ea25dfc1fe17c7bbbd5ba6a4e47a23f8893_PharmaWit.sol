@@ -113,8 +113,8 @@ contract PharmaWit is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PharmaWit() public {
-        symbol = &quot;PHW&quot;;
-        name = &quot;PharmaWit&quot;;
+        symbol = "PHW";
+        name = "PharmaWit";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x323278411277ee22Fd9Cd9Dd87Ac619181081012] = _totalSupply;

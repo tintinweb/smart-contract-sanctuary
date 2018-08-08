@@ -133,8 +133,8 @@ contract StandardToken is Token {
  */
 contract CTest1 is StandardToken, SafeMath {
 
-    string public name = &quot;CTest1 Token&quot;;
-    string public symbol = &quot;CTest1&quot;;
+    string public name = "CTest1 Token";
+    string public symbol = "CTest1";
     uint public decimals = 18;
     
     uint256 public totalSupply = 1000000;

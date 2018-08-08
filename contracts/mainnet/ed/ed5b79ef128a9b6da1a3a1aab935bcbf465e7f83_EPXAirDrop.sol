@@ -29,7 +29,7 @@ contract EPXAirDrop is owned {
   // owner/admin & token reward
   address        public admin                     = owner;    // admin address
   StandardToken  public tokenReward;                          // address of the token used as reward
-  string         public currentStatus             = &quot;&quot;;       // current crowdsale status
+  string         public currentStatus             = "";       // current crowdsale status
   bool           public alive                     = true;
 
   // AirDrop uses ERC20 transfer event for logging
@@ -40,7 +40,7 @@ contract EPXAirDrop is owned {
     admin = msg.sender;
     tokenReward                             = StandardToken(0x35BAA72038F127f9f8C8f9B491049f64f377914d);
     alive                                   = true;
-    currentStatus                           = &quot;Contract is deployed&quot;;
+    currentStatus                           = "Contract is deployed";
   }
 
   function PerformAirDrop() public onlyOwner {

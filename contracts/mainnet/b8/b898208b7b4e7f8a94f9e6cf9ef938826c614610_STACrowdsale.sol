@@ -52,7 +52,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -447,9 +447,9 @@ contract MintableToken is StandardToken, Ownable {
  * Based on references from OpenZeppelin: https://github.com/OpenZeppelin/zeppelin-solidity
  */
 contract STA is MintableToken, PausableToken {
-    string public constant version = &quot;1.0&quot;;
-    string public constant name = &quot;STAB Crypto Platform&quot;;
-    string public constant symbol = &quot;STAB&quot;;
+    string public constant version = "1.0";
+    string public constant name = "STAB Crypto Platform";
+    string public constant symbol = "STAB";
     uint8 public constant decimals = 18;
 
     event MintMasterTransferred(address indexed previousMaster, address indexed newMaster);
@@ -659,11 +659,11 @@ contract Crowdsale {
     wallet.transfer(crowdValue);
    
     
-    emit TokenAmount(&quot;_forwardFunds &quot;, msgValue);
+    emit TokenAmount("_forwardFunds ", msgValue);
     
-    emit TokenAmount(&quot;_forwardFunds &quot;, tecValue);
+    emit TokenAmount("_forwardFunds ", tecValue);
     
-    emit TokenAmount(&quot;_forwardFunds &quot;, crowdValue);
+    emit TokenAmount("_forwardFunds ", crowdValue);
   }
 }
 
@@ -817,7 +817,7 @@ contract WhitelistedCrowdsale is Crowdsale, Ownable {
 contract STACrowdsale is FinalizableCrowdsale,WhitelistedCrowdsale {
     using SafeMath for uint256;
     // Constants
-    string public constant version = &quot;1.0&quot;;
+    string public constant version = "1.0";
   
   
     address public constant TEC_TEAM_WALLET=0xa6567DFf7A196eEFaC0FF8F0Adeb033035231Deb ;

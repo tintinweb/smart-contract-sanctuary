@@ -319,7 +319,7 @@ contract DSMath {
         z = add(mul(x, RAY), y / 2) / y;
     }
 
-    // This famous algorithm is called &quot;exponentiation by squaring&quot;
+    // This famous algorithm is called "exponentiation by squaring"
     // and calculates x^n with x as fixed-point and n as regular unsigned.
     //
     // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -356,8 +356,8 @@ contract DSThing is DSAuth, DSNote, DSMath {
 }
 
 contract WETH9_ {
-    string public name     = &quot;Wrapped Ether&quot;;
-    string public symbol   = &quot;WETH&quot;;
+    string public name     = "Wrapped Ether";
+    string public symbol   = "WETH";
     uint8  public decimals = 18;
 
     event  Approval(address indexed src, address indexed guy, uint wad);
@@ -460,7 +460,7 @@ interface AssetInterface {
      * https://github.com/ethereum/EIPs/blob/f90864a3d2b2b45c4decf95efd26b3f0c276051a/EIPS/eip-20-token-standard.md
      * https://github.com/ethereum/EIPs/issues/20
      *
-     *  Added support for the ERC 223 &quot;tokenFallback&quot; method in a &quot;transfer&quot; function with a payload.
+     *  Added support for the ERC 223 "tokenFallback" method in a "transfer" function with a payload.
      *  https://github.com/ethereum/EIPs/issues/223
      */
 
@@ -862,7 +862,7 @@ contract Fund is DSMath, DBC, Owned, Shares, FundInterface {
         address[] ofExchanges,
         address[] ofDefaultAssets
     )
-        Shares(withName, &quot;MLNF&quot;, 18, now)
+        Shares(withName, "MLNF", 18, now)
     {
         require(ofManagementFee < 10 ** 18); // Require management fee to be less than 100 percent
         require(ofPerformanceFee < 10 ** 18); // Require performance fee to be less than 100 percent
@@ -1038,7 +1038,7 @@ contract Fund is DSMath, DBC, Owned, Shares, FundInterface {
 
     /// @notice Universal method for calling exchange functions through adapters
     /// @notice See adapter contracts for parameters needed for each exchange
-    /// @param exchangeIndex Index of the exchange in the &quot;exchanges&quot; array
+    /// @param exchangeIndex Index of the exchange in the "exchanges" array
     /// @param method Signature of the adapter method to call (as per ABI spec)
     /// @param orderAddresses [0] Order maker
     /// @param orderAddresses [1] Order taker
@@ -1181,9 +1181,9 @@ contract Fund is DSMath, DBC, Owned, Shares, FundInterface {
     @notice Calculates unclaimed fees of the fund manager
     @param gav Gross asset value in QUOTE_ASSET and multiplied by 10 ** shareDecimals
     @return {
-      &quot;managementFees&quot;: &quot;A time (seconds) based fee in QUOTE_ASSET and multiplied by 10 ** shareDecimals&quot;,
-      &quot;performanceFees&quot;: &quot;A performance (rise of sharePrice measured in QUOTE_ASSET) based fee in QUOTE_ASSET and multiplied by 10 ** shareDecimals&quot;,
-      &quot;unclaimedfees&quot;: &quot;The sum of both managementfee and performancefee in QUOTE_ASSET and multiplied by 10 ** shareDecimals&quot;
+      "managementFees": "A time (seconds) based fee in QUOTE_ASSET and multiplied by 10 ** shareDecimals",
+      "performanceFees": "A performance (rise of sharePrice measured in QUOTE_ASSET) based fee in QUOTE_ASSET and multiplied by 10 ** shareDecimals",
+      "unclaimedfees": "The sum of both managementfee and performancefee in QUOTE_ASSET and multiplied by 10 ** shareDecimals"
     }
     */
     function calcUnclaimedFees(uint gav)
@@ -1239,13 +1239,13 @@ contract Fund is DSMath, DBC, Owned, Shares, FundInterface {
     /**
     @notice Calculates essential fund metrics
     @return {
-      &quot;gav&quot;: &quot;Gross asset value of this fund denominated in [base unit of melonAsset]&quot;,
-      &quot;managementFee&quot;: &quot;A time (seconds) based fee&quot;,
-      &quot;performanceFee&quot;: &quot;A performance (rise of sharePrice measured in QUOTE_ASSET) based fee&quot;,
-      &quot;unclaimedFees&quot;: &quot;The sum of both managementFee and performanceFee denominated in [base unit of melonAsset]&quot;,
-      &quot;feesShareQuantity&quot;: &quot;The number of shares to be given as fees to the manager&quot;,
-      &quot;nav&quot;: &quot;Net asset value denominated in [base unit of melonAsset]&quot;,
-      &quot;sharePrice&quot;: &quot;Share price denominated in [base unit of melonAsset]&quot;
+      "gav": "Gross asset value of this fund denominated in [base unit of melonAsset]",
+      "managementFee": "A time (seconds) based fee",
+      "performanceFee": "A performance (rise of sharePrice measured in QUOTE_ASSET) based fee",
+      "unclaimedFees": "The sum of both managementFee and performanceFee denominated in [base unit of melonAsset]",
+      "feesShareQuantity": "The number of shares to be given as fees to the manager",
+      "nav": "Net asset value denominated in [base unit of melonAsset]",
+      "sharePrice": "Share price denominated in [base unit of melonAsset]"
     }
     */
     function performCalculations()
@@ -1346,7 +1346,7 @@ contract Fund is DSMath, DBC, Owned, Shares, FundInterface {
             // CRITICAL ERR: Not enough fund asset balance for owed ownershipQuantitiy, eg in case of unreturned asset quantity at address(exchanges[i].exchange) address
             if (uint(AssetInterface(ofAsset).balanceOf(address(this))) < ownershipQuantities[i]) {
                 isShutDown = true;
-                emit ErrorMessage(&quot;CRITICAL ERR: Not enough assetHoldings for owed ownershipQuantitiy&quot;);
+                emit ErrorMessage("CRITICAL ERR: Not enough assetHoldings for owed ownershipQuantitiy");
                 return false;
             }
         }
@@ -2204,7 +2204,7 @@ contract MatchingMarket is MatchingEvents, ExpiringMarket, DSNote {
         uint buy_amt,    //maker (ask) buy how much
         ERC20 buy_gem,   //maker (ask) buy which token
         uint pos,        //position to insert offer, 0 should be used if unknown
-        bool rounding    //match &quot;close enough&quot; orders?
+        bool rounding    //match "close enough" orders?
     )
     public
     isWhitelist(pay_gem, buy_gem)
@@ -2330,7 +2330,7 @@ contract MatchingMarket is MatchingEvents, ExpiringMarket, DSNote {
     }
 
     //set the minimum sell amount for a token
-    //    Function is used to avoid &quot;dust offers&quot; that have
+    //    Function is used to avoid "dust offers" that have
     //    very small amount of tokens to sell, and it would
     //    cost more gas to accept the offer, than the value
     //    of tokens received.
@@ -2608,7 +2608,7 @@ contract MatchingMarket is MatchingEvents, ExpiringMarket, DSNote {
         uint t_buy_amt,    //taker buy how much
         ERC20 t_buy_gem,   //taker buy which token
         uint pos,          //position id
-        bool rounding      //match &quot;close enough&quot; orders?
+        bool rounding      //match "close enough" orders?
     )
     internal
     returns (uint id)
@@ -2625,9 +2625,9 @@ contract MatchingMarket is MatchingEvents, ExpiringMarket, DSNote {
             m_pay_amt = offers[best_maker_id].pay_amt;
 
             // Ugly hack to work around rounding errors. Based on the idea that
-            // the furthest the amounts can stray from their &quot;true&quot; values is 1.
+            // the furthest the amounts can stray from their "true" values is 1.
             // Ergo the worst case has t_pay_amt and m_pay_amt at +1 away from
-            // their &quot;correct&quot; values and m_buy_amt and t_buy_amt at -1.
+            // their "correct" values and m_buy_amt and t_buy_amt at -1.
             // Since (c - 1) * (d - 1) > (a + 1) * (b + 1) is equivalent to
             // c * d > a * b + a + b + c + d, we write...
             if (mul(m_buy_amt, t_buy_amt) > mul(t_pay_amt, m_pay_amt) +
@@ -3137,8 +3137,8 @@ contract SimplePriceFeed is SimplePriceFeedInterface, DSThing, DBC {
     @dev Asset has been registered
     @param ofAsset Asset for which price should be returned
     @return {
-      &quot;price&quot;: &quot;Price formatting: mul(exchangePrice, 10 ** decimal), to avoid floating numbers&quot;,
-      &quot;timestamp&quot;: &quot;When the asset&#39;s price was updated&quot;
+      "price": "Price formatting: mul(exchangePrice, 10 ** decimal), to avoid floating numbers",
+      "timestamp": "When the asset&#39;s price was updated"
     }
     */
     function getPrice(address ofAsset)
@@ -3154,8 +3154,8 @@ contract SimplePriceFeed is SimplePriceFeedInterface, DSThing, DBC {
     @dev Convention for price formatting: mul(price, 10 ** decimal), to avoid floating numbers
     @param ofAssets Assets for which prices should be returned
     @return {
-        &quot;prices&quot;:       &quot;Array of prices&quot;,
-        &quot;timestamps&quot;:   &quot;Array of timestamps&quot;,
+        "prices":       "Array of prices",
+        "timestamps":   "Array of timestamps",
     }
     */
     function getPrices(address[] ofAssets)
@@ -3318,7 +3318,7 @@ contract OperatorStaking is DBC {
     uint public numStakers; // Current number of stakers (Needed because of array holes)
     AssetInterface public stakingToken;
 
-    // TODO: consider renaming &quot;operator&quot; depending on how this is implemented
+    // TODO: consider renaming "operator" depending on how this is implemented
     //  (i.e. is pricefeed staking itself?)
     function OperatorStaking(
         AssetInterface _stakingToken,
@@ -3622,7 +3622,7 @@ contract CanonicalPriceFeed is OperatorStaking, SimplePriceFeed, CanonicalRegist
         stakedAmounts[user] = 0;
         stakeToWithdraw[user] = 0;
         updateStakerRanking(user);
-        emit StakeBurned(user, totalToBurn, &quot;&quot;);
+        emit StakeBurned(user, totalToBurn, "");
     }
 
     // PUBLIC METHODS
@@ -3798,9 +3798,9 @@ contract CanonicalPriceFeed is OperatorStaking, SimplePriceFeed, CanonicalRegist
     @dev Existing price ofAssets quoted in QUOTE_ASSET (convention)
     @param ofAsset Asset for which inverted price should be return
     @return {
-        &quot;isRecent&quot;: &quot;Whether the price is fresh, given VALIDITY interval&quot;,
-        &quot;invertedPrice&quot;: &quot;Price based (instead of quoted) against QUOTE_ASSET&quot;,
-        &quot;assetDecimals&quot;: &quot;Decimal places for this asset&quot;
+        "isRecent": "Whether the price is fresh, given VALIDITY interval",
+        "invertedPrice": "Price based (instead of quoted) against QUOTE_ASSET",
+        "assetDecimals": "Decimal places for this asset"
     }
     */
     function getInvertedPriceInfo(address ofAsset)
@@ -3828,9 +3828,9 @@ contract CanonicalPriceFeed is OperatorStaking, SimplePriceFeed, CanonicalRegist
     @param ofBase Address of base asset
     @param ofQuote Address of quote asset
     @return {
-        &quot;isRecent&quot;: &quot;Whether the price is fresh, given VALIDITY interval&quot;,
-        &quot;referencePrice&quot;: &quot;Reference price&quot;,
-        &quot;decimal&quot;: &quot;Decimal places for this asset&quot;
+        "isRecent": "Whether the price is fresh, given VALIDITY interval",
+        "referencePrice": "Reference price",
+        "decimal": "Decimal places for this asset"
     }
     */
     function getReferencePriceInfo(address ofBase, address ofQuote)

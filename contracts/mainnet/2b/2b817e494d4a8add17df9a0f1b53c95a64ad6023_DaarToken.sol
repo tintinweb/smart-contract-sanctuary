@@ -48,7 +48,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -259,8 +259,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract DaarToken is StandardToken, Ownable {
-    string public name = &quot;Digital Asset Automated Revenue&quot;;
-    string public symbol = &quot;DAAR&quot;;
+    string public name = "Digital Asset Automated Revenue";
+    string public symbol = "DAAR";
     uint8 public decimals = 18;
     uint dmult = (10 ** uint256(decimals));
     uint public INITIAL_SUPPLY = 1000000000 * dmult;

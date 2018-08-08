@@ -280,8 +280,8 @@ contract CappedToken is MintableToken {
 }
 
 contract CNToken is CappedToken {
-    string public name = &quot;CryptalNews&quot;;
-    string public symbol = &quot;CN&quot;;
+    string public name = "CryptalNews";
+    string public symbol = "CN";
     uint8 public decimals = 18;
     uint256 public _cap = 100000000 * (10 ** 18);
 

@@ -133,8 +133,8 @@ contract RenCap is StandardToken {
     
     // Meta data
     
-    string  public constant name        = &quot;RenCap&quot;;
-    string  public constant symbol      = &quot;RNP&quot;;
+    string  public constant name        = "RenCap";
+    string  public constant symbol      = "RNP";
     uint    public constant decimals    = 18;
     uint256 public etherRaised = 0;
     

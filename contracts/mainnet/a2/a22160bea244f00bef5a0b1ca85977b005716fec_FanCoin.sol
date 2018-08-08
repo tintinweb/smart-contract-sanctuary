@@ -93,7 +93,7 @@ contract Stampable is ERC20 {
         // Subtract balance of 0th token ID _amt value.
         removeToken(msg.sender, _tokenToStamp, _amt);
 
-        // &quot;Stamp&quot; the token
+        // "Stamp" the token
         addToken(msg.sender, _stamp, _amt);
 
         // Emit the stamping event
@@ -159,8 +159,8 @@ contract FanCoin is Stampable {
     */
     function FanCoin() public {
         owner = 0x7DDf115B8eEf3058944A3373025FB507efFAD012;
-        name = &quot;FanChain&quot;;
-        symbol = &quot;FANZ&quot;;
+        name = "FanChain";
+        symbol = "FANZ";
         decimals = 4;
 
         // Total supply is one billion tokens

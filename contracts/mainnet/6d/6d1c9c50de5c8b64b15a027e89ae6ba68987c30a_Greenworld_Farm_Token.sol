@@ -113,8 +113,8 @@ contract Greenworld_Farm_Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;GWF&quot;;
-        name = &quot;Greenworld Farm Token&quot;;
+        symbol = "GWF";
+        name = "Greenworld Farm Token";
         decimals = 18;
         _totalSupply = 300000000;
         balances[0x3704B8270313804cC02E4f1EEb2baa0fBF097baC] = _totalSupply;

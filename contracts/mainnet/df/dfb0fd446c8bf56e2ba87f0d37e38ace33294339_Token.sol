@@ -113,8 +113,8 @@ contract ERC20 is Base {
 
 contract Token is ERC20 {
 
-    string public name = &quot;Array.io Token&quot;;
-    string public symbol = &quot;eRAY&quot;;
+    string public name = "Array.io Token";
+    string public symbol = "eRAY";
     uint8 public decimals = 18;
     uint public constant BIT = 10**18;
     bool public tgeLive = false;

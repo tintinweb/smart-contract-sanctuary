@@ -210,7 +210,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -250,8 +250,8 @@ contract Ownable {
 
 contract DBCC is Ownable, StandardToken  {
 
-  string public constant name = &quot;DBCCoin&quot;;
-  string public constant symbol = &quot;DBCC&quot;;
+  string public constant name = "DBCCoin";
+  string public constant symbol = "DBCC";
   uint8 public constant decimals = 18;
   
   uint256 public constant INITIAL_SUPPLY = (870 * (10**6)) * (10 ** uint256(decimals));

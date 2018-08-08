@@ -207,8 +207,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract KRWT is StandardToken {
-    string constant public name = &quot;Korean Won&quot;;
-    string constant public symbol = &quot;KRWT&quot;;
+    string constant public name = "Korean Won";
+    string constant public symbol = "KRWT";
     uint8 constant public decimals = 0;
     uint public totalSupply = 10000000000 * 10**18;
 

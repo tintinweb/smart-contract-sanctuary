@@ -216,8 +216,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract DeneumToken is StandardToken {
-    string public name = &quot;Deneum&quot;;
-    string public symbol = &quot;DNM&quot;;
+    string public name = "Deneum";
+    string public symbol = "DNM";
     uint8 public decimals = 2;
     bool public mintingFinished = false;
     mapping (address => bool) owners;

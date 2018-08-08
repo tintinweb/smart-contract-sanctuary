@@ -85,8 +85,8 @@ pragma solidity 0.4.18;
 
 
 contract EVMScriptRegistryConstants {
-    bytes32 constant public EVMSCRIPT_REGISTRY_APP_ID = keccak256(&quot;evmreg.aragonpm.eth&quot;);
-    bytes32 constant public EVMSCRIPT_REGISTRY_APP = keccak256(keccak256(&quot;app&quot;), EVMSCRIPT_REGISTRY_APP_ID);
+    bytes32 constant public EVMSCRIPT_REGISTRY_APP_ID = keccak256("evmreg.aragonpm.eth");
+    bytes32 constant public EVMSCRIPT_REGISTRY_APP = keccak256(keccak256("app"), EVMSCRIPT_REGISTRY_APP_ID);
 }
 
 
@@ -432,7 +432,7 @@ interface ACLOracle {
 
 
 contract ACL is IACL, AragonApp, ACLHelpers {
-    bytes32 constant public CREATE_PERMISSIONS_ROLE = keccak256(&quot;CREATE_PERMISSIONS_ROLE&quot;);
+    bytes32 constant public CREATE_PERMISSIONS_ROLE = keccak256("CREATE_PERMISSIONS_ROLE");
 
     // whether a certain entity has a permission
     mapping (bytes32 => bytes32) permissions; // 0 for no permission, or parameters id

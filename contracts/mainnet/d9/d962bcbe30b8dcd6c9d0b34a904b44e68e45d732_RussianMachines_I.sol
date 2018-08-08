@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	RussianMachines_I				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	RussianMachines_I		&quot;	;
-	string	public	constant	symbol =	&quot;	RUSSII		&quot;	;
+	string	public	constant	name =	"	RussianMachines_I		"	;
+	string	public	constant	symbol =	"	RUSSII		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

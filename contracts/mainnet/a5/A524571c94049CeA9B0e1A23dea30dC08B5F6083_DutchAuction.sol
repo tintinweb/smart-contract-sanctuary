@@ -305,8 +305,8 @@ contract DutchAuction is Ownable, HasNoEther, HasNoTokens {
         return keccak256(abi.encodePacked(nonce, bid_id, investor_address, share_price, shares_count));
     }
 
-    /// @notice Allows the &quot;burning&quot; of a bid, for cases in which a bid was corrupted and can&#39;t be decrypted.
-    /// &quot;Burnt&quot; bids do not participate in the final calculations for auction participants
+    /// @notice Allows the "burning" of a bid, for cases in which a bid was corrupted and can&#39;t be decrypted.
+    /// "Burnt" bids do not participate in the final calculations for auction participants
     /// @param _index Indicates the index of the bid to be burnt
     function burnBid(uint _index) public onlyOwner {
         require(status == state.ended);
@@ -326,7 +326,7 @@ contract DutchAuction is Ownable, HasNoEther, HasNoTokens {
     }
 
     /// @notice Appends the bid&#39;s data to the contract, for use in the final calculations
-    /// Once all bids are appended, the auction is locked and changes its state to &quot;decrypted&quot;
+    /// Once all bids are appended, the auction is locked and changes its state to "decrypted"
     /// @dev Bids MUST be appended in order of asset valuation,
     /// since the contract relies on off-chain sorting and checks if the order is correct
     /// @param _nonce Bid parameter
@@ -430,7 +430,7 @@ contract DutchAuction is Ownable, HasNoEther, HasNoTokens {
     /// @notice Performs the computation of auction winners and losers.
     /// Also, determines if the auction is successful or failed.
     /// Bids which place the asset valuation below the minimum fundraise cap
-    /// as well as bids below the final valuation are marked as ignored or &quot;loser&quot; respectively
+    /// as well as bids below the final valuation are marked as ignored or "loser" respectively
     /// and do not count towards the process.
     /// @dev Since this function is resource intensive, computation is done in batches
     /// of `_count` bids, so as to not encounter an OutOfGas exception in the middle
@@ -563,7 +563,7 @@ contract DutchAuction is Ownable, HasNoEther, HasNoTokens {
         }
     }
 
-    /// @notice Performs the refund of the &quot;loser&quot; bids ART tokens
+    /// @notice Performs the refund of the "loser" bids ART tokens
     /// @dev Since this function is resource intensive, computation is done in batches
     /// of `_count` bids, so as to not encounter an OutOfGas exception in the middle
     /// of the process.

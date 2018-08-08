@@ -206,8 +206,8 @@ contract PriceOracle is RBAC {
   uint256 public allowedOracleChangePercent;
 
   // Roles in the oracle
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
-  string public constant ROLE_ORACLE = &quot;oracle&quot;;
+  string public constant ROLE_ADMIN = "admin";
+  string public constant ROLE_ORACLE = "oracle";
 
   /**
    * @dev modifier to scope access to admins
@@ -277,7 +277,7 @@ contract PriceOracle is RBAC {
     .mul(ethPriceInCents).div(100);
     require(
       _cents <= maxCents && _cents >= minCents,
-      &quot;Price out of allowed range&quot;
+      "Price out of allowed range"
     );
     ethPriceInCents = _cents;
   }

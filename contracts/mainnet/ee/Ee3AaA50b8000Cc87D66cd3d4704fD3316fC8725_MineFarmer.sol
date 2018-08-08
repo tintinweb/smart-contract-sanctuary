@@ -251,8 +251,8 @@ contract _0xBitcoinToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function _0xBitcoinToken() public onlyOwner{
-        symbol = &quot;0xBTC&quot;;
-        name = &quot;0xBitcoin Token&quot;;
+        symbol = "0xBTC";
+        name = "0xBitcoin Token";
         decimals = 8;
         _totalSupply = 21000000 * 10**uint(decimals);
         if(locked) revert();

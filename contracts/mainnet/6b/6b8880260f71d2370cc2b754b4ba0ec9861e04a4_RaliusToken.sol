@@ -75,9 +75,9 @@ contract RaliusToken is StandardToken {
 {
     balances[msg.sender] = 11000000000000000000000000;               
     totalSupply = 11000000000000000000000000;                       
-    name = &quot;Ralius Token&quot;;                                   
+    name = "Ralius Token";                                   
     decimals = 18;                                             
-    symbol = &quot;RAL&quot;;                                            
+    symbol = "RAL";                                            
     unitsOneEthCanBuy = 2000;                                      
     fundsWallet = msg.sender;                                 
 }
@@ -102,7 +102,7 @@ fundsWallet.transfer(msg.value);
     allowed[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);
 
-    if (!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+    if (!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
     return true;
 }
 }

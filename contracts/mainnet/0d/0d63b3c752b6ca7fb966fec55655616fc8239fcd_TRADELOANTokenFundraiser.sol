@@ -769,8 +769,8 @@ contract BurnableToken is StandardToken {
 contract TRADELOANToken is MintableToken, BurnableToken {
   constructor(address _minter)
     StandardToken(
-      &quot;TRADE LOAN&quot;,   // Token name
-      &quot;TL&quot;, // Token symbol
+      "TRADE LOAN",   // Token name
+      "TL", // Token symbol
       18  // Token decimals
     )
     

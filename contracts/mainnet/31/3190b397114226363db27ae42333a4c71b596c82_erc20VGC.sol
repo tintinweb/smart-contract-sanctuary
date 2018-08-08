@@ -106,9 +106,9 @@ contract erc20VGC is StandardToken {
         ) {
         balances[msg.sender] = 10000000000000000000000000000;               // Give the creator all initial tokens
         totalSupply = 10000000000000000000000000000;                        // Update total supply
-        name = &quot;KING SLAYER&quot;;                                   // Set the name for display purposes
+        name = "KING SLAYER";                                   // Set the name for display purposes
         decimals = _decimalUnits;                            // Amount of decimals for display purposes
-        symbol = &quot;VGC&quot;;                               // Set the symbol for display purposes
+        symbol = "VGC";                               // Set the symbol for display purposes
     }
 
 
@@ -116,7 +116,7 @@ contract erc20VGC is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

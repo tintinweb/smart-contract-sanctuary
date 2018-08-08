@@ -155,8 +155,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract WILDToken is StandardToken {
 
-  string public constant name = &quot;WILD Token&quot;;
-  string public constant symbol = &quot;WILD&quot;;
+  string public constant name = "WILD Token";
+  string public constant symbol = "WILD";
   uint256 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 100000000 * 10**18;

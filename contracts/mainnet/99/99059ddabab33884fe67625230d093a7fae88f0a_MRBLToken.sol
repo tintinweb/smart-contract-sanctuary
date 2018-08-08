@@ -3,8 +3,8 @@ pragma solidity ^0.4.16;
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 
 contract MRBLToken {
-    string public name = &quot;Marble&quot;;
-    string public symbol = &quot;MRBL&quot;;
+    string public name = "Marble";
+    string public symbol = "MRBL";
     uint256 public decimals = 18;
     uint256 public totalSupply = 100*1000*1000*10**decimals;
 

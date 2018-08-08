@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -289,8 +289,8 @@ contract Pausable is Ownable {
  */
 contract GBNC is StandardToken, Pausable {
 
-  string public name = &quot;&quot;;               // Set the token name for display
-  string public symbol = &quot;&quot;;             // Set the token symbol for display
+  string public name = "";               // Set the token name for display
+  string public symbol = "";             // Set the token symbol for display
   uint8 public decimals = 0;             // Set the token symbol for display
 
   /**

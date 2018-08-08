@@ -79,8 +79,8 @@ interface ExchangeHandler {
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 contract WETH9 {
-    string public name     = &quot;Wrapped Ether&quot;;
-    string public symbol   = &quot;WETH&quot;;
+    string public name     = "Wrapped Ether";
+    string public symbol   = "WETH";
     uint8  public decimals = 18;
 
     event  Approval(address indexed src, address indexed guy, uint wad);
@@ -144,7 +144,7 @@ contract WETH9 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -248,7 +248,7 @@ contract AirSwapHandler is ExchangeHandler, Ownable {
     uint256 constant MAX_UINT = 2**256 - 1;
 
     modifier onlyTotle() {
-        require(msg.sender == totle, &quot;AirSwapHandler - Only TotlePrimary allowed to call this function&quot;);
+        require(msg.sender == totle, "AirSwapHandler - Only TotlePrimary allowed to call this function");
         _;
     }
 
@@ -331,7 +331,7 @@ contract AirSwapHandler is ExchangeHandler, Ownable {
     function setTotle(address _totle)
     external
     onlyOwner {
-        require(_totle != address(0), &quot;Invalid address for totlePrimary&quot;);
+        require(_totle != address(0), "Invalid address for totlePrimary");
         totle = _totle;
     }
 
@@ -354,7 +354,7 @@ contract AirSwapHandler is ExchangeHandler, Ownable {
     }
 
     function approveToken(address _token, uint amount) external onlyOwner {
-        require(ERC20(_token).approve(address(airSwap), amount), &quot;Approve failed&quot;);
+        require(ERC20(_token).approve(address(airSwap), amount), "Approve failed");
     }
 
     function() public payable {
@@ -401,9 +401,9 @@ contract AirSwapHandler is ExchangeHandler, Ownable {
 
         require(validateOrder(orderAddresses[0], orderValues[0], orderAddresses[1],
                               address(this), orderValues[1], orderAddresses[3],
-                              orderValues[2], orderValues[3]), &quot;AirSwapHandler - Buy order validation failed.&quot;);
+                              orderValues[2], orderValues[3]), "AirSwapHandler - Buy order validation failed.");
 
-        require(ERC20(orderAddresses[1]).transfer(orderAddresses[2], orderValues[0]), &quot;AirSwapHandler - Failed to transfer token to taker&quot;);
+        require(ERC20(orderAddresses[1]).transfer(orderAddresses[2], orderValues[0]), "AirSwapHandler - Failed to transfer token to taker");
 
         return orderValues[0];
     }
@@ -425,12 +425,12 @@ contract AirSwapHandler is ExchangeHandler, Ownable {
     ) private
     returns (uint)
     {
-        require(orderAddresses[1] == address(weth), &quot;AirSwapHandler - makerToken is not WETH for sell order&quot;);
+        require(orderAddresses[1] == address(weth), "AirSwapHandler - makerToken is not WETH for sell order");
 
         uint takerAmount = orderValues[1];
 
         if(ERC20(orderAddresses[3]).allowance(address(this), address(airSwap)) == 0) {
-            require(ERC20(orderAddresses[3]).approve(address(airSwap), MAX_UINT), &quot;AirSwapHandler - unable to set token approval for sell order&quot;);
+            require(ERC20(orderAddresses[3]).approve(address(airSwap), MAX_UINT), "AirSwapHandler - unable to set token approval for sell order");
         }
 
         airSwap.fill(orderAddresses[0], orderValues[0], orderAddresses[1],
@@ -439,7 +439,7 @@ contract AirSwapHandler is ExchangeHandler, Ownable {
 
         require(validateOrder(orderAddresses[0], orderValues[0], orderAddresses[1],
                               address(this), takerAmount, orderAddresses[3],
-                              orderValues[2], orderValues[3]), &quot;AirSwapHandler - sell order validation failed.&quot;);
+                              orderValues[2], orderValues[3]), "AirSwapHandler - sell order validation failed.");
 
         weth.withdraw(orderValues[0]);
         msg.sender.transfer(orderValues[0]);

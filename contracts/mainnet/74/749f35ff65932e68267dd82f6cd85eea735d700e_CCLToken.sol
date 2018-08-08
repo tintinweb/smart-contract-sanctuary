@@ -78,8 +78,8 @@ contract CCLToken is ERC20Interface, Owned, SafeMath {
 
 
     function CCLToken() public {
-        symbol = &quot;CCL&quot;;
-        name = &quot;CyClean Token&quot;;
+        symbol = "CCL";
+        name = "CyClean Token";
         decimals = 18;
         _totalSupply = 4000000000000000000000000000; //4,000,000,000
         balances[0xf835bF0285c99102eaedd684b4401272eF36aF65] = _totalSupply;

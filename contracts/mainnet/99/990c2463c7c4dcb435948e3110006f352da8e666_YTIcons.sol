@@ -26,8 +26,8 @@ contract YTIcons is ERC721 {
     /* CONSTANTS */
 
     /// Name and symbol of the non-fungible token (ERC721)
-    string public constant NAME = &quot;YTIcons&quot;;
-    string public constant SYMBOL = &quot;YTIcon&quot;;
+    string public constant NAME = "YTIcons";
+    string public constant SYMBOL = "YTIcon";
 
     /// The corporation address that will be used for its development (giveaway, game events...)
     address private _utilityFund = 0x6B06a2a15dCf3AE45b9F133Be6FD0Be5a9FAedC2;
@@ -168,7 +168,7 @@ contract YTIcons is ERC721 {
         _transfer(oldOwner, newOwner, _tokenId);
     }
 
-    /// &quot;transfer&quot; lets the owner of a token send it to another user, similar to a standalone cryptocurrency.
+    /// "transfer" lets the owner of a token send it to another user, similar to a standalone cryptocurrency.
     function transfer(address _to, uint256 _tokenId) public {
         require(bytes(_cards[_tokenId].name).length != 0);
         require(!_cards[_tokenId].isLocked);

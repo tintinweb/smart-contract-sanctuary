@@ -3,7 +3,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -685,8 +685,8 @@ contract MintableToken is StandardToken, Ownable {
 /// @title EverGold
 /// @dev ERC827 Token for games.
 contract EverGold is ERC827Token, MintableToken, AccessByGame {
-  string public constant name = &quot;Ever Gold&quot;;
-  string public constant symbol = &quot;EG&quot;;
+  string public constant name = "Ever Gold";
+  string public constant symbol = "EG";
   uint8 public constant decimals = 0;
 
 /**
@@ -936,7 +936,7 @@ library AddressUtils {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -951,7 +951,7 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(
     address _from,
@@ -970,7 +970,7 @@ contract ERC721BasicToken is ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
@@ -1122,7 +1122,7 @@ contract ERC721BasicToken is ERC721Basic {
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -1138,14 +1138,14 @@ contract ERC721BasicToken is ERC721Basic {
     canTransfer(_tokenId)
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -1467,8 +1467,8 @@ contract ERC721Token is ERC721, ERC721BasicToken {
 }
 
 contract CastleToken is ERC721Token, AccessByGame {
-  string constant NAME = &quot;Crypto Ninja Game Castle&quot;;
-  string constant SYMBOL = &quot;CNC&quot;;
+  string constant NAME = "Crypto Ninja Game Castle";
+  string constant SYMBOL = "CNC";
 
   uint256 constant MAX_WIDTH = 10;
 
@@ -1523,7 +1523,7 @@ contract CastleToken is ERC721Token, AccessByGame {
     ERC721Token(NAME, SYMBOL)
   {
     castles.push(Castle({
-      name: &quot;DUMMY&quot;, level: 0, exp: 0,
+      name: "DUMMY", level: 0, exp: 0,
       width: 0, depth: 0,
       readyTime: 0,
       tryCount: 0, winCount: 0, lossCount: 0,
@@ -1676,7 +1676,7 @@ contract CastleToken is ERC721Token, AccessByGame {
     require(_beneficiary != address(0));
     require((_width > 0) && (_depth > 0));
     uint256 tokenid = castles.length;
-    bytes16 name = StringLib.generateName(&quot;CASTLE#&quot;, 7, tokenid);
+    bytes16 name = StringLib.generateName("CASTLE#", 7, tokenid);
 
     uint256 id = castles.push(Castle({
       name: name, level: 1, exp: 0,
@@ -1899,15 +1899,15 @@ contract ItemToken is AccessByGame {
   constructor()
     public
   {
-    addItem(&quot;None&quot;, 0, 0, false);
-    addItem(&quot;Arrow&quot;, 10, 10, true);
-    addItem(&quot;Tiger&quot;, 30, 20, true);
-    addItem(&quot;Spear&quot;, 50, 30, true);
-    addItem(&quot;Wood&quot;, 50, 20, true);
-    addItem(&quot;Fire&quot;, 50, 20, true);
-    addItem(&quot;Earth&quot;, 50, 20, true);
-    addItem(&quot;Metal&quot;, 50, 20, true);
-    addItem(&quot;Water&quot;, 50, 20, true);
+    addItem("None", 0, 0, false);
+    addItem("Arrow", 10, 10, true);
+    addItem("Tiger", 30, 20, true);
+    addItem("Spear", 50, 30, true);
+    addItem("Wood", 50, 20, true);
+    addItem("Fire", 50, 20, true);
+    addItem("Earth", 50, 20, true);
+    addItem("Metal", 50, 20, true);
+    addItem("Water", 50, 20, true);
   }
 
   function setGoldContract(address _goldTokenAddress)
@@ -2034,8 +2034,8 @@ contract ItemToken is AccessByGame {
 }
 
 contract NinjaToken is ERC721Token, AccessByGame {
-  string public constant NAME = &quot;Crypto Ninja Game Ninja&quot;;
-  string public constant SYMBOL = &quot;CNN&quot;;
+  string public constant NAME = "Crypto Ninja Game Ninja";
+  string public constant SYMBOL = "CNN";
 
   event NewNinja(uint256 ninjaid, bytes16 name, bytes32 pattern);
 
@@ -2107,7 +2107,7 @@ contract NinjaToken is ERC721Token, AccessByGame {
       ERC721Token(NAME, SYMBOL)
   {
     ninjas.push(Ninja({
-      pattern: 0, name: &quot;DUMMY&quot;, level: 0, exp: 0,
+      pattern: 0, name: "DUMMY", level: 0, exp: 0,
       dna1: 0, dna2: 0,
       readyTime: 0,
       winCount: 0, lossCount: 0,
@@ -2225,7 +2225,7 @@ contract NinjaToken is ERC721Token, AccessByGame {
   {
     bytes32 pattern = _generateInitialPattern();
     uint256 tokenid = ninjas.length;
-    bytes16 name = StringLib.generateName(&quot;NINJA#&quot;, 6, tokenid);
+    bytes16 name = StringLib.generateName("NINJA#", 6, tokenid);
 
     uint256 id = ninjas.push(Ninja({
       pattern: pattern, name: name, level: 1, exp: 0,
@@ -2402,7 +2402,7 @@ contract UserToken is AccessByGame {
     uint32 registeredDate;
   }
 
-  string constant public DEFAULT_NAME = &quot;NONAME&quot;;
+  string constant public DEFAULT_NAME = "NONAME";
 
   User[] private users;
 
@@ -2413,7 +2413,7 @@ contract UserToken is AccessByGame {
   constructor()
     public
   {
-    mint(msg.sender, &quot;OWNER&quot;);
+    mint(msg.sender, "OWNER");
   }
 
   function mint(address _beneficiary, string _name)

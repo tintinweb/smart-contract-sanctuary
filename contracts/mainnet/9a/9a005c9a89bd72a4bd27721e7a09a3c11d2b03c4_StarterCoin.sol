@@ -265,8 +265,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract StarterCoin is MintableToken, LimitedTransferToken {
 
-    string public constant name = &quot;StarterCoin&quot;;
-    string public constant symbol = &quot;STAC&quot;;
+    string public constant name = "StarterCoin";
+    string public constant symbol = "STAC";
     uint8 public constant decimals = 18;
 
     uint256 public endTimeICO;

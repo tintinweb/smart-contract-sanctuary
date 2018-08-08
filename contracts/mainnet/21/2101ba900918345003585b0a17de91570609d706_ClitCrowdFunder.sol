@@ -3,14 +3,14 @@ pragma solidity ^0.4.11;
 /*
    Copyright 2017 DappHub, LLC
 
-   Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+   Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
        http://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+   distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
@@ -129,7 +129,7 @@ contract ApproveAndCallFallBack {
 
 /// @dev The actual token contract, the default controller is the msg.sender
 ///  that deploys the contract, so usually this token will be deployed by a
-///  token controller contract, which Giveth will call a &quot;Campaign&quot;
+///  token controller contract, which Giveth will call a "Campaign"
 contract MiniMeToken is Controlled, ERC20Token {
 
     string public name;                //The Token&#39;s name: e.g. DigixDAO Tokens
@@ -664,12 +664,12 @@ contract ClitCoinToken is MiniMeToken {
 		0x0,
 		0x0,            // no parent token
 		0,              // no snapshot block number from parent
-		&quot;CLIT Token&quot;, 	// Token name
+		"CLIT Token", 	// Token name
 		0,              // Decimals
-		&quot;CLIT&quot;,         // Symbol
+		"CLIT",         // Symbol
 		false            // Enable transfers
 	) {
-		version = &quot;CLIT 1.0&quot;;
+		version = "CLIT 1.0";
 	}
 
 

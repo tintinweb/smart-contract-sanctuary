@@ -45,8 +45,8 @@ contract WinlastmileToken {
     uint    public WLMTPrice     = 6000;
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;WinlastmileToken&quot;; }
-    function symbol() constant returns (string) { return &quot;WLMT&quot;; }
+    function name() constant returns (string) { return "WinlastmileToken"; }
+    function symbol() constant returns (string) { return "WLMT"; }
     function decimals() constant returns (uint8) { return 8; }
     event Burnt(
         address indexed _receiver,

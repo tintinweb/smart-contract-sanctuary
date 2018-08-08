@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract SBK is StandardToken, Ownable {
 
-    string public constant name = &quot;SBK&quot;;
-    string public constant symbol = &quot;SBK&quot;;
+    string public constant name = "SBK";
+    string public constant symbol = "SBK";
     uint256 public constant decimals = 8;
 
     function SBK() public {

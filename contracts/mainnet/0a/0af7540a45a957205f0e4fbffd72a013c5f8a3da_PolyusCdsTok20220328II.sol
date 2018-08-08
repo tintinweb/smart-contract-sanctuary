@@ -4,8 +4,8 @@ contract	PolyusCdsTok20220328II				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	PolyusCdsTok20220328II		&quot;	;
-	string	public		symbol =	&quot;	POLYTOKII		&quot;	;
+	string	public		name =	"	PolyusCdsTok20220328II		"	;
+	string	public		symbol =	"	POLYTOKII		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		23642137600000000000000000					;	

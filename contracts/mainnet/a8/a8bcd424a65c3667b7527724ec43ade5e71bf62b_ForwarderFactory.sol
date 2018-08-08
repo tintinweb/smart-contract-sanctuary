@@ -89,7 +89,7 @@ contract RegBase is RegBaseAbstract
 // Constants
 //
 
-    bytes32 constant public VERSION = &quot;RegBase v0.3.3&quot;;
+    bytes32 constant public VERSION = "RegBase v0.3.3";
 
 //
 // State Variables
@@ -209,7 +209,7 @@ Release Notes
 
 pragma solidity ^0.4.13;
 
-// import &quot;./RegBase.sol&quot;;
+// import "./RegBase.sol";
 
 contract Factory is RegBase
 {
@@ -218,13 +218,13 @@ contract Factory is RegBase
 //
 
     // Deriving factories should have `bytes32 constant public regName` being
-    // the product&#39;s contract name, e.g for products &quot;Foo&quot;:
-    // bytes32 constant public regName = &quot;Foo&quot;;
+    // the product&#39;s contract name, e.g for products "Foo":
+    // bytes32 constant public regName = "Foo";
 
     // Deriving factories should have `bytes32 constant public VERSION` being
     // the product&#39;s contract name appended with &#39;Factory` and the version
-    // of the product, e.g for products &quot;Foo&quot;:
-    // bytes32 constant public VERSION &quot;FooFactory 0.0.1&quot;;
+    // of the product, e.g for products "Foo":
+    // bytes32 constant public VERSION "FooFactory 0.0.1";
 
 //
 // State Variables
@@ -323,14 +323,14 @@ Release Notes
 
 pragma solidity ^0.4.13;
 
-// import &quot;https://github.com/o0ragman0o/SandalStraps/contracts/Factory.sol&quot;;
+// import "https://github.com/o0ragman0o/SandalStraps/contracts/Factory.sol";
 
 contract Forwarder is RegBase {
 //
 // Constants
 //
 
-    bytes32 constant public VERSION = &quot;Forwarder v0.3.0&quot;;
+    bytes32 constant public VERSION = "Forwarder v0.3.0";
 
 //
 // State
@@ -387,10 +387,10 @@ contract ForwarderFactory is Factory
 //
 
     /// @return registrar name
-    bytes32 constant public regName = &quot;forwarder&quot;;
+    bytes32 constant public regName = "forwarder";
     
     /// @return version string
-    bytes32 constant public VERSION = &quot;ForwarderFactory v0.3.0&quot;;
+    bytes32 constant public VERSION = "ForwarderFactory v0.3.0";
 
 //
 // Functions

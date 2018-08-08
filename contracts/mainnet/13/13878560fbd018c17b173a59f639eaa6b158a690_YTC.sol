@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract YTC is StandardToken, Ownable {
 
-    string public constant name = &quot;YTC&quot;;
-    string public constant symbol = &quot;YTC&quot;;
+    string public constant name = "YTC";
+    string public constant symbol = "YTC";
     uint256 public constant decimals = 8;
 
     function YTC() public {

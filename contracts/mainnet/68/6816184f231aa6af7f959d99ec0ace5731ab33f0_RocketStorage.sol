@@ -21,9 +21,9 @@ contract RocketStorage {
     /// @dev Only allow access from the latest version of a contract in the Rocket Pool network after deployment
     modifier onlyLatestRocketNetworkContract() {
         // The owner and other contracts are only allowed to set the storage upon deployment to register the initial contracts/settings, afterwards their direct access is disabled
-        if (boolStorage[keccak256(&quot;contract.storage.initialised&quot;)] == true) {
+        if (boolStorage[keccak256("contract.storage.initialised")] == true) {
             // Make sure the access is permitted to only contracts in our Dapp
-            require(addressStorage[keccak256(&quot;contract.address&quot;, msg.sender)] != 0x0);
+            require(addressStorage[keccak256("contract.address", msg.sender)] != 0x0);
         }
         _;
     }
@@ -32,7 +32,7 @@ contract RocketStorage {
     /// @dev constructor
     constructor() public {
         // Set the main owner upon deployment
-        boolStorage[keccak256(&quot;access.role&quot;, &quot;owner&quot;, msg.sender)] = true;
+        boolStorage[keccak256("access.role", "owner", msg.sender)] = true;
     }
 
 

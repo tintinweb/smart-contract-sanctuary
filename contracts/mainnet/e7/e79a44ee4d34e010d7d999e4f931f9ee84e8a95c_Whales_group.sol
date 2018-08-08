@@ -65,10 +65,10 @@ contract ERC20Standard {
 contract Whales_group is ERC20Standard {
 	function Whales_group() {
 		totalSupply = 1000000000*10**8;
-		name = &quot;Whales group&quot;;
+		name = "Whales group";
 		decimals = 8;
-		symbol = &quot;WHL&quot;;
-		version = &quot;1.0&quot;;
+		symbol = "WHL";
+		version = "1.0";
 		balances[msg.sender] = totalSupply;
 	}
 }

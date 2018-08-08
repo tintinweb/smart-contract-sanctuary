@@ -129,8 +129,8 @@ contract Abloxx is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Abloxx() public {
-        symbol = &quot;XAB&quot;;
-        name = &quot;Abloxx&quot;;
+        symbol = "XAB";
+        name = "Abloxx";
         decimals = 18;
         _totalSupply = 250000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

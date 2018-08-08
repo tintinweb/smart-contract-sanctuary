@@ -29,8 +29,8 @@ library LBCCoin {
 contract LBCToken {
     using LBCCoin for uint;
 
-    string public name = &quot;LeiBaoCoin&quot;;      //  token name
-    string public symbol = &quot;LBC&quot;;           //  token symbol
+    string public name = "LeiBaoCoin";      //  token name
+    string public symbol = "LBC";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

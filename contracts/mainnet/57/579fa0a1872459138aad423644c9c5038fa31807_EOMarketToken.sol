@@ -99,8 +99,8 @@ contract EOMarketToken is AccessService {
     uint8 public decimals = 0;
     uint256 public totalSupply = 100;
     uint256 public totalSold = 0;
-    string public name = &quot; Ether Online Shares Token&quot;;
-    string public symbol = &quot;EOST&quot;;
+    string public name = " Ether Online Shares Token";
+    string public symbol = "EOST";
 
     mapping (address => uint256) balances;
     mapping (address => mapping(address => uint256)) allowed;

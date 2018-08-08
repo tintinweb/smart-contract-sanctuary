@@ -58,8 +58,8 @@ contract Academicon is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;ACADEMICON&quot;;
-    string public constant symbol = &quot;ADC&quot;;
+    string public constant name = "ACADEMICON";
+    string public constant symbol = "ADC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 100000000e8;

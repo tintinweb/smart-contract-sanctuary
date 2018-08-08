@@ -85,8 +85,8 @@ contract Xenith is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function Xenith() public {
-        symbol = &quot;XTH&quot;;
-        name = &quot;Xenith&quot;;
+        symbol = "XTH";
+        name = "Xenith";
         decimals = 15;
         _totalSupply = 30000000000000000000000;
         balances[0x01045239A770F0F37f5d1DEAdDc44125Dc74f352] = _totalSupply;

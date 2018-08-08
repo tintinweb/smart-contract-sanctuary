@@ -181,8 +181,8 @@ contract DigiassetzToken is BasicToken, ERC20 {
  */
 contract DAZToken is DigiassetzToken {
 
-    string public name = &quot;DAZ&quot;;
-    string public symbol = &quot;DAZ$&quot;;
+    string public name = "DAZ";
+    string public symbol = "DAZ$";
     uint public decimals = 9;
     uint public INITIAL_SUPPLY = 9000000000000000000; // Initial supply is 9000000000DAZ
 

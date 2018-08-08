@@ -196,8 +196,8 @@ contract Token915 is TokenI {
 
     address public owner;
 
-    string public techProvider = &quot;WeYii Tech(https://weyii.co)&quot;;
-    string public officialSite = &quot;https://915club.com&quot;;
+    string public techProvider = "WeYii Tech(https://weyii.co)";
+    string public officialSite = "https://915club.com";
 
     mapping (uint8 => uint256[]) public freezeOf; //所有数额，地址与数额合并为uint256，位运算拆分。
     //解锁信息

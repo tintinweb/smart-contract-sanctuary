@@ -268,8 +268,8 @@ contract FlashGirlsToken is StandardToken {
 
     constructor() public {
         decimals = 18;
-        symbol = &quot;GIRL&quot;;
-        name = &quot;FlashGirlsToken&quot;;
+        symbol = "GIRL";
+        name = "FlashGirlsToken";
 
         totalSupply_ = INITIAL_SUPPLY * (10 ** uint256(decimals));
         balances[msg.sender] = totalSupply_;

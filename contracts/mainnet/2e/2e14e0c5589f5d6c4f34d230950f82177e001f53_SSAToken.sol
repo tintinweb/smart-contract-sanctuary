@@ -149,8 +149,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract SSAToken is MintableToken {
-  string public name = &quot;SSA&quot;;
-  string public symbol = &quot;SSA&quot;;
+  string public name = "SSA";
+  string public symbol = "SSA";
   uint8 public decimals = 6;
 
   function SSAToken() {

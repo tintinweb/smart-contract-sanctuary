@@ -66,8 +66,8 @@ contract ERC20 {
  */
 contract BubbleToneToken is ERC20 {
     using SafeMath for uint;
-    string public name = &quot;Universal Bonus Token | t.me/bubbletonebot&quot;;
-    string public symbol = &quot;UBT&quot;;
+    string public name = "Universal Bonus Token | t.me/bubbletonebot";
+    string public symbol = "UBT";
     uint public decimals = 18;  
 
     // Smart-contract owner address

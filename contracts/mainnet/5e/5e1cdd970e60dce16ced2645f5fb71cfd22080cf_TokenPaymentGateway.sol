@@ -231,7 +231,7 @@ contract Pausable is Ownable {
   }
 }
 contract StandardContract {
-    // allows usage of &quot;require&quot; as a modifier
+    // allows usage of "require" as a modifier
     modifier requires(bool b) {
         require(b);
         _;

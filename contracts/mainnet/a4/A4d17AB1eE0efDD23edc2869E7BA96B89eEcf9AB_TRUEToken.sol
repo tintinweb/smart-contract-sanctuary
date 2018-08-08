@@ -11,8 +11,8 @@ pragma solidity ^0.4.11;
  * https://github.com/ethereum/EIPs/issues/20
  */
 contract TRUEToken  {
-    string public constant name = &quot;TRUE Token&quot;;
-    string public constant symbol = &quot;TRUE&quot;;
+    string public constant name = "TRUE Token";
+    string public constant symbol = "TRUE";
     uint public constant decimals = 18;
     uint256 _totalSupply    = 100000000 * 10**decimals;
 

@@ -275,11 +275,11 @@ contract ParallelWorld {
   }
 
   function name() public pure returns (string _name) {
-    return &quot;Parallel World Cup&quot;;
+    return "Parallel World Cup";
   }
 
   function symbol() public pure returns (string _symbol) {
-    return &quot;PWC&quot;;
+    return "PWC";
   }
 
   function totalSupply() public view returns (uint256 _totalSupply) {

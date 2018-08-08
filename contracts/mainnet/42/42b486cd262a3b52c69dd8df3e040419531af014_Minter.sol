@@ -26,7 +26,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -334,25 +334,25 @@ contract Minter is Manager, IMinter {
 
     // Checks if caller is BondingManager
     modifier onlyBondingManager() {
-        require(msg.sender == controller.getContract(keccak256(&quot;BondingManager&quot;)));
+        require(msg.sender == controller.getContract(keccak256("BondingManager")));
         _;
     }
 
     // Checks if caller is RoundsManager
     modifier onlyRoundsManager() {
-        require(msg.sender == controller.getContract(keccak256(&quot;RoundsManager&quot;)));
+        require(msg.sender == controller.getContract(keccak256("RoundsManager")));
         _;
     }
 
     // Checks if caller is either BondingManager or JobsManager
     modifier onlyBondingManagerOrJobsManager() {
-        require(msg.sender == controller.getContract(keccak256(&quot;BondingManager&quot;)) || msg.sender == controller.getContract(keccak256(&quot;JobsManager&quot;)));
+        require(msg.sender == controller.getContract(keccak256("BondingManager")) || msg.sender == controller.getContract(keccak256("JobsManager")));
         _;
     }
 
     // Checks if caller is either the currently registered Minter or JobsManager
     modifier onlyMinterOrJobsManager() {
-        require(msg.sender == controller.getContract(keccak256(&quot;Minter&quot;)) || msg.sender == controller.getContract(keccak256(&quot;JobsManager&quot;)));
+        require(msg.sender == controller.getContract(keccak256("Minter")) || msg.sender == controller.getContract(keccak256("JobsManager")));
         _;
     }
 
@@ -385,7 +385,7 @@ contract Minter is Manager, IMinter {
 
         targetBondingRate = _targetBondingRate;
 
-        ParameterUpdate(&quot;targetBondingRate&quot;);
+        ParameterUpdate("targetBondingRate");
     }
 
     /**
@@ -398,7 +398,7 @@ contract Minter is Manager, IMinter {
 
         inflationChange = _inflationChange;
 
-        ParameterUpdate(&quot;inflationChange&quot;);
+        ParameterUpdate("inflationChange");
     }
 
     /**
@@ -416,7 +416,7 @@ contract Minter is Manager, IMinter {
         // New Minter must have same Controller as current Minter
         require(newMinterController == controller);
         // New Minter&#39;s Controller must have the current Minter registered
-        require(newMinterController.getContract(keccak256(&quot;Minter&quot;)) == address(this));
+        require(newMinterController.getContract(keccak256("Minter")) == address(this));
 
         // Transfer ownership of token to new Minter
         livepeerToken().transferOwnership(_newMinter);
@@ -527,13 +527,13 @@ contract Minter is Manager, IMinter {
      * @dev Returns LivepeerToken interface
      */
     function livepeerToken() internal view returns (ILivepeerToken) {
-        return ILivepeerToken(controller.getContract(keccak256(&quot;LivepeerToken&quot;)));
+        return ILivepeerToken(controller.getContract(keccak256("LivepeerToken")));
     }
 
     /**
      * @dev Returns BondingManager interface
      */
     function bondingManager() internal view returns (IBondingManager) {
-        return IBondingManager(controller.getContract(keccak256(&quot;BondingManager&quot;)));
+        return IBondingManager(controller.getContract(keccak256("BondingManager")));
     }
 }

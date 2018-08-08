@@ -137,4 +137,4 @@ contract EIP20 is EIP20Interface {
     }
 }
 
-contract KKKKCOIN is EIP20(1290000000, &quot;KKKKCOIN&quot;, 2, &quot;KKKK&quot;) {}
+contract KKKKCOIN is EIP20(1290000000, "KKKKCOIN", 2, "KKKK") {}

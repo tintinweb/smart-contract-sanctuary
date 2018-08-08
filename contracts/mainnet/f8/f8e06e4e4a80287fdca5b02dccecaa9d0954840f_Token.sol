@@ -72,7 +72,7 @@ contract Token is ERC20, Ownable {
     string public name;
     string public symbol;
     uint8 public decimals; // How many decimals to show.
-    string public version = &quot;v0.1&quot;;       
+    string public version = "v0.1";       
     uint public totalSupply;
     bool public locked;
     address public crowdSaleAddress;
@@ -101,8 +101,8 @@ contract Token is ERC20, Ownable {
         
         locked = true;  // Lock the Crowdsale function during the crowdsale
         totalSupply = 300000000e18; 
-        name = &quot;TGAME&quot;; // Set the name for display purposes
-        symbol = &quot;TGAME&quot;; // Set the symbol for display purposes
+        name = "TGAME"; // Set the name for display purposes
+        symbol = "TGAME"; // Set the symbol for display purposes
         decimals = 18; // Amount of decimals for display purposes
         crowdSaleAddress = _crowdSaleAddress;                             
         balances[crowdSaleAddress] = totalSupply;

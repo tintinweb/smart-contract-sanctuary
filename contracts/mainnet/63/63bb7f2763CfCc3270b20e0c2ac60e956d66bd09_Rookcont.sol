@@ -120,8 +120,8 @@ contract Another is BasicToken, ERC20 {
 
 contract Rookcont is Another {
 
-  string public name = &quot;Rookcoin&quot;;
-  string public symbol = &quot;ROOK&quot;;
+  string public name = "Rookcoin";
+  string public symbol = "ROOK";
   uint public decimals = 3;
   uint public INITIAL_SUPPLY = 21000000000;
 

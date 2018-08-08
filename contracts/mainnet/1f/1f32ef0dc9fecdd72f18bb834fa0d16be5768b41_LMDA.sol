@@ -55,7 +55,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -376,8 +376,8 @@ contract LMDA is PausableToken {
      * the ICO contract will receive the entire total supply. 
      * */
     function LMDA() public {
-        name = &quot;LaMonedaCoin&quot;;
-        symbol = &quot;LMDA&quot;;
+        name = "LaMonedaCoin";
+        symbol = "LMDA";
         decimals = 18;
         totalSupply = 500000000e18;
         

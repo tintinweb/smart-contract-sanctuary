@@ -55,7 +55,7 @@ contract EIP20Interface {
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 }
 
-//import &quot;./EIP20Interface.sol&quot;;
+//import "./EIP20Interface.sol";
 
 
 contract Nookoin is EIP20Interface {

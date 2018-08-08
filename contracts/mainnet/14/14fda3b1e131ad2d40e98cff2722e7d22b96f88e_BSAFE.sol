@@ -99,8 +99,8 @@ contract BSAFE is ERC20  {
         balanceOf[msg.sender] = _initialSupply; // Give the creator all initial tokens
         totalSupply = _initialSupply; // Update total supply
         initialSupply = _initialSupply;
-        name = &quot;BlockSafe&quot;; // Set the name for display purposes
-        symbol = &quot;BSAFE&quot;; // Set the symbol for display purposes
+        name = "BlockSafe"; // Set the name for display purposes
+        symbol = "BSAFE"; // Set the symbol for display purposes
         decimals = decimalUnits; // Amount of decimals for display purposes
     }
 

@@ -124,9 +124,9 @@ contract Token {
 contract VEN is Token, Owned {
     using SafeMath for uint256;
 
-    string public constant name    = &quot;VeChain Token&quot;;  //The Token&#39;s name
+    string public constant name    = "VeChain Token";  //The Token&#39;s name
     uint8 public constant decimals = 18;               //Number of decimals of the smallest unit
-    string public constant symbol  = &quot;VEN&quot;;            //An identifier    
+    string public constant symbol  = "VEN";            //An identifier    
 
     struct Account {
         uint256 balance;
@@ -213,7 +213,7 @@ contract VEN is Token, Owned {
 
     // Send _value amount of tokens from address _from to address _to
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-    // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
     // fees in sub-currencies; the command should fail unless the _from account has
     // deliberately authorized the sender of the message via some mechanism; we propose
     // these standardized APIs for approval:
@@ -258,7 +258,7 @@ contract VEN is Token, Owned {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        //if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { revert(); }
+        //if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { revert(); }
         ApprovalReceiver(_spender).receiveApproval(msg.sender, _value, this, _extraData);
         return true;
     }

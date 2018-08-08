@@ -20,9 +20,9 @@ contract RBC{
     function RBC() public {
         balances[msg.sender] = 20000000000000;               // Give the creator all initial tokens
         totalSupply = 20000000000000;                        // Update total supply
-        name = &quot;Riceball coin&quot;;                                   // Set the name for display purposes
+        name = "Riceball coin";                                   // Set the name for display purposes
         decimals =4;                            // Amount of decimals for display purposes
-        symbol = &quot;RBC&quot;;                               // Set the symbol for display purposes
+        symbol = "RBC";                               // Set the symbol for display purposes
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

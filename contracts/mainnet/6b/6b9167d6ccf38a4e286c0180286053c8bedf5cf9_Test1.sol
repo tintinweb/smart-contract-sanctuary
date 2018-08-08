@@ -54,8 +54,8 @@ contract Test1 is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Test1&quot;;
-    string public constant symbol = &quot;TST&quot;;
+    string public constant name = "Test1";
+    string public constant symbol = "TST";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 100000000e8;

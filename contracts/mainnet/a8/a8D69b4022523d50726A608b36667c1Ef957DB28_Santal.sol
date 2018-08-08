@@ -14,8 +14,8 @@ contract ERC20Interface {
 }
 
 contract Santal is ERC20Interface {
-    string public constant symbol = &quot;TXQ&quot;;
-    string public constant name = &quot;santal&quot;;
+    string public constant symbol = "TXQ";
+    string public constant name = "santal";
     uint8  public constant decimals = 18;
 
     uint256 public _airdropTotal = 0;
@@ -104,7 +104,7 @@ contract Santal is ERC20Interface {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 

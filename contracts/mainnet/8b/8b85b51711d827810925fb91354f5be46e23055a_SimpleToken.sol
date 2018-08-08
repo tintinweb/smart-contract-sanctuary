@@ -123,8 +123,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract SimpleToken is StandardToken {
-    string public name = &quot;TOWERCOIN&quot;;
-    string public symbol = &quot;TWC&quot;;
+    string public name = "TOWERCOIN";
+    string public symbol = "TWC";
     uint public decimals = 18;
     address owner;
     uint public INITIAL_SUPPLY = 1000000000*10**18;

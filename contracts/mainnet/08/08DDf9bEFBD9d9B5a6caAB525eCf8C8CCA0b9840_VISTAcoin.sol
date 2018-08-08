@@ -210,8 +210,8 @@ contract StandardToken is BasicToken, ERC20 {
  * VISTACOIN class
  */
 contract VISTAcoin is StandardToken, Ownable {
-	string public constant name = &quot;VISTAcoin&quot;;
-	string public constant symbol = &quot;VTA&quot;;
+	string public constant name = "VISTAcoin";
+	string public constant symbol = "VTA";
 	uint public constant decimals = 0;
 	// Constructor
 	function VISTAcoin() {

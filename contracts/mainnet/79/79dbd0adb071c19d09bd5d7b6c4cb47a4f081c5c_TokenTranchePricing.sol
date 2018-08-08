@@ -198,7 +198,7 @@ contract FractionalERC20 is ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -926,7 +926,7 @@ contract Crowdsale is CrowdsaleBase {
 
 
 /// @dev Tranche based pricing with special support for pre-ico deals.
-///      Implementing &quot;first price&quot; tranches, meaning, that if buyers order is
+///      Implementing "first price" tranches, meaning, that if buyers order is
 ///      covering more than one tranche, the price of the lowest tranche will apply
 ///      to the whole order.
 contract TokenTranchePricing is PricingStrategy, Ownable {

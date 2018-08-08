@@ -259,8 +259,8 @@ return true;
 contract BlueHillMining is StandardToken, BurnableToken, Ownable {
 using SafeMath for uint;
 
-string constant public symbol = &quot;BHM&quot;;
-string constant public name = &quot;BlueHillMining&quot;;
+string constant public symbol = "BHM";
+string constant public name = "BlueHillMining";
 
 uint8 constant public decimals = 18;
 uint256 INITIAL_SUPPLY = 500000000e18;

@@ -214,8 +214,8 @@ contract StandardToken is ERC20, BasicToken {
  */ 
 contract EQUIToken is StandardToken {
 
-  string public constant name = &quot;EQUI Token&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;EQUI&quot;; // solium-disable-line uppercase
+  string public constant name = "EQUI Token"; // solium-disable-line uppercase
+  string public constant symbol = "EQUI"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 private constant INITIAL_SUPPLY = 250000000 ether;

@@ -15,7 +15,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -328,7 +328,7 @@ contract QIUToken is StandardToken,Ownable {
         account.transfer(this.balance);
     }*/
     function getETHBalance() public view returns (uint) {
-        return this.balance; // balance is &quot;inherited&quot; from the address type
+        return this.balance; // balance is "inherited" from the address type
     }
 }
 

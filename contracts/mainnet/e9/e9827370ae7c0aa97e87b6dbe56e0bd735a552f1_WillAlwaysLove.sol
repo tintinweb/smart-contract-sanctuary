@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -259,7 +259,7 @@ contract WillAlwaysLove is Ownable, ReentrancyGuard {
         public
         payable
     {
-        createLoveStoryWithData(_id, _loverName, _lovedOneName, _lockDurationInHours, &quot;&quot;);
+        createLoveStoryWithData(_id, _loverName, _lovedOneName, _lockDurationInHours, "");
     }
 
     function createLoveStoryWithData(bytes16 _id, bytes32 _loverName, bytes32 _lovedOneName, uint256 _lockDurationInHours, string _data)

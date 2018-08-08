@@ -73,8 +73,8 @@ contract Anaco is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Anaco&quot;;
-    string public constant symbol = &quot;ANAC&quot;;
+    string public constant name = "Anaco";
+    string public constant symbol = "ANAC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 15000000000e8;

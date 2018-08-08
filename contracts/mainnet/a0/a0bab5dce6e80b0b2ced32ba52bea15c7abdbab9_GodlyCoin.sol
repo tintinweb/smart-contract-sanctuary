@@ -98,8 +98,8 @@ contract GodlyCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GodlyCoin() public {
-        symbol = &quot;GDL&quot;;
-        name = &quot;GodlyCoin&quot;;
+        symbol = "GDL";
+        name = "GodlyCoin";
         decimals = 3;
         _totalSupply = 98000000000;
         balances[0xadCC8514336E65be1966d457200CB098bD64A94c] = _totalSupply;

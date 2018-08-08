@@ -98,8 +98,8 @@ contract StandardToken is ERC20 {
 contract BangdiToken is StandardToken {
     uint public totalSupply = 1*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;Bangdi Token&quot;;
-    string constant public symbol = &quot;BD&quot;;
+    string constant public name = "Bangdi Token";
+    string constant public symbol = "BD";
 
     function BangdiToken(address bangdiaddr) public {
         balances[bangdiaddr] = totalSupply;

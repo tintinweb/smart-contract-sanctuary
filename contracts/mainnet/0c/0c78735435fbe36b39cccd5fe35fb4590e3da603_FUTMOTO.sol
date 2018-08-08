@@ -52,9 +52,9 @@ contract FUTMOTO {
 
  
     // Optional ERC20 values.
-    string public name = &quot;Futeremoto&quot;;
+    string public name = "Futeremoto";
     uint8 public decimals = 18;
-    string public symbol = &quot;FUTMOTO&quot;;
+    string public symbol = "FUTMOTO";
     
     // Public variables so the curious can check the state.
     bool public swap = false;

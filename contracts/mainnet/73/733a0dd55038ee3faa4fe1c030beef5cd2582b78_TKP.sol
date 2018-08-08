@@ -98,8 +98,8 @@ contract TKP is Owned {
     event TokenMintingEnabled(address indexed _invoker, bool indexed _enabled);
 
     function TKP() public {
-        name = &quot;Trish Kelly Portfolio Coin&quot;;
-        symbol = &quot;TKP&quot;;
+        name = "Trish Kelly Portfolio Coin";
+        symbol = "TKP";
         decimals = 18;
        
         totalSupply = 60000000000000000000000000;

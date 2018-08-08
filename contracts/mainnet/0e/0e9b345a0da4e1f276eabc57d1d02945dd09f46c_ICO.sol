@@ -56,7 +56,7 @@ contract ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -93,8 +93,8 @@ contract Ownable {
 contract Token is Ownable {
     using SafeMath for uint;
 
-    string public name = &quot;Invox&quot;;
-    string public symbol = &quot;INVOX&quot;;
+    string public name = "Invox";
+    string public symbol = "INVOX";
     uint8 public decimals = 18;
     uint256 public totalSupply = 0;
 

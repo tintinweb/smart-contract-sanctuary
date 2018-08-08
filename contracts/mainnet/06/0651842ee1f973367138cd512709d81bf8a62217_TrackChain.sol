@@ -58,8 +58,8 @@ contract TrackChain is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;TrackChain&quot;;
-    string public constant symbol = &quot;TKC&quot;;
+    string public constant name = "TrackChain";
+    string public constant symbol = "TKC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 800000000e8;

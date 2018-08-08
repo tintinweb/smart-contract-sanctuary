@@ -173,8 +173,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract Daethereum is StandardToken {
-  string public constant name = &quot;Daethereum&quot;;
-  string public constant symbol = &quot;DTHR&quot;;
+  string public constant name = "Daethereum";
+  string public constant symbol = "DTHR";
   uint32 public constant decimals = 8;
   uint256 public INITIAL_SUPPLY = 100000000 * 10 ** 8;
   constructor() public {

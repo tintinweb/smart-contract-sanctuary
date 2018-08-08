@@ -5,8 +5,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 contract DYLC_ERC20Token {
 
     address public owner;
-    string public name = &quot;YLCHINA&quot;;
-    string public symbol = &quot;DYLC&quot;;
+    string public name = "YLCHINA";
+    string public symbol = "DYLC";
     uint8 public decimals = 18;
 
     uint256 public totalSupply = 5000000000 * (10**18);

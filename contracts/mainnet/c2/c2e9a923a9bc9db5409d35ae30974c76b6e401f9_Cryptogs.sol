@@ -80,7 +80,7 @@ contract NFT {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -120,12 +120,12 @@ contract Ownable {
 
 contract Cryptogs is NFT, Ownable {
 
-    string public constant name = &quot;Cryptogs&quot;;
-    string public constant symbol = &quot;POGS&quot;;
+    string public constant name = "Cryptogs";
+    string public constant symbol = "POGS";
 
-    string public constant purpose = &quot;ETHDenver&quot;;
-    string public constant contact = &quot;https://cryptogs.io&quot;;
-    string public constant author = &quot;Austin Thomas Griffith&quot;;
+    string public constant purpose = "ETHDenver";
+    string public constant contact = "https://cryptogs.io";
+    string public constant author = "Austin Thomas Griffith";
 
     uint8 public constant FLIPPINESS = 64;
     uint8 public constant FLIPPINESSROUNDBONUS = 16;
@@ -143,7 +143,7 @@ contract Cryptogs is NFT, Ownable {
     function Cryptogs() public {
       //0 index should be a blank item owned by no one
       Item memory _item = Item({
-        image: &quot;&quot;
+        image: ""
       });
       items.push(_item);
     }

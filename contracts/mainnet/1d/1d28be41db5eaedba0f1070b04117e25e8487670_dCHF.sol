@@ -225,8 +225,8 @@ contract dCHF is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function dCHF() public {
-        symbol = &quot;dCHF&quot;;
-        name = &quot;private digitale Schweizer Franken - private digital Swiss Franc&quot;;
+        symbol = "dCHF";
+        name = "private digitale Schweizer Franken - private digital Swiss Franc";
         decimals = 2;
         _totalSupply = 1500000;
         balances[0x0000F70bC78af03f14132c68b59153E4788bAb20] = _totalSupply;

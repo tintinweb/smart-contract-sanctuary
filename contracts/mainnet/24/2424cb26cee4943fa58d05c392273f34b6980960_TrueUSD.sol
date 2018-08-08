@@ -644,8 +644,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract TrueUSD is StandardDelegate, PausableToken, BurnableToken, NoOwner, CanDelegate {
-    string public name = &quot;TrueUSD&quot;;
-    string public symbol = &quot;TUSD&quot;;
+    string public name = "TrueUSD";
+    string public symbol = "TUSD";
     uint8 public constant decimals = 18;
 
     AddressList public canReceiveMintWhiteList;

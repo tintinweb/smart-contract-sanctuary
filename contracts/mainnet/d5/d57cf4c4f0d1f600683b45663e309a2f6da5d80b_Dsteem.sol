@@ -50,8 +50,8 @@ contract Dsteem is IERC20 {
     
     uint public _totalSupply = 0;
     
-    string public constant symbol = &quot;DSTEEM&quot;;
-    string public constant name = &quot;DSTEEM&quot;;
+    string public constant symbol = "DSTEEM";
+    string public constant name = "DSTEEM";
     uint8 public constant decimals = 18;
     
     uint256 public constant RATE = 1000;

@@ -85,7 +85,7 @@ contract DepositTiken is Owned {
         address _this = this;
         contractBalance = _this.balance;
         
-        emit SomeEvent(msg.sender, this, _value, &quot;buy&quot;);
+        emit SomeEvent(msg.sender, this, _value, "buy");
     }
     
     function sell (uint256 countTokens) public {
@@ -107,7 +107,7 @@ contract DepositTiken is Owned {
         
         msg.sender.transfer(_value);
         
-        emit SomeEvent(msg.sender, this, _value, &quot;sell&quot;);
+        emit SomeEvent(msg.sender, this, _value, "sell");
     }
     function getPrice() public constant returns (uint bid, uint ask) {
         bid = _sellprice.mul(100).div(95);

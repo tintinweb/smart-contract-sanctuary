@@ -241,7 +241,7 @@ contract RewardToken is StandardToken, Ownable {
 }
 
 contract Token is CappedToken, BurnableToken, RewardToken {
-    function Token() CappedToken(10000 * 1 ether) StandardToken(&quot;CRYPTtesttt&quot;, &quot;CRYPTtesttt&quot;, 18) public {
+    function Token() CappedToken(10000 * 1 ether) StandardToken("CRYPTtesttt", "CRYPTtesttt", 18) public {
         
     }
 }
@@ -261,14 +261,14 @@ contract Crowdsale is Pausable {
 	
     //uint public priceTokenWei = 7142857142857142; 
     uint private priceTokenWei = 12690355329949;  // 1 токен равен 0,01$ (1eth = 788$)
-    string public TokenPriceETH = &quot;0.000013&quot;;  // Стоимость токена 
+    string public TokenPriceETH = "0.000013";  // Стоимость токена 
     //uint public bonusPercent = 0; // Бонусная часть
     uint private Sb = 1 ether; // Цифры после запятой 18
     uint private oSb = Sb * 5000; // Токены для Владельца 
     uint private BountyCRYPT = Sb * 500; // Токены для Баунти-компании  
     uint private PRTC = Sb * 1000; // PreICO количество токенов для продажи 
     
-	string public IcoStatus = &quot;PreIco&quot;;
+	string public IcoStatus = "PreIco";
 
     bool public crowdsaleClosed = false;
     bool public crowdsaleRefund = false;
@@ -322,9 +322,9 @@ contract Crowdsale is Pausable {
 		/*Меняем статус ICO*/
 		if(tokensSold > PRTC){
 			if(tokensForSale == tokensSold){
-				IcoStatus = &quot;The End :D&quot;;
+				IcoStatus = "The End :D";
 			}else{
-				IcoStatus = &quot;ICO&quot;;
+				IcoStatus = "ICO";
 			}
 		}
         emit Rurchase(msg.sender, amount, sum);

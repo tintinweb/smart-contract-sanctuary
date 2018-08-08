@@ -147,8 +147,8 @@ contract GayBananaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GayBananaToken() public {
-        symbol = &quot;GNA&quot;;
-        name = &quot;Gay Banana Token&quot;;
+        symbol = "GNA";
+        name = "Gay Banana Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x127094b40d413Ed499d460bcDd46ff0c55071C75] = _totalSupply;

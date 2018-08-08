@@ -16,9 +16,9 @@ contract erc20CTH {
     function erc20CTH() {
 
          initialSupply = 20000000000;
-         name =&quot;CryptoHit&quot;;
+         name ="CryptoHit";
         decimals = 2;
-         symbol = &quot;CTH&quot;;
+         symbol = "CTH";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

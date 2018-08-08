@@ -130,7 +130,7 @@ contract Robincoin is owned, RobincoinERC20 {
 
     mapping (address => bool) public frozenAccount;
 
-    event FrozenFunds(address target, bool frozen); //notifico il &quot;congelamento&quot;
+    event FrozenFunds(address target, bool frozen); //notifico il "congelamento"
 
     function Robincoin(
         uint256 initialSupply,

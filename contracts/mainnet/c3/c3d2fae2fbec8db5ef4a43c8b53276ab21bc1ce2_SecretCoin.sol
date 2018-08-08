@@ -109,8 +109,8 @@ contract SecretCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SecretCoin() public {
-        symbol = &quot;SCR&quot;;
-        name = &quot;SecretCoin&quot;;
+        symbol = "SCR";
+        name = "SecretCoin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xc8a0775D6b1D2a737E8961B93a12aA2c63340e1F] = _totalSupply;

@@ -98,8 +98,8 @@ contract OPTinToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OPTinToken() public {
-        symbol = &quot;OPT&quot;;
-        name = &quot;OPTin Token&quot;;
+        symbol = "OPT";
+        name = "OPTin Token";
         decimals = 18;
         _totalSupply = 430000000 * 10**uint(decimals);
         balances[0x0212643Bedd14281Ba284a203EefF978E5FA2359] = _totalSupply;

@@ -82,8 +82,8 @@ contract eosGAS is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;eosGAS&quot;;
-    string public constant symbol = &quot;eosGAS&quot;;
+    string public constant name = "eosGAS";
+    string public constant symbol = "eosGAS";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 1000000000e18;

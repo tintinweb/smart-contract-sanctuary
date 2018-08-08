@@ -87,8 +87,8 @@ contract RCCcoin0001 is ERC20Interface, Owned, SafeMath {
     // Constructor
     /////////////////////////////////////////////////////////////
     constructor() public {
-        symbol = &quot;1st&quot;;
-        name = &quot;RCC-coin&quot;;
+        symbol = "1st";
+        name = "RCC-coin";
         decimals = 0;
         _totalSupply = 1;
         balances[0x504474e3c6BCacfFbF85693F44D050007b9C5257] = _totalSupply;

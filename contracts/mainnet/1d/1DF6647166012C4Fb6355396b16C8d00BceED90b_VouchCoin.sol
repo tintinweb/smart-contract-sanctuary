@@ -7,7 +7,7 @@ contract VouchCoin  {
   uint public initialSupply;
   string public name;
   uint public decimals;
-  string public standard = &quot;VouchCoin&quot;;
+  string public standard = "VouchCoin";
 
   mapping (address => uint) public balanceOf;
 
@@ -17,7 +17,7 @@ contract VouchCoin  {
     owner = msg.sender;
     balanceOf[msg.sender] = 10000000000000000;
     totalSupply = 10000000000000000;
-    name = &quot;VouchCoin&quot;;
+    name = "VouchCoin";
     decimals = 8;
   }
 

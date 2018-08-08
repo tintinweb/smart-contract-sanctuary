@@ -199,8 +199,8 @@ contract SpankICO is Owned, Spank {
     mapping (address => uint256) recordBalance; 
     mapping (address => uint256) recordTokenHolderID;      
     mapping (address => uint256) tokenHolderID;               
-    string tokenName = &quot;Spank&quot;; 
-    string tokenSymbol = &quot;SPNK&quot;; 
+    string tokenName = "Spank"; 
+    string tokenSymbol = "SPNK"; 
     uint256 initialTokens = 20000000000000000; 
     uint256 multiplier = 100000000; 
     uint8 decimalUnits = 8;  

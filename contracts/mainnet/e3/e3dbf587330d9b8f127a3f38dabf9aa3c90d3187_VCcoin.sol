@@ -109,8 +109,8 @@ contract VCcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function VCcoin() public {
-        symbol = &quot;VCCN&quot;;
-        name = &quot;VCcoin&quot;;
+        symbol = "VCCN";
+        name = "VCcoin";
         decimals = 18;
         _totalSupply = 5000000000000000000000000000;
         balances[0x903862f79f24d564aef487b7b28306e71df2ab03] = _totalSupply;

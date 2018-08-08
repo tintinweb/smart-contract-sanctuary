@@ -69,8 +69,8 @@ contract BroFistCoin is IERC20 {
     
     uint public _totalSupply = 0; // Begins with 0 Coins
     
-    string public constant symbol = &quot;BRO&quot;;
-    string public constant name = &quot;BroFistCoin&quot;;
+    string public constant symbol = "BRO";
+    string public constant name = "BroFistCoin";
     uint8 public constant decimals = 18;  
          
     uint public startDate = 1520776800; // GMT/UTC: Sunday, 11. March 2018 2pm 

@@ -268,8 +268,8 @@ contract StandardToken is TokenInterface {
 
 contract LeviusDAO is StandardToken {
 
-    string public constant symbol = &quot;LeviusDAO&quot;;
-    string public constant name = &quot;LeviusDAO&quot;;
+    string public constant symbol = "LeviusDAO";
+    string public constant name = "LeviusDAO";
 
     uint8 public constant decimals = 8;
     uint DECIMAL_ZEROS = 10**8;

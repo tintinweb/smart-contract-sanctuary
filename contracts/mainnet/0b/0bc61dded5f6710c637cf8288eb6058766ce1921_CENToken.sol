@@ -197,9 +197,9 @@ contract StandardToken is Token ,CENStop{
 }
 contract CENToken is StandardToken{
 
-	string public name = &quot;CEN&quot;;                                   /// Set the full name of this contract
+	string public name = "CEN";                                   /// Set the full name of this contract
 	uint256 public decimals = 18;                                 /// Set the decimal
-	string public symbol = &quot;CEN&quot;;                                 /// Set the symbol of this contract
+	string public symbol = "CEN";                                 /// Set the symbol of this contract
 
 	constructor() public {                    /// Should have sth in this
 		owner = msg.sender;

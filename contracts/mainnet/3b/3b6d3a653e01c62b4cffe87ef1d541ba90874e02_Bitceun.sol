@@ -123,8 +123,8 @@ contract StandardToken is ERC20 {
 }
 
 contract Bitceun is StandardToken {
-  string public constant name = &quot;Bitceun&quot;;
-  string public constant symbol = &quot;BIT&quot;;
+  string public constant name = "Bitceun";
+  string public constant symbol = "BIT";
   uint8 public constant decimals = 0;
 
   function Bitceun() public {

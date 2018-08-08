@@ -190,11 +190,11 @@ contract TokenLayer is ERC721, Manageable {
     }
 
     function name() public pure returns (string) {
-        return &quot;LayerName&quot;;
+        return "LayerName";
     }
 
     function symbol() public pure returns (string) {
-        return &quot;LayerSymbol&quot;;
+        return "LayerSymbol";
     }
 
     function approve(address _to, uint256 _tokenId, address _from) public onlySystem {
@@ -675,7 +675,7 @@ contract CoreContract is Manageable {
     function deleteLayer(uint256 layerId) public onlyAdmin {
         require(_addressNotNull(getLayerFromId[layerId]));
         getLayerFromId[layerId] = address(0);
-        getLayerNameFromId[layerId] = &quot;&quot;;
+        getLayerNameFromId[layerId] = "";
         layerCount--;
     }
 

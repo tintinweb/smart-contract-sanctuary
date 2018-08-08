@@ -200,7 +200,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -398,9 +398,9 @@ contract SparksterToken is StandardToken, Ownable{
 	}
 
 	constructor() public {
-		name = &quot;Sparkster&quot;;									// Set the name for display purposes
+		name = "Sparkster";									// Set the name for display purposes
 		decimals = 18;					 // Amount of decimals for display purposes
-		symbol = &quot;SPRK&quot;;							// Set the symbol for display purposes
+		symbol = "SPRK";							// Set the symbol for display purposes
 		setMaximumGasPrice(40);
 		mintTokens(435000000);
 	}
@@ -461,7 +461,7 @@ contract SparksterToken is StandardToken, Ownable{
 	
 	function purchaseCallbackOnAccept(uint256 groupNumber, address[] addresses, uint256[] weiAmounts) public onlyOwnerOrOracle returns(bool success) {
 		uint256 n = addresses.length;
-		require(n == weiAmounts.length, &quot;Array lengths mismatch&quot;);
+		require(n == weiAmounts.length, "Array lengths mismatch");
 		Group storage theGroup = groups[groupNumber];
 		uint256 weiTotal = theGroup.weiTotal;
 		for (uint256 i = 0; i < n; i++) {
@@ -483,7 +483,7 @@ contract SparksterToken is StandardToken, Ownable{
 
 	function insertAndApprove(uint256 groupNumber, address[] addresses, uint256[] weiAmounts) public onlyOwnerOrOracle returns(bool success) {
 		uint256 n = addresses.length;
-		require(n == weiAmounts.length, &quot;Array lengtsh mismatch&quot;);
+		require(n == weiAmounts.length, "Array lengtsh mismatch");
 		Group storage theGroup = groups[groupNumber];
 		for (uint256 i = 0; i < n; i++) {
 			address theAddress = addresses[i];
@@ -497,7 +497,7 @@ contract SparksterToken is StandardToken, Ownable{
 
 	function callbackInsertApproveAndDistribute(uint256 groupNumber, address[] addresses, uint256[] weiAmounts) public onlyOwnerOrOracle returns(bool success) {
 		uint256 n = addresses.length;
-		require(n == weiAmounts.length, &quot;Array lengths mismatch&quot;);
+		require(n == weiAmounts.length, "Array lengths mismatch");
 		Group storage theGroup = groups[groupNumber];
 		if (!theGroup.distributing) {
 			theGroup.distributing = true;
@@ -522,7 +522,7 @@ contract SparksterToken is StandardToken, Ownable{
 
 	function refund(address[] addresses, uint256[] weiAmounts) public onlyOwnerOrOracle returns(bool success) {
 		uint256 n = addresses.length;
-		require (n == weiAmounts.length, &quot;Array lengths mismatch&quot;);
+		require (n == weiAmounts.length, "Array lengths mismatch");
 		uint256 thePenalty = penalty;
 		for(uint256 i = 0; i < n; i++) {
 			uint256 weiAmount = weiAmounts[i];
@@ -782,7 +782,7 @@ contract SparksterToken is StandardToken, Ownable{
 
 	function airdrop( address[] addresses, uint256[] tokenDecimalAmounts) public onlyOwnerOrOracle returns (bool success) {
 		uint256 n = addresses.length;
-		require(n == tokenDecimalAmounts.length, &quot;Array lengths mismatch&quot;);
+		require(n == tokenDecimalAmounts.length, "Array lengths mismatch");
 		uint256 newOwnerBalance = balances[owner];
 		for (uint256 i = 0; i < n; i++) {
 			address theAddress = addresses[i];

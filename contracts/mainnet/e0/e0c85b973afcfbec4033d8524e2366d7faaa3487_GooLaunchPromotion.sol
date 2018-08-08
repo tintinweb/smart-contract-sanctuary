@@ -1,7 +1,7 @@
 pragma solidity ^0.4.0;
 
 
-// &quot;Proof of Commitment&quot; fun pre-launch competition for Goo!
+// "Proof of Commitment" fun pre-launch competition for Goo!
 
 //  Goo is an addictive freemium game but you can get ahead of
 //  other players (and earn more divs) by playing with eth

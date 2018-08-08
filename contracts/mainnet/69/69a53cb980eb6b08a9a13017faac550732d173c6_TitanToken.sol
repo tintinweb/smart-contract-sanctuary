@@ -50,7 +50,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -414,7 +414,7 @@ contract TitanToken is Ownable, StandardToken, RBAC {
     string public symbol = &#39;TC&#39;;
     uint256 public decimals = 8;
 
-    string public constant ROLE_EXCHANGER = &quot;exchanger&quot;;
+    string public constant ROLE_EXCHANGER = "exchanger";
 
     uint256 public constant INITIAL_SUPPLY = 100000000 * 10 ** 8;
     uint256 public MAXIMUM_ICO_TOKENS = 87000000 * 10 ** 8;

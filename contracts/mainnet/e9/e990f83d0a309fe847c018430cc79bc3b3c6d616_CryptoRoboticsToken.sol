@@ -178,8 +178,8 @@ contract StandardToken is ERC20 {
 contract CryptoRoboticsToken is StandardToken {
     using SafeMath for uint256;
 
-    string public constant name = &quot;CryptoRobotics&quot;;
-    string public constant symbol = &quot;ROBO&quot;;
+    string public constant name = "CryptoRobotics";
+    string public constant symbol = "ROBO";
     uint8 public constant decimals = 18;
 
     address public advisors;

@@ -70,8 +70,8 @@ contract TokenERC20 {
     constructor() public {
         totalSupply = 200000000;  
         balanceOf[msg.sender] = totalSupply;               
-        name = &quot;CTB&quot;;                                  
-        symbol = &quot;ȼ&quot;;                           
+        name = "CTB";                                  
+        symbol = "ȼ";                           
     }
 
     /**

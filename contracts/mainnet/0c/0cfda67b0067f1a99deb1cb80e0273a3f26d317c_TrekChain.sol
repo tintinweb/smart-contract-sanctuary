@@ -62,8 +62,8 @@ contract TrekChain is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;TrekChain&quot;;
-    string public constant symbol = &quot;TREK&quot;;
+    string public constant name = "TrekChain";
+    string public constant symbol = "TREK";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 1200000000e18;

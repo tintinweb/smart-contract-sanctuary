@@ -203,8 +203,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract ENTA is StandardToken,Owned {
 
-    string public name = &quot;ENTA&quot;;
-    string public symbol = &quot;ENTA&quot;;
+    string public name = "ENTA";
+    string public symbol = "ENTA";
     uint256 public decimals = 8;
     uint256 public INITIAL_SUPPLY = 2000000000 * (10 ** decimals); // Two billion
     uint256 public publicSell = 1530374400;//2018-07-01

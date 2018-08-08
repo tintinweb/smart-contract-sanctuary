@@ -72,8 +72,8 @@ pragma solidity ^0.4.18;
  
  
      function STASHToken() public {
-         symbol = &quot;STASH&quot;;
-         name = &quot;BitStash&quot;;
+         symbol = "STASH";
+         name = "BitStash";
          decimals = 18;
          _totalSupply = 36000000000 * 10**uint(decimals);
          balances[owner] = _totalSupply;
@@ -139,7 +139,7 @@ pragma solidity ^0.4.18;
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { revert(); }
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { revert(); }
         return true;
     }
  

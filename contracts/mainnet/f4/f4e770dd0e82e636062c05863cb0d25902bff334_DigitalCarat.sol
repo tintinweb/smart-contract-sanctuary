@@ -161,7 +161,7 @@ contract ERC891 is ERC20 {
 
     function claimWithSignature(bytes _sig) public {
         bytes32 hash = bytes32(keccak256(abi.encodePacked(
-            &quot;\x19Ethereum Signed Message:\n32&quot;,
+            "\x19Ethereum Signed Message:\n32",
             keccak256(abi.encodePacked(msg.sender))
         )));
         
@@ -174,8 +174,8 @@ contract ERC891 is ERC20 {
 }
 
 contract DigitalCarat is ERC891 {
-    string  public constant name        = &quot;Digital Carat&quot;;
-    string  public constant symbol      = &quot;DCD&quot;;
+    string  public constant name        = "Digital Carat";
+    string  public constant symbol      = "DCD";
     uint    public constant decimals    = 18;
     uint    public version              = 0;
 }

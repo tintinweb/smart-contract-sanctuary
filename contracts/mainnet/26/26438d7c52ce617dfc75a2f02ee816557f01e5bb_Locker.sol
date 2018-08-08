@@ -8,30 +8,30 @@ pragma solidity 0.4.24;
 library SafeMath {
     function mul(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a * b;
-        require(a == 0 || c / a == b, &quot;mul overflow&quot;);
+        require(a == 0 || c / a == b, "mul overflow");
         return c;
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b > 0, &quot;div by 0&quot;); // Solidity automatically throws for div by 0 but require to emit reason
+        require(b > 0, "div by 0"); // Solidity automatically throws for div by 0 but require to emit reason
         uint256 c = a / b;
         // require(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b <= a, &quot;sub underflow&quot;);
+        require(b <= a, "sub underflow");
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        require(c >= a, &quot;add overflow&quot;);
+        require(c >= a, "add overflow");
         return c;
     }
 
     function roundedDiv(uint a, uint b) internal pure returns (uint256) {
-        require(b > 0, &quot;div by 0&quot;); // Solidity automatically throws for div by 0 but require to emit reason
+        require(b > 0, "div by 0"); // Solidity automatically throws for div by 0 but require to emit reason
         uint256 z = a / b;
         if (a % b >= b / 2) {
             z++;  // no need for safe add b/c it can happen only if we divided the input
@@ -41,7 +41,7 @@ library SafeMath {
 
     // Always rounds up
     function ceilDiv(uint a, uint b) internal pure returns (uint256) {
-        require(b > 0, &quot;div by 0&quot;); // Solidity automatically throws for div by 0 but require to emit reason
+        require(b > 0, "div by 0"); // Solidity automatically throws for div by 0 but require to emit reason
         uint256 z = a / b;
         if (a % b != 0) {
             z++;  // no need for safe add b/c it can happen only if we divided the input
@@ -56,7 +56,7 @@ library SafeMath {
 
     deployment works as:
            1. contract deployer account deploys contracts
-           2. constructor grants &quot;PermissionGranter&quot; permission to deployer account
+           2. constructor grants "PermissionGranter" permission to deployer account
            3. deployer account executes initial setup (no multiSig)
            4. deployer account grants PermissionGranter permission for the MultiSig contract
                 (e.g. StabilityBoardProxy or PreTokenProxy)
@@ -72,26 +72,26 @@ contract Restricted {
     event PermissionRevoked(address indexed agent, bytes32 revokedPermission);
 
     modifier restrict(bytes32 requiredPermission) {
-        require(permissions[msg.sender][requiredPermission], &quot;msg.sender must have permission&quot;);
+        require(permissions[msg.sender][requiredPermission], "msg.sender must have permission");
         _;
     }
 
     constructor(address permissionGranterContract) public {
-        require(permissionGranterContract != address(0), &quot;permissionGranterContract must be set&quot;);
-        permissions[permissionGranterContract][&quot;PermissionGranter&quot;] = true;
-        emit PermissionGranted(permissionGranterContract, &quot;PermissionGranter&quot;);
+        require(permissionGranterContract != address(0), "permissionGranterContract must be set");
+        permissions[permissionGranterContract]["PermissionGranter"] = true;
+        emit PermissionGranted(permissionGranterContract, "PermissionGranter");
     }
 
     function grantPermission(address agent, bytes32 requiredPermission) public {
-        require(permissions[msg.sender][&quot;PermissionGranter&quot;],
-            &quot;msg.sender must have PermissionGranter permission&quot;);
+        require(permissions[msg.sender]["PermissionGranter"],
+            "msg.sender must have PermissionGranter permission");
         permissions[agent][requiredPermission] = true;
         emit PermissionGranted(agent, requiredPermission);
     }
 
     function grantMultiplePermissions(address agent, bytes32[] requiredPermissions) public {
-        require(permissions[msg.sender][&quot;PermissionGranter&quot;],
-            &quot;msg.sender must have PermissionGranter permission&quot;);
+        require(permissions[msg.sender]["PermissionGranter"],
+            "msg.sender must have PermissionGranter permission");
         uint256 length = requiredPermissions.length;
         for (uint256 i = 0; i < length; i++) {
             grantPermission(agent, requiredPermissions[i]);
@@ -99,8 +99,8 @@ contract Restricted {
     }
 
     function revokePermission(address agent, bytes32 requiredPermission) public {
-        require(permissions[msg.sender][&quot;PermissionGranter&quot;],
-            &quot;msg.sender must have PermissionGranter permission&quot;);
+        require(permissions[msg.sender]["PermissionGranter"],
+            "msg.sender must have PermissionGranter permission");
         permissions[agent][requiredPermission] = false;
         emit PermissionRevoked(agent, requiredPermission);
     }
@@ -172,7 +172,7 @@ library ECRecovery {
 
   /**
    * toEthSignedMessageHash
-   * @dev prefix a bytes32 value with &quot;\x19Ethereum Signed Message:&quot;
+   * @dev prefix a bytes32 value with "\x19Ethereum Signed Message:"
    * @dev and hash the result
    */
   function toEthSignedMessageHash(bytes32 hash)
@@ -182,7 +182,7 @@ library ECRecovery {
   {
     // 32 is the length in bytes of hash,
     // enforced by the type signature above
-    return keccak256(abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, hash));
+    return keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", hash));
   }
 }
 
@@ -250,7 +250,7 @@ contract AugmintTokenInterface is Restricted, ERC20Interface {
     function increaseApproval(address spender, uint addedValue) external returns (bool);
     function decreaseApproval(address spender, uint subtractedValue) external returns (bool);
 
-    function issueTo(address to, uint amount) external; // restrict it to &quot;MonetarySupervisor&quot; in impl.;
+    function issueTo(address to, uint amount) external; // restrict it to "MonetarySupervisor" in impl.;
     function burn(uint amount) external;
 
     function transferAndNotify(TokenReceiver target, uint amount, uint data) external;
@@ -276,9 +276,9 @@ contract AugmintToken is AugmintTokenInterface {
 
     constructor(address permissionGranterContract, string _name, string _symbol, bytes32 _peggedSymbol, uint8 _decimals, TransferFeeInterface _feeAccount)
     public Restricted(permissionGranterContract) {
-        require(_feeAccount != address(0), &quot;feeAccount must be set&quot;);
-        require(bytes(_name).length > 0, &quot;name must be set&quot;);
-        require(bytes(_symbol).length > 0, &quot;symbol must be set&quot;);
+        require(_feeAccount != address(0), "feeAccount must be set");
+        require(bytes(_name).length > 0, "name must be set");
+        require(bytes(_symbol).length > 0, "symbol must be set");
 
         name = _name;
         symbol = _symbol;
@@ -289,7 +289,7 @@ contract AugmintToken is AugmintTokenInterface {
 
     }
     function transfer(address to, uint256 amount) external returns (bool) {
-        _transfer(msg.sender, to, amount, &quot;&quot;);
+        _transfer(msg.sender, to, amount, "");
         return true;
     }
 
@@ -310,7 +310,7 @@ contract AugmintToken is AugmintTokenInterface {
     }
 
     function approve(address _spender, uint256 amount) external returns (bool) {
-        require(_spender != 0x0, &quot;spender must be set&quot;);
+        require(_spender != 0x0, "spender must be set");
         allowed[msg.sender][_spender] = amount;
         emit Approval(msg.sender, _spender, amount);
         return true;
@@ -337,7 +337,7 @@ contract AugmintToken is AugmintTokenInterface {
     }
 
     function transferFrom(address from, address to, uint256 amount) external returns (bool) {
-        _transferFrom(from, to, amount, &quot;&quot;);
+        _transferFrom(from, to, amount, "");
         return true;
     }
 
@@ -345,25 +345,25 @@ contract AugmintToken is AugmintTokenInterface {
     //      - on new loan (by trusted Lender contracts)
     //      - when converting old tokens using MonetarySupervisor
     //      - strictly to reserve by Stability Board (via MonetarySupervisor)
-    function issueTo(address to, uint amount) external restrict(&quot;MonetarySupervisor&quot;) {
+    function issueTo(address to, uint amount) external restrict("MonetarySupervisor") {
         balances[to] = balances[to].add(amount);
         totalSupply = totalSupply.add(amount);
         emit Transfer(0x0, to, amount);
-        emit AugmintTransfer(0x0, to, amount, &quot;&quot;, 0);
+        emit AugmintTransfer(0x0, to, amount, "", 0);
     }
 
     // Burn tokens. Anyone can burn from its own account. YOLO.
     // Used by to burn from Augmint reserve or by Lender contract after loan repayment
     function burn(uint amount) external {
-        require(balances[msg.sender] >= amount, &quot;balance must be >= amount&quot;);
+        require(balances[msg.sender] >= amount, "balance must be >= amount");
         balances[msg.sender] = balances[msg.sender].sub(amount);
         totalSupply = totalSupply.sub(amount);
         emit Transfer(msg.sender, 0x0, amount);
-        emit AugmintTransfer(msg.sender, 0x0, amount, &quot;&quot;, 0);
+        emit AugmintTransfer(msg.sender, 0x0, amount, "", 0);
     }
 
     /* to upgrade feeAccount (eg. for fee calculation changes) */
-    function setFeeAccount(TransferFeeInterface newFeeAccount) external restrict(&quot;StabilityBoard&quot;) {
+    function setFeeAccount(TransferFeeInterface newFeeAccount) external restrict("StabilityBoard") {
         feeAccount = newFeeAccount;
         emit FeeAccountChanged(newFeeAccount);
     }
@@ -377,7 +377,7 @@ contract AugmintToken is AugmintTokenInterface {
         TODO: make data param generic bytes (see receiver code attempt in Locker.transferNotification)
     */
     function transferAndNotify(TokenReceiver target, uint amount, uint data) external {
-        _transfer(msg.sender, target, amount, &quot;&quot;);
+        _transfer(msg.sender, target, amount, "");
 
         target.transferNotification(msg.sender, amount, data);
     }
@@ -395,7 +395,7 @@ contract AugmintToken is AugmintTokenInterface {
 
         _checkHashAndTransferExecutorFee(txHash, signature, from, maxExecutorFeeInToken, requestedExecutorFeeInToken);
 
-        _transfer(from, target, amount, &quot;&quot;);
+        _transfer(from, target, amount, "");
         target.transferNotification(from, amount, data);
     }
 
@@ -418,14 +418,14 @@ contract AugmintToken is AugmintTokenInterface {
 
     function _checkHashAndTransferExecutorFee(bytes32 txHash, bytes signature, address signer,
                                                 uint maxExecutorFeeInToken, uint requestedExecutorFeeInToken) private {
-        require(requestedExecutorFeeInToken <= maxExecutorFeeInToken, &quot;requestedExecutorFee must be <= maxExecutorFee&quot;);
-        require(!delegatedTxHashesUsed[txHash], &quot;txHash already used&quot;);
+        require(requestedExecutorFeeInToken <= maxExecutorFeeInToken, "requestedExecutorFee must be <= maxExecutorFee");
+        require(!delegatedTxHashesUsed[txHash], "txHash already used");
         delegatedTxHashesUsed[txHash] = true;
 
         address recovered = ECRecovery.recover(ECRecovery.toEthSignedMessageHash(txHash), signature);
-        require(recovered == signer, &quot;invalid signature&quot;);
+        require(recovered == signer, "invalid signature");
 
-        _transfer(signer, msg.sender, requestedExecutorFeeInToken, &quot;Delegated transfer fee&quot;, 0);
+        _transfer(signer, msg.sender, requestedExecutorFeeInToken, "Delegated transfer fee", 0);
     }
 
     function _increaseApproval(address _approver, address _spender, uint _addedValue) private returns (bool) {
@@ -434,10 +434,10 @@ contract AugmintToken is AugmintTokenInterface {
     }
 
     function _transferFrom(address from, address to, uint256 amount, string narrative) private {
-        require(balances[from] >= amount, &quot;balance must >= amount&quot;);
-        require(allowed[from][msg.sender] >= amount, &quot;allowance must be >= amount&quot;);
+        require(balances[from] >= amount, "balance must >= amount");
+        require(allowed[from][msg.sender] >= amount, "allowance must be >= amount");
         // don&#39;t allow 0 transferFrom if no approval:
-        require(allowed[from][msg.sender] > 0, &quot;allowance must be >= 0 even with 0 amount&quot;);
+        require(allowed[from][msg.sender] > 0, "allowance must be >= 0 even with 0 amount");
 
         /* NB: fee is deducted from owner. It can result that transferFrom of amount x to fail
                 when x + fee is not availale on owner balance */
@@ -453,10 +453,10 @@ contract AugmintToken is AugmintTokenInterface {
     }
 
     function _transfer(address from, address to, uint transferAmount, string narrative, uint fee) private {
-        require(to != 0x0, &quot;to must be set&quot;);
+        require(to != 0x0, "to must be set");
         uint amountWithFee = transferAmount.add(fee);
         // to emit proper reason instead of failing on from.sub()
-        require(balances[from] >= amountWithFee, &quot;balance must be >= amount + transfer fee&quot;);
+        require(balances[from] >= amountWithFee, "balance must be >= amount + transfer fee");
 
         if (fee > 0) {
             balances[feeAccount] = balances[feeAccount].add(fee);
@@ -481,7 +481,7 @@ contract SystemAccount is Restricted {
     /* TODO: this is only for first pilots to avoid funds stuck in contract due to bugs.
       remove this function for higher volume pilots */
     function withdraw(AugmintToken tokenAddress, address to, uint tokenAmount, uint weiAmount, string narrative)
-    external restrict(&quot;StabilityBoard&quot;) {
+    external restrict("StabilityBoard") {
         tokenAddress.transferWithNarrative(to, tokenAmount, narrative);
         if (weiAmount > 0) {
             to.transfer(weiAmount);
@@ -508,7 +508,7 @@ contract AugmintReserves is SystemAccount {
 
     constructor(address permissionGranterContract) public SystemAccount(permissionGranterContract) {} // solhint-disable-line no-empty-blocks
 
-    function burn(AugmintTokenInterface augmintToken, uint amount) external restrict(&quot;MonetarySupervisor&quot;) {
+    function burn(AugmintTokenInterface augmintToken, uint amount) external restrict("MonetarySupervisor") {
         augmintToken.burn(amount);
     }
 
@@ -521,7 +521,7 @@ contract InterestEarnedAccount is SystemAccount {
     constructor(address permissionGranterContract) public SystemAccount(permissionGranterContract) {} // solhint-disable-line no-empty-blocks
 
     function transferInterest(AugmintTokenInterface augmintToken, address locker, uint interestAmount)
-    external restrict(&quot;MonetarySupervisor&quot;) {
+    external restrict("MonetarySupervisor") {
         augmintToken.transfer(locker, interestAmount);
     }
 
@@ -560,7 +560,7 @@ contract MonetarySupervisor is Restricted, TokenReceiver { // solhint-disable-li
                                             (1 - lockDifferenceLimit) with new lock. Stored as parts per million */
         uint  loanDifferenceLimit; /* only allow a new loan if Loan To Deposit ratio would stay above
                                             (1 + loanDifferenceLimit) with new loan. Stored as parts per million */
-        /* allowedDifferenceAmount param is to ensure the system is not &quot;freezing&quot; when totalLoanAmount or
+        /* allowedDifferenceAmount param is to ensure the system is not "freezing" when totalLoanAmount or
             totalLockAmount is low.
         It allows a new loan or lock (up to an amount to reach this difference) even if LTD will go below / above
             lockDifferenceLimit / loanDifferenceLimit with the new lock/loan */
@@ -594,12 +594,12 @@ contract MonetarySupervisor is Restricted, TokenReceiver { // solhint-disable-li
         ltdParams = LtdParams(lockDifferenceLimit, loanDifferenceLimit, allowedDifferenceAmount);
     }
 
-    function issueToReserve(uint amount) external restrict(&quot;StabilityBoard&quot;) {
+    function issueToReserve(uint amount) external restrict("StabilityBoard") {
         issuedByStabilityBoard = issuedByStabilityBoard.add(amount);
         augmintToken.issueTo(augmintReserves, amount);
     }
 
-    function burnFromReserve(uint amount) external restrict(&quot;StabilityBoard&quot;) {
+    function burnFromReserve(uint amount) external restrict("StabilityBoard") {
         issuedByStabilityBoard = issuedByStabilityBoard.sub(amount);
         augmintReserves.burn(augmintToken, amount);
     }
@@ -608,20 +608,20 @@ contract MonetarySupervisor is Restricted, TokenReceiver { // solhint-disable-li
         NB: it does not know about min loan amount, it&#39;s the loan contract&#39;s responsibility to enforce it  */
     function requestInterest(uint amountToLock, uint interestAmount) external {
         // only whitelisted Locker
-        require(permissions[msg.sender][&quot;Locker&quot;], &quot;msg.sender must have Locker permission&quot;);
-        require(amountToLock <= getMaxLockAmountAllowedByLtd(), &quot;amountToLock must be <= maxLockAmountAllowedByLtd&quot;);
+        require(permissions[msg.sender]["Locker"], "msg.sender must have Locker permission");
+        require(amountToLock <= getMaxLockAmountAllowedByLtd(), "amountToLock must be <= maxLockAmountAllowedByLtd");
 
         totalLockedAmount = totalLockedAmount.add(amountToLock);
         // next line would revert but require to emit reason:
         require(augmintToken.balanceOf(address(interestEarnedAccount)) >= interestAmount,
-            &quot;interestEarnedAccount balance must be >= interestAmount&quot;);
+            "interestEarnedAccount balance must be >= interestAmount");
         interestEarnedAccount.transferInterest(augmintToken, msg.sender, interestAmount); // transfer interest to Locker
     }
 
     // Locker notifying when releasing funds to update KPIs
     function releaseFundsNotification(uint lockedAmount) external {
         // only whitelisted Locker
-        require(permissions[msg.sender][&quot;Locker&quot;], &quot;msg.sender must have Locker permission&quot;);
+        require(permissions[msg.sender]["Locker"], "msg.sender must have Locker permission");
         totalLockedAmount = totalLockedAmount.sub(lockedAmount);
     }
 
@@ -629,36 +629,36 @@ contract MonetarySupervisor is Restricted, TokenReceiver { // solhint-disable-li
         NB: it does not know about min loan amount, it&#39;s the loan contract&#39;s responsibility to enforce it */
     function issueLoan(address borrower, uint loanAmount) external {
          // only whitelisted LoanManager contracts
-        require(permissions[msg.sender][&quot;LoanManager&quot;],
-            &quot;msg.sender must have LoanManager permission&quot;);
-        require(loanAmount <= getMaxLoanAmountAllowedByLtd(), &quot;loanAmount must be <= maxLoanAmountAllowedByLtd&quot;);
+        require(permissions[msg.sender]["LoanManager"],
+            "msg.sender must have LoanManager permission");
+        require(loanAmount <= getMaxLoanAmountAllowedByLtd(), "loanAmount must be <= maxLoanAmountAllowedByLtd");
         totalLoanAmount = totalLoanAmount.add(loanAmount);
         augmintToken.issueTo(borrower, loanAmount);
     }
 
     function loanRepaymentNotification(uint loanAmount) external {
         // only whitelisted LoanManager contracts
-       require(permissions[msg.sender][&quot;LoanManager&quot;],
-           &quot;msg.sender must have LoanManager permission&quot;);
+       require(permissions[msg.sender]["LoanManager"],
+           "msg.sender must have LoanManager permission");
         totalLoanAmount = totalLoanAmount.sub(loanAmount);
     }
 
     // NB: this is called by Lender contract with the sum of all loans collected in batch
     function loanCollectionNotification(uint totalLoanAmountCollected) external {
         // only whitelisted LoanManager contracts
-       require(permissions[msg.sender][&quot;LoanManager&quot;],
-           &quot;msg.sender must have LoanManager permission&quot;);
+       require(permissions[msg.sender]["LoanManager"],
+           "msg.sender must have LoanManager permission");
         totalLoanAmount = totalLoanAmount.sub(totalLoanAmountCollected);
     }
 
     function setAcceptedLegacyAugmintToken(address legacyAugmintTokenAddress, bool newAcceptedState)
-    external restrict(&quot;StabilityBoard&quot;) {
+    external restrict("StabilityBoard") {
         acceptedLegacyAugmintTokens[legacyAugmintTokenAddress] = newAcceptedState;
         emit AcceptedLegacyAugmintTokenChanged(legacyAugmintTokenAddress, newAcceptedState);
     }
 
     function setLtdParams(uint lockDifferenceLimit, uint loanDifferenceLimit, uint allowedDifferenceAmount)
-    external restrict(&quot;StabilityBoard&quot;) {
+    external restrict("StabilityBoard") {
         ltdParams = LtdParams(lockDifferenceLimit, loanDifferenceLimit, allowedDifferenceAmount);
 
         emit LtdParamsChanged(lockDifferenceLimit, loanDifferenceLimit, allowedDifferenceAmount);
@@ -668,7 +668,7 @@ contract MonetarySupervisor is Restricted, TokenReceiver { // solhint-disable-li
         when it&#39;s upgraded.
         Set new monetarySupervisor contract in all locker and loanManager contracts before executing this */
     function adjustKPIs(uint totalLoanAmountAdjustment, uint totalLockedAmountAdjustment)
-    external restrict(&quot;StabilityBoard&quot;) {
+    external restrict("StabilityBoard") {
         totalLoanAmount = totalLoanAmount.add(totalLoanAmountAdjustment);
         totalLockedAmount = totalLockedAmount.add(totalLockedAmountAdjustment);
 
@@ -677,7 +677,7 @@ contract MonetarySupervisor is Restricted, TokenReceiver { // solhint-disable-li
 
     /* to allow upgrades of InterestEarnedAccount and AugmintReserves contracts. */
     function setSystemContracts(InterestEarnedAccount newInterestEarnedAccount, AugmintReserves newAugmintReserves)
-    external restrict(&quot;StabilityBoard&quot;) {
+    external restrict("StabilityBoard") {
         interestEarnedAccount = newInterestEarnedAccount;
         augmintReserves = newAugmintReserves;
         emit SystemContractsChanged(newInterestEarnedAccount, newAugmintReserves);
@@ -696,7 +696,7 @@ contract MonetarySupervisor is Restricted, TokenReceiver { // solhint-disable-li
     */
     function transferNotification(address from, uint amount, uint /* data, not used */ ) external {
         AugmintTokenInterface legacyToken = AugmintTokenInterface(msg.sender);
-        require(acceptedLegacyAugmintTokens[legacyToken], &quot;msg.sender must be allowed in acceptedLegacyAugmintTokens&quot;);
+        require(acceptedLegacyAugmintTokens[legacyToken], "msg.sender must be allowed in acceptedLegacyAugmintTokens");
 
         legacyToken.burn(amount);
         augmintToken.issueTo(from, amount);
@@ -824,19 +824,19 @@ contract Locker is Restricted, TokenReceiver {
     }
 
     function addLockProduct(uint32 perTermInterest, uint32 durationInSecs, uint32 minimumLockAmount, bool isActive)
-    external restrict(&quot;StabilityBoard&quot;) {
+    external restrict("StabilityBoard") {
 
         uint _newLockProductId = lockProducts.push(
                                     LockProduct(perTermInterest, durationInSecs, minimumLockAmount, isActive)) - 1;
         uint32 newLockProductId = uint32(_newLockProductId);
-        require(newLockProductId == _newLockProductId, &quot;lockProduct overflow&quot;);
+        require(newLockProductId == _newLockProductId, "lockProduct overflow");
         emit NewLockProduct(newLockProductId, perTermInterest, durationInSecs, minimumLockAmount, isActive);
 
     }
 
-    function setLockProductActiveState(uint32 lockProductId, bool isActive) external restrict(&quot;StabilityBoard&quot;) {
+    function setLockProductActiveState(uint32 lockProductId, bool isActive) external restrict("StabilityBoard") {
         // next line would revert but require to emit reason:
-        require(lockProductId < lockProducts.length, &quot;invalid lockProductId&quot;);
+        require(lockProductId < lockProducts.length, "invalid lockProductId");
 
         lockProducts[lockProductId].isActive = isActive;
         emit LockProductActiveChange(lockProductId, isActive);
@@ -850,11 +850,11 @@ contract Locker is Restricted, TokenReceiver {
         3) transferAndNotify calls Lock.transferNotification with lockProductId
     */
     function transferNotification(address from, uint256 amountToLock, uint _lockProductId) external {
-        require(msg.sender == address(augmintToken), &quot;msg.sender must be augmintToken&quot;);
+        require(msg.sender == address(augmintToken), "msg.sender must be augmintToken");
         // next line would revert but require to emit reason:
-        require(lockProductId < lockProducts.length, &quot;invalid lockProductId&quot;);
+        require(lockProductId < lockProducts.length, "invalid lockProductId");
         uint32 lockProductId = uint32(_lockProductId);
-        require(lockProductId == _lockProductId, &quot;lockProductId overflow&quot;);
+        require(lockProductId == _lockProductId, "lockProductId overflow");
         /* TODO: make data arg generic bytes
             uint productId;
             assembly { // solhint-disable-line no-inline-assembly
@@ -865,12 +865,12 @@ contract Locker is Restricted, TokenReceiver {
 
     function releaseFunds(uint lockId) external {
         // next line would revert but require to emit reason:
-        require(lockId < locks.length, &quot;invalid lockId&quot;);
+        require(lockId < locks.length, "invalid lockId");
         Lock storage lock = locks[lockId];
         LockProduct storage lockProduct = lockProducts[lock.productId];
 
-        require(lock.isActive, &quot;lock must be in active state&quot;);
-        require(now >= lock.lockedUntil, &quot;current time must be later than lockedUntil&quot;);
+        require(lock.isActive, "lock must be in active state");
+        require(now >= lock.lockedUntil, "current time must be later than lockedUntil");
 
         lock.isActive = false;
 
@@ -878,12 +878,12 @@ contract Locker is Restricted, TokenReceiver {
 
         monetarySupervisor.releaseFundsNotification(lock.amountLocked); // to maintain totalLockAmount
         augmintToken.transferWithNarrative(lock.owner, lock.amountLocked.add(interestEarned),
-                                                                                &quot;Funds released from lock&quot;);
+                                                                                "Funds released from lock");
 
         emit LockReleased(lock.owner, lockId);
     }
 
-    function setMonetarySupervisor(MonetarySupervisor newMonetarySupervisor) external restrict(&quot;StabilityBoard&quot;) {
+    function setMonetarySupervisor(MonetarySupervisor newMonetarySupervisor) external restrict("StabilityBoard") {
         monetarySupervisor = newMonetarySupervisor;
         emit MonetarySupervisorChanged(newMonetarySupervisor);
     }
@@ -965,13 +965,13 @@ contract Locker is Restricted, TokenReceiver {
     // Internal function. assumes amountToLock is already transferred to this Lock contract
     function _createLock(uint32 lockProductId, address lockOwner, uint amountToLock) internal returns(uint lockId) {
         LockProduct storage lockProduct = lockProducts[lockProductId];
-        require(lockProduct.isActive, &quot;lockProduct must be in active state&quot;);
-        require(amountToLock >= lockProduct.minimumLockAmount, &quot;amountToLock must be >= minimumLockAmount&quot;);
+        require(lockProduct.isActive, "lockProduct must be in active state");
+        require(amountToLock >= lockProduct.minimumLockAmount, "amountToLock must be >= minimumLockAmount");
 
         uint interestEarned = calculateInterest(lockProduct.perTermInterest, amountToLock);
         uint expiration = now.add(lockProduct.durationInSecs);
         uint40 lockedUntil = uint40(expiration);
-        require(lockedUntil == expiration, &quot;lockedUntil overflow&quot;);
+        require(lockedUntil == expiration, "lockedUntil overflow");
 
         lockId = locks.push(Lock(amountToLock, lockOwner, lockProductId, lockedUntil, true)) - 1;
         accountLocks[lockOwner].push(lockId);

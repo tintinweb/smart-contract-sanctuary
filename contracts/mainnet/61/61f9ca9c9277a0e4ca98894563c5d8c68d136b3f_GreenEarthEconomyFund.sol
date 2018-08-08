@@ -113,8 +113,8 @@ contract GreenEarthEconomyFund is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GreenEarthEconomyFund() public {
-        symbol = &quot;GEE&quot;;
-        name = &quot;Green Earth Economy Fund&quot;;
+        symbol = "GEE";
+        name = "Green Earth Economy Fund";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0x765BaeAECC41239aaFc8B522E102707cef59bAcC] = _totalSupply;

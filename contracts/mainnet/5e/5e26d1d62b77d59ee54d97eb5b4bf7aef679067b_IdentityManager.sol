@@ -215,7 +215,7 @@ contract IdentityManager {
     }
 
     /// @dev Allows an owner to finalize migration once adminTimeLock time has passed
-    /// WARNING: before transfering to a new address, make sure this address is &quot;ready to recieve&quot; the proxy.
+    /// WARNING: before transfering to a new address, make sure this address is "ready to recieve" the proxy.
     /// Not doing so risks the proxy becoming stuck.
     function finalizeMigration(Proxy identity) public onlyOlderOwner(identity) {
         require(migrationInitiated[identity] != 0 && migrationInitiated[identity] + adminTimeLock < now);

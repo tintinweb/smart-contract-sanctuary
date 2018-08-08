@@ -2,7 +2,7 @@
 
  Copyright 2018 LuckChain Foundation LTD
 
- Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
 
@@ -125,8 +125,8 @@ contract LuckChain is RegularToken {
 
     uint public totalSupply = 21*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;LuckChain&quot;;
-    string constant public symbol = &quot;LUCK&quot;;
+    string constant public name = "LuckChain";
+    string constant public symbol = "LUCK";
 
     function LuckChain() {
         balances[msg.sender] = totalSupply;

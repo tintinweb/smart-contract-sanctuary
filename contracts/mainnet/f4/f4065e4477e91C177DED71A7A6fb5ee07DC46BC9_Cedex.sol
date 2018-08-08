@@ -174,7 +174,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -242,8 +242,8 @@ contract BurnableToken is StandardToken {
  * `StandardToken` functions.
  */
 contract Cedex is BurnableToken, Ownable {
-    string public constant name = &quot;CEDEX&quot;;
-    string public constant symbol = &quot;CEDEX&quot;;
+    string public constant name = "CEDEX";
+    string public constant symbol = "CEDEX";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 100000000 * 10**18;
     mapping(address => uint) public transferAllowedDates;

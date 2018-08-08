@@ -133,8 +133,8 @@ contract BurnableToken is BasicToken {
 
 contract LuxProject is StandardToken, BurnableToken {
 
-  string public constant name = &quot;LuxProject&quot;; 
-  string public constant symbol = &quot;LXP&quot;; 
+  string public constant name = "LuxProject"; 
+  string public constant symbol = "LXP"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 26000000 * (10 ** uint256(decimals));

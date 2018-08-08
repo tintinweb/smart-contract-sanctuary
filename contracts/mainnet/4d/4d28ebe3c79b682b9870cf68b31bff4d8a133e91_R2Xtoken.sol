@@ -50,7 +50,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -409,8 +409,8 @@ contract FreezableToken is StandardToken, Ownable {
 
 
 contract R2Xtoken is FreezableToken, PausableToken, BurnableToken {
-    string public constant name = &quot;R2X&quot;;
-    string public constant symbol = &quot;RTX&quot;;
+    string public constant name = "R2X";
+    string public constant symbol = "RTX";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY =6000000000000000000000000000; //To change

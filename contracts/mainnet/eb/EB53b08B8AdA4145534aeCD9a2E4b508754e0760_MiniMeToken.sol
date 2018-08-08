@@ -70,8 +70,8 @@ pragma solidity ^0.4.18;
 ///  affecting the original token
 /// @dev It is ERC20 compliant, but still needs to under go further testing.
 
-// import &quot;./Controlled.sol&quot;;
-// import &quot;./TokenController.sol&quot;;
+// import "./Controlled.sol";
+// import "./TokenController.sol";
 
 contract ApproveAndCallFallBack {
     function receiveApproval(address from, uint256 _amount, address _token, bytes _data) public;
@@ -79,7 +79,7 @@ contract ApproveAndCallFallBack {
 
 /// @dev The actual token contract, the default controller is the msg.sender
 ///  that deploys the contract, so usually this token will be deployed by a
-///  token controller contract, which Giveth will call a &quot;Campaign&quot;
+///  token controller contract, which Giveth will call a "Campaign"
 contract MiniMeToken is Controlled {
 
     string public name;                //The Token&#39;s name: e.g. DigixDAO Tokens

@@ -208,8 +208,8 @@ contract TalantCoin is MintableToken, BurnableToken, Pausable {
     
     using SafeMath for uint256;
     
-    string  public name = &quot;TALENTICO&quot;;
-    string  public symbol = &quot;TAL&quot;;
+    string  public name = "TALENTICO";
+    string  public symbol = "TAL";
     uint256 constant public decimals = 18;
     uint256 constant dec = 10**decimals;
     uint256 public constant initialSupply = 12000000000*dec;

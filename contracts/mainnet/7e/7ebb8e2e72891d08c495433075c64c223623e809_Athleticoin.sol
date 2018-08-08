@@ -2,9 +2,9 @@ pragma solidity ^0.4.16;
 
 contract Athleticoin {
 
-    string public name = &quot;Athleticoin&quot;;      //  token name
-    string public symbol = &quot;ATHA&quot;;           //  token symbol
-    //string public version = &quot;realversion 1.0&quot;;
+    string public name = "Athleticoin";      //  token name
+    string public symbol = "ATHA";           //  token symbol
+    //string public version = "realversion 1.0";
     uint256 public decimals = 18;            //  token digit
 
     mapping (address => uint256) public balanceOf;

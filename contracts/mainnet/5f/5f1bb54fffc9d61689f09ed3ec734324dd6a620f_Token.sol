@@ -192,8 +192,8 @@ contract TokenI is ERC20Token, Controlled {
 contract Token is TokenI {
     using SafeMath for uint256;
 
-    string public techProvider = &quot;WeYii Tech&quot;;
-    string public officialSite = &quot;http://www.beautybloc.io&quot;;
+    string public techProvider = "WeYii Tech";
+    string public officialSite = "http://www.beautybloc.io";
 
     //owner是最初的币持有者。对比之下，controller 是合约操作者
     address public owner;

@@ -68,12 +68,12 @@ contract lvbaoshi is StandardToken {
     }
 
 
-    string public name = &quot;lvbaoshi&quot;;
+    string public name = "lvbaoshi";
 
     uint8 public decimals = 18;
     uint256 private supplyDecimals = 1 * 10 ** uint256(decimals);
 
-    string public symbol = &quot;LBS&quot;;
+    string public symbol = "LBS";
 
     string public version = &#39;v0.1&#39;;
 
@@ -89,7 +89,7 @@ contract lvbaoshi is StandardToken {
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) public returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { revert(); }
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { revert(); }
         return true;
     }
 

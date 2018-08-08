@@ -135,15 +135,15 @@ contract PlayerToken is ERC20 {
 
     // **External Exchange**
     function buyTokens(uint8 _amount, address _referredBy) payable external whenNotPaused {
-        require(_amount > 0 && _amount <= 100, &quot;Valid token amount required between 1 and 100&quot;);
-        require(msg.value > 0, &quot;Provide a valid fee&quot;); 
+        require(_amount > 0 && _amount <= 100, "Valid token amount required between 1 and 100");
+        require(msg.value > 0, "Provide a valid fee"); 
         // solium-disable-next-line security/no-tx-origin
-        require(msg.sender == tx.origin, &quot;Only valid users are allowed to buy tokens&quot;); 
+        require(msg.sender == tx.origin, "Only valid users are allowed to buy tokens"); 
         _buyTokens(msg.value, _amount, msg.sender, _referredBy);
     }
 
     function sellTokens(uint8 _amount) external {
-        require(_amount > 0, &quot;Valid sell amount required&quot;);
+        require(_amount > 0, "Valid sell amount required");
         require(_amount <= balances[msg.sender]);
         _sellTokens(_amount, msg.sender);
     }
@@ -159,7 +159,7 @@ contract PlayerToken is ERC20 {
 
         (_totalCost, _processingFee, _originalOwnerFee, _dividendPoolFee, _referrerFee) = calculateTokenBuyPrice(_amount);
 
-        require(_ethSent >= _totalCost, &quot;Invalid fee to buy tokens&quot;);
+        require(_ethSent >= _totalCost, "Invalid fee to buy tokens");
 
         // Send to original card owner if available
         // If we don&#39;t have an original owner we move this fee into the dividend pool
@@ -349,24 +349,24 @@ contract PlayerToken is ERC20 {
     function setSellDividendPercentageFee(uint8 _dividendPoolFee) external onlyOwnerOrExchange {
         // We&#39;ll need some flexibility to alter this as the right dividend structure helps promote gameplay
         // This pushes users to buy players who are performing well to grab divs rather than just getting in early to new players being released
-        require(_dividendPoolFee <= 50, &quot;Max of 50% is assignable to the pool&quot;);
+        require(_dividendPoolFee <= 50, "Max of 50% is assignable to the pool");
         dividendSellPoolFee_ = _dividendPoolFee;
     }
 
     function setBuyDividendPercentageFee(uint8 _dividendPoolFee) external onlyOwnerOrExchange {
-        require(_dividendPoolFee <= 50, &quot;Max of 50% is assignable to the pool&quot;);
+        require(_dividendPoolFee <= 50, "Max of 50% is assignable to the pool");
         dividendBuyPoolFee_ = _dividendPoolFee;
     }
 
     // Can be called by anyone, in which case we could use a another contract to set the original owner whenever it changes on blockchainfootball.co
     function setOriginalOwner(uint256 _playerCardId, address _address) external {
-        require(playerId_ > 0, &quot;Player ID must be set on the contract&quot;);
+        require(playerId_ > 0, "Player ID must be set on the contract");
         
         // As we call .transfer() on buys to send original owners divs we need to make sure this can&#39;t be DOS&#39;d through setting the
         // original owner as a smart contract and then reverting any transfer() calls
         // while it would be silly to reject divs it is a valid DOS scenario
         // solium-disable-next-line security/no-tx-origin
-        require(msg.sender == tx.origin, &quot;Only valid users are able to set original ownership&quot;); 
+        require(msg.sender == tx.origin, "Only valid users are able to set original ownership"); 
        
         address _cardOwner;
         uint256 _playerId;
@@ -374,9 +374,9 @@ contract PlayerToken is ERC20 {
 
         (_playerId,_cardOwner,,_isFirstGeneration) = bcfContract_.playerCards(_playerCardId);
 
-        require(_isFirstGeneration, &quot;Card must be an original&quot;);
-        require(_playerId == playerId_, &quot;Card must tbe the same player this contract relates to&quot;);
-        require(_cardOwner == _address, &quot;Card must be owned by the address provided&quot;);
+        require(_isFirstGeneration, "Card must be an original");
+        require(_playerId == playerId_, "Card must tbe the same player this contract relates to");
+        require(_cardOwner == _address, "Card must be owned by the address provided");
         
         // All good, set the address as the original owner, happy div day \o/
         originalOwner_ = _address;
@@ -719,7 +719,7 @@ contract PlayerExchangeCore {
         external 
         onlyOwnerOrReferee 
     {
-        require(_playerContractIds.length > 0, &quot;Must have valid player contracts to award divs to&quot;);
+        require(_playerContractIds.length > 0, "Must have valid player contracts to award divs to");
         require(_playerContractIds.length == _totalPlayerTokens.length);
         require(_totalPlayerTokens.length == _individualPlayerAllocationPcs.length);
         require(_totalPrizePoolAllocationPc > 0);
@@ -792,7 +792,7 @@ contract PlayerExchangeCore {
     }
 
     function withdrawDividends() external {
-        require(addressToDividendBalance[msg.sender] > 0, &quot;Must have a valid dividend balance&quot;);
+        require(addressToDividendBalance[msg.sender] > 0, "Must have a valid dividend balance");
         uint senderBalance = addressToDividendBalance[msg.sender];
         addressToDividendBalance[msg.sender] = 0;
         balancePendingWithdrawal_ = balancePendingWithdrawal_.sub(senderBalance);

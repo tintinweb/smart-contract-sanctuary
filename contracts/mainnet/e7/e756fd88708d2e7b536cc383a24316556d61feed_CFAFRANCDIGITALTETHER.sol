@@ -23,8 +23,8 @@ contract CFAFRANCDIGITALTETHER {
     ) public {
         totalSupply = 2000000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;               
-        name = &quot;CFA FRANC DIGITAL TETHER&quot;;                                  
-        symbol = &quot;CDT&quot;;                               
+        name = "CFA FRANC DIGITAL TETHER";                                  
+        symbol = "CDT";                               
     }
 
 

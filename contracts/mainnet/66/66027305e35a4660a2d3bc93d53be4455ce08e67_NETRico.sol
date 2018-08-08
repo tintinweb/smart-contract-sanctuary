@@ -91,7 +91,7 @@ contract NETRico {
     ERC20TokenInterface public tokenReward; //Address of the valid token used as reward
     address public creator; //Address of the contract deployer
     string public campaignUrl; //Web site of the campaign
-    string public version = &quot;2&quot;;
+    string public version = "2";
 
     //events for log
     event LogFundingReceived(address _addr, uint _amount, uint _currentTotal);

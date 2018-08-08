@@ -137,8 +137,8 @@ contract BurnableToken is BasicToken {
 
 contract MasterCoin is StandardToken, BurnableToken {
 
-  string public constant name = &quot;MasterCoin&quot;; 
-  string public constant symbol = &quot;MTC&quot;; 
+  string public constant name = "MasterCoin"; 
+  string public constant symbol = "MTC"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));

@@ -251,8 +251,8 @@ contract StandardToken is ERC20, BasicToken {
  * Nagri Token is fixed supply ERC20 token.
  */
 contract Token is StandardToken {
-	string public constant symbol = &quot;NGRX&quot;;
-	string public constant name = &quot;Nagri X&quot;;
+	string public constant symbol = "NGRX";
+	string public constant name = "Nagri X";
 	uint8 public constant decimals = 18;
 
 	/**

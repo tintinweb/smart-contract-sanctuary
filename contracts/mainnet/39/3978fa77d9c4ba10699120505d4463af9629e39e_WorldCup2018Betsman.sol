@@ -52,7 +52,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -168,12 +168,12 @@ contract WorldCup2018Betsman is Destructible, Adminable {
   Bet bet;
   
   modifier biggerMinBet() { 
-    require (msg.value >= minBet, &quot;Bet value is lower min bet value.&quot;); 
+    require (msg.value >= minBet, "Bet value is lower min bet value."); 
     _; 
   }
 
   modifier lowerMaxBet() { 
-    require (msg.value <= maxBet, &quot;Bet value is bigger max bet value.&quot;);
+    require (msg.value <= maxBet, "Bet value is bigger max bet value.");
     _; 
   }
 
@@ -182,29 +182,29 @@ contract WorldCup2018Betsman is Destructible, Adminable {
   }
   
   modifier hasUserBet(uint256 _gameId) { 
-    require (hasBet(_gameId), &quot;User did not bet this game.&quot;); 
+    require (hasBet(_gameId), "User did not bet this game."); 
     _; 
   }
   
   modifier hasNotUserBet(uint256 _gameId) { 
-    require(!hasBet(_gameId), &quot;User has already bet this game.&quot;);
+    require(!hasBet(_gameId), "User has already bet this game.");
     _; 
   }
 
   modifier hasFreeBets() { 
-    require (users[msg.sender].freeBets > 0, &quot;User does not have free bets.&quot;); 
+    require (users[msg.sender].freeBets > 0, "User does not have free bets."); 
     _; 
   }
 
   modifier isGameExist(uint256 _gameId) { 
-    require(!(games[_gameId].ended), &quot;Game does not exist.&quot;);
+    require(!(games[_gameId].ended), "Game does not exist.");
     _; 
   }
 
   modifier isGameNotStarted(uint256 _gameId) { 
     // stop making bets when 5 minutes till game start 
     // 300000 = 1000 * 60 * 5 - 5 minutes
-    require(games[_gameId].date > now + 300000, &quot;Game has started.&quot;);
+    require(games[_gameId].date > now + 300000, "Game has started.");
     _; 
   }
 
@@ -286,7 +286,7 @@ contract WorldCup2018Betsman is Destructible, Adminable {
     isRightBetResult(_betResult)
     external 
   {
-    require(users[msg.sender].statisticBets >= betsCountToUseFreeBet, &quot;You need more bets to use free bet&quot;);
+    require(users[msg.sender].statisticBets >= betsCountToUseFreeBet, "You need more bets to use free bet");
     users[msg.sender].statisticBets -= betsCountToUseFreeBet;
     users[msg.sender].freeBets -= 1;
     addBet(_gameId, _betResult, minBet, true);
@@ -298,9 +298,9 @@ contract WorldCup2018Betsman is Destructible, Adminable {
     external 
   {
     bool isFree = bets[msg.sender][_gameId].isFree;
-    require(!isFree, &quot;You can not revert free bet&quot;);
+    require(!isFree, "You can not revert free bet");
     bool isReverted = bets[msg.sender][_gameId].isReverted;
-    require(!isReverted, &quot;You can not revert already reverted bet&quot;);
+    require(!isReverted, "You can not revert already reverted bet");
     uint256 amount = bets[msg.sender][_gameId].amount;
     uint256 betResult = bets[msg.sender][_gameId].result;
     if(betResult == 1){
@@ -321,10 +321,10 @@ contract WorldCup2018Betsman is Destructible, Adminable {
     address gambler = msg.sender;
     game = games[_gameId];
     bet = bets[gambler][_gameId];
-    require(game.ended, &quot;Game has not ended yet.&quot;);
-    require(bet.result == game.result, &quot;You did not win this game&quot;);
-    require(!bet.isReverted, &quot;You can not claim reverted bet&quot;);
-    require(!bet.isClaimed, &quot;You can not claim already claimed bet&quot;);
+    require(game.ended, "Game has not ended yet.");
+    require(bet.result == game.result, "You did not win this game");
+    require(!bet.isReverted, "You can not claim reverted bet");
+    require(!bet.isClaimed, "You can not claim already claimed bet");
     bets[gambler][_gameId].isClaimed = true;
     uint winResultSum = 0;
     uint prize = 0;
@@ -377,16 +377,16 @@ contract WorldCup2018Betsman is Destructible, Adminable {
   
   constructor() public payable {
     addAdmin(msg.sender);
-    games[1] = Game(&quot;RUS&quot;, &quot;SAU&quot;, 1528984800000, false, 0, 0, 0, 0);
+    games[1] = Game("RUS", "SAU", 1528984800000, false, 0, 0, 0, 0);
     gamesByDayOfYear[165] = [1];
-    games[2] = Game(&quot;EGY&quot;, &quot;URG&quot;, 1529060400000, false, 0, 0, 0, 0);
-    games[3] = Game(&quot;MAR&quot;, &quot;IRN&quot;, 1529071200000, false, 0, 0, 0, 0);
-    games[4] = Game(&quot;POR&quot;, &quot;SPA&quot;, 1529082000000, false, 0, 0, 0, 0);
+    games[2] = Game("EGY", "URG", 1529060400000, false, 0, 0, 0, 0);
+    games[3] = Game("MAR", "IRN", 1529071200000, false, 0, 0, 0, 0);
+    games[4] = Game("POR", "SPA", 1529082000000, false, 0, 0, 0, 0);
     gamesByDayOfYear[166] = [2,3,4];
-    games[5] = Game(&quot;FRA&quot;, &quot;AUS&quot;, 1529139600000, false, 0, 0, 0, 0);
-    games[6] = Game(&quot;ARG&quot;, &quot;ISL&quot;, 1529150400000, false, 0, 0, 0, 0);
-    games[7] = Game(&quot;PER&quot;, &quot;DAN&quot;, 1529161200000, false, 0, 0, 0, 0);
-    games[8] = Game(&quot;CRO&quot;, &quot;NIG&quot;, 1529172000000, false, 0, 0, 0, 0);
+    games[5] = Game("FRA", "AUS", 1529139600000, false, 0, 0, 0, 0);
+    games[6] = Game("ARG", "ISL", 1529150400000, false, 0, 0, 0, 0);
+    games[7] = Game("PER", "DAN", 1529161200000, false, 0, 0, 0, 0);
+    games[8] = Game("CRO", "NIG", 1529172000000, false, 0, 0, 0, 0);
     gamesByDayOfYear[167] = [5,6,7,8];
     lastGameId = 8;
   }

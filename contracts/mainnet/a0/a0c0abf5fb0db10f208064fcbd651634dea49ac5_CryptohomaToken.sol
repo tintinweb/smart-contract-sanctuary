@@ -280,8 +280,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract CryptohomaToken is StandardToken, MintableToken, BurnableToken {
     
-    string public name = &quot;CryptohomaToken&quot;;
-    string public symbol = &quot;HOMA&quot;;
+    string public name = "CryptohomaToken";
+    string public symbol = "HOMA";
     uint public decimals = 18;
 
     using SafeMath for uint256;

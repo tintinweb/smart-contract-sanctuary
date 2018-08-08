@@ -50,8 +50,8 @@ contract normikaivo is owned {
 	using SafeMath for uint256;
 	
     // Public variables of the token
-    string public name = &quot;normikaivo&quot;;
-    string public symbol = &quot;NAO&quot;;
+    string public name = "normikaivo";
+    string public symbol = "NAO";
     uint8 public decimals = 0;
     uint256 public totalSupply = 1000000;
 

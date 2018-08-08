@@ -223,7 +223,7 @@ contract DetailedERC20 is ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -491,7 +491,7 @@ contract MultiSigWallet {
     function external_call(address destination, uint value, uint dataLength, bytes data) private returns (bool) {
         bool result;
         assembly {
-            let x := mload(0x40)   // &quot;Allocate&quot; memory for output (0x40 is where &quot;free memory&quot; pointer is stored by convention)
+            let x := mload(0x40)   // "Allocate" memory for output (0x40 is where "free memory" pointer is stored by convention)
             let d := add(data, 32) // First 32 bytes are the padded length of data, so exclude that
             result := call(
                 sub(gas, 34710),   // 34710 is the value that solidity is currently emitting
@@ -641,7 +641,7 @@ contract MultiSigWallet {
 contract NomadPreICO is
     StandardToken, 
     Ownable, 
-    DetailedERC20(&quot;preNSP&quot;, &quot;NOMAD SPACE NETWORK preICO TOKEN&quot;, 18)
+    DetailedERC20("preNSP", "NOMAD SPACE NETWORK preICO TOKEN", 18)
     , MultiSigWallet
 {
     using SafeMath for uint256;

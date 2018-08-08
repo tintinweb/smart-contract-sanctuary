@@ -7,8 +7,8 @@ contract ScamStampToken {
     //a false ERC20 token, where transfers can be done only by 
     //the creator of the token.
 
-    string public constant name = &quot;SCAM Stamp Token&quot;;
-    string public constant symbol = &quot;SCAM_STAMP&quot;;
+    string public constant name = "SCAM Stamp Token";
+    string public constant symbol = "SCAM_STAMP";
     uint8 public constant decimals = 0;
     uint256 public totalSupply;
 

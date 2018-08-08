@@ -6,8 +6,8 @@ contract ASWCoin {
     uint256 public supply = 210000000000000000000000;  
     uint8   public decimals = 18;    
     string  public standard = &#39;ERC20 Token&#39;;
-    string  public name = &quot;ASWCoin&quot;;
-    string  public symbol = &quot;ASW&quot;;
+    string  public name = "ASWCoin";
+    string  public symbol = "ASW";
     uint256 public circulatingSupply = 0;   
     uint256 availableSupply;              
     uint256 price= 1;                          	

@@ -16,9 +16,9 @@ contract GreenWorldFarm {
     function GreenWorldFarm() {
 
          initialSupply = 300000000;
-         name =&quot;GreenWorldFarm&quot;;
+         name ="GreenWorldFarm";
         decimals = 18;
-         symbol = &quot;GWF&quot;;
+         symbol = "GWF";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

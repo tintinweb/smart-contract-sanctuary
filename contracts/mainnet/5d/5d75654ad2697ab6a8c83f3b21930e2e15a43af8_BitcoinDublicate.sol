@@ -113,8 +113,8 @@ contract BitcoinDublicate is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitcoinDublicate() public {
-        symbol = &quot;BTCD&quot;;
-        name = &quot;BitcoinDublicate &quot;;
+        symbol = "BTCD";
+        name = "BitcoinDublicate ";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0x2d57365a7ab22425f09D49bB0baFB0426EB8dDF9] = _totalSupply;

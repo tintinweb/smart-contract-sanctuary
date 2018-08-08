@@ -265,9 +265,9 @@ contract _0xDogecoinToken is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;0xDoge&quot;;
+        symbol = "0xDoge";
 
-        name = &quot;0xDogecoin Token&quot;;
+        name = "0xDogecoin Token";
 
         decimals = 8;
 

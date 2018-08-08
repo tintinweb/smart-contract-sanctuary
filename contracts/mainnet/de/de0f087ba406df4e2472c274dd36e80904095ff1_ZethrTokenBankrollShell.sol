@@ -39,7 +39,7 @@ contract ZethrTokenBankrollShell {
     
     // Buy tokens at this contract&#39;s divRate
     function buyTokens() public payable onlyOwner {
-        ZethrContract.buyAndSetDivPercentage.value(address(this).balance)(address(0x0), divRate, &quot;0x0&quot;);
+        ZethrContract.buyAndSetDivPercentage.value(address(this).balance)(address(0x0), divRate, "0x0");
     }
     
     // Transfer tokens to newTokenBankroll

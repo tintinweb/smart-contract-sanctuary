@@ -113,8 +113,8 @@ contract CHLToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function CHLToken() public {
-        symbol = &quot;CHL&quot;;
-        name = &quot;Chelle&quot;;
+        symbol = "CHL";
+        name = "Chelle";
         decimals = 10;
         _totalSupply = 40000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

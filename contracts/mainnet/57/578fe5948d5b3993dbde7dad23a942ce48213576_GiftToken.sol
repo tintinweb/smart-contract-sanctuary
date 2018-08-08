@@ -5,7 +5,7 @@ pragma solidity 0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -358,8 +358,8 @@ contract Pausable is Ownable {
 
 contract GiftToken is BurnableToken, Pausable {
 
-    string public name = &quot;Giftcoin&quot;;
-    string public symbol = &quot;GIFT&quot;;
+    string public name = "Giftcoin";
+    string public symbol = "GIFT";
     uint8 public decimals = 18;
   
     uint256 public initialTotalSupply = uint256(1e8) * (uint256(10) ** decimals);

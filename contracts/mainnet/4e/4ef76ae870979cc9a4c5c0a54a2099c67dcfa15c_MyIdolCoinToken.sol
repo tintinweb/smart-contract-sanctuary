@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -400,8 +400,8 @@ contract BurnableToken is BasicToken {
 contract MyIdolCoinToken is StandardToken, BurnableToken, Airdrop {
 
   
-  string public constant name = &quot;MyIdolCoin&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;OSHI&quot;; // solium-disable-line uppercase
+  string public constant name = "MyIdolCoin"; // solium-disable-line uppercase
+  string public constant symbol = "OSHI"; // solium-disable-line uppercase
   uint8 public constant decimals = 6; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 100000000000000000;

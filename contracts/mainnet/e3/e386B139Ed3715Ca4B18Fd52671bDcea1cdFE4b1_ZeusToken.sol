@@ -476,9 +476,9 @@ contract MigratableToken is Token {
 
 contract ZeusToken is MigratableToken {
 
-    string public constant symbol = &quot;ZST&quot;;
+    string public constant symbol = "ZST";
 
-    string public constant name = &quot;Zeus Token&quot;;
+    string public constant name = "Zeus Token";
 
     mapping(address => bool) public allowedContracts;
 

@@ -376,9 +376,9 @@ contract HashRushICO is Owned, HashRush {
 
     bool crowdsaleClosed = true;                    
 
-    string tokenName = &quot;HashRush&quot;; 
+    string tokenName = "HashRush"; 
 
-    string tokenSymbol = &quot;RC&quot;; 
+    string tokenSymbol = "RC"; 
 
     uint256 multiplier = 100000000; 
 

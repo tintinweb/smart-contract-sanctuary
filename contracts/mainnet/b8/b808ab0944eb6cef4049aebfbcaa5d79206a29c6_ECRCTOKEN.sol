@@ -23,8 +23,8 @@ contract ECRCTOKEN{
     function ECRCTOKEN() {
         balanceOf[msg.sender] =  7500000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  7500000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;E-CURRENCY&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ECRC&quot;;                               // Set the symbol for display purposes
+        name = "E-CURRENCY";                                   // Set the name for display purposes
+        symbol = "ECRC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

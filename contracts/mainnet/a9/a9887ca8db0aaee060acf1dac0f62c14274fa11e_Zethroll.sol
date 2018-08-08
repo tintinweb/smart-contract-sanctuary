@@ -167,7 +167,7 @@ contract Zethroll is ZTHReceivingContract {
     require(block.number < ((2 ** 48) - 1));  // Current block number smaller than storage of 1 uint48
 
     // Note that msg.sender is the Token Contract Address
-    // and &quot;_from&quot; is the sender of the tokens
+    // and "_from" is the sender of the tokens
 
     // Check that this is a ZTH token transfer
     require(_zthToken(msg.sender));

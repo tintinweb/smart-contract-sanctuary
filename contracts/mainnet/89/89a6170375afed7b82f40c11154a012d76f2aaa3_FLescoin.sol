@@ -338,8 +338,8 @@ contract FLescoin is BurnableToken, UpgradeableToken {
   uint public decimals;
 
   function FLescoin(address _owner, address _init)  UpgradeableToken(_owner) {
-    name = &quot;Lescoin Futures&quot;;
-    symbol = &quot;LSCF&quot;;
+    name = "Lescoin Futures";
+    symbol = "LSCF";
     totalSupply = 5000000000000;
     decimals = 8;
 

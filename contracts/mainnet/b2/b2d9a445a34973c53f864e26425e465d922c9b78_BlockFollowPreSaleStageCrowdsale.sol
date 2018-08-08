@@ -57,7 +57,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -467,12 +467,12 @@ contract StageCrowdsale is FinalizableCrowdsale {
     }
 
     modifier isNotFinalized() {
-        require(!isFinalized, &quot;Call on finalized.&quot;);
+        require(!isFinalized, "Call on finalized.");
         _;
     }
 
     modifier previousIsFinalized() {
-        require(isPreviousStageFinalized(), &quot;Call on previous stage finalized.&quot;);
+        require(isPreviousStageFinalized(), "Call on previous stage finalized.");
         _;
     }
 
@@ -717,7 +717,7 @@ contract TokensRollStageCrowdsale is FinalizableCrowdsale {
      * @dev Requires that the roll address was set.
      */
     modifier havingRollAddress() {
-        require(rollAddress != address(0), &quot;Call when no roll address set.&quot;);
+        require(rollAddress != address(0), "Call when no roll address set.");
         _;
     }
 
@@ -734,7 +734,7 @@ contract TokensRollStageCrowdsale is FinalizableCrowdsale {
      * @param _rollAddress Address to transfer tokens to.
      */
     function setRollAddress(address _rollAddress) public onlyOwner {
-        require(_rollAddress != address(0), &quot;Call with invalid _rollAddress.&quot;);
+        require(_rollAddress != address(0), "Call with invalid _rollAddress.");
         rollAddress = _rollAddress;
     }
 }
@@ -905,13 +905,13 @@ contract RBAC {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * @dev This simplifies the implementation of &quot;user permissions&quot;.
+ * @dev This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable, RBAC {
   event WhitelistedAddressAdded(address addr);
   event WhitelistedAddressRemoved(address addr);
 
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if called by any account that&#39;s not whitelisted.
@@ -1177,7 +1177,7 @@ contract BlockFollowPreSaleStageCrowdsale is StageCrowdsale, CappedStageCrowdsal
         StageCrowdsale(_ratePerEth, _wallet, _token, _openingTime, _openingTime + 2 weeks, StageCrowdsale(address(0)))
         WhitelistedCrowdsale(_whitelist)
     {
-        require(_ratePerEth > 0, &quot;Rate per ETH cannot be null&quot;);
+        require(_ratePerEth > 0, "Rate per ETH cannot be null");
         ratePerEth = _ratePerEth;
     }
 

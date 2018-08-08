@@ -240,7 +240,7 @@ contract DisableSelfTransfer is StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -476,8 +476,8 @@ contract MintableContractOwnerToken is MintableToken, BurnableToken, OwnerContra
 // File: contracts/LazyCoderCoin.sol
 
 contract LazyCoderCoin is MintableContractOwnerToken {
-  string public name = &quot;LazyCoder Coin&quot;;
-  string public symbol = &quot;TLC&quot;;
+  string public name = "LazyCoder Coin";
+  string public symbol = "TLC";
   uint8 public decimals = 18;
 
   function LazyCoderCoin() public {

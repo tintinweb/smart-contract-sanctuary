@@ -1,10 +1,10 @@
 pragma solidity ^0.4.18;
  
 contract Token {
-    string public symbol = &quot;&quot;;
-    string public name = &quot;&quot;;
+    string public symbol = "";
+    string public name = "";
     uint8 public constant decimals = 18;
-	string public constant ICOFactoryVersion = &quot;1.0&quot;;
+	string public constant ICOFactoryVersion = "1.0";
     uint256 _totalSupply = 0;
 	uint256 _oneEtherEqualsInWei = 0;	
 	uint256 _maxICOpublicSupply = 0;

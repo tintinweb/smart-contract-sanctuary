@@ -113,8 +113,8 @@ contract BUXCOINC is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BUXCOIN() public {
-        symbol = &quot;BUXCOIN&quot;;
-        name = &quot;BUX COIN MONEY&quot;;
+        symbol = "BUXCOIN";
+        name = "BUX COIN MONEY";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xa216E3BB2c91cC0c6a7E0e0d56F9442162C52D62] = _totalSupply; //MEW address here

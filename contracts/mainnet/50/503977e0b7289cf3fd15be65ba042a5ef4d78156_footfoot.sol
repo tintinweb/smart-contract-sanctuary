@@ -32,8 +32,8 @@ contract footfoot {
     ) public {
         totalSupply = 10000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;footfootfoot&quot;;                                   // Set the name for display purposes
-        symbol = &quot;fff&quot;;                               // Set the symbol for display purposes
+        name = "footfootfoot";                                   // Set the name for display purposes
+        symbol = "fff";                               // Set the symbol for display purposes
     }
 
     /**

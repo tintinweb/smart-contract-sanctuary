@@ -116,8 +116,8 @@ contract MNLTToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MNLTToken() public {
-        symbol = &quot;MNLT&quot;;
-        name = &quot;MNLTToken&quot;;
+        symbol = "MNLT";
+        name = "MNLTToken";
         decimals = 18;
         bonusEnds = now + 1 days;
         endDate = now + 1 days;

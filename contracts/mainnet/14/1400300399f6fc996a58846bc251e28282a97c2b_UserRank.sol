@@ -202,20 +202,20 @@ contract UserRank is LandAccessControl, CanReceiveApproval {
 
     function UserRank(address _landManagementAddress) LandAccessControl(_landManagementAddress) public {
 
-        allowedFuncs[bytes4(keccak256(&quot;_receiveBuyNextRank(address)&quot;))] = true;
-        allowedFuncs[bytes4(keccak256(&quot;_receiveBuyRank(address,uint256)&quot;))] = true;
+        allowedFuncs[bytes4(keccak256("_receiveBuyNextRank(address)"))] = true;
+        allowedFuncs[bytes4(keccak256("_receiveBuyRank(address,uint256)"))] = true;
         //3350000000000000 for candy
 
-        addRank(1,   36000000000000000000,   120600000000000000,&quot;Cryptolord&quot;);
-        addRank(5,   144000000000000000000,  482400000000000000,&quot;Forklord&quot;);
-        addRank(10,  180000000000000000000,  603000000000000000,&quot;Decentralord&quot;);
-        addRank(20,  360000000000000000000,  1206000000000000000,&quot;Technomaster&quot;);
-        addRank(50,  1080000000000000000000, 3618000000000000000,&quot;Bitmaster&quot;);
-        addRank(100, 1800000000000000000000, 6030000000000000000,&quot;Megamaster&quot;);
-        addRank(200, 3600000000000000000000, 12060000000000000000,&quot;Cyberduke&quot;);
-        addRank(400, 7200000000000000000000, 24120000000000000000,&quot;Nanoprince&quot;);
-        addRank(650, 9000000000000000000000, 30150000000000000000,&quot;Hyperprince&quot;);
-        addRank(1000,12600000000000000000000,42210000000000000000,&quot;Ethercaesar&quot;);
+        addRank(1,   36000000000000000000,   120600000000000000,"Cryptolord");
+        addRank(5,   144000000000000000000,  482400000000000000,"Forklord");
+        addRank(10,  180000000000000000000,  603000000000000000,"Decentralord");
+        addRank(20,  360000000000000000000,  1206000000000000000,"Technomaster");
+        addRank(50,  1080000000000000000000, 3618000000000000000,"Bitmaster");
+        addRank(100, 1800000000000000000000, 6030000000000000000,"Megamaster");
+        addRank(200, 3600000000000000000000, 12060000000000000000,"Cyberduke");
+        addRank(400, 7200000000000000000000, 24120000000000000000,"Nanoprince");
+        addRank(650, 9000000000000000000000, 30150000000000000000,"Hyperprince");
+        addRank(1000,12600000000000000000000,42210000000000000000,"Ethercaesar");
 
 
     }

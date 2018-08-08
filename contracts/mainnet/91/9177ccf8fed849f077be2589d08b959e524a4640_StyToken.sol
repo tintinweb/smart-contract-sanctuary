@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract StyToken {
 
-    string public name = &quot;Startreasure&quot;;      //  token name
-    string public symbol = &quot;STY&quot;;           //  token symbol
+    string public name = "Startreasure";      //  token name
+    string public symbol = "STY";           //  token symbol
     uint256 public decimals = 7;            //  token digit
 
     mapping (address => uint256) public balanceOf;

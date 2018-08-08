@@ -184,8 +184,8 @@ contract Ownable {
 
 contract ChillCoin is StandardToken, Ownable {
 
-  string public constant name = &quot;Chill Coin&quot;;
-  string public constant symbol = &quot;CHILL&quot;;
+  string public constant name = "Chill Coin";
+  string public constant symbol = "CHILL";
   uint8 public constant decimals = 8;
   
   uint256 public ChillIssued;
@@ -223,6 +223,6 @@ contract ChillCoin is StandardToken, Ownable {
     totalSupply = 100000000 * (10 ** uint256(decimals)); 
     balances[msg.sender] = totalSupply / 10; // 
     ChillIssued = totalSupply / 10;
-    ChillTalk = &quot;Chill&quot;;
+    ChillTalk = "Chill";
   }
 }

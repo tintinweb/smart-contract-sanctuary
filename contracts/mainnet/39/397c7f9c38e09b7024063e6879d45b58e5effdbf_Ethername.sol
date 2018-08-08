@@ -93,8 +93,8 @@ contract EthernameRaw is Managed {
 
   /* STORAGE */
 
-  string public constant name = &quot;Ethername&quot;;
-  string public constant symbol = &quot;ENM&quot;;
+  string public constant name = "Ethername";
+  string public constant symbol = "ENM";
 
   mapping (address => bytes32) public ownerToName;
   mapping (bytes32 => Record) public nameToRecord;

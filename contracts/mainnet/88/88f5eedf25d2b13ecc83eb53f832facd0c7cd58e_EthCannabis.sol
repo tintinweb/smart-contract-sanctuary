@@ -191,8 +191,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract EthCannabis is StandardToken {
 
-    string public constant name = &quot;ETHCANNABIS&quot;;
-    string public constant symbol = &quot;XCN&quot;;
+    string public constant name = "ETHCANNABIS";
+    string public constant symbol = "XCN";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 300 * 10**6 * (10**uint256(decimals));
     uint256 public weiRaised;

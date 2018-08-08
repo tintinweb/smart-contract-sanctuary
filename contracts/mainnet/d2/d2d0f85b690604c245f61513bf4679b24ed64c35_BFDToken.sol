@@ -84,9 +84,9 @@ contract BFDToken is EIP20Interface, SafeMath {
     They allow one to customise the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
-    string constant public name = &quot;BFDToken&quot;;
+    string constant public name = "BFDToken";
     uint8 constant public decimals = 18;                //How many decimals to show.
-    string constant public symbol = &quot;BFDT&quot;;
+    string constant public symbol = "BFDT";
 
     mapping (address => uint256) public addressType;  // 1 for team; 2 for advisors and partners; 3 for seed investors; 4 for angel investors; 5 for regular investors; 0 for others
     mapping (address => uint256[3]) public releaseForSeed;

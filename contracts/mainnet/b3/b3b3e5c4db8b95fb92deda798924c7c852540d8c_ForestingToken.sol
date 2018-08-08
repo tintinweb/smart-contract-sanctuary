@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -298,8 +298,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 
 contract ForestingToken is StandardToken, BurnableToken, Ownable {
-	string public constant symbol = &quot;PTON&quot;;
-	string public constant name = &quot;Foresting Token&quot;;
+	string public constant symbol = "PTON";
+	string public constant name = "Foresting Token";
 	uint8 public constant decimals = 18;
 	uint256 public constant INITIAL_SUPPLY = 24000000000 * (10 ** uint256(decimals));
 	uint256 public constant TOKEN_OFFERING_ALLOWANCE = 9600000000 * (10 ** uint256(decimals));

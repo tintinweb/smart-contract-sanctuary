@@ -300,12 +300,12 @@ contract FintechCoin is MintableToken, ApprovedBurnableToken {
         /**
            @dev The name of the FintechCoin, specified as indicated in ERC20.
          */
-        string public constant name = &quot;FintechCoin&quot;;
+        string public constant name = "FintechCoin";
 
         /**
            @dev The abbreviation FINC, specified as indicated in ERC20.
         */
-        string public constant symbol = &quot;FINC&quot;;
+        string public constant symbol = "FINC";
 
         /**
            @dev The smallest denomination of the FintechCoin is 1 * 10^(-18) FINC. `decimals` is specified as indicated in ERC20.

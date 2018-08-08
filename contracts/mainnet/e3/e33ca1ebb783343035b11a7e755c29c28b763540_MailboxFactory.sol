@@ -105,7 +105,7 @@ contract IController {
 
 contract MailboxFactory {
     function createMailbox(IController _controller, address _owner, IMarket _market) public returns (IMailbox) {
-        Delegator _delegator = new Delegator(_controller, &quot;Mailbox&quot;);
+        Delegator _delegator = new Delegator(_controller, "Mailbox");
         IMailbox _mailbox = IMailbox(_delegator);
         _mailbox.initialize(_owner, _market);
         return _mailbox;
@@ -134,7 +134,7 @@ contract Delegator is DelegationTarget {
         assembly {
             //0x40 is the address where the next free memory slot is stored in Solidity
             let _calldataMemoryOffset := mload(0x40)
-            // new &quot;memory end&quot; including padding. The bitwise operations here ensure we get rounded up to the nearest 32 byte boundary
+            // new "memory end" including padding. The bitwise operations here ensure we get rounded up to the nearest 32 byte boundary
             let _size := and(add(calldatasize, 0x1f), not(0x1f))
             // Update the pointer at 0x40 to point at new free memory location so any theoretical allocation doesn&#39;t stomp our memory in this call
             mstore(0x40, add(_calldataMemoryOffset, _size))
@@ -501,7 +501,7 @@ library Order {
         require(_outcome < _market.getNumberOfOutcomes());
         require(_price < _market.getNumTicks());
 
-        IOrders _orders = IOrders(_controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(_controller.lookup("Orders"));
         IAugur _augur = _controller.getAugur();
 
         return Data({
@@ -522,7 +522,7 @@ library Order {
     }
 
     //
-    // &quot;public&quot; functions
+    // "public" functions
     //
 
     function getOrderId(Order.Data _orderData) internal view returns (bytes32) {

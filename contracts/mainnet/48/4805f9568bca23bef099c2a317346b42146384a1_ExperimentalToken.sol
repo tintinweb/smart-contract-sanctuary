@@ -154,8 +154,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract ExperimentalToken is StandardToken {
 
-  string public constant name = &quot;Experimental Token&quot;;
-  string public constant symbol = &quot;e11&quot;;
+  string public constant name = "Experimental Token";
+  string public constant symbol = "e11";
 
   uint8 public constant decimals = 18;
 

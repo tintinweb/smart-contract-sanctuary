@@ -16,9 +16,9 @@ contract Oxygen {
     function Oxygen() {
 
          initialSupply = 15000000000;
-         name =&quot;Oxygen&quot;;
+         name ="Oxygen";
         decimals = 0;
-         symbol = &quot;OXY&quot;;
+         symbol = "OXY";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

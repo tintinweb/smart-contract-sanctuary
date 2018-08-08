@@ -307,7 +307,7 @@ contract COSTokenBase is ERC20, COSStop, Freezeable{
 }
 contract COSToken is COSTokenBase {
     
-    constructor() COSTokenBase(10000000000, &quot;Contentos&quot;, &quot;COS&quot;, 18) public {
+    constructor() COSTokenBase(10000000000, "Contentos", "COS", 18) public {
     }
     
     function finish() public{

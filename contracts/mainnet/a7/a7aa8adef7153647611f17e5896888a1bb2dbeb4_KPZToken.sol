@@ -112,8 +112,8 @@ contract KPZToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;KPZ&quot;;
-        name = &quot;Kookiapaniaz&quot;;
+        symbol = "KPZ";
+        name = "Kookiapaniaz";
         decimals = 18;
         _totalSupply = 10000000000000000000000;
         balances[owner] = _totalSupply;

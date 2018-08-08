@@ -16,9 +16,9 @@ contract Dexter {
     function Dexter() {
 
          initialSupply = 500000000;
-         name =&quot;Dexter&quot;;
+         name ="Dexter";
         decimals = 2;
-         symbol = &quot;DEX&quot;;
+         symbol = "DEX";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

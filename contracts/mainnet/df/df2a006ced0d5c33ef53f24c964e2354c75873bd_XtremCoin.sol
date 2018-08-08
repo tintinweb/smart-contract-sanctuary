@@ -23,8 +23,8 @@ contract XtremCoin {
     function XtremCoin() {
         balanceOf[msg.sender] = 20231453571;              // Give the creator all initial tokens
         totalSupply = 20231453571;                        // Update total supply
-        name = &quot;Xtrem Coin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;XTR&quot;;                               // Set the symbol for display purposes
+        name = "Xtrem Coin";                                   // Set the name for display purposes
+        symbol = "XTR";                               // Set the symbol for display purposes
         decimals = 0;                            // Amount of decimals for display purposes
     }
 

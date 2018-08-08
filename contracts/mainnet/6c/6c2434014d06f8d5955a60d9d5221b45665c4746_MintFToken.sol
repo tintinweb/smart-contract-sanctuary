@@ -109,8 +109,8 @@ contract MintFToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function MintFToken() public {
-        symbol = &quot;MIF&quot;;
-        name = &quot;MintF&quot;;
+        symbol = "MIF";
+        name = "MintF";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[0x20b744d0F44D4883191BfE3D7Dd61d007c2fDfd7] = _totalSupply;

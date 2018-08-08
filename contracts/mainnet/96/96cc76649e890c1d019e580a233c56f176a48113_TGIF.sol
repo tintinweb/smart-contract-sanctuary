@@ -191,8 +191,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract TGIF is StandardToken {
 
-    string public constant name = &quot;TGIF Token&quot;;
-    string public constant symbol = &quot;TGIF&quot;;
+    string public constant name = "TGIF Token";
+    string public constant symbol = "TGIF";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 5 * 10**9 * (10**uint256(decimals));
     uint256 public weiRaised;

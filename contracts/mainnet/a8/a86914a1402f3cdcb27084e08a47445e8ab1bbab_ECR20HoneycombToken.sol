@@ -29,8 +29,8 @@ contract owned {
 
 contract ECR20HoneycombToken is owned {
     // Public variables of the token
-    string public name = &quot;Honeycomb&quot;;
-    string public symbol = &quot;COMB&quot;;
+    string public name = "Honeycomb";
+    string public symbol = "COMB";
     uint8 public decimals = 18;
     
     // used for buyPrice

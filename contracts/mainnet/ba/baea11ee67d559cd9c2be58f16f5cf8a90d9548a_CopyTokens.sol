@@ -51,8 +51,8 @@ contract CopyTokens is IERC20 {
     
     uint public _totalSupply = 0;
     
-    string public constant symbol = &quot;COPY&quot;;
-    string public constant name = &quot;Copy Tokens&quot;;
+    string public constant symbol = "COPY";
+    string public constant name = "Copy Tokens";
     uint8 public constant decimals = 18;
     
     uint256 public constant RATE = 1000;

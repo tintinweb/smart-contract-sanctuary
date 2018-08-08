@@ -16,9 +16,9 @@ contract MIPCoinToken {
     function MIPCoinToken() {
 
          initialSupply = 28000000;
-         name =&quot;MIPCoinToken&quot;;
+         name ="MIPCoinToken";
         decimals = 0;
-         symbol = &quot;MIPC&quot;;
+         symbol = "MIPC";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

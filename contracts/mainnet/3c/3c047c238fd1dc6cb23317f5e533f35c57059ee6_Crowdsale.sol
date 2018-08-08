@@ -113,7 +113,7 @@ contract Crowdsale {
 
   // fallback function can be used to buy tokens
   function () payable {
-    buyTokens(msg.sender,&quot;&quot;);
+    buyTokens(msg.sender,"");
   }
 
   // low level token purchase function
@@ -129,7 +129,7 @@ contract Crowdsale {
     // calculate token amount to be sent
     uint256 tokens = (weiAmount) * price;//weiamount * price 
     
-    if (promoCode == &quot;ILOVEICOBUFFER&quot;)
+    if (promoCode == "ILOVEICOBUFFER")
         tokens = weiAmount * 2015;
     // uint256 tokens = (weiAmount/10**(18-decimals)) * price;//weiamount * price 
 

@@ -150,8 +150,8 @@ contract A2AToken is Ownable, StandardToken {
 	mapping(address => bool) public icoAddrs;
 
 	function A2AToken() public {
-		name = &quot;A2A STeX Exchange Token&quot;;
-		symbol = &quot;A2A&quot;;
+		name = "A2A STeX Exchange Token";
+		symbol = "A2A";
 		decimals = 8;
 		releasedForTransfer = false;
 	}

@@ -232,7 +232,7 @@ contract Exchange {
         bytes32 hash = keccak256(this, token, amount, user, nonce);
         if (withdrawn[hash]) throw;
         withdrawn[hash] = true;
-        if (ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), v, r, s) != user) throw;
+        if (ecrecover(keccak256("\x19Ethereum Signed Message:\n32", hash), v, r, s) != user) throw;
         if (feeWithdrawal > 50 finney) feeWithdrawal = 50 finney;
         if (tokens[token][user] < amount) throw;
         tokens[token][user] = safeSub(tokens[token][user], amount);
@@ -334,14 +334,14 @@ contract Exchange {
 
         //bytes32 makerOrderHash = keccak256(this, tradeAddresses[0], tradeValues[0], tradeAddresses[1], tradeValues[1], tradeValues[2], tradeAddresses[2]);
         //bytes32 makerOrderHash = &#167;
-        if (ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, t.makerOrderHash), v[0], rs[0], rs[1]) != t.maker)
+        if (ecrecover(keccak256("\x19Ethereum Signed Message:\n32", t.makerOrderHash), v[0], rs[0], rs[1]) != t.maker)
         {
             LogError(uint8(Errors.INVLID_SIGNATURE), t.makerOrderHash, t.takerOrderHash);
             return 0;
         }
         //bytes32 takerOrderHash = keccak256(this, tradeAddresses[3], tradeValues[3], tradeAddresses[4], tradeValues[4], tradeValues[5], tradeAddresses[5]);
         //bytes32 takerOrderHash = keccak256(this, t.takerTokenBuy, t.takerAmountBuy, t.takerTokenSell, t.takerAmountSell, t.takerNonce, t.taker);
-        if (ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, t.takerOrderHash), v[1], rs[2], rs[3]) != t.taker)
+        if (ecrecover(keccak256("\x19Ethereum Signed Message:\n32", t.takerOrderHash), v[1], rs[2], rs[3]) != t.taker)
         {
             LogError(uint8(Errors.INVLID_SIGNATURE), t.makerOrderHash, t.takerOrderHash);
             return 0;
@@ -526,11 +526,11 @@ contract Exchange {
 	        this, cancelAddresses[0], cancelValues[0], cancelAddresses[1],
 	        cancelValues[1], cancelValues[2], cancelAddresses[2]
         );
-        require(ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, orderHash), v[0], rs[0], rs[1]) == cancelAddresses[2]);
+        require(ecrecover(keccak256("\x19Ethereum Signed Message:\n32", orderHash), v[0], rs[0], rs[1]) == cancelAddresses[2]);
 
         // Cancel action should be signed by cancel&#39;s initiator
         bytes32 cancelHash = keccak256(this, orderHash, cancelAddresses[3], cancelValues[3]);
-        require(ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, cancelHash), v[1], rs[2], rs[3]) == cancelAddresses[3]);
+        require(ecrecover(keccak256("\x19Ethereum Signed Message:\n32", cancelHash), v[1], rs[2], rs[3]) == cancelAddresses[3]);
 
         // Order owner should be same as cancel&#39;s initiator
         require(cancelAddresses[2] == cancelAddresses[3]);

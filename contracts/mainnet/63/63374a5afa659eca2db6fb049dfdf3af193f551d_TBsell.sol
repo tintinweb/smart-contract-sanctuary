@@ -57,7 +57,7 @@ library SafeMath {
 /**
  * @title Ownable
     * @dev The Ownable contract has an owner address, and provides basic authorization control 
-       * functions, this simplifies the implementation of &quot;user permissions&quot;. 
+       * functions, this simplifies the implementation of "user permissions". 
           */
 contract Ownable {
   address public owner;
@@ -193,8 +193,8 @@ contract TBCoin is StandardToken, Ownable {
     using SafeMath for uint256;
 
     // Token Info.
-    string  public constant name = &quot;TimeBox Coin&quot;;
-    string  public constant symbol = &quot;TB&quot;;
+    string  public constant name = "TimeBox Coin";
+    string  public constant symbol = "TB";
     uint8   public constant decimals = 18;
 
     // Sale period.

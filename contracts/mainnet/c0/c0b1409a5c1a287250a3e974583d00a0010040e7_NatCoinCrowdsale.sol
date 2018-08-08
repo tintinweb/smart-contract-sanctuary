@@ -77,7 +77,7 @@ contract BasicToken is ERC20 {
 
   // Send _value amount of tokens from address _from to address _to
   // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-  // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+  // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
   // fees in sub-currencies; the command should fail unless the _from account has
   // deliberately authorized the sender of the message via some mechanism; we propose
   // these standardized APIs for approval:
@@ -167,7 +167,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -253,8 +253,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract NatCoin is MintableToken {
-  string public constant name = &quot;NATCOIN&quot;;
-  string public constant symbol = &quot;NTC&quot;;
+  string public constant name = "NATCOIN";
+  string public constant symbol = "NTC";
   uint256 public constant decimals = 18;
 }
 

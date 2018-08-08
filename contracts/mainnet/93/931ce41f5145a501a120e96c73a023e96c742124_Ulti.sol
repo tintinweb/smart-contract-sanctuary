@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract Ulti {
 
-    string public name = &quot;Ulti&quot;;      //  token name
-    string public symbol = &quot;Ulti&quot;;           //  token symbol
+    string public name = "Ulti";      //  token name
+    string public symbol = "Ulti";           //  token symbol
     uint256 public decimals = 18;            //  token digit
 
     mapping (address => uint256) public balanceOf;

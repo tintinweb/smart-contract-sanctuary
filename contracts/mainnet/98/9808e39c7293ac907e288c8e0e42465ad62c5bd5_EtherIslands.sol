@@ -50,7 +50,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -141,8 +141,8 @@ contract EtherIslands is Ownable, ERC721 {
     }
 
     /*** CONSTANTS ***/
-    string public constant NAME = &quot;EtherIslands&quot;;
-    string public constant SYMBOL = &quot;EIS&quot;;
+    string public constant NAME = "EtherIslands";
+    string public constant SYMBOL = "EIS";
 
     bool public maintenance = true;
     uint256 islands_count;
@@ -163,12 +163,12 @@ contract EtherIslands is Ownable, ERC721 {
     function implementsERC721() public pure returns (bool) {return true;}
 
     function EtherIslands() public {
-        _create_island(&quot;Santorini&quot;, msg.sender, 0.001 ether, 0, 0, 0);
-        _create_island(&quot;Seychelles&quot;, msg.sender, 0.001 ether, 0, 0, 0);
-        _create_island(&quot;Palawan&quot;, msg.sender, 0.001 ether, 0, 0, 0);
-        _create_island(&quot;The Cook Islands&quot;, msg.sender, 0.001 ether, 0, 0, 0);
-        _create_island(&quot;Bora Bora&quot;, msg.sender, 0.001 ether, 0, 0, 0);
-        _create_island(&quot;Maldives&quot;, msg.sender, 0.001 ether, 0, 0, 0);
+        _create_island("Santorini", msg.sender, 0.001 ether, 0, 0, 0);
+        _create_island("Seychelles", msg.sender, 0.001 ether, 0, 0, 0);
+        _create_island("Palawan", msg.sender, 0.001 ether, 0, 0, 0);
+        _create_island("The Cook Islands", msg.sender, 0.001 ether, 0, 0, 0);
+        _create_island("Bora Bora", msg.sender, 0.001 ether, 0, 0, 0);
+        _create_island("Maldives", msg.sender, 0.001 ether, 0, 0, 0);
     }
 
     /** PUBLIC METHODS **/
@@ -267,8 +267,8 @@ contract EtherIslands is Ownable, ERC721 {
         m_address.transfer(m_fee);
         owner.transfer(d_fee);
 
-        DividendsPaid(island.previous_owners[0], previous_owner_div, &quot;buyShipPreviousOwner&quot;);
-        DividendsPaid(island.previous_owners[1], previous_owner2_div, &quot;buyShipPreviousOwner2&quot;);
+        DividendsPaid(island.previous_owners[0], previous_owner_div, "buyShipPreviousOwner");
+        DividendsPaid(island.previous_owners[1], previous_owner2_div, "buyShipPreviousOwner2");
 
         ShipsBought(_island_id, island.owner);
     }
@@ -296,9 +296,9 @@ contract EtherIslands is Ownable, ERC721 {
         island.treasury_next_withdrawal_block = block.number + withdrawalBlocksCooldown;
         //setting cooldown for next withdrawal
 
-        DividendsPaid(island.previous_owners[0], treasury_for_previous_owner_1, &quot;withdrawalPreviousOwner&quot;);
-        DividendsPaid(island.previous_owners[1], treasury_for_previous_owner_2, &quot;withdrawalPreviousOwner2&quot;);
-        DividendsPaid(island.owner, treasury_for_current_owner, &quot;withdrawalOwner&quot;);
+        DividendsPaid(island.previous_owners[0], treasury_for_previous_owner_1, "withdrawalPreviousOwner");
+        DividendsPaid(island.previous_owners[1], treasury_for_previous_owner_2, "withdrawalPreviousOwner2");
+        DividendsPaid(island.owner, treasury_for_current_owner, "withdrawalOwner");
 
         TreasuryWithdrawn(_island_id);
     }
@@ -337,10 +337,10 @@ contract EtherIslands is Ownable, ERC721 {
             m_address.transfer(m_fee);
             owner.transfer(d_fee);
 
-            DividendsPaid(island.previous_owners[0], previous_owner_fee, &quot;previousOwner&quot;);
-            DividendsPaid(island.previous_owners[1], previous_owner_fee2, &quot;previousOwner2&quot;);
-            DividendsPaid(island.owner, owners_cut, &quot;owner&quot;);
-            DividendsPaid(owner, dev_fee, &quot;dev&quot;);
+            DividendsPaid(island.previous_owners[0], previous_owner_fee, "previousOwner");
+            DividendsPaid(island.previous_owners[1], previous_owner_fee2, "previousOwner2");
+            DividendsPaid(island.owner, owners_cut, "owner");
+            DividendsPaid(owner, dev_fee, "dev");
         } else {
             island.owner.transfer(msg.value);
         }

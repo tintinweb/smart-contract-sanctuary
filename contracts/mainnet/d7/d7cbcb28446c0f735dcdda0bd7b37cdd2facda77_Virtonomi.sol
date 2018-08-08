@@ -22,8 +22,8 @@ contract ERC20Interface {
 
 // contract
 contract Virtonomi is ERC20Interface {
-    string public constant symbol = &quot;VTI&quot;;
-    string public constant name = &quot;Virtonomi&quot;;
+    string public constant symbol = "VTI";
+    string public constant name = "Virtonomi";
     uint8 public constant decimals = 8;
     uint256 _totalSupply = 10000000000000000;
 

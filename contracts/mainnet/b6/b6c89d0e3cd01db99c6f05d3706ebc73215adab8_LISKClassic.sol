@@ -113,8 +113,8 @@ contract LISKClassic is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LISKClassic() public {
-        symbol = &quot;LISK&quot;;
-        name = &quot;LISK Classic&quot;;
+        symbol = "LISK";
+        name = "LISK Classic";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x740c39c211954eE5Bc57aF2924583faa360c6C40] = _totalSupply;

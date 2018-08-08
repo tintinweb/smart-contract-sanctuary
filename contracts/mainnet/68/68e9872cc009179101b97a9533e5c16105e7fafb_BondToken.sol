@@ -66,8 +66,8 @@ contract ERC20 {
  */
 contract BondToken is ERC20 {
     using SafeMath for uint;
-    string public name = &quot;Bond Film Platform&quot;;
-    string public symbol = &quot;BFP&quot;;
+    string public name = "Bond Film Platform";
+    string public symbol = "BFP";
     uint public decimals = 18;
 
     // Ico contract address

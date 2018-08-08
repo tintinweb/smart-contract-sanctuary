@@ -5,8 +5,8 @@ contract Gnome {
     using SafeMath for uint256;
     
     uint public constant _totalSupply = 200000000000;
-    string public constant symbol = &quot;LEN&quot;;
-    string public constant name = &quot;Gnome&quot;;
+    string public constant symbol = "LEN";
+    string public constant name = "Gnome";
     uint8 public constant decimals = 2;
     
     mapping(address => uint256) balances;

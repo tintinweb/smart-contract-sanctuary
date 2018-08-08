@@ -214,7 +214,7 @@ contract BancorConverterUpgrader is Owned {
     */
     function upgrade(IBancorConverter _oldConverter, bytes32 _version) public {
         bool formerVersions = false;
-        if (_version == &quot;0.4&quot;)
+        if (_version == "0.4")
             formerVersions = true;
         acceptConverterOwnership(_oldConverter);
         IBancorConverter toConverter = createConverter(_oldConverter);

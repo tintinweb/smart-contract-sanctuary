@@ -1,8 +1,8 @@
 pragma solidity ^0.4.24;
 
 contract GenoPay {
-    string public name = &quot;Geno Pay&quot;;
-    string public symbol = &quot;GENO&quot;;
+    string public name = "Geno Pay";
+    string public symbol = "GENO";
     uint8 public decimals = 18;
     uint256 public totalSupply = 200000000 * 10 ** uint256(decimals);
 

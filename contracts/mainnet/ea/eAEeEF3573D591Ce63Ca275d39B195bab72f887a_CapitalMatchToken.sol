@@ -109,8 +109,8 @@ contract CapitalMatchToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CapitalMatchToken() public {
-        symbol = &quot;CMT&quot;;
-        name = &quot;Capital Match Token&quot;;
+        symbol = "CMT";
+        name = "Capital Match Token";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0x1E37f08D1EcB2E98330f20F90fFF0A0b45A85Fea] = _totalSupply;

@@ -501,7 +501,7 @@ contract FrozenToken is ERC20Token, ITokenRecipient {
     authLevel(Level.ADMIN)
     public 
     {
-        PropsChanged(msg.sender, &quot;freezeEnabled&quot;, freezeEnabled, _freezeEnabled);
+        PropsChanged(msg.sender, "freezeEnabled", freezeEnabled, _freezeEnabled);
         freezeEnabled = _freezeEnabled;
     }
 
@@ -509,7 +509,7 @@ contract FrozenToken is ERC20Token, ITokenRecipient {
     authLevel(Level.ADMIN)
     public 
     {
-        PropsChanged(msg.sender, &quot;autoFreeze&quot;, autoFreeze, _autoFreeze);
+        PropsChanged(msg.sender, "autoFreeze", autoFreeze, _autoFreeze);
         autoFreeze = _autoFreeze;
     }
 
@@ -643,13 +643,13 @@ contract FrozenToken is ERC20Token, ITokenRecipient {
 }
 
 contract SiliconValleyToken is FrozenToken {
-    string public name = &quot;Silicon Valley Token&quot;;
-    string public symbol = &quot;SVL&quot;;
+    string public name = "Silicon Valley Token";
+    string public symbol = "SVL";
     uint8 public decimals = 18;
 
-    string public version = &quot;0.1&quot;;
-    string public publisher = &quot;https://www.silicon-valley.one/&quot;;
-    string public description = &quot;This is an official Silicon Valley Token (SVL)&quot;;
+    string public version = "0.1";
+    string public publisher = "https://www.silicon-valley.one/";
+    string public description = "This is an official Silicon Valley Token (SVL)";
 
     bool public acceptAdminWithdraw = false;
     bool public acceptDonate = true;
@@ -733,7 +733,7 @@ contract SiliconValleyToken is FrozenToken {
     public
     returns (bool success)
     {
-        PropsChanged(msg.sender, &quot;acceptAdminWithdraw&quot;, acceptAdminWithdraw, _accept);
+        PropsChanged(msg.sender, "acceptAdminWithdraw", acceptAdminWithdraw, _accept);
         acceptAdminWithdraw = _accept;
         return true;
     }
@@ -761,7 +761,7 @@ contract SiliconValleyToken is FrozenToken {
     public
     returns (bool success)
     {
-        PropsChanged(msg.sender, &quot;acceptDonate&quot;, acceptDonate, _accept);
+        PropsChanged(msg.sender, "acceptDonate", acceptDonate, _accept);
         acceptDonate = _accept;
         return true;
     }

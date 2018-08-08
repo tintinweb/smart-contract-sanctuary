@@ -100,7 +100,7 @@ library BBLib {
 
     // ** Modifiers -- note, these are functions here to allow use as a lib
     function requireBallotClosed(DB storage db) internal view {
-        require(now > BPackedUtils.packedToEndTime(db.packed), &quot;!b-closed&quot;);
+        require(now > BPackedUtils.packedToEndTime(db.packed), "!b-closed");
     }
 
     function requireBallotOpen(DB storage db) internal view {
@@ -108,16 +108,16 @@ library BBLib {
         uint64 startTs;
         uint64 endTs;
         (, startTs, endTs) = BPackedUtils.unpackAll(db.packed);
-        require(_n >= startTs && _n < endTs, &quot;!b-open&quot;);
-        require(db.deprecated == false, &quot;b-deprecated&quot;);
+        require(_n >= startTs && _n < endTs, "!b-open");
+        require(db.deprecated == false, "b-deprecated");
     }
 
     function requireBallotOwner(DB storage db) internal view {
-        require(msg.sender == db.ballotOwner, &quot;!b-owner&quot;);
+        require(msg.sender == db.ballotOwner, "!b-owner");
     }
 
     function requireTesting(DB storage db) internal view {
-        require(isTesting(BPackedUtils.packedToSubmissionBits(db.packed)), &quot;!testing&quot;);
+        require(isTesting(BPackedUtils.packedToSubmissionBits(db.packed)), "!testing");
     }
 
     /* Library meta */
@@ -131,10 +131,10 @@ library BBLib {
 
     /* Functions */
 
-    // &quot;Constructor&quot; function - init core params on deploy
+    // "Constructor" function - init core params on deploy
     // timestampts are uint64s to give us plenty of room for millennia
     function init(DB storage db, bytes32 _specHash, uint256 _packed, IxIface ix, address ballotOwner, bytes16 extraData) external {
-        require(db.specHash == bytes32(0), &quot;b-exists&quot;);
+        require(db.specHash == bytes32(0), "b-exists");
 
         db.index = ix;
         db.ballotOwner = ballotOwner;
@@ -148,23 +148,23 @@ library BBLib {
         if (_testing) {
             emit TestingEnabled();
         } else {
-            require(endTs > now, &quot;bad-end-time&quot;);
+            require(endTs > now, "bad-end-time");
 
             // 0x1ff2 is 0001111111110010 in binary
             // by ANDing with subBits we make sure that only bits in positions 0,2,3,13,14,15
             // can be used. these correspond to the option flags at the top, and ETH ballots
             // that are enc&#39;d or plaintext.
-            require(sb & 0x1ff2 == 0, &quot;bad-sb&quot;);
+            require(sb & 0x1ff2 == 0, "bad-sb");
 
             // if we give bad submission bits (e.g. all 0s) then refuse to deploy ballot
             bool okaySubmissionBits = 1 == (isEthNoEnc(sb) ? 1 : 0) + (isEthWithEnc(sb) ? 1 : 0);
-            require(okaySubmissionBits, &quot;!valid-sb&quot;);
+            require(okaySubmissionBits, "!valid-sb");
 
             // take the max of the start time provided and the blocks timestamp to avoid a DoS against recent token holders
             // (which someone might be able to do if they could set the timestamp in the past)
             startTs = startTs > now ? startTs : uint64(now);
         }
-        require(_specHash != bytes32(0), &quot;null-specHash&quot;);
+        require(_specHash != bytes32(0), "null-specHash");
         db.specHash = _specHash;
 
         db.packed = BPackedUtils.pack(sb, startTs, endTs);
@@ -269,7 +269,7 @@ library BBLib {
         // we want the replay protection sequence number to be STRICTLY MORE than what
         // is stored in the mapping. This means we can set sequence to MAX_UINT32 to disable
         // any future votes.
-        require(db.sequenceNumber[voter] < sequence, &quot;bad-sequence-n&quot;);
+        require(db.sequenceNumber[voter] < sequence, "bad-sequence-n");
         db.sequenceNumber[voter] = sequence;
     }
 
@@ -495,16 +495,16 @@ contract safeSend {
     // we want to be able to call outside contracts (e.g. the admin proxy contract)
     // but reentrency is bad, so here&#39;s a mutex.
     function doSafeSend(address toAddr, uint amount) internal {
-        doSafeSendWData(toAddr, &quot;&quot;, amount);
+        doSafeSendWData(toAddr, "", amount);
     }
 
     function doSafeSendWData(address toAddr, bytes data, uint amount) internal {
-        require(txMutex3847834 == false, &quot;ss-guard&quot;);
+        require(txMutex3847834 == false, "ss-guard");
         txMutex3847834 = true;
         // we need to use address.call.value(v)() because we want
         // to be able to send to other contracts, even with no data,
         // which might use more than 2300 gas in their fallback function.
-        require(toAddr.call.value(amount)(data), &quot;ss-failed&quot;);
+        require(toAddr.call.value(amount)(data), "ss-failed");
         txMutex3847834 = false;
     }
 }
@@ -552,12 +552,12 @@ contract owned {
     event OwnerChanged(address newOwner);
 
     modifier only_owner() {
-        require(msg.sender == owner, &quot;only_owner: forbidden&quot;);
+        require(msg.sender == owner, "only_owner: forbidden");
         _;
     }
 
     modifier owner_or(address addr) {
-        require(msg.sender == addr || msg.sender == owner, &quot;!owner-or&quot;);
+        require(msg.sender == addr || msg.sender == owner, "!owner-or");
         _;
     }
 
@@ -635,8 +635,8 @@ contract hasAdmins is owned {
     event AdminDisabledForever();
 
     modifier only_admin() {
-        require(adminsDisabledForever == false, &quot;admins must not be disabled&quot;);
-        require(isAdmin(msg.sender), &quot;only_admin: forbidden&quot;);
+        require(adminsDisabledForever == false, "admins must not be disabled");
+        require(isAdmin(msg.sender), "only_admin: forbidden");
         _;
     }
 
@@ -658,13 +658,13 @@ contract hasAdmins is owned {
 
     function upgradeMeAdmin(address newAdmin) only_admin() external {
         // note: already checked msg.sender has admin with `only_admin` modifier
-        require(msg.sender != owner, &quot;owner cannot upgrade self&quot;);
+        require(msg.sender != owner, "owner cannot upgrade self");
         _setAdmin(msg.sender, false);
         _setAdmin(newAdmin, true);
     }
 
     function setAdmin(address a, bool _givePerms) only_admin() external {
-        require(a != msg.sender && a != owner, &quot;cannot change your own (or owner&#39;s) permissions&quot;);
+        require(a != msg.sender && a != owner, "cannot change your own (or owner&#39;s) permissions");
         _setAdmin(a, _givePerms);
     }
 
@@ -723,11 +723,11 @@ contract EnsOwnerProxy is hasAdmins {
     }
 
     function fwdToENS(bytes data) only_owner() external {
-        require(address(ens).call(data), &quot;fwding to ens failed&quot;);
+        require(address(ens).call(data), "fwding to ens failed");
     }
 
     function fwdToResolver(bytes data) only_owner() external {
-        require(address(resolver).call(data), &quot;fwding to resolver failed&quot;);
+        require(address(resolver).call(data), "fwding to resolver failed");
     }
 }
 
@@ -743,12 +743,12 @@ contract permissioned is owned, hasAdmins {
     event AdminLockdown();
 
     modifier only_editors() {
-        require(editAllowed[msg.sender], &quot;only_editors: forbidden&quot;);
+        require(editAllowed[msg.sender], "only_editors: forbidden");
         _;
     }
 
     modifier no_lockdown() {
-        require(adminLockdown == false, &quot;no_lockdown: check failed&quot;);
+        require(adminLockdown == false, "no_lockdown: check failed");
         _;
     }
 
@@ -793,7 +793,7 @@ contract upgradePtr {
     address ptr = address(0);
 
     modifier not_upgraded() {
-        require(ptr == address(0), &quot;upgrade pointer is non-zero&quot;);
+        require(ptr == address(0), "upgrade pointer is non-zero");
         _;
     }
 
@@ -968,7 +968,7 @@ contract BBFarm is BBFarmIface {
 
     modifier req_namespace(uint ballotId) {
         // bytes4() will take the _first_ 4 bytes
-        require(bytes4(ballotId >> 224) == NAMESPACE, &quot;bad-namespace&quot;);
+        require(bytes4(ballotId >> 224) == NAMESPACE, "bad-namespace");
         _;
     }
 
@@ -1211,12 +1211,12 @@ contract SVIndex is IxIface {
     //* MODIFIERS /
 
     modifier onlyDemocOwner(bytes32 democHash) {
-        require(msg.sender == backend.getDOwner(democHash), &quot;!d-owner&quot;);
+        require(msg.sender == backend.getDOwner(democHash), "!d-owner");
         _;
     }
 
     modifier onlyDemocEditor(bytes32 democHash) {
-        require(backend.isDEditor(democHash, msg.sender), &quot;!d-editor&quot;);
+        require(backend.isDEditor(democHash, msg.sender), "!d-editor");
         _;
     }
 
@@ -1259,7 +1259,7 @@ contract SVIndex is IxIface {
 
     function _addBBFarm(bytes4 bbNamespace, BBFarmIface _bbFarm) internal returns (uint8 bbFarmId) {
         uint256 bbFarmIdLong = bbFarms.length;
-        require(bbFarmIdLong < 2**8, &quot;too-many-farms&quot;);
+        require(bbFarmIdLong < 2**8, "too-many-farms");
         bbFarmId = uint8(bbFarmIdLong);
 
         bbFarms.push(_bbFarm);
@@ -1271,22 +1271,22 @@ contract SVIndex is IxIface {
     function addBBFarm(BBFarmIface bbFarm) only_owner() external returns (uint8 bbFarmId) {
         bytes4 bbNamespace = bbFarm.getNamespace();
 
-        require(bbNamespace != bytes4(0), &quot;bb-farm-namespace&quot;);
-        require(bbFarmIdLookup[bbNamespace] == 0 && bbNamespace != bbFarms[0].getNamespace(), &quot;bb-namespace-used&quot;);
+        require(bbNamespace != bytes4(0), "bb-farm-namespace");
+        require(bbFarmIdLookup[bbNamespace] == 0 && bbNamespace != bbFarms[0].getNamespace(), "bb-namespace-used");
 
         bbFarmId = _addBBFarm(bbNamespace, bbFarm);
     }
 
     function setABackend(bytes32 toSet, address newSC) only_owner() external {
         emit SetBackend(toSet, newSC);
-        if (toSet == bytes32(&quot;payments&quot;)) {
+        if (toSet == bytes32("payments")) {
             payments = IxPaymentsIface(newSC);
-        } else if (toSet == bytes32(&quot;backend&quot;)) {
+        } else if (toSet == bytes32("backend")) {
             backend = IxBackendIface(newSC);
-        } else if (toSet == bytes32(&quot;commAuction&quot;)) {
+        } else if (toSet == bytes32("commAuction")) {
             commAuction = CommAuctionIface(newSC);
         } else {
-            revert(&quot;404&quot;);
+            revert("404");
         }
     }
 
@@ -1354,9 +1354,9 @@ contract SVIndex is IxIface {
         // also limit gas use to 3000 because we don&#39;t know what they&#39;ll do with it
         // during testing both owned and controlled could be called from other contracts for 2525 gas.
         if (erc20.call.gas(3000)(OWNER_SIG)) {
-            require(msg.sender == owned(erc20).owner.gas(3000)(), &quot;!erc20-owner&quot;);
+            require(msg.sender == owned(erc20).owner.gas(3000)(), "!erc20-owner");
         } else if (erc20.call.gas(3000)(CONTROLLER_SIG)) {
-            require(msg.sender == controlledIface(erc20).controller.gas(3000)(), &quot;!erc20-controller&quot;);
+            require(msg.sender == controlledIface(erc20).controller.gas(3000)(), "!erc20-controller");
         } else {
             revert();
         }
@@ -1425,11 +1425,11 @@ contract SVIndex is IxIface {
 
 
     function _deployBallot(bytes32 democHash, bytes32 specHash, bytes32 extraData, uint packed, bool checkLimit, bool alreadySentTx) internal returns (uint ballotId) {
-        require(BBLib.isTesting(BPackedUtils.packedToSubmissionBits(packed)) == false, &quot;b-testing&quot;);
+        require(BBLib.isTesting(BPackedUtils.packedToSubmissionBits(packed)) == false, "b-testing");
 
         // the most significant byte of extraData signals the bbFarm to use.
         uint8 bbFarmId = uint8(extraData[0]);
-        require(deprecatedBBFarms[bbFarmId] == false, &quot;bb-dep&quot;);
+        require(deprecatedBBFarms[bbFarmId] == false, "bb-dep");
         BBFarmIface _bbFarm = bbFarms[bbFarmId];
 
         // anything that isn&#39;t a community ballot counts towards the basic limit.
@@ -1466,13 +1466,13 @@ contract SVIndex is IxIface {
 
     function dDeployCommunityBallot(bytes32 democHash, bytes32 specHash, bytes32 extraData, uint128 packedTimes) external payable {
         uint price = commAuction.getNextPrice(democHash);
-        require(msg.value >= price, &quot;!cb-fee&quot;);
+        require(msg.value >= price, "!cb-fee");
 
         doSafeSend(payments.getPayTo(), price);
         doSafeSend(msg.sender, msg.value - price);
 
         bool canProceed = backend.getDCommBallotsEnabled(democHash) || !payments.accountInGoodStanding(democHash);
-        require(canProceed, &quot;!cb-enabled&quot;);
+        require(canProceed, "!cb-enabled");
 
         uint256 packed = BPackedUtils.setSB(uint256(packedTimes), (USE_ETH | USE_NO_ENC));
 
@@ -1504,7 +1504,7 @@ contract SVIndex is IxIface {
         // must be positive due to ending in future check
         uint256 secsToEndTime = endTime - now;
         // require ballots end no more than twice the time left on the democracy
-        require(secsLeft * 2 > secsToEndTime, &quot;unpaid&quot;);
+        require(secsLeft * 2 > secsToEndTime, "unpaid");
     }
 
     function _basicBallotLimitOperations(bytes32 democHash, BBFarmIface _bbFarm) internal returns (bool shouldCount, bool performedSend) {
@@ -1541,7 +1541,7 @@ contract SVIndex is IxIface {
             // where the Nth most recent ballot was created within the last 30 days.)
             // We should now check for payment
             uint extraBallotFee = payments.getBasicExtraBallotFeeWei();
-            require(msg.value >= extraBallotFee, &quot;!extra-b-fee&quot;);
+            require(msg.value >= extraBallotFee, "!extra-b-fee");
 
             // now that we know they&#39;ve paid the fee, we should send Eth to `payTo`
             // and return the remainder.
@@ -1736,7 +1736,7 @@ contract SVIndexBackend is IxBackendIface {
     function setDOwnerFromClaim(bytes32 democHash, address newOwner) only_editors() external {
         Democ storage d = democs[democHash];
         // make sure that the owner claim is enabled (i.e. the disabled flag is false)
-        require(d.erc20OwnerClaimDisabled == false, &quot;!erc20-claim&quot;);
+        require(d.erc20OwnerClaimDisabled == false, "!erc20-claim");
         // set owner and editor
         d.owner = newOwner;
         d.editors[d.editorEpoch][newOwner] = true;
@@ -1893,7 +1893,7 @@ contract SVIndexBackend is IxBackendIface {
     /* util for calculating editor key */
 
     function _calcEditorKey(bytes key) internal pure returns (bytes) {
-        return abi.encodePacked(&quot;editor.&quot;, key);
+        return abi.encodePacked("editor.", key);
     }
 }
 
@@ -1993,7 +1993,7 @@ contract SVPayments is IxPaymentsIface {
     // contracts are compromised? (e.g. by a leaked privkey)
     address public emergencyAdmin;
     function emergencySetOwner(address newOwner) external {
-        require(msg.sender == emergencyAdmin, &quot;!emergency-owner&quot;);
+        require(msg.sender == emergencyAdmin, "!emergency-owner");
         owner = newOwner;
     }
     /* END BREAK GLASS */
@@ -2046,7 +2046,7 @@ contract SVPayments is IxPaymentsIface {
     /* account management */
 
     function payForDemocracy(bytes32 democHash) external payable {
-        require(msg.value > 0, &quot;need to send some ether to make payment&quot;);
+        require(msg.value > 0, "need to send some ether to make payment");
 
         uint additionalSeconds = weiBuysHowManySeconds(msg.value);
 
@@ -2064,14 +2064,14 @@ contract SVPayments is IxPaymentsIface {
     }
 
     function doFreeExtension(bytes32 democHash) external {
-        require(freeExtension[democHash], &quot;!free&quot;);
+        require(freeExtension[democHash], "!free");
         uint newPaidUpTill = now + 60 days;
         accounts[democHash].paidUpTill = newPaidUpTill;
         emit FreeExtension(democHash);
     }
 
     function downgradeToBasic(bytes32 democHash) only_editors() external {
-        require(accounts[democHash].isPremium, &quot;!premium&quot;);
+        require(accounts[democHash].isPremium, "!premium");
         accounts[democHash].isPremium = false;
         // convert premium minutes to basic
         uint paidTill = accounts[democHash].paidUpTill;
@@ -2080,7 +2080,7 @@ contract SVPayments is IxPaymentsIface {
         if (timeRemaining > 0) {
             // prevent accounts from downgrading if they have time remaining
             // and upgraded less than 24hrs ago
-            require(accounts[democHash].lastUpgradeTs < (now - 24 hours), &quot;downgrade-too-soon&quot;);
+            require(accounts[democHash].lastUpgradeTs < (now - 24 hours), "downgrade-too-soon");
             timeRemaining *= premiumMultiplier;
             accounts[democHash].paidUpTill = now + timeRemaining;
         }
@@ -2088,8 +2088,8 @@ contract SVPayments is IxPaymentsIface {
     }
 
     function upgradeToPremium(bytes32 democHash) only_editors() external {
-        require(denyPremium[democHash] == false, &quot;upgrade-denied&quot;);
-        require(!accounts[democHash].isPremium, &quot;!basic&quot;);
+        require(denyPremium[democHash] == false, "upgrade-denied");
+        require(!accounts[democHash].isPremium, "!basic");
         accounts[democHash].isPremium = true;
         // convert basic minutes to premium minutes
         uint paidTill = accounts[democHash].paidUpTill;

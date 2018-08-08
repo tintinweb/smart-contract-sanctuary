@@ -113,8 +113,8 @@ contract LanxangCash is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LanxangCash() public {
-        symbol = &quot;LAXC&quot;;
-        name = &quot;Lanxang Cash&quot;;
+        symbol = "LAXC";
+        name = "Lanxang Cash";
         decimals = 18;
         _totalSupply = 12000000000000000000000000;
         balances[0x5C4A7ca79a967E5d251195Bdb334983D066aA2A2] = _totalSupply;

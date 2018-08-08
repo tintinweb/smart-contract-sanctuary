@@ -61,10 +61,10 @@ contract VouchCoin is Ownable, ERC20Interface {
   using SafeMath for uint;
 
   uint public _totalSupply = 10000000000000000;
-  string public constant name = &quot;VouchCoin&quot;;
-  string public constant symbol = &quot;VHC&quot;;
+  string public constant name = "VouchCoin";
+  string public constant symbol = "VHC";
   uint public constant decimals = 8;
-  string public standard = &quot;VouchCoin token v2.0&quot;;
+  string public standard = "VouchCoin token v2.0";
 
   mapping (address => uint) balances;
   mapping (address => mapping (address => uint)) allowances;

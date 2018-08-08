@@ -235,8 +235,8 @@ contract BurnableToken is StandardToken {
 
 contract Joyreum is BurnableToken, HasNoEther {
 
-    string public constant name = &quot;Joyreum&quot;;
-    string public constant symbol = &quot;JOY&quot;;
+    string public constant name = "Joyreum";
+    string public constant symbol = "JOY";
     uint8 public constant decimals = 18;
     uint256 constant INITIAL_SUPPLY = 10000000 * (10 ** uint256(decimals));
 

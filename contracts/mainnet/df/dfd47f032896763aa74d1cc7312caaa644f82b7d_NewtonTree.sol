@@ -107,9 +107,9 @@ contract StandardToken is Token {
     function NewtonTree() {
         balances[msg.sender] = 10000000000000;               // Give the creator all initial tokens. This is set to 1000 for example. If you want your initial tokens to be X and your decimal is 5, set this value to X * 100000. (CHANGE THIS)
         totalSupply = 10000000000000;                        // Update total supply (1000 for example) (CHANGE THIS)
-        name = &quot;NewtonTree&quot;;                                   // Set the name for display purposes (CHANGE THIS)
+        name = "NewtonTree";                                   // Set the name for display purposes (CHANGE THIS)
         decimals = 5;                                               // Amount of decimals for display purposes (CHANGE THIS)
-        symbol = &quot;NTT&quot;;                                             // Set the symbol for display purposes (CHANGE THIS)
+        symbol = "NTT";                                             // Set the symbol for display purposes (CHANGE THIS)
         fundsWallet = 0xf3E22529D348a12b7976671A0A3770b7D44068d9;                                    // The owner of the contract gets ETH
     }
 
@@ -137,7 +137,7 @@ contract StandardToken is Token {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
     

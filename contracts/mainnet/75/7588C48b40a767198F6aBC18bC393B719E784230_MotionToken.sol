@@ -128,8 +128,8 @@ contract StandardToken is ERC20 {
 
 contract MotionToken is StandardToken {
   address public owner;
-  string public constant name = &quot;Motion&quot;;
-  string public constant symbol = &quot;MTN&quot;;
+  string public constant name = "Motion";
+  string public constant symbol = "MTN";
   uint8 public constant decimals = 18;
   bool public frozen = true;
 

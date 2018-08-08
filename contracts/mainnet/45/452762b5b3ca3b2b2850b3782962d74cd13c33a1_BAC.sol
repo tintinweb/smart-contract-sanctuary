@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract BAC is StandardToken, Ownable {
 
-    string public constant name = &quot;Hundred industry alliance chain（百业联盟链）&quot;;
-    string public constant symbol = &quot;BAC&quot;;
+    string public constant name = "Hundred industry alliance chain（百业联盟链）";
+    string public constant symbol = "BAC";
     uint256 public constant decimals = 8;
 
     function BAC() public {

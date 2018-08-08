@@ -60,8 +60,8 @@ contract TaiChiCoin is SafeMath{
 
    /* Initializes contract with initial supply tokens to the creator of the contract */
     function TaiChiCoin() {
-        name = &quot;TaiChiCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TCC&quot;;                               // Set the symbol for display purposes
+        name = "TaiChiCoin";                                   // Set the name for display purposes
+        symbol = "TCC";                               // Set the symbol for display purposes
         owner = msg.sender;
         decimals = 18;
         totalSupply = 25000000000 * 10**uint(decimals);

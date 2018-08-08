@@ -127,8 +127,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract ITSToken is StandardToken, Ownable {
 
-  string public constant name = &quot;Intelligent Transportation System&quot;;
-  string public constant symbol = &quot;ITS&quot;;
+  string public constant name = "Intelligent Transportation System";
+  string public constant symbol = "ITS";
   uint256 public constant decimals = 8;
   
   

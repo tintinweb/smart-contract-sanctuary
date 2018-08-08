@@ -37,8 +37,8 @@ accumulate over time while your investment remains safe and stable, making this 
 
 contract TestingCoin {
 
-	string constant public name = &quot;StableCoin&quot;;
-	string constant public symbol = &quot;PoSC&quot;;
+	string constant public name = "StableCoin";
+	string constant public symbol = "PoSC";
 	uint256 constant scaleFactor = 0x10000000000000000;
 	uint8 constant limitedFirstBuyers = 4;
 	uint256 constant firstBuyerLimit = 0.5 ether; // 2 eth total premine + .5 bonus. 

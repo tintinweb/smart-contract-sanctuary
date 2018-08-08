@@ -215,7 +215,7 @@ contract BurnableToken is StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -304,8 +304,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract HireGoToken is MintableToken, BurnableToken {
 
-    string public constant name = &quot;HireGo&quot;;
-    string public constant symbol = &quot;HGO&quot;;
+    string public constant name = "HireGo";
+    string public constant symbol = "HGO";
     uint32 public constant decimals = 18;
 
     function HireGoToken() public {

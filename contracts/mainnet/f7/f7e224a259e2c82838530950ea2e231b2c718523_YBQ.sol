@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract YBQ is StandardToken {
 
-  string public constant name = &quot;Yobtc Quotes&quot;;
-  string public constant symbol = &quot;YBQ&quot;;
+  string public constant name = "Yobtc Quotes";
+  string public constant symbol = "YBQ";
   uint8 public constant decimals = 18;
 
 

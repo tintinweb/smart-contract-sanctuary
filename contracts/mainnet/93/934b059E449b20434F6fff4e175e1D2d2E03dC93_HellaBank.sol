@@ -113,8 +113,8 @@ contract HellaBank is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HellaBank() public {
-        symbol = &quot;HLAB&quot;;
-        name = &quot;HellaBank&quot;;
+        symbol = "HLAB";
+        name = "HellaBank";
         decimals = 18;
         _totalSupply = 2500000000000000000000000000;
         balances[0xEf34495bb2783FFe75c2580EF205d5562b2e0B3d] = _totalSupply;

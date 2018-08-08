@@ -1,8 +1,8 @@
 pragma solidity ^0.4.16;
 
 contract TokenBBBasic {
-    string public name = &quot;BingoCoin&quot;;      
-    string public symbol = &quot;BOC&quot;;              
+    string public name = "BingoCoin";      
+    string public symbol = "BOC";              
     uint8 public decimals = 18;                
     uint256 public totalSupply;                
 

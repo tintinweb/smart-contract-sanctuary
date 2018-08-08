@@ -2,8 +2,8 @@ pragma solidity ^0.4.16;
 
 contract IotWifitoken {
 
-    string public name = &quot;IotWifitoken&quot;;
-    string public symbol = &quot;ITWF&quot;;
+    string public name = "IotWifitoken";
+    string public symbol = "ITWF";
     uint8 public decimals = 18;
     uint256 public totalSupply = 1000000000 * 10 ** uint256(decimals);
 

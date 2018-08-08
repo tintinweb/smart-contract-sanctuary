@@ -3,7 +3,7 @@ pragma solidity 0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -96,7 +96,7 @@ contract CoinsKarmaFactory is Ownable {
         if (coinskarma.exists == true) {
             return (coinsKarmaMap[_coinSymbol], coinskarma.name, coinskarma.symbol, coinskarma.totalKarmaUp, coinskarma.totalKarmaDown, coinskarma.exists);
         } else {
-            return (0, &quot;&quot;, &quot;&quot;, 0, 0, false);
+            return (0, "", "", 0, 0, false);
         }
     }
 
@@ -110,7 +110,7 @@ contract CoinsKarmaFactory is Ownable {
         if (karmavoters[karmaVoterMap[_userAddress][getCoinsId]].exists == true) {
             return (karmavoters[karmaVoterMap[_userAddress][getCoinsId]].coinsKarmaId, karmavoters[karmaVoterMap[_userAddress][getCoinsId]].voterAddress, karmavoters[karmaVoterMap[_userAddress][getCoinsId]].up, karmavoters[karmaVoterMap[_userAddress][getCoinsId]].down, karmavoters[karmaVoterMap[_userAddress][getCoinsId]].voteTime, _coinSymbol);
         } else {
-            return (0, 0x0, 0, 0, 0, &quot;&quot;);
+            return (0, 0x0, 0, 0, 0, "");
         }
     }
 

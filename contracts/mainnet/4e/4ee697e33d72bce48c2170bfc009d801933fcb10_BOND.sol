@@ -113,8 +113,8 @@ contract BOND is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BOND() public {
-        symbol = &quot;BND&quot;;
-        name = &quot;BOND&quot;;
+        symbol = "BND";
+        name = "BOND";
         decimals = 5;
         _totalSupply = 85000000000000;
         balances[0xED7d4bC3ea331A559b9c2036161DB2AD0933f638] = _totalSupply;

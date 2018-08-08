@@ -29,8 +29,8 @@ contract TokenERC20 {
     ) public {
         totalSupply = 400000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;ZEWT&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ZEWT&quot;;                               // Set the symbol for display purposes
+        name = "ZEWT";                                   // Set the name for display purposes
+        symbol = "ZEWT";                               // Set the symbol for display purposes
     }
 
     /**

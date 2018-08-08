@@ -6,7 +6,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -282,7 +282,7 @@ contract StandardToken is ERC20, BasicToken {
 contract TokensSpreader is Ownable {
     StandardToken public token;
     address public sender;
-    string public name = &quot;TDR&#39;s Tokens Spreader&quot;;
+    string public name = "TDR&#39;s Tokens Spreader";
 
     constructor(address _tokenAddress, address _sender) public {
         token = StandardToken(_tokenAddress);

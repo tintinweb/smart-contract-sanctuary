@@ -95,8 +95,8 @@ contract BitBall is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitBall() public {
-        symbol = &quot;BTB&quot;;
-        name = &quot;BitBall&quot;;
+        symbol = "BTB";
+        name = "BitBall";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x6a29063DD421Bf38a18b5a7455Fb6fE5f36F7992] = _totalSupply;

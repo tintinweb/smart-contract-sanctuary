@@ -97,15 +97,15 @@ contract FHCoin is StandardToken {
     function FHCoin() {
         balances[msg.sender] = 3000000000000;
         totalSupply = 3000000000000;
-        name = &quot;FHCoin&quot;;
+        name = "FHCoin";
         decimals = 4;
-        symbol = &quot;FHC&quot;; 
+        symbol = "FHC"; 
     }
 
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

@@ -226,8 +226,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract SimpleToken is StandardToken {
     
-    string public name = &quot;Centrificus&quot;;
-    string public symbol = &quot;CTS&quot;;
+    string public name = "Centrificus";
+    string public symbol = "CTS";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 25000000000000000000000000000;
     

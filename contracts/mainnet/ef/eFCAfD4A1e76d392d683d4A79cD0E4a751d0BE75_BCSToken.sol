@@ -50,8 +50,8 @@ contract BCSToken {
      * Initializes contract with initial supply tokens to the creator of the contract
      */
     function BCSToken() public {
-    	name = &quot;BlockChainStore Token&quot;;                          // Set the name for display purposes
-        symbol = &quot;BCST&quot;;                                         // and symbol
+    	name = "BlockChainStore Token";                          // Set the name for display purposes
+        symbol = "BCST";                                         // and symbol
     	uint256 initialSupply = 100000000;			            // 100M	tokens
         totalSupply = initialSupply * (10 ** uint256(decimals));// 8 digits for mantissa , no safeMath needed here
         balanceOf[msg.sender] = totalSupply;                    // Give the creator all initial tokens

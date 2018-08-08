@@ -54,8 +54,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 5000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Super Carbon Coin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;SCC&quot;;                               // Set the symbol for display purposes
+        name = "Super Carbon Coin";                                   // Set the name for display purposes
+        symbol = "SCC";                               // Set the symbol for display purposes
     }
 
     /**
@@ -199,8 +199,8 @@ contract SuperCarbonCoinToken is owned, TokenERC20 {
 		owner = msg.sender;
 		totalSupply = 5000000000000000000000000000;
 		balanceOf[owner]=totalSupply;
-		tokenName=&quot;Super Carbon Coin&quot;;
-		tokenSymbol=&quot;SCC&quot;;
+		tokenName="Super Carbon Coin";
+		tokenSymbol="SCC";
 	}
 
 

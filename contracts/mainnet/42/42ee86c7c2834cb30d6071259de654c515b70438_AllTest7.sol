@@ -68,8 +68,8 @@ contract AllTest7 is SafeMath{
         string tokenSymbol;
         balanceOf[msg.sender] = 50000000000000000000000000000;              // Give the creator all initial tokens
         totalSupply = 50000000000000000000000000000;                        // Update total supply
-        name = &quot;AllTest7&quot;;                                   // Set the name for display purposes
-        symbol = &quot;AllTest7&quot;;                               // Set the symbol for display purposes
+        name = "AllTest7";                                   // Set the name for display purposes
+        symbol = "AllTest7";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
 		owner = msg.sender;
     }

@@ -35,8 +35,8 @@ contract SafeMath {
   }
 }
 contract ElectronicMusic is SafeMath {
-    string public name = &quot;Electronic Music&quot;;
-    string public symbol = &quot;EM&quot;;
+    string public name = "Electronic Music";
+    string public symbol = "EM";
     uint8 public decimals = 18;
     uint256 public totalSupply = 100000000e18;
     address public owner;

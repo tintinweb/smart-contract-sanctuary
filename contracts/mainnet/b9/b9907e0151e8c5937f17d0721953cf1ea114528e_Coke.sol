@@ -25,7 +25,7 @@ pragma solidity ^0.4.21;
  * technology. For further information: modular.network
  *
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -320,7 +320,7 @@ contract Owned {
 }
 
 // ----------------------------------------------------------------------------
-// Contract &quot;Recoverable&quot;, to allow a failsafe in case of user error, so users can recover their mistakenly sent Tokens or Eth
+// Contract "Recoverable", to allow a failsafe in case of user error, so users can recover their mistakenly sent Tokens or Eth
 // https://github.com/ethereum/dapp-bin/blob/master/library/recoverable.sol
 // ----------------------------------------------------------------------------
 contract Recoverable is Owned {
@@ -508,9 +508,9 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
     //Token specific properties:
 
     uint16 public constant yearOfProduction = 1997;
-    string public constant protectedDenominationOfOrigin = &quot;Colombia&quot;;
-    string public constant targetDemographics = &quot;The jet set / Top of the tops&quot;;
-    string public constant securityAudit = &quot;ExtremeAssets Team Ref: XN872 Approved&quot;;
+    string public constant protectedDenominationOfOrigin = "Colombia";
+    string public constant targetDemographics = "The jet set / Top of the tops";
+    string public constant securityAudit = "ExtremeAssets Team Ref: XN872 Approved";
     uint buyRatio; //Ratio to buy from the contract directly
     uint sellRatio; //Ratio to sell from the contract directly
     uint private _factorDecimalsEthToToken;
@@ -581,8 +581,8 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
     // Constructor
     // ------------------------------------------------------------------------
     function Coke() public {
-        symbol = &quot;Coke&quot;;
-        name = &quot;100 % Pure Cocaine&quot;;
+        symbol = "Coke";
+        name = "100 % Pure Cocaine";
         decimals = 6; //Micrograms
         _totalSupply = 875000000 * (uint(10)**decimals);
         _factorDecimalsEthToToken = uint(10)**(18);
@@ -775,7 +775,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
     function retrieveGains() public noReentrancy whenNotInEmergencyProtectedMode returns (bool success) {
         uint gains = gainsToReceive[msg.sender];
         if(gains > 0) {
-            //Set correct value of &quot;gains to receive&quot; before calling transfer method to avoid reentrance attack after possibly sending to another contract:
+            //Set correct value of "gains to receive" before calling transfer method to avoid reentrance attack after possibly sending to another contract:
             gainsToReceive[msg.sender] = 0;
             //Send corresponding ETH to sender:
             msg.sender.transfer(gains);
@@ -1150,7 +1150,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
     
     // ------------------------------------------------------------------------
     // Cancel order on the blackmarket to sell a certain quantity of coke at a certain price.
-    // If the seller has various order with the same quantity and priceRatio, and can put parameter &quot;continueAfterFirstMatch&quot; to true, 
+    // If the seller has various order with the same quantity and priceRatio, and can put parameter "continueAfterFirstMatch" to true, 
     // so it will continue and cancel all those black market orders.
     // ------------------------------------------------------------------------
     function cancelSellToBlackMarket(uint quantity, uint priceRatio, bool continueAfterFirstMatch) public whenNotPaused returns (bool success, uint numOrdersCanceled) {
@@ -1197,7 +1197,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
         uint fee = safeDiv(weiToBePayed, marketComissionRatio);
         uint valueForSeller = safeSub(weiToBePayed, fee);
 
-        //Update change values (seller will have to retrieve his/her gains by calling method &quot;retrieveGains&quot; to receive the Eth)
+        //Update change values (seller will have to retrieve his/her gains by calling method "retrieveGains" to receive the Eth)
         gainsToReceive[offerThisRound.seller] = safeAdd(gainsToReceive[offerThisRound.seller], valueForSeller);
         emit GainsGotten(offerThisRound.seller, valueForSeller, gainsToReceive[offerThisRound.seller]);
 
@@ -1356,7 +1356,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
         if(totalToBePayedWei < msg.value) {
             //Give change back to the buyer:
             //Return change to the buyer (sender of the message in this case)
-            changeToReturn[msg.sender] = safeAdd(changeToReturn[msg.sender], msg.value - totalToBePayedWei); //SAFETY CHECK: No need to use safeSub, as we already know that &quot;msg.value&quot; > &quot;totalToBePayedWei&quot;!
+            changeToReturn[msg.sender] = safeAdd(changeToReturn[msg.sender], msg.value - totalToBePayedWei); //SAFETY CHECK: No need to use safeSub, as we already know that "msg.value" > "totalToBePayedWei"!
             emit ChangeToReceiveGotten(msg.sender, msg.value - totalToBePayedWei, changeToReturn[msg.sender]);
         }
 
@@ -1543,13 +1543,13 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
         }
         
         //Update balances of seller/buyer:
-        balances[dealer] = balances[dealer] - quantity; //SAFETY CHECK: No need to use safeSub, as we already know that &quot;balances[dealer]&quot; >= &quot;quantity&quot;!
+        balances[dealer] = balances[dealer] - quantity; //SAFETY CHECK: No need to use safeSub, as we already know that "balances[dealer]" >= "quantity"!
         balances[msg.sender] = safeAdd(balances[msg.sender], quantity);
         emit Transfer(dealer, msg.sender, quantity);
 
         //Update direct offers registry:
         if(quantity < directOffers[dealer][msg.sender].quantity) {
-            //SAFETY CHECK: No need to use safeSub, as we already know that &quot;directOffers[dealer][msg.sender].quantity&quot; > &quot;quantity&quot;!
+            //SAFETY CHECK: No need to use safeSub, as we already know that "directOffers[dealer][msg.sender].quantity" > "quantity"!
             directOffers[dealer][msg.sender].quantity = directOffers[dealer][msg.sender].quantity - quantity;
         }
         else {
@@ -1571,7 +1571,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
         uint changeToGive = safeSub(msg.value, weiToBePayed);
 
         if(changeToGive > 0) {
-            //Update change values (user will have to retrieve the change calling method &quot;retrieveChange&quot; to receive the Eth)
+            //Update change values (user will have to retrieve the change calling method "retrieveChange" to receive the Eth)
             changeToReturn[msg.sender] = safeAdd(changeToReturn[msg.sender], changeToGive);
             emit ChangeToReceiveGotten(msg.sender, changeToGive, changeToReturn[msg.sender]);
         }
@@ -1703,7 +1703,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
                 first = false;
             }
             else {
-                r = strConcat(r, &quot; <||> &quot;, messages[indexMsg].msg);
+                r = strConcat(r, " <||> ", messages[indexMsg].msg);
             }
             
             indexMsg = (indexMsg + 1) % uint(maxMessagesGlobal);
@@ -1769,7 +1769,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
                     first = false;
                 }
                 else {
-                    r = strConcat(r, &quot; <||> &quot;, topMessagesMap[elem].msg);
+                    r = strConcat(r, " <||> ", topMessagesMap[elem].msg);
                 }
                 (exists, elem) = topMessagesSorted.getAdjacent(elem, NEXT);
             }
@@ -1796,7 +1796,7 @@ contract Coke is ERC20Interface, Owned, Pausable, EmergencyProtectedMode, Recove
                         first = false;
                     }
                     else {
-                        r = strConcat(r, &quot; <||> &quot;, topMessagesMap[elem].msg);
+                        r = strConcat(r, " <||> ", topMessagesMap[elem].msg);
                     }
                 }
                 (exists, elem) = topMessagesSorted.getAdjacent(elem, NEXT);

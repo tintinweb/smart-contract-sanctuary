@@ -242,7 +242,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -388,7 +388,7 @@ contract StabitCoin is StandardToken, BurnableToken, PausableToken, DetailedERC2
         uint256 _totalSupply
     )
     public
-    DetailedERC20(&quot;StabitCoin&quot;,&quot;STABIT&quot;,3)
+    DetailedERC20("StabitCoin","STABIT",3)
     {
         totalSupply_ = totalSupply_.add(_totalSupply);
         balances[msg.sender] = balances[msg.sender].add(_totalSupply);

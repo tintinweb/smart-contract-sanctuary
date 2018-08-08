@@ -249,8 +249,8 @@ contract BurnableToken is StandardToken {
  
 contract FobsCoin is StandardToken, BurnableToken {
 
-  string public constant name = &quot;Fobscoin&quot;;
-  string public constant symbol = &quot;FOBS&quot;; 
+  string public constant name = "Fobscoin";
+  string public constant symbol = "FOBS"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 10000000 * (10 ** uint256(decimals));

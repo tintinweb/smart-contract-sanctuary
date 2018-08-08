@@ -614,7 +614,7 @@ library Order {
         require(_outcome < _market.getNumberOfOutcomes());
         require(_price < _market.getNumTicks());
 
-        IOrders _orders = IOrders(_controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(_controller.lookup("Orders"));
         IAugur _augur = _controller.getAugur();
 
         return Data({
@@ -635,7 +635,7 @@ library Order {
     }
 
     //
-    // &quot;public&quot; functions
+    // "public" functions
     //
 
     function getOrderId(Order.Data _orderData) internal view returns (bytes32) {
@@ -733,9 +733,9 @@ library Order {
 
 contract ShareToken is DelegationTarget, ITyped, Initializable, VariableSupplyToken, IShareToken {
 
-    string constant public name = &quot;Shares&quot;;
+    string constant public name = "Shares";
     uint8 constant public decimals = 0;
-    string constant public symbol = &quot;SHARE&quot;;
+    string constant public symbol = "SHARE";
 
     IMarket private market;
     uint256 private outcome;
@@ -757,21 +757,21 @@ contract ShareToken is DelegationTarget, ITyped, Initializable, VariableSupplyTo
         return true;
     }
 
-    function trustedOrderTransfer(address _source, address _destination, uint256 _attotokens) public onlyCaller(&quot;CreateOrder&quot;) onlyInGoodTimes afterInitialized returns (bool) {
+    function trustedOrderTransfer(address _source, address _destination, uint256 _attotokens) public onlyCaller("CreateOrder") onlyInGoodTimes afterInitialized returns (bool) {
         return internalTransfer(_source, _destination, _attotokens);
     }
 
-    function trustedFillOrderTransfer(address _source, address _destination, uint256 _attotokens) public onlyCaller(&quot;FillOrder&quot;) onlyInGoodTimes afterInitialized returns (bool) {
+    function trustedFillOrderTransfer(address _source, address _destination, uint256 _attotokens) public onlyCaller("FillOrder") onlyInGoodTimes afterInitialized returns (bool) {
         return internalTransfer(_source, _destination, _attotokens);
     }
 
     // Allowed to run in bad time so orders can be canceled
-    function trustedCancelOrderTransfer(address _source, address _destination, uint256 _attotokens) public onlyCaller(&quot;CancelOrder&quot;) afterInitialized returns (bool) {
+    function trustedCancelOrderTransfer(address _source, address _destination, uint256 _attotokens) public onlyCaller("CancelOrder") afterInitialized returns (bool) {
         return internalTransfer(_source, _destination, _attotokens);
     }
 
     function getTypeName() public view returns(bytes32) {
-        return &quot;ShareToken&quot;;
+        return "ShareToken";
     }
 
     function getMarket() external view returns(IMarket) {

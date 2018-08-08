@@ -16,8 +16,8 @@ contract HoltCoin {
 	event Burn(address indexed from, uint256 value);
 
 	constructor() public {
-		name = &quot;HoltCoin&quot;;
-		symbol = &quot;HOLT&quot;;
+		name = "HoltCoin";
+		symbol = "HOLT";
 		totalSupply = 100000000 * 10 ** uint256(decimals);
 		balanceOf[msg.sender] = totalSupply;
 	}

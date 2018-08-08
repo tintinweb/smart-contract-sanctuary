@@ -68,8 +68,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract VirginMToken is StandardToken 
 {
-    string public name = &quot;VirginMToken&quot;;
-    string public symbol = &quot;VM&quot;;
+    string public name = "VirginMToken";
+    string public symbol = "VM";
     uint public decimals = 18;
     uint public totalSupply = 100 * 1000 * 1000 ether;
 

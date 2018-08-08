@@ -98,8 +98,8 @@ contract UECToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;UEC&quot;;
-        name = &quot;Universal Energy Token&quot;;
+        symbol = "UEC";
+        name = "Universal Energy Token";
         decimals = 6;
         _totalSupply = 1000000000000000;
         balances[0xc7C3E00d990f38DC22BDf61383C0FebC98190E0E] = _totalSupply;

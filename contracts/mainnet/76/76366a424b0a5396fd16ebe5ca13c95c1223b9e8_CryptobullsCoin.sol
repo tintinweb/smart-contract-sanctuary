@@ -113,8 +113,8 @@ contract CryptobullsCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CryptobullsCoin() public {
-        symbol = &quot;CBXE&quot;;
-        name = &quot;Cryptobulls Coin&quot;;
+        symbol = "CBXE";
+        name = "Cryptobulls Coin";
         decimals = 18;
         _totalSupply = 18000000000000000000000000;
         balances[0xAe2129BF55FB56d8Fe2580A05A030c09031b1430] = _totalSupply;

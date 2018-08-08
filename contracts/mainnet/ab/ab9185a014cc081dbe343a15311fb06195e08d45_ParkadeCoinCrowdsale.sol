@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -269,8 +269,8 @@ contract StandardToken is ERC20, BasicToken {
 */
 contract ParkadeCoin is StandardToken, Ownable {
   using SafeMath for uint256;
-  string public name = &quot;Parkade Coin&quot;;
-  string public symbol = &quot;PRKC&quot;;
+  string public name = "Parkade Coin";
+  string public symbol = "PRKC";
   uint8 public decimals = 18;
 
 
@@ -316,7 +316,7 @@ contract ParkadeCoin is StandardToken, Ownable {
   function update(address account) 
   internal 
   {
-    // Calculate the amount &quot;owed&quot; to the account, in units of (wei / token) S
+    // Calculate the amount "owed" to the account, in units of (wei / token) S
     // Subtract Wei already credited to the account (per token) from the total Wei per token
     uint256 owed = scaledDividendPerToken.sub(scaledDividendCreditedTo[account]);
 

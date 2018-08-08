@@ -190,8 +190,8 @@ contract ICO is AdvancedToken {
 contract TESTERIUM is ICO {
     using SafeMath for uint256;
 
-    string public constant name     = &quot;ZATA TOKEN&quot;;
-    string public constant symbol   = &quot;L.E.N.T.O.&quot;;
+    string public constant name     = "ZATA TOKEN";
+    string public constant symbol   = "L.E.N.T.O.";
     uint8  public constant decimals = 18;
 
     mapping (address => mapping (address => uint256)) private allowed;

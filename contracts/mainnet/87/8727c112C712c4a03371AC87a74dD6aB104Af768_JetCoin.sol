@@ -183,7 +183,7 @@ contract StandardToken is BasicToken, ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control 
- * functions, this simplifies the implementation of &quot;user permissions&quot;. 
+ * functions, this simplifies the implementation of "user permissions". 
  */
 contract Ownable {
   address public owner;
@@ -275,10 +275,10 @@ contract Pausable is Ownable {
  */
 contract JetCoin is StandardToken, Pausable {
 
-  string    public name = &quot;Jetcoin&quot;;
-  string    public symbol = &quot;JET&quot;;
+  string    public name = "Jetcoin";
+  string    public symbol = "JET";
   uint8     public decimals = 18;
-  string    public version  = &quot;2.0&quot;;
+  string    public version  = "2.0";
   address   public replacesOldContract = 0xc1E6C6C681B286Fb503B36a9dD6c1dbFF85E73CF;
 
   function transfer(address _to, uint _value) whenNotPaused {

@@ -11,8 +11,8 @@ contract ERC20Interface {
 	event Approval(address indexed _owner, address indexed _spender, uint _value);
 }
 contract DDAContract is ERC20Interface {
-	string public constant symbol = &quot;DDA&quot;;
-	string public constant name = &quot;DeDeAnchor&quot;;
+	string public constant symbol = "DDA";
+	string public constant name = "DeDeAnchor";
 	uint8 public constant decimals = 18;
 	uint256 public _totalSupply = 10**26;//smallest unit is 10**-18, and total dda is 10**8
 

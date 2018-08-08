@@ -4,7 +4,7 @@ pragma solidity ^0.4.21; // solhint-disable-line
 * One Proof Shrimp Farm
 * https://oneproof.net/games/shrimp
 * 
-* Instead of having many small &quot;proof of&quot; smart contracts here you can
+* Instead of having many small "proof of" smart contracts here you can
 * create a unique website and use this same smart contract address.
 * This would benefit all those holding because of the increased volume.
 * 

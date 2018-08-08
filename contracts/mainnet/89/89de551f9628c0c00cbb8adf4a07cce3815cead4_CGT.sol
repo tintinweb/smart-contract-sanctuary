@@ -32,8 +32,8 @@ contract CGT is SafeMath {
 
     mapping(address => uint) balances;
   
-    string public name    = &quot;ATESTTEST&quot;;
-    string public symbol  = &quot;x&quot;;
+    string public name    = "ATESTTEST";
+    string public symbol  = "x";
     uint8 public decimals = 6;
     uint256 public totalSupply;
   

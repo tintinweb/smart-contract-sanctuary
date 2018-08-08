@@ -140,7 +140,7 @@ contract StandardToken is ERC20, BasicToken {
  
 /*
 The Ownable contract has an owner address, and provides basic authorization control
- functions, this simplifies the implementation of &quot;user permissions&quot;.
+ functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -200,8 +200,8 @@ contract TheLiquidToken is StandardToken, Ownable {
 }
     
 contract MWAV is TheLiquidToken {
-  string public constant name = &quot;Massive WAVs&quot;;
-      string public constant symbol = &quot;MWAVS&quot;;
+  string public constant name = "Massive WAVs";
+      string public constant symbol = "MWAVS";
   uint public constant decimals = 8;
   uint256 public initialSupply = 4400000000000000;
     

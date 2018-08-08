@@ -250,8 +250,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract XstarToken is PausableToken {
-    string public name = &quot;XstarToken&quot;;
-    string public symbol = &quot;XT&quot;;
+    string public name = "XstarToken";
+    string public symbol = "XT";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 1000000000000000000000000000;
 

@@ -163,7 +163,7 @@ library ECRecovery {
 library JobLib {
     using SafeMath for uint256;
     // Prefix hashed with message hash when a signature is produced by the eth_sign RPC call
-    string constant PERSONAL_HASH_PREFIX = &quot;\u0019Ethereum Signed Message:\n32&quot;;
+    string constant PERSONAL_HASH_PREFIX = "\u0019Ethereum Signed Message:\n32";
     // # of bytes used to store a video profile identifier as a utf8 encoded string
     // Video profile identifier is currently stored as bytes4(keccak256(PROFILE_NAME))
     // We use 2 * 4 = 8 bytes because we store the bytes in a utf8 encoded string so
@@ -321,7 +321,7 @@ library JobLib {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -650,7 +650,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
 
     // Check if sender is Verifier
     modifier onlyVerifier() {
-        require(msg.sender == controller.getContract(keccak256(&quot;Verifier&quot;)));
+        require(msg.sender == controller.getContract(keccak256("Verifier")));
         _;
     }
 
@@ -678,7 +678,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
 
         verificationRate = _verificationRate;
 
-        ParameterUpdate(&quot;verificationRate&quot;);
+        ParameterUpdate("verificationRate");
     }
 
     /*
@@ -693,7 +693,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
 
         verificationPeriod = _verificationPeriod;
 
-        ParameterUpdate(&quot;verificationPeriod&quot;);
+        ParameterUpdate("verificationPeriod");
     }
 
     /*
@@ -708,7 +708,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
 
         verificationSlashingPeriod = _verificationSlashingPeriod;
 
-        ParameterUpdate(&quot;verificationSlashingPeriod&quot;);
+        ParameterUpdate("verificationSlashingPeriod");
     }
 
     /*
@@ -721,7 +721,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
 
         failedVerificationSlashAmount = _failedVerificationSlashAmount;
 
-        ParameterUpdate(&quot;failedVerificationSlashAmount&quot;);
+        ParameterUpdate("failedVerificationSlashAmount");
     }
 
     /*
@@ -734,7 +734,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
 
         missedVerificationSlashAmount = _missedVerificationSlashAmount;
 
-        ParameterUpdate(&quot;missedVerificationSlashAmount&quot;);
+        ParameterUpdate("missedVerificationSlashAmount");
     }
 
     /*
@@ -747,7 +747,7 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
 
         doubleClaimSegmentSlashAmount = _doubleClaimSegmentSlashAmount;
 
-        ParameterUpdate(&quot;doubleClaimSegmentSlashAmount&quot;);
+        ParameterUpdate("doubleClaimSegmentSlashAmount");
     }
 
     /*
@@ -1261,27 +1261,27 @@ contract JobsManager is ManagerProxyTarget, IVerifiable, IJobsManager {
      * @dev Returns Minter
      */
     function minter() internal view returns (IMinter) {
-        return IMinter(controller.getContract(keccak256(&quot;Minter&quot;)));
+        return IMinter(controller.getContract(keccak256("Minter")));
     }
 
     /*
      * @dev Returns BondingManager
      */
     function bondingManager() internal view returns (IBondingManager) {
-        return IBondingManager(controller.getContract(keccak256(&quot;BondingManager&quot;)));
+        return IBondingManager(controller.getContract(keccak256("BondingManager")));
     }
 
     /*
      * @dev Returns RoundsManager
      */
     function roundsManager() internal view returns (IRoundsManager) {
-        return IRoundsManager(controller.getContract(keccak256(&quot;RoundsManager&quot;)));
+        return IRoundsManager(controller.getContract(keccak256("RoundsManager")));
     }
 
     /*
      * @dev Returns Verifier
      */
     function verifier() internal view returns (IVerifier) {
-        return IVerifier(controller.getContract(keccak256(&quot;Verifier&quot;)));
+        return IVerifier(controller.getContract(keccak256("Verifier")));
     }
 }

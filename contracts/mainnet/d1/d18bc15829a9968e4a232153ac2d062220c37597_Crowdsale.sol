@@ -323,7 +323,7 @@ contract Manageable is Ownable {
 
 
 contract Token is CappedToken, BurnableToken, Withdrawable {
-    constructor() CappedToken(500000000e8) StandardToken(&quot;Greentoken&quot;, &quot;GTN&quot;, 8) public {
+    constructor() CappedToken(500000000e8) StandardToken("Greentoken", "GTN", 8) public {
         
     }
 }

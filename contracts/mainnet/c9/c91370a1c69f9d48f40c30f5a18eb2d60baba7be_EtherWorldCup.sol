@@ -62,7 +62,7 @@ contract WorldCupTeam {
         public
         payable 
     {
-        require(now <= endTime, &quot;Betting period has ended&quot;);
+        require(now <= endTime, "Betting period has ended");
 
         parentAddr.transfer(msg.value);
         etherWorldCup.UpdateBetOnTeams(teamName, msg.sender, msg.value);

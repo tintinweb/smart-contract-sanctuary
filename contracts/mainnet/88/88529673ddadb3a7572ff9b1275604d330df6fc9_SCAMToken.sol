@@ -114,8 +114,8 @@ contract SCAMToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function SCAMToken() public {
-        symbol = &quot;SCAM&quot;;
-        name = &quot;Secure Crypto Asset Management&quot;;
+        symbol = "SCAM";
+        name = "Secure Crypto Asset Management";
         decimals = 18;
         _totalSupply = 240000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

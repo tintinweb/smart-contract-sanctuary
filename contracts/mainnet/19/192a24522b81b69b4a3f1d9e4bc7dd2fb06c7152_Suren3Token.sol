@@ -69,9 +69,9 @@ contract Suren3Token is EIP20Interface {
     function Suren3Token() public {
         balances[msg.sender] = 22000000;               // Give the creator all initial tokens
         totalSupply = 22000000;                        // Update total supply
-        name = &quot;Suren3Token&quot;;                                   // Set the name for display purposes
+        name = "Suren3Token";                                   // Set the name for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
-        symbol = &quot;Suren3&quot;;                               // Set the symbol for display purposes
+        symbol = "Suren3";                               // Set the symbol for display purposes
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

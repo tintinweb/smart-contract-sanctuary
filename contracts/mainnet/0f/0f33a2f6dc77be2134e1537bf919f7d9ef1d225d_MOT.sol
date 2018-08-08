@@ -58,8 +58,8 @@ contract MOT is ERC20 {
 	//黑名单
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;MOT&quot;;
-    string public constant symbol = &quot;MOT&quot;;
+    string public constant name = "MOT";
+    string public constant symbol = "MOT";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 100000000e18;

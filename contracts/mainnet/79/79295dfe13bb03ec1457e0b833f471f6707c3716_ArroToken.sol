@@ -112,8 +112,8 @@ contract ArroToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;ARRO&quot;;
-        name = &quot;Arro.io&quot;;
+        symbol = "ARRO";
+        name = "Arro.io";
         decimals = 18;
         _totalSupply = 30000000000000000000000000000;
         balances[0xb27A875e4b3b5DcE9e7BE9De258EDCc40BeF09F1] = _totalSupply;

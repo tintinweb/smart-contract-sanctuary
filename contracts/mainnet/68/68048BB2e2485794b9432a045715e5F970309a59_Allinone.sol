@@ -17,9 +17,9 @@ contract Allinone {
     function Allinone() {
 
          initialSupply = 9100000000;
-         name =&quot;allinone&quot;;
+         name ="allinone";
          decimals = 8;
-         symbol = &quot;a&quot;;
+         symbol = "a";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

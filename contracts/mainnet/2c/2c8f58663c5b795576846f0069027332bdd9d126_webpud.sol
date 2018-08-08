@@ -16,9 +16,9 @@ contract webpud {
     function webpud() {
 
          initialSupply = 40000000000000000000000000;
-         name =&quot;webpud&quot;;
+         name ="webpud";
         decimals = 18;
-         symbol = &quot;wepud&quot;;
+         symbol = "wepud";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

@@ -74,8 +74,8 @@ contract StandardToken is Token {
 
 contract WaltonToken is StandardToken {
 
-    string constant public name = &quot;Walton Token&quot;;
-    string constant public symbol = &quot;WTC&quot;;
+    string constant public name = "Walton Token";
+    string constant public symbol = "WTC";
     uint8 constant public decimals = 18;
 
     function WaltonToken()

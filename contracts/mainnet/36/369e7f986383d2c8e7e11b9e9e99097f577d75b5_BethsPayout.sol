@@ -4,7 +4,7 @@ pragma solidity 0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -64,9 +64,9 @@ contract Ownable {
 /**
  * @title Beths base contract
  * @author clemlak (https://www.beths.co)
- * @notice Place bets using Ether, based on the &quot;pari mutuel&quot; principle
+ * @notice Place bets using Ether, based on the "pari mutuel" principle
  * Only the owner of the contract can create bets, he can also take a cut on every payouts
- * @dev This is the base contract for our dapp, we manage here all the things related to the &quot;house&quot;
+ * @dev This is the base contract for our dapp, we manage here all the things related to the "house"
  */
 contract BethsHouse is Ownable {
   /**
@@ -518,7 +518,7 @@ contract BethsPayout is BethsBet {
   }
 
   /**
-   * @notice Returns the &quot;raw&quot; pool amount (including the amount of the house cut)
+   * @notice Returns the "raw" pool amount (including the amount of the house cut)
    * @dev Can be called at any state of a game
    * @param gameId The id of a specific game
    */

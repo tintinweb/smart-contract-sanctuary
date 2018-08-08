@@ -74,8 +74,8 @@ contract MigrationAgent {
 contract ForgeCDN is ERC20{
     using SafeMath for uint256;
 
-    string public constant name = &quot;ForgeCDN&quot;;
-    string public constant symbol = &quot;FORGE&quot;;
+    string public constant name = "ForgeCDN";
+    string public constant symbol = "FORGE";
     uint8 public constant decimals = 18;
 
     event Transfer(address indexed from, address indexed to, uint256 value);

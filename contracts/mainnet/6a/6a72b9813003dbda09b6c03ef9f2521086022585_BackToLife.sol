@@ -15,11 +15,11 @@ pragma solidity ^0.4.15;
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -698,7 +698,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal pure returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint length = self._len * (parts.length - 1);
         for(uint i = 0; i < parts.length; i++)
@@ -783,7 +783,7 @@ contract MyWill {
 
         /* Check List Percentages */
         var s = _listHeirsPercentages.toSlice().copy();
-        var delim = &quot;;&quot;.toSlice();
+        var delim = ";".toSlice();
         var parts = new uint256[](s.count(delim) + 1);
 
         uint256 countPercentage;
@@ -826,7 +826,7 @@ contract MyWill {
     modifier onlyHeir() {
 
         var s = listHeirs.toSlice().copy();
-        var delim = &quot;;&quot;.toSlice();
+        var delim = ";".toSlice();
         string[] memory listOfHeirs = new string[](s.count(delim) + 1);
         bool itsHeir = false;
 
@@ -848,7 +848,7 @@ contract MyWill {
     modifier onlyWitness() {
 
         var s = listWitnesses.toSlice().copy();
-        var delim = &quot;;&quot;.toSlice();
+        var delim = ";".toSlice();
         string[] memory arrayOfWitnesses = new string[](s.count(delim) + 1);
         bool itsWitness = false;
 
@@ -878,7 +878,7 @@ contract MyWill {
 
             // Check if the minimum ammount is provided
             var witnessesList = listWitnesses.toSlice().copy();
-            var witnessesLength = witnessesList.count(&quot;;&quot;.toSlice()) + 1;
+            var witnessesLength = witnessesList.count(";".toSlice()) + 1;
             var needed = getWitnessWeiCost() * witnessesLength + getCreationWeiCost();
             require(msg.value > needed);
 
@@ -887,7 +887,7 @@ contract MyWill {
 
             // Send ether to witnesses
             for (uint i = 0; i < witnessesLength; i++) {
-                var witnessAddress = parseAddr(witnessesList.split(&quot;;&quot;.toSlice()).toString());
+                var witnessAddress = parseAddr(witnessesList.split(";".toSlice()).toString());
                 witnessAddress.transfer(getWitnessWeiCost());
             }
 
@@ -910,12 +910,12 @@ contract MyWill {
         mapHeirsVoteOwnerHasDied[addressToString(msg.sender)] = true;
 
         var users = listWitnesses.toSlice().copy();
-        uint256 listLength = users.count(&quot;;&quot;.toSlice()) + 1;
+        uint256 listLength = users.count(";".toSlice()) + 1;
         uint8 count = 0;
 
         for(uint i = 0; i < listLength; i++) {
 
-            if(mapHeirsVoteOwnerHasDied[users.split(&quot;;&quot;.toSlice()).toString()] == true){
+            if(mapHeirsVoteOwnerHasDied[users.split(";".toSlice()).toString()] == true){
                 count = count + 1;
             }
         }
@@ -926,14 +926,14 @@ contract MyWill {
 
             users = listHeirs.toSlice().copy();
             var  percentages = listHeirsPercentages.toSlice().copy();
-            listLength = users.count(&quot;;&quot;.toSlice()) + 1;
+            listLength = users.count(";".toSlice()) + 1;
 
             for(i = 0; i < listLength - 1; i++) {
-                parseAddr(users.split(&quot;;&quot;.toSlice()).toString()).transfer(((this.balance * stringToUint(percentages.split(&quot;;&quot;.toSlice()).toString())) / 100000));
+                parseAddr(users.split(";".toSlice()).toString()).transfer(((this.balance * stringToUint(percentages.split(";".toSlice()).toString())) / 100000));
             }
 
             // Last one gets the remaining
-            parseAddr(users.split(&quot;;&quot;.toSlice()).toString()).transfer(this.balance);
+            parseAddr(users.split(";".toSlice()).toString()).transfer(this.balance);
 
             status = Status.DEAD;
         }
@@ -977,7 +977,7 @@ contract MyWill {
     }
 
     function getWitnessesCount() returns (uint) {
-        return listWitnesses.toSlice().copy().count(&quot;;&quot;.toSlice()) + 1;
+        return listWitnesses.toSlice().copy().count(";".toSlice()) + 1;
     }
 
     function getBalance() constant returns (uint) {
@@ -1006,8 +1006,8 @@ contract MyWill {
 
     function addressToString(address x) private returns (string) {
         bytes memory s = new bytes(42);
-        s[0] = &quot;0&quot;;
-        s[1] = &quot;x&quot;;
+        s[0] = "0";
+        s[1] = "x";
         for (uint i = 0; i < 20; i++) {
             byte b = byte(uint8(uint(x) / (2**(8*(19 - i)))));
             byte hi = byte(uint8(b) / 16);
@@ -1071,34 +1071,34 @@ contract BackToLife {
 
         var s = _listHeirs.toSlice().copy();
 
-        if (!s.endsWith(&quot;;&quot;.toSlice())){
-            _listHeirs.toSlice().concat(&quot;;&quot;.toSlice());
+        if (!s.endsWith(";".toSlice())){
+            _listHeirs.toSlice().concat(";".toSlice());
         }
 
         s = _listWitnesses.toSlice().copy();
-        if (!s.endsWith(&quot;;&quot;.toSlice())){
-            _listWitnesses.toSlice().concat(&quot;;&quot;.toSlice());
+        if (!s.endsWith(";".toSlice())){
+            _listWitnesses.toSlice().concat(";".toSlice());
         }
 
         s = _listHeirsPercentages.toSlice().copy();
-        if (!s.endsWith(&quot;;&quot;.toSlice())){
-            _listHeirsPercentages.toSlice().concat(&quot;;&quot;.toSlice());
+        if (!s.endsWith(";".toSlice())){
+            _listHeirsPercentages.toSlice().concat(";".toSlice());
         }
 
 
         /* Add contract to the list of each heirs */
 //        s = _listHeirs.toSlice().copy();
-//        var delim = &quot;;&quot;.toSlice();
+//        var delim = ";".toSlice();
 //        uint256 listHeirsLength = s.count(delim) + 1;
 //        string memory senderStringAddress = addressToString(owner);
 //        for(uint i = 0; i < listHeirsLength; i++) {
 //            address heirAddress = parseAddr(s.split(delim).toString());
-//            mapOwnerStringContract[heirAddress] =  mapOwnerStringContract[heirAddress].toSlice().concat(stringContractAddress.toSlice()).toSlice().concat(&quot;;&quot;.toSlice());
+//            mapOwnerStringContract[heirAddress] =  mapOwnerStringContract[heirAddress].toSlice().concat(stringContractAddress.toSlice()).toSlice().concat(";".toSlice());
 //        }
 
         /* Calculate number of witness */
         s = _listWitnesses.toSlice().copy();
-        var delim = &quot;;&quot;.toSlice();
+        var delim = ";".toSlice();
         uint256 listWitnessLength = s.count(delim) + 1;
 
         /* Create the My Will contract */
@@ -1106,7 +1106,7 @@ contract BackToLife {
         MyWill myWillContract = MyWill(myWillAddress);
         myWillContract.setParameters(owner, _listHeirs, _listHeirsPercentages, _listWitnesses, club, _gasPrice, _gasCost);
         var myWillAddressString = addressToString(myWillAddress);
-        mapOwnerStringContract[owner] =  mapOwnerStringContract[owner].toSlice().concat(myWillAddressString.toSlice()).toSlice().concat(&quot;;&quot;.toSlice());
+        mapOwnerStringContract[owner] =  mapOwnerStringContract[owner].toSlice().concat(myWillAddressString.toSlice()).toSlice().concat(";".toSlice());
     }
 
     /* Get Address Contracts */
@@ -1116,8 +1116,8 @@ contract BackToLife {
 
     function addressToString(address x) returns (string) {
         bytes memory s = new bytes(42);
-        s[0] = &quot;0&quot;;
-        s[1] = &quot;x&quot;;
+        s[0] = "0";
+        s[1] = "x";
         for (uint i = 0; i < 20; i++) {
             byte b = byte(uint8(uint(x) / (2**(8*(19 - i)))));
             byte hi = byte(uint8(b) / 16);

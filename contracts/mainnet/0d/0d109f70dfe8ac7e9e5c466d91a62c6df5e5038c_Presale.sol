@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  * Based on Ownable.sol from https://github.com/OpenZeppelin/zeppelin-solidity/tree/master
  */
 contract Ownable {
@@ -240,7 +240,7 @@ contract CustomToken is ERC20, BasicToken, Ownable {
     //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
     //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
     //it is assumed when one does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-    require(_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), this, _value, this, _extraData));
+    require(_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), this, _value, this, _extraData));
     return true;
   }
 
@@ -258,7 +258,7 @@ contract CustomToken is ERC20, BasicToken, Ownable {
     //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
     //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
     //it is assumed when one does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-    require(_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+    require(_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
     return true;
   }
 
@@ -351,8 +351,8 @@ pragma solidity ^0.4.18;
  */
 contract Identify is CustomToken {
 
-  string public constant name = &quot;IDENTIFY&quot;;
-  string public constant symbol = &quot;IDF&quot;; 
+  string public constant name = "IDENTIFY";
+  string public constant symbol = "IDF"; 
   uint8 public constant decimals = 6;
 
   uint256 public constant INITIAL_SUPPLY = 49253333333 * (10 ** uint256(decimals));

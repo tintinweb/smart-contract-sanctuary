@@ -362,7 +362,7 @@ contract QuarkChainToken is DetailedERC20, PausableToken {
         _;
     }
 
-    constructor() public DetailedERC20(&quot;QuarkChain Token&quot;, &quot;QKC&quot;, 18) {
+    constructor() public DetailedERC20("QuarkChain Token", "QKC", 18) {
         totalSupply_ = INITIAL_SUPPLY;
     }
 

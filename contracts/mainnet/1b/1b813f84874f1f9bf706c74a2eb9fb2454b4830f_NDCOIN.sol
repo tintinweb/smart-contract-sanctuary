@@ -3,8 +3,8 @@ contract NDCOIN {
     
     uint public constant _totalSupply = 500000000000000000000000000;
     
-    string public constant symbol = &quot;NDC&quot;;
-    string public constant name = &quot;ND COIN&quot;;
+    string public constant symbol = "NDC";
+    string public constant name = "ND COIN";
     uint8 public constant decimals = 18;
     
     mapping(address => uint256) balances;

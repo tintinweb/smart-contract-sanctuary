@@ -54,8 +54,8 @@ contract BOB is SafeMath{
         ) {
         balanceOf[msg.sender] = 1000000000000000000000000000;
         totalSupply = 1000000000000000000000000000;
-        name = &quot;BOBO Coin&quot;;
-        symbol = &quot;BOB&quot;;
+        name = "BOBO Coin";
+        symbol = "BOB";
         decimals = 18;
 		owner = msg.sender;
     }

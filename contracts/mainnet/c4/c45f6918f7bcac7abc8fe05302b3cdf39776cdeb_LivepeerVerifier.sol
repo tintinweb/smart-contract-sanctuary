@@ -3,7 +3,7 @@ pragma solidity 0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -193,7 +193,7 @@ contract LivepeerVerifier is Manager, IVerifier {
 
     // Check if sender is JobsManager
     modifier onlyJobsManager() {
-        require(msg.sender == controller.getContract(keccak256(&quot;JobsManager&quot;)));
+        require(msg.sender == controller.getContract(keccak256("JobsManager")));
         _;
     }
 
@@ -278,10 +278,10 @@ contract LivepeerVerifier is Manager, IVerifier {
 
         // Check if transcoded data hash returned by solver matches originally submitted transcoded data hash
         if (q.commitHash == _result) {
-            IVerifiable(controller.getContract(keccak256(&quot;JobsManager&quot;))).receiveVerification(q.jobId, q.claimId, q.segmentNumber, true);
+            IVerifiable(controller.getContract(keccak256("JobsManager"))).receiveVerification(q.jobId, q.claimId, q.segmentNumber, true);
             Callback(_requestId, q.jobId, q.claimId, q.segmentNumber, true);
         } else {
-            IVerifiable(controller.getContract(keccak256(&quot;JobsManager&quot;))).receiveVerification(q.jobId, q.claimId, q.segmentNumber, false);
+            IVerifiable(controller.getContract(keccak256("JobsManager"))).receiveVerification(q.jobId, q.claimId, q.segmentNumber, false);
             Callback(_requestId, q.jobId, q.claimId, q.segmentNumber, false);
         }
 

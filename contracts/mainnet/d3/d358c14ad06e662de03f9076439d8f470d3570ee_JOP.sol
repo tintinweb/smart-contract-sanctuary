@@ -159,8 +159,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract JOP is StandardToken, Ownable {
-    string public constant name = &quot;JopCoin&quot;;
-    string public constant symbol = &quot;JOP&quot;;
+    string public constant name = "JopCoin";
+    string public constant symbol = "JOP";
     uint public constant decimals = 18;
     
     uint public price ;

@@ -89,17 +89,17 @@ contract UCToken is StandardToken {
 
 
 
-    string public name = &quot;Useless Coin Token&quot;;
+    string public name = "Useless Coin Token";
     uint8 public decimals = 18;
-    string public symbol = &quot;UCT&quot;;
+    string public symbol = "UCT";
     string public version = &#39;1.0&#39;;
 
     function UCToken() {
         balances[msg.sender] = 3000000000000000000000000000;
         totalSupply          = 3000000000000000000000000000;
-        name = &quot;Useless Coin Token&quot;;
+        name = "Useless Coin Token";
         decimals = 18;
-        symbol = &quot;UCT&quot;;
+        symbol = "UCT";
     }
 
     /* Approves and then calls the receiving contract */
@@ -107,7 +107,7 @@ contract UCToken is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

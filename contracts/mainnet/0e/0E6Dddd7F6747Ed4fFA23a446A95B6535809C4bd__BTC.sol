@@ -265,9 +265,9 @@ contract _BTC is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;Bitcoin&quot;;
+        symbol = "Bitcoin";
 
-        name = &quot;BTC&quot;;
+        name = "BTC";
 
         decimals = 8;
 

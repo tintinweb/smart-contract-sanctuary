@@ -90,9 +90,9 @@ contract StandardToken is Token {
 contract ZhuhuaToken is StandardToken { 
 
     /* Public variables of the token */
-    string public name=&quot;Zhuhua Token&quot;;                   //名称: eg Simon Bucks
+    string public name="Zhuhua Token";                   //名称: eg Simon Bucks
     uint8 public decimals=18;               //最多的小数位数，How many decimals to show. ie. There could 1000 base units with 3 decimals. Meaning 0.980 SBX = 980 base units. It&#39;s like comparing 1 wei to 1 ether.
-    string public symbol=&quot;ZHC&quot;;               //token简称: eg SBX
+    string public symbol="ZHC";               //token简称: eg SBX
     string public version = &#39;H0.1&#39;;    //版本
     
 
@@ -109,7 +109,7 @@ contract ZhuhuaToken is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 

@@ -135,8 +135,8 @@ contract MintableToken is StandardToken {
     address public owner = msg.sender;
 	uint256 public tokenAmount;
   
-    function name() constant returns (string) { return &quot;kkTest104&quot;; }
-    function symbol() constant returns (string) { return &quot;kT104&quot;; }
+    function name() constant returns (string) { return "kkTest104"; }
+    function symbol() constant returns (string) { return "kT104"; }
     function decimals() constant returns (uint8) { return 0; }
 	
 

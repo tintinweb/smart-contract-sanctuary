@@ -105,8 +105,8 @@ contract DIDOToken is ERC20Token {
     }
     
     constructor() public {
-        symbol   = &quot;DIDO&quot;;                              // Set the symbol for display purposes
-        name     = &quot;Doitdo Axis&quot;;                       // Set the name for display purposes
+        symbol   = "DIDO";                              // Set the symbol for display purposes
+        name     = "Doitdo Axis";                       // Set the name for display purposes
         decimals = 18;                                  // Amount of decimals for display purposes
 
         totalSupply = 3 * 10**26;                      // Update total supply

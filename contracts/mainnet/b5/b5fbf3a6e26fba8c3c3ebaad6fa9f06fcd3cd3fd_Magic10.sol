@@ -66,8 +66,8 @@ contract Magic10 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Magic10&quot;;
-    string public constant symbol = &quot;10&quot;;
+    string public constant name = "Magic10";
+    string public constant symbol = "10";
     uint public constant decimals = 8;
 
     uint256 public totalSupply = 10e8;

@@ -224,17 +224,17 @@ pragma solidity ^0.4.16;
 
         function checkStatus(address buyerAddress, uint nounce) constant returns (bytes32){
 
-            bytes32 status = &quot;&quot;;
+            bytes32 status = "";
 
             if (buyerDatabase[buyerAddress][nounce].release_approval){
-                status = &quot;Complete&quot;;
+                status = "Complete";
             } else if (buyerDatabase[buyerAddress][nounce].refund_approval){
-                status = &quot;Refunded&quot;;
+                status = "Refunded";
             } else if (buyerDatabase[buyerAddress][nounce].escrow_intervention){
-                status = &quot;Pending Escrow Decision&quot;;
+                status = "Pending Escrow Decision";
             } else
             {
-                status = &quot;In Progress&quot;;
+                status = "In Progress";
             }
        
             return (status);

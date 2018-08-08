@@ -58,8 +58,8 @@ contract MRC is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
-    string public constant name = &quot;MobileRechargez&quot;;
-    string public constant symbol = &quot;MRC&quot;;
+    string public constant name = "MobileRechargez";
+    string public constant symbol = "MRC";
     uint public constant decimals = 18;
     uint256 public totalSupply = 900000000e18;
     uint256 public totalDistributed = 0;

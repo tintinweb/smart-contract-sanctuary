@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -262,10 +262,10 @@ contract StandardToken is BasicToken {
 // File: contracts/InseeCoin.sol
 
 contract InseeCoin is ISStop, StandardToken{
-    string public name = &quot;Insee Coin&quot;;
+    string public name = "Insee Coin";
     uint8 public decimals = 18;
-    string public symbol = &quot;SEE&quot;;
-    string public version = &quot;v0.1&quot;;
+    string public symbol = "SEE";
+    string public version = "v0.1";
      /// initial amount of InseeCoin
     uint256 public initialAmount = (10 ** 10) * (10 ** 18);
    

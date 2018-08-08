@@ -195,7 +195,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -252,10 +252,10 @@ contract Ownable {
  */
 contract ApisToken is StandardToken, Ownable {
     // 토큰의 이름
-    string public constant name = &quot;APIS&quot;;
+    string public constant name = "APIS";
     
     // 토큰의 단위
-    string public constant symbol = &quot;APIS&quot;;
+    string public constant symbol = "APIS";
     
     // 소수점 자리수. ETH 18자리에 맞춘다
     uint8 public constant decimals = 18;
@@ -883,9 +883,9 @@ contract ApisCrowdSale is Ownable {
      */
     function whiteListOf(address _addr) public view returns (string message) {
         if(whiteList.isInWhiteList(_addr) == true) {
-            return &quot;The address is in whitelist.&quot;;
+            return "The address is in whitelist.";
         } else {
-            return &quot;The address is *NOT* in whitelist.&quot;;
+            return "The address is *NOT* in whitelist.";
         }
     }
     
@@ -897,15 +897,15 @@ contract ApisCrowdSale is Ownable {
      */
     function isClaimable(address _addr) public view returns (string message) {
         if(fundersProperty[_addr].reservedFunds == 0) {
-            return &quot;The address has no claimable balance.&quot;;
+            return "The address has no claimable balance.";
         }
         
         if(whiteList.isInWhiteList(_addr) == false) {
-            return &quot;The address must be registered with KYC and Whitelist&quot;;
+            return "The address must be registered with KYC and Whitelist";
         }
         
         else {
-            return &quot;The address can claim APIS!&quot;;
+            return "The address can claim APIS!";
         }
     }
     

@@ -30,8 +30,8 @@ contract OwOWorldToken {
 
     using SafeMath for uint256;
 
-    string public constant symbol = &quot;OWO&quot;;
-    string public constant name = &quot;OwO.World Token&quot;;
+    string public constant symbol = "OWO";
+    string public constant name = "OwO.World Token";
     uint public constant decimals = 18;
 
     uint public _owoAmount;

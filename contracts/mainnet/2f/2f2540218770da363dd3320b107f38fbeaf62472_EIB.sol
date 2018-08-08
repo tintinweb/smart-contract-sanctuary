@@ -134,8 +134,8 @@ contract EIB is ERC20, ERC223 {
     mapping (address => mapping (address => uint256)) internal allowed;
 
     function EIB (string name, string symbol, uint8 decimals, uint256 totalSupply) public {
-        _symbol = &quot;EIB&quot;;
-        _name = &quot;EIB&quot;;
+        _symbol = "EIB";
+        _name = "EIB";
         _decimals = 18;
         _totalSupply = 30e9 * 1e18;
         balances[msg.sender] = 30e9 * 1e18;

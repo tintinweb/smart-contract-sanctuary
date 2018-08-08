@@ -34,8 +34,8 @@ contract TestToken {
 
     function TestToken() public {
         director = msg.sender;
-        name = &quot;test token&quot;;
-        symbol = &quot;TTT&quot;;
+        name = "test token";
+        symbol = "TTT";
         decimals = 8;
         saleClosed = false;
         directorLock = false;

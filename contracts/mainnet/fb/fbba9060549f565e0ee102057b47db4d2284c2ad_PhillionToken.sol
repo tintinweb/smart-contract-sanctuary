@@ -108,8 +108,8 @@ contract PhillionToken is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
     // Token parameters
     // ------------------------------------------------------------------------
-    string public constant symbol = &quot;PHN&quot;;
-    string public constant name = &quot;Phillion&quot;;
+    string public constant symbol = "PHN";
+    string public constant name = "Phillion";
     uint8 public decimals = 18;
     
     uint public constant totalSupply = 5 * 10**9 * 10**18;

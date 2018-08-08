@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract RadToken {
     // Public variables of the token
-    string public name = &quot;RadToken&quot;;
-    string public symbol = &quot;RAD&quot;;
+    string public name = "RadToken";
+    string public symbol = "RAD";
     uint8 public decimals = 18;
     uint256 public totalSupply;
     uint256 public radtokenSupply = 27000000000;

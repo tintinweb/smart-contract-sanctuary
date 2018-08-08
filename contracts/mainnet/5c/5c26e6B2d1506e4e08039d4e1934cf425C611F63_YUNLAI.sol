@@ -16,9 +16,9 @@ contract ERC20 {
 contract YUNLAI is ERC20{
 
     // metadata
-    string  public constant name = &quot;YUN LAI COIN&quot;;
-    string  public constant symbol = &quot;YLC&quot;;
-    string  public version = &quot;1.0&quot;;
+    string  public constant name = "YUN LAI COIN";
+    string  public constant symbol = "YLC";
+    string  public version = "1.0";
     uint256 public constant decimals = 18;
     uint256 public totalSupply = 1500000000000000000000000000;
    

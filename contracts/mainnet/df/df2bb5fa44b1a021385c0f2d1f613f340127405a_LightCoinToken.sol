@@ -326,8 +326,8 @@ contract LightCoinToken is BaseERC20, BaseSafeMath {
 		owner = 0x9a64fE62837d8E2C0Bd0C2a96bbDdEA609Ab2F19;
 		lockOwner = 0x821C05372425709a68090A17075A855dd20371c7;
 		startTime = 1515686400;
-        name = &quot;Lightcoin&quot;;
-        symbol = &quot;Light&quot;;
+        name = "Lightcoin";
+        symbol = "Light";
         decimals = 8;
         totalSupply = 21000000000000000000;
 		balanceOf[owner] = totalSupply * 90 /100 ;

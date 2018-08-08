@@ -119,7 +119,7 @@ contract ERC721 {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -134,7 +134,7 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(
     address _from,
@@ -164,10 +164,10 @@ contract etherdoodleToken is ERC721 {
     event TextChanged(uint pixelId, string textChanged);
 
 //@dev name for ERC-721
-    string constant public name = &quot;etherdoodle&quot;;
+    string constant public name = "etherdoodle";
 
 //@dev symbol for ERC-721
-    string constant public symbol = &quot;etherdoodle&quot;;
+    string constant public symbol = "etherdoodle";
 
 //@dev Starting pixel price
     uint constant public startingPrice = 0.0025 ether;
@@ -369,7 +369,7 @@ contract etherdoodleToken is ERC721 {
     }
 //@dev ERC 721 safeTransfer from functions
     function safeTransferFrom(address _from, address _to, uint _pixelId) public canManageAndTransfer(_pixelId){
-        safeTransferFrom(_from,_to,_pixelId,&quot;&quot;);
+        safeTransferFrom(_from,_to,_pixelId,"");
     }
 
 //@dev ERC 721 safeTransferFrom functions

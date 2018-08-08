@@ -104,10 +104,10 @@ contract Owned {
 
 /*******************************************************************************
  *
- * @notice ZeroGold DOES NOT HOLD ANY &quot;OFFICIAL&quot; AFFILIATION with ZeroNet Core,
+ * @notice ZeroGold DOES NOT HOLD ANY "OFFICIAL" AFFILIATION with ZeroNet Core,
  *         ZeroNet.io nor any of its brands and affiliates.
  *
- *         ZeroGold DOES currently stand as the &quot;OFFICIAL&quot; token of
+ *         ZeroGold DOES currently stand as the "OFFICIAL" token of
  *         Zeronet Explorer, Zer0net.com, 0net.io and each of their
  *         respective brands and affiliates.
  *

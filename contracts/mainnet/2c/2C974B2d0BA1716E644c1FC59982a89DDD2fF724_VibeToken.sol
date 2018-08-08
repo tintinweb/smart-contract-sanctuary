@@ -201,11 +201,11 @@ contract VibeToken is Token {
 
   /* Initializes contract */
   function VibeToken() {
-    standard = &quot;Viberate token v1.0&quot;;
-    name = &quot;Vibe&quot;;
-    symbol = &quot;VIB&quot;;
+    standard = "Viberate token v1.0";
+    name = "Vibe";
+    symbol = "VIB";
     decimals = 18;
     crowdsaleContractAddress = 0x91C94BEe75786fBBFdCFefBa1102b68f48A002F4;   
-    lockFromSelf(4352535, &quot;Lock before crowdsale starts&quot;);
+    lockFromSelf(4352535, "Lock before crowdsale starts");
   }
 }

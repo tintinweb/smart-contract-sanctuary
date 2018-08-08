@@ -109,8 +109,8 @@ contract DIAMOND is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DIAMOND() public {
-        symbol = &quot;DMND&quot;;
-        name = &quot;DIAMOND&quot;;
+        symbol = "DMND";
+        name = "DIAMOND";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xa526376a8592b59777f3a77F3F71428e97114CD7] = _totalSupply;

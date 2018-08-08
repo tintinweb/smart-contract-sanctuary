@@ -255,8 +255,8 @@ contract StandardToken is ERC20, BasicToken {
 
   contract KeplerToken is BurnableToken {
 
-    string public constant name = &quot;Kepler Token&quot;;
-    string public constant symbol = &quot;KEP&quot;;
+    string public constant name = "Kepler Token";
+    string public constant symbol = "KEP";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));

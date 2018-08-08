@@ -81,8 +81,8 @@ contract Vote is ERC20, SafeMath{
 		initialSupply = 100000;
 		totalSupply = initialSupply;
 		balances[msg.sender] = initialSupply;
-		name = &quot;EthTaipei Logo Vote&quot;;
-		symbol = &quot;EthTaipei Logo&quot;;
+		name = "EthTaipei Logo Vote";
+		symbol = "EthTaipei Logo";
 		decimals = 0;
 	}
 

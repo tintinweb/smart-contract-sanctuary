@@ -118,8 +118,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract RoshanToken is StandardToken {
-  string public name    = &quot;ROSHAN.IO&quot;;
-  string public symbol  = &quot;RSIO&quot;;
+  string public name    = "ROSHAN.IO";
+  string public symbol  = "RSIO";
   uint8 public decimals = 5;
 
   // initial supply

@@ -158,8 +158,8 @@ contract StandardToken is ERC20, BurnableToken {
 
 contract ETLToken is StandardToken {
 
-  string public name = &quot;E-talon&quot;;
-  string public symbol = &quot;ETALON&quot;;
+  string public name = "E-talon";
+  string public symbol = "ETALON";
   uint8 public decimals = 8;
   uint256 public INITIAL_SUPPLY = 10000000000000000;
 

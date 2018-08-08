@@ -18,9 +18,9 @@ contract Billionscoin {
     function Billionscoin() {
 
          initialSupply = 74000000;
-         name =&quot;Billionscoin&quot;;
+         name ="Billionscoin";
         decimals = 2;
-         symbol = &quot;No1&quot;;
+         symbol = "No1";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

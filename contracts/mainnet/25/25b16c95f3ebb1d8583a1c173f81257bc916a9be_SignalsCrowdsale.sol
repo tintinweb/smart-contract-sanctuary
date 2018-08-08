@@ -33,7 +33,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -598,8 +598,8 @@ contract CompanyReserve is Ownable{
 contract PresaleToken is PausableToken, MintableToken {
 
     // Standard token variables
-    string constant public name = &quot;SGNPresaleToken&quot;;
-    string constant public symbol = &quot;SGN&quot;;
+    string constant public name = "SGNPresaleToken";
+    string constant public symbol = "SGN";
     uint8 constant public decimals = 9;
 
     event TokensBurned(address initiatior, address indexed _partner, uint256 _tokens);
@@ -632,8 +632,8 @@ contract PresaleToken is PausableToken, MintableToken {
 contract SignalsToken is PausableToken, MintableToken {
 
     // Standard token variables
-    string constant public name = &quot;Signals Network Token&quot;;
-    string constant public symbol = &quot;SGN&quot;;
+    string constant public name = "Signals Network Token";
+    string constant public symbol = "SGN";
     uint8 constant public decimals = 9;
 
 }

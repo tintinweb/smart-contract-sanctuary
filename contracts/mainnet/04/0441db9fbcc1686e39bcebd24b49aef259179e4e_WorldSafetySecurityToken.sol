@@ -51,8 +51,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 10000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;World Safety Security Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;WSS&quot;;                               // Set the symbol for display purposes
+        name = "World Safety Security Token";                                   // Set the name for display purposes
+        symbol = "WSS";                               // Set the symbol for display purposes
     }
 
     /**
@@ -197,8 +197,8 @@ contract WorldSafetySecurityToken is owned, TokenERC20 {
 		owner = msg.sender;
 		totalSupply = 10000000000000000000000000000;
 		balanceOf[owner]=totalSupply;
-		tokenName=&quot;World Safety Security Token&quot;;
-		tokenSymbol=&quot;WSS&quot;;
+		tokenName="World Safety Security Token";
+		tokenSymbol="WSS";
 	}
 
 

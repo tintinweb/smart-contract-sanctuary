@@ -269,22 +269,22 @@ contract Token is ERC20Interface, CNT_Common {
     
 }
 
-contract CNT_Token is Token(18, 300, &quot;Chip&quot;, &quot;CNT&quot;) {
+contract CNT_Token is Token(18, 300, "Chip", "CNT") {
     function CNT_Token() public {}
 }
 
-contract BGB_Token is Token(18, 300, &quot;BG-Coin&quot;, &quot;BGB&quot;) {
+contract BGB_Token is Token(18, 300, "BG-Coin", "BGB") {
     function BGB_Token() public {}
 }
 
-contract VPE_Token is Token(18, 100, &quot;Vapaee&quot;, &quot;VPE&quot;) {
+contract VPE_Token is Token(18, 100, "Vapaee", "VPE") {
     function VPE_Token() public {}
 }
 
-contract GVPE_Token is Token(18, 1, &quot;Golden Vapaee&quot;, &quot;GVPE&quot;) {
+contract GVPE_Token is Token(18, 1, "Golden Vapaee", "GVPE") {
     function GVPE_Token() public {}
 }
 
-contract EOS is Token(18, 1000, &quot;EOS Dummie&quot;, &quot;EOS&quot;) {
+contract EOS is Token(18, 1000, "EOS Dummie", "EOS") {
     function EOS() public {}
 }

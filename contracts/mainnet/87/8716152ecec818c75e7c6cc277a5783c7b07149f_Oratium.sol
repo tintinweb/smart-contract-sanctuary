@@ -89,12 +89,12 @@ contract Oratium is StandardToken {
     string public name;
     uint8 public decimals;
     string public symbol;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     function Oratium() public {
-        name = &quot;Oratium&quot;;
+        name = "Oratium";
         decimals = 8;
-        symbol = &quot;ORT&quot;;
+        symbol = "ORT";
         balances[msg.sender] = 300000000 * (10 ** uint256(decimals));
         totalSupply = 300000000 * (10 ** uint256(decimals));
     }

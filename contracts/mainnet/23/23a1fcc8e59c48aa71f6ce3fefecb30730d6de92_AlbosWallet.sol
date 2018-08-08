@@ -48,7 +48,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -333,8 +333,8 @@ contract AlbosWallet is Ownable {
 }
 
 contract AlbosToken is StandardToken {
-  string constant public name = &quot;ALBOS Token&quot;;
-  string constant public symbol = &quot;ALB&quot;;
+  string constant public name = "ALBOS Token";
+  string constant public symbol = "ALB";
   uint256 public decimals = 18;
   
   uint256 public INITIAL_SUPPLY = uint256(28710000000).mul(10 ** decimals); // 28,710,000,000 tokens

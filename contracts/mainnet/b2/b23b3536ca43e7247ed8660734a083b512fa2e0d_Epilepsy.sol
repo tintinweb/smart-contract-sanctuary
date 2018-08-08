@@ -207,9 +207,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Epilepsy is StandardToken {
     
-    string public name = &quot;Epilepsy&quot;;
-    string public symbol = &quot;BTCE&quot;;
-    string public version = &quot;1.0&quot;;
+    string public name = "Epilepsy";
+    string public symbol = "BTCE";
+    string public version = "1.0";
     uint8 public decimals = 18;
     
     uint256 INITIAL_SUPPLY = 12000000000000e18;

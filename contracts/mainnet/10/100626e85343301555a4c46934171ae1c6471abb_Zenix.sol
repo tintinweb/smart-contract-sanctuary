@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract Zenix {
     // Public variables of the token
-    string public name = &quot;Zenix&quot;;
-    string public symbol = &quot;ZNX&quot;;
+    string public name = "Zenix";
+    string public symbol = "ZNX";
     uint8 public decimals = 0;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

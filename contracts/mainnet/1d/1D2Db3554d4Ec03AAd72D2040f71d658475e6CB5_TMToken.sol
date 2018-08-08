@@ -444,8 +444,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken  {
 
 contract TMToken is StandardBurnableToken, MintableToken, Pausable {
 
-  string public constant name = &quot;Tokenmom&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;TM&quot;; // solium-disable-line uppercase
+  string public constant name = "Tokenmom"; // solium-disable-line uppercase
+  string public constant symbol = "TM"; // solium-disable-line uppercase
   uint8 public constant decimals = 8;
   mapping(address => uint256) balances;
   mapping(address => mapping(address => uint256)) allowed;

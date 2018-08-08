@@ -101,8 +101,8 @@ contract NXTokenCoin is Ownable, StandardToken {
     function NXTokenCoin() public {
     		totalSupply = 2000 * (10**6) * (10**18);
         balances[msg.sender] = totalSupply;
-        name = &quot;6xToken&quot;;
-        symbol = &quot;XT&quot;;
+        name = "6xToken";
+        symbol = "XT";
         decimals = 18;
     }
 

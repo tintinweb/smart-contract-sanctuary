@@ -21,9 +21,9 @@ contract Ownable {
 
 contract ChipotleCdsTok20221205I is Ownable {
     
-    string public constant name = &quot;ChipotleCdsTok20221205I&quot;;
+    string public constant name = "ChipotleCdsTok20221205I";
     
-    string public constant symbol = &quot;CHIPOTI&quot;;
+    string public constant symbol = "CHIPOTI";
     
     uint32 public constant decimals = 8;
     

@@ -102,8 +102,8 @@ contract Nerotoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Nerotoken() public {
-        symbol = &quot;NERO&quot;;
-        name = &quot;Nerotoken&quot;;
+        symbol = "NERO";
+        name = "Nerotoken";
         decimals = 18;
         _totalSupply = 500000000000000000000000000;
         balances[0x99c4ef0a180c19e929452e94972aa60cac1b0b7d] = _totalSupply;

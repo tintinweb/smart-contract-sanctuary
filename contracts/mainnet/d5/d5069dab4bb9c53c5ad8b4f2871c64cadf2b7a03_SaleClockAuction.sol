@@ -346,8 +346,8 @@ contract NinjaExtension is NinjaBase {
 
 
 contract NinjaOwnership is NinjaExtension, ERC721 {
-    string public constant name = &quot;CryptoNinjas&quot;;
-    string public constant symbol = &quot;CBT&quot;;
+    string public constant name = "CryptoNinjas";
+    string public constant symbol = "CBT";
 
     function _owns(address _claimant, uint256 _tokenId) internal view returns (bool) {
         return ninjaIndexToOwner[_tokenId] == _claimant;

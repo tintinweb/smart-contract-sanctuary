@@ -46,8 +46,8 @@ event Transfer(address indexed from, address indexed to, uint256 value);
 event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
 function elixor() {
-name = &quot;elixor&quot;;
-symbol = &quot;EXOR&quot;;
+name = "elixor";
+symbol = "EXOR";
 decimals = 18;
 startTime=1500307354; //Time contract went online.
 devAddress=0x85196Da9269B24bDf5FfD2624ABB387fcA05382B; // Set the dev import address

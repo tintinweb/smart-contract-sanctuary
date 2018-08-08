@@ -113,8 +113,8 @@ contract OLIFEToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OLIFEToken() public {
-        symbol = &quot;OLIFE&quot;;
-        name = &quot;Olife&quot;;
+        symbol = "OLIFE";
+        name = "Olife";
         decimals = 18;
         uint oneToken = 1000000000000000000;
         _totalSupply = 1000000000 * oneToken;

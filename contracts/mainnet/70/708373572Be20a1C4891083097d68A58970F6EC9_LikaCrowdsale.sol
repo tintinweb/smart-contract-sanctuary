@@ -44,8 +44,8 @@ contract LikaCrowdsale {
 
     LikaToken public managedTokenLedger;
 
-    string public name = &quot;Lika&quot;;
-    string public symbol = &quot;LIK&quot;;
+    string public name = "Lika";
+    string public symbol = "LIK";
 
     bool public halted = false;
 

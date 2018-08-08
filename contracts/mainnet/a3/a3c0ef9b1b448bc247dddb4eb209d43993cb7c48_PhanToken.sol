@@ -137,8 +137,8 @@ contract BurnableToken is BasicToken {
 
 contract PhanToken is StandardToken, BurnableToken {
 
-  string public constant name = &quot;Phan Token&quot;; 
-  string public constant symbol = &quot;PTN&quot;; 
+  string public constant name = "Phan Token"; 
+  string public constant symbol = "PTN"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 777000000 * (10 ** uint256(decimals));

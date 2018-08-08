@@ -5,7 +5,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control 
- * functions, this simplifies the implementation of &quot;user permissions&quot;. 
+ * functions, this simplifies the implementation of "user permissions". 
  */
 contract Ownable {
   address public owner;
@@ -1089,8 +1089,8 @@ contract Crowdsale is CappedCrowdsale {
   uint private constant token_initial_supply = 0;
   uint8 private constant token_decimals = 16;
   bool private constant token_mintable = true;
-  string private constant token_name = &quot;Ribbits&quot;;
-  string private constant token_symbol = &quot;RNT&quot;;
+  string private constant token_name = "Ribbits";
+  string private constant token_symbol = "RNT";
 
   uint private constant fundingCap = uint(100000000 * (10 ** 18)) / 2700;
 

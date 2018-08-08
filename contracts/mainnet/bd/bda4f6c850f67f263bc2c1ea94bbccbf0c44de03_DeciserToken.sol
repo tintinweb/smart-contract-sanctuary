@@ -104,8 +104,8 @@ contract DeciserToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DeciserToken() public {
-        symbol = &quot;DEC&quot;;
-        name = &quot;Deciser Token&quot;;
+        symbol = "DEC";
+        name = "Deciser Token";
         decimals = 6;
         totalSupply = 10000000000000000;
         if (msg.sender == owner) {

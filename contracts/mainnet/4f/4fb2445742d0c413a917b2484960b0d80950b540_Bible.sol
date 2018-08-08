@@ -29,11 +29,11 @@ contract ERC20 {
 
 contract Bible is ERC20, SafeMath {
 
-    string public name = &quot;Bible&quot;;      //  token name
-    string public symbol = &quot;GIB&quot;;           //  token symbol
+    string public name = "Bible";      //  token name
+    string public symbol = "GIB";           //  token symbol
     uint256 public decimals = 18;            //  token digit
     uint256 public totalSupply = 0;
-    string public version = &quot;1.0.0&quot;;
+    string public version = "1.0.0";
     address creator = 0x0;
     /**
      *  0 : init, 1 : limited, 2 : running, 3 : finishing

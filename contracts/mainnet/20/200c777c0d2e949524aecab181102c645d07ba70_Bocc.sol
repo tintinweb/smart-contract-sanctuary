@@ -123,8 +123,8 @@ contract StandardToken is ERC20 {
 }
 
 contract Bocc is StandardToken {
-  string public constant name = &quot;Bank of CryptoCurrency&quot;;
-  string public constant symbol = &quot;BOCC&quot;;
+  string public constant name = "Bank of CryptoCurrency";
+  string public constant symbol = "BOCC";
   uint8 public constant decimals = 18;
 
   constructor() public {

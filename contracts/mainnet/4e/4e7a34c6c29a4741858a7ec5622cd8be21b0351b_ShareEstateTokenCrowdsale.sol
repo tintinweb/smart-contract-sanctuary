@@ -146,8 +146,8 @@ contract SafeMath {
 
 /// @title ShareEstateToken contract - ERC20 token with Short Hand Attack and approve() race condition mitigation.
 contract ShareEstateToken is SafeMath, ERC20, Ownable {
-    string public name = &quot;ShareEstate Token&quot;;
-    string public symbol = &quot;SRE&quot;;
+    string public name = "ShareEstate Token";
+    string public symbol = "SRE";
     uint public decimals = 4;
 
     /// contract that is allowed to create new tokens and allows unlift the transfer limits on this token

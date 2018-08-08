@@ -244,7 +244,7 @@ contract Crowdsale{
         // hardCap is not reached, and in the event of a transaction, it will not be exceeded by more than OverLimit
         bool withinCap = msg.value <= hardCap.sub(weiRaised()).add(overLimit);
 
-        // round is initialized and no &quot;Pause of trading&quot; is set
+        // round is initialized and no "Pause of trading" is set
         return withinPeriod && nonZeroPurchase && withinCap && isInitialized && !isPausedCrowdsale;
     }
 
@@ -511,7 +511,7 @@ contract Crowdsale{
         return (bonuses[i-1].value,bonuses[i-1].procent,bonuses[i-1].freezeTime);
     }
 
-    // Remove the &quot;Pause of exchange&quot;. Available to the manager at any time. If the
+    // Remove the "Pause of exchange". Available to the manager at any time. If the
     // manager refuses to remove the pause, then 30-120 days after the successful
     // completion of the TokenSale, anyone can remove a pause and allow the exchange to continue.
     // The manager does not interfere and will not be able to delay the term.
@@ -527,7 +527,7 @@ contract Crowdsale{
         token.setPause(false);
     }
 
-    // Enable the &quot;Pause of exchange&quot;. Available to the manager until the TokenSale is completed.
+    // Enable the "Pause of exchange". Available to the manager until the TokenSale is completed.
     // The manager cannot turn on the pause, for example, 3 years after the end of the TokenSale.
     // @ Do I have to use the function      no
     // @ When it is possible to call        while Round2 not ended
@@ -832,7 +832,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  * This code is taken from openZeppelin without any changes.
  */
 contract Ownable {
@@ -1170,7 +1170,7 @@ contract Pausable is Ownable {
     _;
   }
 
-   // Add a wallet ignoring the &quot;Exchange pause&quot;. Available to the owner of the contract.
+   // Add a wallet ignoring the "Exchange pause". Available to the owner of the contract.
   function setUnpausedWallet(address _wallet, bool mode) public {
        require(owner == msg.sender || msg.sender == Crowdsale(owner).wallets(uint8(Crowdsale.Roles.manager)));
        unpausedWallet[_wallet] = mode;
@@ -1215,7 +1215,7 @@ contract PausableToken is StandardToken, Pausable {
         grantedToSetUnpausedWallet[_to] = permission;
     }
 
-    // Add a wallet ignoring the &quot;Exchange pause&quot;. Available to the owner of the contract.
+    // Add a wallet ignoring the "Exchange pause". Available to the owner of the contract.
     function setUnpausedWallet(address _wallet, bool mode) public {
         require(owner == msg.sender || grantedToSetUnpausedWallet[msg.sender] || msg.sender == Crowdsale(owner).wallets(uint8(Crowdsale.Roles.manager)));
         unpausedWallet[_wallet] = mode;
@@ -1360,9 +1360,9 @@ contract ERC223ReceivingContract {
 // (A2)
 // Contract token
 contract Token is FreezingToken, MintableToken, MigratableToken, BurnableToken {
-    string public constant name = &quot;TOSS&quot;;
+    string public constant name = "TOSS";
 
-    string public constant symbol = &quot;PROOF OF TOSS&quot;;
+    string public constant symbol = "PROOF OF TOSS";
 
     uint8 public constant decimals = 18;
 

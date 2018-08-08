@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract AT is StandardToken, Ownable {
 
-    string public constant name = &quot;ATCHAIN(AT)&quot;;
-    string public constant symbol = &quot;AT&quot;;
+    string public constant name = "ATCHAIN(AT)";
+    string public constant symbol = "AT";
     uint256 public constant decimals = 8;
 
     function AT() public {

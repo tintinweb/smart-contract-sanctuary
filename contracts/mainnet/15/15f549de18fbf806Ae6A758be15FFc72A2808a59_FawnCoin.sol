@@ -23,8 +23,8 @@ contract FawnCoin {
     function FawnCoin() {
         balanceOf[msg.sender] = 560000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply = 560000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;FawnCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;FN&quot;;                               // Set the symbol for display purposes
+        name = "FawnCoin";                                   // Set the name for display purposes
+        symbol = "FN";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

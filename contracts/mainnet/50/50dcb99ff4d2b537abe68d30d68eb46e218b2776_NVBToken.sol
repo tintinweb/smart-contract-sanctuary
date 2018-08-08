@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract NVBToken {
     // Public variables of the token
-    string public name = &quot;Native Video Box&quot;;
-    string public symbol = &quot;NVB&quot;;
+    string public name = "Native Video Box";
+    string public symbol = "NVB";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

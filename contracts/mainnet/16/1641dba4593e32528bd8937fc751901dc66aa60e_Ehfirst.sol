@@ -73,7 +73,7 @@ contract Token is owned, ERC20 {
 
     string  public standard    = &#39;Token 0.1&#39;;
     string  public name        = &#39;eHealth First&#39;;
-    string  public symbol      = &quot;EHF&quot;;
+    string  public symbol      = "EHF";
     uint8   public decimals    = 8;
 
     uint    public freezedMoment;
@@ -162,7 +162,7 @@ contract Crowdsale is Token {
     uint public tokensForSale;
     uint public startTime;
     uint public lastTokenPriceWei;
-    uint public milliPercent; // &quot;25&quot; means 0.25%
+    uint public milliPercent; // "25" means 0.25%
     uint public paymentsCount; // restart on each stage
     bool public sealed;
     modifier notSealed {

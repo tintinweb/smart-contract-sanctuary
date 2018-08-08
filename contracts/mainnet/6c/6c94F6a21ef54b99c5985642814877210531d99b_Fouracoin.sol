@@ -61,9 +61,9 @@ contract Fouracoin is StandardToken {
     function Fouracoin() {
         balances[msg.sender] = 300000000000000000000000000;               // Give the creator all initial tokens (100000 for example)
         totalSupply = 300000000000000000000000000;                        // Update total supply (100000 for example)
-        name = &quot;4A Coin&quot;;                                   // Set the name for display purposes
+        name = "4A Coin";                                   // Set the name for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
-        symbol = &quot;4AC&quot;;
+        symbol = "4AC";
         //unitsOneEthCanBuy = 6000;                                // Set the symbol for display purposes
         fundsWallet = msg.sender;
     }
@@ -130,7 +130,7 @@ contract Fouracoin is StandardToken {
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

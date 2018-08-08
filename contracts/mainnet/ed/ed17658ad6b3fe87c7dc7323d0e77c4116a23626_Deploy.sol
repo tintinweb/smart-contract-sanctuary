@@ -116,8 +116,8 @@ contract StandardToken is newToken, ERC20 {
 }
 
 contract Arbitrage is StandardToken, Ownable {
-  string public constant name = &quot;ArbitrageCoin&quot;;
-  string public constant symbol = &quot;RBTR&quot;;
+  string public constant name = "ArbitrageCoin";
+  string public constant symbol = "RBTR";
   uint public constant decimals = 5;
   uint256 public initialSupply;
   

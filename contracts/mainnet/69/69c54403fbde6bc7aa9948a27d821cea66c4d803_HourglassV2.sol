@@ -137,8 +137,8 @@ contract HourglassV2 is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;PoWH v2&quot;;
-    string public constant symbol = &quot;PD4&quot;;
+    string public constant name = "PoWH v2";
+    string public constant symbol = "PD4";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 80000000e8;

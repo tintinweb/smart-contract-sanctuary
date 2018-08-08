@@ -18,7 +18,7 @@ contract OneSingleCoin {
     constructor() public {
         currentHodler = msg.sender;
         currentHodlerId = 0;
-        messages.push(&quot;One coin to rule them all&quot;);
+        messages.push("One coin to rule them all");
         price = 8 finney;
         emit Purchased(currentHodlerId, currentHodler);
     }

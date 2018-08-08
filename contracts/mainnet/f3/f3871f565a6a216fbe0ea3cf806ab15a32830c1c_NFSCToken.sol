@@ -89,8 +89,8 @@ contract BasicToken is ERC20Basic {
 
 contract NFSCToken is ERC20, BasicToken {
 
-  string public name = &quot;New Food safety Chain&quot;;
-  string public symbol = &quot;NFSC&quot;;
+  string public name = "New Food safety Chain";
+  string public symbol = "NFSC";
 
 
   mapping (address => mapping (address => uint256)) internal allowed;

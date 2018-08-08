@@ -168,7 +168,7 @@ contract Authorization {
 }
 
 contract XPAAssets is SafeMath, Authorization {
-    string public version = &quot;0.5.0&quot;;
+    string public version = "0.5.0";
 
     // contracts
     address public XPA = 0x0090528aeb3a2b736b780fd1b6c478bb7e1d643170;

@@ -12,7 +12,7 @@ interface AddressRegistry {
 contract Registry {
     address public RegistryAddress;
     modifier onlyAdmin() {
-        require(msg.sender == getAddress(&quot;admin&quot;));
+        require(msg.sender == getAddress("admin"));
         _;
     }
     function getAddress(string AddressName) internal view returns(address) {
@@ -41,12 +41,12 @@ contract TokenMigration is Registry {
     function Migrate() public {
         require(!Migrated[msg.sender]);
         Migrated[msg.sender] = true;
-        token tokenTransfer = token(getAddress(&quot;unit&quot;));
+        token tokenTransfer = token(getAddress("unit"));
         tokenTransfer.transfer(msg.sender, getMTUBal(msg.sender));
     }
 
     function SendEtherToAsset(uint256 weiAmt) onlyAdmin public {
-        getAddress(&quot;asset&quot;).transfer(weiAmt);
+        getAddress("asset").transfer(weiAmt);
     }
 
     function CollectERC20(address tokenAddress) onlyAdmin public {

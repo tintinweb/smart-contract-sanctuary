@@ -101,8 +101,8 @@ contract SparksterToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SparksterToken() public {
-        symbol = &quot;SRPK&quot;;
-        name = &quot;Sparkster Token&quot;;
+        symbol = "SRPK";
+        name = "Sparkster Token";
         decimals = 18;
         _totalSupply = 435000000000000000000000000;
         balances[0x17BB6EF5e6868f52b7f00CaAaEa63fa8cF367A79] = _totalSupply;

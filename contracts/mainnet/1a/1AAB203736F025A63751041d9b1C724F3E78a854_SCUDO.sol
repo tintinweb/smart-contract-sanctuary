@@ -15,9 +15,9 @@ contract SCUDO {
     function SCUDO() {
 
          initialSupply = 50000000;
-         name =&quot;SCUDO&quot;;
+         name ="SCUDO";
         decimals = 2;
-         symbol = &quot;SCUDO&quot;;
+         symbol = "SCUDO";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

@@ -192,7 +192,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -486,7 +486,7 @@ contract EnchantedShop is Shop {
     /*
     changes needed for refactoring
 
-    // &quot;enchanted items have a recommended bid which increases your likelihood of obtaining the item. However, you will still pay the best possible price—any ETH sent in excess of the lowest available price of the item is automatically added to your account balance and can be withdrawn from the contract at any time.&quot;
+    // "enchanted items have a recommended bid which increases your likelihood of obtaining the item. However, you will still pay the best possible price—any ETH sent in excess of the lowest available price of the item is automatically added to your account balance and can be withdrawn from the contract at any time."
 
     // add recommendedBid which is real price rounded up to the next .01 - use round/truncate: https://ethereum.stackexchange.com/questions/5836/what-is-the-cheapest-way-to-roundup-or-ceil-to-multiple-of-1000
     // add price paid - real price to balance owed
@@ -562,7 +562,7 @@ to-do:
 - implement an emergency withdrawal function for owners?
     migrate this from ShopManager
 
-- &quot;forwardFunds() in EnchantedShop has to be executed sequentially with other purchases, we may want to implement the design you were talking about before which forces 1 tx per block or whatever it was&quot; -- will know more after testing
+- "forwardFunds() in EnchantedShop has to be executed sequentially with other purchases, we may want to implement the design you were talking about before which forces 1 tx per block or whatever it was" -- will know more after testing
 
 
 

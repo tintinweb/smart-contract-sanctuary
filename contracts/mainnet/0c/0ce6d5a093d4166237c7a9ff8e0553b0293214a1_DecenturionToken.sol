@@ -297,7 +297,7 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/InfoBurnableToken.sol
 
 contract InfoBurnableToken is BurnableToken, StandardToken {
-    string message = &quot;No sufficient funds&quot;;
+    string message = "No sufficient funds";
     address public manager;
 
     event NoFunds(address _who, string _message);
@@ -342,8 +342,8 @@ contract InfoBurnableToken is BurnableToken, StandardToken {
 contract DecenturionToken is InfoBurnableToken {
     using SafeMath for uint;
 
-    string constant public name = &quot;Decenturion Token&quot;;
-    string constant public symbol = &quot;DCNT&quot;;
+    string constant public name = "Decenturion Token";
+    string constant public symbol = "DCNT";
     uint constant public decimals = 18;
     uint constant public deployerAmount = 20 * (10 ** 6) * (10 ** decimals); // 20 000 000 DCNT
     uint constant public managerAmount = 10 * (10 ** 6) * (10 ** decimals); // 10 000 000 DCNT

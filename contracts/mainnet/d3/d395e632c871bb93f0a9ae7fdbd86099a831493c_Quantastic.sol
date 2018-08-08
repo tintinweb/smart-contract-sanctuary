@@ -54,8 +54,8 @@ contract Quantastic is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Quantastic&quot;;
-    string public constant symbol = &quot;QTIC&quot;;
+    string public constant name = "Quantastic";
+    string public constant symbol = "QTIC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 85000000e8;

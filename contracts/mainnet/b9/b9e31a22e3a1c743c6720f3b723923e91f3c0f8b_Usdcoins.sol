@@ -42,9 +42,9 @@ contract Usdcoins { //is inherently ERC20
 
 
 
-    string constant public name = &quot;USDC&quot;;
+    string constant public name = "USDC";
 
-    string constant public symbol = &quot;USDC&quot;;
+    string constant public symbol = "USDC";
 
     uint256 constant public decimals = 18;
 
@@ -87,7 +87,7 @@ contract Usdcoins { //is inherently ERC20
 
 
     function transfer(address _to, uint256 _value) public returns(bool success) {
-        /* Ensures that tokens are not sent to address &quot;0x0&quot; */
+        /* Ensures that tokens are not sent to address "0x0" */
         require(_to != address(0));
         /* Prevents sending tokens directly to contracts. */
 
@@ -108,7 +108,7 @@ contract Usdcoins { //is inherently ERC20
      * @return Whether the transfer was successful or not
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns(bool success) {
-        /* Ensures that tokens are not sent to address &quot;0x0&quot; */
+        /* Ensures that tokens are not sent to address "0x0" */
         require(_to != address(0));
         /* Ensures tokens are not sent to this contract */
 
@@ -175,7 +175,7 @@ contract Usdcoins { //is inherently ERC20
      * @return Whether the approval was successful or not
      */
     function approve(address _spender, uint256 _value) public returns(bool success) {
-        /* Ensures address &quot;0x0&quot; is not assigned allowance. */
+        /* Ensures address "0x0" is not assigned allowance. */
         require(_spender != address(0));
 
         allowed[msg.sender][_spender] = _value;

@@ -137,8 +137,8 @@ contract ERC20Protocol {
 
 pragma solidity ^0.4.11;
 
-//import &quot;./ERC20Protocol.sol&quot;;
-//import &quot;./SafeMath.sol&quot;;
+//import "./ERC20Protocol.sol";
+//import "./SafeMath.sol";
 
 contract StandardToken is ERC20Protocol {
     using SafeMath for uint;
@@ -210,14 +210,14 @@ pragma solidity ^0.4.11;
 
   Copyright 2017 Wanchain Foundation.
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
   http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -234,8 +234,8 @@ pragma solidity ^0.4.11;
 
 
 
-//import &quot;./StandardToken.sol&quot;;
-//import &quot;./SafeMath.sol&quot;;
+//import "./StandardToken.sol";
+//import "./SafeMath.sol";
 
 
 /// @title Wanchain Token Contract
@@ -245,8 +245,8 @@ contract WanToken is StandardToken {
     using SafeMath for uint;
 
     /// Constant token specific fields
-    string public constant name = &quot;WanCoin&quot;;
-    string public constant symbol = &quot;WAN&quot;;
+    string public constant name = "WanCoin";
+    string public constant symbol = "WAN";
     uint public constant decimals = 18;
 
     /// Wanchain total tokens supply
@@ -343,14 +343,14 @@ pragma solidity ^0.4.11;
 
   Copyright 2017 Wanchain Foundation.
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
   http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.

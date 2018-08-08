@@ -101,8 +101,8 @@ contract CVerificationToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;CVER&quot;;
-        name = &quot;CVerification Token&quot;;
+        symbol = "CVER";
+        name = "CVerification Token";
         decimals = 18;
         _totalSupply = 372000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

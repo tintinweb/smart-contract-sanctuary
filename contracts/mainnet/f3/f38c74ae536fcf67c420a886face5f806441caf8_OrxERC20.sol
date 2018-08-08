@@ -28,8 +28,8 @@ contract OrxERC20 {
     function OrxERC20() public {
         totalSupply = 2000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;ORX&quot;;                                   // Set the name for display purposes
-        symbol = &quot;orx&quot;;                               // Set the symbol for display purposes
+        name = "ORX";                                   // Set the name for display purposes
+        symbol = "orx";                               // Set the symbol for display purposes
     }
 
     /**

@@ -158,7 +158,7 @@ contract DSTokenBase is ERC20, DSMath {
 
 contract DSToken is DSTokenBase(2000000000000000000000000000), DSStop {
 
-    string  public  symbol = &quot;NES&quot;;
+    string  public  symbol = "NES";
     uint8  public  decimals = 18; 
     event Freeze(address indexed guy, uint wad);
 
@@ -217,7 +217,7 @@ contract DSToken is DSTokenBase(2000000000000000000000000000), DSStop {
         emit Freeze(guy, wad);
     }
 
-    string   public  name = &quot;Gencoin&quot;;
+    string   public  name = "Gencoin";
 
     function setName(string name_) public auth {
         name = name_;

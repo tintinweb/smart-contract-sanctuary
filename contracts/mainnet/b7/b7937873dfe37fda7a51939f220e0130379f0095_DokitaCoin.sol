@@ -15,9 +15,9 @@ contract DokitaCoin {
     function Token() {
 
          initialSupply = 100000000;
-         name =&quot;DokitaCoin&quot;;
+         name ="DokitaCoin";
         decimals = 18;
-         symbol = &quot;DOKI&quot;;
+         symbol = "DOKI";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

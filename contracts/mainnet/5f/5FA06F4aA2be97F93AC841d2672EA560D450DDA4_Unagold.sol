@@ -108,9 +108,9 @@ contract StandardToken is ERC20 {
 
 contract Unagold is StandardToken {
 
-    string public name =&quot;Unagold&quot;;
+    string public name ="Unagold";
     uint8 public decimals = 18;
-    string public symbol = &quot;UNG&quot;;
+    string public symbol = "UNG";
     uint256 public initialSupply = 200000000;
 
     function Unagold(address _receiver) public {

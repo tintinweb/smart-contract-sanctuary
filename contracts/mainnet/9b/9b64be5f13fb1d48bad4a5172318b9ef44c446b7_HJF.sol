@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract HJF is StandardToken, Ownable {
 
-    string public constant name = &quot;鸿积分&quot;;
-    string public constant symbol = &quot;HJF&quot;;
+    string public constant name = "鸿积分";
+    string public constant symbol = "HJF";
     uint256 public constant decimals = 8;
 
     function HJF() public {

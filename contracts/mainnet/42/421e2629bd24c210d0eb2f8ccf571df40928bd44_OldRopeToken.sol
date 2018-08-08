@@ -113,8 +113,8 @@ contract OldRopeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OldRopeToken() public {
-        symbol = &quot;OROPE&quot;;
-        name = &quot;Old Rope Token&quot;;
+        symbol = "OROPE";
+        name = "Old Rope Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000000;
         balances[0x634B0C6e75b3a8688def6a5D725Ea051eeB2d5B5] = _totalSupply;

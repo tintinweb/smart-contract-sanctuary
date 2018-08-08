@@ -143,7 +143,7 @@ contract ZethrTokenBankroll is ERC223Receiving {
     mapping (address => uint) public gameTokenAmount; // track tokens per game
     mapping (address => uint) public gameTokenAllocation; // game token allocation 
     
-    // &quot;free&quot; tokens in the contract, can be allocated to games
+    // "free" tokens in the contract, can be allocated to games
     uint public freeTokens;
     
     // List of all games
@@ -161,7 +161,7 @@ contract ZethrTokenBankroll is ERC223Receiving {
     // Dividend rate of this tokenBankroll
     uint public divRate;
 
-    // &quot;tier&quot; of this tokeknBankroll (1-7)
+    // "tier" of this tokeknBankroll (1-7)
     uint public tier;
     
     // Magnitude for calculating average div rate
@@ -389,7 +389,7 @@ contract ZethrTokenBankroll is ERC223Receiving {
 				// Set the token allocation
         gameTokenAllocation[game] = allocated; 
 
-				// If we have enough &quot;free&quot; tokens, allocate them
+				// If we have enough "free" tokens, allocate them
         if (freeTokens >= allocated){ 
             freeTokens = SafeMath.sub(freeTokens, allocated);
             gameTokenAmount[game] = allocated;
@@ -420,7 +420,7 @@ contract ZethrTokenBankroll is ERC223Receiving {
             }
         }
 
-        // Add remaining tokens from game to the &quot;free&quot; list 
+        // Add remaining tokens from game to the "free" list 
         freeTokens = SafeMath.add(freeTokens, gameTokenAmount[game]);
 
         // Aint got no tokens 
@@ -437,7 +437,7 @@ contract ZethrTokenBankroll is ERC223Receiving {
     }
 	
 	// Callable from games to change their own token allocation 
-  // The game must have &quot;free&quot; tokens
+  // The game must have "free" tokens
   // Triggers a change in the tokenBankroll&#39;s allocation amount on the master bankroll
 	function changeAllocation(int delta)
 	    public
@@ -494,7 +494,7 @@ contract ZethrTokenBankroll is ERC223Receiving {
       int difference;
 
       // Loop over each game
-      // Remove any &quot;free&quot; tokens (auto-withdraw) over its allotment
+      // Remove any "free" tokens (auto-withdraw) over its allotment
       for (uint i=0; i < games.length; i++) {
         // Grab the info about this game&#39;s token amounts
         gameAddress = games[i];
@@ -504,14 +504,14 @@ contract ZethrTokenBankroll is ERC223Receiving {
         // Calculate deltaTokens (positive if it has more than it needs, negative if it needs tokens)
         difference = int(gameBalance) - int(gameAllotment);
 
-        // If the game has extra tokens, re-allocate them to the &quot;free&quot; balance
+        // If the game has extra tokens, re-allocate them to the "free" balance
         // This reminds me of when I had to write malloc() for my C class
         // I hated that shit
         if (difference > 0) {
           // Game now has exactly the amount of tokens it needs
           gameTokenAmount[gameAddress] = gameAllotment;
  
-          // &quot;Free&quot; the extra
+          // "Free" the extra
           freeTokens = freeTokens + uint(difference);
         } else {
           // This means it needs tokenks. We&#39;ll address that in the next for loop.
@@ -599,7 +599,7 @@ contract ZethrTokenBankroll is ERC223Receiving {
 	    uint cBal = ZethrContract.balanceOf(address(this)); 
 
       // Buy in with entire balance (divs go to bankroll)
-	    ZethrContract.buyAndSetDivPercentage.value(address(this).balance)(ZethrMainBankroll, uint8(divRate), &quot;&quot;);
+	    ZethrContract.buyAndSetDivPercentage.value(address(this).balance)(ZethrMainBankroll, uint8(divRate), "");
 
       // Calculate and increment freeTokens
 	    freeTokens = freeTokens + (ZethrContract.balanceOf(address(this)) - cBal); 

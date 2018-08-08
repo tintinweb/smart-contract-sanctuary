@@ -178,7 +178,7 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
                 owner = msg.sender;
                 developers = msg.sender;
                 decimals = 2;
-                symbol = &quot;E4ROW&quot;;
+                symbol = "E4ROW";
         }
 
         // -----------------------------------
@@ -206,7 +206,7 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
                 // BEFORE LOCKING
 
                 if (qState == SettingStateValue.lockedRelease) {
-                        StatEvent(&quot;Locking!&quot;);
+                        StatEvent("Locking!");
                         return;
                 }
 
@@ -227,9 +227,9 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
 
                 if (this.balance > 0) {
                         if (!owner.call.gas(rwGas).value(this.balance)())
-                                StatEvent(&quot;ERROR!&quot;);
+                                StatEvent("ERROR!");
                 }
-                StatEvent(&quot;ok&quot;);
+                StatEvent("ok");
 
         }
 
@@ -264,7 +264,7 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
         {
                 if ((msg.sender == developers)
                         &&  (now < vestTime)) {
-                        //statEvent(&quot;Tokens not yet vested.&quot;);
+                        //statEvent("Tokens not yet vested.");
                         return false;
                 }
 
@@ -295,7 +295,7 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
         function transferFrom(address _from, address _to, uint256 _value) returns (bool success) {
                 if ((_from == developers)
                         &&  (now < vestTime)) {
-                        //statEvent(&quot;Tokens not yet vested.&quot;);
+                        //statEvent("Tokens not yet vested.");
                         return false;
                 }
 
@@ -341,7 +341,7 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
 
         // ----------------------------
         // calc current points for a token holder; that is, points that are due to this token holder for all dividends
-        // received by the contract during the current &quot;period&quot;. the period began the last time this fcn was called, at which
+        // received by the contract during the current "period". the period began the last time this fcn was called, at which
         // time we updated the account&#39;s snapshot of the running point count, TotalFeesReceived. during the period the account&#39;s
         // number of tokens must not have changed. so always call this fcn before changing the number of tokens.
         // ----------------------------
@@ -359,14 +359,14 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
         function () payable {
                 holdoverBalance += msg.value;
                 TotalFeesReceived += msg.value;
-                StatEventI(&quot;Payment&quot;, msg.value);
+                StatEventI("Payment", msg.value);
         }
 
         // ---------------------------
         // one never knows if this will come in handy.
         // ---------------------------
         function blackHole() payable {
-                StatEventI(&quot;adjusted&quot;, msg.value);
+                StatEventI("adjusted", msg.value);
         }
 
         // ----------------------------
@@ -378,12 +378,12 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
 
                 _amount = holderAccounts[msg.sender].currentPoints / NewTokenSupply;
                 if (_amount <= payoutThreshold) {
-                        StatEventI(&quot;low Balance&quot;, _amount);
+                        StatEventI("low Balance", _amount);
                         return;
                 } else {
                         if ((msg.sender == developers)
                                 &&  (now < vestTime)) {
-                                StatEvent(&quot;Tokens not yet vested.&quot;);
+                                StatEvent("Tokens not yet vested.");
                                 _amount = 0;
                                 return;
                         }
@@ -403,12 +403,12 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
         {
                 if ((msg.sender == developers)
                         &&  (now < vestTime)) {
-                        //statEvent(&quot;Tokens not yet vested.&quot;);
+                        //statEvent("Tokens not yet vested.");
                         return false;
                 }
                 calcCurPointsForAcct(msg.sender);
                 if (holderAccounts[msg.sender].currentPoints == 0) {
-                        StatEvent(&quot;Zero balance&quot;);
+                        StatEvent("Zero balance");
                         return false;
                 }
                 if (!holderAccounts[_to].alloced) {
@@ -417,7 +417,7 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
                 calcCurPointsForAcct(_to);
                 holderAccounts[_to].currentPoints += holderAccounts[msg.sender].currentPoints;
                 holderAccounts[msg.sender].currentPoints = 0;
-                StatEvent(&quot;Trasnfered Dividends&quot;);
+                StatEvent("Trasnfered Dividends");
                 return true;
         }
 
@@ -429,7 +429,7 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
         function setOpGas(uint _rw, uint _optXferGas, uint _optFcnGas)
         {
                 if (msg.sender != owner && msg.sender != developers) {
-                        //StatEvent(&quot;only owner calls&quot;);
+                        //StatEvent("only owner calls");
                         return;
                 } else {
                         rwGas = _rw;
@@ -521,7 +521,7 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
         // ----------------------------
         // OPT IN FROM CLASSIC.
         // All old token holders can opt into this new contract by calling this function.
-        // This &quot;transferFrom&quot;s tokens from the old addresses to the new recycleBin address
+        // This "transferFrom"s tokens from the old addresses to the new recycleBin address
         // which is a new address set up on the old contract.  Afterwhich new tokens
         // are credited to the old holder.  Also the lastSnapShot is set to 0 then
         // calcCredited points are called setting up the new signatoree all of his
@@ -530,7 +530,7 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
         function optInFromClassic() public
         {
                 if (oldE4 == address(0)) {
-                        StatEvent(&quot;config err&quot;);
+                        StatEvent("config err");
                         return;
                 }
                 // 1. check balance of msg.sender in old contract.
@@ -540,7 +540,7 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
                 // as it is empty now. the reason for this check is cuz we are going to credit him with
                 // dividends, according to his token count, from the begin of time.
                 if (holderAccounts[nrequester].tokens != 0) {
-                        StatEvent(&quot;Account has already has tokens!&quot;);
+                        StatEvent("Account has already has tokens!");
                         return;
                 }
 
@@ -548,13 +548,13 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
                 Token iclassic = Token(oldE4);
                 uint _toks = iclassic.balanceOf(nrequester);
                 if (_toks == 0) {
-                        StatEvent(&quot;Nothing to do&quot;);
+                        StatEvent("Nothing to do");
                         return;
                 }
 
                 // must be 100 percent of holdings
                 if (iclassic.allowance(nrequester, address(this)) < _toks) {
-                        StatEvent(&quot;Please approve this contract to transfer&quot;);
+                        StatEvent("Please approve this contract to transfer");
                         return;
                 }
 
@@ -575,11 +575,11 @@ contract E4Lava is Token, E4LavaRewards, E4LavaOptIn {
                         holderAccounts[nrequester].lastSnapshot = 0;
                         calcCurPointsForAcct(nrequester);
                         numToksSwitchedOver += _toks;
-                        // no need to decrement points from a &quot;holding account&quot;
+                        // no need to decrement points from a "holding account"
                         // b/c there is no need to keep it.
-                        StatEvent(&quot;Success Switched Over&quot;);
+                        StatEvent("Success Switched Over");
                 } else
-                        StatEvent(&quot;Transfer Error! please contact Dev team!&quot;);
+                        StatEvent("Transfer Error! please contact Dev team!");
 
 
         }

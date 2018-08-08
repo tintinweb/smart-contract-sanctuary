@@ -49,7 +49,7 @@ contract SafeMath {
 
 /**
  * ERC-20 standard token interface, as defined
- * <a href=&quot;http://github.com/ethereum/EIPs/issues/20&quot;>here</a>.
+ * <a href="http://github.com/ethereum/EIPs/issues/20">here</a>.
  */
 contract Token {
   
@@ -228,8 +228,8 @@ contract ARXToken is AbstractToken {
     return tokenCount;
   }
 
-  string constant public name = &quot;ArtisX&quot;;
-  string constant public symbol = &quot;ARX&quot;;
+  string constant public name = "ArtisX";
+  string constant public symbol = "ARX";
   uint8 constant public decimals = 2;
   
   /**

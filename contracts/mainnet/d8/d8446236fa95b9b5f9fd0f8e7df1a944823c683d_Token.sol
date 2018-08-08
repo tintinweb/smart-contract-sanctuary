@@ -134,8 +134,8 @@ contract Owned {
 
 
 contract Token is Owned, StandartToken {
-    string public name = &quot;NEEO&quot;;
-    string public symbol = &quot;NEEO&quot;;
+    string public name = "NEEO";
+    string public symbol = "NEEO";
     uint public decimals = 18;
 
     address public crowdsaleMinter;

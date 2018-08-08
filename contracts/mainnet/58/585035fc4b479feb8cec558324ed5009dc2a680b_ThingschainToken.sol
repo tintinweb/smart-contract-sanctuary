@@ -96,8 +96,8 @@ contract ThingschainToken is ERC20Interface,Ownable {
     function ThingschainToken(address wallet) public {
         owner = msg.sender;
         ownerWallet = wallet;
-        name  = &quot;Thingschain&quot;;
-        symbol = &quot;TIC&quot;;
+        name  = "Thingschain";
+        symbol = "TIC";
         decimals = 8;
         _totalSupply = 100000000000 * 10 ** uint(decimals);
         tokenBalances[wallet] = _totalSupply;   //Since we divided the token into 10^8 parts

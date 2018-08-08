@@ -97,8 +97,8 @@ contract ERC20 {
 
 contract EPVToken is Owned, ERC20 {
 
-    string public name = &quot;EPVToken&quot;;
-    string public symbol = &quot;EPV&quot;;
+    string public name = "EPVToken";
+    string public symbol = "EPV";
     uint8 public decimals = 18;
     uint256 public INITIAL_SUPPLY = 100000000000 * (10 ** uint256(decimals));
 

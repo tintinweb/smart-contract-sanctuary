@@ -2,7 +2,7 @@ pragma solidity ^0.4.24;
 
 // similar as shrimpfarmer, with two changes:
 // A. half of your plumbers leave when you sell pooh
-// B. the &quot;free&quot; 300 plumber cost 0.001 eth (in line with the mining fee)
+// B. the "free" 300 plumber cost 0.001 eth (in line with the mining fee)
 
 // bots should have a harder time
 

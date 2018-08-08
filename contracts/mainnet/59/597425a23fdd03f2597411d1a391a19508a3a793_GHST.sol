@@ -358,8 +358,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract GHST is StandardToken, HasNoEther, HasNoTokens  {
 
-	string public name = &quot;GHST&quot;;
-	string public symbol = &quot;GHST&quot;;
+	string public name = "GHST";
+	string public symbol = "GHST";
 	uint256 public decimals = 8;
 
 	constructor() public

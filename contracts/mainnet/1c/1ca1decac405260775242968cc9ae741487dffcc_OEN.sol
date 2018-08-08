@@ -83,8 +83,8 @@ contract OEN is StandardToken {
     They allow one to customise the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
-    string public name = &quot;OEN&quot;;   // Fancy name: eg: RHO Coin
-    string public symbol = &quot;OEN&quot;; // An identifier: eg RHOC
+    string public name = "OEN";   // Fancy name: eg: RHO Coin
+    string public symbol = "OEN"; // An identifier: eg RHOC
     uint public decimals = 8;      // Unit precision
 
     uint public totalSupply = 1*10**18;

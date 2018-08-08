@@ -130,8 +130,8 @@ contract BurnableToken is BasicToken {
 
 
 contract GoldenCurrencyToken is BurnableToken {
-  string public constant name = &quot;Pre-ICO Golden Currency Token&quot;;
-  string public constant symbol = &quot;PGCT&quot;;
+  string public constant name = "Pre-ICO Golden Currency Token";
+  string public constant symbol = "PGCT";
   uint32 public constant decimals = 18;
   uint256 public INITIAL_SUPPLY = 7600000 * 1 ether;
 

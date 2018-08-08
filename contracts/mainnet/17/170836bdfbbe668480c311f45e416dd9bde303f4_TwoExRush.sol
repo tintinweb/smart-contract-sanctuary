@@ -12,7 +12,7 @@ Anti Whale: If you withdraw() and there is not enough ether in the contract to 2
 
 contract TwoExRush {
 
-	string constant public name = &quot;TwoExRush&quot;;
+	string constant public name = "TwoExRush";
 	address owner;
 	address sender;
 	uint256 withdrawAmount;

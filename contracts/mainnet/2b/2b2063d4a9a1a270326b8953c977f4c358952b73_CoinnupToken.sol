@@ -52,7 +52,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -263,8 +263,8 @@ contract StandardToken is ERC20, BasicToken {
 contract CoinnupToken is StandardToken, Ownable {
   using SafeMath for uint256;
 
-  string public constant name = &quot;Coinnup Coin&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;CU&quot;; // solium-disable-line uppercase
+  string public constant name = "Coinnup Coin"; // solium-disable-line uppercase
+  string public constant symbol = "CU"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   /// @dev store how much in eth users invested to give them a refund in case refund happens

@@ -96,8 +96,8 @@ contract StandardToken is Token, SafeMath {
 
 contract DECoin is StandardToken {
 
-  string public name = &quot;德&quot;;
-  string public symbol = &quot;DE&quot;;
+  string public name = "德";
+  string public symbol = "DE";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 77760000 * 1 ether;
 

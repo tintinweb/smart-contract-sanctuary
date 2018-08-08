@@ -192,8 +192,8 @@ contract NoOwner is HasNoEther, HasNoTokens, HasNoContracts {
 }
 
 contract FTC is StandardToken, NoOwner {
-    string public constant name = &quot;FTC token&quot;;
-    string public constant symbol = &quot;FTC&quot;;
+    string public constant name = "FTC token";
+    string public constant symbol = "FTC";
     uint8 public constant decimals = 18;
 
     function FTC()

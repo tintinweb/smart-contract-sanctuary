@@ -76,8 +76,8 @@ contract NatureX is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;NatureX&quot;;
-    string public constant symbol = &quot;NTX&quot;;
+    string public constant name = "NatureX";
+    string public constant symbol = "NTX";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 800000000e8;

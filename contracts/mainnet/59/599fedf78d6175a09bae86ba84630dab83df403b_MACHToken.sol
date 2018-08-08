@@ -487,8 +487,8 @@ contract VestedToken is StandardToken, LimitedTransferToken {
 
 contract MACHToken is VestedToken {
   //FIELDS
-  string public name = &quot;Machdary&quot;;
-  string public symbol = &quot;MACH&quot;;
+  string public name = "Machdary";
+  string public symbol = "MACH";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 990000000 * 1 ether;
 

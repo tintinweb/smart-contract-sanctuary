@@ -17,9 +17,9 @@ contract ReaperCoin11{
     function Reaper11() {
 
          initialSupply = 2800000;
-         name =&quot;ReaperCoin11&quot;;
+         name ="ReaperCoin11";
         decimals = 2;
-         symbol = &quot;RPCT&quot;;
+         symbol = "RPCT";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

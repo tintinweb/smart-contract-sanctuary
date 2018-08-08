@@ -113,8 +113,8 @@ contract ACTION is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ACTION() public {
-        symbol = &quot;ACTION&quot;;
-        name = &quot;ACTION &quot;;
+        symbol = "ACTION";
+        name = "ACTION ";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x2d57365a7ab22425f09D49bB0baFB0426EB8dDF9] = _totalSupply;

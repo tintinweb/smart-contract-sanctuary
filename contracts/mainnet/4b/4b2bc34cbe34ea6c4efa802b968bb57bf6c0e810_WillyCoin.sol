@@ -113,8 +113,8 @@ contract WillyCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WillyCoin() public {
-        symbol = &quot;WLY&quot;;
-        name = &quot;WillyCoin&quot;;
+        symbol = "WLY";
+        name = "WillyCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x50e1753914d55bC8f758e99c058194F8010B6556] = _totalSupply;

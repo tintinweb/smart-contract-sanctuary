@@ -121,8 +121,8 @@ contract Centaure is ERC20Interface, Owned, SafeMath {
     });
 
     function Centaure() public {
-        symbol = &quot;CEN&quot;;
-        name = &quot;Centaure Token&quot;;
+        symbol = "CEN";
+        name = "Centaure Token";
         decimals = 18;
 
         _totalSupply = 50000000* 10**uint(decimals);

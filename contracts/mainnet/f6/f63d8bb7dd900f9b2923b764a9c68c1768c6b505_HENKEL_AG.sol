@@ -4,8 +4,8 @@ contract	HENKEL_AG				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	HENKEL_AG		&quot;	;
-	string	public		symbol =	&quot;	HENKI		&quot;	;
+	string	public		name =	"	HENKEL_AG		"	;
+	string	public		symbol =	"	HENKI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10612080000000000000000000					;	

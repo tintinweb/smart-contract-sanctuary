@@ -137,8 +137,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract UNDToken is StandardToken {
   // public variables
-  string public name = &quot;UND.SG&quot;;
-  string public symbol = &quot;UND&quot;;
+  string public name = "UND.SG";
+  string public symbol = "UND";
   uint8 public decimals = 18;
 
   // public functions

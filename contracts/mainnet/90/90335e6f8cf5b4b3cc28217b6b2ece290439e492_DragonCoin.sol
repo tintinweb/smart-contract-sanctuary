@@ -207,8 +207,8 @@ contract DragonCoin is StandardToken {
     event Mint(address indexed to, uint256 value);
     event Burn(address indexed burner, uint256 value);
     
-    string public name = &quot;DragonGameCoin&quot;; 
-    string public symbol = &quot;DGC&quot;;
+    string public name = "DragonGameCoin"; 
+    string public symbol = "DGC";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 1000000 * (10 ** decimals);     
     uint public MAX_SUPPLY = 10 * 100000000 * (10 ** decimals); 

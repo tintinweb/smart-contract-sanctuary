@@ -113,8 +113,8 @@ contract IPayX is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IPayX() public {
-        symbol = &quot;IPX&quot;;
-        name = &quot;IPayX&quot;;
+        symbol = "IPX";
+        name = "IPayX";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5087966680CCF23926Fe784B5619BE93f0eeA83a] = _totalSupply;

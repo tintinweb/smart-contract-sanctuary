@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -593,9 +593,9 @@ contract BaseToken is UnlimitedAllowanceToken, BurnableToken {
 // 1 billion tokens (18 decimal places)
 contract BZRxToken is Ownable, BaseToken( // solhint-disable-line no-empty-blocks
     1000000000000000000000000000,
-    &quot;BZRX-Fake Protocol Token&quot;, 
+    "BZRX-Fake Protocol Token", 
     18,
-    &quot;BZRXFAKE&quot;
+    "BZRXFAKE"
 ) {
     function renameToken(
         string _newName,

@@ -23,8 +23,8 @@ contract FineArtCoin {
     function FineArtCoin() {
         balanceOf[msg.sender] = 84000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply = 84000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;FineArtCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;FAC&quot;;                               // Set the symbol for display purposes
+        name = "FineArtCoin";                                   // Set the name for display purposes
+        symbol = "FAC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

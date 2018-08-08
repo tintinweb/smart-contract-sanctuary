@@ -87,8 +87,8 @@ contract ELShareToken is AccessService, Random {
     uint8 public decimals = 0;
     uint256 public totalSupply = 50;
     uint256 public totalSold = 0;
-    string public name = &quot;Ether League Share Token&quot;;
-    string public symbol = &quot;ELST&quot;;
+    string public name = "Ether League Share Token";
+    string public symbol = "ELST";
 
     mapping (address => uint256) balances;
     mapping (address => mapping(address => uint256)) allowed;

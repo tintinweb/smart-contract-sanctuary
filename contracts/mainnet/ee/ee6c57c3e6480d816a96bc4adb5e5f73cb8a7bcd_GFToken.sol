@@ -155,8 +155,8 @@ contract BasicToken is Ownable {
 }
 
 contract GFToken is BasicToken {
-  string public constant name = &quot;Goose Fly Token&quot;;
-  string public constant symbol = &quot;GF&quot;;
+  string public constant name = "Goose Fly Token";
+  string public constant symbol = "GF";
   uint8 public constant decimals = 0;
 
   constructor() public {}

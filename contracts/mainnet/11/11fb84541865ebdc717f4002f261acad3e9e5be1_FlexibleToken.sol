@@ -11,8 +11,8 @@ pragma solidity ^0.4.21;
 // - uint _initialSupply, e.g. 1,000,000.000000000000000000 for 1 mil with 18
 //   decimals
 //
-// Owner can call `setSymbol(&quot;xyz&quot;)` to update the symbol and
-// `setName(&quot;xyz name&quot;)` to update the name. Once the owner calls `lock()`,
+// Owner can call `setSymbol("xyz")` to update the symbol and
+// `setName("xyz name")` to update the name. Once the owner calls `lock()`,
 // the name and symbol can no longer be updated
 //
 // Note that blockchain explorers may not automatically update the symbol and

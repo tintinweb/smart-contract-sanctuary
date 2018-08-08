@@ -66,8 +66,8 @@ contract MineableToken is owned {
   function MineableToken() public {
     decimals = uint8(18);
     supplyCap = 4 * 1e9 * 10**uint256(decimals);
-    name = &quot;Jbox&quot;;
-    symbol = &quot;JBX&quot;;
+    name = "Jbox";
+    symbol = "JBX";
   }
 
   function mine( uint256 qty ) public onlyOwner {

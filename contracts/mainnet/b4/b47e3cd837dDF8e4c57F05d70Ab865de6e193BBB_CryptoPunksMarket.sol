@@ -2,7 +2,7 @@ pragma solidity ^0.4.8;
 contract CryptoPunksMarket {
 
     // You can use this hash to verify the image file containing all the punks
-    string public imageHash = &quot;ac39af4793119ee46bbff351d8cb6b5f23da60222126add4268e261199a2921b&quot;;
+    string public imageHash = "ac39af4793119ee46bbff351d8cb6b5f23da60222126add4268e261199a2921b";
 
     address owner;
 
@@ -61,8 +61,8 @@ contract CryptoPunksMarket {
         owner = msg.sender;
         totalSupply = 10000;                        // Update total supply
         punksRemainingToAssign = totalSupply;
-        name = &quot;CRYPTOPUNKS&quot;;                                   // Set the name for display purposes
-        symbol = &quot;Ͼ&quot;;                               // Set the symbol for display purposes
+        name = "CRYPTOPUNKS";                                   // Set the name for display purposes
+        symbol = "Ͼ";                               // Set the symbol for display purposes
         decimals = 0;                                       // Amount of decimals for display purposes
     }
 

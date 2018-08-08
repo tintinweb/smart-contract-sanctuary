@@ -72,8 +72,8 @@ contract QBASE is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Qbase&quot;;
-    string public constant symbol = &quot;QBASE&quot;;
+    string public constant name = "Qbase";
+    string public constant symbol = "QBASE";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 10000000000e18; // Supply

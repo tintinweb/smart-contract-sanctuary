@@ -113,8 +113,8 @@ contract TipSmart is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TipSmart() public {
-        symbol = &quot;TPS&quot;;
-        name = &quot;Tip Smart Token&quot;;
+        symbol = "TPS";
+        name = "Tip Smart Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xA733b413043F32861863A6094AeC7b5D8B318985] = _totalSupply;

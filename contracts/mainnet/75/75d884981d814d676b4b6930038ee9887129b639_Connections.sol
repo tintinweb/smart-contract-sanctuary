@@ -46,10 +46,10 @@ contract IConnections {
  *
  * Each connection also has a type, a direction and an expiration. The use of these fields is up to the Dapp to define and interprete.
  * Hashing a string of the connection name to create the connection type is suggested to obscure and diffuse types. Example bytes32 connection types:
- *     0x30ed9383ab64b27cb4b70035e743294fe1a1c83eaf57eca05033b523d1fa4261 = keccak256(&quot;isAdvisorOf&quot;)
- *     0xffe72ffb7d5cc4224f27ea8ad324f4b53b37835a76fc2b627b3d669180b75ecc = keccak256(&quot;isPartneredWith&quot;)
- *     0xa64b51178a7ee9735fb96d8e7ffdebb455b02beb3b1e17a709b5c1beef797405 = keccak256(&quot;isEmployeeOf&quot;)
- *     0x0079ca0c877589ba53b2e415a660827390d2c2a62123cef473009d003577b7f6 = keccak256(&quot;isColleagueOf&quot;)
+ *     0x30ed9383ab64b27cb4b70035e743294fe1a1c83eaf57eca05033b523d1fa4261 = keccak256("isAdvisorOf")
+ *     0xffe72ffb7d5cc4224f27ea8ad324f4b53b37835a76fc2b627b3d669180b75ecc = keccak256("isPartneredWith")
+ *     0xa64b51178a7ee9735fb96d8e7ffdebb455b02beb3b1e17a709b5c1beef797405 = keccak256("isEmployeeOf")
+ *     0x0079ca0c877589ba53b2e415a660827390d2c2a62123cef473009d003577b7f6 = keccak256("isColleagueOf")
  *
  */
 contract Connections is IConnections {

@@ -30,8 +30,8 @@ contract MinerToken {
     ) public {
         totalSupply = 10000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;MinerToken&quot;;                                   // Set the name for display purposes
-        symbol = &quot;MIT&quot;;                               // Set the symbol for display purposes
+        name = "MinerToken";                                   // Set the name for display purposes
+        symbol = "MIT";                               // Set the symbol for display purposes
     }
     function transfer(address _to, uint256 _value) {
         /* Check if sender has balance and for overflows */

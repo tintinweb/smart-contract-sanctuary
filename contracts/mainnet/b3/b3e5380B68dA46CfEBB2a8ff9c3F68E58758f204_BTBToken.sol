@@ -64,8 +64,8 @@ contract BTBToken is SafeMath {
     function BTBToken() public {
         totalSupply = 10*10**26;                        // Update total supply
         balanceOf[msg.sender] = totalSupply;              // Give the creator all initial tokens
-        name = &quot;BiTBrothers&quot;;                                   // Set the name for display purposes
-        symbol = &quot;BTB&quot;;                               // Set the symbol for display purposes
+        name = "BiTBrothers";                                   // Set the name for display purposes
+        symbol = "BTB";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
         owner = msg.sender;
         isContractFrozen = false;
@@ -123,7 +123,7 @@ contract BTBToken is SafeMath {
         assert(msg.sender == owner);
         assert(!isContractFrozen);
         isContractFrozen = true;
-        emit Freeze(msg.sender, &quot;contract is frozen&quot;);
+        emit Freeze(msg.sender, "contract is frozen");
         return true;
     }
 	
@@ -131,7 +131,7 @@ contract BTBToken is SafeMath {
         assert(msg.sender == owner);
         assert(isContractFrozen);
         isContractFrozen = false;
-        emit Unfreeze(msg.sender, &quot;contract is unfrozen&quot;);
+        emit Unfreeze(msg.sender, "contract is unfrozen");
         return true;
     }
 

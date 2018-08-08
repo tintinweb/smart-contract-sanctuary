@@ -54,7 +54,7 @@ contract Escrow {
         if (exist) {
             return (_content.name, _content.description, _content.deliverable.reward, _content.addedOn);
         } else {
-            return (&quot;&quot;, &quot;&quot;, 0, 0);
+            return ("", "", 0, 0);
         }
     }
 
@@ -175,8 +175,8 @@ library ContentUtils {
         bool locked;
     }
 
-    string constant UNIQUE_KEY_ERR = &quot;Content with ID already exists &quot;;
-    string constant KEY_NOT_FOUND_ERR = &quot;Key not found&quot;;
+    string constant UNIQUE_KEY_ERR = "Content with ID already exists ";
+    string constant KEY_NOT_FOUND_ERR = "Key not found";
 
     /// @notice put item into mapping
     function put(ContentMapping storage self, 
@@ -379,7 +379,7 @@ contract ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -415,8 +415,8 @@ contract CCOIN is ERC20, Ownable {
     }
 
     // Public variables of the token
-    string public constant name = &quot;CCOIN&quot;;
-    string public constant symbol = &quot;CCOIN&quot;;
+    string public constant name = "CCOIN";
+    string public constant symbol = "CCOIN";
     uint public constant decimals = 18;
     uint public totalSupply = 1000000000 * 10 ** 18;
     bool public locked;

@@ -327,8 +327,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract zHQToken is MintableToken {
-    string public constant name = &quot;zHQ Token&quot;;
-    string public constant symbol = &quot;zHQ&quot;;
+    string public constant name = "zHQ Token";
+    string public constant symbol = "zHQ";
     uint256 public decimals = 18;
 
     /**

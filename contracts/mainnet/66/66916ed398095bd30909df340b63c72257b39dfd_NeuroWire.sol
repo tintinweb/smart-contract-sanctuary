@@ -113,8 +113,8 @@ contract NeuroWire is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NeuroWire() public {
-        symbol = &quot;XRAY&quot;;
-        name = &quot;NeuroWire&quot;;
+        symbol = "XRAY";
+        name = "NeuroWire";
         decimals = 18;
         _totalSupply = 500000000000000000000000000;
         balances[0xA559B49d59f4da42BD3cF411F5430829101bE653] = _totalSupply;

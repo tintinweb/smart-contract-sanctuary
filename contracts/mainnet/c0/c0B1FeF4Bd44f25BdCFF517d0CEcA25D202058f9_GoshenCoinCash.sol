@@ -113,8 +113,8 @@ contract GoshenCoinCash is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GoshenCoinCash() public {
-        symbol = &quot;GCC&quot;;
-        name = &quot;GoshenCoinCash&quot;;
+        symbol = "GCC";
+        name = "GoshenCoinCash";
         decimals = 18;
         _totalSupply = 52000000000000000000000000;
         balances[0xa5D78e49519fd63781e27c730c5CE3299ffC9258] = _totalSupply;

@@ -18,7 +18,7 @@ contract	MiniPoolEdit_2		{
 // 1 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inMiniPoolEdit_1	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inMiniPoolEdit_1	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setMiniPoolEdit_1	(	string	newMiniPoolEdit_1	)	public	onlyOwner	{	
 		inMiniPoolEdit_1	=	newMiniPoolEdit_1	;					
@@ -33,7 +33,7 @@ contract	MiniPoolEdit_2		{
 // 2 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inMiniPoolEdit_2	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inMiniPoolEdit_2	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setMiniPoolEdit_2	(	string	newMiniPoolEdit_2	)	public	onlyOwner	{	
 		inMiniPoolEdit_2	=	newMiniPoolEdit_2	;					
@@ -48,7 +48,7 @@ contract	MiniPoolEdit_2		{
 // 3 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inMiniPoolEdit_3	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inMiniPoolEdit_3	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setMiniPoolEdit_3	(	string	newMiniPoolEdit_3	)	public	onlyOwner	{	
 		inMiniPoolEdit_3	=	newMiniPoolEdit_3	;					
@@ -63,7 +63,7 @@ contract	MiniPoolEdit_2		{
 // 4 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inMiniPoolEdit_4	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inMiniPoolEdit_4	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setMiniPoolEdit_4	(	string	newMiniPoolEdit_4	)	public	onlyOwner	{	
 		inMiniPoolEdit_4	=	newMiniPoolEdit_4	;					
@@ -79,7 +79,7 @@ contract	MiniPoolEdit_2		{
 // 5 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inMiniPoolEdit_5	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inMiniPoolEdit_5	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setMiniPoolEdit_5	(	string	newMiniPoolEdit_5	)	public	onlyOwner	{	
 		inMiniPoolEdit_5	=	newMiniPoolEdit_5	;					
@@ -94,7 +94,7 @@ contract	MiniPoolEdit_2		{
 // 6 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inMiniPoolEdit_6	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inMiniPoolEdit_6	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setMiniPoolEdit_6	(	string	newMiniPoolEdit_6	)	public	onlyOwner	{	
 		inMiniPoolEdit_6	=	newMiniPoolEdit_6	;					
@@ -109,7 +109,7 @@ contract	MiniPoolEdit_2		{
 // 7 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inMiniPoolEdit_7	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inMiniPoolEdit_7	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setMiniPoolEdit_7	(	string	newMiniPoolEdit_7	)	public	onlyOwner	{	
 		inMiniPoolEdit_7	=	newMiniPoolEdit_7	;					
@@ -124,7 +124,7 @@ contract	MiniPoolEdit_2		{
 // 8 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inMiniPoolEdit_8	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inMiniPoolEdit_8	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setMiniPoolEdit_8	(	string	newMiniPoolEdit_8	)	public	onlyOwner	{	
 		inMiniPoolEdit_8	=	newMiniPoolEdit_8	;					
@@ -139,7 +139,7 @@ contract	MiniPoolEdit_2		{
 // 9 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inMiniPoolEdit_9	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inMiniPoolEdit_9	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setMiniPoolEdit_9	(	string	newMiniPoolEdit_9	)	public	onlyOwner	{	
 		inMiniPoolEdit_9	=	newMiniPoolEdit_9	;					

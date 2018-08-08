@@ -1,7 +1,7 @@
 pragma solidity ^0.4.19;
 
 
-// &quot;Proof of Commitment&quot; fun pre-launch competition for NBAOnline!
+// "Proof of Commitment" fun pre-launch competition for NBAOnline!
 
 //  Full details and game smart contract will shortly be able:
 //  ~~ https://nbaonline.io ~~

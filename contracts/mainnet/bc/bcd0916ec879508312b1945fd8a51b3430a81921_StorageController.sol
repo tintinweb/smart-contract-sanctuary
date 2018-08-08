@@ -304,7 +304,7 @@ contract Storage is SafeMath, StringMover {
 }
 
 contract GoldFiatFee is CreatorEnabled, StringMover {
-     string gmUserId = &quot;&quot;;
+     string gmUserId = "";
 
 // Functions: 
      function GoldFiatFee(string _gmUserId) {

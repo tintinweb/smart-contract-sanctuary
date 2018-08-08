@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract EPR is StandardToken, Ownable {
 
-    string public constant name = &quot;Predictive&quot;;
-    string public constant symbol = &quot;EPR&quot;;
+    string public constant name = "Predictive";
+    string public constant symbol = "EPR";
     uint256 public constant decimals = 8;
 
     function EPR() public {

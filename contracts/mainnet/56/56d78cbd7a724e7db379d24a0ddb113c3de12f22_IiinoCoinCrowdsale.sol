@@ -5,7 +5,7 @@ pragma solidity ^0.4.20;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -262,8 +262,8 @@ contract StandardToken is ERC20, BasicToken {
 
 // File: contracts/MintableToken.sol
 
-//import &quot;./StandardToken.sol&quot;;
-//import &quot;../../ownership/Ownable.sol&quot;;
+//import "./StandardToken.sol";
+//import "../../ownership/Ownable.sol";
 
 
 
@@ -779,7 +779,7 @@ contract IiinoCoinCrowdsale is Crowdsale, Pausable, ReentrancyGuard {
     /*
     //Temp Function to retreive values
     function tempGetDataToCheck (uint indx, uint256 weiAmt) public view returns (uint256) {
-      //string temp = &quot;thresholdEtherLimitForSeedRound =>&quot; + thresholdEtherLimitForSeedRound + &quot;Total Supply => &quot; + token.totalSupply() + &quot;noOfTokenAlocatedForSeedRound => &quot; + noOfTokenAlocatedForSeedRound + &quot;noOfTokenAlocatedForDev => &quot; + noOfTokenAlocatedForDev + &quot;rate => &quot; + rate;
+      //string temp = "thresholdEtherLimitForSeedRound =>" + thresholdEtherLimitForSeedRound + "Total Supply => " + token.totalSupply() + "noOfTokenAlocatedForSeedRound => " + noOfTokenAlocatedForSeedRound + "noOfTokenAlocatedForDev => " + noOfTokenAlocatedForDev + "rate => " + rate;
         if (indx == 0)
           return issueRateDecDuringICO;
         else if (indx == 1)

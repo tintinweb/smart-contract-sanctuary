@@ -71,8 +71,8 @@ contract HopiumToken is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function HopiumToken() public {
-        symbol = &quot;HOPE&quot;;
-        name = &quot;HOPIUM&quot;;
+        symbol = "HOPE";
+        name = "HOPIUM";
         decimals = 18;
         _totalSupply = 800000000000000000000000000;
         balances[0x3a0fec271059656B0DF7cD2843974F097DB3b603] = _totalSupply;

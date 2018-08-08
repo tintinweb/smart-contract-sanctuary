@@ -4,8 +4,8 @@ contract	BRAZIL_WINS				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	BRAZIL_WINS		&quot;	;
-	string	public		symbol =	&quot;	BRAWI		&quot;	;
+	string	public		name =	"	BRAZIL_WINS		"	;
+	string	public		symbol =	"	BRAWI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		54834144848184900000000000					;	

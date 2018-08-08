@@ -39,8 +39,8 @@ contract Pharmatron {
 	
     using SafeMath for uint256;
     
-    string public constant name       = &quot;PRX&quot;;
-    string public constant symbol     = &quot;PRX&quot;;
+    string public constant name       = "PRX";
+    string public constant symbol     = "PRX";
     uint32 public constant decimals   = 0;
     uint256 public totalSupply;
  

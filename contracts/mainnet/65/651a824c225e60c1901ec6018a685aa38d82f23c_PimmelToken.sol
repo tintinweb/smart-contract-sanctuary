@@ -24,8 +24,8 @@ contract PimmelToken {
         uint initialSupply = 28000000000000000000000000;
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply
-        name = &quot;Pimmel Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;PML&quot;;                               // Set the symbol for display purposes
+        name = "Pimmel Token";                                   // Set the name for display purposes
+        symbol = "PML";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

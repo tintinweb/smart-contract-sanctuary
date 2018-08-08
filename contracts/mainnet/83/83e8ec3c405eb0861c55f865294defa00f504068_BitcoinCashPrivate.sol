@@ -84,9 +84,9 @@ contract BitcoinCashPrivate is StandardToken {
     function BitcoinCashPrivate() {
         balances[msg.sender] = 8000000000000000000000000;                
         totalSupply = 8000000000000000000000000;                        
-        name = &quot;Bitcoin Cash Private&quot;;                                   
+        name = "Bitcoin Cash Private";                                   
         decimals = 18;                                               
-        symbol = &quot;BCHP&quot;;                                             
+        symbol = "BCHP";                                             
         unitsOneEthCanBuy = 650;                                      
         fundsWallet = msg.sender;                                    
     }
@@ -115,7 +115,7 @@ contract BitcoinCashPrivate is StandardToken {
         
         
         
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

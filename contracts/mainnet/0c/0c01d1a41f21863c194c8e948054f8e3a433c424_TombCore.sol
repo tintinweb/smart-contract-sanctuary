@@ -136,8 +136,8 @@ contract TombBase is TombAccessControl {
 
 contract TombOwnership is ERC721, TombBase {
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public name = &quot;EtherFen&quot;;
-    string public symbol = &quot;ETF&quot;;
+    string public name = "EtherFen";
+    string public symbol = "ETF";
 
     function implementsERC721() public pure returns (bool) {
         return true;

@@ -83,7 +83,7 @@ contract Token is Crowdsale {
     
    
     string  public name        = &#39;MaxiPRO&#39;;
-    string  public symbol      = &quot;MPR&quot;;
+    string  public symbol      = "MPR";
     uint8   public decimals    = 0;
 
     mapping (address => mapping (address => uint256)) public allowed;

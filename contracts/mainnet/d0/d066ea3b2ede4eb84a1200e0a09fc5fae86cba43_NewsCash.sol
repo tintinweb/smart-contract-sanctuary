@@ -64,8 +64,8 @@ contract NewsCash is SafeMath{
 
         balanceOf[msg.sender] = 50000000000000000000000000000;              // Give the creator all initial tokens
         totalSupply = 50000000000000000000000000000;                        // Update total supply
-        name = &quot;NewsCash&quot;;                                   // Set the name for display purposes
-        symbol = &quot;NC&quot;;                               // Set the symbol for display purposes
+        name = "NewsCash";                                   // Set the name for display purposes
+        symbol = "NC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
 	owner = msg.sender;
     }

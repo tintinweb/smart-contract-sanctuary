@@ -188,7 +188,7 @@ contract ERC223Token is ERC20Token, ERC223Interface {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -209,7 +209,7 @@ contract Ownable {
     modifier onlyOwner() {
         require(
             msg.sender == owner,
-            &quot;Only owner can call this function.&quot;
+            "Only owner can call this function."
         );
         _;
     }
@@ -248,8 +248,8 @@ contract PayBlokToken is ERC223Token, Ownable {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;PBLK&quot;;
-        name = &quot;PayBlok&quot;;
+        symbol = "PBLK";
+        name = "PayBlok";
         decimals = 18;
         totalSupply = 250000000000000000000000000;
         balances[msg.sender] = totalSupply;

@@ -108,8 +108,8 @@ contract ERC223 {
 contract SOCCERCOIN is ERC223, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;SOCCER COIN&quot;;
-    string public symbol = &quot;SOCCER&quot;;
+    string public name = "SOCCER COIN";
+    string public symbol = "SOCCER";
     uint8 public decimals = 16;
     uint256 public totalSupply;
 

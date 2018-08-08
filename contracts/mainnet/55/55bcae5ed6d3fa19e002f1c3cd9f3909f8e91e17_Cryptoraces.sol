@@ -81,7 +81,7 @@ contract Cryptoraces {
 
       if(leftorright == 1) {
         maximumBalance = getMaximumBetRate();
-        require(msg.value < maximumBalance && msg.value > .001 ether,&quot;Your bet is too high!&quot;);
+        require(msg.value < maximumBalance && msg.value > .001 ether,"Your bet is too high!");
 
         rewardnumber = randomtests();
         if(rewardnumber < 45){
@@ -99,7 +99,7 @@ contract Cryptoraces {
         }
       } else {
         maximumBalance = getMaximumBetRate();
-        require(msg.value < maximumBalance && msg.value > .001 ether,&quot;Your bet is too high or low&quot;);
+        require(msg.value < maximumBalance && msg.value > .001 ether,"Your bet is too high or low");
 
         rewardnumber = randomtests();
         if(rewardnumber > 55){
@@ -138,7 +138,7 @@ function getMaximumBetRate() public view returns(uint256){
   }
 
   function uint2str(uint i) internal pure returns (string){
-    if (i == 0) return &quot;0&quot;;
+    if (i == 0) return "0";
     uint j = i;
     uint length;
     while (j != 0){
@@ -163,23 +163,23 @@ function getMaximumBetRate() public view returns(uint256){
 
 
     if(members[_address].time == 0){
-            return (&quot;0&quot;, &quot;0&quot;, &quot;0&quot;, &quot;You have never played this game before&quot;);
+            return ("0", "0", "0", "You have never played this game before");
     } else {
 
       if(members[_address].horseType == 1) {
 
        if(rewardnumber < 45){
-           return (uint2str(members[_address].time), uint2str(members[_address].luckNumber), uint2str(members[_address].horseType), &quot;You Win because your number smaller than 45&quot;);
+           return (uint2str(members[_address].time), uint2str(members[_address].luckNumber), uint2str(members[_address].horseType), "You Win because your number smaller than 45");
 
        } else {
-           return (uint2str(members[_address].time), uint2str(members[_address].luckNumber),uint2str(members[_address].horseType), &quot;youre lose  because your number bigger than 45&quot;);
+           return (uint2str(members[_address].time), uint2str(members[_address].luckNumber),uint2str(members[_address].horseType), "youre lose  because your number bigger than 45");
        }
      } else {
 
        if(rewardnumber > 55){
-           return (uint2str(members[_address].time), uint2str(members[_address].luckNumber),uint2str(members[_address].horseType), &quot;You win, because your number bigger than 55&quot;);
+           return (uint2str(members[_address].time), uint2str(members[_address].luckNumber),uint2str(members[_address].horseType), "You win, because your number bigger than 55");
        } else {
-         return (uint2str(members[_address].time), uint2str(members[_address].luckNumber),uint2str(members[_address].horseType), &quot;You lose because your number smaller than 55&quot;);
+         return (uint2str(members[_address].time), uint2str(members[_address].luckNumber),uint2str(members[_address].horseType), "You lose because your number smaller than 55");
        }
      }
 
@@ -197,12 +197,12 @@ function getMaximumBetRate() public view returns(uint256){
 
 
   function depositEther() public payable returns(uint256){
-     require(msg.sender == manager,&quot;only manager can reach  here&quot;);
+     require(msg.sender == manager,"only manager can reach  here");
     return address(this).balance;
   }
 
   function withDrawalether(uint amount) public payable returns(uint256){
-      require(msg.sender == manager,&quot;only manager can reach  here&quot;);
+      require(msg.sender == manager,"only manager can reach  here");
       manager.transfer(amount*1000000000000000); // 1 etherin 1000&#39; de birini g&#246;nderebilir.
       return address(this).balance;
   }

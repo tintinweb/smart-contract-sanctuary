@@ -337,7 +337,7 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -615,8 +615,8 @@ contract TeamPool is TokenPool, Ownable {
 contract BenzeneToken is StandardBurnableToken, DetailedERC20 {
     using SafeMath for uint256;
 
-    string public constant name = &quot;Benzene&quot;;
-    string public constant symbol = &quot;BZN&quot;;
+    string public constant name = "Benzene";
+    string public constant symbol = "BZN";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));
     uint256 public constant GAME_POOL_INIT = 75000000 * (10 ** uint256(decimals));

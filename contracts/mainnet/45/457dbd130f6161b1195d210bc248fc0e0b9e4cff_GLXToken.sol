@@ -101,8 +101,8 @@ contract Owned {
 // token transfers
 // ----------------------------------------------------------------------------
 contract GLXToken is ERC20Interface, Owned, SafeMath {
-    string public symbol = &quot;GLX&quot;;
-    string public name = &quot;GolixToken&quot;;
+    string public symbol = "GLX";
+    string public name = "GolixToken";
     uint8 public decimals = 18;
     uint public _totalSupply;
     bool internal deployed = false;

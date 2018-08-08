@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	EuroSibEnergo_III				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	EuroSibEnergo_III		&quot;	;
-	string	public	constant	symbol =	&quot;	ESEIII		&quot;	;
+	string	public	constant	name =	"	EuroSibEnergo_III		"	;
+	string	public	constant	symbol =	"	ESEIII		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

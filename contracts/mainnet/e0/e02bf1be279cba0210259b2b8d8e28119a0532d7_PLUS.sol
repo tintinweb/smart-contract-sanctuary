@@ -112,8 +112,8 @@ contract PLUS is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function PLUS() public {
-        symbol = &quot;PLUS&quot;;
-        name = &quot;HodlPlus&quot;;
+        symbol = "PLUS";
+        name = "HodlPlus";
         decimals = 18;
         _totalSupply = 6000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

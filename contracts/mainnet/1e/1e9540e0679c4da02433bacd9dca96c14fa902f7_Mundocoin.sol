@@ -255,8 +255,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract Mundocoin is StandardToken {
-  string public name = &quot;Mundocoin&quot;; 
-  string public symbol = &quot;MDC&quot;;
+  string public name = "Mundocoin"; 
+  string public symbol = "MDC";
   uint public decimals = 4;
   uint public INITIAL_SUPPLY = 25000000000000;
 

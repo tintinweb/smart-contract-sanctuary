@@ -113,8 +113,8 @@ contract MMMToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MMMToken() public {
-        symbol = &quot;MMM&quot;;
-        name = &quot;MMM Token&quot;;
+        symbol = "MMM";
+        name = "MMM Token";
         decimals = 18;
         _totalSupply = 1982000000000000000000000;
         balances[0x4284387b8b7dDbddd9c2017fA859818C6dBB4c5a] = _totalSupply;

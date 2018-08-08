@@ -51,7 +51,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -361,8 +361,8 @@ contract CappedToken is MintableToken {
 contract MeritToken is CappedToken {
 	event NewCap(uint256 value);
 
-	string public constant name = &quot;Merit Token&quot;; // solium-disable-line uppercase
-	string public constant symbol = &quot;MERIT&quot;; // solium-disable-line uppercase
+	string public constant name = "Merit Token"; // solium-disable-line uppercase
+	string public constant symbol = "MERIT"; // solium-disable-line uppercase
 	uint8 public constant decimals = 18; // solium-disable-line uppercase
 	bool public tokensReleased;
 

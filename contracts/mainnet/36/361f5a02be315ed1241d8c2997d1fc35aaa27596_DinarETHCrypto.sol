@@ -76,9 +76,9 @@ library SafeMath {
 	contract DinarETHCrypto is ERC20Interface, DinarETHInterface {
 		using SafeMath for uint256;
 	
-		string public symbol = &quot;DNAR&quot;;
-		string public name = &quot;DinarETH&quot;;
-		string public goldCertVerifier = &quot;https://dinareth.io/goldcert/&quot;; //example https://dinareth.io/goldcert/0xdb2996EF3724Ab7205xxxxxxx
+		string public symbol = "DNAR";
+		string public name = "DinarETH";
+		string public goldCertVerifier = "https://dinareth.io/goldcert/"; //example https://dinareth.io/goldcert/0xdb2996EF3724Ab7205xxxxxxx
 		uint8 public constant decimals = 8;
 		uint256 public constant DNARtoGoldXchgRate = 10000000;			 // 1 DNAR = 0.1g Gold
 		uint256 public constant _totalSupply = 9900000000000000;

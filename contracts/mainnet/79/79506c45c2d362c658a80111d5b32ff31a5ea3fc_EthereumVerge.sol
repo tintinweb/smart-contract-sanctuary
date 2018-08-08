@@ -264,8 +264,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract EthereumVerge is PausableToken {
-    string public name = &quot;Ethereum Verge&quot;;
-    string public symbol = &quot;ETHV&quot;;
+    string public name = "Ethereum Verge";
+    string public symbol = "ETHV";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 15000000000000000000000000;
 

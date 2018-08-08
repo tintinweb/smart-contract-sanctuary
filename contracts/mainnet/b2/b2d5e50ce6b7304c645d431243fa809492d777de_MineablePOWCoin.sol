@@ -137,8 +137,8 @@ function proofOfWork(uint nonce){
 }
     
 contract MineablePOWCoin is TheLiquidToken {
-  string public constant name = &quot;POWCoin&quot;;
-  string public constant symbol = &quot;POW&quot;;
+  string public constant name = "POWCoin";
+  string public constant symbol = "POW";
   uint public constant decimals = 1;
   uint256 public initialSupply;
     

@@ -222,8 +222,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/IOVOToken.sol
 
 contract IOVOToken is StandardToken {
-    string public name = &quot;IOVO Token&quot;; 
-    string public symbol = &quot;IOVO&quot;;
+    string public name = "IOVO Token"; 
+    string public symbol = "IOVO";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 1000000000 * (10 ** decimals);
 

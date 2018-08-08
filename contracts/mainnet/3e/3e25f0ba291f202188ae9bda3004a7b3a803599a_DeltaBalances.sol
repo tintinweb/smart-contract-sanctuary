@@ -96,7 +96,7 @@ contract DeltaBalances {
     assembly { tokenCode := extcodesize(token) } // contract code size
    
    // is it a contract and does it implement balanceOf 
-    if(tokenCode > 0 && token.call(bytes4(0x70a08231), user)) {    // bytes4(keccak256(&quot;balanceOf(address)&quot;)) == bytes4(0x70a08231)  
+    if(tokenCode > 0 && token.call(bytes4(0x70a08231), user)) {    // bytes4(keccak256("balanceOf(address)")) == bytes4(0x70a08231)  
       return Token(token).balanceOf(user);
     } else {
       return 0; // not a valid token, return 0 instead of error

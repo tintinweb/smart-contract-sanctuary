@@ -187,8 +187,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract CxNtoken is StandardToken {
 
-    string public constant name = &quot;SocialCxN&quot;;
-    string public constant symbol = &quot;CxN&quot;;
+    string public constant name = "SocialCxN";
+    string public constant symbol = "CxN";
     uint8 public constant decimals = 18;
 
 

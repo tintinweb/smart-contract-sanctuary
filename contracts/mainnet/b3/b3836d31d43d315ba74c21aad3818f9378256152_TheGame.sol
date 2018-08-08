@@ -218,9 +218,9 @@ contract TheGame is ERC677Recipient {
   uint256 private constant COMPOUNDING_FREQ = 1 days;
   uint256 private constant DELAY_ON_EXIT = 100 hours;
   uint256 private constant DELAY_ON_NEW_LEVEL = 7 days;
-  string private constant NOT_ACTIVE_STR = &quot;NotActive&quot;;
+  string private constant NOT_ACTIVE_STR = "NotActive";
   uint256 private constant PERCENT_TAX_ON_EXIT = 10;
-  string private constant ACTIVE_STR = &quot;Active&quot;;
+  string private constant ACTIVE_STR = "Active";
   uint256 private constant PERCENT_REFERRAL_BOUNTY = 1;
   uint256 private m_levelStartupTimestamp;
   uint256 private m_ponziPriceInWei;

@@ -112,8 +112,8 @@ contract StandardToken is ERC20, SafeMath {
 }
 
 contract TYROS is StandardToken {
-  string public name = &quot;TYROS Token&quot;;
-  string public symbol = &quot;TYROS&quot;;
+  string public name = "TYROS Token";
+  string public symbol = "TYROS";
   uint256 public constant decimals = 18;
   uint256 public constant initial_supply = 50 * 10 ** 26;	
   

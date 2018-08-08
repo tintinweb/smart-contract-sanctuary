@@ -114,8 +114,8 @@ contract BXZToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BXZToken() public {
-        symbol = &quot;BXZ&quot;;
-        name = &quot;香港恒泰&quot;;
+        symbol = "BXZ";
+        name = "香港恒泰";
         decimals = 2;
         _totalSupply = 10000000000;
         balances[0x01bc604ae9d945f29432eded391513ba587aeda1] = _totalSupply;

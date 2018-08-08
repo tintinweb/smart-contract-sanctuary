@@ -71,8 +71,8 @@ pragma solidity ^0.4.18;
 
 	using SafeMath for uint256;
 
-	string public constant name = &quot;Rhodium&quot;; // solium-disable-line uppercase
-	string public constant symbol = &quot;RH45&quot;; // solium-disable-line uppercase
+	string public constant name = "Rhodium"; // solium-disable-line uppercase
+	string public constant symbol = "RH45"; // solium-disable-line uppercase
 	uint8 public constant decimals = 8; // solium-disable-line uppercase
 
 	uint256 public constant INITIAL_SUPPLY = 45000000e8;

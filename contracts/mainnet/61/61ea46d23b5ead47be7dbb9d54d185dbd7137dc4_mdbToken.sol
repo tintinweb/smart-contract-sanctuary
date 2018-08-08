@@ -29,8 +29,8 @@ pragma solidity ^0.4.18;
 contract mdbTokenConfig
 {
     // ERC20 trade name and symbol
-    string public           name            = &quot;USPAT7493279 loansyndicate&quot;;
-    string public           symbol          = &quot;1mdb&quot;;
+    string public           name            = "USPAT7493279 loansyndicate";
+    string public           symbol          = "1mdb";
 
     // Owner has power to abort, discount addresses, sweep successful funds,
     // change owner, sweep alien tokens.

@@ -510,8 +510,8 @@ contract StandardToken is Token, StandardTokenData {
 
 /// @title Standard token contract with overflow protection
 contract TokenFRT is StandardToken {
-    string public constant symbol = &quot;MGN&quot;;
-    string public constant name = &quot;Magnolia Token&quot;;
+    string public constant symbol = "MGN";
+    string public constant name = "Magnolia Token";
     uint8 public constant decimals = 18;
 
     struct unlockedToken {

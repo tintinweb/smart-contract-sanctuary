@@ -113,8 +113,8 @@ contract GemCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GemCoin() public {
-        symbol = &quot;GemCoin&quot;;
-        name = &quot;GemCoin&quot;;
+        symbol = "GemCoin";
+        name = "GemCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0x1df6fC0743712B1Ee73e9C7A1A3eA82f07757721] = _totalSupply;

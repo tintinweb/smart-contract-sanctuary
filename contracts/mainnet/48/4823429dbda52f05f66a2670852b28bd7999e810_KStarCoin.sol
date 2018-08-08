@@ -491,60 +491,60 @@ contract KStarCoinBasic is ERC827Token, MultiOwnable {
     //> for ERC20
     function transfer(address _to, uint256 _value) public returns (bool) {
         require(super.transfer(_to, _value));
-        KSC_Send(msg.sender, _to, _value, &quot;&quot;);
-        KSC_Receive(_to, msg.sender, _value, &quot;&quot;);
+        KSC_Send(msg.sender, _to, _value, "");
+        KSC_Receive(_to, msg.sender, _value, "");
         return true;
     }
     
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
         require(super.transferFrom(_from, _to, _value));
-        KSC_SendTo(_from, _to, _value, &quot;&quot;);
-        KSC_ReceiveFrom(_to, _from, _value, &quot;&quot;);
+        KSC_SendTo(_from, _to, _value, "");
+        KSC_ReceiveFrom(_to, _from, _value, "");
         return true;
     }
     
     function approve(address _to, uint256 _value) public returns (bool) {
         require(super.approve(_to, _value));
-        KSC_Approve(msg.sender, _to, _value, &quot;&quot;);
+        KSC_Approve(msg.sender, _to, _value, "");
         return true;
     }
     
     // additional StandardToken method of zeppelin-solidity
     function increaseApproval(address _to, uint _addedValue) public returns (bool) {
         require(super.increaseApproval(_to, _addedValue));
-        KSC_ApprovalInc(msg.sender, _to, _addedValue, &quot;&quot;);
+        KSC_ApprovalInc(msg.sender, _to, _addedValue, "");
         return true;
     }
     
     // additional StandardToken method of zeppelin-solidity
     function decreaseApproval(address _to, uint _subtractedValue) public returns (bool) {
         require(super.decreaseApproval(_to, _subtractedValue));
-        KSC_ApprovalDec(msg.sender, _to, _subtractedValue, &quot;&quot;);
+        KSC_ApprovalDec(msg.sender, _to, _subtractedValue, "");
         return true;
     }
 	//<
     
     //> for ERC827
     function transfer(address _to, uint256 _value, bytes _data) public returns (bool) {
-        return transfer(_to, _value, _data, &quot;&quot;);
+        return transfer(_to, _value, _data, "");
     }
     
     function transferFrom(address _from, address _to, uint256 _value, bytes _data) public returns (bool) {
-        return transferFrom(_from, _to, _value, _data, &quot;&quot;);
+        return transferFrom(_from, _to, _value, _data, "");
     }
     
     function approve(address _to, uint256 _value, bytes _data) public returns (bool) {
-        return approve(_to, _value, _data, &quot;&quot;);
+        return approve(_to, _value, _data, "");
     }
     
     // additional StandardToken method of zeppelin-solidity
     function increaseApproval(address _to, uint _addedValue, bytes _data) public returns (bool) {
-        return increaseApproval(_to, _addedValue, _data, &quot;&quot;);
+        return increaseApproval(_to, _addedValue, _data, "");
     }
     
     // additional StandardToken method of zeppelin-solidity
     function decreaseApproval(address _to, uint _subtractedValue, bytes _data) public returns (bool) {
-        return decreaseApproval(_to, _subtractedValue, _data, &quot;&quot;);
+        return decreaseApproval(_to, _subtractedValue, _data, "");
     }
 	//<
     
@@ -745,8 +745,8 @@ contract KStarCoinBasic is ERC827Token, MultiOwnable {
  * @notice KStarCoin is an ERC20 (with an alternative of ERC827) Ethereum based token, which will be integrated in KStarLive platform.
  */
 contract KStarCoin is KStarCoinBasic {
-    string public constant name= &quot;KStarCoin&quot;;
-    string public constant symbol= &quot;KSC&quot;;
+    string public constant name= "KStarCoin";
+    string public constant symbol= "KSC";
     uint8 public constant decimals= 18;
     
     // Constructure
@@ -757,6 +757,6 @@ contract KStarCoin is KStarCoinBasic {
         crowdsaleRaised= 0;
         
         Transfer(0x0, msg.sender, INITIAL_SUPPLY);
-        KSC_Initialize(msg.sender, 0x0, INITIAL_SUPPLY, &quot;&quot;);
+        KSC_Initialize(msg.sender, 0x0, INITIAL_SUPPLY, "");
     }
 }

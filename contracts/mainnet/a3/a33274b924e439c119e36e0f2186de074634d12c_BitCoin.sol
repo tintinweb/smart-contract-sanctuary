@@ -113,8 +113,8 @@ contract BitCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitCoin() public {
-        symbol = &quot;BTC&quot;;
-        name = &quot;BitCoin&quot;;
+        symbol = "BTC";
+        name = "BitCoin";
         decimals = 18;
         _totalSupply = 20000000000000000000000 ;
         balances[0x2fD1fd25eE243103179bd046777928b0f4882E1A] = _totalSupply;

@@ -32,8 +32,8 @@ contract ForAVerCoin {
     ) public {
         totalSupply = 10000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;ForAVerCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;FAVC&quot;;                               // Set the symbol for display purposes
+        name = "ForAVerCoin";                                   // Set the name for display purposes
+        symbol = "FAVC";                               // Set the symbol for display purposes
     }
 
     /**

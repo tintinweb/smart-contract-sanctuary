@@ -6,8 +6,8 @@ contract Token {
     uint256 public totalSupply = 2000000000000;
     uint256 public buyPrice = 1600000000;
     uint256 public sellPrice = 1400000000;
-    string public name = &quot;Brisfund token&quot;;
-    string public symbol = &quot;BRIS&quot;;
+    string public name = "Brisfund token";
+    string public symbol = "BRIS";
     mapping (address => bool) public lock;
     mapping (address => uint256) public balanceOf;
     mapping (address => mapping (address => uint256)) public allowance;

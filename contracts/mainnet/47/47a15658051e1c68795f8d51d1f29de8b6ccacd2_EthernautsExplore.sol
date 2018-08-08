@@ -259,7 +259,7 @@ contract EthernautsAccessControl is EthernautsBase {
         _;
     }
 
-    /// @dev Called by any &quot;C-level&quot; role to pause the contract. Used only when
+    /// @dev Called by any "C-level" role to pause the contract. Used only when
     ///  a bug or exploit is detected and we need to limit damage.
     function pause() external onlyCLevel whenNotPaused {
         paused = true;
@@ -291,8 +291,8 @@ contract EthernautsOwnership is EthernautsAccessControl, ERC721 {
 
     /*** CONSTANTS ***/
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant name = &quot;Ethernauts&quot;;
-    string public constant symbol = &quot;ETNT&quot;;
+    string public constant name = "Ethernauts";
+    string public constant symbol = "ETNT";
 
     /********* ERC 721 - COMPLIANCE CONSTANTS AND FUNCTIONS ***************/
     /**********************************************************************/

@@ -23,8 +23,8 @@ contract GoodBit {
     function GoodBit() {
         balanceOf[msg.sender] = 100000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply = 100000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;GoodBit&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GDB&quot;;                               // Set the symbol for display purposes
+        name = "GoodBit";                                   // Set the name for display purposes
+        symbol = "GDB";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

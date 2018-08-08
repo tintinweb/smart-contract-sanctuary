@@ -67,8 +67,8 @@ contract TeacherCoin is ERC20 {
     
     uint public constant _totalSupply = 0;
     
-    string public constant symbol = &quot;TCH&quot;;
-    string public constant name = &quot;Teacher Coin&quot;;
+    string public constant symbol = "TCH";
+    string public constant name = "Teacher Coin";
     uint8 public constant decimals = 18;
     
     // 1 ether = 10000 TCH

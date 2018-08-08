@@ -11,7 +11,7 @@ contract DipTgeInterface {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -374,8 +374,8 @@ pragma solidity 0.4.24;
 
 contract DipToken is PausableToken, MintableToken {
 
-  string public constant name = &quot;Decentralized Insurance Protocol&quot;;
-  string public constant symbol = &quot;DIP&quot;;
+  string public constant name = "Decentralized Insurance Protocol";
+  string public constant symbol = "DIP";
   uint256 public constant decimals = 18;
   uint256 public constant MAXIMUM_SUPPLY = 10**9 * 10**18; // 1 Billion 1&#39;000&#39;000&#39;000
 

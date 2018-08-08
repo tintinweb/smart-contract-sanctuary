@@ -216,8 +216,8 @@ contract BurnableToken is BasicToken {
     }
 }
 contract BDTToken is StandardToken, BurnableToken {
-    string public constant name = &quot;BDT Token&quot;;
-    string public constant symbol = &quot;BDT&quot;;
+    string public constant name = "BDT Token";
+    string public constant symbol = "BDT";
     uint8 public constant decimals = 18;
     
     // Total Supply: 1 Billion

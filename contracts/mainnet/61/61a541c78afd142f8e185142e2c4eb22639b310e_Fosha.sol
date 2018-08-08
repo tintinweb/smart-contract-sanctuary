@@ -60,8 +60,8 @@ contract Fosha is ERC20, Ownable {
    
     using SafeMath for uint256;
 	
-    string constant public symbol = &quot;FOSHA&quot;;
-    string constant public name = &quot;Fosha&quot;;
+    string constant public symbol = "FOSHA";
+    string constant public name = "Fosha";
     uint8 constant public decimals = 18;
 
 	uint public totalSupply;

@@ -75,8 +75,8 @@ contract ERC20 is ERC20Basic,Ownable {
 
 contract STBIToken is ERC20 {
     using SafeMath for uint256;
-    string constant public name = &quot;薪抬幣&quot;;
-    string constant public symbol = &quot;STBI&quot;;
+    string constant public name = "薪抬幣";
+    string constant public symbol = "STBI";
 
     uint8 constant public decimals = 8;
 

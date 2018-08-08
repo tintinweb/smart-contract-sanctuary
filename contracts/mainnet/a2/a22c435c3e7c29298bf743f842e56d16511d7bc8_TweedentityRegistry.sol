@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -154,7 +154,7 @@ contract TweedentityRegistry
 is HasNoEther
 {
 
-  string public fromVersion = &quot;1.0.0&quot;;
+  string public fromVersion = "1.0.0";
 
   address public manager;
   address public claimer;
@@ -174,7 +174,7 @@ is HasNoEther
   {
     require(_manager != address(0));
     manager = _manager;
-    ContractRegistered(keccak256(&quot;manager&quot;), &quot;&quot;, _manager);
+    ContractRegistered(keccak256("manager"), "", _manager);
   }
 
 
@@ -186,7 +186,7 @@ is HasNoEther
   {
     require(_claimer != address(0));
     claimer = _claimer;
-    ContractRegistered(keccak256(&quot;claimer&quot;), &quot;&quot;, _claimer);
+    ContractRegistered(keccak256("claimer"), "", _claimer);
   }
 
 

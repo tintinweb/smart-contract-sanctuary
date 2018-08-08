@@ -72,8 +72,8 @@ contract BitGoals is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;STP&quot;;
-        name = &quot;BitGoals&quot;;
+        symbol = "STP";
+        name = "BitGoals";
         decimals = 18;
         _totalSupply = 18000000;
         address owner = 0x209380a57d88B07352A409548F3Ff9A95066881D;

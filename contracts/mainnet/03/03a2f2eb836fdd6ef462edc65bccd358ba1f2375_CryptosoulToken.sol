@@ -317,8 +317,8 @@ contract CryptosoulToken is Airdropper {
     event AllowMinting();
     event Burn(address indexed from, uint256 value);
     
-    string constant public name = &quot;CryptoSoul&quot;;
-    string constant public symbol = &quot;SOUL&quot;;
+    string constant public name = "CryptoSoul";
+    string constant public symbol = "SOUL";
     uint constant public decimals = 6;
     
     uint256 constant public START_TOKENS = 500000000 * 10**decimals; //500M start

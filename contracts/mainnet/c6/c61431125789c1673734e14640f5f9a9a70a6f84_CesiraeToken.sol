@@ -82,8 +82,8 @@ contract CesiraeToken is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     function CesiraeToken() public {
-        symbol = &quot;CSE&quot;;
-        name = &quot;C&#233;sirae&quot;;
+        symbol = "CSE";
+        name = "C&#233;sirae";
         decimals = 18;
         _totalSupply = 25000000 * 10**uint(decimals);
         owner = 0x3fCD36fcE4097245AB0f2bA50486BC01D2a3ee44;

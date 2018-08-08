@@ -71,8 +71,8 @@ contract LotteryToken is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function LotteryToken() public {
-        symbol = &quot;LOT&quot;;
-        name = &quot;LotteryToken&quot;;
+        symbol = "LOT";
+        name = "LotteryToken";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000000000;
         balances[0x55eB1B0f4455A4d92c0d85B3D0B9ec9A64402F85] = _totalSupply;

@@ -113,8 +113,8 @@ contract SPCToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SPCToken() public {
-        symbol = &quot;SPC&quot;;
-        name = &quot;SPC Token&quot;;
+        symbol = "SPC";
+        name = "SPC Token";
         decimals = 18;
         _totalSupply = 706600000000000000000000000000000;
         balances[0x63f91cF1B5Dd18f05B38EF8F60c506179Fefd673] = _totalSupply;

@@ -113,8 +113,8 @@ contract CryptoBible is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;CBT&quot;;
-        name = &quot;CryptoBible&quot;;
+        symbol = "CBT";
+        name = "CryptoBible";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xf6057dfdE706fc5e5fa563917E801864d920F64e] = _totalSupply;

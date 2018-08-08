@@ -28,8 +28,8 @@ contract PROM {
     ) public {
         totalSupply = 777000000000000000000000000;                         // Total supply with the decimal amount
         balanceOf[msg.sender] = 777000000000000000000000000;               // All initial tokens
-        name = &quot;Pro Marketer&quot;;                                             // The name for display purposes
-        symbol = &quot;PROM&quot;;                                                   // The symbol for display purposes
+        name = "Pro Marketer";                                             // The name for display purposes
+        symbol = "PROM";                                                   // The symbol for display purposes
     }
 
     /**

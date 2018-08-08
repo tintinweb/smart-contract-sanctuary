@@ -15,17 +15,17 @@ contract USDOracle {
 
     function initialize() public {
         var oraclize = OraclizeI(OAR.getAddress());
-        oraclize.query.value(msg.value)(0, &quot;URL&quot;, &quot;http://example.com&quot;);
+        oraclize.query.value(msg.value)(0, "URL", "http://example.com");
     }
 
     function getPriceProxy() constant returns (uint) {
         var oraclize = OraclizeI(OAR.getAddress());
-        return oraclize.getPrice(&quot;URL&quot;, 200000);
+        return oraclize.getPrice("URL", 200000);
     }
 
     function oneCentOfWei() constant returns (uint) {
         var oraclize = OraclizeI(OAR.getAddress());
-        var price = oraclize.getPrice(&quot;URL&quot;, 200000);
+        var price = oraclize.getPrice("URL", 200000);
         var one_cent_of_wei = price - tx.gasprice * 200000;
         return one_cent_of_wei;
     }

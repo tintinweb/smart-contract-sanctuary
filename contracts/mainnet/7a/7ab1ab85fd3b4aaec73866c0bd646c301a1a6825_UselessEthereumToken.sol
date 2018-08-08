@@ -18,8 +18,8 @@ contract UselessEthereumToken {
 
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;Sad Token&quot;; }
-    function symbol() constant returns (string) { return &quot;SAD&quot;; }
+    function name() constant returns (string) { return "Sad Token"; }
+    function symbol() constant returns (string) { return "SAD"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

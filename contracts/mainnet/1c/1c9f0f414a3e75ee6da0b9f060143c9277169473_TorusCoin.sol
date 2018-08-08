@@ -228,8 +228,8 @@ contract StandardToken is ERC20, BasicToken {
 contract TorusCoin is StandardToken {
     using SafeMath for uint256;
 
-    string public name = &quot;Torus&quot;;
-    string public symbol = &quot;TORUS&quot;;
+    string public name = "Torus";
+    string public symbol = "TORUS";
     uint256 public decimals = 18;
 
     uint256 public startDatetime;

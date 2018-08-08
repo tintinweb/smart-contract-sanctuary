@@ -135,7 +135,7 @@ contract ERC20 is ERC20Basic {
   );
 }
 
-// import &quot;openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol&quot;;
+// import "openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol";
 
 
 /**
@@ -301,8 +301,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 }
 
 contract IFTCToken is StandardBurnableToken {
-  string public constant name = &quot;Internet FinTech Coin&quot;;
-  string public constant symbol = &quot;IFTC&quot;;
+  string public constant name = "Internet FinTech Coin";
+  string public constant symbol = "IFTC";
   uint public constant decimals = 18;
 
   constructor() public {

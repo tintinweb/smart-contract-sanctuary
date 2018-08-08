@@ -307,7 +307,7 @@ contract RBAC {
 }
 
 contract Whitelist is Ownable, RBAC {
-    string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+    string public constant ROLE_WHITELISTED = "whitelist";
 
     modifier onlyIfWhitelisted(address _operator) {
         checkRole(_operator, ROLE_WHITELISTED);
@@ -438,7 +438,7 @@ contract Distributable is StandardToken, Ownable, Whitelist, DateKernel {
     returns (uint256)
     {
         member storage mbr = teams[_member];
-        require(mbr.tokensLeft > 0, &quot;You&#39;ve spent your share&quot;);
+        require(mbr.tokensLeft > 0, "You&#39;ve spent your share");
         uint256 multiplier;
         uint256 callback;
         uint256 curDate = determineDate();
@@ -446,7 +446,7 @@ contract Distributable is StandardToken, Ownable, Whitelist, DateKernel {
         if(curDate > lastDate) {
             multiplier = curDate.sub(lastDate);
         } else if(curDate == lastDate) {
-            revert(&quot;Its no time&quot;);
+            revert("Its no time");
         }
         if(mbr.tokensTotal >= mbr.tokensLeft && mbr.tokensTotal > 0) {
             if(curDate == 10) {
@@ -486,8 +486,8 @@ contract NTOKTokenContract is Distributable, BurnableToken, CanReclaimToken, Cla
     public
     DateKernel(1541030400)
     {
-        name = &quot;NTOK Token Contract&quot;;
-        symbol = &quot;NTOK&quot;;
+        name = "NTOK Token Contract";
+        symbol = "NTOK";
         decimals = 18; 
         INITIAL_SUPPLY = 33000000 * 10 ** uint256(decimals);
         totalSupply_ = INITIAL_SUPPLY;
@@ -496,6 +496,6 @@ contract NTOKTokenContract is Distributable, BurnableToken, CanReclaimToken, Cla
     }
 
     function() external {
-        revert(&quot;Does not accept ether&quot;);
+        revert("Does not accept ether");
     }
 }

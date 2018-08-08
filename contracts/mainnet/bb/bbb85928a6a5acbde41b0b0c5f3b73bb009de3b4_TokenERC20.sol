@@ -40,8 +40,8 @@ contract TokenERC20   {
 	
     using SafeMath for uint256;
     
-    string public constant name       = &quot;Alpha Data System Chain&quot;;
-    string public constant symbol     = &quot;ADSChain&quot;;
+    string public constant name       = "Alpha Data System Chain";
+    string public constant symbol     = "ADSChain";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply;
  

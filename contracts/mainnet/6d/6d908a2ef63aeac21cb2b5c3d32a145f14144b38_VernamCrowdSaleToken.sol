@@ -123,8 +123,8 @@ contract VernamCrowdSaleToken is OwnableToken, KYCControl {
 
 	/* Initializes contract with initial supply tokens to the creator of the contract */
 	function VernamCrowdSaleToken() public {
-		name = &quot;Vernam Crowdsale Token&quot;;                            // Set the name for display purposes
-		symbol = &quot;VCT&quot;;                               				// Set the symbol for display purposes
+		name = "Vernam Crowdsale Token";                            // Set the name for display purposes
+		symbol = "VCT";                               				// Set the symbol for display purposes
 		decimals = 18;                            					// Amount of decimals for display purposes
 		_totalSupply = SafeMath.mul(1000000000, POW);     			//1 Billion Tokens with 18 Decimals
 		_circulatingSupply = 0;

@@ -36,7 +36,7 @@ contract Main0003_setupSBSigners {
     * APPROVED scripts can be executed only once.
         - if script succeeds then state set to DONE
         - If script runs out of gas or reverts then script state set to FAILEd and not allowed to run again
-          (To avoid leaving &quot;behind&quot; scripts which fail in a given state but eventually execute in the future)
+          (To avoid leaving "behind" scripts which fail in a given state but eventually execute in the future)
     * Scripts can be cancelled by an other multisig script approved and calling cancelScript()
     * Adding/removing signers is only via multisig approved scripts using addSigners / removeSigners fxs
 */
@@ -73,7 +73,7 @@ contract MultiSig {
     event ScriptExecuted(address scriptAddress, bool result);
 
     constructor() public {
-        // deployer address is the first signer. Deployer can configure new contracts by itself being the only &quot;signer&quot;
+        // deployer address is the first signer. Deployer can configure new contracts by itself being the only "signer"
         // The first script which sets the new contracts live should add signers and revoke deployer&#39;s signature right
         isSigner[msg.sender] = true;
         allSigners.push(msg.sender);
@@ -82,11 +82,11 @@ contract MultiSig {
     }
 
     function sign(address scriptAddress) public {
-        require(isSigner[msg.sender], &quot;sender must be signer&quot;);
+        require(isSigner[msg.sender], "sender must be signer");
         Script storage script = scripts[scriptAddress];
         require(script.state == ScriptState.Approved || script.state == ScriptState.New,
-                &quot;script state must be New or Approved&quot;);
-        require(!script.signedBy[msg.sender], &quot;script must not be signed by signer yet&quot;);
+                "script state must be New or Approved");
+        require(!script.signedBy[msg.sender], "script must not be signed by signer yet");
 
         if(script.allSigners.length == 0) {
             // first sign of a new script
@@ -107,9 +107,9 @@ contract MultiSig {
 
     function execute(address scriptAddress) public returns (bool result) {
         // only allow execute to signers to avoid someone set an approved script failed by calling it with low gaslimit
-        require(isSigner[msg.sender], &quot;sender must be signer&quot;);
+        require(isSigner[msg.sender], "sender must be signer");
         Script storage script = scripts[scriptAddress];
-        require(script.state == ScriptState.Approved, &quot;script state must be Approved&quot;);
+        require(script.state == ScriptState.Approved, "script state must be Approved");
 
         /* init to failed because if delegatecall rans out of gas we won&#39;t have enough left to set it.
            NB: delegatecall leaves 63/64 part of gasLimit for the caller.
@@ -119,7 +119,7 @@ contract MultiSig {
         script.state = ScriptState.Failed;
 
         // passing scriptAddress to allow called script access its own public fx-s if needed
-        if(scriptAddress.delegatecall(bytes4(keccak256(&quot;execute(address)&quot;)), scriptAddress)) {
+        if(scriptAddress.delegatecall(bytes4(keccak256("execute(address)")), scriptAddress)) {
             script.state = ScriptState.Done;
             result = true;
         } else {
@@ -129,10 +129,10 @@ contract MultiSig {
     }
 
     function cancelScript(address scriptAddress) public {
-        require(msg.sender == address(this), &quot;only callable via MultiSig&quot;);
+        require(msg.sender == address(this), "only callable via MultiSig");
         Script storage script = scripts[scriptAddress];
         require(script.state == ScriptState.Approved || script.state == ScriptState.New,
-                &quot;script state must be New or Approved&quot;);
+                "script state must be New or Approved");
 
         script.state= ScriptState.Cancelled;
 
@@ -141,10 +141,10 @@ contract MultiSig {
 
     /* requires quorum so it&#39;s callable only via a script executed by this contract */
     function addSigners(address[] signers) public {
-        require(msg.sender == address(this), &quot;only callable via MultiSig&quot;);
+        require(msg.sender == address(this), "only callable via MultiSig");
         for (uint i= 0; i < signers.length; i++) {
             if (!isSigner[signers[i]]) {
-                require(signers[i] != address(0), &quot;new signer must not be 0x0&quot;);
+                require(signers[i] != address(0), "new signer must not be 0x0");
                 activeSignersCount++;
                 allSigners.push(signers[i]);
                 isSigner[signers[i]] = true;
@@ -155,10 +155,10 @@ contract MultiSig {
 
     /* requires quorum so it&#39;s callable only via a script executed by this contract */
     function removeSigners(address[] signers) public {
-        require(msg.sender == address(this), &quot;only callable via MultiSig&quot;);
+        require(msg.sender == address(this), "only callable via MultiSig");
         for (uint i= 0; i < signers.length; i++) {
             if (isSigner[signers[i]]) {
-                require(activeSignersCount > 1, &quot;must not remove last signer&quot;);
+                require(activeSignersCount > 1, "must not remove last signer");
                 activeSignersCount--;
                 isSigner[signers[i]] = false;
                 emit SignerRemoved(signers[i]);
@@ -207,30 +207,30 @@ contract MultiSig {
 library SafeMath {
     function mul(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a * b;
-        require(a == 0 || c / a == b, &quot;mul overflow&quot;);
+        require(a == 0 || c / a == b, "mul overflow");
         return c;
     }
 
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b > 0, &quot;div by 0&quot;); // Solidity automatically throws for div by 0 but require to emit reason
+        require(b > 0, "div by 0"); // Solidity automatically throws for div by 0 but require to emit reason
         uint256 c = a / b;
         // require(a == b * c + a % b); // There is no case in which this doesn&#39;t hold
         return c;
     }
 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b <= a, &quot;sub underflow&quot;);
+        require(b <= a, "sub underflow");
         return a - b;
     }
 
     function add(uint256 a, uint256 b) internal pure returns (uint256) {
         uint256 c = a + b;
-        require(c >= a, &quot;add overflow&quot;);
+        require(c >= a, "add overflow");
         return c;
     }
 
     function roundedDiv(uint a, uint b) internal pure returns (uint256) {
-        require(b > 0, &quot;div by 0&quot;); // Solidity automatically throws for div by 0 but require to emit reason
+        require(b > 0, "div by 0"); // Solidity automatically throws for div by 0 but require to emit reason
         uint256 z = a / b;
         if (a % b >= b / 2) {
             z++;  // no need for safe add b/c it can happen only if we divided the input

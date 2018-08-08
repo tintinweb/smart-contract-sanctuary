@@ -105,7 +105,7 @@ contract IController {
 
 contract FeeTokenFactory {
     function createFeeToken(IController _controller, IFeeWindow _feeWindow) public returns (IFeeToken) {
-        Delegator _delegator = new Delegator(_controller, &quot;FeeToken&quot;);
+        Delegator _delegator = new Delegator(_controller, "FeeToken");
         IFeeToken _feeToken = IFeeToken(_delegator);
         _feeToken.initialize(_feeWindow);
         return _feeToken;
@@ -114,7 +114,7 @@ contract FeeTokenFactory {
 
 contract MarketFactory {
     function createMarket(IController _controller, IUniverse _universe, uint256 _endTime, uint256 _feePerEthInWei, ICash _denominationToken, address _designatedReporterAddress, address _sender, uint256 _numOutcomes, uint256 _numTicks) public payable returns (IMarket _market) {
-        Delegator _delegator = new Delegator(_controller, &quot;Market&quot;);
+        Delegator _delegator = new Delegator(_controller, "Market");
         _market = IMarket(_delegator);
         IReputationToken _reputationToken = _universe.getReputationToken();
         require(_reputationToken.transfer(_market, _reputationToken.balanceOf(this)));
@@ -145,7 +145,7 @@ contract Delegator is DelegationTarget {
         assembly {
             //0x40 is the address where the next free memory slot is stored in Solidity
             let _calldataMemoryOffset := mload(0x40)
-            // new &quot;memory end&quot; including padding. The bitwise operations here ensure we get rounded up to the nearest 32 byte boundary
+            // new "memory end" including padding. The bitwise operations here ensure we get rounded up to the nearest 32 byte boundary
             let _size := and(add(calldatasize, 0x1f), not(0x1f))
             // Update the pointer at 0x40 to point at new free memory location so any theoretical allocation doesn&#39;t stomp our memory in this call
             mstore(0x40, add(_calldataMemoryOffset, _size))
@@ -475,8 +475,8 @@ contract IFeeWindow is ITyped, ERC20 {
 contract FeeWindow is DelegationTarget, VariableSupplyToken, Initializable, IFeeWindow {
     using SafeMathUint256 for uint256;
 
-    string constant public name = &quot;Participation Token&quot;;
-    string constant public symbol = &quot;PT&quot;;
+    string constant public name = "Participation Token";
+    string constant public symbol = "PT";
     uint8 constant public decimals = 0;
 
     IUniverse private universe;
@@ -493,7 +493,7 @@ contract FeeWindow is DelegationTarget, VariableSupplyToken, Initializable, IFee
         endInitialization();
         universe = _universe;
         startTime = _feeWindowId.mul(universe.getDisputeRoundDurationInSeconds());
-        feeToken = FeeTokenFactory(controller.lookup(&quot;FeeTokenFactory&quot;)).createFeeToken(controller, this);
+        feeToken = FeeTokenFactory(controller.lookup("FeeTokenFactory")).createFeeToken(controller, this);
         return true;
     }
 
@@ -566,7 +566,7 @@ contract FeeWindow is DelegationTarget, VariableSupplyToken, Initializable, IFee
         }
 
         // CASH
-        ICash _cash = ICash(controller.lookup(&quot;Cash&quot;));
+        ICash _cash = ICash(controller.lookup("Cash"));
         uint256 _balance = _cash.balanceOf(this);
         uint256 _feePayoutShare = _balance.mul(_totalTokens).div(_totalFeeStake);
 
@@ -606,7 +606,7 @@ contract FeeWindow is DelegationTarget, VariableSupplyToken, Initializable, IFee
     }
 
     function getTypeName() public afterInitialized view returns (bytes32) {
-        return &quot;FeeWindow&quot;;
+        return "FeeWindow";
     }
 
     function getUniverse() public afterInitialized view returns (IUniverse) {
@@ -919,7 +919,7 @@ library Order {
         require(_outcome < _market.getNumberOfOutcomes());
         require(_price < _market.getNumTicks());
 
-        IOrders _orders = IOrders(_controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(_controller.lookup("Orders"));
         IAugur _augur = _controller.getAugur();
 
         return Data({
@@ -940,7 +940,7 @@ library Order {
     }
 
     //
-    // &quot;public&quot; functions
+    // "public" functions
     //
 
     function getOrderId(Order.Data _orderData) internal view returns (bytes32) {

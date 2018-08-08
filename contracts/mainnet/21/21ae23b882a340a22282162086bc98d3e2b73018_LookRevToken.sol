@@ -156,8 +156,8 @@ contract LookRevToken is StandardToken {
     /*
     *  Token meta data
     */
-    string public constant name = &quot;LookRev&quot;;
-    string public constant symbol = &quot;LOK&quot;;
+    string public constant name = "LookRev";
+    string public constant symbol = "LOK";
     uint8 public constant decimals = 18;
     string public VERSION = &#39;LOK1.0&#39;;
     bool public finalised = false;

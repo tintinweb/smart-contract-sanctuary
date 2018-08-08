@@ -90,8 +90,8 @@ contract DEAToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function DEAToken() public {
-        symbol = &quot;DEA&quot;;
-        name = &quot;Degas Coin&quot;;
+        symbol = "DEA";
+        name = "Degas Coin";
         decimals = 18;
         _totalSupply = 21359064 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -409,8 +409,8 @@ contract PATH is MintableToken, BurnableToken, SafePayloadChecker {
   /**
    * ERC20 Identification Functions
    */
-  string public constant name    = &quot;PATH Token&quot;; // solium-disable-line uppercase
-  string public constant symbol  = &quot;PATH&quot;; // solium-disable-line uppercase
+  string public constant name    = "PATH Token"; // solium-disable-line uppercase
+  string public constant symbol  = "PATH"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   /**

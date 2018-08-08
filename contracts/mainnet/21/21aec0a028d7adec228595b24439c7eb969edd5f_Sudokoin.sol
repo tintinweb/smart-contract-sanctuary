@@ -4,8 +4,8 @@ contract Sudokoin {
   uint supply = 203462379904501283815424;
   uint public boards = 0; // max 6670903752021072936960
 
-  string public constant name = &quot;Sudokoin&quot;;
-  string public constant symbol = &quot;SDK&quot;;
+  string public constant name = "Sudokoin";
+  string public constant symbol = "SDK";
   uint8 public constant decimals = 12;
 
   mapping (address => mapping (address => uint)) allowances;

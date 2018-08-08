@@ -35,7 +35,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -247,8 +247,8 @@ contract Payiza is BurnableToken, Ownable {
 
 
     //you just have to touch these 4 lines don&#39;t touch anything else , else you might break the code.
-    string public constant name = &quot;Payiza&quot;;//here you define the name
-    string public constant symbol = &quot;PYZ&quot;;//here yuou define the symbol of token
+    string public constant name = "Payiza";//here you define the name
+    string public constant symbol = "PYZ";//here yuou define the symbol of token
     uint public constant decimals = 8; //just till here.
     uint256 public constant initialSupply = 334500000 * (10 ** uint256(decimals));//500crore right yes ok let&#39;s deploy it now
 

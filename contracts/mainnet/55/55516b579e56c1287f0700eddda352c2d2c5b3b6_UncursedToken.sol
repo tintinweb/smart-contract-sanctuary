@@ -25,8 +25,8 @@ contract CursedToken is ERC20 {
 }
 
 contract UncursedToken is ERC20 {
-    string public symbol = &quot;CB&quot;;
-    string public name = &quot;Cornbread&quot;;
+    string public symbol = "CB";
+    string public name = "Cornbread";
     uint8 public decimals = 0;
     uint public totalSupply = 0;
     uint public birthBlock;

@@ -210,8 +210,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract LukaToken is StandardToken(){
-  string public constant name = &quot;LukaToken&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;LUKA&quot;; // solium-disable-line uppercase
+  string public constant name = "LukaToken"; // solium-disable-line uppercase
+  string public constant symbol = "LUKA"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 700000000 * (10 ** uint256(decimals));

@@ -65,8 +65,8 @@ contract StandardToken is ERC20, SafeMath {
 
 
 contract GlobalEnergyDigitalChain is StandardToken {
-    string public name = &quot;GlobalEnergyDigitalChain&quot;;
-    string public symbol = &quot;GEDC&quot;;
+    string public name = "GlobalEnergyDigitalChain";
+    string public symbol = "GEDC";
     uint public decimals = 18;
     uint public totalSupply = 1000 * 1000 * 1000 ether;
 

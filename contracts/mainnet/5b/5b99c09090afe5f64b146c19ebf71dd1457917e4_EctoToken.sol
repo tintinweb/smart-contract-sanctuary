@@ -5,7 +5,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -502,8 +502,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 // File: contracts/EctoToken.sol
 
 contract EctoToken is StandardBurnableToken, PausableTokenWithExceptions {
-    string public constant name = &quot;Ecto Token&quot;;
-    string public constant symbol = &quot;Ecto&quot;;
+    string public constant name = "Ecto Token";
+    string public constant symbol = "Ecto";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 150000000 * (10 ** uint256(decimals));

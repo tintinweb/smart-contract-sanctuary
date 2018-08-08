@@ -435,8 +435,8 @@ contract Treasury is OracleContractAdapter, ServiceAllowance, TreasuryEmitter {
     /// @notice Gets list of locked up deposits with dates when they will be available to withdraw
     /// @param _userKey aggregated user key (user ID + role ID)
     /// @return {
-    ///     &quot;_lockupDates&quot;: &quot;list of lockup dates of deposits&quot;,
-    ///     &quot;_deposits&quot;: &quot;list of deposits&quot;
+    ///     "_lockupDates": "list of lockup dates of deposits",
+    ///     "_deposits": "list of deposits"
     /// }
     function getLockedUserDeposits(bytes32 _userKey) public view returns (uint[] _lockupDates, uint[] _deposits) {
         LockedDeposits storage _lockedDeposits = user2lockedDeposits[_userKey];

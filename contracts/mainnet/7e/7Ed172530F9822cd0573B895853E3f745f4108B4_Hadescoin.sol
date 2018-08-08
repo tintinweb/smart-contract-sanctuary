@@ -114,8 +114,8 @@ contract Hadescoin is ERC223  {
     mapping (address => uint256) public unlockUnixTime;
     uint  public maxIncrease=20;
     address public target;
-    string internal name_= &quot;HadesCoin&quot;;
-    string internal symbol_ = &quot;HAC&quot;;
+    string internal name_= "HadesCoin";
+    string internal symbol_ = "HAC";
     uint8 internal decimals_= 18;
     uint256 internal totalSupply_= 2000000000e18;
     uint256 public toGiveBase = 5000e18;

@@ -224,7 +224,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -503,13 +503,13 @@ contract WhitelistableToken is ReleasableToken {
 // https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/examples/SimpleToken.sol
 contract SDAToken is WhitelistableToken {
   /**
-   * For Releasable tokens, a &quot;transfer agent&quot; can be assigned who is allowed to
+   * For Releasable tokens, a "transfer agent" can be assigned who is allowed to
    * transfer tokens between users. This effectively functions as an investor whitelist.
    *
    */
 
-  string public constant name = &quot;Safe Digital Advertising&quot;;  // solium-disable-line uppercase
-  string public constant symbol = &quot;SDA&quot;;  // solium-disable-line uppercase
+  string public constant name = "Safe Digital Advertising";  // solium-disable-line uppercase
+  string public constant symbol = "SDA";  // solium-disable-line uppercase
   uint8 public constant decimals = 8;  // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 400000000 * (10 ** uint256(decimals));

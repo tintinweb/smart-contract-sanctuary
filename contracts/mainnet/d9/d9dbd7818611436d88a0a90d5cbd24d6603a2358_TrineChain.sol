@@ -47,8 +47,8 @@ contract TrineChain is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => uint256) locknum; 
 
-    string public constant name = &quot;TrineChain&quot;;
-    string public constant symbol = &quot;TRCOS&quot;;
+    string public constant name = "TrineChain";
+    string public constant symbol = "TRCOS";
     uint public constant decimals = 18;
     uint256 _Rate = 10 ** decimals;    
     uint256 public totalSupply = 270000000 * _Rate;

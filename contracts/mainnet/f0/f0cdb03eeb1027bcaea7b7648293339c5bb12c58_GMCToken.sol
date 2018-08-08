@@ -169,8 +169,8 @@ contract CustomToken is Pausable{
 /******************************************/
 
 contract GMCToken is CustomToken {
-    string tokenName        = &quot;GMCToken&quot;;        // Set the name for display purposes
-    string tokenSymbol      = &quot;GMC&quot;;             // Set the symbol for display purposes
+    string tokenName        = "GMCToken";        // Set the name for display purposes
+    string tokenSymbol      = "GMC";             // Set the symbol for display purposes
         
     mapping (address => bool) public frozenAccount;
 

@@ -181,8 +181,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract BihuaToken is PausableToken {
 
-    string public name = &quot;BIHUA&quot;;
-    string public symbol = &quot;BT&quot;;
+    string public name = "BIHUA";
+    string public symbol = "BT";
     string public version = &#39;1.0.0&#39;;
     uint8 public decimals = 8;
 

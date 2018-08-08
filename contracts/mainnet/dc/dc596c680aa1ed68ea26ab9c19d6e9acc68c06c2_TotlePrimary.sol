@@ -66,7 +66,7 @@ interface ExchangeHandler {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -385,7 +385,7 @@ contract TotlePrimary is Ownable {
             tokenAddresses.length == buyOrSell.length &&
             buyOrSell.length      == amountToObtain.length &&
             amountToObtain.length == amountToGive.length,
-            &quot;TotlePrimary - trade length check failed&quot;
+            "TotlePrimary - trade length check failed"
         );
 
         require(
@@ -396,7 +396,7 @@ contract TotlePrimary is Ownable {
             exchangeFees.length   == v.length &&
             v.length              == r.length &&
             r.length              == s.length,
-            &quot;TotlePrimary - order length check failed&quot;
+            "TotlePrimary - order length check failed"
         );
 
         // Wrapping order in structs to reduce local variable count
@@ -445,18 +445,18 @@ contract TotlePrimary is Ownable {
             while(orderIndex < ordersLength) {
                 require(
                     tokens.tokenAddresses[tokenIndex] == orders.tokenForOrder[orderIndex],
-                    &quot;TotlePrimary - tokenAddress != tokenForOrder&quot;
+                    "TotlePrimary - tokenAddress != tokenForOrder"
                 );
                 require(
                     handlerWhitelist[orders.exchanges[orderIndex]],
-                    &quot;TotlePrimary - handler not in whitelist&quot;
+                    "TotlePrimary - handler not in whitelist"
                 );
 
                 if(amountRemaining > 0) {
                     if(tokens.buyOrSell[tokenIndex] == BUY) {
                         require(
                             etherBalance >= amountRemaining,
-                            &quot;TotlePrimary - not enough ether left to fill next order&quot;
+                            "TotlePrimary - not enough ether left to fill next order"
                         );
                     }
                     (amountRemaining, amountObtained) = performTrade(
@@ -479,7 +479,7 @@ contract TotlePrimary is Ownable {
 
             require(
                 orderWasValid(amountObtained, amountGiven, tokens.amountToObtain[tokenIndex], tokens.amountToGive[tokenIndex]),
-                &quot;TotlePrimary - amount obtained for was not high enough&quot;
+                "TotlePrimary - amount obtained for was not high enough"
             );
 
             if(tokens.buyOrSell[tokenIndex] == BUY) {
@@ -489,7 +489,7 @@ contract TotlePrimary is Ownable {
                 if(amountObtained > 0) {
                     require(
                         Token(tokens.tokenAddresses[tokenIndex]).transfer(msg.sender, amountObtained),
-                        &quot;TotlePrimary - failed to transfer tokens bought to msg.sender&quot;
+                        "TotlePrimary - failed to transfer tokens bought to msg.sender"
                     );
                 }
             } else {
@@ -499,7 +499,7 @@ contract TotlePrimary is Ownable {
                 if(amountRemaining > 0) {
                     require(
                         Token(tokens.tokenAddresses[tokenIndex]).transfer(msg.sender, amountRemaining),
-                        &quot;TotlePrimary - failed to transfer remaining tokens to msg.sender after sell&quot;
+                        "TotlePrimary - failed to transfer remaining tokens to msg.sender after sell"
                     );
                 }
             }
@@ -529,7 +529,7 @@ contract TotlePrimary is Ownable {
                         this,
                         tokens.amountToGive[i]
                     ),
-                    &quot;TotlePrimary - proxy failed to transfer tokens from user&quot;
+                    "TotlePrimary - proxy failed to transfer tokens from user"
                 );
             }
         }
@@ -537,7 +537,7 @@ contract TotlePrimary is Ownable {
         // Make sure we have will have enough ETH after SELLs to cover our BUYs
         require(
             expectedEtherAvailable >= totalEtherNeeded,
-            &quot;TotlePrimary - not enough ether available to fill all orders&quot;
+            "TotlePrimary - not enough ether available to fill all orders"
         );
     }
 
@@ -556,7 +556,7 @@ contract TotlePrimary is Ownable {
 
         require(
             orders.exchangeFees[index] < MAX_EXCHANGE_FEE_PERCENTAGE,
-            &quot;TotlePrimary - exchange fee was above maximum&quot;
+            "TotlePrimary - exchange fee was above maximum"
         );
 
         uint256 amountToFill = getAmountToFill(remaining, orders, index);
@@ -580,7 +580,7 @@ contract TotlePrimary is Ownable {
                         orders.exchanges[index],
                         amountToFill
                     ),
-                    &quot;TotlePrimary - token transfer to handler failed for sell&quot;
+                    "TotlePrimary - token transfer to handler failed for sell"
                 );
                 obtained = ExchangeHandler(orders.exchanges[index]).performSell(
                     orders.orderAddresses[index],
@@ -642,6 +642,6 @@ contract TotlePrimary is Ownable {
         assembly {
             size := extcodesize(sender)
         }
-        require(size > 0, &quot;TotlePrimary - can only send ether from another contract&quot;);
+        require(size > 0, "TotlePrimary - can only send ether from another contract");
     }
 }

@@ -101,8 +101,8 @@ contract GenesisToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GenesisToken() public {
-        symbol = &quot;GENS&quot;;
-        name = &quot;Genesis Token&quot;;
+        symbol = "GENS";
+        name = "Genesis Token";
         decimals = 18;
         bonusEnds = now + 6 weeks;
         endDate = now + 24 weeks;

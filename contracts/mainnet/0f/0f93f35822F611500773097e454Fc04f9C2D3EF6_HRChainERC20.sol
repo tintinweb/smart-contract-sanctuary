@@ -26,8 +26,8 @@ contract HRChainERC20 {
     function HRChainERC20() public {
         totalSupply =12000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = 12000000000000000;                // Give the creator all initial tokens
-        name = &quot;Health Regimen Chain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;HRC&quot;;                               // Set the symbol for display purposes
+        name = "Health Regimen Chain";                                   // Set the name for display purposes
+        symbol = "HRC";                               // Set the symbol for display purposes
      }
 
     /**

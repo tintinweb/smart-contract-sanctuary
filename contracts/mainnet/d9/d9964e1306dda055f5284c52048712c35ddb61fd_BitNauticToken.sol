@@ -191,7 +191,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address internal owner;
@@ -282,8 +282,8 @@ contract CappedToken is MintableToken {
  * @author Carlo Vespa || Junaid Mushtaq || Hamza Yasin || Talha Yusuf
  */
 contract BitNauticToken is CappedToken {
-    string public constant name = &quot;BitNautic Token&quot;;
-    string public constant symbol = &quot;BTNT&quot;;
+    string public constant name = "BitNautic Token";
+    string public constant symbol = "BTNT";
     uint8 public constant decimals = 18;
 
     constructor()

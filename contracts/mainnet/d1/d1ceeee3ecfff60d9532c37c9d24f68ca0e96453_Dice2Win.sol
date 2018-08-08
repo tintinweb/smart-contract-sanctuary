@@ -133,7 +133,7 @@ contract Dice2Win {
     function () public payable {
     }
 
-    // See comment for &quot;secretSigner&quot; variable.
+    // See comment for "secretSigner" variable.
     function setSecretSigner(address newSecretSigner) external onlyOwner {
         secretSigner = newSecretSigner;
     }
@@ -176,10 +176,10 @@ contract Dice2Win {
     //  betMask         - bet outcomes bit mask for modulo <= MAX_MASK_MODULO,
     //                    [0, betMask) for larger modulos.
     //  modulo          - game modulo.
-    //  commitLastBlock - number of the maximum block where &quot;commit&quot; is still considered valid.
-    //  commit          - Keccak256 hash of some secret &quot;reveal&quot; random number, to be supplied
+    //  commitLastBlock - number of the maximum block where "commit" is still considered valid.
+    //  commit          - Keccak256 hash of some secret "reveal" random number, to be supplied
     //                    by the dice2.win croupier bot in the settleBet transaction. Supplying
-    //                    &quot;commit&quot; ensures that &quot;reveal&quot; cannot be changed behind the scenes
+    //                    "commit" ensures that "reveal" cannot be changed behind the scenes
     //                    after placeBet have been mined.
     //  r, s            - components of ECDSA signature of (commitLastBlock, commit). v is
     //                    guaranteed to always equal 27.
@@ -250,12 +250,12 @@ contract Dice2Win {
     }
 
     // Settlement transaction - can in theory be issued by anyone, but is designed to be
-    // handled by the dice2.win croupier bot. To settle a bet with a specific &quot;commit&quot;,
-    // settleBet should supply a &quot;reveal&quot; number that would Keccak256-hash to
-    // &quot;commit&quot;. clean_commit is some previously &#39;processed&#39; bet, that will be moved into
+    // handled by the dice2.win croupier bot. To settle a bet with a specific "commit",
+    // settleBet should supply a "reveal" number that would Keccak256-hash to
+    // "commit". clean_commit is some previously &#39;processed&#39; bet, that will be moved into
     // &#39;clean&#39; state to prevent blockchain bloat and refund some gas.
     function settleBet(uint reveal, uint clean_commit) external {
-        // &quot;commit&quot; for bet settlement can only be obtained by hashing a &quot;reveal&quot;.
+        // "commit" for bet settlement can only be obtained by hashing a "reveal".
         uint commit = uint(keccak256(abi.encodePacked(reveal)));
 
         // Fetch bet parameters into local variables (to save gas).
@@ -276,9 +276,9 @@ contract Dice2Win {
         // Move bet into &#39;processed&#39; state already.
         bet.amount = 0;
 
-        // The RNG - combine &quot;reveal&quot; and blockhash of placeBet using Keccak256. Miners
-        // are not aware of &quot;reveal&quot; and cannot deduce it from &quot;commit&quot; (as Keccak256
-        // preimage is intractable), and house is unable to alter the &quot;reveal&quot; after
+        // The RNG - combine "reveal" and blockhash of placeBet using Keccak256. Miners
+        // are not aware of "reveal" and cannot deduce it from "commit" (as Keccak256
+        // preimage is intractable), and house is unable to alter the "reveal" after
         // placeBet have been mined (as Keccak256 collision finding is also intractable).
         bytes32 entropy = keccak256(abi.encodePacked(reveal, blockhash(placeBlockNumber)));
 
@@ -309,7 +309,7 @@ contract Dice2Win {
 
         // Roll for a jackpot (if eligible).
         if (amount >= MIN_JACKPOT_BET) {
-            // The second modulo, statistically independent from the &quot;main&quot; dice roll.
+            // The second modulo, statistically independent from the "main" dice roll.
             // Effectively you are playing two games at once!
             uint jackpotRng = (uint(entropy) / modulo) % JACKPOT_MODULO;
 

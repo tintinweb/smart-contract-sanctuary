@@ -57,8 +57,8 @@ contract ERC20 is ERC20Basic {
 contract Filler is ERC20 {
     using SafeMath for uint256;
 
-    string public name = &quot;TEXO&quot;;
-    string public symbol = &quot;TXO&quot;;
+    string public name = "TEXO";
+    string public symbol = "TXO";
     uint256 public decimals = 18;
     uint256 public _totalSupply = 1000000000 * (10 ** decimals);
     address public beneficiary = 0x32f33d685a39867FBCF47b2fFaa7898fe31662c2;

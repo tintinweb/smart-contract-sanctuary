@@ -175,8 +175,8 @@ contract standardToken is ERC20Token {
 contract KODB is standardToken, Owned {
     using SafeMath for uint;
     
-    string public name=&quot;kingdom of develop blockchain&quot;;
-    string public symbol=&quot;KODB&quot;;
+    string public name="kingdom of develop blockchain";
+    string public symbol="KODB";
     uint256 public decimals=18;
     uint256 public totalSupply = 0;
     uint256 public topTotalSupply = 1*10**8*10**decimals;

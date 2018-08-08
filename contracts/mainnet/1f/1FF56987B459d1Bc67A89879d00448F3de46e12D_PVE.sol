@@ -21,7 +21,7 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 
 contract token {
     /* Public variables of the token */
-    string public standard = &quot;PVE 0.1&quot;;
+    string public standard = "PVE 0.1";
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -110,8 +110,8 @@ contract PVE is owned, token {
     /* Initializes contract with initial supply tokens to the creator of the contract */
     uint256 public constant initialSupply = 200000000 * 10**16;
     uint8 public constant decimalUnits = 16;
-    string public tokenName = &quot;ProvidenceCasino&quot;;
-    string public tokenSymbol = &quot;PVE&quot;;
+    string public tokenName = "ProvidenceCasino";
+    string public tokenSymbol = "PVE";
     function PVE() token (initialSupply, tokenName, decimalUnits, tokenSymbol) {}
      /* Send coins */
     bool public executed = false;

@@ -17,9 +17,9 @@ contract DuqueBrewingCompany {
     function DuqueBrewingCompany() {
 
          initialSupply = 100000000000000000;
-         name =&quot;Duque Brewing Company&quot;;
+         name ="Duque Brewing Company";
          decimals = 8;
-         symbol = &quot;DUQUE&quot;;
+         symbol = "DUQUE";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

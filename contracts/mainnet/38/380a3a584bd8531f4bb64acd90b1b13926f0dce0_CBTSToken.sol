@@ -167,8 +167,8 @@ contract MintableToken is StandardToken, Ownable {
 
 
 contract CBTSToken is MintableToken {
-  string public name = &quot;Stormium&quot;;
-  string public symbol = &quot;CBTS&quot;;
+  string public name = "Stormium";
+  string public symbol = "CBTS";
   uint8 public decimals = 8;
 
   function CBTSToken() {

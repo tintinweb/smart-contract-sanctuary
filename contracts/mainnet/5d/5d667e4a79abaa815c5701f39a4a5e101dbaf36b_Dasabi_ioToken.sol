@@ -58,8 +58,8 @@ contract Dasabi_ioToken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;dasabi.io Token&quot;;
-    string public constant symbol = &quot;SBi&quot;;
+    string public constant name = "dasabi.io Token";
+    string public constant symbol = "SBi";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 1000000000e18;

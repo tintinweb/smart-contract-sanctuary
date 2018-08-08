@@ -21,8 +21,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract RajTest is owned {
     // Public variables of the token
-    string public name = &quot;RajTest&quot;;
-    string public symbol = &quot;RT&quot;;
+    string public name = "RajTest";
+    string public symbol = "RT";
     uint8 public decimals = 18;
     uint256 public totalSupply = 0;
     

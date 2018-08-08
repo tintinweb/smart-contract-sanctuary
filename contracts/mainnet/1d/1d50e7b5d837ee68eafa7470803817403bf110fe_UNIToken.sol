@@ -128,8 +128,8 @@ contract BurnableToken is ERC20, Ownable {
 contract UNIToken is ERC20, Contactable,BurnableToken{
     using SafeMath for uint;
 
-    string constant public name = &quot;UNI Token&quot;;
-    string constant public symbol = &quot;UNI&quot;;
+    string constant public name = "UNI Token";
+    string constant public symbol = "UNI";
     uint constant public decimals = 4;
 
     bool public isActivated = false;

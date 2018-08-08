@@ -44,8 +44,8 @@ contract Bitway is ERC20 {
 
     using SafeMath for uint256;
     
-    string public constant name = &quot;Bitway&quot;;
-    string public constant symbol = &quot;BTWN&quot;;
+    string public constant name = "Bitway";
+    string public constant symbol = "BTWN";
     uint256 public constant maxSupply = 21 * million * multiplier;
     uint256 public constant RATE = 1000;
     uint256 public constant decimals = 18;

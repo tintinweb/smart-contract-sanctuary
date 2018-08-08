@@ -101,8 +101,8 @@ contract StandardToken is Token, SafeMath {
  */
 contract SunriseCoin is StandardToken {
 
-  string public name = &quot;Sunrise Coin&quot;;
-  string public symbol = &quot;SNRC&quot;;
+  string public name = "Sunrise Coin";
+  string public symbol = "SNRC";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 120000000 * 1 ether;
 

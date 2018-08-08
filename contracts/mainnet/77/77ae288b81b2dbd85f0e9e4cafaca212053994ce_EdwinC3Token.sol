@@ -33,8 +33,8 @@ contract EdwinC3Token {
         initialSupply = 21000000000000000000000000000;
         totalSupply = 21000000000000000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        tokenName = &quot;EdwinC3Token&quot;;                                   // Set the name for display purposes
-        tokenSymbol = &quot;EDW3&quot;;                               // Set the symbol for display purposes
+        tokenName = "EdwinC3Token";                                   // Set the name for display purposes
+        tokenSymbol = "EDW3";                               // Set the symbol for display purposes
     }
 
     /**

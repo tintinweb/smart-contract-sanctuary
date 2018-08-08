@@ -116,8 +116,8 @@ contract Otest1Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;Otest1&quot;;
-        name = &quot;Otest1 Token&quot;;
+        symbol = "Otest1";
+        name = "Otest1 Token";
         decimals = 18;
         totalSupply = 125 * 10 ** 25;
         ownerAddress = 0x19237f2d0Ca50b613E091F3DD355D2A76e1735bc;

@@ -91,7 +91,7 @@ contract RaindropClient is Withdrawable {
         public
         requireStake(msg.sender, minimumHydroStakeDelegatedUser)
     {
-        require(isSigned(userAddress, keccak256(&quot;Create RaindropClient Hydro Account&quot;), v, r, s));
+        require(isSigned(userAddress, keccak256("Create RaindropClient Hydro Account"), v, r, s));
         _userSignUp(userName, userAddress, true);
     }
 
@@ -171,7 +171,7 @@ contract RaindropClient is Withdrawable {
         pure
         returns (bool)
     {
-        bytes memory prefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
+        bytes memory prefix = "\x19Ethereum Signed Message:\n32";
         bytes32 prefixedMessageHash = keccak256(prefix, messageHash);
 
         return ecrecover(prefixedMessageHash, v, r, s) == _address;

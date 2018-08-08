@@ -222,7 +222,7 @@ contract DSMath {
     }
 
     function rpow(uint128 x, uint64 n) constant internal returns (uint128 z) {
-        // This famous algorithm is called &quot;exponentiation by squaring&quot;
+        // This famous algorithm is called "exponentiation by squaring"
         // and calculates x^n with x as fixed-point and n as regular unsigned.
         //
         // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -334,7 +334,7 @@ contract DSToken is DSTokenBase(0), DSStop {
     uint256  public  decimals = 2; // standard token precision. override to customize
 
     function DSToken(bytes32 symbol_) {
-        symbol = &quot;CFVXX&quot;;
+        symbol = "CFVXX";
     }
 
     function transfer(address dst, uint wad) stoppable note returns (bool) {
@@ -367,7 +367,7 @@ contract DSToken is DSTokenBase(0), DSStop {
 
     // Optional token name
 
-    bytes32   public  name = &quot;Crypto Coin VX&quot;;
+    bytes32   public  name = "Crypto Coin VX";
     
     function setName(bytes32 name_) auth {
         name = name_;

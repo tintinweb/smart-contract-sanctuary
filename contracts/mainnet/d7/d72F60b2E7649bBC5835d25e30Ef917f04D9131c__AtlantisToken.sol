@@ -269,9 +269,9 @@ contract _AtlantisToken is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;ATA&quot;;
+        symbol = "ATA";
 
-        name = &quot;Atlantis Token&quot;;
+        name = "Atlantis Token";
 
         decimals = 8;
 

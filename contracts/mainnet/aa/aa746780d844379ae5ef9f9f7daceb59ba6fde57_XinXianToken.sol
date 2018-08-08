@@ -92,10 +92,10 @@ contract StandardToken is Token {
 contract XinXianToken is StandardToken, SafeMath {
 
     // metadata
-    string  public constant name = &quot;XinXian&quot;;
-    string  public constant symbol = &quot;XXT&quot;;
+    string  public constant name = "XinXian";
+    string  public constant symbol = "XXT";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
 
     // contracts
     address public ethFundDeposit;          // deposit address for ETH for XinXian Team.

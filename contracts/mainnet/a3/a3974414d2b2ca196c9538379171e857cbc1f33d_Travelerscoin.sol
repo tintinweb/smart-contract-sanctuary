@@ -15,9 +15,9 @@ contract Travelerscoin {
     function Travelerscoin() {
 
          initialSupply = 50000000;
-         name =&quot;Travelerscoin&quot;;
+         name ="Travelerscoin";
         decimals = 2;
-         symbol = &quot;TLC&quot;;
+         symbol = "TLC";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

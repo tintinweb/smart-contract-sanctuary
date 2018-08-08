@@ -517,8 +517,8 @@ contract UnicornBase is UnicornAccessControl {
 }
 
 contract UnicornToken is UnicornBase {
-    string public constant name = &quot;UnicornGO&quot;;
-    string public constant symbol = &quot;UNG&quot;;
+    string public constant name = "UnicornGO";
+    string public constant symbol = "UNG";
 
     function UnicornToken(address _unicornManagementAddress) UnicornAccessControl(_unicornManagementAddress) public {
 

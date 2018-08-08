@@ -312,8 +312,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 // File: contracts/NexexToken.sol
 
 contract NexexToken is StandardBurnableToken {
-    string public name = &quot;Nexex token&quot;;
-    string public symbol = &quot;NEX&quot;;
+    string public name = "Nexex token";
+    string public symbol = "NEX";
     uint8 public decimals = 18;
 
     constructor()

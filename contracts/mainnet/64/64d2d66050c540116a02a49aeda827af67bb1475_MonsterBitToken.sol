@@ -4,7 +4,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -434,7 +434,7 @@ contract DetailedERC20 {
 
 contract MonsterBitToken is MintableToken, DetailedERC20 {
     
-  function MonsterBitToken() public DetailedERC20(&quot;MonsterBit&quot;, &quot;MB&quot;, 18) {
+  function MonsterBitToken() public DetailedERC20("MonsterBit", "MB", 18) {
   }
   
 }

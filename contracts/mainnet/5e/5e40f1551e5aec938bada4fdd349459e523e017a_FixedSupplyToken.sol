@@ -84,8 +84,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
 
     function FixedSupplyToken() public {
-        symbol = &quot;OPALS&quot;;
-        name = &quot;OPALS&quot;;
+        symbol = "OPALS";
+        name = "OPALS";
         decimals = 8;
         _totalSupply = 21000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

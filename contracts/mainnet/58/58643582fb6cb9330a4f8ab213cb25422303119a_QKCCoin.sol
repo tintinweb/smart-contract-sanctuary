@@ -128,8 +128,8 @@ contract StandardToken is ERC20 {
 }
 
 contract QKCCoin is StandardToken {
-  string public constant name = &quot;QuarkChain Token&quot;;
-  string public constant symbol = &quot;QKC&quot;;
+  string public constant name = "QuarkChain Token";
+  string public constant symbol = "QKC";
   uint8 public constant decimals = 18;
   
   address private fundsWallet;

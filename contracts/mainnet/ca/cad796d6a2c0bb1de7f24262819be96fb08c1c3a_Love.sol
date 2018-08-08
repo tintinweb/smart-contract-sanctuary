@@ -19,8 +19,8 @@ contract ERC20Interface {
 
 contract Love is ERC20Interface {
 	// ERC20 basic variables
-	string public constant symbol = &quot;LOVE&quot;;
-	string public constant name = &quot;LoveToken&quot;;
+	string public constant symbol = "LOVE";
+	string public constant name = "LoveToken";
 	uint8 public constant decimals = 0;
 	uint256 public constant _totalSupply = (10 ** 10);
 	mapping (address => uint) public balances;

@@ -66,8 +66,8 @@ contract ERC20 {
 }
 contract RelestToken is ERC20, Ownable {
     using SafeMath for uint256;
-    string public name = &quot;Relest&quot;;
-    string public symbol = &quot;REST&quot;;
+    string public name = "Relest";
+    string public symbol = "REST";
     uint256 public decimals = 8;
     uint public ethRaised = 0;
     address wallet = 0xC487f60b6fA6d7CC1e51908b383385CbfC6c30B5;

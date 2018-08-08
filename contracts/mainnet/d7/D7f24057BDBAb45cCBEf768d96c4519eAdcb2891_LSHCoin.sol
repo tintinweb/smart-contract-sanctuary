@@ -291,7 +291,7 @@ contract LSHToken is LSHContract{
 }
 
 contract LSHCoin is LSHToken {
-    string public symbol = &quot;LSH&quot;;
-    string public  name = &quot;LSH COIN&quot;;
+    string public symbol = "LSH";
+    string public  name = "LSH COIN";
     uint8 public decimals = 8;
 }

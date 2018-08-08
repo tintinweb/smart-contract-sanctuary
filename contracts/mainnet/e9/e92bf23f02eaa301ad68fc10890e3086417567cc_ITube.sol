@@ -116,8 +116,8 @@ contract ITube is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Itube() public {
-        symbol = &quot;TUB&quot;;
-        name = &quot;ITube&quot;;
+        symbol = "TUB";
+        name = "ITube";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 25 weeks;

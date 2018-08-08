@@ -73,8 +73,8 @@ contract DoremiXToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;DoremiX&quot;;
-    string public constant symbol = &quot;DMX&quot;;
+    string public constant name = "DoremiX";
+    string public constant symbol = "DMX";
     uint public constant decimals = 4;
     
     uint256 public totalSupply = 20000000000e8;

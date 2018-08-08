@@ -231,8 +231,8 @@ contract Owned {
 
 contract VEC is StandardToken, Owned {
     event Mint(address indexed to, uint256 amount);
-    string public constant name    = &quot;VINESTATE&quot;;    
-	string public constant symbol  = &quot;VEC&quot;;
+    string public constant name    = "VINESTATE";    
+	string public constant symbol  = "VEC";
 	uint256 public constant maxSupply = totalSupply();
 
     function mintToken() onlyOwner public returns (bool) {

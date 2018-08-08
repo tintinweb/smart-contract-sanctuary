@@ -88,8 +88,8 @@ contract Founders is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
     function Founders() public {
         disabled = false;
-        symbol = &quot;FCF&quot;;
-        name = &quot;Founder Chibi Fighters&quot;;
+        symbol = "FCF";
+        name = "Founder Chibi Fighters";
         decimals = 18;
         // the first coins go to creator to share among GARRY investors
         _totalSupply = 330 * 10**uint(decimals);      

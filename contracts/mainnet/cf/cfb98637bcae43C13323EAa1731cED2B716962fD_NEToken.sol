@@ -99,10 +99,10 @@ contract StandardToken is Token, SafeMath {
 contract NEToken is StandardToken {
 
     // Token metadata
-    string public constant name = &quot;Nimiq Network Interim Token&quot;;
-    string public constant symbol = &quot;NET&quot;;
+    string public constant name = "Nimiq Network Interim Token";
+    string public constant symbol = "NET";
     uint256 public constant decimals = 18;
-    string public version = &quot;0.8&quot;;
+    string public version = "0.8";
 
     // Deposit address of Multisig account controlled by the creators
     address public ethFundDeposit;

@@ -165,9 +165,9 @@ contract SqueezeTheJuice {
     */
 
     //first step of any good idea is a name 
-    string public constant name = &quot;Squeeze The Juice&quot;;
+    string public constant name = "Squeeze The Juice";
     //and of course after a name, we need a code name.
-    string public constant symbol = &quot;MORE&quot;;
+    string public constant symbol = "MORE";
     //Then determine brewing capacity
     uint256 public totalSupply = 1000000;
     //get every last drop you can

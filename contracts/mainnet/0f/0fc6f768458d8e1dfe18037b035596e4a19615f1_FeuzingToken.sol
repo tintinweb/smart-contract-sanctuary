@@ -113,8 +113,8 @@ contract FeuzingToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FeuzingToken() public {
-        symbol = &quot;FEUZ&quot;;
-        name = &quot;Feuzing Token&quot;;
+        symbol = "FEUZ";
+        name = "Feuzing Token";
         decimals = 18;
         _totalSupply = 160000000000000000000000000;
         balances[0x1a13C9c301aA7d240026Cecf166d30Cfe05f1a53] = _totalSupply;

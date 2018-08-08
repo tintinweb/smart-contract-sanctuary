@@ -81,8 +81,8 @@ contract jDallyCoin is Token {
 	) {
 		totalSupply = 2130000000000000000000000;
 		balances[msg.sender] = 2130000000000000000000000;
-		name = &quot;jDallyCoin&quot;;
+		name = "jDallyCoin";
 		decimals = 18;
-		symbol = &quot;JDC&quot;;
+		symbol = "JDC";
 	}
 }

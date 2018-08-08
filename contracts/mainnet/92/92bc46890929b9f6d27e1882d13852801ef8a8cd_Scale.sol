@@ -31,7 +31,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -320,8 +320,8 @@ contract Scale is MintableToken, HasNoEther {
     //////////////////////
     // Token Information
     //////////////////////
-    string public constant name = &quot;SCALE&quot;;
-    string public constant symbol = &quot;SCALE&quot;;
+    string public constant name = "SCALE";
+    string public constant symbol = "SCALE";
     uint8 public constant  decimals = 18;
 
     ///////////////////////////////////////////////////////////

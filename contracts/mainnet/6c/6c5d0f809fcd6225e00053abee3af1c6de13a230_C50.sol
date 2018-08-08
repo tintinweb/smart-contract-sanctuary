@@ -214,8 +214,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract C50 is StandardToken {
-    string public name = &quot;Cryptocurrency 50&quot;;
-    string public symbol = &quot;C50&quot;;
+    string public name = "Cryptocurrency 50";
+    string public symbol = "C50";
     uint8 public decimals = 18;
     uint256 public constant MAX_SUPPLY = 21000000 * (10 ** uint256(18));
 

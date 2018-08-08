@@ -158,9 +158,9 @@ contract GemmyCoin is ERC20Interface, OwnerHelper
 
     constructor() public
     {
-        name = &quot;GemmyMusicCoin&quot;;
+        name = "GemmyMusicCoin";
         decimals = 18;
-        symbol = &quot;GMM&quot;;
+        symbol = "GMM";
         totalSupply = 0;
         
         owner = msg.sender;

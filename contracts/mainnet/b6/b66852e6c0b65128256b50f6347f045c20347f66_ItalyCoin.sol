@@ -51,8 +51,8 @@ contract ItalyCoin is ERC20{
   uint256 public _totalSupply = 0;
   
   
-  string public symbol = &quot;ITA&quot;;//Simbolo del token es. ETH
-  string public constant name = &quot;ItalyCoin&quot;; //Nome del token es. Ethereum
+  string public symbol = "ITA";//Simbolo del token es. ETH
+  string public constant name = "ItalyCoin"; //Nome del token es. Ethereum
   uint256 public constant decimals = 18; //Numero di decimali del token, il bitcoin ne ha 8, ethereum 18
   
   uint256 public MAX_SUPPLY = 2281000000 * 10**decimals; //Numero massimo di token da emettere ( 1000 )

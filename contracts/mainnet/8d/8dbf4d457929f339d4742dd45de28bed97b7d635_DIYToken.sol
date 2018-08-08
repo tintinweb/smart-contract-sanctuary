@@ -210,8 +210,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract DIYToken is StandardToken {
-	string public name = &quot;DIYChain Token&quot;; 
-	string public symbol = &quot;DIY&quot;;
+	string public name = "DIYChain Token"; 
+	string public symbol = "DIY";
 	uint public decimals = 18;
 	uint public INITIAL_SUPPLY = 1000000000 * (10 ** decimals);
 	

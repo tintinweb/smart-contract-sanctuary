@@ -100,8 +100,8 @@ contract AlphaCoinFundToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;ACF&quot;;
-        name = &quot;AlphaCoinFundToken&quot;;
+        symbol = "ACF";
+        name = "AlphaCoinFundToken";
         decimals = 18;
         _totalSupply = 2100 * 10**uint(decimals);
         balances[owner] = _totalSupply;

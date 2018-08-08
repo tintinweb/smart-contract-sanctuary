@@ -107,8 +107,8 @@ contract SBSToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SBSToken() public {
-        symbol = &quot;SBS&quot;;
-        name = &quot;SBSolutions&quot;;
+        symbol = "SBS";
+        name = "SBSolutions";
         decimals = 18;
         _totalSupply = 1000000000000000000000000;
         balances[0x0Fa633BF5b66a5416D87Cf4597C0B6FaF7F7e5a7] = _totalSupply;

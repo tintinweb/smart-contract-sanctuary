@@ -114,8 +114,8 @@ contract TCSCCoin is Ownable, StandardToken {
     function TCSCCoin() public {
     totalSupply = 100 * (10**6) * (10**6);
         balances[msg.sender] = totalSupply;
-        name = &quot;TCSC&quot;;
-        symbol = &quot;TCSC&quot;;
+        name = "TCSC";
+        symbol = "TCSC";
         decimals = 6;
     }
 

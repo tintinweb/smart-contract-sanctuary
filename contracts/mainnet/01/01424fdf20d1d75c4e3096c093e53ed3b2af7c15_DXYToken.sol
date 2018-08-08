@@ -187,8 +187,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract DXYToken is StandardToken {
 
-    string public name    = &quot;DXYToken&quot;;
-    string public symbol  = &quot;dxycoin&quot;;
+    string public name    = "DXYToken";
+    string public symbol  = "dxycoin";
     uint8 public decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 1000000000;

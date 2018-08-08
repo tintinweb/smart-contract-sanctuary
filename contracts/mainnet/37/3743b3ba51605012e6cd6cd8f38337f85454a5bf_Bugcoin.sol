@@ -71,9 +71,9 @@ contract Bugcoin is StandardToken {
     function Bugcoin() {
         balances[msg.sender] = 210000000000;              
         totalSupply = 210000000000;                        
-        name = &quot;Bugcoin Paweł Bugajny&quot;;                                   
+        name = "Bugcoin Paweł Bugajny";                                   
         decimals = 4;                                               
-        symbol = &quot;PBC&quot;;                                             
+        symbol = "PBC";                                             
         unitsOneEthCanBuy = 1000;                                     
         fundsWallet = msg.sender;                                    
     }
@@ -97,7 +97,7 @@ contract Bugcoin is StandardToken {
         Approval(msg.sender, _spender, _value);
 
       
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

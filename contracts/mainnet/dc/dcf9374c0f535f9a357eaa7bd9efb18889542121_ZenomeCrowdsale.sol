@@ -1,14 +1,14 @@
 pragma solidity ^0.4.19;
 
 /*************************************************************************
- * import &quot;../node_modules/zeppelin-solidity/contracts/ownership/Ownable.sol&quot; : start
+ * import "../node_modules/zeppelin-solidity/contracts/ownership/Ownable.sol" : start
  *************************************************************************/
 
 
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -45,10 +45,10 @@ contract Ownable {
 
 }
 /*************************************************************************
- * import &quot;../node_modules/zeppelin-solidity/contracts/ownership/Ownable.sol&quot; : end
+ * import "../node_modules/zeppelin-solidity/contracts/ownership/Ownable.sol" : end
  *************************************************************************/
 /*************************************************************************
- * import &quot;../node_modules/zeppelin-solidity/contracts/math/SafeMath.sol&quot; : start
+ * import "../node_modules/zeppelin-solidity/contracts/math/SafeMath.sol" : start
  *************************************************************************/
 
 
@@ -98,23 +98,23 @@ library SafeMath {
   }
 }
 /*************************************************************************
- * import &quot;../node_modules/zeppelin-solidity/contracts/math/SafeMath.sol&quot; : end
+ * import "../node_modules/zeppelin-solidity/contracts/math/SafeMath.sol" : end
  *************************************************************************/
 /*************************************************************************
- * import &quot;../node_modules/zeppelin-solidity/contracts/token/ERC20/MintableToken.sol&quot; : start
- *************************************************************************/
-
-/*************************************************************************
- * import &quot;./StandardToken.sol&quot; : start
+ * import "../node_modules/zeppelin-solidity/contracts/token/ERC20/MintableToken.sol" : start
  *************************************************************************/
 
 /*************************************************************************
- * import &quot;./BasicToken.sol&quot; : start
+ * import "./StandardToken.sol" : start
+ *************************************************************************/
+
+/*************************************************************************
+ * import "./BasicToken.sol" : start
  *************************************************************************/
 
 
 /*************************************************************************
- * import &quot;./ERC20Basic.sol&quot; : start
+ * import "./ERC20Basic.sol" : start
  *************************************************************************/
 
 
@@ -130,7 +130,7 @@ contract ERC20Basic {
   event Transfer(address indexed from, address indexed to, uint256 value);
 }
 /*************************************************************************
- * import &quot;./ERC20Basic.sol&quot; : end
+ * import "./ERC20Basic.sol" : end
  *************************************************************************/
 
 
@@ -180,10 +180,10 @@ contract BasicToken is ERC20Basic {
 
 }
 /*************************************************************************
- * import &quot;./BasicToken.sol&quot; : end
+ * import "./BasicToken.sol" : end
  *************************************************************************/
 /*************************************************************************
- * import &quot;./ERC20.sol&quot; : start
+ * import "./ERC20.sol" : start
  *************************************************************************/
 
 
@@ -200,7 +200,7 @@ contract ERC20 is ERC20Basic {
   event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 /*************************************************************************
- * import &quot;./ERC20.sol&quot; : end
+ * import "./ERC20.sol" : end
  *************************************************************************/
 
 
@@ -299,7 +299,7 @@ contract StandardToken is ERC20, BasicToken {
 
 }
 /*************************************************************************
- * import &quot;./StandardToken.sol&quot; : end
+ * import "./StandardToken.sol" : end
  *************************************************************************/
 
 
@@ -347,16 +347,16 @@ contract MintableToken is StandardToken, Ownable {
   }
 }
 /*************************************************************************
- * import &quot;../node_modules/zeppelin-solidity/contracts/token/ERC20/MintableToken.sol&quot; : end
+ * import "../node_modules/zeppelin-solidity/contracts/token/ERC20/MintableToken.sol" : end
  *************************************************************************/
 
 /*************************************************************************
- * import &quot;../node_modules/zeppelin-solidity/contracts/token/ERC20/PausableToken.sol&quot; : start
+ * import "../node_modules/zeppelin-solidity/contracts/token/ERC20/PausableToken.sol" : start
  *************************************************************************/
 
 
 /*************************************************************************
- * import &quot;../../lifecycle/Pausable.sol&quot; : start
+ * import "../../lifecycle/Pausable.sol" : start
  *************************************************************************/
 
 
@@ -407,7 +407,7 @@ contract Pausable is Ownable {
   }
 }
 /*************************************************************************
- * import &quot;../../lifecycle/Pausable.sol&quot; : end
+ * import "../../lifecycle/Pausable.sol" : end
  *************************************************************************/
 
 
@@ -438,16 +438,16 @@ contract PausableToken is StandardToken, Pausable {
   }
 }
 /*************************************************************************
- * import &quot;../node_modules/zeppelin-solidity/contracts/token/ERC20/PausableToken.sol&quot; : end
+ * import "../node_modules/zeppelin-solidity/contracts/token/ERC20/PausableToken.sol" : end
  *************************************************************************/
 /*************************************************************************
- * import &quot;../node_modules/zeppelin-solidity/contracts/ownership/CanReclaimToken.sol&quot; : start
+ * import "../node_modules/zeppelin-solidity/contracts/ownership/CanReclaimToken.sol" : start
  *************************************************************************/
 
 
 
 /*************************************************************************
- * import &quot;../token/ERC20/SafeERC20.sol&quot; : start
+ * import "../token/ERC20/SafeERC20.sol" : start
  *************************************************************************/
 
 
@@ -474,7 +474,7 @@ library SafeERC20 {
   }
 }
 /*************************************************************************
- * import &quot;../token/ERC20/SafeERC20.sol&quot; : end
+ * import "../token/ERC20/SafeERC20.sol" : end
  *************************************************************************/
 
 
@@ -498,7 +498,7 @@ contract CanReclaimToken is Ownable {
 
 }
 /*************************************************************************
- * import &quot;../node_modules/zeppelin-solidity/contracts/ownership/CanReclaimToken.sol&quot; : end
+ * import "../node_modules/zeppelin-solidity/contracts/ownership/CanReclaimToken.sol" : end
  *************************************************************************/
 
 
@@ -534,8 +534,8 @@ contract ZNA is StandardToken, Ownable, PausableToken {
      return true;
    }
 
-   string public name = &quot;ZNA Token&quot;;
-   string public symbol = &quot;ZNA&quot;;
+   string public name = "ZNA Token";
+   string public symbol = "ZNA";
    uint8  public decimals = 18;
 }
 
@@ -612,9 +612,9 @@ contract ZenomeCrowdsale is Ownable, CanReclaimToken, CanReclaimEther {
   /**
    * INTERNAL FUNCTIONS
 
-   &quot;Of course, calls to internal functions use the internal calling convention,
+   "Of course, calls to internal functions use the internal calling convention,
     which means that all internal types can be passed and memory types will be
-    passed by reference and not copied.&quot;
+    passed by reference and not copied."
 
     https://solidity.readthedocs.io/en/develop/contracts.html#libraries
   */

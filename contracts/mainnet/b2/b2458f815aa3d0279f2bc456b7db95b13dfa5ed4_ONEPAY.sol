@@ -119,8 +119,8 @@ contract ONEPAY is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function ONEPAY() public {
-        symbol = &quot;ONEPAY&quot;;
-        name = &quot;ONEPAY&quot;;
+        symbol = "ONEPAY";
+        name = "ONEPAY";
         decimals = 18;
         _totalSupply = 60000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

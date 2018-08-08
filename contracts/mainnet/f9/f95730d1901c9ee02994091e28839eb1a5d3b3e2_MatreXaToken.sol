@@ -80,7 +80,7 @@ library SafeERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -434,8 +434,8 @@ contract BurnableToken is StandardToken {
 contract MatreXaToken is BurnableToken, MintableToken, HasNoContracts, HasNoTokens { //MintableToken is StandardToken, Ownable
     using SafeMath for uint256;
 
-    string public name = &quot;MatreXa&quot;;
-    string public symbol = &quot;MTRX&quot;;
+    string public name = "MatreXa";
+    string public symbol = "MTRX";
     uint256 public decimals = 18;
 
     address public founder;

@@ -23,8 +23,8 @@ contract GA_chain{
     function GA_chain() {
         balanceOf[msg.sender] =  1800000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  1800000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;GA_chain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GAC&quot;;                               // Set the symbol for display purposes
+        name = "GA_chain";                                   // Set the name for display purposes
+        symbol = "GAC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

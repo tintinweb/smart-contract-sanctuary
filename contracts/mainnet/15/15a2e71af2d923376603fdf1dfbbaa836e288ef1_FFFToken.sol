@@ -112,8 +112,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract FFFToken is StandardToken {
-    string public name = &quot;FFF News&quot;;
-    string public symbol = &quot;FFF&quot;;
+    string public name = "FFF News";
+    string public symbol = "FFF";
     uint8 public constant decimals = 18;
     uint256 public totalSupply = 100 * (10 ** 8) * (10 ** 18);
 

@@ -170,9 +170,9 @@ contract RocketPoolToken is StandardToken, Owned {
 
      /**** Properties ***********/
 
-    string public name = &quot;Rocket Pool&quot;;
-    string public symbol = &quot;RPL&quot;;
-    string public version = &quot;1.0&quot;;
+    string public name = "Rocket Pool";
+    string public symbol = "RPL";
+    string public version = "1.0";
     // Set our token units
     uint8 public constant decimals = 18;
     uint256 public exponent = 10**uint256(decimals);

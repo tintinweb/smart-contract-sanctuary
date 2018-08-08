@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract RepostiX   {
 
-    string public name = &quot;RepostiX&quot;;      //  token name
-    string public symbol = &quot;REPX&quot;;           //  token symbol
+    string public name = "RepostiX";      //  token name
+    string public symbol = "REPX";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

@@ -10,7 +10,7 @@ interface ERC165 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -124,17 +124,17 @@ contract Metadata {
     /// @dev Given a token Id, returns a string with metadata
     function getMetadata(uint256 _tokenId, string) public pure returns (bytes32[4] buffer, uint256 count) {
         if (_tokenId == 1) {
-            buffer[0] = &quot;Hello World! :D&quot;;
+            buffer[0] = "Hello World! :D";
             count = 15;
         } else if (_tokenId == 2) {
-            buffer[0] = &quot;I would definitely choose a medi&quot;;
-            buffer[1] = &quot;um length string.&quot;;
+            buffer[0] = "I would definitely choose a medi";
+            buffer[1] = "um length string.";
             count = 49;
         } else if (_tokenId == 3) {
-            buffer[0] = &quot;Lorem ipsum dolor sit amet, mi e&quot;;
-            buffer[1] = &quot;st accumsan dapibus augue lorem,&quot;;
-            buffer[2] = &quot; tristique vestibulum id, libero&quot;;
-            buffer[3] = &quot; suscipit varius sapien aliquam.&quot;;
+            buffer[0] = "Lorem ipsum dolor sit amet, mi e";
+            buffer[1] = "st accumsan dapibus augue lorem,";
+            buffer[2] = " tristique vestibulum id, libero";
+            buffer[3] = " suscipit varius sapien aliquam.";
             count = 128;
         }
     }
@@ -151,7 +151,7 @@ contract GanNFT is ERC165, ERC721, ERC721Enumerable, PublishInterfaces, Ownable 
       supportedInterfaces[0x8153916a] = true; // ERC721 + 165 (not needed)
   }
 
-  bytes4 private constant ERC721_RECEIVED = bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;));
+  bytes4 private constant ERC721_RECEIVED = bytes4(keccak256("onERC721Received(address,uint256,bytes)"));
 
   // @dev claim price taken for each new GanToken
   // generating a new token will be free in the beinging and later changed
@@ -183,12 +183,12 @@ contract GanNFT is ERC165, ERC721, ERC721Enumerable, PublishInterfaces, Ownable 
 
   /// @notice A descriptive name for a collection of NFTs in this contract
   function name() external pure returns (string) {
-      return &quot;GanToken&quot;;
+      return "GanToken";
   }
 
   /// @notice An abbreviated name for NFTs in this contract
   function symbol() external pure returns (string) {
-      return &quot;GT&quot;;
+      return "GT";
   }
 
   /// @dev Set the address of the sibling contract that tracks metadata.
@@ -297,7 +297,7 @@ contract GanNFT is ERC165, ERC721, ERC721Enumerable, PublishInterfaces, Ownable 
   ///  `_tokenId` is not a valid NFT. When transfer is complete, this function
   ///  checks if `_to` is a smart contract (code size > 0). If so, it calls
   ///  `onERC721Received` on `_to` and throws if the return value is not
-  ///  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`.
+  ///  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`.
   /// @param _from The current owner of the NFT
   /// @param _to The new owner
   /// @param _tokenId The NFT to transfer
@@ -309,13 +309,13 @@ contract GanNFT is ERC165, ERC721, ERC721Enumerable, PublishInterfaces, Ownable 
 
   /// @notice Transfers the ownership of an NFT from one address to another address
   /// @dev This works identically to the other function with an extra data parameter,
-  ///  except this function just sets data to &quot;&quot;
+  ///  except this function just sets data to ""
   /// @param _from The current owner of the NFT
   /// @param _to The new owner
   /// @param _tokenId The NFT to transfer
   function safeTransferFrom(address _from, address _to, uint256 _tokenId) public payable
   {
-      _safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+      _safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /// @notice Transfer ownership of an NFT -- THE CALLER IS RESPONSIBLE
@@ -353,7 +353,7 @@ contract GanNFT is ERC165, ERC721, ERC721Enumerable, PublishInterfaces, Ownable 
       emit Approval(msg.sender, _to, _tokenId);
   }
 
-  /// @notice Enable or disable approval for a third party (&quot;operator&quot;) to manage
+  /// @notice Enable or disable approval for a third party ("operator") to manage
   ///  all your asset.
   /// @dev Emits the ApprovalForAll event
   /// @param _operator Address to add to the set of authorized operators.

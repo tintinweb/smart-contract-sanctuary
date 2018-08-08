@@ -8,7 +8,7 @@ pragma solidity ^0.4.16;
 // Name        : Airdroop
 // Total supply: 1000000000
 // Decimals    : 2
-// Copyto      :1000000000,&quot;Airdroop&quot;,&quot;ADOP&quot;
+// Copyto      :1000000000,"Airdroop","ADOP"
 // Enjoy.
 //
 // (c) Airdroop 2018. The MIT Licence.

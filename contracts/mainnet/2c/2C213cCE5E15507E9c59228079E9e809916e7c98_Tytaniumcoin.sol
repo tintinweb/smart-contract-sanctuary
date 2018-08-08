@@ -16,9 +16,9 @@ contract Tytaniumcoin {
     function Token() {
 
          initialSupply = 7000000000;
-         name =&quot;tytaniumcoin&quot;;
+         name ="tytaniumcoin";
         decimals = 8;
-         symbol = &quot;Tc&quot;;
+         symbol = "Tc";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

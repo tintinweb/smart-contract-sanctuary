@@ -361,9 +361,9 @@ contract privlocatumICO is Owned, privlocatum {
 
     bool crowdsaleClosed = true;
 
-    string tokenName = &quot;Privlocatum&quot;;
+    string tokenName = "Privlocatum";
 
-    string tokenSymbol = &quot;PLT&quot;;
+    string tokenSymbol = "PLT";
 
     uint256 multiplier = 100000000;
 

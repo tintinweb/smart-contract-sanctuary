@@ -183,8 +183,8 @@ contract Ownable {
 }
 
 contract Cindicator is StandardToken, Ownable {
-  string public constant name = &quot;Cindicator&quot;;
-  string public constant symbol = &quot;CND&quot;;
+  string public constant name = "Cindicator";
+  string public constant symbol = "CND";
   uint8 public constant decimals = 18;
   
   uint256 public CindicatorIssued;
@@ -223,7 +223,7 @@ contract Cindicator is StandardToken, Ownable {
     totalSupply = 2000000000 * (10 ** uint256(decimals)); 
     balances[msg.sender] = totalSupply;  
     CindicatorIssued = totalSupply;
-    CindicatorTalk = &quot;Cindicator&quot;;
+    CindicatorTalk = "Cindicator";
     
   }
  

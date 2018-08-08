@@ -75,7 +75,7 @@ contract AIHTeamLockContract {
     using SafeERC20 for ERC20;
     using SafeMath for uint;
 
-    string public constant name = &quot;AIHTeamLockContract&quot;;
+    string public constant name = "AIHTeamLockContract";
     uint256 public constant RELEASE_TIME                   = 1594483200;  //2020/7/12 0:0:0
     uint256 public constant RELEASE_PERIODS                = 90 days;  
 

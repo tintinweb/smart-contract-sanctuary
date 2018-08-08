@@ -77,9 +77,9 @@ contract HacToken is ERC20Interface, owned{
 
 	function HacToken() {
 		totalSupply = freeTokens = 10000000000000;
-		name = &quot;HAC Token&quot;;
+		name = "HAC Token";
 		decimals = 4;
-		symbol = &quot;HAC&quot;;
+		symbol = "HAC";
 	}
 
 	function totalSupply() constant returns (uint256 total) {

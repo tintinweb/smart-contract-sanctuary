@@ -11,8 +11,8 @@ contract WaykiCoin{
     mapping (address => mapping (address => uint256)) allowed;
     function WaykiCoin() public { 
         owner = msg.sender;                                         // Set owner of contract 
-        name = &quot;WaykiCoin&quot;;                                         // Set the name for display purposes
-        symbol = &quot;WIC&quot;;                                             // Set the symbol for display purposes
+        name = "WaykiCoin";                                         // Set the name for display purposes
+        symbol = "WIC";                                             // Set the symbol for display purposes
         decimals = 8;                                               // Amount of decimals for display purposes
 		totalSupply = 21000000000000000;                            // Total supply
 		balances[owner] = totalSupply;                              // Set owner balance equal totalsupply 

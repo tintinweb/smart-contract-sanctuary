@@ -72,7 +72,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -359,7 +359,7 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract WUGChallengeToken is PausableToken, MintableToken {
-  string public name = &quot;WatchUGot Challenge Token&quot;;
-  string public symbol = &quot;WCT&quot;;
+  string public name = "WatchUGot Challenge Token";
+  string public symbol = "WCT";
   uint256 public decimals = 18;
 }

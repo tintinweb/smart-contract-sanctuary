@@ -123,9 +123,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract MoncryptToken is StandardToken, Ownable {
     
-    string public constant name = &quot;MONCRYPT Token&quot;;
+    string public constant name = "MONCRYPT Token";
     
-    string public constant symbol = &quot;MON&quot;;
+    string public constant symbol = "MON";
     
     uint32 public constant decimals = 8;
     

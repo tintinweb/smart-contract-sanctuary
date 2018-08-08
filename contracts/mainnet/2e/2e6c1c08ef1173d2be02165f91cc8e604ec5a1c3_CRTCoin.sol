@@ -168,7 +168,7 @@ contract MintableToken is StandardToken, Ownable {
 * cryptocurrency which is ecological, economically beneficial and truly anonymous. 
 */
 contract CRTCoin is MintableToken {
-    string public constant name = &quot;CRTCoin&quot;;
-    string public constant symbol = &quot;CRT&quot;;
+    string public constant name = "CRTCoin";
+    string public constant symbol = "CRT";
     uint8 public constant decimals = 18;
 }

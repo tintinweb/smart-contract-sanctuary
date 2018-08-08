@@ -100,8 +100,8 @@ contract AiBank is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function AiBank() public {
-        symbol = &quot;ABK&quot;;
-        name = &quot;AI BANK TOKEN&quot;;
+        symbol = "ABK";
+        name = "AI BANK TOKEN";
         decimals = 18;
         _totalSupply = 7500000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -113,8 +113,8 @@ contract MITCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MITCoin() public {
-        symbol = &quot;MIT&quot;;
-        name = &quot;Massachusetts Institute of Technology Coin&quot;;
+        symbol = "MIT";
+        name = "Massachusetts Institute of Technology Coin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x116312c3471C2e7C34C52782D0399eBE601f3F30] = _totalSupply;

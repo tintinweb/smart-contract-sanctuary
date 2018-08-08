@@ -253,7 +253,7 @@ contract TokenERC20 is ERC20, Ownable{
 
 contract PowerToken is TokenERC20 {
 
-    function PowerToken() TokenERC20(1000000000, &quot;LuJia Token&quot;, &quot;QZB&quot;, 18) public {
+    function PowerToken() TokenERC20(1000000000, "LuJia Token", "QZB", 18) public {
 
     }
 }

@@ -4,8 +4,8 @@ contract HumanBlockToken {
     // Track how many tokens are owned by each address.
     mapping (address => uint256) public balanceOf;
 
-    string public name = &quot;Human Block&quot;;
-    string public symbol = &quot;HBC&quot;;
+    string public name = "Human Block";
+    string public symbol = "HBC";
     uint8 public decimals = 8;
 
     uint256 public totalSupply = 1000000000 * (uint256(10) ** decimals);

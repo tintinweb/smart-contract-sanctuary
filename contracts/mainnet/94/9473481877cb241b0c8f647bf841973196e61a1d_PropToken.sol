@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -315,9 +315,9 @@ contract PropToken is ERC20Token, Ownable {
 
 
     /* Info about property */
-    string mapURL = &quot;https://www.google.com/maps/place/Tehnolo%C5%A1ki+park+Ljubljana+d.o.o./@46.0491873,14.458252,17z/data=!3m1!4b1!4m5!3m4!1s0x477ad2b1cdee0541:0x8e60f36e738253f0!8m2!3d46.0491873!4d14.4604407&quot;;
-    string public name = &quot;PropToken BETA 000000000001&quot;; // Name of property
-    string public symbol = &quot;BSPT-BETA-000000000001&quot;; // Symbol for property
+    string mapURL = "https://www.google.com/maps/place/Tehnolo%C5%A1ki+park+Ljubljana+d.o.o./@46.0491873,14.458252,17z/data=!3m1!4b1!4m5!3m4!1s0x477ad2b1cdee0541:0x8e60f36e738253f0!8m2!3d46.0491873!4d14.4604407";
+    string public name = "PropToken BETA 000000000001"; // Name of property
+    string public symbol = "BSPT-BETA-000000000001"; // Symbol for property
     uint8 public decimals = 18; // Decimals
     uint8 public numOfProperties;
 

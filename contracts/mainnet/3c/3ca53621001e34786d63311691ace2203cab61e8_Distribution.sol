@@ -118,7 +118,7 @@ contract MiniMeTokenI is ERC20Token, Burnable {
   string public name;                //The Token&#39;s name: e.g. DigixDAO Tokens
   uint8 public decimals;             //Number of decimals of the smallest unit
   string public symbol;              //An identifier: e.g. REP
-  string public version = &quot;MMT_0.1&quot;; //An arbitrary versioning scheme
+  string public version = "MMT_0.1"; //An arbitrary versioning scheme
 
 ///////////////////
 // ERC20 Methods

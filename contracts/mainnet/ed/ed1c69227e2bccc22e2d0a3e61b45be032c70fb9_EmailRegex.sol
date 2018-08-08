@@ -6,7 +6,7 @@ contract EmailRegex {
     function (byte) constant internal returns (uint) func;
   }
 
-  string public constant regex = &quot;[a-zA-Z0-9._%+-]<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3e157e">[email&#160;protected]</a>[a-zA-Z0-9.-_]+\.[a-zA-Z]{2,}&quot;;
+  string public constant regex = "[a-zA-Z0-9._%+-]<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3e157e">[email&#160;protected]</a>[a-zA-Z0-9.-_]+\.[a-zA-Z]{2,}";
 
   function state(uint id) constant internal returns (State) {
     if (id == 1) {

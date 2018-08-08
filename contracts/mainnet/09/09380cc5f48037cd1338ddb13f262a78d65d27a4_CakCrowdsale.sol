@@ -200,7 +200,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -281,8 +281,8 @@ contract MintableToken is StandardToken, Ownable {
 
 
 contract CakToken is MintableToken {
-    string public constant name = &quot;Cash Account Key&quot;;
-    string public constant symbol = &quot;CAK&quot;;
+    string public constant name = "Cash Account Key";
+    string public constant symbol = "CAK";
     uint8 public constant decimals = 0;
 }
 
@@ -511,7 +511,7 @@ contract CakCrowdsale is Ownable, Crowdsale {
     }
 
     /**
-     * @dev whitelister &quot;account&quot;. This can be done from managers only
+     * @dev whitelister "account". This can be done from managers only
      * @param _investor address address of the investor&#39;s wallet
      */
     function whiteListInvestor(address _investor) external onlyManager {
@@ -521,7 +521,7 @@ contract CakCrowdsale is Ownable, Crowdsale {
     }
 
     /**
-     * @dev whitelister &quot;accounts&quot;. This can be done from managers only
+     * @dev whitelister "accounts". This can be done from managers only
      * @param _investors address[] addresses of the investors&#39; wallet
      */
     function batchWhiteListInvestors(address[] _investors) external onlyManager {
@@ -535,7 +535,7 @@ contract CakCrowdsale is Ownable, Crowdsale {
     }
 
     /**
-     * @dev un-whitelister &quot;account&quot;. This can be done from managers only
+     * @dev un-whitelister "account". This can be done from managers only
      * @param _investor address address of the investor&#39;s wallet
      */
     function unWhiteListInvestor(address _investor) external onlyManager {

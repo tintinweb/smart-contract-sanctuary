@@ -265,9 +265,9 @@ contract _RamenCoin is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;RAMEN&quot;;
+        symbol = "RAMEN";
 
-        name = &quot;Ramen Coin&quot;;
+        name = "Ramen Coin";
 
         decimals = 8;
 

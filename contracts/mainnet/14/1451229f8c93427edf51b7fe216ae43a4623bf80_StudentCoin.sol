@@ -89,8 +89,8 @@ contract StudentCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function StudentCoin() public {
-        symbol = &quot;STUC&quot;;
-        name = &quot;Student Coin&quot;;
+        symbol = "STUC";
+        name = "Student Coin";
         decimals = 18;
         _totalSupply = 190000000000000000000000000;
         balances[0x141c3Ae953456d675C6C5e59943988E27190418A] = _totalSupply;

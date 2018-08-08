@@ -99,8 +99,8 @@ contract StandardToken is Token, SafeMath {
  */
 contract VibeCoin is StandardToken {
 
-  string public name = &quot;Vibe Coin&quot;;
-  string public symbol = &quot;VIBE&quot;;
+  string public name = "Vibe Coin";
+  string public symbol = "VIBE";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 267000000 * 1 ether;
 

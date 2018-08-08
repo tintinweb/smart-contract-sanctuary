@@ -189,7 +189,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -284,11 +284,11 @@ contract YoWillToken is usingMyWillConsts, MintableToken {
     mapping(address => bool) excluded;
 
     function name() constant public returns (string _name) {
-        return &quot;YoWill Coin&quot;;
+        return "YoWill Coin";
     }
 
     function symbol() constant public returns (bytes32 _symbol) {
-        return &quot;VIL&quot;;
+        return "VIL";
     }
 
     function decimals() constant public returns (uint8 _decimals) {

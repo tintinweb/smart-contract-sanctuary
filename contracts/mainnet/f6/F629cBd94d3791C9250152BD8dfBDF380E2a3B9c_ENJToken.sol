@@ -87,9 +87,9 @@ contract IERC20Token {
     ERC20 Standard Token implementation
 */
 contract ERC20Token is IERC20Token, Utils {
-    string public standard = &quot;Token 0.1&quot;;
-    string public name = &quot;&quot;;
-    string public symbol = &quot;&quot;;
+    string public standard = "Token 0.1";
+    string public name = "";
+    string public symbol = "";
     uint8 public decimals = 0;
     uint256 public totalSupply = 0;
     mapping (address => uint256) public balanceOf;
@@ -339,7 +339,7 @@ contract ENJToken is ERC20Token, TokenHolder {
         @param _advisorAddress     Advisor address
     */
     function ENJToken(address _crowdFundAddress, address _advisorAddress, address _incentivisationFundAddress, address _enjinTeamAddress)
-    ERC20Token(&quot;Enjin Coin&quot;, &quot;ENJ&quot;, 18)
+    ERC20Token("Enjin Coin", "ENJ", 18)
      {
         crowdFundAddress = _crowdFundAddress;
         advisorAddress = _advisorAddress;
@@ -410,7 +410,7 @@ contract ENJToken is ERC20Token, TokenHolder {
         require(totalAllocatedToTeam < enjinTeamAllocation);
 
         uint256 enjinTeamAlloc = enjinTeamAllocation / 1000;
-        uint256 currentTranche = uint256(now - endTime) / 12 weeks;     // &quot;months&quot; after crowdsale end time (division floored)
+        uint256 currentTranche = uint256(now - endTime) / 12 weeks;     // "months" after crowdsale end time (division floored)
 
         if(teamTranchesReleased < maxTeamTranches && currentTranche > teamTranchesReleased) {
             teamTranchesReleased++;

@@ -104,8 +104,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;MMC&quot;;
-        name = &quot;mimibit Coin&quot;;
+        symbol = "MMC";
+        name = "mimibit Coin";
         decimals = 18;
         _totalSupply = 2700000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -220,7 +220,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -302,8 +302,8 @@ contract Claimable is Ownable {
 
 contract Token77G is Claimable, StandardToken {
 
-    string constant public name = &quot;GraphenTech&quot;;
-    string constant public symbol = &quot;77G&quot;;
+    string constant public name = "GraphenTech";
+    string constant public symbol = "77G";
     uint8 constant public decimals = 18; // 18 decimals is the strongly suggested default, avoid changing it
 
     uint256 public graphenRestrictedDate;

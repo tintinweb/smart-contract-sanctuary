@@ -127,8 +127,8 @@ contract StandardToken is ERC20 {
 }
 
 contract MixinToken is StandardToken {
-  string public constant name = &quot;Mixin&quot;;
-  string public constant symbol = &quot;XIN&quot;;
+  string public constant name = "Mixin";
+  string public constant symbol = "XIN";
   uint8 public constant decimals = 18;
 
   function MixinToken() public {

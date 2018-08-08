@@ -58,8 +58,8 @@ contract EOSGold is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;EOSGold&quot;;
-    string public constant symbol = &quot;EOSG&quot;;
+    string public constant name = "EOSGold";
+    string public constant symbol = "EOSG";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000e8;

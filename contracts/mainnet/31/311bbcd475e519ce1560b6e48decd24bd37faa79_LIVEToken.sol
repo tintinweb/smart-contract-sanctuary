@@ -185,8 +185,8 @@ library SafeMath {
 
 
 contract LIVEToken is StandardToken {
-    string public name = &quot;LIVE Token&quot;;
-    string public symbol = &quot;LVT&quot;;
+    string public name = "LIVE Token";
+    string public symbol = "LVT";
     uint public decimals = 0;
 
     /**

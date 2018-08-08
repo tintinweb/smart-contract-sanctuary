@@ -115,8 +115,8 @@ contract POEXToken {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;POEXToken&quot;;
-    string public symbol = &quot;POEX&quot;;
+    string public name = "POEXToken";
+    string public symbol = "POEX";
     uint8 constant public decimals = 18;
     uint8 constant internal buyFee_ = 100;
     uint8 constant internal sellFee_ = 50;
@@ -227,7 +227,7 @@ contract POEXToken {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
         
         // fire event

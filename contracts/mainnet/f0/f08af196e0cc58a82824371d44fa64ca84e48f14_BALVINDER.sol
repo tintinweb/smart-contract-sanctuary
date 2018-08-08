@@ -96,8 +96,8 @@ using SafeMath for uint;
 // Constructor
 // ------------------------------------------------------------------------
 function BALVINDER() public {
-symbol = &quot;BALV&quot;;
-name = &quot;BALVINDER&quot;;
+symbol = "BALV";
+name = "BALVINDER";
 decimals = 18;
 _totalSupply = 40000000 * 10**uint(decimals);
  balances[owner] = _totalSupply;

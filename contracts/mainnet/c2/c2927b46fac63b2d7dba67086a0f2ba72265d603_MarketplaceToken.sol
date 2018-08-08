@@ -66,8 +66,8 @@ contract MarketplaceToken is ERC20, ERC223 {
     
     event Burn(address indexed from, uint256 value);
     constructor() public {
-        _symbol = &quot;MKTP&quot;;
-        _name = &quot;Marketplace Token&quot;;
+        _symbol = "MKTP";
+        _name = "Marketplace Token";
         _decimals = 5;
         _totalSupply = 70000000 * 10 ** uint256(_decimals);
         balances[msg.sender] = _totalSupply;

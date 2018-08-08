@@ -5,7 +5,7 @@ pragma solidity 0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -379,9 +379,9 @@ contract CodexCoin is PausableToken {
   /* solium-disable uppercase */
   uint8 constant public decimals = 18;
 
-  string constant public name = &quot;CodexCoin&quot;;
+  string constant public name = "CodexCoin";
 
-  string constant public symbol = &quot;CODX&quot;;
+  string constant public symbol = "CODX";
   /* solium-enable */
 
   constructor(uint256 _totalSupply) public {

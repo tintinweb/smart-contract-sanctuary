@@ -110,8 +110,8 @@ contract GuneToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GuneToken() public {
-        symbol = &quot;GUNE&quot;;
-        name = &quot;Gune Token&quot;;
+        symbol = "GUNE";
+        name = "Gune Token";
         decimals = 18;
         bonusEnds = now + 2 hours;
         endDate = now + 2 hours;

@@ -38,7 +38,7 @@ contract Token {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -218,8 +218,8 @@ contract BurnableToken is StandardToken {
 }
 
 contract MBEToken is BurnableToken {
-  string public constant name = &quot;MoBee&quot;;
-  string public constant symbol = &quot;MBE&quot;;
+  string public constant name = "MoBee";
+  string public constant symbol = "MBE";
   uint8 public constant decimals = 18;
   address public tokenWallet;
   address public founderWallet;

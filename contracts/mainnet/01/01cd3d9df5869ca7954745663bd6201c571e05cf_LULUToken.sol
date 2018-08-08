@@ -178,8 +178,8 @@ contract StandardToken is BasicToken, ERC20 {
 contract LULUToken is StandardToken {
   using SafeMath for uint256;
 
-  string public name = &quot;LULU Token&quot;;
-  string public symbol = &quot;LULU&quot;;
+  string public name = "LULU Token";
+  string public symbol = "LULU";
   string public releaseArr = &#39;0000000000000000000&#39;;
  
   uint public decimals = 18;

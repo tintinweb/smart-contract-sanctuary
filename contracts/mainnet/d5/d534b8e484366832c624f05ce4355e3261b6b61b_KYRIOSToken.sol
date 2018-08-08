@@ -33,8 +33,8 @@ interface tokenRecipient {
 
 contract KYRIOSToken {
     using SafeMath for uint256;
-    string public name = &quot;KYRIOS Token&quot;;
-    string public symbol = &quot;KRS&quot;;
+    string public name = "KYRIOS Token";
+    string public symbol = "KRS";
     uint8 public decimals = 18;
     uint256 public totalSupply = 2000000000 ether;
     uint256 public totalAirDrop = totalSupply * 10 / 100;

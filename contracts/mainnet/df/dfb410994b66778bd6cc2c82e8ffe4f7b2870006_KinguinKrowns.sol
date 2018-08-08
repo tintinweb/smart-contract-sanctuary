@@ -132,8 +132,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract KinguinKrowns is ERC223, StandardToken {
   address public owner;  // token owner adddres
-  string public constant name = &quot;Kinguin Krowns&quot;;
-  string public constant symbol = &quot;KRS&quot;;
+  string public constant name = "Kinguin Krowns";
+  string public constant symbol = "KRS";
   uint8 public constant decimals = 18;
   // uint256 public totalSupply; // defined in ERC20 contract
 		

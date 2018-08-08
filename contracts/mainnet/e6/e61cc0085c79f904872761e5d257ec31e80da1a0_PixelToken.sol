@@ -256,8 +256,8 @@ contract StandardToken is ERC20, BasicToken {
 contract PixelToken is StandardToken, BurnableToken, Ownable {
     using SafeMath for uint;
 
-    string constant public symbol = &quot;PXLT&quot;;
-    string constant public name = &quot;Pixel Crowdsale Token&quot;;
+    string constant public symbol = "PXLT";
+    string constant public name = "Pixel Crowdsale Token";
 
     uint8 constant public decimals = 18;
     uint256 INITIAL_SUPPLY = 20000000e18;

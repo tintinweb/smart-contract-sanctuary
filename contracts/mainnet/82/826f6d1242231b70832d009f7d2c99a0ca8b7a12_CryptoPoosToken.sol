@@ -46,8 +46,8 @@ contract CryptoPoosToken is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;CryptoPoos&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;CryptoPoosToken&quot;; // solhint-disable-line
+  string public constant NAME = "CryptoPoos"; // solhint-disable-line
+  string public constant SYMBOL = "CryptoPoosToken"; // solhint-disable-line
 
   uint256 private startingPrice = 0.005 ether;
   uint256 private constant PROMO_CREATION_LIMIT = 5000;
@@ -119,12 +119,12 @@ contract CryptoPoosToken is ERC721 {
     ceoAddress = msg.sender;
     cooAddress = msg.sender;
 	
-	createContractPoo(&quot;1&quot;);
-	createContractPoo(&quot;2&quot;);
-	createContractPoo(&quot;3&quot;);
-	createContractPoo(&quot;4&quot;);
-	createContractPoo(&quot;5&quot;);
-	createContractPoo(&quot;6&quot;);
+	createContractPoo("1");
+	createContractPoo("2");
+	createContractPoo("3");
+	createContractPoo("4");
+	createContractPoo("5");
+	createContractPoo("6");
 	roundCounter = 1;
   }
 

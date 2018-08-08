@@ -109,8 +109,8 @@ contract WallStreetCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WallStreetCoin() public {
-        symbol = &quot;WLLC&quot;;
-        name = &quot;WallStreetCoin&quot;;
+        symbol = "WLLC";
+        name = "WallStreetCoin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xa3b67e3e63484f806b86be0a6c3b7e93a2854289] = _totalSupply;

@@ -116,8 +116,8 @@ contract Visus is BasicToken,Ownable {
    using SafeMath for uint256;
    
    //TODO: Change the name and the symbol
-   string public constant name = &quot;Visus&quot;;
-   string public constant symbol = &quot;VIS&quot;;
+   string public constant name = "Visus";
+   string public constant symbol = "VIS";
    uint256 public constant decimals = 18;
 
    uint256 public constant INITIAL_SUPPLY = 100000000 * 10 ** 18;

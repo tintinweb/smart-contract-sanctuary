@@ -200,7 +200,7 @@ contract ERC721BasicToken is ERC721Basic {
 
     function safeTransferFrom(address _from, address _to, uint256 _tokenId) public canTransfer(_tokenId) {
         // solium-disable-next-line arg-overflow
-        safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+        safeTransferFrom(_from, _to, _tokenId, "");
     }
     
     function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes _data) public canTransfer(_tokenId) {
@@ -424,7 +424,7 @@ interface EtheremonAdventureHandler {
     function handleMultipleItems(address _sender, uint _classId1, uint _classId2, uint _classId3, uint _target, uint _param) external;
 }
 
-contract EtheremonAdventureItem is ERC721Token(&quot;EtheremonAdventure&quot;, &quot;EMOND&quot;), BasicAccessControl {
+contract EtheremonAdventureItem is ERC721Token("EtheremonAdventure", "EMOND"), BasicAccessControl {
     uint constant public MAX_OWNER_PERS_SITE = 10;
     uint constant public MAX_SITE_ID = 108;
     uint constant public MAX_SITE_TOKEN_ID = 1080;

@@ -269,10 +269,10 @@ contract Token is ERC20 {
 /**
  * @title Cat&#39;s Token, miaow!!!
  *
- * @dev Defines token with name &quot;Cat&#39;s Token&quot;, symbol &quot;CTS&quot;
+ * @dev Defines token with name "Cat&#39;s Token", symbol "CTS"
  * and 3 digits after the point
  */
-contract Cat is Token(&quot;Cat&#39;s Token&quot;, &quot;CTS&quot;, 3), Owned {
+contract Cat is Token("Cat&#39;s Token", "CTS", 3), Owned {
 
     /**
      * @dev Emits specified number of tokens. Only owner can emit.

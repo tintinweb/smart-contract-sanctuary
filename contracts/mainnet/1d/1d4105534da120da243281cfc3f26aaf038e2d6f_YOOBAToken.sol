@@ -85,8 +85,8 @@ contract IERC20Token {
     ERC20 Standard Token implementation
 */
 contract StandardERC20Token is IERC20Token, Utils {
-    string public name = &quot;&quot;;
-    string public symbol = &quot;&quot;;
+    string public name = "";
+    string public symbol = "";
     uint8 public decimals = 0;
     uint256 public totalSupply = 0;
     mapping (address => uint256) public balanceOf;
@@ -309,7 +309,7 @@ contract YOOBAToken is StandardERC20Token, Owned,YooStop {
         
     */
     function YOOBAToken(address _airdropAddress, address _ecosystemAddress, address _backupAddress, address _yoobaTeamAddress,address _earlyCommunityAddress)
-    StandardERC20Token(&quot;Yooba token&quot;, &quot;YOO&quot;, 18) public
+    StandardERC20Token("Yooba token", "YOO", 18) public
      {
         airdropAddress = _airdropAddress;
         yoobaTeamAddress = _yoobaTeamAddress;

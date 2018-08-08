@@ -6,7 +6,7 @@ pragma solidity ^0.4.18;
       ,&#39;_/_  _ _`.
     ,&#39;__/_ ___ _  `.
   ,&#39;_  /___ __ _ __ `.
- &#39;-.._/___...-&quot;-.-..__`.
+ &#39;-.._/___...-"-.-..__`.
   B
 
  EthDividends. A no-bullshit, transparent, self-sustaining pyramid scheme.
@@ -40,8 +40,8 @@ contract ETHDividends {
 	int constant price_coeff = -0x296ABF784A358468C;
 
 	// Typical values that we have to declare.
-	string constant public name = &quot;ETHDividends&quot;;
-	string constant public symbol = &quot;ETX&quot;;
+	string constant public name = "ETHDividends";
+	string constant public symbol = "ETX";
 	uint8 constant public decimals = 18;
 
 	// Array between each address and their number of tokens.

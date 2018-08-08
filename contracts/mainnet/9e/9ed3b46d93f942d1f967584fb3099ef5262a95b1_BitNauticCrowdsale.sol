@@ -830,8 +830,8 @@ contract CappedToken is MintableToken {
 }
 
 contract BitNauticToken is CappedToken {
-  string public constant name = &quot;BitNautic Token&quot;;
-  string public constant symbol = &quot;BTNT&quot;;
+  string public constant name = "BitNautic Token";
+  string public constant symbol = "BTNT";
   uint8 public constant decimals = 18;
 
   uint256 public totalSupply = 0;

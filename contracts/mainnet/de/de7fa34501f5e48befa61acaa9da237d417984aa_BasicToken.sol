@@ -46,9 +46,9 @@ contract BasicToken {
   /* Change the function BasicToken() name to <Your Preferred Name> to change name*/
 
   function BasicToken(){
-    name = &quot;TaiToken&quot;;
+    name = "TaiToken";
     totalSupply = 5000000000000;
-    symbol = &quot;TKT&quot;;
+    symbol = "TKT";
     owner = msg.sender;
     balances[msg.sender] = totalSupply;
     decimals = 0;

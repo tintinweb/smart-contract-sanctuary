@@ -206,8 +206,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract LuckyCoin is  StandardToken{
-  string public constant name = &quot;Lucky Coin 好运来&quot;;
-  string public constant symbol = &quot;LC&quot;;
+  string public constant name = "Lucky Coin 好运来";
+  string public constant symbol = "LC";
   uint8 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));
 

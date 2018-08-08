@@ -48,7 +48,7 @@ library SafeMath {
 contract TOSInstitutionsIncentiveContract {
     using SafeERC20 for ERC20;
     using SafeMath for uint;
-    string public constant name = &quot;TOSInstitutionsIncentiveContract&quot;;
+    string public constant name = "TOSInstitutionsIncentiveContract";
 
 
     uint256 public constant RELEASE_START               = 1541347200; //2018/11/5 0:0:0

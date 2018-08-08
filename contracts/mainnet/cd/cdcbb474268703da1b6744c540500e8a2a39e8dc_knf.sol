@@ -185,7 +185,7 @@ contract knf is StandardToken {
   mapping(address => uint256) airdroped;
   uint8 public decimals; // solium-disable-line uppercase
   uint256 DropedThisWeek;
-  string constant public version = &quot;1.2&quot;;
+  string constant public version = "1.2";
   uint256 lastWeek;
   uint256 decimate;
   uint256 weekly_limit;

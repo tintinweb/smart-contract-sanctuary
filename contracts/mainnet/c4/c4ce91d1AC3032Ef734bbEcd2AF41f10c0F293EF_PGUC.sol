@@ -123,8 +123,8 @@ contract StandardToken is PgucToken, ERC20 {
 }
 
 contract PGUC is StandardToken, Ownable {
-  string public constant name = &quot;Plus Gold Union Coins&quot;;
-  string public constant symbol = &quot;PGUC&quot;;
+  string public constant name = "Plus Gold Union Coins";
+  string public constant symbol = "PGUC";
   uint public constant decimals = 9;
   // Constructor
   function PGUC() {

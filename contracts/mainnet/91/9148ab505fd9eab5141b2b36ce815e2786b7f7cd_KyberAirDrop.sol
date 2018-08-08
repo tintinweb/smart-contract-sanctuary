@@ -78,8 +78,8 @@ contract KyberAirDrop is Ownable {
 }
 
 contract KyberGenesisToken is Ownable {
-  string  public  constant name     = &quot;Kyber Genesis Token&quot;;
-  string  public  constant symbol   = &quot;KGT&quot;;
+  string  public  constant name     = "Kyber Genesis Token";
+  string  public  constant symbol   = "KGT";
   uint    public  constant decimals = 0;
 
   uint                   public totalSupply = 0;

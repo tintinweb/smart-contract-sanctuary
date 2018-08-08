@@ -81,8 +81,8 @@ contract GarudaToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Garuda Token&quot;;
-    string public constant symbol = &quot;GAD&quot;;
+    string public constant name = "Garuda Token";
+    string public constant symbol = "GAD";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 370000000e8;

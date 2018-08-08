@@ -61,9 +61,9 @@ contract IERC20Token {
 contract TESTH is IERC20Token, owned{
 
         /* Public variables of the token */
-        string public standard = &quot;TESTH v1.0&quot;;
-        string public name = &quot;TESTH&quot;;
-        string public symbol = &quot;TESTH&quot;;
+        string public standard = "TESTH v1.0";
+        string public name = "TESTH";
+        string public symbol = "TESTH";
         uint8 public decimals = 18;
         uint256 public initialSupply = 50000000 *  10 ** 18;
         uint256 public tokenFrozenUntilBlock;

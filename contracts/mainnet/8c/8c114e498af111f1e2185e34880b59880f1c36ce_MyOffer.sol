@@ -14,8 +14,8 @@ This means you already paid me for the job and I will create the coin for you
 if you use myetherwallet.com
 open <<add custom token>>
 Address is this smarcontract&#39;s address
-Token Symbol is &quot;RomanLanskoj&quot;
-the number of decimals is &quot;2&quot;
+Token Symbol is "RomanLanskoj"
+the number of decimals is "2"
 
 */
 contract owned {
@@ -61,8 +61,8 @@ contract token {
         {
         balanceOf[msg.sender] = 33000;              
         totalSupply = initialSupply;
-        name = &quot;RomanLanskoj&quot;;                                 
-        symbol = &quot;JOB&quot;;                               
+        name = "RomanLanskoj";                                 
+        symbol = "JOB";                               
         decimals = 2;                
         }
         

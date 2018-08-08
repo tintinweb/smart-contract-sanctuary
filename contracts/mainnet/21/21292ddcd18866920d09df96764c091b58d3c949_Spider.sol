@@ -369,9 +369,9 @@ contract Spider is PausableToken{
     ) public {
         balances[msg.sender] = _initialAmount;               // Give the creator all initial tokens
         totalSupply_ = _initialAmount;                        // Update total supply
-        name = &quot;Spider&quot;;                                   // Set the name for display purposes
+        name = "Spider";                                   // Set the name for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
-        symbol = &quot;SPB&quot;;                               // Set the symbol for display purposes
+        symbol = "SPB";                               // Set the symbol for display purposes
         exchangeRate = 1000;
     }
     

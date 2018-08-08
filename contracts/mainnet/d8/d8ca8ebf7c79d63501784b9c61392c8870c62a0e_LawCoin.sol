@@ -117,7 +117,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -336,8 +336,8 @@ contract PausableToken is StandardToken, Pausable {
 contract LawCoin is PausableToken, MintableToken {
   using SafeMath for uint256;
 
-  string public name = &quot;LawCoin&quot;;
-  string public symbol = &quot;LAW&quot;;
+  string public name = "LawCoin";
+  string public symbol = "LAW";
   uint public decimals = 18;
 
 }

@@ -212,7 +212,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -254,8 +254,8 @@ contract Ownable {
  * @dev Commit Good ERC20 Token, that inherits from standard token.
  */
 contract CommitGoodToken is Ownable, StandardToken {
-	string public constant SYMBOL = &quot;GOOD&quot;;
-	string public constant NAME = &quot;GOOD&quot;;
+	string public constant SYMBOL = "GOOD";
+	string public constant NAME = "GOOD";
 	uint8 public constant DECIMALS = 18;
 
 	uint256 public platformSupply = 100000000 * (10 ** uint256(DECIMALS));

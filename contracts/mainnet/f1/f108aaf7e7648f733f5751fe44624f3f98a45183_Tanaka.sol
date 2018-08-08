@@ -98,8 +98,8 @@ contract Tanaka is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Tanaka() public {
-        symbol = &quot;ONT&quot;;
-        name = &quot;Ontology Token (ONT)&quot;;
+        symbol = "ONT";
+        name = "Ontology Token (ONT)";
         decimals = 0;
         _totalSupply = 1000000000;
         balances[0x6a63B1dcccf12024F74447e1d99BD0220D6C603C] = _totalSupply;

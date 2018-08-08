@@ -117,8 +117,8 @@ contract VirtualCoin is newToken, ERC20 {
 }
 
 contract VICCoin is VirtualCoin, Ownable {
-  string public constant name = &quot;Virtual Coin&quot;;
-  string public constant symbol = &quot;VIC&quot;;
+  string public constant name = "Virtual Coin";
+  string public constant symbol = "VIC";
   uint public constant decimals = 3;
   uint256 public initialSupply;
     

@@ -250,7 +250,7 @@ contract Withdrawable is Ownable {
 
 
 contract Token is CappedToken, BurnableToken, Withdrawable {
-    constructor() CappedToken(34e14) StandardToken(&quot;Wind Energy Mining coin&quot;, &quot;WEMcoin&quot;, 8) public {
+    constructor() CappedToken(34e14) StandardToken("Wind Energy Mining coin", "WEMcoin", 8) public {
         
     }
 }

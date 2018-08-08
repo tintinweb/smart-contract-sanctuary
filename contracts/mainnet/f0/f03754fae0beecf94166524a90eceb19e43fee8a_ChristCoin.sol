@@ -217,8 +217,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract ChristCoin is StandardToken {
-    string public constant name = &quot;ChristCoin&quot;;
-    string public constant symbol = &quot;CHRIST&quot;;
+    string public constant name = "ChristCoin";
+    string public constant symbol = "CHRIST";
     uint public constant decimals = 18;
 
     function ChristCoin() public {

@@ -51,7 +51,7 @@ library SafeMath {
  * https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/ownership/Ownable.sol
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -222,7 +222,7 @@ contract CBR is Ownable {
     servers.push(newServer);
   }
 
-  // set an existing server as &quot;offline&quot;
+  // set an existing server as "offline"
   function removeServer(uint serverIndex)
     external // external costs less gas than public
     onlyOwner
@@ -266,7 +266,7 @@ contract CBR is Ownable {
     external // external costs less gas than public
     onlyOwner
     serverIsOnline(serverIndex)
-    serverIsNotInGame(serverIndex) // there can be no game active for us to be able to &quot;start a game&quot;
+    serverIsNotInGame(serverIndex) // there can be no game active for us to be able to "start a game"
   {
     require(roster.length > 0);
 
@@ -303,7 +303,7 @@ contract CBR is Ownable {
     external // external costs less gas than public
     onlyOwner
     serverIsOnline(serverIndex)
-    //serverIsInGame(serverIndex) // there needs to be a game active for us to be able to &quot;end the game&quot;
+    //serverIsInGame(serverIndex) // there needs to be a game active for us to be able to "end the game"
     addressNotZero(first)
     addressNotZero(second)
     addressNotZero(third)

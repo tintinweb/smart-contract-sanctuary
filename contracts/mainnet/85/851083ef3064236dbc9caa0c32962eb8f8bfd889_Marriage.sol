@@ -171,18 +171,18 @@ library DateTime {
   function monthStr(uint timestamp) internal pure returns (string ret) {
     uint8 month = getMonth(timestamp);
 
-    if (month == 1) { ret = &quot;Jan&quot;; }
-    if (month == 2) { ret = &quot;Feb&quot;; }
-    if (month == 3) { ret = &quot;Mar&quot;; }
-    if (month == 4) { ret = &quot;Apr&quot;; }
-    if (month == 5) { ret = &quot;May&quot;; }
-    if (month == 6) { ret = &quot;Jun&quot;; }
-    if (month == 7) { ret = &quot;Jul&quot;; }
-    if (month == 8) { ret = &quot;Aug&quot;; }
-    if (month == 9) { ret = &quot;Sept&quot;; }
-    if (month == 10) { ret = &quot;Oct&quot;; }
-    if (month == 11) { ret = &quot;Nov&quot;; }
-    if (month == 12) { ret = &quot;Dec&quot;; }
+    if (month == 1) { ret = "Jan"; }
+    if (month == 2) { ret = "Feb"; }
+    if (month == 3) { ret = "Mar"; }
+    if (month == 4) { ret = "Apr"; }
+    if (month == 5) { ret = "May"; }
+    if (month == 6) { ret = "Jun"; }
+    if (month == 7) { ret = "Jul"; }
+    if (month == 8) { ret = "Aug"; }
+    if (month == 9) { ret = "Sept"; }
+    if (month == 10) { ret = "Oct"; }
+    if (month == 11) { ret = "Nov"; }
+    if (month == 12) { ret = "Dec"; }
   }
 
   function toString(uint timestamp) internal pure returns (string ret) {
@@ -191,9 +191,9 @@ library DateTime {
     string memory year  = StrUtil.uintToString(getYear(timestamp));
 
     ret = ret.concat(day)
-             .concat(&quot; &quot;)
+             .concat(" ")
              .concat(month)
-             .concat(&quot; &quot;)
+             .concat(" ")
              .concat(year);
   }
 }
@@ -231,18 +231,18 @@ contract Marriage {
     bride = _bride;
 
     groomVow = groomVow
-                    .concat(&quot;I, &quot;)
+                    .concat("I, ")
                     .concat(_groom)
-                    .concat(&quot;, take thee, &quot;)
+                    .concat(", take thee, ")
                     .concat(_bride)
-                    .concat(&quot;, to be my wedded Wife, to have and to hold from this day forward, for better for worse, for richer for poorer, in sickness and in health, to love and to cherish, till death us do part.&quot;);
+                    .concat(", to be my wedded Wife, to have and to hold from this day forward, for better for worse, for richer for poorer, in sickness and in health, to love and to cherish, till death us do part.");
 
     brideVow = brideVow
-                    .concat(&quot;I, &quot;)
+                    .concat("I, ")
                     .concat(_bride)
-                    .concat(&quot;, take thee, &quot;)
+                    .concat(", take thee, ")
                     .concat(_groom)
-                    .concat(&quot;, to be my wedded Husband, to have and to hold from this day forward, for better for worse, for richer for poorer, in sickness and in health, to love, cherish, and to obey, till death us do part.&quot;);
+                    .concat(", to be my wedded Husband, to have and to hold from this day forward, for better for worse, for richer for poorer, in sickness and in health, to love, cherish, and to obey, till death us do part.");
   }
 
   function () external payable {
@@ -294,17 +294,17 @@ contract Marriage {
   function getStatus() public view returns (string ret) {
     if (status == Status.Affianced) {
       ret = ret.concat(groom)
-         .concat(&quot; and &quot;)
+         .concat(" and ")
          .concat(bride)
-         .concat(&quot; are affianced&quot;);
+         .concat(" are affianced");
     } else if (status == Status.SignedByGroom) {
       ret = ret.concat(groom)
-         .concat(&quot; has signed&quot;);
+         .concat(" has signed");
     } else {
       ret = ret.concat(groom)
-         .concat(&quot; and &quot;)
+         .concat(" and ")
          .concat(bride)
-         .concat(&quot; got married on &quot;)
+         .concat(" got married on ")
          .concat(DateTime.toString(marriedAt));
     }
   }

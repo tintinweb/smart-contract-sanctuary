@@ -113,8 +113,8 @@ contract MottoCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MottoCoin() public {
-        symbol = &quot;M8&quot;;
-        name = &quot;Motto Coin&quot;;
+        symbol = "M8";
+        name = "Motto Coin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000;
         balances[0xc65F5E81Bc68Dd67651319e6F7309804B9A4EB4d] = _totalSupply;

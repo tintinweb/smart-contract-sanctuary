@@ -111,8 +111,8 @@ contract PreHELIX is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PreHELIX() public {
-        symbol = &quot;pHIX&quot;;
-        name = &quot;PreHELIX Token&quot;;
+        symbol = "pHIX";
+        name = "PreHELIX Token";
         decimals = 18;
         _totalSupply = 5000000000000000000000000000;
         balances[0x00008aD2045CFc8a96274BD74BE416E4DA553d0e] = _totalSupply;

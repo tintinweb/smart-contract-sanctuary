@@ -114,8 +114,8 @@ contract RGN is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function RGN() public {
-        symbol = &quot;RGN&quot;;
-        name = &quot;Regen Coin&quot;;
+        symbol = "RGN";
+        name = "Regen Coin";
         decimals = 18;
         _totalSupply = 100000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

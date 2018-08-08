@@ -29,8 +29,8 @@ contract BeeAppToken {
     ) public {
         //totalSupply = initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Bee App Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;BTO&quot;;                               // Set the symbol for display purposes
+        name = "Bee App Token";                                   // Set the name for display purposes
+        symbol = "BTO";                               // Set the symbol for display purposes
     }
     /**
      * Internal transfer, only can be called by this contract

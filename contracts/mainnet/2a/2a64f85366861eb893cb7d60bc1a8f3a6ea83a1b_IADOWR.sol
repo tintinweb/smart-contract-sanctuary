@@ -99,8 +99,8 @@ contract Token {
 }
 
 contract IADOWR is owned, Token {
-	string public name = &quot;IADOWR Coin&quot;;                                      
-    string public symbol = &quot;IAD&quot;;                                            
+	string public name = "IADOWR Coin";                                      
+    string public symbol = "IAD";                                            
     address public Test12Address = this;                                 
     uint8 public decimals = 18;                                          
     uint256 public initialSupply = 2000000000000000000000000000; 

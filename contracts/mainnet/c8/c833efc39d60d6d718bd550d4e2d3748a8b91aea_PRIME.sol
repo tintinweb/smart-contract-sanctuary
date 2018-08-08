@@ -23,8 +23,8 @@ contract PRIME{
     function PRIME() {
         balanceOf[msg.sender] =  3000000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  3000000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;PRIME&quot;;                                   // Set the name for display purposes
-        symbol = &quot;PME&quot;;                               // Set the symbol for display purposes
+        name = "PRIME";                                   // Set the name for display purposes
+        symbol = "PME";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

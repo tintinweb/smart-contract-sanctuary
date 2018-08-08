@@ -183,8 +183,8 @@ contract Ownable {
 }
 
 contract Factom is StandardToken, Ownable {
-  string public constant name = &quot;Factom&quot;;
-  string public constant symbol = &quot;FCT&quot;;
+  string public constant name = "Factom";
+  string public constant symbol = "FCT";
   uint8 public constant decimals = 18;
   
   uint256 public FactomIssued;
@@ -223,7 +223,7 @@ contract Factom is StandardToken, Ownable {
     totalSupply = 10000000 * (10 ** uint256(decimals)); 
     balances[msg.sender] = totalSupply;  
     FactomIssued = totalSupply;
-    FactomTalk = &quot;Factom&quot;;
+    FactomTalk = "Factom";
     
   }
  

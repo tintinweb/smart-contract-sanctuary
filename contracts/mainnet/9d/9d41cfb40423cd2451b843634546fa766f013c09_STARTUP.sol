@@ -109,8 +109,8 @@ contract STARTUP is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function STARTUP() public {
-        symbol = &quot;STRT&quot;;
-        name = &quot;STARTUP&quot;;
+        symbol = "STRT";
+        name = "STARTUP";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xa2f9771889072bfcdb7c0337d4a0b43b177f5f2d] = _totalSupply;

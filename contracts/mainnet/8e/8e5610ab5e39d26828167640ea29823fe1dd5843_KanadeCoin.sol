@@ -51,7 +51,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -298,8 +298,8 @@ contract KanadeCoin is StandardToken, Ownable {
     uint public constant atto = 100000000;
     uint public constant decimals = 8;
 
-    string public constant name   = &quot;KanadeCoin&quot;;
-    string public constant symbol = &quot;KNDC&quot;;
+    string public constant name   = "KanadeCoin";
+    string public constant symbol = "KNDC";
 
     uint public contractStartTime;
 

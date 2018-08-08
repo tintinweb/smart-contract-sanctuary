@@ -226,7 +226,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -480,8 +480,8 @@ contract ERC827Token is ERC827, StandardToken {
 
 contract TraxionToken is ERC827Token, PausableToken {
   
-    string public constant name = &quot;Traxion Token&quot;;
-    string public constant symbol = &quot;TXN&quot;;
+    string public constant name = "Traxion Token";
+    string public constant symbol = "TXN";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 5e8 * 10**uint256(decimals);
 
@@ -491,7 +491,7 @@ contract TraxionToken is ERC827Token, PausableToken {
         balances[0xC889dFBDc9C1D0FC3E77e46c3b82A3903b2D919c] = INITIAL_SUPPLY;
         emit Transfer(0x0, 0xC889dFBDc9C1D0FC3E77e46c3b82A3903b2D919c, INITIAL_SUPPLY);
     }
-    /** @dev erc827 extension will be used by the TraxionWallet system which spawns a dynamic &quot;Traxion Contract&quot; in ethereum blockchain
+    /** @dev erc827 extension will be used by the TraxionWallet system which spawns a dynamic "Traxion Contract" in ethereum blockchain
              through Hyperledger Fabric SDK. This bridge the communication with the hyperledger fabric API from ethereum network and vice versa. 
              Traxion Token will be used in our system  wherein the ABI will be written for its specific transaction through out Traxion Wallet App.
     **/

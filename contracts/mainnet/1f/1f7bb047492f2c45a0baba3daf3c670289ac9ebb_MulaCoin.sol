@@ -135,9 +135,9 @@ contract MulaCoin is StandardToken
 	{
 		_totalSupply 		 = 3000000000000000000000000000;  // Update total supply
 		balances[msg.sender]     = _totalSupply;             // Give the creator all initial tokens.
-		name 				 = &quot;MULA COIN&quot;;                   // Set the name
+		name 				 = "MULA COIN";                   // Set the name
 		decimals 			 = 18;                            // Amount of decimals
-		symbol 				 = &quot;MUT&quot;;                         // Set the symbol
+		symbol 				 = "MUT";                         // Set the symbol
 		unitsOneEthCanBuy 	 = 4356;                          // Set the price
 		fundsWallet 		 = msg.sender;                    // The owner of the contract gets ETH
 	}

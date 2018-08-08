@@ -55,11 +55,11 @@ contract SafeMath {
 /*-------------------------------------------------------------------------*/
 contract GemstoneToken is owned, SafeMath {
 	
-	string 	public EthernetCashWebsite	= &quot;https://ethernet.cash&quot;;
+	string 	public EthernetCashWebsite	= "https://ethernet.cash";
 	address public EthernetCashAddress 	= this;
 	address public creator 				= msg.sender;
-    string 	public name 				= &quot;Gemstone Token&quot;;
-    string 	public symbol 				= &quot;GST&quot;;
+    string 	public name 				= "Gemstone Token";
+    string 	public symbol 				= "GST";
     uint8 	public decimals 			= 18;											    
     uint256 public totalSupply 			= 19999999986000000000000000000;
     uint256 public buyPrice 			= 18000000;

@@ -228,8 +228,8 @@ contract OVC is Ownable, TokenERC20 {
     function OVC() public {
 
         totalSupply = safeMul(83875000,(10 ** uint256(decimals) ));  // Update total supply(83,875,000) with the decimal amount
-        name = &quot;OVCODE&quot;;  // Set the name for display purposes
-        symbol = &quot;OVC&quot;;   // Set the symbol for display purposes
+        name = "OVCODE";  // Set the name for display purposes
+        symbol = "OVC";   // Set the symbol for display purposes
         
         // 30,000,000 tokens for Presale 
         balanceOf[msg.sender] = safeMul(30000000,(10 ** uint256(decimals))); 

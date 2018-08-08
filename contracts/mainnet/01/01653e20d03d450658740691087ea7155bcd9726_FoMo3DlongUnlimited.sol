@@ -164,7 +164,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -186,7 +186,7 @@ library SafeMath {
         pure
         returns (uint256) 
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -199,7 +199,7 @@ library SafeMath {
         returns (uint256 c) 
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
     
@@ -273,14 +273,14 @@ library NameFilter {
         uint256 _length = _temp.length;
         
         //sorry limited to 32 characters
-        require (_length <= 32 && _length > 0, &quot;string must be between 1 and 32 characters&quot;);
+        require (_length <= 32 && _length > 0, "string must be between 1 and 32 characters");
         // make sure it doesnt start with or end with space
-        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, &quot;string cannot start or end with space&quot;);
+        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, "string cannot start or end with space");
         // make sure first two characters are not 0x
         if (_temp[0] == 0x30)
         {
-            require(_temp[1] != 0x78, &quot;string cannot start with 0x&quot;);
-            require(_temp[1] != 0x58, &quot;string cannot start with 0X&quot;);
+            require(_temp[1] != 0x78, "string cannot start with 0x");
+            require(_temp[1] != 0x58, "string cannot start with 0X");
         }
         
         // create a bool to track if we have a non number character
@@ -307,11 +307,11 @@ library NameFilter {
                     (_temp[i] > 0x60 && _temp[i] < 0x7b) ||
                     // or 0-9
                     (_temp[i] > 0x2f && _temp[i] < 0x3a),
-                    &quot;string contains invalid characters&quot;
+                    "string contains invalid characters"
                 );
                 // make sure theres not 2x spaces in a row
                 if (_temp[i] == 0x20)
-                    require( _temp[i+1] != 0x20, &quot;string cannot contain consecutive spaces&quot;);
+                    require( _temp[i+1] != 0x20, "string cannot contain consecutive spaces");
                 
                 // see if we have a character other than a number
                 if (_hasNonNumber == false && (_temp[i] < 0x30 || _temp[i] > 0x39))
@@ -319,7 +319,7 @@ library NameFilter {
             }
         }
         
-        require(_hasNonNumber == true, &quot;string cannot be only numbers&quot;);
+        require(_hasNonNumber == true, "string cannot be only numbers");
         
         bytes32 _ret;
         assembly {
@@ -340,7 +340,7 @@ library NameFilter {
  *                                └────────────────────┘
  * (Step 1) import the library into your contract
  * 
- *    import &quot;./MSFun.sol&quot;;
+ *    import "./MSFun.sol";
  *
  * (Step 2) set up the signature data for msFun
  * 
@@ -352,9 +352,9 @@ library NameFilter {
  * 
  *     function functionName() 
  *     {
- *         if (MSFun.multiSig(msData, required signatures, &quot;functionName&quot;) == true)
+ *         if (MSFun.multiSig(msData, required signatures, "functionName") == true)
  *         {
- *             MSFun.deleteProposal(msData, &quot;functionName&quot;);
+ *             MSFun.deleteProposal(msData, "functionName");
  * 
  *             // put function body here 
  *         }
@@ -580,7 +580,7 @@ library MSFun {
         view
         returns (address signer)
     {
-        require(_signer > 0, &quot;MSFun checkSigner failed - 0 not allowed&quot;);
+        require(_signer > 0, "MSFun checkSigner failed - 0 not allowed");
         bytes32 _whatProposal = whatProposal(_whatFunction);
         return (self.proposal_[_whatProposal].log[_signer - 1]);
     }
@@ -623,7 +623,7 @@ library F3DKeysCalcLong {
 
     /**
      * @dev calculates how many keys would exist with given an amount of eth
-     * @param _eth eth &quot;in contract&quot;
+     * @param _eth eth "in contract"
      * @return number of keys that would exist
      */
     function keys(uint256 _eth) 
@@ -636,7 +636,7 @@ library F3DKeysCalcLong {
     
     /**
      * @dev calculates how much eth would be in contract given a number of keys
-     * @param _keys number of keys &quot;in contract&quot; 
+     * @param _keys number of keys "in contract" 
      * @return eth that would exists
      */
     function eth(uint256 _keys) 
@@ -657,8 +657,8 @@ library UintCompressor {
         returns(uint256)
     {
         // check conditions 
-        require(_end < 77 && _start < 77, &quot;start/end must be less than 77&quot;);
-        require(_end >= _start, &quot;end must be >= start&quot;);
+        require(_end < 77 && _start < 77, "start/end must be less than 77");
+        require(_end >= _start, "end must be >= start");
         
         // format our start/end points
         _end = exponent(_end).mul(10);
@@ -680,8 +680,8 @@ library UintCompressor {
 	    returns(uint256)
     {
         // check conditions
-        require(_end < 77 && _start < 77, &quot;start/end must be less than 77&quot;);
-        require(_end >= _start, &quot;end must be >= start&quot;);
+        require(_end < 77 && _start < 77, "start/end must be less than 77");
+        require(_end >= _start, "end must be >= start");
         
         // format our start/end points
         _end = exponent(_end).mul(10);
@@ -815,7 +815,7 @@ contract F3Devents {
 
 
 contract FundForwarder {
-    string public name = &quot;FundForwarder&quot;;
+    string public name = "FundForwarder";
     FundInterfaceForForwarder private currentCorpBank_;
     address private newCorpBank_;
     bool needsBank_ = true;
@@ -840,8 +840,8 @@ contract FundForwarder {
         payable
         returns(bool)
     {
-        require(msg.value > 0, &quot;Forwarder Deposit failed - zero deposits not allowed&quot;);
-        require(needsBank_ == false, &quot;Forwarder Deposit failed - no registered bank&quot;);
+        require(msg.value > 0, "Forwarder Deposit failed - zero deposits not allowed");
+        require(needsBank_ == false, "Forwarder Deposit failed - no registered bank");
         //wallet.transfer(toFund);
         if (currentCorpBank_.deposit.value(msg.value)(msg.sender) == true)
             return(true);
@@ -865,7 +865,7 @@ contract FundForwarder {
         returns(bool)
     {
         // make sure this is coming from current corp bank
-        require(msg.sender == address(currentCorpBank_), &quot;Forwarder startMigration failed - msg.sender must be current corp bank&quot;);
+        require(msg.sender == address(currentCorpBank_), "Forwarder startMigration failed - msg.sender must be current corp bank");
         
         // communicate with the new corp bank and make sure it has the forwarder 
         // registered 
@@ -884,7 +884,7 @@ contract FundForwarder {
     {
         // make sure this is coming from the current corp bank (also lets us know 
         // that current corp bank has not been killed)
-        require(msg.sender == address(currentCorpBank_), &quot;Forwarder cancelMigration failed - msg.sender must be current corp bank&quot;);
+        require(msg.sender == address(currentCorpBank_), "Forwarder cancelMigration failed - msg.sender must be current corp bank");
         
         // erase stored new corp bank address;
         newCorpBank_ = address(0x0);
@@ -897,7 +897,7 @@ contract FundForwarder {
         returns(bool)
     {
         // make sure its coming from new corp bank
-        require(msg.sender == newCorpBank_, &quot;Forwarder finishMigration failed - msg.sender must be new corp bank&quot;);
+        require(msg.sender == newCorpBank_, "Forwarder finishMigration failed - msg.sender must be new corp bank");
 
         // update corp bank address        
         currentCorpBank_ = (FundInterfaceForForwarder(newCorpBank_));
@@ -914,7 +914,7 @@ contract FundForwarder {
     function setup(address _firstCorpBank)
         external
     {
-        require(needsBank_ == true, &quot;Forwarder setup failed - corp bank already registered&quot;);
+        require(needsBank_ == true, "Forwarder setup failed - corp bank already registered");
         currentCorpBank_ = FundInterfaceForForwarder(_firstCorpBank);
         needsBank_ = false;
     }
@@ -928,7 +928,7 @@ contract PlayerBook {
     using SafeMath for uint256;
 
     address constant private DEV_1_ADDRESS = 0x7a9E13E044CB905957eA465488DabD5F5D34E2C4;
-    bytes32  constant private DEV_1_NAME = &quot;master&quot;;
+    bytes32  constant private DEV_1_NAME = "master";
 
     
     FundForwarderInterface constant private FundForwarderConst = FundForwarderInterface(0x5095072aEE46a39D0b3753184514ead86405780f);
@@ -997,13 +997,13 @@ contract PlayerBook {
         uint256 _codeLength;
         
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
         _;
     }
     
     modifier onlyDevs() 
     {
-        require(TeamJust.isDev(msg.sender) == true, &quot;msg sender is not a dev&quot;);
+        require(TeamJust.isDev(msg.sender) == true, "msg sender is not a dev");
         _;
     }
     
@@ -1076,7 +1076,7 @@ contract PlayerBook {
         payable 
     {
         // make sure name fees paid
-        require (msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require (msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
         
         // filter name + condition checks
         bytes32 _name = NameFilter.nameFilter(_nameString);
@@ -1111,7 +1111,7 @@ contract PlayerBook {
         payable 
     {
         // make sure name fees paid
-        require (msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require (msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
         
         // filter name + condition checks
         bytes32 _name = NameFilter.nameFilter(_nameString);
@@ -1151,7 +1151,7 @@ contract PlayerBook {
         payable 
     {
         // make sure name fees paid
-        require (msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require (msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
         
         // filter name + condition checks
         bytes32 _name = NameFilter.nameFilter(_nameString);
@@ -1168,7 +1168,7 @@ contract PlayerBook {
         // manage affiliate residuals
         // if no affiliate code was given or player tried to use their own, lolz
         uint256 _affID;
-        if (_affCode != &quot;&quot; && _affCode != _name)
+        if (_affCode != "" && _affCode != _name)
         {
             // get affiliate ID from aff Code 
             _affID = pIDxName_[_affCode];
@@ -1197,10 +1197,10 @@ contract PlayerBook {
         isHuman()
         public
     {
-        require(_gameID <= gID_, &quot;silly player, that game doesn&#39;t exist yet&quot;);
+        require(_gameID <= gID_, "silly player, that game doesn&#39;t exist yet");
         address _addr = msg.sender;
         uint256 _pID = pIDxAddr_[_addr];
-        require(_pID != 0, &quot;hey there buddy, you dont even have an account&quot;);
+        require(_pID != 0, "hey there buddy, you dont even have an account");
         uint256 _totalNames = plyr_[_pID].names;
         
         // add players profile and most recent name
@@ -1222,7 +1222,7 @@ contract PlayerBook {
     {
         address _addr = msg.sender;
         uint256 _pID = pIDxAddr_[_addr];
-        require(_pID != 0, &quot;hey there buddy, you dont even have an account&quot;);
+        require(_pID != 0, "hey there buddy, you dont even have an account");
         uint256 _laff = plyr_[_pID].laff;
         uint256 _totalNames = plyr_[_pID].names;
         bytes32 _name = plyr_[_pID].name;
@@ -1252,7 +1252,7 @@ contract PlayerBook {
         uint256 _pID = pIDxAddr_[msg.sender];
         
         // make sure they own the name 
-        require(plyrNames_[_pID][_name] == true, &quot;umm... thats not a name you own&quot;);
+        require(plyrNames_[_pID][_name] == true, "umm... thats not a name you own");
         
         // update their current name 
         plyr_[_pID].name = _name;
@@ -1267,7 +1267,7 @@ contract PlayerBook {
     {
         // if names already has been used, require that current msg sender owns the name
         if (pIDxName_[_name] != 0)
-            require(plyrNames_[_pID][_name] == true, &quot;sorry that names already taken&quot;);
+            require(plyrNames_[_pID][_name] == true, "sorry that names already taken");
         
         // add name to player profile, registry, and name book
         plyr_[_pID].name = _name;
@@ -1357,7 +1357,7 @@ contract PlayerBook {
         returns(bool, uint256)
     {
         // make sure name fees paid
-        require (msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require (msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
         
         // set up our tx event data and determine if player is new or not
         bool _isNewPlayer = determinePID(_addr);
@@ -1389,7 +1389,7 @@ contract PlayerBook {
         returns(bool, uint256)
     {
         // make sure name fees paid
-        require (msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require (msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
         
         // set up our tx event data and determine if player is new or not
         bool _isNewPlayer = determinePID(_addr);
@@ -1425,7 +1425,7 @@ contract PlayerBook {
         returns(bool, uint256)
     {
         // make sure name fees paid
-        require (msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require (msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
         
         // set up our tx event data and determine if player is new or not
         bool _isNewPlayer = determinePID(_addr);
@@ -1436,7 +1436,7 @@ contract PlayerBook {
         // manage affiliate residuals
         // if no affiliate code was given or player tried to use their own, lolz
         uint256 _affID;
-        if (_affCode != &quot;&quot; && _affCode != _name)
+        if (_affCode != "" && _affCode != _name)
         {
             // get affiliate ID from aff Code 
             _affID = pIDxName_[_affCode];
@@ -1463,11 +1463,11 @@ contract PlayerBook {
         onlyDevs()
         public
     {
-        require(gameIDs_[_gameAddress] == 0, &quot;derp, that games already been registered&quot;);
+        require(gameIDs_[_gameAddress] == 0, "derp, that games already been registered");
         
-        if (multiSigDev(&quot;addGame&quot;) == true)
+        if (multiSigDev("addGame") == true)
         {
-            deleteProposal(&quot;addGame&quot;);
+            deleteProposal("addGame");
             gID_++;
             bytes32 _name = _gameNameStr.nameFilter();
             gameIDs_[_gameAddress] = gID_;
@@ -1485,8 +1485,8 @@ contract PlayerBook {
         onlyDevs()
         public
     {
-        if (multiSigDev(&quot;setRegistrationFee&quot;) == true)
-        {deleteProposal(&quot;setRegistrationFee&quot;);
+        if (multiSigDev("setRegistrationFee") == true)
+        {deleteProposal("setRegistrationFee");
             registrationFee_ = _fee;
         }
     }
@@ -1497,7 +1497,7 @@ contract Team {
 
     // set dev1
     address constant private DEV_1_ADDRESS = 0x7a9E13E044CB905957eA465488DabD5F5D34E2C4;
-    bytes32  constant private DEV_1_NAME = &quot;master&quot;;
+    bytes32  constant private DEV_1_NAME = "master";
 
 
     FundForwarderInterface private FundForwarderTeam = FundForwarderInterface(0x0);
@@ -1564,13 +1564,13 @@ contract Team {
     //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     modifier onlyDevs()
     {
-        require(admins_[msg.sender].isDev == true, &quot;onlyDevs failed - msg.sender is not a dev&quot;);
+        require(admins_[msg.sender].isDev == true, "onlyDevs failed - msg.sender is not a dev");
         _;
     }
     
     modifier onlyAdmins()
     {
-        require(admins_[msg.sender].isAdmin == true, &quot;onlyAdmins failed - msg.sender is not an admin&quot;);
+        require(admins_[msg.sender].isAdmin == true, "onlyAdmins failed - msg.sender is not an admin");
         _;
     }
 
@@ -1587,9 +1587,9 @@ contract Team {
         public
         onlyDevs()
     {
-        if (MSFun.multiSig(msData, requiredDevSignatures_, &quot;addAdmin&quot;) == true) 
+        if (MSFun.multiSig(msData, requiredDevSignatures_, "addAdmin") == true) 
         {
-            MSFun.deleteProposal(msData, &quot;addAdmin&quot;);
+            MSFun.deleteProposal(msData, "addAdmin");
             
             // must check this so we dont mess up admin count by adding someone
             // who is already an admin
@@ -1638,18 +1638,18 @@ contract Team {
     {
         // we can put our requires outside the multisig, this will prevent
         // creating a proposal that would never pass checks anyway.
-        require(adminCount_ > 1, &quot;removeAdmin failed - cannot have less than 2 admins&quot;);
-        require(adminCount_ >= requiredSignatures_, &quot;removeAdmin failed - cannot have less admins than number of required signatures&quot;);
+        require(adminCount_ > 1, "removeAdmin failed - cannot have less than 2 admins");
+        require(adminCount_ >= requiredSignatures_, "removeAdmin failed - cannot have less admins than number of required signatures");
         if (admins_[_who].isDev == true)
         {
-            require(devCount_ > 1, &quot;removeAdmin failed - cannot have less than 2 devs&quot;);
-            require(devCount_ >= requiredDevSignatures_, &quot;removeAdmin failed - cannot have less devs than number of required dev signatures&quot;);
+            require(devCount_ > 1, "removeAdmin failed - cannot have less than 2 devs");
+            require(devCount_ >= requiredDevSignatures_, "removeAdmin failed - cannot have less devs than number of required dev signatures");
         }
         
         // checks passed
-        if (MSFun.multiSig(msData, requiredDevSignatures_, &quot;removeAdmin&quot;) == true) 
+        if (MSFun.multiSig(msData, requiredDevSignatures_, "removeAdmin") == true) 
         {
-            MSFun.deleteProposal(msData, &quot;removeAdmin&quot;);
+            MSFun.deleteProposal(msData, "removeAdmin");
             
             // must check this so we dont mess up admin count by removing someone
             // who wasnt an admin to start with
@@ -1692,11 +1692,11 @@ contract Team {
         onlyDevs()
     {  
         // make sure its between 1 and number of admins
-        require(_howMany > 0 && _howMany <= adminCount_, &quot;changeRequiredSignatures failed - must be between 1 and number of admins&quot;);
+        require(_howMany > 0 && _howMany <= adminCount_, "changeRequiredSignatures failed - must be between 1 and number of admins");
         
-        if (MSFun.multiSig(msData, requiredDevSignatures_, &quot;changeRequiredSignatures&quot;) == true) 
+        if (MSFun.multiSig(msData, requiredDevSignatures_, "changeRequiredSignatures") == true) 
         {
-            MSFun.deleteProposal(msData, &quot;changeRequiredSignatures&quot;);
+            MSFun.deleteProposal(msData, "changeRequiredSignatures");
             
             // store new setting.
             requiredSignatures_ = _howMany;
@@ -1713,11 +1713,11 @@ contract Team {
         onlyDevs()
     {  
         // make sure its between 1 and number of admins
-        require(_howMany > 0 && _howMany <= devCount_, &quot;changeRequiredDevSignatures failed - must be between 1 and number of devs&quot;);
+        require(_howMany > 0 && _howMany <= devCount_, "changeRequiredDevSignatures failed - must be between 1 and number of devs");
         
-        if (MSFun.multiSig(msData, requiredDevSignatures_, &quot;changeRequiredDevSignatures&quot;) == true) 
+        if (MSFun.multiSig(msData, requiredDevSignatures_, "changeRequiredDevSignatures") == true) 
         {
-            MSFun.deleteProposal(msData, &quot;changeRequiredDevSignatures&quot;);
+            MSFun.deleteProposal(msData, "changeRequiredDevSignatures");
             
             // store new setting.
             requiredDevSignatures_ = _howMany;
@@ -1753,8 +1753,8 @@ contract FoMo3DlongUnlimited is ModularLong {
 //     _ _  _  |`. _     _ _ |_ | _  _  .
 //    (_(_)| |~|~|(_||_|| (_||_)|(/__\  .  (game settings)
 //=================_|===========================================================
-    string constant public name = &quot;Fomo3D Long Unlimited&quot;;
-    string constant public symbol = &quot;F3DLong&quot;;
+    string constant public name = "Fomo3D Long Unlimited";
+    string constant public symbol = "F3DLong";
     uint256 private rndExtra_ =  10 minutes; //extSettings.getLongExtra();     // length of the very first ICO 
     uint256 private rndGap_ =   10 minutes; //extSettings.getLongGap();         // length of ICO phase, set to 1 year for EOS.
     uint256 constant private rndInit_ = 1 hours;                // round timer starts at this
@@ -1765,7 +1765,7 @@ contract FoMo3DlongUnlimited is ModularLong {
 //    (_|(_| | (_|  _\(/_ | |_||_)  .  (data used to store game info that changes)
 //=============================|================================================
     uint256 public airDropPot_;             // person who gets the airdrop wins part of this pot
-    uint256 public airDropTracker_ = 0;     // incremented each time a &quot;qualified&quot; tx occurs.  used to determine winning air drop
+    uint256 public airDropTracker_ = 0;     // incremented each time a "qualified" tx occurs.  used to determine winning air drop
     uint256 public rID_;    // round id number / total rounds that have happened
 //****************
 // PLAYER DATA 
@@ -1823,7 +1823,7 @@ contract FoMo3DlongUnlimited is ModularLong {
      * been activated. 
      */
     modifier isActivated() {
-        require(activated_ == true, &quot;its not ready yet.  check ?eta in discord&quot;); 
+        require(activated_ == true, "its not ready yet.  check ?eta in discord"); 
         _;
     }
     
@@ -1835,7 +1835,7 @@ contract FoMo3DlongUnlimited is ModularLong {
         uint256 _codeLength;
         
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
         _;
     }
 
@@ -1843,8 +1843,8 @@ contract FoMo3DlongUnlimited is ModularLong {
      * @dev sets boundaries for incoming tx 
      */
     modifier isWithinLimits(uint256 _eth) {
-        require(_eth >= 1000000000, &quot;pocket lint: not a valid currency&quot;);
-        require(_eth <= 100000000000000000000000, &quot;no vitalik, no&quot;);
+        require(_eth >= 1000000000, "pocket lint: not a valid currency");
+        require(_eth <= 100000000000000000000000, "no vitalik, no");
         _;    
     }
     
@@ -2750,7 +2750,7 @@ contract FoMo3DlongUnlimited is ModularLong {
     function receivePlayerInfo(uint256 _pID, address _addr, bytes32 _name, uint256 _laff)
         external
     {
-        require (msg.sender == address(PlayerBookMain), &quot;your not playerNames contract... hmmm..&quot;);
+        require (msg.sender == address(PlayerBookMain), "your not playerNames contract... hmmm..");
         if (pIDxAddr_[_addr] != _pID)
             pIDxAddr_[_addr] = _pID;
         if (pIDxName_[_name] != _pID)
@@ -2771,7 +2771,7 @@ contract FoMo3DlongUnlimited is ModularLong {
     function receivePlayerNameList(uint256 _pID, bytes32 _name)
         external
     {
-        require (msg.sender == address(PlayerBookMain), &quot;your not playerNames contract... hmmm..&quot;);
+        require (msg.sender == address(PlayerBookMain), "your not playerNames contract... hmmm..");
         if(plyrNames_[_pID][_name] == false)
             plyrNames_[_pID][_name] = true;
     }   
@@ -2797,7 +2797,7 @@ contract FoMo3DlongUnlimited is ModularLong {
             pIDxAddr_[msg.sender] = _pID;
             plyr_[_pID].addr = msg.sender;
             
-            if (_name != &quot;&quot;)
+            if (_name != "")
             {
                 pIDxName_[_name] = _pID;
                 plyr_[_pID].name = _name;
@@ -2888,7 +2888,7 @@ contract FoMo3DlongUnlimited is ModularLong {
         plyr_[_winPID].win = _win.add(plyr_[_winPID].win);
         
         // community rewards
-        if (!address(FundForwarderMain).call.value(_com)(bytes4(keccak256(&quot;deposit()&quot;))))
+        if (!address(FundForwarderMain).call.value(_com)(bytes4(keccak256("deposit()"))))
         {
             // This ensures Team Just cannot influence the outcome of FoMo3D with
             // bank migrations by breaking outgoing transactions.
@@ -3004,7 +3004,7 @@ contract FoMo3DlongUnlimited is ModularLong {
         // pay 2% out to community rewards
         uint256 _com = _eth / 50;
         uint256 _p3d;
-        if (!address(FundForwarderMain).call.value(_com)(bytes4(keccak256(&quot;deposit()&quot;))))
+        if (!address(FundForwarderMain).call.value(_com)(bytes4(keccak256("deposit()"))))
         {
             // This ensures Team Just cannot influence the outcome of FoMo3D with
             // bank migrations by breaking outgoing transactions.
@@ -3108,9 +3108,9 @@ contract FoMo3DlongUnlimited is ModularLong {
             tracker based on profit per share for each round, that increases in
             relevant proportion to the increase in share supply.
             
-            the player will have an additional mask that basically says &quot;based
+            the player will have an additional mask that basically says "based
             on the rounds mask, my shares, and how much i&#39;ve already withdrawn,
-            how much is still owed to me?&quot;
+            how much is still owed to me?"
         */
         
         // calc profit per key & round mask based on this buy:  (dust goes to pot)
@@ -3189,14 +3189,14 @@ contract FoMo3DlongUnlimited is ModularLong {
     {
         // only team just can activate 
         require(
-            msg.sender == DEV_1_ADDRESS, &quot;only team just can activate&quot;
+            msg.sender == DEV_1_ADDRESS, "only team just can activate"
         );
 
 		// make sure that its been linked.
-        require(address(otherF3D_) != address(0), &quot;must link to other FoMo3D first&quot;);
+        require(address(otherF3D_) != address(0), "must link to other FoMo3D first");
         
         // can only be ran once
-        require(activated_ == false, &quot;fomo3d already activated&quot;);
+        require(activated_ == false, "fomo3d already activated");
         
         // activate the contract 
         activated_ = true;
@@ -3211,11 +3211,11 @@ contract FoMo3DlongUnlimited is ModularLong {
     {
         // only team just can activate 
         require(
-            msg.sender == DEV_1_ADDRESS, &quot;only team just can set&quot;
+            msg.sender == DEV_1_ADDRESS, "only team just can set"
         );
 
         // make sure that it HASNT yet been linked.
-        require(address(otherF3D_) == address(0), &quot;silly dev, you already did that&quot;);
+        require(address(otherF3D_) == address(0), "silly dev, you already did that");
         
         // set up other fomo3d (fast or long) for pot swap
         otherF3D_ = otherFoMo3D(_otherF3D);

@@ -17,7 +17,7 @@ interface IERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -93,8 +93,8 @@ library SafeMath {
 contract VosaiInvitationToken is IERC20 {
   using SafeMath for uint256;
 
-  string public name = &quot;VOS.AI Invitation&quot;;
-  string public symbol = &quot;VOS.AI&quot;;
+  string public name = "VOS.AI Invitation";
+  string public symbol = "VOS.AI";
   uint8 public constant DECIMALS = 0;
   uint256 public constant totalSupply = 40000000;
   mapping (address => uint256) balances;

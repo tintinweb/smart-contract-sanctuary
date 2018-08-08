@@ -28,8 +28,8 @@ contract ALU {
     ) public {
         totalSupply = 2000000000000000000000000000;                       // Total supply with the decimal amount
         balanceOf[msg.sender] = 2000000000000000000000000000;             // All initial tokens
-        name = &quot;ALIUS&quot;;                                                   // The name for display purposes
-        symbol = &quot;ALU&quot;;                                                   // The symbol for display purposes
+        name = "ALIUS";                                                   // The name for display purposes
+        symbol = "ALU";                                                   // The symbol for display purposes
     }
 
     /**

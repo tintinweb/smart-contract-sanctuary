@@ -28,7 +28,7 @@ contract IModuleRegistry {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -545,7 +545,7 @@ contract ISecurityToken is IST20, Ownable {
  */
 contract ISecurityTokenRegistry {
 
-    bytes32 public protocolVersion = &quot;0.0.1&quot;;
+    bytes32 public protocolVersion = "0.0.1";
     mapping (bytes32 => address) public protocolVersionST;
 
     struct SecurityTokenData {
@@ -667,7 +667,7 @@ contract PolymathRegistry is ReclaimTokens {
      */
     function getAddress(string _nameKey) view public returns(address) {
         bytes32 key = keccak256(bytes(_nameKey));
-        require(storedAddresses[key] != address(0), &quot;Invalid address key&quot;);
+        require(storedAddresses[key] != address(0), "Invalid address key");
         return storedAddresses[key];
     }
 
@@ -699,17 +699,17 @@ contract RegistryUpdater is Ownable {
     }
 
     function updateFromRegistry() onlyOwner public {
-        moduleRegistry = PolymathRegistry(polymathRegistry).getAddress(&quot;ModuleRegistry&quot;);
-        securityTokenRegistry = PolymathRegistry(polymathRegistry).getAddress(&quot;SecurityTokenRegistry&quot;);
-        tickerRegistry = PolymathRegistry(polymathRegistry).getAddress(&quot;TickerRegistry&quot;);
-        polyToken = PolymathRegistry(polymathRegistry).getAddress(&quot;PolyToken&quot;);
+        moduleRegistry = PolymathRegistry(polymathRegistry).getAddress("ModuleRegistry");
+        securityTokenRegistry = PolymathRegistry(polymathRegistry).getAddress("SecurityTokenRegistry");
+        tickerRegistry = PolymathRegistry(polymathRegistry).getAddress("TickerRegistry");
+        polyToken = PolymathRegistry(polymathRegistry).getAddress("PolyToken");
     }
 
 }
 
 /**
 * @title Registry contract to store registered modules
-* @notice Anyone can register modules, but only those &quot;approved&quot; by Polymath will be available for issuers to add
+* @notice Anyone can register modules, but only those "approved" by Polymath will be available for issuers to add
 */
 contract ModuleRegistry is IModuleRegistry, Pausable, RegistryUpdater, ReclaimTokens {
 
@@ -743,10 +743,10 @@ contract ModuleRegistry is IModuleRegistry, Pausable, RegistryUpdater, ReclaimTo
     function useModule(address _moduleFactory) external {
         //If caller is a registered security token, then register module usage
         if (ISecurityTokenRegistry(securityTokenRegistry).isSecurityToken(msg.sender)) {
-            require(registry[_moduleFactory] != 0, &quot;ModuleFactory type should not be 0&quot;);
+            require(registry[_moduleFactory] != 0, "ModuleFactory type should not be 0");
             //To use a module, either it must be verified, or owned by the ST owner
             require(verified[_moduleFactory]||(IModuleFactory(_moduleFactory).owner() == ISecurityToken(msg.sender).owner()),
-              &quot;Module factory is not verified as well as not called by the owner&quot;);
+              "Module factory is not verified as well as not called by the owner");
             reputation[_moduleFactory].push(msg.sender);
             emit LogModuleUsed (_moduleFactory, msg.sender);
         }
@@ -758,9 +758,9 @@ contract ModuleRegistry is IModuleRegistry, Pausable, RegistryUpdater, ReclaimTo
     * @return bool
     */
     function registerModule(address _moduleFactory) external whenNotPaused returns(bool) {
-        require(registry[_moduleFactory] == 0, &quot;Module factory should not be pre-registered&quot;);
+        require(registry[_moduleFactory] == 0, "Module factory should not be pre-registered");
         IModuleFactory moduleFactory = IModuleFactory(_moduleFactory);
-        require(moduleFactory.getType() != 0, &quot;Factory type should not equal to 0&quot;);
+        require(moduleFactory.getType() != 0, "Factory type should not equal to 0");
         registry[_moduleFactory] = moduleFactory.getType();
         moduleList[moduleFactory.getType()].push(_moduleFactory);
         reputation[_moduleFactory] = new address[](0);
@@ -777,7 +777,7 @@ contract ModuleRegistry is IModuleRegistry, Pausable, RegistryUpdater, ReclaimTo
     */
     function verifyModule(address _moduleFactory, bool _verified) external onlyOwner returns(bool) {
         //Must already have been registered
-        require(registry[_moduleFactory] != 0, &quot;Module factory should have been already registered&quot;);
+        require(registry[_moduleFactory] != 0, "Module factory should have been already registered");
         verified[_moduleFactory] = _verified;
         emit LogModuleVerified(_moduleFactory, _verified);
         return true;

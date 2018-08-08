@@ -64,8 +64,8 @@ contract Owned {
 }
 
 contract TokenMintGeneral is ERC20Interface, Owned, SafeMath {
-    string public symbol = &quot;AILE&quot;;
-    string public name = &quot;爱乐&quot;;
+    string public symbol = "AILE";
+    string public name = "爱乐";
     uint8 public decimals = 6;
     uint public _totalSupply = 1001 * 10 ** uint(decimals);
 

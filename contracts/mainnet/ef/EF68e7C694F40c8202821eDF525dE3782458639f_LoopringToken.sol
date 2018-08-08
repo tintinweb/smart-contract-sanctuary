@@ -2,14 +2,14 @@
 
   Copyright 2017 Loopring Foundation.
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
   http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -194,8 +194,8 @@ contract StandardToken is BasicToken, ERC20 {
 /// For more information about this token sale, please visit https://loopring.org
 /// @author Kongliang Zhong - <<span class="__cf_email__" data-cfemail="412a2e2f262d28202f26012d2e2e3133282f266f2e3326">[email&#160;protected]</span>>, Daniel Wang - <<span class="__cf_email__" data-cfemail="7a1e1b14131f163a1615150a0813141d5415081d">[email&#160;protected]</span>>.
 contract LoopringToken is StandardToken {
-    string public constant NAME = &quot;LoopringCoin&quot;;
-    string public constant SYMBOL = &quot;LRC&quot;;
+    string public constant NAME = "LoopringCoin";
+    string public constant SYMBOL = "LRC";
     uint public constant DECIMALS = 18;
 
     /// During token sale, we use one consistent price: 5000 LRC/ETH.
@@ -303,7 +303,7 @@ contract LoopringToken is StandardToken {
         if (!saleStarted()) {
             _;
         } else {
-            InvalidState(&quot;Sale has not started yet&quot;);
+            InvalidState("Sale has not started yet");
             throw;
         }
     }
@@ -312,7 +312,7 @@ contract LoopringToken is StandardToken {
         if (saleStarted() && !saleEnded()) {
             _;
         } else {
-            InvalidState(&quot;Sale is not in progress&quot;);
+            InvalidState("Sale is not in progress");
             throw;
         }
     }
@@ -321,7 +321,7 @@ contract LoopringToken is StandardToken {
         if (saleEnded()) {
             _;
         } else {
-            InvalidState(&quot;Sale is not ended yet&quot;);
+            InvalidState("Sale is not ended yet");
             throw;
         }
     }
@@ -444,7 +444,7 @@ contract LoopringToken is StandardToken {
     ///   +-------------------------------------------------------------+
     function issueUnsoldToken() internal {
         if (unsoldTokenIssued) {
-            InvalidState(&quot;Unsold token has been issued already&quot;);
+            InvalidState("Unsold token has been issued already");
         } else {
             // Add another safe guard 
             require(totalEthReceived >= GOAL);

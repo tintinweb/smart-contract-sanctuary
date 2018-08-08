@@ -111,8 +111,8 @@ contract DOGEToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DOGEToken() public {
-        symbol = &quot;DOGE&quot;;
-        name = &quot;DOGE Token&quot;;
+        symbol = "DOGE";
+        name = "DOGE Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xdF74B93C1Fa5515E3D5199fce19b9DB57A98e8B8] = _totalSupply;

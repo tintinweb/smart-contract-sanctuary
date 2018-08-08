@@ -91,7 +91,7 @@ contract clientOfdAppBridge {
 
     function callURL(string callback_method, string external_url, string external_params) internal dAppBridgeClient returns(bytes32) {
         uint256 _reward = dAppBridge.getMinReward(&#39;callURL&#39;)+user_callback_gas;
-        return dAppBridge.callURL.value(_reward).gas(current_gas)(callback_method, external_url, external_params, &quot;&quot;);
+        return dAppBridge.callURL.value(_reward).gas(current_gas)(callback_method, external_url, external_params, "");
     }
     function callURL(string callback_method, string external_url, string external_params, string json_extract_elemen) internal dAppBridgeClient returns(bytes32) {
         uint256 _reward = dAppBridge.getMinReward(&#39;callURL&#39;)+user_callback_gas;
@@ -346,9 +346,9 @@ contract DiceRoll is clientOfdAppBridge {
         maxRoll = 100;
         minBet = 15000000000000000; //200000000000000;
         maxBet = 300000000000000000; //200000000000000000;
-        randomAPI_url = &quot;https://api.random.org/json-rpc/1/invoke&quot;;
-        randomAPI_key = &quot;7d4ab655-e778-4d9f-815a-98fd518908bd&quot;;
-        randomAPI_extract = &quot;result.random.data&quot;;
+        randomAPI_url = "https://api.random.org/json-rpc/1/invoke";
+        randomAPI_key = "7d4ab655-e778-4d9f-815a-98fd518908bd";
+        randomAPI_extract = "result.random.data";
         //permittedRolls[10] = true;
         permittedRolls[20] = true;
         permittedRolls[30] = true;
@@ -500,7 +500,7 @@ contract DiceRoll is clientOfdAppBridge {
 
         // This is the actual call to dAppBridge - using their callURL function to easily access an external API
         // such as random.org        
-        bytes32 betID = callURL(&quot;callback&quot;, randomAPI_url, 
+        bytes32 betID = callURL("callback", randomAPI_url, 
         constructAPIParam(), 
         randomAPI_extract);
 
@@ -562,9 +562,9 @@ contract DiceRoll is clientOfdAppBridge {
     
     function constructAPIParam() internal view returns(string){
         return strConcat(
-            strConcat(&quot;{\&quot;jsonrpc\&quot;:\&quot;2.0\&quot;,\&quot;method\&quot;:\&quot;generateIntegers\&quot;,\&quot;params\&quot;:{\&quot;apiKey\&quot;:\&quot;&quot;,
-        randomAPI_key, &quot;\&quot;,\&quot;n\&quot;:1,\&quot;min\&quot;:&quot;, uint2str(minRoll), &quot;,\&quot;max\&quot;:&quot;, uint2str(maxRoll), &quot;,\&quot;replacement\&quot;:true,\&quot;base\&quot;:10},\&quot;id\&quot;:&quot;),
-        uint2str(gameNumber), &quot;}&quot; 
+            strConcat("{\"jsonrpc\":\"2.0\",\"method\":\"generateIntegers\",\"params\":{\"apiKey\":\"",
+        randomAPI_key, "\",\"n\":1,\"min\":", uint2str(minRoll), ",\"max\":", uint2str(maxRoll), ",\"replacement\":true,\"base\":10},\"id\":"),
+        uint2str(gameNumber), "}" 
         ); // Add in gameNumber to the params to avoid clashes
     }
     
@@ -727,17 +727,17 @@ contract DiceRoll is clientOfdAppBridge {
         return string(babcde);
     }
     function strConcat(string _a, string _b, string _c, string _d) internal pure returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
     function strConcat(string _a, string _b, string _c) internal pure returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
     function strConcat(string _a, string _b) internal pure returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 
     function uint2str(uint i) internal pure returns (string){
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint len;
         while (j != 0){

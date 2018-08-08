@@ -13,7 +13,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -269,8 +269,8 @@ contract MintableToken is StandardToken, Ownable {
   }
 }
 contract EverhuskToken is MintableToken {
-    string public constant name = &quot;EverhuskToken&quot;;
-    string public constant symbol = &quot;SUKH&quot;;
+    string public constant name = "EverhuskToken";
+    string public constant symbol = "SUKH";
     uint8 public constant decimals = 18;
 }
 contract EverhuskCrowdsale is Crowdsale {

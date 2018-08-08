@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	GazGroup_II				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	GazGroup_II		&quot;	;
-	string	public	constant	symbol =	&quot;	GAZII		&quot;	;
+	string	public	constant	name =	"	GazGroup_II		"	;
+	string	public	constant	symbol =	"	GAZII		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

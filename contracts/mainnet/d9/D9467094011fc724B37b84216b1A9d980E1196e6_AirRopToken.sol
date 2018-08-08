@@ -1,8 +1,8 @@
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }
 
 contract AirRopToken {
-    string public name = &quot;REuse Cash&quot;;
-    string public symbol = &quot;RECSH&quot;;
+    string public name = "REuse Cash";
+    string public symbol = "RECSH";
     uint8 public decimals = 18;
     uint256 public totalSupply;
     uint256 public HVZSupply = 10000000000;

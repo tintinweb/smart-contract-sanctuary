@@ -61,7 +61,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -190,8 +190,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract EtherMoney is StandardToken, Ownable
 {
-    string public name = &quot;ETHER MONEY&quot;;
-    string public symbol = &quot;ETM&quot;;
+    string public name = "ETHER MONEY";
+    string public symbol = "ETM";
 
     uint public decimals = 8;
 

@@ -233,8 +233,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract SoCoToken is StandardToken{
 
-    string public constant name = &quot;SoCoToken&quot;;
-    string public constant symbol = &quot;SOCO&quot;;
+    string public constant name = "SoCoToken";
+    string public constant symbol = "SOCO";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 1 * (10**9) * (10 ** uint256(decimals));
 

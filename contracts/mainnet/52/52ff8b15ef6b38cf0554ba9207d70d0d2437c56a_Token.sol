@@ -1,8 +1,8 @@
 pragma solidity ^0.4.11;
  
 contract Token {
-    string public symbol = &quot;711&quot;;
-    string public name = &quot;711 token&quot;;
+    string public symbol = "711";
+    string public name = "711 token";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 711000000000000000000;
     address owner = 0;

@@ -90,7 +90,7 @@ contract StandardToken is Token {
     /**
      * @title Ownable
      * @dev The Ownable contract has an owner address, and provides basic authorization control
-     * functions, this simplifies the implementation of &quot;user permissions&quot;.
+     * functions, this simplifies the implementation of "user permissions".
      */
 contract Ownable {
   address public owner;
@@ -171,8 +171,8 @@ contract Pausable is Ownable {
 
 contract PccToken is SafeMath, StandardToken, Pausable {
 
-    string public constant name = &quot;PCC Token&quot;;
-    string public constant symbol = &quot;PCC&quot;;
+    string public constant name = "PCC Token";
+    string public constant symbol = "PCC";
     uint256 public constant decimals = 18;
     uint256 public constant tokenCreationCap = 1000000000*10**decimals;
     uint256 constant tokenCreationCapPreICO = 1000000*10**decimals;
@@ -231,17 +231,17 @@ contract PccToken is SafeMath, StandardToken, Pausable {
 
     function setEthPrice(uint256 _tokenPrice) external onlyOwner {
         oneTokenInWei = _tokenPrice;
-        PriceChanged(&quot;New price set&quot;, _tokenPrice);
+        PriceChanged("New price set", _tokenPrice);
     }
 
     function setICOPhase() external onlyOwner {
         currentPhase = Phase.ICO;
-        StageChanged(&quot;Current stage: ICO&quot;);
+        StageChanged("Current stage: ICO");
     }
 
     function setPreICOPhase() external onlyOwner {
         currentPhase = Phase.PreICO;
-        StageChanged(&quot;Current stage: PreICO&quot;);
+        StageChanged("Current stage: PreICO");
     }
 
     function generateTokens(address _reciever, uint256 _amount) external onlyOwner {

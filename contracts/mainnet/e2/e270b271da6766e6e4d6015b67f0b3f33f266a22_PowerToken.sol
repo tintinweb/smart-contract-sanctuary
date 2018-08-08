@@ -253,7 +253,7 @@ contract TokenERC20 is ERC20, Ownable{
 
 contract PowerToken is TokenERC20 {
 
-    function PowerToken() TokenERC20(20000000, &quot;CapricornCoin&quot;, &quot;3C&quot;, 18) public {
+    function PowerToken() TokenERC20(20000000, "CapricornCoin", "3C", 18) public {
 
     }
 }

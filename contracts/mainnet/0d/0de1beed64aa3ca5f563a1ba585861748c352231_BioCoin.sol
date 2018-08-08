@@ -73,8 +73,8 @@ contract BioCoin is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function BioCoin() public {
-        symbol = &quot;CoP&quot;;
-        name = &quot;BioCoin&quot;;
+        symbol = "CoP";
+        name = "BioCoin";
         decimals = 0;
         _totalSupply = 10000000;
         balances[0x66125E7980a3A79413485e61Cd8161Fa6C467227] = _totalSupply;

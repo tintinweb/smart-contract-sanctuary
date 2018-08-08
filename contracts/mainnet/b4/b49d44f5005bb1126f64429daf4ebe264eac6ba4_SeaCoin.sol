@@ -197,9 +197,9 @@ contract SeaCoin is StandardToken {
     }
 
     //Name of the token
-    string public constant name = &quot;SeaCoin&quot;;
+    string public constant name = "SeaCoin";
     //Symbol of SeaCoin
-    string public constant symbol = &quot;SEA&quot;;
+    string public constant symbol = "SEA";
     //Number of decimals of SeaCoin
     uint8 public constant decimals = 2;
 

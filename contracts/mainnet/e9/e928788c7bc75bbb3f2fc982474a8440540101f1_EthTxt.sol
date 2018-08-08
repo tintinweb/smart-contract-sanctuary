@@ -4,7 +4,7 @@ pragma solidity ^0.4.18;
 library strUtils {
     /* Converts given number to base58, limited by _maxLength symbols */
     function toBase58(uint256 _value, uint8 _maxLength) internal pure returns (string) {
-        string memory letters = &quot;123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ&quot;;
+        string memory letters = "123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ";
         bytes memory alphabet = bytes(letters);
         uint8 base = 58;
         uint8 len = 0;

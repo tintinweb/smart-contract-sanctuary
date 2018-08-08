@@ -101,8 +101,8 @@ contract FantomToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FantomToken() public {
-        symbol = &quot;FTM&quot;;
-        name = &quot;Fantom Token&quot;;
+        symbol = "FTM";
+        name = "Fantom Token";
         decimals = 18;
         _totalSupply = 3175000000000000000000000000;
         balances[0xaf892edC9515Ba62151d44219eA2149A86B86F93] = _totalSupply;

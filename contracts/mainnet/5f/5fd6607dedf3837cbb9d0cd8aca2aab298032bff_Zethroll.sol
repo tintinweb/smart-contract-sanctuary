@@ -176,7 +176,7 @@ contract Zethroll is ZTHReceivingContract {
     //require(_rollUnder < 255); // smaller than the storage of 1 uint8 [max roll under 100, checked in betIsValid]
     require(block.number < ((2 ** 48) - 1)); // current block number smaller than storage of 1 uint48
     // Note that msg.sender is the Token Contract Address
-    // and &quot;_from&quot; is the sender of the tokens
+    // and "_from" is the sender of the tokens
 
     // Check that this is a non-contract sender 
     // contracts btfo we use next block need 2 tx 

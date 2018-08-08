@@ -6,7 +6,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -53,16 +53,16 @@ contract Ownable {
 contract BuckySalary is Ownable {
 
     string[] public staff = [ 
-        &quot;0xE385917ACF8251fca45595b7919f38bab581749c&quot;, 
-        &quot;0xC4Bed66d88F39C0D18cE601b408464d554A38771&quot;, 
-        &quot;0xc07ED3e252d8C6819F763d904D1692D1242ec7ee&quot;, 
-        &quot;0x2CD147bb1d347a6A887887B569AAa8A262cF8346&quot;, 
-        &quot;0x6A1eBbff7714dfcE36756d09440ac979Bbf87b10&quot;, 
-        &quot;0x729501BE221C534d9C090a8Ee4e8B5B16d6b356C&quot;, 
-        &quot;0xad82A5fb394a525835A3a6DC34C1843e19160CFA&quot;, 
-        &quot;0x5DD309a882c2BB49B5e5Ed1b49D209363B0f2a37&quot;, 
-        &quot;0x490f72f8DfB81859fe61ecfe1fEB9F6C61a1aa89&quot;, 
-        &quot;0xBd0b6cdf81B282C0401bc67d0d523D00Fc59c55c&quot;  
+        "0xE385917ACF8251fca45595b7919f38bab581749c", 
+        "0xC4Bed66d88F39C0D18cE601b408464d554A38771", 
+        "0xc07ED3e252d8C6819F763d904D1692D1242ec7ee", 
+        "0x2CD147bb1d347a6A887887B569AAa8A262cF8346", 
+        "0x6A1eBbff7714dfcE36756d09440ac979Bbf87b10", 
+        "0x729501BE221C534d9C090a8Ee4e8B5B16d6b356C", 
+        "0xad82A5fb394a525835A3a6DC34C1843e19160CFA", 
+        "0x5DD309a882c2BB49B5e5Ed1b49D209363B0f2a37", 
+        "0x490f72f8DfB81859fe61ecfe1fEB9F6C61a1aa89", 
+        "0xBd0b6cdf81B282C0401bc67d0d523D00Fc59c55c"  
     ];
 
     uint[] public staffETH = [
@@ -158,7 +158,7 @@ contract BuckySalary is Ownable {
                 return;
             }
 
-            if (strCompare(staff[i], &quot;&quot;) == 0) {
+            if (strCompare(staff[i], "") == 0) {
                 staff[i] = addr;
                 staffETH[i] = value;
                 return;
@@ -172,7 +172,7 @@ contract BuckySalary is Ownable {
     function removeStaff(string addr) public onlyOwner {
         for (uint i = 0; i < staff.length; i++) {
             if (strCompare(staff[i], addr) == 0) {
-                staff[i] = &quot;&quot;;
+                staff[i] = "";
                 staffETH[i] = 0;
             }
         }

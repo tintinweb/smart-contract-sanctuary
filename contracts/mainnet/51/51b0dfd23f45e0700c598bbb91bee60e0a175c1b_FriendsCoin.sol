@@ -107,8 +107,8 @@ contract FriendsCoin is ERC20, Ownable, Pausable {
     mapping(address => mapping(address => uint256)) internal allowed;
 
     function FriendsCoin() public {
-        name = &quot;FriendsCoin&quot;;
-        symbol = &quot;FZC&quot;;
+        name = "FriendsCoin";
+        symbol = "FZC";
         decimals = 18;
         initialSupply = 30000000000;
         totalSupply_ = initialSupply * 10 ** uint(decimals);

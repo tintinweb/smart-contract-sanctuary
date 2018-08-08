@@ -79,8 +79,8 @@ contract CasinoCoin is ERC20Interface, Owned {
 
 
     function CasinoCoin() public {
-        symbol = &quot;CAS&quot;;
-        name = &quot;CasinoCoin Token&quot;;
+        symbol = "CAS";
+        name = "CasinoCoin Token";
         decimals = 0;
         _totalSupply = 1000000000000;
         balances[owner] = _totalSupply;

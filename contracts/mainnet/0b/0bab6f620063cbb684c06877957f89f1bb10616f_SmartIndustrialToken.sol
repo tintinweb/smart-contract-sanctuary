@@ -175,8 +175,8 @@ contract TokenBase {
 contract SmartIndustrialToken is owned, TokenBase {
     
     // Public variables of the token
-    string public tokenName = &quot;Smart Industrial Token&quot;;
-    string public tokenSymbol = &quot;SIT&quot;;
+    string public tokenName = "Smart Industrial Token";
+    string public tokenSymbol = "SIT";
     uint256 public initialSupply = 600000000;
 
     mapping (address => bool) public frozenAccount;

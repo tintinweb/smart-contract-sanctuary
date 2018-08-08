@@ -13,21 +13,21 @@ pragma solidity ^0.4.14;
 
 
 /*************************************************************************
- * import &quot;./include/MintableToken.sol&quot; : start
+ * import "./include/MintableToken.sol" : start
  *************************************************************************/
 
 /*************************************************************************
- * import &quot;zeppelin/contracts/token/StandardToken.sol&quot; : start
- *************************************************************************/
-
-
-/*************************************************************************
- * import &quot;./BasicToken.sol&quot; : start
+ * import "zeppelin/contracts/token/StandardToken.sol" : start
  *************************************************************************/
 
 
 /*************************************************************************
- * import &quot;./ERC20Basic.sol&quot; : start
+ * import "./BasicToken.sol" : start
+ *************************************************************************/
+
+
+/*************************************************************************
+ * import "./ERC20Basic.sol" : start
  *************************************************************************/
 
 
@@ -43,10 +43,10 @@ contract ERC20Basic {
   event Transfer(address indexed from, address indexed to, uint256 value);
 }
 /*************************************************************************
- * import &quot;./ERC20Basic.sol&quot; : end
+ * import "./ERC20Basic.sol" : end
  *************************************************************************/
 /*************************************************************************
- * import &quot;../math/SafeMath.sol&quot; : start
+ * import "../math/SafeMath.sol" : start
  *************************************************************************/
 
 
@@ -80,7 +80,7 @@ library SafeMath {
   }
 }
 /*************************************************************************
- * import &quot;../math/SafeMath.sol&quot; : end
+ * import "../math/SafeMath.sol" : end
  *************************************************************************/
 
 
@@ -116,10 +116,10 @@ contract BasicToken is ERC20Basic {
 
 }
 /*************************************************************************
- * import &quot;./BasicToken.sol&quot; : end
+ * import "./BasicToken.sol" : end
  *************************************************************************/
 /*************************************************************************
- * import &quot;./ERC20.sol&quot; : start
+ * import "./ERC20.sol" : start
  *************************************************************************/
 
 
@@ -137,7 +137,7 @@ contract ERC20 is ERC20Basic {
   event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 /*************************************************************************
- * import &quot;./ERC20.sol&quot; : end
+ * import "./ERC20.sol" : end
  *************************************************************************/
 
 
@@ -202,17 +202,17 @@ contract StandardToken is ERC20, BasicToken {
 
 }
 /*************************************************************************
- * import &quot;zeppelin/contracts/token/StandardToken.sol&quot; : end
+ * import "zeppelin/contracts/token/StandardToken.sol" : end
  *************************************************************************/
 /*************************************************************************
- * import &quot;zeppelin/contracts/ownership/Ownable.sol&quot; : start
+ * import "zeppelin/contracts/ownership/Ownable.sol" : start
  *************************************************************************/
 
 
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -248,7 +248,7 @@ contract Ownable {
 
 }
 /*************************************************************************
- * import &quot;zeppelin/contracts/ownership/Ownable.sol&quot; : end
+ * import "zeppelin/contracts/ownership/Ownable.sol" : end
  *************************************************************************/
 
 /**
@@ -275,7 +275,7 @@ contract MintableToken is StandardToken, Ownable {
     }
 }
 /*************************************************************************
- * import &quot;./include/MintableToken.sol&quot; : end
+ * import "./include/MintableToken.sol" : end
  *************************************************************************/
 
 
@@ -334,7 +334,7 @@ contract TokenSale is Ownable {
     * Gets the bonus for the specified total supply
     */
     function getBonus(uint totalSupply) constant returns (uint){
-        bytes10 bonuses = &quot;\x14\x11\x0F\x0C\x0A\x08\x06\x04\x02\x00&quot;;
+        bytes10 bonuses = "\x14\x11\x0F\x0C\x0A\x08\x06\x04\x02\x00";
         uint level = totalSupply/BONUS_STEP;
         if(level < bonuses.length)
             return uint(bonuses[level]);

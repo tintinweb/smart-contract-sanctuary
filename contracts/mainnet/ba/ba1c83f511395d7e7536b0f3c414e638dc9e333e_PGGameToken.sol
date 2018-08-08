@@ -134,8 +134,8 @@ contract PGGameToken is ERC20, BasicToken {
         decimals = 8;
         totalSupply_ = 100000000 * 10 ** uint(decimals);    
         balances[msg.sender] = totalSupply_;               
-        name = &quot;PG Game Token&quot;;                                  
-        symbol = &quot;PGGame&quot;;                               
+        name = "PG Game Token";                                  
+        symbol = "PGGame";                               
    }
    /**
    * @dev Transfer tokens from one address to another

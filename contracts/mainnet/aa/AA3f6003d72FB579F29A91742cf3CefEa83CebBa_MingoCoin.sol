@@ -185,7 +185,7 @@ contract MintableToken is StandardToken, MultiOwnable {
 }
 
 contract MingoCoin is MintableToken {
-    string public constant name = &quot;MingoCoin&quot;;
-    string public constant symbol = &quot;XMC&quot;;
+    string public constant name = "MingoCoin";
+    string public constant symbol = "XMC";
     uint8 public constant decimals = 18;
 }

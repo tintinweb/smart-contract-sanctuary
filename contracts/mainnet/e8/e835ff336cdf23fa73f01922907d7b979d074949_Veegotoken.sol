@@ -58,8 +58,8 @@ contract Veegotoken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Veegotoken&quot;;
-    string public constant symbol = &quot;VEEG&quot;;
+    string public constant name = "Veegotoken";
+    string public constant symbol = "VEEG";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 2000000000e8;

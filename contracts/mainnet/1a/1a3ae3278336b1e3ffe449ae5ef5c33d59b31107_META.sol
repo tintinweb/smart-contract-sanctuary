@@ -1,8 +1,8 @@
 contract META {
 
-    string public name = &quot;Dunaton Metacurrency 2.0&quot;;
+    string public name = "Dunaton Metacurrency 2.0";
     uint8 public decimals = 18;
-    string public symbol = &quot;META&quot;;
+    string public symbol = "META";
 
     address public _owner;
     address public dev = 0xC96CfB18C39DC02FBa229B6EA698b1AD5576DF4c;

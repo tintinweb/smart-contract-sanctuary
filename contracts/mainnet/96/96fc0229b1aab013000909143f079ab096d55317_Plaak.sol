@@ -197,8 +197,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract Plaak is StandardToken, Ownable {
-    string  public  constant name       = &quot;Plaak Coin&quot;;
-    string  public  constant symbol     = &quot;PLK&quot;;
+    string  public  constant name       = "Plaak Coin";
+    string  public  constant symbol     = "PLK";
     uint    public  constant decimals   = 18;
 
     address public  admin;

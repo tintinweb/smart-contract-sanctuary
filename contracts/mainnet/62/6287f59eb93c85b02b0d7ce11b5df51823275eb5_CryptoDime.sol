@@ -108,8 +108,8 @@ contract CryptoDime is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function CryptoDime() public {
-        symbol = &quot;CDM&quot;;
-        name = &quot;CryptoDime&quot;;
+        symbol = "CDM";
+        name = "CryptoDime";
         decimals = 0;
         _totalSupply = 10000000000;
         balances[owner] = _totalSupply;

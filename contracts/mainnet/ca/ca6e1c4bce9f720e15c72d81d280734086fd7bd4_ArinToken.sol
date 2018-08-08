@@ -78,8 +78,8 @@ pragma solidity ^0.4.18;
       // Constructor
  
       function ArinToken() public {
-         symbol = &quot;ARIN&quot;;
-          name = &quot;ARIN&quot;;
+         symbol = "ARIN";
+          name = "ARIN";
           decimals = 18;
           _totalSupply = 800000000000000000000000000; 
           balances[owner] = _totalSupply;

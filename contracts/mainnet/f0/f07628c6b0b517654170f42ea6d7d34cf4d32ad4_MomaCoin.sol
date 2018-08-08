@@ -100,8 +100,8 @@ contract MomaCoin is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function MomaCoin() public {
-        symbol = &quot;MOMA&quot;;
-        name = &quot;mOmA Coin&quot;;
+        symbol = "MOMA";
+        name = "mOmA Coin";
         decimals = 8;
         number_of_token = 1700000000;
         _totalSupply = number_of_token*10**uint(decimals);

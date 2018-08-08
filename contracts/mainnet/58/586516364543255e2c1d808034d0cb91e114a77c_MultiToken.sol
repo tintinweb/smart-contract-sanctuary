@@ -4,7 +4,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -317,12 +317,12 @@ contract BasicMultiToken is StandardToken, DetailedERC20 {
     constructor(ERC20[] _tokens, string _name, string _symbol, uint8 _decimals) public
         DetailedERC20(_name, _symbol, _decimals)
     {
-        require(_tokens.length >= 2, &quot;Contract do not support less than 2 inner tokens&quot;);
+        require(_tokens.length >= 2, "Contract do not support less than 2 inner tokens");
         tokens = _tokens;
     }
 
     function mint(address _to, uint256 _amount) public {
-        require(totalSupply_ != 0, &quot;This method can be used with non zero total supply only&quot;);
+        require(totalSupply_ != 0, "This method can be used with non zero total supply only");
         uint256[] memory tokenAmounts = new uint256[](tokens.length);
         for (uint i = 0; i < tokens.length; i++) {
             tokenAmounts[i] = _amount.mul(tokens[i].balanceOf(this)).div(totalSupply_);
@@ -331,12 +331,12 @@ contract BasicMultiToken is StandardToken, DetailedERC20 {
     }
 
     function mintFirstTokens(address _to, uint256 _amount, uint256[] _tokenAmounts) public {
-        require(totalSupply_ == 0, &quot;This method can be used with zero total supply only&quot;);
+        require(totalSupply_ == 0, "This method can be used with zero total supply only");
         _mint(_to, _amount, _tokenAmounts);
     }
 
     function _mint(address _to, uint256 _amount, uint256[] _tokenAmounts) internal {
-        require(tokens.length == _tokenAmounts.length, &quot;Lenghts of tokens and _tokenAmounts array should be equal&quot;);
+        require(tokens.length == _tokenAmounts.length, "Lenghts of tokens and _tokenAmounts array should be equal");
         for (uint i = 0; i < tokens.length; i++) {
             require(tokens[i].transferFrom(msg.sender, this, _tokenAmounts[i]));
         }
@@ -390,9 +390,9 @@ contract MultiToken is BasicMultiToken, ERC228 {
     }
 
     function _setWeights(uint256[] _weights) internal {
-        require(_weights.length == tokens.length, &quot;Lenghts of _tokens and _weights array should be equal&quot;);
+        require(_weights.length == tokens.length, "Lenghts of _tokens and _weights array should be equal");
         for (uint i = 0; i < tokens.length; i++) {
-            require(_weights[i] != 0, &quot;The _weights array should not contains zeros&quot;);
+            require(_weights[i] != 0, "The _weights array should not contains zeros");
             weights[tokens[i]] = _weights[i];
         }
     }
@@ -413,7 +413,7 @@ contract MultiToken is BasicMultiToken, ERC228 {
 
     function change(address _fromToken, address _toToken, uint256 _amount, uint256 _minReturn) public returns(uint256 returnAmount) {
         returnAmount = getReturn(_fromToken, _toToken, _amount);
-        require(returnAmount >= _minReturn, &quot;The return amount is less than _minReturn value&quot;);
+        require(returnAmount >= _minReturn, "The return amount is less than _minReturn value");
         require(ERC20(_fromToken).transferFrom(msg.sender, this, _amount));
         require(ERC20(_toToken).transfer(msg.sender, returnAmount));
         emit Change(_fromToken, _toToken, msg.sender, _amount, returnAmount);

@@ -245,8 +245,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract UnetToken is BurnableToken, StandardToken {
 
-  string public constant name = &quot;UNET&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;UNET&quot;; // solium-disable-line uppercase
+  string public constant name = "UNET"; // solium-disable-line uppercase
+  string public constant symbol = "UNET"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 200000 * (10 ** uint256(decimals));

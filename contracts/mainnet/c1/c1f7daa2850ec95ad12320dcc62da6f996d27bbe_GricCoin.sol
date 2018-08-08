@@ -52,7 +52,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -264,9 +264,9 @@ contract StandardToken is ERC20, GricToken {
 
 contract GricCoin is StandardToken, Ownable {
     
-    string public name = &quot;Gric Coin&quot;;
-    string public symbol = &quot;GC&quot;;
-    string public version = &quot;1.0&quot;;
+    string public name = "Gric Coin";
+    string public symbol = "GC";
+    string public version = "1.0";
     uint8 public decimals = 8;
     
     uint256 INITIAL_SUPPLY = 10000000000e8;

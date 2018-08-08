@@ -307,9 +307,9 @@ contract Governance is DBC, Owned, DSGroup {
 
     /**
     @return {
-        &quot;ofVersion&quot;: &quot;Address of the Version&quot;,
-        &quot;active&quot;: &quot;Whether the Version in question is active&quot;,
-        &quot;timestamp&quot;: &quot;When the Version in question was added to the list&quot;
+        "ofVersion": "Address of the Version",
+        "active": "Whether the Version in question is active",
+        "timestamp": "When the Version in question was added to the list"
     }
     */
     function getVersionById(uint id) view returns (address ofVersion, bool active, uint timestamp) {

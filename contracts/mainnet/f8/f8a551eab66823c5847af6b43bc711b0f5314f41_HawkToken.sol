@@ -222,7 +222,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -337,7 +337,7 @@ contract CappedToken is MintableToken {
 /**
  * @title Heritable
  * @dev The Heritable contract provides ownership transfer capabilities, in the
- * case that the current owner stops &quot;heartbeating&quot;. Only the heir can pronounce the
+ * case that the current owner stops "heartbeating". Only the heir can pronounce the
  * owner&#39;s death.
  */
 contract Heritable is Ownable {
@@ -446,8 +446,8 @@ contract Heritable is Ownable {
 
 
 contract HawkToken is Heritable, CappedToken {
-    string public name = &quot;HWK&quot;;
-    string public symbol = &quot;HWK&quot;;
+    string public name = "HWK";
+    string public symbol = "HWK";
     uint8 public decimals = 18;
     function HawkToken
     (

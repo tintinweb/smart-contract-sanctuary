@@ -4,8 +4,8 @@ contract	CAC_2400_20200917				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	CAC_2400_20200917		&quot;	;
-	string	public		symbol =	&quot;	CACAVT		&quot;	;
+	string	public		name =	"	CAC_2400_20200917		"	;
+	string	public		symbol =	"	CACAVT		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		14693280768000000000000000					;	

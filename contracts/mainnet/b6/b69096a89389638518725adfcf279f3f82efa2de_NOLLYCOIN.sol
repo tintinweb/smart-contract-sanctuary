@@ -129,8 +129,8 @@ contract NOLLYCOIN is BasicToken {
 
     using SafeMath for uint256;
 
-    string public name = &quot;Nolly Coin&quot;;                        //name of the token
-    string public symbol = &quot;NOLLY&quot;;                                // symbol of the token
+    string public name = "Nolly Coin";                        //name of the token
+    string public symbol = "NOLLY";                                // symbol of the token
     uint8 public decimals = 18;                                  // decimals
     uint256 public totalSupply = 500000000 * 10 ** 18;             // total supply of NOLLY Tokens  
 

@@ -3,7 +3,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -684,8 +684,8 @@ contract MintableToken is StandardToken, Ownable {
 /// @title EverGold
 /// @dev ERC827 Token for games.
 contract EverGold is ERC827Token, MintableToken, AccessByGame {
-  string public constant name = &quot;Ever Gold&quot;;
-  string public constant symbol = &quot;EG&quot;;
+  string public constant name = "Ever Gold";
+  string public constant symbol = "EG";
   uint8 public constant decimals = 0;
 
 /**
@@ -935,7 +935,7 @@ library AddressUtils {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -950,7 +950,7 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(
     address _from,
@@ -969,7 +969,7 @@ contract ERC721BasicToken is ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
@@ -1121,7 +1121,7 @@ contract ERC721BasicToken is ERC721Basic {
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -1137,14 +1137,14 @@ contract ERC721BasicToken is ERC721Basic {
     canTransfer(_tokenId)
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -1466,8 +1466,8 @@ contract ERC721Token is ERC721, ERC721BasicToken {
 }
 
 contract NinjaToken is ERC721Token, AccessByGame {
-  string public constant NAME = &quot;Crypto Ninja Game Ninja&quot;;
-  string public constant SYMBOL = &quot;CNN&quot;;
+  string public constant NAME = "Crypto Ninja Game Ninja";
+  string public constant SYMBOL = "CNN";
 
   event NewNinja(uint256 ninjaid, bytes16 name, bytes32 pattern);
 
@@ -1540,7 +1540,7 @@ contract NinjaToken is ERC721Token, AccessByGame {
       ERC721Token(NAME, SYMBOL)
   {
     ninjas.push(Ninja({
-      pattern: 0, name: &quot;DUMMY&quot;, level: 0, exp: 0,
+      pattern: 0, name: "DUMMY", level: 0, exp: 0,
       dna1: 0, dna2: 0,
       readyTime: 0,
       winCount: 0, lossCount: 0,
@@ -1658,7 +1658,7 @@ contract NinjaToken is ERC721Token, AccessByGame {
   {
     bytes32 pattern = _generateInitialPattern();
     uint256 tokenid = ninjas.length;
-    bytes16 name = StringLib.generateName(&quot;NINJA#&quot;, 6, tokenid);
+    bytes16 name = StringLib.generateName("NINJA#", 6, tokenid);
 
     uint256 id = ninjas.push(Ninja({
       pattern: pattern, name: name, level: 1, exp: 0,

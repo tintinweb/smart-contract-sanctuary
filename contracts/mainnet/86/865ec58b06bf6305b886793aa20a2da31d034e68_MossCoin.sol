@@ -202,8 +202,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract MossCoin is PausableToken, BurnableToken {
-    string public constant name = &quot;Moss Coin&quot;;
-    string public constant symbol = &quot;MOC&quot;;
+    string public constant name = "Moss Coin";
+    string public constant symbol = "MOC";
     uint8 public constant decimals = 18;
 
     constructor(uint256 _amount) public

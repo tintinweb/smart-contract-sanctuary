@@ -192,8 +192,8 @@ contract ContractSpendToken is Ownable, StandardToken {
 
 
 contract EcoShareToken is ContractSpendToken {
-  string public constant symbol = &quot;ECST&quot;;
-  string public constant name = &quot;Contract Eco-Share Token&quot;;
+  string public constant symbol = "ECST";
+  string public constant name = "Contract Eco-Share Token";
   uint8 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));
 

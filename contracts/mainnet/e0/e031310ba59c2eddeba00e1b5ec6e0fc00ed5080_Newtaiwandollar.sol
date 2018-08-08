@@ -32,8 +32,8 @@ contract Newtaiwandollar{
     ) public {
         totalSupply = 1000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;    // Give the creator all initial tokens
-        name = &quot;newTaiwandollar&quot;;   // Set the name for display purposes
-        symbol = &quot;TWD&quot;;             // Set the symbol for display purposes
+        name = "newTaiwandollar";   // Set the name for display purposes
+        symbol = "TWD";             // Set the symbol for display purposes
     }
 
     /**

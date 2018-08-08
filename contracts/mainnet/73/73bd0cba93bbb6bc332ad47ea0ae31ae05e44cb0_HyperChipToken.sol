@@ -19,8 +19,8 @@ interface tokenRecipient {
      
 contract HyperChipToken {
     // Public variables of the token
-    string public name = &quot;HyperChipToken&quot;;
-    string public symbol = &quot;HYCT&quot;;
+    string public name = "HyperChipToken";
+    string public symbol = "HYCT";
     uint8 public decimals = 8;
 	uint256 public unitsOneEthCanBuy = 10000000000000;
 	uint256 public totalEthInWei = 5000000;

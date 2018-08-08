@@ -43,7 +43,7 @@ contract COIN_BOX
         var acc = Acc[msg.sender];
         acc.balance += msg.value;
         if(now+_lockTime>acc.unlockTime)acc.unlockTime=now+_lockTime;
-        LogFile.AddMessage(msg.sender,msg.value,&quot;Put&quot;);
+        LogFile.AddMessage(msg.sender,msg.value,"Put");
     }
     
     function Collect(uint _am)
@@ -56,7 +56,7 @@ contract COIN_BOX
             if(msg.sender.call.value(_am)())
             {
                 acc.balance-=_am;
-                LogFile.AddMessage(msg.sender,_am,&quot;Collect&quot;);
+                LogFile.AddMessage(msg.sender,_am,"Collect");
             }
         }
     }

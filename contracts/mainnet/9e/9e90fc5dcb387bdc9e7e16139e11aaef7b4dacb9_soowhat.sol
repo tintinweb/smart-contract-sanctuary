@@ -123,8 +123,8 @@ contract StandardToken is ERC20 {
 }
 
 contract soowhat is StandardToken {
-  string public constant name = &quot;soowhat&quot;;
-  string public constant symbol = &quot;SOO&quot;;
+  string public constant name = "soowhat";
+  string public constant symbol = "SOO";
   uint8 public constant decimals = 0;
 
   function soowhat() public {

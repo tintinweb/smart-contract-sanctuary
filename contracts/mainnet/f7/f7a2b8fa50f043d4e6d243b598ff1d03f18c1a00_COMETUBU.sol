@@ -37,7 +37,7 @@ return c;
 /**
 * @title Ownable
 * @dev The Ownable contract has an owner address, and provides basic authorization
-* control functions, this simplifies the implementation of &quot;user permissions&quot;.
+* control functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
 address public owner;
@@ -144,8 +144,8 @@ tkn.sig = bytes4(u);
 contract COMETUBU is ERC223, Ownable {
 using SafeMath for uint256;
 
-string public name = &quot;COMETUBU&quot;;
-string public symbol = &quot;TUBU&quot;;
+string public name = "COMETUBU";
+string public symbol = "TUBU";
 uint8 public decimals = 0;
 uint256 public totalSupply = 88e8 * 1e0;
 uint256 public distributeAmount = 0;

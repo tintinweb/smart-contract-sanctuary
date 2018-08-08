@@ -84,8 +84,8 @@ contract Token is TokenBase {
     function Token() public {
         totalSupply = initialSupply;
         balanceOf[msg.sender] = initialSupply;
-        name = &quot;EXC&quot;;
-        symbol = &quot;EXC&quot;;
+        name = "EXC";
+        symbol = "EXC";
     }
 
     function releaseReserve(uint value) onlyOwner public {

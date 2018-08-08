@@ -154,8 +154,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract IlumXToken is StandardToken {
 
-  string public constant name = &quot;Illuminati X&quot;;
-  string public constant symbol = &quot;IlumX&quot;;
+  string public constant name = "Illuminati X";
+  string public constant symbol = "IlumX";
   address public creator = msg.sender;
   uint256 public constant decimals = 18;
   

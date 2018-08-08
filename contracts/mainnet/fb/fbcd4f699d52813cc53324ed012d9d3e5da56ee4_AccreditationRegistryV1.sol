@@ -10,12 +10,12 @@ contract AccreditationRegistryV1 {
     modifier onlyOwner() {
         require(
             msg.sender == owner,
-            &quot;Only the owner can perform this action.&quot;
+            "Only the owner can perform this action."
         );
         _;
     }
     modifier onlyUnhalted() {
-        require(!halted, &quot;Contract is halted&quot;);
+        require(!halted, "Contract is halted");
         _;
     }
 
@@ -61,6 +61,6 @@ contract AccreditationRegistryV1 {
     }
 
     function() public payable {
-        revert(&quot;Does not accept a default&quot;);
+        revert("Does not accept a default");
     }
 }

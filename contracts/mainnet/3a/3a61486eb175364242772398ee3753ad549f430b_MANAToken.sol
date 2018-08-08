@@ -266,9 +266,9 @@ contract BurnableToken is StandardToken {
 
 contract MANAToken is BurnableToken, PausableToken, MintableToken {
 
-    string public constant symbol = &quot;MANA&quot;;
+    string public constant symbol = "MANA";
 
-    string public constant name = &quot;Decentraland MANA&quot;;
+    string public constant name = "Decentraland MANA";
 
     uint8 public constant decimals = 18;
 

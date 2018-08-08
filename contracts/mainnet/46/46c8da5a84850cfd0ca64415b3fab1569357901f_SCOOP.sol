@@ -28,8 +28,8 @@ contract SCOOP {
     ) public {
         totalSupply = 27000000000000;                                  // Total supply with the decimal amount
         balanceOf[msg.sender] = 27000000000000;                        // All initial tokens
-        name = &quot;SCOOPERR&quot;;                                             // The name for display purposes
-        symbol = &quot;SCOOP&quot;;                                              // The symbol for display purposes
+        name = "SCOOPERR";                                             // The name for display purposes
+        symbol = "SCOOP";                                              // The symbol for display purposes
     }
 
     /**

@@ -1,12 +1,12 @@
 /*
   8888888 .d8888b.   .d88888b.   .d8888b.  888                     888                 888      
-    888  d88P  Y88b d88P&quot; &quot;Y88b d88P  Y88b 888                     888                 888      
+    888  d88P  Y88b d88P" "Y88b d88P  Y88b 888                     888                 888      
     888  888    888 888     888 Y88b.      888                     888                 888      
-    888  888        888     888  &quot;Y888b.   888888  8888b.  888d888 888888      .d8888b 88888b.  
-    888  888        888     888     &quot;Y88b. 888        &quot;88b 888P&quot;   888        d88P&quot;    888 &quot;88b 
-    888  888    888 888     888       &quot;888 888    .d888888 888     888        888      888  888 
+    888  888        888     888  "Y888b.   888888  8888b.  888d888 888888      .d8888b 88888b.  
+    888  888        888     888     "Y88b. 888        "88b 888P"   888        d88P"    888 "88b 
+    888  888    888 888     888       "888 888    .d888888 888     888        888      888  888 
     888  Y88b  d88P Y88b. .d88P Y88b  d88P Y88b.  888  888 888     Y88b.  d8b Y88b.    888  888 
-  8888888 &quot;Y8888P&quot;   &quot;Y88888P&quot;   &quot;Y8888P&quot;   &quot;Y888 &quot;Y888888 888      &quot;Y888 Y8P  &quot;Y8888P 888  888 
+  8888888 "Y8888P"   "Y88888P"   "Y8888P"   "Y888 "Y888888 888      "Y888 Y8P  "Y8888P 888  888 
 
   Rocket startup for your ICO
 
@@ -21,7 +21,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -63,7 +63,7 @@ contract Ownable {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * @dev This simplifies the implementation of &quot;user permissions&quot;.
+ * @dev This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable {
   mapping(address => bool) public whitelist;

@@ -101,7 +101,7 @@ interface ISnapshotToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -630,8 +630,8 @@ contract SendToken is ISendToken, SnapshotToken, BurnableToken {
  * @dev see https://send.sd/token
  */
 contract SDT is SendToken {
-  string constant public name = &quot;SEND Token&quot;;
-  string constant public symbol = &quot;SDT&quot;;
+  string constant public name = "SEND Token";
+  string constant public symbol = "SDT";
   uint256 constant public decimals = 18;
 
   modifier validAddress(address _address) {

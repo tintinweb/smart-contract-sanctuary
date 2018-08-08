@@ -6,7 +6,7 @@ pragma solidity ^0.4.24;
 * Copyright CENTRE SECZ 2018
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy 
-* of this software and associated documentation files (the &quot;Software&quot;), to deal 
+* of this software and associated documentation files (the "Software"), to deal 
 * in the Software without restriction, including without limitation the rights 
 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
 * copies of the Software, and to permit persons to whom the Software is furnished to 
@@ -15,7 +15,7 @@ pragma solidity ^0.4.24;
 * The above copyright notice and this permission notice shall be included in all 
 * copies or substantial portions of the Software.
 *
-* THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
 * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
@@ -92,7 +92,7 @@ contract Ownable {
 * Copyright CENTRE SECZ 2018
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy 
-* of this software and associated documentation files (the &quot;Software&quot;), to deal 
+* of this software and associated documentation files (the "Software"), to deal 
 * in the Software without restriction, including without limitation the rights 
 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
 * copies of the Software, and to permit persons to whom the Software is furnished to 
@@ -101,7 +101,7 @@ contract Ownable {
 * The above copyright notice and this permission notice shall be included in all 
 * copies or substantial portions of the Software.
 *
-* THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
 * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
@@ -114,7 +114,7 @@ pragma solidity ^0.4.24;
 
 /**
  * @title Blacklistable Token
- * @dev Allows accounts to be blacklisted by a &quot;blacklister&quot; role
+ * @dev Allows accounts to be blacklisted by a "blacklister" role
 */
 contract Blacklistable is Ownable {
 
@@ -181,7 +181,7 @@ contract Blacklistable is Ownable {
 * Copyright CENTRE SECZ 2018
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy 
-* of this software and associated documentation files (the &quot;Software&quot;), to deal 
+* of this software and associated documentation files (the "Software"), to deal 
 * in the Software without restriction, including without limitation the rights 
 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
 * copies of the Software, and to permit persons to whom the Software is furnished to 
@@ -190,7 +190,7 @@ contract Blacklistable is Ownable {
 * The above copyright notice and this permission notice shall be included in all 
 * copies or substantial portions of the Software.
 *
-* THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
 * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
@@ -357,7 +357,7 @@ contract ERC20 is ERC20Basic {
 * Copyright CENTRE SECZ 2018
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy 
-* of this software and associated documentation files (the &quot;Software&quot;), to deal 
+* of this software and associated documentation files (the "Software"), to deal 
 * in the Software without restriction, including without limitation the rights 
 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
 * copies of the Software, and to permit persons to whom the Software is furnished to 
@@ -366,7 +366,7 @@ contract ERC20 is ERC20Basic {
 * The above copyright notice and this permission notice shall be included in all 
 * copies or substantial portions of the Software.
 *
-* THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
 * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,

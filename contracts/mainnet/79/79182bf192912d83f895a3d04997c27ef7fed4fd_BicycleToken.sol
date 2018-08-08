@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract BicycleToken {
     // Public variables of the token
-    string public name = &quot;Bicycle Token&quot;;
-    string public symbol = &quot;BIC&quot;;
+    string public name = "Bicycle Token";
+    string public symbol = "BIC";
     uint8 public decimals = 0;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

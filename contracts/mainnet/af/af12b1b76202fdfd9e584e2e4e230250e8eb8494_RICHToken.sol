@@ -119,13 +119,13 @@ contract RICHToken is Owned, Token {
     using SafeMath for uint256;
 
     // Ethereum token standaard
-    string public standard = &quot;Token 0.2&quot;;
+    string public standard = "Token 0.2";
 
     // Full name
-    string public name = &quot;RICH token&quot;;
+    string public name = "RICH token";
 
     // Symbol
-    string public symbol = &quot;RCH&quot;;
+    string public symbol = "RCH";
 
     // No decimal points
     uint8 public decimals = 8;

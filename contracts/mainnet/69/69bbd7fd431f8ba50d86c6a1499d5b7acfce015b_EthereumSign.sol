@@ -77,15 +77,15 @@ contract EthereumSign {
     }
 
     function strConcat(string _a, string _b, string _c, string _d) internal returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
     
     function strConcat(string _a, string _b, string _c) internal returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
     
     function strConcat(string _a, string _b) internal returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
     
     function toString(address x) returns (string) {

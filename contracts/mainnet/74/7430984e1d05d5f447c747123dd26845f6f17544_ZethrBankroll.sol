@@ -302,7 +302,7 @@ contract ZethrBankroll is ERC223Receiving {
     {
         uint savings = address(this).balance;
         if (savings > 0.01 ether) {
-            ZTHTKN.buyAndSetDivPercentage.value(savings)(address(0x0), 33, &quot;&quot;);
+            ZTHTKN.buyAndSetDivPercentage.value(savings)(address(0x0), 33, "");
             emit BankrollInvest(savings);
         }
         else {
@@ -755,7 +755,7 @@ contract ZethrBankroll is ERC223Receiving {
         uint ActualBalance = (address(this).balance.sub(NonICOBuyins));
         if (ActualBalance > 0.01 ether) {
           reEntered = true;
-          ZTHTKN.buyAndSetDivPercentage.value(ActualBalance)(address(0x0), 33, &quot;&quot;);
+          ZTHTKN.buyAndSetDivPercentage.value(ActualBalance)(address(0x0), 33, "");
           emit BankrollInvest(ActualBalance);
           reEntered = false;
         }
@@ -767,7 +767,7 @@ contract ZethrBankroll is ERC223Receiving {
       if (!reEntered) {
         uint balance = address(this).balance;
         require (balance > 0.01 ether);
-        ZTHTKN.buyAndSetDivPercentage.value(balance)(address(0x0), 33, &quot;&quot;); 
+        ZTHTKN.buyAndSetDivPercentage.value(balance)(address(0x0), 33, ""); 
       }
     }
 

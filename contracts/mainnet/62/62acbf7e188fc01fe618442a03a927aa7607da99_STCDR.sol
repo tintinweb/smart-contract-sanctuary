@@ -90,10 +90,10 @@ contract StandardToken is Token, SafeMath {
 }
 
 contract STCDR is StandardToken {
-	string public name = &quot;STCDR&quot;;
-	string public symbol = &quot;STCDR&quot;;
+	string public name = "STCDR";
+	string public symbol = "STCDR";
 	uint256 public decimals = 8;
-	string public version = &quot;1.0&quot;;
+	string public version = "1.0";
 	uint256 public tokenCap = 1000000000 * 10**8;
 	uint256 public tokenBurned = 0;
 	uint256 public tokenAllocated = 0;

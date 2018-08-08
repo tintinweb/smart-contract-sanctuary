@@ -48,7 +48,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -315,8 +315,8 @@ contract EchoChainToken is BurnableToken, MintableToken, PausableToken {
     uint8 public decimals;
 
     function EchoChainToken() public {
-        name = &quot;EchoChain&quot;;
-        symbol = &quot;ECHO&quot;;
+        name = "EchoChain";
+        symbol = "ECHO";
         decimals = 18;
         totalSupply = 1000000000 * 10 ** uint256(decimals);
 

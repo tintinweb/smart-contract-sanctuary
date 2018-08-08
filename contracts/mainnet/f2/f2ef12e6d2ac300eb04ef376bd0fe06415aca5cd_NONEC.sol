@@ -113,8 +113,8 @@ contract NONEC is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NONEC() public {
-        symbol = &quot;NONEC&quot;;
-        name = &quot;NONE Coin&quot;;
+        symbol = "NONEC";
+        name = "NONE Coin";
         decimals = 0;
         _totalSupply = 2000000;
         balances[0x8f2117470c93c025E0D547e42329BA321E485401] = _totalSupply;

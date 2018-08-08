@@ -18,9 +18,9 @@ contract FlatEarth {
     function FlatEarth() {
 
          initialSupply = 1000000000;
-         name =&quot;FlatEarth&quot;;
+         name ="FlatEarth";
         decimals = 3;
-         symbol = &quot;FeH&quot;;
+         symbol = "FeH";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

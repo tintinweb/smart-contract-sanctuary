@@ -10,8 +10,8 @@ contract ETHERICH {
     uint256 private _increase = 1000000000000000;
 
     uint256 private _highestBid = 1000000000000000;
-    string private _highestNickName = &quot;ETHERICH&quot;;
-    string private _highestQuote = &quot;Your quote here!&quot;;
+    string private _highestNickName = "ETHERICH";
+    string private _highestQuote = "Your quote here!";
 
     constructor() public {
         owner = msg.sender;

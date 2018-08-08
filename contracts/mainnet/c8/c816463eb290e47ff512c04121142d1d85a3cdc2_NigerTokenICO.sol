@@ -1,7 +1,7 @@
 contract NigerTokenICO {
     
-    function name() constant returns (string) { return &quot;NiggerCoin&quot;; }
-    function symbol() constant returns (string) { return &quot;NGR&quot;; }
+    function name() constant returns (string) { return "NiggerCoin"; }
+    function symbol() constant returns (string) { return "NGR"; }
     function decimals() constant returns (uint8) { return 4; }
 	
 

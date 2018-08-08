@@ -228,8 +228,8 @@ contract BurnableToken is MintableToken {
 
 
 contract SleekPlayToken is BurnableToken {
-  string public constant name = &quot;SleekPlay Token&quot;;
-  string public constant symbol = &quot;SKP&quot;;
+  string public constant name = "SleekPlay Token";
+  string public constant symbol = "SKP";
   uint8 public constant decimals = 18;
 
 
@@ -251,7 +251,7 @@ contract SleekPlayToken is BurnableToken {
   }
 
   function() external payable {
-      revert(&quot;This contract does not accept Ethereum!&quot;);
+      revert("This contract does not accept Ethereum!");
     }
 
 }

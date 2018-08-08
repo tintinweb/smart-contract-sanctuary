@@ -7,7 +7,7 @@ interface tokenRecipient {
 contract MUBEX {
     // Public variables of the token
     string public name=&#39;MUBEX&#39;;
-    string public symbol=&quot;MBX&quot;;
+    string public symbol="MBX";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply;

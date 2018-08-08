@@ -153,10 +153,10 @@ contract StandardToken is ERC20, BasicToken {
  * @dev Based on code by BAT: https://github.com/brave-intl/basic-attention-token-crowdsale/blob/master/contracts/BAToken.sol
  */
 contract TIXGeneration is StandardToken {
-    string public constant name = &quot;Blocktix Token&quot;;
-    string public constant symbol = &quot;TIX&quot;;
+    string public constant name = "Blocktix Token";
+    string public constant symbol = "TIX";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     // crowdsale parameters
     bool public isFinalized;              // switched to true in operational state

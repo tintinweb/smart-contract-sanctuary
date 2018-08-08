@@ -145,8 +145,8 @@ contract HFCToken is StandardToken {
   uint8 public decimals;
 
   constructor() public {
-    name = &quot;HFCToken&quot;;
-    symbol = &quot;HFC&quot;;
+    name = "HFCToken";
+    symbol = "HFC";
     decimals = 8;
     totalSupply_ = 100000000000000000;
     balances[0xB97f41cc340899DbA210BdCc86a912ef100eFE96] = totalSupply_;

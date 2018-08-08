@@ -81,8 +81,8 @@ pragma solidity 0.4.15;
  contract WIN is ERC20Token {
     
 
-    string public constant symbol = &quot;WIN&quot;;
-    string public constant name = &quot;WIN&quot;;
+    string public constant symbol = "WIN";
+    string public constant name = "WIN";
 
     uint8 public constant decimals = 7;
     uint256 constant TOKEN = 10**7;

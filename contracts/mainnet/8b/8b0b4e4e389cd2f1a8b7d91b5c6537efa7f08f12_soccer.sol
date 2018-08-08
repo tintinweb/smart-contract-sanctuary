@@ -143,11 +143,11 @@ contract soccer is ERC721{
   /* ERC721 */
 
   function name() public view returns (string name) {
-    return &quot;cryptosports.top&quot;;
+    return "cryptosports.top";
   }
 
   function symbol() public view returns (string symbol) {
-    return &quot;SGS&quot;;
+    return "SGS";
   }
 
   //teams total number

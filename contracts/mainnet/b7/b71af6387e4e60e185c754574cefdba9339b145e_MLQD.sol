@@ -79,8 +79,8 @@ contract MLQD is StandardToken {
     They allow one to customise the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
-    string public name = &quot;Maolulu LQD&quot;;   // Fancy name: eg: Maolulu LQD
-    string public symbol = &quot;MLQD&quot;; // An identifier: eg MLQD
+    string public name = "Maolulu LQD";   // Fancy name: eg: Maolulu LQD
+    string public symbol = "MLQD"; // An identifier: eg MLQD
     uint public decimals = 8;      // Unit precision
 
     function MLQD() public {

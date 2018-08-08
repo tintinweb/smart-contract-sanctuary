@@ -2,13 +2,13 @@ pragma solidity ^0.4.18; // solhint-disable-line
 
 // similar to the original shrimper , with these changes:
 // 0. already initialized
-// 1. the &quot;free&quot; 1000 YouTubes cost 0.001 eth (in line with the mining fee)
+// 1. the "free" 1000 YouTubes cost 0.001 eth (in line with the mining fee)
 // 2. Coming to http://CraigGrantShrimper.surge.sh
 // 3. bots should have a harder time, and whales can compete for the devfee
 
 contract CraigGrantShrimper{
-    string public name = &quot;CraigGrantShrimper&quot;;
-	string public symbol = &quot;CGshrimper&quot;;
+    string public name = "CraigGrantShrimper";
+	string public symbol = "CGshrimper";
     //uint256 subscribers_PER_CraigGrant_PER_SECOND=1;
     uint256 public subscribers_TO_HATCH_1CraigGrant=86400;//for final version should be seconds in a day
     uint256 public STARTING_CraigGrant=1000;

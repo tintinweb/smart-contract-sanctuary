@@ -216,8 +216,8 @@ contract DataChoiceToken is StandardToken {
   uint8 public decimals;
 
   constructor (address _address) public {
-    name = &quot;DataChoice&quot;;
-    symbol = &quot;DCT&quot;;
+    name = "DataChoice";
+    symbol = "DCT";
     decimals = 18;
     totalSupply_ = 1700000000000000000000000000;
     balances[_address] = totalSupply_;

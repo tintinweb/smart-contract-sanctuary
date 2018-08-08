@@ -285,8 +285,8 @@ contract FBToken is ERC20, BasicToken {
 
     using DateTime for uint256;
 
-    string public name = &quot;FABI&quot;;
-    string public symbol = &quot;FB&quot;;
+    string public name = "FABI";
+    string public symbol = "FB";
 
     address owner;
 

@@ -257,9 +257,9 @@ contract _0xTestToken is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;0xTEST&quot;;
+        symbol = "0xTEST";
 
-        name = &quot;0xTEST Token&quot;;
+        name = "0xTEST Token";
 
         decimals = 8;
 

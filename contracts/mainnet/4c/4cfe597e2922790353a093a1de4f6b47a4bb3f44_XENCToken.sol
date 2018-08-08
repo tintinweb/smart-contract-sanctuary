@@ -88,8 +88,8 @@ contract XENCToken is ERC20Interface, Owned {
 
 
     function XENCToken() public {
-        symbol = &quot;XENC&quot;;
-        name = &quot;XENC Token&quot;;
+        symbol = "XENC";
+        name = "XENC Token";
         decimals = 6;
         _totalSupply = 200000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

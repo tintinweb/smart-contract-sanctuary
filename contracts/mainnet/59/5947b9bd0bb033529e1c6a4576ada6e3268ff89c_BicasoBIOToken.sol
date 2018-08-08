@@ -26,8 +26,8 @@ contract BicasoBIOToken{
     }
      constructor() public {
         owner = 0x28F1DdeC2218ec95b14076127a7AdE2F2986E4A6;
-        name = &quot;BICASO&quot;;
-        symbol = &quot;BIO&quot;;
+        name = "BICASO";
+        symbol = "BIO";
         decimals = 8;
         totalSupply = 5000000000 * 10 ** uint256(8);
         balanceOf[owner] = totalSupply;

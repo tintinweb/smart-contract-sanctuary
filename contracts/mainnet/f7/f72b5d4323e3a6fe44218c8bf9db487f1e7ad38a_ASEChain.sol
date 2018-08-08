@@ -23,8 +23,8 @@ contract ASEChain{
     function ASEChain() {
         balanceOf[msg.sender] =  200000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  200000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;ASEChain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ASE&quot;;                               // Set the symbol for display purposes
+        name = "ASEChain";                                   // Set the name for display purposes
+        symbol = "ASE";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

@@ -140,7 +140,7 @@ contract StandardToken is ERC20, BasicToken {
  
 /*
 The Ownable contract has an owner address, and provides basic authorization control
- functions, this simplifies the implementation of &quot;user permissions&quot;.
+ functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -202,8 +202,8 @@ contract TheLiquidToken is StandardToken, Ownable {
 contract ExtremeCoin is TheLiquidToken {
     
     uint256 public initialSupply;
-    string public constant name = &quot;ExtremeCoin&quot;;
-    string public constant symbol = &quot;XT&quot;;
+    string public constant name = "ExtremeCoin";
+    string public constant symbol = "XT";
     uint32 public constant decimals = 2;
     
     function ExtremeCoin() { 

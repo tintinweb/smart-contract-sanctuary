@@ -34,7 +34,7 @@ library AddressTools {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 	
@@ -328,10 +328,10 @@ contract UKTTokenController is Ownable {
 	
 	// address of the controlled token
 	UKTTokenBasic public token;
-	// finalize function type. One of two values is possible: &quot;transfer&quot; or &quot;burn&quot;
-	bytes32 public finalizeType = &quot;transfer&quot;;
+	// finalize function type. One of two values is possible: "transfer" or "burn"
+	bytes32 public finalizeType = "transfer";
 	// address type where finalize function will transfer undistributed tokens
-	bytes32 public finalizeTransferAddressType = &quot;&quot;;
+	bytes32 public finalizeTransferAddressType = "";
 	// maximum quantity of addresses to distribute
 	uint8 internal MAX_ADDRESSES_FOR_DISTRIBUTE = 100;
 	// list of locked initial allocation addresses
@@ -350,12 +350,12 @@ contract UKTTokenController is Ownable {
 		bytes32 _finalizeType,
 		bytes32 _finalizeTransferAddressType
 	) public {
-		require(_finalizeType == &quot;transfer&quot; || _finalizeType == &quot;burn&quot;);
+		require(_finalizeType == "transfer" || _finalizeType == "burn");
 		
-		if (_finalizeType == &quot;transfer&quot;) {
-			require(_finalizeTransferAddressType != &quot;&quot;);
-		} else if (_finalizeType == &quot;burn&quot;) {
-			require(_finalizeTransferAddressType == &quot;&quot;);
+		if (_finalizeType == "transfer") {
+			require(_finalizeTransferAddressType != "");
+		} else if (_finalizeType == "burn") {
+			require(_finalizeTransferAddressType == "");
 		}
 		
 		finalizeType = _finalizeType;
@@ -494,13 +494,13 @@ contract UKTTokenController is Ownable {
 	 */
 	function finalize() public onlyOwner {
 		
-		if (finalizeType == &quot;transfer&quot;) {
+		if (finalizeType == "transfer") {
 			// transfer all undistributed tokens to particular address
 			token.transfer(
 				token.allocationAddressesTypes(finalizeTransferAddressType),
 				token.balanceOf(this)
 			);
-		} else if (finalizeType == &quot;burn&quot;) {
+		} else if (finalizeType == "burn") {
 			// burn all undistributed tokens
 			token.burn(token.balanceOf(this));
 		}

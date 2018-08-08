@@ -113,8 +113,8 @@ contract DRAKE is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DRAKE() public {
-        symbol = &quot;DRAKE&quot;;
-        name = &quot;DRAKE&quot;;
+        symbol = "DRAKE";
+        name = "DRAKE";
         decimals = 18;
         _totalSupply = 200000000000000000000000000;
         balances[0x432a39e0884a0bAA16e2b304b344E47f8CCe8B87] = _totalSupply;

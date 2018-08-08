@@ -109,8 +109,8 @@ contract ClearToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ClearToken() public {
-        symbol = &quot;CLEAR&quot;;
-        name = &quot;Clear Cryptobank Token&quot;;
+        symbol = "CLEAR";
+        name = "Clear Cryptobank Token";
         decimals = 18;
         _totalSupply = 285000000000000000000000000;
         balances[0x97c47782c7918eD78a247F2CE7A476A22A41Cd19] = _totalSupply;

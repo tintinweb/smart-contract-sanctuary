@@ -54,11 +54,11 @@ contract SafeMath {
 /*-------------------------------------------------------------------------*/
 contract Mjolnir is owned, SafeMath {
 	
-	string 	public MjolnirWebsite	= &quot;https://mjolnirguard.co&quot;;
+	string 	public MjolnirWebsite	= "https://mjolnirguard.co";
 	address public MjolnirAddress 	= this;
 	address public creator 				= msg.sender;
-    string 	public name 				= &quot;Mjolnir&quot;;
-    string 	public symbol 				= &quot;MJR&quot;;
+    string 	public name 				= "Mjolnir";
+    string 	public symbol 				= "MJR";
     uint8 	public decimals 			= 18;											    
     uint256 public totalSupply 			= 9859716997000000000000000000;
     uint256 public buyPrice 			= 3500000;

@@ -87,8 +87,8 @@ contract CryptoCarsRent is ERC721, Ownable {
   event TokenSold(uint256 tokenId, uint256 oldPrice, uint256 newPrice, address prevOwner, address winner, string name);
   event Transfer(address from, address to, uint256 tokenId);
 
-  string public constant NAME = &quot;CryptoCars&quot;;
-  string public constant SYMBOL = &quot;CarsToken&quot;;
+  string public constant NAME = "CryptoCars";
+  string public constant SYMBOL = "CarsToken";
 
   uint256 private startingSellPrice = 0.012 ether;
 
@@ -129,7 +129,7 @@ contract CryptoCarsRent is ERC721, Ownable {
   function createCarsTokens() public onlyCoOwner {
 
 	for (uint8 car=0; car<21; car++) {
-	   _createCar(&quot;Crypto Car&quot;, address(this), startingSellPrice);
+	   _createCar("Crypto Car", address(this), startingSellPrice);
 	 }
 
   }

@@ -198,11 +198,11 @@ contract FoshaAirdrop is AbstractVirtualToken {
   }
 
   function name () constant returns (string result) {
-    return &quot;Fosha Airdrop&quot;;
+    return "Fosha Airdrop";
   }
 
   function symbol () constant returns (string result) {
-    return &quot;FOSHAIR&quot;;
+    return "FOSHAIR";
   }
 
   function decimals () constant returns (uint8 result) {

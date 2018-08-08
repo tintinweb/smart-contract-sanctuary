@@ -70,7 +70,7 @@ library SafeMath {
 
  * @dev The Ownable contract has an owner address, and provides basic authorization control
 
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
 
  */
 
@@ -477,9 +477,9 @@ contract TitaToken  is BurnableToken, Ownable {
 
 
 
-    string public constant name = &quot;Tita&quot;;
+    string public constant name = "Tita";
 
-    string public constant symbol = &quot;TTN&quot;;
+    string public constant symbol = "TTN";
 
     uint public constant decimals = 18;
 

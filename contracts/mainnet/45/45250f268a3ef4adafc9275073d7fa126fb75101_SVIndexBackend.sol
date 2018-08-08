@@ -48,16 +48,16 @@ contract safeSend {
     // we want to be able to call outside contracts (e.g. the admin proxy contract)
     // but reentrency is bad, so here&#39;s a mutex.
     function doSafeSend(address toAddr, uint amount) internal {
-        doSafeSendWData(toAddr, &quot;&quot;, amount);
+        doSafeSendWData(toAddr, "", amount);
     }
 
     function doSafeSendWData(address toAddr, bytes data, uint amount) internal {
-        require(txMutex3847834 == false, &quot;ss-guard&quot;);
+        require(txMutex3847834 == false, "ss-guard");
         txMutex3847834 = true;
         // we need to use address.call.value(v)() because we want
         // to be able to send to other contracts, even with no data,
         // which might use more than 2300 gas in their fallback function.
-        require(toAddr.call.value(amount)(data), &quot;ss-failed&quot;);
+        require(toAddr.call.value(amount)(data), "ss-failed");
         txMutex3847834 = false;
     }
 }
@@ -105,12 +105,12 @@ contract owned {
     event OwnerChanged(address newOwner);
 
     modifier only_owner() {
-        require(msg.sender == owner, &quot;only_owner: forbidden&quot;);
+        require(msg.sender == owner, "only_owner: forbidden");
         _;
     }
 
     modifier owner_or(address addr) {
-        require(msg.sender == addr || msg.sender == owner, &quot;!owner-or&quot;);
+        require(msg.sender == addr || msg.sender == owner, "!owner-or");
         _;
     }
 
@@ -140,8 +140,8 @@ contract hasAdmins is owned {
     event AdminDisabledForever();
 
     modifier only_admin() {
-        require(adminsDisabledForever == false, &quot;admins must not be disabled&quot;);
-        require(isAdmin(msg.sender), &quot;only_admin: forbidden&quot;);
+        require(adminsDisabledForever == false, "admins must not be disabled");
+        require(isAdmin(msg.sender), "only_admin: forbidden");
         _;
     }
 
@@ -163,13 +163,13 @@ contract hasAdmins is owned {
 
     function upgradeMeAdmin(address newAdmin) only_admin() external {
         // note: already checked msg.sender has admin with `only_admin` modifier
-        require(msg.sender != owner, &quot;owner cannot upgrade self&quot;);
+        require(msg.sender != owner, "owner cannot upgrade self");
         _setAdmin(msg.sender, false);
         _setAdmin(newAdmin, true);
     }
 
     function setAdmin(address a, bool _givePerms) only_admin() external {
-        require(a != msg.sender && a != owner, &quot;cannot change your own (or owner&#39;s) permissions&quot;);
+        require(a != msg.sender && a != owner, "cannot change your own (or owner&#39;s) permissions");
         _setAdmin(a, _givePerms);
     }
 
@@ -211,12 +211,12 @@ contract permissioned is owned, hasAdmins {
     event AdminLockdown();
 
     modifier only_editors() {
-        require(editAllowed[msg.sender], &quot;only_editors: forbidden&quot;);
+        require(editAllowed[msg.sender], "only_editors: forbidden");
         _;
     }
 
     modifier no_lockdown() {
-        require(adminLockdown == false, &quot;no_lockdown: check failed&quot;);
+        require(adminLockdown == false, "no_lockdown: check failed");
         _;
     }
 
@@ -261,7 +261,7 @@ contract upgradePtr {
     address ptr = address(0);
 
     modifier not_upgraded() {
-        require(ptr == address(0), &quot;upgrade pointer is non-zero&quot;);
+        require(ptr == address(0), "upgrade pointer is non-zero");
         _;
     }
 
@@ -500,7 +500,7 @@ contract SVIndexBackend is IxBackendIface {
     function setDOwnerFromClaim(bytes32 democHash, address newOwner) only_editors() external {
         Democ storage d = democs[democHash];
         // make sure that the owner claim is enabled (i.e. the disabled flag is false)
-        require(d.erc20OwnerClaimDisabled == false, &quot;!erc20-claim&quot;);
+        require(d.erc20OwnerClaimDisabled == false, "!erc20-claim");
         // set owner and editor
         d.owner = newOwner;
         d.editors[d.editorEpoch][newOwner] = true;
@@ -657,6 +657,6 @@ contract SVIndexBackend is IxBackendIface {
     /* util for calculating editor key */
 
     function _calcEditorKey(bytes key) internal pure returns (bytes) {
-        return abi.encodePacked(&quot;editor.&quot;, key);
+        return abi.encodePacked("editor.", key);
     }
 }

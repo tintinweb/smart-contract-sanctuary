@@ -81,8 +81,8 @@ contract GoldBlocksTickets is ERC20Interface, Owned, SafeMath {
 
 
     function GoldBlocksTickets() public {
-        symbol = &quot;GBT&quot;;
-        name = &quot;GoldBlocksTickets&quot;;
+        symbol = "GBT";
+        name = "GoldBlocksTickets";
         decimals = 3;
         _totalSupply = 90000000000;
         balances[0x5A86f0cafD4ef3ba4f0344C138afcC84bd1ED222] = _totalSupply;

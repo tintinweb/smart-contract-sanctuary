@@ -4,8 +4,8 @@ contract	AIRPORT_CITY_20230515				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	AIRPORT_CITY_20230515		&quot;	;
-	string	public		symbol =	&quot;	AIRCITI		&quot;	;
+	string	public		name =	"	AIRPORT_CITY_20230515		"	;
+	string	public		symbol =	"	AIRCITI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		14819434587663000000000000					;	

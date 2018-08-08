@@ -3,8 +3,8 @@ contract OrpheusRoyalSiamRailways {
     
     uint public constant _totalSupply = 100000000000000000000000000;
     
-    string public constant symbol = &quot;OERS&quot;;
-    string public constant name = &quot;Orpheus Royal Siam Railways&quot;;
+    string public constant symbol = "OERS";
+    string public constant name = "Orpheus Royal Siam Railways";
     uint8 public constant decimals = 18;
     
     mapping(address => uint256) balances;

@@ -60,8 +60,8 @@ contract PalmCoin is iERC20 {
     using SafeMath for uint256;
     uint public _totalSupply = 7500000000000000000000000;
 
-    string public constant symbol = &quot;PALM&quot;;
-    string public constant name = &quot;PalmCoin&quot;;
+    string public constant symbol = "PALM";
+    string public constant name = "PalmCoin";
     uint8 public constant decimals = 18;
 
     address public owner;

@@ -113,8 +113,8 @@ contract Telegram is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Telegram() public {
-        symbol = &quot;GRAM&quot;;
-        name = &quot;Telegram &quot;;
+        symbol = "GRAM";
+        name = "Telegram ";
         decimals = 18;
         _totalSupply = 5000000000000000000000000000;
         balances[0x2d57365a7ab22425f09D49bB0baFB0426EB8dDF9] = _totalSupply;

@@ -66,7 +66,7 @@ contract PlayCoinPow {
 
 
     modifier isActivated() {
-        require(activated_ == true, &quot;its not ready yet.  check ?eta in discord&quot;);
+        require(activated_ == true, "its not ready yet.  check ?eta in discord");
         _;
     }
     
@@ -109,8 +109,8 @@ contract PlayCoinPow {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;PlayCoin Pow&quot;;
-    string public symbol = &quot;PCP&quot;;
+    string public name = "PlayCoin Pow";
+    string public symbol = "PCP";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 10;
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;
@@ -165,7 +165,7 @@ contract PlayCoinPow {
     function activate() onlyAdministrator() public {
         
         // can only be ran once
-        require(activated_ == false, &quot;PCP already activated&quot;);
+        require(activated_ == false, "PCP already activated");
         
         // activate the contract 
         activated_ = true;
@@ -223,7 +223,7 @@ contract PlayCoinPow {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
         
         // fire event
@@ -568,7 +568,7 @@ contract PlayCoinPow {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
         
         // is the user referred by a masternode?

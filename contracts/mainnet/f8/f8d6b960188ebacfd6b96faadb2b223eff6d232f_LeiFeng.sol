@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract LeiFeng is StandardToken {
-  string public name    = &quot;雷锋勋章&quot;;
-  string public symbol  = &quot;LFXZ&quot;;
+  string public name    = "雷锋勋章";
+  string public symbol  = "LFXZ";
   uint8 public decimals = 0;
 
   uint256 public constant INITIAL_SUPPLY = 10000;

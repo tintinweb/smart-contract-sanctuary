@@ -33,7 +33,7 @@ interface IDonQuixoteToken{
 
 }
 contract BaseGame {
-  string public gameName = &quot;ScratchTickets&quot;;
+  string public gameName = "ScratchTickets";
   uint public constant  gameType = 2005;
   string public officialGameUrl;
   mapping (address => uint256) public userTokenOf;

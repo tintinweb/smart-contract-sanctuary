@@ -55,11 +55,11 @@ contract SafeMath {
 /*-------------------------------------------------------------------------*/
 contract EthernetCash is owned, SafeMath {
 	
-	string 	public EthernetCashWebsite	= &quot;https://ethernet.cash&quot;;
+	string 	public EthernetCashWebsite	= "https://ethernet.cash";
 	address public EthernetCashAddress 	= this;
 	address public creator 				= msg.sender;
-    string 	public name 				= &quot;Ethernet Cash&quot;;
-    string 	public symbol 				= &quot;ENC&quot;;
+    string 	public name 				= "Ethernet Cash";
+    string 	public symbol 				= "ENC";
     uint8 	public decimals 			= 18;											    
     uint256 public totalSupply 			= 19999999986000000000000000000;
     uint256 public buyPrice 			= 1800000;

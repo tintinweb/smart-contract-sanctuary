@@ -224,8 +224,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract WfmToken is StandardToken {
-    string public constant name = &quot;WFM Token&quot;;
-    string public constant symbol = &quot;WFM&quot;;
+    string public constant name = "WFM Token";
+    string public constant symbol = "WFM";
     uint8 public constant decimals = 18;
     uint256 constant denomination = 10 ** uint(decimals);
     uint256 constant totalTokens = 100000000 * denomination;  // 100&#39;000&#39;000 tokens total

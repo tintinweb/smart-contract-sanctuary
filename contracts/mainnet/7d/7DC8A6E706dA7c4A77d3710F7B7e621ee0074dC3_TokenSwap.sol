@@ -291,7 +291,7 @@ contract TokenSwap {
     oldCirculatingSupply = ERC20Interface(oldTokenAddress).totalSupply(); 
     assert ((circulatingSupply.div(oldCirculatingSupply.mul(tenDecimalPlaces))) == scalingFactor);
     assert (oldCirculatingSupply.mul(scalingFactor.mul(tenDecimalPlaces)) == circulatingSupply); 
-    newToken = new ERC20(totalSupply, &quot;MyBit&quot;, 18, &quot;MYB&quot;); 
+    newToken = new ERC20(totalSupply, "MyBit", 18, "MYB"); 
     newToken.transfer(_myBitFoundation, foundationSupply);
   }
 

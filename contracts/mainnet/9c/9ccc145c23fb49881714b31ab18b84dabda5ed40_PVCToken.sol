@@ -36,7 +36,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -322,8 +322,8 @@ contract BurnableToken is StandardToken, Ownable {
      function PVCToken(address wallet) public {
          owner = wallet;
          totalSupply = uint(50000000).mul( 10 ** uint256(decimals)); //Update total supply with the decimal amount
-         name = &quot;Pryvate&quot;;
-         symbol = &quot;PVC&quot;;
+         name = "Pryvate";
+         symbol = "PVC";
          balances[wallet] = totalSupply;
          
          //Emitting transfer event since assigning all tokens to the creator also corresponds to the transfer of tokens to the creator

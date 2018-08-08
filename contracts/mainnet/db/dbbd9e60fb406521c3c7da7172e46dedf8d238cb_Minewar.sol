@@ -188,8 +188,8 @@ contract Minewar {
         //init order data
         uint256 idx;
         for (idx = 0; idx < numberOfOrders; idx++) {
-            buyOrderData[idx] = BuyOrderData(0, &quot;title&quot;, &quot;description&quot;, 0, 0);
-            sellOrderData[idx] = SellOrderData(0, &quot;title&quot;, &quot;description&quot;, 0, 0);
+            buyOrderData[idx] = BuyOrderData(0, "title", "description", 0, 0);
+            sellOrderData[idx] = SellOrderData(0, "title", "description", 0, 0);
         }
         for (idx = 0; idx < numberOfRank; idx++) {
             rankList[idx] = 0;
@@ -423,8 +423,8 @@ contract Minewar {
         }
         o.unitPrice = 0;
         o.amount = 0;  
-        o.title = &quot;title&quot;;
-        o.description = &quot;description&quot;;
+        o.title = "title";
+        o.description = "description";
         o.owner = 0;
     }
     function getBuyDemand(uint256 index) public view returns(address owner, string title, string description,
@@ -507,8 +507,8 @@ contract Minewar {
         }
         o.unitPrice = 0;
         o.amount = 0; 
-        o.title = &quot;title&quot;;
-        o.description = &quot;description&quot;;
+        o.title = "title";
+        o.description = "description";
         o.owner = 0;
     }
     function getSellDemand(uint256 index) public view returns(address owner, string title, string description,

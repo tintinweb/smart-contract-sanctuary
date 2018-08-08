@@ -96,8 +96,8 @@ contract AXPRV is Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;AXPRV&quot;;
-        name = &quot;AXNET Private Sale token&quot;;
+        symbol = "AXPRV";
+        name = "AXNET Private Sale token";
         decimals = 18;
     }
 

@@ -90,8 +90,8 @@ contract StandardToken is ERC20, SafeMath {
 }
 
 contract MONACOESTAT is Ownable, StandardToken {
-    string public name = &quot;Monaco Estat&quot;;
-    string public symbol = &quot;MEST&quot;;
+    string public name = "Monaco Estat";
+    string public symbol = "MEST";
     uint public decimals = 18;
 
     uint public totalSupply = 100 * (10**6) * (10**18); // 100 MIL

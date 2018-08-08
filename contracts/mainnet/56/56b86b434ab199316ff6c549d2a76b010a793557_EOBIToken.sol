@@ -157,8 +157,8 @@ contract standardToken is ERC20Token {
 contract EOBIToken is standardToken,Owned {
     using SafeMath for uint;
 
-    string public name=&quot;EOBI Token&quot;;
-    string public symbol=&quot;EOBI&quot;;
+    string public name="EOBI Token";
+    string public symbol="EOBI";
     uint256 public decimals=18;
     
     uint256 public totalSupply = 0;

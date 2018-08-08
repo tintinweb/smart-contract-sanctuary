@@ -291,8 +291,8 @@ contract JokerToken is StandardToken, Ownable {
     uint256 public transfersAllowDate;
 
     constructor() public {
-        name = &quot;Joker.buzz token&quot;;
-        symbol = &quot;JOKER&quot;;
+        name = "Joker.buzz token";
+        symbol = "JOKER";
         decimals = 18;
         // in us cents
         tokenStartPrice = 40;
@@ -312,8 +312,8 @@ contract JokerToken is StandardToken, Ownable {
 
 
     function nfsPoolTransfer(address _to, uint256 _value) public onlyOwner returns (bool) {
-        require(nfsPoolLeft >= _value, &quot;Value more than tokens left&quot;);
-        require(_to != address(0), &quot;Not allowed send to trash tokens&quot;);
+        require(nfsPoolLeft >= _value, "Value more than tokens left");
+        require(_to != address(0), "Not allowed send to trash tokens");
 
         nfsPoolLeft -= _value;
         balances[_to] = balances[_to].add(_value);
@@ -324,16 +324,16 @@ contract JokerToken is StandardToken, Ownable {
     }
 
     function transfer(address _to, uint256 _value) public returns (bool) {
-        require(transfersAllowDate <= now, &quot;Function cannot be called at this time.&quot;);
+        require(transfersAllowDate <= now, "Function cannot be called at this time.");
 
         return BasicToken.transfer(_to, _value);
     }
 
     function() public payable {
         uint256 tokensCount;
-        require(150000000000000 <= msg.value, &quot;min limit eth&quot;);
+        require(150000000000000 <= msg.value, "min limit eth");
         uint256 ethUsdRate = oracle.ethUsdRate();
-        require(sPeriodEndDate >= now, &quot;Sell tokens all periods ended&quot;);
+        require(sPeriodEndDate >= now, "Sell tokens all periods ended");
         bool isSecondPeriodNow = now >= sPerDate;
         bool isSecondPeriodTokensLimitReached = soldTokensCount >= (totalSupply_ - sPeriodSoldTokensLimit - nfsPoolCount);
 
@@ -352,8 +352,8 @@ contract JokerToken is StandardToken, Ownable {
                 tokensCount += weiLeft * ethUsdRate / tokenSecondPeriodPrice;
             }
         }
-        require(tokensCount > 0, &quot;tokens count must be positive&quot;);
-        require((soldTokensCount + tokensCount) <= (totalSupply_ - nfsPoolCount), &quot;tokens limit&quot;);
+        require(tokensCount > 0, "tokens count must be positive");
+        require((soldTokensCount + tokensCount) <= (totalSupply_ - nfsPoolCount), "tokens limit");
 
         balances[msg.sender] += tokensCount;
         soldTokensCount += tokensCount;

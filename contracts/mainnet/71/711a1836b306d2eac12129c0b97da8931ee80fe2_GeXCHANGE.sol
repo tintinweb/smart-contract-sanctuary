@@ -107,8 +107,8 @@ contract GeXCHANGE is ERC20Interface, Owned, SafeMath {
     // Constructor
 
     function GeXCHANGE() public {
-        symbol = &quot;GEXEC&quot;;
-        name = &quot;GeXCHANGE&quot;;
+        symbol = "GEXEC";
+        name = "GeXCHANGE";
         decimals = 18;
         _totalSupply = 400000000000000000000000000;
         balances[0xf82bd0F91D4b5A9f96287363A3534C81Cdb94afA] = _totalSupply;

@@ -122,8 +122,8 @@ contract Approve is newToken, ERC20 {
 }
 
 contract Jade is Approve, Ownable {
-  string public constant name = &quot;Jade&quot;;
-  string public constant symbol = &quot;Jade&quot;;
+  string public constant name = "Jade";
+  string public constant symbol = "Jade";
   uint public constant decimals = 5;
   uint256 public initialSupply;
     

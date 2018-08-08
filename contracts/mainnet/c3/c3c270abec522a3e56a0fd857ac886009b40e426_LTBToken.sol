@@ -153,8 +153,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract LTBToken is StandardToken {
 
-  string public constant name = &quot;Litrabit&quot;;
-  string public constant symbol = &quot;LTB&quot;;
+  string public constant name = "Litrabit";
+  string public constant symbol = "LTB";
   uint256 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 22000000 * 10**18;

@@ -81,7 +81,7 @@ contract Teikhos {
         bytes32 s = proof_of_public_key2 ^ hash2;
 
         // Get msgHash for use with ecrecover
-        bytes32 msgHash = keccak256(&quot;\x19Ethereum Signed Message:\n64&quot;, _publicKey);
+        bytes32 msgHash = keccak256("\x19Ethereum Signed Message:\n64", _publicKey);
 
         // The value v is not known, try both 27 and 28
         if(ecrecover(msgHash, 27, r, s) == signer || ecrecover(msgHash, 28, r, s) == signer ) {

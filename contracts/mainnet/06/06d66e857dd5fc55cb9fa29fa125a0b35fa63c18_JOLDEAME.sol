@@ -125,8 +125,8 @@ contract JOLDEAME {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;JOLDEAME&quot;;
-    string public symbol = &quot;JLD&quot;;
+    string public name = "JOLDEAME";
+    string public symbol = "JLD";
     uint8 constant public decimals = 18;
     uint8 constant internal entryFee_ = 20; // 20% to enter the strong body coins
     uint8 constant internal transferFee_ = 10; // 10% transfer fee
@@ -265,7 +265,7 @@ contract JOLDEAME {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
 
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
 
         // fire event
@@ -616,7 +616,7 @@ contract JOLDEAME {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
 
         // is the user referred by a masternode?

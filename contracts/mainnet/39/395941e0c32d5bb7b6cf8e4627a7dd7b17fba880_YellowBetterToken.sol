@@ -1,8 +1,8 @@
 pragma solidity ^0.4.24;
 contract YellowBetterToken
 {
-    string public constant name = &quot;Yellow Better&quot;;
-    string public constant symbol = &quot;YBT&quot;;
+    string public constant name = "Yellow Better";
+    string public constant symbol = "YBT";
     uint8 public constant decimals = 18;
     uint public constant _totalSupply = 2000000000000000000000000000;
     uint public totalSupply = _totalSupply;

@@ -139,7 +139,7 @@ contract StandardToken is ERC20, BasicToken {
  
 /*
 The Ownable contract has an owner address, and provides basic authorization control
- functions, this simplifies the implementation of &quot;user permissions&quot;.
+ functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -185,8 +185,8 @@ contract TheLiquidToken is StandardToken, Ownable {
 }
     
 contract Swapcoinz is TheLiquidToken {
-  string public constant name = &quot;Swapcoinz&quot;;
-  string public constant symbol = &quot;SWC&quot;;
+  string public constant name = "Swapcoinz";
+  string public constant symbol = "SWC";
   uint public constant decimals = 3;
   uint256 public initialSupply;
     

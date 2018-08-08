@@ -88,8 +88,8 @@ contract StandardToken is ERC20Token, Utils, Ownable {
 
 contract ERCCToken is StandardToken {
 
-    string public constant name = &quot;Real Estate Chain&quot;;
-    string public constant symbol = &quot;ERCC&quot;; 
+    string public constant name = "Real Estate Chain";
+    string public constant symbol = "ERCC"; 
     uint8 public constant decimals = 18;
     uint256 public constant totalSupply = 5 * 10**26;
     

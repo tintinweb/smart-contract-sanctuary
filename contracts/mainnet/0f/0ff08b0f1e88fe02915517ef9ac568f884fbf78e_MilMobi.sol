@@ -28,8 +28,8 @@ contract MilMobi {
     function TokenERC20() public {
         totalSupply = 194000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = 194000000;                // Give the creator all initial tokens
-        name = &quot;MilMobi Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;MMT&quot;;                               // Set the symbol for display purposes
+        name = "MilMobi Token";                                   // Set the name for display purposes
+        symbol = "MMT";                               // Set the symbol for display purposes
     }
 
     /**

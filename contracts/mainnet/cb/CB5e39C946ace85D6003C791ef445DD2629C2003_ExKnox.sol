@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract ExKnox {
 
-    string public name = &quot;ExKnox&quot;;      //  token name
-    string public symbol = &quot;EKX&quot;;           //  token symbol
+    string public name = "ExKnox";      //  token name
+    string public symbol = "EKX";           //  token symbol
     uint256 public decimals = 8;            //  token digit
 
     mapping (address => uint256) public balanceOf;

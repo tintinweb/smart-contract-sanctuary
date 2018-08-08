@@ -90,7 +90,7 @@ contract ARXpresale is owned, safeMath {
   uint256 public fundingRemainingAvailableInEth;              // ==((fundingMaxCapInWei - amountRaisedInWei)/1 ether); (resolution will only be to integer)
 
   // loop control, ICO startup and limiters
-  string  public currentStatus                   = &quot;&quot;;        // current presale status
+  string  public currentStatus                   = "";        // current presale status
   uint256 public fundingStartBlock;                           // presale start block#
   uint256 public fundingEndBlock;                             // presale end block#
   bool    public isPresaleClosed                 = false;     // presale completion boolean
@@ -108,7 +108,7 @@ contract ARXpresale is owned, safeMath {
   // default function, map admin
   function ARXpresale() onlyOwner {
     admin = msg.sender;
-    currentStatus = &quot;presale deployed to chain&quot;;
+    currentStatus = "presale deployed to chain";
   }
 
   // setup the presale parameters
@@ -136,15 +136,15 @@ contract ARXpresale is owned, safeMath {
           // configure presale
           isPresaleSetup                          = true;
           isPresaleClosed                         = false;
-          currentStatus                           = &quot;presale is setup&quot;;
+          currentStatus                           = "presale is setup";
 
           //gas reduction experiment
           setPrice();
-          return &quot;presale is setup&quot;;
+          return "presale is setup";
       } else if (msg.sender != admin) {
-          return &quot;not authorized&quot;;
+          return "not authorized";
       } else  {
-          return &quot;campaign cannot be changed&quot;;
+          return "campaign cannot be changed";
       }
     }
 
@@ -209,23 +209,23 @@ contract ARXpresale is owned, safeMath {
       // update state & status variables
       require (isPresaleSetup);
       if ((amountRaisedInWei < fundingMinCapInWei) && (block.number <= fundingEndBlock && block.number >= fundingStartBlock)) { // presale in progress, under softcap
-        currentStatus = &quot;In progress (Eth < Softcap)&quot;;
-        return &quot;In progress (Eth < Softcap)&quot;;
+        currentStatus = "In progress (Eth < Softcap)";
+        return "In progress (Eth < Softcap)";
       } else if ((amountRaisedInWei < fundingMinCapInWei) && (block.number < fundingStartBlock)) { // presale has not started
-        currentStatus = &quot;presale is setup&quot;;
-        return &quot;presale is setup&quot;;
+        currentStatus = "presale is setup";
+        return "presale is setup";
       } else if ((amountRaisedInWei < fundingMinCapInWei) && (block.number > fundingEndBlock)) { // presale ended, under softcap
-        currentStatus = &quot;Unsuccessful (Eth < Softcap)&quot;;
-        return &quot;Unsuccessful (Eth < Softcap)&quot;;
+        currentStatus = "Unsuccessful (Eth < Softcap)";
+        return "Unsuccessful (Eth < Softcap)";
       } else if (amountRaisedInWei >= fundingMaxCapInWei) {  // presale successful, at hardcap!
-          currentStatus = &quot;Successful (ARX >= Hardcap)!&quot;;
-          return &quot;Successful (ARX >= Hardcap)!&quot;;
+          currentStatus = "Successful (ARX >= Hardcap)!";
+          return "Successful (ARX >= Hardcap)!";
       } else if ((amountRaisedInWei >= fundingMinCapInWei) && (block.number > fundingEndBlock)) { // presale ended, over softcap!
-          currentStatus = &quot;Successful (Eth >= Softcap)!&quot;;
-          return &quot;Successful (Eth >= Softcap)!&quot;;
+          currentStatus = "Successful (Eth >= Softcap)!";
+          return "Successful (Eth >= Softcap)!";
       } else if ((amountRaisedInWei >= fundingMinCapInWei) && (block.number <= fundingEndBlock)) { // presale in progress, over softcap!
-        currentStatus = &quot;In progress (Eth >= Softcap)!&quot;;
-        return &quot;In progress (Eth >= Softcap)!&quot;;
+        currentStatus = "In progress (Eth >= Softcap)!";
+        return "In progress (Eth >= Softcap)!";
       }
       setPrice();
     }
@@ -256,6 +256,6 @@ contract ARXpresale is owned, safeMath {
     function updateStatus() onlyOwner {
       require((block.number >= fundingEndBlock) || (amountRaisedInWei >= fundingMaxCapInWei));
       isPresaleClosed = true;
-      currentStatus = &quot;packagesale is closed&quot;;
+      currentStatus = "packagesale is closed";
     }
   }

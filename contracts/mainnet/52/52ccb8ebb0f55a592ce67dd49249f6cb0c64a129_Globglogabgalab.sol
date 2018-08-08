@@ -113,8 +113,8 @@ contract Globglogabgalab is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Globglogabgalab() public {
-        symbol = &quot;GLOB&quot;;
-        name = &quot;Globglogabgalab&quot;;
+        symbol = "GLOB";
+        name = "Globglogabgalab";
         decimals = 7;
         _totalSupply = 13370000000000000;
         balances[0x433a57803f841C5611e5370ad5CD97bf46e25cb6] = _totalSupply;

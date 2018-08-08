@@ -148,8 +148,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract FortuneGodToken is StandardToken {
 
-    string public name = &quot;FortuneGod&quot;;
-    string public symbol = &quot;FG&quot;;
+    string public name = "FortuneGod";
+    string public symbol = "FG";
     address owner;
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 10000000000*10**18;

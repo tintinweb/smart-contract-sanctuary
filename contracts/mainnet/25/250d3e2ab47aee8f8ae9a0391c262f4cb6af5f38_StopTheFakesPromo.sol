@@ -180,9 +180,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract StopTheFakesPromo is StandardToken {
     
-    string public constant Token_Description = &quot;StopTheFakes.io: 5% BONUS. This token allows its holder to receive an additional bonus of 5% during the main token sale. More information in our telegram group.&quot;;
-    string public constant name = &quot;StopTheFakes Promo&quot;;
-    string public constant symbol = &quot;STFPR&quot;;
+    string public constant Token_Description = "StopTheFakes.io: 5% BONUS. This token allows its holder to receive an additional bonus of 5% during the main token sale. More information in our telegram group.";
+    string public constant name = "StopTheFakes Promo";
+    string public constant symbol = "STFPR";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 3000000 ether;

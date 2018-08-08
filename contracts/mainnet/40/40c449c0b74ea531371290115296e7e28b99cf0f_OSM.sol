@@ -134,8 +134,8 @@ contract DSNote {
 
 /* pragma solidity ^0.4.23; */
 
-/* import &quot;ds-auth/auth.sol&quot;; */
-/* import &quot;ds-note/note.sol&quot;; */
+/* import "ds-auth/auth.sol"; */
+/* import "ds-note/note.sol"; */
 
 contract DSStop is DSNote, DSAuth {
 
@@ -174,9 +174,9 @@ contract DSStop is DSNote, DSAuth {
 
 /* pragma solidity ^0.4.24; */
 
-/* import &quot;ds-auth/auth.sol&quot;; */
-/* import &quot;ds-stop/stop.sol&quot;; */
-// import &quot;ds-value/value.sol&quot;;
+/* import "ds-auth/auth.sol"; */
+/* import "ds-stop/stop.sol"; */
+// import "ds-value/value.sol";
 
 interface DSValue {
     function peek() external returns (bytes32,bool);

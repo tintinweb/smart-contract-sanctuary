@@ -4,8 +4,8 @@ contract	VINCI_301201				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	VINCI_301201		&quot;	;
-	string	public		symbol =	&quot;	VINCI		&quot;	;
+	string	public		name =	"	VINCI_301201		"	;
+	string	public		symbol =	"	VINCI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		11063890721038700000000000					;	

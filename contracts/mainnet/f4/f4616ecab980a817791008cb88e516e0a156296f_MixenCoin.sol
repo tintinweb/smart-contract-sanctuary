@@ -125,8 +125,8 @@ contract StandardToken is MIXContract, ERC20 {
  */
  
 contract MixenCoin is StandardToken, Ownable {
-  string public constant name = &quot;MixenCoin&quot;;
-  string public constant symbol = &quot;MIX&quot;;
+  string public constant name = "MixenCoin";
+  string public constant symbol = "MIX";
   uint public constant decimals = 5;
   // Constructor
   function MixenCoin() {

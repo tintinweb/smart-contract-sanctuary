@@ -198,8 +198,8 @@ contract StandardToken is ERC223, SafeMath {
  */
 contract MiewGold is StandardToken {
 
-    string public name = &quot;Miew Gold&quot;;
-    string public symbol = &quot;MIEW&quot;;
+    string public name = "Miew Gold";
+    string public symbol = "MIEW";
     
 	
 	address public coinMaster;

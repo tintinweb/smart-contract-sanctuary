@@ -51,8 +51,8 @@ contract ArpachainToken is ERC20 {
     mapping (address => mapping (address => uint256)) internal allowed;
 
     constructor() public {
-      _symbol = &quot;OCT&quot;;
-      _name = &quot;OC Test&quot;;
+      _symbol = "OCT";
+      _name = "OC Test";
       _totalSupply = 10 * 1000000;
       balances[msg.sender] = _totalSupply;
       emit Transfer(address(0), msg.sender, _totalSupply);

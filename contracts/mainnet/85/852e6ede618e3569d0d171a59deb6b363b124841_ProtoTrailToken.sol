@@ -113,8 +113,8 @@ contract ProtoTrailToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ProtoTrailToken() public {
-        symbol = &quot;TRAIL&quot;;
-        name = &quot;ProtoTrail Token&quot;;
+        symbol = "TRAIL";
+        name = "ProtoTrail Token";
         decimals = 18;
         _totalSupply = 300000000000000000000000000;
         balances[0x83e72ACd379DF52511113b351922f41BF443360B] = _totalSupply;

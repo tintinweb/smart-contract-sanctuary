@@ -137,7 +137,7 @@ contract OptionsExchange {
     emit UserBalanceUpdated(msg.sender, 0, userBalance[msg.sender][0]);
   }
   
-  // To deposit tokens, users must first &quot;approve&quot; the transfer in the token contract.
+  // To deposit tokens, users must first "approve" the transfer in the token contract.
   // Users must first deposit assets into the Exchange in order to create, purchase, or exercise Options.
   function depositToken(address token, uint256 amount) external {
     require(Token(token).transferFrom(msg.sender, this, amount));  
@@ -165,7 +165,7 @@ contract OptionsExchange {
   }
   
   // Hashes an Option&#39;s parameters for use in looking up information about the Option.  Callable internally and externally.
-  // Variables are grouped into arrays as a workaround for the &quot;too many local variables&quot; problem.
+  // Variables are grouped into arrays as a workaround for the "too many local variables" problem.
   // Instead of directly encoding the asset exchange rate (Strike Price), it is instead implicitly
   // stored as the ratio of amountLocked, the amount of assetLocked stored in the Option, and amountTraded,
   // the amount of assetTraded needed to exercise the Option.
@@ -187,7 +187,7 @@ contract OptionsExchange {
                         bool makerIsSeller,
                         uint96 nonce) view public returns(bytes32) {
     // A hash of the Order&#39;s information which was signed by the Maker to create the offchain order.
-    bytes32 orderHash = keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;,
+    bytes32 orderHash = keccak256("\x19Ethereum Signed Message:\n32",
                                   keccak256(address(this),
                                             optionHash,
                                             amountPremium_expiration[0],

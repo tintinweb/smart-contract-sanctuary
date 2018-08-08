@@ -114,8 +114,8 @@ contract BYToken is UnboundedRegularToken {
 
     uint public totalSupply = 5*10**10;
     uint8 constant public decimals = 2;
-    string constant public name = &quot;BYB Token&quot;;
-    string constant public symbol = &quot;BY2&quot;;
+    string constant public name = "BYB Token";
+    string constant public symbol = "BY2";
 	address public owner;
 	mapping (address => uint) public freezes;
 
@@ -175,7 +175,7 @@ contract BYToken is UnboundedRegularToken {
 	
 	function transferAndCall(address _to, uint _value, bytes _extraData) public returns (bool success) {
 		if(transfer(_to,_value)){
-			if(_to.call(bytes4(bytes32(keccak256(&quot;receiveTransfer(address,uint,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { return true; }
+			if(_to.call(bytes4(bytes32(keccak256("receiveTransfer(address,uint,address,bytes)"))), msg.sender, _value, this, _extraData)) { return true; }
 		}
 		else {
             return false;
@@ -184,7 +184,7 @@ contract BYToken is UnboundedRegularToken {
 	
 	function approveAndCall(address _spender, uint _value, bytes _extraData) public returns (bool success) {
 		if(approve(_spender,_value)){
-			if(_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { return true; }
+			if(_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint,address,bytes)"))), msg.sender, _value, this, _extraData)) { return true; }
 		}
 		else {
             return false;

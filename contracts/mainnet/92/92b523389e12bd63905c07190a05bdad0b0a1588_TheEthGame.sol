@@ -547,8 +547,8 @@ contract TheEthGameTrophy {
     event Transfer (address indexed _from, address indexed _to);
 
     constructor () public {
-        name = &quot;The Eth Game Winner&quot;;
-        description = &quot;2019-08-17&quot;;
+        name = "The Eth Game Winner";
+        description = "2019-08-17";
         rank = 1;
         creator = msg.sender;
     }

@@ -100,8 +100,8 @@ contract EUAHTOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EUAHTOKEN() public {
-        symbol = &quot;eUAH&quot;;
-        name = &quot;eUAH - Electronic Hryvnia&quot;;
+        symbol = "eUAH";
+        name = "eUAH - Electronic Hryvnia";
         decimals = 18;
         _totalSupply = 50000000000000000000000000;
         balances[0x647cf78369B65d6E8faF0Cdf6650f4e73221E33D] = _totalSupply;

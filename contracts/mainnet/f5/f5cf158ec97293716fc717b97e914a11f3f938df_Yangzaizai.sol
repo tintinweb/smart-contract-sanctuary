@@ -328,8 +328,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract Yangzaizai is PausableToken {
     
-    string public name = &quot;洋崽崽币&quot;;
-    string public symbol = &quot;YZZ&quot;;
+    string public name = "洋崽崽币";
+    string public symbol = "YZZ";
     uint8 public decimals = 18;
     
     constructor () public {

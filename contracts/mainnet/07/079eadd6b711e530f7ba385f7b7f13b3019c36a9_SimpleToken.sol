@@ -123,8 +123,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract SimpleToken is StandardToken {
-    string public name = &quot;BECK TOKEN&quot;;
-    string public symbol = &quot;BT&quot;;
+    string public name = "BECK TOKEN";
+    string public symbol = "BT";
     uint public decimals = 18;
     address operator;
     address owner;

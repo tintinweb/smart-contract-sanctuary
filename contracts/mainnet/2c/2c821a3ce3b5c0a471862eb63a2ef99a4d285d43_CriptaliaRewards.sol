@@ -112,8 +112,8 @@ contract CriptaliaRewards is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CriptaliaRewards() public {
-        symbol = &quot;CRIPTRE&quot;;
-        name = &quot;CRIPTALIA REWARDS&quot;;
+        symbol = "CRIPTRE";
+        name = "CRIPTALIA REWARDS";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[msg.sender] = _totalSupply;

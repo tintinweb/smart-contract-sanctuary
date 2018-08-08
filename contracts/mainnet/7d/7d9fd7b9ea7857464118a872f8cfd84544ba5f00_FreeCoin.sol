@@ -155,8 +155,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract FreeCoin is StandardToken {
 
-  string public constant name = &quot;FreeCoin&quot;;
-  string public constant symbol = &quot;FREE&quot;;
+  string public constant name = "FreeCoin";
+  string public constant symbol = "FREE";
   uint256 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 100000000000 * 10**18;

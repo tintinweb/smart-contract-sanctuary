@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -315,7 +315,7 @@ contract CappedToken is MintableToken {
 
 
 contract ParameterizedToken is CappedToken {
-    string public version = &quot;1.1&quot;;
+    string public version = "1.1";
 
     string public name;
 
@@ -334,7 +334,7 @@ contract ParameterizedToken is CappedToken {
 
 contract FOCToken is ParameterizedToken {
 
-    function FOCToken() public ParameterizedToken(&quot;Fruit Origin Chain&quot;, &quot;FOC&quot;, 18, 21000000000) {
+    function FOCToken() public ParameterizedToken("Fruit Origin Chain", "FOC", 18, 21000000000) {
     }
 
 }

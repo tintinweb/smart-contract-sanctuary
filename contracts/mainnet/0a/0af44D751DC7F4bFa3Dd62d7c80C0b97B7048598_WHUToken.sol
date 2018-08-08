@@ -146,8 +146,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract WHUToken is StandardToken {
 
-  string public constant name = &quot; WHU LI&quot;;
-  string public constant symbol = &quot;WHU&quot;;
+  string public constant name = " WHU LI";
+  string public constant symbol = "WHU";
   uint8 public constant decimals = 18;
 
 

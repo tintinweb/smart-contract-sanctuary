@@ -160,8 +160,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract RobotChain is StandardToken, Ownable {
-    string  public  constant name = &quot;RobotChain&quot;;
-    string  public  constant symbol = &quot;RBTC&quot;;
+    string  public  constant name = "RobotChain";
+    string  public  constant symbol = "RBTC";
     uint    public  constant decimals = 18;
 
     bool public transferEnabled = true;

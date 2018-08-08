@@ -7,7 +7,7 @@ pragma solidity ^0.4.21;
    // Telegram Chat: @deltacoin
    // Telegram News: @deltaico
    // CEO Nechesov Andrey http://facebook.com/Nechesov     
-   // Ltd. &quot;Delta&quot;   
+   // Ltd. "Delta"   
    // Tokens Delta: BUY and SELL into this smart contract on exchange
    // ----------------------------------------------------------------------------------------------
     
@@ -76,8 +76,8 @@ pragma solidity ^0.4.21;
 
       using SafeMath for uint;
 
-      string public constant symbol = &quot;DELTA&quot;;
-      string public constant name = &quot;DELTA token&quot;;
+      string public constant symbol = "DELTA";
+      string public constant name = "DELTA token";
       uint8 public constant decimals = 18; 
            
       uint256 public constant maxTokens = (2**32-1)*10**18; 
@@ -257,7 +257,7 @@ pragma solidity ^0.4.21;
    
       // Send _value amount of tokens from address _from to address _to
       // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-      // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+      // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
       // fees in sub-currencies; the command should fail unless the _from account has
       // deliberately authorized the sender of the message via some mechanism; we propose
       // these standardized APIs for approval:

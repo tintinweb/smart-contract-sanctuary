@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	BIMI_DAO_31_b				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	BIMI_DAO_31_b		&quot;	;
-	string	public	constant	symbol =	&quot;	BIMI		&quot;	;
+	string	public	constant	name =	"	BIMI_DAO_31_b		"	;
+	string	public	constant	symbol =	"	BIMI		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

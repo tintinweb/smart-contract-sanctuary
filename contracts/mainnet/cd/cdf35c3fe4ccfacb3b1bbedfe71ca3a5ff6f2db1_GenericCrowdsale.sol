@@ -250,9 +250,9 @@ contract StandardToken is ERC223 {
 
 contract MyDFSToken is StandardToken {
 
-    string public name = &quot;MyDFS Token&quot;;
+    string public name = "MyDFS Token";
     uint8 public decimals = 6;
-    string public symbol = &quot;MyDFS&quot;;
+    string public symbol = "MyDFS";
     string public version = &#39;H1.0&#39;;
     uint256 public totalSupply;
 

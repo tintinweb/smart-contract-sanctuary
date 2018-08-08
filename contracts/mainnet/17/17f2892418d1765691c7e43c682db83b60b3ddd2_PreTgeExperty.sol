@@ -1,8 +1,8 @@
 pragma solidity ^0.4.11;
 
-// import &quot;./ERC223BasicToken.sol&quot;;
+// import "./ERC223BasicToken.sol";
 
-// import &quot;./SafeMath.sol&quot;;
+// import "./SafeMath.sol";
 /**
  * Math operations with safety checks
  */
@@ -55,7 +55,7 @@ library SafeMath {
 }
 // end import
 
-// import &quot;./ERC223Basic.sol&quot;;
+// import "./ERC223Basic.sol";
 contract ERC223Basic {
   uint public totalSupply;
   function balanceOf(address who) constant returns (uint);
@@ -65,7 +65,7 @@ contract ERC223Basic {
 }
 // end import
 
-// import &quot;./ERC223ReceivingContract.sol&quot;;
+// import "./ERC223ReceivingContract.sol";
  /*
  * Contract that is working with ERC223 tokens
  */
@@ -129,8 +129,8 @@ contract ERC223BasicToken is ERC223Basic {
 contract PreTgeExperty is ERC223BasicToken {
 
   // token constants
-  string public constant name = &quot;Pre-TGE Experty Token&quot;;
-  string public constant symbol = &quot;PEXY&quot;;
+  string public constant name = "Pre-TGE Experty Token";
+  string public constant symbol = "PEXY";
   uint8 public constant decimals = 18;
 
   // pre-tge variables

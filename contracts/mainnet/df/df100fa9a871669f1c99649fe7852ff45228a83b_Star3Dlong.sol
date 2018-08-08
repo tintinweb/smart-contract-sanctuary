@@ -181,8 +181,8 @@ contract Star3Dlong is modularLong {
 //     _ _  _  |`. _     _ _ |_ | _  _  .
 //    (_(_)| |~|~|(_||_|| (_||_)|(/__\  .  (game settings)
 //=================_|===========================================================
-    string constant public name = &quot;Save the planet&quot;;
-    string constant public symbol = &quot;Star&quot;;
+    string constant public name = "Save the planet";
+    string constant public symbol = "Star";
     uint256 private pID_ = 0;   // total number of players
 	uint256 private rndExtra_ = 1 hours;     // length of the very first ICO
     uint256 private rndGap_ = 1 seconds;         // length of ICO phase, set to 1 year for EOS.
@@ -196,7 +196,7 @@ contract Star3Dlong is modularLong {
 //    (_|(_| | (_|  _\(/_ | |_||_)  .  (data used to store game info that changes)
 //=============================|================================================
 //	uint256 public airDropPot_;             // person who gets the airdrop wins part of this pot
-    uint256 public airDropTracker_ = 0;     // incremented each time a &quot;qualified&quot; tx occurs.  used to determine winning air drop
+    uint256 public airDropTracker_ = 0;     // incremented each time a "qualified" tx occurs.  used to determine winning air drop
     uint256 public rID_;    // round id number / total rounds that have happened
 //****************
 // PLAYER DATA
@@ -253,14 +253,14 @@ contract Star3Dlong is modularLong {
      * been activated.
      */
     modifier isActivated() {
-        require(activated_ == true, &quot;its not ready yet.  check ?eta in discord&quot;);
+        require(activated_ == true, "its not ready yet.  check ?eta in discord");
         _;
     }
 
     modifier isRegisteredName()
     {
         uint256 _pID = pIDxAddr_[msg.sender];
-        require(plyr_[_pID].name == &quot;&quot; || _pID == 0, &quot;already has name&quot;);
+        require(plyr_[_pID].name == "" || _pID == 0, "already has name");
         _;
     }
     /**
@@ -271,7 +271,7 @@ contract Star3Dlong is modularLong {
         uint256 _codeLength;
 
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
         _;
     }
 
@@ -279,8 +279,8 @@ contract Star3Dlong is modularLong {
      * @dev sets boundaries for incoming tx
      */
     modifier isWithinLimits(uint256 _eth) {
-        require(_eth >= 1000000000, &quot;pocket lint: not a valid currency&quot;);
-        require(_eth <= 100000000000000000000000, &quot;no vitalik, no&quot;);
+        require(_eth >= 1000000000, "pocket lint: not a valid currency");
+        require(_eth <= 100000000000000000000000, "no vitalik, no");
         _;
     }
 
@@ -657,7 +657,7 @@ contract Star3Dlong is modularLong {
         uint256 _paid = msg.value;
 
         bool _isNewPlayer = isNewPlayer(_addr);
-        require (msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require (msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
 
         Star3Ddatasets.EventReturns memory _eventData_ = determinePID(_eventData_);
 
@@ -685,7 +685,7 @@ contract Star3Dlong is modularLong {
         address _addr = msg.sender;
         uint256 _paid = msg.value;
 
-        require (msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require (msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
 
         bool _isNewPlayer = isNewPlayer(_addr);
 
@@ -721,7 +721,7 @@ contract Star3Dlong is modularLong {
         address _addr = msg.sender;
         uint256 _paid = msg.value;
 
-        require (msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require (msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
 
         bool _isNewPlayer = isNewPlayer(_addr);
 
@@ -729,7 +729,7 @@ contract Star3Dlong is modularLong {
         uint256 _pID = makePlayerID(msg.sender);
 
         uint256 _affID;
-        if (_affCode != &quot;&quot; && _affCode != _name)
+        if (_affCode != "" && _affCode != _name)
         {
             // get affiliate ID from aff Code
             _affID = pIDxName_[_affCode];
@@ -753,7 +753,7 @@ contract Star3Dlong is modularLong {
 
         // if names already has been used, require that current msg sender owns the name
         if (pIDxName_[_name] != 0)
-            require(plyrNames_[_pID][_name] == true, &quot;sorry that names already taken&quot;);
+            require(plyrNames_[_pID][_name] == true, "sorry that names already taken");
 
         // add name to player profile, registry, and name book
         plyr_[_pID].name = _name;
@@ -1251,13 +1251,13 @@ contract Star3Dlong is modularLong {
             // grab their player ID, name and last aff ID, from player names contract
             _pID = makePlayerID(msg.sender);
 
-            bytes32 _name = &quot;&quot;;
+            bytes32 _name = "";
             uint256 _laff = 0;
             // set up player account
             pIDxAddr_[msg.sender] = _pID;
             plyr_[_pID].addr = msg.sender;
 
-            if (_name != &quot;&quot;)
+            if (_name != "")
             {
                 pIDxName_[_name] = _pID;
                 plyr_[_pID].name = _name;
@@ -1485,9 +1485,9 @@ contract Star3Dlong is modularLong {
             tracker based on profit per share for each round, that increases in
             relevant proportion to the increase in share supply.
 
-            the player will have an additional mask that basically says &quot;based
+            the player will have an additional mask that basically says "based
             on the rounds mask, my shares, and how much i&#39;ve already withdrawn,
-            how much is still owed to me?&quot;
+            how much is still owed to me?"
         */
 
         // calc profit per key & round mask based on this buy:  (dust goes to pot)
@@ -1565,14 +1565,14 @@ contract Star3Dlong is modularLong {
         // only team just can activate
         require(
 			msg.sender == 0x701b5B2F6bc3F74Eb15DaebAcFC65E6eAdFbb0DA,
-            &quot;only team just can activate&quot;
+            "only team just can activate"
         );
 
 		// make sure that its been linked.
-//        require(address(otherF3D_) != address(0), &quot;must link to other Star3D first&quot;);
+//        require(address(otherF3D_) != address(0), "must link to other Star3D first");
 
         // can only be ran once
-        require(activated_ == false, &quot;Star3d already activated&quot;);
+        require(activated_ == false, "Star3d already activated");
 
         // activate the contract
         activated_ = true;
@@ -1605,14 +1605,14 @@ library NameFilter {
         uint256 _length = _temp.length;
 
         //sorry limited to 32 characters
-        require (_length <= 32 && _length > 0, &quot;string must be between 1 and 32 characters&quot;);
+        require (_length <= 32 && _length > 0, "string must be between 1 and 32 characters");
         // make sure it doesnt start with or end with space
-        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, &quot;string cannot start or end with space&quot;);
+        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, "string cannot start or end with space");
         // make sure first two characters are not 0x
         if (_temp[0] == 0x30)
         {
-            require(_temp[1] != 0x78, &quot;string cannot start with 0x&quot;);
-            require(_temp[1] != 0x58, &quot;string cannot start with 0X&quot;);
+            require(_temp[1] != 0x78, "string cannot start with 0x");
+            require(_temp[1] != 0x58, "string cannot start with 0X");
         }
 
         // create a bool to track if we have a non number character
@@ -1639,11 +1639,11 @@ library NameFilter {
                     (_temp[i] > 0x60 && _temp[i] < 0x7b) ||
                     // or 0-9
                     (_temp[i] > 0x2f && _temp[i] < 0x3a),
-                    &quot;string contains invalid characters&quot;
+                    "string contains invalid characters"
                 );
                 // make sure theres not 2x spaces in a row
                 if (_temp[i] == 0x20)
-                    require( _temp[i+1] != 0x20, &quot;string cannot contain consecutive spaces&quot;);
+                    require( _temp[i+1] != 0x20, "string cannot contain consecutive spaces");
 
                 // see if we have a character other than a number
                 if (_hasNonNumber == false && (_temp[i] < 0x30 || _temp[i] > 0x39))
@@ -1651,7 +1651,7 @@ library NameFilter {
             }
         }
 
-        require(_hasNonNumber == true, &quot;string cannot be only numbers&quot;);
+        require(_hasNonNumber == true, "string cannot be only numbers");
 
         bytes32 _ret;
         assembly {
@@ -1774,7 +1774,7 @@ library Star3DKeysCalcLong {
 
     /**
      * @dev calculates how many keys would exist with given an amount of eth
-     * @param _eth eth &quot;in contract&quot;
+     * @param _eth eth "in contract"
      * @return number of keys that would exist
      */
     function keys(uint256 _eth)
@@ -1787,7 +1787,7 @@ library Star3DKeysCalcLong {
 
     /**
      * @dev calculates how much eth would be in contract given a number of keys
-     * @param _keys number of keys &quot;in contract&quot;
+     * @param _keys number of keys "in contract"
      * @return eth that would exists
      */
     function eth(uint256 _keys)
@@ -1823,7 +1823,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -1835,7 +1835,7 @@ library SafeMath {
         pure
         returns (uint256)
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -1848,7 +1848,7 @@ library SafeMath {
         returns (uint256 c)
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
 

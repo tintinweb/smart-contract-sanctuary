@@ -76,8 +76,8 @@ contract GoWalletProject is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;GoWalletProject&quot;;
-    string public constant symbol = &quot;GWP&quot;;
+    string public constant name = "GoWalletProject";
+    string public constant symbol = "GWP";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000e8;

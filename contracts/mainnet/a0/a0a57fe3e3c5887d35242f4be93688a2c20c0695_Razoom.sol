@@ -153,7 +153,7 @@ contract StandardToken is Token {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -234,9 +234,9 @@ contract Pausable is Ownable {
 contract Razoom is StandardToken, Pausable {
     using SafeMath for uint256;
 
-    string public constant name = &quot;RAZOOM PreToken&quot;;
+    string public constant name = "RAZOOM PreToken";
 
-    string public constant symbol = &quot;RZMP&quot;;
+    string public constant symbol = "RZMP";
 
     uint256 public constant decimals = 18;
 

@@ -259,7 +259,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -384,8 +384,8 @@ contract InternetWealth is DetailedERC20, StandardToken, BurnableToken, Pausable
     function InternetWealth(
         uint256 totalSupply
     ) DetailedERC20(
-        &quot;Internet Wealth&quot;,
-        &quot;IWC&quot;,
+        "Internet Wealth",
+        "IWC",
         6
     ) {
         totalSupply_ = totalSupply;

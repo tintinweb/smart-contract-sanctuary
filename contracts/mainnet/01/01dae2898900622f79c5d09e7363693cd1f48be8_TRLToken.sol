@@ -84,8 +84,8 @@ contract Owned {
 contract TRLToken is ERC20Interface, Owned {
     using SafeMath for uint;
 
-    string public constant symbol = &quot;TRL&quot;;
-    string public constant name = &quot;Trial token&quot;;
+    string public constant symbol = "TRL";
+    string public constant name = "Trial token";
     uint8 public constant decimals = 0;
     uint256 public constant _totalSupply = 1000000000 * 10**uint(decimals);
     

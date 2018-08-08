@@ -11,7 +11,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -132,8 +132,8 @@ contract UniversalMobileToken is Ownable {
     mapping (address => mapping (address => uint)) internal allowed;
     
     constructor() Ownable() public {
-        name = &quot;Universal Mobile Token&quot;;
-        symbol = &quot;UMT&quot;;
+        name = "Universal Mobile Token";
+        symbol = "UMT";
         decimals = 18;   
         // Make the Owner also an emitter
         emitters[msg.sender] = true;

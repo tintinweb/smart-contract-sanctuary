@@ -247,7 +247,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -656,7 +656,7 @@ contract Multisign is Ownable {
 }
 
 contract NSD is CrowdsaleToken, Multisign {
-  string public constant name = &quot;NeuroSeed&quot;;
-  string public constant symbol = &quot;NSD&quot;;
+  string public constant name = "NeuroSeed";
+  string public constant symbol = "NSD";
   uint32 public constant decimals = 0;
 }

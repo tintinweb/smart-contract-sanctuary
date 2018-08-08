@@ -158,7 +158,7 @@ contract DSMath {
         z = add(mul(x, RAY), y / 2) / y;
     }
 
-    // This famous algorithm is called &quot;exponentiation by squaring&quot;
+    // This famous algorithm is called "exponentiation by squaring"
     // and calculates x^n with x as fixed-point and n as regular unsigned.
     //
     // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -239,8 +239,8 @@ contract DSTokenBase is ERC20, DSMath {
 
 contract DSToken is DSTokenBase(0), DSStop {
 
-    string  public  symbol = &quot;&quot;;
-    string   public  name = &quot;&quot;;
+    string  public  symbol = "";
+    string   public  name = "";
     uint256  public  decimals = 18; // standard token precision. override to customize
 
     function DSToken(
@@ -327,10 +327,10 @@ contract DSToken is DSTokenBase(0), DSStop {
 //4.设置参数
 //
 // setDistConfig 创始人参数说明
-//[&quot;0xc94cd681477e6a70a4797a9Cbaa9F1E52366823c&quot;,&quot;0xCc1696E57E2Cd0dCd61164eE884B4994EA3B916A&quot;,&quot;0x9bD5DB3059186FA8eeAD8e4275a2DA50F0380528&quot;] //有3个创始人
+//["0xc94cd681477e6a70a4797a9Cbaa9F1E52366823c","0xCc1696E57E2Cd0dCd61164eE884B4994EA3B916A","0x9bD5DB3059186FA8eeAD8e4275a2DA50F0380528"] //有3个创始人
 //[51,15,34] //各自分配比例51%，15%，34%
 // setLockedConfig 锁仓参数说明
-//[&quot;0xc94cd681477e6a70a4797a9Cbaa9F1E52366823c&quot;] //只有第一个创始人锁仓
+//["0xc94cd681477e6a70a4797a9Cbaa9F1E52366823c"] //只有第一个创始人锁仓
 //[50]	// 第一个人自己的份额，锁仓50%
 //[10]	// 锁仓截至时间为，开始发行后的10天
 //

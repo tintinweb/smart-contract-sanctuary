@@ -290,8 +290,8 @@ contract MintableToken is Ownable, StandardToken {
 }
 
 contract Token is MintableToken {
-    string public constant name = &quot;TOKPIE&quot;;
-    string public constant symbol = &quot;TKP&quot;;
+    string public constant name = "TOKPIE";
+    string public constant symbol = "TKP";
     uint8 public constant decimals = 18;
 }
 

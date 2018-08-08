@@ -325,7 +325,7 @@ contract TokenERC20 is ERC20, Ownable{
 
 contract ZJLTToken is TokenERC20 {
 
-    function ZJLTToken() TokenERC20(2500000000, &quot;ZJLT Distributed Factoring Network&quot;, &quot;ZJLT&quot;, 18) public {
+    function ZJLTToken() TokenERC20(2500000000, "ZJLT Distributed Factoring Network", "ZJLT", 18) public {
 
     }
 	

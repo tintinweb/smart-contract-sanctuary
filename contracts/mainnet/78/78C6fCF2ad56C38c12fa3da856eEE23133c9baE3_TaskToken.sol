@@ -1,6 +1,6 @@
 pragma solidity ^0.4.18;
 
-//import &quot;./ERC20.sol&quot;;
+//import "./ERC20.sol";
 contract ERC20Basic {
   function totalSupply() public view returns (uint256);
   function balanceOf(address who) public view returns (uint256);
@@ -63,7 +63,7 @@ library SafeMath {
 }
 
 
-//import &quot;./BasicToken.sol&quot;;
+//import "./BasicToken.sol";
 /**
  * @title Basic token
  * @dev Basic version of StandardToken, with no allowances.
@@ -112,7 +112,7 @@ contract BasicToken is ERC20Basic {
 
 
 
-//import &quot;../token/ERC20/StandardToken.sol&quot;;
+//import "../token/ERC20/StandardToken.sol";
 /**
  * @title Standard ERC20 token
  *
@@ -211,8 +211,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract TaskToken is StandardToken {
 
-  string public constant name = &quot;TaskToken&quot;; 
-  string public constant symbol = &quot;TASK&quot;; 
+  string public constant name = "TaskToken"; 
+  string public constant symbol = "TASK"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 100 * 10000 * 10000 * (10 ** uint256(decimals));

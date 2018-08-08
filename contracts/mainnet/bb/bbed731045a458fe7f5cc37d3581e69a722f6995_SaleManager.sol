@@ -51,7 +51,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -259,13 +259,13 @@ contract RBAC {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * @dev This simplifies the implementation of &quot;user permissions&quot;.
+ * @dev This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable, RBAC {
   event WhitelistedAddressAdded(address addr);
   event WhitelistedAddressRemoved(address addr);
 
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if called by any account that&#39;s not whitelisted.
@@ -458,14 +458,14 @@ contract PresaleSecond is Ownable {
         require(_whitelist != address(0));
 
         List = Whitelist(_whitelist);
-        emit Change(_whitelist, &quot;whitelist&quot;);
+        emit Change(_whitelist, "whitelist");
     }
 
     function setDistributor(address _distributor) external onlyOwner {
         require(_distributor != address(0));
 
         distributor = _distributor;
-        emit Change(_distributor, &quot;distributor&quot;);
+        emit Change(_distributor, "distributor");
 
     }
 
@@ -473,7 +473,7 @@ contract PresaleSecond is Ownable {
         require(_wallet != address(0));
 
         wallet = _wallet;
-        emit Change(_wallet, &quot;wallet&quot;);
+        emit Change(_wallet, "wallet");
     }
 
 //  sale controller

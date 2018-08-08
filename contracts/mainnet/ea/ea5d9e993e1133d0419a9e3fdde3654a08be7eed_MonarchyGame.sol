@@ -9,11 +9,11 @@ How it works:
     - An initial prize is held in the Contract
     - Anyone may overthrow the Monarch by paying a small fee.
         - They become the Monarch
-        - The &quot;reign&quot; timer is reset to N.
+        - The "reign" timer is reset to N.
         - The prize may be increased or decreased
     - If nobody overthrows the new Monarch in N blocks, the Monarch wins.
 
-For fairness, an &quot;overthrow&quot; is refunded if:
+For fairness, an "overthrow" is refunded if:
     - The incorrect amount is sent.
     - The game is already over.
     - The overthrower is already the Monarch.
@@ -21,7 +21,7 @@ For fairness, an &quot;overthrow&quot; is refunded if:
         - Note: Here, default gas is used for refund. On failure, fee is kept.
 
 Other notes:
-    - .sendFees(): Sends accrued fees to &quot;collector&quot;, at any time.
+    - .sendFees(): Sends accrued fees to "collector", at any time.
     - .sendPrize(): If game is ended, sends prize to the Monarch.
 */
 contract MonarchyGame {
@@ -159,11 +159,11 @@ contract MonarchyGame {
         payable
     {
         if (isEnded())
-            return errorAndRefund(&quot;Game has already ended.&quot;);
+            return errorAndRefund("Game has already ended.");
         if (msg.sender == vars.monarch)
-            return errorAndRefund(&quot;You are already the Monarch.&quot;);
+            return errorAndRefund("You are already the Monarch.");
         if (msg.value != fee())
-            return errorAndRefund(&quot;Value sent must match fee.&quot;);
+            return errorAndRefund("Value sent must match fee.");
 
         // compute new values. hopefully optimizer reads from vars/settings just once.
         int _newPrizeGwei = int(vars.prizeGwei) + settings.prizeIncrGwei;
@@ -174,7 +174,7 @@ contract MonarchyGame {
 
         // Refund if _newPrize would end up being < 0.
         if (_newPrizeGwei < 0)
-            return errorAndRefund(&quot;Overthrowing would result in a negative prize.&quot;);
+            return errorAndRefund("Overthrowing would result in a negative prize.");
 
         // Attempt refund, if necessary. Use minimum gas.
         bool _wasRefundSuccess;
@@ -209,9 +209,9 @@ contract MonarchyGame {
         // Emit the proper events.
         if (!_isClean){
             if (_wasRefundSuccess)
-                emit OverthrowRefundSuccess(now, &quot;Another overthrow occurred on the same block.&quot;, _prevMonarch, msg.value);
+                emit OverthrowRefundSuccess(now, "Another overthrow occurred on the same block.", _prevMonarch, msg.value);
             else
-                emit OverthrowRefundFailure(now, &quot;.send() failed.&quot;, _prevMonarch, msg.value);
+                emit OverthrowRefundFailure(now, ".send() failed.", _prevMonarch, msg.value);
         }
         emit OverthrowOccurred(now, msg.sender, _decree, _prevMonarch, msg.value);
     }
@@ -236,11 +236,11 @@ contract MonarchyGame {
     {
         // make sure game has ended, and is not paid
         if (!isEnded()) {
-            emit SendPrizeError(now, &quot;The game has not ended.&quot;);
+            emit SendPrizeError(now, "The game has not ended.");
             return (false, 0);
         }
         if (vars.isPaid) {
-            emit SendPrizeError(now, &quot;The prize has already been paid.&quot;);
+            emit SendPrizeError(now, "The prize has already been paid.");
             return (false, 0);
         }
 

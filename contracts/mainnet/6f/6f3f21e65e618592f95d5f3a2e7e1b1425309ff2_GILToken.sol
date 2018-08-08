@@ -113,8 +113,8 @@ contract GILToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GILToken() public {
-        symbol = &quot;GIL&quot;;
-        name = &quot;Gilgamesh Token&quot;;
+        symbol = "GIL";
+        name = "Gilgamesh Token";
         decimals = 0;
         _totalSupply = 1000000;
         balances[0xdd16c70aD270633edF69174b4269914De9434bf8] = _totalSupply;

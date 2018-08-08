@@ -139,11 +139,11 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 
 
 contract SquirrelGims is StandardToken {
-  string public constant name = &quot;SquirrelGims&quot;;
-  string public constant symbol = &quot;SQRL&quot;;
+  string public constant name = "SquirrelGims";
+  string public constant symbol = "SQRL";
   uint public constant decimals = 6;               //  6 decimals
   uint public totalSupply = 40000000000;       // = 40 000 tokens total supply * 1 000 000 (6 decimals) = 40 000 000 000
-  string public version = &quot;1.0&quot;;
+  string public version = "1.0";
 
   // Constructor
 

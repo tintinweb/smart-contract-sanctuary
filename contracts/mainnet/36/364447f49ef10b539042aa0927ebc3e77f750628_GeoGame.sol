@@ -113,8 +113,8 @@ contract GeoGame is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GeoGame() public {
-        symbol = &quot;GGC&quot;;
-        name = &quot;GeoGame&quot;;
+        symbol = "GGC";
+        name = "GeoGame";
         decimals = 18;
         _totalSupply = 4000000000000000000000000000;
         balances[0x56d8eFEE7c30F691D0922bB3AD813f5aa5Ed7bA3] = _totalSupply;

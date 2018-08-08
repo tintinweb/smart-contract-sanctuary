@@ -100,8 +100,8 @@ contract IndexEmpireToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function IndexEmpireToken() public {
-        symbol = &quot;IDXE&quot;;
-        name = &quot;Index Empire&quot;;
+        symbol = "IDXE";
+        name = "Index Empire";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

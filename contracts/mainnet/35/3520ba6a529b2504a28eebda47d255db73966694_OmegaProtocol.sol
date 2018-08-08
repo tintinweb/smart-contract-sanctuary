@@ -7,8 +7,8 @@ pragma solidity 0.4.21;
 
 contract OmegaProtocol {
 
-    string public symbol=&quot;OPL&quot;;
-    string public name=&quot;Omega Protocol&quot; ;
+    string public symbol="OPL";
+    string public name="Omega Protocol" ;
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 0;	
 	uint256 _FreeQDA = 550;

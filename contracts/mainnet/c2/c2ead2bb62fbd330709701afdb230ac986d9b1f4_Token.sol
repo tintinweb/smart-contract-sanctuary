@@ -153,9 +153,9 @@ contract Ownable {
 
 contract Token is StandardToken, Ownable {
 
-    string public name =&quot;LYQD&quot;;
+    string public name ="LYQD";
     uint8 public decimals = 18;
-    string public symbol = &quot;LYQD&quot;;
+    string public symbol = "LYQD";
     uint256 public initialSupply = 100000000;
 
     function Token(address _receiver) public {

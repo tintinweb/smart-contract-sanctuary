@@ -147,7 +147,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -520,8 +520,8 @@ contract PausableToken is StandardToken, Pausable {
 // File: contracts/MBCToken.sol
 
 contract MBCToken is BurnableToken, MintableToken, PausableToken {
-  string public constant name = &quot;MBCToken&quot;;
-  string public constant symbol = &quot;MBC&quot;;
+  string public constant name = "MBCToken";
+  string public constant symbol = "MBC";
   uint8 public constant decimals = 7;
 
   constructor(uint256 _initialSupply) public {

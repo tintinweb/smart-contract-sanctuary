@@ -38,7 +38,7 @@ contract Billboard {
     * Init.
     */
     function Billboard() public {
-        _saveMessage(now, now, msg.sender, &quot;Welcome to MyEtheroll.com!&quot;);
+        _saveMessage(now, now, msg.sender, "Welcome to MyEtheroll.com!");
         owner = msg.sender;
     }
 

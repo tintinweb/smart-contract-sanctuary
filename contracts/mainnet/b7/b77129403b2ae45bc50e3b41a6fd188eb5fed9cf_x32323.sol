@@ -32,8 +32,8 @@ contract x32323 {
     ) public {
         totalSupply = 23000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;測試3&quot;;                                   // Set the name for display purposes
-        symbol = &quot;測試3&quot;;                               // Set the symbol for display purposes
+        name = "測試3";                                   // Set the name for display purposes
+        symbol = "測試3";                               // Set the symbol for display purposes
     }
 
     /**

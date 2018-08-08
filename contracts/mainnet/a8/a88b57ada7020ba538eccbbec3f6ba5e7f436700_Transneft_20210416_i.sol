@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	Transneft_20210416_i				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	Transneft_20210416_i		&quot;	;
-	string	public	constant	symbol =	&quot;	TRANSNI		&quot;	;
+	string	public	constant	name =	"	Transneft_20210416_i		"	;
+	string	public	constant	symbol =	"	TRANSNI		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

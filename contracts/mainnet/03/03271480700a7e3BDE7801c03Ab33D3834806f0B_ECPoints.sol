@@ -264,8 +264,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 }
 
 contract ECPoints is StandardBurnableToken {
-  string public name = &quot;ECToints&quot;;
-  string public symbol = &quot;ECT&quot;;
+  string public name = "ECToints";
+  string public symbol = "ECT";
   uint8 public decimals = 0;
   uint256 public INITIAL_SUPPLY = 10000000000000000;
 

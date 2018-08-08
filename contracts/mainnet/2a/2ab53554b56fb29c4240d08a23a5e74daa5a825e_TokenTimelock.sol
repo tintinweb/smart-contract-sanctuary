@@ -370,7 +370,7 @@ contract DetailedERC20 is ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -463,7 +463,7 @@ contract AleaCoin is DetailedERC20, MintableToken, BurnableToken, ERC20WithData 
     }
 
     function AleaCoin()
-    DetailedERC20(&quot;Alea Coin&quot;, &quot;ALEA&quot;, 18) public
+    DetailedERC20("Alea Coin", "ALEA", 18) public
     {}
 
     function transfer(address _to, uint256 _value) canTransfer public returns (bool) {

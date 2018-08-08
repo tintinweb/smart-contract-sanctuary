@@ -11,8 +11,8 @@ contract TalentEducationToken{
     mapping (address => mapping (address => uint256)) allowed;
     function TalentEducationToken() public { 
         owner = msg.sender;                                         // Set owner of contract 
-        name = &quot;TalentEducation&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TE&quot;;                                              // Set the symbol for display purposes
+        name = "TalentEducation";                                   // Set the name for display purposes
+        symbol = "TE";                                              // Set the symbol for display purposes
         decimals = 18;                                            // Amount of decimals for display purposes
 		totalSupply = 777142857000000000000000000;                // Total supply
 		balances[owner] = totalSupply;                            // Set owner balance equal totalsupply 

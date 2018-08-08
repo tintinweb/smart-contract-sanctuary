@@ -36,8 +36,8 @@ contract ERC20Interface {
 }
 
 contract FOMOCoin is ERC20Interface {
-    string public constant symbol = &quot;FOMO&quot;;
-    string public constant name = &quot;FOMO Coin&quot;;
+    string public constant symbol = "FOMO";
+    string public constant name = "FOMO Coin";
     uint8 public constant decimals = 0;
 		uint256 public totalSupply = 42000000;
 		uint256 public remainingSupply = 20000000;
@@ -89,7 +89,7 @@ contract FOMOCoin is ERC20Interface {
 
     // Send _value amount of tokens from address _from to address _to
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-    // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
     // fees in sub-currencies; the command should fail unless the _from account has
     // deliberately authorized the sender of the message via some mechanism; we propose
     // these standardized APIs for approval:

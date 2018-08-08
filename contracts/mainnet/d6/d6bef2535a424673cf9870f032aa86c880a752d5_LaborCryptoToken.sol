@@ -213,7 +213,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -303,7 +303,7 @@ contract Pausable is Ownable {
 contract PausableToken is StandardToken, Pausable {
 
   modifier onlyPayloadSize(uint256 numWords) {
-      require(msg.data.length >= numWords * 32 + 4, &quot;Message payload is undersized&quot;);
+      require(msg.data.length >= numWords * 32 + 4, "Message payload is undersized");
       _;
   }
 
@@ -349,8 +349,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract LaborCryptoToken is PausableToken {
 
-  string public constant name = &quot;Laborcrypto&quot;;
-  string public constant symbol = &quot;LBR&quot;;
+  string public constant name = "Laborcrypto";
+  string public constant symbol = "LBR";
   uint8 public constant decimals = 18;
 
   constructor(uint256 _totalSupply) public {

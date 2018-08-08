@@ -104,8 +104,8 @@ contract RigIdle is ERC20  {
     
     // ERC20 functionality
     mapping(address => mapping(address => uint256)) private allowed;
-    string public constant name  = &quot;RigWarsIdle&quot;;
-    string public constant symbol = &quot;RIG&quot;;
+    string public constant name  = "RigWarsIdle";
+    string public constant symbol = "RIG";
     uint8 public constant decimals = 8;
     uint256 private estimatedSupply;
     

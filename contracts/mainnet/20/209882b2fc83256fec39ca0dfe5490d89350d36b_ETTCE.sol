@@ -65,8 +65,8 @@ contract StandardToken is ERC20, SafeMath {
 
 
 contract ETTCE is StandardToken {
-    string public name = &quot;ETTCE&quot;;
-    string public symbol = &quot;ETTCE&quot;;
+    string public name = "ETTCE";
+    string public symbol = "ETTCE";
     uint public decimals = 18;
     uint public totalSupply = 1369 * 1000 * 1000 ether;
 

@@ -154,8 +154,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 //the main NPTToken contract
 contract NPTToken is StandardToken {
-  string public constant name = &quot;News Platform System&quot;;
-  string public constant symbol = &quot;NPT&quot;;
+  string public constant name = "News Platform System";
+  string public constant symbol = "NPT";
   uint8 public constant decimals = 10;
 
   uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));

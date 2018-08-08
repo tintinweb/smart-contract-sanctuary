@@ -75,8 +75,8 @@ contract AriesToken is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function AriesToken() public {
-        symbol = &quot;ARS&quot;;
-        name = &quot;Aries Token&quot;;
+        symbol = "ARS";
+        name = "Aries Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x18C74021Db7d89d5341Eed94665B210439DA6E32] = _totalSupply;

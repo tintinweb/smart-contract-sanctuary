@@ -114,8 +114,8 @@ pragma solidity ^0.4.21;
      // Constructor
      // ------------------------------------------------------------------------
      function VistaToken() public {
-         symbol = &quot;vista&quot;;
-         name = &quot;Vista Token&quot;;
+         symbol = "vista";
+         name = "Vista Token";
          decimals = 18;
          _totalSupply = 1000000000 * 10**uint(decimals);
          balances[owner] = _totalSupply;

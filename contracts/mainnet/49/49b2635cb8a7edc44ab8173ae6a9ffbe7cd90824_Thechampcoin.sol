@@ -110,8 +110,8 @@ contract Thechampcoin is ERC20Interface, Owned, SafeMath {
 
     // ------------------------------------------------------------------------ -------------------------------------------------------------
     function Thechampcoin() public {
-        symbol = &quot;TCC&quot;;
-        name = &quot;The ChampCoin&quot;;
+        symbol = "TCC";
+        name = "The ChampCoin";
         decimals = 8;
         _totalSupply = 16492572700000000;
         balances[

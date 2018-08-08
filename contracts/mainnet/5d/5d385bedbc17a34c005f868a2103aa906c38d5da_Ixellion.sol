@@ -116,8 +116,8 @@ contract Ixellion is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Ixellion() public {
-        symbol = &quot;IXL&quot;;
-        name = &quot;Ixellion&quot;;
+        symbol = "IXL";
+        name = "Ixellion";
         decimals = 18;
         bonusEnds = now + 16 weeks;
         endDate = now + 100 weeks;

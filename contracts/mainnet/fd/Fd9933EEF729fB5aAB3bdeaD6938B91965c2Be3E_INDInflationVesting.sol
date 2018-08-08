@@ -154,10 +154,10 @@ contract Pausable is Ownable {
 
 contract IndorseToken is SafeMath, StandardToken, Pausable {
     // metadata
-    string public constant name = &quot;Indorse Token&quot;;
-    string public constant symbol = &quot;IND&quot;;
+    string public constant name = "Indorse Token";
+    string public constant symbol = "IND";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     // contracts
     address public indSaleDeposit = 0x0053B91E38B207C97CBff06f48a0f7Ab2Dd81449;     

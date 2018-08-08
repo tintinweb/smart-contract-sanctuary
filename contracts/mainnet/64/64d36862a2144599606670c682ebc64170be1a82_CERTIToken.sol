@@ -90,8 +90,8 @@ contract StandardToken is ERC20, SafeMath {
 }
 
 contract CERTIToken is Ownable, StandardToken {
-    string public name = &quot;SingleSource&quot;;
-    string public symbol = &quot;CERTI&quot;;
+    string public name = "SingleSource";
+    string public symbol = "CERTI";
     uint public decimals = 18;
 
     uint public totalSupply = 2000000000 ether;

@@ -72,8 +72,8 @@ contract VikkyToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Vikky Token&quot;;
-    string public constant symbol = &quot;VIKKY&quot;;
+    string public constant name = "Vikky Token";
+    string public constant symbol = "VIKKY";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 20000000000e8;

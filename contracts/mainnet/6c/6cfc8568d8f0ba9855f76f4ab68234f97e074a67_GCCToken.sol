@@ -48,8 +48,8 @@ contract GCCToken is Ownable{
         ) {
         balanceOf[msg.sender] = 210000000000000000;              // Give the creator all initial tokens
         totalSupply = 210000000000000000;                        // Update total supply
-        name = &quot;GCC&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GCC&quot;;                              // Set the symbol for display purposes
+        name = "GCC";                                   // Set the name for display purposes
+        symbol = "GCC";                              // Set the symbol for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
         
     }

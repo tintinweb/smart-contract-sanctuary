@@ -5,8 +5,8 @@ contract WideEnergy{
     
     uint public constant _totalsupply = 75000000;
     
-    string public constant symbol = &quot;WIDE&quot;;
-    string public constant name = &quot;Wide Energy&quot;;
+    string public constant symbol = "WIDE";
+    string public constant name = "Wide Energy";
     uint8 public constant decimls = 18;
     
     mapping(address => uint256) balances;

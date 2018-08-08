@@ -274,9 +274,9 @@ contract LuckchemyToken is BurnableToken, StandardToken, Claimable {
 
     bool public released = false;
 
-    string public constant name = &quot;Luckchemy&quot;;
+    string public constant name = "Luckchemy";
 
-    string public constant symbol = &quot;LUK&quot;;
+    string public constant symbol = "LUK";
 
     uint8 public constant decimals = 8;
 

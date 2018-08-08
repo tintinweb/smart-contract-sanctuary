@@ -100,8 +100,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;TBC&quot;;
-        name = &quot;thousand businesses coin&quot;;
+        symbol = "TBC";
+        name = "thousand businesses coin";
         decimals = 18;
         _totalSupply = 300000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

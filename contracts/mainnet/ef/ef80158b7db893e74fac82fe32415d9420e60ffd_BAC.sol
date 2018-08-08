@@ -114,10 +114,10 @@ contract StandardToken is BasicToken, ERC20 {
 }
 
 contract BAC is StandardToken{
-    string public constant name = &quot;BananaFundCoin&quot;;
-    string public constant symbol = &quot;BAC&quot;;
+    string public constant name = "BananaFundCoin";
+    string public constant symbol = "BAC";
     uint public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
     
     //1以太可以兑换代币数量
     uint public price ;
@@ -159,7 +159,7 @@ contract BAC is StandardToken{
         if (saleStarted()) {
             _;
         } else {
-            InvalidState(&quot;Sale is not in progress&quot;);
+            InvalidState("Sale is not in progress");
             throw;
         }
     }
@@ -182,7 +182,7 @@ contract BAC is StandardToken{
             totalSupply = totalSupply.add(amount);
             Issue(issueIndex++, recipient,msg.value, amount);
         }else{
-            InvalidState(&quot;BAC is not enough&quot;);
+            InvalidState("BAC is not enough");
             throw;
         }
         //将以太转入发起者的钱包地址
@@ -201,7 +201,7 @@ contract BAC is StandardToken{
         if(_price>0){
             price= _price;
         }else{
-            ShowMsg(&quot;Invalid price&quot;);
+            ShowMsg("Invalid price");
         }
     }
     
@@ -211,7 +211,7 @@ contract BAC is StandardToken{
             saleOrNot = true;
             StartOK();
         }else{
-            ShowMsg(&quot;sale is ing &quot;);
+            ShowMsg("sale is ing ");
         }
     }   
     
@@ -224,7 +224,7 @@ contract BAC is StandardToken{
                 balances[target] = balances[target].add(1500*(10**6)*10**decimals-totalSupply);
             }
         }else{
-            ShowMsg(&quot;sale has been over&quot;);
+            ShowMsg("sale has been over");
         }
     }
     

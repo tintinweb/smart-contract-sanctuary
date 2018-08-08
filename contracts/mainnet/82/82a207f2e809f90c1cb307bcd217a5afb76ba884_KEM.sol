@@ -109,8 +109,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract KEM is StandardToken {
-	string public name = &quot;KEM&quot;; 
-	string public symbol = &quot;KEM&quot;;
+	string public name = "KEM"; 
+	string public symbol = "KEM";
 	uint public decimals = 0;
 	uint public INITIAL_SUPPLY = 400000000;
 

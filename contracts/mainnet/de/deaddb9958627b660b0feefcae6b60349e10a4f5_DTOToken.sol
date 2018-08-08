@@ -159,8 +159,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 
 contract DTOToken is StandardToken {
-    string public constant name = &quot;DTOCoin&quot;;
-    string public constant symbol = &quot;DTO&quot;;
+    string public constant name = "DTOCoin";
+    string public constant symbol = "DTO";
     uint public constant decimals = 18;
 
     // Note: this will be initialized during the contract deployment.

@@ -70,12 +70,12 @@ contract MilcToken is ERC20Interface, Ownable, SafeMath {
 
     /**
     * Max Tokens: 40 Millions MILC with 18 Decimals.
-    * The smallest unit is called &quot;Hey&quot;. 1&#39;000&#39;000&#39;000&#39;000&#39;000&#39;000 Hey = 1 MILC
+    * The smallest unit is called "Hey". 1&#39;000&#39;000&#39;000&#39;000&#39;000&#39;000 Hey = 1 MILC
     */
     uint256 constant public MAX_TOKENS = 40 * 1000 * 1000 * 10 ** uint256(18);
 
-    string public symbol = &quot;MILC&quot;;
-    string public name = &quot;Micro Licensing Coin&quot;;
+    string public symbol = "MILC";
+    string public name = "Micro Licensing Coin";
     uint8 public decimals = 18;
     uint256 public totalSupply = 0;
 

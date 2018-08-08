@@ -6,8 +6,8 @@ contract TokenReceiver {
 
 contract EgeregToken {
     address public owner;
-    string public name = &quot;EgeregToken&quot;;
-    string public symbol = &quot;MNG&quot;;
+    string public name = "EgeregToken";
+    string public symbol = "MNG";
     uint8 public decimals = 2;
     uint public totalSupply = 0;
     mapping(address => uint) balances;

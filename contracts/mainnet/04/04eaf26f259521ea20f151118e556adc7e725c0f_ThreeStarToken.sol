@@ -325,7 +325,7 @@ contract TokenERC20 is ERC20, Ownable{
 
 contract ThreeStarToken is TokenERC20 {
 
-    function ThreeStarToken() TokenERC20(3300000000, &quot;3Star&quot;, &quot;3Star&quot;, 18) public {
+    function ThreeStarToken() TokenERC20(3300000000, "3Star", "3Star", 18) public {
 
     }
 	

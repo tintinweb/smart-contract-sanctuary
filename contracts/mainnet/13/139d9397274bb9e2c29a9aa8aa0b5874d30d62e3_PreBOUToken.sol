@@ -4,7 +4,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -457,10 +457,10 @@ contract PausableToken is StandardToken, Pausable {
 contract BTSPToken is MintableMasterToken, PausableToken {
     
     // Metadata
-    string public constant symbol = &quot;BOUTS&quot;;
-    string public constant name = &quot;BoutsPro&quot;;
+    string public constant symbol = "BOUTS";
+    string public constant name = "BoutsPro";
     uint8 public constant decimals = 18;
-    string public constant version = &quot;1.0&quot;;
+    string public constant version = "1.0";
 
     function mintToAddresses(address[] addresses, uint256 amount) public onlyMintMasterOrOwner canMint {
         for (uint i = 0; i < addresses.length; i++) {
@@ -493,10 +493,10 @@ contract BTSPToken is MintableMasterToken, PausableToken {
 contract PreBOUToken is BTSPToken, Destructible {
 
     // Metadata
-    string public constant symbol = &quot;BOUTS&quot;;
-    string public constant name = &quot;BoutsPro&quot;;
+    string public constant symbol = "BOUTS";
+    string public constant name = "BoutsPro";
     uint8 public constant decimals = 18;
-    string public constant version = &quot;1.0&quot;;
+    string public constant version = "1.0";
 
     // Overrided destructor
     function destroy() public onlyOwner {

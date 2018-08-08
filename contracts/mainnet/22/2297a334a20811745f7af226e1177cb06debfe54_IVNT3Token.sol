@@ -115,8 +115,8 @@ contract IVNT3Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;IVNT3&quot;;
-        name = &quot;IVNT3 Token&quot;;
+        symbol = "IVNT3";
+        name = "IVNT3 Token";
         decimals = 18;
         _totalSupply = 969 * 10 ** 26;
         ownerAddress = 0x46a95d3d6109f5e697493ea508d6d20aff1cc13e;

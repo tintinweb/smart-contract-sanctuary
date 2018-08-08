@@ -585,7 +585,7 @@ contract BCFLeague is BCFBaseCompetition {
                     }
                 }
 
-                // 6. Now we need to shift all elements down for the &quot;paid places&quot; for winning entries
+                // 6. Now we need to shift all elements down for the "paid places" for winning entries
                 if (isReplacementWinner) {
                     
                     // 7. We need to start by copying the current index into next one down, assuming it exists

@@ -162,8 +162,8 @@ contract ACAToken is ERC20 {
     address public owner;
     address public admin;
 
-    string public name = &quot;ACA Network Token&quot;;
-    string public symbol = &quot;ACA&quot;;
+    string public name = "ACA Network Token";
+    string public symbol = "ACA";
     uint8 public decimals = 18;
 
     uint256 totalSupply_;

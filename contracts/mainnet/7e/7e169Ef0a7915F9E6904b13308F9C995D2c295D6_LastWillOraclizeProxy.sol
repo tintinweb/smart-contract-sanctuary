@@ -6,7 +6,7 @@ Copyright (c) 2016 Oraclize LTD
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
+of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -19,7 +19,7 @@ all copies or substantial portions of the Software.
 
 
 
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -151,7 +151,7 @@ contract usingOraclize {
     }
 
     function uint2str(uint i) internal returns (string){
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint len;
         while (j != 0){
@@ -182,11 +182,11 @@ contract usingOraclize {
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -858,7 +858,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint len = self._len * (parts.length - 1);
         for(uint i = 0; i < parts.length; i++)
@@ -922,7 +922,7 @@ contract LastWillOraclizeProxy is usingOraclize, LastWillOraclizeProxyI {
     event Price(uint);
 
     function getPrice() returns (uint) {
-        return oraclize_getPrice(&quot;URL&quot;);
+        return oraclize_getPrice("URL");
     }
 
     function query(
@@ -932,7 +932,7 @@ contract LastWillOraclizeProxy is usingOraclize, LastWillOraclizeProxyI {
         function (bool) external callback
     ) public payable returns (bool) {
         string memory url = buildUrl(target, startBlock, endBlock);
-        bytes32 queryId = oraclize_query(&quot;URL&quot;, url);
+        bytes32 queryId = oraclize_query("URL", url);
         if (queryId == 0) {
             return false;
         }
@@ -941,7 +941,7 @@ contract LastWillOraclizeProxy is usingOraclize, LastWillOraclizeProxyI {
     }
 
     /**
-     * The result look like &#39;[&quot;1469624867&quot;, &quot;1469624584&quot;,...&#39;
+     * The result look like &#39;["1469624867", "1469624584",...&#39;
      */
     function __callback(bytes32 queryId, string result, bytes) {
         if (msg.sender != oraclize_cbAddress()) revert();
@@ -958,17 +958,17 @@ contract LastWillOraclizeProxy is usingOraclize, LastWillOraclizeProxyI {
         strings.slice memory strAddress = toHex(target).toSlice();
         uint8 i = 0; // count of the strings below
         var parts = new strings.slice[](9);
-        parts[i++] = &quot;json(https://api.etherscan.io/api?module=account&action=txlist&address=0x&quot;.toSlice();
+        parts[i++] = "json(https://api.etherscan.io/api?module=account&action=txlist&address=0x".toSlice();
         parts[i++] = strAddress;
         //     // &page=0&offset=0 - means not pagination, but it might be a problem if there will be page limit
-        parts[i++] = &quot;&startblock=&quot;.toSlice();
+        parts[i++] = "&startblock=".toSlice();
         parts[i++] = uint2str(startBlock).toSlice();
-        parts[i++] = &quot;&endblock=&quot;.toSlice();
+        parts[i++] = "&endblock=".toSlice();
         parts[i++] = uint2str(endBlock).toSlice();
-        parts[i++] = &quot;&sort=desc&apikey=FJ39P2DIU8IX8U9N2735SUKQWG3HPPGPX8).result[?(@.from==&#39;0x&quot;.toSlice();
+        parts[i++] = "&sort=desc&apikey=FJ39P2DIU8IX8U9N2735SUKQWG3HPPGPX8).result[?(@.from==&#39;0x".toSlice();
         parts[i++] = strAddress;
-        parts[i++] = &quot;&#39;)].timeStamp&quot;.toSlice();
-        return &quot;&quot;.toSlice()
+        parts[i++] = "&#39;)].timeStamp".toSlice();
+        return "".toSlice()
                  .join(parts);
     }
 
@@ -978,8 +978,8 @@ contract LastWillOraclizeProxy is usingOraclize, LastWillOraclizeProxyI {
     function parseJsonArrayAndGetFirstElementAsNumber(string json) internal constant returns (uint) {
         var jsonSlice = json.toSlice();
         strings.slice memory firstResult;
-        jsonSlice.split(&quot;, &quot;.toSlice(), firstResult);
-        var ts = firstResult.beyond(&quot;[\&quot;&quot;.toSlice()).toString();
+        jsonSlice.split(", ".toSlice(), firstResult);
+        var ts = firstResult.beyond("[\"".toSlice()).toString();
         return parseInt(ts);
     }
 

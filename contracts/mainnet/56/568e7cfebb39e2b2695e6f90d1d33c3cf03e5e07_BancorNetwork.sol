@@ -190,9 +190,9 @@ contract IWhitelist {
     Can be used in conjunction with the contract registry to get contract addresses
 */
 contract ContractIds {
-    bytes32 public constant BANCOR_NETWORK = &quot;BancorNetwork&quot;;
-    bytes32 public constant BANCOR_FORMULA = &quot;BancorFormula&quot;;
-    bytes32 public constant CONTRACT_FEATURES = &quot;ContractFeatures&quot;;
+    bytes32 public constant BANCOR_NETWORK = "BancorNetwork";
+    bytes32 public constant BANCOR_FORMULA = "BancorFormula";
+    bytes32 public constant CONTRACT_FEATURES = "ContractFeatures";
 }
 
 /**
@@ -400,7 +400,7 @@ contract BancorNetwork is IBancorNetwork, TokenHolder, ContractIds, FeatureIds {
 
         // recovering the signing address and comparing it to the trusted signer
         // address that was set in the contract
-        bytes32 prefixedHash = keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash);
+        bytes32 prefixedHash = keccak256("\x19Ethereum Signed Message:\n32", hash);
         bool verified = ecrecover(prefixedHash, _v, _r, _s) == signerAddress;
 
         // if the signer is the trusted signer - mark the hash so that it can&#39;t

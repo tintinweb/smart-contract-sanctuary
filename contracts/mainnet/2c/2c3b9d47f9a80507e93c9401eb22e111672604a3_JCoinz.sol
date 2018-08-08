@@ -15,8 +15,8 @@ contract JCoinz is IERC20 {
     
     uint public constant _totalSupply = 1000000000000000000000000000000000;
     
-    string public constant symbol =&quot;JCZ&quot;;
-    string public constant name = &quot;JCoinz&quot;;
+    string public constant symbol ="JCZ";
+    string public constant name = "JCoinz";
     uint8 public constant decimals = 18;
     
     mapping(address => uint256) balances;

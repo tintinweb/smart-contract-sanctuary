@@ -172,8 +172,8 @@ contract GoldFee is CreatorEnabled {
 
 contract Gold is StdToken, CreatorEnabled {
 
-    string public constant name = &quot;GoldMint GOLD cryptoasset&quot;;
-    string public constant symbol = &quot;GOLD&quot;;
+    string public constant name = "GoldMint GOLD cryptoasset";
+    string public constant symbol = "GOLD";
     uint8 public constant decimals = 18;
 
     // this is used to send fees (that is then distributed as rewards)
@@ -479,7 +479,7 @@ contract GoldmintMigration is CreatorEnabled {
     // MNTP
     // Call this to migrate your MNTP tokens to Goldmint MNT
     // (this is one-way only)
-    // _gmAddress is something like that - &quot;BTS7yRXCkBjKxho57RCbqYE3nEiprWXXESw3Hxs5CKRnft8x7mdGi&quot;
+    // _gmAddress is something like that - "BTS7yRXCkBjKxho57RCbqYE3nEiprWXXESw3Hxs5CKRnft8x7mdGi"
     //
     // !!! WARNING: will not allow anyone to migrate tokens partly
     // !!! DISCLAIMER: check goldmint blockchain address format. You will not be able to change that!

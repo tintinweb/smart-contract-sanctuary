@@ -147,7 +147,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -737,10 +737,10 @@ contract ERC827Token is ERC827, StandardToken {
 // File: contracts/ZeexToken.sol
 
 contract ZeexToken is MintableToken, BurnableToken, ERC827Token, PausableToken {
-  string public constant name = &quot;Zeex Token&quot;;
-  string public constant symbol = &quot;ZIX&quot;;
+  string public constant name = "Zeex Token";
+  string public constant symbol = "ZIX";
   uint8 public constant decimals = 18;
-  string public constant version = &quot;1.0&quot;;
+  string public constant version = "1.0";
 
   constructor() public {
     paused = true;

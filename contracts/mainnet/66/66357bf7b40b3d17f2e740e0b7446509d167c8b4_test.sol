@@ -9,7 +9,7 @@ contract test {
     string[12] public human_readable_blockhash;
     
     modifier one_time_use {
-        require(keccak256(human_readable_blockhash[0]) == keccak256(&quot;&quot;));
+        require(keccak256(human_readable_blockhash[0]) == keccak256(""));
         _;
     }
     

@@ -38,8 +38,8 @@ contract TBC {
     constructor() {
         totalSupply = 5000000; //5 MILLION TOKENS
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;TBC&quot;; 
-        symbol = &quot;TBC&quot;; 
+        name = "TBC"; 
+        symbol = "TBC"; 
     }
 
     /**

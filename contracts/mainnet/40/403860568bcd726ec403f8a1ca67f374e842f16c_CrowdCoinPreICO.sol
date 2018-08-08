@@ -134,7 +134,7 @@ contract DSMath {
     }
 
     function rpow(uint128 x, uint64 n) constant internal returns (uint128 z) {
-        // This famous algorithm is called &quot;exponentiation by squaring&quot;
+        // This famous algorithm is called "exponentiation by squaring"
         // and calculates x^n with x as fixed-point and n as regular unsigned.
         //
         // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -264,8 +264,8 @@ contract Migrable is TokenBase, Owned
 }
 
 contract CrowdCoin is TokenBase, Owned, Migrable {
-    string public constant name = &quot;Crowd Coin&quot;;
-    string public constant symbol = &quot;CRC&quot;;
+    string public constant name = "Crowd Coin";
+    string public constant symbol = "CRC";
     uint8 public constant decimals = 18; 
 
     uint public constant pre_ico_allocation = 10000000 * WAD;

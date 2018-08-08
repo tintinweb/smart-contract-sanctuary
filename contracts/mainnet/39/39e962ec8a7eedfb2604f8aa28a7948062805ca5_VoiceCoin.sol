@@ -110,8 +110,8 @@ contract VoiceCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function VoiceCoin() public {
-        symbol = &quot;VOCO&quot;;
-        name = &quot;Voice Coin&quot;;
+        symbol = "VOCO";
+        name = "Voice Coin";
         decimals = 18;
         _totalSupply = 1250000000000000000000000000;
         balances[0xA3F9cd906faa35d94d833907259810bA91EF2CE7] = _totalSupply;

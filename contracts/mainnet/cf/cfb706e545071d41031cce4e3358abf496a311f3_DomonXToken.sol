@@ -114,8 +114,8 @@ contract DomonXToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;GV2&quot;;
-        name = &quot;TestGV2&quot;;
+        symbol = "GV2";
+        name = "TestGV2";
         decimals = 18;
         _totalSupply = 20000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

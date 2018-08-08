@@ -15,9 +15,9 @@ contract AAP {
         function AAP() {
     
              initialSupply = 50000;
-             name =&quot;AAP&quot;;
+             name ="AAP";
             decimals = 2;
-             symbol = &quot;AAP&quot;;
+             symbol = "AAP";
             
             balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
             uint256 totalSupply = initialSupply;                        // Update total supply

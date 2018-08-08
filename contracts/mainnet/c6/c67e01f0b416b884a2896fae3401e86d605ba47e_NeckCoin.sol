@@ -113,8 +113,8 @@ contract NeckCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NeckCoin() public {
-        symbol = &quot;NECK&quot;;
-        name = &quot;Neck Coin&quot;;
+        symbol = "NECK";
+        name = "Neck Coin";
         decimals = 18;
         _totalSupply = 300000000000000000000000000000;
         balances[0x3503F567B04a12F36069f21e0c3317BA9c23c1DC] = _totalSupply;

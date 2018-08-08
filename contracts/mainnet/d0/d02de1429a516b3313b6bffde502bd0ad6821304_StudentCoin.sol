@@ -67,8 +67,8 @@ contract StudentCoin is ERC20 {
     
     uint public constant _totalSupply = 20000000000000000000000000000000;
     
-    string public constant symbol = &quot;SDENT&quot;;
-    string public constant name = &quot;Student Coin&quot;;
+    string public constant symbol = "SDENT";
+    string public constant name = "Student Coin";
     uint8 public constant decimals = 18;
     
     // 1 ether = 10000 SDENT

@@ -64,8 +64,8 @@ contract MyCash is SafeMath{
 
         balanceOf[msg.sender] = 50000000000000000000000000000;              // Give the creator all initial tokens
         totalSupply = 50000000000000000000000000000;                        // Update total supply
-        name = &quot;MyCash&quot;;                                   // Set the name for display purposes
-        symbol = &quot;MY&quot;;                               // Set the symbol for display purposes
+        name = "MyCash";                                   // Set the name for display purposes
+        symbol = "MY";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
 	owner = msg.sender;
     }

@@ -396,8 +396,8 @@ contract ERC827Token is ERC827, StandardToken {
 }
 
 contract KRWT is StandardToken {
-    string constant public name = &quot;Korean Won&quot;;
-    string constant public symbol = &quot;KRWT&quot;;
+    string constant public name = "Korean Won";
+    string constant public symbol = "KRWT";
     uint8 constant public decimals = 8;
     uint public totalSupply = 100000000000 * 10**uint(decimals);
 

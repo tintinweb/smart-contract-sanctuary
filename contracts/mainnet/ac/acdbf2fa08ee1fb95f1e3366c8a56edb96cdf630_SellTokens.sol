@@ -4,7 +4,7 @@ pragma solidity ^0.4.21;
 // If your investment is less than 300 ETHs. Send ETH here, this contract will
 // transfer VNETs to you automatically. And I just make a small profit.
 //
-// And you can get more details via etherscan.io - &quot;Read Contract&quot;
+// And you can get more details via etherscan.io - "Read Contract"
 
 
 /**
@@ -23,7 +23,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;

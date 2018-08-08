@@ -75,8 +75,8 @@ contract ERC20 is ERC20Basic,Ownable {
 
 contract YCBIToken is ERC20 {
     using SafeMath for uint256;
-    string constant public name = &quot;優選幣&quot;;
-    string constant public symbol = &quot;YCBI&quot;;
+    string constant public name = "優選幣";
+    string constant public symbol = "YCBI";
 
     uint8 constant public decimals = 8;
 

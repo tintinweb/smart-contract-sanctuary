@@ -96,7 +96,7 @@ contract StandardToken is ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -170,8 +170,8 @@ contract EthereumGAS is Mintable, Ownable {
     mapping (address => bool) public listContracts;
     
     constructor() public {
-        _name = &quot;Ethereum GAS&quot;;  
-        _symbol = &quot;EGAS&quot;;
+        _name = "Ethereum GAS";  
+        _symbol = "EGAS";
         _decimals = 18;
         _totalSupply = 1000000000*(10**uint256(_decimals));
         balances[msg.sender] = _totalSupply;
@@ -213,7 +213,7 @@ contract EthereumGAS is Mintable, Ownable {
         public
         validContract(contractAddress)
     {
-        if(!contractAddress.call(data)) revert(&quot;request error, not valid data sent&quot;);
+        if(!contractAddress.call(data)) revert("request error, not valid data sent");
         EthereumGAS.mintEGAS();
     }
     
@@ -223,7 +223,7 @@ contract EthereumGAS is Mintable, Ownable {
     }
     
     modifier validContract(address _input) {
-        require(listContracts[_input] != false, &quot;contract not found&quot;);
+        require(listContracts[_input] != false, "contract not found");
         _;
     }
     

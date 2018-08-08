@@ -329,7 +329,7 @@ contract BancorQuickConverter is IBancorQuickConverter, TokenHolder {
 
         // recovering the signing address and comparing it to the trusted signer
         // address that was set in the contract
-        bytes memory prefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
+        bytes memory prefix = "\x19Ethereum Signed Message:\n32";
         bytes32 prefixedHash = keccak256(prefix, hash);
         bool verified = ecrecover(prefixedHash, _v, _r, _s) == signerAddress;
 

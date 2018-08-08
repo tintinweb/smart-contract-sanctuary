@@ -89,8 +89,8 @@ contract UtradeToken is ERC20,Ownable {
 	event Logs(string);
 
 	constructor( ) public {  		
-		name=&quot;UTP FOUNDATION&quot;;
-		symbol=&quot;UTP&quot;;
+		name="UTP FOUNDATION";
+		symbol="UTP";
 		totalSupply = 1000000000*(10**decimals);
 		balanceOf[msg.sender] = totalSupply;	
 	}

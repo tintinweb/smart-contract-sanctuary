@@ -1,8 +1,8 @@
 pragma solidity 0.4.20;
 
 contract MOREToken {
-    string  public  symbol = &quot;MORE&quot;;
-    string  public name = &quot;MORE Token&quot;;
+    string  public  symbol = "MORE";
+    string  public name = "MORE Token";
     uint256  public  decimals = 18; 
     uint256  _supply;
     mapping (address => uint256) _balances;

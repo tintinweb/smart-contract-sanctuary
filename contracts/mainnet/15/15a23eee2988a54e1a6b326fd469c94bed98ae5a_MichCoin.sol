@@ -14,8 +14,8 @@ contract ERC20 {
 
 contract MichCoin is ERC20 {
 
-    string public constant name = &quot;Mich Coin&quot;;
-    string public constant symbol = &quot;MCH&quot;;
+    string public constant name = "Mich Coin";
+    string public constant symbol = "MCH";
     uint public constant decimals = 8;
 
     uint public tokenToEtherRate;

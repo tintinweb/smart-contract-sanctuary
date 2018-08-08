@@ -64,7 +64,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -194,8 +194,8 @@ contract P4 is Ownable {
     =            CONFIGURABLES            =
     =====================================*/
 
-    string public name = &quot;P4&quot;;
-    string public symbol = &quot;P4&quot;;
+    string public name = "P4";
+    string public symbol = "P4";
     uint8 constant public decimals = 18;
 
     /// @dev 15% dividends for token purchase
@@ -285,7 +285,7 @@ contract P4 is Ownable {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
 
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends);
 
         // fire event
@@ -502,7 +502,7 @@ contract P4 is Ownable {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && SafeMath.add(_amountOfTokens, tokenSupply_) > tokenSupply_);
 
         //Apply maintenance fee as a referral

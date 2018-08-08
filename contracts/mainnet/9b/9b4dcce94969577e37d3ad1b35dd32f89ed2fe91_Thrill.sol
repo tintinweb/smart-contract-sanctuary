@@ -113,8 +113,8 @@ contract Thrill is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Thrill() public {
-        symbol = &quot;THX&quot;;
-        name = &quot;Thrill&quot;;
+        symbol = "THX";
+        name = "Thrill";
         decimals = 18;
         _totalSupply = 800000000000000000000000000;
         balances[0xcc8446Bad1225717EFeF5e1015DFfc98E23274B5] = _totalSupply;

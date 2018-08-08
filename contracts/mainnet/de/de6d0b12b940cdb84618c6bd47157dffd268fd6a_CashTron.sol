@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------------
-     // CashTron Currency Token &quot;PHPC&quot; (Is Not Bank Legal Money)
+     // CashTron Currency Token "PHPC" (Is Not Bank Legal Money)
      // USDC/EURC/AUDC/CADC/NZDC/RUBC/CNYC/SGDC/#PHPC/IDRC/MYRC/THBC/WNDC/BDTC
      // CashTron @ 2018 CashTron.io  CashTron.co
      //--------------------------------------------------------------------------------
@@ -228,8 +228,8 @@ contract BurnableToken is StandardToken, Ownable {
 contract CashTron is BurnableToken {
     using SafeMath for uint256;
 
-    string public constant name = &quot;CashTron&quot;;
-    string public constant symbol = &quot;PHPC&quot;;
+    string public constant name = "CashTron";
+    string public constant symbol = "PHPC";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 13000000000;
 

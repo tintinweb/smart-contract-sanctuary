@@ -94,9 +94,9 @@ contract SafeMath {
  */
 contract ETHERCREDIT is ERC20, SafeMath {
 
-    string public name = &quot;EtherCREDIT&quot;;
+    string public name = "EtherCREDIT";
 
-    string public symbol = &quot;ERC&quot;;
+    string public symbol = "ERC";
 
     uint8 public decimals = 8;
 

@@ -18,7 +18,7 @@
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -478,7 +478,7 @@ contract TokenVault is Ownable, Recoverable {
     return token.balanceOf(address(this));
   }
 
-  /// @dev Check how many tokens &quot;investor&quot; can claim
+  /// @dev Check how many tokens "investor" can claim
   /// @param investor Address of the investor
   /// @return uint How many tokens the investor can claim now
   function getCurrentlyClaimableAmount(address investor) public constant returns (uint claimableAmount) {

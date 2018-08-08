@@ -16,9 +16,9 @@ contract tourisToken {
     function tourisToken() {
 
          initialSupply = 1000000000;
-         name =&quot;tourisToken&quot;;
+         name ="tourisToken";
         decimals = 0;
-         symbol = &quot;TUS&quot;;
+         symbol = "TUS";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

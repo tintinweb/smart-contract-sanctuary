@@ -94,9 +94,9 @@ contract SafeMath {
  */
 contract TERATO is ERC20, SafeMath {
 
-    string public name = &quot;TERATO&quot;;
+    string public name = "TERATO";
 
-    string public symbol = &quot;TERA&quot;;
+    string public symbol = "TERA";
 
     uint8 public decimals = 8;
 

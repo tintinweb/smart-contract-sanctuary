@@ -52,8 +52,8 @@ contract GameCoin is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
 	
     uint256 public totalSupply = 1000000000000;
-	string public constant name = &quot;GameCoin&quot;;
-    string public constant symbol = &quot;GAME&quot;;
+	string public constant name = "GameCoin";
+    string public constant symbol = "GAME";
     uint public constant decimals = 0;
 	
 	function GameCoin(){

@@ -113,8 +113,8 @@ contract BergCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BergCoin() public {
-        symbol = &quot;BERG&quot;;
-        name = &quot;BergCoin&quot;;
+        symbol = "BERG";
+        name = "BergCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x6319d9F67035c273DC5508De67BB5458495B6169] = _totalSupply;

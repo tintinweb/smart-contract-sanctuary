@@ -68,8 +68,8 @@ contract BitcoinTRONIX is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Bitcoin TRONIX&quot;;
-    string public constant symbol = &quot;BITRON&quot;;
+    string public constant name = "Bitcoin TRONIX";
+    string public constant symbol = "BITRON";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000000e8;

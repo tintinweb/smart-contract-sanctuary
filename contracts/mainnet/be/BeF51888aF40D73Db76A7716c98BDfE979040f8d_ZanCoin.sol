@@ -135,8 +135,8 @@ contract ZanCoin is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function ZanCoin() public {
-        symbol = &quot;ZAN&quot;;
-        name = &quot;ZAN Coin&quot;;
+        symbol = "ZAN";
+        name = "ZAN Coin";
         decimals = 18;
         _totalSupply = 17148385 * 10**uint(decimals);
         balances[owner] = _totalSupply;
@@ -265,19 +265,19 @@ contract ZanCoin is ERC20Interface, Owned {
             isInPreSaleState = true;
             exchangeRate = 1500;
             saleCap = (3 * 10**6) * (uint(10) ** decimals);
-            emit SwitchCrowdSaleStage(&quot;PreSale&quot;, exchangeRate);
+            emit SwitchCrowdSaleStage("PreSale", exchangeRate);
         }
         else if (!isInRoundOneState) {
             isInRoundOneState = true;
             exchangeRate = 1200;
             saleCap = saleCap + ((4 * 10**6) * (uint(10) ** decimals));
-            emit SwitchCrowdSaleStage(&quot;RoundOne&quot;, exchangeRate);
+            emit SwitchCrowdSaleStage("RoundOne", exchangeRate);
         }
         else if (!isInRoundTwoState) {
             isInRoundTwoState = true;
             exchangeRate = 900;
             saleCap = saleCap + ((5 * 10**6) * (uint(10) ** decimals));
-            emit SwitchCrowdSaleStage(&quot;RoundTwo&quot;, exchangeRate);
+            emit SwitchCrowdSaleStage("RoundTwo", exchangeRate);
         }
         
         stateStartDate = now + 5 minutes;
@@ -295,7 +295,7 @@ contract ZanCoin is ERC20Interface, Owned {
         owner.transfer(address(this).balance);
         exchangeRate = 0;
         isInFinalState = true;
-        emit SwitchCrowdSaleStage(&quot;Complete&quot;, exchangeRate);
+        emit SwitchCrowdSaleStage("Complete", exchangeRate);
     }
 
     // ------------------------------------------------------------------------

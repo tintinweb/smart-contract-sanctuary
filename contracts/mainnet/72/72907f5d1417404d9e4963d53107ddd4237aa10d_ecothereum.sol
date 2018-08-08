@@ -46,8 +46,8 @@ contract ecothereum is owned {
     ) public {
         totalSupply = 41000000 * 10e17;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;ecothereum&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ECT&quot;;                               // Set the symbol for display purposes
+        name = "ecothereum";                                   // Set the name for display purposes
+        symbol = "ECT";                               // Set the symbol for display purposes
     }
 
     /**

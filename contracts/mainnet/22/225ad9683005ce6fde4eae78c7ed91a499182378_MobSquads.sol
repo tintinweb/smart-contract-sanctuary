@@ -41,8 +41,8 @@ contract MobSquads is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;MobSquads&quot;; //
-  string public constant SYMBOL = &quot;MOBS&quot;; //
+  string public constant NAME = "MobSquads"; //
+  string public constant SYMBOL = "MOBS"; //
 
   uint256 public precision = 1000000000000; //0.000001 Eth
 
@@ -125,7 +125,7 @@ contract MobSquads is ERC721 {
     cooAddress = msg.sender;
     leadingHitCount = 0;
      gangHits.length++;
-  //  _createMobster(&quot;The Godfather&quot;,address(this),2000000000000000,0);
+  //  _createMobster("The Godfather",address(this),2000000000000000,0);
   }
 
   /*** PUBLIC FUNCTIONS ***/

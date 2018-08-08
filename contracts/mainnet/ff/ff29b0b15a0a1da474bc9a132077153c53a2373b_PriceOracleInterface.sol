@@ -179,7 +179,7 @@ contract DSMath {
     }
 
     function rpow(uint128 x, uint64 n) constant internal returns (uint128 z) {
-        // This famous algorithm is called &quot;exponentiation by squaring&quot;
+        // This famous algorithm is called "exponentiation by squaring"
         // and calculates x^n with x as fixed-point and n as regular unsigned.
         //
         // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -373,11 +373,11 @@ contract Medianizer is DSValue {
 
 // Copyright (C) 2017  DappHub, LLC
 
-// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).
+// Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
 
 // Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
 
 
@@ -404,7 +404,7 @@ contract PriceFeed is DSThing {
     {
         val = val_;
         zzz = zzz_;
-        bool ret = med_.call(bytes4(keccak256(&quot;poke()&quot;)));
+        bool ret = med_.call(bytes4(keccak256("poke()")));
         ret;
     }
 

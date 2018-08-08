@@ -169,10 +169,10 @@ contract TIXStalledToken {
 contract TIXToken is StandardToken {
     mapping(address => bool) converted; // Converting from old token contract
 
-    string public constant name = &quot;Blocktix Token&quot;;
-    string public constant symbol = &quot;TIX&quot;;
+    string public constant name = "Blocktix Token";
+    string public constant symbol = "TIX";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0.1&quot;;
+    string public version = "1.0.1";
 
     // crowdsale parameters
     bool public isFinalized;                      // switched to true in operational state

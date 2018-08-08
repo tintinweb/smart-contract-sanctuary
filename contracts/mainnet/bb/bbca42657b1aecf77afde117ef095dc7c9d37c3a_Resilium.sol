@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -187,8 +187,8 @@ contract StandardToken is BasicToken, ERC20 {
  *  Resilium token contract. Implements
  */
 contract Resilium is StandardToken, Ownable {
-  string public constant name = &quot;Resilium&quot;;
-  string public constant symbol = &quot;RES&quot;;
+  string public constant name = "Resilium";
+  string public constant symbol = "RES";
   uint public constant decimals = 6;
 
 
@@ -441,9 +441,9 @@ contract Crowdsale is Pausable, PullPayment {
 
 	/* 
   	 * When MIN_CAP is not reach:
-  	 * 1) backer call the &quot;approve&quot; function of the Resilium token contract with the amount of all Resiliums they got in order to be refund
-  	 * 2) backer call the &quot;refund&quot; function of the Crowdsale contract with the same amount of Resiliums
-   	 * 3) backer call the &quot;withdrawPayments&quot; function of the Crowdsale contract to get a refund in ETH
+  	 * 1) backer call the "approve" function of the Resilium token contract with the amount of all Resiliums they got in order to be refund
+  	 * 2) backer call the "refund" function of the Crowdsale contract with the same amount of Resiliums
+   	 * 3) backer call the "withdrawPayments" function of the Crowdsale contract to get a refund in ETH
    	 */
 	function refund(uint _value) minCapNotReached public {
 		

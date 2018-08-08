@@ -30,7 +30,7 @@ contract Percept {
         bytes32 proofMapping = keccak256(abi.encodePacked(msg.sender, timestamp, blockNum, hash));    // Mapping hash of proof data
 
         // Construct the proof in memory, unreleased
-        Proof memory proof = Proof(msg.sender, hash, timestamp, blockNum, proofMapping, &quot;&quot;, false, 0, 0);
+        Proof memory proof = Proof(msg.sender, hash, timestamp, blockNum, proofMapping, "", false, 0, 0);
 
         // Store the proof in the contract mapping storage
         proofs[proofMapping] = proof;

@@ -113,8 +113,8 @@ contract ICBCCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ICBCCoin() public {
-        symbol = &quot;ICBC&quot;;
-        name = &quot;中国工商银行 ICBC Coin&quot;;
+        symbol = "ICBC";
+        name = "中国工商银行 ICBC Coin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x116312c3471C2e7C34C52782D0399eBE601f3F30] = _totalSupply;

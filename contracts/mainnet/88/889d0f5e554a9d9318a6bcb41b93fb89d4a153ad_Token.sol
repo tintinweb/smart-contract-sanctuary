@@ -58,7 +58,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 	address public owner;
@@ -586,7 +586,7 @@ contract Token is DetailedERC20, CappedToken, BurnableToken {
 	/**
 	 * @dev Token constructor
 	 */
-    constructor() CappedToken(85e16) DetailedERC20(&quot;zamzam&quot;, &quot;ZAM&quot;, 8) public {
+    constructor() CappedToken(85e16) DetailedERC20("zamzam", "ZAM", 8) public {
         
     }
 

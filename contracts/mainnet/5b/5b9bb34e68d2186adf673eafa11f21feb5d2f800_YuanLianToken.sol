@@ -127,8 +127,8 @@ contract StandardToken is ERC20 {
 }
 
 contract YuanLianToken is StandardToken {
-  string public constant name = &quot;YuanLian&quot;;
-  string public constant symbol = &quot;YuanLian&quot;;
+  string public constant name = "YuanLian";
+  string public constant symbol = "YuanLian";
   uint8 public constant decimals = 1;
 
   function YuanLianToken() public {

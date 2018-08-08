@@ -28,8 +28,8 @@ contract ATCToken {
     function ATCToken() public {
         totalSupply = 399000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Aite Chain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ATC&quot;;                               // Set the symbol for display purposes
+        name = "Aite Chain";                                   // Set the name for display purposes
+        symbol = "ATC";                               // Set the symbol for display purposes
     }
 
     /**

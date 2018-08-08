@@ -33,8 +33,8 @@ contract ERC20{
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 }
 contract VTToken is ERC20{
-    string public name   = &quot;Virtual Talk&quot;;
-    string public symbol = &quot;VT&quot;; 
+    string public name   = "Virtual Talk";
+    string public symbol = "VT"; 
     uint8 public decimals=18;
     uint256 public totalSupply;
     mapping(address => uint256) balances;

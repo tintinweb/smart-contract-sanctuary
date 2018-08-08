@@ -9,8 +9,8 @@ pragma solidity ^0.4.4;
 contract PresaleToken
 {
 /// Fields:
-    string public constant name = &quot;WealthMan Private Presale Token&quot;;
-    string public constant symbol = &quot;AWM&quot;;
+    string public constant name = "WealthMan Private Presale Token";
+    string public constant symbol = "AWM";
     uint public constant decimals = 18;
     uint public constant PRICE = 2250;  // per 1 Ether
 

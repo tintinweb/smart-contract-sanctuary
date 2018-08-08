@@ -388,15 +388,15 @@ contract CityToken is Managed {
   }
 
   function name () public pure returns (string _name) {
-    return &quot;CryptoCountries.io Cities&quot;;
+    return "CryptoCountries.io Cities";
   }
 
   function symbol () public pure returns (string _symbol) {
-    return &quot;CC2&quot;;
+    return "CC2";
   }
 
   function tokenURI (uint256 _itemId) public pure returns (string) {
-    return _concat(&quot;https://cryptocountries.io/api/metadata/city/&quot;, _uintToString(_itemId));
+    return _concat("https://cryptocountries.io/api/metadata/city/", _uintToString(_itemId));
   }
 
   function totalSupply () public view returns (uint256 _totalSupply) {
@@ -437,7 +437,7 @@ contract CityToken is Managed {
   }
 
   function _uintToString (uint i) internal pure returns (string) {
-		if (i == 0) return &quot;0&quot;;
+		if (i == 0) return "0";
 
 		uint j = i;
 		uint len;

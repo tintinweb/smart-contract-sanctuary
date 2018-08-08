@@ -48,8 +48,8 @@ contract SafeMath {
 
 contract Rune is ERC20, SafeMath {
 
-    string public constant name = &quot;Rune&quot;;
-    string public constant symbol = &quot;RUNE&quot;;
+    string public constant name = "Rune";
+    string public constant symbol = "RUNE";
     uint256 public constant decimals = 18;
     uint256 public constant totalTokens = 1000000000 * (10 ** decimals);
 

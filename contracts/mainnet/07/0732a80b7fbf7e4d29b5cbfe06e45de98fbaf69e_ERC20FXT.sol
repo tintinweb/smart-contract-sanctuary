@@ -73,8 +73,8 @@ contract ERC20FXT {
 
     using SafeMath for uint256;
 
-    string public name = &quot;ERC20FX Token&quot;;
-    string public symbol = &quot;ERC20FXT&quot;;
+    string public name = "ERC20FX Token";
+    string public symbol = "ERC20FXT";
     uint8 public decimals = 0;
 
     uint256 public totalSupply = 10000000 * (uint256(10) ** decimals);

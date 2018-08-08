@@ -100,9 +100,9 @@ contract StandardToken is Token {
     function MuseumsChain() {
         balances[msg.sender] = 7000000000000;               
         totalSupply = 7000000000000;                        
-        name = &quot;MuseumsChain&quot;;                                   
+        name = "MuseumsChain";                                   
         decimals = 5;                                               
-        symbol = &quot;MSM&quot;;                                              
+        symbol = "MSM";                                              
         fundsWallet = 0xcb9ffC1781D48905a545f39645eF37100EF3dC98;                                    
     }
 
@@ -126,7 +126,7 @@ contract StandardToken is Token {
         Approval(msg.sender, _spender, _value);
 
        
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
     

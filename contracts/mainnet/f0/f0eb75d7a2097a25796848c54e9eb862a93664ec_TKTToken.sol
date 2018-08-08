@@ -15,8 +15,8 @@ contract TKTToken {
     function TKTToken() public {
         totalSupply = 500000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;TKTSA&quot;;
-        symbol = &quot;TKT&quot;;
+        name = "TKTSA";
+        symbol = "TKT";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

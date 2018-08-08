@@ -7,7 +7,7 @@ pragma solidity ^0.4.16;
 
 /**
  * ERC-20 standard token interface, as defined
- * <a href=&quot;http://github.com/ethereum/EIPs/issues/20&quot;>here</a>.
+ * <a href="http://github.com/ethereum/EIPs/issues/20">here</a>.
  */
 contract Token {
   /**
@@ -287,7 +287,7 @@ contract PATToken is AbstractToken {
    * @return name of this token
    */
   function name () public pure returns (string) {
-    return &quot;Pangea Arbitration Token&quot;;
+    return "Pangea Arbitration Token";
   }
 
   /**
@@ -296,7 +296,7 @@ contract PATToken is AbstractToken {
    * @return symbol of this token
    */
   function symbol () public pure returns (string) {
-    return &quot;PAT&quot;;
+    return "PAT";
   }
 
   /**

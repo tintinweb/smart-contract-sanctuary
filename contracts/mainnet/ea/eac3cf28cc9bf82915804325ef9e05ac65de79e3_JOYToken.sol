@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -438,8 +438,8 @@ contract ERC827Token is ERC827, StandardToken {
  */
 contract JOYToken is Pausable, ERC827Token {
 
-    string public constant name = &quot;BLOCK JOY&quot;;
-    string public constant symbol = &quot;JOY&quot;;
+    string public constant name = "BLOCK JOY";
+    string public constant symbol = "JOY";
     uint256 public constant decimals = 18;
 
     uint256 public constant exchangeRatio = 10000;

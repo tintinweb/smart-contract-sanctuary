@@ -113,8 +113,8 @@ contract CrowleyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CrowleyToken() public {
-        symbol = &quot;CRL&quot;;
-        name = &quot;CrowleyToken&quot;;
+        symbol = "CRL";
+        name = "CrowleyToken";
         decimals = 6;
         _totalSupply = 666666666666;
         balances[0x53Bde56381094D82975F966372470d282EA11756] = _totalSupply;

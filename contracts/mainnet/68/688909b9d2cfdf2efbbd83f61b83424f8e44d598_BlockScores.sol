@@ -196,7 +196,7 @@ contract BlockScores {
     /// @return true/false
     function confirmBoardScore(bytes32 boardHash, bytes32 playerName) public returns (bool){
         uint8 playerID = getPlayerId (boardHash, playerName, 0);
-        uint8 confirmerID = getPlayerId (boardHash, &quot;&quot;, msg.sender);
+        uint8 confirmerID = getPlayerId (boardHash, "", msg.sender);
         require(playerID < 255); // player needs to be active
         require(confirmerID < 255); // confirmer needs to be active
         require(boards[boardHash].players[playerID].playerAddress != msg.sender); //confirm only other players

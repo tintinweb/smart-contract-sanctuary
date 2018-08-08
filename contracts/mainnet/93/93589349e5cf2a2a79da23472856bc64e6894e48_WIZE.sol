@@ -296,8 +296,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract WIZE is StandardToken, BurnableToken, HasNoEther, HasNoTokens  {
 
-	string public name = &quot;WIZE&quot;;
-	string public symbol = &quot;WIZE&quot;;
+	string public name = "WIZE";
+	string public symbol = "WIZE";
 	uint256 public decimals = 8;
 
 	function WIZE() public

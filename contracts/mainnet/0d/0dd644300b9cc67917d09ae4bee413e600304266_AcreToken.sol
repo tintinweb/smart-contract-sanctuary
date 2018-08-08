@@ -35,8 +35,8 @@ contract AcreConfig {
     uint internal constant LOCKUP_DURATION_TIME = 365; // 365 days
     
     // AcreToken
-    string internal constant TOKEN_NAME            = &quot;Acre&quot;;
-    string internal constant TOKEN_SYMBOL          = &quot;ACRE&quot;;
+    string internal constant TOKEN_NAME            = "Acre";
+    string internal constant TOKEN_SYMBOL          = "ACRE";
     uint8  internal constant TOKEN_DECIMALS        = 18;
     
     uint   internal constant INITIAL_SUPPLY        =   1*1e8 * 10 ** uint(TOKEN_DECIMALS); // supply

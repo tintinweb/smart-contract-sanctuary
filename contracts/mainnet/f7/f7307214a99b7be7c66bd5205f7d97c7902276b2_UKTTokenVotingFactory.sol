@@ -121,7 +121,7 @@ contract ERC223Reciever {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 	
@@ -244,7 +244,7 @@ contract UKTTokenVoting is ERC223Reciever, Ownable {
 		dateStart = now;
 		dateEnd = _dateEnd;
 		
-		proposals.push(&quot;Not valid proposal&quot;);
+		proposals.push("Not valid proposal");
 		proposalsWeights[0] = 0;
 		for(uint256 i = 0; i < _proposals.length; i++) {
 			proposals.push(_proposals[i]);
@@ -417,7 +417,7 @@ contract UKTTokenVoting is ERC223Reciever, Ownable {
 			proposalsWeights[vote.proposalIdx] = proposalsWeights[vote.proposalIdx].sub(vote.weight);
 		}
 		
-		return vote.tokenContractAddress.call(bytes4(keccak256(&quot;transfer(address,uint256)&quot;)), to, vote.tokensValue);
+		return vote.tokenContractAddress.call(bytes4(keccak256("transfer(address,uint256)")), to, vote.tokensValue);
 	}
 	
 	

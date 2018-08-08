@@ -192,8 +192,8 @@ contract StandardToken is ERC20, BasicToken {
  * Detailed
  */
 contract LDT is StandardToken {
-    string public name = &quot;Law Diamond Token&quot;;
-    string public symbol = &quot;LDT&quot;;
+    string public name = "Law Diamond Token";
+    string public symbol = "LDT";
     uint256 public decimals = 18;
     uint256 public TOTAL_SUPPLY = 100000000 * (10 ** uint256(decimals));
 

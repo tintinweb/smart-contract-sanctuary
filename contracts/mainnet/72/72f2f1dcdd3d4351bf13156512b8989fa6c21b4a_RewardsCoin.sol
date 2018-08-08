@@ -80,8 +80,8 @@ contract RewardsCoin is owned {
 
     function RewardsCoin() public {
             
-        name = &quot;Rewards Coin&quot;;    
-        symbol = &quot;REW&quot;;    
+        name = "Rewards Coin";    
+        symbol = "REW";    
         decimals = 18;
         burnt = 0;
         maxSupply = 25000000 * (10 ** decimals);   

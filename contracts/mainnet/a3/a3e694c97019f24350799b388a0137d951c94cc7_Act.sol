@@ -5,11 +5,11 @@ contract Act {
 
     bytes32 public symbol;
     bytes32 public  name;
-    string public act = &quot;QmbQepVoQdawBcz8A98nApTH5SaFGHqK6pTKi2eYK3DvAm&quot;;
+    string public act = "QmbQepVoQdawBcz8A98nApTH5SaFGHqK6pTKi2eYK3DvAm";
 
     function Act() public {
-        symbol = &quot;ACT&quot;;
-        name = &quot;ActoOfIndependenceOfLithuania&quot;;
+        symbol = "ACT";
+        name = "ActoOfIndependenceOfLithuania";
     }
 
     function getAct() public view returns (string) {

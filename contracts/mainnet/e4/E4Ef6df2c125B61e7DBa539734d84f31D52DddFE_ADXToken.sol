@@ -495,8 +495,8 @@ contract VestedToken is StandardToken, LimitedTransferToken {
 
 contract ADXToken is VestedToken {
   //FIELDS
-  string public name = &quot;AdEx&quot;;
-  string public symbol = &quot;ADX&quot;;
+  string public name = "AdEx";
+  string public symbol = "ADX";
   uint public decimals = 4;
 
   //CONSTANTS

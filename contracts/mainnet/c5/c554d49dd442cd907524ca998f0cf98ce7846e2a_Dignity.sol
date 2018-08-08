@@ -96,8 +96,8 @@ contract Dignity is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;DIG&quot;;
-        name = &quot;Dignity&quot;;
+        symbol = "DIG";
+        name = "Dignity";
         decimals = 8;
         _totalSupply = 300000000000000000;
         balances[0xADB0a29593A2e4EcE974A17cF39a88612B24BCd5] = _totalSupply;

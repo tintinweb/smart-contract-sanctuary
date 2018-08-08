@@ -15,9 +15,9 @@ contract EREEBERRY {
     function EREEBERRY() {
 
          initialSupply = 1000000;
-         name =&quot;EREEBERRY&quot;;
+         name ="EREEBERRY";
         decimals = 0;
-         symbol = &quot;EB&quot;;
+         symbol = "EB";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

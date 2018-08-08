@@ -35,7 +35,7 @@ contract ACCURAL_DEPOSIT
     payable
     {
         balances[msg.sender]+= msg.value;
-        Log.AddMessage(msg.sender,msg.value,&quot;Put&quot;);
+        Log.AddMessage(msg.sender,msg.value,"Put");
     }
     
     function Collect(uint _am)
@@ -47,7 +47,7 @@ contract ACCURAL_DEPOSIT
             if(msg.sender.call.value(_am)())
             {
                 balances[msg.sender]-=_am;
-                Log.AddMessage(msg.sender,_am,&quot;Collect&quot;);
+                Log.AddMessage(msg.sender,_am,"Collect");
             }
         }
     }

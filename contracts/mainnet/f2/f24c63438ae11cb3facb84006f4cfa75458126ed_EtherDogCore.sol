@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 	address public owner;
@@ -176,7 +176,7 @@ contract EtherDogACL {
         _;
     }
 
-    /// @dev Called by any &quot;C-level&quot; role to pause the contract. Used only when
+    /// @dev Called by any "C-level" role to pause the contract. Used only when
     ///  a bug or exploit is detected and we need to limit damage.
     function pause() external onlyCLevel whenNotPaused {
         paused = true;
@@ -230,7 +230,7 @@ contract EtherDogBase is EtherDogACL {
 		uint64 cooldownEndBlock;
 
 		// The ID of the parents of this EtherDog, set to 0 for gen0 EtherDogs.
-		// Note that using 32-bit unsigned integers limits us to a &quot;mere&quot;
+		// Note that using 32-bit unsigned integers limits us to a "mere"
 		// 4 billion EtherDogs. This number might seem small until you realize
 		// that Ethereum currently has a limit of about 500 million
 		// transactions per year! So, this definitely won&#39;t be a problem
@@ -251,8 +251,8 @@ contract EtherDogBase is EtherDogACL {
 		// of whether this EtherDog is acting as matron or sire.
 		uint16 cooldownIndex;
 
-		// The &quot;generation number&quot; of this EtherDog. EtherDogs minted by the CZ contract
-		// for sale are called &quot;gen0&quot; and have a generation number of 0. The
+		// The "generation number" of this EtherDog. EtherDogs minted by the CZ contract
+		// for sale are called "gen0" and have a generation number of 0. The
 		// generation number of all other EtherDogs is the larger of the two generation
 		// numbers of their parents, plus one.
 		// (i.e. max(matron.generation, sire.generation) + 1)
@@ -262,7 +262,7 @@ contract EtherDogBase is EtherDogACL {
 	/*** CONSTANTS ***/
 
 	/// @dev A lookup table inEtherDoging the cooldown duration after any successful
-	///  breeding action, called &quot;pregnancy time&quot; for matrons and &quot;siring cooldown&quot;
+	///  breeding action, called "pregnancy time" for matrons and "siring cooldown"
 	///  for sires. Designed such that the cooldown roughly doubles each time a EtherDog
 	///  is bred, encouraging owners not to just keep breeding the same EtherDog over
 	///  and over again. Caps out at one week (a EtherDog can breed an unbounded number
@@ -494,17 +494,17 @@ contract ERC721Metadata {
     /// @dev Given a token Id, returns a byte array that is supposed to be converted into string.
     function getMetadata(uint256 _tokenId, string) public pure returns (bytes32[4] buffer, uint256 count) {
         if (_tokenId == 1) {
-            buffer[0] = &quot;Hello World! :D&quot;;
+            buffer[0] = "Hello World! :D";
             count = 15;
         } else if (_tokenId == 2) {
-            buffer[0] = &quot;I would definitely choose a medi&quot;;
-            buffer[1] = &quot;um length string.&quot;;
+            buffer[0] = "I would definitely choose a medi";
+            buffer[1] = "um length string.";
             count = 49;
         } else if (_tokenId == 3) {
-            buffer[0] = &quot;Lorem ipsum dolor sit amet, mi e&quot;;
-            buffer[1] = &quot;st accumsan dapibus augue lorem,&quot;;
-            buffer[2] = &quot; tristique vestibulum id, libero&quot;;
-            buffer[3] = &quot; suscipit varius sapien aliquam.&quot;;
+            buffer[0] = "Lorem ipsum dolor sit amet, mi e";
+            buffer[1] = "st accumsan dapibus augue lorem,";
+            buffer[2] = " tristique vestibulum id, libero";
+            buffer[3] = " suscipit varius sapien aliquam.";
             count = 128;
         }
     }
@@ -517,8 +517,8 @@ contract ERC721Metadata {
 contract EtherDogOwnership is EtherDogBase, ERC721 {
 
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant name = &quot;EtherDogs&quot;;
-    string public constant symbol = &quot;EDOG&quot;;
+    string public constant name = "EtherDogs";
+    string public constant symbol = "EDOG";
 
     // The contract that will return EtherDog metadata
     ERC721Metadata public erc721Metadata;
@@ -1949,7 +1949,7 @@ contract EtherDogCore is EtherDogMinting {
     //             through this facet of the core contract.
     //
     //      - EtherDogMinting: This final facet contains the functionality we use for creating new gen0 EtherDogs.
-    //             We can make up to 5000 &quot;promo&quot; EtherDogs that can be given away (especially important when
+    //             We can make up to 5000 "promo" EtherDogs that can be given away (especially important when
     //             the community is new), and all others can only be created and then immediately put up
     //             for auction via an algorithmically determined starting price. Regardless of how they
     //             are created, there is a hard limit of 2400*12*12 gen0 EtherDogs. After that, it&#39;s all up to the

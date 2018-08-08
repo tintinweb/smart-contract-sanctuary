@@ -6,12 +6,12 @@ pragma solidity 0.4.24;
 // similar as shrimpfarmer, with three changes:
 // A. one third of your snails die when you sell eggs
 // B. you can transfer ownership of the devfee through sacrificing snails
-// C. the &quot;free&quot; 300 snails cost 0.001 eth (in line with the mining fee)
+// C. the "free" 300 snails cost 0.001 eth (in line with the mining fee)
 // bots should have a harder time, and whales can compete for the devfee
 
 contract SpermLabs{
-    string public name = &quot;Sperm farm&quot; ;
-	string public symbol = &quot;Sperm&quot;;
+    string public name = "Sperm farm" ;
+	string public symbol = "Sperm";
     //uint256 EGGS_PER_SHRIMP_PER_SECOND=1;
     uint256 public EGGS_TO_HATCH_1SHRIMP=86400;//for final version should be seconds in a day
     uint256 public STARTING_SHRIMP=300;

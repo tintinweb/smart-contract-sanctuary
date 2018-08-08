@@ -113,8 +113,8 @@ contract KIUSToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function KIUSToken() public {
-        symbol = &quot;KIUS&quot;;
-        name = &quot;KIUS&quot;;
+        symbol = "KIUS";
+        name = "KIUS";
         decimals = 8;
         _totalSupply = 950000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

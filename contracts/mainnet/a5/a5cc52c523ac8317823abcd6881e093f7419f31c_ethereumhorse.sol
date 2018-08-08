@@ -113,8 +113,8 @@ contract ethereumhorse is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ethereumhorse() public {
-        symbol = &quot;ets&quot;;
-        name = &quot;ethereumhorse&quot;;
+        symbol = "ets";
+        name = "ethereumhorse";
         decimals = 6;
         _totalSupply = 17000000000000;
         balances[0x9e02FB21242768a1e5aBE18Ecc4951113575cEC0] = _totalSupply;

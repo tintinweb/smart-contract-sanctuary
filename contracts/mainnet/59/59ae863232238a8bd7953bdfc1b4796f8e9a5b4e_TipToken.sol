@@ -512,7 +512,7 @@ contract ERC865Token is ERC865, StandardToken {
         pure
         returns (bytes32)
     {
-        /* &quot;48664c16&quot;: transferPreSignedHashing(address,address,address,uint256,uint256,uint256) */
+        /* "48664c16": transferPreSignedHashing(address,address,address,uint256,uint256,uint256) */
         return keccak256(bytes4(0x48664c16), _token, _to, _value, _fee, _nonce);
     }
 
@@ -535,7 +535,7 @@ contract ERC865Token is ERC865, StandardToken {
         pure
         returns (bytes32)
     {
-        /* &quot;f7ac9c2e&quot;: approvePreSignedHashing(address,address,uint256,uint256,uint256) */
+        /* "f7ac9c2e": approvePreSignedHashing(address,address,uint256,uint256,uint256) */
         return keccak256(bytes4(0xf7ac9c2e), _token, _spender, _value, _fee, _nonce);
     }
 
@@ -558,7 +558,7 @@ contract ERC865Token is ERC865, StandardToken {
         pure
         returns (bytes32)
     {
-        /* &quot;a45f71ff&quot;: increaseApprovalPreSignedHashing(address,address,uint256,uint256,uint256) */
+        /* "a45f71ff": increaseApprovalPreSignedHashing(address,address,uint256,uint256,uint256) */
         return keccak256(bytes4(0xa45f71ff), _token, _spender, _addedValue, _fee, _nonce);
     }
 
@@ -581,7 +581,7 @@ contract ERC865Token is ERC865, StandardToken {
         pure
         returns (bytes32)
     {
-        /* &quot;59388d78&quot;: decreaseApprovalPreSignedHashing(address,address,uint256,uint256,uint256) */
+        /* "59388d78": decreaseApprovalPreSignedHashing(address,address,uint256,uint256,uint256) */
         return keccak256(bytes4(0x59388d78), _token, _spender, _subtractedValue, _fee, _nonce);
     }
 
@@ -606,7 +606,7 @@ contract ERC865Token is ERC865, StandardToken {
         pure
         returns (bytes32)
     {
-        /* &quot;b7656dc5&quot;: transferFromPreSignedHashing(address,address,address,uint256,uint256,uint256) */
+        /* "b7656dc5": transferFromPreSignedHashing(address,address,address,uint256,uint256,uint256) */
         return keccak256(bytes4(0xb7656dc5), _token, _from, _to, _value, _fee, _nonce);
     }
 
@@ -652,8 +652,8 @@ contract TipToken is ERC865Token, Ownable {
 
     uint256 public constant TOTAL_SUPPLY = 10 ** 9;
 
-    string public constant name = &quot;Tip Token&quot;;
-    string public constant symbol = &quot;TIP&quot;;
+    string public constant name = "Tip Token";
+    string public constant symbol = "TIP";
     uint8 public constant decimals = 18;
 
     mapping (address => string) aliases;

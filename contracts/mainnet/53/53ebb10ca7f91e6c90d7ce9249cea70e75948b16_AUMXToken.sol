@@ -71,8 +71,8 @@ contract SafeMath
 contract AUMXToken is ERC223, SafeMath{
 	mapping(address => mapping(address => uint)) allowed;
 	mapping(address => uint) balances;
-	string public name = &quot;Alteum&quot;;
-	string public symbol = &quot;AUM&quot;;
+	string public name = "Alteum";
+	string public symbol = "AUM";
 	uint8 public decimals = 8; // Using a Satoshi as base for our decimals: 0.00000001;
 	uint256 public totalSupply = 5000000000000000; // 50,000,000 AUM&#39;s, not mineable, not mintable;
 	

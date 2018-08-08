@@ -72,7 +72,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -313,8 +313,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract CXTCContract is StandardToken {
 
-    string public constant name = &quot;Culture eXchange Token Chain&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;CXTC&quot;; // solium-disable-line uppercase
+    string public constant name = "Culture eXchange Token Chain"; // solium-disable-line uppercase
+    string public constant symbol = "CXTC"; // solium-disable-line uppercase
     uint8 public constant decimals = 8; // solium-disable-line uppercase
 
     uint256 public constant freeSupply = 21000000 * (10 ** uint256(decimals)); // 10%自由量
@@ -378,7 +378,7 @@ contract CXTCContract is StandardToken {
      * new art hash info
      */
     function newArt(string _id, string _regReport) public onlySys returns (bool) {
-        ArtInfo memory info = ArtInfo({idtReport: &quot;&quot;, evtReport: &quot;&quot;, escReport: &quot;&quot;, regReport: _regReport});
+        ArtInfo memory info = ArtInfo({idtReport: "", evtReport: "", escReport: "", regReport: _regReport});
         artInfos[_id] = info;
         NewArt(_id);
         return true;

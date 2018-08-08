@@ -212,8 +212,8 @@ contract StandardToken is ERC20, BasicToken {
 contract FinToken is StandardToken {
 	address public owner;
 	
-	string public constant name = &quot;FIN Token&quot;; 
-	string public constant symbol = &quot;FIN&quot;;
+	string public constant name = "FIN Token"; 
+	string public constant symbol = "FIN";
 	uint8 public constant decimals = 18;
 
 	uint256 public constant INITIAL_SUPPLY = 2623304 * (10 ** uint256(decimals));

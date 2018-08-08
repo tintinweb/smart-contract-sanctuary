@@ -109,8 +109,8 @@ contract ERC20Token is ERC20 {
 
 contract WEETtoken is ERC20Token, Owned {
 
-    string  public constant name = &quot;Weet Token&quot;;
-    string  public constant symbol = &quot;WEET&quot;;
+    string  public constant name = "Weet Token";
+    string  public constant symbol = "WEET";
     uint256 public constant decimals = 18;
     uint256 public tokenDestroyed;
     event Burn(address indexed _from, uint256 _tokenDestroyed, uint256 _timestamp);

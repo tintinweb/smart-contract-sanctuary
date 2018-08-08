@@ -19,7 +19,7 @@ contract WaltonTokenLocker {
 
     address public beneficiary;
     uint256 public releaseTime;
-    string constant public name = &quot;team locker&quot;;
+    string constant public name = "team locker";
 
     Token public token = Token(&#39;0xb7cB1C96dB6B22b0D3d9536E0108d062BD488F74&#39;);
 

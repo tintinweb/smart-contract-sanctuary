@@ -177,8 +177,8 @@ contract StandardToken is ERC20, BasicToken {
 // Simple Token Contract
 contract iCashToken is StandardToken {
     // Public variables
-    string constant public name = &quot;iCash&quot;; 
-    string constant public symbol = &quot;ICASH&quot;;
+    string constant public name = "iCash"; 
+    string constant public symbol = "ICASH";
     uint constant public decimals = 18;
     
     // Constants for creating 1 billion tokens

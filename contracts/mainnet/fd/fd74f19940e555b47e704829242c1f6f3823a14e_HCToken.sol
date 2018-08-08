@@ -2,8 +2,8 @@ pragma solidity ^0.4.19;
 
 contract HCToken {
     address public owner;
-    string public constant name = &quot;Hash Credit Token&quot;;
-    string public constant symbol = &quot;HCT&quot;;
+    string public constant name = "Hash Credit Token";
+    string public constant symbol = "HCT";
     uint256 public constant decimals = 6;
     uint256 public constant totalSupply = 15 * 100 * 1000 * 1000 * 10 ** decimals;
     

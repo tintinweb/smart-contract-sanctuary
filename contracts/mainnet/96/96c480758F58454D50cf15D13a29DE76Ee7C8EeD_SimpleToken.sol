@@ -156,8 +156,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract SimpleToken is StandardToken {
 
-  string public constant name = &quot;RealBoostCoin&quot;;
-  string public constant symbol = &quot;RBC&quot;;
+  string public constant name = "RealBoostCoin";
+  string public constant symbol = "RBC";
   uint256 public constant decimals = 18;
   uint256 public constant initial_supply = 21000000 * 1000000000000000000;
 

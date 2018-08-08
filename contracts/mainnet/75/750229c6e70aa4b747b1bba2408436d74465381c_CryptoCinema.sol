@@ -57,8 +57,8 @@ contract CryptoCinema is ERC721, Ownable {
   event TokenSold(uint256 tokenId, uint256 oldPrice, uint256 newPrice, address prevOwner, address winner, string name);
   event Transfer(address from, address to, uint256 tokenId);
 
-  string public constant NAME = &quot;Film&quot;;
-  string public constant SYMBOL = &quot;FilmToken&quot;;
+  string public constant NAME = "Film";
+  string public constant SYMBOL = "FilmToken";
 
   uint256 private startingPrice = 0.01 ether;
 
@@ -98,7 +98,7 @@ contract CryptoCinema is ERC721, Ownable {
 	 require (totalFilms<1); // only 3 tokens for start
 	 
 	 for (uint8 i=1; i<=18; i++)
-		_createFilm(&quot;Film&quot;, address(this), startingPrice);
+		_createFilm("Film", address(this), startingPrice);
 	
   }
   

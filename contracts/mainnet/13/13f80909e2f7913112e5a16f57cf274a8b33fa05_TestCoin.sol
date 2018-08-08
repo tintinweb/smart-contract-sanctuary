@@ -45,8 +45,8 @@ contract TestCoin is ERC20 {
 		decimals = 18;
 		totalSupply = 2 * uint(10)**(decimals + 9);
 		balances[owner] = totalSupply;
-		name = &quot;TESTCOIN&quot;;
-		symbol = &quot;TSC&quot;;
+		name = "TESTCOIN";
+		symbol = "TSC";
 		emit Transfer(address(0), owner, totalSupply);
 	}
 	

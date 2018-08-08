@@ -55,8 +55,8 @@ contract Dragon is ERC20 {
         appendTokenHolders( msg.sender );
         balanceOf[msg.sender] =  supply;
         totalSupply = supply; // 
-        name = &quot;DRAGON&quot;; // Set the name for display purposes
-        symbol = &quot;DRG&quot;; // Set the symbol for display purposes
+        name = "DRAGON"; // Set the name for display purposes
+        symbol = "DRG"; // Set the symbol for display purposes
         decimals = 0; // Amount of decimals for display purposes
         
   

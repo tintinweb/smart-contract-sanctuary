@@ -15,9 +15,9 @@ contract UNITYCOIN {
     function UNITYCOIN() {
 
          initialSupply = 210000000;
-         name =&quot;UNITYCOIN&quot;;
+         name ="UNITYCOIN";
         decimals = 5;
-         symbol = &quot;UTY&quot;;
+         symbol = "UTY";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

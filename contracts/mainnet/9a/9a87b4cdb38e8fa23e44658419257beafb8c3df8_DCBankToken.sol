@@ -75,8 +75,8 @@ contract DCBankToken is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
 
     constructor() public {
-        symbol = &quot;DCB&quot;;
-        name = &quot;DCBank Token&quot;;
+        symbol = "DCB";
+        name = "DCBank Token";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         stopped = false;

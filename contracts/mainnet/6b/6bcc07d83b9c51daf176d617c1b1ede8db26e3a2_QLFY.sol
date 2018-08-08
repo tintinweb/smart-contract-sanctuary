@@ -28,8 +28,8 @@ contract QLFY {
     ) public {
         totalSupply = 100000000000000000000000000;                                                 // Update total supply with the decimal amount
         balanceOf[msg.sender] = 100000000000000000000000000;                                       // Give the creator all initial tokens
-        name = &quot;eQualify&quot;;                                                                         // Set the name for display purposes
-        symbol = &quot;QLFY&quot;;                                                                           // Set the symbol for display purposes
+        name = "eQualify";                                                                         // Set the name for display purposes
+        symbol = "QLFY";                                                                           // Set the symbol for display purposes
     }
 
     /**

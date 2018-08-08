@@ -112,8 +112,8 @@ contract FrescoToken is ERC20, Pauseable {
     uint256 _totalSupply;    
     
 
-    string public constant name = &quot;FRESCO&quot;;
-    string public constant symbol = &quot;FRES&quot;;
+    string public constant name = "FRESCO";
+    string public constant symbol = "FRES";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY =   500000000 * (10 ** uint256(decimals));
     

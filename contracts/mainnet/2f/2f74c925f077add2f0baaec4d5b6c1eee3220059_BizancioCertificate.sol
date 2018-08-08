@@ -78,7 +78,7 @@ contract AccessControl {
         _;
     }
 
-    /// @dev Called by any &quot;C-level&quot; role to pause the contract. Used only when
+    /// @dev Called by any "C-level" role to pause the contract. Used only when
     ///  a bug or exploit is detected and we need to limit damage.
     function pause() public canAccess(1) whenNotPaused {
         paused = true;

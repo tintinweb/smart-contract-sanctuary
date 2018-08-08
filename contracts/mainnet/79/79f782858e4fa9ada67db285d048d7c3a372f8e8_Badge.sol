@@ -450,7 +450,7 @@ contract Token {
         function Token(address _config) {
                 config = _config;
                 owner = msg.sender;
-                address _initseller = ConfigInterface(_config).getConfigAddress(&quot;sale1:address&quot;);
+                address _initseller = ConfigInterface(_config).getConfigAddress("sale1:address");
                 seller[_initseller] = true;
                 locked = false;
         }

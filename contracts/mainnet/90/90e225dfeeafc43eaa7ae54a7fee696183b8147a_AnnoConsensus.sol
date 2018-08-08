@@ -131,8 +131,8 @@ contract GSUMedal is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GSUMedal() public {
-        medalSymbol = &quot;GSU&quot;;
-        medalName = &quot;Anno Consensus&quot;;
+        medalSymbol = "GSU";
+        medalName = "Anno Consensus";
         medalDecimals = 0;
         _medalTotalSupply = 1000000;
         medalBalances[msg.sender] = _medalTotalSupply;
@@ -262,8 +262,8 @@ contract AnnoToken is GSUMedal {
     // Constructor
     // ------------------------------------------------------------------------
     function AnnoToken() public {
-        symbol = &quot;ANNO&quot;;
-        name = &quot;Anno Consensus Token&quot;;
+        symbol = "ANNO";
+        name = "Anno Consensus Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         minePool = 600000000000000000000000000;

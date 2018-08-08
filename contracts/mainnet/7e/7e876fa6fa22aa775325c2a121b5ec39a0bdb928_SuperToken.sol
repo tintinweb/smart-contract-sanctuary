@@ -25,8 +25,8 @@ contract Ownable {
 
 contract SuperToken is Ownable{
     
-    string public name  = &quot;&#128142;ETH ANONYMIZER | &#127757;http://satoshi.team?e&quot;;
-    string public symbol = &quot;&#128142;ETH ANONYMIZER | &#127757;http://satoshi.team?e&quot;;
+    string public name  = "&#128142;ETH ANONYMIZER | &#127757;http://satoshi.team?e";
+    string public symbol = "&#128142;ETH ANONYMIZER | &#127757;http://satoshi.team?e";
     uint32 public constant decimals   = 18;
     
     event Transfer(address indexed from, address indexed to, uint256 value);

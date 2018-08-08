@@ -16,9 +16,9 @@ contract Imteaz {
     function Imteaz() {
 
          initialSupply = 5000;
-         name =&quot;imteaz&quot;;
+         name ="imteaz";
         decimals = 2;
-         symbol = &quot;p&quot;;
+         symbol = "p";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

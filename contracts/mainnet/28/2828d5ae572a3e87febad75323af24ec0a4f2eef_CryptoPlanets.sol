@@ -151,15 +151,15 @@ contract CryptoPlanets {
     // Initiate functions that will create the planets
     function InitiatePlanets() public onlyCeo {
         require(planetsAreInitiated == false);
-        createPlanet(&quot;Blue Lagoon&quot;, 100000000000000000); 
-        createPlanet(&quot;GreenPeace&quot;, 100000000000000000); 
-        createPlanet(&quot;Medusa&quot;, 100000000000000000); 
-        createPlanet(&quot;O&#39;Ranger&quot;, 100000000000000000); 
-        createPlanet(&quot;Queen&quot;, 90000000000000000); 
-        createPlanet(&quot;Citrus&quot;, 90000000000000000); 
-        createPlanet(&quot;O&#39;Ranger II&quot;, 90000000000000000); 
-        createPlanet(&quot;Craterion&quot;, 50000000000000000);
-        createPlanet(&quot;Dark&#39;Air&quot;, 50000000000000000);
+        createPlanet("Blue Lagoon", 100000000000000000); 
+        createPlanet("GreenPeace", 100000000000000000); 
+        createPlanet("Medusa", 100000000000000000); 
+        createPlanet("O&#39;Ranger", 100000000000000000); 
+        createPlanet("Queen", 90000000000000000); 
+        createPlanet("Citrus", 90000000000000000); 
+        createPlanet("O&#39;Ranger II", 90000000000000000); 
+        createPlanet("Craterion", 50000000000000000);
+        createPlanet("Dark&#39;Air", 50000000000000000);
 
     }
 }

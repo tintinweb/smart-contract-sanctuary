@@ -79,8 +79,8 @@ contract VLOGS is ERC20Interface, Owned {
 
 
     function VLOGS() public {
-        symbol = &quot;VLOGS&quot;;
-        name = &quot;VLOGS&quot;;
+        symbol = "VLOGS";
+        name = "VLOGS";
         decimals = 18;
         _totalSupply = 320000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

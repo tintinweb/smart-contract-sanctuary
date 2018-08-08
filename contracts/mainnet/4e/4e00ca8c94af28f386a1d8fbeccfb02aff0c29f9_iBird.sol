@@ -2,8 +2,8 @@ pragma solidity ^0.4.18;
 
 contract iBird {
 
-    string public symbol = &quot;iBird&quot;;
-    string public name = &quot;iBird Token&quot;;
+    string public symbol = "iBird";
+    string public name = "iBird Token";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 0;
   uint256 _FreeiBird = 50000;

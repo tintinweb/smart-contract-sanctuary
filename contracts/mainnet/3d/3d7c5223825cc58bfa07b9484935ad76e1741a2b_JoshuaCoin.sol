@@ -113,8 +113,8 @@ contract JoshuaCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JoshuaCoin() public {
-        symbol = &quot;JSHCN&quot;;
-        name = &quot;Joshua Coin&quot;;
+        symbol = "JSHCN";
+        name = "Joshua Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xFe4d3E5f0A09005fe453f09a9b99Acca51ac05A8] = _totalSupply;

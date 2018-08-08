@@ -74,8 +74,8 @@ contract StandardToken is Token {
 
 contract AldiyoCoin is StandardToken {
 
-    string constant public name = &quot;Aldiyo Coin&quot;;
-    string constant public symbol = &quot;ALD&quot;;
+    string constant public name = "Aldiyo Coin";
+    string constant public symbol = "ALD";
     uint8 constant public decimals = 18;
 
     function AldiyoCoin()

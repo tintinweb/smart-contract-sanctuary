@@ -151,7 +151,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -209,9 +209,9 @@ contract BurnableToken is StandardToken {
 
 contract CORNewCoin is BurnableToken {
     
-  string public constant name = &quot;CORNew Coin&quot;;
+  string public constant name = "CORNew Coin";
    
-  string public constant symbol = &quot;CRN&quot;;
+  string public constant symbol = "CRN";
     
   uint32 public constant decimals = 18;
  

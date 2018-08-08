@@ -298,8 +298,8 @@ contract Pausable is Ownable {
 }
 
 contract NucleusVisionToken is MintableToken {
-  string public constant name = &quot;NucleusVision&quot;;
-  string public constant symbol = &quot;nCash&quot;;
+  string public constant name = "NucleusVision";
+  string public constant symbol = "nCash";
   uint8 public constant decimals = 18;
 
   // Total supply of nCash tokens is 10 Billion

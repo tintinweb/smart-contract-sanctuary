@@ -113,8 +113,8 @@ contract HiroyukiCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HiroyukiCoin() public {
-        symbol = &quot;HRYK&quot;;
-        name = &quot;HiroyukiCoin&quot;;
+        symbol = "HRYK";
+        name = "HiroyukiCoin";
         decimals = 18;
         _totalSupply = 1145141919000000000000000000;
         balances[0x4C1203f0Acb91409bB8709c2fFE44242b105F7D7] = _totalSupply;

@@ -109,8 +109,8 @@ contract COINLAW is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function COINLAW() public {
-        symbol = &quot;CLAW&quot;;
-        name = &quot;COINLAW&quot;;
+        symbol = "CLAW";
+        name = "COINLAW";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xc84078D464adb775C41dab8Ada4c0A7C1adf13ce] = _totalSupply;

@@ -42,8 +42,8 @@ library SafeMath {
     }
 }
 
-// The NOTES ERC20 Token. There is a delay before addresses that are not added to the &quot;activeGroup&quot; can transfer tokens. 
-// That delay ends when admin calls the &quot;activate()&quot; function.
+// The NOTES ERC20 Token. There is a delay before addresses that are not added to the "activeGroup" can transfer tokens. 
+// That delay ends when admin calls the "activate()" function.
 // Otherwise it is a generic ERC20 standard token, based originally on the BAT token
 // https://etherscan.io/address/0x0d8775f648430679a709e98d2b0cb6250d2887ef#code
 
@@ -70,10 +70,10 @@ contract Notes is Token {
     uint256 public constant TOTAL_SUPPLY = 2000 * (10**6) * 10**uint256(decimals);
 
     // Token Metadata
-    string public constant name = &quot;NOTES&quot;;
-    string public constant symbol = &quot;NOTES&quot;;
+    string public constant name = "NOTES";
+    string public constant symbol = "NOTES";
     uint8 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     //// PROPERTIES
 
@@ -237,7 +237,7 @@ contract Choon  {
     }
 
     function verifyBalanceProof(address receiver, uint256 balance, bytes sig) private returns (bool) {
-        bytes memory prefix = &quot;\x19Choon:\n32&quot;;
+        bytes memory prefix = "\x19Choon:\n32";
         bytes32 message_hash = keccak256(prefix, receiver, balance);
         address signer = ecverify(message_hash, sig);
         return (signer == choonAuthority);

@@ -70,7 +70,7 @@ library SafeMath {
 
  * @dev The Ownable contract has an owner address, and provides basic authorization control
 
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
 
  */
 
@@ -490,9 +490,9 @@ contract Blockkonnect is BurnableToken, Ownable {
 
 
 
-    string public constant name = &quot;Blockkonnect&quot;;
+    string public constant name = "Blockkonnect";
 
-    string public constant symbol = &quot;XBT&quot;;
+    string public constant symbol = "XBT";
 
     uint public constant decimals = 18;
 

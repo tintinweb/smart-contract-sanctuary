@@ -45,7 +45,7 @@ contract pyramidMKII {
 	function addSurplus() public payable { surplus += msg.value; }              // used to pay off the debt in final round
 	
 	function callSurplus() public {                                             // if there&#39;s enough surplus 
-	    require(surplus >= blksze, &quot;not enough surplus&quot;);                       // users can call this to make a new block 
+	    require(surplus >= blksze, "not enough surplus");                       // users can call this to make a new block 
 	    blockData[IDX].value += blksze;                                         // without increasing outstanding
 	    surplus -= blksze;
 	    nextBlock();
@@ -57,12 +57,12 @@ contract pyramidMKII {
 					balances[msg.sender].owed[blk].initial); }
 	
 	function setBlockSze(uint256 _sze) public {
-		require(msg.sender == owner && _sze >= 1 ether, &quot;error blksze&quot;);
+		require(msg.sender == owner && _sze >= 1 ether, "error blksze");
 		blksze = _sze;
 	}
 	
 	function withdraw() public {
-		require(balances[msg.sender].ebalance > 0, &quot;not enough divs claimed&quot;);
+		require(balances[msg.sender].ebalance > 0, "not enough divs claimed");
         uint256 sval = balances[msg.sender].ebalance;
         balances[msg.sender].ebalance = 0;
         msg.sender.transfer(sval);
@@ -122,20 +122,20 @@ contract pyramidMKII {
 	}
 	
 	function deposit(bytes32 usrmsg) public payable {
-		require(msg.value >= 0.001 ether, &quot;not enough ether&quot;);
+		require(msg.value >= 0.001 ether, "not enough ether");
 		pyramid(msg.sender, msg.value, usrmsg);
 	}
 	
 	function reinvest(uint256 val, bytes32 usrmsg) public {
 		require(val <= balances[msg.sender].ebalance && 
-				val > 0.001 ether, &quot;no funds&quot;);
+				val > 0.001 ether, "no funds");
 		balances[msg.sender].ebalance -= val;
 		pyramid(msg.sender, val, usrmsg);
 	}	
 	
 	function mine1000(uint256 blk) public {
-		require(balances[msg.sender].owed[blk].idx < IDX && blk < IDX, &quot;current block&quot;);
-		require(balances[msg.sender].owed[blk].pending > 0.001 ether, &quot;no more divs&quot;);
+		require(balances[msg.sender].owed[blk].idx < IDX && blk < IDX, "current block");
+		require(balances[msg.sender].owed[blk].pending > 0.001 ether, "no more divs");
 		uint256 cdiv = 0;
 		for(uint256 i = 0; i < 1000; i++) {
 			cdiv = (balances[msg.sender].owed[blk].pending *

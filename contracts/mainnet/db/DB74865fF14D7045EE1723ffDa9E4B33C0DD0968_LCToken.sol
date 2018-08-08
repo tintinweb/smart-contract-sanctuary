@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract LCToken is StandardToken {
 
-  string public constant name = &quot;Love Chain&quot;;
-  string public constant symbol = &quot;LC&quot;;
+  string public constant name = "Love Chain";
+  string public constant symbol = "LC";
   uint8 public constant decimals = 18;
 
 

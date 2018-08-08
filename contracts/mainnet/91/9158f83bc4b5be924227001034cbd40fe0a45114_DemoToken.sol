@@ -208,7 +208,7 @@ contract MintableTokenImpl is Ownable, Secured, TokenImpl, MintableToken {
      * @param _amount The amount of tokens to mint.
      * @return A boolean that indicates if the operation was successful.
      */
-    function mint(address _to, uint256 _amount) only(&quot;minter&quot;) public returns (bool) {
+    function mint(address _to, uint256 _amount) only("minter") public returns (bool) {
         totalSupply = totalSupply.add(_amount);
         balances[_to] = balances[_to].add(_amount);
         emitMint(_to, _amount);
@@ -224,7 +224,7 @@ contract MintableTokenImpl is Ownable, Secured, TokenImpl, MintableToken {
 /**
  * @title OwnableImpl
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract OwnableImpl is Ownable {
     address public owner;
@@ -362,8 +362,8 @@ contract BurnableTokenImpl is TokenImpl, BurnableToken {
 }
 
 contract DemoToken is OwnableImpl, SecuredImpl, PausableToken, MintableTokenImpl, BurnableTokenImpl {
-        string public constant name = &quot;Demo Token&quot;;
-        string public constant symbol = &quot;DEMO1&quot;;
+        string public constant name = "Demo Token";
+        string public constant symbol = "DEMO1";
         uint8 public constant decimals = 18;
 
         function burn(uint256 _value) public whenNotPaused {

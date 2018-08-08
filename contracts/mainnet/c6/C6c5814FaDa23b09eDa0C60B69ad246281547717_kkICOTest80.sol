@@ -19,8 +19,8 @@ contract kkICOTest80 {
 	
 	
 	function kkICOTest80() {
-        name = &quot;kkTEST80&quot;;
-        symbol = &quot;kkTST80&quot;;
+        name = "kkTEST80";
+        symbol = "kkTST80";
         
         decimals = 0;
         INITIAL_SUPPLY = 30000000;                  //Starting coin supply

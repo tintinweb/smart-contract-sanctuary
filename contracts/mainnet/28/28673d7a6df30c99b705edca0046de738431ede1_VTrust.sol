@@ -181,8 +181,8 @@ contract StandardToken is BasicToken, ERC20 {
  */
 contract VTrust is StandardToken {
 
-    string public name = &quot;VTrust&quot;;
-    string public symbol = &quot;VTR&quot;;
+    string public name = "VTrust";
+    string public symbol = "VTR";
     uint public decimals = 6;
     uint public INITIAL_SUPPLY = 1000000000000000; // Initial supply is 1,000,000,000 VTR
 

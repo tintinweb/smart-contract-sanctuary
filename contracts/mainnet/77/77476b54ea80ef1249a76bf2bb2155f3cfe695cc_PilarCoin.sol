@@ -265,7 +265,7 @@ contract PausableToken is StandardToken, Pausable {
    */
 
 contract PilarCoin is PausableToken, MintableToken, BurnableToken {
-    string public constant name = &quot;PilarCoin&quot;;
-    string public constant symbol = &quot;PILAR&quot;;
+    string public constant name = "PilarCoin";
+    string public constant symbol = "PILAR";
     uint8 public constant decimals = 2;
 }

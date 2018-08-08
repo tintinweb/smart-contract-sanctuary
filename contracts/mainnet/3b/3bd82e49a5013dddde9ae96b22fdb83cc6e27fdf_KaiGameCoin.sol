@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -465,8 +465,8 @@ contract PausableToken is StandardToken, Pausable {
  **/
 
 contract KaiGameCoin is PausableToken, BurnableToken {
-  string public name = &quot;KaiGameCoin&quot;;
-  string public symbol = &quot;KGC&quot;;
+  string public name = "KaiGameCoin";
+  string public symbol = "KGC";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 1000000000 * (10 ** decimals);
 

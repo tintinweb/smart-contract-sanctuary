@@ -16,9 +16,9 @@ contract Bxcoin {
     function Bxcoin() {
 
          initialSupply = 10000000;
-        name =&quot;Bxcoin&quot;;
+        name ="Bxcoin";
         decimals = 2;
-        symbol = &quot;bxc&quot;;
+        symbol = "bxc";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

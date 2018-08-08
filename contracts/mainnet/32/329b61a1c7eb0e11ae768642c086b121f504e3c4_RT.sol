@@ -179,8 +179,8 @@ contract claimable is Owned
 contract RT is TokenControl,claimable
 {
     using SafeMath for uint256;
-    string public constant name    = &quot;RecuToken&quot;;
-    string public constant symbol  = &quot;RT&quot;;
+    string public constant name    = "RecuToken";
+    string public constant symbol  = "RT";
     uint256 public decimals = 18;
     uint256 totalsupply =  500000000*(10**decimals);
 

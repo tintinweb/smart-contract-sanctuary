@@ -11,7 +11,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -286,7 +286,7 @@ contract MintableToken is StandardToken, Ownable {
 
 
 contract MICLToken is MintableToken {
-    string public name = &quot;Mi-Cool Token&quot;;
-    string public symbol = &quot;MICL&quot;;
+    string public name = "Mi-Cool Token";
+    string public symbol = "MICL";
     uint public decimals = 18;
 }

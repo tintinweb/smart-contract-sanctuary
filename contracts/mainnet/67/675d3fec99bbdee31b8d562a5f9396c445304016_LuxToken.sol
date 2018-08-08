@@ -18,8 +18,8 @@ contract owned {
 }
 
 contract LuxToken is owned {
-    string public name = &quot;Luxury Token&quot;;
-    string public symbol = &quot;LUX&quot;;
+    string public name = "Luxury Token";
+    string public symbol = "LUX";
     uint8 public decimals = 0;
     uint256 issuePrice = 1 ether / 100;
 

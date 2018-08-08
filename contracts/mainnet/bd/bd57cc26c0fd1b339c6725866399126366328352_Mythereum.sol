@@ -322,7 +322,7 @@ contract Mythereum is Manageable {
 
   function Mythereum() public {
     editions[0] = Edition({
-      name: &quot;Genesis&quot;,
+      name: "Genesis",
       sales: 0,
       maxSales: 5000,
       packSize: 7,

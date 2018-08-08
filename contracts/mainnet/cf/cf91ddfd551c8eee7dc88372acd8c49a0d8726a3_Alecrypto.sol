@@ -102,8 +102,8 @@ contract Alecrypto is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Alecrypto() public {
-        symbol = &quot;ALE&quot;;
-        name = &quot;Alecrypto&quot;;
+        symbol = "ALE";
+        name = "Alecrypto";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x86F35b8BFcd841e8CC6719cCC1B4eeFeF1B3F252] = _totalSupply;

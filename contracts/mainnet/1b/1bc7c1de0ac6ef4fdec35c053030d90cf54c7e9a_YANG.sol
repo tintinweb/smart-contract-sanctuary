@@ -113,8 +113,8 @@ contract YANG is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function YANG() public {
-        symbol = &quot;YNN&quot;;
-        name = &quot;YANG&quot;;
+        symbol = "YNN";
+        name = "YANG";
         decimals = 18;
         _totalSupply = 25000000000000000000000000000;
         balances[0x25D769a1b3bcAF7216b0cea17C056130fe1720cf] = _totalSupply;

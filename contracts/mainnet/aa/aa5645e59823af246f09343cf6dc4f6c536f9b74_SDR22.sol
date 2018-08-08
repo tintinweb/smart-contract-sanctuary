@@ -55,10 +55,10 @@ contract SDR22 {
         initialSupply = 900000;
         totalSupply = initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;For Toke Net&quot;;                                   // Set the name for display purposes
-        tokenName = &quot;For Toke Net&quot;;                                   // Set the name for display purposes
-        tokenSymbol = &quot;4TK&quot;;                               // Set the symbol for display purposes
-        symbol = &quot;4TK&quot;;
+        name = "For Toke Net";                                   // Set the name for display purposes
+        tokenName = "For Toke Net";                                   // Set the name for display purposes
+        tokenSymbol = "4TK";                               // Set the symbol for display purposes
+        symbol = "4TK";
         
     }
 

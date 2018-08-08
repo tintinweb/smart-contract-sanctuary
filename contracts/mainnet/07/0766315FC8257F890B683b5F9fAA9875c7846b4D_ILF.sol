@@ -81,8 +81,8 @@ contract ILF is StandardToken {
     bool public minterChangeable = true;
     bool public burnerChangeable = true;
     bool public manualEmissionEnabled = true;
-    string public constant symbol = &quot;ILF&quot;;
-    string public constant name = &quot;ICO Lab Fund Token&quot;;
+    string public constant symbol = "ILF";
+    string public constant name = "ICO Lab Fund Token";
     uint8 public constant decimals = 8;
     address public burnerAddress;
     address public minterAddress;

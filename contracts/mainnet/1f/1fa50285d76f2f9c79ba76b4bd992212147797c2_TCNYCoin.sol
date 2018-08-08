@@ -114,8 +114,8 @@ contract TCNYCoin is Ownable, StandardToken {
     function TCNYCoin() public {
     totalSupply = 100 * (10**6) * (10**6);
         balances[msg.sender] = totalSupply;
-        name = &quot;TCNY&quot;;
-        symbol = &quot;TCNY&quot;;
+        name = "TCNY";
+        symbol = "TCNY";
         decimals = 6;
     }
 

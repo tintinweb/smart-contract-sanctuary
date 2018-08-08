@@ -140,8 +140,8 @@ contract OwnableToken is StandardToken {
 
 contract HTL is OwnableToken {
     
-    string public constant symbol = &quot;HTL&quot;;
-    string public constant name = &quot;HT Charge Link&quot;;
+    string public constant symbol = "HTL";
+    string public constant name = "HT Charge Link";
     uint8 public constant decimals = 8;
     
     function HTL() public payable {

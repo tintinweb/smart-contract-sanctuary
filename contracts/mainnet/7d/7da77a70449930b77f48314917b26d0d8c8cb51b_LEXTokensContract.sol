@@ -102,8 +102,8 @@ contract LEXTokensContract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LEXTokensContract() public {
-        symbol = &quot;LEX&quot;;
-        name = &quot;LEX OLP Token&quot;;
+        symbol = "LEX";
+        name = "LEX OLP Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0xed0b26224d4629264b02f994dcc4375da3e6f9e4] = _totalSupply; //MEW address here

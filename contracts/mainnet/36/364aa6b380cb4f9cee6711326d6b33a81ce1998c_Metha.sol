@@ -87,8 +87,8 @@ contract Owned {
 
 contract Metha is ERC20Interface, Owned {
     using SafeMath for uint;
-    string public constant name = &quot;Metha&quot;;
-    string public constant symbol = &quot;METH&quot;;
+    string public constant name = "Metha";
+    string public constant symbol = "METH";
     uint8 public constant decimals = 18;  // 18 is the most common number of decimal places
     uint public _totalSupply = 0;
     uint public constant eth_meth = 100; // price 1 eth/meth = 100

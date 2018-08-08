@@ -80,8 +80,8 @@ contract DSC is IERC20 {
     
     uint256 public constant _totalSupply = 10000000000000000000000000000;
     
-    string public constant symbol = &quot;DSC&quot;;
-    string public constant name = &quot;Data Science Coin&quot;;
+    string public constant symbol = "DSC";
+    string public constant name = "Data Science Coin";
     uint8 public constant decimals = 18;
     
     mapping(address => uint256) balances;

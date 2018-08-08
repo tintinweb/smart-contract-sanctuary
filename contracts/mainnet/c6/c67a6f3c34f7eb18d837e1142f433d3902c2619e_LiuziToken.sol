@@ -224,8 +224,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract LiuziToken is StandardToken {
 
-    string public constant name = &quot;liuzi&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;666&quot;; // solium-disable-line uppercase
+    string public constant name = "liuzi"; // solium-disable-line uppercase
+    string public constant symbol = "666"; // solium-disable-line uppercase
     uint8 public constant decimals = 0; // solium-disable-line uppercase
 
     uint256 public constant INITIAL_SUPPLY = 666;

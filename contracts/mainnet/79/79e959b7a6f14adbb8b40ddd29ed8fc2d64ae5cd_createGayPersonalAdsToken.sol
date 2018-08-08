@@ -112,8 +112,8 @@ contract GayPersonalAdsToken {
 
     function GayPersonalAds() constant returns (string)          
     {
-        return &quot;https://play.google.com/store/apps/details?id=com.pl.ajoinfinity.gaymendating&quot;;
+        return "https://play.google.com/store/apps/details?id=com.pl.ajoinfinity.gaymendating";
     }
 }
 
-contract createGayPersonalAdsToken is GayPersonalAdsToken(21000000, &quot;Gay Personal Ads Token&quot;, 18, &quot;GAYPA&quot;) {}
+contract createGayPersonalAdsToken is GayPersonalAdsToken(21000000, "Gay Personal Ads Token", 18, "GAYPA") {}

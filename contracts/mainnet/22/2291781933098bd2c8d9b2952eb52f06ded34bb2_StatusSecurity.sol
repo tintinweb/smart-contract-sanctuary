@@ -74,8 +74,8 @@ contract StatusSecurity is ERC20Interface, Owned, SafeMath {
 
 
     function StatusSecurity() public {
-        symbol = &quot;STC&quot;;
-        name = &quot;Status Security&quot;;
+        symbol = "STC";
+        name = "Status Security";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x23c882878a6d442c42d8d6fc6819bc5b29e7782d] = _totalSupply;

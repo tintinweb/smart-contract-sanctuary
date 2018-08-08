@@ -185,8 +185,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract TryCoin is StandardToken {
-    string public name = &quot;TryCoin&quot;;
-    string public symbol = &quot;TRY&quot;;
+    string public name = "TryCoin";
+    string public symbol = "TRY";
     uint8 public decimals = 2;
     uint public INITIAL_SUPPLY = 10000000000000;
 

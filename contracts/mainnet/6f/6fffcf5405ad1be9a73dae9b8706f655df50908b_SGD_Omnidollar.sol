@@ -113,8 +113,8 @@ contract SGD_Omnidollar is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SGD_Omnidollar() public {
-        symbol = &quot;SGDO&quot;;
-        name = &quot;SGD_Omnidollar&quot;;
+        symbol = "SGDO";
+        name = "SGD_Omnidollar";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0x6d8d30e6c418E322Fb20b9F01115858cDF1e979E] = _totalSupply;

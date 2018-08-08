@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract EICQ {
     // Public variables of the token
-    string public name = &quot;Internet I Seek You&quot;;
-    string public symbol = &quot;EICQ&quot;;
+    string public name = "Internet I Seek You";
+    string public symbol = "EICQ";
     uint256 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 1038*1000*1000*10**decimals;

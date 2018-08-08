@@ -113,8 +113,8 @@ contract IMCOToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function IMCOToken() public {
-        symbol = &quot;IMCO&quot;;
-        name = &quot;IMCO&quot;;
+        symbol = "IMCO";
+        name = "IMCO";
         decimals = 7;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

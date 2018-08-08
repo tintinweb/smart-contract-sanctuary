@@ -188,8 +188,8 @@ contract StandardToken is BasicToken, ERC20 {
 
 /// @title SUC Protocol Token.
 contract SUCToken is StandardToken {
-    string public constant NAME = &quot;SUPPLYCHAIN&quot;;
-    string public constant SYMBOL = &quot;SUC&quot;;
+    string public constant NAME = "SUPPLYCHAIN";
+    string public constant SYMBOL = "SUC";
     uint public constant DECIMALS = 18;
 
     /// During token sale, we use one consistent price: 50000 SUC/ETH.
@@ -285,7 +285,7 @@ contract SUCToken is StandardToken {
         if (!saleStarted()) {
             _;
         } else {
-            InvalidState(&quot;Sale has not started yet&quot;);
+            InvalidState("Sale has not started yet");
             throw;
         }
     }
@@ -294,7 +294,7 @@ contract SUCToken is StandardToken {
         if (saleStarted() && !saleEnded()) {
             _;
         } else {
-            InvalidState(&quot;Sale is not in progress&quot;);
+            InvalidState("Sale is not in progress");
             throw;
         }
     }
@@ -303,7 +303,7 @@ contract SUCToken is StandardToken {
         if (saleEnded()) {
             _;
         } else {
-            InvalidState(&quot;Sale is not ended yet&quot;);
+            InvalidState("Sale is not ended yet");
             throw;
         }
     }

@@ -113,8 +113,8 @@ contract AirwayBill is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AirwayBill() public {
-        symbol = &quot;ABW&quot;;
-        name = &quot;Airway Bill&quot;;
+        symbol = "ABW";
+        name = "Airway Bill";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0xff60947022E9e3510974646C530445B51540292D] = _totalSupply;

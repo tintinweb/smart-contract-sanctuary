@@ -164,8 +164,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract RewardPoint is StandardToken {
 
-  string public constant name = &quot;FRPoint&quot;;
-  string public constant symbol = &quot;FRP&quot;;
+  string public constant name = "FRPoint";
+  string public constant symbol = "FRP";
   uint8 public constant decimals = 9;
 
   uint256 public constant INITIAL_SUPPLY = 96300000000;

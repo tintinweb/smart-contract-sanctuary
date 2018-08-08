@@ -13,7 +13,7 @@ pragma solidity ^0.4.21;
     The contract provides to functions that can be used to query how much ETH
     the contract is willing to pay for your CHI, or how much ETH you&#39;ll need to 
     buy CHI. You can call those functions without generating a transaction,
-    for example in the &quot;Read Smart Contract&quot; tab on Etherscan. This will give 
+    for example in the "Read Smart Contract" tab on Etherscan. This will give 
     you an estimate only, because the price might change by the time your TX confirms. 
     To avoid price surprises, this contract only supports limit buy and sells.
     

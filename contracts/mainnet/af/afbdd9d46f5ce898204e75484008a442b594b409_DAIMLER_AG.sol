@@ -4,8 +4,8 @@ contract	DAIMLER_AG				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	DAIMLER_AG		&quot;	;
-	string	public		symbol =	&quot;	DAIMLI		&quot;	;
+	string	public		name =	"	DAIMLER_AG		"	;
+	string	public		symbol =	"	DAIMLI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10379707031250000000000000					;	

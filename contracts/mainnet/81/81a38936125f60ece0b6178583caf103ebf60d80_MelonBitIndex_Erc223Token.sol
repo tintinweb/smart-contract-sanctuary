@@ -61,8 +61,8 @@ contract MelonBitIndex_Erc223Token is SafeMath, Owned {
 
     mapping(address => uint) balances;
     
-    string public name    = &quot;MelonBit Market Index Erc223Token&quot;;
-    string public symbol  = &quot;MMX&quot;;
+    string public name    = "MelonBit Market Index Erc223Token";
+    string public symbol  = "MMX";
     uint8 public decimals = 8;
     uint256 public totalSupply;
     

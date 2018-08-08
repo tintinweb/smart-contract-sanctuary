@@ -93,10 +93,10 @@ contract StandardToken is Token {
 
 // GDC合约，继承自ERC20的标准合约
 contract GDC is StandardToken, SafeMath {
-    string public constant name = &quot;GDC&quot;; //合约名字为GDC
-    string public constant symbol = &quot;GDC&quot;; //合约标示为GDC
+    string public constant name = "GDC"; //合约名字为GDC
+    string public constant symbol = "GDC"; //合约标示为GDC
     uint256 public constant decimals = 18; //合约小数点后18位
-    string public version = &quot;1.0&quot;; //合约版本 1.0
+    string public version = "1.0"; //合约版本 1.0
 
     address  public GDCAcc01;  //GDC合约的账号1
     address  public GDCAcc02;  //GDC合约的账号2

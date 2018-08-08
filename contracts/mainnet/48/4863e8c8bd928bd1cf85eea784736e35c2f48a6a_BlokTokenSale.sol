@@ -188,8 +188,8 @@ contract TokenHolder is Ownable {
 contract BlokToken is Ownable, BasicToken, TokenHolder {
     using SafeMath for uint256;
 
-    string public constant name = &quot;Blok&quot;;
-    string public constant symbol = &quot;BLO&quot;;
+    string public constant name = "Blok";
+    string public constant symbol = "BLO";
 
     // Using same decimal value as ETH (makes ETH-BLO conversion much easier).
     uint8 public constant decimals = 18;

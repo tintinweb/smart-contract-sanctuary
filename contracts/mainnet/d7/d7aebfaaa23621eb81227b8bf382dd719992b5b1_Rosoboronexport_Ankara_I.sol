@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	Rosoboronexport_Ankara_I				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	Rosoboronexport_Ankara_I		&quot;	;
-	string	public	constant	symbol =	&quot;	ROSANKI		&quot;	;
+	string	public	constant	name =	"	Rosoboronexport_Ankara_I		"	;
+	string	public	constant	symbol =	"	ROSANKI		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

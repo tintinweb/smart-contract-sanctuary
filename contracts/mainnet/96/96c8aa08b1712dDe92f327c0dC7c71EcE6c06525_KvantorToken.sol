@@ -54,8 +54,8 @@ library SafeMath {
 contract KvantorToken {
     using SafeMath for uint256;
 
-    string public name = &quot;KVANTOR&quot;;
-    string public symbol = &quot;KVT&quot;;
+    string public name = "KVANTOR";
+    string public symbol = "KVT";
     uint public decimals = 8;
 
     address public owner;
@@ -91,8 +91,8 @@ contract KvantorToken {
 
           /**
     * @dev Check is certain transer allowed
-    * main rule is &quot;all transfers is prohibited till 27.09.2018 00:00:00 UTC+3
-    * The only exceptional rule -&quot;KVANTOR smartcontract creator&#39;s account is allowed to transfer token to buyers&#39; account at anytime&quot;
+    * main rule is "all transfers is prohibited till 27.09.2018 00:00:00 UTC+3
+    * The only exceptional rule -"KVANTOR smartcontract creator&#39;s account is allowed to transfer token to buyers&#39; account at anytime"
     */
     function isTransferAllowed(address sender) public constant returns (bool) {
         if(sender == owner)

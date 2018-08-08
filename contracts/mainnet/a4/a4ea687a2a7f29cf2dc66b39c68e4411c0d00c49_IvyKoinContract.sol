@@ -210,9 +210,9 @@ pragma solidity ^0.4.21;
 
 
 contract IvyKoinContract is StandardToken {
-    string constant public name = &quot;IvyKoin Public Network Tokens&quot;;
+    string constant public name = "IvyKoin Public Network Tokens";
     uint8  constant public decimals = 18;
-    string constant public symbol = &quot;IVY&quot;;
+    string constant public symbol = "IVY";
 
     function IvyKoinContract() public {
         // here should be amount of tokens to be generated

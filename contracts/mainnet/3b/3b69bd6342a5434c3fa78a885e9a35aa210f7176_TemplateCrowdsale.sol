@@ -187,7 +187,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -764,8 +764,8 @@ contract usingConsts {
     uint8 constant TOKEN_DECIMALS_UINT8 = 18;
     uint constant TOKEN_DECIMAL_MULTIPLIER = 10 ** TOKEN_DECIMALS;
 
-    string constant TOKEN_NAME = &quot;GPCCTOKEN&quot;;
-    string constant TOKEN_SYMBOL = &quot;GPCCT&quot;;
+    string constant TOKEN_NAME = "GPCCTOKEN";
+    string constant TOKEN_SYMBOL = "GPCCT";
     bool constant PAUSED = false;
     address constant TARGET_USER = 0x6D5BdbEec91CC5e79b7A4Ab8Fd4fB89520497e72;
     uint constant START_TIME = 1517997621;

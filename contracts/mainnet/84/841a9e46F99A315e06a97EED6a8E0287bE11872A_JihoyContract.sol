@@ -120,8 +120,8 @@ contract Another is BasicToken, ERC20 {
 
 contract JihoyContract is Another {
 
-  string public name = &quot;Jihoy&quot;;
-  string public symbol = &quot;JIHOY&quot;;
+  string public name = "Jihoy";
+  string public symbol = "JIHOY";
   uint public decimals = 3;
   uint public INITIAL_SUPPLY = 100000000000;
 

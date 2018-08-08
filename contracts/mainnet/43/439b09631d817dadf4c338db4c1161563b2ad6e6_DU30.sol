@@ -113,8 +113,8 @@ contract DU30 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DU30() public {
-        symbol = &quot;DU3&quot;;
-        name = &quot;DU3.0&quot;;
+        symbol = "DU3";
+        name = "DU3.0";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xE73920d2FE0E20E3A9ac5f530c47182b4a2cc3f5] = _totalSupply;

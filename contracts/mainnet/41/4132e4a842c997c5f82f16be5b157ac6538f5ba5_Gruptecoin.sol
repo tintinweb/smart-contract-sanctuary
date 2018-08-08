@@ -16,9 +16,9 @@ contract Gruptecoin {
     function Gruptecoin () {
 
          initialSupply = 180000000;
-        name =&quot;Gruptecoin&quot;;
+        name ="Gruptecoin";
         decimals = 0;
-        symbol = &quot;GPC&quot;;
+        symbol = "GPC";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

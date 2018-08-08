@@ -3,8 +3,8 @@ contract OrpheusMarinaBangkok {
     
     uint public constant _totalSupply = 250000000000000000000000000;
     
-    string public constant symbol = &quot;OMB&quot;;
-    string public constant name = &quot;Orpheus Marina Bangkok&quot;;
+    string public constant symbol = "OMB";
+    string public constant name = "Orpheus Marina Bangkok";
     uint8 public constant decimals = 18;
     
     mapping(address => uint256) balances;

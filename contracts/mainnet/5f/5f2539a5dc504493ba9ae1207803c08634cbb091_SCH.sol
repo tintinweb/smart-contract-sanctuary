@@ -11180,8 +11180,8 @@ contract SCH is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;SCH COIN&quot;;
-    string public constant symbol = &quot;SCH&quot;;
+    string public constant name = "SCH COIN";
+    string public constant symbol = "SCH";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 50000000000e8;

@@ -19,9 +19,9 @@ contract Token{
 
 contract TTNCoin is Token {
 
-    string public constant name = &quot;TTN&quot;;                   
+    string public constant name = "TTN";                   
     uint8 public constant decimals = 2; 
-    string public constant symbol = &quot;TTN&quot;;
+    string public constant symbol = "TTN";
 
     function TTNCoin(uint256 _initialAmount) public {
         totalSupply = _initialAmount * 10 ** uint256(decimals);         // 设置初始总量

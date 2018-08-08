@@ -20,11 +20,11 @@ contract CryptonomicaVerification {
     // !!! -> up to 32 ASCII letters,
     // see: https://ethereum.stackexchange.com/questions/6729/how-many-letters-can-bytes32-keep
 
-    // OpenPGP Message Format https://tools.ietf.org/html/rfc4880#section-12.2 : &quot;A V4 fingerprint is the 160-bit SHA-1 hash ...&quot;
+    // OpenPGP Message Format https://tools.ietf.org/html/rfc4880#section-12.2 : "A V4 fingerprint is the 160-bit SHA-1 hash ..."
     // thus fingerprint is 20 bytes, in hexadecimal 40 symbols string representation
     // fingerprints are stored as upper case strings like:
     // 57A5FEE5A34D563B4B85ADF3CE369FD9E77173E5
-    // or as bytes20: &quot;0x57A5FEE5A34D563B4B85ADF3CE369FD9E77173E5&quot; from web3.js or Bytes20 from web3j
+    // or as bytes20: "0x57A5FEE5A34D563B4B85ADF3CE369FD9E77173E5" from web3.js or Bytes20 from web3j
     // see: https://crypto.stackexchange.com/questions/32087/how-to-generate-fingerprint-for-pgp-public-key
     mapping(address => bytes20) public fingerprint; // ..............................................................0
 
@@ -42,7 +42,7 @@ contract CryptonomicaVerification {
     mapping(address => bytes32) public nationality; //      .........................................................5
     mapping(address => uint256) public verificationAddedOn; // unix time ............................................6
     mapping(address => uint256) public revokedOn; // unix time, returns uint256: 0 if verification is not revoked ...7
-    // this will be longer than 32 char, and have to be properly formatted (with &quot;\n&quot;)
+    // this will be longer than 32 char, and have to be properly formatted (with "\n")
     mapping(address => string) public signedString; //.(!) Gas requirement: infinite.................................8
 
     // unix time online converter: https://www.epochconverter.com
@@ -54,7 +54,7 @@ contract CryptonomicaVerification {
     mapping(bytes20 => address) public addressAttached; //
 
     // (!) Gas requirement: infinite
-    string public stringToSignExample = &quot;I hereby confirm that the address <address lowercase> is my Ethereum address&quot;;
+    string public stringToSignExample = "I hereby confirm that the address <address lowercase> is my Ethereum address";
 
     /* the same data as above stored as a struct:
     struct will be returned as &#39;List&#39; in web3j (only one function call needed) */
@@ -102,7 +102,7 @@ contract CryptonomicaVerification {
         // http://solidity.readthedocs.io/en/latest/assembly.html
         // this converts every char to its byte representation
         // see hex codes on http://www.asciitable.com/ (7 > 37, a > 61, z > 7a)
-        // &quot;az7&quot; > 0x617a370000000000000000000000000000000000000000000000000000000000
+        // "az7" > 0x617a370000000000000000000000000000000000000000000000000000000000
         assembly {
             result := mload(add(source, 32))
         }
@@ -111,10 +111,10 @@ contract CryptonomicaVerification {
     // see also:
     // https://ethereum.stackexchange.com/questions/2519/how-to-convert-a-bytes32-to-string
     // https://ethereum.stackexchange.com/questions/1081/how-to-concatenate-a-bytes32-array-to-a-string
-    // 0x617a370000000000000000000000000000000000000000000000000000000000 > &quot;az7&quot;
+    // 0x617a370000000000000000000000000000000000000000000000000000000000 > "az7"
     function bytes32ToString(bytes32 _bytes32) public pure returns (string){// (!) Gas requirement: infinite
         // string memory str = string(_bytes32);
-        // TypeError: Explicit type conversion not allowed from &quot;bytes32&quot; to &quot;string storage pointer&quot;
+        // TypeError: Explicit type conversion not allowed from "bytes32" to "string storage pointer"
         // thus we should convert bytes32 to bytes (to dynamically-sized byte array)
         bytes memory bytesArray = new bytes(32);
         for (uint256 i; i < 32; i++) {
@@ -182,8 +182,8 @@ contract CryptonomicaVerification {
     // (!) Gas requirement: infinite
     function addVerificationData(
         address _acc, //
-        string _fingerprint, // &quot;57A5FEE5A34D563B4B85ADF3CE369FD9E77173E5&quot;
-        bytes20 _fingerprintBytes20, // &quot;0x57A5FEE5A34D563B4B85ADF3CE369FD9E77173E5&quot;
+        string _fingerprint, // "57A5FEE5A34D563B4B85ADF3CE369FD9E77173E5"
+        bytes20 _fingerprintBytes20, // "0x57A5FEE5A34D563B4B85ADF3CE369FD9E77173E5"
         uint _keyCertificateValidUntil, //
         string _firstName, //
         string _lastName, //
@@ -198,7 +198,7 @@ contract CryptonomicaVerification {
         // require(bytes(_fingerprint).length == 40);
         // require(bytes(_firstName).length <= 32);
         // require(bytes(_lastName).length <= 32);
-        // _nationality should be like &quot;IL&quot; or &quot;US&quot;
+        // _nationality should be like "IL" or "US"
         // require(bytes(_nationality).length == 2);
         // >>> if we control manager account we can make checks before sending data to smart contract (cheaper)
 

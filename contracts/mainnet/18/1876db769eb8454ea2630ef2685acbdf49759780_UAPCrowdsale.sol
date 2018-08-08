@@ -93,7 +93,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -328,8 +328,8 @@ contract PausableToken is StandardToken, Pausable {
 
 
 contract UAPToken is MintableToken, PausableToken {
-  string public constant name = &quot;Auction Universal Program&quot;;
-  string public constant symbol = &quot;UAP&quot;;
+  string public constant name = "Auction Universal Program";
+  string public constant symbol = "UAP";
   uint8 public constant decimals = 18;
   
   uint256 public initialSuppy = 8680500000 * 10 ** uint256(18);

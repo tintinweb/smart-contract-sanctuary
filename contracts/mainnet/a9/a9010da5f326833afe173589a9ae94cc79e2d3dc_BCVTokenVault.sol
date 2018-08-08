@@ -20,8 +20,8 @@ contract ERC20Interface {
 contract BCV is ERC20Interface {
     uint256 public constant decimals = 8;
 
-    string public constant symbol = &quot;BCV&quot;;
-    string public constant name = &quot;BitCapitalVendorToken&quot;;
+    string public constant symbol = "BCV";
+    string public constant name = "BitCapitalVendorToken";
 
     uint256 public _totalSupply = 120000000000000000; // total supply is 1.2 billion
 
@@ -129,7 +129,7 @@ contract BCV is ERC20Interface {
 
     // Send _value amount of tokens from address _from to address _to
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-    // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
     // fees in sub-currencies; the command should fail unless the _from account has
     // deliberately authorized the sender of the message via some mechanism; we propose
     // these standardized APIs for approval:
@@ -214,7 +214,7 @@ library SafeMath {
 
 /**
  * The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;

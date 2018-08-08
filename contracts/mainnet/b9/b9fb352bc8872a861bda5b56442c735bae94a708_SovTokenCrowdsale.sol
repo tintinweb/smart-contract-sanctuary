@@ -121,7 +121,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -362,8 +362,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract SovToken is MintableToken {
-  string public name = &quot;Noble Nation Sovereign Token&quot;;
-  string public symbol = &quot;SVT&quot;;
+  string public name = "Noble Nation Sovereign Token";
+  string public symbol = "SVT";
   uint256 public decimals = 18;
 
   uint256 private constant _tradeableDate = 1529776800; // 2018 23rd June 18:00h

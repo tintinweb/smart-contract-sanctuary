@@ -3,7 +3,7 @@
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -189,7 +189,7 @@ library SafeMath {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -204,7 +204,7 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(address _from, uint256 _tokenId, bytes _data) public returns(bytes4);
 }
@@ -219,7 +219,7 @@ contract ERC721BasicToken is ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
@@ -357,7 +357,7 @@ contract ERC721BasicToken is ERC721Basic {
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -373,14 +373,14 @@ contract ERC721BasicToken is ERC721Basic {
     canTransfer(_tokenId)
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -1151,13 +1151,13 @@ contract EtherBrosMaker is Ownable, ERC721Token {
 
     uint128 public mintingFee = 0.001 ether;
     uint8 prefix = 1;
-    string preURI = &quot;https://enigmatic-castle-32612.herokuapp.com/api/meta?tokenId=&quot;;
-    string image = &quot;http://app.givinglog.com/game/ether-bros-maker/img/Etherbro&quot;;
+    string preURI = "https://enigmatic-castle-32612.herokuapp.com/api/meta?tokenId=";
+    string image = "http://app.givinglog.com/game/ether-bros-maker/img/Etherbro";
     uint private nonce = 0;
     uint16[] public etherBros;
     uint128 ownerCut = 100;
 
-    function EtherBrosMaker () ERC721Token(&quot;EtherBrosMaker&quot; ,&quot;EBM&quot;) public {
+    function EtherBrosMaker () ERC721Token("EtherBrosMaker" ,"EBM") public {
 
     }
 
@@ -1179,7 +1179,7 @@ contract EtherBrosMaker is Ownable, ERC721Token {
         uint32 newEtherBroId = uint32(etherBros.push(_genes) - 1);
         _mint(_owner, newEtherBroId);
         string memory _uri = preURI.concat(uint(_genes).toString());
-        tokenImage[newEtherBroId] = image.concat(uint(_genes).toString()).concat(&quot;.png&quot;);
+        tokenImage[newEtherBroId] = image.concat(uint(_genes).toString()).concat(".png");
         _setTokenURI(newEtherBroId, _uri);
         return newEtherBroId;
     }

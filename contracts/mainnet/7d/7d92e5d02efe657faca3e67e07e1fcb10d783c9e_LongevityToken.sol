@@ -194,8 +194,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract LongevityToken is StandardToken {
-    string public name = &quot;Longevity&quot;;
-    string public symbol = &quot;LTY&quot;;
+    string public name = "Longevity";
+    string public symbol = "LTY";
     uint8 public decimals = 2;
     uint256 public cap = 2**256 - 1; // maximum possible uint256. Decreased on finalization
     bool public mintingFinished = false;

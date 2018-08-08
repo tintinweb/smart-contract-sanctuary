@@ -92,9 +92,9 @@ contract BSE is StandardToken {
         revert();
     }
 
-    string public name = &quot;BiSale&quot;;
+    string public name = "BiSale";
     uint8 public decimals = 18;
-    string public symbol = &quot;BSE&quot;;
+    string public symbol = "BSE";
     string public version = &#39;v0.1&#39;;
     uint256 public totalSupply = 0;
 

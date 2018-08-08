@@ -113,8 +113,8 @@ contract JTBlockchain is UnboundedRegularToken {
 
     uint public totalSupply = 2*10**17;
     uint8 constant public decimals = 8;
-    string constant public name = &quot;JTBlockchain&quot;;
-    string constant public symbol = &quot;JTB&quot;;
+    string constant public name = "JTBlockchain";
+    string constant public symbol = "JTB";
 
     function JTBlockchain() {
         balances[msg.sender] = totalSupply;

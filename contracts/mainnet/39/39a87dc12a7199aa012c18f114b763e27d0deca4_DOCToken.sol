@@ -131,7 +131,7 @@ contract ERC20Token is ERC20Interface {
 
     // Send `tokens` amount of tokens from address `from` to address `to`
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-    // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
     // fees in sub-currencies; the command should fail unless the _from account has
     // deliberately authorized the sender of the message via some mechanism; we propose
     // these standardized APIs for approval:
@@ -310,8 +310,8 @@ contract FinalizableToken is ERC20Token, Owned {
 
 contract DOCTokenConfig {
 
-    string  public constant TOKEN_SYMBOL      = &quot;DOC&quot;;
-    string  public constant TOKEN_NAME        = &quot;DOMUSCOINS Token&quot;;
+    string  public constant TOKEN_SYMBOL      = "DOC";
+    string  public constant TOKEN_NAME        = "DOMUSCOINS Token";
     uint8   public constant TOKEN_DECIMALS    = 18;
 
     uint256 public constant DECIMALSFACTOR    = 10**uint256(TOKEN_DECIMALS);

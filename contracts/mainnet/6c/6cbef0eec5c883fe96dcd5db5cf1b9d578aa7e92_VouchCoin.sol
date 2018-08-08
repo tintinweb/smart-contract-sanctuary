@@ -4,10 +4,10 @@ contract VouchCoin  {
 
   address public owner;
   uint public constant totalSupply = 10000000000000000;
-  string public constant name = &quot;VouchCoin&quot;;
-  string public constant symbol = &quot;VHC&quot;;
+  string public constant name = "VouchCoin";
+  string public constant symbol = "VHC";
   uint public constant decimals = 8;
-  string public standard = &quot;VouchCoin&quot;;
+  string public standard = "VouchCoin";
 
   mapping (address => uint) public balanceOf;
 

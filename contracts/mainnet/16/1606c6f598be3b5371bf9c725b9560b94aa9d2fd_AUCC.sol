@@ -208,9 +208,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract AUCC is StandardToken {
 
-            string public name = &quot;黄金链&quot;;
+            string public name = "黄金链";
 
-            string public symbol = &quot;AUCC&quot;;
+            string public symbol = "AUCC";
 
             uint8 public decimals = 18;
 

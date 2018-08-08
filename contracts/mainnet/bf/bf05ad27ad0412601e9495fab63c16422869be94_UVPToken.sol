@@ -90,8 +90,8 @@ contract StandardToken is ERC20, SafeMath {
 }
 
 contract UVPToken is Ownable, StandardToken {
-    string public name = &quot;Ultraviolet Protocol&quot;;
-    string public symbol = &quot;UVP&quot;;
+    string public name = "Ultraviolet Protocol";
+    string public symbol = "UVP";
     uint public decimals = 18;
 
     uint public totalSupply = 500000000 ether;

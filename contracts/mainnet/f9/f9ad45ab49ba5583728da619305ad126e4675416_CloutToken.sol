@@ -148,8 +148,8 @@ contract CloutToken is StandardToken {
     
 	uint256 public tokenAmount;
   
-    string public constant name = &quot;Clout Token&quot;;
-    string public constant symbol = &quot;CLOUT&quot;;
+    string public constant name = "Clout Token";
+    string public constant symbol = "CLOUT";
     uint8 public constant decimals = 18;  // 18 decimal places, the same as ETH.
 	
 

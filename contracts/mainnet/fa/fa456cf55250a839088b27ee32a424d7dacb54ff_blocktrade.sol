@@ -73,8 +73,8 @@ contract controlled{
 }
 
 contract blocktrade is controlled{
-  string public name = &quot;blocktrade.com&quot;;
-  string public symbol = &quot;BTT&quot;;
+  string public name = "blocktrade.com";
+  string public symbol = "BTT";
   uint8 public decimals = 18;
   uint256 public initialSupply = 57746762*(10**18);
   uint256 public supply;

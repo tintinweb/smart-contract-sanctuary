@@ -208,9 +208,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract EMT is StandardToken {
 
-            string public name = &quot;EMT&quot;;
+            string public name = "EMT";
 
-            string public symbol = &quot;EMT&quot;;
+            string public symbol = "EMT";
 
             uint8 public decimals = 18;
 

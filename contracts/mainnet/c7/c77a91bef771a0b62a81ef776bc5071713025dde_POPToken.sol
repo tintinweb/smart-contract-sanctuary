@@ -323,8 +323,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract POPToken is PausableToken {
 
-    string public constant name = &quot;PopCoin&quot;;
-    string public constant symbol = &quot;POPCOIN&quot;;
+    string public constant name = "PopCoin";
+    string public constant symbol = "POPCOIN";
     uint public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 500000000*(10**decimals); // 500 million x 18 decimals to represent in wei (5000 for testing)

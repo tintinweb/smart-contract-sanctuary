@@ -149,7 +149,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -200,8 +200,8 @@ contract BBDMigration {
 contract BBDToken is StandardToken, Ownable {
 
     // Metadata
-    string public constant name = &quot;Blockchain Board Of Derivatives Token&quot;;
-    string public constant symbol = &quot;BBD&quot;;
+    string public constant name = "Blockchain Board Of Derivatives Token";
+    string public constant symbol = "BBD";
     uint256 public constant decimals = 18;
     string private constant version = &#39;2.0.0&#39;;
     

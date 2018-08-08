@@ -74,8 +74,8 @@ contract AiDAO is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
 
     constructor() public {
-        symbol = &quot;AiDAO&quot;;
-        name = &quot;AiDAO&quot;;
+        symbol = "AiDAO";
+        name = "AiDAO";
         decimals = 8;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

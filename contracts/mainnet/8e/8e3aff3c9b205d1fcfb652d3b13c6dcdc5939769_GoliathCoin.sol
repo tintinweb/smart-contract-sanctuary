@@ -31,8 +31,8 @@ contract GoliathCoin is Owned {
     mapping (address => uint256) public balanceOf;
     uint256 public totalSupply;
 
-    string public name = &quot;Goliath&quot;;
-    string public symbol = &quot;GOL&quot;;
+    string public name = "Goliath";
+    string public symbol = "GOL";
     uint8 public decimals = 18;
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);

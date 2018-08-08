@@ -176,8 +176,8 @@ contract IntegrativeWalletToken is ERC20Token {
     // ------------------------------------------------------------------------
     // Token information
     // ------------------------------------------------------------------------
-    string public constant symbol = &quot;IWT&quot;;
-    string public constant name = &quot;Integrative Wallet Token&quot;;
+    string public constant symbol = "IWT";
+    string public constant name = "Integrative Wallet Token";
     uint256 public constant decimals = 18;
     uint256 public constant IWTfund = 55 * (10**6) * 10**decimals;   // 55m reserved for foundation and expenses.
 

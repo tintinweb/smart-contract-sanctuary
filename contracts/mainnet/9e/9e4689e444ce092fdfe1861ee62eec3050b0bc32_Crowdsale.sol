@@ -323,7 +323,7 @@ contract Manageable is Ownable {
 
 
 contract Token is CappedToken, BurnableToken, Withdrawable {
-    constructor() CappedToken(11380000e9) StandardToken(&quot;IQ Receipt&quot;, &quot;IQ&quot;, 9) public {
+    constructor() CappedToken(11380000e9) StandardToken("IQ Receipt", "IQ", 9) public {
         
     }
 }

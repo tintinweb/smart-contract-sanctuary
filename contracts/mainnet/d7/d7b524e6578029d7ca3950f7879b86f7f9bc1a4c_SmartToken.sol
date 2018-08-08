@@ -170,7 +170,7 @@ contract SmartToken is ISmartToken, ERC20Token, Owned {
 
     /// @notice BXN Project - Initializing crowdfunding.
     /// @dev Constructor.
-    function SmartToken() ERC20Token(&quot;BITTXN&quot;, &quot;BXN&quot;, 18) {
+    function SmartToken() ERC20Token("BITTXN", "BXN", 18) {
         // The main, cold wallet for the distribution of tokens.
         fundingWallet = msg.sender; 
 
@@ -219,7 +219,7 @@ contract SmartToken is ISmartToken, ERC20Token, Owned {
         return super.transferFrom(_from, _to, _value);
     }
 
-    /// @notice This function can accept for blocking no more than &quot;totalProjectToken&quot;.
+    /// @notice This function can accept for blocking no more than "totalProjectToken".
     /// @dev Lock tokens to a specified address.
     /// @param _to address      The address to lock tokens to.
     /// @param _value uint256   The amount of tokens to be locked.

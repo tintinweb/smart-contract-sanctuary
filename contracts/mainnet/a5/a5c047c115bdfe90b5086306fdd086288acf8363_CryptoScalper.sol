@@ -134,8 +134,8 @@ contract BurnableToken is BasicToken {
 
 contract CryptoScalper is StandardToken, BurnableToken {
 
-  string public constant name = &quot;CryptoScalper&quot;; 
-  string public constant symbol = &quot;SCALPER&quot;; 
+  string public constant name = "CryptoScalper"; 
+  string public constant symbol = "SCALPER"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 13052018000 * (10 ** uint256(decimals));

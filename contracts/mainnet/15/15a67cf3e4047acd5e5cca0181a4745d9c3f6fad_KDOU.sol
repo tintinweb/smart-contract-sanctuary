@@ -116,8 +116,8 @@ contract ERC20Token is ERC20 {
 
 contract KDOU is ERC20Token, Owned {
 
-    string  public constant name = &quot;KDOU Token&quot;;
-    string  public constant symbol = &quot;KDOU&quot;;
+    string  public constant name = "KDOU Token";
+    string  public constant symbol = "KDOU";
     uint256 public constant decimals = 6;
 
     function KDOU() public {

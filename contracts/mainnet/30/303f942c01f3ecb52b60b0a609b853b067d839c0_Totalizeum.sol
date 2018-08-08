@@ -28,9 +28,9 @@ contract Totalizeum {
         uint256 share;
     }
 
-    string public constant symbol = &quot;TOT&quot;;
+    string public constant symbol = "TOT";
 
-    string public constant name = &quot;Totalizeum&quot;;
+    string public constant name = "Totalizeum";
 
     uint8 public constant decimals = 18;
 

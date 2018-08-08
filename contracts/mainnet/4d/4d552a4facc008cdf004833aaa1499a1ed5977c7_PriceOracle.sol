@@ -129,7 +129,7 @@ contract RBAC {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
+  string public constant ROLE_ADMIN = "admin";
 
   /**
    * @dev constructor. Sets msg.sender as admin by default
@@ -246,7 +246,7 @@ contract RBAC {
  */
 contract PriceOracle is RBAC {
     using SafeMath for uint256;
-    string constant ROLE_BOT = &quot;bot&quot;;
+    string constant ROLE_BOT = "bot";
     // current ETHereum price in USD cents.
     uint256 public priceUSDcETH;
     event PriceUpdate(uint256 price);

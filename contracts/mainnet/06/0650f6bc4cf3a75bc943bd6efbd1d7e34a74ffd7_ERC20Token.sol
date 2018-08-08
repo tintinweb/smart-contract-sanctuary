@@ -183,9 +183,9 @@ contract ERC20Token is ERC20Interface, Owned {
 
     function ERC20Token() public {
 
-        symbol = &quot;FQZ&quot;;
+        symbol = "FQZ";
 
-        name = &quot;fanqizha&quot;;
+        name = "fanqizha";
 
         decimals = 18;
 

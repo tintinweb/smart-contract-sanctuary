@@ -76,7 +76,7 @@ library SafeMath {
 
  * @dev The Ownable contract has an owner address, and provides basic authorization
 
- *      control functions, this simplifies the implementation of &quot;user permissions&quot;.
+ *      control functions, this simplifies the implementation of "user permissions".
 
  */
 
@@ -290,9 +290,9 @@ contract YELLQASH is ERC223, Ownable {
 
 
 
-    string public name = &quot;YELLQASH&quot;;
+    string public name = "YELLQASH";
 
-    string public symbol = &quot;YELL&quot;;
+    string public symbol = "YELL";
 
     uint8 public decimals = 8;
 

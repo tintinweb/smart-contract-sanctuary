@@ -38,17 +38,17 @@ contract Ownable {
 	}
 
 	modifier onlyOwner() {
-		require(msg.sender == owner, &quot;msg.sender == owner&quot;);
+		require(msg.sender == owner, "msg.sender == owner");
 		_;
 	}
 
 	function transferOwnership(address _newOwner) public onlyOwner {
-		require(address(0) != _newOwner, &quot;address(0) != _newOwner&quot;);
+		require(address(0) != _newOwner, "address(0) != _newOwner");
 		newOwner = _newOwner;
 	}
 
 	function acceptOwnership() public {
-		require(msg.sender == newOwner, &quot;msg.sender == newOwner&quot;);
+		require(msg.sender == newOwner, "msg.sender == newOwner");
 		emit OwnershipTransferred(owner, msg.sender);
 		owner = msg.sender;
 		newOwner = address(0);
@@ -65,7 +65,7 @@ contract Authorizable is Ownable {
     }
 
     modifier onlyAuthorized() {
-        require(authorized[msg.sender], &quot;authorized[msg.sender]&quot;);
+        require(authorized[msg.sender], "authorized[msg.sender]");
         _;
     }
 
@@ -99,9 +99,9 @@ contract BasicToken is ERC20Basic {
     mapping(address => uint256) balances;
 
     function transferFunction(address _sender, address _to, uint256 _value) internal returns (bool) {
-        require(_to != address(0), &quot;_to != address(0)&quot;);
-        require(_to != address(this), &quot;_to != address(this)&quot;);
-        require(_value <= balances[_sender], &quot;_value <= balances[_sender]&quot;);
+        require(_to != address(0), "_to != address(0)");
+        require(_to != address(this), "_to != address(this)");
+        require(_value <= balances[_sender], "_value <= balances[_sender]");
 
         balances[_sender] = balances[_sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -124,14 +124,14 @@ contract ERC223TokenCompatible is BasicToken {
   event Transfer(address indexed from, address indexed to, uint256 value, bytes indexed data);
 
 	function transfer(address _to, uint256 _value, bytes _data, string _custom_fallback) public returns (bool success) {
-		require(_to != address(0), &quot;_to != address(0)&quot;);
-        require(_to != address(this), &quot;_to != address(this)&quot;);
-		require(_value <= balances[msg.sender], &quot;_value <= balances[msg.sender]&quot;);
+		require(_to != address(0), "_to != address(0)");
+        require(_to != address(this), "_to != address(this)");
+		require(_value <= balances[msg.sender], "_value <= balances[msg.sender]");
 		
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
 		if( isContract(_to) ) {
-			require( _to.call.value(0)( bytes4( keccak256( abi.encodePacked( _custom_fallback ) ) ), msg.sender, _value, _data), &quot;_to.call.value(0)(bytes4(keccak256(_custom_fallback)), msg.sender, _value, _data)&quot; );
+			require( _to.call.value(0)( bytes4( keccak256( abi.encodePacked( _custom_fallback ) ) ), msg.sender, _value, _data), "_to.call.value(0)(bytes4(keccak256(_custom_fallback)), msg.sender, _value, _data)" );
 
 		} 
 		emit Transfer(msg.sender, _to, _value, _data);
@@ -139,7 +139,7 @@ contract ERC223TokenCompatible is BasicToken {
 	}
 
 	function transfer(address _to, uint256 _value, bytes _data) public returns (bool success) {
-		return transfer( _to, _value, _data, &quot;tokenFallback(address,uint256,bytes)&quot;);
+		return transfer( _to, _value, _data, "tokenFallback(address,uint256,bytes)");
 	}
 
 	//assemble the given address bytecode. If bytecode exists then the _addr is a contract.
@@ -158,10 +158,10 @@ contract StandardToken is ERC20, BasicToken {
     mapping (address => mapping (address => uint256)) internal allowed;
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
-        require(_to != address(0), &quot;_to != address(0)&quot;);
-        require(_to != address(this), &quot;_to != address(this)&quot;);
-        require(_value <= balances[_from], &quot;_value <= balances[_from]&quot;);
-        require(_value <= allowed[_from][msg.sender], &quot;_value <= allowed[_from][msg.sender]&quot;);
+        require(_to != address(0), "_to != address(0)");
+        require(_to != address(this), "_to != address(this)");
+        require(_value <= balances[_from], "_value <= balances[_from]");
+        require(_value <= allowed[_from][msg.sender], "_value <= allowed[_from][msg.sender]");
 
         balances[_from] = balances[_from].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -203,12 +203,12 @@ contract HumanStandardToken is StandardToken {
     /* Approves and then calls the receiving contract */
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) public returns (bool success) {
         approve(_spender, _value);
-        require(_spender.call(bytes4(keccak256(&quot;receiveApproval(address,uint256,bytes)&quot;)), msg.sender, _value, _extraData), &#39;_spender.call(bytes4(keccak256(&quot;receiveApproval(address,uint256,bytes)&quot;)), msg.sender, _value, _extraData)&#39;);
+        require(_spender.call(bytes4(keccak256("receiveApproval(address,uint256,bytes)")), msg.sender, _value, _extraData), &#39;_spender.call(bytes4(keccak256("receiveApproval(address,uint256,bytes)")), msg.sender, _value, _extraData)&#39;);
         return true;
     }
     function approveAndCustomCall(address _spender, uint256 _value, bytes _extraData, bytes4 _customFunction) public returns (bool success) {
         approve(_spender, _value);
-        require(_spender.call(_customFunction, msg.sender, _value, _extraData), &quot;_spender.call(_customFunction, msg.sender, _value, _extraData)&quot;);
+        require(_spender.call(_customFunction, msg.sender, _value, _extraData), "_spender.call(_customFunction, msg.sender, _value, _extraData)");
         return true;
     }
 }
@@ -219,7 +219,7 @@ contract Startable is Ownable, Authorizable {
     bool public started = false;
 
     modifier whenStarted() {
-	    require( started || authorized[msg.sender], &quot;started || authorized[msg.sender]&quot; );
+	    require( started || authorized[msg.sender], "started || authorized[msg.sender]" );
         _;
     }
 
@@ -265,8 +265,8 @@ contract BurnToken is StandardToken {
     event Burn(address indexed burner, uint256 value);
 
     function burnFunction(address _burner, uint256 _value) internal returns (bool) {
-        require(_value > 0, &quot;_value > 0&quot;);
-		require(_value <= balances[_burner], &quot;_value <= balances[_burner]&quot;);
+        require(_value > 0, "_value > 0");
+		require(_value <= balances[_burner], "_value <= balances[_burner]");
 
         balances[_burner] = balances[_burner].sub(_value);
         totalSupply = totalSupply.sub(_value);
@@ -279,7 +279,7 @@ contract BurnToken is StandardToken {
     }
 	
 	function burnFrom(address _from, uint256 _value) public returns (bool) {
-		require(_value <= allowed[_from][msg.sender], &quot;_value <= allowed[_from][msg.sender]&quot;); // check if it has the budget allowed
+		require(_value <= allowed[_from][msg.sender], "_value <= allowed[_from][msg.sender]"); // check if it has the budget allowed
 		burnFunction(_from, _value);
 		allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
 		return true;
@@ -288,8 +288,8 @@ contract BurnToken is StandardToken {
 
 contract TokedoToken is ERC20Basic, ERC223TokenCompatible, StandardToken, HumanStandardToken, StartToken, BurnToken  {
     constructor() public {
-        name = &quot;Tokedo&quot;;
-        symbol = &quot;TKD&quot;;
+        name = "Tokedo";
+        symbol = "TKD";
         decimals = 18;
         totalSupply = 78750709292959827150083646;
         balances[msg.sender] = totalSupply;

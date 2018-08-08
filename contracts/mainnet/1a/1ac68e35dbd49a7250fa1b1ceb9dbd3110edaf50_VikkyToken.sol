@@ -74,8 +74,8 @@ contract VikkyToken is ERC20 {
     mapping(address => uint) public icoEtherContributed;
     mapping(address => uint) public icoTokensReceived;
 
-    string public constant name = &quot;VikkyToken&quot;;
-    string public constant symbol = &quot;VIK&quot;;
+    string public constant name = "VikkyToken";
+    string public constant symbol = "VIK";
     uint public constant decimals = 18;
     
     uint constant E18 = 10**18;

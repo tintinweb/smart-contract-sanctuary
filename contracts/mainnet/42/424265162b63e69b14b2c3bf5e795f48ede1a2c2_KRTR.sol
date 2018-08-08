@@ -102,8 +102,8 @@ contract KRTR is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KRTR() public {
-        symbol = &quot;KRTR&quot;;
-        name = &quot;KRTR Mesh Network&quot;;
+        symbol = "KRTR";
+        name = "KRTR Mesh Network";
         decimals = 18;
         _totalSupply = 	100000000000000000000000000;
         balances[0xB5C2add036f5713Eb80fc6a64Dd5Df2675947840] = _totalSupply;

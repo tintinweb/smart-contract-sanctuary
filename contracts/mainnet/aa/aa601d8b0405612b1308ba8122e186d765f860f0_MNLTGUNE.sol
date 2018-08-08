@@ -113,8 +113,8 @@ contract MNLTGUNE is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MNLTGUNE() public {
-        symbol = &quot;GUNE&quot;;
-        name = &quot;MNLTGUN&quot;;
+        symbol = "GUNE";
+        name = "MNLTGUN";
         decimals = 18;
         bonusEnds = now + 31 days;
         endDate = now + 61 days;

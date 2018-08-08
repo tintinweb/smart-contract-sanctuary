@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract CommerceBlockToken is StandardToken {
 
-    string public name = &quot;CommerceBlock Token&quot;;
-    string public symbol = &quot;CBT&quot;;
+    string public name = "CommerceBlock Token";
+    string public symbol = "CBT";
     uint256 public decimals = 18;
 
     uint256 public supplyExponent = 9;

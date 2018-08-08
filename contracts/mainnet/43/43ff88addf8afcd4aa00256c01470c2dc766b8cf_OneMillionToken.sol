@@ -24,8 +24,8 @@ contract OneMillionToken{
     
     address public owner;
     
-    string public constant symbol = &quot;1MT&quot;;
-    string public constant name = &quot;OneMillionToken&quot;;
+    string public constant symbol = "1MT";
+    string public constant name = "OneMillionToken";
     uint8 public constant decimals = 0;
     
     uint private startPrice = 1000000000000000;

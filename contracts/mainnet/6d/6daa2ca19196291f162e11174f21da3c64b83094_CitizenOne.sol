@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -341,8 +341,8 @@ contract CappedToken is MintableToken {
 // import &#39;zeppelin-solidity/contracts/token/MintableToken.sol&#39;;
 
 contract CitizenOneCoin is CappedToken {
-  string public name = &quot;CITIZEN COIN&quot;;
-  string public symbol = &quot;XCO&quot;;
+  string public name = "CITIZEN COIN";
+  string public symbol = "XCO";
   uint8 public decimals = 18;
   uint256 public cap;
   

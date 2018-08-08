@@ -69,8 +69,8 @@ contract TEST008 is Ownable{
     
     using SafeMath for uint256;
     
-    string public constant name       = &quot;TEST008&quot;;
-    string public constant symbol     = &quot;测试八&quot;;
+    string public constant name       = "TEST008";
+    string public constant symbol     = "测试八";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply        = 999999 ether;
     uint256 public currentTotalSupply = 0;

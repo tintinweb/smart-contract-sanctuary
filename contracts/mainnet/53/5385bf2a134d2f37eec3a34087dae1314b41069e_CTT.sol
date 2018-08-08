@@ -50,8 +50,8 @@ contract CTT is IERC20 {
     
     uint public _totalSupply = 0;
     
-    string public constant symbol = &quot;CTT&quot;;
-    string public constant name = &quot;CTT&quot;;
+    string public constant symbol = "CTT";
+    string public constant name = "CTT";
     uint8 public constant decimals = 18;
     
     uint256 public constant RATE = 10000;

@@ -436,7 +436,7 @@ contract MintableToken is StandardToken, Manageable {
 contract XPToken is MintableToken {
   using Maths for uint256;
 
-  string public constant name     = &quot;Mythereum XP&quot;;
-  string public constant symbol   = &quot;XP&quot;;
+  string public constant name     = "Mythereum XP";
+  string public constant symbol   = "XP";
   uint8  public constant decimals = 0;
 }

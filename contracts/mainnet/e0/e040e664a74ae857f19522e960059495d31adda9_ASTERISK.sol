@@ -108,8 +108,8 @@ contract ContractReceiver {
 contract ASTERISK is ERC223, Pausable {
     using SafeMath for uint256;
 
-    string public name = &quot;asterisk&quot;;
-    string public symbol = &quot;ASTER&quot;;
+    string public name = "asterisk";
+    string public symbol = "ASTER";
     uint8 public decimals = 9;
     uint256 public totalSupply = 10e9 * 1e9;
 

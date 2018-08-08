@@ -32,8 +32,8 @@ contract SafeMath {
 }
 
 contract QUC is SafeMath{
-    string  public constant name = &quot;QUCash&quot;;
-    string  public constant symbol = &quot;QUC&quot;;
+    string  public constant name = "QUCash";
+    string  public constant symbol = "QUC";
     uint8   public constant decimals = 18;
 
     uint256 public totalSupply = 10000000000 * (10 ** uint256(decimals));

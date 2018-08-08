@@ -677,7 +677,7 @@ library Strings {
      */
     function join(slice self, slice[] parts) internal returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint len = self._len * (parts.length - 1);
         for(uint i = 0; i < parts.length; i++)
@@ -704,7 +704,7 @@ library Strings {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -745,9 +745,9 @@ contract Platinum is Ownable {
   using Strings for *;
 
   // ========= 宣告 =========
-  string public version = &quot;0.0.1&quot;;
+  string public version = "0.0.1";
   // 基本單位
-  string public unit = &quot;oz&quot;;
+  string public unit = "oz";
   // 總供給量
   uint256 public total;
   // 存貨
@@ -1154,7 +1154,7 @@ contract PlatinumToken is Ownable, ERC20 {
   // ========= 宣告 =========
 
   // 版本
-  string public version = &quot;0.0.1&quot;;
+  string public version = "0.0.1";
   // 名稱
   string public name;
   // 標記

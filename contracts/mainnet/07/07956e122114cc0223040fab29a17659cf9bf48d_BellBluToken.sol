@@ -124,8 +124,8 @@ contract BellBluToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BellaBluToken() public {
-        symbol = &quot;BBCAT&quot;;
-        name = &quot;BellaBlu Token&quot;;
+        symbol = "BBCAT";
+        name = "BellaBlu Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x21C37e05b484CA36b4e4477D8c2c9d48D792a15c] = _totalSupply;

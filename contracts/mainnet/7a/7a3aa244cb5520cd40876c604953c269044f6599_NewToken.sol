@@ -3,10 +3,10 @@ pragma solidity ^0.4.21;
 contract NewToken {
 	uint public totalSupply = 2300000000000000;
 	
-	string public name = &quot;TTInvest&quot;;
+	string public name = "TTInvest";
 	uint8 public decimals = 8;
-	string public symbol = &quot;TTInvest&quot;;
-	string public version = &quot;1.0&quot;;
+	string public symbol = "TTInvest";
+	string public version = "1.0";
 
 function NewToken(){
   balances[msg.sender] = 2300000000000000;

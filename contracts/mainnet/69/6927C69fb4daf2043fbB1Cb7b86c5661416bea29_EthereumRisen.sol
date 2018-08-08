@@ -360,10 +360,10 @@ contract InvestBox is PaymentManager, Managed {
 
     uint256 constant _day = 24 * 60 * 60 * 1 seconds;
 
-    bytes5 internal _td = bytes5(&quot;day&quot;);
-    bytes5 internal _tw = bytes5(&quot;week&quot;);
-    bytes5 internal _tm = bytes5(&quot;month&quot;);
-    bytes5 internal _ty = bytes5(&quot;year&quot;);
+    bytes5 internal _td = bytes5("day");
+    bytes5 internal _tw = bytes5("week");
+    bytes5 internal _tm = bytes5("month");
+    bytes5 internal _ty = bytes5("year");
 
     uint256 internal _creation;
     uint256 internal _1sty;
@@ -685,7 +685,7 @@ contract EthereumRisen is InvestBox {
 
     /**
         @dev notify owners about their balances was in promo action.
-        @param _holders addresses of the owners to be notified [&quot;address_1&quot;, &quot;address_2&quot;, ..]
+        @param _holders addresses of the owners to be notified ["address_1", "address_2", ..]
      */
     function airdropper(address [] _holders, uint256 _pay_size) public onlyManager {
         if(_pay_size == 0) _pay_size = _paySize; // if empty set default
@@ -700,8 +700,8 @@ contract EthereumRisen is InvestBox {
 
     function EthereumRisen() public {
 
-        name = &quot;Ethereum Risen&quot;;
-        symbol = &quot;ETR&quot;;
+        name = "Ethereum Risen";
+        symbol = "ETR";
         decimals = 18;
         totalSupply = 0;
         _creation = now;
@@ -711,10 +711,10 @@ contract EthereumRisen is InvestBox {
         PaymentManager.setPrice(10000);
         Managed.setManager(bountyWallet);
         InvestBox.IntervalBytecodes = intervalBytecodes(
-            &quot;0x6461790000&quot;,
-            &quot;0x7765656b00&quot;,
-            &quot;0x6d6f6e7468&quot;,
-            &quot;0x7965617200&quot;
+            "0x6461790000",
+            "0x7765656b00",
+            "0x6d6f6e7468",
+            "0x7965617200"
         );
         InvestBox.setMinMaxInvestValue(1000,100000000);
         issue(bountyWallet, bountyReward);

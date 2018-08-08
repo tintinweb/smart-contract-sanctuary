@@ -246,8 +246,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract LieMiToken is StandardToken {
-    string public name = &quot;LieMiToken&quot;;
-    string public symbol = &quot;LMI&quot;;
+    string public name = "LieMiToken";
+    string public symbol = "LMI";
     uint8 public decimals = 18;
     uint public INITIAL_SUPPLY = 100000000;
     

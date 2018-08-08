@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract Xandra {
     // Public variables of the token
-    string public name = &quot;Xandra&quot;;
-    string public symbol = &quot;XND&quot;;
+    string public name = "Xandra";
+    string public symbol = "XND";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

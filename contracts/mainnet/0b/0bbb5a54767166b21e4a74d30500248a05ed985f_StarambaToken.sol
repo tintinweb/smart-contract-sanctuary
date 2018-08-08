@@ -204,10 +204,10 @@ contract RelocationToken {
 contract StarambaToken is StandardToken {
 
     // Token metadata
-    string public constant name = &quot;STARAMBA.Token&quot;;
-    string public constant symbol = &quot;STT&quot;;
+    string public constant name = "STARAMBA.Token";
+    string public constant symbol = "STT";
     uint256 public constant decimals = 18;
-    string public constant version = &quot;1&quot;;
+    string public constant version = "1";
 
     uint256 public TOKEN_CREATION_CAP = 1000 * (10**6) * 10**decimals; // 1000 million STTs
     uint256 public constant TOKEN_MIN = 1 * 10**decimals;              // 1 STT

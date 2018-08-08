@@ -12,8 +12,8 @@ pragma solidity ^0.4.16;
  }
   
   contract ELTC is ERC20 {
-     string public constant symbol = &quot;ELTC&quot;;
-     string public constant name = &quot;eLTC&quot;;
+     string public constant symbol = "ELTC";
+     string public constant name = "eLTC";
      uint8 public constant decimals = 8;
      uint256 _totalSupply = 8400000 * 10**8; 
      

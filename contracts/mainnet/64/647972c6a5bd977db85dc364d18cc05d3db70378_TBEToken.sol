@@ -15,8 +15,8 @@ contract TBEToken {
     function TBEToken() public {
         totalSupply = 500000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Towerbee&quot;;
-        symbol = &quot;TBE&quot;;
+        name = "Towerbee";
+        symbol = "TBE";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

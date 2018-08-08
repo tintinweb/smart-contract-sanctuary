@@ -325,7 +325,7 @@ contract TokenERC20 is ERC20, Ownable{
 
 contract ROKToken is TokenERC20 {
 
-    function ROKToken() TokenERC20(15000000000, &quot;ROKToken&quot;, &quot;ROK&quot;, 18) public {
+    function ROKToken() TokenERC20(15000000000, "ROKToken", "ROK", 18) public {
 
     }
 }

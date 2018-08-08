@@ -21,9 +21,9 @@ contract Ownable {
 
 contract TeslaCdsTok20221205I is Ownable {
     
-    string public constant name = &quot;TeslaCdsTok20221205I&quot;;
+    string public constant name = "TeslaCdsTok20221205I";
     
-    string public constant symbol = &quot;TESLAII&quot;;
+    string public constant symbol = "TESLAII";
     
     uint32 public constant decimals = 8;
     

@@ -129,8 +129,8 @@ contract StandardToken is ERC20, SafeMath {
 contract HUNT is StandardToken, Owned {
 
     // Token information
-	string public constant name = &quot;HUNT&quot;;
-    string public constant symbol = &quot;HT&quot;;
+	string public constant name = "HUNT";
+    string public constant symbol = "HT";
     uint8 public constant decimals = 18;
 	
     // Initial contract data

@@ -179,8 +179,8 @@ contract DNNToken is StandardToken {
     /////////////////////
     // Token Meta Data //
     /////////////////////
-    string constant public name = &quot;DNN&quot;;
-    string constant public symbol = &quot;DNN&quot;;
+    string constant public name = "DNN";
+    string constant public symbol = "DNN";
     uint8 constant public decimals = 18; // 1 DNN = 1 * 10^18 atto-DNN
 
     /////////////////////////////////////////

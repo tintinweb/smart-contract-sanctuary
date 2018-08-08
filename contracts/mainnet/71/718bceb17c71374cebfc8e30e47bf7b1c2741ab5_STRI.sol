@@ -111,8 +111,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract STRI is StandardToken {
-	string public name = &quot;STARI&quot;; 
-	string public symbol = &quot;STRI&quot;;
+	string public name = "STARI"; 
+	string public symbol = "STRI";
 	uint public decimals = 0;
 	uint public INITIAL_SUPPLY = 70000000;
 

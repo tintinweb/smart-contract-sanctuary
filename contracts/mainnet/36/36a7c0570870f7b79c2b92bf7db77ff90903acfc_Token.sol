@@ -292,8 +292,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract Token is MintableToken {
-    string public constant name = &quot;PatentCoin&quot;;
-    string public constant symbol = &quot;PTC&quot;;
+    string public constant name = "PatentCoin";
+    string public constant symbol = "PTC";
     uint8 public constant decimals = 6;
 
     function Token() public {

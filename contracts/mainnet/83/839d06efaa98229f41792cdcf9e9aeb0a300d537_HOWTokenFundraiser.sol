@@ -1149,8 +1149,8 @@ contract PausableToken is StandardToken, HasOwner {
 contract HOWToken is MintableToken, BurnableToken, PausableToken {
   constructor(address _owner, address _minter)
     StandardToken(
-      &quot;HOW Token&quot;,   // Token name
-      &quot;HOW&quot;, // Token symbol
+      "HOW Token",   // Token name
+      "HOW", // Token symbol
       18  // Token decimals
     )
     HasOwner(_owner)
@@ -1170,7 +1170,7 @@ contract HOWTokenSafe is TokenSafe {
     TokenSafe(_token)
     public
   {
-    // Group &quot;A&quot;
+    // Group "A"
     init(
       0, // Group Id
       1532779200 // Release date = 28 Jul 2018 12:00 UTC

@@ -211,7 +211,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -312,10 +312,10 @@ contract PausableToken is StandardToken, Pausable {
  * @title LAYA Token.
  */
 contract LAYA is PausableToken {
-    string public name = &quot;LAYA Token&quot;;
-    string public symbol = &quot;LAYA&quot;;
+    string public name = "LAYA Token";
+    string public symbol = "LAYA";
     uint public decimals = 8;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     event Burn(address indexed from, uint256 value);
   

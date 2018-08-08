@@ -7,8 +7,8 @@ interface token {
 
 contract EnvientaPreToken {
 
-  string public constant symbol = &quot;pENV&quot;;
-  string public constant name = &quot;ENVIENTA pre-token&quot;;
+  string public constant symbol = "pENV";
+  string public constant name = "ENVIENTA pre-token";
   uint8 public constant decimals = 18;
   
   event Transfer(address indexed from, address indexed to, uint256 value);

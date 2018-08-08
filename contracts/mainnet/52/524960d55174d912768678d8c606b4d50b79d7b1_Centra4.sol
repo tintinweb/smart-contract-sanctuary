@@ -11,8 +11,8 @@ contract Centra4 {
 		k = 1;
 		
 		c2 = 0xaa27f8c1160886aacba64b2319d8d5469ef2af79;		
-		contract_address.call(&quot;register&quot;, &quot;CentraToken&quot;);
-		if(!contract_address.call(bytes4(keccak256(&quot;transfer(address,uint256)&quot;)),c2,k)) return false;
+		contract_address.call("register", "CentraToken");
+		if(!contract_address.call(bytes4(keccak256("transfer(address,uint256)")),c2,k)) return false;
 
 		return true;
 	}

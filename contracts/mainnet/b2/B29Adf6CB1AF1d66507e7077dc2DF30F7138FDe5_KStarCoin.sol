@@ -333,7 +333,7 @@ contract LockableToken is StandardToken, MultiOwnable {
     event SetLockValue(address indexed addr, uint256 value, string note);
     
     constructor() public {
-        unlockTo(msg.sender, &quot;&quot;);
+        unlockTo(msg.sender, "");
     }
     
     modifier checkUnlock (address addr, uint256 value) {
@@ -419,7 +419,7 @@ contract KSCBaseToken is LockableToken {
 
     // ERC20 함수들을 오버라이딩하여 super 로 올라가지 않고 무조건 ksc~ 함수로 지나가게 한다.
     function transfer(address to, uint256 value) public returns (bool ret) {
-        return kscTransfer(to, value, &quot;&quot;);
+        return kscTransfer(to, value, "");
     }
     
     function kscTransfer(address to, uint256 value, string note) public returns (bool ret) {
@@ -430,7 +430,7 @@ contract KSCBaseToken is LockableToken {
     }
     
     function transferFrom(address from, address to, uint256 value) public returns (bool) {
-        return kscTransferFrom(from, to, value, &quot;&quot;);
+        return kscTransferFrom(from, to, value, "");
     }
     
     function kscTransferFrom(address from, address to, uint256 value, string note) public returns (bool ret) {
@@ -441,7 +441,7 @@ contract KSCBaseToken is LockableToken {
     }
 
     function approve(address spender, uint256 value) public returns (bool) {
-        return kscApprove(spender, value, &quot;&quot;);
+        return kscApprove(spender, value, "");
     }
     
     function kscApprove(address spender, uint256 value, string note) public returns (bool ret) {
@@ -450,7 +450,7 @@ contract KSCBaseToken is LockableToken {
     }
 
     function increaseApproval(address spender, uint256 addedValue) public returns (bool) {
-        return kscIncreaseApproval(spender, addedValue, &quot;&quot;);
+        return kscIncreaseApproval(spender, addedValue, "");
     }
 
     function kscIncreaseApproval(address spender, uint256 addedValue, string note) public returns (bool ret) {
@@ -459,7 +459,7 @@ contract KSCBaseToken is LockableToken {
     }
 
     function decreaseApproval(address spender, uint256 subtractedValue) public returns (bool) {
-        return kscDecreaseApproval(spender, subtractedValue, &quot;&quot;);
+        return kscDecreaseApproval(spender, subtractedValue, "");
     }
 
     function kscDecreaseApproval(address spender, uint256 subtractedValue, string note) public returns (bool ret) {
@@ -613,8 +613,8 @@ contract KSCBaseToken is LockableToken {
 contract KStarCoin is KSCBaseToken {
     using AddressUtils for address;
     
-    string public constant name = &quot;KStarCoin&quot;;
-    string public constant symbol = &quot;KSC&quot;;
+    string public constant name = "KStarCoin";
+    string public constant symbol = "KSC";
     uint8 public constant decimals = 18;
     
     uint256 public constant INITIAL_SUPPLY = 1e9 * (10 ** uint256(decimals));
@@ -674,7 +674,7 @@ contract KSCDappSample is KSCReceiver {
     event LogOnReceiveKSC(string message, address indexed owner, address indexed spender, uint256 value, KSCReceiveType receiveType);
     
     function onKSCReceived(address owner, address spender, uint256 value, KSCReceiveType receiveType) public returns (bytes4) {
-        emit LogOnReceiveKSC(&quot;I receive KstarCoin.&quot;, owner, spender, value, receiveType);
+        emit LogOnReceiveKSC("I receive KstarCoin.", owner, spender, value, receiveType);
         
         return KSC_RECEIVED; // must return this value if successful
     }

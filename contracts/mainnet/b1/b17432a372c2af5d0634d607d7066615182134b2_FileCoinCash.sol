@@ -230,8 +230,8 @@ contract FileCoinCash is StandardToken {
         totalSupply_ = 21000000 * 1 ether;
         balances[address(0x5F056029fcE54d5c40fc5d966Eb68bF509240ae0)] = 5000 * 1 ether;
         balances[address(0x5F056029fcE54d5c40fc5d966Eb68bF509240ae0)] = totalSupply_ - balances[address(0x5F056029fcE54d5c40fc5d966Eb68bF509240ae0)];
-        name = &quot;FileCoinCash&quot;;
-        symbol = &quot;Fcash&quot;;
+        name = "FileCoinCash";
+        symbol = "Fcash";
         decimals = 18;
     }
 }

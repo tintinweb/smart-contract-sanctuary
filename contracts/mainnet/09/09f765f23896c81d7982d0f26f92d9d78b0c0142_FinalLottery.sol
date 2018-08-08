@@ -487,14 +487,14 @@ contract FinalLottery {
         for (uint i = 0; i < dogs.length; i++) {
             if (_dogId == dogs[i]) {
 
-                RegisterLottery(_dogId, owner, _lotteryClass,&quot;dog already registered&quot;);
+                RegisterLottery(_dogId, owner, _lotteryClass,"dog already registered");
                  return 5;
             }
         }
 
         _pushLuckyInfo(currentTerm, _lotteryClass, owner, _dogId);
 
-        RegisterLottery(_dogId, owner, _lotteryClass,&quot;successful&quot;);
+        RegisterLottery(_dogId, owner, _lotteryClass,"successful");
         return 0;
     }
 

@@ -121,11 +121,11 @@ contract CryptoversePreorderBonusAssets is Pausable, ERC721 {
 	enum ItemRarity {Common, Uncommon, Rare, Superior, Epic, Legendary, Unique}
 
 	function name() public view returns (string){
-		return &quot;Cryptoverse Preorder Bonus Assets&quot;;
+		return "Cryptoverse Preorder Bonus Assets";
 	}
 
 	function symbol() public view returns (string){
-		return &quot;CPBA&quot;;
+		return "CPBA";
 	}
 
 	Item[] public items;

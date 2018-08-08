@@ -89,8 +89,8 @@ contract DCE_Coin is StandardToken {
     function DCE_Coin() {
         balances[msg.sender] = 86000000000000000;               // Give the creator all initial tokens
         totalSupply = 86000000000000000;                        // Update total supply
-        name = &quot;DCE Coin&quot;;                                   // Set the name for display purposes
+        name = "DCE Coin";                                   // Set the name for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
-        symbol = &quot;DCEC&quot;;                               // Set the symbol for display purposes
+        symbol = "DCEC";                               // Set the symbol for display purposes
     }
 }

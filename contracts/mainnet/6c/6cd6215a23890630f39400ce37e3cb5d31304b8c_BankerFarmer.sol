@@ -3,7 +3,7 @@ pragma solidity ^0.4.20; // solhint-disable-line
 // similar as bankerfarmer, with three changes:
 // A. one third of your bankers die when you sell eggs
 // B. you can transfer ownership of the devfee through sacrificing bankers
-// C. the &quot;free&quot; 300 bankers cost 0.001 eth (in line with the mining fee)
+// C. the "free" 300 bankers cost 0.001 eth (in line with the mining fee)
 
 // bots should have a harder time, and whales can compete for the devfee
 

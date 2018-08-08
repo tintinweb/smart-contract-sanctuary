@@ -187,8 +187,8 @@ contract DaoCasinoToken is ERC20Token, Owned {
     // ------------------------------------------------------------------------
     // Token information
     // ------------------------------------------------------------------------
-    string public constant symbol = &quot;BET&quot;;
-    string public constant name = &quot;Dao.Casino&quot;;
+    string public constant symbol = "BET";
+    string public constant name = "Dao.Casino";
     uint8 public constant decimals = 18;
 
     function DaoCasinoToken() {

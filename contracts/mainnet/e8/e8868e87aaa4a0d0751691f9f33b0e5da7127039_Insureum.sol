@@ -58,8 +58,8 @@ contract Insureum is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;INSUREUM&quot;;
-    string public constant symbol = &quot;INSR&quot;;
+    string public constant name = "INSUREUM";
+    string public constant symbol = "INSR";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 100000000e8;

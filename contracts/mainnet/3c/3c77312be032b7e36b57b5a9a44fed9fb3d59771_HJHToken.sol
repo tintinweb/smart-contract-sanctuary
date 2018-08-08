@@ -58,8 +58,8 @@ contract HJHToken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;HJHToken&quot;;
-    string public constant symbol = &quot;HJH&quot;;
+    string public constant name = "HJHToken";
+    string public constant symbol = "HJH";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 100000000e18;

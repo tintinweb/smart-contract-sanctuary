@@ -162,8 +162,8 @@ contract StandardToken is ERC20 {
 
 contract Khabayan is StandardToken {
 
-  string public constant name = &quot;BYAN&quot;;
-  string public constant symbol = &quot;BYAN&quot;;
+  string public constant name = "BYAN";
+  string public constant symbol = "BYAN";
   uint8 public constant decimals = 18;
 
   function Khabayan() public {

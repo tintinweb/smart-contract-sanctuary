@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract HSCC is StandardToken, Ownable {
 
-    string public constant name = &quot;健康链&quot;;
-    string public constant symbol = &quot;HSCC&quot;;
+    string public constant name = "健康链";
+    string public constant symbol = "HSCC";
     uint256 public constant decimals = 8;
 
     function HSCC() public {

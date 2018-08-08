@@ -292,9 +292,9 @@ contract CryptoTorch is Pausable, ReentrancyGuard {
         DateTimeLib_ = DateTime(_dateTimeAddress);
         CryptoTorchToken_ = CryptoTorchToken(_tokenAddress);
         OwnTheDayContract_ = OwnTheDayContract(_otdAddress);
-        holidayMap_[0] = &quot;10000110000001100000000000000101100000000011101000000000000011000000000000001001000010000101100010100110000100001000110000&quot;;
-        holidayMap_[1] = &quot;10111000100101000111000000100100000100010001001000100000000010010000000001000000110000000000000100000000010001100001100000&quot;;
-        holidayMap_[2] = &quot;01000000000100000101011000000110000001100000000100000000000011100001000100000000101000000000100000000000000000010011000001&quot;;
+        holidayMap_[0] = "10000110000001100000000000000101100000000011101000000000000011000000000000001001000010000101100010100110000100001000110000";
+        holidayMap_[1] = "10111000100101000111000000100100000100010001001000100000000010010000000001000000110000000000000100000000010001100001100000";
+        holidayMap_[2] = "01000000000100000101011000000110000001100000000100000000000011100001000100000000101000000000100000000000000000010011000001";
     }
 
     /**
@@ -454,7 +454,7 @@ contract CryptoTorch is Pausable, ReentrancyGuard {
     /**
      * Do not make payments directly to this contract (unless it is a donation! :)
      *  - payments made directly to the contract do not receive tokens.  Tokens
-     *    are only available via &quot;takeTheTorch()&quot; or through the Dapp at https://cryptotorch.io
+     *    are only available via "takeTheTorch()" or through the Dapp at https://cryptotorch.io
      */
     function() payable public {
         if (msg.value > 0 && donationsReceiver_ != 0x0) {
@@ -686,7 +686,7 @@ contract CryptoTorch is Pausable, ReentrancyGuard {
 
         // Transfer Funds
         //  - Transfer directly since these accounts are not, or may not be, existing
-        //    Torch-Runners and therefore cannot &quot;exit&quot; this contract
+        //    Torch-Runners and therefore cannot "exit" this contract
         owner.transfer(_forDev);
         if (_dayOwner != _takenBy) {
             _dayOwner.transfer(_forDayOwner);

@@ -47,7 +47,7 @@ library SafeMath {
 
  /**
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
  contract Ownable {
   address public owner;
@@ -191,8 +191,8 @@ contract MintableToken is BasicToken {
 } 
 
 contract EFToken is MintableToken, BurnableToken, Ownable {
-  string public constant name = &quot;EtherFactoryToken&quot;; 
-  string public constant symbol = &quot;EFT&quot;; 
+  string public constant name = "EtherFactoryToken"; 
+  string public constant symbol = "EFT"; 
   uint8 public constant decimals = 0;  
   
   uint256 internal presellStart = now;
@@ -461,7 +461,7 @@ contract EtherFactory is EFToken {
   function getWorkerProfit() public gameStarted {
 	require (WorkerFactory[msg.sender] > 0);
 	
-	//Worker with qualification &quot;ONE&quot; earn 1 token per minute, &quot;TWO&quot; earn 2 tokens, etc...
+	//Worker with qualification "ONE" earn 1 token per minute, "TWO" earn 2 tokens, etc...
 	uint256 profitMinutes = uint256(SafeMath.div(SafeMath.sub(now, WorkerWorkStart[msg.sender]), 60));
 	if (profitMinutes > 0) {
 		uint8 qualification = WorkerQualification[msg.sender];

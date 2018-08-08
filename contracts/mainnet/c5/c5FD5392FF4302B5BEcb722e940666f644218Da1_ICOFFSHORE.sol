@@ -113,8 +113,8 @@ contract ICOFFSHORE is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ICOFFSHORE() public {
-        symbol = &quot;ICOFF&quot;;
-        name = &quot;ICOFFSHORE&quot;;
+        symbol = "ICOFF";
+        name = "ICOFFSHORE";
         decimals = 18;
         _totalSupply = 125000000000000000000000000;
         balances[0x92b49EC8E09491Ca9283AC703381Bc955a7dE163] = _totalSupply;

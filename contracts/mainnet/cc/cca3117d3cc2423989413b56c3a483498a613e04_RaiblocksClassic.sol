@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract RaiblocksClassic {
     // Public variables of the token
-    string public name = &quot;Raiblocks Classic&quot;;
-    string public symbol = &quot;XRC&quot;;
+    string public name = "Raiblocks Classic";
+    string public symbol = "XRC";
     uint8 public decimals = 0;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

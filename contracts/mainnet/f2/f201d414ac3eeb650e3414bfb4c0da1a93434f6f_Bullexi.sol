@@ -113,8 +113,8 @@ contract Bullexi is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Bullexi() public {
-        symbol = &quot;BGNO&quot;;
-        name = &quot;Bullexi&quot;;
+        symbol = "BGNO";
+        name = "Bullexi";
         decimals = 18;
         _totalSupply = 3000000000000000000000000;
         balances[0xC8c4e42BE4f933fc4BFBa1B6E51318947c7825e3] = _totalSupply;

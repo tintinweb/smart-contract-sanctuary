@@ -46,7 +46,7 @@ library StringUtils {
         bytes memory n = bytes(_needle);
         if(h.length < 1 || n.length < 1 || (n.length > h.length))
       return -1;
-    else if(h.length > (2**128 -1)) // since we have to be able to return -1 (if the char isn&#39;t found or input error), this function must return an &quot;int&quot; type with a max length of (2^128 - 1)
+    else if(h.length > (2**128 -1)) // since we have to be able to return -1 (if the char isn&#39;t found or input error), this function must return an "int" type with a max length of (2^128 - 1)
       return -1;
     else {
       uint subindex = 0;
@@ -339,10 +339,10 @@ contract MultiOwners is DelayedClaimable, RBAC {
   event OwnerRemoved(address addr);
   event InitialFinished();
 
-  string public constant ROLE_MULTIOWNER = &quot;multiOwner&quot;;
-  string public constant AUTH_ADDOWNER = &quot;addOwner&quot;;
-  string public constant AUTH_REMOVEOWNER = &quot;removeOwner&quot;;
-//   string public constant AUTH_SETAUTHRATE = &quot;setAuthRate&quot;;
+  string public constant ROLE_MULTIOWNER = "multiOwner";
+  string public constant AUTH_ADDOWNER = "addOwner";
+  string public constant AUTH_REMOVEOWNER = "removeOwner";
+//   string public constant AUTH_SETAUTHRATE = "setAuthRate";
 
   /**
    * @dev Throws if called by any account that&#39;s not multiOwners.
@@ -496,7 +496,7 @@ contract MultiOwners is DelayedClaimable, RBAC {
   function addAddress(address _addr, string _side) internal {
     require(multiOwnerSides < ownerSidesLimit);
     require(_addr != address(0));
-    require(ownerOfSides[_addr].equal(&quot;&quot;)); // not allow duplicated adding
+    require(ownerOfSides[_addr].equal("")); // not allow duplicated adding
 
     // uint i = 0;
     // for (; i < owners.length; i = i.add(1)) {
@@ -669,7 +669,7 @@ contract MultiOwnerContract is MultiOwners {
     address public pendingOwnedOwner;
     // address internal origOwner;
 
-    string public constant AUTH_CHANGEOWNEDOWNER = &quot;transferOwnerOfOwnedContract&quot;;
+    string public constant AUTH_CHANGEOWNEDOWNER = "transferOwnerOfOwnedContract";
 
     /**
      * @dev Modifier throws if called by any account other than the pendingOwner.
@@ -743,10 +743,10 @@ contract MultiOwnerContract is MultiOwners {
 }
 
 contract DRCTOwner is MultiOwnerContract {
-    string public constant AUTH_INITCONGRESS = &quot;initCongress&quot;;
-    string public constant AUTH_CANMINT = &quot;canMint&quot;;
-    string public constant AUTH_SETMINTAMOUNT = &quot;setMintAmount&quot;;
-    string public constant AUTH_FREEZEACCOUNT = &quot;freezeAccount&quot;;
+    string public constant AUTH_INITCONGRESS = "initCongress";
+    string public constant AUTH_CANMINT = "canMint";
+    string public constant AUTH_SETMINTAMOUNT = "setMintAmount";
+    string public constant AUTH_FREEZEACCOUNT = "freezeAccount";
 
     bool congressInit = false;
     // bool paramsInit = false;

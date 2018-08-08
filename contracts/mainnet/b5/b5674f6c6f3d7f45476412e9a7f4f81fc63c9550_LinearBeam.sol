@@ -113,8 +113,8 @@ contract LinearBeam is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LinearBeam() public {
-        symbol = &quot;LNB&quot;;
-        name = &quot;LinearBeam&quot;;
+        symbol = "LNB";
+        name = "LinearBeam";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x780022B74981A26B18e4025E23bD6D574Ca1e0aA] = _totalSupply;

@@ -103,8 +103,8 @@ contract TheMoneyFightToken {
     
 
 
-    function name() constant returns (string) { return &quot;The Money Fight&quot;; }
-    function symbol() constant returns (string) { return &quot;MFT&quot;; }
+    function name() constant returns (string) { return "The Money Fight"; }
+    function symbol() constant returns (string) { return "MFT"; }
     function decimals() constant returns (uint8) { return 18; }
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }
     

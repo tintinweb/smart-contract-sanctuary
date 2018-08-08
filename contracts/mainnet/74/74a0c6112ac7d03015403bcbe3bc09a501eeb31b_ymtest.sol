@@ -13,8 +13,8 @@ contract ymtest{
     function ymtest(uint256 abc) public {
         totalSupply = 1000000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;                
-        name = &quot;ymtest&quot;;                                  
-        symbol = &quot;ymtest&quot;;                              
+        name = "ymtest";                                  
+        symbol = "ymtest";                              
     }
 
   

@@ -225,8 +225,8 @@ contract DragonCoin is StandardToken, Usable {
     event Mint(address indexed to, uint256 value);
     event Burn(address indexed burner, uint256 value);
     
-    string public name = &quot;DragonSeriesToken&quot;; 
-    string public symbol = &quot;DST&quot;;
+    string public name = "DragonSeriesToken"; 
+    string public symbol = "DST";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 1100000 * (10 ** decimals);     
     uint public MAX_SUPPLY = 10 * 100000000 * (10 ** decimals); 

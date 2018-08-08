@@ -103,8 +103,8 @@ contract EEYcoin is ERC223  {
     mapping (address => uint256) public unlockUnixTime;
     uint  public maxIncrease=20;
     address public target;
-    string internal name_= &quot;EEYcoin&quot;;
-    string internal symbol_ = &quot;EEY&quot;;
+    string internal name_= "EEYcoin";
+    string internal symbol_ = "EEY";
     uint8 internal decimals_= 18;
     uint256 internal totalSupply_= 100000000e18;
     uint256 public toGiveBase = 3e18;

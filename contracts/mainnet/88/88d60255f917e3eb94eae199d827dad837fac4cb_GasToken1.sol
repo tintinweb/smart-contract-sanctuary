@@ -74,8 +74,8 @@ contract GasToken1 {
     //////////////////////////////////////////////////////////////////////////
 
     uint8 constant public decimals = 2;
-    string constant public name = &quot;Gastoken.io&quot;;
-    string constant public symbol = &quot;GST1&quot;;
+    string constant public name = "Gastoken.io";
+    string constant public symbol = "GST1";
 
     // We start our storage at this location. The EVM word at this location
     // contains the number of stored words. The stored words follow at

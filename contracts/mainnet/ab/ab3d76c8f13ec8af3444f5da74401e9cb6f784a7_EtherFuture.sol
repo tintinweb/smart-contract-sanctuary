@@ -22,8 +22,8 @@ contract EtherFuture   {
     function EtherFuture() {
         balanceOf[msg.sender] =  320000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  320000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;EtherFuture&quot;;                                   // Set the name for display purposes
-        symbol = &quot;EHF&quot;;                               // Set the symbol for display purposes
+        name = "EtherFuture";                                   // Set the name for display purposes
+        symbol = "EHF";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

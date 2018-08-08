@@ -46,8 +46,8 @@ contract PowZoneToken is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;CryptoKotakuPowZone&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;PowZone&quot;; // solhint-disable-line
+  string public constant NAME = "CryptoKotakuPowZone"; // solhint-disable-line
+  string public constant SYMBOL = "PowZone"; // solhint-disable-line
 
   uint256 private startingPrice = 0.005 ether;
   uint256 private firstStepLimit =  0.05 ether;

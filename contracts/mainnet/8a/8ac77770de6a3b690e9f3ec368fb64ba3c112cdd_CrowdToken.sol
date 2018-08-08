@@ -15,8 +15,8 @@ contract CrowdToken is IERC20 {
     using SafeMath for uint256;
     uint private _totalSupply = 10000000;
     
-    string public constant symbol =&quot;CRCN&quot;;
-    string public constant name = &quot;Crowd Token&quot;;
+    string public constant symbol ="CRCN";
+    string public constant name = "Crowd Token";
     uint8 public constant decimals = 3;
     
     //1 ether = 350 CRCN

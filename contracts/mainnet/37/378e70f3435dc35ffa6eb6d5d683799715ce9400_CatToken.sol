@@ -127,8 +127,8 @@ contract StandardToken is ERC20 {
 }
 
 contract CatToken is StandardToken {
-  string public constant name = &quot;Cat Token&quot;;
-  string public constant symbol = &quot;CATT&quot;;
+  string public constant name = "Cat Token";
+  string public constant symbol = "CATT";
   uint8 public constant decimals = 18;
 
   constructor() public {

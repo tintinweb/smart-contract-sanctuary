@@ -28,11 +28,11 @@ interface ERC721Metadata {
     ///  * The URL points to a valid JSON file format (ECMA-404 2nd ed.)
     ///  * The JSON base element is an object
     ///  then these names of the base element SHALL have special meaning:
-    ///  * &quot;name&quot;: A string identifying the item to which `_deedId` grants
+    ///  * "name": A string identifying the item to which `_deedId` grants
     ///    ownership
-    ///  * &quot;description&quot;: A string detailing the item to which `_deedId` grants
+    ///  * "description": A string detailing the item to which `_deedId` grants
     ///    ownership
-    ///  * &quot;image&quot;: A URI pointing to a file of image/* mime type representing
+    ///  * "image": A URI pointing to a file of image/* mime type representing
     ///    the item to which `_deedId` grants ownership
     ///  Wallets and exchanges MAY display this to the end user.
     ///  Consider making any images at a width between 320 and 1080 pixels and
@@ -240,20 +240,20 @@ interface ERC721 {
     ///  mechanism. This event emits when deeds are created (`from` == 0) and
     ///  destroyed (`to` == 0). Exception: during contract creation, any
     ///  transfers may occur without emitting `Transfer`. At the time of any transfer,
-    ///  the &quot;approved taker&quot; is implicitly reset to the zero address.
+    ///  the "approved taker" is implicitly reset to the zero address.
     event Transfer(address indexed _from, address indexed _to, uint256 indexed _deedId);
 
-    /// @dev The Approve event emits to log the &quot;approved taker&quot; for a deed -- whether
+    /// @dev The Approve event emits to log the "approved taker" for a deed -- whether
     ///  set for the first time, reaffirmed by setting the same value, or setting to
-    ///  a new value. The &quot;approved taker&quot; is the zero address if nobody can take the
+    ///  a new value. The "approved taker" is the zero address if nobody can take the
     ///  deed now or it is an address if that address can call `takeOwnership` to attempt
-    ///  taking the deed. Any change to the &quot;approved taker&quot; for a deed SHALL cause
+    ///  taking the deed. Any change to the "approved taker" for a deed SHALL cause
     ///  Approve to emit. However, an exception, the Approve event will not emit when
-    ///  Transfer emits, this is because Transfer implicitly denotes the &quot;approved taker&quot;
+    ///  Transfer emits, this is because Transfer implicitly denotes the "approved taker"
     ///  is reset to the zero address.
     event Approval(address indexed _owner, address indexed _approved, uint256 indexed _deedId);
 
-    /// @notice Set the &quot;approved taker&quot; for your deed, or revoke approval by
+    /// @notice Set the "approved taker" for your deed, or revoke approval by
     ///  setting the zero address. You may `approve` any number of times while
     ///  the deed is assigned to you, only the most recent approval matters. Emits
     ///  an Approval event.
@@ -574,7 +574,7 @@ contract FactbarDeed is ERC721Deed, Pausable, PullPayment, ReentrancyGuard {
   uint256 private creationPrice = 0.0005 ether; 
 
   // The contract owner can change the base URL, in case it becomes necessary. It is needed for Metadata.
-  string public url = &quot;https://fact-bar.org/facts/&quot;;
+  string public url = "https://fact-bar.org/facts/";
 
   // ERC-165 Metadata
   bytes4 internal constant INTERFACE_SIGNATURE_ERC165 = // 0x01ffc9a7
@@ -619,12 +619,12 @@ contract FactbarDeed is ERC721Deed, Pausable, PullPayment, ReentrancyGuard {
 
   function name()
   external pure returns (string) {
-    return &quot;Factbar&quot;;
+    return "Factbar";
   }
 
   function symbol()
   external pure returns (string) {
-    return &quot;FTBR&quot;;
+    return "FTBR";
   }
 
   function supportsInterface(bytes4 _interfaceID)
@@ -871,7 +871,7 @@ contract FactbarDeed is ERC721Deed, Pausable, PullPayment, ReentrancyGuard {
 
 // Permission is hereby granted, free of charge, 
 // to any person obtaining a copy of this software and 
-// associated documentation files (the &quot;Software&quot;), to 
+// associated documentation files (the "Software"), to 
 // deal in the Software without restriction, including 
 // without limitation the rights to use, copy, modify, 
 // merge, publish, distribute, sublicense, and/or sell 
@@ -882,7 +882,7 @@ contract FactbarDeed is ERC721Deed, Pausable, PullPayment, ReentrancyGuard {
 // The above copyright notice and this permission notice 
 // shall be included in all copies or substantial portions of the Software.
 
-// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
 // EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
 // OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
 // IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR 

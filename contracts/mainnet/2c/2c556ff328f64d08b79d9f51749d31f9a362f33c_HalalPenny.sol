@@ -113,8 +113,8 @@ contract HalalPenny is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HalalPenny() public {
-        symbol = &quot;HLP&quot;;
-        name = &quot;Halal Penny&quot;;
+        symbol = "HLP";
+        name = "Halal Penny";
         decimals = 18;
         _totalSupply = 210000000000000000000000000000;
         balances[0xa1C1274EB6fcB214a93E714020b2826d66b156A8] = _totalSupply;

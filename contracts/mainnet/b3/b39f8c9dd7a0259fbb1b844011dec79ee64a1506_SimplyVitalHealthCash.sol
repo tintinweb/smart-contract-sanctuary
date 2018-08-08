@@ -113,8 +113,8 @@ contract SimplyVitalHealthCash is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;HLTH50&quot;;
-        name = &quot;Simply Vital Health Cash&quot;;
+        symbol = "HLTH50";
+        name = "Simply Vital Health Cash";
         decimals = 18;
         _totalSupply = 200000000;
         balances[0xbB0b34395C83b3005D79c0AB7bE6A68864418a71] = _totalSupply;

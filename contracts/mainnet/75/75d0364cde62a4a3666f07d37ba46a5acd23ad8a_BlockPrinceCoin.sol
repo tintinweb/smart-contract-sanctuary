@@ -32,8 +32,8 @@ contract BlockPrinceCoin {
     ) public {
         totalSupply = 10000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;BlockPrinceCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;BPC&quot;;                               // Set the symbol for display purposes
+        name = "BlockPrinceCoin";                                   // Set the name for display purposes
+        symbol = "BPC";                               // Set the symbol for display purposes
     }
 
     /**

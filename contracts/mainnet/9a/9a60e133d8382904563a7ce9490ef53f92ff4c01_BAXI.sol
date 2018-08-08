@@ -250,8 +250,8 @@ contract DerivativeTokenInterface {
 }
 
 contract BAXI is StandardToken, BurnableToken, Ownable {
-    string public constant name = &quot;BAOXCOIN&quot;;
-    string public constant symbol = &quot;BAXI&quot;;
+    string public constant name = "BAOXCOIN";
+    string public constant symbol = "BAXI";
     uint256 public constant decimals = 4;
     uint256 public constant initialSupply = 1000000000000;
 

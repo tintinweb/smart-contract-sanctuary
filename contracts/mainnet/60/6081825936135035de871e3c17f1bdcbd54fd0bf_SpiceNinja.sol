@@ -112,9 +112,9 @@ contract SpiceNinja {
     */
 
     //first step of any good idea is a name 
-    string public constant name = &quot;Spice_Ninja&quot;;
+    string public constant name = "Spice_Ninja";
     //and of course after a name, we need a code name.
-    string public constant symbol = &quot;Shhh&quot;;
+    string public constant symbol = "Shhh";
     //Then determine brewing capacity
     uint256 public totalSupply = 2000;
     //and make sure not to cut up any ninjas....

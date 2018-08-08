@@ -113,8 +113,8 @@ contract PUNCToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PUNCToken() public {
-        symbol = &quot;PUNC&quot;;
-        name = &quot;PureNatureCoinToken&quot;;
+        symbol = "PUNC";
+        name = "PureNatureCoinToken";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0xF58a749AB4929b462F33b8A07f1e3b568ed8eC43] = _totalSupply;

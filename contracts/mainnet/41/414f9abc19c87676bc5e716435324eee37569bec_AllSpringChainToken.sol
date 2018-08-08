@@ -65,8 +65,8 @@ contract StandardToken is ERC20, SafeMath {
 
 
 contract AllSpringChainToken is StandardToken {
-    string public name = &quot;AllSpringChainToken&quot;;
-    string public symbol = &quot;ASC&quot;;
+    string public name = "AllSpringChainToken";
+    string public symbol = "ASC";
     uint public decimals = 18;
     uint public totalSupply = 3000 * 1000 * 1000 ether;
 

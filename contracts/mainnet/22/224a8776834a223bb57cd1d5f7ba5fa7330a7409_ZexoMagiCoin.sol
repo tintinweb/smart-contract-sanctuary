@@ -114,8 +114,8 @@ contract ZexoMagiCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor()  ZexoMagiCoin() public {
-        symbol = &quot;ZXMC&quot;;
-        name = &quot;ZexoMagi Coin&quot;;
+        symbol = "ZXMC";
+        name = "ZexoMagi Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x44AbD846905277D555e8529C638302A2C396B877] = _totalSupply;

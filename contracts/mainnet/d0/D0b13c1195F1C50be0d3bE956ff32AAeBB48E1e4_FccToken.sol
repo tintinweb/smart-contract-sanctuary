@@ -120,11 +120,11 @@ contract StandardToken is Token {
 
 contract FccToken is Owned, StandardToken {
 
-    string public standard = &quot;Token 0.1&quot;;
+    string public standard = "Token 0.1";
 
-    string public name = &quot;First Cash Coin&quot;;        
+    string public name = "First Cash Coin";        
     
-    string public symbol = &quot;FCC&quot;;
+    string public symbol = "FCC";
 
     uint8 public decimals = 8;
    

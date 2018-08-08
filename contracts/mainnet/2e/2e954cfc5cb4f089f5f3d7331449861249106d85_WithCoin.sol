@@ -101,8 +101,8 @@ contract WithCoin is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
     function WithCoin() public {
         //address_owner = 0x9876f320a15f8d7a482B5f244Ab50c722a0D736f;
-        symbol = &quot;WITH&quot;;
-        name = &quot;WITH coin&quot;;
+        symbol = "WITH";
+        name = "WITH coin";
         decimals = 6;
         number_of_token = 30000000000;
         _totalSupply = number_of_token*10**uint(decimals);

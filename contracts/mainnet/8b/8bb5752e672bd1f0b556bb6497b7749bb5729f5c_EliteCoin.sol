@@ -154,8 +154,8 @@ contract EliteCoin is StandardToken {
   // Token for high rollers only. You get a token for free,
   // but only if your account balance is over 10 ETH
   mapping (address => bool) claimed;
-  string public constant name = &quot;EliteCoin&quot;;
-  string public constant symbol = &quot;L33T&quot;;
+  string public constant name = "EliteCoin";
+  string public constant symbol = "L33T";
   uint public constant decimals = 18;
   uint public constant maxSupply = 1337 ether;
   uint constant foundersFee = 50 ether;

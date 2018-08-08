@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -488,8 +488,8 @@ contract BurnableToken is BasicToken {
  */
 contract SocialMediaIncomeCrowdsaleToken is MintableToken, BurnableToken {
 
-    string public constant name = &quot;Social Media Income&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;SMI&quot;; // solium-disable-line uppercase
+    string public constant name = "Social Media Income"; // solium-disable-line uppercase
+    string public constant symbol = "SMI"; // solium-disable-line uppercase
     uint8 public constant decimals = 18; // solium-disable-line uppercase
 
 }

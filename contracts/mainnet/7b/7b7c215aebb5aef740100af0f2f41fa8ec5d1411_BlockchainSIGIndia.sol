@@ -3,7 +3,7 @@ pragma solidity ^0.4.6;
 
 contract BlockchainSIGIndia {
 
-    string public name=&quot;India&#39;s first Blockchain SIG&quot;;
+    string public name="India&#39;s first Blockchain SIG";
 
     string public meetingDate=&#39;13th July, 2017&#39;;
 
@@ -11,7 +11,7 @@ contract BlockchainSIGIndia {
     
     string public encoding_format=&#39;LZMA&#39;;
     
-    string public content_intro=&quot;INDIA&#39;s FIRST BLOCKCHAIN Special Interest Group - Minutes Of Meeting Dear All,Firstly, I would like to thank you all for attending the.........&quot;;
+    string public content_intro="INDIA&#39;s FIRST BLOCKCHAIN Special Interest Group - Minutes Of Meeting Dear All,Firstly, I would like to thank you all for attending the.........";
     
     string public encoding_description=&#39;The Lempel–Ziv–Markov chain algorithm (LZMA) is an algorithm used to perform lossless data compression. It has been under development either since 1996 or 1998 and was first used in the 7z format. This algorithm uses a dictionary compression scheme somewhat similar to the LZ77 algorithm published by Abraham Lempel and Jacob Ziv in 1977 and features a high compression ratio (generally higher than bzip2)[2][3] and a variable compression-dictionary size (up to 4 GB),while still maintaining decompression speed similar to other commonly used compression algorithms&#39;;
 

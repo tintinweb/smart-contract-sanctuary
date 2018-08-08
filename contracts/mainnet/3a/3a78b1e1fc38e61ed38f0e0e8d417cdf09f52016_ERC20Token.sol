@@ -185,9 +185,9 @@ contract ERC20Token is ERC20Interface, Owned {
 
     function ERC20Token() public {
 
-        symbol = &quot;GBCS&quot;;
+        symbol = "GBCS";
 
-        name = &quot;Global Brand Coins&quot;;
+        name = "Global Brand Coins";
 
         decimals = 8;
 

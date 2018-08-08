@@ -191,8 +191,8 @@ contract SafeStandardToken is ERC20, SafeBasicToken {
 }
 
 contract SEKCapitalToken is SafeStandardToken{
-  string public constant name = &quot;SEK Capital Token&quot;;
-  string public constant symbol = &quot;SEKC&quot;;
+  string public constant name = "SEK Capital Token";
+  string public constant symbol = "SEKC";
   uint256 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 300000000 * (10 ** uint256(decimals));
 

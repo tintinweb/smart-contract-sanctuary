@@ -185,8 +185,8 @@ contract CappedToken is MintableToken {
 
 contract QwidsCrowdsaleToken is MintableToken {
 
-  string public constant name = &quot;Q&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;QWIDS&quot;; // solium-disable-line uppercase
+  string public constant name = "Q"; // solium-disable-line uppercase
+  string public constant symbol = "QWIDS"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 initialSupply = 90000000 ether;

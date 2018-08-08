@@ -58,8 +58,8 @@ contract DAppSky is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;DAppSky&quot;;
-    string public constant symbol = &quot;DSKY&quot;;
+    string public constant name = "DAppSky";
+    string public constant symbol = "DSKY";
     uint public constant decimals = 4;
     
     uint256 public totalSupply = 1500000000e4;

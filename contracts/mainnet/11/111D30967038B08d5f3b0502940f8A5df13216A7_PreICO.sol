@@ -4,7 +4,7 @@ pragma solidity ^0.4.11;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -95,10 +95,10 @@ contract Token {
 
 /*  ERC 20 token */
 contract SMTToken is Token,Ownable,Sales {
-    string public constant name = &quot;Sun Money Token&quot;;
-    string public constant symbol = &quot;SMT&quot;;
+    string public constant name = "Sun Money Token";
+    string public constant symbol = "SMT";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     ///The value to be sent to our BTC address
     uint public valueToBeSent = 1;
@@ -336,14 +336,14 @@ contract Pausable is Ownable {
 
 // Copyright 2016 rain <https://keybase.io/rain>
 //
-// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+// Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
 //      http://www.apache.org/licenses/LICENSE-2.0
 //
 // Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
@@ -681,7 +681,7 @@ contract PricingStrategy{
 	**/
 	function baseDiscounts(uint256 currentsupply,uint256 contribution,string types) returns (uint256){
 		if(contribution==0) throw;
-		if(keccak256(&quot;ethereum&quot;)==keccak256(types)){
+		if(keccak256("ethereum")==keccak256(types)){
 			if(currentsupply>=0 && currentsupply<= 15*(10**5) * (10**18) && contribution>=1*10**18){
 			 return 40;
 			}else if(currentsupply> 15*(10**5) * (10**18) && currentsupply< 30*(10**5) * (10**18) && contribution>=5*10**17){
@@ -689,7 +689,7 @@ contract PricingStrategy{
 			}else{
 				return 0;
 			}
-			}else if(keccak256(&quot;bitcoin&quot;)==keccak256(types)){
+			}else if(keccak256("bitcoin")==keccak256(types)){
 				if(currentsupply>=0 && currentsupply<= 15*(10**5) * (10**18) && contribution>=45*10**5){
 				 return 40;
 				}else if(currentsupply> 15*(10**5) * (10**18) && currentsupply< 30*(10**5) * (10**18) && contribution>=225*10**4){
@@ -711,7 +711,7 @@ contract PricingStrategy{
 		///do not allow the zero contrbution 
 		//its unsigned negative checking not required
 		if(contribution==0) throw;
-		if(keccak256(&quot;ethereum&quot;)==keccak256(types)){
+		if(keccak256("ethereum")==keccak256(types)){
 			if(contribution>=3*10**18 && contribution<10*10**18){
 				return 0;
 			}else if(contribution>=10*10**18 && contribution<20*10**18){
@@ -721,7 +721,7 @@ contract PricingStrategy{
 			}else{
 				return 0;
 			}
-			}else if(keccak256(&quot;bitcoin&quot;)==keccak256(types)){
+			}else if(keccak256("bitcoin")==keccak256(types)){
 				if(contribution>=3*45*10**5 && contribution<10*45*10**5){
 					return 0;
 				}else if(contribution>=10*45*10**5 && contribution<20*45*10**5){
@@ -808,8 +808,8 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
 	function calNewTokens(uint256 contribution,string types) returns (uint256){
 		uint256 disc = totalDiscount(currentSupply,contribution,types);
 		uint256 CreatedTokens;
-		if(keccak256(types)==keccak256(&quot;ethereum&quot;)) CreatedTokens = SafeMath.mul(contribution,tokensPerEther);
-		else if(keccak256(types)==keccak256(&quot;bitcoin&quot;))  CreatedTokens = SafeMath.mul(contribution,tokensPerBTC);
+		if(keccak256(types)==keccak256("ethereum")) CreatedTokens = SafeMath.mul(contribution,tokensPerEther);
+		else if(keccak256(types)==keccak256("bitcoin"))  CreatedTokens = SafeMath.mul(contribution,tokensPerBTC);
 		uint256 tokens = SafeMath.add(CreatedTokens,SafeMath.div(SafeMath.mul(CreatedTokens,disc),100));
 		return tokens;
 	}
@@ -827,7 +827,7 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
         ///since we are creating tokens we need to increase the total supply
         if(token.getState()==ICOSaleState.PrivateSale||token.getState()==ICOSaleState.PreSale) {
         	if((msg.value) < 1*10**18) throw;
-        	newCreatedTokens =calNewTokens(msg.value,&quot;ethereum&quot;);
+        	newCreatedTokens =calNewTokens(msg.value,"ethereum");
         	uint256 temp = SafeMath.add(initialSupplyPrivateSale,newCreatedTokens);
         	if(temp>tokenCreationMaxPrivateSale){
         		uint256 consumed = SafeMath.sub(tokenCreationMaxPrivateSale,initialSupplyPrivateSale);
@@ -855,7 +855,7 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
         }
         else if(token.getState()==ICOSaleState.PreICO){
         	if(msg.value < 5*10**17) throw;
-        	newCreatedTokens =calNewTokens(msg.value,&quot;ethereum&quot;);
+        	newCreatedTokens =calNewTokens(msg.value,"ethereum");
         	initialSupplyPublicPreICO = SafeMath.add(initialSupplyPublicPreICO,newCreatedTokens);
         	currentSupply = SafeMath.add(currentSupply,newCreatedTokens);
         	if(initialSupplyPublicPreICO>tokenCreationMaxPreICO) throw;
@@ -881,7 +881,7 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
 	  uint256 newCreatedTokens;
         if(token.getState()==ICOSaleState.PrivateSale||token.getState()==ICOSaleState.PreSale) {
         	if(val < 1*10**18) throw;
-        	newCreatedTokens =calNewTokens(val,&quot;ethereum&quot;);
+        	newCreatedTokens =calNewTokens(val,"ethereum");
         	uint256 temp = SafeMath.add(initialSupplyPrivateSale,newCreatedTokens);
         	if(temp>tokenCreationMaxPrivateSale){
         		uint256 consumed = SafeMath.sub(tokenCreationMaxPrivateSale,initialSupplyPrivateSale);
@@ -907,7 +907,7 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
         }
         else if(token.getState()==ICOSaleState.PreICO){
         	if(msg.value < 5*10**17) throw;
-        	newCreatedTokens =calNewTokens(val,&quot;ethereum&quot;);
+        	newCreatedTokens =calNewTokens(val,"ethereum");
         	initialSupplyPublicPreICO = SafeMath.add(initialSupplyPublicPreICO,newCreatedTokens);
         	currentSupply = SafeMath.add(currentSupply,newCreatedTokens);
         	if(initialSupplyPublicPreICO>tokenCreationMaxPreICO) throw;
@@ -935,7 +935,7 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
 				 ///since we are creating tokens we need to increase the total supply
             if(token.getState()==ICOSaleState.PrivateSale||token.getState()==ICOSaleState.PreSale) {
         	if(b < 45*10**5) throw;
-        	newCreatedTokens =calNewTokens(b,&quot;bitcoin&quot;);
+        	newCreatedTokens =calNewTokens(b,"bitcoin");
         	uint256 temp = SafeMath.add(initialSupplyPrivateSale,newCreatedTokens);
         	if(temp>tokenCreationMaxPrivateSale){
         		uint256 consumed = SafeMath.sub(tokenCreationMaxPrivateSale,initialSupplyPrivateSale);
@@ -961,7 +961,7 @@ contract PreICO is Ownable,Pausable, Utils,PricingStrategy,Sales{
         }
         else if(token.getState()==ICOSaleState.PreICO){
         	if(msg.value < 225*10**4) throw;
-        	newCreatedTokens =calNewTokens(b,&quot;bitcoin&quot;);
+        	newCreatedTokens =calNewTokens(b,"bitcoin");
         	initialSupplyPublicPreICO = SafeMath.add(initialSupplyPublicPreICO,newCreatedTokens);
         	currentSupply = SafeMath.add(currentSupply,newCreatedTokens);
         	if(initialSupplyPublicPreICO>tokenCreationMaxPreICO) throw;

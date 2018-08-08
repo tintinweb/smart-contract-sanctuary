@@ -113,8 +113,8 @@ contract DSVCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DSVCoin() public {
-        symbol = &quot;DSV&quot;;
-        name = &quot;DSVCoin&quot;;
+        symbol = "DSV";
+        name = "DSVCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xc4b2B0B3770d9Ae4481197Ff8150891A2466f1a1] = _totalSupply;

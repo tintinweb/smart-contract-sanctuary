@@ -109,8 +109,8 @@ contract BANKOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BANKOIN() public {
-        symbol = &quot;BNKO&quot;;
-        name = &quot;BANKOIN&quot;;
+        symbol = "BNKO";
+        name = "BANKOIN";
         decimals = 18;
         _totalSupply = 2000000000000000000000000000;
         balances[0x8395b43578b536ceda5cfcb4d5153dcc6d0643d8] = _totalSupply;

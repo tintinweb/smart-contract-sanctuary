@@ -265,9 +265,9 @@ contract _OmnesCoinToken is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;OME&quot;;
+        symbol = "OME";
 
-        name = &quot;Omnes Coin&quot;;
+        name = "Omnes Coin";
 
         decimals = 8;
 

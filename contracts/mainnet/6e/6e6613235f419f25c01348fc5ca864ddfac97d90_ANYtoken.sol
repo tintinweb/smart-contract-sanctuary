@@ -113,8 +113,8 @@ contract ANYtoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ANYtoken() public {
-        symbol = &quot;ANYTOKEN&quot;;
-        name = &quot;ANY token&quot;;
+        symbol = "ANYTOKEN";
+        name = "ANY token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xe2bfCc2d75be83fa197c1A281ae5892E890a9B4c] = _totalSupply;

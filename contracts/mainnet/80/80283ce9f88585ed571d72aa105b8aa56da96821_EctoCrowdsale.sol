@@ -317,7 +317,7 @@ contract Crowdsale {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -542,10 +542,10 @@ contract RBAC {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * This simplifies the implementation of &quot;user permissions&quot;.
+ * This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable, RBAC {
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if operator is not whitelisted.

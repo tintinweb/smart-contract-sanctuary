@@ -38,7 +38,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -325,9 +325,9 @@ contract BaseICOTokenWithBonus is BaseFixedERC20Token {
 contract BENEFITToken is BaseICOTokenWithBonus {
     using SafeMath for uint;
 
-    string public constant name = &quot;Dating with Benefits&quot;;
+    string public constant name = "Dating with Benefits";
 
-    string public constant symbol = &quot;BENEFIT&quot;;
+    string public constant symbol = "BENEFIT";
 
     uint8 public constant decimals = 18;
 

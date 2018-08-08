@@ -39,7 +39,7 @@ pragma solidity ^0.4.11;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -163,10 +163,10 @@ contract Token {
 
 /*  ERC 20 token */
 contract BLMToken is Token,Ownable,Sales {
-    string public constant name = &quot;Bloomatch Token&quot;;
-    string public constant symbol = &quot;BLM&quot;;
+    string public constant name = "Bloomatch Token";
+    string public constant symbol = "BLM";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     uint public valueToBeSent = 1;
     address personMakingTx;

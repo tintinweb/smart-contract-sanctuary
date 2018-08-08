@@ -44,8 +44,8 @@ contract HardcodedCrowdsale {
     address public owner = msg.sender;
     ManagedToken public managedTokenLedger;
 
-    string public name = &quot;MDBlockchainPreICO&quot;;
-    string public symbol = &quot;MDB&quot;;
+    string public name = "MDBlockchainPreICO";
+    string public symbol = "MDB";
 
     bool public unlocked = false;
     bool public halted = false;

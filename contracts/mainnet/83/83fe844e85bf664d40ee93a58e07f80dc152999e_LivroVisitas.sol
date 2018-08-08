@@ -43,7 +43,7 @@ contract LivroVisitas is Mortal {
         if (bytes(livro[visitor]).length > 1) {
             return livro[visitor];
         } else {
-            return &quot;&quot;;
+            return "";
         }
     }
 

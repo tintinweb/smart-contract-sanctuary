@@ -101,8 +101,8 @@ contract StandardToken {
 
 
 contract HDCToken is StandardToken {
-    string public name    = &quot;Hyper Dimension Chain&quot;;
-    string public symbol  = &quot;HDCC&quot;;
+    string public name    = "Hyper Dimension Chain";
+    string public symbol  = "HDCC";
     uint8 public decimals = 18;
 
     // 10 billion in initial supply

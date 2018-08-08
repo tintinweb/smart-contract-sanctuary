@@ -248,8 +248,8 @@ contract GizerItems is ERC721Token {
 
   /* Basic token data */
   
-  string constant cName   = &quot;Gizer Item&quot;;
-  string constant cSymbol = &quot;GZR721&quot;;
+  string constant cName   = "Gizer Item";
+  string constant cSymbol = "GZR721";
   
   /* uuid information */
 

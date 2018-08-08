@@ -122,8 +122,8 @@ contract OneUpToken is StandardToken {
   address public creator;
   ERC20 public yoshicoin;
 
-  function name() constant returns (string) { return &quot;1UP&quot;; }
-  function symbol() constant returns (string) { return &quot;UP&quot;; }
+  function name() constant returns (string) { return "1UP"; }
+  function symbol() constant returns (string) { return "UP"; }
   function decimals() constant returns (uint8) { return 0; }
 
   function OneUpToken(

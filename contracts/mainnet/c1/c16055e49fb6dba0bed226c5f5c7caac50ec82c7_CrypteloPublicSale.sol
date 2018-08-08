@@ -123,9 +123,9 @@ contract CrypteloPublicSale{
         //check if its live
         
         require(currentState);
-        eLog(&quot;state OK&quot;, 0);
+        eLog("state OK", 0);
         require(amountEthWei >= minimumDonationWei);
-        eLog(&quot;amount OK&quot;, amountEthWei);
+        eLog("amount OK", amountEthWei);
         
         uint whiteListedLevel = isWhiteListed(sender);
         require( whiteListedLevel > 0);
@@ -133,8 +133,8 @@ contract CrypteloPublicSale{
         tokensToSend = calculateTokensToSend(amountEthWei, whiteListedLevel);
         
         require(tokensLeft >= tokensToSend);
-        eLog(&quot;tokens left vs tokens to send ok&quot;, tokensLeft);    
-        eLog(&quot;tokensToSend&quot;, tokensToSend);
+        eLog("tokens left vs tokens to send ok", tokensLeft);    
+        eLog("tokensToSend", tokensToSend);
         
         //test for minus
         if (tokensToSend <= tokensLeft){
@@ -143,10 +143,10 @@ contract CrypteloPublicSale{
         
         addContributor(sender, tokensToSend);
         reservedTokens = reservedTokens.add(tokensToSend);
-        eLog(&quot;send tokens ok&quot;, 0);
+        eLog("send tokens ok", 0);
         
         forwardFunds(amountEthWei);
-        eLog(&quot;forward funds ok&quot;, amountEthWei);
+        eLog("forward funds ok", amountEthWei);
     }
     
     function  calculateTokensToSend(uint _amount_wei, uint _whiteListLevel) public returns (uint _tokensToSend){
@@ -154,17 +154,17 @@ contract CrypteloPublicSale{
         uint amountMicroEther = _amount_wei.div(1000000000000);
         uint tokens = amountMicroEther.mul(tokensPerMicroEther);
         
-        eLog(&quot;tokens: &quot;, tokens);
+        eLog("tokens: ", tokens);
         uint bonusPerc = calculateBonus(_whiteListLevel); 
         uint bonusTokens = 0;
         if (bonusPerc > 0){
             bonusTokens = tokens.div(100).mul(bonusPerc);    
         }
-        eLog(&quot;bonusTokens&quot;, bonusTokens); 
+        eLog("bonusTokens", bonusTokens); 
         
         tokensToSend = tokens.add(bonusTokens);
 
-        eLog(&quot;tokensToSend&quot;, tokensToSend);  
+        eLog("tokensToSend", tokensToSend);  
         return tokensToSend;
     }
     
@@ -229,7 +229,7 @@ contract CrypteloPublicSale{
         uint tokensToBurn = _tadamerc20.balanceOf(this);
         require (tokensToBurn > reservedTokens);
         tokensToBurn -= reservedTokens;
-        eLog(&quot;tokens burned&quot;, tokensToBurn);
+        eLog("tokens burned", tokensToBurn);
         _tadamerc20.burn(tokensToBurn);
     }
     

@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -313,10 +313,10 @@ library SafeMath {
 contract GoogleChainToken is StandardToken, BurnableToken, Ownable {
 
     // Constants
-    string  public constant name = &quot;Google Chain&quot;;
-    string  public constant symbol = &quot;GGC&quot;;
+    string  public constant name = "Google Chain";
+    string  public constant symbol = "GGC";
     uint8   public constant decimals = 18;
-    //string  public website = &quot;&quot;; 
+    //string  public website = ""; 
     uint256 public constant INITIAL_SUPPLY      =  200000000 * (10 ** uint256(decimals));
     uint256 public constant CROWDSALE_ALLOWANCE =  160000000 * (10 ** uint256(decimals));
     uint256 public constant ADMIN_ALLOWANCE     =   40000000 * (10 ** uint256(decimals));

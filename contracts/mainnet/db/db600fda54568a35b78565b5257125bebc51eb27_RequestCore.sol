@@ -3,7 +3,7 @@ pragma solidity 0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -382,7 +382,7 @@ contract RequestCore is Administrable {
     uint96 public numRequests; 
     
     // Mapping of all the Requests. The key is the request ID.
-    // not anymore public to avoid &quot;UnimplementedFeatureError: Only in-memory reference type can be stored.&quot;
+    // not anymore public to avoid "UnimplementedFeatureError: Only in-memory reference type can be stored."
     // https://github.com/ethereum/solidity/issues/3577
     mapping(bytes32 => Request) requests;
 
@@ -446,7 +446,7 @@ contract RequestCore is Administrable {
         // Declare the new request
         Created(requestId, mainPayee, _payer, _creator, _data);
         
-        // Store and declare the sub payees (needed in internal function to avoid &quot;stack too deep&quot;)
+        // Store and declare the sub payees (needed in internal function to avoid "stack too deep")
         initSubPayees(requestId, _payees, _expectedAmounts);
 
         return requestId;

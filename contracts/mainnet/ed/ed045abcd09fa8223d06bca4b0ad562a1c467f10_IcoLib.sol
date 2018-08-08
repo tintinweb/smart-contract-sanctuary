@@ -64,8 +64,8 @@ contract Token is Owned {
     /* Declarations */
     using SafeMath for uint256;
     /* Variables */
-    string  public name = &quot;Inlock token&quot;;
-    string  public symbol = &quot;ILK&quot;;
+    string  public name = "Inlock token";
+    string  public symbol = "ILK";
     uint8   public decimals = 8;
     uint256 public totalSupply = 44e16;
     address public libAddress;

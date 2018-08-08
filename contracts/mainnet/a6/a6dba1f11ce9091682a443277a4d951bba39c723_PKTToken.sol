@@ -56,9 +56,9 @@ contract ERC20Interface is safeMath {
 
 contract PKTToken is safeMath, ERC20Interface {
   // token setup variables
-  string  public constant standard              = &quot;PKT&quot;;
-  string  public constant name                  = &quot;ethPoker&quot;;
-  string  public constant symbol                = &quot;PKT&quot;;
+  string  public constant standard              = "PKT";
+  string  public constant name                  = "ethPoker";
+  string  public constant symbol                = "PKT";
   uint8   public constant decimals              = 4;                                  // 4 decimals for usability
   uint256 public constant totalSupply           = 100000000000;                       // 10 million + 4 decimals (presale maximum capped) static supply
 

@@ -115,8 +115,8 @@ contract StandardToken is ERC20 {
 contract FCoinToken is StandardToken {
     uint public totalSupply = 100*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;FCoin Token&quot;;
-    string constant public symbol = &quot;FT&quot;;
+    string constant public name = "FCoin Token";
+    string constant public symbol = "FT";
 
     function FCoinToken() public {
         balances[msg.sender] = totalSupply;

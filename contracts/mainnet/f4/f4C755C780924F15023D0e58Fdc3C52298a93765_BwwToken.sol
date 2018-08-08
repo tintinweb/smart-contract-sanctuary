@@ -2,8 +2,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract BwwToken {
     // Public variables of the token
-    string public name = &quot;BotWithWallet&quot;;
-    string public symbol = &quot;BWW&quot;; 
+    string public name = "BotWithWallet";
+    string public symbol = "BWW"; 
     uint256 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 88*10000*10000*10000*10**decimals;

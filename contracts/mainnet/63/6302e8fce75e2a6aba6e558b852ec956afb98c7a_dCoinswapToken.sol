@@ -75,8 +75,8 @@ contract dCoinswapToken is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function dCoinswapToken() public {
-        symbol = &quot;DCS&quot;;
-        name = &quot;dCoinswap Token&quot;;
+        symbol = "DCS";
+        name = "dCoinswap Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x7A75881E6DD21e0915e9753dDC0849DFc313515b] = _totalSupply;

@@ -159,8 +159,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract IGTToken is StandardToken {
-    string public constant name = &quot;IGT Token&quot;;
-    string public constant symbol = &quot;IGTT&quot;;
+    string public constant name = "IGT Token";
+    string public constant symbol = "IGTT";
     uint32 public constant decimals = 18;
     uint256 public INITIAL_SUPPLY = 21000000 * 1 ether;
     address public CrowdsaleAddress;
@@ -202,7 +202,7 @@ contract IGTToken is StandardToken {
      // Override
     function transfer(address _to, uint256 _value) public returns(bool){
         if (msg.sender != CrowdsaleAddress){
-            require(!lockTransfers, &quot;Transfers are prohibited&quot;);
+            require(!lockTransfers, "Transfers are prohibited");
         }
         return super.transfer(_to,_value);
     }
@@ -210,7 +210,7 @@ contract IGTToken is StandardToken {
      // Override
     function transferFrom(address _from, address _to, uint256 _value) public returns(bool){
         if (msg.sender != CrowdsaleAddress){
-            require(!lockTransfers, &quot;Transfers are prohibited&quot;);
+            require(!lockTransfers, "Transfers are prohibited");
         }
         return super.transferFrom(_from,_to,_value);
     }

@@ -238,8 +238,8 @@ contract NMFToken is Ownable, MintableToken {
   //event TokenPreSaleTransfer(address indexed purchaser, address indexed beneficiary, uint256 amount);
   address constant singleOwner = 0x40197DbEAD04862631Bd218a08b19651191e3041;
   // Token details
-  string public constant name = &quot;New Mankind First&quot;;
-  string public constant symbol = &quot;NMF&quot;;
+  string public constant name = "New Mankind First";
+  string public constant symbol = "NMF";
 
   // 18 decimal places, the same as ETH.
   uint8 public constant decimals = 18;

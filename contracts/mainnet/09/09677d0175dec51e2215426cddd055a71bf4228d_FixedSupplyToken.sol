@@ -116,8 +116,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;KCC&quot;;
-        name = &quot;Kyber Community Coupon @ https://kyber.network/swap&quot;;
+        symbol = "KCC";
+        name = "Kyber Community Coupon @ https://kyber.network/swap";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

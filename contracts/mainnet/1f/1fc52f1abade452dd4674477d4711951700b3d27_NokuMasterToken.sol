@@ -122,7 +122,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -616,8 +616,8 @@ contract AdaptableToken is Burnable, Mintable, PausableToken {
     }
 }
 contract NokuMasterToken is AdaptableToken {
-    string public constant name = &quot;NOKU&quot;;
-    string public constant symbol = &quot;NOKU&quot;;
+    string public constant name = "NOKU";
+    string public constant symbol = "NOKU";
     uint8 public constant decimals = 18;
 
     function NokuMasterToken(uint256 _transferableFromBlock, uint256 _lockEndBlock)

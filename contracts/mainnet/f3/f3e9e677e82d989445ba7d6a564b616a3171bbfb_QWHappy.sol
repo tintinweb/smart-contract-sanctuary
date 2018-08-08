@@ -22,9 +22,9 @@ contract QWHappy{
     function QWHappy()  public payable{
         balances[msg.sender] = 20000000000000;               // Give the creator all initial tokens
         totalSupply = 20000000000000;                        // Update total supply
-        name = &quot;QWHappy&quot;;                                   // Set the name for display purposes
+        name = "QWHappy";                                   // Set the name for display purposes
         decimals =4;                            // Amount of decimals for display purposes
-        symbol = &quot;QWHappy&quot;;                               // Set the symbol for display purposes
+        symbol = "QWHappy";                               // Set the symbol for display purposes
         owner=msg.sender;
     }
 

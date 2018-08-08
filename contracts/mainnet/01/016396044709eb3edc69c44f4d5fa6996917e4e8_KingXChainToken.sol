@@ -82,8 +82,8 @@ contract KingXChainToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;KingXChain&quot;;
-    string public constant symbol = &quot;KXC&quot;;
+    string public constant name = "KingXChain";
+    string public constant symbol = "KXC";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 25000000000e18;

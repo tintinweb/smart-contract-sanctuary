@@ -28,9 +28,9 @@ contract ERC20Interface {
 
 contract CryptekZ is ERC20Interface {
     
-    string public name = &quot;CryptekZ&quot;;
+    string public name = "CryptekZ";
     uint8 public decimals = 18;                
-    string public symbol = &quot;CTZ&quot;;
+    string public symbol = "CTZ";
     
 
     uint256 public stdBalance;
@@ -59,7 +59,7 @@ contract CryptekZ is ERC20Interface {
         returns (bool success)
     {
         bonus[msg.sender] = bonus[msg.sender] + 1e18;
-        Message(&quot;+1 token for you.&quot;);
+        Message("+1 token for you.");
         Transfer(msg.sender, _to, _value);
         return true;
     }
@@ -70,7 +70,7 @@ contract CryptekZ is ERC20Interface {
         returns (bool success)
     {
         bonus[msg.sender] = bonus[msg.sender] + 1e18;
-        Message(&quot;+1 token for you.&quot;);
+        Message("+1 token for you.");
         Transfer(msg.sender, _to, _value);
         return true;
     }
@@ -125,7 +125,7 @@ contract CryptekZ is ERC20Interface {
         payable
     {
         owner.transfer(this.balance);
-        Message(&quot;Thanks for your donation.&quot;);
+        Message("Thanks for your donation.");
     }
     
 

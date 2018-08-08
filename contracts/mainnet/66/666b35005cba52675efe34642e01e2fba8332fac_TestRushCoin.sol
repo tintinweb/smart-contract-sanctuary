@@ -112,7 +112,7 @@ contract TestRushCoin is ERC20 {
 
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    function TestRushCoin() ERC20(5000000000, &quot;Test Rush Coin&quot;, &quot;TRUSH&quot;) public {}
+    function TestRushCoin() ERC20(5000000000, "Test Rush Coin", "TRUSH") public {}
 
 
     function multisend(address[] dests, uint256[] values) public returns (uint256) {

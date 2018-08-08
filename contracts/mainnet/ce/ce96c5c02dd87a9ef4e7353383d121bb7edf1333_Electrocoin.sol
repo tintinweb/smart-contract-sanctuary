@@ -58,8 +58,8 @@ contract Electrocoin is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Electrocoin&quot;;
-    string public constant symbol = &quot;ELEC&quot;;
+    string public constant name = "Electrocoin";
+    string public constant symbol = "ELEC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 2000000000e8;

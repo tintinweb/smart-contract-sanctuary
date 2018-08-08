@@ -327,9 +327,9 @@ contract MintableToken is StandardToken, Ownable {
  */
 contract EngagementToken is BurnableToken, MintableToken, HasNoEther {
 
-    string public constant name = &quot;EngagementToken&quot;;
+    string public constant name = "EngagementToken";
 
-    string public constant symbol = &quot;EGT&quot;;
+    string public constant symbol = "EGT";
 
     uint8 public constant decimals = 18;
 

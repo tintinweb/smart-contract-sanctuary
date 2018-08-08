@@ -295,8 +295,8 @@ contract PausableToken is StandardToken, Pausable, Burnable {
 }
 
 contract InsightChainToken is PausableToken {
-    string public name = &quot;InsightChain&quot;;
-    string public symbol = &quot;INB&quot;;
+    string public name = "InsightChain";
+    string public symbol = "INB";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 10000000000000000000000000000;
 

@@ -113,8 +113,8 @@ contract TrendNetworkToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TrendNetworkToken() public {
-        symbol = &quot;TRD&quot;;
-        name = &quot;Trend Network&quot;;
+        symbol = "TRD";
+        name = "Trend Network";
         decimals = 0;
         _totalSupply = 500000000;
         balances[0xa6C755F45104aedD0Ec947759F11c999d77F222b] = _totalSupply;

@@ -40,7 +40,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -665,8 +665,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract YoloToken is CappedToken, PausableToken, ERC223 {
 
-  string public constant name     = &quot;Yolo&quot;;
-  string public constant symbol   = &quot;YOLO&quot;;
+  string public constant name     = "Yolo";
+  string public constant symbol   = "YOLO";
   uint   public constant decimals = 18;
 
   function YoloToken(uint256 _totalSupply) CappedToken(_totalSupply) {

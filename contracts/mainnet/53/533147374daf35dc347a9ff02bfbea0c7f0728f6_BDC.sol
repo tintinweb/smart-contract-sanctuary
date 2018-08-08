@@ -183,8 +183,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract BDC is StandardToken {
-    string public name = &quot;Beyond Diamond Cryptocurrency&quot;;
-    string public symbol = &quot;BDC&quot;;
+    string public name = "Beyond Diamond Cryptocurrency";
+    string public symbol = "BDC";
     uint8 public decimals = 18;
     uint public INITIAL_SUPPLY = 10000000000 * (10**18);
 

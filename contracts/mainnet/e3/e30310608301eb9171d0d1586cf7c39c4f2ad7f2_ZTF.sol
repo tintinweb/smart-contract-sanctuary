@@ -110,8 +110,8 @@ contract ZTF is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZTF() public {
-        symbol = &quot;2TF&quot;;
-        name = &quot;2Transfair&quot;;
+        symbol = "2TF";
+        name = "2Transfair";
         decimals = 18;
         _totalSupply = 300000000000000000000000000;
         balances[msg.sender] = _totalSupply;

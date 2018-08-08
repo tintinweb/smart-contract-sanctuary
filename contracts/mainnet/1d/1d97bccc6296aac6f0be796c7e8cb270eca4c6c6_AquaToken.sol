@@ -98,7 +98,7 @@ See MIT Licence for further details.
 // LibCLL using `uint` keys
 library LibCLLu {
 
-    string constant public VERSION = &quot;LibCLLu 0.4.0&quot;;
+    string constant public VERSION = "LibCLLu 0.4.0";
     uint constant NULL = 0;
     uint constant HEAD = 0;
     bool constant PREV = false;
@@ -193,7 +193,7 @@ library LibCLLu {
 // LibCLL using `int` keys
 library LibCLLi {
 
-    string constant public VERSION = &quot;LibCLLi 0.4.0&quot;;
+    string constant public VERSION = "LibCLLi 0.4.0";
     int constant NULL = 0;
     int constant HEAD = 0;
     bool constant PREV = false;
@@ -284,7 +284,7 @@ library LibCLLi {
 // LibCLL using `address` keys
 library LibCLLa {
 
-    string constant public VERSION = &quot;LibCLLa 0.4.0&quot;;
+    string constant public VERSION = "LibCLLa 0.4.0";
     address constant NULL = 0;
     address constant HEAD = 0;
     bool constant PREV = false;
@@ -562,7 +562,7 @@ contract AquaToken is Owned, Token {
 
     /// Send _value amount of tokens from address _from to address _to
     /// The transferFrom method is used for a withdraw workflow, allowing contracts to send
-    /// tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    /// tokens on your behalf, for example to "deposit" to a contract address and/or to charge
     /// fees in sub-currencies; the command should fail unless the _from account has
     /// deliberately authorized the sender of the message via some mechanism; 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {

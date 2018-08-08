@@ -199,7 +199,7 @@ contract blackjack is casino {
     require(id == game.seedHash);
     require(!over[id]);
     over[id] = true;
-    assert(msg.sender.call(bytes4(keccak256(&quot;shift(address,uint256)&quot;)), game.player, game.bet / 2));
+    assert(msg.sender.call(bytes4(keccak256("shift(address,uint256)")), game.player, game.bet / 2));
     Result(id, game.player, game.bet / 2);
   }
 
@@ -217,7 +217,7 @@ contract blackjack is casino {
     assert(splits[gameId].length == numCards.length - 1);
     over[gameId] = true;
     uint win = determineOutcome(gameId, deck, numCards);
-    if (win > 0) assert(msg.sender.call(bytes4(keccak256(&quot;shift(address,uint256)&quot;)), game.player, win));
+    if (win > 0) assert(msg.sender.call(bytes4(keccak256("shift(address,uint256)")), game.player, win));
     Result(gameId, game.player, win);
   }
 

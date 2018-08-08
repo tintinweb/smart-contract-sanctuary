@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -368,8 +368,8 @@ contract PausableToken is StandardToken, Pausable {
 contract CCRToken is MintableToken, PausableToken {
     using SafeMath for uint256;
 
-    string public constant name = &quot;CryptoCashbackRebate Token&quot;;
-    string public constant symbol = &quot;CCR&quot;;
+    string public constant name = "CryptoCashbackRebate Token";
+    string public constant symbol = "CCR";
     uint32 public constant decimals = 18;
 }
 

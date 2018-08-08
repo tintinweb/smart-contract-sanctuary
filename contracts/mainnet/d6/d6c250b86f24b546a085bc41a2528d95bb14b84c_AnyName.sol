@@ -140,7 +140,7 @@ contract StandardToken is ERC20, BasicToken {
  
 /*
 The Ownable contract has an owner address, and provides basic authorization control
- functions, this simplifies the implementation of &quot;user permissions&quot;.
+ functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -200,8 +200,8 @@ contract TheLiquidToken is StandardToken, Ownable {
 }
     
 contract AnyName is TheLiquidToken {
-  string public constant name = &quot;FANACRYPT&quot;;
-      string public constant symbol = &quot;XFC&quot;;
+  string public constant name = "FANACRYPT";
+      string public constant symbol = "XFC";
   uint public constant decimals = 3;
   uint256 public initialSupply = 15000000000;
     

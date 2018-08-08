@@ -9,8 +9,8 @@ contract CyberyTokenSale {
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowed;
     
-    function name() constant returns (string) { return &quot;Cybery Token&quot;; }
-    function symbol() constant returns (string) { return &quot;CYB&quot;; }
+    function name() constant returns (string) { return "Cybery Token"; }
+    function symbol() constant returns (string) { return "CYB"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { 

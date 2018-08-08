@@ -283,17 +283,17 @@ contract MultiSigWallet {
     }
 
     function setFinishedTx() public ownerExists(msg.sender) returns(uint transactionId) {
-        transactionId = addTransaction(token, 0, hex&quot;64f65cc0&quot;);
+        transactionId = addTransaction(token, 0, hex"64f65cc0");
         confirmTransaction(transactionId);
     }
 
     function setLiveTx() public ownerExists(msg.sender) returns(uint transactionId) {
-        transactionId = addTransaction(token, 0, hex&quot;9d0714b2&quot;);
+        transactionId = addTransaction(token, 0, hex"9d0714b2");
         confirmTransaction(transactionId);
     }
 
     function setFreezeTx() public ownerExists(msg.sender) returns(uint transactionId) {
-        transactionId = addTransaction(token, 0, hex&quot;2c8cbe40&quot;);
+        transactionId = addTransaction(token, 0, hex"2c8cbe40");
         confirmTransaction(transactionId);
     }
 

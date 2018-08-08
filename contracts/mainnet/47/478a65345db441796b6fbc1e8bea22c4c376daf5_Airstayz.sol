@@ -180,9 +180,9 @@ contract StandardToken is BasicToken {
 }
 
 contract Airstayz is StandardToken {
-	string public constant name = &quot;AIRSTAYZSAFT&quot;;
+	string public constant name = "AIRSTAYZSAFT";
 	uint public constant decimals = 18;
-	string public constant symbol = &quot;STAYUS&quot;;
+	string public constant symbol = "STAYUS";
 
 	function Airstayz() public {
 		totalSupply = 93000000 *(10**decimals);

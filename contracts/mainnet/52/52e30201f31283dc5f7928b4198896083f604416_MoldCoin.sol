@@ -128,8 +128,8 @@ contract StandardToken is Token {
  */
 contract MoldCoin is StandardToken, SafeMath {
 
-    string public name = &quot;MOLD&quot;;
-    string public symbol = &quot;MLD&quot;;
+    string public name = "MOLD";
+    string public symbol = "MLD";
     uint public decimals = 18;
 
     uint public startDatetime; //pre-sell start datetime seconds

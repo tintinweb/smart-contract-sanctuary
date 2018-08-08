@@ -242,8 +242,8 @@ contract Base is AccessControl {
 
 contract Ownership is Base, token, owned {
 
-    string public constant name = &quot;CryptoClown&quot;;
-    string public constant symbol = &quot;CC&quot;;
+    string public constant name = "CryptoClown";
+    string public constant symbol = "CC";
 
     uint public promoTypeNum;
 

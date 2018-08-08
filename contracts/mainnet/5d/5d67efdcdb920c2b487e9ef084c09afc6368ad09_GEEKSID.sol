@@ -56,8 +56,8 @@ contract GEEKSID is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;
 
-    string public constant name = &quot;GEEKS ID&quot;;
-    string public constant symbol = &quot;GEEKS&quot;;
+    string public constant name = "GEEKS ID";
+    string public constant symbol = "GEEKS";
     uint public constant decimals = 0;
     
     uint256 public totalSupply = 1010;

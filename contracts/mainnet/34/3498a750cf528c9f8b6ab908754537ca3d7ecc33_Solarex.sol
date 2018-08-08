@@ -216,8 +216,8 @@ contract Solarex is StandardToken{
         decimals = 6;                            // Amount of decimals for display purposes
         _totalSupply = fulltoken.mul(10 ** uint256(decimals)); // Update total supply (100000 for example)
         balances[msg.sender] = _totalSupply;               // Give the creator all initial tokens (100000 for example)
-        name = &quot;Solarex&quot;;                                   // Set the name for display purposes
-        symbol = &quot;SRX&quot;;                               // Set the symbol for display purposes
+        name = "Solarex";                                   // Set the name for display purposes
+        symbol = "SRX";                               // Set the symbol for display purposes
     }
      function() public {
          //not payable fallback function

@@ -113,8 +113,8 @@ contract TAJ is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TAJ() public {
-        symbol = &quot;TAJ&quot;;
-        name = &quot;TAJ&quot;;
+        symbol = "TAJ";
+        name = "TAJ";
         decimals = 0;
         _totalSupply = 36900000;
         balances[0xc0fD6943086051769642563af6c002dB37a9Db23] = _totalSupply;

@@ -49,55 +49,55 @@ contract DigixConstants {
   uint256 constant STATE_ADMIN_FAILURE = 11;
 
   /// interactive contracts
-  bytes32 constant CONTRACT_INTERACTIVE_ASSETS_EXPLORER = &quot;i:asset:explorer&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_DIGIX_DIRECTORY = &quot;i:directory&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE = &quot;i:mp&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_ADMIN = &quot;i:mpadmin&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_POPADMIN = &quot;i:popadmin&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_PRODUCTS_LIST = &quot;i:products&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_TOKEN = &quot;i:token&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_BULK_WRAPPER = &quot;i:bulk-wrapper&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_CONFIG = &quot;i:token:config&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_INFORMATION = &quot;i:token:information&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_INFORMATION = &quot;i:mp:information&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_IDENTITY = &quot;i:identity&quot;;
+  bytes32 constant CONTRACT_INTERACTIVE_ASSETS_EXPLORER = "i:asset:explorer";
+  bytes32 constant CONTRACT_INTERACTIVE_DIGIX_DIRECTORY = "i:directory";
+  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE = "i:mp";
+  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_ADMIN = "i:mpadmin";
+  bytes32 constant CONTRACT_INTERACTIVE_POPADMIN = "i:popadmin";
+  bytes32 constant CONTRACT_INTERACTIVE_PRODUCTS_LIST = "i:products";
+  bytes32 constant CONTRACT_INTERACTIVE_TOKEN = "i:token";
+  bytes32 constant CONTRACT_INTERACTIVE_BULK_WRAPPER = "i:bulk-wrapper";
+  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_CONFIG = "i:token:config";
+  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_INFORMATION = "i:token:information";
+  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_INFORMATION = "i:mp:information";
+  bytes32 constant CONTRACT_INTERACTIVE_IDENTITY = "i:identity";
 
   /// controller contracts
-  bytes32 constant CONTRACT_CONTROLLER_ASSETS = &quot;c:asset&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_ASSETS_RECAST = &quot;c:asset:recast&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_ASSETS_EXPLORER = &quot;c:explorer&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_DIGIX_DIRECTORY = &quot;c:directory&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE = &quot;c:mp&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE_ADMIN = &quot;c:mpadmin&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_PRODUCTS_LIST = &quot;c:products&quot;;
+  bytes32 constant CONTRACT_CONTROLLER_ASSETS = "c:asset";
+  bytes32 constant CONTRACT_CONTROLLER_ASSETS_RECAST = "c:asset:recast";
+  bytes32 constant CONTRACT_CONTROLLER_ASSETS_EXPLORER = "c:explorer";
+  bytes32 constant CONTRACT_CONTROLLER_DIGIX_DIRECTORY = "c:directory";
+  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE = "c:mp";
+  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE_ADMIN = "c:mpadmin";
+  bytes32 constant CONTRACT_CONTROLLER_PRODUCTS_LIST = "c:products";
 
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_APPROVAL = &quot;c:token:approval&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_CONFIG = &quot;c:token:config&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_INFO = &quot;c:token:info&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_TRANSFER = &quot;c:token:transfer&quot;;
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_APPROVAL = "c:token:approval";
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_CONFIG = "c:token:config";
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_INFO = "c:token:info";
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_TRANSFER = "c:token:transfer";
 
-  bytes32 constant CONTRACT_CONTROLLER_JOB_ID = &quot;c:jobid&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_IDENTITY = &quot;c:identity&quot;;
+  bytes32 constant CONTRACT_CONTROLLER_JOB_ID = "c:jobid";
+  bytes32 constant CONTRACT_CONTROLLER_IDENTITY = "c:identity";
 
   /// storage contracts
-  bytes32 constant CONTRACT_STORAGE_ASSETS = &quot;s:asset&quot;;
-  bytes32 constant CONTRACT_STORAGE_ASSET_EVENTS = &quot;s:asset:events&quot;;
-  bytes32 constant CONTRACT_STORAGE_DIGIX_DIRECTORY = &quot;s:directory&quot;;
-  bytes32 constant CONTRACT_STORAGE_MARKETPLACE = &quot;s:mp&quot;;
-  bytes32 constant CONTRACT_STORAGE_PRODUCTS_LIST = &quot;s:products&quot;;
-  bytes32 constant CONTRACT_STORAGE_GOLD_TOKEN = &quot;s:goldtoken&quot;;
-  bytes32 constant CONTRACT_STORAGE_JOB_ID = &quot;s:jobid&quot;;
-  bytes32 constant CONTRACT_STORAGE_IDENTITY = &quot;s:identity&quot;;
+  bytes32 constant CONTRACT_STORAGE_ASSETS = "s:asset";
+  bytes32 constant CONTRACT_STORAGE_ASSET_EVENTS = "s:asset:events";
+  bytes32 constant CONTRACT_STORAGE_DIGIX_DIRECTORY = "s:directory";
+  bytes32 constant CONTRACT_STORAGE_MARKETPLACE = "s:mp";
+  bytes32 constant CONTRACT_STORAGE_PRODUCTS_LIST = "s:products";
+  bytes32 constant CONTRACT_STORAGE_GOLD_TOKEN = "s:goldtoken";
+  bytes32 constant CONTRACT_STORAGE_JOB_ID = "s:jobid";
+  bytes32 constant CONTRACT_STORAGE_IDENTITY = "s:identity";
 
   /// service contracts
-  bytes32 constant CONTRACT_SERVICE_TOKEN_DEMURRAGE = &quot;sv:tdemurrage&quot;;
-  bytes32 constant CONTRACT_SERVICE_MARKETPLACE = &quot;sv:mp&quot;;
-  bytes32 constant CONTRACT_SERVICE_DIRECTORY = &quot;sv:directory&quot;;
+  bytes32 constant CONTRACT_SERVICE_TOKEN_DEMURRAGE = "sv:tdemurrage";
+  bytes32 constant CONTRACT_SERVICE_MARKETPLACE = "sv:mp";
+  bytes32 constant CONTRACT_SERVICE_DIRECTORY = "sv:directory";
 
   /// fees distributors
-  bytes32 constant CONTRACT_DEMURRAGE_FEES_DISTRIBUTOR = &quot;fees:distributor:demurrage&quot;;
-  bytes32 constant CONTRACT_RECAST_FEES_DISTRIBUTOR = &quot;fees:distributor:recast&quot;;
-  bytes32 constant CONTRACT_TRANSFER_FEES_DISTRIBUTOR = &quot;fees:distributor:transfer&quot;;
+  bytes32 constant CONTRACT_DEMURRAGE_FEES_DISTRIBUTOR = "fees:distributor:demurrage";
+  bytes32 constant CONTRACT_RECAST_FEES_DISTRIBUTOR = "fees:distributor:recast";
+  bytes32 constant CONTRACT_TRANSFER_FEES_DISTRIBUTOR = "fees:distributor:transfer";
 }
 
 contract ContractResolver {
@@ -254,10 +254,10 @@ contract TokenInformation is ResolverClient, DigixConstants {
 
   /// @dev read the demurrage configurations
   /// @return {
-  ///   &quot;_base&quot;: &quot;denominator for calculating demurrage fees&quot;,
-  ///   &quot;_rate&quot;: &quot;numerator for calculating demurrage fees&quot;,
-  ///   &quot;_collector&quot;: &quot;ethereum address of the demurrage fees collector&quot;
-  ///   &quot;_no_demurrage_fee&quot;: &quot;true if demurrage fees is turned off globally&quot;
+  ///   "_base": "denominator for calculating demurrage fees",
+  ///   "_rate": "numerator for calculating demurrage fees",
+  ///   "_collector": "ethereum address of the demurrage fees collector"
+  ///   "_no_demurrage_fee": "true if demurrage fees is turned off globally"
   /// }
   function showDemurrageConfigs()
            public
@@ -269,9 +269,9 @@ contract TokenInformation is ResolverClient, DigixConstants {
 
   /// @dev read the recast configurations
   /// @return {
-  ///   &quot;_base&quot;: &quot;denominator for calculating recast fees&quot;,
-  ///   &quot;_rate&quot;: &quot;numerator for calculating recast fees&quot;,
-  ///   &quot;_collector&quot;: &quot;ethereum address of the recast fees collector&quot;
+  ///   "_base": "denominator for calculating recast fees",
+  ///   "_rate": "numerator for calculating recast fees",
+  ///   "_collector": "ethereum address of the recast fees collector"
   /// }
   function showRecastConfigs()
            public
@@ -283,11 +283,11 @@ contract TokenInformation is ResolverClient, DigixConstants {
 
   /// @dev read transfer configurations
   /// @return {
-  ///   &quot;_base&quot;: &quot;denominator for calculating transfer fees&quot;,
-  ///   &quot;_rate&quot;: &quot;numerator for calculating transfer fees&quot;,
-  ///   &quot;_collector&quot;: &quot;the ethereum address of the transfer fees collector&quot;,
-  ///   &quot;_no_transfer_fee&quot;: &quot;true if transfer fees is turned off globally&quot;,
-  ///   &quot;_minimum_transfer_amount&quot;: &quot;minimum amount of DGX that can be transferred&quot;
+  ///   "_base": "denominator for calculating transfer fees",
+  ///   "_rate": "numerator for calculating transfer fees",
+  ///   "_collector": "the ethereum address of the transfer fees collector",
+  ///   "_no_transfer_fee": "true if transfer fees is turned off globally",
+  ///   "_minimum_transfer_amount": "minimum amount of DGX that can be transferred"
   /// }
   function showTransferConfigs()
            public

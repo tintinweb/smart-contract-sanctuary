@@ -184,10 +184,10 @@ contract StandardToken is ERC20, SafeMath {
 }
 
 contract WeiToken is StandardToken, Pausable {
-  string public constant name = &quot;WeiToken&quot;;
-  string public constant symbol = &quot;YOUNG&quot;;
+  string public constant name = "WeiToken";
+  string public constant symbol = "YOUNG";
   uint256 public constant decimals = 18;
-  string public version = &quot;1.0&quot;;
+  string public version = "1.0";
 
   uint256 public constant total = 65 * (10**8) * 10**decimals;   // 20 *10^8 HNC total
 

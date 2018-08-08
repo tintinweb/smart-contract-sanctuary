@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public ownerAddress;
@@ -418,7 +418,7 @@ contract Solethium is Ownable, ERC721 {
     /**
     ** @dev this method is used to modify parentID if needed later;
     **      For this game it is very important to keep intended hierarchy; you never know WHEN exactly transaction will be confirmed in the blockchain
-    **      Every Object creation is transaction; if by some accident Objects get &quot;wrong&quot; ID in the crySolObjects array, this is the method where we can adjust parentId
+    **      Every Object creation is transaction; if by some accident Objects get "wrong" ID in the crySolObjects array, this is the method where we can adjust parentId
     **      for objects orbiting it (we don&#39;t want for Moon to end up orbiting Mars :) )
     **/
     function setParentID (uint _crySolObjectID, uint16 _parentID) external onlyOwner() {
@@ -437,11 +437,11 @@ contract Solethium is Ownable, ERC721 {
     event Approval(address indexed _owner, address indexed _approved, uint256 _id);
 
     function name() public pure returns (string _name) {
-        return &quot;Solethium&quot;;
+        return "Solethium";
     }
 
     function symbol() public pure returns (string _symbol) {
-        return &quot;SOL&quot;;
+        return "SOL";
     }
 
     function totalSupply() public view returns (uint256 _totalSupply) {

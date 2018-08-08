@@ -227,8 +227,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract HODLIT is StandardToken, Ownable {
   using SafeMath for uint256;
-  string public name = &quot;HODL INCENTIVE TOKEN&quot;;
-  string public symbol = &quot;HIT&quot;;
+  string public name = "HODL INCENTIVE TOKEN";
+  string public symbol = "HIT";
   uint256 public decimals = 18;
   uint256 public multiplicator = 10 ** decimals;
   uint256 public totalSupply;
@@ -528,7 +528,7 @@ contract Airdrop is Ownable {
 
 
   function prophetize(string _id, string _userAddress, string _claimAmount, bytes32 _hash, bytes _sig) internal view returns(bool){
-    require(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, _id,&#39;&&#39;,_userAddress,&#39;&&#39;, _claimAmount) == _hash);
+    require(keccak256("\x19Ethereum Signed Message:\n32", _id,&#39;&&#39;,_userAddress,&#39;&&#39;, _claimAmount) == _hash);
     require(ecrecovery(_hash, _sig) == propheth);
     return true;
   }

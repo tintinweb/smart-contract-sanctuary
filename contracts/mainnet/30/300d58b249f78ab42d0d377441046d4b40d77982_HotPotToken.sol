@@ -121,8 +121,8 @@ contract Ownable {
 }
 
 contract HotPotToken is Ownable, StandardToken {
-    string public name    = &quot;HotPotChain&quot;;
-    string public symbol  = &quot;HPC&quot;;
+    string public name    = "HotPotChain";
+    string public symbol  = "HPC";
     uint8 public decimals = 3;
 
     // 21 million in initial supply

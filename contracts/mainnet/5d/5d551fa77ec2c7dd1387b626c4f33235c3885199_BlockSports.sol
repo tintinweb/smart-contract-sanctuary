@@ -237,8 +237,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract BlockSports is PausableToken {
     
-    string public name = &quot;BlockSports&quot;;
-    string public symbol = &quot;BSP&quot;;
+    string public name = "BlockSports";
+    string public symbol = "BSP";
     uint8 public decimals = 18;
     
     constructor () public {

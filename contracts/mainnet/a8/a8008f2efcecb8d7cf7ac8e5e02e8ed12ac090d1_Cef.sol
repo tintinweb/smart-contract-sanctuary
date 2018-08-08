@@ -16,9 +16,9 @@ contract Cef {
     function Cef() {
 
          initialSupply = 50000000;
-         name =&quot;cefcoin&quot;;
+         name ="cefcoin";
         decimals = 2;
-         symbol = &quot;Cef&quot;;
+         symbol = "Cef";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

@@ -30,8 +30,8 @@ contract COSHATokenSGD {
         totalSupply = initialSupply * 5 * 10 ** (9 + uint256(decimals));  // Update total supply with the decimal amount
         initialSupply = totalSupply;
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;COSHATokenSGD&quot;;                                   // Set the name for display purposes
-        symbol = &quot;C-SGD&quot;;                               // Set the symbol for display purposes
+        name = "COSHATokenSGD";                                   // Set the name for display purposes
+        symbol = "C-SGD";                               // Set the symbol for display purposes
         tokenName = name;
         tokenSymbol = symbol;
         

@@ -22,8 +22,8 @@ contract TravelWithMeToken{
     function TravelWithMeToken() public{
         balanceOf[msg.sender] = 1000000000 * (10**18); // Give the creator all initial tokens
         totalSupply = 1000000000 * (10**18);          // Update total supply
-        name = &quot;Travel With Me Chain&quot;;            // Set the name for display purposes
-        symbol = &quot;TWMC&quot;;                               // Set the symbol for display purposes
+        name = "Travel With Me Chain";            // Set the name for display purposes
+        symbol = "TWMC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

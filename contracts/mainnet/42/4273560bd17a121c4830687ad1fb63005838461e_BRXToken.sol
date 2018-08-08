@@ -194,7 +194,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -236,8 +236,8 @@ contract BRXToken is StandardToken, Ownable {
   using SafeMath for uint;
 
   //---------------  Info for ERC20 explorers  -----------------//
-  string public constant name = &quot;BRX Coin&quot;;
-  string public constant symbol = &quot;BRX&quot;;
+  string public constant name = "BRX Coin";
+  string public constant symbol = "BRX";
   uint8 public constant decimals = 18;
 
   //----------------------  Constants  -------------------------//

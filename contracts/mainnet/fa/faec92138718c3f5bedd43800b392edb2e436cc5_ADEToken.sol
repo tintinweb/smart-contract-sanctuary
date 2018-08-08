@@ -181,8 +181,8 @@ contract ADEToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ADEToken(uint _sellRate,uint _buyRate) public payable {
-        symbol = &quot;ADE&quot;;
-        name = &quot;AdeCoin&quot;;
+        symbol = "ADE";
+        name = "AdeCoin";
         decimals = 8;
         totalSupply = 2000000000 * 10**uint(decimals);
         balances[owner] = totalSupply;

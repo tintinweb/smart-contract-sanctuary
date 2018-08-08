@@ -167,8 +167,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract Blocform is StandardToken, Ownable {
-    string  public  constant name = &quot;Blocform Global&quot;;
-    string  public  constant symbol = &quot;BFG&quot;;
+    string  public  constant name = "Blocform Global";
+    string  public  constant symbol = "BFG";
     uint    public  constant decimals = 8;
 
 

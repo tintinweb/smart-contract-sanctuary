@@ -50,8 +50,8 @@ contract LTKN is ERC20 {
   uint256 totalSupply_;
   mapping (address => mapping (address => uint256)) internal allowed;
 
-  string public constant name = &quot;LATINOKEN&quot;;
-  string public constant symbol = &quot;LTKN&quot;;
+  string public constant name = "LATINOKEN";
+  string public constant symbol = "LTKN";
   uint8 public constant decimals = 4;
 
   uint256 public constant INITIAL_SUPPLY = 700000000 * (10 ** uint256(decimals));

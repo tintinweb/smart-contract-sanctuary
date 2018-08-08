@@ -70,7 +70,7 @@ library SafeMath {
 
  * @dev The Ownable contract has an owner address, and provides basic authorization control
 
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
 
  */
 
@@ -478,9 +478,9 @@ contract Minaxis  is StandardToken, Ownable {
 
 
 
-    string public constant name = &quot;Minaxis&quot;;
+    string public constant name = "Minaxis";
 
-    string public constant symbol = &quot;MIN&quot;;
+    string public constant symbol = "MIN";
 
     uint public constant decimals = 18;
 

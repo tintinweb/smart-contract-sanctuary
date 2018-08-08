@@ -9,8 +9,8 @@ contract PercentToken {
 
     uint private constant MAX_UINT = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
 
-    string public constant name = &quot;Percent Token&quot;;
-    string public constant symbol = &quot;%&quot;;
+    string public constant name = "Percent Token";
+    string public constant symbol = "%";
     uint public constant decimals = 1;
     uint public constant totalSupply = 10000681;
 

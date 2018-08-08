@@ -189,8 +189,8 @@ contract StandardToken is ERC20, BasicToken {
 // Simple Token Contract
 contract BloxrouteToken is StandardToken {
     // Public variables
-    string constant public name = &quot;bloXroute Token&quot;; 
-    string constant public symbol = &quot;BLXR&quot;;
+    string constant public name = "bloXroute Token"; 
+    string constant public symbol = "BLXR";
     uint constant public decimals = 18;
     
     // Constants for creating 10 million tokens

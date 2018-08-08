@@ -222,8 +222,8 @@ contract ERC721YC is YouCollectBase {
   // ERC721
 
     /*** STORAGE ***/
-    string public constant NAME = &quot;YouCollectTokens&quot;;
-    string public constant SYMBOL = &quot;YCT&quot;;
+    string public constant NAME = "YouCollectTokens";
+    string public constant SYMBOL = "YCT";
     uint256[] public tokens;
 
     /// @dev A mapping from collectible IDs to the address that owns them. All collectibles have

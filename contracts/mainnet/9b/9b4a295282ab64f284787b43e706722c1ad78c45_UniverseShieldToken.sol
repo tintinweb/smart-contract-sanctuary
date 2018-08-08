@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract UniverseShieldToken {
 
-    string public name = &quot;Universe Shield Token&quot;;      //  token name
-    string public symbol = &quot;UST&quot;;           //  token symbol
+    string public name = "Universe Shield Token";      //  token name
+    string public symbol = "UST";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

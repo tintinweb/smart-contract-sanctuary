@@ -99,8 +99,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function FixedSupplyToken() public {
-        symbol = &quot;BEER&quot;;
-        name = &quot;Beer chain&quot;;
+        symbol = "BEER";
+        name = "Beer chain";
         decimals = 18;
         _totalSupply = 2100000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

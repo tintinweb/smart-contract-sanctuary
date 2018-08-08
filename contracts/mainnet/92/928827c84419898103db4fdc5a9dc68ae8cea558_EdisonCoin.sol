@@ -203,8 +203,8 @@ contract StandardToken is ERC20, BasicToken {
 
 */
 contract EdisonCoin is StandardToken {
-  string public name = &quot;EdisonCoin&quot;;
-  string public symbol = &quot;EDIC&quot;;
+  string public name = "EdisonCoin";
+  string public symbol = "EDIC";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 500000000 * (10 ** uint256(decimals));
 

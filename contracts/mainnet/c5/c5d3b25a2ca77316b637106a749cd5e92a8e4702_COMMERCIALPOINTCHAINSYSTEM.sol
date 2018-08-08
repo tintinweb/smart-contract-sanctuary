@@ -113,8 +113,8 @@ contract COMMERCIALPOINTCHAINSYSTEM is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function COMMERCIALPOINTCHAINSYSTEM() public {
-        symbol = &quot;CPCS&quot;;
-        name = &quot;COMMERCIAL POINT CHAIN SYSTEM&quot;;
+        symbol = "CPCS";
+        name = "COMMERCIAL POINT CHAIN SYSTEM";
         decimals = 0;
         _totalSupply = 1000000000;
         balances[0x0e51B1C46Da00b89760C530a1f468435DAA1Ff64] = _totalSupply;

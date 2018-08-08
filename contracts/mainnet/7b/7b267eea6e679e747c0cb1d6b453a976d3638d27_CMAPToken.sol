@@ -111,8 +111,8 @@ contract CMAPToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CMAPToken() public {
-        symbol = &quot;CMAP&quot;;
-        name = &quot;CMAP Token&quot;;
+        symbol = "CMAP";
+        name = "CMAP Token";
         decimals = 18;
         _totalSupply = 136000000000000000000000000;
         balances[0x2d23135F74d5cbbD3105c5dE6E782e73A62f2F18] = _totalSupply;

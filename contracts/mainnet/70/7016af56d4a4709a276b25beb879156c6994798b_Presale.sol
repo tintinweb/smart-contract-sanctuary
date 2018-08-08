@@ -98,7 +98,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -162,8 +162,8 @@ contract Contactable is Ownable{
 contract PlayHallToken is ERC223, Contactable {
     using SafeMath for uint;
 
-    string constant public name = &quot;PlayHall Token&quot;;
-    string constant public symbol = &quot;PHT&quot;;
+    string constant public name = "PlayHall Token";
+    string constant public symbol = "PHT";
     uint constant public decimals = 18;
 
     bool public isActivated = false;

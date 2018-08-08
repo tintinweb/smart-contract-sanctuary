@@ -130,8 +130,8 @@ contract StandardToken is ERC20 {
 }
 
 contract PPCToken is StandardToken {
-    string public constant name = &quot;PurpleChain&quot;;
-    string public constant symbol = &quot;PPC&quot;;
+    string public constant name = "PurpleChain";
+    string public constant symbol = "PPC";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 20000000000 * (10 ** uint256(decimals));
     // market Address 

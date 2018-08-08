@@ -95,8 +95,8 @@ contract POPCHAINCASH is ERC20, Ownable {
     mapping(address => uint256) internal _lockupExpireTime;
 
     function POPCHAINCASH() public {
-        name = &quot;POPCHAIN CASH&quot;;
-        symbol = &quot;PCH&quot;;
+        name = "POPCHAIN CASH";
+        symbol = "PCH";
         decimals = 18;
 
 

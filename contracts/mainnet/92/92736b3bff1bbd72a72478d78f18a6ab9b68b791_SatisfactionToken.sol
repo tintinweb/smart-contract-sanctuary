@@ -283,9 +283,9 @@ contract SatisfactionToken is ERC20, CheckpointStorage, NoOwner {
 
   using SafeMath for uint256;
 
-  string public name = &quot;Satisfaction Token&quot;;
+  string public name = "Satisfaction Token";
   uint8 public decimals = 18;
-  string public symbol = &quot;SAT&quot;;
+  string public symbol = "SAT";
   string public version;
 
   /**

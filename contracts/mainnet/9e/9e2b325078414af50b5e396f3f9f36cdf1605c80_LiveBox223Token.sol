@@ -139,9 +139,9 @@ contract LiveBox223Token is ERC20, ERC223, Standard223Receiver, SafeMath {
     constructor(/*uint initialBalance*/) public {
     
         decimals    = 6;                                // Amount of decimals for display purposes
-//      name        = &quot;WeSingCoin&quot;;                     // Set the name for display purposes
+//      name        = "WeSingCoin";                     // Set the name for display purposes
 //      symbol      = &#39;WSC&#39;;                            // Set the symbol for display purposes
-        name        = &quot;LiveBoxCoin&quot;;                     // Set the name for display purposes
+        name        = "LiveBoxCoin";                     // Set the name for display purposes
         symbol      = &#39;LBC&#39;;                            // Set the symbol for display purposes
 
         uint initialBalance  = (10 ** uint256(decimals)) * 5000*1000*1000;

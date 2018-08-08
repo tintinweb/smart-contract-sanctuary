@@ -46,8 +46,8 @@ contract TokenERC20 {
         decimals = 8;     
         totalSupply = 10000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;AISports Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;AIS&quot;;                               // Set the symbol for display purposes
+        name = "AISports Token";                                   // Set the name for display purposes
+        symbol = "AIS";                               // Set the symbol for display purposes
     }
 
     /**

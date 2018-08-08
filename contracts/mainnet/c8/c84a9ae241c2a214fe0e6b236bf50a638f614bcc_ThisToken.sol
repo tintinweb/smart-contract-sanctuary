@@ -512,8 +512,8 @@ contract DividendToken is DistributionToken {
 }
 
 contract ThisToken is DividendToken {
-  string public name = &quot;ThisToken&quot;;
-  string public symbol = &quot;THIS&quot;;
+  string public name = "ThisToken";
+  string public symbol = "THIS";
   uint8 public decimals = 18;
 
   function setTotalSupply(uint256 _totalSupply) public onlyOwner whenNotPaused {

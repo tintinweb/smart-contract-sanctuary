@@ -4,8 +4,8 @@ contract	BIMI_DAO_31_c				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	BIMI_DAO_31_c		&quot;	;
-	string	public		symbol =	&quot;	BIMII		&quot;	;
+	string	public		name =	"	BIMI_DAO_31_c		"	;
+	string	public		symbol =	"	BIMII		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		100000000000000000000000000					;	

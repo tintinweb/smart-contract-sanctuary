@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	RusHydro_20210416_i				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	RusHydro_20210416_i		&quot;	;
-	string	public	constant	symbol =	&quot;	RUSHYI		&quot;	;
+	string	public	constant	name =	"	RusHydro_20210416_i		"	;
+	string	public	constant	symbol =	"	RUSHYI		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

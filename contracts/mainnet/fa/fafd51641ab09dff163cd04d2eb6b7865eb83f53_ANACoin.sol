@@ -113,8 +113,8 @@ contract ANACoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ANACoin() public {
-        symbol = &quot;ANA&quot;;
-        name = &quot;ANA Coin&quot;;
+        symbol = "ANA";
+        name = "ANA Coin";
         decimals = 18;
         _totalSupply = 200000000000000000000000000;
         balances[0xcDE9Df3BD88A28fbb250e3A81ea2b0653C9EC967] = _totalSupply;

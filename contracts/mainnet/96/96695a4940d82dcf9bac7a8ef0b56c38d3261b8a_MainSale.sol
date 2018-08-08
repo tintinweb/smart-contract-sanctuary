@@ -122,7 +122,7 @@ contract MainSale is Ownable {
 
     uint256 public weisRaised = 0;
 
-    string public stageNow = &quot;NoSale&quot;;
+    string public stageNow = "NoSale";
     
     event Authorized(address wlCandidate, uint timestamp);
     event Revoked(address wlCandidate, uint timestamp);
@@ -208,22 +208,22 @@ contract MainSale is Ownable {
         if (now >= startCloseSale || now <= endCloseSale) {
             require(isWhitelisted(msg.sender));
             closeSale(msg.sender, msg.value);
-            stageNow = &quot;Close Sale for Whitelist&#39;s members&quot;;
+            stageNow = "Close Sale for Whitelist&#39;s members";
             
         } else if (now >= startStage1 || now <= endStage1) {
             sale1(msg.sender, msg.value);
-            stageNow = &quot;Stage 1&quot;;
+            stageNow = "Stage 1";
 
         } else if (now >= startStage2 || now <= endStage2) {
             sale2(msg.sender, msg.value);
-             stageNow = &quot;Stage 2&quot;;
+             stageNow = "Stage 2";
 
         } else if (now >= startStage3 || now <= endStage3) {
             sale3(msg.sender, msg.value);
-             stageNow = &quot;Stage 3&quot;;
+             stageNow = "Stage 3";
 
         } else {
-            stageNow = &quot;No Sale&quot;;
+            stageNow = "No Sale";
             revert();
         } 
     }

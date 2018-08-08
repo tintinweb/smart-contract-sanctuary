@@ -15,9 +15,9 @@ contract KittyCoins {
     function KittyCoins() {
 
 initialSupply = 100000000;         
-         name =&quot;KittyCoins&quot;;
+         name ="KittyCoins";
         decimals = 4;
-         symbol = &quot;kitt&quot;;
+         symbol = "kitt";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

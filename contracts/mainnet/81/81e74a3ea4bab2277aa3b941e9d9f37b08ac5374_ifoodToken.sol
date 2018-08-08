@@ -70,8 +70,8 @@ contract ifoodToken is ERC20 {
   mapping(address => mapping (address => uint256)) allowed;
  
   // Token Info
-  string public name = &quot;Ifoods Token&quot;;
-  string public symbol = &quot;IFOOD&quot;;
+  string public name = "Ifoods Token";
+  string public symbol = "IFOOD";
   uint8 public decimals = 18;
   
   // Token Cap

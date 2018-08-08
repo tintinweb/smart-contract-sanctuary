@@ -78,7 +78,7 @@ contract UsingAdmin is
         constant
         returns (address _addr)
     {
-        return addressOf(&quot;ADMIN&quot;);
+        return addressOf("ADMIN");
     }
 }
 
@@ -113,7 +113,7 @@ contract UsingMonarchyFactory is
         view
         returns (IMonarchyFactory)
     {
-        return IMonarchyFactory(addressOf(&quot;MONARCHY_FACTORY&quot;));
+        return IMonarchyFactory(addressOf("MONARCHY_FACTORY"));
     }
 }
 
@@ -149,7 +149,7 @@ contract UsingTreasury is
         view
         returns (ITreasury)
     {
-        return ITreasury(addressOf(&quot;TREASURY&quot;));
+        return ITreasury(addressOf("TREASURY"));
     }
 }
 
@@ -808,7 +808,7 @@ contract MonarchyController is
         returns (bool _success)
     {
         if (_index-1 > numDefinedGames || _index > 20) {
-            emit Error(now, &quot;Index out of bounds.&quot;);
+            emit Error(now, "Index out of bounds.");
             return;
         }
 
@@ -829,7 +829,7 @@ contract MonarchyController is
         returns (bool _success)
     {
         if (_index-1 >= numDefinedGames) {
-            emit Error(now, &quot;Index out of bounds.&quot;);
+            emit Error(now, "Index out of bounds.");
             return;
         }
         definedGames[_index].isEnabled = _bool;
@@ -861,36 +861,36 @@ contract MonarchyController is
     {
         DefinedGame memory dGame = definedGames[_index];
         if (_index-1 >= numDefinedGames) {
-            _error(&quot;Index out of bounds.&quot;);
+            _error("Index out of bounds.");
             return;
         }
         if (dGame.isEnabled == false) {
-            _error(&quot;DefinedGame is not enabled.&quot;);
+            _error("DefinedGame is not enabled.");
             return;
         }
         if (dGame.game != IMonarchyGame(0)) {
-            _error(&quot;Game is already started.&quot;);
+            _error("Game is already started.");
             return;
         }
         if (address(this).balance < dGame.initialPrize) {
-            _error(&quot;Not enough funds to start this game.&quot;);
+            _error("Not enough funds to start this game.");
             return;
         }
         if (getDailyLimitRemaining() < dGame.initialPrize) {
-            _error(&quot;Starting game would exceed daily limit.&quot;);
+            _error("Starting game would exceed daily limit.");
             return;
         }
 
         // Ensure that if this game is started, revenue comes back to this contract.
         IMonarchyFactory _mf = getMonarchyFactory();
         if (_mf.getCollector() != address(this)){
-            _error(&quot;MonarchyFactory.getCollector() points to a different contract.&quot;);
+            _error("MonarchyFactory.getCollector() points to a different contract.");
             return;
         }
 
         // Try to create game via factory.
         bool _success = address(_mf).call.value(dGame.initialPrize)(
-            bytes4(keccak256(&quot;createGame(uint256,uint256,int256,uint256,uint256)&quot;)),
+            bytes4(keccak256("createGame(uint256,uint256,int256,uint256,uint256)")),
             dGame.initialPrize,
             dGame.fee,
             dGame.prizeIncr,
@@ -899,7 +899,7 @@ contract MonarchyController is
         );
         if (!_success) {
             emit DefinedGameFailedCreation(now, _index);
-            _error(&quot;MonarchyFactory could not create game (invalid params?)&quot;);
+            _error("MonarchyFactory could not create game (invalid params?)");
             return;
         }
 
@@ -925,7 +925,7 @@ contract MonarchyController is
         // refund if invalid value sent.
         DefinedGame memory dGame = definedGames[_index];
         if (msg.value != dGame.initialPrize) {
-            _error(&quot;Value sent does not match initialPrize.&quot;);
+            _error("Value sent does not match initialPrize.");
             require(msg.sender.call.value(msg.value)());
             return;
         }

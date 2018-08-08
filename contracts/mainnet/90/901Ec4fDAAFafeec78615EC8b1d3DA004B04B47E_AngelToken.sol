@@ -29,7 +29,7 @@ contract TokenRecipient {
 
 
 contract Token {
-    string public standard = &quot;Angel Coin 1.0&quot;;
+    string public standard = "Angel Coin 1.0";
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -114,9 +114,9 @@ contract Token {
 //Business Service Token
 contract AngelToken is Token, Owner {
     uint256 public constant INITIAL_SUPPLY = 100 * 10000 * 10000 * 1 ether; // 1e9 * 1e18
-    string public constant NAME = &quot;Angel Coin&quot;; //名称
-    string public constant SYMBOL = &quot;ANGC&quot;; // 简称
-    // string public constant STANDARD = &quot;Angel Coin 1.0&quot;;
+    string public constant NAME = "Angel Coin"; //名称
+    string public constant SYMBOL = "ANGC"; // 简称
+    // string public constant STANDARD = "Angel Coin 1.0";
     uint8 public constant DECIMALS = 18;
     uint256 public constant BUY = 0; // 用于自动买卖
     uint256 constant RATE = 1 szabo;

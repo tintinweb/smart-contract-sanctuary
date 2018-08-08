@@ -260,8 +260,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/GAST.sol
 
 contract GAST is StandardToken {
-  string public constant name = &quot;GAS Token&quot;; 
-  string public constant symbol = &quot;GAST&quot;;
+  string public constant name = "GAS Token"; 
+  string public constant symbol = "GAST";
   uint8 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));
 

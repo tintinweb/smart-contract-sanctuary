@@ -110,8 +110,8 @@ contract GoldRex is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GoldRex() public {
-        symbol = &quot;GREX&quot;;
-        name = &quot;GoldRex&quot;;
+        symbol = "GREX";
+        name = "GoldRex";
         decimals = 6;
         _totalSupply = 500000000000000;
         balances[0x98bB9615Eb7e4F640b858d4E46D197314b76da78] = _totalSupply;

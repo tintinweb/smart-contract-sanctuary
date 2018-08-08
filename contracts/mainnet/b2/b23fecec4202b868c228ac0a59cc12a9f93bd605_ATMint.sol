@@ -135,7 +135,7 @@ contract SafeMath {
         z = cast((uint256(x) * RAY + y / 2) / y);
     }
     function rpow(uint128 x, uint64 n) constant internal returns (uint128 z) {
-        // This famous algorithm is called &quot;exponentiation by squaring&quot;
+        // This famous algorithm is called "exponentiation by squaring"
         // and calculates x^n with x as fixed-point and n as regular unsigned.
         //
         // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -241,9 +241,9 @@ contract StandardToken is ERC20Token {
 }
 contract ATMToken is StandardToken, Owned {
     // metadata
-    string public constant name = &quot;Attention Token of Media&quot;;
-    string public constant symbol = &quot;ATM&quot;;
-    string public version = &quot;1.0&quot;;
+    string public constant name = "Attention Token of Media";
+    string public constant symbol = "ATM";
+    string public version = "1.0";
     uint256 public constant decimals = 8;
     bool public disabled;
     mapping(address => bool) public isATMHolder;

@@ -2,11 +2,11 @@ pragma solidity ^0.4.11;
 
 contract SwiftDex {
 
-    string public name = &quot;SwiftDex&quot;;      //  token name
-    string public symbol = &quot;SWIFD&quot;;           //  token symbol
+    string public name = "SwiftDex";      //  token name
+    string public symbol = "SWIFD";           //  token symbol
     uint256 public decimals = 18;            //  token digit
     uint256 public price = 360000000000000;
-    string public version=&quot;test-5.0&quot;;
+    string public version="test-5.0";
     mapping (address => uint256) public balanceOf;
     mapping (address => mapping (address => uint256)) public allowance;
 

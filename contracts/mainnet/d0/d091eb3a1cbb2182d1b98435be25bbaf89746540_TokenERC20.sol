@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract TokenERC20 {
     // Public variables of the token
-    string public name = &quot;blockchain linko&#39;s token&quot;;
-    string public symbol = &quot;linko&quot;;
+    string public name = "blockchain linko&#39;s token";
+    string public symbol = "linko";
     uint256 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 10*1000*1000*1000*10**decimals;

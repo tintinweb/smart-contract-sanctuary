@@ -3,8 +3,8 @@ pragma solidity ^0.4.23;
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 
 contract AlkonCoin {
-    string public name = &quot;Alkon Coin&quot;;
-    string public symbol = &quot;AKC&quot;;
+    string public name = "Alkon Coin";
+    string public symbol = "AKC";
     uint8 public decimals = 18;
     uint256 public totalSupply = 2100000000000000000000000000;
 

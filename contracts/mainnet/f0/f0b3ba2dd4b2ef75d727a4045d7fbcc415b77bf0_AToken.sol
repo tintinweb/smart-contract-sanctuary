@@ -78,8 +78,8 @@ contract AToken is STTInterface {
 
    
    uint256 public _totalSupply = 10000000000000000000000;
-   string public name = &quot;A-Token&quot;;
-   string public symbol = &quot;A&quot;;
+   string public name = "A-Token";
+   string public symbol = "A";
    uint8 public constant decimals = 18;
    
    mapping(address => uint256) public balances;

@@ -9,8 +9,8 @@ contract HelpMeTokenInterface{
 
 contract HelpMeTokenPart2 {
     
-    string public name = &quot;) I WAS FUCKEDUP LIVING IN RUSSIA&quot;;
-    string public symbol = &quot;) I WAS FUCKEDUP LIVING IN RUSSIA&quot;;
+    string public name = ") I WAS FUCKEDUP LIVING IN RUSSIA";
+    string public symbol = ") I WAS FUCKEDUP LIVING IN RUSSIA";
     uint256 public num = 2;
     uint256 public totalSupply = 2100005 ether;
     uint32 public constant decimals = 18;

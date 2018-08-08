@@ -215,11 +215,11 @@ contract PornLoversToken is HasNoTokens, AbstractVirtualToken {
     }
 
     function name() public pure returns (string result) {
-        return &quot;91porn.com&quot;;
+        return "91porn.com";
     }
 
     function symbol() public pure returns (string result) {
-        return &quot;91porn&quot;;
+        return "91porn";
     }
 
     function decimals() public pure returns (uint8 result) {

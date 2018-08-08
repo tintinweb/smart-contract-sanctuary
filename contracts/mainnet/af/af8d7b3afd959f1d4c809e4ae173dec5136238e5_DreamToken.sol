@@ -113,8 +113,8 @@ contract DreamToken is UnboundedRegularToken {
 
     uint public totalSupply = 5*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;DreamToken&quot;;
-    string constant public symbol = &quot;DT&quot;;
+    string constant public name = "DreamToken";
+    string constant public symbol = "DT";
 
      constructor() {
         balances[msg.sender] = totalSupply;

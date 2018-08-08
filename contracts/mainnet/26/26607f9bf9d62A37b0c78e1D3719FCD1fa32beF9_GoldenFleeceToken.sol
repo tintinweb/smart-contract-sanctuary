@@ -120,8 +120,8 @@ contract StandardToken is BasicToken, ERC20 {
 
 contract GoldenFleeceToken is StandardToken, Ownable{
 
-  string public constant name = &quot;Golden Fleece&quot;;
-  string public constant symbol = &quot;GFL&quot;;
+  string public constant name = "Golden Fleece";
+  string public constant symbol = "GFL";
   uint256 public constant decimals = 18;
 
 

@@ -101,39 +101,39 @@ contract Pausable is Ownable {
 }
 contract WWC is Pausable {
     string[33] public teams = [
-        &quot;&quot;,
-        &quot;Egypt&quot;,              // 1
-        &quot;Morocco&quot;,            // 2
-        &quot;Nigeria&quot;,            // 3
-        &quot;Senegal&quot;,            // 4
-        &quot;Tunisia&quot;,            // 5
-        &quot;Australia&quot;,          // 6
-        &quot;IR Iran&quot;,            // 7
-        &quot;Japan&quot;,              // 8
-        &quot;Korea Republic&quot;,     // 9
-        &quot;Saudi Arabia&quot;,       // 10
-        &quot;Belgium&quot;,            // 11
-        &quot;Croatia&quot;,            // 12
-        &quot;Denmark&quot;,            // 13
-        &quot;England&quot;,            // 14
-        &quot;France&quot;,             // 15
-        &quot;Germany&quot;,            // 16
-        &quot;Iceland&quot;,            // 17
-        &quot;Poland&quot;,             // 18
-        &quot;Portugal&quot;,           // 19
-        &quot;Russia&quot;,             // 20
-        &quot;Serbia&quot;,             // 21
-        &quot;Spain&quot;,              // 22
-        &quot;Sweden&quot;,             // 23
-        &quot;Switzerland&quot;,        // 24
-        &quot;Costa Rica&quot;,         // 25
-        &quot;Mexico&quot;,             // 26
-        &quot;Panama&quot;,             // 27
-        &quot;Argentina&quot;,          // 28
-        &quot;Brazil&quot;,             // 29
-        &quot;Colombia&quot;,           // 30
-        &quot;Peru&quot;,               // 31
-        &quot;Uruguay&quot;             // 32
+        "",
+        "Egypt",              // 1
+        "Morocco",            // 2
+        "Nigeria",            // 3
+        "Senegal",            // 4
+        "Tunisia",            // 5
+        "Australia",          // 6
+        "IR Iran",            // 7
+        "Japan",              // 8
+        "Korea Republic",     // 9
+        "Saudi Arabia",       // 10
+        "Belgium",            // 11
+        "Croatia",            // 12
+        "Denmark",            // 13
+        "England",            // 14
+        "France",             // 15
+        "Germany",            // 16
+        "Iceland",            // 17
+        "Poland",             // 18
+        "Portugal",           // 19
+        "Russia",             // 20
+        "Serbia",             // 21
+        "Spain",              // 22
+        "Sweden",             // 23
+        "Switzerland",        // 24
+        "Costa Rica",         // 25
+        "Mexico",             // 26
+        "Panama",             // 27
+        "Argentina",          // 28
+        "Brazil",             // 29
+        "Colombia",           // 30
+        "Peru",               // 31
+        "Uruguay"             // 32
     ];
 }
 
@@ -286,53 +286,53 @@ contract TeamVersus is WWC {
     mapping(uint256=>mapping(address=>uint256)) public alreadyWithdraw;
     
     function init() public onlyOwner{
-        addCombat(1,32,&quot;Friday 15 June&quot;);
-        addCombat(2,7,&quot;Friday 15 June&quot;);
-        addCombat(19,22,&quot;Friday 15 June&quot;);
-        addCombat(15,6,&quot;Saturday 16 June&quot;);
-        addCombat(28,17,&quot;Saturday 16 June&quot;);
-        addCombat(31,13,&quot;Saturday 16 June&quot;);
-        addCombat(12,3,&quot;Saturday 16 June&quot;);
-        addCombat(25,21,&quot;Sunday 17 June&quot;);
-        addCombat(16,26,&quot;Sunday 17 June&quot;);
-        addCombat(29,24,&quot;Sunday 17 June&quot;);
-        addCombat(23,9,&quot;Monday 18 June&quot;);
-        addCombat(11,27,&quot;Monday 18 June&quot;);
-        addCombat(5,14,&quot;Monday 18 June&quot;);
-        addCombat(30,8,&quot;Tuesday 19 June&quot;);
-        addCombat(18,4,&quot;Tuesday 19 June&quot;);
-        addCombat(20,1,&quot;Tuesday 19 June&quot;);
-        addCombat(19,2,&quot;Wednesday 20 June&quot;);
-        addCombat(32,10,&quot;Wednesday 20 June&quot;);
-        addCombat(7,22,&quot;Wednesday 20 June&quot;);
-        addCombat(13,6,&quot;Thursday 21 June&quot;);
-        addCombat(15,31,&quot;Thursday 21 June&quot;);
-        addCombat(28,12,&quot;Thursday 21 June&quot;);
-        addCombat(29,25,&quot;Friday 22 June&quot;);
-        addCombat(3,17,&quot;Friday 22 June&quot;);
-        addCombat(21,24,&quot;Friday 22 June&quot;);
-        addCombat(11,5,&quot;Saturday 23 June&quot;);
-        addCombat(9,26,&quot;Saturday 23 June&quot;);
-        addCombat(16,23,&quot;Saturday 23 June&quot;);
-        addCombat(14,27,&quot;Sunday 24 June&quot;);
-        addCombat(8,4,&quot;Sunday 24 June&quot;);
-        addCombat(18,30,&quot;Sunday 24 June&quot;);
-        addCombat(32,20,&quot;Monday 25 June&quot;);
-        addCombat(10,1,&quot;Monday 25 June&quot;);
-        addCombat(22,2,&quot;Monday 25 June&quot;);
-        addCombat(7,19,&quot;Monday 25 June&quot;);
-        addCombat(6,31,&quot;Tuesday 26 June&quot;);
-        addCombat(13,15,&quot;Tuesday 26 June&quot;);
-        addCombat(3,28,&quot;Tuesday 26 June&quot;);
-        addCombat(17,12,&quot;Tuesday 26 June&quot;);
-        addCombat(9,16,&quot;Wednesday 27 June&quot;);
-        addCombat(26,23,&quot;Wednesday 27 June&quot;);
-        addCombat(21,29,&quot;Wednesday 27 June&quot;);
-        addCombat(24,25,&quot;Wednesday 27 June&quot;);
-        addCombat(8,18,&quot;Thursday 28 June&quot;);
-        addCombat(4,30,&quot;Thursday 28 June&quot;);
-        addCombat(27,5,&quot;Thursday 28 June&quot;);
-        addCombat(14,11,&quot;Thursday 28 June&quot;);
+        addCombat(1,32,"Friday 15 June");
+        addCombat(2,7,"Friday 15 June");
+        addCombat(19,22,"Friday 15 June");
+        addCombat(15,6,"Saturday 16 June");
+        addCombat(28,17,"Saturday 16 June");
+        addCombat(31,13,"Saturday 16 June");
+        addCombat(12,3,"Saturday 16 June");
+        addCombat(25,21,"Sunday 17 June");
+        addCombat(16,26,"Sunday 17 June");
+        addCombat(29,24,"Sunday 17 June");
+        addCombat(23,9,"Monday 18 June");
+        addCombat(11,27,"Monday 18 June");
+        addCombat(5,14,"Monday 18 June");
+        addCombat(30,8,"Tuesday 19 June");
+        addCombat(18,4,"Tuesday 19 June");
+        addCombat(20,1,"Tuesday 19 June");
+        addCombat(19,2,"Wednesday 20 June");
+        addCombat(32,10,"Wednesday 20 June");
+        addCombat(7,22,"Wednesday 20 June");
+        addCombat(13,6,"Thursday 21 June");
+        addCombat(15,31,"Thursday 21 June");
+        addCombat(28,12,"Thursday 21 June");
+        addCombat(29,25,"Friday 22 June");
+        addCombat(3,17,"Friday 22 June");
+        addCombat(21,24,"Friday 22 June");
+        addCombat(11,5,"Saturday 23 June");
+        addCombat(9,26,"Saturday 23 June");
+        addCombat(16,23,"Saturday 23 June");
+        addCombat(14,27,"Sunday 24 June");
+        addCombat(8,4,"Sunday 24 June");
+        addCombat(18,30,"Sunday 24 June");
+        addCombat(32,20,"Monday 25 June");
+        addCombat(10,1,"Monday 25 June");
+        addCombat(22,2,"Monday 25 June");
+        addCombat(7,19,"Monday 25 June");
+        addCombat(6,31,"Tuesday 26 June");
+        addCombat(13,15,"Tuesday 26 June");
+        addCombat(3,28,"Tuesday 26 June");
+        addCombat(17,12,"Tuesday 26 June");
+        addCombat(9,16,"Wednesday 27 June");
+        addCombat(26,23,"Wednesday 27 June");
+        addCombat(21,29,"Wednesday 27 June");
+        addCombat(24,25,"Wednesday 27 June");
+        addCombat(8,18,"Thursday 28 June");
+        addCombat(4,30,"Thursday 28 June");
+        addCombat(27,5,"Thursday 28 June");
+        addCombat(14,11,"Thursday 28 June");
     }
     function setMinVote(uint256 _min) public onlyOwner{
         require(_min>=0.01 ether);

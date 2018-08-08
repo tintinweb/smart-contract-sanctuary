@@ -44,8 +44,8 @@ contract ContractReceiver {
 contract AuctusToken is EthereumStandards {
 	using SafeMath for uint256;
 	
-	string constant public name = &quot;Auctus Token&quot;;
-	string constant public symbol = &quot;AUC&quot;;
+	string constant public name = "Auctus Token";
+	string constant public symbol = "AUC";
 	uint8 constant public decimals = 18;
 	uint256 public totalSupply;
 

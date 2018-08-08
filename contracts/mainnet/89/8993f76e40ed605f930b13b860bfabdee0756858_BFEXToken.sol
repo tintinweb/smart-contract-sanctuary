@@ -270,8 +270,8 @@ contract ERC223Token is ERC223 {
  */
 contract BFEXToken is ERC223Token {
 
-    string public constant name = &quot;Bank Future Exchange&quot;;
-    string public constant symbol = &quot;BFEX&quot;;
+    string public constant name = "Bank Future Exchange";
+    string public constant symbol = "BFEX";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 210000000 * (10 ** uint256(decimals));

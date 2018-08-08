@@ -141,8 +141,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract MPToken is StandardToken {
     // public variables
-    string public name = &quot;Mobile Phone Ad Chain&quot;;
-    string public symbol = &quot;MP&quot;;
+    string public name = "Mobile Phone Ad Chain";
+    string public symbol = "MP";
     uint8 public decimals = 8;
 
     constructor() public {

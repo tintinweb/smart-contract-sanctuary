@@ -106,9 +106,9 @@ contract B_Com is B_CommerceCoin {
     function B_Com() public {
         balances[msg.sender] = 14250000000000;             // Creator receives all initial tokens 
         totalSupply = 14250000000000;                      // Total Supply 1,425,000,000
-        name = &quot;B-CommerceCoin&quot;;                           // Display name of B-Com
+        name = "B-CommerceCoin";                           // Display name of B-Com
         decimals = 4;                                      // 4 decimals 
-        symbol = &quot;B-Com&quot;;                                  // Symbol for display
+        symbol = "B-Com";                                  // Symbol for display
     }
 
     /* Approves and then calls the receiving contract */
@@ -119,7 +119,7 @@ contract B_Com is B_CommerceCoin {
         //call the receiveApproval function on the contract you want to be notified.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

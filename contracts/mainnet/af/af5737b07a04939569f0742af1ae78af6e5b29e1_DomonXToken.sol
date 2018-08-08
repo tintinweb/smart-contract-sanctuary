@@ -114,8 +114,8 @@ contract DomonXToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;DBIC&quot;;
-        name = &quot;Dubfund Big health International Chain&quot;;
+        symbol = "DBIC";
+        name = "Dubfund Big health International Chain";
         decimals = 18;
         _totalSupply = 600000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

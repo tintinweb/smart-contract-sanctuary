@@ -85,8 +85,8 @@ contract CryptoCollectorContract is ERC721, Ownable {
     /*** CONSTANTS ***/
       
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant NAME = &quot;CryptoCollectorContract&quot;; // solhint-disable-line
-    string public constant SYMBOL = &quot;CCC&quot;; // solhint-disable-line
+    string public constant NAME = "CryptoCollectorContract"; // solhint-disable-line
+    string public constant SYMBOL = "CCC"; // solhint-disable-line
       
 	uint256 private killerPriceConversionFee = 0.19 ether; 
 	

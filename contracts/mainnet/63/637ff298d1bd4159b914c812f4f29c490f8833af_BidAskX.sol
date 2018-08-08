@@ -175,7 +175,7 @@ contract BidAskX {
             }
             token_member_order_pop(_token, msg.sender, _number);
         } else {
-            Logs(&quot;The order owner not match&quot;);
+            Logs("The order owner not match");
         }
     }
     
@@ -208,7 +208,7 @@ contract BidAskX {
             }
             order_number++;
         } else {
-            Log(&quot;You need more money for bid&quot;, remaining, amount);
+            Log("You need more money for bid", remaining, amount);
         }
     }
     
@@ -219,7 +219,7 @@ contract BidAskX {
         uint remaining = allow_spend(_token) - unclose;
         uint exFee = (_price * _qty)/exFeeRate;
         if(members[msg.sender].balances < exFee){
-            Log(&quot;You need to deposit ether to acoount befor ask&quot;, exFee, members[msg.sender].balances);
+            Log("You need to deposit ether to acoount befor ask", exFee, members[msg.sender].balances);
         } else if(remaining >= _qty){
             members_push(msg.sender);
             OrderSheet memory od;
@@ -238,11 +238,11 @@ contract BidAskX {
             ask_match(_token,token_orderSheet[_token][order_number],token_bid[_token]);
             if(od.isClosed==false){
                 token_ask[_token].push(order_number);  
-                Log(&quot;Push order number to token_ask&quot;,order_number,0);
+                Log("Push order number to token_ask",order_number,0);
             }
             order_number++;
         } else {
-            Log(&quot;You need approve your token for transfer&quot;,0,0);
+            Log("You need approve your token for transfer",0,0);
         }
     }
      
@@ -478,7 +478,7 @@ contract BidAskX {
         if(members[_member].isExists == true) {
             members[_member].isWithdraw = _withdrawable;
         } else {
-            Logs(&quot;member not existes&quot;);
+            Logs("member not existes");
         }
     }
     

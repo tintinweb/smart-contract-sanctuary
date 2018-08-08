@@ -35,8 +35,8 @@ pragma solidity ^0.4.18;
 
    //继承接口后的实例
    contract HDCToken is ERC20Interface {
-      string public constant symbol = &quot;HDCT&quot;; //单位
-      string public constant name = &quot;Health Data Chain Token&quot;; //名称
+      string public constant symbol = "HDCT"; //单位
+      string public constant name = "Health Data Chain Token"; //名称
       uint8 public constant decimals = 18; //小数点后的位数
       uint256 _totalSupply = 10000000000000000000000000000; //发行总量
 

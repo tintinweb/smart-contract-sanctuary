@@ -232,8 +232,8 @@ contract HoresBasis is  JockeyControl {
 
 contract JockeyOwnership is HoresBasis, ERC721{
 
-  string public constant  name = &quot;CryptoJockey&quot;;
-    string public constant symbol = &quot;CHJ&quot;;
+  string public constant  name = "CryptoJockey";
+    string public constant symbol = "CHJ";
      uint8 public constant decimals = 0; 
 
     function jockeyForSale(uint256 _tokenId, uint256 price) external {

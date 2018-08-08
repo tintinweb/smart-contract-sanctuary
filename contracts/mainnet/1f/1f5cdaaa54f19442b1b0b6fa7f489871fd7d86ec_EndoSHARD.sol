@@ -113,8 +113,8 @@ contract EndoSHARD is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EndoSHARD() public {
-        symbol = &quot;ESHARD&quot;;
-        name = &quot;EndoSHARD&quot;;
+        symbol = "ESHARD";
+        name = "EndoSHARD";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x21608eF65d2d8221064d7B2DF97BaEb7643859b4] = _totalSupply;

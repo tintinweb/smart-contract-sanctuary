@@ -4,9 +4,9 @@ pragma solidity ^0.4.16;
 //                Alingsas SWEDEN / VAT Nr. SE556825809801
 ////////////////////////////////////////////////////////////
 //
-// &quot;Decentralized R&D organization on the blockchain with 
+// "Decentralized R&D organization on the blockchain with 
 // the mission to develop autonomous diagnostic, support 
-// and development system for any vehicle&quot;
+// and development system for any vehicle"
 //
 ////////////////////////////////////////////////////////////
 

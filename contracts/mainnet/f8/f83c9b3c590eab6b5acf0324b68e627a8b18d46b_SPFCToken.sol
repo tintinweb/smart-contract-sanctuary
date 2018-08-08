@@ -313,10 +313,10 @@ contract VersionedToken is owned {
      *
      * In our case this it is SPFCTokenImpl.sol
      * e.g.
-     *    import &quot;SPFCToken.sol&quot;
+     *    import "SPFCToken.sol"
      *
      * Please note: IMPORTANT
-     * do not implement any function called &quot;update()&quot; otherwise it will break the Versioning system
+     * do not implement any function called "update()" otherwise it will break the Versioning system
      */
     constructor(address initialImplementation) public {
         upgradableContractAddress = initialImplementation;

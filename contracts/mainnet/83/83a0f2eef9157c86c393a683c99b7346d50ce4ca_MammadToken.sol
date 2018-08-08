@@ -108,8 +108,8 @@ contract MammadToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Constructor() public {
-        symbol = &quot;Mammad&quot;;
-        name = &quot;Mammad Token&quot;;
+        symbol = "Mammad";
+        name = "Mammad Token";
         decimals = 18;
         _totalSupply = 100000;
         balances[0x0769e46946B97C05D60D2B4A796Aa6992C73dad8] = _totalSupply;

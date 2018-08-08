@@ -22,8 +22,8 @@ contract GlobalIdolCoinToken {
         totalSupply = initialSupply * 1 * 10 ** (9 + uint256(decimals));  // Update total supply with the decimal amount
         initialSupply = totalSupply;
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;GlobalIdolCoinToken&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GICT&quot;;                               // Set the symbol for display purposes
+        name = "GlobalIdolCoinToken";                                   // Set the name for display purposes
+        symbol = "GICT";                               // Set the symbol for display purposes
         tokenName = name;
         tokenSymbol = symbol;
         

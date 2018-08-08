@@ -59,9 +59,9 @@ contract ERC20Interface is safeMath {
 
 contract ARXToken is safeMath, ERC20Interface {
   // token setup variables
-  string  public constant standard              = &quot;ARX&quot;;
-  string  public constant name                  = &quot;Assistive Reality ARX&quot;;
-  string  public constant symbol                = &quot;ARX&quot;;
+  string  public constant standard              = "ARX";
+  string  public constant name                  = "Assistive Reality ARX";
+  string  public constant symbol                = "ARX";
   uint8   public constant decimals              = 18;                             // matched to wei for practicality
   uint256 public constant totalSupply           = 318000000000000000000000000;    // 318000000000000000000000000 million + 18 decimals (presale maximum capped + ICO maximum capped + foundation 10%) static supply
 

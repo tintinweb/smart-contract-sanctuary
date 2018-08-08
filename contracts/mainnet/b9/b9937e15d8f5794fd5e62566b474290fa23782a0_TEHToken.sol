@@ -82,8 +82,8 @@ contract TEHToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;THE ENGISH HUB&quot;;
-    string public constant symbol = &quot;TEH&quot;;
+    string public constant name = "THE ENGISH HUB";
+    string public constant symbol = "TEH";
     uint public constant decimals = 18;
     uint256 public totalSupply = 500000000e18;
     uint256 public totalDistributed = 50000000e18;    

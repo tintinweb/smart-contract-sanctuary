@@ -22,8 +22,8 @@ contract EliteToken {
     function EliteToken() {
         /* Unless you add other functions these variables will never change */
         balanceOf[this] = 100;
-        name = &quot;EliteToken&quot;;     
-        symbol = &quot;ELT&quot;;
+        name = "EliteToken";     
+        symbol = "ELT";
         owner = msg.sender;
         
         /* If you want a divisible token then add the amount of decimals the base unit has  */

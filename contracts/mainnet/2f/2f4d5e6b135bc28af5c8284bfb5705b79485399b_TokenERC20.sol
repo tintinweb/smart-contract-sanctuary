@@ -62,8 +62,8 @@ contract TokenERC20 is Ownable {
 	
     using SafeMath for uint256;
     
-    string public constant name       = &quot;KUP&quot;;
-    string public constant symbol     = &quot;KUP&quot;;
+    string public constant name       = "KUP";
+    string public constant symbol     = "KUP";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply;
 

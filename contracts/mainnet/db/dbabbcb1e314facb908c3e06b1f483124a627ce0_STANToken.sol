@@ -111,10 +111,10 @@ contract StandardToken is Token {
 contract STANToken is StandardToken, SafeMath {
 
     // metadata
-    string  public constant name = &quot;STANToken&quot;;
-    string  public constant symbol = &quot;STAN&quot;;
+    string  public constant name = "STANToken";
+    string  public constant symbol = "STAN";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
 
     // contracts
     address public ethFundDeposit;          // deposit address for ETH for UnlimitedIP Team.

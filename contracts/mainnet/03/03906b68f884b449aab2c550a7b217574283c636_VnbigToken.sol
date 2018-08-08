@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -511,8 +511,8 @@ contract BurnableToken is BasicToken {
 contract VnbigToken is PausableToken, MintableToken, BurnableToken {
     using SafeMath for uint256;
 
-    string public name = &quot;VNBIG Token&quot;;
-    string public symbol = &quot;VNBT&quot;;
+    string public name = "VNBIG Token";
+    string public symbol = "VNBT";
     uint256 public decimals = 18;
     uint256 INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));
 

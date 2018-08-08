@@ -116,8 +116,8 @@ contract ERC20 is ERC20Interface, BobbyERC20Base {
     uint private _Billion = _Thousand * _Thousand * _Thousand;
 
     //代币基本信息
-    string private _name = &quot;BOBBY&quot;;     //代币名称
-    string private _symbol = &quot;BOBBY&quot;;   //代币标识
+    string private _name = "BOBBY";     //代币名称
+    string private _symbol = "BOBBY";   //代币标识
     uint8 private _decimals = 9;        //小数点后位数
     uint256 private _totalSupply = 10 * _Billion * (10 ** uint256(_decimals));
 

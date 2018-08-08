@@ -107,9 +107,9 @@ contract ARCONA is StandardToken {
     function ARCONA () {
         balances[msg.sender] = 135000000000000000000000000;               // Give the creator all initial tokens.
         totalSupply = 135000000000000000000000000;                       // Update total supply 
-        name = &quot;ARCONA&quot;;                                        // Set the name for display purposes 
+        name = "ARCONA";                                        // Set the name for display purposes 
         decimals = 18;                                                  // Amount of decimals for display purposes
-        symbol = &quot;AR&quot;;                                                // Set the symbol for display purposes 
+        symbol = "AR";                                                // Set the symbol for display purposes 
         unitsOneEthCanBuy = 400;                                    // Set the price of your token for the ICO 
         fundsWallet = msg.sender;                                    // The owner of the contract gets ETH
     }
@@ -136,7 +136,7 @@ contract ARCONA is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

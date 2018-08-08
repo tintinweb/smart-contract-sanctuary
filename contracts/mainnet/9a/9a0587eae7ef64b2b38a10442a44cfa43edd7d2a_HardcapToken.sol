@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -425,8 +425,8 @@ contract HardcapToken is CappedToken, PausableToken, BurnableToken {
 
   uint256 private constant TOKEN_CAP = 100 * 10**24;
 
-  string public constant name = &quot;Welltrado token&quot;;
-  string public constant symbol = &quot;WTL&quot;;
+  string public constant name = "Welltrado token";
+  string public constant symbol = "WTL";
   uint8 public constant decimals = 18;
 
   function HardcapToken() public CappedToken(TOKEN_CAP) {

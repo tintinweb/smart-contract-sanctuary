@@ -76,8 +76,8 @@ contract BelottoCoin is ERC20Interface, Owned{
     // Constructor
     // ------------------------------------------------------------------------
     function BelottoCoin(address _owner) public{
-        symbol = &quot;BEL&quot;;
-        name = &quot;Belotto&quot;;
+        symbol = "BEL";
+        name = "Belotto";
         decimals = 18;
         owner = _owner;
         _totalSupply = totalSupply();

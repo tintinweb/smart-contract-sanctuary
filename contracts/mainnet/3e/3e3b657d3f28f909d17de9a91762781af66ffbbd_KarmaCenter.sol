@@ -59,8 +59,8 @@ interface ERC20Basic {
 contract PostFactory {
     using SafeMath for uint256;
 
-    string public name = &quot;Karma Factory&quot;;
-    string public constant SYMBOL = &quot;KC&quot;;
+    string public name = "Karma Factory";
+    string public constant SYMBOL = "KC";
 
     uint256 private postId = 1;
     // post IDs start at 1, just like arrays do :)

@@ -239,12 +239,12 @@ contract XCPlugin is XCPluginInterface {
     function init() internal {
         // Admin { status | platformName | tokenSymbol | account}
         admin.status = true;
-        admin.platformName = &quot;ETH&quot;;
-        admin.tokenSymbol = &quot;INK&quot;;
+        admin.platformName = "ETH";
+        admin.tokenSymbol = "INK";
         admin.account = msg.sender;
-        admin.version = &quot;1.0&quot;;
+        admin.version = "1.0";
         platform.status = true;
-        platform.name = &quot;INK&quot;;
+        platform.name = "INK";
         platform.weight = 3;
         platform.publicKeys.push(0x80aa17b21c16620a4d7dd06ec1dcc44190b02ca0);
         platform.publicKeys.push(0xd2e40bb4967b355da8d70be40c277ebcf108063c);
@@ -417,7 +417,7 @@ contract XCPlugin is XCPluginInterface {
      */
 
     function hashMsg(bytes32 fromPlatform, address fromAccount, bytes32 toPlatform, address toAccount, uint value, bytes32 tokenSymbol, string txid,string version) internal pure returns (bytes32) {
-        return sha256(bytes32ToStr(fromPlatform), &quot;:0x&quot;, uintToStr(uint160(fromAccount), 16), &quot;:&quot;, bytes32ToStr(toPlatform), &quot;:0x&quot;, uintToStr(uint160(toAccount), 16), &quot;:&quot;, uintToStr(value, 10), &quot;:&quot;, bytes32ToStr(tokenSymbol), &quot;:&quot;, txid, &quot;:&quot;, version);
+        return sha256(bytes32ToStr(fromPlatform), ":0x", uintToStr(uint160(fromAccount), 16), ":", bytes32ToStr(toPlatform), ":0x", uintToStr(uint160(toAccount), 16), ":", uintToStr(value, 10), ":", bytes32ToStr(tokenSymbol), ":", txid, ":", version);
     }
 
     function changeVoters(address publicKey, string txid) internal {
@@ -433,7 +433,7 @@ contract XCPlugin is XCPluginInterface {
     function bytes32ToStr(bytes32 b) internal pure returns (string) {
         uint length = b.length;
         for (uint i = 0; i < b.length; i++) {
-            if (b[b.length - 1 - i] != &quot;&quot;) {
+            if (b[b.length - 1 - i] != "") {
                 length -= i;
                 break;
             }
@@ -448,7 +448,7 @@ contract XCPlugin is XCPluginInterface {
     function uintToStr(uint value, uint base) internal pure returns (string) {
         uint _value = value;
         uint length = 0;
-        bytes16 tenStr = &quot;0123456789abcdef&quot;;
+        bytes16 tenStr = "0123456789abcdef";
         while (true) {
             if (_value > 0) {
                 length ++;

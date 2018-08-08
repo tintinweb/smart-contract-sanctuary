@@ -4,7 +4,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -123,8 +123,8 @@ contract Electrominer is ERC20, BasicToken, Ownable {
   mapping (address => mapping (address => uint256)) internal allowed;
 
 
-    string public name = &quot;Electrominer&quot;;
-    string public symbol = &quot;ELM&quot;;
+    string public name = "Electrominer";
+    string public symbol = "ELM";
     
     uint public decimals = 8;
 function Electrominer(

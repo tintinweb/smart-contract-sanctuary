@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract DildoToken {
     // Public variables of the token
-    string public name = &quot;DildoToken&quot;;
-    string public symbol = &quot;DILDO&quot;;
+    string public name = "DildoToken";
+    string public symbol = "DILDO";
     uint8 public decimals = 18;
     uint256 public totalSupply;
     uint256 public supplyMultiplier = 6900000000;

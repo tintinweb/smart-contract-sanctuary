@@ -141,8 +141,8 @@ contract TBOT is owned,ParentToken{
      /* Public variables of the token */
     string public standard = &#39;Token 0.1&#39;;  
     uint256 public currentSupply= 3000000000000000;
-    string public constant symbol = &quot;TBT&quot;;
-    string public constant tokenName = &quot;TBOT&quot;;
+    string public constant symbol = "TBT";
+    string public constant tokenName = "TBOT";
     uint8 public constant decimals = 8;
 
     

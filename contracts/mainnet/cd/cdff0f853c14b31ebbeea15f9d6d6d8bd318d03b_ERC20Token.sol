@@ -349,7 +349,7 @@ contract RBAC {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -598,7 +598,7 @@ contract RBACMintableToken is MintableToken, RBAC {
   /**
    * A constant role name for indicating minters.
    */
-  string public constant ROLE_MINTER = &quot;minter&quot;;
+  string public constant ROLE_MINTER = "minter";
 
   /**
    * @dev override the Mintable token modifier to add role based logic
@@ -629,7 +629,7 @@ contract RBACMintableToken is MintableToken, RBAC {
 
 contract ERC20Token is DetailedERC20, RBACMintableToken, BurnableToken {
 
-  string public builtOn = &quot;https://vittominacori.github.io/erc20-generator&quot;;
+  string public builtOn = "https://vittominacori.github.io/erc20-generator";
 
   constructor(
     string _name,

@@ -17,9 +17,9 @@ contract HerCoin {
     function Token() {
 
          initialSupply = 20000000;
-         name =&quot;hercoin&quot;;
+         name ="hercoin";
         decimals = 4;
-         symbol = &quot;HER&quot;;
+         symbol = "HER";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

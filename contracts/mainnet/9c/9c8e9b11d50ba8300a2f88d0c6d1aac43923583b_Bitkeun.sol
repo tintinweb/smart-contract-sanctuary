@@ -123,8 +123,8 @@ contract StandardToken is ERC20 {
 }
 
 contract Bitkeun is StandardToken {
-  string public constant name = &quot;Bitkeun&quot;;
-  string public constant symbol = &quot;BITE&quot;;
+  string public constant name = "Bitkeun";
+  string public constant symbol = "BITE";
   uint8 public constant decimals = 0;
 
   function Bitkeun() public {

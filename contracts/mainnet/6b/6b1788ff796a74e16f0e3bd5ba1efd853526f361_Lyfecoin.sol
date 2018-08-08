@@ -113,8 +113,8 @@ contract Lyfecoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Lyfecoin() public {
-        symbol = &quot;LFC&quot;;
-        name = &quot;Lyfecoin&quot;;
+        symbol = "LFC";
+        name = "Lyfecoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x907bFacE9510bb8Ae9b3ff755266D4E4e255452e] = _totalSupply;

@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -326,7 +326,7 @@ contract MintableToken is StandardToken, Ownable {
  * It is meant to be used in a crowdsale contract.
  */
 contract WMCToken is MintableToken {
-  string public constant name = &quot;WORLD MEDICAL COINS&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;WMC&quot;; // solium-disable-line uppercase
+  string public constant name = "WORLD MEDICAL COINS"; // solium-disable-line uppercase
+  string public constant symbol = "WMC"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 }

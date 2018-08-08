@@ -136,8 +136,8 @@ contract SOLID is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SOLID() public {
-        symbol = &quot;SOLID&quot;;
-        name = &quot;SOLID TOKEN&quot;;
+        symbol = "SOLID";
+        name = "SOLID TOKEN";
         decimals = 18;
         bonusEnds = now + 5500 weeks;
         endDate = now + 7500 weeks;

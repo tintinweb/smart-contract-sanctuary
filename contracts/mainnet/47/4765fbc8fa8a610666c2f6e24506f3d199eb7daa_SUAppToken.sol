@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract SUAppToken {
     // Public variables of the token
-    string public name = &quot;SUAppToken&quot;;
-    string public symbol = &quot;SUT&quot;; 
+    string public name = "SUAppToken";
+    string public symbol = "SUT"; 
     uint8 public decimals = 8;
     // 18 decimals is the strongly suggested default, avoid changing it
         uint256 public totalSupply = 100000000000 * (uint256(10) ** decimals);

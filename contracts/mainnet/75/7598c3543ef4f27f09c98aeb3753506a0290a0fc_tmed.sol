@@ -3,7 +3,7 @@ pragma solidity ^0.4.10;
 // The Timereum Project
 
 // TMED
-// ERC-20 token snapshot of TME (&quot;TMED&quot;). TMEX will be a layer on top of this contract.
+// ERC-20 token snapshot of TME ("TMED"). TMEX will be a layer on top of this contract.
 // Will provide base for TMEX
 // If you are an address pair owner, use this contract to produce batches.
 // Then convert to timereumX
@@ -46,8 +46,8 @@ event Transfer(address indexed from, address indexed to, uint256 value);
 event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
 function tmed() {
-name = &quot;tmed&quot;;
-symbol = &quot;TMED&quot;;
+name = "tmed";
+symbol = "TMED";
 decimals = 18;
 startTime=1500307354; //Time contract went online.
 devAddress=0x85196Da9269B24bDf5FfD2624ABB387fcA05382B; // Set the dev import address

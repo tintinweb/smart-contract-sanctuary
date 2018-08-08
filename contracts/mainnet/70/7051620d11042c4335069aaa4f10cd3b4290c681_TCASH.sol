@@ -12,8 +12,8 @@ pragma solidity ^0.4.16;
   }
   
   contract TCASH is ERC20 {
-     string public constant symbol = &quot;TCASH&quot;;
-     string public constant name = &quot;Tcash&quot;;
+     string public constant symbol = "TCASH";
+     string public constant name = "Tcash";
      uint8 public constant decimals = 8;
      uint256 _totalSupply = 88000000 * 10**8;
      

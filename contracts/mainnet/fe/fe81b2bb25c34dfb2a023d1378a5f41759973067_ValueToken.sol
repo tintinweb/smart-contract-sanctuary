@@ -19,8 +19,8 @@ contract ValueToken {
 
     // Constructor
     function ValueToken() {
-        name = &quot;Cyber Turtle Token&quot;;
-        symbol = &quot;CTT&quot;;
+        name = "Cyber Turtle Token";
+        symbol = "CTT";
         decimals = 2;
         _totalSupply = 164500;
         _value = 1118;
@@ -58,7 +58,7 @@ contract ValueToken {
 
     // Send _value amount of tokens from address _from to address _to
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-    // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
     // fees in sub-currencies; the command should fail unless the _from account has
     // deliberately authorized the sender of the message via some mechanism; we propose
     // these standardized APIs for approval:

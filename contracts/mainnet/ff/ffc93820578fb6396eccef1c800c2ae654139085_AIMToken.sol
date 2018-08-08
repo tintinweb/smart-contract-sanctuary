@@ -153,9 +153,9 @@ contract AIMToken is ERC20Interface, Owned {
 
     function AIMToken() public {
 
-        symbol = &quot;AIM&quot;;
+        symbol = "AIM";
 
-        name = &quot;Aimedis Token&quot;;
+        name = "Aimedis Token";
 
         decimals = 18;
 

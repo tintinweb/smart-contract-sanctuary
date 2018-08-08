@@ -183,7 +183,7 @@ contract StandardToken is BasicToken, ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -338,8 +338,8 @@ contract PausableToken is StandardToken, Pausable {
 contract OcularToken is PausableToken, MintableToken {
   using SafeMath for uint256;
 
-  string public name = &quot;Ocular Coin&quot;;
-  string public symbol = &quot;OCULR&quot;;
+  string public name = "Ocular Coin";
+  string public symbol = "OCULR";
   uint public decimals = 18;
 
 }

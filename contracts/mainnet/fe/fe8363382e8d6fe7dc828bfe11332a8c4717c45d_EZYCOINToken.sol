@@ -113,8 +113,8 @@ contract EZYCOINToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;EZYCOIN&quot;;
-        name = &quot;EZYCOIN Token&quot;;
+        symbol = "EZYCOIN";
+        name = "EZYCOIN Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x437A7633a7361c91C524581b66109198b0b7629C] = _totalSupply;

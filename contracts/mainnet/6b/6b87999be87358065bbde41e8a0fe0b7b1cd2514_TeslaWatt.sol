@@ -101,8 +101,8 @@ contract TeslaWatt is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;TSW&quot;;
-        name = &quot;TeslaWatt&quot;;
+        symbol = "TSW";
+        name = "TeslaWatt";
         decimals = 18;
         _totalSupply = 100000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

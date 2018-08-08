@@ -69,7 +69,7 @@ library SafeERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -710,7 +710,7 @@ contract RBACMintableToken is MintableToken, RBAC {
   /**
    * A constant role name for indicating minters.
    */
-  string public constant ROLE_MINTER = &quot;minter&quot;;
+  string public constant ROLE_MINTER = "minter";
 
   /**
    * @dev override the Mintable token modifier to add role based logic
@@ -801,8 +801,8 @@ contract KMHToken is
   StandardBurnableToken,
   CanReclaimToken
 {
-  string public name = &quot;KeyMesh Token&quot;;
-  string public symbol = &quot;KMH&quot;;
+  string public name = "KeyMesh Token";
+  string public symbol = "KMH";
   uint8 public decimals = 18;
 
   function sendToContract(address _to, uint _value, bytes _data) public payable returns (bool success) {

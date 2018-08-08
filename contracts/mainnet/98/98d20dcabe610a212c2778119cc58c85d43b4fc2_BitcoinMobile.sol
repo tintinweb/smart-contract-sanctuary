@@ -113,8 +113,8 @@ contract BitcoinMobile is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitcoinMobile() public {
-        symbol = &quot;BTCMO&quot;;
-        name = &quot;BitcoinMobile &quot;;
+        symbol = "BTCMO";
+        name = "BitcoinMobile ";
         decimals = 18;
         _totalSupply = 2000000000000000000000000000;
         balances[0x2d57365a7ab22425f09D49bB0baFB0426EB8dDF9] = _totalSupply;

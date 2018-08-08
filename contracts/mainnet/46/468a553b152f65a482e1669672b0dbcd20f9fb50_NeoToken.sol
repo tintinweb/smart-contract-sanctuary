@@ -81,8 +81,8 @@ contract NeoToken is ERC20Interface, Owned{
     // ------------------------------------------------------------------------
     function NeoToken() public{
         owner = 0x0c4BdfE0aEbF69dE4975a957A2d4FE72633BBC1a;
-        symbol = &quot;NOC&quot;;
-        name = &quot;NEO CLASSIC&quot;;
+        symbol = "NOC";
+        name = "NEO CLASSIC";
         decimals = 18;
         _totalSupply = totalSupply();
         balances[owner] = _totalSupply;

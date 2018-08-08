@@ -41,8 +41,8 @@ contract MeetOneTokenBase {
 }
 
 contract MeetOneToken is MeetOneTokenBase {
-    string  public  symbol = &quot;MEET.ONE&quot;;
-    string  public name = &quot;MEET.ONE&quot;;
+    string  public  symbol = "MEET.ONE";
+    string  public name = "MEET.ONE";
     uint256  public  decimals = 18; 
     uint256 public freezedValue = 25*(10**8)*(10**18);
     uint256 public eachUnfreezeValue = 625000000*(10**18);

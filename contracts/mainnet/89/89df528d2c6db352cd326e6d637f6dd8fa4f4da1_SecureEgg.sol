@@ -185,9 +185,9 @@ contract ERC20Token is admined, ERC20TokenInterface { //Standar definition of an
 }
 
 contract SecureEgg is admined, ERC20Token {
-    string public name = &quot;Secure Egg&quot;;
-    string public symbol = &quot;SEG&quot;;
-    string public version = &quot;1.0&quot;;
+    string public name = "Secure Egg";
+    string public symbol = "SEG";
+    string public version = "1.0";
     uint8 public decimals = 18;
     address public owner = 0xC365aa1d5C71A61c5b05Dc953a79a125D40ce472;
 

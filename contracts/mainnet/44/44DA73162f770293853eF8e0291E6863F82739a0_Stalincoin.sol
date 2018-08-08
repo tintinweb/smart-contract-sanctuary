@@ -15,9 +15,9 @@ contract Stalincoin {
     function Stalincoin() {
 
          initialSupply = 50000;
-         name =&quot;Stalincoin&quot;;
+         name ="Stalincoin";
         decimals = 2;
-         symbol = &quot;STC&quot;;
+         symbol = "STC";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

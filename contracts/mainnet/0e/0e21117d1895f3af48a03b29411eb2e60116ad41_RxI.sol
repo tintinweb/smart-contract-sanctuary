@@ -113,8 +113,8 @@ contract RxI is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RxI() public {
-        symbol = &quot;RxI&quot;;
-        name = &quot;RxI&quot;;
+        symbol = "RxI";
+        name = "RxI";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x907bFacE9510bb8Ae9b3ff755266D4E4e255452e] = _totalSupply;

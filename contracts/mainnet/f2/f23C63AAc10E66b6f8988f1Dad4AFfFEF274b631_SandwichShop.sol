@@ -38,37 +38,37 @@ contract SandwichShop
         owner = msg.sender;
 
         shopSandwich[0].sandwichID = 0;
-        shopSandwich[0].sandwichName = &quot;00:  Ham & Swiss&quot;;
-        shopSandwich[0].sandwichDesc = &quot;Ham Swiss Mustard Rye&quot;;
-        shopSandwich[0].calories = &quot;450 calories&quot;;
+        shopSandwich[0].sandwichName = "00:  Ham & Swiss";
+        shopSandwich[0].sandwichDesc = "Ham Swiss Mustard Rye";
+        shopSandwich[0].calories = "450 calories";
         shopSandwich[0].price = 40 finney;
         shopSandwich[0].quantity = 200;
 
         shopSandwich[1].sandwichID = 1;
-        shopSandwich[1].sandwichName = &quot;01:  Turkey & Pepperjack&quot;;
-        shopSandwich[1].sandwichDesc = &quot;Turkey Pepperjack Mayo White Bread&quot;;
-        shopSandwich[1].calories = &quot;500 calories&quot;;
+        shopSandwich[1].sandwichName = "01:  Turkey & Pepperjack";
+        shopSandwich[1].sandwichDesc = "Turkey Pepperjack Mayo White Bread";
+        shopSandwich[1].calories = "500 calories";
         shopSandwich[1].price = 45 finney;
         shopSandwich[1].quantity = 200;
 
         shopSandwich[2].sandwichID = 2;
-        shopSandwich[2].sandwichName = &quot;02:  Roast Beef & American&quot;;
-        shopSandwich[2].sandwichDesc = &quot;Roast Beef Havarti Horseradish White Bread&quot;;
-        shopSandwich[2].calories = &quot;600 calories&quot;;
+        shopSandwich[2].sandwichName = "02:  Roast Beef & American";
+        shopSandwich[2].sandwichDesc = "Roast Beef Havarti Horseradish White Bread";
+        shopSandwich[2].calories = "600 calories";
         shopSandwich[2].price = 50 finney;
         shopSandwich[2].quantity = 200;
 
         shopSandwich[3].sandwichID = 3;
-        shopSandwich[3].sandwichName = &quot;03:  Reuben&quot;;
-        shopSandwich[3].sandwichDesc = &quot;Corned Beef Sauerkraut Swiss Rye&quot;;
-        shopSandwich[3].calories = &quot;550 calories&quot;;
+        shopSandwich[3].sandwichName = "03:  Reuben";
+        shopSandwich[3].sandwichDesc = "Corned Beef Sauerkraut Swiss Rye";
+        shopSandwich[3].calories = "550 calories";
         shopSandwich[3].price = 50 finney;
         shopSandwich[3].quantity = 200;
 
         shopSandwich[4].sandwichID = 4;
-        shopSandwich[4].sandwichName = &quot;04:  Italian&quot;;
-        shopSandwich[4].sandwichDesc = &quot;Salami Peppers Provolone Oil Vinegar White&quot;;
-        shopSandwich[4].calories = &quot;500 calories&quot;;
+        shopSandwich[4].sandwichName = "04:  Italian";
+        shopSandwich[4].sandwichDesc = "Salami Peppers Provolone Oil Vinegar White";
+        shopSandwich[4].calories = "500 calories";
         shopSandwich[4].price = 40 finney;
         shopSandwich[4].quantity = 200;
     }
@@ -84,7 +84,7 @@ contract SandwichShop
     {
         if( _sandwichId > 4 )
         {
-            return ( &quot;wrong ID&quot;, &quot;wrong ID&quot;, &quot;zero&quot;, 0, 0);
+            return ( "wrong ID", "wrong ID", "zero", 0, 0);
         }
         else
         {

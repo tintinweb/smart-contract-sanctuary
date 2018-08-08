@@ -15,8 +15,8 @@ contract NAP {
     function NAP() public {
         totalSupply = 100000000 * 18 ** uint256(decimals);
         balanceOf[msg.sender] = 100000000;
-        name = &quot;NAP TOKEN&quot;;
-        symbol = &quot;NAP&quot;;
+        name = "NAP TOKEN";
+        symbol = "NAP";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

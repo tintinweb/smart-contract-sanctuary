@@ -117,8 +117,8 @@ contract CryptoSportsToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;SPORTS&quot;;
-        name = &quot;CryptoSports&quot;;
+        symbol = "SPORTS";
+        name = "CryptoSports";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

@@ -297,8 +297,8 @@ contract METAHASHCOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function METAHASHCOIN() public {
-        symbol = &quot;MHC&quot;;
-        name = &quot;MetaHash Coin&quot;;
+        symbol = "MHC";
+        name = "MetaHash Coin";
         decimals = 18;
         bonusEnds = now + 5500 weeks;
         endDate = now + 7500 weeks;

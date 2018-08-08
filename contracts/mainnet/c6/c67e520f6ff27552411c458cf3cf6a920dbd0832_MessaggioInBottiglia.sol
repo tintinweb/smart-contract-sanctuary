@@ -12,8 +12,8 @@ contract MessaggioInBottiglia {
     
     constructor() public { //costruttore del contratto
         owner = msg.sender;
-        ownerName = &quot;Gaibrasch Tripfud&quot;;
-        message = &quot;Questo &#232; messaggio di prova, scritto dal un temibile pirata. Aggiungi un commento se vuoi scopire dove si trova il tesoro nascosto.&quot;;
+        ownerName = "Gaibrasch Tripfud";
+        message = "Questo &#232; messaggio di prova, scritto dal un temibile pirata. Aggiungi un commento se vuoi scopire dove si trova il tesoro nascosto.";
     }
     
     function addComment(string commento) public payable returns(bool){ //aggiunge testo al contratto

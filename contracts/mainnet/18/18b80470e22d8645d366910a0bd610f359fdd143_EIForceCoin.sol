@@ -102,8 +102,8 @@ contract StandardToken is ERC20 {
 
 contract EIForceCoin is StandardToken, Ownable {
 
-    string public name = &quot; EIForceCoin &quot;;
-    string public symbol = &quot;EFT&quot;;
+    string public name = " EIForceCoin ";
+    string public symbol = "EFT";
     uint public decimals = 18;
 
     // The token allocation
@@ -282,7 +282,7 @@ contract EIForceCoin is StandardToken, Ownable {
 
         jishis_locked[_jishi] = _value;
         jishis_jishiDate[_jishi] = _jishiDate;
-        UpdatedLockingState(&quot;jishi&quot;, _jishi, _value, _jishiDate);
+        UpdatedLockingState("jishi", _jishi, _value, _jishiDate);
     }
 
     // set lockup for strategic simu
@@ -294,7 +294,7 @@ contract EIForceCoin is StandardToken, Ownable {
 
         simus_locked[_simu] = _value;
         simus_simuDate[_simu] = _simuDate;
-        UpdatedLockingState(&quot;simu&quot;, _simu, _value, _simuDate);
+        UpdatedLockingState("simu", _simu, _value, _simuDate);
     }
 
     function setLockup_jiedians(address _jiedian, uint256 _value, uint256 _jiedianDate)
@@ -305,7 +305,7 @@ contract EIForceCoin is StandardToken, Ownable {
 
         jiedians_locked[_jiedian] = _value;
         jiedians_jiedianDate[_jiedian] = _jiedianDate;
-        UpdatedLockingState(&quot;jiedian&quot;, _jiedian, _value, _jiedianDate);
+        UpdatedLockingState("jiedian", _jiedian, _value, _jiedianDate);
     }
 
     function setLockup_dakehus(address _dakehu, uint256 _value, uint256 _dakehuDate)
@@ -316,7 +316,7 @@ contract EIForceCoin is StandardToken, Ownable {
 
         dakehus_locked[_dakehu] = _value;
         dakehus_dakehuDate[_dakehu] = _dakehuDate;
-        UpdatedLockingState(&quot;dakehu&quot;, _dakehu, _value, _dakehuDate);
+        UpdatedLockingState("dakehu", _dakehu, _value, _dakehuDate);
     }
 
 

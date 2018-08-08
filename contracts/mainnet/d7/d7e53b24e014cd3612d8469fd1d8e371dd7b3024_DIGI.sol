@@ -125,9 +125,9 @@ contract StandardToken is Token,Mortal,Pausable {
     mapping (address => mapping (address => uint256)) allowed;
 }
 contract DIGI is StandardToken{
-    string public constant name = &quot;DIGI&quot;;
+    string public constant name = "DIGI";
     uint8 public constant decimals = 4;
-    string public constant symbol = &quot;DIGI&quot;;
+    string public constant symbol = "DIGI";
     uint256 constant priceOfToken=1666666666666666;
     uint256 twoWeeksBonusTime;
     uint256 thirdWeekBonusTime;

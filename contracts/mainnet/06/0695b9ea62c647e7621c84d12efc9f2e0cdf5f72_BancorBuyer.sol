@@ -204,7 +204,7 @@ contract BancorBuyer {
             !(_data[0] == 0x09 && _data[1] == 0x5e && _data[2] == 0xa7 && _data[3] == 0xb3) &&
             // 0x23b872dd - transferFrom(address,address,uint256)
             !(_data[0] == 0x23 && _data[1] == 0xb8 && _data[2] == 0x72 && _data[3] == 0xdd),
-            &quot;buyInternal: Do not try to call transfer, approve or transferFrom&quot;
+            "buyInternal: Do not try to call transfer, approve or transferFrom"
         );
         uint256 tokenBalance = token.balanceOf(this);
         require(_exchange.call.value(_value)(_data));
@@ -388,7 +388,7 @@ contract BancorBuyer {
     //     payable
     //     public
     // {
-    //     require(_mtkn.changeableTokenCount() == _exchanges.length, &quot;&quot;);
+    //     require(_mtkn.changeableTokenCount() == _exchanges.length, "");
 
     //     balances[msg.sender] = balances[msg.sender].add(msg.value);
     //     for (uint i = 0; i < _exchanges.length; i++) {

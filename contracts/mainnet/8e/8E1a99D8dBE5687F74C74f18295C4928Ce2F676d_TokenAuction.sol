@@ -292,7 +292,7 @@ contract TokenAuction is SafeMath {
   //
   function () payable {
     proceeds = safeAdd(proceeds, msg.value);
-    BizarreEvent(msg.sender, &quot;bizarre payment&quot;, msg.value);
+    BizarreEvent(msg.sender, "bizarre payment", msg.value);
   }
 
 
@@ -332,7 +332,7 @@ contract TokenAuction is SafeMath {
   }
   function executeBidFor(address _addr, uint256 _secret, uint256 _price, uint256 _quantity) public duringSale {
     bytes32 computedHash = keccak256(_secret, _price, _quantity);
-    //MessageBytes32Event(&quot;computedHash&quot;, computedHash);
+    //MessageBytes32Event("computedHash", computedHash);
     require(secretBids[_addr].hash == computedHash);
     //
     if (secretBids[_addr].deposit > 0) {

@@ -4,11 +4,11 @@ pragma solidity ^0.4.18;
 contract TopIvy {
 
   /*** CONSTANTS ***/
-  string public constant NAME = &quot;TopIvy&quot;;
+  string public constant NAME = "TopIvy";
   uint256 public constant voteCost = 0.001 ether;
   
   // You can use this string to verify the indices correspond to the school order below
-  string public constant schoolOrdering = &quot;BrownColumbiaCornellDartmouthHarvardPennPrincetonYale&quot;;
+  string public constant schoolOrdering = "BrownColumbiaCornellDartmouthHarvardPennPrincetonYale";
 
   /*** STORAGE ***/
   address public ceoAddress;

@@ -227,7 +227,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -339,8 +339,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract TraxionToken is PausableToken {
 
-  string public constant name = &quot;Traxion Token&quot;;
-  string public constant symbol = &quot;TXN&quot;;
+  string public constant name = "Traxion Token";
+  string public constant symbol = "TXN";
   uint8 public constant decimals = 18;
   uint public constant INITIAL_SUPPLY = 5e8 * 10**uint(decimals);
 

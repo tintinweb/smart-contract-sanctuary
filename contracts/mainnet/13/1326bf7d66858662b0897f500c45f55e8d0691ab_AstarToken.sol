@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract AstarToken is StandardToken {
 
-  string public constant name = &quot;ASTAR&quot;;
-  string public constant symbol = &quot;ASTAR&quot;;
+  string public constant name = "ASTAR";
+  string public constant symbol = "ASTAR";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 3e9 * (10 ** uint256(decimals));

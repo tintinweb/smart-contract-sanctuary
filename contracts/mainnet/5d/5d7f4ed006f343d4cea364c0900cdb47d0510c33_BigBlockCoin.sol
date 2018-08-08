@@ -113,8 +113,8 @@ contract BigBlockCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BigBlockCoin() public {
-        symbol = &quot;BBCC&quot;;
-        name = &quot;Big Block Coin&quot;;
+        symbol = "BBCC";
+        name = "Big Block Coin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x2B4AaB386a5e64b811183b72Bf81467B8581Ab64] = _totalSupply; //MEW address here

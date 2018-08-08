@@ -83,8 +83,8 @@ contract KelvinToken is ERC20Interface, Owned, SafeMath {
 
    
     function KelvinToken() public {
-        symbol = &quot;OEG&quot;;
-        name = &quot;Oyeng Chain&quot;;
+        symbol = "OEG";
+        name = "Oyeng Chain";
         decimals = 18;
         _totalSupply = 100000000000000000000000;
         balances[0x811D38BDca68F53c8237BE3e2366f116cD91Afa8] = _totalSupply;

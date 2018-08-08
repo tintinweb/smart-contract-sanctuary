@@ -44,7 +44,7 @@ library ERC20Lib {
 
     (err,balance) = self.balances[msg.sender].minus(_value);
     if(err) {
-      ErrorMsg(&quot;Balance too low for transfer&quot;);
+      ErrorMsg("Balance too low for transfer");
       return false;
     }
     self.balances[msg.sender] = balance;
@@ -72,13 +72,13 @@ library ERC20Lib {
 
     (err,balanceOwner) = self.balances[_from].minus(_value);
     if(err) {
-      ErrorMsg(&quot;Balance too low for transfer&quot;);
+      ErrorMsg("Balance too low for transfer");
       return false;
     }
 
     (err,balanceSpender) = _allowance.minus(_value);
     if(err) {
-      ErrorMsg(&quot;Transfer exceeds allowance&quot;);
+      ErrorMsg("Transfer exceeds allowance");
       return false;
     }
     self.balances[_from] = balanceOwner;
@@ -136,7 +136,7 @@ library BasicMathLib {
       allGood:
     }
     if (err)
-      Err(&quot;times func overflow&quot;);
+      Err("times func overflow");
   }
 
   /// @dev Divides two numbers but checks for 0 in the divisor first.
@@ -153,7 +153,7 @@ library BasicMathLib {
       return(mload(0x40),0x40)
       e:
     }
-    Err(&quot;tried to divide by zero&quot;);
+    Err("tried to divide by zero");
     return (true, 0);
   }
 
@@ -172,7 +172,7 @@ library BasicMathLib {
       allGood:
     }
     if (err)
-      Err(&quot;plus func overflow&quot;);
+      Err("plus func overflow");
   }
 
   /// @dev Subtracts two numbers and checks for underflow before returning.
@@ -190,7 +190,7 @@ library BasicMathLib {
       allGood:
     }
     if (err)
-      Err(&quot;minus func underflow&quot;);
+      Err("minus func underflow");
   }
 }
 
@@ -199,8 +199,8 @@ contract ETHCONEarlyBirdToken {
 
    ERC20Lib.TokenStorage token;
 
-   string public name = &quot;ETHCON-Early-Bird&quot;;
-   string public symbol = &quot;THX&quot;;
+   string public name = "ETHCON-Early-Bird";
+   string public symbol = "THX";
    uint public decimals = 0;
    uint public INITIAL_SUPPLY = 600;
 
@@ -226,7 +226,7 @@ contract ETHCONEarlyBirdToken {
      if(token.balanceOf(to) == 0){
        return token.transfer(to, value);
      } else {
-       ErrorMsg(&quot;Recipient already has token&quot;);
+       ErrorMsg("Recipient already has token");
        return false;
      }
 
@@ -236,7 +236,7 @@ contract ETHCONEarlyBirdToken {
      if(token.balanceOf(to) == 0){
        return token.transferFrom(from, to, value);
      } else {
-       ErrorMsg(&quot;Recipient already has token&quot;);
+       ErrorMsg("Recipient already has token");
        return false;
      }
    }

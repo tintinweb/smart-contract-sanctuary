@@ -16,9 +16,9 @@ contract BitcoinGame {
     function BitcoinGame() {
 
          initialSupply = 21000000;
-         name =&quot;BitcoinGame&quot;;
+         name ="BitcoinGame";
         decimals = 0;
-         symbol = &quot;BGAME&quot;;
+         symbol = "BGAME";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

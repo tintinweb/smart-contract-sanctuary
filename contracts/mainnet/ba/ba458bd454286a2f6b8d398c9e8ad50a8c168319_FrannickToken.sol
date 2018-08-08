@@ -110,8 +110,8 @@ contract FrannickToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FrannickToken() public {
-        symbol = &quot;EFS&quot;;
-        name = &quot;Frannick  Token&quot;;
+        symbol = "EFS";
+        name = "Frannick  Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x8C40e678559B0B48a110af082fE3ff4b5f36275f] = _totalSupply;

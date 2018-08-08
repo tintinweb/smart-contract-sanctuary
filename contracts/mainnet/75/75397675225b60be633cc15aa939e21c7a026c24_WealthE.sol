@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -423,8 +423,8 @@ contract WealthE is MintableToken, PausableToken, Claimable {
 
     /*----------- ERC20 GLOBALS -----------*/
 
-    string public constant name = &quot;Wealth-E&quot;;
-    string public constant symbol = &quot;WRE&quot;;
+    string public constant name = "Wealth-E";
+    string public constant symbol = "WRE";
     uint8 public constant decimals = 18;
 
 

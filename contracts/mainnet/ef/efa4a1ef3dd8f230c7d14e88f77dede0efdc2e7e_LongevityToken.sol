@@ -193,8 +193,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract LongevityToken is StandardToken {
-    string public name = &quot;Longevity&quot;;
-    string public symbol = &quot;LTY&quot;;
+    string public name = "Longevity";
+    string public symbol = "LTY";
     uint8 public decimals = 2;
     bool public mintingFinished = false;
     mapping (address => bool) owners;

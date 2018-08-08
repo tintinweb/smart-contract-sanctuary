@@ -4,8 +4,8 @@ contract	SIE_DE_301202				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	SIE_DE_301202		&quot;	;
-	string	public		symbol =	&quot;	SIEDEII		&quot;	;
+	string	public		name =	"	SIE_DE_301202		"	;
+	string	public		symbol =	"	SIEDEII		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10972781423493000000000000					;	

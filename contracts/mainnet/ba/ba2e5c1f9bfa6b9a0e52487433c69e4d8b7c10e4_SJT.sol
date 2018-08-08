@@ -28,8 +28,8 @@ contract SJT {
     ) public {
         totalSupply = 5000000000;                                            // Total supply with the decimal amount
         balanceOf[msg.sender] = 5000000000;                                  // All initial tokens
-        name = &quot;Saint James Holding & Investment Company Trust Coin&quot;;        // The name for display purposes
-        symbol = &quot;SJT&quot;;                                                      // The symbol for display purposes
+        name = "Saint James Holding & Investment Company Trust Coin";        // The name for display purposes
+        symbol = "SJT";                                                      // The symbol for display purposes
     }
 
     /**

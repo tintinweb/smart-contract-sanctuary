@@ -3,14 +3,14 @@
   Copyright 2017 ZeroEx Intl.
   Modifications Copyright 2018 bZeroX, LLC
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -22,7 +22,7 @@ pragma solidity 0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -115,27 +115,27 @@ contract TokenRegistry is Ownable {
     }
 
     modifier tokenExists(address _token) {
-        require(tokens[_token].token != address(0), &quot;TokenRegistry::token doesn&#39;t exist&quot;);
+        require(tokens[_token].token != address(0), "TokenRegistry::token doesn&#39;t exist");
         _;
     }
 
     modifier tokenDoesNotExist(address _token) {
-        require(tokens[_token].token == address(0), &quot;TokenRegistry::token exists&quot;);
+        require(tokens[_token].token == address(0), "TokenRegistry::token exists");
         _;
     }
 
     modifier nameDoesNotExist(string _name) {
-        require(tokenByName[_name] == address(0), &quot;TokenRegistry::name exists&quot;);
+        require(tokenByName[_name] == address(0), "TokenRegistry::name exists");
         _;
     }
 
     modifier symbolDoesNotExist(string _symbol) {
-        require(tokenBySymbol[_symbol] == address(0), &quot;TokenRegistry::symbol exists&quot;);
+        require(tokenBySymbol[_symbol] == address(0), "TokenRegistry::symbol exists");
         _;
     }
 
     modifier addressNotNull(address _address) {
-        require(_address != address(0), &quot;TokenRegistry::address is null&quot;);
+        require(_address != address(0), "TokenRegistry::address is null");
         _;
     }
 
@@ -184,7 +184,7 @@ contract TokenRegistry is Ownable {
         onlyOwner
         tokenExists(_token)
     {
-        require(tokenAddresses[_index] == _token, &quot;TokenRegistry::invalid index&quot;);
+        require(tokenAddresses[_index] == _token, "TokenRegistry::invalid index");
 
         tokenAddresses[_index] = tokenAddresses[tokenAddresses.length - 1];
         tokenAddresses.length -= 1;

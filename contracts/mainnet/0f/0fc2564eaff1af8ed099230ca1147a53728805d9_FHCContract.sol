@@ -113,8 +113,8 @@ contract FHCContract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FHCContract() public {
-        symbol = &quot;FHC&quot;;
-        name = &quot;Future Health&quot;;
+        symbol = "FHC";
+        name = "Future Health";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xb1B5A4e78ec28195863AEB9BFCECCEd0232b6ea3] = _totalSupply; //MEW address here

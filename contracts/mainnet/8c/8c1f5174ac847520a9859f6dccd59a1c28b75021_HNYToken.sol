@@ -342,7 +342,7 @@ contract BurnableToken is BasicToken {
 }
 
 contract HNYToken is BurnableToken, MintableToken, PausableToken {
-  string public constant name = &quot;BitFence Token&quot;;
-  string public constant symbol = &quot;HNY&quot;;
+  string public constant name = "BitFence Token";
+  string public constant symbol = "HNY";
   uint8 public constant decimals = 18;
 }

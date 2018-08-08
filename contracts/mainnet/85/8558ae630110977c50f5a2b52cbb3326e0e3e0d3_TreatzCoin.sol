@@ -98,8 +98,8 @@ contract TreatzCoin is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function TreatzCoin() public {
-        symbol =&quot;TRTZ&quot;;
-        name = &quot;Treatz Coin&quot;;
+        symbol ="TRTZ";
+        name = "Treatz Coin";
         decimals = 2;
         _totalSupply = 20000000 * 10**uint(decimals);
 

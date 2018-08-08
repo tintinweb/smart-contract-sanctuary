@@ -100,8 +100,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;BIC&quot;;
-        name = &quot;beauty industry coin&quot;;
+        symbol = "BIC";
+        name = "beauty industry coin";
         decimals = 18;
         _totalSupply = 300000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

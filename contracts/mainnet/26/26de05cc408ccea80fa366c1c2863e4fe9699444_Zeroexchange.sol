@@ -18,9 +18,9 @@ contract Zeroexchange {
     function Zeroexchange() {
 
          initialSupply = 10000000000;
-         name =&quot;Zeroexchange&quot;;
+         name ="Zeroexchange";
         decimals = 2;
-         symbol = &quot;ZOO&quot;;
+         symbol = "ZOO";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

@@ -193,7 +193,7 @@ contract HumanStandardToken is StandardToken {
 
 }
 
-contract BUCToken is HumanStandardToken(1000000000000000000000000000,&quot;BUC&quot;,18,&quot;BUC&quot;){
+contract BUCToken is HumanStandardToken(1000000000000000000000000000,"BUC",18,"BUC"){
     function () public {
         //if ether is sent to this address, send it back.
         throw;

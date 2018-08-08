@@ -19,8 +19,8 @@ contract DumbCoin {
     uint256 public totalTokensIssued = 0;
     uint256 public totalBonusTokensIssued = 0;
 
-    function name() public constant returns (string) { return &quot;DumbCoin&quot;; }
-    function symbol() public constant returns (string) { return &quot;DUM&quot;; }
+    function name() public constant returns (string) { return "DumbCoin"; }
+    function symbol() public constant returns (string) { return "DUM"; }
     function decimals() public constant returns (uint8) { return 18; }
 
     uint256 public totalSupply = 1000000 * (10 ** 18);

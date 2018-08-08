@@ -28,8 +28,8 @@ contract DOJC {
     ) public {
         totalSupply = 500000000000000000000000000000000;                             // Update total supply with the decimal amount
         balanceOf[msg.sender] = 500000000000000000000000000000000;                   // Give the creator all initial tokens
-        name = &quot;Dojomentar&quot;;                                                     // Set the name for display purposes
-        symbol = &quot;DOJC&quot;;                                                        // Set the symbol for display purposes
+        name = "Dojomentar";                                                     // Set the name for display purposes
+        symbol = "DOJC";                                                        // Set the symbol for display purposes
     }
 
     /**

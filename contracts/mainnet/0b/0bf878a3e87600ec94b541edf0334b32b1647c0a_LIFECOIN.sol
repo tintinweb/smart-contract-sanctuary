@@ -113,8 +113,8 @@ contract LIFECOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LIFECOIN() public {
-        symbol = &quot;LIFE&quot;;
-        name = &quot;LIFECOIN&quot;;
+        symbol = "LIFE";
+        name = "LIFECOIN";
         decimals = 18;
         _totalSupply = 3000000000000000000000000000000;
         balances[0xD133cc957d41C0cd62ed6175155B2E54F951eA79] = _totalSupply;

@@ -223,8 +223,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract EduCoin is StandardToken {
 
-    string public constant name = &quot;EduCoin&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;EDU&quot;; // solium-disable-line uppercase
+    string public constant name = "EduCoin"; // solium-disable-line uppercase
+    string public constant symbol = "EDU"; // solium-disable-line uppercase
     uint8 public constant decimals = 18; // solium-disable-line uppercase
 
     uint256 public constant INITIAL_SUPPLY = 15 * (10 ** 9) * (10 ** uint256(decimals));

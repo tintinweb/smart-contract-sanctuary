@@ -113,8 +113,8 @@ contract Cooperium is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Cooperium() public {
-        symbol = &quot;CXP&quot;;
-        name = &quot;Cooperium 2.0&quot;;
+        symbol = "CXP";
+        name = "Cooperium 2.0";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x6372b3e445f580290ab0AeAf81d377985E3A9109] = _totalSupply;

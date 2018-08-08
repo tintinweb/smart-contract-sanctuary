@@ -1,4 +1,4 @@
-// Copyright (C) 2017-2018 HashFurue&#39;s Limited (&quot;Hashworld&quot;),
+// Copyright (C) 2017-2018 HashFurue&#39;s Limited ("Hashworld"),
 // an exempted company incorporated under the Laws of the Cayman Islands.
 // All rights reserved.
 
@@ -134,7 +134,7 @@ contract HashCoinToken is owned, TokenERC20 {
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
     function HashCoinToken(
-    ) TokenERC20(100000000000, &quot;Hashcoin Token&quot;, &quot;HSCT&quot;) public {}
+    ) TokenERC20(100000000000, "Hashcoin Token", "HSCT") public {}
 
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {

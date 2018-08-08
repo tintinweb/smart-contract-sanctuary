@@ -90,8 +90,8 @@ contract VirtualRealityChain is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function VirtualRealityChain() public {
-        symbol = &quot;VRC&quot;;
-        name = &quot;Virtual Reality Chain&quot;;
+        symbol = "VRC";
+        name = "Virtual Reality Chain";
         decimals = 18;
         _totalSupply = 98 * 1000 * 1000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

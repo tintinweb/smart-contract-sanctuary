@@ -34,8 +34,8 @@ pragma solidity ^0.4.8;
 
 
    contract FixedSupplyToken is ERC20Interface {
-      string public constant symbol = &quot;EHD&quot;;
-      string public constant name = &quot;以太钻石&quot;; 
+      string public constant symbol = "EHD";
+      string public constant name = "以太钻石"; 
       uint8 public constant decimals = 18; 
       uint256 _totalSupply = 55000000000000000000000000; 
 

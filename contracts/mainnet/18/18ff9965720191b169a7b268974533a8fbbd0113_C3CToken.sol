@@ -73,7 +73,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -433,8 +433,8 @@ contract XClaimable is Claimable {
 
 
 contract C3CTokenConfig {
-    string public constant NAME = &quot;CryptoCoin Coin&quot;;
-    string public constant SYMBOL = &quot;C3C&quot;;
+    string public constant NAME = "CryptoCoin Coin";
+    string public constant SYMBOL = "C3C";
     uint8 public constant DECIMALS = 18;
     uint public constant DECIMALSFACTOR = 10 ** uint(DECIMALS);
     uint public constant TOTALSUPPLY = 42000000 * DECIMALSFACTOR;

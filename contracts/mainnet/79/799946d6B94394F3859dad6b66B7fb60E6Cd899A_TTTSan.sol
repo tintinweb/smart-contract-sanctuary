@@ -4,7 +4,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -339,7 +339,7 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 private constant ERC721_RECEIVED = 0x150b7a02;
 
@@ -479,7 +479,7 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
    * @dev Safely transfers the ownership of a given token ID to another address
    * If the target address is a contract, it must implement `onERC721Received`,
    * which is called upon a safe transfer, and return the magic value
-   * `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`; otherwise,
+   * `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`; otherwise,
    * the transfer is reverted.
    *
    * Requires the msg sender to be the owner, approved, or operator
@@ -495,14 +495,14 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
     public
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * If the target address is a contract, it must implement `onERC721Received`,
    * which is called upon a safe transfer, and return the magic value
-   * `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`; otherwise,
+   * `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`; otherwise,
    * the transfer is reverted.
    * Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -642,7 +642,7 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 internal constant ERC721_RECEIVED = 0x150b7a02;
@@ -658,7 +658,7 @@ contract ERC721Receiver {
    * @param _from The address which previously owned the token
    * @param _tokenId The NFT identifier which is being transferred
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`
    */
   function onERC721Received(
     address _operator,
@@ -890,7 +890,7 @@ contract TTTSan is ERC721Token, Ownable {
   uint256 public sanMaxFree;
   uint256 public sanCurrentTotal;
 
-  string public baseUrl = &quot;https://thetiptoken.io/arv/img/&quot;;
+  string public baseUrl = "https://thetiptoken.io/arv/img/";
 
   mapping(string=>bool) sanOwnership;
   mapping(address=>uint256) sanSlots;
@@ -921,7 +921,7 @@ contract TTTSan is ERC721Token, Ownable {
   event SanLengthReqChange(uint256 sanMinLength, uint256 sanMaxLength);
   event SanMaxAmountChange(uint256 sanMaxAmount);
 
-  constructor() public ERC721Token(&quot;TTTSAN&quot;, &quot;TTTS&quot;) {
+  constructor() public ERC721Token("TTTSAN", "TTTS") {
     sanTTTCost = 10 ether;
     sanMaxLength = 16;
     sanMinLength = 2;
@@ -929,24 +929,24 @@ contract TTTSan is ERC721Token, Ownable {
     sanMaxFree = 500;
     ttt = TTTToken(tttTokenAddress);
     // gen0 san
-  /* &quot;NeverGonnaGiveYouUp.NeverGonnaLetYouDown&quot; */
-    string memory gen0 = &quot;NeverGonnaGiveYouUp.NeverGonnaLetYouDown&quot;;
+  /* "NeverGonnaGiveYouUp.NeverGonnaLetYouDown" */
+    string memory gen0 = "NeverGonnaGiveYouUp.NeverGonnaLetYouDown";
     SAN memory s = SAN({
         sanName: gen0,
         timeAlive: block.timestamp,
         timeLastMove: block.timestamp,
         prevOwner: msg.sender,
-        sanageLink: &quot;0x&quot;
+        sanageLink: "0x"
     });
     uint256 sanId = sans.push(s).sub(1);
     sanOwnership[gen0] = true;
-    _sanMint(sanId, msg.sender, &quot;gen0.jpeg&quot;, gen0);
+    _sanMint(sanId, msg.sender, "gen0.jpeg", gen0);
   }
 
   function sanMint(string _sanName, string _sanageUri) external returns (string) {
     // first 500 SANs do not require a slot
     if(sanCurrentTotal > sanMaxFree)
-      require(sanSlots[msg.sender] >= 1, &quot;no san slots available&quot;);
+      require(sanSlots[msg.sender] >= 1, "no san slots available");
     string memory sn = sanitize(_sanName);
     SAN memory s = SAN({
         sanName: sn,
@@ -1005,8 +1005,8 @@ contract TTTSan is ERC721Token, Ownable {
   }
 
   function buySanSlot(address _sanOwner,  uint256 _tip) external returns(bool) {
-    require(_tip >= sanTTTCost, &quot;tip less than san cost&quot;);
-    require(sanSlots[_sanOwner] < sanMaxAmount, &quot;max san slots owned&quot;);
+    require(_tip >= sanTTTCost, "tip less than san cost");
+    require(sanSlots[_sanOwner] < sanMaxAmount, "max san slots owned");
     sanSlots[_sanOwner] = sanSlots[_sanOwner].add(1);
     ttt.transferFrom(msg.sender, wallet, _tip);
     emit SanSlotPurchase(_sanOwner, 1);
@@ -1063,9 +1063,9 @@ contract TTTSan is ERC721Token, Ownable {
     require(_sanOwner.length == _slotCount.length);
     require(_sanOwner.length <= 100);
     for(uint8 i = 0; i < _sanOwner.length; i++) {
-      require(_slotCount[i] > 0 && _slotCount[i] <= sanMaxAmount, &quot;incorrect slot count&quot;);
+      require(_slotCount[i] > 0 && _slotCount[i] <= sanMaxAmount, "incorrect slot count");
       sanSlots[_sanOwner[i]] = sanSlots[_sanOwner[i]].add(_slotCount[i]);
-      require(sanSlots[_sanOwner[i]] <= sanMaxAmount, &quot;max san slots owned&quot;);
+      require(sanSlots[_sanOwner[i]] <= sanMaxAmount, "max san slots owned");
     }
   }
 
@@ -1113,13 +1113,13 @@ contract TTTSan is ERC721Token, Ownable {
 
   function sanitize(string _sanName) internal view returns(string) {
     string memory sn = sanToLower(_sanName);
-    require(isValidSan(sn), &quot;san is not valid&quot;);
-    require(!sanOwnership[sn], &quot;san is not unique&quot;);
+    require(isValidSan(sn), "san is not valid");
+    require(!sanOwnership[sn], "san is not unique");
     return sn;
   }
 
   function _sanMint(uint256 _sanId, address _owner, string _sanageUri, string _sanName) internal {
-    require(sanOwnerAmount[_owner] < sanMaxAmount, &quot;max san owned&quot;);
+    require(sanOwnerAmount[_owner] < sanMaxAmount, "max san owned");
     sanNameToId[_sanName] = _sanId;
     sanNameToAddress[_sanName] = _owner;
     sanOwnerAmount[_owner] = sanOwnerAmount[_owner].add(1);

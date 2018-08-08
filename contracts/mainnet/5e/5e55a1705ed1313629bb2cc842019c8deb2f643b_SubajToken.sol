@@ -105,8 +105,8 @@ contract SubajToken is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
     
     function SubajToken() public {
-        symbol = &quot;SBJ&quot;;
-        name = &quot;SUBAJ&quot;;
+        symbol = "SBJ";
+        name = "SUBAJ";
         decimals = 10;
         _totalSupply = 5000000000 * 10**uint256(decimals);
         balances[owner] = _totalSupply;

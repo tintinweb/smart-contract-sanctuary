@@ -46,7 +46,7 @@ library SafeMath {
 	}
 }
 
-// Allows users to &quot;heart&quot; (like) a DAPP by dapp id
+// Allows users to "heart" (like) a DAPP by dapp id
 // 1 Like = XXXXX eth will be set on front end of site
 // 50% of each transaction gets sent to the last liker
 

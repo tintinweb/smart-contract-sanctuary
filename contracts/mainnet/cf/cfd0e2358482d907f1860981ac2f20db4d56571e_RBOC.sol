@@ -20,9 +20,9 @@ contract RBOC{
     function RBOC() public {
         balances[msg.sender] = 50000000000000;               // Give the creator all initial tokens
         totalSupply = 50000000000000;                        // Update total supply
-        name = &quot;RBOC&quot;;                                   // Set the name for display purposes
+        name = "RBOC";                                   // Set the name for display purposes
         decimals =4;                            // Amount of decimals for display purposes
-        symbol = &quot;RBOC&quot;;                               // Set the symbol for display purposes
+        symbol = "RBOC";                               // Set the symbol for display purposes
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

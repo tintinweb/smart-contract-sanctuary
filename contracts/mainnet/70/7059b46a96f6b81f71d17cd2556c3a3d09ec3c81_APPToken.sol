@@ -214,8 +214,8 @@ return true;
 */
 contract APPToken is StandardToken {
 
-string public constant name = &quot;Asia Pacific Peace&quot;; // solium-disable-line uppercase
-string public constant symbol = &quot;APP&quot;; // solium-disable-line uppercase
+string public constant name = "Asia Pacific Peace"; // solium-disable-line uppercase
+string public constant symbol = "APP"; // solium-disable-line uppercase
 uint8 public constant decimals = 8; // solium-disable-line uppercase
 
 uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));

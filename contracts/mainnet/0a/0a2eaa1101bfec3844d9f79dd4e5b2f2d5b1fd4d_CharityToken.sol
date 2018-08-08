@@ -113,8 +113,8 @@ contract CharityToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CharityToken() public {
-        symbol = &quot;CHT&quot;;
-        name = &quot;Charity Token&quot;;
+        symbol = "CHT";
+        name = "Charity Token";
         decimals = 4;
         _totalSupply = 10000000000000;
         balances[0xC3a099EbE439E9A3D3595d4617380403f9E11eB0] = _totalSupply;

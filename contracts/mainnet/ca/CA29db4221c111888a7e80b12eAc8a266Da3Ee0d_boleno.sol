@@ -1,8 +1,8 @@
 pragma solidity ^0.4.11;
 
 contract boleno {
-    string public constant name = &quot;Boleno&quot;;                 // Token name
-    string public constant symbol = &quot;BLN&quot;;                  // Boleno token symbol
+    string public constant name = "Boleno";                 // Token name
+    string public constant symbol = "BLN";                  // Boleno token symbol
     uint8 public constant decimals = 18;                    // Number of decimals
     uint256 public totalSupply = 10**25;                    // The initial supply (10 million) in base unit
     address public supplier;                                // Boleno supplier address

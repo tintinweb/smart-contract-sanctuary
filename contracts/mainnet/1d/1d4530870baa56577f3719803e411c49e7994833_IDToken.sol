@@ -16,9 +16,9 @@ contract IDToken {
     function IDToken() {
 
          initialSupply = 25000000;
-         name =&quot;IDToken&quot;;
+         name ="IDToken";
         decimals = 2;
-         symbol = &quot;IDT&quot;;
+         symbol = "IDT";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

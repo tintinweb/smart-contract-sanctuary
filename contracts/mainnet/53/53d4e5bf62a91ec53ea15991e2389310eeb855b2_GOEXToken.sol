@@ -241,8 +241,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract GOEXToken is StandardToken {
 
-  string public constant name = &quot;GOEX Token&quot;;
-  string public constant symbol = &quot;GOEX&quot;;
+  string public constant name = "GOEX Token";
+  string public constant symbol = "GOEX";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 500000000 * (10 ** uint256(decimals));

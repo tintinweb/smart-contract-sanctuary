@@ -103,8 +103,8 @@ contract EEFcoin is ERC223  {
     mapping (address => uint256) public unlockUnixTime;
     uint  public maxIncrease=20;
     address public target;
-    string internal name_= &quot;EEFcoin&quot;;
-    string internal symbol_ = &quot;EEF&quot;;
+    string internal name_= "EEFcoin";
+    string internal symbol_ = "EEF";
     uint8 internal decimals_= 18;
     uint256 internal totalSupply_= 100000000e18;
     uint256 public toGiveBase = 30e18;

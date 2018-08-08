@@ -28,8 +28,8 @@ contract SUNX {
     ) {
         balanceOf[msg.sender] = 10000000000000000000000000;              // Give the creator all initial tokens
         totalSupply = 10000000000000000000000000;                        // Update total supply
-        name = &quot;SUNX&quot;;                                   // Set the name for display purposes
-        symbol = &quot;XNS&quot;;                               // Set the symbol for display purposes
+        name = "SUNX";                                   // Set the name for display purposes
+        symbol = "XNS";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

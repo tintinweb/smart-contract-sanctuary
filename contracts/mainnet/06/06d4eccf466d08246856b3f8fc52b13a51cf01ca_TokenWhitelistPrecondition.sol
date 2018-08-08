@@ -56,11 +56,11 @@ contract Precondition is Owned {
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -736,7 +736,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal pure returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint length = self._len * (parts.length - 1);
         for (uint i = 0; i < parts.length; i++)
@@ -792,15 +792,15 @@ library strings {
     }
 
     function strConcat(string _a, string _b, string _c, string _d) pure internal returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
 
     function strConcat(string _a, string _b, string _c) pure internal returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
 
     function strConcat(string _a, string _b) pure internal returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 
     function addressToString(address x) internal pure returns (string) {
@@ -812,7 +812,7 @@ library strings {
             s[2 * i] = charToByte(hi);
             s[2 * i + 1] = charToByte(lo);
         }
-        return strConcat(&quot;0x&quot;, string(s));
+        return strConcat("0x", string(s));
     }
 
     function charToByte(byte b) internal pure returns (byte c) {
@@ -883,7 +883,7 @@ contract TokenWhitelistPrecondition is Precondition {
 
     function extractRepository(string _platformId) pure internal returns (string repository) {
         var sliced = string(_platformId).toSlice();
-        var platform = sliced.split(&quot;|FR|&quot;.toSlice());
+        var platform = sliced.split("|FR|".toSlice());
         return platform.toString();
     }
 

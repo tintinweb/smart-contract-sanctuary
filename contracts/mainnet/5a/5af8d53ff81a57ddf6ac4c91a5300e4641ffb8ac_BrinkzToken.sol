@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract BrinkzToken {
     // Public variables of the token
-    string public name = &quot;Brinkz Token&quot;;
-    string public symbol = &quot;BRTZ&quot;;
+    string public name = "Brinkz Token";
+    string public symbol = "BRTZ";
     uint8 public decimals = 0;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

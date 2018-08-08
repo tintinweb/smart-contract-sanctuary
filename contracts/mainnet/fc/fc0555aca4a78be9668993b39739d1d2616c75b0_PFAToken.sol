@@ -123,9 +123,9 @@ contract PFAToken is Token{
 
         balances[msg.sender] = 1000000000 * 1000000000000000000;
         totalSupply = 1000000000 * 1000000000000000000;
-        name = &quot;Price Fitch Asset&quot;;
+        name = "Price Fitch Asset";
         decimals = 18;
-        symbol = &quot;PFA&quot;;
+        symbol = "PFA";
         unitsOneEthCanBuy = 100;
         minimumContribution = 10 finney;
         fundsWallet = msg.sender;
@@ -170,7 +170,7 @@ contract PFAToken is Token{
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) {
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) {
             revert();
         }
 

@@ -96,7 +96,7 @@ contract KetherHomepage {
         }
 
         // We reserved space in the grid, now make a placeholder entry.
-        Ad memory ad = Ad(msg.sender, _x, _y, _width, _height, &quot;&quot;, &quot;&quot;, &quot;&quot;, false, false);
+        Ad memory ad = Ad(msg.sender, _x, _y, _width, _height, "", "", "", false, false);
         idx = ads.push(ad) - 1;
         Buy(idx, msg.sender, _x, _y, _width, _height);
         return idx;

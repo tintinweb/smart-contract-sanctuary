@@ -4,8 +4,8 @@ contract	VALEO_301202				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	VALEO_301202		&quot;	;
-	string	public		symbol =	&quot;	VALEII		&quot;	;
+	string	public		name =	"	VALEO_301202		"	;
+	string	public		symbol =	"	VALEII		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		11287331013060800000000000					;	

@@ -113,8 +113,8 @@ contract DWMP is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function DWMP() public {
-        symbol = &quot;DWMP&quot;;
-        name = &quot;WeChat Cash - Decentralized Mini Programs&quot;;
+        symbol = "DWMP";
+        name = "WeChat Cash - Decentralized Mini Programs";
         decimals = 18;
         _totalSupply = 10256411 * 10**uint(decimals);
         balances[owner] = _totalSupply;

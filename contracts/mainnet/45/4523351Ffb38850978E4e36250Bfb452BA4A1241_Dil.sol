@@ -123,10 +123,10 @@ contract StandardToken is Token {
 contract Dil is StandardToken, SafeMath {
 
     // metadata
-    string public constant name = &quot;दिल&quot;; // Heart in Devnagari Script Hindi Language
-    string public constant symbol = &quot;❤️&quot;; // Red heart emoji
+    string public constant name = "दिल"; // Heart in Devnagari Script Hindi Language
+    string public constant symbol = "❤️"; // Red heart emoji
     uint256 public constant decimals = 0; // Whole tokens only
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     // important addresses
     address public depositAddress;      // deposit address for ETH for ICO owner

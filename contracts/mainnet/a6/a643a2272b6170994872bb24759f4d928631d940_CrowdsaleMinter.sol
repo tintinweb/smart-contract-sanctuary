@@ -8,7 +8,7 @@ pragma solidity ^0.4.11;
 // YOU ARE STRONGLY ENCOURAGED TO STUDY THIS SMART CONTRACT CAREFULLY IN ORDER TO UNDERSTAND POSSIBLE EDGE CASES AND RISKS.
 // DON&#39;T USE THIS SMART CONTRACT IF YOU HAVE SUBSTANTIAL DOUBTS OR IF YOU DON&#39;T KNOW WHAT YOU ARE DOING.
 //
-// THIS SOFTWARE IS PROVIDED &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+// THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
 // AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
 // INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
 // OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
@@ -124,7 +124,7 @@ contract PresaleBonusVoting {
 
 contract CrowdsaleMinter is Owned {
 
-    string public constant VERSION = &quot;0.2.1-TEST.ET.1&quot;;
+    string public constant VERSION = "0.2.1-TEST.ET.1";
 
     /* ====== configuration START ====== */
     uint public constant COMMUNITY_SALE_START = 3972380; /* approx. 04.07.2017 12:00 */
@@ -207,7 +207,7 @@ contract CrowdsaleMinter is Owned {
 
     /* ====== public states END ====== */
 
-    string[] private stateNames = [&quot;BEFORE_START&quot;, &quot;COMMUNITY_SALE&quot;, &quot;PRIORITY_SALE&quot;, &quot;PRIORITY_SALE_FINISHED&quot;, &quot;PUBLIC_SALE&quot;, &quot;BONUS_MINTING&quot;, &quot;WITHDRAWAL_RUNNING&quot;, &quot;REFUND_RUNNING&quot;, &quot;CLOSED&quot; ];
+    string[] private stateNames = ["BEFORE_START", "COMMUNITY_SALE", "PRIORITY_SALE", "PRIORITY_SALE_FINISHED", "PUBLIC_SALE", "BONUS_MINTING", "WITHDRAWAL_RUNNING", "REFUND_RUNNING", "CLOSED" ];
     enum State { BEFORE_START, COMMUNITY_SALE, PRIORITY_SALE, PRIORITY_SALE_FINISHED, PUBLIC_SALE, BONUS_MINTING, WITHDRAWAL_RUNNING, REFUND_RUNNING, CLOSED }
 
     uint private constant COMMUNITY_PLUS_PRIORITY_SALE_CAP = COMMUNITY_PLUS_PRIORITY_SALE_CAP_ETH * 1 ether;
@@ -268,7 +268,7 @@ contract CrowdsaleMinter is Owned {
         if (!owner.send(this.balance)) throw;
 
         //notify token contract to start
-        if (TOKEN.call(bytes4(sha3(&quot;start()&quot;)))) {
+        if (TOKEN.call(bytes4(sha3("start()")))) {
             TOKEN_STARTED = true;
             TokenStarted(TOKEN);
         }
@@ -322,14 +322,14 @@ contract CrowdsaleMinter is Owned {
         if (presale_balance > 0) {
             // this calculation is about waived pre-sale bonus.
             // rawVote contains a value [0..1 ether].
-            //     0 ether    - means &quot;default value&quot; or &quot;no vote&quot; : 100% bonus saved
-            //     1 ether    - means &quot;vote 100%&quot; : 100% bonus saved
-            //    <=10 finney - special value &quot;vote 0%&quot; : no bonus at all (100% bonus waived).
-            //  other value - &quot;PRE_SALE_BONUS_PER_CENT * rawVote / 1 ether&quot; is an effective bonus per cent for particular presale member.
+            //     0 ether    - means "default value" or "no vote" : 100% bonus saved
+            //     1 ether    - means "vote 100%" : 100% bonus saved
+            //    <=10 finney - special value "vote 0%" : no bonus at all (100% bonus waived).
+            //  other value - "PRE_SALE_BONUS_PER_CENT * rawVote / 1 ether" is an effective bonus per cent for particular presale member.
             //
             var rawVote = PRESALE_BONUS_VOTING.rawVotes(addr);
-            if (rawVote == 0)              rawVote = 1 ether; //special case &quot;no vote&quot; (default value) ==> (1 ether is 100%)
-            else if (rawVote <= 10 finney) rawVote = 0;       //special case &quot;0%&quot; (no bonus)           ==> (0 ether is   0%)
+            if (rawVote == 0)              rawVote = 1 ether; //special case "no vote" (default value) ==> (1 ether is 100%)
+            else if (rawVote <= 10 finney) rawVote = 0;       //special case "0%" (no bonus)           ==> (0 ether is   0%)
             else if (rawVote > 1 ether)    rawVote = 1 ether; //max bonus is 100% (should not occur)
             var presale_bonus = presale_balance * PRE_SALE_BONUS_PER_CENT * rawVote / 1 ether / 100;
             return presale_balance + presale_bonus;

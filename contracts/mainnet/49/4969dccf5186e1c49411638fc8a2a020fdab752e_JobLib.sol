@@ -120,7 +120,7 @@ library ECRecovery {
 library JobLib {
     using SafeMath for uint256;
     // Prefix hashed with message hash when a signature is produced by the eth_sign RPC call
-    string constant PERSONAL_HASH_PREFIX = &quot;\u0019Ethereum Signed Message:\n32&quot;;
+    string constant PERSONAL_HASH_PREFIX = "\u0019Ethereum Signed Message:\n32";
     // # of bytes used to store a video profile identifier as a utf8 encoded string
     // Video profile identifier is currently stored as bytes4(keccak256(PROFILE_NAME))
     // We use 2 * 4 = 8 bytes because we store the bytes in a utf8 encoded string so

@@ -190,8 +190,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract CBMDToken is StandardToken {
 
-  string public constant name = &quot;CBM UNITS (USD)&quot;;
-  string public constant symbol = &quot;CBMD&quot;;
+  string public constant name = "CBM UNITS (USD)";
+  string public constant symbol = "CBMD";
   uint8 public constant decimals = 2;
 
   uint256 public constant INITIAL_SUPPLY = 50000000;

@@ -15,8 +15,8 @@ contract CFNDToken {
     function CFNDToken() public {
         totalSupply = 40000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Cryptfunder&quot;;
-        symbol = &quot;CFND&quot;;
+        name = "Cryptfunder";
+        symbol = "CFND";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

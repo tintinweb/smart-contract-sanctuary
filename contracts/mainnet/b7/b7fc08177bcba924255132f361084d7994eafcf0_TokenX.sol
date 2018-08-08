@@ -7,8 +7,8 @@ contract TokenX {
 
     uint private constant MAX_UINT = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF;
 
-    string public constant name = &quot;Token X&quot;;
-    string public constant symbol = &quot;TKX&quot;;
+    string public constant name = "Token X";
+    string public constant symbol = "TKX";
     uint public constant decimals = 2;
     uint public constant totalSupply = 10000 * (10 ** decimals);
 

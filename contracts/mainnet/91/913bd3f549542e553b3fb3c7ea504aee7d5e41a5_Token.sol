@@ -232,7 +232,7 @@ contract BurnableToken is StandardToken {
     ICO Multi level marketing coin
 */
 contract Token is CappedToken, BurnableToken {
-    function Token() CappedToken(1000000000 * 1 ether) StandardToken(&quot;World Online Sports Coin&quot;, &quot;WOSC&quot;, 18) public {
+    function Token() CappedToken(1000000000 * 1 ether) StandardToken("World Online Sports Coin", "WOSC", 18) public {
         
     }
 }

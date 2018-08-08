@@ -134,8 +134,8 @@ contract PGGamePlatform is ERC20, BasicToken {
         decimals = 4;
         totalSupply_ = 10000000000 * 10 ** uint(decimals);   
         balances[msg.sender] = totalSupply_;               
-        name = &quot;PG Game Platform&quot;;                                  
-        symbol = &quot;PGG&quot;;    
+        name = "PG Game Platform";                                  
+        symbol = "PGG";    
         Transfer(0, 0x09a147dAe3180F470cd400Cfd77184E48674E439, totalSupply_);
    }
    /**

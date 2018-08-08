@@ -51,8 +51,8 @@ contract KaraOmToken is ERC223Interface {
     address owner = msg.sender;
     mapping(address => uint) balances; // List of user balances.
 
-    string public constant name = &quot;KaraOm Token&quot;;
-    string public constant symbol = &quot;KOM&quot;;
+    string public constant name = "KaraOm Token";
+    string public constant symbol = "KOM";
     uint public constant decimals = 8;
     uint256 public totalSupply = 690000000e8;
     uint256 public tokensPerEth = 15000000e8;

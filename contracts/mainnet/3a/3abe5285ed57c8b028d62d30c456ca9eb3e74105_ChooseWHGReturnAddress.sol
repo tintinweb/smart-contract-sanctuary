@@ -8,7 +8,7 @@ contract Owned {
     address public owner;
 
     // This contract only defines a modifier and a few useful functions
-    // The function body is inserted where the special symbol &quot;_&quot; in the
+    // The function body is inserted where the special symbol "_" in the
     // definition of a modifier appears.
     modifier onlyOwner { if (msg.sender == owner) _; }
 

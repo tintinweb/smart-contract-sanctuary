@@ -278,7 +278,7 @@ contract CryptoFamousStorage is CryptoFamousOwnership {
 
   /// @dev if we fail to send any value to a Card&#39;s previous owner as part of the
   /// invite/steal transaction we&#39;ll hold it in this contract. This mapping records the amount
-  /// owed to that &quot;previous owner&quot;.
+  /// owed to that "previous owner".
   mapping (address => uint256) public addressToFailedOldOwnerTransferAmount;
   /// @dev total amount of failed old owner transfers
   uint256 public totalFailedOldOwnerTransferAmounts;

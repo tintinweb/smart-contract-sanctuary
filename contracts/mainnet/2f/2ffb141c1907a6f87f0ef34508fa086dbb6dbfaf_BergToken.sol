@@ -40,8 +40,8 @@ contract BergToken is ERC20NonTransfer {
   using SafeMath for uint256;
 
   mapping(address => uint256) balances;
-  string public name = &quot;Berg&quot;;
-  string public symbol = &quot;BERG&quot;;
+  string public name = "Berg";
+  string public symbol = "BERG";
   uint256 totalSupply_;
   uint8 public constant decimals = 18;
   enum States {

@@ -110,8 +110,8 @@ contract AvtcToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AvtcToken() public {
-        symbol = &quot;AVTC&quot;;
-        name = &quot;AviateCoin&quot;;
+        symbol = "AVTC";
+        name = "AviateCoin";
         decimals = 8;
         _totalSupply = 50000000000000000;
         balances[0x056b7a4842F137a51447f42F23eC3b61d78DBDCC] = _totalSupply;

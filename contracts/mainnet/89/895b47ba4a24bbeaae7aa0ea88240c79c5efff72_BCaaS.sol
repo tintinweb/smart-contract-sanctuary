@@ -120,8 +120,8 @@ contract BCaaS is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function BCaaS() public {
-        symbol = &quot;BCaaS&quot;;
-        name = &quot;Blockchain As A Service&quot;;
+        symbol = "BCaaS";
+        name = "Blockchain As A Service";
         decimals = 18;
         _totalSupply = 100000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

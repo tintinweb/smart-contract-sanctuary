@@ -109,8 +109,8 @@ contract BlackPyramid is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BlackPyramid() public {
-        symbol = &quot;BLPD&quot;;
-        name = &quot;BlackPyramid&quot;;
+        symbol = "BLPD";
+        name = "BlackPyramid";
         decimals = 18;
         _totalSupply = 3000000000000000000000;
         balances[0xCFdA19949B975E1419a89D9DF7bE2E3041260AcA] = _totalSupply;

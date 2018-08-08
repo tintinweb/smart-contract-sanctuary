@@ -130,8 +130,8 @@ contract ChefToken is Ownable, ChefTokenInterface {
     function ChefToken () public {
         totalSupply = 630*(10**6)*(10**18);   
         balanceOf[msg.sender] = totalSupply;  
-        name = &quot;CHEF&quot;;                  
-        symbol = &quot;CHEF&quot;;
+        name = "CHEF";                  
+        symbol = "CHEF";
     
         tempCharity = address(0);
         tempAdvisorsTeam = address(0);

@@ -3,8 +3,8 @@ pragma solidity ^0.4.10;
 contract DickButtCoin {
     /* Public variables of the token */
     string public standard = &#39;Token 0.69&#39;;
-    string public name = &quot;Dick Butt Coin&quot;;
-    string public symbol = &quot;DBC&quot;;
+    string public name = "Dick Butt Coin";
+    string public symbol = "DBC";
     uint8 public decimals = 0;
     uint256 public totalSupply = 0;
 

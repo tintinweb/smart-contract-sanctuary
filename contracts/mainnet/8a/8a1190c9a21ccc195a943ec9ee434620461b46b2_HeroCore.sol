@@ -262,8 +262,8 @@ contract ERC721 {
 
 contract HeroOwnership is HeroBase, ERC721 {
 
-    string public name = &quot;MyHero&quot;;
-    string public symbol = &quot;MH&quot;;
+    string public name = "MyHero";
+    string public symbol = "MH";
 
     function implementsERC721() public pure returns (bool)
     {

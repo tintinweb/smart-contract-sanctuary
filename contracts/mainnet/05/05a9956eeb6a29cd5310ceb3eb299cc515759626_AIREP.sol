@@ -111,8 +111,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract AIREP is StandardToken {
-	string public name = &quot;AIREP Coin&quot;; 
-	string public symbol = &quot;AIREP&quot;;
+	string public name = "AIREP Coin"; 
+	string public symbol = "AIREP";
 	uint public decimals = 18;
 	uint public INITIAL_SUPPLY = 10000000000000000000000000000;
 

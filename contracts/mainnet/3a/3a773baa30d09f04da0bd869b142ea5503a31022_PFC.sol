@@ -227,9 +227,9 @@ contract PFC is MiniMeTokenSimple {
     _tokenFactory,
     0x0,                     // no parent token
     0,                       // no snapshot block number from parent
-    &quot;Power Fans Token&quot;,      // Token name
+    "Power Fans Token",      // Token name
     18,                      // Decimals
-    &quot;PFC&quot;,                   // Symbol
+    "PFC",                   // Symbol
     false                    // Enable transfers
     ) {}
 }

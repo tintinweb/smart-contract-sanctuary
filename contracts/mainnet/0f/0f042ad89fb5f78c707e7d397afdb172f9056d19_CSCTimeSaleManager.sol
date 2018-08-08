@@ -244,7 +244,7 @@ contract CSCNFTFactory {
 contract ERC721Receiver {
     /**
     * @dev Magic value to be returned upon successful reception of an NFT
-    *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+    *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
     *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
     */
     bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -259,7 +259,7 @@ contract ERC721Receiver {
     * @param _from The sending address
     * @param _tokenId The NFT identifier which is being transfered
     * @param _data Additional data with no specified format
-    * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+    * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
     */
     function onERC721Received(
         address _from,

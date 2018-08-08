@@ -131,8 +131,8 @@ contract StandardToken is BasicToken, ERC20
 
 contract TUINETWORK is StandardToken
 {
-    string public name = &quot;TUINETWORK&quot;;
-    string public symbol = &quot;TUI&quot;;
+    string public name = "TUINETWORK";
+    string public symbol = "TUI";
     uint public decimals = 8 ;
 
    

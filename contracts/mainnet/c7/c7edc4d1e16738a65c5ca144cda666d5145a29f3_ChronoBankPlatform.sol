@@ -152,7 +152,7 @@ contract ChronoBankPlatform is Owned {
         if (isOwner(msg.sender, _symbol)) {
             _;
         } else {
-            _error(&quot;Only owner: access denied&quot;);
+            _error("Only owner: access denied");
         }
     }
 
@@ -163,7 +163,7 @@ contract ChronoBankPlatform is Owned {
         if (proxies[_symbol] == msg.sender) {
             _;
         } else {
-            _error(&quot;Only proxy: access denied&quot;);
+            _error("Only proxy: access denied");
         }
     }
 
@@ -174,7 +174,7 @@ contract ChronoBankPlatform is Owned {
         if (isTrusted(_from, _to)) {
             _;
         } else {
-            _error(&quot;Only trusted: access denied&quot;);
+            _error("Only trusted: access denied");
         }
     }
 
@@ -350,22 +350,22 @@ contract ChronoBankPlatform is Owned {
     function _transfer(uint _fromId, uint _toId, uint _value, bytes32 _symbol, string _reference, uint _senderId) internal returns(bool) {
         // Should not allow to send to oneself.
         if (_fromId == _toId) {
-            _error(&quot;Cannot send to oneself&quot;);
+            _error("Cannot send to oneself");
             return false;
         }
         // Should have positive value.
         if (_value == 0) {
-            _error(&quot;Cannot send 0 value&quot;);
+            _error("Cannot send 0 value");
             return false;
         }
         // Should have enough balance.
         if (_balanceOf(_fromId, _symbol) < _value) {
-            _error(&quot;Insufficient balance&quot;);
+            _error("Insufficient balance");
             return false;
         }
         // Should have enough allowance.
         if (_fromId != _senderId && _allowance(_fromId, _senderId, _symbol) < _value) {
-            _error(&quot;Not enough allowance&quot;);
+            _error("Not enough allowance");
             return false;
         }
         _transferDirect(_fromId, _toId, _value, _symbol);
@@ -461,12 +461,12 @@ contract ChronoBankPlatform is Owned {
     function issueAsset(bytes32 _symbol, uint _value, string _name, string _description, uint8 _baseUnit, bool _isReissuable) onlyContractOwner() returns(bool) {
         // Should have positive value if supply is going to be fixed.
         if (_value == 0 && !_isReissuable) {
-            _error(&quot;Cannot issue 0 value fixed asset&quot;);
+            _error("Cannot issue 0 value fixed asset");
             return false;
         }
         // Should not be issued yet.
         if (isCreated(_symbol)) {
-            _error(&quot;Asset already issued&quot;);
+            _error("Asset already issued");
             return false;
         }
         uint holderId = _createHolderId(msg.sender);
@@ -494,18 +494,18 @@ contract ChronoBankPlatform is Owned {
     function reissueAsset(bytes32 _symbol, uint _value) onlyOwner(_symbol) returns(bool) {
         // Should have positive value.
         if (_value == 0) {
-            _error(&quot;Cannot reissue 0 value&quot;);
+            _error("Cannot reissue 0 value");
             return false;
         }
         Asset asset = assets[_symbol];
         // Should have dynamic supply.
         if (!asset.isReissuable) {
-            _error(&quot;Cannot reissue fixed asset&quot;);
+            _error("Cannot reissue fixed asset");
             return false;
         }
         // Resulting total supply should not overflow.
         if (asset.totalSupply + _value < asset.totalSupply) {
-            _error(&quot;Total supply overflow&quot;);
+            _error("Total supply overflow");
             return false;
         }
         uint holderId = getHolderId(msg.sender);
@@ -530,14 +530,14 @@ contract ChronoBankPlatform is Owned {
     function revokeAsset(bytes32 _symbol, uint _value) returns(bool) {
         // Should have positive value.
         if (_value == 0) {
-            _error(&quot;Cannot revoke 0 value&quot;);
+            _error("Cannot revoke 0 value");
             return false;
         }
         Asset asset = assets[_symbol];
         uint holderId = getHolderId(msg.sender);
         // Should have enough tokens.
         if (asset.wallets[holderId].balance < _value) {
-            _error(&quot;Not enough tokens to revoke&quot;);
+            _error("Not enough tokens to revoke");
             return false;
         }
         asset.wallets[holderId].balance -= _value;
@@ -566,7 +566,7 @@ contract ChronoBankPlatform is Owned {
         uint newOwnerId = _createHolderId(_newOwner);
         // Should pass ownership to another holder.
         if (asset.owner == newOwnerId) {
-            _error(&quot;Cannot pass ownership to oneself&quot;);
+            _error("Cannot pass ownership to oneself");
             return false;
         }
         address oldOwner = _address(asset.owner);
@@ -601,12 +601,12 @@ contract ChronoBankPlatform is Owned {
         uint fromId = _createHolderId(msg.sender);
         // Should trust to another address.
         if (fromId == getHolderId(_to)) {
-            _error(&quot;Cannot trust to oneself&quot;);
+            _error("Cannot trust to oneself");
             return false;
         }
         // Should trust to yet untrusted.
         if (isTrusted(msg.sender, _to)) {
-            _error(&quot;Already trusted&quot;);
+            _error("Already trusted");
             return false;
         }
         holders[fromId].trust[_to] = true;
@@ -640,7 +640,7 @@ contract ChronoBankPlatform is Owned {
     function recover(address _from, address _to) checkTrust(_from, msg.sender) returns(bool) {
         // Should recover to previously unused address.
         if (getHolderId(_to) != 0) {
-            _error(&quot;Should recover to new address&quot;);
+            _error("Should recover to new address");
             return false;
         }
         // We take current holder address because it might not equal _from.
@@ -670,12 +670,12 @@ contract ChronoBankPlatform is Owned {
     function _approve(uint _spenderId, uint _value, bytes32 _symbol, uint _senderId) internal returns(bool) {
         // Asset should exist.
         if (!isCreated(_symbol)) {
-            _error(&quot;Asset is not issued&quot;);
+            _error("Asset is not issued");
             return false;
         }
         // Should allow to another holder.
         if (_senderId == _spenderId) {
-            _error(&quot;Cannot approve to oneself&quot;);
+            _error("Cannot approve to oneself");
             return false;
         }
         assets[_symbol].wallets[_senderId].allowance[_spenderId] = _value;

@@ -155,8 +155,8 @@ contract Destroyable is StandardToken {
 contract Token is StandardToken, Owned, Destroyable {
 
   address owner;
-  string constant public name = &quot;TYDO&quot;;
-  string constant public symbol = &quot;TYD&quot;;
+  string constant public name = "TYDO";
+  string constant public symbol = "TYD";
   uint8 constant public decimals = 18;
   
   event Burn(address indexed _burner, uint256 _value);

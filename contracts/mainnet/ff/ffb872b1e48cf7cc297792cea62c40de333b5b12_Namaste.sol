@@ -96,8 +96,8 @@ contract Namaste is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;NAM&quot;; // v8
-        name = &quot;Namaste&quot;;
+        symbol = "NAM"; // v8
+        name = "Namaste";
         decimals = 8;
         _totalSupply = 100000000000000000;
         balances[msg.sender] = _totalSupply;

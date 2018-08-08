@@ -1,6 +1,6 @@
 pragma solidity ^0.4.11;
 contract WhiteList {
-    string public constant VERSION = &quot;0.1.0&quot;;
+    string public constant VERSION = "0.1.0";
 
     mapping(address=>bool) public contains;
     uint16  public chunkNr = 0;

@@ -217,7 +217,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -298,9 +298,9 @@ contract RobotarTestToken is MintableToken {
   // Constants
   // =========
   
-    string public constant name = &quot;Robotar token&quot;;
+    string public constant name = "Robotar token";
     
-    string public constant symbol = &quot;TTAR&quot;;
+    string public constant symbol = "TTAR";
     
     uint32 public constant decimals = 18;
     

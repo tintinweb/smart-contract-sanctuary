@@ -113,8 +113,8 @@ contract GreenEcoMinerToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GreenEcoMinerToken() public {
-        symbol = &quot;GECO&quot;;
-        name = &quot;GreenEcoMiner Token&quot;;
+        symbol = "GECO";
+        name = "GreenEcoMiner Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x09c7a672fB89f8527051A2e3830Ff9d6a4243e49] = _totalSupply;

@@ -113,8 +113,8 @@ contract DUMPSACK is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DUMPSACK() public {
-        symbol = &quot;DSACK&quot;;
-        name = &quot;DUMPSACK Token&quot;;
+        symbol = "DSACK";
+        name = "DUMPSACK Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x146EE4140199d6859f05DBe37c02bc6f26Ecc6e9] = _totalSupply;

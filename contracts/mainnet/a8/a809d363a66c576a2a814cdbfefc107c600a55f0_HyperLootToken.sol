@@ -54,7 +54,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -132,8 +132,8 @@ contract HyperLootToken is ERC20, Ownable {
     uint256 public MAX_TOTAL_SUPPLY = uint256(1000000000) * uint256(10) ** decimals;
     mapping(address => uint256) internal balances;
     mapping(address => mapping (address => uint256)) internal allowed;
-    string public name = &quot;HyperLoot&quot;;
-    string public symbol = &quot;HLT&quot;;
+    string public name = "HyperLoot";
+    string public symbol = "HLT";
 
     event Mint(address indexed _to, uint _amount);
 

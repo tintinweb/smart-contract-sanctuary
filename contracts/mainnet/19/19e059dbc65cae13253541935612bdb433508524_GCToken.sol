@@ -5,7 +5,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -304,8 +304,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract GCToken is StandardToken, HasNoEther {
 
-    string constant public name = &quot;GlobeCas&quot;;
-    string constant public symbol = &quot;GCT&quot;;
+    string constant public name = "GlobeCas";
+    string constant public symbol = "GCT";
     uint8 constant public decimals = 8;
     
     event Mint(address indexed to, uint256 amount);

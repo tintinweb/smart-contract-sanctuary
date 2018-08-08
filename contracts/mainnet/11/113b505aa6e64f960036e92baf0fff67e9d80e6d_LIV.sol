@@ -112,8 +112,8 @@ contract LIV is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function LIV() public {
-        symbol = &quot;LIV&quot;;
-        name = &quot;LIBERDADE&quot;;
+        symbol = "LIV";
+        name = "LIBERDADE";
         decimals = 18;
         _totalSupply = 100000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

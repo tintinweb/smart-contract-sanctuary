@@ -107,7 +107,7 @@ contract Oracle is Ownable {
     bytes32[] public currencies;
 
     /**
-        @dev Returns the url where the oracle exposes a valid &quot;oracleData&quot; if needed
+        @dev Returns the url where the oracle exposes a valid "oracleData" if needed
     */
     function url() public view returns (string);
 
@@ -290,7 +290,7 @@ contract RipioOracle is Oracle, Delegable {
             bytes32 s = readBytes32(data, INDEX_S);
             
             bytes32 _hash = keccak256(this, currency, rate, decimals, timestamp);
-            address signer = ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, _hash),v,r,s);
+            address signer = ecrecover(keccak256("\x19Ethereum Signed Message:\n32", _hash),v,r,s);
 
             require(isDelegate(signer));
 

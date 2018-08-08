@@ -1,7 +1,7 @@
 pragma solidity ^0.4.0;
 contract BCMtest{
 	/*public variables of the token*/
-	string public standard=&quot;Token 0.1&quot;;
+	string public standard="Token 0.1";
 	string public name;
 	string public symbol;
 	uint8 public decimals;
@@ -17,9 +17,9 @@ contract BCMtest{
 	function BCMtest(){
 	
 		initialSupply=1000000;
-		name= &quot;bcmtest&quot;;
+		name= "bcmtest";
 		decimals=0;
-		symbol=&quot;B&quot;;
+		symbol="B";
 		
 		balanceOf[msg.sender] = initialSupply;
 		totalSupply = initialSupply;

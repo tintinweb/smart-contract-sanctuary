@@ -3,8 +3,8 @@ pragma solidity ^0.4.4;
 
 /// @title Bitplus Token (BPNT) - crowdfunding code for Bitplus Project
 contract BitplusToken {
-    string public constant name = &quot;Bitplus Token&quot;;
-    string public constant symbol = &quot;BPNT&quot;;
+    string public constant name = "Bitplus Token";
+    string public constant symbol = "BPNT";
     uint8 public constant decimals = 18;  // 18 decimal places, the same as ETH.
 
     uint256 public constant tokenCreationRate = 1000;

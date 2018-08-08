@@ -58,8 +58,8 @@ contract Recycle is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Recycle&quot;;
-    string public constant symbol = &quot;RCYL&quot;;
+    string public constant name = "Recycle";
+    string public constant symbol = "RCYL";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 999999999e8;

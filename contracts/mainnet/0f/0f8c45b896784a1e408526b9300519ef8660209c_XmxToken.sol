@@ -243,8 +243,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract XmxToken is FreezeableToken, MintableToken {
     // public variables
-    string public name = &quot;XMAX&quot;;
-    string public symbol = &quot;XMX&quot;;
+    string public name = "XMAX";
+    string public symbol = "XMX";
     uint8 public decimals = 8;
 
     constructor() public {

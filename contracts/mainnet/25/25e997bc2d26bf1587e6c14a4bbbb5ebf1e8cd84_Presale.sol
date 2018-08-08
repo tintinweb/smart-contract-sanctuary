@@ -156,7 +156,7 @@ contract ERC20 is ERC20Basic {
 contract Presale is Ownable, SafeMath, Arithmetic  {
     uint public minInvest = 10 ether;
     uint public maxcap = 490 ether;   // 100k euro based on kraken rates on 27/06/2017 at 13h20
-    address public ledgerWallet = &quot;0xa4dbbF474a6f026Cf0a2d3e45aB192Fbd98D3a5f&quot;;
+    address public ledgerWallet = "0xa4dbbF474a6f026Cf0a2d3e45aB192Fbd98D3a5f";
     uint public count = 0;
     uint public totalFunding;
     bool public saleOn;

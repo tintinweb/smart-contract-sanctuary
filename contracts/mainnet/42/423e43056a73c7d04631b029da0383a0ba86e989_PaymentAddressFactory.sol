@@ -62,7 +62,7 @@ contract PaymentAddressFactory is Factory {
     // index of created contracts
     mapping (address => address[]) public paymentAddresses;
 
-    constructor() public Factory(&quot;1.0.0&quot;) {}
+    constructor() public Factory("1.0.0") {}
 
     // deploy a new contract
     function newPaymentAddress(address _collector)

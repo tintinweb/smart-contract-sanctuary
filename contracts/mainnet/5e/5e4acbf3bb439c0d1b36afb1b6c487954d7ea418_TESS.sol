@@ -222,8 +222,8 @@ contract BurnableToken is StandardToken, Ownable {
 contract TESS is BurnableToken {
     using SafeMath for uint256;
 
-    string public constant name = &quot;TESS&quot;;
-    string public constant symbol = &quot;HHHH&quot;;
+    string public constant name = "TESS";
+    string public constant symbol = "HHHH";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 10000000000;
 

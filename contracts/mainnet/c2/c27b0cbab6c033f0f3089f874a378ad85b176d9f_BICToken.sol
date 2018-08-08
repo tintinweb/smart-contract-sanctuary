@@ -40,12 +40,12 @@ contract TokenERC20 {
 }
 
 contract BICToken is SafeMath, TokenERC20{ 
-    string public name = &quot;BIC&quot;;
-    string public symbol = &quot;BIC&quot;;
+    string public name = "BIC";
+    string public symbol = "BIC";
     uint8 public decimals = 18;
     uint256 public totalSupply;
 	address public owner = 0x0;
-	string  public version = &quot;1.0&quot;;	
+	string  public version = "1.0";	
 	
     bool public stopped = false;	
     bool public locked = false;	

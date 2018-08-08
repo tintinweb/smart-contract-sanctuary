@@ -104,8 +104,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract XPZ is StandardToken {
 
-  string public constant name = &quot;Properbuz&quot;;
-  string public constant symbol = &quot;XPZ&quot;;
+  string public constant name = "Properbuz";
+  string public constant symbol = "XPZ";
   uint256 public constant decimals = 6;
   address public owner;
   

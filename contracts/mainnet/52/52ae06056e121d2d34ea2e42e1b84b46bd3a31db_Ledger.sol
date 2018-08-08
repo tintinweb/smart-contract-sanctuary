@@ -3,7 +3,7 @@ pragma solidity ^0.4.11;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -325,8 +325,8 @@ contract Controller is Shared, Pausable {
 contract ChristCoin is Shared {
   using SafeMath for uint;
 
-  string public name = &quot;Christ Coin&quot;;
-  string public symbol = &quot;CCLC&quot;;
+  string public name = "Christ Coin";
+  string public symbol = "CCLC";
   uint8 public decimals = 8;
 
   Controller public controller;

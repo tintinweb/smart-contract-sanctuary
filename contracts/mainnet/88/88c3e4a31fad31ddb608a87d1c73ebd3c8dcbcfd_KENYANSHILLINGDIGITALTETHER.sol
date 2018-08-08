@@ -23,8 +23,8 @@ contract KENYANSHILLINGDIGITALTETHER {
     ) public {
         totalSupply = 2000000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;               
-        name = &quot;KENYAN SHILLING DIGITAL TETHER&quot;;                                  
-        symbol = &quot;KDT&quot;;                               
+        name = "KENYAN SHILLING DIGITAL TETHER";                                  
+        symbol = "KDT";                               
     }
 
 

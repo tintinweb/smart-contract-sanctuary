@@ -58,8 +58,8 @@ contract ZillowBlockchain is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;ZillowBlockchain&quot;;
-    string public constant symbol = &quot;ZWB&quot;;
+    string public constant name = "ZillowBlockchain";
+    string public constant symbol = "ZWB";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 100000000e18;

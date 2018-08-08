@@ -64,8 +64,8 @@ contract PROSH is ERC20Interface, Owned, SafeMath {
     mapping(address => uint) balances;
     mapping(address => mapping(address => uint)) allowed;
     function PROSH() public {
-        symbol = &quot;PROSH&quot;;
-        name = &quot;Prosh Coin&quot;;
+        symbol = "PROSH";
+        name = "Prosh Coin";
         decimals = 18;
         _totalSupply = 60000000000000000000000000;
         balances[0x02DEA85397EF756307F9751693872d54d0B75A2c] = _totalSupply;

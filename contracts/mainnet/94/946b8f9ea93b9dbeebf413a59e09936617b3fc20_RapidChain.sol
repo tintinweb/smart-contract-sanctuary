@@ -113,8 +113,8 @@ contract RapidChain is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RapidChain() public {
-        symbol = &quot;RDC&quot;;
-        name = &quot;RapidChain&quot;;
+        symbol = "RDC";
+        name = "RapidChain";
         decimals = 18;
         _totalSupply = 3000000000000000000000000000;
         balances[0x6BcA02658cA7902CCDBB671D01151025C7Fb1D98] = _totalSupply; //MEW address here

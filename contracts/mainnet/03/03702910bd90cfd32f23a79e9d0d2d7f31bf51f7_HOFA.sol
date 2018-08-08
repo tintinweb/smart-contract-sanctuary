@@ -175,8 +175,8 @@ contract standardToken is ERC20Token {
 contract HOFA is standardToken, Owned {
     using SafeMath for uint;
     
-    string public name=&quot;HOFA Token&quot;;
-    string public symbol=&quot;HOFA&quot;;
+    string public name="HOFA Token";
+    string public symbol="HOFA";
     uint256 public decimals=18;
     uint256 public totalSupply = 0;
     uint256 public topTotalSupply = 8*10**8*10**decimals;

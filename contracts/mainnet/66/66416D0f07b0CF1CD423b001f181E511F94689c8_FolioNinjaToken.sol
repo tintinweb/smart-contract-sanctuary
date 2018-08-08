@@ -92,8 +92,8 @@ contract ERC20 is ERC20Protocol {
 // Folio Ninja Token Contract
 contract FolioNinjaToken is ERC20, SafeMath {
     // Consant token specific fields
-    string public constant name = &quot;folio.ninja&quot;;
-    string public constant symbol = &quot;FLN&quot;;
+    string public constant name = "folio.ninja";
+    string public constant symbol = "FLN";
     uint public constant decimals = 18;
     uint public constant MAX_TOTAL_TOKEN_AMOUNT = 12632000 * 10 ** decimals;
 

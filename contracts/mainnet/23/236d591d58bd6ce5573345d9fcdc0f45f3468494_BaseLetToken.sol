@@ -250,8 +250,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract BaseLetToken is PausableToken {
-    string public name = &quot;BaseLet Token&quot;;
-    string public symbol = &quot;BLT&quot;;
+    string public name = "BaseLet Token";
+    string public symbol = "BLT";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 3200000000000000000000000000;
 

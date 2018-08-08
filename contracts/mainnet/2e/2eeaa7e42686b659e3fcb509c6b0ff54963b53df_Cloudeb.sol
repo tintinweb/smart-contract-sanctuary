@@ -16,9 +16,9 @@ contract Cloudeb {
     function Cloudeb() {
 
          initialSupply = 29000000000000000;
-        name =&quot;Cloudeb&quot;;
+        name ="Cloudeb";
         decimals = 8;
-        symbol = &quot;CLOB&quot;;
+        symbol = "CLOB";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

@@ -200,8 +200,8 @@ contract PoetToken is Token {
     /*
      * Token meta data
      */
-    string constant public name = &quot;Poet&quot;;
-    string constant public symbol = &quot;POE&quot;;
+    string constant public name = "Poet";
+    string constant public symbol = "POE";
     uint8 constant public decimals = 8;  // TODO: Confirm this number
 
     // Address where all investors tokens created during the ICO stage initially allocated

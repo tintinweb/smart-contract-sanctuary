@@ -1,6 +1,6 @@
 contract Token {
-    string public symbol = &quot;&quot;;
-    string public name = &quot;&quot;;
+    string public symbol = "";
+    string public name = "";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 0;
     address owner = 0;

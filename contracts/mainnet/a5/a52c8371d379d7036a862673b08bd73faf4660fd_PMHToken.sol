@@ -278,7 +278,7 @@ contract PMHToken is owned, token {
 
 function setEmail(string _email ) public returns (bool success) {
     require(balanceOf[msg.sender] > 0 ) ;
-   // require(emails[msg.sender] == &quot;&quot; ) ; // checks the e-mail for this address was not already set
+   // require(emails[msg.sender] == "" ) ; // checks the e-mail for this address was not already set
     emails[msg.sender] = _email ; 
     return true ; 
     } 

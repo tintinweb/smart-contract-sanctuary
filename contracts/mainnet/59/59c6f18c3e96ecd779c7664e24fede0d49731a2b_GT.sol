@@ -100,8 +100,8 @@ contract GT is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;GT&quot;;
-        name = &quot;General Token&quot;;
+        symbol = "GT";
+        name = "General Token";
         decimals = 8;
         _totalSupply = 10000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

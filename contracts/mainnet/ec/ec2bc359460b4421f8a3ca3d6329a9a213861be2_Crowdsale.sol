@@ -158,9 +158,9 @@ contract BurnableToken is StandardToken {
 
 contract DEVCoin is BurnableToken, Owned {
 
-    string public constant name = &quot;Dev Coin&quot;;
+    string public constant name = "Dev Coin";
 
-    string public constant symbol = &quot;DEVC&quot;;
+    string public constant symbol = "DEVC";
 
     uint32 public constant decimals = 18;
 

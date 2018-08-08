@@ -117,7 +117,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -294,9 +294,9 @@ contract MintableToken is StandardToken, Ownable {
 
 contract GeniusEther is MintableToken {
     
-    string public constant name = &quot;Bar Coin&quot;;
+    string public constant name = "Bar Coin";
     
-    string public constant symbol = &quot;BarCoin&quot;;
+    string public constant symbol = "BarCoin";
     
     uint32 public constant decimals = 18;
     

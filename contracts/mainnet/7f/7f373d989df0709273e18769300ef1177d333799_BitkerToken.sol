@@ -207,8 +207,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract BitkerToken is StandardToken{
-  string public name = &quot;Bitker Token&quot;;
-  string public symbol = &quot;BKB&quot;;
+  string public name = "Bitker Token";
+  string public symbol = "BKB";
   uint8 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 1000000000*10**18;
   function BitkerToken() public {

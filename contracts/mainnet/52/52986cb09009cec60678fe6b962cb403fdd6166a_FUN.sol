@@ -116,8 +116,8 @@ contract FUN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FUN() public {
-        symbol = &quot;FUN&quot;;
-        name = &quot;FUN Token&quot;;
+        symbol = "FUN";
+        name = "FUN Token";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         endDate = now + 10 weeks;

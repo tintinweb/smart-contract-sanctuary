@@ -35,7 +35,7 @@ pragma solidity ^0.4.24;
  *                                └────────────────────┘
  * (Step 1) import the library into your contract
  * 
- *    import &quot;./MSFun.sol&quot;;
+ *    import "./MSFun.sol";
  *
  * (Step 2) set up the signature data for msFun
  * 
@@ -47,9 +47,9 @@ pragma solidity ^0.4.24;
  * 
  *     function functionName() 
  *     {
- *         if (MSFun.multiSig(msData, required signatures, &quot;functionName&quot;) == true)
+ *         if (MSFun.multiSig(msData, required signatures, "functionName") == true)
  *         {
- *             MSFun.deleteProposal(msData, &quot;functionName&quot;);
+ *             MSFun.deleteProposal(msData, "functionName");
  * 
  *             // put function body here 
  *         }
@@ -275,7 +275,7 @@ library MSFun {
         view
         returns (address signer)
     {
-        require(_signer > 0, &quot;MSFun checkSigner failed - 0 not allowed&quot;);
+        require(_signer > 0, "MSFun checkSigner failed - 0 not allowed");
         bytes32 _whatProposal = whatProposal(_whatFunction);
         return (self.proposal_[_whatProposal].log[_signer - 1]);
     }

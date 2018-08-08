@@ -116,8 +116,8 @@ contract SISKCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SISKCoin() public {
-        symbol = &quot;SISK&quot;;
-        name = &quot;SISKCoin Token&quot;;
+        symbol = "SISK";
+        name = "SISKCoin Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 52 weeks;

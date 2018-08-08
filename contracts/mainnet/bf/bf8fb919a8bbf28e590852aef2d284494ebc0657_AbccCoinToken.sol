@@ -3,7 +3,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -412,8 +412,8 @@ contract Coinbase is Ownable {
 }
 
 contract AbccCoinToken is MintableToken, PausableToken, Coinbase {
-    string public constant name = &quot;ABCC Token&quot;; 
-    string public constant symbol = &quot;AT&quot;; 
+    string public constant name = "ABCC Token"; 
+    string public constant symbol = "AT"; 
     uint256 public constant decimals = 18; 
 
 

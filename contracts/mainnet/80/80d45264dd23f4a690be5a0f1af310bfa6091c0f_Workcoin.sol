@@ -392,7 +392,7 @@ contract Workcoin is PausableToken {
 
     /**
         @dev mass transfer
-        @param _holders addresses of the owners to be notified [&quot;address_1&quot;, &quot;address_2&quot;, ..]
+        @param _holders addresses of the owners to be notified ["address_1", "address_2", ..]
      */
     function massTransfer(address [] _holders, uint256 [] _payments)
         public
@@ -413,10 +413,10 @@ contract Workcoin is PausableToken {
     */
     function Workcoin() public
     {
-        name = &quot;Workcoin&quot;;
-        symbol = &quot;WRR&quot;;
+        name = "Workcoin";
+        symbol = "WRR";
         decimals = 18;
-        version = &quot;1.3&quot;;
+        version = "1.3";
         issue(this, 1e7 * 1e18);
     }
 

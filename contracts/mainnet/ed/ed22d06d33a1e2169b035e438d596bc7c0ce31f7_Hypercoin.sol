@@ -60,8 +60,8 @@ contract Hypercoin is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Hypercoin&quot;;
-    string public constant symbol = &quot;HPRC&quot;;
+    string public constant name = "Hypercoin";
+    string public constant symbol = "HPRC";
     uint public constant decimals = 8;
     
 uint256 public totalSupply = 10000000000e8;

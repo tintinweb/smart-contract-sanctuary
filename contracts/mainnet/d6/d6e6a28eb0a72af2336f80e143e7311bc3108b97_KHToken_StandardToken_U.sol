@@ -261,7 +261,7 @@ contract KHToken_StandardToken is StandardToken {
 
     // region{Constructor}
     // note : [(final)totalSupply] >> claimAmount * 10 ** decimals
-    // example : args << &quot;The Kh Token No.X&quot;, &quot;KHTX&quot;, &quot;10000000000&quot;, &quot;18&quot;
+    // example : args << "The Kh Token No.X", "KHTX", "10000000000", "18"
     constructor(
         string _token_name, 
         string _symbol, 
@@ -288,7 +288,7 @@ contract KHToken_StandardToken_U is StandardToken {
 
     // region{Constructor}
     // note : [(final)totalSupply] >> claimAmount * 10 ** decimals
-    // example : args << &quot;The Kh Token No.X&quot;, &quot;KHTX&quot;, &quot;10000000000&quot;, &quot;18&quot;
+    // example : args << "The Kh Token No.X", "KHTX", "10000000000", "18"
     constructor(
         string _token_name, 
         string _symbol, 

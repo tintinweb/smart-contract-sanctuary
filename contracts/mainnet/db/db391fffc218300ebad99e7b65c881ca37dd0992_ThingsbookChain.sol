@@ -158,8 +158,8 @@ contract ThingsbookChain is ERC20, BasicToken {
         decimals = 8;                            // Amount of decimals for display purposes
         totalSupply_ =  10000000000 * 10 ** uint256(decimals);                        // Update total supply
         balances[0x72A4e7Ea1DDd6E33eA18b3B249E66A2201A7d7f5] = totalSupply_;               // Give the creator all initial tokens
-        name = &quot;www.Thingsbook.me  Chain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TB&quot;;                               // Set the symbol for display purposes
+        name = "www.Thingsbook.me  Chain";                                   // Set the name for display purposes
+        symbol = "TB";                               // Set the symbol for display purposes
         owner = 0x72A4e7Ea1DDd6E33eA18b3B249E66A2201A7d7f5;
         Transfer(address(0x0), 0x72A4e7Ea1DDd6E33eA18b3B249E66A2201A7d7f5 , totalSupply_);
 

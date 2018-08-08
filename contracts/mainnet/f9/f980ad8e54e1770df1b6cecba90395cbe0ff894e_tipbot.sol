@@ -185,9 +185,9 @@ contract tipbot is ERC20,tipbotreg,Ownable {
 
 
 
-        string public name = &quot;tipbot&quot;;
+        string public name = "tipbot";
 
-        string public symbol = &quot;TIP&quot;;
+        string public symbol = "TIP";
 
         
 

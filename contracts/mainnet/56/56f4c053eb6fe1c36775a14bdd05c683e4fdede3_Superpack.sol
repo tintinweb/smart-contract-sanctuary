@@ -187,9 +187,9 @@ contract StandardToken is BasicToken {
 }
 
 contract Superpack is StandardToken {
-	string public constant name = &quot;Superpack&quot;;
+	string public constant name = "Superpack";
 	uint public constant decimals = 18;
-	string public constant symbol = &quot;SPAC&quot;;
+	string public constant symbol = "SPAC";
 
 	function Superpack() public {
 		totalSupply = 1000000000 *(10**decimals);

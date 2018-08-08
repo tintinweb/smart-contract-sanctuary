@@ -313,8 +313,8 @@ contract BTYC is BTYCToken{
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public{
-        symbol = &quot;BTYC&quot;;
-        name = &quot;BTYC Coin&quot;;
+        symbol = "BTYC";
+        name = "BTYC Coin";
         decimals = 18;
         _totalSupply = 86400000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

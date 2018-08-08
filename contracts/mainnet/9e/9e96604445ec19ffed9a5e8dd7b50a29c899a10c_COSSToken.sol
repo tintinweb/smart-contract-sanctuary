@@ -358,8 +358,8 @@ contract COSSToken is ERC223Token, Ownable, Distributable {
         address indexed _address,
         string _identifier);
 
-    string public name    = &quot;COSS&quot;;
-    string public symbol  = &quot;COSS&quot;;
+    string public name    = "COSS";
+    string public symbol  = "COSS";
     uint256 public decimals = 18;
 
     using SafeMath for uint;

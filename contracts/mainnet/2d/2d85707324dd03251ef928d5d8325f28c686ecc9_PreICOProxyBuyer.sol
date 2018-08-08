@@ -1085,7 +1085,7 @@ contract PreICOProxyBuyer is Ownable, Haltable, SafeMath {
     if(balances[investor] == 0) throw;
     uint amount = balances[investor];
     delete balances[investor];
-    // This was originally &quot;send()&quot; but was replaced with call.value()() to
+    // This was originally "send()" but was replaced with call.value()() to
     // forward gas, if there happens to be a complicated multisig implementation
     // which would need more gas than the gas stipend:
     if(!(investor.call.value(amount)())) throw;

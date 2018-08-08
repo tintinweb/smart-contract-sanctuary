@@ -4,9 +4,9 @@ contract Proteania {
 
     uint256 public totalSupply = 65*10**27;
     address owner;
-    string public name = &quot;Proteania&quot;;
+    string public name = "Proteania";
     uint8 public decimals = 18;
-    string public symbol = &quot;PRN&quot;;
+    string public symbol = "PRN";
     mapping (address => uint256) balances;
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     

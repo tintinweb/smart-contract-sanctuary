@@ -192,8 +192,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract BetstreakToken is StandardToken {
 
-  string public constant name = &quot;BetstreakToken&quot;;
-  string public constant symbol = &quot;BST&quot;;
+  string public constant name = "BetstreakToken";
+  string public constant symbol = "BST";
   uint8 public constant decimals = 2; // only two deciminals, token cannot be divided past 1/100th
 
   uint256 public constant INITIAL_SUPPLY = 20000000000; // 200 million + 2 decimals

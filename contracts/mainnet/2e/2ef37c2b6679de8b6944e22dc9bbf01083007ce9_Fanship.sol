@@ -116,8 +116,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Fanship is StandardToken
 {
-  string public name = &quot;Fanship&quot;; 
-  string public symbol = &quot;FANS&quot;;
+  string public name = "Fanship"; 
+  string public symbol = "FANS";
   uint public decimals = 8;
   uint public INITIAL_SUPPLY = 10000000000 * (10 ** decimals);
 

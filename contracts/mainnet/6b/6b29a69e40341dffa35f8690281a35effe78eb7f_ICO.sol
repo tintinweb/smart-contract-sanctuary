@@ -55,7 +55,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -376,8 +376,8 @@ contract LMDA is PausableToken {
      * the ICO contract will receive the entire total supply. 
      * */
     function LMDA() public {
-        name = &quot;LaMonedaCoin&quot;;
-        symbol = &quot;LMDA&quot;;
+        name = "LaMonedaCoin";
+        symbol = "LMDA";
         decimals = 18;
         totalSupply = 500000000e18;
         
@@ -620,12 +620,12 @@ contract ICO is Ownable {
             if(tokenPriceForPreICO == _newTokenPrice) { revert(); } 
             tokenPriceForPreICO = _newTokenPrice;
             rateForPreICO = uint256(1e18).div(tokenPriceForPreICO);
-            TokenPriceChanged(&quot;Pre ICO&quot;, _newTokenPrice);
+            TokenPriceChanged("Pre ICO", _newTokenPrice);
         } else {
             if(tokenPriceForMainICO == _newTokenPrice) { revert(); } 
             tokenPriceForMainICO = _newTokenPrice;
             rateForMainICO = uint256(1e18).div(tokenPriceForMainICO);
-            TokenPriceChanged(&quot;Main ICO&quot;, _newTokenPrice);
+            TokenPriceChanged("Main ICO", _newTokenPrice);
         }
     }
     
@@ -642,12 +642,12 @@ contract ICO is Ownable {
             if(rateForPreICO == _newRate) { revert(); }
             rateForPreICO = _newRate;
             tokenPriceForPreICO = uint256(1e18).div(rateForPreICO);
-            ExchangeRateChanged(&quot;Pre ICO&quot;, _newRate);
+            ExchangeRateChanged("Pre ICO", _newRate);
         } else {
             if(rateForMainICO == _newRate) { revert(); }
             rateForMainICO = _newRate;
             rateForMainICO = uint256(1e18).div(rateForMainICO);
-            ExchangeRateChanged(&quot;Main ICO&quot;, _newRate);
+            ExchangeRateChanged("Main ICO", _newRate);
         }
     }
     
@@ -661,11 +661,11 @@ contract ICO is Ownable {
         if(stateOfICO == StateOfICO.PRE) {
             if(bonusForPreICO == _newBonus) { revert(); }
             bonusForPreICO = _newBonus;
-            BonusChanged(&quot;Pre ICO&quot;, _newBonus);
+            BonusChanged("Pre ICO", _newBonus);
         } else {
             if(bonusForMainICO == _newBonus) { revert(); }
             bonusForMainICO = _newBonus;
-            BonusChanged(&quot;Main ICO&quot;, _newBonus);
+            BonusChanged("Main ICO", _newBonus);
         }
     }
     

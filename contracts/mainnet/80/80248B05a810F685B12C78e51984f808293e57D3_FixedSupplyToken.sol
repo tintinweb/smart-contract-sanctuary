@@ -36,8 +36,8 @@ contract ERC20Interface {
  }
   
  contract FixedSupplyToken is ERC20Interface {
-     string public constant symbol = &quot;RTO&quot;;
-     string public constant name = &quot;Rentarto.de Coin&quot;;
+     string public constant symbol = "RTO";
+     string public constant name = "Rentarto.de Coin";
      uint8 public constant decimals = 3;
      uint256 _totalSupply = 10* 1000 * 100000 * (10**uint256(decimals));
      
@@ -91,7 +91,7 @@ contract ERC20Interface {
   
      // Send _value amount of tokens from address _from to address _to
      // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-     // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+     // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
      // fees in sub-currencies; the command should fail unless the _from account has
      // deliberately authorized the sender of the message via some mechanism; we propose
      // these standardized APIs for approval:

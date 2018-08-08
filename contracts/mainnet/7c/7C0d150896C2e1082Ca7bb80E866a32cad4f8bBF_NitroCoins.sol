@@ -101,8 +101,8 @@ contract StandardToken is Token, SafeMath {
  */
 contract NitroCoins is StandardToken {
 
-  string public name = &quot;Nitro Coins&quot;;
-  string public symbol = &quot;NRC&quot;;
+  string public name = "Nitro Coins";
+  string public symbol = "NRC";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 25000000 * 1 ether;
 

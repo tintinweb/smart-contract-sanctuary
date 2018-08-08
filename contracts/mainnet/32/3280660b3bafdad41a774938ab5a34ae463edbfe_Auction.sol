@@ -29,9 +29,9 @@ contract Auction {
   event Bid(address indexed winner, uint indexed price, uint indexed timestamp);
   event Refund(address indexed sender, uint indexed amount, uint indexed timestamp);
   
-  modifier onlyOwner { require(owner == msg.sender, &quot;only owner&quot;); _; }
-  modifier onlyWinner { require(winner == msg.sender, &quot;only winner&quot;); _; }
-  modifier ended { require(now > timestampEnd, &quot;not ended yet&quot;); _; }
+  modifier onlyOwner { require(owner == msg.sender, "only owner"); _; }
+  modifier onlyWinner { require(winner == msg.sender, "only winner"); _; }
+  modifier ended { require(now > timestampEnd, "not ended yet"); _; }
 
   function setDescription(string _description) public onlyOwner() {
     description = _description;
@@ -42,7 +42,7 @@ contract Auction {
   }
 
   constructor(uint _price, string _description, uint _timestampEnd, address _beneficiary) public {
-    require(_timestampEnd > now, &quot;end of the auction must be in the future&quot;);
+    require(_timestampEnd > now, "end of the auction must be in the future");
     owner = msg.sender;
     price = _price;
     description = _description;
@@ -57,7 +57,7 @@ contract Auction {
       return;
     }
 
-    require(now < timestampEnd, &quot;auction has ended&quot;); // sending ether only allowed before the end
+    require(now < timestampEnd, "auction has ended"); // sending ether only allowed before the end
 
     if (bids[msg.sender] > 0) { // First we add the bid to an existing bid
       bids[msg.sender] += msg.value;
@@ -67,9 +67,9 @@ contract Auction {
     }
 
     if (initialPrice) {
-      require(bids[msg.sender] >= price, &quot;bid too low, minimum is the initial price&quot;);
+      require(bids[msg.sender] >= price, "bid too low, minimum is the initial price");
     } else {
-      require(bids[msg.sender] >= (price * 5 / 4), &quot;bid too low, minimum 25% increment&quot;);
+      require(bids[msg.sender] >= (price * 5 / 4), "bid too low, minimum 25% increment");
     }
     
     if (now > timestampEnd - increaseTimeIfBidBeforeEnd) {
@@ -83,8 +83,8 @@ contract Auction {
   }
 
   function finalize() public ended() onlyOwner() {
-    require(finalized == false, &quot;can withdraw only once&quot;);
-    require(initialPrice == false, &quot;can withdraw only if there were bids&quot;);
+    require(finalized == false, "can withdraw only once");
+    require(initialPrice == false, "can withdraw only if there were bids");
 
     finalized = true; // THINK: DAO hack reentrancy - does it matter which order? (just in case setting it first)
     beneficiary.send(price);
@@ -99,7 +99,7 @@ contract Auction {
   }
 
   function refund() public {
-    require(msg.sender != winner, &quot;winner cannot refund&quot;);
+    require(msg.sender != winner, "winner cannot refund");
 
     msg.sender.send( bids[msg.sender] );
     emit Refund(msg.sender, bids[msg.sender], now);

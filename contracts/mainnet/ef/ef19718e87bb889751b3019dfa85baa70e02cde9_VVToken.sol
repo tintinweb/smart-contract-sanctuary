@@ -122,8 +122,8 @@ contract StandardToken is ERC20 {
 }
 
 contract VVToken is StandardToken {
-  string public constant name = &quot;VVeljk Token&quot;;
-  string public constant symbol = &quot;VVT&quot;;
+  string public constant name = "VVeljk Token";
+  string public constant symbol = "VVT";
   uint8 public constant decimals = 18;
 
   function VVToken() public {

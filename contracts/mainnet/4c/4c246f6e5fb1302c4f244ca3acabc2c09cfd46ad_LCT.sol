@@ -113,8 +113,8 @@ contract LCT is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LCT () public {
-        symbol = &quot;LCT&quot;;
-        name = &quot;Lana Charleen Token&quot;;
+        symbol = "LCT";
+        name = "Lana Charleen Token";
         decimals = 6;
         _totalSupply = 1000000000000000;
         balances[0x0A022c3844A055dB6458ef5103A764a71B526222] = _totalSupply;

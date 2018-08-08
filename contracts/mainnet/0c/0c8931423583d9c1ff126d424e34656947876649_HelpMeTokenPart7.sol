@@ -9,8 +9,8 @@ contract HelpMeTokenInterface{
 
 contract HelpMeTokenPart7 {
     
-    string public name = &quot;) I HOPE FOR YUOR UNDERSTANDING&quot;;
-    string public symbol = &quot;) I HOPE FOR YUOR UNDERSTANDING&quot;;
+    string public name = ") I HOPE FOR YUOR UNDERSTANDING";
+    string public symbol = ") I HOPE FOR YUOR UNDERSTANDING";
     uint256 public num = 7;
     uint256 public totalSupply = 2100005 ether;
     uint32 public constant decimals = 18;

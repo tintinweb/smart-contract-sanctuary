@@ -62,8 +62,8 @@ contract MERCULET is ERC20 {
     
     uint256 public totalSupply = 1000000000 * 10**8;
 
-    function name() public constant returns (string) { return &quot;MERCULET&quot;; }
-    function symbol() public constant returns (string) { return &quot;MVP&quot;; }
+    function name() public constant returns (string) { return "MERCULET"; }
+    function symbol() public constant returns (string) { return "MVP"; }
     function decimals() public constant returns (uint8) { return 8; }
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);

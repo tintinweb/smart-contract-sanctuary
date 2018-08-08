@@ -15,9 +15,9 @@ contract Brewers {
     function Brewers () {
 
          initialSupply = 5200000;
-         name =&quot;Brewers coin&quot;;
+         name ="Brewers coin";
         decimals = 0;
-         symbol = &quot;Brew&quot;;
+         symbol = "Brew";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

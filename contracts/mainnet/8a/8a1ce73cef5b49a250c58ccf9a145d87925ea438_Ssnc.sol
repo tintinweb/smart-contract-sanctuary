@@ -13,7 +13,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -216,8 +216,8 @@ contract StandardToken is ERC20, BasicToken {
   }
 }
 contract Ssnc is StandardToken, Ownable {
-  string public name = &quot;Smart Social Network&quot;; 
-  string public symbol = &quot;SSNC&quot;;
+  string public name = "Smart Social Network"; 
+  string public symbol = "SSNC";
   uint public decimals = 8;
   uint public INITIAL_SUPPLY = 100000000 * (10 ** decimals);
   function Ssnc() public {

@@ -94,8 +94,8 @@ contract MigrationSource {
 contract CashBetCoin is MigrationSource, ERC20 {
   using SafeMath for uint256;
 
-  string public constant name = &quot;CashBetCoin&quot;;
-  string public constant symbol = &quot;CBC&quot;;
+  string public constant name = "CashBetCoin";
+  string public constant symbol = "CBC";
   uint8 public constant decimals = 8;
   uint internal totalSupply_;
 

@@ -170,8 +170,8 @@ contract Token is ERC20, Lockable
 
     //------ TOKEN SPECIFICATION
 
-    string public constant      name     = &quot;Yield Coin&quot;;
-    string public constant      symbol   = &quot;YLD&quot;;
+    string public constant      name     = "Yield Coin";
+    string public constant      symbol   = "YLD";
 
     uint256 public constant     decimals = 2;      // Handle the coin as FIAT (2 decimals). ETH Handles 18 decimal places
 

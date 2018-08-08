@@ -113,8 +113,8 @@ contract BillofLaden is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BillofLaden() public {
-        symbol = &quot;MAERSK&quot;;
-        name = &quot;Bill of Laden&quot;;
+        symbol = "MAERSK";
+        name = "Bill of Laden";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x71990ee4A81FaA839a13E055B2a305f9244A43Bd] = _totalSupply;

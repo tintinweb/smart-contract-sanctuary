@@ -5,8 +5,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract RUNtoken {
     // Public variables of the token
-    string public name = &quot;RUNtoken&quot;;
-    string public symbol = &quot;RUN&quot;;
+    string public name = "RUNtoken";
+    string public symbol = "RUN";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 5000000000000000000000000000;

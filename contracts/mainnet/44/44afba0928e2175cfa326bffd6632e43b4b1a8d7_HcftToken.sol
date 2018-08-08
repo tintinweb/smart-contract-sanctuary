@@ -211,7 +211,7 @@ contract MintableTokenImpl is Ownable, TokenImpl, MintableToken {
 /**
  * @title OwnableImpl
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract OwnableImpl is Ownable {
     address public owner;
@@ -334,8 +334,8 @@ contract BurnableTokenImpl is TokenImpl, BurnableToken {
 }
 
 contract HcftToken is OwnableImpl, PausableToken, MintableTokenImpl, BurnableTokenImpl {
-	string public constant name = &quot;HARITONOV CAPITAL FUND TOKEN&quot;;
-	string public constant symbol = &quot;HCFT&quot;;
+	string public constant name = "HARITONOV CAPITAL FUND TOKEN";
+	string public constant symbol = "HCFT";
 	uint8 public constant decimals = 18;
 
 	function burn(uint256 _value) public whenNotPaused {

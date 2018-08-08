@@ -109,8 +109,8 @@ contract GOLDQ is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GOLDQ() public {
-        symbol = &quot;GLDQ&quot;;
-        name = &quot;GOLDQ&quot;;
+        symbol = "GLDQ";
+        name = "GOLDQ";
         decimals = 18;
         _totalSupply = 500000000000000000000000000;
         balances[0x554461F4e08a51A6ECF6245bEEFCb2526c92Be9B] = _totalSupply;

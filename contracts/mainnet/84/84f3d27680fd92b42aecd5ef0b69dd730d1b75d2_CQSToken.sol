@@ -288,11 +288,11 @@ library SafeMath {
 
 contract CQSToken is StandardBurnableToken {
     // Constants
-    string  public constant name = &quot;CQS&quot;;
-    string  public constant symbol = &quot;CQS&quot;;
+    string  public constant name = "CQS";
+    string  public constant symbol = "CQS";
     uint8   public constant decimals = 18;
     address public owner;
-    string  public website = &quot;www.cqsexchange.io&quot;; 
+    string  public website = "www.cqsexchange.io"; 
     uint256 public constant INITIAL_SUPPLY      =  2000000000 * (10 ** uint256(decimals));
     uint256 public constant CROWDSALE_ALLOWANCE =  1600000000 * (10 ** uint256(decimals));
     uint256 public constant ADMIN_ALLOWANCE     =   400000000 * (10 ** uint256(decimals));

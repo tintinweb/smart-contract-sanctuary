@@ -186,9 +186,9 @@ contract AmberToken is Token, Owned {
 	}
 
 	/// Usual token descriptors.
-	string constant public name = &quot;Amber Token&quot;;
+	string constant public name = "Amber Token";
 	uint8 constant public decimals = 18;
-	string constant public symbol = &quot;AMB&quot;;
+	string constant public symbol = "AMB";
 
 	// Are the tokens non-transferrable?
 	bool public locked = true;
@@ -205,7 +205,7 @@ contract AmberToken is Token, Owned {
 	mapping (address => Account) accounts;
 }
 
-/// Will accept Ether &quot;contributions&quot; and record each both as a log and in a
+/// Will accept Ether "contributions" and record each both as a log and in a
 /// queryable record.
 contract AmbrosusSale {
 	/// Constructor.

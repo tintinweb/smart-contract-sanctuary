@@ -83,8 +83,8 @@ contract SMILEHEART is ERC20Interface, Owned {
 
 
     function SMILEHEART() public {
-        symbol = &quot;SMHT&quot;;
-        name = &quot;SMILEHEART&quot;;
+        symbol = "SMHT";
+        name = "SMILEHEART";
         decimals = 8;
         _totalSupply = 143000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

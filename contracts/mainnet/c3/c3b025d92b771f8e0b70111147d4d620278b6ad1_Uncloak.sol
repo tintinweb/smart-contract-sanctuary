@@ -104,8 +104,8 @@ contract Uncloak is ERC20, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Uncloak() public {
-        symbol = &quot;UNC&quot;;
-        name = &quot;Uncloak&quot;;
+        symbol = "UNC";
+        name = "Uncloak";
         decimals = 18;
         _totalSupply = 4200000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -122,8 +122,8 @@ contract ZGR is newToken, ERC20 {
 }
 
 contract Zigger is ZGR, Ownable {
-  string public constant name = &quot;Zigger&quot;;
-  string public constant symbol = &quot;ZGR&quot;;
+  string public constant name = "Zigger";
+  string public constant symbol = "ZGR";
   uint public constant decimals = 8;
   uint256 public initialSupply;
     

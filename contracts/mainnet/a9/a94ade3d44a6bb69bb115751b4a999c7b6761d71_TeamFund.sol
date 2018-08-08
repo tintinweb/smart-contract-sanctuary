@@ -29,7 +29,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -84,7 +84,7 @@ contract TeamFund is Ownable {
      */
     constructor(ERC20Basic _token) public {
         vnetToken = _token;
-        description = &quot;Balance is locked by the VNETToken contract until 2021-6-30 23:59:59 UTC +0&quot;;
+        description = "Balance is locked by the VNETToken contract until 2021-6-30 23:59:59 UTC +0";
     }
 
     /**

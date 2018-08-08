@@ -113,8 +113,8 @@ contract NickoinToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NickoinToken() public {
-        symbol = &quot;NCN&quot;;
-        name = &quot;Nickoin&quot;;
+        symbol = "NCN";
+        name = "Nickoin";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0x4B33c7f7e12cBC701E9f96E3afD23ed0D5F8d607] = _totalSupply;

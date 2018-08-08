@@ -78,8 +78,8 @@ contract ERC20Standard is BasicToken {
   }
 }
 contract Payreum is ERC20Standard {
-    string public constant name = &quot;Payreum&quot;;
-    string public constant symbol = &quot;PYR&quot;;
+    string public constant name = "Payreum";
+    string public constant symbol = "PYR";
     uint8 public constant decimals = 18;
     uint256 public constant maxSupply = 500000000 * (10 ** uint256(decimals));
     uint256 public PYRToEth;

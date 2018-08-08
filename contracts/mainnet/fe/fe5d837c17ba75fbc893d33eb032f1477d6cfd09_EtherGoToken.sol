@@ -156,7 +156,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -200,9 +200,9 @@ contract Ownable {
  */
 contract EtherGoToken is StandardToken, Ownable {
 
-  string public name = &quot;ETHERGO&quot;;           
+  string public name = "ETHERGO";           
   uint8 public decimals = 2;                         
-  string public symbol = &quot;XGO&quot;;                            
+  string public symbol = "XGO";                            
                                            
   uint256 public constant INITIAL_SUPPLY = 0.0000000095 ether;
 

@@ -34,7 +34,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -115,7 +115,7 @@ contract TalaoMarketplace is Ownable {
       public
       onlyOwner
   {
-      require (newSellPrice > 0 && newBuyPrice > 0 && newUnitPrice > 0, &quot;wrong inputs&quot;);
+      require (newSellPrice > 0 && newBuyPrice > 0 && newUnitPrice > 0, "wrong inputs");
       marketplace.sellPrice = newSellPrice;
       marketplace.buyPrice = newBuyPrice;
       marketplace.unitPrice = newUnitPrice;
@@ -145,7 +145,7 @@ contract TalaoMarketplace is Ownable {
       public
       returns (uint revenue)
   {
-      require(token.balanceOf(msg.sender) >= amount, &quot;sender has not enough tokens&quot;);
+      require(token.balanceOf(msg.sender) >= amount, "sender has not enough tokens");
       token.transferFrom(msg.sender, this, amount);
       revenue = amount.mul(marketplace.sellPrice).div(marketplace.unitPrice);
       msg.sender.transfer(revenue);
@@ -916,8 +916,8 @@ contract TalaoToken is MintableToken {
   using SafeMath for uint256;
 
   // token details
-  string public constant name = &quot;Talao&quot;;
-  string public constant symbol = &quot;TALAO&quot;;
+  string public constant name = "Talao";
+  string public constant symbol = "TALAO";
   uint8 public constant decimals = 18;
 
   // the talao marketplace address
@@ -968,7 +968,7 @@ contract TalaoToken is MintableToken {
 
   modifier onlyMintingFinished()
   {
-      require(mintingFinished == true, &quot;minting has not finished&quot;);
+      require(mintingFinished == true, "minting has not finished");
       _;
   }
 
@@ -1064,7 +1064,7 @@ contract TalaoToken is MintableToken {
       public
       onlyOwner
   {
-      require(balanceOf(this).sub(totalDeposit) >= tokens, &quot;too much tokens asked&quot;);
+      require(balanceOf(this).sub(totalDeposit) >= tokens, "too much tokens asked");
       _transfer(this, msg.sender, tokens);
   }
 
@@ -1082,9 +1082,9 @@ contract TalaoToken is MintableToken {
       public
       onlyMintingFinished
   {
-      require(accessAllowance[msg.sender][msg.sender].clientAgreement==false, &quot;vault already created&quot;);
-      require(price<=vaultDeposit, &quot;price asked is too high&quot;);
-      require(balanceOf(msg.sender)>vaultDeposit, &quot;user has not enough tokens to send deposit&quot;);
+      require(accessAllowance[msg.sender][msg.sender].clientAgreement==false, "vault already created");
+      require(price<=vaultDeposit, "price asked is too high");
+      require(balanceOf(msg.sender)>vaultDeposit, "user has not enough tokens to send deposit");
       data[msg.sender].accessPrice=price;
       super.transfer(this, vaultDeposit);
       totalDeposit = totalDeposit.add(vaultDeposit);
@@ -1102,8 +1102,8 @@ contract TalaoToken is MintableToken {
       public
       onlyMintingFinished
   {
-      require(accessAllowance[msg.sender][msg.sender].clientAgreement==true, &quot;vault has not been created&quot;);
-      require(_transfer(this, msg.sender, data[msg.sender].userDeposit), &quot;token deposit transfer failed&quot;);
+      require(accessAllowance[msg.sender][msg.sender].clientAgreement==true, "vault has not been created");
+      require(_transfer(this, msg.sender, data[msg.sender].userDeposit), "token deposit transfer failed");
       accessAllowance[msg.sender][msg.sender].clientAgreement=false;
       totalDeposit=totalDeposit.sub(data[msg.sender].userDeposit);
       data[msg.sender].sharingPlan=0;
@@ -1125,8 +1125,8 @@ contract TalaoToken is MintableToken {
       internal
       returns (bool)
   {
-      require(_to != 0x0, &quot;destination cannot be 0x0&quot;);
-      require(balances[_from] >= _value, &quot;not enough tokens in sender wallet&quot;);
+      require(_to != 0x0, "destination cannot be 0x0");
+      require(balances[_from] >= _value, "not enough tokens in sender wallet");
 
       balances[_from] = balances[_from].sub(_value);
       balances[_to] = balances[_to].add(_value);
@@ -1145,8 +1145,8 @@ contract TalaoToken is MintableToken {
       public
       onlyMintingFinished
   {
-      require(newplan>=0&&newplan<=100, &quot;plan must be between 0 and 100&quot;);
-      require(accessAllowance[msg.sender][msg.sender].clientAgreement==true, &quot;vault has not been created&quot;);
+      require(newplan>=0&&newplan<=100, "plan must be between 0 and 100");
+      require(accessAllowance[msg.sender][msg.sender].clientAgreement==true, "vault has not been created");
       emit Vault(data[msg.sender].appointedAgent, msg.sender, VaultStatus.AgentRemoved);
       data[msg.sender].appointedAgent=newagent;
       data[msg.sender].sharingPlan=newplan;
@@ -1176,9 +1176,9 @@ contract TalaoToken is MintableToken {
       onlyMintingFinished
       returns (bool)
   {
-      require(accessAllowance[freelance][freelance].clientAgreement==true, &quot;vault does not exist&quot;);
-      require(accessAllowance[msg.sender][freelance].clientAgreement!=true, &quot;access was already granted&quot;);
-      require(balanceOf(msg.sender)>data[freelance].accessPrice, &quot;user has not enough tokens to get access to vault&quot;);
+      require(accessAllowance[freelance][freelance].clientAgreement==true, "vault does not exist");
+      require(accessAllowance[msg.sender][freelance].clientAgreement!=true, "access was already granted");
+      require(balanceOf(msg.sender)>data[freelance].accessPrice, "user has not enough tokens to get access to vault");
 
       uint256 freelance_share = data[freelance].accessPrice.mul(data[freelance].sharingPlan).div(100);
       uint256 agent_share = data[freelance].accessPrice.sub(freelance_share);

@@ -70,8 +70,8 @@ contract Honolulu is ERC20Interface, Owned{
     // ------------------------------------------------------------------------
 
     function Honolulu() public {
-        symbol = &quot;HNL&quot;;
-        name = &quot;Honolulu is coming!&quot;;
+        symbol = "HNL";
+        name = "Honolulu is coming!";
         decimals = 10;
         _totalSupply = 500000000 * 10**uint256(decimals);
         balances[owner] = _totalSupply;

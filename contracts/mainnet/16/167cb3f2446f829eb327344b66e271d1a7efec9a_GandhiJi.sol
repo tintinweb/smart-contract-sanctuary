@@ -142,8 +142,8 @@ contract GandhiJi {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;Gandhiji&quot;;
-    string public symbol = &quot;IND&quot;;
+    string public name = "Gandhiji";
+    string public symbol = "IND";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 10;
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;
@@ -234,7 +234,7 @@ contract GandhiJi {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
         
         // fire event

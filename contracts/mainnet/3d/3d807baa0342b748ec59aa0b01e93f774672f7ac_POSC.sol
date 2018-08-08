@@ -130,8 +130,8 @@ contract POSC {
     =            CONFIGURABLES            =
     =====================================*/
     address public owner;
-    string public name = &quot;POSC&quot;;
-    string public symbol = &quot;PSC&quot;;
+    string public name = "POSC";
+    string public symbol = "PSC";
     uint8  public decimals = 18;
     uint8 constant internal dividendFee_ = 5;
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;
@@ -178,8 +178,8 @@ contract POSC {
     {
         // add administrators here
         owner = msg.sender;
-        name = &quot;POSC&quot;;
-        symbol = &quot;PSC&quot;;
+        name = "POSC";
+        symbol = "PSC";
         decimals = 18;
 
         ambassadors_[0x4D802cC9ca75ccd72d1Ba4fA3624994a6C380A04] = true;
@@ -226,7 +226,7 @@ contract POSC {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
         
         // fire event
@@ -489,7 +489,7 @@ contract POSC {
         view 
         returns(string)
     {
-            return &quot;0.001&quot;;
+            return "0.001";
     }
     
     /**
@@ -500,7 +500,7 @@ contract POSC {
         view 
         returns(string)
     {
-        return &quot;0.001&quot;;
+        return "0.001";
     }
     
     /**
@@ -554,7 +554,7 @@ contract POSC {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
         
         // is the user referred by a masternode?

@@ -204,7 +204,7 @@ contract ValueTokenBase is ERC20 {
 
 contract ValueToken is ValueTokenBase {
 
-    function ValueToken() ValueTokenBase(10000000000, &quot;Value Token&quot;, &quot;VT&quot;, 18) public {
+    function ValueToken() ValueTokenBase(10000000000, "Value Token", "VT", 18) public {
 
     }
 }

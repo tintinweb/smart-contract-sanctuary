@@ -227,7 +227,7 @@ library SmartWalletLib {
     /*
      *  Members
      */
-    string constant VERSION = &quot;1.1&quot;;
+    string constant VERSION = "1.1";
     //The below is a sample address of a deployed WithdrawalConfigurations contract.
     //If changed, need to change in the tests as well.
     address constant withdrawalConfigurationsContract = 0xe9f25cc107e6435ccbe0d5e09331db4e42aaefb9; 

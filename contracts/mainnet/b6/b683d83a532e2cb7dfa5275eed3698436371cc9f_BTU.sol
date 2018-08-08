@@ -282,8 +282,8 @@ contract CappedToken is MintableToken {
 }
 
 contract BTU is CappedToken {
-    string public constant name = &quot;BTU Protocol&quot;;
-    string public constant symbol = &quot;BTU&quot;;
+    string public constant name = "BTU Protocol";
+    string public constant symbol = "BTU";
     uint8 public constant decimals = 18;
     uint public constant INITIAL_SUPPLY = 100000000 * 10 ** 18; // 100 millions tokens
 

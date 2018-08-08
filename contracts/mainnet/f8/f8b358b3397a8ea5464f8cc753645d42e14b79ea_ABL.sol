@@ -254,8 +254,8 @@ contract ABL is StandardToken, OwnableToken {
     uint256 public constant DEVELOPERS = 178550000;   // developer
 
     // Token Information
-    string public constant name = &quot;Airbloc&quot;;
-    string public constant symbol = &quot;ABL&quot;;
+    string public constant name = "Airbloc";
+    string public constant symbol = "ABL";
     uint256 public constant decimals = 18;
     uint256 public totalSupply = SUM.mul(10 ** uint256(decimals));
 

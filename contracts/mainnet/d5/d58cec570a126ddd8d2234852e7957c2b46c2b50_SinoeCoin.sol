@@ -46,8 +46,8 @@ contract SinoeCoin is ERC20 {
     mapping (address => uint256) balances; 
     mapping (address => mapping (address => uint256)) allowed;
 
-    string public constant name = &quot;SinoeCoin&quot;;
-    string public constant symbol = &quot;Sinoe&quot;;
+    string public constant name = "SinoeCoin";
+    string public constant symbol = "Sinoe";
     uint public constant decimals = 18;
     uint256 _Rate = 10 ** decimals;
     

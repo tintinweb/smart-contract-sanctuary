@@ -44,8 +44,8 @@ contract AOMcoinERC20 is owned {
     ) public {
         totalSupply = 17500000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;               
-        name = &quot;AOM Coin&quot;;                                  
-        symbol = &quot;A0M&quot;;                             
+        name = "AOM Coin";                                  
+        symbol = "A0M";                             
     }
 
     /**

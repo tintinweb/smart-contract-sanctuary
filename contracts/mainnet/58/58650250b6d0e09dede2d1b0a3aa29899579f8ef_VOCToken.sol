@@ -304,7 +304,7 @@ contract TokenERC20 is ERC20, Ownable{
 }
 
 contract VOCToken is TokenERC20 {
-    function VOCToken() TokenERC20(200000000, &quot;Value of Criculation&quot;, &quot;VOC&quot;, 8) public {
+    function VOCToken() TokenERC20(200000000, "Value of Criculation", "VOC", 8) public {
 
     }
 	function () payable public {

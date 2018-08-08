@@ -112,8 +112,8 @@ contract HeliosToken is ERC20, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HeliosToken() public {
-        symbol = &quot;HLS&quot;;
-        name = &quot;Helios Token&quot;;
+        symbol = "HLS";
+        name = "Helios Token";
         decimals = 18;
         _totalSupply = 350000000000000000000000000;
 		_yearTwoSupply = 30000000000000000000000000;

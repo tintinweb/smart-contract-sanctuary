@@ -238,8 +238,8 @@ contract StandardToken is ERC20, ERC223Token {
 
 contract TaurusPay is StandardToken {
 
-    string public constant name = &quot;TaurusPay Token&quot;;
-    string public constant symbol = &quot;TAPT&quot;;
+    string public constant name = "TaurusPay Token";
+    string public constant symbol = "TAPT";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 950**6 * (10**uint256(decimals));
     address public owner;

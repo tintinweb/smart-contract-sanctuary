@@ -18,8 +18,8 @@ contract FuckYouToken {
 
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;Fuck You Token&quot;; }
-    function symbol() constant returns (string) { return &quot;FYT&quot;; }
+    function name() constant returns (string) { return "Fuck You Token"; }
+    function symbol() constant returns (string) { return "FYT"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

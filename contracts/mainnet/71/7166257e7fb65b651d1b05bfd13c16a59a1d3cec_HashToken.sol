@@ -98,8 +98,8 @@ contract HashToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HashToken() public {
-        symbol = &quot;HASH&quot;;
-        name = &quot;HASH Token&quot;;
+        symbol = "HASH";
+        name = "HASH Token";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0x9485F40F38c06a54c7C533458D08f7EE6586e8b6] = _totalSupply;

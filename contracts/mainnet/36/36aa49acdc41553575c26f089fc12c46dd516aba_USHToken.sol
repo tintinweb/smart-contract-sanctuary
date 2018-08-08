@@ -231,7 +231,7 @@ contract BurnableToken is StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -273,8 +273,8 @@ contract Ownable {
 
 contract USHToken is BurnableToken {
 
-    string public constant name = &quot;USH Token&quot;;
-    string public constant symbol = &quot;USH&quot;;
+    string public constant name = "USH Token";
+    string public constant symbol = "USH";
     uint public constant decimals = 18;
     uint256 public constant initialSupply =  698396562013061000000000+10**18;
 

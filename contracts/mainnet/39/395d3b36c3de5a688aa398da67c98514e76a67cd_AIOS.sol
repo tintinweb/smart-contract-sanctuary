@@ -16,9 +16,9 @@ contract AIOS {
     function AIOS() {
 
          initialSupply = 80000000;
-         name =&quot;AIOS&quot;;
+         name ="AIOS";
         decimals = 0;
-         symbol = &quot;AIOS&quot;;
+         symbol = "AIOS";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

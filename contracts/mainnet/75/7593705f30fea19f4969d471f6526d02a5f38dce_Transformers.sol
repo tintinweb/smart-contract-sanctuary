@@ -111,8 +111,8 @@ contract Transformers is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Transformers() public {
-        symbol = &quot;TNSFM&quot;;
-        name = &quot;Transformers&quot;;
+        symbol = "TNSFM";
+        name = "Transformers";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x917Ab451d3cbA3D42f48E5B05d5a0dFbee643F5a] = _totalSupply;

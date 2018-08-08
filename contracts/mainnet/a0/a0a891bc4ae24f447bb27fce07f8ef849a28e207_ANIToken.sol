@@ -2,7 +2,7 @@ pragma solidity ^0.4.16;
 
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 
-// 100000000000, &quot;Annie Coin &#128011;&quot;, &quot;ANI&quot;
+// 100000000000, "Annie Coin &#128011;", "ANI"
 
 contract ANIToken {
     // Public variables of the token

@@ -91,7 +91,7 @@ contract DSAuth is DSAuthEvents {
 
 /* pragma solidity ^0.4.23; */
 
-/* import &quot;ds-auth/auth.sol&quot;; */
+/* import "ds-auth/auth.sol"; */
 
 contract DSGuardEvents {
     event LogPermit(

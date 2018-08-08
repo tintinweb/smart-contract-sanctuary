@@ -213,8 +213,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract SkrumbleCandyToken is StandardToken {
 
-    string  public name     = &quot;Skrumble Candy Token&quot;;
-    string  public symbol   = &quot;SKM-CDY&quot;;
+    string  public name     = "Skrumble Candy Token";
+    string  public symbol   = "SKM-CDY";
     uint8 public decimals = 18;
 
 

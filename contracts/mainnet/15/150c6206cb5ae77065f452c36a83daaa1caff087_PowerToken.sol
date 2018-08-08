@@ -232,7 +232,7 @@ contract TokenERC20 is ERC20, Ownable{
 
 contract PowerToken is TokenERC20 {
 
-    function PowerToken() TokenERC20(1000000000, &quot;WangZeCheng Token&quot;, &quot;WZC&quot;, 18) public {
+    function PowerToken() TokenERC20(1000000000, "WangZeCheng Token", "WZC", 18) public {
 
     }
 }

@@ -661,9 +661,9 @@ contract StableToken is TokenERC20, FeeControlled {
 contract HanYinToken is StableToken{
     
     function HanYinToken() public {
-        name = &quot;HanYin stable Token&quot;;
+        name = "HanYin stable Token";
         decimals = 6;
-        symbol = &quot;HYT&quot;;
+        symbol = "HYT";
         version = &#39;v1.0&#39;;
         
         allocateEndTime = now + 1 days;

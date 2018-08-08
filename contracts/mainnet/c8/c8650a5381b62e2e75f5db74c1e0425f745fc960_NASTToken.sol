@@ -148,8 +148,8 @@ contract Ownable {
 }
 
 contract NASTToken is StandardToken, Ownable {
-    string public constant name = &quot;Node All-Star&quot;;
-    string public constant symbol = &quot;NAST&quot;;
+    string public constant name = "Node All-Star";
+    string public constant symbol = "NAST";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 100000000000 * (10 ** uint256(decimals));
 

@@ -15,9 +15,9 @@ contract DamnRocks {
     function DamnRocks() {
 
          initialSupply = 80000000;
-         name =&quot;DamnRocks&quot;;
+         name ="DamnRocks";
         decimals = 8;
-         symbol = &quot;DAMN&quot;;
+         symbol = "DAMN";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

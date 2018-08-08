@@ -6,7 +6,7 @@ contract AddressRegex {
     function (byte) constant internal returns (State memory) func;
   }
 
-  string public constant regex = &quot;0x[0-9a-fA-F]{40}&quot;;
+  string public constant regex = "0x[0-9a-fA-F]{40}";
 
   function s0(byte c) constant internal returns (State memory) {
     c = c;

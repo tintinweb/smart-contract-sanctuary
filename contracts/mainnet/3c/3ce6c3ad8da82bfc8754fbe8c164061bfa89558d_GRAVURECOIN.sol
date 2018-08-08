@@ -108,8 +108,8 @@ contract ERC223 {
 contract GRAVURECOIN is ERC223, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;gravure coin&quot;;
-    string public symbol = &quot;GRAV&quot;;
+    string public name = "gravure coin";
+    string public symbol = "GRAV";
     uint8 public decimals = 16;
     uint256 public totalSupply;
 

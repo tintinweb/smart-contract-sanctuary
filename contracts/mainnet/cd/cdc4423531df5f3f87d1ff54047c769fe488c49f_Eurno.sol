@@ -64,7 +64,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -124,8 +124,8 @@ contract ForeignToken {
   contract Eurno is ERC20Basic, Ownable, ForeignToken {
     using SafeMath for uint256;
 
-    string public constant name = &quot;Eurno&quot;;
-    string public constant symbol = &quot;ENO&quot;;
+    string public constant name = "Eurno";
+    string public constant symbol = "ENO";
     uint public constant decimals = 8;
     uint256 public totalSupply = 28e14;
     uint256 internal functAttempts;

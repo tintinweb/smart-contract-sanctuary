@@ -129,8 +129,8 @@ contract ERC721Abstract
 
 contract ERC721 is ERC721Abstract
 {
-	string constant public   name = &quot;CryptoSport&quot;;
-	string constant public symbol = &quot;CS&quot;;
+	string constant public   name = "CryptoSport";
+	string constant public symbol = "CS";
 
 	uint256 public totalSupply;
 	struct Token
@@ -292,7 +292,7 @@ contract Functional
 	
 	function uint2str(uint i) internal pure returns (string)
 	{
-		if (i == 0) return &quot;0&quot;;
+		if (i == 0) return "0";
 		uint j = i;
 		uint len;
 		while (j != 0){
@@ -465,7 +465,7 @@ contract CSLottery is ERC721, usingOraclize, Functional, Owned
 
 	function getUserTokens(address user, uint32 count) public view returns ( string res ) 
 	{
-		res=&quot;&quot;;
+		res="";
 		require(user!=0x0);
 		uint32 findCount=0;
 		for (uint256 i = totalSupply-1; i >= 0; i--)
@@ -473,7 +473,7 @@ contract CSLottery is ERC721, usingOraclize, Functional, Owned
 			if(i>totalSupply) break;
 			if (user == tokenIndexToOwner[i]) 
 			{
-				res = strConcat( res, &quot;,&quot;, uint2str(i) );
+				res = strConcat( res, ",", uint2str(i) );
 				findCount++;
 				if (count!=0 && findCount>=count) break;
 			}
@@ -490,14 +490,14 @@ contract CSLottery is ERC721, usingOraclize, Functional, Owned
 		countAll = uint32(game.length);
 		countPlaying = 0;
 		countProcessing = 0;
-		listPlaying=&quot;&quot;;
-		listProcessing=&quot;&quot;;
+		listPlaying="";
+		listProcessing="";
 		uint32 curtime = timenow();
 		for (uint32 i = 0; i < countAll; i++)
 		{
 			if (game[i].status!=Status.PLAYING) continue;
-			if (curtime <  game[i].dateStopBuy) { countPlaying++; listPlaying = strConcat( listPlaying, &quot;,&quot;, uint2str(i) ); }
-			if (curtime >= game[i].dateStopBuy) { countProcessing++; listProcessing = strConcat( listProcessing, &quot;,&quot;, uint2str(i) ); }
+			if (curtime <  game[i].dateStopBuy) { countPlaying++; listPlaying = strConcat( listPlaying, ",", uint2str(i) ); }
+			if (curtime >= game[i].dateStopBuy) { countProcessing++; listProcessing = strConcat( listProcessing, ",", uint2str(i) ); }
 		}
 		
 	}
@@ -536,7 +536,7 @@ contract CSLottery is ERC721, usingOraclize, Functional, Owned
 
 		uint256 newGameId = game.push(_game) - 1;
 		
-		LogEvent( &quot;AddGame&quot;, _nameLottery, newGameId );
+		LogEvent( "AddGame", _nameLottery, newGameId );
 	}
 
 	function () payable public { require (msg.value == 0x0); }
@@ -580,7 +580,7 @@ contract CSLottery is ERC721, usingOraclize, Functional, Owned
 		uint256 newTokenId = totalSupply++;
 		tokens[newTokenId] = _token;
 		_transfer(0, msg.sender, newTokenId);
-		LogToken( &quot;Buy&quot;, msg.sender, idLottery, uint32(newTokenId), combination, userStake);
+		LogToken( "Buy", msg.sender, idLottery, uint32(newTokenId), combination, userStake);
 	}
 	
 	// take win money or money for canceling lottery
@@ -611,7 +611,7 @@ contract CSLottery is ERC721, usingOraclize, Functional, Owned
 	
 		msg.sender.transfer(sumPayment);
 		
-		LogToken( &quot;Redeem&quot;, msg.sender, idLottery, uint32(_tokenId), combination, sumPayment);
+		LogToken( "Redeem", msg.sender, idLottery, uint32(_tokenId), combination, sumPayment);
 	}
 	
 	function cancelLottery(uint32 idLottery) public 
@@ -624,7 +624,7 @@ contract CSLottery is ERC721, usingOraclize, Functional, Owned
 
 		curGame.status = Status.CANCELING;
 
-		LogEvent( &quot;CancelLottery&quot;, curGame.nameLottery, idLottery );
+		LogEvent( "CancelLottery", curGame.nameLottery, idLottery );
 		
 		takeFee(idLottery);
 	}
@@ -641,9 +641,9 @@ contract CSLottery is ERC721, usingOraclize, Functional, Owned
 		
 		uint32 tmpCombination = uint32(parseInt(_result,0));
 		
-		string memory error = &quot;callback&quot;;
-		if ( tmpCombination==0 ) error = &quot;callback_result_not_found&quot;;
-		if ( tmpCombination > curGame.countCombinations ) { tmpCombination = 0; error = &quot;callback_result_limit&quot;; }
+		string memory error = "callback";
+		if ( tmpCombination==0 ) error = "callback_result_not_found";
+		if ( tmpCombination > curGame.countCombinations ) { tmpCombination = 0; error = "callback_result_limit"; }
 
 		LogEvent( error, curGame.nameLottery, tmpCombination );
 
@@ -658,21 +658,21 @@ contract CSLottery is ERC721, usingOraclize, Functional, Owned
 	{
 		Game storage curGame = game[idLottery];
 		
-		uint oraclizeFee = oraclize_getPrice( &quot;URL&quot;, ORACLIZE_GAS_LIMIT );
+		uint oraclizeFee = oraclize_getPrice( "URL", ORACLIZE_GAS_LIMIT );
 		require(msg.value + curGame.feeValue > oraclizeFee); // if contract has not enought money to do query
 		
 		curGame.feeValue = curGame.feeValue + msg.value - oraclizeFee;
 
-		LogEvent( &quot;ResolveLotteryByOraclize&quot;, curGame.nameLottery, delaySec );
+		LogEvent( "ResolveLotteryByOraclize", curGame.nameLottery, delaySec );
 		
 		string memory tmpQuery;
-		tmpQuery = strConcat( &quot;json(https://cryptosportz.com/api/v2/game/&quot;, uint2str(idLottery), &quot;/result).result&quot; );
+		tmpQuery = strConcat( "json(https://cryptosportz.com/api/v2/game/", uint2str(idLottery), "/result).result" );
 	
 		uint32 delay;
 		if ( timenow() < curGame.dateStopBuy ) delay = curGame.dateStopBuy - timenow() + delaySec;
 										  else delay = delaySec;
 	
-		bytes32 queryId = oraclize_query(delay, &quot;URL&quot;, tmpQuery, ORACLIZE_GAS_LIMIT);
+		bytes32 queryId = oraclize_query(delay, "URL", tmpQuery, ORACLIZE_GAS_LIMIT);
 		queryRes[queryId] = idLottery;
 	}
 
@@ -688,7 +688,7 @@ contract CSLottery is ERC721, usingOraclize, Functional, Owned
 
 		curGame.winCombination = combination;
 		
-		LogEvent( &quot;ResolveLotteryByHand&quot;, curGame.nameLottery, curGame.winCombination );
+		LogEvent( "ResolveLotteryByHand", curGame.nameLottery, curGame.winCombination );
 		
 		checkWinNobody(idLottery);
 	}
@@ -704,7 +704,7 @@ contract CSLottery is ERC721, usingOraclize, Functional, Owned
 		if ( betsAll[idLottery][curGame.winCombination].count == 0 )
 		{
 			if (curGame.betsSumIn+curGame.feeValue!=0) feeLottery = feeLottery + curGame.betsSumIn + curGame.feeValue;
-			LogEvent( &quot;NOBODYWIN&quot;, curGame.nameLottery, curGame.betsSumIn+curGame.feeValue );
+			LogEvent( "NOBODYWIN", curGame.nameLottery, curGame.betsSumIn+curGame.feeValue );
 		}
 		else 
 			takeFee(idLottery);
@@ -718,7 +718,7 @@ contract CSLottery is ERC721, usingOraclize, Functional, Owned
 		if ( curGame.feeValue > 0 )
 		{
 			feeLottery = feeLottery + curGame.feeValue;
-			LogEvent( &quot;TakeFee&quot;, curGame.nameLottery, curGame.feeValue );
+			LogEvent( "TakeFee", curGame.nameLottery, curGame.feeValue );
 		}
 	}
 	
@@ -730,7 +730,7 @@ contract CSLottery is ERC721, usingOraclize, Functional, Owned
 		feeLottery = 0;
 		
 		owner.transfer(tmpFeeLottery);
-		LogEvent( &quot;WITHDRAW&quot;, &quot;&quot;, tmpFeeLottery);
+		LogEvent( "WITHDRAW", "", tmpFeeLottery);
 	}
 
 }

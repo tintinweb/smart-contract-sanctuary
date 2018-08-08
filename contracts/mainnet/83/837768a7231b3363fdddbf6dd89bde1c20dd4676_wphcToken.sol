@@ -116,8 +116,8 @@ contract wphcToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function wphcToken() public {
-        symbol = &quot;WPHC&quot;;
-        name = &quot;wphc Token&quot;;
+        symbol = "WPHC";
+        name = "wphc Token";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         endDate = now + 10 weeks;

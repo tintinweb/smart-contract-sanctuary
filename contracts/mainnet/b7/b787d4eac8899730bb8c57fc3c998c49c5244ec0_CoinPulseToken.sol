@@ -98,9 +98,9 @@ contract CoinPulseToken is StandardToken {
         ) {
         balances[msg.sender] = 10000000000000000;
         totalSupply = 10000000000000000;
-        name = &quot;CoinPulseToken&quot;;
+        name = "CoinPulseToken";
         decimals = 8;
-        symbol = &quot;CPEX&quot;;
+        symbol = "CPEX";
     }
 
     /* Approves and then calls the receiving contract */
@@ -111,7 +111,7 @@ contract CoinPulseToken is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

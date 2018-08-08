@@ -54,7 +54,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -141,8 +141,8 @@ contract BGCGToken is Pausable {
 
   using SafeMath for SafeMath;
 
-  string public name = &quot;Blockchain Game Coalition Gold&quot;;
-  string public symbol = &quot;BGCG&quot;;
+  string public name = "Blockchain Game Coalition Gold";
+  string public symbol = "BGCG";
   uint8 public decimals = 18;
   uint256 public totalSupply = 10000000000 * 10 ** uint256(decimals); // 10 billion tokens
 

@@ -20,9 +20,9 @@ contract PacBall{
     function PacBall() {
 
          initialSupply =10000;
-         name =&quot;PacBall&quot;;
+         name ="PacBall";
          decimals =5;
-         symbol = &quot;PBC&quot;;
+         symbol = "PBC";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

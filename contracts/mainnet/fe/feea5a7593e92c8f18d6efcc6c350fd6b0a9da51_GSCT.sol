@@ -194,8 +194,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract GSCT is StandardToken {
 
-  string public constant name = &quot;Global Supply Chain Token&quot;;
-  string public constant symbol = &quot;GSCT&quot;;
+  string public constant name = "Global Supply Chain Token";
+  string public constant symbol = "GSCT";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 20000000000 * (10 ** uint256(decimals));

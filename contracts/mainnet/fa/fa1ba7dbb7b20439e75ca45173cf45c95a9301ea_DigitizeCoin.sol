@@ -60,7 +60,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -130,8 +130,8 @@ contract DigitizeCoin is Ownable {
   event WithdrawnEther(address indexed _owner, uint256 _balance);
   event ApproveAndCall(address indexed _from, address indexed _to, uint256 _value, bytes _data);
 
-  string public constant name = &quot;Digitize Coin&quot;;
-  string public constant symbol = &quot;DTZ&quot;;
+  string public constant name = "Digitize Coin";
+  string public constant symbol = "DTZ";
   uint256 public constant decimals = 18;
   uint256 public constant initialSupply = 200000000 * (10 ** decimals);
   uint256 public totalSupply;

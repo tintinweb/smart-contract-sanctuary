@@ -206,8 +206,8 @@ contract BurnableToken is AdvancedToken {
 contract UKW is BurnableToken {
 
     function UKW() public {
-        name = &quot;Ubuntukingdomwealth&quot;;
-        symbol = &quot;UKW&quot;;
+        name = "Ubuntukingdomwealth";
+        symbol = "UKW";
         decimals = 18;
         totalSupply = 200000000e18;
         balances[msg.sender] = totalSupply;

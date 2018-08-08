@@ -1,6 +1,6 @@
 pragma solidity ^0.4.8;
 
-//import &quot;github.com/Arachnid/solidity-stringutils/src/strings.sol&quot;;
+//import "github.com/Arachnid/solidity-stringutils/src/strings.sol";
 
 /*
  * @title String & slice utility library for Solidity contracts.
@@ -15,11 +15,11 @@ pragma solidity ^0.4.8;
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -695,7 +695,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal pure returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint length = self._len * (parts.length - 1);
         for(uint i = 0; i < parts.length; i++)
@@ -762,8 +762,8 @@ contract CryptoNumismat
         admins[owner] = true;
         
         totalSupply = 1000;                         // Update total supply
-        name = &quot;cryptonumismat&quot;;                    // Set the name for display purposes
-        symbol = &quot;$&quot;;                               // Set the symbol for display purposes
+        name = "cryptonumismat";                    // Set the name for display purposes
+        symbol = "$";                               // Set the symbol for display purposes
         decimals = 0;                               // Amount of decimals for display purposes
     }
     
@@ -806,8 +806,8 @@ contract CryptoNumismat
         owner.transfer(_amount);
     }
     
-    /// _type == &quot;Common&quot;
-    /// _type == &quot;United&quot;
+    /// _type == "Common"
+    /// _type == "United"
 
     function addCard(string _type, uint _intName, string _name, uint _cardIndex, uint256 _value, address _ownAddress) public onlyAdmins()
     {
@@ -820,12 +820,12 @@ contract CryptoNumismat
         address seller = _ownAddress;
         uint256 _value2 = (_value * 1000000000);
         
-        if (strings.equals(_type.toSlice(), &quot;Common&quot;.toSlice()))
+        if (strings.equals(_type.toSlice(), "Common".toSlice()))
         {
             cardsForSale[_cardIndex] = Buy(_cardIndex, seller, _value2, _intName, _name);
             Assign(_cardIndex, seller, _value2, _intName, _name);
         }
-        else if (strings.equals(_type.toSlice(), &quot;United&quot;.toSlice()))
+        else if (strings.equals(_type.toSlice(), "United".toSlice()))
         {
             UnitedCardsForSale[_intName] = UnitedBuy(_cardIndex, seller, _intName, _name);
             cardsForSale[_cardIndex] = Buy(_cardIndex, seller, _value2,  _intName, _name);

@@ -113,8 +113,8 @@ contract Tzedakah is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Tzedakah() public {
-        symbol = &quot;TZKAH&quot;;
-        name = &quot;Tzedakah&quot;;
+        symbol = "TZKAH";
+        name = "Tzedakah";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xb3D3D4b4336338DF7D6AF3D44005a177A145fFEC] = _totalSupply;

@@ -116,8 +116,8 @@ contract DelphiToken is StandardToken {
     /*
      *  Token meta data
      */
-    string constant public name = &quot;Delphi&quot;;
-    string constant public symbol = &quot;DEL&quot;;
+    string constant public name = "Delphi";
+    string constant public symbol = "DEL";
     uint8 constant public decimals = 18;
 
     /*

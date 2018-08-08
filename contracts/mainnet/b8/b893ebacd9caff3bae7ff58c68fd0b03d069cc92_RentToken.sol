@@ -85,8 +85,8 @@ contract RentToken is ERC20Interface, Owned, SafeMath {
 
 
     function RentToken() public {
-        symbol = &quot;RENT&quot;;
-        name = &quot;Rent Token&quot;;
+        symbol = "RENT";
+        name = "Rent Token";
         decimals = 18;
         _totalSupply = 5000000000000000000000000;
         balances[0x464983749012e09017Ef69a34609556041C5d12F] = _totalSupply;

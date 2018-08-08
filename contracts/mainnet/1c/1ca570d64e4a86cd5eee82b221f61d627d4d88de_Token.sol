@@ -53,7 +53,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -343,8 +343,8 @@ contract PausableToken is StandardToken, Pausable {
 pragma solidity ^0.4.19;
 
 contract Token is PausableToken {
-	string public name = &quot;CCC&quot;; // Token 名称
-	string public symbol = &quot;EC3T&quot;; // Token 标识 例如：ETH/EOS
+	string public name = "CCC"; // Token 名称
+	string public symbol = "EC3T"; // Token 标识 例如：ETH/EOS
 	uint public decimals = 0;
 	uint public INITIAL_SUPPLY = 50000 * (10 ** 4); // 初始供应量
 

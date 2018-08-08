@@ -134,10 +134,10 @@ contract StandardToken is Token {
 
 contract IMETOKEN is StandardToken, SafeMath {
     // Descriptive properties
-    string public constant name = &quot;IME.IM Token&quot;;
-    string public constant symbol = &quot;IME&quot;;
+    string public constant name = "IME.IM Token";
+    string public constant symbol = "IME";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     // Account for ether proceed.
     address public etherProceedsAccount = 0x0;

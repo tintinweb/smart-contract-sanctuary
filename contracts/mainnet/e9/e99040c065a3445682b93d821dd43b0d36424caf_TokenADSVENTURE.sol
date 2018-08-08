@@ -113,8 +113,8 @@ contract TokenADSVENTURE is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TokenADSVENTURE() public {
-        symbol = &quot;ADSVC&quot;;
-        name = &quot;ADs Venture&quot;;
+        symbol = "ADSVC";
+        name = "ADs Venture";
         decimals = 18;
         _totalSupply = 12000000000000000000000000;
         balances[0x479E4e2E10282EB58AFFF31344535E18D38A4228] = _totalSupply;

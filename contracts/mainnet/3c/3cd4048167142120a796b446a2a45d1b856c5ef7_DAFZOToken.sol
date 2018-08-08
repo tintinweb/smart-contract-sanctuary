@@ -68,8 +68,8 @@ contract StandardToken is Token {
 
 contract DAFZOToken is StandardToken {
 
-  string public constant name = &quot;DAFZO&quot;;
-  string public constant symbol = &quot;DFZ&quot;;
+  string public constant name = "DAFZO";
+  string public constant symbol = "DFZ";
   uint8 public constant decimals = 18;
 
   function DAFZOToken(address _icoAddress,

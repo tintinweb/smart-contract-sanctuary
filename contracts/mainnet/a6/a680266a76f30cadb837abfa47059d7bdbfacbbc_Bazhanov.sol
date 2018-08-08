@@ -113,8 +113,8 @@ contract Bazhanov is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;BAZ&quot;;
-        name = &quot;NB token&quot;;
+        symbol = "BAZ";
+        name = "NB token";
         decimals = 0;
         _totalSupply = 10;
         balances[0x2678dFDa101D138888e96e6241Fa9e951ae916c1] = _totalSupply;

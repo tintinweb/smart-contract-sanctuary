@@ -116,8 +116,8 @@ contract olympus is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function olympus() public {
-        symbol = &quot;OLY&quot;;
-        name = &quot;olympus&quot;;
+        symbol = "OLY";
+        name = "olympus";
         decimals = 18;
         _totalSupply = 160000000000000000000000000;
         bonusEnds = now + 10 weeks;

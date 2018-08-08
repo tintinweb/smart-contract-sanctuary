@@ -206,7 +206,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -602,8 +602,8 @@ contract Consts {
     uint8 constant TOKEN_DECIMALS_UINT8 = 8;
     uint constant TOKEN_DECIMAL_MULTIPLIER = 10 ** TOKEN_DECIMALS;
 
-    string constant TOKEN_NAME = &quot;CoinOil&quot;;
-    string constant TOKEN_SYMBOL = &quot;COIL&quot;;
+    string constant TOKEN_NAME = "CoinOil";
+    string constant TOKEN_SYMBOL = "COIL";
     bool constant PAUSED = false;
     address constant TARGET_USER = 0xFe0880a1cCF3C35287AB37F08F997250CF8534c0;
     

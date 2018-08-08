@@ -113,8 +113,8 @@ contract TradingLife is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TradingLife() public {
-        symbol = &quot;TLIFE&quot;;
-        name = &quot;TradingLife&quot;;
+        symbol = "TLIFE";
+        name = "TradingLife";
         decimals = 0;
         _totalSupply = 1000000000;
         balances[0xCa6001488A5Cbc1B1fCDBd1A3B41ddE142F1C4bD] = _totalSupply;

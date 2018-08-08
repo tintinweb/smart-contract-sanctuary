@@ -95,9 +95,9 @@ contract DIUToken is Token{
     function DIUToken() {
         balances[msg.sender] = 100000000 * 1000000000000000000;
         totalSupply = 100000000 * 1000000000000000000;
-        name = &quot;Damn It&#39;s Useless Token&quot;;
+        name = "Damn It&#39;s Useless Token";
         decimals = 18;
-        symbol = &quot;DIU&quot;;
+        symbol = "DIU";
         unitsOneEthCanBuy = 100;
         fundsWallet = msg.sender;
         tokenFunded = 0;
@@ -132,7 +132,7 @@ contract DIUToken is Token{
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) {
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) {
             revert();
         }
 

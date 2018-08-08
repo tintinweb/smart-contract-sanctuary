@@ -113,8 +113,8 @@ contract Zakat is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Zakat() public {
-        symbol = &quot;Zakah&quot;;
-        name = &quot;Zakat token&quot;;
+        symbol = "Zakah";
+        name = "Zakat token";
         decimals = 18;
         _totalSupply = 200000000000000000000000000;
         balances[0x2DbFF826739090C3fBB1BDc3107601E785b288c6] = _totalSupply;

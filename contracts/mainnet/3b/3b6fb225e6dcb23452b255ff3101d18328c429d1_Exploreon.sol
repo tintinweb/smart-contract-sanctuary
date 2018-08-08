@@ -167,8 +167,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Exploreon is StandardToken {
     
-    string public name = &quot;Exploreon&quot;;
-    string public symbol = &quot;XPL&quot;;
+    string public name = "Exploreon";
+    string public symbol = "XPL";
     uint public decimals = 3;
     
     uint public INITIAL_SUPPLY = 1000000;

@@ -72,9 +72,9 @@ contract MinerEdgeToken is MET20Interface, Ownable {
     constructor() public {
         totalSupply = 60000000 * tokenDecimal;
         balances[msg.sender] = totalSupply;           
-        name = &quot;MinerEdgeToken&quot;;                                   
+        name = "MinerEdgeToken";                                   
         decimals = 18;                            
-        symbol = &quot;MET&quot;;                               
+        symbol = "MET";                               
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

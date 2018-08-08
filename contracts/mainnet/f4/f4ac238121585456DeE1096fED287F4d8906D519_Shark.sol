@@ -80,8 +80,8 @@ contract Shark is Traded
 {
     function Shark()
     {
-        name = &quot;SHARK TECH&quot;;
-        symbol = &quot;SKT&quot;;
+        name = "SHARK TECH";
+        symbol = "SKT";
         decimals = 18;
         totalSupply = 100000000000000000000000;
         balanceOf[msg.sender]=totalSupply;
@@ -118,7 +118,7 @@ contract Shark is Traded
     onlyHuman
     {
         if(msg.value<price*1 ether)throw;
-        this.Trade(msg.value/price,price,&quot;&quot;,owner,msg.sender); 
+        this.Trade(msg.value/price,price,"",owner,msg.sender); 
     }
     
     function Sell(uint256 _qty) 
@@ -126,7 +126,7 @@ contract Shark is Traded
     onlyHuman
     {
         if(this.balance<_qty*price)throw;
-        this.Trade(_qty,price,&quot;buyback&quot;,msg.sender,owner);
+        this.Trade(_qty,price,"buyback",msg.sender,owner);
     }
     
     function airDrop(address[] _adr,uint256 _val)

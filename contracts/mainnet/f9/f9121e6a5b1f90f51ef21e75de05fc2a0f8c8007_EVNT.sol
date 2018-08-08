@@ -104,8 +104,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract EVNT is StandardToken {
 
-  string public constant name = &quot;EVENTICA&quot;;
-  string public constant symbol = &quot;EVNT&quot;;
+  string public constant name = "EVENTICA";
+  string public constant symbol = "EVNT";
   uint256 public constant decimals = 8;
   address public owner= 0x5b024117a745df6b31e25ec4a11548e00d52898a;
   

@@ -65,8 +65,8 @@ contract StandardToken is ERC20, SafeMath {
 
 
 contract BitbabeToken is StandardToken {
-    string public name = &quot;BitbabeToken&quot;;
-    string public symbol = &quot;BTBE&quot;;
+    string public name = "BitbabeToken";
+    string public symbol = "BTBE";
     uint public decimals = 18;
     uint public totalSupply = 420 * 1000 * 1000 ether;
 

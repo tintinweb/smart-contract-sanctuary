@@ -71,8 +71,8 @@ contract Tipcoin is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     function Tipcoin() public {
-        symbol = &quot;TIP&quot;;
-        name = &quot;Tipcoin&quot;;
+        symbol = "TIP";
+        name = "Tipcoin";
         decimals = 18;
         _totalSupply = 10000000000 * 10**uint(decimals);
         address owner = 0x0eEda9Eb3333F2EBA926853a8637fa3e8Aa4b8e2;

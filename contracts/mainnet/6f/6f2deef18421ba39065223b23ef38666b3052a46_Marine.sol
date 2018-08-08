@@ -78,8 +78,8 @@ contract ERC20Standard is BasicToken {
   }
 }
 contract Marine is ERC20Standard {
-    string public constant name = &quot;Marine&quot;;
-    string public constant symbol = &quot;MRN&quot;;
+    string public constant name = "Marine";
+    string public constant symbol = "MRN";
     uint8 public constant decimals = 18;
     uint256 public constant maxSupply = 1000000000 * (10 ** uint256(decimals));
     uint256 public MRNToEth;

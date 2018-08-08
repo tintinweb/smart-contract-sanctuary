@@ -5,8 +5,8 @@ pragma solidity ^0.4.11;
 
 contract kkTestICO91 {
     
-    function name() constant returns (string) { return &quot;kkTestICO91&quot;; }
-    function symbol() constant returns (string) { return &quot;kTI91&quot;; }
+    function name() constant returns (string) { return "kkTestICO91"; }
+    function symbol() constant returns (string) { return "kTI91"; }
     function decimals() constant returns (uint8) { return 0; }
 	
 

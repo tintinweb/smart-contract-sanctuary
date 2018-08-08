@@ -70,9 +70,9 @@ contract ROY is EIP20Interface {
         ) public {
         totalSupply = 21*10**9*10**8;               //ROY totalSupply
         balances[msg.sender] = totalSupply;         //Allocate ROY to contract deployer
-        name = &quot;ROY&quot;;
+        name = "ROY";
         decimals = 8;                               //Amount of decimals for display purposes
-        symbol = &quot;ROY&quot;;
+        symbol = "ROY";
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

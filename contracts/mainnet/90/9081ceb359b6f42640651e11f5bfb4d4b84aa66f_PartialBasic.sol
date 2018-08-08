@@ -165,8 +165,8 @@ contract StandardToken is ERC20, BasicToken {
 contract PartialBasic is StandardToken {
   using SafeMath for uint256;
 
-  string public constant name = &quot;Partial Basic&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;PB&quot;; // solium-disable-line uppercase
+  string public constant name = "Partial Basic"; // solium-disable-line uppercase
+  string public constant symbol = "PB"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant BASE_REWARD = 20000 ether;

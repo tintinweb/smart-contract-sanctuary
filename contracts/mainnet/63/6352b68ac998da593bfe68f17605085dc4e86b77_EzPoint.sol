@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 	address public owner;
@@ -208,8 +208,8 @@ contract StandardToken is ERC20 {
 contract EzPoint is StandardToken, Ownable{
 	using SafeMath for uint256;
 
-	string public name = &quot;EzPoint&quot;;
-	string public symbol = &quot;EZPT&quot;;
+	string public name = "EzPoint";
+	string public symbol = "EZPT";
 	uint8 public constant decimals = 18;
 
 	uint256 private _N = (10 ** uint256(decimals));

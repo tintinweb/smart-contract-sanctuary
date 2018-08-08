@@ -6,7 +6,7 @@ contract LifeChain {
     
     string public name;
     string public symbol;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
     uint8 public decimals = 18;
     uint256 public totalSupply;
 

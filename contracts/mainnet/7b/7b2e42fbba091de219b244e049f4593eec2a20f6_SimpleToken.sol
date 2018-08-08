@@ -152,8 +152,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract SimpleToken is StandardToken{
     
-    string public name = &quot;CryptoSoft Coin&quot;;
-    string public symbol =&quot;CSC&quot;;
+    string public name = "CryptoSoft Coin";
+    string public symbol ="CSC";
     uint public decimals = 2;
 	// Total amount is still 9.876.543.210 but the variable also needs the decimal digits
     uint public INITIAL_SUPPLY = 987654321000;

@@ -113,8 +113,8 @@ contract lindyhanCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function lindyhanCoin() public {
-        symbol = &quot;LDH&quot;;
-        name = &quot;lindyhan coin&quot;;
+        symbol = "LDH";
+        name = "lindyhan coin";
         decimals = 0;
         _totalSupply = 1000000;
         balances[0x4427bC64b0f00C29393e5b03C164cc9629fF83E8] = _totalSupply;

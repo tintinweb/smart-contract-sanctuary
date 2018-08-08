@@ -127,8 +127,8 @@ contract Ownable {
 
 contract VIRToken is StandardToken, Ownable
 {
-    string public name = &quot;VIR&quot;;
-    string public symbol = &quot;Virtual Reality Token&quot;;
+    string public name = "VIR";
+    string public symbol = "Virtual Reality Token";
 
     uint public decimals = 18;
 

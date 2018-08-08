@@ -312,7 +312,7 @@ contract OslikToken is StandardBurnableToken {
    * @dev Constructor that gives msg.sender all of existing tokens.
    */
   constructor(address _oslikiFoundation) public {
-    require(_oslikiFoundation != address(0), &quot;_oslikiFoundation is not assigned.&quot;);
+    require(_oslikiFoundation != address(0), "_oslikiFoundation is not assigned.");
 
     totalSupply_ = INITIAL_SUPPLY;
     founder = _oslikiFoundation;

@@ -92,11 +92,11 @@ contract LuckyPackage is ERC721{
   /* ERC721 */
 
   function name() public view returns (string _name) {
-    return &quot;luckyDraw&quot;;
+    return "luckyDraw";
   }
 
   function symbol() public view returns (string _symbol) {
-    return &quot;LCY&quot;;
+    return "LCY";
   }
 
   function totalSupply() public view returns (uint256 _totalSupply) {

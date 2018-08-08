@@ -481,8 +481,8 @@ contract CDTToken is VestedToken {
 	//FIELDS
 	//CONSTANTS
 	uint public constant decimals = 18;  // 18 decimal places, the same as ETH.
-	string public constant name = &quot;CoinDash Token&quot;;
-  	string public constant symbol = &quot;CDT&quot;;
+	string public constant name = "CoinDash Token";
+  	string public constant symbol = "CDT";
 
 	//ASSIGNED IN INITIALIZATION
 	address public creator; //address of the account which may mint new tokens

@@ -723,7 +723,7 @@ contract Crowdsale is Haltable {
  * A crowdsale that is selling tokens from a preallocated pool
  *
  *
- * - Tokens have precreated supply &quot;premined&quot;
+ * - Tokens have precreated supply "premined"
  *
  * - Token owner must transfer sellable tokens to the crowdsale contract using ERC20.approve()
  *

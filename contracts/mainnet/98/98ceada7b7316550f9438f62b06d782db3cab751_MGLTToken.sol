@@ -118,8 +118,8 @@ contract MGLTToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MGLTToken() public {
-        symbol = &quot;MGLT&quot;;
-        name = &quot;MGLT Token&quot;;
+        symbol = "MGLT";
+        name = "MGLT Token";
         decimals = 18;
         bonusEnds = now + 3 days;
         endDate = now + 1 weeks;

@@ -73,8 +73,8 @@ contract DomonXToken is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
 
     constructor() public {
-        symbol = &quot;LZC&quot;;
-        name = &quot;绿洲链&quot;;
+        symbol = "LZC";
+        name = "绿洲链";
         decimals = 18;
         _totalSupply = 20000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

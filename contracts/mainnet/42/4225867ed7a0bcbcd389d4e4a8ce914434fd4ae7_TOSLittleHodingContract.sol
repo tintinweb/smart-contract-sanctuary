@@ -62,7 +62,7 @@ contract owned {
 contract TOSLittleHodingContract is owned{
     using SafeERC20 for ERC20;
     using SafeMath for uint;
-    string public constant name = &quot;TOSLittleHodingContract&quot;;
+    string public constant name = "TOSLittleHodingContract";
     uint[6] public releasePercentages = [
         15,  //15%
         35,   //20%

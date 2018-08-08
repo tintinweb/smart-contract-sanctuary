@@ -191,9 +191,9 @@ contract Numisma is owned, TokenERC20 {
 
     string public comment;
     uint256 initialSupply = 1000000;
-    string tokenName = &quot;Numisma&quot;;
-    string tokenSymbol = &quot;NUM&quot;;
-    string version = &quot;1.0&quot;;
+    string tokenName = "Numisma";
+    string tokenSymbol = "NUM";
+    string version = "1.0";
 
     mapping (address => bool) public frozenAccount;
 

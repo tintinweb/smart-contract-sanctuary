@@ -116,8 +116,8 @@ contract ZoosCoinToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZoosCoinToken() public {
-        symbol = &quot;ZOOS&quot;;
-        name = &quot;ZoosCoin Token&quot;;
+        symbol = "ZOOS";
+        name = "ZoosCoin Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

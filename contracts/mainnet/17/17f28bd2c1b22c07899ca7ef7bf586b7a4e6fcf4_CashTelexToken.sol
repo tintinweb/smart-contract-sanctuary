@@ -114,8 +114,8 @@ contract CashTelexToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CashTelexToken() public {
-        symbol = &quot;CTLX&quot;;
-        name = &quot;Cash Telex Token&quot;;
+        symbol = "CTLX";
+        name = "Cash Telex Token";
         decimals = 18;
         bonusEnds = now + 3 weeks;
         endDate = now + 21 weeks;

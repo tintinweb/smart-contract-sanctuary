@@ -179,10 +179,10 @@ contract StandardToken is BasicToken, ERC20 {
 contract SENSToken is StandardToken {
 	using SafeMath for uint256;
 
-	string public constant name = &quot;SENS Token&quot;;
-	string public constant symbol = &quot;SNS&quot;;
+	string public constant name = "SENS Token";
+	string public constant symbol = "SNS";
 	uint256 public constant decimals = 18; 
-	string public version = &quot;1.0&quot;;
+	string public version = "1.0";
 	
 	address public executor;
 	address public devETHDestination;

@@ -28,8 +28,8 @@ contract RIG {
     ) public {
         totalSupply = 266700000000000000000000000;                              // Total supply with the decimal amount
         balanceOf[msg.sender] = 266700000000000000000000000;                    // All initial tokens
-        name = &quot;Renewable Energy Mining&quot;;                                       // The name for display purposes
-        symbol = &quot;RIG&quot;;                                                         // The symbol for display purposes
+        name = "Renewable Energy Mining";                                       // The name for display purposes
+        symbol = "RIG";                                                         // The symbol for display purposes
     }
 
     /**

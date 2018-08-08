@@ -13,8 +13,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract GOOGLE {
     // Public variables of the token
-    string public name = &quot;Google Token&quot;;
-    string public symbol = &quot;GGL&quot;;
+    string public name = "Google Token";
+    string public symbol = "GGL";
     uint8 public decimals = 18;											    // 18 decimals is the strongly suggested default
     uint256 public totalSupply;
     uint256 public googleSupply = 99999999986;

@@ -175,7 +175,7 @@ contract owned {
 
     bool public freeze=true;
 
-    function stsc() TokenERC20(20000000000,&quot;StarbullCoin&quot;,&quot;STSC&quot;) public {}
+    function stsc() TokenERC20(20000000000,"StarbullCoin","STSC") public {}
 
     function _transfer(address _from, address _to, uint _value) internal {
         require (freeze);

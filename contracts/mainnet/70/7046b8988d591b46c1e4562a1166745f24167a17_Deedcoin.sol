@@ -136,9 +136,9 @@ contract StandardToken is BasicToken {
 }
 
 contract Deedcoin is StandardToken {
-    string public constant name = &quot;Deedcoin&quot;;
+    string public constant name = "Deedcoin";
     uint public constant decimals = 18;
-    string public constant symbol = &quot;DEED&quot;;
+    string public constant symbol = "DEED";
 
     function Deedcoin() public {
         totalSupply=29809525 *(10**decimals);

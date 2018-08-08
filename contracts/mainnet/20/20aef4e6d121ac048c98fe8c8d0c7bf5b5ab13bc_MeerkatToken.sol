@@ -32,8 +32,8 @@ contract MeerkatToken is ERC20Interface {
     // ------------------------------------------------------------------------
     constructor() public {
         owner = msg.sender;
-        symbol = &quot;MCT&quot;;
-        name = &quot;Meerkat Token&quot;;
+        symbol = "MCT";
+        name = "Meerkat Token";
         decimals = 18;
         _totalSupply = 10000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

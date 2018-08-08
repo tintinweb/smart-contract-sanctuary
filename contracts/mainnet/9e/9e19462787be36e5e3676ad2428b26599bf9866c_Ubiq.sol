@@ -183,8 +183,8 @@ contract Ownable {
 }
 
 contract Ubiq is StandardToken, Ownable {
-  string public constant name = &quot;Ubiq&quot;;
-  string public constant symbol = &quot;UBQ&quot;;
+  string public constant name = "Ubiq";
+  string public constant symbol = "UBQ";
   uint8 public constant decimals = 18;
   
   uint256 public UbiqIssued;
@@ -223,7 +223,7 @@ contract Ubiq is StandardToken, Ownable {
     totalSupply = 50000000 * (10 ** uint256(decimals)); 
     balances[msg.sender] = totalSupply;  
     UbiqIssued = totalSupply;
-    UbiqTalk = &quot;Ubiq&quot;;
+    UbiqTalk = "Ubiq";
     
   }
  

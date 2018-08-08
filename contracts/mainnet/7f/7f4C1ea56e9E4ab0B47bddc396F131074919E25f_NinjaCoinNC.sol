@@ -141,7 +141,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -336,8 +336,8 @@ contract MintableToken is StandardToken, Ownable {
 // File: contracts/nc.sol
 
 contract NinjaCoinNC is MintableToken,BurnableToken {
-  string public name = &quot;NinjaCoin&quot;;
-  string public symbol = &quot;NC&quot;;
+  string public name = "NinjaCoin";
+  string public symbol = "NC";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 3000000000 * (10 ** decimals);
   function NinjaCoinNC() public {

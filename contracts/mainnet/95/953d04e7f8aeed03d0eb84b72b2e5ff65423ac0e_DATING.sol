@@ -109,8 +109,8 @@ contract DATING is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DATING() public {
-        symbol = &quot;DTNG&quot;;
-        name = &quot;DATING&quot;;
+        symbol = "DTNG";
+        name = "DATING";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x19AbF9FD674a9305cf436377eE2655e6Beb071c7] = _totalSupply;

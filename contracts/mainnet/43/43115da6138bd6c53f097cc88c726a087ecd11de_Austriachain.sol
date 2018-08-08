@@ -113,8 +113,8 @@ contract Austriachain is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Austriachain() public {
-        symbol = &quot;ACA&quot;;
-        name = &quot;Austriachain&quot;;
+        symbol = "ACA";
+        name = "Austriachain";
         decimals = 3;
         _totalSupply = 4000000;
         balances[0xa015fE2a1947B23AD454E699F8CbbDa419671F5e] = _totalSupply;

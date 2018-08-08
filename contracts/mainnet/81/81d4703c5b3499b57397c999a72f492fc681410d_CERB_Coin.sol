@@ -35,8 +35,8 @@ contract CERB_Coin
       totalSupply = 1000000000000000000000000000;                                 // as the decimals are 18, we add 18 zero after total supply, as all values are stored in wei
       owner =  msg.sender;                                                      // Set owner of contract
       balanceOf[owner] = totalSupply;                                           // Give the creator all initial tokens
-      name = &quot;CERB Coin&quot;;                                                     // Set the name for display purposes
-      symbol = &quot;CERB&quot;;                                                          // Set the symbol for display purposes
+      name = "CERB Coin";                                                     // Set the name for display purposes
+      symbol = "CERB";                                                          // Set the symbol for display purposes
       decimals = 18;                                                            // Amount of decimals for display purposes
       remaining = totalSupply;                                                  // How many tokens are left
       ethRate = 665;                                                            // default token price

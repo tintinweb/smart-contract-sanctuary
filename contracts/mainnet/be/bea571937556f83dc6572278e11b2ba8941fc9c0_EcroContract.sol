@@ -204,9 +204,9 @@ using SafeMath for uint256;
         nodePrice = _nodePrice;
     }
 
-    bytes32 internal constant name = &quot;ECRO Coin&quot;;
+    bytes32 internal constant name = "ECRO Coin";
 
-    bytes3 internal constant symbol = &quot;ECR&quot;;
+    bytes3 internal constant symbol = "ECR";
 
     uint8 internal constant decimals = 8;
 

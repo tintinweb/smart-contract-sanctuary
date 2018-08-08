@@ -1094,10 +1094,10 @@ contract IkuraController is ERC20, DSAuth {
   
 
   
-  string public name = &quot;XJP 0.6.0&quot;;
+  string public name = "XJP 0.6.0";
 
   
-  string public constant symbol = &quot;XJP&quot;;
+  string public constant symbol = "XJP";
 
   
   uint8 public constant decimals = 0;

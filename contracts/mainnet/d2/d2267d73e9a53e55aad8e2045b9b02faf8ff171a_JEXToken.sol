@@ -113,8 +113,8 @@ contract JEXToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function JEXToken() public {
-        symbol = &quot;JEX&quot;;
-        name = &quot;Jexchange&quot;;
+        symbol = "JEX";
+        name = "Jexchange";
         decimals = 10;
         _totalSupply = 250000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

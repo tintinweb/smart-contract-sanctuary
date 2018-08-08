@@ -91,7 +91,7 @@ contract MyToken is Crowdsale {
 	    
 	    string  public standard    = &#39;Token 0.1&#39;;
 	    string  public name        = &#39;MARIO Fans Token&#39;;
-	    string  public symbol      = &quot;MARIO&quot;;
+	    string  public symbol      = "MARIO";
 	    uint8   public decimals    = 0;
 
 

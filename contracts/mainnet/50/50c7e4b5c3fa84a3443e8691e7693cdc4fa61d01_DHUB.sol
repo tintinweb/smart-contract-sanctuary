@@ -67,8 +67,8 @@ contract DHUB is ERC20Interface, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DHUB() public {
-        symbol = &quot;DHUB&quot;;
-        name = &quot;DHUB&quot;;
+        symbol = "DHUB";
+        name = "DHUB";
         decimals = 18;
         _totalSupply = 3000000000000000000000000000;
         balances[0xcf60e629714aff9f579ee0536002943e0f47997b] = _totalSupply;

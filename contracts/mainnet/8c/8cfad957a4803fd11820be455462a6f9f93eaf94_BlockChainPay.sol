@@ -229,8 +229,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract BlockChainPay is StandardToken{
-  string public name = &quot;BlockChainPay&quot;;//代币名称
-  string public symbol = &quot;BPCC&quot;;//代币简写名
+  string public name = "BlockChainPay";//代币名称
+  string public symbol = "BPCC";//代币简写名
   uint8 public decimals =18;//设置代币的最大单位和最小单位之间进制设置为10的18次方
   uint256 public INITIAL_SUPPLY = 3500000000;//代币发行总量
   //初始化

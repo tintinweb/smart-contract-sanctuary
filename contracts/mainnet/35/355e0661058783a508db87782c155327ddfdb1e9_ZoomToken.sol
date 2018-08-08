@@ -114,8 +114,8 @@ contract ZoomToken is UnboundedRegularToken {
 
     uint public totalSupply = 100*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;ZoomToken&quot;;
-    string constant public symbol = &quot;ZOOM&quot;;
+    string constant public name = "ZoomToken";
+    string constant public symbol = "ZOOM";
 
     function ZoomToken() {
         balances[msg.sender] = totalSupply;

@@ -44,8 +44,8 @@ contract UECToken {
     mapping(uint256 => address) private approvedOfItem;
     mapping(uint256 => bytes32) private nameOfItem;
     mapping(uint256 => address) private nameAddressOfItem;
-    string private constant p_contract_name = &quot;UniverseCoin UEC&quot;;
-    string private constant p_contract_symbol = &quot;UEC&quot;;
+    string private constant p_contract_name = "UniverseCoin UEC";
+    string private constant p_contract_symbol = "UEC";
     uint256 private p_itemName_len = 5;
     uint256 private p_itemName_price = 1000000000000000000;
     mapping(address => string) private accountOfNick;

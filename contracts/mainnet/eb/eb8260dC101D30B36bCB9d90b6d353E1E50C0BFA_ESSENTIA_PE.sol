@@ -94,7 +94,7 @@ contract ESSENTIA_PE is Ownable {
     address public addrFWD;
     address public token;
     uint256 public decimals=18;
-    string public name=&quot;ESSENTIA Public Engagement&quot;;
+    string public name="ESSENTIA Public Engagement";
 
     mapping (address => uint256) public sold;
 
@@ -159,7 +159,7 @@ contract ESSENTIA_PE is Ownable {
         require(sold[msg.sender]>0);
 
 
-        bool result=token.call(bytes4(keccak256(&quot;transfer(address,uint256)&quot;)), msg.sender, sold[msg.sender]);
+        bool result=token.call(bytes4(keccak256("transfer(address,uint256)")), msg.sender, sold[msg.sender]);
         delete sold[msg.sender];
         return result;
     }

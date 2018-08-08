@@ -445,7 +445,7 @@ contract EnclavesDEX is StorageStateful {
       rebalanceEtherDelta(_tokenGet, cost);
     }
     EtherDeltaI(etherDelta).trade(_tokenGet, _amountGet, _tokenGive, _amountGive, _expires, _nonce, _user, _v, _r, _s, _amount);
-    //Reuse cost to avoid &quot;CompilerError: Stack too deep, try removing local variables.&quot;
+    //Reuse cost to avoid "CompilerError: Stack too deep, try removing local variables."
     cost = _amountGive.mul(_amount) / _amountGet;
     tokens[_tokenGive][msg.sender] = tokens[_tokenGive][msg.sender].add(cost);
     Trade(_tokenGet, _amount, _tokenGive, cost, _user, msg.sender, 1);
@@ -453,7 +453,7 @@ contract EnclavesDEX is StorageStateful {
 
   function trade(address _tokenGet, uint256 _amountGet, address _tokenGive, uint256 _amountGive, uint256 _expires, uint256 _nonce, address _user, uint8 _v, bytes32 _r, bytes32 _s, uint256 _amount, bool _withdraw) public notFrozen payable returns (uint256) {
     uint256 availableVolume;
-    //Reuse _r to avoid &quot;CompilerError: Stack too deep, try removing local variables.&quot;
+    //Reuse _r to avoid "CompilerError: Stack too deep, try removing local variables."
     (availableVolume, _r) = availableVolumeEnclaves(_tokenGet, _amountGet, _tokenGive, _amountGive, _expires, _nonce, _user, _v, _r, _s);
     _amount = (availableVolume < _amount) ? availableVolume : _amount;
     require(_amount > 0);
@@ -482,7 +482,7 @@ contract EnclavesDEX is StorageStateful {
     }
     tokens[_tokenGive][_user] = tokens[_tokenGive][_user].sub(_amountGive.mul(_amount) / _amountGet);
     //
-    //Reuse cost to avoid &quot;CompilerError: Stack too deep, try removing local variables.&quot;
+    //Reuse cost to avoid "CompilerError: Stack too deep, try removing local variables."
     cost = _amountGive.mul(_amount) / _amountGet;
     tokens[_tokenGive][msg.sender] = tokens[_tokenGive][msg.sender].add(cost);
     orderFills[_user][_orderHash] = orderFills[_user][_orderHash].add(_amount);
@@ -493,7 +493,7 @@ contract EnclavesDEX is StorageStateful {
     if (useEIP712) {
       return (ecrecover(keccak256(_abiHash, _hash), _v, _r, _s) == _user);
     } else {
-      return (ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, _hash), _v, _r, _s) == _user);
+      return (ecrecover(keccak256("\x19Ethereum Signed Message:\n32", _hash), _v, _r, _s) == _user);
     }
   }
 
@@ -503,7 +503,7 @@ contract EnclavesDEX is StorageStateful {
       (orders[_user][orderHash] || checkSig(tradeABIHash, orderHash, _v, _r, _s, _user)) &&
       block.number <= _expires
     )) return (0, orderHash);
-    //Reuse amountGet/Give to avoid &quot;CompilerError: Stack too deep, try removing local variables.&quot;
+    //Reuse amountGet/Give to avoid "CompilerError: Stack too deep, try removing local variables."
     _amountGive = tokens[_tokenGive][_user].mul(_amountGet) / _amountGive;
     _amountGet = _amountGet.sub(orderFills[_user][orderHash]);
     _amountGet = (_amountGive < _amountGet) ? _amountGive : _amountGet;
@@ -515,7 +515,7 @@ contract EnclavesDEX is StorageStateful {
       return 0;
     }
     bytes32 orderHash = sha256(etherDelta, _tokenGet, _amountGet, _tokenGive, _amountGive, _expires, _nonce);
-    //Reuse amountGet/Give to avoid &quot;CompilerError: Stack too deep, try removing local variables.&quot;
+    //Reuse amountGet/Give to avoid "CompilerError: Stack too deep, try removing local variables."
     _amountGive = EtherDeltaI(etherDelta).tokens(_tokenGive, _user).mul(_amountGet) / _amountGive;
     _amountGet = _amountGet.sub(EtherDeltaI(etherDelta).orderFills(_user, orderHash));
     if (_amountGet > _amountGive) {

@@ -212,8 +212,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract GridyToken is StandardToken {
 
-    string  public name     = &quot;Gridyltd&quot;;
-    string  public symbol   = &quot;GIY&quot;;
+    string  public name     = "Gridyltd";
+    string  public symbol   = "GIY";
     uint8 public decimals = 18;
 
 

@@ -28,8 +28,8 @@ contract KRT {
     ) public {
         totalSupply = 288000000000000000000000000;                         // Total supply with the decimal amount
         balanceOf[msg.sender] = 288000000000000000000000000;               // All initial tokens
-        name = &quot;Kryptone&quot;;                                                 // The name for display purposes
-        symbol = &quot;KRT&quot;;                                                    // The symbol for display purposes
+        name = "Kryptone";                                                 // The name for display purposes
+        symbol = "KRT";                                                    // The symbol for display purposes
     }
 
     /**

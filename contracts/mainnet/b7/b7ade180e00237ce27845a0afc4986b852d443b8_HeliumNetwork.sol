@@ -52,8 +52,8 @@ contract HeliumNetwork is owned, SafeMath {
 	
 	address public HeliumNetworkAddress 	= this;
 	address public creator 				= msg.sender;
-    string 	public name 				= &quot;Helium Network&quot;;
-    string 	public symbol 				= &quot;HN&quot;;
+    string 	public name 				= "Helium Network";
+    string 	public symbol 				= "HN";
     uint8 	public decimals 			= 18;											    
     uint256 public totalSupply 			= 999999999000000000000000000;
     uint256 public buyPrice 			= 8888888;

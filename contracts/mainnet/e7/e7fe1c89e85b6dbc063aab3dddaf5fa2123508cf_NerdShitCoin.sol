@@ -92,9 +92,9 @@ contract NerdShitCoin is StandardToken {
         ) {
         balances[msg.sender] = 69696969690000000000000000;              
         totalSupply = 69696969690000000000000000;                        
-        name = &quot;Nerd Shit Coin&quot;;                                  
+        name = "Nerd Shit Coin";                                  
         decimals = 18;                           
-        symbol = &quot;NSC&quot;;                               
+        symbol = "NSC";                               
     }
 
     /* Approves and then calls the receiving contract */
@@ -103,7 +103,7 @@ contract NerdShitCoin is StandardToken {
         Approval(msg.sender, _spender, _value);
 
         
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

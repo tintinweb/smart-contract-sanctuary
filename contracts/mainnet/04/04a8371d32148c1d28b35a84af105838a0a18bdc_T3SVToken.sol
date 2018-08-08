@@ -243,8 +243,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract T3SVToken is StandardToken {
 
-  string public name = &quot;Tier 3 Silicon Valley&quot;;
-  string public symbol = &quot;T3SV&quot;;
+  string public name = "Tier 3 Silicon Valley";
+  string public symbol = "T3SV";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 100000000 * (1 ether / 1 wei);
 

@@ -116,8 +116,8 @@ contract ACchainToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ACchainToken() public {
-        symbol = &quot;ACCT&quot;;
-        name = &quot;ACchainToken&quot;;
+        symbol = "ACCT";
+        name = "ACchainToken";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 7 weeks;

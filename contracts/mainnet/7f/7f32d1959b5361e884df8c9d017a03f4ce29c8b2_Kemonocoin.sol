@@ -1,5 +1,5 @@
-//　 　 　 　 　 　 　 　 　 { :　爻&#39;&quot;　　 /∧::∨::∧:::&#39;, 　　＼}
-//　　　　　　　　　　　　　 >&#39;&quot;　　　/　{ﾉ　ゝ-&#39;ﾞ　ﾍ:} ､　.　 ＼
+//　 　 　 　 　 　 　 　 　 { :　爻&#39;"　　 /∧::∨::∧:::&#39;, 　　＼}
+//　　　　　　　　　　　　　 >&#39;"　　　/　{ﾉ　ゝ-&#39;ﾞ　ﾍ:} ､　.　 ＼
 //　　　　　　　 　 　 　 ／/　　 /　|　　　　　　　　 ｉ ト､＼　 ヽ.　/
 //　　　　 　 　 　 　 ／ :/　 　 :|　 |　 　 　 　 　 　:| | 　&#39;，&#39;, 　 ∨/ /
 //.　　　 　 　 　 　 /　 /　　 　 |　∧ 　　　　　　　　リ　　&#39;, |　　 ∨/ /
@@ -106,8 +106,8 @@ contract ERC223 {
 contract Kemonocoin is ERC223, Ownable {
   using SafeMath for uint256;
 
-  string public name = &quot;Kemonocoin&quot;;
-  string public symbol = &quot;KEM&quot;;
+  string public name = "Kemonocoin";
+  string public symbol = "KEM";
   uint8 public decimals = 7;
   uint256 public initialSupply = 5e10 * 1e7;
   uint256 public totalSupply;

@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract BitcoinExecutive is StandardToken {
-  string public constant name = &quot;Bitcoin Executive&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;BTE&quot;; // solium-disable-line uppercase
+  string public constant name = "Bitcoin Executive"; // solium-disable-line uppercase
+  string public constant symbol = "BTE"; // solium-disable-line uppercase
   uint8 public constant decimals = 4; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 169500000000 * (10 ** uint256(decimals));

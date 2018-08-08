@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -928,16 +928,16 @@ contract CommonTokensale is Connector, Pausable {
     }
 
     /** NOTE: _newValue should be in ETH. */
-    function updateMinCapEthOnce(uint _newValue) public onlyOwner canBeCalledOnce(&quot;updateMinCapEth&quot;) {
+    function updateMinCapEthOnce(uint _newValue) public onlyOwner canBeCalledOnce("updateMinCapEth") {
         minCapWei = _newValue * 1e18;
     }
 
     /** NOTE: _newValue should be in ETH. */
-    function updateMaxCapEthOnce(uint _newValue) public onlyOwner canBeCalledOnce(&quot;updateMaxCapEth&quot;) {
+    function updateMaxCapEthOnce(uint _newValue) public onlyOwner canBeCalledOnce("updateMaxCapEth") {
         maxCapWei = _newValue * 1e18;
     }
 
-    function updateTokensPerEthOnce(uint _newValue) public onlyOwner canBeCalledOnce(&quot;updateTokensPerEth&quot;) {
+    function updateTokensPerEthOnce(uint _newValue) public onlyOwner canBeCalledOnce("updateTokensPerEth") {
         defaultTokensPerWei = _newValue;
         recalcBonuses();
     }
@@ -1054,7 +1054,7 @@ contract CommonTokensale is Connector, Pausable {
      * successfully finished tokensale. Once - because Wings bridge
      * will be closed at the end of this function call.
      */
-    function sendWingsRewardsOnce() public onlyOwner canBeCalledOnce(&quot;sendWingsRewards&quot;) {
+    function sendWingsRewardsOnce() public onlyOwner canBeCalledOnce("sendWingsRewards") {
         require(isFinishedSuccessfully());
 
         uint256 ethReward = 0;

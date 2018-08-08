@@ -58,8 +58,8 @@ contract TronXtended is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;TronXtended&quot;;
-    string public constant symbol = &quot;TRXX&quot;;
+    string public constant name = "TronXtended";
+    string public constant symbol = "TRXX";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 1000000000e18;

@@ -168,7 +168,7 @@ contract StandardToken is ERC20, BasicToken {
   *
   * There is not a simple and most important, a backwards compatible way to fix the race condition issue on the approve function.
   * There is a large and unfinished discussion on the community https://github.com/ethereum/EIPs/issues/738
-  * about this issue and the &quot;best&quot; aproach is add a safeApprove function to validate the amount/value
+  * about this issue and the "best" aproach is add a safeApprove function to validate the amount/value
   * and leave the approve function as is to complind the ERC-20 standard
   *
   */
@@ -232,7 +232,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -332,8 +332,8 @@ contract CanReclaimToken is Ownable {
 
 contract KindAdsToken is StandardToken, Ownable, CanReclaimToken {
 
-  string public name = &quot;Kind Ads Token&quot;;
-  string public symbol = &quot;KIND&quot;;
+  string public name = "Kind Ads Token";
+  string public symbol = "KIND";
   uint8 public decimals = 8;
   uint256 public INITIAL_SUPPLY = 61 * (10**6) * 10**8;
 

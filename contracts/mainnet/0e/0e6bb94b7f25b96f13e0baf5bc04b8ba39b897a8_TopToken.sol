@@ -40,8 +40,8 @@ contract TopTokenBase {
 }
 
 contract TopToken is TopTokenBase {
-    string  public  symbol = &quot;TOP&quot;;
-    string  public name = &quot;Top.One Coin&quot;;
+    string  public  symbol = "TOP";
+    string  public name = "Top.One Coin";
     uint256  public  decimals = 18; 
     uint256 public freezedValue = 640000000*(10**18);
     uint256 public eachUnfreezeValue = 160000000*(10**18);

@@ -1,6 +1,6 @@
 pragma solidity ^0.4.9;
 
-//import &quot;./Receiver_Interface.sol&quot;;
+//import "./Receiver_Interface.sol";
  contract ContractReceiver {
      
     struct TKN {
@@ -29,7 +29,7 @@ pragma solidity ^0.4.9;
     }
 }
 
-//import &quot;./ERC223_Interface.sol&quot;;
+//import "./ERC223_Interface.sol";
 contract ERC223 {
   uint public totalSupply;
   function balanceOf(address who) public view returns (uint);
@@ -79,8 +79,8 @@ contract PiperToken is ERC223, SafeMath {
 
   mapping(address => uint) balances;
   
-  string public name = &quot;Peid Piper Token&quot;;
-  string public symbol = &quot;PIP&quot;;
+  string public name = "Peid Piper Token";
+  string public symbol = "PIP";
   uint8 public decimals = 18;
   uint256 public totalSupply = 1000000000000000000000000;
   uint256 exchange = 1000000;

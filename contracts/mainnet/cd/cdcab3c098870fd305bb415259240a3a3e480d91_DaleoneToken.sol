@@ -117,8 +117,8 @@ contract DaleoneToken is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
     // Token parameters
     // ------------------------------------------------------------------------
-    string public constant symbol = &quot;DLE&quot;;
-    string public constant name = &quot;Daleone&quot;;
+    string public constant symbol = "DLE";
+    string public constant name = "Daleone";
     uint8 public constant decimals = 18;
 
     uint public constant totalSupply = 10 * 10**6 * 10**18;

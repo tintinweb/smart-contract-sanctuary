@@ -49,7 +49,7 @@ contract SafeMath {
 
 /**
  * ERC-20 standard token interface, as defined
- * <a href=&quot;http://github.com/ethereum/EIPs/issues/20&quot;>here</a>.
+ * <a href="http://github.com/ethereum/EIPs/issues/20">here</a>.
  */
 contract Token {
   
@@ -228,8 +228,8 @@ contract S1Coin is AbstractToken {
     return tokenCount;
   }
 
-  string constant public name = &quot;S1Coin&quot;;
-  string constant public symbol = &quot;S1&quot;;
+  string constant public name = "S1Coin";
+  string constant public symbol = "S1";
   uint8 constant public decimals = 8;
   
   /**

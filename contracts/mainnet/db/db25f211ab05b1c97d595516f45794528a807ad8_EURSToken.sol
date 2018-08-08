@@ -66,7 +66,7 @@ contract SafeMath {
  * Contact: <tech@stasis.net>
 
  * ERC-20 standard token interface, as defined
- * <a href=&quot;https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md&quot;>here</a>.
+ * <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md">here</a>.
  */
 contract Token {
   /**
@@ -385,7 +385,7 @@ contract EURSToken is AbstractToken {
    * @return name of the token
    */
   function name () public delegatable view returns (string) {
-    return &quot;STASIS EURS Token&quot;;
+    return "STASIS EURS Token";
   }
 
   /**
@@ -394,7 +394,7 @@ contract EURSToken is AbstractToken {
    * @return symbol of the token
    */
   function symbol () public delegatable view returns (string) {
-    return &quot;EURS&quot;;
+    return "EURS";
   }
 
   /**

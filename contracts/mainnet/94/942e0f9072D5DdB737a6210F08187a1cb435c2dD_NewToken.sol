@@ -63,10 +63,10 @@ contract ERC20Standard {
 contract NewToken is ERC20Standard {
  function NewToken() {
   totalSupply = 10000000000000000000000000000;
-  name = &quot;Fext Coin&quot;;
+  name = "Fext Coin";
   decimals = 18;
-  symbol = &quot;FEXT&quot;;
-  version = &quot;1.0&quot;;
+  symbol = "FEXT";
+  version = "1.0";
   balances[msg.sender] = totalSupply;
  }
 }

@@ -43,8 +43,8 @@ contract CryptocarToken is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;CryptoCars&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;CryptocarToken&quot;; // solhint-disable-line
+  string public constant NAME = "CryptoCars"; // solhint-disable-line
+  string public constant SYMBOL = "CryptocarToken"; // solhint-disable-line
 
   uint256 private startingPrice = 0.01 ether;
   uint256 private constant PROMO_CREATION_LIMIT = 5000;

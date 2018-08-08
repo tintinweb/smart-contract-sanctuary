@@ -80,8 +80,8 @@ contract Compaq is ERC20Interface, Owned, SafeMath {
 
 
     function Compaq() public {
-        symbol = &quot;CPQ&quot;;
-        name = &quot;Compaq&quot;;
+        symbol = "CPQ";
+        name = "Compaq";
         decimals = 18;
         _totalSupply = 5000000000000000000000000000;
         balances[0xC6F32eB58aE9402c8a652bCb333B84f12116446a] = _totalSupply;

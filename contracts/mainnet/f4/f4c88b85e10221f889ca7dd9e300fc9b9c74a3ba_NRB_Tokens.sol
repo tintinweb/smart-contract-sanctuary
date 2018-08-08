@@ -101,9 +101,9 @@ contract NRB_Tokens is NRB_Common {
     }
 
     function NRB_Tokens() public {
-        name = &quot;NRB_Tokens&quot;;
+        name = "NRB_Tokens";
         tokenlenth = 1;
-        registerAndValidateToken(ETH_address, &quot;Ethereum&quot;, &quot;ETH&quot;, 18, 7812500000000000);
+        registerAndValidateToken(ETH_address, "Ethereum", "ETH", 18, 7812500000000000);
     }
 
     function getTokenListLength() constant public returns (uint) {

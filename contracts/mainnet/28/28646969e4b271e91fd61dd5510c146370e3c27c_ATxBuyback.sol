@@ -372,7 +372,7 @@ contract ATxAssetProxy is ERC20, Object, ServiceAllowance {
      */
     function transfer(address _to, uint _value) public returns (bool) {
         if (_to != 0x0) {
-            return _transferWithReference(_to, _value, &quot;&quot;);
+            return _transferWithReference(_to, _value, "");
         }
         else {
             return false;
@@ -424,7 +424,7 @@ contract ATxAssetProxy is ERC20, Object, ServiceAllowance {
      */
     function transferFrom(address _from, address _to, uint _value) public returns (bool) {
         if (_to != 0x0) {
-            return _getAsset().__transferFromWithReference(_from, _to, _value, &quot;&quot;, msg.sender);
+            return _getAsset().__transferFromWithReference(_from, _to, _value, "", msg.sender);
         }
         else {
             return false;
@@ -612,7 +612,7 @@ contract ATxBuyback is Object, ATxBuybackInterface, ServiceAllowance {
 	}
 
 	/// @notice Sets a price (in wei) for selling one token
-	/// @param _price &quot;in wei&quot; = 1 ATx
+	/// @param _price "in wei" = 1 ATx
 	function setPrice(uint _price) onlyContractOwner external returns (uint) {
 		price = _price;
 		return OK;
@@ -654,8 +654,8 @@ contract ATxBuyback is Object, ATxBuybackInterface, ServiceAllowance {
 
 	/// @notice Gets redemption fee value
 	/// @return {
-	/// 	&quot;_value&quot;: &quot;amount of percents&quot;,
-	///		&quot;_decimals&quot;: &quot;percent&#39;s precision&quot;
+	/// 	"_value": "amount of percents",
+	///		"_decimals": "percent&#39;s precision"
 	/// }
 	function getRdFee() public view returns (uint _value, uint _decimals) {
 		FeeData memory _fee = rdFee;

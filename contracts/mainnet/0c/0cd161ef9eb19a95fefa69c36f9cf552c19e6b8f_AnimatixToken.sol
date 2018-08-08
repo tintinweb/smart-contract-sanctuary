@@ -37,8 +37,8 @@ contract AnimatixToken is ERC20 {
     
     uint256 public totalSupply = 0.1*10**25;
 
-    function name() public constant returns (string) { return &quot;ANIMATIX&quot;; }
-    function symbol() public constant returns (string) { return &quot;AMX&quot;; }
+    function name() public constant returns (string) { return "ANIMATIX"; }
+    function symbol() public constant returns (string) { return "AMX"; }
     function decimals() public constant returns (uint8) { return 18; }
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);

@@ -4,10 +4,10 @@ pragma solidity ^0.4.20;
 This is the pyramid portion of the penny ether contract, property and rng will be done in the second contract which is still be tested, we can distribut the base tokens with this contract.
 
 8b,dPPYba,   ,adPPYba, 8b,dPPYba,  8b,dPPYba,  8b       d8  
-88P&#39;    &quot;8a a8P_____88 88P&#39;   `&quot;8a 88P&#39;   `&quot;8a `8b     d8&#39;  
-88       d8 8PP&quot;&quot;&quot;&quot;&quot;&quot;&quot; 88       88 88       88  `8b   d8&#39;   
-88b,   ,a8&quot; &quot;8b,   ,aa 88       88 88       88   `8b,d8&#39;    
-88`YbbdP&quot;&#39;   `&quot;Ybbd8&quot;&#39; 88       88 88       88     Y88&#39;     
+88P&#39;    "8a a8P_____88 88P&#39;   `"8a 88P&#39;   `"8a `8b     d8&#39;  
+88       d8 8PP""""""" 88       88 88       88  `8b   d8&#39;   
+88b,   ,a8" "8b,   ,aa 88       88 88       88   `8b,d8&#39;    
+88`YbbdP"&#39;   `"Ybbd8"&#39; 88       88 88       88     Y88&#39;     
 88                                                 d8&#39;      
 88                                                d8&#39;    
 
@@ -98,8 +98,8 @@ contract PennyEther {
     
     
     
-    string public name = &quot;PennyEther&quot;;
-    string public symbol = &quot;PETH&quot;;
+    string public name = "PennyEther";
+    string public symbol = "PETH";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 4;
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;
@@ -193,7 +193,7 @@ contract PennyEther {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
         
         // fire event
@@ -537,7 +537,7 @@ contract PennyEther {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
         
         // is the user referred by a masternode?

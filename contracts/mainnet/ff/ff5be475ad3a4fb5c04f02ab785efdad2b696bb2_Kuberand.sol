@@ -43,8 +43,8 @@ contract Kuberand is owned
 
     balances_[msg.sender] = uint256( 1e9 * 10 ** uint256(decimals) );
     totalSupply = balances_[msg.sender];
-    name = &quot;Kuberand&quot;;
-    symbol = &quot;KUBR&quot;;
+    name = "Kuberand";
+    symbol = "KUBR";
 
     Transfer( address(0), msg.sender, totalSupply );
   }

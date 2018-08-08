@@ -116,8 +116,8 @@ contract ChexCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function bitfwdToken() public {
-        symbol = &quot;CHEX&quot;;
-        name = &quot;Chex Coin&quot;;
+        symbol = "CHEX";
+        name = "Chex Coin";
         decimals = 18;
         bonusEnds = now + 6 weeks;
         endDate = now + 20 weeks;

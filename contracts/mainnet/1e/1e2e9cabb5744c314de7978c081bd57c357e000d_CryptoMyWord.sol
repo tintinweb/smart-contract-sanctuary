@@ -695,7 +695,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal pure returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint length = self._len * (parts.length - 1);
         for(uint i = 0; i < parts.length; i++)
@@ -845,9 +845,9 @@ contract CryptoMyWord {
       startingPrice: _price,
       priceOfItem: _price,
       name: _name,
-      url: &quot;&quot;,
-      firstIdOfName: &quot;&quot;,
-      secondIdOfName: &quot;&quot;,
+      url: "",
+      firstIdOfName: "",
+      secondIdOfName: "",
       owner: _owner
     });
     tokenId = tokens.push(token) - 1;
@@ -880,9 +880,9 @@ contract CryptoMyWord {
       startingPrice: _price,
       priceOfItem: _price,
       name: _name,
-      url: &quot;&quot;,
-      firstIdOfName: &quot;&quot;,
-      secondIdOfName: &quot;&quot;,
+      url: "",
+      firstIdOfName: "",
+      secondIdOfName: "",
       owner: _owner
     });
     tokenId = tokens.push(token) - 1;
@@ -919,7 +919,7 @@ contract CryptoMyWord {
     require(ownerOfItem[_firstId] == msg.sender || counter1 > 0);
     require(ownerOfItem[_secondId] == msg.sender || counter2 > 0);
     string memory compositedName1 = nameOfItem[_firstId];
-    string memory space = &quot; &quot;;
+    string memory space = " ";
     if(_space > 0){
       compositedName1 = nameOfItem[_firstId].toSlice().concat(space.toSlice());
     }
@@ -927,7 +927,7 @@ contract CryptoMyWord {
     require(nameToItems[compositedName].length == 0);
     firstIdOfName[compositedName] = nameOfItem[_firstId];
     secondIdOfName[compositedName] = nameOfItem[_secondId];
-    _mint(0.01 ether, msg.sender, compositedName, &quot;&quot;);
+    _mint(0.01 ether, msg.sender, compositedName, "");
   }
 
   function setUrl (uint256 _tokenId, string _url) public {
@@ -980,7 +980,7 @@ contract CryptoMyWord {
     string memory name = nameOf(_itemId);
     uint256 nextPrice = ceil(nextPriceOf(_itemId));
     //_transfer(oldOwner, newOwner, _itemId);
-    _mint(nextPrice, newOwner, name, &quot;&quot;);
+    _mint(nextPrice, newOwner, name, "");
     priceOfItem[_itemId] = nextPrice;
 
     Bought(_itemId, newOwner, price);
@@ -1004,11 +1004,11 @@ contract CryptoMyWord {
   }
 
   function name() public pure returns (string _name) {
-    return &quot;CryptoMyWord&quot;;
+    return "CryptoMyWord";
   }
 
   function symbol() public pure returns (string _symbol) {
-    return &quot;CMW&quot;;
+    return "CMW";
   }
 
   function totalSupply() public view returns (uint256 _totalSupply) {

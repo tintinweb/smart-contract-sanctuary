@@ -86,9 +86,9 @@ contract StepCoin is ERC20Interface, Ownable{
 
     using SafeMath for uint256;
 
-    string public constant name = &quot;StepCoin&quot;;
+    string public constant name = "StepCoin";
 
-    string public constant symbol = &quot;STEP&quot;;
+    string public constant symbol = "STEP";
 
     uint8 public constant decimals = 3;
 

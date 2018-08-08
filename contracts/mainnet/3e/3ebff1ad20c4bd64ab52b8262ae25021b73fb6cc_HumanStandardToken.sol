@@ -165,8 +165,8 @@ contract HumanStandardToken is StandardToken {
 
     using SafeMath for uint256;
 
-    string constant public name = &quot;Pexonium&quot;;
-    string constant public symbol = &quot;PEX&quot;;
+    string constant public name = "Pexonium";
+    string constant public symbol = "PEX";
     uint256 constant public decimals = 3;
     uint256 dec = 10**decimals;    
     uint256 public initialSupply = 1000000000 * dec;

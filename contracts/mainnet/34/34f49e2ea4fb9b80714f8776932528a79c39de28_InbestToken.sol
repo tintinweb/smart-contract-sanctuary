@@ -217,8 +217,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract InbestToken is StandardToken {
 
-  string public constant name = &quot;Inbest Token&quot;;
-  string public constant symbol = &quot;IBST&quot;;
+  string public constant name = "Inbest Token";
+  string public constant symbol = "IBST";
   uint8 public constant decimals = 18;
 
   // TBD

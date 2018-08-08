@@ -254,10 +254,10 @@ contract MedicoHealthContract is ERC20Token {
     * @dev Intialises token and all the necesary variable
     */
     function MedicoHealthContract() {
-        name = &quot;MedicoHealth&quot;;
-        symbol = &quot;MHP&quot;;
+        name = "MedicoHealth";
+        symbol = "MHP";
         decimals = 18;
         totalSupplyLimit = 500000000 * 10**18;
-        lockFromSelf(0, &quot;Lock before crowdsale starts&quot;);
+        lockFromSelf(0, "Lock before crowdsale starts");
     }
 }

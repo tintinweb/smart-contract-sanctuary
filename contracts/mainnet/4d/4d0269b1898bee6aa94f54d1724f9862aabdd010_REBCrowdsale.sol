@@ -5,7 +5,7 @@ pragma solidity 0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -387,8 +387,8 @@ contract PausableToken is StandardToken, Pausable {
  * @title REB Token contract - ERC20 compatible token contract.
  */
 contract REBToken is PausableToken, MintableToken {
-    string public name = &quot;REBGLO Token&quot;;
-    string public symbol = &quot;REB&quot;;
+    string public name = "REBGLO Token";
+    string public symbol = "REB";
     uint8 public decimals = 18;
 
     /**
@@ -407,16 +407,16 @@ contract REBToken is PausableToken, MintableToken {
         uint256 holderBalance = balanceOf(holderAddress);
 
         if (holderBalance >= 1000000e18) {
-            return &quot;Platinum tier&quot;;
+            return "Platinum tier";
         } else if (holderBalance >= 700000e18) {
-            return &quot;Gold tier&quot;;
+            return "Gold tier";
         } else if (holderBalance >= 300000e18) {
-            return &quot;Titanium tier&quot;;
+            return "Titanium tier";
         } else if (holderBalance == 0) {
-            return &quot;Possess no REB&quot;;
+            return "Possess no REB";
         }
 
-        return &quot;Free tier&quot;;
+        return "Free tier";
     }
 }
 

@@ -118,7 +118,7 @@ contract BlockMarket is Ownable {
 
   /**
    * @dev Adds a new stock to the game
-   * @param _name the name of the stock (e.g. &quot;Kodak&quot;)
+   * @param _name the name of the stock (e.g. "Kodak")
    * @param _initialPrice the original cost of the stock&#39;s shares (in Wei)
    * @param _priceIncrease the amount by which the shares should increase upon sale (i.e. 120 = 20% increase)
    * @param _dividendAmount the amount of each purchase that should be split among dividend recipients

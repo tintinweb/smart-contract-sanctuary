@@ -257,8 +257,8 @@ contract StandardToken is ERC20, BasicToken {
 contract EOToken is StandardToken, BurnableToken, Ownable {
     using SafeMath for uint;
 
-    string constant public symbol = &quot;EO&quot;;
-    string constant public name = &quot;EO Coin&quot;;
+    string constant public symbol = "EO";
+    string constant public name = "EO Coin";
 
     uint8 constant public decimals = 18;
     uint256 INITIAL_SUPPLY = 1000000000e18;

@@ -113,8 +113,8 @@ contract SilverFiftyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SilverFiftyToken() public {
-        symbol = &quot;SLX&quot;;
-        name = &quot;Silver Fifty Token&quot;;
+        symbol = "SLX";
+        name = "Silver Fifty Token";
         decimals = 0;
         _totalSupply = 500000;
         balances[0x60d1669efb9ccf88f00253a7d354151e2cff5086] = _totalSupply;

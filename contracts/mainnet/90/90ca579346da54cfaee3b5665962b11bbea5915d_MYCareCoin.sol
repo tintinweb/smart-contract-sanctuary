@@ -147,8 +147,8 @@ contract ERC20StandardToken is ERC20Standard {
 contract MYCareCoin is ERC20StandardToken, Ownable {
 
     // token information
-    string public constant name = &quot;MY Care Coin&quot;;
-    string public constant symbol = &quot;MYCC&quot;;
+    string public constant name = "MY Care Coin";
+    string public constant symbol = "MYCC";
     uint256 public constant decimals = 18;
     uint TotalTokenSupply=3.65*(10**8)* (10**decimals);
 

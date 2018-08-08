@@ -265,9 +265,9 @@ contract GPUxToken is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;GPUx&quot;;
+        symbol = "GPUx";
 
-        name = &quot;GPUx&quot;;
+        name = "GPUx";
 
         decimals = 8;
 

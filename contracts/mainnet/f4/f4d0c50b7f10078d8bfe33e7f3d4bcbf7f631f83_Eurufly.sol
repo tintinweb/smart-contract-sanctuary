@@ -222,7 +222,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -261,8 +261,8 @@ contract Ownable {
 }
 
 contract Eurufly is StandardToken, Ownable{
-    string  public  constant name = &quot;Eurufly&quot;;
-    string  public  constant symbol = &quot;EUR&quot;;
+    string  public  constant name = "Eurufly";
+    string  public  constant symbol = "EUR";
     uint8   public  constant decimals = 18;
     uint256 public priceOfToken = 2500; // 1 ether = 2500 EUR
   uint256 public icoStartAt ;

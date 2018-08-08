@@ -23,8 +23,8 @@ contract NOORCOIN {
     ) public {
         totalSupply = 50000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;               
-        name = &quot;NOORCOIN&quot;;                                  
-        symbol = &quot;NOOR&quot;;                               
+        name = "NOORCOIN";                                  
+        symbol = "NOOR";                               
     }
 
 

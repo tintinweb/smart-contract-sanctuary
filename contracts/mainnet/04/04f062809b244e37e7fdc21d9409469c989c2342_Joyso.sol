@@ -3,7 +3,7 @@ pragma solidity 0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -687,7 +687,7 @@ contract Joyso is Ownable, JoysoDataDecoder {
      * @param s sig_s
      */
     function verify(bytes32 hash, address sender, uint8 v, bytes32 r, bytes32 s) internal pure returns (bool) {
-        return ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), v, r, s) == sender;
+        return ecrecover(keccak256("\x19Ethereum Signed Message:\n32", hash), v, r, s) == sender;
     }
 
     /**

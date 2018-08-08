@@ -35,7 +35,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -516,7 +516,7 @@ contract EthealWhitelist is Ownable {
 
     /// @notice offchain whitelist check
     function isOffchainWhitelisted(address _addr, bytes _sig) public view returns (bool) {
-        bytes32 hash = keccak256(&quot;\x19Ethereum Signed Message:\n20&quot;,_addr);
+        bytes32 hash = keccak256("\x19Ethereum Signed Message:\n20",_addr);
         return hash.recover(_sig) == signer;
     }
 }
@@ -682,7 +682,7 @@ contract EthealNormalSale is Pausable, FinalizableCrowdsale, CappedCrowdsale {
     /// @dev Overriding Crowdsale#buyTokens to add partial refund
     /// @param _beneficiary Beneficiary of the token purchase
     function buyTokens(address _beneficiary) public payable whenNotPaused {
-        handlePayment(_beneficiary, msg.value, now, &quot;&quot;);
+        handlePayment(_beneficiary, msg.value, now, "");
     }
 
     /// @dev buying tokens for someone with offchain whitelist signature

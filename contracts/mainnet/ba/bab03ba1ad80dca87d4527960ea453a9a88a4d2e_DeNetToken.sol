@@ -300,7 +300,7 @@ contract ERC827Token is ERC827, StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -533,8 +533,8 @@ library SafeMath {
 }
 
 contract DeNetToken is ERC827Token, MintableToken, BurnableToken, PausableToken, RecoverableToken {
-    string public constant name = &quot;DeNet&quot;;
-    string public constant symbol = &quot;DNET&quot;;
+    string public constant name = "DeNet";
+    string public constant symbol = "DNET";
     uint8 public constant decimals = 18;
 
     function DeNetToken() public {

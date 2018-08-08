@@ -103,8 +103,8 @@ contract Metadollar is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Metadollar() public {
-        symbol = &quot;MTD&quot;;
-        name = &quot;Metadollar&quot;;
+        symbol = "MTD";
+        name = "Metadollar";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000000;
         balances[0xeaBB4013f179E42c41468DB81eB1Bd420Da6cC47] = _totalSupply;

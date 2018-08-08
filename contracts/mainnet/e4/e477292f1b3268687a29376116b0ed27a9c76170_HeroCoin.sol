@@ -135,9 +135,9 @@ contract HeroCoin is StandardToken {
     //should be constant, but is not, to avoid compiler warning
     address public  rakeEventPlaceholderAddress = 0x0000000000000000000000000000000000000000;
 
-    string public constant name = &quot;Herocoin&quot;;
+    string public constant name = "Herocoin";
 
-    string public constant symbol = &quot;PLAY&quot;;
+    string public constant symbol = "PLAY";
 
     uint8 public constant decimals = 18;
 
@@ -232,7 +232,7 @@ contract HeroCoin is StandardToken {
 
     //this is the main funding function, it updates the balances of Herocoins during the ICO.
     //no particular incentive schemes have been implemented here
-    //it is only accessible during the &quot;ICO&quot; phase.
+    //it is only accessible during the "ICO" phase.
     function() payable
     requireState(States.Ico)
     {

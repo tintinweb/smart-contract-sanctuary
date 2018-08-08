@@ -88,7 +88,7 @@ contract Pixereum {
     {
         Pixel memory pixel;
         if (pixels[_pixelNumber].owner == 0) {
-            pixel = Pixel(fundWallet, &quot;&quot;, defaultWeiPrice, true); 
+            pixel = Pixel(fundWallet, "", defaultWeiPrice, true); 
         } else {
             pixel = pixels[_pixelNumber];
         }
@@ -112,7 +112,7 @@ contract Pixereum {
 
         uint16 pixelNumber = getPixelNumber(msg.data[0], msg.data[1]);
         uint24 color = getColor(msg.data[2], msg.data[3], msg.data[4]);
-        buyPixel(msg.sender, pixelNumber, color, &quot;&quot;);
+        buyPixel(msg.sender, pixelNumber, color, "");
     }
 
 
@@ -226,7 +226,7 @@ contract Pixereum {
         onlyOwner
         public
     {
-        pixels[_pixelNumber].message = &quot;&quot;;
+        pixels[_pixelNumber].message = "";
     }
 
 

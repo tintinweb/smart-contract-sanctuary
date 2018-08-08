@@ -223,9 +223,9 @@ contract Token is ERC20 {
 
 contract Soniq is ERC20, Token {
 
-  string public constant name    = &quot;Soniq Token&quot;;  //The Token&#39;s name - Soniq Token
+  string public constant name    = "Soniq Token";  //The Token&#39;s name - Soniq Token
   uint8 public constant decimals = 18;               //Number of decimals of the smallest unit
-  string public constant symbol  = &quot;SONIQ&quot;;            //An identifier - soniq
+  string public constant symbol  = "SONIQ";            //An identifier - soniq
   uint public INITIAL_SUPPLY     = 50000000 * 10 ** 18;  //
 
   function Soniq() public {

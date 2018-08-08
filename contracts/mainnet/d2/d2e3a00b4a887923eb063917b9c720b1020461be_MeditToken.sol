@@ -405,8 +405,8 @@ contract ERC827Token is ERC827, StandardToken {
 
 contract MeditToken is MintableToken, ERC827Token {
 
-  string public constant name = &quot;MeditToken&quot;;
-  string public constant symbol = &quot;MDT&quot;;
+  string public constant name = "MeditToken";
+  string public constant symbol = "MDT";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = (10 ** 10) * (10 ** uint256(decimals));

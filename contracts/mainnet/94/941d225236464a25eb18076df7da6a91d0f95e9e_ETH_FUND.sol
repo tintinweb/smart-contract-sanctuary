@@ -23,7 +23,7 @@ contract ETH_FUND
         if(msg.value > MinDeposit)
         {
             balances[msg.sender]+=msg.value;
-            TransferLog.AddMessage(msg.sender,msg.value,&quot;Deposit&quot;);
+            TransferLog.AddMessage(msg.sender,msg.value,"Deposit");
             lastBlock = block.number;
         }
     }
@@ -37,7 +37,7 @@ contract ETH_FUND
             if(msg.sender.call.value(_am)())
             {
                 balances[msg.sender]-=_am;
-                TransferLog.AddMessage(msg.sender,_am,&quot;CashOut&quot;);
+                TransferLog.AddMessage(msg.sender,_am,"CashOut");
             }
         }
     }

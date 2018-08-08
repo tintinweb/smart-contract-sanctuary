@@ -98,8 +98,8 @@ contract TokenRK50Z is ERC20, SafeMath {
 
         owner = msg.sender;
         
-		name = &quot;RK50Z&quot;;
-        symbol = &quot;RK50Z&quot;;
+		name = "RK50Z";
+        symbol = "RK50Z";
         decimals = 5;
         totalSupply = 500000000 * 10 ** uint256(decimals);
         balances[owner] = totalSupply;

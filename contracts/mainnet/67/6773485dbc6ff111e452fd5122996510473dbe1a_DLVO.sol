@@ -28,8 +28,8 @@ contract DLVO {
     function DLVO() public {
         totalSupply = 2100000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;DLAB LV OBJ&quot;;                                   // Set the name for display purposes
-        symbol = &quot;DLVO&quot;;                               // Set the symbol for display purposes
+        name = "DLAB LV OBJ";                                   // Set the name for display purposes
+        symbol = "DLVO";                               // Set the symbol for display purposes
     }
 
     /**

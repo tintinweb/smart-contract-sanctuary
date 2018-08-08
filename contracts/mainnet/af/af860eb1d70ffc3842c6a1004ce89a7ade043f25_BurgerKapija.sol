@@ -113,8 +113,8 @@ contract BurgerKapija is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BurgerKapija() public {
-        symbol = &quot;BGK&quot;;
-        name = &quot;Burger Kapija&quot;;
+        symbol = "BGK";
+        name = "Burger Kapija";
         decimals = 0;
         _totalSupply = 1000000000;
         balances[0x6c50ad33f6b4414b7be304cc69725d212ebf138a] = _totalSupply;

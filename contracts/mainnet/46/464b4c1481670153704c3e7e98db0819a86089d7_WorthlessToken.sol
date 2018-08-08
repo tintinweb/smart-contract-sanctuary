@@ -113,8 +113,8 @@ contract WorthlessToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WorthlessToken() public {
-        symbol = &quot;WOL&quot;;
-        name = &quot;Worthless Token&quot;;
+        symbol = "WOL";
+        name = "Worthless Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x740c39c211954eE5Bc57aF2924583faa360c6C40] = _totalSupply;

@@ -140,8 +140,8 @@ contract StandardToken is Token {
 
  contract OftenChainToken is StandardToken, SafeMath {
 	 
-    string public constant symbol =&quot;OCC&quot;;
-    string public constant name = &quot;Often Chain Token&quot;;
+    string public constant symbol ="OCC";
+    string public constant name = "Often Chain Token";
     uint256 public constant decimals = 18;
 	uint256 public constant _totalSupply = 360000000 * 10**18;
 	

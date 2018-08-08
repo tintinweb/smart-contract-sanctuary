@@ -75,8 +75,8 @@ contract StandardToken is ERC20Basic {
  * @title DAXToken
  */
 contract DAEXToken is StandardToken {
-    string public constant name = &quot;DAEX Token&quot;;
-    string public constant symbol = &quot;DAX&quot;;
+    string public constant name = "DAEX Token";
+    string public constant symbol = "DAX";
     uint public constant decimals = 18;
 
     address public target;

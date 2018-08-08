@@ -222,13 +222,13 @@ contract StandardToken is Token {
 contract CNRToken is Owned, StandardToken {
 
     // Ethereum token standard
-    string public standard = &quot;Token 0.2&quot;;
+    string public standard = "Token 0.2";
 
     // Full name
-    string public name = &quot;Coinoor&quot;;        
+    string public name = "Coinoor";        
     
     // Symbol
-    string public symbol = &quot;CNR&quot;;
+    string public symbol = "CNR";
 
     // No decimal points
     uint8 public decimals = 8;

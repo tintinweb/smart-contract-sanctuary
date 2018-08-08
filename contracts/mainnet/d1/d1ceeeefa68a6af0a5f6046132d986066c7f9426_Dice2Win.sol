@@ -119,18 +119,18 @@ contract Dice2Win {
 
     // Standard modifier on methods invokable only by contract owner.
     modifier onlyOwner {
-        require (msg.sender == owner, &quot;OnlyOwner methods called by non-owner.&quot;);
+        require (msg.sender == owner, "OnlyOwner methods called by non-owner.");
         _;
     }
 
     // Standard contract ownership transfer implementation,
     function approveNextOwner(address _nextOwner) external onlyOwner {
-        require (_nextOwner != owner, &quot;Cannot approve current owner.&quot;);
+        require (_nextOwner != owner, "Cannot approve current owner.");
         nextOwner = _nextOwner;
     }
 
     function acceptNextOwner() external {
-        require (msg.sender == nextOwner, &quot;Can only accept preapproved new owner.&quot;);
+        require (msg.sender == nextOwner, "Can only accept preapproved new owner.");
         owner = nextOwner;
     }
 
@@ -139,35 +139,35 @@ contract Dice2Win {
     function () public payable {
     }
 
-    // See comment for &quot;secretSigner&quot; variable.
+    // See comment for "secretSigner" variable.
     function setSecretSigner(address newSecretSigner) external onlyOwner {
         secretSigner = newSecretSigner;
     }
 
     // Change max bet reward. Setting this to zero effectively disables betting.
     function setMaxProfit(uint _maxProfit) public onlyOwner {
-        require (_maxProfit < MAX_AMOUNT, &quot;maxProfit should be a sane number.&quot;);
+        require (_maxProfit < MAX_AMOUNT, "maxProfit should be a sane number.");
         maxProfit = _maxProfit;
     }
 
     // This function is used to bump up the jackpot fund. Cannot be used to lower it.
     function increaseJackpot(uint increaseAmount) external onlyOwner {
-        require (increaseAmount <= address(this).balance, &quot;Increase amount larger than balance.&quot;);
-        require (jackpotSize + lockedInBets + increaseAmount <= address(this).balance, &quot;Not enough funds.&quot;);
+        require (increaseAmount <= address(this).balance, "Increase amount larger than balance.");
+        require (jackpotSize + lockedInBets + increaseAmount <= address(this).balance, "Not enough funds.");
         jackpotSize += uint128(increaseAmount);
     }
 
     // Funds withdrawal to cover costs of dice2.win operation.
     function withdrawFunds(address beneficiary, uint withdrawAmount) external onlyOwner {
-        require (withdrawAmount <= address(this).balance, &quot;Increase amount larger than balance.&quot;);
-        require (jackpotSize + lockedInBets + withdrawAmount <= address(this).balance, &quot;Not enough funds.&quot;);
+        require (withdrawAmount <= address(this).balance, "Increase amount larger than balance.");
+        require (jackpotSize + lockedInBets + withdrawAmount <= address(this).balance, "Not enough funds.");
         sendFunds(beneficiary, withdrawAmount, withdrawAmount);
     }
 
     // Contract may be destroyed only when there are no ongoing bets,
     // either settled or refunded. All funds are transferred to contract owner.
     function kill() external onlyOwner {
-        require (lockedInBets == 0, &quot;All bets should be processed (settled or refunded) before self-destruct.&quot;);
+        require (lockedInBets == 0, "All bets should be processed (settled or refunded) before self-destruct.");
         selfdestruct(owner);
     }
 
@@ -182,10 +182,10 @@ contract Dice2Win {
     //  betMask         - bet outcomes bit mask for modulo <= MAX_MASK_MODULO,
     //                    [0, betMask) for larger modulos.
     //  modulo          - game modulo.
-    //  commitLastBlock - number of the maximum block where &quot;commit&quot; is still considered valid.
-    //  commit          - Keccak256 hash of some secret &quot;reveal&quot; random number, to be supplied
+    //  commitLastBlock - number of the maximum block where "commit" is still considered valid.
+    //  commit          - Keccak256 hash of some secret "reveal" random number, to be supplied
     //                    by the dice2.win croupier bot in the settleBet transaction. Supplying
-    //                    &quot;commit&quot; ensures that &quot;reveal&quot; cannot be changed behind the scenes
+    //                    "commit" ensures that "reveal" cannot be changed behind the scenes
     //                    after placeBet have been mined.
     //  r, s            - components of ECDSA signature of (commitLastBlock, commit). v is
     //                    guaranteed to always equal 27.
@@ -200,18 +200,18 @@ contract Dice2Win {
     function placeBet(uint betMask, uint modulo, uint commitLastBlock, uint commit, bytes32 r, bytes32 s) external payable {
         // Check that the bet is in &#39;clean&#39; state.
         Bet storage bet = bets[commit];
-        require (bet.gambler == address(0), &quot;Bet should be in a &#39;clean&#39; state.&quot;);
+        require (bet.gambler == address(0), "Bet should be in a &#39;clean&#39; state.");
 
         // Validate input data ranges.
         uint amount = msg.value;
-        require (modulo > 1 && modulo <= MAX_MODULO, &quot;Modulo should be within range.&quot;);
-        require (amount >= MIN_BET && amount <= MAX_AMOUNT, &quot;Amount should be within range.&quot;);
-        require (betMask > 0 && betMask < MAX_BET_MASK, &quot;Mask should be within range.&quot;);
+        require (modulo > 1 && modulo <= MAX_MODULO, "Modulo should be within range.");
+        require (amount >= MIN_BET && amount <= MAX_AMOUNT, "Amount should be within range.");
+        require (betMask > 0 && betMask < MAX_BET_MASK, "Mask should be within range.");
 
         // Check that commit is valid - it has not expired and its signature is valid.
-        require (block.number <= commitLastBlock, &quot;Commit has expired.&quot;);
+        require (block.number <= commitLastBlock, "Commit has expired.");
         bytes32 signatureHash = keccak256(abi.encodePacked(uint40(commitLastBlock), commit));
-        require (secretSigner == ecrecover(signatureHash, 27, r, s), &quot;ECDSA signature is not valid.&quot;);
+        require (secretSigner == ecrecover(signatureHash, 27, r, s), "ECDSA signature is not valid.");
 
         uint rollUnder;
         uint mask;
@@ -227,7 +227,7 @@ contract Dice2Win {
         } else {
             // Larger modulos specify the right edge of half-open interval of
             // winning bet outcomes.
-            require (betMask > 0 && betMask <= modulo, &quot;High modulo range, betMask larger than modulo.&quot;);
+            require (betMask > 0 && betMask <= modulo, "High modulo range, betMask larger than modulo.");
             rollUnder = betMask;
         }
 
@@ -238,14 +238,14 @@ contract Dice2Win {
         (possibleWinAmount, jackpotFee) = getDiceWinAmount(amount, modulo, rollUnder);
 
         // Enforce max profit limit.
-        require (possibleWinAmount <= amount + maxProfit, &quot;maxProfit limit violation.&quot;);
+        require (possibleWinAmount <= amount + maxProfit, "maxProfit limit violation.");
 
         // Lock funds.
         lockedInBets += uint128(possibleWinAmount);
         jackpotSize += uint128(jackpotFee);
 
         // Check whether contract has enough funds to process this bet.
-        require (jackpotSize + lockedInBets <= address(this).balance, &quot;Cannot afford to lose this bet.&quot;);
+        require (jackpotSize + lockedInBets <= address(this).balance, "Cannot afford to lose this bet.");
 
         // Store bet parameters on blockchain.
         bet.amount = amount;
@@ -257,12 +257,12 @@ contract Dice2Win {
     }
 
     // Settlement transaction - can in theory be issued by anyone, but is designed to be
-    // handled by the dice2.win croupier bot. To settle a bet with a specific &quot;commit&quot;,
-    // settleBet should supply a &quot;reveal&quot; number that would Keccak256-hash to
-    // &quot;commit&quot;. clean_commit is some previously &#39;processed&#39; bet, that will be moved into
+    // handled by the dice2.win croupier bot. To settle a bet with a specific "commit",
+    // settleBet should supply a "reveal" number that would Keccak256-hash to
+    // "commit". clean_commit is some previously &#39;processed&#39; bet, that will be moved into
     // &#39;clean&#39; state to prevent blockchain bloat and refund some gas.
     function settleBet(uint reveal, uint cleanCommit) external {
-        // &quot;commit&quot; for bet settlement can only be obtained by hashing a &quot;reveal&quot;.
+        // "commit" for bet settlement can only be obtained by hashing a "reveal".
         uint commit = uint(keccak256(abi.encodePacked(reveal)));
 
         // Fetch bet parameters into local variables (to save gas).
@@ -274,18 +274,18 @@ contract Dice2Win {
         address gambler = bet.gambler;
 
         // Check that bet is in &#39;active&#39; state.
-        require (amount != 0, &quot;Bet should be in an &#39;active&#39; state&quot;);
+        require (amount != 0, "Bet should be in an &#39;active&#39; state");
 
         // Check that bet has not expired yet (see comment to BET_EXPIRATION_BLOCKS).
-        require (block.number > placeBlockNumber, &quot;settleBet in the same block as placeBet, or before.&quot;);
-        require (block.number <= placeBlockNumber + BET_EXPIRATION_BLOCKS, &quot;Blockhash can&#39;t be queried by EVM.&quot;);
+        require (block.number > placeBlockNumber, "settleBet in the same block as placeBet, or before.");
+        require (block.number <= placeBlockNumber + BET_EXPIRATION_BLOCKS, "Blockhash can&#39;t be queried by EVM.");
 
         // Move bet into &#39;processed&#39; state already.
         bet.amount = 0;
 
-        // The RNG - combine &quot;reveal&quot; and blockhash of placeBet using Keccak256. Miners
-        // are not aware of &quot;reveal&quot; and cannot deduce it from &quot;commit&quot; (as Keccak256
-        // preimage is intractable), and house is unable to alter the &quot;reveal&quot; after
+        // The RNG - combine "reveal" and blockhash of placeBet using Keccak256. Miners
+        // are not aware of "reveal" and cannot deduce it from "commit" (as Keccak256
+        // preimage is intractable), and house is unable to alter the "reveal" after
         // placeBet have been mined (as Keccak256 collision finding is also intractable).
         bytes32 entropy = keccak256(abi.encodePacked(reveal, blockhash(placeBlockNumber)));
 
@@ -319,7 +319,7 @@ contract Dice2Win {
 
         // Roll for a jackpot (if eligible).
         if (amount >= MIN_JACKPOT_BET) {
-            // The second modulo, statistically independent from the &quot;main&quot; dice roll.
+            // The second modulo, statistically independent from the "main" dice roll.
             // Effectively you are playing two games at once!
             uint jackpotRng = (uint(entropy) / modulo) % JACKPOT_MODULO;
 
@@ -356,10 +356,10 @@ contract Dice2Win {
         Bet storage bet = bets[commit];
         uint amount = bet.amount;
 
-        require (amount != 0, &quot;Bet should be in an &#39;active&#39; state&quot;);
+        require (amount != 0, "Bet should be in an &#39;active&#39; state");
 
         // Check that bet has already expired.
-        require (block.number > bet.placeBlockNumber + BET_EXPIRATION_BLOCKS, &quot;Blockhash can&#39;t be queried by EVM.&quot;);
+        require (block.number > bet.placeBlockNumber + BET_EXPIRATION_BLOCKS, "Blockhash can&#39;t be queried by EVM.");
 
         // Move bet into &#39;processed&#39; state, release funds.
         bet.amount = 0;
@@ -405,7 +405,7 @@ contract Dice2Win {
 
     // Get the expected win amount after house edge is subtracted.
     function getDiceWinAmount(uint amount, uint modulo, uint rollUnder) private pure returns (uint winAmount, uint jackpotFee) {
-        require (0 < rollUnder && rollUnder <= modulo, &quot;Win probability out of range.&quot;);
+        require (0 < rollUnder && rollUnder <= modulo, "Win probability out of range.");
 
         jackpotFee = amount >= MIN_JACKPOT_BET ? JACKPOT_FEE : 0;
 
@@ -415,7 +415,7 @@ contract Dice2Win {
             houseEdge = HOUSE_EDGE_MINIMUM_AMOUNT;
         }
 
-        require (houseEdge + jackpotFee <= amount, &quot;Bet doesn&#39;t even cover house edge.&quot;);
+        require (houseEdge + jackpotFee <= amount, "Bet doesn&#39;t even cover house edge.");
         winAmount = (amount - houseEdge - jackpotFee) * modulo / rollUnder;
     }
 

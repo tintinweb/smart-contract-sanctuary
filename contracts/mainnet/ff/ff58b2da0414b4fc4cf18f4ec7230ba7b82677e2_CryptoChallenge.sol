@@ -232,11 +232,11 @@ contract CryptoChallenge is ERC721{
   /* ERC721 */
 
   function name() public pure returns (string _name) {
-    return &quot;betsignature&quot;;
+    return "betsignature";
   }
 
   function symbol() public pure returns (string _symbol) {
-    return &quot;BET&quot;;
+    return "BET";
   }
 
   function totalSupply() public view returns (uint256 _totalSupply) {

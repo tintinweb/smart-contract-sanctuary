@@ -11,8 +11,8 @@ contract Collegecoin {
 
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;CollegeCoin&quot;; }
-    function symbol() constant returns (string) { return &quot;COC&quot;; }
+    function name() constant returns (string) { return "CollegeCoin"; }
+    function symbol() constant returns (string) { return "COC"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

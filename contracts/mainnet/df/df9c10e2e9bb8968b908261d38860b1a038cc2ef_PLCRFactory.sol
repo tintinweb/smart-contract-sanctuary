@@ -349,8 +349,8 @@ contract PLCRVoting {
 
         bytes32 UUID = attrUUID(msg.sender, _pollID);
 
-        store.setAttribute(UUID, &quot;numTokens&quot;, _numTokens);
-        store.setAttribute(UUID, &quot;commitHash&quot;, uint(_secretHash));
+        store.setAttribute(UUID, "numTokens", _numTokens);
+        store.setAttribute(UUID, "commitHash", uint(_secretHash));
 
         pollMap[_pollID].didCommit[msg.sender] = true;
         emit _VoteCommitted(_pollID, _numTokens, msg.sender);
@@ -588,17 +588,17 @@ contract PLCRVoting {
     @return Bytes32 hash property attached to target poll
     */
     function getCommitHash(address _voter, uint _pollID) constant public returns (bytes32 commitHash) {
-        return bytes32(store.getAttribute(attrUUID(_voter, _pollID), &quot;commitHash&quot;));
+        return bytes32(store.getAttribute(attrUUID(_voter, _pollID), "commitHash"));
     }
 
     /**
-    @dev Wrapper for getAttribute with attrName=&quot;numTokens&quot;
+    @dev Wrapper for getAttribute with attrName="numTokens"
     @param _voter Address of user to check against
     @param _pollID Integer identifier associated with target poll
     @return Number of tokens committed to poll in sorted poll-linked-list
     */
     function getNumTokens(address _voter, uint _pollID) constant public returns (uint numTokens) {
-        return store.getAttribute(attrUUID(_voter, _pollID), &quot;numTokens&quot;);
+        return store.getAttribute(attrUUID(_voter, _pollID), "numTokens");
     }
 
     /**
@@ -744,7 +744,7 @@ contract ProxyFactory {
         returns (address proxyContract)
     {
         assembly {
-            let contractCode := mload(0x40) // Find empty storage location using &quot;free memory pointer&quot;
+            let contractCode := mload(0x40) // Find empty storage location using "free memory pointer"
            
             mstore(add(contractCode, 0x0b), _target) // Add target address, with a 11 bytes [i.e. 23 - (32 - 20)] offset to later accomodate first part of the bytecode
             mstore(sub(contractCode, 0x09), 0x000000000000000000603160008181600b9039f3600080808080368092803773) // First part of the bytecode, shifted left by 9 bytes, overwrites left padding of target address
@@ -867,7 +867,7 @@ contract PLCRFactory {
   @param _token an EIP20 token to be consumed by the new PLCR contract
   */
   function newPLCRBYOToken(EIP20 _token) public returns (PLCRVoting) {
-    PLCRVoting plcr = PLCRVoting(proxyFactory.createProxy(canonizedPLCR, &quot;&quot;));
+    PLCRVoting plcr = PLCRVoting(proxyFactory.createProxy(canonizedPLCR, ""));
     plcr.init(_token);
 
     emit newPLCR(msg.sender, _token, plcr);
@@ -894,7 +894,7 @@ contract PLCRFactory {
     token.transfer(msg.sender, _supply);
 
     // Create and initialize a new PLCR contract
-    PLCRVoting plcr = PLCRVoting(proxyFactory.createProxy(canonizedPLCR, &quot;&quot;));
+    PLCRVoting plcr = PLCRVoting(proxyFactory.createProxy(canonizedPLCR, ""));
     plcr.init(token);
 
     emit newPLCR(msg.sender, token, plcr);

@@ -12,8 +12,8 @@ contract ERC20Interface {
 }
 
 contract VjuCoin is ERC20Interface {
-  string public constant symbol = &quot;VJU&quot;;
-  string public constant name = &quot;VjuCoin&quot;;
+  string public constant symbol = "VJU";
+  string public constant name = "VjuCoin";
   uint8 public constant decimals = 0;
   uint256 _totalSupply = 100000000;
   address public owner;

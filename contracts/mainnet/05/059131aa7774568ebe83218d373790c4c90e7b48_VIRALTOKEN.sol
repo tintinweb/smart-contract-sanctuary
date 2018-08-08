@@ -202,9 +202,9 @@ contract VIRALTOKEN is VRTStandardToken {
     
     uint256 constant public decimals = 18; //How many decimals to show.
     uint256 public totalSupply = 25 * (10**6) * 10**18 ; // 25 million tokens, 18 decimal places
-    string constant public name = &quot;ViralToken&quot;; //fancy name: eg VIRAL
-    string constant public symbol = &quot;VRT&quot;; //An identifier: eg VRT
-    string constant public version = &quot;v11&quot;;       //Version 11 standard. Just an arbitrary versioning scheme.
+    string constant public name = "ViralToken"; //fancy name: eg VIRAL
+    string constant public symbol = "VRT"; //An identifier: eg VRT
+    string constant public version = "v11";       //Version 11 standard. Just an arbitrary versioning scheme.
     
     function VIRALTOKEN(){
         balances[msg.sender] = totalSupply;               // Give the creator all initial tokens
@@ -218,7 +218,7 @@ contract VIRALTOKEN is VRTStandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 }

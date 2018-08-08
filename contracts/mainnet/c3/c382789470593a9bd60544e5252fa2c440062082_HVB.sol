@@ -60,8 +60,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;HVB&quot;;                                   // Set the name for display purposes
-        symbol = &quot;HVB&quot;;                               // Set the symbol for display purposes
+        name = "HVB";                                   // Set the name for display purposes
+        symbol = "HVB";                               // Set the symbol for display purposes
     }
 
     /**

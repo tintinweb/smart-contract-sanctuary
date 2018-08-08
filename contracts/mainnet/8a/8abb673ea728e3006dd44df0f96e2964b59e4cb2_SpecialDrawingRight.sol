@@ -198,8 +198,8 @@ contract SpecialDrawingRight is ERC223, ERC20Basic {
   
   
   function SpecialDrawingRight() public{
-      name = &quot;Special Drawing Right&quot;;
-      symbol = &quot;SDR&quot;;
+      name = "Special Drawing Right";
+      symbol = "SDR";
       decimals = 2;
       totalSupply = 1000000000 * 10 ** uint(decimals);  
       balances[msg.sender] = totalSupply;

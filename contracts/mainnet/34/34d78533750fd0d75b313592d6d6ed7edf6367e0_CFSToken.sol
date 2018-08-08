@@ -98,8 +98,8 @@ contract CFSToken is ERC20Interface, Owned, SafeMath {
         decimals = 18;                                     // Amount of decimals for display purposes
         totalSupply = 10000000000 * 10**uint(decimals);    //total supply (Generate 1 billion tokens)
         balances[msg.sender] = totalSupply;                
-        name = &quot;Crypto Future SAFT&quot;;                       // Set the name for display purposes
-        symbol = &quot;CFS&quot;;                                    // Set the symbol for display purposes
+        name = "Crypto Future SAFT";                       // Set the name for display purposes
+        symbol = "CFS";                                    // Set the symbol for display purposes
         isStop = false;
     }
 

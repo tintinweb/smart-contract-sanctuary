@@ -322,7 +322,7 @@ contract ERC20Extended is ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -422,7 +422,7 @@ contract AxieOriginCoin is ERC20DetailedInterface, ERC20Extended, ERC20Mintable,
    * @return The name.
    */
   function name() public view returns (string) {
-    return &quot;Axie Origin Coin&quot;;
+    return "Axie Origin Coin";
   }
 
   /**
@@ -430,7 +430,7 @@ contract AxieOriginCoin is ERC20DetailedInterface, ERC20Extended, ERC20Mintable,
    * @return The symbol.
    */
   function symbol() public view returns (string) {
-    return &quot;AOC&quot;;
+    return "AOC";
   }
 
   /**

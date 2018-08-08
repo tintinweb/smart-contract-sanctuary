@@ -166,8 +166,8 @@ contract BurnableToken is BasicToken {
 
 contract Bitroneum is StandardToken, BurnableToken {
 
-  string public constant name = &quot;Bitroneum&quot;;
-  string public constant symbol = &quot;BITRO&quot;;
+  string public constant name = "Bitroneum";
+  string public constant symbol = "BITRO";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 300000000 * (10 ** uint256(decimals));

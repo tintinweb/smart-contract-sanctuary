@@ -113,8 +113,8 @@ contract SonnetCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SonnetCoin() public {
-        symbol = &quot;SONN&quot;;
-        name = &quot;SonnetCoin&quot;;
+        symbol = "SONN";
+        name = "SonnetCoin";
         decimals = 18;
         _totalSupply = 2000000000000000000000000;
         balances[0x25f6366fb4DfE01cdbfEE200036ad0F70A81376E] = _totalSupply; //MEW address here

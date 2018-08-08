@@ -58,8 +58,8 @@ contract Betportchain is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Betportchain&quot;;
-    string public constant symbol = &quot;BPN&quot;;
+    string public constant name = "Betportchain";
+    string public constant symbol = "BPN";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000000e8;

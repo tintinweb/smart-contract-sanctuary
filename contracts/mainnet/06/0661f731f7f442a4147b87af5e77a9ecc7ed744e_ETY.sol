@@ -143,8 +143,8 @@ contract BurnableToken is StandardToken {
 
 contract ETY is BurnableToken {
 
-    string public name = &quot;Etherty Token&quot;;
-    string public symbol = &quot;ETY&quot;;
+    string public name = "Etherty Token";
+    string public symbol = "ETY";
     uint public decimals = 18;
     uint constant TOKEN_LIMIT = 240 * 1e6 * 1e18;
 

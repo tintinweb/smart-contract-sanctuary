@@ -109,8 +109,8 @@ contract Blockdrop is ERC20Interface,Ownable {
    */
     function Blockdrop(address wallet) public {
         owner = wallet;
-        name  = &quot;Blockdrop&quot;;
-        symbol = &quot;BDP&quot;;
+        name  = "Blockdrop";
+        symbol = "BDP";
         decimals = 18;
         _totalSupply = 2350000000;
         _totalSupply = _totalSupply.mul(10 ** uint(decimals));

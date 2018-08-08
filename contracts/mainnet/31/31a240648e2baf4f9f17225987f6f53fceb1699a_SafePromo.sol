@@ -29,7 +29,7 @@ pragma solidity ^0.4.18;
 
 contract SafePromo {
 
-	string public url = &quot;https://safe.ad&quot;;
+	string public url = "https://safe.ad";
 	string public name;
 	string public symbol;
 	address owner;

@@ -303,8 +303,8 @@ contract CappedCrowdsale is Crowdsale {
 }
 
 contract HAIToken is MintableToken {
-  string public name = &quot;HAI Token&quot;;
-  string public symbol = &quot;HAI&quot;;
+  string public name = "HAI Token";
+  string public symbol = "HAI";
   uint8 public decimals = 18;
 }
 
@@ -536,7 +536,7 @@ contract HAICrowdsale is CappedCrowdsale, RefundableCrowdsale {
       uint256 tokensThatWillBeMintedAfterPurchase = msg.value.mul(rate);
       if ((stage == CrowdsaleStage.PreICO) && (token.totalSupply() + tokensThatWillBeMintedAfterPurchase > totalTokensForSaleDuringPreICO)) {
         msg.sender.transfer(msg.value); // Refund them
-        EthRefunded(&quot;PreICO Limit Hit&quot;);
+        EthRefunded("PreICO Limit Hit");
         return;
       }
 
@@ -550,9 +550,9 @@ contract HAICrowdsale is CappedCrowdsale, RefundableCrowdsale {
   function forwardFunds() internal {
       if (stage == CrowdsaleStage.PreICO) {
           wallet.transfer(msg.value);
-          EthTransferred(&quot;forwarding funds to wallet&quot;);
+          EthTransferred("forwarding funds to wallet");
       } else if (stage == CrowdsaleStage.ICO) {
-          EthTransferred(&quot;forwarding funds to refundable vault&quot;);
+          EthTransferred("forwarding funds to refundable vault");
           super.forwardFunds();
       }
   }

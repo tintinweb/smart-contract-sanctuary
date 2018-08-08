@@ -191,8 +191,8 @@ contract RKCToken is StandardToken, Ownable {
     using SafeMath for uint;
 
     //--------------   Info for ERC20 explorers  -----------------//
-    string public name = &quot;Royal Kingdom Coin&quot;;
-    string public symbol = &quot;RKC&quot;;
+    string public name = "Royal Kingdom Coin";
+    string public symbol = "RKC";
     uint public decimals = 18;
 
     //---------------------   Constants   ------------------------//

@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract GACC is StandardToken, Ownable {
 
-    string public constant name = &quot;GLOBAL ART CHAIN CODE&quot;;
-    string public constant symbol = &quot;GACC&quot;;
+    string public constant name = "GLOBAL ART CHAIN CODE";
+    string public constant symbol = "GACC";
     uint256 public constant decimals = 8;
 
     function GACC() public {

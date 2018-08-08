@@ -94,8 +94,8 @@ contract CNRToken is ERC20, CNRAddBalanceInterface, CNRAddTokenInterface, Platfo
 
 
     //Токен  ERC20
-    string public constant name = &quot;ICO Constructor token&quot;;
-    string public constant symbol = &quot;CNR&quot;;
+    string public constant name = "ICO Constructor token";
+    string public constant symbol = "CNR";
     uint256 public constant decimals = 18;
 
 

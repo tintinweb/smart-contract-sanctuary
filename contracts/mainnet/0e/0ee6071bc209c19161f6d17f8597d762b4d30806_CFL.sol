@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract CFL is StandardToken, Ownable {
 
-    string public constant name = &quot;财富链&quot;;
-    string public constant symbol = &quot;CFL&quot;;
+    string public constant name = "财富链";
+    string public constant symbol = "CFL";
     uint256 public constant decimals = 8;
 
     function CFL() public {

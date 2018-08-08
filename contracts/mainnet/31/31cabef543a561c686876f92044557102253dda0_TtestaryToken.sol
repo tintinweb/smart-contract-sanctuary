@@ -140,8 +140,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract TtestaryToken is MintableToken {
     
-    string public constant name = &quot;Ttestary&quot;;
-    string public constant symbol = &quot;TTARY&quot;;
+    string public constant name = "Ttestary";
+    string public constant symbol = "TTARY";
     uint32 public constant decimals = 18;
     
 }

@@ -99,9 +99,9 @@ contract CAST is StandardToken {
         ) {
         balances[msg.sender] = 75000000 * 100000000;   // Give the creator all initial tokens, 8 zero is 8 Decimals
         totalSupply = 75000000 * 100000000;            // Update total supply, , 8 zero is 8 Decimals
-        name = &quot;Crypto Alley Shares&quot;;                          // Token Name
+        name = "Crypto Alley Shares";                          // Token Name
         decimals = 8;                                      // Amount of decimals for display purposes
-        symbol = &quot;CAST&quot;;                                    // Token Symbol
+        symbol = "CAST";                                    // Token Symbol
     }
 
     /* Approves and then calls the receiving contract */
@@ -109,7 +109,7 @@ contract CAST is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

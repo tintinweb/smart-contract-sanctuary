@@ -8,7 +8,7 @@ My Ethereum address : 0x13373FEdb7f8dF156E5718303897Fae2d363Cc96
 
 Description tl;dr :
 Simple trustless lottery with entries
-After the contract reaches a certain amount of ethereum or when the owner calls &quot;payWinnerManually()&quot;
+After the contract reaches a certain amount of ethereum or when the owner calls "payWinnerManually()"
 a winner gets calculated/drawed and paid out (100%, no Dev or Owner fee).
 
 */
@@ -16,7 +16,7 @@ a winner gets calculated/drawed and paid out (100%, no Dev or Owner fee).
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
     address public owner;

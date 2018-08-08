@@ -113,8 +113,8 @@ contract KVCToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;KVC&quot;;
-        name = &quot;KVC Token&quot;;
+        symbol = "KVC";
+        name = "KVC Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0x63f91cF1B5Dd18f05B38EF8F60c506179Fefd673] = _totalSupply;

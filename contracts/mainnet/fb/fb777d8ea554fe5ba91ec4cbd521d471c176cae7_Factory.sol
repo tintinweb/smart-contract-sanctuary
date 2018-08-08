@@ -16,7 +16,7 @@ contract Ownable {
 /**
  * @title OwnableImpl
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract OwnableImpl is Ownable {
     address public owner;
@@ -86,7 +86,7 @@ contract Factory {
         emit TokenCreated(tokenAddress);
         address saleAddress = create(sale);
         emit SaleCreated(saleAddress);
-        SecuredImpl(tokenAddress).transferRole(&quot;minter&quot;, saleAddress);
+        SecuredImpl(tokenAddress).transferRole("minter", saleAddress);
         OwnableImpl(tokenAddress).transferOwnership(msg.sender);
         OwnableImpl(saleAddress).transferOwnership(msg.sender);
     }

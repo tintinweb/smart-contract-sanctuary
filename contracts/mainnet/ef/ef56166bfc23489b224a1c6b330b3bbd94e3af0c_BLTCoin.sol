@@ -84,8 +84,8 @@ contract BLTCoin is ERC20Interface, Owned{
     function BLTCoin(address _owner) public{
         icoOpen = false;
         bonusCompaignOpen = false;
-        symbol = &quot;BRC&quot;;
-        name = &quot;Brotherly Coin&quot;;
+        symbol = "BRC";
+        name = "Brotherly Coin";
         decimals = 18;
         rate = 142857; //tokens per wei
         owner = _owner;

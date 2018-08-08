@@ -9,7 +9,7 @@
 *                 
 * //*** This Game Pays The Last One To Bid Before The Time Runs Out
 *
-* &quot;Now I am become Death, the destroyer of worlds&quot;
+* "Now I am become Death, the destroyer of worlds"
 *  
 * //*** Developed By:
 *   _____       _         _         _ ___ _         

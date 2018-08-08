@@ -74,7 +74,7 @@ library Rationals {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -354,7 +354,7 @@ contract ERC20 is ERC20Basic {
 contract Exchange is Pausable, RBAC {
     using SafeMath for uint256;
 
-    string constant ROLE_ORACLE = &quot;oracle&quot;;
+    string constant ROLE_ORACLE = "oracle";
 
     ERC20 baseToken;
     ERC20 dai;  // 0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359

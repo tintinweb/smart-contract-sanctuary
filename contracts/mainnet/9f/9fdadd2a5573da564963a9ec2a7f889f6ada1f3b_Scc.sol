@@ -61,9 +61,9 @@ contract Scc is StandardToken {
     function Scc() {
         balances[msg.sender] = 180000000000000000000000000;
         totalSupply = 180000000000000000000000000;
-        name = &quot;Smart Coin Cash&quot;;
+        name = "Smart Coin Cash";
         decimals = 18;
-        symbol = &quot;Scc&quot;;
+        symbol = "Scc";
         unitsOneEthCanBuy = 58400;
         fundsWallet = msg.sender;
     }
@@ -79,7 +79,7 @@ contract Scc is StandardToken {
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

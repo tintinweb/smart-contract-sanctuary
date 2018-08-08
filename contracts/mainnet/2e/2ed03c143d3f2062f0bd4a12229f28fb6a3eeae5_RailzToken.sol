@@ -179,7 +179,7 @@ contract RailzToken is Owned, ERC20 {
      */
 	function RailzToken() 
 
-	ERC20 (tokenSupply,&quot;Railz&quot;,&quot;RLZ&quot;) public
+	ERC20 (tokenSupply,"Railz","RLZ") public
     {
 		owner = msg.sender;
 	}           

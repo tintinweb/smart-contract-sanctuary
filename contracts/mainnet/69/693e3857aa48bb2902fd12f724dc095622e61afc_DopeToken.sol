@@ -115,8 +115,8 @@ contract DopeToken is ERC20Interface, Owned, SafeMath {
     // ------------------------------------------------------------------------
     // - MAKE CHANGES HERE!
     function DopeToken() public {
-        symbol = &quot;0DOPE&quot;;
-        name = &quot;Black Girls Code DopeToken&quot;;
+        symbol = "0DOPE";
+        name = "Black Girls Code DopeToken";
         decimals = 18;
         _totalSupply = 10000000000000000000000; //1000 tokens
         balances[0xe2f54E82B8E413537B95e739C2e80d99dE40C67B] = _totalSupply;

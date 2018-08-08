@@ -113,8 +113,8 @@ contract GetRichQuick is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GetRichQuick() public {
-        symbol = &quot;GRQ&quot;;
-        name = &quot;Get Rich Quick&quot;;
+        symbol = "GRQ";
+        name = "Get Rich Quick";
         decimals = 18;
         _totalSupply = 21000000;
         balances[0x3eB8198e98E717f569Eeb06F98DAD8C9d1069374] = _totalSupply;

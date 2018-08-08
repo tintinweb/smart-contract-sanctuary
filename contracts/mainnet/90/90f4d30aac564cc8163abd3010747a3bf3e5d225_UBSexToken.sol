@@ -82,7 +82,7 @@ contract BasicToken is ERC20Basic {
       if (transferable) {
           _;
       } else {
-          LiquidityAlarm(&quot;The liquidity is switched off&quot;);
+          LiquidityAlarm("The liquidity is switched off");
           throw;
       }
   }
@@ -107,7 +107,7 @@ contract BasicToken is ERC20Basic {
   
   function transfer(address _to, uint _value) onlyPayloadSize(2 * 32) unFrozenAccount onlyTransferable {
     if (frozenAccount[_to]) {
-        InvalidAccount(_to, &quot;The receiver account is frozen&quot;);
+        InvalidAccount(_to, "The receiver account is frozen");
     } else {
         balances[msg.sender] = balances[msg.sender].sub(_value);
         balances[_to] = balances[_to].add(_value);
@@ -181,8 +181,8 @@ contract StandardToken is BasicToken {
 
 
 contract UBSexToken is StandardToken {
-    string public name = &quot;UBSex&quot;;
-    string public symbol = &quot;UBS&quot;;
+    string public name = "UBSex";
+    string public symbol = "UBS";
     uint public decimals = 18;
     /**
      * CONSTRUCTOR, This address will be : 0x...

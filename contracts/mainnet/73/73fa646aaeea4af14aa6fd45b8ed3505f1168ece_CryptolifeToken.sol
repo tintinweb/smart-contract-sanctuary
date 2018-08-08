@@ -108,9 +108,9 @@ contract CryptolifeToken is StandardToken {
 
     //Ham khoitao token
     function CryptolifeToken() {
-        name = &quot;LTR Test&quot;;        // Ten cua token
+        name = "LTR Test";        // Ten cua token
         decimals = 18;                     // Token khong co phan thapphan (so nguyen thoi)
-        symbol = &quot;LTRTest&quot;;                   // Ma token
+        symbol = "LTRTest";                   // Ma token
         balances[msg.sender] = 100000000000 * (10 ** uint256(decimals));      // Nguoi phathanh se namgiu toanbo token  
 		totalSupply = 100000000000 * (10 ** uint256(decimals));               // Tong cung token 100000000000 * (10 ** uint256(decimals))
     }
@@ -123,7 +123,7 @@ contract CryptolifeToken is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        //if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) 
+        //if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) 
         return true;
     }
 }

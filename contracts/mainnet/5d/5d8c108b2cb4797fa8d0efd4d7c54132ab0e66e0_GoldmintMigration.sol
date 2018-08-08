@@ -172,8 +172,8 @@ contract GoldFee is CreatorEnabled {
 
 contract Gold is StdToken, CreatorEnabled {
 
-    string public constant name = &quot;GoldMint GOLD cryptoasset&quot;;
-    string public constant symbol = &quot;GOLD&quot;;
+    string public constant name = "GoldMint GOLD cryptoasset";
+    string public constant symbol = "GOLD";
     uint8 public constant decimals = 18;
 
     // this is used to send fees (that is then distributed as rewards)

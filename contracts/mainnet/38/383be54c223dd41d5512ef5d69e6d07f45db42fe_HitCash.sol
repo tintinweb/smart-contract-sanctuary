@@ -113,8 +113,8 @@ contract HitCash is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HitCash() public {
-        symbol = &quot;0HCH&quot;;
-        name = &quot;0 Hit Cash&quot;;
+        symbol = "0HCH";
+        name = "0 Hit Cash";
         decimals = 8;
         _totalSupply = 100000000000000000;
         balances[0xd37f5e615E9f21971E9fa2D56BcA3A44e49438EA] = _totalSupply;

@@ -29,8 +29,8 @@ contract ERC20Burnable is ERC20Interface
 contract VRFtoken is ERC20Burnable
 {
     // Public data
-    string public constant name = &quot;VRF token&quot;;
-    string public constant symbol = &quot;VRF&quot;;
+    string public constant name = "VRF token";
+    string public constant symbol = "VRF";
     uint256 public constant decimals = 2; 
     address public owner;  
 

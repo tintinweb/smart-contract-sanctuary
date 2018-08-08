@@ -15,9 +15,9 @@ contract WISDOMCOIN {
     function WISDOMCOIN() {
 
          initialSupply = 500000000;
-         name =&quot;WISDOMCOIN&quot;;
+         name ="WISDOMCOIN";
         decimals = 5;
-         symbol = &quot;WISDOM&quot;;
+         symbol = "WISDOM";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

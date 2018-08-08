@@ -56,8 +56,8 @@ contract TokenCC is ERC20 {
 
     address private _owner;
     bool private _isStopped = false;
-    string private _name = &quot;CChain CCHN&quot;;
-    string private _symbol = &quot;CCHN&quot;;
+    string private _name = "CChain CCHN";
+    string private _symbol = "CCHN";
     uint8 private _decimals = 18;
     uint256 private _totalSupply;
 

@@ -16,9 +16,9 @@ contract Ribble {
     function Ribble() {
 
          initialSupply = 100000000;
-         name =&quot;Ribble&quot;;
+         name ="Ribble";
         decimals = 18;
-         symbol = &quot;XRB&quot;;
+         symbol = "XRB";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

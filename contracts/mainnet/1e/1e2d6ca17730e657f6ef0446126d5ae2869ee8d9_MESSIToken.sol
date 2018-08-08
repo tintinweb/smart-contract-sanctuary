@@ -70,8 +70,8 @@ contract MESSIToken is ERC20 {
   mapping(address => mapping (address => uint256)) allowed;
  
   // Token Info
-  string public name = &quot;MESSI&quot;;
-  string public symbol = &quot;MESSI&quot;;
+  string public name = "MESSI";
+  string public symbol = "MESSI";
   uint8 public decimals = 18;
   
   // Token Cap

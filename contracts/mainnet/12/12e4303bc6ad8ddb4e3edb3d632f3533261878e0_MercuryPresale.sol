@@ -97,8 +97,8 @@ contract MercuryToken is ERC20, Ownable {
   mapping(address => uint) balances;
   mapping (address => mapping (address => uint)) allowed;
 
-  string public constant name = &quot;MERCURY TOKEN&quot;;
-  string public constant symbol = &quot;MRC&quot;;
+  string public constant name = "MERCURY TOKEN";
+  string public constant symbol = "MRC";
   uint8 public constant decimals = 18;
   bool public mintingFinished = false;
 

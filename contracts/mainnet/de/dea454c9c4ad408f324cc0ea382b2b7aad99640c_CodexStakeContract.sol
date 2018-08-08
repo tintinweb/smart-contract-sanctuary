@@ -52,7 +52,7 @@ contract CodexStakeContractInterface is ERC900 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -255,7 +255,7 @@ contract ERC900BasicStakeContract is ERC900 {
   modifier canStake(address _address, uint256 _amount) {
     require(
       stakingToken.transferFrom(_address, this, _amount),
-      &quot;Stake required&quot;);
+      "Stake required");
 
     _;
   }
@@ -471,18 +471,18 @@ contract ERC900BasicStakeContract is ERC900 {
     // Check that the current stake has unlocked & matches the unstake amount
     require(
       personalStake.unlockedTimestamp <= block.timestamp,
-      &quot;The current stake hasn&#39;t unlocked yet&quot;);
+      "The current stake hasn&#39;t unlocked yet");
 
     require(
       personalStake.actualAmount == _amount,
-      &quot;The unstake amount does not match the current stake&quot;);
+      "The unstake amount does not match the current stake");
 
     // Transfer the staked tokens from this contract back to the sender
     // Notice that we are using transfer instead of transferFrom here, so
     //  no approval is needed beforehand.
     require(
       stakingToken.transfer(msg.sender, _amount),
-      &quot;Unable to withdraw stake&quot;);
+      "Unable to withdraw stake");
 
     stakeHolders[personalStake.stakedFor].totalStakedFor = stakeHolders[personalStake.stakedFor]
       .totalStakedFor.sub(personalStake.actualAmount);
@@ -547,7 +547,7 @@ contract ERC900CreditsStakeContract is ERC900BasicStakeContract, Ownable {
   {
     require(
       creditBalances[_user] >= _amount,
-      &quot;Insufficient balance&quot;);
+      "Insufficient balance");
 
     creditBalances[_user] = creditBalances[_user].sub(_amount);
   }
@@ -617,7 +617,7 @@ contract ERC900CreditsStakeContract is ERC900BasicStakeContract, Ownable {
   {
     require(
       _lockInDuration >= defaultLockInDuration,
-      &quot;Insufficient stake duration&quot;);
+      "Insufficient stake duration");
 
     super.createStake(
       _user,
@@ -649,7 +649,7 @@ contract ERC900CreditsStakeContract is ERC900BasicStakeContract, Ownable {
 
     require(
       _amount >= divisor,
-      &quot;Insufficient amount&quot;);
+      "Insufficient amount");
 
     // NOTE: Truncation is intentional here
     // If a user stakes for less than the minimum duration, they are awarded with 0 credits

@@ -116,8 +116,8 @@ contract RaiblocksClassic is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RaiblocksClassic() public {
-        symbol = &quot;XRC&quot;;
-        name = &quot;Raiblocks Classic&quot;;
+        symbol = "XRC";
+        name = "Raiblocks Classic";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 15 weeks;

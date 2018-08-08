@@ -45,8 +45,8 @@ contract QPSEToken is IERC20 {
     using SafeMath for uint256;
 
     // Token properties
-    string public name = &quot;Qompass&quot;;
-    string public symbol = &quot;QPSE&quot;;
+    string public name = "Qompass";
+    string public symbol = "QPSE";
     uint public decimals = 18;
 
     uint private constant STAGE_PRE_ICO = 1;

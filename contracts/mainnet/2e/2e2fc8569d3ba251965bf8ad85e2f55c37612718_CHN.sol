@@ -91,9 +91,9 @@ contract SafeMath {
  */
 contract CHN is ERC223, SafeMath {
 
-    string public name = &quot;Colan Coin&quot;;
+    string public name = "Colan Coin";
 
-    string public symbol = &quot;Colan&quot;;
+    string public symbol = "Colan";
 
     uint8 public decimals = 8;
 

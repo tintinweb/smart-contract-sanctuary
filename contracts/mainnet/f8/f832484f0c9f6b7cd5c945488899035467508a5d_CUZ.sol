@@ -288,8 +288,8 @@ contract CappedToken is MintableToken {
 }
 
 contract CUZ is CappedToken {
-  string public name = &quot;CUZ&quot;;
-  string public symbol = &quot;CUZ&quot;;
+  string public name = "CUZ";
+  string public symbol = "CUZ";
   uint8 public decimals = 18;
 
   function CUZ() public

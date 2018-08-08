@@ -223,7 +223,7 @@ contract MyAdvancedToken is owned, TokenERC20 {
     /// @notice Allow users to buy tokens for `newBuyPrice` eth and sell tokens for `newSellPrice` eth
     /// @param newSellPrice Price the users can sell to the contract
     /// @param newBuyPrice Price users can buy from the contract
-	/// &quot;2000&quot;,&quot;2500&quot;  代币个数
+	/// "2000","2500"  代币个数
     function setPrices(uint256 newSellPrice, uint256 newBuyPrice) onlyOwner public {
         sellPrice = newSellPrice;
         buyPrice = newBuyPrice;

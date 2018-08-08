@@ -279,7 +279,7 @@ contract CryptoFamousStorage is CryptoFamousOwnership {
 
   /// @dev if we fail to send any value to a Card&#39;s previous owner as part of the
   /// invite/steal transaction we&#39;ll hold it in this contract. This mapping records the amount
-  /// owed to that &quot;previous owner&quot;.
+  /// owed to that "previous owner".
   mapping (address => uint256) public addressToFailedOldOwnerTransferAmount;
   /// @dev total amount of failed old owner transfers
   uint256 public totalFailedOldOwnerTransferAmounts;
@@ -485,7 +485,7 @@ contract CryptoFamous is CryptoFamousBase {
 
     // mimicking eth_sign.
     function prefixed(bytes32 hash) private pure returns (bytes32) {
-        return keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash);
+        return keccak256("\x19Ethereum Signed Message:\n32", hash);
     }
 
     function claimTwitterId(uint256 _twitterId, address _claimerAddress, uint8 _v, bytes32 _r, bytes32 _s) external whenNotPaused returns (uint256) {
@@ -617,7 +617,7 @@ contract CryptoFamous is CryptoFamousBase {
           return _claimIfNeededThenSteal(_socialNetworkTypeToClaim, _socialIdToClaim, _claimerAddress, _v, _r, _s, _socialNetworkTypeToSteal, _socialIdToSteal);
     }
 
-    /// @dev &quot;Convenience&quot; function allowing us to avoid forcing the user to go through an extra
+    /// @dev "Convenience" function allowing us to avoid forcing the user to go through an extra
     /// Ethereum transactions if they really, really want to do their first steal right now.
     function _claimIfNeededThenSteal(
       uint256 _socialNetworkTypeToClaim,

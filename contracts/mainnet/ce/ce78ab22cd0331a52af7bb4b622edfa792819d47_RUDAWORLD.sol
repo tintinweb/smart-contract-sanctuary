@@ -113,8 +113,8 @@ contract RUDAWORLD is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RUDAWORLD() public {
-        symbol = &quot;RUDA&quot;;
-        name = &quot;RUDAWORLD&quot;;
+        symbol = "RUDA";
+        name = "RUDAWORLD";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x524D38666F6B53E25DaB7cEcE0D72585970Bd6ad] = _totalSupply;

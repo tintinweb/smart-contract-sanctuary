@@ -95,7 +95,7 @@ contract BlockchainFUN is StandardToken {
   string public name;
   string public symbol;
   uint256 public constant decimals = 18;
-  string public constant version = &quot;1.0&quot;;
+  string public constant version = "1.0";
   uint256 public total;   // 20 *10^8 HNC total
 
   function BlockchainFUN(

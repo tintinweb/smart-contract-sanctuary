@@ -217,7 +217,7 @@ contract RBACWithAdmin is RBAC {
     /**
      * A constant role name for indicating admins.
      */
-    string public constant ROLE_ADMIN = &quot;admin&quot;;
+    string public constant ROLE_ADMIN = "admin";
 
     /**
      * @dev modifier to scope access to admins
@@ -267,7 +267,7 @@ contract RBACWithAdmin is RBAC {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;

@@ -105,9 +105,9 @@ contract BlockClout is StandardToken {
     function BlockClout() {
         balances[msg.sender] = 112000000000000000000000000;
         totalSupply = 112000000000000000000000000;
-        name = &quot;BlockClout&quot;;
+        name = "BlockClout";
         decimals = 18;
-        symbol = &quot;CLOUT&quot;;
+        symbol = "CLOUT";
         unitsOneEthCanBuy = 7754;
         fundsWallet = msg.sender;
     }
@@ -131,7 +131,7 @@ contract BlockClout is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
     /**

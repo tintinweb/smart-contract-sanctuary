@@ -74,9 +74,9 @@ contract ERC20Interface {
 
 contract FixedSupplyToken is ERC20Interface {
 
-    string public constant symbol = &quot;SPCD&quot;;
+    string public constant symbol = "SPCD";
 
-    string public constant name = &quot;Space Dollars&quot;;
+    string public constant name = "Space Dollars";
 
     uint8 public constant decimals = 4;
 
@@ -180,7 +180,7 @@ contract FixedSupplyToken is ERC20Interface {
 
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
 
-    // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
 
     // fees in sub-currencies; the command should fail unless the _from account has
 

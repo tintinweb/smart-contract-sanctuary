@@ -113,8 +113,8 @@ contract DriveholicToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DriveholicToken() public {
-        symbol = &quot;DRVH&quot;;
-        name = &quot;Driveholic Token&quot;;
+        symbol = "DRVH";
+        name = "Driveholic Token";
         decimals = 18;
         _totalSupply = 900000000000000000000000000;
         balances[0xC1Af095F277B6e0327862C044dFad6A6BB484C08] = _totalSupply;

@@ -229,8 +229,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract U24Y is StandardToken {
 
-  string public constant name = &quot;UM24Y&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;U24Y&quot;; // solium-disable-line uppercase
+  string public constant name = "UM24Y"; // solium-disable-line uppercase
+  string public constant symbol = "U24Y"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));
@@ -253,7 +253,7 @@ contract U24Y is StandardToken {
 *
 *Permission is hereby granted, free of charge, to any person obtaining
 *a copy of this software and associated documentation files (the
-*&quot;Software&quot;), to deal in the Software without restriction, including
+*"Software"), to deal in the Software without restriction, including
 *without limitation the rights to use, copy, modify, merge, publish,
 *distribute, sublicense, and/or sell copies of the Software, and to
 *permit persons to whom the Software is furnished to do so, subject to
@@ -262,7 +262,7 @@ contract U24Y is StandardToken {
 *The above copyright notice and this permission notice shall be included
 *in all copies or substantial portions of the Software.
 *
-*THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+*THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
 *OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 *MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 *IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY

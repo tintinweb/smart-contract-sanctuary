@@ -148,9 +148,9 @@ contract Utils {
     ERC20 Standard Token implementation
 */
 contract ERC20Token is IERC20Token, Utils {
-    string public standard = &quot;Token 0.1&quot;;
-    string public name = &quot;&quot;;
-    string public symbol = &quot;&quot;;
+    string public standard = "Token 0.1";
+    string public name = "";
+    string public symbol = "";
     uint8 public decimals = 0;
     uint256 public totalSupply = 0;
     mapping (address => uint256) public balanceOf;
@@ -308,7 +308,7 @@ contract ISmartToken is IOwned, IERC20Token {
 
 
 contract SmartToken is ISmartToken, Owned, ERC20Token, TokenHolder {
-    string public version = &quot;0.3&quot;;
+    string public version = "0.3";
     bool public transfersEnabled = true;
     event NewSmartToken(address _token);
     event Issuance(uint256 _amount);

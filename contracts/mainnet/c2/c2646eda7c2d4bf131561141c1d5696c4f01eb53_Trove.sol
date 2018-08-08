@@ -237,8 +237,8 @@ library SafeMath {
 }
 
 contract Trove is BurnableToken, StandardToken {
-    string public name = &quot;Trove&quot;;
-    string public symbol = &quot;TRV&quot;;
+    string public name = "Trove";
+    string public symbol = "TRV";
     uint8 public decimals = 18;
 
     constructor() public {

@@ -28,8 +28,8 @@ contract IM {
     ) public {
         totalSupply = 200000000000000000000000000;                                 // Update total supply with the decimal amount
         balanceOf[msg.sender] = 200000000000000000000000000;                       // Give the creator all initial tokens
-        name = &quot;Impero&quot;;                                                           // Set the name for display purposes
-        symbol = &quot;IM&quot;;                                                             // Set the symbol for display purposes
+        name = "Impero";                                                           // Set the name for display purposes
+        symbol = "IM";                                                             // Set the symbol for display purposes
     }
 
     /**

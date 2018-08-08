@@ -89,10 +89,10 @@ contract XAIN_ERC20 is Ownable {
 
 
     // Public variables for the XAIN ERC20 XNP token contract
-    string public constant standard = &quot;XAIN erc20 and Genesis&quot;;
+    string public constant standard = "XAIN erc20 and Genesis";
     uint256 public constant decimals = 18;   // hardcoded to be a constant
-    string public name = &quot;XAIN&quot;;
-    string public symbol = &quot;XNP&quot;;
+    string public name = "XAIN";
+    string public symbol = "XNP";
     uint256 public totalSupply;
 
     event Transfer(address indexed from, address indexed to, uint256 value);

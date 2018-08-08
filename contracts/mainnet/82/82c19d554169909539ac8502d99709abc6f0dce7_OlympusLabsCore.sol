@@ -177,7 +177,7 @@ contract RBAC {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
+  string public constant ROLE_ADMIN = "admin";
 
   /**
    * @dev constructor. Sets msg.sender as admin by default
@@ -310,16 +310,16 @@ contract RBAC {
 // File: contracts/permission/PermissionProviderInterface.sol
 
 contract PermissionProviderInterface is Provider, RBAC {
-    string public constant ROLE_ADMIN = &quot;admin&quot;;
-    string public constant ROLE_CORE = &quot;core&quot;;
-    string public constant ROLE_STORAGE = &quot;storage&quot;;
-    string public constant ROLE_CORE_OWNER = &quot;CoreOwner&quot;;
-    string public constant ROLE_STRATEGY_OWNER = &quot;StrategyOwner&quot;;
-    string public constant ROLE_PRICE_OWNER = &quot;PriceOwner&quot;;
-    string public constant ROLE_EXCHANGE_OWNER = &quot;ExchangeOwner&quot;;
-    string public constant ROLE_EXCHANGE_ADAPTER_OWNER = &quot;ExchangeAdapterOwner&quot;;
-    string public constant ROLE_STORAGE_OWNER = &quot;StorageOwner&quot;;
-    string public constant ROLE_WHITELIST_OWNER = &quot;WhitelistOwner&quot;;
+    string public constant ROLE_ADMIN = "admin";
+    string public constant ROLE_CORE = "core";
+    string public constant ROLE_STORAGE = "storage";
+    string public constant ROLE_CORE_OWNER = "CoreOwner";
+    string public constant ROLE_STRATEGY_OWNER = "StrategyOwner";
+    string public constant ROLE_PRICE_OWNER = "PriceOwner";
+    string public constant ROLE_EXCHANGE_OWNER = "ExchangeOwner";
+    string public constant ROLE_EXCHANGE_ADAPTER_OWNER = "ExchangeAdapterOwner";
+    string public constant ROLE_STORAGE_OWNER = "StorageOwner";
+    string public constant ROLE_WHITELIST_OWNER = "WhitelistOwner";
 
     modifier onlyAdmin()
     {
@@ -624,7 +624,7 @@ contract OlympusStorage is Manageable, OlympusStorageInterface {
     mapping(uint => IndexOrder) public orders;
     mapping(uint => mapping(address => uint)) public orderTokenAmounts;
     uint public orderId = 1000000;
-    bytes32 constant private dataKind = &quot;Order&quot;;
+    bytes32 constant private dataKind = "Order";
     OlympusStorageExtendedInterface internal olympusStorageExtended = OlympusStorageExtendedInterface(address(0xcEb51bD598ABb0caa8d2Da30D4D760f08936547B));
 
     modifier onlyOwner() {
@@ -796,10 +796,10 @@ contract OlympusStorage is Manageable, OlympusStorageInterface {
         TypeDefinitions.ProviderType _type = TypeDefinitions.ProviderType(_id);
 
         if(_type == TypeDefinitions.ProviderType.ExtendedStorage) {
-            emit Log(&quot;ExtendedStorage&quot;);
+            emit Log("ExtendedStorage");
             olympusStorageExtended = OlympusStorageExtendedInterface(_providerAddress);
         } else {
-            emit Log(&quot;Unknown provider type supplied.&quot;);
+            emit Log("Unknown provider type supplied.");
             revert();
         }
 
@@ -993,22 +993,22 @@ contract OlympusLabsCore is Manageable {
         TypeDefinitions.ProviderType _type = TypeDefinitions.ProviderType(_id);
 
         if(_type == TypeDefinitions.ProviderType.Strategy) {
-            emit Log(&quot;StrategyProvider&quot;);
+            emit Log("StrategyProvider");
             strategyProvider = StrategyProviderInterface(_providerAddress);
         } else if(_type == TypeDefinitions.ProviderType.Exchange) {
-            emit Log(&quot;ExchangeProvider&quot;);
+            emit Log("ExchangeProvider");
             exchangeProvider = ExchangeProviderInterface(_providerAddress);
         } else if(_type == TypeDefinitions.ProviderType.Price) {
-            emit Log(&quot;PriceProvider&quot;);
+            emit Log("PriceProvider");
             priceProvider = PriceProviderInterface(_providerAddress);
         } else if(_type == TypeDefinitions.ProviderType.Storage) {
-            emit Log(&quot;StorageProvider&quot;);
+            emit Log("StorageProvider");
             olympusStorage = OlympusStorageInterface(_providerAddress);
         } else if(_type == TypeDefinitions.ProviderType.Whitelist) {
-            emit Log(&quot;WhitelistProvider&quot;);
+            emit Log("WhitelistProvider");
             whitelistProvider = WhitelistProviderInterface(_providerAddress);
         } else {
-            emit Log(&quot;Unknown provider type supplied.&quot;);
+            emit Log("Unknown provider type supplied.");
             revert();
         }
 
@@ -1064,13 +1064,13 @@ contract OlympusLabsCore is Manageable {
             }
             // token has to be supported by exchange provider.
             if(!exchangeProvider.checkTokenSupported(ERC20(tokens[i]))){
-                emit Log(&quot;Exchange provider doesn&#39;t support&quot;);
+                emit Log("Exchange provider doesn&#39;t support");
                 revert();
             }
 
             // check if price provider supports it.
             if(!priceProvider.checkTokenSupported(tokens[i])){
-                emit Log(&quot;Price provider doesn&#39;t support&quot;);
+                emit Log("Price provider doesn&#39;t support");
                 revert();
             }
 

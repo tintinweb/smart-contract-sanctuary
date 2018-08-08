@@ -15,9 +15,9 @@ contract WorldReserveCurrency {
     function WorldReserveCurrency() {
 
          initialSupply = 1540000000;
-         name =&quot;worldreservecurrency&quot;;
+         name ="worldreservecurrency";
         decimals = 8;
-         symbol = &quot;wrc&quot;;
+         symbol = "wrc";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

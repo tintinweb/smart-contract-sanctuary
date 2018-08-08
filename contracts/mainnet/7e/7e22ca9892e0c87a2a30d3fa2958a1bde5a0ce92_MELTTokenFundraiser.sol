@@ -769,8 +769,8 @@ contract BurnableToken is StandardToken {
 contract MELTToken is MintableToken, BurnableToken {
   constructor(address _minter)
     StandardToken(
-      &quot;MELT TOKEN&quot;,   // Token name
-      &quot;MELT&quot;, // Token symbol
+      "MELT TOKEN",   // Token name
+      "MELT", // Token symbol
       18  // Token decimals
     )
     

@@ -113,8 +113,8 @@ contract IMARK is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IMARK() public {
-        symbol = &quot;IMARK&quot;;
-        name = &quot;IMARK&quot;;
+        symbol = "IMARK";
+        name = "IMARK";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0x61B7FdDB56bF0182dE552B893de2c2a2fD025b07] = _totalSupply;

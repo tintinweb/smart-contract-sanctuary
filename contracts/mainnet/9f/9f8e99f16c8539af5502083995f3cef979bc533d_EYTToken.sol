@@ -89,8 +89,8 @@ contract EYTToken is UnboundedRegularToken {
 
     uint public totalSupply = 10*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;EYinTong&quot;;
-    string constant public symbol = &quot;EYT&quot;;
+    string constant public name = "EYinTong";
+    string constant public symbol = "EYT";
 
     function EYTToken() {
         balances[msg.sender] = totalSupply;

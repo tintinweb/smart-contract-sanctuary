@@ -211,8 +211,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract CodeMailStamp is StandardToken
 {
-    string constant public name = &quot;CodeMailStamp&quot;;
-    string constant public symbol = &quot;STPZ&quot;;
+    string constant public name = "CodeMailStamp";
+    string constant public symbol = "STPZ";
     uint8 constant public decimals = 18;
 
     function CodeMailStamp() public

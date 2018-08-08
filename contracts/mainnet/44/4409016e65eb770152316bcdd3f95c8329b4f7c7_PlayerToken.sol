@@ -92,8 +92,8 @@ contract PlayerToken is ERC721, FMWorldAccessControl {
         uint256 position;
     }
 
-    string public name = &quot;Football Manager Player&quot;;
-    string public symbol = &quot;FMP&quot;;
+    string public name = "Football Manager Player";
+    string public symbol = "FMP";
 
     Player[] public players;
 

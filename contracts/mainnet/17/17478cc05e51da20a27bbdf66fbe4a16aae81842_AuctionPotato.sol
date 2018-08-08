@@ -111,8 +111,8 @@ contract AuctionPotato {
         
         started = false;
         
-        name = &quot;Minotaur&quot;;
-        infoUrl = &quot;https://chibifighters.io&quot;;
+        name = "Minotaur";
+        infoUrl = "https://chibifighters.io";
         
     }
 

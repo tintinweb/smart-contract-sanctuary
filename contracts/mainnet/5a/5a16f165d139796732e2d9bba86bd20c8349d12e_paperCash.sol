@@ -1,7 +1,7 @@
 pragma solidity ^0.4.11;
 
 
-//import &quot;../zeppelin-solidity/contracts/ownership/Ownable.sol&quot;;
+//import "../zeppelin-solidity/contracts/ownership/Ownable.sol";
 
 contract paperCash {
 	mapping (bytes32 => uint) grants;

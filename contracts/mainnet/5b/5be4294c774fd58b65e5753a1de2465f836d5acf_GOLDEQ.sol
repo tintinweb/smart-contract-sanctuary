@@ -23,8 +23,8 @@ contract GOLDEQ {
     function GOLDEQ() {
         balanceOf[msg.sender] =  10000000000 * 100000000;              // Give the creator all initial tokens
         totalSupply =  10000000000 * 100000000;                        // Update total supply
-        name = &quot;GOLDEQ&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GLDQ&quot;;                               // Set the symbol for display purposes
+        name = "GOLDEQ";                                   // Set the name for display purposes
+        symbol = "GLDQ";                               // Set the symbol for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
     }
 

@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract Darks {
 
-    string public name = &quot;Darks&quot;;      //  token name
-    string public symbol = &quot;Dark&quot;;           //  token symbol
+    string public name = "Darks";      //  token name
+    string public symbol = "Dark";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

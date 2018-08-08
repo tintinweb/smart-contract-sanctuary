@@ -19,7 +19,7 @@ pragma solidity ^0.4.23;
 // 2. the ownership of the devfee can transfer through sacrificing ShitClones
 //  a. the new requirement will be how many remaining ShitClones you have after the sacrifice
 //  b. you cannot sacrifice ShitClones if you are the ShitClonesLord
-// 3. the &quot;free&quot; 500 ShitClones cost 0.001 eth (in line with the mining fee)
+// 3. the "free" 500 ShitClones cost 0.001 eth (in line with the mining fee)
 // bots should have a harder time, and whales can compete for the devfee
 // 4. UI is for peasants, this is mew sniper territory. Step away to a safe distance.
 // 5. I made some changes to the contract that might have fucked it, or not.

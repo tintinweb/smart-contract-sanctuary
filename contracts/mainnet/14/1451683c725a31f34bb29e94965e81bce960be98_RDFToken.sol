@@ -113,8 +113,8 @@ contract RDFToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function RDFToken() public {
-        symbol = &quot;RDF&quot;;
-        name = &quot;Ready Fiat&quot;;
+        symbol = "RDF";
+        name = "Ready Fiat";
         decimals = 12;
         _totalSupply = 10000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

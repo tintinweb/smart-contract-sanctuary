@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	AgroHolding_IV				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	AgroHolding_IV		&quot;	;
-	string	public	constant	symbol =	&quot;	AGRIV		&quot;	;
+	string	public	constant	name =	"	AgroHolding_IV		"	;
+	string	public	constant	symbol =	"	AGRIV		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

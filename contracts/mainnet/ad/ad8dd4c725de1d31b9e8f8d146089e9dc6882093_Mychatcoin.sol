@@ -30,8 +30,8 @@ contract Mychatcoin{
     ) public {
         totalSupply =7000000000000;
         balanceOf[msg.sender] = 7000000000000;                // Give the creator all initial tokens
-        name = &quot;Mychatcoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;MIT&quot;;                               // Set the symbol for display purposes
+        name = "Mychatcoin";                                   // Set the name for display purposes
+        symbol = "MIT";                               // Set the symbol for display purposes
     }
 
     /**

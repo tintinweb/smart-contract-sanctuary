@@ -178,9 +178,9 @@ contract BurnableToken is StandardToken {
 
 contract TMBToken is BurnableToken {
     
-  string public constant name = &quot;Teambrella Token&quot;;
+  string public constant name = "Teambrella Token";
     
-  string public constant symbol = &quot;TMB&quot;;
+  string public constant symbol = "TMB";
     
   uint32 public constant decimals = 18;
     

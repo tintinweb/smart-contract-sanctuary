@@ -108,8 +108,8 @@ contract CONNECT is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Token() public {
-        symbol =&quot;CNT&quot;;
-        name = &quot;CONNECT Token&quot;;
+        symbol ="CNT";
+        name = "CONNECT Token";
         decimals = 18;
         _totalSupply = 25000000000000000000000000;
         balances[0x201c07fED4B8842F60c5752361f3486A87da4a5b] = _totalSupply;

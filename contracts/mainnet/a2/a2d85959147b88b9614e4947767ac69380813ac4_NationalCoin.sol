@@ -16,9 +16,9 @@ contract NationalCoin {
     function NationalCoin() {
 
          initialSupply = 50000000;
-         name =&quot;NationalCoin&quot;;
+         name ="NationalCoin";
         decimals = 2;
-         symbol = &quot;NCoin&quot;;
+         symbol = "NCoin";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

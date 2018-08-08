@@ -3,7 +3,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -497,12 +497,12 @@ contract DetailedERC20 is ERC20 {
 }
 
 
-//import &quot;zeppelin-solidity/contracts/math/SafeMath.sol&quot;;
-//import &quot;zeppelin-solidity/contracts/token/ERC20/DetailedERC20.sol&quot;;
-//import &quot;zeppelin-solidity/contracts/token/ERC20/PausableToken.sol&quot;;
-//import &quot;zeppelin-solidity/contracts/token/ERC20/CappedToken.sol&quot;;
-//import &quot;zeppelin-solidity/contracts/token/ERC20/BurnableToken.sol&quot;;
-//import &quot;zeppelin-solidity/contracts/token/ERC20/TokenTimelock.sol&quot;;
+//import "zeppelin-solidity/contracts/math/SafeMath.sol";
+//import "zeppelin-solidity/contracts/token/ERC20/DetailedERC20.sol";
+//import "zeppelin-solidity/contracts/token/ERC20/PausableToken.sol";
+//import "zeppelin-solidity/contracts/token/ERC20/CappedToken.sol";
+//import "zeppelin-solidity/contracts/token/ERC20/BurnableToken.sol";
+//import "zeppelin-solidity/contracts/token/ERC20/TokenTimelock.sol";
 
 
 
@@ -515,7 +515,7 @@ contract SportXToken is DetailedERC20, PausableToken, CappedToken,BurnableToken 
   mapping (address => TokenTimelock) private timelock;
 
   function SportXToken() public 
-  DetailedERC20(&quot;SportX Token&quot;, &quot;SOX&quot;, 4) 
+  DetailedERC20("SportX Token", "SOX", 4) 
   CappedToken(TOTAL_SUPPLY)  { }
 
   function mintAndLock(address to, uint256 amount, uint256 releaseTime) onlyOwner public {

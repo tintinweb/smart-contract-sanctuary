@@ -9,7 +9,7 @@ pragma solidity ^0.4.23;
 // Telegram News: @deltaico
 // CEO Nechesov Andrey http://facebook.com/Nechesov     
 // Telegram: @Nechesov
-// Ltd. &quot;Delta&quot;
+// Ltd. "Delta"
 // Working with ERC20 contract https://etherscan.io/address/0xf85a2e95fa30d005f629cbe6c6d2887d979fff2a                  
 // ----------------------------------------------------------------------------------------------
    
@@ -39,7 +39,7 @@ contract Delta {
 
         require(tokens_buy > 0);
 
-        if(!c.call(bytes4(sha3(&quot;transferFrom(address,address,uint256)&quot;)),owner, msg.sender,tokens_buy)){
+        if(!c.call(bytes4(sha3("transferFrom(address,address,uint256)")),owner, msg.sender,tokens_buy)){
         	return false;
         }
 

@@ -137,8 +137,8 @@ contract StandardToken {
  * @author Yangyu - <<span class="__cf_email__" data-cfemail="3f465e5158464a7f4f4a534c5e4d">[email&#160;protected]</span>>
  */
 contract TiValueToken is StandardToken {
-    string public constant NAME = &quot;TiValue&quot;;
-    string public constant SYMBOL = &quot;TV&quot;;
+    string public constant NAME = "TiValue";
+    string public constant SYMBOL = "TV";
     uint public constant DECIMALS = 5;
     uint256 public constant INITIAL_SUPPLY = 21000000000000;
 

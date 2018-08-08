@@ -228,9 +228,9 @@ contract PlusPay is ERC20Interface, Owned, SafeMath {
 
     function PlusPay() public {
 
-        symbol = &quot;PlusPay&quot;;
+        symbol = "PlusPay";
 
-        name = &quot;PlusPay&quot;;
+        name = "PlusPay";
 
         decimals = 18;
 

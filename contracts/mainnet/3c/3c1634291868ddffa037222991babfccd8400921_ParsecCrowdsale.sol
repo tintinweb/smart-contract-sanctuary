@@ -71,8 +71,8 @@ interface tokenRecipient {
 
 contract ParsecTokenERC20 {
     // Public variables of the token
-    string public constant name = &quot;Parsec Credits&quot;;
-    string public constant symbol = &quot;PRSC&quot;;
+    string public constant name = "Parsec Credits";
+    string public constant symbol = "PRSC";
     uint8 public decimals = 6;
     uint256 public initialSupply = 30856775800;
     uint256 public totalSupply;

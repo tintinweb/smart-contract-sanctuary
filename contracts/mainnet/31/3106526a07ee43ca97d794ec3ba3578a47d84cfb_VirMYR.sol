@@ -32,8 +32,8 @@ contract VirMYR {
     ) public {
         totalSupply = 1000000000000000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;VirMYR&quot;;                                   // Set the name for display purposes
-        symbol = &quot;VirMYR&quot;;                               // Set the symbol for display purposes
+        name = "VirMYR";                                   // Set the name for display purposes
+        symbol = "VirMYR";                               // Set the symbol for display purposes
     }
 
     /**

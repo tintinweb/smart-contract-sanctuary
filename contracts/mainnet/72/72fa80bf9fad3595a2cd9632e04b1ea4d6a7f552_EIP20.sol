@@ -60,9 +60,9 @@ contract EIP20 is EIP20Interface {
         uint256 _initialAmount = 1 * 10**27;
         balances[msg.sender] = _initialAmount;               // Give the creator all initial tokens
         totalSupply = _initialAmount;                        // Update total supply
-        name = &quot;GameRoot Token&quot;;                                   // Set the name for display purposes
+        name = "GameRoot Token";                                   // Set the name for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
-        symbol = &quot;GR&quot;;                               // Set the symbol for display purposes
+        symbol = "GR";                               // Set the symbol for display purposes
         emit Transfer(address(0), msg.sender, _initialAmount); //solhint-disable-line indent, no-unused-vars
     }
 

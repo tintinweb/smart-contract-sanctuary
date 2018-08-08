@@ -97,7 +97,7 @@ contract Zethell is ZTHReceivingContract {
         bankroll      = ZTHBANKROLL;
         currentWinner = ZTHBANKROLL;
 
-        // Approve &quot;infinite&quot; token transfer to the bankroll, as part of Zethr game requirements.
+        // Approve "infinite" token transfer to the bankroll, as part of Zethr game requirements.
         ZTHTKN = ZTHInterface(ZTHTKNADDR);
         ZTHTKN.approve(ZTHBANKROLL, 2**256 - 1);
 

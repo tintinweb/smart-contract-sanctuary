@@ -2,8 +2,8 @@ pragma solidity ^0.4.6;
 
 contract CoinPaws {
 
-  string public name = &quot;CoinPaws&quot;;
-  string public symbol = &quot;CPS&quot;;
+  string public name = "CoinPaws";
+  string public symbol = "CPS";
   uint public decimals = 10;
   uint public INITIAL_SUPPLY = 88000000000000000000;
   

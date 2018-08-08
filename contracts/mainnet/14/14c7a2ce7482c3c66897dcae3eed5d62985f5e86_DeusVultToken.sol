@@ -27,8 +27,8 @@ contract DeusVultToken {
 
 // One thing I ask from the LORD, this only do I seek: that I may dwell in the house of the LORD all the days of my life, to gaze on the beauty of the LORD and to seek him in his temple.
 
-    function name() constant returns (string) { return &quot;Deus Vult Token&quot;; }
-    function symbol() constant returns (string) { return &quot;DEUS&quot;; }
+    function name() constant returns (string) { return "Deus Vult Token"; }
+    function symbol() constant returns (string) { return "DEUS"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

@@ -342,7 +342,7 @@ contract IST20 is StandardToken, DetailedERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -570,7 +570,7 @@ contract IModule {
 
     address public securityToken;
 
-    bytes32 public constant FEE_ADMIN = &quot;FEE_ADMIN&quot;;
+    bytes32 public constant FEE_ADMIN = "FEE_ADMIN";
 
     ERC20 public polyToken;
 
@@ -594,22 +594,22 @@ contract IModule {
     modifier withPerm(bytes32 _perm) {
         bool isOwner = msg.sender == ISecurityToken(securityToken).owner();
         bool isFactory = msg.sender == factory;
-        require(isOwner||isFactory||ISecurityToken(securityToken).checkPermission(msg.sender, address(this), _perm), &quot;Permission check failed&quot;);
+        require(isOwner||isFactory||ISecurityToken(securityToken).checkPermission(msg.sender, address(this), _perm), "Permission check failed");
         _;
     }
 
     modifier onlyOwner {
-        require(msg.sender == ISecurityToken(securityToken).owner(), &quot;Sender is not owner&quot;);
+        require(msg.sender == ISecurityToken(securityToken).owner(), "Sender is not owner");
         _;
     }
 
     modifier onlyFactory {
-        require(msg.sender == factory, &quot;Sender is not factory&quot;);
+        require(msg.sender == factory, "Sender is not factory");
         _;
     }
 
     modifier onlyFactoryOwner {
-        require(msg.sender == IModuleFactory(factory).owner(), &quot;Sender is not factory owner&quot;);
+        require(msg.sender == IModuleFactory(factory).owner(), "Sender is not factory owner");
         _;
     }
 
@@ -622,7 +622,7 @@ contract IModule {
      * @notice used to withdraw the fee by the factory owner
      */
     function takeFee(uint256 _amount) public withPerm(FEE_ADMIN) returns(bool) {
-        require(polyToken.transferFrom(address(this), IModuleFactory(factory).owner(), _amount), &quot;Unable to take fee&quot;);
+        require(polyToken.transferFrom(address(this), IModuleFactory(factory).owner(), _amount), "Unable to take fee");
         return true;
     }
 }
@@ -665,7 +665,7 @@ contract CountTransferManager is ITransferManager {
     // The maximum number of concurrent token holders
     uint256 public maxHolderCount;
 
-    bytes32 public constant ADMIN = &quot;ADMIN&quot;;
+    bytes32 public constant ADMIN = "ADMIN";
 
     event LogModifyHolderCount(uint256 _oldHolderCount, uint256 _newHolderCount);
 
@@ -707,7 +707,7 @@ contract CountTransferManager is ITransferManager {
      * @notice This function returns the signature of configure function
      */
     function getInitFunction() public pure returns (bytes4) {
-        return bytes4(keccak256(&quot;configure(uint256)&quot;));
+        return bytes4(keccak256("configure(uint256)"));
     }
 
     /**

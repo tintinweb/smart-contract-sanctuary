@@ -381,8 +381,8 @@ contract FundsLocker {
 }
 
 contract KabutoCash  is MintableToken {
-    	string public constant name = &quot;Kabuto Cash&quot;;
-	string public constant symbol = &quot;KC&quot;;
+    	string public constant name = "Kabuto Cash";
+	string public constant symbol = "KC";
 	uint256 public constant DECIMALS = 15;
 	uint256 public constant decimals = 15;
 	address public constant dev = address(0x59a5ac4033db403587e8beab8996ede2f170413a);

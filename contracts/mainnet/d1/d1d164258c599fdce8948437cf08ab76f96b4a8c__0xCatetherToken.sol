@@ -253,17 +253,17 @@ contract _0xCatetherToken is ERC20Interface, Owned {
 
     constructor() public{
 
-        symbol = &quot;0xCATE&quot;;
+        symbol = "0xCATE";
 
-        name = &quot;0xCatether Token&quot;;
+        name = "0xCatether Token";
 
         decimals = 8;
         epochCount = 0;
         _totalSupply = 0;
 
         miningTarget = _MAXIMUM_TARGET;
-        challengeNumber = &quot;GENESIS_BLOCK&quot;;
-        solutionForChallenge[challengeNumber] = &quot;Yes, this is the Genesis block.&quot;;
+        challengeNumber = "GENESIS_BLOCK";
+        solutionForChallenge[challengeNumber] = "Yes, this is the Genesis block.";
 
         latestDifficultyPeriodStarted = block.number;
 
@@ -361,7 +361,7 @@ contract _0xCatetherToken is ERC20Interface, Owned {
                 sumD = sumD.add(targetForEpoch[i]);
                 solvetime = timeStampForEpoch[i] - timeStampForEpoch[i-1];
                 if (solvetime > timeTarget.mul(7)) {solvetime = timeTarget.mul(7); }
-                //if (solvetime < timeTarget.mul(-6)) {solvetime = timeTarget.mul(-6); }    Ethereum EVM doesn&#39;t allow for a timestamp that make time go &quot;backwards&quot; anyway, so, we&#39;re good
+                //if (solvetime < timeTarget.mul(-6)) {solvetime = timeTarget.mul(-6); }    Ethereum EVM doesn&#39;t allow for a timestamp that make time go "backwards" anyway, so, we&#39;re good
                 sumST += solvetime;                                                   //    (block.timestamp is an uint256 => negative = very very long time, thus rejected by the network)
                 // we don&#39;t use safeAdd because in sore rare cases, it can underflow. However, the EVM structure WILL make it overflow right after, thus giving a correct SumST after a few loops
             }

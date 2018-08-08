@@ -177,8 +177,8 @@ contract ERC223Interface {
 contract DORCoin is ERC223Interface, ERC20CompatibleToken {
     using SafeMath for uint;
 
-    string  public name    = &quot;DORA Coin&quot;;
-    string  public symbol  = &quot;DOR&quot;;
+    string  public name    = "DORA Coin";
+    string  public symbol  = "DOR";
     uint8   public decimals = 18;
     uint256 public totalSupply = 6000000 * 10 ** 18;
 

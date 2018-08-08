@@ -12,8 +12,8 @@ contract ERC20Interface {
 }
 
 contract ViewCoin is ERC20Interface {
-  string public constant symbol = &quot;VJU&quot;;
-  string public constant name = &quot;ViewCoin&quot;;
+  string public constant symbol = "VJU";
+  string public constant name = "ViewCoin";
   uint8 public constant decimals = 0;
   uint256 _totalSupply = 100000000;
   uint256 public maxSell = 50000000;

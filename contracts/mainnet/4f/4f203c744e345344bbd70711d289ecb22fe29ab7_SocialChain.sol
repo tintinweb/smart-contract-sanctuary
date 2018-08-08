@@ -32,8 +32,8 @@ contract SocialChain {
     ) public {
         totalSupply = 2000000000000000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;SocialChain&quot;;                                   // Set the name for display purposes
-        symbol =&quot; SCA&quot;;                               // Set the symbol for display purposes
+        name = "SocialChain";                                   // Set the name for display purposes
+        symbol =" SCA";                               // Set the symbol for display purposes
     }
 
     /**

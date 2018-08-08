@@ -39,7 +39,7 @@ contract SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control 
- * functions, this simplifies the implementation of &quot;user permissions&quot;. 
+ * functions, this simplifies the implementation of "user permissions". 
  */
 contract Ownable {
   address public owner;
@@ -170,10 +170,10 @@ contract StandardToken is Token, Pausable{
 }
 
 contract GraceCoin is StandardToken, SafeMath, ethPausable {
-    string public constant name = &quot;Grace Coin&quot;;
-    string public constant symbol = &quot;GRACE&quot;;
+    string public constant name = "Grace Coin";
+    string public constant symbol = "GRACE";
     uint256 public constant decimals = 8;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
     address public G2UFundDeposit;
     address public ETHFundDeposit;
     address public GraceFund;

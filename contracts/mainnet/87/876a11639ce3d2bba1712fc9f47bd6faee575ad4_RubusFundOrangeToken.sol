@@ -106,9 +106,9 @@ contract BasicToken is ERC20Basic {
   address public rubusOrangeAddress;
   uint256 noEther = 0;
 
-  string public name = &quot;Rubus Fund Orange Token&quot;;
+  string public name = "Rubus Fund Orange Token";
   uint8 public decimals = 18;
-  string public symbol = &quot;RTO&quot;;
+  string public symbol = "RTO";
 
   address public enterWallet = 0x73D5f035B8CB58b4aF065d6cE49fC8E7288536F3;
   address public investWallet = 0xD074B636Ccbf1A3482e20b54bF013c1D0c1045b0;

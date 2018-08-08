@@ -32,8 +32,8 @@ contract GabegeCoin{
     ) public {
         totalSupply = 10000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;GabegeCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GC&quot;;                               // Set the symbol for display purposes
+        name = "GabegeCoin";                                   // Set the name for display purposes
+        symbol = "GC";                               // Set the symbol for display purposes
     }
 
     /**

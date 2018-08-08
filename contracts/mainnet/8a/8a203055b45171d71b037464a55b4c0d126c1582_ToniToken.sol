@@ -46,8 +46,8 @@ contract Owned {
 
 contract ToniToken is ERC20Interface, Owned, SafeMath {
 
-    string constant public symbol = &quot;TOTO&quot;;
-    string constant public name = &quot;Toni Token&quot;;
+    string constant public symbol = "TOTO";
+    string constant public name = "Toni Token";
     uint8 constant public decimals = 2;
 
     //SNB M3: 2018-01, 1036.941 Mrd. CHF

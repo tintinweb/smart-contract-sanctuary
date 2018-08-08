@@ -116,8 +116,8 @@ contract PalestinePound is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PalestinePound() public {
-        symbol = &quot;PSPT&quot;;
-        name = &quot;PalestinePound Token&quot;;
+        symbol = "PSPT";
+        name = "PalestinePound Token";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 12 weeks;

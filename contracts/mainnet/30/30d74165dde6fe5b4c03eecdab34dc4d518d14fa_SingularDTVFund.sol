@@ -33,7 +33,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -243,7 +243,7 @@ contract AbstractSingularDTVToken is Token {
 /// @author Stefan George - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ef9c9b8a898e81c1888a809d888aaf8c80819c8a819c969cc1818a9b">[email&#160;protected]</a>>
 /// @author Milad Mostavi - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e28f8b8e8386cc8f8d919683948ba2818d8c91878c919b91cc8c8796">[email&#160;protected]</a>>
 contract SingularDTVFund {
-    string public version = &quot;0.1.0&quot;;
+    string public version = "0.1.0";
 
     /*
      *  External contracts
@@ -353,7 +353,7 @@ contract SingularDTVFund {
 /// @author Razvan Pop - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6b190a111d0a05451b041b2b080405180e0518121845050e1f">[email&#160;protected]</a>>
 /// @author Milad Mostavi - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="87eaeeebe6e3a9eae8f4f3e6f1eec7e4e8e9f4e2e9f4fef4a9e9e2f3">[email&#160;protected]</a>>
 contract SingularDTVLaunch {
-    string public version = &quot;0.1.0&quot;;
+    string public version = "0.1.0";
 
     event Contributed(address indexed contributor, uint contribution, uint tokens);
 
@@ -703,7 +703,7 @@ contract StandardToken is Token {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 
@@ -715,7 +715,7 @@ contract StandardToken is Token {
 /// @author Stefan George - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="97e4e3f2f1f6f9b9f0f2f8e5f0f2d7f4f8f9e4f2f9e4eee4b9f9f2e3">[email&#160;protected]</a>>
 /// @author Milad Mostavi - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="026f6b6e63662c6f6d717663746b42616d6c71676c717b712c6c6776">[email&#160;protected]</a>>
 contract SingularDTVToken is StandardToken {
-    string public version = &quot;0.1.0&quot;;
+    string public version = "0.1.0";
 
     /*
      *  External contracts

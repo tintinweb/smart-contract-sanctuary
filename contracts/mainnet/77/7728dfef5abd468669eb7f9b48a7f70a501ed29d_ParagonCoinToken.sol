@@ -53,7 +53,7 @@ pragma solidity ^0.4.11;
 
   /**
    * ERC-20 standard token interface, as defined
-   * <a href=&quot;http://github.com/ethereum/EIPs/issues/20&quot;>here</a>.
+   * <a href="http://github.com/ethereum/EIPs/issues/20">here</a>.
    */
   contract Token {
     /**
@@ -310,7 +310,7 @@ pragma solidity ^0.4.11;
      * @return name of this token
      */
     function name () constant returns (string name) {
-      return &quot;PRG&quot;;
+      return "PRG";
     }
 
     /**
@@ -319,7 +319,7 @@ pragma solidity ^0.4.11;
      * @return symbol of this token
      */
     function symbol () constant returns (string symbol) {
-      return &quot;PRG&quot;;
+      return "PRG";
     }
 
 

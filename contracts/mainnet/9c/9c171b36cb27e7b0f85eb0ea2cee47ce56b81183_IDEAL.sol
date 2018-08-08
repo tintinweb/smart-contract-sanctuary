@@ -97,8 +97,8 @@ contract IDEAL is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IDEAL() public {
-        symbol = &quot;IDEAL&quot;;
-        name = &quot;IDEAL&quot;;
+        symbol = "IDEAL";
+        name = "IDEAL";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x8E81Fe3241FbEF2cd26371338b18eC0DE825Ff6A] = _totalSupply;

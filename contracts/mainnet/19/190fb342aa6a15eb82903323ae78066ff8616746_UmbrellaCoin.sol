@@ -182,8 +182,8 @@ contract Pausable is Ownable {
  *  UmbrellaCoin token contract.
  */
 contract UmbrellaCoin is StandardToken, Ownable {
-  string public constant name = &quot;UmbrellaCoin&quot;;
-  string public constant symbol = &quot;UMC&quot;;
+  string public constant name = "UmbrellaCoin";
+  string public constant symbol = "UMC";
   uint public constant decimals = 6;
   address public floatHolder;
 

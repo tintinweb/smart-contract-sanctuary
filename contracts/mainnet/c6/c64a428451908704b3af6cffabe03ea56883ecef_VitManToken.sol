@@ -53,8 +53,8 @@ contract Ownable {
 contract VitManToken is Ownable {
     using SafeMath for uint256;
      
-    string public constant name       = &quot;VitMan&quot;;
-    string public constant symbol     = &quot;VITMAN&quot;;
+    string public constant name       = "VitMan";
+    string public constant symbol     = "VITMAN";
     uint32 public constant decimals   = 18;
     
     uint256 public totalSupply        = 100000000000 ether;

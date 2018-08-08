@@ -190,8 +190,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract SolarioToken is StandardToken {
 
-  string public constant name = &quot;SOLARIO&quot;;
-  string public constant symbol = &quot;SOLR&quot;;
+  string public constant name = "SOLARIO";
+  string public constant symbol = "SOLR";
   uint8 public constant decimals = 5;
 
   uint256 public constant INITIAL_SUPPLY = 5000000000000;

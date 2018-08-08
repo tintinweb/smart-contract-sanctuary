@@ -5,7 +5,7 @@ Copyright (c) 2015-2016 Oraclize SRL
 Copyright (c) 2016 Oraclize LTD
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
+of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -14,7 +14,7 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -122,7 +122,7 @@ contract usingOraclize {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -268,8 +268,8 @@ contract OracleBase is Ownable, usingOraclize, OracleI {
         string arguments;
     }
 
-    bytes32 public oracleName = &quot;Base Oracle&quot;;
-    bytes16 public oracleType = &quot;Undefined&quot;;
+    bytes32 public oracleName = "Base Oracle";
+    bytes16 public oracleType = "Undefined";
     uint256 public updateTime;
     uint256 public callbackTime;
     uint256 public priceLimit = 1 ether;
@@ -342,13 +342,13 @@ contract OracleBase is Ownable, usingOraclize, OracleI {
      */
     function updateRate() external onlyBank returns (bool) {
         if (getPrice() > this.balance) {
-            OraclizeError(&quot;Not enough ether&quot;);
+            OraclizeError("Not enough ether");
             return false;
         }
         bytes32 queryId = oraclize_query(oracleConfig.datasource, oracleConfig.arguments, gasLimit, priceLimit);
         
         if (queryId == bytes32(0)) {
-            OraclizeError(&quot;Unexpectedly high query price&quot;);
+            OraclizeError("Unexpectedly high query price");
             return false;
         }
 
@@ -392,10 +392,10 @@ contract OracleBase is Ownable, usingOraclize, OracleI {
 }
 
 contract OracleBitstamp is OracleBase {
-    bytes32 constant ORACLE_NAME = &quot;Bitstamp Oraclize Async&quot;;
-    bytes16 constant ORACLE_TYPE = &quot;ETHUSD&quot;;
-    string constant ORACLE_DATASOURCE = &quot;URL&quot;;
-    string constant ORACLE_ARGUMENTS = &quot;json(https://www.bitstamp.net/api/v2/ticker/ethusd).last&quot;;
+    bytes32 constant ORACLE_NAME = "Bitstamp Oraclize Async";
+    bytes16 constant ORACLE_TYPE = "ETHUSD";
+    string constant ORACLE_DATASOURCE = "URL";
+    string constant ORACLE_ARGUMENTS = "json(https://www.bitstamp.net/api/v2/ticker/ethusd).last";
     
     /**
      * @dev Constructor.

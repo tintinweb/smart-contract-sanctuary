@@ -115,8 +115,8 @@ contract PixoArenaFounderToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PixoArenaFounderToken() public {
-        symbol = &quot;PFT&quot;;
-        name = &quot;PixoArena Founder Token&quot;;
+        symbol = "PFT";
+        name = "PixoArena Founder Token";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         endDate = now + 4 weeks;

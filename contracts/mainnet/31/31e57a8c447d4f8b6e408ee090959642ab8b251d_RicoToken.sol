@@ -110,8 +110,8 @@ contract RicoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RicoToken() public {
-        symbol = &quot;RICO&quot;;
-        name = &quot;Rico Token&quot;;
+        symbol = "RICO";
+        name = "Rico Token";
         decimals = 2;
         _totalSupply = 720000000;
         balances[0x8e5074962Ed21b08495694e0f665AbD670D8Db0C] = _totalSupply;

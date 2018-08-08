@@ -378,8 +378,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract LinuxCNCoin is PausableToken {
 
-    string public name = &quot;Linux.CN Coin&quot;;
-    string public symbol = &quot;LCCN&quot;;
+    string public name = "Linux.CN Coin";
+    string public symbol = "LCCN";
     uint8 public decimals = 18;
     uint256 public INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));
     

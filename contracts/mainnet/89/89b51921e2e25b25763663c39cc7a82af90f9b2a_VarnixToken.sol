@@ -267,8 +267,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract VarnixToken is PausableToken, BurnableToken {
 
-    string public constant name = &quot;Varnix Token&quot;;
-    string public constant symbol = &quot;VRX&quot;;
+    string public constant name = "Varnix Token";
+    string public constant symbol = "VRX";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 120000000 * 10**uint256(decimals);
 

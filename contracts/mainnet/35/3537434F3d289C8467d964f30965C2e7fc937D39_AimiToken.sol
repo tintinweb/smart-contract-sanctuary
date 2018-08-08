@@ -4,8 +4,8 @@ pragma solidity ^0.4.18;
 
 contract AimiToken {
     //---------------------------------------变量---------------------------------------- 
-    string public name = &quot;艾米币&quot;;//代币名字
-    string public symbol = &quot;AT&quot;; //代币符号
+    string public name = "艾米币";//代币名字
+    string public symbol = "AT"; //代币符号
     uint8 public decimals = 8; //代币小数位
     uint256 public _totalSupply ; //代币总量10亿
      mapping(address => uint256) balances;

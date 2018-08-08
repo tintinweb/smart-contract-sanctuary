@@ -18,7 +18,7 @@ pragma solidity 		^0.4.21	;
 		// IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 												
 												
-			string	Compte_1	=	&quot;	une premi&#232;re phrase			&quot;	;	
+			string	Compte_1	=	"	une premi&#232;re phrase			"	;	
 												
 			function	setCompte_1	(	string	newCompte_1	)	public	onlyOwner	{	
 				Compte_1	=	newCompte_1	;					
@@ -33,7 +33,7 @@ pragma solidity 		^0.4.21	;
 		// IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 												
 												
-			string	Compte_2	=	&quot;	une premi&#232;re phrase			&quot;	;	
+			string	Compte_2	=	"	une premi&#232;re phrase			"	;	
 												
 			function	setCompte_2	(	string	newCompte_2	)	public	onlyOwner	{	
 				Compte_2	=	newCompte_2	;					
@@ -48,7 +48,7 @@ pragma solidity 		^0.4.21	;
 		// IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 												
 												
-			string	Compte_3	=	&quot;	une premi&#232;re phrase			&quot;	;	
+			string	Compte_3	=	"	une premi&#232;re phrase			"	;	
 												
 			function	setCompte_3	(	string	newCompte_3	)	public	onlyOwner	{	
 				Compte_3	=	newCompte_3	;					
@@ -63,7 +63,7 @@ pragma solidity 		^0.4.21	;
 		// IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 												
 												
-			string	Compte_4	=	&quot;	une premi&#232;re phrase			&quot;	;	
+			string	Compte_4	=	"	une premi&#232;re phrase			"	;	
 												
 			function	setCompte_4	(	string	newCompte_4	)	public	onlyOwner	{	
 				Compte_4	=	newCompte_4	;					

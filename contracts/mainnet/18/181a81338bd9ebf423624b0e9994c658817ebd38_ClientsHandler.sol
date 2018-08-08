@@ -3,7 +3,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -237,9 +237,9 @@ contract ClientsHandler is ManageableContract, Converter {
         setCRManager(owner);
     }
 
-    string name = &quot;Clients Handler&quot;;
-    string descibe = &quot;Clients data storage, contain methods for their obtaining and auditing&quot;;
-    string version = &quot;0.29&quot;;
+    string name = "Clients Handler";
+    string descibe = "Clients data storage, contain methods for their obtaining and auditing";
+    string version = "0.29";
 
     // @dev defaul validtor values
     uint256 dml = 3;

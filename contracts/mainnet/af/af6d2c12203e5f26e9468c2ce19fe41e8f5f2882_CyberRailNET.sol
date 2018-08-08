@@ -257,8 +257,8 @@ contract StandardToken is ERC20, BasicToken {
 contract CyberRailNET is StandardToken, BurnableToken, Ownable {
     using Cyber for uint;
 
-    string constant public symbol = &quot;CRNT&quot;;
-    string constant public name = &quot;CyberRailNET&quot;;
+    string constant public symbol = "CRNT";
+    string constant public name = "CyberRailNET";
 
     uint8 constant public decimals = 18;
     uint256 INITIAL_SUPPLY = 100000000e18;

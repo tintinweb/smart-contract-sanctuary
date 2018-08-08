@@ -180,8 +180,8 @@ contract StandardToken is BasicToken, ERC20 {
  *  GamePlayerCoin token contract. Implements
  */
 contract GamePlayerCoin is StandardToken, Ownable {
-  string public constant name = &quot;GamePlayerCoin&quot;;
-  string public constant symbol = &quot;GPC&quot;;
+  string public constant name = "GamePlayerCoin";
+  string public constant symbol = "GPC";
   uint public constant decimals = 18;
   // Constructor
   function GamePlayerCoin() {
@@ -361,9 +361,9 @@ contract Crowdsale is Pausable, PullPayment {
     }
     /* 
      * When MIN_CAP is not reach:
-     * 1) backer call the &quot;approve&quot; function of the GamePlayerCoin token contract with the amount of all GamePlayerCoins they got in order to be refund
-     * 2) backer call the &quot;refund&quot; function of the Crowdsale contract with the same amount of GamePlayers
-     * 3) backer call the &quot;withdrawPayments&quot; function of the Crowdsale contract to get a refund in ETH
+     * 1) backer call the "approve" function of the GamePlayerCoin token contract with the amount of all GamePlayerCoins they got in order to be refund
+     * 2) backer call the "refund" function of the Crowdsale contract with the same amount of GamePlayers
+     * 3) backer call the "withdrawPayments" function of the Crowdsale contract to get a refund in ETH
      */
     function refund(uint _value) minCapNotReached public {
         if (_value != backers[msg.sender].coinSent) throw; // compare value from backer balance

@@ -4,8 +4,8 @@ interface  tokenRecipient { function receiveApproval (address _from, uint256 _va
 
 contract Scorpio {
     // Public variables of the token
-    string public name = &quot;Scorpio&quot;;
-    string public symbol = &quot;SCORP&quot;;
+    string public name = "Scorpio";
+    string public symbol = "SCORP";
     uint8 public decimals = 8;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply;
@@ -32,8 +32,8 @@ contract Scorpio {
     ) public {
         totalSupply = 40000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = 4000000000000000;                // Give the creator all initial tokens
-        name = &quot;Scorpio&quot;;                                   // Set the name for display purposes
-        symbol = &quot;SCORP&quot;;                               // Set the symbol for display purposes
+        name = "Scorpio";                                   // Set the name for display purposes
+        symbol = "SCORP";                               // Set the symbol for display purposes
     }
 
     /**

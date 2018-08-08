@@ -113,8 +113,8 @@ contract TornadoChain is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TornadoChain() public {
-        symbol = &quot;TRN&quot;;
-        name = &quot;TornadoChain&quot;;
+        symbol = "TRN";
+        name = "TornadoChain";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa735d6693D507C57B7383a4CeBa6fB43583DdEE9] = _totalSupply;

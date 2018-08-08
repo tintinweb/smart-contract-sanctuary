@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -369,8 +369,8 @@ contract HasNoEther is Ownable {
 
 
 ///* Remix format
-//import &quot;./MintableToken.sol&quot;;
-//import &quot;./HasNoEther.sol&quot;;
+//import "./MintableToken.sol";
+//import "./HasNoEther.sol";
 
 
 contract Bela is MintableToken, HasNoEther 
@@ -403,8 +403,8 @@ contract Bela is MintableToken, HasNoEther
     //////////////////////
     // Human token state
     //////////////////////
-    string public constant name = &quot;Bela&quot;;
-    string public constant symbol = &quot;BELA&quot;;
+    string public constant name = "Bela";
+    string public constant symbol = "BELA";
     uint8 public constant  decimals = 18;
 
     ///////////////////////////////////////////////////////////

@@ -221,8 +221,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/EndorToken.sol
 
 contract EndorToken is StandardToken {
-  string public name = &quot;Endor Protocol Token&quot;;
-  string public symbol = &quot;EDR&quot;;
+  string public name = "Endor Protocol Token";
+  string public symbol = "EDR";
   uint8 public decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 1500000000 * (10 ** uint256(decimals));

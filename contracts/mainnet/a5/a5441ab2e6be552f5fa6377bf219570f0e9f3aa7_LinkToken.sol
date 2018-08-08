@@ -52,8 +52,8 @@ contract LinkToken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
 	
     uint256 public totalSupply = 1000000000000000000;
-	string public constant name = &quot;LinkToken&quot;;
-    string public constant symbol = &quot;LINKT&quot;;
+	string public constant name = "LinkToken";
+    string public constant symbol = "LINKT";
     uint public constant decimals = 8;
 	
 	function LinkToken(){

@@ -58,8 +58,8 @@ contract OF is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Origin Forecast&quot;;
-    string public constant symbol = &quot;OF&quot;;
+    string public constant name = "Origin Forecast";
+    string public constant symbol = "OF";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 3000000000e18;

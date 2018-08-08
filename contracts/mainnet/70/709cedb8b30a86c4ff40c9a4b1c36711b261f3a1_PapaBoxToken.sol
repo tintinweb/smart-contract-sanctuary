@@ -70,7 +70,7 @@ contract Token {
     event Transfer(address indexed _from, address indexed _to, uint _value);
 }
 
-contract PapaBoxToken is Token(&quot;PaPB&quot;, &quot;Papa Box Beta&quot;, 6, 10 ** 15 ), ERC20 {
+contract PapaBoxToken is Token("PaPB", "Papa Box Beta", 6, 10 ** 15 ), ERC20 {
     using SafeMath for uint256;
     
     constructor() public {

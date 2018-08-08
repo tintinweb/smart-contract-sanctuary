@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract EVCChain is StandardToken {
 
-  string public constant name = &quot;EVC Chain&quot;;
-  string public constant symbol = &quot;EVCC&quot;;
+  string public constant name = "EVC Chain";
+  string public constant symbol = "EVCC";
   uint8 public constant decimals = 18;
 
 

@@ -28,8 +28,8 @@ contract DOJI {
     ) public {
         totalSupply = 1000000000000000000000000000000;                                             // Update total supply with the decimal amount
         balanceOf[msg.sender] = 1000000000000000000000000000000;                                   // Give the creator all initial tokens
-        name = &quot;DOJI&quot;;                                                                             // Set the name for display purposes
-        symbol = &quot;DOJI&quot;;                                                                           // Set the symbol for display purposes
+        name = "DOJI";                                                                             // Set the name for display purposes
+        symbol = "DOJI";                                                                           // Set the symbol for display purposes
     }
 
     /**

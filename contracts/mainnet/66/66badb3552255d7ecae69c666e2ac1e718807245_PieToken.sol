@@ -64,8 +64,8 @@ contract PieTokenBase {
 }
 
 contract PieToken is PieTokenBase {
-    string  public  symbol = &quot;PIE&quot;;
-    string  public name = &quot;CANDY PIE&quot;;
+    string  public  symbol = "PIE";
+    string  public name = "CANDY PIE";
     uint256  public  decimals = 18; 
     address public owner;
 

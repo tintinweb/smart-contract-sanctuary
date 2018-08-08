@@ -53,7 +53,7 @@ library ECRecoveryLibrary {
 
     /**
      * toEthSignedMessageHash
-     * @dev prefix a bytes32 value with &quot;\x19Ethereum Signed Message:&quot;
+     * @dev prefix a bytes32 value with "\x19Ethereum Signed Message:"
      * @dev and hash the result
      */
     function toEthSignedMessageHash(bytes32 hash)
@@ -64,7 +64,7 @@ library ECRecoveryLibrary {
         // 32 is the length in bytes of hash,
         // enforced by the type signature above
         return keccak256(
-            &quot;\x19Ethereum Signed Message:\n32&quot;,
+            "\x19Ethereum Signed Message:\n32",
             hash
         );
     }
@@ -127,7 +127,7 @@ library SafeMathLibrary {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -416,9 +416,9 @@ contract Token is Pausable {
 }
 
 contract CATT is Token {
-    string public name = &quot;Content Aggregation Transfer Token&quot;;
+    string public name = "Content Aggregation Transfer Token";
 
-    string public symbol = &quot;CATT&quot;;
+    string public symbol = "CATT";
 
     uint public totalSupply = 5000000000 * 10 ** decimals;
 

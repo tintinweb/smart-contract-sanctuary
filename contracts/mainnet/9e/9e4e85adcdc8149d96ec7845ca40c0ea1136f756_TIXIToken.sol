@@ -113,8 +113,8 @@ contract TIXIToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TIXIToken() public {
-        symbol = &quot;TXI&quot;;
-        name = &quot;TIXI&quot;;
+        symbol = "TXI";
+        name = "TIXI";
         decimals = 18;
         _totalSupply = 3000000000 * 10 ** (decimals);
         balances[0x01DC0e734D17b1F0Faa24addc3480dCDEbeDbEDF] = _totalSupply;

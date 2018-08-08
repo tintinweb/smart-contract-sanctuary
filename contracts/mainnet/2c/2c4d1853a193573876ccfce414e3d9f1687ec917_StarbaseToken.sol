@@ -203,8 +203,8 @@ contract StarbaseToken is StandardToken {
     /*
      *  Constants / Token meta data
      */
-    string constant public name = &quot;Starbase&quot;;  // Token name
-    string constant public symbol = &quot;STAR&quot;;  // Token symbol
+    string constant public name = "Starbase";  // Token name
+    string constant public symbol = "STAR";  // Token symbol
     uint8 constant public decimals = 18;
     uint256 constant public initialSupply = 1000000000e18; // 1B STAR tokens
     uint256 constant public initialCompanysTokenAllocation = 750000000e18;  // 750M

@@ -116,8 +116,8 @@ contract cryptoWillToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function cryptoWillToken() public {
-        symbol = &quot;WIL&quot;;
-        name = &quot;Crypto Will Token&quot;;
+        symbol = "WIL";
+        name = "Crypto Will Token";
         decimals = 18;
         bonusEnds = now + 8 weeks;
         endDate = now + 16 weeks;

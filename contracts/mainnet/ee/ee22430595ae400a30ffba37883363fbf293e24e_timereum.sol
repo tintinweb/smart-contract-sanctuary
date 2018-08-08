@@ -20,8 +20,8 @@ event Transfer(address indexed from, address indexed to, uint256 value);
 event addressesImported(address importedFrom,uint256 numPairsImported,uint256 numImported); 
 
 function timereum() {
-name = &quot;timereum&quot;;
-symbol = &quot;TME&quot;;
+name = "timereum";
+symbol = "TME";
 decimals = 18;
 initialSupplyPerChildAddress = 1000000000000000000;
 maxRewardUnitsAvailable=10; //10 batches

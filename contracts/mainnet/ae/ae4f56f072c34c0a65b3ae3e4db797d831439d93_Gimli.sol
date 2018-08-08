@@ -127,8 +127,8 @@ contract GimliToken is ERC20, SafeMath, Ownable {
     *************************/
 
     uint8 public constant decimals = 8;
-    string public constant name = &quot;Gimli Token&quot;;
-    string public constant symbol = &quot;GIM&quot;;
+    string public constant name = "Gimli Token";
+    string public constant symbol = "GIM";
     string public constant version = &#39;v1&#39;;
 
     /// total amount of tokens

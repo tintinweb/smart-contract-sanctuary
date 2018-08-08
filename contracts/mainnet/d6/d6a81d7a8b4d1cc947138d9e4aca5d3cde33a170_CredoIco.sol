@@ -100,10 +100,10 @@ contract StandardToken is Token {
 
 contract CredoIco is StandardToken, SafeMath {
     // Descriptive properties
-    string public constant name = &quot;Credo ICO Token&quot;;
-    string public constant symbol = &quot;CREDOICO&quot;;
+    string public constant name = "Credo ICO Token";
+    string public constant symbol = "CREDOICO";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     // Account for ether proceed.
     address public etherProceedsAccount;

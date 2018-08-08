@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract Hydro {
     // Public variables of the token
-    string public name = &quot;Hydro&quot;;
-    string public symbol = &quot;HYDR01&quot;;
+    string public name = "Hydro";
+    string public symbol = "HYDR01";
     uint8 public decimals = 18;
     uint256 public totalSupply;
     uint256 public supplyMultiplier = 22000000000;

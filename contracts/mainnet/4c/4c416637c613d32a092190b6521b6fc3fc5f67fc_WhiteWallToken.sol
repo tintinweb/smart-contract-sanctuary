@@ -151,7 +151,7 @@ pragma solidity ^0.4.21;
     /**
     * @title Ownable
     * @dev The Ownable contract has an owner address, and provides basic authorization control
-    * functions, this simplifies the implementation of &quot;user permissions&quot;.
+    * functions, this simplifies the implementation of "user permissions".
     */
     contract Ownable {
     
@@ -208,9 +208,9 @@ pragma solidity ^0.4.21;
 
     contract WhiteWallToken is BurnableToken, Ownable {
     
-        string public constant name = &quot;WhiteWall Token&quot;;
+        string public constant name = "WhiteWall Token";
    
-        string public constant symbol = &quot;WHW&quot;;
+        string public constant symbol = "WHW";
     
         uint32 public constant decimals = 18;
 

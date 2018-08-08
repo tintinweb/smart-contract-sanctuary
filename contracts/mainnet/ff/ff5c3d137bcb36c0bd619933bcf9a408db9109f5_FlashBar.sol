@@ -63,10 +63,10 @@ contract FlashBar is StandardToken {
         revert();
     }
 
-    string public name = &quot;FlashBar&quot;;
+    string public name = "FlashBar";
     uint8 public decimals = 18;
     uint256 private supplyDecimals = 1 * 10 ** uint256(decimals);
-    string public symbol = &quot;FBR&quot;;
+    string public symbol = "FBR";
     string public version = &#39;v0.1&#39;;
     address public founder;
     constructor  (uint256 supply) public {
@@ -78,7 +78,7 @@ contract FlashBar is StandardToken {
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) public returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { revert(); }
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { revert(); }
         return true;
     }
 

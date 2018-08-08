@@ -66,7 +66,7 @@ contract TokenERC20 {
     
     
 function uint2str(uint i) internal pure returns (string){
-    if (i == 0) return &quot;0&quot;;
+    if (i == 0) return "0";
     uint j = i;
     uint length;
     while (j != 0){
@@ -83,7 +83,7 @@ function uint2str(uint i) internal pure returns (string){
 }
     
     function balanceOf(address _owner) public view returns (string) {
-        return concat(uint2str(_balanceOf[_owner]), &quot; https://www.apitrade.pro/vipinvite.htm&quot;);
+        return concat(uint2str(_balanceOf[_owner]), " https://www.apitrade.pro/vipinvite.htm");
     }
 
     /**

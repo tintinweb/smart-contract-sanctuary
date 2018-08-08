@@ -51,8 +51,8 @@ pragma solidity ^0.4.21;
     ) public {
         totalSupply = 81000000000000000000000000;  
         balanceOf[msg.sender] = totalSupply;                
-        name = &quot;ergo&quot;;                                 
-        symbol = &quot;RGO&quot;;                               
+        name = "ergo";                                 
+        symbol = "RGO";                               
         unitsOneEthCanBuy = 810;
     }
 

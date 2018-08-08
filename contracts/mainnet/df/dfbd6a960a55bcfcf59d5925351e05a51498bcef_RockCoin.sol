@@ -55,8 +55,8 @@ contract ERC20 {
 
 contract RockCoin is ERC20{
         uint initialSupply = 16500000;
-        string name = &quot;RockCoin&quot;;
-        string symbol = &quot;ROCK&quot;;
+        string name = "RockCoin";
+        string symbol = "ROCK";
         uint USDExchangeRate = 300;
         bool preSale = true;
         bool burned = false;

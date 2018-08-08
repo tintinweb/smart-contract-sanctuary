@@ -194,8 +194,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract ErgToken is StandardToken {
-    string public name = &quot;Energy Token&quot;;
-    string public symbol = &quot;ERG&quot;;
+    string public name = "Energy Token";
+    string public symbol = "ERG";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 150000000 * (10 ** decimals);
 

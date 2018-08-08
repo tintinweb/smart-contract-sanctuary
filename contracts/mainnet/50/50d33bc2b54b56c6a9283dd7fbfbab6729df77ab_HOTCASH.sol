@@ -16,9 +16,9 @@ contract HOTCASH {
     function HOTCASH() {
 
          initialSupply = 5000000000000000;
-         name =&quot;proofcoin&quot;;
+         name ="proofcoin";
         decimals = 8;
-         symbol = &quot;HOTZ&quot;;
+         symbol = "HOTZ";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

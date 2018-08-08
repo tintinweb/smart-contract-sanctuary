@@ -125,7 +125,7 @@ contract ApproveAndCallFallBack {
 
 /// @dev The actual token contract, the default controller is the msg.sender
 ///  that deploys the contract, so usually this token will be deployed by a
-///  token controller contract, which Giveth will call a &quot;Campaign&quot;
+///  token controller contract, which Giveth will call a "Campaign"
 contract MiniMeToken is Controlled {
 
     string public name;                //The Token&#39;s name: e.g. DigixDAO Tokens
@@ -675,9 +675,9 @@ contract APT is MiniMeToken {
       _tokenFactory,
       0x0,                      // no parent token
       0,                        // no snapshot block number from parent
-      &quot;Aigang Pre-Launch Token&quot;, // Token name
+      "Aigang Pre-Launch Token", // Token name
       18,                       // Decimals
-      &quot;APT&quot;,                    // Symbol
+      "APT",                    // Symbol
       true                      // Enable transfers
     ) {}
 }

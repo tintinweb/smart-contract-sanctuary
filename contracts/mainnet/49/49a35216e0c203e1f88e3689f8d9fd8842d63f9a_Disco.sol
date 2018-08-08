@@ -113,8 +113,8 @@ contract Disco is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Disco() public {
-        symbol = &quot;DISCO&quot;;
-        name = &quot;Disco&quot;;
+        symbol = "DISCO";
+        name = "Disco";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xB70F453491A5db79444c408407aC28509c0178ac] = _totalSupply;

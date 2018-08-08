@@ -153,9 +153,9 @@ contract DWEToken is ERC20Interface, Owned {
 
     function DWEToken() public {
 
-        symbol = &quot;DWE&quot;;
+        symbol = "DWE";
 
-        name = &quot;Digital World Exchange&quot;;
+        name = "Digital World Exchange";
 
         decimals = 18;
 

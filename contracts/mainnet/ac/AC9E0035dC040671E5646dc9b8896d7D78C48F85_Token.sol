@@ -34,8 +34,8 @@ contract Token {
 
     address public owner = msg.sender;
 
-    string public name = &quot;Hint&quot;;
-    string public symbol = &quot;HINT&quot;;
+    string public name = "Hint";
+    string public symbol = "HINT";
 
     bool public upgradable = false;
     bool public upgraderSet = false;

@@ -175,8 +175,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract InvestboxToken is StandardToken
 {
-    string public constant name = &quot;INTVESTBOX TOKEN&quot;;
-    string public constant symbol = &quot;IBOX&quot;;
+    string public constant name = "INTVESTBOX TOKEN";
+    string public constant symbol = "IBOX";
     uint8 public constant decimals = 18;
     
     function InvestboxToken() public 

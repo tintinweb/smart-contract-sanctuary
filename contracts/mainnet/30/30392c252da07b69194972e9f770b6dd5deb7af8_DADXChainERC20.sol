@@ -111,8 +111,8 @@ contract DADXChainERC20 is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function DADXChainERC20() public {
-        symbol = &quot;DADX&quot;;
-        name = &quot;DadxChain&quot;;
+        symbol = "DADX";
+        name = "DadxChain";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

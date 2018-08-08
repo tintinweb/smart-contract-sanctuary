@@ -90,8 +90,8 @@ contract XIOToken is ERC20Interface, DetailedToken, Owned {
 	mapping(address => mapping(address => uint)) allowed;
 
 	function XIOToken() public {
-		symbol = &quot;XIO&quot;;
-		name = &quot;XIO Token&quot;;
+		symbol = "XIO";
+		name = "XIO Token";
 		decimals = 18;
 		_totalSupply = 1000000000 * 10 ** uint(decimals);
 		balances[owner] = _totalSupply;

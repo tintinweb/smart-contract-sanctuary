@@ -169,8 +169,8 @@ contract BurnableToken is StandardToken {
 
 contract BlackNWhite  is BurnableToken, Ownable {
 
-    string public constant name = &quot;Black N White&quot;;
-    string public constant symbol = &quot;BNWG&quot;;
+    string public constant name = "Black N White";
+    string public constant symbol = "BNWG";
     uint public constant decimals = 18;
     // there is no problem in using * here instead of .mul()
     uint256 public constant initialSupply = 5000000000 * (10 ** uint256(decimals));

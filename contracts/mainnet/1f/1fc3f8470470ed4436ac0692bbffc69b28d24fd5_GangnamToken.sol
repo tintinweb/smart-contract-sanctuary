@@ -44,8 +44,8 @@ contract ContractReceiver {
 contract GangnamToken is EthereumStandards {
 	using SafeMath for uint256;
 	
-	string constant public name = &quot;GangnamLotteryToken&quot;;
-	string constant public symbol = &quot;GLT&quot;;
+	string constant public name = "GangnamLotteryToken";
+	string constant public symbol = "GLT";
 	uint8 constant public decimals = 18;
 	uint256 public totalSupply;
 

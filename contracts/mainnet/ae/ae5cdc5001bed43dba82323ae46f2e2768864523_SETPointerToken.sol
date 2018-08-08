@@ -211,8 +211,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract SETPointerToken is StandardToken {
-  string public name = &quot;SETPointer&quot;;
-  string public symbol = &quot;SETP&quot;;
+  string public name = "SETPointer";
+  string public symbol = "SETP";
   uint8 public decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 100000 * (10**6) * (10 ** uint256(decimals));
 

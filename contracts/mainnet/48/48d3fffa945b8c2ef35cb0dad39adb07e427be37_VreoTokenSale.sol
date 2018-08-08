@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -854,8 +854,8 @@ contract VreoToken is CappedToken, PausableToken, BurnableToken {
 
     uint public constant TOTAL_TOKEN_CAP = 700000000e18;  // = 700.000.000 e18
 
-    string public name = &quot;MERO Token&quot;;
-    string public symbol = &quot;MERO&quot;;
+    string public name = "MERO Token";
+    string public symbol = "MERO";
     uint8 public decimals = 18;
 
     /// @dev Constructor

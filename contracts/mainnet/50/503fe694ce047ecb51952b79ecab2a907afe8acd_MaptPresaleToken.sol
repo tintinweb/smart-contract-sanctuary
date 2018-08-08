@@ -95,8 +95,8 @@ contract MaptPresaleToken {
         priceRules.createPricing();
     }
 
-    string public constant name = &quot;MAT Presale Token&quot;;
-    string public constant symbol = &quot;MAPT&quot;;
+    string public constant name = "MAT Presale Token";
+    string public constant symbol = "MAPT";
     uint   public constant decimals = 18;
 
     uint public constant TOKEN_SUPPLY_LIMIT = 2800000 * 1 ether / 1 wei;

@@ -113,8 +113,8 @@ contract ChessClubLiveChessCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ChessClubLiveChessCoin() public {
-        symbol = &quot;ChessCCL&quot;;
-        name = &quot;Chess Club Live ChessCoin&quot;;
+        symbol = "ChessCCL";
+        name = "Chess Club Live ChessCoin";
         decimals = 64;
         _totalSupply = 640000000000000000000000000000000000000000000000000000000000000000;
         balances[0x04Ede35B1D51c0e814833887b2DdBB5D553070b6] = _totalSupply; //MEW address here

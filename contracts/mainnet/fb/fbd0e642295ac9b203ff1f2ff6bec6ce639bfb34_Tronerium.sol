@@ -12,8 +12,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract Tronerium {
     // Public variables of the token
-    string public name = &quot;Tronerium&quot;;
-    string public symbol = &quot;TRON&quot;;
+    string public name = "Tronerium";
+    string public symbol = "TRON";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

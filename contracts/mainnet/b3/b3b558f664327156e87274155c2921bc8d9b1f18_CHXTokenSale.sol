@@ -199,7 +199,7 @@ contract BurnableToken is StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -239,8 +239,8 @@ contract Ownable {
 }
 
 contract CHXToken is BurnableToken, Ownable {
-    string public constant name = &quot;Chainium&quot;;
-    string public constant symbol = &quot;CHX&quot;;
+    string public constant name = "Chainium";
+    string public constant symbol = "CHX";
     uint8 public constant decimals = 18;
 
     bool public isRestricted = true;
@@ -527,7 +527,7 @@ contract CHXTokenSale is Whitelistable {
 
     uint public saleStartTime;
     uint public saleEndTime;
-    uint public maxGasPrice = 20e9 wei; // 20 GWEI - to prevent &quot;gas race&quot;
+    uint public maxGasPrice = 20e9 wei; // 20 GWEI - to prevent "gas race"
     uint public minContribution = 100 finney; // 0.1 ETH
     uint public maxContributionPhase1 = 500 finney; // 0.5 ETH
     uint public maxContributionPhase2 = 10 ether;

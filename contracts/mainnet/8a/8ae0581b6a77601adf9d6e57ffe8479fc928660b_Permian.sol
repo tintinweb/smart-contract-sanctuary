@@ -63,8 +63,8 @@ contract Permian {
     function Permian() public {
         totalSupply = 1000000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Permian&quot;;
-        symbol = &quot;PMN&quot;;
+        name = "Permian";
+        symbol = "PMN";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

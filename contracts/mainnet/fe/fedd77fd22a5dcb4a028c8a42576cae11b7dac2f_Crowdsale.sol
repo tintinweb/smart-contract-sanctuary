@@ -214,7 +214,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -344,9 +344,9 @@ contract MintableToken is StandardToken, Ownable {
 
 contract SmartCoinFerma is MintableToken {
     
-  string public constant name = &quot;Smart Coin Ferma&quot;;
+  string public constant name = "Smart Coin Ferma";
    
-  string public constant symbol = &quot;SCF&quot;;
+  string public constant symbol = "SCF";
     
   uint32 public constant decimals = 8;
 
@@ -577,7 +577,7 @@ contract Crowdsale is Ownable {
     sum = msg.value;
     halfSum = sum.div(2);
     quatSum = halfSum.div(2);
-    rate = exchangeRate.getRate(&quot;ETH&quot;); 
+    rate = exchangeRate.getRate("ETH"); 
     tokens = rate.mul(sum).div(1 ether);
     require( tokens > 0 );
     
@@ -588,7 +588,7 @@ contract Crowdsale is Ownable {
     multisigVaultSecond.transfer(quatSum);
     multisigVaultThird.transfer(quatSum);
     /*
-    * &quot;dev Create restricted tokens
+    * "dev Create restricted tokens
     */
     restrictedTokens = tokens.mul(restrictedPercent).div(100 - restrictedPercent);
     tok1 = restrictedTokens.mul(60).div(100);

@@ -137,7 +137,7 @@ contract Erc20Token {
     }
 }
 
-contract ImperialCredits is Erc20Token(&quot;Imperial Credits&quot;, &quot;XIC&quot;, 0) {
+contract ImperialCredits is Erc20Token("Imperial Credits", "XIC", 0) {
     address owner;
     bool public isIco  = true;
 

@@ -96,8 +96,8 @@ contract MAC is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;MobileAppCoin&quot;;
-    string public constant symbol = &quot;MAC&quot;;
+    string public constant name = "MobileAppCoin";
+    string public constant symbol = "MAC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000e8;

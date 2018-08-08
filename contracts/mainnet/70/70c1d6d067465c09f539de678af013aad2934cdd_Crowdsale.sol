@@ -152,7 +152,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -246,8 +246,8 @@ contract BurnableByOwner is BasicToken, Ownable {
 
 contract Wolf is Ownable, MintableToken, BurnableByOwner {
   using SafeMath for uint256;    
-  string public constant name = &quot;Wolf&quot;;
-  string public constant symbol = &quot;Wolf&quot;;
+  string public constant name = "Wolf";
+  string public constant symbol = "Wolf";
   uint32 public constant decimals = 18;
 
   address public addressTeam;

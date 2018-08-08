@@ -265,9 +265,9 @@ contract _HachirokuToken is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;0xAE86&quot;;
+        symbol = "0xAE86";
 
-        name = &quot;HACHIROKU Token&quot;;
+        name = "HACHIROKU Token";
 
         decimals = 8;
 

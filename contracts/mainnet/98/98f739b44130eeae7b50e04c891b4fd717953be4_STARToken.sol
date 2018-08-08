@@ -113,8 +113,8 @@ contract STARToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function STARToken() public {
-        symbol = &quot;STAR&quot;;
-        name = &quot;STAR Token&quot;;
+        symbol = "STAR";
+        name = "STAR Token";
         decimals = 18;
         _totalSupply = 198000000000000000000000000;
         balances[0x29339c46C20FD1dEd392f56818eEb53A2B89cD4C] = _totalSupply;

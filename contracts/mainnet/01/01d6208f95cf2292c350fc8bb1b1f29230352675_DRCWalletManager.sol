@@ -527,7 +527,7 @@ contract DRCWalletManager is OwnerContract, Withdrawable, TokenDestructible {
         address _deposit = address(deposWithdr);
         walletDeposits[_wallet] = _deposit;
         WithdrawWallet[] storage withdrawWalletList = depositRepos[_deposit].withdrawWallets;
-        withdrawWalletList.push(WithdrawWallet(&quot;default wallet&quot;, _wallet));
+        withdrawWalletList.push(WithdrawWallet("default wallet", _wallet));
         // depositRepos[_deposit].balance = 0;
         depositRepos[_deposit].frozen = 0;
 

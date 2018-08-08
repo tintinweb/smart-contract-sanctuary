@@ -534,14 +534,14 @@ contract FinalLottery {
         for (uint i = 0; i < dogs.length; i++) {
             if (_dogId == dogs[i]) {
             //    revert();
-                RegisterLottery(_dogId, owner, _lotteryClass,&quot;dog already registered&quot;);
+                RegisterLottery(_dogId, owner, _lotteryClass,"dog already registered");
                  return 5;
             }
         }
         // 将登记中奖者的账户存入奖金信息表
         _pushLuckyInfo(currentTerm, _lotteryClass, owner, _dogId);
         // 触发兑奖成功事件
-        RegisterLottery(_dogId, owner, _lotteryClass,&quot;successful&quot;);
+        RegisterLottery(_dogId, owner, _lotteryClass,"successful");
         return 0;
     }
     /*

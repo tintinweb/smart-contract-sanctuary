@@ -225,8 +225,8 @@ contract StoppableToken is FreezableToken {
 }
 
 contract MossCoin is StoppableToken, UpgradableToken, BurnableToken {
-    string public constant name = &quot;Moss Coin&quot;;
-    string public constant symbol = &quot;MOC&quot;;
+    string public constant name = "Moss Coin";
+    string public constant symbol = "MOC";
     uint8 public constant decimals = 18;
 
     function MossCoin(uint256 _amount) public

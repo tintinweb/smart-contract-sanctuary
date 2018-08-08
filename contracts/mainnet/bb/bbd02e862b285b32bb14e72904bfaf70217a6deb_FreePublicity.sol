@@ -76,8 +76,8 @@ contract FreePublicity is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
 
     function FreePublicity() public {
-        symbol = &quot;LAMDEN TAU&quot;;
-        name = &quot;Lamden Tau&quot;;
+        symbol = "LAMDEN TAU";
+        name = "Lamden Tau";
         decimals = 18;
         _totalSupply = 635716060613 * 10**uint(decimals);
     }

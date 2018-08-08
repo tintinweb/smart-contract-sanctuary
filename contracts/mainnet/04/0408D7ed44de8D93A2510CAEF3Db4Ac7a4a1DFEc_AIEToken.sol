@@ -231,7 +231,7 @@ contract RBAC {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -298,8 +298,8 @@ contract Ownable {
  * A Admin can transfer his role to a new address. 
  */
 contract Administrable is Ownable, RBAC {
-  string public constant ROLE_LOCKUP = &quot;lockup&quot;;
-  string public constant ROLE_MINT = &quot;mint&quot;;
+  string public constant ROLE_LOCKUP = "lockup";
+  string public constant ROLE_MINT = "mint";
 
   constructor () public {
     addRole(msg.sender, ROLE_LOCKUP);
@@ -998,8 +998,8 @@ contract BundableToken is ReliableToken {
 
 contract AIEToken is BundableToken {
 
-  string public constant name = &quot;AIECOLOGY&quot;;
-  string public constant symbol = &quot;AIE&quot;;
+  string public constant name = "AIECOLOGY";
+  string public constant symbol = "AIE";
   uint32 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 1000000000 * (10 ** uint256(decimals));

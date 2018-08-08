@@ -186,8 +186,8 @@ pragma solidity ^0.4.21;
 
     contract OriginsTraceChainToken is StandardToken {
         /// Constant token specific fields
-        string public constant name = &quot;OriginsTraceChain&quot;;
-        string public constant symbol = &quot;OTC&quot;;
+        string public constant name = "OriginsTraceChain";
+        string public constant symbol = "OTC";
         uint public constant decimals = 18;
 
         /// OriginsTraceChain total tokens supply

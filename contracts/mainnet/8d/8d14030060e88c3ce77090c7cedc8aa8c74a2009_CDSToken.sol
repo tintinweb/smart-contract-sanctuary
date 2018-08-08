@@ -97,8 +97,8 @@ contract CDSToken is Owned, SafeMath, Pausable, EIP20Interface {
     event Unfreeze(address indexed from, uint256 value);
 
     function CDSToken() public {
-        name = &quot;CodePress Token&quot;;
-        symbol = &quot;CDS&quot;;
+        name = "CodePress Token";
+        symbol = "CDS";
         decimals = 18;
         totalSupply = 800000000 * 10 ** uint256(decimals);
         balances[msg.sender] = totalSupply;

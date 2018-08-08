@@ -201,6 +201,6 @@ contract _Token is WhiteListAccess, _ERC20Interface {
     }
 }
 
-contract FourLeafClover is _Token(&quot;Four Leaf Clover&quot;, &quot;FLC&quot;) {
+contract FourLeafClover is _Token("Four Leaf Clover", "FLC") {
     function FourLeafClover() public {}
 }

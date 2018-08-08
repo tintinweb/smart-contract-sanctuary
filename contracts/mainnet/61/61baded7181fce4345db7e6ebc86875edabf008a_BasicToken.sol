@@ -181,8 +181,8 @@ contract StandardToken is BasicToken, ERC20 {
  */
 contract FRPTOKEN is StandardToken {
 
-    string public name = &quot;FRPTOKEN&quot;;
-    string public symbol = &quot;FRP&quot;;
+    string public name = "FRPTOKEN";
+    string public symbol = "FRP";
     uint public decimals = 9;
     uint public INITIAL_SUPPLY = 90000000000000000000; // Initial supply is 66,588,888 MTL
 

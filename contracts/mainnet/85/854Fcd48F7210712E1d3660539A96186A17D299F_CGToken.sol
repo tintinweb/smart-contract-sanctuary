@@ -211,8 +211,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract CGToken is StandardToken {
-    string public name = &quot;Chess Game Token&quot;;
-    string public symbol = &quot;CGC&quot;;
+    string public name = "Chess Game Token";
+    string public symbol = "CGC";
     uint public decimals = 2;
     uint public INITIAL_SUPPLY = 240000000000;
 

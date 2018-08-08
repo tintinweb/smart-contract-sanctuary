@@ -114,8 +114,8 @@ contract LivCoin is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;LIV&quot;;
-        name = &quot;LivCoin&quot;;
+        symbol = "LIV";
+        name = "LivCoin";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

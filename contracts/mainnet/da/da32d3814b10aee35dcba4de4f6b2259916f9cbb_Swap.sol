@@ -256,8 +256,8 @@ contract StandardToken is ERC20, BasicToken {
 contract Swap is StandardToken, BurnableToken, Ownable {
     using SafeMath for uint;
 
-    string constant public symbol = &quot;SWAP&quot;;
-    string constant public name = &quot;Swap&quot;;
+    string constant public symbol = "SWAP";
+    string constant public name = "Swap";
 
     uint8 constant public decimals = 18;
     uint256 INITIAL_SUPPLY = 1000000000e18;

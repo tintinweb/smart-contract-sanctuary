@@ -56,7 +56,7 @@ contract Likedapp{
         userCount++;
         userStore.length++;
         User storage u = userStore[userStore.length - 1];
-        Reactions memory react = Reactions(0, &quot;Welcome to LikeDapp! :D&quot;);
+        Reactions memory react = Reactions(0, "Welcome to LikeDapp! :D");
         u.reactions.push(react);
         u.id = userCount;
         u.user_address = msg.sender;

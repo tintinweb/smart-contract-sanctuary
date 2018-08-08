@@ -231,7 +231,7 @@ contract EC {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -381,7 +381,7 @@ contract VanityLib {
 
     /* Converts given number to base58, limited by 32 symbols */
     function toBase58Checked(uint256 _value, byte appCode) public pure returns(bytes32) {
-        string memory letters = &quot;123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz&quot;;
+        string memory letters = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
         bytes memory alphabet = bytes(letters);
         uint8 base = 58;
         uint8 len = 0;
@@ -440,7 +440,7 @@ contract VanityLib {
     }
     
     function createBtcAddress(uint256 publicXPoint, uint256 publicYPoint) public pure returns(bytes32) {
-        return toBase58Checked(createBtcAddressHex(publicXPoint, publicYPoint), &quot;1&quot;);
+        return toBase58Checked(createBtcAddressHex(publicXPoint, publicYPoint), "1");
     }
 
     function complexityForBtcAddressPrefix(bytes prefix) public pure returns(uint) {
@@ -514,16 +514,16 @@ contract VanityLib {
         if (prefixArg.length < 5) {
             return false;
         }
-        if (prefixArg[0] != &quot;1&quot; && prefixArg[0] != &quot;3&quot;) {
+        if (prefixArg[0] != "1" && prefixArg[0] != "3") {
             return false;
         }
         
         for (uint i = 0; i < prefixArg.length; i++) {
             byte ch = prefixArg[i];
-            if (ch == &quot;0&quot; || ch == &quot;O&quot; || ch == &quot;I&quot; || ch == &quot;l&quot;) {
+            if (ch == "0" || ch == "O" || ch == "I" || ch == "l") {
                 return false;
             }
-            if (!((ch >= &quot;1&quot; && ch <= &quot;9&quot;) || (ch >= &quot;a&quot; && ch <= &quot;z&quot;) || (ch >= &quot;A&quot; && ch <= &quot;Z&quot;))) {
+            if (!((ch >= "1" && ch <= "9") || (ch >= "a" && ch <= "z") || (ch >= "A" && ch <= "Z"))) {
                 return false;
             }
         }
@@ -777,8 +777,8 @@ contract TaskRegister is Upgradable, VanityLib {
         isLastestVersion
     {
         require(prefix.length > 5);
-        require(prefix[0] == &quot;1&quot;);
-        require(prefix[1] != &quot;1&quot;); // Do not support multiple 1s yet
+        require(prefix[0] == "1");
+        require(prefix[1] != "1"); // Do not support multiple 1s yet
         require(isValidBicoinAddressPrefix(prefix));
         require(isValidPublicKey(requestPublicXPoint, requestPublicYPoint));
 
@@ -808,10 +808,10 @@ contract TaskRegister is Upgradable, VanityLib {
     function solveTask(uint _taskId, uint256 _answerPrivateKey, uint256 publicXPoint, uint256 publicYPoint) public isLastestVersion {
         uint taskIndex = safeIndexOfTaskId(_taskId);
         Task storage task = tasks[taskIndex];
-        require(task.answerPrivateKey == 0, &quot;solveTask: task is already solved&quot;);
+        require(task.answerPrivateKey == 0, "solveTask: task is already solved");
 
         // Require private key to be part of address to prevent front-running attack
-        require(_answerPrivateKey >> 128 == uint256(msg.sender) >> 32, &quot;solveTask: this solution does not match miner address&quot;);
+        require(_answerPrivateKey >> 128 == uint256(msg.sender) >> 32, "solveTask: this solution does not match miner address");
 
         if (task.taskType == TaskType.BITCOIN_ADDRESS_PREFIX) {
             ///(publicXPoint, publicYPoint) = ec.publicKey(_answerPrivateKey);

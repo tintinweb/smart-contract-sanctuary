@@ -105,8 +105,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract COINBIG is StandardToken {
 
-  string public name = &quot;COINBIG&quot;;
-  string public symbol = &quot;CB&quot;;
+  string public name = "COINBIG";
+  string public symbol = "CB";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 10000000000000000000000000000;
   

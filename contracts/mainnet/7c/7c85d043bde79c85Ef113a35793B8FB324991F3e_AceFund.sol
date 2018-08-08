@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract AceFund is StandardToken {
 
-  string public constant name = &quot;Ace Fund&quot;;
-  string public constant symbol = &quot;AF&quot;;
+  string public constant name = "Ace Fund";
+  string public constant symbol = "AF";
   uint8 public constant decimals = 18;
 
 

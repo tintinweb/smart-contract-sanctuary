@@ -117,8 +117,8 @@ contract WindGreenGainToken5 is ERC20Interface, Owned {
      * Constructor
      */
     constructor() public {
-        symbol = &quot;PDI5&quot;;
-        name = &quot;Wind Green Gain Token 5&quot;;
+        symbol = "PDI5";
+        name = "Wind Green Gain Token 5";
         decimals = 18;
         _totalSupply = 2160000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

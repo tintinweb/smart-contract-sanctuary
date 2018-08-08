@@ -113,8 +113,8 @@ contract Token is SafeMath {
 
 contract CHEXToken is Token {
 
-    string public constant name = &quot;CHEX Token&quot;;
-    string public constant symbol = &quot;CHX&quot;;
+    string public constant name = "CHEX Token";
+    string public constant symbol = "CHX";
     uint public constant decimals = 18;
     uint public startBlock; //crowdsale start block
     uint public endBlock; //crowdsale end block

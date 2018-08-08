@@ -134,8 +134,8 @@ contract EIP20Interface {
 
 contract HTCCToken is EIP20Interface,Ownable,SafeMath,Pausable{
     //// Constant token specific fields
-    string public constant name =&quot;HTCCToken&quot;;
-    string public constant symbol = &quot;HTCC&quot;;
+    string public constant name ="HTCCToken";
+    string public constant symbol = "HTCC";
     uint8 public constant decimals = 18;
     string  public version  = &#39;v0.1&#39;;
     uint256 public constant initialSupply = 101010101;

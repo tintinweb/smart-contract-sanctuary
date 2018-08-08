@@ -29,8 +29,8 @@ pragma solidity ^0.4.18;
 contract depositofferTokenConfig
 {
     // ERC20 trade name and symbol
-    string public           name            = &quot;USPat7376612 depositoffer&quot;;
-    string public           symbol          = &quot;DO&quot;;
+    string public           name            = "USPat7376612 depositoffer";
+    string public           symbol          = "DO";
 
     // Owner has power to abort, discount addresses, sweep successful funds,
     // change owner, sweep alien tokens.

@@ -131,9 +131,9 @@ contract EventDefinitions {
 contract Token is Finalizable, TokenReceivable, EventDefinitions {
     using SafeMath for uint256;
 
-    string public name = &quot;FairWin Token&quot;;
+    string public name = "FairWin Token";
     uint8 public decimals = 8;
-    string public symbol = &quot;FWIN&quot;;
+    string public symbol = "FWIN";
 
     Controller controller;
 

@@ -190,7 +190,7 @@ contract Burnable is ERC20Interface {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -231,8 +231,8 @@ contract LEN is ERC20Token, Ownable {
 
     using SafeMath for uint;
 
-    string public name = &quot;LIQNET&quot;;         // Original name
-    string public symbol = &quot;LEN&quot;;                   // Token identifier
+    string public name = "LIQNET";         // Original name
+    string public symbol = "LEN";                   // Token identifier
     uint8 public decimals = 8;                      // How many decimals to show
     bool public mintingFinished;         // Status of minting
 

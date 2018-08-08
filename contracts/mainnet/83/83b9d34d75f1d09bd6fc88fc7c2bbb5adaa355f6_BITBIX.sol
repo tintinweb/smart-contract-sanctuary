@@ -73,8 +73,8 @@ contract BITBIX is ERC20Basic {
     uint public  _totalSupply = 3000000000000000; 
     
     // name and branding
-    string public constant name = &quot;BITBIX&quot;;
-    string public constant symbol = &quot;BBX&quot;;
+    string public constant name = "BITBIX";
+    string public constant symbol = "BBX";
     uint8 public constant decimals = 8;
     
     

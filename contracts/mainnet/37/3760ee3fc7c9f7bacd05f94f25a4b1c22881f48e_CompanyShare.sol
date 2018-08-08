@@ -14,7 +14,7 @@ contract CompanyShare {
         uint256 _codeLength;
 
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
         _;
     }
 
@@ -80,7 +80,7 @@ function giveGen(uint256 _eth)
     {
         // fetch player ID
         uint256 _pID = pIDxAddr_[msg.sender];
-        require(_pID != 0, &quot;sorry not team&quot;);
+        require(_pID != 0, "sorry not team");
         // setup temp var for player eth
         uint256 _eth;
         // get their earnings
@@ -113,7 +113,7 @@ function giveGen(uint256 _eth)
     returns(uint256)
     {
         uint256 _pID = pIDxAddr_[msg.sender];
-        require(_pID != 0, &quot;sorry not team&quot;);
+        require(_pID != 0, "sorry not team");
         uint256 _earnings = team_[_pID].gen;
         return _earnings;
     }
@@ -157,7 +157,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -169,7 +169,7 @@ library SafeMath {
         pure
         returns (uint256)
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -182,7 +182,7 @@ library SafeMath {
         returns (uint256 c)
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
 

@@ -76,8 +76,8 @@ contract OppOpenWiFi is ERC20
     using SafeMath for uint256;
    
     uint256 constant public TOKEN_DECIMALS = 10 ** 18;
-    string public constant name            = &quot;OppOpenWiFi Token&quot;;
-    string public constant symbol          = &quot;OPP&quot;;
+    string public constant name            = "OppOpenWiFi Token";
+    string public constant symbol          = "OPP";
     uint256 public totalTokenSupply        = 4165000000 * TOKEN_DECIMALS;  
     address public owner;
     uint8 public constant decimals = 18;

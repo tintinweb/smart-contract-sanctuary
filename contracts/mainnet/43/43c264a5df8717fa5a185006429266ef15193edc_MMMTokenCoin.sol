@@ -74,7 +74,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -239,8 +239,8 @@ function fracExp(uint256 depo, uint256 percent, uint256 period, uint256 p)  inte
 contract MMMTokenCoin is StandardToken, Ownable {
     using SafeMath for uint256;
     
-    string public constant name = &quot;Make More Money&quot;;
-    string public constant symbol = &quot;MMM&quot;;
+    string public constant name = "Make More Money";
+    string public constant symbol = "MMM";
     uint32 public constant decimals = 2;
     
 	
@@ -540,7 +540,7 @@ contract MMMTokenCoin is StandardToken, Ownable {
         	// calculate ether for refunds
         	req=tokensFromEther.mul(1 ether).div(step0Rate).div(2);
 
-        	if(bDbgEnabled) emit DebugLog(&quot;This balance is&quot;, this.balance);
+        	if(bDbgEnabled) emit DebugLog("This balance is", this.balance);
         	if(req>=this.balance) return 0;
     	}
     	else if(saleStatus==1) {
@@ -594,7 +594,7 @@ contract MMMTokenCoin is StandardToken, Ownable {
         tokensFromEther=tokensFromEther.sub(total);
        uint256 eth=total.mul(1 ether).div(step0Rate).div(rate2);
          _to.transfer(eth);
-        if(bDbgEnabled) emit DebugLog(&quot;Will refund &quot;, eth);
+        if(bDbgEnabled) emit DebugLog("Will refund ", eth);
 
         emit RefundEther(_to, total, eth);
         decreaseGlobalInterestAmount(total);

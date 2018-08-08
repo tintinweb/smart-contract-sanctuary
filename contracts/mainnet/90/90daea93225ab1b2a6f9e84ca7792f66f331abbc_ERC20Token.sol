@@ -208,11 +208,11 @@ contract ERC20Token is StandardToken {
 
         totalSupply = 1000000000;                        // Update total supply (100000 for example)
 
-        name = &quot;Bitcoin Max&quot;;                                   // Set the name for display purposes
+        name = "Bitcoin Max";                                   // Set the name for display purposes
 
         decimals = 0;                            // Amount of decimals for display purposes
 
-        symbol = &quot;BMAX&quot;;                               // Set the symbol for display purposes
+        symbol = "BMAX";                               // Set the symbol for display purposes
 
     }
 
@@ -232,7 +232,7 @@ contract ERC20Token is StandardToken {
 
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
 
         return true;
 

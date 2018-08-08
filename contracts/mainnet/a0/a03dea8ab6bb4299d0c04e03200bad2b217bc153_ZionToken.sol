@@ -43,8 +43,8 @@ contract SafeMath {
 }
 
 contract ZionToken is SafeMath, ERC20 {
-    string public constant name = &quot;Zion - The Next Generation Communication Paradigm&quot;;
-    string public constant symbol = &quot;Zion&quot;;
+    string public constant name = "Zion - The Next Generation Communication Paradigm";
+    string public constant symbol = "Zion";
     uint256 public constant decimals = 18;  
 
     mapping (address => uint256) balances;

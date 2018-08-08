@@ -102,9 +102,9 @@ contract  EtherCarbon is StandardToken {
 
     
     /* Public variables of the token */
-    string public name = &quot; EtherCarbon&quot;;
+    string public name = " EtherCarbon";
     uint256 public decimals = 2;
-    string public symbol = &quot;ECN&quot;;
+    string public symbol = "ECN";
     
     event Mint(address indexed owner,uint amount);
     

@@ -207,8 +207,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract KRWT_Token is StandardToken {
-    string constant public name = &quot;KRWT (Test Drive - 20180402)&quot;;
-    string constant public symbol = &quot;KRWT&quot;;
+    string constant public name = "KRWT (Test Drive - 20180402)";
+    string constant public symbol = "KRWT";
     uint8 constant public decimals = 0;
     uint public totalSupply = 10000000000000 * 10**18;
 

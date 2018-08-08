@@ -257,8 +257,8 @@ contract Owned {
 }
 
 contract ViewoToken is StandardToken,BurnableToken, Owned {
-    string public constant name = &quot;Viewo&quot;;
-    string public constant symbol = &quot;VEO&quot;;
+    string public constant name = "Viewo";
+    string public constant symbol = "VEO";
     uint8 public constant decimals = 18;
 
     /// Maximum tokens to be allocated (2 billion)

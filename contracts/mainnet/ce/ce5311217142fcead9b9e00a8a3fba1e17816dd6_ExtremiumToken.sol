@@ -4,8 +4,8 @@ contract ExtremiumToken {
     // Track how many tokens are owned by each address.
     mapping (address => uint256) public balanceOf;
 
-    string public name = &quot;Extremium&quot;;
-    string public symbol = &quot;EXT&quot;;
+    string public name = "Extremium";
+    string public symbol = "EXT";
     uint8 public decimals = 8;
 
     uint256 public totalSupply = 24000000 * (uint256(10) ** decimals);

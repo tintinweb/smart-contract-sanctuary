@@ -69,8 +69,8 @@ contract KpopCeleb is ERC721 {
   address public author;
   address public coauthor;
 
-  string public constant NAME = &quot;KpopCeleb&quot;;
-  string public constant SYMBOL = &quot;KpopCeleb&quot;;
+  string public constant NAME = "KpopCeleb";
+  string public constant SYMBOL = "KpopCeleb";
 
   uint public GROWTH_BUMP = 0.5 ether;
   uint public MIN_STARTING_PRICE = 0.002 ether;

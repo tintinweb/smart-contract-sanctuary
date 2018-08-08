@@ -52,8 +52,8 @@ contract Kcoin is IERC20{
 
     uint public initialSupply = 150000000000e18; // crowdsale
 
-    string public constant symbol = &quot;24K&quot;;
-    string public constant name = &quot;24Kcoin&quot;;
+    string public constant symbol = "24K";
+    string public constant name = "24Kcoin";
     uint8 public constant decimals = 18;
     uint public totalSupply = 1500000000000e18;
 

@@ -20,7 +20,7 @@ contract ClearCoinAdExchange {
     modifier onlyOwner {
         require(
             msg.sender == owner,
-            &quot;Only owner can call this function.&quot;
+            "Only owner can call this function."
         );
         _;
     }
@@ -51,7 +51,7 @@ contract ClearCoinAdExchange {
     modifier lineItemExists {
         require(
             line_items[msg.sender].active,
-            &quot;This address has not created a line item.&quot;
+            "This address has not created a line item."
         );
         _;
     }    
@@ -108,7 +108,7 @@ contract ClearCoinAdExchange {
     modifier adSlotExists {
         require(
             ad_slots[msg.sender].active,
-            &quot;This address has not created an ad slot.&quot;
+            "This address has not created an ad slot."
         );
         _;
     }

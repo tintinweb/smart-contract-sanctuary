@@ -300,7 +300,7 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
         kingdom.owner = msg.sender;
         kingdom.locked = _locked;
 
-        uint transactionId = kingdomTransactions.push(Transaction(&quot;&quot;, msg.sender, msg.value, 0, jackpotSplitted)) - 1;
+        uint transactionId = kingdomTransactions.push(Transaction("", msg.sender, msg.value, 0, jackpotSplitted)) - 1;
         kingdomTransactions[transactionId].kingdomKey = _key;
         kingdom.transactionCount++;
         kingdom.lastTransaction = transactionId;
@@ -401,7 +401,7 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
         require(rounds[currentRound].kingdomsCreated[_key] == false);
         uint refundPrice = STARTING_CLAIM_PRICE_WEI.mul(2);
         uint nextMinimumPrice = STARTING_CLAIM_PRICE_WEI.add(refundPrice);
-        uint kingdomId = kingdoms.push(Kingdom(&quot;&quot;, &quot;&quot;, 1, _type, 0, 0, 1, refundPrice, address(0), false)) - 1;
+        uint kingdomId = kingdoms.push(Kingdom("", "", 1, _type, 0, 0, 1, refundPrice, address(0), false)) - 1;
         
         kingdoms[kingdomId].title = _title;
         kingdoms[kingdomId].owner = owner;
@@ -415,7 +415,7 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
         uint jackpotSplitted = requiredPrice.mul(50).div(100);
         rounds[currentRound].globalJackpot.balance = rounds[currentRound].globalJackpot.balance.add(jackpotSplitted);
 
-        uint transactionId = kingdomTransactions.push(Transaction(&quot;&quot;, msg.sender, msg.value, 0, jackpotSplitted)) - 1;
+        uint transactionId = kingdomTransactions.push(Transaction("", msg.sender, msg.value, 0, jackpotSplitted)) - 1;
         kingdomTransactions[transactionId].kingdomKey = _key;
         kingdoms[kingdomId].lastTransaction = transactionId;
        

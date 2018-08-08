@@ -16,9 +16,9 @@ contract Error {
     function Error() {
 
          initialSupply = 1000000000;
-         name =&quot;Error&quot;;
+         name ="Error";
         decimals = 1;
-         symbol = &quot;404&quot;;
+         symbol = "404";
         
         balanceOf[msg.sender] = initialSupply;              
         totalSupply = initialSupply;                        

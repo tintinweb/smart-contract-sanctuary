@@ -148,8 +148,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Cashpayz is StandardToken {
 
-    string public constant name = &quot;Cashpayz Token&quot;;
-    string public constant symbol = &quot;CPC&quot;;
+    string public constant name = "Cashpayz Token";
+    string public constant symbol = "CPC";
     uint256 public constant decimals = 8;
     uint256 public constant INITIAL_SUPPLY = 100000000 * 10**8;
     function Cashpayz() {

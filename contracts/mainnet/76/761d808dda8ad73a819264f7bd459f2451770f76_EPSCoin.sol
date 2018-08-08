@@ -113,8 +113,8 @@ contract EPSCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EPSCoin() public {
-        symbol = &quot;EPSC&quot;;
-        name = &quot;Entrepreneurship Coin&quot;;
+        symbol = "EPSC";
+        name = "Entrepreneurship Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0x81243C36F1582FC34B4c225c82E4f95C7746dC83] = _totalSupply;

@@ -59,10 +59,10 @@ contract StandardToken is Token {
 contract WHP is StandardToken {
 	
     // metadata
-	string public constant name = &quot;WHP&quot;;
-    string public constant symbol = &quot;WHP&quot;;
+	string public constant name = "WHP";
+    string public constant symbol = "WHP";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 	
     address private creator;     
 	mapping (address => uint256) private blackmap;

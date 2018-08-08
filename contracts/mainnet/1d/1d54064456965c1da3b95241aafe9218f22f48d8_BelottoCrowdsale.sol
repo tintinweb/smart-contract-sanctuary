@@ -32,7 +32,7 @@ contract Owned {
     event OwnershipTransferred(address indexed _from, address indexed _to);
 
     modifier onlyOwner {
-        require(msg.sender == owner, &quot;ONLY OWNER IS ALLOWED&quot;);
+        require(msg.sender == owner, "ONLY OWNER IS ALLOWED");
         _;
     }
 
@@ -99,17 +99,17 @@ contract BelottoCrowdsale is Owned {
   event TokenPurchase(address indexed purchaser, address indexed beneficiary, uint256 value, uint256 amount);
   /** @dev Reverts if not in crowdsale time range. */
   modifier onlyWhilePreSaleOpen {
-    require(now >= presaleopeningTime && now <= presaleclosingTime, &quot;Pre Sale Close&quot;);
+    require(now >= presaleopeningTime && now <= presaleclosingTime, "Pre Sale Close");
     _;
   }
   
   modifier onlyWhileFirstSaleOpen {
-    require(now >= saleopeningTime && now <= saleclosingTime, &quot;First Sale Close&quot;);
+    require(now >= saleopeningTime && now <= saleclosingTime, "First Sale Close");
     _;
   }
   
   modifier onlyWhileSecondSaleOpen {
-    require(now >= secondsaleopeningTime && now <= secondsaleclosingTime, &quot;Second Sale Close&quot;);
+    require(now >= secondsaleopeningTime && now <= secondsaleclosingTime, "Second Sale Close");
     _;
   }
   
@@ -260,9 +260,9 @@ contract BelottoCrowdsale is Owned {
   }
   
   function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) internal{
-   require(_beneficiary != address(0), &quot;WRONG Address&quot;);
-   require(_weiAmount != 0, &quot;Insufficient funds&quot;);
-   require(_weiAmount >= minTxSize  && _weiAmount <= maxTxSize ,&quot;FUNDS should be MIN 0,1 ETH and Max 200 ETH&quot;);
+   require(_beneficiary != address(0), "WRONG Address");
+   require(_weiAmount != 0, "Insufficient funds");
+   require(_weiAmount >= minTxSize  && _weiAmount <= maxTxSize ,"FUNDS should be MIN 0,1 ETH and Max 200 ETH");
   }
   
   function TotalSpenders() public view returns (uint256 preSaleSpenders,uint256 firstSaleSpenders,uint256 secondSaleSpenders){
@@ -275,14 +275,14 @@ contract BelottoCrowdsale is Owned {
   
   function preSaleDelivery(address _beneficiary, uint256 _tokenAmount) public onlyOwner{
       _checkOpenings(0);
-      require(!presaleOpen, &quot;Pre-Sale is NOT CLOSE &quot;);
-      require(preSaleTokens >= _tokenAmount,&quot;NO Pre-SALE Tokens Available&quot;);
+      require(!presaleOpen, "Pre-Sale is NOT CLOSE ");
+      require(preSaleTokens >= _tokenAmount,"NO Pre-SALE Tokens Available");
       token.transfer(_beneficiary,_tokenAmount);
       preSaleTokens = preSaleTokens.sub(_tokenAmount);
   }
   
   function firstSaleDelivery(address _beneficiary, uint256 _tokenAmount) public onlyOwner{
-      require(!presaleOpen && !firstsaleOpen, &quot;First Sale is NOT CLOSE&quot;);
+      require(!presaleOpen && !firstsaleOpen, "First Sale is NOT CLOSE");
       if(saleTokens <= _tokenAmount && preSaleTokens >= _tokenAmount){
           saleTokens = saleTokens.add(_tokenAmount);
           preSaleTokens = preSaleTokens.sub(_tokenAmount);
@@ -292,8 +292,8 @@ contract BelottoCrowdsale is Owned {
   }
   
   function secondSaleDelivery(address _beneficiary, uint256 _tokenAmount) public onlyOwner{
-      require(!presaleOpen && !firstsaleOpen && !secondsaleOpen, &quot;Second Sale is NOT CLOSE&quot;);
-      require(saleTokens >= _tokenAmount,&quot;NO Sale Tokens Available&quot;);
+      require(!presaleOpen && !firstsaleOpen && !secondsaleOpen, "Second Sale is NOT CLOSE");
+      require(saleTokens >= _tokenAmount,"NO Sale Tokens Available");
       token.transfer(_beneficiary,_tokenAmount);
       saleTokens = saleTokens.sub(_tokenAmount);
   }

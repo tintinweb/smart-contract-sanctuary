@@ -157,8 +157,8 @@ contract BurnableToken is BasicToken {
 
 contract IntroToken is StandardToken {
 
-  string public name = &quot;INTRO Token&quot;;
-  string public symbol = &quot;ITR&quot;;
+  string public name = "INTRO Token";
+  string public symbol = "ITR";
   uint8 public decimals = 18;
   
   // Выпускаем 200 000 000 монет

@@ -58,8 +58,8 @@ contract GoldConnect is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;GoldConnect&quot;;
-    string public constant symbol = &quot;GCC&quot;;
+    string public constant name = "GoldConnect";
+    string public constant symbol = "GCC";
     uint public constant decimals = 18;
 
     uint256 public totalSupply = 500000000e18;

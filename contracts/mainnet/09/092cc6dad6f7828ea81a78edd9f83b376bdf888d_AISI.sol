@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract AISI is StandardToken {
 
-  string public constant name = &quot; AISI GROUP &quot;;
-  string public constant symbol = &quot;AISI&quot;;
+  string public constant name = " AISI GROUP ";
+  string public constant symbol = "AISI";
   uint8 public constant decimals = 18;
 
 

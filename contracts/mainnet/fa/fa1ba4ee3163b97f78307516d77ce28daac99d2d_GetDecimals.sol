@@ -6,7 +6,7 @@ interface ERC20 {
 
 contract GetDecimals {
     function getDecimals(ERC20 token) external view returns (uint){
-        bytes memory data = abi.encodeWithSignature(&quot;decimals()&quot;);
+        bytes memory data = abi.encodeWithSignature("decimals()");
         if(!address(token).call(data)) {
             // call failed
             return 18;

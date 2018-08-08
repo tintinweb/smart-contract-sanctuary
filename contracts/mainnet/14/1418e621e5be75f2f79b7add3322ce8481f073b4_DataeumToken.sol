@@ -63,10 +63,10 @@ contract DataeumToken is Owned, ERC20Interface {
     mapping(address => uint256) public lockupExpirations;
 
     // Token Symbol
-    string public constant symbol = &quot;XDT&quot;;
+    string public constant symbol = "XDT";
 
     // Token Name
-    string public constant name = &quot;Dataeum Token&quot;;
+    string public constant name = "Dataeum Token";
 
     // Token Decimals
     uint8 public constant decimals = 18;
@@ -158,8 +158,8 @@ contract DataeumToken is Owned, ERC20Interface {
     /**
      * @notice Modifier that checks if the conditions are met for a token to be
      * tradable. To be so, it must :
-     *  - Global Freeze must be removed, or, &quot;from&quot; must be allowed to bypass it
-     *  - &quot;from&quot; must not be in a custom lockup period
+     *  - Global Freeze must be removed, or, "from" must be allowed to bypass it
+     *  - "from" must not be in a custom lockup period
      * @param from Who to check the status
      */
     modifier tradable(address from) {
@@ -173,7 +173,7 @@ contract DataeumToken is Owned, ERC20Interface {
     /**
      * @notice Return the total supply of the token
      * @dev This function is part of the ERC20 standard 
-     * @return {&quot;supply&quot;: &quot;The token supply&quot;}
+     * @return {"supply": "The token supply"}
      */
     function totalSupply() public view returns (uint256 supply) {
         return totalSupply;
@@ -183,7 +183,7 @@ contract DataeumToken is Owned, ERC20Interface {
      * @notice Get the token balance of `owner`
      * @dev This function is part of the ERC20 standard
      * @param owner The wallet to get the balance of
-     * @return {&quot;balance&quot;: &quot;The balance of `owner`&quot;}
+     * @return {"balance": "The balance of `owner`"}
      */
     function balanceOf(
         address owner
@@ -198,7 +198,7 @@ contract DataeumToken is Owned, ERC20Interface {
      * @dev This function is part of the ERC20 standard
      * @param destination The address that receives the tokens
      * @param amount Token amount to transfer
-     * @return {&quot;success&quot;: &quot;If the operation completed successfuly&quot;}
+     * @return {"success": "If the operation completed successfuly"}
      */
     function transfer(
         address destination,
@@ -219,7 +219,7 @@ contract DataeumToken is Owned, ERC20Interface {
      * @param from The address that sends the tokens
      * @param to The address that receives the tokens
      * @param tokenAmount Token amount to transfer
-     * @return {&quot;success&quot;: &quot;If the operation completed successfuly&quot;}
+     * @return {"success": "If the operation completed successfuly"}
      */
     function transferFrom(
         address from,
@@ -240,7 +240,7 @@ contract DataeumToken is Owned, ERC20Interface {
      * @dev This function is part of the ERC20 standard
      * @param spender The allowed address
      * @param tokenAmount The maximum amount allowed to spend
-     * @return {&quot;success&quot;: &quot;If the operation completed successfuly&quot;}
+     * @return {"success": "If the operation completed successfuly"}
      */
     function approve(
         address spender,
@@ -258,7 +258,7 @@ contract DataeumToken is Owned, ERC20Interface {
      * @dev This function is part of the ERC20 standard
      * @param tokenOwner The address that owns the tokens
      * @param spender The spender
-     * @return {&quot;remaining&quot;: &quot;The amount of tokens remaining in the allowance&quot;}
+     * @return {"remaining": "The amount of tokens remaining in the allowance"}
      */
     function allowance(
         address tokenOwner,
@@ -275,7 +275,7 @@ contract DataeumToken is Owned, ERC20Interface {
      * @param spender The allowed address
      * @param tokenAmount The maximum amount allowed to spend
      * @param data The data sent back as parameter to the contract (bytes array)
-     * @return {&quot;success&quot;: &quot;If the operation completed successfuly&quot;}
+     * @return {"success": "If the operation completed successfuly"}
      */
     function approveAndCall(
         address spender,
@@ -297,7 +297,7 @@ contract DataeumToken is Owned, ERC20Interface {
      * @notice Permits to withdraw any ERC20 tokens that have been mistakingly sent to this contract
      * @param tokenAddress The received ERC20 token address
      * @param tokenAmount The amount of ERC20 tokens to withdraw from this contract
-     * @return {&quot;success&quot;: &quot;If the operation completed successfuly&quot;}
+     * @return {"success": "If the operation completed successfuly"}
      */
     function withdrawERC20Token(
         address tokenAddress,

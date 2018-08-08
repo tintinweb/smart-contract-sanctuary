@@ -113,8 +113,8 @@ contract BloodToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BloodToken() public {
-        symbol = &quot;BLD&quot;;
-        name = &quot;Blood Token&quot;;
+        symbol = "BLD";
+        name = "Blood Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xE8BE851fF14493e9Ef800f37aeCb3758fB84dBff] = _totalSupply;

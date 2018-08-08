@@ -16,8 +16,8 @@ contract LightCoinToken{
         owner = 0x9a64fE62837d8E2C0Bd0C2a96bbDdEA609Ab2F19;          // Set owner of contract 
 		lockOwner = 0x821C05372425709a68090A17075A855dd20371c7;
 		startTime = 1515686400;
-        name = &quot;Lightcoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;Light&quot;;                                           // Set the symbol for display purposes
+        name = "Lightcoin";                                   // Set the name for display purposes
+        symbol = "Light";                                           // Set the symbol for display purposes
         decimals =8;                                            // Amount of decimals for display purposes
 		totalSupply = 21000000000000000000;               // Total supply
 		balances[owner] = totalSupply * 90 /100 ;

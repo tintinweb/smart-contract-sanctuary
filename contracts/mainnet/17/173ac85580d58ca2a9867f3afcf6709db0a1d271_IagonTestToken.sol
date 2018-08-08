@@ -225,8 +225,8 @@ contract IagonTestToken is StandardToken, Ownable {
   string public symbol;
   uint public decimals;
   function IagonTestToken() public{
-    name = &quot;IagonTest Token&quot;;
-    symbol = &quot;ITST&quot;;
+    name = "IagonTest Token";
+    symbol = "ITST";
     decimals = 18;
     totalSupply_ = 1000000 * 10**uint(decimals);
     balances[msg.sender] = totalSupply_;

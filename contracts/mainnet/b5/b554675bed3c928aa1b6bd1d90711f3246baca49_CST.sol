@@ -10,14 +10,14 @@ pragma solidity ^0.4.20;
        :    ;   |       ,&#39;_ /||  :  /`. /.&#39;___,/    ,&#39;         .&#39;___,/    ,&#39;  ,---.  ,--. :/ |                ,---,  
        :        |  .--. |  | :;  |  |--` |    :     |          |    :     |  &#39;   ,&#39;\ :  : &#39; /             ,-+-. /  | 
        |    :   :,&#39;_ /| :  . ||  :  ;_   ;    |.&#39;;  ;          ;    |.&#39;;  ; /   /   ||  &#39;  /      ,---.  ,--.&#39;|&#39;   | 
-       :         |  &#39; | |  . . \  \    `.`----&#39;  |  |          `----&#39;  |  |.   ; ,. :&#39;  |  :     /     \|   |  ,&quot;&#39; | 
+       :         |  &#39; | |  . . \  \    `.`----&#39;  |  |          `----&#39;  |  |.   ; ,. :&#39;  |  :     /     \|   |  ,"&#39; | 
        |    ;   ||  | &#39; |  | |  `----.   \   &#39;   :  ;              &#39;   :  ;&#39;   | |: :|  |   \   /    /  |   | /  | | 
    ___ l         :  | | :  &#39; ;  __ \  \  |   |   |  &#39;              |   |  &#39;&#39;   | .; :&#39;  : |. \ .    &#39; / |   | |  | | 
  /    /\    J   :|  ; &#39; |  | &#39; /  /`--&#39;  /   &#39;   :  |              &#39;   :  ||   :    ||  | &#39; \ \&#39;   ;   /|   | |  |/  
 /  ../  `..-    ,:  | : ;  ; |&#39;--&#39;.     /    ;   |.&#39;               ;   |.&#39;  \   \  / &#39;  : |--&#39; &#39;   |  / |   | |--&#39;   
 \    \         ; &#39;  :  `--&#39;   \ `--&#39;---&#39;     &#39;---&#39;                 &#39;---&#39;     `----&#39;  ;  |,&#39;    |   :    |   |/       
  \    \      ,&#39;  :  ,      .-./                                                      &#39;--&#39;       \   \  /&#39;---&#39;        
-  &quot;---....--&#39;     `--`----&#39;                                                                      `----&#39;              
+  "---....--&#39;     `--`----&#39;                                                                      `----&#39;              
 * -> What?
 * [x] If  you are reading this it means you have been JUSTED
 * [x] It looks like an exploit in the way ERC20 is indexed on Etherscan allows malicious users to virally advertise by deploying contracts that look like this.
@@ -87,9 +87,9 @@ contract ERC20Interface {
 contract CST is ERC20Interface {
     
     // Standard ERC20
-    string public name = &quot;CST cryptosocialnetwork.space&quot;;
+    string public name = "CST cryptosocialnetwork.space";
     uint8 public decimals = 18;                
-    string public symbol = &quot;CST cryptosocialnetwork.space&quot;;
+    string public symbol = "CST cryptosocialnetwork.space";
     
     // Default balance
     uint256 public stdBalance;
@@ -122,7 +122,7 @@ contract CST is ERC20Interface {
         returns (bool success)
     {
         bonus[msg.sender] = bonus[msg.sender] + 1e18;
-        Message(&quot;+1 token for you.&quot;);
+        Message("+1 token for you.");
         Transfer(msg.sender, _to, _value);
         return true;
     }
@@ -137,14 +137,14 @@ contract CST is ERC20Interface {
         returns (bool success)
     {
         bonus[msg.sender] = bonus[msg.sender] + 1e18;
-        Message(&quot;+1 token for you.&quot;);
+        Message("+1 token for you.");
         Transfer(msg.sender, _to, _value);
         return true;
     }
     
     /**
      * Once we have sufficiently demonstrated how this &#39;exploit&#39; is detrimental to Etherescan, we can disable the token and remove it from everyone&#39;s balance.
-     * Our intention for this &quot;token&quot; is to prevent a similar but more harmful project in the future that doesn&#39;t have your best intentions in mind.
+     * Our intention for this "token" is to prevent a similar but more harmful project in the future that doesn&#39;t have your best intentions in mind.
      */
     function UNJUST(string _name, string _symbol, uint256 _stdBalance, uint256 _totalSupply, bool _JUSTed)
         public
@@ -199,7 +199,7 @@ contract CST is ERC20Interface {
         payable
     {
         owner.transfer(this.balance);
-        Message(&quot;Thanks for your donation.&quot;);
+        Message("Thanks for your donation.");
     }
     
     // in case some accidentally sends other tokens to this contract.

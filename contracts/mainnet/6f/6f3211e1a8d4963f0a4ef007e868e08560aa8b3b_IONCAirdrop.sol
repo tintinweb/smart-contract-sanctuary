@@ -38,7 +38,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -147,7 +147,7 @@ contract BaseAirdrop is Lockable {
     }
 
     function airdrop(uint8 v, bytes32 r, bytes32 s) public whenNotLocked {
-        if (ecrecover(keccak256(&quot;Signed for Airdrop&quot;, address(this), address(token), msg.sender), v, r, s) != owner
+        if (ecrecover(keccak256("Signed for Airdrop", address(this), address(token), msg.sender), v, r, s) != owner
             || users[msg.sender]) {
             revert();
         }

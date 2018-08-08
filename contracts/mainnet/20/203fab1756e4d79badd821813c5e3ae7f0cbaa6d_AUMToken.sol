@@ -113,8 +113,8 @@ contract AUMToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AUMToken() public {
-        symbol = &quot;AUM&quot;;
-        name = &quot;AUM Token&quot;;
+        symbol = "AUM";
+        name = "AUM Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x2269338bcF8E8894ce13a8A1ba4b5Bb987bdc391] = _totalSupply;

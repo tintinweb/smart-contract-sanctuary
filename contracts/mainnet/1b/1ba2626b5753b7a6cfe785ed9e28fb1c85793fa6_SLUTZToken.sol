@@ -113,8 +113,8 @@ contract SLUTZToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SLUTZToken() public {
-        symbol = &quot;SLUTZ&quot;;
-        name = &quot;SLUTZ Token&quot;;
+        symbol = "SLUTZ";
+        name = "SLUTZ Token";
         decimals = 8;
         _totalSupply = 25000000000000000;
         balances[0x2a590BE07c6178c1A743C1ddD94ECA1cAfc97FA1] = _totalSupply;

@@ -113,8 +113,8 @@ contract STARLIGHT is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function STARLIGHT() public {
-        symbol = &quot;SRL&quot;;
-        name = &quot;STARLIGHT&quot;;
+        symbol = "SRL";
+        name = "STARLIGHT";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xf28ac8cd1C1203e246a15DD1D95a8d340143be7a] = _totalSupply;

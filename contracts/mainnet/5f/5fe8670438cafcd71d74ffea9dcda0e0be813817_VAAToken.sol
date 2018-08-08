@@ -59,8 +59,8 @@ contract SafeMath {
 
 contract VAAToken is SafeMath, owned {
 
-    string public name = &quot;VAAToken&quot;;        //  token name
-    string public symbol = &quot;VAAT&quot;;      //  token symbol
+    string public name = "VAAToken";        //  token name
+    string public symbol = "VAAT";      //  token symbol
     uint public decimals = 8;           //  token digit
 
     mapping (address => uint) public balanceOf;

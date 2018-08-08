@@ -222,8 +222,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract VoltgoToken is StandardToken {
 
-  string public name = &quot;Voltgo&quot;;
-  string public symbol = &quot;VGO&quot;;
+  string public name = "Voltgo";
+  string public symbol = "VGO";
   uint public decimals = 8;
   uint256 public INITIAL_SUPPLY = 250000000 * (10 ** uint256(decimals));  // 250 million tokens
 

@@ -115,8 +115,8 @@ contract StandardToken is ERC20 {
 contract FireXToken is StandardToken {
     uint public totalSupply = 1800000000;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;FireX Token&quot;;
-    string constant public symbol = &quot;FIT&quot;;
+    string constant public name = "FireX Token";
+    string constant public symbol = "FIT";
 
     function FireXToken() public {
         balances[msg.sender] = totalSupply;

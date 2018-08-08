@@ -115,8 +115,8 @@ contract IbzCoin is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function IbzCoin() public {
-        symbol = &quot;IBZ&quot;;
-        name = &quot;IbzCoin&quot;;
+        symbol = "IBZ";
+        name = "IbzCoin";
         decimals = 18;
         _totalSupply = 500000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

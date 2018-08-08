@@ -190,8 +190,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract CBMTToken is StandardToken {
 
-  string public constant name = &quot;CBM UNITS (TWNKL)&quot;;
-  string public constant symbol = &quot;CBMT&quot;;
+  string public constant name = "CBM UNITS (TWNKL)";
+  string public constant symbol = "CBMT";
   uint8 public constant decimals = 2;
 
   uint256 public constant INITIAL_SUPPLY = 50000000;

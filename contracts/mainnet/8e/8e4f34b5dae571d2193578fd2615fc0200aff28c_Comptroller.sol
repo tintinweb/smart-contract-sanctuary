@@ -23,7 +23,7 @@ THE CROWDSALE
 
   The CrowdSale is started as soon as one user buys tokens, and ends
   if the hardCap is met, or dateSaleEnded is reached. The CrowdSale
-  will be considered &quot;successful&quot; if the SoftCap is reached. The 
+  will be considered "successful" if the SoftCap is reached. The 
   exchange rate is 1 Ether = 1 Token, plus a bonus amount that 
   starts at 50% for the 1st Ether, sliding down to 0% at `bonusCap`.
 
@@ -136,7 +136,7 @@ contract Comptroller {
     {
         wallet = _wallet;
         treasury = _ICompTreasury(_treasury);
-        token = new DividendToken(&quot;PennyEtherToken&quot;, &quot;PENNY&quot;);
+        token = new DividendToken("PennyEtherToken", "PENNY");
         locker = new DividendTokenLocker(token, _wallet);
         token.freeze(true);
         emit Created(now, wallet, treasury, token, locker);
@@ -193,13 +193,13 @@ contract Comptroller {
         payable
     {
         if (dateSaleStarted==0 || now < dateSaleStarted)
-            return _errorBuyingTokens(&quot;CrowdSale has not yet started.&quot;);
+            return _errorBuyingTokens("CrowdSale has not yet started.");
         if (now > dateSaleEnded)
-            return _errorBuyingTokens(&quot;CrowdSale has ended.&quot;);
+            return _errorBuyingTokens("CrowdSale has ended.");
         if (totalRaised >= hardCap)
-            return _errorBuyingTokens(&quot;HardCap has been reached.&quot;);
+            return _errorBuyingTokens("HardCap has been reached.");
         if (msg.value % 1000000000 != 0)
-            return _errorBuyingTokens(&quot;Must send an even amount of GWei.&quot;);
+            return _errorBuyingTokens("Must send an even amount of GWei.");
 
         // Mark sale as started if haven&#39;t done so already.
         if (!wasSaleStarted) {
@@ -318,15 +318,15 @@ contract Comptroller {
         payable
     {
         if (!wasSaleEnded)
-            return _errorBuyingTokens(&quot;Sale has not ended.&quot;);
+            return _errorBuyingTokens("Sale has not ended.");
         if (!wasSoftCapMet)
-            return _errorBuyingTokens(&quot;SoftCap was not met.&quot;);
+            return _errorBuyingTokens("SoftCap was not met.");
             
         // Cap _amount to the amount we need. Error if 0.
         uint _amtNeeded = capitalFundable();
         uint _amount = msg.value > _amtNeeded ? _amtNeeded : msg.value;
         if (_amount == 0) {
-            return _errorBuyingTokens(&quot;No capital is needed.&quot;);
+            return _errorBuyingTokens("No capital is needed.");
         }
 
         // Mint tokens, send capital.
@@ -362,7 +362,7 @@ contract Comptroller {
     /********** PUBLIC VIEWS *************************************/
     /*************************************************************/
 
-    // Returns the amount of Ether that can be sent to &quot;.fundCapital()&quot;
+    // Returns the amount of Ether that can be sent to ".fundCapital()"
     function capitalFundable()
         public
         view
@@ -524,7 +524,7 @@ Notes:
     - Per above, upon transfers, dividends are not
       transferred. They are kept by the original sender, and
       not credited to the receiver.
-    - Uses &quot;pull&quot; instead of &quot;push&quot;. Token holders must pull
+    - Uses "pull" instead of "push". Token holders must pull
       their own dividends.
 
 Comptroller Permissions:
@@ -544,7 +544,7 @@ contract DividendToken is ERC667
 
     // How dividends work:
     //
-    // - A &quot;point&quot; is a fraction of a Wei (1e-32), it&#39;s used to reduce rounding errors.
+    // - A "point" is a fraction of a Wei (1e-32), it&#39;s used to reduce rounding errors.
     //
     // - totalPointsPerToken represents how many points each token is entitled to
     //   from all the dividends ever received. Each time a new deposit is made, it
@@ -563,7 +563,7 @@ contract DividendToken is ERC667
     // - .collectOwedDividends() calls .updateCreditedPoints(account), converts points
     //   to wei and pays account, then resets creditedPoints[account] to 0.
     //
-    // - &quot;Credit&quot; goes to Nick Johnson for the concept.
+    // - "Credit" goes to Nick Johnson for the concept.
     //
     uint constant POINTS_PER_WEI = 1e32;
     uint public dividendsTotal;
@@ -698,7 +698,7 @@ contract DividendToken is ERC667
     /*************************************************************/
     // Credits _account with whatever dividend points they haven&#39;t yet been credited.
     //  This needs to be called before any user&#39;s balance changes to ensure their
-    //  &quot;lastPointsPerToken&quot; credits their current balance, and not an altered one.
+    //  "lastPointsPerToken" credits their current balance, and not an altered one.
     function _updateCreditedPoints(address _account)
         private
     {

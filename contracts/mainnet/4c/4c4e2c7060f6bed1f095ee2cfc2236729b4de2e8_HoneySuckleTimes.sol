@@ -3,10 +3,10 @@ pragma solidity ^0.4.14;
 contract  HoneySuckleTimes {
     
     /* Public variables of the token */
-    string public name = &quot; HoneySuckleTimes &quot;;
+    string public name = " HoneySuckleTimes ";
     uint256 public decimals = 2;
     uint256 public totalSupply;
-    string public symbol = &quot;HST&quot;;
+    string public symbol = "HST";
     event Mint(address indexed owner,uint amount);
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);

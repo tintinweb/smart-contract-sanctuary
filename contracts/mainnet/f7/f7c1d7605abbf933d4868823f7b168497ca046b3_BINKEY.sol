@@ -113,8 +113,8 @@ contract BINKEY is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BINKEY() public {
-        symbol = &quot;BNKY&quot;;
-        name = &quot;BINKEY&quot;;
+        symbol = "BNKY";
+        name = "BINKEY";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xec2C6Cf5F919e538975E6C58dFA315b803223Ce2] = _totalSupply;

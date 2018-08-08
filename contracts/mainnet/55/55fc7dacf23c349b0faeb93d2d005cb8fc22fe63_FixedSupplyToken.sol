@@ -104,8 +104,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;WBC&quot;;
-        name = &quot;water block chain&quot;;
+        symbol = "WBC";
+        name = "water block chain";
         decimals = 18;
         _totalSupply = 200000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

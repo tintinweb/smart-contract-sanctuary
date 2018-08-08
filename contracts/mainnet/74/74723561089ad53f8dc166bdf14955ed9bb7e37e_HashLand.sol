@@ -153,7 +153,7 @@ contract ERC721BasicToken {
         external
         canTransfer(_tokenId)
     {
-        safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+        safeTransferFrom(_from, _to, _tokenId, "");
     }
 
     function approve(address _approved, uint256 _tokenId) external {
@@ -387,7 +387,7 @@ contract owned {
 
 contract HashLand is ERC721Token, owned{
 
-    function HashLand() ERC721Token(&quot;HashLand&quot;, &quot;HSL&quot;) public {}
+    function HashLand() ERC721Token("HashLand", "HSL") public {}
 
     struct LandInfo {
         // Unique key for a land, derived from longitude and latitude

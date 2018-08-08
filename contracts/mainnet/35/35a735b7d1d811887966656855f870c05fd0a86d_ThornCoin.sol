@@ -209,8 +209,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract ThornCoin is StandardToken {
-    string public name = &quot;ThornCoin&quot;;
-    string public symbol = &quot;THRN&quot;;
+    string public name = "ThornCoin";
+    string public symbol = "THRN";
     uint8 public decimals = 18;
     uint public INITIAL_SUPPLY = 9000000 * 10 ** 18;
 

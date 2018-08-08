@@ -65,8 +65,8 @@ contract XYZethrDividendCards is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME           = &quot;XYZethrDividendCard&quot;;
-  string public constant SYMBOL         = &quot;XYZDC&quot;;
+  string public constant NAME           = "XYZethrDividendCard";
+  string public constant SYMBOL         = "XYZDC";
   address public         BANKROLL;
 
   /*** STORAGE ***/
@@ -118,28 +118,28 @@ contract XYZethrDividendCards is ERC721 {
     creator = msg.sender;
     BANKROLL = _bankroll;
 
-    createDivCard(&quot;2%&quot;, 1 ether, 2);
+    createDivCard("2%", 1 ether, 2);
     divCardRateToIndex[2] = 0;
 
-    createDivCard(&quot;5%&quot;, 1 ether, 5);
+    createDivCard("5%", 1 ether, 5);
     divCardRateToIndex[5] = 1;
 
-    createDivCard(&quot;10%&quot;, 1 ether, 10);
+    createDivCard("10%", 1 ether, 10);
     divCardRateToIndex[10] = 2;
 
-    createDivCard(&quot;15%&quot;, 1 ether, 15);
+    createDivCard("15%", 1 ether, 15);
     divCardRateToIndex[15] = 3;
 
-    createDivCard(&quot;20%&quot;, 1 ether, 20);
+    createDivCard("20%", 1 ether, 20);
     divCardRateToIndex[20] = 4;
 
-    createDivCard(&quot;25%&quot;, 1 ether, 25);
+    createDivCard("25%", 1 ether, 25);
     divCardRateToIndex[25] = 5;
 
-    createDivCard(&quot;33%&quot;, 1 ether, 33);
+    createDivCard("33%", 1 ether, 33);
     divCardRateToIndex[33] = 6;
 
-    createDivCard(&quot;MASTER&quot;, 5 ether, 10);
+    createDivCard("MASTER", 5 ether, 10);
     divCardRateToIndex[999] = 7;
 
 	onSale = false;

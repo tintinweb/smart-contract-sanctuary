@@ -98,8 +98,8 @@ contract HyperToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HyperToken() public {
-        symbol = &quot;HYPT&quot;;
-        name = &quot;Hyper Token&quot;;
+        symbol = "HYPT";
+        name = "Hyper Token";
         decimals = 18;
         _totalSupply = 3000000000000000000000000000;
         balances[0xB64Afa401d5fe28BAcAA04b3B0eC6Ae78Df97FA9] = _totalSupply;

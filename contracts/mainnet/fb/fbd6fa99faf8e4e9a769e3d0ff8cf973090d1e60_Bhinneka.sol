@@ -1,8 +1,8 @@
 pragma solidity ^0.4.18;
 contract Bhinneka {
 /* Public variables of the token */
-string public name = &quot;Bhinneka Tunggal Ika&quot;;                  // Token Name
-string public symbol = &quot;BTI&quot;;                         // Token symbol
+string public name = "Bhinneka Tunggal Ika";                  // Token Name
+string public symbol = "BTI";                         // Token symbol
 uint public decimals = 18;                            // Token Decimal Point
 address public owner;                                 // Owner of the Token Contract
 uint256 totalBhinneka;                                  // Total Token for the Crowdsale

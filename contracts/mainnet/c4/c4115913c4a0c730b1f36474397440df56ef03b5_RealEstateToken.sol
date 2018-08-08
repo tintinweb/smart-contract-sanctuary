@@ -118,8 +118,8 @@ contract RealEstateToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RealEstateToken() public {
-        symbol = &quot;RETO&quot;;
-        name = &quot;Real Estate token&quot;;
+        symbol = "RETO";
+        name = "Real Estate token";
         decimals = 8;
         _totalSupply = 8800000000000000;
         balances[0x5b5547d79ca5163145d41d374f0c7fcfabe8cba1] = _totalSupply;

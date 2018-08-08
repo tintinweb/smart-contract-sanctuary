@@ -113,8 +113,8 @@ contract FuckFacebookCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FuckFacebookCoin() public {
-        symbol = &quot;FFB&quot;;
-        name = &quot;Fuck Facebook Coin&quot;;
+        symbol = "FFB";
+        name = "Fuck Facebook Coin";
         decimals = 4;
         _totalSupply = 1000000000000;
         balances[0x753C33480A6b44E3b165D20F51f4d2E34086b79A] = _totalSupply;

@@ -6,7 +6,7 @@
  pragma solidity ^0.4.18;
 
 /*************************************************************************
- * import &quot;../math/SafeMath.sol&quot; : start
+ * import "../math/SafeMath.sol" : start
  *************************************************************************/
 
 
@@ -43,17 +43,17 @@ library SafeMath {
   }
 }
 /*************************************************************************
- * import &quot;../math/SafeMath.sol&quot; : end
+ * import "../math/SafeMath.sol" : end
  *************************************************************************/
 /*************************************************************************
- * import &quot;../ownership/Ownable.sol&quot; : start
+ * import "../ownership/Ownable.sol" : start
  *************************************************************************/
 
 
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -92,7 +92,7 @@ contract Ownable {
 
 }
 /*************************************************************************
- * import &quot;../ownership/Ownable.sol&quot; : end
+ * import "../ownership/Ownable.sol" : end
  *************************************************************************/
 
 /**

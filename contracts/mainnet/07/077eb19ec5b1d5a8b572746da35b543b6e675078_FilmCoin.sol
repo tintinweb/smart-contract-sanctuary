@@ -111,8 +111,8 @@ contract FilmCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;FILM&quot;;
-        name = &quot;FilmCoin&quot;;
+        symbol = "FILM";
+        name = "FilmCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x255EbB7393Fb8AD33E1edaf30270C7Edb2C181DD] = _totalSupply;

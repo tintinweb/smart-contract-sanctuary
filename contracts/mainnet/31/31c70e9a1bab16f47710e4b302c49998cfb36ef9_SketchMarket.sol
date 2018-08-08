@@ -33,7 +33,7 @@ contract Ownable {
 
 contract SketchMarket is Ownable {
   // ERC-20 compatibility {
-  string public standard = &quot;CryptoSketches&quot;;
+  string public standard = "CryptoSketches";
   string public name;
   string public symbol;
   uint8 public decimals;
@@ -97,8 +97,8 @@ contract SketchMarket is Ownable {
   function SketchMarket() public payable {
     // ERC-20 token
     totalSupply = 0;
-    name = &quot;CRYPTOSKETCHES&quot;;
-    symbol = &quot;S̈&quot;;
+    name = "CRYPTOSKETCHES";
+    symbol = "S̈";
     decimals = 0; // whole number; number of sketches owned
 
     // Trading parameters
@@ -419,7 +419,7 @@ contract SketchMarket is Ownable {
   function enterBidForSketch(uint256 sketchIndex) external payable {
       require(totalSupply != 0);
       require(sketchIndex < totalSupply);
-      require(sketchIndexToHolder[sketchIndex] != 0x0); // can&#39;t bid on &quot;non-owned&quot; Sketch (theoretically impossible anyway)
+      require(sketchIndexToHolder[sketchIndex] != 0x0); // can&#39;t bid on "non-owned" Sketch (theoretically impossible anyway)
       require(sketchIndexToHolder[sketchIndex] != msg.sender); // can&#39;t bid on a Sketch that you own
 
       uint256 price = msg.value; // in wei
@@ -443,7 +443,7 @@ contract SketchMarket is Ownable {
   function withdrawBidForSketch(uint256 sketchIndex) public {
     require(totalSupply != 0);
     require(sketchIndex < totalSupply);
-    require(sketchIndexToHolder[sketchIndex] != 0x0); // can&#39;t bid on &quot;non-owned&quot; Sketch (theoretically impossible anyway)
+    require(sketchIndexToHolder[sketchIndex] != 0x0); // can&#39;t bid on "non-owned" Sketch (theoretically impossible anyway)
     require(sketchIndexToHolder[sketchIndex] != msg.sender); // can&#39;t withdraw a bid for a Sketch that you own
       
     Bid storage bid = sketchIndexToHighestBid[sketchIndex];

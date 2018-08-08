@@ -143,8 +143,8 @@ contract Factory is UppercaseCheck, StandardToken{
 
 contract Fish is Ownable, Factory{
      
-    string public constant name = &quot;Fish&quot;;
-    string public constant symbol = &quot;FISH&quot;;
+    string public constant name = "Fish";
+    string public constant symbol = "FISH";
     uint8 public constant decimals = 0;
     
     uint unitsOneEthCanBuy_ = 10000;

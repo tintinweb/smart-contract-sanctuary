@@ -101,8 +101,8 @@ contract PonziRevolutionBeam is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PonziRevolutionBeam() public {
-        symbol = &quot;PRB&quot;;
-        name = &quot;PonziRevolutionBeam&quot;;
+        symbol = "PRB";
+        name = "PonziRevolutionBeam";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         // creator address

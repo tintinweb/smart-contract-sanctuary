@@ -114,8 +114,8 @@ pragma solidity ^0.4.18;
         // Constructor
         // ------------------------------------------------------------------------
         function ADZbuzzCommunityToken() public {
-            symbol = &quot;ACT95499&quot;;
-            name = &quot;ADZbuzz Autotech.science Community Token&quot;;
+            symbol = "ACT95499";
+            name = "ADZbuzz Autotech.science Community Token";
             decimals = 8;
             _totalSupply = 200000000000000;
             balances[0x3f70c0B02879c36162C2C902ECfe9Ac0a8a8a187] = _totalSupply;

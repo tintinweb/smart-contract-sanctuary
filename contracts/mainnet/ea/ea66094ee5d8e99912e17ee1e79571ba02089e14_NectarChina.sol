@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract NectarChina {
     // Public variables of the token
-    string public name = &quot;NectarChina&quot;;
-    string public symbol = &quot;NECC&quot;;
+    string public name = "NectarChina";
+    string public symbol = "NECC";
     uint256 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 1000*1000*100*10**decimals;

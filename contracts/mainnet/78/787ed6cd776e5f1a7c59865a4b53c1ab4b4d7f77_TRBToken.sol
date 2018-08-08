@@ -113,8 +113,8 @@ contract TRBToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function TRBToken() public {
-        symbol = &quot;TRB&quot;;
-        name = &quot;Trade Bull&quot;;
+        symbol = "TRB";
+        name = "Trade Bull";
         decimals = 10;
         _totalSupply = 250000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -151,8 +151,8 @@ contract PoW_MIB {
      =====================================
     =            CONFIGURABLES            =
     =====================================
-    string public name = &quot;PoW_MIB&quot;;
-    string public symbol = &quot;PoW_MIB&quot;;
+    string public name = "PoW_MIB";
+    string public symbol = "PoW_MIB";
     uint8 constant public decimals = 18;
     uint8 constant internal entryFee_ = 33; // 20% to enter 
     uint8 constant internal transferFee_ = 10; // 10% transfer fee
@@ -247,7 +247,7 @@ contract PoW_MIB {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
 
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
 
         // fire event
@@ -591,7 +591,7 @@ contract PoW_MIB {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
 
         // is the user referred by a masternode?
@@ -831,8 +831,8 @@ contract PoWMiB is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Proof of Weak Man in Black&quot;;
-    string public constant symbol = &quot;PMIB&quot;;
+    string public constant name = "Proof of Weak Man in Black";
+    string public constant symbol = "PMIB";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 80000000e8;

@@ -15,7 +15,7 @@ pragma solidity ^0.4.16;
 
 /**
  * ERC-20 standard token interface, as defined
- * <a href=&quot;http://github.com/ethereum/EIPs/issues/20&quot;>here</a>.
+ * <a href="http://github.com/ethereum/EIPs/issues/20">here</a>.
  */
 contract Token {
   /**
@@ -316,7 +316,7 @@ contract LUCToken is AbstractToken {
    * @return name of this token
    */
   function name () constant returns (string result) {
-    return &quot;Level-Up Coin&quot;;
+    return "Level-Up Coin";
   }
 
   /**
@@ -325,7 +325,7 @@ contract LUCToken is AbstractToken {
    * @return symbol of this token
    */
   function symbol () constant returns (string result) {
-    return &quot;LUC&quot;;
+    return "LUC";
   }
 
   /**

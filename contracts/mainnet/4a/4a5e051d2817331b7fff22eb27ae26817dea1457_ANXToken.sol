@@ -113,8 +113,8 @@ contract ANXToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function ANXToken() public {
-        symbol = &quot;ANX&quot;;
-        name = &quot;CoinANX&quot;;
+        symbol = "ANX";
+        name = "CoinANX";
         decimals = 8;
         _totalSupply = 800000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

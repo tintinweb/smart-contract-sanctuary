@@ -16,7 +16,7 @@ pragma solidity 0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -118,11 +118,11 @@ contract RBAC is Ownable {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_CEO = &quot;ceo&quot;;
-  string public constant ROLE_COO = &quot;coo&quot;;//运营
-  string public constant ROLE_CRO = &quot;cro&quot;;//风控
-  string public constant ROLE_MANAGER = &quot;manager&quot;;//经办员
-  string public constant ROLE_REVIEWER = &quot;reviewer&quot;;//审核员
+  string public constant ROLE_CEO = "ceo";
+  string public constant ROLE_COO = "coo";//运营
+  string public constant ROLE_CRO = "cro";//风控
+  string public constant ROLE_MANAGER = "manager";//经办员
+  string public constant ROLE_REVIEWER = "reviewer";//审核员
   
   /**
    * @dev constructor. Sets msg.sender as ceo by default
@@ -622,8 +622,8 @@ contract TwoPhaseToken is BlackListToken{
     mapping (string => MethodParam) params;
     
     //方法名常量 
-    string public constant ISSUE_METHOD = &quot;issue&quot;;
-    string public constant REDEEM_METHOD = &quot;redeem&quot;;
+    string public constant ISSUE_METHOD = "issue";
+    string public constant REDEEM_METHOD = "redeem";
     
     
     //经办人提交增发数量
@@ -698,8 +698,8 @@ contract UpgradedStandardToken {
 
 
 contract WitToken is TwoPhaseToken {
-    string  public  constant name = &quot;Wealth in Tokens&quot;;
-    string  public  constant symbol = &quot;WIT&quot;;
+    string  public  constant name = "Wealth in Tokens";
+    string  public  constant symbol = "WIT";
     uint8   public  constant decimals = 18;
     address public upgradedAddress;
     bool public deprecated;

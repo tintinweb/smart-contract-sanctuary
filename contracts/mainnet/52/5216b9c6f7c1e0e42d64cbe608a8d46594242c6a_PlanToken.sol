@@ -111,8 +111,8 @@ contract PlanToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function PlanToken() public {
-        symbol = &quot;PLAN&quot;;
-        name = &quot;PlanToken&quot;;
+        symbol = "PLAN";
+        name = "PlanToken";
         decimals = 18;
         _totalSupply = 500000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

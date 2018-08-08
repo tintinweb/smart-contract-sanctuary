@@ -211,8 +211,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Scanetchain  is StandardToken {
 
-  string public constant name = &quot;Scanetchain&quot;;
-  string public constant symbol = &quot;SWC&quot;;
+  string public constant name = "Scanetchain";
+  string public constant symbol = "SWC";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 1000000000 * (10 ** uint256(decimals));

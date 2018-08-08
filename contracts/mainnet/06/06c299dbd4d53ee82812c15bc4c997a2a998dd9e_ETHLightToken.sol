@@ -67,9 +67,9 @@ contract ETHLightToken is ERC20Interface, Ownable {
     constructor() public {
         totalSupply = 2000000000 * tokenDecimal;
         balances[msg.sender] = totalSupply;           
-        name = &quot;ETH Light&quot;;                                   
+        name = "ETH Light";                                   
         decimals = 18;                            
-        symbol = &quot;ELT&quot;;                               
+        symbol = "ELT";                               
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

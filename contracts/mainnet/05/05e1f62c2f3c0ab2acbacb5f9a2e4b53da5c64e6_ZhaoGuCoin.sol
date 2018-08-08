@@ -23,8 +23,8 @@ contract ZhaoGuCoin {
     function ZhaoGuCoin() {
         balanceOf[msg.sender] =  38000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  38000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;ZhaoGuCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ZGC&quot;;                               // Set the symbol for display purposes
+        name = "ZhaoGuCoin";                                   // Set the name for display purposes
+        symbol = "ZGC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

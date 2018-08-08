@@ -218,7 +218,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -364,8 +364,8 @@ contract ERC23PayableToken is BasicToken, ERC23 {
 
 
 contract EtherusToken is MintableToken, ERC23PayableToken {
-    string public constant name = &quot;EtherusToken&quot;;
-    string public constant symbol = &quot;ETR&quot;;
+    string public constant name = "EtherusToken";
+    string public constant symbol = "ETR";
     uint public constant decimals = 18;
 
     bool public transferEnabled = false;

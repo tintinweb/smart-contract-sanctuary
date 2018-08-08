@@ -58,8 +58,8 @@ contract eosBASE is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;eosBASE&quot;;
-    string public constant symbol = &quot;eosB&quot;;
+    string public constant name = "eosBASE";
+    string public constant symbol = "eosB";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000e8;

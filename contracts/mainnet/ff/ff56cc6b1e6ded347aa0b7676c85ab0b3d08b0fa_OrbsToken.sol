@@ -74,7 +74,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -381,8 +381,8 @@ library SafeERC20 {
 
 contract OrbsToken is HasNoTokens, HasNoContracts, StandardToken {
     // solhint-disable const-name-snakecase
-    string public constant name = &quot;Orbs&quot;;
-    string public constant symbol = &quot;ORBS&quot;;
+    string public constant name = "Orbs";
+    string public constant symbol = "ORBS";
     uint8 public constant decimals = 18;
     // solhint-enable const-name-snakecase
 
@@ -390,7 +390,7 @@ contract OrbsToken is HasNoTokens, HasNoContracts, StandardToken {
     uint256 public constant TOTAL_SUPPLY = 10 * 10 ** 9 * 10 ** uint256(decimals); // 10B
 
     constructor(address _distributor) public {
-        require(_distributor != address(0), &quot;Distributor address must not be 0!&quot;);
+        require(_distributor != address(0), "Distributor address must not be 0!");
 
         totalSupply_ = totalSupply_.add(TOTAL_SUPPLY);
         balances[_distributor] = balances[_distributor].add(TOTAL_SUPPLY);

@@ -3,7 +3,7 @@ pragma solidity ^0.4.23;
 /**
 * @title Ownable
 * @dev The Ownable contract has an owner address, and provides basic authorization control
-* functions, this simplifies the implementation of &quot;user permissions&quot;.
+* functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
     address public owner;
@@ -89,7 +89,7 @@ contract Vote is Ownable {
     // Users can only vote by providing a secret uint s.t. candidateDirectory[keccak256(uint, salt)] == true
     function castVote(uint secret, uint candidateId) public {
         bytes32 claimedApprovedHash = keccak256(secret, salt); // keccak256(secret) vulnerable to a rainbow table attack
-        require(canVote[claimedApprovedHash], &quot;Provided secret was not correct.&quot;);
+        require(canVote[claimedApprovedHash], "Provided secret was not correct.");
         canVote[claimedApprovedHash] = false;
         voteCount[candidateId] += 1;
 

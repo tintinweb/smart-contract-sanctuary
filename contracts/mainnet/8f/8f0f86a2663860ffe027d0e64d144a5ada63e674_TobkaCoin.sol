@@ -152,9 +152,9 @@ contract TobkaCoin is ERC20Interface, Owned {
 
     function TobkaCoin() public {
 
-        symbol = &quot;TBK&quot;;
+        symbol = "TBK";
 
-        name = &quot;TobkaCoin&quot;;
+        name = "TobkaCoin";
 
         decimals = 18;
 

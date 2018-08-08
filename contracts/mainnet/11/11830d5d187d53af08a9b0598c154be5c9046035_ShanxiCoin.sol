@@ -113,8 +113,8 @@ contract ShanxiCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ShanxiCoin() public {
-        symbol = &quot;晋&quot;;
-        name = &quot;山西Shanxi Province Coin&quot;;
+        symbol = "晋";
+        name = "山西Shanxi Province Coin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x116312c3471C2e7C34C52782D0399eBE601f3F30] = _totalSupply;

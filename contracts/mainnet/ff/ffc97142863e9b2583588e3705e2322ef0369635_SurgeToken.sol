@@ -113,8 +113,8 @@ contract SurgeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SurgeToken() public {
-        symbol = &quot;SVG&quot;;
-        name = &quot;Surge Token&quot;;
+        symbol = "SVG";
+        name = "Surge Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x65732a0d43deC08608eB863C739a9e59108e87a8] = _totalSupply;

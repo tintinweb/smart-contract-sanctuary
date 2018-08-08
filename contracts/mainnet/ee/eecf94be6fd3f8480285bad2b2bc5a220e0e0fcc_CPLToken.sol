@@ -113,8 +113,8 @@ contract CPLToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function CPLToken() public {
-        symbol = &quot;CPL&quot;;
-        name = &quot;Capella&quot;;
+        symbol = "CPL";
+        name = "Capella";
         decimals = 12;
         _totalSupply = 2000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

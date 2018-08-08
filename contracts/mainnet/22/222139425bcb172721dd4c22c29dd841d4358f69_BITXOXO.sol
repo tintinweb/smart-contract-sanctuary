@@ -55,8 +55,8 @@ contract BITXOXO is SafeMath{
     function BITXOXO() {
         balanceOf[msg.sender] = 20000000000000000000000000;              // Give the creator all initial tokens
         totalSupply = 20000000000000000000000000;                        // Update total supply
-        name = &quot;BITXOXO&quot;;                                   // Set the name for display purposes
-        symbol = &quot;XOXO&quot;;                               // Set the symbol for display purposes
+        name = "BITXOXO";                                   // Set the name for display purposes
+        symbol = "XOXO";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
         owner = msg.sender;
     }

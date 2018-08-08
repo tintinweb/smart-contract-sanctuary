@@ -21,9 +21,9 @@ contract Ownable {
 
 contract ToMarineCdsTok20221205I is Ownable {
     
-    string public constant name = &quot;ToMarineCdsTok20221205I&quot;;
+    string public constant name = "ToMarineCdsTok20221205I";
     
-    string public constant symbol = &quot;TOMARINEI&quot;;
+    string public constant symbol = "TOMARINEI";
     
     uint32 public constant decimals = 8;
     

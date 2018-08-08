@@ -6,7 +6,7 @@ interface tokenRecipient {
 contract COINEIUM {
     // Public variables of the token
     string public name=&#39;COINEIUM&#39;;
-    string public symbol=&quot;CNM&quot;;
+    string public symbol="CNM";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 777000000000000000000000000; 

@@ -46,7 +46,7 @@ contract ERC20Token {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  *
  * Contract source taken from Open Zeppelin: https://github.com/OpenZeppelin/zeppelin-solidity/blob/v1.4.0/contracts/ownership/Ownable.sol
  */
@@ -168,8 +168,8 @@ contract Winchain is StandardToken, Ownable {
 
     uint256 INTERVAL_TIME = 63072000;//Two years
     uint256 public deadlineToFreedTeamPool;//the deadline to freed the win pool of team
-    string public name = &quot;Winchain&quot;;
-    string public symbol = &quot;WIN&quot;;
+    string public name = "Winchain";
+    string public symbol = "WIN";
     uint256 public decimals = 18;
     uint256 public INITIAL_SUPPLY = (210) * (10 ** 8) * (10 ** 18);//210
 

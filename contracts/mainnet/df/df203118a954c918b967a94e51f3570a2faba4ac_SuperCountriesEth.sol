@@ -693,7 +693,7 @@ contract SuperCountriesEth {
 	/// Update scores and timestamp ///
 	///////////////////////////////////
 		
-		/// Dividends are dispatched among players accordingly to their &quot;playerScore&quot;.
+		/// Dividends are dispatched among players accordingly to their "playerScore".
 		/// The playerScore equals the sum of all their countries (owned now, paid price) + sum of all their previously owned countries 
 		/// After each sell / buy, players that owned at least one country can claim dividends
 		/// DIVS of a player = playerScore * DIVS to dispatch / worldScore
@@ -790,7 +790,7 @@ contract SuperCountriesEth {
 	/// Update the price ///
 	////////////////////////
 	
-		/// The price of purchase becomes the &quot;previousPrice&quot;, and the &quot;price&quot; is the next price 
+		/// The price of purchase becomes the "previousPrice", and the "price" is the next price 
 			previousPriceOfItem[_itemId] = price;
 			priceOfItem[_itemId] = nextPriceOf(_itemId);
 	
@@ -849,12 +849,12 @@ contract SuperCountriesEth {
 
 	
 	function name() public pure returns (string _name) {
-		return &quot;SuperCountries&quot;;
+		return "SuperCountries";
 	}
 
 	
 	function symbol() public pure returns (string _symbol) {
-		return &quot;SUP&quot;;
+		return "SUP";
 	}
 
 	

@@ -27,8 +27,8 @@ contract DoneToken {
     uint256 constant August25 = 1503669600; //2 PM GMT 8/25/2017
     uint256 constant testtime = 1502003216; //20 minutes
 
-    function name() constant returns (string) { return &quot;Donation Efficiency Token&quot;; }
-    function symbol() constant returns (string) { return &quot;DONE&quot;; }
+    function name() constant returns (string) { return "Donation Efficiency Token"; }
+    function symbol() constant returns (string) { return "DONE"; }
     function decimals() constant returns (uint8) { return 16; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

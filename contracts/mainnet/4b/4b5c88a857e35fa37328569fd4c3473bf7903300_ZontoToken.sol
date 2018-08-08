@@ -61,7 +61,7 @@ library SafeERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -368,8 +368,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 
 contract ZontoToken is StandardBurnableToken, CanReclaimToken {
 
-  string public constant name = &quot;ZONTO Token&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;ZNT&quot;; // solium-disable-line uppercase
+  string public constant name = "ZONTO Token"; // solium-disable-line uppercase
+  string public constant symbol = "ZNT"; // solium-disable-line uppercase
   uint8 public constant decimals = 8; // solium-disable-line uppercase
   address public constant tokenOwner = 0x77035BBEe0d159Bd06808Ce2b6bE31F8D02a3cAA; // solium-disable-line uppercase
 

@@ -116,8 +116,8 @@ contract titanToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function titanToken() public {
-        symbol = &quot;TTN&quot;;
-        name = &quot;titan Token&quot;;
+        symbol = "TTN";
+        name = "titan Token";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 8 weeks;

@@ -96,8 +96,8 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 	mapping(address => uint256) contributionTime;
 
 	// constants for ERC20 standard
-	string public constant name = &quot;EOSBet Stake Tokens&quot;;
-	string public constant symbol = &quot;EOSBETST&quot;;
+	string public constant name = "EOSBet Stake Tokens";
+	string public constant symbol = "EOSBETST";
 	uint8 public constant decimals = 18;
 	// variable total supply
 	uint256 public totalSupply;
@@ -111,7 +111,7 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 	event CashOut(address contributor, uint256 etherWithdrawn, uint256 tokensCashedIn);
 	event FailedSend(address sendTo, uint256 amt);
 
-	// checks that an address is a &quot;trusted address of a legitimate EOSBet game&quot;
+	// checks that an address is a "trusted address of a legitimate EOSBet game"
 	modifier addressInTrustedAddresses(address thisAddress){
 
 		require(TRUSTEDADDRESSES[thisAddress]);
@@ -120,7 +120,7 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 
 	// initialization function 
 	function EOSBetBankroll(address dice, address slots) public payable {
-		// function is payable, owner of contract MUST &quot;seed&quot; contract with some ether, 
+		// function is payable, owner of contract MUST "seed" contract with some ether, 
 		// so that the ratios are correct when tokens are being minted
 		require (msg.value > 0);
 
@@ -265,11 +265,11 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 
 	function cashoutEOSBetStakeTokens(uint256 _amountTokens) public {
 		// In effect, this function is the OPPOSITE of the un-named payable function above^^^
-		// this allows bankrollers to &quot;cash out&quot; at any time, and receive the ether that they contributed, PLUS
-		// a proportion of any ether that was earned by the smart contact when their ether was &quot;staking&quot;, However
+		// this allows bankrollers to "cash out" at any time, and receive the ether that they contributed, PLUS
+		// a proportion of any ether that was earned by the smart contact when their ether was "staking", However
 		// this works in reverse as well. Any net losses of the smart contract will be absorbed by the player in like manner.
 		// Of course, due to the constant house edge, a bankroller that leaves their ether in the contract long enough
-		// is effectively guaranteed to withdraw more ether than they originally &quot;staked&quot;
+		// is effectively guaranteed to withdraw more ether than they originally "staked"
 
 		// save in memory for cheap access.
 		uint256 tokenBalance = balances[msg.sender];
@@ -290,7 +290,7 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 		uint256 developersCut = withdrawEther / 100;
 		uint256 contributorAmount = SafeMath.sub(withdrawEther, developersCut);
 
-		// now update the total supply of tokens by subtracting the tokens that are being &quot;cashed in&quot;
+		// now update the total supply of tokens by subtracting the tokens that are being "cashed in"
 		totalSupply = SafeMath.sub(currentSupplyOfTokens, _amountTokens);
 
 		// and update the users supply of tokens 
@@ -328,7 +328,7 @@ contract EOSBetBankroll is ERC20, EOSBetBankrollInterface {
 		// 		in higher dividends for the bankrollers
 		// 3. The owner can freeze payouts to bettors. This will be used in case of an emergency, and the contract will reject all
 		//		new bets as well. This does not mean that bettors will lose their money without recompense. They will be allowed to call the 
-		// 		&quot;refund&quot; function in the respective game smart contract once payouts are un-frozen.
+		// 		"refund" function in the respective game smart contract once payouts are un-frozen.
 		// 4. Finally, the owner can modify and withdraw the developers reward, which will fund future development, including new games, a sexier frontend,
 		// 		and TRUE DAO governance so that onlyOwner functions don&#39;t have to exist anymore ;) and in order to effectively react to changes 
 		// 		in the market (lower the percentage because of increased competition in the blockchain casino space, etc.)

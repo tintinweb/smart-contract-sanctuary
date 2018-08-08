@@ -113,8 +113,8 @@ contract DURIANFX is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DURIANFX() public {
-        symbol = &quot;DRNX&quot;;
-        name = &quot;DURIANFX&quot;;
+        symbol = "DRNX";
+        name = "DURIANFX";
         decimals = 18;
         _totalSupply = 850000000000000000000000000;
         balances[0x33b1335d677d73cd9691648ef6837f5ca95df4fa] = _totalSupply;

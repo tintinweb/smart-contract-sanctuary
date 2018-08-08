@@ -103,8 +103,8 @@ contract FutureToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;FTT&quot;;
-        name = &quot;FutureToken&quot;;
+        symbol = "FTT";
+        name = "FutureToken";
         decimals = 18;
         bonusEnds = now + 1 hours;
         endDate = now + 7 weeks;

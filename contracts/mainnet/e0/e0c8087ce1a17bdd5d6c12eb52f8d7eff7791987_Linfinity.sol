@@ -109,8 +109,8 @@ contract Linfinity is ERC20Token {
     constructor(address _owner) public {
         require(address(0) != _owner);
         
-        name = &quot;Linfinity&quot;;
-        symbol = &quot;LFT&quot;;
+        name = "Linfinity";
+        symbol = "LFT";
         decimals = 18;
         totalSupply = 3* 1000 * 1000 *1000 * 10**uint256(decimals);
         

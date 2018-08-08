@@ -56,8 +56,8 @@ contract TFFC is ERC20Basic {
 	mapping (address => mapping (address => uint256)) allowed;
 	mapping (address => bool) public blacklist;
 
-	string public constant name = &quot;TFFC&quot;;
-	string public constant symbol = &quot;TF&quot;;
+	string public constant name = "TFFC";
+	string public constant symbol = "TF";
 	uint public constant decimals = 8;
 
 	uint256 public totalSupply = 50000000e8;//50000000e8;//总量5000万个

@@ -58,8 +58,8 @@ contract eosLITE is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;eosLITE&quot;;
-    string public constant symbol = &quot;eosLITE&quot;;
+    string public constant name = "eosLITE";
+    string public constant symbol = "eosLITE";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000e8;

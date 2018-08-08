@@ -259,8 +259,8 @@ contract BurnableToken is BasicToken {
 contract QuintToken is StandardToken, BurnableToken {
 
   // Constants
-  string  public constant name = &quot;QUiNTILLION BURGH&quot;;
-  string  public constant symbol = &quot;QUiNT&quot;;
+  string  public constant name = "QUiNTILLION BURGH";
+  string  public constant symbol = "QUiNT";
   uint8   public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 2500000000 * (10 ** uint256(decimals));
 

@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract XFC is StandardToken, Ownable {
 
-    string public constant name = &quot;叙府酒业&quot;;
-    string public constant symbol = &quot;XFC&quot;;
+    string public constant name = "叙府酒业";
+    string public constant symbol = "XFC";
     uint256 public constant decimals = 8;
 
     function XFC() public {

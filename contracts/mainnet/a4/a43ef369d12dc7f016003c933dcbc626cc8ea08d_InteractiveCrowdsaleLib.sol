@@ -18,7 +18,7 @@ pragma solidity ^0.4.21;
  * For further information: truebit.io, modular.network,
  * consensys.net
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -160,8 +160,8 @@ library InteractiveCrowdsaleLib {
   /// @param _endWithdrawalTime timestamp that indicates that manual withdrawals are no longer allowed
   /// @param _endTime Timestamp of sale end time
   /// @param _percentBeingSold percentage of total tokens being sold in the sale
-  /// @param _tokenName name of the token being sold. ex: &quot;Jason Network Token&quot;
-  /// @param _tokenSymbol symbol of the token. ex: &quot;JNT&quot;
+  /// @param _tokenName name of the token being sold. ex: "Jason Network Token"
+  /// @param _tokenSymbol symbol of the token. ex: "JNT"
   /// @param _tokenDecimals number of decimals in the token
   function init(InteractiveCrowdsaleStorage storage self,
                 address _owner,
@@ -614,7 +614,7 @@ library InteractiveCrowdsaleLib {
       // if the sale was canceled, everyone gets a full refund
       self.leftoverWei[msg.sender] = self.leftoverWei[msg.sender].add(self.hasContributed[msg.sender]);
       self.hasContributed[msg.sender] = 0;
-      LogErrorMsg(self.totalValuation, &quot;Sale is canceled, all bids have been refunded!&quot;);
+      LogErrorMsg(self.totalValuation, "Sale is canceled, all bids have been refunded!");
       return true;
     }
 
@@ -678,13 +678,13 @@ library InteractiveCrowdsaleLib {
     bool ok;
 
     if (self.withdrawTokensMap[msg.sender] == 0) {
-      LogErrorMsg(0, &quot;Sender has no tokens to withdraw!&quot;);
+      LogErrorMsg(0, "Sender has no tokens to withdraw!");
       return false;
     }
 
     if (msg.sender == self.owner) {
       if(!self.isFinalized){
-        LogErrorMsg(0, &quot;Owner cannot withdraw extra tokens until after the sale!&quot;);
+        LogErrorMsg(0, "Owner cannot withdraw extra tokens until after the sale!");
         return false;
       }
     }
@@ -702,7 +702,7 @@ library InteractiveCrowdsaleLib {
   /// @return true if wei was withdrawn
   function withdrawLeftoverWei(InteractiveCrowdsaleStorage storage self) public returns (bool) {
     if (self.leftoverWei[msg.sender] == 0) {
-      LogErrorMsg(0, &quot;Sender has no extra wei to withdraw!&quot;);
+      LogErrorMsg(0, "Sender has no extra wei to withdraw!");
       return false;
     }
 
@@ -724,7 +724,7 @@ library InteractiveCrowdsaleLib {
     uint256 amount = self.ownerBalance;
     self.ownerBalance = 0;
     self.owner.transfer(amount);
-    LogOwnerEthWithdrawn(msg.sender,amount,&quot;Crowdsale owner has withdrawn all funds!&quot;);
+    LogOwnerEthWithdrawn(msg.sender,amount,"Crowdsale owner has withdrawn all funds!");
 
     return true;
   }
@@ -774,7 +774,7 @@ pragma solidity 0.4.21;
  * technology. For further information: modular.network
  *
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY

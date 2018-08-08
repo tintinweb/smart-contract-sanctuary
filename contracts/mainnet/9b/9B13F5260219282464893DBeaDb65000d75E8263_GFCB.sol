@@ -21,8 +21,8 @@ contract Owned {
 
 contract GFCB is Owned {
 
-    string public name=&quot;Golden Fortune Coin Blocked&quot;;
-    string public symbol=&quot;GFCB&quot;;
+    string public name="Golden Fortune Coin Blocked";
+    string public symbol="GFCB";
     uint8  public decimals=18;
     uint256 public totalSupply;
     uint256 public sellPrice;

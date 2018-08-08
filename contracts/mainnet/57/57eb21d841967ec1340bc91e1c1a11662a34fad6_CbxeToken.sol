@@ -113,8 +113,8 @@ contract CbxeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CbxeToken() public {
-        symbol = &quot;CBXE&quot;;
-        name = &quot;Cryptobulls Coin&quot;;
+        symbol = "CBXE";
+        name = "Cryptobulls Coin";
         decimals = 0;
         _totalSupply = 12000000;
         balances[0xdacd7939Dcf31801e4D23aB297a3239AbF815AFa] = _totalSupply;

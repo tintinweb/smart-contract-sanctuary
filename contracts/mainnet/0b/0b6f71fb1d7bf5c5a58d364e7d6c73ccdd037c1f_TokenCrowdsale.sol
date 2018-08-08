@@ -52,7 +52,7 @@ contract TraceToken is TraceCrowdsale {
     
     string  public standard    = &#39;Token 0.1&#39;;
     string  public name        = &#39;TraceToken&#39;;
-    string  public symbol      = &quot;TACE&quot;;
+    string  public symbol      = "TACE";
     uint8   public decimals    = 0;
 
     function TraceToken() payable TraceCrowdsale() {}

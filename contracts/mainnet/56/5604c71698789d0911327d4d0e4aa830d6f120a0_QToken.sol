@@ -113,8 +113,8 @@ contract QToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function QToken() public {
-        symbol = &quot;Q&quot;;
-        name = &quot;Initiative Q Token&quot;;
+        symbol = "Q";
+        name = "Initiative Q Token";
         decimals = 18;
         _totalSupply = 2000000000000000000000000000000;
         balances[0x352aAff068CA9bF8aBa1DAEEbD59a4571BF42af8] = 1560000000000000000000000000000; // General

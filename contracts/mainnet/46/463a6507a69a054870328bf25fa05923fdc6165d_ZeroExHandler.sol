@@ -67,14 +67,14 @@ interface ExchangeHandler {
 
   Copyright 2017 ZeroEx Intl.
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -288,7 +288,7 @@ contract ZeroExExchange is ZXSafeMath {
         INSUFFICIENT_BALANCE_OR_ALLOWANCE // Insufficient balance or allowance for token transfer
     }
 
-    string constant public VERSION = &quot;1.0.0&quot;;
+    string constant public VERSION = "1.0.0";
     uint16 constant public EXTERNAL_QUERY_GAS_LIMIT = 4999;    // Changes to state require at least 5000 gas
 
     address public ZRX_TOKEN_CONTRACT;
@@ -716,7 +716,7 @@ contract ZeroExExchange is ZXSafeMath {
         returns (bool)
     {
         return signer == ecrecover(
-            keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),
+            keccak256("\x19Ethereum Signed Message:\n32", hash),
             v,
             r,
             s
@@ -908,7 +908,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -1032,9 +1032,9 @@ contract ZeroExHandler is ExchangeHandler {
         bytes32 r,
         bytes32 s
     ) external payable returns (uint256) {
-        require(orderUsable(orderAddresses, orderValues), &quot;0xHandler - buy order validation failed&quot;);
-        require(orderAddresses[3] == wethAddress, &quot;0xHandler - ordAddr[3] != wethAddress for buy&quot;);
-        require(amountToFill == msg.value, &quot;0xHandler - amountToFill != msg.value for buy&quot;);
+        require(orderUsable(orderAddresses, orderValues), "0xHandler - buy order validation failed");
+        require(orderAddresses[3] == wethAddress, "0xHandler - ordAddr[3] != wethAddress for buy");
+        require(amountToFill == msg.value, "0xHandler - amountToFill != msg.value for buy");
         DepositToken(wethAddress).deposit.value(amountToFill)();
         address[5] memory newAddresses = convertAddressFormat(orderAddresses);
         bytes32 orderHash = ZeroExExchange(exchangeAddress).getOrderHash(newAddresses, orderValues);
@@ -1043,7 +1043,7 @@ contract ZeroExHandler is ExchangeHandler {
         uint receivedAmount = getPartialAmount(amountToFill, orderValues[1], orderValues[0]);
         require(
             Token(newAddresses[2]).transfer(msg.sender, receivedAmount),
-            &quot;0xHandler - failed to transfer bought tokens&quot;
+            "0xHandler - failed to transfer bought tokens"
         );
         return receivedAmount;
     }
@@ -1060,8 +1060,8 @@ contract ZeroExHandler is ExchangeHandler {
         bytes32 r,
         bytes32 s
     ) external returns (uint256) {
-        require(orderUsable(orderAddresses, orderValues), &quot;0xHandler - sell order validation failed&quot;);
-        require(orderAddresses[2] == wethAddress, &quot;0xHandler - ordAddr[3] != wethAddress for sell&quot;);
+        require(orderUsable(orderAddresses, orderValues), "0xHandler - sell order validation failed");
+        require(orderAddresses[2] == wethAddress, "0xHandler - ordAddr[3] != wethAddress for sell");
         address[5] memory newAddresses = convertAddressFormat(orderAddresses);
         setAllowance(orderAddresses[3]);
         ZeroExExchange(exchangeAddress).fillOrder(newAddresses, orderValues, amountToFill, false, v, r, s);
@@ -1075,7 +1075,7 @@ contract ZeroExHandler is ExchangeHandler {
         if(!tokenAllowanceSet[token]) {
             require(
                 Token(token).approve(ZeroExExchange(exchangeAddress).TOKEN_TRANSFER_PROXY_CONTRACT(), MAX_UINT),
-                &quot;0xHandler - token approval failed&quot;
+                "0xHandler - token approval failed"
             );
             tokenAllowanceSet[token] = true;
         }

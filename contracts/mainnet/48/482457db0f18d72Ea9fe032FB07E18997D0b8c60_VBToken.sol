@@ -47,8 +47,8 @@ contract SafeMath {
 
 contract VBToken is SafeMath, owned {
 
-    string public name = &quot;VBToken&quot;;        //  token name
-    string public symbol = &quot;VB&quot;;      //  token symbol
+    string public name = "VBToken";        //  token name
+    string public symbol = "VB";      //  token symbol
     uint public decimals = 8;           //  token digit
 
     mapping (address => uint) public balanceOf;

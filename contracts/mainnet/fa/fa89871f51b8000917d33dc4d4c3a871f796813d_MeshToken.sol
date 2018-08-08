@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -417,8 +417,8 @@ contract PausableToken is StandardToken, Pausable {
  * PausableToken overrides all transfers methods and adds a modifier to check if paused is set to false.
  */
 contract MeshToken is CappedToken, PausableToken {
-  string public name = &quot;DJANGO CHAIN&quot;;
-  string public symbol = &quot;DJANGO&quot;;
+  string public name = "DJANGO CHAIN";
+  string public symbol = "DJANGO";
   uint256 public decimals = 18;
   uint256 public cap = 129498559 ether;
 

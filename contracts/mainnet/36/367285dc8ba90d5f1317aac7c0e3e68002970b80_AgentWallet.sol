@@ -94,7 +94,7 @@ contract AgentWallet is Ownable{
 		startTime=0;
 		endTime=0;
 		totalFundingSupply = 0;
-		walletName=&quot;init&quot;;
+		walletName="init";
 		token=ERC20(0xb53ac311087965d9e085515efbe1380b2ca4de9a);
 	}
 

@@ -78,7 +78,7 @@ contract VenaCoin is ERC20Interface, Owned{
     * Reverts if not in crowdsale time range. 
     */
     modifier onlyWhileOpen {
-       require(now >= openingTime && now <= closingTime, &quot;Sale open&quot;);
+       require(now >= openingTime && now <= closingTime, "Sale open");
         _;
     }
     
@@ -92,8 +92,8 @@ contract VenaCoin is ERC20Interface, Owned{
     constructor(address _owner) public{
         openingTime = 1528644600; // 10 june, 2018 3:30pm GMT
         closingTime = 1539185400; // 10 Oct, 2018 3:30 pm GMT
-        symbol = &quot;VENA&quot;;
-        name = &quot;VenaCoin&quot;;
+        symbol = "VENA";
+        name = "VenaCoin";
         decimals = 18;
         rate = 1961; //tokens per wei ... 0.3$/vena on rate of 1eth = $589
         owner = _owner;
@@ -315,10 +315,10 @@ contract VenaCoin is ERC20Interface, Owned{
     
     function isItOpen() public view returns(string status){
         if(now > openingTime && now < closingTime){
-            return &quot;SALE OPEN&quot;;
+            return "SALE OPEN";
         }
         else{
-            return &quot;SALE CLOSE&quot;;
+            return "SALE CLOSE";
         }
     }
 }

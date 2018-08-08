@@ -153,7 +153,7 @@ contract DSMath {
         z = add(mul(x, RAY), y / 2) / y;
     }
 
-    // This famous algorithm is called &quot;exponentiation by squaring&quot;
+    // This famous algorithm is called "exponentiation by squaring"
     // and calculates x^n with x as fixed-point and n as regular unsigned.
     //
     // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -300,7 +300,7 @@ contract DSToken is DSTokenBase(0), DSStop {
     }
 
     // Optional token name
-    bytes32   public  name = &quot;&quot;;
+    bytes32   public  name = "";
 
     function setName(bytes32 name_) public auth {
         name = name_;
@@ -379,10 +379,10 @@ interface ERC223 {
     event ReceivingContractTokenFallbackFailed(address indexed from, address indexed to, uint amount);
 }
 
-contract HNA is DSToken(&quot;HNA&quot;), ERC223, Controlled {
+contract HNA is DSToken("HNA"), ERC223, Controlled {
 
     constructor() public {
-        setName(&quot;Honour Network Access Token&quot;);
+        setName("Honour Network Access Token");
     }
 
     /// @notice Send `_amount` tokens to `_to` from `_from` on the condition it
@@ -401,7 +401,7 @@ contract HNA is DSToken(&quot;HNA&quot;), ERC223, Controlled {
 
         if (success && isContract(_to)) {
             // Backward compatible ERC20
-            if(!_to.call(bytes4(keccak256(&quot;tokenFallback(address,uint256)&quot;)), _from, _amount)) {
+            if(!_to.call(bytes4(keccak256("tokenFallback(address,uint256)")), _from, _amount)) {
                 emit ReceivingContractTokenFallbackFailed(_from, _to, _amount);
             }
         }
@@ -409,7 +409,7 @@ contract HNA is DSToken(&quot;HNA&quot;), ERC223, Controlled {
 
     /*
      * ERC 223
-     * Added support for the ERC 223 &quot;tokenFallback&quot; method in a &quot;transfer&quot; function with a payload.
+     * Added support for the ERC 223 "tokenFallback" method in a "transfer" function with a payload.
      */
     function transferFrom(address _from, address _to, uint256 _amount, bytes _data) public returns (bool success) {
         // Alerts the token controller of the transfer
@@ -430,7 +430,7 @@ contract HNA is DSToken(&quot;HNA&quot;), ERC223, Controlled {
 
     /*
      * ERC 223
-     * Added support for the ERC 223 &quot;tokenFallback&quot; method in a &quot;transfer&quot; function with a payload.
+     * Added support for the ERC 223 "tokenFallback" method in a "transfer" function with a payload.
      */
     /// @notice Send `_value` tokens to `_to` from `msg.sender` and trigger
     /// tokenFallback if sender is a contract.

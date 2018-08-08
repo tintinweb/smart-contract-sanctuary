@@ -114,8 +114,8 @@ contract HyperIslandCoin is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function HyperIslandCoin() public {
-        symbol = &quot;HIC&quot;;
-        name = &quot;Hyper Island Coin&quot;;
+        symbol = "HIC";
+        name = "Hyper Island Coin";
         decimals = 18;
         _totalSupply = 10000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

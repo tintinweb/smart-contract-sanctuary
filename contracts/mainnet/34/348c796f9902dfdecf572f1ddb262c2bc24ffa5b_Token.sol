@@ -206,7 +206,7 @@ contract RewardToken is StandardToken, Ownable {
     }
 }
 contract Token is CappedToken, BurnableToken, RewardToken {
-    function Token() CappedToken(10000000 * 1 ether) StandardToken(&quot;JULLAR0805&quot;, &quot;JUL0805&quot;, 18) public {
+    function Token() CappedToken(10000000 * 1 ether) StandardToken("JULLAR0805", "JUL0805", 18) public {
         
     }
 }
@@ -218,7 +218,7 @@ contract Crowdsale is Ownable{
     uint private refundedWei; 
 	
 
-    string public TokenPriceETH = &quot;0.0000001&quot;;  // Стоимость токена 
+    string public TokenPriceETH = "0.0000001";  // Стоимость токена 
 	
 	uint public tokensSold; // Проданное количество Токенов
 	uint private tokensDm; // Проданное количество Токенов + Количество покупаемых токенов
@@ -294,7 +294,7 @@ contract Crowdsale is Ownable{
 	function NewStage() private {
 
 		priceTokenWei = 200000000000; // Новая стоимость Токена 2 раза больше чем на PreICO
-		TokenPriceETH = &quot;0.0000001&quot;;
+		TokenPriceETH = "0.0000001";
 	}
     function closeCrowdsale() onlyOwner public {
         require(!crowdsaleClosed);

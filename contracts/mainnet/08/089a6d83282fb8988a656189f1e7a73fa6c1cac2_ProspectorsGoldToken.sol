@@ -134,7 +134,7 @@ contract DSMath {
     }
 
     function rpow(uint128 x, uint64 n) constant internal returns (uint128 z) {
-        // This famous algorithm is called &quot;exponentiation by squaring&quot;
+        // This famous algorithm is called "exponentiation by squaring"
         // and calculates x^n with x as fixed-point and n as regular unsigned.
         //
         // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -271,8 +271,8 @@ contract Migrable is TokenBase, Owned
 }
 
 contract ProspectorsGoldToken is TokenBase, Owned, Migrable {
-    string public constant name = &quot;Prospectors Gold&quot;;
-    string public constant symbol = &quot;PGL&quot;;
+    string public constant name = "Prospectors Gold";
+    string public constant symbol = "PGL";
     uint8 public constant decimals = 18;  // 18 decimal places, the same as ETH.
 
     address private game_address = 0xb1; // Address 0xb1 is provably non-transferrable. Game tokens will be moved to game platform after developing

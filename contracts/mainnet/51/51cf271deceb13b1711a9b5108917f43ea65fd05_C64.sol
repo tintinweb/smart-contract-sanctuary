@@ -137,8 +137,8 @@ contract C64 is ERC20Interface, Ownable {
     // Constructor
     // ------------------------------------------------------------------------
     constructor () public {
-        symbol = &quot;C64&quot;;
-        name = &quot;C. 6-4 BC&quot;;
+        symbol = "C64";
+        name = "C. 6-4 BC";
         decimals = 18;
         totalSupply_ = 100000000000000000000000000;
         d_fund = totalSupply_ * 3/10;

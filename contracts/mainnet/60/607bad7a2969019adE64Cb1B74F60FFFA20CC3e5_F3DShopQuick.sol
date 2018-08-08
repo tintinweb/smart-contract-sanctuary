@@ -124,8 +124,8 @@ contract F3DShopQuick is F3Devents{
 //=================_|===========================================================
     address private admin = 0x700D7ccD114D988f0CEDDFCc60dd8c3a2f7b49FB;
     address private coin_base = 0x4D79AAe78608CF0317F4f785cAF449faDC1ff983;
-    string constant public name = &quot;F3DLink Quick&quot;;
-    string constant public symbol = &quot;F3D&quot;;
+    string constant public name = "F3DLink Quick";
+    string constant public symbol = "F3D";
 	uint256 private rndGap_ = 60 seconds;                       // length of ICO phase, set to 1 year for EOS.
     uint256 constant private rndInit_ = 5 minutes;              // round timer starts at this
     uint256 constant private rndInc_ = 5 minutes;               // every full key purchased adds this much to the timer
@@ -135,7 +135,7 @@ contract F3DShopQuick is F3Devents{
 //    (_|(_| | (_|  _\(/_ | |_||_)  .  (data used to store game info that changes)
 //=============================|================================================
 	uint256 public airDropPot_;             // person who gets the airdrop wins part of this pot
-    uint256 public airDropTracker_ = 0;     // incremented each time a &quot;qualified&quot; tx occurs.  used to determine winning air drop
+    uint256 public airDropTracker_ = 0;     // incremented each time a "qualified" tx occurs.  used to determine winning air drop
     uint256 public rID_;    // round id number / total rounds that have happened
 //****************
 // PLAYER DATA
@@ -192,7 +192,7 @@ contract F3DShopQuick is F3Devents{
      * been activated.
      */
     modifier isActivated() {
-        require(activated_ == true, &quot;its not ready yet.  check ?eta in discord&quot;);
+        require(activated_ == true, "its not ready yet.  check ?eta in discord");
         _;
     }
 
@@ -206,7 +206,7 @@ contract F3DShopQuick is F3Devents{
         uint256 _codeLength;
 
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
         _;
 
 
@@ -216,8 +216,8 @@ contract F3DShopQuick is F3Devents{
      * @dev sets boundaries for incoming tx
      */
     modifier isWithinLimits(uint256 _eth) {
-        require(_eth >= 1000000000, &quot;pocket lint: not a valid currency&quot;);
-        require(_eth <= 100000000000000000000000, &quot;no vitalik, no&quot;);    /** NOTE THIS NEEDS TO BE CHECKED **/
+        require(_eth >= 1000000000, "pocket lint: not a valid currency");
+        require(_eth <= 100000000000000000000000, "no vitalik, no");    /** NOTE THIS NEEDS TO BE CHECKED **/
 		_;
 	}
 //==============================================================================
@@ -970,7 +970,7 @@ contract F3DShopQuick is F3Devents{
 
     /**
      * @dev during ICO phase all eth sent in by each player.  will be added to an
-     * &quot;investment pool&quot;.  upon end of ICO phase, all eth will be used to buy keys.
+     * "investment pool".  upon end of ICO phase, all eth will be used to buy keys.
      * each player receives an amount based on how much they put in, and the
      * the average price attained.
      */
@@ -1182,7 +1182,7 @@ contract F3DShopQuick is F3Devents{
     /**
      * @dev at end of ICO phase, each player is entitled to X keys based on final
      * average ICO phase key price, and the amount of eth they put in during ICO.
-     * if a player participates in the round post ICO, these will be &quot;claimed&quot; and
+     * if a player participates in the round post ICO, these will be "claimed" and
      * added to their rounds total keys.  if not, this will be used to calculate
      * their gen earnings throughout round and on round end.
      * -functionhash- 0x75661f4c
@@ -1268,7 +1268,7 @@ contract F3DShopQuick is F3Devents{
     function receivePlayerInfo(uint256 _pID, address _addr, bytes32 _name, uint256 _laff)
         external
     {
-        require (msg.sender == address(PlayerBook), &quot;your not playerNames contract... hmmm..&quot;);
+        require (msg.sender == address(PlayerBook), "your not playerNames contract... hmmm..");
         if (pIDxAddr_[_addr] != _pID)
             pIDxAddr_[_addr] = _pID;
         if (pIDxName_[_name] != _pID)
@@ -1289,7 +1289,7 @@ contract F3DShopQuick is F3Devents{
     function receivePlayerNameList(uint256 _pID, bytes32 _name)
         external
     {
-        require (msg.sender == address(PlayerBook), &quot;your not playerNames contract... hmmm..&quot;);
+        require (msg.sender == address(PlayerBook), "your not playerNames contract... hmmm..");
         if(plyrNames_[_pID][_name] == false)
             plyrNames_[_pID][_name] = true;
     }
@@ -1315,7 +1315,7 @@ contract F3DShopQuick is F3Devents{
             pIDxAddr_[msg.sender] = _pID;
             plyr_[_pID].addr = msg.sender;
 
-            if (_name != &quot;&quot;)
+            if (_name != "")
             {
                 pIDxName_[_name] = _pID;
                 plyr_[_pID].name = _name;
@@ -1672,9 +1672,9 @@ contract F3DShopQuick is F3Devents{
             tracker based on profit per share for each round, that increases in
             relevant proportion to the increase in share supply.
 
-            the player will have an additional mask that basically says &quot;based
+            the player will have an additional mask that basically says "based
             on the rounds mask, my shares, and how much i&#39;ve already withdrawn,
-            how much is still owed to me?&quot;
+            how much is still owed to me?"
         */
 
         // calc profit per key & round mask based on this buy:  (dust goes to pot)
@@ -1754,11 +1754,11 @@ contract F3DShopQuick is F3Devents{
         // only team just can activate
         require(
             msg.sender == admin,
-            &quot;only team just can activate&quot;
+            "only team just can activate"
         );
 
         // can only be ran once
-        require(activated_ == false, &quot;fomo3d already activated&quot;);
+        require(activated_ == false, "fomo3d already activated");
 
         // activate the contract
         activated_ = true;
@@ -1882,7 +1882,7 @@ library F3DKeysCalcFast {
 
     /**
      * @dev calculates how many keys would exist with given an amount of eth
-     * @param _eth eth &quot;in contract&quot;
+     * @param _eth eth "in contract"
      * @return number of keys that would exist
      */
     function keys(uint256 _eth)
@@ -1895,7 +1895,7 @@ library F3DKeysCalcFast {
 
     /**
      * @dev calculates how much eth would be in contract given a number of keys
-     * @param _keys number of keys &quot;in contract&quot;
+     * @param _keys number of keys "in contract"
      * @return eth that would exists
      */
     function eth(uint256 _keys)
@@ -1980,14 +1980,14 @@ library NameFilter {
         uint256 _length = _temp.length;
 
         //sorry limited to 32 characters
-        require (_length <= 32 && _length > 0, &quot;string must be between 1 and 32 characters&quot;);
+        require (_length <= 32 && _length > 0, "string must be between 1 and 32 characters");
         // make sure it doesnt start with or end with space
-        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, &quot;string cannot start or end with space&quot;);
+        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, "string cannot start or end with space");
         // make sure first two characters are not 0x
         if (_temp[0] == 0x30)
         {
-            require(_temp[1] != 0x78, &quot;string cannot start with 0x&quot;);
-            require(_temp[1] != 0x58, &quot;string cannot start with 0X&quot;);
+            require(_temp[1] != 0x78, "string cannot start with 0x");
+            require(_temp[1] != 0x58, "string cannot start with 0X");
         }
 
         // create a bool to track if we have a non number character
@@ -2014,11 +2014,11 @@ library NameFilter {
                     (_temp[i] > 0x60 && _temp[i] < 0x7b) ||
                     // or 0-9
                     (_temp[i] > 0x2f && _temp[i] < 0x3a),
-                    &quot;string contains invalid characters&quot;
+                    "string contains invalid characters"
                 );
                 // make sure theres not 2x spaces in a row
                 if (_temp[i] == 0x20)
-                    require( _temp[i+1] != 0x20, &quot;string cannot contain consecutive spaces&quot;);
+                    require( _temp[i+1] != 0x20, "string cannot contain consecutive spaces");
 
                 // see if we have a character other than a number
                 if (_hasNonNumber == false && (_temp[i] < 0x30 || _temp[i] > 0x39))
@@ -2026,7 +2026,7 @@ library NameFilter {
             }
         }
 
-        require(_hasNonNumber == true, &quot;string cannot be only numbers&quot;);
+        require(_hasNonNumber == true, "string cannot be only numbers");
 
         bytes32 _ret;
         assembly {
@@ -2060,7 +2060,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -2072,7 +2072,7 @@ library SafeMath {
         pure
         returns (uint256)
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -2085,7 +2085,7 @@ library SafeMath {
         returns (uint256 c)
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
 

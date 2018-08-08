@@ -108,8 +108,8 @@ contract RetDime is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function RetDime() public {
-        symbol = &quot;RET&quot;;
-        name = &quot;RetDime&quot;;
+        symbol = "RET";
+        name = "RetDime";
         decimals = 0;
         _totalSupply = 10000000000;
         balances[owner] = _totalSupply;

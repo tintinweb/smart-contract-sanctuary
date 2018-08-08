@@ -17,9 +17,9 @@ contract owned {
         owner = newOwner;
     }
     function isOwner()public{
-        if(msg.sender==owner)emit Log(&quot;Owner&quot;);
+        if(msg.sender==owner)emit Log("Owner");
         else{
-            emit Log(&quot;Not Owner&quot;);
+            emit Log("Not Owner");
         }
     }
 }
@@ -149,6 +149,6 @@ contract EPLAY is ERC20 {
     }
 
     function testConnection() external {
-        emit Log(&quot;CONNECTED&quot;);
+        emit Log("CONNECTED");
     }
 }

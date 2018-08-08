@@ -23,8 +23,8 @@ contract TureTreasureChain{
     function TureTreasureChain() {
         balanceOf[msg.sender] =  210000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  210000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;TureTreasureChain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TTCC&quot;;                               // Set the symbol for display purposes
+        name = "TureTreasureChain";                                   // Set the name for display purposes
+        symbol = "TTCC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

@@ -31,8 +31,8 @@ contract PowH3DUniverse {
     uint256 public totalSupply = 0;
     bool public purchasingAllowed = true;
     address owner = msg.sender;
-    function name() constant returns (string) { return &quot;PowH3D Universe&quot;; }
-    function symbol() constant returns (string) { return &quot;UNIV&quot;; }
+    function name() constant returns (string) { return "PowH3D Universe"; }
+    function symbol() constant returns (string) { return "UNIV"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

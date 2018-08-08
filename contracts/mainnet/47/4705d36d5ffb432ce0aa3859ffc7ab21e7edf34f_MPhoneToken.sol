@@ -114,8 +114,8 @@ contract BaseMPHToken is Ownable {
 
 contract MPhoneToken is BaseMPHToken {
 
-    string public constant name = &quot;MPhone Token&quot;;
-    string public constant symbol = &quot;MPH&quot;;
+    string public constant name = "MPhone Token";
+    string public constant symbol = "MPH";
     uint32 public constant decimals = 6;
 
 }

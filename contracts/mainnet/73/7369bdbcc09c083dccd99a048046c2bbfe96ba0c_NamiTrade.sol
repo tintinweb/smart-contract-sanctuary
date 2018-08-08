@@ -406,8 +406,8 @@ contract NamiCrowdSale {
      *  Constants
     /*/
 
-    string public name = &quot;Nami ICO&quot;;
-    string public  symbol = &quot;NAC&quot;;
+    string public name = "Nami ICO";
+    string public  symbol = "NAC";
     uint   public decimals = 18;
 
     bool public TRANSFERABLE = false; // default not transferable
@@ -1078,8 +1078,8 @@ contract NamiTrade{
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////fci token function///////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    string public name = &quot;Nami Trade&quot;;
-    string public symbol = &quot;FCI&quot;;
+    string public name = "Nami Trade";
+    string public symbol = "FCI";
     uint8 public decimals = 18;
     
     uint256 public totalSupply;

@@ -42,7 +42,7 @@ contract TeamJust {
     {
         address ss = 0x9F2cBF9f685062d804DC6e711fb459D3bD823756;
         
-        admins_[ss] = Admin(true, true, &quot;ss&quot;);
+        admins_[ss] = Admin(true, true, "ss");
         
         adminCount_ = 1;
         devCount_ = 1;
@@ -75,13 +75,13 @@ contract TeamJust {
     //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     modifier onlyDevs()
     {
-        require(admins_[msg.sender].isDev == true, &quot;onlyDevs failed - msg.sender is not a dev&quot;);
+        require(admins_[msg.sender].isDev == true, "onlyDevs failed - msg.sender is not a dev");
         _;
     }
     
     modifier onlyAdmins()
     {
-        require(admins_[msg.sender].isAdmin == true, &quot;onlyAdmins failed - msg.sender is not an admin&quot;);
+        require(admins_[msg.sender].isAdmin == true, "onlyAdmins failed - msg.sender is not an admin");
         _;
     }
 
@@ -98,9 +98,9 @@ contract TeamJust {
         public
         onlyDevs()
     {
-        if (MSFun.multiSig(msData, requiredDevSignatures_, &quot;addAdmin&quot;) == true) 
+        if (MSFun.multiSig(msData, requiredDevSignatures_, "addAdmin") == true) 
         {
-            MSFun.deleteProposal(msData, &quot;addAdmin&quot;);
+            MSFun.deleteProposal(msData, "addAdmin");
             
             // must check this so we dont mess up admin count by adding someone
             // who is already an admin
@@ -149,18 +149,18 @@ contract TeamJust {
     {
         // we can put our requires outside the multisig, this will prevent
         // creating a proposal that would never pass checks anyway.
-        require(adminCount_ > 1, &quot;removeAdmin failed - cannot have less than 2 admins&quot;);
-        require(adminCount_ >= requiredSignatures_, &quot;removeAdmin failed - cannot have less admins than number of required signatures&quot;);
+        require(adminCount_ > 1, "removeAdmin failed - cannot have less than 2 admins");
+        require(adminCount_ >= requiredSignatures_, "removeAdmin failed - cannot have less admins than number of required signatures");
         if (admins_[_who].isDev == true)
         {
-            require(devCount_ > 1, &quot;removeAdmin failed - cannot have less than 2 devs&quot;);
-            require(devCount_ >= requiredDevSignatures_, &quot;removeAdmin failed - cannot have less devs than number of required dev signatures&quot;);
+            require(devCount_ > 1, "removeAdmin failed - cannot have less than 2 devs");
+            require(devCount_ >= requiredDevSignatures_, "removeAdmin failed - cannot have less devs than number of required dev signatures");
         }
         
         // checks passed
-        if (MSFun.multiSig(msData, requiredDevSignatures_, &quot;removeAdmin&quot;) == true) 
+        if (MSFun.multiSig(msData, requiredDevSignatures_, "removeAdmin") == true) 
         {
-            MSFun.deleteProposal(msData, &quot;removeAdmin&quot;);
+            MSFun.deleteProposal(msData, "removeAdmin");
             
             // must check this so we dont mess up admin count by removing someone
             // who wasnt an admin to start with
@@ -203,11 +203,11 @@ contract TeamJust {
         onlyDevs()
     {  
         // make sure its between 1 and number of admins
-        require(_howMany > 0 && _howMany <= adminCount_, &quot;changeRequiredSignatures failed - must be between 1 and number of admins&quot;);
+        require(_howMany > 0 && _howMany <= adminCount_, "changeRequiredSignatures failed - must be between 1 and number of admins");
         
-        if (MSFun.multiSig(msData, requiredDevSignatures_, &quot;changeRequiredSignatures&quot;) == true) 
+        if (MSFun.multiSig(msData, requiredDevSignatures_, "changeRequiredSignatures") == true) 
         {
-            MSFun.deleteProposal(msData, &quot;changeRequiredSignatures&quot;);
+            MSFun.deleteProposal(msData, "changeRequiredSignatures");
             
             // store new setting.
             requiredSignatures_ = _howMany;
@@ -224,11 +224,11 @@ contract TeamJust {
         onlyDevs()
     {  
         // make sure its between 1 and number of admins
-        require(_howMany > 0 && _howMany <= devCount_, &quot;changeRequiredDevSignatures failed - must be between 1 and number of devs&quot;);
+        require(_howMany > 0 && _howMany <= devCount_, "changeRequiredDevSignatures failed - must be between 1 and number of devs");
         
-        if (MSFun.multiSig(msData, requiredDevSignatures_, &quot;changeRequiredDevSignatures&quot;) == true) 
+        if (MSFun.multiSig(msData, requiredDevSignatures_, "changeRequiredDevSignatures") == true) 
         {
-            MSFun.deleteProposal(msData, &quot;changeRequiredDevSignatures&quot;);
+            MSFun.deleteProposal(msData, "changeRequiredDevSignatures");
             
             // store new setting.
             requiredDevSignatures_ = _howMany;
@@ -410,7 +410,7 @@ library MSFun {
         view
         returns (address signer)
     {
-        require(_signer > 0, &quot;MSFun checkSigner failed - 0 not allowed&quot;);
+        require(_signer > 0, "MSFun checkSigner failed - 0 not allowed");
         bytes32 _whatProposal = whatProposal(_whatFunction);
         return (self.proposal_[_whatProposal].log[_signer - 1]);
     }

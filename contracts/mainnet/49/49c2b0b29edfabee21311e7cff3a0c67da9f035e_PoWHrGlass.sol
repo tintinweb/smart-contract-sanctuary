@@ -18,8 +18,8 @@ The purpose of this contract is to fund the development of a protocol that secur
 Many thanks to the PoWH community for overall support
 
 Key Features
-	Flux Fee: Adapts to the &quot;expansion&quot; and &quot;contraction&quot; of the ecosystem&#39;s health.
-	Resolve Tokens: The utility token that &quot;licenses&quot; new products and services into the ecosystem.
+	Flux Fee: Adapts to the "expansion" and "contraction" of the ecosystem&#39;s health.
+	Resolve Tokens: The utility token that "licenses" new products and services into the ecosystem.
 
 */contract PoWHrGlass {
 
@@ -704,9 +704,9 @@ Key Features
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowed;
     
-    string public name = &quot;0xBabylon&quot;;
+    string public name = "0xBabylon";
     uint8 public decimals = 18; 
-    string public symbol = &quot;PoWHr&quot;;
+    string public symbol = "PoWHr";
     
     event Transfer(address indexed _from, address indexed _to, uint256 _value); 
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);

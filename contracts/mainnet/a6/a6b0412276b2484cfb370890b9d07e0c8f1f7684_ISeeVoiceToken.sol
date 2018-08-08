@@ -29,7 +29,7 @@ contract TokenRecipient {
 
 
 contract Token {
-    string public standard = &quot;Token 0.1&quot;;
+    string public standard = "Token 0.1";
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -117,9 +117,9 @@ contract Token {
 
 contract ISeeVoiceToken is Token, Owner {
     uint256 public constant INITIAL_SUPPLY = 60000000000000000000000000;
-    string public constant NAME = &quot;I See Voice Token&quot;;
-    string public constant SYMBOL = &quot;ISVT&quot;;
-    // string public constant STANDARD = &quot;Token 1.0&quot;;
+    string public constant NAME = "I See Voice Token";
+    string public constant SYMBOL = "ISVT";
+    // string public constant STANDARD = "Token 1.0";
     uint8 public constant DECIMALS = 10;
     uint256 public constant BUY = 300000000000000000000000;
 

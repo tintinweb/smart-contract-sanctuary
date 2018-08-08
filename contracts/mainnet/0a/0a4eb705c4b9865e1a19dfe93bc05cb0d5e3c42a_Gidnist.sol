@@ -24,7 +24,7 @@ contract Gidnist is ERC20TokenInterface {
 
   event MigrationInfoSet(string newMigrationInfo);
 
-  string public migrationInfo = &quot;&quot;;
+  string public migrationInfo = "";
 
   address public migrationInfoSetter;
 

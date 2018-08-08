@@ -87,9 +87,9 @@ contract StandardToken is ERC20, BasicToken {
   }
 }
 contract CheckCarToken is StandardToken{
-  string public constant token_description = &quot;This is a first decentralized blockchain platform for the market of diagnostics and selection of cars around the world! More info in http://check-car.io&quot;;
-  string public constant name = &quot;Check Car Token Private&quot;;
-  string public constant symbol = &quot;CCR-P&quot;;
+  string public constant token_description = "This is a first decentralized blockchain platform for the market of diagnostics and selection of cars around the world! More info in http://check-car.io";
+  string public constant name = "Check Car Token Private";
+  string public constant symbol = "CCR-P";
   uint8 public constant decimals = 18;
 
   function CheckCarToken () public {

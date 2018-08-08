@@ -27,7 +27,7 @@ contract EnsResolver {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -86,9 +86,9 @@ contract EnsSubdomainFactory is Ownable {
 
 	/**
 	* @dev Allows to create a subdomain, set its resolver and set its target address
-	* @param _node - namehash of parent domain name e.g. namehash(&quot;startonchain.eth&quot;)
-	* @param _subnode - namehash of sub with parent domain name e.g. namehash(&quot;radek.startonchain.eth&quot;)
-	* @param _label - hash of subdomain name only e.g. &quot;radek&quot;
+	* @param _node - namehash of parent domain name e.g. namehash("startonchain.eth")
+	* @param _subnode - namehash of sub with parent domain name e.g. namehash("radek.startonchain.eth")
+	* @param _label - hash of subdomain name only e.g. "radek"
 	* @param _owner - address that will become owner of this new subdomain
 	* @param _target - address that this new domain will resolve to
 	*/

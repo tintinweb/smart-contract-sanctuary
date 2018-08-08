@@ -226,8 +226,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 
 contract FZTToken is StandardBurnableToken {
 
-    string public name = &quot;FZB TOKEN&quot;;
-    string public symbol = &quot;FZB&quot;;
+    string public name = "FZB TOKEN";
+    string public symbol = "FZB";
     uint public decimals = 9;
     uint public INITIAL_SUPPLY = 100000 * (10 ** decimals);
 

@@ -18,7 +18,7 @@ contract OneToken {
     constructor() public {
         currentHodler = msg.sender;
         currentHodlerId = 0;
-        messages.push(&quot;Sky is the limit!&quot;);
+        messages.push("Sky is the limit!");
         price = 8 finney;
         emit Purchased(currentHodlerId, currentHodler);
     }

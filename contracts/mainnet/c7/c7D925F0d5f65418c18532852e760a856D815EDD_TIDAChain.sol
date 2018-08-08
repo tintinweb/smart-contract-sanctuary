@@ -141,8 +141,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract TIDAChain is StandardToken {
 
-  string public constant name = &quot;TIDA Chain&quot;;
-  string public constant symbol = &quot;TIDA&quot;;
+  string public constant name = "TIDA Chain";
+  string public constant symbol = "TIDA";
   uint8 public constant decimals = 18;
 
 

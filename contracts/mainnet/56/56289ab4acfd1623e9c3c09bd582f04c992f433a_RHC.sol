@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract RHC is StandardToken, Ownable {
 
-    string public constant name = &quot;the chain of Ruisui&quot;;
-    string public constant symbol = &quot;RHC&quot;;
+    string public constant name = "the chain of Ruisui";
+    string public constant symbol = "RHC";
     uint256 public constant decimals = 8;
 
     function RHC() public {

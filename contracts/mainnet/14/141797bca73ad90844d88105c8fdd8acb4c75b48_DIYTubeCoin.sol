@@ -114,8 +114,8 @@ contract DIYTubeCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DIYTubeCoin() public {
-        symbol = &quot;DIYT&quot;;
-        name = &quot;DIY Tube Coin&quot;;
+        symbol = "DIYT";
+        name = "DIY Tube Coin";
         decimals = 18;
         _totalSupply = 249500000000000000000000000;
         balances[0x5ED41f370f7eE3BE272FBC7f242fa3db08521eC3] = _totalSupply;

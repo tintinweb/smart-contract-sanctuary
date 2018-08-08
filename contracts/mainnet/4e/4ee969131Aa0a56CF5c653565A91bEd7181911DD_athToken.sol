@@ -116,8 +116,8 @@ contract athToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function athToken() public {
-        symbol = &quot;ATH&quot;;
-        name = &quot;ATH Token&quot;;
+        symbol = "ATH";
+        name = "ATH Token";
         decimals = 4;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

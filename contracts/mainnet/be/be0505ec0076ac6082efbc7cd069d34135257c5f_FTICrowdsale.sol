@@ -424,7 +424,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -634,7 +634,7 @@ contract ClosedPeriod is TimedCrowdsale {
 /**
  * @title ContractableToken
  * @dev The Ownable contract has an ownerncontract address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract OptionsToken is StandardToken, Ownable {
     using SafeMath for uint256;
@@ -675,7 +675,7 @@ contract OptionsToken is StandardToken, Ownable {
 /**
  * @title ContractableToken
  * @dev The Contractable contract has an ownerncontract address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract ContractableToken is MintableToken, OptionsToken {
     address[5] public contract_addr;
@@ -737,8 +737,8 @@ contract ContractableToken is MintableToken, OptionsToken {
  */
 contract FTIToken is ContractableToken {
 
-    string public constant name = &quot;GlobalCarService Token&quot;;
-    string public constant symbol = &quot;FTI&quot;;
+    string public constant name = "GlobalCarService Token";
+    string public constant symbol = "FTI";
     uint8 public constant decimals = 18;
 
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {

@@ -27,8 +27,8 @@ interface tokenRecipient {
 contract WhaleConfig {
     using SafeMath for uint;
 
-    string internal constant TOKEN_NAME     = &quot;Whale Chain&quot;;
-    string internal constant TOKEN_SYMBOL   = &quot;WAT&quot;;
+    string internal constant TOKEN_NAME     = "Whale Chain";
+    string internal constant TOKEN_SYMBOL   = "WAT";
     uint8  internal constant TOKEN_DECIMALS = 18;
     uint   internal constant INITIAL_SUPPLY = 20*1e8 * 10 ** uint(TOKEN_DECIMALS);
 }
@@ -186,7 +186,7 @@ contract TokenERC20 {
 }
 
 contract WhaleToken is Lockable, TokenERC20 {
-    string public version = &quot;v1.0&quot;;
+    string public version = "v1.0";
     
     mapping (address => bool) public frozenAccount;
 

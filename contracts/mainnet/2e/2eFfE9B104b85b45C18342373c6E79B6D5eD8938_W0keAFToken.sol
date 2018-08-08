@@ -311,8 +311,8 @@ contract W0keAFToken is MintableToken, LimitedTransferToken {
 
     event Burn(address indexed burner, uint indexed value);
 
-    string public constant symbol = &quot;W0k&quot;;
-    string public constant name = &quot;W0keAF Seed Token&quot;;
+    string public constant symbol = "W0k";
+    string public constant name = "W0keAF Seed Token";
     uint8 public constant decimals = 18;
 
     function transferableTokens(address holder, uint64 time) constant public returns (uint256) {//transfers still happening soon

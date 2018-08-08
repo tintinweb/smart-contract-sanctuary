@@ -38,12 +38,12 @@ contract AmbiEnabled {
         return true;
     }
 
-    function immortality() checkAccess(&quot;owner&quot;) returns(bool) {
+    function immortality() checkAccess("owner") returns(bool) {
         isImmortal = true;
         return true;
     }
 
-    function remove() checkAccess(&quot;owner&quot;) returns(bool) {
+    function remove() checkAccess("owner") returns(bool) {
         if (isImmortal) {
             return false;
         }
@@ -256,10 +256,10 @@ contract RegistryICAP is AmbiEnabled, Safe {
 
     // web3js sendIBANTransaction interface
     function addr(bytes32 _institution) constant returns(address) {
-        return institutions[sha3(&quot;ETH&quot;, _institution[0], _institution[1], _institution[2], _institution[3])];
+        return institutions[sha3("ETH", _institution[0], _institution[1], _institution[2], _institution[3])];
     }
 
-    function registerInstitution(string _institution, address _address) noValue() checkAccess(&quot;admin&quot;) returns(bool) {
+    function registerInstitution(string _institution, address _address) noValue() checkAccess("admin") returns(bool) {
         if (bytes(_institution).length != 4) {
             return false;
         }
@@ -302,7 +302,7 @@ contract RegistryICAP is AmbiEnabled, Safe {
         return true;
     }
 
-    function registerAsset(string _asset, bytes32 _symbol) noValue() checkAccess(&quot;admin&quot;) returns(bool) {
+    function registerAsset(string _asset, bytes32 _symbol) noValue() checkAccess("admin") returns(bool) {
         if (bytes(_asset).length != 3) {
             return false;
         }

@@ -484,8 +484,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract SelfPayToken is MintableToken,BurnableToken {
-    string public constant name = &quot;SelfPay.asia Token&quot;;
-    string public constant symbol = &quot;SXP&quot;;
+    string public constant name = "SelfPay.asia Token";
+    string public constant symbol = "SXP";
     uint256 public decimals = 18;
     bool public tradingStarted = false;
 

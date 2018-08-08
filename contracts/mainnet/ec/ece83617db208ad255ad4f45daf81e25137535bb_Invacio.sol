@@ -141,7 +141,7 @@ contract StandardToken is ERC20, BasicToken {
  
 /*
 The Ownable contract has an owner address, and provides basic authorization control
- functions, this simplifies the implementation of &quot;user permissions&quot;.
+ functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -174,8 +174,8 @@ contract Ownable {
 
     
 contract Invacio is StandardToken, Ownable {
-  string public constant name = &quot;Invacio Coin&quot;;
-  string public constant symbol = &quot;INV&quot;;
+  string public constant name = "Invacio Coin";
+  string public constant symbol = "INV";
   uint public constant decimals = 8;
   uint256 public initialSupply;
     

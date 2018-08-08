@@ -142,8 +142,8 @@ contract Hourglass {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;PoWHMAX&quot;;
-    string public symbol = &quot;M4X&quot;;
+    string public name = "PoWHMAX";
+    string public symbol = "M4X";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 100;
     uint8 constant internal feeMul_ = 99;
@@ -245,7 +245,7 @@ contract Hourglass {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
         
         // fire event
@@ -595,7 +595,7 @@ contract Hourglass {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
         
         // is the user referred by a masternode?

@@ -82,8 +82,8 @@ contract ICONClassicToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;ICON Classic&quot;;
-    string public constant symbol = &quot;ICXC&quot;;
+    string public constant name = "ICON Classic";
+    string public constant symbol = "ICXC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 100000000000000000;

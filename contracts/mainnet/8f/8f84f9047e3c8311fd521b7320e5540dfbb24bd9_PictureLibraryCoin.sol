@@ -26,8 +26,8 @@ contract PictureLibraryCoin {
         ) public {
 		    totalSupply = initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
 			balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-			name = &quot;PictureLibraryCoin&quot;;                                   // Set the name for display purposes
-			symbol = &quot;PLC&quot;;                               // Set the symbol for display purposes
+			name = "PictureLibraryCoin";                                   // Set the name for display purposes
+			symbol = "PLC";                               // Set the symbol for display purposes
         }
 
 	/**

@@ -97,8 +97,8 @@ contract ARM1Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ARM1Token() public {
-        symbol = &quot;ARM1&quot;;
-        name = &quot;Armatura1&quot;;
+        symbol = "ARM1";
+        name = "Armatura1";
         decimals = 4;
         _totalSupply = 50000000000;
         balances[msg.sender] = _totalSupply;

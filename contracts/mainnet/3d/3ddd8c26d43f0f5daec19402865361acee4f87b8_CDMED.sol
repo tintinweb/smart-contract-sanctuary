@@ -306,9 +306,9 @@ contract CDMED is admined,IERC20Token { //Standar definition of an ERC20Token
 	address public feeWallet;
 	uint256 public rate = 6850;
 	//token related
-	string public name = &quot;CDMED&quot;;
+	string public name = "CDMED";
     uint8 public decimals = 18;
-    string public symbol = &quot;CDMED&quot;;
+    string public symbol = "CDMED";
     string public version = &#39;1&#39;;
 
 	constructor(address _feeWallet) public {

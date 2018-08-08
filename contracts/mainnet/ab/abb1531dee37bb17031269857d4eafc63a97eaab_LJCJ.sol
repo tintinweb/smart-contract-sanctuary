@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract LJCJ is StandardToken, Ownable {
 
-    string public constant name = &quot;龙居陈酒&quot;;
-    string public constant symbol = &quot;LJCJ&quot;;
+    string public constant name = "龙居陈酒";
+    string public constant symbol = "LJCJ";
     uint256 public constant decimals = 8;
 
     function LJCJ() public {

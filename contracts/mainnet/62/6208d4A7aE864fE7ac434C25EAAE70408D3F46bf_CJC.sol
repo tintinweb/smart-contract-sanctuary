@@ -82,9 +82,9 @@ contract CJC is ERC20,Ownable{
   using SafeMath for uint256;
 
   //the base info of the token
-  string public constant name=&quot;Colour  Jewel Chain&quot;;
-  string public constant symbol=&quot;CJC&quot;;
-  string public constant version = &quot;1.0&quot;;
+  string public constant name="Colour  Jewel Chain";
+  string public constant symbol="CJC";
+  string public constant version = "1.0";
   uint256 public constant decimals = 18;
   uint256 public balance;
 

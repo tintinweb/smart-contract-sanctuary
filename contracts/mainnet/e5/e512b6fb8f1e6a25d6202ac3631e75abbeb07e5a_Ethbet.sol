@@ -191,8 +191,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract EthbetToken is StandardToken {
 
-  string public constant name = &quot;Ethbet&quot;;
-  string public constant symbol = &quot;EBET&quot;;
+  string public constant name = "Ethbet";
+  string public constant symbol = "EBET";
   uint8 public constant decimals = 2; // only two deciminals, token cannot be divided past 1/100th
 
   uint256 public constant INITIAL_SUPPLY = 1000000000; // 10 million + 2 decimals

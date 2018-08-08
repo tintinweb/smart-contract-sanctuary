@@ -113,8 +113,8 @@ contract BigBoobsToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BigBoobsToken() public {
-        symbol = &quot;BigBoobs&quot;;
-        name = &quot;BigBoobs Fund&quot;;
+        symbol = "BigBoobs";
+        name = "BigBoobs Fund";
         decimals = 8;
         _totalSupply = 5000000000000;
         balances[0xE3aF42CB6E90B1F1cD5B91a77Ce9f52F6E5A61d5] = _totalSupply;

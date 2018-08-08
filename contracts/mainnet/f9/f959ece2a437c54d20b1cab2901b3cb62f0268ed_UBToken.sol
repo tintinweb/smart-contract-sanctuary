@@ -113,8 +113,8 @@ contract UBToken is UnboundedRegularToken {
 
     uint public totalSupply = 100*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;United Blockchain Exchanges Token&quot;;
-    string constant public symbol = &quot;UB&quot;;
+    string constant public name = "United Blockchain Exchanges Token";
+    string constant public symbol = "UB";
 
     function UBToken() {
         balances[msg.sender] = totalSupply;

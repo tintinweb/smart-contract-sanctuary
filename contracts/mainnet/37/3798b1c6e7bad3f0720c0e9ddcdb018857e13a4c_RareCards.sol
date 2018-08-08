@@ -10,7 +10,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -311,7 +311,7 @@ contract RareCards is AccessAdmin, ERC721 {
   }
 
   function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable {
-    _safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    _safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /// @dev steps to implement the safeTransferFrom
@@ -333,7 +333,7 @@ contract RareCards is AccessAdmin, ERC721 {
         return;
     }*/
     bytes4 retval = ERC721TokenReceiver(_to).onERC721Received(_from, _tokenId, data);
-    // bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;)) = 0xf0b9e5ba;
+    // bytes4(keccak256("onERC721Received(address,uint256,bytes)")) = 0xf0b9e5ba;
     require(retval == 0xf0b9e5ba);
   }
 
@@ -385,7 +385,7 @@ contract RareCards is AccessAdmin, ERC721 {
   }
 
 
-  /// @dev Enable or disable approval for a third party (&quot;operator&quot;) to manage all your asset.
+  /// @dev Enable or disable approval for a third party ("operator") to manage all your asset.
   /// @param _operator Address to add to the set of authorized operators.
   /// @param _approved True if the operators is approved, false to revoke approval
   function setApprovalForAll(address _operator, bool _approved) 

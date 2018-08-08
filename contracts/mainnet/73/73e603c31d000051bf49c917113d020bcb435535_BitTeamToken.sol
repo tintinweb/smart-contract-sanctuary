@@ -78,9 +78,9 @@ contract BitTeamToken is Token {
     function BitTeamToken() {
         balances[msg.sender] = 100000000;    // creator gets all initial tokens
         totalSupply = 100000000;             // total supply of token
-        name = &quot;BIT TEAM TOKEN&quot;;               // name of token
+        name = "BIT TEAM TOKEN";               // name of token
         decimals = 0;                  // amount of decimals
-        symbol = &quot;BTT&quot;;                // symbol of token
+        symbol = "BTT";                // symbol of token
     }
 
     /* Approves and then calls the receiving contract */
@@ -88,7 +88,7 @@ contract BitTeamToken is Token {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

@@ -266,7 +266,7 @@ contract IssuedToken is Owned, Issued, StandardToken {
   string public symbol;
 
   // verison
-  string public version = &quot;WFIT1.0&quot;;
+  string public version = "WFIT1.0";
 }
 
 

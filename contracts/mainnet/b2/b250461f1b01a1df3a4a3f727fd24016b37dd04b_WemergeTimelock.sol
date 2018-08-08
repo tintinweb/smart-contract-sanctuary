@@ -106,7 +106,7 @@ contract TokenTimelock {
 
 contract WemergeTimelock is TokenTimelock {
     
-    string public name = &quot;&quot;;
+    string public name = "";
     
     constructor(
         string _name,

@@ -32,8 +32,8 @@ contract JimmyImplantCoin {
     ) public {
         totalSupply = 10000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;JimmyImplantCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;JIC&quot;;                               // Set the symbol for display purposes
+        name = "JimmyImplantCoin";                                   // Set the name for display purposes
+        symbol = "JIC";                               // Set the symbol for display purposes
     }
 
     /**

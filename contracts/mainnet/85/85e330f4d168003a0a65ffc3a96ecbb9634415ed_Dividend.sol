@@ -232,8 +232,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract GRADtoken is StandardToken {
-    string public constant name = &quot;Gradus&quot;;
-    string public constant symbol = &quot;GRAD&quot;;
+    string public constant name = "Gradus";
+    string public constant symbol = "GRAD";
     uint32 public constant decimals = 18;
     uint256 public totalSupply;
     uint256 public tokenBuyRate = 10000;
@@ -281,7 +281,7 @@ contract GRADtoken is StandardToken {
      // Override
     function transfer(address _to, uint256 _value) public returns(bool){
         if (msg.sender != CrowdsaleAddress){
-            require(!lockTransfers, &quot;Transfers are prohibited&quot;);
+            require(!lockTransfers, "Transfers are prohibited");
         }
         addInvestor(_to);
         return super.transfer(_to,_value);
@@ -290,7 +290,7 @@ contract GRADtoken is StandardToken {
      // Override
     function transferFrom(address _from, address _to, uint256 _value) public returns(bool){
         if (msg.sender != CrowdsaleAddress){
-            require(!lockTransfers, &quot;Transfers are prohibited&quot;);
+            require(!lockTransfers, "Transfers are prohibited");
         }
         addInvestor(_to);
         return super.transferFrom(_from,_to,_value);
@@ -325,8 +325,8 @@ contract GRADtoken is StandardToken {
         require (msg.sender != address(0));
         
         uint256 weiAmount = _amount.div(tokenBuyRate);
-        require (weiAmount > 0, &quot;Amount is less than the minimum value&quot;);
-        require (address(this).balance >= weiAmount, &quot;Contract balance is empty&quot;);
+        require (weiAmount > 0, "Amount is less than the minimum value");
+        require (address(this).balance >= weiAmount, "Contract balance is empty");
         _burn(msg.sender, _amount);
         msg.sender.transfer(weiAmount);
     }
@@ -534,7 +534,7 @@ contract CrowdSale is Ownable{
     }
 
     function setProfitAddress(address _newWallet) public onlyOwner {
-        require(_newWallet != address(0),&quot;Invalid address&quot;);
+        require(_newWallet != address(0),"Invalid address");
         wallet = _newWallet;
     }
 
@@ -542,11 +542,11 @@ contract CrowdSale is Ownable{
      * function sale token to investor
     */
     function _saleTokens() internal {
-        require(msg.value >= 10**16, &quot;Minimum value is 0.01 ether&quot;);
-        require(hardCapCrowdSale >= currentFunds.add(msg.value), &quot;Upper limit on fund raising exceeded&quot;);      
-        require(msg.sender != address(0), &quot;Address sender is empty&quot;);
-        require(wallet != address(0),&quot;Enter address profit wallet&quot;);
-        require(isSaleActive, &quot;Set saleStatus in true&quot;);
+        require(msg.value >= 10**16, "Minimum value is 0.01 ether");
+        require(hardCapCrowdSale >= currentFunds.add(msg.value), "Upper limit on fund raising exceeded");      
+        require(msg.sender != address(0), "Address sender is empty");
+        require(wallet != address(0),"Enter address profit wallet");
+        require(isSaleActive, "Set saleStatus in true");
 
         uint256 weiAmount = msg.value;
 

@@ -198,8 +198,8 @@ contract krypteum is ERC20Coin {
 
   /* Basic coin data */
 
-  string public constant name = &quot;krypteum&quot;;
-  string public constant symbol = &quot;KTM&quot;;
+  string public constant name = "krypteum";
+  string public constant symbol = "KTM";
   uint8  public constant decimals = 2;
 
   /* Wallet and Admin addresses - initially set to owner at deployment */
@@ -437,7 +437,7 @@ contract krypteum is ERC20Coin {
 
   // ERC20 functions ------------------
 
-  /* Override &quot;transfer&quot; (ERC20) */
+  /* Override "transfer" (ERC20) */
 
   function transfer(address _to, uint _amount) public returns (bool success) {
     require(isTransferable());
@@ -447,7 +447,7 @@ contract krypteum is ERC20Coin {
     return super.transfer(_to, _amount);
   }
 
-  /* Override &quot;transferFrom&quot; (ERC20) */
+  /* Override "transferFrom" (ERC20) */
 
   function transferFrom(address _from, address _to, uint _amount) public returns (bool success) {
     require(isTransferable());

@@ -11,7 +11,7 @@ contract LIMITED_42 {
     mapping(address => bytes32[]) public Patterns;
     mapping(bytes32 => PatternOBJ) public Pattern;
 
-    string public info = &quot;&quot;;
+    string public info = "";
 
     address private constant emergency_admin = 0x59ab67D9BA5a748591bB79Ce223606A8C2892E6d;
     address private constant first_admin = 0x9a203e2E251849a26566EBF94043D74FEeb0011c;
@@ -66,11 +66,11 @@ contract LIMITED_42 {
 
           addPatternUserIndex(newowner,patternid);
 
-          return &quot;ok&quot;;
+          return "ok";
 
       }else{
           //must be for sale
-          return &quot;error:exists&quot;;
+          return "error:exists";
       }
 
     }
@@ -110,7 +110,7 @@ contract LIMITED_42 {
       //add reference to owner map
       addPatternUserIndex(newowner,patternid);
 
-      return &quot;ok&quot;;
+      return "ok";
 
     }
 
@@ -140,7 +140,7 @@ contract LIMITED_42 {
 
       Pattern[patternid].message = message;
 
-      return &quot;ok&quot;;
+      return "ok";
 
     }
 
@@ -172,7 +172,7 @@ contract LIMITED_42 {
       returns (bytes32)
     {
         bytes32 h = keccak256(abi.encodePacked(message));
-        return keccak256(abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, h));
+        return keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", h));
     }
 
     function prefixedHash2(address message)
@@ -181,7 +181,7 @@ contract LIMITED_42 {
       returns (bytes32)
     {
         bytes32 h = keccak256(abi.encodePacked(message));
-        return keccak256(abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, h));
+        return keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", h));
     }
 
 

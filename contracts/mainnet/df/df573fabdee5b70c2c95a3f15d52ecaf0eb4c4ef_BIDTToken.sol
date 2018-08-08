@@ -105,8 +105,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 
 contract BIDTToken is StandardToken {
-	string public constant symbol = &quot;BIDT&quot;;
-	string public constant name = &quot;Block IDentity Token&quot;;
+	string public constant symbol = "BIDT";
+	string public constant name = "Block IDentity Token";
 	uint8 public constant decimals = 18;
 	address public target;
 	

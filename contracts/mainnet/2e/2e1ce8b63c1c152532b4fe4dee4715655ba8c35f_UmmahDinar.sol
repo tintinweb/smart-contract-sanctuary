@@ -109,8 +109,8 @@ contract UmmahDinar is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function UmmahDinar() public {
-        symbol = &quot;UDIN&quot;;
-        name = &quot;Ummah Dinar&quot;;
+        symbol = "UDIN";
+        name = "Ummah Dinar";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x33B4a30d0feb63A2471Ec086724589d71Ca61630] = _totalSupply;

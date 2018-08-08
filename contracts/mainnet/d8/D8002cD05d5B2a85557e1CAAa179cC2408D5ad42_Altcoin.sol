@@ -202,9 +202,9 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/Altcoin.sol
 
 contract Altcoin is StandardToken {
-    string public name = &quot;BINGO Entertainment&quot;;
+    string public name = "BINGO Entertainment";
 
-    string public symbol = &quot;777&quot;;
+    string public symbol = "777";
 
     uint8 public decimals = 8;
 

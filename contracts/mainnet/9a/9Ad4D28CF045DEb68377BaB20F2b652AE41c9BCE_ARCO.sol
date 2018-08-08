@@ -113,8 +113,8 @@ contract ARCO is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ARCO() public {
-        symbol = &quot;ARCO&quot;;
-        name = &quot;ARCO&quot;;
+        symbol = "ARCO";
+        name = "ARCO";
         decimals = 0;
         _totalSupply = 42000000;
         balances[0xc0fD6943086051769642563af6c002dB37a9Db23] = _totalSupply;

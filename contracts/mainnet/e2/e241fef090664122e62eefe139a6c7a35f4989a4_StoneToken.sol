@@ -66,8 +66,8 @@ contract StoneToken is SafeMath {
     function StoneToken() public {
         totalSupply = 1*10**26;                        // Update total supply
         balanceOf[msg.sender] = totalSupply;              // Give the creator all initial tokens
-        name = &quot;StoneCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;STO&quot;;                               // Set the symbol for display purposes
+        name = "StoneCoin";                                   // Set the name for display purposes
+        symbol = "STO";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
         owner = msg.sender;
         isContractFrozen = false;
@@ -135,7 +135,7 @@ contract StoneToken is SafeMath {
         assert(!isContractFrozen);
         assert(msg.sender == owner);
         isContractFrozen = true;
-        emit Freeze(msg.sender, &quot;contract is frozen&quot;);
+        emit Freeze(msg.sender, "contract is frozen");
         return true;
     }
 	
@@ -143,7 +143,7 @@ contract StoneToken is SafeMath {
         assert(isContractFrozen);
         assert(msg.sender == owner);
         isContractFrozen = false;
-        emit Unfreeze(msg.sender, &quot;contract is unfrozen&quot;);
+        emit Unfreeze(msg.sender, "contract is unfrozen");
         return true;
     }
 

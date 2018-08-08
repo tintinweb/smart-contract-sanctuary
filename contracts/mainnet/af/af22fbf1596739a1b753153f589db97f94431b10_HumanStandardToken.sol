@@ -83,9 +83,9 @@ contract HumanStandardToken is StandardToken {
     function HumanStandardToken() {
         balances[msg.sender] = 71000000000; // 初始token数量给予消息发送者
         totalSupply = 71000000000;         // 设置初始总量
-        name = &quot;Mother Fucker Coin&quot;;                   // token名称
+        name = "Mother Fucker Coin";                   // token名称
         decimals = 1;           // 小数位数
-        symbol = &quot;CNMB&quot;;             // token简称
+        symbol = "CNMB";             // token简称
     }
 
     /* Approves and then calls the receiving contract */
@@ -96,7 +96,7 @@ contract HumanStandardToken is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 

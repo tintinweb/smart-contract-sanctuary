@@ -2,7 +2,7 @@ pragma solidity ^0.4.17;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -398,7 +398,7 @@ contract RBACWithAdmin is RBAC {
     /**
      * A constant role name for indicating admins.
      */
-    string public constant ROLE_ADMIN = &quot;admin&quot;;
+    string public constant ROLE_ADMIN = "admin";
 
     /**
      * @dev modifier to scope access to admins
@@ -481,7 +481,7 @@ contract NbtToken is StandardToken, Ownable, RBACWithAdmin {
     uint256 public EXCHANGE_COMMISSION = 200 * 10**decimals; // NBT
     uint256 public MIN_TOKENS_TO_EXCHANGE = 1000 * 10**decimals; // should be bigger than EXCHANGE_COMMISSION
     uint256 public EXCHANGE_RATE = 1000;
-    string constant ROLE_EXCHANGER = &quot;exchanger&quot;;
+    string constant ROLE_EXCHANGER = "exchanger";
 
 
     /*** STORAGE ***/

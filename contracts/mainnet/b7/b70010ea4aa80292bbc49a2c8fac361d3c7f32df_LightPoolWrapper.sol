@@ -100,7 +100,7 @@ contract PriceSanityInterface {
 ////// lib/lightpool-contracts/src/interfaces/WETHInterface.sol
 /* pragma solidity ^0.4.21; */
 
-/* import &quot;./ERC20.sol&quot;; */
+/* import "./ERC20.sol"; */
 
 contract WETHInterface is ERC20 {
   function() external payable;
@@ -111,9 +111,9 @@ contract WETHInterface is ERC20 {
 ////// lib/lightpool-contracts/src/LightPool.sol
 /* pragma solidity ^0.4.21; */
 
-/* import &quot;./interfaces/WETHInterface.sol&quot;; */
-/* import &quot;./interfaces/PriceSanityInterface.sol&quot;; */
-/* import &quot;./interfaces/ERC20.sol&quot;; */
+/* import "./interfaces/WETHInterface.sol"; */
+/* import "./interfaces/PriceSanityInterface.sol"; */
+/* import "./interfaces/ERC20.sol"; */
 
 contract LightPool {
     uint16 constant public EXTERNAL_QUERY_GAS_LIMIT = 4999;    // Changes to state require at least 5000 gas
@@ -278,7 +278,7 @@ contract DSMath {
         z = add(mul(x, RAY), y / 2) / y;
     }
 
-    // This famous algorithm is called &quot;exponentiation by squaring&quot;
+    // This famous algorithm is called "exponentiation by squaring"
     // and calculates x^n with x as fixed-point and n as regular unsigned.
     //
     // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -384,8 +384,8 @@ contract DSThing is DSAuth, DSNote, DSMath {
 ////// src/LightPoolWrapper.sol
 /* pragma solidity ^0.4.21; */
 
-/* import &quot;ds-thing/thing.sol&quot;; */
-/* import &quot;lightpool-contracts/LightPool.sol&quot;; */
+/* import "ds-thing/thing.sol"; */
+/* import "lightpool-contracts/LightPool.sol"; */
 
 contract WETH is WETHInterface { }
 

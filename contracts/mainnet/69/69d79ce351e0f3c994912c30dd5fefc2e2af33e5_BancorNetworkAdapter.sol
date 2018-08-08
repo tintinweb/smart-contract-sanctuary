@@ -185,7 +185,7 @@ contract KyberNetworkInterface {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -341,7 +341,7 @@ contract BancorNetworkAdapter is OlympusExchangeAdapterInterface {
 
     modifier checkTokenSupported(address _token) {
         BancorConverterInterface bancorConverter = tokenToConverter[_token];
-        require(address(bancorConverter) != 0x0, &quot;Token not supported&quot;);
+        require(address(bancorConverter) != 0x0, "Token not supported");
         _;
     }
 
@@ -422,7 +422,7 @@ contract BancorNetworkAdapter is OlympusExchangeAdapterInterface {
         // When buying, we can get the path from Bancor easily, by getting the quickBuyPath from the converter address
         if(isBuying){
             pathLength = bancorConverter.getQuickBuyPathLength();
-            require(pathLength > 0, &quot;Error with pathLength&quot;);
+            require(pathLength > 0, "Error with pathLength");
             path = new ERC20Extended[](pathLength);
 
             for (uint i = 0; i < pathLength; i++) {
@@ -459,7 +459,7 @@ contract BancorNetworkAdapter is OlympusExchangeAdapterInterface {
         path[0] = _token;                              // ERC20 Token to sell
         path[1] = ERC20Extended(relayAddress);         // Relay address (automatically converted to converter address)
         path[2] = bancorToken;                         // BNT Smart token address, as converter
-        path[3] = bancorToken;                         // BNT Smart token address, as &quot;to&quot; and &quot;from&quot; token
+        path[3] = bancorToken;                         // BNT Smart token address, as "to" and "from" token
         path[4] = bancorETHToken;                      // The Bancor ETH token, this will signal we want our return in ETH
 
         return (path, 5);
@@ -484,7 +484,7 @@ contract BancorNetworkAdapter is OlympusExchangeAdapterInterface {
         ERC20Extended _token, uint _amount, uint _minimumRate,
         address _depositAddress
     ) checkTokenSupported(_token) external returns(bool success) {
-        require(_token.balanceOf(address(this)) >= _amount, &quot;Balance of token is not sufficient in adapter&quot;);
+        require(_token.balanceOf(address(this)) >= _amount, "Balance of token is not sufficient in adapter");
         ERC20Extended[] memory internalPath;
         ERC20Extended[] memory path;
         uint pathLength;
@@ -501,7 +501,7 @@ contract BancorNetworkAdapter is OlympusExchangeAdapterInterface {
         ERC20NoReturn(_token).approve(address(bancorConverter), _amount);
         uint minimumReturn = convertMinimumRateToMinimumReturn(_token,_amount,_minimumRate, false);
         uint returnedAmountOfETH = bancorConverter.quickConvert(path,_amount,minimumReturn);
-        require(returnedAmountOfETH > 0, &quot;BancorConverter did not return any ETH&quot;);
+        require(returnedAmountOfETH > 0, "BancorConverter did not return any ETH");
         _depositAddress.transfer(returnedAmountOfETH);
         return true;
     }
@@ -510,7 +510,7 @@ contract BancorNetworkAdapter is OlympusExchangeAdapterInterface {
         ERC20Extended _token, uint _amount, uint _minimumRate,
         address _depositAddress
     ) checkTokenSupported(_token) external payable returns(bool success){
-        require(msg.value == _amount, &quot;Amount of Ether sent is not the same as the amount parameter&quot;);
+        require(msg.value == _amount, "Amount of Ether sent is not the same as the amount parameter");
         ERC20Extended[] memory internalPath;
         ERC20Extended[] memory path;
         uint pathLength;
@@ -522,7 +522,7 @@ contract BancorNetworkAdapter is OlympusExchangeAdapterInterface {
 
         uint minimumReturn = convertMinimumRateToMinimumReturn(_token,_amount,_minimumRate, true);
         uint returnedAmountOfTokens = tokenToConverter[address(bancorToken)].quickConvert.value(_amount)(path,_amount,minimumReturn);
-        require(returnedAmountOfTokens > 0, &quot;BancorConverter did not return any tokens&quot;);
+        require(returnedAmountOfTokens > 0, "BancorConverter did not return any tokens");
         ERC20NoReturn(_token).transfer(_depositAddress, returnedAmountOfTokens);
         return true;
     }

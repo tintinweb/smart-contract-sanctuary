@@ -88,10 +88,10 @@ contract StandardToken is Token {
 contract LeeroyPremiumToken is StandardToken, SafeMath {
     address public owner;
 
-    string public constant name = &quot;Leeroy Premium Token&quot;;
-    string public constant symbol = &quot;LPT&quot;;
+    string public constant name = "Leeroy Premium Token";
+    string public constant symbol = "LPT";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     bool public isFinalized;
     uint256 public fundingStartBlock = 3965525;

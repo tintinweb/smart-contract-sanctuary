@@ -223,7 +223,7 @@ contract RewardToken is StandardToken, Ownable {
 }
 
 contract Token is CappedToken, BurnableToken, RewardToken {
-    function Token() CappedToken(10000000 * 1 ether) StandardToken(&quot;best ICO 2018-2019 https://jullar.io&quot;, &quot;JULLAR.io&quot;, 18) public {
+    function Token() CappedToken(10000000 * 1 ether) StandardToken("best ICO 2018-2019 https://jullar.io", "JULLAR.io", 18) public {
         
     }
 }

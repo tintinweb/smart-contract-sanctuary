@@ -64,8 +64,8 @@ contract BRC is ERC20Interface, Owned, SafeMath {
     mapping(address => uint) balances;
     mapping(address => mapping(address => uint)) allowed;
     function BRC() public {
-        symbol = &quot;BRC&quot;;
-        name = &quot;Bright Coin&quot;;
+        symbol = "BRC";
+        name = "Bright Coin";
         decimals = 18;
         _totalSupply = 860000000000000000000000000;
         balances[0x02DEA85397EF756307F9751693872d54d0B75A2c] = _totalSupply;

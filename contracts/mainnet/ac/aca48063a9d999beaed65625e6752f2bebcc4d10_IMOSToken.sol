@@ -96,8 +96,8 @@ contract IMOSToken is ERC20Interface, Ownable{
     // Constructor
     // ------------------------------------------------------------------------
     function IMOSToken() public {
-        symbol = &quot;IMOS&quot;;
-        name = &quot;Intelligent Manufacturing Operation System&quot;;
+        symbol = "IMOS";
+        name = "Intelligent Manufacturing Operation System";
         decimals = 18;
         _totalSupply = 500000000 * 10**uint(decimals);
         balances[msg.sender] = _totalSupply;

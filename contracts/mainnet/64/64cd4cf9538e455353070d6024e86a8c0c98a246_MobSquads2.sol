@@ -41,8 +41,8 @@ contract MobSquads2 is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;MobSquads2&quot;; //
-  string public constant SYMBOL = &quot;MOBS2&quot;; //
+  string public constant NAME = "MobSquads2"; //
+  string public constant SYMBOL = "MOBS2"; //
 
   uint256 public precision = 1000000000000; //0.000001 Eth
 
@@ -136,7 +136,7 @@ contract MobSquads2 is ERC721 {
     leadingHitCount = 0;
      gangHits.length++;
      gangBadges.length++;
-  //  _createMobster(&quot;The Godfather&quot;,address(this),2000000000000000,0);
+  //  _createMobster("The Godfather",address(this),2000000000000000,0);
   }
 
   /*** PUBLIC FUNCTIONS ***/
@@ -441,7 +441,7 @@ contract MobSquads2 is ERC721 {
     require((mobsters[_tokenId].buyTime + setPriceCoolingPeriod)<now); // no setting this until some 5 minutes after
 
     // rules for setting own price.
-    // buy price becomes &quot;would have been&quot; buy price so contract rules abide
+    // buy price becomes "would have been" buy price so contract rules abide
     // GF or bosses have sell price ==117% of buy price
     if (_tokenId==0 || mobsters[_tokenId].level==1){
           mobsters[_tokenId].buyPrice = roundIt(SafeMath.mul(SafeMath.div(_newSellPrice, 117), 100));

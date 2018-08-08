@@ -15,8 +15,8 @@ contract UniversalGiftToken {
     function UniversalGiftToken() public {
         totalSupply = 100000000000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;UNIVERSAL GIFT TOKEN&quot;;
-        symbol = &quot;UGT&quot;;
+        name = "UNIVERSAL GIFT TOKEN";
+        symbol = "UGT";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

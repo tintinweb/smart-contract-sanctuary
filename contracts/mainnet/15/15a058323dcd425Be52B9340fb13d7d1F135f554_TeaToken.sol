@@ -3,7 +3,7 @@ pragma solidity ^0.4.11;
 //defines the contract (this is the entire program basically)
 
 contract TeaToken {
-    //Definition section. To the non-devs, define means &quot;tell the compiler this concept exists and if I mention it later this is what im talking about&quot; 
+    //Definition section. To the non-devs, define means "tell the compiler this concept exists and if I mention it later this is what im talking about" 
 
     //please note that define does not mean fill with data, that happens later on. Im merely telling the computer these variables exist so it doesnt get confused later.
 
@@ -19,9 +19,9 @@ contract TeaToken {
 
     bool public crowdsaleOpen = true;                               //this is a true-false statement that tells the program whether or not the crowdsale is still going. Unlike the others, this one actually does have data saved to it via the = false;
 
-    string public name = &quot;TeaToken&quot;;                             //this is the name of the token, what normies will see in their Ether Wallets
+    string public name = "TeaToken";                             //this is the name of the token, what normies will see in their Ether Wallets
 
-    string public symbol = &quot;TEAT&quot;;
+    string public symbol = "TEAT";
 
     uint256 public decimals = 8;
 
@@ -84,7 +84,7 @@ contract TeaToken {
         //if (crowdsaleOpen) throw;     //throw means reject the transaction. This will prevent people from accidentally sending money to a crowdsale that is already closed.
         require(crowdsaleOpen);
 
-        uint256 amount = msg.value;                            //measures how many ETH coins they sent us (the message) and stores it as an integer called &quot;amount&quot;
+        uint256 amount = msg.value;                            //measures how many ETH coins they sent us (the message) and stores it as an integer called "amount"
         //presale
 
         if (now <= preSaleDeadline){

@@ -198,11 +198,11 @@ contract CryptoBeauty {
   }
 
   function name() public pure returns (string _name) {
-    return &quot;CryptoBeauty&quot;;
+    return "CryptoBeauty";
   }
 
   function symbol() public pure returns (string _symbol) {
-    return &quot;CRBT&quot;;
+    return "CRBT";
   }
 
   function totalSupply() public view returns (uint256 _totalSupply) {

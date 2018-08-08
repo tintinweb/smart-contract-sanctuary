@@ -153,7 +153,7 @@ library BBLib {
 
     // ** Modifiers -- note, these are functions here to allow use as a lib
     function requireBallotClosed(DB storage db) internal view {
-        require(now > BPackedUtils.packedToEndTime(db.packed), &quot;!b-closed&quot;);
+        require(now > BPackedUtils.packedToEndTime(db.packed), "!b-closed");
     }
 
     function requireBallotOpen(DB storage db) internal view {
@@ -161,16 +161,16 @@ library BBLib {
         uint64 startTs;
         uint64 endTs;
         (, startTs, endTs) = BPackedUtils.unpackAll(db.packed);
-        require(_n >= startTs && _n < endTs, &quot;!b-open&quot;);
-        require(db.deprecated == false, &quot;b-deprecated&quot;);
+        require(_n >= startTs && _n < endTs, "!b-open");
+        require(db.deprecated == false, "b-deprecated");
     }
 
     function requireBallotOwner(DB storage db) internal view {
-        require(msg.sender == db.ballotOwner, &quot;!b-owner&quot;);
+        require(msg.sender == db.ballotOwner, "!b-owner");
     }
 
     function requireTesting(DB storage db) internal view {
-        require(isTesting(BPackedUtils.packedToSubmissionBits(db.packed)), &quot;!testing&quot;);
+        require(isTesting(BPackedUtils.packedToSubmissionBits(db.packed)), "!testing");
     }
 
     /* Library meta */
@@ -184,7 +184,7 @@ library BBLib {
 
     /* Functions */
 
-    // &quot;Constructor&quot; function - init core params on deploy
+    // "Constructor" function - init core params on deploy
     // timestampts are uint64s to give us plenty of room for millennia
     function init(DB storage db, bytes32 _specHash, uint256 _packed, IxIface ix, address ballotOwner, bytes16 extraData) external {
         db.index = ix;
@@ -199,24 +199,24 @@ library BBLib {
         if (_testing) {
             emit TestingEnabled();
         } else {
-            require(endTs > now, &quot;bad-end-time&quot;);
+            require(endTs > now, "bad-end-time");
 
             // 0x1ff2 is 0001111111110010 in binary
             // by ANDing with subBits we make sure that only bits in positions 0,2,3,13,14,15
             // can be used. these correspond to the option flags at the top, and ETH ballots
             // that are enc&#39;d or plaintext.
-            require(sb & 0x1ff2 == 0, &quot;bad-sb&quot;);
+            require(sb & 0x1ff2 == 0, "bad-sb");
 
             // if we give bad submission bits (e.g. all 0s) then refuse to deploy ballot
             bool okaySubmissionBits = 1 == (isEthNoEnc(sb) ? 1 : 0) + (isEthWithEnc(sb) ? 1 : 0);
-            require(okaySubmissionBits, &quot;!valid-sb&quot;);
+            require(okaySubmissionBits, "!valid-sb");
 
             // take the max of the start time provided and the blocks timestamp to avoid a DoS against recent token holders
             // (which someone might be able to do if they could set the timestamp in the past)
             startTs = startTs > now ? startTs : uint64(now);
         }
-        require(db.specHash == bytes32(0), &quot;b-exists&quot;);
-        require(_specHash != bytes32(0), &quot;null-specHash&quot;);
+        require(db.specHash == bytes32(0), "b-exists");
+        require(_specHash != bytes32(0), "null-specHash");
         db.specHash = _specHash;
 
         db.packed = BPackedUtils.pack(sb, startTs, endTs);
@@ -320,7 +320,7 @@ library BBLib {
         // we want the replay protection sequence number to be STRICTLY MORE than what
         // is stored in the mapping. This means we can set sequence to MAX_UINT32 to disable
         // any future votes.
-        require(db.sequenceNumber[voter] < sequence, &quot;bad-sequence-n&quot;);
+        require(db.sequenceNumber[voter] < sequence, "bad-sequence-n");
         db.sequenceNumber[voter] = sequence;
     }
 
@@ -636,16 +636,16 @@ contract safeSend {
     // we want to be able to call outside contracts (e.g. the admin proxy contract)
     // but reentrency is bad, so here&#39;s a mutex.
     function doSafeSend(address toAddr, uint amount) internal {
-        doSafeSendWData(toAddr, &quot;&quot;, amount);
+        doSafeSendWData(toAddr, "", amount);
     }
 
     function doSafeSendWData(address toAddr, bytes data, uint amount) internal {
-        require(txMutex3847834 == false, &quot;ss-guard&quot;);
+        require(txMutex3847834 == false, "ss-guard");
         txMutex3847834 = true;
         // we need to use address.call.value(v)() because we want
         // to be able to send to other contracts, even with no data,
         // which might use more than 2300 gas in their fallback function.
-        require(toAddr.call.value(amount)(data), &quot;ss-failed&quot;);
+        require(toAddr.call.value(amount)(data), "ss-failed");
         txMutex3847834 = false;
     }
 }
@@ -668,7 +668,7 @@ contract owned {
     event OwnerChanged(address newOwner);
 
     modifier only_owner() {
-        require(msg.sender == owner, &quot;only_owner: forbidden&quot;);
+        require(msg.sender == owner, "only_owner: forbidden");
         _;
     }
 
@@ -694,8 +694,8 @@ contract hasAdmins is owned {
     event AdminDisabledForever();
 
     modifier only_admin() {
-        require(adminsDisabledForever == false, &quot;admins must not be disabled&quot;);
-        require(isAdmin(msg.sender), &quot;only_admin: forbidden&quot;);
+        require(adminsDisabledForever == false, "admins must not be disabled");
+        require(isAdmin(msg.sender), "only_admin: forbidden");
         _;
     }
 
@@ -717,13 +717,13 @@ contract hasAdmins is owned {
 
     function upgradeMeAdmin(address newAdmin) only_admin() external {
         // note: already checked msg.sender has admin with `only_admin` modifier
-        require(msg.sender != owner, &quot;owner cannot upgrade self&quot;);
+        require(msg.sender != owner, "owner cannot upgrade self");
         _setAdmin(msg.sender, false);
         _setAdmin(newAdmin, true);
     }
 
     function setAdmin(address a, bool _givePerms) only_admin() external {
-        require(a != msg.sender && a != owner, &quot;cannot change your own (or owner&#39;s) permissions&quot;);
+        require(a != msg.sender && a != owner, "cannot change your own (or owner&#39;s) permissions");
         _setAdmin(a, _givePerms);
     }
 
@@ -765,12 +765,12 @@ contract permissioned is owned, hasAdmins {
     event AdminLockdown();
 
     modifier only_editors() {
-        require(editAllowed[msg.sender], &quot;only_editors: forbidden&quot;);
+        require(editAllowed[msg.sender], "only_editors: forbidden");
         _;
     }
 
     modifier no_lockdown() {
-        require(adminLockdown == false, &quot;no_lockdown: check failed&quot;);
+        require(adminLockdown == false, "no_lockdown: check failed");
         _;
     }
 
@@ -815,7 +815,7 @@ contract upgradePtr {
     address ptr = address(0);
 
     modifier not_upgraded() {
-        require(ptr == address(0), &quot;upgrade pointer is non-zero&quot;);
+        require(ptr == address(0), "upgrade pointer is non-zero");
         _;
     }
 

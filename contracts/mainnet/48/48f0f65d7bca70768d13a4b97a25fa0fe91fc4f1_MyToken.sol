@@ -194,7 +194,7 @@ contract Multiownable {
     }
 }
 
-contract MyToken is Token(&quot;TLT&quot;,&quot;Talent Coin&quot;,8,50000000),ERC20,ERC223,Multiownable
+contract MyToken is Token("TLT","Talent Coin",8,50000000),ERC20,ERC223,Multiownable
 {    		
 	uint256 internal sellPrice;
 	uint256 internal buyPrice;

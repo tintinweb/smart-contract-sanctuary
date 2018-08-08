@@ -125,10 +125,10 @@ contract StandardToken is SafeMath {
 contract ArtChainToken is StandardToken {
 
     // 我们token的名字， 部署以后不可更改
-    string public constant name = &quot;Artchain Global Token&quot;;
+    string public constant name = "Artchain Global Token";
 
     // 我们token的代号， 部署以后不可更改
-    string public constant symbol = &quot;ACG&quot;;
+    string public constant symbol = "ACG";
 
     // 我们的 contract 部署的时候 之前已经有多少数量的 block
     uint public startBlock;
@@ -220,13 +220,13 @@ contract ArtChainToken is StandardToken {
      *
      *******************************************************************/
     function changeFounder(address newFounder) public returns (bool success){
-        // 只有 &quot;现founder&quot; 可以更改 Founder的地址
+        // 只有 "现founder" 可以更改 Founder的地址
         if (msg.sender!=founder) return false;
         founder = newFounder;
         return true;
     }
     function changePOI(address newPOI) public returns (bool success){
-        // 只有 &quot;现founder&quot; 可以更改 poi的地址
+        // 只有 "现founder" 可以更改 poi的地址
         if (msg.sender!=founder) return false;
         poi = newPOI;
         return true;

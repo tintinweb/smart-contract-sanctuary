@@ -113,8 +113,8 @@ contract SnowBall is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SnowBall() public {
-        symbol = &quot;SBM&quot;;
-        name = &quot;SnowBall Token&quot;;
+        symbol = "SBM";
+        name = "SnowBall Token";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0x70Bc4DFc135428a3AA1742446A2b256531D5fcdd] = _totalSupply;

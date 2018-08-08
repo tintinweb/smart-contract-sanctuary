@@ -5,7 +5,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -266,8 +266,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/FMFToken.sol
 
 contract FMFToken is StandardToken, Ownable {
-    string  public constant name = &quot;Formosa Financial Token&quot;;
-    string  public constant symbol = &quot;FMF&quot;;
+    string  public constant name = "Formosa Financial Token";
+    string  public constant symbol = "FMF";
     uint8   public constant decimals = 18;
     uint256 public totalSupply = 2000000000 ether;
 

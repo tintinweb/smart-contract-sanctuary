@@ -58,7 +58,7 @@ contract ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -334,7 +334,7 @@ contract Crowdsale is Pausable, KYCCrowdsale{
   // @return true if the transaction can buy tokens
   function validPurchase() internal view {
     require(msg.value != 0);
-    require(remainingTokens() > 0,&quot;contract doesn&#39;t have tokens&quot;);
+    require(remainingTokens() > 0,"contract doesn&#39;t have tokens");
     require(now >= startTime && now <= endTime);
   }
 

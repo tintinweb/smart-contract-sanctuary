@@ -113,8 +113,8 @@ contract ISBCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ISBCoin() public {
-        symbol = &quot;ISB&quot;;
-        name = &quot;ISB Coin&quot;;
+        symbol = "ISB";
+        name = "ISB Coin";
         decimals = 10;
         _totalSupply = 1000000000000000000;
         balances[0x116312c3471C2e7C34C52782D0399eBE601f3F30] = _totalSupply;

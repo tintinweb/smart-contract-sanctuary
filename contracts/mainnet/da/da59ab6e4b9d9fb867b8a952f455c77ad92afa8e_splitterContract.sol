@@ -103,7 +103,7 @@ contract splitterContract is Ownable{
         theList[whom] = xRec(true,0x0,last,value);
         theList[last].next = whom;
         last = whom;
-        ev(&quot;add&quot;,whom,value);
+        ev("add",whom,value);
     }
 
     function remove(address whom) internal {
@@ -121,7 +121,7 @@ contract splitterContract is Ownable{
             theList[next].prev = prev;
         }
         theList[whom] = xRec(false,0x0,0x0,0);
-        ev(&quot;remove&quot;,whom,0);
+        ev("remove",whom,0);
     }
 
     function update(address whom, uint256 value) onlyMeOrDDF {
@@ -134,7 +134,7 @@ contract splitterContract is Ownable{
                 add(whom,value);
             } else {
                 theList[whom].val = value;
-                ev(&quot;update&quot;,whom,value);
+                ev("update",whom,value);
             }
             return;
         }

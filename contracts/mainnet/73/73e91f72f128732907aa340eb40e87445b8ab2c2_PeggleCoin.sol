@@ -259,11 +259,11 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract PeggleCoin is StandardToken, MintableToken, BurnableToken, PausableToken {
-  string public constant name = &quot;PeggleCoin&quot;;
-  string public constant symbol = &quot;PEGGLE&quot;;
+  string public constant name = "PeggleCoin";
+  string public constant symbol = "PEGGLE";
   uint8 public constant decimals = 18;
-  string public constant url = &quot;http://teampeggle.com/&quot;;
-  string public pegglebot = &quot;<PeggleBot> initiate protocol for a hat wobble&quot;;
+  string public constant url = "http://teampeggle.com/";
+  string public pegglebot = "<PeggleBot> initiate protocol for a hat wobble";
 
   uint256 public constant INITIAL_SUPPLY = 420 * (10 ** uint256(decimals));
 

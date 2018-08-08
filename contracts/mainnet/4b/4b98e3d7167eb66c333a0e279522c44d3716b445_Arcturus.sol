@@ -123,7 +123,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -259,10 +259,10 @@ contract StandardToken is ERC20, BasicToken {
 contract Arcturus is StandardToken, Ownable {
     using SafeMath for uint;
 
-    string public name = &quot;Arcturus star&quot;;
-    string public symbol = &quot;ARC&quot;;
+    string public name = "Arcturus star";
+    string public symbol = "ARC";
 	
-    string public constant description = &quot;Arcturus is a red giant of spectral type K0III—an ageing star around 7.1 billion years old that has used up its core hydrogen and moved off the main sequence. It is 1.08 times as massive as the Sun, but has expanded to 25.4 times its diameter and is around 170 times as luminous.&quot;;
+    string public constant description = "Arcturus is a red giant of spectral type K0III—an ageing star around 7.1 billion years old that has used up its core hydrogen and moved off the main sequence. It is 1.08 times as massive as the Sun, but has expanded to 25.4 times its diameter and is around 170 times as luminous.";
 	
     uint public decimals = 2;
 	uint public constant INITIAL_SUPPLY = 1000000000 * 10**2 ;
@@ -308,7 +308,7 @@ contract Arcturus is StandardToken, Ownable {
     }
 	
 	
-	/* buyout mode is set to flag &quot;status&quot; value, true/false */
+	/* buyout mode is set to flag "status" value, true/false */
     function setByuoutActive(bool status) public onlyOwner {
         byuoutActive = status;
     }
@@ -318,7 +318,7 @@ contract Arcturus is StandardToken, Ownable {
         byuoutCount = count;
     }
 
-	/* set Token base-part prise in &quot;wei&quot; */
+	/* set Token base-part prise in "wei" */
     function setPriceForBasePart(uint newPriceForBasePart) public onlyOwner {
         priceForBasePart = newPriceForBasePart;
     }

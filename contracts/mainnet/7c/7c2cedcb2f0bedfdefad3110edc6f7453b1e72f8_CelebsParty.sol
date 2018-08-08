@@ -5,7 +5,7 @@ pragma solidity ^0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -485,10 +485,10 @@ contract CelebsParty is CelebsPartyGate {
         celebrityCount = 0;
         minRequiredBlockQueueTime = 1000;
         paused = true;
-        _mintCategory(&quot;business&quot;);
-        _mintCategory(&quot;film/tv&quot;);
-        _mintCategory(&quot;music&quot;);
-        _mintCategory(&quot;personality&quot;);
-        _mintCategory(&quot;tech&quot;);
+        _mintCategory("business");
+        _mintCategory("film/tv");
+        _mintCategory("music");
+        _mintCategory("personality");
+        _mintCategory("tech");
     }
 }

@@ -30,7 +30,7 @@ contract PriceSanityInterface {
 ////// contracts/interfaces/WETHInterface.sol
 /* pragma solidity ^0.4.21; */
 
-/* import &quot;./ERC20.sol&quot;; */
+/* import "./ERC20.sol"; */
 
 contract WETHInterface is ERC20 {
   function() external payable;
@@ -41,9 +41,9 @@ contract WETHInterface is ERC20 {
 ////// contracts/LightPool.sol
 /* pragma solidity ^0.4.21; */
 
-/* import &quot;./interfaces/WETHInterface.sol&quot;; */
-/* import &quot;./interfaces/PriceSanityInterface.sol&quot;; */
-/* import &quot;./interfaces/ERC20.sol&quot;; */
+/* import "./interfaces/WETHInterface.sol"; */
+/* import "./interfaces/PriceSanityInterface.sol"; */
+/* import "./interfaces/ERC20.sol"; */
 
 contract LightPool {
     uint16 constant public EXTERNAL_QUERY_GAS_LIMIT = 4999;    // Changes to state require at least 5000 gas

@@ -21,8 +21,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract TokenERC20 {
     // Public variables of the token
-    string public name = &quot;MicroBusinessCoin&quot;;
-    string public symbol = &quot;MBC&quot;;
+    string public name = "MicroBusinessCoin";
+    string public symbol = "MBC";
     uint8 public decimals = 18;
     uint256 public totalSupply = 90000000000 * 10 ** uint256(decimals);
 

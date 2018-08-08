@@ -20,7 +20,7 @@ contract ERC20 {
 /**
  * @title OwnableWithAdmin 
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract OwnableWithAdmin {
   address public owner;
@@ -128,7 +128,7 @@ library SafeMath {
   }
 
   function uint2str(uint i) internal pure returns (string){
-      if (i == 0) return &quot;0&quot;;
+      if (i == 0) return "0";
       uint j = i;
       uint length;
       while (j != 0){

@@ -333,8 +333,8 @@ contract ReferralDiscountToken is StandardToken, Owned {
 }
 
 contract NaorisToken is ReferralDiscountToken {
-    string public constant name = &quot;NaorisToken&quot;;
-    string public constant symbol = &quot;NAO&quot;;
+    string public constant name = "NaorisToken";
+    string public constant symbol = "NAO";
     uint256 public constant decimals = 18;
 
     /// The owner of this address will manage the sale process.

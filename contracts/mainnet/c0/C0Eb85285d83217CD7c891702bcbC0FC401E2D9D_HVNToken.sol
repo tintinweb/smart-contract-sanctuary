@@ -3,11 +3,11 @@
  * 
  * Copyright &#169; 2017 by Hive Project Ltd.
  *
- * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).
+ * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
  */
 
@@ -18,18 +18,18 @@ pragma solidity ^0.4.11;
  *
  * Copyright &#169; 2017 by Hive Project Ltd.
  *
- * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).
+ * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
  */
 
 
 /**
  * ERC-20 standard token interface, as defined
- * <a href=&quot;http://github.com/ethereum/EIPs/issues/20&quot;>here</a>.
+ * <a href="http://github.com/ethereum/EIPs/issues/20">here</a>.
  */
 contract ERC20Interface {
   /**
@@ -153,11 +153,11 @@ contract Owned {
  * 
  * Copyright &#169; 2017 by Hive Project Ltd.
  *
- * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).
+ * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
  */
  
@@ -224,11 +224,11 @@ contract SafeMath {
  *
  * Copyright &#169; 2017 by Hive Project Ltd.
  *
- * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).
+ * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
  */
 
@@ -247,8 +247,8 @@ contract HVNToken is ERC20Interface, SafeMath, Owned {
 
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;
-    string public constant name = &quot;Hive Project Token&quot;;
-    string public constant symbol = &quot;HVN&quot;;
+    string public constant name = "Hive Project Token";
+    string public constant symbol = "HVN";
     uint8 public constant decimals = 8;
     string public version = &#39;0.0.2&#39;;
 

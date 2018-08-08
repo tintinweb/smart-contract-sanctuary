@@ -162,8 +162,8 @@ contract HasOperator is Claimable {
 contract LikeCoin is ERC20, HasOperator {
     using SafeMath for uint256;
 
-    string constant public name = &quot;LikeCoin&quot;;
-    string constant public symbol = &quot;LIKE&quot;;
+    string constant public name = "LikeCoin";
+    string constant public symbol = "LIKE";
 
     // Synchronized to Ether -> Wei ratio, which is important
     uint8 constant public decimals = 18;

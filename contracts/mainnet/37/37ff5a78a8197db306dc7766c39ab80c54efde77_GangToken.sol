@@ -261,8 +261,8 @@ contract MintableToken is StandardToken {
 
 contract GangToken is MintableToken {
 
-  string public constant name                 = &quot;gangFY&quot;;
-  string public constant symbol               = &quot;GNGFY&quot;;
+  string public constant name                 = "gangFY";
+  string public constant symbol               = "GNGFY";
   uint public constant decimals               = 18;
     
   // uint256 public initial_supply = 1000000 * 10**decimals;

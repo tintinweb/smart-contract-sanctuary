@@ -114,8 +114,8 @@ contract IVNT4Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;IVNT4&quot;;
-        name = &quot;IVNT4 Token&quot;;
+        symbol = "IVNT4";
+        name = "IVNT4 Token";
         decimals = 18;
         totalSupply = 969 * 10 ** 26;
         ownerAddress = 0xc9af6248b04d25468f289f9a280cd2d7a646858e;

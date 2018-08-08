@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract DAPPStoreToken is StandardToken {
-  string public name    = &quot;DAPPStoreToken&quot;;
-  string public symbol  = &quot;DST&quot;;
+  string public name    = "DAPPStoreToken";
+  string public symbol  = "DST";
   uint8 public decimals = 18;
 
   // one billion in initial supply

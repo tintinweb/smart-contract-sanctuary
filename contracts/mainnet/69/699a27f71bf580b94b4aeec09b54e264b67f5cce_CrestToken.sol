@@ -80,8 +80,8 @@ contract CrestToken is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     function CrestToken() public {
-        symbol = &quot;CSTT&quot;;
-        name = &quot;Crest Token&quot;;
+        symbol = "CSTT";
+        name = "Crest Token";
         decimals = 18;
         _totalSupply = 12500000 * 10**uint(decimals);
         owner = 0x4a17ccd1f0bb40c64919404851e3c5a33c4c3c58;

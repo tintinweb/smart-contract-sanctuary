@@ -111,8 +111,8 @@ contract omsairam18 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function omsairam18() public {
-        symbol = &quot;OMSAIRAM&quot;;
-        name = &quot;OMSAIRAM 2018 Token&quot;;
+        symbol = "OMSAIRAM";
+        name = "OMSAIRAM 2018 Token";
         decimals = 18;
         endDate = now + 30 weeks;
 

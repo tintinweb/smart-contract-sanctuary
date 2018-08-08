@@ -62,8 +62,8 @@ contract LUCYD is ERC20 {
     
     uint256 public totalSupply = 1500000000 * 10**8;
 
-    function name() public constant returns (string) { return &quot;LUCYD&quot;; }
-    function symbol() public constant returns (string) { return &quot;LCD&quot;; }
+    function name() public constant returns (string) { return "LUCYD"; }
+    function symbol() public constant returns (string) { return "LCD"; }
     function decimals() public constant returns (uint8) { return 8; }
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);

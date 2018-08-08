@@ -99,9 +99,9 @@ contract RPNCoin is StandardToken {
         ) {
         balances[msg.sender] = 100000000;   // Give the creator all initial tokens
         totalSupply = 100000000;            // Update total supply
-        name = &quot;Repucation&quot;;                                // Token Name
+        name = "Repucation";                                // Token Name
         decimals = 0;                                      // Amount of decimals for display purposes
-        symbol = &quot;RPN&quot;;                                    // Token Symbol
+        symbol = "RPN";                                    // Token Symbol
     }
 
     /* Approves and then calls the receiving contract */
@@ -109,7 +109,7 @@ contract RPNCoin is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

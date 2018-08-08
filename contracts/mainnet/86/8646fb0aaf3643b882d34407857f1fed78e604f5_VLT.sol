@@ -221,8 +221,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/VLT.sol
 
 contract VLT is StandardToken {
-  string public name = &quot;VLT Token&quot;;
-  string public symbol = &quot;VLT&quot;;
+  string public name = "VLT Token";
+  string public symbol = "VLT";
   uint public decimals = 18;
   address public owner;
   mapping(address => bool) admins;

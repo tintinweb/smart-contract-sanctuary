@@ -4,8 +4,8 @@ contract EthereumPrivate{
     /* This creates an array with all balances */
     mapping (address => uint256) public balanceOf;
 
-    string public name = &quot;EthereumPrivate&quot;;
-    string public symbol = &quot;PETH&quot;;
+    string public name = "EthereumPrivate";
+    string public symbol = "PETH";
     uint256 public max_supply = 18000000000000;
     uint256 public unspent_supply = 0;
     uint256 public spendable_supply = 0;

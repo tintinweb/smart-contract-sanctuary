@@ -19,8 +19,8 @@ contract BasicToken is ERC20 {
 
     uint256  public totalSupply = 10*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;Koala Coin&quot;;
-    string constant public symbol = &quot;KLC&quot;;
+    string constant public name = "Koala Coin";
+    string constant public symbol = "KLC";
 
 	mapping(address => uint256) balances;
 	mapping (address => mapping (address => uint256)) internal allowed;

@@ -97,10 +97,10 @@ contract ESS_GENESIS_ERC20 is Ownable {
 
 
     /* Public variables for the ERC20 token */
-    string public constant standard = &quot;ESS GENESIS&quot;;
+    string public constant standard = "ESS GENESIS";
     uint8 public constant decimals = 18; // hardcoded to be a constant
-    string public name=&quot;ESS_GENESIS&quot;;
-    string public symbol=&quot;ESS&quot;;
+    string public name="ESS_GENESIS";
+    string public symbol="ESS";
     uint256 public totalSupply;
 
     event Transfer(address indexed from, address indexed to, uint256 value);

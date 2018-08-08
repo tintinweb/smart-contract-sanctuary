@@ -23,9 +23,9 @@ contract ISE {
     function ISE() {
         balanceOf[msg.sender] =  1000000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  1000000000 * 1000000000000000000;                        // Update total supply
-        standard = &quot;ERC20&quot;;
-        name = &quot;ISE&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ISE&quot;;                               // Set the symbol for display purposes
+        standard = "ERC20";
+        name = "ISE";                                   // Set the name for display purposes
+        symbol = "ISE";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

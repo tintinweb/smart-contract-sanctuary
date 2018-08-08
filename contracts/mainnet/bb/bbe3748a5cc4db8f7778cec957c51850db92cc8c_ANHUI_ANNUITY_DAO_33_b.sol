@@ -21,8 +21,8 @@ pragma solidity 		^0.4.8	;
 											
 		contract	ANHUI_ANNUITY_DAO_33_b				is	Ownable	{		
 											
-			string	public	constant	name =	&quot;	ANHUI_ANNUITY_DAO_33_b		&quot;	;
-			string	public	constant	symbol =	&quot;	AAI		&quot;	;
+			string	public	constant	name =	"	ANHUI_ANNUITY_DAO_33_b		"	;
+			string	public	constant	symbol =	"	AAI		"	;
 			uint32	public	constant	decimals =		18			;
 			uint	public		totalSupply =		0			;
 											

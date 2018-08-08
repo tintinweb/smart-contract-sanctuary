@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract EOM is StandardToken, Ownable {
 
-    string public constant name = &quot;生态起源魔法链&quot;;
-    string public constant symbol = &quot;EOM&quot;;
+    string public constant name = "生态起源魔法链";
+    string public constant symbol = "EOM";
     uint256 public constant decimals = 8;
 
     function EOM() public {

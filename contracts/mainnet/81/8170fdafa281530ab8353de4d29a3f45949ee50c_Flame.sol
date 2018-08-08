@@ -60,9 +60,9 @@ contract Flame is ERC20Interface, Owned {
 
     function Flames() public {
             disabled = false;
-        symbol = &quot;FLAME&quot;;
+        symbol = "FLAME";
 
-        name = &quot;Flame&quot;;
+        name = "Flame";
         decimals = 18;
         _totalSupply = 25000 * 10**uint(decimals);      
 

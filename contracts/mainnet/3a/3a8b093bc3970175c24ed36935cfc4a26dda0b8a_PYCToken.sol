@@ -113,8 +113,8 @@ contract PYCToken is UnboundedRegularToken {
 
     uint public totalSupply = 10*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;PYCToken&quot;;
-    string constant public symbol = &quot;PYC&quot;;
+    string constant public name = "PYCToken";
+    string constant public symbol = "PYC";
 
     function PYCToken() {
         balances[msg.sender] = totalSupply;

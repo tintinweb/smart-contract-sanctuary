@@ -116,8 +116,8 @@ contract GILLIONTOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GILLIONTOKEN() public {
-        symbol = &quot;GILLION&quot;;
-        name = &quot;GILLION TOKEN&quot;;
+        symbol = "GILLION";
+        name = "GILLION TOKEN";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

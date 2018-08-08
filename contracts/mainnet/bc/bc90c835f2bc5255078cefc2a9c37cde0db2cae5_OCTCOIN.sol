@@ -91,8 +91,8 @@ contract ERC223 {
 contract OCTCOIN is ERC223, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;OCTCOIN&quot;;
-    string public symbol = &quot;OCTC&quot;;
+    string public name = "OCTCOIN";
+    string public symbol = "OCTC";
     uint8 public decimals = 6;
     uint256 public totalSupply = 50e9 * 1e6;
     uint256 public distributeAmount = 0;

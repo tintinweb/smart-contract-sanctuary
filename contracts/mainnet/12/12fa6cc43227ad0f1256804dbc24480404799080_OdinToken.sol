@@ -96,8 +96,8 @@ contract OdinToken is ERC20Interface, Owned {
         
         // owner of this contract
         owner = msg.sender;
-        symbol = &quot;ODIN&quot;;
-        name = &quot;ODIN Token&quot;;
+        symbol = "ODIN";
+        name = "ODIN Token";
         decimals = 18;
         _whitelistAll=false;
         totalSupply = 100000000000000000000000;

@@ -75,8 +75,8 @@ contract StandardToken is Token, SafeMath {
 
 contract XCTToken is StandardToken {
     //meta data
-    string public constant name = &quot;XChain Token&quot;;
-    string public constant symbol = &quot;NXCT&quot;;
+    string public constant name = "XChain Token";
+    string public constant symbol = "NXCT";
     uint8 public constant decimals = 18;
 
     function XCTToken() public {

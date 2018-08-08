@@ -190,8 +190,8 @@ contract ICO is AdvancedToken {
 contract TESTERIUM3 is ICO {
     using SafeMath for uint256;
 
-    string public constant name     = &quot;VILLA DORIA COIN&quot;;
-    string public constant symbol   = &quot;VDC&quot;;
+    string public constant name     = "VILLA DORIA COIN";
+    string public constant symbol   = "VDC";
     uint8  public constant decimals = 18;
 
     mapping (address => mapping (address => uint256)) private allowed;

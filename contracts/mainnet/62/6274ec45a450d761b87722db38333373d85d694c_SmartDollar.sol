@@ -46,9 +46,9 @@ contract SmartDollar is EIP20Interface {
     They allow one to customise the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
-    string constant public name = &quot;Smart Dollar&quot;;
+    string constant public name = "Smart Dollar";
     uint256 constant public decimals = 8;
-    string constant public symbol = &quot;SmartDollar&quot;;
+    string constant public symbol = "SmartDollar";
     uint256 public totalSupply;
 
     function SmartDollar( ) public {

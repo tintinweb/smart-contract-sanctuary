@@ -113,8 +113,8 @@ contract Rhinex is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Rhinex() public {
-        symbol = &quot;RHX&quot;;
-        name = &quot;Rhinex&quot;;
+        symbol = "RHX";
+        name = "Rhinex";
         decimals = 18;
         _totalSupply = 200000000000000000000000000;
         balances[0xB1EB57D210eeA630b0Ba9654a2e85f1B4774E44D] = _totalSupply;

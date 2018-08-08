@@ -246,8 +246,8 @@ contract TeamCoin is Ownable, Destructible, Contactable, MintableToken {
     uint256 constant MAXSUPPLY = 2000000000000000000000000;
 
 
-  string public name = &quot;TeamCoin&quot;;
-  string public symbol = &quot;TMC&quot;;
+  string public name = "TeamCoin";
+  string public symbol = "TMC";
   uint public decimals = 18;
   uint public OWNER_SUPPLY = 1200000000000000000000000;
   address public owner;
@@ -273,7 +273,7 @@ contract TeamCoin is Ownable, Destructible, Contactable, MintableToken {
       owner = msg.sender;
       totalSupply = MAXSUPPLY;
       balances[owner] = MAXSUPPLY;
-      contactInformation = &quot;http://www.teamco.in&quot;;
+      contactInformation = "http://www.teamco.in";
   }
 
   function unlock() onlyOwner 

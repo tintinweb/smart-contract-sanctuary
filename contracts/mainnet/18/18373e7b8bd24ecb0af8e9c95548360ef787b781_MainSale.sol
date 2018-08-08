@@ -207,7 +207,7 @@ contract MainSale is Ownable {
 
     function setEthUsdRateInCent(uint256 _ethUsdRateInCent) public onlyOwner {
 
-        ethUsdRateInCent = _ethUsdRateInCent; // &quot;_ethUsdRateInCent&quot;
+        ethUsdRateInCent = _ethUsdRateInCent; // "_ethUsdRateInCent"
     }
 
     function setTokenPriceInCent(uint256 _tokenPriceInCent) public onlyOwner {
@@ -301,8 +301,8 @@ contract ShareToken is ERC20Token, WhiteListManager {
 
     using SafeMath for uint256;
 
-    string public constant name = &quot;ShareToken&quot;;
-    string public constant symbol = &quot;SHR&quot;;
+    string public constant name = "ShareToken";
+    string public constant symbol = "SHR";
     uint8  public constant decimals = 2;
 
     address public icoContract;

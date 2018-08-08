@@ -101,8 +101,8 @@ contract StandardToken is Token, SafeMath {
 contract HubiiNetworkTokens is StandardToken {
 
 
-  string public name = &quot;Hubii network tokens&quot;;
-  string public symbol = &quot;HNBT&quot;;
+  string public name = "Hubii network tokens";
+  string public symbol = "HNBT";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 267000000 * 1 ether;
 

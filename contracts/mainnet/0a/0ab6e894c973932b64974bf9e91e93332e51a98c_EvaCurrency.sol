@@ -466,8 +466,8 @@ contract AddressList is Claimable {
 }
 
 contract EvaCurrency is PausableToken, BurnableToken {
-  string public name = &quot;EvaUSD&quot;;
-  string public symbol = &quot;EUSD&quot;;
+  string public name = "EvaUSD";
+  string public symbol = "EUSD";
 
   ComissionList public comissionList;
   AddressList public moderList;

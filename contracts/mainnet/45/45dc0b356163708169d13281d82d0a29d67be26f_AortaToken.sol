@@ -231,9 +231,9 @@ contract AortaToken is ERC20Interface, Owned {
 
     function AortaToken() public {
 
-        symbol = &quot;AORTA&quot;;
+        symbol = "AORTA";
 
-        name = &quot;Aorta&quot;;
+        name = "Aorta";
 
         decimals = 18;
 

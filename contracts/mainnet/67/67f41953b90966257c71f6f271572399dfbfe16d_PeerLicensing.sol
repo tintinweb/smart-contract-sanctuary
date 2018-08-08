@@ -583,9 +583,9 @@ contract PeerLicensing{
 									    mapping (address => uint256) public burned;
 									    mapping (address => mapping (address => uint256)) public allowed;
 									    
-									    string public name = &quot;0xBabylon&quot;;//yes, this is still the CODE name
+									    string public name = "0xBabylon";//yes, this is still the CODE name
 									    uint8 public decimals = 18;
-									    string public symbol = &quot;PoWHr&quot;;//PoWHr Brokers
+									    string public symbol = "PoWHr";//PoWHr Brokers
 									    
 									    event Transfer(address indexed _from, address indexed _to, uint256 _value); 
 									    event Approval(address indexed _owner, address indexed _spender, uint256 _value);

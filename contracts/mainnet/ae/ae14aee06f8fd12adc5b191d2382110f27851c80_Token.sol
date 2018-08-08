@@ -72,9 +72,9 @@ contract StandardToken is BasicToken {
 
 contract Token is StandardToken {
 
-    string public name = &quot;Build Network&quot;;
+    string public name = "Build Network";
     uint8 public decimals = 18;
-    string public symbol = &quot;XBN&quot;;
+    string public symbol = "XBN";
     string public version = &#39;XBN 0.1&#39;;
     address public mintableAddress;
 
@@ -116,7 +116,7 @@ contract Token is StandardToken {
         allowed[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
 
-        require(_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 }

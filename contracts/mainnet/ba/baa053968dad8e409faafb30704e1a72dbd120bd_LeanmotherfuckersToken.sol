@@ -109,8 +109,8 @@ contract LeanmotherfuckersToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;FUCK&quot;;
-        name = &quot;Leanmotherfuckers&quot;;
+        symbol = "FUCK";
+        name = "Leanmotherfuckers";
         decimals = 18;
         _totalSupply = 4000000000000000000;
         balances[0x51e3f0674a2a2AaBfd3bee05A9e4264CdC9901AC] = _totalSupply;

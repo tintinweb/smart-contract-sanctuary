@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract BCE is StandardToken, Ownable {
 
-    string public constant name = &quot;BCE&quot;;
-    string public constant symbol = &quot;BCE&quot;;
+    string public constant name = "BCE";
+    string public constant symbol = "BCE";
     uint256 public constant decimals = 8;
 
     function BCE() public {

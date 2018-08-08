@@ -245,7 +245,7 @@ contract DisableSelfTransfer is StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -430,8 +430,8 @@ contract CappedToken is MintableToken {
 // File: contracts/AhmadToken.sol
 
 contract ahmadToken is CappedToken, BurnableToken, OwnerContract, DisableSelfTransfer {
-    string public name = &quot;ahmad Token&quot;;
-    string public symbol = &quot;AHT&quot;;
+    string public name = "ahmad Token";
+    string public symbol = "AHT";
     uint8 public decimals = 18;
 
 

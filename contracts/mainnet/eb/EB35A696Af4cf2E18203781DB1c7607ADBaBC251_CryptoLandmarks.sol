@@ -17,8 +17,8 @@ contract CryptoLandmarks {
     event LandmarkCreated(uint256 tokenId, uint256 groupId, uint256 price, address owner);
 
    
-    string public constant NAME = &quot;CryptoLandmarks.co Landmarks&quot;; 
-    string public constant SYMBOL = &quot;LANDMARK&quot;; 
+    string public constant NAME = "CryptoLandmarks.co Landmarks"; 
+    string public constant SYMBOL = "LANDMARK"; 
 
     // Initial price of new Landmark
     uint256 private startingPrice = 0.03 ether;

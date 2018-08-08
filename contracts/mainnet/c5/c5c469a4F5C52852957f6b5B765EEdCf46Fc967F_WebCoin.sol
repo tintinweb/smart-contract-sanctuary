@@ -16,9 +16,9 @@ contract WebCoin{
     function WebCoin() {
 
          initialSupply = 1000000000;
-         name =&quot;WebCoin&quot;;
+         name ="WebCoin";
         decimals = 8;
-         symbol = &quot;Web&quot;;
+         symbol = "Web";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

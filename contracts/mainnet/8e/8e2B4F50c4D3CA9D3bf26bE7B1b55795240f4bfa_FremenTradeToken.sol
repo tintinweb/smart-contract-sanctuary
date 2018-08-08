@@ -114,8 +114,8 @@ contract FremenTradeToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function FremenTradeToken() public {
-        symbol = &quot;FMEN&quot;;
-        name = &quot;Fremen Trade Token&quot;;
+        symbol = "FMEN";
+        name = "Fremen Trade Token";
         decimals = 18;
         _totalSupply = 25000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

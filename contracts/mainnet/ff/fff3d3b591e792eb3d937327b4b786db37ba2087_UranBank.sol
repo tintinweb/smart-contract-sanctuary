@@ -65,8 +65,8 @@ contract UranBank is owned {
         uint256 initialSupply = 200000000000000000;
         balanceOf[msg.sender] = initialSupply ;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply
-        name = &quot;UranBank Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;URB&quot;;                               // Set the symbol for display purposes
+        name = "UranBank Token";                                   // Set the name for display purposes
+        symbol = "URB";                               // Set the symbol for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
         usersCanUnfreeze=false;
         admin[msg.sender]=true;

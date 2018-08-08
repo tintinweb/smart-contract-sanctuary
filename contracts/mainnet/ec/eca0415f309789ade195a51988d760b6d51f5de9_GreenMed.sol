@@ -38,8 +38,8 @@ pragma solidity ^0.4.11;
  contract tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData); }
   
  contract GreenMed is ERC20Interface {
-     string public constant symbol = &quot;GRMD&quot;;
-     string public constant name = &quot;GreenMed&quot;;
+     string public constant symbol = "GRMD";
+     string public constant name = "GreenMed";
      uint8 public constant decimals = 18;
      uint256 _totalSupply = 100000000000000000000000000;
      
@@ -99,7 +99,7 @@ pragma solidity ^0.4.11;
   
      // Send _value amount of tokens from address _from to address _to
      // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-     // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+     // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
      // fees in sub-currencies; the command should fail unless the _from account has
      // deliberately authorized the sender of the message via some mechanism; we propose
      // these standardized APIs for approval:

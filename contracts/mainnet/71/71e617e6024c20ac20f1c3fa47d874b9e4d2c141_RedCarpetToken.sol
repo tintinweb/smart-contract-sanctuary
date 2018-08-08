@@ -100,8 +100,8 @@ contract RedCarpetToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RedCarpetToken() public {
-        symbol = &quot;RCC&quot;;
-        name = &quot;RedCarpet Token&quot;;
+        symbol = "RCC";
+        name = "RedCarpet Token";
         decimals = 5;
         _totalSupply = 1200000000000;
         balances[0x865957fedaef1eaab481e9d236ce45d432c06b60] = _totalSupply;

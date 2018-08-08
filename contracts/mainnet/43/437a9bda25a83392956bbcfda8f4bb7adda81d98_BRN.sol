@@ -114,8 +114,8 @@ contract BRN is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function BRN() public {
-        symbol = &quot;BRN&quot;;
-        name = &quot;Bruno Coin&quot;;
+        symbol = "BRN";
+        name = "Bruno Coin";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -186,8 +186,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract LemurToken is PausableToken {
-    string public name = &quot;Lemur Token&quot;;
-    string public symbol = &quot;LMR&quot;;
+    string public name = "Lemur Token";
+    string public symbol = "LMR";
     uint8  public decimals = 18;
 
     uint256 public constant TOTAL_SUPPLY = 100000000 ether;

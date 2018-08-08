@@ -46,8 +46,8 @@ uint public _totalSupply = 250000000000000000000000000;
     constructor() public {
         totalSupply = 250000000000000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = 250000000000000000000000000;                // Give the creator all initial tokens
-        name = &quot;ApeCash&quot;;                                   // Set the name for display purposes
-        symbol = &quot;APE&quot;;                               // Set the symbol for display purposes
+        name = "ApeCash";                                   // Set the name for display purposes
+        symbol = "APE";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
     

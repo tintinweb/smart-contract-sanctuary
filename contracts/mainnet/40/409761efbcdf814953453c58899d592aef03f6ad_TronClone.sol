@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract TronClone {
 
-    string public name = &quot;TClonix&quot;;      //  token name
-    string public symbol = &quot;TRC&quot;;           //  token symbol
+    string public name = "TClonix";      //  token name
+    string public symbol = "TRC";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

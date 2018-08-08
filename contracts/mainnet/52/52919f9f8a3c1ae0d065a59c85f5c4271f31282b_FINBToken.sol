@@ -186,8 +186,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract FINBToken is PausableToken {
-    string public name = &quot;FindBit.io Token&quot;;
-    string public symbol = &quot;FINB&quot;;
+    string public name = "FindBit.io Token";
+    string public symbol = "FINB";
     uint8  public decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 50000000 ether;

@@ -97,8 +97,8 @@ contract MacQueenToken is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     function MacQueenToken() public {
-        symbol = &quot;MQN&quot;;
-        name = &quot;MacQueen&quot;;
+        symbol = "MQN";
+        name = "MacQueen";
         decimals = 8;
         _totalSupply = 900000000;
         _totalSupply = _totalSupply.mul(10 ** uint(decimals));

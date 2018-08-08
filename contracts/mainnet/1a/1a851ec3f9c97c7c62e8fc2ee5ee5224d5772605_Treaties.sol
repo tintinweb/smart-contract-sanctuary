@@ -211,7 +211,7 @@ contract Treaties {
             ownersConfirm: new address[](0)
             }));
 
-        emit NewRequest(2, msg.sender, &quot;&quot;, _tokensAmount, msg.value, 0, requests.length - 1);
+        emit NewRequest(2, msg.sender, "", _tokensAmount, msg.value, 0, requests.length - 1);
     }
 
     function removeEthInvestorRequest(uint id) public {
@@ -236,7 +236,7 @@ contract Treaties {
             ownersConfirm: new address[](0)
             }));
 
-        emit NewRequest(3, msg.sender, &quot;&quot;, _tokensAmount, 0, 0, requests.length - 1);
+        emit NewRequest(3, msg.sender, "", _tokensAmount, 0, 0, requests.length - 1);
     }
 
     function createPercentageRequest(uint _percentage) public onlyOwner {
@@ -253,7 +253,7 @@ contract Treaties {
             ownersConfirm: new address[](0)
             }));
 
-        emit NewRequest(4, msg.sender, &quot;&quot;, 0, 0, _percentage, requests.length - 1);
+        emit NewRequest(4, msg.sender, "", 0, 0, _percentage, requests.length - 1);
     }
 
 

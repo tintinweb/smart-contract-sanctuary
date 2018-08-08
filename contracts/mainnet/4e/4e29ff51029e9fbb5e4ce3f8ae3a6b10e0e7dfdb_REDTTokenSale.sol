@@ -3,8 +3,8 @@ pragma solidity ^0.4.23;
 // contact : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="573336213217363c383a35367934383a">[email&#160;protected]</a>
 // released under Apache 2.0 licence
 contract REDTTokenConfig {
-    string public constant NAME = &quot;Real Estate Doc Token&quot;;
-    string public constant SYMBOL = &quot;REDT&quot;;
+    string public constant NAME = "Real Estate Doc Token";
+    string public constant SYMBOL = "REDT";
     uint8 public constant DECIMALS = 18;
     uint public constant DECIMALSFACTOR = 10 ** uint(DECIMALS);
     uint public constant TOTALSUPPLY = 1000000000 * DECIMALSFACTOR;

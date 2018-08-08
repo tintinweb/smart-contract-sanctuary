@@ -61,8 +61,8 @@ contract StandardToken {
     // --- ERC20 Token Section ---
     uint8 constant public decimals = 6; // **** decimals ****
     uint constant public totalSupply = 1*10**(8+6);  // 100 Million **** decimals ****
-    string constant public name = &quot;Standard Token Template Token&quot;;
-    string constant public symbol = &quot;MNT&quot;;
+    string constant public name = "Standard Token Template Token";
+    string constant public symbol = "MNT";
     
     address public owner;
     bool public frozen = false; // 

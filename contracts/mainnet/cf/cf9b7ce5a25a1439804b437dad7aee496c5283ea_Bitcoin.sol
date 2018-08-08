@@ -116,8 +116,8 @@ contract Bitcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Bitcoin() public {
-        symbol = &quot;BTC&quot;;
-        name = &quot;Bitcoin&quot;;
+        symbol = "BTC";
+        name = "Bitcoin";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 207 weeks;

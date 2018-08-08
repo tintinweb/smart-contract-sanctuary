@@ -36,7 +36,7 @@ contract ERC20Interface{
 
 contract SafeGiftTokens {
 
-	string public url = &quot;https://safe.ad&quot;;
+	string public url = "https://safe.ad";
 	string public name;
 	string public symbol;
 	address private owner;

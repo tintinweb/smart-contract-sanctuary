@@ -192,8 +192,8 @@ contract KheperToken is StandardToken {
 
   event Burn(address indexed burner, uint256 value);
 
-  string public name = &quot;Kheper&quot;;
-  string public symbol = &quot;KHP&quot;;
+  string public name = "Kheper";
+  string public symbol = "KHP";
   uint8 public decimals = 18;
   uint public INITIAL_SUPPLY = 3200000000* 10 ** uint256(decimals);
 

@@ -111,8 +111,8 @@ contract ERC223Interface {
 contract UnityToken is ERC223Interface {
   using SafeMath for uint;
 
-  string public constant name = &quot;Unity Token&quot;;
-  string public constant symbol = &quot;UNT&quot;;
+  string public constant name = "Unity Token";
+  string public constant symbol = "UNT";
   uint8 public constant decimals = 18;
 
 

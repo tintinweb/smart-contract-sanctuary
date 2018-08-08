@@ -70,8 +70,8 @@ contract posscoin is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
 function posscoin() public {
-        symbol = &quot;POSS&quot;;
-        name = &quot;Posscoin&quot;;
+        symbol = "POSS";
+        name = "Posscoin";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0xAbB082211930DA475879BF315AFaDDD55913C6a8] = _totalSupply;

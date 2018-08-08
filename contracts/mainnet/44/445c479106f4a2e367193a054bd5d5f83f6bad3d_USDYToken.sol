@@ -231,8 +231,8 @@ contract USDYToken is PausableToken {
     uint public INITIAL_SUPPLY = 1500000000000;
 
     function USDYToken() public {
-        name = &quot;yether&quot;;
-        symbol = &quot;USDY&quot;;
+        name = "yether";
+        symbol = "USDY";
         decimals = 2;
         totalSupply = INITIAL_SUPPLY;
         balances[msg.sender] = INITIAL_SUPPLY;

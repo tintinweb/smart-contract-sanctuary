@@ -1,5 +1,5 @@
 pragma solidity ^0.4.23;
-pragma experimental &quot;v0.5.0&quot;;
+pragma experimental "v0.5.0";
 pragma experimental ABIEncoderV2;
 
 library AddressExtension {
@@ -502,8 +502,8 @@ contract AbstractToken is SecureERC20, FsTKToken {
 
 contract FunderSmartToken is AbstractToken, Authorizable {
 
-  string public constant name = &quot;Funder Smart Token&quot;;
-  string public constant symbol = &quot;FST&quot;;
+  string public constant name = "Funder Smart Token";
+  string public constant symbol = "FST";
   uint256 public constant totalSupply = 330000000 ether;
   uint8 public constant decimals = 18;
 

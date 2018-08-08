@@ -115,8 +115,8 @@ contract ERC20Token is ERC20 {
  */
 contract XXTEST is ERC20Token, Owned {
 
-  string  public constant name     = &quot;XX Token&quot;;
-  string  public constant symbol   = &quot;XX&quot;;
+  string  public constant name     = "XX Token";
+  string  public constant symbol   = "XX";
   uint256 public constant decimals = 18;
 
   uint256 public constant initialToken      = 500000000 * (10 ** decimals);

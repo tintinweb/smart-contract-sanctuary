@@ -116,8 +116,8 @@ contract PYPToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PYPToken() public {
-        symbol = &quot;PYP&quot;;
-        name = &quot;PYP Token&quot;;
+        symbol = "PYP";
+        name = "PYP Token";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 5 weeks;

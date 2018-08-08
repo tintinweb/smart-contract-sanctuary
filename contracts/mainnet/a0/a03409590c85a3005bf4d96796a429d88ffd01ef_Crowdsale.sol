@@ -125,8 +125,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract MartinKoToken is StandardToken {
-  string public constant name = &quot;MartinKoToken&quot;;
-  string public constant symbol = &quot;MKT&quot;;
+  string public constant name = "MartinKoToken";
+  string public constant symbol = "MKT";
   uint256 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 1000000000*(10 ** decimals);
   function MartinKoToken() public {

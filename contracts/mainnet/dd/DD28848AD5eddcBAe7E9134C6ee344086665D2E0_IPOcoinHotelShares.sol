@@ -135,8 +135,8 @@ contract StandardToken is SharesContract, ERC20 {
 
  
 contract IPOcoinHotelShares is StandardToken, Ownable {
-  string public constant name = &quot;IPOcoinHotelShares&quot;;
-  string public constant symbol = &quot;HotelShares&quot;;
+  string public constant name = "IPOcoinHotelShares";
+  string public constant symbol = "HotelShares";
   uint public constant decimals = 6;
   // Constructor
   function IPOcoinHotelShares() {

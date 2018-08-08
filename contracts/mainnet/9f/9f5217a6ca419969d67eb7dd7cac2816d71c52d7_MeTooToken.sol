@@ -113,8 +113,8 @@ contract MeTooToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MeTooToken() public {
-        symbol = &quot;SILZAZ&quot;;
-        name = &quot;MeeTooToken&quot;;
+        symbol = "SILZAZ";
+        name = "MeeTooToken";
         decimals = 3;
         _totalSupply = 6900;
         balances[0x9A9fd2D4AaB9B6b523b101F0212CD8cC180a4693] = _totalSupply;

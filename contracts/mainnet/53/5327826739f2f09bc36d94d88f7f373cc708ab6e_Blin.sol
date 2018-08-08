@@ -46,9 +46,9 @@ contract Ownable {
 
 contract Blin is Ownable {
      using SafeMath for uint256;
-    string public  name = &quot;Afonja&quot;;
+    string public  name = "Afonja";
     
-    string public  symbol = &quot;GROSH&quot;;
+    string public  symbol = "GROSH";
     
     uint32 public  decimals = 0;
     

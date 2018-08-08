@@ -540,8 +540,8 @@ contract PausableToken is BurnFundToken, Pausable {
 }
 
 contract DAXT is PausableToken,
-    DetailedERC20(&quot;Digital Asset Exchange Token&quot;, &quot;DAXT&quot;, 18),
-    Versioned(&quot;1.2.0&quot;),
+    DetailedERC20("Digital Asset Exchange Token", "DAXT", 18),
+    Versioned("1.2.0"),
     Destructible,
     Extractable {
 

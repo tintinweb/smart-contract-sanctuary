@@ -27,8 +27,8 @@ contract ERC20Interface {
 contract Spike is ERC20Interface {
     uint public constant decimals = 5;
 
-    string public constant symbol = &quot;SPIKE&quot;;
-    string public constant name = &quot;SPIKE&quot;;
+    string public constant symbol = "SPIKE";
+    string public constant name = "SPIKE";
 
     bool public _selling = false;//initial not selling
     uint public _totalSupply = 10 ** 14; // total supply is 10^14 unit, equivalent to 10^9 Spike

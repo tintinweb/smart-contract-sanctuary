@@ -2,8 +2,8 @@ pragma solidity ^0.4.15;
 
 contract LarsGeburtstagsgruss {
     address owner;
-    string gruss = &quot;Alles Gute zum Geburtstag Lars! - S&#246;ren&quot;;
-    string datum = &quot;19.08.2017&quot;;
+    string gruss = "Alles Gute zum Geburtstag Lars! - S&#246;ren";
+    string datum = "19.08.2017";
 
     function LarsGeburtstagsgruss() { 
         owner = msg.sender;

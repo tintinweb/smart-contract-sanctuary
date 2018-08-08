@@ -210,8 +210,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract NeolandsToken is StandardToken {
     
-    string public constant name    = &quot;Neolands Token&quot;;
-    string public constant symbol  = &quot;XNL&quot;;
+    string public constant name    = "Neolands Token";
+    string public constant symbol  = "XNL";
     uint8 public constant decimals = 0;
     
     uint256 public constant INITIAL_SUPPLY = 100000000;

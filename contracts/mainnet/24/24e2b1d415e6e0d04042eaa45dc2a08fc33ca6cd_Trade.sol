@@ -115,13 +115,13 @@ contract CashAutoConverter is Controlled {
 
     function ethToCash() private returns (bool) {
         if (msg.value > 0) {
-            ICash(controller.lookup(&quot;Cash&quot;)).depositEtherFor.value(msg.value)(msg.sender);
+            ICash(controller.lookup("Cash")).depositEtherFor.value(msg.value)(msg.sender);
         }
         return true;
     }
 
     function cashToEth() private returns (bool) {
-        ICash _cash = ICash(controller.lookup(&quot;Cash&quot;));
+        ICash _cash = ICash(controller.lookup("Cash"));
         uint256 _tokenBalance = _cash.balanceOf(msg.sender);
         if (_tokenBalance > 0) {
             IAugur augur = controller.getAugur();
@@ -512,7 +512,7 @@ library Order {
         require(_outcome < _market.getNumberOfOutcomes());
         require(_price < _market.getNumTicks());
 
-        IOrders _orders = IOrders(_controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(_controller.lookup("Orders"));
         IAugur _augur = _controller.getAugur();
 
         return Data({
@@ -533,7 +533,7 @@ library Order {
     }
 
     //
-    // &quot;public&quot; functions
+    // "public" functions
     //
 
     function getOrderId(Order.Data _orderData) internal view returns (bytes32) {
@@ -666,13 +666,13 @@ contract Trade is CashAutoConverter, ReentrancyGuard, MarketValidator {
             return bytes32(1);
         }
         Order.Types _type = Order.getOrderTradingTypeFromMakerDirection(_direction);
-        return ICreateOrder(controller.lookup(&quot;CreateOrder&quot;)).createOrder(_sender, _type, _bestFxpAmount, _price, _market, _outcome, _betterOrderId, _worseOrderId, _tradeGroupId);
+        return ICreateOrder(controller.lookup("CreateOrder")).createOrder(_sender, _type, _bestFxpAmount, _price, _market, _outcome, _betterOrderId, _worseOrderId, _tradeGroupId);
     }
 
     function fillBestOrder(address _sender, Order.TradeDirections _direction, IMarket _market, uint256 _outcome, uint256 _fxpAmount, uint256 _price, bytes32 _tradeGroupId) internal nonReentrant returns (uint256 _bestFxpAmount) {
         // we need to fill a BID if we want to SELL and we need to fill an ASK if we want to BUY
         Order.Types _type = Order.getOrderTradingTypeFromFillerDirection(_direction);
-        IOrders _orders = IOrders(controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(controller.lookup("Orders"));
         bytes32 _orderId = _orders.getBestOrderId(_type, _market, _outcome);
         _bestFxpAmount = _fxpAmount;
 
@@ -682,7 +682,7 @@ contract Trade is CashAutoConverter, ReentrancyGuard, MarketValidator {
             if (_type == Order.Types.Bid ? _orderPrice >= _price : _orderPrice <= _price) {
                 bytes32 _nextOrderId = _orders.getWorseOrderId(_orderId);
                 _orders.setPrice(_market, _outcome, _orderPrice);
-                _bestFxpAmount = IFillOrder(controller.lookup(&quot;FillOrder&quot;)).fillOrder(_sender, _orderId, _bestFxpAmount, _tradeGroupId);
+                _bestFxpAmount = IFillOrder(controller.lookup("FillOrder")).fillOrder(_sender, _orderId, _bestFxpAmount, _tradeGroupId);
                 _orderId = _nextOrderId;
             } else {
                 _orderId = bytes32(0);
@@ -723,13 +723,13 @@ contract Trade is CashAutoConverter, ReentrancyGuard, MarketValidator {
         if (_bestFxpAmount == 0) {
             return bytes32(1);
         }
-        return ICreateOrder(controller.lookup(&quot;CreateOrder&quot;)).createOrder(_sender, Order.getOrderTradingTypeFromMakerDirection(_direction), _bestFxpAmount, _price, _market, _outcome, _betterOrderId, _worseOrderId, _tradeGroupId);
+        return ICreateOrder(controller.lookup("CreateOrder")).createOrder(_sender, Order.getOrderTradingTypeFromMakerDirection(_direction), _bestFxpAmount, _price, _market, _outcome, _betterOrderId, _worseOrderId, _tradeGroupId);
     }
 
     function fillBestOrderWithLimit(address _sender, Order.TradeDirections _direction, IMarket _market, uint256 _outcome, uint256 _fxpAmount, uint256 _price, bytes32 _tradeGroupId, uint256 _loopLimit) internal nonReentrant returns (uint256 _bestFxpAmount) {
         // we need to fill a BID if we want to SELL and we need to fill an ASK if we want to BUY
         Order.Types _type = Order.getOrderTradingTypeFromFillerDirection(_direction);
-        IOrders _orders = IOrders(controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(controller.lookup("Orders"));
         bytes32 _orderId = _orders.getBestOrderId(_type, _market, _outcome);
         _bestFxpAmount = _fxpAmount;
         while (_orderId != 0 && _bestFxpAmount > 0 && _loopLimit > 0) {
@@ -738,7 +738,7 @@ contract Trade is CashAutoConverter, ReentrancyGuard, MarketValidator {
             if (_type == Order.Types.Bid ? _orderPrice >= _price : _orderPrice <= _price) {
                 bytes32 _nextOrderId = _orders.getWorseOrderId(_orderId);
                 _orders.setPrice(_market, _outcome, _orderPrice);
-                _bestFxpAmount = IFillOrder(controller.lookup(&quot;FillOrder&quot;)).fillOrder(_sender, _orderId, _bestFxpAmount, _tradeGroupId);
+                _bestFxpAmount = IFillOrder(controller.lookup("FillOrder")).fillOrder(_sender, _orderId, _bestFxpAmount, _tradeGroupId);
                 _orderId = _nextOrderId;
             } else {
                 _orderId = bytes32(0);

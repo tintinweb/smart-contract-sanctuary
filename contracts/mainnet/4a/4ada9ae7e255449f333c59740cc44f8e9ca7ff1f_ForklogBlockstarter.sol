@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract ForklogBlockstarter {
     
-    string public constant contract_md5 = &quot;847df4b1ba31f28b9399b52d784e4a8e&quot;;
-    string public constant contract_sha256 = &quot;cd195ff7ac4743a1c878f0100e138e36471bb79c0254d58806b8244080979116&quot;;
+    string public constant contract_md5 = "847df4b1ba31f28b9399b52d784e4a8e";
+    string public constant contract_sha256 = "cd195ff7ac4743a1c878f0100e138e36471bb79c0254d58806b8244080979116";
     
     mapping (address => bool) private signs;
 
@@ -261,7 +261,7 @@ Smart contract uses default template created by Blockstarter using values specif
 
 * Token symbol
 
-* Add a string &quot;Created on BlockStarter.co&quot; to generated smart contract.
+* Add a string "Created on BlockStarter.co" to generated smart contract.
 
 ### Generate tokens on Waves platform
 
@@ -275,7 +275,7 @@ Bitshares, NXT, Wings, other?
 
 It should be possible to see all contracts generated for campaigns that launched on Blockstarter.
 
-Contracts could be published to a specific directory of Blockstarter repo called &quot;contracts&quot;.
+Contracts could be published to a specific directory of Blockstarter repo called "contracts".
 
 Provide Github Gist link to the draft contract.
 

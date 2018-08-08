@@ -109,8 +109,8 @@ contract MtTaborToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MtTaborToken() public {
-        symbol = &quot;MTW&quot;;
-        name = &quot;Mt Tabor Wolves&quot;;
+        symbol = "MTW";
+        name = "Mt Tabor Wolves";
         decimals = 18;
         _totalSupply = 1000000000000000000000000;
         balances[0x2B478fBc81A528Be2C1E38b2b69BEbA3fca7F892] = _totalSupply;

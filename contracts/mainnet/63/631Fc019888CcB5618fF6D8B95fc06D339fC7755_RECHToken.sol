@@ -113,8 +113,8 @@ contract RECHToken is UnboundedRegularToken {
 
     uint public totalSupply = 5*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;Recycle Chain&quot;;
-    string constant public symbol = &quot;RECH&quot;;
+    string constant public name = "Recycle Chain";
+    string constant public symbol = "RECH";
 
     function RECHToken() {
         balances[msg.sender] = totalSupply;

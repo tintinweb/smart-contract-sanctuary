@@ -16,9 +16,9 @@ contract CapCoinInternational {
     function CapCoinInternational () {
 
          initialSupply = 500000000;
-         name =&quot;CapCoinInternational&quot;;
+         name ="CapCoinInternational";
         decimals = 0;
-         symbol = &quot;CAPI&quot;;
+         symbol = "CAPI";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

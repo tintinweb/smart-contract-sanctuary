@@ -507,7 +507,7 @@ contract Vegas is Poker{
         // withdraw also setups new game. 
         // pays out 0 eth of course to owner, no eth in contract. 
         Timer = 1; // makes sure withdrawal runs
-        Withdraw(&quot;Game init&quot;, &quot;Admin&quot;);
+        Withdraw("Game init", "Admin");
     }
     
     // all contract calls are banned from buying 
@@ -521,7 +521,7 @@ contract Vegas is Poker{
         
         if (block.timestamp > Timer){
             if (Timer != 0){ // timer 0 means withdraw is gone; withdraw will throw on 0
-                Withdraw(&quot;GameInit&quot;, &quot;Admin&quot;);
+                Withdraw("GameInit", "Admin");
                 return;
             }
         }
@@ -599,7 +599,7 @@ contract Vegas is Poker{
                 msg.sender.transfer(pval);
                 PokerWinner.transfer(payment-pval);// saves 1 wei error 
                 emit PokerPaid(RoundNumber, pval, msg.sender,  Quote,  Name, WinningHand);
-                emit PokerPaid(RoundNumber, pval, msg.sender, &quot;&quot;, &quot;&quot;, WinningHand);
+                emit PokerPaid(RoundNumber, pval, msg.sender, "", "", WinningHand);
             }*/
         }
         else{
@@ -634,7 +634,7 @@ contract Vegas is Poker{
     // allows winner to get paid without calling poker. should never be called 
     // follows all normal rules of game .
     function WithdrawEmergency() public OnlyOwner{
-        _withdraw(&quot;Emergency withdraw call&quot;,&quot;Admin&quot;,true);
+        _withdraw("Emergency withdraw call","Admin",true);
     }
     function _withdraw(string Quote, string Name, bool Emergency) NoContract internal {
         // Setup cards for new game. 
@@ -661,7 +661,7 @@ contract Vegas is Poker{
                 PokerWinner.transfer(bal);     
             }
            
-            emit PokerPaid(RoundNumber, bal, PokerWinner,  &quot;Paid out left poker pot&quot;, &quot;Dealer&quot;, WinningHand);
+            emit PokerPaid(RoundNumber, bal, PokerWinner,  "Paid out left poker pot", "Dealer", WinningHand);
         }
         TotalPot = address(this).balance;
     

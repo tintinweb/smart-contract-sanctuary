@@ -290,7 +290,7 @@ contract Ballot {
     }
 
     function isDataYes(bytes data) public constant returns (bool) {
-        // compare data with &quot;YES&quot; string
+        // compare data with "YES" string
         return (
             data.length == 3 &&
             (data[0] == 0x59 || data[0] == 0x79) &&
@@ -301,7 +301,7 @@ contract Ballot {
 
     // TESTED
     function isDataNo(bytes data) public constant returns (bool) {
-        // compare data with &quot;NO&quot; string
+        // compare data with "NO" string
         return (
             data.length == 2 &&
             (data[0] == 0x4e || data[0] == 0x6e) &&
@@ -799,7 +799,7 @@ contract RefundInvestorsBallot {
     }
 
     function isDataYes(bytes data) public constant returns (bool) {
-        // compare data with &quot;YES&quot; string
+        // compare data with "YES" string
         return (
             data.length == 3 &&
             (data[0] == 0x59 || data[0] == 0x79) &&
@@ -810,7 +810,7 @@ contract RefundInvestorsBallot {
 
     // TESTED
     function isDataNo(bytes data) public constant returns (bool) {
-        // compare data with &quot;NO&quot; string
+        // compare data with "NO" string
         return (
             data.length == 2 &&
             (data[0] == 0x4e || data[0] == 0x6e) &&

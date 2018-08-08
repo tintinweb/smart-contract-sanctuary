@@ -217,9 +217,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract INKCToken is StandardToken {
 
-    string public name = &quot;INKCHAIN&quot;;
+    string public name = "INKCHAIN";
 
-    string public symbol = &quot;INKC&quot;;
+    string public symbol = "INKC";
 
     uint8 public decimals = 18;
 

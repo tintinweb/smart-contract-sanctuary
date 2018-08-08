@@ -2,7 +2,7 @@ pragma solidity ^0.4.18;
 
 contract AirDropPromo {
 
-	string public url = &quot;https://McFLY.aero&quot;;
+	string public url = "https://McFLY.aero";
 	string public name;
 	string public symbol;
 	address owner;

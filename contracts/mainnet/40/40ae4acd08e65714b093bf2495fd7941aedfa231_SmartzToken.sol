@@ -138,7 +138,7 @@ contract multiowned {
 
 	// METHODS
 
-    // constructor is given number of sigs required to do protected &quot;onlymanyowners&quot; transactions
+    // constructor is given number of sigs required to do protected "onlymanyowners" transactions
     // as well as the selection of addresses capable of confirming them (msg.sender is not added to the owners!).
     function multiowned(address[] _owners, uint _required)
         public
@@ -883,7 +883,7 @@ result[2] = address(0xAACf78F8e1fbDcf7d941E80Ff8B817BE1F054Af4);
      *
      * Function is used only during token sale phase to make a refunds and available only to sale accounts.
      * _from account has to explicitly approve spending with the approve() call.
-     * thawTS and isKYCRequired parameters are required to withdraw exact &quot;same&quot; tokens (to not affect availability of
+     * thawTS and isKYCRequired parameters are required to withdraw exact "same" tokens (to not affect availability of
      * other tokens of the account).
      */
     function frozenTransferFrom(address _from, address _to, uint256 _value, uint thawTS, bool isKYCRequired)

@@ -48,8 +48,8 @@ contract GCSToken is Ownable{
         ) {
         balanceOf[msg.sender] = 210000000000000000;              // Give the creator all initial tokens
         totalSupply = 210000000000000000;                        // Update total supply
-        name = &quot;Gamechain System&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GCS&quot;;                              // Set the symbol for display purposes
+        name = "Gamechain System";                                   // Set the name for display purposes
+        symbol = "GCS";                              // Set the symbol for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
         
     }

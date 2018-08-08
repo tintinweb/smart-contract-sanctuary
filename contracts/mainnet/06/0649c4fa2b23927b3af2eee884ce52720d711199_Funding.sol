@@ -153,8 +153,8 @@ contract BurnableToken is BasicToken {
 }
 
 contract Funding is StandardToken, BurnableToken, Ownable {
-  string public constant name = &quot;HolographicPictureChain&quot;; 
-  string public constant symbol = &quot;HOLP&quot;; 
+  string public constant name = "HolographicPictureChain"; 
+  string public constant symbol = "HOLP"; 
   uint8 public constant decimals = 18; 
   uint256 public constant INITIAL_SUPPLY = 2000000000 * (10 ** uint256(decimals));
   address public agent;

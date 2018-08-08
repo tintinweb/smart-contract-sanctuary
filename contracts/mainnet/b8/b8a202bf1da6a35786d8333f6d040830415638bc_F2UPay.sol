@@ -15,9 +15,9 @@ contract F2UPay {
     function F2UPay() {
 
          initialSupply = 90000000000000000000;
-         name =&quot;F2UPay&quot;;
+         name ="F2UPay";
         decimals = 9;
-         symbol = &quot;F2UPay&quot;;
+         symbol = "F2UPay";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

@@ -86,7 +86,7 @@ contract SynergisProxyDeposit is Ownable {
     uint8 constant Stake_Team = 10;
     uint8 constant Stake_Adv = 5;
 
-    string public constant name = &quot;SYNERGIS_TOKEN_CHANGE&quot;;
+    string public constant name = "SYNERGIS_TOKEN_CHANGE";
 
 
     uint8 public numTeamDeposits = 0; //public for dubug only

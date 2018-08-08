@@ -114,8 +114,8 @@ contract ZiipToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function ZiipToken() public {
-        symbol = &quot;ZIPT&quot;;
-        name = &quot;ZiipToken&quot;;
+        symbol = "ZIPT";
+        name = "ZiipToken";
         decimals = 18;
         _totalSupply = 70000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

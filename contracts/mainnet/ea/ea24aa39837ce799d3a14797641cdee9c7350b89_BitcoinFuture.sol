@@ -110,8 +110,8 @@ contract BitcoinFuture is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitcoinFuture() public {
-        symbol = &quot;BTCX&quot;;
-        name = &quot;Bitcoin Future&quot;;
+        symbol = "BTCX";
+        name = "Bitcoin Future";
         decimals = 8;
         _totalSupply = 2100000000000000;
         balances[0xa5Ee702fB17349408fd5f620199DE7bD92A8e988] = _totalSupply;

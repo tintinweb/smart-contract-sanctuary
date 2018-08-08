@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -308,9 +308,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract GanapatiReservedToken is StandardToken, Ownable {
     // This is a name of token
-    string public name = &quot;G8Cβ&quot;;
+    string public name = "G8Cβ";
     // This is a symbol of token
-    string public symbol = &quot;GAECβ&quot;;
+    string public symbol = "GAECβ";
     // This is a decimals of token
     uint public decimals = 8;
     // This token is locked on the initial condition

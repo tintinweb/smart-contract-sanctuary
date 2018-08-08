@@ -46,8 +46,8 @@ contract VPTToken is Ownable, Token{
     function VPTToken() {
         totalSupply = 160000000000000000;
         balances[msg.sender] = totalSupply;
-        name = &quot;Victory Platform Token&quot;;
-        symbol = &quot;VPT&quot;;
+        name = "Victory Platform Token";
+        symbol = "VPT";
         decimals = 8;
     }
 

@@ -247,7 +247,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -453,7 +453,7 @@ contract CrowdsaleToken is MintableToken {
 }
 
 contract FBC is CrowdsaleToken {
-  string public constant name = &quot;Feon Bank Coin&quot;;
-  string public constant symbol = &quot;FBC&quot;;
+  string public constant name = "Feon Bank Coin";
+  string public constant symbol = "FBC";
   uint32 public constant decimals = 4;
 }

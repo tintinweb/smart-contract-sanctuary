@@ -257,8 +257,8 @@ contract StandardToken is ERC20, BasicToken {
 contract mxrjjToken is StandardToken, BurnableToken, Ownable {
     using CcMath for uint;
 
-    string constant public symbol = &quot;mxrjj&quot;;
-    string constant public name = &quot;mxrjjToken&quot;;
+    string constant public symbol = "mxrjj";
+    string constant public name = "mxrjjToken";
 
     uint8 constant public decimals = 18;
     uint256 INITIAL_SUPPLY = 1000000000e18;

@@ -113,8 +113,8 @@ contract VReetUp is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function VReetUp() public {
-        symbol = &quot;VRT&quot;;
-        name = &quot;VReetUp Coin&quot;;
+        symbol = "VRT";
+        name = "VReetUp Coin";
         decimals = 18;
         _totalSupply = 15000000000000000000000000;
         balances[0x4Ed27bF99d1FB60295fA313625D83e02EA7a24d6] = _totalSupply;

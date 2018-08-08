@@ -3,8 +3,8 @@ pragma solidity ^0.4.16;
 
 contract HgcToken {
 
-    string public name = &quot;Hello Hello Coins&quot;;
-    string public symbol = &quot;ZZZHHC&quot;;
+    string public name = "Hello Hello Coins";
+    string public symbol = "ZZZHHC";
     uint256 public decimals = 6;
 
     uint256 constant initSupplyUnits = 21000000000000000;

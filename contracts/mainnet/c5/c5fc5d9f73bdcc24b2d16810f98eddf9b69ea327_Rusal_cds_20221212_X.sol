@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	Rusal_cds_20221212_X				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	Rusal_cds_20221212_X		&quot;	;
-	string	public	constant	symbol =	&quot;	RUSCX		&quot;	;
+	string	public	constant	name =	"	Rusal_cds_20221212_X		"	;
+	string	public	constant	symbol =	"	RUSCX		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

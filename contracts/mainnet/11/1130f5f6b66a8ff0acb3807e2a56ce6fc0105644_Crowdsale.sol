@@ -151,7 +151,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -208,8 +208,8 @@ contract BurnableToken is StandardToken {
 
 contract MRDSTSCoinToken is BurnableToken {
     
-  string public constant name = &quot;MRDSTS Coin Token&quot;;
-  string public constant symbol = &quot;MRDSTS&quot;;
+  string public constant name = "MRDSTS Coin Token";
+  string public constant symbol = "MRDSTS";
  
   uint32 public constant decimals = 18;
   uint256 public INITIAL_SUPPLY = 270000000 * 1 ether; // INITIAL SUPPLY

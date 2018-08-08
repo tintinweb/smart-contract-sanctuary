@@ -71,8 +71,8 @@ contract BetleyToken is Ownable, ERC20 {
     using SafeMath for uint256;
 
     // Token properties
-    string public name = &quot;BetleyToken&quot;;               //Token name
-    string public symbol = &quot;BETS&quot;;                     //Token symbol
+    string public name = "BetleyToken";               //Token name
+    string public symbol = "BETS";                     //Token symbol
     uint256 public decimals = 18;
 
     uint256 public _totalSupply = 1000000000e18;       //100% Total Supply

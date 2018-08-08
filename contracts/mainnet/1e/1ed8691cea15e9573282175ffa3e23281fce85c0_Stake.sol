@@ -412,7 +412,7 @@ contract Stake is Owned, Validating, GenericCall {
   }
 
   function version() external pure returns (string) {
-    return &quot;1.0.0&quot;;
+    return "1.0.0";
   }
 
   /// @notice To set the the address of the LEV token

@@ -117,8 +117,8 @@ contract digithothToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function digithothToken() public {
-        symbol = &quot;DGT&quot;;
-        name = &quot;digithoth Token&quot;;
+        symbol = "DGT";
+        name = "digithoth Token";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         presaleEnds = now + 6 weeks;

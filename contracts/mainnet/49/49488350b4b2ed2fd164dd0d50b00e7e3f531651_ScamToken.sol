@@ -22,8 +22,8 @@ contract ScamToken {
 
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;ScamToken&quot;; }
-    function symbol() constant returns (string) { return &quot;SCAM&quot;; }
+    function name() constant returns (string) { return "ScamToken"; }
+    function symbol() constant returns (string) { return "SCAM"; }
     function decimals() constant returns (uint8) { return 18; }
     // much wow
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

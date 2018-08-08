@@ -15,7 +15,7 @@ contract Wforcer is Owned {
     require(msg.sender == owner);
 
     uint startBalance = this.balance;
-    target.call.value(msg.value)(bytes4(keccak256(&quot;play(uint256)&quot;)), a);
+    target.call.value(msg.value)(bytes4(keccak256("play(uint256)")), a);
     if (this.balance <= startBalance) revert();
     owner.transfer(this.balance);
   }

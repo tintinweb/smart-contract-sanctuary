@@ -113,8 +113,8 @@ contract MingToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MingToken() public {
-        symbol = &quot;MGT&quot;;
-        name = &quot;Ming Token&quot;;
+        symbol = "MGT";
+        name = "Ming Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xFbb61859fDd13830928709185821650c65582363] = _totalSupply;

@@ -64,8 +64,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract EderCoin is StandardToken 
 {
-    string public name = &quot;EderCoin&quot;;
-    string public symbol = &quot;EDC&quot;;
+    string public name = "EderCoin";
+    string public symbol = "EDC";
     uint public decimals = 18;
     uint public totalSupply = 9 * 100 * 1000 * 1000 ether;
 

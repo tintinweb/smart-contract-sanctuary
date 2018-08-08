@@ -246,8 +246,8 @@ contract StandardToken is ERC20, BasicToken {
 /// @title UbitToken
 /// @author Roger Wu
 contract UbitToken is StandardToken, BurnableToken {
-  string public name = &quot;UBIT&quot;;
-  string public symbol = &quot;UBIT&quot;;
+  string public name = "UBIT";
+  string public symbol = "UBIT";
   uint8 public decimals = 18;
 
   constructor() public {

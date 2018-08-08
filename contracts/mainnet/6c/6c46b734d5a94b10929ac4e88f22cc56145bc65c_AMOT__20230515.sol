@@ -4,8 +4,8 @@ contract	AMOT__20230515				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	AMOT__20230515		&quot;	;
-	string	public		symbol =	&quot;	AMOTI		&quot;	;
+	string	public		name =	"	AMOT__20230515		"	;
+	string	public		symbol =	"	AMOTI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		15538797795124200000000000					;	

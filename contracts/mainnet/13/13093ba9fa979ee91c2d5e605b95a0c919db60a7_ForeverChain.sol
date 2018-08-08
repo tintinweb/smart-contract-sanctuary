@@ -158,8 +158,8 @@ contract ForeverChain is ERC20, BasicToken {
         decimals = 18;                            // Amount of decimals for display purposes
         totalSupply_ =  100000000  * 10 ** uint256(decimals);                        // Update total supply
         balances[0xa59d85e072c3Db5990c25bA187AD23fC39e52d26] = totalSupply_;               // Give the creator all initial tokens
-        name = &quot;Forever Chain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;FC&quot;;                               // Set the symbol for display purposes
+        name = "Forever Chain";                                   // Set the name for display purposes
+        symbol = "FC";                               // Set the symbol for display purposes
         owner = 0xa59d85e072c3Db5990c25bA187AD23fC39e52d26;
         Transfer(address(0x0), 0xa59d85e072c3Db5990c25bA187AD23fC39e52d26 , totalSupply_);
 

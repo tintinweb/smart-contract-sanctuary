@@ -106,8 +106,8 @@ contract AENToken is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
     // Constructor
     constructor() public {
-        symbol = &quot;AEN&quot;;
-        name = &quot;AEN.&quot;;
+        symbol = "AEN";
+        name = "AEN.";
         decimals = 8;
         _totalSupply = 4000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

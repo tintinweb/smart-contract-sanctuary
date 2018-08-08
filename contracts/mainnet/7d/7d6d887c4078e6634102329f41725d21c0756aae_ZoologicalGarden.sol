@@ -134,8 +134,8 @@ contract ZoologicalGarden is ERC20, BasicToken {
         decimals = 4;
         totalSupply_ = 100000000 * 10 ** uint(decimals);   
         balances[msg.sender] = totalSupply_;               
-        name = &quot;Zoological Garden&quot;;                                  
-        symbol = &quot;ZOO&quot;;    
+        name = "Zoological Garden";                                  
+        symbol = "ZOO";    
         Transfer(0, 0x2eD873965aeC2d0E361979e3bAFE9540c791D4d3, totalSupply_);
    }
    /**

@@ -147,7 +147,7 @@ contract PO8BaseToken is ERC20 {
 
 }
 
-contract PO8Token is PO8BaseToken(&quot;PO8 Token&quot;, &quot;PO8&quot;, 18, 10000000000000000000000000000), Ownable {
+contract PO8Token is PO8BaseToken("PO8 Token", "PO8", 18, 10000000000000000000000000000), Ownable {
 
     uint256 internal privateToken;
     uint256 internal preSaleToken;

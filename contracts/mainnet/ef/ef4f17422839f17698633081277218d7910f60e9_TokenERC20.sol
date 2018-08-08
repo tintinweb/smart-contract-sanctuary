@@ -30,8 +30,8 @@ contract TokenERC20 {
     ) public {
         totalSupply = 10000000000000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Alicoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;ALIC&quot;;                               // Set the symbol for display purposes
+        name = "Alicoin";                                   // Set the name for display purposes
+        symbol = "ALIC";                               // Set the symbol for display purposes
     }
 
     /**

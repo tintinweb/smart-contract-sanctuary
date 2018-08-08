@@ -56,8 +56,8 @@ contract EtheraffleFreeLOT is ERC223 {
      * @param _amt          Amount to mint on contract creation.
      */
     function EtheraffleFreeLOT(address _etheraffle, uint _amt) {
-        name       = &quot;Etheraffle FreeLOT&quot;;
-        symbol     = &quot;FreeLOT&quot;;
+        name       = "Etheraffle FreeLOT";
+        symbol     = "FreeLOT";
         etheraffle = _etheraffle;
         minters.push(_etheraffle);
         destroyers.push(_etheraffle);
@@ -203,7 +203,7 @@ contract EtheraffleFreeLOT is ERC223 {
     /**
      * @dev    This function destroys tokens by subtracting them from the total
      *         supply and removing them from the given address. Increments the
-     *         redeemed variable to track the number of &quot;used&quot; tokens. Only
+     *         redeemed variable to track the number of "used" tokens. Only
      *         callable by the Etheraffle multisig or a designated destroyer.
      *
      * @param _from    The address from whom the token is destroyed.

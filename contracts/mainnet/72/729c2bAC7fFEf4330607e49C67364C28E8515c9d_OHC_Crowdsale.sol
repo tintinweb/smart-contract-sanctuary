@@ -44,7 +44,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -397,8 +397,8 @@ contract Crowdsale {
 
 
 contract OHC_CrowdsaleToken is MintableToken {
-  string public constant name = &quot;One Hundred Coin&quot;;
-  string public constant symbol = &quot;OHC&quot;;
+  string public constant name = "One Hundred Coin";
+  string public constant symbol = "OHC";
   uint8 public constant decimals = 18;
 
   // overriding BasicToken#transfer

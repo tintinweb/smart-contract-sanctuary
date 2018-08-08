@@ -243,8 +243,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract PrymexToken is MintableToken {
-  string public constant name = &quot;PrymexToken&quot;;
-  string public constant symbol = &quot;PRX&quot;;
+  string public constant name = "PrymexToken";
+  string public constant symbol = "PRX";
   uint8 public constant decimals = 18;
 }
 

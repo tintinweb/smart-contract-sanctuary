@@ -591,7 +591,7 @@ contract ERC721Base is AssetRegistryStorage, IERC721Base, ERC165 {
     _addAssetTo(to, assetId);
 
     if (doCheck && _isContract(to)) {
-      // Equals to bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))
+      // Equals to bytes4(keccak256("onERC721Received(address,uint256,bytes)"))
       bytes4 ERC721_RECEIVED = bytes4(0xf0b9e5ba);
       require(
         IERC721Receiver(to).onERC721Received(
@@ -796,16 +796,16 @@ contract LANDRegistry is Storage,
   ILANDRegistry
 {
 
-  bytes4 public GET_METADATA = bytes4(keccak256(&quot;getMetadata(uint256)&quot;));
+  bytes4 public GET_METADATA = bytes4(keccak256("getMetadata(uint256)"));
 
   function initialize(bytes) external {
-    _name = &quot;Decentraland LAND&quot;;
-    _symbol = &quot;LAND&quot;;
-    _description = &quot;Contract that stores the Decentraland LAND registry&quot;;
+    _name = "Decentraland LAND";
+    _symbol = "LAND";
+    _description = "Contract that stores the Decentraland LAND registry";
   }
 
   modifier onlyProxyOwner() {
-    require(msg.sender == proxyOwner, &quot;this function can only be called by the proxy owner&quot;);
+    require(msg.sender == proxyOwner, "this function can only be called by the proxy owner");
     _;
   }
 
@@ -814,12 +814,12 @@ contract LANDRegistry is Storage,
   //
 
   modifier onlyOwnerOf(uint256 assetId) {
-    require(msg.sender == _ownerOf(assetId), &quot;this function can only be called by the owner of the asset&quot;);
+    require(msg.sender == _ownerOf(assetId), "this function can only be called by the owner of the asset");
     _;
   }
 
   modifier onlyUpdateAuthorized(uint256 tokenId) {
-    require(msg.sender == _ownerOf(tokenId) || _isUpdateAuthorized(msg.sender, tokenId), &quot;msg.sender is not authorized to update&quot;);
+    require(msg.sender == _ownerOf(tokenId) || _isUpdateAuthorized(msg.sender, tokenId), "msg.sender is not authorized to update");
     _;
   }
 

@@ -25,9 +25,9 @@ contract Bogotcoin {
  function Bogotcoin() {
 
          initialSupply = 100000000000000;
-        name =&quot;Bogotcoin&quot;;
+        name ="Bogotcoin";
         decimals = 6;
-        symbol = &quot;BGA&quot;;
+        symbol = "BGA";
         
         balanceOf[msg.sender] = initialSupply;              
         totalSupply = initialSupply;                        

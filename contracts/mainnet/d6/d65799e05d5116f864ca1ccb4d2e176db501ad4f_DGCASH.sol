@@ -83,8 +83,8 @@ contract DGCASH is ERC20Interface, Owned {
 
 
     function DGCASH() public {
-        symbol = &quot;DGCASH&quot;;
-        name = &quot;DGCASH&quot;;
+        symbol = "DGCASH";
+        name = "DGCASH";
         decimals = 8;
         _totalSupply = 333000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

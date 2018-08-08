@@ -63,8 +63,8 @@ contract Scicoins {
     function Scicoins() public {
         totalSupply = 2000000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Scicoins&quot;;
-        symbol = &quot;SCIX&quot;;
+        name = "Scicoins";
+        symbol = "SCIX";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

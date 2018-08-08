@@ -27,7 +27,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -114,8 +114,8 @@ library SafeMath {
 contract SpaceUnionToken is ERC20, Ownable {
     using SafeMath for uint256;
 
-    string public constant name = &quot;SpaceUnion Token&quot;;
-    string public constant symbol = &quot;UNIO&quot;;
+    string public constant name = "SpaceUnion Token";
+    string public constant symbol = "UNIO";
     uint8 public constant decimals = 18;
 
     mapping (address => uint256) private balances;

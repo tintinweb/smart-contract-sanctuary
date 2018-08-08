@@ -240,8 +240,8 @@ contract MintableToken is StandardToken, Ownable {
 contract BeatOrgToken is MintableToken {
     using SafeMath for uint256;
 
-    string public constant name = &quot;BEAT&quot;;
-    string public constant symbol = &quot;BEAT&quot;;
+    string public constant name = "BEAT";
+    string public constant symbol = "BEAT";
     uint8 public constant decimals = 18;
 
     // 5 bn

@@ -51,10 +51,10 @@ contract StandardToken is Token {
 
 contract LCToken is StandardToken {
     // metadata
-    string public constant name = &quot;Lottery Coin&quot;;
-    string public constant symbol = &quot;SaberLC&quot;;
+    string public constant name = "Lottery Coin";
+    string public constant symbol = "SaberLC";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     // constant
     uint256 val1 = 1 wei;    // 1

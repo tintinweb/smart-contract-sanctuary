@@ -113,8 +113,8 @@ contract WeatherToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WeatherToken() public {
-        symbol = &quot;wetr&quot;;
-        name = &quot;Weather Token&quot;;
+        symbol = "wetr";
+        name = "Weather Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x5D38255556624F54956C51929D6730E9f95A30c0] = _totalSupply;

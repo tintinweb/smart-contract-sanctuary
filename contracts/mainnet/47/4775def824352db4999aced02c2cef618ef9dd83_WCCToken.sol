@@ -50,8 +50,8 @@ contract Ownable {
 }
 
 contract WCCToken is SafeMath, Ownable{
-    string public name = &quot;WCCCoin&quot;;
-    string public symbol = &quot;WCC&quot;;
+    string public name = "WCCCoin";
+    string public symbol = "WCC";
     uint8 public decimals = 18;
     uint256 public totalSupply = 12 * 10 ** 8 * 10 ** 18;
 

@@ -9,8 +9,8 @@ pragma solidity ^0.4.13;
 contract PresaleToken
 {
 /// Fields:
-    string public constant name = &quot;Remechain Presale Token&quot;;
-    string public constant symbol = &quot;RMC&quot;;
+    string public constant name = "Remechain Presale Token";
+    string public constant symbol = "RMC";
     uint public constant decimals = 18;
     uint public constant PRICE = 320;  // per 1 Ether
 

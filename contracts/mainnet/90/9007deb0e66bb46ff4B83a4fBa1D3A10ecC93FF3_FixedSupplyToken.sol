@@ -117,8 +117,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
 
     function FixedSupplyToken() public {
-        symbol = &quot;PSILTD&quot;;
-        name = &quot;Payment Solutions International Limited (PSILTD)&quot;;
+        symbol = "PSILTD";
+        name = "Payment Solutions International Limited (PSILTD)";
         decimals = 9;
         _totalSupply = 1000000000 * 10 ** uint(decimals);
         balances[owner] = _totalSupply;

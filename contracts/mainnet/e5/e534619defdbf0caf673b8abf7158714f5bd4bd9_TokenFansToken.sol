@@ -565,8 +565,8 @@ contract TokenFansToken is PlayToken {
     /*
      *  Constants
      */
-    string public constant name = &quot;TokenFans Token&quot;;
-    string public constant symbol = &quot;TFT&quot;;
+    string public constant name = "TokenFans Token";
+    string public constant symbol = "TFT";
     uint8 public constant decimals = 0;
 }
 

@@ -74,8 +74,8 @@ contract StandardToken is ERC20 {
     mapping (address => mapping (address => uint256)) internal allowed;
 
     constructor() public {
-        _symbol = &quot;ExShares&quot;;
-        _name = &quot;EXS&quot;;
+        _symbol = "ExShares";
+        _name = "EXS";
         _decimals = 18;
         _totalSupply = 100 * (uint256(10)**_decimals);
         balances[msg.sender] = _totalSupply;

@@ -76,7 +76,7 @@ contract ApproveAndCallFallBack {
 
 /// @dev The actual token contract, the default controller is the msg.sender
 ///  that deploys the contract, so usually this token will be deployed by a
-///  token controller contract, which Giveth will call a &quot;Campaign&quot;
+///  token controller contract, which Giveth will call a "Campaign"
 contract MiniMeToken is Controlled {
 
     string public name;                //The Token&#39;s name: e.g. DigixDAO Tokens
@@ -711,9 +711,9 @@ contract ProposalManager is Ownable {
         p.token = tokenFactory.createCloneToken(
                 nectarToken,
                 getBlockNumber(),
-                appendUintToString(&quot;NectarProposal-&quot;, _proposalId),
+                appendUintToString("NectarProposal-", _proposalId),
                 MiniMeToken(nectarToken).decimals(),
-                appendUintToString(&quot;NP-&quot;, _proposalId),
+                appendUintToString("NP-", _proposalId),
                 true);
 
         p.approved = true;

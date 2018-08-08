@@ -108,7 +108,7 @@ contract Token is Pausable, ERC20 {
     mapping(address => uint) public balanceOfLocked;
     mapping(address => bool) public addressLocked;
 
-    constructor() ERC20(&quot;DWS&quot;, &quot;DWS&quot;, 18) public {
+    constructor() ERC20("DWS", "DWS", 18) public {
         totalSupply = 500000000 * 10 ** uint(decimals);
         balances[msg.sender] = totalSupply;
     }

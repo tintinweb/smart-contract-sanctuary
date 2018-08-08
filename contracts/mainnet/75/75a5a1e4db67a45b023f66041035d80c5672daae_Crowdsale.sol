@@ -298,7 +298,7 @@ contract Crowdsale is GuidedByRoles{
         // hardCap is not reached, and in the event of a transaction, it will not be exceeded by more than OverLimit
         bool withinCap = msg.value <= hardCap.sub(weiRaised()).add(overLimit);
 
-        // round is initialized and no &quot;Pause of trading&quot; is set
+        // round is initialized and no "Pause of trading" is set
         return withinPeriod && nonZeroPurchase && withinCap && isInitialized && !isFinalized && !isPausedCrowdsale;
     }
 
@@ -615,7 +615,7 @@ contract Crowdsale is GuidedByRoles{
     //    }
 
 
-    // Remove the &quot;Pause of exchange&quot;. Available to the manager at any time. If the
+    // Remove the "Pause of exchange". Available to the manager at any time. If the
     // manager refuses to remove the pause, then 30-120 days after the successful
     // completion of the TokenSale, anyone can remove a pause and allow the exchange to continue.
     // The manager does not interfere and will not be able to delay the term.
@@ -631,7 +631,7 @@ contract Crowdsale is GuidedByRoles{
         token.setPause(false);
     }
 
-    // Enable the &quot;Pause of exchange&quot;. Available to the manager until the TokenSale is completed.
+    // Enable the "Pause of exchange". Available to the manager until the TokenSale is completed.
     // The manager cannot turn on the pause, for example, 3 years after the end of the TokenSale.
     // @ Do I have to use the function      no
     // @ When it is possible to call        while Round2 not ended

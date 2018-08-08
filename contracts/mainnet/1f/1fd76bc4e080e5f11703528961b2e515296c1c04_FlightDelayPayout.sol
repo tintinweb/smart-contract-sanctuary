@@ -13,11 +13,11 @@
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -690,7 +690,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint len = self._len * (parts.length - 1);
         for(uint i = 0; i < parts.length; i++)
@@ -921,31 +921,31 @@ contract FlightDelayConstants {
     // DEFINITIONS FOR ROPSTEN AND MAINNET
     string constant ORACLIZE_RATINGS_BASE_URL =
         // ratings api is v1, see https://developer.flightstats.com/api-docs/ratings/v1
-        &quot;[URL] json(https://api.flightstats.com/flex/ratings/rest/v1/json/flight/&quot;;
+        "[URL] json(https://api.flightstats.com/flex/ratings/rest/v1/json/flight/";
     string constant ORACLIZE_RATINGS_QUERY =
-        &quot;?${[decrypt] BMyq4zhRqJ8ir2kM6TRnwhoU6p/ugrj3whdKOvz26XvgX7AEesXpzyiY15w0bKltLyGr2ZI17oT5g0EblU1kA/wMPS5V9PiBkAksyAI4LW8+4oW3rsBYwxWj/P5kGtsuMLQj+vfjEWUML/IO6A+GsX4uRr/qcTtbgroOor9Iis9oiKLmsW17}).ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]&quot;;
+        "?${[decrypt] BMyq4zhRqJ8ir2kM6TRnwhoU6p/ugrj3whdKOvz26XvgX7AEesXpzyiY15w0bKltLyGr2ZI17oT5g0EblU1kA/wMPS5V9PiBkAksyAI4LW8+4oW3rsBYwxWj/P5kGtsuMLQj+vfjEWUML/IO6A+GsX4uRr/qcTtbgroOor9Iis9oiKLmsW17}).ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]";
     string constant ORACLIZE_STATUS_BASE_URL =
         // flight status api is v2, see https://developer.flightstats.com/api-docs/flightstatus/v2/flight
-        &quot;[URL] json(https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/&quot;;
+        "[URL] json(https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/";
     string constant ORACLIZE_STATUS_QUERY =
         // pattern:
-        &quot;?${[decrypt] BI/xJBm/c0rYFpApw5ZoBJCRsVkPHwUgnbbtWTW18wMIC5zLHw8M3MJhf0041kLFqx/i2jj4aIQLX2sNSkm91/PDKydmtP1OOs1XQtAD4DB/mTlLiHcMy63XxoRngHr0ZRR4WBJQKkifhepmgiCht7VlXiYNclpZ0RGqmcndFs5pywIyvfAh}&utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
+        "?${[decrypt] BI/xJBm/c0rYFpApw5ZoBJCRsVkPHwUgnbbtWTW18wMIC5zLHw8M3MJhf0041kLFqx/i2jj4aIQLX2sNSkm91/PDKydmtP1OOs1XQtAD4DB/mTlLiHcMy63XxoRngHr0ZRR4WBJQKkifhepmgiCht7VlXiYNclpZ0RGqmcndFs5pywIyvfAh}&utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]";
 // <-- prod-mode
 
 // --> test-mode
 //        // DEFINITIONS FOR LOCAL TESTNET
 //        string constant ORACLIZE_RATINGS_BASE_URL =
 //            // ratings api is v1, see https://developer.flightstats.com/api-docs/ratings/v1
-//            &quot;[URL] json(https://api-test.etherisc.com/flex/ratings/rest/v1/json/flight/&quot;;
+//            "[URL] json(https://api-test.etherisc.com/flex/ratings/rest/v1/json/flight/";
 //        string constant ORACLIZE_RATINGS_QUERY =
 //            // for testrpc:
-//            &quot;).ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]&quot;;
+//            ").ratings[0][&#39;observations&#39;,&#39;late15&#39;,&#39;late30&#39;,&#39;late45&#39;,&#39;cancelled&#39;,&#39;diverted&#39;,&#39;arrivalAirportFsCode&#39;,&#39;departureAirportFsCode&#39;]";
 //        string constant ORACLIZE_STATUS_BASE_URL =
 //            // flight status api is v2, see https://developer.flightstats.com/api-docs/flightstatus/v2/flight
-//            &quot;[URL] json(https://api-test.etherisc.com/flex/flightstatus/rest/v2/json/flight/status/&quot;;
+//            "[URL] json(https://api-test.etherisc.com/flex/flightstatus/rest/v2/json/flight/status/";
 //        string constant ORACLIZE_STATUS_QUERY =
 //            // for testrpc:
-//            &quot;?utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]&quot;;
+//            "?utc=true).flightStatuses[0][&#39;status&#39;,&#39;delays&#39;,&#39;operationalTimes&#39;]";
 // <-- test-mode
 }
 
@@ -1276,7 +1276,7 @@ Copyright (c) 2016 Oraclize LTD
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
+of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -1289,7 +1289,7 @@ all copies or substantial portions of the Software.
 
 
 
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -1352,22 +1352,22 @@ contract usingOraclize {
     function oraclize_setNetwork(uint8 networkID) internal returns(bool){
         if (getCodeSize(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed)>0){ //mainnet
             OAR = OraclizeAddrResolverI(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed);
-            oraclize_setNetworkName(&quot;eth_mainnet&quot;);
+            oraclize_setNetworkName("eth_mainnet");
             return true;
         }
         if (getCodeSize(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1)>0){ //ropsten testnet
             OAR = OraclizeAddrResolverI(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1);
-            oraclize_setNetworkName(&quot;eth_ropsten3&quot;);
+            oraclize_setNetworkName("eth_ropsten3");
             return true;
         }
         if (getCodeSize(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e)>0){ //kovan testnet
             OAR = OraclizeAddrResolverI(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e);
-            oraclize_setNetworkName(&quot;eth_kovan&quot;);
+            oraclize_setNetworkName("eth_kovan");
             return true;
         }
         if (getCodeSize(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48)>0){ //rinkeby testnet
             OAR = OraclizeAddrResolverI(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48);
-            oraclize_setNetworkName(&quot;eth_rinkeby&quot;);
+            oraclize_setNetworkName("eth_rinkeby");
             return true;
         }
         if (getCodeSize(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475)>0){ //ethereum-bridge
@@ -1882,15 +1882,15 @@ contract usingOraclize {
     }
 
     function strConcat(string _a, string _b, string _c, string _d) internal returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
 
     function strConcat(string _a, string _b, string _c) internal returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
 
     function strConcat(string _a, string _b) internal returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 
     // parseInt
@@ -1918,7 +1918,7 @@ contract usingOraclize {
     }
 
     function uint2str(uint i) internal returns (string){
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint len;
         while (j != 0){
@@ -2042,7 +2042,7 @@ contract usingOraclize {
             mstore(add(sessionKeyHash, 0x20), sessionKeyHash_bytes32)
         }
         bytes[3] memory args = [unonce, nbytes, sessionKeyHash];
-        bytes32 queryId = oraclize_query(_delay, &quot;random&quot;, args, _customGasLimit);
+        bytes32 queryId = oraclize_query(_delay, "random", args, _customGasLimit);
         oraclize_randomDS_setCommitment(queryId, sha3(bytes8(_delay), args[1], sha256(args[0]), args[2]));
         return queryId;
     }
@@ -2095,7 +2095,7 @@ contract usingOraclize {
         bytes memory tosign2 = new bytes(1+65+32);
         tosign2[0] = 1; //role
         copyBytes(proof, sig2offset-65, 65, tosign2, 1);
-        bytes memory CODEHASH = hex&quot;fd94fa71bc0ba10d39d464d0d8f465efeef0a2764e3887fcc9df41ded20f505c&quot;;
+        bytes memory CODEHASH = hex"fd94fa71bc0ba10d39d464d0d8f465efeef0a2764e3887fcc9df41ded20f505c";
         copyBytes(CODEHASH, 0, 32, tosign2, 1+65);
         sigok = verifySig(sha256(tosign2), sig2, appkey1_pubkey);
 
@@ -2103,7 +2103,7 @@ contract usingOraclize {
 
 
         // Step 7: verify the APPKEY1 provenance (must be signed by Ledger)
-        bytes memory LEDGERKEY = hex&quot;7fb956469c5c9b89840d55b43537e66a98dd4811ea0a27224272c2e5622911e8537a2f8e86a46baec82864e98dd01e9ccc2f8bc5dfc9cbe5a91a290498dd96e4&quot;;
+        bytes memory LEDGERKEY = hex"7fb956469c5c9b89840d55b43537e66a98dd4811ea0a27224272c2e5622911e8537a2f8e86a46baec82864e98dd01e9ccc2f8bc5dfc9cbe5a91a290498dd96e4";
 
         bytes memory tosign3 = new bytes(1+65);
         tosign3[0] = 0xFE;
@@ -2119,7 +2119,7 @@ contract usingOraclize {
 
     modifier oraclize_randomDS_proofVerify(bytes32 _queryId, string _result, bytes _proof) {
         // Step 1: the prefix has to match &#39;LP\x01&#39; (Ledger Proof version 1)
-        if ((_proof[0] != &quot;L&quot;)||(_proof[1] != &quot;P&quot;)||(_proof[2] != 1)) throw;
+        if ((_proof[0] != "L")||(_proof[1] != "P")||(_proof[2] != 1)) throw;
 
         bool proofVerified = oraclize_randomDS_proofVerify__main(_proof, _queryId, bytes(_result), oraclize_getNetworkName());
         if (proofVerified == false) throw;
@@ -2129,7 +2129,7 @@ contract usingOraclize {
 
     function oraclize_randomDS_proofVerify__returnCode(bytes32 _queryId, string _result, bytes _proof) internal returns (uint8){
         // Step 1: the prefix has to match &#39;LP\x01&#39; (Ledger Proof version 1)
-        if ((_proof[0] != &quot;L&quot;)||(_proof[1] != &quot;P&quot;)||(_proof[2] != 1)) return 1;
+        if ((_proof[0] != "L")||(_proof[1] != "P")||(_proof[2] != 1)) return 1;
 
         bool proofVerified = oraclize_randomDS_proofVerify__main(_proof, _queryId, bytes(_result), oraclize_getNetworkName());
         if (proofVerified == false) return 2;
@@ -2512,13 +2512,13 @@ contract FlightDelayPayout is FlightDelayControlledContract, FlightDelayConstant
      * @dev Set access permissions for methods
      */
     function setContracts() public onlyController {
-        FD_AC = FlightDelayAccessControllerInterface(getContract(&quot;FD.AccessController&quot;));
-        FD_DB = FlightDelayDatabaseInterface(getContract(&quot;FD.Database&quot;));
-        FD_LG = FlightDelayLedgerInterface(getContract(&quot;FD.Ledger&quot;));
+        FD_AC = FlightDelayAccessControllerInterface(getContract("FD.AccessController"));
+        FD_DB = FlightDelayDatabaseInterface(getContract("FD.Database"));
+        FD_LG = FlightDelayLedgerInterface(getContract("FD.Ledger"));
 
-        FD_AC.setPermissionById(101, &quot;FD.Underwrite&quot;);
+        FD_AC.setPermissionById(101, "FD.Underwrite");
         FD_AC.setPermissionByAddress(101, oraclize_cbAddress());
-        FD_AC.setPermissionById(102, &quot;FD.Funder&quot;);
+        FD_AC.setPermissionById(102, "FD.Funder");
     }
 
     /*
@@ -2551,7 +2551,7 @@ contract FlightDelayPayout is FlightDelayControlledContract, FlightDelayConstant
 
         bytes32 queryId = oraclize_query(
             _oraclizeTime,
-            &quot;nested&quot;,
+            "nested",
             oraclizeUrl,
             ORACLIZE_GAS
         );
@@ -2584,14 +2584,14 @@ contract FlightDelayPayout is FlightDelayControlledContract, FlightDelayConstant
         bytes32 riskId = FD_DB.getRiskId(policyId);
 
 // --> debug-mode
-//            LogBytes32(&quot;riskId&quot;, riskId);
+//            LogBytes32("riskId", riskId);
 // <-- debug-mode
 
         var slResult = _result.toSlice();
 
         if (bytes(_result).length == 0) { // empty Result
             if (FD_DB.checkTime(_queryId, riskId, 180 minutes)) {
-                LogPolicyManualPayout(policyId, &quot;No Callback at +120 min&quot;);
+                LogPolicyManualPayout(policyId, "No Callback at +120 min");
                 return;
             } else {
                 schedulePayoutOraclizeCall(policyId, riskId, oraclizeTime + 45 minutes);
@@ -2599,41 +2599,41 @@ contract FlightDelayPayout is FlightDelayControlledContract, FlightDelayConstant
         } else {
             // first check status
             // extract the status field:
-            slResult.find(&quot;\&quot;&quot;.toSlice()).beyond(&quot;\&quot;&quot;.toSlice());
-            slResult.until(slResult.copy().find(&quot;\&quot;&quot;.toSlice()));
+            slResult.find("\"".toSlice()).beyond("\"".toSlice());
+            slResult.until(slResult.copy().find("\"".toSlice()));
             bytes1 status = bytes(slResult.toString())[0];	// s = L
-            if (status == &quot;C&quot;) {
+            if (status == "C") {
                 // flight cancelled --> payout
                 payOut(policyId, 4, 0);
                 return;
-            } else if (status == &quot;D&quot;) {
+            } else if (status == "D") {
                 // flight diverted --> payout
                 payOut(policyId, 5, 0);
                 return;
-            } else if (status != &quot;L&quot; && status != &quot;A&quot; && status != &quot;C&quot; && status != &quot;D&quot;) {
-                LogPolicyManualPayout(policyId, &quot;Unprocessable status&quot;);
+            } else if (status != "L" && status != "A" && status != "C" && status != "D") {
+                LogPolicyManualPayout(policyId, "Unprocessable status");
                 return;
             }
 
             // process the rest of the response:
             slResult = _result.toSlice();
-            bool arrived = slResult.contains(&quot;actualGateArrival&quot;.toSlice());
+            bool arrived = slResult.contains("actualGateArrival".toSlice());
 
-            if (status == &quot;A&quot; || (status == &quot;L&quot; && !arrived)) {
+            if (status == "A" || (status == "L" && !arrived)) {
                 // flight still active or not at gate --> reschedule
                 if (FD_DB.checkTime(_queryId, riskId, 180 minutes)) {
-                    LogPolicyManualPayout(policyId, &quot;No arrival at +180 min&quot;);
+                    LogPolicyManualPayout(policyId, "No arrival at +180 min");
                 } else {
                     schedulePayoutOraclizeCall(policyId, riskId, oraclizeTime + 45 minutes);
                 }
-            } else if (status == &quot;L&quot; && arrived) {
-                var aG = &quot;\&quot;arrivalGateDelayMinutes\&quot;: &quot;.toSlice();
+            } else if (status == "L" && arrived) {
+                var aG = "\"arrivalGateDelayMinutes\": ".toSlice();
                 if (slResult.contains(aG)) {
                     slResult.find(aG).beyond(aG);
-                    slResult.until(slResult.copy().find(&quot;\&quot;&quot;.toSlice()).beyond(&quot;\&quot;&quot;.toSlice()));
-                    // truffle bug, replace by &quot;}&quot; as soon as it is fixed.
-                    slResult.until(slResult.copy().find(&quot;\x7D&quot;.toSlice()));
-                    slResult.until(slResult.copy().find(&quot;,&quot;.toSlice()));
+                    slResult.until(slResult.copy().find("\"".toSlice()).beyond("\"".toSlice()));
+                    // truffle bug, replace by "}" as soon as it is fixed.
+                    slResult.until(slResult.copy().find("\x7D".toSlice()));
+                    slResult.until(slResult.copy().find(",".toSlice()));
                     uint delayInMinutes = parseInt(slResult.toString());
                 } else {
                     delayInMinutes = 0;
@@ -2666,10 +2666,10 @@ contract FlightDelayPayout is FlightDelayControlledContract, FlightDelayConstant
      */
     function payOut(uint _policyId, uint8 _delay, uint _delayInMinutes)	internal {
 // --> debug-mode
-//            LogString(&quot;im payOut&quot;, &quot;&quot;);
-//            LogUint(&quot;policyId&quot;, _policyId);
-//            LogUint(&quot;delay&quot;, _delay);
-//            LogUint(&quot;in minutes&quot;, _delayInMinutes);
+//            LogString("im payOut", "");
+//            LogUint("policyId", _policyId);
+//            LogUint("delay", _delay);
+//            LogUint("in minutes", _delayInMinutes);
 // <-- debug-mode
 
         FD_DB.setDelay(_policyId, _delay, _delayInMinutes);
@@ -2679,13 +2679,13 @@ contract FlightDelayPayout is FlightDelayControlledContract, FlightDelayConstant
                 _policyId,
                 policyState.Expired,
                 now,
-                &quot;Expired - no delay!&quot;
+                "Expired - no delay!"
             );
         } else {
             var (customer, weight, premium) = FD_DB.getPolicyData(_policyId);
 
 // --> debug-mode
-//                LogUint(&quot;weight&quot;, weight);
+//                LogUint("weight", weight);
 // <-- debug-mode
 
             if (weight == 0) {
@@ -2706,7 +2706,7 @@ contract FlightDelayPayout is FlightDelayControlledContract, FlightDelayConstant
                     _policyId,
                     policyState.SendFailed,
                     now,
-                    &quot;Payout, send failed!&quot;
+                    "Payout, send failed!"
                 );
 
                 FD_DB.setPayouts(_policyId, calculatedPayout, 0);
@@ -2715,7 +2715,7 @@ contract FlightDelayPayout is FlightDelayControlledContract, FlightDelayConstant
                     _policyId,
                     policyState.PaidOut,
                     now,
-                    &quot;Payout successful!&quot;
+                    "Payout successful!"
                 );
             }
         }

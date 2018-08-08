@@ -175,7 +175,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -213,8 +213,8 @@ contract Ownable {
 }
 
 contract TonalQuantum is StandardToken, Ownable {
-    string public name = &quot;Tonal Quantum Token&quot;;
-    string public symbol = &quot;TOQ&quot;;
+    string public name = "Tonal Quantum Token";
+    string public symbol = "TOQ";
     uint8 public decimals = 18;
     uint public INITIAL_SUPPLY = 300000000 * (10**uint256(decimals));
     uint256 public unitsOneEthCanBuy;

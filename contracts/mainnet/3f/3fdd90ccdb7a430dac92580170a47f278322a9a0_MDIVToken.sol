@@ -112,8 +112,8 @@ contract MDIVToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MDIVToken() public {
-        symbol = &quot;MDIV&quot;;
-        name = &quot;MijnVastgoed Dividend Token&quot;;
+        symbol = "MDIV";
+        name = "MijnVastgoed Dividend Token";
         decimals = 10;
         _totalSupply = 1000000000000000000;
         balances[0xa149a7230cACE190905E9B50954471825C261021] = _totalSupply;

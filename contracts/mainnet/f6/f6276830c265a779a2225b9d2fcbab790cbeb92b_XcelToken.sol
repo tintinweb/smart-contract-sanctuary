@@ -140,7 +140,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -381,9 +381,9 @@ contract PausableToken is StandardToken, Pausable {
 
 contract XcelToken is PausableToken, BurnableToken  {
 
-    string public constant name = &quot;XCELTOKEN&quot;;
+    string public constant name = "XCELTOKEN";
 
-    string public constant symbol = &quot;XCEL&quot;;
+    string public constant symbol = "XCEL";
 
     /* see issue 724 where Vitalik is proposing mandatory 18 decimal places for erc20 tokens
     https://github.com/ethereum/EIPs/issues/724

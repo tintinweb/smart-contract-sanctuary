@@ -144,8 +144,8 @@ contract StandardToken is ERC20, SafeMath {
 //  daoPOLSKAtokens
 contract daoPOLSKAtokens{
 
-    string public name = &quot;DAO POLSKA TOKEN version 1&quot;;
-    string public symbol = &quot;DPL&quot;;
+    string public name = "DAO POLSKA TOKEN version 1";
+    string public symbol = "DPL";
     uint8 public constant decimals = 18;  // 18 decimal places, the same as ETC/ETH/HEE.
 
     // Receives 

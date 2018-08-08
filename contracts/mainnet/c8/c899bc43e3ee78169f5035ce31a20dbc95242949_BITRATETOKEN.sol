@@ -58,8 +58,8 @@ contract BITRATETOKEN is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;BITRATE TOKEN&quot;;
-    string public constant symbol = &quot;BTRT&quot;;
+    string public constant name = "BITRATE TOKEN";
+    string public constant symbol = "BTRT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 400000000e8;

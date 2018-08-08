@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract ZIL {
     // Public variables of the token
-    string public name = &quot;Zilliqa&quot;;
-    string public symbol = &quot;ZIL&quot;;
+    string public name = "Zilliqa";
+    string public symbol = "ZIL";
     uint8 public decimals = 12;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

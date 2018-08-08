@@ -7,8 +7,8 @@ contract ScamSealToken {
     //a false ERC20 token, where transfers can be done only by 
     //the creator of the token.
 
-    string public constant name = &quot;SCAM Seal Token&quot;;
-    string public constant symbol = &quot;SCAMSEAL&quot;;
+    string public constant name = "SCAM Seal Token";
+    string public constant symbol = "SCAMSEAL";
     uint8 public constant decimals = 0;
     uint256 public totalSupply;
 

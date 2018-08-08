@@ -90,8 +90,8 @@ contract NVCTToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function NVCTToken() public {
-        symbol = &quot;NVCT&quot;;
-        name = &quot;nVision Cash token&quot;;
+        symbol = "NVCT";
+        name = "nVision Cash token";
         decimals = 18;
         _totalSupply = 850000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

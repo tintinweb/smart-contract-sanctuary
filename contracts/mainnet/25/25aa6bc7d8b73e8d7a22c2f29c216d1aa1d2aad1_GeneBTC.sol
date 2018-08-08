@@ -33,7 +33,7 @@ library SafeMath {
 /**
  * @title Ownable
     * @dev The Ownable contract has an owner address, and provides basic authorization control 
-       * functions, this simplifies the implementation of &quot;user permissions&quot;. 
+       * functions, this simplifies the implementation of "user permissions". 
           */
 contract Ownable {
   address public owner;
@@ -191,8 +191,8 @@ contract GeneBTC is StandardToken, Ownable {
     using SafeMath for uint256;
 
     // Token Info.
-    string  public constant name = &quot;Gene BTC&quot;;
-    string  public constant symbol = &quot;GBC&quot;;
+    string  public constant name = "Gene BTC";
+    string  public constant symbol = "GBC";
     uint8   public constant decimals = 18;
 
     // Sale period.

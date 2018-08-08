@@ -38,9 +38,9 @@ contract SafeMath {
 
 contract Token is SafeMath, Owned {
     uint256 constant DAY_IN_SECONDS = 86400;
-    string public constant standard = &quot;0.66&quot;;
-    string public name = &quot;&quot;;
-    string public symbol = &quot;&quot;;
+    string public constant standard = "0.66";
+    string public name = "";
+    string public symbol = "";
     uint8 public decimals = 0;
     uint256 public totalSupply = 0;
     mapping (address => uint256) public balanceP;

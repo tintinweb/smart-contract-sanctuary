@@ -228,7 +228,7 @@ contract Token2GB is StandardToken, DetailedERC20, Exchangable {
     
 
     function Token2GB(address _2GetherAddress) 
-        DetailedERC20(&quot;2GetherBounty&quot;, &quot;2GB&quot;, 18)       
+        DetailedERC20("2GetherBounty", "2GB", 18)       
         public 
     {
         uint amount = 1000000000000000000000000000;        

@@ -4,8 +4,8 @@ contract	DAX_1000_20180920				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	DAX_1000_20180920		&quot;	;
-	string	public		symbol =	&quot;	DAXAYV		&quot;	;
+	string	public		name =	"	DAX_1000_20180920		"	;
+	string	public		symbol =	"	DAXAYV		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		12597120000000000000000000					;	

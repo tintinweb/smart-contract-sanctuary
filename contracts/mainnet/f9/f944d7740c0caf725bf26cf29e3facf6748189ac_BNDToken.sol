@@ -172,8 +172,8 @@ contract TokenERC20 {
 
 contract BNDToken is owned, TokenERC20 {
 
-    string public name = &quot;Bind Network&quot;;
-    string public symbol = &quot;BND&quot;;
+    string public name = "Bind Network";
+    string public symbol = "BND";
     uint8 public decimals = 18;
     
     

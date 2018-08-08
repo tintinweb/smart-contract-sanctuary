@@ -55,7 +55,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -322,8 +322,8 @@ contract CryptualProjectToken is StandardToken, Ownable {
   using SafeMath for uint256;
 
   // ERC20 optional details
-  string public constant name = &quot;Cryptual Project Token&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;CPT&quot;; // solium-disable-line uppercase
+  string public constant name = "Cryptual Project Token"; // solium-disable-line uppercase
+  string public constant symbol = "CPT"; // solium-disable-line uppercase
   uint8 public constant decimals = 0; // solium-disable-line uppercase
 
   // Token constants, variables

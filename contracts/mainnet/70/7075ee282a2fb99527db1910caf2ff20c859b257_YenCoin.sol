@@ -502,7 +502,7 @@ contract StandardToken is ERC20, BasicToken {
 
 * @dev The Ownable contract has an owner address, and provides basic authorization control 
 
-* functions, this simplifies the implementation of &quot;user permissions&quot;. 
+* functions, this simplifies the implementation of "user permissions". 
 
 */ 
 
@@ -830,9 +830,9 @@ contract PausableToken is StandardToken, Pausable {
 
 contract YenCoin is PausableToken { 
 
-string public name = &quot;YenCoin&quot;; 
+string public name = "YenCoin"; 
 
-string public symbol = &quot;YENC&quot;; 
+string public symbol = "YENC"; 
 
 uint8 public decimals = 18; 
 

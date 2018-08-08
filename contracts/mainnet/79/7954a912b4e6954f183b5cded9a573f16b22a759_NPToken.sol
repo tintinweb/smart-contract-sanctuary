@@ -82,7 +82,7 @@ contract NPToken is ERC20 {
     mapping (address => mapping (address => uint)) allowed;
 
     modifier onlyOwner {
-        require(msg.sender == owner);//&quot;Only owner can call this function.&quot;
+        require(msg.sender == owner);//"Only owner can call this function."
         _;
     }
 	
@@ -101,8 +101,8 @@ contract NPToken is ERC20 {
     /* Initializes contract with initial supply tokens to the creator of the contract */
     function NPToken() public {
 		totalSupply = 1000*10**26; // Update total supply with the decimal amount
-		name = &quot;Nepal Token&quot;;
-		symbol = &quot;NPT&quot;;
+		name = "Nepal Token";
+		symbol = "NPT";
 		balances[msg.sender] = totalSupply; // Give the creator all initial tokens
 		owner = msg.sender;
 		emit Transfer(address(0), msg.sender, totalSupply);

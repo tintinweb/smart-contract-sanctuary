@@ -102,8 +102,8 @@ contract StandardToken is ERC20 {
 
 contract iflea is StandardToken, Ownable {
 
-    string public name = &quot;iflea&quot;;
-    string public symbol = &quot;IFLE&quot;;
+    string public name = "iflea";
+    string public symbol = "IFLE";
     uint public decimals = 18;
 
     // The token allocation
@@ -209,7 +209,7 @@ contract iflea is StandardToken, Ownable {
 
         contributors_locked[_contributor] = _value;
         contributors_countdownDate[_contributor] = _countdownDate;
-        UpdatedLockingState(&quot;contributor&quot;, _contributor, _value, _countdownDate);
+        UpdatedLockingState("contributor", _contributor, _value, _countdownDate);
     }
 
     // set lockup for strategic investor
@@ -221,7 +221,7 @@ contract iflea is StandardToken, Ownable {
 
         investors_locked[_investor] = _value;
         investors_deliveryDate[_investor] = _delieveryDate;
-        UpdatedLockingState(&quot;investor&quot;, _investor, _value, _delieveryDate);
+        UpdatedLockingState("investor", _investor, _value, _delieveryDate);
     }
 
 	// Transfer amount of tokens from sender account to recipient.

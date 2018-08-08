@@ -357,8 +357,8 @@ contract CappedToken is MintableToken {
 }
 
 contract OnacleToken is CappedToken {
-    string public name = &quot;Onacle Network Core&quot;;
-    string public symbol = &quot;ONC&quot;;
+    string public name = "Onacle Network Core";
+    string public symbol = "ONC";
     uint8 public constant decimals = 18;
 
     uint256 public constant decimalFactor = 10 ** uint256(decimals);

@@ -48,8 +48,8 @@ contract ERC20Interface {
 }
 
 contract PlatoToken is Owned, ERC20Interface {
-  string  public name = &quot;Plato&quot;; 
-  string  public symbol = &quot;PAT&quot;; 
+  string  public name = "Plato"; 
+  string  public symbol = "PAT"; 
   uint8   public decimals = 8; 
   uint256 public totalSupply = 100000000;
   mapping (address => uint256) public balanceOf;

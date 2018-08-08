@@ -94,9 +94,9 @@ contract FluencePreSale is Haltable, SafeMath {
      *  Constants
     /*/
 
-    string public constant name = &quot;Fluence Presale Token&quot;;
+    string public constant name = "Fluence Presale Token";
 
-    string public constant symbol = &quot;FPT&quot;;
+    string public constant symbol = "FPT";
 
     uint   public constant decimals = 18;
 

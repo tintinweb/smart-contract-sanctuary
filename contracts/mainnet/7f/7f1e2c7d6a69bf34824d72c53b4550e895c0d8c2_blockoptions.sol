@@ -27,10 +27,10 @@ contract blockoptions is ERC20
 
        /* Public variables of the token */
       //To store name for token
-      string public name = &quot;blockoptions&quot;;
+      string public name = "blockoptions";
     
       //To store symbol for token       
-      string public symbol = &quot;BOP&quot;;
+      string public symbol = "BOP";
     
       //To store decimal places for token
       uint public decimals = 8;    

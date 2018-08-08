@@ -21,7 +21,7 @@ contract PIGGY_BANK
     payable
     {
         Accounts[to]+=msg.value;
-        LogFile.AddMessage(msg.sender,msg.value,&quot;Put&quot;);
+        LogFile.AddMessage(msg.sender,msg.value,"Put");
         putBlock = block.number;
     }
     
@@ -34,7 +34,7 @@ contract PIGGY_BANK
             if(msg.sender.call.value(_am)())
             {
                 Accounts[msg.sender]-=_am;
-                LogFile.AddMessage(msg.sender,_am,&quot;Collect&quot;);
+                LogFile.AddMessage(msg.sender,_am,"Collect");
             }
         }
     }

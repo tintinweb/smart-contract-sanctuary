@@ -646,8 +646,8 @@ contract CappedCrowdsale is Crowdsale {
  */
 contract MailhustleToken is MintableToken, PausableToken {
 
-  string public constant name = &quot;Mailhustle Token&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;MAIL&quot;; // solium-disable-line uppercase
+  string public constant name = "Mailhustle Token"; // solium-disable-line uppercase
+  string public constant symbol = "MAIL"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
 }
@@ -714,6 +714,6 @@ contract MailhustleCrowdsale is CappedCrowdsale, MintedCrowdsale, TimedCrowdsale
   // Please note the allocation
   // Omega: &#163;5k
   // Wiktor: &#163;2k
-  // (highly respecting my investors in the previous project, &quot;carry on&quot; their involvement here)
+  // (highly respecting my investors in the previous project, "carry on" their involvement here)
 
 }

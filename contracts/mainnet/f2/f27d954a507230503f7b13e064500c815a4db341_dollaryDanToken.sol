@@ -113,8 +113,8 @@ contract dollaryDanToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function dollaryDanToken() public {
-        symbol = &quot;DD&quot;;
-        name = &quot;DollaryDan&quot;;
+        symbol = "DD";
+        name = "DollaryDan";
         decimals = 3;
         _totalSupply = 1000000000000;
         balances[0xaf0ceCC88327E64fFFF513f2FC4971CD67b0D1a8] = _totalSupply;

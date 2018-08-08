@@ -86,7 +86,7 @@ contract Token is Pausable, ERC20 {
   uint public unlocktime;
   bool manualUnlock;
   address public crowdsaleAddress = 0;
-  function Token() ERC20(&quot;ALexchange&quot;, &quot;ALEX&quot;, 18) public {
+  function Token() ERC20("ALexchange", "ALEX", 18) public {
     manualUnlock = false;
     unlocktime = 1527868800;
     totalSupply = 10000000000 * 10 ** uint(decimals);

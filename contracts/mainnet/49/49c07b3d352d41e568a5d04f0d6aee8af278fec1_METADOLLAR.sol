@@ -76,8 +76,8 @@ contract SafeMath {
 
 contract METADOLLAR is ERC20Interface, owned, SafeMath {
 
-	string public constant name = &quot;METADOLLAR&quot;;
-	string public constant symbol = &quot;DOL&quot;;
+	string public constant name = "METADOLLAR";
+	string public constant symbol = "DOL";
 	uint public constant decimals = 18;
 	uint256 public _totalSupply = 1000000000000000000000000000;
 	uint256 public icoMin = 1000000000000000000000000000;					// = 300000; amount is in Tokens, 1.800.000
@@ -242,7 +242,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath {
 
 	/// @notice  Send _value amount of tokens from address _from to address _to
 	/// @notice  The transferFrom method is used for a withdraw workflow, allowing contracts to send
-	/// @notice  tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+	/// @notice  tokens on your behalf, for example to "deposit" to a contract address and/or to charge
 	/// @notice  fees in sub-currencies; the command should fail unless the _from account has
 	/// @notice  deliberately authorized the sender of the message via some mechanism; we propose
 	/// @notice  these standardized APIs for approval:
@@ -258,7 +258,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath {
 		require(tokenBalanceOf[_from] - _value < tokenBalanceOf[_from]);
 		require(tokenBalanceOf[_to] + _value > tokenBalanceOf[_to]);
 		require(_value > 0);
-		orderToTransfer(msg.sender, _from, _to, _value, &quot;Order to transfer tokens from allowed account&quot;);
+		orderToTransfer(msg.sender, _from, _to, _value, "Order to transfer tokens from allowed account");
 		_transfer(_from, _to, _value);
 		allowed[_from][msg.sender] -= _value;
 		return true;
@@ -278,7 +278,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath {
 	function checkMinimalGoal() internal {
 		if(tokenBalanceOf[this] <= _totalSupply - icoMin) {
 			minimalGoalReached = true;
-			minGoalReached(icoMin, &quot;Minimal goal of ICO is reached!&quot;);
+			minGoalReached(icoMin, "Minimal goal of ICO is reached!");
 		}
 	}
 
@@ -286,7 +286,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath {
 	function checkPreIcoStatus() internal {
 		if(tokenBalanceOf[this] <= _totalSupply - preIcoLimit) {
 			preIcoIsRunning = false;
-			preIcoEnded(preIcoLimit, &quot;Token amount for preICO sold!&quot;);
+			preIcoEnded(preIcoLimit, "Token amount for preICO sold!");
 		}
 	}
 
@@ -348,7 +348,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath {
 		}
 		
 		if(oldPrice != currentTokenPrice) {
-			priceUpdated(oldPrice, currentTokenPrice, &quot;Token price updated!&quot;);
+			priceUpdated(oldPrice, currentTokenPrice, "Token price updated!");
 		}
 	}
 
@@ -396,9 +396,9 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath {
 		require(account != supervisor);
 		frozenAccount[account] = freeze;
 		if(freeze) {
-			FrozenFunds(msg.sender, account, &quot;Account set frozen!&quot;);
+			FrozenFunds(msg.sender, account, "Account set frozen!");
 		}else {
-			FrozenFunds(msg.sender, account, &quot;Account set free for use!&quot;);
+			FrozenFunds(msg.sender, account, "Account set free for use!");
 		}
 	}
 
@@ -413,7 +413,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath {
 		tokenBalanceOf[this] += amount;
 		allowed[this][owner] = tokenBalanceOf[this];
 		allowed[this][supervisor] = tokenBalanceOf[this];
-		tokenCreated(msg.sender, amount, &quot;Additional tokens created!&quot;);
+		tokenCreated(msg.sender, amount, "Additional tokens created!");
 	}
 
 	/// @notice Destroy an amount of token
@@ -428,7 +428,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath {
 		_totalSupply -= amount;
 		allowed[this][owner] = tokenBalanceOf[this];
 		allowed[this][supervisor] = tokenBalanceOf[this];
-		tokenDestroyed(msg.sender, amount, &quot;An amount of tokens destroyed!&quot;);
+		tokenDestroyed(msg.sender, amount, "An amount of tokens destroyed!");
 	}
 
 	/// @notice Transfer the ownership to another account
@@ -454,7 +454,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath {
 		uint256 contractbalance = this.balance;
 		address sender = msg.sender;
 		require(contractbalance >= summeInWei);
-		withdrawed(sender, summeInWei, &quot;wei withdrawed&quot;);
+		withdrawed(sender, summeInWei, "wei withdrawed");
         sender.transfer(summeInWei);
 	}
 
@@ -462,7 +462,7 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath {
 	function deposit() payable isOwner {
 		require(msg.value > 0);
 		require(msg.sender.balance >= msg.value);
-		deposited(msg.sender, msg.value, &quot;wei deposited&quot;);
+		deposited(msg.sender, msg.value, "wei deposited");
 	}
 
 	/// @notice Allow user to exit ICO
@@ -478,9 +478,9 @@ contract METADOLLAR is ERC20Interface, owned, SafeMath {
 		require(icoIsClosed != icoIsStopped);
 		icoIsClosed = icoIsStopped;
 		if(icoIsStopped) {
-			icoStatusUpdated(msg.sender, &quot;Coin offering was stopped!&quot;);
+			icoStatusUpdated(msg.sender, "Coin offering was stopped!");
 		}else {
-			icoStatusUpdated(msg.sender, &quot;Coin offering is running!&quot;);
+			icoStatusUpdated(msg.sender, "Coin offering is running!");
 		}
 	}
 

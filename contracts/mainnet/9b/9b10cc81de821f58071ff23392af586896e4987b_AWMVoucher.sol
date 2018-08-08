@@ -155,8 +155,8 @@ contract AWMVoucher is ERC20Interface, SafeMath, StopTrade {
     // ------------------------------------------------------------------------
     function AWMVoucher() public {
 
-        symbol = &quot;ATEST&quot;;
-        name = &quot;AWM Test Token&quot;;
+        symbol = "ATEST";
+        name = "AWM Test Token";
         decimals = 6;
 
         _totalSupply = 100000000000 * 10**uint(decimals);

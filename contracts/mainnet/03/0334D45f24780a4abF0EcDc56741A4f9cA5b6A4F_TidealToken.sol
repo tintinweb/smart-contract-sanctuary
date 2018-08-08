@@ -173,10 +173,10 @@ contract StandardToken is SafeMath, Token {
 contract TidealToken is StandardToken {
 
     // metadata
-    string public constant name = &quot;Tideal Token&quot;;
-    string public constant symbol = &quot;TDT&quot;;
+    string public constant name = "Tideal Token";
+    string public constant symbol = "TDT";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
     uint256 public constant tokenCreationCap =  10 * (10**9) * 10**decimals;
 
     // fund accounts

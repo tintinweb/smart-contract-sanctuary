@@ -2,14 +2,14 @@
 
   Copyright 2017 ZeroEx Intl.
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -21,14 +21,14 @@
 
   Copyright 2017 ZeroEx Intl.
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -289,7 +289,7 @@ contract Exchange is SafeMath, Ownable {
         INSUFFICIENT_BALANCE_OR_ALLOWANCE // Insufficient balance or allowance for token transfer
     }
 
-    string constant public VERSION = &quot;1.0.0&quot;;
+    string constant public VERSION = "1.0.0";
     uint16 constant public EXTERNAL_QUERY_GAS_LIMIT = 4999;    // Changes to state require at least 5000 gas
 
     address public ZRX_TOKEN_CONTRACT;
@@ -716,7 +716,7 @@ contract Exchange is SafeMath, Ownable {
     }
 
     function getKeccak(bytes32 hash) public constant returns(bytes32) {
-        return keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash);
+        return keccak256("\x19Ethereum Signed Message:\n32", hash);
     }
 
     function getSigner(
@@ -729,7 +729,7 @@ contract Exchange is SafeMath, Ownable {
         returns (address)
     {
         return ecrecover(
-            keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),
+            keccak256("\x19Ethereum Signed Message:\n32", hash),
             v,
             r,
             s
@@ -740,7 +740,7 @@ contract Exchange is SafeMath, Ownable {
         /* prefix might be needed for geth only
          * https://github.com/ethereum/go-ethereum/issues/3731
          */
-        bytes memory prefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
+        bytes memory prefix = "\x19Ethereum Signed Message:\n32";
         h = sha3(prefix, h);
 
         address addr = ecrecover(h, v, r, s);
@@ -783,7 +783,7 @@ contract Exchange is SafeMath, Ownable {
         returns (bool)
     {
         return signer == ecrecover(
-            keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),
+            keccak256("\x19Ethereum Signed Message:\n32", hash),
             v,
             r,
             s

@@ -36,7 +36,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -256,8 +256,8 @@ contract MintableToken is StandardToken, Ownable {
 //Token parameters
 
 contract AxtrustICOToken is MintableToken{
-	string public constant name = &quot;AXTRUST&quot;;
-	string public constant symbol = &quot;TRU&quot;;
+	string public constant name = "AXTRUST";
+	string public constant symbol = "TRU";
 	uint public constant decimals = 18;
 }
 
@@ -270,7 +270,7 @@ contract AxtrustICOToken is MintableToken{
  * as they arrive.
  */
 contract AxtrustICO is Ownable {
-  string public constant name = &quot;AxtrustICO&quot;;
+  string public constant name = "AxtrustICO";
   using SafeMath for uint256;
 
   // The token being sold
@@ -287,7 +287,7 @@ contract AxtrustICO is Ownable {
   // amount of raised money in wei
   uint256 public weiRaised;
   
-  string public saleStatus = &quot;Not started&quot;;
+  string public saleStatus = "Not started";
   
   uint public tokensMinted = 0;
   
@@ -306,14 +306,14 @@ contract AxtrustICO is Ownable {
     token = createTokenContract();
     startTime = now;
     rate = _rate;
-	saleStatus = &quot;AxTrust ICO is running&quot;;
+	saleStatus = "AxTrust ICO is running";
   }
   
   
   function stopICO() public onlyOwner {
 	isFinished = true;
 	endTime = now;
-	saleStatus = &quot;AxTrust ICO is finished&quot;;
+	saleStatus = "AxTrust ICO is finished";
   }
   
   function setRate(uint _rate) public onlyOwner {
@@ -356,7 +356,7 @@ contract AxtrustICO is Ownable {
 	if (tokensMinted == HARD_CAP_TOKENS) {
 		isFinished = true;
 		endTime = now;
-		saleStatus = &quot;Hardcap reached!&quot;;
+		saleStatus = "Hardcap reached!";
 	}
 	
 	
@@ -377,7 +377,7 @@ contract AxtrustICO is Ownable {
 	if (tokensMinted == HARD_CAP_TOKENS) {
 		isFinished = true;
 		endTime = now;
-		saleStatus = &quot;Hardcap reached!&quot;;
+		saleStatus = "Hardcap reached!";
 	}
 
   }

@@ -218,7 +218,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -376,8 +376,8 @@ contract Restrictable is Ownable {
 }
 
 contract GEMERAToken is MintableToken, BurnableToken, Restrictable {
-  string public constant name = &quot;G_TEST&quot;;
-  string public constant symbol = &quot;GTEST&quot;;
+  string public constant name = "G_TEST";
+  string public constant symbol = "GTEST";
   uint32 public constant decimals = 18;
 
   function GEMERAToken(address[50] _addrs) public BurnableToken(_addrs) {}

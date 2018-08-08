@@ -101,8 +101,8 @@ contract MetronomeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MetronomeToken() public {
-        symbol = &quot;MET&quot;;
-        name = &quot;Metronome Token&quot;;
+        symbol = "MET";
+        name = "Metronome Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0xaf892edC9515Ba62151d44219eA2149A86B86F93] = _totalSupply;

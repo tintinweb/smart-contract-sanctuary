@@ -40,7 +40,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -586,8 +586,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract LSDToken is CappedToken, PausableToken, BurnableToken {
 
-    string public constant name = &quot;LSD&quot;;
-    string public constant symbol = &quot;LSD&quot;;
+    string public constant name = "LSD";
+    string public constant symbol = "LSD";
     uint8 public constant decimals = 18;
 
     function LSDToken(uint256 _cap)

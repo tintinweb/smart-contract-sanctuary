@@ -113,8 +113,8 @@ contract GToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
     function GToken() public {
-        symbol = &quot;GT&quot;;
-        name = &quot;G Token&quot;;
+        symbol = "GT";
+        name = "G Token";
         decimals = 4;
         bonusEnds = now;
         endDate = now + 7 weeks;

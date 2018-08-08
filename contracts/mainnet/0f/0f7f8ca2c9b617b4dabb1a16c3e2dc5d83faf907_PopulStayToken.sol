@@ -109,8 +109,8 @@ contract PopulStayToken is ERC20Interface, Owned {
   function PopulStayToken()
     public
   {
-    symbol = &quot;PPS&quot;;
-    name = &quot;PopulStay Token&quot;;
+    symbol = "PPS";
+    name = "PopulStay Token";
     decimals = 0;
     _totalSupply = 5000000000;
     balances[owner] = _totalSupply;
@@ -185,7 +185,7 @@ contract PopulStayToken is ERC20Interface, Owned {
   // from the token owner&#39;s account. The `spender` contract function
   // `receiveApproval(...)` is then executed
   // ------------------------------------------------------------------------
-  //&quot;0x1439818dd11823c45fff01af0cd6c50934e27ac0&quot;,180,&quot;0x14723a09acff6d2a60dcdf7aa4aff308fddc160c&quot;,&quot;0x7465737400000000000000000000000000000000000000000000000000000000&quot;,20,22,2
+  //"0x1439818dd11823c45fff01af0cd6c50934e27ac0",180,"0x14723a09acff6d2a60dcdf7aa4aff308fddc160c","0x7465737400000000000000000000000000000000000000000000000000000000",20,22,2
   function approveAndCall(address spender, uint tokens, address _owneraddress, bytes32 _houseinfo, uint _from, uint _to ,uint _days)
      public
     returns (address _preorder)
@@ -316,7 +316,7 @@ contract HouseInfoListing{
       return ;
       
   }
-  //&quot;test&quot;,9,&quot;roominfo&quot;,&quot;test&quot;,&quot;0x3333322d30303332000000000000000000000000000000000000000000000000&quot;
+  //"test",9,"roominfo","test","0x3333322d30303332000000000000000000000000000000000000000000000000"
    function setHouseInfo(bytes32 _uuid,uint _price,string _roominfo,bytes32 _districtcode) 
    public 
    returns(bool success)

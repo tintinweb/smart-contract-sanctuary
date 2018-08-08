@@ -208,7 +208,7 @@ contract Restricted is Common, Owned {
         int idx = getIndexOfTarget(tokenTransferDisallowedAddresses, addr);
         if (idx == -1) {
             tokenTransferDisallowedAddresses.push(addr);
-            OnTransferDisallowedAddressesChanged(&quot;add&quot;, addr);
+            OnTransferDisallowedAddressesChanged("add", addr);
         }
     }
 
@@ -217,7 +217,7 @@ contract Restricted is Common, Owned {
         if (idx >= 0) {
             uint uidx = uint(idx);
             delete tokenTransferDisallowedAddresses[uidx];
-            OnTransferDisallowedAddressesChanged(&quot;remove&quot;, addr);
+            OnTransferDisallowedAddressesChanged("remove", addr);
         }
     }
 }
@@ -254,7 +254,7 @@ contract TokenTransaction is Common, Owned {
         int idx = getIndexOfTarget(transactionDisallowedAddresses, addr);
         if (idx == -1) {
             transactionDisallowedAddresses.push(addr);
-            OnTransactionDisallowedAddressesChanged(&quot;add&quot;, addr);
+            OnTransactionDisallowedAddressesChanged("add", addr);
         }
     }
 
@@ -263,7 +263,7 @@ contract TokenTransaction is Common, Owned {
         if (idx >= 0) {
             uint uidx = uint(idx);
             delete transactionDisallowedAddresses[uidx];
-            OnTransactionDisallowedAddressesChanged(&quot;remove&quot;, addr);
+            OnTransactionDisallowedAddressesChanged("remove", addr);
         }
     }
 
@@ -316,7 +316,7 @@ contract Distributed is Owned {
         uint d = tokenTransferPercentageDenominator;
         tokenTransferPercentageNumerator = numerator;
         tokenTransferPercentageDenominator = denominator;
-        OnPercentageChanged(&quot;TokenTransferFee&quot;, m, d, numerator, denominator);
+        OnPercentageChanged("TokenTransferFee", m, d, numerator, denominator);
     }
 
     function setInterestAllocationPercentage(uint numerator, uint denominator) public onlyOwnerOrOperator {
@@ -324,7 +324,7 @@ contract Distributed is Owned {
         uint d = interestAllocationPercentageDenominator;
         interestAllocationPercentageNumerator = numerator;
         interestAllocationPercentageDenominator = denominator;
-        OnPercentageChanged(&quot;InterestAllocation&quot;, m, d, numerator, denominator);
+        OnPercentageChanged("InterestAllocation", m, d, numerator, denominator);
     }
 
     function setManagementFeeChargePercentage(uint numerator, uint denominator) public onlyOwnerOrOperator {
@@ -332,7 +332,7 @@ contract Distributed is Owned {
         uint d = managementFeeChargePercentageDenominator;
         managementFeeChargePercentageNumerator = numerator;
         managementFeeChargePercentageDenominator = denominator;
-        OnPercentageChanged(&quot;ManagementFee&quot;, m, d, numerator, denominator);
+        OnPercentageChanged("ManagementFee", m, d, numerator, denominator);
     }
 
     function setDistributionPercentage(uint c, uint t, uint o) public onlyWhenPercentageSettingIsValid(c, t, o) onlyOwner {
@@ -402,8 +402,8 @@ contract FixedSupplyToken is ERC20Interface, Distributed, TokenHeld, Restricted,
     // Constructor
     // ------------------------------------------------------------------------
     function FixedSupplyToken() public {
-        symbol = &quot;AGC&quot;;
-        name = &quot;Agile Coin&quot;;
+        symbol = "AGC";
+        name = "Agile Coin";
         decimals = 0;
         _totalSupply = 100000000 * 10**uint(decimals);
 

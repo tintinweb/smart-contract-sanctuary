@@ -186,7 +186,7 @@ contract CryptosisToken is owned, TokenERC20 {
         uint256 initialSupply,
         string tokenName,
         string tokenSymbol
-    ) TokenERC20(42000000, &quot;Cryptosis&quot;, &quot;CRY&quot;) public {} 
+    ) TokenERC20(42000000, "Cryptosis", "CRY") public {} 
     /*TokenERC20(initialSupply, tokenName, tokenSymbol) public {}*/
 
     /* Internal transfer, only can be called by this contract */

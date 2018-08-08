@@ -184,9 +184,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract MyToken is StandardToken {
 
-    string public name = &quot;xuekai&quot;;
+    string public name = "xuekai";
 
-    string public symbol = &quot;XK&quot;;
+    string public symbol = "XK";
 
     uint8 public decimals = 2;
 

@@ -96,8 +96,8 @@ contract GangnamToken is UnboundedRegularToken {
 
     uint public totalSupply = 20*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;GangnamToken&quot;;
-    string constant public symbol = &quot;GNLT&quot;;
+    string constant public name = "GangnamToken";
+    string constant public symbol = "GNLT";
 
     function GangnamToken() {
         balances[msg.sender] = totalSupply;

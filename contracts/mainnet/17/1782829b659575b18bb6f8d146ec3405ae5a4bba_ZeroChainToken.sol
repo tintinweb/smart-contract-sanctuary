@@ -116,8 +116,8 @@ contract ZeroChainToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZeroChainToken() public {
-        symbol = &quot;ZCHAIN&quot;;
-        name = &quot;ZeroChain Network&quot;;
+        symbol = "ZCHAIN";
+        name = "ZeroChain Network";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         endDate = now + 6 weeks;

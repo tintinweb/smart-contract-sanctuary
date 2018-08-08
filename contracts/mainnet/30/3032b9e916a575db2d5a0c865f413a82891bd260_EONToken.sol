@@ -127,8 +127,8 @@ contract StandardToken is ERC20 {
 }
 
 contract EONToken is StandardToken {
-  string public constant name = &quot;EOS Network&quot;;
-  string public constant symbol = &quot;EON&quot;;
+  string public constant name = "EOS Network";
+  string public constant symbol = "EON";
   uint8 public constant decimals = 18;
 
   constructor() public {

@@ -273,8 +273,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 
 contract LCAP is StandardBurnableToken {
 
-  string public constant name = &quot;LCAP&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;LCAP&quot;; // solium-disable-line uppercase
+  string public constant name = "LCAP"; // solium-disable-line uppercase
+  string public constant symbol = "LCAP"; // solium-disable-line uppercase
   uint8 public constant decimals = 8; // solium-disable-line uppercase
   address public constant tokenOwner = 0x37AFA1fB509Ce26Ec430420522726fe57dCc6242;
   uint256 public constant INITIAL_SUPPLY = 25000000 * (10 ** uint256(decimals));

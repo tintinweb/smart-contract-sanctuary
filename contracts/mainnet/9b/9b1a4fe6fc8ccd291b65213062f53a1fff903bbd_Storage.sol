@@ -306,7 +306,7 @@ contract Storage is SafeMath, StringMover {
 }
 
 contract GoldFiatFee is CreatorEnabled, StringMover {
-    string gmUserId = &quot;&quot;;
+    string gmUserId = "";
 
     // Functions:
     function GoldFiatFee(string _gmUserId) {
@@ -469,27 +469,27 @@ contract StorageController is SafeMath, CreatorEnabled, StringMover {
     }
 
     function getGoldTransaction(string _userId, uint _index) public constant returns(int) {
-        require(keccak256(_userId) != keccak256(&quot;&quot;));
+        require(keccak256(_userId) != keccak256(""));
 
         return stor.getGoldTransaction(_userId, _index);
     }
 
     function getUserHotGoldBalance(string _userId) public constant returns(uint) {
-        require(keccak256(_userId) != keccak256(&quot;&quot;));
+        require(keccak256(_userId) != keccak256(""));
 
         return stor.getUserHotGoldBalance(_userId);
     }
 
 
     function addBuyTokensRequest(string _userId, string _requestHash) public returns(uint) {
-        require(keccak256(_userId) != keccak256(&quot;&quot;));
+        require(keccak256(_userId) != keccak256(""));
 
         NewTokenBuyRequest(msg.sender, _userId);
         return stor.addBuyTokensRequest(msg.sender, _userId, _requestHash);
     }
 
     function addSellTokensRequest(string _userId, string _requestHash) public returns(uint) {
-      require(keccak256(_userId) != keccak256(&quot;&quot;));
+      require(keccak256(_userId) != keccak256(""));
 
       NewTokenSellRequest(msg.sender, _userId);
 
@@ -534,7 +534,7 @@ contract StorageController is SafeMath, CreatorEnabled, StringMover {
     }
 
     function processBuyRequest(string _userId, address _userAddress, uint _amountCents, uint _centsPerGold) internal {
-        require(keccak256(_userId) != keccak256(&quot;&quot;));
+        require(keccak256(_userId) != keccak256(""));
 
         uint userFiatBalance = getUserFiatBalance(_userId);
         require(userFiatBalance > 0);
@@ -576,7 +576,7 @@ contract StorageController is SafeMath, CreatorEnabled, StringMover {
     }
 
     function processSellRequest(string _userId, address _userAddress, uint _amountCents, uint _centsPerGold) internal {
-        require(keccak256(_userId) != keccak256(&quot;&quot;));
+        require(keccak256(_userId) != keccak256(""));
 
         uint tokens = (uint(_amountCents) * 1 ether) / _centsPerGold;
         uint tokenBalance = goldToken.balanceOf(_userAddress);
@@ -629,7 +629,7 @@ contract StorageController is SafeMath, CreatorEnabled, StringMover {
     }
 
     function transferGoldFromHotWallet(address _to, uint _value, string _userId) onlyManagerOrCreator public {
-      require(keccak256(_userId) != keccak256(&quot;&quot;));
+      require(keccak256(_userId) != keccak256(""));
 
       uint balance = getUserHotGoldBalance(_userId);
       require(balance >= _value);

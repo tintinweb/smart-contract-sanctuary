@@ -14,7 +14,7 @@ pragma solidity ^0.4.18;
 
 
 contract HelloWorld{
-    string input = &quot;Hello world.&quot;;
+    string input = "Hello world.";
 
     function sayHello() view public returns (string) {
         return input;

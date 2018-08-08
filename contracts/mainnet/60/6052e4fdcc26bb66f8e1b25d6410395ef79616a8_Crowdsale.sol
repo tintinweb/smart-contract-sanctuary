@@ -192,7 +192,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -346,8 +346,8 @@ contract FoxTradingToken is MintableToken {
    * @dev Constructor that gives the founder all of the existing tokens.
    */
     function FoxTradingToken() public {
-        name = &quot;Fox Trading&quot;;
-        symbol = &quot;FOXT&quot;;
+        name = "Fox Trading";
+        symbol = "FOXT";
         decimals = 18;
         totalSupply = 3000000e18;
         founder = 0x698825d0CfeeD6F65E981FFB543ef5196A5C2A5A;

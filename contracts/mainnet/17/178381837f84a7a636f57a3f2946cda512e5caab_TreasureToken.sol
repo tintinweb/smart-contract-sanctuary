@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract TreasureToken {
 
-    string public name = &quot;Treasure Token&quot;;      //  token name
-    string public symbol = &quot;TST&quot;;           //  token symbol
+    string public name = "Treasure Token";      //  token name
+    string public symbol = "TST";           //  token symbol
     uint256 public decimals = 8;            //  token digit
 
     mapping (address => uint256) public balanceOf;

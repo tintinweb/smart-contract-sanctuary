@@ -124,8 +124,8 @@ contract ERC20 {
 /// @title ZiberToken contract - standard ERC20 token with Short Hand Attack and approve() race condition mitigation.
 /// @author <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="86e2e3f0c6f5ebe7f4f2e5e9e8f2f4e7e5f2e3e7eba8e5e9eb">[email&#160;protected]</a>
 contract ZiberToken is SafeMath, ERC20, Ownable {
- string public name = &quot;Ziber Token&quot;;
- string public symbol = &quot;ZBR&quot;;
+ string public name = "Ziber Token";
+ string public symbol = "ZBR";
  uint public decimals = 8;
  uint public constant FROZEN_TOKENS = 1e7;
  uint public constant FREEZE_PERIOD = 1 years;

@@ -33,7 +33,7 @@ contract DefaltToken is ERC20Interface {
         
     /* Modifiers */
     modifier onlyCreator{
-        require( msg.sender == creator, &quot;Unauthorized.&quot;);
+        require( msg.sender == creator, "Unauthorized.");
         _;
     }
 

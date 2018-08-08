@@ -4,8 +4,8 @@ contract	RENAULT_301201				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	RENAULT_301201		&quot;	;
-	string	public		symbol =	&quot;	RENI		&quot;	;
+	string	public		name =	"	RENAULT_301201		"	;
+	string	public		symbol =	"	RENI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10641072767863300000000000					;	

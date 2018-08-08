@@ -75,8 +75,8 @@ contract PrestoToken is StandardToken {
     function PrestoToken() public {
         totalSupply = 1000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Presto Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;PRST&quot;;                               // Set the symbol for display purposes
+        name = "Presto Token";                                   // Set the name for display purposes
+        symbol = "PRST";                               // Set the symbol for display purposes
     }
 
     /* Internal transfer, only can be called by this contract */

@@ -178,8 +178,8 @@ contract ERC223Interface {
 contract AkiCoin is ERC223Interface, ERC20CompatibleToken {
     using SafeMath for uint;
 
-    string  public name    = &quot;AkiCoin&quot;;
-    string  public symbol  = &quot;AKI&quot;;
+    string  public name    = "AkiCoin";
+    string  public symbol  = "AKI";
     uint8   public decimals = 18;
     uint256 public totalSupply = 2300000 * 10 ** 18;
 

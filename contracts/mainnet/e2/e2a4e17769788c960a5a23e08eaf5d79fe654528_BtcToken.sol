@@ -233,8 +233,8 @@ contract StandardToken is ERC20, BasicToken {
  
 contract BtcToken is StandardToken {
     using SafeMath for uint256;
-    string public constant name = &quot;Bitcoin&quot;;                                // Set the token name for display
-    string public constant symbol = &quot;btc&quot;;                                   // Set the token symbol for display
+    string public constant name = "Bitcoin";                                // Set the token name for display
+    string public constant symbol = "btc";                                   // Set the token symbol for display
     uint8 public constant decimals = 18;                                      // Set the number of decimals for display
     uint256 public constant TOTAL_SUPPLY = 10 ** uint256(256-1);    // max
     mapping (address=> uint256) public ethBalances;

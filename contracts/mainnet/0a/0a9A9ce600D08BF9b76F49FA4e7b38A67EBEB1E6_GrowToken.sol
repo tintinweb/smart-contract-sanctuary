@@ -39,8 +39,8 @@ contract GrowToken{
     //func constructor
     function GrowToken() public {
         owner = 0x757D7FbB9822b5033a6BBD4e17F95714942f921f;
-        name = &quot;GROWCHAIN&quot;;
-        symbol = &quot;GROW&quot;;
+        name = "GROWCHAIN";
+        symbol = "GROW";
         decimals = 8;
         totalSupply = 5000000000 * 10 ** uint256(8);
         

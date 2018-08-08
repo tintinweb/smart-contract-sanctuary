@@ -154,8 +154,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract HOWL is StandardToken{
     
-  string public constant name = &quot;HOWL&quot;;
-  string public constant symbol = &quot;HOWL&quot;;
+  string public constant name = "HOWL";
+  string public constant symbol = "HOWL";
   uint256 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 64000000000000000000000000;

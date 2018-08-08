@@ -243,7 +243,7 @@ pragma solidity 		^0.4.21	;
 // IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT											
 											
 											
-	string	inData_1	=	&quot;	0			&quot;	;		
+	string	inData_1	=	"	0			"	;		
 											
 	function	setData_1	(	string	newData_1	)	public	onlyOwner	{		
 		inData_1	=	newData_1	;						
@@ -258,7 +258,7 @@ pragma solidity 		^0.4.21	;
 // IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT											
 											
 											
-	string	inData_2	=	&quot;	0			&quot;	;		
+	string	inData_2	=	"	0			"	;		
 											
 	function	setData_2	(	string	newData_2	)	public	onlyOwner	{		
 		inData_2	=	newData_2	;						
@@ -273,7 +273,7 @@ pragma solidity 		^0.4.21	;
 // IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT											
 											
 											
-	string	inData_3	=	&quot;	0			&quot;	;		
+	string	inData_3	=	"	0			"	;		
 											
 	function	setData_3	(	string	newData_3	)	public	onlyOwner	{		
 		inData_3	=	newData_3	;						
@@ -288,7 +288,7 @@ pragma solidity 		^0.4.21	;
 // IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT											
 											
 											
-	string	inData_4	=	&quot;	0			&quot;	;		
+	string	inData_4	=	"	0			"	;		
 											
 	function	setData_4	(	string	newData_4	)	public	onlyOwner	{		
 		inData_4	=	newData_4	;						
@@ -303,7 +303,7 @@ pragma solidity 		^0.4.21	;
 // IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT											
 											
 											
-	string	inData_5	=	&quot;	0			&quot;	;		
+	string	inData_5	=	"	0			"	;		
 											
 	function	setData_5	(	string	newData_5	)	public	onlyOwner	{		
 		inData_5	=	newData_5	;						
@@ -325,7 +325,7 @@ pragma solidity 		^0.4.21	;
 // IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT											
 											
 											
-	string	inData_6	=	&quot;	0			&quot;	;		
+	string	inData_6	=	"	0			"	;		
 											
 	function	setData_6	(	string	newData_6	)	public	onlyOwner	{		
 		inData_6	=	newData_6	;						
@@ -340,7 +340,7 @@ pragma solidity 		^0.4.21	;
 // IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT											
 											
 											
-	string	inData_7	=	&quot;	0			&quot;	;		
+	string	inData_7	=	"	0			"	;		
 											
 	function	setData_7	(	string	newData_7	)	public	onlyOwner	{		
 		inData_7	=	newData_7	;						
@@ -355,7 +355,7 @@ pragma solidity 		^0.4.21	;
 // IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT											
 											
 											
-	string	inData_8	=	&quot;	0			&quot;	;		
+	string	inData_8	=	"	0			"	;		
 											
 	function	setData_8	(	string	newData_8	)	public	onlyOwner	{		
 		inData_8	=	newData_8	;						
@@ -370,7 +370,7 @@ pragma solidity 		^0.4.21	;
 // IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT											
 											
 											
-	string	inData_9	=	&quot;	0			&quot;	;		
+	string	inData_9	=	"	0			"	;		
 											
 	function	setData_9	(	string	newData_9	)	public	onlyOwner	{		
 		inData_9	=	newData_9	;						
@@ -385,7 +385,7 @@ pragma solidity 		^0.4.21	;
 // IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT											
 											
 											
-	string	inData_10	=	&quot;	0			&quot;	;		
+	string	inData_10	=	"	0			"	;		
 											
 	function	setData_10	(	string	newData_10	)	public	onlyOwner	{		
 		inData_10	=	newData_10	;						

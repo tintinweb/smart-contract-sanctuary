@@ -231,8 +231,8 @@ contract ChibiFighters is ERC721, ContractOwned, CustomEvents {
 
     Chibi[] public chibies;
 
-    string public constant name = &quot;Chibi Fighters&quot;;
-    string public constant symbol = &quot;CBF&quot;;
+    string public constant name = "Chibi Fighters";
+    string public constant symbol = "CBF";
 
     // pause function so fusion and minting can be paused for updates
     bool paused;
@@ -260,7 +260,7 @@ contract ChibiFighters is ERC721, ContractOwned, CustomEvents {
         // set comission percentage 100-90 = 10%
         comission = 90; 
 
-        _infoUrlPrefix = &quot;https://chibigame.io/chibis.php?idj=&quot;;
+        _infoUrlPrefix = "https://chibigame.io/chibis.php?idj=";
     }
     
     /**
@@ -980,7 +980,7 @@ contract ChibiFighters is ERC721, ContractOwned, CustomEvents {
     // https://github.com/oraclize/ethereum-api/blob/master/oraclizeAPI_0.5.sol
     //
     function uint2str(uint i) internal pure returns (string) {
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint len;
         while (j != 0){

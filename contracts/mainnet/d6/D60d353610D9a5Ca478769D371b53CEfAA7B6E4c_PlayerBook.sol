@@ -96,36 +96,36 @@ contract PlayerBook {
             // No keys are purchased with this method, it&#39;s simply locking our addresses,
             // PID&#39;s and names for referral codes.
         plyr_[1].addr = 0x8e0d985f3Ec1857BEc39B76aAabDEa6B31B67d53;
-        plyr_[1].name = &quot;justo&quot;;
+        plyr_[1].name = "justo";
         plyr_[1].names = 1;
         pIDxAddr_[0x8e0d985f3Ec1857BEc39B76aAabDEa6B31B67d53] = 1;
-        pIDxName_[&quot;justo&quot;] = 1;
-        plyrNames_[1][&quot;justo&quot;] = true;
-        plyrNameList_[1][1] = &quot;justo&quot;;
+        pIDxName_["justo"] = 1;
+        plyrNames_[1]["justo"] = true;
+        plyrNameList_[1][1] = "justo";
         
         plyr_[2].addr = 0x8b4DA1827932D71759687f925D17F81Fc94e3A9D;
-        plyr_[2].name = &quot;mantso&quot;;
+        plyr_[2].name = "mantso";
         plyr_[2].names = 1;
         pIDxAddr_[0x8b4DA1827932D71759687f925D17F81Fc94e3A9D] = 2;
-        pIDxName_[&quot;mantso&quot;] = 2;
-        plyrNames_[2][&quot;mantso&quot;] = true;
-        plyrNameList_[2][1] = &quot;mantso&quot;;
+        pIDxName_["mantso"] = 2;
+        plyrNames_[2]["mantso"] = true;
+        plyrNameList_[2][1] = "mantso";
         
         plyr_[3].addr = 0x7ac74Fcc1a71b106F12c55ee8F802C9F672Ce40C;
-        plyr_[3].name = &quot;sumpunk&quot;;
+        plyr_[3].name = "sumpunk";
         plyr_[3].names = 1;
         pIDxAddr_[0x7ac74Fcc1a71b106F12c55ee8F802C9F672Ce40C] = 3;
-        pIDxName_[&quot;sumpunk&quot;] = 3;
-        plyrNames_[3][&quot;sumpunk&quot;] = true;
-        plyrNameList_[3][1] = &quot;sumpunk&quot;;
+        pIDxName_["sumpunk"] = 3;
+        plyrNames_[3]["sumpunk"] = true;
+        plyrNameList_[3][1] = "sumpunk";
         
         plyr_[4].addr = 0x18E90Fc6F70344f53EBd4f6070bf6Aa23e2D748C;
-        plyr_[4].name = &quot;inventor&quot;;
+        plyr_[4].name = "inventor";
         plyr_[4].names = 1;
         pIDxAddr_[0x18E90Fc6F70344f53EBd4f6070bf6Aa23e2D748C] = 4;
-        pIDxName_[&quot;inventor&quot;] = 4;
-        plyrNames_[4][&quot;inventor&quot;] = true;
-        plyrNameList_[4][1] = &quot;inventor&quot;;
+        pIDxName_["inventor"] = 4;
+        plyrNames_[4]["inventor"] = true;
+        plyrNameList_[4][1] = "inventor";
         
         pID_ = 4;
     }
@@ -141,13 +141,13 @@ contract PlayerBook {
         uint256 _codeLength;
         
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
         _;
     }
     
     modifier onlyDevs() 
     {
-        require(TeamJust.isDev(msg.sender) == true, &quot;msg sender is not a dev&quot;);
+        require(TeamJust.isDev(msg.sender) == true, "msg sender is not a dev");
         _;
     }
     
@@ -220,7 +220,7 @@ contract PlayerBook {
         payable 
     {
         // make sure name fees paid
-        require (msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require (msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
         
         // filter name + condition checks
         bytes32 _name = NameFilter.nameFilter(_nameString);
@@ -255,7 +255,7 @@ contract PlayerBook {
         payable 
     {
         // make sure name fees paid
-        require (msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require (msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
         
         // filter name + condition checks
         bytes32 _name = NameFilter.nameFilter(_nameString);
@@ -295,7 +295,7 @@ contract PlayerBook {
         payable 
     {
         // make sure name fees paid
-        require (msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require (msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
         
         // filter name + condition checks
         bytes32 _name = NameFilter.nameFilter(_nameString);
@@ -312,7 +312,7 @@ contract PlayerBook {
         // manage affiliate residuals
         // if no affiliate code was given or player tried to use their own, lolz
         uint256 _affID;
-        if (_affCode != &quot;&quot; && _affCode != _name)
+        if (_affCode != "" && _affCode != _name)
         {
             // get affiliate ID from aff Code 
             _affID = pIDxName_[_affCode];
@@ -341,10 +341,10 @@ contract PlayerBook {
         isHuman()
         public
     {
-        require(_gameID <= gID_, &quot;silly player, that game doesn&#39;t exist yet&quot;);
+        require(_gameID <= gID_, "silly player, that game doesn&#39;t exist yet");
         address _addr = msg.sender;
         uint256 _pID = pIDxAddr_[_addr];
-        require(_pID != 0, &quot;hey there buddy, you dont even have an account&quot;);
+        require(_pID != 0, "hey there buddy, you dont even have an account");
         uint256 _totalNames = plyr_[_pID].names;
         
         // add players profile and most recent name
@@ -366,7 +366,7 @@ contract PlayerBook {
     {
         address _addr = msg.sender;
         uint256 _pID = pIDxAddr_[_addr];
-        require(_pID != 0, &quot;hey there buddy, you dont even have an account&quot;);
+        require(_pID != 0, "hey there buddy, you dont even have an account");
         uint256 _laff = plyr_[_pID].laff;
         uint256 _totalNames = plyr_[_pID].names;
         bytes32 _name = plyr_[_pID].name;
@@ -396,7 +396,7 @@ contract PlayerBook {
         uint256 _pID = pIDxAddr_[msg.sender];
         
         // make sure they own the name 
-        require(plyrNames_[_pID][_name] == true, &quot;umm... thats not a name you own&quot;);
+        require(plyrNames_[_pID][_name] == true, "umm... thats not a name you own");
         
         // update their current name 
         plyr_[_pID].name = _name;
@@ -411,7 +411,7 @@ contract PlayerBook {
     {
         // if names already has been used, require that current msg sender owns the name
         if (pIDxName_[_name] != 0)
-            require(plyrNames_[_pID][_name] == true, &quot;sorry that names already taken&quot;);
+            require(plyrNames_[_pID][_name] == true, "sorry that names already taken");
         
         // add name to player profile, registry, and name book
         plyr_[_pID].name = _name;
@@ -501,7 +501,7 @@ contract PlayerBook {
         returns(bool, uint256)
     {
         // make sure name fees paid
-        require (msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require (msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
         
         // set up our tx event data and determine if player is new or not
         bool _isNewPlayer = determinePID(_addr);
@@ -533,7 +533,7 @@ contract PlayerBook {
         returns(bool, uint256)
     {
         // make sure name fees paid
-        require (msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require (msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
         
         // set up our tx event data and determine if player is new or not
         bool _isNewPlayer = determinePID(_addr);
@@ -569,7 +569,7 @@ contract PlayerBook {
         returns(bool, uint256)
     {
         // make sure name fees paid
-        require (msg.value >= registrationFee_, &quot;umm.....  you have to pay the name fee&quot;);
+        require (msg.value >= registrationFee_, "umm.....  you have to pay the name fee");
         
         // set up our tx event data and determine if player is new or not
         bool _isNewPlayer = determinePID(_addr);
@@ -580,7 +580,7 @@ contract PlayerBook {
         // manage affiliate residuals
         // if no affiliate code was given or player tried to use their own, lolz
         uint256 _affID;
-        if (_affCode != &quot;&quot; && _affCode != _name)
+        if (_affCode != "" && _affCode != _name)
         {
             // get affiliate ID from aff Code 
             _affID = pIDxName_[_affCode];
@@ -607,10 +607,10 @@ contract PlayerBook {
         onlyDevs()
         public
     {
-        require(gameIDs_[_gameAddress] == 0, &quot;derp, that games already been registered&quot;);
+        require(gameIDs_[_gameAddress] == 0, "derp, that games already been registered");
         
-        if (multiSigDev(&quot;addGame&quot;) == true)
-        {deleteProposal(&quot;addGame&quot;);
+        if (multiSigDev("addGame") == true)
+        {deleteProposal("addGame");
             gID_++;
             bytes32 _name = _gameNameStr.nameFilter();
             gameIDs_[_gameAddress] = gID_;
@@ -628,8 +628,8 @@ contract PlayerBook {
         onlyDevs()
         public
     {
-        if (multiSigDev(&quot;setRegistrationFee&quot;) == true)
-        {deleteProposal(&quot;setRegistrationFee&quot;);
+        if (multiSigDev("setRegistrationFee") == true)
+        {deleteProposal("setRegistrationFee");
             registrationFee_ = _fee;
         }
     }
@@ -680,14 +680,14 @@ library NameFilter {
         uint256 _length = _temp.length;
         
         //sorry limited to 32 characters
-        require (_length <= 32 && _length > 0, &quot;string must be between 1 and 32 characters&quot;);
+        require (_length <= 32 && _length > 0, "string must be between 1 and 32 characters");
         // make sure it doesnt start with or end with space
-        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, &quot;string cannot start or end with space&quot;);
+        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, "string cannot start or end with space");
         // make sure first two characters are not 0x
         if (_temp[0] == 0x30)
         {
-            require(_temp[1] != 0x78, &quot;string cannot start with 0x&quot;);
-            require(_temp[1] != 0x58, &quot;string cannot start with 0X&quot;);
+            require(_temp[1] != 0x78, "string cannot start with 0x");
+            require(_temp[1] != 0x58, "string cannot start with 0X");
         }
         
         // create a bool to track if we have a non number character
@@ -714,11 +714,11 @@ library NameFilter {
                     (_temp[i] > 0x60 && _temp[i] < 0x7b) ||
                     // or 0-9
                     (_temp[i] > 0x2f && _temp[i] < 0x3a),
-                    &quot;string contains invalid characters&quot;
+                    "string contains invalid characters"
                 );
                 // make sure theres not 2x spaces in a row
                 if (_temp[i] == 0x20)
-                    require( _temp[i+1] != 0x20, &quot;string cannot contain consecutive spaces&quot;);
+                    require( _temp[i+1] != 0x20, "string cannot contain consecutive spaces");
                 
                 // see if we have a character other than a number
                 if (_hasNonNumber == false && (_temp[i] < 0x30 || _temp[i] > 0x39))
@@ -726,7 +726,7 @@ library NameFilter {
             }
         }
         
-        require(_hasNonNumber == true, &quot;string cannot be only numbers&quot;);
+        require(_hasNonNumber == true, "string cannot be only numbers");
         
         bytes32 _ret;
         assembly {
@@ -760,7 +760,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -772,7 +772,7 @@ library SafeMath {
         pure
         returns (uint256) 
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -785,7 +785,7 @@ library SafeMath {
         returns (uint256 c) 
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
     
@@ -875,7 +875,7 @@ library SafeMath {
  *                                └────────────────────┘
  * (Step 1) import the library into your contract
  * 
- *    import &quot;./MSFun.sol&quot;;
+ *    import "./MSFun.sol";
  *
  * (Step 2) set up the signature data for msFun
  * 
@@ -887,9 +887,9 @@ library SafeMath {
  * 
  *     function functionName() 
  *     {
- *         if (MSFun.multiSig(msData, required signatures, &quot;functionName&quot;) == true)
+ *         if (MSFun.multiSig(msData, required signatures, "functionName") == true)
  *         {
- *             MSFun.deleteProposal(msData, &quot;functionName&quot;);
+ *             MSFun.deleteProposal(msData, "functionName");
  * 
  *             // put function body here 
  *         }
@@ -1115,7 +1115,7 @@ library MSFun {
         view
         returns (address signer)
     {
-        require(_signer > 0, &quot;MSFun checkSigner failed - 0 not allowed&quot;);
+        require(_signer > 0, "MSFun checkSigner failed - 0 not allowed");
         bytes32 _whatProposal = whatProposal(_whatFunction);
         return (self.proposal_[_whatProposal].log[_signer - 1]);
     }

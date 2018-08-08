@@ -266,4 +266,4 @@ contract SECToken is owned, TokenERC20 {
         msg.sender.transfer(amount * sellPrice);          // sends ether to the seller. It&#39;s important to do this last to avoid recursion attacks
     }
 }
-contract SEC is SECToken(1500000000, &quot;SEC&quot;, &quot;SEC&quot;) {}
+contract SEC is SECToken(1500000000, "SEC", "SEC") {}

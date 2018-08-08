@@ -213,8 +213,8 @@ contract HelloGoldToken is ERC20, SafeMath, Pausable, StandardToken {
   }
 
   function HelloGoldToken(address _reserve) {
-    name = &quot;HelloGold Token&quot;;
-    symbol = &quot;HGT&quot;;
+    name = "HelloGold Token";
+    symbol = "HGT";
     decimals = 8;
  
     totalSupply = 1 * 10 ** 9 * 10 ** uint256(decimals);
@@ -356,8 +356,8 @@ contract GoldBackedToken is Ownable, SafeMath, ERC20, Pausable {
   event TokenMinted(address destination, uint256 amount);
   event TokenBurned(address source, uint256 amount);
   
-	string public name = &quot;HelloGold Gold Backed Token&quot;;
-	string public symbol = &quot;GBT&quot;;
+	string public name = "HelloGold Gold Backed Token";
+	string public symbol = "GBT";
 	uint256 constant public  decimals = 18;  // same as ETH
 	uint256 constant public  hgtDecimals = 8;
 		
@@ -474,7 +474,7 @@ contract GoldBackedToken is Ownable, SafeMath, ERC20, Pausable {
 
 		if (totAllocation + thisAllocation > maxAllocation) {
 			thisAllocation = maxAllocation - totAllocation;
-			log0(&quot;max alloc reached&quot;);
+			log0("max alloc reached");
 		}
 		totAllocation += thisAllocation;
 
@@ -782,7 +782,7 @@ contract HelloGoldSale is Pausable, SafeMath {
     if ((deposits[msg.sender] + value) > personalMax) {
         maxRefund = deposits[msg.sender] + value - personalMax;
         value -= maxRefund;
-        log0(&quot;maximum funds exceeded&quot;);
+        log0("maximum funds exceeded");
     }  
 
     uint256 val = value;
@@ -800,7 +800,7 @@ contract HelloGoldSale is Pausable, SafeMath {
         uint256 actualTokens = tokens;
         uint refund = 0;
         if (tokens > coinsRemaining) { //can&#39;t sell desired # tokens
-            Reduction(&quot;in tier&quot;,recipient,tokens,coinsRemaining);
+            Reduction("in tier",recipient,tokens,coinsRemaining);
             actualTokens = coinsRemaining;
             refund = safeSub(tokens, coinsRemaining ); // refund amount in tokens
             refund = safeDiv(refund*1 ether,hgtRate );  // refund amount in ETH
@@ -826,7 +826,7 @@ contract HelloGoldSale is Pausable, SafeMath {
         }
         if (coinsRemaining <= (MaxCoinsR1 - minimumCap)){ // has passed success criteria
             if (!multiSig.send(this.balance)) {                // send funds to HGF
-                log0(&quot;cannot forward funds to owner&quot;);
+                log0("cannot forward funds to owner");
             }
         }
         coinsLeftInTier = safeSub(coinsLeftInTier,actualTokens);
@@ -863,13 +863,13 @@ contract HelloGoldSale is Pausable, SafeMath {
     require (token.transferFrom(HGT_Reserve, recipient,totalTokens)) ;
 
     if ((val > 0) || (maxRefund > 0)){
-        Reduction(&quot;finished crowdsale, returning &quot;,recipient,value,totalTokens);
+        Reduction("finished crowdsale, returning ",recipient,value,totalTokens);
         // return the remainder !
         recipient.transfer(val+maxRefund); // if you can&#39;t return the balance, abort whole process
     }
     if (!multiSig.send(this.balance)) {
         ethRaised = safeSub(ethRaised,this.balance);
-        log0(&quot;cannot send at tier jump&quot;);
+        log0("cannot send at tier jump");
     }
   }
   
@@ -901,12 +901,12 @@ contract HelloGoldSale is Pausable, SafeMath {
           uint256 val = this.balance;
           if (val > 0) {
             if (!multiSig.send(val)) {
-                log0(&quot;cannot withdraw&quot;);
+                log0("cannot withdraw");
             } else {
-                log0(&quot;funds withdrawn&quot;);
+                log0("funds withdrawn");
             }
           } else {
-              log0(&quot;nothing to withdraw&quot;);
+              log0("nothing to withdraw");
           }
       }
   }

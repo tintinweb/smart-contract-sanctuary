@@ -5,8 +5,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract AltCurrency {
 // Public variables of the token
-string public name = &quot;AltCurrency&quot;;
-string public symbol = &quot;ALTC&quot;;
+string public name = "AltCurrency";
+string public symbol = "ALTC";
 uint8 public decimals = 2;
 // 18 decimals is the strongly suggested default, avoid changing it
 uint256 public totalSupply = 10000000;

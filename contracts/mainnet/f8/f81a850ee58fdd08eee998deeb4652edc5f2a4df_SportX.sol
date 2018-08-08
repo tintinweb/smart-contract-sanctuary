@@ -214,8 +214,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract SportX is StandardToken {
 
-  string public constant name = &quot;SPORT X&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;SOX&quot;; // solium-disable-line uppercase
+  string public constant name = "SPORT X"; // solium-disable-line uppercase
+  string public constant symbol = "SOX"; // solium-disable-line uppercase
   uint8 public constant decimals = 4; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));

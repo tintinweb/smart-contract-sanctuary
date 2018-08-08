@@ -47,8 +47,8 @@ contract ERC20 {
  */
 contract GexaToken is ERC20 {
     using SafeMath for uint256;
-    string public name = &quot;GEXA TOKEN&quot;;
-    string public symbol = &quot;GEXA&quot;;
+    string public name = "GEXA TOKEN";
+    string public symbol = "GEXA";
     uint256 public decimals = 18;
     uint256 public totalSupply = 0;
     uint256 public constant MAX_TOKENS = 200000000 * 1e18;

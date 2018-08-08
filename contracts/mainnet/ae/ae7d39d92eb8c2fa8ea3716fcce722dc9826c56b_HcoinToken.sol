@@ -227,8 +227,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract HcoinToken is StandardToken {
 
-    string public constant name = &quot;Hcoin Token&quot;;
-    string public constant symbol = &quot;Hcoin&quot;;
+    string public constant name = "Hcoin Token";
+    string public constant symbol = "Hcoin";
     uint8 public constant decimals = 8;
 
     uint256 public constant INITIAL_SUPPLY = 16 * (10 ** 9) * (10 ** uint256(decimals));

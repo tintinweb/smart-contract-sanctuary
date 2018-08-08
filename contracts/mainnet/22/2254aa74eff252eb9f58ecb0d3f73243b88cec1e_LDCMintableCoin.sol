@@ -141,7 +141,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -337,8 +337,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract LDCMintableCoin is MintableToken, BurnableToken {
 
-  string public constant name = &quot;LORDLESS COIN&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;LDC&quot;; // solium-disable-line uppercase
+  string public constant name = "LORDLESS COIN"; // solium-disable-line uppercase
+  string public constant symbol = "LDC"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
 }

@@ -247,8 +247,8 @@ contract ZontoToken is ERC223Token {
    */
     function ZontoToken() {
             
-        name = &quot;ZONTO Token&quot;;
-        symbol = &quot;ZONTO&quot;;
+        name = "ZONTO Token";
+        symbol = "ZONTO";
         decimals = 8;
         totalSupply = 500000000000000;
     

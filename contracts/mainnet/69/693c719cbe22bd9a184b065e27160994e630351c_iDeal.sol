@@ -97,8 +97,8 @@ contract iDeal is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function iDeal() public {
-        symbol = &quot;IDL&quot;;
-        name = &quot;iDeal&quot;;
+        symbol = "IDL";
+        name = "iDeal";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x8E81Fe3241FbEF2cd26371338b18eC0DE825Ff6A] = _totalSupply;

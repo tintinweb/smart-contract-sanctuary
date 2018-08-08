@@ -113,8 +113,8 @@ contract VIRTToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function VIRTToken() public {
-        symbol = &quot;VIRT&quot;;
-        name = &quot;VIRT&quot;;
+        symbol = "VIRT";
+        name = "VIRT";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

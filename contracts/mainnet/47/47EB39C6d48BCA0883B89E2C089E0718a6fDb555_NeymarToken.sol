@@ -85,9 +85,9 @@ contract NeymarToken is ERC20Contract, NeymarTokenEvents {
   
     address public owner = msg.sender;
 
-    string public name = &quot;Neymar Token&quot;;
+    string public name = "Neymar Token";
 
-    string public symbol = &quot;NT&quot;;
+    string public symbol = "NT";
 
     uint256 public decimals = 18;
 

@@ -4,8 +4,8 @@ contract MGCGameToken {
     // Track how many tokens are owned by each address.
     mapping (address => uint256) public balanceOf;
 
-    string public name = &quot;MGC Game Coin&quot;;
-    string public symbol = &quot;MGC&quot;;
+    string public name = "MGC Game Coin";
+    string public symbol = "MGC";
     uint8 public decimals = 8;
 
     uint256 public totalSupply = 1000000000 * (uint256(10) ** decimals);

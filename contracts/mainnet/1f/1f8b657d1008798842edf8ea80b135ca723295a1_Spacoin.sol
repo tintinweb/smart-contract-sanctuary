@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract Spacoin is StandardToken {
 
-  string public constant name = &quot;Spacoin&quot;;
-  string public constant symbol = &quot;SPA&quot;;
+  string public constant name = "Spacoin";
+  string public constant symbol = "SPA";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));

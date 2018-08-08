@@ -87,8 +87,8 @@ contract MuxeToken is ERC20Interface, Owned {
     event Burn(uint tokens);
 
     function MuxeToken() public {
-        symbol = &quot;MUXE&quot;;
-        name = &quot;MUXE Token&quot;;
+        symbol = "MUXE";
+        name = "MUXE Token";
         decimals = 18;
         _totalSupply = 10000000000 * 10**uint(decimals);
         tokensBurnt = 0;

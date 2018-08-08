@@ -70,9 +70,9 @@ contract UCASH is EIP20Interface {
         ) public {
         totalSupply = 21*10**9*10**8;               //UCASH totalSupply
         balances[msg.sender] = totalSupply;         //Allocate UCASH to contract deployer
-        name = &quot;UCASH&quot;;
+        name = "UCASH";
         decimals = 8;                               //Amount of decimals for display purposes
-        symbol = &quot;UCASH&quot;;
+        symbol = "UCASH";
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

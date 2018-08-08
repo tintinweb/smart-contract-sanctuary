@@ -124,9 +124,9 @@ contract LibraCreditNetwork is EIP20 {
         string _tokenSymbol) 
     EIP20(
         1000000000000000000000000000, 
-        &quot;Libra Credit Network&quot;, 
+        "Libra Credit Network", 
         18, 
-        &quot;LBA&quot;) {                           
+        "LBA") {                           
         
     }   
 

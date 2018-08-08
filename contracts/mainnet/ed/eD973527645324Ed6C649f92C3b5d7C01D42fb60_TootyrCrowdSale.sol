@@ -116,8 +116,8 @@ contract TootyrCrowdSale is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TootyrCrowdSale() public {
-        symbol = &quot;TRT&quot;;
-        name = &quot;TootyrToken&quot;;
+        symbol = "TRT";
+        name = "TootyrToken";
         decimals = 18;
         bonusEnds = now + 16 weeks;
         endDate = now + 21 weeks;

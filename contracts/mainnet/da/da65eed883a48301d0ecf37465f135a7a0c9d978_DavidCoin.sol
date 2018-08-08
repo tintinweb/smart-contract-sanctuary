@@ -113,8 +113,8 @@ contract DavidCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DavidCoin() public {
-        symbol = &quot;DAVO&quot;;
-        name = &quot;David 好朋友 Foundation Coin&quot;;
+        symbol = "DAVO";
+        name = "David 好朋友 Foundation Coin";
         decimals = 10;
         _totalSupply = 1000000000000000000;
         balances[0x116312c3471C2e7C34C52782D0399eBE601f3F30] = _totalSupply;

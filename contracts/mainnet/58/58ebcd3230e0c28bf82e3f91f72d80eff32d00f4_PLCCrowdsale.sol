@@ -31,7 +31,7 @@ contract Math {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -543,8 +543,8 @@ contract BurnableToken is SafeMath, StandardToken {
  * VestedToken, BurnableToken contract from open zeppelin.
  */
 contract PLC is MintableToken, PausableToken, VestedToken, BurnableToken {
-  string public name = &quot;PlusCoin&quot;;
-  string public symbol = &quot;PLC&quot;;
+  string public name = "PlusCoin";
+  string public symbol = "PLC";
   uint256 public decimals = 18;
 }
 /**

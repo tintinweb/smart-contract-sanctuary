@@ -113,8 +113,8 @@ contract CrystalSkull is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CrystalSkull() public {
-        symbol = &quot;SKULL&quot;;
-        name = &quot;Crystal Skull&quot;;
+        symbol = "SKULL";
+        name = "Crystal Skull";
         decimals = 1;
         _totalSupply = 130;
         balances[0x52468214E30c7B8385bd718c92FB3737abb141B6] = _totalSupply;

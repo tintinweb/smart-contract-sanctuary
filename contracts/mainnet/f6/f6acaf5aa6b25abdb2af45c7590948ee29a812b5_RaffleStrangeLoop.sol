@@ -92,7 +92,7 @@ contract RaffleStrangeLoop {
             tickets[numTickets++] = msg.sender;
         }
 
-        if (beneficiary == &quot;ethereum-foundation&quot;) {
+        if (beneficiary == "ethereum-foundation") {
             ethereumFoundationTickets += ticketsBought;
         }
     }
@@ -114,6 +114,6 @@ contract RaffleStrangeLoop {
     }
 
     function () payable notFinished {
-        buyTickets(&quot;owner&quot;);
+        buyTickets("owner");
     }
 }

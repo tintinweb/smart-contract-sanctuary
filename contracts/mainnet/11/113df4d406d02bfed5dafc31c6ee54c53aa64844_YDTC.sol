@@ -64,8 +64,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract YDTC is StandardToken 
 {
-    string public name = &quot;YDTC&quot;;
-    string public symbol = &quot;YD&quot;;
+    string public name = "YDTC";
+    string public symbol = "YD";
     uint public decimals = 18;
     uint public totalSupply = 10 * 100 * 1000 * 1000 ether;
 

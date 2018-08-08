@@ -35,11 +35,11 @@ contract Reservation {
     }
     
     function name() public pure returns (string) {
-        return &quot;Reservation Token&quot;;
+        return "Reservation Token";
     }
 
     function symbol() public pure returns (string) {
-        return &quot;ReT&quot;;
+        return "ReT";
     }
 
     function totalSupply() public view returns (uint256) {

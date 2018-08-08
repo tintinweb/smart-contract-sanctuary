@@ -83,9 +83,9 @@ contract kBit is Token, owned {
         ) {
         balances[msg.sender] = 555000 * 1000000000000000000;    // Give the creator all initial tokens, 18 zero is 18 Decimals
         totalSupply = 555000 * 1000000000000000000;             // Update total supply, , 18 zero is 18 Decimals
-        name = &quot;kBit&quot;;                            				// Token Name
+        name = "kBit";                            				// Token Name
         decimals = 18;                            				// Amount of decimals for display purposes
-        symbol = &quot;KBIT&quot;;                          				// Token Symbol
+        symbol = "KBIT";                          				// Token Symbol
     }
     
     function () {

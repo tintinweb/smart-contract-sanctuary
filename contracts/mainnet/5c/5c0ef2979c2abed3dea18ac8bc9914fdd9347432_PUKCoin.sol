@@ -15,9 +15,9 @@ contract PUKCoin {
     function PUKCoin() {
 
          initialSupply = 10000;
-         name =&quot;PUKCoin&quot;;
+         name ="PUKCoin";
         decimals = 2;
-         symbol = &quot;PUK&quot;;
+         symbol = "PUK";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

@@ -237,7 +237,7 @@ contract COCTokenBase is ERC20 {
 
 contract COCToken is COCTokenBase {
 
-    function COCToken() COCTokenBase(100000000000, &quot;COC Token&quot;, &quot;COC&quot;, 18) public {
+    function COCToken() COCTokenBase(100000000000, "COC Token", "COC", 18) public {
 
     }
 }

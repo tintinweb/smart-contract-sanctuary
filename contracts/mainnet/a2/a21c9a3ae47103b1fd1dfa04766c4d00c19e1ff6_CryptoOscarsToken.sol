@@ -41,8 +41,8 @@ contract CryptoOscarsToken is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;CryptoOscars&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;CryptoOscarsToken&quot;; // solhint-disable-line
+  string public constant NAME = "CryptoOscars"; // solhint-disable-line
+  string public constant SYMBOL = "CryptoOscarsToken"; // solhint-disable-line
 
   uint256 private startingPrice = 0.001 ether;
   uint256 private constant PROMO_CREATION_LIMIT = 20000;

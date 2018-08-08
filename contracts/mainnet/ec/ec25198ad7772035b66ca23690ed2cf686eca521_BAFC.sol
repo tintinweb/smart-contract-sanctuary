@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract BAFC is StandardToken, Ownable {
 
-    string public constant name = &quot;防伪链&quot;;
-    string public constant symbol = &quot;BAFC&quot;;
+    string public constant name = "防伪链";
+    string public constant symbol = "BAFC";
     uint256 public constant decimals = 8;
 
     function BAFC() public {

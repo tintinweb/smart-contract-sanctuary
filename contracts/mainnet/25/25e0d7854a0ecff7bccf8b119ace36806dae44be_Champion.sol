@@ -101,39 +101,39 @@ contract Pausable is Ownable {
 }
 contract WWC is Pausable {
     string[33] public teams = [
-        &quot;&quot;,
-        &quot;Egypt&quot;,              // 1
-        &quot;Morocco&quot;,            // 2
-        &quot;Nigeria&quot;,            // 3
-        &quot;Senegal&quot;,            // 4
-        &quot;Tunisia&quot;,            // 5
-        &quot;Australia&quot;,          // 6
-        &quot;IR Iran&quot;,            // 7
-        &quot;Japan&quot;,              // 8
-        &quot;Korea Republic&quot;,     // 9
-        &quot;Saudi Arabia&quot;,       // 10
-        &quot;Belgium&quot;,            // 11
-        &quot;Croatia&quot;,            // 12
-        &quot;Denmark&quot;,            // 13
-        &quot;England&quot;,            // 14
-        &quot;France&quot;,             // 15
-        &quot;Germany&quot;,            // 16
-        &quot;Iceland&quot;,            // 17
-        &quot;Poland&quot;,             // 18
-        &quot;Portugal&quot;,           // 19
-        &quot;Russia&quot;,             // 20
-        &quot;Serbia&quot;,             // 21
-        &quot;Spain&quot;,              // 22
-        &quot;Sweden&quot;,             // 23
-        &quot;Switzerland&quot;,        // 24
-        &quot;Costa Rica&quot;,         // 25
-        &quot;Mexico&quot;,             // 26
-        &quot;Panama&quot;,             // 27
-        &quot;Argentina&quot;,          // 28
-        &quot;Brazil&quot;,             // 29
-        &quot;Colombia&quot;,           // 30
-        &quot;Peru&quot;,               // 31
-        &quot;Uruguay&quot;             // 32
+        "",
+        "Egypt",              // 1
+        "Morocco",            // 2
+        "Nigeria",            // 3
+        "Senegal",            // 4
+        "Tunisia",            // 5
+        "Australia",          // 6
+        "IR Iran",            // 7
+        "Japan",              // 8
+        "Korea Republic",     // 9
+        "Saudi Arabia",       // 10
+        "Belgium",            // 11
+        "Croatia",            // 12
+        "Denmark",            // 13
+        "England",            // 14
+        "France",             // 15
+        "Germany",            // 16
+        "Iceland",            // 17
+        "Poland",             // 18
+        "Portugal",           // 19
+        "Russia",             // 20
+        "Serbia",             // 21
+        "Spain",              // 22
+        "Sweden",             // 23
+        "Switzerland",        // 24
+        "Costa Rica",         // 25
+        "Mexico",             // 26
+        "Panama",             // 27
+        "Argentina",          // 28
+        "Brazil",             // 29
+        "Colombia",           // 30
+        "Peru",               // 31
+        "Uruguay"             // 32
     ];
 }
 

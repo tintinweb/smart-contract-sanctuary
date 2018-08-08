@@ -116,8 +116,8 @@ contract TipSmartToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TipSmartToken() public {
-        symbol = &quot;TPS&quot;;
-        name = &quot;TipSmart Token&quot;;
+        symbol = "TPS";
+        name = "TipSmart Token";
         decimals = 18;
         bonusEnds = now + 3 weeks;
         endDate = now + 8 weeks;

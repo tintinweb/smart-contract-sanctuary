@@ -28,8 +28,8 @@ contract GYG {
     ) public {
         totalSupply = 100000000000000000000000000;                                                 // Update total supply with the decimal amount
         balanceOf[msg.sender] = 100000000000000000000000000;                                       // Give the creator all initial tokens
-        name = &quot;Gyges Digital Cash&quot;;                                                                      // Set the name for display purposes
-        symbol = &quot;GYG&quot;;                                                                            // Set the symbol for display purposes
+        name = "Gyges Digital Cash";                                                                      // Set the name for display purposes
+        symbol = "GYG";                                                                            // Set the symbol for display purposes
     }
 
     /**

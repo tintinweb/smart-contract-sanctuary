@@ -132,8 +132,8 @@ contract Owned {
  * BP crowdsale contract
 */
 contract BPToken is SafeMath, Owned, ERC20 {
-    string public constant name = &quot;Backpack Token&quot;;
-    string public constant symbol = &quot;BP&quot;;
+    string public constant name = "Backpack Token";
+    string public constant symbol = "BP";
     uint256 public constant decimals = 18;  
 
     mapping (address => uint256) balances;

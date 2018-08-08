@@ -114,8 +114,8 @@ contract ETHMONEY is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function ETHMONEY() public {
-        symbol = &quot;EMY&quot;;
-        name = &quot;ETHMONEY&quot;;
+        symbol = "EMY";
+        name = "ETHMONEY";
         decimals = 18;
         _totalSupply = 10000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

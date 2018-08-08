@@ -113,8 +113,8 @@ contract ThePatriotCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ThePatriotCoin() public {
-        symbol = &quot;VETE&quot;;
-        name = &quot;The Patriot Coin&quot;;
+        symbol = "VETE";
+        name = "The Patriot Coin";
         decimals = 0;
         _totalSupply = 800000000;
         balances[0x09A06FE3fd558F4A4459bA5D0d8ED31416b56E02] = _totalSupply;

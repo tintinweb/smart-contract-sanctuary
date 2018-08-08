@@ -255,7 +255,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -399,8 +399,8 @@ contract BurnableToken is BasicToken {
 }
 
 contract Afin is MintableToken, BurnableToken {
-  string public name = &quot;Asian Fintech&quot;;
-  string public symbol = &quot;Afin&quot;;
+  string public name = "Asian Fintech";
+  string public symbol = "Afin";
   uint public decimals = 8;
   uint public INITIAL_SUPPLY = 500000000 * (10 ** decimals);
 

@@ -393,8 +393,8 @@ interface ERC721Metadata /* is ERC721 */ {
 
     /// @notice A distinct Uniform Resource Identifier (URI) for a given asset.
     /// @dev Throws if `_tokenId` is not a valid NFT. URIs are defined in RFC
-    ///  3986. The URI may point to a JSON file that conforms to the &quot;ERC721
-    ///  Metadata JSON Schema&quot;.
+    ///  3986. The URI may point to a JSON file that conforms to the "ERC721
+    ///  Metadata JSON Schema".
     function tokenURI(uint256 _tokenId) external view returns (string);
 }
 
@@ -475,14 +475,14 @@ contract CardOwnership is NFT, CardProto {
     * @return the name of this token
     */
     function name() public view returns (string) {
-        return &quot;Gods Unchained&quot;;
+        return "Gods Unchained";
     }
 
     /**
     * @return the symbol of this token
     */  
     function symbol() public view returns (string) {
-        return &quot;GODS&quot;;
+        return "GODS";
     }
 
     /**
@@ -682,7 +682,7 @@ contract CardOwnership is NFT, CardProto {
         emit ApprovalForAll(msg.sender, to, toApprove);
     }
 
-    bytes4 constant magic = bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;));
+    bytes4 constant magic = bytes4(keccak256("onERC721Received(address,uint256,bytes)"));
 
     function safeTransferFrom(address from, address to, uint id, bytes data) public payable {
         require(to != address(0));
@@ -694,7 +694,7 @@ contract CardOwnership is NFT, CardProto {
     }
 
     function safeTransferFrom(address from, address to, uint id) public payable {
-        safeTransferFrom(from, to, id, &quot;&quot;);
+        safeTransferFrom(from, to, id, "");
     }
 
     function _addToken(address to, uint id) private {
@@ -767,7 +767,7 @@ interface ERC721TokenReceiver {
     /// @param _from The sending address
     /// @param _tokenId The NFT identifier which is being transfered
     /// @param _data Additional data with no specified format
-    /// @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+    /// @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
     ///  unless throwing
 	function onERC721Received(address _from, uint256 _tokenId, bytes _data) external returns(bytes4);
 }
@@ -1322,11 +1322,11 @@ contract TournamentPass is ERC20, Ownable {
     uint mintLimit = 20000;
     
     function name() public view returns (string){
-        return &quot;GU Tournament Passes&quot;;
+        return "GU Tournament Passes";
     }
 
     function symbol() public view returns (string) {
-        return &quot;PASS&quot;;
+        return "PASS";
     }
 
     function addMinter(address minter) public onlyOwner {

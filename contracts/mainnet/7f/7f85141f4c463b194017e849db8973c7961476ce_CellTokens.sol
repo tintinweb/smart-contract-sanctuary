@@ -274,11 +274,11 @@ contract CellTokens {
   }
 
   function name() public pure returns (string _name) {
-    return &quot;Crypto10K.io&quot;;
+    return "Crypto10K.io";
   }
 
   function symbol() public pure returns (string _symbol) {
-    return &quot;cells&quot;;
+    return "cells";
   }
   
   function totalSupply() public view returns (uint256 _totalSupply) {

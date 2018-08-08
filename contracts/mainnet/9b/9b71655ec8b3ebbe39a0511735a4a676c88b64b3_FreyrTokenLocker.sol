@@ -19,7 +19,7 @@ contract FreyrTokenLocker {
 
     address public beneficiary;
     uint256 public releaseTime;
-    string constant public name = &quot;freyr team locker&quot;;
+    string constant public name = "freyr team locker";
 
     Token public token = Token(&#39;0x17e67d1CB4e349B9CA4Bc3e17C7DF2a397A7BB64&#39;);
 

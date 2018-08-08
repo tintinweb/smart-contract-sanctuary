@@ -29,7 +29,7 @@ pragma solidity ^0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control 
- * functions, this simplifies the implementation of &quot;user permissions&quot;. 
+ * functions, this simplifies the implementation of "user permissions". 
  */
 contract Ownable {
   address public owner;
@@ -742,9 +742,9 @@ contract MintableToken is Mintable, Ownable {
  */
 contract CrowdsaleToken is ReleasableToken, MintableToken, UpgradeableToken, LostAndFoundToken {
 
-  string public name = &quot;TokenHome&quot;;
+  string public name = "TokenHome";
 
-  string public symbol = &quot;TH&quot;;
+  string public symbol = "TH";
 
   uint8 public decimals;
 
@@ -1189,7 +1189,7 @@ pragma solidity ^0.4.19;
 
 
 /// @dev Tranche based pricing.
-///      Implementing &quot;first price&quot; tranches, meaning, that if a buyer&#39;s order is
+///      Implementing "first price" tranches, meaning, that if a buyer&#39;s order is
 ///      covering more than one tranche, the price of the lowest tranche will apply
 ///      to the whole order.
 contract TokenTranchePricing {

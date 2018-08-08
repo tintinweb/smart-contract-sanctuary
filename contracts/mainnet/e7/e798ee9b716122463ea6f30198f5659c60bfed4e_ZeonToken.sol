@@ -263,7 +263,7 @@ contract StandardToken is DetailedERC20, BasicToken {
 
 contract ZeonToken is StandardToken {
 
-  constructor() public DetailedERC20(&quot;ZeonToken&quot;, &quot;ZNC&quot;, 18) {
+  constructor() public DetailedERC20("ZeonToken", "ZNC", 18) {
     totalSupply_ = 50000000000000000000000000000;
     balances[msg.sender] = totalSupply_;
   }

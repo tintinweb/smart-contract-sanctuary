@@ -1,7 +1,7 @@
 pragma solidity ^0.4.24;
 
 contract Forwarder {
-    string public name = &quot;Forwarder&quot;;
+    string public name = "Forwarder";
     address private currentCorpBank_;
     bool needsBank_ = true;
     
@@ -26,8 +26,8 @@ contract Forwarder {
         payable
         returns(bool)
     {
-        require(msg.value > 0, &quot;Forwarder Deposit failed - zero deposits not allowed&quot;);
-        require(needsBank_ == false, &quot;Forwarder Deposit failed - no registered bank&quot;);
+        require(msg.value > 0, "Forwarder Deposit failed - zero deposits not allowed");
+        require(needsBank_ == false, "Forwarder Deposit failed - no registered bank");
         currentCorpBank_.transfer(msg.value);
         return(true);
     }
@@ -43,7 +43,7 @@ contract Forwarder {
     function setup(address _firstCorpBank)
         external
     {
-        require(needsBank_ == true, &quot;Forwarder setup failed - corp bank already registered&quot;);
+        require(needsBank_ == true, "Forwarder setup failed - corp bank already registered");
         currentCorpBank_ = _firstCorpBank;
         needsBank_ = false;
     }

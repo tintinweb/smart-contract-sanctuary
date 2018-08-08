@@ -88,8 +88,8 @@ contract IronHands2 is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Iron Hands 2+&quot;;
-    string public constant symbol = &quot;P3D&quot;;
+    string public constant name = "Iron Hands 2+";
+    string public constant symbol = "P3D";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 80000000e8;

@@ -52,7 +52,7 @@ library safemath {
 /**
  * @title ownable
  * @dev The ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract ownable {
   address public owner;
@@ -311,8 +311,8 @@ contract KTownership is KTfactory, erc721 {
     token1.level = (token1.level).add(1);
 
     KT memory toDelete = KT ({
-      officialNote: &quot;&quot;,
-      personalNote: &quot;&quot;,
+      officialNote: "",
+      personalNote: "",
       paused: false,
       gene: 0,
       level: 0,

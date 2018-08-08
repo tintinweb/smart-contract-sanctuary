@@ -119,8 +119,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract jsnip4 is FOOSBALL, StandardToken {
 
-    string public name = &quot;FoosBallCoin&quot;;          
-    string public symbol = &quot;FOOS&quot;;              
+    string public name = "FoosBallCoin";          
+    string public symbol = "FOOS";              
     uint public decimals = 18;                  
 
     uint public totalSupply = 100000000000 ether;  

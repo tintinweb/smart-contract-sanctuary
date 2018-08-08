@@ -109,8 +109,8 @@ contract MIAMIcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MIAMIcoin() public {
-        symbol = &quot;MIA&quot;;
-        name = &quot;MIAMIcoin&quot;;
+        symbol = "MIA";
+        name = "MIAMIcoin";
         decimals = 18;
         _totalSupply = 305000000000000000000000000;
         balances[0x67754afaE8c7E041a2A347B5fb101B0e6000E705] = _totalSupply;

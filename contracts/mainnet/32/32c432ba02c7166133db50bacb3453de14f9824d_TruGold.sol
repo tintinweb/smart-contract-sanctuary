@@ -44,7 +44,7 @@ contract MultiOwnable {
   }
 
 
-  // constructor is given number of sigs required to do protected &quot;onlyManyOwners&quot; transactions
+  // constructor is given number of sigs required to do protected "onlyManyOwners" transactions
   // as well as the selection of addresses capable of confirming them.
   constructor(address _owner1, address _owner2) public {
     require(_owner1 != address(0));
@@ -208,8 +208,8 @@ contract TruGold is ERC20Interface, MultiOwnable {
   // ------------------------------------------------------------------------
   constructor(address target, address _owner1, address _owner2)
     MultiOwnable(_owner1, _owner2) public {
-    symbol = &quot;TruGold&quot;;
-    name = &quot;TruGold&quot;;
+    symbol = "TruGold";
+    name = "TruGold";
     decimals = 18;
     _totalSupply = 300000000 * 10**uint(decimals);
     balances[target] = _totalSupply;

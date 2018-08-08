@@ -59,8 +59,8 @@ contract CryptoGaming {
         address indexed to,
         uint256 tokens
     );
-    string public name = &quot;CryptoGamingCoin&quot;;
-    string public symbol = &quot;&#127918;&quot;;
+    string public name = "CryptoGamingCoin";
+    string public symbol = "&#127918;";
     uint8 constant public decimals = 18;
     uint8 constant internal entryFee_ = 20;
     uint8 constant internal transferFee_ = 10;

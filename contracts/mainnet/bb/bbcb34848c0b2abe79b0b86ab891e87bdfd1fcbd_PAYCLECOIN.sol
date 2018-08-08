@@ -113,8 +113,8 @@ contract PAYCLECOIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PAYCLECOIN() public {
-        symbol = &quot;PAYC&quot;;
-        name = &quot;PAYCLE COIN&quot;;
+        symbol = "PAYC";
+        name = "PAYCLE COIN";
         decimals = 18;
         _totalSupply = 7600000000000000000000000000;
         balances[0xDf7dAe8ac00DafA4858b6F129BaAA6416EEa20f9] = _totalSupply;

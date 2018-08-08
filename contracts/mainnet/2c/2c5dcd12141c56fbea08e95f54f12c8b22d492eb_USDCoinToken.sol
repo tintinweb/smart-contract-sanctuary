@@ -253,8 +253,8 @@ contract StandardToken is ERC20, BasicToken,owned {
  */
 contract USDCoinToken is StandardToken {
 
-    string public constant name = &quot;USDCoin&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;USC&quot;; // solium-disable-line uppercase
+    string public constant name = "USDCoin"; // solium-disable-line uppercase
+    string public constant symbol = "USC"; // solium-disable-line uppercase
     uint8 public constant decimals = 18; // solium-disable-line uppercase
 
     uint256 public constant INITIAL_SUPPLY = (100000) * (10 ** uint256(decimals));

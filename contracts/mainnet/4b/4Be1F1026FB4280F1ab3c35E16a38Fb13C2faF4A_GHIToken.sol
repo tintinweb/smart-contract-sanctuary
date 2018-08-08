@@ -374,7 +374,7 @@ contract GHIToken is AbstractToken {
    * @return name of the token
    */
   function name () public delegatable view returns (string) {
-    return &quot;GHI Token&quot;;
+    return "GHI Token";
   }
 
   /**
@@ -383,7 +383,7 @@ contract GHIToken is AbstractToken {
    * @return symbol of the token
    */
   function symbol () public delegatable view returns (string) {
-    return &quot;GHI&quot;;
+    return "GHI";
   }
 
   /**
@@ -882,5 +882,5 @@ contract GHIToken is AbstractToken {
 
 /**
  * ERC-20 standard token interface, as defined
- * <a href=&quot;https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md&quot;>here</a>.
+ * <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md">here</a>.
  */

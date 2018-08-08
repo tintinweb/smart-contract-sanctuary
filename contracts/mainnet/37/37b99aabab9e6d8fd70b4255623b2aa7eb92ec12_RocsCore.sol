@@ -3,7 +3,7 @@ pragma solidity ^0.4.22;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -168,8 +168,8 @@ contract ERC721 {
 contract RocsOwnership is RocsBase, ERC721 {
 
     /// @notice ERC721で定義されている、置き換え不可能なトークンの名前と記号。
-    string public constant name = &quot;CryptoFeather&quot;;
-    string public constant symbol = &quot;CFE&quot;;
+    string public constant name = "CryptoFeather";
+    string public constant symbol = "CFE";
 
     bytes4 constant InterfaceSignature_ERC165 = 
     bytes4(keccak256(&#39;supportsInterface(bytes4)&#39;));

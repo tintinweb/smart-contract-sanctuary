@@ -14,8 +14,8 @@ contract PupToken {
     event Transfer(address indexed from, address indexed to, uint256 value);
 
 
-    function name() constant returns (string) { return &quot;PupToken&quot;; }
-    function symbol() constant returns (string) { return &quot;PUP&quot;; }
+    function name() constant returns (string) { return "PupToken"; }
+    function symbol() constant returns (string) { return "PUP"; }
     function decimals() constant returns (uint8) { return 0; }	
 	
     /* Initializes contract with initial supply tokens to the creator of the contract */

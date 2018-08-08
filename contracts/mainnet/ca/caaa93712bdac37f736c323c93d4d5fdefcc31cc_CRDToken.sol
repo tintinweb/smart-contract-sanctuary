@@ -281,8 +281,8 @@ contract CappedToken is MintableToken {
 }
 
 contract CRDToken is CappedToken {
-    string public name = &quot;CryptalDash&quot;;
-    string public symbol = &quot;CRD&quot;;
+    string public name = "CryptalDash";
+    string public symbol = "CRD";
     uint8 public decimals = 18;
     uint256 cap = 1000000000 * (10 ** 18);  // 1 Billion Tokens
 

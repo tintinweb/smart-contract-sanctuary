@@ -197,8 +197,8 @@ contract ZoologicalGarden is ERC223, ERC20Basic {
   
   
   function ZoologicalGarden() public{
-      name = &quot;Zoological Garden&quot;;
-      symbol = &quot;ZOO&quot;;
+      name = "Zoological Garden";
+      symbol = "ZOO";
       decimals = 4;
       totalSupply = 100000000 * 10 ** uint(decimals);
       balances[msg.sender] = totalSupply;

@@ -35,10 +35,10 @@ contract Token {
     of the insurance and the cost of the given are defined by the cosigner. 
 
     The lender will decide what cosigner to use, if any; the address of the cosigner and the valid data provided by the
-    agent should be passed as params when the lender calls the &quot;lend&quot; method on the engine.
+    agent should be passed as params when the lender calls the "lend" method on the engine.
     
     When the default conditions defined by the cosigner aligns with the status of the loan, the lender of the engine
-    should be able to call the &quot;claim&quot; method to receive the benefit; the cosigner can define aditional requirements to
+    should be able to call the "claim" method to receive the benefit; the cosigner can define aditional requirements to
     call this method, like the transfer of the ownership of the loan.
 */
 contract Cosigner {
@@ -58,7 +58,7 @@ contract Cosigner {
     
     /**
         @dev The engine calls this method for confirmation of the conditions, if the cosigner accepts the liability of
-        the insurance it must call the method &quot;cosign&quot; of the engine. If the cosigner does not call that method, or
+        the insurance it must call the method "cosign" of the engine. If the cosigner does not call that method, or
         does not return true to this method, the operation fails.
 
         @return true if the cosigner accepts the liability
@@ -118,7 +118,7 @@ contract Oracle is Ownable {
     mapping(bytes32 => Symbol) public currencies;
 
     /**
-        @dev Returns the url where the oracle exposes a valid &quot;oracleData&quot; if needed
+        @dev Returns the url where the oracle exposes a valid "oracleData" if needed
     */
     function url() public view returns (string);
 
@@ -261,21 +261,21 @@ contract TokenLockable is RpSafeMath, Ownable {
 
 contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
     uint256 public constant VERSION = 205;
-    string public constant VERSION_NAME = &quot;Basalt&quot;;
+    string public constant VERSION_NAME = "Basalt";
 
     uint256 private activeLoans = 0;
     mapping(address => uint256) private lendersBalance;
 
     function name() public view returns (string _name) {
-        _name = &quot;RCN - Nano loan engine - Basalt 205&quot;;
+        _name = "RCN - Nano loan engine - Basalt 205";
     }
 
     function symbol() public view returns (string _symbol) {
-        _symbol = &quot;RCN-NLE-205&quot;;
+        _symbol = "RCN-NLE-205";
     }
 
     /**
-        @notice Returns the number of active loans in total, active loans are the loans with &quot;lent&quot; status.
+        @notice Returns the number of active loans in total, active loans are the loans with "lent" status.
         @dev Required for ERC-721 compliance
 
         @return _totalSupply Total amount of loans
@@ -285,7 +285,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
     }
 
     /**
-        @notice Returns the number of active loans that a lender possess; active loans are the loans with &quot;lent&quot; status.
+        @notice Returns the number of active loans that a lender possess; active loans are the loans with "lent" status.
         @dev Required for ERC-721 compliance
 
         @param _owner The owner address to search
@@ -436,7 +436,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
 
     /**
         @notice Creates a loan request, the loan can be generated with any borrower and conditions; if the borrower agrees
-        it must call the &quot;approve&quot; function. If the creator of the loan is the borrower the approve is done automatically.
+        it must call the "approve" function. If the creator of the loan is the borrower the approve is done automatically.
 
         @dev The creator of the loan is the caller of this function; this is useful to track which wallet created the loan.
 
@@ -517,9 +517,9 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
 
     /**
         @notice Called by the members of the loan to show that they agree with the terms of the loan; the borrower
-        must call this method before any lender could call the method &quot;lend&quot;.
+        must call this method before any lender could call the method "lend".
             
-        @dev Any address can call this method to be added to the &quot;approbations&quot; mapping.
+        @dev Any address can call this method to be added to the "approbations" mapping.
 
         @param index Index of the loan
 
@@ -537,7 +537,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
         @notice Performs the lend of the RCN equivalent to the requested amount, and transforms the msg.sender in the new lender.
 
         @dev The loan must be previously approved by the borrower; before calling this function, the lender candidate must 
-        call the &quot;approve&quot; function on the RCN Token, specifying an amount sufficient enough to pay the equivalent of
+        call the "approve" function on the RCN Token, specifying an amount sufficient enough to pay the equivalent of
         the requested amount, and the cosigner fee.
         
         @param index Index of the loan
@@ -574,7 +574,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
         
         if (cosigner != address(0)) {
             // The cosigner it&#39;s temporary set to the next address (cosigner + 2), it&#39;s expected that the cosigner will
-            // call the method &quot;cosign&quot; to accept the conditions; that method also sets the cosigner to the right
+            // call the method "cosign" to accept the conditions; that method also sets the cosigner to the right
             // address. If that does not happen, the transaction fails.
             loan.cosigner = address(uint256(cosigner) + 2);
             require(cosigner.requestCosign(this, index, cosignerData, oracleData));
@@ -589,7 +589,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
     /**
         @notice The cosigner must call this method to accept the conditions of a loan, this method pays the cosigner his fee.
         
-        @dev If the cosigner does not call this method the whole &quot;lend&quot; call fails.
+        @dev If the cosigner does not call this method the whole "lend" call fails.
 
         @param index Index of the loan
         @param cost Fee set by the cosigner
@@ -608,9 +608,9 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
 
     /**
         @notice Destroys a loan, the borrower could call this method if they performed an accidental or regretted 
-        &quot;approve&quot; of the loan, this method only works for them if the loan is in &quot;pending&quot; status.
+        "approve" of the loan, this method only works for them if the loan is in "pending" status.
 
-        The lender can call this method at any moment, in case of a loan with status &quot;lent&quot; the lender is pardoning 
+        The lender can call this method at any moment, in case of a loan with status "lent" the lender is pardoning 
         the debt. 
 
         @param index Index of the loan
@@ -636,7 +636,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
 
     /**
         @notice Transfers a loan to a different lender, the caller must be the current lender or previously being
-        approved with the method &quot;approveTransfer&quot;; only loans with the Status.lent status can be transfered.
+        approved with the method "approveTransfer"; only loans with the Status.lent status can be transfered.
 
         @dev Required for ERC-721 compliance
 
@@ -663,7 +663,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
     }
 
     /**
-        @notice Transfers the loan to the msg.sender, the msg.sender must be approved using the &quot;approve&quot; method.
+        @notice Transfers the loan to the msg.sender, the msg.sender must be approved using the "approve" method.
 
         @dev Required for ERC-721 compliance
 
@@ -676,7 +676,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
     }
 
     /**
-        @notice Transfers the loan to an address, only if the current owner is the &quot;from&quot; address
+        @notice Transfers the loan to an address, only if the current owner is the "from" address
 
         @dev Required for ERC-721 compliance
 
@@ -693,9 +693,9 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
 
     /**
         @notice Approves the transfer of a given loan in the name of the lender, the behavior of this function is similar to
-        &quot;approve&quot; in the ERC20 standard, but only one approved address is allowed at a time.
+        "approve" in the ERC20 standard, but only one approved address is allowed at a time.
 
-        The same method can be called passing 0x0 as parameter &quot;to&quot; to erase a previously approved address.
+        The same method can be called passing 0x0 as parameter "to" to erase a previously approved address.
 
         @dev Required for ERC-721 compliance
 
@@ -730,7 +730,7 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
     /**
         @notice Returns the pending amount up to the last time of the interest update. This is not the real pending amount
 
-        @dev This method is exact only if &quot;addInterest(loan)&quot; was before and in the same block.
+        @dev This method is exact only if "addInterest(loan)" was before and in the same block.
 
         @param index Index of the loan
 
@@ -835,13 +835,13 @@ contract NanoLoanEngine is ERC721, Engine, Ownable, TokenLockable {
         Does a payment of a given Loan, before performing the payment the accumulated
         interest is computed and added to the total pending amount.
 
-        Before calling this function, the msg.sender must call the &quot;approve&quot; function on the RCN Token, specifying an amount
+        Before calling this function, the msg.sender must call the "approve" function on the RCN Token, specifying an amount
         sufficient enough to pay the equivalent of the desired payment and the oracle fee.
 
-        If the paid pending amount equals zero, the loan changes status to &quot;paid&quot; and it is considered closed.
+        If the paid pending amount equals zero, the loan changes status to "paid" and it is considered closed.
 
         @dev Because it is difficult or even impossible to know in advance how much RCN are going to be spent on the
-        transaction*, we recommend performing the &quot;approve&quot; using an amount 5% superior to the wallet estimated
+        transaction*, we recommend performing the "approve" using an amount 5% superior to the wallet estimated
         spending. If the RCN spent results to be less, the extra tokens are never debited from the msg.sender.
 
         * The RCN rate can fluctuate on the same block, and it is impossible to know in advance the exact time of the

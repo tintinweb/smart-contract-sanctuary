@@ -17,8 +17,8 @@ value);
     function LCEToken() public {
         totalSupply = 1500000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Linecycle&quot;;
-        symbol = &quot;LCE&quot;;
+        name = "Linecycle";
+        symbol = "LCE";
     }
 
     function _transfer(address _from, address _to, uint _value) internal 

@@ -16,9 +16,9 @@ contract Token {
     function Token() {
 
          initialSupply = 11000000000000000;
-         name = &quot;waipay token&quot;;
+         name = "waipay token";
         decimals = 8;
-         symbol = &quot;WT&quot;;
+         symbol = "WT";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

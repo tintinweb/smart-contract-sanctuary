@@ -153,8 +153,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract FSCP is StandardToken 
 {
-    string  public constant name     = &quot;Five Star Coin Pro&quot;;
-    string  public constant symbol   = &quot;FSCP&quot;;
+    string  public constant name     = "Five Star Coin Pro";
+    string  public constant symbol   = "FSCP";
     uint256 public constant decimals = 8;
     uint256 public constant INITIAL_SUPPLY = 10000000 * 10**8;
     function FSCP() 

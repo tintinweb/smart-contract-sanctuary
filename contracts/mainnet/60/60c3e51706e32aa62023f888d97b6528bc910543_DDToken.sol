@@ -42,8 +42,8 @@ contract ERC20TokenInterface {
 // DDToken contract
 contract DDToken is ERC20TokenInterface {
 
-    string public constant name = &quot;DDToken&quot;;
-    string public constant symbol = &quot;DDT&quot;;
+    string public constant name = "DDToken";
+    string public constant symbol = "DDT";
     uint256 public constant decimals = 6;
     uint256 public constant totalTokens = 50000000 * (10 ** decimals);
 

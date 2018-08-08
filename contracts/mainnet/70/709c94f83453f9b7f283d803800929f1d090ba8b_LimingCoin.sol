@@ -155,8 +155,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract LimingCoin is StandardToken {
 
-  string public constant name = &quot;Liming Coin&quot;;
-  string public constant symbol = &quot;LMC&quot;;
+  string public constant name = "Liming Coin";
+  string public constant symbol = "LMC";
   uint256 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 100000000000 * 10**18;

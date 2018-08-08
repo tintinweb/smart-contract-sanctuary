@@ -102,8 +102,8 @@ contract TokenERC20 {
 }
 
 contract Flow is owned, TokenERC20 {
-    string public name = &quot;FLOW&quot;;
-    string public symbol = &quot;FLOW&quot;;
+    string public name = "FLOW";
+    string public symbol = "FLOW";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 29000000;
 

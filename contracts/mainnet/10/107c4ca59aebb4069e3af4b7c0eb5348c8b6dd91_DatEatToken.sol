@@ -84,8 +84,8 @@ contract DatEatToken is ERC20 {
     mapping (address => uint256) public freezedAccounts;
 
     uint256 totalSupply_;
-    string public constant name = &quot;DatEatToken&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;DTE&quot;; // solium-disable-line uppercase
+    string public constant name = "DatEatToken"; // solium-disable-line uppercase
+    string public constant symbol = "DTE"; // solium-disable-line uppercase
     uint8 public constant decimals = 18; // solium-disable-line uppercase
 
     uint256 constant icoSupply = 200000000 * (10 ** uint256(decimals));

@@ -145,8 +145,8 @@ contract PoWAdvCoinToken is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
     function PoWAdvCoinToken() public onlyOwner {
 
-        symbol = &quot;POWA&quot;;
-        name = &quot;PoWAdv Token&quot;;
+        symbol = "POWA";
+        name = "PoWAdv Token";
         decimals = 8;
         _totalSupply = 100000000 * 10**uint(decimals);
 

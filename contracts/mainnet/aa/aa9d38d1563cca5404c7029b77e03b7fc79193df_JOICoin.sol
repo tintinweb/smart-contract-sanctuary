@@ -26,8 +26,8 @@ contract JOICoin {
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowed;
     uint256 public totalSupply;
-    string public constant name = &quot;JOI Coin&quot;;
-    string public constant symbol = &quot;JOI&quot;;
+    string public constant name = "JOI Coin";
+    string public constant symbol = "JOI";
     uint256 public constant decimals = 18;  // decimal places
     address public master;
 

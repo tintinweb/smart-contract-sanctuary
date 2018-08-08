@@ -217,8 +217,8 @@ contract CandyLand is ERC20, LandAccessControl, CanReceiveApproval {
         uint ownerPlantationIndex;
     }
 
-    string public constant name = &quot;Unicorn Land&quot;;
-    string public constant symbol = &quot;Land&quot;;
+    string public constant name = "Unicorn Land";
+    string public constant symbol = "Land";
     uint8 public constant decimals = 0;
 
     uint256 totalSupply_;
@@ -259,7 +259,7 @@ contract CandyLand is ERC20, LandAccessControl, CanReceiveApproval {
     event TokensTransferred(address wallet, uint value);
 
     function CandyLand(address _landManagementAddress) LandAccessControl(_landManagementAddress) public {
-        allowedFuncs[bytes4(keccak256(&quot;_receiveMakePlant(address,uint256,uint256)&quot;))] = true;
+        allowedFuncs[bytes4(keccak256("_receiveMakePlant(address,uint256,uint256)"))] = true;
 
         addGardener(24,   700000000000000000);
         addGardener(120, 3000000000000000000);

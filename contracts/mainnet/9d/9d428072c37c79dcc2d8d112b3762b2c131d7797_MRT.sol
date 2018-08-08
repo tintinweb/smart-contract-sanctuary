@@ -58,8 +58,8 @@ contract MRT is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
-    string public constant name = &quot;MobileRechargez Token&quot;;
-    string public constant symbol = &quot;MRT&quot;;
+    string public constant name = "MobileRechargez Token";
+    string public constant symbol = "MRT";
     uint public constant decimals = 8;
     uint256 public totalSupply = 900000000e8;
     uint256 public totalDistributed = 300000000e8;

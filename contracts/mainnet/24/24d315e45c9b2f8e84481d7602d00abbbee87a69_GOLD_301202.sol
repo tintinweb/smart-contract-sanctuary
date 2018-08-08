@@ -4,8 +4,8 @@ contract	GOLD_301202				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	GOLD_301202		&quot;	;
-	string	public		symbol =	&quot;	GOLDII		&quot;	;
+	string	public		name =	"	GOLD_301202		"	;
+	string	public		symbol =	"	GOLDII		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10686766930037800000000000					;	

@@ -77,7 +77,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -309,8 +309,8 @@ contract MintableToken is StandardToken, Ownable {
  */
 contract PibbleToken is MintableToken {
 
-  string public constant name = &quot;Pibble Token&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;PIB&quot;; // solium-disable-line uppercase
+  string public constant name = "Pibble Token"; // solium-disable-line uppercase
+  string public constant symbol = "PIB"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = (10*1000*1000*1000) * (10 ** uint256(decimals)); // 10 billion coin

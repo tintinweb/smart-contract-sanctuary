@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract CaterToken {
 
-    string public name = &quot;Cater&quot;;      //  token name
-    string public symbol = &quot;CATER&quot;;           //  token symbol
+    string public name = "Cater";      //  token name
+    string public symbol = "CATER";           //  token symbol
     uint256 public decimals = 8;            //  token digit
 
     mapping (address => uint256) public balanceOf;

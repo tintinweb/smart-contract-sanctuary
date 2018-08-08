@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract Punani {
     // Public variables of the token
-    string public name = &quot;Punani&quot;;
-    string public symbol = &quot;PUNI&quot;;
+    string public name = "Punani";
+    string public symbol = "PUNI";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

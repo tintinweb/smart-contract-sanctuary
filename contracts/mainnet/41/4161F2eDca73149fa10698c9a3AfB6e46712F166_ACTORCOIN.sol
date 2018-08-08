@@ -108,8 +108,8 @@ contract ERC223 {
 contract ACTORCOIN is ERC223, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;actor coin&quot;;
-    string public symbol = &quot;ACT&quot;;
+    string public name = "actor coin";
+    string public symbol = "ACT";
     uint8 public decimals = 16;
     uint256 public totalSupply;
 

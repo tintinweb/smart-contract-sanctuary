@@ -13,7 +13,7 @@ contract Registry {
     address public RegistryAddress;
     address public deployer;
     modifier onlyAdmin() {
-        require(msg.sender == getAddress(&quot;admin&quot;));
+        require(msg.sender == getAddress("admin"));
         _;
     }
     function getAddress(string AddressName) internal view returns(address) {
@@ -47,7 +47,7 @@ contract MoatAsset is Registry {
     }    
 
     function SendEtherToFund(uint256 weiAmt) onlyAdmin public {
-        MFund MoatFund = MFund(getAddress(&quot;fund&quot;));
+        MFund MoatFund = MFund(getAddress("fund"));
         MoatFund.NonIssueDeposits.value(weiAmt)();
     }
 
@@ -58,13 +58,13 @@ contract MoatAsset is Registry {
     }
 
     function SendEtherToDex(uint256 weiAmt) onlyAdmin public {
-        getAddress(&quot;dex&quot;).transfer(weiAmt);
+        getAddress("dex").transfer(weiAmt);
     }
 
     function SendERC20ToDex(address tokenAddress) onlyAdmin public {
         token tokenFunctions = token(tokenAddress);
         uint256 tokenBal = tokenFunctions.balanceOf(address(this));
-        tokenFunctions.transfer(getAddress(&quot;dex&quot;), tokenBal);
+        tokenFunctions.transfer(getAddress("dex"), tokenBal);
     }
 
 }

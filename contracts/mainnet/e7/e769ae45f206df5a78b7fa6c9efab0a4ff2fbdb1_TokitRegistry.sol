@@ -48,7 +48,7 @@ contract Token {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -245,7 +245,7 @@ contract TokitRegistry is Ownable {
 /// @author Stefan George - <stefan.george@consensys.net>
 /// @author Milad Mostavi - <milad.mostavi@consensys.net>
 contract SingularDTVFund {
-    string public version = &quot;0.1.0&quot;;
+    string public version = "0.1.0";
 
     /*
      *  External contracts
@@ -403,7 +403,7 @@ contract StandardToken is Token {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 
@@ -421,7 +421,7 @@ contract AbstractSingularDTVFund {
 /// @author Stefan George - <stefan.george@consensys.net>
 /// @author Milad Mostavi - <milad.mostavi@consensys.net>
 contract SingularDTVToken is StandardToken {
-    string public version = &quot;0.1.0&quot;;
+    string public version = "0.1.0";
 
     /*
      *  External contracts
@@ -495,7 +495,7 @@ contract AbstractSingularDTVToken is Token {
 /// @author Razvan Pop - <razvan.pop@consensys.net>
 /// @author Milad Mostavi - <milad.mostavi@consensys.net>
 contract SingularDTVLaunch {
-    string public version = &quot;0.1.0&quot;;
+    string public version = "0.1.0";
 
     event Contributed(address indexed contributor, uint contribution, uint tokens);
 

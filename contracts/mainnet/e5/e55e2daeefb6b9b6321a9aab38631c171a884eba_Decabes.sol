@@ -113,8 +113,8 @@ contract Decabes is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Decabes() public {
-        symbol = &quot;DEC&quot;;
-        name = &quot;Decabes&quot;;
+        symbol = "DEC";
+        name = "Decabes";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5130ADAD8C86AF52743988293F484428a7C2402a] = _totalSupply;

@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract Afroin is StandardToken {
-  string public name    = &quot;Afroin&quot;;
-  string public symbol  = &quot;XFR&quot;;
+  string public name    = "Afroin";
+  string public symbol  = "XFR";
   uint8 public decimals = 18;
 
   // 575 million in total supply

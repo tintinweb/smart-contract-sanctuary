@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract ATP {
     
-    string public constant name = &quot;ATL Presale Token&quot;;
-    string public constant symbol = &quot;ATP&quot;;
+    string public constant name = "ATL Presale Token";
+    string public constant symbol = "ATP";
     uint   public constant decimals = 18;
     
     uint public constant PRICE = 505;

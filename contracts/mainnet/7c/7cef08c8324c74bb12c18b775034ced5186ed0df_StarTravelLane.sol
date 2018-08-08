@@ -214,9 +214,9 @@ contract StandardToken is ERC20, BasicToken {
 }
 contract StarTravelLane is StandardToken {
 
-  string public name = &quot;StarTravelLane&quot;;
+  string public name = "StarTravelLane";
 
-  string public symbol = &quot;STLL&quot;;
+  string public symbol = "STLL";
 
   uint8 public decimals = 18;
 

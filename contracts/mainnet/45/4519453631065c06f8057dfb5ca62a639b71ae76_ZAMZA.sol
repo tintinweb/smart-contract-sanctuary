@@ -113,8 +113,8 @@ contract ZAMZA is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZAMZA() public {
-        symbol = &quot;ZAMN&quot;;
-        name = &quot;ZAMZA&quot;;
+        symbol = "ZAMN";
+        name = "ZAMZA";
         decimals = 18;
         _totalSupply = 20000000000000000000000000000;
         balances[0x14BCB27A65496f0660fD8dE8BDC532943a527ddd] = _totalSupply;

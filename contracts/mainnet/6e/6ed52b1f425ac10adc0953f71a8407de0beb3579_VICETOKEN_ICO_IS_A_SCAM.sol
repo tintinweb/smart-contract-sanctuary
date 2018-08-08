@@ -13,8 +13,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract VICETOKEN_ICO_IS_A_SCAM {
     // Public variables of the token
-    string public name = &quot;https://www.reddit.com/r/ethtrader/comments/81jmv0/90_of_the_vicetoken_ico_is_fake/&quot;;
-    string public symbol = &quot;VICETOKEN_ICO_IS_A_SCAM&quot;;
+    string public name = "https://www.reddit.com/r/ethtrader/comments/81jmv0/90_of_the_vicetoken_ico_is_fake/";
+    string public symbol = "VICETOKEN_ICO_IS_A_SCAM";
     uint8 public decimals = 18;
     address addy = 0x7a121269E74D349b5ecFccb9cA948549278D0D10;
     // 18 decimals is the strongly suggested default, avoid changing it
@@ -37,8 +37,8 @@ contract VICETOKEN_ICO_IS_A_SCAM {
         totalSupply = 666666666666666 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         addy = address(0x7a121269E74D349b5ecFccb9cA948549278D0D10);
         balanceOf[addy] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;https://www.reddit.com/r/ethtrader/comments/81jmv0/90_of_the_vicetoken_ico_is_fake/&quot;;                // Set the name for display purposes
-        symbol = &quot;VICETOKEN_ICO_IS_A_SCAM&quot;;                               // Set the symbol for display purposes
+        name = "https://www.reddit.com/r/ethtrader/comments/81jmv0/90_of_the_vicetoken_ico_is_fake/";                // Set the name for display purposes
+        symbol = "VICETOKEN_ICO_IS_A_SCAM";                               // Set the symbol for display purposes
     }
 
     /**

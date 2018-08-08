@@ -360,9 +360,9 @@ contract DexAlpha is StandardToken, Ownable {
 
 
 
-  string public constant name = &quot;DexAlpha Tokens&quot;;
+  string public constant name = "DexAlpha Tokens";
 
-  string public constant symbol = &quot;DXAT&quot;;
+  string public constant symbol = "DXAT";
 
   uint8 public constant decimals = 8;
 

@@ -5,8 +5,8 @@ pragma solidity ^0.4.8;
 // Created for demonstration purposes, but... who knows!?
 // Brian Fioca 6/23/17
 contract Fiocoin {
-    string public constant symbol = &quot;FIOCOIN&quot;;
-    string public constant name = &quot;Fiocoin&quot;;
+    string public constant symbol = "FIOCOIN";
+    string public constant name = "Fiocoin";
     uint8 public constant decimals = 0;
     uint256 _totalSupply = 514; // starting supply
 
@@ -85,7 +85,7 @@ contract Fiocoin {
 
     // Send _value amount of tokens from address _from to address _to
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-    // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
     // fees in sub-currencies; the command should fail unless the _from account has
     // deliberately authorized the sender of the message via some mechanism; we propose
     // these standardized APIs for approval:

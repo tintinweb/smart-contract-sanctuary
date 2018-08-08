@@ -113,8 +113,8 @@ contract LEBRON is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LEBRON() public {
-        symbol = &quot;LBJ&quot;;
-        name = &quot;LEBRON&quot;;
+        symbol = "LBJ";
+        name = "LEBRON";
         decimals = 18;
         _totalSupply = 230000000000000000000000000;
         balances[0x432a39e0884a0bAA16e2b304b344E47f8CCe8B87] = _totalSupply;

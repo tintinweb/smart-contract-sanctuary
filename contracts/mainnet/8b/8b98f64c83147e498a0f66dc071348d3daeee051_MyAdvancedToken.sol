@@ -30,8 +30,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract TokenERC20 {
     // Public variables of the token
-    string public name=&quot;EtherTAM&quot;;
-    string public symbol=&quot;ETAM&quot;;
+    string public name="EtherTAM";
+    string public symbol="ETAM";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply=30000000;
@@ -205,7 +205,7 @@ contract MyAdvancedToken is owned, TokenERC20 {
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
     function MyAdvancedToken(
-    ) TokenERC20(30000000, &quot;EtherTAM&quot;, &quot;ETAM&quot;) public {}
+    ) TokenERC20(30000000, "EtherTAM", "ETAM") public {}
 
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {

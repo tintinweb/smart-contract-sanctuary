@@ -56,8 +56,8 @@ contract ERC20 {
 
 contract Platopay is ERC20, owned {
     using SafeMath for uint256;
-    string public name = &quot;Platopay Token&quot;;
-    string public symbol = &quot;PPTX&quot;;
+    string public name = "Platopay Token";
+    string public symbol = "PPTX";
     uint8 public decimals = 18;
     uint256 public totalSupply;
 

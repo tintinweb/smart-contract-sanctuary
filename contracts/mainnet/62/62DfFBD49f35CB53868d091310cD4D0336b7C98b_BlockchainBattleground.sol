@@ -28,7 +28,7 @@ contract BlockchainBattleground {
 	matchCount = 0;
 	matchPaidOff = true;
 
-	createMatch(&quot;Bitcoin Cash&quot;, &quot;Bitcoin&quot;, 7 days, &quot;Which is the real Bitcoin?&quot;);
+	createMatch("Bitcoin Cash", "Bitcoin", 7 days, "Which is the real Bitcoin?");
     }
 
     function createMatch(string leftName, string rightName, uint duration, string matchQuestion) public onlyOwner matchPaidOffModifier {

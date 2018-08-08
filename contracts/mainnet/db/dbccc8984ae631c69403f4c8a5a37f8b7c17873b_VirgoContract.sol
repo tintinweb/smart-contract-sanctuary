@@ -113,8 +113,8 @@ contract VirgoContract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function VirgoContract() public {
-        symbol = &quot;VGO&quot;;
-        name = &quot;VIRGO&quot;;
+        symbol = "VGO";
+        name = "VIRGO";
         decimals = 18;
         _totalSupply = 22000000000000000000000000;
         balances[0x5c85a34008135D6c9354d88F777BCf6333c543a6] = _totalSupply; //MEW address here

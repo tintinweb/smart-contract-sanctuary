@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -297,8 +297,8 @@ contract BurnableToken is BasicToken {
  
 contract Bitether is StandardToken, BurnableToken {
 
-  string public constant name = &quot;Bitether&quot;;
-  string public constant symbol = &quot;BTR&quot;;
+  string public constant name = "Bitether";
+  string public constant symbol = "BTR";
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 550000000 * (10 ** uint256(decimals));

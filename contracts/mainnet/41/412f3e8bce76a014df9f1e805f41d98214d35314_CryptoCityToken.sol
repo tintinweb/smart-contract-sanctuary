@@ -111,8 +111,8 @@ contract CryptoCityToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CryptoCityToken() public {
-        symbol = &quot;CCT&quot;;
-        name = &quot;Crypto-City Token&quot;;
+        symbol = "CCT";
+        name = "Crypto-City Token";
         decimals = 18;
         _totalSupply = 200000000000000000000000000;
         balances[0x0E364635692832CCb6F2Cc7376f560b660037D18] = _totalSupply;

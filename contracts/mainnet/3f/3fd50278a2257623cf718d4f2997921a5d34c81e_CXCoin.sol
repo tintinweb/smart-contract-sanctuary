@@ -114,8 +114,8 @@ contract CXCoin is Ownable, StandardToken {
     function CXCoin() public {
     totalSupply = 100 * (10**6) * (10**6);
         balances[msg.sender] = totalSupply;
-        name = &quot;CX&quot;;
-        symbol = &quot;CX&quot;;
+        name = "CX";
+        symbol = "CX";
         decimals = 6;
     }
 

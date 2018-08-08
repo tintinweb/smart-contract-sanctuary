@@ -88,12 +88,12 @@ contract TokenSale {
   // address of the TOTE token original smart contract
   address public tokenContractAddress = 0x42be9831FFF77972c1D0E1eC0aA9bdb3CaA04D47;
   
-  // address of TokenBurn contract to &quot;burn&quot; unsold tokens
+  // address of TokenBurn contract to "burn" unsold tokens
   // for further details, review the TokenBurn contract and verify code on Etherscan
   address public tokenBurnAddress = 0xadCa18DC9489C5FE5BdDf1A8a8C2623B66029198;
   
   // address of EthRaised contract, that will be used to distribute funds 
-  // raised by the token sale. Added as &quot;wallet address&quot;
+  // raised by the token sale. Added as "wallet address"
   address public ethRaisedAddress = 0x9F73D808807c71Af185FEA0c1cE205002c74123C;
   
   uint public preIcoPhaseCountdown;       // used for website tokensale
@@ -172,11 +172,11 @@ contract TokenSale {
     preIcoPhaseCountdown = openingTime;
     icoPhaseCountdown = closingTime;
     
-    // after 14 days the &quot;post-tokensale&quot; header section of the homepage 
+    // after 14 days the "post-tokensale" header section of the homepage 
     // on the website will be removed based on this time
     postIcoPhaseCountdown = closingTime.add(14 days);
     
-    emit Deployed(&quot;Ethertote Token Sale contract deployed&quot;, now);
+    emit Deployed("Ethertote Token Sale contract deployed", now);
   }
   
   
@@ -202,7 +202,7 @@ contract TokenSale {
       require(tokenSaleIsPaused == false);
       require(tokenSaleHasFinished() == true);
       token.transfer(tokenBurnAddress, tokenSaleTokenBalance());
-      emit TokensBurned(&quot;tokens sent to TokenBurn contract&quot;, now);
+      emit TokensBurned("tokens sent to TokenBurn contract", now);
   }
 
 
@@ -218,7 +218,7 @@ contract TokenSale {
       // pause the sale and note the time of the pause
       tokenSaleIsPaused = true;
       tokenSalePausedTime = now;
-      emit SalePaused(&quot;token sale has been paused&quot;, now);
+      emit SalePaused("token sale has been paused", now);
   }
   
     // function to resume token sale
@@ -247,7 +247,7 @@ contract TokenSale {
       postIcoPhaseCountdown = closingTime.add(14 days);
       // now resume the token sale
       tokenSaleIsPaused = false;
-      emit SaleResumed(&quot;token sale has now resumed&quot;, now);
+      emit SaleResumed("token sale has now resumed", now);
   }
   
 

@@ -305,8 +305,8 @@ contract MintableToken is StandardToken {
 
 contract LAFIN is MintableToken 
 {
-  string public constant name = &quot;LAFIN&quot;;
-  string public constant symbol = &quot;LAFIN&quot;;
+  string public constant name = "LAFIN";
+  string public constant symbol = "LAFIN";
 
  function LAFIN() { totalSupply = 0 ; } // initializes to 0 the total token supply 
 }

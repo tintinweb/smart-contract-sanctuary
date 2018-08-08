@@ -106,13 +106,13 @@ contract RPS {
     ///   - no fewer than 1 character
     ///   - no more than 25 characters
     ///   - no characters other than:
-    ///     - &quot;roman&quot; alphabet letters (A-Z and a-z)
+    ///     - "roman" alphabet letters (A-Z and a-z)
     ///     - western digits (0-9)
-    ///     - &quot;safe&quot; punctuation: ! ( ) - . _ SPACE
+    ///     - "safe" punctuation: ! ( ) - . _ SPACE
     ///   - at least one non-punctuation character
     /// Note that we deliberately exclude characters which may cause
     /// security problems for websites and databases if escaping is
-    /// not performed correctly, such as < > &quot; and &#39;.
+    /// not performed correctly, such as < > " and &#39;.
     /// Apologies for the lack of non-English language support.
     function validateNameInternal(string _name) constant internal
     returns (bool allowed) {

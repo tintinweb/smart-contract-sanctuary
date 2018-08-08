@@ -150,7 +150,7 @@ contract Presale is SafeMath, Pausable {
         tokenPriceWei = 720000000000000;// price of token expressed in Wei 
     }
 
-    // @notice to obtain number of contributors so later &quot;front end&quot; can loop through backersIndex and 
+    // @notice to obtain number of contributors so later "front end" can loop through backersIndex and 
     // triggger transfer of tokens
     // @return  {uint} true if transaction was successful
     function numberOfBackers() constant returns(uint) {

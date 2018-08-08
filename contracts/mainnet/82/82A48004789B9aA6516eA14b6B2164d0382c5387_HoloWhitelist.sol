@@ -4,7 +4,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -148,8 +148,8 @@ library SafeMath {
 // Token can be burned by a special &#39;destroyer&#39; role that can only
 // burn its tokens.
 contract HoloToken is Ownable {
-  string public constant name = &quot;HoloToken&quot;;
-  string public constant symbol = &quot;HOT&quot;;
+  string public constant name = "HoloToken";
+  string public constant symbol = "HOT";
   uint8 public constant decimals = 18;
 
   event Transfer(address indexed from, address indexed to, uint256 value);

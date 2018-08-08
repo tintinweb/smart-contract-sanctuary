@@ -193,8 +193,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract EtherDoge is MintableToken {
-  string public constant name = &quot;EtherDoge&quot;;
-  string public constant symbol = &quot;EDOGE&quot;;
+  string public constant name = "EtherDoge";
+  string public constant symbol = "EDOGE";
   uint   public constant decimals = 18;
   uint   public unlockTimeStamp = 0;  
 

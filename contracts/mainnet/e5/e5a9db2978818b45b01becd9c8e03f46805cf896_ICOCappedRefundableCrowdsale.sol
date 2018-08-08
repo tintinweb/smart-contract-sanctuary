@@ -305,8 +305,8 @@ contract MintableToken is StandardToken, Ownable {
  */
 contract ICOToken is MintableToken, Pausable {
 
-  string public constant name = &quot;IPCHAIN Token&quot;;
-  string public constant symbol = &quot;IP&quot;;
+  string public constant name = "IPCHAIN Token";
+  string public constant symbol = "IP";
   uint8 public constant decimals = 18;
 
 

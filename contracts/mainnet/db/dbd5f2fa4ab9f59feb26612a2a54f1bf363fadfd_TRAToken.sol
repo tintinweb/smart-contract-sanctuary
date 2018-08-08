@@ -188,8 +188,8 @@ contract StandardToken is BasicToken, ERC20 {
 
 /// @title TRA Protocol Token.
 contract TRAToken is StandardToken {
-    string public constant NAME = &quot;TRACoin&quot;;
-    string public constant SYMBOL = &quot;TRA&quot;;
+    string public constant NAME = "TRACoin";
+    string public constant SYMBOL = "TRA";
     uint public constant DECIMALS = 18;
 
     /// During token sale, we use one consistent price: 50000 TRA/ETH.
@@ -285,7 +285,7 @@ contract TRAToken is StandardToken {
         if (!saleStarted()) {
             _;
         } else {
-            InvalidState(&quot;Sale has not started yet&quot;);
+            InvalidState("Sale has not started yet");
             throw;
         }
     }
@@ -294,7 +294,7 @@ contract TRAToken is StandardToken {
         if (saleStarted() && !saleEnded()) {
             _;
         } else {
-            InvalidState(&quot;Sale is not in progress&quot;);
+            InvalidState("Sale is not in progress");
             throw;
         }
     }
@@ -303,7 +303,7 @@ contract TRAToken is StandardToken {
         if (saleEnded()) {
             _;
         } else {
-            InvalidState(&quot;Sale is not ended yet&quot;);
+            InvalidState("Sale is not ended yet");
             throw;
         }
     }

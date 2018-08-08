@@ -114,8 +114,8 @@ contract PGE02CH is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PGE02CH() public {
-        symbol = &quot;PGE02CH&quot;;
-        name = &quot;Porini Global Events 02 Zurich&quot;;
+        symbol = "PGE02CH";
+        name = "Porini Global Events 02 Zurich";
         decimals = 0;
         _totalSupply = 99;
         balances[0xc78008472f34cB052438C75b859A2528e1c1D507] = _totalSupply;

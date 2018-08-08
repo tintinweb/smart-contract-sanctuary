@@ -1,8 +1,8 @@
 pragma solidity ^0.4.21;
 
 contract PeakAssetCoin {
-    string public name = &quot;Peak Asset Coin&quot;;
-    string public symbol = &quot;PAC&quot;;
+    string public name = "Peak Asset Coin";
+    string public symbol = "PAC";
     uint8 public decimals = 18;
     uint256 public totalSupply = 800000000 * 10 ** uint256(decimals);
 

@@ -113,8 +113,8 @@ contract TakeOffWorldwide is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TakeOffWorldwide() public {
-        symbol = &quot;TOW&quot;;
-        name = &quot;Take Off Worldwide&quot;;
+        symbol = "TOW";
+        name = "Take Off Worldwide";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xc84E196311EEf0E4521E492E66fcB67C3E4f98da] = _totalSupply;

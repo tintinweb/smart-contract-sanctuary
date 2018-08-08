@@ -113,8 +113,8 @@ contract Cow is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function Cow() public {
-        symbol = &quot;COW&quot;;
-        name = &quot;COW COIN&quot;;
+        symbol = "COW";
+        name = "COW COIN";
         decimals = 0;
         _totalSupply = 21000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

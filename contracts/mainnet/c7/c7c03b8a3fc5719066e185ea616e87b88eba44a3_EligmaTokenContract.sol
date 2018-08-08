@@ -204,10 +204,10 @@ contract ERC20Token is ERC20TokenInterface, SafeMath, Owned, Lockable {
 contract EligmaTokenContract is ERC20Token {
 
   function EligmaTokenContract() public {
-    name = &quot;EligmaToken&quot;;
-    symbol = &quot;ELI&quot;;
+    name = "EligmaToken";
+    symbol = "ELI";
     decimals = 18;
     mintingContractAddress = 0xB72Fc3f647C9Bb4FdA13EA2A1Ba9b779EB786770;
-    lockFromSelf(5584081, &quot;Lock before crowdsale starts&quot;);
+    lockFromSelf(5584081, "Lock before crowdsale starts");
   }
 }

@@ -113,8 +113,8 @@ contract GlobaleCash is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GlobaleCash() public {
-        symbol = &quot;$GEC&quot;;
-        name = &quot;Global eCash &quot;;
+        symbol = "$GEC";
+        name = "Global eCash ";
         decimals = 0;
         _totalSupply = 60000000;
         balances[0x7C86D15F158ad52FBC7B0206995731a309E3CCE0] = _totalSupply;

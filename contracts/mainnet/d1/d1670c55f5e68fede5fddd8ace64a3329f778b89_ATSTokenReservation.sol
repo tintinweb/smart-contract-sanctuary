@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
  * The actual tokens are not yet created and distributed due to non-technical reasons.
  * This contract is used to collect funds for the ATS token sale and to transparently document that on a blockchain.
  * It is tailored to allow a simple user journey while keeping complexity minimal.
- * Once the privileged &quot;state controller&quot; sets the state to &quot;Open&quot;, anybody can send Ether to the contract.
+ * Once the privileged "state controller" sets the state to "Open", anybody can send Ether to the contract.
  * Only Ether sent from whitelisted addresses is accepted for future ATS token conversion.
  * The whitelisting is done by a dedicated whitelist controller.
  * Whitelisting can take place asynchronously - that is, participants don&#39;t need to wait for the whitelisting to
@@ -68,9 +68,9 @@ contract ATSTokenReservation {
 
     uint256 public minDeposit = 0.1 * 1E18; // lower bound per participant (can be a kind of spam protection)
 
-    uint256 minLockingTs; // earliest possible start of &quot;locked&quot; phase
+    uint256 minLockingTs; // earliest possible start of "locked" phase
 
-    // whitelisted addresses (those having &quot;accepted&quot; deposits)
+    // whitelisted addresses (those having "accepted" deposits)
     mapping (address => bool) public whitelist;
 
     // the state controller can set this in order to disallow deposits from addresses not whitelisted before
@@ -97,14 +97,14 @@ contract ATSTokenReservation {
 
     // ################### MODIFIERS ###################
 
-    modifier onlyStateControl() { require(msg.sender == stateController, &quot;no permission&quot;); _; }
+    modifier onlyStateControl() { require(msg.sender == stateController, "no permission"); _; }
 
     modifier onlyWhitelistControl()	{
-        require(msg.sender == stateController || msg.sender == whitelistController, &quot;no permission&quot;);
+        require(msg.sender == stateController || msg.sender == whitelistController, "no permission");
         _;
     }
 
-    modifier requireState(States _requiredState) { require(state == _requiredState, &quot;wrong state&quot;); _; }
+    modifier requireState(States _requiredState) { require(state == _requiredState, "wrong state"); _; }
 
     // ################### CONSTRUCTOR ###################
 
@@ -122,7 +122,7 @@ contract ATSTokenReservation {
         if(msg.value > 0) {
             require(state == States.Open || state == States.Locked);
             if(requireWhitelistingBeforeDeposit) {
-                require(whitelist[msg.sender] == true, &quot;not whitelisted&quot;);
+                require(whitelist[msg.sender] == true, "not whitelisted");
             }
             tryDeposit();
         } else {

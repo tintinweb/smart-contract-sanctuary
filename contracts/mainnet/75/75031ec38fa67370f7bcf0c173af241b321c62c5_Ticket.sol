@@ -192,8 +192,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract Ticket is StandardToken {
-    string constant public name = &quot;BlockCity Premium&quot;;
-    string constant public symbol = &quot;BCITYP&quot;;
+    string constant public name = "BlockCity Premium";
+    string constant public symbol = "BCITYP";
     uint8 constant public decimals = 0;
     uint256 constant public price = 1.25 ether;
     uint256 constant public MAX = 50;

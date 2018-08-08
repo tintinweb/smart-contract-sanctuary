@@ -168,11 +168,11 @@ contract LICERIOToken is MintableToken {
 	}
 	
 	function name () constant returns (string result) {
-		return &quot;LICERIO TOKEN&quot;;
+		return "LICERIO TOKEN";
 	}
 	
 	function symbol () constant returns (string result) {
-		return &quot;LCR&quot;;
+		return "LCR";
 	}
 	
 	function decimals () constant returns (uint result) {

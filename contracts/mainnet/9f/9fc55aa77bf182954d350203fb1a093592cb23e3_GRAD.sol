@@ -37,9 +37,9 @@ library SafeMath {
 contract GRAD {
     using SafeMath for uint256;
 
-    string public name = &quot;Gadus&quot;;
+    string public name = "Gadus";
 
-    string public symbol = &quot;GRAD&quot;;
+    string public symbol = "GRAD";
 
     uint public decimals = 18;
 

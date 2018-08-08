@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -173,7 +173,7 @@ contract B0xAccount is Ownable {
         onlyOwner
         returns (bool)
     {
-        // bytes4(keccak256(&quot;transfer(address,uint256)&quot;)) == 0xa9059cbb
+        // bytes4(keccak256("transfer(address,uint256)")) == 0xa9059cbb
         require(_tokenAddress.call(0xa9059cbb, _to, _value));
 
         return true;

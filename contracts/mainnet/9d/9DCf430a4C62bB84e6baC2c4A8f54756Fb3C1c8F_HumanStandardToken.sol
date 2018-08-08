@@ -69,16 +69,16 @@ contract HumanStandardToken is StandardToken {
         ) {
         balances[msg.sender] = 150000000000000000000000000;               // Give the creator all initial tokens
         totalSupply = 150000000000000000000000000;                        // Update total supply
-        name = &quot;BiBaoToken&quot;;                                   // Set the name for display purposes
+        name = "BiBaoToken";                                   // Set the name for display purposes
         decimals = 18;                                        // 默认18位小数
-        symbol = &quot;BBT&quot;;                               // Set the symbol for display purposes
+        symbol = "BBT";                               // Set the symbol for display purposes
     }
 
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 }

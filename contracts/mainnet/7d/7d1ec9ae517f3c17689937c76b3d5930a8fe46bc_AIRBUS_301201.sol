@@ -4,8 +4,8 @@ contract	AIRBUS_301201				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	AIRBUS_301201		&quot;	;
-	string	public		symbol =	&quot;	AIRBI		&quot;	;
+	string	public		name =	"	AIRBUS_301201		"	;
+	string	public		symbol =	"	AIRBI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		11272166680208600000000000					;	

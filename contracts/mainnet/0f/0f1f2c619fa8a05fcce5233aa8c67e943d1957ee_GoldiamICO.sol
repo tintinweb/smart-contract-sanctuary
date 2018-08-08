@@ -13,7 +13,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address internal owner;
@@ -701,8 +701,8 @@ contract RefundableCrowdsale is FinalizableCrowdsale {
  * @title GoldiamToken
  */
 contract GoldiamToken is MintableToken {
-  string public constant name = &quot;Goldiam&quot;;
-  string public constant symbol = &quot;GOL&quot;;
+  string public constant name = "Goldiam";
+  string public constant symbol = "GOL";
   uint256 public constant decimals = 18;
   uint256 public constant _totalSupply = 32300000 * 1 ether;
   

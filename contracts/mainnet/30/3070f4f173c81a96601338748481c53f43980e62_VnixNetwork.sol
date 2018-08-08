@@ -72,8 +72,8 @@ contract VnixNetwork is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Vnix Network&quot;;
-    string public constant symbol = &quot;VNX&quot;;
+    string public constant name = "Vnix Network";
+    string public constant symbol = "VNX";
     uint public constant decimals = 9;
     
     uint256 public totalSupply = 900000000e9;

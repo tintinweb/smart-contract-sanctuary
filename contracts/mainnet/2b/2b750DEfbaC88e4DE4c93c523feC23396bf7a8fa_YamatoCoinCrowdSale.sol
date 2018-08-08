@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -294,8 +294,8 @@ contract YamatoCoinCrowdSale is BurnableToken,StandardToken,Ownable {
      using SafeMath for uint256;
      
      // token infomation
-     string public symbol = &quot;YMT&quot;;
-     string public name = &quot;Yamato Token&quot;;
+     string public symbol = "YMT";
+     string public name = "Yamato Token";
      uint256 public decimals = 18;
 
      //supply

@@ -72,8 +72,8 @@ contract ShieldNetwork is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Shield Network&quot;;
-    string public constant symbol = &quot;SHDN&quot;;
+    string public constant name = "Shield Network";
+    string public constant symbol = "SHDN";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 500000000e8;

@@ -15,8 +15,8 @@ contract SBGToken {
     function SBGToken() public {
         totalSupply = 1000000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Sankofa Black Gold&quot;;
-        symbol = &quot;SBG&quot;;
+        name = "Sankofa Black Gold";
+        symbol = "SBG";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

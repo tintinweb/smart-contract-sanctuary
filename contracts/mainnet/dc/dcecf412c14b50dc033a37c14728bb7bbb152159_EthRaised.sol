@@ -3,18 +3,18 @@
 // The following contract automatically distributes the Eth raised from the
 // token sale.
 
-// 1. 40% of the Eth raised will go into a &quot;development&quot; ethereum wallet, immediately
+// 1. 40% of the Eth raised will go into a "development" ethereum wallet, immediately
 // accessible to the team, to be used for marketing, promotion, development, 
 // running costs, exchange listing fees, bug bounties and other aspects of 
 // running the company.
 //
-// 2. 30% of the Eth will go into a &quot;Tote Liquidator&quot; ethereum wallet, which will be
+// 2. 30% of the Eth will go into a "Tote Liquidator" ethereum wallet, which will be
 // used by the team purely to to liquidate the ethertote over the the opening
 // 12 weeks. It will be very easy to see the transactions on Etherscan as 
 // they will match the CryptoPot smart contracts that make up the Ethertote
 // ecosystem.
 //
-// 3. 30% of the Eth will go into a time-locked smart contract called &quot;Team Eth&quot;
+// 3. 30% of the Eth will go into a time-locked smart contract called "Team Eth"
 // which will be available to claim by the Ethertote team over a 12-month period
 //
 //

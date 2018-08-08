@@ -243,8 +243,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract QincoinToken is FreezeableToken, MintableToken {
     // public variables
-    string public name = &quot;Qincoin&quot;;
-    string public symbol = &quot;qc&quot;;
+    string public name = "Qincoin";
+    string public symbol = "qc";
     uint8 public decimals = 8;
 
     constructor() public {

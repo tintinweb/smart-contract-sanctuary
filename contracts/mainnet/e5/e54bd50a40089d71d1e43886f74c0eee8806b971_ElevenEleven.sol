@@ -68,10 +68,10 @@ contract ElevenEleven is ERC20Standard {
 
 	function ElevenElevenToken() {
 		totalSupply = 111111111000000000000000000;
-		name = &quot;1111&quot;;					
+		name = "1111";					
 		decimals = 18;						
-		symbol = &quot;1111&quot;;						
-		version = &quot;1.111&quot;;				
+		symbol = "1111";						
+		version = "1.111";				
 		balances[msg.sender] = totalSupply;	
 	}
 

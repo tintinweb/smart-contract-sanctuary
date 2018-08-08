@@ -116,8 +116,8 @@ contract DiscardToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DiscardToken() public {
-        symbol = &quot;DIS&quot;;
-        name = &quot;Discard Token&quot;;
+        symbol = "DIS";
+        name = "Discard Token";
         decimals = 18;
         bonusEnds = now + 4 weeks;
         endDate = now + 8 weeks;

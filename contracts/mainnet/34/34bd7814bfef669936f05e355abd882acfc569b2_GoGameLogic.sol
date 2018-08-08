@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -386,7 +386,7 @@ contract GoBoardMetaDetails is GoGlobals {
         return (completed, ethPaid);
     }
 
-    /// @dev At this point there is no support for returning dynamic arrays (it&#39;s supported for web3 calls but not for internal testing) so we will &quot;only&quot; present the recent 50 games per player.
+    /// @dev At this point there is no support for returning dynamic arrays (it&#39;s supported for web3 calls but not for internal testing) so we will "only" present the recent 50 games per player.
     uint8 constant PAGE_SIZE = 50;
 
     /// @dev Make sure this board is in waiting for result status
@@ -572,7 +572,7 @@ contract GoBoardMetaDetails is GoGlobals {
     ///  The black player also creates the board, and is the first player which gives a small advantage in the
     ///  game, therefore we decided that the black player will be the one paying for the additional gas
     ///  that is required to create the board.
-    /// @param  tableStakes The tablestakes to use, although this appears in the &quot;value&quot; of the message, we preferred to
+    /// @param  tableStakes The tablestakes to use, although this appears in the "value" of the message, we preferred to
     ///  add it as an additional parameter for client use for clients that allow to customize the value parameter.
     /// @return The boardId the player registered to (either a new board or an existing board)
     function registerPlayerToBoard(uint tableStakes) external payable allowedValuesOnly(msg.value) whenNotPaused returns(uint) {

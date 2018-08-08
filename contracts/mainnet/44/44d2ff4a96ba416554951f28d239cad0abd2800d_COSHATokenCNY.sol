@@ -30,8 +30,8 @@ contract COSHATokenCNY {
         totalSupply = initialSupply * 1 * 10 ** (10 + uint256(decimals));  // Update total supply with the decimal amount
         initialSupply = totalSupply;
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;COSHATokenCNY&quot;;                                   // Set the name for display purposes
-        symbol = &quot;CCNY&quot;;                               // Set the symbol for display purposes
+        name = "COSHATokenCNY";                                   // Set the name for display purposes
+        symbol = "CCNY";                               // Set the symbol for display purposes
         tokenName = name;
         tokenSymbol = symbol;
         

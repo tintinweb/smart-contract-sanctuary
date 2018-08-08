@@ -81,7 +81,7 @@ contract UnicornRefunds {
     var (unicornCount, visitType, , , state, , completedCount) = ranch.getBooking(msg.sender, _bookingIndex);
     require(state == UnicornRanch.VisitState.Completed); // Must be a visit that&#39;s completed (not in progress or repossessed)
     require(visitType != UnicornRanch.VisitType.Spa); // Must be longer than a Spa visit
-    require(completedCount > unicornCount); // Must have triggered the &quot;birth&quot; conditions so the user went home with more than what they send in
+    require(completedCount > unicornCount); // Must have triggered the "birth" conditions so the user went home with more than what they send in
     require(rewardClaimed[msg.sender] == false); // Must not have already claimed the reward
       
     rewardClaimed[msg.sender] = true;

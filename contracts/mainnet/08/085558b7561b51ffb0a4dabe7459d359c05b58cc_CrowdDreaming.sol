@@ -37,8 +37,8 @@ contract CrowdDreaming is ERC20 {
     
     uint256 public totalSupply = 200000000 * 10**8;
 
-    function name() public constant returns (string) { return &quot;CrowdDreaming&quot;; }
-    function symbol() public constant returns (string) { return &quot;CDD&quot;; }
+    function name() public constant returns (string) { return "CrowdDreaming"; }
+    function symbol() public constant returns (string) { return "CDD"; }
     function decimals() public constant returns (uint8) { return 8; }
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);

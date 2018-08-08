@@ -4,7 +4,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -77,7 +77,7 @@ contract Bitwords is Ownable {
      * @param cut   the amount of cut that Bitwords takes.
      */
     function setBitwordsCut (uint cut) onlyOwner public {
-        require(cut <= 30, &quot;cut cannot be more than 30%&quot;);
+        require(cut <= 30, "cut cannot be more than 30%");
         bitwordsCutOutof100 = cut;
     }
     
@@ -124,7 +124,7 @@ contract Bitwords is Ownable {
     function refundAdveriser (uint amount) public {
         // Ensure that the advertiser has enough balance to refund the smart 
         // contract
-        require(advertiserBalances[msg.sender] - amount >= 0, &quot;Insufficient balance&quot;);
+        require(advertiserBalances[msg.sender] - amount >= 0, "Insufficient balance");
         
         // deduct balance and send the ether
         advertiserBalances[msg.sender] -= amount;

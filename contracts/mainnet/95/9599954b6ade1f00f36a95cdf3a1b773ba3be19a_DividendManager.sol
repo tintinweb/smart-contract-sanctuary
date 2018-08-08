@@ -80,8 +80,8 @@ contract SmartInvestmentFundToken {
     /* Create a new instance of this fund with links to other contracts that are required. */
     function SmartInvestmentFundToken(address _icoContractAddress, address _authenticationManagerAddress) {
         // Setup defaults
-        name = &quot;Smart Investment Fund Token&quot;;
-        symbol = &quot;SIFT&quot;;
+        name = "Smart Investment Fund Token";
+        symbol = "SIFT";
         decimals = 0;
 
         /* Setup access to our other contracts and validate their versions */

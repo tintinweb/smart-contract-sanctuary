@@ -114,8 +114,8 @@ contract X871C is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;X871C&quot;;
-        name = &quot;X871C Fixed Supply Token&quot;;
+        symbol = "X871C";
+        name = "X871C Fixed Supply Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

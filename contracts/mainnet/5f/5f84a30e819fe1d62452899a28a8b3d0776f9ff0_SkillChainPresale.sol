@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -389,7 +389,7 @@ contract SkillChainToken is DetailedERC20, MintableToken, BurnableToken {
         _;
     }
 
-    function SkillChainToken() DetailedERC20(&quot;Skillchain&quot;, &quot;SKI&quot;, 18) public {}
+    function SkillChainToken() DetailedERC20("Skillchain", "SKI", 18) public {}
 
     function transfer(address _to, uint _value) canTransfer public returns (bool) {
         return super.transfer(_to, _value);

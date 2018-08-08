@@ -342,8 +342,8 @@ contract Clinicoin is PausableToken, CappedToken {
 
 	//metadata 
 
-	string public name = &quot;Clinicoin&quot;;
-	string public symbol = &quot;CLIN&quot;;
+	string public name = "Clinicoin";
+	string public symbol = "CLIN";
 	uint256 public decimals = 18;
 
 	//Constructor allocates inital pools of tokens and sets totalSupply

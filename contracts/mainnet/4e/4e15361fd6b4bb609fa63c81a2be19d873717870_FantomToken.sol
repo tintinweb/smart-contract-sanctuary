@@ -206,7 +206,7 @@ contract LockSlots is ERC20Token {
     event RegisteredLockedTokens(address indexed account, uint indexed idx, uint tokens, uint term);
 
     function registerLockedTokens(address _account, uint _tokens, uint _term) internal returns (uint idx) {
-        require(_term > now, &quot;lock term must be in the future&quot;);
+        require(_term > now, "lock term must be in the future");
 
         // find a slot (clean up while doing this)
         // use either the existing slot with the exact same term,
@@ -224,7 +224,7 @@ contract LockSlots is ERC20Token {
         }
 
         // fail if no slot was found
-        require(idx != 9999, &quot;registerLockedTokens: no available slot found&quot;);
+        require(idx != 9999, "registerLockedTokens: no available slot found");
 
         // register locked tokens
         if (term[idx] == 0) term[idx] = _term;
@@ -344,8 +344,8 @@ contract FantomToken is ERC20Token, Wallet, LockSlots, FantomIcoDates {
 
     // Basic token data
 
-    string public constant name = &quot;Fantom Token&quot;;
-    string public constant symbol = &quot;FTM&quot;;
+    string public constant name = "Fantom Token";
+    string public constant symbol = "FTM";
     uint8 public constant decimals = 18;
 
     // Token number of possible tokens in existance
@@ -498,8 +498,8 @@ contract FantomToken is ERC20Token, Wallet, LockSlots, FantomIcoDates {
         require(whitelist[_account]);
         require(_account != 0x0);
         require(_tokens > 0);
-        require(_tokens <= availableToMint(), &quot;not enough tokens available to mint&quot;);
-        require(_term == 0 || _term > now, &quot;either without lock term, or lock term must be in the future&quot;);
+        require(_tokens <= availableToMint(), "not enough tokens available to mint");
+        require(_term == 0 || _term > now, "either without lock term, or lock term must be in the future");
 
         // register locked tokens (will throw if no slot is found)
         if (_term > 0) registerLockedTokens(_account, _tokens, _term);
@@ -588,7 +588,7 @@ contract FantomToken is ERC20Token, Wallet, LockSlots, FantomIcoDates {
         return ERC20Interface(_token_address).transfer(owner, _amount);
     }
 
-    /* Override &quot;transfer&quot; */
+    /* Override "transfer" */
 
     function transfer(address _to, uint _amount) public returns (bool success) {
         require(tokensTradeable);
@@ -596,7 +596,7 @@ contract FantomToken is ERC20Token, Wallet, LockSlots, FantomIcoDates {
         return super.transfer(_to, _amount);
     }
 
-    /* Override &quot;transferFrom&quot; */
+    /* Override "transferFrom" */
 
     function transferFrom(address _from, address _to, uint _amount) public returns (bool success) {
         require(tokensTradeable);

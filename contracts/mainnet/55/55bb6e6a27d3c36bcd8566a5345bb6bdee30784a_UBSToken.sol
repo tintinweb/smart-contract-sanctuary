@@ -109,8 +109,8 @@ contract UBSToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function UBSToken() public {
-        symbol = &quot;UBS&quot;;
-        name = &quot;UBS Token&quot;;
+        symbol = "UBS";
+        name = "UBS Token";
         decimals = 0;
         _totalSupply = 5000000000;
         balances[0x6ab399423885c67ec0e272daa8711E7820f36cB0] = _totalSupply;

@@ -180,7 +180,7 @@ contract FLOCK is StandardToken { // CHANGE THIS. Update the contract name.
         They allow one to customise the token contract & in no way influences the core functionality.
         Some wallets/interfaces might not even bother to look at this information.
     */
-    string public version = &quot;H1.0&quot;; 
+    string public version = "H1.0"; 
     uint256 public totalEthInWei;         // WEI is the smallest unit of ETH (the equivalent of cent in USD or satoshi in BTC). We&#39;ll store the total ETH raised via our ICO here.  
     address public fundsWallet;           // Where should the raised ETH go?
 
@@ -196,9 +196,9 @@ contract FLOCK is StandardToken { // CHANGE THIS. Update the contract name.
     function FLOCK() public {
         totalSupply = 10000000000;          // Update total supply
         balances[msg.sender] = totalSupply; // Give the creator all initial tokens.
-        name = &quot;FLOCK&quot;;                     // Set the name for display purposes
+        name = "FLOCK";                     // Set the name for display purposes
         decimals = 0;                       // Amount of decimals for display purposes
-        symbol = &quot;FLK&quot;;                     // Set the symbol for display purposes
+        symbol = "FLK";                     // Set the symbol for display purposes
         fundsWallet = msg.sender;           // The owner of the contract gets ETH
 
         uint ts = 1523764800;

@@ -1,7 +1,7 @@
 pragma solidity ^0.4.23;
 contract REDTTokenConfig {
-    string public constant NAME = &quot;Real Estate Doc Token&quot;;
-    string public constant SYMBOL = &quot;REDT&quot;;
+    string public constant NAME = "Real Estate Doc Token";
+    string public constant SYMBOL = "REDT";
     uint8 public constant DECIMALS = 18;
     uint public constant DECIMALSFACTOR = 10 ** uint(DECIMALS);
     uint public constant TOTALSUPPLY = 1000000000 * DECIMALSFACTOR;
@@ -58,7 +58,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;

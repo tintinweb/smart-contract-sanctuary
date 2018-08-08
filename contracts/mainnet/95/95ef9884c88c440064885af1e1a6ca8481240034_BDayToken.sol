@@ -113,8 +113,8 @@ contract BDayToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BDayToken() public {
-        symbol = &quot;1B1DAY&quot;;
-        name = &quot;One Billion A Coin One Day&quot;;
+        symbol = "1B1DAY";
+        name = "One Billion A Coin One Day";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x5A6894ACdc546b04d66c5A199c84DDF273121624] = _totalSupply;

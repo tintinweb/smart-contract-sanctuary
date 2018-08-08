@@ -177,8 +177,8 @@ contract ERC721 {
 }
 
 contract EtheremonAsset is BasicAccessControl, ERC721 {
-    string public constant name = &quot;EtheremonAsset&quot;;
-    string public constant symbol = &quot;EMONA&quot;;
+    string public constant name = "EtheremonAsset";
+    string public constant symbol = "EMONA";
     
     mapping (address => mapping (uint256 => address)) public allowed;
     

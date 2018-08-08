@@ -4,8 +4,8 @@ contract HelloChicken {
 
   event Transfer(address indexed from, address indexed to, uint256 value);
 
-  string public constant name = &quot;Chicken&quot;;
-  string public constant symbol = &quot;CHK&quot;;
+  string public constant name = "Chicken";
+  string public constant symbol = "CHK";
   uint256 public constant decimals = 0;
 
   uint256 totalSupply_;

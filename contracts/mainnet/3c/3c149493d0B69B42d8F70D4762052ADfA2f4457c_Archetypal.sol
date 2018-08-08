@@ -73,8 +73,8 @@ contract Archetypal is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Archetypal Network&quot;;
-    string public constant symbol = &quot;ACTPN&quot;;
+    string public constant name = "Archetypal Network";
+    string public constant symbol = "ACTPN";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 10000000000e8;

@@ -113,8 +113,8 @@ contract MastermindAlliancePublishingGroupToken is ERC20Interface, Owned, SafeMa
     // Constructor
     // ------------------------------------------------------------------------
     function MastermindAlliancePublishingGroupToken() public {
-        symbol = &quot;MMAPG&quot;;
-        name = &quot;Mastermind Alliance Publishing Group Token&quot;;
+        symbol = "MMAPG";
+        name = "Mastermind Alliance Publishing Group Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x27CC877C8da9c79AbB537BB1c32016B0F4e8b124] = _totalSupply;

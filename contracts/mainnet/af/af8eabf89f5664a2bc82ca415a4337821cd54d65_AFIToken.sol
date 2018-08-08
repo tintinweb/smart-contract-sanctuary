@@ -427,8 +427,8 @@ contract Whitelist is Ownable {
 
 contract AFIToken is StandardToken, Crowdsale, Whitelist {
     using SafeMath for uint256;
-    string public constant name = &quot;AlchemyCoin&quot;;
-    string public constant symbol = &quot;AFI&quot;;
+    string public constant name = "AlchemyCoin";
+    string public constant symbol = "AFI";
     uint8 public constant decimals = 8;
     uint256 constant INITIAL_SUPPLY = 125000000 * (10 ** uint256(decimals));
     uint256 constant ICO_SUPPLY = 50000000 * (10 ** uint256(decimals));
@@ -512,7 +512,7 @@ contract AFIToken is StandardToken, Crowdsale, Whitelist {
             }
             uint256 amount = _totalRevenue.mul(snapshotBalance[whitelistArray[i]]).div(INITIAL_SUPPLY);
             if(amount > minRevenueToDeliver){
-                bool done = contractAddress.call(bytes4(keccak256(&quot;transferRevenue(address,uint256)&quot;)),whitelistArray[i],amount);
+                bool done = contractAddress.call(bytes4(keccak256("transferRevenue(address,uint256)")),whitelistArray[i],amount);
                 require(done == true);
             }
         }

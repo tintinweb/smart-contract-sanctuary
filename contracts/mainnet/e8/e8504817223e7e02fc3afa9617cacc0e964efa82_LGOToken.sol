@@ -113,8 +113,8 @@ contract LGOToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LGOToken() public {
-        symbol = &quot;LGO&quot;;
-        name = &quot;Let&#39;s GO Token&quot;;
+        symbol = "LGO";
+        name = "Let&#39;s GO Token";
         decimals = 10;
         _totalSupply = 200000000000000000000;
         balances[0xf7761e62a9bcdb3235d1927E3420DAA3924687aD] = _totalSupply;

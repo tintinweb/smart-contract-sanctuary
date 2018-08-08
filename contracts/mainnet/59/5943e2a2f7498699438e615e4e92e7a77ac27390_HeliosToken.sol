@@ -61,8 +61,8 @@ contract HeliosToken is Ownable { //ERC - 20 token contract
   event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
 
-  string public constant symbol = &quot;HLC&quot;;
-  string public constant name = &quot;Helios&quot;;
+  string public constant symbol = "HLC";
+  string public constant name = "Helios";
 
   uint8 public constant decimals = 2;
   uint256 _totalSupply = uint(5000000).mul(uint(10).pow(decimals));

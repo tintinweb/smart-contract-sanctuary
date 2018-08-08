@@ -133,8 +133,8 @@ contract BurnableToken is BasicToken {
 
 contract CyberCash is StandardToken, BurnableToken {
 
-  string public constant name = &quot;CyberCash&quot;; 
-  string public constant symbol = &quot;CXH&quot;; 
+  string public constant name = "CyberCash"; 
+  string public constant symbol = "CXH"; 
   uint8 public constant decimals = 0; 
 
   uint256 public constant INITIAL_SUPPLY = 45000000000 * (10 ** uint256(decimals));

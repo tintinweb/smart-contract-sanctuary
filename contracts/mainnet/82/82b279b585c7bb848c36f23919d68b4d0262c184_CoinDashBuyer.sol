@@ -61,7 +61,7 @@ contract CoinDashBuyer {
   }
   
   // Withdraws all ETH deposited or tokens purchased by the user.
-  // &quot;internal&quot; means this function is not externally callable.
+  // "internal" means this function is not externally callable.
   function withdraw(address user, bool has_fee) internal {
     // If called before the ICO, cancel user&#39;s participation in the sale.
     if (!bought_tokens) {

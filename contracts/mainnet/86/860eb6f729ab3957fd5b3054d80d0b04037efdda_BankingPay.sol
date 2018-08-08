@@ -82,8 +82,8 @@ contract BankingPay is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;BankingPay&quot;;
-    string public constant symbol = &quot;BKP&quot;;
+    string public constant name = "BankingPay";
+    string public constant symbol = "BKP";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 3000000000e8;

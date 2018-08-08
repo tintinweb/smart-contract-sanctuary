@@ -302,7 +302,7 @@ contract BurnableToken is StandardToken {
     ICO Crypt-ON - p2p DAO System
 */
 contract Token is CappedToken, BurnableToken, Withdrawable {
-    function Token() CappedToken(180000000 * 1 ether) StandardToken(&quot;I-Point&quot;, &quot;IPT&quot;, 18) public {
+    function Token() CappedToken(180000000 * 1 ether) StandardToken("I-Point", "IPT", 18) public {
         
     }
 }

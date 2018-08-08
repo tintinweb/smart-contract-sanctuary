@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract DARK is StandardToken, Ownable {
 
-    string public constant name = &quot;暗链&quot;;
-    string public constant symbol = &quot;DARK&quot;;
+    string public constant name = "暗链";
+    string public constant symbol = "DARK";
     uint256 public constant decimals = 8;
 
     function DARK() public {

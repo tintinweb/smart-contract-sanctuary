@@ -291,7 +291,7 @@ contract MintableToken is ERC20Extended{
 }
 
 contract VIVACoin is MintableToken {
-    string public symbol = &quot;VIVA&quot;;
-    string public  name = &quot;VIVA COIN&quot;;
+    string public symbol = "VIVA";
+    string public  name = "VIVA COIN";
     uint8 public decimals = 8;
 }

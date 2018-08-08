@@ -109,8 +109,8 @@ contract CAMS is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CAMS() public {
-        symbol = &quot;CAMS&quot;;
-        name = &quot;CAMS&quot;;
+        symbol = "CAMS";
+        name = "CAMS";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x404027d3e87f1acc5e6524733789ef8eba35d906] = _totalSupply;

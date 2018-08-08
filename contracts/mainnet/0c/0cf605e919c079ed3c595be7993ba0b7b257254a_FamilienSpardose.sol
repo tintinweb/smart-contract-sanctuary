@@ -11,13 +11,13 @@ contract FamilienSpardose {
     mapping (address => uint) public guthaben;
     
     // zeigt im smart contract an, wieviel Ether alle Sparer insgesamt halten
-    // &quot;.balance&quot; ist eine Objektattribut des Datentyps address, das f&#252;r jede wallet und jeden smart contract das entsprechende 
+    // ".balance" ist eine Objektattribut des Datentyps address, das f&#252;r jede wallet und jeden smart contract das entsprechende 
     //  Ether-Guthaben darstellt.
     uint public gesamtGuthaben = address(this).balance;
     
     // Konstruktorfunktion: Wird einmalig beim deployment des smart contracts ausgef&#252;hrt
     // Wenn Transaktionen, die Funktionen auszuf&#252;hren beabsichtigen, Ether mitgesendet wird (TXvalue > 0), so muss die
-    //  ausgef&#252;hrte Transaktion mit &quot;payable&quot; gekennzeichnet sein. Sicherheitsfeature im Interesse der Nutzer
+    //  ausgef&#252;hrte Transaktion mit "payable" gekennzeichnet sein. Sicherheitsfeature im Interesse der Nutzer
     constructor(string _name, address _sparer) payable {
         
         
@@ -54,7 +54,7 @@ contract FamilienSpardose {
         guthaben [msg.sender] = guthaben [msg.sender] - _betrag;
         
         // &#220;berweisung des Ethers
-        // &quot;.transfer&quot; ist eine Objektmethode des Datentyps address, die an die gegebene Addresse 
+        // ".transfer" ist eine Objektmethode des Datentyps address, die an die gegebene Addresse 
         // die gew&#252;nschte Menge Ether zu transferieren versucht. Schl&#228;gt dies fehl, wird die
         // Ausf&#252;hrung der Funktion abgebrochen und bisherige &#196;nderungen r&#252;ckg&#228;ngig gemacht.
         msg.sender.transfer(_betrag);

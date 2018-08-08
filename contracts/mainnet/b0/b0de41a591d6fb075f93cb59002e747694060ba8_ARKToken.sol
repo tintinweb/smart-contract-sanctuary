@@ -191,7 +191,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -312,9 +312,9 @@ contract ARKToken is PausableToken {
     * They allow one to customise the token contract & in no way influences the core functionality.
     * Some wallets/interfaces might not even bother to look at this information.
     */
-    string public name=&quot;Noah ARK Token&quot;;
+    string public name="Noah ARK Token";
     uint8 public decimals=18;
-    string public symbol=&quot;ARK&quot;;
+    string public symbol="ARK";
     string public version = &#39;1.0.0&#39;;
     uint256 public  totalSupply = 2000000000 * 10 ** uint256(decimals);
 

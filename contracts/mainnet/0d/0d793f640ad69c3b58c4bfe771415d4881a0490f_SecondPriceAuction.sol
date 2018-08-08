@@ -45,7 +45,7 @@ contract NotakeyVerifierForICOP {
     }
 
     function sanityCheck() public pure returns (string) {
-        return &quot;Hello Dashboard&quot;;
+        return "Hello Dashboard";
     }
 
     function isVerified(address subject, uint256 nationalityBlacklist) public constant onlyVerifiedSenders(subject, nationalityBlacklist) returns (bool) {
@@ -462,10 +462,10 @@ contract SecondPriceAuction {
 	/// Those who have bought in to the auction.
 	mapping (address => Account) public buyins;
 
-	/// Total amount of ether received, excluding phantom &quot;bonus&quot; ether.
+	/// Total amount of ether received, excluding phantom "bonus" ether.
 	uint public totalReceived = 0;
 
-	/// Total amount of ether accounted for, including phantom &quot;bonus&quot; ether.
+	/// Total amount of ether accounted for, including phantom "bonus" ether.
 	uint public totalAccounted = 0;
 
 	/// Total amount of ether which has been finalised.

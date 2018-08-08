@@ -128,8 +128,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract TCGC is StandardToken {
-    string public constant name = &quot;TRILLION CLOUD GOLD&quot;;
-    string public constant symbol = &quot;TCGC&quot;;
+    string public constant name = "TRILLION CLOUD GOLD";
+    string public constant symbol = "TCGC";
     uint public constant decimals = 18;
     uint public freezeTime = now + 1 years;
     address public owner;

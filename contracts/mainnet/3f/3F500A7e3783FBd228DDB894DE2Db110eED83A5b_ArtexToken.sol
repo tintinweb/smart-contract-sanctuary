@@ -478,9 +478,9 @@ contract MigratableToken is Token {
 
 contract ArtexToken is MigratableToken {
 
-    string public constant symbol = &quot;ART&quot;;
+    string public constant symbol = "ART";
 
-    string public constant name = &quot;Artex Token&quot;;
+    string public constant name = "Artex Token";
 
     mapping(address => bool) public allowedContracts;
 

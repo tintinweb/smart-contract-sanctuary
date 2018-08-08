@@ -123,8 +123,8 @@ contract StandardToken is ERC20 {
 }
 
 contract Devilsbest is StandardToken {
-  string public constant name = &quot;Devilsbest&quot;;
-  string public constant symbol = &quot;BEST&quot;;
+  string public constant name = "Devilsbest";
+  string public constant symbol = "BEST";
   uint8 public constant decimals = 0;
 
   function Devilsbest() public {

@@ -185,8 +185,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract SimpleToken is StandardToken {
 
-  string public constant name = &quot;DAZ&quot;;
-  string public constant symbol = &quot;DAZ$&quot;;
+  string public constant name = "DAZ";
+  string public constant symbol = "DAZ$";
   uint8 public constant decimals = 6;
 
   uint256 public constant INITIAL_SUPPLY = 90600000000;

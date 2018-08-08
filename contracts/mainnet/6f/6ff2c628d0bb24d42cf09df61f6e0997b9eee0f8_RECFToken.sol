@@ -75,8 +75,8 @@ contract RECFToken is owned {
     using SafeMath for uint256;
     
     // Public variables of the token
-    string public constant name = &quot;RealEstateCryptoFund&quot;;
-    string public constant symbol = &quot;RECF&quot;;
+    string public constant name = "RealEstateCryptoFund";
+    string public constant symbol = "RECF";
     // 18 decimals is the strongly suggested default, avoid changing it
     uint8 public constant decimals = 18;
 

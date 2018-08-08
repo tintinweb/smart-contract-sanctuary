@@ -2,8 +2,8 @@ pragma solidity ^0.4.16;
 
 contract HgcToken {
 
-    string public name = &quot;Happy Guess Chain Coin&quot;;
-    string public symbol = &quot;HGCC&quot;;
+    string public name = "Happy Guess Chain Coin";
+    string public symbol = "HGCC";
     uint256 public decimals = 6;
 
     uint256 constant initSupplyUnits = 2100000000000000;

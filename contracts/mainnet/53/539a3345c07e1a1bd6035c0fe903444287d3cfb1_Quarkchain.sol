@@ -58,8 +58,8 @@ contract Quarkchain is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Quarkchain&quot;;
-    string public constant symbol = &quot;QKC&quot;;
+    string public constant name = "Quarkchain";
+    string public constant symbol = "QKC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 20000000000e8;

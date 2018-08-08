@@ -307,18 +307,18 @@ contract Managed is Owned {
 */
 contract ContractIds {
     // generic
-    bytes32 public constant CONTRACT_FEATURES = &quot;ContractFeatures&quot;;
+    bytes32 public constant CONTRACT_FEATURES = "ContractFeatures";
 
     // BNC logic
-    bytes32 public constant BNC_NETWORK = &quot;BNCNetwork&quot;;
-    bytes32 public constant BNC_FORMULA = &quot;BNCFormula&quot;;
-    bytes32 public constant BNC_GAS_PRICE_LIMIT = &quot;BNCGasPriceLimit&quot;;
+    bytes32 public constant BNC_NETWORK = "BNCNetwork";
+    bytes32 public constant BNC_FORMULA = "BNCFormula";
+    bytes32 public constant BNC_GAS_PRICE_LIMIT = "BNCGasPriceLimit";
 
-    bytes32 public constant BNC_CONVERTER_FACTORY = &quot;BNCConverterFactory&quot;;
-    bytes32 public constant BNC_CONVERTER_UPGRADER = &quot;BNCConverterUpgrader&quot;;
+    bytes32 public constant BNC_CONVERTER_FACTORY = "BNCConverterFactory";
+    bytes32 public constant BNC_CONVERTER_UPGRADER = "BNCConverterUpgrader";
 
     // tokens
-    bytes32 public constant BNT_TOKEN = &quot;BNTToken&quot;;
+    bytes32 public constant BNT_TOKEN = "BNTToken";
 }
 
 /**

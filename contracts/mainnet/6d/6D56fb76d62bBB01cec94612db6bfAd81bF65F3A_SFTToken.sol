@@ -179,10 +179,10 @@ contract StandardToken is BasicToken, ERC20 {
 contract SFTToken is StandardToken {
 	using SafeMath for uint256;
 
-	string public constant name = &quot;SFT Token&quot;;
-	string public constant symbol = &quot;SFT&quot;;
+	string public constant name = "SFT Token";
+	string public constant symbol = "SFT";
 	uint256 public constant decimals = 18; 
-	string public version = &quot;1.0&quot;;
+	string public version = "1.0";
 	
 	address public executor;
 	address public devETHDestination;

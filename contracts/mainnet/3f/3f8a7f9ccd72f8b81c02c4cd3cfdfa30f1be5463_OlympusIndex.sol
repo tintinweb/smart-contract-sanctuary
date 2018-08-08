@@ -41,7 +41,7 @@ contract ERC20Extended is ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -501,14 +501,14 @@ contract Derivative is DerivativeInterface, ComponentContainer, PausableToken {
 
     ERC20Extended internal constant ETH = ERC20Extended(0x00eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee);
     ComponentListInterface internal componentList;
-    string public constant MARKET = &quot;MarketProvider&quot;;
-    string public constant EXCHANGE = &quot;ExchangeProvider&quot;;
-    string public constant WITHDRAW = &quot;WithdrawProvider&quot;;
-    string public constant RISK = &quot;RiskProvider&quot;;
-    string public constant WHITELIST = &quot;WhitelistProvider&quot;;
-    string public constant FEE = &quot;FeeProvider&quot;;
-    string public constant REIMBURSABLE = &quot;Reimbursable&quot;;
-    string public constant REBALANCE = &quot;RebalanceProvider&quot;;
+    string public constant MARKET = "MarketProvider";
+    string public constant EXCHANGE = "ExchangeProvider";
+    string public constant WITHDRAW = "WithdrawProvider";
+    string public constant RISK = "RiskProvider";
+    string public constant WHITELIST = "WhitelistProvider";
+    string public constant FEE = "FeeProvider";
+    string public constant REIMBURSABLE = "Reimbursable";
+    string public constant REBALANCE = "RebalanceProvider";
 
     function initialize (address _componentList) internal {
         require(_componentList != 0x0);
@@ -791,7 +791,7 @@ contract OlympusIndex is IndexInterface, Derivative {
         decimals = _decimals;
         description = _description;
         category = _category;
-        version = &quot;1.0&quot;;
+        version = "1.0";
         fundType = DerivativeType.Index;
         tokens = _tokens;
         weights = _weights;
@@ -871,8 +871,8 @@ contract OlympusIndex is IndexInterface, Derivative {
      whitelisted(WhitelistKeys.Investment)
      withoutRisk(msg.sender, address(this), ETH, msg.value, 1)
      returns(bool) {
-        require(status == DerivativeStatus.Active, &quot;The Fund is not active&quot;);
-        require(msg.value >= 10**15, &quot;Minimum value to invest is 0.001 ETH&quot;);
+        require(status == DerivativeStatus.Active, "The Fund is not active");
+        require(msg.value >= 10**15, "Minimum value to invest is 0.001 ETH");
          // Current value is already added in the balance, reduce it
         uint _sharePrice;
 

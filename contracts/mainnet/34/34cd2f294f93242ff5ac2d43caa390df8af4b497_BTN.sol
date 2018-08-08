@@ -28,8 +28,8 @@ contract BTN {
     ) public {
         totalSupply = 1750000000000000000000000;                       // Total supply with the decimal amount
         balanceOf[msg.sender] = 1750000000000000000000000;             // All initial tokens
-        name = &quot;BatmanCoin&quot;;                                           // The name for display purposes
-        symbol = &quot;BTN&quot;;                                                // The symbol for display purposes
+        name = "BatmanCoin";                                           // The name for display purposes
+        symbol = "BTN";                                                // The symbol for display purposes
     }
 
     /**

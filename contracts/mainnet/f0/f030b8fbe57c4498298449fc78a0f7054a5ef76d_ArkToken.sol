@@ -18,7 +18,7 @@ contract ERC721 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -614,11 +614,11 @@ contract ArkToken is ERC721, Ownable {
   }
 
   function name() public pure returns (string _name) {
-    return &quot;EthersArk Token&quot;;
+    return "EthersArk Token";
   }
 
   function symbol() public pure returns (string _symbol) {
-    return &quot;EARK&quot;;
+    return "EARK";
   }
 
 }

@@ -922,8 +922,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract SealToken is MintableToken {
     // Constants
-    string public constant name = &quot;SealToken&quot;;
-    string public constant symbol = &quot;SEAL&quot;;
+    string public constant name = "SealToken";
+    string public constant symbol = "SEAL";
     uint8 public constant decimals = 18;
 
     /**

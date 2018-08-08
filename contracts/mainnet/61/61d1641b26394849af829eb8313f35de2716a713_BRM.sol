@@ -131,10 +131,10 @@ contract Owner {
 
 }
 contract BRM is Owner, StandardToken, SafeMath {
-	string public constant name = &quot;BrahmaOS&quot;;
-	string public constant symbol = &quot;BRM&quot;;
+	string public constant name = "BrahmaOS";
+	string public constant symbol = "BRM";
 	uint256 public constant decimals = 18;
-	string public version = &quot;1.0&quot;;
+	string public version = "1.0";
 
 
 	uint256 public constant total = 3 * 10**9 * 10**decimals;

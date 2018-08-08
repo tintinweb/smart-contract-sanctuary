@@ -112,8 +112,8 @@ contract DatPayToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function DatPayToken() public {
-        symbol = &quot;UPAY&quot;;
-        name = &quot;DatPay.me Utility Token&quot;;
+        symbol = "UPAY";
+        name = "DatPay.me Utility Token";
         decimals = 18;
         _totalSupply = 10000000 * 8 **uint(decimals);
         balances[owner] = _totalSupply;

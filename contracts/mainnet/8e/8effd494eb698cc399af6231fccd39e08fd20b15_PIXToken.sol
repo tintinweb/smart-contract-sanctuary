@@ -141,8 +141,8 @@ contract StandardToken is Token {
  */
 contract PIXToken is StandardToken, SafeMath {
 
-    string public name = &quot;PIX Token&quot;;
-    string public symbol = &quot;PIX&quot;;
+    string public name = "PIX Token";
+    string public symbol = "PIX";
 
     // Initial founder address (set in constructor)
     // This address is used as a controller address, in order to properly handle administration of the token.

@@ -782,7 +782,7 @@ contract Crowdsale is Haltable {
 
 
 /// @dev Tranche based pricing with special support for pre-ico deals.
-///      Implementing &quot;first price&quot; tranches, meaning, that if byers order is
+///      Implementing "first price" tranches, meaning, that if byers order is
 ///      covering more than one tranche, the price of the lowest tranche will apply
 ///      to the whole order.
 contract EthTranchePricing is PricingStrategy, Ownable {

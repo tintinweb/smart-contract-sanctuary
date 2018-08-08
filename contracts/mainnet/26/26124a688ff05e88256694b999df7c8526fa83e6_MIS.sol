@@ -112,8 +112,8 @@ contract MIS is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function MIS() public {
-        symbol = &quot;MIS&quot;;
-        name = &quot;SIM Network&quot;;
+        symbol = "MIS";
+        name = "SIM Network";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

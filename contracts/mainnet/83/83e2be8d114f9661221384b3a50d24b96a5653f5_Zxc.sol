@@ -581,8 +581,8 @@ contract Zxc is
   constructor()
     public
   {
-    tokenName = &quot;0xcert Protocol Token&quot;;
-    tokenSymbol = &quot;ZXC&quot;;
+    tokenName = "0xcert Protocol Token";
+    tokenSymbol = "ZXC";
     tokenDecimals = 18;
     tokenTotalSupply = 500000000000000000000000000;
     transferEnabled = false;

@@ -256,9 +256,9 @@ contract BurnableToken is MintableToken {
 
 contract DAOToken is BurnableToken{
 
-    string public name = &quot;Veros&quot;;
+    string public name = "Veros";
 
-    string public symbol = &quot;VRS&quot;;
+    string public symbol = "VRS";
 
     uint32 public constant decimals = 6;
 

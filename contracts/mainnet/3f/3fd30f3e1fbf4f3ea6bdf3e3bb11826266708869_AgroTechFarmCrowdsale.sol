@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -486,8 +486,8 @@ contract CappedToken is MintableToken {
 
 contract AgroTechFarmToken is PausableToken, CappedToken {
 
-  string public constant name = &quot;AgroTechFarm&quot;;
-  string public constant symbol = &quot;ATF&quot;;
+  string public constant name = "AgroTechFarm";
+  string public constant symbol = "ATF";
   uint8 public constant decimals = 18;
   uint256 private constant TOKEN_CAP = 5 * 10**24;
   

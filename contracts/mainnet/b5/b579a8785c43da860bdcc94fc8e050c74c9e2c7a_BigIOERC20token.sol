@@ -916,7 +916,7 @@ contract Platform is Admin {
 
         logoId = token.mint(platformWallet, logoX, logoY, 10, 10, 0 ether, 0 ether);
 
-        token.setTokenMetadata(logoId, &quot;&quot;);
+        token.setTokenMetadata(logoId, "");
 
         updateTierStatus(100, 0);
 

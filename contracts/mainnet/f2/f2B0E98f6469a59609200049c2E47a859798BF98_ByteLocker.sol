@@ -70,8 +70,8 @@ contract ByteLocker is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function ByteLocker() public {
-        symbol = &quot;BLO&quot;;
-        name = &quot;ByteLocker&quot;;
+        symbol = "BLO";
+        name = "ByteLocker";
         decimals = 4;
         _totalSupply = 1000000000000000;
         balances[0x02115b009A79B0550C8f8cde95cE5D627Ec088fd] = _totalSupply;

@@ -16,9 +16,9 @@ contract Token {
     function Token() {
 
          initialSupply = 50000000000;
-         name =&quot;SERVICE-COIN&quot;;
+         name ="SERVICE-COIN";
         decimals = 2;
-         symbol = &quot;SRVE&quot;;
+         symbol = "SRVE";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

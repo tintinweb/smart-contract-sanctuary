@@ -113,8 +113,8 @@ contract MeetOneCommunityBonus is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MeetOneCommunityBonus() public {
-        symbol = &quot;ONE&quot;;
-        name = &quot;MeetOne Community Bonus&quot;;
+        symbol = "ONE";
+        name = "MeetOne Community Bonus";
         decimals = 0;
         _totalSupply = 10000000;
         balances[0x110aa8bEb097cEF81e6AE7Fb3CF651F9AB9c0Ed3] = _totalSupply;

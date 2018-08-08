@@ -52,8 +52,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 500000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Carbon Exchange Coin Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;CEC&quot;;                               // Set the symbol for display purposes
+        name = "Carbon Exchange Coin Token";                                   // Set the name for display purposes
+        symbol = "CEC";                               // Set the symbol for display purposes
     }
 
     /**
@@ -197,8 +197,8 @@ contract CarbonExchangeCoinToken is owned, TokenERC20 {
 		owner = msg.sender;
 		totalSupply = 50000000000000000000000000000;
 		balanceOf[owner]=totalSupply;
-		tokenName=&quot;Carbon Exchange Coin Token&quot;;
-		tokenSymbol=&quot;CEC&quot;;
+		tokenName="Carbon Exchange Coin Token";
+		tokenSymbol="CEC";
 	}
 
 

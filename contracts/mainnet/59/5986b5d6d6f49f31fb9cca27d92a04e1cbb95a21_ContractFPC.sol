@@ -19,8 +19,8 @@ contract ERC20Interface {
 contract ContractFPC is ERC20Interface {
     uint256 public constant decimals = 8;
 
-    string public constant symbol = &quot;FPC&quot;;
-    string public constant name = &quot;FairPlayChain Tokens&quot;;
+    string public constant symbol = "FPC";
+    string public constant name = "FairPlayChain Tokens";
 
     uint256 public _totalSupply = formatDecimals(10000000000); // total supply is 10 billion
 
@@ -137,7 +137,7 @@ contract ContractFPC is ERC20Interface {
 
     // Send _value amount of tokens from address _from to address _to
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-    // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
     // fees in sub-currencies; the command should fail unless the _from account has
     // deliberately authorized the sender of the message via some mechanism; we propose
     // these standardized APIs for approval:

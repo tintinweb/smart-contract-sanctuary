@@ -105,8 +105,8 @@ contract IndiaStocksCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IndiaStocksCoin() public {
-        symbol = &quot;INSC&quot;;
-        name = &quot;India Stocks Coin&quot;;
+        symbol = "INSC";
+        name = "India Stocks Coin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xb297a793A26a2C2299910fFfBC7c69f70e7714Ac] = _totalSupply;

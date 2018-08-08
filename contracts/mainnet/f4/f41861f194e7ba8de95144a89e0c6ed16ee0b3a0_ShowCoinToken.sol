@@ -158,8 +158,8 @@ contract ShowCoinToken is StandardToken {
   uint8 public decimals;
 
   constructor( address initialAccount ) public {
-    name = &quot;ShowCoin2.0&quot;;
-    symbol = &quot;Show&quot;;
+    name = "ShowCoin2.0";
+    symbol = "Show";
     decimals = 18;
     totalSupply_ = 1e28;
     balances[initialAccount] = 9e27;

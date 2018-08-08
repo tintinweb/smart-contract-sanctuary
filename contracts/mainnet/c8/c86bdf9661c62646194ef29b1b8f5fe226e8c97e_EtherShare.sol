@@ -17,7 +17,7 @@ contract EtherShare {
     event EVENT(uint ShareID, uint ReplyID);
 
     function EtherShare() public {
-        NewShare(&quot;Peilin Zheng&quot;, false, &quot;Hello, EtherShare!&quot;);  // zhengpeilin.com
+        NewShare("Peilin Zheng", false, "Hello, EtherShare!");  // zhengpeilin.com
     }
 
     function NewShare(string nickname, bool AllowUpdated, string content) public {

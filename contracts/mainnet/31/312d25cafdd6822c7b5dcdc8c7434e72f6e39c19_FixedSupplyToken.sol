@@ -134,8 +134,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function FixedSupplyToken() public {
-        symbol = &quot;WT1&quot;;
-        name = &quot;WorkToken&quot;;
+        symbol = "WT1";
+        name = "WorkToken";
         decimals = 18;
         _totalSupply = 300 * 10**uint(decimals);
         balances[owner] = _totalSupply;

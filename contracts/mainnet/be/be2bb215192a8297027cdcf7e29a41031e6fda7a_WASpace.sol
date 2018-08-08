@@ -15,8 +15,8 @@ contract WASpace {
     function InitialCoinOfferingToken() public {
         totalSupply = 2600000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;WA Space&quot;;
-        symbol = &quot;WA&quot;;
+        name = "WA Space";
+        symbol = "WA";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

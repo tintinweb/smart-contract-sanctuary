@@ -109,8 +109,8 @@ contract MasonCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MasonCoin() public {
-        symbol = &quot;MSNC&quot;;
-        name = &quot;MasonCoin&quot;;
+        symbol = "MSNC";
+        name = "MasonCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x978a7F86b23F06C06b58c722C57d4c616bD51f39] = _totalSupply;

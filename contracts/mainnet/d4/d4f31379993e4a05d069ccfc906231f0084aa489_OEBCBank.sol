@@ -3,8 +3,8 @@ contract OEBCBank {
     
     uint public constant _totalSupply = 500000000000000000000000000;
     
-    string public constant symbol = &quot;OEBC&quot;;
-    string public constant name = &quot;OEBC BANK&quot;;
+    string public constant symbol = "OEBC";
+    string public constant name = "OEBC BANK";
     uint8 public constant decimals = 18;
     
     mapping(address => uint256) balances;

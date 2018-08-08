@@ -242,8 +242,8 @@ contract BurnableToken is BasicToken {
 }
 contract Taur is StandardToken, BurnableToken {
 
-    string NAME = &quot;Taurus0x&quot;; 
-    string SYMBOL = &quot;TAUR&quot;;
+    string NAME = "Taurus0x"; 
+    string SYMBOL = "TAUR";
     uint8 DECIMALS = 18;
     uint public INITIAL_SUPPLY = 250000000;
 

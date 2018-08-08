@@ -229,8 +229,8 @@ contract REKTTokenSale {
 }
 
 contract REKT is StandardToken, Ownable {
-    string  public  constant name = &quot;REKT&quot;;
-    string  public  constant symbol = &quot;REKT&quot;;
+    string  public  constant name = "REKT";
+    string  public  constant symbol = "REKT";
     uint    public  constant decimals = 18;
 
     address public  tokenSaleContract;

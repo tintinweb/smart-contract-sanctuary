@@ -168,7 +168,7 @@ contract KStarCoinSale is MultiOwnable {
         uint256 coins= getCoinAmount(msg.value);
         
         // update state 
-        coin.sell(beneficiary, coins, &quot;&quot;);
+        coin.sell(beneficiary, coins, "");
         
         forwardFunds();
     }

@@ -260,7 +260,7 @@ contract standardToken is ERC20Token, Controlled {
         approve(_spender, _value);                          // Set approval to contract for _value
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { 
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { 
             revert(); 
         }
         return true;
@@ -295,8 +295,8 @@ contract standardToken is ERC20Token, Controlled {
 
 contract UST is Owned, standardToken {
         
-    string constant public name   = &quot;UseChainToken&quot;;
-    string constant public symbol = &quot;UST&quot;;
+    string constant public name   = "UseChainToken";
+    string constant public symbol = "UST";
     uint constant public decimals = 18;
 
     uint256 public totalSupply = 0;

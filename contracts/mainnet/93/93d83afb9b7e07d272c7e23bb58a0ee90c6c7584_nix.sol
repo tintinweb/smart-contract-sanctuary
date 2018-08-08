@@ -251,8 +251,8 @@ contract StandardToken is ERC20, BasicToken {
 contract nix is Ownable, StandardToken {
 
 
-    string public constant symbol =  &quot;NIX&quot;;
-    string public constantname =  &quot;NIX&quot;;
+    string public constant symbol =  "NIX";
+    string public constantname =  "NIX";
     uint256 public constant decimals = 18;
     
     uint256 reserveTokensLockTime;

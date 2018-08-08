@@ -79,8 +79,8 @@ interface ExchangeHandler {
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 contract WETH9 {
-    string public name     = &quot;Wrapped Ether&quot;;
-    string public symbol   = &quot;WETH&quot;;
+    string public name     = "Wrapped Ether";
+    string public symbol   = "WETH";
     uint8  public decimals = 18;
 
     event  Approval(address indexed src, address indexed guy, uint wad);
@@ -144,7 +144,7 @@ contract WETH9 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;

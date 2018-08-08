@@ -100,8 +100,8 @@ contract QuantumXICO is ERC20, SafeMath {
 		}
 	}
 
-	string 	public name = &quot;QuantumXCoin&quot;;
-	string 	public symbol = &quot;QTMX&quot;;
+	string 	public name = "QuantumXCoin";
+	string 	public symbol = "QTMX";
 	uint 	public decimals = 0;
 	uint256 public INITIAL_SUPPLY = 1000000;
 	uint256 public price;

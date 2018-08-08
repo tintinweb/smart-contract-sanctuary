@@ -12,8 +12,8 @@ pragma solidity ^0.4.24;
 
 contract EOSHate {
 
-    string public name = &quot;EOSHate&quot;;      //  token name
-    string public symbol = &quot;EOSHate&quot;;           //  token symbol
+    string public name = "EOSHate";      //  token name
+    string public symbol = "EOSHate";           //  token symbol
     uint256 public decimals = 18;            //  token digit
 
     mapping (address => uint256) public balanceOf;

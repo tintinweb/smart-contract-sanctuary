@@ -113,8 +113,8 @@ contract DADCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DADCoin() public {
-        symbol = &quot;DAD&quot;;
-        name = &quot;DAD Coin&quot;;
+        symbol = "DAD";
+        name = "DAD Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xdb94ea3f744Ef5f4b385938ec0c118A4b65d5EbF] = _totalSupply;

@@ -115,8 +115,8 @@ contract TheShitcoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor(uint _startDate, address owner, address team, address reserve, address airdrop, address bounty) public {
-        symbol = &quot;TSHIT&quot;;
-        name = &quot;The Shitcoin&quot;;
+        symbol = "TSHIT";
+        name = "The Shitcoin";
         decimals = 18;
         startDate = _startDate;
         bonusEnds = startDate + 5 weeks;

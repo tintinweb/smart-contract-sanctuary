@@ -109,8 +109,8 @@ contract ZeroxDinar is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ZeroxDinar() public {
-        symbol = &quot;0xD&quot;;
-        name = &quot;0 x Dinar&quot;;
+        symbol = "0xD";
+        name = "0 x Dinar";
         decimals = 18;
         _totalSupply = 8999999999999000000000000000000;
         balances[0xb31F2528834c04329174aB1f980FaEa10D7A13BC] = _totalSupply;

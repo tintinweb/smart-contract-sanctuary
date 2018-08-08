@@ -45,7 +45,7 @@ contract ERC223ReceivingContract {
 }
 
 /**
- * Contract &quot;Ownable&quot;
+ * Contract "Ownable"
  * Purpose: Defines Owner for contract and provide functionality to transfer ownership to another account
  */
 contract Ownable {
@@ -150,9 +150,9 @@ contract ECHO is ERC20 {
 
     using SafeMath for uint256;
     //The name of the  token
-    string public constant name = &quot;ECHO token&quot;;
+    string public constant name = "ECHO token";
     //The token symbol
-    string public constant symbol = &quot;ECHO&quot;;
+    string public constant symbol = "ECHO";
     //To denote the locking on transfer of tokens among token holders
     bool public locked;
     //The precision used in the calculations in contract

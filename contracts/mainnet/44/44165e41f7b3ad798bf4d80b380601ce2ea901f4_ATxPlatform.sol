@@ -448,7 +448,7 @@ contract ATxPlatform is Object, Emitter {
             uint holderId = _createHolderId(addresses[idx]);
 
             _transferDirect(senderId, holderId, value, _symbol);
-            Emitter(eventsHistory).emitTransfer(msg.sender, addresses[idx], _symbol, value, &quot;&quot;);
+            Emitter(eventsHistory).emitTransfer(msg.sender, addresses[idx], _symbol, value, "");
 
             ++success;
         }

@@ -141,7 +141,7 @@ contract ApproveAndCallFallBack {
 
 /// @dev The actual token contract, the default controller is the msg.sender
 ///  that deploys the contract, so usually this token will be deployed by a
-///  token controller contract, which Giveth will call a &quot;Campaign&quot;
+///  token controller contract, which Giveth will call a "Campaign"
 contract MiniMeToken is Controlled {
 
     string public name;                //The Token&#39;s name: e.g. DigixDAO Tokens
@@ -696,9 +696,9 @@ contract EatMeCoin is MiniMeToken {
       _tokenFactory,
       0x0,
       0,
-      &quot;EatMeCoin&quot;,
+      "EatMeCoin",
       18, // decimals
-      &quot;EAT&quot;,
+      "EAT",
       // SHOULD TRANSFERS BE ENABLED? -- NO
       false){
     
@@ -1494,7 +1494,7 @@ contract TokenCampaign is Controlled {
 
     amountRaised = amountRaised.add(weiAmount);
 
-    // side effect: do_grant_tokens updates the &quot;tokensGenerated&quot; variable
+    // side effect: do_grant_tokens updates the "tokensGenerated" variable
     require( do_grant_tokens(_toAddr, tokenAmount) );
 
     // notify the world
@@ -1518,7 +1518,7 @@ contract TokenCampaign is Controlled {
 
     participantList[_toAddr].preallocatedTokens = participantList[_toAddr].allocatedTokens.add(tokenAmount);
 
-    // side effect: do_grant_tokens updates the &quot;tokensGenerated&quot; variable
+    // side effect: do_grant_tokens updates the "tokensGenerated" variable
     require( do_grant_tokens(_toAddr, tokenAmount) );
 
     // notify the world

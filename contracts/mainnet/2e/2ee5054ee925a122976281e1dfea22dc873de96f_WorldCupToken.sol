@@ -23,8 +23,8 @@ contract WorldCupToken is ERC721 {
   event Transfer(address from, address to, uint256 tokenId);
  
   /*** CONSTANTS ***/
-  string public constant NAME = &quot;WorldCupToken&quot;;
-  string public constant SYMBOL = &quot;WorldCupToken&quot;;
+  string public constant NAME = "WorldCupToken";
+  string public constant SYMBOL = "WorldCupToken";
   uint256 private startingPrice = 0.1 ether;
   mapping (uint256 => address) private teamIndexToOwner;
   mapping (address => uint256) private ownershipTokenCount;
@@ -64,118 +64,118 @@ contract WorldCupToken is ERC721 {
   function WorldCupToken() public {
     ceoAddress = msg.sender;
     isStop=false;
-    _createTeam(&quot;Egypt&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;0&quot;]=&quot;Egypt&quot;;
+    _createTeam("Egypt", msg.sender, startingPrice);
+    teamIndexToName["0"]="Egypt";
     
-    _createTeam(&quot;Morocco&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;1&quot;]=&quot;Morocco&quot;;
+    _createTeam("Morocco", msg.sender, startingPrice);
+    teamIndexToName["1"]="Morocco";
     
-    _createTeam(&quot;Nigeria&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;2&quot;]=&quot;Nigeria&quot;;
+    _createTeam("Nigeria", msg.sender, startingPrice);
+    teamIndexToName["2"]="Nigeria";
     
-    _createTeam(&quot;Senegal&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;3&quot;]=&quot;Senegal&quot;;
+    _createTeam("Senegal", msg.sender, startingPrice);
+    teamIndexToName["3"]="Senegal";
     
-    _createTeam(&quot;Tunisia&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;4&quot;]=&quot;Tunisia&quot;;
+    _createTeam("Tunisia", msg.sender, startingPrice);
+    teamIndexToName["4"]="Tunisia";
     
-    _createTeam(&quot;Australia&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;5&quot;]=&quot;Australia&quot;;
+    _createTeam("Australia", msg.sender, startingPrice);
+    teamIndexToName["5"]="Australia";
     
-    _createTeam(&quot;IR Iran&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;6&quot;]=&quot;IR Iran&quot;;
+    _createTeam("IR Iran", msg.sender, startingPrice);
+    teamIndexToName["6"]="IR Iran";
     
-    _createTeam(&quot;Japan&quot;, msg.sender, startingPrice);
-   teamIndexToName[&quot;7&quot;]=&quot;Japan&quot;;
+    _createTeam("Japan", msg.sender, startingPrice);
+   teamIndexToName["7"]="Japan";
     
-    _createTeam(&quot;Korea Republic&quot;, msg.sender, startingPrice);
-   teamIndexToName[&quot;8&quot;]=&quot;Korea Republic&quot;;
+    _createTeam("Korea Republic", msg.sender, startingPrice);
+   teamIndexToName["8"]="Korea Republic";
     
-    _createTeam(&quot;Saudi Arabia&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;9&quot;]=&quot;Saudi Arabia&quot;;
+    _createTeam("Saudi Arabia", msg.sender, startingPrice);
+    teamIndexToName["9"]="Saudi Arabia";
     
-    _createTeam(&quot;Belgium&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;10&quot;]=&quot;Belgium&quot;;
+    _createTeam("Belgium", msg.sender, startingPrice);
+    teamIndexToName["10"]="Belgium";
     
-    _createTeam(&quot;Croatia&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;11&quot;]=&quot;Croatia&quot;;
-    
-    
-    _createTeam(&quot;Denmark&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;12&quot;]=&quot;Denmark&quot;;
+    _createTeam("Croatia", msg.sender, startingPrice);
+    teamIndexToName["11"]="Croatia";
     
     
-    _createTeam(&quot;England&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;13&quot;]=&quot;England&quot;;
+    _createTeam("Denmark", msg.sender, startingPrice);
+    teamIndexToName["12"]="Denmark";
     
     
-    _createTeam(&quot;France&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;14&quot;]=&quot;France&quot;;
+    _createTeam("England", msg.sender, startingPrice);
+    teamIndexToName["13"]="England";
     
     
-    _createTeam(&quot;Germany&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;15&quot;]=&quot;Germany&quot;;
+    _createTeam("France", msg.sender, startingPrice);
+    teamIndexToName["14"]="France";
     
     
-    _createTeam(&quot;Iceland&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;16&quot;]=&quot;Iceland&quot;;
+    _createTeam("Germany", msg.sender, startingPrice);
+    teamIndexToName["15"]="Germany";
     
     
-    _createTeam(&quot;Poland&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;17&quot;]=&quot;Poland&quot;;
+    _createTeam("Iceland", msg.sender, startingPrice);
+    teamIndexToName["16"]="Iceland";
     
     
-    _createTeam(&quot;Portugal&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;18&quot;]=&quot;Portugal&quot;;
+    _createTeam("Poland", msg.sender, startingPrice);
+    teamIndexToName["17"]="Poland";
     
     
-    _createTeam(&quot;Russia&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;19&quot;]=&quot;Russia&quot;;
+    _createTeam("Portugal", msg.sender, startingPrice);
+    teamIndexToName["18"]="Portugal";
     
     
-    _createTeam(&quot;Serbia&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;20&quot;]=&quot;Serbia&quot;;
+    _createTeam("Russia", msg.sender, startingPrice);
+    teamIndexToName["19"]="Russia";
     
     
-    _createTeam(&quot;Spain&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;21&quot;]=&quot;Spain&quot;;
+    _createTeam("Serbia", msg.sender, startingPrice);
+    teamIndexToName["20"]="Serbia";
     
     
-    _createTeam(&quot;Sweden&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;22&quot;]=&quot;Sweden&quot;;
+    _createTeam("Spain", msg.sender, startingPrice);
+    teamIndexToName["21"]="Spain";
     
     
-    _createTeam(&quot;Switzerland&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;23&quot;]=&quot;Switzerland&quot;;
+    _createTeam("Sweden", msg.sender, startingPrice);
+    teamIndexToName["22"]="Sweden";
     
     
-    _createTeam(&quot;Costa Rica&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;24&quot;]=&quot;Costa Rica&quot;;
+    _createTeam("Switzerland", msg.sender, startingPrice);
+    teamIndexToName["23"]="Switzerland";
     
     
-    _createTeam(&quot;Mexico&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;25&quot;]=&quot;Mexico&quot;;
+    _createTeam("Costa Rica", msg.sender, startingPrice);
+    teamIndexToName["24"]="Costa Rica";
+    
+    
+    _createTeam("Mexico", msg.sender, startingPrice);
+    teamIndexToName["25"]="Mexico";
     
     
     
-    _createTeam(&quot;Panama&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;26&quot;]=&quot;Panama&quot;;
+    _createTeam("Panama", msg.sender, startingPrice);
+    teamIndexToName["26"]="Panama";
     
     
-    _createTeam(&quot;Argentina&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;27&quot;]=&quot;Argentina&quot;;
+    _createTeam("Argentina", msg.sender, startingPrice);
+    teamIndexToName["27"]="Argentina";
     
-    _createTeam(&quot;Brazil&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;28&quot;]=&quot;Brazil&quot;;
+    _createTeam("Brazil", msg.sender, startingPrice);
+    teamIndexToName["28"]="Brazil";
     
-    _createTeam(&quot;Colombia&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;29&quot;]=&quot;Colombia&quot;;
+    _createTeam("Colombia", msg.sender, startingPrice);
+    teamIndexToName["29"]="Colombia";
     
-    _createTeam(&quot;Peru&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;30&quot;]=&quot;Peru&quot;;
+    _createTeam("Peru", msg.sender, startingPrice);
+    teamIndexToName["30"]="Peru";
     
-    _createTeam(&quot;Uruguay&quot;, msg.sender, startingPrice);
-    teamIndexToName[&quot;31&quot;]=&quot;Uruguay&quot;;
+    _createTeam("Uruguay", msg.sender, startingPrice);
+    teamIndexToName["31"]="Uruguay";
       
   }
   
@@ -242,10 +242,10 @@ contract WorldCupToken is ERC721 {
    function () public payable onlyStart {
       
        string memory data=string(msg.data);
-       require(SafeMath.diffString(data,&quot;&quot;)==false);    //data is not empty
+       require(SafeMath.diffString(data,"")==false);    //data is not empty
        
        string memory _name=teamIndexToName[data];
-       require(SafeMath.diffString(_name,&quot;&quot;)==false);   //name is not empty
+       require(SafeMath.diffString(_name,"")==false);   //name is not empty
        
        if(nameIndexToTeam[_name]==0){
            require(SafeMath.diffString(_name,teams[0].name)==true);

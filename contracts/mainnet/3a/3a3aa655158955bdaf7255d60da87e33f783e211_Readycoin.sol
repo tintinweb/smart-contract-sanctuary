@@ -240,9 +240,9 @@ contract UpgradeableToken is StandardToken {
 
 contract Readycoin is StandardToken, UpgradeableToken {
     using SafeMath for uint256;
-  string public constant standard = &quot;ERC20&quot;;
-  string public constant name = &quot;Readycoin&quot;;
-  string public constant symbol = &quot;RRC&quot;;
+  string public constant standard = "ERC20";
+  string public constant name = "Readycoin";
+  string public constant symbol = "RRC";
   uint256 public constant decimals = 8;
 
   uint256 public constant INITIAL_SUPPLY = 80000000000000000;

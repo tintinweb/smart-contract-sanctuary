@@ -571,8 +571,8 @@ library Reporting {
 contract ReputationToken is DelegationTarget, ITyped, Initializable, VariableSupplyToken, IReputationToken {
     using SafeMathUint256 for uint256;
 
-    string constant public name = &quot;Reputation&quot;;
-    string constant public symbol = &quot;REP&quot;;
+    string constant public name = "Reputation";
+    string constant public symbol = "REP";
     uint8 constant public decimals = 18;
     IUniverse private universe;
     uint256 private totalMigrated;
@@ -694,7 +694,7 @@ contract ReputationToken is DelegationTarget, ITyped, Initializable, VariableSup
     }
 
     function getTypeName() public view returns (bytes32) {
-        return &quot;ReputationToken&quot;;
+        return "ReputationToken";
     }
 
     function getUniverse() public view returns (IUniverse) {
@@ -706,7 +706,7 @@ contract ReputationToken is DelegationTarget, ITyped, Initializable, VariableSup
     }
 
     function getLegacyRepToken() public view returns (ERC20) {
-        return ERC20(controller.lookup(&quot;LegacyReputationToken&quot;));
+        return ERC20(controller.lookup("LegacyReputationToken"));
     }
 
     function updateSiblingMigrationTotal(IReputationToken _token) public whenNotMigratingFromLegacy returns (bool) {
@@ -898,7 +898,7 @@ library Order {
         require(_outcome < _market.getNumberOfOutcomes());
         require(_price < _market.getNumTicks());
 
-        IOrders _orders = IOrders(_controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(_controller.lookup("Orders"));
         IAugur _augur = _controller.getAugur();
 
         return Data({
@@ -919,7 +919,7 @@ library Order {
     }
 
     //
-    // &quot;public&quot; functions
+    // "public" functions
     //
 
     function getOrderId(Order.Data _orderData) internal view returns (bytes32) {

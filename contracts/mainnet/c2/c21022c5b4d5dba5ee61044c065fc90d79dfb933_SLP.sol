@@ -106,9 +106,9 @@ contract SLP is StandardToken {
     function SLP() {
         balances[msg.sender] = 9900000000000000000000000000;               
         totalSupply = 9900000000000000000000000000;                        
-        name = &quot;SolarPower&quot;; 
+        name = "SolarPower"; 
         decimals = 18;                                               
-        symbol = &quot;SLP&quot;;                                             
+        symbol = "SLP";                                             
         unitsOneEthCanBuy = 5000;                                      
         fundsWallet = msg.sender;                                    
     }
@@ -133,7 +133,7 @@ contract SLP is StandardToken {
         Approval(msg.sender, _spender, _value);
 
         
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

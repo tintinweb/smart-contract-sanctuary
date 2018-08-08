@@ -89,8 +89,8 @@ contract VIETNAMTOKENTEST is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function VIETNAMTOKENTEST() public {
-        symbol = &quot;VNHN&quot;;
-        name = &quot;VIETNAMTOKENTEST&quot;;
+        symbol = "VNHN";
+        name = "VIETNAMTOKENTEST";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x3C43885bF78E0F5CaDf4840B03bdd867a8069754] = _totalSupply;

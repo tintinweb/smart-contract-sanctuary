@@ -169,7 +169,7 @@ contract Exchange is SafeMath {
         INSUFFICIENT_BALANCE_OR_ALLOWANCE // Insufficient balance or allowance for token transfer
     }
 
-    string constant public VERSION = &quot;1.0.0&quot;;
+    string constant public VERSION = "1.0.0";
     uint16 constant public EXTERNAL_QUERY_GAS_LIMIT = 4999;    // Changes to state require at least 5000 gas
     uint constant public ETHFINEX_FEE = 200; // Amount - (Amount/fee) is what gets send to user
 
@@ -604,7 +604,7 @@ contract Exchange is SafeMath {
         returns (bool)
     {
         return signer == ecrecover(
-            keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),
+            keccak256("\x19Ethereum Signed Message:\n32", hash),
             v,
             r,
             s

@@ -150,8 +150,8 @@ contract StandardToken is BasicToken, ERC20 {
 
 contract SimpleToken is StandardToken {
 
-  string public name = &quot;Routecoin&quot;;
-  string public symbol = &quot;RC&quot;;
+  string public name = "Routecoin";
+  string public symbol = "RC";
   uint public decimals = 3;
   uint public INITIAL_SUPPLY = 1000000000000;
 

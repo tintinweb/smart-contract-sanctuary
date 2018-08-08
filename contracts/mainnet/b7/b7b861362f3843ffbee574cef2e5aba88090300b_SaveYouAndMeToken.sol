@@ -113,8 +113,8 @@ contract SaveYouAndMeToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SaveYouAndMeToken() public {
-        symbol = &quot;SYM&quot;;
-        name = &quot;Save You And Me Token&quot;;
+        symbol = "SYM";
+        name = "Save You And Me Token";
         decimals = 5;
         _totalSupply = 117000000000000;
         balances[0x83a2c6eB3dE67f2925a1A79e57Ad3b078390Cf74] = _totalSupply;

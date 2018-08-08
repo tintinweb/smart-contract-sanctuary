@@ -107,9 +107,9 @@ contract Nikone is StandardToken {
     function Nikone() {
         balances[msg.sender] = 40000000000000000000000000000;               // Give the creator all initial tokens. This is set to 1000 for example. If you want your initial tokens to be X and your decimal is 5, set this value to X * 100000. (CHANGE THIS)
         totalSupply = 40000000000000000000000000000;                        // Update total supply (1000 for example) (CHANGE THIS)
-        name = &quot;Nikone&quot;;                                   // Set the name for display purposes (CHANGE THIS)
+        name = "Nikone";                                   // Set the name for display purposes (CHANGE THIS)
         decimals = 18;                                               // Amount of decimals for display purposes (CHANGE THIS)
-        symbol = &quot;Nikone&quot;;                                             // Set the symbol for display purposes (CHANGE THIS)
+        symbol = "Nikone";                                             // Set the symbol for display purposes (CHANGE THIS)
         unitsOneEthCanBuy = 500000000;                                      // Set the price of your token for the ICO (CHANGE THIS)
         fundsWallet = msg.sender;                                    // The owner of the contract gets ETH
     }
@@ -136,7 +136,7 @@ contract Nikone is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

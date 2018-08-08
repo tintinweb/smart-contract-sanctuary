@@ -187,8 +187,8 @@ contract Token is owned, TokenERC20  {
 
 //Modify these variables
 uint256 _initialSupply=50000000; //initial supply
-string _tokenName=&quot;EsateX&quot;; // token name
-string _tokenSymbol=&quot;ESTX&quot;; //token symbol
+string _tokenName="EsateX"; // token name
+string _tokenSymbol="ESTX"; //token symbol
 
 mapping (address => bool) public frozenAccount;
 

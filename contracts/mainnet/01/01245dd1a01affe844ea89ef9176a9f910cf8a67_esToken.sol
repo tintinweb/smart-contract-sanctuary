@@ -118,7 +118,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract OwnableToken {
   address public owner;
@@ -324,7 +324,7 @@ contract esToken is OwnableToken, BurnableToken, StandardToken {
 }
 ///////////////////////////////////////////
 
-//import &quot;../Crowdsale.sol&quot;;
+//import "../Crowdsale.sol";
 /**
  * @title Crowdsale
  * @dev Crowdsale is a base contract for managing a token crowdsale,
@@ -481,7 +481,7 @@ contract Crowdsale {
   }
 }
 
-//import &quot;/zepp/crowdsale/validation/CappedCrowdsale.sol&quot;;
+//import "/zepp/crowdsale/validation/CappedCrowdsale.sol";
 /**
  * @title CappedCrowdsale
  * @dev Crowdsale with a limit for total contributions.
@@ -520,7 +520,7 @@ contract CappedCrowdsale is Crowdsale {
 
 }
 
-//import &quot;../validation/TimedCrowdsale.sol&quot;;
+//import "../validation/TimedCrowdsale.sol";
 /**
  * @title TimedCrowdsale
  * @dev Crowdsale accepting contributions only within a time frame.
@@ -574,11 +574,11 @@ contract TimedCrowdsale is Crowdsale {
 
 }
 
-//import &quot;../../../ownership/Ownable.sol&quot;;
+//import "../../../ownership/Ownable.sol";
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -623,7 +623,7 @@ contract Ownable {
   }
 }
 
-//import &quot;./FinalizableCrowdsale.sol&quot;;
+//import "./FinalizableCrowdsale.sol";
 /**
  * @title FinalizableCrowdsale
  * @dev Extension of Crowdsale where an owner can do extra work
@@ -660,7 +660,7 @@ contract FinalizableCrowdsale is TimedCrowdsale, Ownable {
 
 }
 
-//import &quot;./utils/RefundVault.sol&quot;;
+//import "./utils/RefundVault.sol";
 /**
  * @title RefundVault
  * @dev This contract is used for storing funds while a crowdsale
@@ -722,7 +722,7 @@ contract RefundVault is Ownable {
   }
 }
 
-//import &quot;/zepp/crowdsale/distribution/RefundableCrowdsale.sol&quot;;
+//import "/zepp/crowdsale/distribution/RefundableCrowdsale.sol";
 /**
  * @title RefundableCrowdsale
  * @dev Extension of Crowdsale contract that adds a funding goal, and

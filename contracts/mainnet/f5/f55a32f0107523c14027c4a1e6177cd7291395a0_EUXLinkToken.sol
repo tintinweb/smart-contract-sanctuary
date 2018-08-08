@@ -58,8 +58,8 @@ contract EUXLinkToken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;EUX Link Token&quot;;
-    string public constant symbol = &quot;EUX&quot;;
+    string public constant name = "EUX Link Token";
+    string public constant symbol = "EUX";
     uint public constant decimals = 8;
     uint256 public totalSupply = 1000000000e8;
     uint256 public totalDistributed = 200000000e8;

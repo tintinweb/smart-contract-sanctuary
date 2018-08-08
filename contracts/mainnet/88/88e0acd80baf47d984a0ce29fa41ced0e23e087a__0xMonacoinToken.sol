@@ -156,8 +156,8 @@ contract _0xMonacoinToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function _0xMonacoinToken() public onlyOwner{
-        symbol = &quot;0xMONA&quot;;
-        name = &quot;0xMonacoin Token&quot;;
+        symbol = "0xMONA";
+        name = "0xMonacoin Token";
         decimals = 8;
         _totalSupply = 200000000 * 10**uint(decimals);
 

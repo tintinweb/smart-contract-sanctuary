@@ -8,8 +8,8 @@ contract GayCoin {
     mapping (address => mapping (address => uint256)) allowed;
 
     string public standard = &#39;Gay Coin Standart&#39;;
-    string public constant name = &quot;GayCoin&quot;;
-    string public constant symbol = &quot;GAY&quot;;
+    string public constant name = "GayCoin";
+    string public constant symbol = "GAY";
     uint   public constant decimals = 18;
     uint   public constant totalSupply = 21000000 * 1000000000000000000;
     

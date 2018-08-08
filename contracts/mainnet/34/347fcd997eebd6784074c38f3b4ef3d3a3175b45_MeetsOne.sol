@@ -58,8 +58,8 @@ contract MeetsOne is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;MEETS.ONE&quot;;
-    string public constant symbol = &quot;MTO&quot;;
+    string public constant name = "MEETS.ONE";
+    string public constant symbol = "MTO";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000000e8;

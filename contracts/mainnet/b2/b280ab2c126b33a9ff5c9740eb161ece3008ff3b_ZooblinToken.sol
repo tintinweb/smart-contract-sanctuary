@@ -140,8 +140,8 @@ contract ZooblinToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;ZBN&quot;;
-        name = &quot;Zooblin Token&quot;;
+        symbol = "ZBN";
+        name = "Zooblin Token";
         decimals = 18;
         _totalSupply = 300000000000000000000000000;
 

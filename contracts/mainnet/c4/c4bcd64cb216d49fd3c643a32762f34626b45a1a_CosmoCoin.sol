@@ -72,8 +72,8 @@ contract ERC20 {
 contract CosmoCoin is ERC20 {
     using SafeMath for uint256;
 
-    string public constant name = &quot;CosmoCoin&quot;;
-    string public constant symbol = &quot;COSM&quot;;
+    string public constant name = "CosmoCoin";
+    string public constant symbol = "COSM";
     uint8 public constant decimals = 18;
 
     // Ico contract address

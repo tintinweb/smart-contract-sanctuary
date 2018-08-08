@@ -148,8 +148,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract CoinExchange is StandardToken {
 
-  string public constant name = &quot;CoinExchange&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;CEX&quot;; // solium-disable-line uppercase
+  string public constant name = "CoinExchange"; // solium-disable-line uppercase
+  string public constant symbol = "CEX"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   function CoinExchange() public {

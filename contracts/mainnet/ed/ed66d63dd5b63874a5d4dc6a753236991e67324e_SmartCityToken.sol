@@ -12,9 +12,9 @@ contract SmartCityToken {
     address public owner;  // address of Token Owner
     address public crowdsale; // address of Crowdsale contract
 
-    string constant public standard = &quot;ERC20&quot;; // token standard
-    string constant public name = &quot;Smart City&quot;; // token name
-    string constant public symbol = &quot;CITY&quot;; // token symbol
+    string constant public standard = "ERC20"; // token standard
+    string constant public name = "Smart City"; // token name
+    string constant public symbol = "CITY"; // token symbol
 
     uint256 constant public decimals = 5; // 1 CITY = 100000 tokens
     uint256 public totalSupply = 252862966307692; // total token provision

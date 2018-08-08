@@ -116,8 +116,8 @@ contract Panthercoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Panthercoin() public {
-        symbol = &quot;PTC&quot;;
-        name = &quot;Panther Coin&quot;;
+        symbol = "PTC";
+        name = "Panther Coin";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 16 weeks;

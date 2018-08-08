@@ -113,8 +113,8 @@ contract MicroBTC is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MicroBTC() public {
-        symbol = &quot;MBTC&quot;;
-        name = &quot;Micro BTC&quot;;
+        symbol = "MBTC";
+        name = "Micro BTC";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xfb5d2Ab3fEDEA022f5a93E649E2434677056f3E9] = _totalSupply;

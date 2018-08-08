@@ -110,8 +110,8 @@ contract BurnableToken is BasicToken {
 }
 
 contract CCXToken is  BurnableToken{
-    string public constant name = &quot;CCX&quot;;
-    string public constant symbol = &quot;CCX&quot;;
+    string public constant name = "CCX";
+    string public constant symbol = "CCX";
     uint8 public constant decimals = 18;
     uint256 public totalSupply;
 

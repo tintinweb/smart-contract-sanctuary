@@ -281,8 +281,8 @@ contract TokenBank is MintableToken {
   /*
    */
     function TokenBank() public {
-        name = &quot;Token Bank&quot;;
-        symbol = &quot;TKB&quot;;
+        name = "Token Bank";
+        symbol = "TKB";
         decimals = 8;
         totalSupply = 1000000000e8;
         founder = 0xd606c83Bc9C740cBf39a42eB4c338828e90F451a;

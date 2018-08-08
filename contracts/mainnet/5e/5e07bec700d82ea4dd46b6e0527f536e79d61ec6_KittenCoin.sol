@@ -184,8 +184,8 @@ contract Ownable {
 
 contract KittenCoin is StandardToken, Ownable {
 
-  string public constant name = &quot;ITube Bounus&quot;;
-  string public constant symbol = &quot;TUBE&quot;;
+  string public constant name = "ITube Bounus";
+  string public constant symbol = "TUBE";
   uint8 public constant decimals = 18;
   
   uint256 public kittensIssued;
@@ -223,6 +223,6 @@ contract KittenCoin is StandardToken, Ownable {
     totalSupply = 6200000000 * (10 ** uint256(decimals)); // So many kittens on earth
     balances[msg.sender] = totalSupply / 10; // To help kittens grow safely
     kittensIssued = totalSupply / 10;
-    kittenTalk = &quot;Meow&quot;;
+    kittenTalk = "Meow";
   }
 }

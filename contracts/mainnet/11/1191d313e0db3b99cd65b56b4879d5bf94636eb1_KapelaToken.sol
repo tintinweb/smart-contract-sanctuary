@@ -153,8 +153,8 @@ contract MintableToken is StandardToken, Ownable {
 
 
 contract KapelaToken is MintableToken {
-  string public name = &quot;Kapela&quot;;
-  string public symbol = &quot;KAP&quot;;
+  string public name = "Kapela";
+  string public symbol = "KAP";
   uint8 public decimals = 8;
 
   function KapelaToken() {

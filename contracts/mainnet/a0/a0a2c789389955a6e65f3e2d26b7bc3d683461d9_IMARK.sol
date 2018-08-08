@@ -16,9 +16,9 @@ contract IMARK {
     function IMARK() {
 
          initialSupply = 10000000;
-         name =&quot;IMARK&quot;;
+         name ="IMARK";
         decimals = 18;
-         symbol = &quot;IMARK&quot;;
+         symbol = "IMARK";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

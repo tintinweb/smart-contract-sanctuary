@@ -81,8 +81,8 @@ contract Owned {
 
 contract EMPR is Owned {
     using SafeMath for uint256;
-    string public constant name = &quot;empowr&quot;;
-    string public constant symbol = &quot;EMPR&quot;;
+    string public constant name = "empowr";
+    string public constant symbol = "EMPR";
     uint256 public constant decimals = 18;  // 18 is the most common number of decimal places
     bool private tradeable;
     uint256 private currentSupply;

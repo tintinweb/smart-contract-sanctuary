@@ -59,11 +59,11 @@ library SafeMath {
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -732,7 +732,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint length = self._len * (parts.length - 1);
         for (uint i = 0; i < parts.length; i++) {
@@ -759,7 +759,7 @@ library strings {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -922,7 +922,7 @@ contract RBAC is Ownable {
 /**
  * @title Heritable
  * @dev The Heritable contract provides ownership transfer capabilities, in the
- * case that the current owner stops &quot;heartbeating&quot;. Only the heir can pronounce the
+ * case that the current owner stops "heartbeating". Only the heir can pronounce the
  * owner&#39;s death.
  */
 contract Heritable is RBAC {
@@ -1158,13 +1158,13 @@ contract BettingCore is BettingBase, Heritable {
         fee = 200; // 2 %
         payoutToOwnerIsLimited = true;
         blockedSum = 1 wei;
-        contractMessage = &quot;betdapp.co&quot;;
+        contractMessage = "betdapp.co";
     }
 
     function() external onlyOwner payable {
     }
 
-    function addActivity(ActivityType activityType, string title) external onlyOwnerOr(&quot;Edit&quot;) returns (uint activityId) {
+    function addActivity(ActivityType activityType, string title) external onlyOwnerOr("Edit") returns (uint activityId) {
         Activity memory _activity = Activity({
             title: title, 
             activityType: activityType
@@ -1174,11 +1174,11 @@ contract BettingCore is BettingBase, Heritable {
         NewActivity(activityId, activityType, title);
     }
 
-    function addDoubleChanceLine(uint eventId, string title, uint start) external onlyOwnerOr(&quot;Edit&quot;) {
-        addLine(eventId, title, LineType.DoubleChance, start, &quot;1X_12_X2&quot;);
+    function addDoubleChanceLine(uint eventId, string title, uint start) external onlyOwnerOr("Edit") {
+        addLine(eventId, title, LineType.DoubleChance, start, "1X_12_X2");
     }
 
-    function addEvent(uint activityId, string title) external onlyOwnerOr(&quot;Edit&quot;) returns (uint eventId) {
+    function addEvent(uint activityId, string title) external onlyOwnerOr("Edit") returns (uint eventId) {
         Event memory _event = Event({
             activityId: activityId, 
             title: title
@@ -1188,23 +1188,23 @@ contract BettingCore is BettingBase, Heritable {
         NewEvent(activityId, eventId, title);      
     }
 
-    function addThreeWayLine(uint eventId, string title, uint start) external onlyOwnerOr(&quot;Edit&quot;) {
-        addLine(eventId, title, LineType.ThreeWay, start,  &quot;1_X_2&quot;);
+    function addThreeWayLine(uint eventId, string title, uint start) external onlyOwnerOr("Edit") {
+        addLine(eventId, title, LineType.ThreeWay, start,  "1_X_2");
     }
 
-    function addSomeOfManyLine(uint eventId, string title, uint start, string outcomes) external onlyOwnerOr(&quot;Edit&quot;) {
+    function addSomeOfManyLine(uint eventId, string title, uint start, string outcomes) external onlyOwnerOr("Edit") {
         addLine(eventId, title, LineType.SomeOfMany, start, outcomes);
     }
 
-    function addTwoWayLine(uint eventId, string title, uint start, TwoWayLineType customType) external onlyOwnerOr(&quot;Edit&quot;) {
+    function addTwoWayLine(uint eventId, string title, uint start, TwoWayLineType customType) external onlyOwnerOr("Edit") {
         string memory outcomes;
 
         if (customType == TwoWayLineType.YesNo) {
-            outcomes = &quot;Yes_No&quot;;
+            outcomes = "Yes_No";
         } else if (customType == TwoWayLineType.OverUnder) {
-            outcomes = &quot;Over_Under&quot;;
+            outcomes = "Over_Under";
         } else {
-            outcomes = &quot;1_2&quot;;
+            outcomes = "1_2";
         }
         
         addLine(eventId, title, LineType.TwoWay, start, outcomes);
@@ -1219,7 +1219,7 @@ contract BettingCore is BettingBase, Heritable {
         BetMade(lineId, betId, player, amount);
     }
 
-    function cancelLine(uint lineId, string comment) external onlyOwnerOr(&quot;Submit&quot;) {
+    function cancelLine(uint lineId, string comment) external onlyOwnerOr("Submit") {
         betStorage.cancelLine(lineId);
         LineCanceled(lineId, comment);
     }   
@@ -1269,7 +1269,7 @@ contract BettingCore is BettingBase, Heritable {
         msg.sender.transfer(sum);
     }    
 
-    function payPlayers(uint lineId, uint chunkSize) external onlyOwnerOr(&quot;Pay&quot;) {
+    function payPlayers(uint lineId, uint chunkSize) external onlyOwnerOr("Pay") {
         uint startId;
         uint endId;
         PaymentType paymentType;
@@ -1328,7 +1328,7 @@ contract BettingCore is BettingBase, Heritable {
         fee = value;
     }
 
-    function setLineStartTime(uint lineId, uint time) external onlyOwnerOr(&quot;Edit&quot;) {
+    function setLineStartTime(uint lineId, uint time) external onlyOwnerOr("Edit") {
         betStorage.setLineStartTime(lineId, time);
         LineStartTimeChanged(lineId, time);
     }    
@@ -1355,7 +1355,7 @@ contract BettingCore is BettingBase, Heritable {
         betStorage.transferOwnership(newOwner);
     }    
 
-    function submitResult(uint lineId, uint[] results) external onlyOwnerOr(&quot;Submit&quot;) {
+    function submitResult(uint lineId, uint[] results) external onlyOwnerOr("Submit") {
         betStorage.submitResult(lineId, results);
         ResultSubmitted(lineId, results);
     }    
@@ -1412,7 +1412,7 @@ contract BettingCore is BettingBase, Heritable {
 
     function getSplitCount(string input) private returns (uint) { 
         var s = input.toSlice();
-        var delim = &quot;_&quot;.toSlice();
+        var delim = "_".toSlice();
         var parts = new string[](s.count(delim) + 1);
 
         for (uint i = 0; i < parts.length; i++) {

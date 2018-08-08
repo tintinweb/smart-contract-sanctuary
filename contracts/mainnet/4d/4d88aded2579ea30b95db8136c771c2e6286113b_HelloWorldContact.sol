@@ -1,7 +1,7 @@
 pragma solidity ^0.4.24;
 
 contract HelloWorldContact {
-	string word = &quot;Hello World&quot;;
+	string word = "Hello World";
 	address owner;
 	
 	function HelloWorldContract() {

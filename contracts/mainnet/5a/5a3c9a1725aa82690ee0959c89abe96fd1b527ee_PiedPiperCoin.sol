@@ -237,8 +237,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract PiedPiperCoin is StandardToken {
 
-string public constant name = &quot;PiedPiperCoin&quot;;
-string public constant symbol = &quot;PPI&quot;;
+string public constant name = "PiedPiperCoin";
+string public constant symbol = "PPI";
 uint8 public constant decimals = 18;
 
 uint256 public constant INITIAL_SUPPLY = 10000000 * (10 ** uint256(decimals));

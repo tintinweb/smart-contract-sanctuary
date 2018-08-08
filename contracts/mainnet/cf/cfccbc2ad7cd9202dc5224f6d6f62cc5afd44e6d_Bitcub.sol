@@ -78,11 +78,11 @@ contract ERC20 {
     function transfer(address _to, uint256 _value) public returns (bool success);
 
     //4
-    //Owner &quot;approves&quot; the given address to withdraw instances of the tokens from the owners address
+    //Owner "approves" the given address to withdraw instances of the tokens from the owners address
     function approve(address _spender, uint256 _value) public returns (bool success);
 
     //5
-    //Lets an &quot;approved&quot; address transfer the approved amount from the address that called approve()
+    //Lets an "approved" address transfer the approved amount from the address that called approve()
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success);
 
     //6
@@ -104,7 +104,7 @@ contract ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -144,8 +144,8 @@ contract Ownable {
 contract Bitcub is Ownable, ERC20 {
     using SafeMath for uint256;
 
-    string public constant NAME = &quot;Bitcub&quot;;
-    string public constant SYMBOL = &quot;BCU&quot;;
+    string public constant NAME = "Bitcub";
+    string public constant SYMBOL = "BCU";
     uint8 public constant DECIMALS = 18; // 18 DECIMALS is the strongly suggested default, avoid changing it
 
     //total supply (TOTALSUPPLY) is declared private and constant and can be accessed via totalSupply()
@@ -215,7 +215,7 @@ contract Bitcub is Ownable, ERC20 {
     }
 
     //4
-    //Owner &quot;approves&quot; the given address to withdraw instances of the tokens from the owners address
+    //Owner "approves" the given address to withdraw instances of the tokens from the owners address
     /**
        * @dev Approve the passed address to spend the specified amount of tokens on behalf of msg.sender.
        *
@@ -233,7 +233,7 @@ contract Bitcub is Ownable, ERC20 {
     }
 
     //5
-    //Lets an &quot;approved&quot; address transfer the approved amount from the address that called approve()
+    //Lets an "approved" address transfer the approved amount from the address that called approve()
     /**
      * @dev Transfer tokens from one address to another
      * @param _from address The address which you want to send tokens from

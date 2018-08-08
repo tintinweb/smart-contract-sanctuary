@@ -58,8 +58,8 @@ contract SimpleLife is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;SimpleLife&quot;;
-    string public constant symbol = &quot;SLT&quot;;
+    string public constant name = "SimpleLife";
+    string public constant symbol = "SLT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000e8;

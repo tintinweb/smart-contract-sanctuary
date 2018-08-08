@@ -16,8 +16,8 @@ contract ERC20Interface {
 // GROWCHAIN
 // YOU get a GROWCHAIN, and YOU get a GROWCHAIN, and YOU get a GROWCHAIN!
 contract GROWCHAIN is ERC20Interface {
-    string public constant symbol = &quot;GROW&quot;;
-    string public constant name = &quot;GROW CHAIN&quot;;
+    string public constant symbol = "GROW";
+    string public constant name = "GROW CHAIN";
     uint8 public constant decimals = 2;
 
     uint256 _totalSupply = 0;

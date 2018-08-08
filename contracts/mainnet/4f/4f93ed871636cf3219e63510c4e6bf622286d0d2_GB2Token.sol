@@ -248,8 +248,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract GB2Token is StandardToken {
-  string public name = &quot;GB2Token&quot;; 
-  string public symbol = &quot;GOX2&quot;;
+  string public name = "GB2Token"; 
+  string public symbol = "GOX2";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 200000000 * (10 ** decimals);
   constructor() public{

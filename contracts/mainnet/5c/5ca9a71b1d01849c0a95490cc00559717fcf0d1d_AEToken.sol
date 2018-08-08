@@ -144,7 +144,7 @@ contract HumanStandardToken is StandardToken {
         // receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         // it is assumed that when does this that the call *should* succeed, otherwise
         // one would use vanilla approve instead.
-				require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+				require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 }
@@ -230,7 +230,7 @@ contract AEToken is PrefilledToken {
       string   tokenSymbol
     )
    */
-  function AEToken() HumanStandardToken(0, &quot;Aeternity&quot;, 18, &quot;AE&quot;) {
+  function AEToken() HumanStandardToken(0, "Aeternity", 18, "AE") {
     uint nYears = 2;
 
     transferableUntil = now + (60 * 60 * 24 * 365 * nYears);

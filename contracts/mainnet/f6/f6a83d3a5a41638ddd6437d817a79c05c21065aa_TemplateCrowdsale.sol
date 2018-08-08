@@ -302,7 +302,7 @@ contract Crowdsale {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -921,8 +921,8 @@ contract Consts {
     uint8 public constant TOKEN_DECIMALS_UINT8 = 18;
     uint public constant TOKEN_DECIMAL_MULTIPLIER = 10 ** TOKEN_DECIMALS;
 
-    string public constant TOKEN_NAME = &quot;Your Data Safe Token&quot;;
-    string public constant TOKEN_SYMBOL = &quot;YDST&quot;;
+    string public constant TOKEN_NAME = "Your Data Safe Token";
+    string public constant TOKEN_SYMBOL = "YDST";
     bool public constant PAUSED = true;
     address public constant TARGET_USER = 0x91aFEbb7f77eB0D531705d37989a2be312116c64;
     

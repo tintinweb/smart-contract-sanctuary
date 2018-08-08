@@ -27,8 +27,8 @@ contract owned {
 contract LUSD is owned {
     address public deployer;
     // Public variables of the token
-    string public name =&quot;Lucas Credit Cooperative&quot;;
-    string public symbol = &quot;LUSD&quot;;
+    string public name ="Lucas Credit Cooperative";
+    string public symbol = "LUSD";
     uint8 public decimals = 4;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 1000000000000;

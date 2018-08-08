@@ -123,8 +123,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract IYMAYA is StandardToken {
-    string public name = &quot;IYMAYA&quot;;
-    string public symbol = &quot;MAYA&quot;;
+    string public name = "IYMAYA";
+    string public symbol = "MAYA";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 10000000000*10**18;
     function IYMAYA(){

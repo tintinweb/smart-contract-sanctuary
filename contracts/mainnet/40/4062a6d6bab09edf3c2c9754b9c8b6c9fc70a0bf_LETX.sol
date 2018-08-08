@@ -98,8 +98,8 @@ contract LETX is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LETX() public {
-        symbol = &quot;LETX&quot;;
-        name = &quot;Legacy Ethereum Token&quot;;
+        symbol = "LETX";
+        name = "Legacy Ethereum Token";
         decimals = 18;
         _totalSupply = 99999999999000000000000000000;
         balances[0x43826A859449151c6F9c0Ae3Bdb4C262334dC72a] = _totalSupply;

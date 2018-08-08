@@ -222,9 +222,9 @@ contract StandardToken is ERC20, BasicToken {
 //========= main ==================
 
 contract AST is StandardToken {
-  string public constant name    = &quot;Airdrop Seeker Token&quot;;  //The Token&#39;s name
+  string public constant name    = "Airdrop Seeker Token";  //The Token&#39;s name
   uint8 public constant decimals = 18;              //Number of decimals of the smallest unit
-  string public constant symbol  = &quot;AST&quot;;           //An identifier
+  string public constant symbol  = "AST";           //An identifier
 
   function AST() public {
     totalSupply_ = 200 * (10 ** 8 ) * (10 ** 18); // 2.5 billion AST, decimals set to 18

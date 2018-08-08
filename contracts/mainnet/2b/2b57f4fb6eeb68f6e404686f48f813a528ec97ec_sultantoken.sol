@@ -16,9 +16,9 @@ contract sultantoken {
     function sultantoken() {
 
          initialSupply = 50000000000;
-         name =&quot;sultantokentoken&quot;;
+         name ="sultantokentoken";
         decimals = 8;
-         symbol = &quot;SMT&quot;;
+         symbol = "SMT";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

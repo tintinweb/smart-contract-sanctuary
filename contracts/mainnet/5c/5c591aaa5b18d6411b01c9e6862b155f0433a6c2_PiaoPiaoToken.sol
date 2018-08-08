@@ -35,9 +35,9 @@ contract PiaoPiaoToken is LoveToken {
     function PiaoPiaoToken() {
         balances[msg.sender] = 5201314; 
         totalSupply = 5201314;         
-        name = &quot;PiaoPiao Token&quot;;                   
+        name = "PiaoPiao Token";                   
         decimals = 0;          
-        symbol = &quot;PPT&quot;;  
+        symbol = "PPT";  
     }
     
     function setLoveUrl(string _loveUrl) onlyOwner public returns (bool success) {

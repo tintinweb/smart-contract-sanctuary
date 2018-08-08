@@ -89,8 +89,8 @@ contract ZULICC is StandardToken {
     function ZULICC() {
         balances[msg.sender] = 20000000000000000;               // Give the creator all initial tokens
         totalSupply = 20000000000000000;                        // Update total supply
-        name = &quot;ZULICC&quot;;                                   // Set the name for display purposes
+        name = "ZULICC";                                   // Set the name for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
-        symbol = &quot;ZULICC&quot;;                               // Set the symbol for display purposes
+        symbol = "ZULICC";                               // Set the symbol for display purposes
     }
 }

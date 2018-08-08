@@ -222,8 +222,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/XoudCoin.sol
 
 contract XoudCoin is StandardToken {
-  string public name = &quot;XoudCoin&quot;;
-  string public symbol = &quot;XOUD&quot;;
+  string public name = "XoudCoin";
+  string public symbol = "XOUD";
   uint public decimals = 18;
   uint public constant INITIAL_SUPPLY = 100000000000000000000000000;//leave it
 

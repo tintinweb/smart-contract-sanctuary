@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract HussyToken is StandardToken {
-  string public name = &quot;HUSSY&quot;;
-  string public symbol = &quot;HUS&quot;;
+  string public name = "HUSSY";
+  string public symbol = "HUS";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));
 

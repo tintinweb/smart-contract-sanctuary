@@ -218,8 +218,8 @@ contract GizerToken is ERC20Token {
 
   /* Basic token data */
 
-  string public constant name     = &quot;Gizer Gaming Token&quot;;
-  string public constant symbol   = &quot;GZR&quot;;
+  string public constant name     = "Gizer Gaming Token";
+  string public constant symbol   = "GZR";
   uint8  public constant decimals = 6;
 
   /* Wallets */
@@ -436,7 +436,7 @@ contract GizerToken is ERC20Token {
 
   // ERC20 functions ------------------
 
-  /* Override &quot;transfer&quot; */
+  /* Override "transfer" */
 
   function transfer(address _to, uint _amount) public returns (bool success) {
     require( tradeable() );
@@ -444,7 +444,7 @@ contract GizerToken is ERC20Token {
     return super.transfer(_to, _amount);
   }
   
-  /* Override &quot;transferFrom&quot; */
+  /* Override "transferFrom" */
 
   function transferFrom(address _from, address _to, uint _amount) public returns (bool success) {
     require( tradeable() );

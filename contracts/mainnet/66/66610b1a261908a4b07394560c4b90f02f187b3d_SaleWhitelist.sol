@@ -140,8 +140,8 @@ contract SaleWhitelist is Ownable, RBAC {
     event WhitelistedAddressAdded(address addr);
     event WhitelistedAddressRemoved(address addr);
 
-    string public constant ROLE_CONTROLLER = &quot;controller&quot;;
-    string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+    string public constant ROLE_CONTROLLER = "controller";
+    string public constant ROLE_WHITELISTED = "whitelist";
 
     Whitelist public list;
 
@@ -222,7 +222,7 @@ contract Whitelist is Ownable, RBAC {
   event WhitelistedAddressAdded(address addr);
   event WhitelistedAddressRemoved(address addr);
 
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if called by any account that&#39;s not whitelisted.

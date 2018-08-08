@@ -58,8 +58,8 @@ contract Bitlike is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Bitlike&quot;;
-    string public constant symbol = &quot;BLike&quot;;
+    string public constant name = "Bitlike";
+    string public constant symbol = "BLike";
     uint public constant decimals = 4;
     
     uint256 public totalSupply = 760000000e4;

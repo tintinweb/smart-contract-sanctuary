@@ -113,8 +113,8 @@ contract EMJAC is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EMJAC() public {
-        symbol = &quot;EMJAC&quot;;
-        name = &quot;EMJAC&quot;;
+        symbol = "EMJAC";
+        name = "EMJAC";
         decimals = 4;
         _totalSupply = 2500000000000;
         balances[0xf7d58Ed54556B8b4522BeCC4EA161D4A3DC9f6EF] = _totalSupply;

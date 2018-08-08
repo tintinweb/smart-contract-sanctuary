@@ -16,9 +16,9 @@ contract ednation {
     function ednation() {
 
          initialSupply = 15000000000;
-         name =&quot;ednation&quot;;
+         name ="ednation";
         decimals = 2;
-         symbol = &quot;EDNa&quot;;
+         symbol = "EDNa";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

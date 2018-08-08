@@ -26,8 +26,8 @@ contract ContractReceiver {
 
 contract FLTToken {
     /* Contract Constants */
-    string public constant _name = &quot;FLTcoin&quot;;
-    string public constant _symbol = &quot;FLT&quot;;
+    string public constant _name = "FLTcoin";
+    string public constant _symbol = "FLT";
     uint8 public constant _decimals = 8;
 
     /* The supply is initially 100,000,000MGO to the precision of 8 decimals */

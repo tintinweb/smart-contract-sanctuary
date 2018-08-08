@@ -18,9 +18,9 @@ contract ZENT {
     function ZENT() {
 
          initialSupply = 1000000000;
-         name =&quot;ZENT&quot;;
+         name ="ZENT";
         decimals = 0;
-         symbol = &quot;ZENT&quot;;
+         symbol = "ZENT";
 
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

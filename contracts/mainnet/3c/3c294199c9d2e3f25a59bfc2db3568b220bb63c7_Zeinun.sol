@@ -40,7 +40,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization
- *      control functions, this simplifies the implementation of &quot;user permissions&quot;.
+ *      control functions, this simplifies the implementation of "user permissions".
  */
  
 contract Ownable {
@@ -148,9 +148,9 @@ contract ERC223 {
 contract Zeinun is ERC223, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;Zeinun&quot;;
-    string public symbol = &quot;ZNN&quot;;
-    string public constant AAcontributors = &quot;Zeinun Token&quot;;
+    string public name = "Zeinun";
+    string public symbol = "ZNN";
+    string public constant AAcontributors = "Zeinun Token";
     uint8 public decimals = 8;
     uint256 public totalSupply = 97e5 * 1e7;
     uint256 public distributeAmount = 0;

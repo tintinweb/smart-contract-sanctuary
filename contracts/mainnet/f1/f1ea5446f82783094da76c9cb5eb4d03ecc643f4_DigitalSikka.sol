@@ -123,8 +123,8 @@ contract StandardToken is DigitalSikka, ERC20 {
 }
 
 contract DTCC is StandardToken, Ownable {
-  string public constant name = &quot;DigitalSikka&quot;;
-  string public constant symbol = &quot;DTCC&quot;;
+  string public constant name = "DigitalSikka";
+  string public constant symbol = "DTCC";
   uint public constant decimals = 9;
   // Constructor
   function DTCC() {

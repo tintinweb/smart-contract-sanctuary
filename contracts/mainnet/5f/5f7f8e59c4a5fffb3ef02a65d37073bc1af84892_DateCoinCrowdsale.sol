@@ -215,7 +215,7 @@ contract BurnableToken is StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -334,8 +334,8 @@ contract CappedToken is MintableToken {
 
 contract DateCoin is CappedToken, BurnableToken {
 
-  string public constant name = &quot;DateCoin ICO Token&quot;;
-  string public constant symbol = &quot;DTC&quot;;
+  string public constant name = "DateCoin ICO Token";
+  string public constant symbol = "DTC";
   uint256 public constant decimals = 18;
 
   function DateCoin(uint256 _cap) public CappedToken(_cap) {

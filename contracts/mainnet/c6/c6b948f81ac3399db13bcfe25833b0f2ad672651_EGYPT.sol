@@ -113,8 +113,8 @@ contract EGYPT is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EGYPT() public {
-        symbol = &quot;EGY&quot;;
-        name = &quot;EGYPT&quot;;
+        symbol = "EGY";
+        name = "EGYPT";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x320b543f51b296998C44518B7aAEA126f7220d15] = _totalSupply;

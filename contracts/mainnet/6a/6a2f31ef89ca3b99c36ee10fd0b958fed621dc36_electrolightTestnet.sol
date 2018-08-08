@@ -2,7 +2,7 @@ pragma solidity ^0.4.21; //tells that the source code is written for Solidity ve
 
 
 contract electrolightTestnet {
-    // The keyword &quot;public&quot; makes those variables readable from outside.
+    // The keyword "public" makes those variables readable from outside.
     
     address public minter;
     

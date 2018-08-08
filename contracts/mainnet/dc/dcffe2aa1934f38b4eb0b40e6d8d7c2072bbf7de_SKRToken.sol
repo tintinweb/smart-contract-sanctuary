@@ -149,8 +149,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract SKRToken is StandardToken {
-  string public name    = &quot;HoneyBlockchain&quot;;
-  string public symbol  = &quot;SKR&quot;;
+  string public name    = "HoneyBlockchain";
+  string public symbol  = "SKR";
   uint8 public decimals = 18;
 
 

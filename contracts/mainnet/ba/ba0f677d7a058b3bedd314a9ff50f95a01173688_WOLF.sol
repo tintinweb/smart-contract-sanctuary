@@ -148,7 +148,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -206,7 +206,7 @@ contract ERC20 is ERC20Basic {
   Interface wise is ERC20 + data paramenter to transfer and transferFrom.
  */
 
-//import &quot;github.com/OpenZeppelin/zeppelin-solidity/contracts/token/ERC20.sol&quot;;
+//import "github.com/OpenZeppelin/zeppelin-solidity/contracts/token/ERC20.sol";
 
 
 contract ERC223 is ERC20 {
@@ -416,7 +416,7 @@ contract PausableToken is StandardToken, Pausable {
 
 
 
-//import &quot;github.com/OpenZeppelin/zeppelin-solidity/contracts/token/StandardToken.sol&quot;;
+//import "github.com/OpenZeppelin/zeppelin-solidity/contracts/token/StandardToken.sol";
 
 
 contract Pausable223Token is ERC223, PausableToken {
@@ -475,8 +475,8 @@ pragma solidity ^0.4.23;
 
 contract WOLF is BurnableToken, Pausable223Token
 {
-    string public constant name = &quot;WiseWolf&quot;;
-    string public constant symbol = &quot;WOLF&quot;;
+    string public constant name = "WiseWolf";
+    string public constant symbol = "WOLF";
     uint8 public constant decimals = 18;
     uint public constant DECIMALS_MULTIPLIER = 10**uint(decimals);
     

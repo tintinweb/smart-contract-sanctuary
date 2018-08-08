@@ -111,8 +111,8 @@ contract TravelCoinToken is owned, token {
     /* Initializes contract with initial supply tokens to the creator of the contract */
     uint256 public constant initialSupply = 200000 * 10**16;
     uint8 public constant decimalUnits = 16;
-    string public tokenName = &quot;TravelCoin&quot;;
-    string public tokenSymbol = &quot;TRV&quot;;
+    string public tokenName = "TravelCoin";
+    string public tokenSymbol = "TRV";
     function TravelCoinToken() token (initialSupply, tokenName, decimalUnits, tokenSymbol) {}
 
     /* Send coins */

@@ -99,8 +99,8 @@ contract StandardToken is ERC20 {
 }
 
 contract LBToken is StandardToken {
-	string public constant name = &quot;LB Token&quot;;
-    string public constant symbol = &quot;LB&quot;;
+	string public constant name = "LB Token";
+    string public constant symbol = "LB";
     uint8  public constant decimals = 18;
 
 	address public minter; 

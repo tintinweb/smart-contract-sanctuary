@@ -221,10 +221,10 @@ contract StandardToken is ERC20, BasicToken {
 contract IHF is StandardToken {
   using SafeMath for uint256;
 
-  string public name = &quot;Invictus Hyperion&quot;;
-  string public symbol = &quot;IHF&quot;;
+  string public name = "Invictus Hyperion";
+  string public symbol = "IHF";
   uint8 public decimals = 18;
-  string public version = &quot;1.0&quot;;
+  string public version = "1.0";
 
   uint256 public fundingEndBlock;
 

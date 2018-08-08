@@ -56,7 +56,7 @@ contract BloquidIssuer is Ambi2EnabledFull {
 
     AssetProxy public assetProxy;
 
-    function setupAssetProxy(AssetProxy _assetProxy) onlyRole(&quot;__root__&quot;) returns(bool) {
+    function setupAssetProxy(AssetProxy _assetProxy) onlyRole("__root__") returns(bool) {
         if ((address(assetProxy) != 0x0) || (address(_assetProxy) == 0x0)) {
             return false;
         }
@@ -64,7 +64,7 @@ contract BloquidIssuer is Ambi2EnabledFull {
         return true;
     }
 
-    function issueTokens(uint _value, string _regNumber) onlyRole(&quot;issuer&quot;) returns(bool) {
+    function issueTokens(uint _value, string _regNumber) onlyRole("issuer") returns(bool) {
         bytes32 symbol = assetProxy.etoken2Symbol();
         EToken2Interface etoken2 = assetProxy.etoken2();
         if (!etoken2.reissueAsset(symbol, _value)) {
@@ -76,7 +76,7 @@ contract BloquidIssuer is Ambi2EnabledFull {
         return true;
     }
 
-    function changeAssetOwner(address _newOwner) onlyRole(&quot;__root__&quot;) returns(bool) {
+    function changeAssetOwner(address _newOwner) onlyRole("__root__") returns(bool) {
         if (_newOwner == 0x0) {
             return false;
         }

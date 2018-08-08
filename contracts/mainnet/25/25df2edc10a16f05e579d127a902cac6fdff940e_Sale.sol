@@ -24,7 +24,7 @@ All events are logged for the purpose of transparency.
 
 All math uses SafeMath.
 
-ETH and tokens (often referred to as &quot;value&quot; and &quot;tokens&quot; in variable names) are really 1/10^18 of their respective parent units.  Basically, the values represent wei and the token equivalent thereof.
+ETH and tokens (often referred to as "value" and "tokens" in variable names) are really 1/10^18 of their respective parent units.  Basically, the values represent wei and the token equivalent thereof.
 
 */
 
@@ -70,7 +70,7 @@ contract Sale is SafeMath {
     
     uint256 public start;			// timestamp that the sale begins
     uint256 public finish;			// timestamp that the sale ends
-    uint256 public release;			// timestamp that sale participants may &quot;claim&quot; their tokens (will be after the finish)
+    uint256 public release;			// timestamp that sale participants may "claim" their tokens (will be after the finish)
     
     uint256 public pricer;			// a multiplier (>= 1) used to determine how many tokens (or, really, 10^18 sub-units of that token) to give purchasers
     uint256 public size;			// maximum number of 10^18 sub-units of tokens that can be purchased/granted during the sale
@@ -99,7 +99,7 @@ contract Sale is SafeMath {
     mapping(address => bool) public participantRefunds;	    // mapping to record who has been awarded a refund after a cancelled sale
     mapping(address => bool) public participantClaims;		// mapping to record who has claimed their tokens after a completed sale
     
-    mapping(address => bool) public whitelist;				// mapping to record who has been approved to participate in a &quot;restricted&quot; sale
+    mapping(address => bool) public whitelist;				// mapping to record who has been approved to participate in a "restricted" sale
     
     uint256[] public bonuses;								// stores bonus percentages, where even numbered elements store timestamps and odd numbered elements store bonus percentages
     

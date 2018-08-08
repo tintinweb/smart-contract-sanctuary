@@ -167,7 +167,7 @@ contract BurnableToken is StandardToken {
     Burned(burner, burnAmount);
 
     // Keep token balance tracking services happy by sending the burned amount to
-    // &quot;burn address&quot;, so that it will show up as a ERC-20 transaction
+    // "burn address", so that it will show up as a ERC-20 transaction
     // in etherscan, etc. as there is no standarized burn event yet
     Transfer(burner, BURN_ADDRESS, burnAmount);
   }

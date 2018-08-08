@@ -161,8 +161,8 @@ contract BurnableToken is BasicToken {
 
 contract AICT is StandardToken, BurnableToken, Ownable {
     // Constants
-    string  public constant name = &quot;AICT&quot;;
-    string  public constant symbol = &quot;AICT&quot;;
+    string  public constant name = "AICT";
+    string  public constant symbol = "AICT";
     uint8   public constant decimals = 9;
     uint256 public constant INITIAL_SUPPLY      = 500000000 * (10 ** uint256(decimals));
 

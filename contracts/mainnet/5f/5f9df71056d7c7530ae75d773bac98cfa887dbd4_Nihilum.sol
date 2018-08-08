@@ -191,8 +191,8 @@ contract Nihilum is Crowdsaleable {
 
     function Nihilum() public {
         balanceOf[msg.sender] = 0;
-        name = &quot;Nihilum&quot;;
-        symbol = &quot;NH&quot;;
+        name = "Nihilum";
+        symbol = "NH";
         decimals = 0;
         _tokenPrice = 0.0024 ether;
         _minimumTokens = 50;

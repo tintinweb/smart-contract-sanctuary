@@ -161,8 +161,8 @@ contract Another is BasicToken, ERC20 {
 
 contract Testerr is Another {
 
-  string public name = &quot;Coolcoin&quot;;
-  string public symbol = &quot;cool&quot;;
+  string public name = "Coolcoin";
+  string public symbol = "cool";
   uint public decimals = 8;
   uint public INITIAL_SUPPLY = 2100000000000000;
 

@@ -113,8 +113,8 @@ contract ACchainToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ACchainToken() public {
-        symbol = &quot;ACCT&quot;;
-        name = &quot;ACchainToken&quot;;
+        symbol = "ACCT";
+        name = "ACchainToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xB80FA602f00073dCcc0ab05c8301cb3721b04067] = _totalSupply;

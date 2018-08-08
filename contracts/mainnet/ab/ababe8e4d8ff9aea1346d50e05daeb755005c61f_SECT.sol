@@ -164,10 +164,10 @@ contract Stoppable is Owned {
 }
 
 contract SECT is EIP20, Owned, Proof, Stoppable {
-    string public coinbase = &quot;Ampil landed  and EIP999 is still in the eye of typhoon&quot;;
+    string public coinbase = "Ampil landed  and EIP999 is still in the eye of typhoon";
     constructor () public {
-        name = &quot;SECBIT&quot;;                                  // Set the name for display purposes
-        symbol = &quot;SECT&quot;;                                  // Set the symbol for display purposes
+        name = "SECBIT";                                  // Set the name for display purposes
+        symbol = "SECT";                                  // Set the symbol for display purposes
         decimals = 18;                                    // Amount of decimals for display purposes
         totalSupply = (10**9) * (10**uint256(decimals));  // Update total supply
         balances[msg.sender] = totalSupply;               // Give the creator all initial tokens

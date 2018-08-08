@@ -217,8 +217,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract TriwerToken is StandardToken {
-    string public constant name = &quot;Triwer&quot;;
-    string public constant symbol = &quot;TRW&quot;;
+    string public constant name = "Triwer";
+    string public constant symbol = "TRW";
     uint public constant decimals = 18;
 
     function TriwerToken() {

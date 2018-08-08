@@ -112,8 +112,8 @@ contract IVNT2Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;IVNT2&quot;;
-        name = &quot;IVNT2 Token&quot;;
+        symbol = "IVNT2";
+        name = "IVNT2 Token";
         decimals = 18;
         _totalSupply = 96900000000000000000000000000;
         balances[0x46a95d3d6109f5e697493ea508d6d20aff1cc13e] = _totalSupply;

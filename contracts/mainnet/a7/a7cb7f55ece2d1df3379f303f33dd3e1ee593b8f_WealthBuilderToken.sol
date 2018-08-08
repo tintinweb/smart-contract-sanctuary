@@ -209,9 +209,9 @@ contract MintableToken is StandardToken, Ownable {
 
 contract WealthBuilderToken is MintableToken {
     
-    string public name = &quot;Wealth Builder Token&quot;;
+    string public name = "Wealth Builder Token";
     
-    string public symbol = &quot;WBT&quot;;
+    string public symbol = "WBT";
     
     uint32 public decimals = 18;
 

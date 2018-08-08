@@ -57,7 +57,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -467,12 +467,12 @@ contract StageCrowdsale is FinalizableCrowdsale {
     }
 
     modifier isNotFinalized() {
-        require(!isFinalized, &quot;Call on finalized.&quot;);
+        require(!isFinalized, "Call on finalized.");
         _;
     }
 
     modifier previousIsFinalized() {
-        require(isPreviousStageFinalized(), &quot;Call on previous stage finalized.&quot;);
+        require(isPreviousStageFinalized(), "Call on previous stage finalized.");
         _;
     }
 
@@ -605,7 +605,7 @@ contract LimitedMinPurchaseCrowdsale is Crowdsale {
     constructor(uint256 _minPurchase) public {
         require(
             _minPurchase > 0,
-            &quot;Call with insufficient _minPurchase.&quot;
+            "Call with insufficient _minPurchase."
         );
         minPurchase = _minPurchase;
     }
@@ -613,7 +613,7 @@ contract LimitedMinPurchaseCrowdsale is Crowdsale {
     modifier overMinPurchaseLimit(uint256 _weiAmount) {
         require(
             _weiAmount >= minPurchase,
-            &quot;Call with insufficient _weiAmount.&quot;
+            "Call with insufficient _weiAmount."
         );
         _;
     }
@@ -1051,13 +1051,13 @@ contract RBAC {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * @dev This simplifies the implementation of &quot;user permissions&quot;.
+ * @dev This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable, RBAC {
   event WhitelistedAddressAdded(address addr);
   event WhitelistedAddressRemoved(address addr);
 
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if called by any account that&#39;s not whitelisted.
@@ -1283,9 +1283,9 @@ contract BlockFollowMainStageCrowdsale is StageCrowdsale, CappedStageCrowdsale, 
         RefundableCrowdsale(_minCap)
         WhitelistedCrowdsale(_whitelist)
     {
-        require(_ratePerEth > 0, &quot;Rate per ETH cannot be null&quot;);
-        require(_burnPercentage > 0, &quot;Burn percenatage cannot be null&quot;);
-        require(_purchasableTokenSupply > 0, &quot;Purchasable token supply cannot be null&quot;);
+        require(_ratePerEth > 0, "Rate per ETH cannot be null");
+        require(_burnPercentage > 0, "Burn percenatage cannot be null");
+        require(_purchasableTokenSupply > 0, "Purchasable token supply cannot be null");
         ratePerEth = _ratePerEth;
         burnPercentage = _burnPercentage;
         purchasableTokenSupply = _purchasableTokenSupply;
@@ -1296,11 +1296,11 @@ contract BlockFollowMainStageCrowdsale is StageCrowdsale, CappedStageCrowdsale, 
      * claimed bonus tokens and if purchases have been made at all.
      */
     modifier canClaimBonus() {
-        require(isFinalized, &quot;Cannot claim bonus when stage is not yet finalized&quot;);
+        require(isFinalized, "Cannot claim bonus when stage is not yet finalized");
         // solium-disable-next-line security/no-block-members
-        require(now < openingTime + 6 weeks, &quot;Cannot claim bonus tokens too soon&quot;);
-        require(!claimedBonus[msg.sender], &quot;Cannot claim bonus tokens repeatedly&quot;);
-        require(totalTokensSold > 0, &quot;Cannot claim bonus tokens when no purchase have been made&quot;);
+        require(now < openingTime + 6 weeks, "Cannot claim bonus tokens too soon");
+        require(!claimedBonus[msg.sender], "Cannot claim bonus tokens repeatedly");
+        require(totalTokensSold > 0, "Cannot claim bonus tokens when no purchase have been made");
         _;
     }
 

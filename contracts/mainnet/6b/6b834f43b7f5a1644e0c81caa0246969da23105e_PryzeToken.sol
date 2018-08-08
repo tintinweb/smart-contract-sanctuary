@@ -3,7 +3,7 @@ pragma solidity 0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -111,7 +111,7 @@ library StateMachineLib {
 
     /// @dev Creates a transition from &#39;fromId&#39; to &#39;toId&#39;. If fromId already had a nextId, it deletes the now unreachable stage.
     /// @param fromId The id of the stage from which the transition begins.
-    /// @param toId The id of the stage that will be reachable from &quot;fromId&quot;.
+    /// @param toId The id of the stage that will be reachable from "fromId".
     function createTransition(State storage self, bytes32 fromId, bytes32 toId) internal {
         require(self.validStage[fromId]);
 
@@ -531,8 +531,8 @@ contract ERC223BasicToken is ERC223Basic, BasicToken {
 
 /// @title Token for the Pryze project.
 contract PryzeToken is DetailedERC20, MintableToken, ERC223BasicToken {
-    string constant NAME = &quot;Pryze&quot;;
-    string constant SYMBOL = &quot;PRYZ&quot;;
+    string constant NAME = "Pryze";
+    string constant SYMBOL = "PRYZ";
     uint8 constant DECIMALS = 18;
 
     //// @dev Constructor that sets details of the ERC20 token.
@@ -667,10 +667,10 @@ contract Sale is Ownable, TimedStateMachine {
     event LogDisbursement(address indexed beneficiary, uint256 tokens);
 
     // Stages for the state machine
-    bytes32 public constant SETUP = &quot;setup&quot;;
-    bytes32 public constant SETUP_DONE = &quot;setupDone&quot;;
-    bytes32 public constant SALE_IN_PROGRESS = &quot;saleInProgress&quot;;
-    bytes32 public constant SALE_ENDED = &quot;saleEnded&quot;;
+    bytes32 public constant SETUP = "setup";
+    bytes32 public constant SETUP_DONE = "setupDone";
+    bytes32 public constant SALE_IN_PROGRESS = "saleInProgress";
+    bytes32 public constant SALE_ENDED = "saleEnded";
 
     mapping(address => uint256) public contributions;
 

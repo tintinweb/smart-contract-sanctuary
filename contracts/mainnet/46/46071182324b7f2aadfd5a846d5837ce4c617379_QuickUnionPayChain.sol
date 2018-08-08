@@ -64,8 +64,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract QuickUnionPayChain is StandardToken 
 {
-    string public name = &quot;QuickUnionPayChain&quot;;
-    string public symbol = &quot;QUC&quot;;
+    string public name = "QuickUnionPayChain";
+    string public symbol = "QUC";
     uint public decimals = 18;
     uint public totalSupply = 10 * 100 * 1000 * 1000 ether;
 

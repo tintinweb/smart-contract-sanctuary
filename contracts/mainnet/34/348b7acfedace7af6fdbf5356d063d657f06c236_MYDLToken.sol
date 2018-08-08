@@ -105,8 +105,8 @@ contract MYDLToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MYDLToken() public {
-        symbol = &quot;MYDL&quot;;
-        name = &quot;MYDL Token&quot;;
+        symbol = "MYDL";
+        name = "MYDL Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x3D66Cd9687ea3c7C77C093E0526DA0aC65f3da32] = _totalSupply;

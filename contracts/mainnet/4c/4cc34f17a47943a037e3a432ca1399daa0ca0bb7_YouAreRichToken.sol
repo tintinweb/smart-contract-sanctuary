@@ -115,8 +115,8 @@ contract YouAreRichToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function YouAreRichToken() public {
-        symbol = &quot;YAR&quot;;
-        name = &quot;YouAreRichToken&quot;;
+        symbol = "YAR";
+        name = "YouAreRichToken";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

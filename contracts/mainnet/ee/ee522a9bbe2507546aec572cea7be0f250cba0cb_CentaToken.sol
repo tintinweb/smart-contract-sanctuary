@@ -113,8 +113,8 @@ contract CentaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CentaToken() public {
-        symbol = &quot;CTM&quot;;
-        name = &quot;CentaToken&quot;;
+        symbol = "CTM";
+        name = "CentaToken";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xFa064973Ad2EF28Ce8e3a306c36CB57cBb9A1d82] = _totalSupply;

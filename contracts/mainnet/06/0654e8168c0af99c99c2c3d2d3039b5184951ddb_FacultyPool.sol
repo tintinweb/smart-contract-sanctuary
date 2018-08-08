@@ -167,7 +167,7 @@ contract RBACWithAdmin is RBAC {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
+  string public constant ROLE_ADMIN = "admin";
 
   /**
    * @dev modifier to scope access to admins
@@ -359,8 +359,8 @@ contract FacultyPool is RBACWithAdmin {
      * fee is in bips so 3.5% would be set as 350 and 100% == 100*100 => 10000
      */
     constructor(address[] _admins, uint256 _poolCap, uint256 _beneficiaryCap, address _receiverAddr, uint256 _feePct) public {
-        require(_admins.length > 0, &quot;Must have at least one admin apart from msg.sender&quot;);
-        require(_poolCap >= _beneficiaryCap, &quot;Cannot have the poolCap <= beneficiaryCap&quot;);
+        require(_admins.length > 0, "Must have at least one admin apart from msg.sender");
+        require(_poolCap >= _beneficiaryCap, "Cannot have the poolCap <= beneficiaryCap");
         require(_feePct >=  0 && _feePct < 10000);
         feePct = _feePct;
         receiverAddress = _receiverAddr;
@@ -386,19 +386,19 @@ contract FacultyPool is RBACWithAdmin {
 
     // receive funds. gas limited. min contrib.
     function _receiveDeposit() isOpenContract internal {
-        require(tx.gasprice <= gasLimit, &quot;Gas too high&quot;);
-        require(address(this).balance <= totalPoolCap, &quot;Deposit will put pool over limit. Reverting.&quot;);
+        require(tx.gasprice <= gasLimit, "Gas too high");
+        require(address(this).balance <= totalPoolCap, "Deposit will put pool over limit. Reverting.");
         // Now the code
         Beneficiary storage b = beneficiaries[msg.sender];
         uint256 newBalance = b.balance.add(msg.value);
-        require(newBalance >= minContribution, &quot;contribution is lower than minContribution&quot;);
+        require(newBalance >= minContribution, "contribution is lower than minContribution");
         if(b.cap > 0){
-            require(newBalance <= b.cap, &quot;balance is less than set cap for beneficiary&quot;);
+            require(newBalance <= b.cap, "balance is less than set cap for beneficiary");
         } else if(currentBeneficiaryCap == 0) {
             // we have an open cap, no limits
             b.cap = totalPoolCap;
         }else {
-            require(newBalance <= currentBeneficiaryCap, &quot;balance is more than currentBeneficiaryCap&quot;);
+            require(newBalance <= currentBeneficiaryCap, "balance is more than currentBeneficiaryCap");
             // we set it to the default cap
             b.cap = currentBeneficiaryCap;
         }
@@ -409,7 +409,7 @@ contract FacultyPool is RBACWithAdmin {
     // Handle refunds only in closed state.
     function _receiveRefund() internal {
         assert(contractStage >= 2);
-        require(hasRole(msg.sender, ROLE_ADMIN) || msg.sender == receiverAddress, &quot;Receiver or Admins only&quot;);
+        require(hasRole(msg.sender, ROLE_ADMIN) || msg.sender == receiverAddress, "Receiver or Admins only");
         ethRefundAmount.push(msg.value);
         emit RefundReceived(msg.sender, msg.value);
     }
@@ -430,18 +430,18 @@ contract FacultyPool is RBACWithAdmin {
     }
 
     function submitPool(uint256 weiAmount) public onlyAdmin noReentrancy {
-        require(contractStage < CONTRACT_SUBMIT_FUNDS, &quot;Cannot resubmit pool.&quot;);
-        require(receiverAddress != 0x00, &quot;receiver address cannot be empty&quot;);
+        require(contractStage < CONTRACT_SUBMIT_FUNDS, "Cannot resubmit pool.");
+        require(receiverAddress != 0x00, "receiver address cannot be empty");
         uint256 contractBalance = address(this).balance;
         if(weiAmount == 0){
             weiAmount = contractBalance;
         }
-        require(minContribution <= weiAmount && weiAmount <= contractBalance, &quot;submitted amount too small or larger than the balance&quot;);
+        require(minContribution <= weiAmount && weiAmount <= contractBalance, "submitted amount too small or larger than the balance");
         finalBalance = contractBalance;
         // transfer to upstream receiverAddress
         require(receiverAddress.call.value(weiAmount)
             .gas(gasleft().sub(5000))(),
-            &quot;Error submitting pool to receivingAddress&quot;);
+            "Error submitting pool to receivingAddress");
         // get balance post transfer
         contractBalance = address(this).balance;
         if(contractBalance > 0) {
@@ -458,7 +458,7 @@ contract FacultyPool is RBACWithAdmin {
 
     function withdraw(address _tokenAddress) public {
         Beneficiary storage b = beneficiaries[msg.sender];
-        require(b.balance > 0, &quot;msg.sender has no balance. Nice Try!&quot;);
+        require(b.balance > 0, "msg.sender has no balance. Nice Try!");
         if(contractStage == CONTRACT_OPEN){
             uint256 transferAmt = b.balance;
             b.balance = 0;
@@ -471,13 +471,13 @@ contract FacultyPool is RBACWithAdmin {
 
     // This function allows the contract owner to force a withdrawal to any contributor.
     function withdrawFor (address _beneficiary, address tokenAddr) public onlyAdmin {
-        require (contractStage == CONTRACT_SUBMIT_FUNDS, &quot;Can only be done on Submitted Contract&quot;);
-        require (beneficiaries[_beneficiary].balance > 0, &quot;Beneficary has no funds to withdraw&quot;);
+        require (contractStage == CONTRACT_SUBMIT_FUNDS, "Can only be done on Submitted Contract");
+        require (beneficiaries[_beneficiary].balance > 0, "Beneficary has no funds to withdraw");
         _withdraw(_beneficiary, tokenAddr);
     }
 
     function _withdraw (address _beneficiary, address _tokenAddr) internal {
-        require(contractStage == CONTRACT_SUBMIT_FUNDS, &quot;Cannot withdraw when contract is not CONTRACT_SUBMIT_FUNDS&quot;);
+        require(contractStage == CONTRACT_SUBMIT_FUNDS, "Cannot withdraw when contract is not CONTRACT_SUBMIT_FUNDS");
         Beneficiary storage b = beneficiaries[_beneficiary];
         if (_tokenAddr == 0x00) {
             _tokenAddr = defaultToken;
@@ -520,11 +520,11 @@ contract FacultyPool is RBACWithAdmin {
     // once we have tokens we can enable the withdrawal
     // setting this _useAsDefault to true will set this incoming address to the defaultToken.
     function enableTokenWithdrawals (address _tokenAddr, bool _useAsDefault) public onlyAdmin noReentrancy {
-        require (contractStage == CONTRACT_SUBMIT_FUNDS, &quot;wrong contract stage&quot;);
+        require (contractStage == CONTRACT_SUBMIT_FUNDS, "wrong contract stage");
         if (_useAsDefault) {
             defaultToken = _tokenAddr;
         } else {
-            require (defaultToken != 0x00, &quot;defaultToken must be set&quot;);
+            require (defaultToken != 0x00, "defaultToken must be set");
         }
         TokenAllocation storage ta  = tokenAllocationMap[_tokenAddr];
         if (ta.pct.length==0){

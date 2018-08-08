@@ -3,7 +3,7 @@ pragma solidity 0.4.20;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -343,8 +343,8 @@ contract MintableToken is StandardToken, Ownable {
  */
 contract StarCoin is MintableToken {
 
-  string public constant name = &quot;StarCoin&quot;;
-  string public constant symbol = &quot;STAR&quot;;
+  string public constant name = "StarCoin";
+  string public constant symbol = "STAR";
   uint8 public constant decimals = 18;
   uint public constant INITIAL_SUPPLY = 40000000 * 1 ether; //40M tokens accroding to https://starflow.com/ico/
   uint public constant MAXIMUM_SUPPLY = 100000000 * 1 ether; // 100M tokens is maximum according to https://starflow.com/ico/
@@ -487,7 +487,7 @@ contract InvestorWhiteList is Ownable {
 contract StarCoinPreSale is Pausable {
   using SafeMath for uint;
 
-  string public constant name = &quot;StarCoin Token ICO&quot;;
+  string public constant name = "StarCoin Token ICO";
 
   StarCoin public token;
 

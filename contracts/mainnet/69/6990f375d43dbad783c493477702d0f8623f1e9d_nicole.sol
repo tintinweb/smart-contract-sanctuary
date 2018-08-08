@@ -123,8 +123,8 @@ contract StandardToken is ERC20 {
 }
 
 contract nicole is StandardToken {
-  string public constant name = &quot;nicole&quot;;
-  string public constant symbol = &quot;NIKI&quot;;
+  string public constant name = "nicole";
+  string public constant symbol = "NIKI";
   uint8 public constant decimals = 4;
 
   function nicole() public {

@@ -124,8 +124,8 @@ contract ERC20 is Owned {
 contract SWAP is ERC20 {
     using SafeMath for uint;
 
-    string public name = &quot;www.swap.online community token&quot;;
-    string public symbol = &quot;SWAP&quot;;
+    string public name = "www.swap.online community token";
+    string public symbol = "SWAP";
     uint8 public decimals = 18;
 
     modifier isNotStartedOnly() {

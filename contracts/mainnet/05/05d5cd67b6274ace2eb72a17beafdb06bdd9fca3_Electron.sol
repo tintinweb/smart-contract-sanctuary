@@ -10,8 +10,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract Electron {
     // Public variables of the token
-    string public name = &quot;Electron&quot;;
-    string public symbol = &quot;ETN&quot;;
+    string public name = "Electron";
+    string public symbol = "ETN";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

@@ -138,10 +138,10 @@ contract StandardToken is ERC20, SafeMath {
 
 
 contract Test20 is StandardToken {
-  string public constant name = &quot;Test20&quot;;
-  string public constant symbol = &quot;TST&quot;;
+  string public constant name = "Test20";
+  string public constant symbol = "TST";
   uint public constant decimals = 18;
-  string public version = &quot;1.0&quot;;
+  string public version = "1.0";
   uint public totalSupply = 10000; 
 
   // Constructor
@@ -159,7 +159,7 @@ contract Test20 is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { revert(); }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { revert(); }
         return true;
     }
 

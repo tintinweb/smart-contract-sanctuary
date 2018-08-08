@@ -114,8 +114,8 @@ contract QUAK is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function QUAK() public {
-        symbol = &quot;QUAK&quot;;
-        name = &quot;Quake Mining Token&quot;;
+        symbol = "QUAK";
+        name = "Quake Mining Token";
         decimals = 18;
         _totalSupply = 33000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

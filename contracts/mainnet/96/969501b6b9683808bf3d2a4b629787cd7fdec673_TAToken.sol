@@ -35,8 +35,8 @@ contract TAToken {
     function TAToken() public {
         totalSupply = 150000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = 70000000 * 10 ** uint256(decimals);                // Give the creator all initial tokens
-        name = &quot;Three and the chain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TA&quot;;                               // Set the symbol for display purposes
+        name = "Three and the chain";                                   // Set the name for display purposes
+        symbol = "TA";                               // Set the symbol for display purposes
         owner = msg.sender;
     }
     

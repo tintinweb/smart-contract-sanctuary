@@ -124,9 +124,9 @@ contract AntzToken is ERC20Interface, Owned, SafeMath {
 
         totalSupply = 25000000000000000000000000;  
         
-        name = &quot;Antz Token&quot;;                                 
+        name = "Antz Token";                                 
         decimals = 18;                                              
-        symbol = &quot;ANTZ&quot;;                                           
+        symbol = "ANTZ";                                           
         unitsPerTransaction = 500000000000000000000;                                
         
         developersWallet = 0x78061eE39Cd5eDFe1D935168234a3BEEeF9d4b5a;

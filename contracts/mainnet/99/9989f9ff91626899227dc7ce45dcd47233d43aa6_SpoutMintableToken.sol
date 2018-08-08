@@ -258,8 +258,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract SpoutMintableToken is MintableToken {
-  string public constant name = &quot;SpoutToken&quot;;
-  string public constant symbol = &quot;SPT&quot;;
+  string public constant name = "SpoutToken";
+  string public constant symbol = "SPT";
   uint8 public constant decimals = 18;
   address originalOwner;
 

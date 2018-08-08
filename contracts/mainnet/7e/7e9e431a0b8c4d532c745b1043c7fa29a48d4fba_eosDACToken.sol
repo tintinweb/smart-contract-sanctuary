@@ -102,8 +102,8 @@ contract eosDACToken is ERC20Interface, Owned, SafeMath {
         decimals = 18;                            // Amount of decimals for display purposes
         balances[msg.sender] = 1200000000 * 10**uint(decimals);               // Give the creator all initial tokens (100000 for example)
         _totalSupply = 1200000000 * 10**uint(decimals);                        //total supply (there are 1.2 billion tokens going to 18DP)
-        name = &quot;eosDAC Community Owned EOS Block Producer ERC20 Tokens&quot;;                                   // Set the name for display purposes
-        symbol = &quot;eosDAC&quot;;                               // Set the symbol for display purposes
+        name = "eosDAC Community Owned EOS Block Producer ERC20 Tokens";                                   // Set the name for display purposes
+        symbol = "eosDAC";                               // Set the symbol for display purposes
     }
 
 

@@ -160,8 +160,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract IBCA is StandardToken, Ownable {
-    string  public  constant name = &quot;International Blockchain and Cryptocurrency Association&quot;;
-    string  public  constant symbol = &quot;IBCA&quot;;
+    string  public  constant name = "International Blockchain and Cryptocurrency Association";
+    string  public  constant symbol = "IBCA";
     uint    public  constant decimals = 18;
 
     bool public transferEnabled = true;

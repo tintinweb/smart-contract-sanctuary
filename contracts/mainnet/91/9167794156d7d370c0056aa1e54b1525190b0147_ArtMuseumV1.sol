@@ -243,7 +243,7 @@ Copyright (c) 2016 Oraclize LTD
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
+of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -256,7 +256,7 @@ all copies or substantial portions of the Software.
 
 
 
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -322,22 +322,22 @@ contract usingOraclize { // is ArtMuseumBase {
 	function oraclize_setNetwork() internal returns(bool){
 		if (getCodeSize(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed)>0){ //mainnet
 			OAR = OraclizeAddrResolverI(0x1d3B2638a7cC9f2CB3D298A3DA7a90B67E5506ed);
-			oraclize_setNetworkName(&quot;eth_mainnet&quot;);
+			oraclize_setNetworkName("eth_mainnet");
 			return true;
 		}
 		if (getCodeSize(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1)>0){ //ropsten testnet
 			OAR = OraclizeAddrResolverI(0xc03A2615D5efaf5F49F60B7BB6583eaec212fdf1);
-			oraclize_setNetworkName(&quot;eth_ropsten3&quot;);
+			oraclize_setNetworkName("eth_ropsten3");
 			return true;
 		}
 		if (getCodeSize(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e)>0){ //kovan testnet
 			OAR = OraclizeAddrResolverI(0xB7A07BcF2Ba2f2703b24C0691b5278999C59AC7e);
-			oraclize_setNetworkName(&quot;eth_kovan&quot;);
+			oraclize_setNetworkName("eth_kovan");
 			return true;
 		}
 		if (getCodeSize(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48)>0){ //rinkeby testnet
 			OAR = OraclizeAddrResolverI(0x146500cfd35B22E4A392Fe0aDc06De1a1368Ed48);
-			oraclize_setNetworkName(&quot;eth_rinkeby&quot;);
+			oraclize_setNetworkName("eth_rinkeby");
 			return true;
 		}
 		if (getCodeSize(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475)>0){ //ethereum-bridge
@@ -457,11 +457,11 @@ contract usingOraclize { // is ArtMuseumBase {
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -682,8 +682,8 @@ contract ArtMuseumV1 is ArtMuseumBase, usingOraclize {
 	}
 
 	function init1() public onlyOwner {
-		randomQuery = &quot;10 random numbers between 1 and 100000&quot;;
-		queryType = &quot;WolframAlpha&quot;;
+		randomQuery = "10 random numbers between 1 and 100000";
+		queryType = "WolframAlpha";
 		oraclizeGas = 150000;
 		oraclizeGasExtraArtwork = 14000;
 		etherExchangeLikeCoin = 100000;
@@ -839,7 +839,7 @@ contract ArtMuseumV1 is ArtMuseumBase, usingOraclize {
 		uint balancebefore = address(this).balance;
 		require(price <= address(this).balance);
 		if (numArtworks<=1) {
-			removeArtworksByString(&quot;&quot;,0);
+			removeArtworksByString("",0);
 			distribute(0);
 			nextStealId = 0x0;
 			price = 0;
@@ -884,7 +884,7 @@ contract ArtMuseumV1 is ArtMuseumBase, usingOraclize {
 		uint256[] memory artworkValues = new uint256[](howmany);
 		address[] memory players = new address[](howmany);
 		if (howmany>0) {
-			uint32[] memory randomNumbers = getNumbersFromString(result, &quot;,&quot;, howmany);
+			uint32[] memory randomNumbers = getNumbersFromString(result, ",", howmany);
 			uint16 index;
 			uint32 artworkId;
 			Artwork memory artworkData;

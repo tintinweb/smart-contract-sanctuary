@@ -3,7 +3,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -684,8 +684,8 @@ contract MintableToken is StandardToken, Ownable {
 /// @title EverGold
 /// @dev ERC827 Token for games.
 contract EverGold is ERC827Token, MintableToken, AccessByGame {
-  string public constant name = &quot;Ever Gold&quot;;
-  string public constant symbol = &quot;EG&quot;;
+  string public constant name = "Ever Gold";
+  string public constant symbol = "EG";
   uint8 public constant decimals = 0;
 
   /**

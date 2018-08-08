@@ -34,7 +34,7 @@ contract Owned {
     address public newOwner;
 
     modifier onlyOwner {
-        require(msg.sender == owner, &quot;only Owner can do this&quot;);
+        require(msg.sender == owner, "only Owner can do this");
         _;
     }
 
@@ -45,7 +45,7 @@ contract Owned {
     
     function acceptOwnership() 
     external {
-        require(msg.sender == newOwner, &quot;only new Owner can do this&quot;);
+        require(msg.sender == newOwner, "only new Owner can do this");
         emit OwnershipTransferred(owner, newOwner);
         owner = newOwner;
         newOwner = address(0);
@@ -77,7 +77,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;mul overflow&quot;);
+        require(c / a == b, "mul overflow");
         return c;
     }
 
@@ -85,7 +85,7 @@ library SafeMath {
     * @dev Integer division of two numbers, truncating the quotient.
     */
     function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b > 0, &quot;div by zero&quot;);
+        require(b > 0, "div by zero");
         uint256 c = a / b;
         return c;
     }
@@ -94,7 +94,7 @@ library SafeMath {
     * @dev Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
     */
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        require(b <= a, &quot;sub overflow&quot;);
+        require(b <= a, "sub overflow");
         return a - b;
     }
 
@@ -103,7 +103,7 @@ library SafeMath {
     */
     function add(uint256 a, uint256 b) internal pure returns (uint256 c) {
         c = a + b;
-        require(c >= a, &quot;add overflow&quot;);
+        require(c >= a, "add overflow");
         return c;
     }
 }
@@ -132,8 +132,8 @@ contract NelCoin is ERC20Interface, Burnable, Owned, Permissioned {
     constructor()
     public {
         owner = msg.sender;
-        symbol = &quot;NEL&quot;;
-        name = &quot;NelCoin&quot;;
+        symbol = "NEL";
+        name = "NelCoin";
         decimals = 2;
         forSale = 12000000 * (10 ** uint(decimals));
         totalSupply = 21000000 * (10 ** uint256(decimals));
@@ -160,9 +160,9 @@ contract NelCoin is ERC20Interface, Burnable, Owned, Permissioned {
     function _transfer(address _from, address _to, uint256 _value)
     internal {
         // Prevent transfer to 0x0 address. Use burn() instead
-        require(_to != address(0), &quot;use burn() instead&quot;);
+        require(_to != address(0), "use burn() instead");
         // Check if the sender has enough
-        require(_balanceOf[_from] >= _value, &quot;not enough balance&quot;);
+        require(_balanceOf[_from] >= _value, "not enough balance");
         // Subtract from the sender
         _balanceOf[_from] = _balanceOf[_from].sub(_value);
         // Add the same to the recipient
@@ -197,7 +197,7 @@ contract NelCoin is ERC20Interface, Burnable, Owned, Permissioned {
     function transferFrom(address _from, address _to, uint256 _value)
     external
     returns(bool success) {
-        require(_value <= _allowance[_from][msg.sender], &quot;allowance too loow&quot;);     // Check allowance
+        require(_value <= _allowance[_from][msg.sender], "allowance too loow");     // Check allowance
         _allowance[_from][msg.sender] = _allowance[_from][msg.sender].sub(_value);
         _transfer(_from, _to, _value);
         emit Approval(_from, _to, _allowance[_from][_to]);
@@ -317,8 +317,8 @@ contract NelCoin is ERC20Interface, Burnable, Owned, Permissioned {
     function burnFrom(address _from, uint256 _value)
     external
     returns(bool success) {
-        require(_value <= _allowance[_from][msg.sender], &quot;allowance too low&quot;);                           // Check allowance
-        require(_value <= _balanceOf[_from], &quot;balance too low&quot;);                                       // Is tehere enough coins on account
+        require(_value <= _allowance[_from][msg.sender], "allowance too low");                           // Check allowance
+        require(_value <= _balanceOf[_from], "balance too low");                                       // Is tehere enough coins on account
         _allowance[_from][msg.sender] = _allowance[_from][msg.sender].sub(_value);  // Subtract from the sender&#39;s allowance
         _burn(_from, _value);
         emit Approval(_from, msg.sender, _allowance[_from][msg.sender]);
@@ -328,7 +328,7 @@ contract NelCoin is ERC20Interface, Burnable, Owned, Permissioned {
     //internal burn function
     function _burn(address _from, uint256 _value)
     internal {
-        require(_balanceOf[_from] >= _value, &quot;balance too low&quot;);               // Check if the targeted balance is enough
+        require(_balanceOf[_from] >= _value, "balance too low");               // Check if the targeted balance is enough
         _balanceOf[_from] = _balanceOf[_from].sub(_value);  // Subtract from the sender
         totalSupply = totalSupply.sub(_value);              // Updates totalSupply
         emit Burn(msg.sender, _value);
@@ -352,7 +352,7 @@ contract NelCoin is ERC20Interface, Burnable, Owned, Permissioned {
     function()
     external payable
     {
-        require(false, &quot;Use fund() or donation()&quot;);
+        require(false, "Use fund() or donation()");
     }
     
 	/**
@@ -363,10 +363,10 @@ contract NelCoin is ERC20Interface, Burnable, Owned, Permissioned {
 	function fund()
 	external payable
 	returns (uint amount){
-		require(forSale > 0, &quot;Sold out!&quot;);
+		require(forSale > 0, "Sold out!");
 		uint tokenCount = ((msg.value).mul(20000 * (10 ** uint(decimals)))).div(10**18);
-		require(tokenCount >= 1, &quot;Send more ETH to buy at least one token!&quot;);
-		require(tokenCount <= forSale, &quot;You want too much! Check forSale()&quot;);
+		require(tokenCount >= 1, "Send more ETH to buy at least one token!");
+		require(tokenCount <= forSale, "You want too much! Check forSale()");
 		forSale -= tokenCount;
 		_transfer(owner, msg.sender, tokenCount);
 		return tokenCount;
@@ -378,7 +378,7 @@ contract NelCoin is ERC20Interface, Burnable, Owned, Permissioned {
     function withdraw()
     onlyOwner external
     returns (bool success){
-        require(address(this).balance > 0, &quot;Nothing to withdraw&quot;);
+        require(address(this).balance > 0, "Nothing to withdraw");
         owner.transfer(address(this).balance);
         return true;
     }
@@ -392,8 +392,8 @@ contract NelCoin is ERC20Interface, Burnable, Owned, Permissioned {
 	function withdraw(uint _value)
     onlyOwner external
     returns (bool success){
-		require(_value > 0, &quot;provide amount pls&quot;);
-		require(_value < address(this).balance, &quot;Too much! Check balance()&quot;);
+		require(_value > 0, "provide amount pls");
+		require(_value < address(this).balance, "Too much! Check balance()");
 		owner.transfer(_value);
         return true;
 	}

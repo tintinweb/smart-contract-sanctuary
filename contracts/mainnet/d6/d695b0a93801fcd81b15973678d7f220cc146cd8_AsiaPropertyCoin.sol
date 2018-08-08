@@ -113,8 +113,8 @@ contract AsiaPropertyCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AsiaPropertyCoin() public {
-        symbol = &quot;APC&quot;;
-        name = &quot;Asia Property Coin&quot;;
+        symbol = "APC";
+        name = "Asia Property Coin";
         decimals = 18;
         _totalSupply = 310000000000000000000000000;
         balances[0x87055738f93863fEAC372c3b98A23883Af1ab5e5] = _totalSupply;

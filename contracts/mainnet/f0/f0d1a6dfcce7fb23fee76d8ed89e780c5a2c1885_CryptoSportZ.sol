@@ -29,8 +29,8 @@ contract ERC721Abstract
 
 contract ERC721 is ERC721Abstract
 {
-	string constant public   name = &quot;CryptoSportZ&quot;;
-	string constant public symbol = &quot;CSZ&quot;;
+	string constant public   name = "CryptoSportZ";
+	string constant public symbol = "CSZ";
 
 	uint256 public totalSupply;
 	struct Token
@@ -192,7 +192,7 @@ contract Functional
 	
 	function uint2str(uint i) internal pure returns (string)
 	{
-		if (i == 0) return &quot;0&quot;;
+		if (i == 0) return "0";
 		uint j = i;
 		uint len;
 		while (j != 0){
@@ -383,7 +383,7 @@ contract CryptoSportZ is ERC721, Functional, Owned
 
 	function getUserTokens(address user, uint32 count) public view returns ( string res )
 	{
-		res=&quot;&quot;;
+		res="";
 		require(user!=0x0);
 		uint32 findCount=0;
 		for (uint256 i = totalSupply-1; i >= 0; i--)
@@ -391,7 +391,7 @@ contract CryptoSportZ is ERC721, Functional, Owned
 			if(i>totalSupply) break;
 			if (user == tokenIndexToOwner[i]) 
 			{
-				res = strConcat( res, &quot;,&quot;, uint2str(i) );
+				res = strConcat( res, ",", uint2str(i) );
 				findCount++;
 				if (count!=0 && findCount>=count) break;
 			}
@@ -400,7 +400,7 @@ contract CryptoSportZ is ERC721, Functional, Owned
 	
 	function getUserTokensByGame(address user, uint32 idGame) public view returns ( string res )
 	{
-		res=&quot;&quot;;
+		res="";
 		require(user!=0x0);
 		for(uint256 i=0;i<totalSupply;i++) 
 		{
@@ -408,19 +408,19 @@ contract CryptoSportZ is ERC721, Functional, Owned
 			{
 				uint256 packed = tokens[i].option;
 				uint32 idGameToken = uint32((packed >> (8*8)) & 0xFFFFFFFF);
-				if (idGameToken == idGame) res = strConcat( res, &quot;,&quot;, uint2str(i) );
+				if (idGameToken == idGame) res = strConcat( res, ",", uint2str(i) );
 			}
 		}
 	}
 	
 	function getTokensByGame(uint32 idGame) public view returns (string res)
 	{
-		res=&quot;&quot;;
+		res="";
 		for(uint256 i=0;i<totalSupply;i++) 
 		{
 			uint256 packed = tokens[i].option;
 			uint32 idGameToken = uint32((packed >> (8*8)) & 0xFFFFFFFF);
-			if (idGameToken == idGame) res = strConcat( res, &quot;,&quot;, uint2str(i) );
+			if (idGameToken == idGame) res = strConcat( res, ",", uint2str(i) );
 		}
 	}	
 	
@@ -434,14 +434,14 @@ contract CryptoSportZ is ERC721, Functional, Owned
 		countAll = countGames;
 		countPlaying = 0;
 		countProcessing = 0;
-		listPlaying=&quot;&quot;;
-		listProcessing=&quot;&quot;;
+		listPlaying="";
+		listProcessing="";
 		uint32 curtime = timenow();
 		for(uint32 i=shiftGame; i<countAll+shiftGame; i++)
 		{
 			if (game[i].status!=Status.PLAYING) continue;
-			if (curtime <  game[i].dateStopBuy) { countPlaying++; listPlaying = strConcat( listPlaying, &quot;,&quot;, uint2str(i) ); }
-			if (curtime >= game[i].dateStopBuy) { countProcessing++; listProcessing = strConcat( listProcessing, &quot;,&quot;, uint2str(i) ); }
+			if (curtime <  game[i].dateStopBuy) { countPlaying++; listPlaying = strConcat( listPlaying, ",", uint2str(i) ); }
+			if (curtime >= game[i].dateStopBuy) { countProcessing++; listProcessing = strConcat( listProcessing, ",", uint2str(i) ); }
 		}
 	}
 	function CryptoSportZ() public 
@@ -469,7 +469,7 @@ contract CryptoSportZ is ERC721, Functional, Owned
 		game[newGameId] = _game;
 		countGames++;
 		
-		LogEvent( &quot;AddGame&quot;, _nameGame, newGameId );
+		LogEvent( "AddGame", _nameGame, newGameId );
 	}
 
 	function () payable public { require (msg.value == 0x0); }
@@ -522,7 +522,7 @@ contract CryptoSportZ is ERC721, Functional, Owned
 		uint256 newTokenId = totalSupply++;
 		tokens[newTokenId] = _token;
 		_transfer(0x0, msg.sender, newTokenId);
-		LogToken( &quot;Buy&quot;, msg.sender, idGame, newTokenId, combination, userStake);
+		LogToken( "Buy", msg.sender, idGame, newTokenId, combination, userStake);
 	}
 	
 	// take win money or money for canceling game
@@ -553,7 +553,7 @@ contract CryptoSportZ is ERC721, Functional, Owned
 	
 		msg.sender.transfer(sumPayment);
 		
-		LogToken( &quot;Redeem&quot;, msg.sender, idGame, uint32(_tokenId), combination, sumPayment);
+		LogToken( "Redeem", msg.sender, idGame, uint32(_tokenId), combination, sumPayment);
 	}
 	
 	function cancelGame(uint32 idGame) public 
@@ -566,7 +566,7 @@ contract CryptoSportZ is ERC721, Functional, Owned
 
 		curGame.status = Status.CANCELING;
 
-//		LogEvent( &quot;CancelGame&quot;, curGame.nameGame, idGame );
+//		LogEvent( "CancelGame", curGame.nameGame, idGame );
 		
 		takeFee(idGame);
 	}
@@ -583,7 +583,7 @@ contract CryptoSportZ is ERC721, Functional, Owned
 
 		curGame.winCombination = combination;
 		
-//		LogEvent( &quot;ResolveGameByHand&quot;, curGame.nameGame, curGame.winCombination );
+//		LogEvent( "ResolveGameByHand", curGame.nameGame, curGame.winCombination );
 		
 		checkWinNobody(idGame);
 	}
@@ -599,7 +599,7 @@ contract CryptoSportZ is ERC721, Functional, Owned
 		if ( betsAll[idGame][curGame.winCombination].count == 0 )
 		{
 			if (curGame.betsSumIn+curGame.feeValue!=0) feeGame = feeGame + curGame.betsSumIn + curGame.feeValue;
-			LogEvent( &quot;NobodyWin&quot;, curGame.nameGame, curGame.betsSumIn+curGame.feeValue );
+			LogEvent( "NobodyWin", curGame.nameGame, curGame.betsSumIn+curGame.feeValue );
 		}
 		else 
 			takeFee(idGame);
@@ -613,7 +613,7 @@ contract CryptoSportZ is ERC721, Functional, Owned
 		if ( curGame.feeValue > 0 )
 		{
 			feeGame = feeGame + curGame.feeValue;
-			LogEvent( &quot;TakeFee&quot;, curGame.nameGame, curGame.feeValue );
+			LogEvent( "TakeFee", curGame.nameGame, curGame.feeValue );
 		}
 	}
 	
@@ -625,7 +625,7 @@ contract CryptoSportZ is ERC721, Functional, Owned
 		feeGame = 0;
 		
 		owner.transfer(tmpFeeGame);
-//		LogEvent( &quot;Withdraw&quot;, &quot;&quot;, tmpFeeGame);
+//		LogEvent( "Withdraw", "", tmpFeeGame);
 	}
 
 }

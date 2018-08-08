@@ -48,7 +48,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -219,10 +219,10 @@ contract KulapDex is Ownable {
     }
 
     // Ex1: trade 0.5 ETH -> EOS
-    // 0, &quot;0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&quot;, &quot;500000000000000000&quot;, &quot;0xd3c64BbA75859Eb808ACE6F2A6048ecdb2d70817&quot;, &quot;21003850000000000000&quot;
+    // 0, "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "500000000000000000", "0xd3c64BbA75859Eb808ACE6F2A6048ecdb2d70817", "21003850000000000000"
     //
     // Ex2: trade 30 EOS -> ETH
-    // 0, &quot;0xd3c64BbA75859Eb808ACE6F2A6048ecdb2d70817&quot;, &quot;30000000000000000000&quot;, &quot;0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&quot;, &quot;740825000000000000&quot;
+    // 0, "0xd3c64BbA75859Eb808ACE6F2A6048ecdb2d70817", "30000000000000000000", "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "740825000000000000"
     function _trade(
         uint256             _tradingProxyIndex, 
         ERC20               _src, 
@@ -284,10 +284,10 @@ contract KulapDex is Ownable {
     }
 
     // Ex1: trade 0.5 ETH -> EOS
-    // 0, &quot;0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&quot;, &quot;500000000000000000&quot;, &quot;0xd3c64BbA75859Eb808ACE6F2A6048ecdb2d70817&quot;, &quot;21003850000000000000&quot;
+    // 0, "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "500000000000000000", "0xd3c64BbA75859Eb808ACE6F2A6048ecdb2d70817", "21003850000000000000"
     //
     // Ex2: trade 30 EOS -> ETH
-    // 0, &quot;0xd3c64BbA75859Eb808ACE6F2A6048ecdb2d70817&quot;, &quot;30000000000000000000&quot;, &quot;0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&quot;, &quot;740825000000000000&quot;
+    // 0, "0xd3c64BbA75859Eb808ACE6F2A6048ecdb2d70817", "30000000000000000000", "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "740825000000000000"
     function trade(uint256 tradingProxyIndex, ERC20 src, uint256 srcAmount, ERC20 dest, uint256 minDestAmount) payable public returns(uint256)  {
         uint256 destAmount;
 
@@ -332,12 +332,12 @@ contract KulapDex is Ownable {
     // Ex1: trade 50 OMG -> ETH -> EOS
     // Step1: trade 50 OMG -> ETH
     // Step2: trade xx ETH -> EOS
-    // &quot;0x5b9a857e0C3F2acc5b94f6693536d3Adf5D6e6Be&quot;, &quot;30000000000000000000&quot;, &quot;0xd3c64BbA75859Eb808ACE6F2A6048ecdb2d70817&quot;, &quot;1&quot;, [&quot;0x0000000000000000000000000000000000000000&quot;, &quot;0x5b9a857e0C3F2acc5b94f6693536d3Adf5D6e6Be&quot;, &quot;0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&quot;, &quot;0x0000000000000000000000000000000000000000&quot;, &quot;0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&quot;, &quot;0xd3c64BbA75859Eb808ACE6F2A6048ecdb2d70817&quot;]
+    // "0x5b9a857e0C3F2acc5b94f6693536d3Adf5D6e6Be", "30000000000000000000", "0xd3c64BbA75859Eb808ACE6F2A6048ecdb2d70817", "1", ["0x0000000000000000000000000000000000000000", "0x5b9a857e0C3F2acc5b94f6693536d3Adf5D6e6Be", "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "0x0000000000000000000000000000000000000000", "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "0xd3c64BbA75859Eb808ACE6F2A6048ecdb2d70817"]
     //
     // Ex2: trade 50 OMG -> ETH -> DAI
     // Step1: trade 50 OMG -> ETH
     // Step2: trade xx ETH -> DAI
-    // &quot;0x5b9a857e0C3F2acc5b94f6693536d3Adf5D6e6Be&quot;, &quot;30000000000000000000&quot;, &quot;0x45ad02b30930cad22ff7921c111d22943c6c822f&quot;, &quot;1&quot;, [&quot;0x0000000000000000000000000000000000000000&quot;, &quot;0x5b9a857e0C3F2acc5b94f6693536d3Adf5D6e6Be&quot;, &quot;0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&quot;, &quot;0x0000000000000000000000000000000000000001&quot;, &quot;0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee&quot;, &quot;0x45ad02b30930cad22ff7921c111d22943c6c822f&quot;]
+    // "0x5b9a857e0C3F2acc5b94f6693536d3Adf5D6e6Be", "30000000000000000000", "0x45ad02b30930cad22ff7921c111d22943c6c822f", "1", ["0x0000000000000000000000000000000000000000", "0x5b9a857e0C3F2acc5b94f6693536d3Adf5D6e6Be", "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "0x0000000000000000000000000000000000000001", "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "0x45ad02b30930cad22ff7921c111d22943c6c822f"]
     function tradeRoutes(ERC20 src, uint256 srcAmount, ERC20 dest, uint256 minDestAmount, address[] _tradingPaths) payable public returns(uint256)  {
         uint256 destAmount;
 

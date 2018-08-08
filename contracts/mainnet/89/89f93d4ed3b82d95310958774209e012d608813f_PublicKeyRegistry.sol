@@ -20,11 +20,11 @@ contract PublicKeyRegistry {
     function registerPubKey(address _addr, bytes _pubKey) external {
         require(
             isValidPubKey(_pubKey),
-            &quot;The public key was invalid&quot;
+            "The public key was invalid"
         );
         require(
             pubKeyToAddress(_pubKey) == _addr, 
-            &quot;The public key does not correspond with the address&quot;
+            "The public key does not correspond with the address"
         );
         
         publicKeys[_addr] = _pubKey;

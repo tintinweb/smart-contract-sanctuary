@@ -56,8 +56,8 @@ contract ERC20 {
 
 contract Lala is ERC20, owned {
     using SafeMath for uint256;
-    string public name = &quot;Lala&quot;;
-    string public symbol = &quot;LALA&quot;;
+    string public name = "Lala";
+    string public symbol = "LALA";
     uint8 public decimals = 18;
     uint256 public totalSupply;
 

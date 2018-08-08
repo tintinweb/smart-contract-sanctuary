@@ -211,11 +211,11 @@ contract DapdapNiubi is ERC721{
   /* ERC721 */
 
   function name() public pure returns (string) {
-    return &quot;dapdap.io&quot;;
+    return "dapdap.io";
   }
 
   function symbol() public pure returns (string) {
-    return &quot;DAPDAP&quot;;
+    return "DAPDAP";
   }
 
   function totalSupply() public view returns (uint256) {

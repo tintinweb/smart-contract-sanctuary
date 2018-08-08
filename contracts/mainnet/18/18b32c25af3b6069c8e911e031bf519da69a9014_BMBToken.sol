@@ -166,7 +166,7 @@ contract StandardToken is BasicToken, ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -317,8 +317,8 @@ contract BMBToken is TimeLockToken {
   event Unfreeze(address indexed to, uint256 value);
   event Burn(address indexed to, uint256 value);
   mapping (address => uint256) public freezeOf;
-  string public name = &quot;BitmoreToken&quot;;
-  string public symbol = &quot;BMB&quot;;
+  string public name = "BitmoreToken";
+  string public symbol = "BMB";
   uint public decimals = 8;
 
 

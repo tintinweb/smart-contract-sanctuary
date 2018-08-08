@@ -5,8 +5,8 @@ public; }
 
 contract Generation {
     // Public variables of the token
-    string public name = &quot;Generation&quot;;
-    string public symbol = &quot;GTN&quot;;
+    string public name = "Generation";
+    string public symbol = "GTN";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

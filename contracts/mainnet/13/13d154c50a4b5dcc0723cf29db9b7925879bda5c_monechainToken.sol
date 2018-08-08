@@ -136,8 +136,8 @@ contract StandardToken is Token {
 */
 
 contract monechainToken is StandardToken, SafeMath {
-  string public name = &quot;monechain token&quot;;
-  string public symbol = &quot;MONE&quot;;
+  string public name = "monechain token";
+  string public symbol = "MONE";
   uint public decimals = 18;
   uint crowdSalePrice = 300000;
   uint totalPeriod = 256 * 24 * 365; // unit: block count, estimate: 7 days

@@ -114,8 +114,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function FixedSupplyToken() public {
-        symbol = &quot;FIXED&quot;;
-        name = &quot;JCMTEST123&quot;;
+        symbol = "FIXED";
+        name = "JCMTEST123";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

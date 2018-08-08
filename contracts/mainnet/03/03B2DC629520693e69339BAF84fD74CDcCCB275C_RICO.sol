@@ -300,8 +300,8 @@ contract PausableToken is StandardToken, Pausable {
 contract RICO is PausableToken {
     using SafeMath for uint256;
 
-    string public name = &quot;RICO&quot;;
-    string public symbol = &quot;RICO&quot;;
+    string public name = "RICO";
+    string public symbol = "RICO";
     uint256 public decimals = 18;
     uint256 public totalSupply = 20000000 * (10 ** decimals);
     address public beneficiary = 0x1eCD8a6Bf1fdB629b3e47957178760962C91b7ca;

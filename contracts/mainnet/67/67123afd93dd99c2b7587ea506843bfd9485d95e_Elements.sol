@@ -32,8 +32,8 @@ contract Elements is ERC721 {
   	/*** CONSTANTS, VARIABLES ***/
 
 	// @notice Name and symbol of the non fungible token, as defined in ERC721.
-	string public constant NAME = &quot;CryptoElements&quot;; // solhint-disable-line
-	string public constant SYMBOL = &quot;CREL&quot;; // solhint-disable-line
+	string public constant NAME = "CryptoElements"; // solhint-disable-line
+	string public constant SYMBOL = "CREL"; // solhint-disable-line
 
   	uint256 private periodicStartingPrice = 5 ether;
   	uint256 private elementStartingPrice = 0.005 ether;
@@ -116,7 +116,7 @@ contract Elements is ERC721 {
   	  	ceoAddress = msg.sender;
   	  	cooAddress = msg.sender;
 
-  	  	createContractPeriodicTable(&quot;Periodic&quot;);
+  	  	createContractPeriodicTable("Periodic");
   	}
 
   	/*** PUBLIC FUNCTIONS ***/

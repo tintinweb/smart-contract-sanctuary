@@ -55,7 +55,7 @@ contract Controlled {
 
 /// @dev The actual token contract, the default controller is the msg.sender
 ///  that deploys the contract, so usually this token will be deployed by a
-///  token controller contract, which Giveth will call a &quot;Campaign&quot;
+///  token controller contract, which Giveth will call a "Campaign"
 contract Pinakion is Controlled {
 
     string public name;                //The Token&#39;s name: e.g. DigixDAO Tokens
@@ -741,7 +741,7 @@ contract Arbitrable{
     /** @dev Give a ruling for a dispute. Must be called by the arbitrator.
      *  The purpose of this function is to ensure that the address calling it has the right to rule on the contract.
      *  @param _disputeID ID of the dispute in the Arbitrator contract.
-     *  @param _ruling Ruling given by the arbitrator. Note that 0 is reserved for &quot;Not able/wanting to make a decision&quot;.
+     *  @param _ruling Ruling given by the arbitrator. Note that 0 is reserved for "Not able/wanting to make a decision".
      */
     function rule(uint _disputeID, uint _ruling) public onlyArbitrator {
         emit Ruling(Arbitrator(msg.sender),_disputeID,_ruling);
@@ -752,7 +752,7 @@ contract Arbitrable{
 
     /** @dev Execute a ruling of a dispute.
      *  @param _disputeID ID of the dispute in the Arbitrator contract.
-     *  @param _ruling Ruling given by the arbitrator. Note that 0 is reserved for &quot;Not able/wanting to make a decision&quot;.
+     *  @param _ruling Ruling given by the arbitrator. Note that 0 is reserved for "Not able/wanting to make a decision".
      */
     function executeRuling(uint _disputeID, uint _ruling) internal;
 }
@@ -1145,7 +1145,7 @@ contract Kleros is Arbitrator, ApproveAndCallFallBack {
         for (uint i = 0; i <= dispute.appeals; ++i) {
             // If the result is not a tie, some parties are incoherent. Note that 0 (refuse to arbitrate) winning is not a tie.
             // Result is a tie if the winningChoice is 0 (refuse to arbitrate) and the choice 0 is not the most voted choice.
-            // Note that in case of a &quot;tie&quot; among some choices including 0, parties who did not vote 0 are considered incoherent.
+            // Note that in case of a "tie" among some choices including 0, parties who did not vote 0 are considered incoherent.
             if (winningChoice!=0 || (dispute.voteCounter[dispute.appeals].voteCount[0] == dispute.voteCounter[dispute.appeals].winningCount)) {
                 uint totalToRedistribute = 0;
                 uint nbCoherent = 0;

@@ -153,8 +153,8 @@ contract TokenERC20 {
 
 contract INVToken is owned,TokenERC20 {
 
-    string public name = &quot;INVESTACOIN&quot;;
-    string public symbol = &quot;INV&quot;;
+    string public name = "INVESTACOIN";
+    string public symbol = "INV";
     uint8 public decimals = 18;
     address private paymentAddress = 0x75B42A1AB0e23e24284c8E0E8B724472CF8623Cd;
     

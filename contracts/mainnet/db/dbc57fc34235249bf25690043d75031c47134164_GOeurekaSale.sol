@@ -3,8 +3,8 @@ pragma solidity ^0.4.23;
 // contact : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="03676275664362686c6e61622d606c6e">[email&#160;protected]</a>
 // released under Apache 2.0 licence
 contract GoConfig {
-    string public constant NAME = &quot;GOeureka&quot;;
-    string public constant SYMBOL = &quot;GOT&quot;;
+    string public constant NAME = "GOeureka";
+    string public constant SYMBOL = "GOT";
     uint8 public constant DECIMALS = 18;
     uint public constant DECIMALSFACTOR = 10 ** uint(DECIMALS);
     uint public constant TOTALSUPPLY = 1000000000 * DECIMALSFACTOR;
@@ -680,11 +680,11 @@ contract GOeurekaSale is Claimable, gotTokenSaleConfig, Pausable, Salvageable {
     }
 
     modifier onlyAuthorised(address beneficiary) {
-        require(isWhiteListed(beneficiary),&quot;Not authorised&quot;);
+        require(isWhiteListed(beneficiary),"Not authorised");
         
-        require (!hasEnded(),&quot;ended&quot;);
-        require (multiSig != 0x0,&quot;MultiSig empty&quot;);
-        require ((msg.value > minContribution) || (tokensRaised.add(getTokens(msg.value)) == SALE_CAP),&quot;Value too small&quot;);
+        require (!hasEnded(),"ended");
+        require (multiSig != 0x0,"MultiSig empty");
+        require ((msg.value > minContribution) || (tokensRaised.add(getTokens(msg.value)) == SALE_CAP),"Value too small");
         _;
     }
 

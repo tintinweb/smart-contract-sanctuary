@@ -74,7 +74,7 @@ contract OracleEscrow is Ownable {
 
   // Expected value is hard-coded into the contract and can be verified by all parties
   // before any deposit is made.
-  bytes32 public constant EXPECTED = &quot;yes&quot;;
+  bytes32 public constant EXPECTED = "yes";
 
   // Expiration date should be a factor of days to prevent timestamp dependence.
   // https://consensys.github.io/smart-contract-best-practices/recommendations/#timestamp-dependence
@@ -121,11 +121,11 @@ contract OracleEscrow is Ownable {
     require(address(this).balance > 0);
     if (oracle.current() == EXPECTED) {
       contractExecuted = true;
-      emit ContractExecuted(&quot;Payment sent to beneficiary.&quot;);
+      emit ContractExecuted("Payment sent to beneficiary.");
       beneficiary.transfer(address(this).balance);
     } else if (now >= expiration) {
       contractExecuted = true;
-      emit ContractExecuted(&quot;Payment refunded to depositor.&quot;);
+      emit ContractExecuted("Payment refunded to depositor.");
       depositor.transfer(address(this).balance);
     }
   }
@@ -142,7 +142,7 @@ contract OracleEscrow is Ownable {
    * @dev Reverts if called by any account other than the owner, depositor, or beneficiary.
    */
   modifier checkAuthorizedUser() {
-    require(msg.sender == owner || msg.sender == depositor || msg.sender == beneficiary, &quot;Only authorized users may call this function.&quot;);
+    require(msg.sender == owner || msg.sender == depositor || msg.sender == beneficiary, "Only authorized users may call this function.");
     _;
   }
   
@@ -150,7 +150,7 @@ contract OracleEscrow is Ownable {
    * @dev Reverts if called by any account other than the depositor.
    */
   modifier onlyDepositor() {
-    require(msg.sender == depositor, &quot;Only the depositor may call this function.&quot;);
+    require(msg.sender == depositor, "Only the depositor may call this function.");
     _;
   }
 }

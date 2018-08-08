@@ -37,9 +37,9 @@ contract FuBi is ERC20 {
     // Owner of this contract will be the creater of the contract
     address public owner;
     // name of this contract and investment fund
-    string public name = &quot;FuBi&quot;;  
+    string public name = "FuBi";  
     // token symbol
-    string public symbol = &quot;Fu&quot;;  
+    string public symbol = "Fu";  
     // decimals (for humans)
     uint8 public decimals = 6;    
     // total supply of tokens it includes 6 zeros extra to handle decimal of 6 places.

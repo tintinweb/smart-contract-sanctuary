@@ -28,8 +28,8 @@ contract PRTC {
     ) public {
         totalSupply = 1000000000000000000000000000;                                                 // Update total supply with the decimal amount
         balanceOf[msg.sender] = 1000000000000000000000000000;                                       // Give the creator all initial tokens
-        name = &quot;Protect Coin&quot;;                                                                      // Set the name for display purposes
-        symbol = &quot;PRTC&quot;;                                                                            // Set the symbol for display purposes
+        name = "Protect Coin";                                                                      // Set the name for display purposes
+        symbol = "PRTC";                                                                            // Set the symbol for display purposes
     }
 
     /**

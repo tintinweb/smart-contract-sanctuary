@@ -310,8 +310,8 @@ contract MintableToken is StandardToken {
 
 contract LAFINAL7 is MintableToken 
 {
-  string public constant name = &quot;LAFINAL&quot;;
-  string public constant symbol = &quot;FINAL7&quot;;
+  string public constant name = "LAFINAL";
+  string public constant symbol = "FINAL7";
 
  function LAFINAL7() { totalSupply = 0 ; } // initializes to 0 the total token supply 
 }

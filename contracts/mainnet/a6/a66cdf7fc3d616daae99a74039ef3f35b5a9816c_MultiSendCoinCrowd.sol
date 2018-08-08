@@ -16,17 +16,17 @@ contract Ownable {
 	}
 
 	modifier onlyOwner() {
-		require(msg.sender == owner, &quot;msg.sender == owner&quot;);
+		require(msg.sender == owner, "msg.sender == owner");
 		_;
 	}
 
 	function transferOwnership(address _newOwner) public onlyOwner {
-		require(address(0) != _newOwner, &quot;address(0) != _newOwner&quot;);
+		require(address(0) != _newOwner, "address(0) != _newOwner");
 		newOwner = _newOwner;
 	}
 
 	function acceptOwnership() public {
-		require(msg.sender == newOwner, &quot;msg.sender == newOwner&quot;);
+		require(msg.sender == newOwner, "msg.sender == newOwner");
 		emit OwnershipTransferred(owner, msg.sender);
 		owner = msg.sender;
 		newOwner = address(0);
@@ -45,7 +45,7 @@ contract MultiSendCoinCrowd is Ownable {
     }
 	
     function multisend(address[] _dests, uint256[] _values) public onlyOwner returns(uint256) {
-        require(_dests.length == _values.length, &quot;_dests.length == _values.length&quot;);
+        require(_dests.length == _values.length, "_dests.length == _values.length");
         uint256 i = 0;
         while (i < _dests.length) {
            tokenContract.transfer(_dests[i], _values[i]);

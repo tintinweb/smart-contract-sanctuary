@@ -37,7 +37,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -147,16 +147,16 @@ contract IFOFirstRound is Ownable {
     uint bn = block.number;
 
     if (preStartBlock == 0) {
-      return &quot;Inactive&quot;;
+      return "Inactive";
     }
     else if (bn < preStartBlock) {
-      return &quot;PreDistInitiated&quot;;
+      return "PreDistInitiated";
     }
     else if (bn <= preEndBlock) {
-      return &quot;PreDist&quot;;
+      return "PreDist";
     }
     else {
-      return &quot;InBetween&quot;;
+      return "InBetween";
     }
   }
 
@@ -182,7 +182,7 @@ contract IFOFirstRound is Ownable {
   }
 
   function _getTokens() internal {
-    require(currentState() == &quot;PreDist&quot; || currentState() == &quot;Dist&quot;);
+    require(currentState() == "PreDist" || currentState() == "Dist");
     require(msg.sender != address(0));
 
     uint balance = token.balanceOf(msg.sender);
@@ -205,14 +205,14 @@ contract IFOFirstRound is Ownable {
   }
 
   function getTokensAmount() public constant returns (uint) {
-    if (currentState() == &quot;PreDist&quot;) {
+    if (currentState() == "PreDist") {
       return baseAmount.mul(5);
     } else {
       return 0;
     }
   }
 
-  function startPreDistribution(uint _startBlock, uint _duration, address _project, address _founders, address _token) public onlyOwner onlyState(&quot;Inactive&quot;) {
+  function startPreDistribution(uint _startBlock, uint _duration, address _project, address _founders, address _token) public onlyOwner onlyState("Inactive") {
     require(_startBlock > block.number);
     require(_duration > 0 && _duration < 30000);
     require(msg.sender != address(0));
@@ -230,7 +230,7 @@ contract IFOFirstRound is Ownable {
     preEndBlock = _startBlock + _duration;
   }
 
-  function reserveTokensProjectAndFounders() public onlyOwner onlyState(&quot;InBetween&quot;) {
+  function reserveTokensProjectAndFounders() public onlyOwner onlyState("InBetween") {
     require(!projectFoundersReserved);
 
     tokenSupply = 2 * token.totalSupply();
@@ -247,7 +247,7 @@ contract IFOFirstRound is Ownable {
   }
 
   function totalSupply() public constant returns (uint){
-    require(currentState() != &quot;Inactive&quot;);
+    require(currentState() != "Inactive");
     return _fromNanoNIL(token.totalSupply());
   }
 

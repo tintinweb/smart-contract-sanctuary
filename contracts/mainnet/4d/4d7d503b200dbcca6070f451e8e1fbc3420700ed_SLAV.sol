@@ -109,8 +109,8 @@ contract SLAV is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SLAV() public {
-        symbol = &quot;SLAV&quot;;
-        name = &quot;SLAV&quot;;
+        symbol = "SLAV";
+        name = "SLAV";
         decimals = 18;
         _totalSupply = 666666666000000000000000000;
         balances[0xea95fa7cceeb6bab40b18826fdb2bc51adff908d] = _totalSupply;

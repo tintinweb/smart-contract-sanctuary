@@ -4,8 +4,8 @@ contract	AIR_FRANCE_KLM_OTC_050601				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	AIR_FRANCE_KLM_OTC_050601		&quot;	;
-	string	public		symbol =	&quot;	AIRFI		&quot;	;
+	string	public		name =	"	AIR_FRANCE_KLM_OTC_050601		"	;
+	string	public		symbol =	"	AIRFI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		21275779936591100000000000					;	

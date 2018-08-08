@@ -109,8 +109,8 @@ contract AirDropToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AirDropToken() public {
-        symbol = &quot;ARDP&quot;;
-        name = &quot;AirDropToken&quot;;
+        symbol = "ARDP";
+        name = "AirDropToken";
         decimals = 18;
         _totalSupply = 5000000000000000000000000000;
         balances[0xEAceE895fBb814bf074C5138F5607e01ED0BeCA8] = _totalSupply;

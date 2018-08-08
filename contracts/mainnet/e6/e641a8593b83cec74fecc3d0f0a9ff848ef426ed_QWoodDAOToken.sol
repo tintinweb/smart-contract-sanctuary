@@ -68,7 +68,7 @@ contract ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -110,8 +110,8 @@ contract Ownable {
 contract QWoodDAOToken is ERC20, Ownable {
   using SafeMath for uint256;
 
-  string public constant name = &quot;QWoodDAO&quot;;
-  string public constant symbol = &quot;QOD&quot;;
+  string public constant name = "QWoodDAO";
+  string public constant symbol = "QOD";
   uint8 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 9000000 * (10 ** uint256(decimals));
 

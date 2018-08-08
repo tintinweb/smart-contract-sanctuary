@@ -98,8 +98,8 @@ contract FutureCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FutureCoin() public {
-        symbol = &quot;FTC&quot;;
-        name = &quot;FutureCoin&quot;;
+        symbol = "FTC";
+        name = "FutureCoin";
         decimals = 3;
         _totalSupply = 95000000000;
         balances[0x8f8EA939048E534059063B0a519fdDBA73c635d4] = _totalSupply;

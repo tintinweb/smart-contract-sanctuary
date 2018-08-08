@@ -183,8 +183,8 @@ contract Ownable {
 }
 
 contract CoinVilla is StandardToken, Ownable {
-  string public constant name = &quot;CoinVilla&quot;;
-  string public constant symbol = &quot;CV&quot;;
+  string public constant name = "CoinVilla";
+  string public constant symbol = "CV";
   uint8 public constant decimals = 18;
   
   uint256 public CoinVillaIssued;
@@ -223,7 +223,7 @@ contract CoinVilla is StandardToken, Ownable {
     totalSupply = 12000000 * (10 ** uint256(decimals)); 
     balances[msg.sender] = totalSupply;  
     CoinVillaIssued = totalSupply;
-    CoinVillaTalk = &quot;CoinVilla&quot;;
+    CoinVillaTalk = "CoinVilla";
     
   }
  

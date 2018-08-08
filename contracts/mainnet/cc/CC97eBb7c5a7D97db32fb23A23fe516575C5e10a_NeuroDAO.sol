@@ -144,7 +144,7 @@ contract Token is Crowdsale {
 
     string  public standard    = &#39;Token 0.1&#39;;
     string  public name        = &#39;NeuroDAO&#39;;
-    string  public symbol      = &quot;NDAO&quot;;
+    string  public symbol      = "NDAO";
     uint8   public decimals    = 0;
 
     uint    public startTime;

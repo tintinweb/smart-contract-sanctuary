@@ -133,8 +133,8 @@ contract BurnableToken is BasicToken {
 
 contract TriumHolding is StandardToken, BurnableToken {
 
-  string public constant name = &quot;TriumHolding&quot;; 
-  string public constant symbol = &quot;TMD&quot;; 
+  string public constant name = "TriumHolding"; 
+  string public constant symbol = "TMD"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 2000000000 * (10 ** uint256(decimals));

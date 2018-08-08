@@ -192,7 +192,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -232,8 +232,8 @@ contract Ownable {
 
 contract UBetCoin is StandardToken, Ownable {
   
-    string public constant name = &quot;UBetCoin&quot;;
-    string public constant symbol = &quot;UBET&quot;;
+    string public constant name = "UBetCoin";
+    string public constant symbol = "UBET";
     uint8 public constant decimals = 0;
     uint256 public constant totalCoinSupply = 4000000000 * (10 ** uint256(decimals));  
 

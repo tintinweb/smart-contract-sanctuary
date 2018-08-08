@@ -15,8 +15,8 @@ contract SGEToken {
     function SGEToken() public {
         totalSupply = 100000000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Super Green Energy Token&quot;;
-        symbol = &quot;SGE&quot;;
+        name = "Super Green Energy Token";
+        symbol = "SGE";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

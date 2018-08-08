@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract RADIUM {
     // Public variables of the token
-    string public name = &quot;Radium&quot;;
-    string public symbol = &quot;RADM&quot;;
+    string public name = "Radium";
+    string public symbol = "RADM";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

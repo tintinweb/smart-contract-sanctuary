@@ -51,7 +51,7 @@ contract ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -93,8 +93,8 @@ contract Ownable {
 contract DSTToken is ERC20, Ownable, SafeMath {
 
     // Token related informations
-    string public constant name = &quot;Decentralize Silver Token&quot;;
-    string public constant symbol = &quot;DST&quot;;
+    string public constant name = "Decentralize Silver Token";
+    string public constant symbol = "DST";
     uint256 public constant decimals = 18; // decimal places
 
     uint256 public tokensPerEther = 1500;

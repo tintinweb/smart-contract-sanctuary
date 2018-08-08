@@ -98,8 +98,8 @@ contract CYPHERX is SafeMath,owned,ERC223Interface{
         
         totalSupply = 1000000000 *10**uint256(decimals);    // Update total supply
         balanceOf[msg.sender] = totalSupply; 
-        name = &quot;CYPHERX&quot;;                                   // Set the name for display purposes
-        symbol = &quot;CYX&quot;;                                  // Set the symbol for display purposes
+        name = "CYPHERX";                                   // Set the name for display purposes
+        symbol = "CYX";                                  // Set the symbol for display purposes
         soldToken=0;                                    // Amount of decimals for display purposes
 
     }

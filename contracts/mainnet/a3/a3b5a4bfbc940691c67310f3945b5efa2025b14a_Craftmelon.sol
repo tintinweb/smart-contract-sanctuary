@@ -19,9 +19,9 @@ contract Craftmelon {
     function Craftmelon() {
 
          initialSupply = 500000000;
-         name =&quot;craft&quot;;
+         name ="craft";
          decimals = 2;
-         symbol = &quot;C&quot;;
+         symbol = "C";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

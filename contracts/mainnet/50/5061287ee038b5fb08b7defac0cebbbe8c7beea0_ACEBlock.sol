@@ -113,8 +113,8 @@ contract ACEBlock is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ACEBlock() public {
-        symbol = &quot;ACEB&quot;;
-        name = &quot;ACEBlock&quot;;
+        symbol = "ACEB";
+        name = "ACEBlock";
         decimals = 18;
         _totalSupply = 50000000000000000000000000;
         balances[0x5448418a5FE17680E3B5C04FE47A85b58B2B8176] = _totalSupply;

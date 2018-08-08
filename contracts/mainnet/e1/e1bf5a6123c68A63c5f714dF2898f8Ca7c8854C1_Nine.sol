@@ -38,8 +38,8 @@ contract Nine {
   }
 
 
-  string public constant name = &quot;TheNineBillionNamesOfGod&quot;;
-  string public constant symbol = &quot;NOG&quot;;
+  string public constant name = "TheNineBillionNamesOfGod";
+  string public constant symbol = "NOG";
   uint256 public constant totalSupply = 9000000000;
 
   struct Name {

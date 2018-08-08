@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract WBToken is StandardToken {
 
-  string public constant name = &quot;wecoin&quot;;
-  string public constant symbol = &quot;WB&quot;;
+  string public constant name = "wecoin";
+  string public constant symbol = "WB";
   uint8 public constant decimals = 18;
 
 

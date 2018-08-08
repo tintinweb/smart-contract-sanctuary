@@ -14,8 +14,8 @@ contract SolidusToken {
     uint256 public totalBalancingTokens = 0;
     uint256 public tokenMultiplier = 600;
 
-    function name() constant returns (string) { return &quot;Solidus&quot;; }
-    function symbol() constant returns (string) { return &quot;SOL&quot;; }
+    function name() constant returns (string) { return "Solidus"; }
+    function symbol() constant returns (string) { return "SOL"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

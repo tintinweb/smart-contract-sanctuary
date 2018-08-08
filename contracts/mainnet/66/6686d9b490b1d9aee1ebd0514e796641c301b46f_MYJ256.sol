@@ -77,8 +77,8 @@ library SafeMath {
 contract MYJ256 is ERC256, Ownable {
   using SafeMath for uint256;
 
-  string public name = &quot;GAMERTOKEN&quot;;
-  string public symbol = &quot;GAMER&quot;;
+  string public name = "GAMERTOKEN";
+  string public symbol = "GAMER";
   uint8 public decimals = 8;
   uint256 public distributeAmount = 0;
   uint256 public initialSupply = 10e9 * 1e8;

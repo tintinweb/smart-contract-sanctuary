@@ -210,9 +210,9 @@ contract FixedSupplyToken is ERC20Interface, Owned {
 
     function FixedSupplyToken() public {
 
-        symbol = &quot;ATOMS&quot;;
+        symbol = "ATOMS";
 
-        name = &quot;BCE Universal Atoms&quot;;
+        name = "BCE Universal Atoms";
 
         decimals = 18;
 

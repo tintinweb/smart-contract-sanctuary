@@ -393,8 +393,8 @@ contract Tokens is HardcodedWallets, ERC20, Haltable {
 	 * @notice Constructor: set up token properties and owner token balance
 	 */
 	constructor(address _addressSCEscrow, address _addressSCComplianceService) public {
-		name = &quot;TheRentalsToken&quot;;
-		symbol = &quot;TRT&quot;;
+		name = "TheRentalsToken";
+		symbol = "TRT";
 		decimals = 18; // 18 decimal places, the same as ETH
 
 		// initialSupply = 2000000000 ether; // 2018-04-21: ICO summary.docx: ...Dicho valor generar&#237;a un Total Supply de 2.000 millones de TRT.
@@ -452,7 +452,7 @@ contract Tokens is HardcodedWallets, ERC20, Haltable {
 	/**
 	 * @notice Send _amount amount of tokens from address _from to address _to
  	 * @notice The transferFrom method is used for a withdraw workflow, allowing contracts to send 
- 	 * @notice tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge 
+ 	 * @notice tokens on your behalf, for example to "deposit" to a contract address and/or to charge 
  	 * @notice fees in sub-currencies; the command should fail unless the _from account has 
  	 * @notice deliberately authorized the sender of the message via some mechanism
  	 */

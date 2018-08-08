@@ -48,8 +48,8 @@ contract ZperToken {
 	address public owner;
 	uint256 public totalSupply;
 	uint256 public cap;
-	string public constant name = &quot;ZperToken&quot;;
-	string public constant symbol = &quot;ZPR&quot;;
+	string public constant name = "ZperToken";
+	string public constant symbol = "ZPR";
 	uint8 public constant decimals = 18;
 
 

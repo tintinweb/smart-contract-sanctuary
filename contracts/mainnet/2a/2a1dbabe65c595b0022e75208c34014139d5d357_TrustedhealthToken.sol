@@ -62,8 +62,8 @@ contract TrustedhealthToken is ERC20Token, owned {
     using SafeMath for uint256;
 
     /* Public variables */
-    string public name = &quot;Trustedhealth&quot;;
-    string public symbol = &quot;TDH&quot;;
+    string public name = "Trustedhealth";
+    string public symbol = "TDH";
     uint8 public decimals = 18;
     bool public tokenFrozen;
 

@@ -60,8 +60,8 @@ contract Vboom is SafeMath{
 
    /* Initializes contract with initial supply tokens to the creator of the contract */
     function Vboom() {
-        name = &quot;Vboom&quot;;                                   // Set the name for display purposes
-        symbol = &quot;Vboom&quot;;                               // Set the symbol for display purposes
+        name = "Vboom";                                   // Set the name for display purposes
+        symbol = "Vboom";                               // Set the symbol for display purposes
         owner = msg.sender;
         decimals = 18;
         totalSupply = 25000000000 * 10**uint(decimals);

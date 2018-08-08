@@ -72,8 +72,8 @@ contract OkeToken is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function OkeToken() public {
-        symbol = &quot;OKE&quot;;
-        name = &quot;OKECOIN&quot;;
+        symbol = "OKE";
+        name = "OKECOIN";
         decimals = 18;
         _totalSupply = 27000000000000000000000000;
         balances[0xa9b174a5e869c79d3d2C76D6447b121517b81e9f] = _totalSupply;

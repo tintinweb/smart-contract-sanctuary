@@ -113,8 +113,8 @@ contract SEPA is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SEPA() public {
-        symbol = &quot;SEPA&quot;;
-        name = &quot;SEPA Coin&quot;;
+        symbol = "SEPA";
+        name = "SEPA Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xf6d90d2A49C6D37Cc345801dD34F8fe7BDE0028A] = _totalSupply;

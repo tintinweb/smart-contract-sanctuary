@@ -21,9 +21,9 @@ contract Ownable {
  
 contract SimpleTokenCoin is Ownable {
     
-    string public constant name = &quot;Another Shit Coin&quot;;
+    string public constant name = "Another Shit Coin";
     
-    string public constant symbol = &quot;SBC&quot;;
+    string public constant symbol = "SBC";
     
     uint32 public constant decimals = 18;
     

@@ -83,9 +83,9 @@ contract CGE is ERC20,Ownable{
 	using SafeMath for uint256;
 
 	//the base info of the token
-	string public constant name=&quot;CoinGold Exchange Of Taiwan&quot;;
-	string public constant symbol=&quot;CGE&quot;;
-	string public constant version = &quot;1.0&quot;;
+	string public constant name="CoinGold Exchange Of Taiwan";
+	string public constant symbol="CGE";
+	string public constant version = "1.0";
 	uint256 public constant decimals = 18;
 
 	uint256 public constant MAX_SUPPLY=1000000000*10**decimals;

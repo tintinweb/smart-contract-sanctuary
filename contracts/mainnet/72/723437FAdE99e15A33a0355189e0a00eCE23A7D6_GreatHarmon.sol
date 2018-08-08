@@ -50,7 +50,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -160,7 +160,7 @@ contract GreatHarmon is Ownable {
         string identity;  //记录生日、性别等个人信息。类似身份证。
         uint32 prestige;  //声望值，大同世界中，鼓励人们“达则兼济天下”。做更多的好事。将提高声望值。
         uint32 joinDate;  //何时加入。
-        uint32 readyTime; //&quot;Basic income system&quot; 的冷却时间。
+        uint32 readyTime; //"Basic income system" 的冷却时间。
     }
 
     Resident[] public residents;
@@ -187,7 +187,7 @@ contract GreatHarmon is Ownable {
         require(idOf[msg.sender] == 0);
         if (msg.value > 0) {
             donateMap[msg.sender] += msg.value;
-            Donate(msg.sender, _name, msg.value, &quot;&quot;);
+            Donate(msg.sender, _name, msg.value, "");
         }
         return _createResident(_name, _identity);
     }
@@ -244,8 +244,8 @@ contract GreatHarmon is Ownable {
 
     // token erc20
     // Public variables of the token
-    string public name = &quot;Great Harmon Coin&quot;;
-    string public symbol = &quot;GHC&quot;;
+    string public name = "Great Harmon Coin";
+    string public symbol = "GHC";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 0;

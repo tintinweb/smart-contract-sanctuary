@@ -113,8 +113,8 @@ contract TIGER is UnboundedRegularToken {
 
     uint public totalSupply = 0.99999999*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;TIGER TOKEN&quot;;
-    string constant public symbol = &quot;TIGER&quot;;
+    string constant public name = "TIGER TOKEN";
+    string constant public symbol = "TIGER";
 
     function TIGER() {
         balances[msg.sender] = totalSupply;

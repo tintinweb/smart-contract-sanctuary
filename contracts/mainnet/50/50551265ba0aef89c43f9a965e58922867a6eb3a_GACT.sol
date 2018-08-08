@@ -100,8 +100,8 @@ contract GACT is ERC20Interface, Owned {
 	 function GACT() public {
         _totalSupply = 	4000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balances[owner] = _totalSupply;              // Give the creator all initial tokens
-        name = &quot;GoldAgriculturalChain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GACT&quot;;                               // Set the symbol for display purposes
+        name = "GoldAgriculturalChain";                                   // Set the name for display purposes
+        symbol = "GACT";                               // Set the symbol for display purposes
 		Transfer(address(0), owner, _totalSupply);
     }
 

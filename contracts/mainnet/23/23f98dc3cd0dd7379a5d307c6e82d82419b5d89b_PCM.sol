@@ -108,9 +108,9 @@ library SafeMath {
 contract PCM is ERC20, Ownable, Pausable {
     using SafeMath for uint256;
     
-    string public constant name     = &quot;Precium Token&quot;;
+    string public constant name     = "Precium Token";
     uint8 public constant decimals  = 18;
-    string public constant symbol   = &quot;PCM&quot;;
+    string public constant symbol   = "PCM";
 
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) internal allowed;

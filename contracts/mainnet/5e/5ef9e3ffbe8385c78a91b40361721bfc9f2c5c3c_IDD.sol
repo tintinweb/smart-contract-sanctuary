@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract IDD is StandardToken, Ownable {
 
-    string public constant name = &quot;ID币&quot;;
-    string public constant symbol = &quot;IDD&quot;;
+    string public constant name = "ID币";
+    string public constant symbol = "IDD";
     uint256 public constant decimals = 8;
 
     function IDD() public {

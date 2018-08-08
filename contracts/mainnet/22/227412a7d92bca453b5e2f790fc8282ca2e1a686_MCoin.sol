@@ -29,7 +29,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -446,8 +446,8 @@ contract MineableToken is MintableToken {
   /**
   * @dev withdraw reward
   * @return {
-    &quot;uint256 reward&quot;: the new supply
-    &quot;uint256 commitmentValue&quot;: the commitment to be returned
+    "uint256 reward": the new supply
+    "uint256 commitmentValue": the commitment to be returned
     }
   */
   function withdraw() public returns (uint256 reward, uint256 commitmentValue) {
@@ -543,10 +543,10 @@ contract MineableToken is MintableToken {
   * @dev Gets the all fields for the commitment of the specified address.
   * @param _miner The address to query the the commitment Of
   * @return {
-    &quot;uint256 value&quot;: the amount commited.
-    &quot;uint256 onBlockNumber&quot;: block number of commitment.
-    &quot;uint256 atStake&quot;: stake when commited.
-    &quot;int256 onBlockReward&quot;: block reward when commited.
+    "uint256 value": the amount commited.
+    "uint256 onBlockNumber": block number of commitment.
+    "uint256 atStake": stake when commited.
+    "int256 onBlockReward": block reward when commited.
     }
   */
   function getCommitment(address _miner) public view 
@@ -798,7 +798,7 @@ contract MineableM5Token is GDPOraclizedToken {
     // target contract
     address target = M5Logic_;
     // method signeture for target contract
-    bytes32 signature = keccak256(&quot;getM5Reward(address)&quot;);
+    bytes32 signature = keccak256("getM5Reward(address)");
     // size of calldata for getM5Reward function: 4 for signeture and 32 for one variable (address)
     uint32 inputSize = 4 + 32;
     // variable to check delegatecall result (success or failure)
@@ -828,8 +828,8 @@ contract MineableM5Token is GDPOraclizedToken {
   /**
   * @dev withdraw M5 reward, only appied to mining when GDP is negative
   * @return {
-    &quot;uint256 reward&quot;: the new M5 supply
-    &quot;uint256 commitmentValue&quot;: the commitment to be returned
+    "uint256 reward": the new M5 supply
+    "uint256 commitmentValue": the commitment to be returned
     }
   */
   function withdrawM5() public returns (uint256 reward, uint256 commitmentValue) {
@@ -841,7 +841,7 @@ contract MineableM5Token is GDPOraclizedToken {
     reward = getM5Reward(msg.sender);
     commitmentValue = miners[msg.sender].value;
     
-    require(M5Logic_.delegatecall(bytes4(keccak256(&quot;withdrawM5()&quot;)))); // solium-disable-line
+    require(M5Logic_.delegatecall(bytes4(keccak256("withdrawM5()")))); // solium-disable-line
     
     return (reward,commitmentValue);
   }
@@ -858,7 +858,7 @@ contract MineableM5Token is GDPOraclizedToken {
     require(M5Logic_ != address(0));
     require(M5Token_ != address(0));
 
-    require(M5Logic_.delegatecall(bytes4(keccak256(&quot;swap(uint256)&quot;)),_value)); // solium-disable-line
+    require(M5Logic_.delegatecall(bytes4(keccak256("swap(uint256)")),_value)); // solium-disable-line
     
     return true;
   }

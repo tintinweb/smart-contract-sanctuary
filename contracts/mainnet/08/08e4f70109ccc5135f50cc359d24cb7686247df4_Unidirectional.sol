@@ -279,11 +279,11 @@ contract Unidirectional {
         return keccak256(address(this), channelId, payment);
     }
 
-    /// @return Actually signed hash of the payment promise, considering &quot;Ethereum Signed Message&quot; prefix.
+    /// @return Actually signed hash of the payment promise, considering "Ethereum Signed Message" prefix.
     /// @param channelId Identifier of the channel.
     /// @param payment Amount to send, and to claim later.
     function recoveryPaymentDigest(bytes32 channelId, uint256 payment) internal view returns(bytes32) {
-        bytes memory prefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
+        bytes memory prefix = "\x19Ethereum Signed Message:\n32";
         return keccak256(prefix, paymentDigest(channelId, payment));
     }
 }

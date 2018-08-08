@@ -3,7 +3,7 @@ pragma solidity ^0.4.24;
 /* You&#39;ve seen all of this before. Here are the differences.
 
 // A. A quarter of your clones die when you sell ideas. Market saturation, y&#39;see?
-// B. You can &quot;become&quot; Norsefire and take the dev fees, since he&#39;s involved in everything.
+// B. You can "become" Norsefire and take the dev fees, since he&#39;s involved in everything.
 // B. 1. The Norsefire boon is a hot potato. If someone else buys it off you, you profit.
 // B. 2. When Norsefire flips, we actually send him 5% of the increase. You receive 50%, the contract receives the other 45%.
 // C. You get your &#39;free&#39; clones for 0.00232 Ether, because throwbaaaaaack.

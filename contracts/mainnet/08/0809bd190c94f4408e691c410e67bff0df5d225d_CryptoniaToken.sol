@@ -128,7 +128,7 @@ contract RBAC {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
+  string public constant ROLE_ADMIN = "admin";
 
   /**
    * @dev constructor. Sets msg.sender as admin by default
@@ -410,12 +410,12 @@ contract StandardToken is ERC20, BasicToken {
  * @dev ERC-20 compatible token with zeppelin&#39;s RBAC
  */
 contract CryptoniaToken is StandardToken, RBAC {
-  string public name = &quot;Cryptonia Poker Chips&quot;;
-  string public symbol = &quot;CPC&quot;;
+  string public name = "Cryptonia Poker Chips";
+  string public symbol = "CPC";
   uint8 public decimals = 2;
   uint256 public cap = 100000000000;
   bool public mintingFinished = false;
-  string constant ROLE_MINTER = &quot;minter&quot;;
+  string constant ROLE_MINTER = "minter";
 
   event Mint(address indexed to, uint256 amount);
   event MintFinished();

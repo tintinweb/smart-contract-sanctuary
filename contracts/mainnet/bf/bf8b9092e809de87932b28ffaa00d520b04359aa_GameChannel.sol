@@ -285,15 +285,15 @@ contract GameChannelBase is Destroyable, ConflictResolutionManager {
     uint public constant MAX_TRANSFER_TIMSPAN = 6 * 30 days;
 
     bytes32 public constant TYPE_HASH = keccak256(abi.encodePacked(
-        &quot;uint32 Round Id&quot;,
-        &quot;uint8 Game Type&quot;,
-        &quot;uint16 Number&quot;,
-        &quot;uint Value (Wei)&quot;,
-        &quot;int Current Balance (Wei)&quot;,
-        &quot;bytes32 Server Hash&quot;,
-        &quot;bytes32 Player Hash&quot;,
-        &quot;uint Game Id&quot;,
-        &quot;address Contract Address&quot;
+        "uint32 Round Id",
+        "uint8 Game Type",
+        "uint16 Number",
+        "uint Value (Wei)",
+        "int Current Balance (Wei)",
+        "bytes32 Server Hash",
+        "bytes32 Player Hash",
+        "uint Game Id",
+        "address Contract Address"
      ));
 
     /// @dev Current active game sessions.

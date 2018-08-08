@@ -186,8 +186,8 @@ pragma solidity ^0.4.18;
 
     contract SharesChainToken is StandardToken {
         /// Constant token specific fields
-        string public constant name = &quot;SharesChainToken&quot;;
-        string public constant symbol = &quot;SCTK&quot;;
+        string public constant name = "SharesChainToken";
+        string public constant symbol = "SCTK";
         uint public constant decimals = 18;
 
         /// SharesChain total tokens supply

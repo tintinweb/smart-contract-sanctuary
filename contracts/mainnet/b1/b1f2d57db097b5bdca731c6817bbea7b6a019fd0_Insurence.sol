@@ -113,8 +113,8 @@ contract Insurence is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Insurence() public {
-        symbol = &quot;NSURE&quot;;
-        name = &quot;Insur-ence&quot;;
+        symbol = "NSURE";
+        name = "Insur-ence";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xEA6a7Bc26462A34ffEc908699D2D671E07239D42] = _totalSupply;

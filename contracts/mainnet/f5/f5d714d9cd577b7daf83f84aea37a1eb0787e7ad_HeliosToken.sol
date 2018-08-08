@@ -58,7 +58,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -277,8 +277,8 @@ contract HeliosToken is StandardToken, Ownable {
     They allow one to customize the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
-    string  public constant name = &quot;Helios Token&quot;;
-    string  public constant symbol = &quot;HLS&quot;;
+    string  public constant name = "Helios Token";
+    string  public constant symbol = "HLS";
     uint8   public constant decimals = 18;
 	
 	uint256 public constant INITIAL_SUPPLY = 300000000 * (10 ** uint256(decimals));

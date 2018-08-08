@@ -4,8 +4,8 @@ contract	PICC_301201				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	PICC_301201		&quot;	;
-	string	public		symbol =	&quot;	PICCI		&quot;	;
+	string	public		name =	"	PICC_301201		"	;
+	string	public		symbol =	"	PICCI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10814019086663000000000000					;	

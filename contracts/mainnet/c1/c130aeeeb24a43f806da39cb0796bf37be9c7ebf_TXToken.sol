@@ -105,8 +105,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 
 contract TXToken is StandardToken {
-	string public constant symbol = &quot;TX&quot;;
-	string public constant name = &quot;Tian Xiao&quot;;
+	string public constant symbol = "TX";
+	string public constant name = "Tian Xiao";
 	uint8 public constant decimals = 18;
 	address public target;
 	

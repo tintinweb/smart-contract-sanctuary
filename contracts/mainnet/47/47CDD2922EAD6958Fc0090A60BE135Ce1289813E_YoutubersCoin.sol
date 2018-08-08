@@ -21,8 +21,8 @@ interface ERC20Interface {
  }
   
  contract YoutubersCoin is ERC20Interface {
-      string public constant symbol = &quot;YTB&quot;;
-      string public constant name = &quot;Youtubers Coin&quot;;
+      string public constant symbol = "YTB";
+      string public constant name = "Youtubers Coin";
       uint8 public constant decimals = 8;
       uint256 _totalSupply = 10000000000000000000;
  

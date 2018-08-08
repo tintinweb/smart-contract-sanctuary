@@ -99,9 +99,9 @@ contract xEURCoin is StandardToken {
         ) {
         balances[msg.sender] = 500000000 * 100000;   // Give the creator all initial tokens, 5 zero is 5 Decimals
         totalSupply = 500000000 * 100000;            // Update total supply, , 5 zero is 5 Decimals
-        name = &quot;xEUR&quot;;                                // Token Name
+        name = "xEUR";                                // Token Name
         decimals = 5;                                      // Amount of decimals for display purposes
-        symbol = &quot;xEUR&quot;;                                    // Token Symbol
+        symbol = "xEUR";                                    // Token Symbol
     }
 
     /* Approves and then calls the receiving contract */
@@ -109,7 +109,7 @@ contract xEURCoin is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

@@ -186,8 +186,8 @@ contract Ownable {
 contract SampleCrowdsaleToken is StandardToken,Ownable {
   using SafeMath for uint256;
 
-  string public constant name = &quot;StarLight&quot;;
-  string public constant symbol = &quot;STAR&quot;;
+  string public constant name = "StarLight";
+  string public constant symbol = "STAR";
   uint8 public constant decimals = 18;
 
   address public address1 = 0x08294159dE662f0Bd810FeaB94237cf3A7bB2A3D;

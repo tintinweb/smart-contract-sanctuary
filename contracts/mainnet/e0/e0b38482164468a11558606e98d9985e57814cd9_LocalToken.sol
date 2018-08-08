@@ -124,8 +124,8 @@ contract LocalToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LocalToken() public {
-        symbol = &quot;LOT&quot;;
-        name = &quot;Local Token&quot;;
+        symbol = "LOT";
+        name = "Local Token";
         decimals = 18;
         bonusEnds = now;
         endDate = now + 30 minutes;

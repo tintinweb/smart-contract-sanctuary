@@ -6,8 +6,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract TokenTKC {
     
-    string public name = &quot;iTech Token&quot;;
-    string public symbol = &quot;TKC&quot;;
+    string public name = "iTech Token";
+    string public symbol = "TKC";
     uint256 public decimals = 18;
     
     uint256 public totalSupply = 100*1000*1000*(10**decimals);

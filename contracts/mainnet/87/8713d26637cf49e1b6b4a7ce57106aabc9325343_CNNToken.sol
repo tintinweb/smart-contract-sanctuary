@@ -215,7 +215,7 @@ contract CNNTokenBase is ERC20 {
 
 contract CNNToken is CNNTokenBase {
 
-    function CNNToken() CNNTokenBase(100000000000, &quot;CNN Token&quot;, &quot;CNN&quot;, 18) public {
+    function CNNToken() CNNTokenBase(100000000000, "CNN Token", "CNN", 18) public {
 
     }
 }

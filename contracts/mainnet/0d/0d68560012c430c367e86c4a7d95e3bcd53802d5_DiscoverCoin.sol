@@ -89,9 +89,9 @@ contract DiscoverCoin is StandardToken {
         ) {
         balances[msg.sender] = 15000000000000000000000000;               
         totalSupply = 15000000000000000000000000;                        
-        name = &quot;DiscoverCoin&quot;;                                   
+        name = "DiscoverCoin";                                   
         decimals = 18;                            
-        symbol = &quot;DISC&quot;;                               
+        symbol = "DISC";                               
     }
 
     /* Approves and then calls the receiving contract */
@@ -100,7 +100,7 @@ contract DiscoverCoin is StandardToken {
         Approval(msg.sender, _spender, _value);
 
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

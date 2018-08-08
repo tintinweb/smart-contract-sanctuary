@@ -23,8 +23,8 @@ contract ElephantsPaymentCoin{
     function ElephantsPaymentCoin() {
         balanceOf[msg.sender] =  190000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  190000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;Elephants Payment Coin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;EPTC&quot;;                               // Set the symbol for display purposes
+        name = "Elephants Payment Coin";                                   // Set the name for display purposes
+        symbol = "EPTC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

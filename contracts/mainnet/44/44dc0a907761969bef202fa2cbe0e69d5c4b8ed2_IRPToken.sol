@@ -136,8 +136,8 @@ contract IRPToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function IRPToken() public {
-        symbol = &quot;IRP&quot;;
-        name = &quot;Investor PreSale Berechtigung&quot;;
+        symbol = "IRP";
+        name = "Investor PreSale Berechtigung";
         decimals = 18;
         _totalSupply = 100 * 10**uint(decimals);
         balances[owner] = _totalSupply;

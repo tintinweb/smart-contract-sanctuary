@@ -25,8 +25,8 @@ event Transfer(address indexed from, address indexed to, uint256 value);
 mapping(address => mapping (address => uint256)) allowed;
   
 function elixir() {
-    name = &quot;elixir&quot;;
-    symbol = &quot;ELIX&quot;;
+    name = "elixir";
+    symbol = "ELIX";
     decimals = 18;
     devAddress=0x85196Da9269B24bDf5FfD2624ABB387fcA05382B;
     exorAddress=0x898bF39cd67658bd63577fB00A2A3571dAecbC53;

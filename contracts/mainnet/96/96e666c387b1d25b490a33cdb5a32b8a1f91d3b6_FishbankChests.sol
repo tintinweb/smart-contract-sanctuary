@@ -4,7 +4,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -62,8 +62,8 @@ contract FishbankBoosters is Ownable {
 
     Booster[] public boosters;
     bool public implementsERC721 = true;
-    string public name = &quot;Fishbank Boosters&quot;;
-    string public symbol = &quot;FISHB&quot;;
+    string public name = "Fishbank Boosters";
+    string public symbol = "FISHB";
     mapping(uint256 => address) public approved;
     mapping(address => uint256) public balances;
     address public fishbank;

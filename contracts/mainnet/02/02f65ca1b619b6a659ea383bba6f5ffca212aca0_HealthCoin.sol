@@ -19,8 +19,8 @@ contract HealthCoin {
     ) public {
         totalSupply = initialSupply * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;HealthCoin&quot;; 
-        symbol = &quot;HCoin&quot;;
+        name = "HealthCoin"; 
+        symbol = "HCoin";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

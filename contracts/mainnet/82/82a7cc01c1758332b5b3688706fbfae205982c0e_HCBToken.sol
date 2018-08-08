@@ -171,9 +171,9 @@ contract BasicToken is Token ,HCBFreeze{
 }
 contract HCBToken is BasicToken{
 
-	string public name = &quot;HiggsCandyBox&quot;;                         /// Set the full name of this contract
+	string public name = "HiggsCandyBox";                         /// Set the full name of this contract
 	uint256 public decimals = 18;                                 /// Set the decimal
-	string public symbol = &quot;HCB&quot;;                                 /// Set the symbol of this contract
+	string public symbol = "HCB";                                 /// Set the symbol of this contract
 
 	constructor() public {
 		owner = msg.sender;

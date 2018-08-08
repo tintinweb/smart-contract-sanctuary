@@ -167,8 +167,8 @@ contract StandartToken is ERC20 {
 //Nominal (initial) cost of one token = 1$
 
 contract Token is Owned, StandartToken {
-    string public name = &quot;CRYPTODEPOZIT&quot;;
-    string public symbol = &quot;DEPO&quot;;
+    string public name = "CRYPTODEPOZIT";
+    string public symbol = "DEPO";
     uint public decimals = 0;
     address public constant company = 0xC01aed0F75f117d1f47f9146E41C9A6E0870350e;
     

@@ -275,9 +275,9 @@ contract VeraCrowdsale is RBAC {
   address public wallet;
 
   // constants defining roles for access control
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
-  string public constant ROLE_BACKEND = &quot;backend&quot;;
-  string public constant ROLE_KYC_VERIFIED_INVESTOR = &quot;kycVerified&quot;;
+  string public constant ROLE_ADMIN = "admin";
+  string public constant ROLE_BACKEND = "backend";
+  string public constant ROLE_KYC_VERIFIED_INVESTOR = "kycVerified";
 
   // Value bonus configuration
   struct AmountBonus {
@@ -357,9 +357,9 @@ contract VeraCrowdsale is RBAC {
   )
     public
   {
-    require(_token != address(0), &quot;Need token contract address&quot;);
-    require(_priceOracle != address(0), &quot;Need price oracle contract address&quot;);
-    require(_wallet != address(0), &quot;Need wallet address&quot;);
+    require(_token != address(0), "Need token contract address");
+    require(_priceOracle != address(0), "Need price oracle contract address");
+    require(_wallet != address(0), "Need wallet address");
     addRole(msg.sender, ROLE_ADMIN);
     token = _token;
     priceOracle = _priceOracle;
@@ -390,7 +390,7 @@ contract VeraCrowdsale is RBAC {
    */
   function withdrawTokens(address _to) public onlyAdmin {
     uint256 amount = token.balanceOf(address(this));
-    require(amount > 0, &quot;no tokens on the contract&quot;);
+    require(amount > 0, "no tokens on the contract");
     token.transfer(_to, amount);
   }
 
@@ -519,7 +519,7 @@ contract VeraCrowdsale is RBAC {
   function buyTokens(address _investor, uint256 _cents) internal {
     (uint256 bonusPercent, uint256 bonusIds) = computeBonuses(_cents);
     uint256 tokens = computeTokens(_cents);
-    require(tokens > 0, &quot;value is not enough&quot;);
+    require(tokens > 0, "value is not enough");
     token.transfer(_investor, tokens);
     centsRaised = centsRaised.add(_cents);
     tokensSold = tokensSold.add(tokens);

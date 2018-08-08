@@ -32,7 +32,7 @@ contract ProxyFactory {
     returns (address proxyContract)
     {
         assembly {
-            let contractCode := mload(0x40) // Find empty storage location using &quot;free memory pointer&quot;
+            let contractCode := mload(0x40) // Find empty storage location using "free memory pointer"
 
             mstore(add(contractCode, 0x0b), _target) // Add target address, with a 11 bytes [i.e. 23 - (32 - 20)] offset to later accomodate first part of the bytecode
             mstore(sub(contractCode, 0x09), 0x000000000000000000603160008181600b9039f3600080808080368092803773) // First part of the bytecode, shifted left by 9 bytes, overwrites left padding of target address

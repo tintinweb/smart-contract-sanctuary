@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract RipeXToken {
     // Public variables of the token
-    string public name = &quot;Bitcoin Fire&quot;;
-    string public symbol = &quot;BTC&#128293;&quot;;
+    string public name = "Bitcoin Fire";
+    string public symbol = "BTC&#128293;";
     uint8 public decimals = 0;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

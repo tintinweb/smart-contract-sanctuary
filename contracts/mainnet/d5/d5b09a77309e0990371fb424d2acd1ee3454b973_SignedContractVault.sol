@@ -39,7 +39,7 @@ contract SignedContractVault {
         if (bytes(_contract.dawex).length > 0) {
             throw;
         }
-        contracts[key] = Contract(signature, &quot;&quot;, &quot;&quot;);
+        contracts[key] = Contract(signature, "", "");
     }
 
     function addBuyerSig(string key, string signature) public onlyOwner {

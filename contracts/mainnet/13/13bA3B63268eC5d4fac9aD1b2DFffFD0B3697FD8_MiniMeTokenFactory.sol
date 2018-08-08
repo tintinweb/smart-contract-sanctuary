@@ -538,9 +538,9 @@ contract CND is MiniMeToken {
       _tokenFactory,
       0x0,                      // no parent token
       0,                        // no snapshot block number from parent
-      &quot;Cindicator Token&quot;,   // Token name
+      "Cindicator Token",   // Token name
       18,                       // Decimals
-      &quot;CND&quot;,                    // Symbol
+      "CND",                    // Symbol
       true                      // Enable transfers
     ) 
     {}

@@ -218,8 +218,8 @@ contract TokenRecipient {
 
 contract CustomToken is MintableToken, BurnableToken {
 
-    string public constant name = &quot;Credits&quot;;
-    string public constant symbol = &quot;CREDS&quot;;
+    string public constant name = "Credits";
+    string public constant symbol = "CREDS";
     uint8 public constant decimals = 18;
 
     constructor() public {

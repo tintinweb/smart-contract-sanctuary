@@ -50,7 +50,7 @@ contract ZenswapDistribution is Ownable {
   }
 
     /**
-     * Withdraw an &quot;amount&quot; of available tokens in the contract
+     * Withdraw an "amount" of available tokens in the contract
      * 
      */
     function withdrawToken(address _address, uint256 _amount) public onlyOwner {

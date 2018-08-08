@@ -57,7 +57,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -420,8 +420,8 @@ contract GambioToken is CappedToken {
 
   using SafeMath for uint256;
 
-  string public name = &quot;GMB&quot;;
-  string public symbol = &quot;GMB&quot;;
+  string public name = "GMB";
+  string public symbol = "GMB";
   uint8 public decimals = 18;
 
   event Burn(address indexed burner, uint256 value);

@@ -1,7 +1,7 @@
 contract PLCCToken {
 
-    string public name = &quot;Picture Library Copyright Coin&quot;;          //  token name
-    string public symbol = &quot;PLCC&quot;;           //  token symbol
+    string public name = "Picture Library Copyright Coin";          //  token name
+    string public symbol = "PLCC";           //  token symbol
     uint256 public decimals = 8;            //  token digit
 
     mapping (address => uint256) public balanceOf;

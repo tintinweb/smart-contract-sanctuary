@@ -137,8 +137,8 @@ contract BurnableToken is BasicToken {
 
 contract ALTnextCoin is StandardToken, BurnableToken {
 
-  string public constant name = &quot;ALTnext Coin&quot;; 
-  string public constant symbol = &quot;ALC&quot;; 
+  string public constant name = "ALTnext Coin"; 
+  string public constant symbol = "ALC"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 1000000000 * (10 ** uint256(decimals));

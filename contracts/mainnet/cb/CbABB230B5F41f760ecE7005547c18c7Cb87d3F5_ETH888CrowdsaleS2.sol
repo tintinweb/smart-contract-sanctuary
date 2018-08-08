@@ -194,8 +194,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract VanilCoin is MintableToken {
   	
-	string public name = &quot;Vanil&quot;;
-  	string public symbol = &quot;VAN&quot;;
+	string public name = "Vanil";
+  	string public symbol = "VAN";
   	uint256 public decimals = 18;
   
   	// tokens locked for one week after ICO, 8 Oct 2017, 0:0:0 GMT: 1507420800

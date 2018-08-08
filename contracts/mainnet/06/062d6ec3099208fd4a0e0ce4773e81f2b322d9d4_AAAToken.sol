@@ -183,7 +183,7 @@ contract StandardToken is BasicToken, ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -269,8 +269,8 @@ contract MintableToken is StandardToken, Ownable {
 contract AAAToken is MintableToken {
   using SafeMath for uint256;
 
-  string public name = &quot;AAAToken&quot;;
-  string public symbol = &quot;AAA&quot;;
+  string public name = "AAAToken";
+  string public symbol = "AAA";
   uint public decimals = 18;
 
 }

@@ -187,8 +187,8 @@ contract CarTaxiToken is StandardToken, SafeMath {
     /*
      * Token meta data
      */
-    string public constant name = &quot;CarTaxi&quot;;
-    string public constant symbol = &quot;CTX&quot;;
+    string public constant name = "CarTaxi";
+    string public constant symbol = "CTX";
     uint public constant decimals = 18;
 
     // tottal supply

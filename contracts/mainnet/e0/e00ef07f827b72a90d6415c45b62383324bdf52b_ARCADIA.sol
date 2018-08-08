@@ -113,8 +113,8 @@ contract ARCADIA is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ARCADIA() public {
-        symbol = &quot;XGS&quot;;
-        name = &quot;ARCADIA COIN&quot;;
+        symbol = "XGS";
+        name = "ARCADIA COIN";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x4a74c80244A7AEcC865Ece725941EbD6aA335830] = _totalSupply;

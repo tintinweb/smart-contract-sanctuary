@@ -34,7 +34,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -151,7 +151,7 @@ contract KYCBase {
         private returns (bool)
     {
         // check the signature
-        bytes32 hash = sha256(&quot;Eidoo icoengine authorization&quot;, address(0), buyerAddress, buyerId, maxAmount); //replaced this with address(0);
+        bytes32 hash = sha256("Eidoo icoengine authorization", address(0), buyerAddress, buyerId, maxAmount); //replaced this with address(0);
         address signer = ecrecover(hash, v, r, s);
         if (!isKycSigner[signer]) {
             revert();
@@ -588,7 +588,7 @@ contract TokenSale is Ownable {
     }
     
     function tokenValueInEther(uint256 _oneTokenInFiatWei) public view returns(uint256 tknValue) {
-        uint256 oneEtherInUsd = rateContract.readRate(&quot;usd&quot;);
+        uint256 oneEtherInUsd = rateContract.readRate("usd");
         tknValue = _oneTokenInFiatWei.mul(10 ** uint256(decimals)).div(oneEtherInUsd);
         return tknValue;
     } 

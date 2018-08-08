@@ -234,7 +234,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -373,8 +373,8 @@ contract PausableToken is StandardToken, Pausable {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 contract ClockworkToken is PausableToken {
-    string public name = &quot;clockworkPi&quot;;
-    string public symbol = &quot;CPI&quot;;
+    string public name = "clockworkPi";
+    string public symbol = "CPI";
     uint public decimals = 18;
     uint public initialSupply = 31415926;
 

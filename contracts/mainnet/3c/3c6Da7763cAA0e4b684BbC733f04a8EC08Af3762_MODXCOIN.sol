@@ -56,9 +56,9 @@ contract ERC20Standard {
 }
 
 contract MODXCOIN is ERC20Standard {
-	string public name = &quot;MODEL-X-coin&quot;;
+	string public name = "MODEL-X-coin";
 	uint8 public decimals = 8;
-	string public symbol = &quot;MODX&quot;;
+	string public symbol = "MODX";
 	uint public totalSupply = 2100000000000000;
 	    
 	function MODXCOIN() {

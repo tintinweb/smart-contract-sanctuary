@@ -18,8 +18,8 @@ contract RNDInvestor {
     mapping (address => mapping (address => uint256)) allowed;
 
     string public standard = &#39;Random 1.1&#39;;
-    string public constant name = &quot;Random Investor Token&quot;;
-    string public constant symbol = &quot;RINVEST&quot;;
+    string public constant name = "Random Investor Token";
+    string public constant symbol = "RINVEST";
     uint   public constant decimals = 0;
     uint   public constant totalSupply = 2500;
     uint   public raised = 0;

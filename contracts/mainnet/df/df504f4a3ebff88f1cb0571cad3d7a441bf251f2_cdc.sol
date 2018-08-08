@@ -175,7 +175,7 @@ contract owned {
 
     bool public freeze=true;
 
-    function cdc() TokenERC20(1000000000,&quot;car data chain&quot;,&quot;CDC&quot;) public {}
+    function cdc() TokenERC20(1000000000,"car data chain","CDC") public {}
 
     function _transfer(address _from, address _to, uint _value) internal {
         require (freeze);

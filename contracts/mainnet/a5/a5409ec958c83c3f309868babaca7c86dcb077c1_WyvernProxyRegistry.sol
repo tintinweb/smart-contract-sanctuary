@@ -167,7 +167,7 @@ contract ProxyRegistry is Ownable {
         returns (OwnableDelegateProxy proxy)
     {
         require(proxies[msg.sender] == address(0));
-        proxy = new OwnableDelegateProxy(msg.sender, delegateProxyImplementation, abi.encodeWithSignature(&quot;initialize(address,address)&quot;, msg.sender, address(this)));
+        proxy = new OwnableDelegateProxy(msg.sender, delegateProxyImplementation, abi.encodeWithSignature("initialize(address,address)", msg.sender, address(this)));
         proxies[msg.sender] = proxy;
         return proxy;
     }
@@ -176,7 +176,7 @@ contract ProxyRegistry is Ownable {
 
 contract WyvernProxyRegistry is ProxyRegistry {
 
-    string public constant name = &quot;Project Wyvern Proxy Registry&quot;;
+    string public constant name = "Project Wyvern Proxy Registry";
 
     /* Whether the initial auth address has been set. */
     bool public initialAddressSet = false;

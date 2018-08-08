@@ -229,8 +229,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract SimpleToken is StandardToken {
 
-  string public constant name = &quot;AirdropMadness&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;ADM&quot;; // solium-disable-line uppercase
+  string public constant name = "AirdropMadness"; // solium-disable-line uppercase
+  string public constant symbol = "ADM"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));

@@ -6,7 +6,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -291,7 +291,7 @@ contract MultiVesting is Ownable, Destroyable {
             beneficiary.duration = 0;
             beneficiary.revoked = false;
             beneficiary.revocable = false;
-            beneficiary.description = &quot;&quot;;
+            beneficiary.description = "";
         }
         addresses.length = 0;
 

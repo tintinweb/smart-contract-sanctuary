@@ -205,8 +205,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract Token is StandardToken {
-    string public constant name = &quot;TOKPIE&quot;;
-    string public constant symbol = &quot;TKP&quot;;
+    string public constant name = "TOKPIE";
+    string public constant symbol = "TKP";
     uint8 public constant decimals = 18;
 
     function Token(address _addr, uint256 value) public {

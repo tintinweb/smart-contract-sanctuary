@@ -159,8 +159,8 @@ contract StandardToken is Erc,owned{
 
 //contract
 contract SOC is StandardToken {
-    string public name = &quot;CADT Token&quot;;
-    string public symbol = &quot;CADT&quot;;
+    string public name = "CADT Token";
+    string public symbol = "CADT";
     uint public decimals = 8;
     uint public INITIAL_SUPPLY = 50000000000000000; // Initial supply is 500,000,000 SOC
 

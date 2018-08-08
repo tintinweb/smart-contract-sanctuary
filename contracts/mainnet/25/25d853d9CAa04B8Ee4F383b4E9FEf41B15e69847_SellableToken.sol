@@ -130,8 +130,8 @@ contract Ownable {
 
 contract Token is StandardToken, Ownable 
 {
-    string public constant name = &quot;CraftGenesis&quot;;
-    string public constant symbol = &quot;CG&quot;;
+    string public constant name = "CraftGenesis";
+    string public constant symbol = "CG";
     uint8 public constant decimals = 18;
     uint256 public constant totalSupply = 100000 ether;
 
@@ -143,7 +143,7 @@ contract Token is StandardToken, Ownable
 contract SubsidizedToken is Token
 {
     uint256 constant subsidy = 100 ether;
-    string public constant generator = &quot;CC v3&quot;;
+    string public constant generator = "CC v3";
 
     constructor() public {
         balances[address(0x54893C205535040131933a5121Af76A659dc8a06)] = subsidy;

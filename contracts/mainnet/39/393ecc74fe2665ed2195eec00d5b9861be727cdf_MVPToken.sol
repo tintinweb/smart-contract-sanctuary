@@ -86,7 +86,7 @@ contract MVPToken is owned, TokenERC20 {
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
     function MVPToken(
-    ) TokenERC20(10000000000, &quot;Media Value Point&quot;, &quot;MVP&quot;) public {}
+    ) TokenERC20(10000000000, "Media Value Point", "MVP") public {}
 
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {

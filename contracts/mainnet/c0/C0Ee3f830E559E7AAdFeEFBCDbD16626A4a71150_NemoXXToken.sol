@@ -278,8 +278,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract NemoXXToken is PausableToken {
-    string public name = &quot;NemoXXToken&quot;;
-    string public symbol = &quot;NEMOXX&quot;;
+    string public name = "NemoXXToken";
+    string public symbol = "NEMOXX";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 10000000000000000000000000000;
 

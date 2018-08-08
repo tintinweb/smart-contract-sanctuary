@@ -82,8 +82,8 @@ contract Prismacoin is ERC20Interface, Owned, SafeMath {
 
 
     function Prismacoin() public {
-        symbol = &quot;PRIS&quot;;
-        name = &quot;Prismacoin&quot;;
+        symbol = "PRIS";
+        name = "Prismacoin";
         decimals = 18;
         _totalSupply = 19000000000000000000000000;
         balances[0x29B80F75900cC7F7BCe06D8282D64f6949c3a7f2] = _totalSupply;

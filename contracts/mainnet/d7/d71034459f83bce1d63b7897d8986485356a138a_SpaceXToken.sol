@@ -174,9 +174,9 @@ contract SpaceXToken is ERC20Interface, Owned, Pausable {
         startTimestamp = 1527080400;
         endTimeStamp = 1529672400;
         fundsWallet = owner;
-        name = &quot;SpaceXToken&quot;;                                     // Set the name for display purposes (CHANGE THIS)
+        name = "SpaceXToken";                                     // Set the name for display purposes (CHANGE THIS)
         decimals = 0;                                               // numberOfTokens of decimals for display purposes (CHANGE THIS)
-        symbol = &quot;SCX&quot;;                       // symbol for token
+        symbol = "SCX";                       // symbol for token
         _totalSupply = 4000 * 10**uint(decimals);       // total supply of tokens 
         balances[owner] = _totalSupply;               // assigning all tokens to owner
         tokensSold = 0;
@@ -294,13 +294,13 @@ contract SpaceXToken is ERC20Interface, Owned, Pausable {
         
         // All the required conditions for the sale of token
         
-        require(now >= startTimestamp , &quot;Sale has not started yet.&quot;);
-        require(now <= endTimeStamp, &quot;Sale has ended.&quot;);
-        require(balances[fundsWallet] >= numberOfTokens , &quot;There are no more tokens to be sold.&quot; );
-        require(numberOfTokens >= 1 , &quot;You must buy 1 or more tokens.&quot;);
-        require(numberOfTokens <= 10 , &quot;You must buy at most 10 tokens in a single purchase.&quot;);
+        require(now >= startTimestamp , "Sale has not started yet.");
+        require(now <= endTimeStamp, "Sale has ended.");
+        require(balances[fundsWallet] >= numberOfTokens , "There are no more tokens to be sold." );
+        require(numberOfTokens >= 1 , "You must buy 1 or more tokens.");
+        require(numberOfTokens <= 10 , "You must buy at most 10 tokens in a single purchase.");
         require(tokensSold.add(numberOfTokens) <= _totalSupply);
-        require(tokensSold<3700, &quot;There are no more tokens to be sold.&quot;);
+        require(tokensSold<3700, "There are no more tokens to be sold.");
         
         // Price step function
         

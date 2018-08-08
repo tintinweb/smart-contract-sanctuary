@@ -2,9 +2,9 @@ pragma solidity ^0.4.18;
 
 contract SafePromo {
 
-	string public url = &quot;http://ecos.ee&quot;;
-	string public name = &quot;ECOS PROMO&quot;;
-	string public symbol = &quot;ECOS&quot;;
+	string public url = "http://ecos.ee";
+	string public name = "ECOS PROMO";
+	string public symbol = "ECOS";
 	address owner;
 	uint256 public totalSupply;
 

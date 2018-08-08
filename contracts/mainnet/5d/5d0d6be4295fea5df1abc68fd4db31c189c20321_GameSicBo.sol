@@ -31,7 +31,7 @@ contract BaseGame {
     using SafeMath for uint256;
 
     string public officialGameUrl;
-    string public gameName = &quot;GameSicBo&quot;;
+    string public gameName = "GameSicBo";
     uint public gameType = 2003;
 
     function depositToken(uint256 _amount) public;

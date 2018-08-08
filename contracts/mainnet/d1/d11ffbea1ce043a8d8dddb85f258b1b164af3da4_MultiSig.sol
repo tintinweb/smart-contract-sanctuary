@@ -47,7 +47,7 @@ contract MultiSig
   function sendsignature() internal
   {
        // check if these signatures are authorised
-        require((msg.sender == CONTRACT_SIGNATURE1 || msg.sender == CONTRACT_SIGNATURE2));//, &quot;Only signatories can sign&quot;);
+        require((msg.sender == CONTRACT_SIGNATURE1 || msg.sender == CONTRACT_SIGNATURE2));//, "Only signatories can sign");
         
         // assign signature
         uint256 timestamp = block.timestamp;
@@ -57,17 +57,17 @@ contract MultiSig
   // inserted for paranoia but may need to change gas prices in future
   function SetGasLimit(uint256 newGasLimit) public
   {
-      require((msg.sender == CONTRACT_SIGNATURE1 || msg.sender == CONTRACT_SIGNATURE2));//, &quot;Only signatories can call&quot;);
+      require((msg.sender == CONTRACT_SIGNATURE1 || msg.sender == CONTRACT_SIGNATURE2));//, "Only signatories can call");
       GAS_PRICE_LIMIT = newGasLimit;                       // Gas limit default 200 gwei
   }
     
   // implicitly calls spend - if both signatures have signed we then spend
   function spendlarge(uint256 _to, uint256 _main, uint256 _fraction) public returns (bool valid)
   {
-        require( _to != 0x0);//, &quot;Must send to valid address&quot;);
-        require( _main<= MAX_DAILY_COSIGN_SEND);//, &quot;Cannot spend more than 500 eth&quot;);
-        require( _fraction< (WHOLE_ETHER/FRACTION_ETHER));//, &quot;Fraction must be less than 10000&quot;);
-        require (tx.gasprice <= GAS_PRICE_LIMIT);//, &quot;tx.gasprice exceeds limit&quot;);
+        require( _to != 0x0);//, "Must send to valid address");
+        require( _main<= MAX_DAILY_COSIGN_SEND);//, "Cannot spend more than 500 eth");
+        require( _fraction< (WHOLE_ETHER/FRACTION_ETHER));//, "Fraction must be less than 10000");
+        require (tx.gasprice <= GAS_PRICE_LIMIT);//, "tx.gasprice exceeds limit");
         // usually called after sign but will work if top level function is called by both parties
         sendsignature();
         
@@ -89,10 +89,10 @@ contract MultiSig
             valid2=1;
         }
         
-        if (valid1==1 && valid2==1) //&quot;Both signatures must sign&quot;);
+        if (valid1==1 && valid2==1) //"Both signatures must sign");
         {
             // if this was called in less than 24 hours then don&#39;t allow spend
-            require( (currentTime - mLastSpend[msg.sender]) > DAY_LENGTH);//, &quot;You can&#39;t call this more than once per day per signature&quot;);
+            require( (currentTime - mLastSpend[msg.sender]) > DAY_LENGTH);//, "You can&#39;t call this more than once per day per signature");
         
             if (mAmount1 == mAmount2)
             {
@@ -119,16 +119,16 @@ contract MultiSig
   // used for individual wallet holders to take a small amount of ether
   function takedaily(address _to) public returns (bool valid)
   {
-    require( _to != 0x0);//, &quot;Must send to valid address&quot;);
-    require (tx.gasprice <= GAS_PRICE_LIMIT);//, &quot;tx.gasprice exceeds limit&quot;);
+    require( _to != 0x0);//, "Must send to valid address");
+    require (tx.gasprice <= GAS_PRICE_LIMIT);//, "tx.gasprice exceeds limit");
     
     // check if these signatures are authorised
-    require((msg.sender == CONTRACT_SIGNATURE1 || msg.sender == CONTRACT_SIGNATURE2));//, &quot;Only signatories can sign&quot;);
+    require((msg.sender == CONTRACT_SIGNATURE1 || msg.sender == CONTRACT_SIGNATURE2));//, "Only signatories can sign");
         
     uint256 currentTime = block.timestamp;
         
     // if this was called in less than 24 hours then don&#39;t allow spend
-    require(currentTime - mLastSpend[msg.sender] > DAY_LENGTH);//, &quot;You can&#39;t call this more than once per day per signature&quot;);
+    require(currentTime - mLastSpend[msg.sender] > DAY_LENGTH);//, "You can&#39;t call this more than once per day per signature");
     
     // transfer eth to the destination
     _to.transfer(MAX_DAILY_SOLO_SPEND);
@@ -141,9 +141,9 @@ contract MultiSig
   // implicitly calls spend - if both signatures have signed we then spend
   function spendtokens(ERC20Basic contractaddress, uint256 _to, uint256 _main, uint256 _fraction) public returns (bool valid)
   {
-        require( _to != 0x0);//, &quot;Must send to valid address&quot;);
-        require(_main <= MAX_DAILY_TOKEN_COSIGN_SPEND);// , &quot;Cannot spend more than 150000000 per day&quot;);
-        require(_fraction< (WHOLE_ETHER/FRACTION_ETHER));//, &quot;Fraction must be less than 10000&quot;);
+        require( _to != 0x0);//, "Must send to valid address");
+        require(_main <= MAX_DAILY_TOKEN_COSIGN_SPEND);// , "Cannot spend more than 150000000 per day");
+        require(_fraction< (WHOLE_ETHER/FRACTION_ETHER));//, "Fraction must be less than 10000");
         
         // usually called after sign but will work if top level function is called by both parties
         sendsignature();
@@ -166,10 +166,10 @@ contract MultiSig
             valid2=1;
         }
         
-        if (valid1==1 && valid2==1) //&quot;Both signatures must sign&quot;);
+        if (valid1==1 && valid2==1) //"Both signatures must sign");
         {
             // if this was called in less than 24 hours then don&#39;t allow spend
-            require(currentTime - mLastSpend[msg.sender] > DAY_LENGTH);//, &quot;You can&#39;t call this more than once per day per signature&quot;);
+            require(currentTime - mLastSpend[msg.sender] > DAY_LENGTH);//, "You can&#39;t call this more than once per day per signature");
         
             if (mAmount1 == mAmount2)
             {
@@ -198,15 +198,15 @@ contract MultiSig
   // used to take a small amount of daily tokens
   function taketokendaily(ERC20Basic contractaddress, uint256 _to) public returns (bool valid)
   {
-    require( _to != 0x0);//, &quot;Must send to valid address&quot;);
+    require( _to != 0x0);//, "Must send to valid address");
     
     // check if these signatures are authorised
-    require((msg.sender == CONTRACT_SIGNATURE1 || msg.sender == CONTRACT_SIGNATURE2));//, &quot;Only signatories can sign&quot;);
+    require((msg.sender == CONTRACT_SIGNATURE1 || msg.sender == CONTRACT_SIGNATURE2));//, "Only signatories can sign");
         
     uint256 currentTime = block.timestamp;
         
     // if this was called in less than 24 hours then don&#39;t allow spend
-    require(currentTime - mLastSpend[msg.sender] > DAY_LENGTH);//, &quot;You can&#39;t call this more than once per day per signature&quot;);
+    require(currentTime - mLastSpend[msg.sender] > DAY_LENGTH);//, "You can&#39;t call this more than once per day per signature");
     
     // transfer eth to the destination
     contractaddress.transfer(address(_to), MAX_DAILY_TOKEN_SOLO_SPEND);

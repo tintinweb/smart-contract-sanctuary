@@ -262,8 +262,8 @@ contract StandardToken is ERC20, BasicToken {
  * `StandardToken` functions.
  */
 contract SCALAToken is StandardToken {
-  string public constant name = &quot;SCALA&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;SCALA&quot;; // solium-disable-line uppercase
+  string public constant name = "SCALA"; // solium-disable-line uppercase
+  string public constant symbol = "SCALA"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 288000000 * (10 ** uint256(decimals));

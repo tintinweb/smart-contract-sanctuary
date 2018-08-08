@@ -63,8 +63,8 @@ contract SafeWalletCoin is ERC20Basic {
   
   using SafeMath for uint256;
   
-  string public name = &quot;SafeWallet Coin&quot;;
-  string public symbol = &quot;SWC&quot;;
+  string public name = "SafeWallet Coin";
+  string public symbol = "SWC";
   uint8 public decimals = 0;
   uint256 public airDropNum = 1000;
   uint256 public totalSupply = 100000000;

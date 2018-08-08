@@ -510,8 +510,8 @@ contract C4FToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function C4FToken() public {
-        symbol          = &quot;C4F&quot;;
-        name            = &quot;C4F FavorCoins&quot;;
+        symbol          = "C4F";
+        name            = "C4F FavorCoins";
         decimals        = 18;
         
         _totalSupply    = 100000000000 * 10**uint(decimals);

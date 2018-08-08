@@ -7,7 +7,7 @@ pragma solidity ^0.4.20;
 
 /**
  * ERC-20 standard token interface, as defined
- * <a href=&quot;https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md&quot;>here</a>.
+ * <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md">here</a>.
  */
 contract Token {
   /**
@@ -281,7 +281,7 @@ contract OrgonToken is AbstractToken {
    * @return name of this token
    */
   function name () public pure returns (string) {
-    return &quot;Orgon&quot;;
+    return "Orgon";
   }
 
   /**
@@ -290,7 +290,7 @@ contract OrgonToken is AbstractToken {
    * @return symbol of this token
    */
   function symbol () public pure returns (string) {
-    return &quot;ORGN&quot;;
+    return "ORGN";
   }
 
   /**

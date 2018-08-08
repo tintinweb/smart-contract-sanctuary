@@ -113,8 +113,8 @@ contract AICH is UnboundedRegularToken {
 
     uint public totalSupply = 2*10**27;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;Artificial Intelligence China&quot;;
-    string constant public symbol = &quot;AICH&quot;;
+    string constant public name = "Artificial Intelligence China";
+    string constant public symbol = "AICH";
 
     function AICH() {
         balances[msg.sender] = totalSupply;

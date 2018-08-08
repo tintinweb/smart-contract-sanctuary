@@ -3,7 +3,7 @@ pragma solidity^0.4.17;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable{
   address public owner;
@@ -195,10 +195,10 @@ contract VuePayToken is StandardToken, Ownable {
 	event VUPRefundedForWei(address indexed _refunder, uint256 _amountOfWei);
 	event print(uint256 vup);
 	// Token data
-	string public constant name = &quot;VuePay Token&quot;;
-	string public constant symbol = &quot;VUP&quot;;
+	string public constant name = "VuePay Token";
+	string public constant symbol = "VUP";
 	uint256 public constant decimals = 18;  // Since our decimals equals the number of wei per ether, we needn&#39;t multiply sent values when converting between VUP and ETH.
-	string public version = &quot;1.0&quot;;
+	string public version = "1.0";
 	
 	// Addresses and contracts
 	address public executor;

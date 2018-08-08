@@ -191,8 +191,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract HashToken is StandardToken {
 
-    string public constant name = &quot;Hash Token&quot;;
-    string public constant symbol = &quot;HSH&quot;;
+    string public constant name = "Hash Token";
+    string public constant symbol = "HSH";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 900 * 10**6 * (10**uint256(decimals));
     uint256 public weiRaised;

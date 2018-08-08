@@ -153,8 +153,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract IlumX is StandardToken {
 
-  string public constant name = &quot;Illuminati Xtra Funds&quot;;
-  string public constant symbol = &quot;IlumX&quot;;
+  string public constant name = "Illuminati Xtra Funds";
+  string public constant symbol = "IlumX";
   uint256 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 940000000 * 10**18;

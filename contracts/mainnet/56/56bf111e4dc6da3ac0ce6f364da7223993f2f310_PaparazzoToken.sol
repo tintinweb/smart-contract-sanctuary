@@ -84,8 +84,8 @@ contract PaparazzoToken is ERC20Interface, Owned, SafeMath {
 
 
     function PaparazzoToken() public {
-        symbol = &quot;PPZ&quot;;
-        name = &quot;Paparazzo Token&quot;;
+        symbol = "PPZ";
+        name = "Paparazzo Token";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         endDate = now + 10 weeks;

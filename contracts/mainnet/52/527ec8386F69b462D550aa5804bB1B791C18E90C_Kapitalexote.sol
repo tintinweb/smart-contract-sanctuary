@@ -16,9 +16,9 @@ contract Kapitalexote {
     function Kapitalexote() {
 
          initialSupply = 1000000;
-         name =&quot;Kapitalexote&quot;;
+         name ="Kapitalexote";
         decimals = 8;
-         symbol = &quot;KE&quot;;
+         symbol = "KE";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

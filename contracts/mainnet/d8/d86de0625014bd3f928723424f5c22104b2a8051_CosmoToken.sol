@@ -104,8 +104,8 @@ contract CosmoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CosmoToken() public {
-        symbol = &quot;CSM&quot;;
-        name = &quot;CosmoCSM&quot;;
+        symbol = "CSM";
+        name = "CosmoCSM";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x262bd83Edab0b5957aC4f1F4945637e16dbF1D93] = _totalSupply;

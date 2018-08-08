@@ -106,8 +106,8 @@ contract TheBitcoinCenterToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TheBitcoinCenterToken() public {
-        symbol = &quot;TBCT&quot;;
-        name = &quot;TheBitcoinCenter Token&quot;;
+        symbol = "TBCT";
+        name = "TheBitcoinCenter Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000; //1.000.000.000,000000000000000000
         balances[0x0AcF84E75F84234473d28aDd114Fe3Be25EE90FC] = _totalSupply;

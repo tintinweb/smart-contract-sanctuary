@@ -41,8 +41,8 @@ library SafeMath {
 contract NebToken is ERC20 {
   using SafeMath for uint256;
 
-  string public name = &quot;Nebula Network Token&quot;;
-  string public symbol = &quot;NEB&quot;;
+  string public name = "Nebula Network Token";
+  string public symbol = "NEB";
   uint8 public decimals = 0;
   address public treasury;
   uint256 public totalSupply;

@@ -231,8 +231,8 @@ contract GotecoinToken is PausableToken {
     uint public INITIAL_SUPPLY = 75000000000000000;
 
     function GotecoinToken() public {
-        name = &quot;Gotecoin&quot;;
-        symbol = &quot;GTC&quot;;
+        name = "Gotecoin";
+        symbol = "GTC";
         decimals = 8;
         totalSupply = INITIAL_SUPPLY;
         balances[msg.sender] = INITIAL_SUPPLY;

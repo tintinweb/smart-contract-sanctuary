@@ -143,7 +143,7 @@ contract SwissCryptoExchange {
     feeTake = _feeTake;
     feeRebate = _feeRebate;
 
-    // Validate &quot;ethereum address&quot;.
+    // Validate "ethereum address".
     whitelistedTokens[0x0] = true;
   }
 
@@ -706,7 +706,7 @@ contract SwissCryptoExchange {
   {
     return (
       orders[user][hash] ||
-      ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), v, r, s) == user
+      ecrecover(keccak256("\x19Ethereum Signed Message:\n32", hash), v, r, s) == user
     );
   }
 }

@@ -72,8 +72,8 @@ contract CiceroToken is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     function CiceroToken() public {
-        symbol = &quot;CCR&quot;;
-        name = &quot;Cicero Token&quot;;
+        symbol = "CCR";
+        name = "Cicero Token";
         decimals = 18;
         _totalSupply = 25000000;
         _totalSupply = _totalSupply.mul(10 ** uint(decimals));

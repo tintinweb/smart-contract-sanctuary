@@ -184,7 +184,7 @@ contract DSTokenBase is ERC20, DSMath {
 
 contract DSToken is DSTokenBase(100000000000000000000000), DSStop {
 
-    string  public  symbol = &quot;ICT&quot;;
+    string  public  symbol = "ICT";
     uint8  public  decimals = 18; // standard token precision. override to customize
 
     event Mint(address indexed guy, uint wad);
@@ -264,7 +264,7 @@ contract DSToken is DSTokenBase(100000000000000000000000), DSStop {
     }
 
     // Optional token name
-    string   public  name = &quot;Ideal China Token&quot;;
+    string   public  name = "Ideal China Token";
 
     function setName(string name_) public auth {
         name = name_;

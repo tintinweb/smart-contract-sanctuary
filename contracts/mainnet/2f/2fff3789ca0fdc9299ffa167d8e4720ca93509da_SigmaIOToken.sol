@@ -48,7 +48,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -163,8 +163,8 @@ contract SigmaIOToken is ERC20, Pausable {
 
   function SigmaIOToken() public {
     totalSupply_ = 1000000000000000000;
-    name = &quot;SigmaIO Token&quot;;
-    symbol = &quot;SIGM&quot;;
+    name = "SigmaIO Token";
+    symbol = "SIGM";
     decimals = 8;
     balances[msg.sender] = totalSupply_;
   }

@@ -113,8 +113,8 @@ contract GuoCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GuoCoin() public {
-        symbol = &quot;郭&quot;;
-        name = &quot;郭氏 Guo Global Family Coin&quot;;
+        symbol = "郭";
+        name = "郭氏 Guo Global Family Coin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x116312c3471C2e7C34C52782D0399eBE601f3F30] = _totalSupply;

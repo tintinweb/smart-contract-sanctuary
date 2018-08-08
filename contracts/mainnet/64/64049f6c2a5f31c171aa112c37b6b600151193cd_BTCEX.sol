@@ -113,8 +113,8 @@ contract BTCEX is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function BTCEX() public {
-        symbol = &quot;BTCEX&quot;;
-        name = &quot;Bitcoin Executives&quot;;
+        symbol = "BTCEX";
+        name = "Bitcoin Executives";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

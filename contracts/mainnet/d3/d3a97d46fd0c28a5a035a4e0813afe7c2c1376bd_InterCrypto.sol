@@ -196,7 +196,7 @@ contract InterCrypto is Ownable, myUsingOracalize {
         Transaction memory transaction = transactions[transactionID];
         
         if( bytes(result).length == 0 ) {
-            TransactionAborted(transactionID, &quot;Oracalize return value was invalid, this is probably due to incorrect sendToOtherBlockchain() argments&quot;);
+            TransactionAborted(transactionID, "Oracalize return value was invalid, this is probably due to incorrect sendToOtherBlockchain() argments");
             recoverable[transaction.returnAddress] += transaction.amount;
             transaction.amount = 0;
         }
@@ -208,7 +208,7 @@ contract InterCrypto is Ownable, myUsingOracalize {
             if (depositAddress.send(sendAmount))
                 TransactionSentToShapeShift(transactionID, transaction.returnAddress, depositAddress, sendAmount);
             else {
-                TransactionAborted(transactionID, &quot;transaction to address returned by Oracalize failed&quot;);
+                TransactionAborted(transactionID, "transaction to address returned by Oracalize failed");
                 recoverable[transaction.returnAddress] += sendAmount;
             }
         }
@@ -223,7 +223,7 @@ contract InterCrypto is Ownable, myUsingOracalize {
             require(msg.sender == transaction.returnAddress);
             recoverable[msg.sender] += transaction.amount;
             transaction.amount = 0;
-            TransactionAborted(transactionID, &quot;transaction cancelled by creator&quot;);
+            TransactionAborted(transactionID, "transaction cancelled by creator");
         }
     }
 
@@ -245,19 +245,19 @@ contract InterCrypto is Ownable, myUsingOracalize {
     // Request for a ShapeShift transaction to be made
     function engine(string _coinSymbol, string _toAddress, address _returnAddress) internal returns(uint transactionID) {
         // Example arguments:
-        // &quot;ltc&quot;, &quot;LbZcDdMeP96ko85H21TQii98YFF9RgZg3D&quot;   Litecoin
-        // &quot;btc&quot;, &quot;1L8oRijgmkfcZDYA21b73b6DewLtyYs87s&quot;   Bitcoin
-        // &quot;dash&quot;, &quot;Xoopows17idkTwNrMZuySXBwQDorsezQAx&quot;  Dash
-        // &quot;zec&quot;, &quot;t1N7tf1xRxz5cBK51JADijLDWS592FPJtya&quot;  ZCash
-        // &quot;doge&quot;, &quot;DMAFvwTH2upni7eTau8au6Rktgm2bUkMei&quot;   Dogecoin
+        // "ltc", "LbZcDdMeP96ko85H21TQii98YFF9RgZg3D"   Litecoin
+        // "btc", "1L8oRijgmkfcZDYA21b73b6DewLtyYs87s"   Bitcoin
+        // "dash", "Xoopows17idkTwNrMZuySXBwQDorsezQAx"  Dash
+        // "zec", "t1N7tf1xRxz5cBK51JADijLDWS592FPJtya"  ZCash
+        // "doge", "DMAFvwTH2upni7eTau8au6Rktgm2bUkMei"   Dogecoin
         // See https://info.shapeshift.io/about
         // Test symbol pairs using ShapeShift API (shapeshift.io/validateAddress/[address]/[coinSymbol]) or by creating a test
         // transaction first whenever possible before using it with InterCrypto
         
         transactionID = transactionCount++;
 
-        if (!isValidateParameter(_coinSymbol, 6) || !isValidateParameter(_toAddress, 120)) { // Waves smbol is &quot;waves&quot; , Monero integrated addresses are 106 characters
-            TransactionAborted(transactionID, &quot;input parameters are too long or contain invalid symbols&quot;);
+        if (!isValidateParameter(_coinSymbol, 6) || !isValidateParameter(_toAddress, 120)) { // Waves smbol is "waves" , Monero integrated addresses are 106 characters
+            TransactionAborted(transactionID, "input parameters are too long or contain invalid symbols");
             recoverable[msg.sender] += msg.value;
             return;
         }
@@ -268,14 +268,14 @@ contract InterCrypto is Ownable, myUsingOracalize {
             Transaction memory transaction = Transaction(_returnAddress, msg.value-oracalizePrice);
             transactions[transactionID] = transaction;
             
-            // Create post data string like &#39; {&quot;withdrawal&quot;:&quot;LbZcDdMeP96ko85H21TQii98YFF9RgZg3D&quot;,&quot;pair&quot;:&quot;eth_ltc&quot;,&quot;returnAddress&quot;:&quot;558999ff2e0daefcb4fcded4c89e07fdf9ccb56c&quot;}&#39;
+            // Create post data string like &#39; {"withdrawal":"LbZcDdMeP96ko85H21TQii98YFF9RgZg3D","pair":"eth_ltc","returnAddress":"558999ff2e0daefcb4fcded4c89e07fdf9ccb56c"}&#39;
             string memory postData = createShapeShiftTransactionPost(_coinSymbol, _toAddress);
 
             // TODO: send custom gasLimit for retrn transaction equal to the exact cost of __callback. Note that this should only be donewhen the contract is finalized
-            bytes32 myQueryId = oraclize_query(&quot;URL&quot;, &quot;json(https://shapeshift.io/shift).deposit&quot;, postData);
+            bytes32 myQueryId = oraclize_query("URL", "json(https://shapeshift.io/shift).deposit", postData);
             
             if (myQueryId == 0) {
-                TransactionAborted(transactionID, &quot;unexpectedly high Oracalize price when calling oracalize_query&quot;);
+                TransactionAborted(transactionID, "unexpectedly high Oracalize price when calling oracalize_query");
                 recoverable[msg.sender] += msg.value-oracalizePrice;
                 transaction.amount = 0;
                 return;
@@ -284,7 +284,7 @@ contract InterCrypto is Ownable, myUsingOracalize {
             TransactionStarted(transactionID);
         }
         else {
-            TransactionAborted(transactionID, &quot;Not enough Ether sent to cover Oracalize fee&quot;);
+            TransactionAborted(transactionID, "Not enough Ether sent to cover Oracalize fee");
             // transactions[transactionID].amount = 0;
             recoverable[msg.sender] += msg.value;
         }
@@ -327,10 +327,10 @@ contract InterCrypto is Ownable, myUsingOracalize {
     }
 
     function createShapeShiftTransactionPost(string _coinSymbol, string _toAddress) internal returns (string sFinal) {
-        string memory s1 = &#39; {&quot;withdrawal&quot;:&quot;&#39;;
-        string memory s3 = &#39;&quot;,&quot;pair&quot;:&quot;eth_&#39;;
-        string memory s5 = &#39;&quot;,&quot;returnAddress&quot;:&quot;&#39;;
-        string memory s7 = &#39;&quot;}&#39;;
+        string memory s1 = &#39; {"withdrawal":"&#39;;
+        string memory s3 = &#39;","pair":"eth_&#39;;
+        string memory s5 = &#39;","returnAddress":"&#39;;
+        string memory s7 = &#39;"}&#39;;
 
         bytes memory bFinal = concatBytes(bytes(s1), bytes(_toAddress), bytes(s3), bytes(_coinSymbol), bytes(s5), bytes(addressToBytes(msg.sender)), bytes(s7));
 
@@ -350,7 +350,7 @@ contract InterCrypto is Ownable, myUsingOracalize {
         uint160 tmp = uint160(_address);
 
         // 40 bytes of space, but actually uses 64 bytes
-        string memory holder = &quot;                                        &quot;;
+        string memory holder = "                                        ";
         bytes memory ret = bytes(holder);
 
         // NOTE: this is written in an expensive way, as out-of-order array access

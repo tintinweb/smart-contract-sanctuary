@@ -49,55 +49,55 @@ contract DigixConstants {
   uint256 constant STATE_ADMIN_FAILURE = 11;
 
   /// interactive contracts
-  bytes32 constant CONTRACT_INTERACTIVE_ASSETS_EXPLORER = &quot;i:asset:explorer&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_DIGIX_DIRECTORY = &quot;i:directory&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE = &quot;i:mp&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_ADMIN = &quot;i:mpadmin&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_POPADMIN = &quot;i:popadmin&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_PRODUCTS_LIST = &quot;i:products&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_TOKEN = &quot;i:token&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_BULK_WRAPPER = &quot;i:bulk-wrapper&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_CONFIG = &quot;i:token:config&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_INFORMATION = &quot;i:token:information&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_INFORMATION = &quot;i:mp:information&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_IDENTITY = &quot;i:identity&quot;;
+  bytes32 constant CONTRACT_INTERACTIVE_ASSETS_EXPLORER = "i:asset:explorer";
+  bytes32 constant CONTRACT_INTERACTIVE_DIGIX_DIRECTORY = "i:directory";
+  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE = "i:mp";
+  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_ADMIN = "i:mpadmin";
+  bytes32 constant CONTRACT_INTERACTIVE_POPADMIN = "i:popadmin";
+  bytes32 constant CONTRACT_INTERACTIVE_PRODUCTS_LIST = "i:products";
+  bytes32 constant CONTRACT_INTERACTIVE_TOKEN = "i:token";
+  bytes32 constant CONTRACT_INTERACTIVE_BULK_WRAPPER = "i:bulk-wrapper";
+  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_CONFIG = "i:token:config";
+  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_INFORMATION = "i:token:information";
+  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_INFORMATION = "i:mp:information";
+  bytes32 constant CONTRACT_INTERACTIVE_IDENTITY = "i:identity";
 
   /// controller contracts
-  bytes32 constant CONTRACT_CONTROLLER_ASSETS = &quot;c:asset&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_ASSETS_RECAST = &quot;c:asset:recast&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_ASSETS_EXPLORER = &quot;c:explorer&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_DIGIX_DIRECTORY = &quot;c:directory&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE = &quot;c:mp&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE_ADMIN = &quot;c:mpadmin&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_PRODUCTS_LIST = &quot;c:products&quot;;
+  bytes32 constant CONTRACT_CONTROLLER_ASSETS = "c:asset";
+  bytes32 constant CONTRACT_CONTROLLER_ASSETS_RECAST = "c:asset:recast";
+  bytes32 constant CONTRACT_CONTROLLER_ASSETS_EXPLORER = "c:explorer";
+  bytes32 constant CONTRACT_CONTROLLER_DIGIX_DIRECTORY = "c:directory";
+  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE = "c:mp";
+  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE_ADMIN = "c:mpadmin";
+  bytes32 constant CONTRACT_CONTROLLER_PRODUCTS_LIST = "c:products";
 
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_APPROVAL = &quot;c:token:approval&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_CONFIG = &quot;c:token:config&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_INFO = &quot;c:token:info&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_TRANSFER = &quot;c:token:transfer&quot;;
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_APPROVAL = "c:token:approval";
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_CONFIG = "c:token:config";
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_INFO = "c:token:info";
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_TRANSFER = "c:token:transfer";
 
-  bytes32 constant CONTRACT_CONTROLLER_JOB_ID = &quot;c:jobid&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_IDENTITY = &quot;c:identity&quot;;
+  bytes32 constant CONTRACT_CONTROLLER_JOB_ID = "c:jobid";
+  bytes32 constant CONTRACT_CONTROLLER_IDENTITY = "c:identity";
 
   /// storage contracts
-  bytes32 constant CONTRACT_STORAGE_ASSETS = &quot;s:asset&quot;;
-  bytes32 constant CONTRACT_STORAGE_ASSET_EVENTS = &quot;s:asset:events&quot;;
-  bytes32 constant CONTRACT_STORAGE_DIGIX_DIRECTORY = &quot;s:directory&quot;;
-  bytes32 constant CONTRACT_STORAGE_MARKETPLACE = &quot;s:mp&quot;;
-  bytes32 constant CONTRACT_STORAGE_PRODUCTS_LIST = &quot;s:products&quot;;
-  bytes32 constant CONTRACT_STORAGE_GOLD_TOKEN = &quot;s:goldtoken&quot;;
-  bytes32 constant CONTRACT_STORAGE_JOB_ID = &quot;s:jobid&quot;;
-  bytes32 constant CONTRACT_STORAGE_IDENTITY = &quot;s:identity&quot;;
+  bytes32 constant CONTRACT_STORAGE_ASSETS = "s:asset";
+  bytes32 constant CONTRACT_STORAGE_ASSET_EVENTS = "s:asset:events";
+  bytes32 constant CONTRACT_STORAGE_DIGIX_DIRECTORY = "s:directory";
+  bytes32 constant CONTRACT_STORAGE_MARKETPLACE = "s:mp";
+  bytes32 constant CONTRACT_STORAGE_PRODUCTS_LIST = "s:products";
+  bytes32 constant CONTRACT_STORAGE_GOLD_TOKEN = "s:goldtoken";
+  bytes32 constant CONTRACT_STORAGE_JOB_ID = "s:jobid";
+  bytes32 constant CONTRACT_STORAGE_IDENTITY = "s:identity";
 
   /// service contracts
-  bytes32 constant CONTRACT_SERVICE_TOKEN_DEMURRAGE = &quot;sv:tdemurrage&quot;;
-  bytes32 constant CONTRACT_SERVICE_MARKETPLACE = &quot;sv:mp&quot;;
-  bytes32 constant CONTRACT_SERVICE_DIRECTORY = &quot;sv:directory&quot;;
+  bytes32 constant CONTRACT_SERVICE_TOKEN_DEMURRAGE = "sv:tdemurrage";
+  bytes32 constant CONTRACT_SERVICE_MARKETPLACE = "sv:mp";
+  bytes32 constant CONTRACT_SERVICE_DIRECTORY = "sv:directory";
 
   /// fees distributors
-  bytes32 constant CONTRACT_DEMURRAGE_FEES_DISTRIBUTOR = &quot;fees:distributor:demurrage&quot;;
-  bytes32 constant CONTRACT_RECAST_FEES_DISTRIBUTOR = &quot;fees:distributor:recast&quot;;
-  bytes32 constant CONTRACT_TRANSFER_FEES_DISTRIBUTOR = &quot;fees:distributor:transfer&quot;;
+  bytes32 constant CONTRACT_DEMURRAGE_FEES_DISTRIBUTOR = "fees:distributor:demurrage";
+  bytes32 constant CONTRACT_RECAST_FEES_DISTRIBUTOR = "fees:distributor:recast";
+  bytes32 constant CONTRACT_TRANSFER_FEES_DISTRIBUTOR = "fees:distributor:transfer";
 }
 
 contract ContractResolver {
@@ -315,10 +315,10 @@ contract MarketplaceCommon is ResolverClient, ACConditions, DigixConstants {
 
 contract DigixConstantsExtras {
     /// storage contracts
-    bytes32 constant CONTRACT_STORAGE_MARKETPLACE_EXTRAS = &quot;s:mp:extras&quot;;
-    bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE_ADMIN_EXTRAS = &quot;c:mpadmin:extras&quot;;
-    bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_V2 = &quot;i:mp:v2&quot;;
-    bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_ADMIN_EXTRAS = &quot;i:mpadmin:extras&quot;;
+    bytes32 constant CONTRACT_STORAGE_MARKETPLACE_EXTRAS = "s:mp:extras";
+    bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE_ADMIN_EXTRAS = "c:mpadmin:extras";
+    bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_V2 = "i:mp:v2";
+    bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_ADMIN_EXTRAS = "i:mpadmin:extras";
 }
 
 contract MarketplaceControllerV2 {
@@ -368,8 +368,8 @@ contract MarketplaceV2 is MarketplaceCommon, DigixConstantsExtras {
   /// @param _signer Address of the DTPO signer
   /// @param _signature Signature of the payload
   /// @return {
-  ///   &quot;_success&quot;: &quot;returns true if operation is successful&quot;,
-  ///   &quot;_purchased_amount&quot;: &quot;DGX nanograms received&quot;
+  ///   "_success": "returns true if operation is successful",
+  ///   "_purchased_amount": "DGX nanograms received"
   /// }
   function purchaseWithEth(uint256 _block_number, uint256 _nonce, uint256 _wei_per_dgx_mg, address _signer, bytes _signature)
            payable
@@ -392,8 +392,8 @@ contract MarketplaceV2 is MarketplaceCommon, DigixConstantsExtras {
   /// @param _signer Address of the DTPO signer
   /// @param _signature Signature of the payload
   /// @return {
-  ///   &quot;_success&quot;: &quot;returns true if operation is successful&quot;,
-  ///   &quot;_purchased_amount&quot;: &quot;DGX nanograms received&quot;
+  ///   "_success": "returns true if operation is successful",
+  ///   "_purchased_amount": "DGX nanograms received"
   /// }
   function purchaseWithDai(uint256 _dai_sent, uint256 _block_number, uint256 _nonce, uint256 _dai_per_ton, address _signer, bytes _signature)
            public

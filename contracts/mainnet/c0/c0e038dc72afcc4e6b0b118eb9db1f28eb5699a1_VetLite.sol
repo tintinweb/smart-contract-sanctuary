@@ -58,8 +58,8 @@ contract VetLite is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;VetLite&quot;;
-    string public constant symbol = &quot;VetLite&quot;;
+    string public constant name = "VetLite";
+    string public constant symbol = "VetLite";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 1000000000e18;

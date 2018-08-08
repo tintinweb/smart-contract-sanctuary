@@ -318,8 +318,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract TitsToken is MintableToken {
-    string public name = &quot;Truth In The Sourcecode&quot;;
-    string public symbol = &quot;TITS&quot;;
+    string public name = "Truth In The Sourcecode";
+    string public symbol = "TITS";
     uint public decimals = 18;
     uint public voitingStartTime;
     address public votedAddress;

@@ -109,8 +109,8 @@ contract BLOCKCURRICO is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function BLOCKCURRICO() public {
-        symbol = &quot;BLCURR&quot;;
-        name = &quot;BLOCKCURR&quot;;
+        symbol = "BLCURR";
+        name = "BLOCKCURR";
         decimals = 18;
         _totalSupply = 55000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

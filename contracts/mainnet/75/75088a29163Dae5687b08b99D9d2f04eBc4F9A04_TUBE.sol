@@ -85,8 +85,8 @@ contract StandardToken is Token {
 
 contract TUBE is SafeMath, StandardToken {
 
-    string public constant name = &quot;MaxiTube preICO Token&quot;;
-    string public constant symbol = &quot;TUBE&quot;;
+    string public constant name = "MaxiTube preICO Token";
+    string public constant symbol = "TUBE";
     uint256 public constant decimals = 18;
     uint256 public constant tokenCreationCap =  40000*10**decimals;
 

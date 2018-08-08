@@ -109,8 +109,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract RGHTC is StandardToken {
-	string public name = &quot;The right coin&quot;; 
-	string public symbol = &quot;RGHTC&quot;;
+	string public name = "The right coin"; 
+	string public symbol = "RGHTC";
 	uint public decimals = 6;
 	uint public INITIAL_SUPPLY = 135000000000000;
 

@@ -118,8 +118,8 @@ contract BYBToken is UnboundedRegularToken {
 
     uint public totalSupply = 20*10**10;
     uint8 constant public decimals = 2;
-    string constant public name = &quot;Bitin Token&quot;;
-    string constant public symbol = &quot;BYB&quot;;
+    string constant public name = "Bitin Token";
+    string constant public symbol = "BYB";
 	address public owner;
 	mapping (address => uint) public freezes;
 

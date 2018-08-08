@@ -231,7 +231,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -353,8 +353,8 @@ contract BurnableMintableToken is BasicToken, Ownable {
 }
 
 contract PAYBUDToken is BurnableMintableToken {
-    string public constant name = &quot;PAYBUD Token&quot;;
-    string public constant symbol = &quot;PAYBUD&quot;;
+    string public constant name = "PAYBUD Token";
+    string public constant symbol = "PAYBUD";
     uint8 public constant decimals = 18;
 
     constructor() public {

@@ -58,7 +58,7 @@ contract EtherSpaceUpgradeInterface {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -444,7 +444,7 @@ contract ERC721Token is ERC721 {
 
 contract EtherSpaceCore is ERC721Token, Ownable, Claimable, Destructible {
 
-  string public url = &quot;https://etherspace.co/&quot;;
+  string public url = "https://etherspace.co/";
 
   using SafeMath for uint256;
 
@@ -547,11 +547,11 @@ contract EtherSpaceCore is ERC721Token, Ownable, Claimable, Destructible {
 
   /* ERC721Metadata */
   function name() external pure returns (string) {
-    return &quot;EtherSpace&quot;;
+    return "EtherSpace";
   }
 
   function symbol() external pure returns (string) {
-    return &quot;ESPC&quot;;
+    return "ESPC";
   }
 
   /* Enable listing of all deeds (alternative to ERC721Enumerable to avoid having to work with arrays). */
@@ -641,7 +641,7 @@ contract EtherSpaceCore is ERC721Token, Ownable, Claimable, Destructible {
       battleWins: 0,
       battleLosses: 0,
       battleStake: 0,
-      upgrades: &quot;\x00\x00\x00\x00\x00&quot;, // Prepared to have 5 different types of upgrades
+      upgrades: "\x00\x00\x00\x00\x00", // Prepared to have 5 different types of upgrades
       isAuction: false,
       auctionPrice: 0
     });

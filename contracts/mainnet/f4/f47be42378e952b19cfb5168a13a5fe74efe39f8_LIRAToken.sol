@@ -1,7 +1,7 @@
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -285,8 +285,8 @@ contract PausableToken is StandardToken, Pausable {
 contract LIRAToken is PausableToken {
   using SafeMath for uint256;
 
-  string public name = &quot;LIRA Token&quot;;
-  string public symbol = &quot;LIT&quot;;
+  string public name = "LIRA Token";
+  string public symbol = "LIT";
   uint public decimals = 18;
 
 

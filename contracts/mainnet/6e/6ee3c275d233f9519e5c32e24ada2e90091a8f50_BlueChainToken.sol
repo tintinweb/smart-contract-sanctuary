@@ -82,8 +82,8 @@ contract BlueChainToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;BlueChain&quot;;
-    string public constant symbol = &quot;BLC&quot;;
+    string public constant name = "BlueChain";
+    string public constant symbol = "BLC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000000000000;

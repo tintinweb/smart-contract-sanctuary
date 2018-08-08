@@ -42,8 +42,8 @@ contract DrunkCoin is IERC20 {
 
 	function DrunkCoin () public {
 		owner = msg.sender;
-		symbol = &quot;DRNK&quot;;
-		name = &quot;DrunkCoin&quot;;
+		symbol = "DRNK";
+		name = "DrunkCoin";
 		decimals = 18;
 		balances[owner] = 1000000 * 1 ether;
 	}

@@ -51,7 +51,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -435,12 +435,12 @@ contract BurnupGameOwnership is BurnupGameBase {
     
     /// @notice Name of the collection of deeds (non-fungible token), as defined in ERC721Metadata.
     function name() public pure returns (string _deedName) {
-        _deedName = &quot;Burnup Tiles&quot;;
+        _deedName = "Burnup Tiles";
     }
     
     /// @notice Symbol of the collection of deeds (non-fungible token), as defined in ERC721Metadata.
     function symbol() public pure returns (string _deedSymbol) {
-        _deedSymbol = &quot;BURN&quot;;
+        _deedSymbol = "BURN";
     }
     
     /// @dev Checks if a given address owns a particular tile.

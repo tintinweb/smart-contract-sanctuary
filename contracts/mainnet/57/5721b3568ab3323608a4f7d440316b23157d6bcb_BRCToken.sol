@@ -113,8 +113,8 @@ contract BRCToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BRCToken() public {
-        symbol = &quot;BRC&quot;;
-        name = &quot;BRC Token&quot;;
+        symbol = "BRC";
+        name = "BRC Token";
         decimals = 18;
         _totalSupply = 50000000000000000000000000;
         balances[0x63f91cF1B5Dd18f05B38EF8F60c506179Fefd673] = _totalSupply;

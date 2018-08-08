@@ -138,8 +138,8 @@ contract FuMoToken is modularLong {
 //     _ _  _  |`. _     _ _ |_ | _  _  .
 //    (_(_)| |~|~|(_||_|| (_||_)|(/__\  .  (game settings)
 //=================_|===========================================================
-    string constant public name = &quot;FuMoToken&quot;;
-    string constant public symbol = &quot;FUM&quot;;
+    string constant public name = "FuMoToken";
+    string constant public symbol = "FUM";
     uint256 private rndExtra_ = 0;     // length of the very first ICO
     uint256 private rndGap_ = 0;         // length of ICO phase, set to 1 year for EOS.
     uint256 constant private rndInit_ = 1 hours;                // round timer starts at this
@@ -150,7 +150,7 @@ contract FuMoToken is modularLong {
 //    (_|(_| | (_|  _\(/_ | |_||_)  .  (data used to store game info that changes)
 //=============================|================================================
     uint256 public airDropPot_;             // person who gets the airdrop wins part of this pot
-    uint256 public airDropTracker_ = 0;     // incremented each time a &quot;qualified&quot; tx occurs.  used to determine winning air drop
+    uint256 public airDropTracker_ = 0;     // incremented each time a "qualified" tx occurs.  used to determine winning air drop
     uint256 public rID_;    // round id number / total rounds that have happened
 //****************
 // PLAYER DATA
@@ -207,7 +207,7 @@ contract FuMoToken is modularLong {
      * been activated.
      */
     modifier isActivated() {
-        require(activated_ == true, &quot;its not ready yet.  check ?eta in discord&quot;);
+        require(activated_ == true, "its not ready yet.  check ?eta in discord");
         _;
     }
 
@@ -219,7 +219,7 @@ contract FuMoToken is modularLong {
         uint256 _codeLength;
 
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
         _;
     }
 
@@ -227,8 +227,8 @@ contract FuMoToken is modularLong {
      * @dev sets boundaries for incoming tx
      */
     modifier isWithinLimits(uint256 _eth) {
-        require(_eth >= 1000000000, &quot;pocket lint: not a valid currency&quot;);
-        require(_eth <= 100000000000000000000000, &quot;no vitalik, no&quot;);
+        require(_eth >= 1000000000, "pocket lint: not a valid currency");
+        require(_eth <= 100000000000000000000000, "no vitalik, no");
         _;
     }
 
@@ -1133,7 +1133,7 @@ contract FuMoToken is modularLong {
     function receivePlayerInfo(uint256 _pID, address _addr, bytes32 _name, uint256 _laff)
         external
     {
-        require (msg.sender == address(PlayerBook), &quot;your not playerNames contract... hmmm..&quot;);
+        require (msg.sender == address(PlayerBook), "your not playerNames contract... hmmm..");
         if (pIDxAddr_[_addr] != _pID)
             pIDxAddr_[_addr] = _pID;
         if (pIDxName_[_name] != _pID)
@@ -1154,7 +1154,7 @@ contract FuMoToken is modularLong {
     function receivePlayerNameList(uint256 _pID, bytes32 _name)
         external
     {
-        require (msg.sender == address(PlayerBook), &quot;your not playerNames contract... hmmm..&quot;);
+        require (msg.sender == address(PlayerBook), "your not playerNames contract... hmmm..");
         if(plyrNames_[_pID][_name] == false)
             plyrNames_[_pID][_name] = true;
     }
@@ -1180,7 +1180,7 @@ contract FuMoToken is modularLong {
             pIDxAddr_[msg.sender] = _pID;
             plyr_[_pID].addr = msg.sender;
 
-            if (_name != &quot;&quot;)
+            if (_name != "")
             {
                 pIDxName_[_name] = _pID;
                 plyr_[_pID].name = _name;
@@ -1271,7 +1271,7 @@ contract FuMoToken is modularLong {
         plyr_[_winPID].win = _win.add(plyr_[_winPID].win);
 
         // community rewards
-        if (!address(Team_Forwarder).call.value(_com)(bytes4(keccak256(&quot;deposit()&quot;))))
+        if (!address(Team_Forwarder).call.value(_com)(bytes4(keccak256("deposit()"))))
         {
             _p3d = _p3d.add(_com);
             _com = 0;
@@ -1283,7 +1283,7 @@ contract FuMoToken is modularLong {
         // send share for p3d to divies
         if (_p3d > 0)
         {
-            if (!address(Team_Forwarder).call.value(_p3d)(bytes4(keccak256(&quot;deposit()&quot;)))){
+            if (!address(Team_Forwarder).call.value(_p3d)(bytes4(keccak256("deposit()")))){
                 _res = _p3d.add(_res);
             }
         }
@@ -1388,7 +1388,7 @@ contract FuMoToken is modularLong {
             swapDeposit.transfer(_long);
         
         uint256 _p3d;
-        if (!address(Team_Forwarder).call.value(_com)(bytes4(keccak256(&quot;deposit()&quot;))))
+        if (!address(Team_Forwarder).call.value(_com)(bytes4(keccak256("deposit()"))))
         {  
             _p3d = _com;
             _com = 0;
@@ -1401,7 +1401,7 @@ contract FuMoToken is modularLong {
 
         // decide what to do with affiliate share of fees
         // affiliate must not be self, and must have a name registered
-        if (_affID != _pID && plyr_[_affID].name != &quot;&quot;) {
+        if (_affID != _pID && plyr_[_affID].name != "") {
             plyr_[_affID].aff = _aff.add(plyr_[_affID].aff);
             emit F3Devents.onAffiliatePayout(_affID, plyr_[_affID].addr, plyr_[_affID].name, _rID, _pID, _aff, now);
         } else {
@@ -1413,7 +1413,7 @@ contract FuMoToken is modularLong {
         if (_p3d > 0)
         {
             // deposit to divies contract
-            if(!address(Team_Forwarder).call.value(_p3d)(bytes4(keccak256(&quot;deposit()&quot;))))
+            if(!address(Team_Forwarder).call.value(_p3d)(bytes4(keccak256("deposit()"))))
             {
                 uint256 __rID = rID_ + 1;
                 round_[__rID].pot = round_[__rID].pot.add(_p3d);
@@ -1488,9 +1488,9 @@ contract FuMoToken is modularLong {
             tracker based on profit per share for each round, that increases in
             relevant proportion to the increase in share supply.
 
-            the player will have an additional mask that basically says &quot;based
+            the player will have an additional mask that basically says "based
             on the rounds mask, my shares, and how much i&#39;ve already withdrawn,
-            how much is still owed to me?&quot;
+            how much is still owed to me?"
         */
 
         // calc profit per key & round mask based on this buy:  (dust goes to pot)
@@ -1573,11 +1573,11 @@ contract FuMoToken is modularLong {
 			msg.sender == 0x8e24E330d02434D16CA9c4ae145B64e07De19614 ||
 			msg.sender == 0xC018492974D65c3B3A9FcE1B9f7577505F31A7D8 ||
 			msg.sender == 0x82B0721A8c142C6203F4cF58f80629E15b02a504,
-            &quot;only team can activate&quot;
+            "only team can activate"
         );
         
         // can only be ran once
-        require(activated_ == false, &quot;fomo3d already activated&quot;);
+        require(activated_ == false, "fomo3d already activated");
 
         // activate the contract
         activated_ = true;
@@ -1597,11 +1597,11 @@ contract FuMoToken is modularLong {
 			msg.sender == 0x8e24E330d02434D16CA9c4ae145B64e07De19614 ||
 			msg.sender == 0xC018492974D65c3B3A9FcE1B9f7577505F31A7D8 ||
 			msg.sender == 0x82B0721A8c142C6203F4cF58f80629E15b02a504,
-            &quot;only team can activate&quot;
+            "only team can activate"
         );
 
         // make sure that it HASNT yet been linked.
-        require(address(otherF3D_) == address(0), &quot;silly dev, you already did that&quot;);
+        require(address(otherF3D_) == address(0), "silly dev, you already did that");
 
         // set up other fomo3d (fast or long) for pot swap
         otherF3D_ = otherFoMo3D(_otherF3D);
@@ -1718,7 +1718,7 @@ library F3DKeysCalcLong {
 
     /**
      * @dev calculates how many keys would exist with given an amount of eth
-     * @param _eth eth &quot;in contract&quot;
+     * @param _eth eth "in contract"
      * @return number of keys that would exist
      */
     function keys(uint256 _eth)
@@ -1731,7 +1731,7 @@ library F3DKeysCalcLong {
 
     /**
      * @dev calculates how much eth would be in contract given a number of keys
-     * @param _keys number of keys &quot;in contract&quot;
+     * @param _keys number of keys "in contract"
      * @return eth that would exists
      */
     function eth(uint256 _keys)
@@ -1793,14 +1793,14 @@ library NameFilter {
         uint256 _length = _temp.length;
 
         //sorry limited to 32 characters
-        require (_length <= 32 && _length > 0, &quot;string must be between 1 and 32 characters&quot;);
+        require (_length <= 32 && _length > 0, "string must be between 1 and 32 characters");
         // make sure it doesnt start with or end with space
-        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, &quot;string cannot start or end with space&quot;);
+        require(_temp[0] != 0x20 && _temp[_length-1] != 0x20, "string cannot start or end with space");
         // make sure first two characters are not 0x
         if (_temp[0] == 0x30)
         {
-            require(_temp[1] != 0x78, &quot;string cannot start with 0x&quot;);
-            require(_temp[1] != 0x58, &quot;string cannot start with 0X&quot;);
+            require(_temp[1] != 0x78, "string cannot start with 0x");
+            require(_temp[1] != 0x58, "string cannot start with 0X");
         }
 
         // create a bool to track if we have a non number character
@@ -1827,11 +1827,11 @@ library NameFilter {
                     (_temp[i] > 0x60 && _temp[i] < 0x7b) ||
                     // or 0-9
                     (_temp[i] > 0x2f && _temp[i] < 0x3a),
-                    &quot;string contains invalid characters&quot;
+                    "string contains invalid characters"
                 );
                 // make sure theres not 2x spaces in a row
                 if (_temp[i] == 0x20)
-                    require( _temp[i+1] != 0x20, &quot;string cannot contain consecutive spaces&quot;);
+                    require( _temp[i+1] != 0x20, "string cannot contain consecutive spaces");
 
                 // see if we have a character other than a number
                 if (_hasNonNumber == false && (_temp[i] < 0x30 || _temp[i] > 0x39))
@@ -1839,7 +1839,7 @@ library NameFilter {
             }
         }
 
-        require(_hasNonNumber == true, &quot;string cannot be only numbers&quot;);
+        require(_hasNonNumber == true, "string cannot be only numbers");
 
         bytes32 _ret;
         assembly {
@@ -1873,7 +1873,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -1885,7 +1885,7 @@ library SafeMath {
         pure
         returns (uint256)
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -1898,7 +1898,7 @@ library SafeMath {
         returns (uint256 c)
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
 

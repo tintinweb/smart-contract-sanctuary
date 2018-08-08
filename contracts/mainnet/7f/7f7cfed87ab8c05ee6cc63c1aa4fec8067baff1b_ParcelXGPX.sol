@@ -62,7 +62,7 @@ contract MultiOwnable {
 
     event AcceptConfirm(bytes32 operation, address indexed who, uint confirmTotal);
     
-    // constructor is given number of sigs required to do protected &quot;multiOwner&quot; transactions
+    // constructor is given number of sigs required to do protected "multiOwner" transactions
     function MultiOwnable (address[] _multiOwners, uint _multiRequires) public {
         require(0 < _multiRequires && _multiRequires <= _multiOwners.length);
         m_numOwners = _multiOwners.length;
@@ -214,8 +214,8 @@ contract ParcelXGPX is ERC20, MultiOwnable, Pausable, Convertible {
 
     using SafeMath for uint256;
   
-    string public constant name = &quot;ParcelX&quot;;
-    string public constant symbol = &quot;GPX-shadow&quot;;
+    string public constant name = "ParcelX";
+    string public constant symbol = "GPX-shadow";
     uint8 public constant decimals = 18;
     uint256 public constant TOTAL_SUPPLY = uint256(10000) * (uint256(10) ** decimals);
 

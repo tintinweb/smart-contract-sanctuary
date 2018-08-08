@@ -137,7 +137,7 @@ contract StandardToken is ERC20, BasicToken {
  
 /*
 The Ownable contract has an owner address, and provides basic authorization control
- functions, this simplifies the implementation of &quot;user permissions&quot;.
+ functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -210,8 +210,8 @@ contract TheLiquidToken is StandardToken, Ownable {
 }
     
 contract Fricacoin is TheLiquidToken {
-  string public constant name = &quot;Fricacoin&quot;;
-  string public constant symbol = &quot;FRI&quot;;
+  string public constant name = "Fricacoin";
+  string public constant symbol = "FRI";
   uint public constant decimals = 2;
   uint256 public initialSupply;
     

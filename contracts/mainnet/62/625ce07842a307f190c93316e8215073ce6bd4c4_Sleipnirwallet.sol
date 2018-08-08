@@ -105,8 +105,8 @@ contract Sleipnirwallet is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Sleipnirwallet() public {
-        symbol = &quot;SLI&quot;;
-        name = &quot;Sleipnirwallet&quot;;
+        symbol = "SLI";
+        name = "Sleipnirwallet";
         decimals = 6;
         _totalSupply = 3000000000000;
         balances[0xa015fE2a1947B23AD454E699F8CbbDa419671F5e] = _totalSupply;

@@ -250,8 +250,8 @@ contract DerivativeTokenInterface {
 }
 
 contract LCS is StandardToken, BurnableToken, Ownable {
-    string public constant name = &quot;LocalCoinSwap Cryptoshare&quot;;
-    string public constant symbol = &quot;LCS&quot;;
+    string public constant name = "LocalCoinSwap Cryptoshare";
+    string public constant symbol = "LCS";
     uint256 public constant decimals = 18;
     uint256 public constant initialSupply = 100000000 * (10 ** 18);
 

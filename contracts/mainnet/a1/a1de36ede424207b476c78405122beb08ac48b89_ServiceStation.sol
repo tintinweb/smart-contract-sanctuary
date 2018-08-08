@@ -241,7 +241,7 @@ contract ServiceStation is GameState{
         uint256 Fee = (price * (devFee))/10000;
         uint256 Left = price - Fee;
         
-        // send fee to fee address which is a contract. you can buy a dividend card to claim 10% of these funds, see above at &quot;address fee_address&quot;
+        // send fee to fee address which is a contract. you can buy a dividend card to claim 10% of these funds, see above at "address fee_address"
         fee_address.transfer(Fee);
         
         if (price != StartPrice){

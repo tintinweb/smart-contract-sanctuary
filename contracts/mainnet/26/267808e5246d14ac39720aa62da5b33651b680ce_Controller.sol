@@ -88,9 +88,9 @@ contract EventDefinitions {
 
 contract Token is Finalizable, TokenReceivable, SafeMath, EventDefinitions {
 
-    string public name = &quot;FunFair&quot;;
+    string public name = "FunFair";
     uint8 public decimals = 8;
-    string public symbol = &quot;FUN&quot;;
+    string public symbol = "FUN";
 
     Controller controller;
     address owner;

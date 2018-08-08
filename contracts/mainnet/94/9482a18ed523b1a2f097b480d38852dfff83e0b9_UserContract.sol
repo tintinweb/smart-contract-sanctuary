@@ -842,7 +842,7 @@ contract Wrapped_Ether {
     /*Variables*/
 
     //ERC20 fields
-    string public name = &quot;Wrapped Ether&quot;;
+    string public name = "Wrapped Ether";
     uint public total_supply;
     mapping(address => uint) internal balances;
     mapping(address => mapping (address => uint)) internal allowed;

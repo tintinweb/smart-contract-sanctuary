@@ -420,8 +420,8 @@ contract PausableToken is StandardToken, Pausable {
 contract Controller is ERC827Token, MintableToken, PausableToken {
   address public thisAddr; // matches delegation slot in proxy
   uint256 public cap;      // the max cap of this token
-  string public constant name = &quot;COIN&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;COIN&quot;; // solium-disable-line uppercase
+  string public constant name = "COIN"; // solium-disable-line uppercase
+  string public constant symbol = "COIN"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   /**

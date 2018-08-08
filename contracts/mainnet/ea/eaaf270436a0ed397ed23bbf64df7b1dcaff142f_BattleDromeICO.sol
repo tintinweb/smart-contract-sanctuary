@@ -96,10 +96,10 @@ contract FAMEToken is ERC20Standard {
 
 	function FAMEToken() {
 		totalSupply = 2100000 szabo;			//Total Supply (including all decimal places!)
-		name = &quot;Fame&quot;;							//Pretty Name
+		name = "Fame";							//Pretty Name
 		decimals = 12;							//Decimal places (with 12 decimal places 1 szabo = 1 token in uint256)
-		symbol = &quot;FAM&quot;;							//Ticker Symbol (3 characters, upper case)
-		version = &quot;FAME1.0&quot;;					//Version Code
+		symbol = "FAM";							//Ticker Symbol (3 characters, upper case)
+		version = "FAME1.0";					//Version Code
 		balances[msg.sender] = totalSupply;		//Assign all balance to creator initially for distribution from there.
 	}
 
@@ -126,7 +126,7 @@ contract FAMEToken is ERC20Standard {
 // Contract holds all tokens, upon success (passing goal on time) sends out all bought tokens
 // It then burns the rest.
 // In the event of failure, it sends tokens back to creator, and all payments back to senders.
-// Each time tokens are bought, a percentage is also issued to the &quot;Developer&quot; account.
+// Each time tokens are bought, a percentage is also issued to the "Developer" account.
 // Pay-out of collected Ether to creators is managed through an Escrow address.
 // Copyright 2017 BattleDrome
 //------------------------------------------------------------------------------------------------

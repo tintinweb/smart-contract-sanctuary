@@ -113,8 +113,8 @@ contract CYFR is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function CYFR() public {
-        symbol = &quot;CYFR&quot;;
-        name = &quot;CyphrCoin&quot;;
+        symbol = "CYFR";
+        name = "CyphrCoin";
         decimals = 18;
         _totalSupply = 20000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

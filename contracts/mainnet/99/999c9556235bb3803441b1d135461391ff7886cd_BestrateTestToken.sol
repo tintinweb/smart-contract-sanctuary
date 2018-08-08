@@ -125,8 +125,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract BestrateTestToken is StandardToken {
-  string public constant name = &quot;BestrateTestToken&quot;;
-  string public constant symbol = &quot;BTT&quot;;
+  string public constant name = "BestrateTestToken";
+  string public constant symbol = "BTT";
   uint256 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 1000000000000*(10 ** decimals);
     constructor() public {

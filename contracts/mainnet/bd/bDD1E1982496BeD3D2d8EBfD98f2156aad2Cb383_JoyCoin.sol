@@ -15,9 +15,9 @@ contract JoyCoin {
     function JoyCoin() {
 
          initialSupply = 2000000000000000000000000000;
-         name =&quot;JoyCoin&quot;;
+         name ="JoyCoin";
         decimals = 18;
-         symbol = &quot;JOY&quot;;
+         symbol = "JOY";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;               // Update total supply

@@ -218,8 +218,8 @@ contract StandardToken is ERC20, BasicToken {
  * `StandardToken` functions.
  */
 contract FIN is StandardToken {
-  string public constant name = &quot;Financial Incentive Network Points&quot;;
-  string public constant symbol = &quot;FIN&quot;;
+  string public constant name = "Financial Incentive Network Points";
+  string public constant symbol = "FIN";
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 private constant OFFSET = 10 ** uint256(decimals);
@@ -280,7 +280,7 @@ interface ValidatedToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -372,7 +372,7 @@ contract ReferenceToken is Ownable, ERC20, ValidatedToken {
     // Status Code Helpers
 
     function isOk(byte _statusCode) internal pure returns (bool) {
-        return (_statusCode & hex&quot;0F&quot;) == 1;
+        return (_statusCode & hex"0F") == 1;
     }
 
     function requireOk(byte _statusCode) internal pure {
@@ -470,7 +470,7 @@ contract Lunar is ReferenceToken {
     uint256 constant DECIMAL_SHIFT = 10 ** 18;
     
     constructor(TokenValidator _validator)
-      ReferenceToken(&quot;Lunar Token - SAMPLE NO VALUE&quot;, &quot;LNRX&quot;, 1, _validator)
+      ReferenceToken("Lunar Token - SAMPLE NO VALUE", "LNRX", 1, _validator)
       public {
           uint256 supply = 5000000 * DECIMAL_SHIFT;
 
@@ -492,9 +492,9 @@ contract SimpleAuthorization is TokenValidator, Ownable {
         address _address
     ) external returns (byte resultCode) {
         if (auths[_address]) {
-            return hex&quot;11&quot;;
+            return hex"11";
         } else {
-            return hex&quot;10&quot;;
+            return hex"10";
         }
     }
 
@@ -505,9 +505,9 @@ contract SimpleAuthorization is TokenValidator, Ownable {
         uint256 /* _amount */
     ) external returns (byte resultCode) {
         if (auths[_from] && auths[_to]) {
-            return hex&quot;11&quot;;
+            return hex"11";
         } else {
-            return hex&quot;10&quot;;
+            return hex"10";
         }
     }
 

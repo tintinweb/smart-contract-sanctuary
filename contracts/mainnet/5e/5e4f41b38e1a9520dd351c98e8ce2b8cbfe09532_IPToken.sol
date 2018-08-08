@@ -113,8 +113,8 @@ contract IPToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IPToken() public {
-        symbol = &quot;3H40&quot;;
-        name = &quot;IP Token&quot;;
+        symbol = "3H40";
+        name = "IP Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xE5843CF1F504f980134652b54d895948E0FAC464] = _totalSupply;

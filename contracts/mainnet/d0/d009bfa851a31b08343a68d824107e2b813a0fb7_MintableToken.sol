@@ -191,7 +191,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -315,8 +315,8 @@ contract Pausable is Manageable {
  */
 contract MintableToken is StandardToken, Manageable, Pausable  {
   
-  string public name = &quot;Pointium&quot;;
-  string public symbol = &quot;PNT&quot;;
+  string public name = "Pointium";
+  string public symbol = "PNT";
   uint256 public decimals = 18;
   
   event Mint(address indexed to, uint256 amount);

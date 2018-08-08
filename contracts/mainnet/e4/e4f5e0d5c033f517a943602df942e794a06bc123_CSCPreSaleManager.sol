@@ -345,8 +345,8 @@ contract CSCCollectibleBase is ERC721, OperationalControl, StringHelpers {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;CSCPreSaleShip&quot;;
-  string public constant SYMBOL = &quot;CSC&quot;;
+  string public constant NAME = "CSCPreSaleShip";
+  string public constant SYMBOL = "CSC";
   bytes4 constant InterfaceSignature_ERC165 = bytes4(keccak256(&#39;supportsInterface(bytes4)&#39;));
   bytes4 constant InterfaceSignature_ERC721 =
         bytes4(keccak256(&#39;name()&#39;)) ^
@@ -880,9 +880,9 @@ contract CSCPreSaleManager is CSCCollectibleSale {
   event RefundClaimed(address owner, uint256 refundValue);
 
   // Ship Names
-  string private constant prometheusShipName = &quot;Vulcan Harvester&quot;;
-  string private constant crosairShipName = &quot;Phoenix Cruiser&quot;;
-  string private constant intrepidShipName = &quot;Reaper Interceptor&quot;;
+  string private constant prometheusShipName = "Vulcan Harvester";
+  string private constant crosairShipName = "Phoenix Cruiser";
+  string private constant intrepidShipName = "Reaper Interceptor";
 
   bool CSCPreSaleInit = false;
 
@@ -922,7 +922,7 @@ contract CSCPreSaleManager is CSCCollectibleSale {
     bytes32 collectibleName;
 
     if(_collectibleType == 0){
-      collectibleName = bytes32(&quot;NoNameForVoucher&quot;);
+      collectibleName = bytes32("NoNameForVoucher");
       if(_collectibleClass == 1){
         require(prometheusVouchersMinted < PROMETHEUS_VOUCHER_LIMIT);
         collectibleName = stringToBytes32(prometheusShipName);
@@ -980,7 +980,7 @@ contract CSCPreSaleManager is CSCCollectibleSale {
     bytes32 collectibleName;
 
     if(_collectibleType == 0){
-      collectibleName = bytes32(&quot;ReferralGiveAwayVoucher&quot;);
+      collectibleName = bytes32("ReferralGiveAwayVoucher");
       if(_collectibleClass == 1){
         collectibleName = stringToBytes32(prometheusShipName);
       }
@@ -1049,7 +1049,7 @@ contract CSCPreSaleManager is CSCCollectibleSale {
     CSCPreSaleInit = true;
 
     //Fill in index 0 to null requests
-    CSCPreSaleItem memory _Obj = CSCPreSaleItem(0, stringToBytes32(&quot;DummyAsset&quot;), 0, 0, 0, address(this), true);
+    CSCPreSaleItem memory _Obj = CSCPreSaleItem(0, stringToBytes32("DummyAsset"), 0, 0, 0, address(this), true);
     allPreSaleItems.push(_Obj);
   }
 

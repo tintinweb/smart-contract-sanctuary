@@ -33,7 +33,7 @@ library SafeMath {
 /**
  * @title Ownable
     * @dev The Ownable contract has an owner address, and provides basic authorization control 
-       * functions, this simplifies the implementation of &quot;user permissions&quot;. 
+       * functions, this simplifies the implementation of "user permissions". 
           */
 contract Ownable {
   address public owner;
@@ -235,8 +235,8 @@ contract CobinhoodToken is StandardToken, Ownable {
     using SafeMath for uint256;
 
     // Token Info.
-    string  public constant name = &quot;Cobinhood Token&quot;;
-    string  public constant symbol = &quot;COB&quot;;
+    string  public constant name = "Cobinhood Token";
+    string  public constant symbol = "COB";
     uint8   public constant decimals = 18;
 
     // Sale period.

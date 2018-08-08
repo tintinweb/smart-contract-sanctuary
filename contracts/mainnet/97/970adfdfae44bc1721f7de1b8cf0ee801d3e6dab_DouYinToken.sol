@@ -56,8 +56,8 @@ contract DouYinToken is Ownable{
     
     using SafeMath for uint256;
     
-    string public constant name       = &quot;DouYin&quot;;
-    string public constant symbol     = &quot;DY&quot;;
+    string public constant name       = "DouYin";
+    string public constant symbol     = "DY";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply        = 20000000000 ether;
     uint256 public currentTotalSupply = 0;

@@ -385,7 +385,7 @@ contract ERC223Mixin is StandardToken {
 /// @dev Ignore DRY approach to achieve readability
 contract RBACMixin {
   /// @notice Constant string message to throw on lack of access
-  string constant FORBIDDEN = &quot;Haven&#39;t enough right to access&quot;;
+  string constant FORBIDDEN = "Haven&#39;t enough right to access";
   /// @notice Public map of owners
   mapping (address => bool) public owners;
   /// @notice Public map of minters
@@ -671,9 +671,9 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 contract MustToken is StandardBurnableToken, RBACERC223TokenFinalization, RBACMintableTokenMixin {
   /// @notice Constant field with token full name
   // solium-disable-next-line uppercase
-  string constant public name = &quot;Main Universal Standard of Tokenization&quot;; 
+  string constant public name = "Main Universal Standard of Tokenization"; 
   /// @notice Constant field with token symbol
-  string constant public symbol = &quot;MUST&quot;; // solium-disable-line uppercase
+  string constant public symbol = "MUST"; // solium-disable-line uppercase
   /// @notice Constant field with token precision depth
   uint256 constant public decimals = 8; // solium-disable-line uppercase
   /// @notice Constant field with token cap (total supply limit)

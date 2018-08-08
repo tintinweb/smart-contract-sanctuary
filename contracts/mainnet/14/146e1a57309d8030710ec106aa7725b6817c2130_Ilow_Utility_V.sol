@@ -4,8 +4,8 @@ contract	Ilow_Utility_V				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	Ilow_Utility_V		&quot;	;
-	string	public		symbol =	&quot;	IUV		&quot;	;
+	string	public		name =	"	Ilow_Utility_V		"	;
+	string	public		symbol =	"	IUV		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		100000000000000000000000000					;	

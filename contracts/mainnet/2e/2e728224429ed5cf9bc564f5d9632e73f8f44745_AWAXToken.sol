@@ -14,8 +14,8 @@ contract AWAXToken {
     function AWAXToken() public {
         totalSupply = 30000000000 * 10 ** uint256(decimals); 
         balanceOf[msg.sender] = totalSupply;                
-        name = &quot;AWAX Token&quot;;                                   
-        symbol = &quot;AWAX&quot;;                               
+        name = "AWAX Token";                                   
+        symbol = "AWAX";                               
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

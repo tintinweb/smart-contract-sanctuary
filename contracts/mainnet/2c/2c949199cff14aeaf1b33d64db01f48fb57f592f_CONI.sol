@@ -101,9 +101,9 @@ contract CONI is StandardToken {
         revert();
     }
 
-    string public name = &quot;CoinBene Coin&quot;;
+    string public name = "CoinBene Coin";
     uint8 public decimals = 8;
-    string public symbol = &quot;CONI&quot;;
+    string public symbol = "CONI";
     string public version = &#39;v1&#39;; 
 
     address public founder; // The address of the founder
@@ -122,7 +122,7 @@ contract CONI is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { revert(); }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { revert(); }
         return true;
     }
 

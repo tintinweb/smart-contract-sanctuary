@@ -116,8 +116,8 @@ contract BDAYSALE is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BDAYSALE() public {
-        symbol = &quot;BDAY&quot;;
-        name = &quot;Birthday Token&quot;;
+        symbol = "BDAY";
+        name = "Birthday Token";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

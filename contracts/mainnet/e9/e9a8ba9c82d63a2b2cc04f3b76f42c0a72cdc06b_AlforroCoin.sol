@@ -113,8 +113,8 @@ contract AlforroCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AlforroCoin() public {
-        symbol = &quot;ALF&quot;;
-        name = &quot;Alforro Coin&quot;;
+        symbol = "ALF";
+        name = "Alforro Coin";
         decimals = 2;
         _totalSupply = 10000000000;
         balances[0xDcC7F1a56a1B57b081A40184503e1eA250b5b3c3] = _totalSupply;

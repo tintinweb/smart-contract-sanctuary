@@ -239,7 +239,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -277,8 +277,8 @@ contract Ownable {
 }
 
 contract Karma20 is StandardToken, BurnableToken, Ownable {
-  string public constant name = &quot;Karma&quot;;
-  string public constant symbol = &quot;KRM&quot;;
+  string public constant name = "Karma";
+  string public constant symbol = "KRM";
   uint32 public constant decimals = 5;
 
   address public saleAgent;

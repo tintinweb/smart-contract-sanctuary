@@ -29,8 +29,8 @@ contract XPS {
     ) public {
         totalSupply = 20000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;XPS&quot;;                                   // Set the name for display purposes
-        symbol = &quot;XPS&quot;;                               // Set the symbol for display purposes
+        name = "XPS";                                   // Set the name for display purposes
+        symbol = "XPS";                               // Set the symbol for display purposes
     }
 
     /**

@@ -113,8 +113,8 @@ contract MICL is UnboundedRegularToken {
 
     uint public totalSupply = 500*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;Mi-Token&quot;;
-    string constant public symbol = &quot;MICL&quot;;
+    string constant public name = "Mi-Token";
+    string constant public symbol = "MICL";
 
     function MICL() {
         balances[msg.sender] = totalSupply;

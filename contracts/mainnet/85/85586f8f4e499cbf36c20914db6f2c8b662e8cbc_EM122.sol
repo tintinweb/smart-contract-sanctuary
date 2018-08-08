@@ -116,8 +116,8 @@ contract EM122 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EM122() public {
-        symbol = &quot;EM122&quot;;
-        name = &quot;EM122&quot;;
+        symbol = "EM122";
+        name = "EM122";
         decimals = 18;
         bonusEnds = now + 3 weeks;
         endDate = now + 5 weeks;

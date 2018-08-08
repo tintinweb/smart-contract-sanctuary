@@ -113,8 +113,8 @@ contract Xoflife is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Xoflife() public {
-        symbol = &quot;0XOL&quot;;
-        name = &quot;0 Xoflife Token&quot;;
+        symbol = "0XOL";
+        name = "0 Xoflife Token";
         decimals = 18;
         _totalSupply = 1000;
         balances[0xCE2ABa88baF7658383B33b828c64738b85eFAEb2] = _totalSupply;

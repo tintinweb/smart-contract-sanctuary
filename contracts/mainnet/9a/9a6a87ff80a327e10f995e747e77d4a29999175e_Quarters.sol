@@ -283,8 +283,8 @@ contract RoyaltyToken is StandardToken {
 contract Q2 is Ownable, RoyaltyToken {
   using SafeMath for uint256;
 
-  string public name = &quot;Q2&quot;;
-  string public symbol = &quot;Q2&quot;;
+  string public name = "Q2";
+  string public symbol = "Q2";
   uint8 public decimals = 18;
 
   bool public whitelist = true;
@@ -430,8 +430,8 @@ interface TokenRecipient {
 
 contract Quarters is Ownable, StandardToken {
   // Public variables of the token
-  string public name = &quot;Quarters&quot;;
-  string public symbol = &quot;Q&quot;;
+  string public name = "Quarters";
+  string public symbol = "Q";
   uint8 public decimals = 0; // no decimals, only integer quarters
 
   uint16 public ethRate = 4000; // Quarters/ETH

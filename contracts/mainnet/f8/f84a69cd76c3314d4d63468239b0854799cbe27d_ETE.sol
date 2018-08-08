@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract ETE is StandardToken, Ownable {
 
-    string public constant name = &quot;Ethereum Estate&quot;;
-    string public constant symbol = &quot;ETE&quot;;
+    string public constant name = "Ethereum Estate";
+    string public constant symbol = "ETE";
     uint256 public constant decimals = 8;
 
     function ETE() public {

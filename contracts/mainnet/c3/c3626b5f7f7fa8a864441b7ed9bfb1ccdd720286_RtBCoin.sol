@@ -10,8 +10,8 @@ contract RtBCoin {
     function RtBCoin(){
         balanceOf[this]=1000000000;
         totalSuplay=1000000000;
-        name=&quot;RtBCoin&quot;;
-        symbol=&quot;RtB&quot;;
+        name="RtBCoin";
+        symbol="RtB";
         owner=msg.sender;
     }
     function () payable{

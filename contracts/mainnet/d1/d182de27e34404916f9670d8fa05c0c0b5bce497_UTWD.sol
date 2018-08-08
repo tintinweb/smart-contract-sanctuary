@@ -20,8 +20,8 @@ contract owned {
 contract TokenERC20 is owned {
     address public deployer;
 
-    string public name =&quot;Universe-TWD&quot;;
-    string public symbol = &quot;UTWD&quot;;
+    string public name ="Universe-TWD";
+    string public symbol = "UTWD";
     uint8 public decimals = 18;
 
     uint256 public totalSupply;

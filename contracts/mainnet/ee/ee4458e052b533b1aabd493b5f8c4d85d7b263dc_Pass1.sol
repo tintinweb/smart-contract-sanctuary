@@ -4,7 +4,7 @@ pragma solidity ^0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -408,7 +408,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Whitelist
  * @dev The Whitelist contract has a whitelist of addresses, and provides basic authorization control functions.
- * @dev This simplifies the implementation of &quot;user permissions&quot;.
+ * @dev This simplifies the implementation of "user permissions".
  */
 contract Whitelist is Ownable {
   mapping(address => bool) public whitelist;
@@ -598,7 +598,7 @@ contract Pass1 is DetailedERC20, PausableToken, BurnableToken, MintableToken, Op
     * @dev initialize default attributes for the Pass token contract
     */
     constructor()
-        DetailedERC20 (&quot;Blockpass&quot;,&quot;PASS&quot;,6)
+        DetailedERC20 ("Blockpass","PASS",6)
     {
         owner = msg.sender;
         emit OwnershipTransferred(address(0x0), owner);

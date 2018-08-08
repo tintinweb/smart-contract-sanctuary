@@ -59,8 +59,8 @@ contract CompanyToken {
     event SharesSold(uint256 tokenId, uint256 shares, uint256 price, address prevOwner, address newOnwer, string name);
     event Transfer(address from, address to, uint256 tokenId, uint256 shares);
 
-    string public constant NAME = &quot;CryptoCompanies&quot;; // solhint-disable-line
-    string public constant SYMBOL = &quot;CompanyToken&quot;; // solhint-disable-line
+    string public constant NAME = "CryptoCompanies"; // solhint-disable-line
+    string public constant SYMBOL = "CompanyToken"; // solhint-disable-line
 
     uint256 private constant HEAD = 0;
 

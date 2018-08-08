@@ -168,8 +168,8 @@ contract StandardToken is ERC20 {
 }
 
 contract LifeBankerCoin is Owned, StandardToken{
-    string public constant name = &quot;LifeBanker Coin&quot;;
-    string public constant symbol = &quot;LBC&quot;;
+    string public constant name = "LifeBanker Coin";
+    string public constant symbol = "LBC";
     uint8 public constant decimals = 18;
 
     address public lockAddress;

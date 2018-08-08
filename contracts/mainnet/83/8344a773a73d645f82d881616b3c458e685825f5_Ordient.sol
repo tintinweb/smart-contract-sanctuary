@@ -66,8 +66,8 @@ contract Ordient is IERC20{
     using SafeMath for uint256;
     
     uint public _totalSupply = 0;
-    string public constant symbol = &quot;ORD&quot;;
-    string public constant name = &quot;Ordient&quot;;
+    string public constant symbol = "ORD";
+    string public constant name = "Ordient";
     uint8 public constant decimals = 8;
     
     //1 ether 500 Ordients

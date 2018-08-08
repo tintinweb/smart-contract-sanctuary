@@ -247,8 +247,8 @@ contract StandardToken is ERC20, Ownable {
 
 
 contract BNSToken is StandardToken {
-    string public constant name = &quot;Basis Neuro System Token&quot;;
-    string public constant symbol = &quot;BNST&quot;;
+    string public constant name = "Basis Neuro System Token";
+    string public constant symbol = "BNST";
     uint8 public constant decimals = 18;
 
 

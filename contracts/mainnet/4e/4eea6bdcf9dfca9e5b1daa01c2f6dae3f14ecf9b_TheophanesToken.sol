@@ -100,8 +100,8 @@ contract Owned {
 // token transfers
 // ----------------------------------------------------------------------------
 contract TheophanesToken is ERC20Interface, Owned, SafeMath {
-    string public symbol = &quot;THEO&quot;;
-    string public  name = &quot;Theophanes Token&quot;;
+    string public symbol = "THEO";
+    string public  name = "Theophanes Token";
     uint8 public decimals = 18;
     uint public _totalSupply = 100000000000000000000000000;
 
@@ -113,8 +113,8 @@ contract TheophanesToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TheophanesToken() public {
-        symbol = &quot;THEO&quot;;
-        name = &quot;Theophanes Token&quot;;
+        symbol = "THEO";
+        name = "Theophanes Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5Bd9586E9073b075eA83dFfc3c7C2FC0D2c2e858] = _totalSupply;

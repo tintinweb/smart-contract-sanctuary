@@ -234,7 +234,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -316,8 +316,8 @@ contract DukatToken is StandardToken, BurnableToken {
     function DukatToken() {
         totalSupply_ = 1000000 * 10 ** decimals;
         balances[msg.sender] = totalSupply_;
-        name = &quot;Dukat Token&quot;;
-        symbol = &quot;DUKAT&quot;;
+        name = "Dukat Token";
+        symbol = "DUKAT";
 
         tokenPrice = 1000;
         ethRate = 516500;

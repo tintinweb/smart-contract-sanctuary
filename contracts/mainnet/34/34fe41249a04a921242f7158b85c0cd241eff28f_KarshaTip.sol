@@ -114,8 +114,8 @@ contract KarshaTip is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;KTIP&quot;;
-        name = &quot;Karsha Tip&quot;;
+        symbol = "KTIP";
+        name = "Karsha Tip";
         decimals = 18;
         _totalSupply = 10000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

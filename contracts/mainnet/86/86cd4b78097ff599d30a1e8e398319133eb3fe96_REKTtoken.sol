@@ -116,8 +116,8 @@ contract REKTtoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function REKTtoken() public {
-        symbol = &quot;REKT&quot;;
-        name = &quot;REKT Token&quot;;
+        symbol = "REKT";
+        name = "REKT Token";
         decimals = 18;
         bonusEnds = now + 52 weeks;
         endDate = now + 520 weeks;

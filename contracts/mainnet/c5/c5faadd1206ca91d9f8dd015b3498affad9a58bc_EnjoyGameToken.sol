@@ -383,8 +383,8 @@ contract LockableToken is PausableToken {
 contract EnjoyGameToken is LockableToken {
     event Burn(address indexed _burner, uint256 _value);
 
-    string  public  constant name = &quot;EnjoyGameToken&quot;;
-    string  public  constant symbol = &quot;EGT&quot;;
+    string  public  constant name = "EnjoyGameToken";
+    string  public  constant symbol = "EGT";
     uint8   public  constant decimals = 6;
 
     /**

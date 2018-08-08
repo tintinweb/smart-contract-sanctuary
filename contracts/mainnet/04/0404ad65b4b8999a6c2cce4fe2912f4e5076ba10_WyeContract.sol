@@ -190,8 +190,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract WyeContract is StandardToken{
-  string public name = &quot;万业通&quot;;//name
-  string public symbol = &quot;WYT&quot;;//symbol
+  string public name = "万业通";//name
+  string public symbol = "WYT";//symbol
   uint8 public decimals = 18;//
   uint256 public TOTAL_SUPPLY = 1000000000000000000;//TOTAL_SUPPLY
   uint256 public totalSupply = 450000000*TOTAL_SUPPLY;	

@@ -113,8 +113,8 @@ contract EmmiumCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EmmiumCoin() public {
-        symbol = &quot;EMMI&quot;;
-        name = &quot;EmmiumCoin&quot;;
+        symbol = "EMMI";
+        name = "EmmiumCoin";
         decimals = 18;
         _totalSupply = 2000000000000000000000000000;
         balances[0x24D11cb41BD995D00F0FD5bB4ac5906997776236] = _totalSupply;

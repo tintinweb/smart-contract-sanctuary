@@ -113,8 +113,8 @@ contract DMBToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function DMBToken() public {
-        symbol = &quot;DMB&quot;;
-        name = &quot;Dembycoin&quot;;
+        symbol = "DMB";
+        name = "Dembycoin";
         decimals = 12;
         _totalSupply = 1500000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

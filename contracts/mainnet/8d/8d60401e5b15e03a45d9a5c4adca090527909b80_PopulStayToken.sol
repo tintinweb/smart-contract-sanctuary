@@ -109,8 +109,8 @@ contract PopulStayToken is ERC20Interface, Owned {
   function PopulStayToken()
     public
   {
-    symbol = &quot;PPS&quot;;
-    name = &quot;PopulStay Token&quot;;
+    symbol = "PPS";
+    name = "PopulStay Token";
     decimals = 0;
     _totalSupply = 5000000000;
     balances[owner] = _totalSupply;
@@ -311,7 +311,7 @@ contract HouseInfoListing{
       return ;
       
   }
-  //&quot;test&quot;,9,&quot;roominfo&quot;,&quot;test&quot;,&quot;0x3333322d30303332000000000000000000000000000000000000000000000000&quot;
+  //"test",9,"roominfo","test","0x3333322d30303332000000000000000000000000000000000000000000000000"
    function setHouseInfo(bytes32 _uuid,uint _price,string _roominfo,bytes32 _districtcode) 
    public 
    returns(bool success)

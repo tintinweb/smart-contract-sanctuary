@@ -227,7 +227,7 @@ contract ERC721 is ERC721Basic, ERC721Enumerable, ERC721Metadata {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 internal constant ERC721_RECEIVED = 0x150b7a02;
@@ -243,7 +243,7 @@ contract ERC721Receiver {
    * @param _from The address which previously owned the token
    * @param _tokenId The NFT identifier which is being transferred
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`
    */
   function onERC721Received(
     address _operator,
@@ -347,7 +347,7 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 private constant ERC721_RECEIVED = 0x150b7a02;
 
@@ -487,7 +487,7 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
    * @dev Safely transfers the ownership of a given token ID to another address
    * If the target address is a contract, it must implement `onERC721Received`,
    * which is called upon a safe transfer, and return the magic value
-   * `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`; otherwise,
+   * `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`; otherwise,
    * the transfer is reverted.
    *
    * Requires the msg sender to be the owner, approved, or operator
@@ -503,14 +503,14 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
     public
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * If the target address is a contract, it must implement `onERC721Received`,
    * which is called upon a safe transfer, and return the magic value
-   * `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`; otherwise,
+   * `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`; otherwise,
    * the transfer is reverted.
    * Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -842,7 +842,7 @@ contract ERC721Token is SupportsInterfaceWithLookup, ERC721BasicToken, ERC721 {
 
 contract Nfties is ERC721Token {
 
-  constructor() public ERC721Token(&quot;Nfties&quot;,&quot;NFTIES&quot;) { }
+  constructor() public ERC721Token("Nfties","NFTIES") { }
 
   struct Token{
     uint8 body;
@@ -914,17 +914,17 @@ contract Nfties is ERC721Token {
   }
 
   function createTokenUri(uint8 body,uint8 feet,uint8 head,uint8 mouth,uint8 extra) internal returns (string){
-    string memory uri = &quot;https://nfties.io/tokens/nfties-&quot;;
+    string memory uri = "https://nfties.io/tokens/nfties-";
     uri = appendUint8ToString(uri,body);
-    uri = strConcat(uri,&quot;-&quot;);
+    uri = strConcat(uri,"-");
     uri = appendUint8ToString(uri,feet);
-    uri = strConcat(uri,&quot;-&quot;);
+    uri = strConcat(uri,"-");
     uri = appendUint8ToString(uri,head);
-    uri = strConcat(uri,&quot;-&quot;);
+    uri = strConcat(uri,"-");
     uri = appendUint8ToString(uri,mouth);
-    uri = strConcat(uri,&quot;-&quot;);
+    uri = strConcat(uri,"-");
     uri = appendUint8ToString(uri,extra);
-    uri = strConcat(uri,&quot;.png&quot;);
+    uri = strConcat(uri,".png");
     return uri;
   }
 

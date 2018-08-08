@@ -88,7 +88,7 @@ contract PrivateSale is ContractReceiver {
 
     function tokenFallback(address _from, uint _value, bytes _data) public {
         // Only the owner can send tokens to the SC
-        require(_from == owner, &quot;Only owner can send tokens&quot;);
+        require(_from == owner, "Only owner can send tokens");
     }
 
     // Fallback function to issue tokens when receiving ether
@@ -271,8 +271,8 @@ contract StandardERC20 is ERC20Interface {
 
 contract Token is StandardERC20 {
     
-    string public name    = &quot;Genuine Token&quot;;
-    string public symbol  = &quot;GNU&quot;;
+    string public name    = "Genuine Token";
+    string public symbol  = "GNU";
     uint8  public decimals = 18;
 
     address owner;
@@ -376,7 +376,7 @@ contract Token is StandardERC20 {
 
     //function that is called when transaction target is an address
     function transferToAddress(address _to, uint _value, bytes _data) private returns (bool success) {
-        if (balanceOf(msg.sender) < _value) revert(&quot;Insufficient balance&quot;);
+        if (balanceOf(msg.sender) < _value) revert("Insufficient balance");
         balances[msg.sender] = balanceOf(msg.sender).sub(_value);
         balances[_to] = balanceOf(_to).add(_value);
         emit Transfer(msg.sender, _to, _value, _data);
@@ -387,7 +387,7 @@ contract Token is StandardERC20 {
     
     //function that is called when transaction target is a contract
     function transferToContract(address _to, uint _value, bytes _data) private returns (bool success) {
-        if (balanceOf(msg.sender) < _value) revert(&quot;Insufficient balance&quot;);
+        if (balanceOf(msg.sender) < _value) revert("Insufficient balance");
         balances[msg.sender] = balanceOf(msg.sender).sub(_value);
         balances[_to] = balanceOf(_to).add(_value);
         ContractReceiver receiver = ContractReceiver(_to);

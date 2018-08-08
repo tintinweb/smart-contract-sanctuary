@@ -2,8 +2,8 @@ pragma solidity ^0.4.24;
 
 contract ExchangerPoint {
 
-    string public name = &quot;ExchangerPoint&quot;;                                            
-    string public symbol = &quot;EXPT&quot;;           
+    string public name = "ExchangerPoint";                                            
+    string public symbol = "EXPT";           
     uint256 public decimals = 18;            
 
     mapping (address => uint256) public balanceOf;

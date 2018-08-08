@@ -86,15 +86,15 @@ contract GeneratedERC20Contract is StandardToken {
     function GeneratedERC20Contract() {
         balances[msg.sender] = 1000000000000000000;
         totalSupply = 1000000000000000000;
-        name = &quot;Tec-Token&quot;;
-        symbol = &quot;TECH&quot;;
+        name = "Tec-Token";
+        symbol = "TECH";
         decimals = 18;
     }
 
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) throw;
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) throw;
         return true;
     }
 }

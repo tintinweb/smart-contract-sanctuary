@@ -113,8 +113,8 @@ contract Nudge is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Nudge() public {
-        symbol = &quot;NUDGE&quot;;
-        name = &quot;Nudge Token&quot;;
+        symbol = "NUDGE";
+        name = "Nudge Token";
         decimals = 0;
         _totalSupply = 4007500000;
         balances[0x118ccBB296f934E33b9da1f9E8C7B68196C7b85D] = _totalSupply;

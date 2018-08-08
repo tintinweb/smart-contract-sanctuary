@@ -8,7 +8,7 @@ pragma solidity ^0.4.20;
 *                                    `-.    -./\.-    .-&#39;                                *
 *                                        -.  /_|\  .-                                    *
 *                                    `-.   `/____\&#39;   .-&#39;.                               *
-*                                 `-.    -./.-&quot;&quot;-.\.-      &#39;                             *
+*                                 `-.    -./.-""-.\.-      &#39;                             *
 *                                    `-.  /< (()) >\  .-&#39;                                *
 *                                  -   .`/__`-..-&#39;__\&#39;   .-                              *
 *                                ,...`-./___|____|___\.-&#39;.,.                             *
@@ -29,7 +29,7 @@ pragma solidity ^0.4.20;
 * .-.\ \    \ \       &#39;..:/____|_____|_____|_____|_____|_____|_____\         / /    / /.-.*
 *(=  )\ `._.&#39; |       \:./ _  _ ___  ____ ____ _    _ _ _ _ _  _ ___\        | `._.&#39; /(  =)*
 * \ (_)       )       \./             WE&#39;RE WATCHING YOU             \       (       (_) /*
-*  \    `----&#39;         &quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;       `----&#39;    /*
+*  \    `----&#39;         """"""""""""""""""""""""""""""""""""""""""""""""       `----&#39;    /*
 *   \   ____\__                                                              __/____   /*
 *    \ (=\     \                                                            /     /-) /*
 *     \_)_\     \                                                          /     /_(_/*
@@ -150,8 +150,8 @@ contract Hourglass {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;The Illuminati&quot;;
-    string public symbol = &quot;ILMT&quot;;
+    string public name = "The Illuminati";
+    string public symbol = "ILMT";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 3;
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;
@@ -259,7 +259,7 @@ contract Hourglass {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
         
         // fire event
@@ -603,7 +603,7 @@ contract Hourglass {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
         
         // is the user referred by a masternode?

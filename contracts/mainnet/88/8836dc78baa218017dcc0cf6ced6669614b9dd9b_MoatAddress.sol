@@ -12,19 +12,19 @@ contract MoatAddress {
     mapping(bytes32 => address) internal addressBook;
 
     modifier onlyAdmin() {
-        require(msg.sender == getAddr(&quot;admin&quot;));
+        require(msg.sender == getAddr("admin"));
         _;
     }
 
     constructor() public {
-        addressBook[keccak256(&quot;owner&quot;)] = msg.sender;
-        addressBook[keccak256(&quot;admin&quot;)] = msg.sender;
+        addressBook[keccak256("owner")] = msg.sender;
+        addressBook[keccak256("admin")] = msg.sender;
     }
 
     function setAddr(string AddrName, address Addr) public {
         require(
-            msg.sender == getAddr(&quot;owner&quot;) ||
-            msg.sender == getAddr(&quot;admin&quot;)
+            msg.sender == getAddr("owner") ||
+            msg.sender == getAddr("admin")
         );
         addressBook[keccak256(AddrName)] = Addr;
         emit eSetAddr(AddrName, Addr);
@@ -39,7 +39,7 @@ contract MoatAddress {
     function SendERC20ToAsset(address tokenAddress) onlyAdmin public {
         token tokenFunctions = token(tokenAddress);
         uint256 tokenBal = tokenFunctions.balanceOf(address(this));
-        tokenFunctions.transfer(getAddr(&quot;asset&quot;), tokenBal);
+        tokenFunctions.transfer(getAddr("asset"), tokenBal);
     }
 
 }

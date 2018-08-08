@@ -50,8 +50,8 @@ contract ChivesToken is Token {
 
     uint public totalSupply = 1*10**27;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;ChivesToken&quot;;
-    string constant public symbol = &quot;CT&quot;;
+    string constant public name = "ChivesToken";
+    string constant public symbol = "CT";
     uint constant MAX_UINT = 2**256 - 1;
 
     function ChivesToken() public {

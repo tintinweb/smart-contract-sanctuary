@@ -20,9 +20,9 @@ contract AT{
     function AT() public {
         balances[msg.sender] = 20000000000000;               // Give the creator all initial tokens
         totalSupply = 20000000000000;                        // Update total supply
-        name = &quot;agriculturatoken&quot;;                                   // Set the name for display purposes
+        name = "agriculturatoken";                                   // Set the name for display purposes
         decimals =4;                            // Amount of decimals for display purposes
-        symbol = &quot;AT&quot;;                               // Set the symbol for display purposes
+        symbol = "AT";                               // Set the symbol for display purposes
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

@@ -815,8 +815,8 @@ contract Tokens is HardcodedWallets, ERC20, Haltable {
 	 * @notice Constructor: set up token properties and owner token balance
 	 */
 	constructor(address _addressSCEscrow, address _addressSCComplianceService) public {
-		name = &quot;TheRentalsToken&quot;;
-		symbol = &quot;TRT&quot;;
+		name = "TheRentalsToken";
+		symbol = "TRT";
 		decimals = 18; // 18 decimal places, the same as ETH
 
 		// initialSupply = 2000000000 ether; // 2018-04-21: ICO summary.docx: ...Dicho valor generar&#237;a un Total Supply de 2.000 millones de TRT.
@@ -874,7 +874,7 @@ contract Tokens is HardcodedWallets, ERC20, Haltable {
 	/**
 	 * @notice Send _amount amount of tokens from address _from to address _to
  	 * @notice The transferFrom method is used for a withdraw workflow, allowing contracts to send 
- 	 * @notice tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge 
+ 	 * @notice tokens on your behalf, for example to "deposit" to a contract address and/or to charge 
  	 * @notice fees in sub-currencies; the command should fail unless the _from account has 
  	 * @notice deliberately authorized the sender of the message via some mechanism
  	 */
@@ -1055,14 +1055,14 @@ contract Whitelist is HardcodedWallets, System {
 		if (managers[msg.sender] || msg.sender == owner) {
 			_;
 		} else {
-			error(&quot;isManager: called by user that is not owner or manager&quot;);
+			error("isManager: called by user that is not owner or manager");
 		}
 	}
 
 	// adds an address that will have the right to add investors
 	function addManager(address _managerAddr) external onlyOwner returns (bool) {
 		if(managers[_managerAddr]){
-			error(&quot;addManager: manager account already exists.&quot;);
+			error("addManager: manager account already exists.");
 			return false;
 		}
 
@@ -1074,7 +1074,7 @@ contract Whitelist is HardcodedWallets, System {
 	// removes a manager address
 	function delManager(address _managerAddr) external onlyOwner returns (bool) {
 		if(!managers[_managerAddr]){
-			error(&quot;delManager: manager account not found.&quot;);
+			error("delManager: manager account not found.");
 			return false;
 		}
 

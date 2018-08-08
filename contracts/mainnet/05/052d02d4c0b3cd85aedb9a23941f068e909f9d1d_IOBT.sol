@@ -126,8 +126,8 @@ contract ERC20StandardToken is ERC20Standard {
 contract IOBT is ERC20StandardToken, Ownable {
 
     // token information
-    string public constant name = &quot;Internet of Blockchain Token&quot;;
-    string public constant symbol = &quot;IOBT&quot;;
+    string public constant name = "Internet of Blockchain Token";
+    string public constant symbol = "IOBT";
     uint8 public constant decimals = 18;
     uint256 TotalTokenSupply=5*(10**8)*(10**uint256(decimals));
 

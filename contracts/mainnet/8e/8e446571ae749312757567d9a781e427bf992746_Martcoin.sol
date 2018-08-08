@@ -102,8 +102,8 @@ contract TokenERC20 {
 }
 
 contract Martcoin is owned, TokenERC20 {
-    string public name = &quot;Martcoin&quot;;
-    string public symbol = &quot;MART&quot;;
+    string public name = "Martcoin";
+    string public symbol = "MART";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 29000000;
 

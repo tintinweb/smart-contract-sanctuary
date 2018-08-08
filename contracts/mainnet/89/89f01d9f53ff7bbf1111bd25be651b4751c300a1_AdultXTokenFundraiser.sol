@@ -1275,8 +1275,8 @@ contract BurnableToken is StandardToken {
 contract AdultXToken is MintableToken, BurnableToken {
   constructor(address _minter)
     StandardToken(
-      &quot;Adult X Token&quot;,   // Token name
-      &quot;ADUX&quot;, // Token symbol
+      "Adult X Token",   // Token name
+      "ADUX", // Token symbol
       18  // Token decimals
     )
     
@@ -1296,7 +1296,7 @@ contract AdultXTokenSafe is TokenSafe {
     TokenSafe(_token)
     public
   {
-    // Group &quot;Team and Advisors&quot;
+    // Group "Team and Advisors"
     init(
       0, // Group Id
       1540980000 // Release date = 31 Oct 2018 10:00 UTC
@@ -1306,7 +1306,7 @@ contract AdultXTokenSafe is TokenSafe {
       0xbb10e00eCA142D9EE69e498BA0a7d3B97E687354, // Token Safe Entry Address
       50000000000000000000000000  // Allocated tokens
     );
-    // Group &quot;Marketing&quot;
+    // Group "Marketing"
     init(
       1, // Group Id
       1540980000 // Release date = 31 Oct 2018 10:00 UTC
@@ -1316,7 +1316,7 @@ contract AdultXTokenSafe is TokenSafe {
       0xf5ED224C3CC7fC1a18Ee14a5F22826b4bf75BadC, // Token Safe Entry Address
       100000000000000000000000000  // Allocated tokens
     );
-    // Group &quot;Airdrop&quot;
+    // Group "Airdrop"
     init(
       2, // Group Id
       1548928800 // Release date = 31 Jan 2019 10:00 UTC

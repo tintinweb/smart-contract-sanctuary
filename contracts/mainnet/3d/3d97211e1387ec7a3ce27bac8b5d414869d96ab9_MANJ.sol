@@ -187,8 +187,8 @@ contract ContractReceiver {
 contract MANJ is ERC223, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;MANJCOIN&quot;;
-    string public symbol = &quot;MANJ&quot;;
+    string public name = "MANJCOIN";
+    string public symbol = "MANJ";
     uint8 public decimals = 8;
     uint256 public totalSupply = 19190721 * 1e8;
     uint256 public codeSize = 0;

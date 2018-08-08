@@ -85,8 +85,8 @@ contract CodexStandardToken is ERC20Interface, Owned {
     mapping(address => mapping(address => uint)) allowed;
 
     constructor() public {
-        name = &quot;CODEXSTANDARD Token&quot;;
-        symbol = &quot;CDX&quot;;
+        name = "CODEXSTANDARD Token";
+        symbol = "CDX";
         decimals = 0;
         _totalSupply = 273728000;
         balances[owner] = _totalSupply;

@@ -23,8 +23,8 @@ contract GAINSPOSTOKEN {
     ) public {
         totalSupply = 10000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;               
-        name = &quot;GAINSPOS TOKEN&quot;;                                  
-        symbol = &quot;GPOS&quot;;                               
+        name = "GAINSPOS TOKEN";                                  
+        symbol = "GPOS";                               
     }
 
 

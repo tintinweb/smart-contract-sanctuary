@@ -145,8 +145,8 @@ contract AToken is TokenControl,Owned
 {
     using SafeMath for uint256 ;
 
-    string public constant name    = &quot;Alvin&#39;s Token&quot;;
-    string public constant symbol  = &quot;Atoken&quot;;
+    string public constant name    = "Alvin&#39;s Token";
+    string public constant symbol  = "Atoken";
     uint8 public decimals = 9;
 
 

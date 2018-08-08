@@ -101,9 +101,9 @@ contract StandardToken is Token {
     function Arcus() {
         balances[msg.sender] = 8000000000000000;               
         totalSupply = 8000000000000000;                        
-        name = &quot;Arcus&quot;;                                   
+        name = "Arcus";                                   
         decimals = 8;                                               
-        symbol = &quot;ASC&quot;;                                              
+        symbol = "ASC";                                              
         fundsWallet = 0x1bca2F9077C91F10548B99Bc60653Bb19e968027;                                    
     }
 
@@ -127,7 +127,7 @@ contract StandardToken is Token {
         Approval(msg.sender, _spender, _value);
 
        
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
     

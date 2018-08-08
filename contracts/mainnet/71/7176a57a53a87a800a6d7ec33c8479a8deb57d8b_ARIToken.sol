@@ -16,8 +16,8 @@ contract ARIToken {
      *  Constants
     /*/
 
-    string public constant name = &quot;ARI Token&quot;;
-    string public constant symbol = &quot;ARI&quot;;
+    string public constant name = "ARI Token";
+    string public constant symbol = "ARI";
     uint   public constant decimals = 18;
 
     /*/

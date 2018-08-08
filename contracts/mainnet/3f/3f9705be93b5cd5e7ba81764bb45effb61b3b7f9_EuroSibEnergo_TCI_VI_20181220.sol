@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	EuroSibEnergo_TCI_VI_20181220				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	EuroSibEnergo_TCI_VI_20181220		&quot;	;
-	string	public	constant	symbol =	&quot;	ESETCIVI		&quot;	;
+	string	public	constant	name =	"	EuroSibEnergo_TCI_VI_20181220		"	;
+	string	public	constant	symbol =	"	ESETCIVI		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

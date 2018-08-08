@@ -38,8 +38,8 @@ contract owned {
 }
 contract ERNToken is owned {
     using SafeMath for uint256;
-    string public constant name = &quot;ERNToken&quot;;
-    string public constant symbol = &quot;ERN&quot;;
+    string public constant name = "ERNToken";
+    string public constant symbol = "ERN";
     uint public constant decimals = 8;
     uint constant ONETOKEN = 10 ** uint256(decimals);
     uint constant MILLION = 1000000; 

@@ -112,8 +112,8 @@ contract HarvestedBabyBrain is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HarvestedBabyBrain() public {
-        symbol = &quot;HBB&quot;;
-        name = &quot;Harvested Baby Brain&quot;;
+        symbol = "HBB";
+        name = "Harvested Baby Brain";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[msg.sender] = _totalSupply;

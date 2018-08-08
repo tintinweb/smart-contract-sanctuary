@@ -113,8 +113,8 @@ contract ChessCash is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ChessCash() public {
-        symbol = &quot;ChessCash&quot;;
-        name = &quot;ChessCoin Cash&quot;;
+        symbol = "ChessCash";
+        name = "ChessCoin Cash";
         decimals = 18;
         _totalSupply = 64000000000000000000000000;
         balances[0x04Ede35B1D51c0e814833887b2DdBB5D553070b6] = _totalSupply; //MEW address here

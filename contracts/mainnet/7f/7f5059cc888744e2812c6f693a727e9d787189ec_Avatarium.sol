@@ -123,8 +123,8 @@ contract Avatarium is Ownable, ERC721 {
 
 
     // The name and the symbol of the NFT, as defined in ERC-721.
-    string public constant NAME = &quot;Avatarium&quot;;
-    string public constant SYMBOL = &quot;ΛV&quot;;
+    string public constant NAME = "Avatarium";
+    string public constant SYMBOL = "ΛV";
 
     // Prices and iteration steps
     uint256 private startingPrice = 0.02 ether;

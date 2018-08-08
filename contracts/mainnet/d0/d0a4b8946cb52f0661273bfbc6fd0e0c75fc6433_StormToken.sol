@@ -168,9 +168,9 @@ contract StormToken is Token {
 
   /* Initializes contract */
   function StormToken(address _crowdsaleAddress) public {
-    standard = &quot;Storm Token v1.0&quot;;
-    name = &quot;Storm Token&quot;;
-    symbol = &quot;STORM&quot;; // token symbol
+    standard = "Storm Token v1.0";
+    name = "Storm Token";
+    symbol = "STORM"; // token symbol
     decimals = 18;
     crowdsaleContractAddress = _crowdsaleAddress;
   }

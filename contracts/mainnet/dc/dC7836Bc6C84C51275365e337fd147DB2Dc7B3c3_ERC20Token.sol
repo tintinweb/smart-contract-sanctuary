@@ -183,9 +183,9 @@ contract ERC20Token is ERC20Interface, Owned {
 
     function ERC20Token() public {
 
-        symbol = &quot;RRC&quot;;
+        symbol = "RRC";
 
-        name = &quot;RenRenCoin&quot;;
+        name = "RenRenCoin";
 
         decimals = 18;
 

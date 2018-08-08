@@ -23,8 +23,8 @@ contract FintechChain {
     function FintechChain() {
         balanceOf[msg.sender] = 1000000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply = 1000000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;FintechChain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;FTL&quot;;                               // Set the symbol for display purposes
+        name = "FintechChain";                                   // Set the name for display purposes
+        symbol = "FTL";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

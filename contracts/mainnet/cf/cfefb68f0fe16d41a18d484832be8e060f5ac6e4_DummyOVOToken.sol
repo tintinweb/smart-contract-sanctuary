@@ -17,9 +17,9 @@ contract DummyOVOToken {
   using SafeMath for uint256;
 
   address public owner;
-  string public name = &quot;ICOVO&quot;;
-  string public symbol = &quot;OVO&quot;;
-  string public icon = &quot;QmXMDG2UnMQ7rFqxRN2LVA3ad2FLNTarDXZijdrctt8vpo&quot;;
+  string public name = "ICOVO";
+  string public symbol = "OVO";
+  string public icon = "QmXMDG2UnMQ7rFqxRN2LVA3ad2FLNTarDXZijdrctt8vpo";
   uint256 public decimals = 9;
   uint256 public totalSupply = 0;
 

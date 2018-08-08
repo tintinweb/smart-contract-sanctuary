@@ -19,8 +19,8 @@ pragma solidity ^0.4.11;
 
 contract MemeNetworkToken {
     // Token information.
-    string public constant name = &quot;Meme Network Token&quot;;
-    string public constant symbol = &quot;MNT&quot;;
+    string public constant name = "Meme Network Token";
+    string public constant symbol = "MNT";
     uint8 public constant decimals = 18;
 
     uint256 public constant tokenCreationRate = 10;

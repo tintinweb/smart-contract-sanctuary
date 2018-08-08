@@ -93,7 +93,7 @@ contract Cryptoloans is ERC20Interface, owned {
 
     //string  public standard    = &#39;Token 0.1&#39;;
     string  public name        = &#39;Cryptoloans&#39;;
-    string  public symbol      = &quot;LCN&quot;;
+    string  public symbol      = "LCN";
     uint8   public decimals    = 18;
     uint256 public tokensPerOneEther = 300;
     uint    public min_tokens = 30;

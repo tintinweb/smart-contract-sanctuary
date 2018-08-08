@@ -197,8 +197,8 @@ contract BurnableToken is StandardToken {
 }
 
 contract B21Token is BurnableToken {
-    string public constant name = &quot;B21 Token&quot;;
-    string public constant symbol = &quot;B21&quot;;
+    string public constant name = "B21 Token";
+    string public constant symbol = "B21";
     uint8 public constant decimals = 18;
 
     /// Maximum tokens to be allocated (500 million)

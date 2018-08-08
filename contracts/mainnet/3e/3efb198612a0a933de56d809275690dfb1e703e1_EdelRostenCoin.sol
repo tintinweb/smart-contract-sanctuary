@@ -68,8 +68,8 @@ contract EdelRostenCoin is ERCX20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     function EdelRostenCoin() public {
-        symbol = &quot;ERCX&quot;;
-        name = &quot;Edel Rosten Coin&quot;;
+        symbol = "ERCX";
+        name = "Edel Rosten Coin";
         decimals = 18;
         _totalSupply = 122000000 * 10**uint(decimals);
         owner = 0xDeE7D782Fa2645070e3c15CabF8324A0ccceAC78;

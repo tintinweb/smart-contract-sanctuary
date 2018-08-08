@@ -842,8 +842,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract LuckCashToken is PausableToken, CappedToken {
-    string public constant name = &quot;LuckCash&quot;;
-    string public constant symbol = &quot;LCK&quot;;
+    string public constant name = "LuckCash";
+    string public constant symbol = "LCK";
     uint8 public constant decimals = 18;
 
     function LuckCashToken(uint _cap) public CappedToken(_cap) PausableToken() {

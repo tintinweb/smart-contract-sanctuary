@@ -43,9 +43,9 @@ contract OpinionToken is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;Cryptopinions&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;OpinionToken&quot;; // solhint-disable-line
-  string public constant DEFAULT_TEXT = &quot;&quot;;
+  string public constant NAME = "Cryptopinions"; // solhint-disable-line
+  string public constant SYMBOL = "OpinionToken"; // solhint-disable-line
+  string public constant DEFAULT_TEXT = "";
 
   uint256 private firstStepLimit =  0.053613 ether;
   uint256 private secondStepLimit = 0.564957 ether;
@@ -475,7 +475,7 @@ function _setPrice(uint256 newprice) private{
         if(newprice > 0.1 ether){ //max price for a new opinion, 1 ether
             newprice=0.1 ether;
         }
-        _createOpinion(&quot;&quot;,ceoAddress,newprice); //make a new opinion for someone else to buy
+        _createOpinion("",ceoAddress,newprice); //make a new opinion for someone else to buy
         opinion.claimed=true;
       
           //currentIssueRemaining=SafeMath.sub(currentIssueRemaining,1);

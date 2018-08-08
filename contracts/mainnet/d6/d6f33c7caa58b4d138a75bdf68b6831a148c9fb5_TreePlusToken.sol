@@ -109,8 +109,8 @@ contract TreePlusToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TreePlusToken() public {
-        symbol = &quot;TLUS&quot;;
-        name = &quot; TreePlus &quot;;
+        symbol = "TLUS";
+        name = " TreePlus ";
         decimals = 8;
         _totalSupply = 10000000000000000;
         balances[0x278B127b5D0Dd28F585882CA01376B2e2b66baC5] = _totalSupply;

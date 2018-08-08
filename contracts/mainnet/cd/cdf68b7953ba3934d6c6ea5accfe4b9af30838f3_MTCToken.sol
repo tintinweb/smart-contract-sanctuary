@@ -102,8 +102,8 @@ contract MTCToken is Common,ERC20 {
     mapping(address => uint256) balances;
     uint256 totalSupply_;
 
-    string public name = &quot;MTCToken&quot;;
-    string public symbol = &quot;MTC&quot;;
+    string public name = "MTCToken";
+    string public symbol = "MTC";
     uint256 public decimals = 18;
 
     constructor() public {

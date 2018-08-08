@@ -4,7 +4,7 @@ pragma solidity ^0.4.13;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -285,8 +285,8 @@ contract MintableToken is StandardToken, Ownable {
 
 
 contract HydroCoin is MintableToken, Pausable {
-  string public name = &quot;H2O Token&quot;;
-  string public symbol = &quot;H2O&quot;;
+  string public name = "H2O Token";
+  string public symbol = "H2O";
   uint256 public decimals = 18;
 
   //----- splitter functions
@@ -350,7 +350,7 @@ contract HydroCoin is MintableToken, Pausable {
             first = whom;
         }
         last = whom;
-        Ev(&quot;add&quot;,whom,value);
+        Ev("add",whom,value);
     }
 
     function remove(address whom) internal {
@@ -368,7 +368,7 @@ contract HydroCoin is MintableToken, Pausable {
             theList[next].prev = prev;
         }
         theList[whom] =XRec(false,0x0,0x0,0);
-        Ev(&quot;remove&quot;,whom,0);
+        Ev("remove",whom,0);
     }
 
     function update(address whom, uint256 value) internal {
@@ -381,7 +381,7 @@ contract HydroCoin is MintableToken, Pausable {
                 add(whom,value);
             } else {
                 theList[whom].val = value;
-                Ev(&quot;update&quot;,whom,value);
+                Ev("update",whom,value);
             }
             return;
         }

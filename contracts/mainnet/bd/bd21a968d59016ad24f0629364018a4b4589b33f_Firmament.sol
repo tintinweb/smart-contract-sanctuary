@@ -16,9 +16,9 @@ contract Firmament {
     function Firmament() {
 
          initialSupply = 1000000;
-         name =&quot;Firmament&quot;;
+         name ="Firmament";
         decimals = 3;
-         symbol = &quot;Fm&quot;;
+         symbol = "Fm";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

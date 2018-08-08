@@ -5,8 +5,8 @@ public; }
 
 contract moleculartechnology {
     // Public variables of the token
-    string public name = &quot;molecular technology&quot;;
-    string public symbol = &quot;MCRT&quot;;
+    string public name = "molecular technology";
+    string public symbol = "MCRT";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

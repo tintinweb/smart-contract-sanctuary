@@ -23,8 +23,8 @@ contract BEXInterface {
 // BEX Token implemention
 contract BEXToken is ERC20, BEXInterface {
     address public constant burnToAddr = 0x0000000000000000000000000000000000000000;
-    string public constant name = &quot;BEX&quot;;
-    string public constant symbol = &quot;BEX&quot;;
+    string public constant name = "BEX";
+    string public constant symbol = "BEX";
     uint8 public constant decimals = 18;
     uint256 constant totalAmount = 200000000000000000000000000;
     mapping(address => uint256) balances;

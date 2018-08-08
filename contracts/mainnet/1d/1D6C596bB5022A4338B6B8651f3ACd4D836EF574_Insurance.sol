@@ -14,7 +14,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -192,13 +192,13 @@ contract Custody {
       require(msg.sender == address(manager));
 
       if (manager.isDailySettlementOnGoing()) {
-        require(_recipient == address(manager), &quot;Only manager can do this when the settlement is ongoing&quot;);
+        require(_recipient == address(manager), "Only manager can do this when the settlement is ongoing");
       } else {
         require(_recipient == owner);
       }
 
     } else {
-      require(msg.sender == owner, &quot;Only owner can do this when exchange is dead&quot;);
+      require(msg.sender == owner, "Only owner can do this when exchange is dead");
     }
     _;
   }
@@ -216,7 +216,7 @@ contract Custody {
   }
 
   function transferOwnership(address newOwner) public {
-    require(msg.sender == owner, &quot;Only the owner can transfer ownership&quot;);
+    require(msg.sender == owner, "Only the owner can transfer ownership");
     require(newOwner != address(0));
 
     emit OwnershipTransferred(owner, newOwner);

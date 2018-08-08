@@ -98,9 +98,9 @@ contract MANHATTANPROXY10THAMSTAVE is StandardToken {
         ) {
         totalSupply = 10000;                        
         balances[msg.sender] = 10000;               
-        name = &quot;MP10THAMSTAV&quot;;                                             
+        name = "MP10THAMSTAV";                                             
         decimals = 0;                            
-        symbol = &quot;MP10THAMSTAV&quot;;                               
+        symbol = "MP10THAMSTAV";                               
     }
 
     /* Approves and then calls the receiving contract */
@@ -109,7 +109,7 @@ contract MANHATTANPROXY10THAMSTAVE is StandardToken {
         Approval(msg.sender, _spender, _value);
 
         
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

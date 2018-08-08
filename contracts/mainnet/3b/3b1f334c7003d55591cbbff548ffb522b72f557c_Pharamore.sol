@@ -97,9 +97,9 @@ contract SafeMath {
  */
 contract Pharamore is ERC20, SafeMath {
 
-    string public name = &quot;Pharamore&quot;;
+    string public name = "Pharamore";
 
-    string public symbol = &quot;MORE&quot;;
+    string public symbol = "MORE";
 
     uint8 public decimals = 8;
 

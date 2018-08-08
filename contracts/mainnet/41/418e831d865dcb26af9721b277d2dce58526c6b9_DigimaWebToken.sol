@@ -114,8 +114,8 @@ contract DigimaWebToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;DGM&quot;;
-        name = &quot;Digima Token&quot;;
+        symbol = "DGM";
+        name = "Digima Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

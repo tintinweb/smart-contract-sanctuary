@@ -80,9 +80,9 @@ contract DazzioCoin is StandardToken {
 	
         balances[msg.sender] = 5000000000000000000000000;        // Total supply goes to the contract creator
         totalSupply = 5000000000000000000000000;                 // Total token supply
-        name = &quot;DazzioCoin&quot;;                                     // Token display name
+        name = "DazzioCoin";                                     // Token display name
         decimals = 18;
-        symbol = &quot;DAZZ&quot;;                                         // Token symbol
+        symbol = "DAZZ";                                         // Token symbol
         unitsOneEthCanBuy = 1000;                                // Tokens per ETH
         fundsWallet = msg.sender;                                // ETH goes to the contract address
 		
@@ -105,7 +105,7 @@ contract DazzioCoin is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

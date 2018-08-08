@@ -45,14 +45,14 @@ contract ItemMarket{
     	owner = msg.sender;
     	// Add items 
 
-    	AddItem(600, 1500, 1 finney, 0, 3000, &quot;Battery&quot;);
+    	AddItem(600, 1500, 1 finney, 0, 3000, "Battery");
 
 
-    	AddItem(600, 150, 4 finney, 0, 5000, &quot;Twig&quot;);
+    	AddItem(600, 150, 4 finney, 0, 5000, "Twig");
 
-    	AddItem(3600, 2000, 10 finney, 0, 4000, &quot;Solar Panel&quot;);
-    	AddItem(3600*24, 5000, 10 finney, 0, 5000, &quot;Moon&quot;);
-    	AddItem(3600*24*7, 7500, 50 finney, 0, 7000, &quot;Ethereum&quot;);
+    	AddItem(3600, 2000, 10 finney, 0, 4000, "Solar Panel");
+    	AddItem(3600*24, 5000, 10 finney, 0, 5000, "Moon");
+    	AddItem(3600*24*7, 7500, 50 finney, 0, 7000, "Ethereum");
 
     }
 
@@ -103,7 +103,7 @@ contract ItemMarket{
         require (devFee + potFee + creatorFee <= 10000);
         
     	uint16 previousFee = 10000 - devFee - potFee - creatorFee;
-    	var NewItem = Item(timer, 0, priceIncrease, minPrice, 0, minPrice, creatorFee, previousFee, potFee, msg.sender, address(0), &quot;&quot;, name);
+    	var NewItem = Item(timer, 0, priceIncrease, minPrice, 0, minPrice, creatorFee, previousFee, potFee, msg.sender, address(0), "", name);
 
     	Items[next_item_index] = NewItem;
 

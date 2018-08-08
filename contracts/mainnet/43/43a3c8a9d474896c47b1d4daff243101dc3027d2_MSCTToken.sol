@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title owned
  * @dev The owned contract has an owner address, and provides basic authorization
- *      control functions, this simplifies the implementation of &quot;user permissions&quot;.
+ *      control functions, this simplifies the implementation of "user permissions".
  */
 contract owned {
     address public owner;
@@ -87,8 +87,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 contract TokenERC20 {
     using SafeMath for uint;
     // Public variables of the token
-    string public name = &quot;media spread blockchain&quot;;
-    string public symbol = &quot;MSCT&quot;;
+    string public name = "media spread blockchain";
+    string public symbol = "MSCT";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 5000000000 * 10 ** uint256(decimals);

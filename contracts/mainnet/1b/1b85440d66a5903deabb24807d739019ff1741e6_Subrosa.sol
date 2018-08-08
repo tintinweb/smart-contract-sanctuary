@@ -4,7 +4,7 @@ Subrosa is a contract designed to behave exactly like a pyramid economy. Based o
 The problem with PoWH and EthPhoenix is that the incentive to spread the contract is limited. In PoWH&#39;s case, masternodes only work for people that put down a lot of time into promoting it.
 EthPhoenix has no referral links, meaning it&#39;s more of a collective attempt to promote it.
 Both of these projects have run into problems because of how they work (stagnation). Their immediate response to these problems has been to create OTHER projects that are based on the contracts.
-Another issue is that PoWH and EthPhoenix implemented pre-buy options (EthPhoenix less formally). Meaning the creators and &quot;influencers&quot; got a free pass at launch. 
+Another issue is that PoWH and EthPhoenix implemented pre-buy options (EthPhoenix less formally). Meaning the creators and "influencers" got a free pass at launch. 
 This increases the chance of centralization of funds (some users have too much economic power over the stability of the project) but also inequality problems.
 
 We created Subrosa to repair most of these problems. We say some, because inequality will always exist.
@@ -12,7 +12,7 @@ We created Subrosa to repair most of these problems. We say some, because inequa
 Subrosa is a a mathematical system that works very similar to previous projects in its form. There is a hard-coded fee of 20% on every transaction that is distributed amongst token holders. 
 This means that token holders get a passive income in ETH from the contract volume. 
 
-In addition to that, Subrosa implements the &quot;masternode&quot; system. An innovative mechanism implemented in PoWH. Which gives every user with a certain amount of tokens economic incentive to promote the project.
+In addition to that, Subrosa implements the "masternode" system. An innovative mechanism implemented in PoWH. Which gives every user with a certain amount of tokens economic incentive to promote the project.
 In plain terms, every user owning the minimum required amount of tokens for a masternode will have a personal link that the user can decide to pass on. If another address sends funds through this masternode. The address belonging to the masternode makes a fixed cut.
 
 In Subrosa&#39;s model with a 20% dividend fee, referring addresses through a masternode will give the referring address 3% of the total sent. In other numbers, 17% of the 20% dividend cut.
@@ -23,7 +23,7 @@ The Chain Dividend Fee is 7% of the total sent. In other numbers, 33% of the 20%
 The rest of the 20% fee goes to all token holders including those in the chain. Meaning 10% of the investment is distributed equally amongst all token holders.
 
 The biggest problem we ran into building this system is how to handle rational addresses. The rational thought is that it&#39;s better to be the closest possible to the top of the Masternode Chains.
-If a Root Node can refer an infinite amount of addresses, the system wouldn&#39;t work. As every address would try to get referred by a Root Node, meaning the system would collapse instantly as no users invest &quot;under&quot; lower nodes.
+If a Root Node can refer an infinite amount of addresses, the system wouldn&#39;t work. As every address would try to get referred by a Root Node, meaning the system would collapse instantly as no users invest "under" lower nodes.
 To prevent this, we implemented a dynamic cap on the amount of Direct Referrals a masternode can have. If an address has the required amount of tokens to be a masternode and 0 referrals, that address has the possibility to refer only 2 addresses.
 If that address finds 2 referrals, the address has 2/2 spots filled out. At that point, that node can only direct refer addresses owning less than required amount of tokens for a masternode.
 To increase this cap, these new referrals have to refer masternode eligible addresses amounting to the cap of the first node. Meaning that if these 2 referrals build 2 new chain directions combined. The cap increases by 2 for the parent masternode.

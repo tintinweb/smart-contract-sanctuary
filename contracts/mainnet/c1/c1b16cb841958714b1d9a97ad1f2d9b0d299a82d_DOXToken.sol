@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract DOXToken is StandardToken, owned {
 
-string public constant name = &quot;DOX&quot;;
-string public constant symbol = &quot;DOX&quot;;
+string public constant name = "DOX";
+string public constant symbol = "DOX";
 uint32 public constant decimals = 3;
 uint256 public  exchangeRate=200;
 uint256 public INITIAL_SUPPLY = 100000000 * 1000;

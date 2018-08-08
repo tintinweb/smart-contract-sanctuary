@@ -9,8 +9,8 @@ contract HelpMeTokenInterface{
 
 contract HelpMeTokenPart3 {
     
-    string public name = &quot;) STUPID GOVERNMENT DESTROYS ME&quot;;
-    string public symbol = &quot;) STUPID GOVERNMENT DESTROYS ME&quot;;
+    string public name = ") STUPID GOVERNMENT DESTROYS ME";
+    string public symbol = ") STUPID GOVERNMENT DESTROYS ME";
     uint256 public num = 3;
     uint256 public totalSupply = 2100005 ether;
     uint32 public constant decimals = 18;

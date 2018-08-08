@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract TsingDaToken is StandardToken {
-    string public name    = &quot;EDUC&quot;;
-    string public symbol  = &quot;EDUC&quot;;
+    string public name    = "EDUC";
+    string public symbol  = "EDUC";
     uint8 public decimals = 8;
 
     // 300 billion in initial supply

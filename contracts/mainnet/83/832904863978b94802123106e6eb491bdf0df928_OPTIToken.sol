@@ -49,7 +49,7 @@ contract SafeMath {
 
 /**
  * ERC-20 standard token interface, as defined
- * <a href=&quot;http://github.com/ethereum/EIPs/issues/20&quot;>here</a>.
+ * <a href="http://github.com/ethereum/EIPs/issues/20">here</a>.
  */
 contract Token {
   
@@ -235,8 +235,8 @@ contract OPTIToken is AbstractToken {
     return tokenCount;
   }
 
-  string constant public name = &quot;OptiToken&quot;;
-  string constant public symbol = &quot;OPTI&quot;;
+  string constant public name = "OptiToken";
+  string constant public symbol = "OPTI";
   uint8 constant public decimals = 18;
   
   /**

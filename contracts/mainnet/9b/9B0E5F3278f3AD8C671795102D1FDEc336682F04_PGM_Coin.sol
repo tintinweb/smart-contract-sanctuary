@@ -35,8 +35,8 @@ contract PGM_Coin
       totalSupply = 1000000000000000000000000000;                                 // as the decimals are 18, we add 18 zero after total supply, as all values are stored in wei
       owner =  msg.sender;                                                      // Set owner of contract
       balanceOf[owner] = totalSupply;                                           // Give the creator all initial tokens
-       name = &quot;PGM Coin&quot;;                                                     // Set the name for display purposes
-      symbol = &quot;PGM&quot;;                                                          // Set the symbol for display purposes
+       name = "PGM Coin";                                                     // Set the name for display purposes
+      symbol = "PGM";                                                          // Set the symbol for display purposes
       decimals = 18;                                                            // Amount of decimals for display purposes
       remaining = totalSupply;                                                  // How many tokens are left
       ethRate = 1100;                                                            // default token price

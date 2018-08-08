@@ -258,7 +258,7 @@ contract BancorBuyer {
     //     payable
     //     public
     // {
-    //     require(_mtkn.changeableTokenCount() == _exchanges.length, &quot;&quot;);
+    //     require(_mtkn.changeableTokenCount() == _exchanges.length, "");
 
     //     balances[msg.sender] = balances[msg.sender].add(msg.value);
     //     for (uint i = 0; i < _exchanges.length; i++) {

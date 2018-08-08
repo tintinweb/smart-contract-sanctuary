@@ -116,8 +116,8 @@ contract bitvimToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function bitvimToken() public {
-        symbol = &quot;VIM&quot;;
-        name = &quot;bitvim Token&quot;;
+        symbol = "VIM";
+        name = "bitvim Token";
         decimals = 18;
         bonusEnds = now;
         endDate = now + 1 days;

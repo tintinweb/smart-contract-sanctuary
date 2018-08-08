@@ -113,8 +113,8 @@ contract Litas is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Litas() public {
-        symbol = &quot;LTL&quot;;
-        name = &quot;Litas&quot;;
+        symbol = "LTL";
+        name = "Litas";
         decimals = 9;
         _totalSupply = 1000000000000000000000;
         balances[0x00f603ea0f70a481a56c10087eae999f1219f2e7] = _totalSupply;

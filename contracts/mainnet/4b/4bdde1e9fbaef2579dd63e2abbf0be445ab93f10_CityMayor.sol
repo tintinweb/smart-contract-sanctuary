@@ -17,7 +17,7 @@ library SafeMath {
   /**
   * @dev Integer division of two numbers, truncating the quotient.
   */
- // we don&#39;t need &quot;div&quot;
+ // we don&#39;t need "div"
 /*  function div(uint256 a, uint256 b) internal pure returns (uint256) {
   	// assert(b > 0); // Solidity automatically throws when dividing by 0
   	uint256 c = a / b;
@@ -52,8 +52,8 @@ contract CityMayor {
 	// ERC-20
 	//
 
-   	string public name = &quot;CityCoin&quot;;
-   	string public symbol = &quot;CITY&quot;;
+   	string public name = "CityCoin";
+   	string public symbol = "CITY";
    	uint8 public decimals = 0;
 
 	mapping(address => uint256) balances;
@@ -404,7 +404,7 @@ contract CityMayor {
 
 	//
 	// Economy boost:
-	// this is called by functions below that will &quot;buy a city from someone else&quot;
+	// this is called by functions below that will "buy a city from someone else"
 	// it will draw ECONOMY_BOOST_TRADE CITYs from the UN funds and split them in the relevant country
 	//
 

@@ -111,8 +111,8 @@ contract Coin786token18 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Coin786token18() public {
-        symbol = &quot;786&quot;;
-        name = &quot;786 Token&quot;;
+        symbol = "786";
+        name = "786 Token";
         decimals = 18;
         endDate = now + 50 weeks;
 

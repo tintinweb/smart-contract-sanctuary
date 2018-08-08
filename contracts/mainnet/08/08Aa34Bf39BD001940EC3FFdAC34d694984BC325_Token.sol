@@ -16,8 +16,8 @@ contract Token {
 	function Token() {
 	    totalSupply = 5*(10**8)*(10**18);
 		balanceOf[msg.sender] = 5*(10**8)*(10**18);              // Give the creator all initial tokens
-		name = &quot;ChainTraining&quot;;                                   // Set the name for display purposes
-		symbol = &quot;CTT&quot;;                               // Set the symbol for display purposes
+		name = "ChainTraining";                                   // Set the name for display purposes
+		symbol = "CTT";                               // Set the symbol for display purposes
 		decimals = 18;                            // Amount of decimals for display purposes
 	}
 

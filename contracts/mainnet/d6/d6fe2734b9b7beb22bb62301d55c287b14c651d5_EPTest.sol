@@ -73,8 +73,8 @@ contract EPTest is Owned {
 	int constant price_coeff = -0x296ABF784A358468C;
 
 	// Typical values that we have to declare.
-	string constant public name = &quot;EPTest&quot;;
-	string constant public symbol = &quot;EPY&quot;;
+	string constant public name = "EPTest";
+	string constant public symbol = "EPY";
 	uint8 constant public decimals = 18;
 
 	// Array between each address and their number of tokens.

@@ -81,8 +81,8 @@ contract MobileApp is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;MobileApp&quot;;
-    string public constant symbol = &quot;MAC&quot;;
+    string public constant name = "MobileApp";
+    string public constant symbol = "MAC";
     uint public constant decimals = 18;
     
 uint256 public totalSupply = 9999999999999e18;

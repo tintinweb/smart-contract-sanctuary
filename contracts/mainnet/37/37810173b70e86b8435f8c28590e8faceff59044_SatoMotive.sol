@@ -113,8 +113,8 @@ contract SatoMotive is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SatoMotive() public {
-        symbol = &quot;SV2X&quot;;
-        name = &quot;SatoMotive Token&quot;;
+        symbol = "SV2X";
+        name = "SatoMotive Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xf44970e29510EDE8fFED726CF8C447F7512fb59f] = _totalSupply;

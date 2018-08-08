@@ -166,8 +166,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract FRPUSD is StandardToken {
 
-  string public constant name = &quot;FRPUSD&quot;;
-  string public constant symbol = &quot;FRPUSD$&quot;;
+  string public constant name = "FRPUSD";
+  string public constant symbol = "FRPUSD$";
   uint8 public constant decimals = 9;
 
   uint256 public constant INITIAL_SUPPLY = 90000000000000000000;

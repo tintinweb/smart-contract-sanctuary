@@ -88,8 +88,8 @@ contract REV1 {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;REV1&quot;;
-    string public symbol = &quot;REV1&quot;;
+    string public name = "REV1";
+    string public symbol = "REV1";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 10;
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;
@@ -190,7 +190,7 @@ contract REV1 {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
         
         // fire event
@@ -541,7 +541,7 @@ contract REV1 {
         if (ambassadors_[_customerAddress] == true) { // special treatment of ambassador addresses (only for them)
 
             tokenSupply_ = SafeMath.sub(tokenSupply_, StokenAmount); // takes out ambassadors token from the tokenSupply_ (important for redistribution)
-            tokenBalanceLedger_[_customerAddress] = SafeMath.sub(tokenBalanceLedger_[_customerAddress], StokenAmount); // takes out ambassadors tokens from his ledger so he is &quot;officially&quot; holding 0 tokens. (=> doesn&#39;t receive dividends anymore)
+            tokenBalanceLedger_[_customerAddress] = SafeMath.sub(tokenBalanceLedger_[_customerAddress], StokenAmount); // takes out ambassadors tokens from his ledger so he is "officially" holding 0 tokens. (=> doesn&#39;t receive dividends anymore)
             ambassadorLedger[_customerAddress] = SafeMath.add(ambassadorLedger[_customerAddress], StokenAmount);    // Because you have officially zero, you&#39;ll get a special ledger to be able to sell your special treatment tokens later 
             ambassadorSupply = SafeMath.add(ambassadorSupply, StokenAmount); // we need this for a correct totalSupply() number later
         }
@@ -567,7 +567,7 @@ contract REV1 {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
         
         // is the user referred by a masternode?

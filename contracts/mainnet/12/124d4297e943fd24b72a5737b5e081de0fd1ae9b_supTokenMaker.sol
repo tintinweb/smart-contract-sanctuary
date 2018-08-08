@@ -39,7 +39,7 @@ interface ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -111,7 +111,7 @@ contract tokenCreator is Ownable{
     function transfer(address _to, uint _value) public returns (bool);
     event Transfer(address indexed _from, address indexed _to, uint _value);
 }
-contract supTokenMaker is tokenCreator(&quot;REPLY&quot;, &quot;True Reply Research Token&quot;, 18, 500000000), ERC20 {
+contract supTokenMaker is tokenCreator("REPLY", "True Reply Research Token", 18, 500000000), ERC20 {
     using SafeMath for uint256;
 
     event TokenTransferRequest(string method,address from, address backer, uint amount);
@@ -129,7 +129,7 @@ contract supTokenMaker is tokenCreator(&quot;REPLY&quot;, &quot;True Reply Resea
     }
 
     function transfer(address _to, uint _value) public returns (bool) {
-        emit TokenTransferRequest(&quot;transfer&quot;,msg.sender, _to, _value);
+        emit TokenTransferRequest("transfer",msg.sender, _to, _value);
         require(_value > 0 && _value <= _balanceOf[msg.sender]);
 
         _balanceOf[msg.sender] = _balanceOf[msg.sender].sub(_value);
@@ -138,7 +138,7 @@ contract supTokenMaker is tokenCreator(&quot;REPLY&quot;, &quot;True Reply Resea
         return true;
     }
     function transferFrom(address _from, address _to, uint _value) public returns (bool) {
-        emit TokenTransferRequest(&quot;transferFrom&quot;,_from, _to, _value);
+        emit TokenTransferRequest("transferFrom",_from, _to, _value);
         require(_to != address(0) && _value <= _balanceOf[_from] && _value <= _allowed[_from][msg.sender] && _value > 0);
 
         _balanceOf[_from] =  _balanceOf[_from].sub(_value);

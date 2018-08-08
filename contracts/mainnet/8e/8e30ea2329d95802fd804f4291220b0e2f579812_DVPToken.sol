@@ -218,9 +218,9 @@ contract HumanStandardToken is PausableToken {
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) public returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
-        if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { revert(); }
+        if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { revert(); }
         return true;
     }
 }
 
-contract DVPToken is HumanStandardToken(5000000000*(10**18),&quot;Decentralized Vulnerability Platform&quot;,18,&quot;DVP&quot;) {}
+contract DVPToken is HumanStandardToken(5000000000*(10**18),"Decentralized Vulnerability Platform",18,"DVP") {}

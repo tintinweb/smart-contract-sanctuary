@@ -2,7 +2,7 @@
 // Multi-sig, daily-limited account proxy/wallet.
 // @authors:
 // Gav Wood <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="52351237263a3637247c313d3f">[email&#160;protected]</a>>
-// inheritable &quot;property&quot; contract that enables methods to be protected by requiring the acquiescence of either a
+// inheritable "property" contract that enables methods to be protected by requiring the acquiescence of either a
 // single, or, crucially, each of a number of, designated owners.
 // usage:
 // use modifiers onlyowner (just own owned) or onlymanyowners(hash), whereby the same hash must be provided by
@@ -102,7 +102,7 @@ contract WalletLibrary is WalletEvents {
       Deposit(msg.sender, msg.value);
   }
 
-  // constructor is given number of sigs required to do protected &quot;onlymanyowners&quot; transactions
+  // constructor is given number of sigs required to do protected "onlymanyowners" transactions
   // as well as the selection of addresses capable of confirming them.
   function initMultiowned(address[] _owners, uint _required)  {
     m_numOwners = _owners.length + 1;
@@ -399,7 +399,7 @@ contract Wallet is WalletEvents {
   //   calls the `initWallet` method of the Library in this context
   function Wallet(address[] _owners, uint _required, uint _daylimit) {
     // Signature of the Wallet Library&#39;s init function
-    bytes4 sig = bytes4(sha3(&quot;initWallet(address[],uint256,uint256)&quot;));
+    bytes4 sig = bytes4(sha3("initWallet(address[],uint256,uint256)"));
     address target = _walletLibrary;
 
     // Compute the size of the call data : arrays has 2

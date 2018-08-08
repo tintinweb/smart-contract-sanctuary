@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -186,7 +186,7 @@ contract EIP20Wrapper {
             }
         }
 
-        require(result, &quot;eip20Transfer failed&quot;);
+        require(result, "eip20Transfer failed");
     }
 
     function eip20TransferFrom(
@@ -213,7 +213,7 @@ contract EIP20Wrapper {
             }
         }
 
-        require(result, &quot;eip20TransferFrom failed&quot;);
+        require(result, "eip20TransferFrom failed");
     }
 
     function eip20Approve(
@@ -239,7 +239,7 @@ contract EIP20Wrapper {
             }
         }
 
-        require(result, &quot;eip20Approve failed&quot;);
+        require(result, "eip20Approve failed");
     }
 }
 
@@ -254,7 +254,7 @@ contract BZxOwnable is Ownable {
 
     // modifier reverts if bZxContractAddress isn&#39;t set
     modifier onlyBZx() {
-        require(msg.sender == bZxContractAddress, &quot;only bZx contracts can call this function&quot;);
+        require(msg.sender == bZxContractAddress, "only bZx contracts can call this function");
         _;
     }
 
@@ -263,7 +263,7 @@ contract BZxOwnable is Ownable {
     * @param newBZxContractAddress The bZx contract address to transfer ownership to.
     */
     function transferBZxOwnership(address newBZxContractAddress) public onlyOwner {
-        require(newBZxContractAddress != address(0) && newBZxContractAddress != owner, &quot;transferBZxOwnership::unauthorized&quot;);
+        require(newBZxContractAddress != address(0) && newBZxContractAddress != owner, "transferBZxOwnership::unauthorized");
         emit BZxOwnershipTransferred(bZxContractAddress, newBZxContractAddress);
         bZxContractAddress = newBZxContractAddress;
     }
@@ -274,7 +274,7 @@ contract BZxOwnable is Ownable {
     * This overrides transferOwnership in Ownable to prevent setting the new owner the same as the bZxContract
     */
     function transferOwnership(address newOwner) public onlyOwner {
-        require(newOwner != address(0) && newOwner != bZxContractAddress, &quot;transferOwnership::unauthorized&quot;);
+        require(newOwner != address(0) && newOwner != bZxContractAddress, "transferOwnership::unauthorized");
         emit OwnershipTransferred(owner, newOwner);
         owner = newOwner;
     }
@@ -363,7 +363,7 @@ contract BZxTo0x is EIP20Wrapper, BZxOwnable {
 
         if (sourceTokenUsedAmount < sourceTokenAmountToUse) {
             // all sourceToken has to be traded
-            revert(&quot;BZxTo0x::take0xTrade: sourceTokenUsedAmount < sourceTokenAmountToUse&quot;);
+            revert("BZxTo0x::take0xTrade: sourceTokenUsedAmount < sourceTokenAmountToUse");
         }
 
         // transfer the destToken to the vault

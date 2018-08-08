@@ -66,8 +66,8 @@ contract Token99 is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Token99&quot;;
-    string public constant symbol = &quot;99&quot;;
+    string public constant name = "Token99";
+    string public constant symbol = "99";
     uint public constant decimals = 8;
 
     uint256 public totalSupply = 99e8;

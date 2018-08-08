@@ -147,11 +147,11 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract Liquet is StandardToken {
-    string public constant name = &quot;Liquet&quot;;
-    string public constant symbol = &quot;LQT&quot;;
+    string public constant name = "Liquet";
+    string public constant symbol = "LQT";
     uint public constant decimals = 18;
     uint public constant totalSupply = 10 * (10**6) * (10**decimals);
-    string public constant version = &quot;1.0&quot;;
+    string public constant version = "1.0";
 
     function Liquet() {
         balances[msg.sender] = totalSupply;

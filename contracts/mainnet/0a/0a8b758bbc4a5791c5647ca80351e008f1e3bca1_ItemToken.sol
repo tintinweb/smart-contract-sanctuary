@@ -3,7 +3,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -682,8 +682,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract EverGold is ERC827Token, MintableToken, AccessByGame {
-  string public constant name = &quot;Ever Gold&quot;;
-  string public constant symbol = &quot;EG&quot;;
+  string public constant name = "Ever Gold";
+  string public constant symbol = "EG";
   uint8 public constant decimals = 0;
 
   function mint(
@@ -815,15 +815,15 @@ contract ItemToken is AccessByGame {
   constructor()
     public
   {
-    addItem(&quot;None&quot;, 0, 0, false);
-    addItem(&quot;Arrow&quot;, 10, 10, true);
-    addItem(&quot;Tiger&quot;, 30, 20, true);
-    addItem(&quot;Spear&quot;, 50, 30, true);
-    addItem(&quot;Wood&quot;, 50, 20, true);
-    addItem(&quot;Fire&quot;, 50, 20, true);
-    addItem(&quot;Earth&quot;, 50, 20, true);
-    addItem(&quot;Metal&quot;, 50, 20, true);
-    addItem(&quot;Water&quot;, 50, 20, true);
+    addItem("None", 0, 0, false);
+    addItem("Arrow", 10, 10, true);
+    addItem("Tiger", 30, 20, true);
+    addItem("Spear", 50, 30, true);
+    addItem("Wood", 50, 20, true);
+    addItem("Fire", 50, 20, true);
+    addItem("Earth", 50, 20, true);
+    addItem("Metal", 50, 20, true);
+    addItem("Water", 50, 20, true);
   }
 
   function setGoldContract(address _goldTokenAddress)

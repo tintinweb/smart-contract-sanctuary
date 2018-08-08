@@ -2,11 +2,11 @@
 
 // Copyright (C) 2015, 2016, 2017  DappHub, LLC
 
-// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).
+// Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
 
 // Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
 
 pragma solidity ^0.4.13;
@@ -51,7 +51,7 @@ contract DSMath {
         z = add(mul(x, RAY), y / 2) / y;
     }
 
-    // This famous algorithm is called &quot;exponentiation by squaring&quot;
+    // This famous algorithm is called "exponentiation by squaring"
     // and calculates x^n with x as fixed-point and n as regular unsigned.
     //
     // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -83,11 +83,11 @@ contract DSMath {
 
 // Copyright (C) 2015, 2016, 2017  DappHub, LLC
 
-// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).
+// Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
 
 // Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
 
 pragma solidity ^0.4.13;
@@ -150,11 +150,11 @@ contract DSAuth is DSAuthEvents {
 
 // Copyright (C) 2017  DappHub, LLC
 //
-// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).
+// Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
 //
 // Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
 
 pragma solidity ^0.4.13;
@@ -188,11 +188,11 @@ contract DSNote {
 
 // Copyright (C) 2017  DappHub, LLC
 
-// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).
+// Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
 
 // Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
 
 pragma solidity ^0.4.13;
@@ -217,14 +217,14 @@ contract DSStop is DSNote, DSAuth {
 /*
    Copyright 2017 DappHub, LLC
 
-   Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+   Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
        http://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+   distributed under the License is distributed on an "AS IS" BASIS,
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
@@ -252,11 +252,11 @@ contract ERC20 {
 
 // Copyright (C) 2015, 2016, 2017  DappHub, LLC
 
-// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).
+// Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
 
 // Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
 
 pragma solidity ^0.4.13;
@@ -314,11 +314,11 @@ contract DSTokenBase is ERC20, DSMath {
 
 // Copyright (C) 2015, 2016, 2017  DappHub, LLC
 
-// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;).
+// Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
 
 // Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+// distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND (express or implied).
 
 pragma solidity ^0.4.13;
@@ -398,7 +398,7 @@ contract DSToken is DSTokenBase(0), DSStop {
     }
 
     // Optional token name
-    bytes32   public  name = &quot;&quot;;
+    bytes32   public  name = "";
 
     function setName(bytes32 name_) public auth {
         name = name_;

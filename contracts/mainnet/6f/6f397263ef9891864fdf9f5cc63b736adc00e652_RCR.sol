@@ -36,8 +36,8 @@ contract SafeMath {
 }
 contract RCR is SafeMath{
     uint256 public totalSupply;
-	string public name = &quot;RisingCurrency&quot;;
-    string public symbol = &quot;RCR&quot;;
+	string public name = "RisingCurrency";
+    string public symbol = "RCR";
 	uint8 public decimals = 8;
 
     /* This creates an array with all balances */

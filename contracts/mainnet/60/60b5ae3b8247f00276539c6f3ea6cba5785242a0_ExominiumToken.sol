@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract ExominiumToken {
 
-    string public name = &quot;ExoMinium&quot;;      //  token name
-    string public symbol = &quot;EXT&quot;;           //  token symbol
+    string public name = "ExoMinium";      //  token name
+    string public symbol = "EXT";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

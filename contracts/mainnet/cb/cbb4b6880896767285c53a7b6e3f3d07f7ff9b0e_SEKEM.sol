@@ -113,8 +113,8 @@ contract SEKEM is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SEKEM() public {
-        symbol = &quot;SKM&quot;;
-        name = &quot;SEKEM&quot;;
+        symbol = "SKM";
+        name = "SEKEM";
         decimals = 0;
         _totalSupply = 10000000000;
         balances[0xFE90fAf2D5579d64857Bf433ebAA329F260aFf9a] = _totalSupply;

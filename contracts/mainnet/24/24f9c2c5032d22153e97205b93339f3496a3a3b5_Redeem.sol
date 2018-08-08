@@ -41,7 +41,7 @@ contract Redeem {
       return (_idx, item.owner, item.price, item.nextPrice, item.slogan);
     } else {
       uint p = startPrice[_idx % startPrice.length];
-      return (_idx, item.owner, p, nextPriceOf(p), &quot;&quot;);
+      return (_idx, item.owner, p, nextPriceOf(p), "");
     }
   }
 

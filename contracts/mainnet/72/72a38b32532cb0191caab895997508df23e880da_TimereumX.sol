@@ -25,8 +25,8 @@ event Transfer(address indexed from, address indexed to, uint256 value);
 mapping(address => mapping (address => uint256)) allowed;
   
 function TimereumX() {
-    name = &quot;TimereumX&quot;;
-    symbol = &quot;TMEX&quot;;
+    name = "TimereumX";
+    symbol = "TMEX";
     decimals = 18;
     devAddress=0x85196Da9269B24bDf5FfD2624ABB387fcA05382B;
     tmedAddress=0x7598c3543Ef4f27F09C98AeB3753506a0290A0fc;

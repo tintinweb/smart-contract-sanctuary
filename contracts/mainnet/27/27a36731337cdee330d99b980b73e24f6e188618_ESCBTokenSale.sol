@@ -159,13 +159,13 @@ contract TokenController {
 
 /// @dev The actual token contract, the default controller is the msg.sender
 ///    that deploys the contract, so usually this token will be deployed by a
-///    token controller contract, which Giveth will call a &quot;Campaign&quot;
+///    token controller contract, which Giveth will call a "Campaign"
 contract MiniMeToken is Controlled {
 
     string public name;               //The Token&#39;s name: e.g. DigixDAO Tokens
     uint8 public decimals;             //Number of decimals of the smallest unit
     string public symbol;               //An identifier: e.g. REP
-    string public version = &quot;MMT_0.1&quot;; //An arbitrary versioning scheme
+    string public version = "MMT_0.1"; //An arbitrary versioning scheme
 
 
     /// @dev `Checkpoint` is the structure that attaches a block number to a
@@ -1143,9 +1143,9 @@ contract ESCBCoin is MiniMeIrrVesDivToken {
     _tokenFactory,
     0x0,            // no parent token
     0,               // no snapshot block number from parent
-    &quot;ESCB token&quot;,    // Token name
+    "ESCB token",    // Token name
     18,             // Decimals
-    &quot;ESCB&quot;,         // Symbol
+    "ESCB",         // Symbol
     true            // Enable transfers
     ) {}
 }

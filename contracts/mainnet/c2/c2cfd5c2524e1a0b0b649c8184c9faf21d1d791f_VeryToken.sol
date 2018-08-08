@@ -123,8 +123,8 @@ contract StandardToken is ERC20 {
 }
 
 contract VeryToken is StandardToken {
-  string public constant name = &quot;Very Token&quot;;
-  string public constant symbol = &quot;VRY&quot;;
+  string public constant name = "Very Token";
+  string public constant symbol = "VRY";
   uint8 public constant decimals = 6;
 
   function VeryToken() public {

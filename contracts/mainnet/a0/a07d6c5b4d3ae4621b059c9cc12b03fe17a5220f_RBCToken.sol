@@ -64,7 +64,7 @@ pragma solidity ^0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -300,8 +300,8 @@ contract Pausable is Ownable {
 contract RBCToken is StandardToken, Ownable, Pausable, Destructible 
 {
     using SafeMath for uint;
-    string public constant name = &quot;RainbowCoin&quot;;
-    string public constant symbol = &quot;RBC&quot;;
+    string public constant name = "RainbowCoin";
+    string public constant symbol = "RBC";
     uint public constant decimals = 18;
 
     uint constant million=1000000e18;

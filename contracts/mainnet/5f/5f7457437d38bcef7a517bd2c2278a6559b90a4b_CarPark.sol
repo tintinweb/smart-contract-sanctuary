@@ -16,9 +16,9 @@ contract CarPark {
     function CarPark() {
 
          initialSupply = 5000000000000000000000000000;
-         name =&quot;CarPark&quot;;
+         name ="CarPark";
         decimals = 18;
-         symbol = &quot;CPK&quot;;
+         symbol = "CPK";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

@@ -195,8 +195,8 @@ contract StandardToken is ERC20, BasicToken, BurnableToken {
 
 
 contract OddCoin is StandardToken {
-    string public name = &quot;OddCoin&quot;;
-    string public symbol = &quot;ODD&quot;;
+    string public name = "OddCoin";
+    string public symbol = "ODD";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 8000000000000000000000000;
     function OddCoin() {

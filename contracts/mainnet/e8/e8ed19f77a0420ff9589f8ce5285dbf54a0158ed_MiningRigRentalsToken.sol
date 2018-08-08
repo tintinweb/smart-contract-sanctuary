@@ -120,7 +120,7 @@ contract MiningRigRentalsToken is owned, TokenERC20 {
     event FrozenFunds(address target, bool frozen);
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    function MiningRigRentalsToken() TokenERC20(uint256(3120000000), &quot;MiningRigRentals Token&quot;, &quot;MRR&quot;) public {
+    function MiningRigRentalsToken() TokenERC20(uint256(3120000000), "MiningRigRentals Token", "MRR") public {
         canBuy = true;
         canMint = true;
         buyPrice = 1 / uint256(10000);//Tokens per ETH per 

@@ -112,7 +112,7 @@ contract FoundationToken {
     event Transfer(address indexed _from, address indexed _to, uint _value);
 }
 
-contract ShapeCoin is FoundationToken(&quot;SHPC&quot;, &quot;ShapeCoin&quot;, 18), ERC20, ERC223 {
+contract ShapeCoin is FoundationToken("SHPC", "ShapeCoin", 18), ERC20, ERC223 {
 
     using SafeMath for uint;
 

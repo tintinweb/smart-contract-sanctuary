@@ -258,8 +258,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract JCCoin is MintableToken {
-    string public name = &quot;JC COIN&quot;;
-    string public symbol = &quot;JCC&quot;;
+    string public name = "JC COIN";
+    string public symbol = "JCC";
     uint8 public decimals = 18;
 
     function JCCoin () public {

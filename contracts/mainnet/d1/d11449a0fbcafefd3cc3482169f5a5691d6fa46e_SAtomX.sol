@@ -207,9 +207,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract SAtomX is StandardToken {
     
-    string public name = &quot;S-AtomX&quot;;
-    string public symbol = &quot;SAMX&quot;;
-    string public version = &quot;1.0&quot;;
+    string public name = "S-AtomX";
+    string public symbol = "SAMX";
+    string public version = "1.0";
     uint8 public decimals = 18;
     
     uint256 INITIAL_SUPPLY = 500000000e18;

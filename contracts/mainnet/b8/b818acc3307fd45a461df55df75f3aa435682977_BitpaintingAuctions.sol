@@ -382,17 +382,17 @@ contract ERC721Metadata {
     /// @dev Given a token Id, returns a byte array that is supposed to be converted into string.
     function getMetadata(uint256 _tokenId, string) public constant returns (bytes32[4] buffer, uint256 count) {
         if (_tokenId == 1) {
-            buffer[0] = &quot;Hello World! :D&quot;;
+            buffer[0] = "Hello World! :D";
             count = 15;
         } else if (_tokenId == 2) {
-            buffer[0] = &quot;I would definitely choose a medi&quot;;
-            buffer[1] = &quot;um length string.&quot;;
+            buffer[0] = "I would definitely choose a medi";
+            buffer[1] = "um length string.";
             count = 49;
         } else if (_tokenId == 3) {
-            buffer[0] = &quot;Lorem ipsum dolor sit amet, mi e&quot;;
-            buffer[1] = &quot;st accumsan dapibus augue lorem,&quot;;
-            buffer[2] = &quot; tristique vestibulum id, libero&quot;;
-            buffer[3] = &quot; suscipit varius sapien aliquam.&quot;;
+            buffer[0] = "Lorem ipsum dolor sit amet, mi e";
+            buffer[1] = "st accumsan dapibus augue lorem,";
+            buffer[2] = " tristique vestibulum id, libero";
+            buffer[3] = " suscipit varius sapien aliquam.";
             count = 128;
         }
     }
@@ -403,8 +403,8 @@ contract ERC721Metadata {
 contract PaintingOwnership is BitpaintingBase, ERC721 {
 
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant name = &quot;BitPaintings&quot;;
-    string public constant symbol = &quot;BP&quot;;
+    string public constant name = "BitPaintings";
+    string public constant symbol = "BP";
 
     ERC721Metadata public erc721Metadata;
 
@@ -898,6 +898,6 @@ contract BitpaintingAuctions is PaintingOwnership, IAuctions {
     }
 
     function signature() external constant returns (uint _signature) {
-        return uint(keccak256(&quot;auctions&quot;));
+        return uint(keccak256("auctions"));
     }
 }

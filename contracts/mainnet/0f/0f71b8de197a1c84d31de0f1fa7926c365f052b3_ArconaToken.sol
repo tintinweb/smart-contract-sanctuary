@@ -220,7 +220,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -297,8 +297,8 @@ contract MintableToken is StandardToken, Ownable {
    
 contract ArconaToken is MintableToken {
 
-    string public constant name = &quot;Arcona Distribution Contract&quot;;
-    string public constant symbol = &quot;ARCONA&quot;;
+    string public constant name = "Arcona Distribution Contract";
+    string public constant symbol = "ARCONA";
     uint8 public constant decimals = 18;
    
     using SafeMath for uint;

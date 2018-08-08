@@ -13,7 +13,7 @@
  * Copyright (c) 2018 Havven
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
@@ -22,7 +22,7 @@
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -896,7 +896,7 @@ contract ExternStateToken is SafeDecimalMath, SelfDestructible, Proxyable {
  
     /**
      * @notice Set the address of the TokenState contract.
-     * @dev This can be used to &quot;pause&quot; transfer functionality, by pointing the tokenState at 0x000..
+     * @dev This can be used to "pause" transfer functionality, by pointing the tokenState at 0x000..
      * as balances would be unreachable.
      */
     function setTokenState(TokenState _tokenState)
@@ -967,19 +967,19 @@ contract ExternStateToken is SafeDecimalMath, SelfDestructible, Proxyable {
     /* ========== EVENTS ========== */
  
     event Transfer(address indexed from, address indexed to, uint value);
-    bytes32 constant TRANSFER_SIG = keccak256(&quot;Transfer(address,address,uint256)&quot;);
+    bytes32 constant TRANSFER_SIG = keccak256("Transfer(address,address,uint256)");
     function emitTransfer(address from, address to, uint value) internal {
         proxy._emit(abi.encode(value), 3, TRANSFER_SIG, bytes32(from), bytes32(to), 0);
     }
  
     event Approval(address indexed owner, address indexed spender, uint value);
-    bytes32 constant APPROVAL_SIG = keccak256(&quot;Approval(address,address,uint256)&quot;);
+    bytes32 constant APPROVAL_SIG = keccak256("Approval(address,address,uint256)");
     function emitApproval(address owner, address spender, uint value) internal {
         proxy._emit(abi.encode(value), 3, APPROVAL_SIG, bytes32(owner), bytes32(spender), 0);
     }
  
     event TokenStateUpdated(address newTokenState);
-    bytes32 constant TOKENSTATEUPDATED_SIG = keccak256(&quot;TokenStateUpdated(address)&quot;);
+    bytes32 constant TOKENSTATEUPDATED_SIG = keccak256("TokenStateUpdated(address)");
     function emitTokenStateUpdated(address newTokenState) internal {
         proxy._emit(abi.encode(newTokenState), 1, TOKENSTATEUPDATED_SIG, 0, 0, 0);
     }
@@ -1294,25 +1294,25 @@ contract FeeToken is ExternStateToken {
     /* ========== EVENTS ========== */
  
     event TransferFeeRateUpdated(uint newFeeRate);
-    bytes32 constant TRANSFERFEERATEUPDATED_SIG = keccak256(&quot;TransferFeeRateUpdated(uint256)&quot;);
+    bytes32 constant TRANSFERFEERATEUPDATED_SIG = keccak256("TransferFeeRateUpdated(uint256)");
     function emitTransferFeeRateUpdated(uint newFeeRate) internal {
         proxy._emit(abi.encode(newFeeRate), 1, TRANSFERFEERATEUPDATED_SIG, 0, 0, 0);
     }
  
     event FeeAuthorityUpdated(address newFeeAuthority);
-    bytes32 constant FEEAUTHORITYUPDATED_SIG = keccak256(&quot;FeeAuthorityUpdated(address)&quot;);
+    bytes32 constant FEEAUTHORITYUPDATED_SIG = keccak256("FeeAuthorityUpdated(address)");
     function emitFeeAuthorityUpdated(address newFeeAuthority) internal {
         proxy._emit(abi.encode(newFeeAuthority), 1, FEEAUTHORITYUPDATED_SIG, 0, 0, 0);
     }
  
     event FeesWithdrawn(address indexed account, uint value);
-    bytes32 constant FEESWITHDRAWN_SIG = keccak256(&quot;FeesWithdrawn(address,uint256)&quot;);
+    bytes32 constant FEESWITHDRAWN_SIG = keccak256("FeesWithdrawn(address,uint256)");
     function emitFeesWithdrawn(address account, uint value) internal {
         proxy._emit(abi.encode(value), 2, FEESWITHDRAWN_SIG, bytes32(account), 0, 0);
     }
  
     event FeesDonated(address indexed donor, uint value);
-    bytes32 constant FEESDONATED_SIG = keccak256(&quot;FeesDonated(address,uint256)&quot;);
+    bytes32 constant FEESDONATED_SIG = keccak256("FeesDonated(address,uint256)");
     function emitFeesDonated(address donor, uint value) internal {
         proxy._emit(abi.encode(value), 2, FEESDONATED_SIG, bytes32(donor), 0, 0);
     }
@@ -1674,7 +1674,7 @@ contract Court is SafeDecimalMath, Owned {
         uint fractionInFavour = safeDiv_dec(yeas, totalVotes);
  
         /* We require the result to be strictly greater than the requirement
-         * to enforce a majority being &quot;50% + 1&quot;, and so on. */
+         * to enforce a majority being "50% + 1", and so on. */
         return participation > requiredParticipation &&
                fractionInFavour > requiredMajority;
     }
@@ -1937,8 +1937,8 @@ contract Nomin is FeeToken {
  
     // Nomin transfers incur a 15 bp fee by default.
     uint constant TRANSFER_FEE_RATE = 15 * UNIT / 10000;
-    string constant TOKEN_NAME = &quot;Nomin USD&quot;;
-    string constant TOKEN_SYMBOL = &quot;nUSD&quot;;
+    string constant TOKEN_NAME = "Nomin USD";
+    string constant TOKEN_SYMBOL = "nUSD";
  
     /* ========== CONSTRUCTOR ========== */
  
@@ -2102,37 +2102,37 @@ contract Nomin is FeeToken {
     /* ========== EVENTS ========== */
  
     event CourtUpdated(address newCourt);
-    bytes32 constant COURTUPDATED_SIG = keccak256(&quot;CourtUpdated(address)&quot;);
+    bytes32 constant COURTUPDATED_SIG = keccak256("CourtUpdated(address)");
     function emitCourtUpdated(address newCourt) internal {
         proxy._emit(abi.encode(newCourt), 1, COURTUPDATED_SIG, 0, 0, 0);
     }
  
     event HavvenUpdated(address newHavven);
-    bytes32 constant HAVVENUPDATED_SIG = keccak256(&quot;HavvenUpdated(address)&quot;);
+    bytes32 constant HAVVENUPDATED_SIG = keccak256("HavvenUpdated(address)");
     function emitHavvenUpdated(address newHavven) internal {
         proxy._emit(abi.encode(newHavven), 1, HAVVENUPDATED_SIG, 0, 0, 0);
     }
  
     event AccountFrozen(address indexed target, uint balance);
-    bytes32 constant ACCOUNTFROZEN_SIG = keccak256(&quot;AccountFrozen(address,uint256)&quot;);
+    bytes32 constant ACCOUNTFROZEN_SIG = keccak256("AccountFrozen(address,uint256)");
     function emitAccountFrozen(address target, uint balance) internal {
         proxy._emit(abi.encode(balance), 2, ACCOUNTFROZEN_SIG, bytes32(target), 0, 0);
     }
  
     event AccountUnfrozen(address indexed target);
-    bytes32 constant ACCOUNTUNFROZEN_SIG = keccak256(&quot;AccountUnfrozen(address)&quot;);
+    bytes32 constant ACCOUNTUNFROZEN_SIG = keccak256("AccountUnfrozen(address)");
     function emitAccountUnfrozen(address target) internal {
         proxy._emit(abi.encode(), 2, ACCOUNTUNFROZEN_SIG, bytes32(target), 0, 0);
     }
  
     event Issued(address indexed account, uint amount);
-    bytes32 constant ISSUED_SIG = keccak256(&quot;Issued(address,uint256)&quot;);
+    bytes32 constant ISSUED_SIG = keccak256("Issued(address,uint256)");
     function emitIssued(address account, uint amount) internal {
         proxy._emit(abi.encode(amount), 2, ISSUED_SIG, bytes32(account), 0, 0);
     }
  
     event Burned(address indexed account, uint amount);
-    bytes32 constant BURNED_SIG = keccak256(&quot;Burned(address,uint256)&quot;);
+    bytes32 constant BURNED_SIG = keccak256("Burned(address,uint256)");
     function emitBurned(address account, uint amount) internal {
         proxy._emit(abi.encode(amount), 2, BURNED_SIG, bytes32(account), 0, 0);
     }
@@ -2700,8 +2700,8 @@ contract Havven is ExternStateToken {
  
     uint constant HAVVEN_SUPPLY = 1e8 * UNIT;
     uint constant ORACLE_FUTURE_LIMIT = 10 minutes;
-    string constant TOKEN_NAME = &quot;Havven&quot;;
-    string constant TOKEN_SYMBOL = &quot;HAV&quot;;
+    string constant TOKEN_NAME = "Havven";
+    string constant TOKEN_SYMBOL = "HAV";
      
     /* ========== CONSTRUCTOR ========== */
  
@@ -3314,55 +3314,55 @@ contract Havven is ExternStateToken {
     /* ========== EVENTS ========== */
  
     event PriceUpdated(uint newPrice, uint timestamp);
-    bytes32 constant PRICEUPDATED_SIG = keccak256(&quot;PriceUpdated(uint256,uint256)&quot;);
+    bytes32 constant PRICEUPDATED_SIG = keccak256("PriceUpdated(uint256,uint256)");
     function emitPriceUpdated(uint newPrice, uint timestamp) internal {
         proxy._emit(abi.encode(newPrice, timestamp), 1, PRICEUPDATED_SIG, 0, 0, 0);
     }
  
     event IssuanceRatioUpdated(uint newRatio);
-    bytes32 constant ISSUANCERATIOUPDATED_SIG = keccak256(&quot;IssuanceRatioUpdated(uint256)&quot;);
+    bytes32 constant ISSUANCERATIOUPDATED_SIG = keccak256("IssuanceRatioUpdated(uint256)");
     function emitIssuanceRatioUpdated(uint newRatio) internal {
         proxy._emit(abi.encode(newRatio), 1, ISSUANCERATIOUPDATED_SIG, 0, 0, 0);
     }
  
     event FeePeriodRollover(uint timestamp);
-    bytes32 constant FEEPERIODROLLOVER_SIG = keccak256(&quot;FeePeriodRollover(uint256)&quot;);
+    bytes32 constant FEEPERIODROLLOVER_SIG = keccak256("FeePeriodRollover(uint256)");
     function emitFeePeriodRollover(uint timestamp) internal {
         proxy._emit(abi.encode(timestamp), 1, FEEPERIODROLLOVER_SIG, 0, 0, 0);
     }
  
     event FeePeriodDurationUpdated(uint duration);
-    bytes32 constant FEEPERIODDURATIONUPDATED_SIG = keccak256(&quot;FeePeriodDurationUpdated(uint256)&quot;);
+    bytes32 constant FEEPERIODDURATIONUPDATED_SIG = keccak256("FeePeriodDurationUpdated(uint256)");
     function emitFeePeriodDurationUpdated(uint duration) internal {
         proxy._emit(abi.encode(duration), 1, FEEPERIODDURATIONUPDATED_SIG, 0, 0, 0);
     }
  
     event FeesWithdrawn(address indexed account, uint value);
-    bytes32 constant FEESWITHDRAWN_SIG = keccak256(&quot;FeesWithdrawn(address,uint256)&quot;);
+    bytes32 constant FEESWITHDRAWN_SIG = keccak256("FeesWithdrawn(address,uint256)");
     function emitFeesWithdrawn(address account, uint value) internal {
         proxy._emit(abi.encode(value), 2, FEESWITHDRAWN_SIG, bytes32(account), 0, 0);
     }
  
     event OracleUpdated(address newOracle);
-    bytes32 constant ORACLEUPDATED_SIG = keccak256(&quot;OracleUpdated(address)&quot;);
+    bytes32 constant ORACLEUPDATED_SIG = keccak256("OracleUpdated(address)");
     function emitOracleUpdated(address newOracle) internal {
         proxy._emit(abi.encode(newOracle), 1, ORACLEUPDATED_SIG, 0, 0, 0);
     }
  
     event NominUpdated(address newNomin);
-    bytes32 constant NOMINUPDATED_SIG = keccak256(&quot;NominUpdated(address)&quot;);
+    bytes32 constant NOMINUPDATED_SIG = keccak256("NominUpdated(address)");
     function emitNominUpdated(address newNomin) internal {
         proxy._emit(abi.encode(newNomin), 1, NOMINUPDATED_SIG, 0, 0, 0);
     }
  
     event EscrowUpdated(address newEscrow);
-    bytes32 constant ESCROWUPDATED_SIG = keccak256(&quot;EscrowUpdated(address)&quot;);
+    bytes32 constant ESCROWUPDATED_SIG = keccak256("EscrowUpdated(address)");
     function emitEscrowUpdated(address newEscrow) internal {
         proxy._emit(abi.encode(newEscrow), 1, ESCROWUPDATED_SIG, 0, 0, 0);
     }
  
     event IssuersUpdated(address indexed account, bool indexed value);
-    bytes32 constant ISSUERSUPDATED_SIG = keccak256(&quot;IssuersUpdated(address,bool)&quot;);
+    bytes32 constant ISSUERSUPDATED_SIG = keccak256("IssuersUpdated(address,bool)");
     function emitIssuersUpdated(address account, bool value) internal {
         proxy._emit(abi.encode(), 3, ISSUERSUPDATED_SIG, bytes32(account), bytes32(value ? 1 : 0), 0);
     }

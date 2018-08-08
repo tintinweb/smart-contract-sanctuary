@@ -3,8 +3,8 @@ pragma solidity ^0.4.11;
 contract VERIME  {
     uint public _totalSupply = 1000000000000000000000000000;
 
-    string public constant symbol = &quot;VME&quot;;
-    string public constant name = &quot;Verime Mobile&quot;;
+    string public constant symbol = "VME";
+    string public constant name = "Verime Mobile";
     uint8 public constant decimals = 18;
 
     address public owner;

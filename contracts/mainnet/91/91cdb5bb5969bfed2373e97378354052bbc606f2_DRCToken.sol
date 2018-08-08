@@ -50,7 +50,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -473,8 +473,8 @@ interface tokenRecipient {
 }
 
 contract DRCToken is BurnableToken, MintableToken, PausableToken, Claimable, Autonomy {    
-    string public name = &quot;DRC Token&quot;;
-    string public symbol = &quot;DRCT&quot;;
+    string public name = "DRC Token";
+    string public symbol = "DRCT";
     uint8 public decimals = 18;
     uint public INITIAL_SUPPLY = 0;
 

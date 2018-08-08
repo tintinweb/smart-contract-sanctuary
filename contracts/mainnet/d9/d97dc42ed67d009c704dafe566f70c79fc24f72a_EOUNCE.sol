@@ -23,8 +23,8 @@ contract EOUNCE{
     function EOUNCE() {
         balanceOf[msg.sender] =  750000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  750000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;E-OUNCE&quot;;                                   // Set the name for display purposes
-        symbol = &quot;EAS&quot;;                               // Set the symbol for display purposes
+        name = "E-OUNCE";                                   // Set the name for display purposes
+        symbol = "EAS";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

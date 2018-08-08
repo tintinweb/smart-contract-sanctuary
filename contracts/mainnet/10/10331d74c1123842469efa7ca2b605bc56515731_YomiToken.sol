@@ -56,8 +56,8 @@ contract YomiToken is Owned, ERC20{
     using SafeMath for uint256;
     
     // Public variables of the token
-    string constant public name = &quot;YOMI Token&quot;;
-    string constant public symbol = &quot;YOMI&quot;;
+    string constant public name = "YOMI Token";
+    string constant public symbol = "YOMI";
     uint8 constant public decimals = 18;
     uint256 total_supply = 1000000000e18; // Total supply of 1 billion Yomi Tokens
     uint256 constant public teamReserve = 100000000e18; //10%

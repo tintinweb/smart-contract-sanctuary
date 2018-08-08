@@ -207,9 +207,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract InfinityDataChain is StandardToken {
     
-    string public name = &quot;Infinity Data Chain&quot;;
-    string public symbol = &quot;IDC&quot;;
-    string public version = &quot;1.0&quot;;
+    string public name = "Infinity Data Chain";
+    string public symbol = "IDC";
+    string public version = "1.0";
     uint8 public decimals = 18;
     
     uint256 INITIAL_SUPPLY = 100000000e18;

@@ -49,8 +49,8 @@ contract TicHTUContract is ERC20Interface{
 	// @_owner: owner&#39;s address where to keep donations
     // ------------------------------------------------------------------------
     constructor() public{
-        symbol = &quot;HTU&quot;;
-        name = &quot;HONTUBE&quot;;
+        symbol = "HTU";
+        name = "HONTUBE";
         decimals = 18;
         rate = 500; //OBL per wei
         owner = msg.sender;

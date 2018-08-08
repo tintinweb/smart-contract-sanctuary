@@ -2,8 +2,8 @@ pragma solidity ^0.4.17;
 
 contract Medcash {
 
-    string public name = &quot;Medcash&quot;;      //  token name
-    string public symbol = &quot;MEDCASH&quot;;           //  token symbol
+    string public name = "Medcash";      //  token name
+    string public symbol = "MEDCASH";           //  token symbol
     uint256 public decimals = 8;            //  token digit
 
     mapping (address => uint256) public balanceOf;

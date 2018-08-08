@@ -113,8 +113,8 @@ contract PlusUltra is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PlusUltra() public {
-        symbol = &quot;PUL&quot;;
-        name = &quot;PlusUltra Token&quot;;
+        symbol = "PUL";
+        name = "PlusUltra Token";
         decimals = 2;
         _totalSupply = 20000000;
         balances[0x7766142147Abe6c3994caf8A92e2d25579B5d45D] = _totalSupply;

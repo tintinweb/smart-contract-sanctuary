@@ -110,8 +110,8 @@ contract CorrentlyInvest is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;CORI&quot;;
-        name = &quot;Corrently Invest&quot;;
+        symbol = "CORI";
+        name = "Corrently Invest";
         decimals = 2;
         mintable = true;
     }

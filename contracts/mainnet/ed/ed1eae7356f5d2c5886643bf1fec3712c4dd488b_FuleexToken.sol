@@ -18,9 +18,9 @@ contract FuleexToken {
     function Token() {
 
          initialSupply = 300000000;
-         name =&quot;Fuleex Token&quot;;
+         name ="Fuleex Token";
         decimals = 18;
-         symbol = &quot;FEXT&quot;;
+         symbol = "FEXT";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

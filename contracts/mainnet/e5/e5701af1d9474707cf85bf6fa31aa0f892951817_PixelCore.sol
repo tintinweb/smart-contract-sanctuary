@@ -120,8 +120,8 @@ contract PixelBase is PixelAuthority {
 contract PixelOwnership is PixelBase, ERC721 {
 
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant name = &quot;PixelCoins&quot;;
-    string public constant symbol = &quot;PXL&quot;;
+    string public constant name = "PixelCoins";
+    string public constant symbol = "PXL";
 
 
     bytes4 constant InterfaceSignature_ERC165 =
@@ -140,7 +140,7 @@ contract PixelOwnership is PixelBase, ERC721 {
         bytes4(keccak256(&#39;tokenMetadata(uint256,string)&#39;));
 
 
-    string public metaBaseUrl = &quot;https://pixelcoins.io/meta/&quot;;
+    string public metaBaseUrl = "https://pixelcoins.io/meta/";
 
 
     /// @notice Introspection interface as per ERC-165 (https://github.com/ethereum/EIPs/issues/165).

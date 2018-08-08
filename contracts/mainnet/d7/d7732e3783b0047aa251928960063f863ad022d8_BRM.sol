@@ -55,8 +55,8 @@ contract StandardToken is Token {
     mapping (address => mapping (address => uint256)) allowed;
 }
 contract BRM is StandardToken {
-	string public constant name = &quot;BrahmaOS&quot;;
-	string public constant symbol = &quot;BRM&quot;;
+	string public constant name = "BrahmaOS";
+	string public constant symbol = "BRM";
 	uint256 public constant decimals = 18;
 
 	uint256 public constant total = 3 * 10**9 * 10**decimals;

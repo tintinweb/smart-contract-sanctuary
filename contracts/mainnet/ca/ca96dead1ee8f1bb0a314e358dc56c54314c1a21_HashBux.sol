@@ -64,9 +64,9 @@ contract HashBux is owned
   {
     balances_[msg.sender] = uint256(80000000);
     totalSupply = uint256(80000000);
-    name = &quot;HashBux&quot;;
+    name = "HashBux";
     decimals = uint8(0);
-    symbol = &quot;HASH&quot;;
+    symbol = "HASH";
   }
 
   // HashBux-specific

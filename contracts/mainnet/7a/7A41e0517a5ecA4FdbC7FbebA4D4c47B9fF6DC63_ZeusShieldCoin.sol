@@ -136,7 +136,7 @@ contract ZeusShieldCoin is owned, ERC20Interface {
  
     // Send _value amount of tokens from address _from to address _to
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-    // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
     // fees in sub-currencies; the command should fail unless the _from account has
     // deliberately authorized the sender of the message via some mechanism; we propose
     // these standardized APIs for approval:
@@ -276,16 +276,16 @@ contract ZeusShieldCoin is owned, ERC20Interface {
         // 91500 * 1000 * 10**18; 100% of locked tokens within 6 months
         // 73200 * 1000 * 10**18;  80% of locked tokens within 12 months
         // 45750 * 1000 * 10**18;  50% of locked tokens within 24 months
-        freeze(&quot;0xCDc5BDEFC6Fddc66E73250fCc2F08339e091dDA3&quot;, individual);
-        freeze(&quot;0x8b47D27b085a661E6306Ac27A932a8c0b1C11b84&quot;, individual);
-        freeze(&quot;0x825f4977DB4cd48aFa51f8c2c9807Ee89120daB7&quot;, individual);
-        freeze(&quot;0xcDf5D7049e61b2F50642DF4cb5a005b1b4A5cfc2&quot;, individual);
-        freeze(&quot;0xab0461FB41326a960d3a2Fe2328DD9A65916181d&quot;, individual);
-        freeze(&quot;0xd2A131F16e4339B2523ca90431322f559ABC4C3d&quot;, individual);
-        freeze(&quot;0xCcB4d663E6b05AAda0e373e382628B9214932Fff&quot;, individual);
-        freeze(&quot;0x60284720542Ff343afCA6a6DBc542901942260f2&quot;, individual);
-        freeze(&quot;0xcb6d0e199081A489f45c73D1D22F6de58596a99C&quot;, individual);
-        freeze(&quot;0x928D99333C57D31DB917B4c67D4d8a033F2143A7&quot;, individual);
+        freeze("0xCDc5BDEFC6Fddc66E73250fCc2F08339e091dDA3", individual);
+        freeze("0x8b47D27b085a661E6306Ac27A932a8c0b1C11b84", individual);
+        freeze("0x825f4977DB4cd48aFa51f8c2c9807Ee89120daB7", individual);
+        freeze("0xcDf5D7049e61b2F50642DF4cb5a005b1b4A5cfc2", individual);
+        freeze("0xab0461FB41326a960d3a2Fe2328DD9A65916181d", individual);
+        freeze("0xd2A131F16e4339B2523ca90431322f559ABC4C3d", individual);
+        freeze("0xCcB4d663E6b05AAda0e373e382628B9214932Fff", individual);
+        freeze("0x60284720542Ff343afCA6a6DBc542901942260f2", individual);
+        freeze("0xcb6d0e199081A489f45c73D1D22F6de58596a99C", individual);
+        freeze("0x928D99333C57D31DB917B4c67D4d8a033F2143A7", individual);
     }
 
     /// @dev Token frozen rules for token holders.

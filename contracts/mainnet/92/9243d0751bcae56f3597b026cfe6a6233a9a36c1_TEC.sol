@@ -65,8 +65,8 @@ contract StandardToken is ERC20, SafeMath {
 
 
 contract TEC is StandardToken {
-    string public name = &quot;仟电链&quot;;
-    string public symbol = &quot;TEC&quot;;
+    string public name = "仟电链";
+    string public symbol = "TEC";
     uint public decimals = 18;
     uint public totalSupply = 1000 * 1000 * 1000 ether;
 

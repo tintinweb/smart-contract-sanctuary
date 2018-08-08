@@ -28,8 +28,8 @@ contract BCC {
     ) public {
         totalSupply = 100000000000000000000000000;                       // Total supply with the decimal amount
         balanceOf[msg.sender] = 100000000000000000000000000;             // All initial tokens
-        name = &quot;BrightChoice&quot;;                                           // The name for display purposes
-        symbol = &quot;BCC&quot;;                                                  // The symbol for display purposes
+        name = "BrightChoice";                                           // The name for display purposes
+        symbol = "BCC";                                                  // The symbol for display purposes
     }
 
     /**

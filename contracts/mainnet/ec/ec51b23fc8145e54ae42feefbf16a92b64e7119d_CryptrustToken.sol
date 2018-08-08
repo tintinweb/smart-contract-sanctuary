@@ -77,8 +77,8 @@ contract CryptrustToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Cryptrust&quot;;
-    string public constant symbol = &quot;CTRT&quot;;
+    string public constant name = "Cryptrust";
+    string public constant symbol = "CTRT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 37000000000e8;

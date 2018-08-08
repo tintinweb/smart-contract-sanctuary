@@ -111,8 +111,8 @@ contract eAccessTOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function eAccessTOKEN() public {
-        symbol = &quot;eATN&quot;;
-        name = &quot;eAccessTOKEN&quot;;
+        symbol = "eATN";
+        name = "eAccessTOKEN";
         decimals = 8;
         _totalSupply = 15000000000000000;
         balances[0xE831C3b8D46bEC1167f5567B3167c57105d2ed4d] = _totalSupply;

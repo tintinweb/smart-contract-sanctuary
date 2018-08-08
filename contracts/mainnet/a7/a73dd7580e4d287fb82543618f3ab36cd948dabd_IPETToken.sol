@@ -80,8 +80,8 @@ contract IPETToken is ERC20,Ownable {
     event FundTransfer(address fundWallet, uint256 amount);
   
 	function IPETToken() public {  	
-		name=&quot;IP ENT TERMINAL&quot;;
-		symbol=&quot;IPET&quot;;
+		name="IP ENT TERMINAL";
+		symbol="IPET";
 		totalSupply = 10000000000*(10**decimals);
 		balanceOf[msg.sender] = totalSupply;	
         walletArr.push(0x9A341a200Ce999398A08e23ACfCD9aebdB2730eb);

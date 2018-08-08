@@ -84,7 +84,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -121,9 +121,9 @@ contract Ownable {
 /**
  * @title PoolParty Token
  * @author Alber Erre
- * @notice Follow up token holders to give them collected fees in the future. Holders are stored in &quot;HOLDersList&quot;
+ * @notice Follow up token holders to give them collected fees in the future. Holders are stored in "HOLDersList"
  * @dev This is the first part of the functionality, this contract just enable tracking token holders
- * @dev Next part is defined as &quot;PoolPartyPayRoll&quot; contract
+ * @dev Next part is defined as "PoolPartyPayRoll" contract
  */
 contract PoolPartyToken is Ownable {
   using SafeMath for uint256;
@@ -146,7 +146,7 @@ contract PoolPartyToken is Ownable {
     return result;
   }
 
-  // Call AddHOLDer function every time a token is sold, &quot;_alreadyInList&quot; avoids duplicates
+  // Call AddHOLDer function every time a token is sold, "_alreadyInList" avoids duplicates
   function AddHOLDer(address _thisHODLer) internal {
 
     if (_alreadyInList(_thisHODLer) == false) {
@@ -405,7 +405,7 @@ contract MintableToken is StandardToken {
  * @title Contracts that should be able to recover tokens
  * @author SylTi
  * @dev This allow a contract to recover any ERC20 token received in a contract by transferring the balance to the contract owner.
- * This will prevent any accidental loss of tokens. - updated to &quot;recoverERC20Token_SendbyMistake&quot;
+ * This will prevent any accidental loss of tokens. - updated to "recoverERC20Token_SendbyMistake"
  */
 contract CanReclaimToken is Ownable {
   using SafeERC20 for ERC20Basic;
@@ -449,7 +449,7 @@ contract HasEther is Ownable {
 
 /**
  * @title Contracts that should not own Contracts
- * @notice updated to &quot;reclaimChildOwnership&quot;, ease to remember function&#39;s nature @AlberEre
+ * @notice updated to "reclaimChildOwnership", ease to remember function&#39;s nature @AlberEre
  * @author Remco Bloemen <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7002151d131f3042">[email&#160;protected]</a>π.com>
  * @dev Should contracts (anything Ownable) end up being owned by this contract, it allows the owner
  * of this contract to reclaim ownership of the contracts.
@@ -468,12 +468,12 @@ contract HasNoContracts is Ownable {
 
 /**
  * @title iron Token Contract
- * @notice &quot;openBarrier&quot; modifier applied, security check during minting process
+ * @notice "openBarrier" modifier applied, security check during minting process
  */
 contract IRONtoken is MintableToken, CanReclaimToken, HasEther, HasNoContracts {
 
-  string public constant name = &quot;iron Bank Network token&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;IRON&quot;; // solium-disable-line uppercase
+  string public constant name = "iron Bank Network token"; // solium-disable-line uppercase
+  string public constant symbol = "IRON"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   function IRONtoken() public {
@@ -617,7 +617,7 @@ contract IRONtokenSale is PoolPartyToken, CanReclaimToken, HasNoContracts {
     }
 
     /**
-    * @notice ICO End: &quot;openBarrier&quot; no longer applied, allows token transfers
+    * @notice ICO End: "openBarrier" no longer applied, allows token transfers
     */
     function finalizeTokensale() onlyOwner public {
         finalized = true;

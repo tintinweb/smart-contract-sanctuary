@@ -205,7 +205,7 @@ contract ApproveAndCallFallBack {
 
 /// @dev The actual token contract, the default controller is the msg.sender
 ///  that deploys the contract, so usually this token will be deployed by a
-///  token controller contract, which Giveth will call a &quot;Campaign&quot;
+///  token controller contract, which Giveth will call a "Campaign"
 contract MiniMeToken is Controlled {
 
     string public name;                //The Token&#39;s name: e.g. DigixDAO Tokens
@@ -855,7 +855,7 @@ contract TokenContribution is Owned, TokenController {
     // NOTE on Percentage format
     // Right now, Solidity does not support decimal numbers. (This will change very soon)
     //  So in this contract we use a representation of a percentage that consist in
-    //  expressing the percentage in &quot;x per 10**18&quot;
+    //  expressing the percentage in "x per 10**18"
     // This format has a precision of 16 digits for a percent.
     // Examples:
     //  3%   =   3*(10**16)

@@ -48,8 +48,8 @@ contract UNGT {
     function UNGT() public {
         totalSupply = 1000000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;                
-        name = &quot;Universal Green Token&quot;;                                   
-        symbol = &quot;UNGT&quot;;                               
+        name = "Universal Green Token";                                   
+        symbol = "UNGT";                               
     }
 
 

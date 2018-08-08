@@ -193,8 +193,8 @@ contract ICO is AdvancedToken {
 contract SUPERIUM is ICO {
     using SafeMath for uint256;
 
-    string public constant name     = &quot;SUPERIUM&quot;;
-    string public constant symbol   = &quot;SUM&quot;;
+    string public constant name     = "SUPERIUM";
+    string public constant symbol   = "SUM";
     uint8  public constant decimals = 18;
 
     mapping (address => mapping (address => uint256)) private allowed;

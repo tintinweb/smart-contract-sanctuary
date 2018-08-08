@@ -54,8 +54,8 @@ contract CryptonToken is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;Cryptons&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;CRYPTON&quot;; // solhint-disable-line
+  string public constant NAME = "Cryptons"; // solhint-disable-line
+  string public constant SYMBOL = "CRYPTON"; // solhint-disable-line
 
   uint256 private startingPrice = 0.1 ether;
   uint256 private defaultMarkup = 2 ether;
@@ -144,7 +144,7 @@ contract CryptonToken is ERC721 {
         _;
     }
 
-    /// @dev Called by any &quot;C-level&quot; role to pause the contract. Used only when
+    /// @dev Called by any "C-level" role to pause the contract. Used only when
     ///  a bug or exploit is detected and we need to limit damage.
     function pause()
         external

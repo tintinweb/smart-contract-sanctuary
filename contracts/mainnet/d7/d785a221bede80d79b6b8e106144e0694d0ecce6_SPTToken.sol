@@ -261,7 +261,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -463,9 +463,9 @@ contract BurnableToken is BasicToken {
  * 
  **/
 contract SPTToken is PausableToken, BurnableToken {
-  string public constant version = &quot;1.0&quot;;
-  string public constant name = &quot;Smart Portfolio Token&quot;;
-  string public constant symbol = &quot;SPT&quot;;
+  string public constant version = "1.0";
+  string public constant name = "Smart Portfolio Token";
+  string public constant symbol = "SPT";
   uint8 public constant decimals = 18;
     
     

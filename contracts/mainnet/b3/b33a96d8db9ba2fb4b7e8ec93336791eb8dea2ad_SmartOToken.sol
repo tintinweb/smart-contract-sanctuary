@@ -68,8 +68,8 @@ contract SmartOToken is Ownable, ERC20Interface {
   using SafeMath for uint256;
 
   /* Public variables of the token */
-  string public constant name = &quot;STO&quot;;
-  string public constant symbol = &quot;STO&quot;;
+  string public constant name = "STO";
+  string public constant symbol = "STO";
   uint public constant decimals = 18;
   uint256 public constant initialSupply = 12000000000 * 1 ether;
   uint256 public totalSupply;

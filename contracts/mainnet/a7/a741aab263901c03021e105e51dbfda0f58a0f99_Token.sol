@@ -61,8 +61,8 @@ contract Token is ERC20, Owned {
 
 
     constructor() public {
-        symbol = &quot;HTK&quot;;
-        name = &quot;House Token&quot;;
+        symbol = "HTK";
+        name = "House Token";
         decimals = 18;
         _totalSupply = 1000000 * 10 ** uint(decimals);
         balances[owner] = _totalSupply;

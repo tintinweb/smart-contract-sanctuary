@@ -1,8 +1,8 @@
 pragma solidity ^0.4.21;
 
 contract ApplicationQualityCoin {
-    string public name = &quot;Application Quality Coin&quot;;
-    string public symbol = &quot;AQC&quot;;
+    string public name = "Application Quality Coin";
+    string public symbol = "AQC";
     uint8 public decimals = 18;
     uint256 public totalSupply = 100000000000 * 10 ** uint256(decimals);
 

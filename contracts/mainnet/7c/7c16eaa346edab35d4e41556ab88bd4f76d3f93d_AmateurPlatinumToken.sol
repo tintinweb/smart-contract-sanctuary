@@ -109,8 +109,8 @@ contract AmateurPlatinumToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AmateurPlatinumToken() public {
-        symbol = &quot;APT&quot;;
-        name = &quot;AmateurPlatinumToken&quot;;
+        symbol = "APT";
+        name = "AmateurPlatinumToken";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x97d654b95f39491c8cCcA835309fC8FD9B018251] = _totalSupply;

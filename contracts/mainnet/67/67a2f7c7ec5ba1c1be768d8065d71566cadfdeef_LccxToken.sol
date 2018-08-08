@@ -219,7 +219,7 @@ library SafeERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -350,8 +350,8 @@ contract TokenVesting is Ownable {
 }
 
 contract LccxToken is BurnableToken, Ownable {
-    string public constant name = &quot;London Exchange Token&quot;;
-    string public constant symbol = &quot;LXT&quot;;
+    string public constant name = "London Exchange Token";
+    string public constant symbol = "LXT";
     uint8 public constant decimals = 18;
 
     /// Maximum tokens to be allocated (100 million)

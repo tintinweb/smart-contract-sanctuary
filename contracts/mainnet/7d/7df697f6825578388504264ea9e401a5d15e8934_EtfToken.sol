@@ -5,7 +5,7 @@ pragma solidity 0.4.21;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -410,8 +410,8 @@ contract BurnableToken is BasicToken {
  */
 contract EtfToken is MintableTokenWithMinters, BurnableToken {
 
-    string public constant name = &quot;FCTF 10 Coins&quot;;
-    string public constant symbol = &quot;10COINS&quot;;
+    string public constant name = "FCTF 10 Coins";
+    string public constant symbol = "10COINS";
     uint8 public constant decimals = 8;
 
     function EtfToken() public {

@@ -308,8 +308,8 @@ contract MintableToken is StandardToken {
 
 contract LATIME is MintableToken 
 {
-  string public constant name = &quot;LATIME&quot;;
-  string public constant symbol = &quot;LATIME&quot;;
+  string public constant name = "LATIME";
+  string public constant symbol = "LATIME";
 
  function LATIME() { totalSupply = 0 ; } // initializes to 0 the total token supply 
 }

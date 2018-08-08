@@ -1,9 +1,9 @@
-pragma experimental &quot;v0.5.0&quot;;
+pragma experimental "v0.5.0";
 
 //Micro Etheroll contract
 //version 0.8.0
 
-//// minimal Etheroll &quot;interface&quot;
+//// minimal Etheroll "interface"
 
 contract Etheroll {
     function playerRollDice(uint rollUnder) public payable;
@@ -205,7 +205,7 @@ contract Micro {
         return 5; // unknown state, probably waiting for etheroll 
     }
     
-    // Combined &quot;one-request&quot; getState for web-requests optimisation
+    // Combined "one-request" getState for web-requests optimisation
     function getState() external view returns (bool, bool, uint, uint, uint, uint, uint, uint, bool, uint, uint) {
         return (this.getBetsState(),
                 this.getRolled(),

@@ -6,22 +6,22 @@
  pragma solidity ^0.4.18;
 
 /*************************************************************************
- * import &quot;zeppelin-solidity/contracts/token/MintableToken.sol&quot; : start
+ * import "zeppelin-solidity/contracts/token/MintableToken.sol" : start
  *************************************************************************/
 
 
 /*************************************************************************
- * import &quot;./StandardToken.sol&quot; : start
+ * import "./StandardToken.sol" : start
  *************************************************************************/
 
 
 /*************************************************************************
- * import &quot;./BasicToken.sol&quot; : start
+ * import "./BasicToken.sol" : start
  *************************************************************************/
 
 
 /*************************************************************************
- * import &quot;./ERC20Basic.sol&quot; : start
+ * import "./ERC20Basic.sol" : start
  *************************************************************************/
 
 
@@ -37,10 +37,10 @@ contract ERC20Basic {
   event Transfer(address indexed from, address indexed to, uint256 value);
 }
 /*************************************************************************
- * import &quot;./ERC20Basic.sol&quot; : end
+ * import "./ERC20Basic.sol" : end
  *************************************************************************/
 /*************************************************************************
- * import &quot;../math/SafeMath.sol&quot; : start
+ * import "../math/SafeMath.sol" : start
  *************************************************************************/
 
 
@@ -77,7 +77,7 @@ library SafeMath {
   }
 }
 /*************************************************************************
- * import &quot;../math/SafeMath.sol&quot; : end
+ * import "../math/SafeMath.sol" : end
  *************************************************************************/
 
 
@@ -117,10 +117,10 @@ contract BasicToken is ERC20Basic {
 
 }
 /*************************************************************************
- * import &quot;./BasicToken.sol&quot; : end
+ * import "./BasicToken.sol" : end
  *************************************************************************/
 /*************************************************************************
- * import &quot;./ERC20.sol&quot; : start
+ * import "./ERC20.sol" : start
  *************************************************************************/
 
 
@@ -138,7 +138,7 @@ contract ERC20 is ERC20Basic {
   event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 /*************************************************************************
- * import &quot;./ERC20.sol&quot; : end
+ * import "./ERC20.sol" : end
  *************************************************************************/
 
 
@@ -237,17 +237,17 @@ contract StandardToken is ERC20, BasicToken {
 
 }
 /*************************************************************************
- * import &quot;./StandardToken.sol&quot; : end
+ * import "./StandardToken.sol" : end
  *************************************************************************/
 /*************************************************************************
- * import &quot;../ownership/Ownable.sol&quot; : start
+ * import "../ownership/Ownable.sol" : start
  *************************************************************************/
 
 
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -286,7 +286,7 @@ contract Ownable {
 
 }
 /*************************************************************************
- * import &quot;../ownership/Ownable.sol&quot; : end
+ * import "../ownership/Ownable.sol" : end
  *************************************************************************/
 
 
@@ -335,10 +335,10 @@ contract MintableToken is StandardToken, Ownable {
   }
 }
 /*************************************************************************
- * import &quot;zeppelin-solidity/contracts/token/MintableToken.sol&quot; : end
+ * import "zeppelin-solidity/contracts/token/MintableToken.sol" : end
  *************************************************************************/
 /*************************************************************************
- * import &quot;zeppelin-solidity/contracts/token/BurnableToken.sol&quot; : start
+ * import "zeppelin-solidity/contracts/token/BurnableToken.sol" : start
  *************************************************************************/
 
 
@@ -367,15 +367,15 @@ contract BurnableToken is BasicToken {
     }
 }
 /*************************************************************************
- * import &quot;zeppelin-solidity/contracts/token/BurnableToken.sol&quot; : end
+ * import "zeppelin-solidity/contracts/token/BurnableToken.sol" : end
  *************************************************************************/
 /*************************************************************************
- * import &quot;zeppelin-solidity/contracts/token/PausableToken.sol&quot; : start
+ * import "zeppelin-solidity/contracts/token/PausableToken.sol" : start
  *************************************************************************/
 
 
 /*************************************************************************
- * import &quot;../lifecycle/Pausable.sol&quot; : start
+ * import "../lifecycle/Pausable.sol" : start
  *************************************************************************/
 
 
@@ -426,7 +426,7 @@ contract Pausable is Ownable {
   }
 }
 /*************************************************************************
- * import &quot;../lifecycle/Pausable.sol&quot; : end
+ * import "../lifecycle/Pausable.sol" : end
  *************************************************************************/
 
 /**
@@ -458,7 +458,7 @@ contract PausableToken is StandardToken, Pausable {
   }
 }
 /*************************************************************************
- * import &quot;zeppelin-solidity/contracts/token/PausableToken.sol&quot; : end
+ * import "zeppelin-solidity/contracts/token/PausableToken.sol" : end
  *************************************************************************/
 
 /**
@@ -470,10 +470,10 @@ contract PausableToken is StandardToken, Pausable {
  */
 contract FNTToken is BurnableToken, MintableToken, PausableToken {
   // Token Name
-  string public constant NAME = &quot;Friend Network Token&quot;;
+  string public constant NAME = "Friend Network Token";
 
   // Token Symbol
-  string public constant SYMBOL = &quot;FRND&quot;;
+  string public constant SYMBOL = "FRND";
 
   // Token decimals
   uint8 public constant DECIMALS = 18;

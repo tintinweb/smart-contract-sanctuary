@@ -62,8 +62,8 @@ contract Owned {
 }
 
 contract MamaToken is ERC20Interface, Owned, SafeMath {
-    string public constant name = &quot;MamaMutua&quot;;
-    string public constant symbol = &quot;M2M&quot;;
+    string public constant name = "MamaMutua";
+    string public constant symbol = "M2M";
     uint32 public constant decimals = 18;
     uint public _rate = 600;
     uint256 public _totalSupply = 60000000 * (10 ** 18);

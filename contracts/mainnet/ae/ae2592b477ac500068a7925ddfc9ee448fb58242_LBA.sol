@@ -8,8 +8,8 @@ contract LBA {
     uint8 public decimals = 8;
     uint256 public totalSupply;
     uint256 initialSupply = 1205000000;
-    string tokenName = &quot;LightBitAtom&quot;;
-    string tokenSymbol = &quot;LBA&quot;;
+    string tokenName = "LightBitAtom";
+    string tokenSymbol = "LBA";
 
     mapping (address => uint256) public balanceOf;
     mapping (address => mapping (address => uint256)) public allowance;

@@ -123,8 +123,8 @@ contract StandardToken is ERC20 {
 }
 
 contract darx is StandardToken {
-  string public constant name = &quot;darx&quot;;
-  string public constant symbol = &quot;DAR&quot;;
+  string public constant name = "darx";
+  string public constant symbol = "DAR";
   uint8 public constant decimals = 6;
 
   function darx() public {

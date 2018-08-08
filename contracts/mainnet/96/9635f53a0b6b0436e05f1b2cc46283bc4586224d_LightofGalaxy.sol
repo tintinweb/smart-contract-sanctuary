@@ -113,8 +113,8 @@ contract LightofGalaxy is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LightofGalaxy() public {
-        symbol = &quot;LOG&quot;;
-        name = &quot;Light of Galaxy&quot;;
+        symbol = "LOG";
+        name = "Light of Galaxy";
         decimals = 0;
         _totalSupply = 1000000000;
         balances[0x51C63162626dd2687B1Ab22F301039DD97FD5B86] = _totalSupply;

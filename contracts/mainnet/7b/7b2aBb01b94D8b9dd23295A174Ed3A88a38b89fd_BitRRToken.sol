@@ -115,8 +115,8 @@ contract StandardToken is ERC20 {
 contract BitRRToken is StandardToken {
     uint public totalSupply = 18*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;BitRR Token&quot;;
-    string constant public symbol = &quot;BRT&quot;;
+    string constant public name = "BitRR Token";
+    string constant public symbol = "BRT";
 
     function BitRRToken() public {
         balances[msg.sender] = totalSupply;

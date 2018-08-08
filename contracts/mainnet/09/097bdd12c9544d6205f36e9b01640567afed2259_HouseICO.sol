@@ -5,8 +5,8 @@ pragma solidity ^0.4.11;
 
 contract HouseICO {
     
-    function name() constant returns (string) { return &quot;House&quot;; }
-    function symbol() constant returns (string) { return &quot;HSE&quot;; }
+    function name() constant returns (string) { return "House"; }
+    function symbol() constant returns (string) { return "HSE"; }
     function decimals() constant returns (uint8) { return 0; }
 	
 

@@ -66,7 +66,7 @@ library ECRecovery {
       /* prefix might be needed for geth and parity
       * https://github.com/ethereum/go-ethereum/issues/3731
       */
-      bytes memory prefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
+      bytes memory prefix = "\x19Ethereum Signed Message:\n32";
       hash = sha3(prefix, hash);
       return ecrecover(hash, v, r, s);
     }
@@ -78,7 +78,7 @@ library ECRecovery {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;

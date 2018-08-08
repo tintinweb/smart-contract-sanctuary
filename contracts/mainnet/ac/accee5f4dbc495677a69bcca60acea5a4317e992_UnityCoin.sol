@@ -40,8 +40,8 @@ contract UnityCoin {
            
     using SafeMath for uint256;
     
-    string public constant name = &quot;Unity Coin&quot;;
-    string public constant symbol = &quot;UNT&quot;;
+    string public constant name = "Unity Coin";
+    string public constant symbol = "UNT";
     uint8 public constant decimals = 18;
     /* The initially/total supply is 100,000,000 UNT with 18 decimals */
     uint256 public constant _totalSupply  = 100000000000000000000000000;

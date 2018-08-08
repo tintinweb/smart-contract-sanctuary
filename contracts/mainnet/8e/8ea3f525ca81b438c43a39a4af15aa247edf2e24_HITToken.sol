@@ -5,7 +5,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -413,8 +413,8 @@ contract CappedToken is MintableToken {
 // File: contracts/HITToken.sol
 
 contract HITToken is CappedToken {
-  string public name = &quot;HIT TOKEN&quot;;
-  string public symbol = &quot;HIT&quot;;
+  string public name = "HIT TOKEN";
+  string public symbol = "HIT";
   uint256 public decimals = 18;
   uint256 public cap = 1250000000  ether;
 

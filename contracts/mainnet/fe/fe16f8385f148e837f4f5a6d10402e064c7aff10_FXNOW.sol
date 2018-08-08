@@ -14,8 +14,8 @@ interface IERC20 {
 contract FXNOW is IERC20{
     
     uint256 public constant _totalSupply = 830000000000000000;
-    string public constant symbol = &quot;FNCT&quot;;
-    string public constant name = &quot;FXNOW&quot;;
+    string public constant symbol = "FNCT";
+    string public constant name = "FXNOW";
     uint8 public constant decimals = 8;
     
     mapping(address => uint256) balances;

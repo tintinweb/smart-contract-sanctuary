@@ -125,14 +125,14 @@ contract owned {
 
 contract Fish is owned, StandardToken {
 
-  string public constant TermsOfUse = &quot;https://github.com/triangles-things/fish.project/blob/master/terms-of-use.md&quot;;
+  string public constant TermsOfUse = "https://github.com/triangles-things/fish.project/blob/master/terms-of-use.md";
 
   /*
    * State variables
    */
 
-  string public constant symbol = &quot;FSH&quot;;
-  string public constant name = &quot;Fish&quot;;
+  string public constant symbol = "FSH";
+  string public constant name = "Fish";
   uint8 public constant decimals = 3;
 
   /*

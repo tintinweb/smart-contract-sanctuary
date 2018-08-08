@@ -95,9 +95,9 @@ contract CHSC is StandardToken {
         
         balances[msg.sender] = 130000000000000;               // Give the creator all initial tokens
         totalSupply = 130000000000000;                        // Update total supply
-        name = &quot;Chinese star chain&quot;;                                   // Set the name for display purposes
+        name = "Chinese star chain";                                   // Set the name for display purposes
         decimals = 5;                            // Amount of decimals for display purposes
-        symbol = &quot;CHSC&quot;;                               // Set the symbol for display purposes
+        symbol = "CHSC";                               // Set the symbol for display purposes
     }
     
 

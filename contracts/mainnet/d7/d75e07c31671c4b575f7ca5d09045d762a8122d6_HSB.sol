@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract HSB is StandardToken, Ownable {
 
-    string public constant name = &quot;HSB&quot;;
-    string public constant symbol = &quot;HSB&quot;;
+    string public constant name = "HSB";
+    string public constant symbol = "HSB";
     uint256 public constant decimals = 8;
 
     function HSB() public {

@@ -123,8 +123,8 @@ contract StandardToken is BasicToken, ERC20 {
 
 contract ATL is StandardToken {
 
-  string public name = &quot;ATLANT Token&quot;;
-  string public symbol = &quot;ATL&quot;;
+  string public name = "ATLANT Token";
+  string public symbol = "ATL";
   uint public decimals = 18;
   uint constant TOKEN_LIMIT = 150 * 1e6 * 1e18;
 

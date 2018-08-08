@@ -223,8 +223,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract CLCToken is StandardToken {
 
-  string public constant name = &quot;ContractLand Token&quot;;
-  string public constant symbol = &quot;CLC&quot;;
+  string public constant name = "ContractLand Token";
+  string public constant symbol = "CLC";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 1000000000 * (10 ** uint256(decimals));

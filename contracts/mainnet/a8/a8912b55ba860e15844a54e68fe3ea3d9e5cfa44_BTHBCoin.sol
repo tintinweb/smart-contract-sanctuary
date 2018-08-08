@@ -96,8 +96,8 @@ contract BTHBCoin is ERC20, Ownable {
     mapping(address => uint256) internal _lockupExpireTime;
 
     function BTHBCoin() public {
-        name = &quot;Bithumb Coin&quot;;
-        symbol = &quot;BTHB&quot;;
+        name = "Bithumb Coin";
+        symbol = "BTHB";
         decimals = 18;
 
 

@@ -2,8 +2,8 @@ pragma solidity ^0.4.16;
 
 
 contract TunTokenERC20 {
-    string public name=&quot;TunK&quot;;
-    string public symbol=&quot;TUK&quot;;
+    string public name="TunK";
+    string public symbol="TUK";
     uint8 public decimals = 18;  
     uint256 public totalSupply=1000000000 * 10 ** uint256(decimals);
 

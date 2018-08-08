@@ -92,8 +92,8 @@ contract StandardToken is Token {
 
 contract EasyMineToken is StandardToken {
 
-  string public constant name = &quot;easyMINE Token&quot;;
-  string public constant symbol = &quot;EMT&quot;;
+  string public constant name = "easyMINE Token";
+  string public constant symbol = "EMT";
   uint8 public constant decimals = 18;
 
   function EasyMineToken(address _icoAddress,

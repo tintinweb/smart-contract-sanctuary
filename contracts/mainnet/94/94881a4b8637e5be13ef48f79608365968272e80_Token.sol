@@ -91,8 +91,8 @@ contract Token is ERC20Interface, Owned {
 
 
     function Token() public {
-        symbol = &quot;nmt&quot;;
-        name = &quot;nmt&quot;;
+        symbol = "nmt";
+        name = "nmt";
         decimals = 6;
         _totalSupply = 580000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

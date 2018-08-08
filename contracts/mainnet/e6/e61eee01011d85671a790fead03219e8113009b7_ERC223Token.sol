@@ -28,7 +28,7 @@ contract SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization
- *      control functions, this simplifies the implementation of &quot;user permissions&quot;.
+ *      control functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -113,8 +113,8 @@ contract ERC223Token is ERC223, SafeMath {
 
   mapping(address => uint) balances;
   
-  string public name = &quot;YAKISOBACOIN&quot;;
-  string public symbol = &quot;YKSB&quot;;
+  string public name = "YAKISOBACOIN";
+  string public symbol = "YKSB";
   uint8 public decimals = 8;
   uint256 public totalSupply = 50000000000;
   

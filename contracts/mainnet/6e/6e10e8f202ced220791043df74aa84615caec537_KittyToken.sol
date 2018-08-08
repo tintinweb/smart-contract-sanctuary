@@ -56,7 +56,7 @@ interface ERC721Enumerable /* is ERC721 */ {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -396,7 +396,7 @@ contract KittyToken is AccessAdmin, ERC721 {
     _safeTransferFrom(_from, _to, _tokenId, data);
   }
   function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable {
-    _safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    _safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /// @dev Actually perform the safeTransferFrom
@@ -418,7 +418,7 @@ contract KittyToken is AccessAdmin, ERC721 {
       return;
     }*/
     bytes4 retval = ERC721TokenReceiver(_to).onERC721Received(_from, _tokenId, data);
-    // bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;)) = 0xf0b9e5ba;
+    // bytes4(keccak256("onERC721Received(address,uint256,bytes)")) = 0xf0b9e5ba;
     require(retval == 0xf0b9e5ba);
   }
     
@@ -474,7 +474,7 @@ contract KittyToken is AccessAdmin, ERC721 {
     Approval(owner, _approved, _tokenId);
   }
 
-  /// @dev Enable or disable approval for a third party (&quot;operator&quot;) to manage all your asset.
+  /// @dev Enable or disable approval for a third party ("operator") to manage all your asset.
   /// @param _operator Address to add to the set of authorized operators.
   /// @param _approved True if the operators is approved, false to revoke approval
   function setApprovalForAll(address _operator, bool _approved) 
@@ -501,16 +501,16 @@ contract KittyToken is AccessAdmin, ERC721 {
   }
   /// @notice A descriptive name for a collection of NFTs in this contract
   function name() public pure returns(string) {
-    return &quot;Pirate Kitty Token&quot;;
+    return "Pirate Kitty Token";
   }
   /// @notice An abbreviated name for NFTs in this contract
   function symbol() public pure returns(string) {
-    return &quot;KCT&quot;;
+    return "KCT";
   }
   /// @notice A distinct Uniform Resource Identifier (URI) for a given asset.
   /// @dev Throws if `_tokenId` is not a valid NFT. URIs are defined in RFC
-  ///  3986. The URI may point to a JSON file that conforms to the &quot;ERC721
-  ///  Metadata JSON Schema&quot;.
+  ///  3986. The URI may point to a JSON file that conforms to the "ERC721
+  ///  Metadata JSON Schema".
   //function tokenURI(uint256 _tokenId) external view returns (string);
 
   /// @notice Count NFTs tracked by this contract

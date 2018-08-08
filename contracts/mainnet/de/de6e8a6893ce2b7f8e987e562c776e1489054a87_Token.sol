@@ -23,7 +23,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -85,7 +85,7 @@ contract Token is ERC20, Ownable {
     string public name;
     string public symbol;
     uint8 public decimals; // How many decimals to show.
-    string public version = &quot;v0.1&quot;;   
+    string public version = "v0.1";   
     uint public totalSupply;
     bool public locked;           
     mapping(address => uint) balances;
@@ -112,8 +112,8 @@ contract Token is ERC20, Ownable {
         require(_crowdsaleAddress != address(0));                  
         locked = true; // Lock the transfer of tokens during the crowdsale       
         totalSupply = 2600000000e8;
-        name = &quot;Kripton&quot;;                           // Set the name for display purposes
-        symbol = &quot;LPK&quot;;                             // Set the symbol for display purposes
+        name = "Kripton";                           // Set the name for display purposes
+        symbol = "LPK";                             // Set the symbol for display purposes
         decimals = 8;                               // Amount of decimals for display purposes         
         crowdSaleAddress = _crowdsaleAddress;
         balances[_crowdsaleAddress] = totalSupply;          

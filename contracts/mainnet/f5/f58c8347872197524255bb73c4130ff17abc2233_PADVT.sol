@@ -246,7 +246,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -299,8 +299,8 @@ contract Ownable {
  */
 contract PADVT is StandardToken, Ownable {
 
-    string public constant name = &quot;Antiderivative Pre Token&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;PADVT&quot;; // solium-disable-line uppercase
+    string public constant name = "Antiderivative Pre Token"; // solium-disable-line uppercase
+    string public constant symbol = "PADVT"; // solium-disable-line uppercase
     uint8 public constant decimals = 0; // solium-disable-line uppercase
 
     uint256 public constant INITIAL_SUPPLY = 10000000000;

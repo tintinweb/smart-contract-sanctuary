@@ -23,8 +23,8 @@ contract YuanBaoCoin{
     function YuanBaoCoin() {
         balanceOf[msg.sender] = 3050000000000000; // Give the creator all initial tokens
         totalSupply = 3050000000000000;                        // Update total supply
-        name = &quot;ybcoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;YBCT&quot;;                               // Set the symbol for display purposes
+        name = "ybcoin";                                   // Set the name for display purposes
+        symbol = "YBCT";                               // Set the symbol for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
     }
 

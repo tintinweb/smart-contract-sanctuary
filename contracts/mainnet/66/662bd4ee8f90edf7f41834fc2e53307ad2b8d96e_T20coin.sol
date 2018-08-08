@@ -16,9 +16,9 @@ contract T20coin {
     function T20coin() {
 
          initialSupply = 10000000000;
-         name =&quot;T20coin&quot;;
+         name ="T20coin";
         decimals = 1;
-         symbol = &quot;T20coin&quot;;
+         symbol = "T20coin";
         
         balanceOf[msg.sender] = initialSupply;              
         totalSupply = initialSupply;                        

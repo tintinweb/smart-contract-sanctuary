@@ -284,7 +284,7 @@ contract BitEyeEx is SafeMath {
         returns (bool)
   {
     return signer == ecrecover(
-      keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash),
+      keccak256("\x19Ethereum Signed Message:\n32", hash),
       v,
       r,
       s

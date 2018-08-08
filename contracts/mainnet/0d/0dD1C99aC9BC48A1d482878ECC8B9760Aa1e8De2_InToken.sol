@@ -155,7 +155,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -602,7 +602,7 @@ contract RBAC {
     /**
      * A constant role name for indicating admins.
      */
-    string public constant ROLE_ADMIN = &quot;admin&quot;;
+    string public constant ROLE_ADMIN = "admin";
 
     /**
      * @dev constructor. Sets msg.sender as admin by default
@@ -796,8 +796,8 @@ contract NoOwner is HasNoEther, HasNoTokens, HasNoContracts {
  */
 contract SimpleToken is StandardToken {
 
-  string public constant name = &quot;SimpleToken&quot;;
-  string public constant symbol = &quot;SIM&quot;;
+  string public constant name = "SimpleToken";
+  string public constant symbol = "SIM";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 10000 * (10 ** uint256(decimals));
@@ -1054,7 +1054,7 @@ contract InbotControlled is RBAC {
     /**
      * A constant role name for indicating vendor.
      */
-    string public constant ROLE_VENDOR = &quot;vendor&quot;;
+    string public constant ROLE_VENDOR = "vendor";
 }
 
 contract InbotContract is InbotControlled, TokenDestructible, CanReclaimToken, Pausable {
@@ -1158,13 +1158,13 @@ contract InbotToken is InbotContract, MintableToken, BurnableToken, PausableToke
 	}
 
 	/**
-	* @dev Function which allows to mint tokens from another &quot;admin&quot; address. 
+	* @dev Function which allows to mint tokens from another "admin" address. 
 	* @param _to The address that will receive the minted tokens.
 	* @param _amount The amount of tokens to mint.
 	* @return A boolean that indicates if the operation was successful.
 	*/
 	function mint(address _to, uint256 _amount) public onlyAdmin canMint returns (bool) {
-		// TODO: a hook to allow other contracts call &quot;mint&quot; without applying parent modifiers
+		// TODO: a hook to allow other contracts call "mint" without applying parent modifiers
 		totalSupply = totalSupply.add(_amount);
 		balances[_to] = balances[_to].add(_amount);
 		Mint(_to, _amount);
@@ -1224,7 +1224,7 @@ contract InbotToken is InbotContract, MintableToken, BurnableToken, PausableToke
 /** 
  * @title InToken (Inbot Token) contract. 
 */
-contract InToken is InbotToken(&quot;InToken&quot;, &quot;IN&quot;, 18) {
+contract InToken is InbotToken("InToken", "IN", 18) {
 	uint public constant MAX_SUPPLY = 13*RAY;
 
 	function InToken() public {

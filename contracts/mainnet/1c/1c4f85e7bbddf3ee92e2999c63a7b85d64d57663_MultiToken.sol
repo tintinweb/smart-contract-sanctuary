@@ -43,7 +43,7 @@ contract ERC20 {
 /**
 * @title Ownable
 * @dev The Ownable contract has an owner address, and provides basic authorization control
-* functions, this simplifies the implementation of &quot;user permissions&quot;.
+* functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
 
@@ -159,10 +159,10 @@ contract MultiToken is ERC20, Ownable {
     {
 
         totalSupply = 10000 * (10**8);                                             
-        name = &quot;ICO&quot;;          // Set the name for display purposes
-        symbol = &quot;ICO&quot;;      // Set the symbol for display purposes
+        name = "ICO";          // Set the name for display purposes
+        symbol = "ICO";      // Set the symbol for display purposes
         decimals = 8;   // Amount of decimals for display purposes
-        version = &quot;1.0&quot;;         // Version of token
+        version = "1.0";         // Version of token
         tokenPrice = 1 ether / 100;   // Token price in ETH
         codeExportEnabled = true; // If true allow code export
         exchangeEnabled = true;

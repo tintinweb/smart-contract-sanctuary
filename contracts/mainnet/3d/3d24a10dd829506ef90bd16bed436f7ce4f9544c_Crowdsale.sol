@@ -297,7 +297,7 @@ contract BurnableToken is StandardToken {
 }
 
 contract Token is CappedToken, BurnableToken, Withdrawable {
-    function Token() CappedToken(10000000000e8) StandardToken(&quot;MIRAMIND Token&quot;, &quot;MIRA&quot;, 8) public {
+    function Token() CappedToken(10000000000e8) StandardToken("MIRAMIND Token", "MIRA", 8) public {
         
     }
 }

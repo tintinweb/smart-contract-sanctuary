@@ -248,8 +248,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract GoldBoxToken is StandardToken {
-  string public name = &quot;GoldBoxToken&quot;; 
-  string public symbol = &quot;GOX&quot;;
+  string public name = "GoldBoxToken"; 
+  string public symbol = "GOX";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 200000000 * (10 ** decimals);
   constructor () public {

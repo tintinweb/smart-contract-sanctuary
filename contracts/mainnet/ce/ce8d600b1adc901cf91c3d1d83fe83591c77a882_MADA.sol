@@ -89,8 +89,8 @@ contract BasicToken is ERC20Basic {
 
 contract MADA is ERC20, BasicToken {
 
-  string public name = &quot;MADA&quot;;
-  string public symbol = &quot;MADA&quot;;
+  string public name = "MADA";
+  string public symbol = "MADA";
 
 
   mapping (address => mapping (address => uint256)) internal allowed;

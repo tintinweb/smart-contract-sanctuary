@@ -126,10 +126,10 @@ contract PaymentInterface {
 
 contract DragonTreasureToken is BasicAccessControl, TokenERC20 {
     // metadata
-    string public constant name = &quot;DragonTreasureToken&quot;;
-    string public constant symbol = &quot;DTT&quot;;
+    string public constant name = "DragonTreasureToken";
+    string public constant symbol = "DTT";
     uint256 public constant decimals = 8;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     // deposit address
     address public inGameRewardAddress;

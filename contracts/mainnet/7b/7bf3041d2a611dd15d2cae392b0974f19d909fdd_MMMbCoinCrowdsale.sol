@@ -215,7 +215,7 @@ contract BurnableToken is StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -334,8 +334,8 @@ contract CappedToken is MintableToken {
 
 contract MMMbCoin is CappedToken, BurnableToken {
 
-  string public constant name = &quot;MMMbCoin Utils&quot;;
-  string public constant symbol = &quot;MMB&quot;;
+  string public constant name = "MMMbCoin Utils";
+  string public constant symbol = "MMB";
   uint256 public constant decimals = 18;
 
   function MMMbCoin(uint256 _cap) public CappedToken(_cap) {

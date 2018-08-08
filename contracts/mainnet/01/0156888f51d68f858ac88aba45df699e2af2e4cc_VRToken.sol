@@ -111,8 +111,8 @@ contract VRToken is StandardToken {
         require(false);
     }
 
-    string public constant name = &quot;VRToken&quot;;   
-    string public constant symbol = &quot;VRT&quot;;
+    string public constant name = "VRToken";   
+    string public constant symbol = "VRT";
     uint256 private constant _INITIAL_SUPPLY = 25*10**26;
     uint8 public decimals = 18;         
     uint256 public totalSupply;            

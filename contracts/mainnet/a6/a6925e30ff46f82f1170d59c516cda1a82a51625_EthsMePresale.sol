@@ -187,8 +187,8 @@ contract StandardToken is BasicToken, ERC20 {
 
 contract EthsMePresale is StandardToken {
 
-    string public constant name = &quot;EthsMe Presale token&quot;;
-    string public constant symbol = &quot;ETME&quot;;
+    string public constant name = "EthsMe Presale token";
+    string public constant symbol = "ETME";
     uint256   public constant decimals = 18;
 
     uint256 public constant PRICE = 1000; // 1000 EthsMe per Ether

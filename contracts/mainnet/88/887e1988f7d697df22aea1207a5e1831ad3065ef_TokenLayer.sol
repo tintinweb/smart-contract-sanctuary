@@ -186,11 +186,11 @@ contract TokenLayer is ERC721, Manageable {
     }
 
     function name() public pure returns (string) {
-        return &quot;CryptoJintori&quot;;
+        return "CryptoJintori";
     }
 
     function symbol() public pure returns (string) {
-        return &quot;JapanToken&quot;;
+        return "JapanToken";
     }
 
     function approve(address _to, uint256 _tokenId, address _from) public onlySystem {

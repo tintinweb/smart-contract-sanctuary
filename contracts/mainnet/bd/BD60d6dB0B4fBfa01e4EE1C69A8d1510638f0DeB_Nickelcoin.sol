@@ -11,7 +11,7 @@ function transfer(address _to, uint256 _value) public returns (bool success);
 function transferFrom(address _from, address _to, uint256 _value) public returns (bool success);
 //Send _value amount of tokens from address _from to address _to
 /*The transferFrom method is used for a withdraw workflow, allowing contracts to send 
-tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+tokens on your behalf, for example to "deposit" to a contract address and/or to charge
 fees in sub-currencies; the command should fail unless the _from account has deliberately
 authorized the sender of the message via some mechanism; we propose these standardized APIs for approval: */
 function approve(address _spender, uint256 _value) public returns (bool success);
@@ -76,8 +76,8 @@ contract Nickelcoin is IERC20 {
     
     using SafeMath for uint256;
     
-    string public constant name = &quot;Nickelcoin&quot;;  
-    string public constant symbol = &quot;NKL&quot;; 
+    string public constant name = "Nickelcoin";  
+    string public constant symbol = "NKL"; 
     uint8 public constant decimals = 8;  
     uint public  _totalSupply = 4000000000000000; 
     

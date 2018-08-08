@@ -421,8 +421,8 @@ contract LockableToken is MintableToken {
 
 contract AICToken is LockableToken {
 
-  string public constant name = &quot;AICRYPTO&quot;;
-  string public constant symbol = &quot;AIC&quot;;
+  string public constant name = "AICRYPTO";
+  string public constant symbol = "AIC";
   uint32 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));

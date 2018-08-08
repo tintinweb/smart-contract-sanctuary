@@ -116,8 +116,8 @@ contract wcapToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function wcapToken() public {
-        symbol = &quot;WCP&quot;;
-        name = &quot;WCAP&quot;;
+        symbol = "WCP";
+        name = "WCAP";
         decimals = 18;
         bonusEnds = now + 1 weeks;
         endDate = now + 7 weeks;

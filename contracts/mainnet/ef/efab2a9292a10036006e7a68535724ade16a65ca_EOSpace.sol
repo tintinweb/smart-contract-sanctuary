@@ -63,8 +63,8 @@ contract EOSpace is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;EOSpace&quot;;
-    string public constant symbol = &quot;EOP&quot;;
+    string public constant name = "EOSpace";
+    string public constant symbol = "EOP";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 10000000000e18;

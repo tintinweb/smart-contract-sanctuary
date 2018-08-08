@@ -78,7 +78,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -526,7 +526,7 @@ contract PibbleMain is Crowdsale, Ownable {
 
 
   /**
-   * @dev Allows the &quot;TOKEN owner&quot; to transfer control of the contract to a newOwner.
+   * @dev Allows the "TOKEN owner" to transfer control of the contract to a newOwner.
    * @param newOwner The address to transfer ownership to.
    */
   function transferTokenOwnership(address newOwner) public onlyOwner {

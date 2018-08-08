@@ -113,8 +113,8 @@ contract PunchToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PunchToken() public {
-        symbol = &quot;PUN&quot;;
-        name = &quot;Punch Token&quot;;
+        symbol = "PUN";
+        name = "Punch Token";
         decimals = 18;
         _totalSupply = 60000000000000000000000000000;
         balances[0xC3F6110EbA4d001bAB48E05dbC48166d1624402b] = _totalSupply;

@@ -215,8 +215,8 @@ contract GloWToken is MintableToken, BurnableToken {
 
     using SafeMath for uint256;
 
-    string  public name = &quot;Global Wasp&quot;;
-    string  public symbol = &quot;GloW&quot;;
+    string  public name = "Global Wasp";
+    string  public symbol = "GloW";
     uint256 constant public decimals = 6;
     uint256 constant dec = 10**decimals;
     uint256 public constant initialSupply = 36400000*dec; // 36 400 000 GLOW

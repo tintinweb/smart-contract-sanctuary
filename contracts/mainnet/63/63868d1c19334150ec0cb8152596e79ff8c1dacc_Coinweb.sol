@@ -112,8 +112,8 @@ contract Coinweb is Token {
 
     using SafeMath for uint256;
 
-    string public constant name = &quot;Coinweb&quot;;
-    string public constant symbol = &quot;XCOe&quot;;
+    string public constant name = "Coinweb";
+    string public constant symbol = "XCOe";
     uint256 public constant decimals = 8;
     uint256 public constant totalSupply = 2400000000 * 10**decimals;
     address public founder = 0x51Db57ABe0Fc0393C0a81c0656C7291aB7Dc0fDe; // Founder&#39;s address

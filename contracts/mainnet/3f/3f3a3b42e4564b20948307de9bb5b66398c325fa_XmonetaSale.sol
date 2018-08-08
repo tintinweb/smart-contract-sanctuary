@@ -203,7 +203,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -297,8 +297,8 @@ contract XmonetaToken is StandardToken, Claimable {
 
   /* ********** Token Predefined Information ********** */
 
-  string public constant name = &quot;Xmoneta Token&quot;;
-  string public constant symbol = &quot;XMN&quot;;
+  string public constant name = "Xmoneta Token";
+  string public constant symbol = "XMN";
   uint256 public constant decimals = 18;
 
   /* ********** Defined Variables ********** */

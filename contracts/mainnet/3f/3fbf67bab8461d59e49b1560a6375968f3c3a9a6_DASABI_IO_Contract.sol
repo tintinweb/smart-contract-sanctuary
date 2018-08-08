@@ -37,8 +37,8 @@ contract ERC20Token {
 contract DASABI_IO_Contract is ERC20Token, Owned{
 
     /* Public variables of the token */
-    string  public constant name = &quot;dasabi.io DSBC&quot;;
-    string  public constant symbol = &quot;DSBC&quot;;
+    string  public constant name = "dasabi.io DSBC";
+    string  public constant symbol = "DSBC";
     uint256 public constant decimals = 18;
     uint256 private constant etherChange = 10**18;
     

@@ -53,7 +53,7 @@ library SafeMath {
  /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -320,8 +320,8 @@ contract NDT3 is BurnableToken, StandardToken,Pausable {
     {
         totalSupply_ = 10000000000 ether;//Total amount of tokens
         balances[msg.sender] = totalSupply_;               //Initial tokens for owner
-        name = &quot;NDT3Token&quot;;             //for display
-        symbol = &quot;NDT3&quot;;                               //Symbol for display
+        name = "NDT3Token";             //for display
+        symbol = "NDT3";                               //Symbol for display
     }
 
 

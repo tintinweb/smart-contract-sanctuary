@@ -56,8 +56,8 @@ contract YYBToken is Ownable{
     
     using SafeMath for uint256;
     
-    string public constant name       = &quot;YiYouBao&quot;;
-    string public constant symbol     = &quot;YYB&quot;;
+    string public constant name       = "YiYouBao";
+    string public constant symbol     = "YYB";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply        = 199999880000 ether;
     uint256 public currentTotalSupply = 0;

@@ -114,8 +114,8 @@ contract YetAnotherUselessToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;YUC&quot;;
-        name = &quot;YetAnotherUselessToken&quot;;
+        symbol = "YUC";
+        name = "YetAnotherUselessToken";
         decimals = 10;
         _totalSupply = 10000000;
         balances[owner] = _totalSupply * (10 ** decimals);

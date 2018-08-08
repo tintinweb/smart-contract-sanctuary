@@ -281,8 +281,8 @@ contract MintableToken is StandardToken, Ownable {
 contract BiGeCoin is MintableToken  {
     event Withdraw(address wallet, uint256 value);
     
-    string public name = &quot;BiGeCoin&quot;; 
-    string public symbol = &quot;BGC&quot;;
+    string public name = "BiGeCoin"; 
+    string public symbol = "BGC";
     uint public decimals = 8;
     uint public INITIAL_SUPPLY = 210000000 * (10 ** decimals);
     

@@ -50,8 +50,8 @@ contract GEMCHAIN {
 		decimals=18;
         totalSupply = 10000000000 * (10 ** uint256(decimals));  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;GEMCHAIN&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GEM&quot;;                               // Set the symbol for display purposes
+        name = "GEMCHAIN";                                   // Set the name for display purposes
+        symbol = "GEM";                               // Set the symbol for display purposes
 		owner = msg.sender;
 		rate=30000;
 		fundOnContract=true;

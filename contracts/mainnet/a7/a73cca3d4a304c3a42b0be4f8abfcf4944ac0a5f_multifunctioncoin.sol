@@ -133,8 +133,8 @@ contract BurnableToken is BasicToken {
 
 contract multifunctioncoin is StandardToken, BurnableToken {
 
-  string public constant name = &quot;Multifunction Coin&quot;; 
-  string public constant symbol = &quot;XMF&quot;; 
+  string public constant name = "Multifunction Coin"; 
+  string public constant symbol = "XMF"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 20000000000 * (10 ** uint256(decimals));

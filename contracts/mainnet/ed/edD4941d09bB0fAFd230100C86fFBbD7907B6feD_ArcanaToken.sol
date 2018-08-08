@@ -60,8 +60,8 @@ contract ArcanaToken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;ArcanaToken&quot;;
-    string public constant symbol = &quot;ACNT&quot;;
+    string public constant name = "ArcanaToken";
+    string public constant symbol = "ACNT";
     uint public constant decimals = 8;
     
 uint256 public totalSupply = 10000000000e8;

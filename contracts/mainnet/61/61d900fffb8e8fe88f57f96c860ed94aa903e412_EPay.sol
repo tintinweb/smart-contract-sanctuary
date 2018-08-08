@@ -119,10 +119,10 @@ contract StandardToken is ERC20, SafeMath {
 }
 
 contract EPay is StandardToken {
-  string public constant name = &quot;EPay&quot;;
-  string public constant symbol = &quot;EPAY&quot;;
+  string public constant name = "EPay";
+  string public constant symbol = "EPAY";
   uint256 public constant decimals = 18;
-  string public version = &quot;1.0&quot;;
+  string public version = "1.0";
 
   uint256 public constant total = 98 * (10**6) * 10**decimals;   // 98 *10^6 EPay total
 

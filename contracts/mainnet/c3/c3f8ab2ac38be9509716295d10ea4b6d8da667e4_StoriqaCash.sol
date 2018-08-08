@@ -591,8 +591,8 @@ contract StoriqaCash is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Storiqa Cash&quot;;
-    string public constant symbol = &quot;STQC&quot;;
+    string public constant name = "Storiqa Cash";
+    string public constant symbol = "STQC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 90000000000000e8;

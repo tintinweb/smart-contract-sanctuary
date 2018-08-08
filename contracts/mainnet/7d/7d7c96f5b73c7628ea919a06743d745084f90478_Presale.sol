@@ -37,7 +37,7 @@ pragma solidity ^0.4.10;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -276,8 +276,8 @@ contract BurnableToken is BasicToken {
 
 contract PapushaToken is BurnableToken {
 
-    string public constant name = &quot;Papusha Rocket Token&quot;;
-    string public constant symbol = &quot;PRT&quot;;
+    string public constant name = "Papusha Rocket Token";
+    string public constant symbol = "PRT";
     uint32 public constant decimals = 18;
     uint256 public INITIAL_SUPPLY = 100000000 * 1 ether;
 

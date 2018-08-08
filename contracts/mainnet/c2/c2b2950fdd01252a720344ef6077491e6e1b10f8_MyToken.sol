@@ -62,7 +62,7 @@ contract MyToken is StandardToken{
     string public  name;
     string public  symbol;
     uint256 public  decimals;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
     address public owner;
     
     function MyToken (string init_name,string init_symbol,uint256 init_decimals,uint256 init_total,address init_address)  public {

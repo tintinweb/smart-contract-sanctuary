@@ -1186,8 +1186,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract OMIToken is CappedToken, PausableToken {
-  string public constant name = &quot;Ecomi Token&quot;;
-  string public constant symbol = &quot;OMI&quot;;
+  string public constant name = "Ecomi Token";
+  string public constant symbol = "OMI";
   uint256 public decimals = 18;
 
   function OMIToken() public CappedToken(1000000000*1e18) {}

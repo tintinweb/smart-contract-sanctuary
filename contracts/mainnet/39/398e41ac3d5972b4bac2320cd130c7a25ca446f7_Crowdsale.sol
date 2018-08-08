@@ -521,9 +521,9 @@ contract ERC20 is ERC20Basic {
 contract StandardToken is ERC20, BasicToken {
 
   // Name of the token
-  string constant public name = &quot;Quant&quot;;
+  string constant public name = "Quant";
   // Token abbreviation
-  string constant public symbol = &quot;QNT&quot;;
+  string constant public symbol = "QNT";
   // Decimal places
   uint8 constant public decimals = 18;
   // Zeros after the point

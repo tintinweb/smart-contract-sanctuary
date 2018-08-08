@@ -19,8 +19,8 @@ contract owned {
 
 contract MyToken is owned {
     /* the rest of the contract as usual */
-    string public name = &quot;学呗(教育链通证)&quot;;
-    string public symbol = &quot;ECT&quot;;
+    string public name = "学呗(教育链通证)";
+    string public symbol = "ECT";
     uint8 public decimals = 8;
     uint256 public totalSupply = 21000000 * 10 ** uint256(decimals);
 	

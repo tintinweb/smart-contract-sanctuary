@@ -56,8 +56,8 @@ contract Tacoin is ERC223 {
   mapping(address => uint) balances;
   mapping (address => mapping (address => uint)) internal _allowances;
 
-  string public name = &quot;Tacoin&quot;;
-  string public symbol = &quot;TACO&quot;;
+  string public name = "Tacoin";
+  string public symbol = "TACO";
   uint8 public decimals = 18;
   uint256 public totalSupply = 10000000000000000000000000;
 
@@ -68,8 +68,8 @@ function Tacoin (
     ) public {
         totalSupply = initialSupply * 10000000000000000000000000  ** uint256(18);  
         balances[msg.sender] = totalSupply = 10000000000000000000000000;                
-        name = tokenName = &quot;Tacoin&quot;;                                   
-        symbol = tokenSymbol = &quot;TACO&quot;;                               
+        name = tokenName = "Tacoin";                                   
+        symbol = tokenSymbol = "TACO";                               
     }
 
   // Function to access name of token .

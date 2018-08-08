@@ -98,8 +98,8 @@ contract VRXToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;VRX&quot;;
-        name = &quot;Vryx&quot;;
+        symbol = "VRX";
+        name = "Vryx";
         decimals = 18;
         _totalSupply = 100000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

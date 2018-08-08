@@ -72,8 +72,8 @@ contract HAUZ is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     function HAUZ() public {
-        symbol = &quot;HAUZ&quot;;
-        name = &quot;HAUZ&quot;;
+        symbol = "HAUZ";
+        name = "HAUZ";
         decimals = 18;
         _totalSupply = 88000000;
         _totalSupply = _totalSupply.mul(10 ** uint(decimals));

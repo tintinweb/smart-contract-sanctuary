@@ -285,8 +285,8 @@ contract EVOAIToken is StandardToken {
   uint8 public decimals;
 
   constructor() public {
-    name = &quot;EVOAI&quot;;
-    symbol = &quot;EVOT&quot;;
+    name = "EVOAI";
+    symbol = "EVOT";
     decimals = 18;
     totalSupply_ = 10000000000000000000000000;
     balances[msg.sender] = totalSupply_;

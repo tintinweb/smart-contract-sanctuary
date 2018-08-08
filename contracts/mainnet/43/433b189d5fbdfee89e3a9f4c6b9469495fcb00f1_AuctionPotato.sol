@@ -110,7 +110,7 @@ contract AuctionPotato {
         
         started = false;
         
-        name = &quot;Pixor&quot;;
+        name = "Pixor";
         
     }
 

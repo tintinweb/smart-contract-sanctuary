@@ -203,7 +203,7 @@ contract EtherDeltaHandler is ExchangeHandler {
         bytes32 r,
         bytes32 s
     ) external payable returns (uint256) {
-        require(msg.value == amountToFill, &quot;EtherDeltaHandler - amountToFill != msg.value&quot;);
+        require(msg.value == amountToFill, "EtherDeltaHandler - amountToFill != msg.value");
 
         deposit(amountToFill);
 
@@ -296,7 +296,7 @@ contract EtherDeltaHandler is ExchangeHandler {
     }
 
     function depositToken(address token, uint256 amount) internal {
-        require(Token(token).approve(address(exchange), amount), &quot;EtherDeltaHandler - unable to deposit token, approve failed&quot;);
+        require(Token(token).approve(address(exchange), amount), "EtherDeltaHandler - unable to deposit token, approve failed");
         exchange.depositToken(token, amount);
     }
 
@@ -309,7 +309,7 @@ contract EtherDeltaHandler is ExchangeHandler {
     }
 
     function transferTokenToSender(address token, uint256 amount) internal {
-        require(Token(token).transfer(msg.sender, amount), &quot;EtherDeltaHandler - failed to transfer token to sender&quot;);
+        require(Token(token).transfer(msg.sender, amount), "EtherDeltaHandler - failed to transfer token to sender");
     }
 
     function transferEtherToSender(uint256 amount) internal {
@@ -321,6 +321,6 @@ contract EtherDeltaHandler is ExchangeHandler {
     }
 
     function() public payable {
-        require(msg.sender == address(exchange), &quot;EtherDeltaHandler - Only exchange allowed to send ether&quot;);
+        require(msg.sender == address(exchange), "EtherDeltaHandler - Only exchange allowed to send ether");
     }
 }

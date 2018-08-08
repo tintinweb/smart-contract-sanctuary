@@ -109,8 +109,8 @@ contract CompcoinCash is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CompcoinCash() public {
-        symbol = &quot;CMPC&quot;;
-        name = &quot;CompcoinCash&quot;;
+        symbol = "CMPC";
+        name = "CompcoinCash";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x760ef04eeee9ed1838b108154c603278e066df9f] = _totalSupply;

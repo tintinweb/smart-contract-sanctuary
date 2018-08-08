@@ -168,8 +168,8 @@ contract SaveCoin is StandardToken, Ownable {
      function SaveCoin() public{
         totalSupply =  1000000000e18;
         decimals =  18;
-        name =   &quot;Save Coin&quot;;
-        symbol =  &quot;SAVE&quot;;
+        name =   "Save Coin";
+        symbol =  "SAVE";
         balances[msg.sender] = totalSupply; 
         Transfer (address(this), owner, totalSupply); 
      }

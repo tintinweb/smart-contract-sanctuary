@@ -21,9 +21,9 @@ contract ExBatallionCoin {
     function ExBatallionCoin() {
 
          initialSupply = 2500000000000000;
-         name =&quot;ExBatallionCoin&quot;;
+         name ="ExBatallionCoin";
         decimals = 8;
-         symbol = &quot;ExBCoin&quot;;
+         symbol = "ExBCoin";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

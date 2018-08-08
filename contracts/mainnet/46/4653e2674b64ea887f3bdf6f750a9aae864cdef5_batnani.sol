@@ -74,8 +74,8 @@ contract batnani is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public Claimed;
 
-    string public constant name   = &quot;Batnani&quot;;
-    string public constant symbol = &quot;BTNI&quot;;
+    string public constant name   = "Batnani";
+    string public constant symbol = "BTNI";
 
     uint public constant decimals = 10;
     uint public bonusDeadlineDefault = 30;

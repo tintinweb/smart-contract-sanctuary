@@ -75,16 +75,16 @@ contract PlendsToken is StandardToken {
     function PlendsToken() public {
         balances[msg.sender] = 800000000;               
         totalSupply = 800000000;                        
-        name = &quot;PlendsToken&quot;;                      
+        name = "PlendsToken";                      
         decimals = 0;                              
-        symbol = &quot;PLNS&quot;;                           
+        symbol = "PLNS";                           
     }
 
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) public returns (bool success) {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

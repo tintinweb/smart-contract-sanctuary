@@ -57,8 +57,8 @@ contract BidiumToken is Ownable { //ERC - 20 token contract
   // Triggered whenever approve(address _spender, uint256 _value) is called.
   event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
-  string public constant symbol = &quot;BIDM&quot;;
-  string public constant name = &quot;BIDIUM&quot;;
+  string public constant symbol = "BIDM";
+  string public constant name = "BIDIUM";
   uint8 public constant decimals = 4;
   uint256 _totalSupply = 1000000000 * (10 ** uint(decimals));
 

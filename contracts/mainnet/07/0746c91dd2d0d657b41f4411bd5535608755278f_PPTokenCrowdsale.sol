@@ -276,9 +276,9 @@ contract BurnableToken is MintableToken {
 contract PPToken is BurnableToken{
     using SafeMath for uint256;
     
-    string public constant name = &quot;PayPortalToken&quot;;
+    string public constant name = "PayPortalToken";
     
-    string public constant symbol = &quot;PPTL&quot;;
+    string public constant symbol = "PPTL";
     
     uint32 public constant decimals = 18;
     
@@ -701,40 +701,40 @@ contract StagebleCrowdsale is FinalizableCrowdsale{
     uint256 internal countStages;
     
     function StagebleCrowdsale() public {
-        stage[0][&quot;bonus&quot;] = 30;
-        stage[0][&quot;cap&quot;] = (rate * (6000 ether)); // rate * (6000 ether)
-        stage[0][&quot;tranmin&quot;] = (1 ether);
-        stage[0][&quot;closeTime&quot;] = 1529280000;//18.06.2018 - 1529280000
+        stage[0]["bonus"] = 30;
+        stage[0]["cap"] = (rate * (6000 ether)); // rate * (6000 ether)
+        stage[0]["tranmin"] = (1 ether);
+        stage[0]["closeTime"] = 1529280000;//18.06.2018 - 1529280000
         
-        stage[1][&quot;bonus&quot;] = 20;
-        stage[1][&quot;cap&quot;] = (rate * (6000 ether)); // rate * (6000 ether)
-        stage[1][&quot;tranmin&quot;] = (1 ether)/10;
-        stage[1][&quot;closeTime&quot;] = 1529884800;//25.06.2018 - 1529884800
+        stage[1]["bonus"] = 20;
+        stage[1]["cap"] = (rate * (6000 ether)); // rate * (6000 ether)
+        stage[1]["tranmin"] = (1 ether)/10;
+        stage[1]["closeTime"] = 1529884800;//25.06.2018 - 1529884800
         
-        stage[2][&quot;bonus&quot;] = 10;
-        stage[2][&quot;cap&quot;] = (rate * (6000 ether));// rate * (6000 ether)
-        stage[2][&quot;tranmin&quot;] = (1 ether)/10;
-        stage[2][&quot;closeTime&quot;] = 1531094400;//09.07.2018 - 1531094400
+        stage[2]["bonus"] = 10;
+        stage[2]["cap"] = (rate * (6000 ether));// rate * (6000 ether)
+        stage[2]["tranmin"] = (1 ether)/10;
+        stage[2]["closeTime"] = 1531094400;//09.07.2018 - 1531094400
         
-        stage[3][&quot;bonus&quot;] = 0;
-        stage[3][&quot;cap&quot;] = token.totalSupply();
-        stage[3][&quot;tranmin&quot;] = 0;
-        stage[3][&quot;closeTime&quot;] = closingTime;
+        stage[3]["bonus"] = 0;
+        stage[3]["cap"] = token.totalSupply();
+        stage[3]["tranmin"] = 0;
+        stage[3]["closeTime"] = closingTime;
         
         countStages = 4;
     }
 
     function getStageBonus(uint256 _index) public view returns(uint256){
-        return stage[_index][&quot;bonus&quot;];
+        return stage[_index]["bonus"];
     }
     function getStageAvailableTokens(uint256 _index) public view returns(uint256){
-        return stage[_index][&quot;cap&quot;];
+        return stage[_index]["cap"];
     }
     function getStageMinWeiAmount(uint256 _index) public view returns(uint256){
-        return stage[_index][&quot;tranmin&quot;];
+        return stage[_index]["tranmin"];
     }
     function getStageClosingTime(uint256 _index) public view returns(uint256){
-        return stage[_index][&quot;closeTime&quot;];
+        return stage[_index]["closeTime"];
     }
     function getCurrentStageIndex() public view returns(uint256){
         return _getInStageIndex();
@@ -747,24 +747,24 @@ contract StagebleCrowdsale is FinalizableCrowdsale{
         uint256 bonuses = 0;
         if(_stageIndex < countStages)
         {
-            if(stage[_stageIndex][&quot;cap&quot;] >= _leftcap)
+            if(stage[_stageIndex]["cap"] >= _leftcap)
             {
-                if(stage[_stageIndex][&quot;bonus&quot;] > 0)
+                if(stage[_stageIndex]["bonus"] > 0)
                 {
-                    bonuses = bonuses.add(_leftcap.mul(stage[_stageIndex][&quot;bonus&quot;]).div(100));
+                    bonuses = bonuses.add(_leftcap.mul(stage[_stageIndex]["bonus"]).div(100));
                 }
-                stage[_stageIndex][&quot;cap&quot;] = stage[_stageIndex][&quot;cap&quot;].sub(_leftcap);
+                stage[_stageIndex]["cap"] = stage[_stageIndex]["cap"].sub(_leftcap);
             }
             else
             {
-                _leftcap = _leftcap.sub(stage[_stageIndex][&quot;cap&quot;]);
-                if(stage[_stageIndex][&quot;cap&quot;] > 0)
+                _leftcap = _leftcap.sub(stage[_stageIndex]["cap"]);
+                if(stage[_stageIndex]["cap"] > 0)
                 {
-                    if(stage[_stageIndex][&quot;bonus&quot;] > 0)
+                    if(stage[_stageIndex]["bonus"] > 0)
                     {
-                        bonuses = bonuses.add(stage[_stageIndex][&quot;cap&quot;].mul(stage[_stageIndex][&quot;bonus&quot;]).div(100));
+                        bonuses = bonuses.add(stage[_stageIndex]["cap"].mul(stage[_stageIndex]["bonus"]).div(100));
                     }
-                    stage[_stageIndex][&quot;cap&quot;] = 0;
+                    stage[_stageIndex]["cap"] = 0;
                 }
                 bonuses = bonuses.add(_getBonus(_stageIndex.add(1), _leftcap));
             }
@@ -772,7 +772,7 @@ contract StagebleCrowdsale is FinalizableCrowdsale{
         return bonuses;
     }
     function _isInStage(uint256 _stageIndex) internal view returns (bool){
-        return now < stage[_stageIndex][&quot;closeTime&quot;] && stage[_stageIndex][&quot;cap&quot;] > 0;
+        return now < stage[_stageIndex]["closeTime"] && stage[_stageIndex]["cap"] > 0;
     }
     function _getInStageIndex () internal view returns(uint256){
         uint256 _index = 0;
@@ -794,8 +794,8 @@ contract StagebleCrowdsale is FinalizableCrowdsale{
     function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) internal {
         super._preValidatePurchase(_beneficiary, _weiAmount);
         uint256 _index = _getInStageIndex();
-        if(stage[_index][&quot;tranmin&quot;] > 0)
-            require(stage[_index][&quot;tranmin&quot;] <= _weiAmount);
+        if(stage[_index]["tranmin"] > 0)
+            require(stage[_index]["tranmin"] <= _weiAmount);
     }
 
 }

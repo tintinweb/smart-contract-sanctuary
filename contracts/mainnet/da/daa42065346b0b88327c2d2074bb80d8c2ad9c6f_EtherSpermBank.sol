@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 // 2. the ownership of the devfee can transfer through sacrificing sperm
 //  a. the new requirement will be how many remaining sperm you have after the sacrifice
 //  b. you cannot sacrifice sperm if you are the spermlord
-// 3. the &quot;free&quot; 500 sperm cost 0.001 eth (in line with the mining fee)
+// 3. the "free" 500 sperm cost 0.001 eth (in line with the mining fee)
 
 // bots should have a harder time, and whales can compete for the devfee
 

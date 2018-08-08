@@ -7,7 +7,7 @@ pragma solidity ^0.4.24;
 // Name        : Throw Away Your Money
 // Decimals    : 18
 //
-// &quot;0x0000000000000000000000000000000000000000 is the place to be for your Eth!&quot;
+// "0x0000000000000000000000000000000000000000 is the place to be for your Eth!"
 //    -Cryptopinions
 //
 // ----------------------------------------------------------------------------
@@ -83,8 +83,8 @@ contract BURNToken is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;BURN&quot;;
-        name = &quot;Throw Away Your Money&quot;;
+        symbol = "BURN";
+        name = "Throw Away Your Money";
         decimals = 18;
         _totalSupply = 1 * 10**uint(decimals); //just gonna use this to seed the market dont worry not a premine I swear
         balances[msg.sender] = _totalSupply;

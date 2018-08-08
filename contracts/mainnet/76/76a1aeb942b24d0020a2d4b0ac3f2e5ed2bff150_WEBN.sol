@@ -174,8 +174,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract WEBN is StandardToken {
 
-  string public constant name = &quot;WEBN&quot;; 
-  string public constant symbol = &quot;WEBN&quot;; 
+  string public constant name = "WEBN"; 
+  string public constant symbol = "WEBN"; 
   uint8 public constant decimals = 8; 
 
   uint256 public constant INITIAL_SUPPLY = 6000000000 * (10 ** uint256(decimals));

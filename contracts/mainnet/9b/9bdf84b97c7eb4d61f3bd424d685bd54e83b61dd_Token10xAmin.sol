@@ -27,8 +27,8 @@ contract Token10xAmin is ERC223Interface, ERC20Interface {
   uint public totalSupply;
   mapping(address => uint) balances;
   mapping(address => mapping (address => uint256)) allowed;
-  string public constant name = &quot;10xAmin Token&quot;;
-  string public constant symbol = &quot;10xAMIN&quot;;
+  string public constant name = "10xAmin Token";
+  string public constant symbol = "10xAMIN";
   uint8 public constant decimals = 18;
 
   function Token10xAmin() public {

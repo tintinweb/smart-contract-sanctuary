@@ -5,8 +5,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 contract CryptoHuntersToken {
 
     // Public variables of the token
-    string public name = &quot;CryptoHuntersToken&quot;;
-    string public symbol = &quot;CHT&quot;; 
+    string public name = "CryptoHuntersToken";
+    string public symbol = "CHT"; 
     uint8 public decimals = 18;
     uint public INITIAL_SUPPLY = 80000000 * (10 ** uint256(decimals)); // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply;

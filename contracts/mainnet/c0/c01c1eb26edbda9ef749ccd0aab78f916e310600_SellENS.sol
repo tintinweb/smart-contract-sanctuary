@@ -61,7 +61,7 @@ contract SellENSFactory {
   Registrar registrar = Registrar(0x6090A6e47849629b7245Dfa1Ca21D94cd15878Ef);
   // The Ethereum Name Service Public Resolver contract.
   Resolver resolver = Resolver(0x1da022710dF5002339274AaDEe8D58218e9D6AB5);
-  // The hash of &quot;.eth&quot; under which all top level names are registered.
+  // The hash of ".eth" under which all top level names are registered.
   bytes32 root_node = 0x93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae;
   
   // Events used to help track sales.

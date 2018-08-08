@@ -171,8 +171,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract GoldenUnitToken is StandardToken {
-    string public constant name = &quot;Golden Unite Token&quot;;
-    string public constant symbol = &quot;GUT&quot;;
+    string public constant name = "Golden Unite Token";
+    string public constant symbol = "GUT";
     uint32 public constant decimals = 18;
     uint256 public INITIAL_SUPPLY = 100000 * 1 ether;
     address public CrowdsaleAddress;

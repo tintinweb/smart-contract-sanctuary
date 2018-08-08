@@ -111,8 +111,8 @@ contract finco is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FINCO() public {
-        symbol = &quot;FNCO&quot;;
-        name = &quot;FINCO Token&quot;;
+        symbol = "FNCO";
+        name = "FINCO Token";
         decimals = 18;
         _totalSupply = 25000000000000000000000000000;
         balances[0xed13b32835ed8b9c1b03c01d1feea31192c6da4d] = _totalSupply;

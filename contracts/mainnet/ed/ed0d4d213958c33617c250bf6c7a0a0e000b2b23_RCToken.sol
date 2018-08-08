@@ -86,8 +86,8 @@ contract StandardToken is ERC20Token, Utils, Ownable {
 
 contract RCToken is StandardToken {
 
-    string public constant name = &quot;RC&quot;;
-    string public constant symbol = &quot;RC&quot;;
+    string public constant name = "RC";
+    string public constant symbol = "RC";
     uint8 public constant decimals = 18;
     uint256 public constant totalSupply = 5 * 10**26;
     

@@ -26,8 +26,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 36000000000000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;CORENETCOIN&quot;;                                   // Set the name for display purposes
-        symbol = &quot;CNTC&quot;;                               // Set the symbol for display purposes
+        name = "CORENETCOIN";                                   // Set the name for display purposes
+        symbol = "CNTC";                               // Set the symbol for display purposes
     }
 
     /**

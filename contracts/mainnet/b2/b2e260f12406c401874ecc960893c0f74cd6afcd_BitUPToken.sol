@@ -92,8 +92,8 @@ contract BitUPToken is ERC20, Ownable {
 
 /*----------------- Token Information -----------------*/
 
-    string public constant name = &quot;BitUP Token&quot;;
-    string public constant symbol = &quot;BUT&quot;;
+    string public constant name = "BitUP Token";
+    string public constant symbol = "BUT";
 
     uint8 public decimals = 18;                            // (ERC20 API) Decimal precision, factor is 1e18
     

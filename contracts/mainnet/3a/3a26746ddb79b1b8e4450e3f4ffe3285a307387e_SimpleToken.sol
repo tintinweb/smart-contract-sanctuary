@@ -150,8 +150,8 @@ contract StandardToken is BasicToken, ERC20 {
 
 contract SimpleToken is StandardToken {
 
-  string public name = &quot;ETHERBTC&quot;;
-  string public symbol = &quot;ETHB&quot;;
+  string public name = "ETHERBTC";
+  string public symbol = "ETHB";
   uint public decimals = 8;
   uint public INITIAL_SUPPLY = 2100000000000000;
 

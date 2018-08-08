@@ -114,8 +114,8 @@ contract UncToken is SafeMath, Owned, ERC20 {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;UNC&quot;;
-        name = &quot;Uncloak&quot;;
+        symbol = "UNC";
+        name = "Uncloak";
         decimals = 18;
         _totalSupply = 4200000000 * 10**uint(decimals);
         transferAdmins[owner] = true; // Enable transfers for owner

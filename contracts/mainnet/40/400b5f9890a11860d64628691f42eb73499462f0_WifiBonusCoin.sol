@@ -145,7 +145,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -307,8 +307,8 @@ contract Airdropper is Ownable {
  */
 contract WifiBonusCoin is StandardToken, Ownable, Airdropper {
 
-    string public constant name    = &quot;World Wifi Bonus&quot;;
-    string public constant symbol  = &quot;WWFB&quot;;
+    string public constant name    = "World Wifi Bonus";
+    string public constant symbol  = "WWFB";
     uint8 public constant decimals = 0;
 
     uint256 public constant INITIAL_SUPPLY = 300000000;

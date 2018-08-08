@@ -4,8 +4,8 @@ interface ERC20_MIST { function receiveApproval(address _from, uint256 _value, a
 
 contract ERC20MIST  {
     // Public variables of the token
-    string public name=&quot;ERC20_MIST&quot;;
-    string public symbol=&quot;MSI&quot;;
+    string public name="ERC20_MIST";
+    string public symbol="MSI";
     uint8 public decimals = 8;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply;
@@ -32,8 +32,8 @@ contract ERC20MIST  {
     ) public {
         totalSupply = initialSupply * 8 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = 2100000000000000;                // Give the creator all initial tokens
-        name = tokenName=&quot;ERC20_MIST&quot;;                                   // Set the name for display purposes
-        symbol = tokenSymbol=&quot;MSI&quot;;                               // Set the symbol for display purposes
+        name = tokenName="ERC20_MIST";                                   // Set the name for display purposes
+        symbol = tokenSymbol="MSI";                               // Set the symbol for display purposes
     }
 
     /**

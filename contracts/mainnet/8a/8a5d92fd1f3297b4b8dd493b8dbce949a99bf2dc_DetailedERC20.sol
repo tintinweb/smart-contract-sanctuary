@@ -51,7 +51,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -296,8 +296,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract DetailedERC20 is MintableToken {
-  string public constant name = &quot;FTEC Collection Token&quot;;
-  string public constant symbol = &quot;FTEC.IO&quot;;
+  string public constant name = "FTEC Collection Token";
+  string public constant symbol = "FTEC.IO";
   uint8 public constant decimals = 18 ;
 
 }

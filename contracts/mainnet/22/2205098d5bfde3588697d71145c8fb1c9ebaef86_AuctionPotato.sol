@@ -2,12 +2,12 @@
 // https://medium.com/@bryn.bellomy/solidity-tutorial-building-a-simple-auction-contract-fcc918b0878a
 //
 // 
-// Our Aetherian #0 ownership is now handled by this contract instead of our core. This contract &quot;owns&quot; 
+// Our Aetherian #0 ownership is now handled by this contract instead of our core. This contract "owns" 
 // the monster and players can bid to get their hands on this mystical creature until someone else outbids them.
 // Every following sale increases the price by x1.5 until no one is willing to outbid the current owner.
 // Once a player has lost ownership, they will get a full refund of their bid + 50% of the revenue created by the sale.
 // The other 50% go to the dev team to fund development. 
-// This &quot;hot potato&quot; style auction technically never ends and enables some very interesting scenarios
+// This "hot potato" style auction technically never ends and enables some very interesting scenarios
 // for our in-game world
 //
 
@@ -116,7 +116,7 @@ contract AuctionPotato {
         
         started = false;
         
-        name = &quot;Aetherian&quot;;
+        name = "Aetherian";
         
     }
 

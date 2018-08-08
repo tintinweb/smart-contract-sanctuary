@@ -228,9 +228,9 @@ contract Weekycoin is ERC20Interface, Owned, SafeMath {
 
     function Weekycoin() public {
 
-        symbol = &quot;WEEKY&quot;;
+        symbol = "WEEKY";
 
-        name = &quot;Weekycoin&quot;;
+        name = "Weekycoin";
 
         decimals = 18;
 

@@ -181,8 +181,8 @@ contract StandardToken is ERC20, BasicToken {
 
 // VDGToken
 contract VDGToken is StandardToken {
-  string public name = &quot;VeriDocGlobal&quot;;
-  string public symbol = &quot;VDG&quot;;
+  string public name = "VeriDocGlobal";
+  string public symbol = "VDG";
   uint public decimals = 0;
   uint public INITIAL_SUPPLY = 50000000000;
 

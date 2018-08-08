@@ -113,8 +113,8 @@ contract HIROTOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HIROTOKEN() public {
-        symbol = &quot;HRT&quot;;
-        name = &quot;HIRO TOKEN&quot;;
+        symbol = "HRT";
+        name = "HIRO TOKEN";
         decimals = 0;
         _totalSupply = 22222222222;
         balances[0x196D80D725d3F90246d7a44086bb2B883D8b0c84] = _totalSupply;

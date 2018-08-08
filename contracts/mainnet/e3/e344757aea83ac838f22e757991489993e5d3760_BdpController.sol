@@ -1161,11 +1161,11 @@ library BdpTransfer {
 contract BdpController is BdpBase {
 
 	function name() external pure returns (string) {
-		return &quot;CryptoPicture Block&quot;;
+		return "CryptoPicture Block";
 	}
 
 	function tokenURI(uint256 _tokenId) external view returns (string _tokenURI) {
-		_tokenURI = &quot;https://cryptopicture.com/#0000000&quot;;
+		_tokenURI = "https://cryptopicture.com/#0000000";
 		bytes memory tokenURIBytes = bytes(_tokenURI);
 		tokenURIBytes[27] = byte(48+(_tokenId / 1000000) % 10);
 		tokenURIBytes[28] = byte(48+(_tokenId / 100000) % 10);

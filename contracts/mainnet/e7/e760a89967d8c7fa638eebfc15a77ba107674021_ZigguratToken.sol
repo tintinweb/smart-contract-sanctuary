@@ -180,7 +180,7 @@ contract ZigguratToken is admined, StandardToken {
     string public name;                   //fancy name: eg Ziggurat Token
     uint8 public decimals = 18;           //How many decimals to show. ie. 18 decimals is the strongly suggested default, avoid changing it
     string public symbol;                 //An identifier: eg ZIG
-    string public version = &quot;1.0&quot;;       //1 standard. Just an arbitrary versioning scheme.
+    string public version = "1.0";       //1 standard. Just an arbitrary versioning scheme.
     uint256 public totalMaxSupply = 5310000000 * 10 ** 17; // 531M Limit
     
     function ZigguratToken(
@@ -249,7 +249,7 @@ contract ZigguratToken is admined, StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed when one does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 

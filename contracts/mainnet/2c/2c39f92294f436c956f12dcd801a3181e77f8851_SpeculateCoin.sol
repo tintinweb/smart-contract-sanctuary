@@ -17,8 +17,8 @@ contract SpeculateCoin {
     
     function SpeculateCoin() {
         balanceOf[this] = 2100000000000000;
-        name = &quot;SpeculateCoin&quot;;     
-        symbol = &quot;SPC&quot;;
+        name = "SpeculateCoin";     
+        symbol = "SPC";
         owner = msg.sender;
         decimals = 8;
         transactions = 0;

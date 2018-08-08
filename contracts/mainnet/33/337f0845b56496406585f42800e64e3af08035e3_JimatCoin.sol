@@ -90,8 +90,8 @@ contract JimatCoin is ERC20Interface, Owned, SafeMath {
 
 
     function JimatCoin() public {
-        symbol = &quot;JMT&quot;;
-        name = &quot;JimatCoin&quot;;
+        symbol = "JMT";
+        name = "JimatCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0xa6e69536c5e13Ba9056a62a63adf2F725CA62599] = _totalSupply;

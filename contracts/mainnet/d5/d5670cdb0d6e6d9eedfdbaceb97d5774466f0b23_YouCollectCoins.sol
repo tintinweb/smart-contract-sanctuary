@@ -222,8 +222,8 @@ contract YouCollectCoins is YouCollectBase {
   //  ERC20 
   //
     /*** CONSTANTS ***/
-    string public constant NAME = &quot;YouCollectCoin&quot;;
-    string public constant SYMBOL = &quot;YCC&quot;;
+    string public constant NAME = "YouCollectCoin";
+    string public constant SYMBOL = "YCC";
     uint8 public constant DECIMALS = 18;  
 
     uint256 public totalSupply;

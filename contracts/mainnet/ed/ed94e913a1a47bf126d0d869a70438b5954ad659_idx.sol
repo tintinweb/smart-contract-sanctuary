@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract idx is StandardToken, Ownable {
 
-    string public constant name = &quot;艾德斯&quot;;
-    string public constant symbol = &quot;idx&quot;;
+    string public constant name = "艾德斯";
+    string public constant symbol = "idx";
     uint256 public constant decimals = 8;
 
     function idx() public {

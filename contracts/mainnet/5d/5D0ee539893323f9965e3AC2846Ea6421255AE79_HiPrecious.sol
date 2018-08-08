@@ -40,8 +40,8 @@ contract HiPrecious is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;HiPrecious&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;HIP&quot;; // solhint-disable-line
+  string public constant NAME = "HiPrecious"; // solhint-disable-line
+  string public constant SYMBOL = "HIP"; // solhint-disable-line
 
   /*** STORAGE ***/
 

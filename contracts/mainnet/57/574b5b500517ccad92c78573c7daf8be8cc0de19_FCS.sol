@@ -101,8 +101,8 @@ contract FCS is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;FCS&quot;;
-        name = &quot;Five Color Stone&quot;;
+        symbol = "FCS";
+        name = "Five Color Stone";
         decimals = 18;
         _totalSupply = 2000000000000000000000000000;
         

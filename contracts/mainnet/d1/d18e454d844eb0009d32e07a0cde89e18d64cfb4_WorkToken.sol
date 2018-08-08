@@ -115,8 +115,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract WorkToken is StandardToken {
 
-    string public constant name = &quot;WorkToken&quot;;
-    string public constant symbol = &quot;WORK&quot;;
+    string public constant name = "WorkToken";
+    string public constant symbol = "WORK";
     uint8 public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 1000000000 * (10 ** uint256(decimals));

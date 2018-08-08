@@ -138,15 +138,15 @@ contract StandardToken is ERC20 {
       //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
       //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
       //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-      if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { revert(); }
+      if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { revert(); }
       return true;
   }
 
 }
 
 contract DCVToken is StandardToken, Ownable {
-    string constant public name = &quot;Decentraverse Token&quot;;
-    string constant public symbol = &quot;DCVT&quot;;
+    string constant public name = "Decentraverse Token";
+    string constant public symbol = "DCVT";
     uint8 constant public decimals = 3;
     uint public totalSupply = 5 * 10 ** 7 * (10 ** uint(decimals));
 

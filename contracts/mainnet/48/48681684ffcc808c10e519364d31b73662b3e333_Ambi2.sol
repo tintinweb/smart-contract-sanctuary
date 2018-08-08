@@ -5,7 +5,7 @@
 pragma solidity ^0.4.8;
 
 contract Ambi2 {
-    bytes32 constant OWNER = &quot;__root__&quot;;
+    bytes32 constant OWNER = "__root__";
     uint constant LIFETIME = 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff;
     mapping(bytes32 => uint) rolesExpiration;
     mapping(address => bool) nodes;
@@ -18,13 +18,13 @@ contract Ambi2 {
         if (isOwner(_node, msg.sender)) {
             _;
         } else {
-            _error(&quot;Access denied: only node owner&quot;);
+            _error("Access denied: only node owner");
         }
     }
 
     function claimFor(address _address, address _owner) returns(bool) {
         if (nodes[_address]) {
-            _error(&quot;Access denied: already owned&quot;);
+            _error("Access denied: already owned");
             return false;
         }
         nodes[_address] = true;
@@ -46,11 +46,11 @@ contract Ambi2 {
 
     function assignRoleWithExpiration(address _from, bytes32 _role, address _to, uint _expirationDate) onlyNodeOwner(_from) returns(bool) {
         if (hasRole(_from, _role, _to) && rolesExpiration[_getRoleSignature(_from, _role, _to)] == _expirationDate) {
-            _error(&quot;Role already assigned&quot;);
+            _error("Role already assigned");
             return false;
         }
         if (_isPast(_expirationDate)) {
-            _error(&quot;Invalid expiration date&quot;);
+            _error("Invalid expiration date");
             return false;
         }
 
@@ -65,7 +65,7 @@ contract Ambi2 {
 
     function unassignOwner(address _node, address _owner) returns(bool) {
         if (_owner == msg.sender) {
-            _error(&quot;Cannot remove ownership&quot;);
+            _error("Cannot remove ownership");
             return false;
         }
 
@@ -74,7 +74,7 @@ contract Ambi2 {
 
     function unassignRole(address _from, bytes32 _role, address _to) onlyNodeOwner(_from) returns(bool) {
         if (!hasRole(_from, _role, _to)) {
-            _error(&quot;Role not assigned&quot;);
+            _error("Role not assigned");
             return false;
         }
 

@@ -34,7 +34,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -226,8 +226,8 @@ contract StandardToken is ERC20, BasicToken {
  * @dev inherite from StandardToken and Ownable by Zeppelin
  */
 contract TranchorToken is StandardToken, Ownable {
-    string  public  constant name = &quot;Tranchor Token&quot;;
-    string  public  constant symbol = &quot;HKTT&quot;;
+    string  public  constant name = "Tranchor Token";
+    string  public  constant symbol = "HKTT";
     uint8    public  constant decimals = 18;
 
     uint    public  transferableStartTime;

@@ -216,8 +216,8 @@ contract StandardToken is ERC20, BasicToken {
 /*****************************************************************************/
 
 contract DiaToken is StandardToken {
-  string public constant name = &quot;DiaToken&quot;;
-  string public constant symbol = &quot;DIA&quot;;
+  string public constant name = "DiaToken";
+  string public constant symbol = "DIA";
   uint8 public constant decimals = 18;
   uint256 public totalRaised;
   address public ownerWallet;
@@ -259,7 +259,7 @@ contract DiaToken is StandardToken {
     allowed[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);
 
-    if(!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { revert(); }
+    if(!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { revert(); }
     return true;
   }
 

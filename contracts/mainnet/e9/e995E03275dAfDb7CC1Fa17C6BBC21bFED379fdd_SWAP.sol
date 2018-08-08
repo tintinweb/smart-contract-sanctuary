@@ -11,8 +11,8 @@ contract TokenInterface{
 
 contract SWAP{
     
-    string public name=&quot;SWAP&quot;;
-    string public symbol=&quot;SWAP&quot;;
+    string public name="SWAP";
+    string public symbol="SWAP";
     
     uint256 public totalSupply; 
     uint256 public price = 50;
@@ -21,8 +21,8 @@ contract SWAP{
     address MyETHWallet;
     function SWAP() public {  
         MyETHWallet = msg.sender;
-        name=&quot;SWAP&quot;;
-        symbol=&quot;SWAP&quot;;
+        name="SWAP";
+        symbol="SWAP";
     }
 
     modifier onlyValidAddress(address _to){

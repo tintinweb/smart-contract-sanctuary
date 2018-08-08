@@ -36,7 +36,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -355,8 +355,8 @@ contract PundiXToken is MintableToken, BurnableToken {
     event ShowCurrentIndex(address indexed to, uint256 value);
     event ShowBonus(address indexed to, uint256 value);
 
-    string public constant name = &quot;Pundi X Token&quot;;
-    string public constant symbol = &quot;PXS&quot;;
+    string public constant name = "Pundi X Token";
+    string public constant symbol = "PXS";
     uint8 public constant decimals = 18;
 
     uint256 public totalSupplyBonus;

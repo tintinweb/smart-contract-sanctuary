@@ -113,8 +113,8 @@ contract JustAnIndex1 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JustAnIndex1() public {
-        symbol = &quot;JAI-1&quot;;
-        name = &quot;Just An Index 1&quot;;
+        symbol = "JAI-1";
+        name = "Just An Index 1";
         decimals = 0;
         _totalSupply = 100;
         balances[0x3b3CD641bc1Dc3246Be24a375Ae120cc05C2BC16] = _totalSupply;

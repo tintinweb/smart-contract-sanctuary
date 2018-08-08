@@ -182,11 +182,11 @@ contract SmartSignature is ERC721{
   /* ERC721 */
 
   function name() public view returns (string name) {
-    return &quot;smartsignature.io&quot;;
+    return "smartsignature.io";
   }
 
   function symbol() public view returns (string symbol) {
-    return &quot;SSI&quot;;
+    return "SSI";
   }
 
   function totalSupply() public view returns (uint256 _totalSupply) {

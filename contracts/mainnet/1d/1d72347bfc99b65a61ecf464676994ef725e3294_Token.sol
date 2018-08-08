@@ -23,9 +23,9 @@ contract ERC20Token{
  * https://github.com/ethereum/EIPs/issues/20
  */
 contract StandardToken is ERC20Token{
-  string public version = &quot;1.0&quot;;
-  string public name = &quot;eleven-dimensional resonnance&quot;;
-  string public symbol = &quot;POH&quot;;
+  string public version = "1.0";
+  string public name = "eleven-dimensional resonnance";
+  string public symbol = "POH";
   uint8 public  decimals = 18;
 
   bool public transfersEnabled = true;

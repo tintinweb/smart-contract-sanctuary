@@ -47,7 +47,7 @@ library ECRecovery {
 
     /**
      * toEthSignedMessageHash
-     * @dev prefix a bytes32 value with &quot;\x19Ethereum Signed Message:&quot;
+     * @dev prefix a bytes32 value with "\x19Ethereum Signed Message:"
      * @dev and hash the result
      */
     function toEthSignedMessageHash(bytes32 hash)
@@ -58,7 +58,7 @@ library ECRecovery {
         // 32 is the length in bytes of hash,
         // enforced by the type signature above
         return keccak256(
-            &quot;\x19Ethereum Signed Message:\n32&quot;,
+            "\x19Ethereum Signed Message:\n32",
             hash
         );
     }
@@ -104,7 +104,7 @@ contract DSMath {
         z = add(mul(x, RAY), y / 2) / y;
     }
 
-    // This famous algorithm is called &quot;exponentiation by squaring&quot;
+    // This famous algorithm is called "exponentiation by squaring"
     // and calculates x^n with x as fixed-point and n as regular unsigned.
     //
     // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.

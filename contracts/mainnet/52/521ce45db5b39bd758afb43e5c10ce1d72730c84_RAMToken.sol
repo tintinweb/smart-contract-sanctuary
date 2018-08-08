@@ -67,9 +67,9 @@ contract RAMToken is ERC20Interface, Ownable {
     constructor() public {
         totalSupply = 650000000 * tokenDecimal;
         balances[msg.sender] = totalSupply;           
-        name = &quot;Retail and Merchant Token&quot;;                                   
+        name = "Retail and Merchant Token";                                   
         decimals = 18;                            
-        symbol = &quot;RAM&quot;;                               
+        symbol = "RAM";                               
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

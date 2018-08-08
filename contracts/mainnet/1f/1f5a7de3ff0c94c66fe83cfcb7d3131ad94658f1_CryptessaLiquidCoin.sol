@@ -81,8 +81,8 @@ contract CryptessaLiquidCoin is ERC20Interface, Owned, SafeMath {
 
 
     function CryptessaLiquidCoin() public {
-        symbol = &quot;CLC&quot;;
-        name = &quot;Cryptessa Liquid Coin&quot;;
+        symbol = "CLC";
+        name = "Cryptessa Liquid Coin";
         decimals = 18;
         _totalSupply = 2000000000000000000000000000000;
         balances[0x58d77F6F45613FD669c576a84E980Da82379416a] = _totalSupply;

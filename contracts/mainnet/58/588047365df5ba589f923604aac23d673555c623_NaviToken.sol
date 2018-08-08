@@ -40,7 +40,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -251,8 +251,8 @@ contract NaviToken is StandardToken, Ownable {
 	using SafeMath for uint256;
 
     /* Overriding some ERC20 variables */
-    string public constant name      = &quot;NaviToken&quot;;
-    string public constant symbol    = &quot;NAVI&quot;;
+    string public constant name      = "NaviToken";
+    string public constant symbol    = "NAVI";
     uint8 public constant decimals   = 18;
 
     uint256 public constant MAX_NUM_NAVITOKENS    = 1000000000 * 10 ** uint256(decimals);

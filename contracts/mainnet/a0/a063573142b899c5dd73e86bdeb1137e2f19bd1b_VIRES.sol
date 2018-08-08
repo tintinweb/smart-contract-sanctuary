@@ -113,8 +113,8 @@ contract VIRES is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function VIRES() public {
-        symbol = &quot;VIRES&quot;;
-        name = &quot;Vires&quot;;
+        symbol = "VIRES";
+        name = "Vires";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

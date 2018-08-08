@@ -80,8 +80,8 @@ contract EthereumPoint is ERC20Interface, Owned, SafeMath {
 
 
     function EthereumPoint() public {
-        symbol = &quot;ETP&quot;;
-        name = &quot;EthereumPoint&quot;;
+        symbol = "ETP";
+        name = "EthereumPoint";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0xE31C32Fb03665374650c35722590ba6EEf4Ef93B] = _totalSupply;

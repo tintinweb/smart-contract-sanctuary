@@ -37,7 +37,7 @@ pragma solidity ^0.4.11;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control 
- * functions, this simplifies the implementation of &quot;user permissions&quot;. 
+ * functions, this simplifies the implementation of "user permissions". 
  */
 contract Ownable {
   address public owner;
@@ -264,8 +264,8 @@ pragma solidity ^0.4.11;
 
 contract BouleToken is MintableToken {
     // BouleToken is an OpenZeppelin Mintable Token
-    string public name = &quot;Boul&#233; Token&quot;;
-    string public symbol = &quot;BOU&quot;;
+    string public name = "Boul&#233; Token";
+    string public symbol = "BOU";
     uint public decimals = 18;
 
     // do no allow to send ether to this token

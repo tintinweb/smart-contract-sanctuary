@@ -92,10 +92,10 @@ contract StandardToken is Token {
 contract NebulasToken is StandardToken, SafeMath {
 
     // metadata
-    string  public constant name = &quot;Nebulas Token&quot;;
-    string  public constant symbol = &quot;NAS&quot;;
+    string  public constant name = "Nebulas Token";
+    string  public constant symbol = "NAS";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
 
     // contracts
     address public ethFundDeposit;          // deposit address for ETH for Nebulas Team.

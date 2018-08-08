@@ -212,8 +212,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract STAEtoken is StandardToken {
-    string  constant public  name = &quot;STAE&quot;;
-    string  constant public  symbol = &quot;STAE&quot;;
+    string  constant public  name = "STAE";
+    string  constant public  symbol = "STAE";
     uint8   constant public  decimals = 18;
     uint256 constant private INITIAL_SUPPLY = 40000000 * (10 ** uint256(decimals));
 

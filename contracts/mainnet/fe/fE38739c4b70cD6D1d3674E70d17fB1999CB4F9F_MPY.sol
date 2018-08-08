@@ -10,8 +10,8 @@ pragma solidity ^0.4.11;
 
 contract MPY {
 
-    string public constant name = &quot;MatchPay Token&quot;;
-    string public constant symbol = &quot;MPY&quot;;
+    string public constant name = "MatchPay Token";
+    string public constant symbol = "MPY";
     uint256 public constant decimals = 18;
 
     address owner;

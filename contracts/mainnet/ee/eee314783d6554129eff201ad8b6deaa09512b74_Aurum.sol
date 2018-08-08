@@ -113,8 +113,8 @@ contract Aurum is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Aurum() public {
-        symbol = &quot;ARM&quot;;
-        name = &quot;Aurum&quot;;
+        symbol = "ARM";
+        name = "Aurum";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xD658f5D40bb13DF4244dA85f2DAbA82467b22EDD] = _totalSupply;

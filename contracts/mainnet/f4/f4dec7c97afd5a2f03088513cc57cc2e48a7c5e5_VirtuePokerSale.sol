@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -341,7 +341,7 @@ contract Vault is Ownable {
  * @dev This contract is used to implement a signature based whitelisting mechanism
  */
 contract Whitelistable is Ownable {
-    bytes constant PREFIX = &quot;\x19Ethereum Signed Message:\n32&quot;;
+    bytes constant PREFIX = "\x19Ethereum Signed Message:\n32";
 
     address public whitelistAdmin;
 
@@ -1031,8 +1031,8 @@ contract VirtuePokerSale is Sale {
             12000 ether, // Vault initial amount
             25000 ether, // Vault disbursement amount
             1524218400, // Start time
-            &quot;Virtue Player Points&quot;, // Token name
-            &quot;VPP&quot;, // Token symbol
+            "Virtue Player Points", // Token name
+            "VPP", // Token symbol
             18 // Token decimals
         )
         public 

@@ -62,8 +62,8 @@ contract PLEXToken is ERC20Interface {
 	address public contractOwner;
 
     constructor() public {
-		name = &quot;PLEX&quot;;
-		symbol = &quot;PLEX&quot;;
+		name = "PLEX";
+		symbol = "PLEX";
 		decimals = 2;
 		totalSupply = 0;
 		maximumSupply = 10000000000;

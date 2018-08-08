@@ -51,7 +51,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -124,7 +124,7 @@ contract AifiAsset is Ownable {
 //-------------------------------------------------------------------------------------------------
 
 contract InitAifiAsset is AifiAsset {
-  string public assetType = &quot;DEBT&quot;;
+  string public assetType = "DEBT";
   uint public initialSupply = 1000 * 10 ** 18;
   string[] public subjectMatters;
   

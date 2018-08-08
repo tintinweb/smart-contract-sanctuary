@@ -120,8 +120,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract PowerCoin is Ownable, StandardToken {
 
-    string public name = &quot;CapricornCoin&quot;;
-    string public symbol = &quot;CCC&quot;;
+    string public name = "CapricornCoin";
+    string public symbol = "CCC";
     uint public decimals = 18;                  // token has 18 digit precision
 
     uint public totalSupply = 2 * (10 * (10**6) * (10**18));

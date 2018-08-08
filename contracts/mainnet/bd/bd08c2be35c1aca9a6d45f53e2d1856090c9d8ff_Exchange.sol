@@ -123,7 +123,7 @@ contract Exchange {
     bytes32 hash = keccak256(this, token, amount, user, nonce);
     if (withdrawn[hash]) throw;
     withdrawn[hash] = true;
-    if (ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), v, r, s) != user) throw;
+    if (ecrecover(keccak256("\x19Ethereum Signed Message:\n32", hash), v, r, s) != user) throw;
     if (feeWithdrawal > 50 finney) feeWithdrawal = 50 finney;
     if (tokens[token][user] < amount) throw;
     tokens[token][user] = safeSub(tokens[token][user], amount);
@@ -161,9 +161,9 @@ contract Exchange {
      */
     if (invalidOrder[tradeAddresses[2]] > tradeValues[3]) throw;
     bytes32 orderHash = keccak256(this, tradeAddresses[0], tradeValues[0], tradeAddresses[1], tradeValues[1], tradeValues[2], tradeValues[3], tradeAddresses[2]);
-    if (ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, orderHash), v[0], rs[0], rs[1]) != tradeAddresses[2]) throw;
+    if (ecrecover(keccak256("\x19Ethereum Signed Message:\n32", orderHash), v[0], rs[0], rs[1]) != tradeAddresses[2]) throw;
     bytes32 tradeHash = keccak256(orderHash, tradeValues[4], tradeAddresses[3], tradeValues[5]); 
-    if (ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, tradeHash), v[1], rs[2], rs[3]) != tradeAddresses[3]) throw;
+    if (ecrecover(keccak256("\x19Ethereum Signed Message:\n32", tradeHash), v[1], rs[2], rs[3]) != tradeAddresses[3]) throw;
     if (traded[tradeHash]) throw;
     traded[tradeHash] = true;
     if (tradeValues[6] > 100 finney) tradeValues[6] = 100 finney;

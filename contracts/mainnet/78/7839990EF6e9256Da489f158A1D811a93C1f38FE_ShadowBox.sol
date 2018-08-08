@@ -100,9 +100,9 @@ contract ShadowBox is StandardToken {
     function ShadowBox () {
         balances[msg.sender] = 100000000000000000000000000;
         totalSupply = 100000000000000000000000000;
-        name = &quot;Shadow Box&quot;;
+        name = "Shadow Box";
         decimals = 18;
-        symbol = &quot;SHBOX&quot;;
+        symbol = "SHBOX";
         unitsOneEthCanBuy = 1000;
         fundsWallet = msg.sender;
     }
@@ -129,7 +129,7 @@ contract ShadowBox is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(keccak256(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(keccak256(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

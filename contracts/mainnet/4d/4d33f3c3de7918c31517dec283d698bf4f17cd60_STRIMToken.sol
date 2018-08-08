@@ -153,11 +153,11 @@ contract ERC23StandardToken is ERC23BasicToken {
 contract STRIMToken is ERC23StandardToken {
 
     // metadata
-    string public constant name = &quot;STRIM Token&quot;;
-    string public constant symbol = &quot;STR&quot;;
+    string public constant name = "STRIM Token";
+    string public constant symbol = "STR";
     uint256 public constant decimals = 18;
     uint256 public fundsFromPreSale;
-    string public version = &quot;0.4&quot;;
+    string public version = "0.4";
     bool public halted; //Halt crowdsale in emergency
     bool public isFinalized; // switched to true in operational state
 	mapping(address => uint256) exchangeRate;

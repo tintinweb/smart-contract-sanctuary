@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract WOCC is StandardToken, Ownable {
 
-    string public constant name = &quot;水油混合链&quot;;
-    string public constant symbol = &quot;WOCC&quot;;
+    string public constant name = "水油混合链";
+    string public constant symbol = "WOCC";
     uint256 public constant decimals = 8;
 
     function WOCC() public {

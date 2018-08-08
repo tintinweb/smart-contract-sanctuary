@@ -74,7 +74,7 @@ contract theCyberAssigner {
       // Ensure that there was no member found with the given id / address.
       if ((entrant != address(0)) && (!member) && (memberAddress == address(0))) {
         // Add the entrant as a new member of theCyber.
-        theCyberInterface(THECYBERADDRESS_).newMember(i + 1, bytes32(&quot;&quot;), entrant);
+        theCyberInterface(THECYBERADDRESS_).newMember(i + 1, bytes32(""), entrant);
       }
 
       // Move on to the next entrant / member id.

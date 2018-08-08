@@ -113,8 +113,8 @@ contract posstoken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function posstoken() public {
-        symbol = &quot;POSSC&quot;;
-        name = &quot;Posscoin&quot;;
+        symbol = "POSSC";
+        name = "Posscoin";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0xAbB082211930DA475879BF315AFaDDD55913C6a8] = _totalSupply;

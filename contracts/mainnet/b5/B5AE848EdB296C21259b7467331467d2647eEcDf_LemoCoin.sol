@@ -188,9 +188,9 @@ contract Coin is ERC20, DSStop {
 
 contract FreezerAuthority is DSAuthority {
     address[] internal c_freezers;
-    // sha3(&quot;setFreezing(address,uint256,uint256,uint8)&quot;).slice(0,10)
+    // sha3("setFreezing(address,uint256,uint256,uint8)").slice(0,10)
     bytes4 constant setFreezingSig = bytes4(0x51c3b8a6);
-    // sha3(&quot;transferAndFreezing(address,uint256,uint256,uint256,uint8)&quot;).slice(0,10)
+    // sha3("transferAndFreezing(address,uint256,uint256,uint256,uint8)").slice(0,10)
     bytes4 constant transferAndFreezingSig = bytes4(0xb8a1fdb6);
 
     function canCall(address caller, address, bytes4 sig) public view returns (bool) {

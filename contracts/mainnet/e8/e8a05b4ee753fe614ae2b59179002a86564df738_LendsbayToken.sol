@@ -225,8 +225,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract LendsbayToken is StandardToken {
     /* We don&#39;t use detailed ERC20 from openzeppelin for simplicity */
-    string public constant name = &quot;Lendsbay Token&quot;;
-    string public constant symbol = &quot;LBT&quot;;
+    string public constant name = "Lendsbay Token";
+    string public constant symbol = "LBT";
     uint8 public constant decimals = 18;
 
     constructor() public {

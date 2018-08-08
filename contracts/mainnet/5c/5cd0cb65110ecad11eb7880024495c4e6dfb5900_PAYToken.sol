@@ -113,8 +113,8 @@ contract PAYToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function PAYToken() public {
-        symbol = &quot;PAY&quot;;
-        name = &quot;Pay Coin&quot;;
+        symbol = "PAY";
+        name = "Pay Coin";
         decimals = 2;
         _totalSupply = 1000000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

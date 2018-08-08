@@ -181,8 +181,8 @@ contract StandardToken is BasicToken, ERC20 {
  */
 contract MetalToken is StandardToken {
 
-    string public name = &quot;Metal&quot;;
-    string public symbol = &quot;MTL&quot;;
+    string public name = "Metal";
+    string public symbol = "MTL";
     uint public decimals = 8;
     uint public INITIAL_SUPPLY = 6658888800000000; // Initial supply is 66,588,888 MTL
 

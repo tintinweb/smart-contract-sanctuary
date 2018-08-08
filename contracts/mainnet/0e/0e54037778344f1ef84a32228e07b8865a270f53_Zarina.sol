@@ -78,8 +78,8 @@ contract Zarina is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Zarina() public {
-        symbol = &quot;ZAR&quot;;
-        name = &quot;Zarina&quot;;
+        symbol = "ZAR";
+        name = "Zarina";
         decimals = 8;
         _totalSupply = 15000000000000000;
         balances[0xACdf051e23568A881E9D2390cA27084790491032] = _totalSupply;

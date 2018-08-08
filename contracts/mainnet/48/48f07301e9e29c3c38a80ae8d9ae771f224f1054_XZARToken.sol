@@ -109,8 +109,8 @@ contract XZARToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function XZARToken() public {
-        symbol = &quot;XZAR&quot;;
-        name = &quot;South African Tether&quot;;
+        symbol = "XZAR";
+        name = "South African Tether";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0xfE89c02a36eD8d113a4cfe258e82524F95140892] = _totalSupply;

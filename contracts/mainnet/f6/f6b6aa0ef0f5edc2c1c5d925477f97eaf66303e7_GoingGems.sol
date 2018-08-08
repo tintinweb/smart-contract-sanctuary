@@ -66,8 +66,8 @@ contract GoingGems is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Going Gems&quot;;
-    string public constant symbol = &quot;XGG&quot;;
+    string public constant name = "Going Gems";
+    string public constant symbol = "XGG";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000e8;

@@ -113,8 +113,8 @@ contract LOL is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LOL() public {
-        symbol = &quot;LOL&quot;;
-        name = &quot;LOL&quot;;
+        symbol = "LOL";
+        name = "LOL";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0x432a39e0884a0bAA16e2b304b344E47f8CCe8B87] = _totalSupply;

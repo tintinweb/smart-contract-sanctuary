@@ -289,8 +289,8 @@ contract PotToken is PausableToken {
     uint256 public constant fundingEndTime = 5404107600;                            // crowdsale end time
     uint256 public constant tokensPerEthPrice = 200;                                 // token per eth
     
-    function name() public pure returns (string) { return &quot;Decentralized Coffee Pot Control Protocol&quot;; }
-    function symbol() public pure returns (string) { return &quot;DCPCP&quot;; }
+    function name() public pure returns (string) { return "Decentralized Coffee Pot Control Protocol"; }
+    function symbol() public pure returns (string) { return "DCPCP"; }
     function decimals() public  pure  returns (uint8) { return 18; }
     
     function balanceOf(address _owner) public constant returns (uint256) { return balances[_owner]; }

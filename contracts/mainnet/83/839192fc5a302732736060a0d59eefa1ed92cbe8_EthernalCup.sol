@@ -3,7 +3,7 @@ pragma solidity 0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -129,38 +129,38 @@ contract EthernalCup is Ownable {
 
 	bool public paused = false;
 
-	// 0 &quot;Russia&quot;
-	// 1 &quot;Saudi Arabia
-	// 2 &quot;Egypt&quot;
-	// 3 &quot;Uruguay&quot;
-	// 4 &quot;Morocco&quot;
-	// 5 &quot;Iran&quot;
-	// 6 &quot;Portugal&quot;
-	// 7 &quot;Spain&quot;
-	// 8 &quot;France&quot;
-	// 9 &quot;Australia&quot;
-	// 10 &quot;Peru&quot;
-	// 11 &quot;Denmark&quot;
-	// 12 &quot;Argentina&quot;
-	// 13 &quot;Iceland&quot;
-	// 14 &quot;Croatia&quot;
-	// 15 &quot;Nigeria&quot;
-	// 16 &quot;Costa Rica
-	// 17 &quot;Serbia&quot;
-	// 18 &quot;Brazil&quot;
-	// 19 &quot;Switzerland&quot;
-	// 20 &quot;Germany&quot;
-	// 21 &quot;Mexico&quot;
-	// 22 &quot;Sweden&quot;
-	// 23 &quot;Korea Republic
-	// 24 &quot;Belgium&quot;
-	// 25 &quot;Panama&quot;
-	// 26 &quot;Tunisia&quot;
-	// 27 &quot;England&quot;
-	// 28 &quot;Poland&quot;
-	// 29 &quot;Senegal&quot;
-	// 30 &quot;Colombia&quot;
-	// 31 &quot;Japan&quot;
+	// 0 "Russia"
+	// 1 "Saudi Arabia
+	// 2 "Egypt"
+	// 3 "Uruguay"
+	// 4 "Morocco"
+	// 5 "Iran"
+	// 6 "Portugal"
+	// 7 "Spain"
+	// 8 "France"
+	// 9 "Australia"
+	// 10 "Peru"
+	// 11 "Denmark"
+	// 12 "Argentina"
+	// 13 "Iceland"
+	// 14 "Croatia"
+	// 15 "Nigeria"
+	// 16 "Costa Rica
+	// 17 "Serbia"
+	// 18 "Brazil"
+	// 19 "Switzerland"
+	// 20 "Germany"
+	// 21 "Mexico"
+	// 22 "Sweden"
+	// 23 "Korea Republic
+	// 24 "Belgium"
+	// 25 "Panama"
+	// 26 "Tunisia"
+	// 27 "England"
+	// 28 "Poland"
+	// 29 "Senegal"
+	// 30 "Colombia"
+	// 31 "Japan"
 
 	struct Country {
 		address owner;

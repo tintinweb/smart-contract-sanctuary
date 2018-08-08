@@ -197,11 +197,11 @@ contract DPPToken is Token {
 
   /* Initializes contract */
   function DPPToken() {
-    standard = &quot;DA Power Play Token token v1.0&quot;;
-    name = &quot;DA Power Play Token&quot;;
-    symbol = &quot;DPP&quot;;
+    standard = "DA Power Play Token token v1.0";
+    name = "DA Power Play Token";
+    symbol = "DPP";
     decimals = 18;
     crowdsaleContractAddress = 0x6f0d792B540afA2c8772B9bA4805E7436ad8413e; 
-    lockFromSelf(4393122, &quot;Lock before crowdsale starts&quot;);
+    lockFromSelf(4393122, "Lock before crowdsale starts");
   }
 }

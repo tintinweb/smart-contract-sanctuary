@@ -113,8 +113,8 @@ contract SuperiorBit is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SuperiorBit() public {
-        symbol = &quot;SPB&quot;;
-        name = &quot;SuperiorBit&quot;;
+        symbol = "SPB";
+        name = "SuperiorBit";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x5f2d83b4F6350791306D75b2335Bd99e1d74D348] = _totalSupply;

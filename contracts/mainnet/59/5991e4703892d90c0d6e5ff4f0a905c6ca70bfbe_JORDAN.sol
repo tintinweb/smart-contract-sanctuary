@@ -113,8 +113,8 @@ contract JORDAN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JORDAN() public {
-        symbol = &quot;JORDAN&quot;;
-        name = &quot;JORDAN&quot;;
+        symbol = "JORDAN";
+        name = "JORDAN";
         decimals = 18;
         _totalSupply = 2300000000000000000000000000;
         balances[0x432a39e0884a0bAA16e2b304b344E47f8CCe8B87] = _totalSupply;

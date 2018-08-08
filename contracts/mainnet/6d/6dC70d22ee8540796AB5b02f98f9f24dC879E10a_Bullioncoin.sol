@@ -15,9 +15,9 @@ contract Bullioncoin {
     function Bullioncoin() {
 
          initialSupply = 100000000;
-         name =&quot;Bullioncoin&quot;;
+         name ="Bullioncoin";
         decimals = 18;
-         symbol = &quot;BLX&quot;;
+         symbol = "BLX";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

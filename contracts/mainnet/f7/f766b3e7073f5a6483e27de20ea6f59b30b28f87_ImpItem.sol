@@ -52,7 +52,7 @@ library ECRecovery {
    
    
     return keccak256(
-      abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, hash)
+      abi.encodePacked("\x19Ethereum Signed Message:\n32", hash)
     );
   }
 }
@@ -415,7 +415,7 @@ contract ERC721BasicToken is SupportsInterfaceWithLookup, ERC721Basic {
     canTransfer(_tokenId)
   {
    
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   

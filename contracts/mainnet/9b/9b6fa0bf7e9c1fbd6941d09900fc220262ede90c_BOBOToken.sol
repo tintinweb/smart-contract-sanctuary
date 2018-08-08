@@ -8,9 +8,9 @@ contract BOBOToken {
   mapping( address => uint ) _balances;
   mapping( address => mapping( address => uint ) ) _approvals;
   uint256 public totalSupply=21000000;
-  string public name=&quot;BOBOToken&quot;;
+  string public name="BOBOToken";
   uint8 public decimals=8;                
-  string public symbol=&quot;BOBO&quot;;   
+  string public symbol="BOBO";   
 
   function BOBOToken() {
         _balances[msg.sender] = totalSupply;               // Give the creator all initial tokens

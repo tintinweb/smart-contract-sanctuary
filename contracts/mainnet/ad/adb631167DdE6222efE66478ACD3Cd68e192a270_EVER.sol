@@ -113,8 +113,8 @@ contract EVER is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EVER() public {
-        symbol = &quot;EVER&quot;;
-        name = &quot;E-VERIFY&quot;;
+        symbol = "EVER";
+        name = "E-VERIFY";
         decimals = 4;
         _totalSupply = 500000000000000;
         balances[0x12D95431735D7F80dCb58a80ad6C63Ad8B6e8769] = _totalSupply;

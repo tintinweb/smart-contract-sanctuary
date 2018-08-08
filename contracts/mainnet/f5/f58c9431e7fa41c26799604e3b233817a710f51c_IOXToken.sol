@@ -54,8 +54,8 @@ contract IOXToken is IOXInterface, IOXOwned {
     mapping(address => mapping(address => uint)) allowed;
 
     function IOXToken() public {
-        symbol = &quot;IOX&quot;;
-        name = &quot;IOX Token&quot;;
+        symbol = "IOX";
+        name = "IOX Token";
         decimals = 18;
         number_of_token = 100000000;
         _totalSupply = number_of_token*10**uint(decimals);

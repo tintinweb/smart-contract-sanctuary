@@ -113,8 +113,8 @@ contract STAT is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function STAT() public {
-        symbol = &quot;STAT&quot;;
-        name = &quot;STAT&quot;;
+        symbol = "STAT";
+        name = "STAT";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0xac713d34cf406AF0AfE72Df619FB4278e4142C42] = _totalSupply;

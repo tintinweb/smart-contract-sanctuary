@@ -256,8 +256,8 @@ contract AcceptsTokens {
 contract ETToken is Owned, StandardToken {
     using SafeMath for uint;
 
-    string public name = &quot;ETH.TOWN Token&quot;;
-    string public symbol = &quot;ETIT&quot;;
+    string public name = "ETH.TOWN Token";
+    string public symbol = "ETIT";
     uint8 public decimals = 18;
 
     address public beneficiary;

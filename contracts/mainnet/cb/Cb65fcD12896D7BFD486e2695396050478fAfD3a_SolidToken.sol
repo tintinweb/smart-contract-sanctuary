@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -392,8 +392,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract SolidToken is MintableToken {
 
-  string public constant name = &quot;SolidToken&quot;;
-  string public constant symbol = &quot;SOLID&quot;;
+  string public constant name = "SolidToken";
+  string public constant symbol = "SOLID";
   uint8  public constant decimals = 18;
 
   uint256 constant private DECIMAL_PLACES = 10 ** 18;
@@ -443,7 +443,7 @@ contract SolidToken is MintableToken {
   * @param _value The amount to be transferred.
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
-    require(transfersEnabled, &quot;Tranfers are disabled&quot;);
+    require(transfersEnabled, "Tranfers are disabled");
     require(super.transfer(_to, _value));
     return true;
   }
@@ -456,7 +456,7 @@ contract SolidToken is MintableToken {
    * @param _value uint256 the amount of tokens to be transferred
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
-    require(transfersEnabled, &quot;Tranfers are disabled&quot;);
+    require(transfersEnabled, "Tranfers are disabled");
     require(super.transferFrom(_from, _to, _value));
     return true;
   }

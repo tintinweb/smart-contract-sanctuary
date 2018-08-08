@@ -108,9 +108,9 @@ contract KairosToken is StandardToken {
   mapping(address => uint256) bonus; 
 
   address public kairosOwner;
-  string  public constant name         = &quot;KAIROS&quot;;
-  string  public constant symbol       = &quot;KRX&quot;;
-  string  public constant version      = &quot;1.0&quot;;
+  string  public constant name         = "KAIROS";
+  string  public constant symbol       = "KRX";
+  string  public constant version      = "1.0";
   uint256 public constant decimals     = 18;  
   uint256 public initialSupply         = 25 * (10**6) * 10**decimals;
   uint256 public totalSupply;

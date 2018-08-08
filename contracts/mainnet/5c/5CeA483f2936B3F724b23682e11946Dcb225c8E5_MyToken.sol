@@ -64,8 +64,8 @@ contract MyToken is owned {
     event Burn(address indexed from, uint256 value);
     
     function MyToken(address centralMinter) public {
-        name = &quot;共享通&quot;;
-        symbol = &quot;SCD&quot;;
+        name = "共享通";
+        symbol = "SCD";
         decimals = 2;
         totalSupply = 31000000 * 3 * 10 ** uint256(decimals);
         sellPrice = 1 * 10 ** 14;

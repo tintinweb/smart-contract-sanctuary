@@ -25,8 +25,8 @@ pragma solidity ^0.4.18; // solhint-disable-line
 
 
 	contract RickAndMortyShrimper{
-		string public name = &quot;RickAndMortyShrimper&quot;;
-		string public symbol = &quot;RickAndMortyS&quot;;
+		string public name = "RickAndMortyShrimper";
+		string public symbol = "RickAndMortyS";
 		//uint256 morties_PER_RickAndMorty_PER_SECOND=1;
 		uint256 public morties_TO_HATCH_1RickAndMorty=86400;//for final version should be seconds in a day
 		uint256 public STARTING_RickAndMorty=314;

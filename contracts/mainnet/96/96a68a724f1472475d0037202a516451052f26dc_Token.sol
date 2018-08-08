@@ -148,8 +148,8 @@ contract Token is StandardToken, Ownable {
 
     uint256 public cap;
     uint256 public issuedTokens;
-    string public name = &quot;Realestateco.in&quot;;
-    string public symbol = &quot;REAL&quot;;
+    string public name = "Realestateco.in";
+    string public symbol = "REAL";
     uint public decimals = 4;
     uint public INITIAL_SUPPLY = 80000000000000;
     uint factor;

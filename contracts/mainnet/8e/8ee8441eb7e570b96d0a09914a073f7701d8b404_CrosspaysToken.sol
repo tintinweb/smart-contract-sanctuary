@@ -184,8 +184,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract CrosspaysToken is BurnableToken, StandardToken {
-    string public constant name = &quot;Crosspays Token&quot;;
-    string public constant symbol = &quot;CPS&quot;;
+    string public constant name = "Crosspays Token";
+    string public constant symbol = "CPS";
     uint8 public constant decimals = 18;
     
     uint public constant INITIAL_SUPPLY = 999000000 * (uint(10) ** decimals);

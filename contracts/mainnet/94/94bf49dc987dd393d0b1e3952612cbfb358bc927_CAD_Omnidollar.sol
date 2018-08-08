@@ -113,8 +113,8 @@ contract CAD_Omnidollar is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CAD_Omnidollar() public {
-        symbol = &quot;CADO&quot;;
-        name = &quot;CAD_Omnidollar&quot;;
+        symbol = "CADO";
+        name = "CAD_Omnidollar";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0x6d8d30e6c418E322Fb20b9F01115858cDF1e979E] = _totalSupply;

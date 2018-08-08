@@ -105,9 +105,9 @@ contract WBTCToken is StandardToken {
     function  WhiteBitcoin() {
         balances[msg.sender] = 2100000000000000000000000;               
         totalSupply = 2100000000000000000000000;                        
-        name = &quot;White Bitcoin&quot;;                                   
+        name = "White Bitcoin";                                   
         decimals = 18;                                             
-        symbol = &quot;WBTC&quot;;                                           
+        symbol = "WBTC";                                           
         unitsOneEthCanBuy = 1000;                                   
         fundsWallet = msg.sender;                                  
     }
@@ -131,7 +131,7 @@ contract WBTCToken is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

@@ -393,7 +393,7 @@ contract TrumpBingo {
         coownerPrice = startingCoownerPrice;
 
         paused = false;
-        words.push(Word({word: &quot;&quot;, disabled: true})); // fake &#39;0&#39; word
+        words.push(Word({word: "", disabled: true})); // fake &#39;0&#39; word
         startNewRound();
     }
 

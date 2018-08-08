@@ -78,8 +78,8 @@ contract FondoNetwork is ERC20Interface, Owned {
 
 
     function FondoNetwork() public {
-        symbol = &quot;FDC&quot;;
-        name = &quot;Fondo Network&quot;;
+        symbol = "FDC";
+        name = "Fondo Network";
         decimals = 18;
         _totalSupply = 200000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

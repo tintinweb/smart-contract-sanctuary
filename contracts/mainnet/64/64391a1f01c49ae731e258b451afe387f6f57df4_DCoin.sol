@@ -47,7 +47,7 @@ contract DCoin is ERC20Interface {
   using SafeMath for uint;
 
   // State variables
-  string public name = &quot;D&#39;Coin&quot;;
+  string public name = "D&#39;Coin";
   string public symbol = &#39;DCO&#39;;
   uint public decimals = 6;
   address public owner;

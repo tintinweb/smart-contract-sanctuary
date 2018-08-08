@@ -4,7 +4,7 @@ pragma solidity ^0.4.13;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -195,7 +195,7 @@ contract CRCToken is StandardToken,Ownable{
 	//the base info of the token 
 	string public name;
 	string public symbol;
-	string public constant version = &quot;1.0&quot;;
+	string public constant version = "1.0";
 	uint256 public constant decimals = 18;
 
 	uint256 public constant MAX_SUPPLY = 500000000 * 10**decimals;
@@ -243,8 +243,8 @@ contract CRCToken is StandardToken,Ownable{
 	// uint256 public
 
 	function CRCToken(){
-		name = &quot;CRCToken&quot;;
-		symbol =&quot;CRC&quot;;
+		name = "CRCToken";
+		symbol ="CRC";
 
 		etherProceedsAccount = 0x5390f9D18A7131aC9C532C1dcD1bEAb3e8A44cbF;
 		crcWithdrawAccount = 0xb353425bA4FE2670DaC1230da934498252E692bD;

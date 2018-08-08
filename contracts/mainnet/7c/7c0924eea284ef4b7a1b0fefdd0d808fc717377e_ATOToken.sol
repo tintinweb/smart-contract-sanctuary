@@ -110,8 +110,8 @@ contract ATOToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ATOToken() public {
-        symbol = &quot;ATO&quot;;
-        name = &quot;Rentarto Coin&quot;;
+        symbol = "ATO";
+        name = "Rentarto Coin";
         decimals = 3;
         _totalSupply = 100000000000;
         balances[0x9D65E1be3a60dc6E7224C9ADaaAB0d884fEc4d8e] = _totalSupply;

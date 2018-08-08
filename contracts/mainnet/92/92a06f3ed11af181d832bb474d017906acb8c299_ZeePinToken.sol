@@ -32,8 +32,8 @@ contract ZeePinToken  {
     uint256 public totalSupply;
 
 
-    string public name = &quot;ZeePin Token&quot;;
-    string public symbol = &quot;ZPT&quot;;
+    string public name = "ZeePin Token";
+    string public symbol = "ZPT";
     uint public decimals = 18;
 
     uint public startTime; //crowdsale start time (set in constructor)

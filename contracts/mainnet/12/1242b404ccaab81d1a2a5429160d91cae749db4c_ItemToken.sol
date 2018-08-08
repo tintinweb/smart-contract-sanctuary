@@ -233,11 +233,11 @@ contract ItemToken {
   }
 
   function name() public pure returns (string _name) {
-    return &quot;CryptoSolarSystem.cc&quot;;
+    return "CryptoSolarSystem.cc";
   }
 
   function symbol() public pure returns (string _symbol) {
-    return &quot;CSS&quot;;
+    return "CSS";
   }
 
   function totalSupply() public view returns (uint256 _totalSupply) {

@@ -116,8 +116,8 @@ contract Bolton is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Bolton() public {
-        symbol = &quot;BFCL&quot;;
-        name = &quot;Bolton&quot;;
+        symbol = "BFCL";
+        name = "Bolton";
         decimals = 18;
         bonusEnds = now + 28 weeks;
         endDate = now + 133 weeks;

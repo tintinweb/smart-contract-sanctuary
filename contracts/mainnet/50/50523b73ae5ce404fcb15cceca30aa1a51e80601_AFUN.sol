@@ -87,10 +87,10 @@ contract StandardToken is Token {
 contract AFUN is StandardToken, SafeMath {
 
     // metadata
-    string  public constant name = &quot;AFUN&quot;;
-    string  public constant symbol = &quot;AFUN&quot;;
+    string  public constant name = "AFUN";
+    string  public constant symbol = "AFUN";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
 
     // contracts
     address public ethFundDeposit;          // ETH存放地址

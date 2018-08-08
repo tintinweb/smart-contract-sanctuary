@@ -248,8 +248,8 @@ contract MindToken is ERC223Token {
    */
     function MindToken() {
             
-        name = &quot;Mind10 Token&quot;;
-        symbol = &quot;Mind10&quot;;
+        name = "Mind10 Token";
+        symbol = "Mind10";
         decimals = 8;
         totalSupply = 500000000000000;
     

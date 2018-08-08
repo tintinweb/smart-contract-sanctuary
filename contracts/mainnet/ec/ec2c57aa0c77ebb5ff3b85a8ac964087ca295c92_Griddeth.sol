@@ -3,14 +3,14 @@ pragma solidity ^0.4.18;
 
 contract Griddeth {
     
-  string public constant NAME = &quot;Griddeth&quot;;
+  string public constant NAME = "Griddeth";
 
   uint8[18000] grid8; // 180x100 display
   
-  // colors = [&quot;#FFFFFF&quot;,&quot;#E4E4E4&quot;,&quot;#888888&quot;,&quot;#222222&quot;,
-  // &quot;#FFA7D1&quot;,&quot;#E50000&quot;,&quot;#E59500&quot;,&quot;#A06A42&quot;,&quot;#E5D900&quot;,
-  // &quot;#94E044&quot;,&quot;#02BE01&quot;,&quot;#00E5F0&quot;,&quot;#0083C7&quot;,&quot;#0000EA&quot;,
-  // &quot;#E04AFF&quot;,&quot;#820080&quot;]
+  // colors = ["#FFFFFF","#E4E4E4","#888888","#222222",
+  // "#FFA7D1","#E50000","#E59500","#A06A42","#E5D900",
+  // "#94E044","#02BE01","#00E5F0","#0083C7","#0000EA",
+  // "#E04AFF","#820080"]
 
   function getGrid8() public view returns (uint8[18000]) {
       return grid8;

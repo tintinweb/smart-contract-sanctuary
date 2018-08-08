@@ -28,8 +28,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 200000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Bithemoth&quot;;                                   // Set the name for display purposes
-        symbol = &quot;BHM&quot;;                               // Set the symbol for display purposes
+        name = "Bithemoth";                                   // Set the name for display purposes
+        symbol = "BHM";                               // Set the symbol for display purposes
     }
 
     /**

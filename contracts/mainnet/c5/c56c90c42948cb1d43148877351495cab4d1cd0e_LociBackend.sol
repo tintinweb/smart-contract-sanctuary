@@ -3,7 +3,7 @@ pragma solidity >=0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -266,13 +266,13 @@ contract LociBackend is Ownable {
     
     mapping (bytes32 => Claim) public claims;
     // {
-    //     &quot;ClaimID&quot;: &quot;9b2eea39-4c08-4c2a-a243-f5d8158bacb0&quot;,
-    //     &quot;claimCreateDate&quot;: &quot;20170925204742&quot;,
-    //     &quot;disclosureDate&quot;: &quot;20170925204742&quot;,
-    //     &quot;userID&quot;: &quot;cb8ea133-def4-4062-8cac-9d7ef46221bf&quot;
-    //     &quot;disclosureHash&quot;: &quot;ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad&quot;
+    //     "ClaimID": "9b2eea39-4c08-4c2a-a243-f5d8158bacb0",
+    //     "claimCreateDate": "20170925204742",
+    //     "disclosureDate": "20170925204742",
+    //     "userID": "cb8ea133-def4-4062-8cac-9d7ef46221bf"
+    //     "disclosureHash": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"
     // }
-    // l.addNewClaim(&quot;9b2eea39-4c08-4c2a-a243-f5d8158bacb0&quot;, 20170925204742, 20170925204742, &quot;cb8ea133-def4-4062-8cac-9d7ef46221bf&quot;, &quot;ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad&quot;);
+    // l.addNewClaim("9b2eea39-4c08-4c2a-a243-f5d8158bacb0", 20170925204742, 20170925204742, "cb8ea133-def4-4062-8cac-9d7ef46221bf", "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad");
     bytes32[] public claimKeys;    
 
     struct Claim {

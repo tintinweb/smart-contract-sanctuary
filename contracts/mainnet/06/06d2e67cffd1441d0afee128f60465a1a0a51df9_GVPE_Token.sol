@@ -276,7 +276,7 @@ contract Token is ERC20Interface, CNT_Common {
     
 }
 
-contract CNT_Token is Token(18, 500000, &quot;Chip&quot;, &quot;CNT&quot;) {
+contract CNT_Token is Token(18, 500000, "Chip", "CNT") {
     function CNT_Token() public {
         uint _millons = 10**6 * 10**18;
         balances[ICO_PRE_SALE]       = 300 * _millons; // 60% - PRE-SALE / DA-ICO
@@ -291,7 +291,7 @@ contract CNT_Token is Token(18, 500000, &quot;Chip&quot;, &quot;CNT&quot;) {
     }
 }
 
-contract BGB_Token is Token(18, 500000, &quot;BG-Coin&quot;, &quot;BGB&quot;) {
+contract BGB_Token is Token(18, 500000, "BG-Coin", "BGB") {
     function BGB_Token() public {
         uint _millons = 10**6 * 10**18;
         balances[ICO_PRE_SALE]      = 250 * _millons; // 50% - PRE-SALE
@@ -304,7 +304,7 @@ contract BGB_Token is Token(18, 500000, &quot;BG-Coin&quot;, &quot;BGB&quot;) {
     }
 }
 
-contract VPE_Token is Token(18, 1000, &quot;Vapaee&quot;, &quot;VPE&quot;) {
+contract VPE_Token is Token(18, 1000, "Vapaee", "VPE") {
     function VPE_Token() public {
         uint _thousands = 10**3 * 10**18;
         balances[ICO_PRE_SALE]  = 500 * _thousands; // 50% - PRE-SALE
@@ -315,7 +315,7 @@ contract VPE_Token is Token(18, 1000, &quot;Vapaee&quot;, &quot;VPE&quot;) {
     }
 }
 
-contract GVPE_Token is Token(18, 100, &quot;Golden Vapaee&quot;, &quot;GVPE&quot;) {
+contract GVPE_Token is Token(18, 100, "Golden Vapaee", "GVPE") {
     function GVPE_Token() public {
         uint _thousands = 10**3 * 10**18;
         balances[ICO_PRE_SALE]  = 100 * _thousands; // 100% - PRE-SALE

@@ -9,23 +9,23 @@ contract ISmartCert {
 	address owner;
 
 	// constants
-	string constant CODE_ACCESS_DENIED = &quot;A001&quot;;
-	string constant CODE_ACCESS_POSTER_NOT_AUTHORIZED = &quot;A002&quot;;
-	string constant CODE_ACCESS_ISSUER_NOT_AUTHORIZED = &quot;A003&quot;;
-	string constant CODE_ACCESS_VERIFY_NOT_AUTHORIZED = &quot;A004&quot;;
-	string constant MSG_ISSUER_SIG_NOT_MATCHED = &quot;E001&quot;; //&quot;Issuer&#39;s address not matched with signed hash&quot;;
-	string constant MSG_DOC_REGISTERED = &quot;E002&quot;; //&quot;Document already registered&quot;; 
-	string constant MSG_REVOKED = &quot;E003&quot;; //&quot;Document already revoked&quot;; 	
-	string constant MSG_NOTREG = &quot;E004&quot;; //&quot;Document not registered&quot;;
-	string constant MSG_INVALID = &quot;E005&quot;;  //&quot;Document not valid&quot;; 
-	string constant MSG_NOFOUND = &quot;E006&quot;; //&quot;No record found&quot;;
-	string constant MSG_INVALID_CERT_MERKLE_NOT_MATCHED = &quot;E007&quot;;
-	string constant MSG_INVALID_ACCESS_RIGHT = &quot;E008&quot;;
-	string constant MSG_BATCH_REVOKED = &quot;E009&quot;; //&quot;Batch that the document belong to has already been revoked&quot;;
-	string constant MSG_MERKLE_CANNOT_EMPTY = &quot;E010&quot;;
-	string constant MSG_MERKLE_NOT_REGISTERED = &quot;E011&quot;;
-	string constant STATUS_PASS = &quot;PASS&quot;;
-	string constant STATUS_FAIL = &quot;FAIL&quot;;
+	string constant CODE_ACCESS_DENIED = "A001";
+	string constant CODE_ACCESS_POSTER_NOT_AUTHORIZED = "A002";
+	string constant CODE_ACCESS_ISSUER_NOT_AUTHORIZED = "A003";
+	string constant CODE_ACCESS_VERIFY_NOT_AUTHORIZED = "A004";
+	string constant MSG_ISSUER_SIG_NOT_MATCHED = "E001"; //"Issuer&#39;s address not matched with signed hash";
+	string constant MSG_DOC_REGISTERED = "E002"; //"Document already registered"; 
+	string constant MSG_REVOKED = "E003"; //"Document already revoked"; 	
+	string constant MSG_NOTREG = "E004"; //"Document not registered";
+	string constant MSG_INVALID = "E005";  //"Document not valid"; 
+	string constant MSG_NOFOUND = "E006"; //"No record found";
+	string constant MSG_INVALID_CERT_MERKLE_NOT_MATCHED = "E007";
+	string constant MSG_INVALID_ACCESS_RIGHT = "E008";
+	string constant MSG_BATCH_REVOKED = "E009"; //"Batch that the document belong to has already been revoked";
+	string constant MSG_MERKLE_CANNOT_EMPTY = "E010";
+	string constant MSG_MERKLE_NOT_REGISTERED = "E011";
+	string constant STATUS_PASS = "PASS";
+	string constant STATUS_FAIL = "FAIL";
 	bytes1 constant ACCESS_ISSUER = 0x04;
 	bytes1 constant ACCESS_POSTER = 0x02;
 	bytes1 constant ACCESS_VERIFIER = 0x01;
@@ -81,7 +81,7 @@ contract ISmartCert {
 		accessList[userAddr].accessRight = accessRight;
 		accessList[userAddr].date = date;
 		accessList[userAddr].isValue = true;
-		LogUserRight(STATUS_PASS, &quot;&quot;);
+		LogUserRight(STATUS_PASS, "");
 	}
 
 	function checkAccess(address user, bytes1 access) internal view returns (bool) {
@@ -120,7 +120,7 @@ contract ISmartCert {
 		hashes[certHash].registerDate = registrationDate;
 		// indicate the record exists
 		hashes[certHash].exists = true;
-		return (STATUS_PASS, &quot;&quot;);
+		return (STATUS_PASS, "");
 	}
 
 	function internalRegisterCertWithID(bytes32 certHash, bytes sig, bytes32 merkleHash, uint registrationDate, bytes32 id) internal returns (string, string) {
@@ -160,7 +160,7 @@ contract ISmartCert {
 		// store record id by ID
 		idMap[id].push(Lvl2Struct({recordId:merkleHash, certhash:certHash, exists:true}));
 
-		return (STATUS_PASS, &quot;&quot;);
+		return (STATUS_PASS, "");
 	}
 
 	function internalRevokeCert(bytes32 certHash, bytes sigCertHash, bytes32 merkleHash, bool batchFlag, uint revocationDate) internal returns (string, string) {
@@ -209,7 +209,7 @@ contract ISmartCert {
 		revoked[certHash].merkleHash = merkleHash;
 		revoked[certHash].date = revocationDate;
 
-		return (STATUS_PASS, &quot;&quot;);
+		return (STATUS_PASS, "");
 	}
 
 	// event as a form of return value, state mutating function cannot return value to external party
@@ -254,7 +254,7 @@ contract ISmartCert {
 			if (recoverAddr(tmpCertHash, hashes[tmpCertHash].sig) != issuer) {			
 				return (STATUS_FAIL, MSG_INVALID);
 			}
-			return (STATUS_PASS, &quot;&quot;);
+			return (STATUS_PASS, "");
 		} else {
 			return (STATUS_FAIL, MSG_NOTREG);
 		}
@@ -332,7 +332,7 @@ contract ISmartCert {
 			revert();			
 		}
 
-		LogReissueCert(STATUS_PASS, &quot;&quot;);
+		LogReissueCert(STATUS_PASS, "");
 	}
 
 	event LogReissueCertWithID(string, string);
@@ -354,7 +354,7 @@ contract ISmartCert {
 			revert();
 		}
 
-		LogReissueCertWithID(STATUS_PASS, &quot;&quot;);
+		LogReissueCertWithID(STATUS_PASS, "");
 	}
 
 	function recoverAddr(bytes32 hash, bytes sig) internal pure returns (address) {

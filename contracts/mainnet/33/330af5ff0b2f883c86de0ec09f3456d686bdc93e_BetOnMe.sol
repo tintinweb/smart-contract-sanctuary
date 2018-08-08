@@ -198,8 +198,8 @@ contract StandardToken is ERC223, SafeMath {
  */
 contract BetOnMe is StandardToken {
 
-    string public name = &quot;BetOnMe&quot;;
-    string public symbol = &quot;BOM&quot;;
+    string public name = "BetOnMe";
+    string public symbol = "BOM";
     
     
     address public coinMaster;

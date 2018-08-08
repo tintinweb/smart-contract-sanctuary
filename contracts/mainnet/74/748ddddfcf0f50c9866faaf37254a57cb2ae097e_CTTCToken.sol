@@ -119,7 +119,7 @@ pragma solidity ^0.4.18;
     /**
      * @title Ownable
      * @dev The Ownable contract has an owner address, and provides basic authorization control
-     * functions, this simplifies the implementation of &quot;user permissions&quot;.
+     * functions, this simplifies the implementation of "user permissions".
      */
     contract Ownable {
       address public owner;
@@ -254,8 +254,8 @@ pragma solidity ^0.4.18;
     contract CTTCToken is StandardToken, Ownable {
 
       uint256 public constant INITIAL_SUPPLY = 2100000000;
-      string public constant name = &quot;CTTC Token&quot;; 
-      string public constant symbol = &quot;CTTC&quot;; 
+      string public constant name = "CTTC Token"; 
+      string public constant symbol = "CTTC"; 
     
       /**
        * @dev Constructor that gives msg.sender all of existing tokens.

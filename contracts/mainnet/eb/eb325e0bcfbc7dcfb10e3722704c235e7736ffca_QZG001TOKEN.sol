@@ -27,8 +27,8 @@ contract QZG001TOKEN{
     function QZG001TOKEN() public {
         balanceOf[msg.sender] = 1000000 * 1000000000000000000;             
         totalSupply =  1000000 * 1000000000000000000;                       
-        name = &quot;QZC001&quot;;                                   // Set the name 	for display purposes
-        symbol = &quot;QZGC&quot;;                               // Set the symbol for display 	purposes
+        name = "QZC001";                                   // Set the name 	for display purposes
+        symbol = "QZGC";                               // Set the symbol for display 	purposes
         decimals = 18;                            // Amount of decimals for display 	purposes
     }
 

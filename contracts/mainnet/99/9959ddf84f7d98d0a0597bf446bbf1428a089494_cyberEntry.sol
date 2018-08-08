@@ -21,7 +21,7 @@ contract cyberEntry {
         uint256 upper;
         uint256 lower;
 
-        upper = uint256(bytes4(&quot;cool&quot;)) << 32;
+        upper = uint256(bytes4("cool")) << 32;
         lower = uint256(uint16(msg.sender));
 
         key = upper | lower;

@@ -222,8 +222,8 @@ contract StandardToken is ERC20, BasicToken {
 contract Token is StandardToken, Ownable {
 
     // Basic token constants.
-    string public constant name = &quot;Andrey Voronkov Tokens&quot;;
-    string public constant symbol = &quot;AVT&quot;;
+    string public constant name = "Andrey Voronkov Tokens";
+    string public constant symbol = "AVT";
     uint8 public constant decimals = 18;
     uint256 constant initialSupply = 10 ** uint(10 + decimals);
 

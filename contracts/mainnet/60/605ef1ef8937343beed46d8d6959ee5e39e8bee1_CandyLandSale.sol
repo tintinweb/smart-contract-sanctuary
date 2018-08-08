@@ -244,7 +244,7 @@ contract CandyLandSale is LandAccessControl, CanReceiveApproval {
 
 
     function CandyLandSale(address _landManagementAddress) LandAccessControl(_landManagementAddress) public {
-        allowedFuncs[bytes4(keccak256(&quot;_receiveBuyLandForCandy(address,uint256)&quot;))] = true;
+        allowedFuncs[bytes4(keccak256("_receiveBuyLandForCandy(address,uint256)"))] = true;
     }
 
 

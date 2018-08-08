@@ -203,7 +203,7 @@ contract Mineable is StandardToken, Ownable {
 }
 
 contract GGAToken is Mineable, Burnable {
-  string public name = &quot;GGA Token&quot;;
-  string public symbol = &quot;GGA&quot;;
+  string public name = "GGA Token";
+  string public symbol = "GGA";
   uint8 public decimals = 3;
 }

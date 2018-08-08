@@ -267,8 +267,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract TutorialToken is StandardToken {
-	string public name = &quot;IOTG&quot;;
-	string public symbol = &quot;TXT&quot;;
+	string public name = "IOTG";
+	string public symbol = "TXT";
 	uint8 public decimals = 18;
 	uint public INITIAL_SUPPLY = 1000000000*(10**18);
 

@@ -4,12 +4,12 @@ pragma solidity 0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -240,7 +240,7 @@ contract Multivest is Ownable {
     }
 
     function verify(bytes32 _hash, uint8 _v, bytes32 _r, bytes32 _s) internal pure returns (address) {
-        bytes memory prefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
+        bytes memory prefix = "\x19Ethereum Signed Message:\n32";
 
         return ecrecover(keccak256(prefix, _hash), _v, _r, _s);
     }
@@ -316,7 +316,7 @@ contract GigERC20 is StandardToken, Ownable {
         bool _transferAllSupplyToOwner,
         bool _locked
     ) public {
-        standard = &quot;ERC20 0.1&quot;;
+        standard = "ERC20 0.1";
         locked = _locked;
         totalSupply_ = _totalSupply;
 
@@ -406,7 +406,7 @@ contract MintingERC20 is GigERC20 {
     )
         public GigERC20(_initialSupply, _tokenName, _decimals, _symbol, _transferAllSupplyToOwner, _locked)
     {
-        standard = &quot;MintingERC20 0.1&quot;;
+        standard = "MintingERC20 0.1";
         minters[msg.sender] = true;
         maxSupply = _maxSupply;
     }
@@ -468,9 +468,9 @@ contract GigToken is MintingERC20 {
     event MaxSupplyBurned(uint256 burnedTokens);
 
     function GigToken(bool _locked) public
-        MintingERC20(0, maxSupply, &quot;GigBit&quot;, 18, &quot;GBTC&quot;, false, _locked)
+        MintingERC20(0, maxSupply, "GigBit", 18, "GBTC", false, _locked)
     {
-        standard = &quot;GBTC 0.1&quot;;
+        standard = "GBTC 0.1";
 
         maxSupply = uint256(1000000000).mul(uint256(10) ** decimals);
     }

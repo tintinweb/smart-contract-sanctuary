@@ -265,9 +265,9 @@ contract _0xBitcoincashToken is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;0xBCH&quot;;
+        symbol = "0xBCH";
 
-        name = &quot;0xBitcoincash Token&quot;;
+        name = "0xBitcoincash Token";
 
         decimals = 8;
 

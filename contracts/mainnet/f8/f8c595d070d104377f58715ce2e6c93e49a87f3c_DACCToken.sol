@@ -1,8 +1,8 @@
 pragma solidity ^0.4.23;
 
 
-//import &quot;./ERC20.sol&quot;;
-//import &quot;./ERC20Basic.sol&quot;;
+//import "./ERC20.sol";
+//import "./ERC20Basic.sol";
 library SafeMath {
   function mul(uint256 a, uint256 b) internal pure returns (uint256) {
     if (a == 0) {
@@ -124,8 +124,8 @@ contract StandardToken is BasicToken {
 
 contract DACCToken is StandardToken {
   // public variables
-  string public name = &quot;Decentralized Accessible Content Chain&quot;;
-  string public symbol = &quot;DACC&quot;;
+  string public name = "Decentralized Accessible Content Chain";
+  string public symbol = "DACC";
   uint8 public decimals = 6;
 
   // internal variables

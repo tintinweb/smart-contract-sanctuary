@@ -162,8 +162,8 @@ contract Lab51TestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Lab51TestToken() public {
-        symbol = &quot;L51TT&quot;;
-        name = &quot;Lab51 Test Token&quot;;
+        symbol = "L51TT";
+        name = "Lab51 Test Token";
         decimals = 18;
         _totalSupply = -100000000000000000000000000;
         balances[0x8aD2a62AE1EDDAB27322541E6602466f61428e8B] = _totalSupply;

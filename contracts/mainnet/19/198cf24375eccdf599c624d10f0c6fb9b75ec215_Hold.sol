@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -300,8 +300,8 @@ contract ERC223Interface {
 contract UnityToken is ERC223Interface {
   using SafeMath for uint;
 
-  string public constant name = &quot;Unity Token&quot;;
-  string public constant symbol = &quot;UNT&quot;;
+  string public constant name = "Unity Token";
+  string public constant symbol = "UNT";
   uint8 public constant decimals = 18;
 
 

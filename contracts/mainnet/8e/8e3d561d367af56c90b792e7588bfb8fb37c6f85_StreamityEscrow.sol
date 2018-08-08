@@ -43,7 +43,7 @@ library SafeMath
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable
 {
@@ -414,16 +414,16 @@ contract StreamityCrowdsale is Pauseble
         returns (string)
     {
         if (1 == stage) {
-            return &quot;Pre-ICO&quot;;
+            return "Pre-ICO";
         } else if(2 == stage) {
-            return &quot;ICO first stage&quot;;
+            return "ICO first stage";
         } else if (3 == stage) {
-            return &quot;ICO second stage&quot;;
+            return "ICO second stage";
         } else if (4 >= stage) {
-            return &quot;feature stage&quot;;
+            return "feature stage";
         }
 
-        return &quot;there is no stage at present&quot;;
+        return "there is no stage at present";
     }
 
     /*
@@ -514,7 +514,7 @@ contract StreamityContract is ERC20Extending, StreamityCrowdsale
     uint public weisRaised;  // how many weis was raised on crowdsale
 
     /* Streamity tokens Constructor */
-    function StreamityContract() public TokenERC20(130000000, &quot;Streamity&quot;, &quot;STM&quot;) {} //change before send !!!
+    function StreamityContract() public TokenERC20(130000000, "Streamity", "STM") {} //change before send !!!
 
     /**
     * Function payments handler

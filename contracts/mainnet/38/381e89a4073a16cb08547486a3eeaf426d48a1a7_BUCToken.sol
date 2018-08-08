@@ -113,8 +113,8 @@ contract BUCToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function BUCToken() public {
-        symbol = &quot;BUC&quot;;
-        name = &quot;BuyCoin&quot;;
+        symbol = "BUC";
+        name = "BuyCoin";
         decimals = 12;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

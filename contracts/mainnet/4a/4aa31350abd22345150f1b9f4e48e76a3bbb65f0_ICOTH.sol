@@ -20,7 +20,7 @@ contract ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -435,8 +435,8 @@ contract PauseBurnableERC827Token is ERC827Token, Ownable {
 }
 
 contract ICOTH is PauseBurnableERC827Token {
-    string  public constant name = &quot;ICOTH&quot;;
-    string  public constant symbol = &quot;i&quot;;
+    string  public constant name = "ICOTH";
+    string  public constant symbol = "i";
     uint8   public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));
     /**

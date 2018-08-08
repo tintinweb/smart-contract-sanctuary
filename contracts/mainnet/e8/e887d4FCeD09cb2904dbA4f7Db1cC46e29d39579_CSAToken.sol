@@ -48,8 +48,8 @@ contract TokenERC20 {
         string tokenSymbol
     ) public {
         initialSupply = 20000000;
-        tokenName = &quot;CSAT TOKEN&quot;;
-        tokenSymbol = &quot;CSAT&quot;;
+        tokenName = "CSAT TOKEN";
+        tokenSymbol = "CSAT";
         totalSupply = initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
         name = tokenName;                                   // Set the name for display purposes

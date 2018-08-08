@@ -58,8 +58,8 @@ contract NePay is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;NePay&quot;;
-    string public constant symbol = &quot;NEP&quot;;
+    string public constant name = "NePay";
+    string public constant symbol = "NEP";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 1000000000e18;

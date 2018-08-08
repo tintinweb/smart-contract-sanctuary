@@ -226,9 +226,9 @@ contract Ownable {
 contract Steel is StandardToken, Ownable {
 
     using SafeMath for uint256;
-    string public constant ContractName = &quot;TokenSteel&quot;;
-    string public constant name = &quot;Steel&quot;;
-    string public constant symbol = &quot;STL&quot;;
+    string public constant ContractName = "TokenSteel";
+    string public constant name = "Steel";
+    string public constant symbol = "STL";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 35000000000 * (10 ** uint256(decimals));
     mapping(address => uint256) freezeOf;

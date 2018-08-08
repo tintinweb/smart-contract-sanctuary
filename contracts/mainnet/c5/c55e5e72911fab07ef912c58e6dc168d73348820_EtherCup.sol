@@ -3,7 +3,7 @@ pragma solidity ^0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 
 contract Ownable {
@@ -94,7 +94,7 @@ contract EtherCup is Ownable {
   }
 
   /*** CONSTRUCTOR ***/
-  // In newer versions use &quot;constructor() public {  };&quot; instead of &quot;function PlayerLab() public {  };&quot;
+  // In newer versions use "constructor() public {  };" instead of "function PlayerLab() public {  };"
   constructor() public {
     ceoAddress = msg.sender;
 

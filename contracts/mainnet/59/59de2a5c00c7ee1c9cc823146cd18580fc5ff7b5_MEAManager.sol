@@ -287,7 +287,7 @@ contract MEAManager is OperationalControl {
     uint256 public constant DEVCLASS_MAX_CARGO = 500; 
     
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant NAME = &quot;MEAGameManager&quot;;
+    string public constant NAME = "MEAGameManager";
 
     /*** Mappings ***/
 

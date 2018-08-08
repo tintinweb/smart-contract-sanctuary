@@ -95,7 +95,7 @@ library DSMath {
         z = add(mul(x, RAY), y / 2) / y;
     }
 
-    // This famous algorithm is called &quot;exponentiation by squaring&quot;
+    // This famous algorithm is called "exponentiation by squaring"
     // and calculates x^n with x as fixed-point and n as regular unsigned.
     //
     // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -156,7 +156,7 @@ contract Accounting {
     }
 
     Account base = Account({
-        name: &quot;Base&quot;,
+        name: "Base",
         balanceETH: 0       
     });
 
@@ -294,19 +294,19 @@ contract ButtonBase is DSAuth, Accounting {
     ///Internal accounts to hold value:
     Account revenue = 
     Account({
-        name: &quot;Revenue&quot;,
+        name: "Revenue",
         balanceETH: 0
     });
 
     Account nextCampaign = 
     Account({
-        name: &quot;Next Campaign&quot;,
+        name: "Next Campaign",
         balanceETH: 0       
     });
 
     Account charity = 
     Account({
-        name: &quot;Charity&quot;,
+        name: "Charity",
         balanceETH: 0
     });
 
@@ -593,13 +593,13 @@ contract ButtonBase is DSAuth, Accounting {
 
     /// Withdrawal function for winners
     function withdrawJackpot() public {
-        require(winners[msg.sender].balanceETH > 0, &quot;Nothing to withdraw!&quot;);
+        require(winners[msg.sender].balanceETH > 0, "Nothing to withdraw!");
         sendETH(winners[msg.sender], msg.sender, winners[msg.sender].balanceETH);
     }
 
     /// Any winner can chose to donate their jackpot
     function donateJackpot() public {
-        require(winners[msg.sender].balanceETH > 0, &quot;Nothing to donate!&quot;);
+        require(winners[msg.sender].balanceETH > 0, "Nothing to donate!");
         transferETH(winners[msg.sender], charity, winners[msg.sender].balanceETH);
     }
 
@@ -611,7 +611,7 @@ contract ButtonBase is DSAuth, Accounting {
     /// Dev charity transfer function - sends all of the charity balance to the pre-set charity address
     /// Note that there&#39;s nothing stopping the devs to wait and set the charity beneficiary to their own address
     /// and drain the charity balance for themselves. We would not do that as it would not make sense and it would
-    /// damage our reputation, but this is the only &quot;weak&quot; spot of the contract where it requires trust in the devs
+    /// damage our reputation, but this is the only "weak" spot of the contract where it requires trust in the devs
     function sendCharityETH(bytes callData) public auth {
         // donation receiver might be a contract, so transact instead of a simple send
         transact(charity, charityBeneficiary, charity.balanceETH, callData);
@@ -705,7 +705,7 @@ contract TheButton is ButtonBase {
             _press(c);//register press
             depositETH(c.total, msg.sender, msg.value);// handle ETH
         } else { //if inactive (after deadline)
-            require(!stopped, &quot;Contract stopped!&quot;);//make sure we&#39;re not stopped
+            require(!stopped, "Contract stopped!");//make sure we&#39;re not stopped
             if(!c.finalized) {//if not finalized
                 _finalizeCampaign(c);// finalize last campaign
             } 
@@ -718,12 +718,12 @@ contract TheButton is ButtonBase {
     }
 
     function start() external payable auth {
-        require(stopped, &quot;Already started!&quot;);
+        require(stopped, "Already started!");
         stopped = false;
         
         if(campaigns.length != 0) {//if there was a past campaign
             ButtonCampaign storage c = campaigns[lastCampaignID];
-            require(c.finalized, &quot;Last campaign not finalized!&quot;);//make sure it was finalized
+            require(c.finalized, "Last campaign not finalized!");//make sure it was finalized
         }             
         _newCampaign();//start new campaign
         c = campaigns[lastCampaignID];
@@ -733,7 +733,7 @@ contract TheButton is ButtonBase {
 
     ///Stopping will only affect new campaigns, not already running ones
     function stop() external auth {
-        require(!stopped, &quot;Already stopped!&quot;);
+        require(!stopped, "Already stopped!");
         stopped = true;
     }
     
@@ -752,8 +752,8 @@ contract TheButton is ButtonBase {
 
     //Press logic
     function _press(ButtonCampaign storage c) internal {
-        require(c.deadline >= now, &quot;After deadline!&quot;);//must be before the deadline
-        require(msg.value >= c.price, &quot;Not enough value!&quot;);// must have at least the price value
+        require(c.deadline >= now, "After deadline!");//must be before the deadline
+        require(msg.value >= c.price, "Not enough value!");// must have at least the price value
         c.presses += 1;//no need for safe math, as it is not a critical calculation
         c.lastPresser = msg.sender;
              
@@ -767,8 +767,8 @@ contract TheButton is ButtonBase {
 
     /// starting a new campaign
     function _newCampaign() internal {
-        require(!active(), &quot;A campaign is already running!&quot;);
-        require(_devFraction.add(_charityFraction).add(_jackpotFraction).add(_newCampaignFraction) == ONE_WAD, &quot;Accounting is incorrect!&quot;);
+        require(!active(), "A campaign is already running!");
+        require(_devFraction.add(_charityFraction).add(_jackpotFraction).add(_newCampaignFraction) == ONE_WAD, "Accounting is incorrect!");
         
         uint _campaignID = campaigns.length++;
         ButtonCampaign storage c = campaigns[_campaignID];
@@ -783,15 +783,15 @@ contract TheButton is ButtonBase {
         c.deadline = uint64(now.add(_period));
         c.n = _n;
         c.period = _period;
-        c.total.name = keccak256(abi.encodePacked(&quot;Total&quot;, lastCampaignID));//setting the name of the campaign&#39;s accaount     
+        c.total.name = keccak256(abi.encodePacked("Total", lastCampaignID));//setting the name of the campaign&#39;s accaount     
         transferETH(nextCampaign, c.total, nextCampaign.balanceETH);
         emit Started(c.total.balanceETH, _period, lastCampaignID); 
     }
 
     /// Finalize campaign logic
     function _finalizeCampaign(ButtonCampaign storage c) internal {
-        require(c.deadline < now, &quot;Before deadline!&quot;);
-        require(!c.finalized, &quot;Already finalized!&quot;);
+        require(c.deadline < now, "Before deadline!");
+        require(!c.finalized, "Already finalized!");
         
         if(c.presses != 0) {//If there were presses
             uint totalBalance = c.total.balanceETH;

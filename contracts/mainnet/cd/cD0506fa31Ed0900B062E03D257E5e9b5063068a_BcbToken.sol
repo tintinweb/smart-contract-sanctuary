@@ -31,8 +31,8 @@ contract token {
     function token() {
     balanceOf[msg.sender] = 10000000000000000; 
     totalSupply = 10000000000000000; 
-    name = &quot;BCB&quot;; 
-    symbol =  &quot;฿&quot;;
+    name = "BCB"; 
+    symbol =  "฿";
     decimals = 8; 
     }
     /* Internal transfer, only can be called by this contract */

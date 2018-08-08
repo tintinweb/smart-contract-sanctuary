@@ -166,7 +166,7 @@ contract EtherReceiver {
 
 contract EtherReceiveAdapter is EtherReceiver, ReceiveAdapter {
     function () payable public {
-        receiveWithData(&quot;&quot;);
+        receiveWithData("");
     }
 
     function receiveWithData(bytes _data) payable public {
@@ -277,7 +277,7 @@ contract MintingSale is AbstractSale {
 /**
  * @title OwnableImpl
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract OwnableImpl is Ownable {
     address public owner;
@@ -366,7 +366,7 @@ contract Whitelist is Secured {
 		return whitelist[addr];
 	}
 
-	function setWhitelist(address addr, bool allow) only(&quot;operator&quot;) public {
+	function setWhitelist(address addr, bool allow) only("operator") public {
 		setWhitelistInternal(addr, allow);
 	}
 
@@ -612,8 +612,8 @@ contract PausableToken is Pausable, TokenImpl {
 }
 
 contract ZenomeToken is OwnableImpl, PausableToken, MintableTokenImpl, BurnableTokenImpl {
-	string public constant name = &quot;Zenome&quot;;
-	string public constant symbol = &quot;sZNA&quot;;
+	string public constant name = "Zenome";
+	string public constant symbol = "sZNA";
 	uint8 public constant decimals = 18;
 
 	function burn(uint256 _value) public whenNotPaused {

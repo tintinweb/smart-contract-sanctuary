@@ -28,8 +28,8 @@ contract DIT {
     function DIT() public {
         totalSupply = 1000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Dream Island&quot;;                                   // Set the name for display purposes
-        symbol = &quot;DIT&quot;;                               // Set the symbol for display purposes
+        name = "Dream Island";                                   // Set the name for display purposes
+        symbol = "DIT";                               // Set the symbol for display purposes
     }
 
     /**

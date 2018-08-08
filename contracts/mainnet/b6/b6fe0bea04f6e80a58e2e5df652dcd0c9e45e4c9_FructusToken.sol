@@ -112,8 +112,8 @@ contract FructusToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FructusToken() public {
-        symbol = &quot;FRT&quot;;
-        name = &quot;Fructus Token&quot;;
+        symbol = "FRT";
+        name = "Fructus Token";
         decimals = 18;
         bonusEnds = now + 2 weeks;
         endDate = now + 8 weeks;

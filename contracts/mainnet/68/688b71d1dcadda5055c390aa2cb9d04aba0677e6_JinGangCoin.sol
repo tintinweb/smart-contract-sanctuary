@@ -23,8 +23,8 @@ contract JinGangCoin {
     function JinGangCoin() {
         balanceOf[msg.sender] = 11000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply = 11000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;JinGangCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;JGC&quot;;                               // Set the symbol for display purposes
+        name = "JinGangCoin";                                   // Set the name for display purposes
+        symbol = "JGC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

@@ -116,8 +116,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;KC&quot;;
-        name = &quot;Kyber Exchange Coupon. Convert to ETH @ https://kyber.network&quot;;
+        symbol = "KC";
+        name = "Kyber Exchange Coupon. Convert to ETH @ https://kyber.network";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

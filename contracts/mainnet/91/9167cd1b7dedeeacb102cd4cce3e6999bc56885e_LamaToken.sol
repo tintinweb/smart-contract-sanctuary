@@ -111,8 +111,8 @@ contract LamaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LamaToken() public {
-        symbol = &quot;LAMA&quot;;
-        name = &quot;Lama Token&quot;;
+        symbol = "LAMA";
+        name = "Lama Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x6ff0BE40314Fdf5E07BcBA38c69Be4955d5e6197] = _totalSupply;

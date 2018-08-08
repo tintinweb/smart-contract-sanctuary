@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract MentalHealthLifeToken is StandardToken, Pausable {
-    string public constant name = &quot;Mental Health for Life Token&quot;;
-    string public constant symbol = &quot;MTHL&quot;;
+    string public constant name = "Mental Health for Life Token";
+    string public constant symbol = "MTHL";
     uint8 public constant decimals = 18;
 
     modifier validDestination(address to) {

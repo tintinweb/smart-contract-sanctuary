@@ -81,7 +81,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -291,7 +291,7 @@ contract StandardToken is Ownable {
 
 /**
  * @title Pausable token
- * @dev Token that can be freeze &quot;Transfer&quot; function
+ * @dev Token that can be freeze "Transfer" function
  */
 contract PausableToken is StandardToken {
 
@@ -579,8 +579,8 @@ contract QNTU is UpgradableToken, PausableToken {
     {
         require(_wallets.length == _amount.length);
 
-        symbol = &quot;QNTU&quot;;
-        name = &quot;QNTU Token&quot;;
+        symbol = "QNTU";
+        name = "QNTU Token";
         decimals = 18;
 
         uint num = 0;

@@ -220,7 +220,7 @@ contract RobinHood{
     // The rest of the amount of that tower which stays over will be kept inside the tower, up for a new round. 
     // If someone wins and amount is more than the minPrice, timestamp is set to the blockchain timer and new round is started without changing the owner of the Tower!
     
-    // _priceIncrease: number between 0-10000, is a pecent: 0% = 0, 100% = 10000. Sets how much percentage the price will increase. Note that &quot;100%&quot; is always added. 
+    // _priceIncrease: number between 0-10000, is a pecent: 0% = 0, 100% = 10000. Sets how much percentage the price will increase. Note that "100%" is always added. 
     // If you set it at 5000 (which is 50%) then the total increase of price is 150%. So if someone buys tower for price at 1 ETH, the new price is then 1.5 ETH. 
     
     // _amountToHalfTime: number of Wei which sets how much Wei you need in order to reduce the time necessary to hold tower to win for 50%.
@@ -281,7 +281,7 @@ contract RobinHood{
 
         
         // Create tower. 
-        var NewTower = Tower(_timer, 0, _payout, _priceIncrease, _minPrice, 0, _minPrice, _creatorFee, _amountToHalfTime, _minPriceAfterWin, msg.sender, msg.sender, &quot;&quot;);
+        var NewTower = Tower(_timer, 0, _payout, _priceIncrease, _minPrice, 0, _minPrice, _creatorFee, _amountToHalfTime, _minPriceAfterWin, msg.sender, msg.sender, "");
         
         // Insert this into array. 
         Towers[next_tower_index] = NewTower;
@@ -296,7 +296,7 @@ contract RobinHood{
     
     // getTimer of TowerID to see how much time (in seconds) you need to win that tower. 
     // only works if contract is open. 
-    // id = tower id (note that &quot;first tower&quot; has ID 0 into the mapping)
+    // id = tower id (note that "first tower" has ID 0 into the mapping)
     function getTimer(uint256 _id) public onlyOpen returns (uint256)  {
         require(_id < next_tower_index);
         var UsedTower = Towers[_id];

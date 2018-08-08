@@ -187,8 +187,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract TestToken is PausableToken {
-    string public name = &quot;Test 0x&quot;;
-    string public symbol = &quot;T0x&quot;;
+    string public name = "Test 0x";
+    string public symbol = "T0x";
     uint256 public decimals = 18;
     uint256 public constant decimalFactor = 10 ** 18;
     uint256 public constant INITIAL_SUPPLY = 10000000 * decimalFactor;

@@ -111,8 +111,8 @@ contract BLOCKMALL is StandardToken {
         require(false);
     }
 
-    string public constant name = &quot;BLOCKMALL&quot;;   
-    string public constant symbol = &quot;BXM&quot;;
+    string public constant name = "BLOCKMALL";   
+    string public constant symbol = "BXM";
     uint256 private constant _INITIAL_SUPPLY = 100000000*10**uint256(decimals);
     uint8 public decimals = 18;         
     uint256 public totalSupply;            

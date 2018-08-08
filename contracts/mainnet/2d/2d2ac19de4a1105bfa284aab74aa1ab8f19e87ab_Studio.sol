@@ -78,8 +78,8 @@ contract ERC20Standard is BasicToken {
   }
 }
 contract Studio is ERC20Standard {
-    string public constant name = &quot;Studio&quot;;
-    string public constant symbol = &quot;STUD&quot;;
+    string public constant name = "Studio";
+    string public constant symbol = "STUD";
     uint8 public constant decimals = 18;
     uint256 public constant maxSupply = 25000000000 * (10 ** uint256(decimals));
     uint256 public STUDToEth;

@@ -429,6 +429,6 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract SoundeonToken is StandardBurnableToken, CappedToken, DetailedERC20, PausableToken  {
-    constructor() CappedToken(10**27) DetailedERC20(&quot;Soundeon Token&quot;, &quot;Soundeon&quot;, 18) public {
+    constructor() CappedToken(10**27) DetailedERC20("Soundeon Token", "Soundeon", 18) public {
     }
 }

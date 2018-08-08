@@ -112,8 +112,8 @@ contract StreamNetworkToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function StreamNetworkToken() public {
-        symbol = &quot;ST&quot;;
-        name = &quot;Stream Network Token&quot;;
+        symbol = "ST";
+        name = "Stream Network Token";
         decimals = 18;
         _totalSupply = 7632819325000000000000000000;
         balances[0xcfb1E02D3687B7Eedea33E8acA96Bc34869fE17b] = _totalSupply;

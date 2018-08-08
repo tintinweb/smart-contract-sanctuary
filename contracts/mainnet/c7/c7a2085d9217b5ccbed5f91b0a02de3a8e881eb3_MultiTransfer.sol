@@ -113,8 +113,8 @@ contract Marcelo is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function Marcelo() public {
-        symbol = &quot;MRL&quot;;
-        name = &quot;Marcelo&quot;;
+        symbol = "MRL";
+        name = "Marcelo";
         decimals = 18;
         _totalSupply = 250000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

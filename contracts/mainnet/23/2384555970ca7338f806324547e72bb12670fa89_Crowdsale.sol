@@ -323,7 +323,7 @@ contract Manageable is Ownable {
 
 
 contract Token is CappedToken, BurnableToken, Withdrawable {
-    constructor() CappedToken(100000000 * 1e8) StandardToken(&quot;SILK&quot;, &quot;SILK&quot;, 8) public {
+    constructor() CappedToken(100000000 * 1e8) StandardToken("SILK", "SILK", 8) public {
     }
 }
 

@@ -149,10 +149,10 @@ contract ERC20 is ERC20Basic {
 
 contract SKPT is BasicToken, BurnableToken, ERC20, Ownable {
 
-    string public constant name = &quot;SKP-T: Sleekplay Token&quot;;
-    string public constant symbol = &quot;SKPT&quot;;
+    string public constant name = "SKP-T: Sleekplay Token";
+    string public constant symbol = "SKPT";
     uint8 public constant decimals = 18;
-    string public constant version = &quot;1.0&quot;;
+    string public constant version = "1.0";
 
     uint256 constant INITIAL_SUPPLY_SKPT = 6400000000;
 

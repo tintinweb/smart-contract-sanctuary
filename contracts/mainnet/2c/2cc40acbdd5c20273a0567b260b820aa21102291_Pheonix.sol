@@ -58,8 +58,8 @@ contract Pheonix is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Pheonix&quot;;
-    string public constant symbol = &quot;PHX&quot;;
+    string public constant name = "Pheonix";
+    string public constant symbol = "PHX";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000e8;

@@ -89,8 +89,8 @@ contract DiscourzeToken is StandardToken {
     function DiscourzeToken() {
         balances[msg.sender] = 100000000000000000;               // Give the creator all initial tokens
         totalSupply = 100000000000000000;                        // Update total supply
-        name = &quot;Discourze Token&quot;;                                   // Set the name for display purposes
+        name = "Discourze Token";                                   // Set the name for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
-        symbol = &quot;DIZ&quot;;                               // Set the symbol for display purposes
+        symbol = "DIZ";                               // Set the symbol for display purposes
     }
 }

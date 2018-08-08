@@ -207,9 +207,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract StormBrewCoin is StandardToken {
     
-    string public name = &quot;Storm Brew Coin&quot;;
-    string public symbol = &quot;SBC&quot;;
-    string public version = &quot;1.0&quot;;
+    string public name = "Storm Brew Coin";
+    string public symbol = "SBC";
+    string public version = "1.0";
     uint8 public decimals = 4;
     
     uint256 INITIAL_SUPPLY = 400000000e4;

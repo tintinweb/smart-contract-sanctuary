@@ -12,8 +12,8 @@ contract ERC20Interface {
 }
 
 contract TLTContract is ERC20Interface {
-    string public constant symbol = &quot;TLT&quot;;
-    string public constant name = &quot;TradeLightning&quot;;
+    string public constant symbol = "TLT";
+    string public constant name = "TradeLightning";
     uint8 public constant decimals = 8;
     address public owner;
 

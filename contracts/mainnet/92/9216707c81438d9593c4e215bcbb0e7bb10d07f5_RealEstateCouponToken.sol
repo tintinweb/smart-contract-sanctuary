@@ -108,10 +108,10 @@ contract StandardToken is Token {
 contract RealEstateCouponToken is StandardToken, SafeMath {
 
     // metadata
-    string  public constant name = &quot;Real Estate Coupon Token&quot;;
-    string  public constant symbol = &quot;RECT&quot;;
+    string  public constant name = "Real Estate Coupon Token";
+    string  public constant symbol = "RECT";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
 
     // contracts
     address public ethFundDeposit;          // deposit address for ETH for UnlimitedIP Team.

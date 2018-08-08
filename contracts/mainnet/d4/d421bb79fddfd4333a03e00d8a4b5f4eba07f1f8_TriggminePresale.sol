@@ -155,9 +155,9 @@ contract Ownable {
 
 contract TriggmineToken is StandardToken, BurnableToken, Ownable {
 
-	string public constant name = &quot;Triggmine Coin&quot;;
+	string public constant name = "Triggmine Coin";
 
-	string public constant symbol = &quot;TRG&quot;;
+	string public constant symbol = "TRG";
 
 	uint256 public constant decimals = 18;
 

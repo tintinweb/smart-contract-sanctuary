@@ -35,8 +35,8 @@ contract TokenERC20 {
     constructor () public {
         totalSupply = 100000000000000000000000000;  
         balanceOf[msg.sender] = totalSupply;                
-        name = &quot;ProvaToken&quot;;                                 
-        symbol = &quot;PVT&quot;;                             
+        name = "ProvaToken";                                 
+        symbol = "PVT";                             
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

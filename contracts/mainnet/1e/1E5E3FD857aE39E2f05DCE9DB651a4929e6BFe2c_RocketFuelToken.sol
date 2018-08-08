@@ -113,8 +113,8 @@ contract RocketFuelToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RocketFuelToken() public {
-        symbol = &quot;RFT&quot;;
-        name = &quot;Rocket Fuel Token&quot;;
+        symbol = "RFT";
+        name = "Rocket Fuel Token";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0xeC5AFFC5fEAbaE7Ec5a1565CcE436796D0F3003C] = _totalSupply;

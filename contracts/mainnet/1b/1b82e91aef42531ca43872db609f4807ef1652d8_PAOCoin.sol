@@ -104,9 +104,9 @@ contract PAOCoin is StandardToken {
         ) {
         balances[msg.sender] = 200000000 * 1000000000000000000;   // Give the creator all initial tokens, 18 zero is 18 Decimals
         totalSupply = 200000000 * 1000000000000000000;            // Update total supply, , 18 zero is 18 Decimals
-        name = &quot;Panathinaikos FC 1908&quot;;                                // Token Name
+        name = "Panathinaikos FC 1908";                                // Token Name
         decimals = 18;                                      // Amount of decimals for display purposes
-        symbol = &quot;PAO&quot;;                                    // Token Symbol
+        symbol = "PAO";                                    // Token Symbol
     }
 
     /* Approves and then calls the receiving contract */
@@ -114,7 +114,7 @@ contract PAOCoin is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

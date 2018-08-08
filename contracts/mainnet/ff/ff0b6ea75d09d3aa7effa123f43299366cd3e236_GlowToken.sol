@@ -222,8 +222,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/GlowToken.sol
 
 contract GlowToken is StandardToken {
-  string public name = &quot;Glow&quot;;
-  string public symbol = &quot;GLOW&quot;;
+  string public name = "Glow";
+  string public symbol = "GLOW";
   uint public decimals = 18;
   uint public INITIAL_SUPPLY = 1000000000 * (10 ** uint(decimals));
 

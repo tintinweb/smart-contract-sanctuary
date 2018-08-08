@@ -105,8 +105,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract CoinFuns is StandardToken {
 
-  string public name = &quot;CoinFuns&quot;;
-  string public symbol = &quot;CFS&quot;;
+  string public name = "CoinFuns";
+  string public symbol = "CFS";
   uint public decimals = 10;
   uint public INITIAL_SUPPLY = 30000000000000000000;
   

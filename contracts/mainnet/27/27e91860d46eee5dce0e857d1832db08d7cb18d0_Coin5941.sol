@@ -123,8 +123,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract Coin5941 is StandardToken {
-    string public name = &quot;5941coin&quot;;
-    string public symbol = &quot;5941&quot;;
+    string public name = "5941coin";
+    string public symbol = "5941";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 10000000000*10**18;
     function Coin5941(){

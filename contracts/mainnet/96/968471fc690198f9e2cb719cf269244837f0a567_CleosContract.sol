@@ -113,8 +113,8 @@ contract CleosContract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CleosContract() public {
-        symbol = &quot;CLEOS&quot;;
-        name = &quot;CLEOS&quot;;
+        symbol = "CLEOS";
+        name = "CLEOS";
         decimals = 18;
         _totalSupply = 2220000000000000000000000000
 ;

@@ -227,7 +227,7 @@ library SmartWalletLib {
     /*
      *  Members
      */
-    string constant VERSION = &quot;1.1&quot;;
+    string constant VERSION = "1.1";
     address constant withdrawalConfigurationsContract = 0x0D6745B445A7F3C4bC12FE997a7CcbC490F06476; 
     
     /*

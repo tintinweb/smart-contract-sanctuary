@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract MycoinToken {
 
-    string public name = &quot;Mycoin&quot;;      //  token name
-    string public symbol = &quot;MYC&quot;;           //  token symbol
+    string public name = "Mycoin";      //  token name
+    string public symbol = "MYC";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

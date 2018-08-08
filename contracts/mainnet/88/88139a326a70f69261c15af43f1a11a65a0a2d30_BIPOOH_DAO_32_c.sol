@@ -4,8 +4,8 @@ contract	BIPOOH_DAO_32_c				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	BIPOOH_DAO_32_c		&quot;	;
-	string	public		symbol =	&quot;	BIPII		&quot;	;
+	string	public		name =	"	BIPOOH_DAO_32_c		"	;
+	string	public		symbol =	"	BIPII		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		100000000000000000000000000					;	

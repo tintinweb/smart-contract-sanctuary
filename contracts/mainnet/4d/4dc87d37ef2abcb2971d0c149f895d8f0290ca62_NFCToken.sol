@@ -113,8 +113,8 @@ contract NFCToken is UnboundedRegularToken {
 
     uint public totalSupply = 100*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;National Fish Chain Token&quot;;
-    string constant public symbol = &quot;NFC&quot;;
+    string constant public name = "National Fish Chain Token";
+    string constant public symbol = "NFC";
 
     function NFCToken() {
         balances[msg.sender] = totalSupply;

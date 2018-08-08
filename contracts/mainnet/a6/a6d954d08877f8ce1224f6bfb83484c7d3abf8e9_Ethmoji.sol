@@ -48,7 +48,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -717,8 +717,8 @@ contract Composable is ERC721Token, Ownable, PullPayment, Pausable {
 contract Ethmoji is Composable {
     using SafeMath for uint256;
 
-    string public constant NAME = &quot;Ethmoji&quot;;
-    string public constant SYMBOL = &quot;EMJ&quot;;
+    string public constant NAME = "Ethmoji";
+    string public constant SYMBOL = "EMJ";
 
     // Mapping from address to emoji representing avatar
     mapping (address => uint256) public addressToAvatar;

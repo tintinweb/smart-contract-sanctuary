@@ -51,8 +51,8 @@ contract AmmbrToken is IERC20 {
     
     uint public _totalSupply = 0;
     
-    string public constant symbol = &quot;AMB&quot;;
-    string public constant name = &quot;Ammbr Token&quot;;
+    string public constant symbol = "AMB";
+    string public constant name = "Ammbr Token";
     uint8 public constant decimals = 18;
     
     uint256 public constant RATE = 4500;

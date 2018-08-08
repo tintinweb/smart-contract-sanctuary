@@ -82,8 +82,8 @@ contract NauticusToken is Permission {
     uint public constant termination = 1526601600;
 
     //token details
-    string public constant name = &quot;NauticusToken&quot;;
-	string public constant symbol = &quot;NTS&quot;;
+    string public constant name = "NauticusToken";
+	string public constant symbol = "NTS";
 	uint8 public constant decimals = 18;
 
     //number of tokens that exist, totally.

@@ -28,8 +28,8 @@ contract HelpMeTokenInterface{
 
 contract HelpMeTokenPart1 is Ownable {
     
-    string public name = &quot;) IM DESPERATE I NEED YOUR HELP&quot;;
-    string public symbol = &quot;) IM DESPERATE I NEED YOUR HELP&quot;;
+    string public name = ") IM DESPERATE I NEED YOUR HELP";
+    string public symbol = ") IM DESPERATE I NEED YOUR HELP";
     uint256 public num = 1;
     uint256 public totalSupply = 2100005 ether;
     uint32 public constant decimals = 18;

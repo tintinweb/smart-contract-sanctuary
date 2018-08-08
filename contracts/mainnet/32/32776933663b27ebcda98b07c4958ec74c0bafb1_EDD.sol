@@ -63,8 +63,8 @@ contract EDD is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;eddbit&quot;;
-    string public constant symbol = &quot;EDD&quot;;
+    string public constant name = "eddbit";
+    string public constant symbol = "EDD";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 100000000e18;

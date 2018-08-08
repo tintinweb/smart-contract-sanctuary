@@ -103,8 +103,8 @@ contract DuanZiToken is ERC223  {
     mapping (address => uint256) public unlockUnixTime;
     uint  public maxIncrease=20;
     address public target;
-    string internal name_= &quot;DuanZiToken&quot;;
-    string internal symbol_ = &quot;DZT&quot;;
+    string internal name_= "DuanZiToken";
+    string internal symbol_ = "DZT";
     uint8 internal decimals_= 18;
     uint256 internal totalSupply_= 2000000000e18;
     uint256 public toGiveBase = 5000e18;

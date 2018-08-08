@@ -118,8 +118,8 @@ contract CoinDogToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CoinDogToken() public {
-        symbol = &quot;CDS&quot;;
-        name = &quot;Coin Dogs Share&quot;;
+        symbol = "CDS";
+        name = "Coin Dogs Share";
         decimals = 0;
         TotalSupply = 3000000;
         setAmountToDistribute(TotalSupply/3);

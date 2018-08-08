@@ -188,8 +188,8 @@ contract Skorch is ERC20Interface, Owned {
         public 
         onlyOwner()
     {
-        symbol = &quot;SKO&quot;;
-        name = &quot;Skorch&quot;;
+        symbol = "SKO";
+        name = "Skorch";
         decimals = 8;
         // uncomment this to test 
         //balances[msg.sender] = (21000) * (10 ** uint(decimals)); // change 21000 to some lower number than 21000 

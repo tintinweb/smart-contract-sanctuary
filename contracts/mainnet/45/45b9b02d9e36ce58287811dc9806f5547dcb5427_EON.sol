@@ -91,8 +91,8 @@ contract UnboundedRegularToken is RegularToken {
 contract EON is UnboundedRegularToken {
 
     uint8 public constant decimals = 18;
-    string public constant name = &quot;entertainment open network&quot;;
-    string public constant symbol = &quot;EON&quot;;
+    string public constant name = "entertainment open network";
+    string public constant symbol = "EON";
 
     constructor() public {
         totalSupply = 21*10**26;

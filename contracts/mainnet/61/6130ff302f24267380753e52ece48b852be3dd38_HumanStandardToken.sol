@@ -3,7 +3,7 @@
 	IOB token is a Security Token. 
 	The token holders are qualified to receive dividends from time to time when the dividend distributions are declared by the management.
 	
-	As we&#39;re exploring the &quot;Same Token, Multiple Offerings and Listings,&quot; Token Contract may be updated in the future to meet different local requirements by various jurisdictions and exchanges.
+	As we&#39;re exploring the "Same Token, Multiple Offerings and Listings," Token Contract may be updated in the future to meet different local requirements by various jurisdictions and exchanges.
 */
 
 pragma solidity 0.4.23;
@@ -87,10 +87,10 @@ contract HumanStandardToken is StandardToken {
 
     /* Public variables of the token */
 
-    string public name;                   //Token Name is &quot;IOB Token&quot;
+    string public name;                   //Token Name is "IOB Token"
     uint8 public decimals;                //Decimals is 18
-    string public symbol;                 //Token symbol is &quot;IOB&quot;
-    string public version = &quot;H0.1&quot;;       //human 0.1 standard. Just an arbitrary versioning scheme.
+    string public symbol;                 //Token symbol is "IOB"
+    string public version = "H0.1";       //human 0.1 standard. Just an arbitrary versioning scheme.
 
     constructor (
         uint256 _initialAmount,
@@ -100,9 +100,9 @@ contract HumanStandardToken is StandardToken {
         ) public {
         balances[msg.sender] = _initialAmount;               // Initial Amount = 1,000,000,000 * (10 ** uint256(decimals))
         totalSupply = _initialAmount;                        // Total supply = 1,000,000,000 * (10 ** uint256(decimals))
-        name = _tokenName;                                   // Set the name to &quot;IOB Token&quot;
+        name = _tokenName;                                   // Set the name to "IOB Token"
         decimals = _decimalUnits;                            // Amount of decimals for display purposes，set to 18
-        symbol = _tokenSymbol;                               // Set the symbol for display purposes,set to &quot;IOB&quot;
+        symbol = _tokenSymbol;                               // Set the symbol for display purposes,set to "IOB"
     }
 
 }

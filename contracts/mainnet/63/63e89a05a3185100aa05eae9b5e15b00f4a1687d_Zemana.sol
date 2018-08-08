@@ -73,8 +73,8 @@ contract Zemana is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Zemana&quot;;
-    string public constant symbol = &quot;ZMA&quot;;
+    string public constant name = "Zemana";
+    string public constant symbol = "ZMA";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000000e8;

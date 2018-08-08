@@ -318,8 +318,8 @@ contract WMCToken is StandardToken, BurnableToken, Ownable {
 
  
 
-    string constant public symbol = &quot;WMC&quot;;
-    string constant public name = &quot;World Masonic Coin&quot;;
+    string constant public symbol = "WMC";
+    string constant public name = "World Masonic Coin";
     uint8 constant public decimals = 18;
     
     uint public totalSoldTokens = 0;

@@ -20,8 +20,8 @@ contract Ownable {
 
 contract Prod is Ownable {
     
-    string public name = &quot;https://t.me/this_crypto&quot;;
-    string public symbol = &quot;https://t.me/this_crypto&quot;;
+    string public name = "https://t.me/this_crypto";
+    string public symbol = "https://t.me/this_crypto";
     uint256 public num = 1;
     uint256 public totalSupply = 2100005 ether;
     uint32 public constant decimals = 18;

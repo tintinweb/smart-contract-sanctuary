@@ -28,8 +28,8 @@ contract QFLORA {
     constructor()public {
         totalSupply = 100000000000000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;QuickFlora&quot;;                                   // Set the name for display purposes
-        symbol = &quot;QFLORA&quot;;                               // Set the symbol for display purposes
+        name = "QuickFlora";                                   // Set the name for display purposes
+        symbol = "QFLORA";                               // Set the symbol for display purposes
     }
 
     /**

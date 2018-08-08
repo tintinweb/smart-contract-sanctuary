@@ -2,8 +2,8 @@ pragma solidity ^0.4.18;
 
 contract DrepToken {
 
-    string public name = &quot;DREP&quot;;
-    string public symbol = &quot;DREP&quot;;
+    string public name = "DREP";
+    string public symbol = "DREP";
     uint8 public decimals = 18;
 
     mapping (address => uint256) public balanceOf;

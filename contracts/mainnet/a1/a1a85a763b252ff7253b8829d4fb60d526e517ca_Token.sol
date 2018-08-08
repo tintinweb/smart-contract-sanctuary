@@ -141,8 +141,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 
 contract Token is StandardToken, Own {
-  string public constant name = &quot;TribeToken&quot;;
-  string public constant symbol = &quot;TRIBE&quot;;
+  string public constant name = "TribeToken";
+  string public constant symbol = "TRIBE";
   uint public constant decimals = 6;
 
   // Token constructor
@@ -331,9 +331,9 @@ contract Crowdsale is Pause, Puller {
 
 
 	//Refund function when minimum cap isnt reached, this is step is step 2, THIS FUNCTION ONLY AVAILABLE IF MIN CAP NOT REACHED.
-  //STEP1: From TRIBE token contract use &quot;approve&quot; function with the amount of TRIBE you got in total.
-  //STEP2: From TRIBE crowdsale contract use &quot;refund&quot; function with the amount of TRIBE you got in total.
-  //STEP3: From TRIBE crowdsale contract use &quot;withdrawPayement&quot; function to recieve the ETH.
+  //STEP1: From TRIBE token contract use "approve" function with the amount of TRIBE you got in total.
+  //STEP2: From TRIBE crowdsale contract use "refund" function with the amount of TRIBE you got in total.
+  //STEP3: From TRIBE crowdsale contract use "withdrawPayement" function to recieve the ETH.
 	function refund(uint _value) minCapNotReached public {
 		
 		if (_value != backers[msg.sender].coinSent) throw; // compare value from backer balance

@@ -158,8 +158,8 @@ contract CryptonCoin is StandardToken {
     function CryptonCoin() public {
         fundsWallet = msg.sender;
 
-        name = &quot;CRYPTON&quot;;
-        symbol = &quot;CRN&quot;;
+        name = "CRYPTON";
+        symbol = "CRN";
         decimals = 18;
 
         balances[fundsWallet] = 0;

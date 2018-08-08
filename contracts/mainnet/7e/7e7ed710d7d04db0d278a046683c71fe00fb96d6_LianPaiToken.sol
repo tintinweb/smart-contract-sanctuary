@@ -113,8 +113,8 @@ contract LianPaiToken is UnboundedRegularToken {
 
     uint public totalSupply = 950000000000000000000000000;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;LianPaiToken&quot;;
-    string constant public symbol = &quot;LP&quot;;
+    string constant public name = "LianPaiToken";
+    string constant public symbol = "LP";
 
     function LianPaiToken() {
         balances[msg.sender] = totalSupply;

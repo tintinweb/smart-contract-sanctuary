@@ -3,7 +3,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -96,7 +96,7 @@ library XTVNetworkUtils {
     }
 
     bytes32 prefixedHash = keccak256(
-      abi.encodePacked(&quot;\x19Ethereum Signed Message:\n32&quot;, hash)
+      abi.encodePacked("\x19Ethereum Signed Message:\n32", hash)
     );
 
     // solium-disable-next-line arg-overflow
@@ -419,8 +419,8 @@ contract ERC20Token is ERC20, Ownable {
 contract XTVToken is XTVNetworkGuard, ERC20Token {
   using SafeMath for uint256;
 
-  string public constant name = &quot;XTV&quot;;
-  string public constant symbol = &quot;XTV&quot;;
+  string public constant name = "XTV";
+  string public constant symbol = "XTV";
   uint public constant decimals = 18;
 
   address public fullfillTeamAddress;

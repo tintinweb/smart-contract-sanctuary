@@ -16,8 +16,8 @@ contract ERC20Interface {
 // ioucoin
 // YOU get a ioucoin, and YOU get a ioucoin, and YOU get a ioucoin!
 contract IOUcoin is ERC20Interface {
-    string public constant symbol = &quot;IOU&quot;;
-    string public constant name = &quot;LOVE COIN&quot;;
+    string public constant symbol = "IOU";
+    string public constant name = "LOVE COIN";
     uint8 public constant decimals = 8;
 
     uint256 _totalSupply = 5201314000000000;

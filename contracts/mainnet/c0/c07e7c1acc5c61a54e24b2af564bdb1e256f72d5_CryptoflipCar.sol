@@ -356,12 +356,12 @@ return c;
 
 function InitiateCompanies() public onlyOwner {
   require(companiesAreInitiated == false);
-  addCompany(&quot;Aston Martin&quot;, 0xe7eca2a94e9d59848f3c1e1ffaacd881d4c3a4f2, 592240896000000000 ,true);
-  addCompany(&quot;BMW&quot;, 0x327bfb6286026bd1a017ba6693e0f47c8b98731b, 592240896000000000 ,true);
-  addCompany(&quot;Ferrari&quot;, 0xef764bac8a438e7e498c2e5fccf0f174c3e3f8db, 379641600000000000 ,true);
-  addCompany(&quot;Honda&quot;, 0xef764bac8a438e7e498c2e5fccf0f174c3e3f8db, 243360000000000000 ,true);
-  companies[0].adv_text=&quot;BurnUP!!!&quot;;
-  companies[0].adv_link=&quot;https://burnup.io/?r=0x049bEd1598655b64F09E4835084fBc502ab1aD86&quot;;
+  addCompany("Aston Martin", 0xe7eca2a94e9d59848f3c1e1ffaacd881d4c3a4f2, 592240896000000000 ,true);
+  addCompany("BMW", 0x327bfb6286026bd1a017ba6693e0f47c8b98731b, 592240896000000000 ,true);
+  addCompany("Ferrari", 0xef764bac8a438e7e498c2e5fccf0f174c3e3f8db, 379641600000000000 ,true);
+  addCompany("Honda", 0xef764bac8a438e7e498c2e5fccf0f174c3e3f8db, 243360000000000000 ,true);
+  companies[0].adv_text="BurnUP!!!";
+  companies[0].adv_link="https://burnup.io/?r=0x049bEd1598655b64F09E4835084fBc502ab1aD86";
   companies[0].adv_owner=0x049bed1598655b64f09e4835084fbc502ab1ad86;
   companies[0].adv_price=8000000000000000;
   companiesAreInitiated = true;
@@ -385,16 +385,16 @@ function setReleaseCompany(uint256 _companyId, bool is_released) public onlyOwne
 
 function InitiateMakes() public onlyOwner {
   require(makesAreInitiated == false);
-  addMake(&quot;DB5&quot;, 0x7396176ac6c1ef05d57180e7733b9188b3571d9a, 98465804768000000 ,0, true);
-  addMake(&quot;DB6&quot;, 0x3130259deedb3052e24fad9d5e1f490cb8cccaa0, 62320129600000000 ,0, true);
-  addMake(&quot;DB9&quot;, 0xa2381223639181689cd6c46d38a1a4884bb6d83c, 39443120000000000 ,0, true);
-  addMake(&quot;One-77&quot;, 0xa2381223639181689cd6c46d38a1a4884bb6d83c, 39443120000000000 ,0, true);
-  addMake(&quot;BMW 507&quot;, 0x049bed1598655b64f09e4835084fbc502ab1ad86, 98465804768000000 ,1, false);
-  addMake(&quot;BMW Z8&quot;, 0xd17e2bfe196470a9fefb567e8f5992214eb42f24, 98465804768000000 ,1, false);
-  addMake(&quot;Fererrari LaFerrari&quot;, 0x7396176ac6c1ef05d57180e7733b9188b3571d9a, 24964000000000000 ,2, true);
-  addMake(&quot;Ferrari California&quot;, 0xa2381223639181689cd6c46d38a1a4884bb6d83c, 15800000000000000 ,2, true);
-  addMake(&quot;Honda Accord&quot;, 0x7396176ac6c1ef05d57180e7733b9188b3571d9a, 24964000000000000 ,3, true);
-  addMake(&quot;Honda Civic&quot;, 0xa2381223639181689cd6c46d38a1a4884bb6d83c, 15800000000000000 ,3, false);
+  addMake("DB5", 0x7396176ac6c1ef05d57180e7733b9188b3571d9a, 98465804768000000 ,0, true);
+  addMake("DB6", 0x3130259deedb3052e24fad9d5e1f490cb8cccaa0, 62320129600000000 ,0, true);
+  addMake("DB9", 0xa2381223639181689cd6c46d38a1a4884bb6d83c, 39443120000000000 ,0, true);
+  addMake("One-77", 0xa2381223639181689cd6c46d38a1a4884bb6d83c, 39443120000000000 ,0, true);
+  addMake("BMW 507", 0x049bed1598655b64f09e4835084fbc502ab1ad86, 98465804768000000 ,1, false);
+  addMake("BMW Z8", 0xd17e2bfe196470a9fefb567e8f5992214eb42f24, 98465804768000000 ,1, false);
+  addMake("Fererrari LaFerrari", 0x7396176ac6c1ef05d57180e7733b9188b3571d9a, 24964000000000000 ,2, true);
+  addMake("Ferrari California", 0xa2381223639181689cd6c46d38a1a4884bb6d83c, 15800000000000000 ,2, true);
+  addMake("Honda Accord", 0x7396176ac6c1ef05d57180e7733b9188b3571d9a, 24964000000000000 ,3, true);
+  addMake("Honda Civic", 0xa2381223639181689cd6c46d38a1a4884bb6d83c, 15800000000000000 ,3, false);
   makesAreInitiated = true;
 }
 
@@ -415,16 +415,16 @@ function addMake(string name, address address1, uint256 price, uint256 companyId
 
 function InitiateCars() public onlyOwner {
   require(carsAreInitiated == false);
-  addCar(&quot;1964 DB5 James Bond Edition&quot;, 0x5c035bb4cb7dacbfee076a5e61aa39a10da2e956, 8100000000000000 ,0, 0, true);
-  addCar(&quot;Blue 1965&quot; , 0x71f35825a3b1528859dfa1a64b24242bc0d12990, 8100000000000000 ,0, 0, true);
-  addCar(&quot;1964 DB5 James Bond Edition&quot;, 0x71f35825a3b1528859dfa1a64b24242bc0d12990, 8100000000000000 ,0, 0, true);
-  addCar(&quot;Blue 1965&quot; , 0x71f35825a3b1528859dfa1a64b24242bc0d12990, 8100000000000000 ,0, 0, true);
-  addCar(&quot;Z8 2003&quot;, 0x3177abbe93422c9525652b5d4e1101a248a99776, 10000000000000000 ,1, 5, true);
-  addCar(&quot;DB6 Chocolate&quot;, 0x3177abbe93422c9525652b5d4e1101a248a99776, 10000000000000000 ,0, 1, true);
-  addCar(&quot;507 Black&quot;, 0x3177abbe93422c9525652b5d4e1101a248a99776, 10000000000000000 ,1, 4, true);
-  addCar(&quot;507 Silver&quot;, 0x62d5be95c330b512b35922e347319afd708da981, 16200000000000000 ,1, 4, true);
-  addCar(&quot;Z8 Black with Red Interior&quot;, 0x3177abbe93422c9525652b5d4e1101a248a99776, 10000000000000000 ,1, 5, true);
-  addCar(&quot;Gordon Ramsey&#39;s Grey LaFerrari&quot;, 0x3177abbe93422c9525652b5d4e1101a248a99776, 10000000000000000 ,2, 6, true);
+  addCar("1964 DB5 James Bond Edition", 0x5c035bb4cb7dacbfee076a5e61aa39a10da2e956, 8100000000000000 ,0, 0, true);
+  addCar("Blue 1965" , 0x71f35825a3b1528859dfa1a64b24242bc0d12990, 8100000000000000 ,0, 0, true);
+  addCar("1964 DB5 James Bond Edition", 0x71f35825a3b1528859dfa1a64b24242bc0d12990, 8100000000000000 ,0, 0, true);
+  addCar("Blue 1965" , 0x71f35825a3b1528859dfa1a64b24242bc0d12990, 8100000000000000 ,0, 0, true);
+  addCar("Z8 2003", 0x3177abbe93422c9525652b5d4e1101a248a99776, 10000000000000000 ,1, 5, true);
+  addCar("DB6 Chocolate", 0x3177abbe93422c9525652b5d4e1101a248a99776, 10000000000000000 ,0, 1, true);
+  addCar("507 Black", 0x3177abbe93422c9525652b5d4e1101a248a99776, 10000000000000000 ,1, 4, true);
+  addCar("507 Silver", 0x62d5be95c330b512b35922e347319afd708da981, 16200000000000000 ,1, 4, true);
+  addCar("Z8 Black with Red Interior", 0x3177abbe93422c9525652b5d4e1101a248a99776, 10000000000000000 ,1, 5, true);
+  addCar("Gordon Ramsey&#39;s Grey LaFerrari", 0x3177abbe93422c9525652b5d4e1101a248a99776, 10000000000000000 ,2, 6, true);
   carsAreInitiated = true;
 }
 

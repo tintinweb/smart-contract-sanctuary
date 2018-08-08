@@ -88,8 +88,8 @@ contract RCCToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     /////////////////////////////////////////////////////////////
     constructor() public {
-        symbol = &quot;Ʀ&quot;;
-        name = &quot;RCC&quot;;
+        symbol = "Ʀ";
+        name = "RCC";
         decimals = 18;
         _totalSupply = 1000000000000000000000000;
         balances[0x504474e3c6BCacfFbF85693F44D050007b9C5257] = _totalSupply;

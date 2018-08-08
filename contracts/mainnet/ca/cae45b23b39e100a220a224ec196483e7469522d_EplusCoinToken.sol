@@ -104,8 +104,8 @@ contract StandardToken is ERC20, SafeMath {
 /// @title EplusCoin Token
 contract EplusCoinToken is StandardToken {
 
-    string public name = &quot;EplusCoin&quot;;          // name of the token
-    string public symbol = &quot;EPC&quot;;
+    string public name = "EplusCoin";          // name of the token
+    string public symbol = "EPC";
     uint256 public decimals = 8;                  // token has 8 digit precision
     string public version = &#39;H0.1&#39;;
 

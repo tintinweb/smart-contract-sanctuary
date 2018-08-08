@@ -224,8 +224,8 @@ library SafeMath {
 contract ERC20Token is BaseContract {
     using SafeMath for uint256;
 
-    string public name = &quot;&quot;;
-    string public symbol = &quot;&quot;;
+    string public name = "";
+    string public symbol = "";
     uint8 public decimals = 0;
     uint256 public totalSupply = 0;
     mapping (address => uint256) public balanceOf;
@@ -347,7 +347,7 @@ contract XBPToken is BaseContract, Owned, TokenRetriever, ERC20Token {
 
     function XBPToken()
         public
-        ERC20Token(&quot;BlitzPredict&quot;, &quot;XBP&quot;, 18)
+        ERC20Token("BlitzPredict", "XBP", 18)
     {
     }
 

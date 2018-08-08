@@ -230,8 +230,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract TRIPToken is StandardToken {
-	string public name = &quot;trip token&quot;; 
-	string public symbol = &quot;TRIP&quot;;
+	string public name = "trip token"; 
+	string public symbol = "TRIP";
 	uint public decimals = 18;
 	uint public INITIAL_SUPPLY = 100000000 * (10 ** decimals);
 	

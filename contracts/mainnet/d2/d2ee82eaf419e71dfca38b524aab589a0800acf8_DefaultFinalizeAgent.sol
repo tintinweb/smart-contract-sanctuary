@@ -411,12 +411,12 @@ contract Crowdsale is Haltable {
    *
    * No money is exchanged, as the crowdsale team already have received the payment.
    *
-   * @param tokenAmount Tokens (in &quot;atomic units&quot;) allocated to the contributor
+   * @param tokenAmount Tokens (in "atomic units") allocated to the contributor
    * @param weiAmount Contribution in wei
    *
    */
   function preallocate(address receiver, uint tokenAmount, uint weiAmount) public onlyOwner {
-    // Free pre-allocations don&#39;t count as &quot;sold tokens&quot;
+    // Free pre-allocations don&#39;t count as "sold tokens"
     if (weiAmount == 0) {
       tokenAmountOf[receiver] = tokenAmountOf[receiver].plus(tokenAmount);
       assignTokens(receiver, tokenAmount);

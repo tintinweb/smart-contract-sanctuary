@@ -61,8 +61,8 @@ contract AtraToken is AttributaOwners, ERC20Interface, ExtendERC20Interface {
     mapping(address => mapping(address => uint)) allowed;
 
     function AtraToken() public {
-        symbol = &quot;ATRA&quot;;
-        name = &quot;Atra Token&quot;;
+        symbol = "ATRA";
+        name = "Atra Token";
         decimals = 0;
         _totalSupply = 100000000000; //100,000,000,000
         balances[owner] = _totalSupply;

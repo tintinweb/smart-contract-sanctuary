@@ -364,11 +364,11 @@ contract JoyArt is AccessControl, DetailedERC721 {
     }
 
     function name() public view returns (string _name) {
-        _name = &quot;John Orion Young&quot;;
+        _name = "John Orion Young";
     }
 
     function symbol() public view returns (string _symbol) {
-        _symbol = &quot;JOY&quot;;
+        _symbol = "JOY";
     }
 
     function _owns(address _claimant, uint256 _tokenId) private view returns (bool) {

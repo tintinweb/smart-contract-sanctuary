@@ -1,9 +1,9 @@
 pragma solidity ^0.4.16;
 
 contract IPGToken {
-    string public name = &quot;IPGToken&quot;;      //  token name
-    string public symbol = &quot;IPG&quot;;           //  token symbol
-    string public version = &quot;1.0&quot;;
+    string public name = "IPGToken";      //  token name
+    string public symbol = "IPG";           //  token symbol
+    string public version = "1.0";
     uint256 public decimals = 8;            //  token digit
 
     mapping (address => uint256) public balanceOf;

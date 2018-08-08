@@ -1,7 +1,7 @@
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -87,7 +87,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 
 
@@ -101,8 +101,8 @@ contract GemsToken is Ownable{
   event Approval(address indexed owner, address indexed spender, uint256 value);
   event Transfer(address indexed from, address indexed to, uint256 value);
   
-  string public name = &quot;Gems Of Power&quot;;
-  string public symbol = &quot;GOP&quot;;
+  string public name = "Gems Of Power";
+  string public symbol = "GOP";
   uint8 public decimals = 0;
   uint256 public totalSupply = 200000000 * 10 ** uint(decimals);
   address crowdsaleContract = address(0x0);

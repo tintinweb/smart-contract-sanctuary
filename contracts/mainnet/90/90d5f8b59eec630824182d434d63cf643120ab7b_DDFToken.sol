@@ -195,7 +195,7 @@ contract splitterContract is Ownable{
         theList[whom] = xRec(true,0x0,last,value);
         theList[last].next = whom;
         last = whom;
-        ev(&quot;add&quot;,whom,value);
+        ev("add",whom,value);
     }
 
     function remove(address whom) internal {
@@ -213,7 +213,7 @@ contract splitterContract is Ownable{
             theList[next].prev = prev;
         }
         theList[whom] = xRec(false,0x0,0x0,0);
-        ev(&quot;remove&quot;,whom,0);
+        ev("remove",whom,0);
     }
 
     function update(address whom, uint256 value) onlyMeOrDDF {
@@ -226,7 +226,7 @@ contract splitterContract is Ownable{
                 add(whom,value);
             } else {
                 theList[whom].val = value;
-                ev(&quot;update&quot;,whom,value);
+                ev("update",whom,value);
             }
             return;
         }
@@ -242,10 +242,10 @@ contract splitterContract is Ownable{
 contract DDFToken is StandardToken, SafeMath {
 
     // metadata
-    string public constant name = &quot;Digital Developers Fund Token&quot;;
-    string public constant symbol = &quot;DDF&quot;;
+    string public constant name = "Digital Developers Fund Token";
+    string public constant symbol = "DDF";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     // contracts
     address public ethFundDeposit;      // deposit address for ETH for Domain Development Fund

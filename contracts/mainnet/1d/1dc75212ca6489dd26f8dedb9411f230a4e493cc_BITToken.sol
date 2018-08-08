@@ -379,8 +379,8 @@ contract BITToken is MintableToken, PausableToken {
     event TransferWithData(address indexed _from, address indexed _to, uint256 _value, bytes32 data);
 
     uint256 public constant decimals = 18;
-    string public constant name = &quot;TempToken2&quot;;
-    string public constant symbol = &quot;TEMP2&quot;;
+    string public constant name = "TempToken2";
+    string public constant symbol = "TEMP2";
 
     function transferWithData (address _to, uint256 _value, bytes32 _data) public returns(bool res) {
         if (super.transfer(_to, _value)) {

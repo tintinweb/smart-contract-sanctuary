@@ -58,8 +58,8 @@ contract LRKToken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;LRKToken&quot;;
-    string public constant symbol = &quot;LRK&quot;;
+    string public constant name = "LRKToken";
+    string public constant symbol = "LRK";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 1000000000e18;

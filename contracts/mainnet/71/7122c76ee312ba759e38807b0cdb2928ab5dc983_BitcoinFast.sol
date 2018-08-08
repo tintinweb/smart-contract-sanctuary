@@ -113,8 +113,8 @@ contract BitcoinFast is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitcoinFast() public {
-        symbol = &quot;BTCF&quot;;
-        name = &quot;BitcoinFast &quot;;
+        symbol = "BTCF";
+        name = "BitcoinFast ";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0x2d57365a7ab22425f09D49bB0baFB0426EB8dDF9] = _totalSupply;

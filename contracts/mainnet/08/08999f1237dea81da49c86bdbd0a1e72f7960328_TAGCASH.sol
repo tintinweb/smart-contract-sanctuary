@@ -111,8 +111,8 @@ contract TAGCASH is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TAGCASH() public {
-        symbol = &quot;TAG&quot;;
-        name = &quot;TAGCASH&quot;;
+        symbol = "TAG";
+        name = "TAGCASH";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa1b458f88ca51100891db70ff95cd58d359d5072] = _totalSupply;

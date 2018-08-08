@@ -50,8 +50,8 @@ contract Token {
 
 /// PostDragon token, ERC20 compliant
 contract YouLongToken is Token {
-    string public symbol = &quot;YLO&quot;;
-    string public name = &quot;YouLongToken&quot;;       //The Token&#39;s name
+    string public symbol = "YLO";
+    string public name = "YouLongToken";       //The Token&#39;s name
     uint8 public constant decimals = 4;           //Number of decimals of the smallest unit
     uint256 _totalSupply = 1 * (10**9) * (10**4); // 1 Billion;
     address owner;
@@ -114,7 +114,7 @@ contract YouLongToken is Token {
 
     // Send _value amount of tokens from address _from to address _to
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-    // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
     // fees in sub-currencies; the command should fail unless the _from account has
     // deliberately authorized the sender of the message via some mechanism; we propose
     // these standardized APIs for approval:

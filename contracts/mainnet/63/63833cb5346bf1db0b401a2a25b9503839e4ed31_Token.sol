@@ -91,8 +91,8 @@ contract Token is ERC20Interface, Owned {
 
 
     function Token() public {
-        symbol = &quot;POTS&quot;;
-        name = &quot;Ports Coin&quot;;
+        symbol = "POTS";
+        name = "Ports Coin";
         decimals = 4;
         _totalSupply = 6000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

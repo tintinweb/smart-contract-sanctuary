@@ -179,8 +179,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract BLUECoin is StandardToken, Ownable {
 
-  string public constant name = &quot;LiteCoinW&quot;;
-  string public constant symbol = &quot;LTCW&quot;;
+  string public constant name = "LiteCoinW";
+  string public constant symbol = "LTCW";
   uint8 public constant decimals = 8;
 
   uint256 public constant SUPPLY_CAP = 100000 * (10 ** uint256(decimals));
@@ -200,7 +200,7 @@ event NonceTick(uint nonce);
 
   // Note intended to act as a source of authorized messaging from development team
   event NoteChanged(string newNote);
-  string public note = &quot;Welcome to the future of cryptocurrency.&quot;;
+  string public note = "Welcome to the future of cryptocurrency.";
   function setNote(string note_) public onlyOwner {
       note = note_;
       NoteChanged(note);

@@ -22,8 +22,8 @@ contract IMTERC20{
     function IMTERC20() public{
         balanceOf[msg.sender] = 500000000 * (10**18); // Give the creator all initial tokens
         totalSupply = 500000000 * (10**18);                        // Update total supply
-        name = &quot;Intelligent Manufacturing Chain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;IMT&quot;;                               // Set the symbol for display purposes
+        name = "Intelligent Manufacturing Chain";                                   // Set the name for display purposes
+        symbol = "IMT";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

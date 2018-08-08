@@ -49,7 +49,7 @@ contract Crowdsale
         if (msg.sender == owner) _;
     }
 
-    /* модификатор проверяющий &quot;вызывает продавец или вызывает владелец контракта?&quot; */
+    /* модификатор проверяющий "вызывает продавец или вызывает владелец контракта?" */
     modifier isSetPrice()
     {
         if (msg.sender == seller || msg.sender == owner) _;

@@ -181,8 +181,8 @@ contract Ownable {
 contract MintableToken is StandardToken, Ownable {
   event Mint(address indexed to, uint256 amount);
   event MintFinished();
-  string public name = &quot;Crystal Clear Token&quot;;
-  string public symbol = &quot;CCT&quot;;
+  string public name = "Crystal Clear Token";
+  string public symbol = "CCT";
   uint256 public decimals = 18;
 
   bool public mintingFinished = false;

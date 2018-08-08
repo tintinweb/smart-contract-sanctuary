@@ -209,8 +209,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract NucleusVisionCoreToken is MintableToken {
-  string public constant name = &quot;NucleusVisionCore&quot;;
-  string public constant symbol = &quot;nCore&quot;;
+  string public constant name = "NucleusVisionCore";
+  string public constant symbol = "nCore";
   uint8 public constant decimals = 0;
 
   /**

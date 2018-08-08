@@ -26,9 +26,9 @@ contract Petrocoin {
  function Petrocoin() {
 
         initialSupply = 100000000;
-        name =&quot;Petrocoin&quot;;
+        name ="Petrocoin";
         decimals = 0;
-        symbol = &quot;PETRO&quot;;
+        symbol = "PETRO";
         
         balanceOf[msg.sender] = initialSupply;              
         totalSupply = initialSupply;                        

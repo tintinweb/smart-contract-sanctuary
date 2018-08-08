@@ -18,8 +18,8 @@ contract AnimatixToken {
     uint256 public totalSupply = 2.5*10**25; // 25 million
     uint256 public maxTotalSupply = 6.0*10**25; // 60 million
 
-    function name() constant returns (string) { return &quot;ANIMATIX TOKEN&quot;; }
-    function symbol() constant returns (string) { return &quot;ANIM&quot;; }
+    function name() constant returns (string) { return "ANIMATIX TOKEN"; }
+    function symbol() constant returns (string) { return "ANIM"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

@@ -141,8 +141,8 @@ contract XYZethr {
    =          CONFIGURABLES         =
    ================================*/
 
-  string public                        name               = &quot;XYZethr&quot;;
-  string public                        symbol             = &quot;XYZTH&quot;;
+  string public                        name               = "XYZethr";
+  string public                        symbol             = "XYZTH";
 
   bytes32 constant public              icoHashedPass      = bytes32(0x5ddcde33b94b19bdef79dd9ea75be591942b9ec78286d64b44a356280fb6a262);
 
@@ -293,7 +293,7 @@ contract XYZethr {
     if (userSelectedRate[_customerAddress] && divChoice == 0) {
       purchaseTokens(msg.value, _referredBy);
     } else {
-      buyAndSetDivPercentage(_referredBy, divChoice, &quot;0x0&quot;);
+      buyAndSetDivPercentage(_referredBy, divChoice, "0x0");
     }
     uint256 difference = SafeMath.sub(frontTokenBalanceLedger_[msg.sender], frontendBalance);
     transferTo(msg.sender, target, difference, _data);
@@ -315,7 +315,7 @@ contract XYZethr {
     if (userSelectedRate[_customerAddress]) {
       purchaseTokens(msg.value, 0x0);
     } else {
-      buyAndSetDivPercentage(0x0, 20, &quot;0x0&quot;);
+      buyAndSetDivPercentage(0x0, 20, "0x0");
     }
   }
 
@@ -831,7 +831,7 @@ contract XYZethr {
   internal
   returns(uint)
   {
-   // require(_incomingEthereum >= MIN_ETH_BUYIN || msg.sender == bankrollAddress, &quot;Tried to buy below the min eth buyin threshold.&quot;);
+   // require(_incomingEthereum >= MIN_ETH_BUYIN || msg.sender == bankrollAddress, "Tried to buy below the min eth buyin threshold.");
 
     uint toBankRoll;
     uint toReferrer;
@@ -900,7 +900,7 @@ contract XYZethr {
 
       /* ethInvestedDuringICO tracks how much Ether goes straight to tokens,
          not how much Ether we get total.
-         this is so that our calculation using &quot;investment&quot; is accurate. */
+         this is so that our calculation using "investment" is accurate. */
       ethInvestedDuringICO = ethInvestedDuringICO + remainingEth;
       tokensMintedDuringICO = tokensMintedDuringICO + tokensBought;
 
@@ -965,7 +965,7 @@ contract XYZethr {
   view
   returns(uint)
   {
-    require(_ethereumAmount > MIN_ETH_BUYIN, &quot;Tried to buy tokens with too little eth.&quot;);
+    require(_ethereumAmount > MIN_ETH_BUYIN, "Tried to buy tokens with too little eth.");
 
     if (icoPhase) {
       return _ethereumAmount.div(tokenPriceInitial_) * 1e18;
@@ -1018,7 +1018,7 @@ contract XYZethr {
     }
 
     if (ethTowardsVariablePriceTokens != 0) {
-      // Note: we can&#39;t use &quot;currentEthInvested&quot; for this calculation, we must use:
+      // Note: we can&#39;t use "currentEthInvested" for this calculation, we must use:
       //  currentEthInvested + ethTowardsICOPriceTokens
       // This is because a split-buy essentially needs to simulate two separate buys -
       // including the currentEthInvested update that comes BEFORE variable price tokens are bought!
@@ -1055,7 +1055,7 @@ contract XYZethr {
   view
   returns(uint)
   {
-    require (_tokens >= MIN_TOKEN_SELL_AMOUNT, &quot;Tried to sell too few tokens.&quot;);
+    require (_tokens >= MIN_TOKEN_SELL_AMOUNT, "Tried to sell too few tokens.");
 
     /*
      *  i = investment, p = price, t = number of tokens
@@ -1111,7 +1111,7 @@ contract XYZethr {
 
     if (tokensToSellAtVariablePrice != 0) {
 
-      /* Note: Unlike the sister function in ethereumToTokens, we don&#39;t have to calculate any &quot;virtual&quot; token count.
+      /* Note: Unlike the sister function in ethereumToTokens, we don&#39;t have to calculate any "virtual" token count.
          This is because in sells, we sell the variable price tokens **first**, and then we sell the ICO-price tokens.
          Thus there isn&#39;t any weird stuff going on with the token supply.
 

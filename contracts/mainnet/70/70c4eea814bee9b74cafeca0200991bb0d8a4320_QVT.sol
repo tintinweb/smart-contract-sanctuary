@@ -116,8 +116,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract QVT is StandardToken {
 
-    string public name = &quot;QVT&quot;;
-    string public symbol = &quot;QVT&quot;;
+    string public name = "QVT";
+    string public symbol = "QVT";
     uint public decimals = 0;
 
     /**

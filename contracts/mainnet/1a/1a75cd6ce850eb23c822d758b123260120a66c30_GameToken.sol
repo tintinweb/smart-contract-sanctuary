@@ -102,8 +102,8 @@ contract GameToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GameToken() public {
-        symbol = &quot;GMT&quot;;
-        name = &quot;GameToken&quot;;
+        symbol = "GMT";
+        name = "GameToken";
         decimals = 8;
         _totalSupply = 	1000000000000000;
         balances[0x582577395c65C77a5DB93a80746099dfDf01b25C] = _totalSupply;

@@ -130,8 +130,8 @@ contract Tablow is ERC223, SafeMath, Haltable {
 
   mapping(address => uint) balances;
   
-  string public symbol = &quot;TC&quot;;
-    string public name = &quot;Tablow Club&quot;;
+  string public symbol = "TC";
+    string public name = "Tablow Club";
     uint8 public decimals = 18;
     uint256  _totalSupply = 0;
     uint256 _MaxDistribPublicSupply = 0;

@@ -95,8 +95,8 @@ contract BBXCoin is ERC20Interface, Owned, SafeMath {
 
 
     function BBXCoin() public {
-        symbol = &quot;BBX&quot;;
-        name = &quot;BBXCoin&quot;;
+        symbol = "BBX";
+        name = "BBXCoin";
         decimals = 18;
         _totalSupply = 19999999000000000000000000;
         balances[0xEF871E2F799bbF939964E9b707Cb2805EB4Bd515] = _totalSupply;

@@ -45,8 +45,8 @@ interface IERC20 {
 contract MithrilAxe is IERC20 {
     /* Public variables of the token */
     string public standard = &#39;Token 0.1&#39;;
-    string public constant name = &quot;Mithril Axe&quot;;
-    string public constant symbol = &quot;MAXE&quot;;
+    string public constant name = "Mithril Axe";
+    string public constant symbol = "MAXE";
     uint8 public constant decimals = 2;
     uint256 public initialSupply;
     uint256 public totalSupply;

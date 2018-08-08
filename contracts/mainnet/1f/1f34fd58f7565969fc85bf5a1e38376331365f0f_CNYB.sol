@@ -82,9 +82,9 @@ library SafeMath {
 contract CNYB is ERC20,Ownable{
 	using SafeMath for uint256;
 
-	string public constant name=&quot;CNYB&quot;;
-	string public symbol=&quot;CNYB&quot;;
-	string public constant version = &quot;1.0&quot;;
+	string public constant name="CNYB";
+	string public symbol="CNYB";
+	string public constant version = "1.0";
 	uint256 public constant decimals = 18;
 	uint256 public totalSupply;
 

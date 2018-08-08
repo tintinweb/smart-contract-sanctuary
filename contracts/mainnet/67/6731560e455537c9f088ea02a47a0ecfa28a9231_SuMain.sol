@@ -269,7 +269,7 @@ contract SuNFT is ERC165, ERC721, ERC721Metadata, ERC721Enumerable, PublishInter
     ///  `_tokenId` is not a valid NFT. When transfer is complete, this function
     ///  checks if `_to` is a smart contract (code size > 0). If so, it calls
     ///  `onERC721Received` on `_to` and throws if the return value is not
-    ///  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`.
+    ///  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`.
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -281,13 +281,13 @@ contract SuNFT is ERC165, ERC721, ERC721Metadata, ERC721Enumerable, PublishInter
 
     /// @notice Transfers the ownership of an NFT from one address to another address
     /// @dev This works identically to the other function with an extra data parameter,
-    ///  except this function just sets data to &quot;&quot;
+    ///  except this function just sets data to ""
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
     function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable
     {
-        _safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+        _safeTransferFrom(_from, _to, _tokenId, "");
     }
 
     /// @notice Transfer ownership of an NFT -- THE CALLER IS RESPONSIBLE
@@ -337,7 +337,7 @@ contract SuNFT is ERC165, ERC721, ERC721Metadata, ERC721Enumerable, PublishInter
         emit Approval(_owner, _approved, _tokenId);
     }
 
-    /// @notice Enable or disable approval for a third party (&quot;operator&quot;) to manage
+    /// @notice Enable or disable approval for a third party ("operator") to manage
     ///  all your asset.
     /// @dev Emits the ApprovalForAll event
     /// @param _operator Address to add to the set of authorized operators.
@@ -372,25 +372,25 @@ contract SuNFT is ERC165, ERC721, ERC721Metadata, ERC721Enumerable, PublishInter
 
     /// @notice A descriptive name for a collection of NFTs in this contract
     function name() external pure returns (string) {
-        return &quot;Su Squares&quot;;
+        return "Su Squares";
     }
 
     /// @notice An abbreviated name for NFTs in this contract
     function symbol() external pure returns (string) {
-        return &quot;SU&quot;;
+        return "SU";
     }
 
     /// @notice A distinct Uniform Resource Identifier (URI) for a given asset.
     /// @dev Throws if `_tokenId` is not a valid NFT. URIs are defined in RFC
-    ///  3986. The URI may point to a JSON file that conforms to the &quot;ERC721
-    ///  Metadata JSON Schema&quot;.
+    ///  3986. The URI may point to a JSON file that conforms to the "ERC721
+    ///  Metadata JSON Schema".
     function tokenURI(uint256 _tokenId)
         external
         view
         mustBeValidToken(_tokenId)
         returns (string _tokenURI)
     {
-        _tokenURI = &quot;https://tenthousandsu.com/erc721/00000.json&quot;;
+        _tokenURI = "https://tenthousandsu.com/erc721/00000.json";
         bytes memory _tokenURIBytes = bytes(_tokenURI);
         _tokenURIBytes[33] = byte(48+(_tokenId / 10000) % 10);
         _tokenURIBytes[34] = byte(48+(_tokenId / 1000) % 10);
@@ -491,7 +491,7 @@ contract SuNFT is ERC165, ERC721, ERC721Metadata, ERC721Enumerable, PublishInter
 
     uint256 private constant TOTAL_SUPPLY = 10000; // SOLIDITY ISSUE #3356 make this immutable
 
-    bytes4 private constant ERC721_RECEIVED = bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;));
+    bytes4 private constant ERC721_RECEIVED = bytes4(keccak256("onERC721Received(address,uint256,bytes)"));
 
     /// @dev The owner of each NFT
     ///  If value == address(0), NFT is owned by address(this)

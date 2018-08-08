@@ -16,8 +16,8 @@ contract SynthornToken {
 
   uint256 public totalSupply = 0;
 
-  function name() constant returns (string) { return &quot;Synthetic Rhino Horn Aphrodisiac Token&quot;; }
-  function symbol() constant returns (string) { return &quot;HORN&quot;; }
+  function name() constant returns (string) { return "Synthetic Rhino Horn Aphrodisiac Token"; }
+  function symbol() constant returns (string) { return "HORN"; }
   function decimals() constant returns (uint8) { return 18; }
 
   function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

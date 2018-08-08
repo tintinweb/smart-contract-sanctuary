@@ -101,8 +101,8 @@ contract DreamToken is ERC20Interface, Owned, Lockable, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function DreamToken() public {
-        symbol = &quot;DREAM&quot;;
-        name = &quot;Dream&quot;;
+        symbol = "DREAM";
+        name = "Dream";
         decimals = 8;
         maxSupply = 21000000 * 10**8;
         totalSupply = maxSupply;

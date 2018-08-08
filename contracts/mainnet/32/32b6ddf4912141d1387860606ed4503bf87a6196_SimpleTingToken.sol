@@ -75,8 +75,8 @@ contract SimpleTingToken is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     function SimpleTingToken() public payable {
-        symbol = &quot;TING&quot;;
-        name = &quot;Ting&quot;;
+        symbol = "TING";
+        name = "Ting";
         decimals = 18;
         _totalSupply = 10000000 * 10**uint(decimals);
         balances[msg.sender] = _totalSupply;

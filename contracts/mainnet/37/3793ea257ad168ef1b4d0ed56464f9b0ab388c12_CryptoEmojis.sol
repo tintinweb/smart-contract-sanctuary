@@ -12,8 +12,8 @@ contract CryptoEmojis {
     address dev;
 
     // Contract information
-    string constant private tokenName = &quot;CryptoEmojis&quot;;
-    string constant private tokenSymbol = &quot;EMO&quot;;
+    string constant private tokenName = "CryptoEmojis";
+    string constant private tokenSymbol = "EMO";
 
     // Our beloved emojis
     struct Emoji {

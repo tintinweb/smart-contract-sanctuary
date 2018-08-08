@@ -113,8 +113,8 @@ contract OnliCoinToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OnliCoinToken() public {
-        symbol = &quot;OCT&quot;;
-        name = &quot;OnliCoin Token&quot;;
+        symbol = "OCT";
+        name = "OnliCoin Token";
         decimals = 18;
         _totalSupply = 88888888000000000000000000;
         balances[0x9455680b53FbF52f59Cc199122ad8a586878186E] = _totalSupply;

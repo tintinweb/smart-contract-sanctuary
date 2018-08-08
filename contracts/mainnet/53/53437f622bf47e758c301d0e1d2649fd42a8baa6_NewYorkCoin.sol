@@ -109,8 +109,8 @@ contract NewYorkCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NewYorkCoin() public {
-        symbol = &quot;NYC&quot;;
-        name = &quot;NewYorkCoin&quot;;
+        symbol = "NYC";
+        name = "NewYorkCoin";
         decimals = 18;
         _totalSupply = 212000000000000000000000000;
         balances[0x40efa05720ba773ddcfe6e472e723b54d05d680e] = _totalSupply;

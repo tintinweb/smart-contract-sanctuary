@@ -114,8 +114,8 @@ contract TURBOPAIR is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;TBP&quot;;
-        name = &quot;TURBOPAIR&quot;;
+        symbol = "TBP";
+        name = "TURBOPAIR";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

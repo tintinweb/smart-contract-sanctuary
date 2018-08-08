@@ -151,8 +151,8 @@ contract NewToken is BasicToken, ERC20 {
 
 contract THETOKEN is NewToken {
 
-  string public name = &quot;EDOLLAR&quot;;
-  string public symbol = &quot;DLR&quot;;
+  string public name = "EDOLLAR";
+  string public symbol = "DLR";
   uint public decimals = 8;
   uint public INITIAL_SUPPLY = 100000000000000000000000;
 

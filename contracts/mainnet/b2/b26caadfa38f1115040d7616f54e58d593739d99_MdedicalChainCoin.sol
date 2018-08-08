@@ -175,8 +175,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract MdedicalChainCoin is StandardToken {
     using SafeMath for uint256;
-    string public name = &quot;MedicalChain Coin&quot;;
-    string public symbol = &quot;MEDC&quot;;
+    string public name = "MedicalChain Coin";
+    string public symbol = "MEDC";
     uint public decimals = 6;
 
     address public address1 = 0x5E620AB21d107b9618d2e647C4CA03D9AfB41230;

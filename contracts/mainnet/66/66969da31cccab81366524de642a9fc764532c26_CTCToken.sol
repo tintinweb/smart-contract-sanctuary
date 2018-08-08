@@ -63,7 +63,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -296,8 +296,8 @@ contract Pausable is Ownable {
 contract CTCToken is StandardToken, Ownable, Pausable, Destructible
 {
     using SafeMath for uint;
-    string public constant name = &quot;Culture Travel Currency&quot;;
-    string public constant symbol = &quot;CTC&quot;;
+    string public constant name = "Culture Travel Currency";
+    string public constant symbol = "CTC";
     uint public constant decimals = 18;
     uint constant million = 1000000e18;
     uint constant totalToken = 10000*million;

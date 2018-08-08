@@ -113,8 +113,8 @@ contract FantasySportsCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FantasySportsCoin() public {
-        symbol = &quot;FNTC&quot;;
-        name = &quot;Fantasy Sports Coin&quot;;
+        symbol = "FNTC";
+        name = "Fantasy Sports Coin";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0xE5F40f8f8EFe44bDf3585e2779bc855d2Ce214c0] = _totalSupply;

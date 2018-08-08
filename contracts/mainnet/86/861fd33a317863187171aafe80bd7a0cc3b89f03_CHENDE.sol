@@ -12,8 +12,8 @@ pragma solidity ^0.4.16;
  }
   
   contract CHENDE is ERC20 {
-     string public constant symbol = &quot;CHD&quot;;
-     string public constant name = &quot;CHENDE&quot;;
+     string public constant symbol = "CHD";
+     string public constant name = "CHENDE";
      uint8 public constant decimals = 8;
      uint256 _totalSupply = 18000000 * 10**8;
      

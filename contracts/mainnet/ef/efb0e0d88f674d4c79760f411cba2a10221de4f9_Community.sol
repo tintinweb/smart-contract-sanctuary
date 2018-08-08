@@ -35,7 +35,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -111,8 +111,8 @@ contract CommunityToken {
 contract Community is ERC20,CommunityToken,Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;Community Token&quot;;
-    string public symbol = &quot;COM&quot;;
+    string public name = "Community Token";
+    string public symbol = "COM";
     uint public decimals = 18;
 
     uint public chainStartTime; 

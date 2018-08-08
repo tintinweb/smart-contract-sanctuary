@@ -179,8 +179,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract VCChainToken is StandardToken {
   // solium-disable uppercase
-  string public constant name = &quot;VCChain Token&quot;;
-  string public constant symbol = &quot;VCC&quot;;
+  string public constant name = "VCChain Token";
+  string public constant symbol = "VCC";
   uint8 public constant decimals = 8;
   // solium-enable uppercase
 

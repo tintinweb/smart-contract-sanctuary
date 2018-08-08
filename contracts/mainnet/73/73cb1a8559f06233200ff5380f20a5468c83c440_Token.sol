@@ -187,8 +187,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Token is StandardToken {
 
-    string public name    = &quot;Qidian Token&quot;;
-    string public symbol  = &quot;QDT&quot;;
+    string public name    = "Qidian Token";
+    string public symbol  = "QDT";
     uint8 public decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 19940512;

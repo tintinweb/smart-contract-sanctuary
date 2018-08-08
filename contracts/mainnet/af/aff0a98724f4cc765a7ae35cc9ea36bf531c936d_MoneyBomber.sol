@@ -570,9 +570,9 @@ contract MoneyBomber{
 									    mapping (address => uint256) public balances;
 									    mapping (address => mapping (address => uint256)) public allowed;
 									    
-									    string public name = &quot;MoneyBomber&quot;;
+									    string public name = "MoneyBomber";
 									    uint8 public decimals = 18;
-									    string public symbol = &quot;$$$&quot;;
+									    string public symbol = "$$$";
 									    
 									    event Transfer(address indexed _from, address indexed _to, uint256 _value); 
 									    event Approval(address indexed _owner, address indexed _spender, uint256 _value);

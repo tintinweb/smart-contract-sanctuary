@@ -109,8 +109,8 @@ contract COINVR is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function COINVR() public {
-        symbol = &quot;COVR&quot;;
-        name = &quot;COINVR&quot;;
+        symbol = "COVR";
+        name = "COINVR";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x88F22c8632efFA4beF663A658a0a26F2ba418175] = _totalSupply;

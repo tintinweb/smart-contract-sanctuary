@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	Tatneft_20210416_i				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	Tatneft_20210416_i		&quot;	;
-	string	public	constant	symbol =	&quot;	TATNI		&quot;	;
+	string	public	constant	name =	"	Tatneft_20210416_i		"	;
+	string	public	constant	symbol =	"	TATNI		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

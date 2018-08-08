@@ -113,8 +113,8 @@ contract KevCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KevCoin() public {
-        symbol = &quot;KEV&quot;;
-        name = &quot;KevCoin&quot;;
+        symbol = "KEV";
+        name = "KevCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xD62837a25e2d9F752A38dc93fF4A1A6f03164AA0] = _totalSupply;

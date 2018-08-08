@@ -115,8 +115,8 @@ contract ERC20 {
 
 /// @title SolarDaoToken contract - standard ERC20 token with Short Hand Attack and approve() race condition mitigation.
 contract SolarDaoToken is SafeMath, ERC20, Ownable {
- string public name = &quot;Solar DAO Token&quot;;
- string public symbol = &quot;SDAO&quot;;
+ string public name = "Solar DAO Token";
+ string public symbol = "SDAO";
  uint public decimals = 4;
 
  /// contract that is allowed to create new tokens and allows unlift the transfer limits on this token

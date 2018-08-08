@@ -113,8 +113,8 @@ contract ScandinavianEKrona is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ScandinavianEKrona() public {
-        symbol = &quot;SEK&quot;;
-        name = &quot;Scandinavian E-Krona&quot;;
+        symbol = "SEK";
+        name = "Scandinavian E-Krona";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x08220b045BDC3d08ed341C0E5afF6D245f6eEBad] = _totalSupply;

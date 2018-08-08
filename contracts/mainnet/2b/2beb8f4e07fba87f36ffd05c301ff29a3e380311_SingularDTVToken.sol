@@ -92,7 +92,7 @@ contract StandardToken is Token {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 
@@ -108,7 +108,7 @@ contract AbstractSingularDTVFund {
 /// @author Stefan George - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aedddacbc8cfc080c9cbc1dcc9cbeecdc1c0ddcbc0ddd7dd80c0cbda">[email&#160;protected]</a>>
 /// @author Milad Mostavi - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6e0307020f0a4003011d1a0f18072e0d01001d0b001d171d40000b1a">[email&#160;protected]</a>>
 contract SingularDTVToken is StandardToken {
-    string public version = &quot;0.1.0&quot;;
+    string public version = "0.1.0";
 
     /*
      *  External contracts

@@ -34,7 +34,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -171,7 +171,7 @@ contract TokenSale is Ownable {
     }
     
     function tokenValueInEther(uint256 _oneTokenInEurWei) public view returns(uint256 tknValue) {
-        uint256 oneEtherInEur = rateContract.readRate(&quot;eur&quot;);
+        uint256 oneEtherInEur = rateContract.readRate("eur");
         tknValue = _oneTokenInEurWei.mul(10 ** uint256(decimals)).div(oneEtherInEur);
         return tknValue;
     } 

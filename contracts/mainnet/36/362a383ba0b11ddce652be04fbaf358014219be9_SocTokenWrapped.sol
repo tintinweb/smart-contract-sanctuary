@@ -95,9 +95,9 @@ contract DepositSlot {
 }
 
 contract SocTokenWrapped is Token {
-    string public constant standard = &quot;Token 0.1&quot;;
-    string public constant name = &quot;Soc Token Wrapped&quot;;
-    string public constant symbol = &quot;WSOC&quot;;
+    string public constant standard = "Token 0.1";
+    string public constant name = "Soc Token Wrapped";
+    string public constant symbol = "WSOC";
     uint8 public constant decimals = 18;     // same as SOC
 
     address public constant SOC = 0x2d0e95bd4795d7ace0da3c0ff7b706a5970eb9d3;

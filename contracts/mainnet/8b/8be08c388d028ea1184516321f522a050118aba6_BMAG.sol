@@ -18,8 +18,8 @@ contract BMAG {
 
     event Burn(address indexed from, uint256 value);
     uint256 initialSupply=120000000;
-        string tokenName = &quot;BRAAI MAGAZINE&quot;;
-        string tokenSymbol = &quot;BMAG&quot;;
+        string tokenName = "BRAAI MAGAZINE";
+        string tokenSymbol = "BMAG";
 
     constructor(
         

@@ -32,8 +32,8 @@ interface ERC721Metadata /* is ERC721 */ {
 
     /// @notice A distinct Uniform Resource Identifier (URI) for a given asset.
     /// @dev Throws if `_tokenId` is not a valid NFT. URIs are defined in RFC
-    ///  3986. The URI may point to a JSON file that conforms to the &quot;ERC721
-    ///  Metadata JSON Schema&quot;.
+    ///  3986. The URI may point to a JSON file that conforms to the "ERC721
+    ///  Metadata JSON Schema".
     function tokenURI(uint256 _tokenId) external view returns (string);
 }
 
@@ -80,7 +80,7 @@ interface ERC721TokenReceiver {
     /// @param _from The sending address
     /// @param _tokenId The NFT identifier which is being transfered
     /// @param _data Additional data with no specified format
-    /// @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+    /// @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
     ///  unless throwing
 	function onERC721Received(address _from, uint256 _tokenId, bytes _data) external returns(bytes4);
 }
@@ -661,7 +661,7 @@ contract AffiliateProgram is Pausable {
   /**
    * @notice set the rate for non-whitelisted affiliates
    * @dev setBaselineRate - sets the baseline rate for any affiliate that is not whitelisted
-   * @param _newRate - the rate, in bp (1/100th of a percent) to give any non-whitelisted affiliate. Set to zero to &quot;turn off&quot;
+   * @param _newRate - the rate, in bp (1/100th of a percent) to give any non-whitelisted affiliate. Set to zero to "turn off"
    */
   function setBaselineRate(uint256 _newRate) onlyOwner public {
     require(_newRate <= hardCodedMaximumRate);
@@ -801,7 +801,7 @@ contract LicenseInventory is LicenseBase {
     require(_productExists(_productId));
     uint256 newInventoryLevel = products[_productId].available.add(_inventoryAdjustment);
 
-    // A supply of &quot;0&quot; means &quot;unlimited&quot;. Otherwise we need to ensure that we&#39;re not over-creating this product
+    // A supply of "0" means "unlimited". Otherwise we need to ensure that we&#39;re not over-creating this product
     if(products[_productId].supply > 0) {
       // you have to take already sold into account
       require(products[_productId].sold.add(newInventoryLevel) <= products[_productId].supply);
@@ -869,7 +869,7 @@ contract LicenseInventory is LicenseBase {
    * @param _productId - the id of the product to use (cannot be changed)
    * @param _initialPrice - the starting price (price can be changed)
    * @param _initialInventoryQuantity - the initial inventory (inventory can be changed)
-   * @param _supply - the total supply - use `0` for &quot;unlimited&quot; (cannot be changed)
+   * @param _supply - the total supply - use `0` for "unlimited" (cannot be changed)
    */
   function createProduct(
     uint256 _productId,
@@ -1147,9 +1147,9 @@ contract LicenseOwnership is LicenseInventory, ERC721, ERC165, ERC721Metadata, E
 
   /*** Constants ***/
   // Configure these for your own deployment
-  string public constant NAME = &quot;Dottabot&quot;;
-  string public constant SYMBOL = &quot;DOTTA&quot;;
-  string public tokenMetadataBaseURI = &quot;https://api.dottabot.com/&quot;;
+  string public constant NAME = "Dottabot";
+  string public constant SYMBOL = "DOTTA";
+  string public tokenMetadataBaseURI = "https://api.dottabot.com/";
 
   /**
    * @notice token&#39;s name
@@ -1347,7 +1347,7 @@ contract LicenseOwnership is LicenseInventory, ERC721, ERC165, ERC721Metadata, E
   }
 
   /**
-  * @notice Enable or disable approval for a third party (&quot;operator&quot;) to manage all your assets
+  * @notice Enable or disable approval for a third party ("operator") to manage all your assets
   * @dev Emits the ApprovalForAll event
   * @param _to Address to add to the set of authorized operators.
   * @param _approved True if the operators is approved, false to revoke approval
@@ -1433,7 +1433,7 @@ contract LicenseOwnership is LicenseInventory, ERC721, ERC165, ERC721Metadata, E
   * `_tokenId` is not a valid NFT. When transfer is complete, this function
   * checks if `_to` is a smart contract (code size > 0). If so, it calls
   * `onERC721Received` on `_to` and throws if the return value is not
-  * `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`.
+  * `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`.
   * @param _from The current owner of the NFT
   * @param _to The new owner
   * @param _tokenId The NFT to transfer
@@ -1455,14 +1455,14 @@ contract LicenseOwnership is LicenseInventory, ERC721, ERC165, ERC721Metadata, E
       bytes4 tokenReceiverResponse = ERC721TokenReceiver(_to).onERC721Received.gas(50000)(
         _from, _tokenId, _data
       );
-      require(tokenReceiverResponse == bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;)));
+      require(tokenReceiverResponse == bytes4(keccak256("onERC721Received(address,uint256,bytes)")));
     }
   }
 
   /*
    * @notice Transfers the ownership of an NFT from one address to another address
    * @dev This works identically to the other function with an extra data parameter,
-   *  except this function just sets data to &quot;&quot;
+   *  except this function just sets data to ""
    * @param _from The current owner of the NFT
    * @param _to The new owner
    * @param _tokenId The NFT to transfer
@@ -1475,7 +1475,7 @@ contract LicenseOwnership is LicenseInventory, ERC721, ERC165, ERC721Metadata, E
     external
     whenNotPaused
   {
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
@@ -1607,7 +1607,7 @@ contract LicenseSale is LicenseOwnership {
       require(_numCycles != 0);
     }
 
-    // Non-subscription products have an expiration time of 0, meaning &quot;no-expiration&quot;
+    // Non-subscription products have an expiration time of 0, meaning "no-expiration"
     uint256 expirationTime = isSubscriptionProduct(_productId) ?
       now.add(intervalOf(_productId).mul(_numCycles)) : // solium-disable-line security/no-block-members
       0;
@@ -1876,19 +1876,19 @@ library Strings {
     }
 
     function strConcat(string _a, string _b, string _c, string _d) internal pure returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
 
     function strConcat(string _a, string _b, string _c) internal pure returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
 
     function strConcat(string _a, string _b) internal pure returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 
     function uint2str(uint i) internal pure returns (string) {
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint len;
         while (j != 0){

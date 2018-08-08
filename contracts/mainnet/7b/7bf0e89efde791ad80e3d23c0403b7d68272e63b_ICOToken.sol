@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -493,8 +493,8 @@ contract HookableToken is MintableToken, PausableToken, BurnableToken {
  */
 contract ICOToken is MintableToken, PausableToken, HookableToken {
 
-    string public constant name = &quot;Artificial Intelligence Quotient&quot;;
-    string public constant symbol = &quot;AIQ&quot;;
+    string public constant name = "Artificial Intelligence Quotient";
+    string public constant symbol = "AIQ";
     uint8 public constant decimals = 18;
 
 

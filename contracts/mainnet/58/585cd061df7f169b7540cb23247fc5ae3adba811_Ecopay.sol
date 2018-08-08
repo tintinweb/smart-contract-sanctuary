@@ -72,8 +72,8 @@ contract Ecopay is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;Ecopay&quot;;
-    string public constant symbol = &quot;ECOP&quot;;
+    string public constant name = "Ecopay";
+    string public constant symbol = "ECOP";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 5000000000e18; // Supply

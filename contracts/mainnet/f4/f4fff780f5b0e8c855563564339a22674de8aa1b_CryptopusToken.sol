@@ -120,8 +120,8 @@ contract CryptopusToken is ERC20Interface, Owned {
   mapping(address => mapping(address => uint)) allowed;
 
   function CryptopusToken() public {
-    symbol = &quot;CPP&quot;;
-    name = &quot;Cryptopus Token&quot;;
+    symbol = "CPP";
+    name = "Cryptopus Token";
     decimals = 18;
     _totalSupply = 100000000 * 10**uint(decimals);
     saleLimit = 40000000 * 10**uint(decimals);

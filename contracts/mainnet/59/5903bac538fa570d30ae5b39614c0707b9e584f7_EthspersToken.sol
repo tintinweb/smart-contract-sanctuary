@@ -127,8 +127,8 @@ contract StandardToken is ERC20, SafeMath {
 /// Ethpsers token, a token for the Wavepers Foundation. 
 contract EthspersToken is Ownable, StandardToken {
 
-    string public name = &quot;Ethspers&quot;;            // name of the token
-    string public symbol = &quot;ETHSP&quot;;             // ERC20 compliant 4 digit token code
+    string public name = "Ethspers";            // name of the token
+    string public symbol = "ETHSP";             // ERC20 compliant 4 digit token code
     uint public decimals = 8;                   // token has 9 digit precision
 
     uint public totalSupply = 50000000000000;   // total supply of 500 K Tokens

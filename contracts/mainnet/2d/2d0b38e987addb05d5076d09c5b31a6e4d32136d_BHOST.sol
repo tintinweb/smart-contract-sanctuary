@@ -18,8 +18,8 @@ contract BHOST {
 
     event Burn(address indexed from, uint256 value);
     uint256 initialSupply=120000000;
-        string tokenName = &quot;BRAAI HOSTING&quot;;
-        string tokenSymbol = &quot;BHOST&quot;;
+        string tokenName = "BRAAI HOSTING";
+        string tokenSymbol = "BHOST";
 
     constructor(
         

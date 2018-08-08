@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract ROPE{
     // Public variables
-    string public name = &quot;ROPE&quot;;
-    string public symbol = &quot;ROPE&quot;;
+    string public name = "ROPE";
+    string public symbol = "ROPE";
     uint8 public decimals = 18;
     uint256 public totalSupply = 100000000;
     bool public transferrable = true;
@@ -31,8 +31,8 @@ contract ROPE{
     ) public {
         totalSupply = 100000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;                
-        name = &quot;ROPE&quot;;                                   
-        symbol = &quot;ROPE&quot;;                               
+        name = "ROPE";                                   
+        symbol = "ROPE";                               
     }
 
     // set transferrable

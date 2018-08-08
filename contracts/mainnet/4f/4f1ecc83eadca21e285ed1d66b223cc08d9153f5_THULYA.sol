@@ -109,8 +109,8 @@ contract THULYA is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function THULYA() public {
-        symbol = &quot;THLY&quot;;
-        name = &quot;THULYA&quot;;
+        symbol = "THLY";
+        name = "THULYA";
         decimals = 18;
         _totalSupply = 2000000000000000000000000000;
         balances[0x3f417ac701cc1ad2257a7f526570a970ac5a8b91] = _totalSupply;

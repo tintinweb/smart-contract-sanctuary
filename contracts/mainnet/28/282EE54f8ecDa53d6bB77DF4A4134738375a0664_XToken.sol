@@ -111,8 +111,8 @@ contract XToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function XToken() public {
-        symbol = &quot;XT&quot;;
-        name = &quot;X Token&quot;;
+        symbol = "XT";
+        name = "X Token";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

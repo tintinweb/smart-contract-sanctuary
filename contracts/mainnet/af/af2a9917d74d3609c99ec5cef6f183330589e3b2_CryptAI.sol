@@ -6,8 +6,8 @@ contract CryptAI
 
 
     string 		public standard = &#39;Token 0.1&#39;;
-	string 		public name = &quot;CryptAI&quot;; 
-	string 		public symbol = &quot;TAI&quot;;
+	string 		public name = "CryptAI"; 
+	string 		public symbol = "TAI";
 	uint8 		public decimals = 2; 
 	uint256 	public totalSupply = 7000000 * 1e2;
 	

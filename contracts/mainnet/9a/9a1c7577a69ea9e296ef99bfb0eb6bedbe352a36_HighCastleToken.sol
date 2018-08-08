@@ -222,8 +222,8 @@ contract BurnableToken is StandardToken {
 
 contract HighCastleToken is BurnableToken, HasNoEther {
 
-    string public constant name = &quot;HighCastle Token&quot;;
-    string public constant symbol = &quot;AIMS&quot;;
+    string public constant name = "HighCastle Token";
+    string public constant symbol = "AIMS";
     uint8 public constant decimals = 8;
     uint256 constant INITIAL_SUPPLY = 2000000000 * (10 ** uint256(decimals));
 

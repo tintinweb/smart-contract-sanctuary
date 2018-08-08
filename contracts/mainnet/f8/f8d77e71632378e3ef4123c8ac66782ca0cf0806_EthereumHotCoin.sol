@@ -215,8 +215,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract EthereumHotCoin is StandardToken{
-  string public name = &quot;EthereumHotCoin&quot;;
-  string public symbol = &quot;EUTC&quot;;
+  string public name = "EthereumHotCoin";
+  string public symbol = "EUTC";
   uint8 public decimals =18;
   uint256 public INITIAL_SUPPLY = 100000000*10**18;
   function EthereumHotCoin() public {

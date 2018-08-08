@@ -45,8 +45,8 @@ contract Token is SafeMath{
 
   mapping(address => uint) balances;
   
-  string public symbol = &quot;&quot;;
-  string public name = &quot;&quot;;
+  string public symbol = "";
+  string public name = "";
   uint8 public decimals = 18;
   uint256 public totalSupply = 0;
   address owner = 0;

@@ -122,7 +122,7 @@ contract Object is Owned {
 
 
 
-//import &quot;../contracts/ContractsManagerInterface.sol&quot;;
+//import "../contracts/ContractsManagerInterface.sol";
 
 /**
  * @title General MultiEventsHistory user.

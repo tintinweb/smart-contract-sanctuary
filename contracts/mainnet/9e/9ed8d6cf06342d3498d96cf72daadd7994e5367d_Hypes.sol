@@ -27,7 +27,7 @@ contract Hypes {
     hypes[7] = Hype(msg.sender, 0);
     hypes[8] = Hype(msg.sender, 0);
     hypes[9] = Hype(msg.sender, 0);
-    msgs[msg.sender] = &quot;Claim this spot!&quot;;
+    msgs[msg.sender] = "Claim this spot!";
   }
 
   function getHype(uint256 _slot) public view returns (

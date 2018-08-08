@@ -109,8 +109,8 @@ contract KruhftsToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KruhftsToken() public {
-        symbol = &quot;KFT&quot;;
-        name = &quot;Kruhft&#39;s Token&quot;;
+        symbol = "KFT";
+        name = "Kruhft&#39;s Token";
         decimals = 2;
         _totalSupply = 1000000000000;
         balances[0x7023138d5a59cd39D3F537ec60146656D197c98F] = _totalSupply;

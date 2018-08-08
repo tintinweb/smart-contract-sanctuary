@@ -4,8 +4,8 @@ contract	AZRIELI_GROUP_20230515				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	AZRIELI_GROUP_20230515		&quot;	;
-	string	public		symbol =	&quot;	AZRIELI		&quot;	;
+	string	public		name =	"	AZRIELI_GROUP_20230515		"	;
+	string	public		symbol =	"	AZRIELI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10923254000000000000000000					;	

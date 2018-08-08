@@ -161,7 +161,7 @@ contract HumanStandardToken is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }
@@ -181,7 +181,7 @@ contract Owned {
     // This contract only defines a modifier but does not use
     // it - it will be used in derived contracts.
     // The function body is inserted where the special symbol
-    // &quot;_;&quot; in the definition of a modifier appears.
+    // "_;" in the definition of a modifier appears.
     // This means that if the owner calls this function, the
     // function is executed and otherwise, an exception is
     // thrown.

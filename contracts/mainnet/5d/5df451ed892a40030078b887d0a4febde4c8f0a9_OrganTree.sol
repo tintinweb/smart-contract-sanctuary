@@ -304,8 +304,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 
 
 contract OrganTree is StandardBurnableToken {
-    bytes32 public constant name = &quot;OrganTree&quot;;
-    bytes32 public constant symbol = &quot;OGT&quot;;
+    bytes32 public constant name = "OrganTree";
+    bytes32 public constant symbol = "OGT";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY  = 2500000000000000000000000000;
 

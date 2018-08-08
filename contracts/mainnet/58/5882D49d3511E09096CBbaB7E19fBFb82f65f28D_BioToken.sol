@@ -34,7 +34,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -104,8 +104,8 @@ contract ERC20 {
 contract BioToken is ERC20, Ownable {
     using SafeMath for uint;
 
-    string public name = &quot;BIONT Token&quot;;
-    string public symbol = &quot;BIONT&quot;;
+    string public name = "BIONT Token";
+    string public symbol = "BIONT";
     uint public decimals = 18;
 
     bool public tradingStarted = false;

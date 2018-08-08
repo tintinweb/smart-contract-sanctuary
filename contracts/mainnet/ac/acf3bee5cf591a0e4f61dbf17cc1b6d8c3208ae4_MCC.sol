@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract MCC is StandardToken, Ownable {
 
-    string public constant name = &quot;MCC&quot;;
-    string public constant symbol = &quot;MCC&quot;;
+    string public constant name = "MCC";
+    string public constant symbol = "MCC";
     uint256 public constant decimals = 0;
 
     function MCC() public {

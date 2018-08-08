@@ -166,8 +166,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract A2UToken is StandardToken {
 
-  string public constant name = &quot;A2U&quot;;
-  string public constant symbol = &quot;A2U$&quot;;
+  string public constant name = "A2U";
+  string public constant symbol = "A2U$";
   uint8 public constant decimals = 9;
 
   uint256 public constant INITIAL_SUPPLY = 9000000000000000000;

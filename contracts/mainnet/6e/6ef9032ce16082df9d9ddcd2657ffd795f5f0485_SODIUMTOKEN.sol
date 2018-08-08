@@ -116,8 +116,8 @@ contract SODIUMTOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SODIUMTOKEN() public {
-        symbol = &quot;SODIUM&quot;;
-        name = &quot;SODIUM TOKEN&quot;;
+        symbol = "SODIUM";
+        name = "SODIUM TOKEN";
         decimals = 18;
         _totalSupply = 30000000000000000000000000000;
         balances[0x78437f6724C41756619910e389B716EE00B0F1EA] = _totalSupply;

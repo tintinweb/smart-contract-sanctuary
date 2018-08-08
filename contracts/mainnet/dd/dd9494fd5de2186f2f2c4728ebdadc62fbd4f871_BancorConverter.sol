@@ -292,9 +292,9 @@ contract Managed is Owned {
     Can be used in conjunction with the contract registry to get contract addresses
 */
 contract ContractIds {
-    bytes32 public constant BANCOR_NETWORK = &quot;BancorNetwork&quot;;
-    bytes32 public constant BANCOR_FORMULA = &quot;BancorFormula&quot;;
-    bytes32 public constant CONTRACT_FEATURES = &quot;ContractFeatures&quot;;
+    bytes32 public constant BANCOR_NETWORK = "BancorNetwork";
+    bytes32 public constant BANCOR_FORMULA = "BancorFormula";
+    bytes32 public constant CONTRACT_FEATURES = "ContractFeatures";
 }
 
 /**

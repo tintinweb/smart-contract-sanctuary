@@ -58,8 +58,8 @@ contract HSD is ERC20 {
 
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;HSD&quot;;
-    string public constant symbol = &quot;HSD&quot;;
+    string public constant name = "HSD";
+    string public constant symbol = "HSD";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 100000000e18;

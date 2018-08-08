@@ -114,8 +114,8 @@ contract EdwinChooiToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;EDWC4&quot;;
-        name = &quot;Edwin Chooi Token&quot;;
+        symbol = "EDWC4";
+        name = "Edwin Chooi Token";
         decimals = 18;
         _totalSupply = 21000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

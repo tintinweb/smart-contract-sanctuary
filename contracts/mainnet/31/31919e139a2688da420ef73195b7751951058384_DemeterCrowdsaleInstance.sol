@@ -674,7 +674,7 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract DemeterToken is MintableToken, TimeBlockedToken {
-  string public name = &quot;Demeter&quot;;
-  string public symbol = &quot;DMT&quot;;
+  string public name = "Demeter";
+  string public symbol = "DMT";
   uint256 public decimals = 18;
 }

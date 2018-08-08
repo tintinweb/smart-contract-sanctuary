@@ -124,8 +124,8 @@ contract NUC is ERC20Interface, Pausable {
     // Constructor
     // ------------------------------------------------------------------------
     function NUC() public {
-        symbol = &quot;NUC&quot;;
-        name = &quot;NUC Token&quot;;
+        symbol = "NUC";
+        name = "NUC Token";
         decimals = 18;
         _totalSupply = 21 * 1000 * 1000 * 1000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

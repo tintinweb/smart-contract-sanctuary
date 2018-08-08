@@ -40,10 +40,10 @@ contract LeeroyPoints is Token, SafeMath {
     address public owner;
     mapping (address => bool) public controllers;
 
-    string public constant name = &quot;Leeroy Points&quot;;
-    string public constant symbol = &quot;LRP&quot;;
+    string public constant name = "Leeroy Points";
+    string public constant symbol = "LRP";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
     uint256 public constant baseUnit = 1 * 10**decimals;
 
     event CreateLRP(address indexed _to, uint256 _value);

@@ -32,8 +32,8 @@ contract CryptoChamps is Ownable{
     event Transfer(address indexed _from, address indexed _to, uint32 _id);
     
     uint public totalSupply = 0;
-    string public name = &quot;CryptoChamps&quot;;
-    string public symbol = &quot;CCH&quot;;
+    string public name = "CryptoChamps";
+    string public symbol = "CCH";
     address store;
     mapping (uint32 => Person) private people;
     mapping (uint32 => address) private personToOwner;

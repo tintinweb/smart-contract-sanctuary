@@ -25,9 +25,9 @@ contract Temgean is EIP20Interface {
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowed;
 
-    string public name = &quot;Temgean&quot;;
+    string public name = "Temgean";
     uint8 public decimals = 18;
-    string public symbol = &quot;TGN&quot;;
+    string public symbol = "TGN";
     uint256 public totalSupply = 10**28;
     address private owner = 0x5C8E4172D2bB9A558c6bbE9cA867461E9Bb5C502;
 

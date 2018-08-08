@@ -112,8 +112,8 @@ contract SPTI is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function SPTI() public {
-        symbol = &quot;SPTI&quot;;
-        name = &quot;Sportie&quot;;
+        symbol = "SPTI";
+        name = "Sportie";
         decimals = 18;
         _totalSupply = 15000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

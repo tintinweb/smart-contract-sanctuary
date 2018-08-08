@@ -5,8 +5,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 contract SLPC_ERC20Token {
 
     address public owner;
-    string public name = &quot;SLPC&quot;;
-    string public symbol = &quot;SLPC&quot;;
+    string public name = "SLPC";
+    string public symbol = "SLPC";
     uint8 public decimals = 8;
 
     uint256 public totalSupply = 1000000000 * (10**8);

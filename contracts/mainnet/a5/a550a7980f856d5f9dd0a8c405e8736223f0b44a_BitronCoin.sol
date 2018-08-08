@@ -81,8 +81,8 @@ contract ERC20 is ERC20Interface, Owned {
 	uint    public totalSupply;
 
 	constructor() public {
-		symbol = &quot;BTO&quot;;
-		name = &quot;Bitron Coin&quot;;
+		symbol = "BTO";
+		name = "Bitron Coin";
 		decimals = 9;
 		totalSupply = 50000000 * 10 ** uint(decimals);
 		balances[owner] = totalSupply;

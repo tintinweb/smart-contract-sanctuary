@@ -3,7 +3,7 @@ pragma solidity ^0.4.23;
 // converting to bech32/base32 w/ no checksum
 library Base32Lib {
     // see https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki#bech32 for alphabet
-    bytes constant ALPHABET = &quot;qpzry9x8gf2tvdw0s3jn54khce6mua7l&quot;;
+    bytes constant ALPHABET = "qpzry9x8gf2tvdw0s3jn54khce6mua7l";
 
     // modified toBase58 impl from https://github.com/MrChico/verifyIPFS/blob/b4bfb3df52e7e012a4ef668c6b3dbc038f881fd9/contracts/verifyIPFS.sol
     // MIT Licensed - https://github.com/MrChico/verifyIPFS/blob/b4bfb3df52e7e012a4ef668c6b3dbc038f881fd9/LICENSE

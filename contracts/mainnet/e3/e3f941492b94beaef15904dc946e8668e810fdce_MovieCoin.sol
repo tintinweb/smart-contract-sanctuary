@@ -111,8 +111,8 @@ contract MovieCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;MOVIE&quot;;
-        name = &quot;MovieCoin&quot;;
+        symbol = "MOVIE";
+        name = "MovieCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x255EbB7393Fb8AD33E1edaf30270C7Edb2C181DD] = _totalSupply;

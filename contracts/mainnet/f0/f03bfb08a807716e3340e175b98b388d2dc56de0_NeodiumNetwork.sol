@@ -9,8 +9,8 @@ Website: https://neodium.network/
 pragma solidity 0.4.18;
 
 contract NeodiumNetwork {
-    string public symbol = &quot;NN&quot;;
-    string public name = &quot;Neodium Network&quot;;
+    string public symbol = "NN";
+    string public name = "Neodium Network";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 0;
     uint256 _MaxDistribPublicSupply = 0;

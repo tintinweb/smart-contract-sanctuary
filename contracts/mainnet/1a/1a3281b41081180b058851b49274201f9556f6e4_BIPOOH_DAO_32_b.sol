@@ -21,8 +21,8 @@ pragma solidity 		^0.4.8	;
 											
 		contract	BIPOOH_DAO_32_b				is	Ownable	{		
 											
-			string	public	constant	name =	&quot;	BIPOOH_DAO_32_b		&quot;	;
-			string	public	constant	symbol =	&quot;	BIPI		&quot;	;
+			string	public	constant	name =	"	BIPOOH_DAO_32_b		"	;
+			string	public	constant	symbol =	"	BIPI		"	;
 			uint32	public	constant	decimals =		18			;
 			uint	public		totalSupply =		0			;
 											

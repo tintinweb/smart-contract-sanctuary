@@ -189,6 +189,6 @@ contract BurnableToken is StandardToken {
 }
 
 contract GoldeaToken is IssuedToken, BurnableToken {
-    function GoldeaToken(uint256 _totalSupply) IssuedToken(&quot;GOLDEA&quot;, &quot;GEA&quot;, _totalSupply, 8) {
+    function GoldeaToken(uint256 _totalSupply) IssuedToken("GOLDEA", "GEA", _totalSupply, 8) {
     }
 }

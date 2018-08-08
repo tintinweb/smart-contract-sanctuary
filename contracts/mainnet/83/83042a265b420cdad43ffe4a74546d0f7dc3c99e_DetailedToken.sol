@@ -112,17 +112,17 @@ contract StandardToken is ERC20, BasicToken {
  * Detailed
  */
 contract DetailedToken is StandardToken {
-    string public constant  name = &quot;zen and cosmos repair&quot;;
-    string public constant  symbol = &quot;ZEN&quot;;
+    string public constant  name = "zen and cosmos repair";
+    string public constant  symbol = "ZEN";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 1000000000 * (10 ** uint256(decimals));
     address public holder = 0x49A1c9bB3D7B2AcA989d12A964C842B529813841;
     address public owner = 0x49A1c9bB3D7B2AcA989d12A964C842B529813841;
     
-    string public statement = &quot;zen and cosmos repair&quot;;
+    string public statement = "zen and cosmos repair";
     
     modifier onlyOwner() {
-        require(msg.sender == owner, &quot;Only owner can do this.&quot;);
+        require(msg.sender == owner, "Only owner can do this.");
         _;
     }
     event TransferOwner(address newOwner, address lastOwner);

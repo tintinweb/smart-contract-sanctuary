@@ -383,7 +383,7 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract FiduxaCoin is MintableToken {
-  string public name = &quot;FiduxaCoin&quot;;
-  string public symbol = &quot;FDU&quot;;
+  string public name = "FiduxaCoin";
+  string public symbol = "FDU";
   uint8 public decimals = 18;
 }

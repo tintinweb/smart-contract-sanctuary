@@ -113,8 +113,8 @@ contract MDAToken is UnlimitedAllowanceToken {
 
     uint8 constant public decimals = 18;
     uint public totalSupply = 20*(10**24); // 20 million tokens, 18 decimal places
-    string constant public name = &quot;Moeda token&quot;;
-    string constant public symbol = &quot;MDA&quot;;
+    string constant public name = "Moeda token";
+    string constant public symbol = "MDA";
 
     function MDAToken() {
         balances[msg.sender] = totalSupply;

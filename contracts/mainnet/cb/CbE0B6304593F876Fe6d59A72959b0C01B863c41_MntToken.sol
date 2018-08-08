@@ -59,8 +59,8 @@ contract MntToken {
     // --- ERC20 Token Section ---
     uint8 constant public decimals = 6;
     uint public totalSupply = 100*10**(8+uint256(decimals));  // ***** 100 * 100 Million
-    string constant public name = &quot;MDEX Token | Mongolia National Blockchain Digital Assets Exchange Token&quot;;
-    string constant public symbol = &quot;MNT&quot;;
+    string constant public name = "MDEX Token | Mongolia National Blockchain Digital Assets Exchange Token";
+    string constant public symbol = "MNT";
 
     mapping(address => uint) ownerance; // Owner Balance
     mapping(address => mapping(address => uint)) public allowance; // Allower Balance

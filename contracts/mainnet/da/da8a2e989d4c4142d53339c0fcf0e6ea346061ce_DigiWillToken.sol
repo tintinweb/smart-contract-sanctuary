@@ -88,9 +88,9 @@ interface tokenRecipient {
 contract DigiWillToken is Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;DigiWillToken&quot;;           //The Token&#39;s name: e.g. DigixDAO Tokens
+    string public name = "DigiWillToken";           //The Token&#39;s name: e.g. DigixDAO Tokens
     uint8 public decimals = 18;             //Number of decimals of the smallest unit
-    string public symbol = &quot;DGW&quot;;         //An identifier: e.g. REP
+    string public symbol = "DGW";         //An identifier: e.g. REP
     uint public totalSupply;
 
     mapping (address => uint256) public balances;

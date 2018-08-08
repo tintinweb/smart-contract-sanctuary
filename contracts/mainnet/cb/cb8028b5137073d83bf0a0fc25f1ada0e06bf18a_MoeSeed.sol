@@ -204,8 +204,8 @@ contract MoeSeed is ERC223Token, owned{
     uint256 public totalSupply;
     
     constructor() public{
-        name = &quot;Moe Seed&quot;;
-        symbol = &quot;MOE&quot;;
+        name = "Moe Seed";
+        symbol = "MOE";
         decimals = 18;
         totalSupply = 10000000000 * 10 ** decimals;
         balances[msg.sender] = totalSupply;

@@ -206,7 +206,7 @@ contract TimeBankToken is EIP20 {
   }
 
   // 1 with 28 zeros
-  constructor(address _master, address[] _managers, uint _majorityThreshold, uint _managementThreshold) EIP20(10000000000000000000000000000, &quot;Time Bank Token&quot;, 18, &quot;TB&quot;) public {
+  constructor(address _master, address[] _managers, uint _majorityThreshold, uint _managementThreshold) EIP20(10000000000000000000000000000, "Time Bank Token", 18, "TB") public {
     require(checkAddress(_master));
     require(_managers.length >= _majorityThreshold);
     require(_managers.length >= _managementThreshold);

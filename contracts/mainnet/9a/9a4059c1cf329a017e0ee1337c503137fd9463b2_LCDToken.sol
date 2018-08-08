@@ -56,7 +56,7 @@ library SafeMath {
     }
 
     /**
-    * @dev Parse a floating point number from String to uint, e.g. &quot;250.56&quot; to &quot;25056&quot;
+    * @dev Parse a floating point number from String to uint, e.g. "250.56" to "25056"
      */
     function parse(string s) 
     internal constant 
@@ -224,8 +224,8 @@ contract StandardToken is Token {
 contract LCDToken is StandardToken {
 
     // Token metadata
-    string public constant name = &quot;Lucyd&quot;;
-    string public constant symbol = &quot;LCD&quot;;
+    string public constant name = "Lucyd";
+    string public constant symbol = "LCD";
     uint256 public constant decimals = 18;
 
     uint256 public constant TOKEN_COMPANY_OWNED = 10 * (10**6) * 10**decimals; // 10 million LCDs

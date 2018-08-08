@@ -320,7 +320,7 @@ contract CryptoAndDragonsPresale is AccessControl{
       uint32 classId = EggTable[1][randMod(EggTable[1].length)];
       EggTotal[1] += 1;
       uint64 monsterId = data.getTotalMonster() + 1;
-      data.addMonsterObj(monsterId,genes,classId,_sender,&quot;&quot;,&quot;&quot;);
+      data.addMonsterObj(monsterId,genes,classId,_sender,"","");
     }
     Hatch(msg.sender, 1);
     return price * _amount;
@@ -358,7 +358,7 @@ contract CryptoAndDragonsPresale is AccessControl{
       uint32 classId = EggTable[_table][randMod(EggTable[_table].length)];
       EggTotal[_table] += 1;
       uint64 monsterId = data.getTotalMonster() + 1;
-      data.addMonsterObj(monsterId,genes,classId,msg.sender,&quot;&quot;,&quot;&quot;);
+      data.addMonsterObj(monsterId,genes,classId,msg.sender,"","");
     }
     Hatch(msg.sender, _table);
   }
@@ -368,7 +368,7 @@ contract CryptoAndDragonsPresale is AccessControl{
     require(eggs[_eggId].classId != 0 && eggs[_eggId].master == msg.sender);
     DataBase CNDDB = DataBase(databaseContract);
     uint64 monsterId = CNDDB.getTotalMonster() + 1;
-    string memory skills = &quot;0:0:0:0&quot;;
+    string memory skills = "0:0:0:0";
     CNDDB.addMonsterObj(monsterId,eggs[_eggId].genes,eggs[_eggId].classId,msg.sender,_name,skills);
     eggs[_eggId].classId = 0;
     eggs[_eggId].master = address(0);

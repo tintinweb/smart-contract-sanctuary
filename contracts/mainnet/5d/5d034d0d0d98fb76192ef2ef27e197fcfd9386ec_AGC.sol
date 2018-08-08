@@ -178,7 +178,7 @@ contract AGC is owned, TokenERC20 {
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
 
-    function AGC() TokenERC20(29000000, &quot;AdGroupCoin&quot;, &quot;AGC&quot;) public {
+    function AGC() TokenERC20(29000000, "AdGroupCoin", "AGC") public {
 
     }
 

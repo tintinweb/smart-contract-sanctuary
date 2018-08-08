@@ -76,8 +76,8 @@ contract PLTC is ERC20Interface
     using SafeMath for uint256;
    
     uint256 constant public TOKEN_DECIMALS = 10 ** 18;
-    string public constant name            = &quot;PlatonCoin&quot;;
-    string public constant symbol          = &quot;PLTC&quot;;
+    string public constant name            = "PlatonCoin";
+    string public constant symbol          = "PLTC";
     uint256 public totalTokenSupply        = 21000000 * TOKEN_DECIMALS;
 
     uint256 public totalSaleSupply         = 13860000 * TOKEN_DECIMALS; // Pre-sale + Sale 

@@ -138,7 +138,7 @@ contract StandardToken is Token {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        string memory signature = &quot;receiveApproval(address,uint256,address,bytes)&quot;;
+        string memory signature = "receiveApproval(address,uint256,address,bytes)";
 
         if (!_spender.call(bytes4(bytes32(sha3(signature))), msg.sender, _value, this, _extraData)) {
             revert();
@@ -162,10 +162,10 @@ contract LATToken is StandardToken {
     address     public minter = 0;
     address     public exchanger = 0;
 
-    string      public name             =       &quot;LAToken&quot;;
+    string      public name             =       "LAToken";
     uint8       public decimals         =       18;
-    string      public symbol           =       &quot;LAToken&quot;;
-    string      public version          =       &quot;0.7.2&quot;;
+    string      public symbol           =       "LAToken";
+    string      public version          =       "0.7.2";
 
 
     modifier onlyFounder() {

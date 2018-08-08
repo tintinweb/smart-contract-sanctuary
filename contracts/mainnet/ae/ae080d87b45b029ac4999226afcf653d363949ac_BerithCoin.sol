@@ -25,8 +25,8 @@ contract BerithCoin {
     function BerithCoin(uint256 initialSupply) {
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply
-        name = &quot;Berith&quot;;                                   // Set the name for display purposes
-        symbol = &quot;BRT&quot;;                               // Set the symbol for display purposes
+        name = "Berith";                                   // Set the name for display purposes
+        symbol = "BRT";                               // Set the symbol for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
     }
 

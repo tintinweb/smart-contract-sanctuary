@@ -60,9 +60,9 @@ contract EIP20Token is EIP20Interface{
     string public symbol;                           //An identifier: eg ACG
      
     function EIP20Token() public {  
-        name = &quot;LEX Coin&quot;;                        // Set the name for display purposes
+        name = "LEX Coin";                        // Set the name for display purposes
         decimals = 18;                              // Amount of decimals for display purposes
-        symbol = &quot;LEXC&quot;;                            // Set the symbol for display purposes
+        symbol = "LEXC";                            // Set the symbol for display purposes
           
         totalSupply = 100000000 * 10 ** decimals;               // Update total supply
         balances[msg.sender] = totalSupply;         // Give the creator all initial tokens 

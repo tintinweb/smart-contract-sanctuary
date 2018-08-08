@@ -113,8 +113,8 @@ contract FBI is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FBI() public {
-        symbol = &quot;FBI&quot;;
-        name = &quot;Farming Building Industry&quot;;
+        symbol = "FBI";
+        name = "Farming Building Industry";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x4056807bdc9f38ce06fd891b1bfb0ee1cc79361d] = _totalSupply;

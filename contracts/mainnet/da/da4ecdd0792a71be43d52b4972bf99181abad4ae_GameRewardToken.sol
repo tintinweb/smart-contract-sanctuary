@@ -289,8 +289,8 @@ contract GameRewardToken is owned, TokenERC20 {
     constructor(address _lockedTokenHolder,
                 address _releaseTokenHolder,
                 address _devsAddress
-    ) TokenERC20(&quot;GameReward&quot;, // Name
-                 &quot;GRD&quot;,        // Symbol 
+    ) TokenERC20("GameReward", // Name
+                 "GRD",        // Symbol 
                   18,          // Decimals
                   1000000000   // Total Supply 1 Billion
                   ) public {

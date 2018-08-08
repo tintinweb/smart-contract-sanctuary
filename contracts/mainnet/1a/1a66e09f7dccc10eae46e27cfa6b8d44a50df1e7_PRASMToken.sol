@@ -137,8 +137,8 @@ contract PRASMToken is ERC20, Ownable, Pausable {
     event Burn(address indexed owner, uint256 value);
 
     constructor() public {
-        name = &quot;PRASM&quot;;
-        symbol = &quot;PSM&quot;;
+        name = "PRASM";
+        symbol = "PSM";
         decimals = 18;
         initialSupply = 4000000000;
         totalSupply_ = initialSupply * 10 ** uint(decimals);

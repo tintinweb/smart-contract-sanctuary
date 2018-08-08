@@ -82,8 +82,8 @@ contract CesaireToken is ERC20Interface {
     // Constructor
     // ------------------------------------------------------------------------
     function CesaireToken() public {
-        symbol = &quot;CSE&quot;;
-        name = &quot;C&#233;saire Token&quot;;
+        symbol = "CSE";
+        name = "C&#233;saire Token";
         decimals = 18;
         _totalSupply = 25000000 * 10**uint(decimals);
         owner = 0x253568B1661CeBe59Fb602f1FEdF0131d3EAdC4c;

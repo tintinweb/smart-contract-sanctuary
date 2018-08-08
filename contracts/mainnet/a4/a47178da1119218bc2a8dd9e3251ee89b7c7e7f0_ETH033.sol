@@ -118,8 +118,8 @@ contract BestToken is newToken, ERC20 {
 }
 
  contract RomanLanskoj is BestToken, Ownable {
-  string public constant name = &quot;YourCoin&quot;;
-  string public constant symbol = &quot;ICO&quot;;
+  string public constant name = "YourCoin";
+  string public constant symbol = "ICO";
   uint public constant decimals = 2;
   mapping (address => uint256) public balanceOf;
     uint minBalanceForAccounts;

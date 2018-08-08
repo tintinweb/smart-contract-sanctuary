@@ -40,8 +40,8 @@ contract TradeAdsCoin {
            
     using SafeMath for uint256;
     
-    string public constant name = &quot;TradeAds Coin&quot;;
-    string public constant symbol = &quot;TRD&quot;;
+    string public constant name = "TradeAds Coin";
+    string public constant symbol = "TRD";
     uint8 public constant decimals = 18;
     /* The initially/total supply is 100,000,000 TRD with 18 decimals */
     uint256 public constant _totalSupply  = 100000000000000000000000000;

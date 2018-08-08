@@ -185,9 +185,9 @@ contract ERC20Token is ERC20Interface, Owned {
 
     function ERC20Token() public {
 
-        symbol = &quot;AIEC1&quot;;
+        symbol = "AIEC1";
 
-        name = &quot;Artificial Intelligence Ecological Chain 1&quot;;
+        name = "Artificial Intelligence Ecological Chain 1";
 
         decimals = 8;
 

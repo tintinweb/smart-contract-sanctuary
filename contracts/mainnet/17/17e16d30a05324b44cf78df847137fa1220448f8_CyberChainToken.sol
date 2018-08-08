@@ -82,8 +82,8 @@ contract CyberChainToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;CyberChain&quot;;
-    string public constant symbol = &quot;Cyber&quot;;
+    string public constant name = "CyberChain";
+    string public constant symbol = "Cyber";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 20000000000e8;

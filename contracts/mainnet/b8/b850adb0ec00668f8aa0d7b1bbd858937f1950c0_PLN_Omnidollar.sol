@@ -113,8 +113,8 @@ contract PLN_Omnidollar is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PLN_Omnidollar() public {
-        symbol = &quot;PLNO&quot;;
-        name = &quot;PLN_Omnidollar&quot;;
+        symbol = "PLNO";
+        name = "PLN_Omnidollar";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0x6d8d30e6c418E322Fb20b9F01115858cDF1e979E] = _totalSupply;

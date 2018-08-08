@@ -113,8 +113,8 @@ contract TaiyuanCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TaiyuanCoin() public {
-        symbol = &quot;太原&quot;;
-        name = &quot;太原 Taiyuan Coin&quot;;
+        symbol = "太原";
+        name = "太原 Taiyuan Coin";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x116312c3471C2e7C34C52782D0399eBE601f3F30] = _totalSupply;

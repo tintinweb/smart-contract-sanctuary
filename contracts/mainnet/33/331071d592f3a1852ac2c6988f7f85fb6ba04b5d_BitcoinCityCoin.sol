@@ -3,7 +3,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -263,9 +263,9 @@ contract BurnableToken is MintableToken {
  */
 contract BitcoinCityCoin is BurnableToken {
     
-    string public constant name = &quot;Bitcoin City&quot;;
+    string public constant name = "Bitcoin City";
     
-    string public constant symbol = &quot;BCKEY&quot;;
+    string public constant symbol = "BCKEY";
     
     uint32 public constant decimals = 8;
     

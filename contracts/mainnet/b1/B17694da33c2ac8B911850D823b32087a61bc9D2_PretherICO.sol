@@ -170,8 +170,8 @@ contract PretherICO is Owned, TokenWithMint {
     //Public Variables
     address public multiSigWallet;                  
     bool crowdsaleClosed = true;                    //initializes as true, requires owner to turn on crowdsale
-    string tokenName = &quot;Prether&quot;; 
-    string tokenSymbol = &quot;PTH&quot;; 
+    string tokenName = "Prether"; 
+    string tokenSymbol = "PTH"; 
     uint256 public amountRaised; 
     uint256 public deadline; 
     uint256 multiplier = 1; 

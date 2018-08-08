@@ -18,8 +18,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract UnionChain{
     // Public variables of the token
-    string public name = &quot;UnionChain&quot;;
-    string public symbol = &quot;UNIC&quot;;
+    string public name = "UnionChain";
+    string public symbol = "UNIC";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

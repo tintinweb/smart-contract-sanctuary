@@ -182,9 +182,9 @@ contract ERC20Token is admined, ERC20TokenInterface { //Standar definition of an
 }
 
 contract MedCann is admined, ERC20Token {
-    string public name = &quot;MedCann&quot;;
-    string public symbol = &quot;MCAN&quot;;
-    string public version = &quot;1.0&quot;;
+    string public name = "MedCann";
+    string public symbol = "MCAN";
+    string public version = "1.0";
     uint8 public decimals = 18;
 
     function MedCann() public {

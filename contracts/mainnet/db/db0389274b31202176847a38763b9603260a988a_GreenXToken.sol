@@ -37,8 +37,8 @@ contract GreenXToken is ERC20 {
     
     uint256 public totalSupply = 500000000000000000000000;
 
-    function name() public constant returns (string) { return &quot;GreenX Token&quot;; }
-    function symbol() public constant returns (string) { return &quot;Gx&quot;; }
+    function name() public constant returns (string) { return "GreenX Token"; }
+    function symbol() public constant returns (string) { return "Gx"; }
     function decimals() public constant returns (uint8) { return 18; }
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);

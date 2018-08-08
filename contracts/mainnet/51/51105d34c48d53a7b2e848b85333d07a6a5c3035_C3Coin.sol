@@ -70,7 +70,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -138,8 +138,8 @@ contract C3Coin is ERC223, Ownable {
     uint256 public totalSupply;
     
     constructor() public {
-        name = &quot;C3 Coin&quot;;
-        symbol = &quot;CCC&quot;;
+        name = "C3 Coin";
+        symbol = "CCC";
         decimals = 18;
         totalSupply = 100000000000000000000000000000;
         balances[msg.sender] = totalSupply;

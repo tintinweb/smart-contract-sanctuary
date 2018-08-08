@@ -113,8 +113,8 @@ contract NecromeunToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NecromeunToken() public {
-        symbol = &quot;NECRO&quot;;
-        name = &quot;Necroneum Token&quot;;
+        symbol = "NECRO";
+        name = "Necroneum Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000;
         balances[0xe2e4e4fFcB37C70af399F5302d7ED6DDa65dC2f3] = _totalSupply;

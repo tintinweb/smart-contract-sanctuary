@@ -59,7 +59,7 @@ contract Audit {
       // allocate output byte array - this could also be done without assembly
       // by using o_code = new bytes(size)
       code := mload(0x40)
-      // new &quot;memory end&quot; including padding
+      // new "memory end" including padding
       mstore(0x40, add(code, and(add(add(size, 0x20), 0x1f), not(0x1f))))
       // store length in memory
       mstore(code, size)
@@ -89,7 +89,7 @@ contract MonteLabsMS {
     address sender = msg.sender;
     require(owners[sender]);
 
-    bytes32 prefixedHash = keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;,
+    bytes32 prefixedHash = keccak256("\x19Ethereum Signed Message:\n32",
                            keccak256(audit, _codeHash, _level, _ipfsHash));
 
     address other = ecrecover(prefixedHash, _v, _r, _s);

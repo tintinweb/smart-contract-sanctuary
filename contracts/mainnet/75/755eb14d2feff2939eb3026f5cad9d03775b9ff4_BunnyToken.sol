@@ -257,8 +257,8 @@ contract StandardToken is ERC20, BasicToken {
 contract BunnyToken is StandardToken, BurnableToken, Ownable {
     using SafeMath for uint;
 
-    string constant public symbol = &quot;BUNNY&quot;;
-    string constant public name = &quot;BunnyToken&quot;;
+    string constant public symbol = "BUNNY";
+    string constant public name = "BunnyToken";
 
     uint8 constant public decimals = 18;
     uint256 INITIAL_SUPPLY = 1000000000e18;

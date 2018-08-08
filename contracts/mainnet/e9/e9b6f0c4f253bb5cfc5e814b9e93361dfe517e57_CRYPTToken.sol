@@ -183,8 +183,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract CRYPTToken is StandardToken {
-    string public constant name = &quot;CRYPT Test Token&quot;;
-    string public constant symbol = &quot;CRTT&quot;;
+    string public constant name = "CRYPT Test Token";
+    string public constant symbol = "CRTT";
     uint32 public constant decimals = 18;
     uint256 public INITIAL_SUPPLY = 50000 * 1 ether;
     address public CrowdsaleAddress;
@@ -206,7 +206,7 @@ contract CRYPTToken is StandardToken {
      // Override
     function transfer(address _to, uint256 _value) public returns(bool){
         if (msg.sender != CrowdsaleAddress){
-            require(!lockTransfers, &quot;Transfers are prohibited in ICO and Crowdsale period&quot;);
+            require(!lockTransfers, "Transfers are prohibited in ICO and Crowdsale period");
         }
         return super.transfer(_to,_value);
     }
@@ -214,7 +214,7 @@ contract CRYPTToken is StandardToken {
      // Override
     function transferFrom(address _from, address _to, uint256 _value) public returns(bool){
         if (msg.sender != CrowdsaleAddress){
-            require(!lockTransfers, &quot;Transfers are prohibited in ICO and Crowdsale period&quot;);
+            require(!lockTransfers, "Transfers are prohibited in ICO and Crowdsale period");
         }
         return super.transferFrom(_from,_to,_value);
     }

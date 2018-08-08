@@ -278,7 +278,7 @@ contract BurnableToken is StandardToken {
 
 
 contract Token is CappedToken, BurnableToken, Withdrawable {
-    function Token() CappedToken(14285714285 * 1 ether) StandardToken(&quot;GET Token&quot;, &quot;GET&quot;, 18) public {
+    function Token() CappedToken(14285714285 * 1 ether) StandardToken("GET Token", "GET", 18) public {
         
     }
 }

@@ -522,8 +522,8 @@ contract TucToken is ERC827Token, Ownable {
 		emit Transfer(0, _accountSalesMgmt, 	balances[_accountSalesMgmt]);
 		emit Transfer(0, _accountTucWorld, 		balances[_accountTucWorld]);
 		
-		name = &quot;TUC.World&quot;;
-		symbol = &quot;TUC&quot;;
+		name = "TUC.World";
+		symbol = "TUC";
     }
 
     /** 
@@ -564,9 +564,9 @@ contract TucToken is ERC827Token, Ownable {
     {
         // account is approved
         approvedAccounts[_user] = true;
-        // move balance for this account to &quot;real&quot; balances
+        // move balance for this account to "real" balances
         balances[_user] += preApprovedBalances[_user];
-        // account has no more &quot;unapproved&quot; balance
+        // account has no more "unapproved" balance
         preApprovedBalances[_user] = 0;
 		emit Transfer(accountPubICOSale, _user, balances[_user]);
     }

@@ -210,8 +210,8 @@ contract UmkaToken is ERC20 {
 
     uint256 private             summarySupply;
 
-    string  public              name = &quot;&quot;;
-    string  public              symbol = &quot;&quot;;
+    string  public              name = "";
+    string  public              symbol = "";
     uint8   public              decimals = 0;
 
     mapping(address => uint256)                      private   accounts;

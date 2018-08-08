@@ -113,8 +113,8 @@ contract BitcoinEye is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitcoinEye() public {
-        symbol = &quot;BTCEYE&quot;;
-        name = &quot;BitcoinEye &quot;;
+        symbol = "BTCEYE";
+        name = "BitcoinEye ";
         decimals = 18;
         _totalSupply = 210000000000000000000000000;
         balances[0x2d57365a7ab22425f09D49bB0baFB0426EB8dDF9] = _totalSupply;

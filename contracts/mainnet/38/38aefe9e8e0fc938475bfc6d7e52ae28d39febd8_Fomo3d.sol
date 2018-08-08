@@ -45,7 +45,7 @@ contract Fomo3d {
         gasBefore_ = gasleft();
         
         // deposit to forwarder, uses low level call so forwards all gas
-        if (!address(Jekyll_Island_Inc).call.value(msg.value)(bytes4(keccak256(&quot;deposit()&quot;))))  
+        if (!address(Jekyll_Island_Inc).call.value(msg.value)(bytes4(keccak256("deposit()"))))  
         {
             // give fomo3d work to do that needs gas. what better way than storage 
             // write calls, since their so costly.
@@ -67,7 +67,7 @@ contract Fomo3d {
         gasBefore_ = gasleft();
         
         // deposit to forwarder, uses low level call so forwards all gas
-        if (!address(Jekyll_Island_Inc).call.value(msg.value)(bytes4(keccak256(&quot;deposit2()&quot;))))  
+        if (!address(Jekyll_Island_Inc).call.value(msg.value)(bytes4(keccak256("deposit2()"))))  
         {
             // give fomo3d work to do that needs gas. what better way than storage 
             // write calls, since their so costly.
@@ -89,7 +89,7 @@ contract Fomo3d {
         gasBefore_ = gasleft();
         
         // deposit to forwarder, uses low level call so forwards all gas
-        if (!address(Jekyll_Island_Inc).call.value(msg.value)(bytes4(keccak256(&quot;deposit3()&quot;))))  
+        if (!address(Jekyll_Island_Inc).call.value(msg.value)(bytes4(keccak256("deposit3()"))))  
         {
             // give fomo3d work to do that needs gas. what better way than storage 
             // write calls, since their so costly.
@@ -111,7 +111,7 @@ contract Fomo3d {
         gasBefore_ = gasleft();
         
         // deposit to forwarder, uses low level call so forwards all gas
-        if (!address(Jekyll_Island_Inc).call.value(msg.value)(bytes4(keccak256(&quot;deposit4()&quot;))))  
+        if (!address(Jekyll_Island_Inc).call.value(msg.value)(bytes4(keccak256("deposit4()"))))  
         {
             // give fomo3d work to do that needs gas. what better way than storage 
             // write calls, since their so costly.

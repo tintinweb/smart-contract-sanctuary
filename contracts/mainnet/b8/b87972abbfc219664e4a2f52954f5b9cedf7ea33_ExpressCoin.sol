@@ -13,8 +13,8 @@ contract owned {
     }
 }
 contract ExpressCoin is owned {
-    string public constant name = &quot;ExpressCoin&quot;;
-    string public constant symbol = &quot;XPC&quot;;
+    string public constant name = "ExpressCoin";
+    string public constant symbol = "XPC";
     uint public constant decimals = 8;
     uint constant ONETOKEN = 10 ** uint(decimals);
     uint constant MILLION = 1000000; 

@@ -145,7 +145,7 @@ contract CryptoRomeAuction is CryptoRomeControl {
         highestBidder = msg.sender;
         highestBid = msg.value;
         highestBidIsCC = false;
-        highestBidderCC = &quot;&quot;;
+        highestBidderCC = "";
 
         emit Bid(msg.sender, msg.value);
     }

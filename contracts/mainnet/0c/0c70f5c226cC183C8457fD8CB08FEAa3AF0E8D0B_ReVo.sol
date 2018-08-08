@@ -352,8 +352,8 @@ contract ReVo is BurnableToken, UpgradeableToken {
   event UpdatedTokenInformation(string newName, string newSymbol);
 
   function ReVo()  UpgradeableToken(msg.sender) {
-    name = &quot;ReVo&quot;;
-    symbol = &quot;RV&quot;;
+    name = "ReVo";
+    symbol = "RV";
     totalSupply = 100000000000000000000000000;
     decimals = 18;
 

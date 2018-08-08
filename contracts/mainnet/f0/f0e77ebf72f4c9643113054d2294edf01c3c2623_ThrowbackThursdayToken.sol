@@ -113,8 +113,8 @@ contract ThrowbackThursdayToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ThrowbackThursdayToken() public {
-        symbol = &quot;TBT&quot;;
-        name = &quot;Throwback Thursday&quot;;
+        symbol = "TBT";
+        name = "Throwback Thursday";
         decimals = 0;
         _totalSupply = 10000000000;
         balances[0x712f0EAA88233650d904d9791467FAF13c728080] = _totalSupply;

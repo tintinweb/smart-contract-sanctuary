@@ -304,7 +304,7 @@ contract ZethrBankroll is ERC223Receiving {
         playerRoundSendMSG[msg.sender] = playerTotalRounds;
         playerRoundSendTime[msg.sender] = now;
         playerTotalRounds = playerTotalRounds + 1;
-        ZTHTKN.buyAndSetDivPercentage.value(NonICOBuyins)(msg.sender, 33, &quot;&quot;);
+        ZTHTKN.buyAndSetDivPercentage.value(NonICOBuyins)(msg.sender, 33, "");
     }
 
     /// @dev Function to buy tokens with contract eth balance.
@@ -315,7 +315,7 @@ contract ZethrBankroll is ERC223Receiving {
     {
         uint savings = address(this).balance;
         if (savings > 0.01 ether) {
-            ZTHTKN.buyAndSetDivPercentage.value(savings)(address(0x0), 33, &quot;&quot;);
+            ZTHTKN.buyAndSetDivPercentage.value(savings)(address(0x0), 33, "");
             emit BankrollInvest(savings);
         }
         else {
@@ -768,7 +768,7 @@ contract ZethrBankroll is ERC223Receiving {
         uint ActualBalance = (address(this).balance.sub(NonICOBuyins));
         if (ActualBalance > 0.01 ether) {
           reEntered = true;
-          ZTHTKN.buyAndSetDivPercentage.value(ActualBalance)(address(0x0), 33, &quot;&quot;);
+          ZTHTKN.buyAndSetDivPercentage.value(ActualBalance)(address(0x0), 33, "");
           emit BankrollInvest(ActualBalance);
           reEntered = false;
         }

@@ -95,8 +95,8 @@ contract KPRToken is ERC223 {
 
     
     //public variables
-    string public constant symbol=&quot;KPR&quot;; 
-    string public constant name=&quot;KPR Coin&quot;; 
+    string public constant symbol="KPR"; 
+    string public constant name="KPR Coin"; 
     uint8 public constant decimals=18;
 
     //1 ETH = 2,500 KPR

@@ -110,8 +110,8 @@ contract Aramco is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Aramco() public {
-        symbol = &quot;ARM&quot;;
-        name = &quot;Aramco&quot;;
+        symbol = "ARM";
+        name = "Aramco";
         decimals = 6;
         _totalSupply = 500000000000000;
         balances[0xA0f0431d2a772b4ED748D37373bEb99F7c6a1D24] = _totalSupply;

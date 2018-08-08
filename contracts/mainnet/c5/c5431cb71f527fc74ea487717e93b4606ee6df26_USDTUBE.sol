@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract USDTUBE {
     // Public variables of the token
-    string public name = &quot;USDTUBE&quot;;
-    string public symbol = &quot;USDe&quot;;
+    string public name = "USDTUBE";
+    string public symbol = "USDe";
     uint8 public decimals = 0;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

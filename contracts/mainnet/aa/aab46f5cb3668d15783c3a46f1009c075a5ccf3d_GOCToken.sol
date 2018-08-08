@@ -549,8 +549,8 @@ contract VestedToken is StandardToken, LimitedTransferToken {
 
 contract GOCToken is VestedToken {
     //FIELDS
-    string public name = &quot;Global Optimal Chain&quot;;
-    string public symbol = &quot;GOC&quot;;
+    string public name = "Global Optimal Chain";
+    string public symbol = "GOC";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 20 * 100000000 * 1 ether;
     uint public iTime;

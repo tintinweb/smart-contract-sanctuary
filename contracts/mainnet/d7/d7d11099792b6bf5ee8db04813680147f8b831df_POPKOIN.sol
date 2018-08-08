@@ -102,8 +102,8 @@ contract POPKOIN is ERC20, Ownable {
     mapping(address => uint256) internal _lockupExpireTime;
 
     function POPKOIN() public {
-        name = &quot;POPKOIN&quot;;
-        symbol = &quot;POPK&quot;;
+        name = "POPKOIN";
+        symbol = "POPK";
         decimals = 18;
 
 

@@ -176,7 +176,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -397,8 +397,8 @@ contract CappedCrowdsale is Crowdsale {
 }
 
 contract RDT is MintableToken {
-  string public name = &quot;Rate Date Token&quot;;
-  string public symbol = &quot;RDT&quot;;
+  string public name = "Rate Date Token";
+  string public symbol = "RDT";
   uint8 public decimals = 18;
   /* 50 000 000 cap for RDT tokens */
   uint256 public cap = 50000000000000000000000000;

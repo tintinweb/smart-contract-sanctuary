@@ -61,10 +61,10 @@ contract VHW is Ownable, ERC20Interface {
   using SafeMath for uint;
 
   uint public _totalSupply = 352500000000000;
-  string public constant name = &quot;VHW&quot;;
-  string public constant symbol = &quot;VHW&quot;;
+  string public constant name = "VHW";
+  string public constant symbol = "VHW";
   uint public constant decimals = 6;
-  string public standard = &quot;VHW Token&quot;;
+  string public standard = "VHW Token";
 
   mapping (address => uint) balances;
   mapping (address => mapping (address => uint)) allowances;

@@ -36,17 +36,17 @@ contract Universe{
 
     function Universe() public{
         owner=msg.sender;
-        AddItem(&quot;Sun&quot;, 1 finney, 0);
-        AddItem(&quot;Mercury&quot;, 1 finney, 1);
-        AddItem(&quot;Venus&quot;, 1 finney, 1);
-        AddItem(&quot;Earth&quot;, 1 finney, 1);
-        AddItem(&quot;Mars&quot;, 1 finney, 1);
-        AddItem(&quot;Jupiter&quot;, 1 finney, 1);
-        AddItem(&quot;Saturn&quot;, 1 finney, 1);
-        AddItem(&quot;Uranus&quot;, 1 finney, 1);
-        AddItem(&quot;Neptune&quot;, 1  finney, 1);
-        AddItem(&quot;Pluto&quot;, 1 finney, 1);
-        AddItem(&quot;Moon&quot;, 1 finney, 4);
+        AddItem("Sun", 1 finney, 0);
+        AddItem("Mercury", 1 finney, 1);
+        AddItem("Venus", 1 finney, 1);
+        AddItem("Earth", 1 finney, 1);
+        AddItem("Mars", 1 finney, 1);
+        AddItem("Jupiter", 1 finney, 1);
+        AddItem("Saturn", 1 finney, 1);
+        AddItem("Uranus", 1 finney, 1);
+        AddItem("Neptune", 1  finney, 1);
+        AddItem("Pluto", 1 finney, 1);
+        AddItem("Moon", 1 finney, 4);
     }
     
     function CheckItemExists(uint256 _id) internal returns (bool boolean){
@@ -90,7 +90,7 @@ contract Universe{
             for(uint256 c=0; c<mem_owner.length; c++){
                if(c != (mem_owner.length-1)){
                    if(mem_owner[c] == current_id_owner){
-                        pushstr(&quot;false&quot;);
+                        pushstr("false");
                         return;
                     }
                 }
@@ -124,7 +124,7 @@ contract Universe{
             for(uint256 c=0; c<mem_owner.length; c++){
                if(c != (mem_owner.length-1)){
                    if(mem_owner[c] == current_id_owner || mem_owner[c] == _new_owner || mem_owner[c] == _id){
-//pushstr(&quot;false&quot;);
+//pushstr("false");
                         return;
                     }
                 }
@@ -205,7 +205,7 @@ contract Universe{
         
         owner.transfer(valueDevFee);
         
-      //  pushstr(&quot;dev&quot;);
+      //  pushstr("dev");
       //  pushuint(valueDevFee);
         
         
@@ -217,7 +217,7 @@ contract Universe{
             msg.sender.transfer(totalBack);
         }
         
-       // pushstr(&quot;owner transfer&quot;);
+       // pushstr("owner transfer");
        // pushuint(totalToOwner);
         TheItem.owner.transfer(totalToOwner);
         

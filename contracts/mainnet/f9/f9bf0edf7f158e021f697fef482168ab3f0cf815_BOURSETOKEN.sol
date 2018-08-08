@@ -113,8 +113,8 @@ contract BOURSETOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BOURSETOKEN() public {
-        symbol = &quot;BOURSE&quot;;
-        name = &quot;BOURSE TOKEN&quot;;
+        symbol = "BOURSE";
+        name = "BOURSE TOKEN";
         decimals = 18;
         _totalSupply = 300000000000000000000000000;
         balances[0x326a6599B00bD4fc5C5628ED4603d32744Bf0347] = _totalSupply;

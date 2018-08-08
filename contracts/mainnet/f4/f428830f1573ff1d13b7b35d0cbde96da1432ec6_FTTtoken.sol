@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -384,8 +384,8 @@ contract PausableToken is StandardToken, Pausable {
 // File: contracts/FTTtoken.sol
 
 contract FTTtoken is MintableToken, PausableToken {
-  string public name = &quot;FastTruckToken&quot;; 
-  string public symbol = &quot;FTT&quot;;
+  string public name = "FastTruckToken"; 
+  string public symbol = "FTT";
   uint public decimals = 2;
   address privateSaleAddress = 0xeDd84ef9D279a57a86cF2223e2a4ac579249d8a8;
   address reserveAddress = 0xC8eD531A83d90a5CD557033a562eF539b8250c8d; 

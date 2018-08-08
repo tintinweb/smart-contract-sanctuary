@@ -244,9 +244,9 @@ pragma solidity ^0.4.18;
 
 contract ENSConstants {
     bytes32 constant public ENS_ROOT = bytes32(0);
-    bytes32 constant public ETH_TLD_LABEL = keccak256(&quot;eth&quot;);
+    bytes32 constant public ETH_TLD_LABEL = keccak256("eth");
     bytes32 constant public ETH_TLD_NODE = keccak256(ENS_ROOT, ETH_TLD_LABEL);
-    bytes32 constant public PUBLIC_RESOLVER_LABEL = keccak256(&quot;resolver&quot;);
+    bytes32 constant public PUBLIC_RESOLVER_LABEL = keccak256("resolver");
     bytes32 constant public PUBLIC_RESOLVER_NODE = keccak256(ETH_TLD_NODE, PUBLIC_RESOLVER_LABEL);
 }
 
@@ -337,8 +337,8 @@ pragma solidity 0.4.18;
 
 
 contract EVMScriptRegistryConstants {
-    bytes32 constant public EVMSCRIPT_REGISTRY_APP_ID = keccak256(&quot;evmreg.aragonpm.eth&quot;);
-    bytes32 constant public EVMSCRIPT_REGISTRY_APP = keccak256(keccak256(&quot;app&quot;), EVMSCRIPT_REGISTRY_APP_ID);
+    bytes32 constant public EVMSCRIPT_REGISTRY_APP_ID = keccak256("evmreg.aragonpm.eth");
+    bytes32 constant public EVMSCRIPT_REGISTRY_APP = keccak256(keccak256("app"), EVMSCRIPT_REGISTRY_APP_ID);
 }
 
 

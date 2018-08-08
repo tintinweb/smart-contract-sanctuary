@@ -46,8 +46,8 @@ contract ETFW{
     function ETFW() public {
         totalSupply = 100000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;                
-        name = &quot;Ether Future Wins&quot;;                                   
-        symbol = &quot;ETFW&quot;;                               
+        name = "Ether Future Wins";                                   
+        symbol = "ETFW";                               
     }
 
 

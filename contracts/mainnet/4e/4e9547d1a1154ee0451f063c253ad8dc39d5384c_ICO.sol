@@ -156,8 +156,8 @@ contract MigrationAgent {
 contract GVToken is StandardToken {
     
     // Constants
-    string public constant name = &quot;Genesis Vision Token&quot;;
-    string public constant symbol = &quot;GVT&quot;;
+    string public constant name = "Genesis Vision Token";
+    string public constant symbol = "GVT";
     uint   public constant decimals = 18;
     uint   constant TOKEN_LIMIT = 44 * 1e6 * 1e18; 
     
@@ -313,13 +313,13 @@ contract GVOptionProgram {
     uint constant token20perCent  = 12631578947368500;  // GVT tokens per usd cent during execution of GVOT20
     uint constant token10perCent  = 11578947368421100;  // GVT tokens per usd cent during execution of GVOT10
 
-    string public constant option30name = &quot;30% GVOT&quot;;
-    string public constant option20name = &quot;20% GVOT&quot;;
-    string public constant option10name = &quot;10% GVOT&quot;;
+    string public constant option30name = "30% GVOT";
+    string public constant option20name = "20% GVOT";
+    string public constant option10name = "10% GVOT";
 
-    string public constant option30symbol = &quot;GVOT30&quot;;
-    string public constant option20symbol = &quot;GVOT20&quot;;
-    string public constant option10symbol = &quot;GVOT10&quot;;
+    string public constant option30symbol = "GVOT30";
+    string public constant option20symbol = "GVOT20";
+    string public constant option10symbol = "GVOT10";
 
     uint constant option30_TOKEN_LIMIT = 26 * 1e5 * 1e18;
     uint constant option20_TOKEN_LIMIT = 36 * 1e5 * 1e18;

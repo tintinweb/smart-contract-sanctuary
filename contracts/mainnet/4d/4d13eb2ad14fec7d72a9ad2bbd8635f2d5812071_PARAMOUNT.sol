@@ -102,9 +102,9 @@ contract PARAMOUNT is StandardToken {
     function PARAMOUNT() {
         balances[msg.sender] = 1600000000000000;
         totalSupply = 1600000000000000;                    
-        name = &quot;PARAMOUNT&quot;;                            
+        name = "PARAMOUNT";                            
         decimals = 8;                                
-        symbol = &quot;ONE&quot;;                            
+        symbol = "ONE";                            
         unitsOneEthCanBuy = 100;
         fundsWallet = msg.sender;
     }
@@ -131,7 +131,7 @@ contract PARAMOUNT is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

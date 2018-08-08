@@ -98,8 +98,8 @@ contract KakushinToken {
     function KakushinToken() public {
         totalSupply = totalSupply.mul(safeExp(10, uint256(decimals)));  // Update total supply with the decimal amount
                       // Give the creator all initial tokens
-        name = &quot;KAKUSHIN&quot;;                                   // Set the name for display purposes
-        symbol = &quot;KKN&quot;;                               // Set the symbol for display purposes
+        name = "KAKUSHIN";                                   // Set the name for display purposes
+        symbol = "KKN";                               // Set the symbol for display purposes
         balances[owner1] = uint256(59).mul(totalSupply.div(100));
         balances[companyWallet] = uint256(28).mul(totalSupply.div(100));  
         balances[founder1Wallet] = uint256(62400000).mul(safeExp(10, uint256(decimals)));

@@ -51,7 +51,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -135,7 +135,7 @@ contract Serpent is Ownable {
 	function () payable public {
 		require(msg.value > 0);
 
-		Play(&quot;Callback, No quote&quot;);
+		Play("Callback, No quote");
 	}
 
 	function NewSerpent (uint256 _SerpentCountDown) public onlyOwner {
@@ -163,7 +163,7 @@ contract Serpent is Ownable {
 		// Start first serpent segment
 	    SerpenSegmentCount = SerpenSegmentCount.add(1);
 	    investormapping.push(SerpentHead);
-	    AddNewSegment(SerpentHead, 1 ether, SerpenSegmentCount, uint256(block.timestamp), &quot;Everything started with Salazar Slytherin&quot;);
+	    AddNewSegment(SerpentHead, 1 ether, SerpenSegmentCount, uint256(block.timestamp), "Everything started with Salazar Slytherin");
 	}
 	
 	

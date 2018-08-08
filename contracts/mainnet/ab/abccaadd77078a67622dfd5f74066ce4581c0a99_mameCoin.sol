@@ -70,7 +70,7 @@ contract ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -115,8 +115,8 @@ contract mameCoin is ERC20, Ownable {
   mapping(address => mapping (address => uint256)) internal allowed;
   mapping(address => uint256) internal lockups;
 
-  string public constant name = &quot;mameCoin&quot;;
-  string public constant symbol = &quot;MAME&quot;;
+  string public constant name = "mameCoin";
+  string public constant symbol = "MAME";
   uint8 public constant decimals = 8;
   uint256 totalSupply_ = 25000000000 * (10 ** uint256(decimals));
 

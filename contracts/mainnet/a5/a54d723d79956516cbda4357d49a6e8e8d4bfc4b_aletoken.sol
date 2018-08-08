@@ -74,7 +74,7 @@ contract aletoken is StandardToken {
     function aletoken(string _tokenSymbol) {
         balances[msg.sender] = 4000000000000000000000000000; // 初始token数量给予消息发送者
         totalSupply = 4000000000000000000000000000;         // 设置初始总量
-        name = &quot;Asset Link Entertainment&quot;;        
+        name = "Asset Link Entertainment";        
         decimals = 18;
         symbol = _tokenSymbol;  
     }
@@ -87,7 +87,7 @@ contract aletoken is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 

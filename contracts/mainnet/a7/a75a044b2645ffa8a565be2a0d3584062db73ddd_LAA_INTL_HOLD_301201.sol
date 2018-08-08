@@ -4,8 +4,8 @@ contract	LAA_INTL_HOLD_301201				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	LAA_INTL_HOLD_301201		&quot;	;
-	string	public		symbol =	&quot;	LAIHI		&quot;	;
+	string	public		name =	"	LAA_INTL_HOLD_301201		"	;
+	string	public		symbol =	"	LAIHI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		29469576425887700000000000					;	

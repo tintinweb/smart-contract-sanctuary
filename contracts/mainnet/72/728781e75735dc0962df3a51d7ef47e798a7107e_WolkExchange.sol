@@ -119,8 +119,8 @@ contract ERC20Token is ERC20, SafeMath {
 contract Wolk is ERC20Token, Owned {
 
     // TOKEN INFO
-    string  public constant name = &quot;Wolk Protocol Token&quot;;
-    string  public constant symbol = &quot;WOLK&quot;;
+    string  public constant name = "Wolk Protocol Token";
+    string  public constant symbol = "WOLK";
     uint256 public constant decimals = 18;
 
     // RESERVE

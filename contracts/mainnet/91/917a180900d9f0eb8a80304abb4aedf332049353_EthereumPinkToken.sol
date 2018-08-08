@@ -155,8 +155,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract EthereumPinkToken is StandardToken {
 
-  string public constant name = &quot;Ethereum Pink Token&quot;;
-  string public constant symbol = &quot;EPINK&quot;;
+  string public constant name = "Ethereum Pink Token";
+  string public constant symbol = "EPINK";
   uint256 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 100000000 * 10**18;

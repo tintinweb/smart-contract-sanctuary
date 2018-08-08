@@ -109,8 +109,8 @@ contract AKQA is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;AKQA&quot;;
-        name = &quot;AKQA Coin&quot;;
+        symbol = "AKQA";
+        name = "AKQA Coin";
         decimals = 18;
         _totalSupply = 900000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

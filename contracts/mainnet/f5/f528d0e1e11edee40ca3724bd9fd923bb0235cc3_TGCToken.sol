@@ -2,14 +2,14 @@
 
   Copyright 2017 TGC Foundation.
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
   http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -193,8 +193,8 @@ contract StandardToken is BasicToken, ERC20 {
 /// For more information about this token sale, please visit http://mijunyun.com
 /// @author lengfeng - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9df1f8f3fafbf8f3faddf0f4f7e8f3e4e8f3b3fef2f0">[email&#160;protected]</a>>, tianlong - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="780c1119161417161f381511120d16010d16561b1715">[email&#160;protected]</a>>.
 contract TGCToken is StandardToken {
-    string public constant NAME = &quot;Tigercoin&quot;;
-    string public constant SYMBOL = &quot;TGC&quot;;
+    string public constant NAME = "Tigercoin";
+    string public constant SYMBOL = "TGC";
     uint public constant DECIMALS = 18;
 
     /// During token sale, we use one consistent price: 1000 TGC/ETH.
@@ -292,7 +292,7 @@ contract TGCToken is StandardToken {
         if (!saleStarted()) {
             _;
         } else {
-            InvalidState(&quot;Sale has not started yet&quot;);
+            InvalidState("Sale has not started yet");
             throw;
         }
     }
@@ -301,7 +301,7 @@ contract TGCToken is StandardToken {
         if (saleStarted() && !saleEnded()) {
             _;
         } else {
-            InvalidState(&quot;Sale is not in progress&quot;);
+            InvalidState("Sale is not in progress");
             throw;
         }
     }
@@ -310,7 +310,7 @@ contract TGCToken is StandardToken {
         if (saleEnded()) {
             _;
         } else {
-            InvalidState(&quot;Sale is not ended yet&quot;);
+            InvalidState("Sale is not ended yet");
             throw;
         }
     }

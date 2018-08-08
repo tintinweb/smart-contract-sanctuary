@@ -326,8 +326,8 @@ contract PLCRVoting {
 
         bytes32 UUID = attrUUID(msg.sender, _pollID);
 
-        store.setAttribute(UUID, &quot;numTokens&quot;, _numTokens);
-        store.setAttribute(UUID, &quot;commitHash&quot;, uint(_secretHash));
+        store.setAttribute(UUID, "numTokens", _numTokens);
+        store.setAttribute(UUID, "commitHash", uint(_secretHash));
 
         pollMap[_pollID].didCommit[msg.sender] = true;
         _VoteCommitted(_pollID, _numTokens, msg.sender);
@@ -529,17 +529,17 @@ contract PLCRVoting {
     @return Bytes32 hash property attached to target poll
     */
     function getCommitHash(address _voter, uint _pollID) constant public returns (bytes32 commitHash) {
-        return bytes32(store.getAttribute(attrUUID(_voter, _pollID), &quot;commitHash&quot;));
+        return bytes32(store.getAttribute(attrUUID(_voter, _pollID), "commitHash"));
     }
 
     /**
-    @dev Wrapper for getAttribute with attrName=&quot;numTokens&quot;
+    @dev Wrapper for getAttribute with attrName="numTokens"
     @param _voter Address of user to check against
     @param _pollID Integer identifier associated with target poll
     @return Number of tokens committed to poll in sorted poll-linked-list
     */
     function getNumTokens(address _voter, uint _pollID) constant public returns (uint numTokens) {
-        return store.getAttribute(attrUUID(_voter, _pollID), &quot;numTokens&quot;);
+        return store.getAttribute(attrUUID(_voter, _pollID), "numTokens");
     }
 
     /**
@@ -723,18 +723,18 @@ contract Parameterizer {
       token = EIP20Interface(_tokenAddr);
       voting = PLCRVoting(_plcrAddr);
 
-      set(&quot;minDeposit&quot;, _minDeposit);
-      set(&quot;pMinDeposit&quot;, _pMinDeposit);
-      set(&quot;applyStageLen&quot;, _applyStageLen);
-      set(&quot;pApplyStageLen&quot;, _pApplyStageLen);
-      set(&quot;commitStageLen&quot;, _commitStageLen);
-      set(&quot;pCommitStageLen&quot;, _pCommitStageLen);
-      set(&quot;revealStageLen&quot;, _revealStageLen);
-      set(&quot;pRevealStageLen&quot;, _pRevealStageLen);
-      set(&quot;dispensationPct&quot;, _dispensationPct);
-      set(&quot;pDispensationPct&quot;, _pDispensationPct);
-      set(&quot;voteQuorum&quot;, _voteQuorum);
-      set(&quot;pVoteQuorum&quot;, _pVoteQuorum);
+      set("minDeposit", _minDeposit);
+      set("pMinDeposit", _pMinDeposit);
+      set("applyStageLen", _applyStageLen);
+      set("pApplyStageLen", _pApplyStageLen);
+      set("commitStageLen", _commitStageLen);
+      set("pCommitStageLen", _pCommitStageLen);
+      set("revealStageLen", _revealStageLen);
+      set("pRevealStageLen", _pRevealStageLen);
+      set("dispensationPct", _dispensationPct);
+      set("pDispensationPct", _pDispensationPct);
+      set("voteQuorum", _voteQuorum);
+      set("pVoteQuorum", _pVoteQuorum);
   }
 
   // -----------------------
@@ -747,7 +747,7 @@ contract Parameterizer {
   @param _value the proposed value to set the param to be set
   */
   function proposeReparameterization(string _name, uint _value) public returns (bytes32) {
-    uint deposit = get(&quot;pMinDeposit&quot;);
+    uint deposit = get("pMinDeposit");
     bytes32 propID = keccak256(_name, _value);
 
     if (keccak256(_name) == keccak256(&#39;dispensationPct&#39;) ||
@@ -760,14 +760,14 @@ contract Parameterizer {
 
     // attach name and value to pollID
     proposals[propID] = ParamProposal({
-      appExpiry: now.add(get(&quot;pApplyStageLen&quot;)),
+      appExpiry: now.add(get("pApplyStageLen")),
       challengeID: 0,
       deposit: deposit,
       name: _name,
       owner: msg.sender,
-      processBy: now.add(get(&quot;pApplyStageLen&quot;))
-        .add(get(&quot;pCommitStageLen&quot;))
-        .add(get(&quot;pRevealStageLen&quot;))
+      processBy: now.add(get("pApplyStageLen"))
+        .add(get("pCommitStageLen"))
+        .add(get("pRevealStageLen"))
         .add(PROCESSBY),
       value: _value
     });
@@ -790,14 +790,14 @@ contract Parameterizer {
 
     //start poll
     uint pollID = voting.startPoll(
-      get(&quot;pVoteQuorum&quot;),
-      get(&quot;pCommitStageLen&quot;),
-      get(&quot;pRevealStageLen&quot;)
+      get("pVoteQuorum"),
+      get("pCommitStageLen"),
+      get("pRevealStageLen")
     );
 
     challenges[pollID] = Challenge({
       challenger: msg.sender,
-      rewardPool: SafeMath.sub(100, get(&quot;pDispensationPct&quot;)).mul(deposit).div(100),
+      rewardPool: SafeMath.sub(100, get("pDispensationPct")).mul(deposit).div(100),
       stake: deposit,
       resolved: false,
       winningTokens: 0
@@ -815,7 +815,7 @@ contract Parameterizer {
   }
 
   /**
-  @notice for the provided proposal ID, set it, resolve its challenge, or delete it depending on whether it can be set, has a challenge which can be resolved, or if its &quot;process by&quot; date has passed
+  @notice for the provided proposal ID, set it, resolve its challenge, or delete it depending on whether it can be set, has a challenge which can be resolved, or if its "process by" date has passed
   @param _propID the proposal ID to make a determination and state transition for
   */
   function processProposal(bytes32 _propID) public {
@@ -847,13 +847,13 @@ contract Parameterizer {
       revert();
     }
 
-    assert(get(&quot;dispensationPct&quot;) <= 100);
-    assert(get(&quot;pDispensationPct&quot;) <= 100);
+    assert(get("dispensationPct") <= 100);
+    assert(get("pDispensationPct") <= 100);
 
     // verify that future proposal appExpiry and processBy times will not overflow
-    now.add(get(&quot;pApplyStageLen&quot;))
-      .add(get(&quot;pCommitStageLen&quot;))
-      .add(get(&quot;pRevealStageLen&quot;))
+    now.add(get("pApplyStageLen"))
+      .add(get("pCommitStageLen"))
+      .add(get("pRevealStageLen"))
       .add(PROCESSBY);
 
     delete proposals[_propID];
@@ -1093,14 +1093,14 @@ contract Registry {
     function apply(bytes32 _listingHash, uint _amount, string _data) external {
         require(!isWhitelisted(_listingHash));
         require(!appWasMade(_listingHash));
-        require(_amount >= parameterizer.get(&quot;minDeposit&quot;));
+        require(_amount >= parameterizer.get("minDeposit"));
 
         // Sets owner
         Listing storage listing = listings[_listingHash];
         listing.owner = msg.sender;
 
         // Sets apply stage end time
-        listing.applicationExpiry = block.timestamp.add(parameterizer.get(&quot;applyStageLen&quot;));
+        listing.applicationExpiry = block.timestamp.add(parameterizer.get("applyStageLen"));
         listing.unstakedDeposit = _amount;
 
         // Transfers tokens from user to Registry contract
@@ -1135,7 +1135,7 @@ contract Registry {
 
         require(listing.owner == msg.sender);
         require(_amount <= listing.unstakedDeposit);
-        require(listing.unstakedDeposit - _amount >= parameterizer.get(&quot;minDeposit&quot;));
+        require(listing.unstakedDeposit - _amount >= parameterizer.get("minDeposit"));
 
         listing.unstakedDeposit -= _amount;
         require(token.transfer(msg.sender, _amount));
@@ -1175,7 +1175,7 @@ contract Registry {
     */
     function challenge(bytes32 _listingHash, string _data) external returns (uint challengeID) {
         Listing storage listing = listings[_listingHash];
-        uint deposit = parameterizer.get(&quot;minDeposit&quot;);
+        uint deposit = parameterizer.get("minDeposit");
 
         // Listing must be in apply stage or already on the whitelist
         require(appWasMade(_listingHash) || listing.whitelisted);
@@ -1191,14 +1191,14 @@ contract Registry {
 
         // Starts poll
         uint pollID = voting.startPoll(
-            parameterizer.get(&quot;voteQuorum&quot;),
-            parameterizer.get(&quot;commitStageLen&quot;),
-            parameterizer.get(&quot;revealStageLen&quot;)
+            parameterizer.get("voteQuorum"),
+            parameterizer.get("commitStageLen"),
+            parameterizer.get("revealStageLen")
         );
 
         challenges[pollID] = Challenge({
             challenger: msg.sender,
-            rewardPool: ((100 - parameterizer.get(&quot;dispensationPct&quot;)) * deposit) / 100,
+            rewardPool: ((100 - parameterizer.get("dispensationPct")) * deposit) / 100,
             stake: deposit,
             resolved: false,
             totalTokens: 0

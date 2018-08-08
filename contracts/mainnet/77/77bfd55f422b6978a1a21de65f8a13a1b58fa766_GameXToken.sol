@@ -172,6 +172,6 @@ contract ParameterizedToken is CappedToken {
     }
 }
 contract GameXToken is ParameterizedToken {
-    function GameXToken() public ParameterizedToken(&quot;Game-X Token&quot;, &quot;GTK&quot;, 8, 100000000) {
+    function GameXToken() public ParameterizedToken("Game-X Token", "GTK", 8, 100000000) {
     }
 }

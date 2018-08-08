@@ -65,8 +65,8 @@ contract _0xEtherToken is ERC20Interface {
     using SafeMath for uint;
     using ExtendedMath for uint;
 
-    string public symbol = &quot;PoWEth&quot;;
-    string public name = &quot;PoWEth Token&quot;;
+    string public symbol = "PoWEth";
+    string public name = "PoWEth Token";
     uint8 public decimals = 8;
     uint public _totalSupply = 10000000000000000;
 	uint public maxSupplyForEra = 5000000000000000;

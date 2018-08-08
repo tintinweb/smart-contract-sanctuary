@@ -58,7 +58,7 @@ contract StandardToken is Token {
 ---------------------------------------------------------------------------------------------
 */
 
-    /// @notice Send &quot;_value&quot; tokens to &quot;_to&quot; from &quot;msg.sender&quot;.
+    /// @notice Send "_value" tokens to "_to" from "msg.sender".
     /// @dev Transfers sender&#39;s tokens to a given address. Returns success.
     /// @param _to Address of token receiver.
     /// @param _value Number of tokens to transfer.
@@ -77,7 +77,7 @@ contract StandardToken is Token {
         return true;
     }
 
-    /// @notice Transfer &quot;_value&quot; tokens from &quot;_from&quot; to &quot;_to&quot; if &quot;msg.sender&quot; is allowed.
+    /// @notice Transfer "_value" tokens from "_from" to "_to" if "msg.sender" is allowed.
     /// @dev Allows for an approved third party to transfer tokens from one
     /// address to another. Returns success.
     /// @param _from Address from where tokens are withdrawn.
@@ -103,7 +103,7 @@ contract StandardToken is Token {
         return true;
     }
 
-    /// @notice Approves &quot;_who&quot; to transfer &quot;_value&quot; tokens from &quot;msg.sender&quot; to any address.
+    /// @notice Approves "_who" to transfer "_value" tokens from "msg.sender" to any address.
     /// @dev Sets approved amount of tokens for the spender. Returns success.
     /// @param _who Address of allowed account.
     /// @param _value Number of approved tokens.
@@ -159,8 +159,8 @@ contract GoToken is StandardToken {
     Storage data structures
 ---------------------------------------------------------------------------------------------
 */
-    string constant public name = &quot;GoToken&quot;;
-    string constant public symbol = &quot;GOT&quot;;
+    string constant public name = "GoToken";
+    string constant public symbol = "GOT";
     uint256 constant public decimals = 18;
     uint256 constant multiplier = 10 ** (decimals);
 
@@ -446,7 +446,7 @@ contract GoTokenDutchAuction {
         bid();
     }
 
-    /// @notice Set &quot;_token_address&quot; as the token address to be used in the auction.
+    /// @notice Set "_token_address" as the token address to be used in the auction.
     /// @dev Setup function sets external contracts addresses.
     /// @param _token_address Token address.
     function setup(address _token_address) public isOwner atStage(Stages.AuctionDeployed) {
@@ -465,8 +465,8 @@ contract GoTokenDutchAuction {
         Setup();
     }
 
-    /// @notice Set &quot;_price_start&quot;, &quot;_price_constant1&quot; and &quot;_price_exponent1&quot;
-    ///  &quot;_price_constant2&quot; and &quot;_price_exponent2&quot; as
+    /// @notice Set "_price_start", "_price_constant1" and "_price_exponent1"
+    ///  "_price_constant2" and "_price_exponent2" as
     /// the new starting price, price constant and price exponent for the auction price.
     /// @dev Changes auction price function parameters before auction is started.
     /// @param _price_start Updated start price.
@@ -554,7 +554,7 @@ contract GoTokenDutchAuction {
         AuctionStarted(auction_start_time, start_block);
     }
 
-    /// @notice Send &quot;msg.value&quot; WEI to the auction from the &quot;msg.sender&quot; account.
+    /// @notice Send "msg.value" WEI to the auction from the "msg.sender" account.
     /// @dev Allows to send a bid to the auction.
     function bid() public payable
     {
@@ -668,8 +668,8 @@ contract GoTokenDutchAuction {
         assert(final_price > 0);
     }
 
-    // @notice Distribute GoTokens for &quot;receiver_address&quot; after the auction has ended by the owner.
-    // @dev Distribute GoTokens for &quot;receiver_address&quot; after auction has ended by the owner.
+    // @notice Distribute GoTokens for "receiver_address" after the auction has ended by the owner.
+    // @dev Distribute GoTokens for "receiver_address" after auction has ended by the owner.
     // @param receiver_address GoTokens will be assigned to this address if eligible.
     function distributeGoTokens(address receiver_address)
         public isDistributor atStage(Stages.AuctionEnded) returns (bool)
@@ -725,7 +725,7 @@ contract GoTokenDutchAuction {
 
     /// @notice Get the GOT price in WEI during the auction, at the time of
     /// calling this function. Returns 0 if auction has ended.
-    /// Returns &quot;price_start&quot; before auction has started.
+    /// Returns "price_start" before auction has started.
     /// @dev Calculates the current GOT token price in WEI.
     /// @return Returns WEI per indivisible GOT (token_multiplier * GOT).
     function price() public constant returns (uint256) {

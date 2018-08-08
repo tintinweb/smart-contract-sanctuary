@@ -129,12 +129,12 @@ contract hackethereumIco is mortal {
 
         _initialPrice = 1;
 
-        address tokenContractAddress = new hackoin(&quot;Hackoin&quot;, &quot;HK&quot;);
+        address tokenContractAddress = new hackoin("Hackoin", "HK");
         _hackoinToken = hackoin(tokenContractAddress);
 
-        address tenuousTokenContractAddress = new hackoin(&quot;Hackoin_Tenuous&quot;, &quot;HKT&quot;);
-        address educatedTokenContractAddress = new hackoin(&quot;Hackoin_Educated&quot;, &quot;HKE&quot;);
-        address adeptTokenContractAddress = new hackoin(&quot;Hackoin_Adept&quot;, &quot;HKA&quot;);
+        address tenuousTokenContractAddress = new hackoin("Hackoin_Tenuous", "HKT");
+        address educatedTokenContractAddress = new hackoin("Hackoin_Educated", "HKE");
+        address adeptTokenContractAddress = new hackoin("Hackoin_Adept", "HKA");
 
         _tenuousToken = hackoin(tenuousTokenContractAddress);
         _educatedToken = hackoin(educatedTokenContractAddress);
@@ -181,7 +181,7 @@ contract hackethereumIco is mortal {
         _amountRaised += amount;
 
         _hackoinToken.mintToken(msg.sender, tokenAmount);
-        FundTransfer(msg.sender, &quot;Ticket Purchase&quot;, amount);
+        FundTransfer(msg.sender, "Ticket Purchase", amount);
     }
 
     modifier afterDeadline()
@@ -198,7 +198,7 @@ contract hackethereumIco is mortal {
 
         if (_beneficiary.send(amount))
         {
-            FundTransfer(_beneficiary, &quot;Withdrawal&quot;, amount);
+            FundTransfer(_beneficiary, "Withdrawal", amount);
         }
     }
 
@@ -213,7 +213,7 @@ contract hackethereumIco is mortal {
 
         if (targetAddress.send(amount))
         {
-            FundTransfer(targetAddress, &quot;Decisive hack&quot;, amount);
+            FundTransfer(targetAddress, "Decisive hack", amount);
         }
     }
 
@@ -248,7 +248,7 @@ contract hackethereumIco is mortal {
 
         if (_whitehat.send(amount))
         {
-            FundTransfer(_whitehat, &quot;Whitehat recovery&quot;, amount);
+            FundTransfer(_whitehat, "Whitehat recovery", amount);
         }
     }
 
@@ -304,7 +304,7 @@ contract hackethereumIco is mortal {
 
         if (targetAddress.send(amount))
         {
-            FundTransfer(targetAddress, &quot;Hack&quot;, amount);
+            FundTransfer(targetAddress, "Hack", amount);
         }
     }
 

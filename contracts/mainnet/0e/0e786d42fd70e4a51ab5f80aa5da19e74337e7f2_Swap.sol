@@ -34,7 +34,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -79,7 +79,7 @@ contract Library {
     // - the payload should be ASCII as many clients will want to display this to the user
     function createBSMHash(string payload) pure internal returns (bytes32) {
         // \x18Bitcoin Signed Message:\n#{message.size.chr}#{message}
-        string memory prefix = &quot;\x18Bitcoin Signed Message:\n&quot;;
+        string memory prefix = "\x18Bitcoin Signed Message:\n";
         return sha256(sha256(prefix, bytes1(bytes(payload).length), payload));
     }
 

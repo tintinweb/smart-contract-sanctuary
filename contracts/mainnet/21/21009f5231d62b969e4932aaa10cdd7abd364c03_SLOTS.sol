@@ -109,8 +109,8 @@ contract SLOTS is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SLOTS() public {
-        symbol = &quot;SLOTS&quot;;
-        name = &quot;SLOTS&quot;;
+        symbol = "SLOTS";
+        name = "SLOTS";
         decimals = 18;
         _totalSupply = 777777777000000000000000000;
         balances[0x56aCe79B5f35AC651E6aFEE5679631cC2B1a7C43] = _totalSupply;

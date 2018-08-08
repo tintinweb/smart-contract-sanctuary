@@ -113,8 +113,8 @@ contract WineCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WineCoin() public {
-        symbol = &quot;VIN&quot;;
-        name = &quot;Wine Coin&quot;;
+        symbol = "VIN";
+        name = "Wine Coin";
         decimals = 16;
         _totalSupply = 76000000;
         balances[0xc6aabe58E582cf1C97457984C01B92bc6f641AF4] = _totalSupply;

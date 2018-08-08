@@ -15,8 +15,8 @@ contract TravelToken {
     function TravelToken() public {
         totalSupply = 100000000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Travel Token&quot;;
-        symbol = &quot;TRT&quot;;
+        name = "Travel Token";
+        symbol = "TRT";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

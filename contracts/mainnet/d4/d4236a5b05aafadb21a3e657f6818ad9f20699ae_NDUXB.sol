@@ -97,8 +97,8 @@ contract BasicToken is ERC20Basic {
 
 contract NDUXBase is BasicToken, Ownable {
 
-  string public constant name = &quot;NODUX&quot;;
-  string public constant symbol = &quot;NDUX&quot;;
+  string public constant name = "NODUX";
+  string public constant symbol = "NDUX";
   uint constant maxTotalSupply = 75000000;
   
   function NDUXBase() public {

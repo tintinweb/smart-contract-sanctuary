@@ -149,8 +149,8 @@ contract YoshiCoin is StandardToken {
     address public owner = msg.sender;		//Record the owner of the contract
 	uint256 public tokenAmount;
   
-    function name() constant returns (string) { return &quot;YoshiCoin&quot;; }
-    function symbol() constant returns (string) { return &quot;YC&quot;; }
+    function name() constant returns (string) { return "YoshiCoin"; }
+    function symbol() constant returns (string) { return "YC"; }
     function decimals() constant returns (uint8) { return 0; }
 	
 

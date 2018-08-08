@@ -12,8 +12,8 @@ contract ERC20Basic {
 
 contract TrueVeganCoin is ERC20Basic {
 
-    string public tokenName = &quot;True Vegan Coin&quot;;  
-    string public tokenSymbol = &quot;TVC&quot;; 
+    string public tokenName = "True Vegan Coin";  
+    string public tokenSymbol = "TVC"; 
 
     uint256 public constant decimals = 18;
 

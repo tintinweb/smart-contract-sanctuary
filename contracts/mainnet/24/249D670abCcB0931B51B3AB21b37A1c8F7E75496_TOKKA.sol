@@ -195,8 +195,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract TOKKA is StandardToken {
-    string public name = &quot;StreamPay Token&quot;;
-    string public symbol = &quot;STPY&quot;;
+    string public name = "StreamPay Token";
+    string public symbol = "STPY";
     uint256 public decimals = 18;
 
    

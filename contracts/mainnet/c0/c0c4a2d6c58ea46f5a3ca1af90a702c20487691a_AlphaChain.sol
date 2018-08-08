@@ -77,8 +77,8 @@ contract AlphaChain is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;
 
-    string public constant name = &quot;AlphaChain&quot;;
-    string public constant symbol = &quot;ACH&quot;;
+    string public constant name = "AlphaChain";
+    string public constant symbol = "ACH";
     uint public constant decimals = 18;
 
     uint256 public totalSupply = 20000000000e18;

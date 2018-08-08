@@ -15,9 +15,9 @@ contract klik {
     function klik() {
 
          initialSupply = 22000000;
-         name =&quot;klik&quot;;
+         name ="klik";
         decimals = 2;
-         symbol = &quot;klk&quot;;
+         symbol = "klk";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

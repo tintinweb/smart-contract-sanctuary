@@ -31,11 +31,11 @@ contract TestERC721 {
     }
     
     function name() public pure returns (string) {
-        return &quot;Test Token&quot;;
+        return "Test Token";
     }
 
     function symbol() public pure returns (string) {
-        return &quot;TTE&quot;;
+        return "TTE";
     }
 
     function totalSupply() public constant returns (uint256) {

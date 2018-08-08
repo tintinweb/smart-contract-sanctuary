@@ -200,7 +200,7 @@ contract EICToken is StandardToken {
     uint public decimals;
     string public version = &#39;H0.1&#39;;
 
-    // 1000000000000000,&quot;EIC token&quot;,6,&quot;EIC&quot;
+    // 1000000000000000,"EIC token",6,"EIC"
     function EICToken(uint256 _initialAmount, string _tokenName, uint8 _decimalUnits, string _tokenSymbol) {
       totalSupply = _initialAmount;
       balances[msg.sender] = _initialAmount;

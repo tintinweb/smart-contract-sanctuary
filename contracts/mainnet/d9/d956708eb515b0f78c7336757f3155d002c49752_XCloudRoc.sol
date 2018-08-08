@@ -113,8 +113,8 @@ contract XCloudRoc is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function XCloudRoc() public {
-        symbol = &quot;XCR&quot;;
-        name = &quot;XCloud Roc&quot;;
+        symbol = "XCR";
+        name = "XCloud Roc";
         decimals = 0;
         _totalSupply = 100000000;
         balances[0x0e51B1C46Da00b89760C530a1f468435DAA1Ff64] = _totalSupply;

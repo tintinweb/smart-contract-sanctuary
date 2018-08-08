@@ -149,8 +149,8 @@ contract MelonWallet is StandardToken {
     address public owner = msg.sender;		 //Record the owner of the contract
 	uint256 public tokenAmount = 210000000000000000000000;
   
-    function name() constant returns (string) { return &quot;Melon Wallet&quot;; }
-    function symbol() constant returns (string) { return &quot;NGR&quot;; }
+    function name() constant returns (string) { return "Melon Wallet"; }
+    function symbol() constant returns (string) { return "NGR"; }
     function decimals() constant returns (uint8) { return 18; }
 	
 

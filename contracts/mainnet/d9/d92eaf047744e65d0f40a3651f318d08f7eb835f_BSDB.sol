@@ -131,8 +131,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract BSDB is MintableToken
 {
-    string public name = &quot;BsdbWealth&quot;;
-    string public symbol = &quot;BSDB&quot;;
+    string public name = "BsdbWealth";
+    string public symbol = "BSDB";
     uint public decimals = 8;
 
     uint private initialSupply = 81*10**(6+8); // 81 Millions

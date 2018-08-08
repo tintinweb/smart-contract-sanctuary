@@ -5,7 +5,7 @@ pragma solidity ^0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -312,8 +312,8 @@ contract MintableToken is StandardToken, Ownable {
 /// Super is used to bypass the original function signature and include the whenNotMinting modifier.
 contract PumaPayToken is MintableToken {
 
-    string public name = &quot;PumaPayToken&quot;; 
-    string public symbol = &quot;PMA&quot;;
+    string public name = "PumaPayToken"; 
+    string public symbol = "PMA";
     uint8 public decimals = 18;
 
     function PumaPayToken() public {

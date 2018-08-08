@@ -499,9 +499,9 @@ contract DecentBetToken is SafeMath, ERC20 {
     enum State{Waiting, PreSale, CommunitySale, PublicSale, Success}
 
     // Token information
-    string public constant name = &quot;Decent.Bet Token&quot;;
+    string public constant name = "Decent.Bet Token";
 
-    string public constant symbol = &quot;DBET&quot;;
+    string public constant symbol = "DBET";
 
     uint256 public constant decimals = 18;  // decimal places
 

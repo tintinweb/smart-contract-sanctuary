@@ -117,7 +117,7 @@ contract WorldCupToken is ERC721 {
         ceoAddress = msg.sender;
         cooAddress = msg.sender;
 	    for (uint256 i = 0; i < 32; i++) {
-		    uint256 newWorldCupTeamId = worldCupTeamDescribe.push(&quot;I love world cup!&quot;) - 1;
+		    uint256 newWorldCupTeamId = worldCupTeamDescribe.push("I love world cup!") - 1;
             worldCupIdToPrice[newWorldCupTeamId] = 0 ether;//SafeMath.sub(uint256(3.2 ether), SafeMath.mul(uint256(0.1 ether), i));
 	        //worldCupIdToOldPrice[newWorldCupTeamId] = 0 ether;
             _transfer(address(0), msg.sender, newWorldCupTeamId);
@@ -149,12 +149,12 @@ contract WorldCupToken is ERC721 {
 
     /// @dev Required for ERC-721 compliance.
     function name() public pure returns (string) {
-        return &quot;WorldCupToken&quot;;
+        return "WorldCupToken";
     }
   
     /// @dev Required for ERC-721 compliance.
     function symbol() public pure returns (string) {
-        return &quot;WCT&quot;;
+        return "WCT";
     }
 
     // @dev Required for ERC-721 compliance.

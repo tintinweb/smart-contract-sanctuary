@@ -41,11 +41,11 @@ contract fortunes {
     
     
     modifier only_owner() 
-        { require(msg.sender == owner, &quot;only owner can call.&quot;); _; }
+        { require(msg.sender == owner, "only owner can call."); _; }
     modifier only_currowner(uint _idx) 
-        { require(fortune_arr[_idx].current_owner == msg.sender, &quot;you&#39;re not the owner&quot;); _; }
+        { require(fortune_arr[_idx].current_owner == msg.sender, "you&#39;re not the owner"); _; }
     modifier idx_inrange(uint _idx)
-        { require(_idx >= 0 && _idx < fortune_arr.length, &quot;idx out of range&quot;); _; }
+        { require(_idx >= 0 && _idx < fortune_arr.length, "idx out of range"); _; }
         
         
     constructor() public {
@@ -55,18 +55,18 @@ contract fortunes {
         tax = 50; // N/25 = 4% 
 		fortune_limitbreak = 2 ether;
         
-        name = &quot;FORTUNES&quot;;
-        symbol = &quot;4TN&quot;;
+        name = "FORTUNES";
+        symbol = "4TN";
         decimals = 0;
         
         // initial luck
-        ur_luck.push(&quot;The WORST Possible&quot;);
-        ur_luck.push(&quot;Terrible&quot;);
-        ur_luck.push(&quot;Bad&quot;);
-        ur_luck.push(&quot;Exactly Average&quot;);
-        ur_luck.push(&quot;Good&quot;);
-        ur_luck.push(&quot;Excellent&quot;);
-        ur_luck.push(&quot;The BEST Possible&quot;);
+        ur_luck.push("The WORST Possible");
+        ur_luck.push("Terrible");
+        ur_luck.push("Bad");
+        ur_luck.push("Exactly Average");
+        ur_luck.push("Good");
+        ur_luck.push("Excellent");
+        ur_luck.push("The BEST Possible");
     }
     
     function is_owned(uint _idx) public view idx_inrange(_idx) returns(bool) 
@@ -84,8 +84,8 @@ contract fortunes {
 		require(msg.value >= unopened_bid || 
 		        msg.sender == owner || 
 		        fortune_arr.length <= 500, 
-		        &quot;ammount below unopened bid&quot;);
-        require(fortune_arr.length <= max_fortunes,&quot;fortunes max reached&quot;);
+		        "ammount below unopened bid");
+        require(fortune_arr.length <= max_fortunes,"fortunes max reached");
         fortune memory x;
         x.current_owner = msg.sender;
 		x.number = uint32(fortune_arr.length);
@@ -96,8 +96,8 @@ contract fortunes {
     }
     
     function fortune_open(uint _idx) public idx_inrange(_idx) only_currowner(_idx) {
-        require(!fortune_arr[_idx].opened, &quot;fortune is already open&quot;);
-        require(!fortune_arr[_idx].forsale, &quot;fortune is selling&quot;);
+        require(!fortune_arr[_idx].opened, "fortune is already open");
+        require(!fortune_arr[_idx].forsale, "fortune is selling");
         fortune_arr[_idx].original_owner = msg.sender;
         uint _ran = arand(fortune_arr[_idx].current_owner, now)%1000;
         uint8 clvl = 1;
@@ -128,9 +128,9 @@ contract fortunes {
     // mint fortune
     function fortune_setimgnme(uint _idx, bytes32[144] _imgarr, bytes32 _nme) 
         public idx_inrange(_idx) only_currowner(_idx) {
-        require(fortune_arr[_idx].opened, &quot;fortune has to be opened&quot;);
-        require(!fortune_arr[_idx].has_img, &quot;image cant be reset&quot;);
-        require(!fortune_arr[_idx].forsale, &quot;fortune is selling&quot;);
+        require(fortune_arr[_idx].opened, "fortune has to be opened");
+        require(!fortune_arr[_idx].has_img, "image cant be reset");
+        require(!fortune_arr[_idx].forsale, "fortune is selling");
         fortune_arr[_idx].original_minter = fortune_arr[_idx].current_owner;
         for(uint i = 0; i < 144; i++)
             fortune_arr[_idx].img[i] = _imgarr[i];
@@ -142,9 +142,9 @@ contract fortunes {
     // start auction
     function fortune_sell(uint _idx, uint basebid, uint endt) 
         public idx_inrange(_idx) only_currowner(_idx) {
-        require(_idx > 0, &quot;I&#39;ll always be here with you.&quot;);
-        require(!fortune_arr[_idx].forsale, &quot;already selling&quot;);
-        require(endt <= 7 days, &quot;auction time too long&quot;);
+        require(_idx > 0, "I&#39;ll always be here with you.");
+        require(!fortune_arr[_idx].forsale, "already selling");
+        require(endt <= 7 days, "auction time too long");
         fortune_arr[_idx].current_bid = basebid;
         fortune_arr[_idx].auction_end = now + endt;
         fortune_arr[_idx].forsale = true;
@@ -153,10 +153,10 @@ contract fortunes {
     
     // bid auction
     function fortune_bid(uint _idx) public payable idx_inrange(_idx) {
-        require(fortune_arr[_idx].forsale, &quot;fortune not for sale&quot;);
-        require(now < fortune_arr[_idx].auction_end, &quot;auction ended&quot;);
+        require(fortune_arr[_idx].forsale, "fortune not for sale");
+        require(now < fortune_arr[_idx].auction_end, "auction ended");
         require(msg.value > fortune_arr[_idx].current_bid, 
-            &quot;new bid has to be higher than current&quot;);
+            "new bid has to be higher than current");
 
         // return the previous bid        
         if(fortune_arr[_idx].bid_cnt != 0) 
@@ -171,8 +171,8 @@ contract fortunes {
     
     // end auction
     function fortune_endauction(uint _idx) public idx_inrange(_idx) {
-        require(now >= fortune_arr[_idx].auction_end,&quot;auction is still going&quot;);
-        require(fortune_arr[_idx].forsale, &quot;fortune not for sale&quot;);
+        require(now >= fortune_arr[_idx].auction_end,"auction is still going");
+        require(fortune_arr[_idx].forsale, "fortune not for sale");
         
         // sale
         if(fortune_arr[_idx].bid_cnt > 0) {
@@ -207,7 +207,7 @@ contract fortunes {
     
     
     function withdraw() public {
-        require(pending_pay[msg.sender]>0, &quot;insufficient funds&quot;);
+        require(pending_pay[msg.sender]>0, "insufficient funds");
         uint _pay = pending_pay[msg.sender];
         pending_pay[msg.sender] = 0;
         msg.sender.transfer(_pay);
@@ -216,7 +216,7 @@ contract fortunes {
     
     function add_luck(bytes32 _nmsg) public payable {
         require(msg.value >= unopened_bid, 
-            &quot;adding a fortune label costs the unopened_bid eth&quot;);
+            "adding a fortune label costs the unopened_bid eth");
         ur_luck.push(_nmsg);
         pending_pay[owner] += msg.value;
         emit event_addluck(msg.sender);
@@ -229,8 +229,8 @@ contract fortunes {
 	
     function limitbreak_RELEASE() public {
 		require(fortune_break_current >= fortune_limitbreak, 
-			&quot;limit breaking takes a few hits more&quot;);
-		require(fortune_arr.length >= max_fortunes, &quot;limit not reached yet&quot;);
+			"limit breaking takes a few hits more");
+		require(fortune_arr.length >= max_fortunes, "limit not reached yet");
         max_fortunes += max_fortunes + 500;
 		pending_pay[owner]+= fortune_break_current;
 		fortune_break_current = 0;

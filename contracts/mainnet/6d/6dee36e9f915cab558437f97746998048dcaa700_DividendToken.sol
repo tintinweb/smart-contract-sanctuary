@@ -110,7 +110,7 @@ Notes:
     - Per above, upon transfers, dividends are not
       transferred. They are kept by the original sender, and
       not credited to the receiver.
-    - Uses &quot;pull&quot; instead of &quot;push&quot;. Token holders must pull
+    - Uses "pull" instead of "push". Token holders must pull
       their own dividends.
 
 Comptroller Permissions:
@@ -130,7 +130,7 @@ contract DividendToken is ERC667
 
     // How dividends work:
     //
-    // - A &quot;point&quot; is a fraction of a Wei (1e-32), it&#39;s used to reduce rounding errors.
+    // - A "point" is a fraction of a Wei (1e-32), it&#39;s used to reduce rounding errors.
     //
     // - totalPointsPerToken represents how many points each token is entitled to
     //   from all the dividends ever received. Each time a new deposit is made, it
@@ -149,7 +149,7 @@ contract DividendToken is ERC667
     // - .collectOwedDividends() calls .updateCreditedPoints(account), converts points
     //   to wei and pays account, then resets creditedPoints[account] to 0.
     //
-    // - &quot;Credit&quot; goes to Nick Johnson for the concept.
+    // - "Credit" goes to Nick Johnson for the concept.
     //
     uint constant POINTS_PER_WEI = 1e32;
     uint public dividendsTotal;
@@ -284,7 +284,7 @@ contract DividendToken is ERC667
     /*************************************************************/
     // Credits _account with whatever dividend points they haven&#39;t yet been credited.
     //  This needs to be called before any user&#39;s balance changes to ensure their
-    //  &quot;lastPointsPerToken&quot; credits their current balance, and not an altered one.
+    //  "lastPointsPerToken" credits their current balance, and not an altered one.
     function _updateCreditedPoints(address _account)
         private
     {

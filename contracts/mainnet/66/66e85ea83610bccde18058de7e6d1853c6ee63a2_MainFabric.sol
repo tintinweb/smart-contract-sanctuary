@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -92,9 +92,9 @@ contract Ownable {
 
 // File: contracts/MainFabric.sol
 
-//import &quot;./tokens/ERC20StandardToken.sol&quot;;
-//import &quot;./tokens/ERC20MintableToken.sol&quot;;
-//import &quot;./crowdsale/RefundCrowdsale.sol&quot;;
+//import "./tokens/ERC20StandardToken.sol";
+//import "./tokens/ERC20MintableToken.sol";
+//import "./crowdsale/RefundCrowdsale.sol";
 
 contract MainFabric is Ownable {
 

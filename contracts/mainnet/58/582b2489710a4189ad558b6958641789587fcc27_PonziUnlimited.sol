@@ -6,7 +6,7 @@ contract PonziUnlimited {
   modifier onlyBy(address _account)
     {
         require(msg.sender == _account);
-        // Do not forget the &quot;_;&quot;! It will
+        // Do not forget the "_;"! It will
         // be replaced by the actual function
         // body when the modifier is used.
         _;

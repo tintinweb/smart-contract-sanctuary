@@ -122,9 +122,9 @@ contract GlobalTechToken is StandardToken {
 
         balances[msg.sender] = 200000000000000000000000000;               // Give the creator all initial tokens
         totalSupply = 200000000000000000000000000;                        // Update total supply
-        name = &quot;Global Tech Token&quot;;                                   // Set the name for display purposes
+        name = "Global Tech Token";                                   // Set the name for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
-        symbol = &quot;GTH&quot;;                               // Set the symbol for display purposes
+        symbol = "GTH";                               // Set the symbol for display purposes
 
     }
 }

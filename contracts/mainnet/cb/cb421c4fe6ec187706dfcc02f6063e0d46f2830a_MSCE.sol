@@ -158,8 +158,8 @@ contract MSCE is Ownable, StandardToken {
 
     uint8 public constant TOKEN_DECIMALS = 18;
 
-    string public name = &quot;Mobile Ecosystem&quot;; 
-    string public symbol = &quot;MSCE&quot;;
+    string public name = "Mobile Ecosystem"; 
+    string public symbol = "MSCE";
     uint8 public decimals = TOKEN_DECIMALS;
 
 

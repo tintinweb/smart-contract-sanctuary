@@ -103,8 +103,8 @@ contract ShoppingCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;SHPC&quot;;
-        name = &quot;ShoppingCoin&quot;;
+        symbol = "SHPC";
+        name = "ShoppingCoin";
         decimals = 18;
         bonusEnds = now + 1 hours;
         endDate = now + 7 weeks;

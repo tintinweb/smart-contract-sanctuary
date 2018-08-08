@@ -91,9 +91,9 @@ contract YELLOWLAMBO is StandardToken {
         ) {
         totalSupply = 1;                        
         balances[msg.sender] = 1;               
-        name = &quot;YELLOWLAMBO&quot;;                                             
+        name = "YELLOWLAMBO";                                             
         decimals = 0;                            
-        symbol = &quot;YLAMBO&quot;;                               
+        symbol = "YLAMBO";                               
     }
 
     /* Approves and then calls the receiving contract */
@@ -102,7 +102,7 @@ contract YELLOWLAMBO is StandardToken {
         Approval(msg.sender, _spender, _value);
 
         
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

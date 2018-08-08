@@ -43,11 +43,11 @@ contract ExoplanetToken is ERC721 {
     event Transfer(address from, address to, uint256 tokenId);
     event ContractUpgrade(address newContract);
 
-    string public constant NAME = &quot;ExoPlanets&quot;; 
+    string public constant NAME = "ExoPlanets"; 
 
-    string public constant SYMBOL = &quot;XPL&quot;; 
+    string public constant SYMBOL = "XPL"; 
 
-    string public constant BASE_URL = &quot;https://exoplanets.io/metadata/planet_&quot;; 
+    string public constant BASE_URL = "https://exoplanets.io/metadata/planet_"; 
 
     uint32 private constant NUM_EXOPLANETS_LIMIT = 4700;  
 
@@ -454,9 +454,9 @@ contract ExoplanetToken is ERC721 {
         cryptoMatch: cryptoMatch,
         numOfTokensBonusOnPurchase: numOfTokensBonusOnPurchase,
         lifeRate: lifeRate,
-        techBonus1: &quot;&quot;,
-        techBonus2: &quot;&quot;,
-        techBonus3: &quot;&quot;,
+        techBonus1: "",
+        techBonus2: "",
+        techBonus3: "",
         scientificData: scientificData
       });
       uint256 newExoplanetId = exoplanets.push(_exoplanet) - 1;

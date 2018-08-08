@@ -111,8 +111,8 @@ contract Pentacoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Pentacoin() public {
-        symbol = &quot;PTC&quot;;
-        name = &quot;Pentacoin&quot;;
+        symbol = "PTC";
+        name = "Pentacoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xeaBB4013f179E42c41468DB81eB1Bd420Da6cC47] = _totalSupply;

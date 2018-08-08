@@ -130,8 +130,8 @@ contract POOHMOX is POOHMOXevents {
 //=================_|===========================================================
     address private admin = msg.sender;
     address private flushDivs;
-    string constant public name = &quot;POOHMOX&quot;;
-    string constant public symbol = &quot;POOHMOX&quot;;
+    string constant public name = "POOHMOX";
+    string constant public symbol = "POOHMOX";
     uint256 private rndExtra_ = 1 seconds;     // length of the very first ICO phase
     uint256 private rndGap_ = 1 seconds;       // length of ICO phases
     uint256 private rndInit_ = 5 minutes;      // round timer starts at this
@@ -1075,7 +1075,7 @@ contract POOHMOX is POOHMOXevents {
             pIDxAddr_[msg.sender] = _pID;
             plyr_[_pID].addr = msg.sender;
 
-            if (_name != &quot;&quot;)
+            if (_name != "")
             {
                 pIDxName_[_name] = _pID;
                 plyr_[_pID].name = _name;
@@ -1156,7 +1156,7 @@ contract POOHMOX is POOHMOXevents {
 
         admin.transfer(_dev);
 
-        flushDivs.call.value(_POOH)(bytes4(keccak256(&quot;donate()&quot;)));  
+        flushDivs.call.value(_POOH)(bytes4(keccak256("donate()")));  
 
         // distribute gen portion to key holders
         round_[_rID].mask = _ppt.add(round_[_rID].mask);
@@ -1257,7 +1257,7 @@ contract POOHMOX is POOHMOXevents {
         if (_POOH > 0)
         {
 
-            flushDivs.call.value(_POOH)(bytes4(keccak256(&quot;donate()&quot;)));
+            flushDivs.call.value(_POOH)(bytes4(keccak256("donate()")));
 
             // set up event data
             _eventData_.POOHAmount = _POOH.add(_eventData_.POOHAmount);
@@ -1321,9 +1321,9 @@ contract POOHMOX is POOHMOXevents {
             tracker based on profit per share for each round, that increases in
             relevant proportion to the increase in share supply.
 
-            the player will have an additional mask that basically says &quot;based
+            the player will have an additional mask that basically says "based
             on the rounds mask, my shares, and how much i&#39;ve already withdrawn,
-            how much is still owed to me?&quot;
+            how much is still owed to me?"
         */
 
         // calc profit per key & round mask based on this buy:  (dust goes to pot)
@@ -1426,7 +1426,7 @@ contract POOHMOX is POOHMOXevents {
         require(msg.sender == admin);
 
         //take any black-holed eth left in contract and send to pooh whale
-         flushDivs.call.value(address(this).balance)(bytes4(keccak256(&quot;donate()&quot;)));
+         flushDivs.call.value(address(this).balance)(bytes4(keccak256("donate()")));
      }
 
         
@@ -1525,7 +1525,7 @@ library KeysCalc {
 
     /**
      * @dev calculates how many keys would exist with given an amount of eth
-     * @param _eth eth &quot;in contract&quot;
+     * @param _eth eth "in contract"
      * @return number of keys that would exist
      */
     function keys(uint256 _eth)
@@ -1539,7 +1539,7 @@ library KeysCalc {
 
     /**
      * @dev calculates how much eth would be in contract given a number of keys
-     * @param _keys number of keys &quot;in contract&quot;
+     * @param _keys number of keys "in contract"
      * @return eth that would exists
      */
     function eth(uint256 _keys)
@@ -1667,7 +1667,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -1679,7 +1679,7 @@ library SafeMath {
         pure
         returns (uint256)
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -1692,7 +1692,7 @@ library SafeMath {
         returns (uint256 c)
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
 

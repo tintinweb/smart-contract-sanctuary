@@ -176,7 +176,7 @@ contract SVDelegationV0101 {
 
         // first loop through delegations in this contract
         uint64 i;
-        // start at 1 because the first delegation is a &quot;genesis&quot; delegation in constructor
+        // start at 1 because the first delegation is a "genesis" delegation in constructor
         for (i = 1; i < totalDelegations; i++) {
             _delegation = historicalDelegations[i];
             if (_delegation.delegatee == delegate) {

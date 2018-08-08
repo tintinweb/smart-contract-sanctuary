@@ -73,8 +73,8 @@ contract UBCoin is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;UBCoin&quot;;
-    string public constant symbol = &quot;UBC&quot;;
+    string public constant name = "UBCoin";
+    string public constant symbol = "UBC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 77052841e8;

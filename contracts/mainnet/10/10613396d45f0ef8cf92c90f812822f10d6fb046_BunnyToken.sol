@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract BunnyToken {
     // Public variables of the token
-    string public name = &quot;BunnyToken&quot;;
-    string public symbol = &quot;BUNNY&quot;;
+    string public name = "BunnyToken";
+    string public symbol = "BUNNY";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 1000000000 * 10 ** 18;
@@ -29,8 +29,8 @@ contract BunnyToken {
     ) public {
         totalSupply = 1000000000 * 10 ** 18;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;BunnyToken&quot;;                                   // Set the name for display purposes
-        symbol = &quot;BUNNY&quot;;                               // Set the symbol for display purposes
+        name = "BunnyToken";                                   // Set the name for display purposes
+        symbol = "BUNNY";                               // Set the symbol for display purposes
     }
 
     /**

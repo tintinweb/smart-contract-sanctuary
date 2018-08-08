@@ -182,8 +182,8 @@ contract StandardToken is BasicToken, ERC20 {
 contract SDCToken is StandardToken {
   using SafeMath for uint256;
 
-  string public name = &quot;SDCToken&quot;;
-  string public symbol = &quot;SDC&quot;;
+  string public name = "SDCToken";
+  string public symbol = "SDC";
   uint public decimals = 18;
   
   bool public initialized = false;

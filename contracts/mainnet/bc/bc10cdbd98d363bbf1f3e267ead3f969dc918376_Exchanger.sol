@@ -76,7 +76,7 @@ contract ERC223ReceivingContract {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -193,8 +193,8 @@ contract ERC223Token is ERC223Interface {
 
 contract PajCoin223 is ERC223Token {
 
-    string public constant name = &quot;PajCoin&quot;;
-    bytes32 public constant symbol = &quot;PJC&quot;;
+    string public constant name = "PajCoin";
+    bytes32 public constant symbol = "PJC";
     uint8 public constant decimals = 18;
 
     function PajCoin223() public {
@@ -225,12 +225,12 @@ contract Exchanger is ERC223ReceivingContract, Ownable {
         address user;
         uint money;
     }
-    // очередь &quot;забронированных&quot; переводов на покупку токенов
+    // очередь "забронированных" переводов на покупку токенов
     mapping(uint => Deal) ethSended;
     mapping(uint => Deal) coinSended;
 
-    // Счетчик людей, &quot;забронировавших&quot; токены.
-    // &quot;Бронирование&quot; значит, что человек прислал деньги на покупку, но курс еще
+    // Счетчик людей, "забронировавших" токены.
+    // "Бронирование" значит, что человек прислал деньги на покупку, но курс еще
     // не установлен. Соответственно, перевод средств добавляется в очередь и при
     // следующем обновлении курса будет обработан
     uint ethSendedNumber = 0;
@@ -307,18 +307,18 @@ contract Exchanger is ERC223ReceivingContract, Ownable {
     function() public payable {
         if (msg.sender != owner) {
             require(fee <= msg.value);
-            DataEvent(msg.value, &quot;Someone sent ether: amount&quot;);
+            DataEvent(msg.value, "Someone sent ether: amount");
             ethSended[ethSendedNumber++] = Deal({user: msg.sender, money: msg.value});
         }
     }
 
     function tokenFallback(address _from, uint _value, bytes _data) {
-        // DataEvent(msg.sender, &quot;from&quot;);
+        // DataEvent(msg.sender, "from");
 
         require(msg.sender == address(token));
         if (_from != owner) {
             require(fee <= _value * 1e9 / rate);
-            DataEvent(_value, &quot;Someone sent coin: amount&quot;);
+            DataEvent(_value, "Someone sent coin: amount");
             coinSended[coinSendedNumber++] = Deal({user: _from, money: _value});
         }
     }
@@ -329,7 +329,7 @@ contract Exchanger is ERC223ReceivingContract, Ownable {
         LogPriceUpdated(rate);
 
         uint personalFee = fee / (ethSendedNumber + coinSendedNumber);
-        DataEvent(personalFee, &quot;Personal fee&quot;);
+        DataEvent(personalFee, "Personal fee");
 
         proceedEtherDeals(personalFee);
         proceedTokenDeals(personalFee);
@@ -339,22 +339,22 @@ contract Exchanger is ERC223ReceivingContract, Ownable {
     function proceedEtherDeals(uint personalFee) internal {
         for (uint8 i = 0; i < ethSendedNumber; i++) {
             address user = ethSended[i].user;
-            DataEvent(ethSended[i].money, &quot;Someone sent ether: amount&quot;);
-            DataEvent(personalFee, &quot;Fee: amount&quot;);
+            DataEvent(ethSended[i].money, "Someone sent ether: amount");
+            DataEvent(personalFee, "Fee: amount");
             uint money = ethSended[i].money - personalFee;
 
-            DataEvent(money, &quot;Discounted amount: amount&quot;);
+            DataEvent(money, "Discounted amount: amount");
             uint value = money * rate / 1e9;
-            DataEvent(value, &quot;Ether to tokens: amount&quot;);
+            DataEvent(value, "Ether to tokens: amount");
             if (money < 0) {
                 // Скинуто эфира меньше, чем комиссия
             } else if (token.balanceOf(this) < value) {
-                DataEvent(token.balanceOf(this), &quot;Not enough tokens: owner balance&quot;);
+                DataEvent(token.balanceOf(this), "Not enough tokens: owner balance");
                 // Вернуть деньги, если токенов не осталось
                 user.transfer(money);
             } else {
                 token.transfer(user, value);
-                DataEvent(value, &quot;Tokens were sent to customer: amount&quot;);
+                DataEvent(value, "Tokens were sent to customer: amount");
             }
         }
         ethSendedNumber = 0;
@@ -365,22 +365,22 @@ contract Exchanger is ERC223ReceivingContract, Ownable {
             address user = coinSended[j].user;
             uint coin = coinSended[j].money;
 
-            DataEvent(coin, &quot;Someone sent tokens: amount&quot;);
-            DataEvent(coin * 1e9 / rate, &quot;Tokens to ether: amount&quot;);
+            DataEvent(coin, "Someone sent tokens: amount");
+            DataEvent(coin * 1e9 / rate, "Tokens to ether: amount");
             uint value = coin * 1e9 / rate - personalFee;
-            DataEvent(personalFee, &quot;Fee: amount&quot;);
-            DataEvent(value, &quot;Tokens to discounted ether: amount&quot;);
+            DataEvent(personalFee, "Fee: amount");
+            DataEvent(value, "Tokens to discounted ether: amount");
 
             if (value < 0) {
                 // Скинуто токенов меньше, чем комиссия
             } else if (this.balance < value) {
                 // Вернуть токены, если денег не осталось
-                DataEvent(this.balance, &quot;Not enough ether: contract balance&quot;);
+                DataEvent(this.balance, "Not enough ether: contract balance");
 
                 token.transfer(user, coin);
             } else {
                 user.transfer(value);
-                DataEvent(value, &quot;Ether was sent to customer: amount&quot;);
+                DataEvent(value, "Ether was sent to customer: amount");
             }
         }
         coinSendedNumber = 0;

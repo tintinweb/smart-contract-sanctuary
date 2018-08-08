@@ -33,7 +33,7 @@ contract TokenWithDates {
 
 contract JeiCoinSwapper {
 
-    string public version = &quot;v1.5&quot;;
+    string public version = "v1.5";
     address public rootAddress;
     address public Owner;
     bool public locked;
@@ -90,12 +90,12 @@ contract JeiCoinSwapper {
     // Main function to pay interests
     function payInterests() isUnlocked public {
         if (fortnightsFromLast() == 0) { // Check for a fortnight passed
-            emit Message(&quot;0 fortnights passed&quot;);
+            emit Message("0 fortnights passed");
             return;
         }
         uint amountToPay = calculateInterest(msg.sender);
         if (amountToPay == 0) {
-            emit Message(&quot;There are not 150 tokens with interests to pay&quot;);
+            emit Message("There are not 150 tokens with interests to pay");
             return;
             }
         // Success

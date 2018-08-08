@@ -113,8 +113,8 @@ contract IamGROOT is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IamGROOT() public {
-        symbol = &quot;IAMGROOT&quot;;
-        name = &quot;I am Groot Token&quot;;
+        symbol = "IAMGROOT";
+        name = "I am Groot Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x076d850C9F0ea09477F9b344Fc016f6b509CaFFE] = _totalSupply;

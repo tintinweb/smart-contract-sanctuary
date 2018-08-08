@@ -104,8 +104,8 @@ contract ScorpioCoin is ERC223  {
     uint256 internal EthValueBase=1e18;
     mapping (address => uint256) public lockTime;
     address public target;
-    string internal Name= &quot;ScorpioCoin&quot;;
-    string internal Symbol = &quot;SPC&quot;;
+    string internal Name= "ScorpioCoin";
+    string internal Symbol = "SPC";
     uint8 internal Decimals= 18;
     uint256 internal Total= 2000000000e18;
 

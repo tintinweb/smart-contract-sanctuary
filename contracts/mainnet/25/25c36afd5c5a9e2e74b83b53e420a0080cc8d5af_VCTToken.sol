@@ -185,7 +185,7 @@ contract BurnableToken is StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -270,7 +270,7 @@ contract VCTToken is BurnableToken,Ownable,MintableToken {
      *@dev users sending ether to this contract will be reverted. Any ether sent to the contract will be sent back to the caller
      */
     function ()public payable {
-        revert(&quot;Sending ether to the contract is not allowed&quot;);
+        revert("Sending ether to the contract is not allowed");
     }
      
      /**
@@ -302,7 +302,7 @@ contract VCTToken is BurnableToken,Ownable,MintableToken {
      * @param values The number of tokens to be sent to each address
      */
     function multiSend(address[]dests, uint[]values)public{
-        require(dests.length==values.length, &quot;Number of addresses and values should be same&quot;);
+        require(dests.length==values.length, "Number of addresses and values should be same");
         uint256 i = 0;
         while (i < dests.length) {
             transfer(dests[i], values[i]);

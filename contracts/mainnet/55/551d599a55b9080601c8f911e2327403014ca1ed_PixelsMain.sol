@@ -104,7 +104,7 @@ contract ColorsMain is ColorsApis {
     
     function createStartingColors() external onlyOwner {
         require(colors.length == 0);
-        this.registerColor(&quot;Red&quot;, 1);
+        this.registerColor("Red", 1);
     }
     
     function() external payable {

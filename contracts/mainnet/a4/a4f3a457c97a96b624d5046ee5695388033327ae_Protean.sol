@@ -122,8 +122,8 @@ contract StandardToken is newToken, ERC20 {
 }
 
 contract Protean is StandardToken, Ownable {
-  string public constant name = &quot;Protean&quot;;
-  string public constant symbol = &quot;PRN&quot;;
+  string public constant name = "Protean";
+  string public constant symbol = "PRN";
   uint public constant decimals = 18;
   uint256 public initialSupply;
     

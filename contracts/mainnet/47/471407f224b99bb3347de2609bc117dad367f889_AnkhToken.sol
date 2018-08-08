@@ -426,6 +426,6 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract AnkhToken is StandardBurnableToken, CappedToken, DetailedERC20, PausableToken  {
-    constructor() CappedToken(65*10**25) DetailedERC20(&quot;BeANKH token&quot;, &quot;ANKH&quot;, 18) public {
+    constructor() CappedToken(65*10**25) DetailedERC20("BeANKH token", "ANKH", 18) public {
     }
 }

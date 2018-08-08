@@ -18,8 +18,8 @@ contract owned {
 
 contract OX_TOKEN is owned {
  
-  string public constant name = &quot;OX&quot;;
-  string public constant symbol = &quot;OX&quot;; 
+  string public constant name = "OX";
+  string public constant symbol = "OX"; 
  
   event Receipt( address indexed _to,
                  uint _oxen,

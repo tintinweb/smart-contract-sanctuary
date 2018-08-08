@@ -113,8 +113,8 @@ contract TreasureCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TreasureCoin() public {
-        symbol = &quot;TRC&quot;;
-        name = &quot;TreasureCoin&quot;;
+        symbol = "TRC";
+        name = "TreasureCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x169A8886eeDDBd7fC3ba0aaBF1fcBEC150016780] = _totalSupply;

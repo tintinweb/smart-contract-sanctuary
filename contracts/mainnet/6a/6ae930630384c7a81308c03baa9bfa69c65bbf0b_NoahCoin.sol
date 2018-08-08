@@ -186,8 +186,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract NoahCoin is StandardToken {
 
-  string public constant name = &quot;NOAHCOIN&quot;;
-  string public constant symbol = &quot;NOAH&quot;;
+  string public constant name = "NOAHCOIN";
+  string public constant symbol = "NOAH";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 216000000000 * (10 ** uint256(decimals));

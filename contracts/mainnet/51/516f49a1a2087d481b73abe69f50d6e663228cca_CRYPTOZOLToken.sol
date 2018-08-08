@@ -113,8 +113,8 @@ contract CRYPTOZOLToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CRYPTOZOLToken() public {
-        symbol = &quot;ZOL&quot;;
-        name = &quot;CRYPTOZOL Token&quot;;
+        symbol = "ZOL";
+        name = "CRYPTOZOL Token";
         decimals = 18;
         _totalSupply = 3000000000000000000000000000;
         balances[0x9254ab18462437F517De179806d83Aa5c9A27031] = _totalSupply;

@@ -36,8 +36,8 @@ contract SafeMath {
 }
 contract GOC is SafeMath{
     uint256 public totalSupply;
-	string public name = &quot;GOC&quot;;
-    string public symbol = &quot;GOC&quot;;
+	string public name = "GOC";
+    string public symbol = "GOC";
 	uint8 public decimals = 8;
 
     /* This creates an array with all balances */

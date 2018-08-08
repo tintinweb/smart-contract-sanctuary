@@ -116,8 +116,8 @@ contract CurrenXToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CurrenXToken() public {
-        symbol = &quot;CurX&quot;;
-        name = &quot;CurrenX&quot;;
+        symbol = "CurX";
+        name = "CurrenX";
         decimals = 18;
         _totalSupply = 121000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

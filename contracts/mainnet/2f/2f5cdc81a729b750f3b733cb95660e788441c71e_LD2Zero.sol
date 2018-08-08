@@ -69,7 +69,7 @@ contract RocketBase {
     * @dev Throws if called by any account other than the owner.
     */
     modifier onlyOwner() {
-        roleCheck(&quot;owner&quot;, msg.sender);
+        roleCheck("owner", msg.sender);
         _;
     }
 
@@ -77,7 +77,7 @@ contract RocketBase {
     * @dev Modifier to scope access to admins
     */
     modifier onlyAdmin() {
-        roleCheck(&quot;admin&quot;, msg.sender);
+        roleCheck("admin", msg.sender);
         _;
     }
 
@@ -85,7 +85,7 @@ contract RocketBase {
     * @dev Modifier to scope access to admins
     */
     modifier onlySuperUser() {
-        require(roleHas(&quot;owner&quot;, msg.sender) || roleHas(&quot;admin&quot;, msg.sender));
+        require(roleHas("owner", msg.sender) || roleHas("admin", msg.sender));
         _;
     }
 
@@ -114,7 +114,7 @@ contract RocketBase {
     * @return bool
     */
     function isOwner(address _address) public view returns (bool) {
-        return rocketStorage.getBool(keccak256(&quot;access.role&quot;, &quot;owner&quot;, _address));
+        return rocketStorage.getBool(keccak256("access.role", "owner", _address));
     }
 
     /**
@@ -122,7 +122,7 @@ contract RocketBase {
     * @return bool
     */
     function roleHas(string _role, address _address) internal view returns (bool) {
-        return rocketStorage.getBool(keccak256(&quot;access.role&quot;, _role, _address));
+        return rocketStorage.getBool(keccak256("access.role", _role, _address));
     }
 
      /**
@@ -139,7 +139,7 @@ contract RocketBase {
 /**
  * @title Authorized
  * @dev The Authorized contract has an issuer, depository, and auditor address, and provides basic 
- * authorization control functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * authorization control functions, this simplifies the implementation of "user permissions".
  */
 contract Authorized is RocketBase {
 
@@ -188,7 +188,7 @@ contract Authorized is RocketBase {
    */
   function setIssuer(address newIssuer) public onlyOwner {
     require(newIssuer != address(0));
-    rocketStorage.setAddress(keccak256(&quot;token.issuer&quot;), newIssuer);
+    rocketStorage.setAddress(keccak256("token.issuer"), newIssuer);
     emit IssuerTransferred(issuer(), newIssuer);
   }
 
@@ -196,7 +196,7 @@ contract Authorized is RocketBase {
    * @dev Get the current issuer address from storage.
    */
   function issuer() public view returns (address) {
-    return rocketStorage.getAddress(keccak256(&quot;token.issuer&quot;));
+    return rocketStorage.getAddress(keccak256("token.issuer"));
   }
 
   /**
@@ -205,7 +205,7 @@ contract Authorized is RocketBase {
    */
   function setAuditor(address newAuditor) public onlyOwner {
     require(newAuditor != address(0));
-    rocketStorage.setAddress(keccak256(&quot;token.auditor&quot;), newAuditor);
+    rocketStorage.setAddress(keccak256("token.auditor"), newAuditor);
     emit AuditorTransferred(auditor(), newAuditor);
   }
 
@@ -213,7 +213,7 @@ contract Authorized is RocketBase {
    * @dev Get the current auditor address from storage.
    */
   function auditor() public view returns (address) {
-    return rocketStorage.getAddress(keccak256(&quot;token.auditor&quot;));
+    return rocketStorage.getAddress(keccak256("token.auditor"));
   }
 
   /**
@@ -222,7 +222,7 @@ contract Authorized is RocketBase {
    */
   function setDepository(address newDepository) public onlyOwner {
     require(newDepository != address(0));
-    rocketStorage.setAddress(keccak256(&quot;token.depository&quot;), newDepository);
+    rocketStorage.setAddress(keccak256("token.depository"), newDepository);
     emit DepositoryTransferred(depository(), newDepository);
   }
 
@@ -230,7 +230,7 @@ contract Authorized is RocketBase {
    * @dev Get the current depository address from storage.
    */
   function depository() public view returns (address) {
-    return rocketStorage.getAddress(keccak256(&quot;token.depository&quot;));
+    return rocketStorage.getAddress(keccak256("token.depository"));
   }
 
 }
@@ -269,14 +269,14 @@ contract PausableRedemption is RocketBase {
    * @dev returns the redemptionPaused status from contract storage
    */
   function redemptionPaused() public view returns (bool) {
-    return rocketStorage.getBool(keccak256(&quot;token.redemptionPaused&quot;));
+    return rocketStorage.getBool(keccak256("token.redemptionPaused"));
   }
 
   /**
    * @dev called by the owner to pause, triggers stopped state
    */
   function pauseRedemption() onlyOwner whenRedemptionNotPaused public {
-    rocketStorage.setBool(keccak256(&quot;token.redemptionPaused&quot;), true);
+    rocketStorage.setBool(keccak256("token.redemptionPaused"), true);
     emit PauseRedemption();
   }
 
@@ -284,7 +284,7 @@ contract PausableRedemption is RocketBase {
    * @dev called by the owner to unpause redemption, returns to normal state
    */
   function unpauseRedemption() onlyOwner whenRedemptionPaused public {
-    rocketStorage.setBool(keccak256(&quot;token.redemptionPaused&quot;), false);
+    rocketStorage.setBool(keccak256("token.redemptionPaused"), false);
     emit UnpauseRedemption();
   }
 }
@@ -347,29 +347,29 @@ contract Issuable is RocketBase, Authorized, PausableRedemption {
 
     // Get assetsOnDeposit
     function assetsOnDeposit() public view returns (uint256) {
-        return rocketStorage.getUint(keccak256(&quot;issuable.assetsOnDeposit&quot;));
+        return rocketStorage.getUint(keccak256("issuable.assetsOnDeposit"));
     }
 
     // Get assetsCertified
     function assetsCertified() public view returns (uint256) {
-        return rocketStorage.getUint(keccak256(&quot;issuable.assetsCertified&quot;));
+        return rocketStorage.getUint(keccak256("issuable.assetsCertified"));
     }
 
     /******* For paused redemption *******/
 
     // Set assetsOnDeposit
     function setAssetsOnDeposit(uint256 _total) public onlyDepository whenRedemptionPaused {
-        uint256 totalSupply_ = rocketStorage.getUint(keccak256(&quot;token.totalSupply&quot;));
+        uint256 totalSupply_ = rocketStorage.getUint(keccak256("token.totalSupply"));
         require(_total >= totalSupply_);
-        rocketStorage.setUint(keccak256(&quot;issuable.assetsOnDeposit&quot;), _total);
+        rocketStorage.setUint(keccak256("issuable.assetsOnDeposit"), _total);
         emit AssetsUpdated(msg.sender, _total);
     }
 
     // Set assetsCertified
     function setAssetsCertified(uint256 _total) public onlyAuditor whenRedemptionPaused {
-        uint256 totalSupply_ = rocketStorage.getUint(keccak256(&quot;token.totalSupply&quot;));
+        uint256 totalSupply_ = rocketStorage.getUint(keccak256("token.totalSupply"));
         require(_total >= totalSupply_);
-        rocketStorage.setUint(keccak256(&quot;issuable.assetsCertified&quot;), _total);
+        rocketStorage.setUint(keccak256("issuable.assetsCertified"), _total);
         emit CertificationUpdated(msg.sender, _total);
     }
 
@@ -378,32 +378,32 @@ contract Issuable is RocketBase, Authorized, PausableRedemption {
     // Depository can receive assets (increasing)
     function receiveAssets(uint256 _units) public onlyDepository {
         uint256 total_ = assetsOnDeposit().add(_units);
-        rocketStorage.setUint(keccak256(&quot;issuable.assetsOnDeposit&quot;), total_);
+        rocketStorage.setUint(keccak256("issuable.assetsOnDeposit"), total_);
         emit AssetsUpdated(msg.sender, total_);
     }
 
     // Depository can release assets (decreasing), but never to less than the totalSupply
     function releaseAssets(uint256 _units) public onlyDepository {
-        uint256 totalSupply_ = rocketStorage.getUint(keccak256(&quot;token.totalSupply&quot;));
+        uint256 totalSupply_ = rocketStorage.getUint(keccak256("token.totalSupply"));
         uint256 total_ = assetsOnDeposit().sub(_units);
         require(total_ >= totalSupply_);
-        rocketStorage.setUint(keccak256(&quot;issuable.assetsOnDeposit&quot;), total_);
+        rocketStorage.setUint(keccak256("issuable.assetsOnDeposit"), total_);
         emit AssetsUpdated(msg.sender, total_);
     }
 
     // Auditor can increase certified assets
     function increaseAssetsCertified(uint256 _units) public onlyAuditor {
         uint256 total_ = assetsCertified().add(_units);
-        rocketStorage.setUint(keccak256(&quot;issuable.assetsCertified&quot;), total_);
+        rocketStorage.setUint(keccak256("issuable.assetsCertified"), total_);
         emit CertificationUpdated(msg.sender, total_);
     }
 
     // Auditor can decrease certified assets
     function decreaseAssetsCertified(uint256 _units) public onlyAuditor {
-        uint256 totalSupply_ = rocketStorage.getUint(keccak256(&quot;token.totalSupply&quot;));
+        uint256 totalSupply_ = rocketStorage.getUint(keccak256("token.totalSupply"));
         uint256 total_ = assetsCertified().sub(_units);
         require(total_ >= totalSupply_);
-        rocketStorage.setUint(keccak256(&quot;issuable.assetsCertified&quot;), total_);
+        rocketStorage.setUint(keccak256("issuable.assetsCertified"), total_);
         emit CertificationUpdated(msg.sender, total_);
     }
 
@@ -459,7 +459,7 @@ contract LD2Token is ERC20, RocketBase, Issuable {
   * @dev total number of tokens in existence
   */
   function totalSupply() public view returns (uint256) {
-    return rocketStorage.getUint(keccak256(&quot;token.totalSupply&quot;));
+    return rocketStorage.getUint(keccak256("token.totalSupply"));
   }
 
   /**
@@ -468,7 +468,7 @@ contract LD2Token is ERC20, RocketBase, Issuable {
   function increaseTotalSupply(uint256 _increase) internal {
     uint256 totalSupply_ = totalSupply();
     totalSupply_ = totalSupply_.add(_increase);
-    rocketStorage.setUint(keccak256(&quot;token.totalSupply&quot;),totalSupply_);
+    rocketStorage.setUint(keccak256("token.totalSupply"),totalSupply_);
   }
 
   /**
@@ -477,7 +477,7 @@ contract LD2Token is ERC20, RocketBase, Issuable {
   function decreaseTotalSupply(uint256 _decrease) internal {
     uint256 totalSupply_ = totalSupply();
     totalSupply_ = totalSupply_.sub(_decrease);
-    rocketStorage.setUint(keccak256(&quot;token.totalSupply&quot;),totalSupply_);
+    rocketStorage.setUint(keccak256("token.totalSupply"),totalSupply_);
   }
 
   /**
@@ -503,7 +503,7 @@ contract LD2Token is ERC20, RocketBase, Issuable {
   * @return An uint256 representing the amount owned by the passed address.
   */
   function balanceOf(address _owner) public view returns (uint256 balance) {
-    return rocketStorage.getUint(keccak256(&quot;token.balances&quot;,_owner));
+    return rocketStorage.getUint(keccak256("token.balances",_owner));
   }
 
   /**
@@ -512,7 +512,7 @@ contract LD2Token is ERC20, RocketBase, Issuable {
   * @param _balance An uint256 representing the amount owned by the passed address.
   */
   function setBalanceOf(address _owner, uint256 _balance) internal {
-    rocketStorage.setUint(keccak256(&quot;token.balances&quot;,_owner), _balance);
+    rocketStorage.setUint(keccak256("token.balances",_owner), _balance);
   }
 
   /**
@@ -522,7 +522,7 @@ contract LD2Token is ERC20, RocketBase, Issuable {
    * @return A uint256 specifying the amount of tokens still available for the spender.
    */
   function allowance(address _owner, address _spender) public view returns (uint256) {
-    return rocketStorage.getUint(keccak256(&quot;token.allowed&quot;,_owner,_spender));
+    return rocketStorage.getUint(keccak256("token.allowed",_owner,_spender));
   }
 
   /**
@@ -532,7 +532,7 @@ contract LD2Token is ERC20, RocketBase, Issuable {
   * @param _balance An uint256 representing the amount owned by the passed address.
   */
   function setAllowance(address _owner, address _spender, uint256 _balance) internal {
-    rocketStorage.setUint(keccak256(&quot;token.allowed&quot;,_owner,_spender), _balance);
+    rocketStorage.setUint(keccak256("token.allowed",_owner,_spender), _balance);
   }
 
   /**
@@ -646,8 +646,8 @@ contract LD2Token is ERC20, RocketBase, Issuable {
 /// @author Steven Brendtro
 contract LD2Zero is LD2Token {
 
-  string public name = &quot;LD2.zero&quot;;
-  string public symbol = &quot;XLDZ&quot;;
+  string public name = "LD2.zero";
+  string public symbol = "XLDZ";
   // Decimals are stored in RocketStorage
   // uint8 public token.decimals = 18;
 
@@ -657,12 +657,12 @@ contract LD2Zero is LD2Token {
   constructor(address _rocketStorageAddress) RocketBase(_rocketStorageAddress) public {
     // Set the decimals
     if(decimals() == 0) {
-      rocketStorage.setUint(keccak256(&quot;token.decimals&quot;),18);
+      rocketStorage.setUint(keccak256("token.decimals"),18);
     }
   }
 
   function decimals() public view returns (uint8) {
-    return uint8(rocketStorage.getUint(keccak256(&quot;token.decimals&quot;)));
+    return uint8(rocketStorage.getUint(keccak256("token.decimals")));
   }
 
 }

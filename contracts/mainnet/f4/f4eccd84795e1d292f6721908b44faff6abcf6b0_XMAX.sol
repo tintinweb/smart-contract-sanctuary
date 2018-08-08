@@ -113,8 +113,8 @@ contract XMAX is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function XMAX() public {
-        symbol = &quot;XMAX&quot;;
-        name = &quot;XMAX&quot;;
+        symbol = "XMAX";
+        name = "XMAX";
         decimals = 18;
         _totalSupply = 250000000000000000000000000;
         balances[0x432a39e0884a0bAA16e2b304b344E47f8CCe8B87] = _totalSupply;

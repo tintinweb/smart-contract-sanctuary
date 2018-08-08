@@ -265,9 +265,9 @@ contract _0xZibitToken is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;0xZIBIT&quot;;
+        symbol = "0xZIBIT";
 
-        name = &quot;0xZibit Token&quot;;
+        name = "0xZibit Token";
 
         decimals = 8;
 

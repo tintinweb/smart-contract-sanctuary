@@ -1,6 +1,6 @@
 pragma solidity ^0.4.10;
 
-// ERC-20 token snapshot of TME (&quot;TMED&quot;). TMEX will be a layer on top of this contract.
+// ERC-20 token snapshot of TME ("TMED"). TMEX will be a layer on top of this contract.
 // Will be able to be traded on EtherDelta, and will provide base for TMEX
 contract tmed {
     
@@ -38,8 +38,8 @@ event Transfer(address indexed from, address indexed to, uint256 value);
 event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
 function tmed() {
-name = &quot;tmed&quot;;
-symbol = &quot;TMED&quot;;
+name = "tmed";
+symbol = "TMED";
 decimals = 18;
 startTime=1500307354; //Time contract went online.
 devAddress=0x85196Da9269B24bDf5FfD2624ABB387fcA05382B; // Set the dev import address
@@ -92,7 +92,7 @@ if (!frozen){
 
 // Send _value amount of tokens from address _from to address _to
 // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-// tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+// tokens on your behalf, for example to "deposit" to a contract address and/or to charge
 // fees in sub-currencies; the command should fail unless the _from account has
 // deliberately authorized the sender of the message via some mechanism; we propose
 // these standardized APIs for approval:

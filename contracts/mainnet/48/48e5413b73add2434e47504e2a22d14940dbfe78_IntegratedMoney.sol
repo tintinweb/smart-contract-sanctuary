@@ -153,8 +153,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract IntegratedMoney is StandardToken {
 
-    string public constant name = &quot;Integrated Money&quot;;
-    string public constant symbol = &quot;INRM&quot;;
+    string public constant name = "Integrated Money";
+    string public constant symbol = "INRM";
     uint256 public constant decimals = 3;
 
     uint256 public constant INITIAL_SUPPLY = 10000000 * 10**3;

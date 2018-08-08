@@ -110,8 +110,8 @@ contract Venuscoins is ERC20Interface, Owned, SafeMath {
 
     // ------------------------------------------------------------------------ -------------------------------------------------------------
     function Venuscoins() public {
-        symbol = &quot;VNS&quot;;
-        name = &quot;Venuscoins&quot;;
+        symbol = "VNS";
+        name = "Venuscoins";
         decimals = 8;
         _totalSupply = 1000000000000000;
         balances[

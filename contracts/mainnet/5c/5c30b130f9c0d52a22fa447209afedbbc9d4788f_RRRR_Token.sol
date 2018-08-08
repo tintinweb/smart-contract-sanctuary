@@ -325,7 +325,7 @@ contract TokenERC20 is ERC20, Ownable{
 
 contract RRRR_Token is TokenERC20 {
 
-    function RRRR_Token() TokenERC20(15000000000, &quot;RRRRToken&quot;, &quot;RRRR&quot;, 18) public {
+    function RRRR_Token() TokenERC20(15000000000, "RRRRToken", "RRRR", 18) public {
 
     }
 }

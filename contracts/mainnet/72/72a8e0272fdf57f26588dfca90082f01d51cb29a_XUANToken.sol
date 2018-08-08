@@ -266,8 +266,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract XUANToken is StandardToken {
 
-  string public constant name = &quot;XUAN Token&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;XUAN&quot;; // solium-disable-line uppercase
+  string public constant name = "XUAN Token"; // solium-disable-line uppercase
+  string public constant symbol = "XUAN"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = (10 ** 9) * (10 ** uint256(decimals));

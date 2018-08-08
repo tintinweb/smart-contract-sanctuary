@@ -253,7 +253,7 @@ contract TokenERC20 is ERC20, Ownable{
 
 contract PowerToken is TokenERC20 {
 
-    function PowerToken() TokenERC20(100000000, &quot;PowerCoin&quot;, &quot;LHF&quot;, 18) public {
+    function PowerToken() TokenERC20(100000000, "PowerCoin", "LHF", 18) public {
 
     }
 }

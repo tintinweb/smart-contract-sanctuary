@@ -16,9 +16,9 @@ contract Btcandres {
     function Btcandres() {
 
          initialSupply = 1000000;
-        name = &quot;btcandres&quot;;
+        name = "btcandres";
         decimals = 0;
-        symbol = &quot;B&quot;;
+        symbol = "B";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

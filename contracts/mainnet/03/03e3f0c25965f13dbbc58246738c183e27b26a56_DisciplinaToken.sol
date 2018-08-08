@@ -206,7 +206,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
 * @title Ownable
 * @dev The Ownable contract has an owner address, and provides basic authorization control
-* functions, this simplifies the implementation of &quot;user permissions&quot;.
+* functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
     address public owner;
@@ -246,8 +246,8 @@ contract Ownable {
 */
 contract DisciplinaToken is StandardToken, Ownable {
 
-    string public constant name = &quot;Disciplina Token&quot;;
-    string public constant symbol = &quot;DSCP&quot;;
+    string public constant name = "Disciplina Token";
+    string public constant symbol = "DSCP";
     uint32 public constant decimals = 18;
 
     mapping (address => uint256) mintingAllowance;

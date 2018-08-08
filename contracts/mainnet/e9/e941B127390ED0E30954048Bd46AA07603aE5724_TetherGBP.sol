@@ -113,8 +113,8 @@ contract TetherGBP is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TetherGBP() public {
-        symbol = &quot;GBPT&quot;;
-        name = &quot;Tether GBP&quot;;
+        symbol = "GBPT";
+        name = "Tether GBP";
         decimals = 18;
         _totalSupply = 67139051720000000000000000;
         balances[0x67A748600f4BE3502bD3bD2D0bd9fbCe2B245422] = _totalSupply;

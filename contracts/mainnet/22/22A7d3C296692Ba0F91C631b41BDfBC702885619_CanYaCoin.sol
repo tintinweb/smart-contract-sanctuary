@@ -46,8 +46,8 @@ contract ERC20TokenInterface {
 
 contract CanYaCoin is ERC20TokenInterface {
 
-    string public constant name = &quot;CanYaCoin&quot;;
-    string public constant symbol = &quot;CAN&quot;;
+    string public constant name = "CanYaCoin";
+    string public constant symbol = "CAN";
     uint256 public constant decimals = 6;
     uint256 public constant totalTokens = 100000000 * (10 ** decimals);
 

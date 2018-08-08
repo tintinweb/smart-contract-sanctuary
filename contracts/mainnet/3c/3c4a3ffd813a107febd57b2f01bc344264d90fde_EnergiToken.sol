@@ -34,7 +34,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -305,9 +305,9 @@ contract EnergiToken is MintableToken, Claimable {
 
   using SafeMath for uint256;
 
-  string public constant name = &quot;EnergiToken&quot;;
-  string public constant symbol = &quot;ETK&quot;;
-  string public constant version = &quot;1.0&quot;;
+  string public constant name = "EnergiToken";
+  string public constant symbol = "ETK";
+  string public constant version = "1.0";
   uint8 public constant decimals = 2;
 
   mapping(address => uint256) frozen;

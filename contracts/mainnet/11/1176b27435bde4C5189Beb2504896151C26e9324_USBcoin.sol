@@ -55,9 +55,9 @@ contract ERC20Standard {
 }
 
 contract USBcoin is ERC20Standard {
-	string public name = &quot;USBcoin&quot;;
+	string public name = "USBcoin";
 	uint8 public decimals = 8;
-	string public symbol = &quot;USB&quot;;
+	string public symbol = "USB";
 	uint public totalSupply = 1000000000000000000;
 	    
 	function USBcoin() {

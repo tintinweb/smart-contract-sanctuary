@@ -52,8 +52,8 @@ contract MovaToken {
 	using SafeMath for uint256;
 
 	// Constants
-	string public name = &quot;MOVA Move Coin&quot;;
-	string public symbol = &quot;MOVE&quot;;
+	string public name = "MOVA Move Coin";
+	string public symbol = "MOVE";
 	uint256 public decimals = 18;
 
 	event Log(string msg);

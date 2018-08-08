@@ -103,8 +103,8 @@ contract ToineroToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;TOINE&quot;;
-        name = &quot;Toinero&quot;;
+        symbol = "TOINE";
+        name = "Toinero";
         decimals = 0;
         _totalSupply = 21000000;
         balances[0x62AB2b5E0839A8Ad1C477dd5D472642B5B8EeF46] = _totalSupply;

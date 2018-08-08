@@ -58,8 +58,8 @@ contract CUC is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;CUC&quot;;
-    string public constant symbol = &quot;CUC&quot;;
+    string public constant name = "CUC";
+    string public constant symbol = "CUC";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 3000000000e18;

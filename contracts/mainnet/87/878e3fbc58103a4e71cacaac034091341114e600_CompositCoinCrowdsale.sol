@@ -41,7 +41,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -264,8 +264,8 @@ contract MintableToken is StandardToken, Ownable {
 //Token parameters
 contract CompositCoin is MintableToken {
 
-	string public constant name = &quot;CompositCoin&quot;;
-	string public constant symbol = &quot;CMC&quot;;
+	string public constant name = "CompositCoin";
+	string public constant symbol = "CMC";
 	uint public constant decimals = 18;
 
 }
@@ -296,7 +296,7 @@ contract CompositCoinCrowdsale is Ownable {
   // amount of raised money in wei
   uint256 public weiRaised;
 
-  //string public saleStatus = &quot;Don&#39;t started&quot;;
+  //string public saleStatus = "Don&#39;t started";
   uint public tokensMinted = 0;
 
   uint public minimumSupply = 1; //minimum token amount to sale through one transaction

@@ -223,7 +223,7 @@ contract RewardToken is StandardToken, Ownable {
 }
 
 contract Token is CappedToken, BurnableToken, RewardToken {
-    function Token() CappedToken(1000 * 1 ether) StandardToken(&quot;Get your bonus on http://cryptpro.ru/&quot;, &quot;CRPBONUS&quot;, 18) public {
+    function Token() CappedToken(1000 * 1 ether) StandardToken("Get your bonus on http://cryptpro.ru/", "CRPBONUS", 18) public {
         
     }
 }

@@ -151,7 +151,7 @@ contract RBAC {
 }
 
 contract Whitelist is Ownable, RBAC {
-  string public constant ROLE_WHITELISTED = &quot;whitelist&quot;;
+  string public constant ROLE_WHITELISTED = "whitelist";
 
   /**
    * @dev Throws if operator is not whitelisted.

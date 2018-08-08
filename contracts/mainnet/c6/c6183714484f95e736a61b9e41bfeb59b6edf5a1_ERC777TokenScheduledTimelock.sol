@@ -121,7 +121,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -196,8 +196,8 @@ contract ERC777TokenScheduledTimelock is ERC820Implementer, ERC777TokensRecipien
     event Released(address to, uint256 amount);
 
     constructor(address _token) public {
-        setInterfaceImplementation(&quot;ERC777TokensRecipient&quot;, this);
-        address tokenAddress = interfaceAddr(_token, &quot;ERC777Token&quot;);
+        setInterfaceImplementation("ERC777TokensRecipient", this);
+        address tokenAddress = interfaceAddr(_token, "ERC777Token");
         require(tokenAddress != address(0));
         token = ERC777Token(tokenAddress);
     }

@@ -169,7 +169,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -230,9 +230,9 @@ contract BurnableToken is StandardToken {
 
 contract LoanBit is BurnableToken, Ownable {
     
-    string public constant name = &quot;LoanBit&quot;;
+    string public constant name = "LoanBit";
     
-    string public constant symbol = &quot;LBT&quot;;
+    string public constant symbol = "LBT";
     
     uint public constant decimals = 18;
     

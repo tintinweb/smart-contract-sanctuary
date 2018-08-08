@@ -15,8 +15,8 @@ contract ERC20Basic {
 
 contract BitronCoin is ERC20Basic {
 
-	string	public name			= &quot;Bitron Coin&quot;;
-	string	public symbol		= &quot;BTO&quot;;
+	string	public name			= "Bitron Coin";
+	string	public symbol		= "BTO";
 	uint 	public decimals		= 9;
 	uint 	public _totalSupply = 50000000 * 10 ** decimals;
 	uint 	public tokens		= 0;

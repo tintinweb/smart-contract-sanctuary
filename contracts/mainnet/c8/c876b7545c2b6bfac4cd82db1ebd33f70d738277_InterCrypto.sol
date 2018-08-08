@@ -4,7 +4,7 @@ pragma solidity ^0.4.15;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -222,7 +222,7 @@ contract InterCrypto is Ownable, myUsingOraclize {
         uint conversionID = oraclizeMyId2conversionID[myid];
 
         if( bytes(result).length == 0 ) {
-            ConversionAborted(conversionID, &quot;Oraclize return value was invalid, this is probably due to incorrect convert() argments&quot;);
+            ConversionAborted(conversionID, "Oraclize return value was invalid, this is probably due to incorrect convert() argments");
             recoverable[conversions[conversionID].returnAddress] += conversions[conversionID].amount;
             conversions[conversionID].amount = 0;
         }
@@ -235,7 +235,7 @@ contract InterCrypto is Ownable, myUsingOraclize {
                 ConversionSentToShapeShift(conversionID, conversions[conversionID].returnAddress, depositAddress, sendAmount);
             }
             else {
-                ConversionAborted(conversionID, &quot;deposit to address returned by Oraclize failed&quot;);
+                ConversionAborted(conversionID, "deposit to address returned by Oraclize failed");
                 recoverable[conversions[conversionID].returnAddress] += sendAmount;
             }
         }
@@ -253,7 +253,7 @@ contract InterCrypto is Ownable, myUsingOraclize {
             require(msg.sender == conversion.returnAddress);
             recoverable[msg.sender] += conversion.amount;
             conversions[conversionID].amount = 0;
-            ConversionAborted(conversionID, &quot;conversion cancelled by creator&quot;);
+            ConversionAborted(conversionID, "conversion cancelled by creator");
         }
     }
 
@@ -289,11 +289,11 @@ contract InterCrypto is Ownable, myUsingOraclize {
      * @param _coinSymbol The coinsymbol of the other blockchain to be used by ShapeShift. See engine() function for more details.
      * @param _toAddress The address on the other blockchain that the converted cryptocurrency will be sent to.
      * Example first two arguments:
-     * &quot;ltc&quot;, &quot;LbZcDdMeP96ko85H21TQii98YFF9RgZg3D&quot;    Litecoin
-     * &quot;btc&quot;, &quot;1L8oRijgmkfcZDYA21b73b6DewLtyYs87s&quot;    Bitcoin
-     * &quot;dash&quot;, &quot;Xoopows17idkTwNrMZuySXBwQDorsezQAx&quot;   Dash
-     * &quot;zec&quot;, &quot;t1N7tf1xRxz5cBK51JADijLDWS592FPJtya&quot;   ZCash
-     * &quot;doge&quot;, &quot;DMAFvwTH2upni7eTau8au6Rktgm2bUkMei&quot;   Dogecoin
+     * "ltc", "LbZcDdMeP96ko85H21TQii98YFF9RgZg3D"    Litecoin
+     * "btc", "1L8oRijgmkfcZDYA21b73b6DewLtyYs87s"    Bitcoin
+     * "dash", "Xoopows17idkTwNrMZuySXBwQDorsezQAx"   Dash
+     * "zec", "t1N7tf1xRxz5cBK51JADijLDWS592FPJtya"   ZCash
+     * "doge", "DMAFvwTH2upni7eTau8au6Rktgm2bUkMei"   Dogecoin
      * Test symbol pairs using ShapeShift API (shapeshift.io/validateAddress/[address]/[coinSymbol]) or by creating a test
      * conversion on https://shapeshift.io first whenever possible before using it with InterCrypto.
      * @param _returnAddress The Ethereum address that any Ether should be sent back to in the event that the ShapeShift conversion is invalid or fails.
@@ -302,10 +302,10 @@ contract InterCrypto is Ownable, myUsingOraclize {
         conversionID = conversionCount++;
 
         if (
-            !isValidString(_coinSymbol, 6) || // Waves smbol is &quot;waves&quot;
+            !isValidString(_coinSymbol, 6) || // Waves smbol is "waves"
             !isValidString(_toAddress, 120)   // Monero integrated addresses are 106 characters
             ) {
-            ConversionAborted(conversionID, &quot;input parameters are too long or contain invalid symbols&quot;);
+            ConversionAborted(conversionID, "input parameters are too long or contain invalid symbols");
             recoverable[msg.sender] += msg.value;
             return;
         }
@@ -317,10 +317,10 @@ contract InterCrypto is Ownable, myUsingOraclize {
             conversions[conversionID] = Conversion(_returnAddress, msg.value-oraclizePrice);
 
             string memory postData = createShapeShiftConversionPost(_coinSymbol, _toAddress);
-            bytes32 myQueryId = oraclize_query(&quot;URL&quot;, &quot;json(https://shapeshift.io/shift).deposit&quot;, postData);
+            bytes32 myQueryId = oraclize_query("URL", "json(https://shapeshift.io/shift).deposit", postData);
 
             if (myQueryId == 0) {
-                ConversionAborted(conversionID, &quot;unexpectedly high Oraclize price when calling oraclize_query&quot;);
+                ConversionAborted(conversionID, "unexpectedly high Oraclize price when calling oraclize_query");
                 recoverable[msg.sender] += msg.value-oraclizePrice;
                 conversions[conversionID].amount = 0;
                 return;
@@ -329,7 +329,7 @@ contract InterCrypto is Ownable, myUsingOraclize {
             ConversionStarted(conversionID);
         }
         else {
-            ConversionAborted(conversionID, &quot;Not enough Ether sent to cover Oraclize fee&quot;);
+            ConversionAborted(conversionID, "Not enough Ether sent to cover Oraclize fee");
             conversions[conversionID].amount = 0;
             recoverable[msg.sender] += msg.value;
         }
@@ -386,14 +386,14 @@ contract InterCrypto is Ownable, myUsingOraclize {
      * @param _coinSymbol The coinsymbol of the other blockchain to be used by ShapeShift. See engine() function for more details.
      * @param _toAddress The address on the other blockchain that the converted cryptocurrency will be sent to.
      * Example output:
-     * &#39; {&quot;withdrawal&quot;:&quot;LbZcDdMeP96ko85H21TQii98YFF9RgZg3D&quot;,&quot;pair&quot;:&quot;eth_ltc&quot;,&quot;returnAddress&quot;:&quot;558999ff2e0daefcb4fcded4c89e07fdf9ccb56c&quot;}&#39;
+     * &#39; {"withdrawal":"LbZcDdMeP96ko85H21TQii98YFF9RgZg3D","pair":"eth_ltc","returnAddress":"558999ff2e0daefcb4fcded4c89e07fdf9ccb56c"}&#39;
      * Note that an extra space &#39; &#39; is needed at the start to tell Oraclize to make a POST query
      */
     function createShapeShiftConversionPost(string _coinSymbol, string _toAddress) internal returns (string sFinal) {
-        string memory s1 = &#39; {&quot;withdrawal&quot;:&quot;&#39;;
-        string memory s3 = &#39;&quot;,&quot;pair&quot;:&quot;eth_&#39;;
-        string memory s5 = &#39;&quot;,&quot;returnAddress&quot;:&quot;&#39;;
-        string memory s7 = &#39;&quot;}&#39;;
+        string memory s1 = &#39; {"withdrawal":"&#39;;
+        string memory s3 = &#39;","pair":"eth_&#39;;
+        string memory s5 = &#39;","returnAddress":"&#39;;
+        string memory s7 = &#39;"}&#39;;
 
         bytes memory bFinal = concatBytes(bytes(s1), bytes(_toAddress), bytes(s3), bytes(_coinSymbol), bytes(s5), bytes(addressToBytes(msg.sender)), bytes(s7));
 
@@ -421,7 +421,7 @@ contract InterCrypto is Ownable, myUsingOraclize {
         uint160 tmp = uint160(_address);
 
         // 40 bytes of space, but actually uses 64 bytes
-        string memory holder = &quot;                                        &quot;;
+        string memory holder = "                                        ";
         bytes memory ret = bytes(holder);
 
         // NOTE: this is written in an expensive way, as out-of-order array access

@@ -231,8 +231,8 @@ contract presale {
         numberOfTokensLeft = noOfTokens;
         pricePerToken = prPerToken;
         owner = msg.sender;
-        name = &quot;Autonio Presale&quot;;
-        symbol = &quot;NIO&quot;;
+        name = "Autonio Presale";
+        symbol = "NIO";
     }
     
     function addAddress (address addr) private {

@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract RepairCenter {
 
-    string public name = &quot;RepairCenter&quot;;      //  token name
-    string public symbol = &quot;MDRC&quot;;           //  token symbol
+    string public name = "RepairCenter";      //  token name
+    string public symbol = "MDRC";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

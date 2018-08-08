@@ -58,8 +58,8 @@ contract AEZtoken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;AEZtoken&quot;;
-    string public constant symbol = &quot;AEZ&quot;;
+    string public constant name = "AEZtoken";
+    string public constant symbol = "AEZ";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 2000000000e18;

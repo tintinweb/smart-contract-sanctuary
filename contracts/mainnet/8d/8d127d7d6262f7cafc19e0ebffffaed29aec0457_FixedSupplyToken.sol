@@ -114,8 +114,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function FixedSupplyToken() public {
-        symbol = &quot;RCY&quot;;
-        name = &quot;RatingAgency&quot;;
+        symbol = "RCY";
+        name = "RatingAgency";
         decimals = 18;
         _totalSupply = 500000 * 10**uint(decimals);
         balances[0xc08B8d37fCEa0a2A3cF3b7120995577B309ec33d] = _totalSupply;

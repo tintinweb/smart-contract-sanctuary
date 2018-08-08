@@ -226,7 +226,7 @@ library SafeMath {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0x150b7a02;
@@ -241,7 +241,7 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`
    */
   function onERC721Received(
     address _operator,
@@ -262,7 +262,7 @@ contract ERC721BasicToken is ERC721Basic, ERC165 {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0x150b7a02;
 
@@ -401,7 +401,7 @@ contract ERC721BasicToken is ERC721Basic, ERC165 {
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -419,14 +419,14 @@ contract ERC721BasicToken is ERC721Basic, ERC165 {
       _from,
       _to,
       _tokenId,
-      &quot;&quot;);
+      "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -464,7 +464,7 @@ contract ERC721BasicToken is ERC721Basic, ERC165 {
 
     require(
       sender == owner || isApprovedForAll(owner, sender) || getApproved(_tokenId) == sender,
-      &quot;Not authorized to transfer&quot;
+      "Not authorized to transfer"
     );
 
     // Resetting the approved address if it&#39;s set
@@ -718,7 +718,7 @@ contract CodexRecordMetadata is ERC721Token {
     }
 
     // descriptionHash can always be overridden since it&#39;s an optional value
-    //  (e.g. you can &quot;remove&quot; a description by setting it to a blank string)
+    //  (e.g. you can "remove" a description by setting it to a blank string)
     tokenData[_tokenId].descriptionHash = _newDescriptionHash;
 
     // fileHashes is only overridden if it has one or more value, since at
@@ -788,7 +788,7 @@ contract CodexRecordMetadata is ERC721Token {
   {
     bytes memory prefix = bytes(tokenURIPrefix);
     if (prefix.length == 0) {
-      return &quot;&quot;;
+      return "";
     }
 
     // Rather than store a string representation of _tokenId, we just convert it on the fly
@@ -819,7 +819,7 @@ contract CodexRecordMetadata is ERC721Token {
    */
   function uint2bytes(uint256 i) internal pure returns (bytes) {
     if (i == 0) {
-      return &quot;0&quot;;
+      return "0";
     }
 
     uint256 j = i;
@@ -908,7 +908,7 @@ contract CodexStakeContractInterface is ERC900 {
 /**
  * @title DelayedOwnable
  * @dev The DelayedOwnable contract has an owner address, and provides basic authorization control
- *  functions, this simplifies the implementation of &quot;user permissions&quot;.
+ *  functions, this simplifies the implementation of "user permissions".
  * @dev This is different than the original Ownable contract because intializeOwnable
  *  must be specifically called after creation to create an owner.
  */
@@ -929,7 +929,7 @@ contract DelayedOwnable {
   function initializeOwnable(address _owner) external {
     require(
       !isInitialized,
-      &quot;The owner has already been set&quot;);
+      "The owner has already been set");
 
     isInitialized = true;
     owner = _owner;
@@ -1039,7 +1039,7 @@ contract CodexRecordFees is CodexRecordMetadata, DelayedPausable {
       if (!feePaid) {
         require(
           codexCoin.transferFrom(msg.sender, feeRecipient, _baseFee),
-          &quot;Insufficient funds&quot;);
+          "Insufficient funds");
       }
     }
 
@@ -1270,7 +1270,7 @@ contract CodexRecord is CodexRecordAccess {
   /**
    * @dev Constructor function
    */
-  constructor() public ERC721Token(&quot;Codex Record&quot;, &quot;CR&quot;) { }
+  constructor() public ERC721Token("Codex Record", "CR") { }
 
   /**
    * @dev Reclaim all ERC20Basic compatible tokens

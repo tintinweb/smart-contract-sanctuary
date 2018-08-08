@@ -218,8 +218,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract COINECTToken is StandardToken {
 
-    string public name = &quot;COINECT TOKEN&quot;;
-    string public symbol = &quot;COI&quot;;
+    string public name = "COINECT TOKEN";
+    string public symbol = "COI";
     uint public decimals = 8;
     uint public StatsTotalSupply = 2500000000000000;
     address public owner = 0x9657A0c6d258baEFf80731B97169E4F1233d1F5E;

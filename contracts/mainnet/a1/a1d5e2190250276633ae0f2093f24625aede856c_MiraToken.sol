@@ -230,11 +230,11 @@ contract MiraToken is StandardToken, BurnableToken, Ownable {
     event TokensRevertedByKYC(address indexed _address, uint256 _amount);
     event SetTechAccount(address indexed _address);
 
-    string public constant name = &quot;MIRA Token&quot;;
+    string public constant name = "MIRA Token";
 
-    string public constant symbol = &quot;MIRA&quot;;
+    string public constant symbol = "MIRA";
 
-    string public constant standard = &quot;ERC223&quot;;
+    string public constant standard = "ERC223";
 
     uint256 public constant decimals = 8;
 

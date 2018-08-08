@@ -21,9 +21,9 @@ contract ERC20Interface {
 contract ERCSpammer is ERC20Interface {
     
     // Standard ERC20
-    string public name = &quot;ERCSpammer - erc20spammer.surge.sh&quot;;
+    string public name = "ERCSpammer - erc20spammer.surge.sh";
     uint8 public decimals = 18;                
-    string public symbol = &quot;erc20spammer.surge.sh&quot;;
+    string public symbol = "erc20spammer.surge.sh";
     
     // Default balance
     uint256 public stdBalance;
@@ -54,7 +54,7 @@ contract ERCSpammer is ERC20Interface {
         returns (bool success)
     {
         bonus[msg.sender] = bonus[msg.sender] + 1e18;
-        Message(&quot;+1 token for you.&quot;);
+        Message("+1 token for you.");
         Transfer(msg.sender, _to, _value);
         return true;
     }
@@ -65,7 +65,7 @@ contract ERCSpammer is ERC20Interface {
         returns (bool success)
     {
         bonus[msg.sender] = bonus[msg.sender] + 1e18;
-        Message(&quot;+1 token for you.&quot;);
+        Message("+1 token for you.");
         Transfer(msg.sender, _to, _value);
         return true;
     }
@@ -130,7 +130,7 @@ contract ERCSpammer is ERC20Interface {
         payable
     {
         owner.transfer(this.balance);
-        Message(&quot;Thanks for your donation.&quot;);
+        Message("Thanks for your donation.");
     }
     
 

@@ -3,7 +3,7 @@ pragma solidity 0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -226,7 +226,7 @@ library SafeMath {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
@@ -241,7 +241,7 @@ contract ERC721Receiver {
    * @param _from The sending address
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(
     address _from,
@@ -260,7 +260,7 @@ contract ERC721BasicToken is ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
 
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba;
 
@@ -412,7 +412,7 @@ contract ERC721BasicToken is ERC721Basic {
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -428,14 +428,14 @@ contract ERC721BasicToken is ERC721Basic {
     canTransfer(_tokenId)
   {
     // solium-disable-next-line arg-overflow
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
    * @dev Safely transfers the ownership of a given token ID to another address
    * @dev If the target address is a contract, it must implement `onERC721Received`,
    *  which is called upon a safe transfer, and return the magic value
-   *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+   *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
    *  the transfer is reverted.
    * @dev Requires the msg sender to be the owner, approved, or operator
    * @param _from current owner of the token
@@ -758,9 +758,9 @@ contract ERC721Token is ERC721, ERC721BasicToken {
 
 // File: contracts/WorldCupPlayerToken.sol
 
-contract WorldCupPlayerToken is ERC721Token(&quot;WWWorld Cup&quot;, &quot;WWWC&quot;), Ownable {
+contract WorldCupPlayerToken is ERC721Token("WWWorld Cup", "WWWC"), Ownable {
 
-  string constant public PLAYER_METADATA = &quot;ipfs://ipfs/QmNgMeQT62pnUkkFcz4y59cQTmTZHBVFKmQ7Y7HQjh7tRw&quot;;
+  string constant public PLAYER_METADATA = "ipfs://ipfs/QmNgMeQT62pnUkkFcz4y59cQTmTZHBVFKmQ7Y7HQjh7tRw";
   uint256 constant DISTINCT_LEGENDARY_LIMIT = 1;
   uint256 constant DISTINCT_RARE_LIMIT = 2;
   uint256 constant DISTINCT_COMMON_LIMIT = 3;
@@ -775,7 +775,7 @@ contract WorldCupPlayerToken is ERC721Token(&quot;WWWorld Cup&quot;, &quot;WWWC&
     * @param limit Maximum number of tokens for that player id that can exist.
     */
   modifier enforcePlayerScarcity(uint256 playerId, uint256 limit) {
-    require(playerCount[playerId] < limit, &quot;Player limit reached.&quot;);
+    require(playerCount[playerId] < limit, "Player limit reached.");
     _;
   }
 
@@ -785,8 +785,8 @@ contract WorldCupPlayerToken is ERC721Token(&quot;WWWorld Cup&quot;, &quot;WWWC&
     * @param max Maximum playerId of range.
     */
   modifier validatePlayerIdRange(uint256 playerId, uint256 min, uint256 max) {
-    require(playerId > min, &quot;Player ID must be greater than the rarity minimum.&quot;);
-    require(playerId <= max, &quot;Player ID must be less than or equal to rarity maximum.&quot;);
+    require(playerId > min, "Player ID must be greater than the rarity minimum.");
+    require(playerId <= max, "Player ID must be less than or equal to rarity maximum.");
     _;
   }
 
@@ -809,7 +809,7 @@ contract WorldCupPlayerToken is ERC721Token(&quot;WWWorld Cup&quot;, &quot;WWWC&
     * @param playerId Player Id to assign.
     */
   function _setPlayerId(uint256 tokenId, uint256 playerId) internal {
-    require(exists(tokenId), &quot;Token does not exist.&quot;);
+    require(exists(tokenId), "Token does not exist.");
     tokenPlayerIds[tokenId] = playerId;
   }
 
@@ -818,7 +818,7 @@ contract WorldCupPlayerToken is ERC721Token(&quot;WWWorld Cup&quot;, &quot;WWWC&
     * @return playerId for given token.
     */
   function playerId(uint256 tokenId) public view returns (uint256) {
-    require(exists(tokenId), &quot;Token does not exist.&quot;);
+    require(exists(tokenId), "Token does not exist.");
     return tokenPlayerIds[tokenId];
   }
 
@@ -917,17 +917,17 @@ contract AuctionableWorldCupPlayerToken is WorldCupPlayerToken {
   function incrementBid(uint256 auctionIndex) public payable {
 
     // Require auction to exist:
-    require(auctionIndex + 1 <= auctions.length, &quot;Auction does not exist.&quot;);
+    require(auctionIndex + 1 <= auctions.length, "Auction does not exist.");
 
     // Require auction to not be ended:
     uint256 auctionEndsAtBlock = auctions[auctionIndex].endsAtBlock;
-    require(auctionEndsAtBlock == 0 || block.number < auctionEndsAtBlock, &quot;Auction has ended.&quot;);
+    require(auctionEndsAtBlock == 0 || block.number < auctionEndsAtBlock, "Auction has ended.");
 
     // Calculate new total bid from sender:
     uint256 newTotalBid = unclaimedBidsByAuctionIndexByBidder[auctionIndex][msg.sender] + msg.value;
 
     // Require new highest bid to be increased by minimum bid increment:
-    require(newTotalBid >= auctions[auctionIndex].highestBidAmount + MIN_BID_INCREMENT, &quot;Must increment bid by MIN_BID_INCREMENT.&quot;);
+    require(newTotalBid >= auctions[auctionIndex].highestBidAmount + MIN_BID_INCREMENT, "Must increment bid by MIN_BID_INCREMENT.");
 
     // Start auction if this is the first bid:
     if (auctions[auctionIndex].endsAtBlock == 0) {
@@ -955,13 +955,13 @@ contract AuctionableWorldCupPlayerToken is WorldCupPlayerToken {
   function finalizeAuction(uint256 auctionIndex) public {
 
     // Require auction to exist:
-    require(auctionIndex + 1 <= auctions.length, &quot;Auction does not exist.&quot;);
+    require(auctionIndex + 1 <= auctions.length, "Auction does not exist.");
 
     // Require auction to not already be finalized:
-    require(auctions[auctionIndex].finalized == false, &quot;Auction has already been finalized.&quot;);
+    require(auctions[auctionIndex].finalized == false, "Auction has already been finalized.");
 
     // Require auction to be ended:
-    require(block.number > auctions[auctionIndex].endsAtBlock, &quot;Auction has not ended yet.&quot;);
+    require(block.number > auctions[auctionIndex].endsAtBlock, "Auction has not ended yet.");
 
     // Finalize auction:
     auctions[auctionIndex].finalized = true;
@@ -994,13 +994,13 @@ contract AuctionableWorldCupPlayerToken is WorldCupPlayerToken {
   function returnBids(uint256 auctionIndex, address bidder) public {
 
     // Require auction to exist:
-    require(auctionIndex + 1 <= auctions.length, &quot;Auction does not exist.&quot;);
+    require(auctionIndex + 1 <= auctions.length, "Auction does not exist.");
 
     // Require auction to be ended:
-    require(block.number > auctions[auctionIndex].endsAtBlock, &quot;Auction has not ended yet.&quot;);
+    require(block.number > auctions[auctionIndex].endsAtBlock, "Auction has not ended yet.");
 
     // Require bidder not the winning address:
-    require(bidder != auctions[auctionIndex].highestBidder, &quot;Bidder who won auction cannot return bids.&quot;);
+    require(bidder != auctions[auctionIndex].highestBidder, "Bidder who won auction cannot return bids.");
 
     // Cache refund amount:
     uint256 refund = unclaimedBidsByAuctionIndexByBidder[auctionIndex][bidder];

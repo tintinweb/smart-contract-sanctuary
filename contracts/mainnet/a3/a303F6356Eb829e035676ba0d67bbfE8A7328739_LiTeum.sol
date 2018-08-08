@@ -88,7 +88,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -178,8 +178,8 @@ contract BurnableToken is StandardToken {
 contract LiTeum is StandardToken, BurnableToken, Ownable {
 
     // Constants
-    string  public constant name = &quot;LiTeum&quot;;
-    string  public constant symbol = &quot;LTMF&quot;;
+    string  public constant name = "LiTeum";
+    string  public constant symbol = "LTMF";
     uint8   public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 100000000000 * (10 ** uint256(decimals));
 

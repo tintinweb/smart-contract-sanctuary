@@ -117,8 +117,8 @@ contract WeiDexBeta is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;WDXB&quot;;
-        name = &quot;WeiDex Beta&quot;;
+        symbol = "WDXB";
+        name = "WeiDex Beta";
         decimals = 18;
         _totalSupply = 5000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

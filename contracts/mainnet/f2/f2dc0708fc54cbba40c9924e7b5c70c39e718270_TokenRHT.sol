@@ -89,8 +89,8 @@ contract TokenRHT is ERC20, SafeMath {
 
         owner = msg.sender;
         
-		name = &quot;Realthium&quot;;
-        symbol = &quot;RHT&quot;;
+		name = "Realthium";
+        symbol = "RHT";
         decimals = 5;
         totalSupply = 500000000 * 10 ** uint256(decimals);
         balances[owner] = totalSupply;

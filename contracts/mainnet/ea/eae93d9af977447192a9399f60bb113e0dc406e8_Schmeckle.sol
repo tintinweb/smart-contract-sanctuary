@@ -113,8 +113,8 @@ contract Schmeckle is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Schmeckle() public {
-        symbol = &quot;SMEK&quot;;
-        name = &quot;Schmeckle&quot;;
+        symbol = "SMEK";
+        name = "Schmeckle";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x4a56a653e4dEB17afc04Ef20D9686937DD42E675] = _totalSupply;

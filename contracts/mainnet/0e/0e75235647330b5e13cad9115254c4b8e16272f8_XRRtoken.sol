@@ -215,8 +215,8 @@ contract BurnableToken is BasicToken {
 contract XRRtoken is StandardToken, BurnableToken {
 
 
-    string public constant name = &quot;Xchangerate Coin&quot;;
-    string public constant symbol = &quot;XRR&quot;;
+    string public constant name = "Xchangerate Coin";
+    string public constant symbol = "XRR";
     uint8 public constant decimals = 18;
 
     // Total Supply: 250 million

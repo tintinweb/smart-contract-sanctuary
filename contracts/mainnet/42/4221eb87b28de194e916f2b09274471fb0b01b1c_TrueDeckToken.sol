@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -200,8 +200,8 @@ contract TrueDeckToken is ERC20, PoSTokenStandard, Pausable {
         uint64 time
     );
 
-    string public constant name = &quot;TrueDeck&quot;;
-    string public constant symbol = &quot;TDP&quot;;
+    string public constant name = "TrueDeck";
+    string public constant symbol = "TDP";
     uint8 public constant decimals = 18;
 
     mapping (address => uint256) balances;

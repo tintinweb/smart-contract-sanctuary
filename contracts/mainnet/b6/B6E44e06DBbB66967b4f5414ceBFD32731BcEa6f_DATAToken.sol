@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract DATAToken is StandardToken {
 
-  string public constant name = &quot;DATA&quot;;
-  string public constant symbol = &quot;DATA&quot;;
+  string public constant name = "DATA";
+  string public constant symbol = "DATA";
   uint8 public constant decimals = 18;
 
 

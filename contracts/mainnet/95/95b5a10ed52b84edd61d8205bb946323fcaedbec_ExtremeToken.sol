@@ -123,8 +123,8 @@ contract StandardToken is newToken, ERC20 {
 }
 
  contract Extreme is StandardToken, Ownable {
-  string public constant name = &quot;Extreme Coin&quot;;
-  string public constant symbol = &quot;XT&quot;;
+  string public constant name = "Extreme Coin";
+  string public constant symbol = "XT";
   uint public constant decimals = 2;
   mapping (address => uint256) public balanceOf;
   uint256 public initialSupply;

@@ -1,8 +1,8 @@
 pragma solidity ^0.4.11;
 
 contract VKBToken {
-	string public constant symbol = &quot;VKB&quot;;
-	string public constant name = &quot;VKBToken&quot;;
+	string public constant symbol = "VKB";
+	string public constant name = "VKBToken";
 	uint8 public constant decimals = 18;
 	uint256 _totalSupply = 210000;
 	

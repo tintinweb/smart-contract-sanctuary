@@ -152,7 +152,7 @@ contract StandardToken is ERC20, BasicToken {
  
 /*
 The Ownable contract has an owner address, and provides basic authorization control
- functions, this simplifies the implementation of &quot;user permissions&quot;.
+ functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     
@@ -221,8 +221,8 @@ contract TheLiquidToken is StandardToken, Ownable {
 }
     
 contract BYN is TheLiquidToken {
-  string public constant name = &quot;Belorussian Rubble&quot;;
-  string public constant symbol = &quot;BYN&quot;;
+  string public constant name = "Belorussian Rubble";
+  string public constant symbol = "BYN";
   uint public constant decimals = 2;
   uint256 public initialSupply;
     

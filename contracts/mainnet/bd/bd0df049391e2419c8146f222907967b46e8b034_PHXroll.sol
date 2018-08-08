@@ -197,8 +197,8 @@ contract PHXroll is PHXReceivingContract, usingMathLibraries {
     }
 
     // This is a supercheap psuedo-random number generator
-    // that relies on the fact that &quot;who&quot; will mine and &quot;when&quot; they will
-    // mine is random.  This is usually vulnerable to &quot;inside the block&quot;
+    // that relies on the fact that "who" will mine and "when" they will
+    // mine is random.  This is usually vulnerable to "inside the block"
     // attacks where someone writes a contract mined in the same block
     // and calls this contract from it -- but we don&#39;t accept transactions
     // from other contracts, lessening that risk.  It seems like someone
@@ -226,7 +226,7 @@ contract PHXroll is PHXReceivingContract, usingMathLibraries {
         betIsValid(_tkn.value, _rollUnder)
 	{
         // Note that msg.sender is the Token Contract Address
-    	// and &quot;_from&quot; is the sender of the tokens
+    	// and "_from" is the sender of the tokens
     	require(_humanSender(_tkn.sender)); // Check that this is a non-contract sender
     	require(_phxToken(msg.sender)); // Check that this is a PHX Token Transfer
 	    
@@ -413,16 +413,16 @@ contract PHXroll is PHXReceivingContract, usingMathLibraries {
 	}    
 
     function _phxToken(address _tokenContract) private pure returns (bool) {
-        return _tokenContract == PHXTKNADDR; // Returns &quot;true&quot; of this is the PHX Token Contract
+        return _tokenContract == PHXTKNADDR; // Returns "true" of this is the PHX Token Contract
     }
     
-    // Determine if the &quot;_from&quot; address is a contract
+    // Determine if the "_from" address is a contract
     function _humanSender(address _from) private view returns (bool) {
       uint codeLength;
       assembly {
           codeLength := extcodesize(_from)
       }
-      return (codeLength == 0); // If this is &quot;true&quot; sender is most likely a Wallet
+      return (codeLength == 0); // If this is "true" sender is most likely a Wallet
     }
 
 }

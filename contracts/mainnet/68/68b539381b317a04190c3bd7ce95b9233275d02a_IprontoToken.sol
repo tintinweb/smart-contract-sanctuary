@@ -187,10 +187,10 @@ contract StandardToken is ERC20, BasicToken {
 contract IprontoToken is StandardToken {
 
   // Setting Token Name to Mango
-  string public constant name = &quot;iPRONTO&quot;;
+  string public constant name = "iPRONTO";
 
   // Setting Token Symbol to MGO
-  string public constant symbol = &quot;IPR&quot;;
+  string public constant symbol = "IPR";
 
   // Setting Token Decimals to 18
   uint8 public constant decimals = 18;

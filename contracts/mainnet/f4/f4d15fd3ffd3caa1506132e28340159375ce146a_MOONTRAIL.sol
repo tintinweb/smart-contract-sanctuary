@@ -113,8 +113,8 @@ contract MOONTRAIL is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MOONTRAIL() public {
-        symbol = &quot;MONT&quot;;
-        name = &quot;MOONTRAIL&quot;;
+        symbol = "MONT";
+        name = "MOONTRAIL";
         decimals = 0;
         _totalSupply = 100000000000;
         balances[0xCd4f73EF30D163675aCce1ef7be367D6D593CBb2] = _totalSupply;

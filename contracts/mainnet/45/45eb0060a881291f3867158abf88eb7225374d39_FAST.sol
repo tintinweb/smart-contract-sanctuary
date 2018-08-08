@@ -109,8 +109,8 @@ contract FAST is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FAST() public {
-        symbol = &quot;FAST&quot;;
-        name = &quot;Ethereum Fast&quot;;
+        symbol = "FAST";
+        name = "Ethereum Fast";
         decimals = 18;
         _totalSupply = 1000000000000000000000000;
         balances[0xbb458ce9cb5Ce117B9338804BdE6A8ca6Ca6C4E3] = _totalSupply;

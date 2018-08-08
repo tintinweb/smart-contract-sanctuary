@@ -109,8 +109,8 @@ contract DCTR is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DCTR() public {
-        symbol = &quot;DCTR&quot;;
-        name = &quot;DCTR&quot;;
+        symbol = "DCTR";
+        name = "DCTR";
         decimals = 18;
         _totalSupply = 3000000000000000000000000000;
         balances[0xa13395c1681974f46087f7f99e6a447bc2d6d21d] = _totalSupply;

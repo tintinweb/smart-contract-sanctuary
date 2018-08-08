@@ -184,8 +184,8 @@ contract StandardToken is BasicToken, ERC20 {
 // @title CDI Protocol Token.
 
 contract CDIToken is StandardToken {
-    string public constant name = &quot;CDIToken&quot;;
-    string public constant symbol = &quot;CDI&quot;;
+    string public constant name = "CDIToken";
+    string public constant symbol = "CDI";
     uint public constant decimals = 18;
 
     // Note: this will be initialized during the contract deployment.

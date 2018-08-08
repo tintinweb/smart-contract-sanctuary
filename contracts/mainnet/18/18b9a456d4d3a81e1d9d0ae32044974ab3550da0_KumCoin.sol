@@ -5,7 +5,7 @@ pragma solidity 0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -307,7 +307,7 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract KumCoin is MintableToken {
-    string public name = &quot;KumCoin&quot;;
-    string public symbol = &quot;KCN&quot;;
+    string public name = "KumCoin";
+    string public symbol = "KCN";
     uint8 public decimals = 18;
 }

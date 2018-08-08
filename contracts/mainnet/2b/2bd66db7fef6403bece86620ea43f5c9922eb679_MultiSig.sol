@@ -159,13 +159,13 @@ contract MultiSig is ReentrancyGuard{
 
         // Compare amount of wei with previous confirmtaion
         if(pending.eth != amount){
-            transferViolated(&quot;Incorrect amount of wei passed&quot;);
+            transferViolated("Incorrect amount of wei passed");
             return;
         }
 
         // make sure signer is not trying to spam
         if(msg.sender == pending.signer[0]){
-            transferViolated(&quot;Signer is spamming&quot;);
+            transferViolated("Signer is spamming");
             return;
         }
 
@@ -176,7 +176,7 @@ contract MultiSig is ReentrancyGuard{
         // make sure signer is not trying to spam
         if(remaining == 0){
             if(msg.sender == pending.signer[0]){
-                transferViolated(&quot;One of signers is spamming&quot;);
+                transferViolated("One of signers is spamming");
                 return;
             }
         }
@@ -276,20 +276,20 @@ contract MultiSig is ReentrancyGuard{
 
         // violated consensus
         if(updating.oldAddress != _oldAddress){
-            emit Violated(&quot;Old addresses do not match&quot;,msg.sender);
+            emit Violated("Old addresses do not match",msg.sender);
             ResetUpdateState();
             return;
         }
 
         if(updating.newAddress != _newAddress){
-            emit Violated(&quot;New addresses do not match&quot;,msg.sender);
+            emit Violated("New addresses do not match",msg.sender);
             ResetUpdateState();
             return;
         }
 
         // make sure admin is not trying to spam
         if(msg.sender == updating.signer[0]){
-            emit Violated(&quot;Signer is spamming&quot;,msg.sender);
+            emit Violated("Signer is spamming",msg.sender);
             ResetUpdateState();
             return;
         }
@@ -300,7 +300,7 @@ contract MultiSig is ReentrancyGuard{
 
         if( remaining == 0){
             if(msg.sender == updating.signer[0]){
-                emit Violated(&quot;One of signers is spamming&quot;,msg.sender);
+                emit Violated("One of signers is spamming",msg.sender);
                 ResetUpdateState();
                 return;
             }

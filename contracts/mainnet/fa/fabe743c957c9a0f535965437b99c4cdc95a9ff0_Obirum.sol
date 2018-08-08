@@ -183,8 +183,8 @@ contract Ownable {
 }
 
 contract Obirum is StandardToken, Ownable {
-  string public constant name = &quot;TESTNET&quot;;
-  string public constant symbol = &quot;TEST&quot;;
+  string public constant name = "TESTNET";
+  string public constant symbol = "TEST";
   uint8 public constant decimals = 18;
   
   
@@ -230,7 +230,7 @@ contract Obirum is StandardToken, Ownable {
   function Obirum() {
     totalSupply = 0; 
     ObirumIssued = totalSupply;
-    ObirumTalk = &quot;Obirum&quot;;
+    ObirumTalk = "Obirum";
     owner = msg.sender;
     
   }

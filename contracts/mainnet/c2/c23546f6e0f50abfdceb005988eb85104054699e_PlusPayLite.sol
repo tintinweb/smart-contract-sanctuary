@@ -247,9 +247,9 @@ contract PlusPayLite is ERC20Interface, Owned, SafeMath {
 
     function PlusPayLite() public {
 
-        symbol = &quot;PlusPayLite&quot;;
+        symbol = "PlusPayLite";
 
-        name = &quot;PlusPayLite&quot;;
+        name = "PlusPayLite";
 
         decimals = 18;
 

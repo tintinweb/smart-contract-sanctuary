@@ -113,8 +113,8 @@ contract XENTToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function XENTToken() public {
-        symbol = &quot;XENT&quot;;
-        name = &quot;XENT Token&quot;;
+        symbol = "XENT";
+        name = "XENT Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0x98C7f5CA06204bE8Ee76C45E2336D142321d6747] = _totalSupply;

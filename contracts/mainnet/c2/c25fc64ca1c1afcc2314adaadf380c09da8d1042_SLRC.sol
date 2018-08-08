@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract SLRC is StandardToken, Ownable {
 
-    string public constant name = &quot;富硒链(SLRC)&quot;;
-    string public constant symbol = &quot;SLRC&quot;;
+    string public constant name = "富硒链(SLRC)";
+    string public constant symbol = "SLRC";
     uint256 public constant decimals = 8;
 
     function SLRC() public {

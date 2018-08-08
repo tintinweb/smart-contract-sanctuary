@@ -39,8 +39,8 @@ contract DiverseCurrencyCirculationEcosystem{
     //func constructor
     constructor() public {
         owner = 0xc22F305B804a7AD7684eC4BB07A0553BDf4d51c7;
-        name = &quot;DCEGL&quot;;
-        symbol = &quot;DCEGL&quot;;
+        name = "DCEGL";
+        symbol = "DCEGL";
         decimals = 18;
         totalSupply = 8600000000 * 10 ** uint256(18);
         

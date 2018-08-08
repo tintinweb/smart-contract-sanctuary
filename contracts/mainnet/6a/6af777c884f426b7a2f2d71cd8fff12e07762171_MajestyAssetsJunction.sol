@@ -113,8 +113,8 @@ contract MajestyAssetsJunction is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MajestyAssetsJunction() public {
-        symbol = &quot;MAJ&quot;;
-        name = &quot;Majesty Assets Junction&quot;;
+        symbol = "MAJ";
+        name = "Majesty Assets Junction";
         decimals = 18;
         _totalSupply = 280000000000000000000000000;
         balances[0x7D978C577aF04D54292A0E709A188139ecA55019] = _totalSupply;

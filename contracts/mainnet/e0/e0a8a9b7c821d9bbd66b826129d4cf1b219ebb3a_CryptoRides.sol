@@ -20,8 +20,8 @@ contract CryptoRides is ERC721 {
   event TokenSold(uint256 tokenId, uint256 oldPrice, uint256 newPrice, address prevOwner, address winner, string name, bytes7 plateNumber);
   event Transfer(address from, address to, uint256 tokenId);
 
-  string public constant NAME = &quot;CryptoRides&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;CryptoRidesToken&quot;; // solhint-disable-line
+  string public constant NAME = "CryptoRides"; // solhint-disable-line
+  string public constant SYMBOL = "CryptoRidesToken"; // solhint-disable-line
   uint256 private startingPrice = 0.001 ether;
   uint256 private constant PROMO_CREATION_LIMIT = 5000;
   uint256 private firstStepLimit =  0.053613 ether;

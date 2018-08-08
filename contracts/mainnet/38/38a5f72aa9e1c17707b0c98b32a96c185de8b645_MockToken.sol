@@ -113,8 +113,8 @@ contract MockToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MockToken() public {
-        symbol = &quot;MCK&quot;;
-        name = &quot;Mock Token&quot;;
+        symbol = "MCK";
+        name = "Mock Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x8aaC35C19dE425f85F5Bf124dAfE015E7Bf372Ba] = _totalSupply;

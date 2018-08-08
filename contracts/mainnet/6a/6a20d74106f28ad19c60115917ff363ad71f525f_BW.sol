@@ -783,7 +783,7 @@ contract ERC721 {
     ///  `_tokenId` is not a valid NFT. When transfer is complete, this function
     ///  checks if `_to` is a smart contract (code size > 0). If so, it calls
     ///  `onERC721Received` on `_to` and throws if the return value is not
-    ///  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`.
+    ///  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`.
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -792,7 +792,7 @@ contract ERC721 {
 
     /// @notice Transfers the ownership of an NFT from one address to another address
     /// @dev This works identically to the other function with an extra data parameter,
-    ///  except this function just sets data to &quot;&quot;
+    ///  except this function just sets data to ""
     /// @param _from The current owner of the NFT
     /// @param _to The new owner
     /// @param _tokenId The NFT to transfer
@@ -818,7 +818,7 @@ contract ERC721 {
     /// @param _tokenId The NFT to approve
     //function approve(address _approved, uint256 _tokenId) external payable;
 
-    /// @notice Enable or disable approval for a third party (&quot;operator&quot;) to manage
+    /// @notice Enable or disable approval for a third party ("operator") to manage
     ///  all of `msg.sender`&#39;s assets.
     /// @dev Emits the ApprovalForAll event
     /// @param _operator Address to add to the set of authorized operators.
@@ -1000,7 +1000,7 @@ contract BW {
         bwService.attackTile(msg.sender, _tileId, _attackAmount, _useBattleValue);
     }
     
-    // Move &quot;army&quot; = block value from one block to an adjacent block. Moving ALL value equates giving up ownership of the source tile.
+    // Move "army" = block value from one block to an adjacent block. Moving ALL value equates giving up ownership of the source tile.
     function moveBlockValue(uint8 _xSource, uint8 _ySource, uint8 _xDest, uint8 _yDest, uint _moveAmount) public isNotPaused isNotContractCaller {
         require(_moveAmount > 0);
         bwService.moveBlockValue(msg.sender, _xSource, _ySource, _xDest, _yDest, _moveAmount);

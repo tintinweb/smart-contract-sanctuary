@@ -123,8 +123,8 @@ contract StandardToken is GTLToken, ERC20 {
 }
 
 contract GTL is StandardToken, Ownable {
-  string public constant name = &quot;GRANTLINE&quot;;
-  string public constant symbol = &quot;GTL&quot;;
+  string public constant name = "GRANTLINE";
+  string public constant symbol = "GTL";
   uint public constant decimals = 9;
   // Constructor
   function GTL() {

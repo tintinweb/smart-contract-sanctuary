@@ -113,8 +113,8 @@ contract BARToken is UnboundedRegularToken {
 
     uint public totalSupply = 100*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;BAR Token&quot;;
-    string constant public symbol = &quot;BART&quot;;
+    string constant public name = "BAR Token";
+    string constant public symbol = "BART";
 
     function BARToken() {
         balances[msg.sender] = totalSupply;

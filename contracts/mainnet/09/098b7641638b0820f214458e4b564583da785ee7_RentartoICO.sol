@@ -116,8 +116,8 @@ contract RentartoICO is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RentartoICO() public {
-        symbol = &quot;ATO&quot;;
-        name = &quot;Rentarto Coin Token&quot;;
+        symbol = "ATO";
+        name = "Rentarto Coin Token";
         decimals = 3;
         bonusEnds = now + 12 weeks;
         endDate = now + 52 weeks;

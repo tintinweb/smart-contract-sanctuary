@@ -37,8 +37,8 @@ contract LearnX is ERC20 {
     
     uint256 public totalSupply = 10000000000 * 10**8;
 
-    function name() public constant returns (string) { return &quot;Learn X&quot;; }
-    function symbol() public constant returns (string) { return &quot;LRNX&quot;; }
+    function name() public constant returns (string) { return "Learn X"; }
+    function symbol() public constant returns (string) { return "LRNX"; }
     function decimals() public constant returns (uint8) { return 8; }
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);

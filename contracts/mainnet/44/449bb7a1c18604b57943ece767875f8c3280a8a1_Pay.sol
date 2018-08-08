@@ -32,7 +32,7 @@ interface ERC777TokensRecipient {
 contract BurnableToken {
     event Burned(address indexed operator, address indexed from, uint256 amount, bytes userData, bytes operatorData);
     function burn(uint256 _amount, bytes _userData) public {
-        emit Burned(msg.sender, msg.sender, _amount, _userData, &quot;&quot;);
+        emit Burned(msg.sender, msg.sender, _amount, _userData, "");
     }
 }
 
@@ -46,7 +46,7 @@ contract Pay is ERC820Implementer, ERC777TokensRecipient {
     event Payed(address operator, address from, address to, uint amount, bytes userData, bytes operatorData);
 
     constructor(address _token) public {
-        setInterfaceImplementation(&quot;ERC777TokensRecipient&quot;, this);
+        setInterfaceImplementation("ERC777TokensRecipient", this);
         token = BurnableToken(_token);
     }
 

@@ -140,7 +140,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -335,8 +335,8 @@ contract MintableToken is StandardToken, Ownable {
 // File: contracts/FundToken.sol
 
 contract FundToken is MintableToken, BurnableToken {
-    string public webAddress = &quot;www.fundfantasy.io&quot;;
-    string public name = &quot;FundToken&quot;;
-    string public symbol = &quot;FUNDZ&quot;;
+    string public webAddress = "www.fundfantasy.io";
+    string public name = "FundToken";
+    string public symbol = "FUNDZ";
     uint8 public decimals = 18;
 }

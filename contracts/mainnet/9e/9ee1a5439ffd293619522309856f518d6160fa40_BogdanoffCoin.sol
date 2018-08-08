@@ -113,8 +113,8 @@ contract BogdanoffCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BogdanoffCoin() public {
-        symbol = &quot;BGDNF&quot;;
-        name = &quot;Bogdanoff Coin&quot;;
+        symbol = "BGDNF";
+        name = "Bogdanoff Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x001a42e8d8025851b3546E0572100F160bD27051] = _totalSupply;

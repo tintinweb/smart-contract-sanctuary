@@ -3,8 +3,8 @@ contract OCTWasteToEnergyJV {
     
     uint public constant _totalSupply = 300000000000000000000000000;
     
-    string public constant symbol = &quot;OCTWE&quot;;
-    string public constant name = &quot;OCT Waste to Energy JV&quot;;
+    string public constant symbol = "OCTWE";
+    string public constant name = "OCT Waste to Energy JV";
     uint8 public constant decimals = 18;
     
     mapping(address => uint256) balances;

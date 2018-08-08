@@ -113,8 +113,8 @@ contract MRIDUL is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MRIDUL() public {
-        symbol = &quot;MRIDUL&quot;;
-        name = &quot;MRIDUL&quot;;
+        symbol = "MRIDUL";
+        name = "MRIDUL";
         decimals = 0;
         _totalSupply = 1;
         balances[0x2041e56D1f9b7d27a466f275AF75f05FBc798FE6] = _totalSupply;

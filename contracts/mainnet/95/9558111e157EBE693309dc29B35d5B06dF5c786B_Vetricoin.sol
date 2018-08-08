@@ -17,9 +17,9 @@ contract Vetricoin {
     function Vetricoin() {
 
          initialSupply = 99999999;
-         name =&quot;Vetricoin&quot;;
+         name ="Vetricoin";
         decimals = 0;
-         symbol = &quot;V&quot;;
+         symbol = "V";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

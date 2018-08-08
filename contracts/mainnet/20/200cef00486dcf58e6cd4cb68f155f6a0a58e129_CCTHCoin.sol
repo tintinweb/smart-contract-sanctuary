@@ -71,8 +71,8 @@ contract CCTHCoin is SafeMath{
     function CCTHCoin() {
         //balanceOf[msg.sender] = 2100000000000000;              // Give the creator all initial tokens
         totalSupply = 2100000000000000;                        // Update total supply
-        name = &quot;CryptoChips Coin&quot;;                            // Set the name for display purposes
-        symbol = &quot;CCTH&quot;;                               // Set the symbol for display purposes
+        name = "CryptoChips Coin";                            // Set the name for display purposes
+        symbol = "CCTH";                               // Set the symbol for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
 		owner = msg.sender;
         timeOfLastHalving = now;

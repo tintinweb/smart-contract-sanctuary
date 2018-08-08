@@ -52,8 +52,8 @@ contract PlayStationChain is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
 	
     uint256 public totalSupply = 1000000000000;
-	string public constant name = &quot;PlayStationChain&quot;;
-    string public constant symbol = &quot;PSC&quot;;
+	string public constant name = "PlayStationChain";
+    string public constant symbol = "PSC";
     uint public constant decimals = 0;
 	
 	function PlayStationChain(){

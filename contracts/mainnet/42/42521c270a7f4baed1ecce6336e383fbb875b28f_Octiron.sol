@@ -176,9 +176,9 @@ contract ERC20Token is admined, ERC20TokenInterface { //Standar definition of an
 }
 
 contract Octiron is admined, ERC20Token {
-    string public name = &quot;Octiron&quot;;
-    string public symbol = &quot;OCT1&quot;;
-    string public version = &quot;1.0&quot;;
+    string public name = "Octiron";
+    string public symbol = "OCT1";
+    string public version = "1.0";
     uint8 public decimals = 18;
     address public owner = 0x29E4885Af72C8872aC8873da17a1B88b9Ab8134f;
 

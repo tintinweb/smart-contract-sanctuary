@@ -216,11 +216,11 @@ contract oxced is StandardToken { // CHANGE THIS. Update the contract name.
 
         totalSupply = 10000000000;                        
 
-        name = &quot;oxced&quot;;                                   
+        name = "oxced";                                   
 
         decimals = 18;         
 
-        symbol = &quot;OXCED&quot;;     
+        symbol = "OXCED";     
 
         unitsOneEthCanBuy = 10000;              
 
@@ -274,7 +274,7 @@ contract oxced is StandardToken { // CHANGE THIS. Update the contract name.
 
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
 
         return true;
 

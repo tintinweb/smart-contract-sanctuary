@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -230,8 +230,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract CCCRCoin is StandardToken {
 
-  string public name = &quot;Crypto Credit Card Token&quot;;
-  string public symbol = &quot;CCCR&quot;;
+  string public name = "Crypto Credit Card Token";
+  string public symbol = "CCCR";
   uint8 public constant decimals = 8;
   
   uint256 public constant INITIAL_SUPPLY = 200000000 * (10 ** uint256(decimals));

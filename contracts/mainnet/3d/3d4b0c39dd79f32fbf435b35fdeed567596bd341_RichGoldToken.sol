@@ -180,8 +180,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract RichGoldToken is StandardToken {
 
-  string public constant name = &quot;Rich Gold Token&quot;;
-  string public constant symbol = &quot;RIG&quot;;
+  string public constant name = "Rich Gold Token";
+  string public constant symbol = "RIG";
   uint256 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 250 * 1e6 * 1 ether;
 

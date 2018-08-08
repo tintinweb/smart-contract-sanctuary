@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract MERIDIANERC20 {
 
-    string public name = &quot;Meridian&quot;;
-    string public symbol = &quot;MDN&quot;;
+    string public name = "Meridian";
+    string public symbol = "MDN";
     uint8 public decimals = 8;
 
     uint256 public totalSupply = 51000000;
@@ -31,8 +31,8 @@ contract MERIDIANERC20 {
         public {
         totalSupply = initialSupply * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;                
-        name = tokenName =&quot;Meridian&quot;;                                   
-        symbol = tokenSymbol =&quot;MDN&quot;;                             
+        name = tokenName ="Meridian";                                   
+        symbol = tokenSymbol ="MDN";                             
     }
 
     /**

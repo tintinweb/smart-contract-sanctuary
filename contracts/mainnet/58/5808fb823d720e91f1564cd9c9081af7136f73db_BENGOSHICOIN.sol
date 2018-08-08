@@ -108,8 +108,8 @@ contract ERC223 {
 contract BENGOSHICOIN is ERC223, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;BENGOSHICOIN&quot;;
-    string public symbol = &quot;BENGO&quot;;
+    string public name = "BENGOSHICOIN";
+    string public symbol = "BENGO";
     uint8 public decimals = 8;
     uint256 public totalSupply = 20e9 * 1e8;
     bool public mintingStopped = false;

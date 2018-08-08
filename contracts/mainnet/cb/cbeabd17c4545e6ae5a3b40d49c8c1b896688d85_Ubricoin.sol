@@ -477,7 +477,7 @@ contract Upgradeable {
      */
     function replace(address target) internal {
         _dest = target;
-        require(target.delegatecall(bytes4(keccak256(&quot;initialize()&quot;))));
+        require(target.delegatecall(bytes4(keccak256("initialize()"))));
     }
 }
 /**
@@ -519,7 +519,7 @@ contract Example is Upgradeable {
     uint _value;
     
     function initialize() public {
-        _sizes[bytes4(keccak256(&quot;getUint()&quot;))] = 32;
+        _sizes[bytes4(keccak256("getUint()"))] = 32;
     }
     
     function getUint() public view returns (uint) {
@@ -538,7 +538,7 @@ interface tokenRecipient {
  /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 
 contract Ubricoin is UbricoinPresale,Ownable,Haltable, UbricoinCrowdsale,Upgradeable {
@@ -548,7 +548,7 @@ contract Ubricoin is UbricoinPresale,Ownable,Haltable, UbricoinCrowdsale,Upgrade
     // Public variables of the token
     string public name =&#39;Ubricoin&#39;;
     string public symbol =&#39;UBN&#39;;
-    string public version= &quot;1.0&quot;;
+    string public version= "1.0";
     uint public decimals=18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint public totalSupply = 10000000000;

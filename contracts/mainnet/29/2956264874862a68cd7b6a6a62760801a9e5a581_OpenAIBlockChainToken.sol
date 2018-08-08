@@ -101,8 +101,8 @@ contract OpenAIBlockChainToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OpenAIBlockChainToken() public {
-        symbol = &quot;OAB&quot;;
-        name = &quot;OpenAIBlockChainToken&quot;;
+        symbol = "OAB";
+        name = "OpenAIBlockChainToken";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000000;
         balances[0x7220a16F4daA5ac86900FDAC9194536c287523bb] = _totalSupply;

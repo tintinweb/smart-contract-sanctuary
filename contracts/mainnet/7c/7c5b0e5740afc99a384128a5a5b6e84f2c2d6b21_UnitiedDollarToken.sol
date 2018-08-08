@@ -319,8 +319,8 @@ contract UnitiedDollarToken is CappedToken, BurnableToken, DetailedERC20 {
     using SafeMath for uint256;
     uint8 constant DECIMALS = 18;
     uint  constant TOTALTOKEN = 1 * 10 ** (10 + uint(DECIMALS));
-    string constant NAME = &quot;Unitied Dollar&quot;;
-    string constant SYM = &quot;UND&quot;;
+    string constant NAME = "Unitied Dollar";
+    string constant SYM = "UND";
 
     constructor() CappedToken(TOTALTOKEN) DetailedERC20 (NAME, SYM, DECIMALS) public {}
 

@@ -159,8 +159,8 @@ contract OslikiClassifieds {
     ERC20 _oslikToken,
     address _oslikiFoundation
   ) public {
-    require(address(_oslikToken) != address(0), &quot;_oslikToken is not assigned.&quot;);
-    require(_oslikiFoundation != address(0), &quot;_oslikiFoundation is not assigned.&quot;);
+    require(address(_oslikToken) != address(0), "_oslikToken is not assigned.");
+    require(_oslikiFoundation != address(0), "_oslikiFoundation is not assigned.");
 
     oslikToken = _oslikToken;
     oslikiFoundation = _oslikiFoundation;
@@ -170,7 +170,7 @@ contract OslikiClassifieds {
     uint catId,
     string text // format &#39;ipfs hash,ipfs hash...&#39;
   ) private returns (bool) {
-    require(bytes(text).length != 0, &quot;Text is empty&quot;);
+    require(bytes(text).length != 0, "Text is empty");
 
     ads.push(Ad({
       user: msg.sender,
@@ -208,7 +208,7 @@ contract OslikiClassifieds {
     uint catId,
     string text // format &#39;ipfs hash,ipfs hash...&#39;
   ) public {
-    require(catId < catsRegister.length, &quot;Category not found&quot;);
+    require(catId < catsRegister.length, "Category not found");
 
     assert(_newAd(catId, text));
   }
@@ -217,8 +217,8 @@ contract OslikiClassifieds {
     string catName,
     string text // format &#39;ipfs hash,ipfs hash...&#39;
   ) public {
-    require(bytes(catName).length != 0, &quot;Category is empty&quot;);
-    require(adsByCat[catName].length == 0, &quot;Category already exists&quot;);
+    require(bytes(catName).length != 0, "Category is empty");
+    require(adsByCat[catName].length == 0, "Category already exists");
 
     catsRegister.push(catName);
     uint catId = catsRegister.length - 1;
@@ -232,13 +232,13 @@ contract OslikiClassifieds {
     uint adId,
     string text // format &#39;ipfs hash,ipfs hash...&#39;
   ) public {
-    require(adId < ads.length, &quot;Ad id not found&quot;);
-    require(bytes(text).length != 0, &quot;Text is empty&quot;);
+    require(adId < ads.length, "Ad id not found");
+    require(bytes(text).length != 0, "Text is empty");
 
     Ad storage ad = ads[adId];
 
-    require(msg.sender == ad.user, &quot;Sender not authorized.&quot;);
-    //require(!_stringsEqual(ad.text, text), &quot;New text is the same&quot;);
+    require(msg.sender == ad.user, "Sender not authorized.");
+    //require(!_stringsEqual(ad.text, text), "New text is the same");
 
     ad.text = text;
     ad.updatedAt = now;
@@ -250,8 +250,8 @@ contract OslikiClassifieds {
     uint adId,
     string text
   ) public {
-    require(adId < ads.length, &quot;Ad id not found&quot;);
-    require(bytes(text).length != 0, &quot;Text is empty&quot;);
+    require(adId < ads.length, "Ad id not found");
+    require(bytes(text).length != 0, "Text is empty");
 
     Ad storage ad = ads[adId];
 
@@ -272,11 +272,11 @@ contract OslikiClassifieds {
   function upAd(
     uint adId
   ) public {
-    require(adId < ads.length, &quot;Ad id not found&quot;);
+    require(adId < ads.length, "Ad id not found");
 
     Ad memory ad = ads[adId];
 
-    require(msg.sender == ad.user, &quot;Sender not authorized.&quot;);
+    require(msg.sender == ad.user, "Sender not authorized.");
 
     adsByCat[catsRegister[ad.catId]].push(adId);
 
@@ -295,7 +295,7 @@ contract OslikiClassifieds {
   }*/
 
   modifier onlyFoundation {
-    require(msg.sender == oslikiFoundation, &quot;Sender not authorized.&quot;);
+    require(msg.sender == oslikiFoundation, "Sender not authorized.");
     _;
   }
 

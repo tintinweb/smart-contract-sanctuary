@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract AthaYOGAToken {
 
-    string public name = &quot;Atha&quot;;      //  token name
-    string public symbol = &quot;YOGA&quot;;           //  token symbol
+    string public name = "Atha";      //  token name
+    string public symbol = "YOGA";           //  token symbol
     uint256 public decimals = 8;            //  token digit
 
     mapping (address => uint256) public balanceOf;

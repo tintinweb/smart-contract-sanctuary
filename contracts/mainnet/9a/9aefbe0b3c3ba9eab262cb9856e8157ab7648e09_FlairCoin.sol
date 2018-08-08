@@ -258,7 +258,7 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract FlairCoin is MintableToken {
-    string public name = &quot;Flair Coin&quot;;
-    string public symbol = &quot;FLR&quot;;
+    string public name = "Flair Coin";
+    string public symbol = "FLR";
     uint8 public decimals = 18;
 }

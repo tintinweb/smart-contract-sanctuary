@@ -273,8 +273,8 @@ contract StandardToken is ERC20 {
 
 contract MegaCandy is StandardToken, LandAccessControl {
 
-    string public constant name = &quot;Unicorn Mega Candy&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;Mega&quot;; // solium-disable-line uppercase
+    string public constant name = "Unicorn Mega Candy"; // solium-disable-line uppercase
+    string public constant symbol = "Mega"; // solium-disable-line uppercase
     uint8 public constant decimals = 18; // solium-disable-line uppercase
 
     event Mint(address indexed _to, uint  _amount);

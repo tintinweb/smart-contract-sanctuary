@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract NutrioCoin {
 
-    string public name = &quot;NutrioCoin&quot;;      //  NutrioCoin name
-    string public symbol = &quot;NTRC&quot;;           //  NutrioCoin symbol
+    string public name = "NutrioCoin";      //  NutrioCoin name
+    string public symbol = "NTRC";           //  NutrioCoin symbol
     uint256 public decimals = 18;            //  NutrioCoin digit
 
     mapping (address => uint256) public balanceOf;

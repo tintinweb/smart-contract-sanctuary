@@ -109,7 +109,7 @@ contract ALXERC20 is Ownable {
     uint256 public roundCounter=0;
     
     /* Public variables for the ERC20 token */
-    string public constant standard = &quot;ERC20 ALX&quot;;
+    string public constant standard = "ERC20 ALX";
     uint8 public constant decimals = 8; // hardcoded to be a constant
     uint256 public totalSupply;
     string public name;

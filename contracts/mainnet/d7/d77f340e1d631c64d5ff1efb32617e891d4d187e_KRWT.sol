@@ -334,8 +334,8 @@ contract ERC827Token is ERC827, StandardToken {
 }
 
 contract KRWT is StandardToken, MintableToken, BurnableToken, PausableToken {
-    string constant public name = &quot;Korean Won&quot;;
-    string constant public symbol = &quot;KRWT&quot;;
+    string constant public name = "Korean Won";
+    string constant public symbol = "KRWT";
     uint8 constant public decimals = 8;
     uint256 public totalSupply = 10000000000  * (10 ** uint256(decimals));
     event Transfer(address indexed from, address indexed to, uint256 value);

@@ -242,7 +242,7 @@ contract UserRegistryInterface {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -390,6 +390,6 @@ contract DefaultToken is MintableToken, TokenPolicy, ApproveAndCallToken {
 }
 
 contract AltToken is DefaultToken {
-  function AltToken(address _registry) DefaultToken(&quot;AltEstate token&quot;, &quot;ALT&quot;, 18, _registry) public {
+  function AltToken(address _registry) DefaultToken("AltEstate token", "ALT", 18, _registry) public {
   }
 }

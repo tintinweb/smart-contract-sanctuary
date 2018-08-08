@@ -28,8 +28,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 2000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;// Give the creator all initial tokens
-        name = &quot;MCC ico token&quot;;             // Set the name for display purposes
-        symbol = &quot;MCC&quot;;                               // Set the symbol for display purposes
+        name = "MCC ico token";             // Set the name for display purposes
+        symbol = "MCC";                               // Set the symbol for display purposes
     }
 
     /**

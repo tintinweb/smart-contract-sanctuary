@@ -31,7 +31,7 @@ contract BaseGame {
 	function canSetBanker() view public returns (bool _result);
     function setBanker(address _banker, uint256 _beginTime, uint256 _endTime) public returns(bool _result);
     
-    string public gameName = &quot;NO.1&quot;;
+    string public gameName = "NO.1";
     uint public gameType = 2004;
     string public officialGameUrl;
 
@@ -187,12 +187,12 @@ contract SoccerBet is Base
         require(_banker != 0x0);
 
         if(now < bankerEndTime){
-            emit OnSetNewBanker(gameID, msg.sender, _banker,  _beginTime,  _endTime, 1, now, getEventId());//&quot;bankerEndTime > now&quot;
+            emit OnSetNewBanker(gameID, msg.sender, _banker,  _beginTime,  _endTime, 1, now, getEventId());//"bankerEndTime > now"
             return;
         }
 		
 		if(userTokenOf[this] > 0){
-			emit OnSetNewBanker(gameID, msg.sender, _banker,  _beginTime,  _endTime, 5, now, getEventId());//&quot;userTokenOf[this] > 0&quot;
+			emit OnSetNewBanker(gameID, msg.sender, _banker,  _beginTime,  _endTime, 5, now, getEventId());//"userTokenOf[this] > 0"
 			return;
 		}
         

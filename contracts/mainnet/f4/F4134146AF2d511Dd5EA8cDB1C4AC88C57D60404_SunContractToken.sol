@@ -64,9 +64,9 @@ contract IERC20Token {
 contract SunContractToken is IERC20Token, owned{
 
   /* Public variables of the token */
-  string public standard = &quot;SunContract token v1.0&quot;;
-  string public name = &quot;SunContract&quot;;
-  string public symbol = &quot;SNC&quot;;
+  string public standard = "SunContract token v1.0";
+  string public name = "SunContract";
+  string public symbol = "SNC";
   uint8 public decimals = 18;
   address public icoContractAddress;
   uint256 public tokenFrozenUntilBlock;

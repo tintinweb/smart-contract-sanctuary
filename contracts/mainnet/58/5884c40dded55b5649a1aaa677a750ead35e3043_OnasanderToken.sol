@@ -47,8 +47,8 @@ contract OnasanderToken
     
     address private wallet;                                // Address where funds are collected
     address public owner;                                  // contract owner
-    string constant public name = &quot;Onasander&quot;;
-    string constant public symbol = &quot;ONA&quot;;
+    string constant public name = "Onasander";
+    string constant public symbol = "ONA";
     uint8 constant public decimals = 18;
     uint public totalSupply = 88000000e18;                       
     uint public totalTokensSold = 0e18;                    // total number of tokens sold to date
@@ -67,7 +67,7 @@ contract OnasanderToken
 
     constructor(address icoWallet) public 
     {   
-        require(icoWallet != address(0), &quot;ICO Wallet address is required.&quot;);
+        require(icoWallet != address(0), "ICO Wallet address is required.");
 
         owner = msg.sender;
         wallet = icoWallet;
@@ -107,8 +107,8 @@ contract OnasanderToken
 
     function transfer(address to, uint tokens) public returns (bool success)
     {     
-        require (ICOEnded, &quot;ICO has not ended.  Can not transfer.&quot;);
-        require (balances[to] + tokens > balances[to], &quot;Overflow is not allowed.&quot;);
+        require (ICOEnded, "ICO has not ended.  Can not transfer.");
+        require (balances[to] + tokens > balances[to], "Overflow is not allowed.");
 
         // actual transfer
         // SafeMath.sub will throw if there is not enough balance.
@@ -123,8 +123,8 @@ contract OnasanderToken
 
     function transferFrom(address from, address to, uint tokens) public returns(bool success) 
     {
-        require (ICOEnded, &quot;ICO has not ended.  Can not transfer.&quot;);
-        require (balances[to] + tokens > balances[to], &quot;Overflow is not allowed.&quot;);
+        require (ICOEnded, "ICO has not ended.  Can not transfer.");
+        require (balances[to] + tokens > balances[to], "Overflow is not allowed.");
 
         // actual transfer
         balances[from] = balances[from].sub(tokens);
@@ -137,7 +137,7 @@ contract OnasanderToken
 
     function approve(address spender, uint tokens) public returns(bool success) 
     {          
-        require (ICOEnded, &quot;ICO has not ended.  Can not transfer.&quot;);      
+        require (ICOEnded, "ICO has not ended.  Can not transfer.");      
         allowances[msg.sender][spender] = tokens;                
         emit Approval(msg.sender, spender, tokens);
         return true;
@@ -146,10 +146,10 @@ contract OnasanderToken
         // in case some investor pays by wire or credit card we will transfer him the tokens manually.
     function wirePurchase(address to, uint numberOfTokenPurchased) onlyOwner public
     {     
-        require (saleEnabled, &quot;Sale must be enabled.&quot;);
-        require (!ICOEnded, &quot;ICO already ended.&quot;);
-        require (numberOfTokenPurchased > 0, &quot;Tokens must be greater than 0.&quot;);
-        require (tokensForSale > totalTokensSoldInThisSale, &quot;There is no more tokens for sale in this sale.&quot;);
+        require (saleEnabled, "Sale must be enabled.");
+        require (!ICOEnded, "ICO already ended.");
+        require (numberOfTokenPurchased > 0, "Tokens must be greater than 0.");
+        require (tokensForSale > totalTokensSoldInThisSale, "There is no more tokens for sale in this sale.");
                         
         // calculate amount
         uint buyAmount = numberOfTokenPurchased;
@@ -168,7 +168,7 @@ contract OnasanderToken
         }
 
         // transfer only as we do not need to take the payment since we already did in wire
-        require (balances[to].add(tokens) > balances[to], &quot;Overflow is not allowed.&quot;);
+        require (balances[to].add(tokens) > balances[to], "Overflow is not allowed.");
         balances[to] = balances[to].add(tokens);
         balances[owner] = balances[owner].sub(tokens);
         lastBuyer = to;
@@ -186,10 +186,10 @@ contract OnasanderToken
 
     function buyTokens() payable public
     {        
-        require (saleEnabled, &quot;Sale must be enabled.&quot;);
-        require (!ICOEnded, &quot;ICO already ended.&quot;);
-        require (tokensForSale > totalTokensSoldInThisSale, &quot;There is no more tokens for sale in this sale.&quot;);
-        require (msg.value > 0, &quot;Must send ETH&quot;);
+        require (saleEnabled, "Sale must be enabled.");
+        require (!ICOEnded, "ICO already ended.");
+        require (tokensForSale > totalTokensSoldInThisSale, "There is no more tokens for sale in this sale.");
+        require (msg.value > 0, "Must send ETH");
 
         // calculate amount
         uint buyAmount = SafeMath.mul(msg.value, tokensPerETH);
@@ -209,7 +209,7 @@ contract OnasanderToken
         }
 
         // buy
-        require (balances[msg.sender].add(tokens) > balances[msg.sender], &quot;Overflow is not allowed.&quot;);
+        require (balances[msg.sender].add(tokens) > balances[msg.sender], "Overflow is not allowed.");
         balances[msg.sender] = balances[msg.sender].add(tokens);
         balances[owner] = balances[owner].sub(tokens);
         lastBuyer = msg.sender;
@@ -240,8 +240,8 @@ contract OnasanderToken
     // Must be called by the owner to trigger correct transfer event
     function burnRemainingTokens() public onlyOwner
     {
-        require (!burned, &quot;Remaining tokens have been burned already.&quot;);
-        require (ICOEnded, &quot;ICO has not ended yet.&quot;);
+        require (!burned, "Remaining tokens have been burned already.");
+        require (ICOEnded, "ICO has not ended yet.");
 
         uint difference = balances[owner].sub(companyReserves); 
 
@@ -287,8 +287,8 @@ contract OnasanderToken
     // Set the number of ONAs sold per ETH 
     function setTokensPerETH(uint newRate) onlyOwner public
     {
-        require (!ICOEnded, &quot;ICO already ended.&quot;);
-        require (newRate > 0, &quot;Rate must be higher than 0.&quot;);
+        require (!ICOEnded, "ICO already ended.");
+        require (newRate > 0, "Rate must be higher than 0.");
         tokensPerETH = newRate;
         emit TokenPerETHReset(newRate);
     }
@@ -297,7 +297,7 @@ contract OnasanderToken
     // will need to be able to adjust our minimum goal in tokens sold, as our goal is set in tokens, not USD.
     function setMinimumGoal(uint goal) onlyOwner public
     {   
-        require(goal > 0e18,&quot;Minimum goal must be greater than 0.&quot;);
+        require(goal > 0e18,"Minimum goal must be greater than 0.");
         minimumGoal = goal;
 
         // since we can edit the goal, we want to check if we reached the goal before in case we lowered the goal number.
@@ -308,9 +308,9 @@ contract OnasanderToken
 
     function createSale(uint numberOfTokens) onlyOwner public
     {
-        require (!saleEnabled, &quot;Sale is already going on.&quot;);
-        require (!ICOEnded, &quot;ICO already ended.&quot;);
-        require (totalTokensSold < maxTokensForSale, &quot;We already sold all our tokens.&quot;);
+        require (!saleEnabled, "Sale is already going on.");
+        require (!ICOEnded, "ICO already ended.");
+        require (totalTokensSold < maxTokensForSale, "We already sold all our tokens.");
 
         totalTokensSoldInThisSale = 0e18;
         uint tryingToSell = totalTokensSold.add(numberOfTokens);
@@ -387,7 +387,7 @@ contract OnasanderToken
     // This is a hack to add the lost token during final full sale. 
     function fixTokenCalcBug() internal
     {        
-        require(!burned, &quot;Fix lost token can only run before the burning of the tokens.&quot;);        
+        require(!burned, "Fix lost token can only run before the burning of the tokens.");        
         
         if (maxTokensForSale.sub(totalTokensSold) == singleToken)
         {

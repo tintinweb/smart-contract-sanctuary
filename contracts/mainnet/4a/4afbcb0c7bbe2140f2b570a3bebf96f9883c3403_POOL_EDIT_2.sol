@@ -18,7 +18,7 @@ contract	POOL_EDIT_2		{
 // 1 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_1	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_1	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_1	(	string	newPOOL_edit_1	)	public	onlyOwner	{	
 		inPOOL_edit_1	=	newPOOL_edit_1	;					
@@ -33,7 +33,7 @@ contract	POOL_EDIT_2		{
 // 2 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_2	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_2	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_2	(	string	newPOOL_edit_2	)	public	onlyOwner	{	
 		inPOOL_edit_2	=	newPOOL_edit_2	;					
@@ -48,7 +48,7 @@ contract	POOL_EDIT_2		{
 // 3 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_3	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_3	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_3	(	string	newPOOL_edit_3	)	public	onlyOwner	{	
 		inPOOL_edit_3	=	newPOOL_edit_3	;					
@@ -63,7 +63,7 @@ contract	POOL_EDIT_2		{
 // 4 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_4	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_4	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_4	(	string	newPOOL_edit_4	)	public	onlyOwner	{	
 		inPOOL_edit_4	=	newPOOL_edit_4	;					
@@ -79,7 +79,7 @@ contract	POOL_EDIT_2		{
 // 5 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_5	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_5	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_5	(	string	newPOOL_edit_5	)	public	onlyOwner	{	
 		inPOOL_edit_5	=	newPOOL_edit_5	;					
@@ -94,7 +94,7 @@ contract	POOL_EDIT_2		{
 // 6 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_6	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_6	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_6	(	string	newPOOL_edit_6	)	public	onlyOwner	{	
 		inPOOL_edit_6	=	newPOOL_edit_6	;					
@@ -109,7 +109,7 @@ contract	POOL_EDIT_2		{
 // 7 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_7	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_7	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_7	(	string	newPOOL_edit_7	)	public	onlyOwner	{	
 		inPOOL_edit_7	=	newPOOL_edit_7	;					
@@ -124,7 +124,7 @@ contract	POOL_EDIT_2		{
 // 8 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_8	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_8	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_8	(	string	newPOOL_edit_8	)	public	onlyOwner	{	
 		inPOOL_edit_8	=	newPOOL_edit_8	;					
@@ -139,7 +139,7 @@ contract	POOL_EDIT_2		{
 // 9 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_9	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_9	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_9	(	string	newPOOL_edit_9	)	public	onlyOwner	{	
 		inPOOL_edit_9	=	newPOOL_edit_9	;					
@@ -161,7 +161,7 @@ contract	POOL_EDIT_2		{
 // 10 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_10	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_10	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_10	(	string	newPOOL_edit_10	)	public	onlyOwner	{	
 		inPOOL_edit_10	=	newPOOL_edit_10	;					
@@ -176,7 +176,7 @@ contract	POOL_EDIT_2		{
 // 11 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_11	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_11	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_11	(	string	newPOOL_edit_11	)	public	onlyOwner	{	
 		inPOOL_edit_11	=	newPOOL_edit_11	;					
@@ -191,7 +191,7 @@ contract	POOL_EDIT_2		{
 // 12 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_12	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_12	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_12	(	string	newPOOL_edit_12	)	public	onlyOwner	{	
 		inPOOL_edit_12	=	newPOOL_edit_12	;					
@@ -206,7 +206,7 @@ contract	POOL_EDIT_2		{
 // 13 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_13	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_13	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_13	(	string	newPOOL_edit_13	)	public	onlyOwner	{	
 		inPOOL_edit_13	=	newPOOL_edit_13	;					
@@ -221,7 +221,7 @@ contract	POOL_EDIT_2		{
 // 14 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_14	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_14	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_14	(	string	newPOOL_edit_14	)	public	onlyOwner	{	
 		inPOOL_edit_14	=	newPOOL_edit_14	;					
@@ -243,7 +243,7 @@ contract	POOL_EDIT_2		{
 // 15 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_15	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_15	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_15	(	string	newPOOL_edit_15	)	public	onlyOwner	{	
 		inPOOL_edit_15	=	newPOOL_edit_15	;					
@@ -258,7 +258,7 @@ contract	POOL_EDIT_2		{
 // 16 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_16	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_16	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_16	(	string	newPOOL_edit_16	)	public	onlyOwner	{	
 		inPOOL_edit_16	=	newPOOL_edit_16	;					
@@ -273,7 +273,7 @@ contract	POOL_EDIT_2		{
 // 17 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_17	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_17	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_17	(	string	newPOOL_edit_17	)	public	onlyOwner	{	
 		inPOOL_edit_17	=	newPOOL_edit_17	;					
@@ -288,7 +288,7 @@ contract	POOL_EDIT_2		{
 // 18 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_18	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_18	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_18	(	string	newPOOL_edit_18	)	public	onlyOwner	{	
 		inPOOL_edit_18	=	newPOOL_edit_18	;					
@@ -303,7 +303,7 @@ contract	POOL_EDIT_2		{
 // 19 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_19	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_19	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_19	(	string	newPOOL_edit_19	)	public	onlyOwner	{	
 		inPOOL_edit_19	=	newPOOL_edit_19	;					
@@ -325,7 +325,7 @@ contract	POOL_EDIT_2		{
 // 20 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_20	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_20	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_20	(	string	newPOOL_edit_20	)	public	onlyOwner	{	
 		inPOOL_edit_20	=	newPOOL_edit_20	;					
@@ -340,7 +340,7 @@ contract	POOL_EDIT_2		{
 // 21 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_21	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_21	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_21	(	string	newPOOL_edit_21	)	public	onlyOwner	{	
 		inPOOL_edit_21	=	newPOOL_edit_21	;					
@@ -355,7 +355,7 @@ contract	POOL_EDIT_2		{
 // 22 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_22	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_22	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_22	(	string	newPOOL_edit_22	)	public	onlyOwner	{	
 		inPOOL_edit_22	=	newPOOL_edit_22	;					
@@ -370,7 +370,7 @@ contract	POOL_EDIT_2		{
 // 23 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_23	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_23	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_23	(	string	newPOOL_edit_23	)	public	onlyOwner	{	
 		inPOOL_edit_23	=	newPOOL_edit_23	;					
@@ -385,7 +385,7 @@ contract	POOL_EDIT_2		{
 // 24 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_24	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_24	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_24	(	string	newPOOL_edit_24	)	public	onlyOwner	{	
 		inPOOL_edit_24	=	newPOOL_edit_24	;					
@@ -407,7 +407,7 @@ contract	POOL_EDIT_2		{
 // 25 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_25	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_25	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_25	(	string	newPOOL_edit_25	)	public	onlyOwner	{	
 		inPOOL_edit_25	=	newPOOL_edit_25	;					
@@ -422,7 +422,7 @@ contract	POOL_EDIT_2		{
 // 26 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_26	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_26	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_26	(	string	newPOOL_edit_26	)	public	onlyOwner	{	
 		inPOOL_edit_26	=	newPOOL_edit_26	;					
@@ -437,7 +437,7 @@ contract	POOL_EDIT_2		{
 // 27 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_27	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_27	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_27	(	string	newPOOL_edit_27	)	public	onlyOwner	{	
 		inPOOL_edit_27	=	newPOOL_edit_27	;					
@@ -452,7 +452,7 @@ contract	POOL_EDIT_2		{
 // 28 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_28	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_28	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_28	(	string	newPOOL_edit_28	)	public	onlyOwner	{	
 		inPOOL_edit_28	=	newPOOL_edit_28	;					
@@ -467,7 +467,7 @@ contract	POOL_EDIT_2		{
 // 29 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_29	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_29	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_29	(	string	newPOOL_edit_29	)	public	onlyOwner	{	
 		inPOOL_edit_29	=	newPOOL_edit_29	;					
@@ -489,7 +489,7 @@ contract	POOL_EDIT_2		{
 // 30 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_30	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_30	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_30	(	string	newPOOL_edit_30	)	public	onlyOwner	{	
 		inPOOL_edit_30	=	newPOOL_edit_30	;					
@@ -504,7 +504,7 @@ contract	POOL_EDIT_2		{
 // 31 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_31	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_31	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_31	(	string	newPOOL_edit_31	)	public	onlyOwner	{	
 		inPOOL_edit_31	=	newPOOL_edit_31	;					
@@ -519,7 +519,7 @@ contract	POOL_EDIT_2		{
 // 32 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_32	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_32	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_32	(	string	newPOOL_edit_32	)	public	onlyOwner	{	
 		inPOOL_edit_32	=	newPOOL_edit_32	;					
@@ -534,7 +534,7 @@ contract	POOL_EDIT_2		{
 // 33 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_33	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_33	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_33	(	string	newPOOL_edit_33	)	public	onlyOwner	{	
 		inPOOL_edit_33	=	newPOOL_edit_33	;					
@@ -549,7 +549,7 @@ contract	POOL_EDIT_2		{
 // 34 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inPOOL_edit_34	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inPOOL_edit_34	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setPOOL_edit_34	(	string	newPOOL_edit_34	)	public	onlyOwner	{	
 		inPOOL_edit_34	=	newPOOL_edit_34	;					

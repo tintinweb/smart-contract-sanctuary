@@ -2,8 +2,8 @@ pragma solidity ^0.4.13;
 
 contract BDSMtoken {
 
-	string public symbol = &quot;BDSM&quot;;
-	string public name = &quot;BDSMtoken&quot;;
+	string public symbol = "BDSM";
+	string public name = "BDSMtoken";
 	uint8 public constant decimals = 12;
 	uint256 public totalSupply = 1000000000000;
 

@@ -113,8 +113,8 @@ contract eNomCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function eNomCoin() public {
-        symbol = &quot;ENM&quot;;
-        name = &quot;eNomCoin&quot;;
+        symbol = "ENM";
+        name = "eNomCoin";
         decimals = 18;
         _totalSupply = 10000000000000000000000000;
         balances[0xEd23A787af8aE32a02a9a5800823509c18265e9e] = _totalSupply;

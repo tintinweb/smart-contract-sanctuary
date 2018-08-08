@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract UBS is StandardToken, Ownable {
 
-    string public constant name = &quot;UBS&quot;;
-    string public constant symbol = &quot;UBS&quot;;
+    string public constant name = "UBS";
+    string public constant symbol = "UBS";
     uint256 public constant decimals = 8;
 
     function UBS() public {

@@ -116,8 +116,8 @@ contract XMLYToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function XMLYToken() public {
-        symbol = &quot;XMLY&quot;;
-        name = &quot;XiMaLaYa&quot;;
+        symbol = "XMLY";
+        name = "XiMaLaYa";
         decimals = 18;
         _totalSupply = 100000000000000000000000000000;
         balances[0x5B807E379170d42f3B099C01A5399a2e1e58963B] = _totalSupply;

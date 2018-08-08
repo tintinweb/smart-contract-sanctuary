@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -378,8 +378,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/ChartToken.sol
 
 contract ChartToken is StandardToken, BurnableToken, Ownable, HasNoEther {
-    string public constant name = &quot;BetOnChart token&quot;;
-    string public constant symbol = &quot;CHART&quot;;
+    string public constant name = "BetOnChart token";
+    string public constant symbol = "CHART";
     uint8 public constant decimals = 18; // 1 ether
     bool public saleFinished;
     address public saleAgent;
@@ -910,7 +910,7 @@ contract CappedCrowdsale is Crowdsale {
 contract ChartPresale is WhitelistedCrowdsale, AllowanceCrowdsale, TimedCrowdsale, CappedCrowdsale {
     using SafeMath for uint256;
 
-    string public constant name = &quot;BetOnChart token presale&quot;;
+    string public constant name = "BetOnChart token presale";
 
     constructor(uint256 _rate, address _tokenWallet, address _ethWallet, ChartToken _token, uint256 _cap, uint256 _openingTime, uint256 _closingTime) public
     Crowdsale(_rate, _ethWallet, _token)

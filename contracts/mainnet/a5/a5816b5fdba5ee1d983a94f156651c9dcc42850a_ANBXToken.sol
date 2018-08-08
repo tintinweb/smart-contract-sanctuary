@@ -42,8 +42,8 @@ library SafeMath {
 contract ANBXToken is IERC20 {
   using SafeMath for uint256;
 
-  string public name = &quot;ANBX Exchange Token&quot;;
-  string public symbol = &quot;ANBX&quot;;
+  string public name = "ANBX Exchange Token";
+  string public symbol = "ANBX";
   uint8 public constant decimals = 18;
   uint256 public constant decimalFactor = 10 ** uint256(decimals);
   uint256 public constant totalSupply = 2000000000 * decimalFactor;

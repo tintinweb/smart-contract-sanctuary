@@ -104,8 +104,8 @@ contract Lazadex is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Lazadex() public {
-        symbol = &quot;LZX&quot;;
-        name = &quot;Lazadex&quot;;
+        symbol = "LZX";
+        name = "Lazadex";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x36bEc90aeE3da9a023f4F9a8BD01dAa0Da345C4D] = _totalSupply;

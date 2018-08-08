@@ -226,10 +226,10 @@ contract SHA3_512 {
 contract TeikhosBounty is SHA3_512 {
 
     // Proof-of-public-key in format 2xbytes32, to support xor operator and ecrecover r, s v format
-    bytes32 proof_of_public_key1 = hex&quot;501802c3b21818b74a6a77b24a9eec140bd8c196712467135740c217a32ff17b&quot;;
-    bytes32 proof_of_public_key2 = hex&quot;5a011cbd1416f0fa7f4a81f2c0f64bcafe06d8239a38b820a8efbef4abf11f20&quot;;
+    bytes32 proof_of_public_key1 = hex"501802c3b21818b74a6a77b24a9eec140bd8c196712467135740c217a32ff17b";
+    bytes32 proof_of_public_key2 = hex"5a011cbd1416f0fa7f4a81f2c0f64bcafe06d8239a38b820a8efbef4abf11f20";
     
-    function authenticate(bytes _publicKey) public { // Accepts an array of bytes, for example [&quot;0x00&quot;,&quot;0xaa&quot;, &quot;0xff&quot;]
+    function authenticate(bytes _publicKey) public { // Accepts an array of bytes, for example ["0x00","0xaa", "0xff"]
 
         // Use SHA3_512 library to get a sha3_512 hash of public key
 
@@ -283,7 +283,7 @@ contract TeikhosBounty is SHA3_512 {
         bytes32 s = proof_of_public_key2 ^ hash2;
 
         // Get msgHash for use with ecrecover
-        bytes32 msgHash = keccak256(&quot;\x19Ethereum Signed Message:\n64&quot;, _publicKey);
+        bytes32 msgHash = keccak256("\x19Ethereum Signed Message:\n64", _publicKey);
 
         // Get address from public key
         address signer = address(keccak256(_publicKey));

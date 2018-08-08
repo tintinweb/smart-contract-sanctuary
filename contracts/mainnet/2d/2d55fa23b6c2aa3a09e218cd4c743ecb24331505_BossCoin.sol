@@ -52,8 +52,8 @@ contract BossCoin is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
 	
     uint256 public totalSupply = 500000000000000000;
-	string public constant name = &quot;BossCoin&quot;;
-    string public constant symbol = &quot;BOCO&quot;;
+	string public constant name = "BossCoin";
+    string public constant symbol = "BOCO";
     uint public constant decimals = 8;
 	
 	function BossCoin(){

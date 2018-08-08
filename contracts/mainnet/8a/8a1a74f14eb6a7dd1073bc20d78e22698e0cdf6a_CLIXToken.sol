@@ -33,7 +33,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -155,8 +155,8 @@ contract CLIXToken is ERC20, Ownable, Pausable {
     mapping (address => bool) public blacklisted;
     mapping (address => bool) public hasReceived;
 
-    string public name = &quot;CLIXToken&quot;;
-    string public symbol = &quot;CLIX&quot;;
+    string public name = "CLIXToken";
+    string public symbol = "CLIX";
     
     uint public decimals = 18;
     uint256 private totalSupply_ = 200000000e18;

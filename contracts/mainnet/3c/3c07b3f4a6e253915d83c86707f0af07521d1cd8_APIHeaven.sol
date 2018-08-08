@@ -12,8 +12,8 @@ pragma solidity ^0.4.14;
  }
   
  contract APIHeaven is ERC20Interface {
-     string public constant symbol = &quot;☁&quot;;
-     string public constant name = &quot;API Heaven clouds&quot;;
+     string public constant symbol = "☁";
+     string public constant name = "API Heaven clouds";
      uint8 public constant decimals = 0;
      uint256 _totalSupply = 1000000000000000; 
      

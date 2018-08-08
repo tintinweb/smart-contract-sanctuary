@@ -203,7 +203,7 @@ contract CreateCoins is Functions {
 }
 
 contract AZOTEToken is CreateCoins, Burnable {
-  string public name = &quot;AZOTE Token&quot;;
-  string public symbol = &quot;AZTE&quot;;
+  string public name = "AZOTE Token";
+  string public symbol = "AZTE";
   uint8 public decimals = 5;
 }

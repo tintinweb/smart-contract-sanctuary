@@ -173,7 +173,7 @@ contract StandardToken is BasicToken, ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control 
- * functions, this simplifies the implementation of &quot;user permissions&quot;. 
+ * functions, this simplifies the implementation of "user permissions". 
  */
 contract Ownable {
   address public owner;
@@ -306,9 +306,9 @@ contract MRVToken is StandardToken, Ownable, HasNoTokens, HasNoContracts {
     // From StandardToken we inherit balances and totalSupply.
     
     // What is the full name of the token?
-    string public constant name = &quot;Macroverse Token&quot;;
+    string public constant name = "Macroverse Token";
     // What is its suggested symbol?
-    string public constant symbol = &quot;MRV&quot;;
+    string public constant symbol = "MRV";
     // How many of the low base-10 digits are to the right of the decimal point?
     // Note that this is not constant! After the crowdsale, the contract owner can
     // adjust the decimal places, allowing for 10-to-1 splits and merges.

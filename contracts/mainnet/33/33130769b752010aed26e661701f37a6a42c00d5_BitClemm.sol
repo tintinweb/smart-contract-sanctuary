@@ -47,8 +47,8 @@ contract BitClemm is IERC20{
  uint256 public _totalSupply = 0;
  
  
- string public symbol = &quot;BCM&quot;;//Simbolo del token es. ETH
- string public constant name = &quot;BitClemm&quot;; //Nome del token es. Ethereum
+ string public symbol = "BCM";//Simbolo del token es. ETH
+ string public constant name = "BitClemm"; //Nome del token es. Ethereum
  uint256 public constant decimals = 3; //Numero di decimali del token, il bitcoin ne ha 8, ethereum 18
  
  uint256 public MAX_SUPPLY = 180000000 * 10**decimals; //Numero massimo di token da emettere ( 1000 )

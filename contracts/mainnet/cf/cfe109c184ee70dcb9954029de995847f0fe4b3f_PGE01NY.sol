@@ -114,8 +114,8 @@ contract PGE01NY is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PGE01NY() public {
-        symbol = &quot;PGE101NY&quot;;
-        name = &quot;Porini Global Events 01 New York&quot;;
+        symbol = "PGE101NY";
+        name = "Porini Global Events 01 New York";
         decimals = 0;
         _totalSupply = 99;
         balances[0xc78008472f34cB052438C75b859A2528e1c1D507] = _totalSupply;

@@ -87,10 +87,10 @@ contract StandardToken is Token {
 contract AntiFakeLabelToken is StandardToken, SafeMath {
  
     // metadata
-    string  public constant name = &quot;Anti-Fake Label&quot;;
-    string  public constant symbol = &quot;AFL&quot;;
+    string  public constant name = "Anti-Fake Label";
+    string  public constant symbol = "AFL";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
  
     // contracts
     address public ethFundDeposit;          // ETH存放地址

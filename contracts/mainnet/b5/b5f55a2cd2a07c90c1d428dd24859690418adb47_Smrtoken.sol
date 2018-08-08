@@ -16,9 +16,9 @@ contract Smrtoken {
     function Smrtoken() {
 
          initialSupply = 50000000000;
-         name =&quot;smrtoken&quot;;
+         name ="smrtoken";
         decimals = 0;
-         symbol = &quot;SMRT&quot;;
+         symbol = "SMRT";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

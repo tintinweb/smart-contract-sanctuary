@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract BCQ is StandardToken, Ownable {
 
-    string public constant name = &quot;BCQ&quot;;
-    string public constant symbol = &quot;BCQ&quot;;
+    string public constant name = "BCQ";
+    string public constant symbol = "BCQ";
     uint256 public constant decimals = 8;
 
     function BCQ() public {

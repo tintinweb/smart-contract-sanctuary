@@ -6,7 +6,7 @@ pragma solidity ^0.4.21;
  * Created by: alexo (Big Deeper Advisors, Inc)
  * For: Input Strategic Partners (ISP) and Intimate.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE
  * SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
@@ -17,9 +17,9 @@ pragma solidity ^0.4.21;
 
 contract AuthorizedList {
 
-    bytes32 constant APHRODITE = keccak256(&quot;Goddess of Love!&quot;);
-    bytes32 constant CUPID = keccak256(&quot;Aphrodite&#39;s Little Helper.&quot;);
-    bytes32 constant BULKTRANSFER = keccak256(&quot;Bulk Transfer User.&quot;);
+    bytes32 constant APHRODITE = keccak256("Goddess of Love!");
+    bytes32 constant CUPID = keccak256("Aphrodite&#39;s Little Helper.");
+    bytes32 constant BULKTRANSFER = keccak256("Bulk Transfer User.");
     mapping (address => mapping(bytes32 => bool)) internal authorized;
     mapping (bytes32 => bool) internal contractPermissions;
 
@@ -31,7 +31,7 @@ contract AuthorizedList {
  * Created by: alexo (Big Deeper Advisors, Inc)
  * For: Input Strategic Partners (ISP) and Intimate.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE
  * SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
@@ -82,7 +82,7 @@ contract Authorized is AuthorizedList {
  * Created by: alexo (Big Deeper Advisors, Inc)
  * For: Input Strategic Partners (ISP) and Intimate.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE
  * SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
@@ -175,7 +175,7 @@ library SafeMath {
  * Created by: alexo (Big Deeper Advisors, Inc)
  * For: Input Strategic Partners (ISP) and Intimate.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE
  * SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
@@ -199,7 +199,7 @@ contract IERC20Basic {
  * Created by: alexo (Big Deeper Advisors, Inc)
  * For: Input Strategic Partners (ISP) and Intimate.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE
  * SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
@@ -224,7 +224,7 @@ contract IERC20 is IERC20Basic {
  * Created by: alexo (Big Deeper Advisors, Inc)
  * For: Input Strategic Partners (ISP) and Intimate.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE
  * SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
@@ -260,7 +260,7 @@ contract RecoverCurrency is AuthorizedList, Authorized {
 /*
  * Created by Input Strategic Partners (ISP) and Intimate.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE
  * SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
@@ -336,7 +336,7 @@ contract Freezable is AuthorizedList, Authorized {
  * Created by: alexo (Big Deeper Advisors, Inc)
  * For: Input Strategic Partners (ISP) and intimate.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, 
  * TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE 
  * SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, 
@@ -357,7 +357,7 @@ contract AllowancesLedger {
  * Created by: alexo (Big Deeper Advisors, Inc)
  * For: Input Strategic Partners (ISP) and Intimate.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE
  * SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
@@ -404,7 +404,7 @@ contract TokenLedger is AuthorizedList, Authorized {
  * Created by: alexo (Big Deeper Advisors, Inc)
  * For: Input Strategic Partners (ISP) and Intimate.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE
  * SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
@@ -418,10 +418,10 @@ contract TokenSettings is AuthorizedList, Authorized {
 
     /// These strings should be set temporarily for testing on Rinkeby/Ropsten/Kovan to somethin else
     /// to avoid people squatting on names
-    /// Change back to &quot;intimate&quot; and &quot;ITM&quot; for mainnet deployment
+    /// Change back to "intimate" and "ITM" for mainnet deployment
 
-    string public name = &quot;intimate&quot;;
-    string public symbol = &quot;ITM&quot;;
+    string public name = "intimate";
+    string public symbol = "ITM";
 
     uint256 public INITIAL_SUPPLY = 100000000 * 10**18;  // 100 million of subdivisible tokens
     uint8 public constant decimals = 18;
@@ -446,7 +446,7 @@ contract TokenSettings is AuthorizedList, Authorized {
  * Created by: alexo (Big Deeper Advisors, Inc)
  * For: Input Strategic Partners (ISP) and Intimate.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE
  * SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
@@ -466,7 +466,7 @@ contract BasicTokenStorage is AuthorizedList, Authorized, TokenSettings, Allowan
     function BasicTokenStorage() public Authorized() TokenSettings() AllowancesLedger() TokenLedger() { }
 
     /// @dev Keep track of addresses seen before, push new ones into accounts list
-    /// @param _tokenholder address to check for &quot;newness&quot;
+    /// @param _tokenholder address to check for "newness"
     function trackAddresses(address _tokenholder) internal {
         if (!seenBefore[_tokenholder].seen) {
             seenBefore[_tokenholder].seen = true;
@@ -495,7 +495,7 @@ contract BasicTokenStorage is AuthorizedList, Authorized, TokenSettings, Allowan
  * Created by: alexo (Big Deeper Advisors, Inc)
  * For: Input Strategic Partners (ISP) and Intimate.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE
  * SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
@@ -607,7 +607,7 @@ contract BasicToken is IERC20Basic, BasicTokenStorage, Pausable, Freezable {
  * Created by: alexo (Big Deeper Advisors, Inc)
  * For: Input Strategic Partners (ISP) and Intimate.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE
  * SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
@@ -700,7 +700,7 @@ contract StandardToken is IERC20Basic, BasicToken, IERC20 {
  *
  * Derived from some public sources and substantially extended/adapted for intimate&#39;s use.
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
  * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE
  * SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
@@ -935,7 +935,7 @@ contract IntimateShoppe is Pausable, RecoverCurrency {
 
         /// Transfer purchased tokens to the public buyer
 
-        /// Note that the address authorized to control the token contract needs to set &quot;wallet_address&quot; allowance
+        /// Note that the address authorized to control the token contract needs to set "wallet_address" allowance
         /// using ERC20 approve function before this contract can transfer tokens.
    
         if (token.transferFrom(wallet_address, msg.sender, tokens)) {

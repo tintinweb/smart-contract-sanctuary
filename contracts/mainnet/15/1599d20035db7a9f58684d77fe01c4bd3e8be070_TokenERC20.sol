@@ -62,8 +62,8 @@ contract TokenERC20 is Ownable {
 	
     using SafeMath for uint256;
     
-    string public constant name       = &quot;淘积分&quot;;
-    string public constant symbol     = &quot;TJF&quot;;
+    string public constant name       = "淘积分";
+    string public constant symbol     = "TJF";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply;
     uint256 public currentTotalSupply = 0;

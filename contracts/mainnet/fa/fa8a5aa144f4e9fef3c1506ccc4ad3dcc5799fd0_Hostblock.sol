@@ -113,8 +113,8 @@ contract Hostblock is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Hostblock() public {
-        symbol = &quot;Hostblock&quot;;
-        name = &quot;Hostblock Token&quot;;
+        symbol = "Hostblock";
+        name = "Hostblock Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x0A68e71666BCaB6603Ec090dB3eb8A9FaB4DCA4c] = _totalSupply;

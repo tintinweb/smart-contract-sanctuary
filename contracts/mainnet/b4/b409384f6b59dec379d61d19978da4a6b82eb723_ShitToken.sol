@@ -28,8 +28,8 @@ library SafeMath {
 contract ShitToken {
   using SafeMath for uint256;
 
-  string public constant name = &quot;Shit&quot;;
-  string public constant symbol = &quot;SHT&quot;;
+  string public constant name = "Shit";
+  string public constant symbol = "SHT";
   uint8 public constant decimals = 18;
   uint256 public totalSupply;
   mapping (address => uint) balances;

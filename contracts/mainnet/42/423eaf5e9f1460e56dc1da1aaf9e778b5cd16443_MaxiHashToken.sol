@@ -221,8 +221,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/MaxiHashToken.sol
 
 contract MaxiHashToken is StandardToken {
-    string public name = &quot;MaxiHash&quot;;
-    string public symbol = &quot;MXH&quot;;
+    string public name = "MaxiHash";
+    string public symbol = "MXH";
     uint8 public decimals = 18;
     uint public INITIAL_SUPPLY = 16000000000 * 10**uint(decimals);
 

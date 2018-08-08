@@ -101,8 +101,8 @@ contract DomenoToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function DomenoToken() public {
-        symbol = &quot;FEE&quot;;
-        name = &quot;Domeno Network&quot;;
+        symbol = "FEE";
+        name = "Domeno Network";
         decimals = 0;
         _totalSupply = 1000000000000;
         balances[owner] = _totalSupply;

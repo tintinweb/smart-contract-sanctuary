@@ -520,9 +520,9 @@ contract AdvancedToken is  TokenERC20 {
 contract SafeasyToken is AdvancedToken {
 
    function SafeasyToken() public{
-        name = &quot;Safeasy Token&quot;;
+        name = "Safeasy Token";
         decimals = 6;
-        symbol = &quot;SET&quot;;
+        symbol = "SET";
         version = &#39;v1.1&#39;;
 
         uint256 initialSupply = uint256(2* 10 ** 9);

@@ -59,8 +59,8 @@ contract Testtoken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Testtoken&quot;;
-    string public constant symbol = &quot;TXE&quot;;
+    string public constant name = "Testtoken";
+    string public constant symbol = "TXE";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 10000000000e8;

@@ -115,8 +115,8 @@ contract Extreme is ERC20Interface, Owned, SafeMath {
     // ------------------------------------------------------------------------
     
     function Extreme() public {
-        symbol = &quot;XT&quot;;
-        name = &quot;Extreme&quot;;
+        symbol = "XT";
+        name = "Extreme";
         decimals = 18;
         _totalSupply = 5000000000000000000000000;
         balances[0x4DFD4C3D70A13B491B2F10FBB26e3BD2BaD5e93f] = _totalSupply; //MEW address here

@@ -69,9 +69,9 @@ contract ERC20Token {
 contract TronyCurrencyContract is ERC20Token, Owned{
 
     /* Public variables of the token */
-    string  public constant standard = &quot;Trony currency V1.0&quot;;
-    string  public constant name = &quot;Trony Currency&quot;;
-    string  public constant symbol = &quot;TRC&quot;;
+    string  public constant standard = "Trony currency V1.0";
+    string  public constant name = "Trony Currency";
+    string  public constant symbol = "TRC";
     uint256 public constant decimals = 6;
     uint256 private constant etherChange = 10**18;
     

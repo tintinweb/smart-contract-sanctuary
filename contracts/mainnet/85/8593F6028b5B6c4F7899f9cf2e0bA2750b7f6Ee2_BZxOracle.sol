@@ -2,14 +2,14 @@
 
   Copyright 2018 bZeroX, LLC
 
-  Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+  Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
 
     http://www.apache.org/licenses/LICENSE-2.0
 
   Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+  distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
@@ -71,7 +71,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -138,7 +138,7 @@ contract BZxOwnable is Ownable {
 
     // modifier reverts if bZxContractAddress isn&#39;t set
     modifier onlyBZx() {
-        require(msg.sender == bZxContractAddress, &quot;only bZx contracts can call this function&quot;);
+        require(msg.sender == bZxContractAddress, "only bZx contracts can call this function");
         _;
     }
 
@@ -147,7 +147,7 @@ contract BZxOwnable is Ownable {
     * @param newBZxContractAddress The bZx contract address to transfer ownership to.
     */
     function transferBZxOwnership(address newBZxContractAddress) public onlyOwner {
-        require(newBZxContractAddress != address(0) && newBZxContractAddress != owner, &quot;transferBZxOwnership::unauthorized&quot;);
+        require(newBZxContractAddress != address(0) && newBZxContractAddress != owner, "transferBZxOwnership::unauthorized");
         emit BZxOwnershipTransferred(bZxContractAddress, newBZxContractAddress);
         bZxContractAddress = newBZxContractAddress;
     }
@@ -158,7 +158,7 @@ contract BZxOwnable is Ownable {
     * This overrides transferOwnership in Ownable to prevent setting the new owner the same as the bZxContract
     */
     function transferOwnership(address newOwner) public onlyOwner {
-        require(newOwner != address(0) && newOwner != bZxContractAddress, &quot;transferOwnership::unauthorized&quot;);
+        require(newOwner != address(0) && newOwner != bZxContractAddress, "transferOwnership::unauthorized");
         emit OwnershipTransferred(owner, newOwner);
         owner = newOwner;
     }
@@ -167,8 +167,8 @@ contract BZxOwnable is Ownable {
 contract GasRefunder {
     using SafeMath for uint256;
 
-    // If true, uses the &quot;transfer&quot; method, which throws on failure, reverting state.
-    // If false, a failed &quot;send&quot; won&#39;t throw, and fails silently.
+    // If true, uses the "transfer" method, which throws on failure, reverting state.
+    // If false, a failed "send" won&#39;t throw, and fails silently.
     // Note that a throw will prevent a GasRefund event.
     bool public throwOnGasRefundFail = false;
 
@@ -279,7 +279,7 @@ contract EMACollector {
             EMA: (LastestValue - PreviousEMA) * Multiplier + PreviousEMA 
         */
 
-        require(emaPeriods >= 2, &quot;emaPeriods < 2&quot;);
+        require(emaPeriods >= 2, "emaPeriods < 2");
 
         // calculate new EMA
         emaValue = 
@@ -370,7 +370,7 @@ contract EIP20Wrapper {
             }
         }
 
-        require(result, &quot;eip20Transfer failed&quot;);
+        require(result, "eip20Transfer failed");
     }
 
     function eip20TransferFrom(
@@ -397,7 +397,7 @@ contract EIP20Wrapper {
             }
         }
 
-        require(result, &quot;eip20TransferFrom failed&quot;);
+        require(result, "eip20TransferFrom failed");
     }
 
     function eip20Approve(
@@ -423,7 +423,7 @@ contract EIP20Wrapper {
             }
         }
 
-        require(result, &quot;eip20Approve failed&quot;);
+        require(result, "eip20Approve failed");
     }
 }
 
@@ -847,7 +847,7 @@ contract BZxOracle is OracleInterface, EIP20Wrapper, EMACollector, GasRefunder, 
             interestTokenAddress,
             lender,
             amountOwed.sub(interestFee))) {
-            revert(&quot;BZxOracle::didPayInterest: _transferToken failed&quot;);
+            revert("BZxOracle::didPayInterest: _transferToken failed");
         }
 
         if (interestTokenAddress == wethContract) {
@@ -966,7 +966,7 @@ contract BZxOracle is OracleInterface, EIP20Wrapper, EMACollector, GasRefunder, 
                 MAX_FOR_KYBER); // no limit on the dest amount
         }
         else {
-            revert(&quot;Manual trading is disabled.&quot;);
+            revert("Manual trading is disabled.");
         }
     }
 
@@ -1030,7 +1030,7 @@ contract BZxOracle is OracleInterface, EIP20Wrapper, EMACollector, GasRefunder, 
     {
         uint collateralTokenBalance = EIP20(collateralTokenAddress).balanceOf.gas(4999)(this); // Changes to state require at least 5000 gas
         if (collateralTokenBalance < collateralTokenAmountUsable) { // sanity check
-            revert(&quot;BZxOracle::doTradeofCollateral: collateralTokenBalance < collateralTokenAmountUsable&quot;);
+            revert("BZxOracle::doTradeofCollateral: collateralTokenBalance < collateralTokenAmountUsable");
         }
 
         loanTokenAmountCovered = _doTrade(
@@ -1047,7 +1047,7 @@ contract BZxOracle is OracleInterface, EIP20Wrapper, EMACollector, GasRefunder, 
                 collateralTokenAddress,
                 vaultContract,
                 collateralTokenAmountUsable.sub(collateralTokenAmountUsed))) {
-                revert(&quot;BZxOracle::doTradeofCollateral: _transferToken failed&quot;);
+                revert("BZxOracle::doTradeofCollateral: _transferToken failed");
             }
         }
 
@@ -1444,7 +1444,7 @@ contract BZxOracle is OracleInterface, EIP20Wrapper, EMACollector, GasRefunder, 
                     destTokenAddress,
                     vaultContract,
                     destTokenAmount)) {
-                    revert(&quot;BZxOracle::_doTrade: _transferToken failed&quot;);
+                    revert("BZxOracle::_doTrade: _transferToken failed");
                 }
             } else {
                 // re-up the Kyber spend approval if needed
@@ -1509,7 +1509,7 @@ contract BZxOracle is OracleInterface, EIP20Wrapper, EMACollector, GasRefunder, 
                 MAX_FOR_KYBER);
         }
         
-        // bytes4(keccak256(&quot;trade(address,uint256,address,address,uint256,uint256,address)&quot;)) = 0xcb3c28c7
+        // bytes4(keccak256("trade(address,uint256,address,address,uint256,uint256,address)")) = 0xcb3c28c7
         bool result = kyberContract.call
             .gas(gasleft())(
             0xcb3c28c7,
@@ -1552,7 +1552,7 @@ contract BZxOracle is OracleInterface, EIP20Wrapper, EMACollector, GasRefunder, 
             ethToSend = address(this).balance;
         }
 
-        // bytes4(keccak256(&quot;trade(address,uint256,address,address,uint256,uint256,address)&quot;)) = 0xcb3c28c7
+        // bytes4(keccak256("trade(address,uint256,address,address,uint256,uint256,address)")) = 0xcb3c28c7
         bool result = kyberContract.call
             .gas(gasleft())
             .value(ethToSend)( // send Ether along 

@@ -28,8 +28,8 @@ contract CART {
     ) public {
         totalSupply = 1000000000000000000000000000000;                                                 // Update total supply with the decimal amount
         balanceOf[msg.sender] = 1000000000000000000000000000000;                                       // Give the creator all initial tokens
-        name = &quot;CartWheel&quot;;                                                                      // Set the name for display purposes
-        symbol = &quot;CART&quot;;                                                                            // Set the symbol for display purposes
+        name = "CartWheel";                                                                      // Set the name for display purposes
+        symbol = "CART";                                                                            // Set the symbol for display purposes
     }
 
     /**

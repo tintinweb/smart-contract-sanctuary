@@ -79,7 +79,7 @@ contract RBAC {
   /**
    * A constant role name for indicating admins.
    */
-  string public constant ROLE_ADMIN = &quot;admin&quot;;
+  string public constant ROLE_ADMIN = "admin";
 
   /**
    * @dev constructor. Sets msg.sender as admin by default
@@ -216,10 +216,10 @@ contract RBAC {
  */
 contract ButtonClickRBAC is RBAC {
 
-    string constant ROLE_FINANCE = &quot;finance&quot;;
+    string constant ROLE_FINANCE = "finance";
 
     /**
-     * @dev Access modifier, which restricts functions to only the &quot;finance&quot; role
+     * @dev Access modifier, which restricts functions to only the "finance" role
      */
     modifier onlyFinance() {
         checkRole(msg.sender, ROLE_FINANCE);
@@ -248,7 +248,7 @@ contract ButtonClickGameControls is ButtonClickRBAC {
     uint256 public minimumFee;
 
     /**
-     * Defines how many blocks must elapse before the game can be &quot;won&quot;
+     * Defines how many blocks must elapse before the game can be "won"
      *
      * http://solidity.readthedocs.io/en/develop/contracts.html?#visibility-and-getters
      */
@@ -263,21 +263,21 @@ contract ButtonClickGameControls is ButtonClickRBAC {
     }
 
     /**
-     * @dev Changes the required number of blocks for victory. This may ONLY be called by the &quot;admin&quot; role
+     * @dev Changes the required number of blocks for victory. This may ONLY be called by the "admin" role
      */
     function setRequiredBlocksElapsedForVictory(uint256 _requiredBlocksElapsedForVictory) external onlyAdmin {
         requiredBlocksElapsedForVictory = _requiredBlocksElapsedForVictory;
     }
     
     /**
-     * @dev Changes the minimum fee. This may ONLY be called by the &quot;finance&quot; role
+     * @dev Changes the minimum fee. This may ONLY be called by the "finance" role
      */
     function setMinimumFee(uint256 _minimumFee) external onlyFinance {
         minimumFee = _minimumFee;
     }
 
     /**
-     * @dev Withdraws the available balance. This may ONLY be called by the &quot;finance&quot; role
+     * @dev Withdraws the available balance. This may ONLY be called by the "finance" role
      */
     function withdrawBalance() external onlyFinance {
         msg.sender.transfer(address(this).balance);
@@ -457,7 +457,7 @@ library SafeMath {
 contract ERC721Receiver {
   /**
    * @dev Magic value to be returned upon successful reception of an NFT
-   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`,
+   *  Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`,
    *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
    */
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba; 
@@ -472,7 +472,7 @@ contract ERC721Receiver {
    * @param _from The sending address 
    * @param _tokenId The NFT identifier which is being transfered
    * @param _data Additional data with no specified format
-   * @return `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+   * @return `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
    */
   function onERC721Received(address _from, uint256 _tokenId, bytes _data) public returns(bytes4);
 }
@@ -487,7 +487,7 @@ contract ERC721BasicToken is ERC721Basic {
   using SafeMath for uint256;
   using AddressUtils for address;
   
-  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`
+  // Equals to `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`
   // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
   bytes4 constant ERC721_RECEIVED = 0xf0b9e5ba; 
 
@@ -626,7 +626,7 @@ contract ERC721BasicToken is ERC721Basic {
   * @dev Safely transfers the ownership of a given token ID to another address
   * @dev If the target address is a contract, it must implement `onERC721Received`,
   *  which is called upon a safe transfer, and return the magic value
-  *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+  *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
   *  the transfer is reverted.
   * @dev Requires the msg sender to be the owner, approved, or operator
   * @param _from current owner of the token
@@ -634,14 +634,14 @@ contract ERC721BasicToken is ERC721Basic {
   * @param _tokenId uint256 ID of the token to be transferred
   */
   function safeTransferFrom(address _from, address _to, uint256 _tokenId) public canTransfer(_tokenId) {
-    safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+    safeTransferFrom(_from, _to, _tokenId, "");
   }
 
   /**
   * @dev Safely transfers the ownership of a given token ID to another address
   * @dev If the target address is a contract, it must implement `onERC721Received`,
   *  which is called upon a safe transfer, and return the magic value
-  *  `bytes4(keccak256(&quot;onERC721Received(address,uint256,bytes)&quot;))`; otherwise,
+  *  `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`; otherwise,
   *  the transfer is reverted.
   * @dev Requires the msg sender to be the owner, approved, or operator
   * @param _from current owner of the token
@@ -927,7 +927,7 @@ contract ERC721Token is ERC721, ERC721BasicToken {
 
 // File: contracts/ButtonClickGame.sol
 
-contract ButtonClickGame is ERC721Token(&quot;The Ether Button&quot;, &quot;Butt&quot;), ButtonClickGameControls {
+contract ButtonClickGame is ERC721Token("The Ether Button", "Butt"), ButtonClickGameControls {
 
     /**
      * @dev This event is fired whenever a user clicks on a button, thereby creating a click
@@ -946,7 +946,7 @@ contract ButtonClickGame is ERC721Token(&quot;The Ether Button&quot;, &quot;Butt
         // Tracks how far the user was away from the desired block (0 is optimal)
         uint64 blocksAwayFromDesiredBlock;
 
-        // Defines the &quot;generation&quot; of this game. This gets incremented whenever the button is clicked
+        // Defines the "generation" of this game. This gets incremented whenever the button is clicked
         // at the desired block
         uint64 clickGeneration;
 
@@ -970,7 +970,7 @@ contract ButtonClickGame is ERC721Token(&quot;The Ether Button&quot;, &quot;Butt
     uint256 public gameGeneration = 1;
 
     /**
-     * Defines the block number at which a click will &quot;win&quot;
+     * Defines the block number at which a click will "win"
      *
      * http://solidity.readthedocs.io/en/develop/contracts.html?#visibility-and-getters
      */
@@ -984,13 +984,13 @@ contract ButtonClickGame is ERC721Token(&quot;The Ether Button&quot;, &quot;Butt
     mapping (address => uint256) public addressLastClickedForGeneration;
 
     /**
-     * A mapping from the number &quot;remaining blocks&quot; (eg 19 blocks left) to the number of clicks
-     * clicks that occurred at this &quot;remaining blocks&quot; total
+     * A mapping from the number "remaining blocks" (eg 19 blocks left) to the number of clicks
+     * clicks that occurred at this "remaining blocks" total
      */
     mapping (uint8 => uint256) public numberOfClicksAtBlocksRemaining;
 
     /**
-     * @dev This method contains the core game logic, tracking a distinct button &quot;click&quot; event and 
+     * @dev This method contains the core game logic, tracking a distinct button "click" event and 
      * saving all relevant metadata associated with it. This method will generate both a ButtonClick 
      * and Transfer event. Callers can ONLY call this method a single time per game generation.
      *

@@ -51,7 +51,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -318,8 +318,8 @@ contract BIAToken is BurnableToken, MintableToken, PausableToken {
   uint8 public decimals;
 
   function BIAToken() public {
-    name = &quot;Blockchain Investment Academy&quot;;
-    symbol = &quot;BIA&quot;;
+    name = "Blockchain Investment Academy";
+    symbol = "BIA";
     decimals = 18;
     totalSupply = 10000 * 10 ** uint256(decimals);
 

@@ -80,8 +80,8 @@ contract CryptoQuantumTradingFund is ERC20Interface {
 
 	// ERC20 //////////////
 		
-    string public name = &quot;CryptoQuantumTradingFund&quot;;
-    string public symbol = &quot;CQTF&quot;;
+    string public name = "CryptoQuantumTradingFund";
+    string public symbol = "CQTF";
     uint8 public decimals = 18;
 	uint256 private fixTotalBalance = 100000000000000000000000000;
 	uint256 private _totalBalance =    92000000000000000000000000;

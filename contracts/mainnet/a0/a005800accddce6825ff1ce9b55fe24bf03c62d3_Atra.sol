@@ -61,8 +61,8 @@ contract Atra is AttributaOwners, ERC20Interface, ExtendERC20Interface {
     mapping(address => mapping(address => uint)) allowed;
 
     function Atra() public {
-        symbol = &quot;ATRA&quot;;
-        name = &quot;Atra&quot;;
+        symbol = "ATRA";
+        name = "Atra";
         decimals = 0;
         _totalSupply = 100000000000; //100,000,000,000
         balances[owner] = _totalSupply;

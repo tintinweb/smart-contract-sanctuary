@@ -67,8 +67,8 @@ contract StripperToken is ERC20 {
     
     uint public constant _totalSupply = 1000000000000000000000000;
     
-    string public constant symbol = &quot;STRP&quot;;
-    string public constant name = &quot;Stripper Token&quot;;
+    string public constant symbol = "STRP";
+    string public constant name = "Stripper Token";
     uint8 public constant decimals = 18;
     
     // 1 ether = 100 STRP

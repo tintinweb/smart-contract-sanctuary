@@ -68,7 +68,7 @@ contract ERC20NoReturn {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -409,7 +409,7 @@ contract FeeCharger is Ownable, FeeChargerInterface {
         } else if (feeMode == FeeMode.ByCalls) {
             fee = feeAmount;
         } else {
-          revert(&quot;Unsupported fee mode.&quot;);
+          revert("Unsupported fee mode.");
         }
 
         return fee;
@@ -442,7 +442,7 @@ contract FeeCharger is Ownable, FeeChargerInterface {
         require(_motAddress != address(MOT));
         MOT = ERC20Extended(_motAddress);
         // this is only and will always be MOT.
-        require(keccak256(abi.encodePacked(MOT.symbol())) == keccak256(abi.encodePacked(&quot;MOT&quot;)));
+        require(keccak256(abi.encodePacked(MOT.symbol())) == keccak256(abi.encodePacked("MOT")));
 
         return true;
     }
@@ -475,11 +475,11 @@ contract FeeCharger is Ownable, FeeChargerInterface {
 
 contract ExchangeProvider is FeeCharger, OlympusExchangeInterface {
     using SafeMath for uint256;
-    string public name = &quot;OlympusExchangeProvider&quot;;
+    string public name = "OlympusExchangeProvider";
     string public description =
-    &quot;Exchange provider of Olympus Labs, which additionally supports buy\and sellTokens for multiple tokens at the same time&quot;;
-    string public category = &quot;exchange&quot;;
-    string public version = &quot;v1.0&quot;;
+    "Exchange provider of Olympus Labs, which additionally supports buy\and sellTokens for multiple tokens at the same time";
+    string public category = "exchange";
+    string public version = "v1.0";
     ERC20Extended private constant ETH  = ERC20Extended(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE);
 
     OlympusExchangeAdapterManagerInterface private exchangeAdapterManager;
@@ -490,7 +490,7 @@ contract ExchangeProvider is FeeCharger, OlympusExchangeInterface {
     }
 
     modifier checkAllowance(ERC20Extended _token, uint _amount) {
-        require(_token.allowance(msg.sender, address(this)) >= _amount, &quot;Not enough tokens approved&quot;);
+        require(_token.allowance(msg.sender, address(this)) >= _amount, "Not enough tokens approved");
         _;
     }
 
@@ -508,9 +508,9 @@ contract ExchangeProvider is FeeCharger, OlympusExchangeInterface {
 
         OlympusExchangeAdapterInterface adapter;
         // solhint-disable-next-line
-        bytes32 exchangeId = _exchangeId == &quot;&quot; ? exchangeAdapterManager.pickExchange(_token, _amount, _minimumRate, true) : _exchangeId;
+        bytes32 exchangeId = _exchangeId == "" ? exchangeAdapterManager.pickExchange(_token, _amount, _minimumRate, true) : _exchangeId;
         if(exchangeId == 0){
-            revert(&quot;No suitable exchange found&quot;);
+            revert("No suitable exchange found");
         }
 
         require(payFee(msg.value * getMotPrice(exchangeId) / 10 ** 18));
@@ -532,9 +532,9 @@ contract ExchangeProvider is FeeCharger, OlympusExchangeInterface {
         ) checkAllowance(_token, _amount) external returns(bool success) {
 
         OlympusExchangeAdapterInterface adapter;
-        bytes32 exchangeId = _exchangeId == &quot;&quot; ? exchangeAdapterManager.pickExchange(_token, _amount, _minimumRate, false) : _exchangeId;
+        bytes32 exchangeId = _exchangeId == "" ? exchangeAdapterManager.pickExchange(_token, _amount, _minimumRate, false) : _exchangeId;
         if(exchangeId == 0){
-            revert(&quot;No suitable exchange found&quot;);
+            revert("No suitable exchange found");
         }
 
         uint tokenPrice;
@@ -564,20 +564,20 @@ contract ExchangeProvider is FeeCharger, OlympusExchangeInterface {
         ERC20Extended[] _tokens, uint[] _amounts, uint[] _minimumRates,
         address _depositAddress, bytes32 _exchangeId, address /* _partnerId */
         ) external payable returns(bool success) {
-        require(_tokens.length == _amounts.length && _amounts.length == _minimumRates.length, &quot;Arrays are not the same lengths&quot;);
+        require(_tokens.length == _amounts.length && _amounts.length == _minimumRates.length, "Arrays are not the same lengths");
         require(payFee(msg.value * getMotPrice(_exchangeId) / 10 ** 18));
         uint totalValue;
         uint i;
         for(i = 0; i < _amounts.length; i++ ) {
             totalValue += _amounts[i];
         }
-        require(totalValue == msg.value, &quot;msg.value is not the same as total value&quot;);
+        require(totalValue == msg.value, "msg.value is not the same as total value");
 
         for (i = 0; i < _tokens.length; i++ ) {
-            bytes32 exchangeId = _exchangeId == &quot;&quot; ?
+            bytes32 exchangeId = _exchangeId == "" ?
             exchangeAdapterManager.pickExchange(_tokens[i], _amounts[i], _minimumRates[i], true) : _exchangeId;
             if (exchangeId == 0) {
-                revert(&quot;No suitable exchange found&quot;);
+                revert("No suitable exchange found");
             }
             require(
                 OlympusExchangeAdapterInterface(exchangeAdapterManager.getExchangeAdapter(exchangeId)).buyToken.value(_amounts[i])(
@@ -595,15 +595,15 @@ contract ExchangeProvider is FeeCharger, OlympusExchangeInterface {
         ERC20Extended[] _tokens, uint[] _amounts, uint[] _minimumRates,
         address _depositAddress, bytes32 _exchangeId, address /* _partnerId */
         ) external returns(bool success) {
-        require(_tokens.length == _amounts.length && _amounts.length == _minimumRates.length, &quot;Arrays are not the same lengths&quot;);
+        require(_tokens.length == _amounts.length && _amounts.length == _minimumRates.length, "Arrays are not the same lengths");
         OlympusExchangeAdapterInterface adapter;
 
         uint[] memory prices = new uint[](3); // 0 tokenPrice, 1 MOT price, 3 totalValueInMOT
         for (uint i = 0; i < _tokens.length; i++ ) {
-            bytes32 exchangeId = _exchangeId == bytes32(&quot;&quot;) ?
+            bytes32 exchangeId = _exchangeId == bytes32("") ?
             exchangeAdapterManager.pickExchange(_tokens[i], _amounts[i], _minimumRates[i], false) : _exchangeId;
             if(exchangeId == 0){
-                revert(&quot;No suitable exchange found&quot;);
+                revert("No suitable exchange found");
             }
 
             (prices[0],) = exchangeAdapterManager.getPrice(_tokens[i], ETH, _amounts[i], exchangeId);
@@ -611,7 +611,7 @@ contract ExchangeProvider is FeeCharger, OlympusExchangeInterface {
             prices[2] += prices[0] * _amounts[i] * prices[1] / 10 ** _tokens[i].decimals() / 10 ** 18;
 
             adapter = OlympusExchangeAdapterInterface(exchangeAdapterManager.getExchangeAdapter(exchangeId));
-            require(_tokens[i].allowance(msg.sender, address(this)) >= _amounts[i], &quot;Not enough tokens approved&quot;);
+            require(_tokens[i].allowance(msg.sender, address(this)) >= _amounts[i], "Not enough tokens approved");
             ERC20NoReturn(_tokens[i]).transferFrom(msg.sender, address(adapter), _amounts[i]);
             require(
                 adapter.sellToken(

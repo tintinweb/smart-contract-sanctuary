@@ -131,7 +131,7 @@ function owner_withdraw () public
 if (msg.sender != owner) return;
 
 owner.transfer( this.balance );
-lastaction = &quot;Withdraw&quot;;  
+lastaction = "Withdraw";  
 } // owner_withdraw
 
 

@@ -82,10 +82,10 @@ contract StandardToken is Token {
 contract FAPcoin is StandardToken, SafeMath {
 
     // metadata
-    string public constant name = &quot;FAPcoin&quot;;
-    string public constant symbol = &quot;FAP&quot;;
+    string public constant name = "FAPcoin";
+    string public constant symbol = "FAP";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     // contracts
     address public ethFundDeposit;      // deposit address for ETH for FAP

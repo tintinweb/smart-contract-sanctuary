@@ -109,8 +109,8 @@ contract Fructus is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Fructus() public {
-        symbol = &quot;FRUCTUS&quot;;
-        name = &quot;Fructus&quot;;
+        symbol = "FRUCTUS";
+        name = "Fructus";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x700aA5945B21D753D8bBdebD4e5F5Ae846013ace] = _totalSupply;

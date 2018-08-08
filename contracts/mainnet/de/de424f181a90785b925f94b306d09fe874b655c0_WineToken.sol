@@ -238,8 +238,8 @@ contract StandardToken is ERC20, ERC223Token {
 
 contract WineToken is StandardToken {
 
-    string public constant name = &quot;Wine Token&quot;;
-    string public constant symbol = &quot;iWINE&quot;;
+    string public constant name = "Wine Token";
+    string public constant symbol = "iWINE";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 10**9 * (10**uint256(decimals));
     address public owner;

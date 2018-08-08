@@ -98,8 +98,8 @@ contract GnarlyTimes is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GnarlyTimes() public {
-        symbol = &quot;GNAX&quot;;
-        name = &quot;Gnarly Times&quot;;
+        symbol = "GNAX";
+        name = "Gnarly Times";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xDb5d68b2d59275577b5ef49BC0A064e49baC9045] = _totalSupply;

@@ -37,7 +37,7 @@ contract AdPotato{
     function initialize(address fund) public onlyCLevel{
         fundsTarget=GPUMining(fund);
         for(uint i=0;i<NUM_ADS;i++){
-            ads.push(Advertisement({text:&quot;Your Text Here&quot;,url:&quot;&quot;,owner:ceoAddress,startingLevel:0,startingTime:now,halfLife:12 hours}));
+            ads.push(Advertisement({text:"Your Text Here",url:"",owner:ceoAddress,startingLevel:0,startingTime:now,halfLife:12 hours}));
         }
     }
     function buyAd(uint256 index,string text,string url) public payable{

@@ -19,7 +19,7 @@ pragma solidity 0.4.13;
  * members about the application of blockchain technology. For further
  * information: majoolr.io, consensys.net, paritytech.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -48,11 +48,11 @@ library WalletAdminLib {
   /// @return Returns true if check passes, false otherwise
   function checkChangeOwnerArgs(uint _from, uint _to) constant returns (bool) {
     if(_from == 0){
-      LogErrMsg(&quot;Change from address is not an owner&quot;);
+      LogErrMsg("Change from address is not an owner");
       return false;
     }
     if(_to != 0){
-      LogErrMsg(&quot;Change to address is an owner&quot;);
+      LogErrMsg("Change to address is an owner");
       return false;
     }
     return true;
@@ -66,11 +66,11 @@ library WalletAdminLib {
            constant returns (bool)
   {
     if(_index != 0){
-      LogErrMsg(&quot;New owner already owner&quot;);
+      LogErrMsg("New owner already owner");
       return false;
     }
     if((_length + 1) > _max){
-      LogErrMsg(&quot;Too many owners&quot;);
+      LogErrMsg("Too many owners");
       return false;
     }
     return true;
@@ -85,11 +85,11 @@ library WalletAdminLib {
            constant returns (bool)
   {
     if(_index == 0){
-      LogErrMsg(&quot;Owner removing not an owner&quot;);
+      LogErrMsg("Owner removing not an owner");
       return false;
     }
     if(_length - 1 < _min){
-      LogErrMsg(&quot;Must reduce requiredAdmin first&quot;);
+      LogErrMsg("Must reduce requiredAdmin first");
       return false;
     }
     return true;
@@ -103,11 +103,11 @@ library WalletAdminLib {
            constant returns (bool)
   {
     if(_newRequired == 0){
-      LogErrMsg(&quot;Cant reduce to 0&quot;);
+      LogErrMsg("Cant reduce to 0");
       return false;
     }
     if(_length - 1 < _newRequired){
-      LogErrMsg(&quot;Making requirement too high&quot;);
+      LogErrMsg("Making requirement too high");
       return false;
     }
     return true;
@@ -139,7 +139,7 @@ library WalletAdminLib {
                        bytes _data)
                        returns (bool,bytes32)
   {
-    bytes32 _id = sha3(&quot;changeOwner&quot;,_from,_to);
+    bytes32 _id = sha3("changeOwner",_from,_to);
     uint _number = self.transactionInfo[_id].length;
     bool allGood;
 
@@ -207,7 +207,7 @@ library WalletAdminLib {
                     bytes _data)
                     returns (bool,bytes32)
   {
-    bytes32 _id = sha3(&quot;addOwner&quot;,_newOwner);
+    bytes32 _id = sha3("addOwner",_newOwner);
     uint _number = self.transactionInfo[_id].length;
     bool allGood;
 
@@ -277,7 +277,7 @@ library WalletAdminLib {
                        bytes _data)
                        returns (bool,bytes32)
   {
-    bytes32 _id = sha3(&quot;removeOwner&quot;,_ownerRemoving);
+    bytes32 _id = sha3("removeOwner",_ownerRemoving);
     uint _number = self.transactionInfo[_id].length;
     bool allGood;
 
@@ -347,7 +347,7 @@ library WalletAdminLib {
                                bytes _data)
                                returns (bool,bytes32)
   {
-    bytes32 _id = sha3(&quot;changeRequiredAdmin&quot;,_requiredAdmin);
+    bytes32 _id = sha3("changeRequiredAdmin",_requiredAdmin);
     uint _number = self.transactionInfo[_id].length;
 
     if(msg.sender != address(this)){
@@ -413,7 +413,7 @@ library WalletAdminLib {
                                bytes _data)
                                returns (bool,bytes32)
   {
-    bytes32 _id = sha3(&quot;changeRequiredMajor&quot;,_requiredMajor);
+    bytes32 _id = sha3("changeRequiredMajor",_requiredMajor);
     uint _number = self.transactionInfo[_id].length;
 
     if(msg.sender != address(this)){
@@ -479,7 +479,7 @@ library WalletAdminLib {
                                bytes _data)
                                returns (bool,bytes32)
   {
-    bytes32 _id = sha3(&quot;changeRequiredMinor&quot;,_requiredMinor);
+    bytes32 _id = sha3("changeRequiredMinor",_requiredMinor);
     uint _number = self.transactionInfo[_id].length;
 
     if(msg.sender != address(this)){
@@ -547,7 +547,7 @@ library WalletAdminLib {
                                 bytes _data)
                                 returns (bool,bytes32)
   {
-    bytes32 _id = sha3(&quot;changeMajorThreshold&quot;, _token, _majorThreshold);
+    bytes32 _id = sha3("changeMajorThreshold", _token, _majorThreshold);
     uint _number = self.transactionInfo[_id].length;
 
     if(msg.sender != address(this)){
@@ -619,7 +619,7 @@ pragma solidity 0.4.13;
  * members about the application of blockchain technology. For further
  * information: majoolr.io, consensys.net, paritytech.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -723,13 +723,13 @@ library WalletMainLib {
     uint _txLen = self.transactionInfo[_id].length;
 
     if(_txLen == 0 || _number >= _txLen){
-      LogErrMsg(&quot;Tx not initiated&quot;);
+      LogErrMsg("Tx not initiated");
       LogTransactionFailed(_id, msg.sender);
       return false;
     }
 
     if(self.transactionInfo[_id][_number].success){
-      LogErrMsg(&quot;Transaction already complete&quot;);
+      LogErrMsg("Transaction already complete");
       LogTransactionFailed(_id, msg.sender);
       return false;
     }
@@ -739,7 +739,7 @@ library WalletMainLib {
     uint index;
     (found, index) = self.transactionInfo[_id][_number].confirmedOwners.indexOf(uint(msg.sender), false);
     if(found){
-      LogErrMsg(&quot;Owner already confirmed&quot;);
+      LogErrMsg("Owner already confirmed");
       LogTransactionFailed(_id, msg.sender);
       return false;
     }
@@ -809,7 +809,7 @@ library WalletMainLib {
 
     (err, res) = self.currentSpend[0][1].plus(_value);
     if(err){
-      LogErrMsg(&quot;Overflow eth spend&quot;);
+      LogErrMsg("Overflow eth spend");
       return 0;
     }
 
@@ -824,7 +824,7 @@ library WalletMainLib {
 
       (err, res) = self.currentSpend[_to][1].plus(_amount);
       if(err){
-        LogErrMsg(&quot;Overflow token spend&quot;);
+        LogErrMsg("Overflow token spend");
         return 0;
       }
       if(res >= self.majorThreshold[_to])
@@ -868,7 +868,7 @@ library WalletMainLib {
                    bytes _data)
                    returns (bool,bytes32)
   {
-    bytes32 _id = sha3(&quot;serveTx&quot;,_to,_value,_txData);
+    bytes32 _id = sha3("serveTx",_to,_value,_txData);
     uint _number = self.transactionInfo[_id].length;
     uint _required = self.requiredMajor;
 
@@ -958,7 +958,7 @@ library WalletMainLib {
     bool ret;
 
     if(_number == 0){
-      LogErrMsg(&quot;Tx not initiated&quot;);
+      LogErrMsg("Tx not initiated");
       LogTransactionFailed(_id, msg.sender);
       return false;
     }
@@ -998,14 +998,14 @@ library WalletMainLib {
     uint _number = self.transactionInfo[_id].length;
 
     if(_number == 0){
-      LogErrMsg(&quot;Tx not initiated&quot;);
+      LogErrMsg("Tx not initiated");
       LogTransactionFailed(_id, msg.sender);
       return false;
     }
 
     _number--;
     if(self.transactionInfo[_id][_number].success){
-      LogErrMsg(&quot;Transaction already complete&quot;);
+      LogErrMsg("Transaction already complete");
       LogTransactionFailed(_id, msg.sender);
       return false;
     }
@@ -1015,7 +1015,7 @@ library WalletMainLib {
     uint index;
     (found, index) = self.transactionInfo[_id][_number].confirmedOwners.indexOf(uint(msg.sender), false);
     if(!found){
-      LogErrMsg(&quot;Owner has not confirmed tx&quot;);
+      LogErrMsg("Owner has not confirmed tx");
       LogTransactionFailed(_id, msg.sender);
       return false;
     }
@@ -1052,7 +1052,7 @@ pragma solidity ^0.4.13;
  * community members about the application of blockchain technology.
  * For further information: majoolr.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -1257,7 +1257,7 @@ pragma solidity ^0.4.13;
  * about the application of blockchain technology.
  * For further information: majoolr.io, openzeppelin.org
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -1285,7 +1285,7 @@ library BasicMathLib {
       }
     }
     if (err)
-      Err(&quot;times func overflow&quot;);
+      Err("times func overflow");
   }
 
   /// @dev Divides two numbers but checks for 0 in the divisor first.
@@ -1303,7 +1303,7 @@ library BasicMathLib {
         return(mload(0x40),0x40)
       }
     }
-    Err(&quot;tried to divide by zero&quot;);
+    Err("tried to divide by zero");
     return (true, 0);
   }
 
@@ -1323,7 +1323,7 @@ library BasicMathLib {
       }
     }
     if (err)
-      Err(&quot;plus func overflow&quot;);
+      Err("plus func overflow");
   }
 
   /// @dev Subtracts two numbers and checks for underflow before returning.
@@ -1342,6 +1342,6 @@ library BasicMathLib {
       }
     }
     if (err)
-      Err(&quot;minus func underflow&quot;);
+      Err("minus func underflow");
   }
 }

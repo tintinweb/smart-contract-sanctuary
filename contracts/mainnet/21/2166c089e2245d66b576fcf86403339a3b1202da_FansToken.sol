@@ -113,8 +113,8 @@ contract FansToken is UnboundedRegularToken {
 
     uint public totalSupply = 5*10**26;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;FansToken&quot;;
-    string constant public symbol = &quot;FANS&quot;;
+    string constant public name = "FansToken";
+    string constant public symbol = "FANS";
 
     function FansToken() {
         balances[msg.sender] = totalSupply;

@@ -65,7 +65,7 @@ contract ApproveAndCallFallBack {
 /**
  * @title Owned
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Owned {
     address public owner;
@@ -160,8 +160,8 @@ contract CityLifePlusToken is ERC20Interface, Pausable {
      * @dev Constructor
      */
     function CityLifePlusToken() public {
-        symbol = &quot;CL+&quot;;
-        name = &quot;CITYLIFE PLUS Token&quot;;
+        symbol = "CL+";
+        name = "CITYLIFE PLUS Token";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

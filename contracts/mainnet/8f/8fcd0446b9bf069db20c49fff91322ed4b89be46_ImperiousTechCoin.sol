@@ -239,8 +239,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract ImperiousTechCoin is StandardToken {
-	string public name = &quot;Imperious Technology&quot;;
-	string public symbol = &quot;IMPS&quot;;
+	string public name = "Imperious Technology";
+	string public symbol = "IMPS";
 	uint8 public decimals = 2;
 	uint public INITIAL_SUPPLY = 45000000;
 

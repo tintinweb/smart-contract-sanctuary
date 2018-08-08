@@ -140,8 +140,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract TimeBoxToken is StandardToken {
 
-  string public constant name = &quot;TimeBox Token&quot;;
-  string public constant symbol = &quot;TBT&quot;;
+  string public constant name = "TimeBox Token";
+  string public constant symbol = "TBT";
   uint8 public constant decimals = 18;
 
 

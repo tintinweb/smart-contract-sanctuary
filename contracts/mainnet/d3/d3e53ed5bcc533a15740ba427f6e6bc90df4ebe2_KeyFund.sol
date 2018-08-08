@@ -58,8 +58,8 @@ contract KeyFund is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;KeyFund&quot;;
-    string public constant symbol = &quot;KEY&quot;;
+    string public constant name = "KeyFund";
+    string public constant symbol = "KEY";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 2000000000e18;

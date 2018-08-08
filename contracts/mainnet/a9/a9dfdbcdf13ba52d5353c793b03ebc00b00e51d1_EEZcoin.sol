@@ -103,8 +103,8 @@ contract EEZcoin is ERC223  {
     mapping (address => uint256) public unlockUnixTime;
     uint  public maxIncrease=20;
     address public target;
-    string internal name_= &quot;EEZcoin&quot;;
-    string internal symbol_ = &quot;EEZ&quot;;
+    string internal name_= "EEZcoin";
+    string internal symbol_ = "EEZ";
     uint8 internal decimals_= 18;
     uint256 internal totalSupply_= 600000000e18;
     uint256 public toGiveBase = 1000e18;

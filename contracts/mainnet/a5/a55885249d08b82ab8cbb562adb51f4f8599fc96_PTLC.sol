@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract PTLC is StandardToken, Ownable {
 
-    string public constant name = &quot;PTLC&quot;;
-    string public constant symbol = &quot;PTLC&quot;;
+    string public constant name = "PTLC";
+    string public constant symbol = "PTLC";
     uint256 public constant decimals = 8;
 
     function PTLC() public {

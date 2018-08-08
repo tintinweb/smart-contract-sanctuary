@@ -15,9 +15,9 @@ contract Lydian {
     function Lydian() {
 
          initialSupply = 5000;
-         name =&quot;lydian&quot;;
+         name ="lydian";
         decimals = 2;
-         symbol = &quot;LYD&quot;;
+         symbol = "LYD";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

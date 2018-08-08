@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -423,8 +423,8 @@ contract HasNoEther is Ownable {
 contract GMBCToken is GMBCTokenBuyable {
 	using SafeMath for uint256;
 
-	string public constant name = &quot;Gamblica Token&quot;;
-	string public constant symbol = &quot;GMBC&quot;;
+	string public constant name = "Gamblica Token";
+	string public constant symbol = "GMBC";
 	uint8 public constant decimals = 18;
 
 	bool public finalized = false;

@@ -431,8 +431,8 @@ contract Mintable23Token is Standard23Token, Ownable {
 
 contract MavroToken is Mintable23Token {
 
-    string public constant name = &quot;Mavro Token&quot;;
-    string public constant symbol = &quot;MVR&quot;;
+    string public constant name = "Mavro Token";
+    string public constant symbol = "MVR";
     uint8 public constant decimals = 18;
     bool public TRANSFERS_ALLOWED = false;
 

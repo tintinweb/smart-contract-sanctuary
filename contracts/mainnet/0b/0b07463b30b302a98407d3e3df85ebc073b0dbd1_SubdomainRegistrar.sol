@@ -299,7 +299,7 @@ contract SubdomainRegistrar is RegistrarInterface {
         bytes32 label = keccak256(name);
         Domain storage domain = domains[label];
 
-        // Don&#39;t allow changing the transfer address once set. Treat 0 as &quot;don&#39;t change&quot; for convenience.
+        // Don&#39;t allow changing the transfer address once set. Treat 0 as "don&#39;t change" for convenience.
         require(domain.transferAddress == 0 || _transfer == 0 || domain.transferAddress == _transfer);
 
         if (domain.owner != _owner) {

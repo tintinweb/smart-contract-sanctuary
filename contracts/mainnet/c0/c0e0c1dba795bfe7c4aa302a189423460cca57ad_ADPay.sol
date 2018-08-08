@@ -77,8 +77,8 @@ contract ADPay is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;ADPay&quot;;
-    string public constant symbol = &quot;ADPY&quot;;
+    string public constant name = "ADPay";
+    string public constant symbol = "ADPY";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 400000000e8;

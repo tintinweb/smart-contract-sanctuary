@@ -29,7 +29,7 @@ contract TokenRecipient {
 
 
 contract Token {
-    string public standard = &quot;Angle Token 0.1&quot;;
+    string public standard = "Angle Token 0.1";
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -114,9 +114,9 @@ contract Token {
 //Business Service Token
 contract AngleToken is Token, Owner {
     uint256 public constant INITIAL_SUPPLY = 100 * 10000 * 10000 * 1 ether; // 1e9 * 1e18
-    string public constant NAME = &quot;Angle Token&quot;; //名称
-    string public constant SYMBOL = &quot;Angle&quot;; // 简称
-    // string public constant STANDARD = &quot;Angle Token 1.0&quot;;
+    string public constant NAME = "Angle Token"; //名称
+    string public constant SYMBOL = "Angle"; // 简称
+    // string public constant STANDARD = "Angle Token 1.0";
     uint8 public constant DECIMALS = 18;
     uint256 public constant BUY = 0; // 用于自动买卖
     uint256 constant RATE = 1 szabo;

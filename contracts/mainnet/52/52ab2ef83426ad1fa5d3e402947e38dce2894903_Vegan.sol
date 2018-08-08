@@ -110,8 +110,8 @@ contract Owned {
 // ------------------------------------------------------------------------
 
     function Vegan() public {
-        symbol = &quot;VEGAN&quot;;
-        name = &quot;Vegan&quot;;
+        symbol = "VEGAN";
+        name = "Vegan";
         decimals = 18;
         _totalSupply = 300000000000000000000000000;
         startDate = now;

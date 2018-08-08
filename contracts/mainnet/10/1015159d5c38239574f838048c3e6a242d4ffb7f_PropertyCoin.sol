@@ -113,8 +113,8 @@ contract PropertyCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PropertyCoin() public {
-        symbol = &quot;PPC&quot;;
-        name = &quot;Property Coin&quot;;
+        symbol = "PPC";
+        name = "Property Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000; 
         balances[0x626dC4b6FA076b7F4f7D206d826D64aF5976a6Ad] = _totalSupply;

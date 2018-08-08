@@ -5,8 +5,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 contract FLEBToken{
     
  address public owner;
- string public name = &quot;FLEBToken&quot;; //Token name
- string public symbol = &quot;FLB&quot;;
+ string public name = "FLEBToken"; //Token name
+ string public symbol = "FLB";
  uint8 public decimals = 18;       //일반적으로 18로 많이 사용.
  uint256 public totalSupply = 0; 
  

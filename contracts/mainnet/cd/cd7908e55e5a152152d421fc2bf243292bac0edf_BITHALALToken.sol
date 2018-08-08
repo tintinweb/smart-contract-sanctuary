@@ -179,8 +179,8 @@ contract StandardToken is BasicToken, ERC20 {
  */
 contract BITHALALToken is StandardToken {
 
-    string public name = &quot;BITHALAL&quot;;
-    string public symbol = &quot;BTH&quot;;
+    string public name = "BITHALAL";
+    string public symbol = "BTH";
     uint public decimals = 8;
     uint public INITIAL_SUPPLY = 10000000000000000; // Initial supply is 100,000,000 BTH
 

@@ -111,8 +111,8 @@ contract MorpheusNetwork is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FeuzingToken() public {
-        symbol = &quot;MRPH&quot;;
-        name = &quot;Morpheus Network&quot;;
+        symbol = "MRPH";
+        name = "Morpheus Network";
         decimals = 18;
         _totalSupply = 510668184970000000000;
         balances[0x292A893D9Ab0d5Fb47cB3EbC57E29886117D2beA] = _totalSupply;

@@ -310,13 +310,13 @@ contract Managed is Owned {
 */
 contract ContractIds {
     // generic
-    bytes32 public constant CONTRACT_FEATURES = &quot;ContractFeatures&quot;;
+    bytes32 public constant CONTRACT_FEATURES = "ContractFeatures";
 
     // bancor logic
-    bytes32 public constant BANCOR_NETWORK = &quot;BancorNetwork&quot;;
-    bytes32 public constant BANCOR_FORMULA = &quot;BancorFormula&quot;;
-    bytes32 public constant BANCOR_GAS_PRICE_LIMIT = &quot;BancorGasPriceLimit&quot;;
-    bytes32 public constant BANCOR_CONVERTER_FACTORY = &quot;BancorConverterFactory&quot;;
+    bytes32 public constant BANCOR_NETWORK = "BancorNetwork";
+    bytes32 public constant BANCOR_FORMULA = "BancorFormula";
+    bytes32 public constant BANCOR_GAS_PRICE_LIMIT = "BancorGasPriceLimit";
+    bytes32 public constant BANCOR_CONVERTER_FACTORY = "BancorConverterFactory";
 }
 
 /**

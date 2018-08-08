@@ -141,8 +141,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract EKKChain is StandardToken {
 
-  string public constant name = &quot;EKK Chain&quot;;
-  string public constant symbol = &quot;EKK&quot;;
+  string public constant name = "EKK Chain";
+  string public constant symbol = "EKK";
   uint8 public constant decimals = 18;
 
 

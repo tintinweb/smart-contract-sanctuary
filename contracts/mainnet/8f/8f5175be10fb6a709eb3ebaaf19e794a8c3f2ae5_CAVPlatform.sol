@@ -855,7 +855,7 @@ contract CAVPlatform is Object, CAVPlatformEmitter {
             uint holderId = _createHolderId(addresses[idx]);
 
             _transferDirect(senderId, holderId, value, _symbol);
-            CAVPlatformEmitter(eventsHistory).emitTransfer(msg.sender, addresses[idx], _symbol, value, &quot;&quot;);
+            CAVPlatformEmitter(eventsHistory).emitTransfer(msg.sender, addresses[idx], _symbol, value, "");
 
             success++;
           }

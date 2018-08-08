@@ -104,8 +104,8 @@ contract CTADevilleToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function CTADevilleToken() public {
-        symbol = &quot;CTA Deville&quot;;
-        name = &quot;Collectible Token Actors Deville&quot;;
+        symbol = "CTA Deville";
+        name = "Collectible Token Actors Deville";
         decimals = 0;
         _totalSupply = 100 * 10**uint(decimals);
         balances[owner] = _totalSupply;

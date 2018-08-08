@@ -73,8 +73,8 @@ contract TazitToken is ERC20Interface, Owned, SafeMath {
     mapping(address => mapping(address => uint)) allowed;
 
     function TazitToken() public {
-        symbol = &quot;TZT&quot;;
-        name = &quot;Tazit&quot;;
+        symbol = "TZT";
+        name = "Tazit";
         decimals = 6;
         _totalSupply = 1000000000000000000;
         balances[msg.sender] = _totalSupply;

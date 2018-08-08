@@ -33,8 +33,8 @@ contract SafeMath {
 }
 
 contract WCNToken is SafeMath{
-    string public name = &quot;World Charge Network&quot;;
-    string public symbol = &quot;WCN&quot;;
+    string public name = "World Charge Network";
+    string public symbol = "WCN";
     uint8 public decimals = 18;
     uint256 public totalSupply = 12 * 10 ** 8 * 10 ** uint256(decimals);
 

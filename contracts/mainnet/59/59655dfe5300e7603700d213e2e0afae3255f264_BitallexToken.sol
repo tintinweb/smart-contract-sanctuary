@@ -229,8 +229,8 @@ contract BitallexToken is PausableToken, BurnableToken {
 
 
   function BitallexToken() public {
-    name = &quot;Bitallex&quot;;
-    symbol = &quot;BAE&quot;;
+    name = "Bitallex";
+    symbol = "BAE";
     totalSupply_ = 200000000 * 10 ** 18;
     balances[msg.sender] = totalSupply_;
   }

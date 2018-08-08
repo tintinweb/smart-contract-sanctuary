@@ -113,8 +113,8 @@ contract Bivacoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Bivacoin() public {
-        symbol = &quot;BIV&quot;;
-        name = &quot;Bivacoin&quot;;
+        symbol = "BIV";
+        name = "Bivacoin";
         decimals = 18;
         _totalSupply = 40000000000000000000000000;
         balances[0x2dBFc3b709b6575CE649749a5D061B09bcD95739] = _totalSupply;

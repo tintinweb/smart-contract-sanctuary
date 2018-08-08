@@ -169,7 +169,7 @@ contract CAVAssetProxy is ERC20 {
      */
     function transfer(address _to, uint _value) returns(bool) {
         if (_to != 0x0) {
-          return _transferWithReference(_to, _value, &quot;&quot;);
+          return _transferWithReference(_to, _value, "");
         }
         else {
             return false;
@@ -231,7 +231,7 @@ contract CAVAssetProxy is ERC20 {
      */
     function transferFrom(address _from, address _to, uint _value) returns(bool) {
         if (_to != 0x0) {
-            return _getAsset().__transferFromWithReference(_from, _to, _value, &quot;&quot;, msg.sender);
+            return _getAsset().__transferFromWithReference(_from, _to, _value, "", msg.sender);
          }
          else {
              return false;

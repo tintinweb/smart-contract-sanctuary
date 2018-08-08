@@ -113,8 +113,8 @@ contract Seele is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Seele() public {
-        symbol = &quot;SEELE&quot;;
-        name = &quot;Seele &quot;;
+        symbol = "SEELE";
+        name = "Seele ";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x2d57365a7ab22425f09D49bB0baFB0426EB8dDF9] = _totalSupply;

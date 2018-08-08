@@ -47,8 +47,8 @@ library SafeMath {
 
 contract OFNOG is ERC20
 {using SafeMath for uint256;
-   string public constant symbol = &quot;OFNOG&quot;;
-     string public constant name = &quot;OFNOG&quot;;
+   string public constant symbol = "OFNOG";
+     string public constant name = "OFNOG";
      uint public constant decimals = 18;
      uint256 public _totalSupply = 500000000 * 10 ** 18; // 500 Million Total Supply including 18 decimal
      
@@ -103,7 +103,7 @@ contract OFNOG is ERC20
          
     // Send _value amount of tokens from address _from to address _to
      // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-     // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+     // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
      // fees in sub-currencies; the command should fail unless the _from account has
      // deliberately authorized the sender of the message via some mechanism; we propose
      // these standardized APIs for approval:

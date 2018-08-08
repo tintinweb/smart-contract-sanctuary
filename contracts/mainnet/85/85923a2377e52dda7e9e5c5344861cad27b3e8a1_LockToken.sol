@@ -221,8 +221,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract LockToken is StandardToken, Ownable {
-    string public name = &quot;Lock Token&quot;;
-    string public symbol = &quot;LOK&quot;;
+    string public name = "Lock Token";
+    string public symbol = "LOK";
     uint8 public decimals = 18;
 
     constructor() public {

@@ -132,8 +132,8 @@ contract StandardToken is ERC20, BasicToken {
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 contract TokenContract is Ownable, StandardToken {
-    string public constant name = &quot;CarVDB&quot;;
-    string public constant symbol = &quot;CAR&quot;;
+    string public constant name = "CarVDB";
+    string public constant symbol = "CAR";
     uint8 public constant decimals = 18;
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

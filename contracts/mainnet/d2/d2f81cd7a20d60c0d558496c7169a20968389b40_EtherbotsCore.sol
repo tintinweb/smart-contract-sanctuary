@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -47,7 +47,7 @@ contract Ownable {
  Copyright (c) 2016 Smart Contract Solutions, Inc.
  Permission is hereby granted, free of charge, to any person obtaining
  a copy of this software and associated documentation files (the
- &quot;Software&quot;), to deal in the Software without restriction, including
+ "Software"), to deal in the Software without restriction, including
  without limitation the rights to use, copy, modify, merge, publish,
  distribute, sublicense, and/or sell copies of the Software, and to
  permit persons to whom the Software is furnished to do so, subject to
@@ -111,16 +111,16 @@ contract ERC721 {
 
     /// @dev ERC-165 (draft) interface signature for itself
     bytes4 internal constant INTERFACE_SIGNATURE_ERC165 =
-        bytes4(keccak256(&quot;supportsInterface(bytes4)&quot;));
+        bytes4(keccak256("supportsInterface(bytes4)"));
 
     /// @dev ERC-165 (draft) interface signature for ERC721
     bytes4 internal constant INTERFACE_SIGNATURE_ERC721 =
-         bytes4(keccak256(&quot;ownerOf(uint256)&quot;)) ^
-         bytes4(keccak256(&quot;countOfDeeds()&quot;)) ^
-         bytes4(keccak256(&quot;countOfDeedsByOwner(address)&quot;)) ^
-         bytes4(keccak256(&quot;deedOfOwnerByIndex(address,uint256)&quot;)) ^
-         bytes4(keccak256(&quot;approve(address,uint256)&quot;)) ^
-         bytes4(keccak256(&quot;takeOwnership(uint256)&quot;));
+         bytes4(keccak256("ownerOf(uint256)")) ^
+         bytes4(keccak256("countOfDeeds()")) ^
+         bytes4(keccak256("countOfDeedsByOwner(address)")) ^
+         bytes4(keccak256("deedOfOwnerByIndex(address,uint256)")) ^
+         bytes4(keccak256("approve(address,uint256)")) ^
+         bytes4(keccak256("takeOwnership(uint256)"));
 
     function supportsInterface(bytes4 _interfaceID) external pure returns (bool);
 
@@ -146,9 +146,9 @@ contract ERC721 {
 contract ERC721Metadata is ERC721 {
 
     bytes4 internal constant INTERFACE_SIGNATURE_ERC721Metadata =
-        bytes4(keccak256(&quot;name()&quot;)) ^
-        bytes4(keccak256(&quot;symbol()&quot;)) ^
-        bytes4(keccak256(&quot;deedUri(uint256)&quot;));
+        bytes4(keccak256("name()")) ^
+        bytes4(keccak256("symbol()")) ^
+        bytes4(keccak256("deedUri(uint256)"));
 
     function name() public pure returns (string n);
     function symbol() public pure returns (string s);
@@ -160,11 +160,11 @@ contract ERC721Metadata is ERC721 {
     ///  * The URL points to a valid JSON file format (ECMA-404 2nd ed.)
     ///  * The JSON base element is an object
     ///  then these names of the base element SHALL have special meaning:
-    ///  * &quot;name&quot;: A string identifying the item to which `_deedId` grants
+    ///  * "name": A string identifying the item to which `_deedId` grants
     ///    ownership
-    ///  * &quot;description&quot;: A string detailing the item to which `_deedId` grants
+    ///  * "description": A string detailing the item to which `_deedId` grants
     ///    ownership
-    ///  * &quot;image&quot;: A URI pointing to a file of image/* mime type representing
+    ///  * "image": A URI pointing to a file of image/* mime type representing
     ///    the item to which `_deedId` grants ownership
     ///  Wallets and exchanges MAY display this to the end user.
     ///  Consider making any images at a width between 320 and 1080 pixels and
@@ -179,9 +179,9 @@ contract ERC721Enumerable is ERC721Metadata {
 
     /// @dev ERC-165 (draft) interface signature for ERC721
     bytes4 internal constant INTERFACE_SIGNATURE_ERC721Enumerable =
-        bytes4(keccak256(&quot;deedByIndex()&quot;)) ^
-        bytes4(keccak256(&quot;countOfOwners()&quot;)) ^
-        bytes4(keccak256(&quot;ownerByIndex(uint256)&quot;));
+        bytes4(keccak256("deedByIndex()")) ^
+        bytes4(keccak256("countOfOwners()")) ^
+        bytes4(keccak256("ownerByIndex(uint256)"));
 
     function deedByIndex(uint256 _index) external view returns (uint256 _deedId);
     function countOfOwners() external view returns (uint256 _count);
@@ -191,12 +191,12 @@ contract ERC721Enumerable is ERC721Metadata {
 contract ERC721Original {
 
     bytes4 constant INTERFACE_SIGNATURE_ERC721Original =
-        bytes4(keccak256(&quot;totalSupply()&quot;)) ^
-        bytes4(keccak256(&quot;balanceOf(address)&quot;)) ^
-        bytes4(keccak256(&quot;ownerOf(uint256)&quot;)) ^
-        bytes4(keccak256(&quot;approve(address,uint256)&quot;)) ^
-        bytes4(keccak256(&quot;takeOwnership(uint256)&quot;)) ^
-        bytes4(keccak256(&quot;transfer(address,uint256)&quot;));
+        bytes4(keccak256("totalSupply()")) ^
+        bytes4(keccak256("balanceOf(address)")) ^
+        bytes4(keccak256("ownerOf(uint256)")) ^
+        bytes4(keccak256("approve(address,uint256)")) ^
+        bytes4(keccak256("takeOwnership(uint256)")) ^
+        bytes4(keccak256("transfer(address,uint256)"));
 
     // Core functions
     function implementsERC721() public pure returns (bool);
@@ -423,11 +423,11 @@ contract EtherbotsNFT is EtherbotsBase, ERC721Enumerable, ERC721Original {
     }
 
     function name() public pure returns (string _name) {
-      return &quot;Etherbots&quot;;
+      return "Etherbots";
     }
 
     function symbol() public pure returns (string _smbol) {
-      return &quot;ETHBOT&quot;;
+      return "ETHBOT";
     }
 
     // total supply of parts --> as no parts are ever deleted, this is simply
@@ -690,7 +690,7 @@ contract EtherbotsNFT is EtherbotsBase, ERC721Enumerable, ERC721Original {
         return c;
     }
 
-    string metadataBase = &quot;https://api.etherbots.io/api/&quot;;
+    string metadataBase = "https://api.etherbots.io/api/";
 
 
     function setMetadataBase(string _base) external onlyOwner {
@@ -704,10 +704,10 @@ contract EtherbotsNFT is EtherbotsBase, ERC721Enumerable, ERC721Original {
         return strConcat(strConcat(
             metadataBase,
             uintToString(uint(p.partType)),
-            &quot;/&quot;,
+            "/",
             uintToString(uint(p.partSubType)),
-            &quot;/&quot;
-        ), uintToString(uint(p.rarity)), &quot;&quot;, &quot;&quot;, &quot;&quot;);
+            "/"
+        ), uintToString(uint(p.rarity)), "", "", "");
     }
 
     function strConcat(string _a, string _b, string _c, string _d, string _e) internal pure returns (string){
@@ -734,11 +734,11 @@ contract EtherbotsNFT is EtherbotsBase, ERC721Enumerable, ERC721Original {
     ///  * The URL points to a valid JSON file format (ECMA-404 2nd ed.)
     ///  * The JSON base element is an object
     ///  then these names of the base element SHALL have special meaning:
-    ///  * &quot;name&quot;: A string identifying the item to which `_deedId` grants
+    ///  * "name": A string identifying the item to which `_deedId` grants
     ///    ownership
-    ///  * &quot;description&quot;: A string detailing the item to which `_deedId` grants
+    ///  * "description": A string detailing the item to which `_deedId` grants
     ///    ownership
-    ///  * &quot;image&quot;: A URI pointing to a file of image/* mime type representing
+    ///  * "image": A URI pointing to a file of image/* mime type representing
     ///    the item to which `_deedId` grants ownership
     ///  Wallets and exchanges MAY display this to the end user.
     ///  Consider making any images at a width between 320 and 1080 pixels and
@@ -1026,7 +1026,7 @@ contract NFTAuctionBase is Pausable {
             uint256 auctioneerCut = _computeFee(price);
             uint256 sellerProceeds = price - auctioneerCut;
 
-            PrintEvent(&quot;Seller, proceeds&quot;, seller, sellerProceeds);
+            PrintEvent("Seller, proceeds", seller, sellerProceeds);
 
             // Pay the seller
             seller.transfer(sellerProceeds);
@@ -1035,7 +1035,7 @@ contract NFTAuctionBase is Pausable {
         // Calculate excess funds and return to buyer.
         uint256 purchaseExcess = _purchaseAmount - price;
 
-        PrintEvent(&quot;Sender, excess&quot;, msg.sender, purchaseExcess);
+        PrintEvent("Sender, excess", msg.sender, purchaseExcess);
         // Return any excess funds. Reentrancy again prevented by deleting auction.
         msg.sender.transfer(purchaseExcess);
 
@@ -1145,7 +1145,7 @@ contract DutchAuction is NFTAuctionBase, EtherbotsPrivileges {
             uint64(_duration),
             uint64(now) //seconds uint 
         );
-        PrintEvent(&quot;Auction Start&quot;, 0x0, auction.start);
+        PrintEvent("Auction Start", 0x0, auction.start);
         _newAuction(_partId, auction);
     }
 
@@ -1635,7 +1635,7 @@ contract NewCratePreSale {
     mapping (address => uint[]) public userToRobots; 
 
     function _migrate(uint _index) external onlyOwner {
-        bytes4 selector = bytes4(keccak256(&quot;setData()&quot;));
+        bytes4 selector = bytes4(keccak256("setData()"));
         address a = migrators[_index];
         require(a.delegatecall(selector));
     }
@@ -1882,10 +1882,10 @@ contract EtherbotsMigrations is Mint {
 
   
     // Element: copy for MIGRATIONS ONLY.
-    string constant private DEFENCE_ELEMENT_BY_ID = &quot;12434133214&quot;;
-    string constant private MELEE_ELEMENT_BY_ID = &quot;31323422111144&quot;;
-    string constant private BODY_ELEMENT_BY_ID = &quot;212343114234111&quot;;
-    string constant private TURRET_ELEMENT_BY_ID = &quot;43212113434&quot;;
+    string constant private DEFENCE_ELEMENT_BY_ID = "12434133214";
+    string constant private MELEE_ELEMENT_BY_ID = "31323422111144";
+    string constant private BODY_ELEMENT_BY_ID = "212343114234111";
+    string constant private TURRET_ELEMENT_BY_ID = "43212113434";
 
     // Once only function.
     // Transfers all pending and expired crates in the old contract

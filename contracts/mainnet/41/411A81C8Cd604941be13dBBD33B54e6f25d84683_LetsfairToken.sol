@@ -304,8 +304,8 @@ contract SchedulableToken is StandardToken, BurnableToken {
  */
  contract LetsfairToken is SchedulableToken {
 
-  string public constant name = &quot;Letsfair&quot;;
-  string public constant symbol = &quot;LTF&quot;;
+  string public constant name = "Letsfair";
+  string public constant symbol = "LTF";
   uint8 public constant decimals = 18;
 
   address _beneficiary = 0xe0F158B382F30A1eccecb5B67B1cf7EB92B5f1E4;

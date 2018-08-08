@@ -169,8 +169,8 @@ contract ERC721 {
 
 contract TittyOwnership is TittyBase, ERC721 {
 
-    string public name = &quot;CryptoTittes&quot;;
-    string public symbol = &quot;CT&quot;;
+    string public name = "CryptoTittes";
+    string public symbol = "CT";
 
     function implementsERC721() public pure returns (bool) {
         return true;
@@ -235,7 +235,7 @@ contract TittyPurchase is TittyOwnership {
         wallet = _wallet;
         boat = _boat;
 
-        createTitty(0, &quot;unissex&quot;, 1000000000, address(0), &quot;genesis&quot;);
+        createTitty(0, "unissex", 1000000000, address(0), "genesis");
     }
 
     function purchaseNew(uint256 _id, string _name, string _gender, uint256 _price) public payable {

@@ -98,8 +98,8 @@ contract CeffylToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CeffylToken() public {
-        symbol = &quot;CFY&quot;;
-        name = &quot;Ceffyl Token&quot;;
+        symbol = "CFY";
+        name = "Ceffyl Token";
         decimals = 18;
         _totalSupply = 400000000 * 10**uint(decimals);
         balances[0x0B848AF1342A9530e9B2Cfc29b720fF3E823ff23] = _totalSupply;

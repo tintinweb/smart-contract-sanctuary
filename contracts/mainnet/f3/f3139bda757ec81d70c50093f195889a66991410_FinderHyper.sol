@@ -16,8 +16,8 @@ contract ERC20Interface {
 // penispenispenispenis
 // YOU get a penis, and YOU get a penis, and YOU get a penis!
 contract FinderHyper is ERC20Interface {
-    string public constant symbol = &quot;FH&quot;;
-    string public constant name = &quot;Finder Hyper&quot;;
+    string public constant symbol = "FH";
+    string public constant name = "Finder Hyper";
     uint8 public constant decimals = 2;
 
     uint256 _totalSupply = 0;

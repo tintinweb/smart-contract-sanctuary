@@ -101,8 +101,8 @@ contract NSCToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function NSCToken() public {
-        symbol = &quot;NSC&quot;;
-        name = &quot;NewsCoin&quot;;
+        symbol = "NSC";
+        name = "NewsCoin";
         decimals = 18;
         _totalSupply = 10000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

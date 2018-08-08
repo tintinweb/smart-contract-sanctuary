@@ -600,7 +600,7 @@ contract ExchangeCore is ReentrancyGuarded, Ownable {
         pure
         returns (bytes32)
     {
-        return keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hashOrder(order));
+        return keccak256("\x19Ethereum Signed Message:\n32", hashOrder(order));
     }
 
     /**
@@ -1385,11 +1385,11 @@ contract Exchange is ExchangeCore {
 
 contract WyvernExchange is Exchange {
 
-    string public constant name = &quot;Project Wyvern Exchange&quot;;
+    string public constant name = "Project Wyvern Exchange";
 
-    string public constant version = &quot;2.2&quot;;
+    string public constant version = "2.2";
 
-    string public constant codename = &quot;Lambton Worm&quot;;
+    string public constant codename = "Lambton Worm";
 
     /**
      * @dev Initialize a WyvernExchange instance
@@ -1554,7 +1554,7 @@ contract ProxyRegistry is Ownable {
         returns (OwnableDelegateProxy proxy)
     {
         require(proxies[msg.sender] == address(0));
-        proxy = new OwnableDelegateProxy(msg.sender, delegateProxyImplementation, abi.encodeWithSignature(&quot;initialize(address,address)&quot;, msg.sender, address(this)));
+        proxy = new OwnableDelegateProxy(msg.sender, delegateProxyImplementation, abi.encodeWithSignature("initialize(address,address)", msg.sender, address(this)));
         proxies[msg.sender] = proxy;
         return proxy;
     }

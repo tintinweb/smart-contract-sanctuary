@@ -14,8 +14,8 @@ contract Bam {
     mapping (address => mapping (address => uint256)) allowed;
 
     string public standard = &#39;Baikal Mining&#39;;
-    string public constant name = &quot;Baikal Mining&quot;;
-    string public constant symbol = &quot;BAM&quot;;
+    string public constant name = "Baikal Mining";
+    string public constant symbol = "BAM";
     uint   public constant decimals = 18;
     uint   public constant totalSupply = 34550000 * 1000000000000000000;
     

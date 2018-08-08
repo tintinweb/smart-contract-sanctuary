@@ -161,8 +161,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract MaspToken is StandardToken {
-    string public name = &quot;MaspToken&quot;;
-    string public symbol = &quot;MASP&quot;;
+    string public name = "MaspToken";
+    string public symbol = "MASP";
     uint public decimals = 18;
     uint public constant INITIAL_SUPPLY = 102228579 * (10 ** uint256(decimals));
 

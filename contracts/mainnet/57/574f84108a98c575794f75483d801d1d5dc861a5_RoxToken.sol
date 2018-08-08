@@ -201,10 +201,10 @@ contract ERC20Token is ERC20TokenInterface, SafeMath, Owned, Lockable {
 contract RoxToken is ERC20Token {
 
     constructor() public {
-        name = &quot;Robotina token&quot;;
-        symbol = &quot;ROX&quot;;
+        name = "Robotina token";
+        symbol = "ROX";
         decimals = 18;
         mintingContractAddress = 0x9532014DAdb2C980e43fE4665C86c2c0B1b4603D;
-        lockFromSelf(0, &quot;Lock before crowdsale starts&quot;);
+        lockFromSelf(0, "Lock before crowdsale starts");
     }
 }

@@ -71,8 +71,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract SvinChainToken is StandardToken 
 {
-    string public name = &quot;SvinChainToken&quot;;
-    string public symbol = &quot;SVIN&quot;;
+    string public name = "SvinChainToken";
+    string public symbol = "SVIN";
     uint public decimals = 18;
     uint public totalSupply = 9600 * 1000 * 1000 ether;
 

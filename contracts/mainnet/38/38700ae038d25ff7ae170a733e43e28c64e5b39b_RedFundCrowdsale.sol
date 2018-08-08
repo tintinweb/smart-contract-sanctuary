@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -275,8 +275,8 @@ contract MintableToken is StandardToken, Ownable {
 // Author: Eugenio Noyola Leon www.k3no.com
 
 contract RedFundToken is MintableToken {
-  string public name = &quot;RED FUND TOKEN&quot;;
-  string public symbol = &quot;REDF&quot;;
+  string public name = "RED FUND TOKEN";
+  string public symbol = "REDF";
   uint8 public decimals = 18;
 }
 

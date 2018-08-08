@@ -54,7 +54,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -108,8 +108,8 @@ contract ProofPresaleToken is ERC20, Ownable {
   mapping(address => uint) balances;
   mapping (address => mapping (address => uint)) allowed;
 
-  string public constant name = &quot;Proof Presale Token&quot;;
-  string public constant symbol = &quot;PPT&quot;;
+  string public constant name = "Proof Presale Token";
+  string public constant symbol = "PPT";
   uint8 public constant decimals = 18;
   bool public mintingFinished = false;
 

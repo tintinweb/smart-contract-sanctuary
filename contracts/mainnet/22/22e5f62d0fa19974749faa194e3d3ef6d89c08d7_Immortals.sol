@@ -53,9 +53,9 @@ contract ImmortalToken is Owned, SafeMath, TokenERC20 {
     
     uint8 public constant decimals = 0;
     uint8 public constant totalSupply = 100;
-    string public constant name = &quot;Immortal&quot;;
-    string public constant symbol = &quot;IMT&quot;;
-    string public constant version = &quot;1.0.1&quot;;
+    string public constant name = "Immortal";
+    string public constant symbol = "IMT";
+    string public constant version = "1.0.1";
 
     function transfer(address _to, uint256 _value) returns (bool success) {
         if (balances[msg.sender] < _value) {

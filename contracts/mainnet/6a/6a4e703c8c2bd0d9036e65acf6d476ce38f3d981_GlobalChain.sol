@@ -113,8 +113,8 @@ contract GlobalChain is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GlobalChain() public {
-        symbol = &quot;GCN&quot;;
-        name = &quot;GlobalChain&quot;;
+        symbol = "GCN";
+        name = "GlobalChain";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0xFfB2072781894F9b9a48c7a8A9e6C42885d4a7d5] = _totalSupply;

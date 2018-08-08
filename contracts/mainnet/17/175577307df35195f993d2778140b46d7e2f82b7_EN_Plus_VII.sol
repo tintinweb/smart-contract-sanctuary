@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	EN_Plus_VII				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	EN_Plus_VII		&quot;	;
-	string	public	constant	symbol =	&quot;	ENPVII		&quot;	;
+	string	public	constant	name =	"	EN_Plus_VII		"	;
+	string	public	constant	symbol =	"	ENPVII		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

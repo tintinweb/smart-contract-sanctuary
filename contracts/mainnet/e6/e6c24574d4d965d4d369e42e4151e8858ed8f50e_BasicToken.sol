@@ -146,8 +146,8 @@ contract Ownable {
 }
 
 contract COSHACNYToken is StandardToken, Ownable {
-    string constant public name = &quot;COSHA-CNY&quot;;
-    string constant public symbol = &quot;CCNY&quot;;
+    string constant public name = "COSHA-CNY";
+    string constant public symbol = "CCNY";
     uint8 constant public decimals = 4;
     bool public isLocked = true;
 

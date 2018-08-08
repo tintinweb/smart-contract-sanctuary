@@ -451,8 +451,8 @@ contract EmontFrenzy is BasicAccessControl {
     }
     
     // some meta data
-    string public constant name = &quot;EmontFrenzy&quot;;
-    string public constant symbol = &quot;EMONF&quot;;
+    string public constant name = "EmontFrenzy";
+    string public constant symbol = "EMONF";
 
     function totalSupply() public view returns (uint256) {
         return totalFish;

@@ -98,8 +98,8 @@ contract shekel is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function shekel() public {
-        symbol = &quot;skl&quot;;
-        name = &quot;shekel&quot;;
+        symbol = "skl";
+        name = "shekel";
         decimals = 6;
         _totalSupply = 1000000000000;
         balances[0xE15902055f380BbB907705054800c3f5Bf2Cf72B] = _totalSupply;

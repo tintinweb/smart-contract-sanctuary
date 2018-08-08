@@ -184,7 +184,7 @@ contract StandardToken is ERC20, BasicToken {
     */
     function approve(address _spender, uint256 _value) public returns (bool) {
         // avoid race condition 
-        require((_value == 0) || (allowed[msg.sender][_spender] == 0), &quot;reset allowance to 0 before change it&#39;s value.&quot;);
+        require((_value == 0) || (allowed[msg.sender][_spender] == 0), "reset allowance to 0 before change it&#39;s value.");
         allowed[msg.sender][_spender] = _value;
         emit Approval(msg.sender, _spender, _value);
         return true;
@@ -219,7 +219,7 @@ contract KHToken_StandardToken is StandardToken {
 
     // region{Constructor}
     // note : [(final)totalSupply] >> claimAmount * 10 ** decimals
-    // example : args << &quot;The Kh Token No.X&quot;, &quot;KHTX&quot;, &quot;10000000000&quot;, &quot;18&quot;
+    // example : args << "The Kh Token No.X", "KHTX", "10000000000", "18"
     constructor(
         string _token_name, 
         string _symbol, 
@@ -246,7 +246,7 @@ contract KHToken_StandardToken_U is StandardToken {
 
     // region{Constructor}
     // note : [(final)totalSupply] >> claimAmount * 10 ** decimals
-    // example : args << &quot;The Kh Token No.X&quot;, &quot;KHTX&quot;, &quot;10000000000&quot;, &quot;18&quot;
+    // example : args << "The Kh Token No.X", "KHTX", "10000000000", "18"
     constructor(
         string _token_name, 
         string _symbol, 

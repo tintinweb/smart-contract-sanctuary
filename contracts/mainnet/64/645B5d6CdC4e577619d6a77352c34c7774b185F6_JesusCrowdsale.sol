@@ -150,7 +150,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -311,10 +311,10 @@ contract TokenDestructible is Ownable {
 
 contract JesusCoin is StandardToken, Ownable, TokenDestructible {
 
-  string public name = &quot;Jesus Coin&quot;;
+  string public name = "Jesus Coin";
   uint8 public decimals = 18;
-  string public symbol = &quot;JC&quot;;
-  string public version = &quot;0.1&quot;;
+  string public symbol = "JC";
+  string public version = "0.1";
 
   event Mint(address indexed to, uint256 amount);
   event MintFinished();

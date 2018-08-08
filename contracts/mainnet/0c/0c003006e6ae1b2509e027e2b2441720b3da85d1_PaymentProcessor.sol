@@ -5,7 +5,7 @@ pragma solidity 0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -106,7 +106,7 @@ contract Contactable is Ownable{
  */
 contract MerchantDealsHistory is Contactable, Restricted {
 
-    string constant VERSION = &quot;0.3&quot;;
+    string constant VERSION = "0.3";
 
     ///  Merchant identifier hash
     bytes32 public merchantIdHash;
@@ -305,7 +305,7 @@ contract Pausable is Ownable {
 
 contract MerchantWallet is Pausable, SafeDestructible, Contactable, Restricted {
 
-    string constant VERSION = &quot;0.3&quot;;
+    string constant VERSION = "0.3";
 
     /// Address of merchant&#39;s account, that can withdraw from wallet
     address public merchantAccount;
@@ -502,7 +502,7 @@ contract MonethaGateway is Pausable, Contactable, Destructible, Restricted {
 
     using SafeMath for uint256;
     
-    string constant VERSION = &quot;0.4&quot;;
+    string constant VERSION = "0.4";
 
     /**
      *  Fee permille of Monetha fee.
@@ -600,7 +600,7 @@ contract PaymentProcessor is Pausable, Destructible, Contactable, Restricted {
 
     using SafeMath for uint256;
 
-    string constant VERSION = &quot;0.4&quot;;
+    string constant VERSION = "0.4";
 
     /**
      *  Fee permille of Monetha fee.
@@ -899,6 +899,6 @@ contract PaymentProcessor is Pausable, Destructible, Contactable, Restricted {
         );
 
         //update parties Reputation
-        merchantWallet.setCompositeReputation(&quot;total&quot;, _merchantReputation);
+        merchantWallet.setCompositeReputation("total", _merchantReputation);
     }
 }

@@ -66,8 +66,8 @@ contract BineuroToken is Ownable { //ERC - 20 token contract
   // Triggered whenever approve(address _spender, uint256 _value) is called.
   event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
-  string public constant symbol = &quot;BNR&quot;;
-  string public constant name = &quot;BiNeuro&quot;;
+  string public constant symbol = "BNR";
+  string public constant name = "BiNeuro";
   uint8 public constant decimals = 3;
   uint256 _totalSupply = (uint256)(850000000).mul((uint256)(10).pow(decimals));
 

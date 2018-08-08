@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------------
-     // CashTron Currency Token &quot;MYRC&quot; (Is Not Bank Legal Money)
+     // CashTron Currency Token "MYRC" (Is Not Bank Legal Money)
      // USDC/EURC/AUDC/CADC/NZDC/RUBC/CNYC/SGDC/PTPC/IDRC/#MYRC/THBC/WNDC/BDTC
      // CashTron @ 2018 CashTron.io  CashTron.co
      //--------------------------------------------------------------------------------
@@ -228,8 +228,8 @@ contract BurnableToken is StandardToken, Ownable {
 contract CashTron is BurnableToken {
     using SafeMath for uint256;
 
-    string public constant name = &quot;CashTron&quot;;
-    string public constant symbol = &quot;MYRC&quot;;
+    string public constant name = "CashTron";
+    string public constant symbol = "MYRC";
     uint8 public constant decimals = 8;
     uint256 public constant INITIAL_SUPPLY = 1000000000;
 

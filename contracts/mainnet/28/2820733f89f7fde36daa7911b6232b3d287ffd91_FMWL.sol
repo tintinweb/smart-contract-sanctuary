@@ -112,8 +112,8 @@ contract FMWL is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FMWL() public {
-        symbol = &quot;FMWL&quot;;
-        name = &quot; from Menton with Love – the world 1st Ethereum funded documentary&quot;;
+        symbol = "FMWL";
+        name = " from Menton with Love – the world 1st Ethereum funded documentary";
         decimals = 2;
         _totalSupply = 100000000;
         balances[0x8c9aA1F605d7A7038d6111df1b3A6d4c033DF3a9] = _totalSupply;

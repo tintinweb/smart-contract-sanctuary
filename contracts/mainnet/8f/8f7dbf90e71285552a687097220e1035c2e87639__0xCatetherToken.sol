@@ -172,16 +172,16 @@ contract _0xCatetherToken is ERC20Interface, EIP918Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public{
-        symbol = &quot;0xCATE&quot;;
-        name = &quot;0xCatether Token&quot;;
+        symbol = "0xCATE";
+        name = "0xCatether Token";
         
         decimals = 4;
         epochCount = 0;
         _totalSupply = 1337000000*10**uint(decimals); 
         
         targetForEpoch[epochCount] = _MAXIMUM_TARGET;
-        challengeNumber = &quot;GENESIS_BLOCK&quot;;
-        solutionForChallenge[challengeNumber] = &quot;42&quot;; // ahah yes
+        challengeNumber = "GENESIS_BLOCK";
+        solutionForChallenge[challengeNumber] = "42"; // ahah yes
         timeStampForEpoch[epochCount] = block.timestamp;
         latestDifficultyPeriodStarted = block.number;
         

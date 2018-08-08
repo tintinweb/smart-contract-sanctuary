@@ -113,8 +113,8 @@ contract PAN is UnboundedRegularToken {
 
     uint public totalSupply = 10*10**16;
     uint8 constant public decimals = 8;
-    string constant public name = &quot;PalletOne Token&quot;;
-    string constant public symbol = &quot;PAN&quot;;
+    string constant public name = "PalletOne Token";
+    string constant public symbol = "PAN";
 
     function PAN() {
         balances[msg.sender] = totalSupply;

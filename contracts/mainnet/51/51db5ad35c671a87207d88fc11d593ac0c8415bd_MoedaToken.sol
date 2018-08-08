@@ -33,7 +33,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -220,8 +220,8 @@ contract MigrationAgent {
 /// @title Moeda Loyalty Points token contract
 /// @author Erik Mossberg
 contract MoedaToken is StandardToken, Ownable, HasNoTokens {
-  string public constant name = &quot;Moeda Loyalty Points&quot;;
-  string public constant symbol = &quot;MDA&quot;;
+  string public constant name = "Moeda Loyalty Points";
+  string public constant symbol = "MDA";
   uint8 public constant decimals = 18;
 
   // The migration agent is used to be to allow opt-in transfer of tokens to a

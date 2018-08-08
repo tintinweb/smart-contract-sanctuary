@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract MXToken {
     // Public variables of the token
-    string public name = &quot;MX Token&quot;;
-    string public symbol = &quot;MX&quot;;
+    string public name = "MX Token";
+    string public symbol = "MX";
     uint256 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 3*1000*1000*1000*10**decimals;

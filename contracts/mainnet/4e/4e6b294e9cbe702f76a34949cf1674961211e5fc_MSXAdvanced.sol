@@ -41,8 +41,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 20000000000000000000000000;
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Missimx.com Dollar&quot;;
-        symbol = &quot;MSX&quot;;
+        name = "Missimx.com Dollar";
+        symbol = "MSX";
     }
 
     /**

@@ -89,8 +89,8 @@ contract WristFitness is ERC20Interface, Owned, SafeMath {
     constructor() public {                
         balances[msg.sender] = 100000000000000000000000000;
         _totalSupply = 100000000000000000000000000;
-        symbol = &quot;WFIT&quot;;
-        name = &quot;WristFitness&quot;;
+        symbol = "WFIT";
+        name = "WristFitness";
         decimals = 18;
         emit Transfer(address(0), msg.sender, _totalSupply);
     }

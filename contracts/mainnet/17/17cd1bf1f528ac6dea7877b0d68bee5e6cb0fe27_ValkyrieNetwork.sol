@@ -78,8 +78,8 @@ contract ERC20Standard is BasicToken {
   }
 }
 contract ValkyrieNetwork is ERC20Standard {
-    string public constant name = &quot;ValkyrieNetwork&quot;;
-    string public constant symbol = &quot;VKN&quot;;
+    string public constant name = "ValkyrieNetwork";
+    string public constant symbol = "VKN";
     uint8 public constant decimals = 18;
     uint256 public constant maxSupply = 250000000 * (10 ** uint256(decimals));
     uint256 public VKNToEth;

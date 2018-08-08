@@ -46,8 +46,8 @@ contract x32323 is owned{
     ) public {
 	totalSupply = 1000000000 * 100 ;
     	balanceOf[msg.sender] = totalSupply ;
-        name = &quot;Leimen coin&quot;;
-        symbol = &quot;Lem&quot;;         
+        name = "Leimen coin";
+        symbol = "Lem";         
     }
     
 //管理權限//

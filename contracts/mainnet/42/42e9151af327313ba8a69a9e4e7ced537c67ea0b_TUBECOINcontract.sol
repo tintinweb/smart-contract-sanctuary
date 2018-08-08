@@ -113,8 +113,8 @@ contract TUBECOINcontract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TUBECOINcontract() public {
-        symbol = &quot;TUBECOINMONEY&quot;;
-        name = &quot;TUBE COIN MONEY&quot;;
+        symbol = "TUBECOINMONEY";
+        name = "TUBE COIN MONEY";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0x48E91085fCdcE19d0F20856B9E19d68eB4BdE5fC] = _totalSupply; //MEW address here

@@ -113,8 +113,8 @@ contract Talent is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Talent() public {
-        symbol = &quot;TTX&quot;;
-        name = &quot;Talent&quot;;
+        symbol = "TTX";
+        name = "Talent";
         decimals = 18;
         _totalSupply = 500000000000000000000000000;
         balances[0x791a21bF07a26437513C510C336Cc7F5c8d1Fb2d] = _totalSupply;

@@ -18,7 +18,7 @@ contract	LLV_311_EDIT_4		{
 // 1 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_1	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_1	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_1	(	string	newLLV_edit_1	)	public		{	
 		inLLV_edit_1	=	newLLV_edit_1	;					
@@ -33,7 +33,7 @@ contract	LLV_311_EDIT_4		{
 // 2 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_2	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_2	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_2	(	string	newLLV_edit_2	)	public		{	
 		inLLV_edit_2	=	newLLV_edit_2	;					
@@ -48,7 +48,7 @@ contract	LLV_311_EDIT_4		{
 // 3 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_3	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_3	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_3	(	string	newLLV_edit_3	)	public		{	
 		inLLV_edit_3	=	newLLV_edit_3	;					
@@ -63,7 +63,7 @@ contract	LLV_311_EDIT_4		{
 // 4 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_4	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_4	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_4	(	string	newLLV_edit_4	)	public		{	
 		inLLV_edit_4	=	newLLV_edit_4	;					
@@ -79,7 +79,7 @@ contract	LLV_311_EDIT_4		{
 // 5 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_5	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_5	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_5	(	string	newLLV_edit_5	)	public		{	
 		inLLV_edit_5	=	newLLV_edit_5	;					
@@ -94,7 +94,7 @@ contract	LLV_311_EDIT_4		{
 // 6 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_6	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_6	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_6	(	string	newLLV_edit_6	)	public		{	
 		inLLV_edit_6	=	newLLV_edit_6	;					
@@ -109,7 +109,7 @@ contract	LLV_311_EDIT_4		{
 // 7 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_7	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_7	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_7	(	string	newLLV_edit_7	)	public		{	
 		inLLV_edit_7	=	newLLV_edit_7	;					
@@ -124,7 +124,7 @@ contract	LLV_311_EDIT_4		{
 // 8 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_8	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_8	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_8	(	string	newLLV_edit_8	)	public		{	
 		inLLV_edit_8	=	newLLV_edit_8	;					
@@ -139,7 +139,7 @@ contract	LLV_311_EDIT_4		{
 // 9 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_9	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_9	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_9	(	string	newLLV_edit_9	)	public		{	
 		inLLV_edit_9	=	newLLV_edit_9	;					
@@ -161,7 +161,7 @@ contract	LLV_311_EDIT_4		{
 // 10 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_10	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_10	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_10	(	string	newLLV_edit_10	)	public		{	
 		inLLV_edit_10	=	newLLV_edit_10	;					
@@ -176,7 +176,7 @@ contract	LLV_311_EDIT_4		{
 // 11 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_11	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_11	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_11	(	string	newLLV_edit_11	)	public		{	
 		inLLV_edit_11	=	newLLV_edit_11	;					
@@ -191,7 +191,7 @@ contract	LLV_311_EDIT_4		{
 // 12 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_12	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_12	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_12	(	string	newLLV_edit_12	)	public		{	
 		inLLV_edit_12	=	newLLV_edit_12	;					
@@ -206,7 +206,7 @@ contract	LLV_311_EDIT_4		{
 // 13 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_13	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_13	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_13	(	string	newLLV_edit_13	)	public		{	
 		inLLV_edit_13	=	newLLV_edit_13	;					
@@ -221,7 +221,7 @@ contract	LLV_311_EDIT_4		{
 // 14 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_14	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_14	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_14	(	string	newLLV_edit_14	)	public		{	
 		inLLV_edit_14	=	newLLV_edit_14	;					
@@ -243,7 +243,7 @@ contract	LLV_311_EDIT_4		{
 // 15 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_15	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_15	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_15	(	string	newLLV_edit_15	)	public		{	
 		inLLV_edit_15	=	newLLV_edit_15	;					
@@ -258,7 +258,7 @@ contract	LLV_311_EDIT_4		{
 // 16 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_16	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_16	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_16	(	string	newLLV_edit_16	)	public		{	
 		inLLV_edit_16	=	newLLV_edit_16	;					
@@ -273,7 +273,7 @@ contract	LLV_311_EDIT_4		{
 // 17 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_17	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_17	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_17	(	string	newLLV_edit_17	)	public		{	
 		inLLV_edit_17	=	newLLV_edit_17	;					
@@ -288,7 +288,7 @@ contract	LLV_311_EDIT_4		{
 // 18 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_18	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_18	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_18	(	string	newLLV_edit_18	)	public		{	
 		inLLV_edit_18	=	newLLV_edit_18	;					
@@ -303,7 +303,7 @@ contract	LLV_311_EDIT_4		{
 // 19 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_19	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_19	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_19	(	string	newLLV_edit_19	)	public		{	
 		inLLV_edit_19	=	newLLV_edit_19	;					
@@ -325,7 +325,7 @@ contract	LLV_311_EDIT_4		{
 // 20 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_20	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_20	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_20	(	string	newLLV_edit_20	)	public		{	
 		inLLV_edit_20	=	newLLV_edit_20	;					
@@ -340,7 +340,7 @@ contract	LLV_311_EDIT_4		{
 // 21 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_21	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_21	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_21	(	string	newLLV_edit_21	)	public		{	
 		inLLV_edit_21	=	newLLV_edit_21	;					
@@ -355,7 +355,7 @@ contract	LLV_311_EDIT_4		{
 // 22 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_22	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_22	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_22	(	string	newLLV_edit_22	)	public		{	
 		inLLV_edit_22	=	newLLV_edit_22	;					
@@ -370,7 +370,7 @@ contract	LLV_311_EDIT_4		{
 // 23 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_23	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_23	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_23	(	string	newLLV_edit_23	)	public		{	
 		inLLV_edit_23	=	newLLV_edit_23	;					
@@ -385,7 +385,7 @@ contract	LLV_311_EDIT_4		{
 // 24 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_24	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_24	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_24	(	string	newLLV_edit_24	)	public		{	
 		inLLV_edit_24	=	newLLV_edit_24	;					
@@ -407,7 +407,7 @@ contract	LLV_311_EDIT_4		{
 // 25 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_25	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_25	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_25	(	string	newLLV_edit_25	)	public		{	
 		inLLV_edit_25	=	newLLV_edit_25	;					
@@ -422,7 +422,7 @@ contract	LLV_311_EDIT_4		{
 // 26 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_26	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_26	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_26	(	string	newLLV_edit_26	)	public	onlyOwner	{	
 		inLLV_edit_26	=	newLLV_edit_26	;					
@@ -437,7 +437,7 @@ contract	LLV_311_EDIT_4		{
 // 27 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_27	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_27	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_27	(	string	newLLV_edit_27	)	public		{	
 		inLLV_edit_27	=	newLLV_edit_27	;					
@@ -452,7 +452,7 @@ contract	LLV_311_EDIT_4		{
 // 28 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_28	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_28	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_28	(	string	newLLV_edit_28	)	public		{	
 		inLLV_edit_28	=	newLLV_edit_28	;					
@@ -467,7 +467,7 @@ contract	LLV_311_EDIT_4		{
 // 29 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_29	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_29	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_29	(	string	newLLV_edit_29	)	public		{	
 		inLLV_edit_29	=	newLLV_edit_29	;					
@@ -489,7 +489,7 @@ contract	LLV_311_EDIT_4		{
 // 30 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_30	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_30	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_30	(	string	newLLV_edit_30	)	public		{	
 		inLLV_edit_30	=	newLLV_edit_30	;					
@@ -504,7 +504,7 @@ contract	LLV_311_EDIT_4		{
 // 31 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_31	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_31	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_31	(	string	newLLV_edit_31	)	public		{	
 		inLLV_edit_31	=	newLLV_edit_31	;					
@@ -519,7 +519,7 @@ contract	LLV_311_EDIT_4		{
 // 32 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_32	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_32	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_32	(	string	newLLV_edit_32	)	public		{	
 		inLLV_edit_32	=	newLLV_edit_32	;					
@@ -534,7 +534,7 @@ contract	LLV_311_EDIT_4		{
 // 33 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_33	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_33	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_33	(	string	newLLV_edit_33	)	public		{	
 		inLLV_edit_33	=	newLLV_edit_33	;					
@@ -549,7 +549,7 @@ contract	LLV_311_EDIT_4		{
 // 34 IN DATA / SET DATA / GET DATA / STRING / PUBLIC / ONLY OWNER / CONSTANT										
 										
 										
-	string	inLLV_edit_34	=	&quot;	une premi&#232;re phrase			&quot;	;	
+	string	inLLV_edit_34	=	"	une premi&#232;re phrase			"	;	
 										
 	function	setLLV_edit_34	(	string	newLLV_edit_34	)	public		{	
 		inLLV_edit_34	=	newLLV_edit_34	;					

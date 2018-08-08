@@ -21,7 +21,7 @@ contract owned {
 
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public; }
 
-// 10000000000, &quot;HuiLian Token&quot;,&quot;HKDH&quot;
+// 10000000000, "HuiLian Token","HKDH"
 contract HKDHToken is owned {
     // Public variables of the token
     string public name;

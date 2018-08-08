@@ -224,8 +224,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract DMECToken is StandardToken {
-    string public name = &quot;Digital Music Eco Chain&quot;;
-    string public symbol = &quot;DM&quot;;
+    string public name = "Digital Music Eco Chain";
+    string public symbol = "DM";
     uint8 public decimals = 18;
     uint256 public INITIAL_SUPPLY = 10000000000000000000000000000;
 

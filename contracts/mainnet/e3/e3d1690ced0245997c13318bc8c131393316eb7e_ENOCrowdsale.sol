@@ -10,7 +10,7 @@ pragma solidity ^0.4.15;
  * source projects in the Ethereum community.
  * For further information: ethino.com, majoolr.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -165,7 +165,7 @@ pragma solidity ^0.4.15;
  * schools, and other community members about the application of blockchain
  * technology. For further information: majoolr.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -257,7 +257,7 @@ library DirectCrowdsaleLib {
 
       self.base.changeTokenPrice(self.tokenPricePoints[index]);
 
-      LogTokenPriceChange(self.base.tokensPerEth,&quot;Token Price has changed!&quot;);
+      LogTokenPriceChange(self.base.tokensPerEth,"Token Price has changed!");
   	}
 
   	uint256 numTokens; //number of tokens that will be purchased
@@ -291,7 +291,7 @@ library DirectCrowdsaleLib {
     (err,newBalance) = self.base.ownerBalance.plus(_amount-leftoverWei);
     require(!err);
 
-    self.base.ownerBalance = newBalance;   // &quot;deposit&quot; the amount
+    self.base.ownerBalance = newBalance;   // "deposit" the amount
 
     // can&#39;t overflow because it will be under the cap
 	  self.base.withdrawTokensMap[msg.sender] += numTokens;
@@ -305,7 +305,7 @@ library DirectCrowdsaleLib {
     return true;
   }
 
-  /*Functions &quot;inherited&quot; from CrowdsaleLib library*/
+  /*Functions "inherited" from CrowdsaleLib library*/
 
   function setTokenExchangeRate(DirectCrowdsaleStorage storage self, uint256 _exchangeRate) returns (bool) {
     return self.base.setTokenExchangeRate(_exchangeRate);
@@ -360,7 +360,7 @@ pragma solidity ^0.4.15;
  * schools, and other community members about the application of blockchain
  * technology. For further information: majoolr.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -454,7 +454,7 @@ pragma solidity ^0.4.15;
  * schools, and other community members about the application of blockchain
  * technology. For further information: majoolr.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -569,7 +569,7 @@ library CrowdsaleLib {
     if (crowdsaleActive(self) && nonZeroPurchase) {
       return true;
     } else {
-      LogErrorMsg(&quot;Invalid Purchase! Check send time and amount of ether.&quot;);
+      LogErrorMsg("Invalid Purchase! Check send time and amount of ether.");
       return false;
     }
   }
@@ -581,13 +581,13 @@ library CrowdsaleLib {
     bool ok;
 
     if (self.withdrawTokensMap[msg.sender] == 0) {
-      LogErrorMsg(&quot;Sender has no tokens to withdraw!&quot;);
+      LogErrorMsg("Sender has no tokens to withdraw!");
       return false;
     }
 
     if (msg.sender == self.owner) {
       if((!crowdsaleEnded(self))){
-        LogErrorMsg(&quot;Owner cannot withdraw extra tokens until after the sale!&quot;);
+        LogErrorMsg("Owner cannot withdraw extra tokens until after the sale!");
         return false;
       } else {
         if(self.percentBurn > 0){
@@ -613,7 +613,7 @@ library CrowdsaleLib {
   function withdrawLeftoverWei(CrowdsaleStorage storage self) returns (bool) {
     require(self.hasContributed[msg.sender] > 0);
     if (self.leftoverWei[msg.sender] == 0) {
-      LogErrorMsg(&quot;Sender has no extra wei to withdraw!&quot;);
+      LogErrorMsg("Sender has no extra wei to withdraw!");
       return false;
     }
 
@@ -629,7 +629,7 @@ library CrowdsaleLib {
   /// @return true if owner withdrew eth
   function withdrawOwnerEth(CrowdsaleStorage storage self) returns (bool) {
     if (!crowdsaleEnded(self)) {
-      LogErrorMsg(&quot;Cannot withdraw owner ether until after the sale!&quot;);
+      LogErrorMsg("Cannot withdraw owner ether until after the sale!");
       return false;
     }
 
@@ -639,7 +639,7 @@ library CrowdsaleLib {
     uint256 amount = self.ownerBalance;
     self.ownerBalance = 0;
     self.owner.transfer(amount);
-    LogOwnerEthWithdrawn(msg.sender,amount,&quot;Crowdsale owner has withdrawn all funds!&quot;);
+    LogOwnerEthWithdrawn(msg.sender,amount,"Crowdsale owner has withdrawn all funds!");
 
     return true;
   }
@@ -693,7 +693,7 @@ library CrowdsaleLib {
     changeTokenPrice(self,_tokenPriceInCents + 1);
     self.rateSet = true;
 
-    LogNoticeMsg(msg.sender,self.tokensPerEth,&quot;Owner has sent the exchange Rate and tokens bought per ETH!&quot;);
+    LogNoticeMsg(msg.sender,self.tokensPerEth,"Owner has sent the exchange Rate and tokens bought per ETH!");
     return true;
   }
 
@@ -737,7 +737,7 @@ pragma solidity ^0.4.15;
  * about the application of blockchain technology.
  * For further information: majoolr.io
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -981,7 +981,7 @@ pragma solidity ^0.4.13;
  * about the application of blockchain technology.
  * For further information: majoolr.io, openzeppelin.org
  *
- * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
  * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
  * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -1009,7 +1009,7 @@ library BasicMathLib {
       }
     }
     if (err)
-      Err(&quot;times func overflow&quot;);
+      Err("times func overflow");
   }
 
   /// @dev Divides two numbers but checks for 0 in the divisor first.
@@ -1027,7 +1027,7 @@ library BasicMathLib {
         return(mload(0x40),0x40)
       }
     }
-    Err(&quot;tried to divide by zero&quot;);
+    Err("tried to divide by zero");
     return (true, 0);
   }
 
@@ -1047,7 +1047,7 @@ library BasicMathLib {
       }
     }
     if (err)
-      Err(&quot;plus func overflow&quot;);
+      Err("plus func overflow");
   }
 
   /// @dev Subtracts two numbers and checks for underflow before returning.
@@ -1066,6 +1066,6 @@ library BasicMathLib {
       }
     }
     if (err)
-      Err(&quot;minus func underflow&quot;);
+      Err("minus func underflow");
   }
 }

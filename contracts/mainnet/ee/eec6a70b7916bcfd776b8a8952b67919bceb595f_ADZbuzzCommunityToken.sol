@@ -114,8 +114,8 @@ contract ADZbuzzCommunityToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ADZbuzzCommunityToken() public {
-        symbol = &quot;ACT257039&quot;;
-        name = &quot;ADZbuzz Ancientpages.com Community Token&quot;;
+        symbol = "ACT257039";
+        name = "ADZbuzz Ancientpages.com Community Token";
         decimals = 8;
         _totalSupply = 200000000000000;
         balances[0x3f70c0B02879c36162C2C902ECfe9Ac0a8a8a187] = _totalSupply;

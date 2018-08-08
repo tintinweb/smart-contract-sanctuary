@@ -5,7 +5,7 @@
 
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the
-    &quot;Software&quot;), to deal in the Software without restriction, including
+    "Software"), to deal in the Software without restriction, including
     without limitation the rights to use, copy, modify, merge, publish,
     distribute, sublicense, and/or sell copies of the Software, and to
     permit persons to whom the Software is furnished to do so, subject to
@@ -14,7 +14,7 @@
     The above copyright notice and this permission notice shall be included
     in all copies or substantial portions of the Software.
 
-    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
     OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
     MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
     IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -557,8 +557,8 @@ contract SmartToken is Mintable {
 /// @title ERC20 token. Metronome token 
 contract METToken is Token {
 
-    string public constant name = &quot;Metronome&quot;;
-    string public constant symbol = &quot;MET&quot;;
+    string public constant name = "Metronome";
+    string public constant symbol = "MET";
     uint8 public constant decimals = 18;
 
     bool public transferAllowed;
@@ -989,7 +989,7 @@ contract Auctions is Pricer, Owned {
     bool public initialized;
     uint public globalSupplyAfterPercentageLogic = 52598080 * METDECMULT;
     uint public constant AUCTION_WHEN_PERCENTAGE_LOGIC_STARTS = 14791;
-    bytes8 public chain = &quot;ETH&quot;;
+    bytes8 public chain = "ETH";
     event LogAuctionFundsIn(address indexed sender, uint amount, uint tokens, uint purchasePrice, uint refund);
 
     function Auctions() public {
@@ -1391,7 +1391,7 @@ contract Auctions is Pricer, Owned {
     function prepareAuctionForNonOGChain() public {
         require(msg.sender == address(token.tokenPorter()) || msg.sender == address(token));
         require(token.totalSupply() == 0);
-        require(chain != &quot;ETH&quot;);
+        require(chain != "ETH");
         lastPurchaseTick = currentTick();
     }
 

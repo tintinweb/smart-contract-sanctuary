@@ -58,8 +58,8 @@ contract HIT is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Hi Token&quot;;
-    string public constant symbol = &quot;HIT&quot;;
+    string public constant name = "Hi Token";
+    string public constant symbol = "HIT";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 1000000000e18;

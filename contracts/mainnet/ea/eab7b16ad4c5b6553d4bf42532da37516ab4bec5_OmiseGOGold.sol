@@ -82,8 +82,8 @@ contract OmiseGOGold is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;OmiseGOGold&quot;;
-    string public constant symbol = &quot;OMGG&quot;;
+    string public constant name = "OmiseGOGold";
+    string public constant symbol = "OMGG";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 10000000000e18;

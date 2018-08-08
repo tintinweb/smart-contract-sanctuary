@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract TokenERC20 {
     // Public variables of the token
-    string public name = &quot;Value Promise Protocol token&quot;;
-    string public symbol = &quot;VPP&quot;;
+    string public name = "Value Promise Protocol token";
+    string public symbol = "VPP";
     uint256 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 50*10**(18+8);

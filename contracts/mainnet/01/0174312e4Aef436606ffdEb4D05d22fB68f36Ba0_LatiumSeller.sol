@@ -1,8 +1,8 @@
 pragma solidity ^0.4.13;
 
 contract Latium {
-    string public constant name = &quot;Latium&quot;;
-    string public constant symbol = &quot;LAT&quot;;
+    string public constant name = "Latium";
+    string public constant symbol = "LAT";
     uint8 public constant decimals = 16;
     uint256 public constant totalSupply =
         30000000 * 10 ** uint256(decimals);

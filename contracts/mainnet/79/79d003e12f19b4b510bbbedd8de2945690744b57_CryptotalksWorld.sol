@@ -113,8 +113,8 @@ contract CryptotalksWorld is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CTWorld () public {
-        symbol = &quot;CTW&quot;;
-        name = &quot;CTWorld Token&quot;;
+        symbol = "CTW";
+        name = "CTWorld Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x4Fd82b279C699579A58aBbB4A8ad4F97A0EDC422] = _totalSupply;

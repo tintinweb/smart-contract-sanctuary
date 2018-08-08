@@ -113,8 +113,8 @@ contract SmartSweep is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SmartSweep() public {
-        symbol = &quot;SMRTS&quot;;
-        name = &quot;SmartSweep Coin&quot;;
+        symbol = "SMRTS";
+        name = "SmartSweep Coin";
         decimals = 18;
         _totalSupply = 15000000000000000000000000;
         balances[0xAEc75b5FffCa4C0C9EB2F42658ca11c926C68369] = _totalSupply;

@@ -123,8 +123,8 @@ contract StandardToken is ERC20 {
 }
 
 contract ixix is StandardToken {
-  string public constant name = &quot;ixix&quot;;
-  string public constant symbol = &quot;IXI&quot;;
+  string public constant name = "ixix";
+  string public constant symbol = "IXI";
   uint8 public constant decimals = 4;
 
   function ixix() public {

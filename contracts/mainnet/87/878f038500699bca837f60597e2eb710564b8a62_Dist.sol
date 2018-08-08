@@ -27,7 +27,7 @@ contract Dist{
     
     // 01/01/2019 @ 12:00am (UTC) = 1546300800
     // ex.
-    // &quot;0xca35b7d915458ef540ade6068dfe2f44e8fa733c&quot;,1514411898,&quot;0x6781a0F84c7E9e846DCb84A9a5bd49333067b104&quot;
+    // "0xca35b7d915458ef540ade6068dfe2f44e8fa733c",1514411898,"0x6781a0F84c7E9e846DCb84A9a5bd49333067b104"
     
     function Dist(address _owner, uint _unlockTime, address _tokenAddress){
         owner = _owner;

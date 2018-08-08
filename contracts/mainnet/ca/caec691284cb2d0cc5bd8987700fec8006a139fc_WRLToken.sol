@@ -217,8 +217,8 @@ contract BurnableToken is MintableToken {
 }
 
 contract WRLToken is BurnableToken {
-    string public name = &quot;Whyral Token&quot;;
-    string public symbol = &quot;WRL&quot;;
+    string public name = "Whyral Token";
+    string public symbol = "WRL";
     uint256 public decimals = 8;
     
     uint256 internal rate;

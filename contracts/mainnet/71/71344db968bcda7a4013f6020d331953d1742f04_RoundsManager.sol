@@ -79,7 +79,7 @@ library MathUtils {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -346,7 +346,7 @@ contract RoundsManager is ManagerProxyTarget, IRoundsManager {
             roundLength = _roundLength;
         }
 
-        ParameterUpdate(&quot;roundLength&quot;);
+        ParameterUpdate("roundLength");
     }
 
     /**
@@ -359,7 +359,7 @@ contract RoundsManager is ManagerProxyTarget, IRoundsManager {
 
         roundLockAmount = _roundLockAmount;
 
-        ParameterUpdate(&quot;roundLockAmount&quot;);
+        ParameterUpdate("roundLockAmount");
     }
 
     /**
@@ -440,13 +440,13 @@ contract RoundsManager is ManagerProxyTarget, IRoundsManager {
      * @dev Return BondingManager interface
      */
     function bondingManager() internal view returns (IBondingManager) {
-        return IBondingManager(controller.getContract(keccak256(&quot;BondingManager&quot;)));
+        return IBondingManager(controller.getContract(keccak256("BondingManager")));
     }
 
     /**
      * @dev Return Minter interface
      */
     function minter() internal view returns (IMinter) {
-        return IMinter(controller.getContract(keccak256(&quot;Minter&quot;)));
+        return IMinter(controller.getContract(keccak256("Minter")));
     }
 }

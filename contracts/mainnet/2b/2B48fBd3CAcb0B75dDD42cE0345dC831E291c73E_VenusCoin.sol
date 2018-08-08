@@ -103,8 +103,8 @@ contract StandardToken is BasicToken, ERC20 {
  *  VenusCoin token contract. Implements
  */
 contract VenusCoin is StandardToken {
-  string public constant name = &quot;VenusCoin&quot;;
-  string public constant symbol = &quot;Venus&quot;;
+  string public constant name = "VenusCoin";
+  string public constant symbol = "Venus";
   uint public constant decimals = 5;
   // Constructor
   function VenusCoin() {

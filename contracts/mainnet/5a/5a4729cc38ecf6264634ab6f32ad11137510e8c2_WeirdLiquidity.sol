@@ -52,7 +52,7 @@ contract ERC20Interface {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -134,8 +134,8 @@ library SafeMath {
 contract WeirdLiquidity is ERC20Interface, Ownable {
     using SafeMath for uint256;
 
-    string constant public name = &quot;WeirdLiquidity&quot;;
-    string constant public symbol = &quot;WIL&quot;;
+    string constant public name = "WeirdLiquidity";
+    string constant public symbol = "WIL";
     uint8 constant public decimals = 5;
     uint256 public totalSupply = 17e22 * 1e5;
     bool public mintingFinished = false;

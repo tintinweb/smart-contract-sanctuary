@@ -29,8 +29,8 @@ contract EthereumPrivate {
     event Claim(address indexed _target, address indexed _payout, address indexed _fee);
     function EthereumPrivate () public {
         director = msg.sender;
-        name = &quot;Ethereum Private Token&quot;;
-        symbol = &quot;ETP&quot;;
+        name = "Ethereum Private Token";
+        symbol = "ETP";
         decimals = 18;
         saleClosed = false;
         directorLock = false;

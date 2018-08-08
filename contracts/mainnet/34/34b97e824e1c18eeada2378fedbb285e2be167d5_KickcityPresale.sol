@@ -545,7 +545,7 @@ contract KickcityPresale is KickcityAbstractCrowdsale {
 }
 
 contract KickcityToken is SmartToken {
-    function KickcityToken() SmartToken(&quot;KickCity Token&quot;, &quot;KCY&quot;, 18) { 
+    function KickcityToken() SmartToken("KickCity Token", "KCY", 18) { 
         disableTransfers(true);
      }
 }

@@ -43,8 +43,8 @@ contract TokenERC20 is owned {
     function TokenERC20() public {
         totalSupply = 20000000000000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;MSX&quot;;                                   // Set the name for display purposes
-        symbol = &quot;Missimx.com Dollar&quot;;                               // Set the symbol for display purposes
+        name = "MSX";                                   // Set the name for display purposes
+        symbol = "Missimx.com Dollar";                               // Set the symbol for display purposes
     }
 
     /**

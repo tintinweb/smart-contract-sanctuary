@@ -3,8 +3,8 @@ pragma solidity ^0.4.16;
 interface tokenRecipient {function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public;}
 
 contract SiuToken {
-    string public name = &quot;Siu&#39;s Token&quot;;
-    string public symbol = &quot;SIU&quot;;
+    string public name = "Siu&#39;s Token";
+    string public symbol = "SIU";
     uint256 public decimals = 18;
     uint256 public totalSupply = 210000 * 10000 * 10 ** decimals;
 

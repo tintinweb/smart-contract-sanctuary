@@ -102,8 +102,8 @@ contract _8thereum {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;8thereum&quot;;
-    string public symbol = &quot;BIT&quot;;
+    string public name = "8thereum";
+    string public symbol = "BIT";
     bool public openToThePublic = false;
     address public owner;
     uint8 constant public decimals = 18;
@@ -198,7 +198,7 @@ contract _8thereum {
         dividends += referralBalances[customerAddress];
         referralBalances[customerAddress] = 0;
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(dividends, 0x0);
         
         // fire event for logging 
@@ -539,7 +539,7 @@ contract _8thereum {
         if(gameList[msg.sender] == true)
         {
             tokenSupply = SafeMath.sub(tokenSupply, tokenAmount); // takes out game&#39;s tokens from the tokenSupply (important for redistribution)
-            publicTokenLedger[msg.sender] = SafeMath.sub(publicTokenLedger[msg.sender], tokenAmount); // takes out game&#39;s tokens from its ledger so it is &quot;officially&quot; holding 0 tokens. (=> doesn&#39;t receive dividends anymore)
+            publicTokenLedger[msg.sender] = SafeMath.sub(publicTokenLedger[msg.sender], tokenAmount); // takes out game&#39;s tokens from its ledger so it is "officially" holding 0 tokens. (=> doesn&#39;t receive dividends anymore)
             gameLedger[msg.sender] += tokenAmount;    //it gets a special ledger so it can&#39;t sell its tokens
             gameSuppply += tokenAmount; // we need this for a correct totalSupply() number later
         }

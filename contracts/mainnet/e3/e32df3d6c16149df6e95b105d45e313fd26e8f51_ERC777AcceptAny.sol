@@ -2,8 +2,8 @@ pragma solidity 0.4.24;
 
 contract ERC777AcceptAny {
 
-    bytes32 constant ERC820_ACCEPT_MAGIC = keccak256(&quot;ERC820_ACCEPT_MAGIC&quot;);
-    bytes32 constant ERC777TokensRecipientHash = keccak256(&quot;ERC777TokensRecipient&quot;);
+    bytes32 constant ERC820_ACCEPT_MAGIC = keccak256("ERC820_ACCEPT_MAGIC");
+    bytes32 constant ERC777TokensRecipientHash = keccak256("ERC777TokensRecipient");
 
 
     function tokensReceived(

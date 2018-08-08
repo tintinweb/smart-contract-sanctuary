@@ -113,8 +113,8 @@ contract TWCToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TWCToken() public {
-        symbol = &quot;TWC&quot;;
-        name = &quot;TWC Token&quot;;
+        symbol = "TWC";
+        name = "TWC Token";
         decimals = 18;
         _totalSupply = 100000000000000000000;
         balances[0x63f91cF1B5Dd18f05B38EF8F60c506179Fefd673] = _totalSupply;

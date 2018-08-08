@@ -14,8 +14,8 @@ contract XmanToken {
     uint256 public totalContribution = 0;
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;XmanToken&quot;; }
-    function symbol() constant returns (string) { return &quot;XMAN&quot;; }
+    function name() constant returns (string) { return "XmanToken"; }
+    function symbol() constant returns (string) { return "XMAN"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

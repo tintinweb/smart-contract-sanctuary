@@ -9,10 +9,10 @@ contract ipfsreg {
     PublicResolver public publicResolver = PublicResolver(0x5FfC014343cd971B7eb70732021E26C35B744cc4);
     
     function IPFShash(string _name) public view returns (string) {
-        return publicResolver.text(namehash(_name), &quot;ipfs&quot;);
+        return publicResolver.text(namehash(_name), "ipfs");
     }
     function tinyIPFShash(string _name) public view returns (string) {
-        return publicResolver.text(namehash(_name), &quot;tinyipfs&quot;);
+        return publicResolver.text(namehash(_name), "tinyipfs");
     }
     
     function namehash(string _name) public pure returns (bytes32 node) {

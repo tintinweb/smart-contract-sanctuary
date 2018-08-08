@@ -202,8 +202,8 @@ contract TokenERC20 {
 
 contract MyAdvancedToken is owned, TokenERC20 {
 
-    string public name = &quot;ThaneCoin&quot;;
-    string public symbol = &quot;TPI&quot;;
+    string public name = "ThaneCoin";
+    string public symbol = "TPI";
     uint8 public decimals = 18;
     uint256 public initialSupply = 91000000e18;
     

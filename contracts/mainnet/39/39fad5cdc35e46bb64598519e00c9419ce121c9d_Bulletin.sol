@@ -1,7 +1,7 @@
 pragma solidity ^0.4.13;
 contract Bulletin {
     
-    string public message = &quot;&quot;;
+    string public message = "";
     address public owner;
     
     function Bulletin(){

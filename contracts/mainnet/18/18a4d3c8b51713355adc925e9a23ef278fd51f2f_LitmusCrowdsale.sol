@@ -30,8 +30,8 @@ contract ERC20 {
 	using SafeMath for uint256;
 	uint256 public totalSupply;
 	address public contractHolder;
-	string public constant name = &quot;LITMUS&quot;;
-	string public constant symbol = &quot;LIT&quot;;
+	string public constant name = "LITMUS";
+	string public constant symbol = "LIT";
 	uint8 public constant decimals = 0;
 	
 

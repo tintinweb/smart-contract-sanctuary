@@ -186,8 +186,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract LotboToken is PausableToken {
-    string public name = &quot;Lotbo.io Token&quot;;
-    string public symbol = &quot;LOB&quot;;
+    string public name = "Lotbo.io Token";
+    string public symbol = "LOB";
     uint8  public decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 10000000 ether;

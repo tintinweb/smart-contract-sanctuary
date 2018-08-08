@@ -98,8 +98,8 @@ contract VaultbankVotingToken is ERC20, Regulated, Nonpayable {
   mapping(address => mapping(address => uint)) allowed;
 
   function VaultbankVotingToken() public {
-    symbol = &quot;VBV&quot;;
-    name = &quot;Vaultbank Voting Token&quot;;
+    symbol = "VBV";
+    name = "Vaultbank Voting Token";
     decimals = 0;
     _totalSupply = 1000;
 

@@ -51,9 +51,9 @@ contract ERC20 is ERC20Interface {
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowed;
 
-    string public name =&quot;MobilinkToken&quot;;
+    string public name ="MobilinkToken";
     uint8 public decimals = 18;
-    string public symbol = &quot;MOLK&quot;;
+    string public symbol = "MOLK";
 
     function ERC20(
         address _initialOwner,

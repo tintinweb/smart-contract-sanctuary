@@ -166,7 +166,7 @@ contract TeambrellaWallet {
         bytes sigCosigner2 
         ) onlyOwner orderedOps(opNum) external {
 
-        bytes32 hash = keccak256(&quot;NS&quot;, m_teamId, opNum, toBytes(newCosigners));
+        bytes32 hash = keccak256("NS", m_teamId, opNum, toBytes(newCosigners));
         require(checkSignatures(hash, cosignersPos, sigCosigner0, sigCosigner1, sigCosigner2));
         m_opNum = opNum + 1;
         m_cosignersApprovedDisband.length = 0;
@@ -182,7 +182,7 @@ contract TeambrellaWallet {
         bytes sigOwner 
         ) onlyOwner orderedOps(opNum) external {
 
-        bytes32 hash = keccak256(&quot;NS&quot;, m_teamId, opNum, toBytes(newCosigners));
+        bytes32 hash = keccak256("NS", m_teamId, opNum, toBytes(newCosigners));
         require(checkSignatures2(hash, sigCosigner0, sigCosigner1, sigCosigner2));
         require(ecverify(hash, sigOwner, m_owner));
         m_opNum = opNum + 1;
@@ -211,7 +211,7 @@ contract TeambrellaWallet {
         ) onlyOwner orderedOps(opNum) external {
 
         require (getsum(values) <= this.balance);
-        bytes32 hash = keccak256(&quot;TR&quot;, m_teamId, opNum, toBytes(tos), toBytes(values));
+        bytes32 hash = keccak256("TR", m_teamId, opNum, toBytes(tos), toBytes(values));
         require (checkSignatures(hash, cosignersPos, sigCosigner0, sigCosigner1, sigCosigner2));
         m_opNum = opNum + 1;
         realtransfer(tos, values);
@@ -228,7 +228,7 @@ contract TeambrellaWallet {
         ) external {
         require(opNum >= m_opNum);
         require (getsum(values) <= this.balance);
-        bytes32 hash = keccak256(&quot;TR&quot;, m_teamId, opNum, toBytes(tos), toBytes(values));
+        bytes32 hash = keccak256("TR", m_teamId, opNum, toBytes(tos), toBytes(values));
         require(checkSignatures2(hash, sigCosigner0, sigCosigner1, sigCosigner2));
         require(ecverify(hash, sigOwner, m_owner));
         m_opNum = opNum + 1;

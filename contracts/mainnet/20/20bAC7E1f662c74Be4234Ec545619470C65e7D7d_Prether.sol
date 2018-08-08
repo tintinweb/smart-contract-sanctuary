@@ -96,8 +96,8 @@ contract Token is ERC20, Owned {
 
 contract Prether is Token {
     //Public variables
-    string public constant name = &quot;PRETHER&quot;;
-    string public constant symbol = &quot;PTH&quot;; 
+    string public constant name = "PRETHER";
+    string public constant symbol = "PTH"; 
     uint8 public constant decimals = 0; 
     uint256 public constant supply = 10000000; 
     

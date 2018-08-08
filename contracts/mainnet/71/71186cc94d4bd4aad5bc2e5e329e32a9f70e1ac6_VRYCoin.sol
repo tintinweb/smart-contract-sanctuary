@@ -127,8 +127,8 @@ contract StandardToken is ERC20 {
 }
 
 contract VRYCoin is StandardToken {
-  string public constant name = &quot;VRY&quot;;
-  string public constant symbol = &quot;VRY&quot;;
+  string public constant name = "VRY";
+  string public constant symbol = "VRY";
   uint8 public constant decimals = 18;
   
   address private fundsWallet;

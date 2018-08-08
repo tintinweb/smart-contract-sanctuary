@@ -34,7 +34,7 @@ library SafeMath {
 
 /**
  * @title Ownable
- * @dev The Ownable contract has an owner address, and provides basic authorization control functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * @dev The Ownable contract has an owner address, and provides basic authorization control functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -212,8 +212,8 @@ contract AIgathaToken is TokenERC20, Ownable {
   using SafeMath for uint256;
 
   // Token Info.
-  string public constant name = &quot;AIgatha Token&quot;;
-  string public constant symbol = &quot;ATH&quot;;
+  string public constant name = "AIgatha Token";
+  string public constant symbol = "ATH";
   uint8 public constant decimals = 18;
 
   // Sales period.

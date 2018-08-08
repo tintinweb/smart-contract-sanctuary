@@ -153,7 +153,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -337,8 +337,8 @@ contract MintableToken is StandardToken, Ownable {
 contract HVT is MintableToken, BurnableToken {
   using SafeMath for uint256;
 
-  string public name = &quot;HiVe Token&quot;;
-  string public symbol = &quot;HVT&quot;;
+  string public name = "HiVe Token";
+  string public symbol = "HVT";
   uint8 public decimals = 18;
 
   enum State {Blocked,Burnable,Transferable}
@@ -457,7 +457,7 @@ contract ICOEngineInterface {
 
 // File: contracts/KYCBase.sol
 
-//import &quot;./SafeMath.sol&quot;;
+//import "./SafeMath.sol";
 
 
 // Abstract base contract
@@ -502,7 +502,7 @@ contract KYCBase {
         private returns (bool)
     {
         // check the signature
-        bytes32 hash = sha256(&quot;Eidoo icoengine authorization&quot;, this, buyerAddress, buyerId, maxAmount);
+        bytes32 hash = sha256("Eidoo icoengine authorization", this, buyerAddress, buyerId, maxAmount);
         address signer = ecrecover(hash, v, r, s);
         if (!isKycSigner[signer]) {
             revert();

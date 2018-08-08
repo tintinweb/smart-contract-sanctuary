@@ -7,7 +7,7 @@ Copyright (c) 2016 Smart Contract Solutions, Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
-&quot;Software&quot;), to deal in the Software without restriction, including
+"Software"), to deal in the Software without restriction, including
 without limitation the rights to use, copy, modify, merge, publish,
 distribute, sublicense, and/or sell copies of the Software, and to
 permit persons to whom the Software is furnished to do so, subject to
@@ -16,7 +16,7 @@ the following conditions:
 The above copyright notice and this permission notice shall be included
 in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -309,7 +309,7 @@ contract SafeApprove is StandardBurnableToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -349,7 +349,7 @@ contract Ownable {
 /**
  * @title AdvancedOwnable
  * @dev The AdvancedOwnable contract provides advanced authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract AdvancedOwnable is Ownable {
 
@@ -386,7 +386,7 @@ contract AdvancedOwnable is Ownable {
 /**
    * @title blacklist
    * @dev The blacklist contract has a blacklist of addresses, and provides basic authorization control functions.
-   * @dev This simplifies the implementation of &quot;user permissions&quot;.
+   * @dev This simplifies the implementation of "user permissions".
    */
 contract BlackList is AdvancedOwnable {
 
@@ -657,8 +657,8 @@ contract MainToken is SafeCheckToken,AccidentallyTokens {
 
   address public TokenWalletHolder;
 
-  string public constant name = &quot;EQI&quot;;
-  string public constant symbol = &quot;EQI Token&quot;;
+  string public constant name = "EQI";
+  string public constant symbol = "EQI Token";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 880000000 * (10 ** uint256(decimals));

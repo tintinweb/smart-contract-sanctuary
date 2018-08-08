@@ -113,8 +113,8 @@ contract CLX is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function CLX() public {
-        symbol = &quot;CLX&quot;;
-        name = &quot;Complex Coin&quot;;
+        symbol = "CLX";
+        name = "Complex Coin";
         decimals = 18;
         _totalSupply = 500000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

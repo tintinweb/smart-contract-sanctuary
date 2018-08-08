@@ -113,8 +113,8 @@ contract MenovaToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MenovaToken() public {
-        symbol = &quot;MEN&quot;;
-        name = &quot;Menova Token&quot;;
+        symbol = "MEN";
+        name = "Menova Token";
         decimals = 2;
         _totalSupply = 100000000000;
         balances[0x94a62436c04B04515F04616f303e08B4fe48dd11] = _totalSupply;

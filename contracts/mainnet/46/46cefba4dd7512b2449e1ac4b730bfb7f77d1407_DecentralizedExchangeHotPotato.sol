@@ -57,7 +57,7 @@ contract DecentralizedExchangeHotPotato {
 
   /* ERC721 */
   function name() public pure returns (string _name) {
-    return &quot;dapdap.io | HotPotatoExchange&quot;;
+    return "dapdap.io | HotPotatoExchange";
   }
 
   /* Read */

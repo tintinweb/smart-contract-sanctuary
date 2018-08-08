@@ -183,9 +183,9 @@ contract ERC20Token is ERC20Interface, Owned {
 
     function ERC20Token() public {
 
-        symbol = &quot;ZBTC&quot;;
+        symbol = "ZBTC";
 
-        name = &quot;ZBTC&quot;;
+        name = "ZBTC";
 
         decimals = 18;
 

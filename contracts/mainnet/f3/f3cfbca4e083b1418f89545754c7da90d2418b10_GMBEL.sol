@@ -74,8 +74,8 @@ contract GMBEL is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public Claimed;    
 
-    string public constant name = &quot;G-Mbel&quot;;
-    string public constant symbol = &quot;GMBEL&quot;;
+    string public constant name = "G-Mbel";
+    string public constant symbol = "GMBEL";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 7000000000000e18;

@@ -113,8 +113,8 @@ contract HuaTuoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HuaTuoToken() public {
-        symbol = &quot;HTC&quot;;
-        name = &quot;HuaTuo Token&quot;;
+        symbol = "HTC";
+        name = "HuaTuo Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000 ;
         balances[0x2fD1fd25eE243103179bd046777928b0f4882E1A] = _totalSupply;

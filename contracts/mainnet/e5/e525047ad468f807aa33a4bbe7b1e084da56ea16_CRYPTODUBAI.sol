@@ -109,8 +109,8 @@ contract CRYPTODUBAI is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CRYPTODUBAI() public {
-        symbol = &quot;CDUB&quot;;
-        name = &quot;CRYPTODUBAI&quot;;
+        symbol = "CDUB";
+        name = "CRYPTODUBAI";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xF9A4Ce04Ccc3a866ee3E800069fE7fC62f839949] = _totalSupply;

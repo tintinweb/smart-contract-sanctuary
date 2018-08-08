@@ -113,8 +113,8 @@ contract Vidnix is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Vidnix() public {
-        symbol = &quot;VDX&quot;;
-        name = &quot;Vidnix&quot;;
+        symbol = "VDX";
+        name = "Vidnix";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x9d2cBF47EaEd84870c276b9634c301F85b632982] = _totalSupply;

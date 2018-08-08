@@ -304,7 +304,7 @@ contract TokenERC20 is ERC20, Ownable{
 }
 
 contract WGNToken is TokenERC20 {
-    function WGNToken() TokenERC20(1000000000, &quot;World Gene Network Token&quot;, &quot;WGN&quot;, 8) public {
+    function WGNToken() TokenERC20(1000000000, "World Gene Network Token", "WGN", 8) public {
 
     }
 	function () payable public {

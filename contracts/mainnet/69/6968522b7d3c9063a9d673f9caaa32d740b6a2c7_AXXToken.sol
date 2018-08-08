@@ -5,7 +5,7 @@ pragma solidity ^0.4.24;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -687,8 +687,8 @@ contract PausableToken is StandardToken, Pausable {
  *  - allows the new owner to accept the ownership transfer, the owner can cancel the transfer if needed.
  **/
 contract AXXToken is Contactable, HasNoTokens, HasNoEther, ClaimableEx, MintableToken, PausableToken {
-    string public constant name = &quot;AXXToken&quot;;
-    string public constant symbol = &quot;AXX&quot;;
+    string public constant name = "AXXToken";
+    string public constant symbol = "AXX";
 
     uint8 public constant decimals = 18;
     uint256 public constant ONE_TOKENS = (10 ** uint256(decimals));

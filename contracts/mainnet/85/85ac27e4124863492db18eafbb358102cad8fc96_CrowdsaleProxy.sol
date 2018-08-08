@@ -11,8 +11,8 @@ contract CrowdsaleProxyTarget {
  * target address. This constuction helps to make Crowdsale code upgradable.
  */
 contract CrowdsaleProxy {
-    bytes32 constant TARGET_POSITION = keccak256(&quot;CrowdsaleProxy.target&quot;);
-    bytes32 constant OWNER_POSITION = keccak256(&quot;CrowdsaleProxy.owner&quot;);
+    bytes32 constant TARGET_POSITION = keccak256("CrowdsaleProxy.target");
+    bytes32 constant OWNER_POSITION = keccak256("CrowdsaleProxy.owner");
 
     event Upgraded(address indexed target);
 

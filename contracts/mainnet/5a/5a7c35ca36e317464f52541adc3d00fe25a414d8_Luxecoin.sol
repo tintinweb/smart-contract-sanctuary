@@ -58,8 +58,8 @@ contract Ownable {
 contract Luxecoin is ERC20, Ownable {
   using SafeMath for uint256;
 
-  string public name = &quot;LuxeCoin&quot;;
-  string public symbol = &quot;LXC&quot;;
+  string public name = "LuxeCoin";
+  string public symbol = "LXC";
   uint8 public constant decimals = 18;
   uint256 public constant initial_supply = 220000000 * (10 ** uint256(decimals));
 

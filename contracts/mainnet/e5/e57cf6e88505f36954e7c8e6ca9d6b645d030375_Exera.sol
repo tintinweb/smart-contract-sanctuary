@@ -58,8 +58,8 @@ contract Exera is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Exera&quot;;
-    string public constant symbol = &quot;EXR&quot;;
+    string public constant name = "Exera";
+    string public constant symbol = "EXR";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 100000000e8;

@@ -59,8 +59,8 @@ interface tokenRecipient {
 contract LDX is owned {
     using SafeMath for uint256;
 
-    string public name = &quot;LeadRex&quot;;
-    string public symbol = &quot;LDX&quot;;
+    string public name = "LeadRex";
+    string public symbol = "LDX";
     uint8 public decimals = 18;
     uint256 DEC = 10 ** uint256(decimals);
     uint256 public totalSupply = 135900000 * DEC;

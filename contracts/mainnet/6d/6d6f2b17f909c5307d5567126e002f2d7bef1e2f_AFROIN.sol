@@ -109,8 +109,8 @@ contract AFROIN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AFROIN() public {
-        symbol = &quot;AFR&quot;;
-        name = &quot;AFROIN&quot;;
+        symbol = "AFR";
+        name = "AFROIN";
         decimals = 3;
         _totalSupply = 227000000000;
         balances[0xcd1B074D2eC4DdE6793F42eF8EAc53b9a248E941] = _totalSupply;

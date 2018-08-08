@@ -3,8 +3,8 @@ contract OrpheusOrganicsLaos {
     
     uint public constant _totalSupply = 5000000000000000000000000;
     
-    string public constant symbol = &quot;OOL&quot;;
-    string public constant name = &quot;Orpheus Organics Laos&quot;;
+    string public constant symbol = "OOL";
+    string public constant name = "Orpheus Organics Laos";
     uint8 public constant decimals = 18;
     
     mapping(address => uint256) balances;

@@ -113,8 +113,8 @@ contract WeBuyAnyHouse is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WeBuyAnyHouse() public {
-        symbol = &quot;HOME&quot;;
-        name = &quot;We Buy Any House&quot;;
+        symbol = "HOME";
+        name = "We Buy Any House";
         decimals = 18;
         _totalSupply = 400000000000000000000000000;
         balances[0xe10a6D243d1c5011861557676a80cE03041cF34D] = _totalSupply;

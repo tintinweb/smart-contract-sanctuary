@@ -125,8 +125,8 @@ contract GenexiToken is ERC20Token, Owned {
 
     using SafeMath for uint256;
 
-    string public constant name = &quot;GEN&quot;;
-    string public constant symbol = &quot;GEN&quot;;
+    string public constant name = "GEN";
+    string public constant symbol = "GEN";
     uint32 public constant decimals = 18;
 
     // SET current initial token supply

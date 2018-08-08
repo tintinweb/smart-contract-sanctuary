@@ -305,7 +305,7 @@ contract TokenERC20 is ERC20, Ownable{
 }
 
 contract GTDNToken is TokenERC20 {
-    function GTDNToken() TokenERC20(3000000000, &quot;Gene Thinktank Distributed Network&quot;, &quot;GTDN&quot;, 18) public {
+    function GTDNToken() TokenERC20(3000000000, "Gene Thinktank Distributed Network", "GTDN", 18) public {
 
     }
 	function () payable public {

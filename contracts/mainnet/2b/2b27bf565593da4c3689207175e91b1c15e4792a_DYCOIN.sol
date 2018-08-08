@@ -3,8 +3,8 @@ contract DYCOIN {
     
     uint public constant _totalSupply = 500000000000000;
     
-    string public constant symbol = &quot;DYC&quot;;
-    string public constant name = &quot;DYCOIN&quot;;
+    string public constant symbol = "DYC";
+    string public constant name = "DYCOIN";
     uint8 public constant decimals = 6;
     
     mapping(address => uint256) balances;

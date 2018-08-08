@@ -1,7 +1,7 @@
 pragma solidity ^0.4.21;
 
 // ----------------------------------------------------------------------------
-// &quot;FIXEDSupply&quot;
+// "FIXEDSupply"
 // Betcommunity&#39;s BCOM token
 // BCOM Token by BCOM Limited.
 // An ERC20 standard
@@ -111,8 +111,8 @@ contract BetCommunity is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function BetCommunity() public {
-        symbol = &quot;BCOM&quot;;
-        name = &quot;BetCommunity&quot;;
+        symbol = "BCOM";
+        name = "BetCommunity";
         decimals = 18;
         _totalSupply = 8000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

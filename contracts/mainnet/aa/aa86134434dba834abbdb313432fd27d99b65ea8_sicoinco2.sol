@@ -34,8 +34,8 @@ contract sicoinco2 {
     ) public {
         totalSupply = initialSupply * 100000000 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply = 100000000;                // Give the creator all initial tokens
-        name = tokenName = &quot;SicoinCo2&quot;;                      // Set the name for display purposes
-        symbol = tokenSymbol = &quot;CO2&quot;;                               // Set the symbol for display purposes
+        name = tokenName = "SicoinCo2";                      // Set the name for display purposes
+        symbol = tokenSymbol = "CO2";                               // Set the symbol for display purposes
     }
 
     /**

@@ -200,7 +200,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -273,11 +273,11 @@ contract Ownable {
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -954,7 +954,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal pure returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint length = self._len * (parts.length - 1);
         for(uint i = 0; i < parts.length; i++)
@@ -1121,9 +1121,9 @@ contract SparksterToken is StandardToken, Ownable{
 	}
 
 	constructor() public {
-		name = &quot;Sparkster&quot;;									// Set the name for display purposes
+		name = "Sparkster";									// Set the name for display purposes
 		decimals = 18;					 // Amount of decimals for display purposes
-		symbol = &quot;SPRK&quot;;							// Set the symbol for display purposes
+		symbol = "SPRK";							// Set the symbol for display purposes
 		setMaximumGasPrice(40);
 		// Give all the tokens to the owner to start with.
 		mintTokens(435000000);
@@ -1213,10 +1213,10 @@ contract SparksterToken is StandardToken, Ownable{
 	function purchaseCallback(string uploadedData) public onlyOracleBackend returns(bool success) {
 		// We&#39;ll separate records by a | and individual entries in the record by a :.
 		strings.slice memory uploadedSlice = uploadedData.toSlice();
-		strings.slice memory nextRecord = &quot;&quot;.toSlice();
-		strings.slice memory nextDatum = &quot;&quot;.toSlice();
-		strings.slice memory recordSeparator = &quot;|&quot;.toSlice();
-		strings.slice memory datumSeparator = &quot;:&quot;.toSlice();
+		strings.slice memory nextRecord = "".toSlice();
+		strings.slice memory nextDatum = "".toSlice();
+		strings.slice memory recordSeparator = "|".toSlice();
+		strings.slice memory datumSeparator = ":".toSlice();
 		uint256 amountForOwner = 0;
 		while (!uploadedSlice.empty()) {
 			nextRecord = uploadedSlice.split(recordSeparator);

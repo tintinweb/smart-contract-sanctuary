@@ -328,8 +328,8 @@ contract MintableToken is StandardToken, Ownable {
 }
 
 contract BitfexToken is MintableToken {
-    string public name = &quot;BitFex Token&quot;;
-    string public symbol = &quot;BITFEX&quot;;
+    string public name = "BitFex Token";
+    string public symbol = "BITFEX";
     uint8 public decimals = 2;
 
     uint256 public PRE_ICO_TOKENS_AMOUNT = 2000000;

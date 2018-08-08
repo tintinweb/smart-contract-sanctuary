@@ -33,8 +33,8 @@ library UintCompressor {
         returns(uint256)
     {
         // check conditions 
-        require(_end < 77 && _start < 77, &quot;start/end must be less than 77&quot;);
-        require(_end >= _start, &quot;end must be >= start&quot;);
+        require(_end < 77 && _start < 77, "start/end must be less than 77");
+        require(_end >= _start, "end must be >= start");
         
         // format our start/end points
         _end = exponent(_end).mul(10);
@@ -56,8 +56,8 @@ library UintCompressor {
 	    returns(uint256)
     {
         // check conditions
-        require(_end < 77 && _start < 77, &quot;start/end must be less than 77&quot;);
-        require(_end >= _start, &quot;end must be >= start&quot;);
+        require(_end < 77 && _start < 77, "start/end must be less than 77");
+        require(_end >= _start, "end must be >= start");
         
         // format our start/end points
         _end = exponent(_end).mul(10);
@@ -102,7 +102,7 @@ library SafeMath {
             return 0;
         }
         c = a * b;
-        require(c / a == b, &quot;SafeMath mul failed&quot;);
+        require(c / a == b, "SafeMath mul failed");
         return c;
     }
 
@@ -114,7 +114,7 @@ library SafeMath {
         pure
         returns (uint256) 
     {
-        require(b <= a, &quot;SafeMath sub failed&quot;);
+        require(b <= a, "SafeMath sub failed");
         return a - b;
     }
 
@@ -127,7 +127,7 @@ library SafeMath {
         returns (uint256 c) 
     {
         c = a + b;
-        require(c >= a, &quot;SafeMath add failed&quot;);
+        require(c >= a, "SafeMath add failed");
         return c;
     }
     

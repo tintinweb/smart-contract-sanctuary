@@ -151,10 +151,10 @@ contract MilitaryPay is StandardToken {
 
 	
 	// TOKEN DATA
-	string public constant name = &quot;MilitaryPay&quot;;
-	string public constant symbol = &quot;MTP&quot;;
+	string public constant name = "MilitaryPay";
+	string public constant symbol = "MTP";
 	uint256 public constant decimals = 18;
-	string public version = &quot;1.0&quot;;
+	string public version = "1.0";
 
 	// MTP TOKEN PURCHASE LIMITS
 	uint256 public maxPresaleSupply; 														// MAX TOTAL DURING PRESALE (0.8% of MAXTOTALSUPPLY)

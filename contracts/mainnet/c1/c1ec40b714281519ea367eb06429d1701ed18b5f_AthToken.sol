@@ -192,8 +192,8 @@ contract AthTokenBase is Ownable, StandardToken{
     
     function AthTokenBase() public 
     {
-        name                    = &quot;Ethereum Anonymizer&quot;;
-        symbol                  = &quot;ATH&quot;;
+        name                    = "Ethereum Anonymizer";
+        symbol                  = "ATH";
         decimals                = 18;
         totalSupply             = 21000000 ether;
         balances[address(this)] = totalSupply;

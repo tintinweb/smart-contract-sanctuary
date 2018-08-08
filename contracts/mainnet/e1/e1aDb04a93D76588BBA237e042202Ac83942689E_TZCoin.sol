@@ -23,8 +23,8 @@ contract TZCoin{
     function TZCoin(){
         balanceOf[msg.sender] = 1302000938636; // Give the creator all initial tokens
         totalSupply = 1302000938636;                        // Update total supply
-        name = &quot;TZC&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TZC&quot;;                               // Set the symbol for display purposes
+        name = "TZC";                                   // Set the name for display purposes
+        symbol = "TZC";                               // Set the symbol for display purposes
         decimals = 6;                            // Amount of decimals for display purposes
     }
 

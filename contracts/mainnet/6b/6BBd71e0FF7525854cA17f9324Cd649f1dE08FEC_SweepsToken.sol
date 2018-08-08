@@ -1,6 +1,6 @@
 pragma solidity ^0.4.24;
 
-pragma experimental &quot;v0.5.0&quot;;
+pragma experimental "v0.5.0";
 
 library SafeMath {
     function add(uint a, uint b) internal pure returns (uint c) {
@@ -94,7 +94,7 @@ contract BasicToken is BasicTokenInterface{
 contract ManagedToken is BasicToken {
     address manager;
     modifier restricted(){
-        require(msg.sender == manager,&quot;Function can only be used by manager&quot;);
+        require(msg.sender == manager,"Function can only be used by manager");
         _;
     }
 
@@ -199,10 +199,10 @@ contract SweepsToken is ERC20Token{
 
 
     constructor() public payable {
-        require(gasleft() >= 4000000, &quot;Contract needs at least 4000000&quot;);
-        name = &quot;World&#39;s 1st Blockchain Sweepstakes&quot;;                                   // Set the name for display purposes
+        require(gasleft() >= 4000000, "Contract needs at least 4000000");
+        name = "World&#39;s 1st Blockchain Sweepstakes";                                   // Set the name for display purposes
         decimals = 0;                                       // Amount of decimals for display purposes
-        symbol = &quot;SPRIZE&quot;;                               // Set the symbol for display purposes
+        symbol = "SPRIZE";                               // Set the symbol for display purposes
         currentDay = 0;
         
         manager = 0x0d505edb01e222110806ffc91da89ae7b2696e11;
@@ -252,7 +252,7 @@ contract SweepsToken is ERC20Token{
 
     //Default fallback function, but requires contract active
     function() external payable {
-        require(currentDay <= prizes.length - 1, &quot;Sorry this contest is over, please visit our site to learn about the next contest.&quot;);
+        require(currentDay <= prizes.length - 1, "Sorry this contest is over, please visit our site to learn about the next contest.");
         buyTokens();
     }
 
@@ -335,10 +335,10 @@ contract SweepsToken is ERC20Token{
 
     //Does what it says on the tin
     function buyTokens() public payable {
-        require(gasleft() >= 110000, &quot;Requires at least 110000 gas, reverting to avoid wasting your gas&quot;); 
+        require(gasleft() >= 110000, "Requires at least 110000 gas, reverting to avoid wasting your gas"); 
         uint tokensBought = msg.value.div(weiRatePerToken);
         uint ticketsBought = msg.value.div(weiRatePerTicket);
-        require(tokensBought > 0 && ticketsBought > 0,&quot;Requires minimum payment purchase&quot;);
+        require(tokensBought > 0 && ticketsBought > 0,"Requires minimum payment purchase");
         
         //Handle Tickets
         giveTix(ticketsBought,msg.sender);
@@ -421,7 +421,7 @@ contract SweepsToken is ERC20Token{
         uint payout = 0;
         for(uint y = 0; y <= winners.length - 1; y++){
             address winner = winners[y];
-            require(winner != address(0),&quot;Something impossible happened!  Refusing to burn these tokens!&quot;);
+            require(winner != address(0),"Something impossible happened!  Refusing to burn these tokens!");
             uint ticketNum = tickets[y];
 
             //switch y for %
@@ -445,10 +445,10 @@ contract SweepsToken is ERC20Token{
     }
     
     function draw(uint seed) public restricted {
-        require(gasleft() > 60000,&quot;Function requires at least 60000 GAS&quot;);
+        require(gasleft() > 60000,"Function requires at least 60000 GAS");
         manager.transfer(address(this).balance);
         uint[20] memory mypicks;
-        require(currentDay <= prizes.length - 1, &quot;Sorry this contest is over, please visit our site to learn about the next contest.&quot;);
+        require(currentDay <= prizes.length - 1, "Sorry this contest is over, please visit our site to learn about the next contest.");
         uint low = (totalSold - soldToday) + 1;
         low = low < 1 ? 1 : low;
         for(uint pick = 0; pick <= 19; pick++){

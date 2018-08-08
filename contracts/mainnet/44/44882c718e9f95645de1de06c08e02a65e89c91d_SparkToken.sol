@@ -100,8 +100,8 @@ contract SparkToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SparkToken() public {
-        symbol = &quot;SPARK&quot;;
-        name = &quot;Sparks Token&quot;;
+        symbol = "SPARK";
+        name = "Sparks Token";
         decimals = 18;
         _totalSupply = 435000000000000000000000000;
         balances[0x27E5BD8A74AcB67ade357E65E4027b96bA157CFF] = _totalSupply;

@@ -36,7 +36,7 @@ contract StrikersMetadata {
   }
 
   function uint2str(uint i) internal pure returns (string) {
-    if (i == 0) return &quot;0&quot;;
+    if (i == 0) return "0";
     uint j = i;
     uint len;
     while (j != 0) {

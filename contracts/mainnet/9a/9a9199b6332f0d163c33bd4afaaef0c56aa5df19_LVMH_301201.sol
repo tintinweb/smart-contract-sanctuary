@@ -4,8 +4,8 @@ contract	LVMH_301201				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	LVMH_301201		&quot;	;
-	string	public		symbol =	&quot;	LVMI		&quot;	;
+	string	public		name =	"	LVMH_301201		"	;
+	string	public		symbol =	"	LVMI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10872725371892800000000000					;	

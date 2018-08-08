@@ -72,8 +72,8 @@ contract FUTURAX is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;FUTURAX&quot;;
-    string public constant symbol = &quot;FXC&quot;;
+    string public constant name = "FUTURAX";
+    string public constant symbol = "FXC";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000000e8; // Supply

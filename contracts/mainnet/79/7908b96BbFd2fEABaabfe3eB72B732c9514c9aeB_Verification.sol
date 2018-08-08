@@ -38,7 +38,7 @@ contract Verification {
 		}
 	}
 	
-	string public TestText = &quot;Gaziali&quot;;
+	string public TestText = "Gaziali";
 	
 	function RT() public view returns(string){
 		return TestText;

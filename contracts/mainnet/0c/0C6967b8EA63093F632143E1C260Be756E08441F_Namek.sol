@@ -248,8 +248,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract Namek is StandardToken {
-    string public name = &quot;Namek&quot;; 
-    string public symbol = &quot;NMK&quot;;
+    string public name = "Namek"; 
+    string public symbol = "NMK";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 400000000 * (10 ** decimals);
 

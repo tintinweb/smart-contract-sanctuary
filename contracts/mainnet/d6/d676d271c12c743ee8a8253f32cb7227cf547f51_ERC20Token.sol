@@ -183,9 +183,9 @@ contract ERC20Token is ERC20Interface, Owned {
 
     function ERC20Token() public {
 
-        symbol = &quot;COC&quot;;
+        symbol = "COC";
 
-        name = &quot;coolchain&quot;;
+        name = "coolchain";
 
         decimals = 18;
 

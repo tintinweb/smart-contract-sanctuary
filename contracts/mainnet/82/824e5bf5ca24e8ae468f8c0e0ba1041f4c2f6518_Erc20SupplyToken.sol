@@ -4,7 +4,7 @@ pragma solidity ^0.4.8;
   // Sample Erc20 supply token contract
   // Contract name:Erc20SupplyToken
   // Create params:uint256 _initialAmount, string _tokenName, uint8 _decimalUnits, string _tokenSymbol
-  //          e.g.:100000000,&quot;My company&#39;s Token&quot;,8,&quot;TOK&quot;
+  //          e.g.:100000000,"My company&#39;s Token",8,"TOK"
   // ----------------------------------------------------------------------------------------------
 
    // ERC Token Standard #20 Interface
@@ -60,7 +60,7 @@ pragma solidity ^0.4.8;
           _;
       }
 
-      // 构造函数,发行一个币create时传入参数为:100000000,&quot;My company&#39;s Token&quot;,8,&quot;NOTRMB&quot;
+      // 构造函数,发行一个币create时传入参数为:100000000,"My company&#39;s Token",8,"NOTRMB"
       function Erc20SupplyToken(uint256 _initialAmount, string _tokenName, uint8 _decimalUnits, string _tokenSymbol) {
           owner 						= msg.sender;
           balances[owner] 	= _initialAmount;

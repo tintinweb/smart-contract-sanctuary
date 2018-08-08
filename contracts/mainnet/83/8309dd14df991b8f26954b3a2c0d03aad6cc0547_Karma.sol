@@ -7,7 +7,7 @@ pragma solidity ^0.4.18;
 
   * `require` is used in these libraries for the following reasons:
   *   - overflows should not be checked in contract function bodies; DRY
-  *   - &quot;valid&quot; user input can cause overflows, which should not assert()
+  *   - "valid" user input can cause overflows, which should not assert()
   */
 library SafeMath {
   function sub(uint256 a, uint256 b) internal pure returns (uint256) {
@@ -112,13 +112,13 @@ contract DetailedERC20 is ERC20 {
   * - owner cut is determined at beginning of new period.
   * - user has 1 month to withdraw their dividend from the previous month.
   * - if user does not withdraw their dividend, their share will be given to owner.
-  * - mod can place a user on a 1 month &quot;timeout&quot;, whereby they won&#39;t be eligible for a dividend.
+  * - mod can place a user on a 1 month "timeout", whereby they won&#39;t be eligible for a dividend.
 
   * Eg: 10 eth is sent to the contract in January, owner cut is 30%. 
   * There are 70 token holders on Jan 31. At any time in February, each token holder can withdraw .1 eth for their January 
-  * dividend (unless they were given a &quot;timeout&quot; in January).
+  * dividend (unless they were given a "timeout" in January).
   */
-contract Karma is Ownable, DetailedERC20(&quot;KarmaToken&quot;, &quot;KARMA&quot;, 0) {
+contract Karma is Ownable, DetailedERC20("KarmaToken", "KARMA", 0) {
   // SafeMath libs are responsible for checking overflow.
   using SafeMath for uint256;
   using SafeMath64 for uint64;

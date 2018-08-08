@@ -3,7 +3,7 @@ pragma solidity ^0.4.11;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -238,8 +238,8 @@ contract EtchReward is Pausable, BasicToken, ReentrancyGuard {
     //
     // @dev constants
     //
-    string public constant name   = &quot;Etch Reward Token&quot;;
-    string public constant symbol = &quot;ETCHR&quot;;
+    string public constant name   = "Etch Reward Token";
+    string public constant symbol = "ETCHR";
     uint public constant decimals = 18;
 
     //

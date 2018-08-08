@@ -82,8 +82,8 @@ contract GameInvestToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;GAIN&quot;;
-        name = &quot;GAMEINVEST.IO&quot;;
+        symbol = "GAIN";
+        name = "GAMEINVEST.IO";
         decimals = 18;
         _totalSupply = (980000000) * (10 **18);
         

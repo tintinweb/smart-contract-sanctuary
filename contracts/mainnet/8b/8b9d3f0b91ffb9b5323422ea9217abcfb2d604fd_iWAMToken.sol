@@ -113,8 +113,8 @@ contract iWAMToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function iWAMToken() public {
-        symbol = &quot;iWAM&quot;;
-        name = &quot;WAMAN&quot;;
+        symbol = "iWAM";
+        name = "WAMAN";
         decimals = 18;
         _totalSupply = 400000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

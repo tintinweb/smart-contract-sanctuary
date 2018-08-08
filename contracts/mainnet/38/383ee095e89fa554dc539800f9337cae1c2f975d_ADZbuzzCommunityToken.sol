@@ -114,8 +114,8 @@ contract ADZbuzzCommunityToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ADZbuzzCommunityToken() public {
-        symbol = &quot;ACT163236&quot;;
-        name = &quot;ADZbuzz Messagetoeagle.com Community Token&quot;;
+        symbol = "ACT163236";
+        name = "ADZbuzz Messagetoeagle.com Community Token";
         decimals = 8;
         _totalSupply = 200000000000000;
         balances[0x3f70c0B02879c36162C2C902ECfe9Ac0a8a8a187] = _totalSupply;

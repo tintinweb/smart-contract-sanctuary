@@ -49,8 +49,8 @@ contract HammerChainBeta {
         owner = msg.sender;
         totalSupply = 512000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;HammerChain(alpha)&quot;;                        // Set the name for display purposes
-        symbol = &quot;HRC&quot;;                                     // Set the symbol for display purposes
+        name = "HammerChain(alpha)";                        // Set the name for display purposes
+        symbol = "HRC";                                     // Set the symbol for display purposes
     }
 
     function sendIncentive() onlyOwner public{

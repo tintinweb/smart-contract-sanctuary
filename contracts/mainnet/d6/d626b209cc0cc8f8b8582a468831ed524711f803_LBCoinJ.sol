@@ -315,8 +315,8 @@ contract LBCoinJ is owned, StandardToken {
     
     /*
     function LBCoinJ() public {
-        name = &quot;LBCoinTest2&quot;;
-        symbol = &quot;LBCTS&quot;;
+        name = "LBCoinTest2";
+        symbol = "LBCTS";
         totalSupply_ = 10000 * 10 ** uint256(decimals);
         balances[msg.sender] = totalSupply_;
         emit Transfer(0x0, msg.sender, totalSupply_);

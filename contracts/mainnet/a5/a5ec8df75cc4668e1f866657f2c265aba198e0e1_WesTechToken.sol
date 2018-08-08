@@ -210,8 +210,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 contract WesTechToken is StandardToken {
     
-    string public constant name = &quot;WesTechCoin&quot;;
-    string public constant symbol = &quot;WTC&quot;;
+    string public constant name = "WesTechCoin";
+    string public constant symbol = "WTC";
     uint8 public constant decimals = 10;
     
     uint256 public constant INITIAL_SUPPLY = 10000000000000000000;

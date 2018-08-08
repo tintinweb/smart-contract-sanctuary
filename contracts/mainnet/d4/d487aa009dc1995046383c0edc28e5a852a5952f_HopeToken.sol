@@ -124,8 +124,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract HopeToken is StandardToken {
 
-  string public constant name = &quot;Hope Token&quot;;
-  string public constant symbol = &quot;HOPE&quot;;
+  string public constant name = "Hope Token";
+  string public constant symbol = "HOPE";
   uint256 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 10000000000000000000000000000;

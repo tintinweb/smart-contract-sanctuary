@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract RSC is StandardToken, Ownable {
 
-    string public constant name = &quot;Resource Block Chain&quot;;
-    string public constant symbol = &quot;RSC&quot;;
+    string public constant name = "Resource Block Chain";
+    string public constant symbol = "RSC";
     uint256 public constant decimals = 8;
 
     function RSC() public {

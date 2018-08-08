@@ -87,10 +87,10 @@ contract StandardToken is Token {
 contract TXQToken is StandardToken, SafeMath {
 
     // metadata
-    string  public constant name = &quot;TXQ&quot;;
-    string  public constant symbol = &quot;TXQCoin&quot;;
+    string  public constant name = "TXQ";
+    string  public constant symbol = "TXQCoin";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
 
     // contracts
     address public ethFundDeposit;          // ETH存放地址

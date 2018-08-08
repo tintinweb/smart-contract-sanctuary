@@ -113,8 +113,8 @@ contract LinkNaturePower is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function LinkNaturePower() public {
-        symbol = &quot;LNP&quot;;
-        name = &quot;Link Nature Power&quot;;
+        symbol = "LNP";
+        name = "Link Nature Power";
         decimals = 18;
         _totalSupply = 33000000000000000000000000;
         balances[0x24e5F200A9E39B86a549f6f78D1D3144BC9437c6] = _totalSupply;

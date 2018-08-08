@@ -25,8 +25,8 @@ contract KEKEcon{
     function KEKEcon(){
         balanceOf[msg.sender] = 100000000000000000; // Give the creator all initial tokens
         totalSupply = 100000000000000000;                        // Update total supply
-        name = &quot;KEKEcon&quot;;                                   // Set the name for display purposes
-        symbol = &quot;KEKEcon&quot;;                             // Set the symbol for display purposes
+        name = "KEKEcon";                                   // Set the name for display purposes
+        symbol = "KEKEcon";                             // Set the symbol for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
     }
 

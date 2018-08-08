@@ -23,8 +23,8 @@ contract MOBOL{
     function MOBOL() {
         balanceOf[msg.sender] =  230000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  230000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;MOBOL&quot;;                                   // Set the name for display purposes
-        symbol = &quot;MOBC&quot;;                               // Set the symbol for display purposes
+        name = "MOBOL";                                   // Set the name for display purposes
+        symbol = "MOBC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

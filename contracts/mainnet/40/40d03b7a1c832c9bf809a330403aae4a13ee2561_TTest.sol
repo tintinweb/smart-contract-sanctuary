@@ -172,8 +172,8 @@ contract TTest is BaseToken, BurnToken, AirdropToken, LockToken {
 
     function TTest() public {
         totalSupply = 36000000000000000;
-        name = &quot;ABCToken&quot;;
-        symbol = &quot;ABC&quot;;
+        name = "ABCToken";
+        symbol = "ABC";
         decimals = 8;
 		
         owner = msg.sender;

@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract MTC is StandardToken, Ownable {
 
-    string public constant name = &quot;Sauce wine alliance chain（酱酒联盟链）&quot;;
-    string public constant symbol = &quot;MTC&quot;;
+    string public constant name = "Sauce wine alliance chain（酱酒联盟链）";
+    string public constant symbol = "MTC";
     uint256 public constant decimals = 8;
 
     function MTC() public {

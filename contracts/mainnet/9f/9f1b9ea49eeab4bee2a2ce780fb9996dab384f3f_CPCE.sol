@@ -79,10 +79,10 @@ contract StandardToken is Token {
 
 contract CPCE is StandardToken, SafeMath {
 
-    string public constant name = &quot;CPC&quot;;
-    string public constant symbol = &quot;CPC&quot;;
+    string public constant name = "CPC";
+    string public constant symbol = "CPC";
     uint256 public constant decimals = 18;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     address public CPCEPrivateDeposit;
     address public CPCEIcoDeposit;

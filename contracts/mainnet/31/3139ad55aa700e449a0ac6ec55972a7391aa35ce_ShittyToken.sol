@@ -350,7 +350,7 @@ contract ERC827Token is ERC827, StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -529,8 +529,8 @@ contract ShittyToken is Ownable, MintableToken, ERC827Token {
 
     using SafeMath for *;
 
-    string public constant NAME = &quot;Shitty Token&quot;; // solium-disable-line uppercase
-    string public constant SYMBOL = &quot;SHIT&quot;; // solium-disable-line uppercase
+    string public constant NAME = "Shitty Token"; // solium-disable-line uppercase
+    string public constant SYMBOL = "SHIT"; // solium-disable-line uppercase
     uint8 public constant DECIMALS = 18; // solium-disable-line uppercase
     uint256 public constant INITIAL_SUPPLY = 10000 * (10 ** uint256(DECIMALS));
 

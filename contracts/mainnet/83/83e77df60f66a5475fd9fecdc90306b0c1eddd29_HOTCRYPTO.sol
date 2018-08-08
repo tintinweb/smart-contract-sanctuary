@@ -181,8 +181,8 @@ contract StandardToken is BasicToken, ERC20 {
  */
 contract HOTCRYPTO is StandardToken {
 
-    string public name = &quot;HOTCRYPTO&quot;;
-    string public symbol = &quot;HCR&quot;;
+    string public name = "HOTCRYPTO";
+    string public symbol = "HCR";
     uint public decimals = 8;
     uint public INITIAL_SUPPLY = 800000000000000; // Initial supply is 8,000,000 HCR
 

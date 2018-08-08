@@ -191,8 +191,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract GSToken is PausableToken {
 
-    string  public name = &quot;GrEARN&#39;s Token&quot;;
-    string  public symbol = &quot;GST&quot;;
+    string  public name = "GrEARN&#39;s Token";
+    string  public symbol = "GST";
     uint    public decimals = 18;
 
     mapping (address => bool) public frozenAccount;

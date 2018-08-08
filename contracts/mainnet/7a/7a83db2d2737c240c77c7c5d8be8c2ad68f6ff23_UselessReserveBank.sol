@@ -242,8 +242,8 @@ contract UselessReserveBank is ERC20Token, Gubberment {
     // ------------------------------------------------------------------------
     // Token information
     // ------------------------------------------------------------------------
-    string public constant symbol = &quot;URB&quot;;
-    string public constant name = &quot;Useless Reserve Bank&quot;;
+    string public constant symbol = "URB";
+    string public constant name = "Useless Reserve Bank";
     uint8 public constant decimals = 18;
     
     uint public constant WELFARE_HANDOUT = 1000;

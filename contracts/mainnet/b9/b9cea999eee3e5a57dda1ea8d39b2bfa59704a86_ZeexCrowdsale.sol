@@ -287,7 +287,7 @@ contract Crowdsale {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -799,8 +799,8 @@ contract ZeexCrowdsale is CappedCrowdsale, MintedCrowdsale, TimedCrowdsale, Paus
   uint256 public minPresaleWei;
   uint256 public maxPresaleWei;
 
-  bytes1 public constant publicPresale = &quot;0&quot;;
-  bytes1 public constant privatePresale = &quot;1&quot;;
+  bytes1 public constant publicPresale = "0";
+  bytes1 public constant privatePresale = "1";
 
   address[] public bonusUsers;
   mapping(address => mapping(bytes1 => uint256)) public bonusTokens;

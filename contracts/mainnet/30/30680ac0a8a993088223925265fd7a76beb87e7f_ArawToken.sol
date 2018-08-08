@@ -55,7 +55,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -358,8 +358,8 @@ contract ArawToken is StandardBurnableToken, Ownable {
 
   using SafeMath for uint256;
 
-  string public symbol = &quot;ARAW&quot;;
-  string public name = &quot;ARAW&quot;;
+  string public symbol = "ARAW";
+  string public name = "ARAW";
   uint256 public decimals = 18;
 
   /* Wallet address will be changed for production */ 

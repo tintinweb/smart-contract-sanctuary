@@ -58,7 +58,7 @@ Copyright (c) 2016 Oraclize LTD
 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
+of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
@@ -71,7 +71,7 @@ all copies or substantial portions of the Software.
 
 
 
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -389,19 +389,19 @@ library oraclizeLib {
     function strConcat(string _a, string _b, string _c, string _d)
     internal
     returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
 
     function strConcat(string _a, string _b, string _c)
     internal
     returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
 
     function strConcat(string _a, string _b)
     internal
     returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 
     // parseInt
@@ -437,7 +437,7 @@ library oraclizeLib {
     function uint2str(uint i)
     internal
     returns (string){
-        if (i == 0) return &quot;0&quot;;
+        if (i == 0) return "0";
         uint j = i;
         uint len;
         while (j != 0){
@@ -554,7 +554,7 @@ library oraclizeLib {
 contract DogRace {
     using SafeMath for uint256; 
 
-    string public constant version = &quot;0.0.5&quot;;
+    string public constant version = "0.0.5";
 
     uint public constant min_bet = 0.1 ether;
     uint public constant max_bet = 1 ether;
@@ -775,7 +775,7 @@ contract DogRace {
     // place the oraclize queries and open betting
     function setup_race(uint betting_period, uint racing_period) public onlyOwner beforeBetting payable returns(bool) {
         // We have to send 2 queries for each dog; check if we have enough ether for this
-        require (oraclizeLib.oraclize_getPrice(&quot;URL&quot;, 500000) * 2 * dogs_count < this.balance);
+        require (oraclizeLib.oraclize_getPrice("URL", 500000) * 2 * dogs_count < this.balance);
 
         chronus.starting_time = block.timestamp;
         chronus.betting_open = true;
@@ -783,21 +783,21 @@ contract DogRace {
         uint delay = betting_period.add(60); //slack time 1 minute
         chronus.betting_duration = delay;
 
-        oraclize_query_ids[oraclizeLib.oraclize_query(delay, &quot;URL&quot;, &quot;json(https://api.coinmarketcap.com/v1/ticker/bitcoin/).0.price_usd&quot;, 500000)] = 1;
-        oraclize_query_ids[oraclizeLib.oraclize_query(delay, &quot;URL&quot;, &quot;json(https://api.coinmarketcap.com/v1/ticker/ethereum/).0.price_usd&quot;, 500000)] = 2;
-        oraclize_query_ids[oraclizeLib.oraclize_query(delay, &quot;URL&quot;, &quot;json(https://api.coinmarketcap.com/v1/ticker/litecoin/).0.price_usd&quot;, 500000)] = 3;
-        oraclize_query_ids[oraclizeLib.oraclize_query(delay, &quot;URL&quot;, &quot;json(https://api.coinmarketcap.com/v1/ticker/bitcoin-cash/).0.price_usd&quot;, 500000)] = 4;
-        oraclize_query_ids[oraclizeLib.oraclize_query(delay, &quot;URL&quot;, &quot;json(https://api.coinmarketcap.com/v1/ticker/ripple/).0.price_usd&quot;, 500000)] = 5;
+        oraclize_query_ids[oraclizeLib.oraclize_query(delay, "URL", "json(https://api.coinmarketcap.com/v1/ticker/bitcoin/).0.price_usd", 500000)] = 1;
+        oraclize_query_ids[oraclizeLib.oraclize_query(delay, "URL", "json(https://api.coinmarketcap.com/v1/ticker/ethereum/).0.price_usd", 500000)] = 2;
+        oraclize_query_ids[oraclizeLib.oraclize_query(delay, "URL", "json(https://api.coinmarketcap.com/v1/ticker/litecoin/).0.price_usd", 500000)] = 3;
+        oraclize_query_ids[oraclizeLib.oraclize_query(delay, "URL", "json(https://api.coinmarketcap.com/v1/ticker/bitcoin-cash/).0.price_usd", 500000)] = 4;
+        oraclize_query_ids[oraclizeLib.oraclize_query(delay, "URL", "json(https://api.coinmarketcap.com/v1/ticker/ripple/).0.price_usd", 500000)] = 5;
 
         delay = delay.add(racing_period);
 
-        oraclize_query_ids[oraclizeLib.oraclize_query(delay, &quot;URL&quot;, &quot;json(https://api.coinmarketcap.com/v1/ticker/bitcoin/).0.price_usd&quot;, 500000)] = 1;
-        oraclize_query_ids[oraclizeLib.oraclize_query(delay, &quot;URL&quot;, &quot;json(https://api.coinmarketcap.com/v1/ticker/ethereum/).0.price_usd&quot;, 500000)] = 2;
-        oraclize_query_ids[oraclizeLib.oraclize_query(delay, &quot;URL&quot;, &quot;json(https://api.coinmarketcap.com/v1/ticker/litecoin/).0.price_usd&quot;, 500000)] = 3;
-        oraclize_query_ids[oraclizeLib.oraclize_query(delay, &quot;URL&quot;, &quot;json(https://api.coinmarketcap.com/v1/ticker/bitcoin-cash/).0.price_usd&quot;, 500000)] = 4;
-        oraclize_query_ids[oraclizeLib.oraclize_query(delay, &quot;URL&quot;, &quot;json(https://api.coinmarketcap.com/v1/ticker/ripple/).0.price_usd&quot;, 500000)] = 5;
+        oraclize_query_ids[oraclizeLib.oraclize_query(delay, "URL", "json(https://api.coinmarketcap.com/v1/ticker/bitcoin/).0.price_usd", 500000)] = 1;
+        oraclize_query_ids[oraclizeLib.oraclize_query(delay, "URL", "json(https://api.coinmarketcap.com/v1/ticker/ethereum/).0.price_usd", 500000)] = 2;
+        oraclize_query_ids[oraclizeLib.oraclize_query(delay, "URL", "json(https://api.coinmarketcap.com/v1/ticker/litecoin/).0.price_usd", 500000)] = 3;
+        oraclize_query_ids[oraclizeLib.oraclize_query(delay, "URL", "json(https://api.coinmarketcap.com/v1/ticker/bitcoin-cash/).0.price_usd", 500000)] = 4;
+        oraclize_query_ids[oraclizeLib.oraclize_query(delay, "URL", "json(https://api.coinmarketcap.com/v1/ticker/ripple/).0.price_usd", 500000)] = 5;
 
-        OraclizeQuery(&quot;Oraclize queries were sent&quot;);
+        OraclizeQuery("Oraclize queries were sent");
         
         chronus.race_duration = delay;
 

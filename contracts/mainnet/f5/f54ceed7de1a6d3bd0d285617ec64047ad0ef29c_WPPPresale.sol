@@ -17,7 +17,7 @@ contract ERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -99,8 +99,8 @@ contract WPPToken is ERC20, Ownable {
 	mapping  (address => uint256)             public          _balances;
     mapping  (address => mapping (address => uint256)) public  _approvals;
 
-    string   public  name = &quot;WPPTOKEN&quot;;
-    string   public  symbol = &quot;WPP&quot;;
+    string   public  name = "WPPTOKEN";
+    string   public  symbol = "WPP";
     uint256  public  decimals = 18;
 
     event Transfer(address indexed from, address indexed to, uint256 value);
@@ -266,7 +266,7 @@ contract WPPPresale is Ownable{
 	// override to create custom token transfer mechanism, eg. pull pattern
 	function transferToken(address beneficiary, uint256 tokenamount) internal {
 		wpp.transfer(beneficiary, tokenamount);
-		// address(wpp).call(bytes4(keccak256(&quot;transfer(address, uint256)&quot;)), beneficiary,tokenamount);
+		// address(wpp).call(bytes4(keccak256("transfer(address, uint256)")), beneficiary,tokenamount);
 	}
 
 	// send ether to the fund collection wallet

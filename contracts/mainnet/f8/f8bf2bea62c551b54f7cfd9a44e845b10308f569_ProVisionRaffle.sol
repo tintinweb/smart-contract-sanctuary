@@ -32,7 +32,7 @@ contract ProVisionRaffle is owned {
     
     constructor() public {
         Raffle_ID = 70935284;
-        Raffle_Prize = &quot;iPhone X&quot;;
+        Raffle_Prize = "iPhone X";
         Allow_Entries = true;       
         Raffle_Finished = false;
         Winning_Entry = 0;

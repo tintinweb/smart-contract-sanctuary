@@ -257,7 +257,7 @@ contract ERC827Token is ERC827, StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -398,8 +398,8 @@ contract PausableERC827Token is ERC827Token, PausableToken {
 
 contract COOPToken is PausableERC827Token, BurnableToken {
 
-    string public constant name = &quot;Cooperative Exchange Token&quot;;
-    string public constant symbol = &quot;COOP&quot;;
+    string public constant name = "Cooperative Exchange Token";
+    string public constant symbol = "COOP";
     uint32 public constant decimals = 14;
 
     function COOPToken() public {

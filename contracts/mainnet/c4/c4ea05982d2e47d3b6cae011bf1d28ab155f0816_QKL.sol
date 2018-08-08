@@ -125,9 +125,9 @@ contract Pausable is Ownable {
 contract QKL is ERC20,Pausable{
 	using SafeMath for uint256;
 
-	string public constant name=&quot;QKL&quot;;
-	string public symbol=&quot;QKL&quot;;
-	string public constant version = &quot;1.0&quot;;
+	string public constant name="QKL";
+	string public symbol="QKL";
+	string public constant version = "1.0";
 	uint256 public constant decimals = 18;
 	uint256 public totalSupply;
 

@@ -114,8 +114,8 @@ contract CTChinaCoin is Ownable, StandardToken {
     function CTChinaCoin() public {
     totalSupply = 100 * (10**6) * (10**6);
         balances[msg.sender] = totalSupply;
-        name = &quot;CT(ChinaToken)&quot;;
-        symbol = &quot;CT&quot;;
+        name = "CT(ChinaToken)";
+        symbol = "CT";
         decimals = 6;
     }
 

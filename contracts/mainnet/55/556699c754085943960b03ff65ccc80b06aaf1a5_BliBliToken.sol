@@ -87,10 +87,10 @@ contract StandardToken is Token {
 contract BliBliToken is StandardToken, SafeMath {
 
     // metadata
-    string  public constant name = &quot;blibli&quot;;
-    string  public constant symbol = &quot;bCoin&quot;;
+    string  public constant name = "blibli";
+    string  public constant symbol = "bCoin";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
 
     // contracts
     address public ethFundDeposit;          // ETH存放地址

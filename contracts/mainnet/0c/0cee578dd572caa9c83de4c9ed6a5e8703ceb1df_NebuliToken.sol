@@ -88,8 +88,8 @@ contract NebuliToken is ERC20Interface, Owned, SafeMath {
 
     
     function NebuliToken() public {
-        symbol = &quot;NBL&quot;;
-        name = &quot;NebuliToken&quot;;
+        symbol = "NBL";
+        name = "NebuliToken";
         decimals = 18;
         _totalSupply = 50000000000000000000000000;
         balances[0xf3966096Bf0e29c259d9A500907d91a7DFDD1148] = _totalSupply;

@@ -100,8 +100,8 @@ contract ObitanChainToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ObitanChainToken() public {
-        symbol = &quot;OBTC&quot;;
-        name = &quot;ObitanChain&quot;;
+        symbol = "OBTC";
+        name = "ObitanChain";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x84abacf1481288d0dd2745fd92b556b94e81c895] = _totalSupply;

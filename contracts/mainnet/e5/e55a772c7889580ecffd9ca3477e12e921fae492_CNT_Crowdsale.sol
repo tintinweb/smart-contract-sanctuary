@@ -118,7 +118,7 @@ contract CNT_Crowdsale is CNT_Common {
         bgb_per_Keos  = 300000;
         vpe_per_Keos  =    500;
         gvpe_per_Keos =    100;
-        name = &quot;CNT_Crowdsale&quot;;
+        name = "CNT_Crowdsale";
         remaining = 1000000 * 10**18; // 1 million
     }
 

@@ -61,9 +61,9 @@ contract BMVToken is ERC20 {
   mapping (address => mapping (address => uint256)) internal allowed;
 
   uint256 totalSupply_ = 1500000000000000;
-  string public name  = &quot;BlockMoveVelocity&quot;;                   
+  string public name  = "BlockMoveVelocity";                   
   uint8 public decimals = 6;               
-  string public symbol =&quot;BMV&quot;;               
+  string public symbol ="BMV";               
   
   constructor() public {
     balances[msg.sender] = totalSupply_; 

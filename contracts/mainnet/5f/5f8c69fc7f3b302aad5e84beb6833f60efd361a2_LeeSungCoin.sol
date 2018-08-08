@@ -157,8 +157,8 @@ contract LeeSungCoin is ERC20Token
 {
 	uint constant E18 = 10**18;
 
-  	string public constant name 	= &quot;LeeSungCoin&quot;;
-  	string public constant symbol 	= &quot;LSC&quot;;
+  	string public constant name 	= "LeeSungCoin";
+  	string public constant symbol 	= "LSC";
   	uint public constant decimals 	= 18;
 
 	address public wallet;

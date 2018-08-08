@@ -165,8 +165,8 @@ contract ERC23StandardToken is ERC23BasicToken {
 // Based in part on code by Open-Zeppelin: https://github.com/OpenZeppelin/zeppelin-solidity.git
 // Based in part on code by FirstBlood: https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol
 contract OpusToken is ERC23StandardToken {
-    string public constant name = &quot;Opus Token&quot;;
-    string public constant symbol = &quot;OPT&quot;;
+    string public constant name = "Opus Token";
+    string public constant symbol = "OPT";
     uint256 public constant decimals = 18;
     address public multisig=address(0x1426c1f91b923043F7C5FbabC6e369e7cBaef3f0); //multisig wallet, to which all contributions will be sent
     address public foundation; //owner address

@@ -141,7 +141,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -369,8 +369,8 @@ contract SintToken is BurnableToken, CappedToken {
     event TransfersUnlocked();
     event Timelock(address indexed beneficiary, uint256 releaseTime);
 
-    string public constant name = &quot;Sint Token&quot;;
-    string public constant symbol = &quot;SIN&quot;;
+    string public constant name = "Sint Token";
+    string public constant symbol = "SIN";
     uint8 public constant decimals = 18;
 
     mapping (address => uint256) private lockedUntil; // timestamps
@@ -393,7 +393,7 @@ contract SintToken is BurnableToken, CappedToken {
 
     modifier whenUnlockedTransfers(address _sender) {
         require(!lockedTransfers);
-        require(lockedUntil[_sender] < now, &quot;Timelock&quot;); // optional time lock
+        require(lockedUntil[_sender] < now, "Timelock"); // optional time lock
         _;
     }
 

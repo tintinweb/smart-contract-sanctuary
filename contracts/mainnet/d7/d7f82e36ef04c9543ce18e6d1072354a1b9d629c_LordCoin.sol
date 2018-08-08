@@ -149,8 +149,8 @@ contract StandardToken is ERC20, BasicToken {
 contract LordCoin is StandardToken {
   using SafeMath for uint256;
 
-  string public name = &quot;Lord Coin&quot;;
-  string public symbol = &quot;LC&quot;;
+  string public name = "Lord Coin";
+  string public symbol = "LC";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 20000000 * 1 ether;
 

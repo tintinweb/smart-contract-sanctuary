@@ -21,7 +21,7 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 
 contract token {
     /* Public variables of the token */
-    string public standard = &quot;RiptideCoin 0.2&quot;;
+    string public standard = "RiptideCoin 0.2";
     
     string public name;
     string public symbol;
@@ -107,8 +107,8 @@ contract RiptideCoin is owned, token {
     /* Initializes contract with initial supply tokens to the creator of the contract */
     uint256 public constant initialSupply = 95000000 * 10**8;
     uint8 public constant decimalUnits = 8;
-    string public tokenName = &quot;RiptideCoin&quot;;
-    string public tokenSymbol = &quot;RIPT&quot;;
+    string public tokenName = "RiptideCoin";
+    string public tokenSymbol = "RIPT";
     function RiptideCoin(    ) token (initialSupply, tokenName, decimalUnits, tokenSymbol) {}
      /* Send coins */
     function transfer(address _to, uint256 _value) {

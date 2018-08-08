@@ -113,8 +113,8 @@ contract TranslateME is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TranslateME() public {
-        symbol = &quot;TME&quot;;
-        name = &quot;TranslateME Token&quot;;
+        symbol = "TME";
+        name = "TranslateME Token";
         decimals = 18;
         _totalSupply = 2000000000000000000000000000;
         balances[0x006bdC2AB0217c3de5D90C8B44A8eACb4e423ef1] = _totalSupply;

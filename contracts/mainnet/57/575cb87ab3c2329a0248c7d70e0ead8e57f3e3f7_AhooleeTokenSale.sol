@@ -50,7 +50,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -246,8 +246,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract AhooleeToken is StandardToken {
 
-  string public name = &quot;Ahoolee Token&quot;;
-  string public symbol = &quot;AHT&quot;;
+  string public name = "Ahoolee Token";
+  string public symbol = "AHT";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 100000000 * 1 ether;
 
@@ -265,7 +265,7 @@ contract AhooleeToken is StandardToken {
 contract AhooleeTokenSale is Haltable {
     using SafeMath for uint;
 
-    string public name = &quot;Ahoolee Token Sale&quot;;
+    string public name = "Ahoolee Token Sale";
 
     AhooleeToken public token;
     address public beneficiary;

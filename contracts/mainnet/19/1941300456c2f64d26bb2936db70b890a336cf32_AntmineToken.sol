@@ -264,8 +264,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract AntmineToken is PausableToken {
-    string public name = &quot;AntCoin&quot;;
-    string public symbol = &quot;AMC&quot;;
+    string public name = "AntCoin";
+    string public symbol = "AMC";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 60000000000000000000000000;
 

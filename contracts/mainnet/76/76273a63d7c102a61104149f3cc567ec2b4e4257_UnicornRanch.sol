@@ -173,7 +173,7 @@ contract UnicornRanch {
     if (groveAddress > 0) {
       // Insert into Grove index for applications to query
       GroveAPI g = GroveAPI(groveAddress);
-      g.insert(&quot;bookingExpiration&quot;, uniqueKey, int(expiresBlock));
+      g.insert("bookingExpiration", uniqueKey, int(expiresBlock));
     }
     
     // Send event about this new booking

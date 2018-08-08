@@ -49,7 +49,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -337,8 +337,8 @@ contract BurnableToken is PausableToken {
  */
 contract CC is BurnableToken {
 
-  string public name = &quot;Community Coin&quot;;
-  string public symbol = &quot;CC&quot;;
+  string public name = "Community Coin";
+  string public symbol = "CC";
   uint8 public decimals = 8;
 
   uint256 public constant INITIAL_SUPPLY = 100000000 * 10**uint256(8);

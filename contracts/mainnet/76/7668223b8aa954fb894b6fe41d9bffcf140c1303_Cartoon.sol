@@ -184,8 +184,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract Cartoon is StandardToken {
-    string public name = &quot;Cartoon&quot;;
-    string public symbol = &quot;CAT&quot;;
+    string public name = "Cartoon";
+    string public symbol = "CAT";
     uint8 public decimals = 18;
     uint public INITIAL_SUPPLY = 100000000000 * (10**18);
 

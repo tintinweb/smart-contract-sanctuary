@@ -48,8 +48,8 @@ contract ERC223Token is ERC223, SafeMath {
 
   mapping(address => uint) balances;
   
-  string public name = &quot;ServerCube Coin&quot;;
-  string public symbol = &quot;SCC&quot;;
+  string public name = "ServerCube Coin";
+  string public symbol = "SCC";
   uint8 public decimals = 0;
   uint256 public totalSupply = 80000000;
   

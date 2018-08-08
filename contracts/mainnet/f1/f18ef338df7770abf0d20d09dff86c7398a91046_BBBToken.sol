@@ -35,7 +35,7 @@ library SafeMath {
 /**
 * @title Ownable
 * @dev The Ownable contract has an owner address, and provides basic authorization control 
-* functions, this simplifies the implementation of &quot;user permissions&quot;. 
+* functions, this simplifies the implementation of "user permissions". 
 */ 
 contract Ownable {
     address public owner;
@@ -171,8 +171,8 @@ contract BBBToken is StandardToken, Ownable {
     using SafeMath for uint256;
 
     // Token 資訊
-    string  public constant NAME = &quot;M724 Coin&quot;;
-    string  public constant SYMBOL = &quot;M724&quot;;
+    string  public constant NAME = "M724 Coin";
+    string  public constant SYMBOL = "M724";
     uint8   public constant DECIMALS = 18;
 
     // Sale period1.

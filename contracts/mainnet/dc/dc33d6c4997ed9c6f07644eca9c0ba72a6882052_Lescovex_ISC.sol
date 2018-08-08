@@ -92,7 +92,7 @@ contract LescovexERC20 is Ownable {
     }
 
     /* Public variables for the ERC20 token */
-    string public constant standard = &quot;ERC20 Lescovex ISC Income Smart Contract&quot;;
+    string public constant standard = "ERC20 Lescovex ISC Income Smart Contract";
     uint8 public constant decimals = 8; // hardcoded to be a constant
     uint256 public holdMax = 100;
     uint256 public totalSupply;

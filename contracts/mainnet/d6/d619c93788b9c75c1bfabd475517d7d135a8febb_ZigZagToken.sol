@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract ZigZagToken {
     // Public variables of the token
-    string public name = &quot;The ZigZag Token&quot;;
-    string public symbol = &quot;TZZT&quot;;
+    string public name = "The ZigZag Token";
+    string public symbol = "TZZT";
     uint8 public decimals = 0;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

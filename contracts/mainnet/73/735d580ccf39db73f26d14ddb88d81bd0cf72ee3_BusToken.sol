@@ -290,10 +290,10 @@ contract BusToken is Claimable, Contactable, HasNoEther, FreezableToken {
 
         _totalSupply = _supply;
         balances[msg.sender] = _supply;
-        name = &quot;Bitconch Coin&quot;;
-        symbol = &quot;BUS&quot;;
+        name = "Bitconch Coin";
+        symbol = "BUS";
         decimals = _decimals;
-        contactInformation = &quot;Bitconch Contact Email:info@bitconch.io&quot;;
+        contactInformation = "Bitconch Contact Email:info@bitconch.io";
     }
 }
 

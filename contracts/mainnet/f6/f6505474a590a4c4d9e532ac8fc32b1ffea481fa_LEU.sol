@@ -87,10 +87,10 @@ contract StandardToken is Token {
 contract LEU is StandardToken, SafeMath {
 
     // metadata
-    string  public constant name = &quot;LEU&quot;;
-    string  public constant symbol = &quot;LEU&quot;;
+    string  public constant name = "LEU";
+    string  public constant symbol = "LEU";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
 
     // contracts
     address public ethFundDeposit;          // ETH存放地址

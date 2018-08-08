@@ -113,9 +113,9 @@ contract Token is StandardToken {
         throw;
     }
 
-    string public name =&quot;Hgcrypto&quot;;
+    string public name ="Hgcrypto";
     uint8 public decimals = 18;
-    string public symbol = &quot;HGC&quot;;
+    string public symbol = "HGC";
     uint256 public initialSupply = 1280000000;
 
     function Token(address _receiver) public {

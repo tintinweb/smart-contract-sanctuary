@@ -169,8 +169,8 @@ contract ERC223Interface {
 contract WubCoin is ERC223Interface, ERC20CompatibleToken {
     using SafeMath for uint;
 
-    string  public name    = &quot;WubCoin&quot;;
-    string  public symbol  = &quot;WUB&quot;;
+    string  public name    = "WubCoin";
+    string  public symbol  = "WUB";
     uint8   public decimals = 18;
     uint256 public totalSupply = 0;
     address public owner;

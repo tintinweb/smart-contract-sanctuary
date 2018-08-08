@@ -129,8 +129,8 @@ contract EpsBonus is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EpsBonus() public {
-        symbol = &quot;EPSBC&quot;;
-        name = &quot;EPS BONUS&quot;;
+        symbol = "EPSBC";
+        name = "EPS BONUS";
         decimals = 18;
         _totalSupply = 10000000;
         balances[owner] = _totalSupply;

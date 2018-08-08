@@ -301,7 +301,7 @@ contract Crowdsale {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -582,8 +582,8 @@ contract ReleasableToken is ERC20, Ownable {
 // File: contracts/BRFToken/BRFToken.sol
 
 contract BRFToken is StandardToken, ReleasableToken {
-  string public constant name = &quot;Bitrace Token&quot;;
-  string public constant symbol = &quot;BRF&quot;;
+  string public constant name = "Bitrace Token";
+  string public constant symbol = "BRF";
   uint8 public constant decimals = 18;
 
   function BRFToken() public {

@@ -183,8 +183,8 @@ contract Ownable {
 }
 
 contract Gnosis is StandardToken, Ownable {
-  string public constant name = &quot;Gnosis&quot;;
-  string public constant symbol = &quot;GNO&quot;;
+  string public constant name = "Gnosis";
+  string public constant symbol = "GNO";
   uint8 public constant decimals = 18;
   
   uint256 public GnosisIssued;
@@ -223,7 +223,7 @@ contract Gnosis is StandardToken, Ownable {
     totalSupply = 10000000 * (10 ** uint256(decimals)); 
     balances[msg.sender] = totalSupply;  
     GnosisIssued = totalSupply;
-    GnosisTalk = &quot;Gnosis&quot;;
+    GnosisTalk = "Gnosis";
     
   }
  

@@ -3,8 +3,8 @@ contract OHGLuangPrabang {
     
     uint public constant _totalSupply = 150000000000000000000000000;
     
-    string public constant symbol = &quot;OHGLP&quot;;
-    string public constant name = &quot;OHG Luang Prabang&quot;;
+    string public constant symbol = "OHGLP";
+    string public constant name = "OHG Luang Prabang";
     uint8 public constant decimals = 18;
     
     mapping(address => uint256) balances;

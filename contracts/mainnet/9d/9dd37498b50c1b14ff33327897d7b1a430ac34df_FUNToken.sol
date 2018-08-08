@@ -51,7 +51,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -96,8 +96,8 @@ contract FUNToken is Ownable { //ERC - 20 token contract
   // Triggered whenever approve(address _spender, uint256 _value) is called.
   event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
-  string public constant symbol = &quot;FUN&quot;; // solium-disable-line uppercase
-  string public constant name = &quot;THEFORTUNEFUND&quot;; // solium-disable-line uppercase
+  string public constant symbol = "FUN"; // solium-disable-line uppercase
+  string public constant name = "THEFORTUNEFUND"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
   /** @dev maximum token supply
   */

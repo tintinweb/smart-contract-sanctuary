@@ -440,21 +440,21 @@ contract EligmaMintingContract is Owned{
     function doPresaleMinting(address _destination, uint _tokensAmount) public onlyOwner {
         require(ERC20TokenInterface(tokenContractAddress).totalSupply() + _tokensAmount <= tokenTotalSupply);
         MintableTokenInterface(tokenContractAddress).mint(_destination, _tokensAmount);
-        emit MintMade(_destination, _tokensAmount, &quot;Presale mint&quot;);
+        emit MintMade(_destination, _tokensAmount, "Presale mint");
     }
 
     function doCrowdsaleMinting(address _destination, uint _tokensAmount) public {
         require(msg.sender == crowdsaleContractAddress);
         require(ERC20TokenInterface(tokenContractAddress).totalSupply() + _tokensAmount <= tokenTotalSupply);
         MintableTokenInterface(tokenContractAddress).mint(_destination, _tokensAmount);
-        emit MintMade(_destination, _tokensAmount, &quot;Crowdsale mint&quot;);
+        emit MintMade(_destination, _tokensAmount, "Crowdsale mint");
     }
 
     function doTeamMinting(address _destination) public onlyOwner {
         require(ERC20TokenInterface(tokenContractAddress).totalSupply() < tokenTotalSupply);
         uint amountToMint = tokenTotalSupply - ERC20TokenInterface(tokenContractAddress).totalSupply();
         MintableTokenInterface(tokenContractAddress).mint(_destination, amountToMint);
-        emit MintMade(_destination, amountToMint, &quot;Team mint&quot;);
+        emit MintMade(_destination, amountToMint, "Team mint");
     }
 
     function setTokenContractAddress(address _newAddress) public onlyOwner {

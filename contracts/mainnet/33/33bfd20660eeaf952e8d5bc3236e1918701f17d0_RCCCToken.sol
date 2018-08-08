@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract RCCCToken {
     // Public variables of the token
-    string public name = &quot;RCCC Token&quot;;
-    string public symbol = &quot;RCCC&quot;;
+    string public name = "RCCC Token";
+    string public symbol = "RCCC";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply;

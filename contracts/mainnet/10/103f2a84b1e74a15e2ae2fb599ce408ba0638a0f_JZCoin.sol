@@ -102,8 +102,8 @@ contract JZCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JZCoin() public {
-        symbol = &quot;XJZC&quot;;
-        name = &quot;JZCoin&quot;;
+        symbol = "XJZC";
+        name = "JZCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x9e9163E120219739418014Dd9CA7f664146BCbe3] = _totalSupply;

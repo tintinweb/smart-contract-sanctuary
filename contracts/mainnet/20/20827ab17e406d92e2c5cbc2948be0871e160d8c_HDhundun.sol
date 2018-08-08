@@ -58,8 +58,8 @@ contract HDhundun is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;HDhundun&quot;;
-    string public constant symbol = &quot;HD&quot;;
+    string public constant name = "HDhundun";
+    string public constant symbol = "HD";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 300000000e18;

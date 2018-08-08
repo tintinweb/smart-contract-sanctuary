@@ -6,8 +6,8 @@ contract Zerk {
     
     uint public constant _totalSupply = 20000000;
     
-    string public constant symbol =&quot;ZRK&quot;;
-    string public constant name =&quot;Zerk&quot;;
+    string public constant symbol ="ZRK";
+    string public constant name ="Zerk";
     uint8 public constant decimals =0;
     
         

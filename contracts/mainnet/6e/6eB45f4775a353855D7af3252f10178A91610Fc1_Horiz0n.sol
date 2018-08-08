@@ -194,8 +194,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract Horiz0n is MintableToken {
 
-  string public constant name = &quot;Horiz0n&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;HRZ&quot;; // solium-disable-line uppercase
+  string public constant name = "Horiz0n"; // solium-disable-line uppercase
+  string public constant symbol = "HRZ"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 10000 * (10 ** uint256(decimals));

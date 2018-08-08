@@ -28,8 +28,8 @@ event Approval(address indexed _owner, address indexed _spender, uint _value);
 
 /*MINT TOKEN*/
 constructor() public {
-name = &quot;TokenChanger&quot;;
-symbol = &quot;TOC&quot;;
+name = "TokenChanger";
+symbol = "TOC";
 decimals = 18;
 /*one billion base units*/
 totalSupply = 10**27;

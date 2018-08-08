@@ -1082,11 +1082,11 @@ contract EthWuxia is ERC721{
   /* ERC721 */
 
   function name() public pure returns (string) {
-    return &quot;Ethwuxia.pro&quot;;
+    return "Ethwuxia.pro";
   }
 
   function symbol() public pure returns (string) {
-    return &quot;EWX&quot;;
+    return "EWX";
   }
 
   function totalSupply() public view returns (uint256) {

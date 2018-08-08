@@ -131,12 +131,12 @@ contract Crowdsale is owned,StandardToken {
 		multisig=0x0958290b9464F0180C433486bD8fb8B6Cc62a5FC;
 		restricted=0xdc4Dbfb1459889d98eFC15E3D1F62FF8FB3e08aE;
 		purseBonus=0x0f99D97aEE758e2256C119FB7F0ae897104844F6;
-		purseExchange=&quot;3PGepQjcdKkpxXsaPTiw2LGCavMDABsuuwc&quot;;
+		purseExchange="3PGepQjcdKkpxXsaPTiw2LGCavMDABsuuwc";
 		
-		AgreementUrlRu=&quot;http://stonetoken.io/images/imageContent/WhitePaper.pdf&quot;;
-		AgreementHashRu=&quot;7cae0adac87cfa3825f26dc103d4fbbd&quot;;
-		AgreementUrlEn=&quot;http://stonetoken.io/images/imageContent/WhitePaper-en.pdf&quot;;
-		AgreementHashEn=&quot;b0ad94cfb2c87105d68fd199d85b6472&quot;;		
+		AgreementUrlRu="http://stonetoken.io/images/imageContent/WhitePaper.pdf";
+		AgreementHashRu="7cae0adac87cfa3825f26dc103d4fbbd";
+		AgreementUrlEn="http://stonetoken.io/images/imageContent/WhitePaper-en.pdf";
+		AgreementHashEn="b0ad94cfb2c87105d68fd199d85b6472";		
 		PayToken=0;
 		fiatCost=1; currency=391;rate=currency/fiatCost; 
 
@@ -357,7 +357,7 @@ contract StoneToken is Crowdsale {
     
     string  public standard    = &#39;Stone Token&#39;;
     string  public name        = &#39;StoneToken&#39;;
-    string  public symbol      = &quot;STTN&quot;;
+    string  public symbol      = "STTN";
     uint8   public decimals    = 0;
 
     function StoneToken() public payable Crowdsale() {}

@@ -131,8 +131,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract SimpleToken is StandardToken {
 
-  string public constant name = &quot;MacriToken&quot;;
-  string public constant symbol = &quot;MCT&quot;;
+  string public constant name = "MacriToken";
+  string public constant symbol = "MCT";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 20000000000 * (10 ** uint256(decimals));

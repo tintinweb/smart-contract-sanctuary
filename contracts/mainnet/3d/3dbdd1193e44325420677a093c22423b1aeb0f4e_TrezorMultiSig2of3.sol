@@ -111,7 +111,7 @@ contract TrezorMultiSig2of3 {
   function _messageToRecover(address destination, uint256 value) private constant returns (bytes32) {
     bytes32 hashedUnsignedMessage = generateMessageToSign(destination, value);
     bytes memory unsignedMessageBytes = _hashToAscii(hashedUnsignedMessage);
-    bytes memory prefix = &quot;\x19Ethereum Signed Message:\n&quot;;
+    bytes memory prefix = "\x19Ethereum Signed Message:\n";
     return keccak256(prefix,bytes1(unsignedMessageBytes.length),unsignedMessageBytes);
   }
 

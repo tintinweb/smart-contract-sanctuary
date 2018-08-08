@@ -41,8 +41,8 @@ contract AnimeToken is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;Animethers&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;AnimeToken&quot;; // solhint-disable-line
+  string public constant NAME = "Animethers"; // solhint-disable-line
+  string public constant SYMBOL = "AnimeToken"; // solhint-disable-line
 
   uint256 private startingPrice = 0.001 ether;
   uint256 private constant PROMO_CREATION_LIMIT = 5000;

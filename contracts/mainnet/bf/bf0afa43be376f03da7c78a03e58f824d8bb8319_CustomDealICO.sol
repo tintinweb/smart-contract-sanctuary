@@ -40,7 +40,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -685,13 +685,13 @@ contract CustomDealICO is CappedCrowdsale, RefundableCrowdsale {
         if ((stage == CrowdsaleStage.PreICOFirst) && (token.totalSupply() + tokensThatWillBeMintedAfterPurchase > totalTokensForSaleDuringPreICO)) {
             msg.sender.transfer(msg.value);
             // Refund them
-            EthRefunded(&quot;PreICOFirst Limit Hit&quot;);
+            EthRefunded("PreICOFirst Limit Hit");
             return;
         }
 
         if ((stage == CrowdsaleStage.PreICOSecond) && (token.totalSupply() + tokensThatWillBeMintedAfterPurchase > totalTokensForSaleDuringPreICO)) {
             msg.sender.transfer(msg.value); // Refund them
-            EthRefunded(&quot;PreICOSecond Limit Hit&quot;);
+            EthRefunded("PreICOSecond Limit Hit");
             return;
         }
 
@@ -709,9 +709,9 @@ contract CustomDealICO is CappedCrowdsale, RefundableCrowdsale {
     function forwardFunds() internal {
         if (stage == CrowdsaleStage.PreICOFirst || stage == CrowdsaleStage.PreICOSecond) {
             wallet.transfer(msg.value);
-            EthTransferred(&quot;forwarding funds to wallet&quot;);
+            EthTransferred("forwarding funds to wallet");
         } else if (stage == CrowdsaleStage.ICOFirst || stage == CrowdsaleStage.ICOSecond) {
-            EthTransferred(&quot;forwarding funds to refundable vault&quot;);
+            EthTransferred("forwarding funds to refundable vault");
             super.forwardFunds();
         }
     }

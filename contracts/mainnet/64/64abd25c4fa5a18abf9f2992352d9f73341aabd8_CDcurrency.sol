@@ -192,7 +192,7 @@ contract CDcurrency is owned, TokenERC20 {
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
     function CDcurrency(
-    ) TokenERC20(5000000000, &quot;Universal Currency Digital&quot;, &quot;UCD&quot;) public {}
+    ) TokenERC20(5000000000, "Universal Currency Digital", "UCD") public {}
 
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {

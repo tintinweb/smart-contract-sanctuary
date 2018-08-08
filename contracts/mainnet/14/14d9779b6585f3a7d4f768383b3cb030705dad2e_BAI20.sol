@@ -106,12 +106,12 @@ contract BAI20 is TokenBase {
         require(false);
     }
 
-    string public constant name = &quot;BAI2.0&quot;;
-    string public constant symbol = &quot;BAI&quot;;
+    string public constant name = "BAI2.0";
+    string public constant symbol = "BAI";
     uint256 private constant _INITIAL_SUPPLY = 21000000000;
     uint8 public decimals = 18;
     uint256 public totalSupply;
-    string public version = &quot;BAI2.0&quot;;
+    string public version = "BAI2.0";
 
     function BAI20(
     ) public {

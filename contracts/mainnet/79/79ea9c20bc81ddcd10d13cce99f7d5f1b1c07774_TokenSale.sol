@@ -70,7 +70,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -738,8 +738,8 @@ contract WhitelistedCrowdsale is Crowdsale, Ownable {
 
 contract SolidToken is MintableToken {
 
-  string public constant name = &quot;SolidToken&quot;;
-  string public constant symbol = &quot;SOLID&quot;;
+  string public constant name = "SolidToken";
+  string public constant symbol = "SOLID";
   uint8  public constant decimals = 18;
 
   uint256 constant private DECIMAL_PLACES = 10 ** 18;
@@ -789,7 +789,7 @@ contract SolidToken is MintableToken {
   * @param _value The amount to be transferred.
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
-    require(transfersEnabled, &quot;Tranfers are disabled&quot;);
+    require(transfersEnabled, "Tranfers are disabled");
     require(super.transfer(_to, _value));
     return true;
   }
@@ -802,7 +802,7 @@ contract SolidToken is MintableToken {
    * @param _value uint256 the amount of tokens to be transferred
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
-    require(transfersEnabled, &quot;Tranfers are disabled&quot;);
+    require(transfersEnabled, "Tranfers are disabled");
     require(super.transferFrom(_from, _to, _value));
     return true;
   }
@@ -968,8 +968,8 @@ contract TokenSale is MintedCrowdsale, WhitelistedCrowdsale, Pausable, Distribut
     bonussale_EndDate = bonussale_StartDate + BONUSSALE_MAX_DURATION;
     token = ERC20(tokenAddress);
 
-    require(SolidToken(tokenAddress).totalSupply() == 0, &quot;Tokens have already been distributed&quot;);
-    require(SolidToken(tokenAddress).owner() == address(this), &quot;Token has the wrong ownership&quot;);
+    require(SolidToken(tokenAddress).totalSupply() == 0, "Tokens have already been distributed");
+    require(SolidToken(tokenAddress).owner() == address(this), "Token has the wrong ownership");
 
     currentStage = Stages.READY;
   }
@@ -1069,7 +1069,7 @@ contract TokenSale is MintedCrowdsale, WhitelistedCrowdsale, Pausable, Distribut
    */
   function _preValidatePurchase(address _beneficiary, uint256 _weiAmount) isWhitelisted(_beneficiary) internal {
     require(_beneficiary == msg.sender);
-    require(saleOpen(), &quot;Sale is Closed&quot;);
+    require(saleOpen(), "Sale is Closed");
 
     // Check for edge cases
     uint256 acceptedValue = _weiAmount;
@@ -1086,7 +1086,7 @@ contract TokenSale is MintedCrowdsale, WhitelistedCrowdsale, Pausable, Distribut
       acceptedValue = _weiAmount.sub(changeDue);
       capReached = true;
     }
-    require(capReached || contributions[_beneficiary].add(acceptedValue) >= MINIMUM_CONTRIBUTION ,&quot;Contribution below minimum&quot;);
+    require(capReached || contributions[_beneficiary].add(acceptedValue) >= MINIMUM_CONTRIBUTION ,"Contribution below minimum");
   }
 
   /**

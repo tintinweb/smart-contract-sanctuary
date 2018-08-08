@@ -26,8 +26,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = 20000000000000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Missimx Coin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;MSX&quot;;                               // Set the symbol for display purposes
+        name = "Missimx Coin";                                   // Set the name for display purposes
+        symbol = "MSX";                               // Set the symbol for display purposes
     }
 
     /**

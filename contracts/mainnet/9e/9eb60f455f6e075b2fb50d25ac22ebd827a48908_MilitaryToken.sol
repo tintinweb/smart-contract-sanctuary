@@ -1,15 +1,15 @@
 /*
     Implements MilitaryToken™. The true cryptocurrency token for 
-    www.MilitaryToken.io &quot;Blockchain for a better world&quot;.
+    www.MilitaryToken.io "Blockchain for a better world".
     
-    All of the following might at times be used to refer to this coin: &quot;MILS&quot;, 
-    &quot;MILs&quot;, &quot;MIL$&quot;, &quot;$MILS&quot;, &quot;$MILs&quot;, &quot;$MIL$&quot;, &quot;MilitaryToken&quot;. In social 
-    settings we prefer the text &quot;MILs&quot; but in formal listings &quot;MILS&quot; and &quot;$MILS&quot; 
+    All of the following might at times be used to refer to this coin: "MILS", 
+    "MILs", "MIL$", "$MILS", "$MILs", "$MIL$", "MilitaryToken". In social 
+    settings we prefer the text "MILs" but in formal listings "MILS" and "$MILS" 
     are the best symbols. In the Solidity code, the official symbol can be found 
-    below which is &quot;MILS&quot;. 
+    below which is "MILS". 
   
     Portions of this code fall under the following license where noted as from
-    &quot;OpenZepplin&quot;:
+    "OpenZepplin":
 
     The MIT License (MIT)
 
@@ -17,7 +17,7 @@
 
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the
-    &quot;Software&quot;), to deal in the Software without restriction, including
+    "Software"), to deal in the Software without restriction, including
     without limitation the rights to use, copy, modify, merge, publish,
     distribute, sublicense, and/or sell copies of the Software, and to
     permit persons to whom the Software is furnished to do so, subject to
@@ -26,7 +26,7 @@
     The above copyright notice and this permission notice shall be included
     in all copies or substantial portions of the Software.
 
-    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
     OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
     MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
     IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
@@ -254,7 +254,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   
@@ -331,8 +331,8 @@ contract BurnableToken is BasicToken {
 }
 
 contract MilitaryToken is Ownable, BurnableToken, StandardToken {
-    string public name = &quot;MilitaryToken&quot;;
-    string public symbol = &quot;MILS&quot;;
+    string public name = "MilitaryToken";
+    string public symbol = "MILS";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 400000000 * 1 ether;
 

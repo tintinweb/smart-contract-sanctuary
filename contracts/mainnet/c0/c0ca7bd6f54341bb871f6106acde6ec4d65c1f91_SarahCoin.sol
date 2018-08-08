@@ -113,8 +113,8 @@ contract SarahCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SarahCoin() public {
-        symbol = &quot;SARAH&quot;;
-        name = &quot;SARAH COIN&quot;;
+        symbol = "SARAH";
+        name = "SARAH COIN";
         decimals = 0;
         _totalSupply = 1000;
         balances[0xC027b267C1A801497B1D234bfF336d5937C2bF48] = _totalSupply;

@@ -117,8 +117,8 @@ contract dazoToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function dazoToken() public {
-        symbol = &quot;DAZO&quot;;
-        name = &quot;dazo Token&quot;;
+        symbol = "DAZO";
+        name = "dazo Token";
         decimals = 18;
 		_totalSupply = 0;
 		_maxSupply = 1000000000000000000000000000;

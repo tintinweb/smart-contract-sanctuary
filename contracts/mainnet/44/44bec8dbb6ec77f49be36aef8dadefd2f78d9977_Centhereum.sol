@@ -106,8 +106,8 @@ contract Centhereum is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Centhereum() public {
-        symbol = &quot;CTRM&quot;;
-        name = &quot;Centhereum&quot;;
+        symbol = "CTRM";
+        name = "Centhereum";
         decimals = 18;
         _totalSupply = 180000000000000000000000000;
         balances[0x0c9F9dcd5DA56471eE3761D90b92759710297D23] = _totalSupply;

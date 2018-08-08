@@ -12,13 +12,13 @@ pragma solidity ^0.4.20;
 
 
 8888888b.  8888888 888     888 8888888 888     888 888b     d888           .d8888b.      d8b          
-888  &quot;Y88b   888   888     888   888   888     888 8888b   d8888          d88P  Y88b     Y8P          
+888  "Y88b   888   888     888   888   888     888 8888b   d8888          d88P  Y88b     Y8P          
 888    888   888   888     888   888   888     888 88888b.d88888                 888                  
 888    888   888   Y88b   d88P   888   888     888 888Y88888P888 888  888      .d88P     888  .d88b.  
-888    888   888    Y88b d88P    888   888     888 888 Y888P 888 `Y8bd8P&#39;  .od888P&quot;      888 d88&quot;&quot;88b 
-888    888   888     Y88o88P     888   888     888 888  Y8P  888   X88K   d88P&quot;          888 888  888 
-888  .d88P   888      Y888P      888   Y88b. .d88P 888   &quot;   888 .d8&quot;&quot;8b. 888&quot;       d8b 888 Y88..88P 
-8888888P&quot;  8888888     Y8P     8888888  &quot;Y88888P&quot;  888       888 888  888 888888888  Y8P 888  &quot;Y88P&quot;  
+888    888   888    Y88b d88P    888   888     888 888 Y888P 888 `Y8bd8P&#39;  .od888P"      888 d88""88b 
+888    888   888     Y88o88P     888   888     888 888  Y8P  888   X88K   d88P"          888 888  888 
+888  .d88P   888      Y888P      888   Y88b. .d88P 888   "   888 .d8""8b. 888"       d8b 888 Y88..88P 
+8888888P"  8888888     Y8P     8888888  "Y88888P"  888       888 888  888 888888888  Y8P 888  "Y88P"  
 
 
 Divium, but with x2 more dividends  and...
@@ -142,8 +142,8 @@ contract DIVIUMx2 {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;DIVIUM 10x2&quot;;
-    string public symbol = &quot;DIVI10x2&quot;;
+    string public name = "DIVIUM 10x2";
+    string public symbol = "DIVI10x2";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 5;
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;
@@ -230,7 +230,7 @@ contract DIVIUMx2 {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, _referredBy);
         
         // fire event
@@ -595,7 +595,7 @@ contract DIVIUMx2 {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
         
         // is the user referred by a masternode?

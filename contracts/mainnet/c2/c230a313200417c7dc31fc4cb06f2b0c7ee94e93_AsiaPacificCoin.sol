@@ -250,8 +250,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract AsiaPacificCoin is StandardToken {
 
-    string public constant name = &quot;Asia Pacific Coin&quot;;
-    string public constant symbol = &quot;APC&quot;;
+    string public constant name = "Asia Pacific Coin";
+    string public constant symbol = "APC";
     uint8 public constant decimals = 6;
 
     uint256 public constant INITIAL_SUPPLY = 88 * (10 ** uint256(8)) * (10 ** uint256(decimals));

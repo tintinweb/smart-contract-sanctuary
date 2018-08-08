@@ -75,8 +75,8 @@ contract StandardToken is ERC20Basic {
  * @title OneGameToken
  */
 contract OneGameToken is StandardToken {
-    string public constant name = &quot;One Game Token&quot;;
-    string public constant symbol = &quot;OGT&quot;;
+    string public constant name = "One Game Token";
+    string public constant symbol = "OGT";
     uint public constant decimals = 18;
 
     address public target;

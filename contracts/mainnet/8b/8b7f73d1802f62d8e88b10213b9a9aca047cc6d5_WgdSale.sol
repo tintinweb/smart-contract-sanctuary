@@ -324,8 +324,8 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 }
 
 contract WgdToken is StandardBurnableToken {
-  string public constant name = &quot;webGold&quot;;
-  string public constant symbol = &quot;WGD&quot;;
+  string public constant name = "webGold";
+  string public constant symbol = "WGD";
   uint8 public constant decimals = 18;
 
   constructor(uint _total) public {
@@ -338,7 +338,7 @@ contract WgdToken is StandardBurnableToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -467,7 +467,7 @@ contract DaonomicCrowdsale {
         weiEarned,
       tokens,
       bonus,
-      &quot;&quot;
+      ""
     );
 
     _updatePurchasingState(_beneficiary, weiEarned, withBonus);
@@ -581,7 +581,7 @@ contract WhitelistDaonomicCrowdsale is Ownable, DaonomicCrowdsale {
     uint256 _weiAmount
   ) internal {
     super._preValidatePurchase(_beneficiary, _weiAmount);
-    require(canBuy(_beneficiary), &quot;investor is not verified by Whitelists&quot;);
+    require(canBuy(_beneficiary), "investor is not verified by Whitelists");
   }
 
   function canBuy(address _beneficiary) constant public returns (bool) {
@@ -683,7 +683,7 @@ contract WgdSale is WhitelistDaonomicCrowdsale, RefundableDaonomicCrowdsale {
    * @dev call token.approve before calling this function
    */
   function buyback() public {
-    require(getStage(sold) > 0, &quot;buyback doesn&#39;t work on stage 0&quot;);
+    require(getStage(sold) > 0, "buyback doesn&#39;t work on stage 0");
 
     uint256 approved = token.allowance(msg.sender, this);
     uint256 inCirculation = token.totalSupply().sub(token.balanceOf(this));
@@ -752,7 +752,7 @@ contract WgdSale is WhitelistDaonomicCrowdsale, RefundableDaonomicCrowdsale {
       return (0, _weiAmount);
     }
     if (stage == 0 && now > end) {
-      revert(&quot;Sale is refundable, unable to buy&quot;);
+      revert("Sale is refundable, unable to buy");
     }
     uint256 rate = rates[stage];
 

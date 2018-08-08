@@ -109,8 +109,8 @@ contract EVT is EIP20Interface {
     They allow one to customise the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
-    string public name = &quot;EVAREIUM&quot;;
-    string public symbol = &quot;EVT&quot;;
+    string public name = "EVAREIUM";
+    string public symbol = "EVT";
     uint8 public constant decimals = 18;
 
     function EVT() public {

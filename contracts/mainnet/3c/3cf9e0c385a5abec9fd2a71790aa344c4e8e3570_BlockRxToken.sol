@@ -5,7 +5,7 @@ pragma solidity 0.4.19;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -324,7 +324,7 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/BlockRxToken.sol
 
 /** @title BlockRx Digital Token */
-contract BlockRxToken is DetailedERC20(&quot;BlockRx Digital Token&quot;, &quot;BKRx&quot;, 18), Pausable, StandardToken {
+contract BlockRxToken is DetailedERC20("BlockRx Digital Token", "BKRx", 18), Pausable, StandardToken {
   using SafeMath for uint256;
 
   event Burned(address indexed from, uint256 cents);

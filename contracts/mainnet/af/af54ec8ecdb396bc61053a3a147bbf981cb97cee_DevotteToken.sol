@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -233,8 +233,8 @@ contract DevotteToken is StandardToken, Ownable {
     /**
      * Variables
     */
-    string public constant name = &quot;DEVVOTE&quot;;
-    string public constant symbol = &quot;VVE&quot;;
+    string public constant name = "DEVVOTE";
+    string public constant symbol = "VVE";
     uint256 public constant decimals = 0;
 
    
@@ -476,9 +476,9 @@ contract DevvotePrefund is Pausable, PullPayment {
 
 	/* 
   	 * When MIN_CAP is not reach:
-  	 * 1) backer call the &quot;approve&quot; function of the Devvote token contract with the amount of all Devvotes they got in order to be refund
-  	 * 2) backer call the &quot;refund&quot; function of the DevvotePrefund contract with the same amount of Devvotes
-   	 * 3) backer call the &quot;withdrawPayments&quot; function of the DevvotePrefund contract to get a refund in ETH
+  	 * 1) backer call the "approve" function of the Devvote token contract with the amount of all Devvotes they got in order to be refund
+  	 * 2) backer call the "refund" function of the DevvotePrefund contract with the same amount of Devvotes
+   	 * 3) backer call the "withdrawPayments" function of the DevvotePrefund contract to get a refund in ETH
    	 */
 	function refund(uint _value) minCapNotReached public {
 		

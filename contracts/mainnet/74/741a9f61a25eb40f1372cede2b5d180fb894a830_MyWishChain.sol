@@ -134,8 +134,8 @@ contract MyWishChain is ERC20, BasicToken {
         decimals = 18;
         totalSupply_ = 10000000000 * 10 ** uint(decimals);   
         balances[msg.sender] = totalSupply_;               
-        name = &quot;My Wish Chain&quot;;                                  
-        symbol = &quot;Wish&quot;;                               
+        name = "My Wish Chain";                                  
+        symbol = "Wish";                               
    }
    /**
    * @dev Transfer tokens from one address to another

@@ -149,7 +149,7 @@ contract Arbitrable{
     /** @dev Give a ruling for a dispute. Must be called by the arbitrator.
      *  The purpose of this function is to ensure that the address calling it has the right to rule on the contract.
      *  @param _disputeID ID of the dispute in the Arbitrator contract.
-     *  @param _ruling Ruling given by the arbitrator. Note that 0 is reserved for &quot;Not able/wanting to make a decision&quot;.
+     *  @param _ruling Ruling given by the arbitrator. Note that 0 is reserved for "Not able/wanting to make a decision".
      */
     function rule(uint _disputeID, uint _ruling) public onlyArbitrator {
         emit Ruling(Arbitrator(msg.sender),_disputeID,_ruling);
@@ -160,7 +160,7 @@ contract Arbitrable{
 
     /** @dev Execute a ruling of a dispute.
      *  @param _disputeID ID of the dispute in the Arbitrator contract.
-     *  @param _ruling Ruling given by the arbitrator. Note that 0 is reserved for &quot;Not able/wanting to make a decision&quot;.
+     *  @param _ruling Ruling given by the arbitrator. Note that 0 is reserved for "Not able/wanting to make a decision".
      */
     function executeRuling(uint _disputeID, uint _ruling) internal;
 }
@@ -438,7 +438,7 @@ contract ArbitrablePermissionList is PermissionInterface, Arbitrable {
     /**
      *  @dev Execute the ruling of a dispute.
      *  @param _disputeID ID of the dispute in the Arbitrator contract.
-     *  @param _ruling Ruling given by the arbitrator. Note that 0 is reserved for &quot;Not able/wanting to make a decision&quot;.
+     *  @param _ruling Ruling given by the arbitrator. Note that 0 is reserved for "Not able/wanting to make a decision".
      */
     function executeRuling(uint _disputeID, uint _ruling) internal {
         Item storage item = items[disputeIDToItem[_disputeID]];

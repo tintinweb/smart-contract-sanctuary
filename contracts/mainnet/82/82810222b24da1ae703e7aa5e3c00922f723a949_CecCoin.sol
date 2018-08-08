@@ -74,9 +74,9 @@ contract CecCoin is StandardToken {
     function CecCoin() {
         balances[msg.sender] = 100000000000000;               
         totalSupply = 100000000000000;                        
-        name = &quot;CecCoin&quot;;                                   
+        name = "CecCoin";                                   
         decimals = 6;                                               
-        symbol = &quot;CEC&quot;;                                             
+        symbol = "CEC";                                             
         fundsWallet = msg.sender;                                    
     }
 
@@ -89,7 +89,7 @@ contract CecCoin is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

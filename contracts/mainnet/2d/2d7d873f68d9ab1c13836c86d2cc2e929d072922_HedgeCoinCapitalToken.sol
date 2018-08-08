@@ -116,8 +116,8 @@ contract HedgeCoinCapitalToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HedgeCoinCapitalToken() public {
-        symbol = &quot;HCL&quot;;
-        name = &quot;Hedge Coin Capital Token&quot;;
+        symbol = "HCL";
+        name = "Hedge Coin Capital Token";
         decimals = 18;
         bonusEnds = now + 3 weeks;
         endDate = now + 9 weeks;

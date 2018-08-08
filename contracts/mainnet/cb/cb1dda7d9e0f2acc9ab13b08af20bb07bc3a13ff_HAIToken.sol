@@ -303,7 +303,7 @@ contract CappedCrowdsale is Crowdsale {
 }
 
 contract HAIToken is MintableToken {
-  string public name = &quot;HAI Token&quot;;
-  string public symbol = &quot;HAI&quot;;
+  string public name = "HAI Token";
+  string public symbol = "HAI";
   uint8 public decimals = 18;
 }

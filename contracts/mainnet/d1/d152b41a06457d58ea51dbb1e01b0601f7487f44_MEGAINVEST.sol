@@ -288,9 +288,9 @@ contract MEGAINVEST is admined,IERC20Token { //Standar definition of an ERC20Tok
 	address public feeWallet;
 	uint256 public rate = 6850;
 	//token related
-	string public name = &quot;MEGAINVEST&quot;;
+	string public name = "MEGAINVEST";
     uint8 public decimals = 18;
-    string public symbol = &quot;MEGA&quot;;
+    string public symbol = "MEGA";
     string public version = &#39;1&#39;;
 
 	constructor(address _feeWallet) public {

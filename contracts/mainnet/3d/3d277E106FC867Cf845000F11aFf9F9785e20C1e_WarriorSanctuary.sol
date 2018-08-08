@@ -141,7 +141,7 @@ contract PermissionControll {
         _;
     }
 
-    // / @dev Called by any &quot;Authorized&quot; role to pause the contract. Used only when
+    // / @dev Called by any "Authorized" role to pause the contract. Used only when
     // /  a bug or exploit is detected and we need to limit damage.
     function pause() external onlyAuthorized whenNotPaused{
         paused = true;
@@ -1654,8 +1654,8 @@ contract CryptoWarriorBase is PermissionControll, PVPListenerInterface {
 contract WarriorTokenImpl is CryptoWarriorBase, ERC721 {
 
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant name = &quot;CryptoWarriors&quot;;
-    string public constant symbol = &quot;CW&quot;;
+    string public constant name = "CryptoWarriors";
+    string public constant symbol = "CW";
 
     bytes4 constant InterfaceSignature_ERC165 =
         bytes4(keccak256(&#39;supportsInterface(bytes4)&#39;));

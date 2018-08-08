@@ -253,9 +253,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract QYTestingToken is StandardToken {
 
-string public name = &quot;QY Testing Token&quot;;
+string public name = "QY Testing Token";
 
-string public symbol = &quot;QYTT&quot;;
+string public symbol = "QYTT";
 
 uint8 public decimals = 2;
 

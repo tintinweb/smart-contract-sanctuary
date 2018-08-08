@@ -130,8 +130,8 @@ contract UniversalToken is Token {
         condition(initialSupply > 1000)
         condition(feeMult > 0)
     {
-        symbol = &quot;PMT&quot;;
-        name = &quot;Universal Evangelist Token - by Pure Money Tech&quot;;
+        symbol = "PMT";
+        name = "Universal Evangelist Token - by Pure Money Tech";
         decimals = DECIMALS;
 		_supply = mul(initialSupply, WAD);
 		owner = msg.sender;

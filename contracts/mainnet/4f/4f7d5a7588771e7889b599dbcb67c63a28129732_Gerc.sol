@@ -199,7 +199,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -289,15 +289,15 @@ library SafeMath {
 contract Gerc is StandardToken, Ownable {
     using SafeMath for uint256;
 
-    string public constant name = &quot;Game Eternal Role Chain&quot;;
-    string public constant symbol = &quot;GERC&quot;;
+    string public constant name = "Game Eternal Role Chain";
+    string public constant symbol = "GERC";
     uint8 public constant decimals = 3;
     //总配额1000亿
     uint256 constant INITIAL_SUPPLY = 100000000000 * (10 ** uint256(decimals));
     //设置GERC代币官网短URL(32字节以内)，供管理平台自动查询
-    string public website = &quot;www.gerc.club&quot;;
+    string public website = "www.gerc.club";
     //设置GERC代币icon短URL(32字节以内)，供管理平台自动查询
-    string public icon = &quot;/css/gerc.png&quot;;
+    string public icon = "/css/gerc.png";
 
     /**
      * @dev Constructor that gives msg.sender all of existing tokens.
@@ -314,7 +314,7 @@ contract Gerc is StandardToken, Ownable {
     function airdrop(address[] payees, uint256 airdropValue) public onlyOwner returns(bool) {
         uint256 _size = payees.length;       
         uint256 amount = airdropValue.mul(_size);
-        require(amount <= balances[owner], &quot;balance error&quot;); 
+        require(amount <= balances[owner], "balance error"); 
 
         for (uint i = 0; i<_size; i++) {
             if (payees[i] == address(0)) {

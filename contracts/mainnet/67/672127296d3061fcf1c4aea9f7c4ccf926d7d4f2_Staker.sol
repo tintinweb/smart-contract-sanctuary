@@ -131,8 +131,8 @@ contract StakerStandard {
 contract Staker is ERC20, StakerStandard, Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;Staker&quot;;
-    string public symbol = &quot;STR&quot;;
+    string public name = "Staker";
+    string public symbol = "STR";
     uint public decimals = 18;
 
     uint public chainStartTime; 

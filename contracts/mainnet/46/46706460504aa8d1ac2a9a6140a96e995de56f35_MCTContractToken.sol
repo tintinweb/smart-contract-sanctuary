@@ -81,9 +81,9 @@ contract ERC20Token {
 contract MCTContractToken is ERC20Token, Owned{
 
     /* Public variables of the token */
-    string  public standard = &quot;Mammoth Casino Contract Token&quot;;
-    string  public name = &quot;Mammoth Casino Token&quot;;
-    string  public symbol = &quot;MCT&quot;;
+    string  public standard = "Mammoth Casino Contract Token";
+    string  public name = "Mammoth Casino Token";
+    string  public symbol = "MCT";
     uint8   public decimals = 0;
     address public icoContractAddress;
     uint256 public tokenFrozenUntilTime;
@@ -210,7 +210,7 @@ contract MCTContractToken is ERC20Token, Owned{
         frozenToken(_frozenUntilTime, _freezeReason);
     }
     
-    /*Freeze player accounts for &quot;blackListFreezeTime&quot; */
+    /*Freeze player accounts for "blackListFreezeTime" */
     function freezeAccounts(address _freezeAddress, bool _freeze) onlyOwner {
         blackListFreezeTokenAccounts[_freezeAddress].accountFreeze = _freeze;
         blackListFreezeTokenAccounts[_freezeAddress].freezeUntilTime = now + blackListFreezeTime;

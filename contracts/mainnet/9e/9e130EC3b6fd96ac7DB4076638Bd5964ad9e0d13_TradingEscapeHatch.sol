@@ -115,13 +115,13 @@ contract CashAutoConverter is Controlled {
 
     function ethToCash() private returns (bool) {
         if (msg.value > 0) {
-            ICash(controller.lookup(&quot;Cash&quot;)).depositEtherFor.value(msg.value)(msg.sender);
+            ICash(controller.lookup("Cash")).depositEtherFor.value(msg.value)(msg.sender);
         }
         return true;
     }
 
     function cashToEth() private returns (bool) {
-        ICash _cash = ICash(controller.lookup(&quot;Cash&quot;));
+        ICash _cash = ICash(controller.lookup("Cash"));
         uint256 _tokenBalance = _cash.balanceOf(msg.sender);
         if (_tokenBalance > 0) {
             IAugur augur = controller.getAugur();
@@ -492,7 +492,7 @@ library Order {
         require(_outcome < _market.getNumberOfOutcomes());
         require(_price < _market.getNumTicks());
 
-        IOrders _orders = IOrders(_controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(_controller.lookup("Orders"));
         IAugur _augur = _controller.getAugur();
 
         return Data({
@@ -513,7 +513,7 @@ library Order {
     }
 
     //
-    // &quot;public&quot; functions
+    // "public" functions
     //
 
     function getOrderId(Order.Data _orderData) internal view returns (bytes32) {
@@ -668,7 +668,7 @@ contract TradingEscapeHatch is DelegationTarget, CashAutoConverter, MarketValida
         uint256 _numberOfMissingBids = 0;
         uint256[] memory _shiftedPrices = new uint256[](_numOutcomes);
         uint256 _sumOfBids = 0;
-        IOrders _orders = IOrders(controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(controller.lookup("Orders"));
 
         // fill in any outcome prices that have an order history
         for (uint256 _tempOutcome = 0; _tempOutcome < _numOutcomes; ++_tempOutcome) {

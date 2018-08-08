@@ -197,8 +197,8 @@ contract StandardToken is BasicToken, ERC20 {
 
 contract CrypviserToken is StandardToken {
   //FIELDS
-  string public constant name = &quot;CVCOIN ERC20&quot;;
-  string public constant symbol = &quot;CVN&quot;;
+  string public constant name = "CVCOIN ERC20";
+  string public constant symbol = "CVN";
   uint8   public constant decimals = 5;
 
   //CONSTANTS

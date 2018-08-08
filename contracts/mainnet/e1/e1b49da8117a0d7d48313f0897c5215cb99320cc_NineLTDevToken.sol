@@ -113,8 +113,8 @@ contract NineLTDevToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NineLTDevToken() public {
-        symbol = &quot;9LTDev&quot;;
-        name = &quot;NineLTDev Token&quot;;
+        symbol = "9LTDev";
+        name = "NineLTDev Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xCff13c3db15c00a0f9F60794FF9463C08e7e1d7B] = _totalSupply;

@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -599,8 +599,8 @@ contract CappedCrowdsale is Crowdsale {
 
 
 contract Toplancer is MintableToken {
-  string public constant name = &quot;Toplancer&quot;;
-  string public constant symbol = &quot;TLC&quot;;
+  string public constant name = "Toplancer";
+  string public constant symbol = "TLC";
   uint8 public constant decimals = 18;
  
 

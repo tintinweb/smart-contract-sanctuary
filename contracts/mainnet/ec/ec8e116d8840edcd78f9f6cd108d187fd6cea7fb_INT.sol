@@ -169,4 +169,4 @@ contract INTToken is owned, token {
         }               
     }
 }
-contract INT is INTToken(1000000000000000, &quot;INT&quot;, 6, &quot;inter&quot;) {}
+contract INT is INTToken(1000000000000000, "INT", 6, "inter") {}

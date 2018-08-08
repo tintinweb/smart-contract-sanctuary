@@ -1,8 +1,8 @@
 pragma solidity ^0.4.16;
 
 contract FidgETHSpinner {
-  string public name = &quot;FidgETHSpinner&quot;;
-  string public symbol = &quot;FDGTHSPNNR&quot;;
+  string public name = "FidgETHSpinner";
+  string public symbol = "FDGTHSPNNR";
   uint public decimals = 18;
 
   address public wallet;

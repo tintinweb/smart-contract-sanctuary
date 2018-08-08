@@ -70,8 +70,8 @@ contract Ownable {
 contract AKM is BasicToken, Ownable {
   using SafeMath for uint256;
   
-  string public constant name = &quot;AKM Token&quot;;
-  string public constant symbol = &quot;AKM&quot;;
+  string public constant name = "AKM Token";
+  string public constant symbol = "AKM";
   uint256 public constant decimals = 8;
   
   uint256 public tokenPerWai = (10 ** (18 - decimals) * 1 wei) / 1250;

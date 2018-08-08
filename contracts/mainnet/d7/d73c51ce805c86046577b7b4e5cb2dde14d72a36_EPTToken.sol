@@ -125,8 +125,8 @@ contract EPTToken is BasicToken {
 
     using SafeMath for uint256;
 
-    string public name = &quot;e-Pocket Token&quot;;                      //name of the token
-    string public symbol = &quot;EPT&quot;;                               //symbol of the token
+    string public name = "e-Pocket Token";                      //name of the token
+    string public symbol = "EPT";                               //symbol of the token
     uint8 public decimals = 18;                                 //decimals
     uint256 public initialSupply = 64000000 * 10**18;           //total supply of Tokens
 

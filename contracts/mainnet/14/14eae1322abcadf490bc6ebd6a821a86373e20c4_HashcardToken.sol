@@ -292,8 +292,8 @@ contract Owned {
 }
 
 contract HashcardToken is StandardToken, BurnableToken, Owned {
-    string public constant name = &quot;Hash Card&quot;;
-    string public constant symbol = &quot;HSHC&quot;;
+    string public constant name = "Hash Card";
+    string public constant symbol = "HSHC";
     uint8 public constant decimals = 18;
 
     /// Maximum tokens to be allocated (150 million)

@@ -35,8 +35,8 @@ contract AngelCoin {
     ) public {
         totalSupply = 10000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;AngelCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;AGC&quot;;                               // Set the symbol for display purposes
+        name = "AngelCoin";                                   // Set the name for display purposes
+        symbol = "AGC";                               // Set the symbol for display purposes
     }
 
     /**

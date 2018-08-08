@@ -220,8 +220,8 @@ contract StandardToken is ERC20, BasicToken {
 contract BiToro is StandardToken {
   using SafeMath for uint256;
   
-  string public name = &quot;BiToro&quot;;
-  string public symbol = &quot;BTR&quot;;
+  string public name = "BiToro";
+  string public symbol = "BTR";
   uint public  decimals = 18;
  
   uint256 constant INITIAL_SUPPLY = 250000000 * 10**18;

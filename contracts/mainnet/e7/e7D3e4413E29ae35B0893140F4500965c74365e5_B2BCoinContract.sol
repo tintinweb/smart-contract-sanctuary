@@ -254,10 +254,10 @@ contract B2BCoinContract is ERC20Token {
     * @dev Intialises token and all the necesary variable
     */
     function B2BCoinContract() {
-        name = &quot;B2BCoin&quot;;
-        symbol = &quot;BBC&quot;;
+        name = "B2BCoin";
+        symbol = "BBC";
         decimals = 18;
         totalSupplyLimit = 1000000000 * 10**18;
-        lockFromSelf(0, &quot;Lock before crowdsale starts&quot;);
+        lockFromSelf(0, "Lock before crowdsale starts");
     }
 }

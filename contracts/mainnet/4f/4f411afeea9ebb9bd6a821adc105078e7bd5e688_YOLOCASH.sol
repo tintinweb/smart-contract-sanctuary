@@ -61,8 +61,8 @@ contract YOLOCASH is IERC20 {
     
     uint public constant _totalSupply = 43888888000000000000000000;
 
-    string public constant symbol = &quot;YLC&quot;;
-    string public constant name = &quot;YOLOCASH&quot;;
+    string public constant symbol = "YLC";
+    string public constant name = "YOLOCASH";
     uint8 public constant decimals = 18;
     
     mapping(address => uint256) balances;

@@ -145,8 +145,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract CWVToken is StandardToken {
   // public variables
-  string public name = &quot;CWV Chain&quot;;
-  string public symbol = &quot;CWV&quot;;
+  string public name = "CWV Chain";
+  string public symbol = "CWV";
   uint8 public decimals = 18;
 
   // internal variables

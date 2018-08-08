@@ -64,8 +64,8 @@ contract StandardToken is ERC20, SafeMath {
 
 contract GreeningDesertChainToken is StandardToken 
 {
-    string public name = &quot;GreeningDesertChainToken&quot;;
-    string public symbol = &quot;GDCTK&quot;;
+    string public name = "GreeningDesertChainToken";
+    string public symbol = "GDCTK";
     uint public decimals = 18;
     uint public totalSupply = 2 * 10 * 1000 * 1000 * 1000 ether;
 

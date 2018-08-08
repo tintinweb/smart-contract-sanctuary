@@ -253,7 +253,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -370,7 +370,7 @@ contract MintableToken is StandardToken, Ownable {
  * @dev Token representing CALLG.
  */
 contract CALLGToken is MintableToken {
-	string public name = &quot;CAPITAL GAS&quot;;
-	string public symbol = &quot;CALLG&quot;;
+	string public name = "CAPITAL GAS";
+	string public symbol = "CALLG";
 	uint8 public decimals = 18;
 }

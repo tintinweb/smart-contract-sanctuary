@@ -55,8 +55,8 @@ contract ERC20 {
 
 contract PlayCoin is ERC20{
 	uint initialSupply = 100000000000;
-	string public constant name = &quot;PlayCoin&quot;;
-	string public constant symbol = &quot;PLC&quot;;
+	string public constant name = "PlayCoin";
+	string public constant symbol = "PLC";
 	uint freeCoinsPerUser = 100;
 	address ownerAddress;
 

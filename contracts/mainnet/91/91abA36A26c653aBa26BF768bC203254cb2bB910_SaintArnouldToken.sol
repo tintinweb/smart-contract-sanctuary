@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 /// @title SaintArnould (Tokyo) Token (SAT) -
 contract SaintArnouldToken {
-    string public constant name = &quot;Saint Arnould Token&quot;;
-    string public constant symbol = &quot;SAT&quot;;
+    string public constant name = "Saint Arnould Token";
+    string public constant symbol = "SAT";
     uint8 public constant decimals = 18;  // 18 decimal places, the same as ETH.
 
     uint256 public constant tokenCreationRate = 5000;  //creation rate 1 ETH = 5000 SAT

@@ -74,8 +74,8 @@ contract StandardToken is Token {
 
 contract CAIRToken is StandardToken {
 
-    string constant public name = &quot;CAIR Token&quot;;
-    string constant public symbol = &quot;CAIR&quot;;
+    string constant public name = "CAIR Token";
+    string constant public symbol = "CAIR";
     uint8 constant public decimals = 8;
 
     function CAIRToken()

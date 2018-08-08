@@ -119,10 +119,10 @@ contract StandardToken is ERC20, SafeMath {
 }
 
 contract Sorus is StandardToken {
-  string public constant name = &quot;Sorus&quot;;
-  string public constant symbol = &quot;SOR&quot;;
+  string public constant name = "Sorus";
+  string public constant symbol = "SOR";
   uint256 public constant decimals = 18;
-  string public version = &quot;1.0&quot;;
+  string public version = "1.0";
 
   uint256 public constant total = 20 * (10**7) * 10**decimals;   // 20 *10^7 SOR total
 

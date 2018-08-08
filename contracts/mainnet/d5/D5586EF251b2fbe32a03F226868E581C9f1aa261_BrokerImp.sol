@@ -43,7 +43,7 @@ library SafeMath {
 /**
  * @title MultiOwnable
  * @dev The MultiOwnable contract has multiple owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract MultiOwnable {
 	

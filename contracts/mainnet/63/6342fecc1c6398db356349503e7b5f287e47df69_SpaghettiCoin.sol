@@ -260,8 +260,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/SpaghettiCoin.sol
 
 contract SpaghettiCoin is StandardToken {
-    string public name = &quot;SPAGHETTI COIN&quot;;
-    string public symbol = &quot;SPAG&quot;;
+    string public name = "SPAGHETTI COIN";
+    string public symbol = "SPAG";
     uint8 public decimals = 18;
     
     constructor(uint256 _totalSupply) public {

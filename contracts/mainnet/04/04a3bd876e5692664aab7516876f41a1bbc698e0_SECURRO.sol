@@ -109,8 +109,8 @@ contract SECURRO is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SECURRO() public {
-        symbol = &quot;SECR&quot;;
-        name = &quot;SECURRO&quot;;
+        symbol = "SECR";
+        name = "SECURRO";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x3f417ac701cc1ad2257a7f526570a970ac5a8b91] = _totalSupply;

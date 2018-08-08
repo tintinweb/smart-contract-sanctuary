@@ -99,9 +99,9 @@ contract AGSCoin is StandardToken {
         ) {
         balances[msg.sender] = 100000000 * 1000000;   // Give the creator all initial tokens, 6 zero is 6 Decimals
         totalSupply = 100000000 * 1000000;            // Update total supply, , 6 zero is 8 Decimals
-        name = &quot;Agos&quot;;                                // Token Name
+        name = "Agos";                                // Token Name
         decimals = 6;                                      // Amount of decimals for display purposes
-        symbol = &quot;AGS&quot;;                                    // Token Symbol
+        symbol = "AGS";                                    // Token Symbol
     }
 
     /* Approves and then calls the receiving contract */
@@ -109,7 +109,7 @@ contract AGSCoin is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

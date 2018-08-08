@@ -253,11 +253,11 @@ contract HumanERC223Token is ERC223BasicToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 }
 
 
 // Creates 20,000,000.000000000000000000 Hedgeminer Token (HMT) Tokens
-contract HedgeminerToken is HumanERC223Token (20000000000000000000000000, &quot;Hedgeminer Token&quot;, 18, &quot;HMT&quot;) {}
+contract HedgeminerToken is HumanERC223Token (20000000000000000000000000, "Hedgeminer Token", 18, "HMT") {}

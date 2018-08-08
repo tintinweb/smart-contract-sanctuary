@@ -105,8 +105,8 @@ contract EtherIncPrivate is ERC20Interface,Owner,SafeMath {
     }
     
     function EtherIncPrivate() {
-        name = &quot;EtherInc Private&quot;;
-        symbol = &quot;ETI-P&quot;;
+        name = "EtherInc Private";
+        symbol = "ETI-P";
         owner = msg.sender;
         _totalSupply = 0;
     }

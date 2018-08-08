@@ -180,7 +180,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
 
@@ -219,9 +219,9 @@ contract Ownable {
  */
 contract AfterSchoolCrowdsaleToken is StandardToken, Ownable {
     
-  string public standard = &quot;AfterSchool Token v1.1&quot;;
-  string public name = &quot;AfterSchool Token&quot;;
-  string public symbol = &quot;AST&quot;;
+  string public standard = "AfterSchool Token v1.1";
+  string public name = "AfterSchool Token";
+  string public symbol = "AST";
   uint public decimals = 18;
   address public multisig = 0x8Dab59292A76114776B4933aD6F1246Bf647aB90;
   

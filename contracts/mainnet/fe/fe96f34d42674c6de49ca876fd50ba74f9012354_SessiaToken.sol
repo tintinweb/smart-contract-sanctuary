@@ -293,8 +293,8 @@ contract Haltable is MultiOwners {
 
 contract SessiaToken is MintableToken, MultiOwners {
 
-    string public constant name = &quot;Sessia Kickers&quot;;
-    string public constant symbol = &quot;PRE-KICK&quot;;
+    string public constant name = "Sessia Kickers";
+    string public constant symbol = "PRE-KICK";
     uint8 public constant decimals = 18;
 
     function transferFrom(address from, address to, uint256 value) public returns (bool) {

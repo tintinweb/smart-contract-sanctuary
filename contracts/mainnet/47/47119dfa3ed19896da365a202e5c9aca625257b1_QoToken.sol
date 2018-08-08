@@ -223,8 +223,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract QoToken is StandardToken {
 
-  string public constant name = &quot;QoToken&quot;;
-  string public constant symbol = &quot;QO&quot;;
+  string public constant name = "QoToken";
+  string public constant symbol = "QO";
   uint8 public constant decimals = 18;
 
   /** Fixed supply 50,000,000 QO */

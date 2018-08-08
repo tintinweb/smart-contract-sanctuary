@@ -188,6 +188,6 @@ contract ChangeableERC20Token is TokenERC20,owned {
 
 
 contract WarrantToken is ChangeableERC20Token{
-    constructor() ChangeableERC20Token(1000000000,&quot;Warrant Token&quot;,&quot;WAT&quot;) public {
+    constructor() ChangeableERC20Token(1000000000,"Warrant Token","WAT") public {
     } 
 }

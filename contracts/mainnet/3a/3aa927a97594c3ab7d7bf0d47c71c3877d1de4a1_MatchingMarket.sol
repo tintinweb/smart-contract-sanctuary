@@ -136,7 +136,7 @@ contract DSMath {
     }
 
     function rpow(uint128 x, uint64 n) constant internal returns (uint128 z) {
-        // This famous algorithm is called &quot;exponentiation by squaring&quot;
+        // This famous algorithm is called "exponentiation by squaring"
         // and calculates x^n with x as fixed-point and n as regular unsigned.
         //
         // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -662,7 +662,7 @@ contract MatchingMarket is MatchingEvents, ExpiringMarket, DSNote {
         uint buy_amt,    //maker (ask) buy how much
         ERC20 buy_gem,   //maker (ask) buy which token
         uint pos,        //position to insert offer, 0 should be used if unknown
-        bool rounding    //match &quot;close enough&quot; orders?
+        bool rounding    //match "close enough" orders?
     )
     isWhitelist(pay_gem, buy_gem)
     /*NOT synchronized!!! */
@@ -775,7 +775,7 @@ contract MatchingMarket is MatchingEvents, ExpiringMarket, DSNote {
     }
 
     //set the minimum sell amount for a token
-    //    Function is used to avoid &quot;dust offers&quot; that have
+    //    Function is used to avoid "dust offers" that have
     //    very small amount of tokens to sell, and it would
     //    cost more gas to accept the offer, than the value
     //    of tokens received.
@@ -927,7 +927,7 @@ contract MatchingMarket is MatchingEvents, ExpiringMarket, DSNote {
         uint t_buy_amt,    //taker buy how much
         ERC20 t_buy_gem,   //taker buy which token
         uint pos,          //position id
-        bool rounding      //match &quot;close enough&quot; orders?
+        bool rounding      //match "close enough" orders?
     )
     internal
     returns (uint id)
@@ -949,9 +949,9 @@ contract MatchingMarket is MatchingEvents, ExpiringMarket, DSNote {
             m_pay_amt = offers[best_maker_id].pay_amt;
 
             // Ugly hack to work around rounding errors. Based on the idea that
-            // the furthest the amounts can stray from their &quot;true&quot; values is 1.
+            // the furthest the amounts can stray from their "true" values is 1.
             // Ergo the worst case has t_pay_amt and m_pay_amt at +1 away from
-            // their &quot;correct&quot; values and m_buy_amt and t_buy_amt at -1.
+            // their "correct" values and m_buy_amt and t_buy_amt at -1.
             // Since (c - 1) * (d - 1) > (a + 1) * (b + 1) is equivalent to
             // c * d > a * b + a + b + c + d, we write...
             if (mul(m_buy_amt, t_buy_amt) > mul(t_pay_amt, m_pay_amt) +

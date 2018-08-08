@@ -4,7 +4,7 @@ pragma solidity ^0.4.18;
 
 /** The interface for a token contract to notify a controller of every transfers. */
 contract TokenController {
-    bytes4 public constant INTERFACE = bytes4(keccak256(&quot;TokenController&quot;));
+    bytes4 public constant INTERFACE = bytes4(keccak256("TokenController"));
 
     function allowTransfer(address _sender, address _from, address _to, uint256 _value, bytes _purpose) public returns (bool);
 }
@@ -34,7 +34,7 @@ contract NoController is TokenController {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;

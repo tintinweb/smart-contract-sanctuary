@@ -143,7 +143,7 @@ contract ListingsERC20NoDecimal is Ownable {
     event ListingCancelled(bytes32 indexed listingId, uint256 dateCancelled);
     event ListingBought(bytes32 indexed listingId, address tokenContractAddress, uint256 price, uint256 amount, uint256 dateBought, address buyer);
 
-    string constant public VERSION = &quot;2.0.0&quot;;
+    string constant public VERSION = "2.0.0";
     uint16 constant public GAS_LIMIT = 4999;
     uint256 public ownerPercentage;
     mapping (bytes32 => Listing) public listings;
@@ -181,10 +181,10 @@ contract ListingsERC20NoDecimal is Ownable {
 
 
     function createListing(address tokenContractAddress, uint256 price, uint256 allowance, uint256 dateEnds, uint256 salt) external {
-        require(price > 0, &quot;price less than zero&quot;);
-        require(allowance > 0, &quot;allowance less than zero&quot;);
-        require(dateEnds > 0, &quot;dateEnds less than zero&quot;);
-        require(getBalance(tokenContractAddress, msg.sender) >= allowance, &quot;balance less than allowance&quot;);
+        require(price > 0, "price less than zero");
+        require(allowance > 0, "allowance less than zero");
+        require(dateEnds > 0, "dateEnds less than zero");
+        require(getBalance(tokenContractAddress, msg.sender) >= allowance, "balance less than allowance");
         bytes32 listingId = getHashInternal(tokenContractAddress, price, allowance, dateEnds, salt);
         Listing memory listing = Listing(msg.sender, tokenContractAddress, price, allowance, now, dateEnds);
         listings[listingId] = listing;

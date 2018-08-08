@@ -9,8 +9,8 @@ contract MoonCatRescue {
 
   bytes16 public imageGenerationCodeMD5 = 0xdbad5c08ec98bec48490e3c196eec683; // use this to verify mooncatparser.js the cat image data generation javascript file.
 
-  string public name = &quot;MoonCats&quot;;
-  string public symbol = &quot;?&quot;; // unicode cat symbol
+  string public name = "MoonCats";
+  string public symbol = "?"; // unicode cat symbol
   uint8 public decimals = 0;
 
   uint256 public totalSupply = 25600;
@@ -20,7 +20,7 @@ contract MoonCatRescue {
 
   bytes5[25600] public rescueOrder;
 
-  bytes32 public searchSeed = 0x0; // gets set with the immediately preceding blockhash when the contract is activated to prevent &quot;premining&quot;
+  bytes32 public searchSeed = 0x0; // gets set with the immediately preceding blockhash when the contract is activated to prevent "premining"
 
   struct AdoptionOffer {
     bool exists;

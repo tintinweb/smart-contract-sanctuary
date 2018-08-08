@@ -101,8 +101,8 @@ contract EVATOKEN is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EVATOKEN() public {
-        symbol = &quot;EVA&quot;;
-        name = &quot;EVA TOKEN&quot;;
+        symbol = "EVA";
+        name = "EVA TOKEN";
         decimals = 6;
         _totalSupply = 100000000000;
         balances[0x01c9CDF4bE855f04cE58a10B04f102753198D6C9] = _totalSupply;

@@ -167,7 +167,7 @@ contract ProxyRegistry is Ownable {
         returns (OwnableDelegateProxy proxy)
     {
         require(proxies[msg.sender] == address(0));
-        proxy = new OwnableDelegateProxy(msg.sender, delegateProxyImplementation, abi.encodeWithSignature(&quot;initialize(address,address)&quot;, msg.sender, address(this)));
+        proxy = new OwnableDelegateProxy(msg.sender, delegateProxyImplementation, abi.encodeWithSignature("initialize(address,address)", msg.sender, address(this)));
         proxies[msg.sender] = proxy;
         return proxy;
     }

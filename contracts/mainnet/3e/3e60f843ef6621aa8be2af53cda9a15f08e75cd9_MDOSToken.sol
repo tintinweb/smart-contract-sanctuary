@@ -2,8 +2,8 @@ pragma solidity ^0.4.18;
 
 contract MDOSToken {
 
-    string public name = &quot;MedicalDataToken&quot;; 
-    string public symbol = &quot;MDOS&quot;; 
+    string public name = "MedicalDataToken"; 
+    string public symbol = "MDOS"; 
     uint256 public decimals = 18; 
     uint256 public totalSupply = 0;
 

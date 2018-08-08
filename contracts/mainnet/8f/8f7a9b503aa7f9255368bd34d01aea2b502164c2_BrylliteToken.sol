@@ -275,8 +275,8 @@ contract PausableToken is StandardToken, Pausable {
 
 contract BrylliteToken is PausableToken {
 
-    string  public  constant name = &quot;Bryllite&quot;;
-    string  public  constant symbol = &quot;BRC&quot;;
+    string  public  constant name = "Bryllite";
+    string  public  constant symbol = "BRC";
     uint8   public  constant decimals = 18;
 
 

@@ -55,8 +55,8 @@ contract T is ERC20 {
 		decimals = 18;
 		totalSupply = 2500000000 * uint(10)**decimals;
 		balances[owner] = totalSupply;
-		name = &quot;HOTCOIN&quot;;
-		symbol = &quot;HCN&quot;;
+		name = "HOTCOIN";
+		symbol = "HCN";
 		emit Transfer(address(0), owner, totalSupply);
 	}
 	

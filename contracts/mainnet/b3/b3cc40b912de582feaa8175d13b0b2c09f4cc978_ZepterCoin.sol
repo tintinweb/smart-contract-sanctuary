@@ -216,8 +216,8 @@ contract ZepterCoin is StandardToken {
   uint8 public decimals;
 
   constructor (address _address) public {
-    name = &quot;Zepter Coin&quot;;
-    symbol = &quot;ZEPT&quot;;
+    name = "Zepter Coin";
+    symbol = "ZEPT";
     decimals = 18;
     totalSupply_ = 1000000000000000000000000000;
     balances[_address] = totalSupply_;

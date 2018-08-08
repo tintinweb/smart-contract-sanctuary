@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -159,7 +159,7 @@ contract WelCoinICO is Ownable {
     // add bonus to tokens depends on the period
     uint256 bonusedTokens = applyBonus(tokens, percent);
 
-    require(token.call(bytes4(keccak256(&quot;transfer(address,uint256)&quot;)), beneficiary, bonusedTokens));
+    require(token.call(bytes4(keccak256("transfer(address,uint256)")), beneficiary, bonusedTokens));
 
     // token.mint(beneficiary, bonusedTokens);
     TokenPurchase(msg.sender, beneficiary, weiAmount, bonusedTokens);
@@ -191,7 +191,7 @@ contract WelCoinICO is Ownable {
   function transferTokens(address _wallet, uint256 _amount) public onlyOwner {
     require(_wallet != 0x0);
     require(_amount != 0);
-    require(token.call(bytes4(keccak256(&quot;transfer(address,uint256)&quot;)), _wallet, _amount));
+    require(token.call(bytes4(keccak256("transfer(address,uint256)")), _wallet, _amount));
   }
 
 

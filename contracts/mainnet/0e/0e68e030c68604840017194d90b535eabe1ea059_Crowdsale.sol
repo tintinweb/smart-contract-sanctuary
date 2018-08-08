@@ -181,8 +181,8 @@ contract StandardToken is ERC20, BasicToken {
 contract Crowdsale is StandardToken, Ownable {
   using SafeMath for uint256;
 
-  string public constant name = &quot;Blowjob&quot;;
-  string public constant symbol = &quot;BJ&quot;;
+  string public constant name = "Blowjob";
+  string public constant symbol = "BJ";
   uint8 public constant decimals = 2;
   uint public constant INITIAL_SUPPLY = 1000000; // 10,000 tokens times 10 to the decimals
 
@@ -204,8 +204,8 @@ contract Crowdsale is StandardToken, Ownable {
       weiRaised = 0;
       owner = msg.sender;
       wallet = 0x672f86bc2D6862C58648381AaeE561aDA192853C;
-      site = &quot;www.blowjob.gratis&quot;;
-      why = &quot;Give a blow job, get a blow job.&quot;;
+      site = "www.blowjob.gratis";
+      why = "Give a blow job, get a blow job.";
   }
 
   function setSink ( address sink ) onlyOwner {

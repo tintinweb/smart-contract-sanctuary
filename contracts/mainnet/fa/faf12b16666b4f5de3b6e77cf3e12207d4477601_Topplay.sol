@@ -98,8 +98,8 @@ contract Topplay is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Topplay() public {
-        symbol = &quot;TPLY&quot;;
-        name = &quot;Topplay&quot;;
+        symbol = "TPLY";
+        name = "Topplay";
         decimals = 18;
         _totalSupply = 10000000000 * 10**uint(decimals);
         balances[0x0005616F453c5D650aa0F9516c6A8EAC39543A26] = _totalSupply;

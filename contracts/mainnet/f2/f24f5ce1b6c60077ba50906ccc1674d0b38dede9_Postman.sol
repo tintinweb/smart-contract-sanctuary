@@ -29,7 +29,7 @@ contract Postman {
             w.boom.value(que[index].value)(que[index].home);
             if((que[index].reward * 2) > msg.gas && direct == 1){this.post.value(que[index].reward)(msg.sender,fee2);}
             else{msg.sender.transfer(que[index].reward);}
-            Report(&quot;Message Delivered:&quot;,index);
+            Report("Message Delivered:",index);
             delete undelivered[index];
             delete que[index];
         }

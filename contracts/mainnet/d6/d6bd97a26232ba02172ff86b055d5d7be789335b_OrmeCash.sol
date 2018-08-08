@@ -41,8 +41,8 @@ contract IERC20Token {
 
 contract OrmeCash is IERC20Token {         
   
-	string public name = &quot;OrmeCash&quot;;
-	string public symbol = &quot;OMC&quot;;
+	string public name = "OrmeCash";
+	string public symbol = "OMC";
 	uint8 public decimals = 18;
 	uint256 public tokenFrozenUntilBlock;
 	address public owner;

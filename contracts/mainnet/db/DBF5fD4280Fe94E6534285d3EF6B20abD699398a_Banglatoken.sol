@@ -16,9 +16,9 @@ contract Banglatoken {
     function Banglatoken() {
 
          initialSupply = 150000000;
-         name =&quot;Banglatoken&quot;;
+         name ="Banglatoken";
         decimals = 2;
-         symbol = &quot;BDT&quot;;
+         symbol = "BDT";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

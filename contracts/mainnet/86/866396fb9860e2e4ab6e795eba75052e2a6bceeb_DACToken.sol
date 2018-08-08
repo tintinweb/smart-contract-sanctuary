@@ -127,8 +127,8 @@ contract Ownable {
 
 contract DACToken is StandardToken, Ownable
 {
-    string public name = &quot;DAC&quot;;
-    string public symbol = &quot;DAC&quot;;
+    string public name = "DAC";
+    string public symbol = "DAC";
 
     uint public decimals = 18;
 

@@ -45,8 +45,8 @@ contract Aquarius_ZodiacToken {
     uint    public ICORatio     = 144000;
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;Aquarius_ZodiacToken&quot;; }
-    function symbol() constant returns (string) { return &quot;AQR♒&quot;; }
+    function name() constant returns (string) { return "Aquarius_ZodiacToken"; }
+    function symbol() constant returns (string) { return "AQR♒"; }
     function decimals() constant returns (uint8) { return 8; }
     event Burnt(
         address indexed _receiver,

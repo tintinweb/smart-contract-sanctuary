@@ -116,8 +116,8 @@ contract StrongKek {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;ProphecyOfKek&quot;;
-    string public symbol = &quot;POK&quot;;
+    string public name = "ProphecyOfKek";
+    string public symbol = "POK";
     uint8 constant public decimals = 18;
     uint8 constant internal entryFee_ = 15; // 15% to enter the Kek contest
     uint8 constant internal transferFee_ = 10; // 10% transfer fee
@@ -207,7 +207,7 @@ contract StrongKek {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
 
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
 
         // fire event
@@ -546,7 +546,7 @@ contract StrongKek {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
 
         if (isUser[_customerAddress] == false ) {

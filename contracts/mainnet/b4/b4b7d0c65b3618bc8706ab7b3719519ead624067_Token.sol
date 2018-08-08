@@ -4,8 +4,8 @@ contract Token {
 	event Transfer(address indexed from, address indexed to, uint value);
 	event Approval(address indexed owner, address indexed spender, uint value);
 
-	string constant public name = &quot;Hodl Token&quot;;
-	string constant public symbol = &quot;HODL&quot;;
+	string constant public name = "Hodl Token";
+	string constant public symbol = "HODL";
 	uint8 constant public decimals = 8;
 	mapping (address => uint) public balanceOf;
 	mapping (address => mapping (address => uint)) public allowance;

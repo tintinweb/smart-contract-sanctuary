@@ -3,8 +3,8 @@ pragma solidity ^0.4.11;
 // Dome C. <dome@tel.co.th> 
 contract SbuyToken {
 
-    string public name = &quot;SbuyMining&quot;;      //  token name
-    string public symbol = &quot;SBUY&quot;;           //  token symbol
+    string public name = "SbuyMining";      //  token name
+    string public symbol = "SBUY";           //  token symbol
     uint256 public decimals = 0;            //  token digit
 
     mapping (address => uint256) public balanceOf;

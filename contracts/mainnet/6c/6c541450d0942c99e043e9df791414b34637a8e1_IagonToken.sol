@@ -5,7 +5,7 @@ pragma solidity ^0.4.11;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -432,8 +432,8 @@ contract Claimable is Ownable {
 */
 
 contract IagonToken is Ownable, Claimable, PausableToken, CappedToken {
-    string public constant name = &quot;Iagon Test&quot;;
-    string public constant symbol = &quot;BLA&quot;;
+    string public constant name = "Iagon Test";
+    string public constant symbol = "BLA";
     uint8 public constant decimals = 18;
 
     event Fused();
@@ -469,7 +469,7 @@ contract IagonToken is Ownable, Claimable, PausableToken, CappedToken {
 
  	 /** 
  	 * @dev Function to set the value of the fuse internal variable.  Note that there is 
- 	 * no &quot;unfuse&quot; functionality, by design.
+ 	 * no "unfuse" functionality, by design.
  	 */
     function fuse() whenNotFused onlyOwner public {
         fused = true;

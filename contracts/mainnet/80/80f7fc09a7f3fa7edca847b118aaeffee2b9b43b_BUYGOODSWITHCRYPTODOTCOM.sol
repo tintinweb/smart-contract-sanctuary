@@ -113,8 +113,8 @@ contract BUYGOODSWITHCRYPTODOTCOM  is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BUYGOODSWITHCRYPTODOTCOM () public {
-        symbol = &quot;BUYGOODSWITHCRYPTO&quot;;
-        name = &quot;BUYGOODSWITHCRYPTODOTCOM&quot;;
+        symbol = "BUYGOODSWITHCRYPTO";
+        name = "BUYGOODSWITHCRYPTODOTCOM";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xEdeCE0A523Ad298bc9eedC113fe65eE687FD49E2] = _totalSupply;

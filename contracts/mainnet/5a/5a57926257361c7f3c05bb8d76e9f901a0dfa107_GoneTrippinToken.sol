@@ -221,8 +221,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract GoneTrippinToken is StandardToken, Ownable {
-    string public name = &quot;GoneTrippin Token&quot;;
-    string public symbol = &quot;GT&quot;;
+    string public name = "GoneTrippin Token";
+    string public symbol = "GT";
     uint8 public decimals = 18;
 
     function GoneTrippinToken() Ownable() public {

@@ -294,7 +294,7 @@ contract RandomLedgerService is RandomLedger, Mortal, Random {
         // 
         // TIME LIMITATION ~> should handle in user interface
         // blocks older than (currentBlock - 256) 
-        // &quot;expire&quot; and read the same hash as most recent valid block
+        // "expire" and read the same hash as most recent valid block
         // 
         uint256 luckyNumber = getRandomFromBlockHash(luckyBlock, pendingNumbers[_requestor].max);
 

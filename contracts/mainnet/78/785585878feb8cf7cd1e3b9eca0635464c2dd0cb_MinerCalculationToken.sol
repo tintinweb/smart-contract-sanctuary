@@ -188,6 +188,6 @@ contract ChangeableERC20Token is TokenERC20,owned {
 
 
 contract MinerCalculationToken is ChangeableERC20Token{
-    constructor() ChangeableERC20Token(1000000000,&quot;Miner Calculation Token&quot;,&quot;MCT&quot;) public {
+    constructor() ChangeableERC20Token(1000000000,"Miner Calculation Token","MCT") public {
     } 
 }

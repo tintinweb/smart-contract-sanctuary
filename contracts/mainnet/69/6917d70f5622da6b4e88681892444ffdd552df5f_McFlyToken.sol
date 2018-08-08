@@ -3,10 +3,10 @@ pragma solidity ^0.4.19;
 /**
  * @title ERC20 Basic smart contract
  * @author Copyright (c) 2016 Smart Contract Solutions, Inc.
- * @author &quot;Manuel Araoz <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6c010d021909000d1e0d03162c0b010d0500420f0301">[email&#160;protected]</a>>&quot;
+ * @author "Manuel Araoz <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6c010d021909000d1e0d03162c0b010d0500420f0301">[email&#160;protected]</a>>"
  * @dev Simpler version of ERC20 interface
  * @dev see https://github.com/ethereum/EIPs/issues/179
- * @dev license: &quot;MIT&quot;, source: https://github.com/OpenZeppelin/zeppelin-solidity
+ * @dev license: "MIT", source: https://github.com/OpenZeppelin/zeppelin-solidity
  * @author modification: Dmitriy Khizhinskiy @McFly.aero
  */
 contract ERC20Basic {
@@ -20,7 +20,7 @@ contract ERC20Basic {
  * @title LengthValidator smart contract - fix ERC20 short address attack
  * @author Copyright (c) 2018 McFly.aero
  * @author Dmitriy Khizhinskiy
- * @author &quot;MIT&quot;
+ * @author "MIT"
  */
 contract LengthValidator {
     modifier valid_short(uint _cntArgs) {
@@ -32,11 +32,11 @@ contract LengthValidator {
 /**
  * @title Ownable smart contract
  * @author Copyright (c) 2016 Smart Contract Solutions, Inc.
- * @author &quot;Manuel Araoz <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3d505c534858515c4f5c52477d5a505c5451135e5250">[email&#160;protected]</a>>&quot;
- * @dev license: &quot;MIT&quot;, source: https://github.com/OpenZeppelin/zeppelin-solidity
+ * @author "Manuel Araoz <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3d505c534858515c4f5c52477d5a505c5451135e5250">[email&#160;protected]</a>>"
+ * @dev license: "MIT", source: https://github.com/OpenZeppelin/zeppelin-solidity
  * @author modification: Dmitriy Khizhinskiy @McFly.aero
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -87,7 +87,7 @@ contract Ownable {
  * @title MultiOwners smart contract
  * @author Copyright (c) 2018 McFly.aero
  * @author Dmitriy Khizhinskiy
- * @author &quot;MIT&quot;
+ * @author "MIT"
  */
 contract MultiOwners {
 
@@ -141,8 +141,8 @@ contract MultiOwners {
 /**
  * @title SafeMath
  * @author Copyright (c) 2016 Smart Contract Solutions, Inc.
- * @author &quot;Manuel Araoz <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d3beb2bda6b6bfb2a1b2bca993b4beb2babffdb0bcbe">[email&#160;protected]</a>>&quot;
- * @dev license: &quot;MIT&quot;, source: https://github.com/OpenZeppelin/zeppelin-solidity
+ * @author "Manuel Araoz <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d3beb2bda6b6bfb2a1b2bca993b4beb2babffdb0bcbe">[email&#160;protected]</a>>"
+ * @dev license: "MIT", source: https://github.com/OpenZeppelin/zeppelin-solidity
  * @dev Math operations with safety checks that throw on error
  */
 library SafeMath {
@@ -202,8 +202,8 @@ library SafeMath {
 /**
  * @title BasicToken smart contract
  * @author Copyright (c) 2016 Smart Contract Solutions, Inc.
- * @author &quot;Manuel Araoz <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="513c303f24343d3023303e2b11363c30383d7f323e3c">[email&#160;protected]</a>>&quot;
- * @dev license: &quot;MIT&quot;, source: https://github.com/OpenZeppelin/zeppelin-solidity
+ * @author "Manuel Araoz <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="513c303f24343d3023303e2b11363c30383d7f323e3c">[email&#160;protected]</a>>"
+ * @dev license: "MIT", source: https://github.com/OpenZeppelin/zeppelin-solidity
  * @author modification: Dmitriy Khizhinskiy @McFly.aero
  */
 
@@ -263,8 +263,8 @@ contract BasicToken is ERC20Basic, LengthValidator {
 /**
  * @title ERC20 smart contract
  * @author Copyright (c) 2016 Smart Contract Solutions, Inc.
- * @author &quot;Manuel Araoz <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b2dfd3dcc7d7ded3c0d3ddc8f2d5dfd3dbde9cd1dddf">[email&#160;protected]</a>>&quot;
- * @dev license: &quot;MIT&quot;, source: https://github.com/OpenZeppelin/zeppelin-solidity
+ * @author "Manuel Araoz <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b2dfd3dcc7d7ded3c0d3ddc8f2d5dfd3dbde9cd1dddf">[email&#160;protected]</a>>"
+ * @dev license: "MIT", source: https://github.com/OpenZeppelin/zeppelin-solidity
  * @author modification: Dmitriy Khizhinskiy @McFly.aero
  */
 
@@ -285,8 +285,8 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Standard ERC20 token
  * @author Copyright (c) 2016 Smart Contract Solutions, Inc.
- * @author &quot;Manuel Araoz <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="771a161902121b160516180d37101a161e1b5914181a">[email&#160;protected]</a>>&quot;
- * @dev license: &quot;MIT&quot;, source: https://github.com/OpenZeppelin/zeppelin-solidity
+ * @author "Manuel Araoz <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="771a161902121b160516180d37101a161e1b5914181a">[email&#160;protected]</a>>"
+ * @dev license: "MIT", source: https://github.com/OpenZeppelin/zeppelin-solidity
  * @author modification: Dmitriy Khizhinskiy @McFly.aero
  * @dev Implementation of the basic standard token.
  * @dev https://github.com/ethereum/EIPs/issues/20
@@ -386,8 +386,8 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Mintable token smart contract
  * @author Copyright (c) 2016 Smart Contract Solutions, Inc.
- * @author &quot;Manuel Araoz <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ed808c839888818c9f8c8297ad8a808c8481c38e8280">[email&#160;protected]</a>>&quot;
- * @dev license: &quot;MIT&quot;, source: https://github.com/OpenZeppelin/zeppelin-solidity
+ * @author "Manuel Araoz <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ed808c839888818c9f8c8297ad8a808c8481c38e8280">[email&#160;protected]</a>>"
+ * @dev license: "MIT", source: https://github.com/OpenZeppelin/zeppelin-solidity
  * @author modification: Dmitriy Khizhinskiy @McFly.aero
  * @dev Simple ERC20 Token example, with mintable token creation
  * @dev Issue: * https://github.com/OpenZeppelin/zeppelin-solidity/issues/120
@@ -436,11 +436,11 @@ contract MintableToken is StandardToken, Ownable {
  * @title McFly token smart contract
  * @author Copyright (c) 2018 McFly.aero
  * @author Dmitriy Khizhinskiy
- * @author &quot;MIT&quot;
+ * @author "MIT"
  */
 contract McFlyToken is MintableToken {
-    string public constant name = &quot;McFlyToken&quot;;
-    string public constant symbol = &quot;McFly&quot;;
+    string public constant name = "McFlyToken";
+    string public constant symbol = "McFly";
     uint8 public constant decimals = 18;
 
     /// @dev mapping for whitelist
@@ -471,7 +471,7 @@ contract McFlyToken is MintableToken {
         return super.transferFrom(from, to, value);
     }
 
-    /// @dev Do the transfer from token address to &quot;to&quot; address value
+    /// @dev Do the transfer from token address to "to" address value
     /// @param to address to
     /// @param value uint256 value
     function transfer(address to, uint256 value) canTransfer public returns (bool) {
@@ -489,7 +489,7 @@ contract McFlyToken is MintableToken {
  * @title Haltable smart contract - controls owner access
  * @author Copyright (c) 2018 McFly.aero
  * @author Dmitriy Khizhinskiy
- * @author &quot;MIT&quot;
+ * @author "MIT"
  */
 contract Haltable is MultiOwners {
     bool public halted;
@@ -525,7 +525,7 @@ contract Haltable is MultiOwners {
  * @title McFly crowdsale smart contract
  * @author Copyright (c) 2018 McFly.aero
  * @author Dmitriy Khizhinskiy
- * @author &quot;MIT&quot;
+ * @author "MIT"
  * @dev inherited from MultiOwners & Haltable
  */
 contract McFlyCrowd is MultiOwners, Haltable {
@@ -824,7 +824,7 @@ contract McFlyCrowd is MultiOwners, Haltable {
         if (now > (eT2+dBt+dW+dBt+dW+dBt+dW) && now < (eT2+dBt+dW+dBt+dW+dBt+dW+dBt)) {return (106);} // preTLP1.6
         if (now >= (eT2+dBt+dW+dBt+dW+dBt+dW+dBt) && now <= (eT2+dBt+dW+dBt+dW+dBt+dW+dBt+dW)) {return (3);} // TLP1.6
         if (now > (eT2+dBt+dW+dBt+dW+dBt+dW+dBt+dW) && now < (eT2+dBt+dW+dBt+dW+dBt+dW+dBt+dW+dBt)) {return (107);} // preTLP1.7
-        if (now >= (eT2+dBt+dW+dBt+dW+dBt+dW+dBt+dW+dBt) && now <= (eT2+dBt+dW+dBt+dW+dBt+dW+dBt+dW+dBt+dW)) {return (4);} // TLP1.7&quot;
+        if (now >= (eT2+dBt+dW+dBt+dW+dBt+dW+dBt+dW+dBt) && now <= (eT2+dBt+dW+dBt+dW+dBt+dW+dBt+dW+dBt+dW)) {return (4);} // TLP1.7"
         if (now > (eT2+dBt+dW+dBt+dW+dBt+dW+dBt+dW+dBt+dW)) {return (200);} // Finished
         return (201); // unknown
     }

@@ -18,8 +18,8 @@ contract PointlessICOExample {
 
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;Pointless ICO Example&quot;; }
-    function symbol() constant returns (string) { return &quot;PIE&quot;; }
+    function name() constant returns (string) { return "Pointless ICO Example"; }
+    function symbol() constant returns (string) { return "PIE"; }
     function decimals() constant returns (uint8) { return 18; }
     
     function balanceOf(address _owner) constant returns (uint256) { return balances[_owner]; }

@@ -234,8 +234,8 @@ contract presale {
         numberOfTokensLeft = noOfTokens;
         pricePerToken = prPerToken;
         owner = msg.sender;
-        name = &quot;Autonio ICO&quot;;
-        symbol = &quot;NIO&quot;;
+        name = "Autonio ICO";
+        symbol = "NIO";
         updatePresaleNumbers();
     }
     

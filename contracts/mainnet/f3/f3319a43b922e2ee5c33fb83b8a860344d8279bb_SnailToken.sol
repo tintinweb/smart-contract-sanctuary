@@ -19,9 +19,9 @@ contract Token{
 
 contract SnailToken is Token {
 
-    string public name=&quot;SnailToken&quot;;                   
+    string public name="SnailToken";                   
     uint8 public decimals=18;              
-    string public symbol=&quot;Snail&quot;;         
+    string public symbol="Snail";         
     address public organizer=0x06BB7b2E393671b85624128A5475bE4A8c1c03E9;
 
     function SnailToken(uint256 _initialAmount, string _tokenName, uint8 _decimalUnits, string _tokenSymbol) public {

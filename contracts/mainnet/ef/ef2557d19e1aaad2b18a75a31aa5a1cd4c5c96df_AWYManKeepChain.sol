@@ -134,8 +134,8 @@ contract AWYManKeepChain is ERC20, BasicToken {
         decimals = 18; 	
         totalSupply_ = 1000000000 		 * 10 ** uint(decimals);   
         balances[0x72A4e7Ea1DDd6E33eA18b3B249E66A2201A7d7f5] = totalSupply_;               
-        name = &quot;AWY Man Keep Chain&quot;;                                  
-        symbol = &quot;AWY&quot;;    
+        name = "AWY Man Keep Chain";                                  
+        symbol = "AWY";    
         Transfer(0, 0x72A4e7Ea1DDd6E33eA18b3B249E66A2201A7d7f5 , totalSupply_);
    }
    /**

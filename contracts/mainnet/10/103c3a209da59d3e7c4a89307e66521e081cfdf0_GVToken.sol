@@ -156,8 +156,8 @@ contract MigrationAgent {
 contract GVToken is StandardToken {
     
     // Constants
-    string public constant name = &quot;Genesis Vision Token&quot;;
-    string public constant symbol = &quot;GVT&quot;;
+    string public constant name = "Genesis Vision Token";
+    string public constant symbol = "GVT";
     uint   public constant decimals = 18;
     uint   constant TOKEN_LIMIT = 44 * 1e6 * 1e18; 
     

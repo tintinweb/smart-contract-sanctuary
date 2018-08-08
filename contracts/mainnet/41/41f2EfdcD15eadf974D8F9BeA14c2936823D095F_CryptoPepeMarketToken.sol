@@ -28,7 +28,7 @@ contract ERC721 {
 contract CryptoPepeMarketToken is ERC721 {
 
   // Modified CryptoCelebs contract
-  // Note: &quot;Item&quot; refers to a SocialMedia asset.
+  // Note: "Item" refers to a SocialMedia asset.
   
   /*** EVENTS ***/
 
@@ -45,8 +45,8 @@ contract CryptoPepeMarketToken is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;CryptoSocialMedia&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;CryptoPepeMarketToken&quot;; // solhint-disable-line
+  string public constant NAME = "CryptoSocialMedia"; // solhint-disable-line
+  string public constant SYMBOL = "CryptoPepeMarketToken"; // solhint-disable-line
 
   uint256 private startingPrice = 0.001 ether;
   uint256 private constant PROMO_CREATION_LIMIT = 5000;
@@ -120,18 +120,18 @@ contract CryptoPepeMarketToken is ERC721 {
     cooAddress = msg.sender;
 
 	// Restored bag holders
-	 _createItem(&quot;Feelsgood&quot;, 0x7d9450A4E85136f46BA3F519e20Fea52f5BEd063,359808729788989630,&quot;&quot;,address(this));
-	_createItem(&quot;Ree&quot;,0x2C3756c4cB4Ff488F666a3856516ba981197f3f3,184801761494400960,&quot;&quot;,address(this));
-	_createItem(&quot;TwoGender&quot;,0xb16948C62425ed389454186139cC94178D0eFbAF,359808729788989630,&quot;&quot;,address(this));
-	_createItem(&quot;Gains&quot;,0xA69E065734f57B73F17b38436f8a6259cCD090Fd,359808729788989630,&quot;&quot;,address(this));
-	_createItem(&quot;Trump&quot;,0xBcce2CE773bE0250bdDDD4487d927aCCd748414F,94916238056430340,&quot;&quot;,address(this));
-	_createItem(&quot;Brain&quot;,0xBcce2CE773bE0250bdDDD4487d927aCCd748414F,94916238056430340,&quot;&quot;,address(this));
-	_createItem(&quot;Illuminati&quot;,0xbd6A9D2C44b571F33Ee2192BD2d46aBA2866405a,94916238056430340,&quot;&quot;,address(this));
-	_createItem(&quot;Hang&quot;,0x2C659bf56012deeEc69Aea6e87b6587664B99550,94916238056430340,&quot;&quot;,address(this));
-	_createItem(&quot;Pepesaur&quot;,0x7d9450A4E85136f46BA3F519e20Fea52f5BEd063,184801761494400960,&quot;&quot;,address(this));
-	_createItem(&quot;BlockChain&quot;,0x2C3756c4cB4Ff488F666a3856516ba981197f3f3,184801761494400960,&quot;&quot;,address(this));
-	_createItem(&quot;Wanderer&quot;,0xBcce2CE773bE0250bdDDD4487d927aCCd748414F,184801761494400960,&quot;&quot;,address(this));
-	_createItem(&quot;Link&quot;,0xBcce2CE773bE0250bdDDD4487d927aCCd748414F,184801761494400960,&quot;&quot;,address(this));
+	 _createItem("Feelsgood", 0x7d9450A4E85136f46BA3F519e20Fea52f5BEd063,359808729788989630,"",address(this));
+	_createItem("Ree",0x2C3756c4cB4Ff488F666a3856516ba981197f3f3,184801761494400960,"",address(this));
+	_createItem("TwoGender",0xb16948C62425ed389454186139cC94178D0eFbAF,359808729788989630,"",address(this));
+	_createItem("Gains",0xA69E065734f57B73F17b38436f8a6259cCD090Fd,359808729788989630,"",address(this));
+	_createItem("Trump",0xBcce2CE773bE0250bdDDD4487d927aCCd748414F,94916238056430340,"",address(this));
+	_createItem("Brain",0xBcce2CE773bE0250bdDDD4487d927aCCd748414F,94916238056430340,"",address(this));
+	_createItem("Illuminati",0xbd6A9D2C44b571F33Ee2192BD2d46aBA2866405a,94916238056430340,"",address(this));
+	_createItem("Hang",0x2C659bf56012deeEc69Aea6e87b6587664B99550,94916238056430340,"",address(this));
+	_createItem("Pepesaur",0x7d9450A4E85136f46BA3F519e20Fea52f5BEd063,184801761494400960,"",address(this));
+	_createItem("BlockChain",0x2C3756c4cB4Ff488F666a3856516ba981197f3f3,184801761494400960,"",address(this));
+	_createItem("Wanderer",0xBcce2CE773bE0250bdDDD4487d927aCCd748414F,184801761494400960,"",address(this));
+	_createItem("Link",0xBcce2CE773bE0250bdDDD4487d927aCCd748414F,184801761494400960,"",address(this));
 
 	// Set top owners.
 	topOwner[1] = TopOwner(0x7d9450A4E85136f46BA3F519e20Fea52f5BEd063,350000000000000000); 

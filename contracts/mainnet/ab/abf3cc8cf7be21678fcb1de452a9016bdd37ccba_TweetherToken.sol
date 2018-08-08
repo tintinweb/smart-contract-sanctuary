@@ -252,8 +252,8 @@ pragma solidity ^0.4.19;
 
 
 contract TweetherToken is StandardToken, Owned {
-  string public name = &quot;TweetherToken&quot;;
-  string public symbol = &quot;TWE&quot;;
+  string public name = "TweetherToken";
+  string public symbol = "TWE";
   uint8 public decimals = 0;
 
   uint256 public FOR_ICO = 750000;

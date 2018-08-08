@@ -88,8 +88,8 @@ contract ERC223BasicToken is DNCAsset{
 
 contract GoldBank is ERC223BasicToken{
 	address admin;
-	string public name = &quot;DinarCoin&quot;;
-    string public symbol = &quot;DNC&quot;;
+	string public name = "DinarCoin";
+    string public symbol = "DNC";
     uint public decimals = 18;
 	mapping (address => bool) public mintable;
 

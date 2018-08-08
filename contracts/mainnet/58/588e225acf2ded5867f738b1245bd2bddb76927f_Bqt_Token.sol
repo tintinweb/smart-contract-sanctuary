@@ -90,8 +90,8 @@ library SafeMath {
    
   contract Bqt_Token is ERC20Interface {
 
-      string public constant symbol = &quot;BQT&quot;;
-      string public constant name = &quot;BQT token&quot;;
+      string public constant symbol = "BQT";
+      string public constant name = "BQT token";
       uint8 public constant decimals = 18; 
            
       uint256 public constant maxTokens = 200*10**6*10**18; 
@@ -201,7 +201,7 @@ library SafeMath {
    
       // Send _value amount of tokens from address _from to address _to
       // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-      // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+      // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
       // fees in sub-currencies; the command should fail unless the _from account has
       // deliberately authorized the sender of the message via some mechanism; we propose
       // these standardized APIs for approval:

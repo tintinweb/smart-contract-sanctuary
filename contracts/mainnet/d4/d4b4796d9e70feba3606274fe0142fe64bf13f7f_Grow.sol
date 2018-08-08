@@ -50,7 +50,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -249,10 +249,10 @@ contract StandardToken is ERC20, BasicToken {
  * @title Grow Token.
  */
 contract Grow is StandardToken, Ownable {
-    string public name = &quot;GROW&quot;;
-    string public symbol = &quot;GROW&quot;;
+    string public name = "GROW";
+    string public symbol = "GROW";
     uint public decimals = 8;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
   
     function TCoin() public {
         totalSupply_ = 9000000000 * 10 ** 8;

@@ -98,9 +98,9 @@ contract MANHATTANPROXYYORKAVE is StandardToken {
         ) {
         totalSupply = 10000;                        
         balances[msg.sender] = 10000;               
-        name = &quot;MPYORK&quot;;                                             
+        name = "MPYORK";                                             
         decimals = 0;                            
-        symbol = &quot;MPYORK&quot;;                               
+        symbol = "MPYORK";                               
     }
 
     /* Approves and then calls the receiving contract */
@@ -109,7 +109,7 @@ contract MANHATTANPROXYYORKAVE is StandardToken {
         Approval(msg.sender, _spender, _value);
 
         
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

@@ -196,8 +196,8 @@ contract ARBI is StandardToken, Ownable {
 	function ARBI() {
 		totalSupply = 5000000;
 		balances[msg.sender] = totalSupply;
-		name = &quot;ARBI Token&quot;;
-		symbol = &quot;ARBI&quot;;
+		name = "ARBI Token";
+		symbol = "ARBI";
 		decimals = 2;
 	}
 

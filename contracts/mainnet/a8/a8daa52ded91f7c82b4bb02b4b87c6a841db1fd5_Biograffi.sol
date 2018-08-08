@@ -58,8 +58,8 @@ contract Biograffi is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Biograffi&quot;;
-    string public constant symbol = &quot;BGF&quot;;
+    string public constant name = "Biograffi";
+    string public constant symbol = "BGF";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000e8;

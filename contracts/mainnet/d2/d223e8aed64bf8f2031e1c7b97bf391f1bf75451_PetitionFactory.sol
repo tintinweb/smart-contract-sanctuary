@@ -46,7 +46,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -552,7 +552,7 @@ contract PetitionFactory is Ownable {
 
     function sign (uint _petitionId) public {
         // cant send it to a non existing petition
-        require (keccak256(petitions[_petitionId].name) != keccak256(&quot;&quot;));
+        require (keccak256(petitions[_petitionId].name) != keccak256(""));
         require (ownerPetitionSignerArrayCreated[msg.sender][_petitionId] == 0);
 
         //if (ownerPetitionSignerArrayCreated[msg.sender][_petitionId] == 0) {

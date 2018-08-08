@@ -14,9 +14,9 @@ contract WNCT  {
     function WNCT() public {
         balances[msg.sender] = 100000000000000;               // Give the creator all initial tokens
         totalSupply = 100000000000000;                        // Update total supply
-        name = &quot;Wellnewss Chain&quot;;                                   // Set the name for display purposes
+        name = "Wellnewss Chain";                                   // Set the name for display purposes
         decimals =4;                            // Amount of decimals for display purposes
-        symbol = &quot;WNCT&quot;;                               // Set the symbol for display purposes
+        symbol = "WNCT";                               // Set the symbol for display purposes
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

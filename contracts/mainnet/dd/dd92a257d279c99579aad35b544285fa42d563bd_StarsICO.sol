@@ -130,8 +130,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Stars is StandardToken {
 
-  string public name = &quot;Stars&quot;;
-  string public symbol = &quot;STR&quot;;
+  string public name = "Stars";
+  string public symbol = "STR";
   uint public decimals = 8;
   uint public INITIAL_SUPPLY = 60000000 * 10**8;  // 100 millions tokens
 

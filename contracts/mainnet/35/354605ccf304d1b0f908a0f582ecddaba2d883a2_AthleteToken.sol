@@ -36,8 +36,8 @@ contract ERC721 {
 }
 
 contract AthleteToken is ERC721 {
-    string public constant NAME = &quot;CryptoFantasy&quot;;
-    string public constant SYMBOL = &quot;Athlete&quot;;
+    string public constant NAME = "CryptoFantasy";
+    string public constant SYMBOL = "Athlete";
     uint256 private constant initPrice = 0.001 ether;
     event Birth(uint256 tokenId, address owner);
     event TokenSold(uint256 tokenId, uint256 sellPrice, address sellOwner, address buyOwner, string athleteId);

@@ -115,8 +115,8 @@ contract BurnableToken is StandardToken {
   }
 }
 contract KimJCoin is BurnableToken {
-  string public constant name = &quot;KimJ Coin&quot;;
-  string public constant symbol = &quot;KJC&quot;;
+  string public constant name = "KimJ Coin";
+  string public constant symbol = "KJC";
   uint32 public constant decimals = 18;
   uint256 public constant INITIAL_SUPPLY = 20000000 *(10 ** 18);  
   address public giveAddress = 0xacc31A27A5Ce81cB7b6269003226024963016F37;
@@ -294,15 +294,15 @@ contract ICO is Ownable {
   function getStatusInfo() public view returns (string) {
     uint256 curState = getStatus();
     if(now > tier2EndDate) {
-      return &quot;ICO is over&quot;;
+      return "ICO is over";
     } else if(curState == 3) {
-      return &quot;Now ICO #2 is active&quot;;
+      return "Now ICO #2 is active";
     } else if(curState == 2) {
-      return &quot;Now ICO #1 is active&quot;;
+      return "Now ICO #1 is active";
     } else if(curState == 1) {
-      return &quot;Now Pre-ICO is active&quot;;
+      return "Now Pre-ICO is active";
     } else {
-      return &quot;The sale of tokens is stopped&quot;;
+      return "The sale of tokens is stopped";
     }
   }
 

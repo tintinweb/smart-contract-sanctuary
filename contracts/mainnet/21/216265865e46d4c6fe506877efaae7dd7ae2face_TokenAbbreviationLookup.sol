@@ -9,7 +9,7 @@ contract owned {
     event OwnerChanged(address newOwner);
 
     modifier only_owner() {
-        require(msg.sender == owner, &quot;only_owner: forbidden&quot;);
+        require(msg.sender == owner, "only_owner: forbidden");
         _;
     }
 
@@ -35,8 +35,8 @@ contract hasAdmins is owned {
     event AdminDisabledForever();
 
     modifier only_admin() {
-        require(adminsDisabledForever == false, &quot;admins must not be disabled&quot;);
-        require(isAdmin(msg.sender), &quot;only_admin: forbidden&quot;);
+        require(adminsDisabledForever == false, "admins must not be disabled");
+        require(isAdmin(msg.sender), "only_admin: forbidden");
         _;
     }
 
@@ -58,13 +58,13 @@ contract hasAdmins is owned {
 
     function upgradeMeAdmin(address newAdmin) only_admin() external {
         // note: already checked msg.sender has admin with `only_admin` modifier
-        require(msg.sender != owner, &quot;owner cannot upgrade self&quot;);
+        require(msg.sender != owner, "owner cannot upgrade self");
         _setAdmin(msg.sender, false);
         _setAdmin(newAdmin, true);
     }
 
     function setAdmin(address a, bool _givePerms) only_admin() external {
-        require(a != msg.sender && a != owner, &quot;cannot change your own (or owner&#39;s) permissions&quot;);
+        require(a != msg.sender && a != owner, "cannot change your own (or owner&#39;s) permissions");
         _setAdmin(a, _givePerms);
     }
 

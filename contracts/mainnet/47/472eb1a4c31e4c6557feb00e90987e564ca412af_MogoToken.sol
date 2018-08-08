@@ -193,8 +193,8 @@ contract TokenERC20  is Pausable{
 
 contract MogoToken is TokenERC20{
     // Public variables of the token
-    string public name = &quot;Morgan Option&quot;;
-    string public symbol = &quot;mogo&quot;;
+    string public name = "Morgan Option";
+    string public symbol = "mogo";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 200000000 * 10 ** uint256(decimals);

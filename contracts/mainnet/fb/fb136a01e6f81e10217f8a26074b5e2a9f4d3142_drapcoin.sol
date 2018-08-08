@@ -16,9 +16,9 @@ contract drapcoin {
     function drapcoin() {
 
          initialSupply = 5000;
-         name =&quot;drapcoin&quot;;
+         name ="drapcoin";
         decimals = 18;
-         symbol = &quot;DRAP&quot;;
+         symbol = "DRAP";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

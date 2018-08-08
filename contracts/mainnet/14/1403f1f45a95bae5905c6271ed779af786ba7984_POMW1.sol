@@ -11,7 +11,7 @@ pragma solidity ^0.4.20;
 * ==============================*
 * -> Are you tired of unnecessry divs? Do you just want to pump and dump in its simplicity?
 * Inspired by the fifth autonomous pyramid, this contract merely has been changed to have 1% divs.
-* Also known as &quot;Proof of Cuck Hands&quot;
+* Also known as "Proof of Cuck Hands"
 * [x] More stable than ever, having withstood severe testnet abuse and attack attempts from our community!.
 * [x] Audited, tested, and approved by known community security specialists such as tocsick and Arc.
 * [X] New functionality; you can now perform partial sell orders. If you succumb to weak hands, you don&#39;t have to dump all of your bags!
@@ -140,8 +140,8 @@ contract POMW1 {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;POMW1&quot;;
-    string public symbol = &quot;POMW1&quot;;
+    string public name = "POMW1";
+    string public symbol = "POMW1";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 100;
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;
@@ -239,7 +239,7 @@ contract POMW1 {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
         
         // fire event
@@ -583,7 +583,7 @@ contract POMW1 {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
         
         // is the user referred by a masternode?

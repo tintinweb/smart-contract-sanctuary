@@ -149,8 +149,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract  FDSToken is StandardToken {
 
-  string public constant name = &quot;FrisbeeDog&#39;sToken&quot;;
-  string public constant symbol = &quot;FDST&quot;;
+  string public constant name = "FrisbeeDog&#39;sToken";
+  string public constant symbol = "FDST";
   uint8 public constant decimals = 8;
 
   uint256 public constant INITIAL_SUPPLY = 1470000000 * (10 ** uint256(decimals));

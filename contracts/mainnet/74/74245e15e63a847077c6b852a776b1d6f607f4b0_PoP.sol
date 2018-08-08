@@ -27,8 +27,8 @@ contract PoP{
 
 	// Init
 	function PoP() public {
-		name = &quot;PopCoin&quot;; 
-    	symbol = &quot;PoP&quot;; 
+		name = "PopCoin"; 
+    	symbol = "PoP"; 
     	decimals = 18;
     	author = msg.sender;
     	totalSupply_ = 10000000 * 10 ** uint256(decimals);

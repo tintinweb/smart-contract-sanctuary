@@ -39,8 +39,8 @@ contract home {
 	
     using SafeMath for uint256;
     
-    string public constant name       = &quot;HHM&quot;;
-    string public constant symbol     = &quot;HHM&quot;;
+    string public constant name       = "HHM";
+    string public constant symbol     = "HHM";
     uint32 public constant decimals   = 0;
     uint256 public totalSupply;
  

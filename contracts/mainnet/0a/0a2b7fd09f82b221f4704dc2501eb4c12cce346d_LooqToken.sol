@@ -299,7 +299,7 @@ contract MintableToken is StandardToken, Ownable {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 
 
@@ -344,8 +344,8 @@ library SafeMath {
 
 
 contract LooqToken is MintableToken {
-  string public name = &quot;LOOQ TOKEN&quot;;
-  string public symbol = &quot;LOQ&quot;;
+  string public name = "LOOQ TOKEN";
+  string public symbol = "LOQ";
   uint256 public decimals = 18;
 }
 

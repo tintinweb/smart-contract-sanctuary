@@ -537,9 +537,9 @@ contract MMR is MiniMeToken {
       _tokenFactory,
       0x0,                      // no parent token
       0,                        // no snapshot block number from parent
-      &quot;Roman Token&quot;, // Token name
+      "Roman Token", // Token name
       18,                       // Decimals
-      &quot;MMR&quot;,                    // Symbol
+      "MMR",                    // Symbol
       true                      // Enable transfers
     ) {}
 }

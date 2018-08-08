@@ -159,56 +159,56 @@ contract DigixConstants {
 
 
     /// interactive contracts
-    bytes32 constant CONTRACT_INTERACTIVE_ASSETS_EXPLORER = &quot;i:asset:explorer&quot;;
-    bytes32 constant CONTRACT_INTERACTIVE_DIGIX_DIRECTORY = &quot;i:directory&quot;;
-    bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE = &quot;i:mp&quot;;
-    bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_ADMIN = &quot;i:mpadmin&quot;;
-    bytes32 constant CONTRACT_INTERACTIVE_POPADMIN = &quot;i:popadmin&quot;;
-    bytes32 constant CONTRACT_INTERACTIVE_PRODUCTS_LIST = &quot;i:products&quot;;
-    bytes32 constant CONTRACT_INTERACTIVE_TOKEN = &quot;i:token&quot;;
-    bytes32 constant CONTRACT_INTERACTIVE_BULK_WRAPPER = &quot;i:bulk-wrapper&quot;;
-    bytes32 constant CONTRACT_INTERACTIVE_TOKEN_CONFIG = &quot;i:token:config&quot;;
-    bytes32 constant CONTRACT_INTERACTIVE_TOKEN_INFORMATION = &quot;i:token:information&quot;;
-    bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_INFORMATION = &quot;i:mp:information&quot;;
-    bytes32 constant CONTRACT_INTERACTIVE_IDENTITY = &quot;i:identity&quot;;
+    bytes32 constant CONTRACT_INTERACTIVE_ASSETS_EXPLORER = "i:asset:explorer";
+    bytes32 constant CONTRACT_INTERACTIVE_DIGIX_DIRECTORY = "i:directory";
+    bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE = "i:mp";
+    bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_ADMIN = "i:mpadmin";
+    bytes32 constant CONTRACT_INTERACTIVE_POPADMIN = "i:popadmin";
+    bytes32 constant CONTRACT_INTERACTIVE_PRODUCTS_LIST = "i:products";
+    bytes32 constant CONTRACT_INTERACTIVE_TOKEN = "i:token";
+    bytes32 constant CONTRACT_INTERACTIVE_BULK_WRAPPER = "i:bulk-wrapper";
+    bytes32 constant CONTRACT_INTERACTIVE_TOKEN_CONFIG = "i:token:config";
+    bytes32 constant CONTRACT_INTERACTIVE_TOKEN_INFORMATION = "i:token:information";
+    bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_INFORMATION = "i:mp:information";
+    bytes32 constant CONTRACT_INTERACTIVE_IDENTITY = "i:identity";
 
 
     /// controller contracts
-    bytes32 constant CONTRACT_CONTROLLER_ASSETS = &quot;c:asset&quot;;
-    bytes32 constant CONTRACT_CONTROLLER_ASSETS_RECAST = &quot;c:asset:recast&quot;;
-    bytes32 constant CONTRACT_CONTROLLER_ASSETS_EXPLORER = &quot;c:explorer&quot;;
-    bytes32 constant CONTRACT_CONTROLLER_DIGIX_DIRECTORY = &quot;c:directory&quot;;
-    bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE = &quot;c:mp&quot;;
-    bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE_ADMIN = &quot;c:mpadmin&quot;;
-    bytes32 constant CONTRACT_CONTROLLER_PRODUCTS_LIST = &quot;c:products&quot;;
+    bytes32 constant CONTRACT_CONTROLLER_ASSETS = "c:asset";
+    bytes32 constant CONTRACT_CONTROLLER_ASSETS_RECAST = "c:asset:recast";
+    bytes32 constant CONTRACT_CONTROLLER_ASSETS_EXPLORER = "c:explorer";
+    bytes32 constant CONTRACT_CONTROLLER_DIGIX_DIRECTORY = "c:directory";
+    bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE = "c:mp";
+    bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE_ADMIN = "c:mpadmin";
+    bytes32 constant CONTRACT_CONTROLLER_PRODUCTS_LIST = "c:products";
 
-    bytes32 constant CONTRACT_CONTROLLER_TOKEN_APPROVAL = &quot;c:token:approval&quot;;
-    bytes32 constant CONTRACT_CONTROLLER_TOKEN_CONFIG = &quot;c:token:config&quot;;
-    bytes32 constant CONTRACT_CONTROLLER_TOKEN_INFO = &quot;c:token:info&quot;;
-    bytes32 constant CONTRACT_CONTROLLER_TOKEN_TRANSFER = &quot;c:token:transfer&quot;;
+    bytes32 constant CONTRACT_CONTROLLER_TOKEN_APPROVAL = "c:token:approval";
+    bytes32 constant CONTRACT_CONTROLLER_TOKEN_CONFIG = "c:token:config";
+    bytes32 constant CONTRACT_CONTROLLER_TOKEN_INFO = "c:token:info";
+    bytes32 constant CONTRACT_CONTROLLER_TOKEN_TRANSFER = "c:token:transfer";
 
-    bytes32 constant CONTRACT_CONTROLLER_JOB_ID = &quot;c:jobid&quot;;
-    bytes32 constant CONTRACT_CONTROLLER_IDENTITY = &quot;c:identity&quot;;
+    bytes32 constant CONTRACT_CONTROLLER_JOB_ID = "c:jobid";
+    bytes32 constant CONTRACT_CONTROLLER_IDENTITY = "c:identity";
 
     /// storage contracts
-    bytes32 constant CONTRACT_STORAGE_ASSETS = &quot;s:asset&quot;;
-    bytes32 constant CONTRACT_STORAGE_ASSET_EVENTS = &quot;s:asset:events&quot;;
-    bytes32 constant CONTRACT_STORAGE_DIGIX_DIRECTORY = &quot;s:directory&quot;;
-    bytes32 constant CONTRACT_STORAGE_MARKETPLACE = &quot;s:mp&quot;;
-    bytes32 constant CONTRACT_STORAGE_PRODUCTS_LIST = &quot;s:products&quot;;
-    bytes32 constant CONTRACT_STORAGE_GOLD_TOKEN = &quot;s:goldtoken&quot;;
-    bytes32 constant CONTRACT_STORAGE_JOB_ID = &quot;s:jobid&quot;;
-    bytes32 constant CONTRACT_STORAGE_IDENTITY = &quot;s:identity&quot;;
+    bytes32 constant CONTRACT_STORAGE_ASSETS = "s:asset";
+    bytes32 constant CONTRACT_STORAGE_ASSET_EVENTS = "s:asset:events";
+    bytes32 constant CONTRACT_STORAGE_DIGIX_DIRECTORY = "s:directory";
+    bytes32 constant CONTRACT_STORAGE_MARKETPLACE = "s:mp";
+    bytes32 constant CONTRACT_STORAGE_PRODUCTS_LIST = "s:products";
+    bytes32 constant CONTRACT_STORAGE_GOLD_TOKEN = "s:goldtoken";
+    bytes32 constant CONTRACT_STORAGE_JOB_ID = "s:jobid";
+    bytes32 constant CONTRACT_STORAGE_IDENTITY = "s:identity";
 
     /// service contracts
-    bytes32 constant CONTRACT_SERVICE_TOKEN_DEMURRAGE = &quot;sv:tdemurrage&quot;;
-    bytes32 constant CONTRACT_SERVICE_MARKETPLACE = &quot;sv:mp&quot;;
-    bytes32 constant CONTRACT_SERVICE_DIRECTORY = &quot;sv:directory&quot;;
+    bytes32 constant CONTRACT_SERVICE_TOKEN_DEMURRAGE = "sv:tdemurrage";
+    bytes32 constant CONTRACT_SERVICE_MARKETPLACE = "sv:mp";
+    bytes32 constant CONTRACT_SERVICE_DIRECTORY = "sv:directory";
 
     /// fees distributors
-    bytes32 constant CONTRACT_DEMURRAGE_FEES_DISTRIBUTOR = &quot;fees:distributor:demurrage&quot;;
-    bytes32 constant CONTRACT_RECAST_FEES_DISTRIBUTOR = &quot;fees:distributor:recast&quot;;
-    bytes32 constant CONTRACT_TRANSFER_FEES_DISTRIBUTOR = &quot;fees:distributor:transfer&quot;;
+    bytes32 constant CONTRACT_DEMURRAGE_FEES_DISTRIBUTOR = "fees:distributor:demurrage";
+    bytes32 constant CONTRACT_RECAST_FEES_DISTRIBUTOR = "fees:distributor:recast";
+    bytes32 constant CONTRACT_TRANSFER_FEES_DISTRIBUTOR = "fees:distributor:transfer";
 
 }
 
@@ -292,8 +292,8 @@ contract TokenReceiver {
 /// @author Digix Holdings Pte Ltd
 contract Token is TokenLoggerCallback {
 
-  string public constant name = &quot;Digix Gold Token&quot;;
-  string public constant symbol = &quot;DGX&quot;;
+  string public constant name = "Digix Gold Token";
+  string public constant symbol = "DGX";
   uint8 public constant decimals = 9;
 
   function Token(address _resolver) public
@@ -303,7 +303,7 @@ contract Token is TokenLoggerCallback {
 
   /// @notice show the total supply of gold tokens
   /// @return {
-  ///    &quot;totalSupply&quot;: &quot;total number of tokens&quot;
+  ///    "totalSupply": "total number of tokens"
   /// }
   function totalSupply()
            constant
@@ -316,7 +316,7 @@ contract Token is TokenLoggerCallback {
   /// @notice display balance of given account
   /// @param _owner the account to query
   /// @return {
-  ///    &quot;balance&quot;: &quot;balance of the given account in nanograms&quot;
+  ///    "balance": "balance of the given account in nanograms"
   /// }
   function balanceOf(address _owner)
            constant
@@ -330,7 +330,7 @@ contract Token is TokenLoggerCallback {
   /// @param _to account to send to
   /// @param _value the amount in nanograms to send
   /// @return {
-  ///    &quot;success&quot;: &quot;returns true if successful&quot;
+  ///    "success": "returns true if successful"
   /// }
   function transfer(address _to, uint256 _value)
            public
@@ -345,7 +345,7 @@ contract Token is TokenLoggerCallback {
   /// @param _from account to send from
   /// @param _value the amount in nanograms to send
   /// @return {
-  ///    &quot;success&quot;: &quot;returns true if successful&quot;
+  ///    "success": "returns true if successful"
   /// }
   function transferFrom(address _from, address _to, uint256 _value)
            public
@@ -361,7 +361,7 @@ contract Token is TokenLoggerCallback {
   /// @param _amount the amount of tokens to be transfered
   /// @param _data the data to be passed to the tokenFallback function of the receiving contract
   /// @return {
-  ///    &quot;success&quot;: &quot;returns true if successful&quot;
+  ///    "success": "returns true if successful"
   /// }
   function transferAndCall(address _receiver, uint256 _amount, bytes32 _data)
            public
@@ -376,7 +376,7 @@ contract Token is TokenLoggerCallback {
   /// @param _spender the account that is given an allowance
   /// @param _value the amount in nanograms to approve
   /// @return {
-  ///   &quot;success&quot;: &quot;returns true if successful&quot;
+  ///   "success": "returns true if successful"
   /// }
   function approve(address _spender, uint256 _value)
            public
@@ -389,7 +389,7 @@ contract Token is TokenLoggerCallback {
   /// @param _owner the account to spend from
   /// @param _spender the spender
   /// @return {
-  ///    &quot;remaining&quot;: &quot;the remaining allowance in nanograms&quot;
+  ///    "remaining": "the remaining allowance in nanograms"
   /// }
   function allowance(address _owner, address _spender)
            constant

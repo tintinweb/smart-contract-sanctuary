@@ -113,8 +113,8 @@ contract Voyager is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Voyager() public {
-        symbol = &quot;VGR&quot;;
-        name = &quot;Voyager&quot;;
+        symbol = "VGR";
+        name = "Voyager";
         decimals = 2;
         _totalSupply = 35000000000;
         balances[0x21565f030b5804F73c0299A21CB52654c747edD6] = _totalSupply;

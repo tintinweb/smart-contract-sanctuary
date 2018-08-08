@@ -195,8 +195,8 @@ contract StandardToken is BasicToken, ERC20
  */
 contract SophosToken is StandardToken
 {
-    string public name = &quot;Sophos&quot;;
-    string public symbol = &quot;SOPH&quot;;
+    string public name = "Sophos";
+    string public symbol = "SOPH";
     uint public decimals = 8 ;
 
     // Initial supply is 30,000,000.00000000

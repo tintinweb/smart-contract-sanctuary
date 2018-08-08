@@ -114,8 +114,8 @@ contract IJC is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function IJC() public {
-        symbol = &quot;IJC&quot;;
-        name = &quot;Ijas Coin&quot;;
+        symbol = "IJC";
+        name = "Ijas Coin";
         decimals = 18;
         _totalSupply = 28000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

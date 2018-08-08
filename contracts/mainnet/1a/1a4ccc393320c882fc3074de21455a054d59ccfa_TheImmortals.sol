@@ -17,8 +17,8 @@ contract TheImmortalsPhoto {
 	
 	function removeFace(){
 	    require(msg.sender == owner || msg.sender == superContract);
-	    photoData = &quot;&quot;;
-	    photoText = &quot;&quot;;
+	    photoData = "";
+	    photoText = "";
         deleted = true;
 	}
 }

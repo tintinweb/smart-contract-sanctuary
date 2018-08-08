@@ -1,6 +1,6 @@
 contract Latium {
-    string public constant name = &quot;Latium&quot;;
-    string public constant symbol = &quot;LAT&quot;;
+    string public constant name = "Latium";
+    string public constant symbol = "LAT";
     uint8 public constant decimals = 16;
     uint256 public constant totalSupply =
         30000000 * 10 ** uint256(decimals);
@@ -68,7 +68,7 @@ contract LatiumLocker {
     function LatiumLocker() {
         owner = msg.sender;
         // initialize release tiers with pairs:
-        // &quot;UNIX timestamp&quot; => &quot;amount of tokens to release&quot; (with decimals)
+        // "UNIX timestamp" => "amount of tokens to release" (with decimals)
         for (uint8 i = 0; i < _timestamps.length; i++) {
             _releaseTiers[_timestamps[i]] =
                 _tokensToRelease[i] * 10 ** uint256(_latium.decimals());

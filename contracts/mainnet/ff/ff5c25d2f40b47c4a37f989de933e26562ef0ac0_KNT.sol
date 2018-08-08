@@ -84,7 +84,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -304,8 +304,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract KNT is StandardToken {
-  string public constant name = &quot;Kora Network Token&quot;;
-  string public constant symbol = &quot;KNT&quot;;
+  string public constant name = "Kora Network Token";
+  string public constant symbol = "KNT";
   uint32 public constant decimals = 16;
   uint256 public INITIAL_SUPPLY = 712500000 * 10 ** 16;
 

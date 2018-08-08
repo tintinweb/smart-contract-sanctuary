@@ -220,11 +220,11 @@ contract SitcomToken is StandardToken { // CHANGE THIS. Update the contract name
 
         totalSupply = 5000000000000000000000000000;                        // Update total supply (1000 for example) (CHANGE THIS)
 
-        name = &quot;Sitcom Token&quot;;                                   // Set the name for display purposes (CHANGE THIS)
+        name = "Sitcom Token";                                   // Set the name for display purposes (CHANGE THIS)
 
         decimals = 18;                                               // Amount of decimals for display purposes (CHANGE THIS)
 
-        symbol = &quot;STC&quot;;                                             // Set the symbol for display purposes (CHANGE THIS)
+        symbol = "STC";                                             // Set the symbol for display purposes (CHANGE THIS)
 
         unitsOneEthCanBuy = 22222222;                                      // Set the price of your token for the ICO (CHANGE THIS)
 
@@ -282,7 +282,7 @@ contract SitcomToken is StandardToken { // CHANGE THIS. Update the contract name
 
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
 
         return true;
 

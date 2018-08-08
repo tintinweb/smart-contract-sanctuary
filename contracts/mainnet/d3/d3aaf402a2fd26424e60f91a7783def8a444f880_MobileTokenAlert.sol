@@ -111,8 +111,8 @@ contract MobileTokenAlert is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MobileTokenAlert() public {
-        symbol = &quot;MTA&quot;;
-        name = &quot;MobileTokenAlert&quot;;
+        symbol = "MTA";
+        name = "MobileTokenAlert";
         decimals = 8;
         _totalSupply = 10000000000000000;
         balances[0xa46166D89Fa0c759260953E5BF6142FAF1Df2094] = _totalSupply;

@@ -6,8 +6,8 @@ contract LocusToken {
     
     address public tokenOwner;
     
-    string public constant name = &quot;Locus Chain&quot;;
-    string public constant symbol = &quot;LOCUS&quot;;
+    string public constant name = "Locus Chain";
+    string public constant symbol = "LOCUS";
     
     uint8 public constant decimals = 18;
     uint public totalSupply;

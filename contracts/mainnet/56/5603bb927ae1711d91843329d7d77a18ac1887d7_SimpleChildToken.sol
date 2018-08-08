@@ -233,7 +233,7 @@ contract ChildToken is StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -296,7 +296,7 @@ contract Slogan is Ownable {
  * @dev Bitansuo is a contract with bitansuo&#39;s slogan.
  */
 contract Bitansuo is Slogan {
-	function Bitansuo() Slogan(&quot;币探索 (bitansuo.com | bitansuo.eth)&quot;) public {
+	function Bitansuo() Slogan("币探索 (bitansuo.com | bitansuo.eth)") public {
 	}
 }
 

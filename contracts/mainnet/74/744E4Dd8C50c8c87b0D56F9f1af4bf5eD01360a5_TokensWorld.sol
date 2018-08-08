@@ -16,9 +16,9 @@ contract TokensWorld {
     function TokensWorld() {
 
          initialSupply = 50000000000000000000000000;
-         name =&quot;TokensWorld&quot;;
+         name ="TokensWorld";
         decimals = 18;
-         symbol = &quot;TOWO&quot;;
+         symbol = "TOWO";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply

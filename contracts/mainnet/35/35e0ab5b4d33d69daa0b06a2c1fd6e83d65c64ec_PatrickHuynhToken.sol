@@ -113,8 +113,8 @@ mapping(address => mapping(address => uint)) allowed;
 // Constructor
 // ------------------------------------------------------------------------
 function PatrickHuynhToken() public {
-	symbol = &quot;PATRICKHUYNH&quot;;
-	name = &quot;Patrick Huynh Token&quot;;
+	symbol = "PATRICKHUYNH";
+	name = "Patrick Huynh Token";
 	decimals = 18;
 	_totalSupply = 100000000000000000000;
 	balances[0xF40902aeF9faF9aE17A1d9E1381dBEcD2325E625] = _totalSupply;

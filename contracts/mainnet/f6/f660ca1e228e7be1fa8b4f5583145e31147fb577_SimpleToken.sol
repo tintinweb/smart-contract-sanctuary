@@ -240,8 +240,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract SimpleToken is StandardToken {
 
-  string public constant name = &quot;Dicet&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;CET&quot;; // solium-disable-line uppercase
+  string public constant name = "Dicet"; // solium-disable-line uppercase
+  string public constant symbol = "CET"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** uint256(decimals));

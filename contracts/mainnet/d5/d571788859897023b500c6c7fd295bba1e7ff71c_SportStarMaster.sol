@@ -176,11 +176,11 @@ contract SportStarToken is ERC721 {
     }
 
     function name() public pure returns (string) {
-        return &quot;CryptoSportStars&quot;;
+        return "CryptoSportStars";
     }
 
     function symbol() public pure returns (string) {
-        return &quot;SportStarToken&quot;;
+        return "SportStarToken";
     }
 
     function implementsERC721() public pure returns (bool) {

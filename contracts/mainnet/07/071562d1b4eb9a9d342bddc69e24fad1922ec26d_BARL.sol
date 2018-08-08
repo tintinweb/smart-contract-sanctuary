@@ -82,8 +82,8 @@ contract BARL is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;BARRELNETWORK&quot;;
-    string public constant symbol = &quot;BARL&quot;;
+    string public constant name = "BARRELNETWORK";
+    string public constant symbol = "BARL";
     uint public constant decimals = 0;
     
     uint256 public totalSupply = 2000000000;

@@ -21,8 +21,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract TokenERC20 {
     // Public variables of the token
-    string public name = &quot;AIRBLOC Genesis&quot;;
-    string public symbol = &quot;ABLG&quot;;
+    string public name = "AIRBLOC Genesis";
+    string public symbol = "ABLG";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default, avoid changing it
     uint256 public totalSupply = 180000000 * (10 ** 18);

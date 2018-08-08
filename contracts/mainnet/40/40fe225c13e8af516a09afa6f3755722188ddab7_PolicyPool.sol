@@ -390,7 +390,7 @@ contract PolicyPool is SafeMath, Owned{
     }
 
     // admin function to transfer in the GETX according to the rate
-    // the admin should transfer &quot;policyTokenBalanceFromEther&quot; to this pool later
+    // the admin should transfer "policyTokenBalanceFromEther" to this pool later
     function settleEtherPolicy(address[] froms, uint256[] payloads, uint256[] timeStamps, uint256[] weiAmounts) onlyOwner public returns(bool success){
         require(froms.length == payloads.length);
         require(payloads.length == weiAmounts.length);

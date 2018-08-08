@@ -149,8 +149,8 @@ contract StandardToken is ERC20, BasicToken {
 contract LordCoin is StandardToken {
   using SafeMath for uint256;
 
-  string public name = &quot;Lord Coin&quot;;
-  string public symbol = &quot;LC&quot;;
+  string public name = "Lord Coin";
+  string public symbol = "LC";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 20000000 * 1 ether;
 
@@ -173,7 +173,7 @@ contract LordCoin is StandardToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -212,7 +212,7 @@ contract Ownable {
 contract LordCoinPreICO is Ownable {
     using SafeMath for uint256;
 
-    string public name = &quot;Lord Coin Pre-ICO&quot;;
+    string public name = "Lord Coin Pre-ICO";
 
     LordCoin public LC;
     address public beneficiary;

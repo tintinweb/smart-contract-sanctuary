@@ -3,10 +3,10 @@ pragma solidity ^0.4.14;
 contract  ETHealth {
     
     /* Public variables of the token */
-    string public name = &quot; ETHealth&quot;;
+    string public name = " ETHealth";
     uint256 public decimals = 2;
     uint256 public totalSupply;
-    string public symbol = &quot;ETT&quot;;
+    string public symbol = "ETT";
     event Mint(address indexed owner,uint amount);
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);

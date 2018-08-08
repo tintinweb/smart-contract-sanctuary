@@ -109,8 +109,8 @@ contract HighCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HighCoin() public {
-        symbol = &quot;HIGH&quot;;
-        name = &quot;HighCoin&quot;;
+        symbol = "HIGH";
+        name = "HighCoin";
         decimals = 18;
         _totalSupply = 420000000000000000000000000;
         balances[0x3c2A987BA00D00fB147Cc3810b136D5d5bA6f920] = _totalSupply;

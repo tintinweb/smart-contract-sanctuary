@@ -49,55 +49,55 @@ contract DigixConstants {
   uint256 constant STATE_ADMIN_FAILURE = 11;
 
   /// interactive contracts
-  bytes32 constant CONTRACT_INTERACTIVE_ASSETS_EXPLORER = &quot;i:asset:explorer&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_DIGIX_DIRECTORY = &quot;i:directory&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE = &quot;i:mp&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_ADMIN = &quot;i:mpadmin&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_POPADMIN = &quot;i:popadmin&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_PRODUCTS_LIST = &quot;i:products&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_TOKEN = &quot;i:token&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_BULK_WRAPPER = &quot;i:bulk-wrapper&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_CONFIG = &quot;i:token:config&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_INFORMATION = &quot;i:token:information&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_INFORMATION = &quot;i:mp:information&quot;;
-  bytes32 constant CONTRACT_INTERACTIVE_IDENTITY = &quot;i:identity&quot;;
+  bytes32 constant CONTRACT_INTERACTIVE_ASSETS_EXPLORER = "i:asset:explorer";
+  bytes32 constant CONTRACT_INTERACTIVE_DIGIX_DIRECTORY = "i:directory";
+  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE = "i:mp";
+  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_ADMIN = "i:mpadmin";
+  bytes32 constant CONTRACT_INTERACTIVE_POPADMIN = "i:popadmin";
+  bytes32 constant CONTRACT_INTERACTIVE_PRODUCTS_LIST = "i:products";
+  bytes32 constant CONTRACT_INTERACTIVE_TOKEN = "i:token";
+  bytes32 constant CONTRACT_INTERACTIVE_BULK_WRAPPER = "i:bulk-wrapper";
+  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_CONFIG = "i:token:config";
+  bytes32 constant CONTRACT_INTERACTIVE_TOKEN_INFORMATION = "i:token:information";
+  bytes32 constant CONTRACT_INTERACTIVE_MARKETPLACE_INFORMATION = "i:mp:information";
+  bytes32 constant CONTRACT_INTERACTIVE_IDENTITY = "i:identity";
 
   /// controller contracts
-  bytes32 constant CONTRACT_CONTROLLER_ASSETS = &quot;c:asset&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_ASSETS_RECAST = &quot;c:asset:recast&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_ASSETS_EXPLORER = &quot;c:explorer&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_DIGIX_DIRECTORY = &quot;c:directory&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE = &quot;c:mp&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE_ADMIN = &quot;c:mpadmin&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_PRODUCTS_LIST = &quot;c:products&quot;;
+  bytes32 constant CONTRACT_CONTROLLER_ASSETS = "c:asset";
+  bytes32 constant CONTRACT_CONTROLLER_ASSETS_RECAST = "c:asset:recast";
+  bytes32 constant CONTRACT_CONTROLLER_ASSETS_EXPLORER = "c:explorer";
+  bytes32 constant CONTRACT_CONTROLLER_DIGIX_DIRECTORY = "c:directory";
+  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE = "c:mp";
+  bytes32 constant CONTRACT_CONTROLLER_MARKETPLACE_ADMIN = "c:mpadmin";
+  bytes32 constant CONTRACT_CONTROLLER_PRODUCTS_LIST = "c:products";
 
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_APPROVAL = &quot;c:token:approval&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_CONFIG = &quot;c:token:config&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_INFO = &quot;c:token:info&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_TOKEN_TRANSFER = &quot;c:token:transfer&quot;;
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_APPROVAL = "c:token:approval";
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_CONFIG = "c:token:config";
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_INFO = "c:token:info";
+  bytes32 constant CONTRACT_CONTROLLER_TOKEN_TRANSFER = "c:token:transfer";
 
-  bytes32 constant CONTRACT_CONTROLLER_JOB_ID = &quot;c:jobid&quot;;
-  bytes32 constant CONTRACT_CONTROLLER_IDENTITY = &quot;c:identity&quot;;
+  bytes32 constant CONTRACT_CONTROLLER_JOB_ID = "c:jobid";
+  bytes32 constant CONTRACT_CONTROLLER_IDENTITY = "c:identity";
 
   /// storage contracts
-  bytes32 constant CONTRACT_STORAGE_ASSETS = &quot;s:asset&quot;;
-  bytes32 constant CONTRACT_STORAGE_ASSET_EVENTS = &quot;s:asset:events&quot;;
-  bytes32 constant CONTRACT_STORAGE_DIGIX_DIRECTORY = &quot;s:directory&quot;;
-  bytes32 constant CONTRACT_STORAGE_MARKETPLACE = &quot;s:mp&quot;;
-  bytes32 constant CONTRACT_STORAGE_PRODUCTS_LIST = &quot;s:products&quot;;
-  bytes32 constant CONTRACT_STORAGE_GOLD_TOKEN = &quot;s:goldtoken&quot;;
-  bytes32 constant CONTRACT_STORAGE_JOB_ID = &quot;s:jobid&quot;;
-  bytes32 constant CONTRACT_STORAGE_IDENTITY = &quot;s:identity&quot;;
+  bytes32 constant CONTRACT_STORAGE_ASSETS = "s:asset";
+  bytes32 constant CONTRACT_STORAGE_ASSET_EVENTS = "s:asset:events";
+  bytes32 constant CONTRACT_STORAGE_DIGIX_DIRECTORY = "s:directory";
+  bytes32 constant CONTRACT_STORAGE_MARKETPLACE = "s:mp";
+  bytes32 constant CONTRACT_STORAGE_PRODUCTS_LIST = "s:products";
+  bytes32 constant CONTRACT_STORAGE_GOLD_TOKEN = "s:goldtoken";
+  bytes32 constant CONTRACT_STORAGE_JOB_ID = "s:jobid";
+  bytes32 constant CONTRACT_STORAGE_IDENTITY = "s:identity";
 
   /// service contracts
-  bytes32 constant CONTRACT_SERVICE_TOKEN_DEMURRAGE = &quot;sv:tdemurrage&quot;;
-  bytes32 constant CONTRACT_SERVICE_MARKETPLACE = &quot;sv:mp&quot;;
-  bytes32 constant CONTRACT_SERVICE_DIRECTORY = &quot;sv:directory&quot;;
+  bytes32 constant CONTRACT_SERVICE_TOKEN_DEMURRAGE = "sv:tdemurrage";
+  bytes32 constant CONTRACT_SERVICE_MARKETPLACE = "sv:mp";
+  bytes32 constant CONTRACT_SERVICE_DIRECTORY = "sv:directory";
 
   /// fees distributors
-  bytes32 constant CONTRACT_DEMURRAGE_FEES_DISTRIBUTOR = &quot;fees:distributor:demurrage&quot;;
-  bytes32 constant CONTRACT_RECAST_FEES_DISTRIBUTOR = &quot;fees:distributor:recast&quot;;
-  bytes32 constant CONTRACT_TRANSFER_FEES_DISTRIBUTOR = &quot;fees:distributor:transfer&quot;;
+  bytes32 constant CONTRACT_DEMURRAGE_FEES_DISTRIBUTOR = "fees:distributor:demurrage";
+  bytes32 constant CONTRACT_RECAST_FEES_DISTRIBUTOR = "fees:distributor:recast";
+  bytes32 constant CONTRACT_TRANSFER_FEES_DISTRIBUTOR = "fees:distributor:transfer";
 }
 
 contract ContractResolver {
@@ -205,7 +205,7 @@ contract IndexedBytesIteratorInteractive {
     @param _function_next Function that returns the Next Bytes item in the list
     @param _function_previous Function that returns previous Bytes item in the list
     @param _from_start whether to read from start (or end) of the list
-    @return {&quot;_bytes_items&quot; : &quot;Collection of reversed Bytes list&quot;}
+    @return {"_bytes_items" : "Collection of reversed Bytes list"}
   */
   function list_indexed_bytesarray(bytes32 _collection_index, uint256 _count,
                               function (bytes32) external constant returns (bytes32) _function_first,
@@ -234,7 +234,7 @@ contract IndexedBytesIteratorInteractive {
     @param _function_next Function that returns the Next Bytes item in the list
     @param _function_previous Function that returns previous Bytes item in the list
     @param _from_start whether to read in the forwards ( or backwards) direction
-    @return {&quot;_bytes_items&quot; :&quot;Collection/list of Bytes&quot;}
+    @return {"_bytes_items" :"Collection/list of Bytes"}
   */
   function list_indexed_bytesarray_from(bytes32 _collection_index, bytes32 _current_item, uint256 _count,
                                 function (bytes32) external constant returns (bytes32) _function_first,
@@ -261,7 +261,7 @@ contract IndexedBytesIteratorInteractive {
     @param _including_current Whether the `_current_item` should be included in the result
     @param _function_last Function that returns the bytes where we stop reading more bytes
     @param _function_next Function that returns the next bytes to read after another bytes (could be backwards or forwards in the physical collection)
-    @return {&quot;_bytes_items&quot; :&quot;Collection/list of Bytes&quot;}
+    @return {"_bytes_items" :"Collection/list of Bytes"}
   */
   function private_list_indexed_bytes_from_bytes(bytes32 _collection_index, bytes32 _current_item, uint256 _count, bool _including_current,
                                          function (bytes32) external constant returns (bytes32) _function_last,
@@ -315,7 +315,7 @@ contract BytesIteratorInteractive {
     @param _function_next Function that returns the Next Bytes item in the list
     @param _function_previous Function that returns previous Bytes item in the list
     @param _from_start whether to read from start (or end) of the list
-    @return {&quot;_bytes_items&quot; : &quot;Collection of reversed Bytes list&quot;}
+    @return {"_bytes_items" : "Collection of reversed Bytes list"}
   */
   function list_bytesarray(uint256 _count,
                                  function () external constant returns (bytes32) _function_first,
@@ -343,7 +343,7 @@ contract BytesIteratorInteractive {
     @param _function_next Function that returns the Next Bytes item in the list
     @param _function_previous Function that returns previous Bytes item in the list
     @param _from_start whether to read in the forwards ( or backwards) direction
-    @return {&quot;_bytes_items&quot; :&quot;Collection/list of Bytes&quot;}
+    @return {"_bytes_items" :"Collection/list of Bytes"}
   */
   function list_bytesarray_from(bytes32 _current_item, uint256 _count,
                                 function () external constant returns (bytes32) _function_first,
@@ -369,7 +369,7 @@ contract BytesIteratorInteractive {
     @param _including_current Whether the `_current_item` should be included in the result
     @param _function_last Function that returns the bytes where we stop reading more bytes
     @param _function_next Function that returns the next bytes to read after some bytes (could be backwards or forwards in the physical collection)
-    @return {&quot;_address_items&quot; :&quot;Collection/list of Bytes&quot;}
+    @return {"_address_items" :"Collection/list of Bytes"}
   */
   function private_list_bytes_from_bytes(bytes32 _current_item, uint256 _count, bool _including_current,
                                  function () external constant returns (bytes32) _function_last,
@@ -642,14 +642,14 @@ contract AssetsExplorer is ResolverClient, IndexedBytesIteratorInteractive, Byte
   /// @dev show asset information
   /// @param _item asset item
   /// @return {
-  ///   &quot;_product_id&quot;: &quot;product ID of the asset&quot;,
-  ///   &quot;_ng_weight&quot;: &quot;weight of asset, in nanograms&quot;,
-  ///   &quot;_effective_ng_weight&quot;: &quot;equivalent weight in nanograms of .9999 gold (which is also the number of DGX minted for this asset)&quot;,
-  ///   &quot;_serial&quot;: &quot;serial ID of the asset&quot;,
-  ///   &quot;_state_id&quot;: &quot;the current state id of the asset&quot;,
-  ///   &quot;_documents_count&quot;: &quot;the number of supporting documents for this asset&quot;,
-  ///   &quot;_time_minted&quot;: &quot;time at which the DGX tokens were minted for this asset&quot;,
-  ///   &quot;_replaced_by&quot;: &quot;if audit failure happened, this original asset was replaced by this item&quot;
+  ///   "_product_id": "product ID of the asset",
+  ///   "_ng_weight": "weight of asset, in nanograms",
+  ///   "_effective_ng_weight": "equivalent weight in nanograms of .9999 gold (which is also the number of DGX minted for this asset)",
+  ///   "_serial": "serial ID of the asset",
+  ///   "_state_id": "the current state id of the asset",
+  ///   "_documents_count": "the number of supporting documents for this asset",
+  ///   "_time_minted": "time at which the DGX tokens were minted for this asset",
+  ///   "_replaced_by": "if audit failure happened, this original asset was replaced by this item"
   /// }
   function showAssetInfo(bytes32 _item)
            public
@@ -665,11 +665,11 @@ contract AssetsExplorer is ResolverClient, IndexedBytesIteratorInteractive, Byte
   /// @dev show asset details
   /// @param _item asset item
   /// @return {
-  ///   &quot;_mint_target&quot;: &quot;asset was minted to this address&quot;,
-  ///   &quot;_redeem_for&quot;: &quot;asset can be redeemed by this address&quot;,
-  ///   &quot;_replaced_by&quot;: &quot;if audit failure happened, this original asset was replaced by this item&quot;,
-  ///   &quot;_replaces&quot;: &quot;the failed item which this item replaces&quot;,
-  ///   &quot;_redeem_deadline&quot;: &quot;asset can be redeemed before this deadline&quot;
+  ///   "_mint_target": "asset was minted to this address",
+  ///   "_redeem_for": "asset can be redeemed by this address",
+  ///   "_replaced_by": "if audit failure happened, this original asset was replaced by this item",
+  ///   "_replaces": "the failed item which this item replaces",
+  ///   "_redeem_deadline": "asset can be redeemed before this deadline"
   /// }
   function showAssetDetails(bytes32 _item)
            public
@@ -693,8 +693,8 @@ contract AssetsExplorer is ResolverClient, IndexedBytesIteratorInteractive, Byte
 
   /// @dev the total supply of DGX tokens and .9999 gold in the vaults
   /// @return {
-  ///   &quot;_total_supply&quot;: &quot;total supply of DGX tokens&quot;,
-  ///   &quot;_effective_total_supply&quot;: &quot;total amount of .9999 gold in the vaults. This will only be temporarily smaller than _total_supply when an audit failure happens&quot;
+  ///   "_total_supply": "total supply of DGX tokens",
+  ///   "_effective_total_supply": "total amount of .9999 gold in the vaults. This will only be temporarily smaller than _total_supply when an audit failure happens"
   /// }
   function showSupply()
            public
@@ -719,8 +719,8 @@ contract AssetsExplorer is ResolverClient, IndexedBytesIteratorInteractive, Byte
   /// @param _item the asset item
   /// @param _event_index the index of the asset event (index goes from 0)
   /// @return {
-  ///   &quot;_event_type&quot;: &quot;the type of event&quot;,
-  ///   &quot;_timestamp&quot;: &quot;time at which the event happened&quot;
+  ///   "_event_type": "the type of event",
+  ///   "_timestamp": "time at which the event happened"
   /// }
   function showAssetEvent(bytes32 _item, uint256 _event_index)
            public

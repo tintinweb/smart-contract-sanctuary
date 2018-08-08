@@ -136,7 +136,7 @@ contract Cillionaire is owned {
     /// This function will only work when the contract is in `state` CHOOSE_WINNER.
     function chooseWinner(string _ownerRandomNumber, string _ownerRandomSecret) external onlyOwner onlyState(State.CHOOSE_WINNER) {
         require(keccak256(_ownerRandomNumber, _ownerRandomSecret) == ownerRandomHash);
-        require(!startsWithDigit(_ownerRandomSecret)); // This is needed because keccak256(&quot;12&quot;, &quot;34&quot;) == keccak256(&quot;1&quot;, &quot;234&quot;) to prevent owner from changing his initially comitted random number
+        require(!startsWithDigit(_ownerRandomSecret)); // This is needed because keccak256("12", "34") == keccak256("1", "234") to prevent owner from changing his initially comitted random number
         ownerRandomNumber = parseInt(_ownerRandomNumber);
         OwnerRandomNumber(ownerRandomNumber);
         uint randomNumber = ownerRandomNumber ^ minerRandomNumber;

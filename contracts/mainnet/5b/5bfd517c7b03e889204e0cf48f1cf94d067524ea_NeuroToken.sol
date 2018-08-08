@@ -200,7 +200,7 @@ contract NeuroToken is MyAdvancedToken {
     uint256 public frozenTokensSupply;
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    function NeuroToken() MyAdvancedToken(17500000, &quot;NeuroToken&quot;, 0, &quot;NRT&quot;) {
+    function NeuroToken() MyAdvancedToken(17500000, "NeuroToken", 0, "NRT") {
         freezeTokens(17437000);
     }
 

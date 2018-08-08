@@ -98,8 +98,8 @@ contract BatanCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BatanCoin() public {
-        symbol = &quot;BTN&quot;;
-        name = &quot;BatanCoin&quot;;
+        symbol = "BTN";
+        name = "BatanCoin";
         decimals = 3;
         _totalSupply = 99000000000;
         balances[0xadCC8514336E65be1966d457200CB098bD64A94c] = _totalSupply;

@@ -110,8 +110,8 @@ contract BastoneToken is ERC20Interface, Owned {
     // ------------------------------------------------------------------------
     // Token parameters
     // ------------------------------------------------------------------------
-    string public constant symbol = &quot;BSN&quot;;
-    string public constant name = &quot;Bastone&quot;;
+    string public constant symbol = "BSN";
+    string public constant name = "Bastone";
     uint8 public constant decimals = 18;
 
     uint public constant totalSupply = 50 * 10**6 * 10**18;

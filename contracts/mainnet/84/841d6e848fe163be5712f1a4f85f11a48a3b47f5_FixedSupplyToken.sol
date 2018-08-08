@@ -110,8 +110,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     }
 
     constructor() public {
-        symbol = &quot;CAR&quot;;
-        name = &quot;CarBlock.io&quot;;
+        symbol = "CAR";
+        name = "CarBlock.io";
         decimals = 18;
         totalSupply = 1800000000 * 10**uint(decimals);
         balances[owner] = totalSupply;

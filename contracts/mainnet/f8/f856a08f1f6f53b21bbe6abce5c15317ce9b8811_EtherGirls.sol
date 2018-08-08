@@ -40,8 +40,8 @@ contract EtherGirls is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = &quot;EtherGirls&quot;; // solhint-disable-line
-  string public constant SYMBOL = &quot;GirlToken&quot;; // solhint-disable-line
+  string public constant NAME = "EtherGirls"; // solhint-disable-line
+  string public constant SYMBOL = "GirlToken"; // solhint-disable-line
 
   uint256 private startingPrice = 0.001 ether;
   uint256 private firstStepLimit =  0.053613 ether;

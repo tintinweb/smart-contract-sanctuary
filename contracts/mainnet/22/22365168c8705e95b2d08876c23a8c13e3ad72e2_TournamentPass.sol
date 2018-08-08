@@ -127,11 +127,11 @@ contract TournamentPass is ERC20, Ownable {
     uint mintLimit = 20000;
     
     function name() public view returns (string){
-        return &quot;GU Tournament Passes&quot;;
+        return "GU Tournament Passes";
     }
 
     function symbol() public view returns (string) {
-        return &quot;PASS&quot;;
+        return "PASS";
     }
 
     function addMinter(address minter) public onlyOwner {

@@ -28,8 +28,8 @@ contract AYA {
     ) public {
         totalSupply = 100000000000000000000000000;                              // Total supply with the decimal amount
         balanceOf[msg.sender] = 100000000000000000000000000;                    // All initial tokens
-        name = &quot;Ayasan&quot;;                                                    // The name for display purposes
-        symbol = &quot;AYA&quot;;                                                         // The symbol for display purposes
+        name = "Ayasan";                                                    // The name for display purposes
+        symbol = "AYA";                                                         // The symbol for display purposes
     }
 
     /**

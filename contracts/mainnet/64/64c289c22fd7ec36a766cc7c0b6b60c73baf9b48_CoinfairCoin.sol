@@ -38,8 +38,8 @@ contract Leader {
 }
 
 contract CoinfairCoin is ERC20, Leader {
-    string public name = &quot;CoinfairCoin&quot;;
-    string public symbol = &quot;CFC&quot;;
+    string public name = "CoinfairCoin";
+    string public symbol = "CFC";
     uint8 public decimals = 8;
     uint256 public totalSupply = 1000000000000000000;
 	

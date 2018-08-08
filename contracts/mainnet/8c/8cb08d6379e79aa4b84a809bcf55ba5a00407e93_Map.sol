@@ -324,7 +324,7 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
         kingdom.owner = msg.sender;
         kingdom.locked = _locked;
 
-        uint transactionId = kingdomTransactions.push(Transaction(&quot;&quot;, msg.sender, msg.value, 0, jackpotCommission, now)) - 1;
+        uint transactionId = kingdomTransactions.push(Transaction("", msg.sender, msg.value, 0, jackpotCommission, now)) - 1;
         kingdomTransactions[transactionId].kingdomKey = _key;
         kingdom.transactionCount++;
         kingdom.lastTransaction = transactionId;
@@ -365,7 +365,7 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
         require(_type > 0);
         require(_type < 6);
         require(rounds[currentRound].kingdomsCreated[_key] == false);
-        uint kingdomId = kingdoms.push(Kingdom(&quot;&quot;, &quot;&quot;, 1, _type, 0, 0, 1, 0.02 ether, address(0), false)) - 1;
+        uint kingdomId = kingdoms.push(Kingdom("", "", 1, _type, 0, 0, 1, 0.02 ether, address(0), false)) - 1;
         kingdoms[kingdomId].title = _title;
         kingdoms[kingdomId].owner = owner;
         kingdoms[kingdomId].key = _key;
@@ -373,7 +373,7 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
         kingdoms[kingdomId].locked = false;
         rounds[currentRound].kingdomsKeys[_key] = kingdomId;
         rounds[currentRound].kingdomsCreated[_key] = true;
-        uint transactionId = kingdomTransactions.push(Transaction(&quot;&quot;, msg.sender, 0.01 ether, 0, 0, now)) - 1;
+        uint transactionId = kingdomTransactions.push(Transaction("", msg.sender, 0.01 ether, 0, 0, now)) - 1;
         kingdomTransactions[transactionId].kingdomKey = _key;
         kingdoms[kingdomId].lastTransaction = transactionId;
     }
@@ -402,7 +402,7 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
         uint refundPrice = 0.0375 ether; // (STARTING_CLAIM_PRICE_WEI.mul(125)).div(100);
         uint nextMinimumPrice = 0.09 ether; // STARTING_CLAIM_PRICE_WEI.add(STARTING_CLAIM_PRICE_WEI.mul(2));
 
-        uint kingdomId = kingdoms.push(Kingdom(&quot;&quot;, &quot;&quot;, 1, 0, 0, 0, 1, refundPrice, address(0), false)) - 1;
+        uint kingdomId = kingdoms.push(Kingdom("", "", 1, 0, 0, 0, 1, refundPrice, address(0), false)) - 1;
         
         kingdoms[kingdomId].kingdomType = _type;
         kingdoms[kingdomId].title = _title;
@@ -426,7 +426,7 @@ contract Map is PullPayment, Destructible, ReentrancyGuard {
 
     function createTransaction(uint _type, address _sender, uint _value, uint _basePrice, address _affiliate) internal returns (uint id) {
         uint jackpotValue = sendAffiliateValue(_basePrice, _affiliate);
-        uint transactionId = kingdomTransactions.push(Transaction(&quot;&quot;, _sender, _value, 0, jackpotValue, now)) - 1;
+        uint transactionId = kingdomTransactions.push(Transaction("", _sender, _value, 0, jackpotValue, now)) - 1;
         lastTransaction[_sender] = now;
         setNewJackpot(_type, jackpotValue, msg.sender);
         return transactionId;

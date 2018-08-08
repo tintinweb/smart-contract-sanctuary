@@ -1,7 +1,7 @@
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -173,8 +173,8 @@ contract FuelToken is ERC20, Ownable, NonZero {
     using SafeMath for uint;
 
 /////////////////////// TOKEN INFORMATION ///////////////////////
-    string public constant name = &quot;Fuel Token&quot;;
-    string public constant symbol = &quot;FUEL&quot;;
+    string public constant name = "Fuel Token";
+    string public constant symbol = "FUEL";
 
     uint8 public decimals = 18;
     

@@ -58,8 +58,8 @@ contract TDC is ERC20 {
 	//黑名单
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;桐道链&quot;;
-    string public constant symbol = &quot;TDC&quot;;
+    string public constant name = "桐道链";
+    string public constant symbol = "TDC";
     uint public constant decimals = 18;
     
     uint256 public totalSupply = 10000000000e18;

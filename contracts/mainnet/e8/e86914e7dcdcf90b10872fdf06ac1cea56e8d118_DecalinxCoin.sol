@@ -104,8 +104,8 @@ contract DecalinxCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DecalinxCoin() public {
-        symbol = &quot;&#208;CC&quot;;
-        name = &quot;DecalinxCoin&quot;;
+        symbol = "&#208;CC";
+        name = "DecalinxCoin";
         decimals = 18;
         _totalSupply = 1000000000 * 10 ** uint256(decimals);
         balances[0x00175175537E92B33227A2F5a1E886fF1abf2aB0] = _totalSupply;

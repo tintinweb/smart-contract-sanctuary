@@ -23,8 +23,8 @@ contract ETHIOPIANBIRRDIGITALTETHER {
     ) public {
         totalSupply = 2000000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;               
-        name = &quot;ETHIOPIAN BIRR DIGITAL TETHER&quot;;                                  
-        symbol = &quot;EDT&quot;;                               
+        name = "ETHIOPIAN BIRR DIGITAL TETHER";                                  
+        symbol = "EDT";                               
     }
 
 

@@ -57,7 +57,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -467,12 +467,12 @@ contract StageCrowdsale is FinalizableCrowdsale {
     }
 
     modifier isNotFinalized() {
-        require(!isFinalized, &quot;Call on finalized.&quot;);
+        require(!isFinalized, "Call on finalized.");
         _;
     }
 
     modifier previousIsFinalized() {
-        require(isPreviousStageFinalized(), &quot;Call on previous stage finalized.&quot;);
+        require(isPreviousStageFinalized(), "Call on previous stage finalized.");
         _;
     }
 

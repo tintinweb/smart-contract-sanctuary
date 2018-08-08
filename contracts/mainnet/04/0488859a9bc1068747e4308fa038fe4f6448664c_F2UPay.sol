@@ -164,8 +164,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract F2UPay is StandardToken {
 
-  string public constant name = &quot;F2UPay$&quot;;
-  string public constant symbol = &quot;F2UPay$&quot;;
+  string public constant name = "F2UPay$";
+  string public constant symbol = "F2UPay$";
   uint8 public constant decimals = 9;
 
   uint256 public constant INITIAL_SUPPLY = 66600000000;

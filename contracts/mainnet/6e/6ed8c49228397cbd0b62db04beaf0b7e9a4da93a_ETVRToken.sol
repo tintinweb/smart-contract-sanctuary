@@ -313,8 +313,8 @@ contract TokenVesting is Ownable {
 }
 
 contract ETVRToken is PausableToken, BurnableToken, MintableToken {
-    string public constant name     = &quot;ETVR TOKEN&quot;;
-    string public constant symbol   = &quot;ETVR&quot;;
+    string public constant name     = "ETVR TOKEN";
+    string public constant symbol   = "ETVR";
     uint8  public constant decimals = 18;
 
     uint256 public constant INITIAL_SUPPLY = 500000000 * (10 ** uint256(decimals));

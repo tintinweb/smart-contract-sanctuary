@@ -261,7 +261,7 @@ contract SplitStealContract is owned, priced {
             if (game.disqualified[game.opponent[player]]) {
                 uint256 gameEarnings = game.bets[player].betAmount + game.bets[game.opponent[player]].betAmount;
                 contractEarnings = contractEarnings + gameEarnings;
-                emit ContractEarnings(_gameNumber, gameEarnings, &quot;BOTH_DISQUALIFIED&quot;);
+                emit ContractEarnings(_gameNumber, gameEarnings, "BOTH_DISQUALIFIED");
             }
             emit Disqualified(_gameNumber, player, encryptedChoice, _choice, encryptedActualChoice);
         }
@@ -307,7 +307,7 @@ contract SplitStealContract is owned, priced {
             game.reward[player] = game.bets[player].betAmount - commission;
             if (commission > 0) {
                 contractEarnings = contractEarnings + commission;
-                emit ContractEarnings(gameNumber, commission, &quot;GAME_ABANDONED&quot;);
+                emit ContractEarnings(gameNumber, commission, "GAME_ABANDONED");
             }
             //Bet amount can&#39;t be less than commission.
             //Hence no -ve check is required
@@ -331,7 +331,7 @@ contract SplitStealContract is owned, priced {
             //Min (X+Y, (100+K)*X/100) can&#39;t be less than commision.
             //Hence no -ve check is required
             contractEarnings = contractEarnings + (totalBet - game.reward[player]);
-            emit ContractEarnings(gameNumber, (totalBet - game.reward[player]), &quot;OPPONENT_DISQUALIFIED&quot;);
+            emit ContractEarnings(gameNumber, (totalBet - game.reward[player]), "OPPONENT_DISQUALIFIED");
             ethTransfer(gameNumber, player, reward);
             return true;
         }
@@ -343,7 +343,7 @@ contract SplitStealContract is owned, priced {
             if ( game.claimedReward[opponent] ) {
                 uint256 gameEarnings = (totalBet - game.reward[player] - game.reward[opponent]);
                 contractEarnings = contractEarnings + gameEarnings;
-                emit ContractEarnings(gameNumber, gameEarnings, &quot;SPLIT_SPLIT&quot;);
+                emit ContractEarnings(gameNumber, gameEarnings, "SPLIT_SPLIT");
             }
             ethTransfer(gameNumber, player, reward);
             return true;
@@ -353,7 +353,7 @@ contract SplitStealContract is owned, priced {
             if ( game.claimedReward[opponent] ) {
                 gameEarnings = (totalBet - game.reward[player] - game.reward[opponent]);
                 contractEarnings = contractEarnings + gameEarnings;
-                emit ContractEarnings(gameNumber, gameEarnings, &quot;SPLIT_STEAL&quot;);
+                emit ContractEarnings(gameNumber, gameEarnings, "SPLIT_STEAL");
             }
             return true;
         }
@@ -366,7 +366,7 @@ contract SplitStealContract is owned, priced {
             if ( game.claimedReward[opponent] ) {
                 gameEarnings = (totalBet - game.reward[player] - game.reward[opponent]);
                 contractEarnings = contractEarnings + gameEarnings;
-                emit ContractEarnings(gameNumber, gameEarnings, &quot;STEAL_SPLIT&quot;);
+                emit ContractEarnings(gameNumber, gameEarnings, "STEAL_SPLIT");
             }
             ethTransfer(gameNumber, player, reward);
             return true;
@@ -384,7 +384,7 @@ contract SplitStealContract is owned, priced {
             if ( game.claimedReward[opponent] ) {
                 gameEarnings = (totalBet - game.reward[player] - game.reward[opponent]);
                 contractEarnings = contractEarnings + gameEarnings;
-                emit ContractEarnings(gameNumber, gameEarnings, &quot;STEAL_STEAL&quot;);
+                emit ContractEarnings(gameNumber, gameEarnings, "STEAL_STEAL");
             }
             ethTransfer(gameNumber, player, reward);
             return true;
@@ -441,29 +441,29 @@ contract SplitStealContract is owned, priced {
                     game.disqualified[game.player1] = true;
                     game.claimedReward[game.player1] = true;
                     game.reward[game.player1] = 0;
-                    emit Disqualified(_gameNumber, game.player1, &quot;&quot;, 0, &quot;&quot;);
+                    emit Disqualified(_gameNumber, game.player1, "", 0, "");
                     game.revealed[game.player2] = true;
                     game.disqualified[game.player2] = true;
                     game.claimedReward[game.player2] = true;
                     game.reward[game.player2] = 0;
-                    emit Disqualified(_gameNumber, game.player2, &quot;&quot;, 0, &quot;&quot;);
+                    emit Disqualified(_gameNumber, game.player2, "", 0, "");
                     game.finishTime = now;
                     uint256 gameEarnings = game.bets[game.player1].betAmount + game.bets[game.player2].betAmount;
                     contractEarnings = contractEarnings + gameEarnings;
-                    emit ContractEarnings(_gameNumber, gameEarnings, &quot;BOTH_NO_REVEAL&quot;);
+                    emit ContractEarnings(_gameNumber, gameEarnings, "BOTH_NO_REVEAL");
                 } else if (game.revealed[game.player1] && !game.revealed[game.player2]) {
                     game.revealed[game.player2] = true;
                     game.disqualified[game.player2] = true;
                     game.claimedReward[game.player2] = true;
                     game.reward[game.player2] = 0;
-                    emit Disqualified(_gameNumber, game.player2, &quot;&quot;, 0, &quot;&quot;);
+                    emit Disqualified(_gameNumber, game.player2, "", 0, "");
                     game.finishTime = now;
                 } else if (!game.revealed[game.player1] && game.revealed[game.player2]) {           
                     game.revealed[game.player1] = true;
                     game.disqualified[game.player1] = true;
                     game.claimedReward[game.player1] = true;
                     game.reward[game.player1] = 0;
-                    emit Disqualified(_gameNumber, game.player1, &quot;&quot;, 0, &quot;&quot;);
+                    emit Disqualified(_gameNumber, game.player1, "", 0, "");
                     game.finishTime = now;
                 }
                 game.revealing = false;
@@ -503,7 +503,7 @@ contract SplitStealContract is owned, priced {
                 uint256 totalBet = (game.bets[game.player1].betAmount + game.bets[game.player2].betAmount);
                 uint gameEarnings = totalBet - game.reward[game.player1] - game.reward[game.player2];
                 contractEarnings = contractEarnings + gameEarnings;
-                emit ContractEarnings(_gameNumber, gameEarnings, &quot;OWNER_CLAIM_OVERRIDE&quot;);
+                emit ContractEarnings(_gameNumber, gameEarnings, "OWNER_CLAIM_OVERRIDE");
             }
         }
     }

@@ -49,9 +49,9 @@ contract hashCoin is IERC20 {
     
     uint public _totalSupply = 0;
 
-    string public constant symbol = &quot;HASH&quot;;
-    string public constant name = &quot;Hash Coin&quot;;
-    string public version = &quot;HASH_0.1&quot;;
+    string public constant symbol = "HASH";
+    string public constant name = "Hash Coin";
+    string public version = "HASH_0.1";
     uint8 public constant decimals = 18;
     
     // 1 ETH = 5,000 Hash Coins

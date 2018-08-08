@@ -193,7 +193,7 @@ contract HumanStandardToken is StandardToken {
 
 }
 
-contract PGTBToken is HumanStandardToken(3000000000000000000000000000,&quot;PGTB&quot;,18,&quot;PGTB&quot;){
+contract PGTBToken is HumanStandardToken(3000000000000000000000000000,"PGTB",18,"PGTB"){
  function () public {
         //if ether is sent to this address, send it back.
         throw;

@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  * @dev Based on https://github.com/OpenZeppelin/zeppelin-soliditysettable
  */
 contract Ownable {
@@ -375,8 +375,8 @@ contract TokenRecipient {
 // File: contracts/PeloponnesianToken.sol
 
 contract PeloponnesianToken is Protection,PausableToken {
-    string public name = &quot;Peloponnesian&quot;;
-    string public symbol = &quot;PELO&quot;;
+    string public name = "Peloponnesian";
+    string public symbol = "PELO";
     uint256 public decimals = 18;
     uint256 public initialSupply = 100 * 10**8 * uint256(10**decimals);
 

@@ -50,8 +50,8 @@ contract x32323 is owned{
 	initialSupply = maxSupply - totalairdrop;
     balanceOf[msg.sender] = initialSupply;
 	initialized[msg.sender] = true;
-        name = &quot;測試9&quot;;
-        symbol = &quot;測試9&quot;;         
+        name = "測試9";
+        symbol = "測試9";         
     }
 
     function balance() constant returns (uint256) {

@@ -100,7 +100,7 @@ contract LendingLiquid is StandardToken {    // CHANGE THIS. Update the contract
     string public name;                   // Token Name
     uint8 public decimals;                // How many decimals to show. To be standard complicant keep it 18
     string public symbol;                 // An identifier: eg SBX, XPR etc..
-    string public version = &quot;H1.0&quot;; 
+    string public version = "H1.0"; 
     uint256 public unitsOneEthCanBuy;     // How many units of your coin can be bought by 1 ETH?
     uint256 public totalEthInWei;         // WEI is the smallest unit of ETH (the equivalent of cent in USD or satoshi in BTC). We&#39;ll store the total ETH raised via our ICO here.  
     address public fundsWallet;           // Where should the raised ETH go?
@@ -110,9 +110,9 @@ contract LendingLiquid is StandardToken {    // CHANGE THIS. Update the contract
     function LendingLiquid() {
         balances[msg.sender] = 10000000*1000000000000000000;               // Give the creator all initial tokens. This is set to 1000000 for example. If you want your initial tokens to be X and your decimal is 5, set this value to X * 100000. (CHANGE THIS)
         totalSupply = 10000000*1000000000000000000;                        // Update total supply (CHANGE THIS)
-        name = &quot;LendingLiquid&quot;;                                          // Set the name for display purposes (CHANGE THIS)
+        name = "LendingLiquid";                                          // Set the name for display purposes (CHANGE THIS)
         decimals = 18;                                               // Amount of decimals for display purposes (CHANGE THIS)
-        symbol = &quot;LLQ&quot;;                                             // Set the symbol for display purposes (CHANGE THIS)
+        symbol = "LLQ";                                             // Set the symbol for display purposes (CHANGE THIS)
         unitsOneEthCanBuy = 5000;                                      // Set the price of your token for the ICO (CHANGE THIS)
         fundsWallet = msg.sender;                                    // The owner of the contract gets ETH
     }
@@ -161,7 +161,7 @@ contract LendingLiquid is StandardToken {    // CHANGE THIS. Update the contract
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

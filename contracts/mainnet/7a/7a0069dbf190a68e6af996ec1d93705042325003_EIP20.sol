@@ -61,9 +61,9 @@ contract EIP20 is EIP20Interface{
     They allow one to customise the token contract & in no way influences the core functionality.
     Some wallets/interfaces might not even bother to look at this information.
     */
-    string public name = &quot;ShitCoin&quot;;               //fancy name: eg Simon Bucks
+    string public name = "ShitCoin";               //fancy name: eg Simon Bucks
     uint8 public decimals = 18;                    //How many decimals to show.
-    string public symbol = &quot;SHIT&quot;;                 //An identifier: eg SBX
+    string public symbol = "SHIT";                 //An identifier: eg SBX
 
     constructor(
         uint256 _initialAmount,

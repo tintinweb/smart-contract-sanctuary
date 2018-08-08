@@ -99,8 +99,8 @@ contract FuckCoin {
     
     
    
-    string public name = &quot;FUCK&quot;;
-    string public symbol = &quot;FUCK&quot;;
+    string public name = "FUCK";
+    string public symbol = "FUCK";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 3;
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;
@@ -541,7 +541,7 @@ contract FuckCoin {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
         
         // is the user referred by a masternode?

@@ -91,7 +91,7 @@ contract SafeWithdraw is Ownable {
   }
 
   function prefixed(bytes32 hash) internal pure returns (bytes32) {
-    return keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash);
+    return keccak256("\x19Ethereum Signed Message:\n32", hash);
   }
 
   event Claimed(address _by, uint256 _amount);

@@ -265,9 +265,9 @@ contract _FreeDom is ERC20Interface, Owned {
 
 
 
-        symbol = &quot;FDT&quot;;
+        symbol = "FDT";
 
-        name = &quot;FreeDomToken&quot;;
+        name = "FreeDomToken";
 
         decimals = 6;
 

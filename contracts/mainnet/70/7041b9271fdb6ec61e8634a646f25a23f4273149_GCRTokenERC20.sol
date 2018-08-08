@@ -47,8 +47,8 @@ contract GCRTokenERC20 {
      function GCRTokenERC20() {
         totalSupply = 100000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = 210000000000;
-        name = &quot;GlobalChemicalResearch Token&quot;;                                 
-        symbol = &quot;GCR&quot;;                            
+        name = "GlobalChemicalResearch Token";                                 
+        symbol = "GCR";                            
 }
      
 

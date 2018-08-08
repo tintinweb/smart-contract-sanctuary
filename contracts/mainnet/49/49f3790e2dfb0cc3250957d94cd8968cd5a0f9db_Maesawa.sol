@@ -116,9 +116,9 @@ contract Maesawa is StandardToken {
         ) {
         balances[msg.sender] = 311644285000000000000000000;
         totalSupply = 311644285000000000000000000;
-        name = &quot;SEKAI NO MAESAWA&quot;;
+        name = "SEKAI NO MAESAWA";
         decimals = 18;
-        symbol = &quot;ZOZO&quot;;
+        symbol = "ZOZO";
         unitsOneEthCanBuy = 1000;
         fundsWallet = msg.sender;  
     }
@@ -145,7 +145,7 @@ contract Maesawa is StandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

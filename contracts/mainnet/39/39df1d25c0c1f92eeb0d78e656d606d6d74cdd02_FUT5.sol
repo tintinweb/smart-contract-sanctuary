@@ -60,9 +60,9 @@ contract FUT5 {
 
  
     // Optional ERC20 values.
-    string public name = &quot;Futereum 5&quot;;
+    string public name = "Futereum 5";
     uint8 public decimals = 18;
-    string public symbol = &quot;FUT5&quot;;
+    string public symbol = "FUT5";
     
     // Public variables so the curious can check the state.
     bool public swap = false;

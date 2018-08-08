@@ -52,7 +52,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -800,12 +800,12 @@ modifier onlyOwner() {
         uint256 tokensThatWillBeMintedAfterPurchase = msg.value.mul(rate);
         if ((stage != CrowdsaleStage.ICO) && (token.totalSupply() + tokensThatWillBeMintedAfterPurchase > totalTokensForSaleDuringPreICO)) {
           msg.sender.transfer(msg.value); // Refund them
-          EthRefunded(&quot;Presale Limit Hit.&quot;);
+          EthRefunded("Presale Limit Hit.");
           return;
         }
 
         buyTokens(msg.sender);
-        EthTransferred(&quot;Transferred funds to wallet.&quot;);
+        EthTransferred("Transferred funds to wallet.");
         
         if (stage != CrowdsaleStage.ICO) {
             totalWeiRaisedDuringPreICO = totalWeiRaisedDuringPreICO.add(msg.value);

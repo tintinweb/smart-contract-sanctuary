@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -100,7 +100,7 @@ contract TweedentityRegistry
 is HasNoEther
 {
 
-  string public version = &quot;1.4.0&quot;;
+  string public version = "1.4.0";
 
   uint public totalStores;
   mapping (bytes32 => address) private stores;
@@ -123,7 +123,7 @@ is HasNoEther
   {
     require(_manager != address(0));
     manager = _manager;
-    ContractRegistered(keccak256(&quot;manager&quot;), &quot;&quot;, _manager);
+    ContractRegistered(keccak256("manager"), "", _manager);
   }
 
 
@@ -135,7 +135,7 @@ is HasNoEther
   {
     require(_claimer != address(0));
     claimer = _claimer;
-    ContractRegistered(keccak256(&quot;claimer&quot;), &quot;&quot;, _claimer);
+    ContractRegistered(keccak256("claimer"), "", _claimer);
   }
 
 
@@ -150,8 +150,8 @@ is HasNoEther
     require(_claimer != address(0));
     manager = _manager;
     claimer = _claimer;
-    ContractRegistered(keccak256(&quot;manager&quot;), &quot;&quot;, _manager);
-    ContractRegistered(keccak256(&quot;claimer&quot;), &quot;&quot;, _claimer);
+    ContractRegistered(keccak256("manager"), "", _manager);
+    ContractRegistered(keccak256("claimer"), "", _claimer);
   }
 
 
@@ -167,7 +167,7 @@ is HasNoEther
       totalStores++;
     }
     stores[keccak256(_appNickname)] = _store;
-    ContractRegistered(keccak256(&quot;store&quot;), _appNickname, _store);
+    ContractRegistered(keccak256("store"), _appNickname, _store);
   }
 
 

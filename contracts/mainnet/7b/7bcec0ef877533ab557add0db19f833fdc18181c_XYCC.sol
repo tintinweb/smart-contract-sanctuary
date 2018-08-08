@@ -81,8 +81,8 @@ contract XYCC is frozen{
     function XYCC() public {
         totalSupply = 1000000000 * 10 ** uint256(decimals);  
         balanceOf[msg.sender] = totalSupply;                
-        name = &quot;XingYunChain Coin&quot;;                                   
-        symbol = &quot;XYCC&quot;;                               
+        name = "XingYunChain Coin";                                   
+        symbol = "XYCC";                               
     }
 
     function _transfer(address _from, address _to, uint _value) internal isFrozen(_from) isFrozen(_to){

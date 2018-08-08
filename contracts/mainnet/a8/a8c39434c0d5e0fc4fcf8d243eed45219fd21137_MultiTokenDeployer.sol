@@ -286,15 +286,15 @@ contract BasicMultiToken is StandardToken, DetailedERC20 {
     event Mint(address indexed minter, uint256 value);
     event Burn(address indexed burner, uint256 value);
     
-    constructor() public DetailedERC20(&quot;&quot;, &quot;&quot;, 0) {
+    constructor() public DetailedERC20("", "", 0) {
     }
 
     function init(ERC20[] _tokens, string _name, string _symbol, uint8 _decimals) public {
-        require(decimals == 0, &quot;init: contract was already initialized&quot;);
-        require(_decimals > 0, &quot;init: _decimals should not be zero&quot;);
-        require(bytes(_name).length > 0, &quot;init: _name should not be empty&quot;);
-        require(bytes(_symbol).length > 0, &quot;init: _symbol should not be empty&quot;);
-        require(_tokens.length >= 2, &quot;Contract do not support less than 2 inner tokens&quot;);
+        require(decimals == 0, "init: contract was already initialized");
+        require(_decimals > 0, "init: _decimals should not be zero");
+        require(bytes(_name).length > 0, "init: _name should not be empty");
+        require(bytes(_symbol).length > 0, "init: _symbol should not be empty");
+        require(_tokens.length >= 2, "Contract do not support less than 2 inner tokens");
 
         name = _name;
         symbol = _symbol;
@@ -303,12 +303,12 @@ contract BasicMultiToken is StandardToken, DetailedERC20 {
     }
 
     function mintFirstTokens(address _to, uint256 _amount, uint256[] _tokenAmounts) public {
-        require(totalSupply_ == 0, &quot;This method can be used with zero total supply only&quot;);
+        require(totalSupply_ == 0, "This method can be used with zero total supply only");
         _mint(_to, _amount, _tokenAmounts);
     }
 
     function mint(address _to, uint256 _amount) public {
-        require(totalSupply_ != 0, &quot;This method can be used with non zero total supply only&quot;);
+        require(totalSupply_ != 0, "This method can be used with non zero total supply only");
         uint256[] memory tokenAmounts = new uint256[](tokens.length);
         for (uint i = 0; i < tokens.length; i++) {
             tokenAmounts[i] = tokens[i].balanceOf(this).mul(_amount).div(totalSupply_);
@@ -321,7 +321,7 @@ contract BasicMultiToken is StandardToken, DetailedERC20 {
     }
 
     function burnSome(uint256 _value, ERC20[] someTokens) public {
-        require(someTokens.length > 0, &quot;Array of tokens can&#39;t be empty&quot;);
+        require(someTokens.length > 0, "Array of tokens can&#39;t be empty");
 
         uint256 totalSupply = totalSupply_;
         balances[msg.sender] = balances[msg.sender].sub(_value);
@@ -333,17 +333,17 @@ contract BasicMultiToken is StandardToken, DetailedERC20 {
             uint256 prevBalance = someTokens[i].balanceOf(this);
             uint256 tokenAmount = prevBalance.mul(_value).div(totalSupply);
             someTokens[i].transfer(msg.sender, tokenAmount); // Can&#39;t use require because not all ERC20 tokens return bool
-            require(someTokens[i].balanceOf(this) == prevBalance.sub(tokenAmount), &quot;Invalid token behavior&quot;);
+            require(someTokens[i].balanceOf(this) == prevBalance.sub(tokenAmount), "Invalid token behavior");
         }
     }
 
     function _mint(address _to, uint256 _amount, uint256[] _tokenAmounts) internal {
-        require(tokens.length == _tokenAmounts.length, &quot;Lenghts of tokens and _tokenAmounts array should be equal&quot;);
+        require(tokens.length == _tokenAmounts.length, "Lenghts of tokens and _tokenAmounts array should be equal");
 
         for (uint i = 0; i < tokens.length; i++) {
             uint256 prevBalance = tokens[i].balanceOf(this);
             tokens[i].transferFrom(msg.sender, this, _tokenAmounts[i]); // Can&#39;t use require because not all ERC20 tokens return bool
-            require(tokens[i].balanceOf(this) == prevBalance.add(_tokenAmounts[i]), &quot;Invalid token behavior&quot;);
+            require(tokens[i].balanceOf(this) == prevBalance.add(_tokenAmounts[i]), "Invalid token behavior");
         }
 
         totalSupply_ = totalSupply_.add(_amount);
@@ -374,10 +374,10 @@ contract MultiToken is BasicMultiToken, ERC228 {
 
     function init(ERC20[] _tokens, uint256[] _weights, string _name, string _symbol, uint8 _decimals) public {
         super.init(_tokens, _name, _symbol, _decimals);
-        require(_weights.length == tokens.length, &quot;Lenghts of _tokens and _weights array should be equal&quot;);
+        require(_weights.length == tokens.length, "Lenghts of _tokens and _weights array should be equal");
         for (uint i = 0; i < tokens.length; i++) {
-            require(_weights[i] != 0, &quot;The _weights array should not contains zeros&quot;);
-            require(weights[tokens[i]] == 0, &quot;The _tokens array have duplicates&quot;);
+            require(_weights[i] != 0, "The _weights array should not contains zeros");
+            require(weights[tokens[i]] == 0, "The _tokens array have duplicates");
             weights[tokens[i]] = _weights[i];
         }
     }
@@ -404,8 +404,8 @@ contract MultiToken is BasicMultiToken, ERC228 {
 
     function change(address _fromToken, address _toToken, uint256 _amount, uint256 _minReturn) public returns(uint256 returnAmount) {
         returnAmount = getReturn(_fromToken, _toToken, _amount);
-        require(returnAmount > 0, &quot;The return amount is zero&quot;);
-        require(returnAmount >= _minReturn, &quot;The return amount is less than _minReturn value&quot;);
+        require(returnAmount > 0, "The return amount is zero");
+        require(returnAmount >= _minReturn, "The return amount is less than _minReturn value");
         
         uint256 fromBalance = ERC20(_fromToken).balanceOf(this);
         ERC20(_fromToken).transferFrom(msg.sender, this, _amount);
@@ -420,7 +420,7 @@ contract MultiToken is BasicMultiToken, ERC228 {
 
     function changeOverERC228(address _fromToken, address _toToken, uint256 _amount, address exchange) public returns(uint256 returnAmount) {
         returnAmount = getReturn(_fromToken, _toToken, _amount);
-        require(returnAmount > 0, &quot;The return amount is zero&quot;);
+        require(returnAmount > 0, "The return amount is zero");
 
         uint256 fromBalance = ERC20(_fromToken).balanceOf(this);
         ERC20(_toToken).approve(exchange, returnAmount);

@@ -32,8 +32,8 @@ contract WsloanCoin {
     ) public {
         totalSupply = 21000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;WsloanCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;WsloanCoin&quot;;                               // Set the symbol for display purposes
+        name = "WsloanCoin";                                   // Set the name for display purposes
+        symbol = "WsloanCoin";                               // Set the symbol for display purposes
     }
 
     /**

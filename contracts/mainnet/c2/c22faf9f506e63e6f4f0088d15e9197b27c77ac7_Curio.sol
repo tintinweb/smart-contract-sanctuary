@@ -61,8 +61,8 @@ contract Curio is ERC721 {
   }
 
   // Name and symbol of ERC721 token
-  string public constant NAME = &quot;Curio&quot;;
-  string public constant SYMBOL = &quot;CUR&quot;;
+  string public constant NAME = "Curio";
+  string public constant SYMBOL = "CUR";
 
   // Array of token&#39;s data
   Token[] tokens;

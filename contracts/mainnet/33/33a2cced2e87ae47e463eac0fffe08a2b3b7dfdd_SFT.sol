@@ -1,8 +1,8 @@
 contract SFT {
 
-    string public name = &quot;Smart First Time 4 Way GEE Distributor&quot;;
+    string public name = "Smart First Time 4 Way GEE Distributor";
     uint8 public decimals = 18;
-    string public symbol = &quot;SFT&quot;;
+    string public symbol = "SFT";
 
     address public dev = 0xC96CfB18C39DC02FBa229B6EA698b1AD5576DF4c;
     address public foundation = 0x6eBe6E38ba1bDa9131C785f6491B2C8374B968fE;

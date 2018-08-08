@@ -114,8 +114,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function FixedSupplyToken() public {
-        symbol = &quot;HIT&quot;;
-        name = &quot;HitCents&quot;;
+        symbol = "HIT";
+        name = "HitCents";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

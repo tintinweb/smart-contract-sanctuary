@@ -208,9 +208,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract LTT is StandardToken {
 
-            string public name = &quot;Chain headlines&quot;;
+            string public name = "Chain headlines";
 
-            string public symbol = &quot;LTT&quot;;
+            string public symbol = "LTT";
 
             uint8 public decimals = 18;
 

@@ -121,9 +121,9 @@ contract StdToken is Token
 }
 
 contract ReputationToken is StdToken {
-     string public name = &quot;EthlendReputationToken&quot;;
+     string public name = "EthlendReputationToken";
      uint public decimals = 18;
-     string public symbol = &quot;CRE&quot;;
+     string public symbol = "CRE";
 
      address public creator = 0x0;
 

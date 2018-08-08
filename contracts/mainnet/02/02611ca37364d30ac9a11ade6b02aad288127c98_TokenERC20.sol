@@ -40,8 +40,8 @@ contract TokenERC20   {
 	
     using SafeMath for uint256;
     
-    string public constant name       = &quot;AVATRS&quot;;
-    string public constant symbol     = &quot;NAVS&quot;;
+    string public constant name       = "AVATRS";
+    string public constant symbol     = "NAVS";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply;
     address public admin              = 0x9Ef4a2CaA82D396d7B8c244DE57212E0fE332C73;

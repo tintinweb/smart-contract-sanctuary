@@ -183,8 +183,8 @@ contract Ownable {
 }
 
 contract Obirum is StandardToken, Ownable {
-  string public constant name = &quot;Obirum&quot;;
-  string public constant symbol = &quot;OBR&quot;;
+  string public constant name = "Obirum";
+  string public constant symbol = "OBR";
   uint8 public constant decimals = 18;
   
   uint256 public ObirumIssued;
@@ -223,7 +223,7 @@ contract Obirum is StandardToken, Ownable {
     totalSupply = 2302000000 * (10 ** uint256(decimals)); 
     balances[msg.sender] = totalSupply;  
     ObirumIssued = totalSupply;
-    ObirumTalk = &quot;Obirum&quot;;
+    ObirumTalk = "Obirum";
     
   }
  

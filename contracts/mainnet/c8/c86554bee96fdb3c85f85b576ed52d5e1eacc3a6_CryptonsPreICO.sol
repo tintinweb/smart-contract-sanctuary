@@ -141,7 +141,7 @@ contract BurnableToken is BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -506,8 +506,8 @@ contract ERC827Token is ERC827, StandardToken {
 // File: contracts/QuintessenceToken.sol
 
 contract AbstractQuintessenceToken is CappedToken, ERC827Token, BurnableToken {
-  string public name = &quot;Quintessence Token&quot;;
-  string public symbol = &quot;QST&quot;;
+  string public name = "Quintessence Token";
+  string public symbol = "QST";
 
   function AbstractQuintessenceToken(uint256 initial_supply, uint256 _cap)
         CappedToken(_cap) public {

@@ -49,7 +49,7 @@ contract SafeMath {
 
 /**
  * ERC-20 standard token interface, as defined
- * <a href=&quot;http://github.com/ethereum/EIPs/issues/20&quot;>here</a>.
+ * <a href="http://github.com/ethereum/EIPs/issues/20">here</a>.
  */
 contract Token {
   
@@ -228,8 +228,8 @@ contract STARTToken is AbstractToken {
     return tokenCount;
   }
 
-  string constant public name = &quot;StartupCoin&quot;;
-  string constant public symbol = &quot;START&quot;;
+  string constant public name = "StartupCoin";
+  string constant public symbol = "START";
   uint8 constant public decimals = 5;
   
   /**

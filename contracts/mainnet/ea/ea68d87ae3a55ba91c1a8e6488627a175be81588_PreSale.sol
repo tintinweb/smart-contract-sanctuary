@@ -1,6 +1,6 @@
 pragma solidity 0.4.17;
 
-// import &quot;./FunderSmartToken.sol&quot;;
+// import "./FunderSmartToken.sol";
 
 contract PreSale {
 
@@ -52,7 +52,7 @@ contract PreSale {
     }
 
     // 將 FST 從 FundersTokenCentral 轉至 msg.sender
-    if (FunderSmartTokenAddress.call(bytes4(keccak256(&quot;transferFrom(address,address,uint256)&quot;)), FundersTokenCentral, msg.sender, _tokenValue) != true) {
+    if (FunderSmartTokenAddress.call(bytes4(keccak256("transferFrom(address,address,uint256)")), FundersTokenCentral, msg.sender, _tokenValue) != true) {
       revert();
     }
 

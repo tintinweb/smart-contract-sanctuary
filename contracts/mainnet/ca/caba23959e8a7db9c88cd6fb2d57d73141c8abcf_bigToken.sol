@@ -222,8 +222,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract bigToken is StandardToken {
 
-  string public constant name =  &quot;big token&quot;;
-  string public constant symbol = &quot;BIG&quot;;
+  string public constant name =  "big token";
+  string public constant symbol = "BIG";
   uint256 public constant decimals = 18;
   uint256 public totalSupply = 21000000 * 1 ether;
   

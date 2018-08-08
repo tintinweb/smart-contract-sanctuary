@@ -38,8 +38,8 @@ contract Leader {
 }
 
 contract FCash is ERC20, Leader {
-    string public name = &quot;FCash&quot;;
-    string public symbol = &quot;FCH&quot;;
+    string public name = "FCash";
+    string public symbol = "FCH";
     uint8 public decimals = 8;
     uint256 public totalSupply = 100e16;
 	

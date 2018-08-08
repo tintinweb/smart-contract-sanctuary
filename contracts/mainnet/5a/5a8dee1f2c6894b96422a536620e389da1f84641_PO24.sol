@@ -35,14 +35,14 @@ contract PO24 {
     
     
     modifier sellLimit(){
-        require(block.timestamp > sellTmr[msg.sender] , &quot;You cannot sell because of the sell timer&quot;);
+        require(block.timestamp > sellTmr[msg.sender] , "You cannot sell because of the sell timer");
         
         _;
     }
     
     modifier buyLimit(){
-        require(block.timestamp > buyTmr[msg.sender], &quot;You cannot buy because of buy cooldown&quot;);
-        require(msg.value <= buyMax, &quot;You cannot buy because you bought over the max&quot;);
+        require(block.timestamp > buyTmr[msg.sender], "You cannot buy because of buy cooldown");
+        require(msg.value <= buyMax, "You cannot buy because you bought over the max");
         buyTmr[msg.sender] = block.timestamp + buyTimerN;
         sellTmr[msg.sender] = block.timestamp + sellTimerN;
         _;
@@ -134,8 +134,8 @@ contract PO24 {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;PO24&quot;;
-    string public symbol = &quot;PO24&quot;;
+    string public name = "PO24";
+    string public symbol = "PO24";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 5; // Look, strong Math
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;
@@ -244,7 +244,7 @@ contract PO24 {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
         
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = _purchaseTokens(_dividends, 0x0);
         
         // fire event
@@ -590,7 +590,7 @@ contract PO24 {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
         
         // is the user referred by a masternode?

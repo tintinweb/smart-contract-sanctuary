@@ -55,7 +55,7 @@ contract AbstractSingularDTVToken is Token {
 /// @author Stefan George - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dfacabbab9beb1f1b8bab0adb8ba9fbcb0b1acbab1aca6acf1b1baab">[email&#160;protected]</a>>
 /// @author Milad Mostavi - <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a2cfcbcec3c68ccfcdd1d6c3d4cbe2c1cdccd1c7ccd1dbd18cccc7d6">[email&#160;protected]</a>>
 contract SingularDTVFund {
-    string public version = &quot;0.1.0&quot;;
+    string public version = "0.1.0";
 
     /*
      *  External contracts

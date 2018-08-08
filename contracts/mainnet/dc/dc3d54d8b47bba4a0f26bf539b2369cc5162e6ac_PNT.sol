@@ -266,8 +266,8 @@ contract SafePayloadChecker {
 
 contract PNT is StandardToken, SafePayloadChecker {
   uint256 public initialSupply = 250000000 * (10 ** uint256(decimals));
-  string public constant name = &quot;PATH Network Token&quot;;
-  string public constant symbol = &quot;PNT&quot;;
+  string public constant name = "PATH Network Token";
+  string public constant symbol = "PNT";
   uint8 public constant decimals = 18;
   address owner;
 
@@ -295,7 +295,7 @@ contract PNT is StandardToken, SafePayloadChecker {
   modifier onlyWhenTransferEnabled()
   {
     if (now <= transferableStartTime) {
-      require(msg.sender == owner, &quot;Sender not authorized.&quot;);
+      require(msg.sender == owner, "Sender not authorized.");
     }
     _;
   }

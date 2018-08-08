@@ -6,7 +6,7 @@ pragma solidity ^0.4.17;
 
 contract AvPresale {
 
-    string public constant RELEASE = &quot;0.2.1_AviaTest&quot;;
+    string public constant RELEASE = "0.2.1_AviaTest";
 
     //config// 
     uint public constant PRESALE_START  = 5298043; /* 22.03.2018 03:07:00 +3GMT */ //NB!
@@ -20,7 +20,7 @@ contract AvPresale {
 	//min send value 0.001 ETH (1 finney)
     uint public constant MIN_GET_AMOUNT_FINNEY = 10; //NB!
 
-    string[5] private standingNames = [&quot;BEFORE_START&quot;,  &quot;PRESALE_RUNNING&quot;, &quot;WITHDRAWAL_RUNNING&quot;, &quot;MONEY_BACK_RUNNING&quot;, &quot;CLOSED&quot; ];
+    string[5] private standingNames = ["BEFORE_START",  "PRESALE_RUNNING", "WITHDRAWAL_RUNNING", "MONEY_BACK_RUNNING", "CLOSED" ];
     enum State { BEFORE_START,  PRESALE_RUNNING, WITHDRAWAL_RUNNING, MONEY_BACK_RUNNING, CLOSED }
 
     uint public total_amount = 0;

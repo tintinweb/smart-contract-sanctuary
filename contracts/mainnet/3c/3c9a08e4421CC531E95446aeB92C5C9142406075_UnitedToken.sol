@@ -144,7 +144,7 @@ contract UnitedToken is owned, TokenERC20 {
     event FrozenFunds(address target, bool frozen);
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    function UnitedToken() TokenERC20(2000000000, &quot;UnitedToken&quot;, &quot;UNT&quot;) public {}
+    function UnitedToken() TokenERC20(2000000000, "UnitedToken", "UNT") public {}
 
     /* Internal transfer, only can be called by this contract */
     function _transfer(address _from, address _to, uint _value) internal {

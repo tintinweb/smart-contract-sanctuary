@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract GITC is StandardToken, Ownable {
 
-    string public constant name = &quot;领岛链(Global island tourism chain)&quot;;
-    string public constant symbol = &quot;GITC&quot;;
+    string public constant name = "领岛链(Global island tourism chain)";
+    string public constant symbol = "GITC";
     uint256 public constant decimals = 8;
 
     function GITC() public {

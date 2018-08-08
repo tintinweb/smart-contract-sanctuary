@@ -51,7 +51,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -644,7 +644,7 @@ contract ERC223ContractInterface {
 interface tokenRecipient { function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) external; }
 
 // IdeaCoin Contract Starts Here/////////////////////////////////////////////////////////////////////////////////////////////
-contract IdeaCoin is ERC20Basic(&quot;IDC&quot;, &quot;IdeaCoin&quot;, 18, 1000000000000000000000000), ERC827Token, PausableToken, Destructible, Contactable, HasNoTokens, HasNoContracts {
+contract IdeaCoin is ERC20Basic("IDC", "IdeaCoin", 18, 1000000000000000000000000), ERC827Token, PausableToken, Destructible, Contactable, HasNoTokens, HasNoContracts {
 
     using SafeMath for uint;
 

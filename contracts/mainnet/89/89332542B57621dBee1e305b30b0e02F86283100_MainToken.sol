@@ -277,7 +277,7 @@ return true;
 /**
 * @title Ownable
 * @dev The Ownable contract has an owner address, and provides basic authorization control
-* functions, this simplifies the implementation of &quot;user permissions&quot;.
+* functions, this simplifies the implementation of "user permissions".
 */
 contract Ownable {
 address public owner;
@@ -667,8 +667,8 @@ uint public constant TOKEN_DECIMALS = 18;
 uint8 public constant TOKEN_DECIMALS_UINT8 = 18;
 uint public constant TOKEN_DECIMAL_MULTIPLIER = 10 ** TOKEN_DECIMALS;
 
-string public constant TOKEN_NAME = &quot;Kryptonium&quot;;
-string public constant TOKEN_SYMBOL = &quot;KRYP&quot;;
+string public constant TOKEN_NAME = "Kryptonium";
+string public constant TOKEN_SYMBOL = "KRYP";
 bool public constant PAUSED = false;
 address public constant TARGET_USER = 0xEe8E76A3E92cAe6e8215d17d9F7f00890aC089e9;
 

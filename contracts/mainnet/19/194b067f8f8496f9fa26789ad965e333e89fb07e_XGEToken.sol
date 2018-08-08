@@ -191,8 +191,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract XGEToken is StandardToken {
   
-    string public constant name = &quot;Exchangeable Gram Equivalent&quot;; // solium-disable-line uppercase
-    string public constant symbol = &quot;XGE&quot;; // solium-disable-line uppercase
+    string public constant name = "Exchangeable Gram Equivalent"; // solium-disable-line uppercase
+    string public constant symbol = "XGE"; // solium-disable-line uppercase
     uint8 public constant decimals = 18; // solium-disable-line uppercase
 
     uint256 public constant INITIAL_SUPPLY = 7500000 * (10 ** uint256(decimals));

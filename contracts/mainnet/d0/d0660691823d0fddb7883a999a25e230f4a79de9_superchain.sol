@@ -60,8 +60,8 @@ contract superchain is SafeMath{
 
    /* Initializes contract with initial supply tokens to the creator of the contract */
     function superchain() {
-        name = &quot;superchain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;super500&quot;;                               // Set the symbol for display purposes
+        name = "superchain";                                   // Set the name for display purposes
+        symbol = "super500";                               // Set the symbol for display purposes
         owner = msg.sender;
         decimals = 18;
         totalSupply = 500 * 10**uint(decimals);

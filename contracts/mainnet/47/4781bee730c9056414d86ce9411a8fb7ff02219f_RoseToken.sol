@@ -49,8 +49,8 @@ contract RoseToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;
 
-    string public constant name = &quot;RoseToken&quot;;
-    string public constant symbol = &quot;ROSE&#127801;&quot;;
+    string public constant name = "RoseToken";
+    string public constant symbol = "ROSE&#127801;";
     uint public constant decimals = 0;
 
     uint256 public totalSupply = 99999999;

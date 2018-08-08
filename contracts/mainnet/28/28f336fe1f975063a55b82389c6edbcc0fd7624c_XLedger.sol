@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract XLedger {
     // Public variables of the token
-    string public name = &quot;XLedger&quot;;
-    string public symbol = &quot;XLD&quot;;
+    string public name = "XLedger";
+    string public symbol = "XLD";
     uint8 public decimals = 18;
     uint256 public totalSupply;
     uint256 public supplyMultiplier = 10000000;

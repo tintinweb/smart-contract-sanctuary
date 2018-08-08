@@ -2,8 +2,8 @@ pragma solidity ^0.4.24;
 
 contract DACCToken {
 
-    string public name = &quot;Decentralized Accessible Content Chain&quot;;
-    string public symbol = &quot;DACC&quot;;
+    string public name = "Decentralized Accessible Content Chain";
+    string public symbol = "DACC";
     uint256 public decimals = 6;
 
     mapping (address => uint256) public balanceOf;

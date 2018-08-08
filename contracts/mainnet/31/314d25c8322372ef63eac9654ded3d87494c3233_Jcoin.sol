@@ -217,7 +217,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -258,7 +258,7 @@ contract Ownable {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract OwnedByContract is Ownable{
     address public ownerContract;
@@ -342,8 +342,8 @@ contract MintableToken is StandardToken, OwnedByContract {
 }
 
 contract Jcoin is MintableToken {
-    string public name = &quot;Jcoin&quot;;
-    string public symbol = &quot;JCO&quot;;
+    string public name = "Jcoin";
+    string public symbol = "JCO";
     uint8 public decimals = 18;
     
     address private constant COMPANY_ADDRESS = 0x695e23819F9F307318c471Ea698Bb1aa0C40Df25;

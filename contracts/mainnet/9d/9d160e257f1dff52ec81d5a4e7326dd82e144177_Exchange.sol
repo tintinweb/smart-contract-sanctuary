@@ -142,9 +142,9 @@ library SignatureValidator {
         }
 
         if (mode == SignatureMode.GETH) {
-            hash = keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash);
+            hash = keccak256("\x19Ethereum Signed Message:\n32", hash);
         } else if (mode == SignatureMode.TREZOR) {
-            hash = keccak256(&quot;\x19Ethereum Signed Message:\n\x20&quot;, hash);
+            hash = keccak256("\x19Ethereum Signed Message:\n\x20", hash);
         }
 
         return ecrecover(hash, v, r, s) == signer;
@@ -154,14 +154,14 @@ library SignatureValidator {
 library OrderLibrary {
 
     bytes32 constant public HASH_SCHEME = keccak256(
-        &quot;address Taker Token&quot;,
-        &quot;uint Taker Token Amount&quot;,
-        &quot;address Maker Token&quot;,
-        &quot;uint Maker Token Amount&quot;,
-        &quot;uint Expires&quot;,
-        &quot;uint Nonce&quot;,
-        &quot;address Maker&quot;,
-        &quot;address Exchange&quot;
+        "address Taker Token",
+        "uint Taker Token Amount",
+        "address Maker Token",
+        "uint Maker Token Amount",
+        "uint Expires",
+        "uint Nonce",
+        "address Maker",
+        "address Exchange"
     );
 
     struct Order {

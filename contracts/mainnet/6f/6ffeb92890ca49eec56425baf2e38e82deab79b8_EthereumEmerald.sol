@@ -113,8 +113,8 @@ contract EthereumEmerald is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EthereumEmerald() public {
-        symbol = &quot;ETE&quot;;
-        name = &quot;EthereumEmerald&quot;;
+        symbol = "ETE";
+        name = "EthereumEmerald";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xDd43903CBd9d010A5d4411B7829384103cBa7c22] = _totalSupply;

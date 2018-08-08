@@ -23,8 +23,8 @@ contract AICoreCoin {
     function AICoreCoin() {
         balanceOf[0x7C25E9F638eB1d12853d6bccb79411560de478f2] = 300000000000000; // Give the creator all initial tokens
         totalSupply = 300000000000000;                        // Update total supply
-        name = &quot;AICore Coin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;AICC&quot;;                               // Set the symbol for display purposes
+        name = "AICore Coin";                                   // Set the name for display purposes
+        symbol = "AICC";                               // Set the symbol for display purposes
         decimals = 6;                            // Amount of decimals for display purposes
     }
 

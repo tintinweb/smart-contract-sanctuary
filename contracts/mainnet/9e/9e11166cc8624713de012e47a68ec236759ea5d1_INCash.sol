@@ -127,8 +127,8 @@ contract StandardToken is ERC20 {
 }
 
 contract INCash is StandardToken {
-  string public constant name = &quot;INCash&quot;;
-  string public constant symbol = &quot;INC&quot;;
+  string public constant name = "INCash";
+  string public constant symbol = "INC";
   uint8 public constant decimals = 4;
 
   function INCash() public {

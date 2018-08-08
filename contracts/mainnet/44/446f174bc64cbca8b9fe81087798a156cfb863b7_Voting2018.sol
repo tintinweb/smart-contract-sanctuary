@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -29,7 +29,7 @@ contract Ownable {
  * @title Voting2018 Contract
  */
 contract Voting2018 is Ownable {
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     struct File {
         string content;
@@ -70,6 +70,6 @@ contract Voting2018 is Ownable {
             return (files[fileId].content, files[fileId].contentTime, files[fileId].md5, files[fileId].sha256, files[fileId].sha1, files[fileId].hashTime);
         }
 
-        return (&quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return ("", "", "", "", "", "");
     }
 }

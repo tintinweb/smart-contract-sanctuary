@@ -49,8 +49,8 @@ contract EarlyDAP is EIP20Interface {
 
     constructor() public {
         address holderAddress = 0x9E5e6CcD3bc2f51CE5223A3C5c1Cbd9499C11cBC;
-        name = &quot;Early DAP Token&quot;;
-        symbol = &quot;DPP&quot;;
+        name = "Early DAP Token";
+        symbol = "DPP";
         decimals = 18;
         uint256 exponent = decimals;
         totalSupply = 1000000000 * (10 ** exponent);

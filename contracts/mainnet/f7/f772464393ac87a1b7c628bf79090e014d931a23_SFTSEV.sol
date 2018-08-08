@@ -1,8 +1,8 @@
 contract SFTSEV {
 
-    string public name = &quot;Smart First Time 7 Way Distributor&quot;;
+    string public name = "Smart First Time 7 Way Distributor";
     uint8 public decimals = 18;
-    string public symbol = &quot;SFT7&quot;;
+    string public symbol = "SFT7";
 
     address dev = 0xC96CfB18C39DC02FBa229B6EA698b1AD5576DF4c;//	10
     address designer = 0x810c4de015a463E8b6AFAFf166f57A2B2F761032;//5

@@ -14,8 +14,8 @@ contract owned {
 contract NECPToken is owned {
     /* Public variables of the token */
     string public constant standard = &#39;Token 0.1&#39;;
-    string public constant name = &quot;Neureal Early Contributor Points&quot;;
-    string public constant symbol = &quot;NECP&quot;;
+    string public constant name = "Neureal Early Contributor Points";
+    string public constant symbol = "NECP";
     uint256 public constant decimals = 8;
     uint256 public constant MAXIMUM_SUPPLY = 3000000000000;
     

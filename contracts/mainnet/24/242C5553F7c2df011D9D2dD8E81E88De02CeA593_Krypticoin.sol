@@ -15,9 +15,9 @@ contract Krypticoin {
     function Krypticion() {
 
          initialSupply = 500000;
-         name =&quot;krypticoin&quot;;
+         name ="krypticoin";
         decimals = 0;
-         symbol = &quot;P&quot;;
+         symbol = "P";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

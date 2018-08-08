@@ -117,8 +117,8 @@ contract DeaultERC20 is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;DFLT&quot;;
-        name = &quot;Default&quot;;
+        symbol = "DFLT";
+        name = "Default";
         decimals = 18;
     }
 
@@ -277,15 +277,15 @@ contract IGCoin is DeaultERC20 {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;IG17&quot;;
-        name = &quot;theTestToken002&quot;;
+        symbol = "IG17";
+        name = "theTestToken002";
         decimals = 18;
         initialSaleComplete = false;
         _totalSupply = InitialSupply;  // Keep track of all IG Coins created, ever
         balances[owner] = _totalSupply;  // Give the creator all initial IG coins
         emit Transfer(address(0), owner, _totalSupply);
 
-        reserveAddress = new Contract(&quot;Reserve&quot;);  // Create contract to hold reserve
+        reserveAddress = new Contract("Reserve");  // Create contract to hold reserve
         quoteAsk();
         quoteBid();        
 
@@ -829,15 +829,15 @@ contract IGCoin is DeaultERC20 {
             Calculate an integer approximation of (_baseN / _baseD) ^ (_expN / _expD) * 2 ^ precision.
             Return the result along with the precision used.
         Detailed Description:
-            Instead of calculating &quot;base ^ exp&quot;, we calculate &quot;e ^ (log(base) * exp)&quot;.
-            The value of &quot;log(base)&quot; is represented with an integer slightly smaller than &quot;log(base) * 2 ^ precision&quot;.
-            The larger &quot;precision&quot; is, the more accurately this value represents the real value.
-            However, the larger &quot;precision&quot; is, the more bits are required in order to store this value.
-            And the exponentiation function, which takes &quot;x&quot; and calculates &quot;e ^ x&quot;, is limited to a maximum exponent (maximum value of &quot;x&quot;).
-            This maximum exponent depends on the &quot;precision&quot; used, and it is given by &quot;maxExpArray[precision] >> (MAX_PRECISION - precision)&quot;.
+            Instead of calculating "base ^ exp", we calculate "e ^ (log(base) * exp)".
+            The value of "log(base)" is represented with an integer slightly smaller than "log(base) * 2 ^ precision".
+            The larger "precision" is, the more accurately this value represents the real value.
+            However, the larger "precision" is, the more bits are required in order to store this value.
+            And the exponentiation function, which takes "x" and calculates "e ^ x", is limited to a maximum exponent (maximum value of "x").
+            This maximum exponent depends on the "precision" used, and it is given by "maxExpArray[precision] >> (MAX_PRECISION - precision)".
             Hence we need to determine the highest precision which can be used for the given input, before calling the exponentiation function.
-            This allows us to compute &quot;base ^ exp&quot; with maximum accuracy and without exceeding 256 bits in any of the intermediate computations.
-            This functions assumes that &quot;_expN < 2 ^ 256 / log(MAX_NUM - 1)&quot;, otherwise the multiplication should be replaced with a &quot;safeMul&quot;.
+            This allows us to compute "base ^ exp" with maximum accuracy and without exceeding 256 bits in any of the intermediate computations.
+            This functions assumes that "_expN < 2 ^ 256 / log(MAX_NUM - 1)", otherwise the multiplication should be replaced with a "safeMul".
     */
     function power(uint256 _baseN, uint256 _baseD, uint32 _expN, uint32 _expD) internal view returns (uint256, uint8) {
         assert(_baseN < MAX_NUM);
@@ -864,7 +864,7 @@ contract IGCoin is DeaultERC20 {
 
     /**
         Compute log(x / FIXED_1) * FIXED_1.
-        This functions assumes that &quot;x >= FIXED_1&quot;, because the output would be negative otherwise.
+        This functions assumes that "x >= FIXED_1", because the output would be negative otherwise.
     */
     function generalLog(uint256 x) internal pure returns (uint256) {
         uint256 res = 0;
@@ -891,9 +891,9 @@ contract IGCoin is DeaultERC20 {
     }
 
     /**
-        The global &quot;maxExpArray&quot; is sorted in descending order, and therefore the following statements are equivalent:
-        - This function finds the position of [the smallest value in &quot;maxExpArray&quot; larger than or equal to &quot;x&quot;]
-        - This function finds the highest position of [a value in &quot;maxExpArray&quot; larger than or equal to &quot;x&quot;]
+        The global "maxExpArray" is sorted in descending order, and therefore the following statements are equivalent:
+        - This function finds the position of [the smallest value in "maxExpArray" larger than or equal to "x"]
+        - This function finds the highest position of [a value in "maxExpArray" larger than or equal to "x"]
     */
     function findPositionInMaxExpArray(uint256 _x) internal view returns (uint8) {
         uint8 lo = MIN_PRECISION;
@@ -924,10 +924,10 @@ contract IGCoin is DeaultERC20 {
 
     /**
         This function can be auto-generated by the script &#39;PrintFunctionGeneralExp.py&#39;.
-        It approximates &quot;e ^ x&quot; via maclaurin summation: &quot;(x^0)/0! + (x^1)/1! + ... + (x^n)/n!&quot;.
-        It returns &quot;e ^ (x / 2 ^ precision) * 2 ^ precision&quot;, that is, the result is upshifted for accuracy.
-        The global &quot;maxExpArray&quot; maps each &quot;precision&quot; to &quot;((maximumExponent + 1) << (MAX_PRECISION - precision)) - 1&quot;.
-        The maximum permitted value for &quot;x&quot; is therefore given by &quot;maxExpArray[precision] >> (MAX_PRECISION - precision)&quot;.
+        It approximates "e ^ x" via maclaurin summation: "(x^0)/0! + (x^1)/1! + ... + (x^n)/n!".
+        It returns "e ^ (x / 2 ^ precision) * 2 ^ precision", that is, the result is upshifted for accuracy.
+        The global "maxExpArray" maps each "precision" to "((maximumExponent + 1) << (MAX_PRECISION - precision)) - 1".
+        The maximum permitted value for "x" is therefore given by "maxExpArray[precision] >> (MAX_PRECISION - precision)".
     */
     function generalExp(uint256 _x, uint8 _precision) internal pure returns (uint256) {
         uint256 xi = _x;

@@ -113,8 +113,8 @@ contract MrFibreToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MrFibreToken() public {
-        symbol = &quot;MRF&quot;;
-        name = &quot;MrFibreToken&quot;;
+        symbol = "MRF";
+        name = "MrFibreToken";
         decimals = 18;
         _totalSupply = 10000000000000000000000;
         balances[0x2fD28DA8dCAD10d56a95944FA3C2e744e9239073] = _totalSupply;

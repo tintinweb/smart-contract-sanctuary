@@ -145,7 +145,7 @@ contract TheSmartAsset is Transparent {
 }
 
 contract ERC20 is TheSmartAsset {
- string public name = &quot;IonChain&quot;;
+ string public name = "IonChain";
  string public positive_terms_of_Service;
  string public crowdsale;
  string public alternative_Exchanges_links;
@@ -153,7 +153,7 @@ contract ERC20 is TheSmartAsset {
  string public Price;  
  string public contract_verified;
  uint constant internal decimals = 6;
- string public symbol = &quot;IONC&quot;;
+ string public symbol = "IONC";
   function Voter () {
       balances[this] = 0;  // this is the total initial assets sale limit
       balances[owner] = 1 * (10 ** 9) * decimals;  // total amount for all bounty programs

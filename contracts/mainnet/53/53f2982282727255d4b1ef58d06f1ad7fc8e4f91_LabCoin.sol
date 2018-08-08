@@ -238,8 +238,8 @@ contract BurnableToken is BasicToken {
 }
 
 contract LabCoin is StandardToken, BurnableToken {
-    string public constant name = &quot;LabCoin&quot;;
-    string public constant symbol = &quot;LAB&quot;;
+    string public constant name = "LabCoin";
+    string public constant symbol = "LAB";
     uint8 public constant decimals = 18;
 
     /**

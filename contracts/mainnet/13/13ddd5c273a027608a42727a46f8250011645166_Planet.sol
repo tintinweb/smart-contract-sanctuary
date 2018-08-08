@@ -115,7 +115,7 @@ interface INewPrice {
 contract Planet is Cryptoy {
     using U256 for uint256; 
 
-    string public version = &quot;1.0.0&quot;; 
+    string public version = "1.0.0"; 
     uint16 public admin_proportion = 200; // 千分位
 
     INewPrice public priceCounter;
@@ -171,7 +171,7 @@ contract Planet is Cryptoy {
                 round: 0,
                 priceOrg: 0, 
                 priceSell: priceWei,
-                slogan: &quot;&quot;
+                slogan: ""
             }));
         } 
     }

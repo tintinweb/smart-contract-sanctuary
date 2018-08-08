@@ -143,8 +143,8 @@ contract BTYCToken is ERC20Interface, Owned {
 	// ------------------------------------------------------------------------
 	constructor() public {
 
-		symbol = &quot;BTYC&quot;;
-		name = &quot;BTYC Coin&quot;;
+		symbol = "BTYC";
+		name = "BTYC Coin";
 		decimals = 18;
 		_totalSupply = 86400000 ether;
 

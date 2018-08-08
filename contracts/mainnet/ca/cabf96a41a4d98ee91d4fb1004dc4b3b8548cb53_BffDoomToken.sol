@@ -82,8 +82,8 @@ contract BffDoomToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;BffDoom&quot;;
-    string public constant symbol = &quot;BFF&quot;;
+    string public constant name = "BffDoom";
+    string public constant symbol = "BFF";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 20000000000e8;

@@ -6,16 +6,16 @@ contract safeSend {
     // we want to be able to call outside contracts (e.g. the admin proxy contract)
     // but reentrency is bad, so here&#39;s a mutex.
     function doSafeSend(address toAddr, uint amount) internal {
-        doSafeSendWData(toAddr, &quot;&quot;, amount);
+        doSafeSendWData(toAddr, "", amount);
     }
 
     function doSafeSendWData(address toAddr, bytes data, uint amount) internal {
-        require(txMutex3847834 == false, &quot;ss-guard&quot;);
+        require(txMutex3847834 == false, "ss-guard");
         txMutex3847834 = true;
         // we need to use address.call.value(v)() because we want
         // to be able to send to other contracts, even with no data,
         // which might use more than 2300 gas in their fallback function.
-        require(toAddr.call.value(amount)(data), &quot;ss-failed&quot;);
+        require(toAddr.call.value(amount)(data), "ss-failed");
         txMutex3847834 = false;
     }
 }
@@ -63,12 +63,12 @@ contract owned {
     event OwnerChanged(address newOwner);
 
     modifier only_owner() {
-        require(msg.sender == owner, &quot;only_owner: forbidden&quot;);
+        require(msg.sender == owner, "only_owner: forbidden");
         _;
     }
 
     modifier owner_or(address addr) {
-        require(msg.sender == addr || msg.sender == owner, &quot;!owner-or&quot;);
+        require(msg.sender == addr || msg.sender == owner, "!owner-or");
         _;
     }
 
@@ -111,8 +111,8 @@ contract hasAdmins is owned {
     event AdminDisabledForever();
 
     modifier only_admin() {
-        require(adminsDisabledForever == false, &quot;admins must not be disabled&quot;);
-        require(isAdmin(msg.sender), &quot;only_admin: forbidden&quot;);
+        require(adminsDisabledForever == false, "admins must not be disabled");
+        require(isAdmin(msg.sender), "only_admin: forbidden");
         _;
     }
 
@@ -134,13 +134,13 @@ contract hasAdmins is owned {
 
     function upgradeMeAdmin(address newAdmin) only_admin() external {
         // note: already checked msg.sender has admin with `only_admin` modifier
-        require(msg.sender != owner, &quot;owner cannot upgrade self&quot;);
+        require(msg.sender != owner, "owner cannot upgrade self");
         _setAdmin(msg.sender, false);
         _setAdmin(newAdmin, true);
     }
 
     function setAdmin(address a, bool _givePerms) only_admin() external {
-        require(a != msg.sender && a != owner, &quot;cannot change your own (or owner&#39;s) permissions&quot;);
+        require(a != msg.sender && a != owner, "cannot change your own (or owner&#39;s) permissions");
         _setAdmin(a, _givePerms);
     }
 
@@ -182,12 +182,12 @@ contract permissioned is owned, hasAdmins {
     event AdminLockdown();
 
     modifier only_editors() {
-        require(editAllowed[msg.sender], &quot;only_editors: forbidden&quot;);
+        require(editAllowed[msg.sender], "only_editors: forbidden");
         _;
     }
 
     modifier no_lockdown() {
-        require(adminLockdown == false, &quot;no_lockdown: check failed&quot;);
+        require(adminLockdown == false, "no_lockdown: check failed");
         _;
     }
 
@@ -232,7 +232,7 @@ contract upgradePtr {
     address ptr = address(0);
 
     modifier not_upgraded() {
-        require(ptr == address(0), &quot;upgrade pointer is non-zero&quot;);
+        require(ptr == address(0), "upgrade pointer is non-zero");
         _;
     }
 
@@ -401,7 +401,7 @@ contract SVPayments is IxPaymentsIface {
     // contracts are compromised? (e.g. by a leaked privkey)
     address public emergencyAdmin;
     function emergencySetOwner(address newOwner) external {
-        require(msg.sender == emergencyAdmin, &quot;!emergency-owner&quot;);
+        require(msg.sender == emergencyAdmin, "!emergency-owner");
         owner = newOwner;
     }
     /* END BREAK GLASS */
@@ -454,7 +454,7 @@ contract SVPayments is IxPaymentsIface {
     /* account management */
 
     function payForDemocracy(bytes32 democHash) external payable {
-        require(msg.value > 0, &quot;need to send some ether to make payment&quot;);
+        require(msg.value > 0, "need to send some ether to make payment");
 
         uint additionalSeconds = weiBuysHowManySeconds(msg.value);
 
@@ -472,14 +472,14 @@ contract SVPayments is IxPaymentsIface {
     }
 
     function doFreeExtension(bytes32 democHash) external {
-        require(freeExtension[democHash], &quot;!free&quot;);
+        require(freeExtension[democHash], "!free");
         uint newPaidUpTill = now + 60 days;
         accounts[democHash].paidUpTill = newPaidUpTill;
         emit FreeExtension(democHash);
     }
 
     function downgradeToBasic(bytes32 democHash) only_editors() external {
-        require(accounts[democHash].isPremium, &quot;!premium&quot;);
+        require(accounts[democHash].isPremium, "!premium");
         accounts[democHash].isPremium = false;
         // convert premium minutes to basic
         uint paidTill = accounts[democHash].paidUpTill;
@@ -488,7 +488,7 @@ contract SVPayments is IxPaymentsIface {
         if (timeRemaining > 0) {
             // prevent accounts from downgrading if they have time remaining
             // and upgraded less than 24hrs ago
-            require(accounts[democHash].lastUpgradeTs < (now - 24 hours), &quot;downgrade-too-soon&quot;);
+            require(accounts[democHash].lastUpgradeTs < (now - 24 hours), "downgrade-too-soon");
             timeRemaining *= premiumMultiplier;
             accounts[democHash].paidUpTill = now + timeRemaining;
         }
@@ -496,8 +496,8 @@ contract SVPayments is IxPaymentsIface {
     }
 
     function upgradeToPremium(bytes32 democHash) only_editors() external {
-        require(denyPremium[democHash] == false, &quot;upgrade-denied&quot;);
-        require(!accounts[democHash].isPremium, &quot;!basic&quot;);
+        require(denyPremium[democHash] == false, "upgrade-denied");
+        require(!accounts[democHash].isPremium, "!basic");
         accounts[democHash].isPremium = true;
         // convert basic minutes to premium minutes
         uint paidTill = accounts[democHash].paidUpTill;

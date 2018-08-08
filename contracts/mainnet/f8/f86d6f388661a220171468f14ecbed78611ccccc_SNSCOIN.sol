@@ -56,9 +56,9 @@ contract ERC20Standard {
 }
 
 contract SNSCOIN is ERC20Standard {
-	string public name = &quot;SNScoin&quot;;
+	string public name = "SNScoin";
 	uint8 public decimals = 18;
-	string public symbol = &quot;SNS&quot;;
+	string public symbol = "SNS";
 	uint public totalSupply = 500000000000000000000000000;
 	    
 	function SNSCOIN() {

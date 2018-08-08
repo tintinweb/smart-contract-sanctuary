@@ -32,8 +32,8 @@ contract TicketCoin {
     ) public {
         totalSupply = 100000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;TicketCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TKC&quot;;                               // Set the symbol for display purposes
+        name = "TicketCoin";                                   // Set the name for display purposes
+        symbol = "TKC";                               // Set the symbol for display purposes
     }
 
     /**

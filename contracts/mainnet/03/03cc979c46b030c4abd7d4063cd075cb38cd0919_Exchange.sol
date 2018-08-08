@@ -135,7 +135,7 @@ contract Exchange is DSAuth {
     uint public feesCollected = 0;
     uint public feesWithdrawn = 0;
 
-    string precisionError = &quot;Precision&quot;;
+    string precisionError = "Precision";
 
     constructor(address daiAddress) public {
         require(daiAddress != 0x0);
@@ -462,7 +462,7 @@ contract Exchange is DSAuth {
         uint expiration,
         uint strike
     ) public {
-        require(now < expiration, &quot;Expired&quot;);
+        require(now < expiration, "Expired");
         require(amount % 1 finney == 0, precisionError);
         uint cost = amount.mul(strike).div(1 ether);
         bytes32 series = keccak256(expiration, strike);
@@ -480,8 +480,8 @@ contract Exchange is DSAuth {
     event AssignCall(address indexed account, uint amount, uint expiration, uint strike);
     event SettleCall(address indexed account, uint expiration, uint strike);
     function settleCall(uint expiration, uint strike, address writer) public {
-        require(msg.sender == writer || isAuthorized(msg.sender, msg.sig), &quot;Unauthorized&quot;);
-        require(now > expiration, &quot;Expired&quot;);
+        require(msg.sender == writer || isAuthorized(msg.sender, msg.sig), "Unauthorized");
+        require(now > expiration, "Expired");
 
         bytes32 series = keccak256(expiration, strike);
         require(callsSold[series][writer] > 0);
@@ -719,7 +719,7 @@ contract Exchange is DSAuth {
         uint expiration,
         uint strike
     ) public {
-        require(now < expiration, &quot;Expired&quot;);
+        require(now < expiration, "Expired");
         require(amount % 1 finney == 0, precisionError);
         uint yield = amount.mul(strike).div(1 ether);
         bytes32 series = keccak256(expiration, strike);
@@ -738,8 +738,8 @@ contract Exchange is DSAuth {
     event AssignPut(address indexed account, uint amount, uint expiration, uint strike);
     event SettlePut(address indexed account, uint expiration, uint strike);
     function settlePut(uint expiration, uint strike, address writer) public {
-        require(msg.sender == writer || isAuthorized(msg.sender, msg.sig), &quot;Unauthorized&quot;);
-        require(now > expiration, &quot;Expired&quot;);
+        require(msg.sender == writer || isAuthorized(msg.sender, msg.sig), "Unauthorized");
+        require(now > expiration, "Expired");
 
         bytes32 series = keccak256(expiration, strike);
         require(putsSold[series][writer] > 0);
@@ -770,7 +770,7 @@ contract Exchange is DSAuth {
 
     function claimFeeRebate(uint amount, bytes32 nonce, bytes32 r, bytes32 s, uint8 v) public {
         bytes32 h = keccak256(amount, nonce, msg.sender);
-        h = keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, h);
+        h = keccak256("\x19Ethereum Signed Message:\n32", h);
         address signer = ecrecover(h, v, r, s);
         require(amount <= 1000);
         require(isAuthorized(signer, msg.sig));
@@ -784,12 +784,12 @@ contract Exchange is DSAuth {
         require(strike % 1 ether == 0, precisionError);
         require(amount % 1 finney == 0, precisionError);
         require(price % 1 finney == 0, precisionError);
-        require(expiration % 86400 == 0, &quot;Expiration&quot;);
+        require(expiration % 86400 == 0, "Expiration");
 
-        require(cancelled[maker][h] == false, &quot;Cancelled&quot;);
-        require(amount <= size.sub(filled[maker][h]), &quot;Filled&quot;);
-        require(now < validUntil, &quot;OrderExpired&quot;);
-        require(now < expiration, &quot;Expired&quot;);
+        require(cancelled[maker][h] == false, "Cancelled");
+        require(amount <= size.sub(filled[maker][h]), "Filled");
+        require(now < validUntil, "OrderExpired");
+        require(now < expiration, "Expired");
 
         filled[maker][h] = filled[maker][h].add(amount);
         emit TakeOrder(msg.sender, maker, amount, h);
@@ -805,6 +805,6 @@ contract Exchange is DSAuth {
     }
 
     function _getMaker(bytes32 h, uint8 v, bytes32 r, bytes32 s) public pure returns (address) {
-        return ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, h), v, r, s);
+        return ecrecover(keccak256("\x19Ethereum Signed Message:\n32", h), v, r, s);
     }
 }

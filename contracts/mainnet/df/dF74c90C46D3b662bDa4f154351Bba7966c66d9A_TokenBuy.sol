@@ -66,7 +66,7 @@ contract DSMath {
     //     z = add(mul(x, RAY), y / 2) / y;
     // }
 
-    // // This famous algorithm is called &quot;exponentiation by squaring&quot;
+    // // This famous algorithm is called "exponentiation by squaring"
     // // and calculates x^n with x as fixed-point and n as regular unsigned.
     // //
     // // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -99,7 +99,7 @@ contract DSMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -441,7 +441,7 @@ contract TokenBuy is Pausable, Claimable, TokenDestructible, DSMath {
     /// @param max the maximum number of members to process (for gas purposes)
     function collectAll(uint8 max) public returns (uint8 collected) {
         max = uint8(min(max, contributors.length));
-        require(max > 0, &quot;can&#39;t collect for zero users&quot;);
+        require(max > 0, "can&#39;t collect for zero users");
 
         uint index = contributors.length - 1;
         for(uint offset = 0; offset < max; ++offset) {

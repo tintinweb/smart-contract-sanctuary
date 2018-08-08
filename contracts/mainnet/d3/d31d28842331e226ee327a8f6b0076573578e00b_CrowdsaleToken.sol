@@ -234,8 +234,8 @@ contract CrowdsaleToken is StandardToken {
     
     address public owner;
     
-    string public constant symbol = &quot;XOXO&quot;;
-    string public constant name = &quot;Lust Token&quot;;
+    string public constant symbol = "XOXO";
+    string public constant name = "Lust Token";
     uint8 public constant decimals = 18;
     
     

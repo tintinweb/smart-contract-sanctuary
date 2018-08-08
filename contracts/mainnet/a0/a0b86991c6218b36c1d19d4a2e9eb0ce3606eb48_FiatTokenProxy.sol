@@ -114,7 +114,7 @@ contract UpgradeabilityProxy is Proxy {
 
   /**
    * @dev Storage slot with the address of the current implementation.
-   * This is the keccak-256 hash of &quot;org.zeppelinos.proxy.implementation&quot;, and is
+   * This is the keccak-256 hash of "org.zeppelinos.proxy.implementation", and is
    * validated in the constructor.
    */
   bytes32 private constant IMPLEMENTATION_SLOT = 0x7050c9e0f4ca769c69bd3a8ef740bc37934f8e2c036e5a723fd8ee048ed3f8c3;
@@ -124,7 +124,7 @@ contract UpgradeabilityProxy is Proxy {
    * @param _implementation Address of the initial implementation.
    */
   constructor(address _implementation) public {
-    assert(IMPLEMENTATION_SLOT == keccak256(&quot;org.zeppelinos.proxy.implementation&quot;));
+    assert(IMPLEMENTATION_SLOT == keccak256("org.zeppelinos.proxy.implementation"));
 
     _setImplementation(_implementation);
   }
@@ -154,7 +154,7 @@ contract UpgradeabilityProxy is Proxy {
    * @param newImplementation Address of the new implementation.
    */
   function _setImplementation(address newImplementation) private {
-    require(AddressUtils.isContract(newImplementation), &quot;Cannot set a proxy implementation to a non-contract address&quot;);
+    require(AddressUtils.isContract(newImplementation), "Cannot set a proxy implementation to a non-contract address");
 
     bytes32 slot = IMPLEMENTATION_SLOT;
 
@@ -184,7 +184,7 @@ contract AdminUpgradeabilityProxy is UpgradeabilityProxy {
 
   /**
    * @dev Storage slot with the admin of the contract.
-   * This is the keccak-256 hash of &quot;org.zeppelinos.proxy.admin&quot;, and is
+   * This is the keccak-256 hash of "org.zeppelinos.proxy.admin", and is
    * validated in the constructor.
    */
   bytes32 private constant ADMIN_SLOT = 0x10d6a54a4754c8869d6886b5f5d7fbfa5b4522237ea5c60d11bc4e7a1ff9390b;
@@ -208,7 +208,7 @@ contract AdminUpgradeabilityProxy is UpgradeabilityProxy {
    * @param _implementation address of the initial implementation.
    */
   constructor(address _implementation) UpgradeabilityProxy(_implementation) public {
-    assert(ADMIN_SLOT == keccak256(&quot;org.zeppelinos.proxy.admin&quot;));
+    assert(ADMIN_SLOT == keccak256("org.zeppelinos.proxy.admin"));
 
     _setAdmin(msg.sender);
   }
@@ -233,7 +233,7 @@ contract AdminUpgradeabilityProxy is UpgradeabilityProxy {
    * @param newAdmin Address to transfer proxy administration to.
    */
   function changeAdmin(address newAdmin) external ifAdmin {
-    require(newAdmin != address(0), &quot;Cannot change the admin of a proxy to the zero address&quot;);
+    require(newAdmin != address(0), "Cannot change the admin of a proxy to the zero address");
     emit AdminChanged(_admin(), newAdmin);
     _setAdmin(newAdmin);
   }
@@ -288,7 +288,7 @@ contract AdminUpgradeabilityProxy is UpgradeabilityProxy {
    * @dev Only fall back when the sender is not the admin.
    */
   function _willFallback() internal {
-    require(msg.sender != _admin(), &quot;Cannot call fallback function from the proxy admin&quot;);
+    require(msg.sender != _admin(), "Cannot call fallback function from the proxy admin");
     super._willFallback();
   }
 }
@@ -299,7 +299,7 @@ contract AdminUpgradeabilityProxy is UpgradeabilityProxy {
 * Copyright CENTRE SECZ 2018
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy 
-* of this software and associated documentation files (the &quot;Software&quot;), to deal 
+* of this software and associated documentation files (the "Software"), to deal 
 * in the Software without restriction, including without limitation the rights 
 * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
 * copies of the Software, and to permit persons to whom the Software is furnished to 
@@ -308,7 +308,7 @@ contract AdminUpgradeabilityProxy is UpgradeabilityProxy {
 * The above copyright notice and this permission notice shall be included in all 
 * copies or substantial portions of the Software.
 *
-* THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
 * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,

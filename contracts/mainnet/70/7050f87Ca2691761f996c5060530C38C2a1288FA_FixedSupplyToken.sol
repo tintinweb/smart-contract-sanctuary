@@ -109,8 +109,8 @@ contract FixedSupplyToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function FixedSupplyToken() public {
-        symbol = &quot;IQX&quot;;
-        name = &quot;Internet Quality Experience Token&quot;;
+        symbol = "IQX";
+        name = "Internet Quality Experience Token";
         decimals = 18;
         _totalSupply = 100000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -3,7 +3,7 @@ pragma solidity ^0.4.17;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -263,8 +263,8 @@ contract MintableToken is StandardToken, Ownable {
 
 contract MooToken is MintableToken {
   // Coin Properties
-    string public name = &quot;MOO token&quot;;
-    string public symbol = &quot;XMOO&quot;;
+    string public name = "MOO token";
+    string public symbol = "XMOO";
     uint256 public decimals = 18;
 
     event EmergencyERC20DrainWasCalled(address tokenaddress, uint256 _amount);
@@ -710,7 +710,7 @@ contract MooTokenSale is Ownable {
  /**
 *****************************************************************************************
 *****************************************************************************************
-  * @dev only Admin can mint from &quot;SaleClosed&quot; to &quot;Closed&quot; 
+  * @dev only Admin can mint from "SaleClosed" to "Closed" 
   * _tokens given by client (limit if we reach the maxTokens)
   * multiSig was given by client
 *****************************************************************************************

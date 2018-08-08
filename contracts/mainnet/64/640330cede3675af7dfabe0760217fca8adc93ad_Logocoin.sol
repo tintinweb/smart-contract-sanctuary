@@ -113,8 +113,8 @@ contract Logocoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Logocoin() public {
-        symbol = &quot;LOGO&quot;;
-        name = &quot;Logocoin&quot;;
+        symbol = "LOGO";
+        name = "Logocoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xd4f907d469903c5115918E2a94F36a4469d5e325] = _totalSupply;

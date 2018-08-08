@@ -52,8 +52,8 @@ contract GameCoinToken is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
 	
     uint256 public totalSupply = 1000000000000;
-	string public constant name = &quot;GameCoinToken&quot;;
-    string public constant symbol = &quot;GACT&quot;;
+	string public constant name = "GameCoinToken";
+    string public constant symbol = "GACT";
     uint public constant decimals = 0;
 	
 	function GameCoinToken(){

@@ -35,7 +35,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -214,8 +214,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract SmokeExchangeCoin is StandardToken {
-  string public name = &quot;Smoke Exchange Token&quot;;
-  string public symbol = &quot;SMX&quot;;
+  string public name = "Smoke Exchange Token";
+  string public symbol = "SMX";
   uint256 public decimals = 18;  
   address public ownerAddress;
     

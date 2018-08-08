@@ -116,8 +116,8 @@ contract AntarctiCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AntarctiCoin() public {
-        symbol = &quot;ANTA&quot;;
-        name = &quot;AntarctiCoin&quot;;
+        symbol = "ANTA";
+        name = "AntarctiCoin";
         decimals = 18;
         bonusEnds = now + 0 weeks;
         endDate = now + 8 weeks;

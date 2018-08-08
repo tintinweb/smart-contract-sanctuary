@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -309,8 +309,8 @@ library SafeMath {
 contract GooToken is StandardToken, BurnableToken {
     using SafeMath for uint256;
 
-    string public constant symbol = &quot;GOO&quot;;
-    string public constant name = &quot;GooToken&quot;;
+    string public constant symbol = "GOO";
+    string public constant name = "GooToken";
 
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 2178600000000 * (10 ** uint256(decimals));

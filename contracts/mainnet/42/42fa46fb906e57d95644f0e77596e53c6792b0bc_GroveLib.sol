@@ -350,11 +350,11 @@ library GroveLib {
             }
         }
 
-        bytes2 constant GT = &quot;>&quot;;
-        bytes2 constant LT = &quot;<&quot;;
-        bytes2 constant GTE = &quot;>=&quot;;
-        bytes2 constant LTE = &quot;<=&quot;;
-        bytes2 constant EQ = &quot;==&quot;;
+        bytes2 constant GT = ">";
+        bytes2 constant LT = "<";
+        bytes2 constant GTE = ">=";
+        bytes2 constant LTE = "<=";
+        bytes2 constant EQ = "==";
 
         function _compare(int left, bytes2 operator, int right) internal returns (bool) {
             require(

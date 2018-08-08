@@ -89,14 +89,14 @@ contract FullPayChain is StandardToken {
     string public name;                   //fancy name: eg Simon Bucks
     uint8 public decimals;                //How many decimals to show. ie. There could 1000 base units with 3 decimals. Meaning 0.980 SBX = 980 base units. It&#39;s like comparing 1 wei to 1 ether.
     string public symbol;                 //An identifier: eg SBX
-    string public version = &quot;P0.1&quot;;       //human 0.1 standard. Just an arbitrary versioning scheme.
+    string public version = "P0.1";       //human 0.1 standard. Just an arbitrary versioning scheme.
     function FullPayChain() {
         
         balances[msg.sender] = 3000000000000;               // Give the creator all initial tokens
         totalSupply = 3000000000000;                        // Update total supply
-        name = &quot;Full pay chain&quot;;                                   // Set the name for display purposes
+        name = "Full pay chain";                                   // Set the name for display purposes
         decimals = 4;                            // Amount of decimals for display purposes
-        symbol = &quot;GPCC&quot;;                               // Set the symbol for display purposes
+        symbol = "GPCC";                               // Set the symbol for display purposes
     }
 
 }

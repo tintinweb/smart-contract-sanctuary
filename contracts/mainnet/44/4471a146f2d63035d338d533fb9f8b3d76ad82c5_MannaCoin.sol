@@ -247,9 +247,9 @@ contract MannaCoin is ERC20Interface, Owned, SafeMath {
 
     function MannaCoin() public {
 
-        symbol = &quot;MannaCoin&quot;;
+        symbol = "MannaCoin";
 
-        name = &quot;MannaCoin&quot;;
+        name = "MannaCoin";
 
         decimals = 18;
 

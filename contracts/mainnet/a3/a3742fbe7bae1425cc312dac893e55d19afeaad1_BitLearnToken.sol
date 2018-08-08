@@ -96,16 +96,16 @@ contract EventDefinitions {
 }
 
 contract BitLearnToken is Finalizable, TokenReceivable, SafeMath, EventDefinitions, Pausable {
-	string constant public name = &quot;BTLN Test Token&quot;;
+	string constant public name = "BTLN Test Token";
 	uint8 constant public decimals = 8;
-	string constant public symbol = &quot;BTLN&quot;;
+	string constant public symbol = "BTLN";
 	Controller public controller;
 	string public motd;
 	event Motd(string message);
 
 	// functions below this line are onlyOwner
 
-	// set &quot;message of the day&quot;
+	// set "message of the day"
 	function setMotd(string _m) onlyOwner {
 		motd = _m;
 		Motd(_m);

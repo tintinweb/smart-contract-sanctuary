@@ -15,8 +15,8 @@ contract RewardsGiftToken {
     function RewardsGiftToken() public {
         totalSupply = 100000000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Rewards Gift Token&quot;;
-        symbol = &quot;Rgift&quot;;
+        name = "Rewards Gift Token";
+        symbol = "Rgift";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

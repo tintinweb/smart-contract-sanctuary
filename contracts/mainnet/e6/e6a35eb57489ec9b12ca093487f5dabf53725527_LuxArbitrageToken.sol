@@ -2,8 +2,8 @@ pragma solidity ^0.4.11;
 
 contract LuxArbitrageToken {
 
-    string public name = &quot;Luxury Arbitrage token&quot;;      //  token name
-    string public symbol = &quot;LARB&quot;;           //  token symbol
+    string public name = "Luxury Arbitrage token";      //  token name
+    string public symbol = "LARB";           //  token symbol
     uint256 public decimals = 18;            //  token digit
 
     mapping (address => uint256) public balanceOf;

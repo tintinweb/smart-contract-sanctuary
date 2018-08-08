@@ -113,8 +113,8 @@ contract NaGeBi is UnboundedRegularToken {
 
     uint public totalSupply = 10*10**12;
     uint8 constant public decimals = 4;
-    string constant public name = &quot;NaGeBi&quot;;
-    string constant public symbol = &quot;NGB&quot;;
+    string constant public name = "NaGeBi";
+    string constant public symbol = "NGB";
 
     function NaGeBi() {
         balances[msg.sender] = totalSupply;

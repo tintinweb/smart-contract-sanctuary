@@ -51,8 +51,8 @@ contract BountyHunter {
 
   function() public payable { }
 
-  string public constant NAME = &quot;BountyHunter&quot;;
-  string public constant SYMBOL = &quot;BountyHunter&quot;;
+  string public constant NAME = "BountyHunter";
+  string public constant SYMBOL = "BountyHunter";
   address ceoAddress = 0xc10A6AedE9564efcDC5E842772313f0669D79497;
   address hunter;
   address hunted;

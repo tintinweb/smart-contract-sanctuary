@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -264,8 +264,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/XdacToken.sol
 
 contract XdacToken is StandardToken, Ownable {
-    string public name = &quot;XDAC COIN&quot;;
-    string public symbol = &quot;XDAC&quot;;
+    string public name = "XDAC COIN";
+    string public symbol = "XDAC";
     uint8 public decimals = 18;
     /**
      * @dev Constructor that gives msg.sender all of existing tokens.

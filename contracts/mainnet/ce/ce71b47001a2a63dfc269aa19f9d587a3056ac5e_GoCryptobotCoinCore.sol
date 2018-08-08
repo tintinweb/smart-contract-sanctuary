@@ -3,8 +3,8 @@ pragma solidity ^0.4.18;
 contract GoCryptobotCoinERC20 {
     using SafeMath for uint256;
 
-    string public constant name = &quot;GoCryptobotCoin&quot;;
-    string public constant symbol = &quot;GCC&quot;;
+    string public constant name = "GoCryptobotCoin";
+    string public constant symbol = "GCC";
     uint8 public constant decimals = 3;
 
     mapping(address => uint256) balances;

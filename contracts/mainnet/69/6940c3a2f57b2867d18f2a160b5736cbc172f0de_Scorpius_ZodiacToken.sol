@@ -45,8 +45,8 @@ contract Scorpius_ZodiacToken {
     uint    public ICORatio     = 144000;
     uint256 public totalSupply = 0;
 
-    function name() constant returns (string) { return &quot;Scorpius_ZodiacToken&quot;; }
-    function symbol() constant returns (string) { return &quot;SCO♏&quot;; }
+    function name() constant returns (string) { return "Scorpius_ZodiacToken"; }
+    function symbol() constant returns (string) { return "SCO♏"; }
     function decimals() constant returns (uint8) { return 8; }
     event Burnt(
         address indexed _receiver,

@@ -113,8 +113,8 @@ contract KVC0Token is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TWCToken() public {
-        symbol = &quot;KVC0&quot;;
-        name = &quot;KV.COIN&quot;;
+        symbol = "KVC0";
+        name = "KV.COIN";
         decimals = 18;
         _totalSupply = 1000000000000000000;
         balances[0xD3374950206E71fdcdAaD68F7a50eBEa061b1e2E] = _totalSupply;

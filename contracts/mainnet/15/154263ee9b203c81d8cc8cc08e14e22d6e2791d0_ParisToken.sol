@@ -50,8 +50,8 @@ contract ParisToken is Token {
 
     uint public totalSupply = 1*10**27;
     uint8 constant public decimals = 18;
-    string constant public name = &quot;ParisToken&quot;;
-    string constant public symbol = &quot;PT&quot;;
+    string constant public name = "ParisToken";
+    string constant public symbol = "PT";
     uint constant MAX_UINT = 2**256 - 1;
 
     function ParisToken() public {

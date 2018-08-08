@@ -48,7 +48,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -500,10 +500,10 @@ contract PurchasableToken is StandardToken {
 }
 
 contract RBTToken is DropableToken, BurnableToken, PurchasableToken {
-    string public name = &quot;RBT - a flexible token which can be rebranded&quot;;
-    string public symbol = &quot;RBT&quot;;
+    string public name = "RBT - a flexible token which can be rebranded";
+    string public symbol = "RBT";
     string public version = &#39;1.0&#39;;
-    string public desc = &quot;&quot;;
+    string public desc = "";
     uint256 constant CAP = 100000000000 * (10 ** uint256(decimals)); // total
     uint256 constant STARTUP = 100000000 * (10 ** uint256(decimals)); // 0.1% startup
 
@@ -556,7 +556,7 @@ contract RBTToken is DropableToken, BurnableToken, PurchasableToken {
             //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
             //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
             //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-            if (!_spender.call(bytes4(bytes32(keccak256(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) {revert();}
+            if (!_spender.call(bytes4(bytes32(keccak256("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) {revert();}
             return true;
         }
     }

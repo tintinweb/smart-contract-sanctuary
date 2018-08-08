@@ -215,7 +215,7 @@ contract LilithToken is ERC20 {
 
 contract Lilith is LilithToken {
 
-    function Lilith() LilithToken(199010251020, &quot;LiLith&quot;, &quot;LiLith&quot;, 18) public {
+    function Lilith() LilithToken(199010251020, "LiLith", "LiLith", 18) public {
 
     }
 }

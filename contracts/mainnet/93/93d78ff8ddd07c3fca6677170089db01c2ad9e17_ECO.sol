@@ -109,8 +109,8 @@ contract ECO is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;ECO&quot;;
-        name = &quot;ECO Token&quot;;
+        symbol = "ECO";
+        name = "ECO Token";
         decimals = 18;
         _totalSupply = 210000000000000000000000000;
         balances[0x299C9aDce8883CEb36660653BdB15293a5B0871C] = _totalSupply;

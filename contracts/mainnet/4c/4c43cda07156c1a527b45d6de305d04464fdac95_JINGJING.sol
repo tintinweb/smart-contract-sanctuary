@@ -113,8 +113,8 @@ contract JINGJING is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JINGJING() public {
-        symbol = &quot;我爱静静&quot;;
-        name = &quot;我爱静静币&quot;;
+        symbol = "我爱静静";
+        name = "我爱静静币";
         decimals = 18;
         _totalSupply = 1000000000000000000000000;
         balances[0x5d1F617aE6705f44b4970f81541701bf5E90B833] = _totalSupply;

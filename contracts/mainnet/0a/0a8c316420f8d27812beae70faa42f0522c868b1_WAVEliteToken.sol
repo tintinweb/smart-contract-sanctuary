@@ -112,8 +112,8 @@ contract WAVEliteToken is ERC20, Pauseable {
     uint256 _totalSupply;    
     
 
-    string public constant name = &quot;WAVElite&quot;;
-    string public constant symbol = &quot;WAVELT&quot;;
+    string public constant name = "WAVElite";
+    string public constant symbol = "WAVELT";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY =  45000000 * (10 ** uint256(decimals));
     

@@ -121,7 +121,7 @@ contract Bitotal is StandardToken {
   string public name;                   // Token Name
   uint8 public decimals;                // How many decimals to show. To be standard complicant keep it 18
   string public symbol;                 // An identifier: eg SBX, XPR etc..
-  string public version = &quot;1.0&quot;; 
+  string public version = "1.0"; 
   uint256 public unitsOneEthCanBuy;     // How many units of your coin can be bought by 1 ETH?
   uint256 public totalEthInWei;         // WEI is the smallest unit of ETH 
   address public fundsWallet;           // Where should the raised ETH go?
@@ -145,9 +145,9 @@ contract Bitotal is StandardToken {
     balances[fundsWallet] = 100000000;               
     totalSupply = 100000000;    
     maxSupply = 500000000;                    
-    name = &quot;Bitotal&quot;;                                   
+    name = "Bitotal";                                   
     decimals = 2;                                               
-    symbol = &quot;TFUND&quot;;                                             
+    symbol = "TFUND";                                             
     unitsOneEthCanBuy = 15;                                       
     timeFrame = 86399;      
     maxTransferPerTimeframe = 300;                            

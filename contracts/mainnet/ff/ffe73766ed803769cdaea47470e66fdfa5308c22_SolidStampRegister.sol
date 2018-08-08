@@ -7,7 +7,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -97,8 +97,8 @@ contract SolidStampRegister is Ownable
     /// on code hash _existingCodeHashes[n] with an outcome _outcomes[n]
     constructor(address[] _existingAuditors, bytes32[] _existingCodeHashes, bool[] _outcomes) public {
         uint noOfExistingAudits = _existingAuditors.length;
-        require(noOfExistingAudits == _existingCodeHashes.length, &quot;paramters mismatch&quot;);
-        require(noOfExistingAudits == _outcomes.length, &quot;paramters mismatch&quot;);
+        require(noOfExistingAudits == _existingCodeHashes.length, "paramters mismatch");
+        require(noOfExistingAudits == _outcomes.length, "paramters mismatch");
 
         // set contract address temporarily to owner so that registerAuditOutcome does not revert
         contractSolidStamp = msg.sender;
@@ -116,7 +116,7 @@ contract SolidStampRegister is Ownable
 
     function registerAuditOutcome(address _auditor, bytes32 _codeHash, bool _isApproved) public onlySolidStampContract
     {
-        require(_auditor != 0x0, &quot;auditor cannot be 0x0&quot;);
+        require(_auditor != 0x0, "auditor cannot be 0x0");
         bytes32 hashAuditorCode = keccak256(abi.encodePacked(_auditor, _codeHash));
         if ( _isApproved )
             AuditOutcomes[hashAuditorCode] = AUDITED_AND_APPROVED;
@@ -131,7 +131,7 @@ contract SolidStampRegister is Ownable
      * @dev Throws if called by any account other than the contractSolidStamp
      */
     modifier onlySolidStampContract() {
-      require(msg.sender == contractSolidStamp, &quot;cannot be run by not SolidStamp contract&quot;);
+      require(msg.sender == contractSolidStamp, "cannot be run by not SolidStamp contract");
       _;
     }
 
@@ -140,7 +140,7 @@ contract SolidStampRegister is Ownable
      * @param _newSolidStamp The address to transfer control registry to.
      */
     function changeSolidStampContract(address _newSolidStamp) public onlyOwner {
-      require(_newSolidStamp != address(0), &quot;SolidStamp contract cannot be 0x0&quot;);
+      require(_newSolidStamp != address(0), "SolidStamp contract cannot be 0x0");
       emit SolidStampContractChanged(_newSolidStamp);
       contractSolidStamp = _newSolidStamp;
     }

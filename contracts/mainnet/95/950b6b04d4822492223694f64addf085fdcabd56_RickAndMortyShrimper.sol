@@ -23,13 +23,13 @@ SHOW ME WHAT YOU GOT
 */
 // similar to the original shrimper , with these changes:
 // 0. already initialized
-// 1. the &quot;free&quot; 314 Morties cost 0.001 eth (in line with the mining fee)
+// 1. the "free" 314 Morties cost 0.001 eth (in line with the mining fee)
 // 2. bots should have a harder time, and whales can compete for the devfee
 
 
 contract RickAndMortyShrimper{
-    string public name = &quot;RickAndMortyShrimper&quot;;
-	string public symbol = &quot;RickAndMortyS&quot;;
+    string public name = "RickAndMortyShrimper";
+	string public symbol = "RickAndMortyS";
     //uint256 morties_PER_RickAndMorty_PER_SECOND=1;
     uint256 public morties_TO_HATCH_1RickAndMorty=86400;//for final version should be seconds in a day
     uint256 public STARTING_RickAndMorty=314;

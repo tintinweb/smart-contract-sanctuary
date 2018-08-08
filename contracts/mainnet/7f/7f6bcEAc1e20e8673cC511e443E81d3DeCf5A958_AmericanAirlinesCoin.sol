@@ -15,9 +15,9 @@ contract AmericanAirlinesCoin {
     function AmericanAirlinesCoin() {
 
          initialSupply = 100000000;
-         name =&quot;American Airlines Coin&quot;;
+         name ="American Airlines Coin";
         decimals = 0;
-         symbol = &quot;AA&quot;;
+         symbol = "AA";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

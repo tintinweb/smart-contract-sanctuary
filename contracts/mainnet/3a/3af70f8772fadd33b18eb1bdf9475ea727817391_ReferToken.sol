@@ -253,8 +253,8 @@ contract ReferTreeContract is Ownable {
 }
 
 contract ReferToken is ColdWalletToken, StatusContract, ReferTreeContract {
-    string public constant name = &quot;EtherState&quot;;
-    string public constant symbol = &quot;ETHS&quot;;
+    string public constant name = "EtherState";
+    string public constant symbol = "ETHS";
     uint256 public constant decimals = 18;
     uint256 public totalSupply = 0;
 

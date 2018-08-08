@@ -68,8 +68,8 @@ contract KeplerCoin is IERC20 {
     
     
     uint256 public constant  _totalSupply = 30000000000000000000000000 ;
-    string public constant symbol = &quot;KPL&quot;;
-    string public constant name = &quot;Kepler Coin&quot;;
+    string public constant symbol = "KPL";
+    string public constant name = "Kepler Coin";
     uint8 public constant decimals = 18;
     
     mapping(address => uint256) balances;

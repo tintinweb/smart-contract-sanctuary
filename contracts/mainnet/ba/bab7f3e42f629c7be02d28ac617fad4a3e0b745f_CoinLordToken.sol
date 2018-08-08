@@ -38,8 +38,8 @@ contract CoinLordToken {
     event Transfer(address indexed _from, address indexed _to, uint _value);
     event Approval(address indexed _owner, address indexed _spender, uint _value);
 
-    string public constant name = &quot;CoinLordToken&quot;;
-    string public constant symbol = &quot;CLT&quot;;
+    string public constant name = "CoinLordToken";
+    string public constant symbol = "CLT";
     uint8 public constant decimals = 18;
 
     /// The ERC20 total fixed supply of tokens.

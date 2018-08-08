@@ -89,12 +89,12 @@ contract Rivercoin is StandardToken {
     string public name;
     uint8 public decimals;
     string public symbol;
-    string public version = &quot;1.0&quot;;
+    string public version = "1.0";
 
     function Rivercoin() public {
-        name = &quot;Rivercoin&quot;;
+        name = "Rivercoin";
         decimals = 8;
-        symbol = &quot;RVC&quot;;
+        symbol = "RVC";
         balances[msg.sender] = 200000000 * (10 ** uint256(decimals));
         totalSupply = 200000000 * (10 ** uint256(decimals));
     }

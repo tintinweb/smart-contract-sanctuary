@@ -4,7 +4,7 @@
 
 pragma solidity ^0.4.11;
 
-//import &quot;ds-exec/exec.sol&quot;;
+//import "ds-exec/exec.sol";
 
 contract DSExec {
     function tryExec( address target, bytes calldata, uint value)
@@ -46,7 +46,7 @@ contract DSExec {
     }
 }
 
-//import &quot;ds-auth/auth.sol&quot;;
+//import "ds-auth/auth.sol";
 contract DSAuthority {
     function canCall(
     address src, address dst, bytes4 sig
@@ -103,7 +103,7 @@ contract DSAuth is DSAuthEvents {
     }
 }
 
-//import &quot;ds-note/note.sol&quot;;
+//import "ds-note/note.sol";
 contract DSNote {
     event LogNote(
     bytes4   indexed  sig,
@@ -130,7 +130,7 @@ contract DSNote {
 }
 
 
-//import &quot;ds-math/math.sol&quot;;
+//import "ds-math/math.sol";
 contract DSMath {
 
     /*
@@ -254,7 +254,7 @@ contract DSMath {
     }
 
     function rpow(uint128 x, uint64 n) constant internal returns (uint128 z) {
-        // This famous algorithm is called &quot;exponentiation by squaring&quot;
+        // This famous algorithm is called "exponentiation by squaring"
         // and calculates x^n with x as fixed-point and n as regular unsigned.
         //
         // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -293,7 +293,7 @@ contract DSMath {
 
 }
 
-//import &quot;erc20/erc20.sol&quot;;
+//import "erc20/erc20.sol";
 contract ERC20 {
     function totalSupply() constant returns (uint supply);
     function balanceOf( address who ) constant returns (uint value);
@@ -309,7 +309,7 @@ contract ERC20 {
 
 
 
-//import &quot;ds-token/base.sol&quot;;
+//import "ds-token/base.sol";
 contract DSTokenBase is ERC20, DSMath {
     uint256                                            _supply;
     mapping (address => uint256)                       _balances;
@@ -365,7 +365,7 @@ contract DSTokenBase is ERC20, DSMath {
 }
 
 
-//import &quot;ds-stop/stop.sol&quot;;
+//import "ds-stop/stop.sol";
 contract DSStop is DSAuth, DSNote {
 
     bool public stopped;
@@ -384,7 +384,7 @@ contract DSStop is DSAuth, DSNote {
 }
 
 
-//import &quot;ds-token/token.sol&quot;;
+//import "ds-token/token.sol";
 contract DSToken is DSTokenBase(0), DSStop {
 
     bytes32  public  symbol;
@@ -436,7 +436,7 @@ contract DSToken is DSTokenBase(0), DSStop {
 
     // Optional token name
 
-    bytes32   public  name = &quot;&quot;;
+    bytes32   public  name = "";
 
     function setName(bytes32 name_) auth {
         name = name_;
@@ -448,20 +448,20 @@ contract DSToken is DSTokenBase(0), DSStop {
 
 //////////////////////////////////////////////////
 //
-//import &quot;ds-token/token.sol&quot;;
+//import "ds-token/token.sol";
 //
-//    import &quot;ds-stop/stop.sol&quot;;
-//        import &quot;ds-auth/auth.sol&quot;;
-//        import &quot;ds-note/note.sol&quot;;
+//    import "ds-stop/stop.sol";
+//        import "ds-auth/auth.sol";
+//        import "ds-note/note.sol";
 //
-//    import &quot;ds-token/base.sol&quot;;
-//        import &quot;erc20/erc20.sol&quot;;
-//        import &quot;ds-math/math.sol&quot;;
+//    import "ds-token/base.sol";
+//        import "erc20/erc20.sol";
+//        import "ds-math/math.sol";
 //
-//import &quot;ds-exec/exec.sol&quot;;
-//import &quot;ds-auth/auth.sol&quot;;
-//import &quot;ds-note/note.sol&quot;;
-//import &quot;ds-math/math.sol&quot;;
+//import "ds-exec/exec.sol";
+//import "ds-auth/auth.sol";
+//import "ds-note/note.sol";
+//import "ds-math/math.sol";
 
 
 
@@ -496,8 +496,8 @@ contract KkkTokenSale is DSStop, DSMath, DSExec {
 
     function KkkTokenSale(uint startTime_, address destFoundation_) {
 
-        key = new DSToken(&quot;KKK&quot;);
-//        key = new DSToken(&quot;KEY&quot;);
+        key = new DSToken("KKK");
+//        key = new DSToken("KEY");
 
         destFoundation = destFoundation_;
 

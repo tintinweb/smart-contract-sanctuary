@@ -56,8 +56,8 @@ contract YunJiaMiToken is Ownable{
     
     using SafeMath for uint256;
     
-    string public constant name       = &quot;YunJiaMi&quot;;
-    string public constant symbol     = &quot;YJM&quot;;
+    string public constant name       = "YunJiaMi";
+    string public constant symbol     = "YJM";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply        = 800000000000 ether;
     uint256 public currentTotalSupply = 0;

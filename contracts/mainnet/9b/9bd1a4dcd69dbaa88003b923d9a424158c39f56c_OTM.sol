@@ -183,7 +183,7 @@ contract OTM is owned, TokenERC20 {
 
     /* */
 
-    function OTM() TokenERC20(38689000, &quot;Otiam&quot;, &quot;OTM&quot;) public {
+    function OTM() TokenERC20(38689000, "Otiam", "OTM") public {
 
     }
 

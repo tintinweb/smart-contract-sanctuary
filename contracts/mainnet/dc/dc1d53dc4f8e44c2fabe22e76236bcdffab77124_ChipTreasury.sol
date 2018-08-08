@@ -5,7 +5,7 @@ pragma solidity 0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -364,7 +364,7 @@ contract ChipTreasury is Pausable {
   // However it is unsafe because a mistakenly high chipId could throw off numChipsMinted permanently
   // NOTE: You must prefix hashes with &#39;0x&#39;
   function mintChipUnsafely (uint chipId, bytes32 hash) public onlyOwner whenPaused {
-    require(chips[chipId].hash == &quot;&quot;); // chip hash must initially be unset
+    require(chips[chipId].hash == ""); // chip hash must initially be unset
     chips[chipId].hash = hash;
     emit ChipMinted(chipId);
     numChipsMinted = numChipsMinted.add(1);
@@ -373,7 +373,7 @@ contract ChipTreasury is Pausable {
   // In case you mess something up during minting (╯&#176;□&#176;）╯︵ ┻━┻
   // NOTE: You must prefix hashes with &#39;0x&#39;
   function replaceChiphash (uint chipId, bytes32 newHash) public onlyOwner whenPaused {
-    require(chips[chipId].hash != &quot;&quot;); // chip hash must not be unset
+    require(chips[chipId].hash != ""); // chip hash must not be unset
     bytes32 oldHash = chips[chipId].hash;
     chips[chipId].hash = newHash;
     emit ChipHashReplaced(chipId, newHash, oldHash);

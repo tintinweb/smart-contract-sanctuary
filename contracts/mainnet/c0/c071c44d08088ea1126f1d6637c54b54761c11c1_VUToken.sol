@@ -333,7 +333,7 @@ contract VUToken is DetailedERC20, BurnableToken, PausableToken {
     * @dev Constructor
     */
     function VUToken() public
-    DetailedERC20(&quot;VU TOKEN&quot;, &quot;VU&quot;, 18)
+    DetailedERC20("VU TOKEN", "VU", 18)
     {
         totalSupply_ = INITIAL_SUPPLY;
 

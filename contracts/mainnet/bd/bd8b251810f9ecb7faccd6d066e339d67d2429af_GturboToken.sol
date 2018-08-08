@@ -64,7 +64,7 @@ contract ERC20 is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     mapping(address => bool)  internal owners;
@@ -331,8 +331,8 @@ contract MintableToken is StandardToken {
  */
 contract GturboToken is MintableToken {
 
-  string public constant name = &quot;GTurbo Token&quot;;
-  string public constant symbol = &quot;GTR&quot;;
+  string public constant name = "GTurbo Token";
+  string public constant symbol = "GTR";
   uint8 public constant decimals = 18;
 
 }

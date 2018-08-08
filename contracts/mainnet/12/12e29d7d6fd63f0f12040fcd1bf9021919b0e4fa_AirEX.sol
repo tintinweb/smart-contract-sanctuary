@@ -115,7 +115,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -513,8 +513,8 @@ contract MintableToken is PausableToken {
  * @dev Mintable token with a token cap.
  */
 contract AirEX is MintableToken {
-  string public constant name = &quot;AIRX&quot;;
-  string public constant symbol = &quot;AIRX&quot;;
+  string public constant name = "AIRX";
+  string public constant symbol = "AIRX";
   uint8 public constant decimals = 18;
 
   uint256 public hardCap;
@@ -624,7 +624,7 @@ contract SalesManagerUpgradable is Ownable {
     }
 
 /* SZ: Functions setLev1, setLev2 to change levels of prices*/
-/* SZ: lev1..2 send as for example &quot;2000000000000000000&quot; for 2 ETH */
+/* SZ: lev1..2 send as for example "2000000000000000000" for 2 ETH */
     function setLev1 (uint _price) public onlyOwner {
         lev1 = _price;
     }

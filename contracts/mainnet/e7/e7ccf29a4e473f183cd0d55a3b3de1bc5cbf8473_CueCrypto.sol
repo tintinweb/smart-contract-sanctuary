@@ -108,8 +108,8 @@ contract CueCrypto is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function CueCrypto() public {
-        symbol = &quot;CUE&quot;;
-        name = &quot;CueCrypto&quot;;
+        symbol = "CUE";
+        name = "CueCrypto";
         decimals = 0;
         _totalSupply = 10000000000;
         balances[owner] = _totalSupply;

@@ -58,8 +58,8 @@ contract ERC223Token is IERC223, SafeMath {
 
   mapping(address => uint) balances;
   
-  string public name = &quot;Tradetex&quot;;
-  string public symbol = &quot;TDX&quot;;
+  string public name = "Tradetex";
+  string public symbol = "TDX";
   uint8 public decimals = 8;
   uint256 public totalSupply = 35000000 * 10**8;
   

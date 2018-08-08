@@ -5,7 +5,7 @@
 // Multi-sig, daily-limited account proxy/wallet.
 // @authors:
 // Gav Wood <<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="187f587d6c707c7d6e367b7775">[email&#160;protected]</a>>
-// inheritable &quot;property&quot; contract that enables methods to be protected by requiring the acquiescence of either a
+// inheritable "property" contract that enables methods to be protected by requiring the acquiescence of either a
 // single, or, crucially, each of a number of, designated owners.
 // usage:
 // use modifiers onlyowner (just own owned) or onlymanyowners(hash), whereby the same hash must be provided by
@@ -101,7 +101,7 @@ contract WalletLibrary is multisig {
 
     // METHODS
 
-    // constructor is given number of sigs required to do protected &quot;onlymanyowners&quot; transactions
+    // constructor is given number of sigs required to do protected "onlymanyowners" transactions
     // as well as the selection of addresses capable of confirming them.
     // change from original: msg.sender is not automatically owner
     function initMultiowned(address[] _owners, uint _required) {

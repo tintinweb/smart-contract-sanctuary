@@ -7,8 +7,8 @@ contract VagCoin  {
     
     uint public constant _totalSupply = 50000000;
     
-    string public constant symbol =&quot;VAG&quot;;
-    string public constant name =&quot;VagCoin&quot;;
+    string public constant symbol ="VAG";
+    string public constant name ="VagCoin";
     uint8 public constant decimals =0;
     
         

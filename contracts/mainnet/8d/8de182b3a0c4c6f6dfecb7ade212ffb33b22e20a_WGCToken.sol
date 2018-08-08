@@ -60,8 +60,8 @@ contract WGCToken is SafeMath {
     function WGCToken() public {
         totalSupply = 256*10**24;                        // Update total supply
         balanceOf[msg.sender] = totalSupply;              // Give the creator all initial tokens
-        name = &quot;WGCToken&quot;;                                   // Set the name for display purposes
-        symbol = &quot;WGC&quot;;                               // Set the symbol for display purposes
+        name = "WGCToken";                                   // Set the name for display purposes
+        symbol = "WGC";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
         owner = msg.sender;
     }

@@ -264,8 +264,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract EgretiaToken is PausableToken {
-    string public name = &quot;Egretia&quot;;
-    string public symbol = &quot;EGT&quot;;
+    string public name = "Egretia";
+    string public symbol = "EGT";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 8000000000000000000000000000;
 

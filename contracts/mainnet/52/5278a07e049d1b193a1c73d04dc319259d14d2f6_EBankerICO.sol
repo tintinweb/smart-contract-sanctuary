@@ -21,8 +21,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract EBanker is owned {
     // Public variables of the token
-    string public name = &quot;EBanker&quot;;
-    string public symbol = &quot;EBC&quot;;
+    string public name = "EBanker";
+    string public symbol = "EBC";
     uint8 public decimals = 18;
     uint256 public totalSupply = 0;
     
@@ -208,7 +208,7 @@ contract EBankerICO is owned, Killable {
     EBanker public token;
 
     /// Current State Name
-    string public state = &quot;Pre ICO&quot;;
+    string public state = "Pre ICO";
 
     /// the UNIX timestamp start date of the crowdsale
     uint public startsAt = 1521748800;

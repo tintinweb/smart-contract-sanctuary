@@ -70,8 +70,8 @@ contract BergCoin is ERC20NonTransfer, Ownable {
   address public trade;
   address public withdrawal;
   mapping(address => uint256) balances;
-  string public name = &quot;Berg&quot;;
-  string public symbol = &quot;BERG&quot;;
+  string public name = "Berg";
+  string public symbol = "BERG";
   uint256 totalSupply_;
   uint8 public constant decimals = 18;
   enum States {

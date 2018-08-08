@@ -320,8 +320,8 @@ contract MBACC is StandardToken, Terminable {
 	using SafeERC20 for ERC20;
 	using SafeMath for uint256;
 	
-	string public name = &quot;MBACC&quot;;
-	string public symbol = &quot;MBA&quot;;
+	string public name = "MBACC";
+	string public symbol = "MBA";
 	uint8 public decimals = 18;
 
     mapping (address => bool) issued;

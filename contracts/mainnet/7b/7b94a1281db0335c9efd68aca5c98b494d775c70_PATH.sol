@@ -266,8 +266,8 @@ contract SafePayloadChecker {
 
 contract PATH is StandardToken, SafePayloadChecker {
   uint256 public initialSupply = 250000000 * (10 ** uint256(decimals));
-  string public constant name = &quot;Path Network Token&quot;;
-  string public constant symbol = &quot;PATH&quot;;
+  string public constant name = "Path Network Token";
+  string public constant symbol = "PATH";
   uint8 public constant decimals = 18;
   address owner;
 
@@ -295,7 +295,7 @@ contract PATH is StandardToken, SafePayloadChecker {
   modifier onlyWhenTransferEnabled()
   {
     if (now <= transferableStartTime) {
-      require(msg.sender == owner, &quot;Sender not authorized.&quot;);
+      require(msg.sender == owner, "Sender not authorized.");
     }
     _;
   }

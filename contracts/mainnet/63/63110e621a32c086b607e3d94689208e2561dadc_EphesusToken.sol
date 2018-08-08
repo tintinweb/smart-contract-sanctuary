@@ -113,8 +113,8 @@ contract EphesusToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function EphesusToken() public {
-        symbol = &quot;EPU&quot;;
-        name = &quot;EPHESUS Token&quot;;
+        symbol = "EPU";
+        name = "EPHESUS Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x8E5Ba917F9cA096550Fd2797023AcD5293549E61] = _totalSupply;

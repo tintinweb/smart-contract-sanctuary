@@ -24,7 +24,7 @@ contract IERC20Token {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -136,10 +136,10 @@ contract Main is Claimable {
             pathConverted[i] = IERC20Token(path[i]);
         }
 
-        require(IERC20Token(path[0]).transferFrom(msg.sender, address(this), amount), &quot;transferFrom msg.sender failed&quot;);
-        require(IERC20Token(path[0]).approve(address(bancor), amount), &quot;approve to bancor failed&quot;);
+        require(IERC20Token(path[0]).transferFrom(msg.sender, address(this), amount), "transferFrom msg.sender failed");
+        require(IERC20Token(path[0]).approve(address(bancor), amount), "approve to bancor failed");
         uint256 amountReceived = bancor.quickConvert(pathConverted, amount, 1);
-        require(IERC20Token(path[path.length - 1]).transfer(receiverAddress, amountReceived), &quot;transfer back to receiverAddress failed&quot;);
+        require(IERC20Token(path[path.length - 1]).transfer(receiverAddress, amountReceived), "transfer back to receiverAddress failed");
         return true;
     }
 

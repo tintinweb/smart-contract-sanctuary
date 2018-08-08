@@ -221,8 +221,8 @@ contract StandardToken is ERC20, BasicToken {
 }
 
 contract OriginToken is StandardToken{
-  string public name = &quot;OriginToken&quot;;
-  string public symbol = &quot;OT&quot;;
+  string public name = "OriginToken";
+  string public symbol = "OT";
   uint8 public decimals = 10;
 
   constructor(address _wallet) public {

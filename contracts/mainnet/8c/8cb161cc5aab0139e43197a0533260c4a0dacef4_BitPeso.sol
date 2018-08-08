@@ -113,8 +113,8 @@ contract BitPeso is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function BitPeso () public {
-        symbol = &quot;BMX&quot;;
-        name = &quot;BitPeso&quot;;
+        symbol = "BMX";
+        name = "BitPeso";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x16B23Bc3a94201Da420FF3D8Faf57a78d3550F8a] = _totalSupply;

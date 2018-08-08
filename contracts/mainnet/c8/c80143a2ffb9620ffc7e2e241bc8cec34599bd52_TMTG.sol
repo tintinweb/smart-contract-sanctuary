@@ -743,8 +743,8 @@ contract TMTGBaseToken is StandardToken, TMTGPausable, TMTGBlacklist, HasNoEther
 }
 
 contract TMTG is TMTGBaseToken {
-    string public constant name = &quot;The Midas Touch Gold&quot;;
-    string public constant symbol = &quot;TMTG&quot;;
+    string public constant name = "The Midas Touch Gold";
+    string public constant symbol = "TMTG";
     uint8 public constant decimals = 18;
     uint256 public constant INITIAL_SUPPLY = 1e10 * (10 ** uint256(decimals));
 

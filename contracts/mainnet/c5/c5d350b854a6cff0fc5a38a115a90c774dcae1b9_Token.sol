@@ -34,7 +34,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -72,7 +72,7 @@ contract Ownable {
 /**
  * @title Authorizable
  * @dev The Authorizable contract has authorized addresses, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;multiple user permissions&quot;.
+ * functions, this simplifies the implementation of "multiple user permissions".
  */
 contract Authorizable is Ownable {
   mapping(address => bool) public authorized;
@@ -196,7 +196,7 @@ contract ERC223TokenCompatible is BasicToken {
 
 	// Function that is called when a user or another contract wants to transfer funds .
 	function transfer(address _to, uint256 _value, bytes _data) public returns (bool success) {
-		return transfer( _to, _value, _data, &quot;tokenFallback(address,uint256,bytes)&quot;);
+		return transfer( _to, _value, _data, "tokenFallback(address,uint256,bytes)");
 	}
 
 	//assemble the given address bytecode. If bytecode exists then the _addr is a contract.
@@ -359,7 +359,7 @@ contract HumanStandardToken is StandardToken, StartToken {
     /* Approves and then calls the receiving contract */
     function approveAndCall(address _spender, uint256 _value, bytes _extraData) public returns (bool success) {
         approve(_spender, _value);
-        require(_spender.call(bytes4(keccak256(&quot;receiveApproval(address,uint256,bytes)&quot;)), msg.sender, _value, _extraData));
+        require(_spender.call(bytes4(keccak256("receiveApproval(address,uint256,bytes)")), msg.sender, _value, _extraData));
         return true;
     }
 }
@@ -427,9 +427,9 @@ contract OriginToken is Authorizable, BasicToken, BurnToken {
 contract Token is ERC223TokenCompatible, StandardToken, StartToken, HumanStandardToken, BurnToken, OriginToken {
     uint8 public decimals = 18;
 
-    string public name = &quot;CryptoForecast&quot;;
+    string public name = "CryptoForecast";
 
-    string public symbol = &quot;CFT&quot;;
+    string public symbol = "CFT";
 
     uint256 public initialSupply;
 

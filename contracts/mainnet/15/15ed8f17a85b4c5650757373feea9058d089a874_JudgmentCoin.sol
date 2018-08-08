@@ -113,8 +113,8 @@ contract JudgmentCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function JudgmentCoin() public {
-        symbol = &quot;JBX&quot;;
-        name = &quot;JudgmentCoin&quot;;
+        symbol = "JBX";
+        name = "JudgmentCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x70A7Ac86faB96Be2a411315695a578dDA5D76c04] = _totalSupply;

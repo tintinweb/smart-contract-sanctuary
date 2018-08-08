@@ -96,8 +96,8 @@ contract Testinity is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;TEST&quot;;
-        name = &quot;Testinity&quot;;
+        symbol = "TEST";
+        name = "Testinity";
         decimals = 8;
         _totalSupply = 300000000000000000;
         balances[msg.sender] = _totalSupply;

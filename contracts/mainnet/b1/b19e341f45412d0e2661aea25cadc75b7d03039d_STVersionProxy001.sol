@@ -335,7 +335,7 @@ contract IST20 is StandardToken, DetailedERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -563,7 +563,7 @@ contract IModule {
 
     address public securityToken;
 
-    bytes32 public constant FEE_ADMIN = &quot;FEE_ADMIN&quot;;
+    bytes32 public constant FEE_ADMIN = "FEE_ADMIN";
 
     ERC20 public polyToken;
 
@@ -587,22 +587,22 @@ contract IModule {
     modifier withPerm(bytes32 _perm) {
         bool isOwner = msg.sender == ISecurityToken(securityToken).owner();
         bool isFactory = msg.sender == factory;
-        require(isOwner||isFactory||ISecurityToken(securityToken).checkPermission(msg.sender, address(this), _perm), &quot;Permission check failed&quot;);
+        require(isOwner||isFactory||ISecurityToken(securityToken).checkPermission(msg.sender, address(this), _perm), "Permission check failed");
         _;
     }
 
     modifier onlyOwner {
-        require(msg.sender == ISecurityToken(securityToken).owner(), &quot;Sender is not owner&quot;);
+        require(msg.sender == ISecurityToken(securityToken).owner(), "Sender is not owner");
         _;
     }
 
     modifier onlyFactory {
-        require(msg.sender == factory, &quot;Sender is not factory&quot;);
+        require(msg.sender == factory, "Sender is not factory");
         _;
     }
 
     modifier onlyFactoryOwner {
-        require(msg.sender == IModuleFactory(factory).owner(), &quot;Sender is not factory owner&quot;);
+        require(msg.sender == IModuleFactory(factory).owner(), "Sender is not factory owner");
         _;
     }
 
@@ -615,7 +615,7 @@ contract IModule {
      * @notice used to withdraw the fee by the factory owner
      */
     function takeFee(uint256 _amount) public withPerm(FEE_ADMIN) returns(bool) {
-        require(polyToken.transferFrom(address(this), IModuleFactory(factory).owner(), _amount), &quot;Unable to take fee&quot;);
+        require(polyToken.transferFrom(address(this), IModuleFactory(factory).owner(), _amount), "Unable to take fee");
         return true;
     }
 }
@@ -769,7 +769,7 @@ contract PolymathRegistry is ReclaimTokens {
      */
     function getAddress(string _nameKey) view public returns(address) {
         bytes32 key = keccak256(bytes(_nameKey));
-        require(storedAddresses[key] != address(0), &quot;Invalid address key&quot;);
+        require(storedAddresses[key] != address(0), "Invalid address key");
         return storedAddresses[key];
     }
 
@@ -801,10 +801,10 @@ contract RegistryUpdater is Ownable {
     }
 
     function updateFromRegistry() onlyOwner public {
-        moduleRegistry = PolymathRegistry(polymathRegistry).getAddress(&quot;ModuleRegistry&quot;);
-        securityTokenRegistry = PolymathRegistry(polymathRegistry).getAddress(&quot;SecurityTokenRegistry&quot;);
-        tickerRegistry = PolymathRegistry(polymathRegistry).getAddress(&quot;TickerRegistry&quot;);
-        polyToken = PolymathRegistry(polymathRegistry).getAddress(&quot;PolyToken&quot;);
+        moduleRegistry = PolymathRegistry(polymathRegistry).getAddress("ModuleRegistry");
+        securityTokenRegistry = PolymathRegistry(polymathRegistry).getAddress("SecurityTokenRegistry");
+        tickerRegistry = PolymathRegistry(polymathRegistry).getAddress("TickerRegistry");
+        polyToken = PolymathRegistry(polymathRegistry).getAddress("PolyToken");
     }
 
 }
@@ -850,7 +850,7 @@ contract ReentrancyGuard {
 contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
     using SafeMath for uint256;
 
-    bytes32 public constant securityTokenVersion = &quot;0.0.1&quot;;
+    bytes32 public constant securityTokenVersion = "0.0.1";
 
     // Reference to token burner contract
     ITokenBurner public tokenBurner;
@@ -924,17 +924,17 @@ contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
         }
         if (_fallback && !isModuleType) {
             if (_moduleType == STO_KEY)
-                require(modules[_moduleType].length == 0 && msg.sender == owner, &quot;Sender is not owner or STO module is attached&quot;);
+                require(modules[_moduleType].length == 0 && msg.sender == owner, "Sender is not owner or STO module is attached");
             else
-                require(msg.sender == owner, &quot;Sender is not owner&quot;);
+                require(msg.sender == owner, "Sender is not owner");
         } else {
-            require(isModuleType, &quot;Sender is not correct module type&quot;);
+            require(isModuleType, "Sender is not correct module type");
         }
         _;
     }
 
     modifier checkGranularity(uint256 _amount) {
-        require(_amount % granularity == 0, &quot;Unable to modify token balances at this granularity&quot;);
+        require(_amount % granularity == 0, "Unable to modify token balances at this granularity");
         _;
     }
 
@@ -942,9 +942,9 @@ contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
     // for the finishedSTOMinting flag because only STOs and owner are allowed for minting
     modifier isMintingAllowed() {
         if (msg.sender == owner) {
-            require(!finishedIssuerMinting, &quot;Minting is finished for Issuer&quot;);
+            require(!finishedIssuerMinting, "Minting is finished for Issuer");
         } else {
-            require(!finishedSTOMinting, &quot;Minting is finished for STOs&quot;);
+            require(!finishedSTOMinting, "Minting is finished for STOs");
         }
         _;
     }
@@ -974,10 +974,10 @@ contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
         updateFromRegistry();
         tokenDetails = _tokenDetails;
         granularity = _granularity;
-        transferFunctions[bytes4(keccak256(&quot;transfer(address,uint256)&quot;))] = true;
-        transferFunctions[bytes4(keccak256(&quot;transferFrom(address,address,uint256)&quot;))] = true;
-        transferFunctions[bytes4(keccak256(&quot;mint(address,uint256)&quot;))] = true;
-        transferFunctions[bytes4(keccak256(&quot;burn(uint256)&quot;))] = true;
+        transferFunctions[bytes4(keccak256("transfer(address,uint256)"))] = true;
+        transferFunctions[bytes4(keccak256("transferFrom(address,address,uint256)"))] = true;
+        transferFunctions[bytes4(keccak256("mint(address,uint256)"))] = true;
+        transferFunctions[bytes4(keccak256("burn(uint256)"))] = true;
     }
 
     /**
@@ -1012,15 +1012,15 @@ contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
         IModuleRegistry(moduleRegistry).useModule(_moduleFactory);
         IModuleFactory moduleFactory = IModuleFactory(_moduleFactory);
         uint8 moduleType = moduleFactory.getType();
-        require(modules[moduleType].length < MAX_MODULES, &quot;Limit of MAX MODULES is reached&quot;);
+        require(modules[moduleType].length < MAX_MODULES, "Limit of MAX MODULES is reached");
         uint256 moduleCost = moduleFactory.setupCost();
-        require(moduleCost <= _maxCost, &quot;Max Cost is always be greater than module cost&quot;);
+        require(moduleCost <= _maxCost, "Max Cost is always be greater than module cost");
         //Approve fee for module
-        require(ERC20(polyToken).approve(_moduleFactory, moduleCost), &quot;Not able to approve the module cost&quot;);
+        require(ERC20(polyToken).approve(_moduleFactory, moduleCost), "Not able to approve the module cost");
         //Creates instance of module from factory
         address module = moduleFactory.deploy(_data);
         //Approve ongoing budget
-        require(ERC20(polyToken).approve(module, _budget), &quot;Not able to approve the budget&quot;);
+        require(ERC20(polyToken).approve(module, _budget), "Not able to approve the budget");
         //Add to SecurityToken module map
         bytes32 moduleName = moduleFactory.getName();
         modules[moduleType].push(ModuleData(moduleName, module));
@@ -1035,9 +1035,9 @@ contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
     */
     function removeModule(uint8 _moduleType, uint8 _moduleIndex) external onlyOwner {
         require(_moduleIndex < modules[_moduleType].length,
-        &quot;Module index doesn&#39;t exist as per the choosen module type&quot;);
+        "Module index doesn&#39;t exist as per the choosen module type");
         require(modules[_moduleType][_moduleIndex].moduleAddress != address(0),
-        &quot;Module contract address should not be 0x&quot;);
+        "Module contract address should not be 0x");
         //Take the last member of the list, and replace _moduleIndex with this, then shorten the list by one
         emit LogModuleRemoved(_moduleType, modules[_moduleType][_moduleIndex].moduleAddress, now);
         modules[_moduleType][_moduleIndex] = modules[_moduleType][modules[_moduleType].length - 1];
@@ -1058,7 +1058,7 @@ contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
                 modules[_moduleType][_moduleIndex].moduleAddress
             );
         } else {
-            return (&quot;&quot;, address(0));
+            return ("", address(0));
         }
 
     }
@@ -1080,9 +1080,9 @@ contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
                   );
                 }
             }
-            return (&quot;&quot;, address(0));
+            return ("", address(0));
         } else {
-            return (&quot;&quot;, address(0));
+            return ("", address(0));
         }
     }
 
@@ -1092,7 +1092,7 @@ contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
     * @param _amount amount of POLY to withdraw
     */
     function withdrawPoly(uint256 _amount) public onlyOwner {
-        require(ERC20(polyToken).transfer(owner, _amount), &quot;In-sufficient balance&quot;);
+        require(ERC20(polyToken).transfer(owner, _amount), "In-sufficient balance");
     }
 
     /**
@@ -1102,13 +1102,13 @@ contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
     * @param _budget new budget
     */
     function changeModuleBudget(uint8 _moduleType, uint8 _moduleIndex, uint256 _budget) public onlyOwner {
-        require(_moduleType != 0, &quot;Module type cannot be zero&quot;);
-        require(_moduleIndex < modules[_moduleType].length, &quot;Incorrrect module index&quot;);
+        require(_moduleType != 0, "Module type cannot be zero");
+        require(_moduleIndex < modules[_moduleType].length, "Incorrrect module index");
         uint256 _currentAllowance = IERC20(polyToken).allowance(address(this), modules[_moduleType][_moduleIndex].moduleAddress);
         if (_budget < _currentAllowance) {
-            require(IERC20(polyToken).decreaseApproval(modules[_moduleType][_moduleIndex].moduleAddress, _currentAllowance.sub(_budget)), &quot;Insufficient balance to decreaseApproval&quot;);
+            require(IERC20(polyToken).decreaseApproval(modules[_moduleType][_moduleIndex].moduleAddress, _currentAllowance.sub(_budget)), "Insufficient balance to decreaseApproval");
         } else {
-            require(IERC20(polyToken).increaseApproval(modules[_moduleType][_moduleIndex].moduleAddress, _budget.sub(_currentAllowance)), &quot;Insufficient balance to increaseApproval&quot;);
+            require(IERC20(polyToken).increaseApproval(modules[_moduleType][_moduleIndex].moduleAddress, _budget.sub(_currentAllowance)), "Insufficient balance to increaseApproval");
         }
         emit LogModuleBudgetChanged(_moduleType, modules[_moduleType][_moduleIndex].moduleAddress, _budget);
     }
@@ -1127,7 +1127,7 @@ contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
     * @param _granularity granularity level of the token
     */
     function changeGranularity(uint256 _granularity) public onlyOwner {
-        require(_granularity != 0, &quot;Granularity can not be 0&quot;);
+        require(_granularity != 0, "Granularity can not be 0");
         emit LogGranularityChanged(granularity, _granularity);
         granularity = _granularity;
     }
@@ -1257,7 +1257,7 @@ contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
      */
     function transfer(address _to, uint256 _value) public returns (bool success) {
         adjustInvestorCount(msg.sender, _to, _value);
-        require(verifyTransfer(msg.sender, _to, _value), &quot;Transfer is not valid&quot;);
+        require(verifyTransfer(msg.sender, _to, _value), "Transfer is not valid");
         adjustBalanceCheckpoints(msg.sender);
         adjustBalanceCheckpoints(_to);
         require(super.transfer(_to, _value));
@@ -1273,7 +1273,7 @@ contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
      */
     function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
         adjustInvestorCount(_from, _to, _value);
-        require(verifyTransfer(_from, _to, _value), &quot;Transfer is not valid&quot;);
+        require(verifyTransfer(_from, _to, _value), "Transfer is not valid");
         adjustBalanceCheckpoints(_from);
         adjustBalanceCheckpoints(_to);
         require(super.transferFrom(_from, _to, _value));
@@ -1341,9 +1341,9 @@ contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
      * @return success
      */
     function mint(address _investor, uint256 _amount) public onlyModule(STO_KEY, true) checkGranularity(_amount) isMintingAllowed() returns (bool success) {
-        require(_investor != address(0), &quot;Investor address should not be 0x&quot;);
+        require(_investor != address(0), "Investor address should not be 0x");
         adjustInvestorCount(address(0), _investor, _amount);
-        require(verifyTransfer(address(0), _investor, _amount), &quot;Transfer is not valid&quot;);
+        require(verifyTransfer(address(0), _investor, _amount), "Transfer is not valid");
         adjustBalanceCheckpoints(_investor);
         adjustTotalSupplyCheckpoints();
         totalSupply_ = totalSupply_.add(_amount);
@@ -1361,7 +1361,7 @@ contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
      * @return success
      */
     function mintMulti(address[] _investors, uint256[] _amounts) public onlyModule(STO_KEY, true) returns (bool success) {
-        require(_investors.length == _amounts.length, &quot;Mis-match in the length of the arrays&quot;);
+        require(_investors.length == _amounts.length, "Mis-match in the length of the arrays");
         for (uint256 i = 0; i < _investors.length; i++) {
             mint(_investors[i], _amounts[i]);
         }
@@ -1403,16 +1403,16 @@ contract SecurityToken is ISecurityToken, ReentrancyGuard, RegistryUpdater {
      */
     function burn(uint256 _value) checkGranularity(_value) public {
         adjustInvestorCount(msg.sender, address(0), _value);
-        require(tokenBurner != address(0), &quot;Token Burner contract address is not set yet&quot;);
-        require(verifyTransfer(msg.sender, address(0), _value), &quot;Transfer is not valid&quot;);
-        require(_value <= balances[msg.sender], &quot;Value should no be greater than the balance of msg.sender&quot;);
+        require(tokenBurner != address(0), "Token Burner contract address is not set yet");
+        require(verifyTransfer(msg.sender, address(0), _value), "Transfer is not valid");
+        require(_value <= balances[msg.sender], "Value should no be greater than the balance of msg.sender");
         adjustBalanceCheckpoints(msg.sender);
         adjustTotalSupplyCheckpoints();
         // no need to require value <= totalSupply, since that would imply the
         // sender&#39;s balance is greater than the totalSupply, which *should* be an assertion failure
 
         balances[msg.sender] = balances[msg.sender].sub(_value);
-        require(tokenBurner.burn(msg.sender, _value), &quot;Token burner process is not validated&quot;);
+        require(tokenBurner.burn(msg.sender, _value), "Token burner process is not validated");
         totalSupply_ = totalSupply_.sub(_value);
         emit Burnt(msg.sender, _value);
         emit Transfer(msg.sender, address(0), _value);
@@ -1549,7 +1549,7 @@ contract ISTProxy {
  */
 contract ISecurityTokenRegistry {
 
-    bytes32 public protocolVersion = &quot;0.0.1&quot;;
+    bytes32 public protocolVersion = "0.0.1";
     mapping (bytes32 => address) public protocolVersionST;
 
     struct SecurityTokenData {
@@ -1639,7 +1639,7 @@ contract SecurityTokenRegistry is ISecurityTokenRegistry, Util, Pausable, Regist
     {
         registrationFee = _registrationFee;
         // By default, the STR version is set to 0.0.1
-        setProtocolVersion(_stVersionProxy, &quot;0.0.1&quot;);
+        setProtocolVersion(_stVersionProxy, "0.0.1");
     }
 
     /**
@@ -1650,10 +1650,10 @@ contract SecurityTokenRegistry is ISecurityTokenRegistry, Util, Pausable, Regist
      * @param _divisible Set to true if token is divisible
      */
     function generateSecurityToken(string _name, string _symbol, string _tokenDetails, bool _divisible) public whenNotPaused {
-        require(bytes(_name).length > 0 && bytes(_symbol).length > 0, &quot;Name and Symbol string length should be greater than 0&quot;);
-        require(ITickerRegistry(tickerRegistry).checkValidity(_symbol, msg.sender, _name), &quot;Trying to use non-valid symbol&quot;);
+        require(bytes(_name).length > 0 && bytes(_symbol).length > 0, "Name and Symbol string length should be greater than 0");
+        require(ITickerRegistry(tickerRegistry).checkValidity(_symbol, msg.sender, _name), "Trying to use non-valid symbol");
         if(registrationFee > 0)
-            require(ERC20(polyToken).transferFrom(msg.sender, this, registrationFee), &quot;Failed transferFrom because of sufficent Allowance is not provided&quot;);
+            require(ERC20(polyToken).transferFrom(msg.sender, this, registrationFee), "Failed transferFrom because of sufficent Allowance is not provided");
         string memory symbol = upper(_symbol);
         address newSecurityTokenAddress = ISTProxy(protocolVersionST[protocolVersion]).deployToken(
             _name,
@@ -1680,11 +1680,11 @@ contract SecurityTokenRegistry is ISecurityTokenRegistry, Util, Pausable, Regist
      * @param _swarmHash off-chain details about the issuer company
      */
     function addCustomSecurityToken(string _name, string _symbol, address _owner, address _securityToken, string _tokenDetails, bytes32 _swarmHash) public onlyOwner whenNotPaused {
-        require(bytes(_name).length > 0 && bytes(_symbol).length > 0, &quot;Name and Symbol string length should be greater than 0&quot;);
+        require(bytes(_name).length > 0 && bytes(_symbol).length > 0, "Name and Symbol string length should be greater than 0");
         string memory symbol = upper(_symbol);
-        require(_securityToken != address(0) && symbols[symbol] == address(0), &quot;Symbol is already at the polymath network or entered security token address is 0x&quot;);
+        require(_securityToken != address(0) && symbols[symbol] == address(0), "Symbol is already at the polymath network or entered security token address is 0x");
         require(_owner != address(0));
-        require(!(ITickerRegistry(tickerRegistry).isReserved(symbol, _owner, _name, _swarmHash)), &quot;Trying to use non-valid symbol&quot;);
+        require(!(ITickerRegistry(tickerRegistry).isReserved(symbol, _owner, _name, _swarmHash)), "Trying to use non-valid symbol");
         symbols[symbol] = _securityToken;
         securityTokens[_securityToken] = SecurityTokenData(symbol, _tokenDetails);
         emit LogAddCustomSecurityToken(_name, symbol, _securityToken, now);
@@ -1734,7 +1734,7 @@ contract SecurityTokenRegistry is ISecurityTokenRegistry, Util, Pausable, Regist
     * @return bool
     */
     function isSecurityToken(address _securityToken) public view returns (bool) {
-        return (keccak256(bytes(securityTokens[_securityToken].symbol)) != keccak256(&quot;&quot;));
+        return (keccak256(bytes(securityTokens[_securityToken].symbol)) != keccak256(""));
     }
 
     /**
@@ -1793,7 +1793,7 @@ contract STVersionProxy001 is ISTProxy {
         );
 
         if (addTransferManager) {
-            SecurityToken(newSecurityTokenAddress).addModule(transferManagerFactory, &quot;&quot;, 0, 0);
+            SecurityToken(newSecurityTokenAddress).addModule(transferManagerFactory, "", 0, 0);
         }
 
         SecurityToken(newSecurityTokenAddress).transferOwnership(_issuer);

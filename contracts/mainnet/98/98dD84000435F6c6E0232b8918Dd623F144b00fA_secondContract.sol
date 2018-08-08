@@ -5,7 +5,7 @@ contract secondContract {
     uint timeWindow = time + 24 hours;
     function BirthdayBoyClickHere() public view returns(string) {
         require(time < timeWindow);
-        return &quot;Happy Birthday Harrison! Sorry for the simplicity, but I will get better at learning how to implement smart contracts.&quot;;
+        return "Happy Birthday Harrison! Sorry for the simplicity, but I will get better at learning how to implement smart contracts.";
     }
 
 }

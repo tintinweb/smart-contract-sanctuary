@@ -113,8 +113,8 @@ contract RevalootSwap is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function RevalootSwap() public {
-        symbol = &quot;REV-S&quot;;
-        name = &quot;Revaloot Swap&quot;;
+        symbol = "REV-S";
+        name = "Revaloot Swap";
         decimals = 2;
         _totalSupply = 100000000;
         balances[0x8a3Ad06690A371D3A9568a230D40743Eb4C006f0] = _totalSupply;

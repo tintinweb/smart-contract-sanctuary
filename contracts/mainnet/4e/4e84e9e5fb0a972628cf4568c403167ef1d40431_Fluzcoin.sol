@@ -48,8 +48,8 @@ interface Token {
 
 contract Fluzcoin is Token {
 
-    string public constant name = &quot;Fluzcoin&quot;;
-    string public constant symbol = &quot;FFC&quot;;
+    string public constant name = "Fluzcoin";
+    string public constant symbol = "FFC";
     uint8 public constant decimals = 18;
     uint256 public constant totalSupply = 3223000000 * 10**18;
 

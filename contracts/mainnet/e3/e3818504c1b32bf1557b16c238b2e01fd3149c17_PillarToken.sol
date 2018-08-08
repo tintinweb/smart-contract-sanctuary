@@ -55,7 +55,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control 
- * functions, this simplifies the implementation of &quot;user permissions&quot;. 
+ * functions, this simplifies the implementation of "user permissions". 
  */
 contract Ownable {
   address public owner;
@@ -349,8 +349,8 @@ contract StandardToken is BasicToken, ERC20 {
 contract PillarToken is StandardToken, Ownable {
 
     using SafeMath for uint;
-    string public constant name = &quot;PILLAR&quot;;
-    string public constant symbol = &quot;PLR&quot;;
+    string public constant name = "PILLAR";
+    string public constant symbol = "PLR";
     uint public constant decimals = 18;
 
     TeamAllocation public teamAllocation;

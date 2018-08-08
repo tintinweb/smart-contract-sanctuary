@@ -109,8 +109,8 @@ contract GAY$ is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function GAY$() public {
-        symbol = &quot;GAY$&quot;;
-        name = &quot;GAY$&quot;;
+        symbol = "GAY$";
+        name = "GAY$";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x854f7f6688ba120cc4d446472c8e255a58791ded] = _totalSupply;

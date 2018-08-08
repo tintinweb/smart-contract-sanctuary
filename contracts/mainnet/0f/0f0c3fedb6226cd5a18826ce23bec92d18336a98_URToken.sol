@@ -264,8 +264,8 @@ contract URToken is StandardToken, DetailedERC20 {
 
   constructor () public{
     decimals = 18;
-    symbol = &quot;URCN&quot;;
-    name = &quot;UrToken&quot;;
+    symbol = "URCN";
+    name = "UrToken";
     totalSupply_ = INITIAL_SUPPLY;
     balances[msg.sender] = INITIAL_SUPPLY;
   }

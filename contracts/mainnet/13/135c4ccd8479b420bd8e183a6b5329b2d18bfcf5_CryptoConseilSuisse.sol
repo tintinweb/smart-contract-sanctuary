@@ -113,8 +113,8 @@ contract CryptoConseilSuisse is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CryptoConseilSuisse() public {
-        symbol = &quot;CCS&quot;;
-        name = &quot;CryptoConseilSuisse&quot;;
+        symbol = "CCS";
+        name = "CryptoConseilSuisse";
         decimals = 8;
         _totalSupply = 10000000000000000;
         balances[0x2f9fcfCB2792B942e61acecaF05732f4C700Eb71] = _totalSupply;

@@ -194,7 +194,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -240,8 +240,8 @@ contract Ownable {
  */
 contract GRCToken is StandardToken, Ownable {
 
-  string public constant name = &quot;Green Chain&quot;;
-  string public constant symbol = &quot;GRC&quot;;
+  string public constant name = "Green Chain";
+  string public constant symbol = "GRC";
   uint8 public constant decimals = 18;
 
   uint256 private constant TOKEN_UNIT = 10 ** uint256(decimals);

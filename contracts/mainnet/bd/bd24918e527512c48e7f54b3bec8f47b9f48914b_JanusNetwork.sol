@@ -76,8 +76,8 @@ contract JanusNetwork is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;JanusNetwork&quot;;
-    string public constant symbol = &quot;JANUS&quot;;
+    string public constant name = "JanusNetwork";
+    string public constant symbol = "JANUS";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 5000000000e8;

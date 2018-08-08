@@ -155,8 +155,8 @@ contract BasicToken is Ownable {
 }
 
 contract B24Token is BasicToken {
-  string public constant name = &quot;B24 Token&quot;;
-  string public constant symbol = &quot;B24&quot;;
+  string public constant name = "B24 Token";
+  string public constant symbol = "B24";
   uint8 public constant decimals = 0;
 
   function B24Token() public {}

@@ -1021,7 +1021,7 @@ contract WineSupplyChain is
 
     address public endorsements;
 
-    function WineSupplyChain(address _endorsements) Upgradable(&quot;1.0.0&quot;) public {
+    function WineSupplyChain(address _endorsements) Upgradable("1.0.0") public {
         endorsements = _endorsements;
     }
 

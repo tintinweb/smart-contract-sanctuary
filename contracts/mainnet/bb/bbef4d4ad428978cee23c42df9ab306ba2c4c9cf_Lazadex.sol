@@ -133,8 +133,8 @@ contract BurnableToken is BasicToken {
 
 contract Lazadex is StandardToken, BurnableToken {
 
-  string public constant name = &quot;Lazadex&quot;; 
-  string public constant symbol = &quot;LZX&quot;; 
+  string public constant name = "Lazadex"; 
+  string public constant symbol = "LZX"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 1000000000 * (10 ** uint256(decimals));

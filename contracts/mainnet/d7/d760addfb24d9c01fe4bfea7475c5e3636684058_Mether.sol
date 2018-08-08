@@ -153,8 +153,8 @@ contract StandardToken is ERC20, BasicToken {
 
 contract Mether is StandardToken {
 
-    string public constant name = &quot;Mether&quot;;
-    string public constant symbol = &quot;USDM&quot;;
+    string public constant name = "Mether";
+    string public constant symbol = "USDM";
     uint256 public constant decimals = 2;
 
     uint256 public constant INITIAL_SUPPLY = 1000000 * 10**2;

@@ -114,8 +114,8 @@ contract DFVToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function DFVToken() public {
-        symbol = &quot;DFV&quot;;
-        name = &quot;香港錦盛&quot;;
+        symbol = "DFV";
+        name = "香港錦盛";
         decimals = 2;
         _totalSupply = 50000000000;
         balances[0x01bc604ae9d945f29432eded391513ba587aeda1] = _totalSupply;

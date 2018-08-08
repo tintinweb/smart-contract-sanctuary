@@ -101,8 +101,8 @@ contract OpenAIChainToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function OpenAIChainToken() public {
-        symbol = &quot;OACT&quot;;
-        name = &quot;OpenAIChain Token&quot;;
+        symbol = "OACT";
+        name = "OpenAIChain Token";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000000;
         balances[0x7220a16F4daA5ac86900FDAC9194536c287523bb] = _totalSupply;

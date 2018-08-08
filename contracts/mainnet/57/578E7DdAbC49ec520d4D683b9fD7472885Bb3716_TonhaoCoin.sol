@@ -113,8 +113,8 @@ contract TonhaoCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TonhaoCoin() public {
-        symbol = &quot;tonhao&quot;;
-        name = &quot;TonhaoCoin&quot;;
+        symbol = "tonhao";
+        name = "TonhaoCoin";
         decimals = 0;
         _totalSupply = 1000;
         balances[0xbB5Ecb8deD7Bc5FD35efFF59F6a5baB901378715] = _totalSupply;

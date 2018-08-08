@@ -90,9 +90,9 @@ contract ERC20Interface is SafeMath {
 }
 
 contract Iou is ERC20Interface {
-    string public constant symbol = &quot;IOU&quot;;
-    string public constant name = &quot;I owe you&quot;;
-    string public constant longDescription = &quot;Buy or trade IOUs from Connor&quot;;
+    string public constant symbol = "IOU";
+    string public constant name = "I owe you";
+    string public constant longDescription = "Buy or trade IOUs from Connor";
 
     // Basically a decorator _; is were the main function will go
     modifier onlyOwner() 

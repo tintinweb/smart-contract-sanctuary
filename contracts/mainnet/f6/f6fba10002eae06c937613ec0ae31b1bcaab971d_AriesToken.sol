@@ -113,8 +113,8 @@ contract AriesToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AriesToken() public {
-        symbol = &quot;ARS&quot;;
-        name = &quot;Aries Token&quot;;
+        symbol = "ARS";
+        name = "Aries Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x6666C9cD810D713eB9E70443e8E44C27f0E37ec8] = _totalSupply;

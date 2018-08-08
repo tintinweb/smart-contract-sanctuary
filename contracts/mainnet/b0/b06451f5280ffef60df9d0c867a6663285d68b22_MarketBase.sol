@@ -109,7 +109,7 @@ contract CompanyConstants {
     
     uint constant MAX_CLAIM_SHARES_PERCENTAGE = 5;
     
-    // Release cycle! Every company needs to wait for &quot;at least&quot; 10 days
+    // Release cycle! Every company needs to wait for "at least" 10 days
     // before releasing next set of shares!
     uint constant MIN_COOLDOWN_TIME = 10; // in days
     uint constant MAX_COOLDOWN_TIME = 255;

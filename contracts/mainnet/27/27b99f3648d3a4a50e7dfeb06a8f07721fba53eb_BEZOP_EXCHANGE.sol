@@ -137,8 +137,8 @@ contract BurnableToken is StandardToken {
 
 contract BEZOP_EXCHANGE is BurnableToken, Ownable {
 
-    string public constant name = &quot;Bezop Exchange Token&quot;;
-    string public constant symbol = &quot;Bezx&quot;;
+    string public constant name = "Bezop Exchange Token";
+    string public constant symbol = "Bezx";
     uint public constant decimals = 18;
     uint256 public constant initialSupply = 1618137250 * (10 ** uint256(decimals));
 

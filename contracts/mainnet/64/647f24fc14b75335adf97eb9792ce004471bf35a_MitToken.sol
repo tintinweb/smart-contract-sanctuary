@@ -303,8 +303,8 @@ contract MitToken is StanderdToken, PreviligedToken {
         decimals = 18;
         _totalSupply = initialSupply * 10 ** uint(decimals);  // Update total supply with the decimal amount
         balances[msg.sender] = _totalSupply;                // Give the creator all initial tokens
-        name = &quot;MitCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;MITC&quot;;                               // Set the symbol for display purposes3
+        name = "MitCoin";                                   // Set the name for display purposes
+        symbol = "MITC";                               // Set the symbol for display purposes3
     }
 
     /**

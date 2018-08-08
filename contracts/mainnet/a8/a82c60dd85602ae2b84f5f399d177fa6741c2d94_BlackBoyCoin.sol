@@ -32,8 +32,8 @@ contract BlackBoyCoin {
     ) public {
         totalSupply = 100000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;BlackBoyCoin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;BYC&quot;;                               // Set the symbol for display purposes
+        name = "BlackBoyCoin";                                   // Set the name for display purposes
+        symbol = "BYC";                               // Set the symbol for display purposes
     }
 
     /**

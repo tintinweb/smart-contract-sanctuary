@@ -150,7 +150,7 @@ contract AnimecardAccessControl {
         _;
     }
 
-    /// @dev Called by any &quot;C-level&quot; role to pause the contract. Used only when
+    /// @dev Called by any "C-level" role to pause the contract. Used only when
     ///  a bug or exploit is detected and we need to limit damage.
     function pause() external onlyCLevel whenNotPaused {
         paused = true;
@@ -354,25 +354,25 @@ contract AnimecardPricing is AnimecardBase {
 
 contract AnimecardOwnership is AnimecardPricing, ERC721 {
     /// Name of the collection of NFTs managed by this contract, as defined in ERC721.
-    string public constant NAME = &quot;CryptoAnime&quot;;
+    string public constant NAME = "CryptoAnime";
     /// Symbol referencing the entire collection of NFTs managed in this contract, as
     /// defined in ERC721.
-    string public constant SYMBOL = &quot;ANM&quot;;
+    string public constant SYMBOL = "ANM";
 
     bytes4 public constant INTERFACE_SIGNATURE_ERC165 =
-        bytes4(keccak256(&quot;supportsInterface(bytes4)&quot;));
+        bytes4(keccak256("supportsInterface(bytes4)"));
 
     bytes4 public constant INTERFACE_SIGNATURE_ERC721 =
-        bytes4(keccak256(&quot;name()&quot;)) ^
-        bytes4(keccak256(&quot;symbol()&quot;)) ^
-        bytes4(keccak256(&quot;totalSupply()&quot;)) ^
-        bytes4(keccak256(&quot;balanceOf(address)&quot;)) ^
-        bytes4(keccak256(&quot;ownerOf(uint256)&quot;)) ^
-        bytes4(keccak256(&quot;approve(address,uint256)&quot;)) ^
-        bytes4(keccak256(&quot;transfer(address,uint256)&quot;)) ^
-        bytes4(keccak256(&quot;transferFrom(address,address,uint256)&quot;)) ^
-        bytes4(keccak256(&quot;tokensOfOwner(address)&quot;)) ^
-        bytes4(keccak256(&quot;tokenMetadata(uint256,string)&quot;));
+        bytes4(keccak256("name()")) ^
+        bytes4(keccak256("symbol()")) ^
+        bytes4(keccak256("totalSupply()")) ^
+        bytes4(keccak256("balanceOf(address)")) ^
+        bytes4(keccak256("ownerOf(uint256)")) ^
+        bytes4(keccak256("approve(address,uint256)")) ^
+        bytes4(keccak256("transfer(address,uint256)")) ^
+        bytes4(keccak256("transferFrom(address,address,uint256)")) ^
+        bytes4(keccak256("tokensOfOwner(address)")) ^
+        bytes4(keccak256("tokenMetadata(uint256,string)"));
 
     /*** EVENTS ***/
     /// Approval event as defined in the current draft of ERC721. Fired every time

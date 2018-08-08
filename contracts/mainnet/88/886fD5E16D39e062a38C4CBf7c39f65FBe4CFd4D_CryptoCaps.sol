@@ -91,7 +91,7 @@ pragma solidity ^0.4.24;
 	contract ERC721Receiver {
 	  /**
 	   * @dev Magic value to be returned upon successful reception of an NFT
-	   *  Equals to `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`,
+	   *  Equals to `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`,
 	   *  which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
 	   */
 	  bytes4 internal constant ERC721_RECEIVED = 0x150b7a02;
@@ -107,7 +107,7 @@ pragma solidity ^0.4.24;
 	   * @param _from The address which previously owned the token
 	   * @param _tokenId The NFT identifier which is being transfered
 	   * @param _data Additional data with no specified format
-	   * @return `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`
+	   * @return `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`
 	   */
 	  function onERC721Received(
 		address _operator,
@@ -149,7 +149,7 @@ pragma solidity ^0.4.24;
 	/**
 	 * @title Ownable
 	 * @dev The Ownable contract has an owner address, and provides basic authorization control
-	 * functions, this simplifies the implementation of &quot;user permissions&quot;.
+	 * functions, this simplifies the implementation of "user permissions".
 	 */
 	contract Ownable {
 	  address public owner;
@@ -368,7 +368,7 @@ pragma solidity ^0.4.24;
 	  using SafeMath for uint256;
 	  using AddressUtils for address;
 
-	  // Equals to `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`
+	  // Equals to `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`
 	  // which can be also obtained as `ERC721Receiver(0).onERC721Received.selector`
 	  bytes4 private constant ERC721_RECEIVED = 0x150b7a02;
 
@@ -526,7 +526,7 @@ pragma solidity ^0.4.24;
 	   * @dev Safely transfers the ownership of a given token ID to another address
 	   * If the target address is a contract, it must implement `onERC721Received`,
 	   * which is called upon a safe transfer, and return the magic value
-	   * `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`; otherwise,
+	   * `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`; otherwise,
 	   * the transfer is reverted.
 	   *
 	   * Requires the msg sender to be the owner, approved, or operator
@@ -543,14 +543,14 @@ pragma solidity ^0.4.24;
 		canTransfer(_tokenId)
 	  {
 		// solium-disable-next-line arg-overflow
-		safeTransferFrom(_from, _to, _tokenId, &quot;&quot;);
+		safeTransferFrom(_from, _to, _tokenId, "");
 	  }
 
 	  /**
 	   * @dev Safely transfers the ownership of a given token ID to another address
 	   * If the target address is a contract, it must implement `onERC721Received`,
 	   * which is called upon a safe transfer, and return the magic value
-	   * `bytes4(keccak256(&quot;onERC721Received(address,address,uint256,bytes)&quot;))`; otherwise,
+	   * `bytes4(keccak256("onERC721Received(address,address,uint256,bytes)"))`; otherwise,
 	   * the transfer is reverted.
 	   * Requires the msg sender to be the owner, approved, or operator
 	   * @param _from current owner of the token
@@ -919,7 +919,7 @@ pragma solidity ^0.4.24;
 	  /// The description of the token
 	  mapping(uint256 => string) tokenDescription;
 
-	  constructor() ERC721Token(&quot;CryptoCaps&quot;, &quot;QCC&quot;) public {
+	  constructor() ERC721Token("CryptoCaps", "QCC") public {
 		// any init code when you deploy the contract would run here
 	  }
 
@@ -934,13 +934,13 @@ pragma solidity ^0.4.24;
 		string _description
 	  ) external payable {
 		bytes memory _titleBytes = bytes(_title);
-		require(_titleBytes.length >= TITLE_MIN_LENGTH, &quot;Title is too short&quot;);
-		require(_titleBytes.length <= TITLE_MAX_LENGTH, &quot;Title is too long&quot;);
+		require(_titleBytes.length >= TITLE_MIN_LENGTH, "Title is too short");
+		require(_titleBytes.length <= TITLE_MAX_LENGTH, "Title is too long");
 		
 		bytes memory _descriptionBytes = bytes(_description);
-		require(_descriptionBytes.length >= DESCRIPTION_MIN_LENGTH, &quot;Description is too short&quot;);
-		require(_descriptionBytes.length <= DESCRIPTION_MAX_LENGTH, &quot;Description is too long&quot;);
-		require(msg.value >= currentPrice, &quot;Amount of Ether sent too small&quot;);
+		require(_descriptionBytes.length >= DESCRIPTION_MIN_LENGTH, "Description is too short");
+		require(_descriptionBytes.length <= DESCRIPTION_MAX_LENGTH, "Description is too long");
+		require(msg.value >= currentPrice, "Amount of Ether sent too small");
 
 		uint256 index = allTokens.length + 1;
 

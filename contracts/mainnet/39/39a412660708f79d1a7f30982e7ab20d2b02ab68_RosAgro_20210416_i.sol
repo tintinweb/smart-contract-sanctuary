@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	RosAgro_20210416_i				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	RosAgro_20210416_i		&quot;	;
-	string	public	constant	symbol =	&quot;	ROSAGRI		&quot;	;
+	string	public	constant	name =	"	RosAgro_20210416_i		"	;
+	string	public	constant	symbol =	"	ROSAGRI		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

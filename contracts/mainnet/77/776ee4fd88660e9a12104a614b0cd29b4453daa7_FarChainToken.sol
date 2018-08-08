@@ -140,8 +140,8 @@ contract StandardToken is Token {
 
  contract FarChainToken is StandardToken, SafeMath {
 	 
-    string public constant symbol =&quot;FARC&quot;;
-    string public constant name = &quot;Far Chain Token&quot;;
+    string public constant symbol ="FARC";
+    string public constant name = "Far Chain Token";
     uint256 public constant decimals = 18;
 	uint256 public constant _totalSupply = 200000000 * 10**18;
 	

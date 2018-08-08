@@ -1,5 +1,5 @@
 /**
- * The OGXNext &quot;Orgura Exchange&quot; token contract bases on the ERC20 standard token contracts 
+ * The OGXNext "Orgura Exchange" token contract bases on the ERC20 standard token contracts 
  * OGX Coin ICO. (Orgura group)
  * authors: Roongrote Suranart
  * */
@@ -259,8 +259,8 @@ contract Owned {
 
 
 contract OrguraExchange is StandardToken, Owned {
-    string public constant name = &quot;Orgura Exchange&quot;;
-    string public constant symbol = &quot;OGX&quot;;
+    string public constant name = "Orgura Exchange";
+    string public constant symbol = "OGX";
     uint8 public constant decimals = 18;
 
     /// Maximum tokens to be allocated.
@@ -320,7 +320,7 @@ contract OrguraExchange is StandardToken, Owned {
     /// team tokens are locked until this date (27 APR 2019) 00:00:00
     uint64 private constant dateTeamTokensLockedTill = 1556323200;
 
-    /// no tokens can be ever issued when this is set to &quot;true&quot;
+    /// no tokens can be ever issued when this is set to "true"
     bool public tokenSaleClosed = false;
 
     /// contract to be called to release the Penthamon team tokens

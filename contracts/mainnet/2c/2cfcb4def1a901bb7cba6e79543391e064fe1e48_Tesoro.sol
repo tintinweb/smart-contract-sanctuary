@@ -94,7 +94,7 @@ contract Tesoro is owned {
   // Then anyone can verify that the signature of the magic number matches the
   // same that is hard-coded below. Note we used geth 1.8.2-stable to generate.
   //
-  // > web3.eth.sign( &quot;<public address>&quot;, web3.sha3(&quot;<magic number>&quot;) )
+  // > web3.eth.sign( "<public address>", web3.sha3("<magic number>") )
   //
   // Then scan the smart contracts for all incoming transactions and find the
   // first one whose value satisfies the equation stated above.
@@ -104,9 +104,9 @@ contract Tesoro is owned {
 
   event Result( string hexprivkey, string magicnumber );
 
-  string public pubaddr = &quot;0xff982b2a62eb872d01eb98761f1ff66f6055a8e6&quot;;
+  string public pubaddr = "0xff982b2a62eb872d01eb98761f1ff66f6055a8e6";
 
-  string public magicnumsig = &quot;0x28c599e8564c4e477fe69c712df9a6ad232b2dbadf77ffd9e406f1d5fa32ef7509ec26fa7fd559217ecd0d47ca04bb2d40613d0ad0b8aec2ea545baae9f763571b&quot;;
+  string public magicnumsig = "0x28c599e8564c4e477fe69c712df9a6ad232b2dbadf77ffd9e406f1d5fa32ef7509ec26fa7fd559217ecd0d47ca04bb2d40613d0ad0b8aec2ea545baae9f763571b";
 
   function Tesoro() public {}
 

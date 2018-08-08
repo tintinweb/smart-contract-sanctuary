@@ -173,7 +173,7 @@ contract ERC23StandardToken is ERC23BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -259,8 +259,8 @@ contract MintableToken is ERC23StandardToken,Ownable {
 
 
 contract ANSAToken is MintableToken { 
-  string public name=&quot;ANSA TOKEN&quot;;
-  string public symbol=&quot;ANSA&quot;;
+  string public name="ANSA TOKEN";
+  string public symbol="ANSA";
   uint8 public decimals=18;
   uint256 public tradeStartTime;
 

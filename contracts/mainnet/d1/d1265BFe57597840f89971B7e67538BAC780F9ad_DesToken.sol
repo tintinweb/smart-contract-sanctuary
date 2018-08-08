@@ -160,8 +160,8 @@ contract StandardToken is BasicToken, ERC20 {
  */
 contract DesToken is StandardToken {
 
-  string public name = &quot;DES Token&quot;;
-  string public symbol = &quot;DES&quot;;
+  string public name = "DES Token";
+  string public symbol = "DES";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 35000000 * 1 ether;
 
@@ -238,7 +238,7 @@ contract Haltable is Ownable {
 contract DesTokenSale is Haltable {
     using SafeMath for uint;
 
-    string public name = &quot;3DES Token Sale Contract&quot;;
+    string public name = "3DES Token Sale Contract";
 
     DesToken public token;
     address public beneficiary;

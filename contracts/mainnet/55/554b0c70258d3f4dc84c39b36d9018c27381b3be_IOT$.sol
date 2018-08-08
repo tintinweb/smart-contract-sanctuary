@@ -109,8 +109,8 @@ contract IOT$ is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IOT$() public {
-        symbol = &quot;IOT$&quot;;
-        name = &quot;IOT$&quot;;
+        symbol = "IOT$";
+        name = "IOT$";
         decimals = 18;
         _totalSupply = 2000000000000000000000000000;
         balances[0x56d84C40Dd20DDB0fA1021f2a536BE04B333336B] = _totalSupply;

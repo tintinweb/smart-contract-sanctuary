@@ -29,8 +29,8 @@ library SafeMath {
 contract SIEToken {
     using SafeMath for uint;
 
-    string public name = &quot;Social Intelligent Evolution&quot;;      //  token name
-    string public symbol = &quot;SIE&quot;;           //  token symbol
+    string public name = "Social Intelligent Evolution";      //  token name
+    string public symbol = "SIE";           //  token symbol
     uint256 public decimals = 6;            //  token digit
 
     mapping (address => uint256) public balanceOf;

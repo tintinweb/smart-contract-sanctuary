@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract HDT is StandardToken, Ownable {
 
-    string public constant name = &quot;Hard Token&quot;;
-    string public constant symbol = &quot;HDT&quot;;
+    string public constant name = "Hard Token";
+    string public constant symbol = "HDT";
     uint256 public constant decimals = 8;
 
     function HDT() public {

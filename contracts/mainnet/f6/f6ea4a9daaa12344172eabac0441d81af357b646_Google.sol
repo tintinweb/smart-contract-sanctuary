@@ -113,8 +113,8 @@ contract Google is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Google() public {
-        symbol = &quot;G&quot;;
-        name = &quot;Google &quot;;
+        symbol = "G";
+        name = "Google ";
         decimals = 18;
         _totalSupply = 10000000000000000000000000000;
         balances[0x2d57365a7ab22425f09D49bB0baFB0426EB8dDF9] = _totalSupply;

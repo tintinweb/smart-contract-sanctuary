@@ -38,7 +38,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -328,8 +328,8 @@ contract Grantable is BasicToken {
 //GSENetwork
 contract GSENetwork is StandardToken, Grantable {
     using SafeMath for uint256;
-    string public constant name = &quot;GSENetwork&quot;; // Token Full Name
-    string public constant symbol = &quot;GSE&quot;; // Token Simplied Name
+    string public constant name = "GSENetwork"; // Token Full Name
+    string public constant symbol = "GSE"; // Token Simplied Name
     uint256 public constant decimals = 4;
     uint256 constant totalToken = 1000 * (10**12); // Total Token
 

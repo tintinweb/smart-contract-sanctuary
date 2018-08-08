@@ -3,7 +3,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -270,9 +270,9 @@ contract MintableToken is StandardToken, Ownable {
 
 contract GDR is MintableToken {
 
-  string public constant name = &quot;Golden Resource&quot;;
+  string public constant name = "Golden Resource";
 
-  string public constant symbol = &quot;GDR&quot;;
+  string public constant symbol = "GDR";
 
   uint8 public constant decimals = 18;
 
@@ -338,7 +338,7 @@ contract PreICO is Ownable, ReentrancyGuard {
    * @param amount amount of tokens purchased
    */
   event TokenPurchase(address indexed purchaser, address indexed beneficiary, uint256 value, uint256 amount);
-// 1523615762, 71, &quot;0x938985cffa2cc45c680949c1bfa151fe5eb1c9e1&quot;, &quot;0xf39C702594792B91aec6d881C9e6ebD2022A2271&quot;, 19539531402957
+// 1523615762, 71, "0x938985cffa2cc45c680949c1bfa151fe5eb1c9e1", "0xf39C702594792B91aec6d881C9e6ebD2022A2271", 19539531402957
 
   function PreICO(
   uint256 _startTime,

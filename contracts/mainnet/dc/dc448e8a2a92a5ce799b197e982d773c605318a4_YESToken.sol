@@ -118,8 +118,8 @@ contract StandardToken is newToken, ERC20 {
 }
 
  contract BriantToken is StandardToken, Ownable {
-  string public constant name = &quot;Briant New Coin 4&quot;;
-  string public constant symbol = &quot;BRI4&quot;;
+  string public constant name = "Briant New Coin 4";
+  string public constant symbol = "BRI4";
   uint public constant decimals = 2;
   mapping (address => uint256) public balanceOf;
     uint minBalanceForAccounts;

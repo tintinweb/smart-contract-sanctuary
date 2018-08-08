@@ -57,8 +57,8 @@ library SafeMath {
 }
 
 contract Token {
-    string public name = &quot;DevronKim&#39;s Research Purpose&quot;;
-    string public constant symbol = &quot;DRP&quot;;
+    string public name = "DevronKim&#39;s Research Purpose";
+    string public constant symbol = "DRP";
     uint8 public constant decimals = 18;
     uint256 public totalSupply = 100000000 * 10 ** uint256(decimals);
 

@@ -351,7 +351,7 @@ contract TVToken is PausableToken, MintableToken {
   string public name = &#39;TV Token&#39;;
   string public symbol = &#39;TV&#39;;
   uint8 public decimals = 18;
-  bytes4 constant TOKEN_RECEIVED = bytes4(keccak256(&quot;onTokenReceived(address,uint256,bytes)&quot;));
+  bytes4 constant TOKEN_RECEIVED = bytes4(keccak256("onTokenReceived(address,uint256,bytes)"));
 
   constructor() public {}
 

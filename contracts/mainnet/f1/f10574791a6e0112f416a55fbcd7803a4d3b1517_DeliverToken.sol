@@ -90,8 +90,8 @@ contract DeliverToken is ERC20, Pausable {
     mapping(address => mapping(address => uint256)) internal allowed;
 
     function DeliverToken() public {
-        name = &quot;DELIVER&quot;;
-        symbol = &quot;DV&quot;;
+        name = "DELIVER";
+        symbol = "DV";
         decimals = 18;
         initialSupply = 10000000000;
         totalSupply_ = initialSupply * 10 ** uint(decimals);

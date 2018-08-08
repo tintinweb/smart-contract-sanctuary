@@ -62,8 +62,8 @@ contract TokenERC20 is Ownable {
 	
     using SafeMath for uint256;
     
-    string public constant name       = &quot;Superchain&quot;;
-    string public constant symbol     = &quot;SUP&quot;;
+    string public constant name       = "Superchain";
+    string public constant symbol     = "SUP";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply;
     address public airdrop;

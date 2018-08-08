@@ -51,8 +51,8 @@ contract JATICO is ERC20, SafeMath{
 	mapping (address => mapping (address => uint256)) allowed;
 
 	uint256 public totalSupply;
-	string 	public name = &quot;Just Another Ethereum Token&quot;;
-	string 	public symbol = &quot;JAT&quot;;
+	string 	public name = "Just Another Ethereum Token";
+	string 	public symbol = "JAT";
 	uint 	public decimals = 3;
 	uint256 public INITIAL_SUPPLY = 32000000;
 	uint256 public price;

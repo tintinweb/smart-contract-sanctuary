@@ -113,8 +113,8 @@ contract STASToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function STASToken() public {
-        symbol = &quot;STAS&quot;;
-        name = &quot;Stas Token&quot;;
+        symbol = "STAS";
+        name = "Stas Token";
         decimals = 18;
         _totalSupply = 10000000000000000000000;
         balances[0x4db2546776B47c56702E24FB1a957395EEA0c387] = _totalSupply;

@@ -8,7 +8,7 @@ interface tokenRecipient {
  * DreamTeam token contract. It implements the next capabilities:
  * 1. Standard ERC20 functionality. [OK]
  * 2. Additional utility function approveAndCall. [OK]
- * 3. Function to rescue &quot;lost forever&quot; tokens, which were accidentally sent to the contract address. [OK]
+ * 3. Function to rescue "lost forever" tokens, which were accidentally sent to the contract address. [OK]
  * 4. Additional transfer and approve functions which allow to distinct the transaction signer and executor,
  *    which enables accounts with no Ether on their balances to make token transfers and use DreamTeam services. [OK]
  * 5. Token sale distribution rules. [OK]
@@ -31,46 +31,46 @@ contract Pasadena {
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Approval(address indexed owner, address indexed spender, uint256 value);
 
-    bytes public ethSignedMessagePrefix = &quot;\x19Ethereum Signed Message:\n&quot;;
+    bytes public ethSignedMessagePrefix = "\x19Ethereum Signed Message:\n";
     enum sigStandard { typed, personal, stringHex }
     enum sigDestination { transfer, approve, approveAndCall, transferFrom }
     bytes32 public sigDestinationTransfer = keccak256(
-        &quot;address Token Contract Address&quot;,
-        &quot;address Sender&#39;s Address&quot;,
-        &quot;address Recipient&#39;s Address&quot;,
-        &quot;uint256 Amount to Transfer (last six digits are decimals)&quot;,
-        &quot;uint256 Fee in Tokens Paid to Executor (last six digits are decimals)&quot;,
-        &quot;uint256 Signature Expiration Timestamp (unix timestamp)&quot;,
-        &quot;uint256 Signature ID&quot;
+        "address Token Contract Address",
+        "address Sender&#39;s Address",
+        "address Recipient&#39;s Address",
+        "uint256 Amount to Transfer (last six digits are decimals)",
+        "uint256 Fee in Tokens Paid to Executor (last six digits are decimals)",
+        "uint256 Signature Expiration Timestamp (unix timestamp)",
+        "uint256 Signature ID"
     ); // `transferViaSignature`: keccak256(address(this), from, to, value, fee, deadline, sigId)
     bytes32 public sigDestinationTransferFrom = keccak256(
-        &quot;address Token Contract Address&quot;,
-        &quot;address Address Approved for Withdraw&quot;,
-        &quot;address Account to Withdraw From&quot;,
-        &quot;address Withdrawal Recipient Address&quot;,
-        &quot;uint256 Amount to Transfer (last six digits are decimals)&quot;,
-        &quot;uint256 Fee in Tokens Paid to Executor (last six digits are decimals)&quot;,
-        &quot;uint256 Signature Expiration Timestamp (unix timestamp)&quot;,
-        &quot;uint256 Signature ID&quot;
+        "address Token Contract Address",
+        "address Address Approved for Withdraw",
+        "address Account to Withdraw From",
+        "address Withdrawal Recipient Address",
+        "uint256 Amount to Transfer (last six digits are decimals)",
+        "uint256 Fee in Tokens Paid to Executor (last six digits are decimals)",
+        "uint256 Signature Expiration Timestamp (unix timestamp)",
+        "uint256 Signature ID"
     ); // `transferFromViaSignature`: keccak256(address(this), signer, from, to, value, fee, deadline, sigId)
     bytes32 public sigDestinationApprove = keccak256(
-        &quot;address Token Contract Address&quot;,
-        &quot;address Withdrawal Approval Address&quot;,
-        &quot;address Withdrawal Recipient Address&quot;,
-        &quot;uint256 Amount to Transfer (last six digits are decimals)&quot;,
-        &quot;uint256 Fee in Tokens Paid to Executor (last six digits are decimals)&quot;,
-        &quot;uint256 Signature Expiration Timestamp (unix timestamp)&quot;,
-        &quot;uint256 Signature ID&quot;
+        "address Token Contract Address",
+        "address Withdrawal Approval Address",
+        "address Withdrawal Recipient Address",
+        "uint256 Amount to Transfer (last six digits are decimals)",
+        "uint256 Fee in Tokens Paid to Executor (last six digits are decimals)",
+        "uint256 Signature Expiration Timestamp (unix timestamp)",
+        "uint256 Signature ID"
     ); // `approveViaSignature`: keccak256(address(this), from, spender, value, fee, deadline, sigId)
     bytes32 public sigDestinationApproveAndCall = keccak256( // `approveAndCallViaSignature`
-        &quot;address Token Contract Address&quot;,
-        &quot;address Withdrawal Approval Address&quot;,
-        &quot;address Withdrawal Recipient Address&quot;,
-        &quot;uint256 Amount to Transfer (last six digits are decimals)&quot;,
-        &quot;bytes Data to Transfer&quot;,
-        &quot;uint256 Fee in Tokens Paid to Executor (last six digits are decimals)&quot;,
-        &quot;uint256 Signature Expiration Timestamp (unix timestamp)&quot;,
-        &quot;uint256 Signature ID&quot;
+        "address Token Contract Address",
+        "address Withdrawal Approval Address",
+        "address Withdrawal Recipient Address",
+        "uint256 Amount to Transfer (last six digits are decimals)",
+        "bytes Data to Transfer",
+        "uint256 Fee in Tokens Paid to Executor (last six digits are decimals)",
+        "uint256 Signature Expiration Timestamp (unix timestamp)",
+        "uint256 Signature ID"
     ); // `approveAndCallViaSignature`: keccak256(address(this), from, spender, value, extraData, fee, deadline, sigId)
 
     constructor (string tokenName, string tokenSymbol) public {
@@ -113,7 +113,7 @@ contract Pasadena {
      * Internal method that makes sure that the given signature corresponds to a given data and is made by `signer`.
      * It utilizes three (four) standards of message signing in Ethereum, as at the moment of this smart contract
      * development there is no single signing standard defined. For example, Metamask and Geth both support
-     * personal_sign standard, SignTypedData is only supported by Matamask, Trezor does not support &quot;widely adopted&quot;
+     * personal_sign standard, SignTypedData is only supported by Matamask, Trezor does not support "widely adopted"
      * Ethereum personal_sign but rather personal_sign with fixed prefix and so on.
      * Note that it is always possible to forge any of these signatures using the private key, the problem is that
      * third-party wallets must adopt a single standard for signing messages.
@@ -150,15 +150,15 @@ contract Pasadena {
             );
         } else if (std == sigStandard.personal) { // Ethereum signed message signature (Geth and Trezor)
             require(
-                signer == ecrecover(keccak256(ethSignedMessagePrefix, &quot;32&quot;, data), v, r, s) // Geth-adopted
+                signer == ecrecover(keccak256(ethSignedMessagePrefix, "32", data), v, r, s) // Geth-adopted
                 ||
-                signer == ecrecover(keccak256(ethSignedMessagePrefix, &quot;\x20&quot;, data), v, r, s) // Trezor-adopted
+                signer == ecrecover(keccak256(ethSignedMessagePrefix, "\x20", data), v, r, s) // Trezor-adopted
             );
         } else { // == 2; Signed string hash signature (the most expensive but universal)
             require(
-                signer == ecrecover(keccak256(ethSignedMessagePrefix, &quot;64&quot;, hexToString(data)), v, r, s) // Geth
+                signer == ecrecover(keccak256(ethSignedMessagePrefix, "64", hexToString(data)), v, r, s) // Geth
                 ||
-                signer == ecrecover(keccak256(ethSignedMessagePrefix, &quot;\x40&quot;, hexToString(data)), v, r, s) // Trezor
+                signer == ecrecover(keccak256(ethSignedMessagePrefix, "\x40", hexToString(data)), v, r, s) // Trezor
             );
         }
         usedSigIds[signer][sigId] = true;

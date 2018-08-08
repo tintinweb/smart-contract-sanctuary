@@ -172,7 +172,7 @@ contract ClientRaindrop is Withdrawable {
     // Requires an address to have a minimum number of Hydro
     modifier requireStake(address _address, uint stake) {
         ERC20Basic hydro = ERC20Basic(hydroTokenAddress);
-        require(hydro.balanceOf(_address) >= stake, &quot;Insufficient HYDRO balance.&quot;);
+        require(hydro.balanceOf(_address) >= stake, "Insufficient HYDRO balance.");
         _;
     }
 
@@ -182,8 +182,8 @@ contract ClientRaindrop is Withdrawable {
         requireStake(msg.sender, minimumHydroStakeDelegatedUser)
     {
         require(
-            isSigned(userAddress, keccak256(abi.encodePacked(&quot;Create RaindropClient Hydro Account&quot;)), v, r, s),
-            &quot;Permission denied.&quot;
+            isSigned(userAddress, keccak256(abi.encodePacked("Create RaindropClient Hydro Account")), v, r, s),
+            "Permission denied."
         );
         _userSignUp(casedUserName, userAddress);
     }
@@ -196,7 +196,7 @@ contract ClientRaindrop is Withdrawable {
     // Allows users to delete their accounts
     function deleteUser() public {
         bytes32 uncasedUserNameHash = addressDirectory[msg.sender];
-        require(initialized(uncasedUserNameHash), &quot;No user associated with the sender address.&quot;);
+        require(initialized(uncasedUserNameHash), "No user associated with the sender address.");
 
         string memory casedUserName = userDirectory[uncasedUserNameHash].casedUserName;
 
@@ -217,9 +217,9 @@ contract ClientRaindrop is Withdrawable {
     {
         ERC20Basic hydro = ERC20Basic(hydroTokenAddress);
         // <= the airdrop amount
-        require(newMinimumHydroStakeUser <= (222222 * 10**18), &quot;Stake is too high.&quot;);
+        require(newMinimumHydroStakeUser <= (222222 * 10**18), "Stake is too high.");
         // <= 1% of total supply
-        require(newMinimumHydroStakeDelegatedUser <= (hydro.totalSupply() / 100), &quot;Stake is too high.&quot;);
+        require(newMinimumHydroStakeDelegatedUser <= (hydro.totalSupply() / 100), "Stake is too high.");
         minimumHydroStakeUser = newMinimumHydroStakeUser;
         minimumHydroStakeDelegatedUser = newMinimumHydroStakeDelegatedUser;
     }
@@ -233,7 +233,7 @@ contract ClientRaindrop is Withdrawable {
     // Returns user details (including cased username) by any cased/uncased user name that maps to a particular user
     function getUserByName(string userName) public view returns (string casedUserName, address userAddress) {
         bytes32 uncasedUserNameHash = keccak256(abi.encodePacked(userName.lower()));
-        require(initialized(uncasedUserNameHash), &quot;User does not exist.&quot;);
+        require(initialized(uncasedUserNameHash), "User does not exist.");
 
         return (userDirectory[uncasedUserNameHash].casedUserName, userDirectory[uncasedUserNameHash].userAddress);
     }
@@ -241,7 +241,7 @@ contract ClientRaindrop is Withdrawable {
     // Returns user details by user address
     function getUserByAddress(address _address) public view returns (string casedUserName) {
         bytes32 uncasedUserNameHash = addressDirectory[_address];
-        require(initialized(uncasedUserNameHash), &quot;User does not exist.&quot;);
+        require(initialized(uncasedUserNameHash), "User does not exist.");
 
         return userDirectory[uncasedUserNameHash].casedUserName;
     }
@@ -266,7 +266,7 @@ contract ClientRaindrop is Withdrawable {
         pure
         returns (bool)
     {
-        bytes memory prefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
+        bytes memory prefix = "\x19Ethereum Signed Message:\n32";
         bytes32 prefixedMessageHash = keccak256(abi.encodePacked(prefix, messageHash));
 
         return ecrecover(prefixedMessageHash, v, r, s) == _address;
@@ -274,13 +274,13 @@ contract ClientRaindrop is Withdrawable {
 
     // Common internal logic for all user signups
     function _userSignUp(string casedUserName, address userAddress) internal {
-        require(!initialized(addressDirectory[userAddress]), &quot;Address already registered.&quot;);
+        require(!initialized(addressDirectory[userAddress]), "Address already registered.");
 
-        require(bytes(casedUserName).length < 31, &quot;Username too long.&quot;);
-        require(bytes(casedUserName).length > 3, &quot;Username too short.&quot;);
+        require(bytes(casedUserName).length < 31, "Username too long.");
+        require(bytes(casedUserName).length > 3, "Username too short.");
 
         bytes32 uncasedUserNameHash = keccak256(abi.encodePacked(casedUserName.toSlice().copy().toString().lower()));
-        require(!initialized(uncasedUserNameHash), &quot;Username taken.&quot;);
+        require(!initialized(uncasedUserNameHash), "Username taken.");
 
         userDirectory[uncasedUserNameHash] = User(casedUserName, userAddress);
         addressDirectory[userAddress] = uncasedUserNameHash;

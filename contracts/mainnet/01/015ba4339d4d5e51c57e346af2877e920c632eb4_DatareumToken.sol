@@ -68,8 +68,8 @@ contract DatareumToken is Ownable { //ERC - 20 token contract
   // Triggered whenever approve(address _spender, uint256 _value) is called.
   event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
-  string public constant symbol = &quot;DTN&quot;;
-  string public constant name = &quot;Datareum&quot;;
+  string public constant symbol = "DTN";
+  string public constant name = "Datareum";
   uint8 public constant decimals = 18;
   uint256 _totalSupply = 1000000000 ether;
 

@@ -19,9 +19,9 @@ contract Tfarm {
     function Tfarm() {
 
          initialSupply = 210000000;
-         name =&quot;tfarm&quot;;
+         name ="tfarm";
         decimals = 2;
-         symbol = &quot;^&quot;;
+         symbol = "^";
         
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens
         uint256 totalSupply = initialSupply;                        // Update total supply

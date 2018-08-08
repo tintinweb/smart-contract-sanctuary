@@ -113,8 +113,8 @@ contract SHARD is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SHARD() public {
-        symbol = &quot;SHARD&quot;;
-        name = &quot;SHARD&quot;;
+        symbol = "SHARD";
+        name = "SHARD";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x232db1aAFDCEA86a9b6655773D49D9DF040eF2C7] = _totalSupply;

@@ -31,7 +31,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -102,8 +102,8 @@ contract PoSTokenStandard {
 contract ScarceCoinToken is ERC20,PoSTokenStandard,Ownable {
     using SafeMath for uint256;
 //Scarcecoin - Changed name of contract
-    string public name = &quot;ScarceCoinToken&quot;;
-    string public symbol = &quot;SCO&quot;;
+    string public name = "ScarceCoinToken";
+    string public symbol = "SCO";
     uint public decimals = 18;
 
     uint public chainStartTime; //chain start time
@@ -229,7 +229,7 @@ contract ScarceCoinToken is ERC20,PoSTokenStandard,Ownable {
     function allowance(address _owner, address _spender) constant returns (uint256 remaining) {
         return allowed[_owner][_spender];
     }
-//Scarcecoin - Modified the correct technical term &quot;mint&quot; to a well know term &quot;mint&quot; for marketing purposes.
+//Scarcecoin - Modified the correct technical term "mint" to a well know term "mint" for marketing purposes.
     function mint() canPoSMint returns (bool) {
         if(balances[msg.sender] <= 0) return false;
         if(transferIns[msg.sender].length <= 0) return false;

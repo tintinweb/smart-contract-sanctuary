@@ -32,8 +32,8 @@ library SafeMath{
 
 contract OdinToken {
 	using SafeMath for uint256;
-    string public constant name         = &quot;OdinBrowser&quot;;
-    string public constant symbol       = &quot;ODIN&quot;;
+    string public constant name         = "OdinBrowser";
+    string public constant symbol       = "ODIN";
     uint public constant decimals       = 18;
     
     uint256 OdinEthRate                  = 10 ** decimals;

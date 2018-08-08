@@ -215,7 +215,7 @@ contract Dice2Win {
 
         // Roll for a jackpot (if eligible).
         if (bet.amount >= MIN_JACKPOT_BET) {
-            // The second modulo, statistically independent from the &quot;main&quot; dice roll.
+            // The second modulo, statistically independent from the "main" dice roll.
             // Effectively you are playing two games at once!
             uint256 jackpotRng = (uint256(entropy) / rollModulo) % JACKPOT_MODULO;
 

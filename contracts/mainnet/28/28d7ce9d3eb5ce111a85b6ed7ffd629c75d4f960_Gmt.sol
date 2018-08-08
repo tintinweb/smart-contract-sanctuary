@@ -85,8 +85,8 @@ contract StandardToken is Token {
 
 contract Gmt is SafeMath, StandardToken {
 
-    string public constant name = &quot;Gold Mine Token&quot;;
-    string public constant symbol = &quot;GMT&quot;;
+    string public constant name = "Gold Mine Token";
+    string public constant symbol = "GMT";
     uint256 public constant decimals = 18;
 
     uint256 private constant tokenBountyCap = 60000*10**decimals;

@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -47,7 +47,7 @@ contract Ownable {
 /**
  * @title Distributable
  * @dev The Distribution contract has multi dealer address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Distributable is Ownable {
   mapping(address => bool) public dealership;
@@ -334,7 +334,7 @@ contract DistributionToken is StandardToken, Distributable {
 // File: contracts/deploy/LeCarboneToken.sol
 
 contract LeCarboneToken is DistributionToken {
-  string public name = &quot;LeCarbone Token&quot;;
-  string public symbol = &quot;LCT&quot;;
+  string public name = "LeCarbone Token";
+  string public symbol = "LCT";
   uint256 public decimals = 3;
 }

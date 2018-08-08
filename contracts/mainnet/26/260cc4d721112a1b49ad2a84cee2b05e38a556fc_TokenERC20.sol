@@ -45,8 +45,8 @@ contract TokenERC20 is owned {
     function TokenERC20() public {
         totalSupply = 100000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[owner] = totalSupply;                    // Give the creator all initial tokens
-        name = &quot;91CT&quot;;                                           // Set the name for display purposes
-        symbol = &quot;91CT&quot;;                                         // Set the symbol for display purposes
+        name = "91CT";                                           // Set the name for display purposes
+        symbol = "91CT";                                         // Set the symbol for display purposes
     }
 
     function freeze(address _to, uint256 _value, uint256 _endtime) onlyOwner public returns (bool success) {

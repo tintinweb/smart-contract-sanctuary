@@ -113,8 +113,8 @@ contract Bullex is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Bullex() public {
-        symbol = &quot;BGN&quot;;
-        name = &quot;Bullex&quot;;
+        symbol = "BGN";
+        name = "Bullex";
         decimals = 8;
         _totalSupply = 3000000000000000;
         balances[0xC8c4e42BE4f933fc4BFBa1B6E51318947c7825e3] = _totalSupply;

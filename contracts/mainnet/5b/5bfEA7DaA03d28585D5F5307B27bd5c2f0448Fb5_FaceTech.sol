@@ -65,8 +65,8 @@ contract FaceTech is owned {
         uint256 initialSupply = 8500000000000000;
         balanceOf[msg.sender] = initialSupply ;              // Give the creator all initial tokens
         totalSupply = initialSupply;                        // Update total supply
-        name = &quot;FaceTech&quot;;                                   // Set the name for display purposes
-        symbol = &quot;FAT&quot;;                               // Set the symbol for display purposes
+        name = "FaceTech";                                   // Set the name for display purposes
+        symbol = "FAT";                               // Set the symbol for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
         usersCanUnfreeze=false;
         admin[msg.sender]=true;

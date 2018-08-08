@@ -167,8 +167,8 @@ contract StandartToken is ERC20 {
 //Nominal (initial) cost of one token = 1$
 
 contract Token is Owned, StandartToken {
-    string public name = &quot;INTRADAY&quot;;
-    string public symbol = &quot;INTRA&quot;;
+    string public name = "INTRADAY";
+    string public symbol = "INTRA";
     uint public decimals = 0;
     address public constant company = 0xC01aed0F75f117d1f47f9146E41C9A6E0870350e;
     

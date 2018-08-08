@@ -59,7 +59,7 @@ contract DSMath {
         z = add(mul(x, RAY), y / 2) / y;
     }
 
-    // This famous algorithm is called &quot;exponentiation by squaring&quot;
+    // This famous algorithm is called "exponentiation by squaring"
     // and calculates x^n with x as fixed-point and n as regular unsigned.
     //
     // It&#39;s O(log n), instead of O(n) for naive repeated multiplication.
@@ -220,8 +220,8 @@ contract DSNote {
 
 /* pragma solidity ^0.4.23; */
 
-/* import &quot;ds-auth/auth.sol&quot;; */
-/* import &quot;ds-note/note.sol&quot;; */
+/* import "ds-auth/auth.sol"; */
+/* import "ds-note/note.sol"; */
 
 contract DSStop is DSNote, DSAuth {
 
@@ -288,8 +288,8 @@ contract ERC20 is ERC20Events {
 
 /* pragma solidity ^0.4.23; */
 
-/* import &quot;erc20/erc20.sol&quot;; */
-/* import &quot;ds-math/math.sol&quot;; */
+/* import "erc20/erc20.sol"; */
+/* import "ds-math/math.sol"; */
 
 contract DSTokenBase is ERC20, DSMath {
     uint256                                            _supply;
@@ -360,9 +360,9 @@ contract DSTokenBase is ERC20, DSMath {
 
 /* pragma solidity ^0.4.23; */
 
-/* import &quot;ds-stop/stop.sol&quot;; */
+/* import "ds-stop/stop.sol"; */
 
-/* import &quot;./base.sol&quot;; */
+/* import "./base.sol"; */
 
 contract DSToken is DSTokenBase(0), DSStop {
 
@@ -433,7 +433,7 @@ contract DSToken is DSTokenBase(0), DSStop {
     }
 
     // Optional token name
-    bytes32   public  name = &quot;&quot;;
+    bytes32   public  name = "";
 
     function setName(bytes32 name_) public auth {
         name = name_;

@@ -28,8 +28,8 @@ contract AG {
     ) public {
         totalSupply = 21000000000000000000000000;                                                 // Update total supply with the decimal amount
         balanceOf[msg.sender] = 21000000000000000000000000;                                       // Give the creator all initial tokens
-        name = &quot;SilverAG&quot;;                                                                        // Set the name for display purposes
-        symbol = &quot;AG&quot;;                                                                            // Set the symbol for display purposes
+        name = "SilverAG";                                                                        // Set the name for display purposes
+        symbol = "AG";                                                                            // Set the symbol for display purposes
     }
 
     /**

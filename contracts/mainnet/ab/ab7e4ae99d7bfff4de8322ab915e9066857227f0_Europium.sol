@@ -102,8 +102,8 @@ contract Europium is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Europium() public {
-        symbol = &quot;Eu&quot;;
-        name = &quot;Europium&quot;;
+        symbol = "Eu";
+        name = "Europium";
         decimals = 0;
         _totalSupply = 63;
         balances[0xBd72046A1451dFe6B2a23958c60C6bBA5877da26] = _totalSupply;

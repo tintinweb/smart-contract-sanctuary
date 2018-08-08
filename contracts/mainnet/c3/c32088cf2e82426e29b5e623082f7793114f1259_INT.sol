@@ -181,4 +181,4 @@ contract INTToken is owned, token {
       msg.sender.transfer(amount * sellPrice);          // sends ether to the seller. It&#39;s important to do this last to avoid recursion attacks
   }
 }
-contract INT is INTToken(1000000000000000, &quot;my test 09token&quot;, 6, &quot;TEST09&quot;) {}
+contract INT is INTToken(1000000000000000, "my test 09token", 6, "TEST09") {}

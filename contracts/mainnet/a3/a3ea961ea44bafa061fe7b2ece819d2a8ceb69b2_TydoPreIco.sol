@@ -133,7 +133,7 @@ contract TydoPreIco is Owned {
     require (canBuy());
     uint amount = msg.value.mul(COINS_PER_ETH).div(1 ether).mul(tokenDecMult);
     amount = addBonus(amount);
-    //emit Debug(&quot;buy amount&quot;, amount);
+    //emit Debug("buy amount", amount);
     require(amount > 0, &#39;amount must be positive&#39;);
     token.transferFrom(address(owner), address(this), amount);
     //emit Debug(&#39;transfered &#39;, amount);

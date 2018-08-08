@@ -176,7 +176,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -272,8 +272,8 @@ contract UnitedfansToken is MintableToken {
     address public admin;
     address public crowdSaleAddress;
     uint256 public totalMigrated;
-    string public name = &quot;Goal Coin&quot;;
-    string public symbol = &quot;GC&quot;;
+    string public name = "Goal Coin";
+    string public symbol = "GC";
     uint256 public decimals = 18;
     bool public locked = true; // Lock the transfer of tokens during the crowdsale
 

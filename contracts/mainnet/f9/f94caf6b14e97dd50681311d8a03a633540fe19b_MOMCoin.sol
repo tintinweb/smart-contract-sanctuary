@@ -113,8 +113,8 @@ contract MOMCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MOMCoin() public {
-        symbol = &quot;MOM&quot;;
-        name = &quot;MOMCoin&quot;;
+        symbol = "MOM";
+        name = "MOMCoin";
         decimals = 18;
         _totalSupply = 250000000000000000;
         balances[0xdb94ea3f744Ef5f4b385938ec0c118A4b65d5EbF] = _totalSupply;

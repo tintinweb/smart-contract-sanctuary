@@ -34,7 +34,7 @@ contract TradersWallet {
     // init the TradersWallet()
     function TradersWallet() {
         owner = msg.sender;
-        version = &quot;ALPHA 0.1&quot;;
+        version = "ALPHA 0.1";
         ethDeltaDepositAddress = 0x8d12A197cB00D4747a1fe03395095ce2A5CC6819;
         ethDelta = etherDelta(ethDeltaDepositAddress);
     }

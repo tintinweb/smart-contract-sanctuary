@@ -77,8 +77,8 @@ function GGG() public {
 totalSupply = 100000000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
 balanceOf[msg.sender] = totalSupply.div(4);                // Give the creator all initial tokens
 remainRewards = totalSupply - balanceOf[msg.sender];
-name = &quot;Goyougame&quot;;                                   // Set the name for display purposes
-symbol = &quot;GGG&quot;;                               // Set the symbol for display purposes
+name = "Goyougame";                                   // Set the name for display purposes
+symbol = "GGG";                               // Set the symbol for display purposes
 
 contractCreator = msg.sender;
 admins[contractCreator] = true;

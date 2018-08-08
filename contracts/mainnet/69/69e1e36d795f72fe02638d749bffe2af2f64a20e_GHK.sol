@@ -20,9 +20,9 @@ contract GHK{
     function GHK() public {
         balances[msg.sender] = 3600000000000;               // Give the creator all initial tokens
         totalSupply = 3600000000000;                        // Update total supply
-        name = &quot;GHK&quot;;                                   // Set the name for display purposes
+        name = "GHK";                                   // Set the name for display purposes
         decimals =4;                            // Amount of decimals for display purposes
-        symbol = &quot;GHK&quot;;                               // Set the symbol for display purposes
+        symbol = "GHK";                               // Set the symbol for display purposes
     }
 
     function transfer(address _to, uint256 _value) public returns (bool success) {

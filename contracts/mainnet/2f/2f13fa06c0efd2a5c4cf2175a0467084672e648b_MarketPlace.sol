@@ -308,12 +308,12 @@ contract MarketPlace {
   * @param v part of signature for the order hash as signed by user
   * @param r part of signature for the order hash as signed by user
   * @param s part of signature for the order hash as signed by user
-  * @param amount uint amount in terms of tokenGet that will be &quot;buy&quot; in the trade
+  * @param amount uint amount in terms of tokenGet that will be "buy" in the trade
   */
   function trade(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s, uint amount) public {
     bytes32 hash = sha256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
     require((
-      (orders[user][hash] || ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), v, r, s) == user) &&
+      (orders[user][hash] || ecrecover(keccak256("\x19Ethereum Signed Message:\n32", hash), v, r, s) == user) &&
       block.number <= expires &&
       orderFills[user][hash].add(amount) <= amountGet
     ));
@@ -334,7 +334,7 @@ contract MarketPlace {
   * @param tokenGive Ethereum contract address of the token to give
   * @param amountGive uint amount of tokens being given
   * @param user Ethereum address of the user who placed the order
-  * @param amount uint amount in terms of tokenGet that will be &quot;buy&quot; in the trade
+  * @param amount uint amount in terms of tokenGet that will be "buy" in the trade
   */
   function tradeBalances(address tokenGet, uint amountGet, address tokenGive, uint amountGive, address user, uint amount) private {
 
@@ -365,7 +365,7 @@ contract MarketPlace {
   * @param v part of signature for the order hash as signed by user
   * @param r part of signature for the order hash as signed by user
   * @param s part of signature for the order hash as signed by user
-  * @param amount uint amount in terms of tokenGet that will be &quot;buy&quot; in the trade
+  * @param amount uint amount in terms of tokenGet that will be "buy" in the trade
   * @param sender Ethereum address of the user taking the order
   * @return bool: true if the trade would be successful, false otherwise
   */
@@ -398,7 +398,7 @@ contract MarketPlace {
   function availableVolume(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, address user, uint8 v, bytes32 r, bytes32 s) public constant returns(uint) {
     bytes32 hash = sha256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
     if (!(
-      (orders[user][hash] || ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), v, r, s) == user) &&
+      (orders[user][hash] || ecrecover(keccak256("\x19Ethereum Signed Message:\n32", hash), v, r, s) == user) &&
       block.number <= expires
       )) {
       return 0;
@@ -452,7 +452,7 @@ contract MarketPlace {
   */
   function cancelOrder(address tokenGet, uint amountGet, address tokenGive, uint amountGive, uint expires, uint nonce, uint8 v, bytes32 r, bytes32 s) public {
     bytes32 hash = sha256(this, tokenGet, amountGet, tokenGive, amountGive, expires, nonce);
-    require ((orders[msg.sender][hash] || ecrecover(keccak256(&quot;\x19Ethereum Signed Message:\n32&quot;, hash), v, r, s) == msg.sender));
+    require ((orders[msg.sender][hash] || ecrecover(keccak256("\x19Ethereum Signed Message:\n32", hash), v, r, s) == msg.sender));
     orderFills[msg.sender][hash] = amountGet;
     Cancel(tokenGet, amountGet, tokenGive, amountGive, expires, nonce, msg.sender, v, r, s);
   }

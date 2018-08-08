@@ -10,8 +10,8 @@ contract Satoshi {
   
   
   function Satoshi() public {
-    whatSatoshiSays = &quot;My name is Satoshi Nakamoto, nice to meet you!&quot;;    
-    name = &quot;Satoshi Nakamoto&quot;;
+    whatSatoshiSays = "My name is Satoshi Nakamoto, nice to meet you!";    
+    name = "Satoshi Nakamoto";
     satoshiMood = MoodState.happy;
     currentPrice = 1000000000000000; 
     currentOwner = msg.sender;
@@ -690,7 +690,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint length = self._len * (parts.length - 1);
         for(uint i = 0; i < parts.length; i++)

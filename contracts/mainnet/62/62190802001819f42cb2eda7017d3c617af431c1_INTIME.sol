@@ -83,7 +83,7 @@ contract INTIME {
         uint256 _codeLength;
         
         assembly {_codeLength := extcodesize(_addr)}
-        require(_codeLength == 0, &quot;sorry humans only&quot;);
+        require(_codeLength == 0, "sorry humans only");
         _;
     }
     /**
@@ -208,7 +208,7 @@ contract INTIME {
         keyLocked = true;
         
         // Update pool balance
-		require(amount >= keyPrice, &quot;You have to buy at least one key.&quot;);
+		require(amount >= keyPrice, "You have to buy at least one key.");
 		poolBalance += amount;
 		
 		currentKeyRound ++;

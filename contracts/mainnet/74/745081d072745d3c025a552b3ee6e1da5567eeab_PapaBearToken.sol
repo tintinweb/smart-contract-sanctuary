@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract PapaBearToken {
     // Public variables of the token
-    string public name = &quot;PapaBearToken&quot;;
-    string public symbol = &quot;PBEAR&quot;;
+    string public name = "PapaBearToken";
+    string public symbol = "PBEAR";
     uint8 public decimals = 18;
     uint256 public totalSupply;
     uint256 public supplyMultiplier = 1000000000;

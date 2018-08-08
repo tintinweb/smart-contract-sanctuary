@@ -4,8 +4,8 @@ contract Algo_Exchange_Index_II {
    
     mapping (address => uint256) public balanceOf;
 
-    string public name = &quot;Algo Exchange Index II&quot;;
-    string public symbol = &quot;AEIII&quot;;
+    string public name = "Algo Exchange Index II";
+    string public symbol = "AEIII";
     uint8 public decimals = 18;
 
     uint256 public totalSupply = 1000000 * (uint256(10) ** decimals);

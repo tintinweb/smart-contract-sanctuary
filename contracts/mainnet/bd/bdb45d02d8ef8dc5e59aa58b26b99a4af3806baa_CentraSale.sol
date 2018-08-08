@@ -98,7 +98,7 @@ pragma solidity ^0.4.16;
     //Contract execute
     function contract_transfer(uint _amount) private returns (bool) {      
 
-      if(!contract_address.call(bytes4(sha3(&quot;transfer(address,uint256)&quot;)),msg.sender,_amount)) {    
+      if(!contract_address.call(bytes4(sha3("transfer(address,uint256)")),msg.sender,_amount)) {    
         return false;
       }
       return true;

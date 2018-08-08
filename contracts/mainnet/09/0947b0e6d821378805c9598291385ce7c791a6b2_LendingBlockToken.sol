@@ -36,7 +36,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -262,8 +262,8 @@ contract StandardToken is ERC20, BasicToken {
 * transferable time can be set
 */
 contract LendingBlockToken is StandardToken, BurnableToken, Ownable {
-	string public constant name = &quot;Lendingblock&quot;;
-	string public constant symbol = &quot;LND&quot;;
+	string public constant name = "Lendingblock";
+	string public constant symbol = "LND";
 	uint8 public constant decimals = 18;
 	uint256 public transferableTime = 1546300800;// 1/1/2019
 	address public tokenEventAddress;

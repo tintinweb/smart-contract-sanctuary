@@ -318,9 +318,9 @@ contract MIB is admined,IERC20Token { //Standar definition of an ERC20Token
 	address public feeWallet;
 	uint256 public rate = 10000;
 	//token related
-	string public name = &quot;MULTIPLE INVEST BNT&quot;;
+	string public name = "MULTIPLE INVEST BNT";
     uint8 public decimals = 18;
-    string public symbol = &quot;MIB&quot;;//Like Men In Black B)
+    string public symbol = "MIB";//Like Men In Black B)
     string public version = &#39;1&#39;;
 
 	constructor(address _feeWallet) public {

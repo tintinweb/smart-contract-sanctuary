@@ -4,8 +4,8 @@ contract	ADIDAS_AG				{
 									
 	mapping (address => uint256) public balanceOf;								
 									
-	string	public		name =	&quot;	ADIDAS_AG		&quot;	;
-	string	public		symbol =	&quot;	ADIDI		&quot;	;
+	string	public		name =	"	ADIDAS_AG		"	;
+	string	public		symbol =	"	ADIDI		"	;
 	uint8	public		decimals =		18			;
 									
 	uint256 public totalSupply =		10379707031250000000000000					;	

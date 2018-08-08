@@ -302,7 +302,7 @@ contract Crowdsale {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -921,8 +921,8 @@ contract Consts {
     uint8 public constant TOKEN_DECIMALS_UINT8 = 18;
     uint public constant TOKEN_DECIMAL_MULTIPLIER = 10 ** TOKEN_DECIMALS;
 
-    string public constant TOKEN_NAME = &quot;PalladiumTokenMagic&quot;;
-    string public constant TOKEN_SYMBOL = &quot;PTMX&quot;;
+    string public constant TOKEN_NAME = "PalladiumTokenMagic";
+    string public constant TOKEN_SYMBOL = "PTMX";
     bool public constant PAUSED = true;
     address public constant TARGET_USER = 0xdF15E9399B9F325D161c38F7f2aFd72C11a19500;
     

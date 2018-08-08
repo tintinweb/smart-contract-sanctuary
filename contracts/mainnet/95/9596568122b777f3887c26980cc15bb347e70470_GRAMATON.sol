@@ -70,8 +70,8 @@ contract GRAMATON {
     function GRAMATON() public {
         totalSupply = 250000000000000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = 250000000000000000000000000;                // Give the creator all initial tokens
-        name = &quot;GRAMATON Token&quot;;                                   // Set the name for display purposes
-        symbol = &quot;GRAN&quot;;                               // Set the symbol for display purposes
+        name = "GRAMATON Token";                                   // Set the name for display purposes
+        symbol = "GRAN";                               // Set the symbol for display purposes
         owner = msg.sender;
     }
 

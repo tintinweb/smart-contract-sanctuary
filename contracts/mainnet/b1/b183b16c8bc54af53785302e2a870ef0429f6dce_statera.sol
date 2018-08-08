@@ -79,9 +79,9 @@ contract statera is Token {
         ) {
         balances[msg.sender] = 100000000000000000000000000;    // creator gets all initial tokens
         totalSupply = 100000000000000000000000000;             // total supply of token
-        name = &quot;statera&quot;;               // name of token
+        name = "statera";               // name of token
         decimals = 18;                  // amount of decimals
-        symbol = &quot;stat&quot;;                // symbol of token
+        symbol = "stat";                // symbol of token
     }
 
     /* Approves and then calls the receiving contract */
@@ -89,7 +89,7 @@ contract statera is Token {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

@@ -267,13 +267,13 @@ contract XCPlugin is XCPluginInterface {
         // Admin { status | platformName | tokenSymbol | account}
         admin.status = true;
 
-        admin.platformName = &quot;ETH&quot;;
+        admin.platformName = "ETH";
 
-        admin.tokenSymbol = &quot;INK&quot;;
+        admin.tokenSymbol = "INK";
 
         admin.account = msg.sender;
 
-        bytes32 platformName = &quot;INK&quot;;
+        bytes32 platformName = "INK";
 
         platforms[platformName].status = true;
 
@@ -387,7 +387,7 @@ contract XCPlugin is XCPluginInterface {
 
         require(admin.account == msg.sender);
 
-        require(name != &quot;&quot;);
+        require(name != "");
 
         require(name != admin.platformName);
 
@@ -638,7 +638,7 @@ contract XCPlugin is XCPluginInterface {
 
     function hashMsg(bytes32 fromPlatform, address fromAccount, bytes32 toPlatform, address toAccount, uint value, bytes32 tokenSymbol, string txid) internal pure returns (bytes32) {
 
-        return sha256(bytes32ToStr(fromPlatform), &quot;:0x&quot;, uintToStr(uint160(fromAccount), 16), &quot;:&quot;, bytes32ToStr(toPlatform), &quot;:0x&quot;, uintToStr(uint160(toAccount), 16), &quot;:&quot;, uintToStr(value, 10), &quot;:&quot;, bytes32ToStr(tokenSymbol), &quot;:&quot;, txid);
+        return sha256(bytes32ToStr(fromPlatform), ":0x", uintToStr(uint160(fromAccount), 16), ":", bytes32ToStr(toPlatform), ":0x", uintToStr(uint160(toAccount), 16), ":", uintToStr(value, 10), ":", bytes32ToStr(tokenSymbol), ":", txid);
     }
 
     function changeVoters(bytes32 platformName, address publicKey, string txid) internal {
@@ -667,7 +667,7 @@ contract XCPlugin is XCPluginInterface {
 
         for (uint i = 0; i < b.length; i++) {
 
-            if (b[b.length - 1 - i] == &quot;&quot;) {
+            if (b[b.length - 1 - i] == "") {
 
                 length -= 1;
             } else {
@@ -692,7 +692,7 @@ contract XCPlugin is XCPluginInterface {
 
         uint length = 0;
 
-        bytes16 tenStr = &quot;0123456789abcdef&quot;;
+        bytes16 tenStr = "0123456789abcdef";
 
         while (true) {
 

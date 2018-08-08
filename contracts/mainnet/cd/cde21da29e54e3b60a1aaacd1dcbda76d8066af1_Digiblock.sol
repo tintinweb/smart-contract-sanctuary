@@ -58,8 +58,8 @@ contract Digiblock is ERC20 {
     mapping (address => mapping (address => uint256)) allowed;
     mapping (address => bool) public blacklist;
 
-    string public constant name = &quot;Digiblock&quot;;
-    string public constant symbol = &quot;DBX&quot;;
+    string public constant name = "Digiblock";
+    string public constant symbol = "DBX";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 1000000000e8;

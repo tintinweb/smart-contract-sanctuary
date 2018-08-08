@@ -23,8 +23,8 @@ contract PocketChain{
     function PocketChain() {
         balanceOf[msg.sender] =  3000000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply =  3000000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;PocketChain&quot;;                                   // Set the name for display purposes
-        symbol = &quot;POKE&quot;;                               // Set the symbol for display purposes
+        name = "PocketChain";                                   // Set the name for display purposes
+        symbol = "POKE";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

@@ -735,7 +735,7 @@ contract BitpaintingStorage is PaintingStorage, PaintingInformationStorage, Acce
     }
 
     function signature() external constant returns (bytes4) {
-        return bytes4(keccak256(&quot;storage&quot;));
+        return bytes4(keccak256("storage"));
     }
 
 

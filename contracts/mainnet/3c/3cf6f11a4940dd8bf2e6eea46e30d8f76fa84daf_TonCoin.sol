@@ -75,8 +75,8 @@ contract StandardToken is ERC20, SafeMath {
 }
 
 contract TonCoin is Ownable, StandardToken {
-    string public name = &quot;TON Coin&quot;;
-    string public symbol = &quot;TON&quot;;
+    string public name = "TON Coin";
+    string public symbol = "TON";
     uint public decimals = 18;
     uint public totalSupply = 3 * (10**9) * (10**18);
     function TonCoin() {

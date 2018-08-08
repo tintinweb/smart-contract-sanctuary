@@ -1117,15 +1117,15 @@ library BdpTransfer {
 contract BdpController is BdpBase {
 
 	function name() external pure returns (string) {
-		return &quot;The Billion Dollar Picture&quot;;
+		return "The Billion Dollar Picture";
 	}
 
 	function symbol() external pure returns (string) {
-		return &quot;BDP&quot;;
+		return "BDP";
 	}
 
 	function tokenURI(uint256 _tokenId) external view returns (string _tokenURI) {
-		_tokenURI = &quot;https://www.billiondollarpicture.com/#0000000&quot;;
+		_tokenURI = "https://www.billiondollarpicture.com/#0000000";
 		bytes memory tokenURIBytes = bytes(_tokenURI);
 		tokenURIBytes[34] = byte(48+(_tokenId / 1000000) % 10);
 		tokenURIBytes[35] = byte(48+(_tokenId / 100000) % 10);

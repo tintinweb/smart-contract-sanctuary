@@ -646,10 +646,10 @@ contract RegulatedToken is StandardToken, PausableToken, LimitedTransferToken, H
         REDEMPTION AND BURNING
 
         Redeeming tokens involves removing them from an address&#39;s wallet and moving them to a (one or more)
-        specially designed &quot;burn wallets&quot;.
+        specially designed "burn wallets".
         The process is implemented such as the owner can choose to burn or not to burn the tokens after redeeming them,
         which is legally necessary on some buy-back scenarios
-        Each redemption is associated with a global &quot;redemption event&quot; (a unique id, supplied by the owner),
+        Each redemption is associated with a global "redemption event" (a unique id, supplied by the owner),
         which can later be used to query the total value redeemed for the user in this event (and on the owner&#39;s
         backend, through event logs processing, the total value redeemed for all users in this event)
     *******************************/
@@ -760,8 +760,8 @@ contract RegulatedToken is StandardToken, PausableToken, LimitedTransferToken, H
 
 contract SpiceToken is RegulatedToken {
 
-    string public constant name = &quot;SPiCE VC Token&quot;;
-    string public constant symbol = &quot;SPICE&quot;;
+    string public constant name = "SPiCE VC Token";
+    string public constant symbol = "SPICE";
     uint8 public constant decimals = 8;
     uint256 private constant INITIAL_INACTIVE_TOKENS = 130 * 1000000 * (10 ** uint256(decimals));  //130 million tokens
 

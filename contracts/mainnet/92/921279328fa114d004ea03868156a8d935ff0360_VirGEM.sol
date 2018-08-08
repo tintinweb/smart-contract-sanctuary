@@ -32,8 +32,8 @@ contract VirGEM {
     ) public {
         totalSupply = 1000000000000000000000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;VirGEM&quot;;                                   // Set the name for display purposes
-        symbol = &quot;VirGEM&quot;;                               // Set the symbol for display purposes
+        name = "VirGEM";                                   // Set the name for display purposes
+        symbol = "VirGEM";                               // Set the symbol for display purposes
     }
 
     /**

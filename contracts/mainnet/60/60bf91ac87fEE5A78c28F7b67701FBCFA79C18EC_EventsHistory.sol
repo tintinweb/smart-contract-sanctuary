@@ -38,12 +38,12 @@ contract AmbiEnabled {
         return true;
     }
 
-    function immortality() checkAccess(&quot;owner&quot;) returns(bool) {
+    function immortality() checkAccess("owner") returns(bool) {
         isImmortal = true;
         return true;
     }
 
-    function remove() checkAccess(&quot;owner&quot;) returns(bool) {
+    function remove() checkAccess("owner") returns(bool) {
         if (isImmortal) {
             return false;
         }
@@ -193,7 +193,7 @@ contract EventsHistory is AmbiEnabled, Safe {
      *
      * @return success.
      */
-    function addEmitter(bytes4 _eventSignature, address _emitter) noValue() checkAccess(&quot;admin&quot;) returns(bool) {
+    function addEmitter(bytes4 _eventSignature, address _emitter) noValue() checkAccess("admin") returns(bool) {
         if (emitters[_eventSignature] != 0x0) {
             return false;
         }
@@ -213,7 +213,7 @@ contract EventsHistory is AmbiEnabled, Safe {
      *
      * @return success.
      */
-    function addVersion(address _caller, string _name, string _changelog) noValue() checkAccess(&quot;admin&quot;) returns(bool) {
+    function addVersion(address _caller, string _name, string _changelog) noValue() checkAccess("admin") returns(bool) {
         if (versions[_caller] != 0) {
             return false;
         }

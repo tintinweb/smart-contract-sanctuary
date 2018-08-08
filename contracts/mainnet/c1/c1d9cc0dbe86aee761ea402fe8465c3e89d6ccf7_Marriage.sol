@@ -34,31 +34,31 @@ contract Marriage is owned {
 
     // Create initial marriage contract
     function createMarriage() onlyOwner public {
-        partner1 = &quot;Edison Lee&quot;;
-        partner2 = &quot;Chino Kafuu&quot;;
+        partner1 = "Edison Lee";
+        partner2 = "Chino Kafuu";
         marriageDate = 1526983200;
-        setStatus(&quot;Married&quot;);
-        bytes32 name = &quot;Marriage Contract Creation&quot;;
+        setStatus("Married");
+        bytes32 name = "Marriage Contract Creation";
         
-        majorEventFunc(marriageDate, name, &quot;We got married!&quot;);
+        majorEventFunc(marriageDate, name, "We got married!");
     }
     
     // Set the marriage status if it changes
     function setStatus(bytes32 status) onlyOwner public {
         marriageStatus = status;
-        majorEventFunc(block.timestamp, &quot;Changed Status&quot;, status);
+        majorEventFunc(block.timestamp, "Changed Status", status);
     }
     
     // Set the IPFS hash of the image of the couple
     function setImage(bytes IPFSImageHash) onlyOwner public {
         imageHash = IPFSImageHash;
-        majorEventFunc(block.timestamp, &quot;Entered Marriage Image&quot;, &quot;Image is in IPFS&quot;);
+        majorEventFunc(block.timestamp, "Entered Marriage Image", "Image is in IPFS");
     }
     
     // Upload documentation for proof of marrage like a marriage certificate
     function marriageProof(bytes IPFSProofHash) onlyOwner public {
         marriageProofDoc = IPFSProofHash;
-        majorEventFunc(block.timestamp, &quot;Entered Marriage Proof&quot;, &quot;Marriage proof in IPFS&quot;);
+        majorEventFunc(block.timestamp, "Entered Marriage Proof", "Marriage proof in IPFS");
     }
 
     // Log major life events

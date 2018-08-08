@@ -98,8 +98,8 @@ contract IbkToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function IbkToken() public {
-        symbol = &quot;IBK&quot;;
-        name = &quot;Ibk Token&quot;;
+        symbol = "IBK";
+        name = "Ibk Token";
         decimals = 8;
         _totalSupply = 10000000000000000000;
         balances[0xa810b7eE5C36691Be3f82DAf8be169E604E82588] = _totalSupply;

@@ -4,7 +4,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -386,7 +386,7 @@ contract TWIMToken is MintableToken, PausableToken, DetailedERC20 {
     event ShareSent(address indexed holder, uint256 value);
 
     function TWIMToken() public 
-      DetailedERC20(&quot;TWIM Token&quot;, &quot;TWM&quot;, 0) {
+      DetailedERC20("TWIM Token", "TWM", 0) {
 
       mint(0x00E7140Dd3b8144860064F7e6af959487d74c116, 50000000);
       mint(0x006Ec9864C401a79e2aEF9F46349795B0E9B6860, 50000000);

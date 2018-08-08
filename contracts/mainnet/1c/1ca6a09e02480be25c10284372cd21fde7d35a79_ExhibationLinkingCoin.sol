@@ -136,8 +136,8 @@ contract ExhibationLinkingCoin is ERC20Interface {
 	}
 	
 		
-    string public name = &quot;ExhibationLinkingCoin&quot;;
-    string public symbol = &quot;EXLC&quot;;
+    string public name = "ExhibationLinkingCoin";
+    string public symbol = "EXLC";
     uint8 public decimals = 18;
 	uint256 private totalEXLCSupply = 10000000000000000000000000000;
 	uint256 private _totalBalance = totalEXLCSupply;

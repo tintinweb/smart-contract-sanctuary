@@ -185,8 +185,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract SimpleToken is StandardToken {
 
-  string public constant name = &quot;SOLA COIN&quot;;
-  string public constant symbol = &quot;SLC&quot;;
+  string public constant name = "SOLA COIN";
+  string public constant symbol = "SLC";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 1000000000 * 1000000000000000000;

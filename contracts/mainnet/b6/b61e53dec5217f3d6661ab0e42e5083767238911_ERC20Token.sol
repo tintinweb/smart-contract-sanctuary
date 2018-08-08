@@ -102,9 +102,9 @@ contract ERC20Token is StandardToken {
         ) {
         balances[msg.sender] = 65000000;               
         totalSupply = 65000000;                        
-        name = &quot;Global Gain Coin&quot;;                                   
+        name = "Global Gain Coin";                                   
         decimals = 0;                            
-        symbol = &quot;G2C&quot;;                               
+        symbol = "G2C";                               
     }
 
     
@@ -113,7 +113,7 @@ contract ERC20Token is StandardToken {
         Approval(msg.sender, _spender, _value);
 
         
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

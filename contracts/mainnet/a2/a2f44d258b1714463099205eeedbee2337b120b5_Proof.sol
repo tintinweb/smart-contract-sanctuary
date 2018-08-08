@@ -201,7 +201,7 @@ contract Token is Crowdsale {
     
     string  public standard    = &#39;Token 0.1&#39;;
     string  public name        = &#39;PROOF&#39;;
-    string  public symbol      = &quot;PF&quot;;
+    string  public symbol      = "PF";
     uint8   public decimals    = 0;
 
     modifier onlyTokenHolders {

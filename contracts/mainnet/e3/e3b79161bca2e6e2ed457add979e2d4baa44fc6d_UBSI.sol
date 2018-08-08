@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract UBSI is StandardToken, Ownable {
 
-    string public constant name = &quot;UBSI&quot;;
-    string public constant symbol = &quot;UBSI&quot;;
+    string public constant name = "UBSI";
+    string public constant symbol = "UBSI";
     uint256 public constant decimals = 8;
 
     function UBSI() public {

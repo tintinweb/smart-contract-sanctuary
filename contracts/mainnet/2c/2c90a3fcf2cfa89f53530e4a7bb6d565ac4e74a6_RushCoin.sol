@@ -112,7 +112,7 @@ contract RushCoin is ERC20 {
 
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    function RushCoin() ERC20(5000000000, &quot;Rush Coin&quot;, &quot;RUSH&quot;) public {}
+    function RushCoin() ERC20(5000000000, "Rush Coin", "RUSH") public {}
 
 
     function multisend(address[] dests, uint256[] values) public returns (uint256) {

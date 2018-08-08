@@ -35,8 +35,8 @@ contract EtherMinerals is ERC721 {
   }
 
   /*** CONSTANTS ***/
-  string public constant NAME = &quot;EtherMinerals&quot;;
-  string public constant SYMBOL = &quot;MINERAL&quot;;
+  string public constant NAME = "EtherMinerals";
+  string public constant SYMBOL = "MINERAL";
   
   uint256 private startingPrice = 0.01 ether;
   uint256 private firstStepLimit =  0.15 ether;
@@ -240,23 +240,23 @@ contract EtherMinerals is ERC721 {
   }
  
   function createAllTokens() public onlyCEO{
-    createMineral(&quot;Emerald&quot;, 10000000000000000);
-    createMineral(&quot;Opal&quot;, 10000000000000000);
-    createMineral(&quot;Diamond&quot;, 10000000000000000);
-    createMineral(&quot;Bismuth&quot;, 10000000000000000);
-    createMineral(&quot;Amethyst&quot;, 10000000000000000);
-    createMineral(&quot;Gold&quot;, 10000000000000000);
-    createMineral(&quot;Fluorite&quot;, 10000000000000000);
-    createMineral(&quot;Ruby&quot;, 10000000000000000);
-    createMineral(&quot;Sapphire&quot;, 10000000000000000);
-    createMineral(&quot;Pascoite&quot;, 10000000000000000);
-    createMineral(&quot;Karpatite&quot;, 10000000000000000);
-    createMineral(&quot;Uvarovite&quot;, 10000000000000000);
-    createMineral(&quot;Kryptonite&quot;, 10000000000000000);
-    createMineral(&quot;Good ol&#39; Rock&quot;, 10000000000000000);
-    createMineral(&quot;Malachite&quot;, 10000000000000000);
-    createMineral(&quot;Silver&quot;, 10000000000000000);
-    createMineral(&quot;Burmese Tourmaline&quot; ,10000000000000000);
+    createMineral("Emerald", 10000000000000000);
+    createMineral("Opal", 10000000000000000);
+    createMineral("Diamond", 10000000000000000);
+    createMineral("Bismuth", 10000000000000000);
+    createMineral("Amethyst", 10000000000000000);
+    createMineral("Gold", 10000000000000000);
+    createMineral("Fluorite", 10000000000000000);
+    createMineral("Ruby", 10000000000000000);
+    createMineral("Sapphire", 10000000000000000);
+    createMineral("Pascoite", 10000000000000000);
+    createMineral("Karpatite", 10000000000000000);
+    createMineral("Uvarovite", 10000000000000000);
+    createMineral("Kryptonite", 10000000000000000);
+    createMineral("Good ol&#39; Rock", 10000000000000000);
+    createMineral("Malachite", 10000000000000000);
+    createMineral("Silver", 10000000000000000);
+    createMineral("Burmese Tourmaline" ,10000000000000000);
     }
 
   /*** PRIVATE METHODS ***/

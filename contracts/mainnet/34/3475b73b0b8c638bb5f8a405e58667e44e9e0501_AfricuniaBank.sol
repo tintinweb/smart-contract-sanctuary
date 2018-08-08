@@ -232,8 +232,8 @@ contract DetailedERC20 is ERC20 {
 }
 contract AfricuniaBank is StandardToken {
 
-  string public constant name = &quot;AFRICUNIA BANK&quot;; // solium-disable-line uppercase
-  string public constant symbol = &quot;AFCASH&quot;; // solium-disable-line uppercase
+  string public constant name = "AFRICUNIA BANK"; // solium-disable-line uppercase
+  string public constant symbol = "AFCASH"; // solium-disable-line uppercase
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 public constant INITIAL_SUPPLY = 10 * 10 ** (9 + uint256(decimals));

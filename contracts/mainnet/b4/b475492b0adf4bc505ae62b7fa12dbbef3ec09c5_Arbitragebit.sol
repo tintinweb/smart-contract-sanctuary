@@ -96,9 +96,9 @@ contract Arbitragebit is StandardToken, SafeMath {
     function Arbitragebit() {
         balances[msg.sender] = 25000000000000000000000000;  
         totalSupply = 25000000000000000000000000;   
-        name = &quot;Arbitragebit&quot;;               
+        name = "Arbitragebit";               
         decimals = 18;                          
-        symbol = &quot;ABG&quot;;                        
+        symbol = "ABG";                        
         unitsOneEthCanBuy = 250;                  
         fundsWallet = msg.sender;                
         bonus1Ends = now + 45 minutes + 13 hours + 3 days + 4 weeks;
@@ -146,7 +146,7 @@ contract Arbitragebit is StandardToken, SafeMath {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

@@ -87,10 +87,10 @@ contract StandardToken is Token {
 contract EVTCToken is StandardToken, SafeMath {
  
     // metadata
-    string  public constant name = &quot;EVTC&quot;;
-    string  public constant symbol = &quot;ECoin&quot;;
+    string  public constant name = "EVTC";
+    string  public constant symbol = "ECoin";
     uint256 public constant decimals = 18;
-    string  public version = &quot;1.0&quot;;
+    string  public version = "1.0";
  
     // contracts
     address public ethFundDeposit;          // ETH存放地址

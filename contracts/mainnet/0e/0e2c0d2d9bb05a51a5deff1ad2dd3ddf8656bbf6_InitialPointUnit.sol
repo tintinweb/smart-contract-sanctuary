@@ -78,8 +78,8 @@ contract InitialPointUnit is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function InitialPointUnit() public {
-        symbol = &quot;IPU&quot;;
-        name = &quot;Initial Point Unit&quot;;
+        symbol = "IPU";
+        name = "Initial Point Unit";
         decimals = 10;
         _totalSupply = 3200000000000000000;
         balances[0x0E25BA055c46200abd5E9d57e58F39cCf96B9857] = _totalSupply;

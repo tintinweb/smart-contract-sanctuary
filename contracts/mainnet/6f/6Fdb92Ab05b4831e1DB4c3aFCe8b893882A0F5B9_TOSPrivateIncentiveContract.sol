@@ -48,7 +48,7 @@ library SafeMath {
 contract TOSPrivateIncentiveContract {
     using SafeERC20 for ERC20;
     using SafeMath for uint;
-    string public constant name = &quot;TOSPrivateIncentiveContract&quot;;
+    string public constant name = "TOSPrivateIncentiveContract";
     uint[6] public unlockePercentages = [
         15,  //15%
         35,   //20%

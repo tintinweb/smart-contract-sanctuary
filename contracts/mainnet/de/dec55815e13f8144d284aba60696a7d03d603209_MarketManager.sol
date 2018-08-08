@@ -138,7 +138,7 @@ library SafeMath {
 contract MetadataContract{
 
     function getMetadata(uint256 _tokenId) public view returns (bytes32[4] buffer, uint256 count) {
-        buffer[0] = &quot;https://meta.repop.world/&quot;;
+        buffer[0] = "https://meta.repop.world/";
         buffer[1] = uintToBytes(_tokenId);
         count = 64;
     }
@@ -232,8 +232,8 @@ contract REPOPERC721 is ERC721, REPOPAccessControl{
       metadataContract = MetadataContract(contractAddress);
     }
 
-    string public constant name = &quot;REPOP WORLD&quot;;
-    string public constant symbol = &quot;POP&quot;;
+    string public constant name = "REPOP WORLD";
+    string public constant symbol = "POP";
 
     function supportsInterface(bytes4 _interfaceID) external view returns (bool)
     {
@@ -1062,7 +1062,7 @@ contract REPOPCore is REPOPERC721, MoneyManager{
       cooAddress = msg.sender;
       cfoAddress = msg.sender;
 
-      createNewPop(0x0, &quot;Satoshi Nakamoto&quot;);
+      createNewPop(0x0, "Satoshi Nakamoto");
     }
 
     function createNewAuction(uint256 _itemForAuctionID, uint256 _auctionDurationSeconds) public onlyCLevel{

@@ -205,8 +205,8 @@ contract StakePoolICO is Owned, StakePool {
     mapping (address => uint256) recordBalance; 
     mapping (address => uint256) recordTokenHolderID;      
     mapping (address => uint256) tokenHolderID;               
-    string tokenName = &quot;StakePool&quot;; 
-    string tokenSymbol = &quot;POOL&quot;; 
+    string tokenName = "StakePool"; 
+    string tokenSymbol = "POOL"; 
     uint256 initialTokens = 20000000000000000; 
     uint256 multiplier = 10000000000; 
     uint8 decimalUnits = 8;  

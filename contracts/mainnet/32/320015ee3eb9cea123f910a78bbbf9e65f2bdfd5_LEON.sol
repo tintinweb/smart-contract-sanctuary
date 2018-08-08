@@ -126,8 +126,8 @@ library SafeMath {
 contract LEON is Moderated {	
 	using SafeMath for uint256;
 
-		string public name = &quot;LEONS Coin&quot;;	
-		string public symbol = &quot;LEONS&quot;;			
+		string public name = "LEONS Coin";	
+		string public symbol = "LEONS";			
 		uint8 public decimals = 18;
 		
 		mapping(address => uint256) internal balances;

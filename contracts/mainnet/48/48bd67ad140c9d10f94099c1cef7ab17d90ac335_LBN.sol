@@ -30,8 +30,8 @@ contract SafeMath {
 }
 
 contract LBN is SafeMath {
-    string public constant name = &quot;Leber Network&quot;;
-    string public constant symbol = &quot;LBN&quot;;
+    string public constant name = "Leber Network";
+    string public constant symbol = "LBN";
     uint8 public constant decimals = 18;
 
     uint256 public totalSupply = 100000000 * (10 ** uint256(decimals));

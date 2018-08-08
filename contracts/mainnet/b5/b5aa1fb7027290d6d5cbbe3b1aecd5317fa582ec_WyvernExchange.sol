@@ -83,7 +83,7 @@ contract ERC20 is ERC20Basic {
 library ArrayUtils {
 
     /**
-     * Replace bytes in an array with bytes in another array, guarded by a &quot;bytemask&quot;
+     * Replace bytes in an array with bytes in another array, guarded by a "bytemask"
      * 
      * @dev Mask must be 1/8th the size of the byte array. A 1-bit means the byte array can be changed.
      * @param array The original array
@@ -393,7 +393,7 @@ contract ExchangeCore is ReentrancyGuarded, Ownable {
         pure
         returns (bytes32)
     {
-        bytes memory prefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
+        bytes memory prefix = "\x19Ethereum Signed Message:\n32";
         bytes32 hash = keccak256(prefix, hashOrderPartOne(order), hashOrderPartTwo(order));
         return hash;
     }
@@ -1112,11 +1112,11 @@ contract Exchange is ExchangeCore {
 
 contract WyvernExchange is Exchange {
 
-    string public constant name = &quot;Project Wyvern Exchange&quot;;
+    string public constant name = "Project Wyvern Exchange";
 
-    string public constant version = &quot;2&quot;;
+    string public constant version = "2";
 
-    string public constant codename = &quot;Bakunawa&quot;;
+    string public constant codename = "Bakunawa";
 
     /**
      * @dev Initialize a WyvernExchange instance

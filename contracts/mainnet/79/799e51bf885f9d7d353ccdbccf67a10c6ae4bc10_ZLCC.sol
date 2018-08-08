@@ -89,8 +89,8 @@ contract ZLCC is StandardToken {
     function ZLCC() {
         balances[msg.sender] = 30000000000000000;               // Give the creator all initial tokens
         totalSupply = 30000000000000000;                        // Update total supply
-        name = &quot;ZLCC&quot;;                                   // Set the name for display purposes
+        name = "ZLCC";                                   // Set the name for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
-        symbol = &quot;ZLCC&quot;;                               // Set the symbol for display purposes
+        symbol = "ZLCC";                               // Set the symbol for display purposes
     }
 }

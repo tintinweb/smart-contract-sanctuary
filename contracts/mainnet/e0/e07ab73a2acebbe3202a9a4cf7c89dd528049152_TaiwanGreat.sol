@@ -32,8 +32,8 @@ contract TaiwanGreat {
     ) public {
         totalSupply = 23000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;TaiwanGreat&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TWG&quot;;                               // Set the symbol for display purposes
+        name = "TaiwanGreat";                                   // Set the name for display purposes
+        symbol = "TWG";                               // Set the symbol for display purposes
     }
 
     /**

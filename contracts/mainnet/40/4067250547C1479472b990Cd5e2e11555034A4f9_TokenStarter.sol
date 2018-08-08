@@ -36,7 +36,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -327,8 +327,8 @@ contract TokenStarter is Pausable, StandardToken, BlackList {
    constructor() public {
         _totalSupply = 6000000000000;
         tokensInEth = 60300000;
-        name = &quot;MoBro&quot;;
-        symbol = &quot;MOT&quot;;
+        name = "MoBro";
+        symbol = "MOT";
         decimals = 5;
         balances[owner] = _totalSupply;
         deprecated = false;

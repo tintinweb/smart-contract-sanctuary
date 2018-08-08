@@ -85,8 +85,8 @@ contract ShitToken {
     
     
     
-    string public name = &quot;SHIT&quot;;
-    string public symbol = &quot;SHIT&quot;;
+    string public name = "SHIT";
+    string public symbol = "SHIT";
     uint8 constant public decimals = 18;
     uint8 constant internal dividendFee_ = 20;
     uint256 constant internal tokenPriceInitial_ = 0.0000001 ether;

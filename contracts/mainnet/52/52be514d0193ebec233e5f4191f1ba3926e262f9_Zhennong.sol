@@ -5,7 +5,7 @@ pragma solidity ^0.4.18;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -316,8 +316,8 @@ contract Zhennong is PausableToken {
     using SafeMath for uint256;
 
     /// Constant token specific fields
-    string public constant name = &quot;真农庄园&quot;;
-    string public constant symbol = &quot;工分&quot;;
+    string public constant name = "真农庄园";
+    string public constant symbol = "工分";
     uint256 public constant decimals = 18;
 
     /**

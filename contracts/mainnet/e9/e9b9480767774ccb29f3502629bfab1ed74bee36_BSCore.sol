@@ -157,7 +157,7 @@ contract AccessControl {
         _;
     }
 
-    /// @dev Called by any &quot;C-level&quot; role to pause the contract. Used only when
+    /// @dev Called by any "C-level" role to pause the contract. Used only when
     ///  a bug or exploit is detected and we need to limit damage.
     function pause() external onlyCLevel whenNotPaused {
         paused = true;
@@ -306,22 +306,22 @@ contract ERC721 {
 contract BSOwnership is BSBase, ERC721 {
 
     /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant name = &quot;BitSoccer Player&quot;;
-    string public constant symbol = &quot;BSP&quot;;
+    string public constant name = "BitSoccer Player";
+    string public constant symbol = "BSP";
 
     bytes4 constant InterfaceSignature_ERC165 =
-        bytes4(keccak256(&quot;supportsInterface(bytes4)&quot;));
+        bytes4(keccak256("supportsInterface(bytes4)"));
 
     bytes4 constant InterfaceSignature_ERC721 =
-        bytes4(keccak256(&quot;name()&quot;)) ^
-        bytes4(keccak256(&quot;symbol()&quot;)) ^
-        bytes4(keccak256(&quot;totalSupply()&quot;)) ^
-        bytes4(keccak256(&quot;balanceOf(address)&quot;)) ^
-        bytes4(keccak256(&quot;ownerOf(uint256)&quot;)) ^
-        bytes4(keccak256(&quot;approve(address,uint256)&quot;)) ^
-        bytes4(keccak256(&quot;transfer(address,uint256)&quot;)) ^
-        bytes4(keccak256(&quot;transferFrom(address,address,uint256)&quot;)) ^
-        bytes4(keccak256(&quot;tokensOfOwner(address)&quot;));
+        bytes4(keccak256("name()")) ^
+        bytes4(keccak256("symbol()")) ^
+        bytes4(keccak256("totalSupply()")) ^
+        bytes4(keccak256("balanceOf(address)")) ^
+        bytes4(keccak256("ownerOf(uint256)")) ^
+        bytes4(keccak256("approve(address,uint256)")) ^
+        bytes4(keccak256("transfer(address,uint256)")) ^
+        bytes4(keccak256("transferFrom(address,address,uint256)")) ^
+        bytes4(keccak256("tokensOfOwner(address)"));
 
     /// @notice Introspection interface as per ERC-165 (https://github.com/ethereum/EIPs/issues/165).
     ///  Returns true for any standardized interfaces implemented by this contract. We implement

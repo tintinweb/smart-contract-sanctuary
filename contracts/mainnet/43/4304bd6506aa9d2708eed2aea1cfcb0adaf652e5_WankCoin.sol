@@ -45,8 +45,8 @@ contract WankCoin is ERC20 {
 		decimals = 18;
 		totalSupply = 2 * uint(10)**(decimals + 9);
 		balances[owner] = totalSupply;
-		name = &quot;WANKCOIN&quot;;
-		symbol = &quot;WKC&quot;;
+		name = "WANKCOIN";
+		symbol = "WKC";
 		emit Transfer(0x0, owner, totalSupply);
 	}
 	

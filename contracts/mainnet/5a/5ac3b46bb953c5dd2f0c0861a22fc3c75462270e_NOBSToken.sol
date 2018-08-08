@@ -110,8 +110,8 @@ contract NOBSToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function NOBSToken() public {
-        symbol = &quot;NOBS&quot;;
-        name = &quot;NOBS Token&quot;;
+        symbol = "NOBS";
+        name = "NOBS Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xdF74B93C1Fa5515E3D5199fce19b9DB57A98e8B8] = _totalSupply;

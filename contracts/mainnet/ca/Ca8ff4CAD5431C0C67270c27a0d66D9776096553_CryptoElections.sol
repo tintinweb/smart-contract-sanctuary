@@ -3,8 +3,8 @@ pragma solidity ^0.4.17;
 //**
 contract ERC721 {
    // ERC20 compatible functions
-  string public name = &quot;CryptoElections&quot;;
-  string public symbol = &quot;CE&quot;;
+  string public name = "CryptoElections";
+  string public symbol = "CE";
    function totalSupply()  public view returns (uint256);
    function balanceOf(address _owner) public constant returns (uint);
    // Functions that define ownership

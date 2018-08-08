@@ -242,11 +242,11 @@ contract RealityCheck is BalanceHolder {
     /// @dev Creates some generalized templates for different question types used in the DApp.
     function RealityCheck() 
     public {
-        createTemplate(&#39;{&quot;title&quot;: &quot;%s&quot;, &quot;type&quot;: &quot;bool&quot;, &quot;category&quot;: &quot;%s&quot;}&#39;);
-        createTemplate(&#39;{&quot;title&quot;: &quot;%s&quot;, &quot;type&quot;: &quot;uint&quot;, &quot;decimals&quot;: 18, &quot;category&quot;: &quot;%s&quot;}&#39;);
-        createTemplate(&#39;{&quot;title&quot;: &quot;%s&quot;, &quot;type&quot;: &quot;single-select&quot;, &quot;outcomes&quot;: [%s], &quot;category&quot;: &quot;%s&quot;}&#39;);
-        createTemplate(&#39;{&quot;title&quot;: &quot;%s&quot;, &quot;type&quot;: &quot;multiple-select&quot;, &quot;outcomes&quot;: [%s], &quot;category&quot;: &quot;%s&quot;}&#39;);
-        createTemplate(&#39;{&quot;title&quot;: &quot;%s&quot;, &quot;type&quot;: &quot;datetime&quot;, &quot;category&quot;: &quot;%s&quot;}&#39;);
+        createTemplate(&#39;{"title": "%s", "type": "bool", "category": "%s"}&#39;);
+        createTemplate(&#39;{"title": "%s", "type": "uint", "decimals": 18, "category": "%s"}&#39;);
+        createTemplate(&#39;{"title": "%s", "type": "single-select", "outcomes": [%s], "category": "%s"}&#39;);
+        createTemplate(&#39;{"title": "%s", "type": "multiple-select", "outcomes": [%s], "category": "%s"}&#39;);
+        createTemplate(&#39;{"title": "%s", "type": "datetime", "category": "%s"}&#39;);
     }
 
     /// @notice Function for arbitrator to set an optional per-question fee. 
@@ -360,7 +360,7 @@ contract RealityCheck is BalanceHolder {
     }
 
     /// @notice Submit an answer for a question.
-    /// @dev Adds the answer to the history and updates the current &quot;best&quot; answer.
+    /// @dev Adds the answer to the history and updates the current "best" answer.
     /// May be subject to front-running attacks; Substitute submitAnswerCommitment()->submitAnswerReveal() to prevent them.
     /// @param question_id The ID of the question
     /// @param answer The answer, encoded into bytes32

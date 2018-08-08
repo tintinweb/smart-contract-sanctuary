@@ -117,8 +117,8 @@ contract AgriToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     constructor() public {
-        symbol = &quot;AGRI&quot;;
-        name = &quot;AgriChain Utility Token&quot;;
+        symbol = "AGRI";
+        name = "AgriChain Utility Token";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

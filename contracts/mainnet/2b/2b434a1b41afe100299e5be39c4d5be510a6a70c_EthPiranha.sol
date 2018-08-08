@@ -50,8 +50,8 @@ contract EthPiranha is ERC721, Ownable {
   event TokenSold(uint256 tokenId, uint256 oldPrice, uint256 newPrice, address prevOwner, address winner, string name);
   event Transfer(address from, address to, uint256 tokenId);
 
-  string public constant NAME = &quot;Piranha&quot;;
-  string public constant SYMBOL = &quot;PiranhaToken&quot;;
+  string public constant NAME = "Piranha";
+  string public constant SYMBOL = "PiranhaToken";
 
   mapping (uint256 => address) private piranhaIdToOwner;
 
@@ -279,7 +279,7 @@ contract EthPiranha is ERC721, Ownable {
 	 piranhaMale.growthStartTime = now;	 
 	 piranhaFemale.growthStartTime = now;	 
 
-	_createPiranha(&quot;EthPiranha&quot;, msg.sender, 0, newbornSize, newbornGen, newbornUnique, 0);
+	_createPiranha("EthPiranha", msg.sender, 0, newbornSize, newbornGen, newbornUnique, 0);
   
   }
   

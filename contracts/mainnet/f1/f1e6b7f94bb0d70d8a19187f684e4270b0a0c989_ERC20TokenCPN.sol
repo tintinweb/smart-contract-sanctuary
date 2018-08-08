@@ -19,8 +19,8 @@ contract ERC20TokenCPN
 
     ///ERC20 PARAMETRS///
     
-    string public constant name = &quot;STAR COUPON&quot;;
-    string public constant symbol = &quot;CPN&quot;;
+    string public constant name = "STAR COUPON";
+    string public constant symbol = "CPN";
     uint8 public constant decimals = 0;
     
     ///*ERC20 PARAMETRS///

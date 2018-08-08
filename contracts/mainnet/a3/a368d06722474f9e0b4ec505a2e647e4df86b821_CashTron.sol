@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------------------
-     // CashTron Currency Token &quot;VNDCC&quot; (Is Not Bank Legal Money)
+     // CashTron Currency Token "VNDCC" (Is Not Bank Legal Money)
      // USDC/EURC/AUDC/CADC/NZDC/RUBC/CNYC/SGDC/PHPC/IDRC/MYRC/THBC/#VNDC/BDTC
      // CashTron @ 2018 CashTron.io  CashTron.co
      //--------------------------------------------------------------------------------
@@ -228,8 +228,8 @@ contract BurnableToken is StandardToken, Ownable {
 contract CashTron is BurnableToken {
     using SafeMath for uint256;
 
-    string public constant name = &quot;CashTron&quot;;
-    string public constant symbol = &quot;VNDC&quot;;
+    string public constant name = "CashTron";
+    string public constant symbol = "VNDC";
     uint8 public constant decimals = 8;
     uint256 public constant INITIAL_SUPPLY = 500000000;
 

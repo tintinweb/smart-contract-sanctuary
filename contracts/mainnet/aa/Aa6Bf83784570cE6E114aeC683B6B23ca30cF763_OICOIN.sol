@@ -260,8 +260,8 @@ contract StandardToken is ERC20, BasicToken {
 // File: contracts/OICOIN.sol
 
 contract OICOIN is StandardToken {
-	string public name = &quot;Osmium Investment Coin&quot;;
-	string public symbol = &quot;OICOIN&quot;;
+	string public name = "Osmium Investment Coin";
+	string public symbol = "OICOIN";
 	uint8 public decimals = 8;
 
 	constructor() public {

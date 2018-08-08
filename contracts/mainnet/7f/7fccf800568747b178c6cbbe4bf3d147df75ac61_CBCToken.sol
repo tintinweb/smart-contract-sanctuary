@@ -420,8 +420,8 @@ contract BurnableToken is BasicToken {
 
 contract CBCToken is CappedToken, PausableToken, BurnableToken {
 
-    string public constant name = &quot;CarBoxCoin&quot;;
-    string public constant symbol = &quot;CBC&quot;;
+    string public constant name = "CarBoxCoin";
+    string public constant symbol = "CBC";
     uint8 public constant decimals = 18;
 
     uint256 private constant TOKEN_CAP = 300000000 * (10 ** uint256(decimals));

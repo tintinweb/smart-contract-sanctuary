@@ -68,8 +68,8 @@ library SafeMath {
 */
 contract MINERTA is ERC20Interface{
     //Token information
-    string public constant name = &quot;MINERTA&quot;;
-    string public constant symbol = &quot;MIT&quot;;
+    string public constant name = "MINERTA";
+    string public constant symbol = "MIT";
     uint8 public constant decimals = 18;
     uint _totalSupply ; 
     using SafeMath for uint256;

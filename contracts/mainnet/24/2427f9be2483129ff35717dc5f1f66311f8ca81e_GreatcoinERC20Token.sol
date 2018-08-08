@@ -208,11 +208,11 @@ contract GreatcoinERC20Token is StandardToken {
 
     */
 
-    string public name = &quot;Greatcoin&quot;;                 //fancy name: eg Simon Bucks
+    string public name = "Greatcoin";                 //fancy name: eg Simon Bucks
 
     uint8 public decimals= 18;                 //How many decimals to show. ie. There could 1000 base units with 3 decimals. Meaning 0.980 SBX = 980 base units. It&#39;s like comparing 1 wei to 1 ether.
 
-    string public symbol= &quot;GRT&quot;;                 //An identifier: eg SBX
+    string public symbol= "GRT";                 //An identifier: eg SBX
 
     uint256 public totalSupply= 1000000000000000000000000000;
 
@@ -240,11 +240,11 @@ contract GreatcoinERC20Token is StandardToken {
 
         totalSupply = 1000000000000000000000000000;                        // Update total supply (100000 for example)
 
-        name = &quot;Greatcoin&quot;;                                   // Set the name for display purposes
+        name = "Greatcoin";                                   // Set the name for display purposes
 
         decimals = 18;                            // Amount of decimals for display purposes
 
-        symbol = &quot;GRT&quot;;                               // Set the symbol for display purposes
+        symbol = "GRT";                               // Set the symbol for display purposes
 
     }
 
@@ -266,7 +266,7 @@ contract GreatcoinERC20Token is StandardToken {
 
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
 
         return true;
 

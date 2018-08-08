@@ -28,8 +28,8 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 
 contract MyToken is owned {
     /* Public variables of the token */
-    string public name = &quot;DankToken&quot;;
-    string public symbol = &quot;DANK&quot;;
+    string public name = "DankToken";
+    string public symbol = "DANK";
     uint8 public decimals = 18;
     uint256 _totalSupply;
     uint256 public amountRaised = 0;

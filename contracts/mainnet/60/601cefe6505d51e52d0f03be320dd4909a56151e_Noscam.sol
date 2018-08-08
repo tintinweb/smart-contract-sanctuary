@@ -109,8 +109,8 @@ contract Noscam is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Noscam() public {
-        symbol = &quot;NSC&quot;;
-        name = &quot;NOSCAM&quot;;
+        symbol = "NSC";
+        name = "NOSCAM";
         decimals = 4;
         _totalSupply = 210000000000;
         balances[0xAe21C2887AD86B5be34b1314854C66a5f9276bF9] = _totalSupply;

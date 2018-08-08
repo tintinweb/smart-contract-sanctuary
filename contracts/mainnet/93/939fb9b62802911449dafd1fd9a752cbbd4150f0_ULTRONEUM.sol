@@ -203,8 +203,8 @@ contract ULTRONEUM is XUMStandardToken {
     
     uint256 constant public decimals = 16;
     uint256 public totalSupply = 50 * (10**7) * 10**16 ; // 500 million tokens, 16 decimal places, 
-    string constant public name = &quot;Ultroneum&quot;;
-    string constant public symbol = &quot;XUM&quot;;
+    string constant public name = "Ultroneum";
+    string constant public symbol = "XUM";
     
     function ULTRONEUM(){
         balances[msg.sender] = totalSupply;               // Give the creator all initial tokens
@@ -218,7 +218,7 @@ contract ULTRONEUM is XUMStandardToken {
         //call the receiveApproval function on the contract you want to be notified. This crafts the function signature manually so one doesn&#39;t have to include a contract in here just for this.
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
-        require(_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData));
+        require(_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData));
         return true;
     }
 }

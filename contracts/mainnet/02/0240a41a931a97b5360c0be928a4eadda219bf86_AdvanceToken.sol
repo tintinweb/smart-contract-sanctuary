@@ -184,8 +184,8 @@ contract BaseToken is Pausable{
 /*       ADVANCED TOKEN STARTS HERE       */
 /******************************************/
 contract AdvanceToken is BaseToken {
-    string tokenName        = &quot;8ENCORE&quot;;       // Set the name for display purposes
-    string tokenSymbol      = &quot;8EN&quot;;           // Set the symbol for display purposes
+    string tokenName        = "8ENCORE";       // Set the name for display purposes
+    string tokenSymbol      = "8EN";           // Set the symbol for display purposes
 
     struct frozenStruct {
         uint startTime;

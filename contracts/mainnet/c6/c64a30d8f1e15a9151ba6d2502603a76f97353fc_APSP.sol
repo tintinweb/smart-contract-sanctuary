@@ -60,8 +60,8 @@ contract TokenERC20 {
     function TokenERC20() public {
         totalSupply = initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;APSP&quot;;                                   // Set the name for display purposes
-        symbol = &quot;APSP&quot;;                               // Set the symbol for display purposes
+        name = "APSP";                                   // Set the name for display purposes
+        symbol = "APSP";                               // Set the symbol for display purposes
     }
 
     /**

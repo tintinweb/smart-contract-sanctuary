@@ -72,8 +72,8 @@ contract StandardToken is ERC20 {
 contract ZBCToken is StandardToken {
 
 	//FIELDS
-	string public name = &quot;ZBCoin&quot;;
-    string public symbol = &quot;ZBC&quot;;
+	string public name = "ZBCoin";
+    string public symbol = "ZBC";
     uint public decimals = 3;
 
 	//ZBC Token total supply - included decimals below

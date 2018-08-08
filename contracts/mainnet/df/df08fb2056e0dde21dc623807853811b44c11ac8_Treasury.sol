@@ -78,7 +78,7 @@ contract UsingAdmin is
         constant
         returns (address _addr)
     {
-        return addressOf(&quot;ADMIN&quot;);
+        return addressOf("ADMIN");
     }
 }
 
@@ -320,7 +320,7 @@ contract Requestable is
         
         // If request timed out, cancel it.
         if (uint32(now) > r.dateCreated + TIMEOUT_TIME) {
-            cancelRequest(_id, &quot;Request timed out.&quot;);
+            cancelRequest(_id, "Request timed out.");
             return;
         }
                 
@@ -438,8 +438,8 @@ The Treasury manages 2 balances:
 
     * capital: Ether that can be sent to bankrollable contracts.
         - Is controlled via `Requester` governance, by the Admin (which is mutable)
-            - Capital received by Comptroller is considered &quot;capitalRaised&quot;.
-            - A target amount can be set: &quot;capitalRaisedTarget&quot;.
+            - Capital received by Comptroller is considered "capitalRaised".
+            - A target amount can be set: "capitalRaisedTarget".
             - Comptroller will sell Tokens to reach capitalRaisedTarget.
         - Can be sent to Bankrollable contracts.
         - Can be recalled from Bankrollable contracts.
@@ -454,7 +454,7 @@ Thus, the balance of Treasury will always equal: capital + profits.
 
 Roles:
     Owner:       can set Comptroller and Token addresses, once.
-    Comptroller: can add and remove &quot;raised&quot; capital
+    Comptroller: can add and remove "raised" capital
     Admin:       can trigger requests.
     Token:       receives profits via .issueDividend().
     Anybody:     can call .issueDividend()
@@ -477,7 +477,7 @@ contract Treasury is
 {
     // Address that can initComptroller
     address public owner;
-    // Capital sent from this address is considered &quot;capitalRaised&quot;
+    // Capital sent from this address is considered "capitalRaised"
     // This also contains the token that dividends will be sent to.
     _ITrComptroller public comptroller;
 
@@ -564,18 +564,18 @@ contract Treasury is
     {
         // Ensure token is set.
         if (address(comptroller) == address(0)) {
-            emit DividendFailure(now, &quot;Comptroller not yet set.&quot;);
+            emit DividendFailure(now, "Comptroller not yet set.");
             return;
         }
         // Ensure the CrowdSale is completed
         if (comptroller.wasSaleEnded() == false) {
-            emit DividendFailure(now, &quot;CrowdSale not yet completed.&quot;);
+            emit DividendFailure(now, "CrowdSale not yet completed.");
             return;
         }
         // Load _profits to memory (saves gas), and ensure there are profits.
         _profits = profits;
         if (_profits <= 0) {
-            emit DividendFailure(now, &quot;No profits to send.&quot;);
+            emit DividendFailure(now, "No profits to send.");
             return;
         }
 
@@ -618,10 +618,10 @@ contract Treasury is
     {
         // Fail if we do not have the capital available.
         if (_value > capital)
-            return (false, &quot;Not enough capital.&quot;);
+            return (false, "Not enough capital.");
         // Fail if target is not Bankrollable
         if (!_hasCorrectTreasury(_bankrollable))
-            return (false, &quot;Bankrollable does not have correct Treasury.&quot;);
+            return (false, "Bankrollable does not have correct Treasury.");
 
         // Decrease capital, increase bankrolled
         capital -= _value;
@@ -631,23 +631,23 @@ contract Treasury is
         _ITrBankrollable(_bankrollable).addBankroll.value(_value)();
         emit CapitalRemoved(now, _bankrollable, _value);
         emit ExecutedSendCapital(now, _bankrollable, _value);
-        return (true, &quot;Sent bankroll to target.&quot;);
+        return (true, "Sent bankroll to target.");
     }
 
-    // Calls &quot;.removeBankroll()&quot; on Bankrollable target.
+    // Calls ".removeBankroll()" on Bankrollable target.
     function executeRecallCapital(address _bankrollable, uint _value)
         internal
         returns (bool _success, string _result)
     {
         // This should call .addCapital(), incrementing capital.
         uint _prevCapital = capital;
-        _ITrBankrollable(_bankrollable).removeBankroll(_value, &quot;addCapital()&quot;);
+        _ITrBankrollable(_bankrollable).removeBankroll(_value, "addCapital()");
         uint _recalled = capital - _prevCapital;
         capitalLedger.subtract(_bankrollable, _recalled);
         
         // Emit and return
         emit ExecutedRecallCapital(now, _bankrollable, _recalled);
-        return (true, &quot;Received bankoll back from target.&quot;);
+        return (true, "Received bankoll back from target.");
     }
 
     // Increases capitalRaisedTarget
@@ -658,7 +658,7 @@ contract Treasury is
         // Increase target amount.
         capitalRaisedTarget += _value;
         emit ExecutedRaiseCapital(now, _value);
-        return (true, &quot;Capital target raised.&quot;);
+        return (true, "Capital target raised.");
     }
 
     // Moves capital to profits
@@ -667,14 +667,14 @@ contract Treasury is
         returns (bool _success, string _result)
     {
         if (_value > capital)
-            return (false, &quot;Not enough capital.&quot;);
+            return (false, "Not enough capital.");
         capital -= _value;
         profits += _value;
         profitsTotal += _value;
         emit CapitalRemoved(now, this, _value);
         emit ProfitsReceived(now, this, _value);
         emit ExecutedDistributeCapital(now, _value);
-        return (true, &quot;Capital moved to profits.&quot;);
+        return (true, "Capital moved to profits.");
     }
 
 
@@ -745,7 +745,7 @@ contract Treasury is
         private
         returns (bool)
     {
-        bytes32 _sig = bytes4(keccak256(&quot;getTreasury()&quot;));
+        bytes32 _sig = bytes4(keccak256("getTreasury()"));
         bool _success;
         address _response;
         assembly {

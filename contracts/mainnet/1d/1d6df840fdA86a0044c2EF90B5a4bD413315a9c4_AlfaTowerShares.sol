@@ -130,8 +130,8 @@ contract StandardToken is SharesContract, ERC20 {
 
  
 contract AlfaTowerShares is StandardToken, Ownable {
-  string public constant name = &quot;Alfa-Tower&quot;;
-  string public constant symbol = &quot;Alfa-Tower&quot;;
+  string public constant name = "Alfa-Tower";
+  string public constant symbol = "Alfa-Tower";
   uint public constant decimals = 0;
   // Constructor
   function AlfaTowerShares() {
@@ -151,7 +151,7 @@ The completion of the construction is planned for October 2018. The advertising 
 2. This investment project is located on the last vacant plot of land in the business center of Limassol, next to the central municipal court. 
 3. The land is in the management of the company, thereby giving guarantees that the project is financially attractive.
 4. The most respected company in the world, which participated in the construction of Jumeirah palms in Dubai, is engaged in the architectural and construction part.
-5. The demand for class &quot;A&quot; office premises. 
+5. The demand for class "A" office premises. 
 6. This project is one of the first in Cyprus, which will have the status of an office-residential building.
 
 The project consists of 8 ground floors, 3 underground floors, parking, an elite restaurant on the roof of the building, a fitness room, a beauty salon, 4 modern elevators, all offices have sea views, and the business part of the city.

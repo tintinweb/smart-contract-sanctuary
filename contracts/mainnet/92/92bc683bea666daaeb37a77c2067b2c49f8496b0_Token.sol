@@ -106,8 +106,8 @@ contract Token is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function Token() public {
-        symbol = &quot;SMINEM&quot;;
-        name = &quot;boy sminem cool&quot;;
+        symbol = "SMINEM";
+        name = "boy sminem cool";
         decimals = 18;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

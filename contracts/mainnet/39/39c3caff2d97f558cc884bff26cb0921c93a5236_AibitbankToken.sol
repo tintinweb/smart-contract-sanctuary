@@ -113,8 +113,8 @@ contract AibitbankToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AibitbankToken() public {
-        symbol = &quot;ABK&quot;;
-        name = &quot;Aibitbank Token&quot;;
+        symbol = "ABK";
+        name = "Aibitbank Token";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0x319F9A170aD252fDffEbD290118dfbFB9F7daC80] = _totalSupply;

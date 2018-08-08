@@ -113,8 +113,8 @@ contract KillahyToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function KillahyToken() public {
-        symbol = &quot;KILLAHY&quot;;
-        name = &quot;Killahy Token&quot;;
+        symbol = "KILLAHY";
+        name = "Killahy Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x821ca1b7919200Ff99495466e13CA3b3135c1668] = _totalSupply;

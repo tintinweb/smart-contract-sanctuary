@@ -69,9 +69,9 @@ contract ERC20Token {
 contract MayanProtocolContract is ERC20Token, Owned{
 
     /* Public variables of the token */
-    string  public constant standard = &quot;Mayan protocol V1.0&quot;;
-    string  public constant name = &quot;Mayan protocol&quot;;
-    string  public constant symbol = &quot;MAY&quot;;
+    string  public constant standard = "Mayan protocol V1.0";
+    string  public constant name = "Mayan protocol";
+    string  public constant symbol = "MAY";
     uint256 public constant decimals = 6;
     uint256 private constant etherChange = 10**18;
     

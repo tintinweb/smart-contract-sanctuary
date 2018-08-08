@@ -179,8 +179,8 @@ contract PausableToken is StandardToken, Pausable {
 }
 
 contract EladToken is PausableToken {
-  string public constant name = &quot;Elad Token&quot;;
-  string public constant symbol = &quot;ELAD&quot;;
+  string public constant name = "Elad Token";
+  string public constant symbol = "ELAD";
   uint8 public constant decimals = 18;
 
   uint256 public constant initialSupply = 100000000 * 10 ** uint256(decimals);

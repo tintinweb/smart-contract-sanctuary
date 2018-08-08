@@ -60,9 +60,9 @@ contract Token is SafeMath {
 	// Contract balance
 	mapping (address => uint256) public balanceOf;
 	// Token name
-	string public name = &quot;MoralityAI&quot;;
+	string public name = "MoralityAI";
 	// Token symbol
-	string public symbol = &quot;Mo&quot;;
+	string public symbol = "Mo";
 	// Decimals to use
 	uint8 public decimal = 18; 
 	// Total initial suppy

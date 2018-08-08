@@ -29,8 +29,8 @@ contract USACOIN {
 		decimals = 8;
         totalSupply = 6000000 * 10 ** uint256(decimals); 
         balanceOf[msg.sender] = totalSupply;     
-        name = &quot;USACOIN&quot;;                             
-        symbol = &quot;USC&quot;;                          
+        name = "USACOIN";                             
+        symbol = "USC";                          
     }
 
     /**

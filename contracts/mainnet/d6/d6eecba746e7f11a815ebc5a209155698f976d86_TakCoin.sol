@@ -113,8 +113,8 @@ contract TakCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function FucksToken() public {
-        symbol = &quot;TAK&quot;;
-        name = &quot;TakCoin&quot;;
+        symbol = "TAK";
+        name = "TakCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0xa3C3b9088Eb51E400A32f822379C07b01C00E3A1] = _totalSupply;

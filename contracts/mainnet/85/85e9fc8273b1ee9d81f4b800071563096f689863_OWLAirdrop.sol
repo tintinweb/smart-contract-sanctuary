@@ -511,8 +511,8 @@ contract StandardToken is Token, StandardTokenData {
 contract TokenOWL is Proxied, StandardToken {
     using Math for *;
 
-    string public constant name = &quot;OWL Token&quot;;
-    string public constant symbol = &quot;OWL&quot;;
+    string public constant name = "OWL Token";
+    string public constant symbol = "OWL";
     uint8 public constant decimals = 18;
 
     struct masterCopyCountdownType {
@@ -615,8 +615,8 @@ contract TokenOWL is Proxied, StandardToken {
 // File: @gnosis.pm/gno-token/contracts/TokenGNO.sol
 
 contract TokenGNO is StandardToken {
-    string public constant symbol = &quot;GNO&quot;;
-    string public constant name = &quot;Gnosis&quot;;
+    string public constant symbol = "GNO";
+    string public constant name = "Gnosis";
     uint8 public constant decimals = 18;
 
     function TokenGNO(

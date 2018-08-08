@@ -59,7 +59,7 @@ contract ZenswapContributeTest is Ownable {
     }
 
     /**
-     * Withdraw an &quot;amount&quot; of available tokens in this contract
+     * Withdraw an "amount" of available tokens in this contract
      * 
      */
     function withdrawAvailableToken(address _address, uint amount) public onlyOwner {

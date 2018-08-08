@@ -184,7 +184,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  * https://github.com/OpenZeppelin/zeppelin-solidity/
  */
 contract Ownable {
@@ -228,9 +228,9 @@ contract Ownable {
 contract FTXToken is StandardToken, Ownable {
 
     /* metadata */
-    string public constant name = &quot;FintruX Network&quot;;
-    string public constant symbol = &quot;FTX&quot;;
-    string public constant version = &quot;1.0&quot;;
+    string public constant name = "FintruX Network";
+    string public constant symbol = "FTX";
+    string public constant version = "1.0";
     uint8 public constant decimals = 18;
 
     /* all accounts in wei */

@@ -249,7 +249,7 @@ contract BurnableToken is StandardToken {
     ICO IAM
 */
 contract Token is CappedToken, BurnableToken, Withdrawable {
-    function Token() CappedToken(70000000 * 1 ether) StandardToken(&quot;IAM Aero&quot;, &quot;IAM&quot;, 18) public {
+    function Token() CappedToken(70000000 * 1 ether) StandardToken("IAM Aero", "IAM", 18) public {
         
     }
 

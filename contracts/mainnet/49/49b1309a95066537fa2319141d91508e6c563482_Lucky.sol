@@ -56,8 +56,8 @@ contract ERC20 {
 
 contract Lucky is ERC20, owned {
     using SafeMath for uint256;
-    string public name = &quot;Lucky GamblingvToken&quot;;
-    string public symbol = &quot;LGT&quot;;
+    string public name = "Lucky GamblingvToken";
+    string public symbol = "LGT";
     uint8 public decimals = 18;
     uint256 public totalSupply;
 

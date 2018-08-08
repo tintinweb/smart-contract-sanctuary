@@ -28,8 +28,8 @@ contract REOC {
     function REOC() public {
         totalSupply = 200000000 * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;Recycled Oil Coin&quot;;                                   // Set the name for display purposes
-        symbol = &quot;REOC&quot;;                               // Set the symbol for display purposes
+        name = "Recycled Oil Coin";                                   // Set the name for display purposes
+        symbol = "REOC";                               // Set the symbol for display purposes
     }
 
     /**

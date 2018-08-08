@@ -71,9 +71,9 @@ contract ERC20Token is StandardToken {
         ) {
         balances[msg.sender] = 11000000*1000000000000000000;               // 11 Million Total Supply
         totalSupply = 11000000*1000000000000000000;                     
-        name = &quot;Hexan Coin&quot;;                                   
+        name = "Hexan Coin";                                   
         decimals = 18;                            
-        symbol = &quot;HXC&quot;;                              
+        symbol = "HXC";                              
     }
 
     
@@ -81,7 +81,7 @@ contract ERC20Token is StandardToken {
         allowed[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
 
-        if(!_spender.call(bytes4(bytes32(sha3(&quot;receiveApproval(address,uint256,address,bytes)&quot;))), msg.sender, _value, this, _extraData)) { throw; }
+        if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { throw; }
         return true;
     }
 }

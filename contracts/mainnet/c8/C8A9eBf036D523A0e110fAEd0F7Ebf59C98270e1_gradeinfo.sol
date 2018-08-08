@@ -16,7 +16,7 @@ contract gradeinfo{
     
     mapping(string => ProjectData) ProjectDatas;
     address creater;                
-    string  public PlatformInformation=&quot;&quot;; 
+    string  public PlatformInformation=""; 
     string  public Hotlist;                
     string[] public AllProjectList; 
 
@@ -57,7 +57,7 @@ contract gradeinfo{
             
             AllProjectList.push(ProjectName);
         }else{
-            //loginfo(NewProjectName,&quot;项目已存在&quot;);
+            //loginfo(NewProjectName,"项目已存在");
         }
     }
     
@@ -136,7 +136,7 @@ contract gradeinfo{
         if(__FindProjects(ProjectName)==true){
             return (ProjectDatas[ProjectName].Descript);
         }else{
-           return (&quot;&quot;); 
+           return (""); 
         }
     }
     
@@ -144,15 +144,15 @@ contract gradeinfo{
         if(__FindProjects(ProjectName)==true){
             return (ProjectDatas[ProjectName].dapp_address,ProjectDatas[ProjectName].dapp_ens,ProjectDatas[ProjectName].dapp_jsoninfo);
         }else{
-           return (0,&quot;&quot;,&quot;&quot;); 
+           return (0,"",""); 
         }
     }
 
     function GetOwner(string ProjectName) constant public returns(string,address){
         if(__FindProjects(ProjectName)==true){
-            return (&quot;项目提供者&quot;,ProjectDatas[ProjectName].Owner); 
+            return ("项目提供者",ProjectDatas[ProjectName].Owner); 
         }else{
-            return (&quot;&quot;,0);
+            return ("",0);
         }
     }
 

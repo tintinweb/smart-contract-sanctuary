@@ -113,8 +113,8 @@ contract WAmlingCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function WAmlingCoin() public {
-        symbol = &quot;WAM&quot;;
-        name = &quot;WAmlingCoin&quot;;
+        symbol = "WAM";
+        name = "WAmlingCoin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x63425B871dEEf48296B9Ad8B70f0796Ecf32cB03] = _totalSupply;

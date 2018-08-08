@@ -105,7 +105,7 @@ contract IController {
 
 contract DisputeCrowdsourcerFactory {
     function createDisputeCrowdsourcer(IController _controller, IMarket _market, uint256 _size, bytes32 _payoutDistributionHash, uint256[] _payoutNumerators, bool _invalid) public returns (IDisputeCrowdsourcer) {
-        Delegator _delegator = new Delegator(_controller, &quot;DisputeCrowdsourcer&quot;);
+        Delegator _delegator = new Delegator(_controller, "DisputeCrowdsourcer");
         IDisputeCrowdsourcer _disputeCrowdsourcer = IDisputeCrowdsourcer(_delegator);
         _disputeCrowdsourcer.initialize(_market, _size, _payoutDistributionHash, _payoutNumerators, _invalid);
         return _disputeCrowdsourcer;
@@ -114,7 +114,7 @@ contract DisputeCrowdsourcerFactory {
 
 contract InitialReporterFactory {
     function createInitialReporter(IController _controller, IMarket _market, address _designatedReporter) public returns (IInitialReporter) {
-        Delegator _delegator = new Delegator(_controller, &quot;InitialReporter&quot;);
+        Delegator _delegator = new Delegator(_controller, "InitialReporter");
         IInitialReporter _initialReporter = IInitialReporter(_delegator);
         _initialReporter.initialize(_market, _designatedReporter);
         return _initialReporter;
@@ -123,7 +123,7 @@ contract InitialReporterFactory {
 
 contract MailboxFactory {
     function createMailbox(IController _controller, address _owner, IMarket _market) public returns (IMailbox) {
-        Delegator _delegator = new Delegator(_controller, &quot;Mailbox&quot;);
+        Delegator _delegator = new Delegator(_controller, "Mailbox");
         IMailbox _mailbox = IMailbox(_delegator);
         _mailbox.initialize(_owner, _market);
         return _mailbox;
@@ -132,7 +132,7 @@ contract MailboxFactory {
 
 contract MapFactory {
     function createMap(IController _controller, address _owner) public returns (Map) {
-        Delegator _delegator = new Delegator(_controller, &quot;Map&quot;);
+        Delegator _delegator = new Delegator(_controller, "Map");
         Map _map = Map(_delegator);
         _map.initialize(_owner);
         return _map;
@@ -141,7 +141,7 @@ contract MapFactory {
 
 contract ShareTokenFactory {
     function createShareToken(IController _controller, IMarket _market, uint256 _outcome) public returns (IShareToken) {
-        Delegator _delegator = new Delegator(_controller, &quot;ShareToken&quot;);
+        Delegator _delegator = new Delegator(_controller, "ShareToken");
         IShareToken _shareToken = IShareToken(_delegator);
         _shareToken.initialize(_market, _outcome);
         return _shareToken;
@@ -170,7 +170,7 @@ contract Delegator is DelegationTarget {
         assembly {
             //0x40 is the address where the next free memory slot is stored in Solidity
             let _calldataMemoryOffset := mload(0x40)
-            // new &quot;memory end&quot; including padding. The bitwise operations here ensure we get rounded up to the nearest 32 byte boundary
+            // new "memory end" including padding. The bitwise operations here ensure we get rounded up to the nearest 32 byte boundary
             let _size := and(add(calldatasize, 0x1f), not(0x1f))
             // Update the pointer at 0x40 to point at new free memory location so any theoretical allocation doesn&#39;t stomp our memory in this call
             mstore(0x40, add(_calldataMemoryOffset, _size))
@@ -665,7 +665,7 @@ contract Market is DelegationTarget, ITyped, Initializable, Ownable, IMarket {
         require(_feePerEthInAttoeth <= MAX_FEE_PER_ETH_IN_ATTOETH);
         require(_creator != NULL_ADDRESS);
         require(controller.getTimestamp() < _endTime);
-        require(address(_cash) == controller.lookup(&quot;Cash&quot;));
+        require(address(_cash) == controller.lookup("Cash"));
         universe = _universe;
         require(!universe.isForking());
         owner = _creator;
@@ -675,10 +675,10 @@ contract Market is DelegationTarget, ITyped, Initializable, Ownable, IMarket {
         numTicks = _numTicks;
         feeDivisor = _feePerEthInAttoeth == 0 ? 0 : 1 ether / _feePerEthInAttoeth;
         cash = _cash;
-        InitialReporterFactory _initialReporterFactory = InitialReporterFactory(controller.lookup(&quot;InitialReporterFactory&quot;));
+        InitialReporterFactory _initialReporterFactory = InitialReporterFactory(controller.lookup("InitialReporterFactory"));
         participants.push(_initialReporterFactory.createInitialReporter(controller, this, _designatedReporterAddress));
-        marketCreatorMailbox = MailboxFactory(controller.lookup(&quot;MailboxFactory&quot;)).createMailbox(controller, owner, this);
-        crowdsourcers = MapFactory(controller.lookup(&quot;MapFactory&quot;)).createMap(controller, this);
+        marketCreatorMailbox = MailboxFactory(controller.lookup("MailboxFactory")).createMailbox(controller, owner, this);
+        crowdsourcers = MapFactory(controller.lookup("MapFactory")).createMap(controller, this);
         for (uint256 _outcome = 0; _outcome < numOutcomes; _outcome++) {
             shareTokens.push(createShareToken(_outcome));
         }
@@ -698,17 +698,17 @@ contract Market is DelegationTarget, ITyped, Initializable, Ownable, IMarket {
     }
 
     function createShareToken(uint256 _outcome) private onlyInGoodTimes returns (IShareToken) {
-        return ShareTokenFactory(controller.lookup(&quot;ShareTokenFactory&quot;)).createShareToken(controller, this, _outcome);
+        return ShareTokenFactory(controller.lookup("ShareTokenFactory")).createShareToken(controller, this, _outcome);
     }
 
     // This will need to be called manually for each open market if a spender contract is updated
     function approveSpenders() public onlyInGoodTimes returns (bool) {
-        bytes32[5] memory _names = [bytes32(&quot;CancelOrder&quot;), bytes32(&quot;CompleteSets&quot;), bytes32(&quot;FillOrder&quot;), bytes32(&quot;TradingEscapeHatch&quot;), bytes32(&quot;ClaimTradingProceeds&quot;)];
+        bytes32[5] memory _names = [bytes32("CancelOrder"), bytes32("CompleteSets"), bytes32("FillOrder"), bytes32("TradingEscapeHatch"), bytes32("ClaimTradingProceeds")];
         for (uint256 i = 0; i < _names.length; i++) {
             require(cash.approve(controller.lookup(_names[i]), APPROVAL_AMOUNT));
         }
         for (uint256 j = 0; j < numOutcomes; j++) {
-            require(shareTokens[j].approve(controller.lookup(&quot;FillOrder&quot;), APPROVAL_AMOUNT));
+            require(shareTokens[j].approve(controller.lookup("FillOrder"), APPROVAL_AMOUNT));
         }
         return true;
     }
@@ -750,7 +750,7 @@ contract Market is DelegationTarget, ITyped, Initializable, Ownable, IMarket {
 
     function finishedCrowdsourcingDisputeBond(IReportingParticipant _reportingParticipant) private returns (bool) {
         participants.push(_reportingParticipant);
-        crowdsourcers = MapFactory(controller.lookup(&quot;MapFactory&quot;)).createMap(controller, this); // disavow other crowdsourcers
+        crowdsourcers = MapFactory(controller.lookup("MapFactory")).createMap(controller, this); // disavow other crowdsourcers
         if (IDisputeCrowdsourcer(_reportingParticipant).getSize() >= universe.getDisputeThresholdForFork()) {
             universe.fork();
         } else {
@@ -859,7 +859,7 @@ contract Market is DelegationTarget, ITyped, Initializable, Ownable, IMarket {
         IDisputeCrowdsourcer _crowdsourcer = IDisputeCrowdsourcer(crowdsourcers.getAsAddressOrZero(_payoutDistributionHash));
         if (_crowdsourcer == IDisputeCrowdsourcer(0)) {
             uint256 _size = getParticipantStake().mul(2).sub(getStakeInOutcome(_payoutDistributionHash).mul(3));
-            DisputeCrowdsourcerFactory _disputeCrowdsourcerFactory = DisputeCrowdsourcerFactory(controller.lookup(&quot;DisputeCrowdsourcerFactory&quot;));
+            DisputeCrowdsourcerFactory _disputeCrowdsourcerFactory = DisputeCrowdsourcerFactory(controller.lookup("DisputeCrowdsourcerFactory"));
             _crowdsourcer = _disputeCrowdsourcerFactory.createDisputeCrowdsourcer(controller, this, _size, _payoutDistributionHash, _payoutNumerators, _invalid);
             crowdsourcers.add(_payoutDistributionHash, address(_crowdsourcer));
             controller.getAugur().disputeCrowdsourcerCreated(universe, this, _crowdsourcer, _payoutNumerators, _size, _invalid);
@@ -908,7 +908,7 @@ contract Market is DelegationTarget, ITyped, Initializable, Ownable, IMarket {
         }
 
         // Disavow crowdsourcers
-        crowdsourcers = MapFactory(controller.lookup(&quot;MapFactory&quot;)).createMap(controller, this);
+        crowdsourcers = MapFactory(controller.lookup("MapFactory")).createMap(controller, this);
         return true;
     }
 
@@ -920,7 +920,7 @@ contract Market is DelegationTarget, ITyped, Initializable, Ownable, IMarket {
         IInitialReporter _initialParticipant = getInitialReporter();
         delete participants;
         participants.push(_initialParticipant);
-        crowdsourcers = MapFactory(controller.lookup(&quot;MapFactory&quot;)).createMap(controller, this);
+        crowdsourcers = MapFactory(controller.lookup("MapFactory")).createMap(controller, this);
         controller.getAugur().logMarketParticipantsDisavowed(universe);
         return true;
     }
@@ -957,7 +957,7 @@ contract Market is DelegationTarget, ITyped, Initializable, Ownable, IMarket {
     }
 
     function getTypeName() public view returns (bytes32) {
-        return &quot;Market&quot;;
+        return "Market";
     }
 
     function getForkingMarket() public view returns (IMarket) {
@@ -1108,7 +1108,7 @@ contract Market is DelegationTarget, ITyped, Initializable, Ownable, IMarket {
 
     function assertBalances() public view returns (bool) {
         // Escrowed funds for open orders
-        uint256 _expectedBalance = IOrders(controller.lookup(&quot;Orders&quot;)).getTotalEscrowed(this);
+        uint256 _expectedBalance = IOrders(controller.lookup("Orders")).getTotalEscrowed(this);
         // Market Open Interest. If we&#39;re finalized we need actually calculate the value
         if (isFinalized()) {
             IReportingParticipant _winningReportingPartcipant = getWinningReportingParticipant();
@@ -1250,7 +1250,7 @@ library Order {
         require(_outcome < _market.getNumberOfOutcomes());
         require(_price < _market.getNumTicks());
 
-        IOrders _orders = IOrders(_controller.lookup(&quot;Orders&quot;));
+        IOrders _orders = IOrders(_controller.lookup("Orders"));
         IAugur _augur = _controller.getAugur();
 
         return Data({
@@ -1271,7 +1271,7 @@ library Order {
     }
 
     //
-    // &quot;public&quot; functions
+    // "public" functions
     //
 
     function getOrderId(Order.Data _orderData) internal view returns (bytes32) {

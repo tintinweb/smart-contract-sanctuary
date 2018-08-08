@@ -108,9 +108,9 @@ contract StandardToken is ERC20 {
 
 contract ByThePeople is StandardToken {
 
-    string public name =&quot;ByThePeople&quot;;
+    string public name ="ByThePeople";
     uint8 public decimals = 18;
-    string public symbol = &quot;BTP&quot;;
+    string public symbol = "BTP";
     uint256 public initialSupply = 14000000;
 
     function ByThePeople(address _receiver) public {

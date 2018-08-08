@@ -185,8 +185,8 @@ contract StandardToken is ERC20, BasicToken {
  */
 contract SimpleToken is StandardToken {
 
-  string public constant name = &quot;DCOIN&quot;;
-  string public constant symbol = &quot;DCJ&quot;;
+  string public constant name = "DCOIN";
+  string public constant symbol = "DCJ";
   uint8 public constant decimals = 18;
 
   uint256 public constant INITIAL_SUPPLY = 2000000000 * 1000000000000000000;

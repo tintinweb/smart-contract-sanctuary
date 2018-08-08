@@ -249,11 +249,11 @@ contract CryptoMilitary {
   }
 
   function name() public pure returns (string _name) {
-    return &quot;CryptoMilitary&quot;;
+    return "CryptoMilitary";
   }
 
   function symbol() public pure returns (string _symbol) {
-    return &quot;CMT&quot;;
+    return "CMT";
   }
 
   function totalSupply() public view returns (uint256 _totalSupply) {

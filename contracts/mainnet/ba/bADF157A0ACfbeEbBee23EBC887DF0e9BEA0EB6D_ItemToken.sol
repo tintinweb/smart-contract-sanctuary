@@ -172,11 +172,11 @@ contract ItemToken {
   }
 
   function name() public pure returns (string _name) {
-    return &quot;DappTalk.org&quot;;
+    return "DappTalk.org";
   }
 
   function symbol() public pure returns (string _symbol) {
-    return &quot;DTC&quot;;
+    return "DTC";
   }
 
   function totalSupply() public view returns (uint256 _totalSupply) {

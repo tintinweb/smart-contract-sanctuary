@@ -3,7 +3,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -48,8 +48,8 @@ contract Extension is Ownable {
 
 contract CryptoBotsIdleToken is Ownable, Extension {
 
-    string public name = &quot;CryptoBots: Idle Token&quot;;
-    string public symbol = &quot;CBIT&quot;;
+    string public name = "CryptoBots: Idle Token";
+    string public symbol = "CBIT";
     uint8 public decimals = 2;
 
     uint256 public totalSupply;

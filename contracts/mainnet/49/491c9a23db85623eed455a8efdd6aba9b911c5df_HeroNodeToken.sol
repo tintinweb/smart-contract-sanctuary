@@ -119,10 +119,10 @@ contract StandardToken is ERC20, SafeMath {
 }
 
 contract HeroNodeToken is StandardToken {
-  string public constant name = &quot;HeroNodeToken&quot;;
-  string public constant symbol = &quot;HER&quot;;
+  string public constant name = "HeroNodeToken";
+  string public constant symbol = "HER";
   uint256 public constant decimals = 18;
-  string public version = &quot;1.0&quot;;
+  string public version = "1.0";
 
   uint256 public constant total = 20 * (10**8) * 10**decimals;   // 20 *10^8 HNC total
 

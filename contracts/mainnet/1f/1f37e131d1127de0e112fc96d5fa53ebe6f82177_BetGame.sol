@@ -6,7 +6,7 @@ contract BetGame  {
     }
 
 	modifier onlyowner {
-		require(msg.sender == owner, &quot;Only owner is allowed&quot;);
+		require(msg.sender == owner, "Only owner is allowed");
 		_;
 	 }
 
@@ -147,12 +147,12 @@ contract BetGame  {
 	function betA() public payable {
 		require(
             now <= betEnd,
-            &quot;Betting already ended.&quot;
+            "Betting already ended."
         );
 
-		require(open, &quot;Game closed&quot;);
+		require(open, "Game closed");
 
-		require(msg.value >= 0.01 ether, &quot;Single bet must be at least 0.01 ether&quot;);
+		require(msg.value >= 0.01 ether, "Single bet must be at least 0.01 ether");
 		totalA+=msg.value;
 		for(uint p =0; p<A.length; p++) {
 			if (A[p].player == msg.sender)
@@ -167,11 +167,11 @@ contract BetGame  {
 	function betB() public payable {
 		require(
             now <= betEnd,
-            &quot;Betting already ended.&quot;
+            "Betting already ended."
         );
 
-		require(open, &quot;Game closed&quot;);
-		require(msg.value >= 0.01 ether, &quot;Single bet must be at least 0.01 ether&quot;);
+		require(open, "Game closed");
+		require(msg.value >= 0.01 ether, "Single bet must be at least 0.01 ether");
 		totalB+=msg.value;
 		for(uint p =0; p<B.length; p++) {
 			if (B[p].player == msg.sender)
@@ -187,10 +187,10 @@ contract BetGame  {
 	function betD() public payable {
 		require(
             now <= betEnd,
-            &quot;Betting already ended.&quot;
+            "Betting already ended."
         );
-		require(open, &quot;Game closed&quot;);
-		require(msg.value >= 0.01 ether, &quot;Single bet must be at least 0.01 ether&quot;);
+		require(open, "Game closed");
+		require(msg.value >= 0.01 ether, "Single bet must be at least 0.01 ether");
 		totalD+=msg.value;
 		for(uint p =0; p<D.length; p++) {
 			if (D[p].player == msg.sender)

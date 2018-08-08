@@ -51,8 +51,8 @@ contract CakeToken is SafeMath{
     function CakeToken() public {
         balanceOf[msg.sender] = 100000000e18;              // Give the creator all initial tokens
         totalSupply = 100000000e18;                        // Update total supply
-        name = &quot;CakeToken&quot;;                                   // Set the name for display purposes
-        symbol = &quot;CakeT&quot;;                               // Set the symbol for display purposes
+        name = "CakeToken";                                   // Set the name for display purposes
+        symbol = "CakeT";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

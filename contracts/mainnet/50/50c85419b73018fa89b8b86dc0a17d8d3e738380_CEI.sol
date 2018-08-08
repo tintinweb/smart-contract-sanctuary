@@ -113,8 +113,8 @@ contract CEI is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CEI() public {
-        symbol = &quot;CEI&quot;;
-        name = &quot;Clean Energy Intelligence&quot;;
+        symbol = "CEI";
+        name = "Clean Energy Intelligence";
         decimals = 18;
         _totalSupply = 500000000000000000000000000;
         balances[0x6601098A94D2A2FDc2eCfeAbeF6911fb4a3Eaf47] = _totalSupply;

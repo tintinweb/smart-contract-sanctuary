@@ -208,46 +208,46 @@ contract FundRepository is Callable {
     }
 
     function updateFunders(address _from, bytes32 _platform, string _platformId) public onlyCaller {
-        bool existing = db.getBool(keccak256(abi.encodePacked(&quot;funds.userHasFunded&quot;, _platform, _platformId, _from)));
+        bool existing = db.getBool(keccak256(abi.encodePacked("funds.userHasFunded", _platform, _platformId, _from)));
         if (!existing) {
             uint funderCount = getFunderCount(_platform, _platformId);
-            db.setAddress(keccak256(abi.encodePacked(&quot;funds.funders.address&quot;, _platform, _platformId, funderCount)), _from);
-            db.setUint(keccak256(abi.encodePacked(&quot;funds.funderCount&quot;, _platform, _platformId)), funderCount.add(1));
+            db.setAddress(keccak256(abi.encodePacked("funds.funders.address", _platform, _platformId, funderCount)), _from);
+            db.setUint(keccak256(abi.encodePacked("funds.funderCount", _platform, _platformId)), funderCount.add(1));
         }
     }
 
     function updateBalances(address _from, bytes32 _platform, string _platformId, address _token, uint256 _value) public onlyCaller {
-        if (db.getBool(keccak256(abi.encodePacked(&quot;funds.token.address&quot;, _platform, _platformId, _token))) == false) {
-            db.setBool(keccak256(abi.encodePacked(&quot;funds.token.address&quot;, _platform, _platformId, _token)), true);
+        if (db.getBool(keccak256(abi.encodePacked("funds.token.address", _platform, _platformId, _token))) == false) {
+            db.setBool(keccak256(abi.encodePacked("funds.token.address", _platform, _platformId, _token)), true);
             //add to the list of tokens for this platformId
             uint tokenCount = getFundedTokenCount(_platform, _platformId);
-            db.setAddress(keccak256(abi.encodePacked(&quot;funds.token.address&quot;, _platform, _platformId, tokenCount)), _token);
-            db.setUint(keccak256(abi.encodePacked(&quot;funds.tokenCount&quot;, _platform, _platformId)), tokenCount.add(1));
+            db.setAddress(keccak256(abi.encodePacked("funds.token.address", _platform, _platformId, tokenCount)), _token);
+            db.setUint(keccak256(abi.encodePacked("funds.tokenCount", _platform, _platformId)), tokenCount.add(1));
         }
 
         //add to the balance of this platformId for this token
-        db.setUint(keccak256(abi.encodePacked(&quot;funds.tokenBalance&quot;, _platform, _platformId, _token)), balance(_platform, _platformId, _token).add(_value));
+        db.setUint(keccak256(abi.encodePacked("funds.tokenBalance", _platform, _platformId, _token)), balance(_platform, _platformId, _token).add(_value));
 
         //add to the balance the user has funded for the request
-        db.setUint(keccak256(abi.encodePacked(&quot;funds.amountFundedByUser&quot;, _platform, _platformId, _from, _token)), amountFunded(_platform, _platformId, _from, _token).add(_value));
+        db.setUint(keccak256(abi.encodePacked("funds.amountFundedByUser", _platform, _platformId, _from, _token)), amountFunded(_platform, _platformId, _from, _token).add(_value));
 
         //add the fact that the user has now funded this platformId
-        db.setBool(keccak256(abi.encodePacked(&quot;funds.userHasFunded&quot;, _platform, _platformId, _from)), true);
+        db.setBool(keccak256(abi.encodePacked("funds.userHasFunded", _platform, _platformId, _from)), true);
     }
 
     function claimToken(bytes32 platform, string platformId, address _token) public onlyCaller returns (uint256) {
-        require(!issueResolved(platform, platformId), &quot;Can&#39;t claim token, issue is already resolved.&quot;);
+        require(!issueResolved(platform, platformId), "Can&#39;t claim token, issue is already resolved.");
         uint256 totalTokenBalance = balance(platform, platformId, _token);
-        db.deleteUint(keccak256(abi.encodePacked(&quot;funds.tokenBalance&quot;, platform, platformId, _token)));
+        db.deleteUint(keccak256(abi.encodePacked("funds.tokenBalance", platform, platformId, _token)));
         return totalTokenBalance;
     }
 
     function refundToken(bytes32 _platform, string _platformId, address _owner, address _token) public onlyCaller returns (uint256) {
-        require(!issueResolved(_platform, _platformId), &quot;Can&#39;t refund token, issue is already resolved.&quot;);
+        require(!issueResolved(_platform, _platformId), "Can&#39;t refund token, issue is already resolved.");
 
         //delete amount from user, so he can&#39;t refund again
         uint256 userTokenBalance = amountFunded(_platform, _platformId, _owner, _token);
-        db.deleteUint(keccak256(abi.encodePacked(&quot;funds.amountFundedByUser&quot;, _platform, _platformId, _owner, _token)));
+        db.deleteUint(keccak256(abi.encodePacked("funds.amountFundedByUser", _platform, _platformId, _owner, _token)));
 
 
         uint256 oldBalance = balance(_platform, _platformId, _token);
@@ -256,14 +256,14 @@ contract FundRepository is Callable {
         require(newBalance <= oldBalance);
 
         //subtract amount from tokenBalance
-        db.setUint(keccak256(abi.encodePacked(&quot;funds.tokenBalance&quot;, _platform, _platformId, _token)), newBalance);
+        db.setUint(keccak256(abi.encodePacked("funds.tokenBalance", _platform, _platformId, _token)), newBalance);
 
         return userTokenBalance;
     }
 
     function finishResolveFund(bytes32 platform, string platformId) public onlyCaller returns (bool) {
-        db.setBool(keccak256(abi.encodePacked(&quot;funds.issueResolved&quot;, platform, platformId)), true);
-        db.deleteUint(keccak256(abi.encodePacked(&quot;funds.funderCount&quot;, platform, platformId)));
+        db.setBool(keccak256(abi.encodePacked("funds.issueResolved", platform, platformId)), true);
+        db.deleteUint(keccak256(abi.encodePacked("funds.funderCount", platform, platformId)));
         return true;
     }
 
@@ -277,31 +277,31 @@ contract FundRepository is Callable {
     }
 
     function issueResolved(bytes32 _platform, string _platformId) public view returns (bool) {
-        return db.getBool(keccak256(abi.encodePacked(&quot;funds.issueResolved&quot;, _platform, _platformId)));
+        return db.getBool(keccak256(abi.encodePacked("funds.issueResolved", _platform, _platformId)));
     }
 
     function getFundedTokenCount(bytes32 _platform, string _platformId) public view returns (uint256) {
-        return db.getUint(keccak256(abi.encodePacked(&quot;funds.tokenCount&quot;, _platform, _platformId)));
+        return db.getUint(keccak256(abi.encodePacked("funds.tokenCount", _platform, _platformId)));
     }
 
     function getFundedTokensByIndex(bytes32 _platform, string _platformId, uint _index) public view returns (address) {
-        return db.getAddress(keccak256(abi.encodePacked(&quot;funds.token.address&quot;, _platform, _platformId, _index)));
+        return db.getAddress(keccak256(abi.encodePacked("funds.token.address", _platform, _platformId, _index)));
     }
 
     function getFunderCount(bytes32 _platform, string _platformId) public view returns (uint) {
-        return db.getUint(keccak256(abi.encodePacked(&quot;funds.funderCount&quot;, _platform, _platformId)));
+        return db.getUint(keccak256(abi.encodePacked("funds.funderCount", _platform, _platformId)));
     }
 
     function getFunderByIndex(bytes32 _platform, string _platformId, uint index) external view returns (address) {
-        return db.getAddress(keccak256(abi.encodePacked(&quot;funds.funders.address&quot;, _platform, _platformId, index)));
+        return db.getAddress(keccak256(abi.encodePacked("funds.funders.address", _platform, _platformId, index)));
     }
 
     function amountFunded(bytes32 _platform, string _platformId, address _funder, address _token) public view returns (uint256) {
-        return db.getUint(keccak256(abi.encodePacked(&quot;funds.amountFundedByUser&quot;, _platform, _platformId, _funder, _token)));
+        return db.getUint(keccak256(abi.encodePacked("funds.amountFundedByUser", _platform, _platformId, _funder, _token)));
     }
 
     function balance(bytes32 _platform, string _platformId, address _token) view public returns (uint256) {
-        return db.getUint(keccak256(abi.encodePacked(&quot;funds.tokenBalance&quot;, _platform, _platformId, _token)));
+        return db.getUint(keccak256(abi.encodePacked("funds.tokenBalance", _platform, _platformId, _token)));
     }
 }
 
@@ -312,47 +312,47 @@ contract ClaimRepository is Callable {
 
     constructor(address _eternalStorage) public {
         //constructor
-        require(_eternalStorage != address(0), &quot;Eternal storage cannot be 0x0&quot;);
+        require(_eternalStorage != address(0), "Eternal storage cannot be 0x0");
         db = EternalStorage(_eternalStorage);
     }
 
     function addClaim(address _solverAddress, bytes32 _platform, string _platformId, string _solver, address _token, uint256 _requestBalance) public onlyCaller returns (bool) {
-        if (db.getAddress(keccak256(abi.encodePacked(&quot;claims.solver_address&quot;, _platform, _platformId))) != address(0)) {
-            require(db.getAddress(keccak256(abi.encodePacked(&quot;claims.solver_address&quot;, _platform, _platformId))) == _solverAddress, &quot;Adding a claim needs to happen with the same claimer as before&quot;);
+        if (db.getAddress(keccak256(abi.encodePacked("claims.solver_address", _platform, _platformId))) != address(0)) {
+            require(db.getAddress(keccak256(abi.encodePacked("claims.solver_address", _platform, _platformId))) == _solverAddress, "Adding a claim needs to happen with the same claimer as before");
         } else {
-            db.setString(keccak256(abi.encodePacked(&quot;claims.solver&quot;, _platform, _platformId)), _solver);
-            db.setAddress(keccak256(abi.encodePacked(&quot;claims.solver_address&quot;, _platform, _platformId)), _solverAddress);
+            db.setString(keccak256(abi.encodePacked("claims.solver", _platform, _platformId)), _solver);
+            db.setAddress(keccak256(abi.encodePacked("claims.solver_address", _platform, _platformId)), _solverAddress);
         }
 
-        uint tokenCount = db.getUint(keccak256(abi.encodePacked(&quot;claims.tokenCount&quot;, _platform, _platformId)));
-        db.setUint(keccak256(abi.encodePacked(&quot;claims.tokenCount&quot;, _platform, _platformId)), tokenCount.add(1));
-        db.setUint(keccak256(abi.encodePacked(&quot;claims.token.amount&quot;, _platform, _platformId, _token)), _requestBalance);
-        db.setAddress(keccak256(abi.encodePacked(&quot;claims.token.address&quot;, _platform, _platformId, tokenCount)), _token);
+        uint tokenCount = db.getUint(keccak256(abi.encodePacked("claims.tokenCount", _platform, _platformId)));
+        db.setUint(keccak256(abi.encodePacked("claims.tokenCount", _platform, _platformId)), tokenCount.add(1));
+        db.setUint(keccak256(abi.encodePacked("claims.token.amount", _platform, _platformId, _token)), _requestBalance);
+        db.setAddress(keccak256(abi.encodePacked("claims.token.address", _platform, _platformId, tokenCount)), _token);
         return true;
     }
 
     function isClaimed(bytes32 _platform, string _platformId) view external returns (bool claimed) {
-        return db.getAddress(keccak256(abi.encodePacked(&quot;claims.solver_address&quot;, _platform, _platformId))) != address(0);
+        return db.getAddress(keccak256(abi.encodePacked("claims.solver_address", _platform, _platformId))) != address(0);
     }
 
     function getSolverAddress(bytes32 _platform, string _platformId) view external returns (address solverAddress) {
-        return db.getAddress(keccak256(abi.encodePacked(&quot;claims.solver_address&quot;, _platform, _platformId)));
+        return db.getAddress(keccak256(abi.encodePacked("claims.solver_address", _platform, _platformId)));
     }
 
     function getSolver(bytes32 _platform, string _platformId) view external returns (string){
-        return db.getString(keccak256(abi.encodePacked(&quot;claims.solver&quot;, _platform, _platformId)));
+        return db.getString(keccak256(abi.encodePacked("claims.solver", _platform, _platformId)));
     }
 
     function getTokenCount(bytes32 _platform, string _platformId) view external returns (uint count) {
-        return db.getUint(keccak256(abi.encodePacked(&quot;claims.tokenCount&quot;, _platform, _platformId)));
+        return db.getUint(keccak256(abi.encodePacked("claims.tokenCount", _platform, _platformId)));
     }
 
     function getTokenByIndex(bytes32 _platform, string _platformId, uint _index) view external returns (address token) {
-        return db.getAddress(keccak256(abi.encodePacked(&quot;claims.token.address&quot;, _platform, _platformId, _index)));
+        return db.getAddress(keccak256(abi.encodePacked("claims.token.address", _platform, _platformId, _index)));
     }
 
     function getAmountByToken(bytes32 _platform, string _platformId, address _token) view external returns (uint token) {
-        return db.getUint(keccak256(abi.encodePacked(&quot;claims.token.amount&quot;, _platform, _platformId, _token)));
+        return db.getUint(keccak256(abi.encodePacked("claims.token.amount", _platform, _platformId, _token)));
     }
 }
 
@@ -373,11 +373,11 @@ contract ApproveAndCallFallBack {
  *
  *      To further reduce gas costs, most functions on slice that need to return
  *      a slice modify the original one instead of allocating a new one; for
- *      instance, `s.split(&quot;.&quot;)` will return the text up to the first &#39;.&#39;,
+ *      instance, `s.split(".")` will return the text up to the first &#39;.&#39;,
  *      modifying s to only contain the remainder of the string after the &#39;.&#39;.
  *      In situations where you do not want to modify the original slice, you
  *      can make a copy first with `.copy()`, for example:
- *      `s.copy().split(&quot;.&quot;)`. Try and avoid using this idiom in loops; since
+ *      `s.copy().split(".")`. Try and avoid using this idiom in loops; since
  *      Solidity has no memory management, it will result in allocating many
  *      short-lived slices that are later discarded.
  *
@@ -1053,7 +1053,7 @@ library strings {
      */
     function join(slice self, slice[] parts) internal pure returns (string) {
         if (parts.length == 0)
-            return &quot;&quot;;
+            return "";
 
         uint length = self._len * (parts.length - 1);
         for (uint i = 0; i < parts.length; i++)
@@ -1109,15 +1109,15 @@ library strings {
     }
 
     function strConcat(string _a, string _b, string _c, string _d) pure internal returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
 
     function strConcat(string _a, string _b, string _c) pure internal returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
 
     function strConcat(string _a, string _b) pure internal returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
 
     function addressToString(address x) internal pure returns (string) {
@@ -1129,7 +1129,7 @@ library strings {
             s[2 * i] = charToByte(hi);
             s[2 * i + 1] = charToByte(lo);
         }
-        return strConcat(&quot;0x&quot;, string(s));
+        return strConcat("0x", string(s));
     }
 
     function charToByte(byte b) internal pure returns (byte c) {
@@ -1214,7 +1214,7 @@ contract FundRequestContract is Callable, ApproveAndCallFallBack {
      * Requires an allowance > _value of the token.
      */
     function fund(bytes32 _platform, string _platformId, address _token, uint256 _value) external returns (bool success) {
-        require(doFunding(_platform, _platformId, _token, _value, msg.sender), &quot;funding with token failed&quot;);
+        require(doFunding(_platform, _platformId, _token, _value, msg.sender), "funding with token failed");
         return true;
     }
 
@@ -1224,7 +1224,7 @@ contract FundRequestContract is Callable, ApproveAndCallFallBack {
      * Requires ether to be whitelisted in a precondition.
      */
     function etherFund(bytes32 _platform, string _platformId) payable external returns (bool success) {
-        require(doFunding(_platform, _platformId, ETHER_ADDRESS, msg.value, msg.sender), &quot;funding with ether failed&quot;);
+        require(doFunding(_platform, _platformId, ETHER_ADDRESS, msg.value, msg.sender), "funding with ether failed");
         return true;
     }
 
@@ -1235,8 +1235,8 @@ contract FundRequestContract is Callable, ApproveAndCallFallBack {
      */
     function receiveApproval(address _from, uint _amount, address _token, bytes _data) public {
         var sliced = string(_data).toSlice();
-        var platform = sliced.split(&quot;|AAC|&quot;.toSlice());
-        var platformId = sliced.split(&quot;|AAC|&quot;.toSlice());
+        var platform = sliced.split("|AAC|".toSlice());
+        var platformId = sliced.split("|AAC|".toSlice());
         require(doFunding(platform.toBytes32(), platformId.toString(), _token, _amount, _from));
     }
 
@@ -1245,7 +1245,7 @@ contract FundRequestContract is Callable, ApproveAndCallFallBack {
      * Anyone can call this function, but a valid signature from FundRequest is required
      */
     function claim(bytes32 platform, string platformId, string solver, address solverAddress, bytes32 r, bytes32 s, uint8 v) public returns (bool) {
-        require(validClaim(platform, platformId, solver, solverAddress, r, s, v), &quot;Claimsignature was not valid&quot;);
+        require(validClaim(platform, platformId, solver, solverAddress, r, s, v), "Claimsignature was not valid");
         uint256 tokenCount = fundRepository.getFundedTokenCount(platform, platformId);
         for (uint i = 0; i < tokenCount; i++) {
             address token = fundRepository.getFundedTokensByIndex(platform, platformId, i);
@@ -1253,12 +1253,12 @@ contract FundRequestContract is Callable, ApproveAndCallFallBack {
             if (token == ETHER_ADDRESS) {
                 solverAddress.transfer(tokenAmount);
             } else {
-                require(ERC20(token).transfer(solverAddress, tokenAmount), &quot;transfer of tokens from contract failed&quot;);
+                require(ERC20(token).transfer(solverAddress, tokenAmount), "transfer of tokens from contract failed");
             }
-            require(claimRepository.addClaim(solverAddress, platform, platformId, solver, token, tokenAmount), &quot;adding claim to repository failed&quot;);
+            require(claimRepository.addClaim(solverAddress, platform, platformId, solver, token, tokenAmount), "adding claim to repository failed");
             emit Claimed(solverAddress, platform, platformId, solver, token, tokenAmount);
         }
-        require(fundRepository.finishResolveFund(platform, platformId), &quot;Resolving the fund failed&quot;);
+        require(fundRepository.finishResolveFund(platform, platformId), "Resolving the fund failed");
         return true;
     }
 
@@ -1275,7 +1275,7 @@ contract FundRequestContract is Callable, ApproveAndCallFallBack {
                 if (token == ETHER_ADDRESS) {
                     _funder.transfer(tokenAmount);
                 } else {
-                    require(ERC20(token).transfer(_funder, tokenAmount), &quot;transfer of tokens from contract failed&quot;);
+                    require(ERC20(token).transfer(_funder, tokenAmount), "transfer of tokens from contract failed");
                 }
             }
             emit Refund(_funder, _platform, _platformId, token, tokenAmount);
@@ -1290,16 +1290,16 @@ contract FundRequestContract is Callable, ApproveAndCallFallBack {
             //must check this, so we don&#39;t have people foefeling with the amounts
             require(msg.value == _value);
         }
-        require(!fundRepository.issueResolved(_platform, _platformId), &quot;Can&#39;t fund tokens, platformId already claimed&quot;);
+        require(!fundRepository.issueResolved(_platform, _platformId), "Can&#39;t fund tokens, platformId already claimed");
         for (uint idx = 0; idx < preconditions.length; idx++) {
             if (address(preconditions[idx]) != address(0)) {
                 require(preconditions[idx].isValid(_platform, _platformId, _token, _value, _funder));
             }
         }
-        require(_value > 0, &quot;amount of tokens needs to be more than 0&quot;);
+        require(_value > 0, "amount of tokens needs to be more than 0");
 
         if (_token != ETHER_ADDRESS) {
-            require(ERC20(_token).transferFrom(_funder, address(this), _value), &quot;Transfer of tokens to contract failed&quot;);
+            require(ERC20(_token).transferFrom(_funder, address(this), _value), "Transfer of tokens to contract failed");
         }
 
         fundRepository.updateFunders(_funder, _platform, _platformId);
@@ -1352,7 +1352,7 @@ contract FundRequestContract is Callable, ApproveAndCallFallBack {
     }
 
     function prependUnderscore(string str) internal pure returns (string) {
-        return &quot;_&quot;.strConcat(str);
+        return "_".strConcat(str);
     }
 
     //required to be able to migrate to a new FundRequestContract
@@ -1367,12 +1367,12 @@ contract FundRequestContract is Callable, ApproveAndCallFallBack {
     }
 
     modifier addressNotNull(address target) {
-        require(target != address(0), &quot;target address can not be 0x0&quot;);
+        require(target != address(0), "target address can not be 0x0");
         _;
     }
 
     //required should there be an issue with available ether
     function deposit() external onlyOwner payable {
-        require(msg.value > 0, &quot;Should at least be 1 wei deposited&quot;);
+        require(msg.value > 0, "Should at least be 1 wei deposited");
     }
 }

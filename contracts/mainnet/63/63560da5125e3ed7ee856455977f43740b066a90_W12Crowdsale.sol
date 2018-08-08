@@ -652,5 +652,5 @@ contract StandardBurnableToken is BurnableToken, StandardToken {
 }
 
 contract W12Token is StandardBurnableToken, CappedToken, DetailedERC20, PausableToken  {
-    constructor() CappedToken(400*(10**24)) DetailedERC20(&quot;W12 Token&quot;, &quot;W12&quot;, 18) public { }
+    constructor() CappedToken(400*(10**24)) DetailedERC20("W12 Token", "W12", 18) public { }
 }

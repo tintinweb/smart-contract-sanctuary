@@ -84,8 +84,8 @@ contract UBYToken is ERC20Interface {
     }
 
     constructor() public {
-        symbol = &quot;UB&quot;;
-        name = &quot;Ucoin UBY&quot;;
+        symbol = "UB";
+        name = "Ucoin UBY";
         decimals = 18;
         totalSupply = 300000000 * 10**uint(decimals);
         balances[msg.sender] = totalSupply;

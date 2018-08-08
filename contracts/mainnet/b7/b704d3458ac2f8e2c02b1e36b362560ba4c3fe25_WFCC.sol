@@ -89,8 +89,8 @@ contract WFCC is StandardToken {
     function WFCC() {
         balances[msg.sender] = 68000000000000000;               // Give the creator all initial tokens
         totalSupply = 68000000000000000;                        // Update total supply
-        name = &quot;world financial crypto coin&quot;;                                   // Set the name for display purposes
+        name = "world financial crypto coin";                                   // Set the name for display purposes
         decimals = 8;                            // Amount of decimals for display purposes
-        symbol = &quot;WFCC&quot;;                               // Set the symbol for display purposes
+        symbol = "WFCC";                               // Set the symbol for display purposes
     }
 }

@@ -56,8 +56,8 @@ contract DAPPToken is Ownable{
     
     using SafeMath for uint256;
     
-    string public constant name       = &quot;360APP&quot;;
-    string public constant symbol     = &quot;DAPP&quot;;
+    string public constant name       = "360APP";
+    string public constant symbol     = "DAPP";
     uint32 public constant decimals   = 18;
     uint256 public totalSupply        = 900000000000 ether;
     uint256 public currentTotalSupply = 0;

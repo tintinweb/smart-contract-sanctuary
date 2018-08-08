@@ -40,8 +40,8 @@ contract IPXTokenBase {
 }
 
 contract IPXToken is IPXTokenBase {
-    string  public  symbol = &quot;IPX&quot;;
-    string  public name = &quot;InterPlanetary X&quot;;
+    string  public  symbol = "IPX";
+    string  public name = "InterPlanetary X";
     uint256  public  decimals = 18; 
     uint256 public freezedValue = 4*(10**8)*(10**18);
     uint256 public eachUnfreezeValue = 4*(10**7)*(10**18);

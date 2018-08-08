@@ -54,8 +54,8 @@ contract BlabberToken is ERC20Interface {
 	uint public _totalSupply = 1250000000000000000000000000;
 
 	bool public isLocked = true;
-	string public constant symbol = &quot;BLA&quot;;
-	string public constant name = &quot;BLABBER Token&quot;;
+	string public constant symbol = "BLA";
+	string public constant name = "BLABBER Token";
 	uint8 public constant decimals = 18;
 
 	address public tokenHolder = 0xB6ED8e4b27928009c407E298C475F937054AE19D;

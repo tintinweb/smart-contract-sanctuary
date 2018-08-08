@@ -51,9 +51,9 @@ contract LydianCoin is EIP20Interface {
     mapping (address => uint256) public balances;
     mapping (address => mapping (address => uint256)) public allowed;
    
-    string public name = &quot;LydianCoin&quot;;                 
+    string public name = "LydianCoin";                 
     uint8 public decimals = 8;                //Decimals.
-    string public symbol = &quot;LDN&quot;;                 
+    string public symbol = "LDN";                 
     uint256 initialAmount = 40000000000000000;
     
     function LydianCoin(

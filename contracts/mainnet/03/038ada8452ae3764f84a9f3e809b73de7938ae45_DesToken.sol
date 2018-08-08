@@ -74,8 +74,8 @@ contract DesToken {
 
     ERC20Lib.TokenStorage token;
 
-    string public name = &quot;Digital Equivalent Stabilized Coin&quot;;
-    string public symbol = &quot;DES&quot;;
+    string public name = "Digital Equivalent Stabilized Coin";
+    string public symbol = "DES";
     uint8 public decimals = 8;
     uint public INITIAL_SUPPLY = 100000000000;
 

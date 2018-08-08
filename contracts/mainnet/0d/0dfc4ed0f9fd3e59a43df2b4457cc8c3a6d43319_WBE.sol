@@ -116,8 +116,8 @@ contract ERC20Token is ERC20 {
 
 contract WBE is ERC20Token, Owned {
 
-    string  public constant name = &quot;World Blockchain Education&quot;;
-    string  public constant symbol = &quot;WBE&quot;;
+    string  public constant name = "World Blockchain Education";
+    string  public constant symbol = "WBE";
     uint256 public constant decimals = 18;
 
     function WBE() public {

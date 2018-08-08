@@ -79,7 +79,7 @@ contract ReentrancyGuard {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -150,7 +150,7 @@ contract EtherButton is Ownable, ReentrancyGuard {
   event LogSendPaymentFailure(address _recipient, uint _amount);
 
   // Represent fractions as numerator/denominator because Solidity doesn&#39;t support decimals.
-  // It&#39;s okay to use &quot;.5 ether&quot; because it converts to &quot;500000000000000000 wei&quot;
+  // It&#39;s okay to use ".5 ether" because it converts to "500000000000000000 wei"
   uint public constant INITIAL_PRICE = .5 ether;
   uint public constant ROUND_DURATION = 7 hours;
   // 5% price increase is allocated to the player.

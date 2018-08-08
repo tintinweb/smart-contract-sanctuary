@@ -32,7 +32,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -64,7 +64,7 @@ contract Ownable {
 
 contract POH is Ownable {
 
-  string public constant name = &quot;POH Lottery&quot;;
+  string public constant name = "POH Lottery";
   uint public playersRequired = 50;
   uint256 public priceOfTicket = 1e15 wei;
 

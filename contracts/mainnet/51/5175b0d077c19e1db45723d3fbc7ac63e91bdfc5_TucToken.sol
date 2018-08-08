@@ -516,8 +516,8 @@ contract TucToken is ERC827Token, Ownable {
         totalSupply_ += balances[_accountSalesMgmt];
         totalSupply_ += balances[_accountTucWorld];
 		
-	name = &quot;TUC.World&quot;;
-	symbol = &quot;TUC&quot;;
+	name = "TUC.World";
+	symbol = "TUC";
     }
 
     /**
@@ -557,9 +557,9 @@ contract TucToken is ERC827Token, Ownable {
     {
         // account is approved
         approvedAccounts[_user] = true;
-        // move balance for this account to &quot;real&quot; balances
+        // move balance for this account to "real" balances
         balances[_user] += preApprovedBalances[_user];
-        // account has no more &quot;unapproved&quot; balance
+        // account has no more "unapproved" balance
         preApprovedBalances[_user] = 0;
     }
 

@@ -24,8 +24,8 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 
 contract RedTicket is owned {
     string public standard = &#39;RedTicket 1.0&#39;;
-    string public constant name = &quot;RedTicket&quot;;
-    string public constant symbol = &quot;RED&quot;;
+    string public constant name = "RedTicket";
+    string public constant symbol = "RED";
     uint8 public constant decimals = 18; 
     uint256 public totalSupply;
 

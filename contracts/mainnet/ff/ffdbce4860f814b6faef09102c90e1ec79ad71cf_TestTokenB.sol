@@ -32,8 +32,8 @@ contract TestTokenB {
     ) public {
         totalSupply = 50000000000;  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;TestTokenB&quot;;                                   // Set the name for display purposes
-        symbol = &quot;TTB&quot;;                               // Set the symbol for display purposes
+        name = "TestTokenB";                                   // Set the name for display purposes
+        symbol = "TTB";                               // Set the symbol for display purposes
     }
 
     /**

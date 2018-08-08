@@ -124,8 +124,8 @@ return true;
 
 contract APPToken612 is StandardToken {
 
-string public constant name = &quot;Asia Pacific Peace 612&quot;; 
-string public constant symbol = &quot;APP612&quot;; 
+string public constant name = "Asia Pacific Peace 612"; 
+string public constant symbol = "APP612"; 
 uint8 public constant decimals = 8;
 
 uint256 public constant INITIAL_SUPPLY = 10000000000 * (10 ** uint256(decimals));

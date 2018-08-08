@@ -78,8 +78,8 @@ contract StandardToken is ERC20, BasicToken {
 
 
 contract DiscrashCredit is StandardToken {
-  string public name = &quot;DiscrashCredit&quot;;
-  string public symbol = &quot;DCC&quot;;
+  string public name = "DiscrashCredit";
+  string public symbol = "DCC";
   uint256 public decimals = 18;
   uint256 public initialSupply = 7 * 10**9 * 10**18;
 

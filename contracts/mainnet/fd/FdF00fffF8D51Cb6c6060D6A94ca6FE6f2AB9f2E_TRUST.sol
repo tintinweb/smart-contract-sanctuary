@@ -181,8 +181,8 @@ contract StandardToken is BasicToken, ERC20 {
  */
 contract TRUST is StandardToken {
 
-    string public name = &quot;TRUST&quot;;
-    string public symbol = &quot;TST&quot;;
+    string public name = "TRUST";
+    string public symbol = "TST";
     uint public decimals = 6;
     uint public INITIAL_SUPPLY = 100000000000000; // Initial supply is 100,000,000 TST
 

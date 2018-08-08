@@ -63,7 +63,7 @@ library SafeERC20 {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -260,7 +260,7 @@ contract BiddableEscrow is CanReclaimToken {
     require(!escrows[_id].exists);
 
     bytes32 hash = keccak256(_id, _depositAmount, _data);
-    bytes memory prefix = &quot;\x19Ethereum Signed Message:\n32&quot;;
+    bytes memory prefix = "\x19Ethereum Signed Message:\n32";
 
     address recoveredAddress = ecrecover(
       keccak256(prefix, hash),

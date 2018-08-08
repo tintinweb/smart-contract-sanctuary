@@ -21,7 +21,7 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 
 contract token {
     /* Public variables of the token */
-    string public standard = &quot;ENTER 1.0&quot;;
+    string public standard = "ENTER 1.0";
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -106,8 +106,8 @@ contract EnterCoin is owned, token {
     /* Initializes contract with initial supply tokens to the creator of the contract */
     uint256 public constant initialSupply = 21000000 * 10**8;
     uint8 public constant decimalUnits = 8;
-    string public tokenName = &quot;ENTER&quot;;
-    string public tokenSymbol = &quot;ENTR&quot;;
+    string public tokenName = "ENTER";
+    string public tokenSymbol = "ENTR";
     function EnterCoin() token (initialSupply, tokenName, decimalUnits, tokenSymbol) {}
      /* Send coins */
     function transfer(address _to, uint256 _value) {

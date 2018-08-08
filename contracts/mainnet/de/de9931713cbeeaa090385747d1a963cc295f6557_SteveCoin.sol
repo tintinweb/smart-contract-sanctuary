@@ -113,8 +113,8 @@ contract SteveCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function SteveCoin() public {
-        symbol = &quot;STEVE&quot;;
-        name = &quot;Steve Coin&quot;;
+        symbol = "STEVE";
+        name = "Steve Coin";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x2a4FF88A1F041Dc242EF8f5669DFCd078E9Ffc94] = _totalSupply;

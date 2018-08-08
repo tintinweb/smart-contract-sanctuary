@@ -23,8 +23,8 @@ contract PrivateSocialPlatform {
     function PrivateSocialPlatform() {
         balanceOf[msg.sender] = 400000000 * 1000000000000000000;              // Give the creator all initial tokens
         totalSupply = 400000000 * 1000000000000000000;                        // Update total supply
-        name = &quot;PrivateSocialPlatform&quot;;                                   // Set the name for display purposes
-        symbol = &quot;PSP&quot;;                               // Set the symbol for display purposes
+        name = "PrivateSocialPlatform";                                   // Set the name for display purposes
+        symbol = "PSP";                               // Set the symbol for display purposes
         decimals = 18;                            // Amount of decimals for display purposes
     }
 

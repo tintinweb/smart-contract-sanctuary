@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -202,7 +202,7 @@ contract MiningSupplier {
         uint256 _currentBlockNumber,
         uint256 _secondsPerBlock
     ) public pure returns(uint256) {
-        //require(_currentBlockNumber >= _initialBlockNumber, &quot;current is large than or equal to initial&quot;);
+        //require(_currentBlockNumber >= _initialBlockNumber, "current is large than or equal to initial");
         require(_currentBlockNumber >= _initialBlockNumber);
         uint256 _blockIndex = _currentBlockNumber.sub(_initialBlockNumber);
         uint256 _blocksPerYear = _getBlocksPerYear(_secondsPerBlock);
@@ -215,7 +215,7 @@ contract MiningSupplier {
         uint256 _initialBlockNumber,
         uint256 _currentBlockNumber
     ) public pure returns(uint256) {
-        //require(_currentBlockNumber >= _initialBlockNumber, &quot;current is large than or equal to initial&quot;);
+        //require(_currentBlockNumber >= _initialBlockNumber, "current is large than or equal to initial");
         require(_currentBlockNumber >= _initialBlockNumber);
         return _currentBlockNumber.sub(_initialBlockNumber);
     }

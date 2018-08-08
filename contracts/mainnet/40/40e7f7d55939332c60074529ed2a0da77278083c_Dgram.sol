@@ -251,8 +251,8 @@ contract CappedMintableBurnableToken is TokenCore {
 contract Dgram is CappedMintableBurnableToken {
 
     constructor() public {
-        symbol = &quot;BGM&quot;;
-        name = &quot;Dgram Token&quot;;
+        symbol = "BGM";
+        name = "Dgram Token";
         decimals = 18;
         _totalSupply = 1000000 * 10**uint(decimals);
         cap = 100000000 * 10**uint(decimals);

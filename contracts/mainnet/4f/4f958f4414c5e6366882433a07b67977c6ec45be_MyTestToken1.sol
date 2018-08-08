@@ -113,8 +113,8 @@ contract MyTestToken1 is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MyTestToken1() public {
-        symbol = &quot;TRCC1&quot;;
-        name = &quot;Test RCC1&quot;;
+        symbol = "TRCC1";
+        name = "Test RCC1";
         decimals = 5;
         _totalSupply = 1200000000000;
         balances[0x645C26245151958B07De4Ad68A976401f4359743] = _totalSupply;

@@ -156,8 +156,8 @@ contract DEST  is StandardToken {
   // Constants
   // =========
 
-  string public constant name = &quot;Decentralized Escrow Token&quot;;
-  string public constant symbol = &quot;DEST&quot;;
+  string public constant name = "Decentralized Escrow Token";
+  string public constant symbol = "DEST";
   uint   public constant decimals = 18;
 
   uint public constant ETH_MIN_LIMIT = 500 ether;

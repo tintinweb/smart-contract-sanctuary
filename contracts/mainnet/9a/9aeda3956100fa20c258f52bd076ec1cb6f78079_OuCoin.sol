@@ -4,8 +4,8 @@ contract tokenRecipient { function receiveApproval(address _from, uint256 _value
 contract OuCoin {
     /* Public variables of the token */
     string public standard = &#39;Token 0.1&#39;;
-    string public constant name = &quot;OuCoin&quot;;
-    string public constant symbol = &quot;IOU&quot;;
+    string public constant name = "OuCoin";
+    string public constant symbol = "IOU";
     uint8 public constant decimals = 3;
     uint256 public constant initialSupply = 10000000;
     uint256 public totalSupply;

@@ -1,8 +1,8 @@
 pragma solidity ^0.4.19;
 
 contract Aqo {
-    string public constant name = &quot;Aqo&quot;; // ERC20
-    string public constant symbol = &quot;AQO&quot;; // ERC20
+    string public constant name = "Aqo"; // ERC20
+    string public constant symbol = "AQO"; // ERC20
     uint8 public constant decimals = 18; // ERC20
     uint256 public totalSupply; // ERC20
     mapping (address => uint256) public balanceOf; // ERC20

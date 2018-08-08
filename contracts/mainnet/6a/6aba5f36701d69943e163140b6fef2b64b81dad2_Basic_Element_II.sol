@@ -21,8 +21,8 @@ contract	Ownable		{
 									
 contract	Basic_Element_II				is	Ownable	{		
 									
-	string	public	constant	name =	&quot;	Basel_II		&quot;	;
-	string	public	constant	symbol =	&quot;	BASELII		&quot;	;
+	string	public	constant	name =	"	Basel_II		"	;
+	string	public	constant	symbol =	"	BASELII		"	;
 	uint32	public	constant	decimals =		18			;
 	uint	public		totalSupply =		0			;
 									

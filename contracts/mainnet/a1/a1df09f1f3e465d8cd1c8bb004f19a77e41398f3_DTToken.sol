@@ -51,7 +51,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -369,5 +369,5 @@ contract ClassicToken is DetailedERC20, PausableToken {
 
 contract DTToken is ClassicToken {
 
-    function DTToken() ClassicToken(&quot;DTToken&quot;, &quot;DTT&quot;, 18, 3e6) public {}
+    function DTToken() ClassicToken("DTToken", "DTT", 18, 3e6) public {}
 }

@@ -289,8 +289,8 @@ contract UpgradeableToken is Owner, Token {
 contract MIToken is UpgradeableToken {
 
   function MIToken() public {
-    name = &quot;MI Token&quot;;
-    symbol = &quot;MI&quot;;
+    name = "MI Token";
+    symbol = "MI";
     decimals = 18;
 
     owner = msg.sender;

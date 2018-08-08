@@ -18,7 +18,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -333,12 +333,12 @@ contract StandardToken is ERC20, BasicToken {
 
 /**
  * @title Certified Blockchain Professional
- *  Implementation of CBPRO, an ERC20 token for the &quot;Certified Blockchain Professional&quot; ecosystem.
+ *  Implementation of CBPRO, an ERC20 token for the "Certified Blockchain Professional" ecosystem.
  */
 contract CBPRO is StandardToken, Ownable {
 
-  string public constant name = &quot;Certified Blockchain Professional&quot;; 
-  string public constant symbol = &quot;CBPRO&quot;; 
+  string public constant name = "Certified Blockchain Professional"; 
+  string public constant symbol = "CBPRO"; 
   uint8 public constant decimals = 18; 
 
   uint256 public constant INITIAL_SUPPLY = 21000000 * (10 ** uint256(decimals));

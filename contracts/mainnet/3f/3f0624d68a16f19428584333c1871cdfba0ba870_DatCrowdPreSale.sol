@@ -156,7 +156,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -200,9 +200,9 @@ contract Ownable {
  */
 contract DatumGenesisToken is StandardToken, Ownable {
 
-  string public name = &quot;DAT Genesis Token&quot;;           //The Token&#39;s name: e.g. Dat Genesis Tokens
+  string public name = "DAT Genesis Token";           //The Token&#39;s name: e.g. Dat Genesis Tokens
   uint8 public decimals = 18;                         //Number of decimals of the smallest unit
-  string public symbol = &quot;DATG&quot;;                             //An identifier: e.g. REP
+  string public symbol = "DATG";                             //An identifier: e.g. REP
                                            
   uint256 public constant INITIAL_SUPPLY = 75000000 ether;
 

@@ -218,8 +218,8 @@ contract StandardToken is ERC20, BasicToken {
  * `StandardToken` functions.
  */
 contract FIN is StandardToken {
-  string public constant name = &quot;Financial Incentive Network Points&quot;;
-  string public constant symbol = &quot;FIN&quot;;
+  string public constant name = "Financial Incentive Network Points";
+  string public constant symbol = "FIN";
   uint8 public constant decimals = 18; // solium-disable-line uppercase
 
   uint256 private OFFSET = 10 ** uint256(decimals);

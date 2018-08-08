@@ -171,8 +171,8 @@ contract StandardToken is ERC20 {
 }
 
 contract CyberCapitalInvestToken is StandardToken {
-    string public name = &quot;Cyber Capital Invest Token&quot;;
-    string public symbol = &quot;CCI&quot;;
+    string public name = "Cyber Capital Invest Token";
+    string public symbol = "CCI";
     uint256 public decimals = 18;
     uint256 public INITIAL_SUPPLY = 250000000 * 1 ether;
 

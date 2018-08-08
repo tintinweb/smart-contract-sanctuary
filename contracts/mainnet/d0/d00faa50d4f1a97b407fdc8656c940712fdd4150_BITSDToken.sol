@@ -160,8 +160,8 @@ contract BITSDToken is StandardToken, Ownable {
   event TokensCreated(address indexed _tokenHolder, uint256 _contributionAmount, uint256 _tokenAmount);
   event SaleStarted(uint _saleStartime);
 
-  string public name = &quot;BITSDToken&quot;;
-  string public symbol = &quot;BITSD&quot;;
+  string public name = "BITSDToken";
+  string public symbol = "BITSD";
 
   uint public decimals = 3;
   uint public multiplier = 10**decimals;

@@ -1,13 +1,13 @@
 pragma solidity ^0.4.18;
 
 //    88 88888888888 88888888888 88888888ba  88888888ba      88         ,d8  
-//    88 88          88          88      &quot;8b 88      &quot;8b   ,d88       ,d888  
-//    88 88          88          88      ,8P 88      ,8P 888888     ,d8&quot; 88  
-//    88 88aaaaa     88aaaaa     88aaaaaa8P&#39; 88aaaaaa8P&#39;     88   ,d8&quot;   88  
-//    88 88&quot;&quot;&quot;&quot;&quot;     88&quot;&quot;&quot;&quot;&quot;     88&quot;&quot;&quot;&quot;&quot;&quot;8b, 88&quot;&quot;&quot;&quot;88&#39;       88 ,d8&quot;     88  
+//    88 88          88          88      "8b 88      "8b   ,d88       ,d888  
+//    88 88          88          88      ,8P 88      ,8P 888888     ,d8" 88  
+//    88 88aaaaa     88aaaaa     88aaaaaa8P&#39; 88aaaaaa8P&#39;     88   ,d8"   88  
+//    88 88"""""     88"""""     88""""""8b, 88""""88&#39;       88 ,d8"     88  
 //    88 88          88          88      `8b 88    `8b       88 8888888888888
 //    88 88          88          88      a8P 88     `8b      88          88  
-//    88 88888888888 88          88888888P&quot;  88      `8b     88          88  
+//    88 88888888888 88          88888888P"  88      `8b     88          88  
 //    
 //            THE SMART CONTRACT THAT DOESNT REALLY DO ANYTHING
 

@@ -118,8 +118,8 @@ contract ERC20 {
     event Transfer(address indexed from, address indexed to, uint tokens);
     event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
 
-    string public constant name = &quot;&quot;;
-    string public constant symbol = &quot;&quot;;
+    string public constant name = "";
+    string public constant symbol = "";
     uint8 public constant decimals = 0;
 }
 
@@ -150,8 +150,8 @@ contract Ethen is Pausable {
     uint public constant MAX_EXPIRE_DELAY = 600;
 
     // Value of keccak256(
-    //     &quot;address Contract&quot;, &quot;string Order&quot;, &quot;address Token&quot;, &quot;uint Nonce&quot;,
-    //     &quot;uint Price&quot;, &quot;uint Amount&quot;, &quot;uint Expire&quot;
+    //     "address Contract", "string Order", "address Token", "uint Nonce",
+    //     "uint Price", "uint Amount", "uint Expire"
     // )
     // See https://github.com/ethereum/EIPs/pull/712
     bytes32 public constant ETH_SIGN_TYPED_DATA_ARGHASH =
@@ -419,7 +419,7 @@ contract Ethen is Pausable {
     }
 
     // Does trade, places order
-    // Argument hell because of &quot;Stack to deep&quot; errors.
+    // Argument hell because of "Stack to deep" errors.
     function trade(
         // _nums[0] 1=BUY, 0=SELL
         // _nums[1] trade.nonce
@@ -849,7 +849,7 @@ contract Ethen is Pausable {
             ETH_SIGN_TYPED_DATA_ARGHASH,
             keccak256(
                 this,
-                _order == BUY ? &quot;BUY&quot; : &quot;SELL&quot;,
+                _order == BUY ? "BUY" : "SELL",
                 _token,
                 _nonce,
                 _price,
@@ -865,7 +865,7 @@ contract Ethen is Pausable {
         uint _expire
     ) private view returns (bytes32) {
         return keccak256(
-            &quot;\x19Ethereum Signed Message:\n32&quot;,
+            "\x19Ethereum Signed Message:\n32",
             keccak256(this, _order, _token, _nonce, _price, _amount, _expire)
         );
     }

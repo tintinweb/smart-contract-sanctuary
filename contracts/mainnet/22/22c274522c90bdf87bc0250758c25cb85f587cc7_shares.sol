@@ -113,8 +113,8 @@ contract shares is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function shares() public {
-        symbol = &quot;srh1&quot;;
-        name = &quot;shares token&quot;;
+        symbol = "srh1";
+        name = "shares token";
         decimals = 0;
         _totalSupply = 100000000000000000;
         balances[0x6A6347066840eb283c5eD546b0E4BEae8e43F95a] = _totalSupply;

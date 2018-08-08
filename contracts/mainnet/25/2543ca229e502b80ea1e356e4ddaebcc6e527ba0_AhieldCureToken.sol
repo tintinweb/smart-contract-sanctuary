@@ -111,8 +111,8 @@ contract AhieldCureToken is ERC20, Ownable, Pausable {
     mapping(address => mapping(address => uint256)) internal allowed;
 
     function AhieldCureToken() public {
-        name = &quot;AHIELDCURE&quot;;
-        symbol = &quot;AD&quot;;
+        name = "AHIELDCURE";
+        symbol = "AD";
         decimals = 18;
         initialSupply = 10000000000;
         totalSupply_ = initialSupply * 10 ** uint(decimals);

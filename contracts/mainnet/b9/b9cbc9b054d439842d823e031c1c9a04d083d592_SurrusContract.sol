@@ -123,13 +123,13 @@ contract SurrusContract is StandardToken {
 
     address owner;
 
-    string public constant name = &quot;SurruS&quot;;
+    string public constant name = "SurruS";
 
-    string public constant symbol = &quot;SURR&quot;;
+    string public constant symbol = "SURR";
 
     uint32 public constant decimals = 18;
     
-    string public description=&quot;tokens for ico&quot;;
+    string public description="tokens for ico";
 
     uint256 public INITIAL_SUPPLY = 860000000000000000000000000; //860 000 000, 000 000 000 000 000 000
 

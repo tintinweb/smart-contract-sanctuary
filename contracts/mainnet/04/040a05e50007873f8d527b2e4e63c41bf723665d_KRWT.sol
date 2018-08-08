@@ -142,7 +142,7 @@ contract StandardToken is ERC20, BasicToken {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -411,8 +411,8 @@ contract ERC827Token is ERC827, StandardToken {
 }
 
 contract KRWT is StandardToken, MintableToken, BurnableToken, PausableToken, ERC827Token {
-    string constant public name = &quot;Korean Won&quot;;
-    string constant public symbol = &quot;KRWT&quot;;
+    string constant public name = "Korean Won";
+    string constant public symbol = "KRWT";
     uint8 constant public decimals = 8;
     uint public totalSupply_ = 100000000000 * 10**uint(decimals);
 

@@ -114,8 +114,8 @@ contract AllAmericanCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function AllAmericanCoin() public {
-        symbol = &quot;AACN&quot;;
-        name = &quot;AllAmericanCoin&quot;;
+        symbol = "AACN";
+        name = "AllAmericanCoin";
         decimals = 18;
         bonusEnds = now + 6 weeks;
         endDate = now + 8 weeks;

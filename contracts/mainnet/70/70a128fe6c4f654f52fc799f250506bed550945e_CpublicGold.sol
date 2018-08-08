@@ -55,7 +55,7 @@ contract SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Owned {
     address public owner;
@@ -89,8 +89,8 @@ contract CpublicGold is ERC20Interface, Owned, SafeMath {
      * Constructor
      */
     function CpublicGold() public {
-        symbol = &quot;CPG&quot;;
-        name = &quot;Cpublic Gold&quot;;
+        symbol = "CPG";
+        name = "Cpublic Gold";
         decimals = 18;
         _totalSupply = 6000000000000000000000000000;
         balances[0xA031d2564caf3327d5688cA559dDcF8e6f75C6C3] = _totalSupply;

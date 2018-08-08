@@ -18,8 +18,8 @@ contract CyberToken
 
 	function CyberToken() 
 	{
-		name = &quot;CyberToken&quot;;
-		symbol = &quot;CYB&quot;;
+		name = "CyberToken";
+		symbol = "CYB";
 		decimals = 12;
 		totalSupply = 625000000000000000000;
 		balanceOf[msg.sender] = totalSupply;

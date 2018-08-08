@@ -189,8 +189,8 @@ contract ASStokenICO is Owned, ASStoken {
 
     //Variables
     bool crowdsaleClosed = true;                    
-    string tokenName = &quot;ASStoken&quot;; 
-    string tokenSymbol = &quot;ASS&quot;; 
+    string tokenName = "ASStoken"; 
+    string tokenSymbol = "ASS"; 
     uint256 initialTokens = 150000000000; 
     uint256 multiplier = 10000; 
     uint8 decimalUnits = 4;  

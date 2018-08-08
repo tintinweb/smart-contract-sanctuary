@@ -72,8 +72,8 @@ contract EliteShipperToken is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;EliteShipperToken&quot;;
-    string public constant symbol = &quot;ESHIP&quot;;
+    string public constant name = "EliteShipperToken";
+    string public constant symbol = "ESHIP";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 10000000000e8;

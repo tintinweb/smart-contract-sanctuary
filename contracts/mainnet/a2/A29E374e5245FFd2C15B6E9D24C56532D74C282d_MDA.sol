@@ -208,7 +208,7 @@ contract TokenERC20 is SafeMath{
 
 contract MDA is TokenERC20 {
 
-    function MDA() TokenERC20(100*10**8, &quot;MDA Token&quot;, 18 , &quot;MDA&quot;) public {
+    function MDA() TokenERC20(100*10**8, "MDA Token", 18 , "MDA") public {
 
     }
 }

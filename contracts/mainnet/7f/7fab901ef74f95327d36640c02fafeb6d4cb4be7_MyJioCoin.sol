@@ -114,8 +114,8 @@ contract MyJioCoin is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function MyJioCoin() public {
-        symbol = &quot;MYJIO&quot;;
-        name = &quot;MyJioCoin&quot;;
+        symbol = "MYJIO";
+        name = "MyJioCoin";
         decimals = 8;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

@@ -113,8 +113,8 @@ contract ArysumToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ArysumToken() public {
-        symbol = &quot;ARYS&quot;;
-        name = &quot;Arysum Bearer Shares&quot;;
+        symbol = "ARYS";
+        name = "Arysum Bearer Shares";
         decimals = 0;
         _totalSupply = 100000;
         balances[0xd873696a3DDA855676777861294820F4f91A39fd] = _totalSupply;

@@ -98,8 +98,8 @@ contract DanatCoin is ERC20Interface, Owned, SafeMath {
   
     // Constructor
     function DanatCoin() public {
-        symbol = &quot;DNC&quot;;
-        name = &quot;Danat Coin&quot;;
+        symbol = "DNC";
+        name = "Danat Coin";
         decimals = 18;
         _totalSupply = 100000000 * 10 ** uint(decimals);    //totalSupply = initialSupply * 10 ** uint(decimals);
         balances[msg.sender] = _totalSupply;                // Give the creator all initial tokens

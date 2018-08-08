@@ -21,9 +21,9 @@ contract RipioFUND {
   mapping (address => uint256) public balances;
   // Store the number of times the voters individually voted.
   mapping (address => bool) public voters;
-  // Keep track of the &quot;for&quot; votes for the address
+  // Keep track of the "for" votes for the address
   uint256 public for_votes = 0;
-  // Keep track of the &quot;agaisnt&quot; votes for the address
+  // Keep track of the "agaisnt" votes for the address
   uint256 public agaisnt_votes = 0;
 
 
@@ -126,14 +126,14 @@ contract RipioFUND {
     require(!bought_tokens);
     // The voter musn&#39;t have voted before
     require(!voters[msg.sender]);
-    // Disallow voting for the &quot;void&quot; address
+    // Disallow voting for the "void" address
     require(sale != 0x0);
     // Store the fact that the addy voted
     voters[msg.sender] = true;
-    if (keccak256(string_vote) == keccak256(&quot;yes&quot;)){
+    if (keccak256(string_vote) == keccak256("yes")){
       for_votes += 1;
     }
-    if (keccak256(string_vote) == keccak256(&quot;no&quot;)){
+    if (keccak256(string_vote) == keccak256("no")){
       agaisnt_votes += 1;
     }
   }

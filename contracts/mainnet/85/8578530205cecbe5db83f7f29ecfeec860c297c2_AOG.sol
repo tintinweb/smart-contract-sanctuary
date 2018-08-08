@@ -134,8 +134,8 @@ contract AOG is StandardToken {
     
     using SafeMath for uint256;
 
-    string public name = &quot;AOG&quot;;
-    string public symbol = &quot;AOG&quot;;
+    string public name = "AOG";
+    string public symbol = "AOG";
     uint256 public decimals = 18;
 
     uint256 public totalSupply = 2700000000 * (uint256(10) ** decimals);
@@ -150,8 +150,8 @@ contract AOG is StandardToken {
     bool public PRE_ICO_ON;
     bool public ICO_ON;
     
-    string public PreIcoMessage = &quot;Coming Soon&quot;;
-    string public IcoMessage    = &quot;Not Started&quot;;
+    string public PreIcoMessage = "Coming Soon";
+    string public IcoMessage    = "Not Started";
     
     uint256 public totalRaised; // total ether raised (in wei)
     uint256 public totalRaisedIco; // total ether raised (in wei)
@@ -230,7 +230,7 @@ contract AOG is StandardToken {
         require(owner == msg.sender);
         require(PRE_ICO_ON == false);
         PRE_ICO_ON = true;
-        PreIcoMessage = &quot;PRE ICO RUNNING&quot;;
+        PreIcoMessage = "PRE ICO RUNNING";
         startTimestamp = _startTimestamp;
         minCap = _minCap;
         maxCap = _maxCap;
@@ -242,7 +242,7 @@ contract AOG is StandardToken {
         require(owner == msg.sender);
         require(PRE_ICO_ON == true);
         PRE_ICO_ON = false;
-        PreIcoMessage = &quot;Finish&quot;;
+        PreIcoMessage = "Finish";
         
         return true;
     }
@@ -253,8 +253,8 @@ contract AOG is StandardToken {
         require(ICO_ON == false);
         ICO_ON = true;
         PRE_ICO_ON = false;
-        PreIcoMessage = &quot;Finish&quot;;
-        IcoMessage = &quot;ICO RUNNING&quot;;
+        PreIcoMessage = "Finish";
+        IcoMessage = "ICO RUNNING";
         
         startTimestampIco = _startTimestampIco;
         minCapIco = _minCapIco;
@@ -278,7 +278,7 @@ contract AOG is StandardToken {
         if(totalRaised >= maxCap || (now >= (startTimestamp + durationSeconds) && totalRaised >= minCap))
             {
                 PRE_ICO_ON = false;
-                PreIcoMessage = &quot;Finish&quot;;
+                PreIcoMessage = "Finish";
             }
             
         }
@@ -292,7 +292,7 @@ contract AOG is StandardToken {
             if(totalRaisedIco >= maxCapIco || (now >= (startTimestampIco + durationSecondsIco) && totalRaisedIco >= minCapIco))
             {
                 ICO_ON = false;
-                IcoMessage = &quot;Finish&quot;;
+                IcoMessage = "Finish";
             }
         } 
         

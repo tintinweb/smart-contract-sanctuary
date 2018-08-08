@@ -161,8 +161,8 @@ contract GazeBountyCoin is ERC20Interface, Administered {
     // ------------------------------------------------------------------------
     // Token parameters
     // ------------------------------------------------------------------------
-    string public constant symbol = &quot;GBC&quot;;
-    string public constant name = &quot;Gaze Bounty Coin&quot;;
+    string public constant symbol = "GBC";
+    string public constant name = "Gaze Bounty Coin";
     uint8 public constant decimals = 18;
     uint public totalSupply = 0;
 

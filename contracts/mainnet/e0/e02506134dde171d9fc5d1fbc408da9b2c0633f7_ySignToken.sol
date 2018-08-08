@@ -270,8 +270,8 @@ contract ySignToken is IERC20{
     
     uint256 public startTime ;
     
-    string public constant symbol = &quot;YSN&quot;;
-    string public constant name = &quot;ySignToken&quot;;
+    string public constant symbol = "YSN";
+    string public constant name = "ySignToken";
     uint8 public constant decimals = 18; 
    
     uint256 public  RATE;

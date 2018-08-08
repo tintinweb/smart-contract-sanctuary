@@ -113,8 +113,8 @@ contract DDEToken is ERC20Interface, Owned {
     // Constructor
     // ------------------------------------------------------------------------
     function DDEToken() public {
-        symbol = &quot;DDE&quot;;
-        name = &quot;DigiDeal Eco-system&quot;;
+        symbol = "DDE";
+        name = "DigiDeal Eco-system";
         decimals = 8;
         _totalSupply = 1000000000 * 10**uint(decimals);
         balances[owner] = _totalSupply;

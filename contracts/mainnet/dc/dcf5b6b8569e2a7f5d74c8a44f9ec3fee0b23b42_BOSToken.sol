@@ -127,8 +127,8 @@ contract StandardToken is ERC20 {
 }
 
 contract BOSToken is StandardToken {
-  string public constant name = &quot;BOSToken&quot;;
-  string public constant symbol = &quot;BOS&quot;;
+  string public constant name = "BOSToken";
+  string public constant symbol = "BOS";
   uint8 public constant decimals = 18;
 
   constructor() public {

@@ -4,8 +4,8 @@ interface tokenRecipient { function receiveApproval(address _from, uint256 _valu
 
 contract MBCash {
     // Public variables of the token
-    string public name = &quot;MBCash&quot;;
-    string public symbol = &quot;MBCASH&quot;;
+    string public name = "MBCash";
+    string public symbol = "MBCASH";
     uint8 public decimals = 18;
     // 18 decimals is the strongly suggested default
     uint256 public totalSupply;

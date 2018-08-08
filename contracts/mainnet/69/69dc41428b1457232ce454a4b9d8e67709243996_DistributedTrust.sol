@@ -33,8 +33,8 @@ contract DistributedTrust is Pointer {
         _;
     }
 
-    // &quot;Olivia Marie Fraga Rolim. Born at 2018-04-03 20:54:00 BRT, in the city of Rio de Janeiro, Brazil&quot;, 
-    // &quot;ipfs://QmfD5tpeF8UpHZMnSVq3qNPVNwd8JNfF4g8L3UFVUfkiRK&quot;
+    // "Olivia Marie Fraga Rolim. Born at 2018-04-03 20:54:00 BRT, in the city of Rio de Janeiro, Brazil", 
+    // "ipfs://QmfD5tpeF8UpHZMnSVq3qNPVNwd8JNfF4g8L3UFVUfkiRK"
     function newFact(string description, string meta) public {
         uint256 factIndex = bumpPointer();
      

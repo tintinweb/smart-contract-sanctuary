@@ -61,7 +61,7 @@ contract BasicToken is ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -538,8 +538,8 @@ contract BurnableToken is BasicToken {
 
 
 contract GMSToken is PausableToken, MintableToken, BurnableToken {
-    string public name = &quot;Gemstra Token&quot;;
-    string public symbol = &quot;GMS&quot;;
+    string public name = "Gemstra Token";
+    string public symbol = "GMS";
     uint public decimals = 18;
     uint public INITIAL_SUPPLY = 16000000000 * (10 ** uint256(decimals));
 

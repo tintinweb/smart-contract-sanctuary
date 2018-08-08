@@ -171,9 +171,9 @@ contract TokenERC20 {
 contract TosToken is owned, TokenERC20 {
 
     /// The full name of the TOS token.
-    string public constant name = &quot;ThingsOpreatingSystem&quot;;
+    string public constant name = "ThingsOpreatingSystem";
     /// Symbol of the TOS token.
-    string public constant symbol = &quot;TOS&quot;;
+    string public constant symbol = "TOS";
     /// 18 decimals is the strongly suggested default, avoid changing it.
     uint8 public constant decimals = 18;
 

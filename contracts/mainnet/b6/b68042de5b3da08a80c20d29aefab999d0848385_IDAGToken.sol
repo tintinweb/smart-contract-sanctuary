@@ -33,8 +33,8 @@ interface tokenRecipient {
 
 contract IDAGToken {
     using SafeMath for uint256;
-    string public name = &quot;iDAG SPACE&quot;;
-    string public symbol = &quot;iDAG&quot;;
+    string public name = "iDAG SPACE";
+    string public symbol = "iDAG";
     uint8 public decimals = 18;
     uint256 public totalSupply = 50000000000 ether;
     uint256 public totalAirDrop = totalSupply * 10 / 100;

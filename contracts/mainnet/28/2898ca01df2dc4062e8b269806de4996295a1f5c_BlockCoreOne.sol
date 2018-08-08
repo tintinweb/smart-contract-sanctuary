@@ -238,8 +238,8 @@ contract SaleAuction is AuctionBase {
 }
 
 contract BlockOwnership is BlockBase, ERC721 {
-  string public constant name = &quot;CryptoBlocks&quot;;
-  string public constant symbol = &quot;CB&quot;;
+  string public constant name = "CryptoBlocks";
+  string public constant symbol = "CB";
 
   bytes4 constant InterfaceSignature_ERC721 =
       bytes4(keccak256(&#39;name()&#39;)) ^

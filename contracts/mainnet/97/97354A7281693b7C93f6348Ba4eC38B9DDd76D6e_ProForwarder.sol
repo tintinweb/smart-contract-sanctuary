@@ -6,7 +6,7 @@ interface ProForwarderInterface {
 }
 
 contract ProForwarder {
-    string public name = &quot;ProForwarder&quot;;
+    string public name = "ProForwarder";
     ProForwarderInterface private currentCorpBank_;
     address private newCorpBank_;
     bool needsBank_ = true;
@@ -22,8 +22,8 @@ contract ProForwarder {
     }
     
     function deposit() public payable returns(bool) {
-        require(msg.value > 0, &quot;Forwarder Deposit failed - zero deposits not allowed&quot;);
-        require(needsBank_ == false, &quot;Forwarder Deposit failed - no registered bank&quot;);
+        require(msg.value > 0, "Forwarder Deposit failed - zero deposits not allowed");
+        require(needsBank_ == false, "Forwarder Deposit failed - no registered bank");
         if (currentCorpBank_.deposit.value(msg.value)(msg.sender) == true)
             return(true);
         else
@@ -36,7 +36,7 @@ contract ProForwarder {
 
     function startMigration(address _newCorpBank) external returns(bool) {
         // make sure this is coming from current corp bank
-        require(msg.sender == address(currentCorpBank_), &quot;Forwarder startMigration failed - msg.sender must be current corp bank&quot;);
+        require(msg.sender == address(currentCorpBank_), "Forwarder startMigration failed - msg.sender must be current corp bank");
         
         // communicate with the new corp bank and make sure it has the forwarder 
         // registered 
@@ -52,7 +52,7 @@ contract ProForwarder {
     function cancelMigration() external returns(bool) {
         // make sure this is coming from the current corp bank (also lets us know 
         // that current corp bank has not been killed)
-        require(msg.sender == address(currentCorpBank_), &quot;Forwarder cancelMigration failed - msg.sender must be current corp bank&quot;);
+        require(msg.sender == address(currentCorpBank_), "Forwarder cancelMigration failed - msg.sender must be current corp bank");
         
         // erase stored new corp bank address;
         newCorpBank_ = address(0x0);
@@ -62,7 +62,7 @@ contract ProForwarder {
     
     function finishMigration() external returns(bool) {
         // make sure its coming from new corp bank
-        require(msg.sender == newCorpBank_, &quot;Forwarder finishMigration failed - msg.sender must be new corp bank&quot;);
+        require(msg.sender == newCorpBank_, "Forwarder finishMigration failed - msg.sender must be new corp bank");
 
         // update corp bank address        
         currentCorpBank_ = (ProForwarderInterface(newCorpBank_));
@@ -75,7 +75,7 @@ contract ProForwarder {
 
     // this only runs once ever
     function setup(address _firstCorpBank) external {
-        require(needsBank_ == true, &quot;Forwarder setup failed - corp bank already registered&quot;);
+        require(needsBank_ == true, "Forwarder setup failed - corp bank already registered");
         currentCorpBank_ = ProForwarderInterface(_firstCorpBank);
         needsBank_ = false;
     }

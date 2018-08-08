@@ -57,8 +57,8 @@ library SafeMath {
 contract TarynToken is AccessControlled {
   using SafeMath for uint256;
 
-  string public constant name     = &quot;TarynToken&quot;;
-  string public constant symbol   = &quot;TA&quot;;
+  string public constant name     = "TarynToken";
+  string public constant symbol   = "TA";
   uint8  public constant decimals = 18;
   
   uint256 public constant INITIAL_SUPPLY = 0;

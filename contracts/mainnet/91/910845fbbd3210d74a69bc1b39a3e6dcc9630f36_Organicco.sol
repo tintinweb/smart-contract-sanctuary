@@ -78,7 +78,7 @@ library SafeMath {
   }
 }
 
-contract Organicco is Token(&quot;ORC&quot;, &quot;Organicco&quot;, 18, 120000000000000000000000000), ERC20, ERC223 {
+contract Organicco is Token("ORC", "Organicco", 18, 120000000000000000000000000), ERC20, ERC223 {
 
     using SafeMath for uint;
     address public constant FOUNDING_TEAM = 0x001c3234d614F12D5ef931E2871BFf35D8C05a29;

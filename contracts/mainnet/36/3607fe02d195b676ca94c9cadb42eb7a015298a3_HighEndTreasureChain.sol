@@ -113,8 +113,8 @@ contract HighEndTreasureChain is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function HighEndTreasureChain() public {
-        symbol = &quot;HET&quot;;
-        name = &quot;High-end Treasure Chain&quot;;
+        symbol = "HET";
+        name = "High-end Treasure Chain";
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         balances[0xff60947022E9e3510974646C530445B51540292D] = _totalSupply;

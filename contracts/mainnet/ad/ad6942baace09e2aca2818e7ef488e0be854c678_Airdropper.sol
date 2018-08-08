@@ -51,7 +51,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -101,7 +101,7 @@ contract ERC20 {
 
 /**
  * @title Airdropper
- * @dev An &quot;airdropper&quot; or &quot;bounty&quot; contract for distributing an ERC20 token
+ * @dev An "airdropper" or "bounty" contract for distributing an ERC20 token
  *   en masse.
  * @dev This contract does not hold any tokens. Instead, it transfers directly
  *   from a given source address to the recipients. Ensure that the source

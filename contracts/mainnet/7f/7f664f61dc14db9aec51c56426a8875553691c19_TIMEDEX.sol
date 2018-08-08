@@ -72,8 +72,8 @@ contract TIMEDEX is ERC20 {
     mapping (address => uint256) balances;
     mapping (address => mapping (address => uint256)) allowed;    
 
-    string public constant name = &quot;TIMEDEX&quot;;
-    string public constant symbol = &quot;TDT&quot;;
+    string public constant name = "TIMEDEX";
+    string public constant symbol = "TDT";
     uint public constant decimals = 8;
     
     uint256 public totalSupply = 500000000e8;

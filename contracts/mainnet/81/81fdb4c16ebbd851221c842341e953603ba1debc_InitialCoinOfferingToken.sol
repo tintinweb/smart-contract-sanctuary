@@ -15,8 +15,8 @@ contract InitialCoinOfferingToken {
     function InitialCoinOfferingToken() public {
         totalSupply = 2600000000 * 10 ** uint256(decimals);
         balanceOf[msg.sender] = totalSupply;
-        name = &quot;Initial Coin Offering Token&quot;;
-        symbol = &quot;ICOT&quot;;
+        name = "Initial Coin Offering Token";
+        symbol = "ICOT";
     }
 
     function _transfer(address _from, address _to, uint _value) internal {

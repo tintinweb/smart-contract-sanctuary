@@ -113,8 +113,8 @@ contract ParrotCoin is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function ParrotCoin() public {
-        symbol = &quot;PTC&quot;;
-        name = &quot;ParrotCoin&quot;;
+        symbol = "PTC";
+        name = "ParrotCoin";
         decimals = 18;
         _totalSupply = 21000000000000000000000000;
         balances[0xe62DB52C568D34A2006fBEBf37dE05D19627487A] = _totalSupply;

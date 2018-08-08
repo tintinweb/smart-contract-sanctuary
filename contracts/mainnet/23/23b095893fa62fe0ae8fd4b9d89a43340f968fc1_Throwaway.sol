@@ -237,8 +237,8 @@ library SafeMath {
 }
 
 contract Throwaway is BurnableToken, StandardToken {
-    string public name = &quot;Throwaway&quot;;
-    string public symbol = &quot;THRWY&quot;;
+    string public name = "Throwaway";
+    string public symbol = "THRWY";
     uint8 public decimals = 18;
 
     constructor() public {

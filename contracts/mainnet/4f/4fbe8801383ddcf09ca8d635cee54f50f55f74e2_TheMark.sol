@@ -113,8 +113,8 @@ contract TheMark is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function TheMark() public {
-        symbol = &quot;666&quot;;
-        name = &quot;The Mark&quot;;
+        symbol = "666";
+        name = "The Mark";
         decimals = 6;
         _totalSupply = 666666666000000;
         balances[0x66666e5B3985CAA9F5FCC101131Bca1ABb281e52] = _totalSupply;

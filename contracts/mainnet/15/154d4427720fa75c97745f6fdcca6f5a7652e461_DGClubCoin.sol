@@ -113,8 +113,8 @@ contract DGClubCoin is UnboundedRegularToken {
 
     uint public totalSupply = 1*10**12;
     uint8 constant public decimals = 4;
-    string constant public name = &quot;DGClubCoin&quot;;
-    string constant public symbol = &quot;DGCC&quot;;
+    string constant public name = "DGClubCoin";
+    string constant public symbol = "DGCC";
 
     function DGClubCoin() {
         balances[msg.sender] = totalSupply;

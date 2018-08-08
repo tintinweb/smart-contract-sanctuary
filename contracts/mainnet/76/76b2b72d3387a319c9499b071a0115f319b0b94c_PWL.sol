@@ -208,9 +208,9 @@ contract StandardToken is ERC20, BasicToken {
 
 contract PWL is StandardToken {
 
-            string public name = &quot;PWL&quot;;
+            string public name = "PWL";
 
-            string public symbol = &quot;PWL&quot;;
+            string public symbol = "PWL";
 
             uint8 public decimals = 4;
 

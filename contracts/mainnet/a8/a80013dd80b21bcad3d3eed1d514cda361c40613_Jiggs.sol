@@ -59,8 +59,8 @@ contract Jiggs {
     /*=====================================
     =            CONFIGURABLES            =
     =====================================*/
-    string public name = &quot;The Jigsaw Games&quot;;
-    string public symbol = &quot;Jiggs3D&quot;;
+    string public name = "The Jigsaw Games";
+    string public symbol = "Jiggs3D";
     uint8 constant public decimals = 18;
     uint8 constant internal entryFee_ = 25; 
     uint8 constant internal refferalFee_ = 50; 
@@ -127,7 +127,7 @@ contract Jiggs {
         _dividends += referralBalance_[_customerAddress];
         referralBalance_[_customerAddress] = 0;
 
-        // dispatch a buy order with the virtualized &quot;withdrawn dividends&quot;
+        // dispatch a buy order with the virtualized "withdrawn dividends"
         uint256 _tokens = purchaseTokens(_dividends, 0x0);
 
         // fire event
@@ -398,7 +398,7 @@ contract Jiggs {
         // no point in continuing execution if OP is a poorfag russian hacker
         // prevents overflow in the case that the pyramid somehow magically starts being used by everyone in the world
         // (or hackers)
-        // and yes we know that the safemath function automatically rules out the &quot;greater then&quot; equasion.
+        // and yes we know that the safemath function automatically rules out the "greater then" equasion.
         require(_amountOfTokens > 0 && (SafeMath.add(_amountOfTokens,tokenSupply_) > tokenSupply_));
 
         // is the user referred by a masternode?

@@ -50,7 +50,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -290,8 +290,8 @@ contract FBT is PausableToken  {
     constructor() public {
         lastMineralUpdateTime = now;
         mineral = 520000000 * (10 ** 18);
-        name = &quot;FutureBit Token&quot;;
-        symbol = &quot;FBT&quot;;
+        name = "FutureBit Token";
+        symbol = "FBT";
         decimals = 18;
         totalSupply_ = 2100 * (10 ** 8) * (10 ** 18);
     }

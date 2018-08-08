@@ -29,8 +29,8 @@ contract TokenERC20 {
         uint256 initialSupply = 10000000000;
         totalSupply = initialSupply * 10 ** uint256(decimals);  // Update total supply with the decimal amount
         balanceOf[msg.sender] = totalSupply;                // Give the creator all initial tokens
-        name = &quot;冥币&quot;;                                   // Set the name for display purposes
-        symbol = &quot;冥币&quot;;                               // Set the symbol for display purposes
+        name = "冥币";                                   // Set the name for display purposes
+        symbol = "冥币";                               // Set the symbol for display purposes
     }
 
     /**

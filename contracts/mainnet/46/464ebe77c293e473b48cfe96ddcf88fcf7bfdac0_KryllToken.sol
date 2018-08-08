@@ -5,7 +5,7 @@ pragma solidity ^0.4.23;
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -267,7 +267,7 @@ contract StandardToken is ERC20, BasicToken {
     Version 0.2
     
     Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the &quot;Software&quot;), to deal
+    of this software and associated documentation files (the "Software"), to deal
     in the Software without restriction, including without limitation the rights
     to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
     copies of the Software, and to permit persons to whom the Software is
@@ -276,7 +276,7 @@ contract StandardToken is ERC20, BasicToken {
     The above copyright notice and this permission notice shall be included in
     all copies or substantial portions of the Software.
 
-    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -429,7 +429,7 @@ contract TransferableToken is StandardToken,Ownable {
     Version 0.2
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the &quot;Software&quot;), to deal
+    of this software and associated documentation files (the "Software"), to deal
     in the Software without restriction, including without limitation the rights
     to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
     copies of the Software, and to permit persons to whom the Software is
@@ -438,7 +438,7 @@ contract TransferableToken is StandardToken,Ownable {
     The above copyright notice and this permission notice shall be included in
     all copies or substantial portions of the Software.
 
-    THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -458,8 +458,8 @@ pragma solidity ^0.4.23;
 contract KryllToken is TransferableToken {
 //    using SafeMath for uint256;
 
-    string public symbol = &quot;KRL&quot;;
-    string public name = &quot;Kryll.io Token&quot;;
+    string public symbol = "KRL";
+    string public name = "Kryll.io Token";
     uint8 public decimals = 18;
   
 

@@ -113,9 +113,9 @@ contract Henfruit {
     */
 
     //first step of any good idea is a name 
-    string public constant name = &quot;Henfruit&quot;;
+    string public constant name = "Henfruit";
     //and of course after a name, we need a smaller name.
-    string public constant symbol = &quot;EGG&quot;;
+    string public constant symbol = "EGG";
     //Then determine brewing capacity
     uint256 public totalSupply = 20736;
     //and major shame to those who sell partial brews (and partial hens are messy)

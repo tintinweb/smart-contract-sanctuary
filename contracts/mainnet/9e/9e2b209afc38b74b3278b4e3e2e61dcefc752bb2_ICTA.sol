@@ -71,9 +71,9 @@ library SafeMath {
 
 contract ICTA is ERC20,Ownable{
 	using SafeMath for uint256;
-	string public constant name=&quot;ICTA&quot;;
-	string public constant symbol=&quot;ICTA&quot;;
-	string public constant version = &quot;0&quot;;
+	string public constant name="ICTA";
+	string public constant symbol="ICTA";
+	string public constant version = "0";
 	uint256 public constant decimals = 9;
 	uint256 public constant MAX_SUPPLY=500000000*10**decimals;
 	uint256 public airdropSupply;

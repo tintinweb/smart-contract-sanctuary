@@ -44,7 +44,7 @@ contract consumerRegistry is owned {
     ///         to make transactions on behalf of user id `auserID`.
     ///
     /// @dev Register address aconsumer to belong to userID
-    ///      auserID. Addresses can be delisted (&quot;unregistered&quot;) by
+    ///      auserID. Addresses can be delisted ("unregistered") by
     ///      setting the userID auserID to zero.
     function registerConsumer(address aconsumer, uint32 auserID) onlyOwner external {
         if (auserID != 0) {
@@ -68,7 +68,7 @@ contract producerRegistry is owned {
     event producerRegistered(address indexed producer);
     event producerDeregistered(address indexed producer);
     
-    // map address to bool &quot;is a registered producer&quot;
+    // map address to bool "is a registered producer"
     mapping(address => bool) public producers;
 
     modifier onlyRegisteredProducers {

@@ -113,8 +113,8 @@ contract MedicalCannabis is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function MedicalCannabis() public {
-        symbol = &quot;MCan&quot;;
-        name = &quot;Medical Cannabis&quot;;
+        symbol = "MCan";
+        name = "Medical Cannabis";
         decimals = 18;
         _totalSupply = 500000000000000000000000000;
         balances[0x809b67CAB69ff5F99A541Af41789a73faA2aA984] = _totalSupply;

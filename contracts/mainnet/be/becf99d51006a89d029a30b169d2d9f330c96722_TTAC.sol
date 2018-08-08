@@ -124,8 +124,8 @@ contract StandardToken is BasicToken, ERC20 {
 }
 contract TTAC is StandardToken, Ownable {
 
-    string public constant name = &quot;图腾艺术&quot;;
-    string public constant symbol = &quot;TTAC&quot;;
+    string public constant name = "图腾艺术";
+    string public constant symbol = "TTAC";
     uint256 public constant decimals = 8;
 
     function TTAC() public {

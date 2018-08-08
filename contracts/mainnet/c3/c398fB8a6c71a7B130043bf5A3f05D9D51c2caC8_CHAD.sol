@@ -105,8 +105,8 @@ contract CHAD is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CHAD() public {
-        symbol = &quot;CHAD&quot;;
-        name = &quot;CHAD Token&quot;;
+        symbol = "CHAD";
+        name = "CHAD Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
         balances[0x8F210dbB8FADa47bc090d7923E935267BF53160D] = _totalSupply;

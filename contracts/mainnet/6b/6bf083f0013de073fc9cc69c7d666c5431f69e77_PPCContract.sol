@@ -113,8 +113,8 @@ contract PPCContract is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function PPCContract() public {
-        symbol = &quot;PPC&quot;;
-        name = &quot;People Power Coin&quot;;
+        symbol = "PPC";
+        name = "People Power Coin";
         decimals = 8;
         _totalSupply = 10000000000000000000;
         balances[0x504F28Ef13ef47Fa938Df322980B233eAbea4D54] = _totalSupply; //MEW address here

@@ -180,8 +180,8 @@ contract NaiveClaims is Upgradeable, Pausable, IClaims  {
         Claim storage claim = claims[_claimId];
         Vote storage vote = claim.votes[msg.sender];
 
-        require(vote.exists != true, &quot;Voters can only vote once&quot;);
-        require(now < claim.votingDeadline, &quot;Cannot vote after the dealine has passed&quot;);
+        require(vote.exists != true, "Voters can only vote once");
+        require(now < claim.votingDeadline, "Cannot vote after the dealine has passed");
 
         claims[_claimId].votes[msg.sender] = Vote(_pType, _hash, _url, true, _tokenHash);
     }
@@ -209,14 +209,14 @@ contract NaiveClaims is Upgradeable, Pausable, IClaims  {
 
     function register(uint _claimId, uint _pType, bytes32 _hash, string _url,
     bytes32 _tokenHash) external {
-        revert(&quot;Unsupported operation&quot;);
+        revert("Unsupported operation");
     }
 }
 
 contract NaiveTallyCalculator {
     
-    bytes32 public yesHash = keccak256(&quot;YES&quot;);
-    bytes32 public noHash = keccak256(&quot;NO&quot;);
+    bytes32 public yesHash = keccak256("YES");
+    bytes32 public noHash = keccak256("NO");
 
     function calculateTally(address _claimsAddress, uint _claimId) constant returns (bool) {
         NaiveClaims claimsContract = NaiveClaims(_claimsAddress);

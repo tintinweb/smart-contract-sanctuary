@@ -61,7 +61,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -439,8 +439,8 @@ library SafeERC20 {
 
 contract VITToken is Claimable, HasNoTokens, MintableToken {
     // solhint-disable const-name-snakecase
-    string public constant name = &quot;Vice&quot;;
-    string public constant symbol = &quot;VIT&quot;;
+    string public constant name = "Vice";
+    string public constant symbol = "VIT";
     uint8 public constant decimals = 18;
     // solhint-enable const-name-snakecase
 

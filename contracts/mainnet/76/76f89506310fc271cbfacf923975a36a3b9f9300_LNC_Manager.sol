@@ -58,8 +58,8 @@ contract Token is ERC20Interface {
     
     using SafeMath for uint;
     
-    string public constant symbol = &quot;LNC&quot;;
-    string public constant name = &quot;Linker Coin&quot;;
+    string public constant symbol = "LNC";
+    string public constant name = "Linker Coin";
     uint8 public constant decimals = 18;
     uint256 _totalSupply = 500000000000000000000000000;
     
@@ -121,7 +121,7 @@ contract Token is ERC20Interface {
 
     // Send _value amount of tokens from address _from to address _to
     // The transferFrom method is used for a withdraw workflow, allowing contracts to send
-    // tokens on your behalf, for example to &quot;deposit&quot; to a contract address and/or to charge
+    // tokens on your behalf, for example to "deposit" to a contract address and/or to charge
     // fees in sub-currencies; the command should fail unless the _from account has
     // deliberately authorized the sender of the message via some mechanism; we propose
     // these standardized APIs for approval:
@@ -449,15 +449,15 @@ contract LNC_Manager is Token
     }
     
     function strConcat(string _a, string _b, string _c, string _d) internal pure  returns (string) {
-        return strConcat(_a, _b, _c, _d, &quot;&quot;);
+        return strConcat(_a, _b, _c, _d, "");
     }
     
     function strConcat(string _a, string _b, string _c) internal pure returns (string) {
-        return strConcat(_a, _b, _c, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, _c, "", "");
     }
     
     function strConcat(string _a, string _b) internal pure returns (string) {
-        return strConcat(_a, _b, &quot;&quot;, &quot;&quot;, &quot;&quot;);
+        return strConcat(_a, _b, "", "", "");
     }
     
     function toString(address x)  internal pure returns (string) {
@@ -479,8 +479,8 @@ contract LNC_Manager is Token
         {
             if (T.IsFreezedAccount(dests[i]) == isFreeze)
             {
-                //unfreezedAddresses = strConcat(unfreezedAddresses, &quot;/&quot;);
-                //unfreezedAddresses = strConcat(unfreezedAddresses, toString(dests[i]), &quot;/&quot;);
+                //unfreezedAddresses = strConcat(unfreezedAddresses, "/");
+                //unfreezedAddresses = strConcat(unfreezedAddresses, toString(dests[i]), "/");
                 //unfreezedAddress.push(dests[i]);
                     n += 1;
             }

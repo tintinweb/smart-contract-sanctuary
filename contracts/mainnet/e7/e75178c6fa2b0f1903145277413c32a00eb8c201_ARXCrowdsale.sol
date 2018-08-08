@@ -78,9 +78,9 @@ contract ERC20Interface is owned, SafeMath { // security reviewed 10/09/17
 
 contract ARXCrowdsale is ERC20Interface { // security reviewed 10/09/17
     // deployment variables for dynamic supply token
-    string  public constant standard              = &quot;ARX&quot;;
-    string  public constant name                  = &quot;Assistive Reality&quot;;
-    string  public constant symbol                = &quot;ARX&quot;;
+    string  public constant standard              = "ARX";
+    string  public constant name                  = "Assistive Reality";
+    string  public constant symbol                = "ARX";
     uint8   public constant decimals              = 18;
     uint256 _totalSupply                          = 0;
 
@@ -101,7 +101,7 @@ contract ARXCrowdsale is ERC20Interface { // security reviewed 10/09/17
     uint256 public foundationFundTokenCountInWei;               // 10% additional tokens generated and sent to foundationFundMultisig/Assistive Reality foundation, 18 decimals
 
     // loop control, ICO startup and limiters
-    string  public CurrentStatus                  = &quot;&quot;;         // current crowdsale status
+    string  public CurrentStatus                  = "";         // current crowdsale status
     uint256 public fundingStartBlock;                           // crowdsale start block#
     uint256 public fundingEndBlock;                             // crowdsale end block#
     bool    public isCrowdSaleFinished            = false;      // boolean for crowdsale completed or not
@@ -121,7 +121,7 @@ contract ARXCrowdsale is ERC20Interface { // security reviewed 10/09/17
     // default function, map admin
     function ARXCrowdsale() onlyOwner {
       admin = msg.sender;
-      CurrentStatus = &quot;Crowdsale deployed to chain&quot;;
+      CurrentStatus = "Crowdsale deployed to chain";
     }
 
     // total number of tokens issued so far, normalised
@@ -231,12 +231,12 @@ contract ARXCrowdsale is ERC20Interface { // security reviewed 10/09/17
 
             // configure crowdsale
             isCrowdSaleSetup = true;
-            CurrentStatus = &quot;Crowdsale is setup&quot;;
-            return &quot;Crowdsale is setup&quot;;
+            CurrentStatus = "Crowdsale is setup";
+            return "Crowdsale is setup";
         } else if (msg.sender != admin) {
-            return &quot;not authorized&quot;;
+            return "not authorized";
         } else  {
-            return &quot;campaign cannot be changed&quot;;
+            return "campaign cannot be changed";
         }
     }
 
@@ -299,47 +299,47 @@ contract ARXCrowdsale is ERC20Interface { // security reviewed 10/09/17
       if ((amountRaisedInWei < fundingMinInWei) && (block.number <= fundingEndBlock && block.number >= fundingStartBlock)) { // ICO in progress, under softcap
         founderTokensAvailable = false;
         isCrowdSaleFinished = false;
-        CurrentStatus = &quot;In progress (Eth < Softcap)&quot;;
-        return &quot;In progress (Eth < Softcap)&quot;;
+        CurrentStatus = "In progress (Eth < Softcap)";
+        return "In progress (Eth < Softcap)";
       } else if ((amountRaisedInWei < fundingMinInWei) && (block.number < fundingStartBlock)) { // ICO has not started
         founderTokensAvailable = false;
         isCrowdSaleFinished = false;
-        CurrentStatus = &quot;Crowdsale is setup&quot;;
-        return &quot;Crowdsale is setup&quot;;
+        CurrentStatus = "Crowdsale is setup";
+        return "Crowdsale is setup";
       } else if ((amountRaisedInWei < fundingMinInWei) && (block.number > fundingEndBlock)) { // ICO ended, under softcap
         founderTokensAvailable = false;
         isCrowdSaleFinished = true;
-        CurrentStatus = &quot;Unsuccessful (Eth < Softcap)&quot;;
-        return &quot;Unsuccessful (Eth < Softcap)&quot;;
+        CurrentStatus = "Unsuccessful (Eth < Softcap)";
+        return "Unsuccessful (Eth < Softcap)";
       } else if ((amountRaisedInWei >= fundingMinInWei) && (amountRaisedInWei >= fundingMaxInWei)) { // ICO ended, at hardcap!
         if (foundationFundTokenCountInWei == 0) {
           founderTokensAvailable = true;
           isCrowdSaleFinished = true;
-          CurrentStatus = &quot;Successful (Eth >= Hardcap)!&quot;;
-          return &quot;Successful (Eth >= Hardcap)!&quot;;
+          CurrentStatus = "Successful (Eth >= Hardcap)!";
+          return "Successful (Eth >= Hardcap)!";
         } else if (foundationFundTokenCountInWei > 0) {
           founderTokensAvailable = false;
           isCrowdSaleFinished = true;
-          CurrentStatus = &quot;Successful (Eth >= Hardcap)!&quot;;
-          return &quot;Successful (Eth >= Hardcap)!&quot;;
+          CurrentStatus = "Successful (Eth >= Hardcap)!";
+          return "Successful (Eth >= Hardcap)!";
         }
       } else if ((amountRaisedInWei >= fundingMinInWei) && (amountRaisedInWei < fundingMaxInWei) && (block.number > fundingEndBlock)) { // ICO ended, over softcap!
         if (foundationFundTokenCountInWei == 0) {
           founderTokensAvailable = true;
           isCrowdSaleFinished = true;
-          CurrentStatus = &quot;Successful (Eth >= Softcap)!&quot;;
-          return &quot;Successful (Eth >= Softcap)!&quot;;
+          CurrentStatus = "Successful (Eth >= Softcap)!";
+          return "Successful (Eth >= Softcap)!";
         } else if (foundationFundTokenCountInWei > 0) {
           founderTokensAvailable = false;
           isCrowdSaleFinished = true;
-          CurrentStatus = &quot;Successful (Eth >= Softcap)!&quot;;
-          return &quot;Successful (Eth >= Softcap)!&quot;;
+          CurrentStatus = "Successful (Eth >= Softcap)!";
+          return "Successful (Eth >= Softcap)!";
         }
       } else if ((amountRaisedInWei >= fundingMinInWei) && (amountRaisedInWei < fundingMaxInWei) && (block.number <= fundingEndBlock)) { // ICO in progress, over softcap!
         founderTokensAvailable = false;
         isCrowdSaleFinished = false;
-        CurrentStatus = &quot;In progress (Eth >= Softcap)!&quot;;
-        return &quot;In progress (Eth >= Softcap)!&quot;;
+        CurrentStatus = "In progress (Eth >= Softcap)!";
+        return "In progress (Eth >= Softcap)!";
       }
     }
 
@@ -361,12 +361,12 @@ contract ARXCrowdsale is ERC20Interface { // security reviewed 10/09/17
 
     function halt() onlyOwner { // halt the crowdsale
         halted = true;
-        CurrentStatus = &quot;Halted&quot;;
+        CurrentStatus = "Halted";
     }
 
     function unhalt() onlyOwner { // resume the crowdsale
         halted = false;
-        CurrentStatus = &quot;Unhalted&quot;;
+        CurrentStatus = "Unhalted";
         checkGoalReached();
     }
 }

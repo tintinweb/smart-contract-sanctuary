@@ -53,7 +53,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
     address public owner;
@@ -240,8 +240,8 @@ contract ClusterToken is StandardToken, PullPayment, Ownable, Pausable {
     /**
      * Variables
     */
-    string public constant name = &quot;ClusterToken&quot;;
-    string public constant symbol = &quot;CLRT&quot;;
+    string public constant name = "ClusterToken";
+    string public constant symbol = "CLRT";
     uint256 public constant decimals = 18;
     uint256 private buyPriceEth = 10000000000000000;
     

@@ -113,8 +113,8 @@ contract CreditleetToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CreditleetToken() public {
-        symbol = &quot;C2LT&quot;;
-        name = &quot;CreditleetToken&quot;;
+        symbol = "C2LT";
+        name = "CreditleetToken";
         decimals = 0;
         _totalSupply = 5000000;
         balances[0x090D5131E3319e131fFb1FA43B2D89aAA3C402D9] = _totalSupply;

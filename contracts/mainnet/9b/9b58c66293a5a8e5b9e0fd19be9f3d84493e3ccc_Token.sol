@@ -167,6 +167,6 @@ contract TokenERC20 is Ownable, MintableToken {
 }
 
 contract Token is TokenERC20 {
-    function Token() public TokenERC20(&quot;Ideal Digital Memory&quot;, &quot;IDM&quot;) {}
+    function Token() public TokenERC20("Ideal Digital Memory", "IDM") {}
 
 }

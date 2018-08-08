@@ -110,8 +110,8 @@ contract Unity is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function Unity() public {
-        symbol = &quot;UNY&quot;;
-        name = &quot;Unity&quot;;
+        symbol = "UNY";
+        name = "Unity";
         decimals = 2;
         _totalSupply = 96300000000;
         balances[0xde737293A9e8f5Dcd35a29662f1fe2E5997D543d] = _totalSupply;

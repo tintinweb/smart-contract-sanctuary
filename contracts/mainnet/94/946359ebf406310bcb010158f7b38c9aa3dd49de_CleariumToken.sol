@@ -109,8 +109,8 @@ contract CleariumToken is ERC20Interface, Owned, SafeMath {
     // Constructor
     // ------------------------------------------------------------------------
     function CleariumToken() public {
-        symbol = &quot;CCB&quot;;
-        name = &quot;Clear Cryptocurrency Bank&quot;;
+        symbol = "CCB";
+        name = "Clear Cryptocurrency Bank";
         decimals = 18;
         _totalSupply = 385000000000000000000000000;
         balances[0x97c47782c7918eD78a247F2CE7A476A22A41Cd19] = _totalSupply;

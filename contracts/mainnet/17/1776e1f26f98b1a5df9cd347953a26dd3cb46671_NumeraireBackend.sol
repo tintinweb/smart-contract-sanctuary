@@ -112,7 +112,7 @@ contract NumeraireShared is Safe {
  *
  * Based on https://github.com/ethereum/dapp-bin/blob/master/wallet/wallet.sol
  *
- * inheritable &quot;property&quot; contract that enables methods to be protected by requiring the acquiescence of either a single, or, crucially, each of a number of, designated owners.
+ * inheritable "property" contract that enables methods to be protected by requiring the acquiescence of either a single, or, crucially, each of a number of, designated owners.
  *
  * usage:
  * use modifiers onlyowner (just own owned) or onlymanyowners(hash), whereby the same hash must be provided by some number (specified in constructor) of the set of owners (specified in the constructor) before the interior is executed.
@@ -172,7 +172,7 @@ contract Shareable {
 
   // CONSTRUCTOR
 
-  // constructor is given number of sigs required to do protected &quot;onlymanyowners&quot; transactions
+  // constructor is given number of sigs required to do protected "onlymanyowners" transactions
   // as well as the selection of addresses capable of confirming them.
   function Shareable(address[] _owners, uint _required) {
     owners[1] = msg.sender;
@@ -186,7 +186,7 @@ contract Shareable {
   }
 
 
-  // new multisig is given number of sigs required to do protected &quot;onlymanyowners&quot; transactions
+  // new multisig is given number of sigs required to do protected "onlymanyowners" transactions
   // as well as the selection of addresses capable of confirming them.
   // take all new owners as an array
   function changeShareable(address[] _owners, uint _required) onlyManyOwners(sha3(msg.data)) {
@@ -325,11 +325,11 @@ contract NumeraireBackend is StoppableShareable, NumeraireShared {
     bool public contractUpgradable = true;
     address[] public previousDelegates;
 
-    string public standard = &quot;ERC20&quot;;
+    string public standard = "ERC20";
 
     // ERC20 requires name, symbol, and decimals
-    string public name = &quot;Numeraire&quot;;
-    string public symbol = &quot;NMR&quot;;
+    string public name = "Numeraire";
+    string public symbol = "NMR";
     uint256 public decimals = 18;
 
     event DelegateChanged(address oldAddress, address newAddress);
@@ -374,39 +374,39 @@ contract NumeraireBackend is StoppableShareable, NumeraireShared {
     }
 
     function mint(uint256 _value) stopInEmergency returns (bool ok) {
-        return delegateContract.delegatecall(bytes4(sha3(&quot;mint(uint256)&quot;)), _value);
+        return delegateContract.delegatecall(bytes4(sha3("mint(uint256)")), _value);
     }
 
     function stake(uint256 _value, bytes32 _tag, uint256 _tournamentID, uint256 _roundID, uint256 _confidence) stopInEmergency returns (bool ok) {
-        return delegateContract.delegatecall(bytes4(sha3(&quot;stake(uint256,bytes32,uint256,uint256,uint256)&quot;)), _value, _tag, _tournamentID, _roundID, _confidence);
+        return delegateContract.delegatecall(bytes4(sha3("stake(uint256,bytes32,uint256,uint256,uint256)")), _value, _tag, _tournamentID, _roundID, _confidence);
     }
 
     function stakeOnBehalf(address _staker, uint256 _value, bytes32 _tag, uint256 _tournamentID, uint256 _roundID, uint256 _confidence) stopInEmergency onlyPayloadSize(6) returns (bool ok) {
-        return delegateContract.delegatecall(bytes4(sha3(&quot;stakeOnBehalf(address,uint256,bytes32,uint256,uint256,uint256)&quot;)), _staker, _value, _tag, _tournamentID, _roundID, _confidence);
+        return delegateContract.delegatecall(bytes4(sha3("stakeOnBehalf(address,uint256,bytes32,uint256,uint256,uint256)")), _staker, _value, _tag, _tournamentID, _roundID, _confidence);
     }
 
     function releaseStake(address _staker, bytes32 _tag, uint256 _etherValue, uint256 _tournamentID, uint256 _roundID, bool _successful) stopInEmergency onlyPayloadSize(6) returns (bool ok) {
-        return delegateContract.delegatecall(bytes4(sha3(&quot;releaseStake(address,bytes32,uint256,uint256,uint256,bool)&quot;)), _staker, _tag, _etherValue, _tournamentID, _roundID, _successful);
+        return delegateContract.delegatecall(bytes4(sha3("releaseStake(address,bytes32,uint256,uint256,uint256,bool)")), _staker, _tag, _etherValue, _tournamentID, _roundID, _successful);
     }
 
     function destroyStake(address _staker, bytes32 _tag, uint256 _tournamentID, uint256 _roundID) stopInEmergency onlyPayloadSize(4) returns (bool ok) {
-        return delegateContract.delegatecall(bytes4(sha3(&quot;destroyStake(address,bytes32,uint256,uint256)&quot;)), _staker, _tag, _tournamentID, _roundID);
+        return delegateContract.delegatecall(bytes4(sha3("destroyStake(address,bytes32,uint256,uint256)")), _staker, _tag, _tournamentID, _roundID);
     }
 
     function numeraiTransfer(address _to, uint256 _value) onlyPayloadSize(2) returns(bool ok) {
-        return delegateContract.delegatecall(bytes4(sha3(&quot;numeraiTransfer(address,uint256)&quot;)), _to, _value);
+        return delegateContract.delegatecall(bytes4(sha3("numeraiTransfer(address,uint256)")), _to, _value);
     }
 
     function withdraw(address _from, address _to, uint256 _value) onlyPayloadSize(3) returns(bool ok) {
-        return delegateContract.delegatecall(bytes4(sha3(&quot;withdraw(address,address,uint256)&quot;)), _from, _to, _value);
+        return delegateContract.delegatecall(bytes4(sha3("withdraw(address,address,uint256)")), _from, _to, _value);
     }
 
     function createTournament(uint256 _tournamentID) returns (bool ok) {
-        return delegateContract.delegatecall(bytes4(sha3(&quot;createTournament(uint256)&quot;)), _tournamentID);
+        return delegateContract.delegatecall(bytes4(sha3("createTournament(uint256)")), _tournamentID);
     }
 
     function createRound(uint256 _tournamentID, uint256 _roundID, uint256 _endTime, uint256 _resolutionTime) returns (bool ok) {
-        return delegateContract.delegatecall(bytes4(sha3(&quot;createRound(uint256,uint256,uint256,uint256)&quot;)), _tournamentID, _roundID, _endTime, _resolutionTime);
+        return delegateContract.delegatecall(bytes4(sha3("createRound(uint256,uint256,uint256,uint256)")), _tournamentID, _roundID, _endTime, _resolutionTime);
     }
 
     function getTournament(uint256 _tournamentID) constant returns (uint256, uint256[]) {

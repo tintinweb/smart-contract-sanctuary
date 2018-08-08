@@ -50,7 +50,7 @@ library SafeMath {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -255,8 +255,8 @@ contract ufoodoToken is StandardToken, Ownable {
     // Token where will be stored and managed
     address public vault = this;
 
-    string public name = &quot;ufoodo Token&quot;;
-    string public symbol = &quot;UFT&quot;;
+    string public name = "ufoodo Token";
+    string public symbol = "UFT";
     uint8 public decimals = 18;
 
     // Total Supply DAICO: 500,000,000 UFT

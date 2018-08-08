@@ -134,8 +134,8 @@ contract CryptoRomeAuction is CryptoRomeControl {
 contract Wonder is ERC721, CryptoRomeControl {
     
     // Name and symbol of the non fungible token, as defined in ERC721.
-    string public constant name = &quot;CryptoRomeWonder&quot;;
-    string public constant symbol = &quot;CROMEW&quot;;
+    string public constant name = "CryptoRomeWonder";
+    string public constant symbol = "CROMEW";
 
     uint256[] internal allWonderTokens;
 

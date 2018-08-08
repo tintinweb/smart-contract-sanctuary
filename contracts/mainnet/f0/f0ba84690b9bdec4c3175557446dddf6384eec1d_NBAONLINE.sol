@@ -61,8 +61,8 @@ contract ERC721Abstract
 }
 contract ERC721 is ERC721Abstract
 {
-	string constant public   name = &quot;NBA ONLINE&quot;;
-	string constant public symbol = &quot;Ticket&quot;;
+	string constant public   name = "NBA ONLINE";
+	string constant public symbol = "Ticket";
 
 	uint256 public totalSupply;
 	struct Token
@@ -223,7 +223,7 @@ contract Functional
 	
 	function uint2str(uint i) internal pure returns (string)
 	{
-		if (i == 0) return &quot;0&quot;;
+		if (i == 0) return "0";
 		uint j = i;
 		uint len;
 		while (j != 0){
@@ -457,11 +457,11 @@ contract NBAONLINE is Functional,Owned,ERC721{
     )
     {
         Game storage curGame = games[_id];
-        _potDetail = &quot;&quot;;
-        _results = &quot;&quot;;
+        _potDetail = "";
+        _results = "";
         for(uint8 i=0;i<30;i++){
-            _potDetail = strConcat(_potDetail,&quot;,&quot;,uint2str(curGame.potDetail[i]));
-            _results = strConcat(_results,&quot;,&quot;,uint2str(curGame.result[i]));
+            _potDetail = strConcat(_potDetail,",",uint2str(curGame.potDetail[i]));
+            _results = strConcat(_results,",",uint2str(curGame.result[i]));
         }
         _totalPot = curGame.totalPot;
         _totalWinnersDeposit = curGame.totalWinnersDeposit;
@@ -471,7 +471,7 @@ contract NBAONLINE is Functional,Owned,ERC721{
         if ( curGame.status == STATUS.PLAYING && timenow() > _dateStopBuy ) _gameStatus = uint8(STATUS.PROCESSING);
     }
     function getAllGames(bool onlyPlaying,uint256 from, uint256 to)public view returns(string gameInfoList){
-        gameInfoList = &quot;&quot;;
+        gameInfoList = "";
         uint256 counter = 0;
         for(uint256 i=0; i<gameIdList.length; i++){
             if(counter < from){
@@ -482,14 +482,14 @@ contract NBAONLINE is Functional,Owned,ERC721{
                 break;
             }
             if((onlyPlaying&&games[gameIdList[i]].status == STATUS.PLAYING && timenow() < games[gameIdList[i]].dateStopBuy)||onlyPlaying==false){
-                gameInfoList = strConcat(gameInfoList,&quot;|&quot;,uint2str(games[gameIdList[i]].id));
-                gameInfoList = strConcat(gameInfoList,&quot;,&quot;,games[gameIdList[i]].name);
-                gameInfoList = strConcat(gameInfoList,&quot;,&quot;,uint2str(games[gameIdList[i]].totalPot));
-                gameInfoList = strConcat(gameInfoList,&quot;,&quot;,uint2str(games[gameIdList[i]].dateStopBuy));
+                gameInfoList = strConcat(gameInfoList,"|",uint2str(games[gameIdList[i]].id));
+                gameInfoList = strConcat(gameInfoList,",",games[gameIdList[i]].name);
+                gameInfoList = strConcat(gameInfoList,",",uint2str(games[gameIdList[i]].totalPot));
+                gameInfoList = strConcat(gameInfoList,",",uint2str(games[gameIdList[i]].dateStopBuy));
                 if(games[gameIdList[i]].status == STATUS.PLAYING && timenow() > games[gameIdList[i]].dateStopBuy){
-                    gameInfoList = strConcat(gameInfoList,&quot;,&quot;,uint2str(uint(STATUS.PROCESSING)));
+                    gameInfoList = strConcat(gameInfoList,",",uint2str(uint(STATUS.PROCESSING)));
                 }else{
-                    gameInfoList = strConcat(gameInfoList,&quot;,&quot;,uint2str(uint(games[gameIdList[i]].status)));
+                    gameInfoList = strConcat(gameInfoList,",",uint2str(uint(games[gameIdList[i]].status)));
                 }
                 counter++;
             }
@@ -497,7 +497,7 @@ contract NBAONLINE is Functional,Owned,ERC721{
     }
         
     function getMyTicketList(bool active,uint256 from, uint256 to)public view returns(string info){
-        info = &quot;&quot;;
+        info = "";
         uint256 counter = 0;
         if(ownershipTokenCount[msg.sender] > 0){
             for(uint256 i=0; i<totalSupply; i++){
@@ -518,40 +518,40 @@ contract NBAONLINE is Functional,Owned,ERC721{
                     uint256 otherpick = getNumbersOfPick(gameId,uint8(_choose));
                     Game storage curGame = games[gameId];
                     if((active&&(tStatus == 0&&(curGame.status == STATUS.PLAYING||(curGame.result[uint8(_choose)] == 1&&curGame.status == STATUS.PAYING)||curGame.status == STATUS.REFUNDING)))||active == false){
-                        info = strConcat(info,&quot;|&quot;,uint2str(i));
-                        info = strConcat(info,&quot;,&quot;,uint2str(gameId));
-                        info = strConcat(info,&quot;,&quot;,uint2str(_token.price));
-                        info = strConcat(info,&quot;,&quot;,uint2str(dateBuy));
-                        info = strConcat(info,&quot;,&quot;,uint2str(_choose));
-                        info = strConcat(info,&quot;,&quot;,uint2str(otherpick));
-                        info = strConcat(info,&quot;,&quot;,uint2str(tStatus));
+                        info = strConcat(info,"|",uint2str(i));
+                        info = strConcat(info,",",uint2str(gameId));
+                        info = strConcat(info,",",uint2str(_token.price));
+                        info = strConcat(info,",",uint2str(dateBuy));
+                        info = strConcat(info,",",uint2str(_choose));
+                        info = strConcat(info,",",uint2str(otherpick));
+                        info = strConcat(info,",",uint2str(tStatus));
                         if(curGame.status == STATUS.PLAYING && timenow() > curGame.dateStopBuy){
-                            info = strConcat(info,&quot;,&quot;,uint2str(uint(STATUS.PROCESSING)));
+                            info = strConcat(info,",",uint2str(uint(STATUS.PROCESSING)));
                         }else{
-                            info = strConcat(info,&quot;,&quot;,uint2str(uint(curGame.status)));
+                            info = strConcat(info,",",uint2str(uint(curGame.status)));
                         }
                         if(tStatus == 3||curGame.potDetail[uint8(_choose)]==0){
-                            info = strConcat(info,&quot;,&quot;,uint2str(0));//Canceled ticket
+                            info = strConcat(info,",",uint2str(0));//Canceled ticket
                         }else{
                             if(curGame.totalWinnersDeposit > 0){
                                 if(curGame.result[uint8(_choose)]==1){
                                     //Win ticket
-                                    info = strConcat(info,&quot;,&quot;,uint2str(_token.price.mul(curGame.totalPot).div(curGame.totalWinnersDeposit)));
+                                    info = strConcat(info,",",uint2str(_token.price.mul(curGame.totalPot).div(curGame.totalWinnersDeposit)));
                                 }else{
                                     //Lose ticket
-                                    info = strConcat(info,&quot;,&quot;,uint2str(_token.price.mul(curGame.totalPot).div(curGame.potDetail[uint8(_choose)])));
+                                    info = strConcat(info,",",uint2str(_token.price.mul(curGame.totalPot).div(curGame.potDetail[uint8(_choose)])));
                                 }
                             }else{
                                 //Pending or Processing
-                                info = strConcat(info,&quot;,&quot;,uint2str(_token.price.mul(curGame.totalPot).div(curGame.potDetail[uint8(_choose)])));
+                                info = strConcat(info,",",uint2str(_token.price.mul(curGame.totalPot).div(curGame.potDetail[uint8(_choose)])));
                             }
                         }
                         if(curGame.status == STATUS.PAYING&&curGame.result[uint8(_choose)] == 1){
-                            info = strConcat(info,&quot;,&quot;,uint2str(1));
+                            info = strConcat(info,",",uint2str(1));
                         }else {
-                            info = strConcat(info,&quot;,&quot;,uint2str(0));
+                            info = strConcat(info,",",uint2str(0));
                         }
-                        info = strConcat(info,&quot;,&quot;,uint2str(curGame.totalPot));
+                        info = strConcat(info,",",uint2str(curGame.totalPot));
                     }
                     counter++;
                 }

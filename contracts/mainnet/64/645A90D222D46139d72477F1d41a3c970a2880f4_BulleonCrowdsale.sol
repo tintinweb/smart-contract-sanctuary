@@ -17,7 +17,7 @@ contract ERC20Basic {
 /**
  * @title Ownable
  * @dev The Ownable contract has an owner address, and provides basic authorization control
- * functions, this simplifies the implementation of &quot;user permissions&quot;.
+ * functions, this simplifies the implementation of "user permissions".
  */
 contract Ownable {
   address public owner;
@@ -462,8 +462,8 @@ contract BulleonToken is StandardBurnableToken, PausableToken, Claimable {
   event RemoveWhitelist(address wallet);
 
   /* Base params */
-  string public constant name = &quot;Bulleon&quot;; /* solium-disable-line uppercase */
-  string public constant symbol = &quot;BUL&quot;; /* solium-disable-line uppercase */
+  string public constant name = "Bulleon"; /* solium-disable-line uppercase */
+  string public constant symbol = "BUL"; /* solium-disable-line uppercase */
   uint8 public constant decimals = 18; /* solium-disable-line uppercase */
   uint256 constant exchangersBalance = 39991750231582759746295 + 14715165984103328399573 + 1846107707643607869274; // YoBit + Etherdelta + IDEX
 
@@ -552,8 +552,8 @@ contract BulleonCrowdsale is Claimable {
     event Log(uint256 value);
 
     /* Infomational vars */
-    string public name = &quot;Bulleon Crowdsale&quot;;
-    string public version = &quot;2.0&quot;;
+    string public name = "Bulleon Crowdsale";
+    string public version = "2.0";
 
     /* ICO params */
     address public withdrawWallet = 0xAd74Bd38911fE4C19c95D14b5733372c3978C2D9;
